@@ -50,7 +50,7 @@ Office UI Fabric には、次の UI 要素が用意されています。
 Office の配色パターンを採用するにしても、独自のものを使用するにしても、テーマ API を使用することお勧めします。Office テーマ エクスペリエンスの一部としてアドインを作成すると、Office との統一感が増します。
 
 
-- メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](../../../reference/shared/office.context.officetheme.md) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。  
+- メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](http://dev.office.com/reference/add-ins/shared/office.context.officetheme) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。  
 - PowerPoint のコンテンツ アドインの場合は、「[PowerPoint アドインで Office テーマを使用する](../../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)」を参照してください。
 
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->

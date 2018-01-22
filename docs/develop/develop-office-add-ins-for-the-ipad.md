@@ -15,7 +15,7 @@
 |アドインを商目的で使用しないようにします。|アドインは、アプリ内購入、試用版の提供、有料版へのアップセルを目的とする UI、またはユーザーが他のコンテンツやアプリやアドインを購入または取得できるすべてのオンライン ストアへのリンクと無縁である必要があります。またプライバシー ポリシーと使用条件のページにも、商用の UI またはストアへのリンクがないことが必要です。|[検証ポリシー 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |アドインを Office ストアに再送信します。|販売者ダッシュボードで、**[このアドインを iPad の Office アドイン カタログで利用できる状態にする]** チェック ボックスをオンにして、[Apple ID] ボックスに Apple 開発者 ID を入力します。[Office ストア アプリケーション プロバイダー契約](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)を確認して、契約を十分に理解します。|[Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)|
 
-他のプラットフォームで実行されている Office アプリケーション用にアドインをそのまま保持することができます。また、アドインが実行されているブラウザーとデバイスに基づく別の UI も提供できます。iPad 上でアドインが実行されているかどうかを検出するためには、次の API を使用できます。<ul><li>var isTouchEnabled = [Office.context.touchEnabled](../../reference/shared/office.context.touchenabled.md)</li><li>var allowCommerce = [Office.context.commerceAllowed](../../reference/shared/office.context.commerceallowed.md)</li></ul>
+他のプラットフォームで実行されている Office アプリケーション用にアドインをそのまま保持することができます。また、アドインが実行されているブラウザーとデバイスに基づく別の UI も提供できます。iPad 上でアドインが実行されているかどうかを検出するためには、次の API を使用できます。<ul><li>var isTouchEnabled = [Office.context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled)</li><li>var allowCommerce = [Office.context.commerceAllowed](http://dev.office.com/reference/add-ins/shared/office.context.commerceallowed)</li></ul>
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>iOS および Mac 用 Office アドイン開発のベスト プラクティス

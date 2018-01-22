@@ -24,11 +24,11 @@
 
 ## <a name="dialog-api-scenarios"></a>ダイアログ API のシナリオ
 
-Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) オブジェクトと [Office.context.ui 名前空間](http://dev.office.com/reference/add-ins/shared/officeui)の 2 つの関数を使用する次のシナリオをサポートしています。
+Office JavaScript API は、[Dialog](http://dev.office.com/reference/add-ins/shared/officeui.dialog) オブジェクトと [Office.context.ui 名前空間](http://dev.office.com/reference/add-ins/shared/officeui)の 2 つの関数を使用する次のシナリオをサポートしています。
 
 ### <a name="open-a-dialog-box"></a>ダイアログ ボックスを開く
 
-ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) メソッドを呼び出して、開くリソースの URL を渡します。 これは、通常はページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、その他のリソースの場合もあります。 この記事では、'ページ' または 'Web サイト' とは、ダイアログ内のリソースを意味します。 次のコードは簡単な例を示しています。
+ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) メソッドを呼び出して、開くリソースの URL を渡します。 これは、通常はページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、その他のリソースの場合もあります。 この記事では、'ページ' または 'Web サイト' とは、ダイアログ内のリソースを意味します。 次のコードは簡単な例を示しています。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');

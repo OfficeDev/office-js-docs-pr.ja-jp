@@ -544,13 +544,13 @@ a:hover, a:active
 この実装で呼び出している JavaScript API for Office (Office.js) の主なメンバーを次に示します。
 
 
-- **Office** オブジェクトの [initialize](../../reference/shared/office.initialize.md) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトのインスタンスへのアクセスを提供します。
+- **Office** オブジェクトの [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトのインスタンスへのアクセスを提供します。
     
-- **Document** オブジェクトの [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
+- **Document** オブジェクトの [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
     
-- **Document** オブジェクトの [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
+- **Document** オブジェクトの [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
     
-- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](../../reference/shared/asyncresult.status.md) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)) から取得します。
+- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)) から取得します。
     
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
     

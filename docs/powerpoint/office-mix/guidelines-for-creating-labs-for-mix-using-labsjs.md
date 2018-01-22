@@ -86,7 +86,7 @@ Labs.DefaultHostBuilder = function () {
 Labs.connect((err, connectionResponse) => {});
 ```
 
-初期化したら、labs.js API の他のメソッドを呼び出します。 _connectionResponse_ パラメーターには、ホスト、ユーザーに関する情報、およびその他の接続に関連した情報が含まれています。返される値について詳しくは「 [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md)」を参照してください。
+初期化したら、labs.js API の他のメソッドを呼び出します。 _connectionResponse_ パラメーターには、ホスト、ユーザーに関する情報、およびその他の接続に関連した情報が含まれています。返される値について詳しくは「 [Labs.Core.IConnectionResponse](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconnectionresponse)」を参照してください。
 
 
 ### <a name="time-format"></a>時刻の形式

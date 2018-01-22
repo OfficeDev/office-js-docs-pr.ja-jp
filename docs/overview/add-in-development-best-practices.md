@@ -79,7 +79,7 @@
 
 
 
-- アドインを実行するホスト アプリケーションがタッチに対応しているかどうかを検出するには、[Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) プロパティを使用します。
+- アドインを実行するホスト アプリケーションがタッチに対応しているかどうかを検出するには、[Context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled) プロパティを使用します。
 
      >**注**  このプロパティは、Outlook ではサポートされていません。
 - すべてのコントロールがタッチ操作に適したサイズになっていることを確認します。たとえば、ボタンに適切なタッチ ターゲットを設定し、入力ボックスはユーザーが入力するのに十分な大きさにします。

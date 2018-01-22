@@ -326,7 +326,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>バインド内のデータまたは選択範囲の変更を検出する
 
 
-次の例は、ID が "MyBinding" であるバインドの [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) イベントにイベント ハンドラーを関連付ける方法を示しています。
+次の例は、ID が "MyBinding" であるバインドの [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) イベントにイベント ハンドラーを関連付ける方法を示しています。
 
 
 ```js

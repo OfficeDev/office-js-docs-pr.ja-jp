@@ -22,11 +22,11 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、Office.Initialize ハンドラーの一部として、ActiveViewChanged イベントを処理する必要があります。
 
 
-- `getActiveFileView` 関数は [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントのハンドラーを登録するための [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) メソッドを呼び出します。 
-> 注:PowerPoint Online では [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントのハンドラーを登録するための [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッドを呼び出します。 
+> 注:PowerPoint Online では [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
 
 
 
@@ -79,7 +79,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-`getSelectedRange` 関数は [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
+`getSelectedRange` 関数は [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
 
 ```js
@@ -99,7 +99,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 関数は [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
+`goToFirstSlide` 関数は [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
 
 
 
@@ -143,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
-`getFileUrl` 関数は [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+`getFileUrl` 関数は [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
 
 ```js

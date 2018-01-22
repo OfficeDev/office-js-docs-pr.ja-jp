@@ -59,17 +59,17 @@ Office.initialize = function (reason) {
     }
 }
 ```
-詳細については、「[Office.initialize イベント](../../reference/shared/office.initialize.md)」および「[InitializationReason 列挙型](http://dev.office.com/reference/add-ins/shared/initializationreason-enumeration)」を参照してください。 
+詳細については、「[Office.initialize イベント](http://dev.office.com/reference/add-ins/shared/office.initialize)」および「[InitializationReason 列挙型](http://dev.office.com/reference/add-ins/shared/initializationreason-enumeration)」を参照してください。 
 
 ## <a name="context-object"></a>Context オブジェクト
 
  **適用対象:** すべてのアドインの種類
 
-アドインが初期化されると、多数のさまざまなオブジェクトとランタイム環境でやり取りできます。アドインのランタイム コンテキストは、[Context](../../reference/shared/office.context.md) オブジェクトによって API に反映されます。**Context** は中心的なオブジェクトで、これにより API の非常に重要なオブジェクト (たとえば、[Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトや [Mailbox](../../reference/outlook/Office.context.mailbox.md) オブジェクト) にアクセスできます。これらのオブジェクトにアクセスすると、次はドキュメントやメールボックスのコンテンツにアクセスできます。
+アドインが初期化されると、多数のさまざまなオブジェクトとランタイム環境でやり取りできます。アドインのランタイム コンテキストは、[Context](http://dev.office.com/reference/add-ins/shared/office.context) オブジェクトによって API に反映されます。**Context** は中心的なオブジェクトで、これにより API の非常に重要なオブジェクト (たとえば、[Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトや [Mailbox](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクト) にアクセスできます。これらのオブジェクトにアクセスすると、次はドキュメントやメールボックスのコンテンツにアクセスできます。
 
-たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](../../reference/shared/office.context.document.md) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](../../reference/outlook/Office.context.mailbox.md) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
+たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](http://dev.office.com/reference/add-ins/shared/office.context.document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトを使用すると、[contentLanguage](../../reference/shared/office.context.contentlanguage.md) プロパティと [displayLanguage](../../reference/shared/office.context.displaylanguage.md) プロパティにもアクセスできるようになり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。また、[roamingSettings](../../reference/outlook/Office.context.md) プロパティを使用すると、[RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクトのメンバーにアクセスできます。最後に、**Context** オブジェクトの [ui](http://dev.office.com/reference/add-ins/shared/officeui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトを使用すると、[contentLanguage](http://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) プロパティと [displayLanguage](http://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) プロパティにもアクセスできるようになり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。また、[roamingSettings](http://dev.office.com/reference/add-ins/outlook/Office.context) プロパティを使用すると、[RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクトのメンバーにアクセスできます。最後に、**Context** オブジェクトの [ui](http://dev.office.com/reference/add-ins/shared/officeui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 
 ## <a name="document-object"></a>Document オブジェクト
@@ -90,11 +90,11 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
     
 - ドキュメント上のアドインごとに保持する設定またはアドインの状態。
     
-また、**Document** オブジェクトを使用すると、Project ドキュメント内のデータを操作できます。API の Project 固有の機能については、[ProjectDocument](../../reference/shared/projectdocument.projectdocument.md) 抽象クラスのメンバー内に説明文があります。Project 用の作業ウィンドウ アドインの作成の詳細については、「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」を参照してください。
+また、**Document** オブジェクトを使用すると、Project ドキュメント内のデータを操作できます。API の Project 固有の機能については、[ProjectDocument](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) 抽象クラスのメンバー内に説明文があります。Project 用の作業ウィンドウ アドインの作成の詳細については、「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」を参照してください。
 
 これらのデータ アクセスの形式はすべて、抽象 **Document** オブジェクトのインスタンスから開始します。
 
-作業ウィンドウ アドインまたはコンテンツ アドインが初期化されると、**Context** オブジェクトの [document](../../reference/shared/office.context.document.md) プロパティを使用して **Document** オブジェクトのインスタンスにアクセスできます。**Document** オブジェクトを使用すると、Word と Excel のドキュメントで共有される共通のデータ アクセス関数を定義でき、Word 文書の **CustomXmlParts** オブジェクトにもアクセスできます。
+作業ウィンドウ アドインまたはコンテンツ アドインが初期化されると、**Context** オブジェクトの [document](http://dev.office.com/reference/add-ins/shared/office.context.document) プロパティを使用して **Document** オブジェクトのインスタンスにアクセスできます。**Document** オブジェクトを使用すると、Word と Excel のドキュメントで共有される共通のデータ アクセス関数を定義でき、Word 文書の **CustomXmlParts** オブジェクトにもアクセスできます。
 
 **Document** オブジェクトは、開発者がドキュメント コンテンツにアクセスするための 4 つの方法をサポートしています。
 
@@ -136,7 +136,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
  >**ヒント**   **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。**行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
 
-指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](../../reference/shared/asyncresult.error.md) プロパティが `"failed"` を返すため、[AsyncResult.error](../../reference/shared/asyncresult.context.md) プロパティを使用して [Error](http://dev.office.com/reference/add-ins/shared/error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
+指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) プロパティが `"failed"` を返すため、[AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) プロパティを使用して [Error](http://dev.office.com/reference/add-ins/shared/error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>Document オブジェクトによる選択範囲の操作
@@ -150,7 +150,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Bindings オブジェクトおよび Binding オブジェクトによるバインドの操作
 
 
-バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md)、または [addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md)) を呼び出すことによって、バインドを確立する必要があります。バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。バインドを作成すると、アドインには次のようなメリットがあります。
+バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync)、[addFromSelectionAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync)、または [addFromNamedItemAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync)) を呼び出すことによって、バインドを確立する必要があります。バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。バインドを作成すると、アドインには次のようなメリットがあります。
 
 
 - 表、範囲、またはテキスト (隣接する一連の文字) など、サポートされている Office アプリケーション全体に共通のデータ構造へのアクセスを許可します。
@@ -161,7 +161,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
     
 また、バインドを確立すると、ドキュメントまたはスプレッドシートの特定の領域を範囲とする、データおよび選択範囲の変更イベントをサブスクライブできます。つまり、ドキュメントまたはスプレッドシート全体の全般的な変更ではなく、バインドされた領域内で発生する変更のみがアドインに通知されます。
 
-[Bindings](../../reference/shared/bindings.bindings.md) オブジェクトが公開している [getAllAsync](../../reference/shared/bindings.getallasync.md) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](../../reference/shared/bindings.getbyidasync.md) メソッドまたは [Office.select](../../reference/shared/office.select.md) メソッドを使用します。**Bindings** オブジェクトのいずれかのメソッド ([addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md)、[addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md)、または [releaseByIdAsync](../../reference/shared/bindings.releasebyidasync.md)) を使用すると、新しいバインドを確立したり既存のバインドを削除したりできます。
+[Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) オブジェクトが公開している [getAllAsync](http://dev.office.com/reference/add-ins/shared/bindings.getallasync) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync) メソッドまたは [Office.select](http://dev.office.com/reference/add-ins/shared/office.select) メソッドを使用します。**Bindings** オブジェクトのいずれかのメソッド ([addFromSelectionAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync)、[addFromPromptAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync)、[addFromNamedItemAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync)、または [releaseByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync)) を使用すると、新しいバインドを確立したり既存のバインドを削除したりできます。
 
 _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、または **addFromNamedItemAsync** メソッドでバインドを作成する場合、**bindingType** パラメーターで指定するバインドには 3 つの種類あります。
 
@@ -172,7 +172,7 @@ _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、ま
 |テキスト バインド|テキストとして表現できるドキュメントの領域にバインドします。|Word では、連続する選択範囲の大部分が有効ですが、Excel では、単一セルの範囲のみがテキスト バインドの対象です。Excel では、プレーン テキストのみがサポートされます。Word では、3 つの形式 (プレーン テキスト、HTML、および Open XML for Office) がサポートされます。|
 |マトリックス バインド|ヘッダーがない表形式のデータが含まれるドキュメントの固定領域にバインドします。マトリックス バインド内のデータは、2 次元の  **Array** として書き込みまたは読み取りが行われます。JavaScript では、これは、配列の配列として実装されています。たとえば、2 列の **string** 値が 2 行ある場合は ` [['a', 'b'], ['c', 'd']]` のように書き込みまたは読み取りが行われ、1 列が 3 行ある場合は `[['a'], ['b'], ['c']]` のように書き込みまたは読み取りが行われます。|Excel では、セルの連続する選択範囲を使用してマトリックス バインドを確立できます。Word では、表のみがマトリックス バインドをサポートします。|
 |テーブル バインド|ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](http://dev.office.com/reference/add-ins/shared/tabledata) オブジェクトとして書き込みまたは読み取りが行われます。**TableData** オブジェクトは **headers** および **rows** プロパティを通じてデータを公開します。|Excel または Word の表はすべて、テーブル バインドの基礎にできます。テーブル バインドを確立すると、ユーザーが表に追加する新しい各行または各列が、自動的にバインドに含まれます。 |
-**Bindings** オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding](../../reference/shared/binding.matrixbinding.md)、[TableBinding](../../reference/shared/binding.tablebinding.md)、または [TextBinding](../../reference/shared/binding.textbinding.md) のうち対応するオブジェクトのメソッドを使用して、バインドのデータおよびプロパティを操作できます。この 3 つのオブジェクトはすべて、[Binding](../../reference/shared/binding.getdataasync.md) オブジェクトの [getDataAsync](../../reference/shared/binding.setdataasync.md) メソッドおよび **setDataAsync** メソッドを継承しているので、バインドされたデータを操作できます。
+**Bindings** オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding)、[TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding)、または [TextBinding](http://dev.office.com/reference/add-ins/shared/binding.textbinding) のうち対応するオブジェクトのメソッドを使用して、バインドのデータおよびプロパティを操作できます。この 3 つのオブジェクトはすべて、[Binding](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) オブジェクトの [getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync) メソッドおよび **setDataAsync** メソッドを継承しているので、バインドされたデータを操作できます。
 
 バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
@@ -182,7 +182,7 @@ _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、ま
 
  **適用対象:** Word の作業ウィンドウ アドイン
 
-API の [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) オブジェクトと [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) オブジェクトを使用すると、Word 文書内のカスタム XML パーツにアクセスできます。これにより、文書のコンテンツに対する XML 主導の操作が可能になります。**CustomXmlParts** オブジェクトおよび **CustomXmlPart** オブジェクトとの連携のデモについては、「[Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)」のコード例を参照してください。
+API の [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) オブジェクトと [CustomXmlPart](http://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) オブジェクトを使用すると、Word 文書内のカスタム XML パーツにアクセスできます。これにより、文書のコンテンツに対する XML 主導の操作が可能になります。**CustomXmlParts** オブジェクトおよび **CustomXmlPart** オブジェクトとの連携のデモについては、「[Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)」のコード例を参照してください。
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>getFileAsync メソッドを使用したドキュメント全体の操作
@@ -190,7 +190,7 @@ API の [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 
  **適用対象:** Word および PowerPoint の作業ウィンドウ アドイン
 
-[Document.getFileAsync](../../reference/shared/document.getfileasync.md) メソッド、および [File](http://dev.office.com/reference/add-ins/shared/file) オブジェクトと [Slice](http://dev.office.com/reference/add-ins/shared/slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[アドインのドキュメントですべてのファイルを取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。
+[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) メソッド、および [File](http://dev.office.com/reference/add-ins/shared/file) オブジェクトと [Slice](http://dev.office.com/reference/add-ins/shared/slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[アドインのドキュメントですべてのファイルを取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。
 
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
@@ -198,7 +198,7 @@ API の [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 
  **適用対象:** Outlook アドイン
 
-Outlook アドインでは、主に [Mailbox](../../reference/outlook/Office.context.mailbox.md) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](../../reference/outlook/Office.context.mailbox.item.md) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](../../reference/outlook/Office.context.mailbox.md) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインでは、主に [Mailbox](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
 
 
 

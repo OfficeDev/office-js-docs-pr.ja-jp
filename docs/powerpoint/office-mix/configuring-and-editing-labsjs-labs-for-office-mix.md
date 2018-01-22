@@ -7,7 +7,7 @@ Office Mix は、ラボの構成の取得と設定のための office.js メソ�
 
 ## <a name="getting-the-lab-editor"></a>ラボ エディターを取得する
 
-[Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) オブジェクトであるラボ エディターを使用すると、ラボを編集できるほか、ラボの構成の取得と設定ができます。ラボの編集が完了したら、 **Done** メソッドを呼び出す必要があります。ただし、編集中のラボを取り込んだり実行したりするとき以外は、 **Done** メソッドを呼び出す必要はありません。一度に開くことができるラボのインスタンスは 1 つのみであることに注意してください。
+[Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) オブジェクトであるラボ エディターを使用すると、ラボを編集できるほか、ラボの構成の取得と設定ができます。ラボの編集が完了したら、 **Done** メソッドを呼び出す必要があります。ただし、編集中のラボを取り込んだり実行したりするとき以外は、 **Done** メソッドを呼び出す必要はありません。一度に開くことができるラボのインスタンスは 1 つのみであることに注意してください。
 
 次のコードは、ラボ エディターの取得方法を示しています。
 
@@ -24,7 +24,7 @@ Labs.editLab((err, labEditor) => {
 });
 ```
 
-特定のラボ向けの構成を格納するには、 **Labs.LabEditor** で **getConfiguration** メソッドと [setConfiguration](../../../reference/office-mix/labs.labeditor.md) メソッドを使用します。構成 ([Labs.Core.IConfiguration](../../../reference/office-mix/labs.core.iconfiguration.md)) は、どのデータがラボで収集および処理されるかを Office Mix に示します。構成には、名前、バージョン、その他の構成オプションなどの、ラボに関する一般的な情報が含まれています。構成の最も重要な部分は、ラボ コンポーネントの定義です。
+特定のラボ向けの構成を格納するには、 **Labs.LabEditor** で **getConfiguration** メソッドと [setConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) メソッドを使用します。構成 ([Labs.Core.IConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconfiguration)) は、どのデータがラボで収集および処理されるかを Office Mix に示します。構成には、名前、バージョン、その他の構成オプションなどの、ラボに関する一般的な情報が含まれています。構成の最も重要な部分は、ラボ コンポーネントの定義です。
 
 次のコードは、構成の設定方法および取得方法を示しています。構成を設定するには、構成オブジェクトを作成してから、 **setConfiguration** メソッドを呼び出します。続いて、構成を取得するには、ラボ エディター オブジェクトに対して **getConfiguration** メソッドを呼び出します。
 
@@ -79,7 +79,7 @@ labEditor.getConfiguration((err, configuration) => {
 
 ### <a name="getting-the-lab-instance"></a>ラボのインスタンスを取得する
 
-ラボの操作は、 [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md) オブジェクトを使用して行います。このオブジェクトは、現在のユーザー用に構成されたラボのインスタンスです。ラボの実行 (または「取り込み」) を行うには、 [Labs.takeLab](../../../reference/office-mix/labs.takelab.md) 関数を呼び出します。
+ラボの操作は、 [Labs.LabInstance](http://dev.office.com/reference/add-ins/office-mix/labs.labinstance) オブジェクトを使用して行います。このオブジェクトは、現在のユーザー用に構成されたラボのインスタンスです。ラボの実行 (または「取り込み」) を行うには、 [Labs.takeLab](http://dev.office.com/reference/add-ins/office-mix/labs.takelab) 関数を呼び出します。
 
 
 ```js
@@ -90,7 +90,7 @@ Labs.takeLab((err, labInstance) => {
 });
 ```
 
-インスタンスのオブジェクトには、コンポーネントのインスタンス ([Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md)、 [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)) の配列が含まれています。これらは、構成で指定したコンポーネントにマップされます。実際、インスタンスとは、単なる変換されたバージョンの構成であり、サーバー側の ID をインスタンス オブジェクトにアタッチし、該当する場合に特定のフィールド (ヒントと答えなど) をユーザーに表示しないようにするために使用されます。
+インスタンスのオブジェクトには、コンポーネントのインスタンス ([Labs.ComponentInstanceBase](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstancebase)、 [Labs.ComponentInstance](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstance)) の配列が含まれています。これらは、構成で指定したコンポーネントにマップされます。実際、インスタンスとは、単なる変換されたバージョンの構成であり、サーバー側の ID をインスタンス オブジェクトにアタッチし、該当する場合に特定のフィールド (ヒントと答えなど) をユーザーに表示しないようにするために使用されます。
 
 
 ### <a name="managing-state"></a>状態を管理する

@@ -17,7 +17,7 @@
 
 ### <a name="13000"></a>13000
 
-[getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) API は、このアドインまたは Office バージョンではサポートされていません。 
+[getAccessTokenAsync](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API は、このアドインまたは Office バージョンではサポートされていません。 
 
 - この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (“クイック実行” と呼ばれることもある Office 365 のサブスクリプション バージョン) です。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。 
 - アドインのマニフェストに適切な [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) セクションがありません。
