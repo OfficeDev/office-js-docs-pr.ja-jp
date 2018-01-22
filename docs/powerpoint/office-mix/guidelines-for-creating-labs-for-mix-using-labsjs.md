@@ -5,7 +5,7 @@
 
 LabsJS ライブラリ (labs.js) は、Office Mix と統合する特殊な Office アドイン (ラボといいます) の作成をサポートしています。Office Mix は、Microsoft PowerPoint を使用してラボを表示します。これらのコンポーネントを「ラボ」と呼ぶ一方で、私たちが作成しているものが特別な Office アドイン (Office Mix アドイン) であることを明確にしておきましょう。
 
-ガイドラインと使用例が示す LabsJS コンテンツは、labs.js JavaScript API の実装に役立ちます。このライブラリは、 [JavaScript API for Office](../../../reference/javascript-api-for-office.md) (Office.js) 上に作成され、Office Mix に組み込まれた アドイン向けに最適化された抽象層が設けられています。
+ガイドラインと使用例が示す LabsJS コンテンツは、labs.js JavaScript API の実装に役立ちます。このライブラリは、 [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) (Office.js) 上に作成され、Office Mix に組み込まれた アドイン向けに最適化された抽象層が設けられています。
 
 
 ## <a name="general-guidelines"></a>一般的なガイドライン

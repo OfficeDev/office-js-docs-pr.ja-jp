@@ -6,19 +6,19 @@
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
-* **共通 API**:Office 2013 で導入された共通 API ([共有 API](../../reference/javascript-api-for-office.md) とも呼ばれる) を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。
+* **共通 API**:Office 2013 で導入された共通 API ([共有 API](http://dev.office.com/reference/add-ins/javascript-api-for-office) とも呼ばれる) を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。
 
 Excel 2016 を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共有 API のオブジェクトも使用します。 例:
 
-- [Context](../../reference/shared/context.md):**Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。 
+- [Context](http://dev.office.com/reference/add-ins/shared/context):**Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。 
 
-- [Document](../../reference/shared/document.md):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。 
+- [Document](http://dev.office.com/reference/add-ins/shared/document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。 
 
 ## <a name="requirement-sets"></a>要件セット
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを確認できます。 サポートされている各プラットフォームで使用できる特定の要件セットを確認するには、「[Excel JavaScript API の要件セット](../../reference/requirement-sets/excel-api-requirement-sets.md)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを確認できます。 サポートされている各プラットフォームで使用できる特定の要件セットを確認するには、「[Excel JavaScript API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)」を参照してください。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>実行時に要件セットのサポートを確認する
 
@@ -35,7 +35,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](../../reference/manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。 
+アドインのマニフェストで [Requirements 要素](http://dev.office.com/reference/add-ins/manifest/requirements) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。 
 
 次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office ホスト アプリケーションのすべて読み込まれる必要があることを指定する、アドインのマニフェストの **Requirements** 要素を示しています。
 
@@ -51,7 +51,7 @@ else {
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 共通 API の要件セット
 
-共通 API の要件セットの詳細は、「[Office 共通 API の要件セット](../../reference/requirement-sets/office-add-in-requirement-sets.md)」を参照してください。
+共通 API の要件セットの詳細は、「[Office 共通 API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)」を参照してください。
 
 ## <a name="loading-the-properties-of-an-object"></a>オブジェクトのプロパティを読み込む
 
@@ -131,7 +131,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>スカラー プロパティとナビゲーション プロパティ 
 
-Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、[Worksheet](../../reference/excel/worksheet.md) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
+Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、[Worksheet](http://dev.office.com/reference/add-ins/excel/worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>`object.load()` を使用したスカラー プロパティとナビゲーション プロパティ
 
@@ -221,4 +221,4 @@ dataSheet.position = 1;
  
 * [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

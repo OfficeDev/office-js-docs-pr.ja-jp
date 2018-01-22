@@ -72,7 +72,7 @@ OneNote では、OneNote Online アドインの JavaScript API が導入され�
     }
 ```
 
-[API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
+[API リファレンス](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
@@ -119,6 +119,6 @@ OneNote アドインは、次の共通 API のみをサポートします。
 ## <a name="additional-resources"></a>その他の技術情報
 
 - [最初の OneNote 用アドインをビルドする](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API リファレンス](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)

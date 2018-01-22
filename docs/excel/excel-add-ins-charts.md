@@ -1,6 +1,6 @@
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
-この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](../../reference/excel/chart.md)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](../../reference/excel/chartcollection.md)」を参照してください。
+この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)」を参照してください。
 
 ## <a name="create-a-chart"></a>グラフを作成する
 
@@ -186,5 +186,5 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>その他のリソース
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Chart オブジェクト (JavaScript API for Excel)](../../reference/excel/chart.md) 
-- [Chart Collection オブジェクト (JavaScript API for Excel)](../../reference/excel/chartcollection.md)
+- [Chart オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chart) 
+- [Chart Collection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)

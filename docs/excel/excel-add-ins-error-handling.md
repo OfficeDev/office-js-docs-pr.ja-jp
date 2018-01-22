@@ -36,4 +36,4 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 ## <a name="additional-resources"></a>その他のリソース
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](../../reference/excel/error.md)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/error)

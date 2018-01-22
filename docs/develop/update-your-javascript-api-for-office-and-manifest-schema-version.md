@@ -65,7 +65,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 </OfficeApp>
 ```
 
-> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](../../reference/manifest/hosts.md) 要素と [Host](../../reference/manifest/hosts.md) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -105,7 +105,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 </OfficeApp>
 ```
 
-> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](../../reference/manifest/hosts.md) 要素と [Host](../../reference/manifest/hosts.md) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
     
 
 ## <a name="additional-resources"></a>その他のリソース
@@ -114,7 +114,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
     
 - [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../overview/add-in-manifests.md)
     

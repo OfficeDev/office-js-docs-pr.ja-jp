@@ -7,7 +7,7 @@
 
 ![アドインのサインイン プロセスを示す画像](../images/OfficeHostTitleBarLogin.png)
 
->**メモ:**現在、シングル サインオン API は Word、Excel、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+>**メモ:**現在、シングル サインオン API は Word、Excel、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)」を参照してください。
 > シングル サインオンは、現在 Outlook のプレビュー段階です。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ユーザーにとっては、サインインが一度だけになり、アドインの実行エクスペリエンスがスムーズなものになります。 開発者にとっては、アドインでユーザーを認証して、Microsoft Graph を経由したユーザーのデータへの承認済みアクセスを得るために、ユーザーが既に Office アプリケーションに提示した資格情報を使用できるということを意味します。

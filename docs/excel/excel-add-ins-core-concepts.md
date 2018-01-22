@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API の中心概念
  
-この記事では、[Excel JavaScript API を使用して Excel 2016](../../reference/excel/excel-add-ins-reference-overview.md) のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
+この記事では、[Excel JavaScript API を使用して Excel 2016](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
@@ -127,8 +127,8 @@ object.load({ loadOption });
  
 _各部分の意味は次のとおりです。_
  
-* `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。 詳細については、「[Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)」でオブジェクトに対して定義されている **load()** メソッドを参照してください。
-* `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](../../reference/excel/loadoption.md)を参照してください。
+* `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。 詳細については、「[Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)」でオブジェクトに対して定義されている **load()** メソッドを参照してください。
+* `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](http://dev.office.com/reference/add-ins/excel/loadoption)を参照してください。
 
 **load()** メソッドの詳細は、「[Excel JavaScript API の高度な概念](excel-add-ins-advanced-concepts.md)」を参照してください。
 
@@ -271,4 +271,4 @@ API エラーが発生すると、API ではコードとメッセージを含む
  
 * [Excel アドインを使う](excel-add-ins-get-started-overview.md)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

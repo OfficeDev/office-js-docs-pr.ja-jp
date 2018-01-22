@@ -164,4 +164,4 @@ Office Web アドインは、開発中であっても HTTP ではなく HTTPS �
 * [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 * [Script Lab でスニペットを探す](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

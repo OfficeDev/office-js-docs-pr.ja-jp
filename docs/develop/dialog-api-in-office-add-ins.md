@@ -1,10 +1,10 @@
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
-[ダイアログ API](../../reference/shared/officeui.md) を使用して、Office アドインでダイアログ ボックスを開くことができます。この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
+[ダイアログ API](http://dev.office.com/reference/add-ins/shared/officeui) を使用して、Office アドインでダイアログ ボックスを開くことができます。この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
 
 > **メモ:**
 
-> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。 現在、ダイアログ API は Word、Excel、PowerPoint、Outlook でサポートされています。
+> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)」を参照してください。 現在、ダイアログ API は Word、Excel、PowerPoint、Outlook でサポートされています。
 
 > ダイアログ API の主要なシナリオは、Google や Facebook などのリソースを使用して認証を有効にすることです。 アドインで Office ユーザーのデータまたは、Office 365 や OneDrive などの Microsoft Graph を使用してアクセスできるリソースのデータが必要な場合は、可能な限り、シングル サインオン API を使用することをお勧めします。 シングル サインオンの API を使用する場合、ダイアログ API を使用する必要はありません。 詳細については、「[Office アドインのシングル サインオンを有効化する](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins)」を参照してください。
 
@@ -24,7 +24,7 @@
 
 ## <a name="dialog-api-scenarios"></a>ダイアログ API のシナリオ
 
-Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) オブジェクトと [Office.context.ui 名前空間](../../reference/shared/officeui.md)の 2 つの関数を使用する次のシナリオをサポートしています。
+Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) オブジェクトと [Office.context.ui 名前空間](http://dev.office.com/reference/add-ins/shared/officeui)の 2 つの関数を使用する次のシナリオをサポートしています。
 
 ### <a name="open-a-dialog-box"></a>ダイアログ ボックスを開く
 

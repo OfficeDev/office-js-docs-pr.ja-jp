@@ -198,4 +198,4 @@ Word アドインは、Word の内部で動作し、Word JavaScript API を使�
 * [Word アドインの概要](word-add-ins-programming-overview.md)
 * [Script Lab でスニペットを探す](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Word アドインのコード サンプル](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API リファレンス](../../reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API リファレンス](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

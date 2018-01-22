@@ -1,6 +1,6 @@
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
-この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](../../reference/excel/worksheet.md)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](../../reference/excel/worksheetcollection.md)」を参照してください。
+この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)」を参照してください。
 
 **注**:この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
 
@@ -269,5 +269,5 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>その他のリソース
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Worksheet オブジェクト (JavaScript API for Excel)](../../reference/excel/worksheet.md)
-- [WorksheetCollection オブジェクト (JavaScript API for Excel)](../../reference/excel/worksheetcollection.md)
+- [Worksheet オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
+- [WorksheetCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)

@@ -26,8 +26,8 @@
 
 API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
 
-- [Word JavaScript API の要件セット](../../reference/requirement-sets/word-api-requirement-sets.md)
-- [Excel JavaScript API の要件セット](../../reference/requirement-sets/excel-api-requirement-sets.md)
-- [OneNote JavaScript API の要件セット](../../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [ダイアログ API の要件セット](../../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Office 共通 API の要件セット](../../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Word JavaScript API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets)
+- [Excel JavaScript API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)
+- [OneNote JavaScript API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets)
+- [ダイアログ API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)
+- [Office 共通 API の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

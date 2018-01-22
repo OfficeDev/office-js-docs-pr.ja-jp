@@ -21,7 +21,7 @@ Office アドインのプラットフォームには、Excel アドインの作�
 
 Excel アドインには 2 つの基本コンポーネントが含まれています。Web アプリケーションと、マニフェスト ファイルと呼ばれる構成ファイルです。 
 
-Web アプリケーションは、[JavaScript API for Office](../../reference/javascript-api-for-office.md) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を簡単にすることもできます。 たとえば、アドインでは次の操作を実行できます。
+Web アプリケーションは、[JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を簡単にすることもできます。 たとえば、アドインでは次の操作を実行できます。
 
 * ブック内のデータ (ワークシート、範囲、表、グラフ、名前付きの項目など) を作成、読み込み、更新、および削除します。
 * 標準の OAuth 2.0 のフローを使用して、オンライン サービスでユーザー認証を実行します。
@@ -60,9 +60,9 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>ブックのコンテンツを操作する JavaScript API
 
-Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む [JavaScript API for Office](../../reference/javascript-api-for-office.md) を使用して、Excel のオブジェクトを操作します。
+Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
 
 * **Shared API**:Office 2013 で導入された共有 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。 共有 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
@@ -76,4 +76,4 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 - [Office アドイン開発のベスト プラクティス](../overview/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

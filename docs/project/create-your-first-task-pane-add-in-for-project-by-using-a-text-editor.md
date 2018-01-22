@@ -93,7 +93,7 @@ Project OM Test サンプル アドインは、タスクの GUID や、アプリ
     
 2. JSOM_Sample.js という名前の JavaScript ファイルを、JSOMCall.html ファイルと同じディレクトリ内に作成します。次のコードは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。 **text** オブジェクトは、HTML ファイル内にある **textarea** コントロールの ID です。
     
-    **_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数、およびアプリケーション コンテキスト プロパティとプロジェクト ドキュメント コンテキスト プロパティを取得する **getContextValues** 関数が含まれます。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](../../reference/javascript-api-for-office.md)」を参照してください。
+    **_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数、およびアプリケーション コンテキスト プロパティとプロジェクト ドキュメント コンテキスト プロパティを取得する **getContextValues** 関数が含まれます。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)」を参照してください。
     
 
 
@@ -158,11 +158,11 @@ function getApplicationDisplayLanguage() {
 ```
 
 
-    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
+    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
     
 3. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
     
-      - たとえば、**getSelectedDataAsync** は、選択されているデータの書式設定されていないテキストを取得する、Office.js 内の汎用関数です。詳細については、[「AsyncResult オブジェクト」](../../reference/shared/asyncresult.md)を参照してください。
+      - たとえば、**getSelectedDataAsync** は、選択されているデータの書式設定されていないテキストを取得する、Office.js 内の汎用関数です。詳細については、[「AsyncResult オブジェクト」](http://dev.office.com/reference/add-ins/shared/asyncresult)を参照してください。
     
   - Project-15.js 内の  **getSelectedTaskAsync** 関数は、選択されているタスクの GUID を取得します。同様に、 **getSelectedResourceAsync** 関数は、選択されているリソースの GUID を取得します。タスクまたはリソースが選択されていない状態でこれらの関数を呼び出すと、未定義のエラーが発生します。
     
@@ -175,7 +175,7 @@ function getApplicationDisplayLanguage() {
     
   - プロジェクトが SharePoint タスク リストと同期されている場合、 **getWSSUrlAsync** 関数はそのタスク リストの URL と名前を取得します。プロジェクトが SharePoint タスク リストと同期されていない場合、 **getWSSUrlAsync** 関数はエラーによって終了します。
     
-     >**注**  タスク リストの SharePoint URL と名前を取得するには、**getProjectFieldAsync** 関数と、[ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md) 列挙型の **WSSUrl** および **WSSList** 定数を使用することをお勧めします。
+     >**注**  タスク リストの SharePoint URL と名前を取得するには、**getProjectFieldAsync** 関数と、[ProjectProjectFields](http://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration) 列挙型の **WSSUrl** および **WSSList** 定数を使用することをお勧めします。
 
     次のコードの各関数には、`function (asyncResult)` によって指定されている匿名関数が含まれます。これは、非同期の結果を取得するコールバックです。匿名関数の代わりに、複雑なアドインの保守に役立つ名前付き関数を使用できます。
     
@@ -1133,7 +1133,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
     
-- [JavaScript API for Office アドイン](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office アドイン](http://dev.office.com/reference/add-ins/javascript-api-for-office)
 
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../overview/add-in-manifests.md)     
     

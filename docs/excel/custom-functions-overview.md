@@ -80,8 +80,8 @@ Excel.run(function(ctx) {
 -   `helpUrl`:ユーザーが関数のヘルプを要求すると、Excel は作業ウィンドウを開き、この URL にある Web ページを表示します。
 -   `result`:関数が返す情報の種類を Excel に定義します。
 
-    -   `resultType`:関数は、`"string"` か `"number"` (日付と通貨にも使用されます) のいずれかを返すことができます。 詳細については、「[カスタム関数の列挙型](../../reference/excel/customfunctionsenumerations.md)」を参照してください。
-    -   `resultDimensionality`:関数は、単一の (`"scalar"`) 値または値の `"matrix"` のいずれかを返すことができます。 値の行列を返すとき、関数は配列を返します。各配列要素は値の行を表す別の配列です。 詳細については、「[カスタム関数の列挙型](../../reference/excel/customfunctionsenumerations.md)」を参照してください。 次の例では、カスタム関数から 3 行 2 列の値の行列を返します。
+    -   `resultType`:関数は、`"string"` か `"number"` (日付と通貨にも使用されます) のいずれかを返すことができます。 詳細については、「[カスタム関数の列挙型](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。
+    -   `resultDimensionality`:関数は、単一の (`"scalar"`) 値または値の `"matrix"` のいずれかを返すことができます。 値の行列を返すとき、関数は配列を返します。各配列要素は値の行を表す別の配列です。 詳細については、「[カスタム関数の列挙型](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。 次の例では、カスタム関数から 3 行 2 列の値の行列を返します。
 
 ```js
 return [["first","row"],["second","row"],["third","row"]];

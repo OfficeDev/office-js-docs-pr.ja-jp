@@ -200,7 +200,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
     
 - [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
     
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     

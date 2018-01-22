@@ -25,7 +25,7 @@
     
 4. ブラウザー コントロールが、DOM と HTML 本文を読み込み、 **window.onload** イベントに対するイベント ハンドラーを呼び出します。
     
-5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、 [Office](../../reference/shared/office.initialize.md) オブジェクトの [initialize](../../reference/shared/office.md) イベントに対するアドインのイベント ハンドラーを呼び出します。
+5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、 [Office](../../reference/shared/office.initialize.md) オブジェクトの [initialize](http://dev.office.com/reference/add-ins/shared/office) イベントに対するアドインのイベント ハンドラーを呼び出します。
     
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
     
@@ -52,7 +52,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
     
 5. ブラウザー コントロールが DOM と HTML 本文を読み込んで、 **onload** イベントに対するイベント ハンドラーを呼び出します。
     
-6. Outlook がアドインの [Office](../../reference/shared/office.initialize.md) オブジェクトの [initialize](../../reference/shared/office.md) イベントに対するイベント ハンドラーを呼び出します。
+6. Outlook がアドインの [Office](../../reference/shared/office.initialize.md) オブジェクトの [initialize](http://dev.office.com/reference/add-ins/shared/office) イベントに対するイベント ハンドラーを呼び出します。
     
 7. DOM および HTML 本文の読み込みが終わると、アドインは初期化を完了し、アドインのメイン関数は処理を続行できます。
     

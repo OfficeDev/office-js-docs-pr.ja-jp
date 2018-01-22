@@ -136,4 +136,4 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
 
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
 
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)

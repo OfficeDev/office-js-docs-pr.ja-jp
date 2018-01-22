@@ -16,9 +16,9 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 その後、次のオブジェクトのメソッドを使用して、Page.addOutline や Outline.appendHtml などのページのコンテンツを操作します。 
 
-- [Page](../../reference/onenote/page.md)
-- [Outline](../../reference/onenote/outline.md)
-- [Paragraph](../../reference/onenote/paragraph.md)
+- [Page](http://dev.office.com/reference/add-ins/onenote/page)
+- [Outline](http://dev.office.com/reference/add-ins/onenote/outline)
+- [Paragraph](http://dev.office.com/reference/add-ins/onenote/paragraph)
 
 OneNote ページのコンテンツと構造は、HTML で表されます。次に説明するように、ページ コンテンツの作成や更新には、HTML のサブセットだけがサポートされています。
 
@@ -44,6 +44,6 @@ OneNote ページのコンテンツと構造は、HTML で表されます。次�
 ## <a name="additional-resources"></a>その他のリソース
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API リファレンス](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)

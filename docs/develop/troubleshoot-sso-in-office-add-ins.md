@@ -20,7 +20,7 @@
 [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) API は、このアドインまたは Office バージョンではサポートされていません。 
 
 - この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (“クイック実行” と呼ばれることもある Office 365 のサブスクリプション バージョン) です。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。 
-- アドインのマニフェストに適切な [WebApplicationInfo](../../reference/manifest/webapplicationinfo.md) セクションがありません。
+- アドインのマニフェストに適切な [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) セクションがありません。
 
 ### <a name="13001"></a>13001
 
@@ -78,7 +78,7 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 ### <a name="invalid-or-missing-scope-permission-errors"></a>無効または不足した範囲 (アクセス許可) のエラー
 
 - サーバー側のコードは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示しなければなりません。 可能な場合は、エラーについて、コンソールでログを作成するか、ログに記録してください。
-- アドイン マニフェストの [[範囲]](../../reference/manifest/scopes.md) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
+- アドイン マニフェストの [[範囲]](http://dev.office.com/reference/add-ins/manifest/scopes) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Microsoft Graph 呼び出し時の期限切れまたは無効なトークンのエラー
 

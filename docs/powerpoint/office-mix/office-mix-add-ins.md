@@ -16,7 +16,7 @@ Microsoft Office Mix は、PowerPoint プレゼンテーションでオーディ
 
 LabsJS は、Office Mix の概念を拡張するものです。Office Mix が PowerPoint プレゼンテーションを動的なレッスンにする一方で、LabsJS を使用することにより、ユーザーは拡張された方法でレッスンを操作することができます。対話機能は、デモンストレーション、クイズ、シミュレーション、およびその他多数の種類の対話型コンテンツの形で提供されます。これらの新しい、対話型の教育コンポーネントは、「ラボ」と呼ばれます。これらのラボの実体は HTML5 と JavaScript を使用して作成された単なる Office Mix アドインです。
 
-これらのラボは、実際は labs.js API ([LabsJS JavaScript API リファレンス](../../../reference/office-mix/labsjs-javascript-api-reference.md)) を使用して JavaScript で作成されたアドインです。Labs.js は、office.js ライブラリの最上層である抽象層の役割をします。nutshell では、labs.js を使用することで、ラボを作成して Office Mix インスタンス、すなわち「ミックス」に挿入し、それらを PowerPoint で表示することが可能になります。
+これらのラボは、実際は labs.js API ([LabsJS JavaScript API リファレンス](http://dev.office.com/reference/add-ins/office-mix/labsjs-javascript-api-reference)) を使用して JavaScript で作成されたアドインです。Labs.js は、office.js ライブラリの最上層である抽象層の役割をします。nutshell では、labs.js を使用することで、ラボを作成して Office Mix インスタンス、すなわち「ミックス」に挿入し、それらを PowerPoint で表示することが可能になります。
 
 
 ## <a name="take-a-look"></a>確認する

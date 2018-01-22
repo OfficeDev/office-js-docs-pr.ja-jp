@@ -58,19 +58,19 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 - アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。 
 
-- [SourceLocation](../../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**必要があります。
+- [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**必要があります。
 
 - すべてのアイコン (コマンド サーフェスに使用されるものなど) の URL は**キャッシュを許可する**必要があります。Web サーバーは、no-cache/no-store のような HTTP ヘッダーを返してはいけません。 
 
-- Office ストアに提出するアドインには、[SupportUrl](../../reference/manifest/supporturl.md) 要素も含める必要があります。詳細については、「[提出するときの間違いを回避するには?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)」を参照してください。
+- Office ストアに提出するアドインには、[SupportUrl](http://dev.office.com/reference/add-ins/manifest/supporturl) 要素も含める必要があります。詳細については、「[提出するときの間違いを回避するには?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)」を参照してください。
 
-- 最適な結果のために、必ず [AppDomains](../../reference/manifest/appdomains.md) 要素を使い、認証シナリオのために [SourceLocation](../../reference/manifest/sourcelocation.md) 要素で指定されたもの以外のドメインを指定してください。
+- 最適な結果のために、必ず [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-既定では、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](../../reference/manifest/sourcelocation.md) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。この既定の動作は、埋め込まれている **iframe** 要素によるアドイン ウィンドウ内での予期しないページ ナビゲーションからユーザーを守るためのものです。
+既定では、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。この既定の動作は、埋め込まれている **iframe** 要素によるアドイン ウィンドウ内での予期しないページ ナビゲーションからユーザーを守るためのものです。
 
-この動作を変更するには、マニフェスト ファイルの [AppDomains](../../reference/manifest/appdomains.md) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+この動作を変更するには、マニフェスト ファイルの [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
 次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが www.northwindtraders.com ドメイン内のページに移動すると、そのページはアドイン ウィンドウで開きます。
 

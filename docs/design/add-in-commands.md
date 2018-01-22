@@ -69,7 +69,7 @@
 
 アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office アドイン コマンドのサンプル](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
-マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)」と「[VersionOverrides 要素](../../reference/manifest/versionoverrides.md)」のリファレンス資料をご覧ください。
+マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)」と「[VersionOverrides 要素](http://dev.office.com/reference/add-ins/manifest/versionoverrides)」のリファレンス資料をご覧ください。
 
 
 

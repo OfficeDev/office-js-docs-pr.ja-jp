@@ -44,7 +44,7 @@ Word JavaScript API を使用すると、アプリケーションから Word 文
 
 2 セットの JavaScript API を使用して、Word 文書のオブジェクトおよびメタデータと対話できます。1 つ目は、Office 2013 で導入された [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word) です。これは共有 API です -- 2 つ以上の Office クライアントでホストされているアドインで、多くのオブジェクトを使用することができます。この API は、広範囲にわたってコールバックを使用します。 
 
-2 つ目は、[Word JavaScript API](../../reference/word/word-add-ins-reference-overview.md) です。これは、Mac と Windows の Word 2016 を対象とする Word アドインを作成するために使用できる、厳密に型指定されたオブジェクト モデルです。このオブジェクト モデルは promise を使用し、[本文](../../reference/word/body.md)、[コンテンツ コントロール](../../reference/word/contentcontrol.md)、[インライン画像](../../reference/word/inlinepicture.md)、および[段落](../../reference/word/paragraph.md)などの Word 固有のオブジェクトへのアクセスを提供します。Word JavaScript API には、IDE 内のコード ヒントを取得できるように、TypeScript の定義と vsdoc ファイルが含まれています。
+2 つ目は、[Word JavaScript API](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview) です。これは、Mac と Windows の Word 2016 を対象とする Word アドインを作成するために使用できる、厳密に型指定されたオブジェクト モデルです。このオブジェクト モデルは promise を使用し、[本文](http://dev.office.com/reference/add-ins/word/body)、[コンテンツ コントロール](http://dev.office.com/reference/add-ins/word/contentcontrol)、[インライン画像](http://dev.office.com/reference/add-ins/word/inlinepicture)、および[段落](http://dev.office.com/reference/add-ins/word/paragraph)などの Word 固有のオブジェクトへのアクセスを提供します。Word JavaScript API には、IDE 内のコード ヒントを取得できるように、TypeScript の定義と vsdoc ファイルが含まれています。
 
 現在、Word のすべてのクライアントは共有の JavaScript API for Office をサポートし、ほとんどのクライアントは Word JavaScript API をサポートします。サポート対象のクライアントの詳細については、「[API リファレンスのドキュメント](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)」を参照してください。
 
@@ -72,12 +72,12 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>今後の Word アドイン
 
-新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](../../reference/openspec.md) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
+新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](http://dev.office.com/reference/add-ins/openspec) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 また、[変更ログ](http://dev.office.com/changelog) ページでも Word JavaScript API の新機能を確認できます。
 
 ## <a name="additional-resources"></a>その他のリソース
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Word JavaScript API リファレンス](../../reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API リファレンス](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
 

@@ -194,4 +194,4 @@ ng new my-addin
 
 * [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API リファレンス](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

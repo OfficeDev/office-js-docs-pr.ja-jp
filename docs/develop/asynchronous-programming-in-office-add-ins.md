@@ -17,7 +17,7 @@ Office アドイン API で非同期プログラミングを使用する理由 J
 ## <a name="writing-the-callback-function-for-an-async-method"></a>"Async" メソッドのコールバック関数を記述する
 
 
-"Async" メソッドに _callback_ 引数として渡すコールバック関数では、コールバック関数の実行時にアドインのランタイムが [AsyncResult](../../reference/shared/asyncresult.md) オブジェクトへのアクセスを提供するために使用する 1 つのパラメーターを宣言する必要があります。次を記述できます。
+"Async" メソッドに _callback_ 引数として渡すコールバック関数では、コールバック関数の実行時にアドインのランタイムが [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) オブジェクトへのアクセスを提供するために使用する 1 つのパラメーターを宣言する必要があります。次を記述できます。
 
 
 - "Async" メソッドの  _callback_ パラメーターとして "Async" メソッドの呼び出しと共にインラインで記述し、直接渡す必要がある匿名関数。
@@ -61,7 +61,7 @@ function write(message){
 }
 ```
 
-またコールバック関数のパラメーターを使用して、**AsyncResult** オブジェクトのその他のプロパティにアクセスすることもできます。呼び出しの成功または失敗を判断する場合は [AsyncResult.status](../../reference/shared/asyncresult.error.md) プロパティを使用します。呼び出しが失敗した場合は [AsyncResult.error](../../reference/shared/asyncresult.context.md) プロパティを使用して [Error](../../reference/shared/error.md) オブジェクトにアクセスし、エラーの詳細を確認できます。
+またコールバック関数のパラメーターを使用して、**AsyncResult** オブジェクトのその他のプロパティにアクセスすることもできます。呼び出しの成功または失敗を判断する場合は [AsyncResult.status](../../reference/shared/asyncresult.error.md) プロパティを使用します。呼び出しが失敗した場合は [AsyncResult.error](../../reference/shared/asyncresult.context.md) プロパティを使用して [Error](http://dev.office.com/reference/add-ins/shared/error) オブジェクトにアクセスし、エラーの詳細を確認できます。
 
 **getSelectedDataAsync** メソッドの使用の詳細については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。 
 
@@ -92,11 +92,11 @@ function write(message){
 
 **AsyncResult** オブジェクトの **asyncContext** プロパティ、**status** プロパティ、および **error** プロパティは、すべての "Async" メソッドに渡されるコールバック関数に同じ種類の情報を返します。ただし、**AsyncResult.value** プロパティに返される内容は "Async" メソッドの機能によって異なります。
 
-たとえば、(**Binding** オブジェクト、 [CustomXmlPart](../../reference/shared/binding.md) オブジェクト、 [Document](../../reference/shared/customxmlpart.customxmlpart.md) オブジェクト、 [RoamingSettings](../../reference/shared/document.md) オブジェクト、および [Settings](../../reference/outlook/RoamingSettings.md) オブジェクトの) [addHandlerAsync](../../reference/shared/settings.md) メソッドは、それらのオブジェクトにより表されるアイテムにイベント ハンドラー関数を追加するために使用されます。 **AsyncResult.value** プロパティには、いずれかの **addHandlerAsync** メソッドに渡すコールバック関数からアクセスできますが、イベント ハンドラーを追加すると、データまたはオブジェクトはアクセスされないため、アクセスを試行すると **value** プロパティは常に **undefined** を返します。
+たとえば、(**Binding** オブジェクト、 [CustomXmlPart](http://dev.office.com/reference/add-ins/shared/binding) オブジェクト、 [Document](../../reference/shared/customxmlpart.customxmlpart.md) オブジェクト、 [RoamingSettings](http://dev.office.com/reference/add-ins/shared/document) オブジェクト、および [Settings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクトの) [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/settings) メソッドは、それらのオブジェクトにより表されるアイテムにイベント ハンドラー関数を追加するために使用されます。 **AsyncResult.value** プロパティには、いずれかの **addHandlerAsync** メソッドに渡すコールバック関数からアクセスできますが、イベント ハンドラーを追加すると、データまたはオブジェクトはアクセスされないため、アクセスを試行すると **value** プロパティは常に **undefined** を返します。
 
 一方で、**Document.getSelectedDataAsync** メソッドを呼び出すと、ドキュメントでユーザーが選択したデータがコールバックの **AsyncResult.value** プロパティに返されます。あるいは、[Bindings.getAllAsync](../../reference/shared/bindings.getallasync.md) メソッドを呼び出すと、ドキュメントですべての **Binding** オブジェクトの配列が返されます。また、[Bindings.getByIdAsync](../../reference/shared/bindings.getbyidasync.md) メソッドを呼び出すと、**Binding** オブジェクトが 1 つ返されます。
 
-"Async" メソッドの**AsyncResult.value** プロパティに返される内容の説明については、そのメソッドの参照トピックの「コールバック値」セクションを参照してください。"Async" メソッドを提供するすべてのオブジェクトの概要については、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクト トピックの下にある表を参照してください。
+"Async" メソッドの**AsyncResult.value** プロパティに返される内容の説明については、そのメソッドの参照トピックの「コールバック値」セクションを参照してください。"Async" メソッドを提供するすべてのオブジェクトの概要については、[AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) オブジェクト トピックの下にある表を参照してください。
 
 
 ## <a name="asynchronous-programming-patterns"></a>非同期プログラミング パターン
@@ -206,7 +206,7 @@ function write(message){
 
 コールバック関数を渡し、その関数が戻るのを待ってから実行を続行する代わりに、promise プログラミング パターンを使用すれば、その意図した結果を表す promise オブジェクトがすぐに返されます。ただし、本物の同期プログラミングとは異なり、実際には Office アドインのランタイム環境が要求を完了できるまでは、約束された結果の履行は実際には延期されます。要求が履行されない状況に対処するために _onError_ ハンドラーが用意されています。
 
-JavaScript API for Office には [Office.select](../../reference/shared/office.select.md) メソッドが用意されており、既存のバインド オブジェクトと連携するための promise パターンをサポートします。**Office.select** メソッドに返される promise オブジェクトは、[Binding](../../reference/shared/binding.md) オブジェクトから直接アクセスできる 4 つのメソッド ([getDataAsync](../../reference/shared/binding.getdataasync.md)、[setDataAsync](../../reference/shared/binding.setdataasync.md)、[addHandlerAsync](../../reference/shared/asyncresult.value.md)、および [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md)) のみをサポートします。
+JavaScript API for Office には [Office.select](../../reference/shared/office.select.md) メソッドが用意されており、既存のバインド オブジェクトと連携するための promise パターンをサポートします。**Office.select** メソッドに返される promise オブジェクトは、[Binding](http://dev.office.com/reference/add-ins/shared/binding) オブジェクトから直接アクセスできる 4 つのメソッド ([getDataAsync](../../reference/shared/binding.getdataasync.md)、[setDataAsync](../../reference/shared/binding.setdataasync.md)、[addHandlerAsync](../../reference/shared/asyncresult.value.md)、および [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md)) のみをサポートします。
 
 バインドと連携する promise パターンは次のような形式になります。
 
@@ -317,7 +317,7 @@ var options = {
 
 ```
 
-[ValueFormat](../../reference/shared/valueformat-enumeration.md) パラメーターおよび [FilterType](../../reference/shared/filtertype-enumeration.md) パラメーターを指定する場合は次のようになります。
+[ValueFormat](http://dev.office.com/reference/add-ins/shared/valueformat-enumeration) パラメーターおよび [FilterType](http://dev.office.com/reference/add-ins/shared/filtertype-enumeration) パラメーターを指定する場合は次のようになります。
 
 
 
@@ -388,5 +388,5 @@ function write(message){
 
 - [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

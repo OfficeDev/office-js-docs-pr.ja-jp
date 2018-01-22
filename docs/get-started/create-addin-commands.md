@@ -2,7 +2,7 @@
 
 **適用対象:**Excel 2016 | Office アドイン | PowerPoint 2016 | Word 2016
 
-マニフェストに **[VersionOverrides](../../reference/manifest/versionoverrides.md)** を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
+マニフェストに **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。  
   
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。    

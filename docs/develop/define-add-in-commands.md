@@ -1,6 +1,6 @@
 # <a name="define-add-in-commands-in-your-manifest"></a>Outlook 用のマニフェストでアドイン コマンドを定義する
 
-アドイン コマンドは、操作を実行する UI 要素を使用して、既定の Office UI をカスタマイズする簡単な方法を提供します。たとえば、リボンにカスタムのボタンを追加できます。コマンドを作成する場合は、既存のマニフェストに **[VersionOverrides](../../reference/manifest/versionoverrides.md)** ノードを追加します。 
+アドイン コマンドは、操作を実行する UI 要素を使用して、既定の Office UI をカスタマイズする簡単な方法を提供します。たとえば、リボンにカスタムのボタンを追加できます。コマンドを作成する場合は、既存のマニフェストに **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** ノードを追加します。 
 
 マニフェストが **VersionOverrides** 要素を含む場合、アドイン コマンドをサポートする Word、Excel、Outlook、PowerPoint のバージョンは、要素内の情報を使用して、アドインをロードします。アドイン コマンドをサポートしていない以前のバージョンの Office 製品では、要素は無視されます。
 
@@ -8,7 +8,7 @@
  
 ## <a name="versionoverrides"></a>VersionOverrides
 
-[VersionOverrides](../../reference/manifest/versionoverrides.md) 要素は、アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。これは、マニフェスト スキーマ v1.1 以降でサポートされています。
+[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides) 要素は、アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。これは、マニフェスト スキーマ v1.1 以降でサポートされています。
 
 **VersionOverrides** スキーマには 2 つのバージョンがあります。
 
@@ -21,11 +21,11 @@
 
 **VersionOverrides** 要素には、次の子要素が含まれます。
 
-- [Description](../../reference/manifest/description.md)
-- [Requirements](../../reference/manifest/requirements.md)
-- [Hosts](../../reference/manifest/hosts.md)
-- [Resources](../../reference/manifest/resources.md)
-- [VersionOverrides](../../reference/manifest/versionoverrides.md)
+- [Description](http://dev.office.com/reference/add-ins/manifest/description)
+- [Requirements](http://dev.office.com/reference/add-ins/manifest/requirements)
+- [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts)
+- [Resources](http://dev.office.com/reference/add-ins/manifest/resources)
+- [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)
 
 次の図は、アドイン コマンドの定義に使用する要素の階層を示しています。 
 
