@@ -8,13 +8,13 @@ Office アドインでは、次の 2 種類の UI 要素を使用できます。
 ## <a name="add-in-commands"></a>アドイン コマンド
 コマンドは、[アドイン XML マニフェスト](../../../docs/develop/define-add-in-commands.md)で定義され、Office UI にネイティブな UX 拡張機能としてレンダーされます。たとえば、Office リボンにボタンを追加するアドイン コマンドを使用できます。 
 
-![アドイン内のアドイン コマンドとカスタム HTML UI 要素が表示されたイメージ](../../../images/layouts_addInCommands_v0.03.png)
+![アドイン内のアドイン コマンドとカスタム HTML UI 要素が表示されたイメージ](../../images/layouts_addInCommands_v0.03.png)
 
 現時点では、アドインのコマンドはメールのアドインの場合のみサポートされます。詳細については、「[メールのアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。 
 
 Excel、PowerPoint、Word には、Office リボンの [挿入] タブに、作業ウィンドウ アドインとコンテンツ アドイン用の定義済みのエントリ ポイントがあります。コンテンツ アドインと作業ウィンドウ アドインのカスタム コマンド機能は、まもなく使用できるようになる予定です。 
 
-![Word リボンの [挿入] タブを表示するイメージ](../../../images/Word-insert-tab.png)
+![Word リボンの [挿入] タブを表示するイメージ](../../images/Word-insert-tab.png)
 
 ## <a name="custom-html-based-ui"></a>カスタム HTML ベースの UI
 アドインを使用して、カスタム HTML ベースの UI を Office クライアント内に埋め込むことができます。UI の表示に使用可能なコンテナーは、アドインの種類によって異なります。たとえば、作業ウィンドウ アドインはドキュメントの右側のウィンドウにカスタム HTML ベースの UI を表示し、コンテンツ アドインは Office ドキュメント内にカスタム UI を直接表示します。

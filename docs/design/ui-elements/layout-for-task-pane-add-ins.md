@@ -7,7 +7,7 @@
 - アドイン コンテンツ
 - ブランド化の要素 (省略可能)
 
-![ブランド、ナビゲーション、コンテンツの要素を表示する、作業ウィンドウのレイアウト](../../../images/layouts_taskpane_v0.02.png)
+![ブランド、ナビゲーション、コンテンツの要素を表示する、作業ウィンドウのレイアウト](../../images/layouts_taskpane_v0.02.png)
 
 [カスタム HTML ベースの UI](ui-elements.md#custom-HTML-based-UI) を作業ウィンドウに追加できます。
 

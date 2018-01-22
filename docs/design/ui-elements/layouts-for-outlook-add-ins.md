@@ -16,7 +16,7 @@
 
 以下の図は、[コンテキスト メール アドイン](https://msdn.microsoft.com/EN-US/library/office/dn893542.aspx)に推奨されるレイアウトを示しています。
 
-![コンテキスト メール アドインのレイアウト](../../../images/mail-add-in-contextual-card.png)
+![コンテキスト メール アドインのレイアウト](../../images/mail-add-in-contextual-card.png)
 
 ##<a name="functions-with-infobar-notifications"></a>InfoBar 通知付きの機能
 

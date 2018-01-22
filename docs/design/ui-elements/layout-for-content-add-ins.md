@@ -6,7 +6,7 @@
 - アドイン コンテンツ
 - ブランド化の要素 (省略可能)
 
-![コンテンツ アドイン、コンテンツ、コマンド バーのレイアウト](../../../images/layouts_content_v0.02.png)
+![コンテンツ アドイン、コンテンツ、コマンド バーのレイアウト](../../images/layouts_content_v0.02.png)
 
 [カスタム HTML ベースの UI](ui-elements.md#custom-HTML-based-UI) をコンテンツ アドインに追加することもできます。
 
