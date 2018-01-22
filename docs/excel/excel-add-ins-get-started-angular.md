@@ -43,7 +43,7 @@ ng new my-addin
     ```bash
     yo office
     ```
-    ![Yeoman ジェネレーター](../../images/yo-office.png)
+    ![Yeoman ジェネレーター](../images/yo-office.png)
     > **注**:**package.json** を上書きするメッセージが表示された場合は、**No** (上書きしない) と答えます。
 
 3. マニフェスト ファイル (つまり、アプリのルート ディレクトリ内にある、名前が "manifest.xml" で終わるファイル) を開きます。 `https://localhost:3000` の出現箇所すべてを `http://localhost:4200` で置き換えて、ファイルを保存します。
@@ -180,11 +180,11 @@ ng new my-addin
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../../images/excel_quickstart_addin_2a.png)
+    ![Excel アドイン ボタン](../images/excel_quickstart_addin_2a.png)
 
 3. 作業ウィンドウで **[色の選択]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
-    ![Excel アドイン](../../images/excel_quickstart_addin_2b.png)
+    ![Excel アドイン](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>次の手順
 

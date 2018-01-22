@@ -5,7 +5,7 @@
 
 次の画像は、作成するアドインを示しています。
 
-   ![このチュートリアルでビルドした OneNote アドイン](../../images/onenote-first-add-in.png)
+   ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
 ## 手順 1:開発環境をセットアップし、アドイン プロジェクトを作成する
@@ -117,7 +117,7 @@ function addOutlineToPage() {
   
   次の図は、コンシューマー ノートブックの **[マイ アドイン]** タブを示しています。
 
-  ![[マイ アドイン] タブを示す [Office アドイン] ダイアログ](../../images/onenote-office-add-ins-dialog.png)
+  ![[マイ アドイン] タブを示す [Office アドイン] ダイアログ](../images/onenote-office-add-ins-dialog.png)
 
 5 - [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **onenote-add-in-manifest.xml** を参照し、**[アップロード]** を選択します。テスト中に、マニフェスト ファイルはブラウザーのローカル ストレージに保存されます。
 
@@ -129,7 +129,7 @@ function addOutlineToPage() {
 
 -OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。
 
-![デバッガーでアンロードされた OneNote オブジェクト](../../images/onenote-debug.png)
+![デバッガーでアンロードされた OneNote オブジェクト](../images/onenote-debug.png)
 
 -アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。
 

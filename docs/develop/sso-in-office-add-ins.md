@@ -5,7 +5,7 @@
 * ユーザーにアドインへのサインインを承認する。
 * アドインに [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスを承認する。
 
-![アドインのサインイン プロセスを示す画像](../../images/OfficeHostTitleBarLogin.png)
+![アドインのサインイン プロセスを示す画像](../images/OfficeHostTitleBarLogin.png)
 
 >**メモ:**現在、シングル サインオン API は Word、Excel、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
 > シングル サインオンは、現在 Outlook のプレビュー段階です。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
@@ -22,7 +22,7 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 次の図は、SSO の動作のしくみを示しています。
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![SSO プロセスを示す図](../../images/SSOOverviewDiagram.png)
+![SSO プロセスを示す図](../images/SSOOverviewDiagram.png)
 
 1. アドインでは、JavaScript は新しい Office.js API `getAccessTokenAsync` を呼び出します。 これにより、Office ホスト アプリケーションにアドインへのアクセス トークンを取得するように指示します。 (今後は、これを「**アドイン トークン**」と呼びます。)
 1. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。

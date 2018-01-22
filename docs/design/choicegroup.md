@@ -4,7 +4,7 @@ ChoiceGroup コンポーネント (ラジオ ボタンとも呼ばれる) は、
   
 #### <a name="example-choicegroup-in-a-task-pane"></a>例:作業ウィンドウでの ChoiceGroup
 
- ![ChoiceGroup が表示された画像](../../images/overview_withApp_choicegroup.png)
+ ![ChoiceGroup が表示された画像](../images/overview_withApp_choicegroup.png)
 
 <br/>
 
@@ -12,7 +12,7 @@ ChoiceGroup コンポーネント (ラジオ ボタンとも呼ばれる) は、
 
 |**するべきこと**|**使用不可**|
 |:------------|:--------------|
-|ChoiceGroup オプションは、同じレベルを維持します。<br/><br/>![ChoiceGroup でするべきことの例](../../images/choiceDo.png)<br/>|入れ子になった ChoiceGroup またはチェック ボックスは使用しないでください。<br/><br/>![ChoiceGroup でしてはいけないことの例](../../images/choiceDont.png)<br/>|
+|ChoiceGroup オプションは、同じレベルを維持します。<br/><br/>![ChoiceGroup でするべきことの例](../images/choiceDo.png)<br/>|入れ子になった ChoiceGroup またはチェック ボックスは使用しないでください。<br/><br/>![ChoiceGroup でしてはいけないことの例](../images/choiceDont.png)<br/>|
 |ChoiceGroup で 2 個から 7 個のオプションを使用します。画面にすべてのオプションを表示できる十分なスペースがあることを確認します。 十分なスペースがない場合は、チェック ボックスまたはドロップダウン リストを使用します。|オプションが固定の段階の数字の場合は使用しないでください。たとえば、10、20、30 などです。 代わりに、スライダー コンポーネントを使用します。|
 |ユーザーがオプションを選択しない可能性がある場合は、**なし**や**該当しません**などのオプションを含めることを検討してください。|単一のバイナリ選択には、2 つの ChoiceGroup ボタンを使用しないでください。|
 |可能であれば、ChoiceGroup ボタンは水平方向ではなく垂直方向に、一列に配置します。水平方向に配置すると、読み取りやローカライズが難しくなります。||
@@ -22,8 +22,8 @@ ChoiceGroup コンポーネント (ラジオ ボタンとも呼ばれる) は、
 
 |**バリエーション**|**説明**|**例**|
 |:------------|:--------------|:----------|
-|**ChoiceGroup**|選択を行うために画像が不要な場合に使用します。|![ChoiceGroup バリアントの画像](../../images/radio.png)<br/>|
-|**画像を使用した ChoiceGroup**|選択を行うために画像が必要な場合に使用します。|![ChoiceGroup バリアントと画像](../../images/radioImage.png)<br/>|
+|**ChoiceGroup**|選択を行うために画像が不要な場合に使用します。|![ChoiceGroup バリアントの画像](../images/radio.png)<br/>|
+|**画像を使用した ChoiceGroup**|選択を行うために画像が必要な場合に使用します。|![ChoiceGroup バリアントと画像](../images/radioImage.png)<br/>|
 
 ## <a name="implementation"></a>実装
 

@@ -18,7 +18,7 @@
 
 次の画像は、ダイアログ ボックスの例を示します。
 
-![アドイン コマンド](../../images/Auth0DialogOpen.PNG)
+![アドイン コマンド](../images/Auth0DialogOpen.PNG)
 
 ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウは*モードレス*です。ホスト Office アプリケーションのドキュメントの操作と、作業ウィンドウのホスト ページ (存在する場合) の操作の両方を続行できます。
 
@@ -362,7 +362,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ダイアログ ボックスにビデオを表示するサンプルについては、「[Office アドインの UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)」リポジトリの[ビデオ プレースマット設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)を参照してください。
 
-![アドイン ダイアログ ボックスに表示されるビデオのスクリーン ショット。](../../images/VideoPlacematDialogOpen.PNG)
+![アドイン ダイアログ ボックスに表示されるビデオのスクリーン ショット。](../images/VideoPlacematDialogOpen.PNG)
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>認証フローでダイアログ API を使用する
 

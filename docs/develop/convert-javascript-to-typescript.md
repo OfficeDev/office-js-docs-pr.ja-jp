@@ -28,7 +28,7 @@ TypeScript プロジェクトには、TypeScript ファイルと JavaScript フ�
 1.  Visual Studio を開き、**[ファイル]** > **[新規]** > **[プロジェクト]** と移動します。 
 2.  **[Office/SharePoint]** の下にある **[Excel アドイン]** を選択してから、**[OK]** を選択します。
 
-    ![Visual Studio の Excel アドイン テンプレート](../../images/visual-studio-addin-template.png)
+    ![Visual Studio の Excel アドイン テンプレート](../images/visual-studio-addin-template.png)
 
 3.  アプリの作成ウィザードで、**[新機能を Excel に追加する]**、**[完了]** の順に選択します。
 4.  F5 を押すか、緑色の **[開始]** ボタンを押して新しく作成した Excel アドインを起動して簡単なテストを実行します。 アドインは IIS でローカルにホストされ、アドインが読み込まれた状態で Excel が開きます。
@@ -39,13 +39,13 @@ TypeScript プロジェクトには、TypeScript ファイルと JavaScript フ�
 2. ファイル名拡張子の変更について確認する表示が示される場合、**[はい]** を選択します。  
 3. 次のスクリーンショットに示されているように、NuGet で TypeScript 型指定の検索を行うかどうか尋ねられる場合には、**[はい]** を選択します。 **Nuget Package Manager** が開きます。
 
-    ![[TypeScript 型指定の検索] ダイアログ ボックス](../../images/search-typescript-typings.png)
+    ![[TypeScript 型指定の検索] ダイアログ ボックス](../images/search-typescript-typings.png)
 
 4. **Nuget Package Manager** で.**[参照]** を選択します。  
 5. [検索] ボックスに、**office-js tag:typescript** と入力します。
 6. 次のスクリーンショットに示されているように、**office.js.TypeScript.DefinitelyTyped** と **jquery.TypeScript.DefinitelyTyped** をインストールします。
 
-    ![TypeScript DefinitelyTyped NuGet](../../images/typescript-definitelytyped-nugets.png)
+    ![TypeScript DefinitelyTyped NuGet](../images/typescript-definitelytyped-nugets.png)
 
 7. Home.ts (変更前は Home.js) を開きます。Home.ts ファイルの先頭部分から以下の参照部分を削除します。
 

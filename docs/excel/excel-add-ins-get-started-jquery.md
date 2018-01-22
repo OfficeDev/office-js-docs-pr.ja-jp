@@ -25,7 +25,7 @@
     ```bash
     yo office
     ```
-    ![Yeoman ジェネレーター](../../images/yo-office-jquery.png)
+    ![Yeoman ジェネレーター](../images/yo-office-jquery.png)
 
 
 4. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルでは、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 
@@ -147,13 +147,13 @@ Office Web アドインは、開発中であっても HTTP ではなく HTTPS �
 
 3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../../images/excel_quickstart_addin_2a.png)
+    ![Excel アドイン ボタン](../images/excel_quickstart_addin_2a.png)
 
 4. ワークシート内で任意のセルの範囲を選択します。
 
 5. 作業ウィンドウで、**[色の選択]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
-    ![Excel アドイン](../../images/excel_quickstart_addin_2b.png)
+    ![Excel アドイン](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>次の手順
 

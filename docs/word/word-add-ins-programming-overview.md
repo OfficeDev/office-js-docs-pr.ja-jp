@@ -12,7 +12,7 @@ Word のアドインは、[Office アドイン プラットフォーム](../over
 
 **図 1.Word の作業ウィンドウで実行されているアドイン**
 
-![Word の作業ウィンドウで実行されているアドイン](../../images/WordAddinShowHostClient.png)
+![Word の作業ウィンドウで実行されているアドイン](../images/WordAddinShowHostClient.png)
 
 Word アドイン (1) は、Word 文書 (2) に要求を送信し、JavaScript を使用して段落オブジェクトにアクセスして段落を更新、削除、または移動することができます。たとえば、次のコードは、その段落に新しい文を追加する方法を示しています。
 

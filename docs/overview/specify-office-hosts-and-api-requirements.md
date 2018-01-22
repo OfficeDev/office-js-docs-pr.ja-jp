@@ -56,7 +56,7 @@
 Office ホストまたは API の要件を指定するときに、検討すべき事項がいくつかあります。次の図に、アドインで使用すべき手法の判別方法を示します。
 
 
-![Office のホストまたは API の要件を指定する際に、アドインに最適なオプションを選択する](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
+![Office のホストまたは API の要件を指定する際に、アドインに最適なオプションを選択する](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
 - アドインを 1 つの Office ホストで実行する場合、マニフェストに **Hosts** 要素を設定します。詳しくは、「[Hosts 要素を設定する](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)」を参照してください。
     

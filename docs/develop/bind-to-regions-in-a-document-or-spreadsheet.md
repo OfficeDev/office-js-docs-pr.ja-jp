@@ -94,7 +94,7 @@ function write(message){
 
 **図 1.Excel のデータ選択 UI**
 
-![Excel のデータ選択 UI](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel のデータ選択 UI](../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>名前付きアイテムにバインドを追加する

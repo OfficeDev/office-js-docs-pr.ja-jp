@@ -9,7 +9,7 @@
 
 次の図は、Excel、PowerPoint、Project、Word、または Access でコンテンツ アドインまたは作業ウィンドウ アドインの起動に関連するイベントのフローを示しています。
 
-![コンテンツ アドインまたは作業ウィンドウ アドイン起動時のイベントのフロー](../../images/off15appsdk_LoadingDOMAgaveRuntime.png)
+![コンテンツ アドインまたは作業ウィンドウ アドイン起動時のイベントのフロー](../images/off15appsdk_LoadingDOMAgaveRuntime.png)
 
 コンテンツ アドインまたは作業ウィンドウ アドインが起動すると、次のイベントが発生します。 
 
@@ -36,7 +36,7 @@
 
 次の図は、デスクトップ、タブレット、スマートフォンで実行される Outlook アドインの起動に関係するイベントのフローを示しています。
 
-![Outlook アドイン起動時のイベントのフロー](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
+![Outlook アドイン起動時のイベントのフロー](../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 
 Outlook アドインが起動すると、次のイベントが発生します。 
 

@@ -6,7 +6,7 @@
 
 <br/>
 
-![ドロップダウンが表示された画像](../../images/overview_withApp_dropdown.png)
+![ドロップダウンが表示された画像](../images/overview_withApp_dropdown.png)
 
 <br/>
 
@@ -22,9 +22,9 @@
 
 |**バリエーション**|**説明**|**例**|
 |:------------|:--------------|:----------|
-|**基本的な未制御のドロップダウン**|多くのオプションが選択可能な場合に使用します。|![基本的な未制御のドロップダウンの画像](../../images/dropdownUncontrolled.png)<br/>|
-|**defaultSelectedKey を使用して無効化された未制御のドロップダウン**|ドロップダウンが無効にされた状態です。|![defaultSelectedKey を使用して無効化された未制御のドロップダウンの画像](../../images/dropdownDisabled.png)<br/>|
-|**制御されたドロップダウン**|既定の選択済み項目が UI の別の場所の影響を受け、ドロップダウン内の選択された項目を保持する必要がある場合に使用します。|![制御されたドロップダウンの画像](../../images/dropdownControlled.png)<br/>|
+|**基本的な未制御のドロップダウン**|多くのオプションが選択可能な場合に使用します。|![基本的な未制御のドロップダウンの画像](../images/dropdownUncontrolled.png)<br/>|
+|**defaultSelectedKey を使用して無効化された未制御のドロップダウン**|ドロップダウンが無効にされた状態です。|![defaultSelectedKey を使用して無効化された未制御のドロップダウンの画像](../images/dropdownDisabled.png)<br/>|
+|**制御されたドロップダウン**|既定の選択済み項目が UI の別の場所の影響を受け、ドロップダウン内の選択された項目を保持する必要がある場合に使用します。|![制御されたドロップダウンの画像](../images/dropdownControlled.png)<br/>|
 
 ## <a name="implementation"></a>実装
 

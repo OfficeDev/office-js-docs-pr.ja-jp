@@ -187,7 +187,7 @@ Word アドインは、Word の内部で動作し、Word JavaScript API を使�
 
 2. 右側の作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。
 
-![定型句アドインが読み込まれている Word アプリケーションの画像。](../../images/boilerplateAddin.png)
+![定型句アドインが読み込まれている Word アプリケーションの画像。](../images/boilerplateAddin.png)
 
 ## <a name="next-steps"></a>次のステップ
 

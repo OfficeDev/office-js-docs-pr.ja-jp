@@ -21,12 +21,12 @@ Segoe は、Office の標準的な書体です。Office の作業ウィンドウ
 
 |サンプル |クラス |サイズ |太さ |お勧めの用法 |
 |------ |----- |---- |------ |----------------- |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>これは、Office の他のすべての文字体裁の要素よりも大きいクラスです。視覚的な階層から外れないように、慎重に使用します。</li><li>制約のある領域内で長い文字列に対して使用しないでください。</li><li>このクラスを使用して、テキストの周りに十分な余白を確保してください。</li><li>通常、最初の実行メッセージ、ヒーロー要素、その他の行動喚起に使用します。</li></ul> |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>このクラスは、Office アプリケーションの作業ウィンドウ タイトルと一致します。</li><li>文字体裁の階層が平板にならないように、慎重に使用します。</li><li>通常、ダイアログ ボックス、ページ、コンテンツ タイトルなどの最上位の要素として使用します。</li><li></ul> |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>このクラスは、タイトルの 1 つ下です。</li><li>通常、サブタイトル、ナビゲーション要素、グループ ヘッダーとして使用します。</li><ul> |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |*通常、アドイン内の本文として使用します。 |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |*通常、タイムスタンプなどの 2 番目や 3 番目のテキストとして、行、キャプション、フィールド ラベルごとに使用します。 |
-|![ヒーロー テキスト イメージ](../../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |*文字体裁の最小の階層は、稀にしか使用しないでください。読みやすさが求められない状況で使用できます。 |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>これは、Office の他のすべての文字体裁の要素よりも大きいクラスです。視覚的な階層から外れないように、慎重に使用します。</li><li>制約のある領域内で長い文字列に対して使用しないでください。</li><li>このクラスを使用して、テキストの周りに十分な余白を確保してください。</li><li>通常、最初の実行メッセージ、ヒーロー要素、その他の行動喚起に使用します。</li></ul> |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>このクラスは、Office アプリケーションの作業ウィンドウ タイトルと一致します。</li><li>文字体裁の階層が平板にならないように、慎重に使用します。</li><li>通常、ダイアログ ボックス、ページ、コンテンツ タイトルなどの最上位の要素として使用します。</li><li></ul> |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>このクラスは、タイトルの 1 つ下です。</li><li>通常、サブタイトル、ナビゲーション要素、グループ ヘッダーとして使用します。</li><ul> |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |*通常、アドイン内の本文として使用します。 |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |*通常、タイムスタンプなどの 2 番目や 3 番目のテキストとして、行、キャプション、フィールド ラベルごとに使用します。 |
+|![ヒーロー テキスト イメージ](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |*文字体裁の最小の階層は、稀にしか使用しないでください。読みやすさが求められない状況で使用できます。 |
 > これらの基底クラスには、テキストの色が含まれていません。背景が白の場合、ほとんどのテキストには Fabric の "中間色" を使用します。
 
 ## <a name="color"></a>色

@@ -11,7 +11,7 @@
 **図 1.選択した語句の定義を表示する辞書アドイン**
 
 
-![定義が表示されている辞書アプリ](../../images/DictionaryAgave01.jpg)
+![定義が表示されている辞書アプリ](../images/DictionaryAgave01.jpg)
 
 辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
 
@@ -19,22 +19,22 @@
 
 
 
-![コンテキスト メニューの定義](../../images/DictionaryAgave02.jpg)
+![コンテキスト メニューの定義](../images/DictionaryAgave02.jpg)
 
 **図 3.スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示**
 
 
-![スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示](../../images/DictionaryAgave03.jpg)
+![スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示](../images/DictionaryAgave03.jpg)
 
 **図 4.類義語辞典ウィンドウでの定義の表示**
 
 
-![類義語辞典ウィンドウでの定義の表示](../../images/DictionaryAgave04.jpg)
+![類義語辞典ウィンドウでの定義の表示](../images/DictionaryAgave04.jpg)
 
 **図 5.読み取りモードでの定義**
 
 
-![読み取りモードでの定義](../../images/DictionaryAgave05.jpg)
+![読み取りモードでの定義](../images/DictionaryAgave05.jpg)
 
 辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。 
 
@@ -533,7 +533,7 @@ a:hover, a:active
 
 **図 6.辞書 UI のデモ**
 
-![辞書 UI のデモ](../../images/DictionaryAgave06.jpg)
+![辞書 UI のデモ](../images/DictionaryAgave06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>JavaScript の実装の記述

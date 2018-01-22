@@ -4,7 +4,7 @@
 
 次の図は、作成できる Office UI 要素の種類を示しています。
 
-![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../../images/overview_withApp_interfaceElements.png)
+![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../images/overview_withApp_interfaceElements.png)
 
 ## <a name="add-in-commands"></a>アドイン コマンド
 

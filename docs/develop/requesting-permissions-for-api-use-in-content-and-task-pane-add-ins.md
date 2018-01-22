@@ -13,7 +13,7 @@
 
 **図 1.コンテンツ アドインと作業ウィンドウ アドインの 5 レベル アクセス許可モデル**
 
-![作業ウィンドウ アプリの権限レベル](../../images/off15appsdk_TaskPaneAppPermission.gif)
+![作業ウィンドウ アプリの権限レベル](../images/off15appsdk_TaskPaneAppPermission.gif)
 
 
 

@@ -35,14 +35,14 @@ Windows デスクトップの場合は、制限付きサイト ゾーンに対�
 
 **図 1.Windows ベースのデスクトップおよびタブレットのクライアントにおける Office アドインのランタイム環境**
 
-![リッチ クライアント インフラストラクチャ](../../images/DK2_AgaveOverview02.png)
+![リッチ クライアント インフラストラクチャ](../images/DK2_AgaveOverview02.png)
 
 OS X Mac デスクトップの場合は、図 2 に示すように、アドインの Web ページはセキュリティで保護された WebKit ランタイム ホスト プロセス内にホストされ、それによって同様のレベルのセキュリティとパフォーマンスの保護が提供されます。 
 
 
 **図 2.OS X Mac クライアントにおける Office アドインのランタイム環境**
 
-![OS X Mac 上の Office ランタイム環境用アプリ](../../images/DK2_AgaveOverview_Mac_02.png)
+![OS X Mac 上の Office ランタイム環境用アプリ](../images/DK2_AgaveOverview_Mac_02.png)
 
 Office アドイン ランタイムは、プロセス間通信、JavaScript API 呼び出しとイベントの固有形式への変換、および UI リモート処理サポートを管理し、アドインがドキュメント内や作業ウィンドウ内、あるいは電子メール メッセージ、会議出席依頼、予定の隣に表示されるようにします。
 
@@ -54,7 +54,7 @@ Excel Online や Outlook Web App などのサポート対象の Web クライア
 
 **図 3.Office Web クライアント内で Office アドインをサポートするインフラストラクチャ**
 
-![Web クライアント インフラストラクチャ](../../images/DK2_AgaveOverview03.png)
+![Web クライアント インフラストラクチャ](../images/DK2_AgaveOverview03.png)
 
 
 ## <a name="add-in-integrity-in-the-office-store"></a>Office ストアでのアドインの完全性

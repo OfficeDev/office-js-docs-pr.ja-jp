@@ -44,19 +44,19 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 **カスタム リボンのボタン**
 
-![アドイン コマンド](../../images/Excel_add-in_commands_Script-Lab.png)
+![アドイン コマンド](../images/Excel_add-in_commands_Script-Lab.png)
 
 **作業ウィンドウ**
 
-![アドイン作業ウィンドウ](../../images/Excel_add-in_task_pane_Insights.png)
+![アドイン作業ウィンドウ](../images/Excel_add-in_task_pane_Insights.png)
 
 **ダイアログ ボックス**
 
-![アドイン ダイアログ ボックス](../../images/Excel_add-in_dialog_choose-number.png)
+![アドイン ダイアログ ボックス](../images/Excel_add-in_dialog_choose-number.png)
 
 **コンテンツ アドイン**
 
-![コンテンツ アドイン](../../images/Excel_add-in_content_map.png)
+![コンテンツ アドイン](../images/Excel_add-in_content_map.png)
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>ブックのコンテンツを操作する JavaScript API
 

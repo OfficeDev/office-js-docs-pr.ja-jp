@@ -4,7 +4,7 @@
 
 **例:コンテンツ アドイン**
 
-![コンテンツ アドインの一般的なレイアウトを表示する画像の例](../../images/overview_withApp_content.png)
+![コンテンツ アドインの一般的なレイアウトを表示する画像の例](../images/overview_withApp_content.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -23,13 +23,13 @@ Office 2016 デスクトップと Office 365 の Word、Excel、PowerPoint の�
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 
-![Windows デスクトップのパーソナル メニューを示す図](../../images/personalityMenu_Win.png)
+![Windows デスクトップのパーソナル メニューを示す図](../images/personalityMenu_Win.png)
 
 **Mac のパーソナル メニュー**
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、占有スペースは 34x32 ピクセルに増加します (図を参照)。
 
-![Mac デスクトップのパーソナル メニューを示す図](../../images/personalityMenu_Mac.png)
+![Mac デスクトップのパーソナル メニューを示す図](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>実装
 

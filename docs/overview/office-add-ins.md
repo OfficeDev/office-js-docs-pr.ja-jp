@@ -32,7 +32,7 @@ Office アドインは、VBA、COM、VSTO を使用して作成されたアド�
 Office アドインには、2 つの基本的なコンポーネントが含まれています。XML マニフェスト ファイルと独自の Web アプリケーションです。マニフェストは、アドインを Office クライアントと統合する方法など、さまざまな設定を定義します。Web アプリケーションは Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされる必要があります。
 
 **Office アドインはマニフェストと Web ページによって構成される**
-![Office アドインはマニフェストと Web ページによって構成される](../../images/DK2_AgaveOverview01.png)
+![Office アドインはマニフェストと Web ページによって構成される](../images/DK2_AgaveOverview01.png)
 
 ### <a name="manifest"></a>マニフェスト 
 
@@ -50,7 +50,7 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 **Hello World Office アドインのコンポーネント**
 
-![Hello World アドインのコンポーネント](../../images/DK2_AgaveOverview07.png)
+![Hello World アドインのコンポーネント](../images/DK2_AgaveOverview07.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Office クライアントの拡張と、Office クライアントとの対話 
 
@@ -75,14 +75,14 @@ Office アドインは、Office ホスト アプリケーション内で次を�
 デスクトップ版 Office for Windows と Office Online のリボンにカスタム リボン ボタンおよびメニュー項目を追加できます。これにより、ユーザーは、Office アプリケーションから直接アドインに簡単にアクセスできます。コマンド ボタンは、カスタム HTML を使用して作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
 
 **デスクトップ版 Excel で実行されているアドイン コマンド**
-![カスタム ボタンとメニュー コマンド](../../images/add-in-commands-overview..png)
+![カスタム ボタンとメニュー コマンド](../images/add-in-commands-overview..png)
 
 #### <a name="task-panes"></a>作業ウィンドウ  
 
 ユーザーがソリューションと対話できるようにするために、アドイン コマンドに加えて、作業ウィンドウを使用できます。アドイン コマンド (Office 2013 および Office for iPad) をサポートしていないクライアントは、アドインを作業ウィンドウとして実行します。ユーザーは、[挿入] タブの **[アドイン]** ボタンを使用して作業ウィンドウのアドインを起動します。 
 
 **作業ウィンドウ**
-![作業ウィンドウ](../../images/task-pane-overview.jpg)
+![作業ウィンドウ](../images/task-pane-overview.jpg)
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する 
 
@@ -98,7 +98,7 @@ Excel および PowerPoint のドキュメント内に Web ベースのオブジ
 
 **コンテンツ アドイン**
 
-![コンテンツ アドイン内](../../images/DK2_AgaveOverview05.png)
+![コンテンツ アドイン内](../images/DK2_AgaveOverview05.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API 
 

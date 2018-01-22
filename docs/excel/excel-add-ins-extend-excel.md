@@ -8,7 +8,7 @@ Excel アドインでは、ブックのコンテンツとやりとりするだ�
 
 **アドイン コマンド**
 
-![Excel のアドイン コマンド](../../images/Excel_add-in_commands_Script-Lab.png)
+![Excel のアドイン コマンド](../images/Excel_add-in_commands_Script-Lab.png)
 
 コマンドの機能、サポートされているプラットフォーム、およびアドイン コマンド開発のベスト プラクティスについては、「[Excel、Word、および PowerPoint のアドイン コマンド](../design/add-in-commands.md)」を参照してください。
 
@@ -18,7 +18,7 @@ Excel アドインでは、ブックのコンテンツとやりとりするだ�
 
 **作業ウィンドウ**
 
-![Excel の作業ウィンドウ アドイン](../../images/Excel_add-in_task_pane_Insights.png)
+![Excel の作業ウィンドウ アドイン](../images/Excel_add-in_task_pane_Insights.png)
 
 作業ウィンドウの詳細については、「[Office アドインの作業ウィンドウ](../design/task-pane-add-ins.md)」を参照してください。Excel の作業ウィンドウを実装するサンプルについては、「[Excel アドインの JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)」を参照してください。
 
@@ -28,7 +28,7 @@ Excel アドインでは、ブックのコンテンツとやりとりするだ�
 
 **ダイアログ ボックス**
 
-![Excel のアドイン ダイアログ ボックス](../../images/Excel_add-in_dialog_choose-number.png)
+![Excel のアドイン ダイアログ ボックス](../images/Excel_add-in_dialog_choose-number.png)
 
 ダイアログ ボックスとダイアログ API の詳細については、「[Office アドインのダイアログ ボックス](../design/dialog-boxes.md)」と「[Office アドインでダイアログ API を使用する](../develop/dialog-api-in-office-add-ins.md)」を参照してください。
 
@@ -38,7 +38,7 @@ Excel アドインでは、ブックのコンテンツとやりとりするだ�
 
 **コンテンツ アドイン**
 
-![Excel のコンテンツ アドイン](../../images/Excel_add-in_content_map.png)
+![Excel のコンテンツ アドイン](../images/Excel_add-in_content_map.png)
 
 コンテンツ アドインの詳細については、「[コンテンツ Office アドイン](../design/content-add-ins.md)」を参照してください。Excel のコンテンツ アドインの実装サンプルについては、GitHub の「[Excel コンテンツ アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)」を参照してください。
 

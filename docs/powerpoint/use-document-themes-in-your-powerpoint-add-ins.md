@@ -16,12 +16,12 @@ OfficeThemes.css を使用すると、次の 2 つの方法でアドインを Po
 すべての Office 文書のテーマには 12 色が定義されています。これらのうち 10 色は、色選択を使ってプレゼンテーション内のフォントや背景などの色を設定するときに利用できます。
 
 
-![カラー パレット](../../images/off15app_ColorPalette.png)
+![カラー パレット](../images/off15app_ColorPalette.png)
 
 PowerPoint でテーマの 12 色をすべて表示したりカスタマイズしたりするには、**[デザイン]** タブの **[バリエーション]** グループで、**[その他]** ドロップダウンをクリックしてから、**[色]** をポイントし、**[色のカスタマイズ]** をクリックして **[新しいテーマの色の作成]** ダイアログ ボックスを表示します。
 
 
-![新しいテーマの色のダイアログ ボックスの作成](../../images/off15app_CreateNewThemeColors.png)
+![新しいテーマの色のダイアログ ボックスの作成](../images/off15app_CreateNewThemeColors.png)
 
 最初の 4 色はテキストと背景用です。テキストを明るい色で作成すると常に暗い色より読みやすくなり、テキストを暗い色で作成すると常に明るい色より読みやすくなります。続く 6 色は、4 つの背景になる色の上に常に表示されるアクセントです。最後の 2 色は、ハイパーリンクと表示済みハイパーリンクの色です。
 
@@ -31,12 +31,12 @@ PowerPoint でテーマの 12 色をすべて表示したりカスタマイズ�
 すべての Office 文書のテーマには 2 つのフォント (見出し用と本文テキスト用) も定義されています。PowerPoint はこれらのフォントを使って自動的にテキスト スタイルを構成します。また、テキストと**ワードアート**の**クイック スタイル** ギャラリーでも同じテーマのフォントを使います。これらの 2 つのフォントは、フォント ピッカーを使ってフォントを選択するときに、最初の 2 つの選択項目として利用できます。
 
 
-![フォント ピッカー](../../images/off15app_FontPicker.png)
+![フォント ピッカー](../images/off15app_FontPicker.png)
 
 PowerPoint でテーマを表示したりカスタマイズしたりするには、**[デザイン]** タブの **[バリエーション]** グループで、**[その他]** ドロップダウンをクリックしてから、**[フォント]** をポイントし、**[フォントのカスタマイズ]** をクリックして **[新しいテーマのフォント パターンの作成]** ダイアログ ボックスを表示します。
 
 
-![新しいテーマのフォントのダイアログ ボックスの作成](../../images/off15app_CreateNewThemeFonts.png)
+![新しいテーマのフォントのダイアログ ボックスの作成](../images/off15app_CreateNewThemeFonts.png)
 
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office の UI のテーマのフォントと色
@@ -44,7 +44,7 @@ PowerPoint でテーマを表示したりカスタマイズしたりするには
 Office では、すべての Office アプリケーションの UI で使用される色とフォントの一部を指定している複数の事前定義済みのテーマの中から選択することもできます。そのためには、[ **ファイル**]  >  [ **アカウント**]  >  [ **Office テーマ**] ドロップダウンを (Office アプリケーションから) 使用します。
 
 
-![Office テーマ ドロップ ダウン](../../images/off15app_OfficeThemePicker.png)
+![Office テーマ ドロップ ダウン](../images/off15app_OfficeThemePicker.png)
 
 OfficeThemes.css には PowerPoint 用の作業ウィンドウ アドインで使用できるクラスが含まれており、両者が使用するフォントと色は同じになります。したがって、組み込み作業ウィンドウの外観と一致する作業ウィンドウ アドインを設計できます。
 
@@ -114,12 +114,12 @@ OfficeTheme.css 文書テーマ クラスを使用するコンテンツ アド�
 実行時に、既定の  **Office テーマ**を使用するプレゼンテーションにコンテンツ アドイン を挿入すると、次のように表示されます。
 
 
-![Office のテーマを使用して実行しているコンテンツ アプリ](../../images/off15app_ContentApp_OfficeTheme.png)
+![Office のテーマを使用して実行しているコンテンツ アプリ](../images/off15app_ContentApp_OfficeTheme.png)
 
 別のテーマを使うようにプレゼンテーションを変更するか、プレゼンテーションのテーマをカスタマイズすると、OfficeThemes.css クラスで指定されたフォントと色は、プレゼンテーションのテーマのフォントと色に対応するように動的に更新されます。前述の例と同じ HTML を使うと、アドインの挿入先のプレゼンテーションで**ファセット**のテーマが使われて、アドインは次のように表示されます。
 
 
-![ファセットのテーマを使用して実行しているコンテンツ アプリ](../../images/off15app_ContentApp_FacetTheme.png)
+![ファセットのテーマを使用して実行しているコンテンツ アプリ](../images/off15app_ContentApp_FacetTheme.png)
 
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>作業ウィンドウ アドインの HTML ページで OfficeThemes.css Office UI テーマ クラスを使用する
@@ -136,12 +136,12 @@ OfficeTheme.css クラスを使用してフォントの色と背景色を指定�
 PowerPoint で [ **ファイル**]  >  [ **アカウント**]  >  [ **Office テーマ**] を [ **白**] に設定して実行すると、作業ウィンドウ アドイン は次のように表示されます。
 
 
-![白の Office の作業ウィンドウ](../../images/off15app_TaskPaneThemeWhite.png)
+![白の Office の作業ウィンドウ](../images/off15app_TaskPaneThemeWhite.png)
 
 **[Office テーマ]** を **[濃い灰色]** に変更すると、OfficeThemes.css クラスで指定されたフォントと色は動的に更新されて次のように表示されます。
 
 
-![濃い灰色の Office の作業ウィンドウ](../../images/off15app_TaskPaneThemeDarkGray.png)
+![濃い灰色の Office の作業ウィンドウ](../images/off15app_TaskPaneThemeDarkGray.png)
 
 
 ## <a name="officethemecss-classes"></a>OfficeTheme.css のクラス
@@ -202,7 +202,7 @@ OfficeThemes.css ファイルには、文書テーマで使用される 2 つの
 次のスクリーンショットは、既定の Office テーマの使用時に アドイン テキストに割り当てられるテーマの色のクラスすべて (2 つのハイパーリンクの色を除く) の例を示しています。
 
 
-![既定の Office テーマの色の例](../../images/off15app_DefaultOfficeThemeColors.png)
+![既定の Office テーマの色の例](../images/off15app_DefaultOfficeThemeColors.png)
 
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>作業ウィンドウ アドインのテーマ クラス

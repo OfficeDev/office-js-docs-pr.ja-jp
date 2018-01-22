@@ -169,13 +169,13 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
     **図 1.セキュリティ センターを使用したアドインのマニフェストのカタログの追加**
 
-    ![セキュリティ センターを使用してアプリ マニフェストを追加](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![セキュリティ センターを使用してアプリ マニフェストを追加](../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択します (図 2 を参照)。
     
     **図 2.ファイル共有にあるアドインの起動**
 
-    ![ファイル共有にある Office アプリの起動](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![ファイル共有にある Office アプリの起動](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. Bing Search アドインを選択し、 [ **挿入**] を選択します。
     
@@ -183,7 +183,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 **図 3.Bing Search アドインの使用**
 
-![Bing Search アプリの使用](../../images/pj15_AgaveOverview_BingSearch.gif)
+![Bing Search アプリの使用](../images/pj15_AgaveOverview_BingSearch.gif)
 
 
 ## <a name="distributing-project-add-ins"></a>Project アドインの配布

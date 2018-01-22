@@ -61,7 +61,7 @@ yo office
 >- [TypeScript](https://www.typescriptlang.org/) の追加 -- _Y_ を使用します
 >- フレームワークの選択 -- _React_ を使用します
 
-![プロジェクトの入力を要求する Yeoman ジェネレーターの Git](../../images/gettingstarted-fast.gif)
+![プロジェクトの入力を要求する Yeoman ジェネレーターの Git](../images/gettingstarted-fast.gif)
 
 これは、アドインの構造および基本的なファイルを作成します。
 
@@ -80,7 +80,7 @@ npm start
 Browsersync は HTTPS サーバーを起動し、プロジェクトの index.html ファイルを起動します。"この Web サイトのセキュリティ証明書には問題があります。" というエラー メッセージが表示されます。
 
 
-![エラーを回避して既定の index.html ファイルを表示するためのプロセスを示す gif](../../images/ssl-chrome-bypass.gif)
+![エラーを回避して既定の index.html ファイルを表示するためのプロセスを示す gif](../images/ssl-chrome-bypass.gif)
 
 このエラーは、開発環境が信頼する必要がある自己署名 SSL 証明書が Browsersync に含まれているために発生します。このエラーの解決方法の詳細については、[自己署名証明書の追加](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)に関する記事をご覧ください。
 

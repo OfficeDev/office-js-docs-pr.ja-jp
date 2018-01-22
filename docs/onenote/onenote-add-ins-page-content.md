@@ -2,7 +2,7 @@
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
 
-  ![OneNote ページのオブジェクト モデル図](../../images/OneNoteOM-page.png)
+  ![OneNote ページのオブジェクト モデル図](../images/OneNoteOM-page.png)
 
 - ページ オブジェクトには、PageContent オブジェクトのコレクションが含まれています。
 - PageContent オブジェクトには、アウトライン、イメージ、その他のコンテンツ タイプが含まれています。

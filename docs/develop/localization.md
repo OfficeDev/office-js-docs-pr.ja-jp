@@ -261,7 +261,7 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 
 **図 3.アドイン UI**
 
-![セクションが強調表示されたアプリのユーザー インターフェイス。](../../images/off15App_HowToLocalize_fig03.png)
+![セクションが強調表示されたアプリのユーザー インターフェイス。](../images/off15App_HowToLocalize_fig03.png)
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>ローカライズされた文字列を含むリソース ファイルの追加
 
@@ -396,7 +396,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
     
     **図 4.Word 2013 の [オプション] ダイアログ ボックスの言語オプション**
 
-    ![Word 2013 [オプション] ダイアログ。](../../images/off15App_HowToLocalize_fig04.png)
+    ![Word 2013 [オプション] ダイアログ。](../images/off15App_HowToLocalize_fig04.png)
 
 2. **[表示言語とヘルプ言語の選択]** で、表示に使用する言語 (たとえばスペイン語) を選択し、上向き矢印を選択してその言語をリストの一番上に移動します。または、編集に使用する言語を変更する場合は、 **[編集言語の選択]** で編集に使用する言語 (たとえばスペイン語) を選択し、 **[既定に設定]** を選択します。
     
@@ -407,7 +407,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 
 **図 5:ローカライズされたテキストが表示されたアドインの UI**
 
-![UI 文字列がローカライズされたアプリ。](../../images/off15App_HowToLocalize_fig05.png)
+![UI 文字列がローカライズされたアプリ。](../images/off15App_HowToLocalize_fig05.png)
 
 ## <a name="additional-resources"></a>その他のリソース
 

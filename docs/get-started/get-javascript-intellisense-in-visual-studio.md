@@ -36,7 +36,7 @@ Visual Studio に Office.js の型の定義を提供する必要があります 
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![変数の Intellisense](../../images/IntellisenseVS17Var.png)
+![変数の Intellisense](../images/IntellisenseVS17Var.png)
 
 ### <a name="parameter"></a>パラメーター
 
@@ -46,7 +46,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![パラメーターの Intellisense](../../images/IntellisenseVS17Param.png)
+![パラメーターの Intellisense](../images/IntellisenseVS17Param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -56,7 +56,7 @@ function myFunc() {
 
 }
 ```
-![戻り値の  Intellisense](../../images/IntellisenseVS17Return.png)
+![戻り値の  Intellisense](../images/IntellisenseVS17Return.png)
 
 ### <a name="complex-types"></a>複合型
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![複合型の Intellisense](../../images/IntellisenseVS17ComplexType.png)
+![複合型の Intellisense](../images/IntellisenseVS17ComplexType.png)
 
 ##<a name="additional-resources"></a>その他のリソース
 

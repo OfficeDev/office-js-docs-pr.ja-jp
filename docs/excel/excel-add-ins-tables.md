@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../../images/Excel-table-create.png)
+![Excel の新しい表](../images/Excel-table-create.png)
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
@@ -73,7 +73,7 @@ Excel.run(function (context) {
 
 **新しい行を含む表**
 
-![Excel の新しい行を含む表](../../images/Excel-table-add-rows.png)
+![Excel の新しい行を含む表](../images/Excel-table-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>表に列を追加する
 
@@ -112,7 +112,7 @@ Excel.run(function (context) {
 
 **新しい列を含む表**
 
-![Excel の新しい列を含む表](../../images/Excel-table-add-column.png)
+![Excel の新しい列を含む表](../images/Excel-table-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
@@ -145,7 +145,7 @@ Excel.run(function (context) {
 
 **新しい集計列を含む表**
 
-![Excel の新しい集計列を含む表](../../images/Excel-table-add-calculated-column.png)
+![Excel の新しい集計列を含む表](../images/Excel-table-add-calculated-column.png)
 
 ## <a name="update-column-name"></a>列名を更新する
 
@@ -174,7 +174,7 @@ Excel.run(function (context) {
 
 **新しい列名を含む表**
 
-![Excel の新しい列名を含む表](../../images/Excel-table-update-column-name.png)
+![Excel の新しい列名を含む表](../images/Excel-table-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>表からデータを取得する
 
@@ -220,7 +220,7 @@ Excel.run(function (context) {
 
 **表とデータの出力**
 
-![Excel の表データ](../../images/Excel-table-get-data.png)
+![Excel の表データ](../images/Excel-table-get-data.png)
 
 ## <a name="sort-data-in-a-table"></a>表内でデータを並べ替える
 
@@ -247,7 +247,7 @@ Excel.run(function (context) {
 
 **金額 (降順) で並べ替えた表データ**
 
-![Excel の表データ](../../images/Excel-table-sort.png)
+![Excel の表データ](../images/Excel-table-sort.png)
 
 ## <a name="apply-filters-to-a-table"></a>表にフィルターを適用する
 
@@ -279,7 +279,7 @@ Excel.run(function (context) {
 
 **Category と Amount にフィルターを適用した表データ**
 
-![Excel でフィルター処理された表データ](../../images/Excel-table-filters-apply.png)
+![Excel でフィルター処理された表データ](../images/Excel-table-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>表フィルターのクリア
 
@@ -298,7 +298,7 @@ Excel.run(function (context) {
 
 **フィルターが適用されていない表データ**
 
-![Excel のフィルター処理されていない表データ](../../images/Excel-table-filters-clear.png)
+![Excel のフィルター処理されていない表データ](../images/Excel-table-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
@@ -339,7 +339,7 @@ Excel.run(function (context) {
 
 **書式設定を適用後の表**
 
-![Excel の書式設定を適用後の表](../../images/Excel-table-formatting-after.png)
+![Excel の書式設定を適用後の表](../images/Excel-table-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>範囲を表に変換する
 
@@ -379,11 +379,11 @@ Excel.run(function (context) {
 
 **範囲データ (範囲を表に変換する前)**
 
-![Excel の範囲データ](../../images/Excel-range.png)
+![Excel の範囲データ](../images/Excel-range.png)
 
 **範囲データ (範囲を表に変換した後)**
 
-![Excel の表データ](../../images/Excel-table-from-range.png)
+![Excel の表データ](../images/Excel-table-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
@@ -430,7 +430,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../../images/Excel-table-create-from-json.png)
+![Excel の新しい表](../images/Excel-table-create-from-json.png)
 
 ## <a name="additional-resources"></a>その他のリソース
 

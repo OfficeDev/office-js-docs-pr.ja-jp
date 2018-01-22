@@ -15,7 +15,7 @@ OneNote では、OneNote Online アドインの JavaScript API が導入され�
 
 **Office アドイン = マニフェスト + Web ページ**
 
-![Office アドインはマニフェストと Web ページによって構成されます](../../images/onenote-add-in.png)
+![Office アドインはマニフェストと Web ページによって構成されます](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>JavaScript API の使用
 
@@ -113,7 +113,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 ## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図 
 次の図では、OneNote JavaScript API で現在使用可能なものが示されます。
 
-  ![OneNote のオブジェクト モデル図](../../images/onenote-om.png)
+  ![OneNote のオブジェクト モデル図](../images/onenote-om.png)
 
 
 ## <a name="additional-resources"></a>その他の技術情報

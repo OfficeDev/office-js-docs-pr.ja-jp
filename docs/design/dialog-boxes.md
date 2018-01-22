@@ -4,7 +4,7 @@
 
 **例:ダイアログ ボックス**
 
-![ダイアログ ボックスの一般的なレイアウトを表示する画像の例](../../images/overview_withApp_dialog.png)
+![ダイアログ ボックスの一般的なレイアウトを表示する画像の例](../images/overview_withApp_dialog.png)
 
 ### <a name="best-practices"></a>ベスト プラクティス
 

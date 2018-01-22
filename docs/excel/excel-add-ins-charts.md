@@ -24,7 +24,7 @@ Excel.run(function (context) {
 
 **新しい折れ線グラフ**
 
-![Excel での新しい折れ線グラフ](../../images/Excel-chart-create-line.png)
+![Excel での新しい折れ線グラフ](../images/Excel-chart-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>データ系列をグラフに追加する
@@ -48,11 +48,11 @@ Excel.run(function (context) {
 
 **2016 データ系列が追加される前のグラフ**
 
-![2016 データ系列が追加される前の Excel のグラフ](../../images/Excel-chart-data-series-before.png)
+![2016 データ系列が追加される前の Excel のグラフ](../images/Excel-chart-data-series-before.png)
 
 **2016 データ系列が追加された後のグラフ**
 
-![2016 データ系列が追加された後の Excel のグラフ](../../images/Excel-chart-data-series-after.png)
+![2016 データ系列が追加された後の Excel のグラフ](../images/Excel-chart-data-series-after.png)
 
 ## <a name="set-chart-title"></a>グラフ タイトルを設定する
 
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 
 **タイトル設定後のグラフ**
 
-![タイトルが付いた Excel のグラフ](../../images/Excel-chart-title-set.png)
+![タイトルが付いた Excel のグラフ](../images/Excel-chart-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>グラフの軸のプロパティを設定する
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 
 **項目軸のタイトルが設定された後のグラフ**
 
-![軸のタイトルが付いた Excel のグラフ](../../images/Excel-chart-axis-title-set.png)
+![軸のタイトルが付いた Excel のグラフ](../images/Excel-chart-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>軸の表示単位を設定する
 
@@ -115,7 +115,7 @@ Excel.run(function (context) {
 
 **数値軸の表示単位が設定された後のグラフ**
 
-![軸の表示単位が付いた Excel のグラフ](../../images/Excel-chart-axis-display-unit-set.png)
+![軸の表示単位が付いた Excel のグラフ](../images/Excel-chart-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 **枠線が非表示にされたグラフ**
 
-![枠線が非表示にされた Excel のグラフ](../../images/Excel-chart-gridlines-removed.png)
+![枠線が非表示にされた Excel のグラフ](../images/Excel-chart-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>グラフの近似曲線
 
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 
 **移動平均の近似曲線が記入されたグラフ**
 
-![移動平均の近似曲線が記入された Excel のグラフ](../../images/Excel-chart-create-trendline.png)
+![移動平均の近似曲線が記入された Excel のグラフ](../images/Excel-chart-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 **線形の近似曲線が記入されたグラフ**
 
-![線形の近似曲線が記入された Excel のグラフ](../../images/Excel-chart-trendline-linear.png)
+![線形の近似曲線が記入された Excel のグラフ](../images/Excel-chart-trendline-linear.png)
 
 ## <a name="additional-resources"></a>その他のリソース
 

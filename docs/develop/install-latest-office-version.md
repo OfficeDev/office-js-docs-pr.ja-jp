@@ -20,7 +20,7 @@
 
 インストール処理の完了時点で、最新の Office 2016 アプリケーションがインストールされています。最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**  >  **[アカウント]** に移動します。[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
-![Office Insiders のラベルと製品情報を示すスクリーンショット](../../images/officeinsider.PNG)
+![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/officeinsider.PNG)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API の要件セットの最小 Office ビルド
 

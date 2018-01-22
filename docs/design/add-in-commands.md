@@ -9,11 +9,11 @@
 
 **Excel デスクトップで実行するコマンドを含むアドイン**
 
-![Excel のアドイン コマンドのスクリーンショット](../../images/addincommands1.png)
+![Excel のアドイン コマンドのスクリーンショット](../images/addincommands1.png)
 
 **Excel Online で実行するコマンドを含むアドイン**
 
-![Excel Online のアドイン コマンドのスクリーンショット](../../images/addincommands2.png)
+![Excel Online のアドイン コマンドのスクリーンショット](../images/addincommands2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
 現在は、次のコマンド機能がサポートされています。
@@ -62,7 +62,7 @@
 - すべてのアイコンについては、[アイコン デザインのガイドライン](../design/design-icons.md) に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
 
-    ![Office 2013 の作業ウィンドウのアドインと Office 2016 のアドイン コマンドを使用する同じアドインを示すスクリーンショット](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+    ![Office 2013 の作業ウィンドウのアドインと Office 2016 のアドイン コマンドを使用する同じアドインを示すスクリーンショット](../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
 
 
 ## <a name="next-steps-to-get-started"></a>開始するための次の手順

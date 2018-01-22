@@ -8,11 +8,11 @@ Office 2016 for Windows のビルド 77xx.xxxx 以降では、作業ウィンド
    - 現在サポートされているデバッガー ツールは、[Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx) 以降だけです。 Visual Studio をインストールしていない場合、**[デバッガーのアタッチ]** オプションを選択しても何も実行されません。   
    - **[デバッガーのアタッチ]** ツールでデバッグできるのは、クライアント側の JavaScript だけです。 Node.js サーバーなど、サーバー側のコードをデバッグするには、多くのオプションがあります。 Visual Studio Code でデバッグするための詳しい方法については、「[VS Code で Node.js をデバッグする](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)」を参照してください。 Visual Studio Code を使用していない場合は、「Node.js のデバッグ」または「{サーバー名} のデバッグ」で検索してください。
 
-![[デバッガーのアタッチ] メニューのスクリーンショット](../../images/attach-debugger.png)
+![[デバッガーのアタッチ] メニューのスクリーンショット](../images/attach-debugger.png)
 
 **[デバッガーのアタッチ]** を選択します。 これにより、次の図のように、**[Visual Studio Just-in-Time デバッガー]** ダイアログ ボックスが起動します。 
 
-![Visual Studio Just-in-Time デバッガー ダイアログのスクリーンショット](../../images/visual-studio-debugger.png)
+![Visual Studio Just-in-Time デバッガー ダイアログのスクリーンショット](../images/visual-studio-debugger.png)
 
 Visual Studio では、**ソリューション エクスプローラー**内にコード ファイルが表示されます。   Visual Studio でデバッグするコードの行にブレークポイントを設定することができます。
 

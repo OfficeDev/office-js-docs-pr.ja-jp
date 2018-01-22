@@ -4,7 +4,7 @@
   
 #### <a name="example-textfield-in-a-task-pane"></a>例:作業ウィンドウ内の TextField
 
-![TextField が表示された画像](../../images/overview_withApp_textField.png)
+![TextField が表示された画像](../images/overview_withApp_textField.png)
 
 <br/>
 
@@ -23,11 +23,11 @@
 
 |**バリエーション**|**説明**|**例**|
 |:------------|:--------------|:----------|
-|**既定の TextField**|既定のテキスト フィールドとして使用します。|![既定の TextField の画像](../../images/textfieldDefault.png)<br/>|
-|**無効な TextField**|テキスト フィールドが無効になっている場合に使用します。|![無効な TextField の画像](../../images/textfieldDisabled.png)<br/>|
-|**必須の TextField**|テキスト フィールドの入力が必須の場合に使用します。|![必須の TextField の画像](../../images/textfieldRequired.png)<br/>|
-|**プレース ホルダー付きの TextField**|プレース ホルダー テキストが必要な場合に使用します。|![プレース ホルダー付きの TextField の画像](../../images/textfieldPlaceholder.png)<br/>|
-|**複数行の TextField**|多くの行のテキストが必要な場合に使用します。|![プレース ホルダー付きの TextField の画像](../../images/textfieldMulti.png)<br/>|
+|**既定の TextField**|既定のテキスト フィールドとして使用します。|![既定の TextField の画像](../images/textfieldDefault.png)<br/>|
+|**無効な TextField**|テキスト フィールドが無効になっている場合に使用します。|![無効な TextField の画像](../images/textfieldDisabled.png)<br/>|
+|**必須の TextField**|テキスト フィールドの入力が必須の場合に使用します。|![必須の TextField の画像](../images/textfieldRequired.png)<br/>|
+|**プレース ホルダー付きの TextField**|プレース ホルダー テキストが必要な場合に使用します。|![プレース ホルダー付きの TextField の画像](../images/textfieldPlaceholder.png)<br/>|
+|**複数行の TextField**|多くの行のテキストが必要な場合に使用します。|![プレース ホルダー付きの TextField の画像](../images/textfieldMulti.png)<br/>|
 
 ## <a name="implementation"></a>実装
 

@@ -17,28 +17,28 @@ Word で実行する Office アドインを作成している場合、JavaScript
 **図 1.書式が直接設定されたテキスト**
 
 
-![直接書式設定が適用されたテキスト。](../../images/off15app_CreateWdAppUsingOOXML_fig01.png)
+![直接書式設定が適用されたテキスト。](../images/off15app_CreateWdAppUsingOOXML_fig01.png)
 
 直接書式設定を使用すると、ユーザーのドキュメントの既存書式設定に関係なく、テキストの厳密な表示方法を指定できます。
 
 **図 2.スタイルを使用して書式設定されたテキスト**
 
 
-![段落スタイルで書式設定されたテキスト。](../../images/off15app_CreateWdAppUsingOOXML_fig02.png)
+![段落スタイルで書式設定されたテキスト。](../images/off15app_CreateWdAppUsingOOXML_fig02.png)
 
 スタイルを使用し、挿入するテキストの表示をユーザーのドキュメントに合わせて自動的に調整できます。
 
 **図 3.単純なイメージ**
 
 
-![ロゴの画像。](../../images/off15app_CreateWdAppUsingOOXML_fig03.png)
+![ロゴの画像。](../images/off15app_CreateWdAppUsingOOXML_fig03.png)
 
 同じ方法を使用し、Office でサポートされるイメージ書式を挿入できます。
 
 **図 4. ピクチャのスタイルと効果を使用して書式設定されたイメージ**
 
 
-![Word 2013 で書式設定された画像。](../../images/off15app_CreateWdAppUsingOOXML_fig04.png)
+![Word 2013 で書式設定された画像。](../images/off15app_CreateWdAppUsingOOXML_fig04.png)
 
 
 高品質の書式設定と効果をイメージに追加するとき、必要なマークアップは予想よりずっと少なくなります。
@@ -46,49 +46,49 @@ Word で実行する Office アドインを作成している場合、JavaScript
 **図 5.コンテンツ コントロール**
 
 
-![境界線コンテンツ コントロール内のテキスト。](../../images/off15app_CreateWdAppUsingOOXML_fig05.png)
+![境界線コンテンツ コントロール内のテキスト。](../images/off15app_CreateWdAppUsingOOXML_fig05.png)
 
 アドインでコンテンツ コントロールを使用し、選択範囲ではなく、指定した (バインドした) 位置にコンテンツを追加できます。
 
 **図 6.ワードアートが書式設定されたテキスト ボックス**
 
 
-![WordArt の文字列効果で書式設定されたテキスト。](../../images/off15app_CreateWdAppUsingOOXML_fig06.png)
+![WordArt の文字列効果で書式設定されたテキスト。](../images/off15app_CreateWdAppUsingOOXML_fig06.png)
 
 Word では、テキスト ボックス (図参照) 内のテキストに、または通常の本文テキストにテキスト効果を利用できます。
 
 **図 7.図形**
 
 
-![Word 2013 内の Office 2013 描画形状。](../../images/off15app_CreateWdAppUsingOOXML_fig07.png)
+![Word 2013 内の Office 2013 描画形状。](../images/off15app_CreateWdAppUsingOOXML_fig07.png)
 
 テキストと書式設定効果ありで (なしで)、組み込みまたはカスタムの描画図形を挿入できます。
 
 **図 8.直接書式設定の表**
 
 
-![Word 2013 内の書式設定されたテーブル。](../../images/off15app_CreateWdAppUsingOOXML_fig08.png)
+![Word 2013 内の書式設定されたテーブル。](../images/off15app_CreateWdAppUsingOOXML_fig08.png)
 
 必要なテキスト書式設定、境界線、影、セルサイズ変更、表書式設定を追加できます。
 
 **図 9.表スタイルを使用して書式設定された表**
 
 
-![Word 2013 内の書式設定されたテーブル。](../../images/off15app_CreateWdAppUsingOOXML_fig09.png)
+![Word 2013 内の書式設定されたテーブル。](../images/off15app_CreateWdAppUsingOOXML_fig09.png)
 
 テキストに段落スタイルを使用するのと同じくらい簡単に、組み込みまたはカスタムの表スタイルを使用できます。
 
 **図 10.SmartArt 図**
 
 
-![Word 2013 内の動的な SmartArt 図。](../../images/off15app_CreateWdAppUsingOOXML_fig10.png)
+![Word 2013 内の動的な SmartArt 図。](../images/off15app_CreateWdAppUsingOOXML_fig10.png)
 
 Office 2013 は幅広い種類の SmartArt 図レイアウトを提供します (Office Open XML を使用して独自の SmartArt 図を作成することもできます)。
 
 **図 11.グラフ**
 
 
-![Word 2013 内のグラフ。](../../images/off15app_CreateWdAppUsingOOXML_fig11.png)
+![Word 2013 内のグラフ。](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
 Word 文書に Excel グラフをライブ グラフとして挿入できます。また、このようなグラフを Word のアドインでも使用できます。先ほどの例でお分かりのように、Office Open XML 強制型変換を使用すると、基本的にはコンテンツの任意の型を挿入できるため、ユーザーは、独自の文書を挿入できます。必要な Open XML マークアップを取得する簡単な方法が 2 つあります。もともと空白の Word 2013 ドキュメントにリッチ コンテンツを追加してから、Word XML ドキュメント形式でファイルを保存するか、[getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) メソッドでテスト アドインを使用して、マークアップを取得します。どちらのアプローチでも、基本的には同じ結果になります。
 
@@ -112,11 +112,11 @@ Word 文書に Excel グラフをライブ グラフとして挿入できます�
 
 **図 12.Visual Studio 2015 で簡単に編集するためのパッケージ パーツの圧縮と展開**
 
-![パッケージ部分の Office Open XML コード スニペット。](../../images/off15app_CreateWdAppUsingOOXML_fig12.png)
+![パッケージ部分の Office Open XML コード スニペット。](../images/off15app_CreateWdAppUsingOOXML_fig12.png)
 
 **図 13.基本的な Word Office Open XML ドキュメント パッケージに含まれるパーツ**
 
-![パッケージ部分の Office Open XML コード スニペット。](../../images/off15app_CreateWdAppUsingOOXML_fig13.png)
+![パッケージ部分の Office Open XML コード スニペット。](../images/off15app_CreateWdAppUsingOOXML_fig13.png)
 
 これだけたくさんマークアップが存在するのに、書式設定されたテキスト例を挿入するために実際に必要な要素は .rels パーツと document.xml パーツだけであることを知ったら驚かれることでしょう。
 
@@ -324,7 +324,7 @@ document.xml はコンテンツを置く主要なドキュメント パーツで
 
 **図 14.document.xml の共通タグと Word ドキュメントのコンテンツならびにレイアウトの関係**
 
-![Word 文書内の Office Open XML 要素。](../../images/off15app_CreateWdAppUsingOOXML_fig14.png)
+![Word 文書内の Office Open XML 要素。](../images/off15app_CreateWdAppUsingOOXML_fig14.png)
     
 **ヒント:**作成したマークアップでは、いくつかのタグで、文字 **w:rsid** を含む別の属性が使用されていることがあります。このトピックで使用されている例では表示されていません。これらは、リビジョンの識別子です。これらは、Word でドキュメントの結合機能で使用されるもので、既定でオンになっています。アドインで挿入するマークアップではこれらの識別子は不要であるため、これらをオフにすることによってマークアップをクリーンに保つことができます。既存の RSID タグを削除したり、この機能を無効にしたりして (次の手順で説明します)、新しいコンテンツにマークアップが追加されないようにします。
  
@@ -385,7 +385,7 @@ Word では、図 15 のように、コンテンツ コントロールはリボ�
 
 **図 15.Word の [開発] タブの [コントロール] グループ**
 
-![Word 2013 のリボン上のコンテンツ コントロール グループ。](../../images/off15app_CreateWdAppUsingOOXML_fig15.png)
+![Word 2013 のリボン上のコンテンツ コントロール グループ。](../images/off15app_CreateWdAppUsingOOXML_fig15.png)
 
 Word のコンテンツ コントロールの種類には、リッチ テキスト、プレーン テキスト、ピクチャ、構成要素ギャラリー、チェック ボックス、ドロップダウン リスト、コンボ ボックス、日付の選択、繰り返しセクションがあります。 
 

@@ -11,7 +11,7 @@ OAuth は、Office 365、Facebook、Google、SalesForce、LinkedIn などのオ�
 
 次のダイアグラムは、必要なコンポーネントと、アドインで認証を実装するときに発生するイベントのフローを示します。
 
-![Office アドインでの OAuth 認証の実行](../../images/OAuthInOfficeAddin.png)
+![Office アドインでの OAuth 認証の実行](../images/OAuthInOfficeAddin.png)
 
 ダイアグラムは、次の必要なコンポーネントを使用する方法を示しています。
 

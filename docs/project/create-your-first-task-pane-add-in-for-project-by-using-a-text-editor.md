@@ -724,19 +724,19 @@ function manageViewEventHandler(docMethod) {
     
     **図 1.アドイン マニフェスト用のネットワーク ファイル共有の追加**
 
-    ![アプリ マニフェスト用のネットワーク ファイル共有の追加](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
+    ![アプリ マニフェスト用のネットワーク ファイル共有の追加](../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
 
 6. 新しいアドインを追加するか、ソース コードを変更したら、Project を再起動します。[ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択し (図 2 を参照)、 [ **Project OM Test**]、[ **挿入**] の順に選択します。Project OM Test アドインが作業ウィンドウ内で起動します。
     
     **図 2.ファイル共有上にある Project OM Test アドインの開始**
 
-    ![アプリの挿入](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
+    ![アプリの挿入](../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
 
 7. Project で、少なくとも 2 つのタスクを備えた単純なプロジェクトを作成して保存します。たとえば、T1 とT2 というタスク、およびM1 というマイルストーンを作成し、タスクの期間と先行タスクを図 3 のように設定します。リボンの [ **プロジェクト**] タブを選択し、タスク T2 の行全体を選択して、作業ウィンドウの [ **getSelectedDataAsync**] ボタンを選択します。図 3 に、 **Project OM Test** アドインのテキスト ボックス内で選択されているデータを示します。
     
     **図 3.Project OM Test アドインの使用**
 
-    ![Project OM Test アプリの使用](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
+    ![Project OM Test アプリの使用](../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
 
 8. 最初のタスクの [ **期間**] 列内にあるセルを選択し、 **Project OM Test** アドイン内の [ **getSelectedDataAsync**] ボタンを選択します。 **getSelectedDataAsync** 関数により、テキスト ボックスの値が `2 days` を示すように設定されます。 
     
@@ -1122,7 +1122,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 **図 4.SurfaceErrors.js ファイル内の関数は "toast" 通知を表示できます**
 
-![SurfaceError ルーチンを使用したエラーの表示](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
+![SurfaceError ルーチンを使用したエラーの表示](../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
 ## <a name="additional-resources"></a>その他のリソース

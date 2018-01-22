@@ -74,19 +74,19 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
     **Office アドインの作成**
 
-    ![Office 2013 用アプリの作成](../../images/pj15_HelloProjectOData_CreatingApp.png)
+    ![Office 2013 用アプリの作成](../images/pj15_HelloProjectOData_CreatingApp.png)
 
 5. **[アドインの種類の選択]** ダイアログ ボックスで、**[作業ウィンドウ]** を選択して、**[次へ]** を選択します (次のスクリーンショットを参照)。
     
     **作成するアドインの種類の選択**
 
-    ![作成するアプリの種類の選択](../../images/pj15_HelloProjectOData_ChooseProject.png)
+    ![作成するアプリの種類の選択](../images/pj15_HelloProjectOData_ChooseProject.png)
 
 6. [ **ホスト アプリケーションの選択**] ダイアログ ボックスで、[ **Project**] 以外のすべてのチェック ボックスをオフにし (次のスクリーンショットを参照)、 [ **完了**] をクリックします。
     
     **ホスト アプリケーションの選択**
 
-    ![Project を唯一のホスト アプリケーションとして選択する](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
+    ![Project を唯一のホスト アプリケーションとして選択する](../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
     Visual Studio によって、**HelloProjectOdata** プロジェクトと **HelloProjectODataWeb** プロジェクトが作成されます。
     
@@ -94,7 +94,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 **ソリューション エクスプローラーでの既定の Web プロジェクト ファイルの表示**
 
-![ソリューション エクスプローラーで Web プロジェクト ファイルを表示する](../../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
+![ソリューション エクスプローラーで Web プロジェクト ファイルを表示する](../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
 
 **HelloProjectOData** プロジェクトのマニフェストは、HelloProjectOData.xml ファイルです。必要に応じてマニフェストを編集して、アドインの説明、アイコンへの参照、追加言語の情報、その他の設定を追加できます。手順 3 では、アドインの表示名と説明を変更し、アイコンを追加します。
 
@@ -118,7 +118,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
 2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。
     
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![HelloProjectOData アプリのアイコン](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![HelloProjectOData アプリのアイコン](../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. HelloProjectOData.xml マニフェストで、**Description** 要素の下に **IconUrl** 要素を追加します。ここで、アイコン URL の値は 32 x 32 アイコン ファイルへの相対パスです。たとえば、次の行を追加します: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**。HelloProjectOData.xml マニフェスト ファイルには次が含まれるようになりました (実際の **ID** 値は異なります)。
 
@@ -578,7 +578,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     
     **図 4.HelloProjectOData アドインの開始**
 
-    ![HelloProjectOData アプリのテスト](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![HelloProjectOData アプリのテスト](../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. [ **ProjectData 概要**] 作業ウィンドウで、[ **ProjectData エンドポイントを取得**] を選択します。 **projectDataEndPoint** 行に **ProjectData** サービスの URL が表示され、[ **すべてのプロジェクトを比較**] ボタンが有効化されるはずです (図 5 を参照)。
     
@@ -586,7 +586,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     
     **図 5.REST クエリの結果の表示**
 
-    ![REST クエリの結果の表示](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![REST クエリの結果の表示](../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. テキスト ボックス内の出力を調べます。ここには、ドキュメントのパス、REST クエリ、ステータス情報、および  **ajax** と **parseODataResult** の呼び出しからの JSON 結果が表示されるはずです。この出力は、 **parseODataResult** メソッドのコード ( `projCost += Number(res.d.results[i].ProjectCost);` など) の理解と作成とデバッグに役立ちます。
     
@@ -644,7 +644,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     
     **図 6.Project Web App 接続がない状態でのアドインの使用**
 
-    ![Project Web App 接続がない状態でのアプリの使用](../../images/pj15_HelloProjectData_NoConnection.gif)
+    ![Project Web App 接続がない状態でのアプリの使用](../images/pj15_HelloProjectData_NoConnection.gif)
 
 8. デバッグを停止してから、 **F5** キーを再び押します。Project Web App にログオンし、コストと作業のデータが含まれるプロジェクトを作成します。このプロジェクトを保存することはできますが、発行しないでください。
     
@@ -653,7 +653,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
 
     **図 7.未発行のプロジェクトと他のプロジェクトの比較**
 
-    ![未発行のプロジェクトと他のプロジェクトの比較](../../images/pj15_HelloProjectData_NotPublished.gif)
+    ![未発行のプロジェクトと他のプロジェクトの比較](../images/pj15_HelloProjectData_NotPublished.gif)
 
 アドインがこれまでのテストで正常に動作しているとしても、実行する必要のあるテストはまだあります。たとえば、次のことを行います。
 

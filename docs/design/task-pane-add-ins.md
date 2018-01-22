@@ -4,7 +4,7 @@
 
 **例:作業ウィンドウ**
 
-![一般的な作業ウィンドウのレイアウトを表示するイメージ](../../images/overview_withApp_taskPane.png)
+![一般的な作業ウィンドウのレイアウトを表示するイメージ](../images/overview_withApp_taskPane.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -22,7 +22,7 @@
 
 **Office 2016 デスクトップ作業ウィンドウのサイズ**
 
-![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../../images/addinTaskpaneSizes_desktop.png)
+![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/addinTaskpaneSizes_desktop.png)
 
 - Excel - 320x455
 - PowerPoint - 320x531
@@ -31,7 +31,7 @@
 
 **Office 365 の作業ウィンドウのサイズ**
 
-![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../../images/addinTaskpaneSizes_online.png)
+![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/addinTaskpaneSizes_online.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391
@@ -46,13 +46,13 @@
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 
-![Windows デスクトップのパーソナル メニューを示す図](../../images/personalityMenu_Win.png)
+![Windows デスクトップのパーソナル メニューを示す図](../images/personalityMenu_Win.png)
 
 **Windows のパーソナル メニュー**
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、スペースは 34x32 ピクセルに増加します (図を参照)。
 
-![Mac デスクトップのパーソナル メニューを示す図](../../images/personalityMenu_Mac.png)
+![Mac デスクトップのパーソナル メニューを示す図](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>実装
 
