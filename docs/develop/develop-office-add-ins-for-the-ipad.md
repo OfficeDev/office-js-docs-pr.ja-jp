@@ -7,7 +7,7 @@
 
 |**タスク**|**説明**|**リソース**|
 |:-----|:-----|:-----|
-|アドインを更新して、Office.js バージョン 1.1 をサポートします。|Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。|[JavaScript API for Office の変更点](../../reference/what's-changed-in-the-javascript-api-for-office.md)|
+|アドインを更新して、Office.js バージョン 1.1 をサポートします。|Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。|[JavaScript API for Office の変更点](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
 |UI デザインのベスト プラクティスを適用します。|アドイン UI を iOS エクスペリエンスとシームレスに統合します。|[iOS の設計](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |アドイン デザインのベスト プラクティスを適用します。|アドインが明確な価値を提供し、魅力的であり、一貫して機能することを確認します。|[Office アドイン開発のベスト プラクティス](../../docs/overview/add-in-development-best-practices.md)|
 |タッチ用にアドインを最適化します。|マウスとキーボードに加え、タッチ入力に対して、UI が素早く応答するようにします。|[UX 設計原則を適用する](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#Anchor_3)|

@@ -4,7 +4,7 @@
 
 ## <a name="using-the-most-up-to-date-project-files"></a>最新のプロジェクト ファイルを使用する
 
-Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](../../reference/what's-changed-in-the-javascript-api-for-office.md)と[アドイン マニフェスト v1.1 の機能](../../docs/overview/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、[Visual Studio 2015 と最新の Office 開発者ツール](https://www.visualstudio.com/features/office-tools-vs)をダウンロードしてインストールする必要があります。
+Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)と[アドイン マニフェスト v1.1 の機能](../../docs/overview/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、[Visual Studio 2015 と最新の Office 開発者ツール](https://www.visualstudio.com/features/office-tools-vs)をダウンロードしてインストールする必要があります。
 
 テキスト エディター、または Visual Studio 以外の IDE を使用してアドインを開発する場合は、Office.js に対する CDN への参照と、アドインのマニフェストで参照するスキーマのバージョンを更新する必要があります。
 
