@@ -263,7 +263,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
@@ -750,7 +750,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>

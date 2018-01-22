@@ -24,7 +24,7 @@
 
 ### <a name="13001"></a>13001
 
-ユーザーは Office にサインインしていません。 コードは `getAccessTokenAsync` メソッドを再呼び出しし、[options](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters) パラメーターのオプション `forceAddAccount: true` を渡さなければなりません。 
+ユーザーは Office にサインインしていません。 コードは `getAccessTokenAsync` メソッドを再呼び出しし、[options](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) パラメーターのオプション `forceAddAccount: true` を渡さなければなりません。 
 
 ### <a name="13002"></a>13002
 
@@ -64,7 +64,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
  
 AAD および Office 365 の特定の ID 構成では、Microsoft Graph でアクセス可能な一部のリソースで、ユーザーの Office 365 のテナントでは必要ない場合でも、多要素認証 (MFA) が必要な場合があります。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。 
 
-サーバー側のコードはこのメッセージをテストし、クライアント側のコードに claims 値を中継する必要があります。 Office が SSO アドインの認証を処理するため、この情報がクライアントで必要になります。クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 claims 値が中継されている場合、コードは `getAccessTokenAsync` を再呼び出しして [options](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters) パラメーターのオプション `authChallenge: CLAIMS-STRING-HERE` を渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
+サーバー側のコードはこのメッセージをテストし、クライアント側のコードに claims 値を中継する必要があります。 Office が SSO アドインの認証を処理するため、この情報がクライアントで必要になります。クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 claims 値が中継されている場合、コードは `getAccessTokenAsync` を再呼び出しして [options](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) パラメーターのオプション `authChallenge: CLAIMS-STRING-HERE` を渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
 
 この MFA 処理を説明するためのサンプルをいくつか用意しています。 
 

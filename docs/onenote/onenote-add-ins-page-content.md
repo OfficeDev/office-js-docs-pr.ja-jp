@@ -11,8 +11,8 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 空の OneNote ページを作成するには、次の方法のいずれかを使用します。
 
-- [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
-- [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](http://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
+- [Page.insertPageAsSibling](http://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
 その後、次のオブジェクトのメソッドを使用して、Page.addOutline や Outline.appendHtml などのページのコンテンツを操作します。 
 

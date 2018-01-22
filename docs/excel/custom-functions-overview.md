@@ -4,7 +4,7 @@
 
 Excel でのカスタム関数がどのようなものかを以下に示します。
 
-<img src="../../images/custom-function.gif" width="579" height="383" />
+<img src="../images/custom-function.gif" width="579" height="383" />
 
 数値のペアに 42 を追加するサンプル カスタム関数のコードを示します。
 

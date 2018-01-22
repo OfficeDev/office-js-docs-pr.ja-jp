@@ -17,7 +17,7 @@
 | 1.0 | Office アプリのデスクトップ バージョンのアドイン コマンドをサポートします。 | 
 | 1.1 | [ピン留め可能な作業ウィンドウ](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)およびモバイル アドインのサポートを追加します。**注:**現時点では、Outlook 2016 for Windows および Outlook for iOS でのみサポートされています。 |
 
-アドインは、より新しいバージョンを前のバージョンの内側に入れ子にすることにより、**VersionOverrides** スキーマの複数のバージョンをサポートできます。これにより、クライアントがより新しいバージョンをサポートして新機能を利用できるようにしつつ、前のクライアントが旧バージョンを読み込めるようにします。詳細については、「[複数のバージョンを実装する](../../reference/manifest/versionoverrides.md#implementing-multiple-versions)」を参照してください。
+アドインは、より新しいバージョンを前のバージョンの内側に入れ子にすることにより、**VersionOverrides** スキーマの複数のバージョンをサポートできます。これにより、クライアントがより新しいバージョンをサポートして新機能を利用できるようにしつつ、前のクライアントが旧バージョンを読み込めるようにします。詳細については、「[複数のバージョンを実装する](http://dev.office.com/reference/add-ins/manifest/versionoverrides#implementing-multiple-versions)」を参照してください。
 
 **VersionOverrides** 要素には、次の子要素が含まれます。
 

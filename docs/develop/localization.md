@@ -416,17 +416,17 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 - 
   [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
-[DefaultLocale]:         ../../reference/manifest/defaultlocale.md
-[Description]:           ../../reference/manifest/description.md
-[DisplayName]:           ../../reference/manifest/displayname.md
-[IconUrl]:               ../../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
+[DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
+[Description]:           http://dev.office.com/reference/add-ins/manifest/description
+[DisplayName]:           http://dev.office.com/reference/add-ins/manifest/displayname
+[IconUrl]:               http://dev.office.com/reference/add-ins/manifest/iconurl
+[HighResolutionIconUrl]: http://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
 [Resources]:             ../../reference/manifest/resources
-[SourceLocation]:        ../../reference/manifest/sourcelocation.md
-[Override]:              ../../reference/manifest/override.md
-[DesktopSettings]:       ../../reference/manifest/desktopsettings.md
-[TabletSettings]:        ../../reference/manifest/tabletsettings.md
-[PhoneSettings]:         ../../reference/manifest/phonesettings.md
-[displayLanguage]:  ../../reference/shared/office.context.displaylanguage.md 
-[contentLanguage]:  ../../reference/shared/office.context.contentlanguage.md 
+[SourceLocation]:        http://dev.office.com/reference/add-ins/manifest/sourcelocation
+[Override]:              http://dev.office.com/reference/add-ins/manifest/override
+[DesktopSettings]:       http://dev.office.com/reference/add-ins/manifest/desktopsettings
+[TabletSettings]:        http://dev.office.com/reference/add-ins/manifest/tabletsettings
+[PhoneSettings]:         http://dev.office.com/reference/add-ins/manifest/phonesettings
+[displayLanguage]:  http://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
+[contentLanguage]:  http://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066
