@@ -7,7 +7,7 @@ Word で実行する Office アドインを作成している場合、JavaScript
 
 それでは、イメージ、書式設定された表、グラフ、あるいは書式設定だけされたテキストをドキュメントに追加する必要があるとき、何を選択しますか。画像などの一部のリッチ コンテンツを挿入するために、HTML を使用できます。シナリオによっては、コンテンツで使用できる書式設定および配置に関する制限など、HTML 強制型変換にとって不利な点が存在する場合があります。Office Open XML は、Word 文書 (.docx、.dotx など) が記述される言語であるため、Word 文書にユーザーが追加できるコンテンツであれば、ユーザーにとって適用可能なほぼすべてのタイプの書式設定で、事実上あらゆるタイプのコンテンツを挿入できます。処理する Office Open XML マークアップを判別するのは、想像しているよりも簡単です。
 
- >**注** Office Open XML は PowerPoint と Excel (ならびに、Office 2013、Visio)ドキュメントの言語です。ただし、現在のところは、Word 用に作成された Office アドインでのみ、Office Open XML としてコンテンツを型強制できます。完全な言語リファレンス ドキュメントなど、Office Open XML に関する詳細は、「[その他の技術情報](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)」を参照してください。
+ >**注** Office Open XML は PowerPoint と Excel (ならびに、Office 2013、Visio)ドキュメントの言語です。ただし、現在のところは、Word 用に作成された Office アドインでのみ、Office Open XML としてコンテンツを型強制できます。完全な言語リファレンス ドキュメントなど、Office Open XML に関する詳細は、「[その他の技術情報](../word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)」を参照してください。
 
 まず初めに、Office Open XML の強制型変換を使用して挿入できるコンテンツ タイプの一部を見てみましょう。コード サンプル [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) をダウンロードします。これには、次のいずれの例を Word に挿入するにも必要な Office Open XML マークアップおよび Office.js コードが含まれます。
 
@@ -134,7 +134,7 @@ Word 文書に Excel グラフをライブ グラフとして挿入できます�
     
 
     
- >**重要** パッケージの .rels ファイル (top-level .rels、document.xml.rels、および特定のタイプのコンテンツで遭遇するその他のファイル) はガイドとして使用できる非常に重要なツールであり、Office Open XML パッケージをすばやく編集できます。編集方法に関する詳細は、本トピックの後半にある「[独自のマークアップを作成する: ベスト プラクティス](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#creating-your-own-markup-best-practices)」を参照してください。
+ >**重要** パッケージの .rels ファイル (top-level .rels、document.xml.rels、および特定のタイプのコンテンツで遭遇するその他のファイル) はガイドとして使用できる非常に重要なツールであり、Office Open XML パッケージをすばやく編集できます。編集方法に関する詳細は、本トピックの後半にある「[独自のマークアップを作成する: ベスト プラクティス](../word/create-better-add-ins-for-word-with-office-open-xml.md#creating-your-own-markup-best-practices)」を参照してください。
 
 
 
@@ -142,7 +142,7 @@ Word 文書に Excel グラフをライブ グラフとして挿入できます�
     
 - 多くのパーツは、Office Open XML 強制型変換を利用してドキュメントにコンテンツを挿入するときに Set メソッドにより自動的に無視されます。そのため、削除してもかまいません。このようなパーツには、theme1.xml ファイル (ドキュメントの書式設定テーマ)、ドキュメントのプロパティ パーツ (コア、アドイン、サムネイル)、設定ファイル (settings、webSettings、fontTable を含む) が含まれます。
     
-- 図 1 の例では、テキストの書式設定が直接適用されています (つまり、各フォントおよび段落の書式設定が個別に適用されます)。ただし、先の図 2 のように、スタイルを使用する場合 (たとえば、変換先ドキュメントの見出し 1 スタイルの書式設定をテキストに自動的に適用する場合)、styles.xml パーツとそのリレーションシップ定義が必要になります。詳しくは、トピックのセクション「[追加の Office Open XML パーツを使用するオブジェクトの追加](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#adding-objects-that-use-additional-office-open-xml-parts)」を参照してください。
+- 図 1 の例では、テキストの書式設定が直接適用されています (つまり、各フォントおよび段落の書式設定が個別に適用されます)。ただし、先の図 2 のように、スタイルを使用する場合 (たとえば、変換先ドキュメントの見出し 1 スタイルの書式設定をテキストに自動的に適用する場合)、styles.xml パーツとそのリレーションシップ定義が必要になります。詳しくは、トピックのセクション「[追加の Office Open XML パーツを使用するオブジェクトの追加](../word/create-better-add-ins-for-word-with-office-open-xml.md#adding-objects-that-use-additional-office-open-xml-parts)」を参照してください。
     
 
 ## <a name="inserting-document-content-at-the-selection"></a>選択した場所にドキュメント コンテンツを挿入する
@@ -350,7 +350,7 @@ RSID タグを既存のドキュメントから削除するには、Office Open 
 
 一部のタイプのリッチ コンテンツでは、前の例で見たような、コンテンツ コントロール、Office 描画図形、テキスト ボックス、表 (スタイルが表に適用されない限り) など、.rels および document.xml コンポーネントのみが必要です。実際は、編集済みの同じパッケージ パーツを再利用したり、document.xml の **body** コンテンツを自分のコンテンツのマークアップと交換したりします。
 
-先ほどの図 5 から 8 で見た各コンテンツ タイプの例の Office Open XML マークアップを確認するには、[概要](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML)セクションで参照されている [Word-Add-in-Load-and-write-Open-XML](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#bk_Overview) コード サンプルを参照してください。
+先ほどの図 5 から 8 で見た各コンテンツ タイプの例の Office Open XML マークアップを確認するには、[概要](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML)セクションで参照されている [Word-Add-in-Load-and-write-Open-XML](../word/create-better-add-ins-for-word-with-office-open-xml.md#bk_Overview) コード サンプルを参照してください。
 
 先に進む前に、これらのコンテンツ タイプのおける違いと必要な部分を交換する方法について確認しましょう。
 
@@ -403,7 +403,7 @@ Word のコンテンツ コントロールの種類には、リッチ テキス�
     
  >**注** Word の XML データ バインドと、アドインを介してコントロールにバインドする機能を混同しないでください。これらはまったく別の機能です。ただし、OOXML 強制型変換を利用してアドイン経由で挿入したコンテンツに指定のコンテンツ コントロールを追加し、アドインのコードを使用してこれらのコントロールにバインドすることができます。
 
-また、XML データ バインドと Office.js の両方がアプリのカスタム XML パーツとやりとりできるので、これらの強力なツールを統合できます。Office JavaScript API のカスタム XML パーツの使用については、このトピックの「[その他の技術情報](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)」セクションを参照してください。
+また、XML データ バインドと Office.js の両方がアプリのカスタム XML パーツとやりとりできるので、これらの強力なツールを統合できます。Office JavaScript API のカスタム XML パーツの使用については、このトピックの「[その他の技術情報](../word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)」セクションを参照してください。
 
 Word アドインのバインドの使用については、トピックの次のセクションで取り上げます。最初に、アドインを使用してバインドできるリッチ テキスト コンテンツ コントロールを挿入するために必要な Office Open XML の例を見ましょう。
 
@@ -810,7 +810,7 @@ Word 2013 でネイティブで作成し、編集できるグラフは Excel 201
 
 それでは、スタンドアロン使用 (つまり、ストアまたは専用のサーバー ロケーションから挿入されたアドイン) と、自分のアドインで作動するように設計された事前作成済みのテンプレートの使用の両方でアドインを作成する場合、他に知っておくべきことはあるでしょうか。必要なことはすべて知っているというのが答えかもしれません。
 
-特定のコンテンツ タイプのマークアップとそれを挿入するメソッドは、アドインをスタンドアロンとテンプレートのいずれで動作するように設計したかに関係なく、同じです。自分のアドインで作動するように設計されたテンプレートを使用する場合、参照コンテンツがドキュメントにすでに存在するシナリオを構成するコールバックを必ず JavaScript に含めます (セクション「[指定コンテンツ コントロールを追加し、それにバインドする](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#add-and-bind-to-a-named-content-control)」のバインド例)。
+特定のコンテンツ タイプのマークアップとそれを挿入するメソッドは、アドインをスタンドアロンとテンプレートのいずれで動作するように設計したかに関係なく、同じです。自分のアドインで作動するように設計されたテンプレートを使用する場合、参照コンテンツがドキュメントにすでに存在するシナリオを構成するコールバックを必ず JavaScript に含めます (セクション「[指定コンテンツ コントロールを追加し、それにバインドする](../word/create-better-add-ins-for-word-with-office-open-xml.md#add-and-bind-to-a-named-content-control)」のバインド例)。
 
 ユーザーがドキュメントを作成したときにアドインがテンプレートに常駐しているか、アドインがテンプレートを挿入するかに関係なく、自分のアドインでテンプレートを使用するときは、API のその他の要素を組み込み、さらに強固でインタラクティブな体験を作ることもできます。たとえば、テンプレート固有のオプションをユーザーに提供するために、customXML パーツに識別データを含め、それを使用し、テンプレート タイプを決定できます。アドインにおける customXML の動作に関する詳細は、以下のその他の技術情報を参照してください。
 

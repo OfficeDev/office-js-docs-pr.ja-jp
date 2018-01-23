@@ -2,7 +2,7 @@
 
 _適用対象:Word 2016、Word for iPad、Word for Mac_
 
-Word アドインは、Word の内部で動作し、Word JavaScript API を使用して文書のコンテンツを操作できます。この API は、Office アプリケーションを拡張するための Office アドイン プログラミング モデルに組み込まれています。 このアドイン プログラミング モデルでは、任意のプラットフォームと言語を使用して、Word に対する拡張機能をホストする Web アプリケーションを作成できます。その設定と機能は、アドインの[マニフェスト](../../docs/overview/add-in-manifests.md)使用して定義できます。
+Word アドインは、Word の内部で動作し、Word JavaScript API を使用して文書のコンテンツを操作できます。この API は、Office アプリケーションを拡張するための Office アドイン プログラミング モデルに組み込まれています。 このアドイン プログラミング モデルでは、任意のプラットフォームと言語を使用して、Word に対する拡張機能をホストする Web アプリケーションを作成できます。その設定と機能は、アドインの[マニフェスト](../overview/add-in-manifests.md)使用して定義できます。
 
 この記事では、jQuery と Word JavaScript API を使用して Word アドインを構築する手順について説明します。 
 

@@ -57,7 +57,7 @@ Office Mix の場合は、アドイン カタログを使用して運用前の�
 
 アプリケーション マニフェストは、LabJS ラボを説明する XML ドキュメントです。ラボがホストされている URL への参照を提供し、表示名、説明、アイコン、サイズなどのラボに関する詳細を提供します。
 
-サンプル マニフェスト "SampleManifest.xml" が含まれています。マニフェスト スキーマに関する詳細やスキーマ定義へのリンクについては、「 [Office アドインの XML マニフェスト](../../../docs/overview/add-in-manifests.md)」を参照してください。
+サンプル マニフェスト "SampleManifest.xml" が含まれています。マニフェスト スキーマに関する詳細やスキーマ定義へのリンクについては、「 [Office アドインの XML マニフェスト](../../overview/add-in-manifests.md)」を参照してください。
 
 SharePoint サイトにマニフェストをアップロードするには、通常は URL <code>https://\<your site\>/sites/AppCatalog</code> にあるアプリケーション カタログにまず移動します。次に、**[新しいアプリ]** ボタンをクリックし、手順に従ってアプリケーション マニフェストをアップロードします。
 
@@ -92,7 +92,7 @@ Office ストアにラボを提出するには、「[Office アドインを発�
 
 - [Office Mix アドイン](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [Office アドイン](../../../docs/overview/office-add-ins.md)
+- [Office アドイン](../../overview/office-add-ins.md)
     
 - [Office Mix 用の最初のラボを作成する](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

@@ -96,7 +96,7 @@ Office アドインは、ブラウザー コントロールまたは **iframe** 
 
   - アドインは Web ブラウザー コントロール下で動作するため、ブラウザーで動作する通常の Web ページとほぼ同じ処理を実行できますが、同時に、ドメイン分離のための同一生成元ポリシーとセキュリティ ゾーンを遵守するように制限されます。
 
-Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../../docs/outlook/privacy-and-security.md)」を参照してください。
+Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/privacy-and-security.md)」を参照してください。
 
 
 ### <a name="developer-guidelines-to-handle-pii"></a>PII の取り扱いに関する開発ガイドライン
@@ -148,9 +148,9 @@ Office アドインのセキュリティ モデルをサポートするための
 
 Outlook アドインにおけるこの詳細については、次のトピックを参照してください。
 
-- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../../docs/outlook/privacy-and-security.md)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/privacy-and-security.md)
 
-- [Outlook アドインのアクセス許可を理解する](../../docs/outlook/understanding-outlook-add-in-permissions.md)
+- [Outlook アドインのアクセス許可を理解する](../outlook/understanding-outlook-add-in-permissions.md)
 
 
 ### <a name="same-origin-policy"></a>同一生成元ポリシー
@@ -175,7 +175,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange と SharePoint は、クロス ドメイン アクセスを可能にするためにクライアント側のプロキシを提供します。一般に、イントラネット上の同一生成元ポリシーは、インターネット上のポリシーほど厳密ではありません。詳細については、「[同一生成元ポリシー第 1 部: ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)」および「[Office アドインにおける同一生成元ポリシーの制限事項に対応する](../../docs/develop/addressing-same-origin-policy-limitations.md)」を参照してください。
+Exchange と SharePoint は、クロス ドメイン アクセスを可能にするためにクライアント側のプロキシを提供します。一般に、イントラネット上の同一生成元ポリシーは、インターネット上のポリシーほど厳密ではありません。詳細については、「[同一生成元ポリシー第 1 部: ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)」および「[Office アドインにおける同一生成元ポリシーの制限事項に対応する](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
 
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>悪意のあるクロスサイト スクリプティングを回避するヒント

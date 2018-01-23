@@ -41,7 +41,7 @@ Visual Studio 2015 で、追加機能を反映するために、次に示す一�
 ## <a name="modify-your-add-in-settings"></a>アドイン設定の変更
 
 
-アドインの設定を変更するには、プロジェクトの XML マニフェスト ファイルを編集します。[**ソリューション エクスプローラー**] で、アドイン プロジェクト ノードを展開し、XML マニフェストを格納するフォルダーを展開して、XML マニフェストを選択します。ファイル内の任意の要素をポイントして、要素の目的を説明するヒントを表示できます。マニフェスト ファイルの詳細については、「[Office アドイン XML マニフェスト](../../docs/overview/add-in-manifests.md)」をご覧ください。
+アドインの設定を変更するには、プロジェクトの XML マニフェスト ファイルを編集します。[**ソリューション エクスプローラー**] で、アドイン プロジェクト ノードを展開し、XML マニフェストを格納するフォルダーを展開して、XML マニフェストを選択します。ファイル内の任意の要素をポイントして、要素の目的を説明するヒントを表示できます。マニフェスト ファイルの詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」をご覧ください。
 
 
 ## <a name="develop-the-contents-of-your-add-in"></a>アドインのコンテンツの開発
@@ -159,7 +159,7 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
     
 - [[検証] ([オプション] ダイアログ ボックス - [テキスト エディター] - [CSS])](http://go.microsoft.com/fwlink/?LinkID=238780)
     
-プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)」を参照してください。
+プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。
 
 
 ### <a name="show-an-add-in-in-excel-word-or-project-and-step-through-your-code"></a>Excel、Word、または Project にアドインを表示し、コードをステップ実行する

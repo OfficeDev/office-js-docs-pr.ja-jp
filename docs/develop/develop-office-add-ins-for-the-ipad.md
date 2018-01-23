@@ -9,7 +9,7 @@
 |:-----|:-----|:-----|
 |アドインを更新して、Office.js バージョン 1.1 をサポートします。|Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。|[JavaScript API for Office の変更点](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
 |UI デザインのベスト プラクティスを適用します。|アドイン UI を iOS エクスペリエンスとシームレスに統合します。|[iOS の設計](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
-|アドイン デザインのベスト プラクティスを適用します。|アドインが明確な価値を提供し、魅力的であり、一貫して機能することを確認します。|[Office アドイン開発のベスト プラクティス](../../docs/overview/add-in-development-best-practices.md)|
+|アドイン デザインのベスト プラクティスを適用します。|アドインが明確な価値を提供し、魅力的であり、一貫して機能することを確認します。|[Office アドイン開発のベスト プラクティス](../overview/add-in-development-best-practices.md)|
 |タッチ用にアドインを最適化します。|マウスとキーボードに加え、タッチ入力に対して、UI が素早く応答するようにします。|[UX 設計原則を適用する](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#Anchor_3)|
 |アドインを無料にします。|iPad 上の Office は、ユーザー数を拡大して、サービスを促進できるチャネルです。これらの新しいユーザーは、お客様になる可能性があります。|[検証ポリシー 10.8](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |アドインを商目的で使用しないようにします。|アドインは、アプリ内購入、試用版の提供、有料版へのアップセルを目的とする UI、またはユーザーが他のコンテンツやアプリやアドインを購入または取得できるすべてのオンライン ストアへのリンクと無縁である必要があります。またプライバシー ポリシーと使用条件のページにも、商用の UI またはストアへのリンクがないことが必要です。|[検証ポリシー 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
@@ -29,16 +29,16 @@ iOS 上で実行するアドインを開発するための次のベスト プラ
     
 -  **アドインのマニフェストまたはランタイム チェックを使用して API の要件を指定する。**
     
-    アドインのマニフェストで API の要件を指定すると、Office はホスト アプリケーションがそれらの API メンバーをサポートするかどうかを調べます。API メンバーをホストで使用できる場合は、そのホスト アプリケーションでアドインを使用できます。または、ランタイム チェックを実行して、アドインで使用する前に、メソッドをホストで使用できるかどうかを確認することもできます。ランタイム チェックでは、ホストでアドインを常に使用できることが確認され、メソッドが使用可能な場合は追加機能が提供されます。詳細については、「[Office ホストと API 要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」を参照してください。
+    アドインのマニフェストで API の要件を指定すると、Office はホスト アプリケーションがそれらの API メンバーをサポートするかどうかを調べます。API メンバーをホストで使用できる場合は、そのホスト アプリケーションでアドインを使用できます。または、ランタイム チェックを実行して、アドインで使用する前に、メソッドをホストで使用できるかどうかを確認することもできます。ランタイム チェックでは、ホストでアドインを常に使用できることが確認され、メソッドが使用可能な場合は追加機能が提供されます。詳細については、「[Office ホストと API 要件を指定する](../overview/specify-office-hosts-and-api-requirements.md)」を参照してください。
     
-一般的なアドイン開発のベスト プラクティスについては、「[Office アドイン開発のベスト プラクティス](../../docs/overview/add-in-development-best-practices.md)」を参照してください。
+一般的なアドイン開発のベスト プラクティスについては、「[Office アドイン開発のベスト プラクティス](../overview/add-in-development-best-practices.md)」を参照してください。
 
 
 ## <a name="additional-resources"></a>その他のリソース
 <a name="bk_addresources"> </a>
 
 
-- [iPad または Mac で Office アドインをサイドロードする](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+- [iPad または Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
     
-- [iPad と Mac で Office アドインをデバッグする](../../docs/testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)
     

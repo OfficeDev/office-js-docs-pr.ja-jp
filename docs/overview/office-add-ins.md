@@ -106,15 +106,15 @@ Office JavaScript API には、アドインを構築したり、Office のコン
 
 ## <a name="next-steps"></a>次の手順 
 
-Office アドインの構築を開始する方法の詳細については、[開始](https://dev.office.com/getting-started/addins) エクスペリエンスをお試しください。[Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md) または[独自のツール](../../docs/get-started/create-an-office-add-in-using-any-editor)を使用してすぐにアドインを作成することができます。 
+Office アドインの構築を開始する方法の詳細については、[開始](https://dev.office.com/getting-started/addins) エクスペリエンスをお試しください。[Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) または[独自のツール](../get-started/create-an-office-add-in-using-any-editor)を使用してすぐにアドインを作成することができます。 
 
-効果的で魅力的なユーザー エクスペリエンスを作成するソリューションの計画を始めるには、Office アドインの[設計のガイドライン](../../docs/design/add-in-design)と[ベスト プラクティス](../../docs/add-ins/overview/add-in-development-best-practices)の理解を深めてください。    
+効果的で魅力的なユーザー エクスペリエンスを作成するソリューションの計画を始めるには、Office アドインの[設計のガイドライン](../design/add-in-design)と[ベスト プラクティス](../add-ins/overview/add-in-development-best-practices)の理解を深めてください。    
    
 ## <a name="additional-resources"></a>追加リソース
 
 - [Office アドインのサンプル](https://dev.office.com/code-samples)
     
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
 
 - [Office アドインのホストとプラットフォームの可用性](https://dev.office.com/add-in-availability)
 

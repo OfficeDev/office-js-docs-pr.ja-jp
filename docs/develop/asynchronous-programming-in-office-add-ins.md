@@ -63,7 +63,7 @@ function write(message){
 
 またコールバック関数のパラメーターを使用して、**AsyncResult** オブジェクトのその他のプロパティにアクセスすることもできます。呼び出しの成功または失敗を判断する場合は [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) プロパティを使用します。呼び出しが失敗した場合は [AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) プロパティを使用して [Error](http://dev.office.com/reference/add-ins/shared/error) オブジェクトにアクセスし、エラーの詳細を確認できます。
 
-**getSelectedDataAsync** メソッドの使用の詳細については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。 
+**getSelectedDataAsync** メソッドの使用の詳細については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。 
 
 
 ### <a name="writing-a-named-callback-function"></a>名前付き関数を記述する
@@ -111,7 +111,7 @@ JavaScript API for Office は 2 種類の非同期プログラミング パタ�
     
 コールバック関数のある非同期プログラミングでは、多くの場合、2 つ以上のコールバック内に 1 つのコールバックで返された結果を入れ子にすることが必要となります。その場合、API のすべての "Async" メソッドからの入れ子のコールバックを使用できます。
 
-入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。入れ子のコールバックの代替として、JavaScript API for Office は promise パターンの実装もサポートします。ただし、JavaScript API for Office の現在のバージョンでは、promise パターンは [Excel ワークシートと Word 文書のバインディング](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)のコードのみで使用できます。
+入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。入れ子のコールバックの代替として、JavaScript API for Office は promise パターンの実装もサポートします。ただし、JavaScript API for Office の現在のバージョンでは、promise パターンは [Excel ワークシートと Word 文書のバインディング](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)のコードのみで使用できます。
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>入れ子のコールバック関数を使用する非同期プログラミング
@@ -230,7 +230,7 @@ function write(message){
 }
 ```
 
-_BindingObjectAsyncMethod_ プレースホルダーを、promise オブジェクトでサポートされる 4 つの **Binding** オブジェクト メソッド (**getDataAsync**、**setDataAsync**、**addHandlerAsync**、または **removeHandlerAsync**) のいずれかの呼び出しで置換します。これらのメソッドの呼び出しでは追加の promise がサポートされません。これらは[入れ子のコールバック関数パターン](../../docs/develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks)を使用して呼び出す必要があります。
+_BindingObjectAsyncMethod_ プレースホルダーを、promise オブジェクトでサポートされる 4 つの **Binding** オブジェクト メソッド (**getDataAsync**、**setDataAsync**、**addHandlerAsync**、または **removeHandlerAsync**) のいずれかの呼び出しで置換します。これらのメソッドの呼び出しでは追加の promise がサポートされません。これらは[入れ子のコールバック関数パターン](../develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks)を使用して呼び出す必要があります。
 
 **Binding** オブジェクトの promise が履行されたら、バインドのようにつながっているメソッド呼び出しで再利用できます (アドインのランタイムが非同期で再試行し、promise を履行することはありません)。**Binding** オブジェクトの promise を履行できない場合、次にその非同期メソッドの 1 つが呼び出されたとき、アドインのランタイムがバインド オブジェクトへのアクセスを再試行します。
 
@@ -386,7 +386,7 @@ function write(message){
 ## <a name="additional-resources"></a>その他のリソース
 
 
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
     
 - [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

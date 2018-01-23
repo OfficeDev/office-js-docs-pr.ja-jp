@@ -320,7 +320,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。この関数は、結果のステータスが格納される `asyncResult` という 1 つのパラメーターを使用して呼び出されます。
 
- > **メモ:** Excel 2013 SP1 および Excel Online の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../../docs/excel/format-tables-in-add-ins-for-excel.md)ができるようになりました。
+ > **メモ:** Excel 2013 SP1 および Excel Online の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../excel/format-tables-in-add-ins-for-excel.md)ができるようになりました。
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>バインド内のデータまたは選択範囲の変更を検出する
@@ -373,11 +373,11 @@ function removeEventHandlerFromBinding() {
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
     
-- [Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)
     
-- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Binding]:               http://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding

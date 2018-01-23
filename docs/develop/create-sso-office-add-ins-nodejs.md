@@ -1,10 +1,10 @@
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
-ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](../../docs/develop/sso-in-office-add-ins.md)」を参照してください。
+ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](../develop/sso-in-office-add-ins.md)」を参照してください。
 
 この記事では、Node.js と express を使用して作成したアドインで、シングル サインオン (SSO) を有効化するプロセスについて手順を追って説明します。 
 
-> **注:**ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインの作成](../../docs/develop/create-sso-office-add-ins-aspnet.md)」を参照してください。
+> **注:**ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインの作成](../develop/create-sso-office-add-ins-aspnet.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

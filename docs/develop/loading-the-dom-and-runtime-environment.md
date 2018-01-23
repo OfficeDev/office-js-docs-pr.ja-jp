@@ -98,5 +98,5 @@ Office.initialize = function () {
 
 
 
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
     

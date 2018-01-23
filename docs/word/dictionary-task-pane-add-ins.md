@@ -253,7 +253,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-辞書アドインのマニフェスト ファイルの作成に固有の **Dictionary** 要素とその子要素については、以下のセクションで説明します。マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../../docs/overview/add-in-manifests.md)」を参照してください。
+辞書アドインのマニフェスト ファイルの作成に固有の **Dictionary** 要素とその子要素については、以下のセクションで説明します。マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。
 
 
 ### <a name="dictionary-element"></a>Dictionary 要素
@@ -379,7 +379,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。
 
-この要素では、**Override** 要素を使用して、別のロケールに対応する値を指定できます。たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../../docs/overview/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
+この要素では、**Override** 要素を使用して、別のロケールに対応する値を指定できます。たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
 
  **例**
 

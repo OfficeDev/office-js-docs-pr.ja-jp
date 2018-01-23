@@ -75,6 +75,6 @@ Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [Office アドイン プラットフォームの概要](../../docs/overview/office-add-ins.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインのホストとプラットフォームの可用性](http://dev.office.com/add-in-availability)
 

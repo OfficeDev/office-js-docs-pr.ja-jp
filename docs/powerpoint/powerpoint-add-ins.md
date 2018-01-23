@@ -14,7 +14,7 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 
 情報を表示するために、これらの例は `app.showNotification` 関数に依存しています。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。これらの例のうちいくつかは、これらの関数 `var globals = {activeViewHandler:0, firstSlideId:0};` の範囲外で宣言されたこの `globals` オブジェクトにも依存しています。
 
-これらのコード例では、プロジェクトが [Office.js v1.1 以降のライブラリを参照](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)している必要があります。
+これらのコード例では、プロジェクトが [Office.js v1.1 以降のライブラリを参照](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)している必要があります。
 
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
@@ -166,11 +166,11 @@ function getFileUrl() {
 ## <a name="additional-resources"></a>追加リソース
 - [PowerPoint のコード サンプル](https://dev.office.com/code-samples#?filters=powerpoint)
 
-- [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
+- [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [PowerPoint または Word 用のアドインからドキュメント全体を取得する](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [PowerPoint または Word 用のアドインからドキュメント全体を取得する](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
 - [PowerPoint アドインでドキュメントのテーマを使用する](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

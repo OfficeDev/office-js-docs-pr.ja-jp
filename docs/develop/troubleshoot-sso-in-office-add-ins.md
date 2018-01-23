@@ -42,7 +42,7 @@
 
 ### <a name="13005"></a>13005
 
-無効な許可です。 このエラーは、通常、Office がアドインの Web サービスに対して事前に承認されていないことを意味します。 詳細については、「[サービス アプリケーションを作成する](../../docs/develop/sso-in-office-add-ins.md#create-the-service-application)」、および「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS) を参照してください。 このエラーは、ユーザーが `profile` にサービス アプリケーションのアクセス許可を与えていない場合にも発生する可能性があります。
+無効な許可です。 このエラーは、通常、Office がアドインの Web サービスに対して事前に承認されていないことを意味します。 詳細については、「[サービス アプリケーションを作成する](../develop/sso-in-office-add-ins.md#create-the-service-application)」、および「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS) を参照してください。 このエラーは、ユーザーが `profile` にサービス アプリケーションのアクセス許可を与えていない場合にも発生する可能性があります。
 
 ### <a name="13006"></a>13006
 
@@ -51,7 +51,7 @@
 ### <a name="13007"></a>13007
 
 Office ホストは、アドインの Web サービスへのアクセス トークンを取得できませんでした。
-- アドインの登録とアドインのマニフェストで `openid` および `profile` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
+- アドインの登録とアドインのマニフェストで `openid` および `profile` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 - コードは、ユーザーが後で操作を再試行するよう指示することができます。
 
 ### <a name="13008"></a>13008
@@ -78,7 +78,7 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 ### <a name="invalid-or-missing-scope-permission-errors"></a>無効または不足した範囲 (アクセス許可) のエラー
 
 - サーバー側のコードは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示しなければなりません。 可能な場合は、エラーについて、コンソールでログを作成するか、ログに記録してください。
-- アドイン マニフェストの [[範囲]](http://dev.office.com/reference/add-ins/manifest/scopes) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
+- アドイン マニフェストの [[範囲]](http://dev.office.com/reference/add-ins/manifest/scopes) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint)」(Node JS)、および「[アドインを構成する](../develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](../develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Microsoft Graph 呼び出し時の期限切れまたは無効なトークンのエラー
 

@@ -4,7 +4,7 @@
 
 ## <a name="using-the-most-up-to-date-project-files"></a>最新のプロジェクト ファイルを使用する
 
-Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)と[アドイン マニフェスト v1.1 の機能](../../docs/overview/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、[Visual Studio 2015 と最新の Office 開発者ツール](https://www.visualstudio.com/features/office-tools-vs)をダウンロードしてインストールする必要があります。
+Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)と[アドイン マニフェスト v1.1 の機能](../overview/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、[Visual Studio 2015 と最新の Office 開発者ツール](https://www.visualstudio.com/features/office-tools-vs)をダウンロードしてインストールする必要があります。
 
 テキスト エディター、または Visual Studio 以外の IDE を使用してアドインを開発する場合は、Office.js に対する CDN への参照と、アドインのマニフェストで参照するスキーマのバージョンを更新する必要があります。
 
@@ -65,7 +65,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 </OfficeApp>
 ```
 
-> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -105,14 +105,14 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 </OfficeApp>
 ```
 
-> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../../docs/overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> **注:**アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 要素と [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 要素または [Requirements 要素と Requirement 要素](../overview/specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
     
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office のホストと API の要件を指定する](../overview/specify-office-hosts-and-api-requirements.md)
     
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
     
 - [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

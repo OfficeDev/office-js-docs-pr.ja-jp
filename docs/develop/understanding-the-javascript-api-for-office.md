@@ -3,7 +3,7 @@
 
 
 
-この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
+この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
 
 >
   **注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
@@ -45,7 +45,7 @@ Office.initialize = function () {
 ```
 Office アドイン内のすべてのページで、初期化イベント **Office.initialize** にイベント ハンドラーを割り当てる必要があります。イベント ハンドラーを割り当てないと、アドインの起動時にエラーが発生することがあります。また、ユーザーが Excel Online、PowerPoint Online、Outlook Web App などの Office Online Web クライアントでアドインを使用しようとすると、アドインの実行が失敗します。初期化コードが必要ない場合は、上の最初の例のように、**Office.initialize** に割り当てる関数の本体を空にできます。
 
-アドインの初期化時のイベントのシーケンスの詳細については、「[DOM とランタイム環境を読み込む](../../docs/develop/loading-the-dom-and-runtime-environment.md)」を参照してください。
+アドインの初期化時のイベントのシーケンスの詳細については、「[DOM とランタイム環境を読み込む](../develop/loading-the-dom-and-runtime-environment.md)」を参照してください。
 
 #### <a name="initialization-reason"></a>初期化の理由
 作業ウィンドウ アドインとコンテンツ アドインについては、Office.initialize に追加の _reason_ パラメーターを使用できます。このパラメーターは、アドインがどのように現在のドキュメントに追加されたかを判断するために使用できます。これは、最初にアドインが挿入されたときと、既にアドインがドキュメント内に存在しているときに別のロジックを提供するために使用できます。 
@@ -144,7 +144,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
 **Document** オブジェクトは、ユーザーの現在の選択を「取得および設定」の方法で読み取りおよび書き込みできるメソッドを公開します。そのために、**Document** オブジェクトは **getSelectedDataAsync** メソッドと **setSelectedDataAsync** メソッドを提供します。
 
-選択範囲に関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
+選択範囲に関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Bindings オブジェクトおよび Binding オブジェクトによるバインドの操作
@@ -174,7 +174,7 @@ _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、ま
 |テーブル バインド|ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](http://dev.office.com/reference/add-ins/shared/tabledata) オブジェクトとして書き込みまたは読み取りが行われます。**TableData** オブジェクトは **headers** および **rows** プロパティを通じてデータを公開します。|Excel または Word の表はすべて、テーブル バインドの基礎にできます。テーブル バインドを確立すると、ユーザーが表に追加する新しい各行または各列が、自動的にバインドに含まれます。 |
 **Bindings** オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding)、[TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding)、または [TextBinding](http://dev.office.com/reference/add-ins/shared/binding.textbinding) のうち対応するオブジェクトのメソッドを使用して、バインドのデータおよびプロパティを操作できます。この 3 つのオブジェクトはすべて、[Binding](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) オブジェクトの [getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync) メソッドおよび **setDataAsync** メソッドを継承しているので、バインドされたデータを操作できます。
 
-バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
+バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
 ## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>CustomXmlParts オブジェクトおよび CustomXmlPart オブジェクトによるカスタム XML パーツの操作
@@ -190,7 +190,7 @@ API の [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxm
 
  **適用対象:** Word および PowerPoint の作業ウィンドウ アドイン
 
-[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) メソッド、および [File](http://dev.office.com/reference/add-ins/shared/file) オブジェクトと [Slice](http://dev.office.com/reference/add-ins/shared/slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[アドインのドキュメントですべてのファイルを取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。
+[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) メソッド、および [File](http://dev.office.com/reference/add-ins/shared/file) オブジェクトと [Slice](http://dev.office.com/reference/add-ins/shared/slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[アドインのドキュメントですべてのファイルを取得する方法](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。
 
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
@@ -224,7 +224,7 @@ Outlook アドインで JavaScript を使用する方法の詳細については
 ## <a name="api-support-matrix"></a>API サポート マトリックス
 
 
-この表は、アドインの種類 (コンテンツ、作業ウィンドウ、および Outlook) 全体でサポートされている API と機能、および [1.1 アドイン マニフェスト スキーマと機能 (JavaScript API for Office v1.1 でサポート)](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) を使用して [アドインがサポートする Office のホスト アプリケーション](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md) を指定する際にこれらの API と機能をホストする Office アプリケーションについてまとめたものです。
+この表は、アドインの種類 (コンテンツ、作業ウィンドウ、および Outlook) 全体でサポートされている API と機能、および [1.1 アドイン マニフェスト スキーマと機能 (JavaScript API for Office v1.1 でサポート)](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) を使用して [アドインがサポートする Office のホスト アプリケーション](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md) を指定する際にこれらの API と機能をホストする Office アプリケーションについてまとめたものです。
 
 
 |||||||||

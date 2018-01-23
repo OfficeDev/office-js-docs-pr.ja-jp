@@ -43,8 +43,8 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 このセクションでは、SSO を使用する Office アドインの作成に関連するタスクについて説明します。 ここでは、これらのタスクについて、言語とフレームワークに依存しない方法で説明しています。 詳細なチュートリアルの例については、次を参照してください。
 
-* [シングル サインオンを使用する Node.js Office アドインを作成する](../../docs/develop/create-sso-office-add-ins-nodejs.md)
-* [シングル サインオンを使用する ASP.NET Office アドインを作成する](../../docs/develop/create-sso-office-add-ins-aspnet.md)
+* [シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)
+* [シングル サインオンを使用する ASP.NET Office アドインを作成する](../develop/create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 

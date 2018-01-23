@@ -98,7 +98,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 **HelloProjectOData** プロジェクトのマニフェストは、HelloProjectOData.xml ファイルです。必要に応じてマニフェストを編集して、アドインの説明、アイコンへの参照、追加言語の情報、その他の設定を追加できます。手順 3 では、アドインの表示名と説明を変更し、アイコンを追加します。
 
-マニフェストについて詳しくは、「[Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)」と「[Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../overview/add-in-manifests.md)」をご覧ください。
+マニフェストについて詳しくは、「[Office アドインの XML マニフェスト](../overview/add-in-manifests.md)」と「[Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../overview/add-in-manifests.md)」をご覧ください。
 
 
 ### <a name="procedure-3-to-modify-the-add-in-manifest"></a>手順 3. アドインのマニフェストを変更するには
@@ -146,7 +146,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 ## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>HelloProjectOData アドインの HTML コンテンツを作成する
 
-**HelloProjectOData** アドインは、デバッグとエラー出力を含むサンプルです。運用環境で使うことを想定したものではありません。HTML コンテンツのコーディングを始める前に、このアドインの UI とユーザー エクスペリエンスを設計してください。また、HTML コードとやり取りする JavaScript 関数の概略も記述してください。詳しくは、「[Office アドインの設計ガイドライン](../../docs/design/add-in-design.md)」をご覧ください。 
+**HelloProjectOData** アドインは、デバッグとエラー出力を含むサンプルです。運用環境で使うことを想定したものではありません。HTML コンテンツのコーディングを始める前に、このアドインの UI とユーザー エクスペリエンスを設計してください。また、HTML コードとやり取りする JavaScript 関数の概略も記述してください。詳しくは、「[Office アドインの設計ガイドライン](../design/add-in-design.md)」をご覧ください。 
 
 作業ウィンドウには、上部にアドインの表示名が表示されます。これはマニフェストの  **DisplayName** 要素の値です。HelloProjectOData.html ファイルの **body** 要素には、次のような他の UI 要素が含まれています。
 
@@ -367,7 +367,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
 
 3. **retrieveOData** 関数を追加します。この関数は REST クエリ用に値を連結し、jQuery の **ajax** 関数を呼び出して、要求されたデータを **ProjectData** サービスから取得します。 **support.cors** 変数は、 **ajax** 関数でのクロス オリジン リソース共有 (CORS) を有効にします。 **support.cors** ステートメントがないか、 **false** に設定されていると、 **ajax** 関数は **No transport** エラーを返します。
     
-     >**注**  以下のコードは、Project Server 2013 のオンプレミスのインストールで動作します。Project Online の場合は、トークン ベースの認証に OAuth を使用できます。詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](../../docs/develop/addressing-same-origin-policy-limitations.md)」を参照してください。
+     >**注**  以下のコードは、Project Server 2013 のオンプレミスのインストールで動作します。Project Online の場合は、トークン ベースの認証に OAuth を使用できます。詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
 
     **ajax** の呼び出しでは、_headers_ パラメーターまたは _beforeSend_ パラメーターを使用できます。_complete_ パラメーターは匿名関数であり、**retrieveOData** の変数と同じスコープ内にあります。_complete_ パラメーターの関数は、**odataText** コントロールに結果を表示すると共に、**parseODataResult** メソッドを呼び出すことにより JSON 応答を解析して表示します。_error_ パラメーターは名前付きの **getProjectDataErrorHandler** 関数を指定します。この関数は、エラー メッセージを **odataText** コントロールに書き込み、**throwError** メソッドを使用してポップアップ メッセージを表示します。
     
@@ -1142,7 +1142,7 @@ Table styles
     
 - [ProjectData - Project OData サービス リファレンス](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
-- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+- [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
     
 - [Office アドインを発行する](../publish/publish.md)
     

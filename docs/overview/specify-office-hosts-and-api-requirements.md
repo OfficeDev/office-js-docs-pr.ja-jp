@@ -58,11 +58,11 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 ![Office のホストまたは API の要件を指定する際に、アドインに最適なオプションを選択する](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
-- アドインを 1 つの Office ホストで実行する場合、マニフェストに **Hosts** 要素を設定します。詳しくは、「[Hosts 要素を設定する](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)」を参照してください。
+- アドインを 1 つの Office ホストで実行する場合、マニフェストに **Hosts** 要素を設定します。詳しくは、「[Hosts 要素を設定する](../overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)」を参照してください。
     
-- アドインを実行するために Office ホストがサポートする必要のある最小レベルの要件セットまたは API メンバーを設定するには、マニフェストに **Requirements** 要素を設定します。詳しくは、「[マニフェストで Requirements 要素を設定する](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)」をご覧ください。
+- アドインを実行するために Office ホストがサポートする必要のある最小レベルの要件セットまたは API メンバーを設定するには、マニフェストに **Requirements** 要素を設定します。詳しくは、「[マニフェストで Requirements 要素を設定する](../overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)」をご覧ください。
     
-- Office ホストで特定の要件セットまたは API メンバーが利用可能である場合に追加の機能を提供する場合は、アドインの JavaScript コードでランタイム チェックを実行します。たとえば、アドインが Excel 2016 で機能する場合は、新しい Excel 用の JavaScript API の API メンバーを使用して追加の機能を提供します。詳細については、「[JavaScript コードでランタイム チェックを使用する](../../docs/overview/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)」をご覧ください。
+- Office ホストで特定の要件セットまたは API メンバーが利用可能である場合に追加の機能を提供する場合は、アドインの JavaScript コードでランタイム チェックを実行します。たとえば、アドインが Excel 2016 で機能する場合は、新しい Excel 用の JavaScript API の API メンバーを使用して追加の機能を提供します。詳細については、「[JavaScript コードでランタイム チェックを使用する](../overview/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)」をご覧ください。
     
 
 ## <a name="set-the-hosts-element"></a>Hosts 要素を設定する
@@ -159,10 +159,10 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
     
 -  _VersionNumber_ (省略可能) は要件セットのバージョンです。
     
-Excel 2016 または Word 2016 では、**isSetSupported** と共に **ExcelAPI** または **WordAPI** 要件セットを使用します。**isSetSupported** メソッド、**ExcelAPI**、**WordAPI** 要件セットは、CDN から利用できる最新の Office.js ファイルで利用できます。CDN の Office.js を使用しない場合、**isSetSupported** が定義されていないため、アドインで例外が生成されることがあります。詳細については、「[Office ライブラリの最新の JavaScript API を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md#specify-the-latest-javascript-api-for-office-library)」を参照してください。 
+Excel 2016 または Word 2016 では、**isSetSupported** と共に **ExcelAPI** または **WordAPI** 要件セットを使用します。**isSetSupported** メソッド、**ExcelAPI**、**WordAPI** 要件セットは、CDN から利用できる最新の Office.js ファイルで利用できます。CDN の Office.js を使用しない場合、**isSetSupported** が定義されていないため、アドインで例外が生成されることがあります。詳細については、「[Office ライブラリの最新の JavaScript API を指定する](../overview/specify-office-hosts-and-api-requirements.md#specify-the-latest-javascript-api-for-office-library)」を参照してください。 
 
 
- >**メモ:** **isSetSupported** は Outlook または Outlook Web App では作動しません。Outlook または Outlook Web App でランタイム チェックを使用するには、「[要件セットにないメソッドを使用したランタイム チェック](../../docs/overview/specify-office-hosts-and-api-requirements.md#runtime-checks-using-methods-not-in-a-requirement-set)」で説明されている手法を使用してください。
+ >**メモ:** **isSetSupported** は Outlook または Outlook Web App では作動しません。Outlook または Outlook Web App でランタイム チェックを使用するには、「[要件セットにないメソッドを使用したランタイム チェック](../overview/specify-office-hosts-and-api-requirements.md#runtime-checks-using-methods-not-in-a-requirement-set)」で説明されている手法を使用してください。
 
 次のコードの例は、さまざまな要件セットや API メンバーをサポートするさまざまな Office ホストにおいて、アドインで各種の機能を提供する方法を示しています。
 
@@ -211,7 +211,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 
 
-- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+- [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
     
 - [Office アドインの要件セット](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
     

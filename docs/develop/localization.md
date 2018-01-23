@@ -411,7 +411,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [Office アドインの設計ガイドライン](../../docs/design/add-in-design.md)
+- [Office アドインの設計ガイドライン](../design/add-in-design.md)
     
 - 
   [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)

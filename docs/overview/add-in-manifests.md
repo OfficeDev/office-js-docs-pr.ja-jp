@@ -426,14 +426,14 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 ## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
-マニフェストの問題をトラブルシューティングするには、「[マニフェストの問題を検証し、トラブルシューティングする](../../docs/testing/troubleshoot-manifest.md)」を参照してください。[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法、およびランタイムのログを使用してマニフェストをデバッグする方法についての情報を確認できます。
+マニフェストの問題をトラブルシューティングするには、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照してください。[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法、およびランタイムのログを使用してマニフェストをデバッグする方法についての情報を確認できます。
 
 ## <a name="additional-resources"></a>その他のリソース
 
 
-- [マニフェストでアドイン コマンドを定義する](../../docs/develop/define-add-in-commands.md)
-- [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office アドインのローカライズ](../../docs/develop/localization.md)
+- [マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)
+- [Office のホストと API の要件を指定する](../overview/specify-office-hosts-and-api-requirements.md)
+- [Office アドインのローカライズ](../develop/localization.md)
 - [Office アドイン マニフェストのスキーマ参照](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [マニフェストの問題を検証し、トラブルシューティングする](../../docs/testing/troubleshoot-manifest.md)
+- [マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)
 

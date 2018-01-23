@@ -66,5 +66,5 @@ IFRAME および POST MESSAGE を使用して独自のプロキシを作成す�
 ## <a name="additional-resources"></a>その他のリソース
 
 
-- [Office アドインのプライバシーとセキュリティ](../../docs/develop/privacy-and-security.md)
+- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)
     

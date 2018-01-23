@@ -9,7 +9,7 @@
     
 2.  **Document オブジェクト。** コンテンツと作業ウィンドウのアドインに使用可能な API のほとんどは、[Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトのメソッド、プロパティ、およびイベントを通じて公開されます。コンテンツ アドインと作業ウィンドウ アドインは、[Office.context.document](http://dev.office.com/reference/add-ins/shared/office.context.document) プロパティを使用して **Document** オブジェクトにアクセスし、それを通して、[Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) オブジェクト、[CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) オブジェクト、[getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッド、[setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) メソッド、[getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) メソッドなどの文書内のデータを操作するための API の主要メンバーにアクセスできます。**Document** オブジェクトは、文書が読み取り専用モードと編集モードのどちらになっているかを判断するための [mode](http://dev.office.com/reference/add-ins/shared/document.mode) プロパティと、現在の文書の URL を取得して、[Settings](http://dev.office.com/reference/add-ins/shared/document.url) オブジェクトにアクセスするための [url](http://dev.office.com/reference/add-ins/shared/settings) プロパティも提供します。**Document** オブジェクトは、[SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) イベントのイベント ハンドラの追加もサポートしているため、ユーザーが文書内の選択を変更した時点を検出できます。
     
-   コンテンツ アドインや作業ウィンドウ アドインが **Document** オブジェクトにアクセスできるのは、DOM とランタイム環境が [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) イベント用のイベント ハンドラーなどで読み込まれた後だけです。アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](../../docs/develop/loading-the-dom-and-runtime-environment.md)」を参照してください。
+   コンテンツ アドインや作業ウィンドウ アドインが **Document** オブジェクトにアクセスできるのは、DOM とランタイム環境が [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) イベント用のイベント ハンドラーなどで読み込まれた後だけです。アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](../develop/loading-the-dom-and-runtime-environment.md)」を参照してください。
     
 3.  **特定の機能を操作するためのオブジェクト。**API の特定の機能を操作するには、次のオブジェクトとメソッドを使用します。
     
@@ -24,7 +24,7 @@
 
  >**重要**  API メンバーの一部は、コンテンツ アドインと作業ウィンドウ アドインをホスト可能なすべての Office アプリケーションでサポートされているわけではありません。サポートされているメンバーを特定するには、次のいずれかを参照してください。
 
-Office ホスト アプリケーション全体に渡る Office JavaScript API サポートの概要については、「[JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)」を参照してください。
+Office ホスト アプリケーション全体に渡る Office JavaScript API サポートの概要については、「[JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>アクティブな選択範囲の読み取りと書き込み
@@ -50,7 +50,7 @@ function write(message){
 
 ```
 
-詳細と例については、「[文書またはスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
+詳細と例については、「[文書またはスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>文書またはスプレッドシート内の領域へのバインド
@@ -80,7 +80,7 @@ function write(message){
 }
 ```
 
-詳細と例については、「[文書またはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
+詳細と例については、「[文書またはスプレッドシート内の領域へのバインド](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
 ## <a name="getting-entire-documents"></a>文書全体の取得
@@ -89,7 +89,7 @@ function write(message){
 
 **Document.getFileAsync** を呼び出すと、[File](http://dev.office.com/reference/add-ins/shared/file) オブジェクトに文書のコピーが返されます。**File** オブジェクトは、[Slice](http://dev.office.com/reference/add-ins/shared/document) オブジェクトとして表現される「チャンク」内の文書へのアクセスを提供します。**getFileAsync** を呼び出すときに、ファイル タイプ (テキストまたは圧縮 Open Office XML 形式) とスライスのサイズ (4 MB 以下) を指定できます。**File** オブジェクトの内容にアクセスするには、**Slice.data** プロパティに生データを返す [File.getSliceAsync](http://dev.office.com/reference/add-ins/shared/slice.data) を呼び出します。圧縮形式を指定した場合は、ファイル データがバイト配列で返されます。ファイルを Web サービスに転送する場合は、圧縮生データを base64 エンコード文字列に変換してから送信できます。最後に、ファイルのスライスの取得が完了したら、**File.closeAsync** メソッドを使用して文書を閉じます。
 
-詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。 
+詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する方法](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Word 文書のカスタム XML パーツの読み取りと書き込み
@@ -102,7 +102,7 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 
 文書に新しいカスタム XML パーツを追加するには、**Document.customXmlParts** プロパティを使用して文書内に存在するカスタム XML パーツを取得し、[CustomXmlParts.addAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.addasync) メソッドを呼び出します。
 
-作業ウィンドウ アドインでのカスタム XML パーツの操作方法の詳細については、「[Office Open XML を使用してより良い Word 用アドインを作成する](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md)」を参照してください。
+作業ウィンドウ アドインでのカスタム XML パーツの操作方法の詳細については、「[Office Open XML を使用してより良い Word 用アドインを作成する](../word/create-better-add-ins-for-word-with-office-open-xml.md)」を参照してください。
 
 
 ## <a name="persisting-add-in-settings"></a>アドイン設定を保存する
@@ -121,14 +121,14 @@ Office.context.document.settings.set('themeColor', 'green');
 
 **set** メソッドと **remove** メソッドを使用した設定データの作成または削除はそのデータのメモリ内コピーに対して機能するため、**saveAsync** を呼び出して、設定データに対する変更をアドインが操作する文書内に保持する必要があります。
 
-**Settings** オブジェクトのメソッドを使用したカスタム データの操作方法の詳細については、「[アドインの状態と設定を保存する](../../docs/develop/persisting-add-in-state-and-settings.md)」を参照してください。
+**Settings** オブジェクトのメソッドを使用したカスタム データの操作方法の詳細については、「[アドインの状態と設定を保存する](../develop/persisting-add-in-state-and-settings.md)」を参照してください。
 
 
 ## <a name="reading-properties-of-a-project-document"></a>プロジェクト文書のプロパティの読み取り
 
 作業ウィンドウ アドインが Project で動作する場合は、そのアドインでアクティブ プロジェクト内のプロジェクト フィールド、リソース、およびタスク フィールドの一部からデータを読み取ることができます。これを実現するには、追加の Project 固有の機能を提供するように [Document](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) オブジェクトを拡張する **ProjectDocument** オブジェクトのメソッドとイベントを使用します。
 
-Project のデータの読み取り操作の例については、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」を参照してください。
+Project のデータの読み取り操作の例については、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」を参照してください。
 
 
 ## <a name="permissions-model-and-governance"></a>アクセス許可モデルとガバナンス
@@ -148,7 +148,7 @@ Project のデータの読み取り操作の例については、「[テキス�
 
 ```
 
-詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)」を参照してください。
+詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)」を参照してください。
 
 
 ## <a name="additional-resources"></a>その他の技術情報
@@ -159,5 +159,5 @@ Project のデータの読み取り操作の例については、「[テキス�
 - 
   [Office アドインのマニフェスト向けのスキーマ リファレンス](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
-- [Office アドインでのユーザー エラーのトラブルシューティング](../../docs/testing/testing-and-troubleshooting.md)
+- [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
     

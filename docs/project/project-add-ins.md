@@ -6,7 +6,7 @@ Project Standard 2013 と Project Professional 2013 はどちらも作業ウィ�
 
  >**メモ**[Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、 `\Samples\Apps\` サブディレクトリを確認します。
 
-Office アドインの概要については、「[Office アドイン プラットフォームの概要](../../docs/overview/office-add-ins.md)」を参照してください。
+Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
 ## <a name="add-in-scenarios-for-project"></a>Project 用のアドインのシナリオ
 
@@ -43,7 +43,7 @@ Project 用のアドイン シナリオとして、次のようなものがあ�
 
 Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
 
-アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、 **type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「 _Office アドイン プラットフォームの概要_」の「 [開発の基本](../../docs/overview/office-add-ins.md) 」セクションを参照してください。
+アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、 **type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「 _Office アドイン プラットフォームの概要_」の「 [開発の基本](../overview/office-add-ins.md) 」セクションを参照してください。
 
 複雑なカスタム アプリケーションを作成する場合、デバッグを容易にするためには、Visual Studio 2015 を使用してアドイン用の Web サイトを開発することをお勧めします。Visual Studio 2015 にはアドイン プロジェクト用のテンプレートが含まれており、アドインの種類 (作業ウィンドウ、コンテンツ、またはメール) とホスト アプリケーション (Project、Word、Excel、または Outlook) を選択できます。Project Online からのデータと統合する例については、MSDN の Project プログラミングのブログの「[Project 作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)」を参照してください。
 
@@ -66,7 +66,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
 
 
-- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
+- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -196,9 +196,9 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 
 
-- [Office アドイン プラットフォームの概要](../../docs/overview/office-add-ins.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
     
-- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+- [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
     
 - [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

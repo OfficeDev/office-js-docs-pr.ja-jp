@@ -23,7 +23,7 @@ Office Online を使用してアドインをデバッグするには、
     
      >**注:**[Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。
      
-2. [アドイン マニフェスト ファイル](../../docs/overview/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。
+2. [アドイン マニフェスト ファイル](../overview/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。
     
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

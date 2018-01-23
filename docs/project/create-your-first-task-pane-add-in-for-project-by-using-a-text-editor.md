@@ -5,13 +5,13 @@ Visual Studio 2015 を使用して複雑な Web アプリケーションを作�
 
 Project 2013では、他の Microsoft Office 2013 クライアントと同じアドイン マニフェスト スキーマを使用し、JavaScript API も同じものを多数使用します。この記事で説明するアドインの完全なコードは、Project 2013 SDK ダウンロードの  `Samples\Apps` サブディレクトリ内にあります。
 
-Project OM Test サンプル アドインは、タスクの GUID や、アプリケーションとアクティブなプロジェクトのプロパティを取得できます。Project Professional 2013で SharePoint ライブラリ内にあるプロジェクトを開いた場合、このアドインはそのプロジェクトの URL を表示できます。 [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、 `\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルが、 `\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。対応するデバッグ ファイル (office.debug.js および project-15.debug.js) を使用すると、これらの関数を検証できます。 Office アドインでの JavaScript の使用の概要については、「 [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)」を参照してください。
+Project OM Test サンプル アドインは、タスクの GUID や、アプリケーションとアクティブなプロジェクトのプロパティを取得できます。Project Professional 2013で SharePoint ライブラリ内にあるプロジェクトを開いた場合、このアドインはそのプロジェクトの URL を表示できます。 [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、 `\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルが、 `\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。対応するデバッグ ファイル (office.debug.js および project-15.debug.js) を使用すると、これらの関数を検証できます。 Office アドインでの JavaScript の使用の概要については、「 [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>手順 1. アドイン マニフェスト ファイルを作成するには
 
 
 
-- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには、 **OfficeApp** 要素と子要素が含まれます。これらの要素については、「 [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)」を参照してください。たとえば、次の XML を含む JSOM_SimpleOMCalls.xml というファイルを作成します ( **Id** 要素の GUID 値を変更します)。
+- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには、 **OfficeApp** 要素と子要素が含まれます。これらの要素については、「 [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。たとえば、次の XML を含む JSOM_SimpleOMCalls.xml というファイルを作成します ( **Id** 要素の GUID 値を変更します)。
     
 ```XML
      <?xml version="1.0" encoding="utf-8"?>

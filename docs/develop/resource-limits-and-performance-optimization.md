@@ -106,7 +106,7 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 
 
-- [Office アドインのプライバシーとセキュリティ](../../docs/develop/privacy-and-security.md)
+- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)
     
 - [Outlook アドインのアクティブ化と JavaScript API の制限](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     

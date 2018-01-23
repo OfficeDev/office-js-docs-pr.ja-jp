@@ -21,6 +21,6 @@ Office ストアから Office アドインを発行する場合は、この CDN 
 
 
 
-- [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)    
+- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)    
 - [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

@@ -3,7 +3,7 @@
 
 Visual Studio で Office アドイン JavaScript テンプレートを使用して、TypeScript を使用するアドインを作成できます。Visual Studio で新しいアドインを作成すると、その後、プロジェクトを TypeScript に変換できます。このようにすると、Office アドイン TypeScript プロジェクトを最初から作成する必要がなくなります。  
 
-   > **注:** Visual Studio を使用しないで Office アドイン TypeScript プロジェクトを作成する方法については、「[任意のエディターを使用して Office アドインを作成する](../../docs/get-started/create-an-office-add-in-using-any-editor.md)」を参照してください。
+   > **注:** Visual Studio を使用しないで Office アドイン TypeScript プロジェクトを作成する方法については、「[任意のエディターを使用して Office アドインを作成する](../get-started/create-an-office-add-in-using-any-editor.md)」を参照してください。
 
 TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。 
 

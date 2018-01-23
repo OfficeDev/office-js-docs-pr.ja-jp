@@ -6,7 +6,7 @@ Office アドインでは、次の 2 種類の UI 要素を使用できます。
 - カスタム HTML ベースのインターフェイス
 
 ## <a name="add-in-commands"></a>アドイン コマンド
-コマンドは、[アドイン XML マニフェスト](../../../docs/develop/define-add-in-commands.md)で定義され、Office UI にネイティブな UX 拡張機能としてレンダーされます。たとえば、Office リボンにボタンを追加するアドイン コマンドを使用できます。 
+コマンドは、[アドイン XML マニフェスト](../../develop/define-add-in-commands.md)で定義され、Office UI にネイティブな UX 拡張機能としてレンダーされます。たとえば、Office リボンにボタンを追加するアドイン コマンドを使用できます。 
 
 ![アドイン内のアドイン コマンドとカスタム HTML UI 要素が表示されたイメージ](../../images/layouts_addInCommands_v0.03.png)
 

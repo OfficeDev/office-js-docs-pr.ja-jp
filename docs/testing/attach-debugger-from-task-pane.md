@@ -24,6 +24,6 @@ Visual Studio でのデバッグの詳細については、以下を参照して
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-- [Visual Studio での Office アドインの作成とデバッグ](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-- [任意のエディターを使用して Office アドインを作成する](../../docs/get-started/create-an-office-add-in-using-any-editor.md)
+- [Visual Studio での Office アドインの作成とデバッグ](../get-started/create-and-debug-office-add-ins-in-visual-studio.md)
+- [任意のエディターを使用して Office アドインを作成する](../get-started/create-an-office-add-in-using-any-editor.md)
 - [Office アドインを発行する](../publish/publish.md)
