@@ -91,7 +91,7 @@ Labs.connect((err, connectionResponse) => {});
 
 ### <a name="time-format"></a>時刻の形式
 
-Labs.js は、1970 年 1 月 1 日 (UTC) からのミリ秒単位の経過時間の数値を格納します。これは、JavaScript [Date オブジェクト](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx)の日付形式と一致します。
+Labs.js は、1970 年 1 月 1 日 (UTC) からのミリ秒単位の経過時間の数値を格納します。これは、JavaScript [Date オブジェクト](http://msdn.microsoft.com/ja-jp/library/ie/cd9w2te4%28v=vs.94%29.aspx)の日付形式と一致します。
 
 
 ### <a name="timeline"></a>タイムライン

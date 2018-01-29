@@ -62,7 +62,7 @@ Outlook アドインの展開には以下が必要です。
 - Office 365、Exchange Online、または Exchange Server 2013 以降
 - Outlook 2013 以降
 
-アドインをテナントに割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL から直接マニフェストをアップロードするか、または Office ストアからアドインを追加します。 アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。 詳細については、TechNet の「[組織の Outlook 用アプリをインストールまたは削除する](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx)」を参照してください。
+アドインをテナントに割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL から直接マニフェストをアップロードするか、または Office ストアからアドインを追加します。 アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。 詳細については、TechNet の「[組織の Outlook 用アプリをインストールまたは削除する](https://technet.microsoft.com/ja-jp/library/jj943752(v=exchg.150).aspx)」を参照してください。
 
 ## <a name="additional-resources"></a>追加リソース
 

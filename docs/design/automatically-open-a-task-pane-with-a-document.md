@@ -104,7 +104,7 @@ webextension パートには、プロパティ バッグと **Office.AutoShowTas
 
 >\* Office ストアでのアドインのアセット ID とバージョンを確認するには、そのアドインの Office ストア ランディング ページに移動します。アセット ID は、ブラウザーのアドレス バーに表示されます。バージョンは、そのページの **[詳細]** セクションに示されます。
 
-webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx)」を参照してください。
+webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.WebExtensionReference](https://msdn.microsoft.com/ja-jp/library/hh695383(v=office.12).aspx)」を参照してください。
 
 次の例は、taskpane パートを追加する方法を示しています。
 

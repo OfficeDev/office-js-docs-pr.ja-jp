@@ -2,8 +2,8 @@
 
 OneNote では、OneNote Online アドインの JavaScript API が導入されています。OneNote オブジェクトを操作する作業ウィンドウ アドイン、コンテンツ アドイン、アドイン コマンドを作成し、Web サービスや他の Web ベースのリソースに接続できます。
 
->
-  **注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
+> [!NOTE]
+> アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/ja-jp/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/ja-jp/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
 
 ## <a name="components-of-an-office-add-in"></a>Office アドインのコンポーネント
 
@@ -98,12 +98,12 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 | API | メモ |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** と **Office.CoercionType.Matrix** のみ |
-| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.Html** のみ | 
+| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/ja-jp/library/office/fp142294.aspx) | **Office.CoercionType.Text** と **Office.CoercionType.Matrix** のみ |
+| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/ja-jp/library/office/fp142145.aspx) | **Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.Html** のみ | 
 | 
-  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | 設定はコンテンツ アドインによってのみサポートされます | 
+  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/ja-jp/library/office/fp142180.aspx) | 設定はコンテンツ アドインによってのみサポートされます | 
 | 
-  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | 設定はコンテンツ アドインによってのみサポートされます | 
+  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/ja-jp/library/office/fp161063.aspx) | 設定はコンテンツ アドインによってのみサポートされます | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 一般に、豊富な API でサポートされていない操作を行う場合は、共通 API のみを使います。 共通 API の使用について詳しくは、Office アドインの[ドキュメント](https://dev.office.com/docs/add-ins/overview/office-add-ins)と[リファレンス](https://dev.office.com/reference/add-ins/javascript-api-for-office)をご覧ください。

@@ -13,7 +13,7 @@
 デザインに関するほとんどのユーザビリティの問題を見出すのに必要な参加者は 5 人だけです。製品がユーザー中心になっていることを確認するには、開発サイクル全体にわたって小規模なテストを定期的に組み込んでください。
 
 > 
-  **注:**複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[Office ストアにアドインを公開する](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx)には、[定義したメソッドをサポートするプラットフォーム](https://dev.office.com/add-in-availability)すべてでそのアドインが作動する必要があります。
+  **注:**複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[Office ストアにアドインを公開する](https://msdn.microsoft.com/ja-jp/library/office/jj220037.aspx)には、[定義したメソッドをサポートするプラットフォーム](https://dev.office.com/add-in-availability)すべてでそのアドインが作動する必要があります。
 
 ## <a name="1----sign-up-for-a-testing-service"></a>1.  テスト サービスにサインアップする
 

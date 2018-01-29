@@ -3,7 +3,7 @@
 新しい開発者用機能 (現時点ではプレビュー版のものを含む) は、Office の最新ビルドの取得をオプトインしたサブスクライバーに最初に配信されます。Office 2016 の最新ビルドをオプトインするには: 
 
 - Office 365 Home、Personal、または University のサブスクライバーは、「[Office Insider プログラム](https://products.office.com/en-us/office-insider)」を参照してください。
-- 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/en-us/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US)」を参照してください。
+- 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/ja-jp/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US)」を参照してください。
 - Mac で Office 2016 を実行している場合:
     - Office 2016 for Mac プログラムを起動します。
     - [ヘルプ] メニューで [**更新プログラムのチェック**] を選びます。

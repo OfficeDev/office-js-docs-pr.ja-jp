@@ -36,7 +36,7 @@ Visual Studio 2015 で、追加機能を反映するために、次に示す一�
 |**プロジェクト**|**説明**|
 |:-----|:-----|
 |アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。これらの設定は、Office ホストがアドインをアクティブ化するタイミングと、アドインの表示場所を決定するのに役立ちます。すぐにプロジェクトを実行し、アドインを使用できるように、Visual Studio によってこのファイルのコンテンツが生成されます。これらの設定は、マニフェスト エディターを使用していつでも変更できます。|
-|Web アプリケーション プロジェクト|Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。発行する準備が整ったら、このプロジェクトをホストするサーバーを見つける必要があります。ASP.NET Web アプリケーション プロジェクトの詳細については、「 [ASP.NET Web プロジェクト](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)」を参照してください。|
+|Web アプリケーション プロジェクト|Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。発行する準備が整ったら、このプロジェクトをホストするサーバーを見つける必要があります。ASP.NET Web アプリケーション プロジェクトの詳細については、「 [ASP.NET Web プロジェクト](http://msdn.microsoft.com/ja-jp/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)」を参照してください。|
 
 ## <a name="modify-your-add-in-settings"></a>アドイン設定の変更
 
@@ -144,7 +144,7 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
 次に、Visual Studio は次の操作を実行します。
 
 
-1. ~remoteAppUrl トークンを開始ページの完全修飾アドレス (例: http://localhost/MyAgave.html) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) 要素を変更します。
+1. ~remoteAppUrl トークンを開始ページの完全修飾アドレス (例: http://localhost/MyAgave.html) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](http://msdn.microsoft.com/ja-jp/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) 要素を変更します。
     
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
     
@@ -155,7 +155,7 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
 
 - [[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [方法:Visual Web Developer で HTML 編集用の検証オプションを設定する](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- [方法:Visual Web Developer で HTML 編集用の検証オプションを設定する](http://msdn.microsoft.com/ja-jp/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [[検証] ([オプション] ダイアログ ボックス - [テキスト エディター] - [CSS])](http://go.microsoft.com/fwlink/?LinkID=238780)
     

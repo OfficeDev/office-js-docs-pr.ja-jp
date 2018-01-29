@@ -52,7 +52,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 
 
  > 
-  **メモ:** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219.aspx)」を参照してください。
+  **メモ:** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/ja-jp/library/cc179219.aspx)」を参照してください。
 
 
 ### <a name="examples"></a>例
@@ -414,7 +414,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
     
 - 
-  [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+  [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/ja-jp/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
 [Description]:           http://dev.office.com/reference/add-ins/manifest/description

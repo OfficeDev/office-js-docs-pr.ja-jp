@@ -65,5 +65,5 @@ Windows 10 に含まれている F12 開発者ツールにより、web ページ
   [デバッガーを使用して実行中の JavaScript を検査する](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
 - 
-  [F12 開発者ツールの使用](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+  [F12 開発者ツールの使用](https://msdn.microsoft.com/ja-jp/library/bg182326%28v=vs.85%29.aspx)
     

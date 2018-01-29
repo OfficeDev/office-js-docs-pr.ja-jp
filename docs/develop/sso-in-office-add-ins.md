@@ -14,7 +14,7 @@
 
 ## <a name="sso-add-in-architecture"></a>SSO アドインのアーキテクチャ
 
-Web アプリケーションのページと JavaScript をホスティングすることに加え、アドインでは、同一の[完全修飾ドメイン名](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly)で、Microsoft Graph へのアクセス トークンを取得して、要求を送信するための 1 つ以上の Web API をホストする必要もあります。
+Web アプリケーションのページと JavaScript をホスティングすることに加え、アドインでは、同一の[完全修飾ドメイン名](https://msdn.microsoft.com/ja-jp/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly)で、Microsoft Graph へのアクセス トークンを取得して、要求を送信するための 1 つ以上の Web API をホストする必要もあります。
 
 アドイン マニフェストには、アドインを Azure Active Directory (Azure AD) v2.0 エンドポイントに登録する方法と、アドインが必要とする Microsoft Graph へのアクセス許可を指定するマークアップが含まれています。
 
@@ -32,7 +32,7 @@ Web アプリケーションのページと JavaScript をホスティングす�
 1. Office ホスト アプリケーションは、`getAccessTokenAsync` 呼び出しによって返される結果オブジェクトの一部として、アドインに**アドイン トークン**を送信します。
 1. アドインの JavaScript は、アドインと同じ完全修飾ドメイン名でホストされている Web API に HTTP 要求を送信して、その要求に承認の証拠として**アドイン トークン**を含めます。  
 1. サーバー側のコードでは、受け取った**アドイン トークン**を検証します。
-1. サーバー側のコードは、「代理」フロー (「[OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)」と「[デーモンまたはサーバー アプリケーション対 Web API Azure シナリオ](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)」で定義されているフロー) を使用して、アドイン トークンの交換で Microsoft Graph のアクセス トークン (今後は、「**MSG トークン**」と呼ぶ) を取得します。
+1. サーバー側のコードは、「代理」フロー (「[OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)」と「[デーモンまたはサーバー アプリケーション対 Web API Azure シナリオ](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)」で定義されているフロー) を使用して、アドイン トークンの交換で Microsoft Graph のアクセス トークン (今後は、「**MSG トークン**」と呼ぶ) を取得します。
 1. Azure AD は、**MSG トークン**をアドインに返します (アドインが *offline_access* アクセス許可を要求した場合は、更新トークンも返します)。
 1. サーバー側のコードで、**MSG トークン**をキャッシュします。
 1. サーバー側のコードで、Microsoft Graph に要求を送信して、その要求に **MSG トークン**を含めます。

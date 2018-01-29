@@ -106,7 +106,7 @@
 
 4. `audience` プロパティの場合は、アドインの登録時に保存したアプリケーション ID でプレースホルダーの `{audience GUID}` を置き換えます。(`client_id` プロパティに割り当てた値とまったく同じになります)。
   
-3. `issuer` プロパティに割り当てた文字列には、プレースホルダーの *{O365 tenant GUID}* があります。これは、前の最後の手順で保存した Office 365 テナント ID で置き換えます。何らかの理由で、まだ ID を取得していない場合は、「[Office 365 テナント ID を検索する](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)」に示したいずれかの方法を使用して ID を取得します。完了すると、`issuer` プロパティの値は、次に示すようなものになります。
+3. `issuer` プロパティに割り当てた文字列には、プレースホルダーの *{O365 tenant GUID}* があります。これは、前の最後の手順で保存した Office 365 テナント ID で置き換えます。何らかの理由で、まだ ID を取得していない場合は、「[Office 365 テナント ID を検索する](https://support.office.com/ja-jp/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)」に示したいずれかの方法を使用して ID を取得します。完了すると、`issuer` プロパティの値は、次に示すようなものになります。
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -444,7 +444,7 @@
 
 次に、Office がアドインを検索する場所を認識できるようにする必要があります。
 
-1. ネットワーク共有を作成するか、[フォルダーをネットワークに共有します](https://technet.microsoft.com/en-us/library/cc770880.aspx)。
+1. ネットワーク共有を作成するか、[フォルダーをネットワークに共有します](https://technet.microsoft.com/ja-jp/library/cc770880.aspx)。
 
 2. プロジェクトのルートから、Office-Add-in-NodeJS-SSO.xml マニフェスト ファイルのコピーを共有フォルダーに配置します。
 

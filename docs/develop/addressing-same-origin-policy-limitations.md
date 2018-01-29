@@ -48,7 +48,7 @@ function loadVideoDetails(videoIndex) {
 認証に OAuth を使用する例については、「[OAuth による Twitter SharePoint Web パーツ](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth)」を参照してください。
 
 
-  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](http://msdn2.microsoft.com/EN-US/library/4f772twc) プロパティを参照してください。
+  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](http://msdn2.microsoft.com/ja-jp/library/4f772twc) プロパティを参照してください。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>クロス オリジン リソース共有 (CORS) の使用

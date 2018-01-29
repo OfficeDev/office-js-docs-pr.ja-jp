@@ -12,5 +12,5 @@ Office アドインを設計する際は、UI のテキストと要素に使用�
 - **顧客を理解するようにします。**イディオムや口語表現を使用する際には、文化的な背景を考慮し、グローバリゼーションを意識します。
 
 
-  [Office ストアで入手可能](https://msdn.microsoft.com/EN-US/library/dn708487.aspx)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://msdn.microsoft.com/EN-US/library/office/jj220035.aspx)」に準拠するようにします。
+  [Office ストアで入手可能](https://msdn.microsoft.com/ja-jp/library/dn708487.aspx)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://msdn.microsoft.com/ja-jp/library/office/jj220035.aspx)」に準拠するようにします。
 

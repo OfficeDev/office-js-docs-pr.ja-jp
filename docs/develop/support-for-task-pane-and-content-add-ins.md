@@ -157,7 +157,7 @@ Project のデータの読み取り操作の例については、「[テキス�
 - [Office の JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - 
-  [Office アドインのマニフェスト向けのスキーマ リファレンス](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+  [Office アドインのマニフェスト向けのスキーマ リファレンス](http://msdn.microsoft.com/ja-jp/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
     

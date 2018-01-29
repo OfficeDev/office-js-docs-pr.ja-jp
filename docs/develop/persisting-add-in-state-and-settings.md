@@ -8,14 +8,14 @@ Office アドイン は、基本的にブラウザー コントロールのス�
 
 - アドインの種類によって異なる場所に格納されたプロパティ バッグに、名前/値のペアとしてデータを格納する JavaScript API for Office のメンバーを使用します。
     
-- 基になるブラウザー コントロールによって提供される技術である、ブラウザーの Cookie、または HTML5 Web ストレージ ([localStorage](http://msdn.microsoft.com/en-us/library/cc848902%28v=vs.85%29.aspx) または [sessionStorage](http://msdn.microsoft.com/en-us/library/cc197020%28v=vs.85%29.aspx)) を使用します。
+- 基になるブラウザー コントロールによって提供される技術である、ブラウザーの Cookie、または HTML5 Web ストレージ ([localStorage](http://msdn.microsoft.com/ja-jp/library/cc848902%28v=vs.85%29.aspx) または [sessionStorage](http://msdn.microsoft.com/ja-jp/library/cc197020%28v=vs.85%29.aspx)) を使用します。
     
 この記事では、アドインの状態を保持する JavaScript API for Office の使い方について説明します。ブラウザーの Cookie および Web ストレージの使用例については、「 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)」を参照してください。
 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>JavaScript API for Office を使用してアドインの状態および設定を保持する
 
 
-JavaScript API for Office には、次の表に示すように、セッション間でアドインの状態を保存するために [Settings](http://dev.office.com/reference/add-ins/shared/settings) オブジェクト、 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクト、および [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) オブジェクトが用意されています。すべてのケースで、保存された設定値は、それを作成したアドインの [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) にのみ関連付けられます。
+JavaScript API for Office には、次の表に示すように、セッション間でアドインの状態を保存するために [Settings](http://dev.office.com/reference/add-ins/shared/settings) オブジェクト、 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクト、および [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) オブジェクトが用意されています。すべてのケースで、保存された設定値は、それを作成したアドインの [Id](http://msdn.microsoft.com/ja-jp/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) にのみ関連付けられます。
 
 
 

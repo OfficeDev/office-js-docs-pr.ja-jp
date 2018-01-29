@@ -25,7 +25,7 @@ Office アドインは、アドインのランタイム環境、複数層のア�
 
 以降のセクションでは、Windows ベース デバイスの Office クライアント、OS X Mac デバイス、および Web 上の Office Online クライアントでのアドインの実行がランタイム アーキテクチャによってどのようにサポートされるかについて簡潔に説明します。
 
-> **注:**WIP と Intune を Office アドインと一緒に使用することの詳細については、「[Office アドインを実行するドキュメントでエンタープライズ データを保護するために WIP と Intune を使用する](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip)」を参照してください。
+> **注:**WIP と Intune を Office アドインと一緒に使用することの詳細については、「[Office アドインを実行するドキュメントでエンタープライズ データを保護するために WIP と Intune を使用する](https://docs.microsoft.com/ja-jp/microsoft-365-enterprise/office-add-ins-wip)」を参照してください。
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Windows および OS X のデバイス用のクライアント
 
@@ -88,7 +88,7 @@ Office アドインは、ブラウザー コントロールまたは **iframe** 
 
 - ドキュメントを共有する場合、ユーザーはそのドキュメントに挿入されているアドインまたはそのドキュメントに関連付けられているアドインも共有することになります。ユーザーがこれまで使用したことのないアドインが含まれたドキュメントを開いた場合、ホスト アプリケーションは、そのドキュメントでアドインを実行するために必要なアクセス許可を付与するようにユーザーに促します。組織環境では、ドキュメントが外部ソースから取得される場合にも、Office ホスト アプリケーションは確認のためのプロンプトを表示します。
 
-- ユーザーは、Office ストアへのアクセスを有効または無効にすることができます。コンテンツ アドインと作業ウィンドウ アドインの場合は、ユーザーがホスト Office クライアント上の **[セキュリティ センター]** (**[ファイル]** > **[オプション]** > **[セキュリティ センター]** > **[セキュリティ センターの設定]** > **[信頼できるアドイン カタログ]** から開く) から信頼できるアドインとカタログへのアクセスを管理します。Outlook アドインの場合は、**[アドインの管理]** ボタンを選択してアドインを管理できます。Outlook for Windows では、**[ファイル]** > **[アドインの管理]** を選択します。Outlook for Mac では、アドイン バーの **[アドインの管理]** ボタンを選択します。Outlook Web App の場合、**[設定]** メニュー (歯車アイコン) の **[アドインの管理]** を選択します。管理者は、[グループ ポリシーを使用](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing)してこのアクセスを管理することもできます。
+- ユーザーは、Office ストアへのアクセスを有効または無効にすることができます。コンテンツ アドインと作業ウィンドウ アドインの場合は、ユーザーがホスト Office クライアント上の **[セキュリティ センター]** (**[ファイル]** > **[オプション]** > **[セキュリティ センター]** > **[セキュリティ センターの設定]** > **[信頼できるアドイン カタログ]** から開く) から信頼できるアドインとカタログへのアクセスを管理します。Outlook アドインの場合は、**[アドインの管理]** ボタンを選択してアドインを管理できます。Outlook for Windows では、**[ファイル]** > **[アドインの管理]** を選択します。Outlook for Mac では、アドイン バーの **[アドインの管理]** ボタンを選択します。Outlook Web App の場合、**[設定]** メニュー (歯車アイコン) の **[アドインの管理]** を選択します。管理者は、[グループ ポリシーを使用](http://technet.microsoft.com/ja-jp/library/jj219429.aspx#BKMK_Managing)してこのアクセスを管理することもできます。
 
 - アドイン プラットフォームの設計を通して、次のような方法でセキュリティとパフォーマンスがエンド ユーザーに提供されます。
 
@@ -101,7 +101,7 @@ Outlook アドイン固有のリソース使用量監視機能により、Outloo
 
 ### <a name="developer-guidelines-to-handle-pii"></a>PII の取り扱いに関する開発ガイドライン
 
-IT 管理者と開発者が PII を保護するための一般的なガイドラインは、「[人事管理アプリケーションの開発とテストにおけるプライバシーの保護](http://technet.microsoft.com/en-us/library/gg447064.aspx)」に記載されています。Office アドインを開発するときに適用される PII 保護ガイドラインを以下に示します。
+IT 管理者と開発者が PII を保護するための一般的なガイドラインは、「[人事管理アプリケーションの開発とテストにおけるプライバシーの保護](http://technet.microsoft.com/ja-jp/library/gg447064.aspx)」に記載されています。Office アドインを開発するときに適用される PII 保護ガイドラインを以下に示します。
 
 
 - [Settings](http://dev.office.com/reference/add-ins/shared/settings) オブジェクトは、コンテンツ アドインまたは作業ウィンドウ アドインに関する設定やセッション間の状態データの永続化に使用できますが、パスワードやその他の機密性の高い PII を **Settings** オブジェクトに保存してはいけません。**Settings** オブジェクト内のデータはエンド ユーザーには表示されませんが、容易にアクセスできるドキュメントのファイル形式の一部として保存されます。アドインの PII の使用を制限し、アドインに必要な PII はユーザー保護リソースとしてアドインをホストするサーバーに保存する必要があります。
@@ -183,7 +183,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 悪意のあるユーザーは、アドインのドキュメントやフィールドを介して悪意のあるスクリプトを挿入することによって、アドインの原点を攻撃する可能性があります。開発者はドメイン内で悪意のあるユーザーの JavaScript が実行されないようにユーザーの入力を処理する必要があります。ドキュメントやメール メッセージからのユーザー入力、または、アドイン内のフィールド経由のユーザー入力を処理するために推奨されているいくつかの方法を以下に示します。
 
 
-- 可能であれば、DOM プロパティの [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) ではなく、[innerText](https://msdn.microsoft.com/library/ms533899.aspx) および [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) プロパティを使用します。次のように実行して、Internet Explorer と Firefox のクロス ブラウザー サポートを提供します。
+- 可能であれば、DOM プロパティの [innerHTML](http://msdn.microsoft.com/ja-jp/library/ie/ms533897.aspx) ではなく、[innerText](https://msdn.microsoft.com/library/ms533899.aspx) および [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) プロパティを使用します。次のように実行して、Internet Explorer と Firefox のクロス ブラウザー サポートを提供します。
 
 ```js
      var text = x.innerText || x.textContent
@@ -192,17 +192,17 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
    **innerText** と **textContent** の違いについては、「[Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent)」を参照してください。一般的なブラウザー間での DOM の互換性の詳細については、「[W3C DOM 互換性](http://www.quirksmode.org/dom/w3c_html.html#t07)」を参照してください。
 
 - 
-  **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) プロパティを参照してください。
+  **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](http://msdn.microsoft.com/ja-jp/library/ie/ms533897.aspx) プロパティを参照してください。
 
 - jQuery を使用している場合は、[.html()](http://api.jquery.com/text/) メソッドの代わりに [.text()](http://api.jquery.com/html/) メソッドを使用してください。
 
 - 
-  [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+  [toStaticHTML](http://msdn.microsoft.com/ja-jp/library/ie/cc848922.aspx) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
 - 
-  [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) または [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
+  [encodeURIComponent](http://msdn.microsoft.com/ja-jp/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) または [encodeURI](http://msdn.microsoft.com/ja-jp/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
 
-- より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx)」を参照してください。
+- より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](http://msdn.microsoft.com/ja-jp/library/windows/apps/hh849625.aspx)」を参照してください。
 
 
 ### <a name="tips-to-prevent-clickjacking"></a>「クリックジャック」を防止するためのヒント

@@ -102,7 +102,7 @@
 
 ## <a name="configure-the-add-in"></a>アドインを構成する
 
-1. 次に示す文字列内のプレースホルダー "{tenant_ID}" は、前の手順で取得した Office 365 テナント ID に置き換えます。何らかの理由で、まだ ID を取得していない場合は、「[Office 365 テナント ID を検索する](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)」に示したいずれかの方法を使用して ID を取得します。
+1. 次に示す文字列内のプレースホルダー "{tenant_ID}" は、前の手順で取得した Office 365 テナント ID に置き換えます。何らかの理由で、まだ ID を取得していない場合は、「[Office 365 テナント ID を検索する](https://support.office.com/ja-jp/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)」に示したいずれかの方法を使用して ID を取得します。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 

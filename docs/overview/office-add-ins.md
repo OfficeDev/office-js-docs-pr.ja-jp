@@ -90,7 +90,7 @@ Outlook アドインは Office のリボンを拡張したり、コンテキス�
 
 Outlook アドインでは、アドレスや追跡 ID などのアイテムからコンテキスト情報にアクセスし、そのデータを使用してサーバー上の追加情報や Web サービスから魅力的なユーザー エクスペリエンスを作成することができます。Outlook アドインはほとんどの場合、Outlook、Outlook for Mac、Outlook Web App、デバイス用 Outlook Web App などのさまざまなサポートしているホスト アプリケーションで変更なしで実行でき、デスクトップ、Web、およびタブレットとモバイル デバイスでシームレスな操作を提供します。 
 
-Outlook アドインの概要については、「[Outlook アドインの概要](https://docs.microsoft.com/en-us/outlook/add-ins/)」を参照してください。 
+Outlook アドインの概要については、「[Outlook アドインの概要](https://docs.microsoft.com/ja-jp/outlook/add-ins/)」を参照してください。 
 
 ### <a name="create-new-objects-in-office-documents"></a>Office ドキュメント内に新しいオブジェクトを作成する 
 
