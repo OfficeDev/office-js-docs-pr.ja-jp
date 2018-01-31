@@ -2,6 +2,13 @@
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: Add-ins
+  - name: アドイン
     tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins/overview/office-add-ins
+    topicHref: /office/dev/add-ins
+    items:
+    - name: チュートリアル
+      tocHref: /office/dev/add-ins
+      items: 
+      - name: Excel アドインのチュートリアル
+        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
