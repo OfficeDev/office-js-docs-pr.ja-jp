@@ -1,0 +1,44 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Excel アドインのチュートリアル
+metadata:
+  title: Excel アドインのチュートリアル
+  description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、表の作成、表示、フィルタリング、並べ替えを行うことができ、グラフの作成、表のヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
+  audience: 開発者
+  level: 初心者
+  displayType: one-column
+  ms.date: 01/18/2018
+items:
+- durationInMinutes: 1
+  content: |
+    このチュートリアルでは、Excel ブック内の表、グラフ、ワークシート、ダイアログの操作を行う、Excel アドインを構築する方法について説明します。まず、表の作成、データ読み込み、書式設定を行う Excel アドインを構築します。チュートリアルの続く各手順で、機能をさらにアドインに追加します。途中で問題が発生した場合は、<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">ご連絡ください</a>。
+- title: アドイン プロジェクトを作成する
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+- title: 表を作成する
+  durationInMinutes: 15
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
+- title: 表のフィルタリングと並べ替え
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
+- title: グラフを作成する
+  durationInMinutes: 7
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
+- title: 表のヘッダーを固定する
+  durationInMinutes: 6
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
+- title: ワークシートを保護する
+  durationInMinutes: 20
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
+- title: ダイアログを開く
+  durationInMinutes: 7
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
+- content: |
+    Excel アドインのチュートリアルが完了しました。Excel アドインの構築の詳細については、<a href="../excel/excel-add-ins-overview.md">Excel アドインの概要</a> を参照してください。
