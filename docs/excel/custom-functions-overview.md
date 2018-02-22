@@ -1,10 +1,16 @@
+---
+title: Excel でのカスタム関数の作成 (プレビュー)
+description: ''
+ms.date: 01/23/2018
+---
+
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
 カスタム関数 (ユーザー定義関数、つまり UDF に似ている) を使用すると、開発者はアドインを使用して任意の JavaScript 関数を Excel に追加できます。 ユーザーは Excel の他のネイティブ関数 (= SUM() など) のようなカスタム関数にアクセスできるようになります。 この記事では、Excel でカスタム関数を作成する方法について説明します。
 
 Excel でのカスタム関数がどのようなものかを以下に示します。
 
-<img src="../images/custom-function.gif" width="579" height="383" />
+<img alt="custom functions" src="../images/custom-function.gif" width="579" height="383" />
 
 数値のペアに 42 を追加するサンプル カスタム関数のコードを示します。
 
@@ -16,8 +22,8 @@ function add42 (a, b) {
 
 カスタム関数がプレビューで利用できるようになりました。 以下の手順に従って試してみましょう。
 
-1.  [Office Insider](https://products.office.com/ja-JP/office-insider) プログラムに参加して、コンピューターに、カスタム関数に必要な Excel 2016 のバージョン (バージョン 16.8711 以降) をインストールします。
-2.  [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) リポジトリを複製し、*README.md* の指示に従って Excel でアドインを開始してください。
+1.  [Office Insider](https://products.office.com/en-us/office-insider) プログラムに参加して、コンピューターに、カスタム関数に必要な Excel 2016 のバージョン (バージョン 16.8711 以降) をインストールします。 カスタム関数のプレビューが機能するには、「Insider」チャネルを選択する必要があります。
+2.  [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) リポジトリを複製し、*README.md* の指示に従って、Excel でアドインを開始してください。
 3.  任意のセルに `=CONTOSO.ADD42(1,2)` を入力し、**Enter** を押してカスタム関数を実行します。
 4.  質問がある場合は、Stack Overflow で [office-js](https://stackoverflow.com/questions/tagged/office-js) タグを付けて質問してください。
 
@@ -80,12 +86,12 @@ Excel.run(function(ctx) {
 -   `helpUrl`:ユーザーが関数のヘルプを要求すると、Excel は作業ウィンドウを開き、この URL にある Web ページを表示します。
 -   `result`:関数が返す情報の種類を Excel に定義します。
 
-    -   `resultType`:関数は、`"string"` か `"number"` (日付と通貨にも使用されます) のいずれかを返すことができます。 詳細については、「[カスタム関数の列挙型](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。
-    -   `resultDimensionality`:関数は、単一の (`"scalar"`) 値または値の `"matrix"` のいずれかを返すことができます。 値の行列を返すとき、関数は配列を返します。各配列要素は値の行を表す別の配列です。 詳細については、「[カスタム関数の列挙型](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。 次の例では、カスタム関数から 3 行 2 列の値の行列を返します。
+    -   `resultType`:関数は、`"string"` か `"number"` (日付と通貨にも使用されます) のいずれかを返すことができます。 詳細については、「[カスタム関数の列挙型](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。
+    -   `resultDimensionality`:関数は、単一の (`"scalar"`) 値または値の `"matrix"` のいずれかを返すことができます。 値の行列を返すとき、関数は配列を返します。各配列要素は値の行を表す別の配列です。 詳細については、「[カスタム関数の列挙型](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)」を参照してください。 次の例では、カスタム関数から 3 行 2 列の値の行列を返します。
 
-```js
-return [["first","row"],["second","row"],["third","row"]];
-```
+        ```js
+        return [["first","row"],["second","row"],["third","row"]];
+        ```
 
 -   カスタム関数では、入力として引数を取る場合があります。 カスタム関数に渡される引数は、*parameters* プロパティで指定されます。 定義内のパラメーターの順序は、JavaScript 関数の順序と一致する必要があります。 各パラメーターには、以下のプロパティを定義します。
 
@@ -98,14 +104,14 @@ return [["first","row"],["second","row"],["third","row"]];
 
 `Excel.Script.customFunctions` を使用して定義したすべての関数の登録を完了するには、`CustomFunctions.addAll()` を呼び出してください。
 
-カスタム関数は、登録後はユーザーのすべてのブック (アドインが最初に実行されたブックだけでなく) で使用できます。 関数は、ユーザーが入力を開始すると、オートコンプリート メニューに表示されます。
+カスタム関数は、登録後はユーザーのすべてのブック (アドインが最初に実行されたブックだけでなく) で使用できます。 関数は、ユーザーが入力を開始すると、オートコンプリート メニューに表示されます。 開発中およびテスト中にフォルダー `<user>\AppData\Local\Microsoft\Office\16.0\Wef\CustomFunctions` を削除すると、コンピューターの登録メタデータのキャッシュを手動でクリアできます。
+
 
 ### <a name="manifest-file-manifestxml"></a>マニフェスト ファイル (*manifest.xml*)
 
 manifest.xml の次の例では、Excel が関数のコードを検索することができます。
 
 ```xml
-
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
 
     <Hosts>
@@ -137,15 +143,15 @@ manifest.xml の次の例では、Excel が関数のコードを検索するこ�
 
 前述のコードでは、次のものを指定します。
 
--   &lt; `Script` &gt;要素。必須ですが開発者向けプレビューでは使用されません。
--   &lt; `Page` &gt;要素。アドインの HTML ページにリンクします。 HTML ページには、カスタム関数と登録コードを含む JavaScript ファイル (*customfunctions.js*) への &lt;Script&gt; 参照が含まれています。 HTML ページは非表示のページであり、UI に表示されることはありません。
+-   `<Script>` 要素。必須ですが開発者向けプレビューでは使用されません。
+-   `<Page>` 要素。アドインの HTML ページにリンクします。 HTML ページには、カスタム関数と登録コードを含む JavaScript ファイル (*customfunctions.js*) への &lt;Script&gt; 参照が含まれています。 HTML ページは非表示のページであり、UI に表示されることはありません。
 
 ## <a name="asynchronous-functions"></a>非同期関数
 
 カスタム関数が Web からデータを取得する場合は、フェッチするために非同期呼び出しを行う必要があります。 外部 web サービスを呼び出すときは、カスタム関数は以下を実行する必要があります。
 
 1.   JavaScript Promise を Excel に返します。
-2.   外部のサービスを呼び出す http 要求を行います。
+2.   外部のサービスを呼び出す HTTP 要求を行います。
 3.   `setResult` コールバックによってプロミスを解決します。 `setResult` が値を Excel に送信します。
 
 次のコードは、温度計の温度を取得するカスタム関数の例を示しています。
@@ -165,22 +171,45 @@ function getTemperature(thermometerID){
 カスタムのストリーム関数を使用すると、Excel やユーザーが再計算を要求するのを待たずに、時間の経過に従ってセルに繰り返しデータを出力できます。 たとえば、次のコードの `incrementValue` カスタム関数は、1 秒おきに結果に数値を追加し、Excel は `setResult` コールバックを使用して自動的に新しい値を表示します。 `incrementValue` で使用されている登録コードを参照するには、*customfunctions.js* ファイルをお読みください。
 
 ```js
-function incrementValue(increment, setResult){ 
-     var result = 0;
-     setInterval(function(){
+function incrementValue(increment, caller){ 
+    var result = 0;
+    setInterval(function(){
          result += increment;
-         setResult(result);
+         caller.setResult(result);
     }, 1000);
 }
 ```
 
-ストリーム関数の場合、最終的なパラメーター `setResult` は登録コードでは指定されず、Excel ユーザーが関数を入力するときにオートコンプリート メニューに表示されません。 これは、関数のデータを Excel に渡してセルの値を更新するために使用されるコールバック関数です。 Excel が `setResult` 関数を渡すには、関数登録時にパラメーター `stream` を `true` に設定してストリーミングのサポートを宣言する必要があります。
+ストリーム関数の場合、最終的なパラメーター `caller` は登録コードでは指定されず、Excel ユーザーが関数を入力するときにオートコンプリート メニューに表示されません。 これは、関数のデータを Excel に渡してセルの値を更新するために使用される `setResult` コールバック関数を含むオブジェクトです。 Excel が `caller` オブジェクト内の `setResult` 関数を渡すには、関数登録時にパラメーター `stream` を `true` に設定して、ストリーミングのサポートを宣言する必要があります。
+
+## <a name="cancellation"></a>キャンセル
+
+ストリーム関数と非同期関数をキャンセルできます。 関数呼び出しのキャンセルは、帯域幅の使用量、作業メモリ、および CPU の負荷を減らすために重要です。 Excel では、次のような状況で関数の呼び出しをキャンセルします。
+- ユーザーが関数を参照するセルを編集または削除する。
+- 関数の引数 (入力) の 1 つが変更される。 この場合、キャンセルに加えて新しい関数の呼び出しがトリガーされます。
+- ユーザーが手動で再計算をトリガーする。 上記の場合と同様に、キャンセルに加えて新しい関数の呼び出しがトリガーされます。
+
+次のコードでは、前述の例にキャンセルを実装しています。 コードでは、`caller` オブジェクトに `onCanceled` 関数が含まれています。この関数は各カスタム関数ごとに定義する必要があります。
+
+```js
+function incrementValue(increment, caller){ 
+    var result = 0;
+    var timer = setInterval(function(){
+         result += increment;
+         caller.setResult(result);
+    }, 1000);
+
+    caller.onCanceled = function(){
+        clearInterval(timer);
+    }
+}
+```
 
 ## <a name="saving-state"></a>状態の保存
 
 カスタム関数では、JavaScript のグローバル変数にデータを保存できます。 後続の呼び出しでは、カスタム関数はこれらの変数に保存されている値を使用できます。 保存された状態は、ユーザーが同じカスタム関数の複数のインスタンスを入力し、相互にデータを共有する必要がある場合に便利です。 たとえば、同じ Web リソースへの追加呼び出しを避けるために、呼び出しから返されたデータを Web リソースに保存することができます。
 
-次のコードは、`savedTemperatures` 変数を使用して状態を保存する前述の温度ストリーミング関数の実装を示しています。 このコードは、次の概念を示しています。
+次のコードは、`savedTemperatures` 変数を使用して状態を保存する前述の温度ストリーミング関数の実装を示しています。このコードは、次の概念を示しています。
 
 -   **データを保存する。** `refreshTemperature` は、1 秒おきに特定の温度計の温度を読み取るストリーム関数です。 新しい温度は、savedTemperatures 変数に保存されます。
 
@@ -191,13 +220,13 @@ function incrementValue(increment, setResult){
 ```js
 var savedTemperatures{};
 
-function streamTemperature(thermometerID, setResult){ 
+function streamTemperature(thermometerID, caller){ 
      if(!savedTemperatures[thermometerID]){
          refreshTemperatures(thermometerID);
      }
 
      function getNextTemperature(){
-         setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
          setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
@@ -237,18 +266,24 @@ function secondHighestTemp(temperatures){
  }
 ```
 
+データの範囲を返す関数を作成する場合は、Excel で配列数式を入力して、値の範囲全体を表示する必要があります。 詳細については、「[配列数式のガイドラインと例](https://support.office.com/ja-jp/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)」を参照してください。
+
 ## <a name="known-issues"></a>既知の問題
 
 次の機能は、開発者向けプレビューで、まだサポートされていません。
 
 -   バッチ処理。複数の呼び出しを同一の関数に集約し、パフォーマンスを向上できます。
 
--   取り消し。ストリーミング機能が不要になったとき (ユーザーがセルをクリアしたときなど) に通知します。 現在、関数ではセルに新しい値を書き込むのを止める時期を判断することができません。
+-   ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。
 
--   ヘルプの URL とパラメーターの説明は Excel ではまだ使用されていません。
+-   カスタム関数を使用するアドインの、AppSource または Office 365 一元展開経由での公開。
 
--   カスタム機能を使用する Office ストアまたはOffice 365 一元展開にアドインを公開する。
-
--   カスタム機能は、Mac 上の Excel、Excel for iOS、Excel Online では使用できません。
+-   Mac 上の Excel、Excel for iOS、Excel Online でのカスタム関数の使用。Mac 上では使用できません。
 
 -   現在、アドインは、カスタム機能を実行するための隠しブラウザー プロセスに依存しています。 カスタム関数をより高速にし、使用メモリを少なくするために、今後 JavaScript はいくつかのプラットフォームで直接実行されるようになります。 また、マニフェストの &lt;Page&gt; 要素によって参照される HTML ページは、Excel が JavaScript を直接実行するようになれば、ほとんどのプラットフォームで不要になります。 この変更に備えるため、カスタム関数が Web ページ DOM を使用しないことを徹底してください。
+
+## <a name="changelog"></a>変更ログ
+
+- **2017 年 11 月 7 日**: カスタム関数のプレビューとサンプルを公開
+- **2017 年 11 月 20 日**: ビルド 8801 以降を使用する場合の互換性バグを修正
+- **2017 年 11 月 28 日**: 非同期関数のキャンセルのサポートを公開 (ストリーミング機能の変更が必要)

@@ -31,7 +31,7 @@ UX 設計パターン プロジェクトは、次に使用できます。
     * [UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/README.md)
     * [Office アドイン設計](add-in-design.md)のベスト プラクティス
     * 
-  [Office UI Fabric ツールキット](https://developer.microsoft.com/ja-jp/fabric#/resources)
+  [Office UI Fabric ツールキット](https://developer.microsoft.com/en-us/fabric#/resources)
 
 ソース コードを追加するには、次のようにします。
 
