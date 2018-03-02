@@ -1,23 +1,26 @@
+---
+title: Project 用の作業ウィンドウ アドイン
+description: ''
+ms.date: 01/23/2018
+---
 
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
-
 Project Standard 2013 と Project Professional 2013 はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint のリスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
 
- >**メモ**[Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、 `\Samples\Apps\` サブディレクトリを確認します。
+> [!NOTE]
+> [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
 
 Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
 ## <a name="add-in-scenarios-for-project"></a>Project 用のアドインのシナリオ
 
-
 プロジェクト管理者は、Project の作業ウィンドウ アドインを使用して、プロジェクトの管理作業を円滑に進めることができます。よく使用する情報を調べるときに、Project から離れて別のアプリケーションを起動する必要がなく、Project 内で情報に直接アクセスできます。作業ウィンドウ アドインはコンテキストに応じたコンテンツを表示でき、選択中のタスク、リソース、またはビューに基づくコンテンツや、ガント チャート、タスク使用状況ビュー、またはリソース使用状況ビューのセルに含まれているその他のデータに基づくコンテンツを使用できます。
 
+> [!NOTE]
+> Project Professional 2013 では、社内インストールの Project Server 2013、Project Online、および社内またはオンラインの SharePoint 2013 にアクセスする作業ウィンドウ アドインを開発できます。Project Standard 2013 では、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
 
- >**メモ**  Project Professional 2013 では、社内インストールの Project Server 2013、Project Online、および社内またはオンラインの SharePoint 2013 にアクセスする作業ウィンドウ アドインを開発できます。Project Standard 2013では、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
-
-Project 用のアドイン シナリオとして、次のようなものがあります。
-
+Project 用のアドインのシナリオとして、次のようなものがあります。
 
 -  **プロジェクトのスケジュール**???関連性がありスケジュールに影響するプロジェクトのデータを表示できます。作業ウィンドウ アドインでは、Project Server 2013 の他のプロジェクトから、関連するデータを統合できます。たとえば、部署ごとのプロジェクトとマイルストーンの日付の一覧を確認したり、選択したカスタム フィールドに基づいて他のプロジェクトの特定のデータを参照したりできます。
     
@@ -37,9 +40,7 @@ Project 用のアドイン シナリオとして、次のようなものがあ�
     
     「[社内の Project Server OData サービスで REST を使用する Project アドインを作成する](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)」などを参照してください。
     
-
 ## <a name="developing-project-add-ins"></a>Project アドインの開発
-
 
 Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
 
@@ -66,33 +67,33 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
 
 
-- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
+- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 - アドインのマニフェストで必要な要素を次に示します。
   - **OfficeApp** 要素では、アドインの種類が作業ウィンドウであることを `xsi:type="TaskPaneApp"` 属性で指定します。
@@ -106,46 +107,47 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     
 - (省略可能) 他のロケール用の値を表す  **Override** 要素を追加します。たとえば、次のマニフェストでは、 **DisplayName**、 **Description**、 **IconUrl**、および  **SourceLocation** に対し、フランス語の値を表す **Override** 要素を指定しています。
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-     <Override Locale="fr-fr" Value="Bing Search"/>
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-     <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-     <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-       <Override Locale="fr-fr" Value="http://m.bing.com"/>
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+        <Override Locale="fr-fr" Value="Bing Search"/>
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+        <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+        <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+          <Override Locale="fr-fr" Value="http://m.bing.com"/>
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 
 ## <a name="installing-project-add-ins"></a>Project アドインのインストール
 
 
-Project 2013 では、ファイル共有上のスタンドアロン ソリューションとして、またはプライベート アドイン カタログに、アドインをインストールできます。パブリック Office ストアでアドインをレビューおよび購入することもできます。
+Project 2013 では、ファイル共有上のスタンドアロン ソリューションとして、またはプライベート アドイン カタログに、アドインをインストールできます。AppSource でアドインをレビューおよび購入することもできます。
 
 ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の [ **セキュリティ センター**] ダイアログ ボックスの [ **信頼されているアドイン カタログ**] タブを使用します。Project にアドインを表示するには、マニフェスト内の  **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
 
 
- >**メモ**  Internet Explorer 9 以降がインストールされている必要がありますが、既定のブラウザーになっている必要はありません。Office アドインには Internet Explorer 9 のコンポーネントが必要です。既定のブラウザーとして使用できるのは、Internet Explorer 9 以降、Safari 5.0.6 以降、Firefox 5 以降、または Chrome 13 以降です。
+> [!NOTE]
+> Internet Explorer 9 以降がインストールされている必要がありますが、既定のブラウザーになっている必要はありません。Office アドインには Internet Explorer 9 のコンポーネントが必要です。既定のブラウザーとして使用できるのは、Internet Explorer 9、Safari 5.0.6、Firefox 5、Chrome 13、これらのブラウザーのいずれかの最新バージョンです。
 
 手順 2. では、Project 2013 がインストールされているローカル コンピューター上に Bing Search アドインをインストールします。しかし、アドインのインフラストラクチャでは  `C:\Project\AppManifests` などのローカル ファイル パスを直接使用しないので、ローカル コンピューター上にネットワーク共有を作成できます。希望に応じて、リモート コンピューター上にファイル共有を作成することもできます。
 
@@ -165,48 +167,41 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
     
 6. [ **信頼されているアドイン カタログ**] ウィンドウ (図 1 を参照) で、 [ **カタログの URL**] テキスト ボックスにパス「 `\\ServerName\AppManifests`」を追加し、[ **カタログの追加**]、[ **OK**] の順に選択します。
     
-     >**注** 図 1 は [**信頼できるカタログのアドレス**] リストの非公開カタログの、2 つのファイル共有と 1 つの架空の URL を示しています。既定のファイル共有に設定できるのは 1 つのファイル共有のみで、既定のカタログに設定できるのは 1 つのカタログ URL のみです。たとえば、`\\Server2\AppManifests` を既定に設定した場合、Project は `\\ServerName\AppManifests` の **[既定]** チェック ボックスをオフにします。既定の選択を変更した場合、**[クリア]** を選択すると、インストールしたアドインを削除して、Project を再起動することができます。Project が開いているときに既定のファイル共有または SharePoint カタログにアドインを追加した場合、Project を再起動する必要があります。
+    > [!NOTE]
+    > 図 1 は [**信頼できるカタログのアドレス**] リストの非公開カタログの、2 つのファイル共有と 1 つの架空の URL を示しています。既定のファイル共有に設定できるのは 1 つのファイル共有のみで、既定のカタログに設定できるのは 1 つのカタログ URL のみです。たとえば、`\\Server2\AppManifests` を既定に設定した場合、Project は `\\ServerName\AppManifests` の [**既定**] チェック ボックスをオフにします。既定の選択を変更した場合、[**クリア**] を選択すると、インストールしたアドインを削除して、Project を再起動することができます。Project が開いているときに既定のファイル共有または SharePoint カタログにアドインを追加した場合、Project を再起動する必要があります。
 
-    **図 1.セキュリティ センターを使用したアドインのマニフェストのカタログの追加**
+    *図 1. セキュリティ センターを使用したアドインのマニフェストのカタログの追加*
 
-    ![セキュリティ センターを使用してアプリ マニフェストを追加](../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![セキュリティ センターを使用してアプリ マニフェストを追加](../images/pj15-agave-overview-trust-centers.png)
 
 7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択します (図 2 を参照)。
     
-    **図 2.ファイル共有にあるアドインの起動**
+    *図 2. ファイル共有にあるアドインの起動*
 
-    ![ファイル共有にある Office アプリの起動](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![ファイル共有にある Office アプリの起動](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Bing Search アドインを選択し、 [ **挿入**] を選択します。
     
-図 3 のように、作業ウィンドウに Bing Search アドインが表示されます。作業ウィンドウのサイズを手動で変更して、Bing Search アドインを使用できます。
+    図 3 のように、作業ウィンドウに Bing Search アドインが表示されます。作業ウィンドウのサイズを手動で変更して、Bing Search アドインを使用できます。
 
-**図 3.Bing Search アドインの使用**
+    *図 3. Bing Search アドインの使用*
 
-![Bing Search アプリの使用](../images/pj15_AgaveOverview_BingSearch.gif)
-
-
-## <a name="distributing-project-add-ins"></a>Project アドインの配布
+    ![Bing Search アプリの使用](../images/pj15-agave-overview-bing-search.png)
 
 
-アドインの配布は、ファイル共有、SharePoint ライブラリのアドイン カタログ、または Office ストア の プロジェクトのアドイン で行えます。詳細については、「 [Office アドインを発行する](../publish/publish.md)」を参照してください。
+## <a name="distributing-project-add-ins"></a>Project 用アドインの配布
 
 
-## <a name="additional-resources"></a>その他のリソース
+アドインの配布は、ファイル共有、SharePoint ライブラリのアドイン カタログ、または AppSource で行えます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
 
 
+## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-    
-- [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
-    
-- [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
-    
-- [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-    
-- [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-    
+- [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
+- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
+- [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 用の作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-    
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

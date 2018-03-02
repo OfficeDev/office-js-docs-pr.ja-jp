@@ -1,5 +1,10 @@
+---
+title: テスト用に Office アドインをサイドロードする
+description: ''
+ms.date: 01/25/2018
+---
 
-# <a name="sideload-office-add-ins-for-testing"></a>テストのために Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。 
 
@@ -7,11 +12,11 @@ Word、Excel、PowerPoint のアドインを Windows でテストしない場合
 
 - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)
 
-次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。
+次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
+> [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 
 ## <a name="share-a-folder"></a>フォルダーの共有
@@ -26,38 +31,39 @@ Word、Excel、PowerPoint のアドインを Windows でテストしない場合
 
 5. **[共有]** > **[完了]** > **[閉じる]** の順に選択します。
 
+
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>信頼できるカタログとしてその共有フォルダーを指定します。
-
       
-3. Excel、Word、または PowerPoint で新しいドキュメントを開きます。
+1. Excel、Word、または PowerPoint で新しいドキュメントを開きます。
     
-4. **[ファイル]** タブを選び、**[オプション]** を選びます。
+2. **[ファイル]** タブを選び、**[オプション]** を選びます。
     
-5. **[セキュリティ センター]** を選び、**[セキュリティ センターの設定]** ボタンを選びます。
+3. **[セキュリティ センター]** を選び、**[セキュリティ センターの設定]** ボタンを選びます。
     
-6. **[信頼されているアドイン カタログ]** を選びます。
+4. **[信頼されているアドイン カタログ]** を選びます。
     
-7. **[カタログの URL]** ボックスで、共有フォルダー カタログへの完全なネットワーク パスを入力し、**[カタログの追加]** を選びます。
+5. **[カタログの URL]** ボックスで、共有フォルダー カタログへの完全なネットワーク パスを入力し、**[カタログの追加]** を選びます。
     
-8. **[メニューに表示する]** チェック ボックスをオンにし、**[OK]** を選びます。
+6. **[メニューに表示する]** チェック ボックスをオンにし、**[OK]** を選びます。
 
-9. Office アプリケーションを閉じると変更内容が有効になります。
+7. Office アプリケーションを閉じると変更内容が有効になります。
     
+
 ## <a name="sideload-your-add-in"></a>アドインのサイドロード
-
 
 1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。なお、Web サーバーに Web アプリケーション自体を展開します。必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
 
-    >**重要:**外部データとサービスにアクセスするアドインのセキュリティを強化するため、アドインでは、HTTPS などのセキュリティで保護されたプロトコルを使用して外部データとサービスに接続する必要があります。アドインでアドイン コマンドを使用する場合は、HTTPS を使用する必要があります。
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. Excel、Word または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。
+2. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。
 
 3. **[Office アドイン]** ダイアログ ボックスの上部にある **[共有フォルダー]** を選びます。
 
-4. アドインの名前を選んで **[OK]** を選び、アドインを挿入します。
+4. アドインの名前を選び、**[OK]** を選択して、アドインを挿入します。
 
 
-## <a name="additional-resources"></a>追加リソース
+## <a name="see-also"></a>関連項目
 
 - [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
 - [Office アドインを発行する](../publish/publish.md)

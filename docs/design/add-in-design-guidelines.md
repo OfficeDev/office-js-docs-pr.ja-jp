@@ -1,9 +1,17 @@
+---
+title: Office アドインの設計ガイドライン
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
 # <a name="office-add-in-design-guidelines"></a>Office アドインの設計ガイドライン
 
 Office のスタイルに適合する UI を開発することにより Office アドインのユーザー エクスペリエンスを強化し、アクセシビリティ ガイドラインを適用してすべてのユーザーがアドインに確実にアクセスできるようにします。
 
 
-  [Office ストアで入手可能](https://dev.office.com/officestore/docs/submit-to-the-office-store)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://dev.office.com/officestore/docs/validation-policies)」に準拠するようにします。
+  [AppSource で入手可能](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)」に準拠するようにします。
 
 ## <a name="voice-guidelines"></a>スタイル ガイドライン 
 
@@ -50,7 +58,7 @@ Office アドインを設計して開発する際は、アドインを使用す�
 - キャプションまたはオーディオ ソースによるオーディオ説明を有効にする方法をユーザーに提供します。
 - ユーザーに警告する手段として、視覚的な合図や振動など、サウンドに代わる方法を提供します。
 
-### <a name="accessibility-resources"></a>ユーザー補助リソース
+## <a name="see-also"></a>関連項目
 
 - [Web コンテンツ アクセシビリティ ガイドライン (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [WCAG 2.0 の非 Web 情報および通信テクノロジへの適用ガイダンス (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)

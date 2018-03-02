@@ -1,6 +1,14 @@
+---
+title: Excel JavaScript API を使用してグラフを操作する
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
-この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)」を参照してください。
 
 ## <a name="create-a-chart"></a>グラフを作成する
 
@@ -24,14 +32,15 @@ Excel.run(function (context) {
 
 **新しい折れ線グラフ**
 
-![Excel での新しい折れ線グラフ](../images/Excel-chart-create-line.png)
+![Excel での新しい折れ線グラフ](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>データ系列をグラフに追加する
 
 次のコード サンプルは、ワークシートの最初のグラフにデータ系列を追加します。 新しいデータ系列は **2016** という名前の列に対応し、範囲 **D2:D5** のデータに基づいています。
 
-**注**:このサンプルでは、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> [!NOTE]
+> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -48,11 +57,11 @@ Excel.run(function (context) {
 
 **2016 データ系列が追加される前のグラフ**
 
-![2016 データ系列が追加される前の Excel のグラフ](../images/Excel-chart-data-series-before.png)
+![2016 データ系列が追加される前の Excel のグラフ](../images/excel-charts-data-series-before.png)
 
 **2016 データ系列が追加された後のグラフ**
 
-![2016 データ系列が追加された後の Excel のグラフ](../images/Excel-chart-data-series-after.png)
+![2016 データ系列が追加された後の Excel のグラフ](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>グラフ タイトルを設定する
 
@@ -71,7 +80,7 @@ Excel.run(function (context) {
 
 **タイトル設定後のグラフ**
 
-![タイトルが付いた Excel のグラフ](../images/Excel-chart-title-set.png)
+![タイトルが付いた Excel のグラフ](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>グラフの軸のプロパティを設定する
 
@@ -94,13 +103,14 @@ Excel.run(function (context) {
 
 **項目軸のタイトルが設定された後のグラフ**
 
-![軸のタイトルが付いた Excel のグラフ](../images/Excel-chart-axis-title-set.png)
+![軸のタイトルが付いた Excel のグラフ](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>軸の表示単位を設定する
 
 次のコード サンプルは、ワークシートの最初のグラフの、数値軸の表示単位を **Hundreds** に設定します。
 
-**注**:このサンプルでは、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> [!NOTE]
+> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -115,7 +125,7 @@ Excel.run(function (context) {
 
 **数値軸の表示単位が設定された後のグラフ**
 
-![軸の表示単位が付いた Excel のグラフ](../images/Excel-chart-axis-display-unit-set.png)
+![軸の表示単位が付いた Excel のグラフ](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
@@ -134,15 +144,16 @@ Excel.run(function (context) {
 
 **枠線が非表示にされたグラフ**
 
-![枠線が非表示にされた Excel のグラフ](../images/Excel-chart-gridlines-removed.png)
+![枠線が非表示にされた Excel のグラフ](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>グラフの近似曲線
 
 ### <a name="add-a-trendline"></a>近似曲線を追加する
 
-次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に移動平均の近似曲線を追加します。 近似曲線は 5 期間にわたる移動平均を示します。
+次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に移動平均の近似曲線を追加します。近似曲線は 5 期間にわたる移動平均を示します。
 
-**注**:このサンプルでは、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> [!NOTE]
+> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -158,13 +169,14 @@ Excel.run(function (context) {
 
 **移動平均の近似曲線が記入されたグラフ**
 
-![移動平均の近似曲線が記入された Excel のグラフ](../images/Excel-chart-create-trendline.png)
+![移動平均の近似曲線が記入された Excel のグラフ](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
-次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に対して、近似曲線をタイプ**線形**に設定しています。
+次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に対して、近似曲線の種類を**線形**に設定しています。
 
-**注**:このサンプルでは、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> [!NOTE]
+> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -181,10 +193,10 @@ Excel.run(function (context) {
 
 **線形の近似曲線が記入されたグラフ**
 
-![線形の近似曲線が記入された Excel のグラフ](../images/Excel-chart-trendline-linear.png)
+![線形の近似曲線が記入された Excel のグラフ](../images/excel-charts-trendline-linear.png)
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Chart オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chart) 
-- [Chart Collection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)
+- [Chart オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
+- [Chart Collection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)

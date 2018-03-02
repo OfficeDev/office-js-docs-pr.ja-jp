@@ -1,8 +1,14 @@
+---
+title: OneNote ページ コンテンツを使用する
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する 
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
 
-  ![OneNote ページのオブジェクト モデル図](../images/OneNoteOM-page.png)
+  ![OneNote ページのオブジェクト モデル図](../images/one-note-om-page.png)
 
 - ページ オブジェクトには、PageContent オブジェクトのコレクションが含まれています。
 - PageContent オブジェクトには、アウトライン、イメージ、その他のコンテンツ タイプが含まれています。
@@ -11,14 +17,14 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 空の OneNote ページを作成するには、次の方法のいずれかを使用します。
 
-- [Section.addPage](http://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
-- [Page.insertPageAsSibling](http://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](https://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
+- [Page.insertPageAsSibling](https://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
 その後、次のオブジェクトのメソッドを使用して、Page.addOutline や Outline.appendHtml などのページのコンテンツを操作します。 
 
-- [Page](http://dev.office.com/reference/add-ins/onenote/page)
-- [Outline](http://dev.office.com/reference/add-ins/onenote/outline)
-- [Paragraph](http://dev.office.com/reference/add-ins/onenote/paragraph)
+- [Page](https://dev.office.com/reference/add-ins/onenote/page)
+- [Outline](https://dev.office.com/reference/add-ins/onenote/outline)
+- [Paragraph](https://dev.office.com/reference/add-ins/onenote/paragraph)
 
 OneNote ページのコンテンツと構造は、HTML で表されます。次に説明するように、ページ コンテンツの作成や更新には、HTML のサブセットだけがサポートされています。
 
@@ -41,9 +47,9 @@ OneNote ページのコンテンツと構造は、HTML で表されます。次�
 
 タイトルなどのメタデータは、どのページでも照会できます。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

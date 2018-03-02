@@ -1,5 +1,11 @@
+---
+title: ドキュメントやスプレッドシート内の領域へのバインド
+description: ''
+ms.date: 12/04/2017
+---
 
-# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントまたはスプレッドシート内の領域へのバインド
+
+# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
 バインドベースのデータ アクセスにより、コンテンツ アドインおよび作業ウィンドウ アドインは、ドキュメントまたはスプレッドシートの特定の領域に ID を通じて一貫性をもってアクセスできます。アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるいずれかのメソッド ([addFromPromptAsync]、[addFromSelectionAsync]、または [addFromNamedItemAsync]) を呼び出すことによって、バインドを確立する必要があります。バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。バインドの作成により、アドインに次の効果がもたらされます。
 
@@ -27,12 +33,13 @@
 
     Excel では、セルの連続する選択範囲を使用してマトリックス バインドを設定できます。Word では、表のみがマトリックス バインドをサポートします。
 
-3. **[テーブル バインド][TableBinding]** - ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](http://dev.office.com/reference/add-ins/shared/tabledata) オブジェクトとして書き込みまたは読み取りが行われます。`TableData` オブジェクトは `headers` および `rows` プロパティを通じてデータを公開します。
+3. **[テーブル バインド][TableBinding]** - ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](https://dev.office.com/reference/add-ins/shared/tabledata) オブジェクトとして書き込みまたは読み取りが行われます。`TableData` オブジェクトは `headers` および `rows` プロパティを通じてデータを公開します。
 
     Excel または Word の表はすべて、テーブル バインドの基礎にできます。テーブル バインドを確立すると、ユーザーが表に追加する新しい各行または各列が、自動的にバインドに含まれます。
 
 `Bindings` オブジェクトの 3 つの "addFrom" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding]、[TableBinding]、または [TextBinding] のうち対応するオブジェクトのメソッドを使用して、バインドのデータとプロパティを操作できます。この 3 つのオブジェクトはすべて、`Binding` オブジェクトの [getDataAsync] メソッドおよび [setDataAsync] メソッドを継承しているので、バインドされたデータを操作できます。
 
+> [!NOTE]
 > **マトリックス バインドとテーブル バインドの使い分け**作業中の表形式のデータに集計行が含まれ、アドインのスクリプトが集計行の値にアクセスする必要がある場合、またはユーザーの選択が集計行にあることを検出する必要がある場合は、マトリックス バインドを使用する必要があります。集計行を含む表形式データに対するテーブル バインドを設定する場合、[TableBinding.rowCount] プロパティおよびイベント ハンドラーの [BindingSelectionChangedEventArgs] オブジェクトの `rowCount` および `startRow` プロパティは、集計行のそれらの値に反映されません。この制限を回避するには、集計行を処理するマトリックス バインドを設定する必要があります。
 
 ## <a name="add-a-binding-to-the-users-current-selection"></a>ユーザーの現在の選択範囲にバインドを追加する
@@ -92,9 +99,9 @@ function write(message){
 図 1 は、Excel の組み込み範囲選択プロンプトを示しています。
 
 
-**図 1.Excel のデータ選択 UI**
+*図 1.Excel のデータ選択 UI*
 
-![Excel のデータ選択 UI](../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel のデータ選択 UI](../images/agave-api-overview-excel-selection-ui.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>名前付きアイテムにバインドを追加する
@@ -121,10 +128,11 @@ function write(message){
 
 ```
 
- **Excel の場合**、[addFromNamedItemAsync] メソッドの `itemName` パラメーターは、既存の名前付き範囲 (`A1` スタイルの参照 `("A1:A3")` で指定された範囲) またはテーブルを参照できます。既定では、Excel のテーブルを追加すると、最初に追加したテーブルには "Table1"、次に追加したテーブルには "Table2" という名前が割り当てられます。Excel UI で意味のあるテーブル名を割り当てるには、リボンの **[テーブル ツール | デザイン]** タブの **[テーブル名]** プロパティを使用します。
+**Excel の場合**、[addFromNamedItemAsync] メソッドの `itemName` パラメーターは、既存の名前付き範囲 (`A1` スタイルの参照 `("A1:A3")` で指定された範囲) またはテーブルを参照できます。既定では、Excel のテーブルを追加すると、最初に追加したテーブルには "Table1"、次に追加したテーブルには "Table2" という名前が割り当てられます。Excel UI で意味のあるテーブル名を割り当てるには、リボンの **[テーブル ツール | デザイン]** タブの **[テーブル名]** プロパティを使用します。
 
 
- >**注**: Excel では、テーブルを名前付きアイテムとして指定する場合、`"Sheet1!Table1"` の形式で完全修飾名を指定して、テーブルの名前にワークシートの名前を含める必要があります。
+> [!NOTE]
+> Excel では、テーブルを名前付きアイテムとして指定する場合、`"Sheet1!Table1"` の形式で完全修飾名を指定して、テーブルの名前にワークシートの名前を含める必要があります。
 
 以下の例では、Excel のバインドを列 A の最初の 3 つのセル (`"A1:A3"`) に対して作成し、id `"MyCities"` を割り当て、バインドに 3 つの都市名を書き込みます。
 
@@ -153,7 +161,7 @@ function write(message){
 }
 ```
 
- **Word の場合**、[addFromNamedItemAsync] メソッドの `itemName` パラメーターは、`Rich Text` コンテンツ コントロールの `Title` プロパティを参照します。(`Rich Text` コンテンツ コントロール以外のコンテンツ コントロールにはバインドできません)。
+**Word の場合**、[addFromNamedItemAsync] メソッドの `itemName` パラメーターは、`Rich Text` コンテンツ コントロールの `Title` プロパティを参照します。(`Rich Text` コンテンツ コントロール以外のコンテンツ コントロールにはバインドできません)。
 
 既定では、コンテンツ コントロールには `Title*` 値は割り当てられません。Word UI で意味のあるテーブル名を割り当てるには、リボンの **[開発]** タブの **[コントロール]** グループから **[リッチ テキスト]** コンテンツ コントロールを挿入した後、**[コントロール]** グループの **[プロパティ]** コマンドを使用して **[コンテンツ コントロールのプロパティ]** ダイアログ ボックスを表示します。次に、コンテンツ コントロールの **[タイトル]** プロパティに、コードから参照する名前を設定します。
 
@@ -252,7 +260,8 @@ function write(message){
 ```
 
 
- > **注:**`select` メソッドの promise が正常に [Binding] オブジェクトを返す場合、このオブジェクトはオブジェクトの [getDataAsync]、[setDataAsync]、[addHandlerAsync]、および [removeHandlerAsync] の 4 つのメソッドのみを公開します。promise が Binding オブジェクトを返すことができない場合は、`onError` コールバックを使用して [asyncResult].error オブジェクトにアクセスし、詳細情報を取得できます。`select` メソッドによって返される Binding オブジェクトの promise によって公開される 4 つのメソッド以外の Binding オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [getByIdAsync] メソッドを使用します。[Document.bindings] プロパティと Bindings.[getByIdAsync] メソッドを使用して Binding** オブジェクトを取得します。
+> [!NOTE]
+> `select` メソッドの promise が正常に [Binding] オブジェクトを返す場合、このオブジェクトはオブジェクトの [getDataAsync]、[setDataAsync]、[addHandlerAsync]、および [removeHandlerAsync] の 4 つのメソッドのみを公開します。promise が Binding オブジェクトを返すことができない場合は、`onError` コールバックを使用して [asyncResult].error オブジェクトにアクセスし、詳細情報を取得できます。`select` メソッドによって返される Binding オブジェクトの promise によって公開される 4 つのメソッド以外の Binding オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [getByIdAsync] メソッドを使用します。[Document.bindings] プロパティと Bindings.[getByIdAsync] メソッドを使用して Binding** オブジェクトを取得します。
 
 ## <a name="release-a-binding-by-id"></a>ID でバインドを解除する
 
@@ -320,13 +329,14 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。この関数は、結果のステータスが格納される `asyncResult` という 1 つのパラメーターを使用して呼び出されます。
 
- > **メモ:** Excel 2013 SP1 および Excel Online の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../excel/format-tables-in-add-ins-for-excel.md)ができるようになりました。
+> [!NOTE]
+> Excel 2013 SP1 および Excel Online の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../excel/excel-add-ins-tables.md)ができるようになりました。
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>バインド内のデータまたは選択範囲の変更を検出する
 
 
-次の例は、ID が "MyBinding" であるバインドの [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) イベントにイベント ハンドラーを関連付ける方法を示しています。
+次の例は、ID が "MyBinding" であるバインドの [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) イベントにイベント ハンドラーを関連付ける方法を示しています。
 
 
 ```js
@@ -343,7 +353,7 @@ function write(message){
 }
 ```
 
- `myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。
+`myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。
 
 [addHandlerAsync] メソッドの最初の `eventType` パラメーターは、サブスクライブするイベントの名前を指定します。[Office.EventType] は、使用できるイベントの種類の値の列挙型です。`Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`。
 
@@ -360,7 +370,7 @@ function write(message){
 イベントのイベント ハンドラーを削除するには、最初の _eventType_ パラメーターにイベントの種類を指定し、2 番目の _handler_ パラメーターに削除するイベント ハンドラー関数の名前を指定して、[removeHandlerAsync] メソッドを呼び出します。たとえば、次の例では、前のセクションの例で追加した `dataChanged` イベント ハンドラー関数が削除されます。
 
 
-```
+```js
 function removeEventHandlerFromBinding() {
     Office.select("bindings#MyBinding").removeHandlerAsync(
         Office.EventType.BindingDataChanged, {handler:dataChanged});
@@ -368,41 +378,40 @@ function removeEventHandlerFromBinding() {
 ```
 
 
- >**重要:**[removeHandlerAsync] メソッドを呼び出すときにオプションの _handler_ パラメーターを省略すると、指定された `eventType` のすべてのイベント ハンドラーが削除されます。
+> [!IMPORTANT]
+> [removeHandlerAsync] メソッドを呼び出すときにオプションの _handler_ パラメーターを省略すると、指定された `eventType` のすべてのイベント ハンドラーが削除されます。
 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
-- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
+- [JavaScript API for Office について](understanding-the-javascript-api-for-office.md) 
+- [Office アドインにおける非同期プログラミング](asynchronous-programming-in-office-add-ins.md)
+- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)
-    
-- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-[Binding]:               http://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding
-[TableBinding]:          http://dev.office.com/reference/add-ins/shared/binding.tablebinding
-[TextBinding]:           http://dev.office.com/reference/add-ins/shared/binding.textbinding
-[getDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.getdataasync
-[setDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.setdataasync
-[SelectionChanged]:      http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
-[addHandlerAsync]:       http://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
-[removeHandlerAsync]:    http://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
+[Binding]:               https://dev.office.com/reference/add-ins/shared/binding
+[MatrixBinding]:         https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]:          https://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]:           https://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]:      https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]:       https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]:    https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:              http://dev.office.com/reference/add-ins/shared/bindings.bindings
-[getByIdAsync]:          http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
-[getAllAsync]:           http://dev.office.com/reference/add-ins/shared/bindings.getallasync
-[addFromNamedItemAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
-[addFromSelectionAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
-[addFromPromptAsync]:    http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
-[releaseByIdAsync]:      http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
+[Bindings]:              https://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]:          https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]:           https://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]:    https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]:      https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
-[AsyncResult]:          http://dev.office.com/reference/add-ins/shared/asyncresult
-[Office.BindingType]:   http://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:        http://dev.office.com/reference/add-ins/shared/office.select 
-[Office.EventType]:     http://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]:    http://dev.office.com/reference/add-ins/shared/document.bindings
+[AsyncResult]:          https://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]:   https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
+[Office.select]:        https://dev.office.com/reference/add-ins/shared/office.select 
+[Office.EventType]:     https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
+[Document.bindings]:    https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: http://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
-[BindingSelectionChangedEventArgs]: http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
+[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

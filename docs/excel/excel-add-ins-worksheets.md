@@ -1,8 +1,16 @@
+---
+title: Excel JavaScript API を使用してワークシートを操作する
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
-この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)」を参照してください。
 
-**注**:この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
+> [!NOTE]
+> この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
 
 ## <a name="get-worksheets"></a>ワークシートを取得する
 
@@ -27,7 +35,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**注**:ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。 Excel for Mac のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
+> [!NOTE]
+> ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。 Excel for Mac のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
 
 ## <a name="get-the-active-worksheet"></a>作業中のワークシートを取得する
 
@@ -134,7 +143,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>ワークシートを追加する
 
-次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、**name** プロパティと **position** プロパティを読み込み、コンソールにメッセージを書き込みます。 既存のすべてのワークシートの後に、新しいワークシートが追加されます。
+次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、**name** プロパティと **position** プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。
 
 ```js
 Excel.run(function (context) {
@@ -150,7 +159,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="delete-a-worksheet"></a>ワークシートを削除する
+## <a name="delete-a-worksheet"></a>ワークシートの削除
 
 次のコード サンプルでは、ブックの最後のワークシートを (ただし、ブック内の唯一のシートでない場合に) 削除し、コンソールにメッセージを書き込みます。
 
@@ -266,8 +275,8 @@ Excel.run(function (context) {
 
 ワークシート内の範囲を取得する方法を示す例については、「[Excel の JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Worksheet オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
-- [WorksheetCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Worksheet オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
+- [WorksheetCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)

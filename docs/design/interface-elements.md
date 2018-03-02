@@ -1,10 +1,17 @@
+---
+title: Office アドイン用の Office の UI 要素
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="office-ui-elements-for-office-add-ins"></a>Office アドイン用の Office の UI 要素
 
 アドイン コマンドおよび HTML のコンテナーを含むいくつかの種類の UI 要素を使用して Office UI を拡張することができます。これらの UI 要素は、Office の元々の拡張機能のように自然に、あらゆるプラットフォームで使えます。これらのいずれの要素にも、Web ベースのカスタム コードを挿入できます。
 
 次の図は、作成できる Office UI 要素の種類を示しています。
 
-![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../images/overview_withApp_interfaceElements.png)
+![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../images/overview-with-app-interface-elements.png)
 
 ## <a name="add-in-commands"></a>アドイン コマンド
 
@@ -25,7 +32,7 @@ HTML コンテナーは、Office クライアント内に HTML ベースの UI �
 |[コンテンツ アドイン](content-add-ins.md)|Office ドキュメントに埋め込まれているカスタム UI を表示します。コンテンツ アドインを使用して、Office ドキュメント内でアドインを直接操作できるようにします。たとえば、ビデオや、他のソースからのデータのビジュアル化などの外部コンテンツを表示します。 |
 |[ダイアログ ボックス](dialog-boxes.md)|Office ドキュメントにオーバーレイした形でダイアログ ボックスの中にカスタム UI を表示します。フォーカスする必要がありスペースをより多く取る操作で、ドキュメント内で横並びにする必要がない操作には、ダイアログ ボックスを使用します。|
 
-## <a name="related-resources"></a>関連リソース
+## <a name="see-also"></a>関連項目
 
 - [Excel、Word、PowerPoint のアドイン コマンド](add-in-commands.md)
 - [作業ウィンドウ](task-pane-add-ins.md)

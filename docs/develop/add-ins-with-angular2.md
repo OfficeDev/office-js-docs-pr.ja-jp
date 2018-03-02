@@ -1,17 +1,28 @@
-# <a name="tips-for-creating-office-add-ins-with-angular"></a>Angular で Office アドインを作成するためのヒント
+---
+title: Angular で Office アドインを開発する
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
 この記事では、Angular 2+ を使って、単一ページのアプリケーションとして Office アドインを作成する方法を説明します。
 
->**注:**Angular を使用して Office アドインを作成した経験を基に、何か投稿する内容がありますか。[GitHub](https://github.com/OfficeDev/office-js-docs) でこの記事に対して投稿するか、リポジトリで[問題](https://github.com/OfficeDev/office-js-docs/issues)を提出することでフィードバックを提出できます。 
+> [!NOTE]
+> Angular を使用して Office アドインを作成した経験を基に、何か投稿する内容がありますか。[GitHub](https://github.com/OfficeDev/office-js-docs) でこの記事に対して投稿するか、リポジトリで[問題](https://github.com/OfficeDev/office-js-docs-pr/issues)を提出することでフィードバックを提出できます。 
 
 Angular フレームワークを使用してビルドされる Office アドインのサンプルについては、「[Angular でビルドする Word スタイル チェック アドイン](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)」を参照してください。
 
 ## <a name="install-the-typescript-type-definitions"></a>TypeScript 型の定義をインストールする
-nodejs ウィンドウを開き、コマンド ラインで次のように入力します: `npm install --save-dev @types/office-js`。
+nodejs ウィンドウを開き、コマンド ラインで次のように入力します: 
+
+```bash
+npm install --save-dev @types/office-js`
+```
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>ブートス トラップは必ず Office.initialize 内に
 
-Office、Word、Excel の JavaScript API を呼び出す任意のページで、コードでまずメソッドを `Office.initialize` プロパティに割り当てる必要があります。(初期化コードがない場合は、メソッド本文は空の "`{}`" 記号でも構いませんが、`Office.initialize` プロパティは未定義のままにはできません。詳細については、「[アドインを初期化する](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」を参照してください。)Office の JavaScript ライブラリを初期化すると、すぐに Office でこのメソッドが呼び出されます。
+Office、Word、Excel の JavaScript API を呼び出す任意のページで、コードでまずメソッドを `Office.initialize` プロパティに割り当てる必要があります。(初期化コードがない場合は、メソッド本文は空の "`{}`" 記号でも構いませんが、`Office.initialize` プロパティは未定義のままにはできません。詳細については、「[アドインを初期化する](understanding-the-javascript-api-for-office.md#initializing-your-add-in)」を参照してください。)Office の JavaScript ライブラリを初期化すると、すぐに Office でこのメソッドが呼び出されます。
 
 **Angular のブートストラップ コードは `Office.initialize` に割り当てられたメソッドの中で呼び出すことで**、Office の JavaScript ライブラリが最初に初期化されるようにする必要があります。以下は、これを行う方法を示した簡単な例です。このコードは、プロジェクトの main.ts ファイルの中にある必要があります。
 
@@ -77,7 +88,7 @@ Office のアドインの Dialog API を使えば、アドインでは、メイ�
 
 Angular アプリでは UI が更新されない場合があります。これは、コード部分が Angular ゾーンの外から実行されるためです。解決策としては、次の例に示すように、ゾーン内にコードを配置します。
 
-```ts
+```js
 import { NgZone } from '@angular/core';
 
 export class MyComponent {

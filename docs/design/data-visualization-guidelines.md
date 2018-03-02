@@ -1,8 +1,16 @@
+---
+title: Office アドインのデータ可視化のスタイル ガイドライン
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
 データ可視化が良好なら、ユーザーはデータから洞察が得やすくなります。ユーザーは、これらの洞察を使って通知や説得の話ができます。この記事では、Excel やその他の Office アプリ用のアドインで効果的なデータ可視化を設計するためのガイドラインを示します。
 
-データ可視化でクロムを作成するには、[Office UI Fabric](http://dev.office.com/fabric) を使用することをお勧めします。 Office UI Fabric には、Office のルック アンド フィールとシームレスに統合されるスタイルとコンポーネントが含まれています。 
+データ可視化のクロムを作成するには、[Office UI Fabric](http://dev.office.com/fabric) を使用することをお勧めします。Office UI Fabric には、Office の外観とシームレスに統合するスタイルとコンポーネントが含まれています。 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -14,8 +22,8 @@
 
 データ可視化には、共通の一般的なフレームワークと、共通の視覚および対話型要素があります。次の図に示す、タイトル、ラベル、データ プロットなどです。
 
-![タイトル、軸、凡例、ラベル付きプロット エリアのある折れ線グラフのイメージ](../images/data_visualization_line_chart.png)
-![軸、目盛線、凡例、ラベル付きデータ プロットのある縦棒グラフのイメージ](../images/data_visualization_column_chart.png)
+![タイトル、軸、凡例、ラベル付きプロット エリアのある折れ線グラフのイメージ](../images/data-visualization-line-chart.png)
+![軸、目盛線、凡例、ラベル付きデータ プロットのある縦棒グラフのイメージ](../images/data-visualization-column-chart.png)
 
 ### <a name="chart-titles"></a>グラフのタイトル
 
@@ -23,19 +31,19 @@
 
 - グラフのタイトルを見やすくします。グラフの残りの部分との階層関係を視覚ではっきり示すように配置します。
 - 一般に、文頭だけを大文字にします (最初の単語の最初の文字を大文字にします)。コントラストを付けたり、階層を明確にしたりするには、すべて大文字を使用できますが、控えめに使用する必要があります。
-- [Office UI Fabric の文字体裁](http://dev.office.com/fabric#/styles/typography)を組み込み、Segoe を使用する Office UI と一貫性をもたせます。 グラフのコンテンツを UI と区別するために、異なる書体を使用することもできます。
+- [Office UI Fabric の文字体裁](http://dev.office.com/fabric#/styles/typography)を組み込み、グラフを Segoe を使用する Office UI と一貫性をもたせます。グラフのコンテンツを UI と区別するために、異なる書体を使用することもできます。
 - カウンターの大きい sans-serif 書体を使用します。
 
 次の例では、グラフ タイトルにおける serif と sans-serif 書体の使用を示します。スケールのコントラストと空白スペースの効果的な使用によって、視覚で階層関係がどのように強調されるかにご注目ください。
 
-![serif フォントによるデータ可視化のイメージ](../images/data_visualization_serif.png)
-![sans-serif フォントによるデータ可視化のイメージ](../images/data_visualization_san_serif.png)
+![serif フォントによるデータ可視化のイメージ](../images/data-visualization-serif.png)
+![sans-serif フォントによるデータ可視化のイメージ](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>軸ラベル
 
 テキスト色と背景色のコントラスト比を適正に保ちつつ、軸ラベルをはっきり読める程度にまで濃くします。データ インクと張り合うほど濃くしません。
 
-軸のラベルには明るいグレーが最も効果的です。 Fabric を使用している場合は、[中間色のパレット](http://dev.office.com/fabric#/styles/colors)をご覧ください。
+軸のラベルには明るいグレーが最も効果的です。Fabric を使用している場合は、[中間色のパレット](http://dev.office.com/fabric#/styles/colors)をご覧ください。
 
 ### <a name="data-ink"></a>データ インク
 
@@ -56,11 +64,11 @@
 
 グラフを正確に読み取るために目盛線が必要な場合もありますが、データ インクを引き立てる (データ インクと競合しない) 2 次的なビジュアル要素でなければなりません。静的な目盛線は特にハイ コントラスト用にデザインされたものでなければ、細く明るい色にします。また、ユーザーがグラフを対話的に使用するときにコンテキストに沿って現れる、その場限りの動的な目盛線を対話的操作によって作成することもできます。
 
-目盛線には明るいグレーが最も効果的です。 Fabric を使用している場合は、[中間色のパレット](http://dev.office.com/fabric#/styles/colors)をご覧ください。
+目盛線には明るいグレーが最も効果的です。Fabric を使用している場合は、[中間色のパレット](http://dev.office.com/fabric#/styles/colors)をご覧ください。
 
 次の図は、目盛線のあるデータ可視化を示しています。
 
-![目盛線のあるデータ可視化のイメージ](../images/data_visualization_gridlines.png)
+![目盛線のあるデータ可視化のイメージ](../images/data-visualization-gridlines.png)
 
 ### <a name="legends"></a>凡例
 
@@ -136,7 +144,7 @@
 - プッシュ ボタンやピック リストなど、すべての対話型要素をキーボードからアクセスできるようにします。
 - フォーカスの変更、ヒントなどを通知するため、アクセシビリティ イベントをスクリーン リーダーに送信します。
 
-## <a name="additional-resources"></a>その他のリソース 
+## <a name="see-also"></a>関連項目 
 
 - [データ + デザイン:情報の準備と可視化の簡単な紹介](https://infoactive.co/data-design)
 - [データ可視化を構築するための 5 つの最適なライブラリ](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)

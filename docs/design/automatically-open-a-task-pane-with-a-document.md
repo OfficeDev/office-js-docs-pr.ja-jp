@@ -1,3 +1,10 @@
+---
+title: ドキュメントで作業ウィンドウを自動的に開く
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
 Office アドインでアドイン コマンドを使用して、Office リボンにボタンを追加することで Office UI を拡張できます。ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。 
@@ -16,7 +23,7 @@ Autoopen 機能では、特定のドキュメントに特定の作業ウィン�
 
 |**製品**|**プラットフォーム**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Windows デスクトップ版 Office。 ビルド 16.0.8121.1000+</li><li>Office for Mac。 ビルド 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office for Mac。ビルド 15.34.17051500+</li><li>Office Online</li></ul>|
 
 
 ## <a name="best-practices"></a>ベスト プラクティス
@@ -30,7 +37,8 @@ Autoopen 機能を使用するときには、次に示すベスト プラクテ�
 - 要件セットの検出を使用して Autoopen 機能が利用可能かどうかを確認し、利用できない場合はフォールバック動作を提供します。
 - アドインの使用率を人為的に増やすために、Autoopen 機能を使用しないでください。特定のドキュメントでアドインが無意味に自動的に起動すると、ユーザーを不快にすることになります。 
 
-    >**注:**Microsoft では、Autoopen 機能の乱用を見つけた場合は、そのアドインを Office ストアから排除することがあります。 
+    > [!NOTE]
+    > Microsoft では、Autoopen 機能の乱用を見つけた場合は、そのアドインを AppSource から排除することがあります。 
 
 - この機能は、複数の作業ウィンドウを固定するために使用しないでください。1 つのドキュメントで自動的に開くアドインのウィンドウは 1 つのみ設定できます。  
 
@@ -40,9 +48,10 @@ Autoopen 機能を実装するには:
 - 自動的に開く作業ウィンドウを指定します。
 - 作業ウィンドウを自動的に開くドキュメントにタグ設定します。
 
->**重要:** 自動的に開くように指定したウィンドウは、アドインがユーザーのデバイスに既にインストールされている場合にのみ開きます。ユーザーがドキュメントを開いたときに、アドインがインストールされていない場合、Autoopen 機能は動作せずに、設定は無視されます。また、アドインをドキュメントと共に配布する必要がある場合は、可視性プロパティを 1 に設定する必要があります。これは、OpenXML を使用する場合にのみ実行できます。例についてはこの記事で後述します。 
+> [!IMPORTANT]
+> 自動的に開くように指定したウィンドウは、アドインがユーザーのデバイスに既にインストールされている場合にのみ開きます。ユーザーがドキュメントを開いたときに、アドインがインストールされていない場合、Autoopen 機能は動作せずに、設定は無視されます。また、アドインをドキュメントと共に配布する必要がある場合は、可視性プロパティを 1 に設定する必要があります。これは、OpenXML を使用する場合にのみ実行できます。例については、この記事で後述します。 
 
-### <a name="step-1-specify-the-task-pane-to-open"></a>手順 1:開く作業ウィンドウを指定する
+### <a name="step-1-specify-the-task-pane-to-open"></a>手順 1: 開く作業ウィンドウを指定する
 自動的に開く作業ウィンドウを指定するには、[TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。 
 
 次の例では、Office.AutoShowTaskpaneWithDocument に設定された TaskPaneId の値を示しています。
@@ -81,7 +90,7 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or Office Store asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
     <we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -97,12 +106,13 @@ webextension パートには、プロパティ バッグと **Office.AutoShowTas
 
 | **`storeType` 値** | **`id` 値**    |**`store` 値** | **`version` 値**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (Office ストア)|アドインの Office ストア アセット ID。\*|Office ストアのロケール。例： "en-us"。|Office ストア カタログでのバージョン。\*|
+|OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
 |EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"|アドイン マニフェストでのバージョン。
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
->\* Office ストアでのアドインのアセット ID とバージョンを確認するには、そのアドインの Office ストア ランディング ページに移動します。アセット ID は、ブラウザーのアドレス バーに表示されます。バージョンは、そのページの **[詳細]** セクションに示されます。
+> [!NOTE]
+> AppSource でのアドインのアセット ID とバージョンを確認するには、そのアドインの AppSource ランディング ページに移動します。アセット ID は、ブラウザーのアドレス バーに表示されます。バージョンは、そのページの **[詳細]** セクションに示されます。
 
 webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.WebExtensionReference](https://msdn.microsoft.com/ja-jp/library/hh695383(v=office.12).aspx)」を参照してください。
 
@@ -120,11 +130,12 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 
 アドインとドキュメントのテンプレートまたはコンテンツが緊密に統合されていて、ユーザーが Autoopen 機能をオフにすることない場合は、`visibility` を "1" に設定することが適切な選択になります。 
 
->**注:** ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
+> [!NOTE]
+> ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
 
 この XML を簡単に記述する 1 つの方法として、最初にアドインを実行し、値を書き込むために[クライアント側でドキュメントにタグを設定](#tag-the-document-on-the-client-side)して、ドキュメントを保存してから生成された XML を調べます。Office により、適切な属性値が検出されて設定されます。また、[Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) ツールを使用して生成した C# コードにより、生成する XML 基づいてプログラムでマークアップを追加することもできます。
 
-## <a name="additional-resources"></a>追加リソース
+## <a name="see-also"></a>関連項目
 
-Autoopen 機能の使用方法を示すサンプルについては、「[Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。 
+Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。 
 

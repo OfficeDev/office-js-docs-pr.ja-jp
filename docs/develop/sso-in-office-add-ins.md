@@ -1,16 +1,23 @@
-# <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
+---
+title: Office アドインのシングル サインオンを有効化する
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
 ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 これを利用し、SSO を使用すれば、ユーザーに 2 度目のサインインを求める必要なく、次に示す操作を実行できます。
 
 * ユーザーにアドインへのサインインを承認する。
 * アドインに [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスを承認する。
 
-![アドインのサインイン プロセスを示す画像](../images/OfficeHostTitleBarLogin.png)
+![アドインのサインイン プロセスを示す画像](../images/office-host-title-bar-sign-in.png)
 
->**メモ:**現在、シングル サインオン API は Word、Excel、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)」を参照してください。
-> シングル サインオンは、現在 Outlook のプレビュー段階です。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> [!NOTE]
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)」を参照してください。
+> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
-ユーザーにとっては、サインインが一度だけになり、アドインの実行エクスペリエンスがスムーズなものになります。 開発者にとっては、アドインでユーザーを認証して、Microsoft Graph を経由したユーザーのデータへの承認済みアクセスを得るために、ユーザーが既に Office アプリケーションに提示した資格情報を使用できるということを意味します。
+ユーザーにとっては、サインインが 1 回だけになり、アドインの実行エクスペリエンスがスムーズになります。開発者にとっては、アドインでユーザーを認証して、Microsoft Graph を経由したユーザーのデータへの承認済みアクセスを得るために、ユーザーが既に Office アプリケーションに提示した資格情報を使用できるということを意味します。
 
 ## <a name="sso-add-in-architecture"></a>SSO アドインのアーキテクチャ
 
@@ -22,9 +29,10 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 次の図は、SSO の動作のしくみを示しています。
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![SSO プロセスを示す図](../images/SSOOverviewDiagram.png)
 
-1. アドインでは、JavaScript は新しい Office.js API `getAccessTokenAsync` を呼び出します。 これにより、Office ホスト アプリケーションにアドインへのアクセス トークンを取得するように指示します。 (今後は、これを「**アドイン トークン**」と呼びます。)
+![SSO プロセスを示す図](../images/sso-overview-diagram.png)
+
+1. アドインでは、JavaScript は新しい Office.js API `getAccessTokenAsync` を呼び出します。これにより、Office ホスト アプリケーションにアドインへのアクセス トークンを取得するように指示します (今後は、これを**アドイン トークン**と呼びます)。
 1. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 1.  現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 1. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**アドイン トークン**を要求します。
@@ -43,8 +51,8 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 このセクションでは、SSO を使用する Office アドインの作成に関連するタスクについて説明します。 ここでは、これらのタスクについて、言語とフレームワークに依存しない方法で説明しています。 詳細なチュートリアルの例については、次を参照してください。
 
-* [シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)
-* [シングル サインオンを使用する ASP.NET Office アドインを作成する](../develop/create-sso-office-add-ins-aspnet.md)
+* [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
+* [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 
@@ -89,7 +97,7 @@ Office にログインしているユーザーがなく、Office にアドイン
 
 ### <a name="add-server-side-code"></a>サーバー側のコードを追加する
 
-Microsoft Graph データを取得する 1 つ以上の Web API メソッドを作成します。 使用する言語とフレームワークによっては、記述する必要のあるコードが簡単になるライブラリが使用できることがあります。 サーバー側のコードでは、次に示す操作を実行する必要があります。
+Microsoft Graph データを取得する 1 つ以上の Web API メソッドを作成します。使用する言語とフレームワークによっては、記述する必要のあるコードが簡単になるライブラリを使用できることがあります。サーバー側のコードでは、次に示す操作を実行する必要があります。
 
 * 前の手順で作成したトークン ハンドラーから受け取ったアドイン トークンを検証します。
 * Azure AD v2.0 エンドポイントの呼び出しによって、「代理」フローを開始します。これには、アドイン アクセス トークン、ユーザーに関するメタデータ、およびアドインの資格情報 (ID とシークレット) を含めます。

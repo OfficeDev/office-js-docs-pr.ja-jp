@@ -1,19 +1,19 @@
-# Office JavaScript APIs
+# <a name="office-javascript-apis"></a>Office JavaScript API
 
-Welcome to the Office JavaScript API conceptual documentation. In this repository, you can find the documentation source files for Office JavaScript API concepts, quickstarts, tutorials, and how-to guides. For the best experience, we recommend you view this content on [docs.microsoft.com](https://docs.microsoft.com/ja-jp/office/dev/add-ins/).
+Office JavaScript API の概念に関するドキュメントへようこそ。 このリポジトリには、Office JavaScript API の概念、クイックスタート、チュートリアル、および使い方ガイドのドキュメント ソース ファイルがあります。 最適にご利用いただくには、このコンテンツを [docs.microsoft.com](https://docs.microsoft.com/ja-jp/office/dev/add-ins/) で表示することをお勧めします。
 
-> **Note**: You can find the Office JavaScript API Reference documentation source files in the [office-js-docs](https://github.com/OfficeDev/office-js-docs) repository.
+> **注**: Office JavaScript API リファレンスのドキュメント ソース ファイルは、[office-js-docs](https://github.com/OfficeDev/office-js-docs) リポジトリにあります。
 
-## Give us your feedback
+## <a name="give-us-your-feedback"></a>フィードバックをお寄せください
 
-Your feedback is important to us. 
-* To let us know about any questions or issues you find in the docs, [submit an issue](https://github.com/OfficeDev/office-js-docs-pr/issues) in this repository. Make sure you state the version+build number of the client you are using, and provide repro steps, console output, and error messages, as appropriate. 
-* We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md). 
-* To let us know about your programming experience, what you would like to see in future versions, code samples, and so on, enter your suggestions and ideas at [Office Developer Platform UserVoice](https://officespdev.uservoice.com/).
+お客様からのフィードバックを重視しています。 
+* ドキュメントに関する質問や問題をご連絡いただく場合は、このリポジトリに[問題を送信](https://github.com/OfficeDev/office-js-docs-pr/issues)してください。必ず、ご使用のクライアントのバージョンとビルド番号を記載し、必要に応じてその再現手順、コンソール出力、エラー メッセージをご提供ください。 
+* また、フォーク、修正、提案される変更のプル リクエストもお願いしています。詳細については、「[このドキュメントに投稿する](Contributing.md)」を参照してください。 
+* プログラミングの経験と、今後のバージョン、コード サンプルなどのご希望をご連絡いただく場合は、「[Office Developer Platform UserVoice](https://officespdev.uservoice.com/)」でご提案やアイデアを入力してください。
 
-## Copyright
+## <a name="copyright"></a>著作権
 
 Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。

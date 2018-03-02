@@ -1,3 +1,11 @@
+---
+title: アドイン コマンドのアイコンをデザインする
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="design-icons-for-add-in-commands"></a>アドイン コマンドのアイコンをデザインする
 
 [アドイン コマンド](add-in-commands.md)は、Office UI にボタン、テキスト、およびアイコンを追加します。アドイン コマンドのボタンには、ユーザーがコマンドを使うときに、実行しようとするアクションを明確に識別できる、分かりやすいアイコンとラベルをつける必要があります。この記事では、Office とシームレスに統合するアイコンをデザインするための、スタイルと運用に関するガイドラインを提示します。 
@@ -14,7 +22,7 @@ Office のアイコンは、次のデザインの原則に基づいています�
 
 以下の図は、現在のデザインの原則を適用したアイコンです。
 
-![Office の古いアイコンと、現在の採用方針に基づいて更新されたアイコンを示す図](../images/icons_image.PNG)
+![Office の古いアイコンと、現在の採用方針に基づいて更新されたアイコンを示す図](../images/icons-images.png)
 
 ## <a name="icon-guidelines"></a>アイコン ガイドライン
 アイコンを作成するときは、以下のガイドラインに従ってください。 
@@ -46,7 +54,7 @@ Office 2016 のデスクトップ アイコンは、ビットマップ画像で�
 
 それぞれのアイコンを、サイズに合わせて縮小するのではなく再描画します。
 
-![アイコンの縮小ではなく、アイコンのサイズ変更が推奨されていることを示す図](../images/icon_resizing.png)
+![アイコンの縮小ではなく、アイコンのサイズ変更が推奨されていることを示す図](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -61,7 +69,8 @@ The following table shows the icon sizes that render for different modes at diff
 |250%|40px||||80px||120px|
 |300%|48px||||96px||144px
 
->**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
+> [!NOTE]
+> At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
 The following table lists the locations for certain icon sizes.
 
@@ -82,7 +91,7 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 
 以下の図は、Office のアイコンの基本要素と修飾子のレイアウトを表しています。
 
-![中央にアイコンの基本要素、右下に修飾子、左上にアクション修飾子を配した画像](../images/icon_layout.PNG)
+![中央にアイコンの基本要素、右下に修飾子、左上にアクション修飾子を配した画像](../images/icon-layouts.png)
 
 - 基本要素をピクセル フレームの中央に配置し、周囲に余白をとります。
 - アクション修飾子は、左上に配置します。 
@@ -125,26 +134,27 @@ Office のアイコンには、限定されたカラー パレットがありま
 
 |**色の名前**|**RGB**|**16 進数**|**色**|**分類**|
 |:---|:---|:---|:---|:---|
-|テキスト グレー (80)|80、80、80|#505050|![テキスト グレー 80 のカラー イメージ](../images/textGray_80.gif)|テキスト|
-|テキスト グレー (95)|95、95、95|#5F5F5F|![テキスト グレー 95 のカラー イメージ](../images/textGray_95.gif)|テキスト|
-|テキスト グレー (105)|105, 105, 105|#696969|![テキスト グレー 105 のカラー イメージ](../images/textGray_105.gif)|テキスト|
-|ダーク グレー 32|128、128、128|#808080|![ダーク グレー 32 のカラー イメージ](../images/darkGray_32.gif)|32 以上|
-|ミディアム グレー 32|158、158、158|#9E9E9E|![ミディアム グレー 32 のカラー イメージ](../images/mediumGray_32.gif)|32 以上|
-|ライト グレー オール|179、179、179|#B3B3B3|![ライト グレー オールのカラー イメージ](../images/lightGray_all.gif)|すべてのサイズ|
-|ダーク グレー 16|114、114、114|#727272|![ダーク グレー 16 のカラー イメージ](../images/darkGray_16.gif)|16 以下|
-|ミディアム グレー 16|144、144、144|#909090|![ミディアム グレー 16 のカラー イメージ](../images/mediumGray_16.gif)|16 以下|
-|ブルー 32|77、130、184|#4d82B8|![ブルー 32 のカラー イメージ](../images/blue_32.gif)|32 以上|
-|ブルー 16|74、125、177|#4A7DB1|![ブルー 16 のカラー イメージ](../images/blue_16.gif)|16 以下|
-|イエロー オール|234、194、130|#EAC282|![イエロー オールのカラー イメージ](../images/yellow_all.gif)|すべてのサイズ|
-|オレンジ 32|231、142、70|#E78E46|![オレンジ 32 のカラー イメージ](../images/orange_32.gif)|32 以上|
-|オレンジ 16|227、142、70|#E3751C|![オレンジ 16 のカラー イメージ](../images/orange_16.gif)|16 以下|
-|ピンク オール|230、132、151|#E68497|![ピンク オールのカラー イメージ](../images/pink_all.gif)|すべてのサイズ|
-|グリーン 32|118、167、151|#76A797|![グリーン 32 のカラー イメージ](../images/green_32.gif)|32 以上|
-|グリーン 16|104、164、144|#68A490|![グリーン 16 のカラー イメージ](../images/green_16.gif)|16 以下|
-|レッド 32|216、99、68|#D86344|![レッド 32 のカラー イメージ](../images/red_32.gif)|32 以上|
-|レッド 16|214、85、50|#D65532|![レッド 16 のカラー イメージ](../images/red_16.gif)|16 以下|
-|パープル 32|152、104、185|#9868B9|![パープル 32 のカラー イメージ](../images/purple_32.gif)|32 以上|
-|パープル 16|137、89、171|#8959AB|![パープル 16 のカラー イメージ](../images/purple_16.gif)|16 以下|
+|テキスト グレー (80)|80、80、80|#505050| ![テキスト グレー 80 のカラー イメージ](../images/color-text-gray-80.png) |テキスト|
+|テキスト グレー (95)|95、95、95|#5F5F5F| ![テキスト グレー 95 のカラー イメージ](../images/color-text-gray-95.png) |テキスト|
+|テキスト グレー (105)|105, 105, 105|#696969| ![テキスト グレー 105 のカラー イメージ](../images/color-text-gray-105.png) |テキスト|
+|ダーク グレー 32|128、128、128|#808080| ![ダーク グレー 32 のカラー イメージ](../images/color-dark-gray-32.png) |32 以上|
+|ミディアム グレー 32|158、158、158|#9E9E9E| ![ミディアム グレー 32 のカラー イメージ](../images/color-medium-gray-32.png) |32 以上|
+|ライト グレー オール|179、179、179|#B3B3B3| ![ライト グレー オールのカラー イメージ](../images/color-light-gray-all.png) |すべてのサイズ|
+|ダーク グレー 16|114、114、114|#727272| ![ダーク グレー 16 のカラー イメージ](../images/color-dark-gray-16.png) |16 以下|
+|ミディアム グレー 16|144、144、144|#909090| ![ミディアム グレー 16 のカラー イメージ](../images/color-medium-gray-16.png) |16 以下|
+|ブルー 32|77、130、184|#4d82B8| ![ブルー 32 のカラー イメージ](../images/color-blue-32.png) |32 以上|
+|ブルー 16|74、125、177|#4A7DB1| ![ブルー 16 のカラー イメージ](../images/color-blue-16.png) |16 以下|
+|イエロー オール|234、194、130|#EAC282| ![イエロー オールのカラー イメージ](../images/color-yellow-all.png) |すべてのサイズ|
+|オレンジ 32|231、142、70|#E78E46| ![オレンジ 32 のカラー イメージ](../images/color-orange-32.png) |32 以上|
+|オレンジ 16|227、142、70|#E3751C| ![オレンジ 16 のカラー イメージ](../images/color-orange-16.png) |16 以下|
+|ピンク オール|230、132、151|#E68497| ![ピンク オールのカラー イメージ](../images/color-pink-all.png) |すべてのサイズ|
+|グリーン 32|118、167、151|#76A797| ![グリーン 32 のカラー イメージ](../images/color-green-32.png) |32 以上|
+|グリーン 16|104、164、144|#68A490| ![グリーン 16 のカラー イメージ](../images/color-green-16.png) |16 以下|
+|レッド 32|216、99、68|#D86344| ![レッド 32 のカラー イメージ](../images/color-red-32.png) |32 以上|
+|レッド 16|214、85、50|#D65532| ![レッド 16 のカラー イメージ](../images/color-red-16.png) |16 以下|
+|パープル 32|152、104、185|#9868B9| ![パープル 32 のカラー イメージ](../images/color-purple-32.png) |32 以上|
+|パープル 16|137、89、171|#8959AB| ![パープル 16 のカラー イメージ](../images/color-purple-16.png) |16 以下|
+
 
 ## <a name="icons-in-high-contrast-modes"></a>ハイコントラスト モードのアイコン
 
@@ -156,7 +166,7 @@ Office のアイコンは、ハイコントラスト モードで適切に表示
 - グラデーションの使用を避けます。
 - 同じ様な値を持つ大きな色のブロックを避けます。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
-- [アドイン開発のベスト プラクティス](../overview/add-in-development-best-practices.md)
+- [アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - [Excel、Word、PowerPoint のアドイン コマンド](../design/add-in-commands.md)

@@ -1,3 +1,9 @@
+---
+title: Office アドインにおける同一生成元ポリシーの制限への対処
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
@@ -48,7 +54,7 @@ function loadVideoDetails(videoIndex) {
 認証に OAuth を使用する例については、「[OAuth による Twitter SharePoint Web パーツ](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth)」を参照してください。
 
 
-  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](http://msdn2.microsoft.com/ja-jp/library/4f772twc) プロパティを参照してください。
+  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](https://msdn.microsoft.com/ja-jp/library/4f772twc) プロパティを参照してください。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>クロス オリジン リソース共有 (CORS) の使用
@@ -60,11 +66,10 @@ function loadVideoDetails(videoIndex) {
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>IFRAME および POST MESSAGE を使用する独自のプロキシの作成
 
 
-IFRAME および POST MESSAGE を使用して独自のプロキシを作成する例については、「 [Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/)」を参照してください。
+IFRAME および POST MESSAGE を使用して独自のプロキシを作成する例については、「[Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/)」を参照してください。
 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
-
-- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)
+- [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
     

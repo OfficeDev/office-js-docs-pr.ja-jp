@@ -1,3 +1,10 @@
+---
+title: Office アドインの言葉のスタイル ガイドライン
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="voice-guidelines-for-office-add-ins"></a>Office アドインの言葉のスタイル ガイドライン
 
 Office アドインを設計する際は、UI のテキストと要素に使用するスタイルをよくご検討ください。Office UI のスタイルと一致させるように努めてください。Office UI のスタイルは、ユーザーにとって会話的で魅力的かつ理解しやすいものになっています。 
@@ -12,5 +19,8 @@ Office アドインを設計する際は、UI のテキストと要素に使用�
 - **顧客を理解するようにします。**イディオムや口語表現を使用する際には、文化的な背景を考慮し、グローバリゼーションを意識します。
 
 
-  [Office ストアで入手可能](https://msdn.microsoft.com/ja-jp/library/dn708487.aspx)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://msdn.microsoft.com/ja-jp/library/office/jj220035.aspx)」に準拠するようにします。
+  [AppSource で入手可能](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store)なアドインを作成しようとする場合、言語とコンテンツが「[検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)」に準拠するようにします。
 
+## <a name="see-also"></a>関連項目
+
+- [Office アドインの設計ガイドライン](../add-in-design.md)

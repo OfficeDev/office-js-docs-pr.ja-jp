@@ -1,10 +1,17 @@
+---
+title: Script Lab 統合のテスト
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="testing-script-lab-integration"></a>Script Lab 統合のテスト
 
 間もなく使用可能になる ScriptLab 機能をデモンストレーションするためのサンプル テスト ファイルです。ScriptLab 機能を使用すると、開発者は Excel、Word、PowerPoint でスニペットを試すことができます。  
 
-## <a name="pre-reqs"></a>前提条件:
+## <a name="prerequisites"></a>前提条件
 - ScriptLab スニペットのビュー URL が必要になります。
-- 注:ScriptLab では、最新のスニペットを探索するために Office 365 が必要であることが*示されるはず*です。開発者は、開発目的に限定して [Office 365 開発者プログラム](https://dev.office.com/devprogram)から Office 365 サブスクリプションを取得できます。  
+- 注: ScriptLab では、最新のスニペットを探索するために Office 365 が必要であることが*示されるはず*です。開発者は、開発目的に限定して [Office 365 開発者プログラム](https://dev.office.com/devprogram)から Office 365 サブスクリプションを取得できます。  
 
 
 ## <a name="try-it-out-button"></a>試してみる 'ボタン'
@@ -40,3 +47,5 @@
 モバイルの Office 365 以外のサブスクリプションを検証する必要があります (多くの開発者が 2013 以前の office js ドキュメントを使用しているとのフィードバックがあります)。  
 
 埋め込みパスに関して、最終的な承認が必要になります。また、view gist ページに公開されるコンテンツがユーザー補助ガイドラインを満たしていることを確認することも必要です。
+
+## <a name="see-also"></a>関連項目

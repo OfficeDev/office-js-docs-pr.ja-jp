@@ -1,3 +1,8 @@
+---
+title: Office アドインでの Office UI Fabric JS の使用
+description: ''
+ms.date: 12/04/2017
+---
 
 # <a name="use-office-ui-fabric-js-in-office-add-ins"></a>Office アドインでの Office UI Fabric JS の使用
 
@@ -8,9 +13,11 @@ Office UI Fabric は、Office と Office 365 のユーザー エクスペリエ�
 ## <a name="add-the-fabric-cdn-references"></a>Fabric CDN 参照の追加
 CDN から Fabric を参照するには、次に示す HTML コードをページに追加します。
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```html
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```
 
 ## <a name="use-fabric-js-ux-components"></a>Fabric JS UX コンポーネントの使用
 
@@ -45,16 +52,16 @@ Fabric JS は、アドインで使用できるボタンやチェックボック�
 - 一部のアイコン クラスの名前とスタイルが更新されています。
 - 最重要の変更点は、多数のコンポーネントで `<label>` 要素を使用していることです。`<label>` 要素では、コンポーネントのスタイルを制御します。`<label>` 要素を使用するように UX コードを更新することが必要になる場合があります。たとえば、Fabric JS のチェック ボックスがオンになっている `<input>` 要素の属性の値を変更しても、そのチェック ボックスに影響はありません。代わりに、`check`、`unCheck`、`toggle` の関数をお使いください。   
 
-## <a name="next-steps"></a>次の手順
+## <a name="implementation"></a>実装
 Fabric JS の使用方法を示す完全なコード サンプルをご用意しています。次に示すリソースをご覧ください。
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## <a name="related-resources"></a>関連リソース
+## <a name="see-also"></a>関連項目
 以前のリリースの Fabric に関するコード サンプルやドキュメントを探している場合は、次に示す記事をご確認ください。
 
 - [UX 設計パターン (Fabric 2.6.1 を使用)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office アドイン Fabric UI サンプル (Fabric 1.0 を使用)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Office アドインでの Fabric 2.6.1 の使用](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Office アドインでの Fabric 2.6.1 の使用](ui-elements/using-office-ui-fabric.md)
  
 

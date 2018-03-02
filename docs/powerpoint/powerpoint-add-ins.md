@@ -1,12 +1,15 @@
+---
+title: PowerPoint アドイン
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
 PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac などのプラットフォームでユーザーのプレゼンテーションのための魅力的なソリューションをビルドすることができます。アドインの 2 種類のうちいずれかを作成できます:
 
 - **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 - **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、スライドにデータを挿入したりすることができます。たとえば [Shutterstock イメージ](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。 
-
-> [!NOTE]
-> アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/ja-jp/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/ja-jp/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドインのシナリオ
 
@@ -22,16 +25,15 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、Office.Initialize ハンドラーの一部として、ActiveViewChanged イベントを処理する必要があります。
 
 
-- `getActiveFileView` 関数は [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントのハンドラーを登録するための [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッドを呼び出します。 
-> 注:PowerPoint Online では [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントのハンドラーを登録するための [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッドを呼び出します。 
 
-
+> [!NOTE]
+> PowerPoint Online では [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
 
 ```js
-
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
@@ -58,7 +60,6 @@ function getActiveFileView()
 
 }
 
-
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
         app.showNotification(JSON.stringify(args));
@@ -79,7 +80,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-`getSelectedRange` 関数は [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
+`getSelectedRange` 関数は [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
 
 ```js
@@ -99,7 +100,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 関数は [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
+`goToFirstSlide` 関数は [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
 
 
 
@@ -143,7 +144,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
-`getFileUrl` 関数は [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+`getFileUrl` 関数は [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
 
 ```js
@@ -163,14 +164,10 @@ function getFileUrl() {
 
 
 
-## <a name="additional-resources"></a>追加リソース
+## <a name="see-also"></a>関連項目
 - [PowerPoint のコード サンプル](https://dev.office.com/code-samples#?filters=powerpoint)
-
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
-
-- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-- [PowerPoint または Word 用のアドインからドキュメント全体を取得する](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
-    
-- [PowerPoint アドインでドキュメントのテーマを使用する](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
+- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [PowerPoint や Word 用のアドインからドキュメント全体を取得する](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
+- [PowerPoint アドインでドキュメントのテーマを使用する](use-document-themes-in-your-powerpoint-add-ins.md)
     

@@ -1,6 +1,13 @@
+---
+title: Excel JavaScript API を使用して範囲を操作する
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
-この記事では、Excel JavaScript API を使用して、範囲の一般的なタスクを実行する方法のサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/range)」を参照してください。
+この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)」を参照してください。
 
 ## <a name="get-a-range"></a>範囲を取得する
 
@@ -91,11 +98,11 @@ Excel.run(function (context) {
 
 **範囲を挿入する前のデータ**
 
-![範囲を挿入する前の Excel のデータ](../images/Excel-range-start.png)
+![範囲を挿入する前の Excel のデータ](../images/excel-ranges-start.png)
 
 **範囲を挿入した後のデータ**
 
-![範囲を挿入した後の Excel のデータ](../images/Excel-range-after-insert.png)
+![範囲を挿入した後の Excel のデータ](../images/excel-ranges-after-insert.png)
 
 ## <a name="clear-a-range-of-cells"></a>セルの範囲をクリアする
 
@@ -114,11 +121,11 @@ Excel.run(function (context) {
 
 **範囲をクリアする前のデータ**
 
-![範囲をクリアする前の Excel のデータ](../images/Excel-range-start.png)
+![範囲をクリアする前の Excel のデータ](../images/excel-ranges-start.png)
 
 **範囲をクリアした後のデータ**
 
-![範囲をクリアした後の Excel のデータ](../images/Excel-range-after-clear.png)
+![範囲をクリアした後の Excel のデータ](../images/excel-ranges-after-clear.png)
 
 ## <a name="delete-a-range-of-cells"></a>セルの範囲を削除する
 
@@ -137,11 +144,11 @@ Excel.run(function (context) {
 
 **範囲を削除する前のデータ**
 
-![範囲を削除する前の Excel のデータ](../images/Excel-range-start.png)
+![範囲を削除する前の Excel のデータ](../images/excel-ranges-start.png)
 
 **範囲を削除した後のデータ**
 
-![範囲を削除した後の Excel のデータ](../images/Excel-range-after-delete.png)
+![範囲を削除した後の Excel のデータ](../images/excel-ranges-after-delete.png)
 
 ## <a name="set-the-selected-range"></a>選択範囲を設定する
 
@@ -160,7 +167,7 @@ Excel.run(function (context) {
 
 **選択範囲 B2:E6**
 
-![Excel の選択範囲](../images/Excel-range-set-selection.png)
+![Excel の選択範囲](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>選択範囲を取得する
 
@@ -200,11 +207,11 @@ Excel.run(function (context) {
 
 **セルの値が更新される前のデータ**
 
-![セルの値が更新される前の Excel のデータ](../images/Excel-range-set-start.png)
+![セルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
 **セルの値が更新された後のデータ**
 
-![セルの値が更新された後の Excel のデータ](../images/Excel-range-set-cell-value.png)
+![セルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>複数のセルの範囲の値を設定する
 
@@ -228,11 +235,11 @@ Excel.run(function (context) {
 
 **複数のセルの値が更新される前のデータ**
 
-![複数のセルの値が更新される前の Excel のデータ](../images/Excel-range-set-start.png)
+![複数のセルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
 **複数のセルの値が更新された後のデータ**
 
-![複数のセルの値が更新された後の Excel のデータ](../images/Excel-range-set-cell-values.png)
+![複数のセルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>1 つのセルの数式を設定する
 
@@ -252,11 +259,11 @@ Excel.run(function (context) {
 
 **セルの数式が設定される前のデータ**
 
-![セルの数式が設定される前の Excel のデータ](../images/Excel-range-start-set-formula.png)
+![セルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
 **セルの数式が設定された後のデータ**
 
-![セルの数式が設定された後の Excel のデータ](../images/Excel-range-set-formula.png)
+![セルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>セルの範囲の数式を設定する
 
@@ -283,11 +290,11 @@ Excel.run(function (context) {
 
 **複数のセルの数式が設定される前のデータ**
 
-![複数のセルの数式が設定される前の Excel のデータ](../images/Excel-range-start-set-formula.png)
+![複数のセルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
 **複数のセルの数式が設定された後のデータ**
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/Excel-range-set-formulas.png)
+![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>値、テキスト、または数式を取得する
 
@@ -312,7 +319,7 @@ Excel.run(function (context) {
 
 **範囲内のデータ (列 E の値は数式の結果)**
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/Excel-range-set-formulas.png)
+![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
 **range.values (上記のコード サンプルによりコンソールに記録される)**
 
@@ -370,7 +377,7 @@ Excel.run(function (context) {
 
 **範囲内のデータ (列 E の値は数式の結果)**
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/Excel-range-set-formulas.png)
+![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
 **range.text (上記のコード サンプルによりコンソールに記録される)**
 
@@ -428,7 +435,7 @@ Excel.run(function (context) {
 
 **範囲内のデータ (列 E の値は数式の結果)**
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/Excel-range-set-formulas.png)
+![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
 **range.formulas (上記のコード サンプルによりコンソールに記録される)**
 
@@ -489,11 +496,11 @@ Excel.run(function (context) {
 
 **フォントの色と塗りつぶしの色を設定する前の範囲内のデータ**
 
-![書式設定する前の Excel のデータ](../images/Excel-range-format-before.png)
+![書式設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
 
 **フォントの色と塗りつぶしの色を設定した後の範囲内のデータ**
 
-![書式設定した後の Excel のデータ](../images/Excel-range-format-font-and-fill.png)
+![書式設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>数値の書式を設定する
 
@@ -518,13 +525,13 @@ Excel.run(function (context) {
 
 **数値の書式を設定する前の範囲内のデータ**
 
-![書式設定する前の Excel のデータ](../images/Excel-range-format-font-and-fill.png)
+![書式設定する前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
 **数値の書式を設定した後の範囲内のデータ**
 
-![書式設定した後の Excel のデータ](../images/Excel-range-format-numbers.png)
+![書式設定した後の Excel のデータ](../images/excel-ranges-format-numbers.png)
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Range オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/range)
+- [Range オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)

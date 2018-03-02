@@ -1,3 +1,10 @@
+---
+title: Office アドイン UI 要素
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="office-add-in-ui-elements"></a>Office アドイン UI 要素
 
 Office アドインでは、次の 2 種類の UI 要素を使用できます。 
@@ -6,17 +13,18 @@ Office アドインでは、次の 2 種類の UI 要素を使用できます。
 - カスタム HTML ベースのインターフェイス
 
 ## <a name="add-in-commands"></a>アドイン コマンド
-コマンドは、[アドイン XML マニフェスト](../../develop/define-add-in-commands.md)で定義され、Office UI にネイティブな UX 拡張機能としてレンダーされます。たとえば、Office リボンにボタンを追加するアドイン コマンドを使用できます。 
+コマンドは、[アドイン XML マニフェスト](../../develop/create-addin-commands.md)で定義され、Office UI にネイティブな UX 拡張機能としてレンダーされます。たとえば、Office リボンにボタンを追加するアドイン コマンドを使用できます。 
 
-![アドイン内のアドイン コマンドとカスタム HTML UI 要素が表示されたイメージ](../../images/layouts_addInCommands_v0.03.png)
+![アドイン内のアドイン コマンドとカスタム HTML UI 要素が表示されたイメージ](../../images/layouts-add-in-commands-v0.03.png)
 
-現時点では、アドインのコマンドはメールのアドインの場合のみサポートされます。詳細については、「[メールのアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。 
+現時点では、アドインのコマンドはメールのアドインの場合のみサポートされます。詳細については、「[メールのアドイン コマンド](https://docs.microsoft.com/ja-jp/outlook/add-ins/add-in-commands-for-outlook)」を参照してください。 
 
 Excel、PowerPoint、Word には、Office リボンの [挿入] タブに、作業ウィンドウ アドインとコンテンツ アドイン用の定義済みのエントリ ポイントがあります。コンテンツ アドインと作業ウィンドウ アドインのカスタム コマンド機能は、まもなく使用できるようになる予定です。 
 
-![Word リボンの [挿入] タブを表示するイメージ](../../images/Word-insert-tab.png)
+![Word リボンの [挿入] タブを表示するイメージ](../../images/word-doc-insert-tab.png)
 
 ## <a name="custom-html-based-ui"></a>カスタム HTML ベースの UI
+
 アドインを使用して、カスタム HTML ベースの UI を Office クライアント内に埋め込むことができます。UI の表示に使用可能なコンテナーは、アドインの種類によって異なります。たとえば、作業ウィンドウ アドインはドキュメントの右側のウィンドウにカスタム HTML ベースの UI を表示し、コンテンツ アドインは Office ドキュメント内にカスタム UI を直接表示します。
 
 作成するアドインの種類に関係なく、共通の構築ブロックを使用してカスタム HTML ベースの UI を作成できます。[Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) をこれらの UI 要素に使用して、ご自分のアドインと Office の外観との統一感をもたせることをお勧めします。もちろん、独自の UI 要素を使用して、自分自身のブランドを表現することもできます。
@@ -33,9 +41,10 @@ Office UI Fabric には、次の UI 要素が用意されています。
 
 [Github から Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) をダウンロードすることができます。
 
-アドインでOffice UI Fabric を使用する方法を示すサンプルについては、「[Office アドイン Fabric UI サンプル](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)」を参照してください。
+アドインで Office UI Fabric を使用する方法を示すサンプルについては、「[Office アドイン Fabric UI サンプル](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)」を参照してください。
 
-**注:**独自のフォントとアイコンのセットを使用する場合は、Office のものと競合しないようにしてください。たとえば、Office のアイコンと同じか似ているアイコンを、自分のアドインで別のものを表すために使用しないでください。 
+> [!NOTE]
+> 独自のフォントとアイコンのセットを使用する場合は、Office のものと競合しないようにしてください。たとえば、Office のアイコンと同じか似ているアイコンを、自分のアドインで別のものを表すために使用しないでください。 
 
 ### <a name="creating-a-customized-color-palette"></a>カスタマイズ カラー パレットを作成する
 独自のカラー パレットを使用する場合は、次の点に留意してください。 
@@ -50,10 +59,12 @@ Office UI Fabric には、次の UI 要素が用意されています。
 Office の配色パターンを採用するにしても、独自のものを使用するにしても、テーマ API を使用することお勧めします。Office テーマ エクスペリエンスの一部としてアドインを作成すると、Office との統一感が増します。
 
 
-- メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](http://dev.office.com/reference/add-ins/shared/office.context.officetheme) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。  
+- メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。  
 - PowerPoint のコンテンツ アドインの場合は、「[PowerPoint アドインで Office テーマを使用する](../../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)」を参照してください。
 
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->
 
 
+## <a name="see-also"></a>関連項目
 
+- [Office アドインの設計ガイドライン](../add-in-design.md)

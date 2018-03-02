@@ -1,3 +1,9 @@
+---
+title: Office アドインで OAuth 認証フレームワークを使用する
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Office アドインで OAuth 認証フレームワークを使用する
 
@@ -7,11 +13,12 @@ OAuth は、Office 365、Facebook、Google、SalesForce、LinkedIn などのオ�
 
 このトピックでは、アドインで認証フローを実装して、ユーザー認証を実行する方法について説明します。このトピックに含まれているコード セグメントは、[Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) のコード サンプルから採用されています。
 
- **メモ**  セキュリティ上の理由から、ブラウザーは IFrame のサインイン ページを表示できません。お客様が使用している Office のバージョンによって、特に Web ベースのバージョンによっては、アドインは IFrame で表示されます。これは、認証フローを管理する方法におけるいくつかの考慮事項を提起します。 
+> [!NOTE]
+> セキュリティ上の理由から、ブラウザーは IFrame のサインイン ページを表示できません。お客様が使用している Office のバージョンによって、特に Web ベースのバージョンによっては、アドインは IFrame で表示されます。これは、認証フローを管理する方法におけるいくつかの考慮事項を提起します。  
 
 次のダイアグラムは、必要なコンポーネントと、アドインで認証を実装するときに発生するイベントのフローを示します。
 
-![Office アドインでの OAuth 認証の実行](../images/OAuthInOfficeAddin.png)
+![Office アドインでの OAuth 認証の実行](../images/oauth-in-office-add-in.png)
 
 ダイアグラムは、次の必要なコンポーネントを使用する方法を示しています。
 
@@ -24,7 +31,8 @@ OAuth は、Office 365、Facebook、Google、SalesForce、LinkedIn などのオ�
     
 
     
- **重要**  アクセス トークンは作業ウィンドウに返すことはできませんが、サーバー上で使用することができます。このコード サンプルでは、アクセス トークンはデータベースに 2 分間保存されます。2 分後、トークンは、データベースから削除され、ユーザーは再認証するよう求められます。独自の実装でこの期間を変更する前に、2 分よりも長い期間データベースにアクセス トークンを格納する場合のセキュリティ上のリスクを考慮してください。
+> [!IMPORTANT]
+> アクセス トークンは作業ウィンドウに返すことはできませんが、サーバー上で使用することができます。このコード サンプルでは、アクセス トークンはデータベースに 2 分間保存されます。2 分後、トークンは、データベースから削除され、ユーザーは再認証するよう求められます。独自の実装でこの期間を変更する前に、2 分よりも長い期間データベースにアクセス トークンを格納する場合のセキュリティ上のリスクを考慮してください。
 
 
 ## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>手順 1 - ソケットを開始してポップアップ ウィンドウを開く
@@ -114,9 +122,7 @@ connect.js から取られた次のコード セグメントは、認証状態�
 ```
 
 
-## <a name="additional-resources"></a>その他のリソース
-<a name="bk_addresources"> </a>
+## <a name="see-also"></a>関連項目
 
-
-- [Office アドインのサーバー認証サンプル Node.js 用](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
+- [Node.js 用 Office アドインのサーバー認証サンプル](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

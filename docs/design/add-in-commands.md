@@ -1,24 +1,32 @@
+---
+title: Excel、Word、PowerPoint のアドイン コマンド
+description: ''
+ms.date: 01/23/2018
+---
 
-# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word および PowerPoint のアドイン コマンド
+
+# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。ユーザーがアドイン コマンドを選択すると、JavaScript コードを実行したり、アドインのページを作業ウィンドウに表示するなどのアクションが開始されます。アドイン コマンドは、ユーザーがアドインを検索して使用ために役立ちます。これにより、アドインの導入と再利用を促進し、顧客維持率を向上させることができます。
 
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
->**注:**SharePoint カタログは、アドイン コマンドをサポートしていません。 [集中展開](../publish/centralized-deployment.md)または [Office ストア](https://dev.office.com/officestore/docs/submit-to-the-office-store)でアドイン コマンドを展開するか、[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins)を使用してテスト用のアドイン コマンドを展開できます。 
+> [!NOTE]
+> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
 
-**Excel デスクトップで実行するコマンドを含むアドイン**
+*図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
-![Excel のアドイン コマンドのスクリーンショット](../images/addincommands1.png)
+![Excel のアドイン コマンドのスクリーンショット](../images/add-in-commands-1.png)
 
-**Excel Online で実行するコマンドを含むアドイン**
+*図 2. Excel Online で実行するコマンドを含むアドイン*
 
-![Excel Online のアドイン コマンドのスクリーンショット](../images/addincommands2.png)
+![Excel Online のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
 現在は、次のコマンド機能がサポートされています。
 
-> **注:**現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
+> [!NOTE]
+> 現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
 
 **拡張点**
 
@@ -51,26 +59,28 @@
 - ユーザーに対して、特定のアクションとともにアクションの結果を明確かつ具体的に表すコマンドを使用します。複数のアクションを 1 つのボタンにまとめないでください。
 - アドイン内の一般的なタスクをより効率的に実行できるように、アクションは細分化して提供します。1 つのアクションを完了するまでのステップ数は最小限に抑えます。
 - Office リボンにコマンドを配置するために。
-    - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。 
+    - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。 
     - 別のタブに機能が適応せず、トップ レベル コマンドが 6 個未満の場合は、[ホーム] タブにコマンドを配置します。Office デスクトップと Office Online など、Office の複数のバージョン間でアドインを操作する必要があり、タブがどのバージョンでも利用できるわけではない場合 (たとえば、[デザイン] タブは Office Online にはありません) は、[ホーム] タブにコマンドを追加できます。  
     - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。 
     - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
 
-     >**注:**占有領域が大きすぎるアドインは [Office ストア検証](https://dev.office.com/officestore/docs/validation-policies)を通過しない場合があります。
+     > [!NOTE]
+     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)を通過しない場合があります。
 
-- すべてのアイコンについては、[アイコン デザインのガイドライン](../design/design-icons.md) に従ってください。
+- すべてのアイコンについては、[アイコン デザインのガイドライン](design-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
 
-    ![Office 2013 の作業ウィンドウのアドインと Office 2016 のアドイン コマンドを使用する同じアドインを示すスクリーンショット](../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+   *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
+
+   ![Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドインを示すスクリーンショット](../images/office-task-pane-add-ins.png)
 
 
-## <a name="next-steps-to-get-started"></a>開始するための次の手順
+## <a name="next-steps"></a>次の手順
 
-アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office アドイン コマンドのサンプル](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
+アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
-マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)」と「[VersionOverrides 要素](http://dev.office.com/reference/add-ins/manifest/versionoverrides)」のリファレンス資料をご覧ください。
-
+マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://dev.office.com/reference/add-ins/manifest/versionoverrides)」のリファレンス資料をご覧ください。
 
 
 

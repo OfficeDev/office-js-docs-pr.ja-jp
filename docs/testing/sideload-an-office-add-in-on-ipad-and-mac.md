@@ -1,11 +1,14 @@
+---
+title: テスト用に iPad と Mac で Office アドインをサイドロードする
+description: ''
+ms.date: 12/04/2017
+---
 
-# <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テストのために iPad と Mac で Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
 Office for iOS でアドインを実行するしくみを確認するには、iTunes を利用し、アドインのマニフェストを iPad にサイドロードするか、Office for Mac で直接、アドインのマニフェストをサイドロードします。このアクションでは、実行中、ブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使えることと適切にレンダリングされることを確認できます。 
 
 ## <a name="prerequisites-for-office-for-ios"></a>Office for iOS の前提条件
-
-
 
 - [iTunes](http://www.apple.com/itunes/download/) がインストールされた Windows または Mac コンピューター。
     
@@ -15,8 +18,6 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     
 
 ## <a name="prerequisites-for-office-for-mac"></a>Office for Mac の前提条件
-
-
 
 - OS X v10.10 "Yosemite" 以降が動作し、 [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) がインストールされている Mac。
     
@@ -35,15 +36,15 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
     
-    ![iTunes の iPad アイコン](../images/4ea35904-252e-45b4-88ad-14840d502bad.png)
+    ![iTunes の iPad アイコン](../images/ipad.png)
 
 3. iTunes の左側の  **[設定]** で、 **[App]** をクリックします。
     
-    ![iTunes アプリの設定](../images/a12d1bb6-b39f-496b-83de-6ac00b0b97a5.png)
+    ![iTunes アプリの設定](../images/file-settings-apps.png)
 
 4. iTunes の右側で、 **[ファイル共有]** までスクロールしてから、 **[アドイン]** 列で **[Excel]** または **[Word]** をクリックします。
     
-    ![iTunes のファイル共有](../images/3b2a53a2-e164-4ff0-ba42-83a8dc1a069f.png)
+    ![iTunes のファイル共有](../images/file-sharing.png)
 
 5. **[Excel]** 列または **[Word ドキュメント]** 列の下部で、 **[ファイルの追加]** をクリックしてから、サイドロードするアドインのマニフェスト .xml ファイルを選択します。 
     
@@ -53,12 +54,13 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     
 8. **[挿入]** タブで **[アドイン]** をクリックします。 **[アドイン]** UI の **[開発者]** という見出しの下に、サイドロードしたアドインが表示され、挿入のために選択できるようになっています。
     
-    ![Excel アプリでアドインを挿入](../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
+    ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
 
 
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>Office for Mac でアドインをサイドロードする
 
-> **注:**Outlook 2016 for Mac アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」をご参照ください。
+> [!NOTE]
+> Outlook 2016 for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/ja-jp/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
 
 1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     
@@ -68,24 +70,25 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     
 2. **Finder** で `open .` コマンドを使用してフォルダーを開きます (ピリオドまたはドットを含みます)。アドインのマニフェスト ファイルをこのフォルダーにコピーします。
     
-    ![Office for Mac の Wef フォルダー](../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
+    ![Office for Mac の Wef フォルダー](../images/all-my-files.png)
 
 3. Word を起動し、ドキュメントを開きます。既に起動している場合は、Word を再起動します。
     
 4. Word で、**[挿入]** > **[アドイン]** > **[個人用アドイン]** (ドロップダウン メニュー) を選択し、アドインを選択します。
     
-    ![Office for Mac のマイ アドイン](../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
+    ![Office for Mac のマイ アドイン](../images/my-add-ins-wikipedia.png)
 
-  > **重要:** サイドロードしたアドインは [個人用アドイン] ダイアログには表示されません。ドロップダウン メニュー内にのみ表示されます (**[挿入]** タブの [個人用アドイン] の右にある小さい下向き矢印)。サイドロードしたアドインは、このメニューの見出し **[開発者向けアドイン]** の下にリストされます。 
+    > [!IMPORTANT]
+    > サイドロードしたアドインは [個人用アドイン] ダイアログには表示されません。ドロップダウン メニュー内にのみ表示されます (**[挿入]** タブの [個人用アドイン] の右にある小さい下向き矢印)。サイドロードしたアドインは、このメニューの見出し **[開発者向けアドイン]** の下に一覧表示されます。 
     
 5. アドインが Word に表示されることを確認します。
     
-    ![Office for Mac で示される Office アドイン](../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    ![Office for Mac で示される Office アドイン](../images/lorem-ipsum-wikipedia.png)
     
-> **注:**アドインはパフォーマンス上の利用から、Office for Mac でキャッシュされることが多いです。アドインの開発中に再読み込みする必要がある場合は、Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ フォルダーをクリアできます。 
+    > [!NOTE]
+    > アドインはパフォーマンス上の利用から、Office for Mac でキャッシュされることが多いです。アドインの開発中に再読み込みする必要がある場合は、`Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーをクリアできます。 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
-
-- [iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
     

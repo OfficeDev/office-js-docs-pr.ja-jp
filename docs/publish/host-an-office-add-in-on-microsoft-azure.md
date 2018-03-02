@@ -1,3 +1,10 @@
+---
+title: Microsoft Azure で Office アドインをホストする
+description: ''
+ms.date: 01/25/2018
+---
+
+
 
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -9,17 +16,20 @@
 
 1. [Visual Studio 2017](https://www.visualstudio.com/downloads) をインストールします。このとき、**Azure 開発**ワークロードを含めるようにします。
 
-    >**メモ:**既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/ja-jp/visualstudio/install/modify-visual-studio)を使用して、**Azure 開発**ワークロードがインストールされていることを確認してください。 
+    > [!NOTE]
+    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/ja-jp/visualstudio/install/modify-visual-studio)を使用して、**Azure 開発**ワークロードがインストールされていることを確認してください。 
 
 2. Office 2016 をインストールします。 
     
-     >**メモ:**まだ Office 2016 を所持していない場合は、[1 か月間無料試用版の登録](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)が可能です。
+    > [!NOTE]
+    > まだ Office 2016 を所持していない場合は、[1 か月間無料試用版の登録](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)が可能です。
 
 3.  Azure サブスクリプションを取得します。
     
-     >**メモ:**まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [MSDN サブスクリプションの一部として取得](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)できます。また、[無料試用版の登録](https://azure.microsoft.com/en-us/pricing/free-trial)も可能です。 
+    > [!NOTE]
+    > まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [MSDN サブスクリプションの一部として取得](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)できます。また、[無料試用版の登録](https://azure.microsoft.com/en-us/pricing/free-trial)も可能です。 
 
-## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>手順 1: アドインの XML マニフェスト ファイルをホストするための共有ホルダーを作成する
+## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>手順 1: アドインの XML マニフェスト ファイルをホストするための共有フォルダーを作成する
 
 1. 開発用のコンピューターでエクスプローラーを開きます。
     
@@ -31,13 +41,15 @@
     
 5. **[ファイル共有]** で、ドロップダウンの矢印をクリックして、**[すべてのユーザー]** > **[追加]** > **[共有]** をクリックします。
     
-> **メモ:**このチュートリアルでは、信頼できるカタログとしてローカルのファイル共有を使用します。アドインの XML マニフェスト ファイルは、この場所に保存することになります。現実のシナリオでは、[SharePoint カタログに XML マニフェスト ファイルを展開](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)するか、[Office Store にアドインを発行](https://dev.office.com/officestore/docs/submit-to-the-office-store)することもできます。
+> [!NOTE]
+> このチュートリアルでは、信頼できるカタログとしてローカルのファイル共有を使用します。アドインの XML マニフェスト ファイルは、この場所に保存することになります。現実のシナリオでは、[SharePoint カタログに XML マニフェスト ファイルを展開](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)するか、[AppSource にアドインを発行](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store)することもできます。
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>手順 2: 信頼できるアドイン カタログにファイル共有を追加する
 
 1.  Word 2016 を起動して、ドキュメントを作成します。
 
-    >**メモ:**この例では Word 2016 を使用していますが、Office アドインをサポートしている任意の Office アプリケーションを使用できます (Excel、Outlook、PowerPoint、Project 2016 など)。
+    > [!NOTE]
+    > この例では Word 2016 を使用していますが、Office アドインをサポートしている任意の Office アプリケーションを使用できます (Excel、Outlook、PowerPoint、Project 2016 など)。
     
 2.  **[ファイル]** > **[オプション]** をクリックします。
     
@@ -47,7 +59,8 @@
     
 5. **[メニューに表示する]** チェック ボックスをオンにします。 
 
-    >**メモ:**信頼できるアドイン カタログとして指定されている共有にアドインの XML マニフェスト ファイルを保存すると、そのアドインは、ユーザーがリボンの **[挿入]** タブから **[個人用アドイン]** をクリックしたときに、**[Office アドイン]** ダイアログ ボックスの **[共有フォルダー]** に表示されるようになります。
+    > [!NOTE]
+    > 信頼できるアドイン カタログとして指定されている共有にアドインの XML マニフェスト ファイルを保存すると、そのアドインは、ユーザーがリボンの **[挿入]** タブから **[個人用アドイン]** をクリックしたときに、**[Office アドイン]** ダイアログ ボックスの **[共有フォルダー]** に表示されるようになります。
 
 6. Word 2016 を終了します。
 
@@ -73,13 +86,16 @@ Visual Studio 2017 を使用して Web アプリを作成するには、次の�
     
       - このサイトの作成に使用する **[App Service プラン]** を選択します。新しいプランを作成する場合は、そのプランに名前を指定する必要もあります。
        
-      - **[作成]** をクリックします。
+      - **[作成]** を選択します。
 
     新しい Web アプリが、**[サーバー エクスプローラー]** の **[Azure]** >> **[App Service]** >> (選択したリソース グループ) に表示されます。
     
 4. 新しい Web アプリを右クリックして、**[ブラウザーで表示]** をクリックします。ブラウザーが開いて、「App Service アプリが作成されました」というメッセージを示す Web ページが表示されます。
     
-5. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。Office アドイン モデルでは、アドインは HTTPS プロトコルを使用する必要があります。
+5. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。
     
 ### <a name="using-the-azure-portal"></a>Azure ポータルを使用する場合
 
@@ -101,15 +117,19 @@ Azure ポータルを使用して Web アプリケーションを作成するに
     
       - このサイトの作成用に使用する **[App Service プラン]** を選択します。新しいプランを作成する場合は、そのプランに名前を指定する必要もあります。
        
-      - **[作成]** をクリックします。
+      - **[作成]** を選択します。
 
 4. **[通知]** (Azure ポータルの上辺に配置されているベル アイコン) をクリックし、**[デプロイメントが成功しました]** の通知をクリックして Azure ポータルでサイトの **[概要]** ページを開きます。
 
-    >**メモ:**この通知は、サイトのデプロイが完了した時点で **[デプロイは進行中です]** から **[デプロイメントが成功しました]** に変化します。
+    > [!NOTE]
+    > この通知は、サイトのデプロイが完了した時点で **[デプロイは進行中です]** から **[デプロイメントが成功しました]** に変化します。
 
 5. Azure ポータルのサイトの **[概要]** ページにある **[要点]** セクションで、**[URL]** の下に表示されている URL を選択します。ブラウザーが開いて、「App Service アプリが作成されました」というメッセージを示す Web ページが表示されます。 
     
-6. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。Office アドイン モデルでは、アドインは HTTPS プロトコルを使用する必要があります。    
+6. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。
 
 ## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>手順 4: Visual Studio で Office アドインを作成する
 
@@ -159,7 +179,7 @@ Visual Studio により、基本的な Word アドインが作成されます。
     
 7. 「[手順 1: 共有フォルダーを作成する](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file)」で作成したネットワーク ファイル共有を参照して、そのフォルダー内にマニフェスト ファイルを貼り付けます。
 
-## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>手順 7: Office クライアント アプリケーションにアプリを挿入して実行する
+## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>手順 7: Office クライアント アプリケーションにアプリを挿入し、実行する
 
 1. Word 2016 を起動して、ドキュメントを作成します。
     
@@ -173,9 +193,8 @@ Visual Studio により、基本的な Word アドインが作成されます。
     
 6. アドインが動作していることを確認するために、ドキュメント内のテキストを選択して、作業ウィンド内の **[Highlight!]** ボタンをクリックします。 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Office アドインを発行する](../publish/publish.md)
-    
 - [発行のための準備として Visual Studio を使用してアドインをパッケージ化する](../publish/package-your-add-in-using-visual-studio.md)
     

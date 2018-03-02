@@ -1,16 +1,23 @@
+---
+title: Office アドインでの Office UI Fabric React の使用
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
 Office UI Fabric は、Office と Office 365 のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。React を使ってアドインをビルドする場合は、ユーザー エクスペリエンスを作成するために Fabric React の使用を検討してください。Fabric は、アドインで使用できるボタンやチェックボックスなど、複数の React ベースの UX コンポーネントを提供しています。 
 
 アドインで Fabric React コンポーネントの使用を開始するには、次の手順を実行します。
 
-> **注:**このセクションの手順を実行すると、アドインで Fabric Core が使用可能になります。
+> [!NOTE]
+> この記事の手順を実行すると、アドインで Fabric Core が使用可能になります。
 
 ## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>手順 1 - Office 用の Yeoman ジェネレーターでプロジェクトを作成
 
 Fabric React を使用するアドインを作成するには、Office 用の Yeoman ジェネレーターの使用をお勧めします。Office 用の Yeoman ジェネレーターは、Office アドインを開発するために必要なプロジェクトのスキャフォールディングとビルドの管理を提供します。 
 
-プロジェクトを作成するには、**Windows PowerShell** (コマンド プロンプトではありません) を使用して、「[任意のエディターを使用して Office アドインを作成する](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor)」にある手順を実行します。 
+プロジェクトを作成するには、**Windows PowerShell** (コマンド プロンプトではありません) を使用して、次の手順を実行します。 
 
 1. 必須コンポーネントをインストールします。
 2. `yo office` を実行して、アドイン用のプロジェクト ファイルを作成します。 
@@ -26,7 +33,7 @@ Fabric React を使用するアドインを作成するには、Office 用の Ye
 2. **button.tsx** を作成します。
 3. **button.tsx** で、次のコードを入力して `ButtonPrimaryExample` コンポーネントを作成します。 
 
-```
+```javascript
 import * as React from 'react';
 import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -63,6 +70,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   }
 }
 ```
+
 このコードは、次の処理を実行します。
 
 - `import * as React from 'react';` を使用して、React ライブラリを参照します。
@@ -76,31 +84,34 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 **src\components\app.tsx** を開いて次の手順を実行することにより、アドインに `ButtonPrimaryExample` を追加します。 
 
 - 次のインポート ステートメントを追加して、手順 2 で作成した **button.tsx** (ファイル拡張子は必要ありません) から `ButtonPrimaryExample` を参照します。 
-`
-import {ButtonPrimaryExample} from './button';
-` 
+
+    ```javascript
+    import {ButtonPrimaryExample} from './button';
+    ``` 
 
 - 既定の `render()` 関数を、`<ButtonPrimaryExample />` を使った以下のコードに置き換えます。 
-```
-render() {
-        return (
-            <div className='ms-welcome'>
-                <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
-                <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
-                    <ButtonPrimaryExample />
-                </HeroList>
-            </div>
-        );
-    };
-```
+
+  ```javascript
+  render() {
+      return (
+          <div className='ms-welcome'>
+              <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
+              <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
+                  <ButtonPrimaryExample />
+              </HeroList>
+          </div>
+      );
+  };
+  ```
 
 変更を保存します。アドインを含む開いているすべてのブラウザー インスタンスは、自動的に更新され、`ButtonPrimaryExample` React コンポーネントが表示されます。既定のテキストとボタンが、`ButtonPrimaryExample` で定義されたテキストとプライマリ ボタンに置き換えられることに注意してください。 
     
-### <a name="recommended-components"></a>推奨されるコンポーネント
+## <a name="recommended-components"></a>推奨されるコンポーネント
 
 次のリストは、アドインでの使用に推奨される Fabric React UX コンポーネントです。  
 
-> **メモ:** 追加のコンポーネントを徐々に増やしていく予定です。 
+> [!NOTE]
+> 追加のコンポーネントを徐々に増やしていく予定です。 
 
 - [Breadcrumb](breadcrumb.md)
 - [Button](button.md)
@@ -113,13 +124,13 @@ render() {
 - [TextField](textfield.md)
 - [Toggle](toggle.md)
 
-## <a name="related-resources"></a>関連リソース
+## <a name="see-also"></a>関連項目
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [UX 設計パターン (Fabric 2.6.1 を使用)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office アドイン Fabric UI サンプル (Fabric 1.0 を使用)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Office アドインでの Fabric 2.6.1 の使用](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Office アドインでの Fabric 2.6.1 の使用](ui-elements/using-office-ui-fabric.md)
 - [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)
  
 

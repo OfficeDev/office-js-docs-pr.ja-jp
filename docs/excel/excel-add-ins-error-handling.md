@@ -1,8 +1,16 @@
+---
+title: エラー処理
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="error-handling"></a>エラー処理
 
 Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
 
-**注**:**sync()** メソッドと Excel JavaScript API の非同期性の詳細については、「[Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)」を参照してください。
+> [!NOTE]
+> **sync()** メソッドと Excel JavaScript API の非同期性の詳細については、「[Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -31,9 +39,10 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 
 - **debugInfo**:存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。 
 
-**注**:`console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンドユーザーに対して表示されることはありません。
+> [!NOTE]
+> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンドユーザーに対して表示されることはありません。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/error)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/error)

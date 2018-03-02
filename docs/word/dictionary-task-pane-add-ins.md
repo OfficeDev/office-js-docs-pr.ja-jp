@@ -1,40 +1,43 @@
+---
+title: 辞書の作業ウィンドウ アドインを作成する
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
 
-この記事では、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の類義語を表示する作業ウィンドウ アドインの例と、それに付随する Web サービスについて取り上げます。 
+この記事では、例として、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の同意語を表示する作業ウィンドウ アドインと、それに付随する Web サービスについて取り上げます。 
 
 辞書の Office アドインは、標準的な作業ウィンドウ アドインを基盤として、辞書の XML Web サービスに対するクエリの機能と、取得した定義を Office アプリケーションの UI 上の別の場所に表示する機能が追加されたものです。 
 
-一般的な辞書作業ウィンドウ アドインの場合、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
+一般的な辞書作業ウィンドウ アドインで、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
 
-**図 1.選択した語句の定義を表示する辞書アドイン**
+*図 1. 選択した語句の定義を表示する辞書アドイン*
 
-
-![定義が表示されている辞書アプリ](../images/DictionaryAgave01.jpg)
+![定義が表示されている辞書アプリ](../images/dictionary-agave-01.jpg)
 
 辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
 
-**図 2.コンテキスト メニューの定義コマンド**
+*図 2. コンテキスト メニューの定義コマンド*
+
+![コンテキスト メニューの定義](../images/dictionary-agave-02.jpg)
 
 
+*図 3. スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示*
 
-![コンテキスト メニューの定義](../images/DictionaryAgave02.jpg)
-
-**図 3.スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示**
-
-
-![スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示](../images/DictionaryAgave03.jpg)
-
-**図 4.類義語辞典ウィンドウでの定義の表示**
+![スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示](../images/dictionary-agave-03.jpg)
 
 
-![類義語辞典ウィンドウでの定義の表示](../images/DictionaryAgave04.jpg)
+*図 4. 類義語辞典ウィンドウでの定義の表示*
 
-**図 5.読み取りモードでの定義**
+![類義語辞典ウィンドウでの定義の表示](../images/dictionary-agave-04.jpg)
 
 
-![読み取りモードでの定義](../images/DictionaryAgave05.jpg)
+*図 5. 読み取りモードでの定義*
+
+![読み取りモードでの定義](../images/dictionary-agave-05.jpg)
 
 辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。 
 
@@ -87,9 +90,6 @@ XML Web サービスでは、クエリを OfficeDefinitions XML スキーマに�
 
 OfficeDefinitions スキーマに準拠した XML では、ルートの **Result** 要素の中に **Definitions** 要素を 1 個記述し、その子要素として 0 から 3 個の **Definition** 要素に定義を記述して返します。それぞれの定義は最大 400 文字です。また、辞書サイトの結果ページの URL を **SeeMoreURL** 要素で指定する必要があります。次の例は、OfficeDefinitions スキーマに準拠して返す XML の構造を示します。
 
-
-
-
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
@@ -109,7 +109,7 @@ OfficeDefinitions スキーマに準拠した XML では、ルートの **Result
 次の C# コードは、辞書クエリの結果を OfficeDefinitions XML 形式で返す XML Web サービスのコードの簡単な作成例です。
 
 
-```C#
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -172,8 +172,6 @@ public class WebService : System.Web.Services.WebService {
 
         return doc;
     }
-   
-
 }
 ```
 
@@ -184,7 +182,7 @@ public class WebService : System.Web.Services.WebService {
 辞書アドインは 3 つの主要なコンポーネント ファイルで構成されます。
 
 
-- アドインについての情報を記述した XML マニフェスト ファイル
+- アドインについての情報を記述した XML マニフェスト ファイル。
     
 - アドインの UI を記述した HTML ファイル
     
@@ -253,7 +251,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-辞書アドインのマニフェスト ファイルの作成に固有の **Dictionary** 要素とその子要素については、以下のセクションで説明します。マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」を参照してください。
+辞書アドインのマニフェスト ファイルの作成に固有の **Dictionary** 要素とその子要素については、以下のセクションで説明します。マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 
 
 ### <a name="dictionary-element"></a>Dictionary 要素
@@ -277,7 +275,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialects-element"></a>TargetDialects 要素
 
 
-この辞書がサポートする地域言語を指定します。必須 (辞書アドインの場合)。
+この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。
 
  **親要素**
 
@@ -289,12 +287,9 @@ public class WebService : System.Web.Services.WebService {
 
  **注釈**
 
-**TargetDialects** 要素とその子要素は、辞書に含める地域言語のセットを指定します。たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。異なる言語は、別個の辞書として発行してください。
+**TargetDialects** 要素とその子要素は、辞書に含める地域言語のセットを指定します。たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。異なる言語は、別の辞書として発行してください。
 
  **例**
-
-
-
 
 ```XML
 <TargetDialects>
@@ -323,7 +318,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialect-element"></a>TargetDialect 要素
 
 
-この辞書がサポートする地域言語を指定します。必須 (辞書アドインの場合)。
+この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。
 
  **親要素**
 
@@ -334,8 +329,6 @@ public class WebService : System.Web.Services.WebService {
 RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の値を指定します。
 
  **例**
-
-
 
 
 ```XML
@@ -359,8 +352,6 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
  **例**
 
 
-
-
 ```XML
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
@@ -379,11 +370,9 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。
 
-この要素では、**Override** 要素を使用して、別のロケールに対応する値を指定できます。たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../overview/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
+この要素では、**Override** 要素を使用して、別のロケールに対応する値を指定できます。たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
 
  **例**
-
-
 
 
 ```XML
@@ -408,9 +397,6 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
  **例**
 
-
-
-
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
@@ -434,8 +420,6 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
  **例**
 
 
-
-
 ```XML
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
@@ -443,9 +427,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 ### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>辞書アドインの HTML ユーザー インターフェイスの作成
 
-
 次の 2 つの例は、デモの辞書アドインの UI の HTML ファイルと CSS ファイルを示します。アドインの作業ウィンドウでの UI の表示については、コードの下の図 6 を参照してください。Dictionary.js ファイル内の JavaScript の実装でこの HTML の UI のプログラミング ロジックを実現する方法については、次の「JavaScript の実装の記述」を参照してください。
-
 
 ```HTML
 <!DOCTYPE html>
@@ -488,10 +470,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 次の例は Style.css の内容を示しています。
 
-
-
-
-```
+```CSS
 #mainContainer
 {
     font-family: Segoe UI;
@@ -530,10 +509,9 @@ a:hover, a:active
 }
 ```
 
+*図 6. 辞書 UI のデモ*
 
-**図 6.辞書 UI のデモ**
-
-![辞書 UI のデモ](../images/DictionaryAgave06.jpg)
+![辞書 UI のデモ](../images/dictionary-agave-06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>JavaScript の実装の記述
@@ -544,13 +522,13 @@ a:hover, a:active
 この実装で呼び出している JavaScript API for Office (Office.js) の主なメンバーを次に示します。
 
 
-- **Office** オブジェクトの [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](http://dev.office.com/reference/add-ins/shared/document) オブジェクトのインスタンスへのアクセスを提供します。
+- **Office** オブジェクトの [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](https://dev.office.com/reference/add-ins/shared/document) オブジェクトのインスタンスへのアクセスを提供します。
     
-- **Document** オブジェクトの [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
+- **Document** オブジェクトの [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
     
-- **Document** オブジェクトの [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
+- **Document** オブジェクトの [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
     
-- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)) から取得します。
+- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult)) から取得します。
     
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
     
@@ -559,7 +537,7 @@ a:hover, a:active
 
 
 
-```
+```javascript
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

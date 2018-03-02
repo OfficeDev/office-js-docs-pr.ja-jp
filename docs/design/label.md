@@ -1,14 +1,16 @@
+---
+title: Office UI Fabric のラベル コンポーネント
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="label-component-in-office-ui-fabric"></a>Office UI Fabric のラベル コンポーネント
 
-ラベルを使用して、コンポーネントやコンポーネントのグループに名前またはタイトルを付けます。 別のコンポーネントまたはコンポーネントのグループと組み合わせる場合、ラベルは関連するコンポーネントまたはグループのすぐ近くに配置する必要があります。 一部のコンポーネントには、ドロップダウンやトグルなど定義済みのラベルがあります。
+ラベルを使用して、コンポーネントやコンポーネントのグループに名前またはタイトルを付けます。別のコンポーネントまたはコンポーネントのグループと組み合わせる場合、ラベルは関連するコンポーネントまたはグループのすぐ近くに配置する必要があります。一部のコンポーネントには、ドロップダウンやトグルなど定義済みのラベルがあります。
   
-#### <a name="example-label-in-a-task-pane"></a>例:作業ウィンドウ内のラベル
+#### <a name="example-label-in-a-task-pane"></a>例: 作業ウィンドウ内のラベル
 
-<br/>
-
-![ラベルが表示された画像](../images/overview_withApp_label.png)
-
-<br/>
+![ラベルが表示された画像](../images/overview-with-app-label.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -23,15 +25,14 @@
 |**バリエーション**|**説明**|**例**|
 |:------------|:--------------|:----------|
 |**既定のラベル**|標準のラベルに使用します。|![既定のラベルの画像](../images/label.png)<br/>|
-|**無効なラベル**|関連するコンポーネントが無効になっているときに使用します。|![無効なラベルの画像](../images/labelDisabled.png)<br/>|
-|**必要なラベル**|関連するコンポーネントが必要なときに使用します。|![必要なラベルの画像](../images/labelRequired.png)<br/>|
+|**無効なラベル**|関連するコンポーネントが無効になっているときに使用します。|![無効なラベルの画像](../images/label-disabled.png)<br/>|
+|**必要なラベル**|関連するコンポーネントが必要なときに使用します。|![必要なラベルの画像](../images/label-required.png)<br/>|
 
 ## <a name="implementation"></a>実装
 
 詳細については、「[ラベル](https://dev.office.com/fabric#/components/label)」と「[Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)」を参照してください。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office アドインの Office UI Fabric](office-ui-fabric.md)

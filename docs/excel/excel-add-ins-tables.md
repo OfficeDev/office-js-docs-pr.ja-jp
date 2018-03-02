@@ -1,12 +1,20 @@
+---
+title: Excel JavaScript API を使用して表を操作する
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表を使ったタスクを実行する方法のサンプル コードを示しています。 **Table** および **TableCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/tablecollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Table** および **TableCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/tablecollection)」を参照してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
->**注**:表名を指定するには、次の例に示すように、最初に表を作成し、その **name** プロパティを設定します。
+> [!NOTE]
+> 表名を指定するには、次の例に示すように、最初に表を作成し、その **name** プロパティを設定します。
 
 ```js
 Excel.run(function (context) {
@@ -39,13 +47,14 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../images/Excel-table-create.png)
+![Excel の新しい表](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
->**注**:[TableRow](http://dev.office.com/reference/add-ins/excel/tablerow) オブジェクトの **index** プロパティは、表の行コレクション内の行のインデックス番号を示しています。 **TableRow** オブジェクトには、行を一意に識別できる **id** プロパティは含まれていません。
+> [!NOTE]
+> [TableRow](https://dev.office.com/reference/add-ins/excel/tablerow) オブジェクトの **index** プロパティは、表の行コレクション内の行のインデックス番号を示しています。 **TableRow** オブジェクトには、行を一意に識別できる **id** プロパティは含まれていません。
 
 ```js
 Excel.run(function (context) {
@@ -73,17 +82,18 @@ Excel.run(function (context) {
 
 **新しい行を含む表**
 
-![Excel の新しい行を含む表](../images/Excel-table-add-rows.png)
+![Excel の新しい行を含む表](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>表に列を追加する
 
 以下の例では、表に列を追加する方法を示します。 最初の例では、新しい列に静的な値を作成し、2 番目の例では新しい列に数式を作成します。
 
->**注**:[TableColumn](http://dev.office.com/reference/add-ins/excel/tablecolumn) オブジェクトの **index** プロパティは、表の列コレクション内の列のインデックス番号を示しています。 **TableColumn** オブジェクトの **id** プロパティには、列を識別する一意のキーが含まれています。
+> [!NOTE]
+> [TableColumn](https://dev.office.com/reference/add-ins/excel/tablecolumn) オブジェクトの **index** プロパティは、表の列コレクション内の列のインデックス番号を示しています。 **TableColumn** オブジェクトの **id** プロパティには、列を識別する一意のキーが含まれています。
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -112,11 +122,11 @@ Excel.run(function (context) {
 
 **新しい列を含む表**
 
-![Excel の新しい列を含む表](../images/Excel-table-add-column.png)
+![Excel の新しい列を含む表](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -145,11 +155,11 @@ Excel.run(function (context) {
 
 **新しい集計列を含む表**
 
-![Excel の新しい集計列を含む表](../images/Excel-table-add-calculated-column.png)
+![Excel の新しい集計列を含む表](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。コードが実行されている Excel ホスト アプリケーションが [要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -174,7 +184,7 @@ Excel.run(function (context) {
 
 **新しい列名を含む表**
 
-![Excel の新しい列名を含む表](../images/Excel-table-update-column-name.png)
+![Excel の新しい列名を含む表](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>表からデータを取得する
 
@@ -220,7 +230,7 @@ Excel.run(function (context) {
 
 **表とデータの出力**
 
-![Excel の表データ](../images/Excel-table-get-data.png)
+![Excel の表データ](../images/excel-tables-get-data.png)
 
 ## <a name="sort-data-in-a-table"></a>表内でデータを並べ替える
 
@@ -247,7 +257,7 @@ Excel.run(function (context) {
 
 **金額 (降順) で並べ替えた表データ**
 
-![Excel の表データ](../images/Excel-table-sort.png)
+![Excel の表データ](../images/excel-tables-sort.png)
 
 ## <a name="apply-filters-to-a-table"></a>表にフィルターを適用する
 
@@ -279,7 +289,7 @@ Excel.run(function (context) {
 
 **Category と Amount にフィルターを適用した表データ**
 
-![Excel でフィルター処理された表データ](../images/Excel-table-filters-apply.png)
+![Excel でフィルター処理された表データ](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>表フィルターのクリア
 
@@ -298,7 +308,7 @@ Excel.run(function (context) {
 
 **フィルターが適用されていない表データ**
 
-![Excel のフィルター処理されていない表データ](../images/Excel-table-filters-clear.png)
+![Excel のフィルター処理されていない表データ](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
@@ -321,7 +331,7 @@ Excel.run(function (context) {
 
 ## <a name="format-a-table"></a>表を書式設定する
 
-次のコード サンプルでは、表に書式を適用します。 表のヘッダー行、表の本体、表の 2 行目、表の 1 列目にそれぞれ別の塗りつぶし色を指定します。 書式の指定に使用できるプロパティの詳細については、「[RangeFormat オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/rangeformat)」を参照してください。
+次のコード サンプルでは、表に書式を適用します。 表のヘッダー行、表の本体、表の 2 行目、表の 1 列目にそれぞれ別の塗りつぶし色を指定します。 書式の指定に使用できるプロパティの詳細については、「[RangeFormat オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/rangeformat)」を参照してください。
 
 ```js
 Excel.run(function (context) {
@@ -339,7 +349,7 @@ Excel.run(function (context) {
 
 **書式設定を適用後の表**
 
-![Excel の書式設定を適用後の表](../images/Excel-table-formatting-after.png)
+![Excel の書式設定を適用後の表](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>範囲を表に変換する
 
@@ -379,15 +389,15 @@ Excel.run(function (context) {
 
 **範囲データ (範囲を表に変換する前)**
 
-![Excel の範囲データ](../images/Excel-range.png)
+![Excel の範囲データ](../images/excel-ranges.png)
 
 **範囲データ (範囲を表に変換した後)**
 
-![Excel の表データ](../images/Excel-table-from-range.png)
+![Excel の表データ](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -430,10 +440,10 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../images/Excel-table-create-from-json.png)
+![Excel の新しい表](../images/excel-tables-create-from-json.png)
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Table オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/table)
-- [TableCollection オブジェクト (JavaScript API for Excel)](http://dev.office.com/reference/add-ins/excel/tablecollection)
+- [Table オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)
+- [TableCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/tablecollection)
