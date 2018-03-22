@@ -1,68 +1,126 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/09/2018
 ---
 
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
-Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。 
+Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
 
 このスキーマに基づいた XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。
 
-- ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
-    
-- アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
-    
-- コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。
-    
-- ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。
-    
-- Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
+* ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
-> 
-  **注**: AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+* アドインのブランド化に使用するイメージと、Office リボンで[アドイン コマンド][]に使用する画像を指定する。
+
+* アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
+
+* コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。
+
+* ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。
+
+* Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
+
+> [!NOTE]
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
 
 ## <a name="required-elements"></a>必要な要素
 
 次の表に、3 種類の Office アドインに必要な要素を示します。
 
-**Office アドインの種類ごとに必要な要素**
+### <a name="required-elements-by-office-add-in-type"></a>Office アドインの種類ごとの必要な要素
 
-|**要素**|**コンテンツ**|**作業ウィンドウ**|**Outlook**|
-|:-----|:-----|:-----|:-----|
-|[OfficeApp](http://msdn.microsoft.com/ja-jp/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
-|[Id](http://msdn.microsoft.com/ja-jp/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
-|[Version](http://msdn.microsoft.com/ja-jp/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
-|[ProviderName](http://msdn.microsoft.com/ja-jp/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
-|[DefaultLocale](http://msdn.microsoft.com/ja-jp/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
-|[DisplayName](http://msdn.microsoft.com/ja-jp/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
-|[Description](http://msdn.microsoft.com/ja-jp/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
-|[IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
-|[HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|X|X|X|
-|[DefaultSettings (ContentApp)](http://msdn.microsoft.com/ja-jp/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>[DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/ja-jp/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
-|[SourceLocation (ContentApp)](http://msdn.microsoft.com/ja-jp/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>[SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/ja-jp/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
-|[DesktopSettings](http://msdn.microsoft.com/ja-jp/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
-|[SourceLocation (MailApp)](http://msdn.microsoft.com/ja-jp/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
-|[Permissions (ContentApp)](http://msdn.microsoft.com/ja-jp/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>[Permissions (TaskPaneApp)](http://msdn.microsoft.com/ja-jp/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>[Permissions (MailApp)](http://msdn.microsoft.com/ja-jp/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
-|[Rule (RuleCollection)](http://msdn.microsoft.com/ja-jp/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>[Rule (MailApp)](http://msdn.microsoft.com/ja-jp/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
-|[*Requirements (MailApp)](http://msdn.microsoft.com/ja-jp/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)|||X|
-|[*Set](http://msdn.microsoft.com/ja-jp/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>[**Sets (MailAppRequirements)](http://msdn.microsoft.com/ja-jp/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
-|[*Form](http://msdn.microsoft.com/ja-jp/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/ja-jp/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
-|[*Sets (Requirements)](http://msdn.microsoft.com/ja-jp/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)|X|X||
-|[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)|X|X||
+| 要素                                                                                      | コンテンツ | 作業ウィンドウ | Outlook |
+| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
+| [OfficeApp][]                                                                                |    X    |     X     |    X    |
+| [Id][]                                                                                       |    X    |     X     |    X    |
+| [Version][]                                                                                  |    X    |     X     |    X    |
+| [ProviderName][]                                                                             |    X    |     X     |    X    |
+| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
+| [DisplayName][]                                                                              |    X    |     X     |    X    |
+| [Description][]                                                                              |    X    |     X     |    X    |
+| [IconUrl][]                                                                                  |    X    |     X     |    X    |
+| [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
+| [DesktopSettings][]                                                                          |         |           |    X    |
+| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
+| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
+| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
+| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
+| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
+| [Hosts*][]                                                                                   |    X    |     X     |         |
 
-*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。
+_\*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。_
+
+<!-- Links for above table -->
+
+
+  [officeapp]: http://msdn.microsoft.com/ja-jp/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
+
+  [id]: http://msdn.microsoft.com/ja-jp/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
+
+  [version]: http://msdn.microsoft.com/ja-jp/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
+
+  [providername]: http://msdn.microsoft.com/ja-jp/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
+
+  [defaultlocale]: http://msdn.microsoft.com/ja-jp/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
+
+  [displayname]: http://msdn.microsoft.com/ja-jp/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
+
+  [description]: http://msdn.microsoft.com/ja-jp/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
+[iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
+[highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
+
+  [defaultsettings (contentapp)]: http://msdn.microsoft.com/ja-jp/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
+
+  [defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
+
+  [sourcelocation (contentapp)]: http://msdn.microsoft.com/ja-jp/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
+
+  [sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
+
+  [desktopsettings]: http://msdn.microsoft.com/ja-jp/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
+
+  [sourcelocation (mailapp)]: http://msdn.microsoft.com/ja-jp/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+
+  [permissions (contentapp)]: http://msdn.microsoft.com/ja-jp/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
+
+  [permissions (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
+
+  [permissions (mailapp)]: http://msdn.microsoft.com/ja-jp/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
+
+  [rule (rulecollection)]: http://msdn.microsoft.com/ja-jp/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
+
+  [rule (mailapp)]: http://msdn.microsoft.com/ja-jp/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
+
+  [requirements (mailapp)*]: http://msdn.microsoft.com/ja-jp/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
+
+  [set*]: http://msdn.microsoft.com/ja-jp/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
+
+  [sets (mailapprequirements)*]: http://msdn.microsoft.com/ja-jp/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
+
+  [form*]: http://msdn.microsoft.com/ja-jp/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
+
+  [formsettings*]: http://msdn.microsoft.com/ja-jp/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
+
+  [sets (requirements)*]: http://msdn.microsoft.com/ja-jp/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
+[hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
+
+## <a name="hosting-requirements"></a>ホストするための要件
+
+[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
+
+[SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
 アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。
 
-[SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**必要があります。
-
-すべてのアイコン (コマンド サーフェスに使用されるものなど) の URL は**キャッシュを許可する**必要があります。Web サーバーは、no-cache/no-store のような HTTP ヘッダーを返してはいけません。
-
-AppSource に提出するアドインには、[SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)」をご覧ください。
+AppSource に提出するアドインには、[SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)」をご覧ください。
 
 必ず [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。
 
@@ -73,7 +131,6 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 この動作を変更するには、マニフェスト ファイルの [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
 次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](http://msdn.microsoft.com/ja-jp/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが www.northwindtraders.com ドメイン内のページに移動すると、そのページはアドイン ウィンドウで開きます。
-
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -95,12 +152,11 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 ```
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>マニフェスト v1.1 XML ファイルの例とスキーマ
-
-
 後続の各セクションでは、コンテンツ アドイン、作業ウィンドウ アドイン、および Outlook アドインのマニフェスト v1.1 XML ファイルの例を示します。
 
-### <a name="office-add-in-manifest-v11-example-with-commands-and-fallback-task-pane"></a>コマンドとフォールバック作業ウィンドウを含む Office アドイン マニフェスト v1.1 の例
-[作業ウィンドウ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+# <a name="task-panetabtabid-1"></a>[作業ウィンドウ](#tab/tabid-1)
+
+[作業ウィンドウ アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -134,7 +190,7 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
   <Permissions>ReadWriteDocument</Permissions>
 
   <!--BeginAddinCommandsMode integration-->
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <!--Each host can have a different set of commands. Cool huh!? -->
       <!-- Workbook=Excel Document=Word Presentation=PowerPoint -->
@@ -142,7 +198,7 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
       <Host xsi:type="Document">
         <!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
-            <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
+            <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called.
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
@@ -163,7 +219,7 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
                 </Icon>
-                
+
                 <!--Control. It can be of type "Button" or "Menu" -->
                 <Control xsi:type="Button" id="Contoso.FunctionButton">
                 <!--Label for your button. resid must point to a ShortString resource -->
@@ -250,7 +306,7 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
                     <SourceLocation resid="Contoso.Taskpane2.Url" />
                   </Action>
                 </Item>
-              
+
               </Items>
             </Control>
 
@@ -295,15 +351,15 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 </OfficeApp>
 ```
 
-### <a name="content-add-in-manifest-v11-example"></a>コンテンツ アドイン マニフェスト v1.1 の例
-[コンテンツ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+# <a name="contenttabtabid-2"></a>[コンテンツ](#tab/tabid-2)
 
+[コンテンツ アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp 
-  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -324,7 +380,7 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
   </Requirements>  
   <DefaultSettings>
     <SourceLocation DefaultValue="https://contoso.com/apps/content.html" />
-    <RequestedWidth>400</RequestedWidth> 
+    <RequestedWidth>400</RequestedWidth>
     <RequestedHeight>400</RequestedHeight>
   </DefaultSettings>
   <Permissions>Restricted</Permissions>
@@ -332,15 +388,15 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 </OfficeApp>
 ```
 
-### <a name="outlook-add-in-manifest-v11-example"></a>Outlook アドイン マニフェスト v1.1 の例
-[コンテンツ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+# <a name="mailtabtabid-3"></a>[メール](#tab/tabid-3)
 
+[メール アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
@@ -403,26 +459,27 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
   </FormSettings>
 
   <Permissions>ReadWriteItem</Permissions>
-  <Rule xsi:type="RuleCollection" Mode="Or"> 
+  <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="RuleCollection" Mode="And">
       <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
       </Rule>
-      <Rule xsi:type="ItemHasRegularExpressionMatch" 
-        PropertyName="BodyAsPlaintext" RegExName="VideoURL" 
+      <Rule xsi:type="ItemHasRegularExpressionMatch"
+        PropertyName="BodyAsPlaintext" RegExName="VideoURL"
         RegExValue=
         "http://(((www\.)?youtube\.com/watch\?v=)|
         (youtu\.be/))[a-zA-Z0-9_-]{11}" />
     </Rule>
     <Rule xsi:type="RuleCollection" Mode="Or">
       <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
-      <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" /> 
-    </Rule> 
+      <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
+    </Rule>
   </Rule>
 </OfficeApp>
-
 ```
+
+---
 
 ## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -430,10 +487,10 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 
 ## <a name="see-also"></a>関連項目
 
+* [マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]
+* [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)
+* [Office アドインのローカライズ](localization.md)
+* [Office アドイン マニフェストのスキーマ参照](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)
 
-- [マニフェストでアドイン コマンドを作成する](create-addin-commands.md)
-- [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)
-- [Office アドインのローカライズ](localization.md)
-- [Office アドイン マニフェストのスキーマ参照](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
-- [マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)
-
+[アドイン コマンド]: create-addin-commands.md

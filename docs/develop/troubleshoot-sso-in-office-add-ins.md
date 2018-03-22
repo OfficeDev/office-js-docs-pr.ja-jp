@@ -29,7 +29,7 @@ ms.date: 12/08/2017
 
 [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API は、このアドインまたは Office バージョンではサポートされていません。 
 
-- このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。 
+- このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/ja-jp/office-insider?tab=tab-1)」を参照してください。 
 - アドインのマニフェストに適切な [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) セクションがありません。
 
 ### <a name="13001"></a>13001
@@ -58,7 +58,7 @@ Office Online では、このエラーが発生することはありません。
 
 ### <a name="13006"></a>13006
 
-クライアント エラーです。 コードでは、ユーザーにサインアウトしてから Office を再起動するように指示するか、Office Online セッションを再開する必要があります。
+クライアント エラー。コードでは、ユーザーにサインアウトしてから Office を再起動するように指示するか、Office Online セッションを再開する必要があります。
 
 ### <a name="13007"></a>13007
 

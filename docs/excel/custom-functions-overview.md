@@ -22,7 +22,7 @@ function add42 (a, b) {
 
 カスタム関数がプレビューで利用できるようになりました。 以下の手順に従って試してみましょう。
 
-1.  [Office Insider](https://products.office.com/en-us/office-insider) プログラムに参加して、コンピューターに、カスタム関数に必要な Excel 2016 のバージョン (バージョン 16.8711 以降) をインストールします。 カスタム関数のプレビューが機能するには、「Insider」チャネルを選択する必要があります。
+1.  [Office Insider](https://products.office.com/ja-jp/office-insider) プログラムに参加して、コンピューターに、カスタム関数に必要な Excel 2016 のバージョン (バージョン 16.8711 以降) をインストールします。 カスタム関数のプレビューが機能するには、「Insider」チャネルを選択する必要があります。
 2.  [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) リポジトリを複製し、*README.md* の指示に従って、Excel でアドインを開始してください。
 3.  任意のセルに `=CONTOSO.ADD42(1,2)` を入力し、**Enter** を押してカスタム関数を実行します。
 4.  質問がある場合は、Stack Overflow で [office-js](https://stackoverflow.com/questions/tagged/office-js) タグを付けて質問してください。
@@ -187,9 +187,9 @@ function incrementValue(increment, caller){
 ストリーム関数と非同期関数をキャンセルできます。 関数呼び出しのキャンセルは、帯域幅の使用量、作業メモリ、および CPU の負荷を減らすために重要です。 Excel では、次のような状況で関数の呼び出しをキャンセルします。
 - ユーザーが関数を参照するセルを編集または削除する。
 - 関数の引数 (入力) の 1 つが変更される。 この場合、キャンセルに加えて新しい関数の呼び出しがトリガーされます。
-- ユーザーが手動で再計算をトリガーする。 上記の場合と同様に、キャンセルに加えて新しい関数の呼び出しがトリガーされます。
+- ユーザーは手動で再計算をトリガーします。上記の場合と同様に、キャンセルに加えて新しい関数の呼び出しがトリガーされます。
 
-次のコードでは、前述の例にキャンセルを実装しています。 コードでは、`caller` オブジェクトに `onCanceled` 関数が含まれています。この関数は各カスタム関数ごとに定義する必要があります。
+次のコードでは、前述の例にキャンセルを実装しています。 コードでは、`caller` オブジェクトに `onCanceled` プロパティが含まれています。このプロパティは各カスタム関数ごとに定義する必要があります。 Excel が `onCanceled` 関数を呼び出すには、関数登録時にパラメーター `cancelable` を `true` に設定してキャンセルのサポートを宣言する必要があります。
 
 ```js
 function incrementValue(increment, caller){ 
@@ -266,7 +266,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-データの範囲を返す関数を作成する場合は、Excel で配列数式を入力して、値の範囲全体を表示する必要があります。 詳細については、「[配列数式のガイドラインと例](https://support.office.com/ja-jp/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)」を参照してください。
+データの範囲を返す関数を作成する場合は、Excel で配列数式を入力して、値の範囲全体を表示する必要があります。詳細については、「[配列数式のガイドラインと例](https://support.office.com/ja-jp/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)」を参照してください。
 
 ## <a name="known-issues"></a>既知の問題
 

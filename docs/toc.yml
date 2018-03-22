@@ -14,15 +14,18 @@
   items:
   - name: Excel アドインの作成
     items:
-    - name: React の使用
-      href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
     - name: Angular の使用
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: jQuery の使用
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
+    - name: React の使用
+      href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Vue の使用
+      href: quickstarts/excel-quickstart-vue.md
+      displayName: Excel 
   - name: Word アドインの作成
     href: quickstarts/word-quickstart.md
     displayName: Word
@@ -43,7 +46,11 @@
   items:
   - name: Excel アドインのチュートリアル
     href: tutorials/excel-tutorial.yml
-    
+    displayName: Excel
+  - name: PowerPoint アドインのチュートリアル
+    href: tutorials/powerpoint-tutorial.yml
+    displayName: PowerPoint
+
 - name: 概念
   items:
   - name: アドインを実行するための要件
@@ -194,15 +201,21 @@
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
-      - name: React の使用
-        href: excel/excel-add-ins-get-started-react.md
-        displayName: Excel
       - name: Angular の使用
         href: excel/excel-add-ins-get-started-angular.md
         displayName: Excel
       - name: jQuery の使用
         href: excel/excel-add-ins-get-started-jquery.md
         displayName: Excel
+      - name: React の使用
+        href: excel/excel-add-ins-get-started-react.md
+        displayName: Excel
+      - name: Vue の使用
+        href: excel/excel-add-ins-get-started-vue.md
+        displayName: Excel
+    - name: Excel アドインのチュートリアル
+      href: tutorials/excel-tutorial.yml
+      displayName: Excel
     - name: 中心概念
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
@@ -278,6 +291,9 @@
     items:
     - name: 最初の PowerPoint アドインをビルドする
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
+    - name: PowerPoint アドインのチュートリアル
+      href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
     - name: PowerPoint アドインでドキュメントのテーマを使用する
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
@@ -380,7 +396,7 @@
     displayName: Outlook
   - name: API オープン仕様
     href: https://dev.office.com/reference/add-ins/openspec
-    displayName: Excel, Word
+    displayName: Excel、Word
 
 - name: リソース
   href: resources/resources-links-help.md

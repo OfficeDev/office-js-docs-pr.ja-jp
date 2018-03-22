@@ -26,7 +26,7 @@ Angular CLI を使用して Angular アプリを生成します。 ターミナ�
 ng new my-addin
 ```
 
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>マニフェスト ファイルを生成し、アドインをサイドロードする
+## <a name="generate-the-manifest-file"></a>マニフェスト ファイルを生成する
 
 アドインのマニフェスト ファイルは、その設定と機能を定義します。
 
@@ -36,12 +36,12 @@ ng new my-addin
     cd my-addin
     ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下のスクリーンショットに示すとおり、プロンプトに応答します。
+2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
     ```bash
     yo office
     ```
-    - **Would you like to create a new subfolder for your project?: (プロジェクト用の新しいサブフォルダーを作成しますか)** `No`
+    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
     - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `No`
@@ -53,26 +53,53 @@ ng new my-addin
     > [!NOTE]
     > **package.json** を上書きするメッセージが表示された場合は、**No** (上書きしない) と応答します。
 
-3. マニフェスト ファイル (つまり、アプリのルート ディレクトリ内にある、名前が "manifest.xml" で終わるファイル) を開きます。`https://localhost:3000` の出現箇所すべてを `http://localhost:4200` で置き換えて、ファイルを保存します。
+## <a name="secure-the-app"></a>アプリをセキュリティ保護する
 
-    > [!TIP]
-    > ポート番号を **4200** に変更し、プロトコルを **http** に変更してください。
+[!include[HTTPS guidance](../includes/https-guidance.md)]
 
-4. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+このクイックスタートでは、**Office アドイン用の Yeoman ジェネレーター**が提供する証明書を使用できます。 このジェネレーターは、このクイックスタートの**前提条件**の一部としてグローバルにインストールされているため、グローバル インストールの場所からアプリ フォルダーに証明書をコピーするだけで済みます。 次の手順では、このプロセスを実行する方法を示しています。
 
-    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad および Mac:[iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. 端末から次のコマンドを実行し、グローバル **npm** ライブラリがインストールされているフォルダーを識別します。
+
+    ```bash 
+    npm list -g 
+    ``` 
+    
+    > [!TIP]    
+    > このコマンドで生成された出力の最初の行は、グローバル **npm** ライブラリがインストールされているフォルダーを示します。          
+    
+2. エクスプローラーを使用して `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base` フォルダーに移動します。 その場所から `certs` フォルダーをクリップボードにコピーします。
+
+3. 前のセクションの手順 1 で作成した Angular アプリのルート フォルダーに移動して、クリップボードからそのフォルダーに `certs` フォルダーを貼り付けます。
 
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. **src/index.html** を開き、`</head>` タグの直前に次の `<script>` タグを追加して、ファイルを保存します。
+1. コード エディターで、プロジェクトのルートにある **package.json** を開きます。 `start` スクリプトを変更してサーバーを SSL およびポート 3000 を使用して実行するよう指定し、ファイルを保存します。
+
+    ```json
+    "start": "ng serve --ssl true --port 3000"
+    ```
+
+2. プロジェクトのルートで **.angular-cli.json** を開きます。 証明書ファイルの場所を指定するように **defaults** オブジェクトを変更し、ファイルを保存します。
+
+    ```json
+    "defaults": {
+      "styleExt": "css",
+      "component": {},
+      "serve": {
+        "sslKey": "certs/server.key",
+        "sslCert": "certs/server.crt"
+      }
+    }
+    ```
+
+3. **src/index.html** を開き、`</head>` タグの直前に次の `<script>` タグを追加して、ファイルを保存します。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. **src/main.ts** を開き、`platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` を次のコードで置き換えて、ファイルを保存します。 
+4. **src/main.ts** を開き、`platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` を次のコードで置き換えて、ファイルを保存します。 
 
     ```typescript 
     declare const Office: any;
@@ -83,13 +110,13 @@ ng new my-addin
     };
     ```
 
-3. **src/polyfills.ts** を開き、存在する他のすべての `import` ステートメントの上に次のコード行を追加して、ファイルを保存します。
+5. **src/polyfills.ts** を開き、存在する他のすべての `import` ステートメントの上に次のコード行を追加して、ファイルを保存します。
 
     ```typescript
     import 'core-js/client/shim';
     ```
 
-4. **src/polyfills.ts** で、次の行のコメントを解除してファイルを保存します。
+6. **src/polyfills.ts** で、次の行のコメントを解除してファイルを保存します。
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -108,7 +135,7 @@ ng new my-addin
     import 'core-js/es6/set';
     ```
 
-5. **src/app/app.component.html** を開き、ファイルのコンテンツを次の HTML で置き換えて、ファイルを保存します。 
+7. **src/app/app.component.html** を開き、ファイルのコンテンツを次の HTML で置き換えて、ファイルを保存します。 
 
     ```html
     <div id="content-header">
@@ -126,7 +153,7 @@ ng new my-addin
     </div>
     ```
 
-6. **src/app/app.component.css** を開き、ファイルのコンテンツを次の CSS コードで置き換えて、ファイルを保存します。
+8. **src/app/app.component.css** を開き、ファイルのコンテンツを次の CSS コードで置き換えて、ファイルを保存します。
 
     ```css
     #content-header {
@@ -155,7 +182,7 @@ ng new my-addin
     }
     ```
 
-7. **src/app/app.component.ts** を開き、ファイルのコンテンツを次のコードで置き換えて、ファイルを保存します。 
+9. **src/app/app.component.ts** を開き、ファイルのコンテンツを次のコードで置き換えて、ファイルを保存します。 
 
     ```typescript
     import { Component } from '@angular/core';
@@ -178,13 +205,29 @@ ng new my-addin
     }
     ```
 
-## <a name="try-it-out"></a>お試しください
+## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
     ```bash
-    npm start
+    npm run start
     ```
+
+2. Web ブラウザーで `https://localhost:3000` に移動します。ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼された証明書として追加する必要があります。詳細については、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。
+
+    > [!NOTE]
+    > 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」で説明されているプロセスを完了した後でも、Chrome (Web ブラウザー) は、サイトの証明書が信頼されていないことを引き続き示すことがあります。 Chrome でのこの警告は無視して構いません。また、Internet Explorer あるいは Microsoft Edge の `https://localhost:3000` に移動して、証明書が信頼されていることを確認することもできます。 
+
+3. ブラウザーに証明書エラーなしでアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
+
+## <a name="try-it-out"></a>お試しください
+
+1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+
+    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+
    
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
@@ -198,7 +241,7 @@ ng new my-addin
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。Angular を使用して Excel アドインが正常に作成されました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+これで完了です。Angular を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
@@ -209,4 +252,3 @@ ng new my-addin
 * [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
-

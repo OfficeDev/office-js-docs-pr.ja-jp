@@ -44,7 +44,13 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 コンテンツ アドインの実装サンプルについては、GitHub の「[Excel コンテンツ アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="support-considerations"></a>サポートに関する考慮事項
+- 使用している Office アドインが[特定の Office ホスト プラットフォーム](/overview/office-add-in-availability.md)で動作するかどうかを確認します。 
+- コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストで、ユーザーに必要とされる[アクセス許可のレベル](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)を宣言することができます。  
+- コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
-- [Office アドインでの Office UI Fabric](office-ui-fabric.md) 
+## <a name="see-also"></a>関連項目
+- [Office アドインのホストとプラットフォームの可用性](/overview/office-add-in-availability.md)
+- [Office アドインの Office UI Fabric](office-ui-fabric.md) 
 - [Office アドインの UX 設計パターン](ux-design-patterns.md)
+- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

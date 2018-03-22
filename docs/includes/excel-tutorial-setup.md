@@ -1,13 +1,13 @@
 開発プロジェクトを設定して、このチュートリアルを始めます。 
 
-> [!TIP]
-> まだ「[jQuery を使用する Excel アドインのクイック スタート](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code)」をご覧になっていなければ、お読みください。 具体的には、テスト用に Excel アドインをサイドロードする方法をしっかりと理解します。
+> [!NOTE]
+> このページでは、Excel のアドインのチュートリアルの個々 の手順について説明します。 このページに検索エンジンの結果から、または直接リンクからアクセスした場合は、「[Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)」の紹介ページに移動し、チュートリアルを最初から始めてください。
 
 ## <a name="prerequisites"></a>前提条件
 
 このチュートリアルを使用するには、以下のバージョンがインストールされている必要があります。 
 
-- Excel 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。
+- Excel 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/ja-jp/office-insider?tab=tab-1)」を参照してください。
 - [Node と npm](https://nodejs.org/en/) 
 - [Git バッシュ](https://git-scm.com/downloads) (またはその他の Git クライアント)
 

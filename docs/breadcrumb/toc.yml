@@ -12,3 +12,6 @@
       - name: Excel アドインのチュートリアル
         tocHref: /office/dev/add-ins/tutorials/excel-tutorial
         topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+      - name: PowerPoint アドインのチュートリアル
+        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial

@@ -179,7 +179,7 @@ create-react-app my-addin
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。React を使用して Excel アドインが正常に作成されました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+これで完了です。React を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
