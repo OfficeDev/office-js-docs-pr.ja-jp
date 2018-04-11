@@ -38,7 +38,9 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 
-マニフェスト ファイルが正しいスキーマに従っていることを確認するために、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較してマニフェスト ファイルを検証します。XML スキーマの検証ツールを使用して、この検証を実行できます。 
+マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認するには 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。 [XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較してマニフェストを検証できます。 XML スキーマの検証ツールを使用して、この検証を実行できます。 
+
+
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには
 

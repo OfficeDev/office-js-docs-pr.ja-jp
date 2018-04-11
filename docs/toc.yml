@@ -10,7 +10,7 @@
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: クイックスタート
+- name: クイック スタート
   items:
   - name: Excel アドインの作成
     items:
@@ -50,6 +50,9 @@
   - name: PowerPoint アドインのチュートリアル
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
+  - name: Word アドインのチュートリアル
+    href: tutorials/word-tutorial.yml
+    displayName: Word
 
 - name: 概念
   items:
@@ -75,6 +78,8 @@
       items:
       - name: デザイン言語
         href: design/add-in-design-language.md
+      - name: モーションを使用する
+        href: design/using-motion-office-addins.md
       - name: UX デザイン テンプレート
         href: design/ux-design-patterns.md
       - name: ユーザビリティ テスト
@@ -129,6 +134,8 @@
 
   - name: 開発
     items:
+    - name: Office のバージョンと要件セット
+      href: develop/office-versions-and-requirement-sets.md
     - name: Office の最新バージョンをインストールする
       href: develop/install-latest-office-version.md
     - name: Office の JavaScript API
@@ -262,6 +269,9 @@
     - name: 最初の Word アドインをビルドする
       href: word/word-add-ins.md
       displayName: Word
+    - name: Word アドインのチュートリアル
+      href: tutorials/word-tutorial.yml
+      displayName: Word
     - name: Office Open XML を使用して、より良い Word 用アドインを作成する
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
@@ -334,7 +344,7 @@
     href: testing/test-debug-office-add-ins.md
     items:
     - name: Windows
-      items: 
+      items:
       - name: Windows で Office アドインをサイドロードする
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: 作業ウィンドウからデバッガーをアタッチする
@@ -342,7 +352,7 @@
       - name: F12 開発者ツールを使用したデバッグ
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
-      items: 
+      items:
       - name: Office Online で Office アドインをサイドロードする
         href: testing/sideload-office-add-ins-for-testing.md
       - name: Office Online をデバッグする

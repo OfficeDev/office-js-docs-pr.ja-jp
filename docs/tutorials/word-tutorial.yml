@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Word アドインのチュートリアル
+metadata:
+  title: Word アドインのチュートリアル
+  description: このチュートリアルでは、テキスト範囲、段落、画像、HTML、テーブル、コンテンツ コントロールを挿入 (および置換) する Word アドインを作成します。テキストに書式を設定する方法と、コンテンツ コントロールにコンテンツを挿入 (および置換) する方法についても説明します。
+  audience: 開発者
+  level: 初心者
+  displayType: one-column
+  ms.date: 03/10/2018
+items:
+- durationInMinutes: 1
+  content: |
+    このチュートリアルでは、テキスト、画像、その他のコンテンツを挿入および置換する Word アドインの作成方法を説明します。最初に、段落を挿入する Word アドインを作成します。チュートリアルの続く各手順で、機能をさらにアドインに追加します。途中で問題が発生した場合は、<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">ご連絡ください</a>。
+- title: アドイン プロジェクトの作成
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-setup.md)]
+- title: テキスト範囲の挿入
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-text.md)]
+- title: テキストの書式設定とスタイル設定
+  durationInMinutes: 15
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-format-text.md)]
+- title: テキストの置換とさまざまな位置へのテキストの挿入
+  durationInMinutes: 20
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
+- title: 画像、HTML、テーブルの挿入
+  durationInMinutes: 6
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
+- title: コンテンツ コントロールを作成し、それらのコンテンツを置き換える
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-content-control.md)]
+- content: |
+    Word アドインのチュートリアルが完了しました。Word アドインの作成に関する詳細については、「<a href="../word/word-add-ins-programming-overview.md">Word アドインの概要</a>」を参照してください。

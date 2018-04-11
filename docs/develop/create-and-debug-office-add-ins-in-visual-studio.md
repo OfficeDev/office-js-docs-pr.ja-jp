@@ -1,7 +1,7 @@
 ---
 title: Visual Studio での Office アドインの作成とデバッグ
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/14/2018
 ---
 
 
@@ -15,10 +15,10 @@ ms.date: 12/04/2017
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>Visual Studio での Office アドイン プロジェクトの作成
 
 
-作業を開始するために、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) がインストールされていることと、Microsoft Office のバージョンを確認します。[Office 365 Developer プログラム](https://dev.office.com/devprogram)に参加するか、以下の手順を実行して[最新バージョン](../develop/install-latest-office-version.md)を取得できます。
+作業を開始するために、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) がインストールされていることと、Microsoft Office のバージョンを確認します。[Office 365 Developer プログラム](https://developer.microsoft.com/en-us/office/dev-program)に参加するか、以下の手順を実行して[最新バージョン](../develop/install-latest-office-version.md)を取得できます。
 
 
-1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
+1. [Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
     
 2. プロジェクトの種類の一覧で、**[Visual C#]** または **[Visual Basic]** の下にある **[Office/SharePoint]** を展開し、**[Web アドイン]** を選択してからアドイン プロジェクトのいずれかを選択します。  
     
@@ -102,8 +102,8 @@ Web アプリケーション プロジェクトには、作業の開始時に使
 |**開始ドキュメント** (コンテンツ アドインと作業ウィンドウ アドインのみ)|プロジェクトの開始時に開くドキュメントを指定します。|
 |**Web プロジェクト**|アドインに関連付けられている Web プロジェクトの名前を指定します。|
 |**電子メール アドレス** (Outlook アドインのみ)|Outlook アドインのテストに使用する Exchange Server か Exchange Online のユーザー アカウントの電子メール アドレスを指定します。|
-|**EWS の URL** (Outlook アドインのみ)|Exchange Web サービス の URL (例: https://www.contoso.com/ews/exchange.aspx)。 |
-|**OWA の URL** (Outlook アドインのみ)|Outlook Web App の URL (例: https://www.contoso.com/owa).|
+|**EWS の URL** (Outlook アドインのみ)|Exchange Web サービスの URL (例: https://www.contoso.com/ews/exchange.aspx)。 |
+|**OWA の URL** (Outlook アドインのみ)|Outlook Web App の URL (例: https://www.contoso.com/owa)。|
 |**ユーザー名** (Outlook アドインのみ)|Exchange Server または Exchange Online のユーザー アカウントの名前を指定します。|
 |**プロジェクト ファイル**|ビルド、構成、およびその他のプロジェクト情報が含まれているファイルの名前を指定します。|
 |**プロジェクト フォルダー**|プロジェクト ファイルの場所です。|

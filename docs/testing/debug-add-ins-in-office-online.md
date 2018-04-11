@@ -1,7 +1,7 @@
 ---
 title: Office Online でアドインをデバッグする
-description: ''
-ms.date: 01/23/2018
+description: Office Online を使用してアドインのテストとデバッグを行う方法
+ms.date: 03/14/2018
 ---
 
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
@@ -16,9 +16,9 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 - Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
     
   > [!NOTE]
-  > 無料の Office 365 開発者アカウントにサインアップするには、[Office 365 開発者プログラム](https://dev.office.com/devprogram)にご参加ください。
+  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/en-us/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](https://docs.microsoft.com/ja-jp/office/developer-program/office-365-developer-program)を参照してください。
      
-- Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の 専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint のアドイン カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
+- Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
     
 
 ## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>Excel Online または Word Online からアドインをデバッグする
