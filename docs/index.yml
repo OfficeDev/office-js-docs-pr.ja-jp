@@ -1,0 +1,89 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Office アドイン ドキュメント
+metadata:
+  title: Office アドイン ドキュメント - クイックスタート、API リファレンス
+  meta.description: Learn how to build Office Add-ins.
+  author: o365devx
+  ms.topic: landing-page
+  ms.date: 12/04/2017
+  ms.author: o365devx
+  ms.openlocfilehash: 4e5d08869ab343abe6915d4039a7124ac10b386a
+  ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 05/25/2018
+  ms.locfileid: "19476446"
+abstract:
+  description: <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office アドインのプラットフォーム</a> を使用すると、Office アプリケーションを拡張し、Office ドキュメントのコンテンツと対話するソリューションを構築できます。 Office アドインで、HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、および Outlookを拡張して対話操作することができます。 ソリューションは、Office for Windows、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームで実行できます。 クイック スタート、ハウツー ガイド、および API リファレンス ドキュメントで Office アドインを作成する方法を学びます。<br/><br/><b>注意：</b> COM または VSTO アドインについては、<a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN ドキュメント</a>を参照してください。
+  aside:
+    image:
+      alt: 
+      height: 130
+      src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      width: 250
+    title: Office アドインを使い始める。(14:10)
+    href: https://channel9.msdn.com/Events/Connect/2017/T192
+    width: 250
+sections:
+- title: 5 分クイック スタート
+  items:
+  - type: paragraph
+    text: 最初の Office アドインを作成する方法を学びます：
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ExcelLogoColor.svg
+      text: Excel
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/WordLogoColor.svg
+      text: Word
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OneNoteLogoColor.svg
+      text: OneNote
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/onenote-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OutlookLogoColor.svg
+      text: Outlook
+      href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+      text: PowerPoint
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/powerpoint-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ProjectLogoColor.svg
+      text: Project
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/project-quickstart
+- title: ハウツー ガイド
+  items:
+  - type: paragraph
+    text: Office アドインをデザイン、ビルド、テスト、デバッグ、および公開する方法を学びます。
+  - type: list
+    style: unordered
+    className: spaced bullet
+    items:
+    - html: <a href="/en-us/office/dev/add-ins/design/add-in-design">Office アドインのユーザー インターフェイスをデザインする</a>
+    - html: <a href="/en-us/office/dev/add-ins/excel/excel-add-ins-overview">Excel アドインの開発</a>
+    - html: <a href="/en-us/office/dev/add-ins/word/word-add-ins-programming-overview">Word アドインの開発</a>
+    - html: <a href="/en-us/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">OneNote アドインの開発</a>
+    - html: <a href="https://docs.microsoft.com/outlook/add-ins">Outlook アドインの開発</a>
+    - html: <a href="/en-us/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint アドインの開発</a>
+    - html: <a href="/en-us/office/dev/add-ins/project/project-add-ins">Project アドインの開発</a>
+    - html: <a href="/en-us/office/dev/add-ins/testing/test-debug-office-add-ins">Office アドインのテストとデバッグ</a>
+    - html: <a href="/en-us/office/dev/add-ins/publish/publish">Office アドインを公開する</a>
+- title: 参照
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: 共通 API (2013)
+      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">JavaScript API for Office</a></p>
+    - title: ホスト固有の API (2016)
+      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
+    - title: >
+        その他
+      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">API オープン仕様</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office アドインのマニフェスト</a></p>
