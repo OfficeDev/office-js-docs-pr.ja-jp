@@ -2,9 +2,13 @@
 title: Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 6d435c0e3a0383d03f28e095c56b62e967394e22
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437137"
 ---
-
-
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 
 

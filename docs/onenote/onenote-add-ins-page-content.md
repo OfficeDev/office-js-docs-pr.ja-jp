@@ -2,8 +2,13 @@
 title: OneNote ページ コンテンツを使用する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: d05f251a798a7670983187bfa4c80140b30f6147
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19438859"
 ---
-
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する 
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
@@ -22,9 +27,12 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 その後、次のオブジェクトのメソッドを使用して、Page.addOutline や Outline.appendHtml などのページのコンテンツを操作します。 
 
-- [Page](https://dev.office.com/reference/add-ins/onenote/page)
-- [Outline](https://dev.office.com/reference/add-ins/onenote/outline)
-- [Paragraph](https://dev.office.com/reference/add-ins/onenote/paragraph)
+- [ページ
+](https://dev.office.com/reference/add-ins/onenote/page)
+- [アウトライン
+](https://dev.office.com/reference/add-ins/onenote/outline)
+- [段落
+](https://dev.office.com/reference/add-ins/onenote/paragraph)
 
 OneNote ページのコンテンツと構造は、HTML で表されます。次に説明するように、ページ コンテンツの作成や更新には、HTML のサブセットだけがサポートされています。
 

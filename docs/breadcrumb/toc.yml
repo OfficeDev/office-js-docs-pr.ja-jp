@@ -2,16 +2,18 @@
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: アドイン
-    tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins
-    items:
-    - name: チュートリアル
-      tocHref: /office/dev/add-ins
-      items: 
-      - name: Excel アドインのチュートリアル
-        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-      - name: PowerPoint アドインのチュートリアル
-        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+    - name: アドイン
+      tocHref: /office/dev/add-ins/
+      topicHref: /office/dev/add-ins
+      items:
+        - name: チュートリアル
+          items:
+            - name: Excel アドイン チュートリアル
+              tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+              topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+            - name: PowerPoint アドイン チュートリアル
+              tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+              topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+            - name: Word アドイン チュートリアル
+              tocHref: /office/dev/add-ins/tutorials/word-tutorial
+              topicHref: /office/dev/add-ins/tutorials/word-tutorial

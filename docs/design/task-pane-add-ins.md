@@ -2,9 +2,13 @@
 title: Office アドインの作業ウィンドウ
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: d60af0a31b9f96be17aa55bda789d13c386d0a5b
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437200"
 ---
-
-
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
 作業ウィンドウは、通常 Word、PowerPoint、Excel、Outlook 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。機能を直接ドキュメントに埋め込む必要がない場合は、作業ウィンドウを使用します。

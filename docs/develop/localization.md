@@ -2,8 +2,13 @@
 title: Office アドインのローカライズ
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: d7888859ca29a62541020b45b0b7a3638c41f4f2
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437739"
 ---
-
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
 Office アドイン に適切なローカライズ方法を任意に選んで実装できます。JavaScript API と Office アドイン プラットフォームのマニフェスト スキーマには、いくつかの選択肢が用意されています。JavaScript API for Office を使用すると、ホスト アプリケーションのロケールに基づいてロケールを決定して文字列を表示したり、データのロケールに基づいてデータを変換または表示することができます。マニフェストを使用すると、ロケールに固有なアドイン ファイルの場所と説明的な情報を指定できます。または、Microsoft Ajax スクリプトを使用して、グローバリゼーションとローカライズをサポートできます。
@@ -49,7 +54,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 
 |**要素**|**ローカライズのサポート**|
 |:-----|:-----|
-|[Description]   |指定した各ロケールのユーザーには、AppSource (またはプライベート カタログ) でローカライズされたアドインの説明が表示されます。<br/>Outlook アドインについては、アドインのインストール後に Exchange 管理センター (EAC) に表示される説明が該当します。|
+|[説明]   |指定した各ロケールのユーザーには、AppSource (またはプライベート カタログ) でローカライズされたアドインの説明が表示されます。<br/>Outlook アドインについては、アドインのインストール後に Exchange 管理センター (EAC) に表示される説明が該当します。|
 |[DisplayName]   |指定した各ロケールのユーザーには、AppSource (またはプライベート カタログ) でローカライズされたアドインの説明が表示されます。<br/>Outlook アドインについては、アドインのインストール後に [Outlook アドイン] ボタンのラベルおよび EAC に表示される表示名が該当します。<br/>コンテンツ アドインおよび作業ウィンドウ アドインについては、アドインのインストール後にリボンに表示される表示名が該当します。|
 |[IconUrl]        |アイコンのイメージは省略可能です。ここで説明したオーバーライドと同じ方法で、特定のカルチャに特定のイメージを指定できます。アイコンを使用し、ローカライズした場合、指定した各ロケールのユーザーには、アドインのローカライズされたアイコン画像が表示されます。<br/>Outlook アドインについては、アドインのインストール後に EAC で表示されるアイコンが該当します。<br/>コンテンツ アドインおよび作業ウィンドウ アドインについては、アドインのインストール後にリボンに表示されるアイコンが該当します。|
 |[HighResolutionIconUrl] **重要:** この要素は、アドイン マニフェストのバージョン 1.1 を使用する場合にのみ使用できます。|高解像度のアイコンのイメージは省略可能ですが、指定する場合は、[IconUrl] 要素の後に指定する必要があります。[HighResolutionIconUrl] が指定され、高解像度の dpi をサポートするデバイスにアドインがインストールされている場合、[IconUrl] の値の代わりに [HighResolutionIconUrl] の値が使用されます。<br/>ここで説明したオーバーライドと同じ方法で、特定のカルチャに特定のイメージを指定できます。アイコンを使用し、ローカライズした場合、指定した各ロケールのユーザーには、アドインのローカライズされたアイコン画像が表示されます。<br/>Outlook アドインについては、アドインのインストール後に EAC で表示されるアイコンが該当します。<br/>コンテンツ アドインおよび作業ウィンドウ アドインについては、アドインのインストール後にリボンに表示されるアイコンが該当します。|
@@ -57,8 +62,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 |[SourceLocation]   |指定した各ロケールのユーザーには、そのロケールのアドイン専用にデザインした Web ページが表示されます。 |
 
 
-> 
-  **メモ** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/ja-jp/library/cc179219.aspx)」を参照してください。
+> **メモ** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219.aspx)」を参照してください。
 
 
 ### <a name="examples"></a>例
@@ -350,7 +354,7 @@ UIStrings.js リソース ファイルは、アドインの UI のローカラ�
 
 Home.js ファイルのコードを次のコードで置き換えます。このコードは、ホスト アプリケーションの表示言語または編集言語に基づいて、Home.html で UI 要素に使用される文字列を変更する方法を示しています。
 
-> **メモ** 編集言語に基づくアドインのローカライズの変更に切り替えるには、コード行 `var myLanguage = Office.context.contentLanguage;` のコメントを解除し、コード行 `var myLanguage = Office.context.displayLanguage;` をコメント化します。
+> **メモ** 編集言語に基づくアドインのローカライズの変更に切り替えるには、コード行 `var myLanguage = Office.context.contentLanguage;` のコメントを解除し、コード行 `var myLanguage = Office.context.displayLanguage;` をコメント化します。 `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -415,20 +419,19 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)    
-- 
-  [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/ja-jp/library/cc179219%28Office.15%29.aspx)
+- [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[Description]:          https://dev.office.com/reference/add-ins/manifest/description
+[説明]:          https://dev.office.com/reference/add-ins/manifest/description
 [DisplayName]:          https://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]:              https://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]:            https://dev.office.com/reference/add-ins/manifest/resources
+[リソース]:            https://dev.office.com/reference/add-ins/manifest/resources
 [SourceLocation]:       https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[Override]:             https://dev.office.com/reference/add-ins/manifest/override
-[DesktopSettings]:      https://dev.office.com/reference/add-ins/manifest/desktopsettings
-[TabletSettings]:       https://dev.office.com/reference/add-ins/manifest/tabletsettings
-[PhoneSettings]:        https://dev.office.com/reference/add-ins/manifest/phonesettings
-[displayLanguage]:  https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
-[contentLanguage]:  https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
+[オーバーライド]:             https://dev.office.com/reference/add-ins/manifest/override
+[デスクトップ設定]:      https://dev.office.com/reference/add-ins/manifest/desktopsettings
+[タブレット設定]:       https://dev.office.com/reference/add-ins/manifest/tabletsettings
+[スマホ設定]:        https://dev.office.com/reference/add-ins/manifest/phonesettings
+[言語表示]:  https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
+[コンテンツ言語]:  https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

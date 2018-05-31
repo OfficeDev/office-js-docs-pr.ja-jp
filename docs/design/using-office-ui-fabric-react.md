@@ -2,6 +2,12 @@
 title: Office アドインでの Office UI Fabric React の使用
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 8ae8bac8c8043b51188d765dd7170922dcc1c84e
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437599"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -19,7 +25,7 @@ Fabric React を使用するアドインを作成するには、Office 用の Ye
 プロジェクトを作成するには、**Windows PowerShell** (コマンド プロンプトではありません) を使用して、次の手順を実行します。
 
 1. 必須コンポーネントをインストールします。
-2. `yo office` を実行して、アドイン用のプロジェクト ファイルを作成します。
+2. を実行して、アドイン用のプロジェクト ファイルを作成します。`yo office`
 3. Office クライアント アプリケーションを選択するように促されたら、**Word** を選択します。
 4. プロジェクト ファイルと同じディレクトリにいることを確認し、`npm start` を実行します。スピナーを表示するブラウザー ウィンドウが自動的に開きます。
 5. [マニフェストをサイドロード](..\testing\test-debug-office-add-ins.md)し、アドインのすべての UI を表示します。
@@ -69,11 +75,11 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 このコードは、次の処理を実行します。
 
-- `import * as React from 'react';` を使用して、React ライブラリを参照します。
-- `ButtonPrimaryExample` の作成に使用する Fabric コンポーネント (PrimaryButton、IButtonProps、Label) を参照します。
-- `export class ButtonPrimaryExample extends React.Component` を使用して、新しいパブリック `ButtonPrimaryExample` コンポーネントを宣言して作成します。
-- `onClick` イベントを処理する `insertText` 関数を宣言します。
-- `render` 関数で React コンポーネントの UI を定義します。レンダリングで、コンポーネントの構造を定義します。`render` で、`this.insertText` を使って `onClick` イベントの関連付けを行います。
+- を使用して、React ライブラリを参照します。`import * as React from 'react';`
+- の作成に使用する Fabric コンポーネント (PrimaryButton、IButtonProps、Label) を参照します。`ButtonPrimaryExample`
+- を使用して、新しいパブリック `ButtonPrimaryExample` コンポーネントを宣言して作成します。`export class ButtonPrimaryExample extends React.Component`
+- イベントを処理する `insertText` 関数を宣言します。`onClick`
+- 関数で React コンポーネントの UI を定義します。レンダリングで、コンポーネントの構造を定義します。`render` で、`this.insertText` を使って `onClick` イベントの関連付けを行います。`render`
 
 ## <a name="step-3---add-the-react-component-to-your-add-in"></a>手順 3 - React コンポーネントをアドインに追加
 
@@ -106,16 +112,16 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 次のリストは、アドインでの使用に推奨される Fabric React UX コンポーネントです。
 
-- [Breadcrumb](breadcrumb.md)
-- [Button](button.md)
-- [Checkbox](checkbox.md)
+- [パンくずリスト](breadcrumb.md)
+- [ボタン](button.md)
+- [チェックボックス](checkbox.md)
 - [ChoiceGroup](choicegroup.md)
-- [Dropdown](dropdown.md)
-- [Label](label.md)
-- [List](list.md)
-- [Pivot](pivot.md)
-- [TextField](textfield.md)
-- [Toggle](toggle.md)
+- [ドロップダウン](dropdown.md)
+- [ラベル](label.md)
+- [リスト](list.md)
+- [コアドキュメント](pivot.md)
+- [テキストボックス](textfield.md)
+- [切り替え](toggle.md)
 
 > [!NOTE]
 > 追加のコンポーネントを徐々に増やしていく予定です。
@@ -126,5 +132,4 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 - [Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [UX 設計パターン (Fabric 2.6.1 を使用)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office アドイン Fabric UI サンプル (Fabric 1.0 を使用)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Office アドインでの Fabric 2.6.1 の使用](ui-elements/using-office-ui-fabric.md)
 - [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)

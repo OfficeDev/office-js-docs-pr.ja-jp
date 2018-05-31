@@ -2,10 +2,13 @@
 title: アドイン コマンドのアイコンをデザインする
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: a3dc7837bdc95df9576a5fc4a6c1840e64afacb6
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437480"
 ---
-
-
-
 # <a name="design-icons-for-add-in-commands"></a>アドイン コマンドのアイコンをデザインする
 
 [アドイン コマンド](add-in-commands.md)は、Office UI にボタン、テキスト、およびアイコンを追加します。アドイン コマンドのボタンには、ユーザーがコマンドを使うときに、実行しようとするアクションを明確に識別できる、分かりやすいアイコンとラベルをつける必要があります。この記事では、Office とシームレスに統合するアイコンをデザインするための、スタイルと運用に関するガイドラインを提示します。 
@@ -102,27 +105,27 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 
 |**アイコンのサイズ**|**基本要素の周囲のパディング**|
 |:---|:---|
-|16px|0|
-|20px|1px|
-|24px|1px|
-|32px|2px|
-|40px|2px|
-|48px|3px|
-|64px|5px|
-|80px|5px|
+|16 px|0|
+|20 px|1 px|
+|24 px|1 px|
+|32 px|2 px|
+|40 px|2 px|
+|48 px|3 px|
+|64 px|5 px|
+|80 px|5 px|
 
 すべての修飾子には、背景を含め、各要素の間に 1px の透明なカットアウトが必要です。要素が直接重ならないようにします。ルールとエッジの間に余白を作ります。修飾子はサイズが少しずつ異なっている場合がありますが、開始点としてこれらのサイズを使用します。
 
 |**アイコンのサイズ**|**修飾子のサイズ**|
 |:---|:---|
-|16px|9px|
-|20px|10px|
-|24px|12px|
-|32px|14px|
-|40px|20px|
-|48px|22px|
-|64px|29px|
-|80px|38px|
+|16 px|9 px|
+|20 px|10 px|
+|24 px|12 px|
+|32 px|14 px|
+|40 px|20 px|
+|48 px|22 px|
+|64 px|29 px|
+|80 px|38 px|
 
 ## <a name="icon-colors"></a>アイコンの色
 

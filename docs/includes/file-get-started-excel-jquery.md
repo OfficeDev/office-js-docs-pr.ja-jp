@@ -10,7 +10,7 @@
 
 ### <a name="prerequisites"></a>前提条件
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -111,11 +111,11 @@
 
 1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Excel** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -269,11 +269,11 @@
 
 1. **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Excel** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -316,7 +316,7 @@
 これで完了です。jQuery を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>関連項目
 

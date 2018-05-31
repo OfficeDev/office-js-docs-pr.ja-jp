@@ -2,15 +2,19 @@
 title: JavaScript API for Office について
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 1ff65e8cf081330c0ce5fe8d048f703b259a5ef3
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437683"
 ---
-
-
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
 この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>アドインで JavaScript API for Office ライブラリを参照する
 
@@ -22,7 +26,7 @@ ms.date: 01/23/2018
 
 これにより、アドインが最初に読み込まれるときに JavaScript API for Office ファイルのダウンロードとキャッシュを実行して、アドインが確実に指定したバージョンの最新の Office.js および関連ファイルを使用するようにします。
 
-バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する](referencing-the-javascript-api-for-office-library-from-its-cdn.md)」を参照してください。
+バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[ JavaScript API for Office ライブラリをそのコンテンツ配信ネットワーク (CDN) から参照する](referencing-the-javascript-api-for-office-library-from-its-cdn.md)」を参照してください。
 
 ## <a name="initializing-your-add-in"></a>アドインの初期化
 
@@ -137,7 +141,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
 
 > [!TIP]
-> **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。**行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
+> **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。** 行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
 
 指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.error) プロパティが `"failed"` を返すため、[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.context) プロパティを使用して [Error](https://dev.office.com/reference/add-ins/shared/error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
 
@@ -224,7 +228,7 @@ var item = Office.context.mailbox.item;
     
 -  **RoamingSettings** オブジェクト: アドインがインストールされているユーザーのメールボックスに Outlook アドイン固有のカスタム設定を保存する際に使用します。
     
-Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](https://docs.microsoft.com/ja-jp/outlook/add-ins/)」を参照してください。
+Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](https://docs.microsoft.com/en-us/outlook/add-ins/)」を参照してください。
 
 
 ## <a name="api-support-matrix"></a>API サポート マトリックス
@@ -236,7 +240,7 @@ Outlook アドインでの JavaScript の使用については、「[Outlook ア
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**ホスト名**|データベース|ブック|メールボックス|プレゼンテーション|ドキュメント|Project|
-||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>OWA for Devices|PowerPoint,<br/>PowerPoint Online|Word|プロジェクト|
+||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>デバイス用OWA|PowerPoint、<br/>PowerPoint Online|Word|プロジェクト|
 |**サポートされるアドインの種類**|コンテンツ|Y|Y||Y|||
 ||作業ウィンドウ||Y||Y|Y|Y|
 ||Outlook|||Y||||
