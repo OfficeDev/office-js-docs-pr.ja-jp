@@ -10,7 +10,7 @@
 
 ### <a name="prerequisites"></a>前提条件
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -186,22 +186,20 @@
     cd my-powerpoint-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行して、以下のプロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のとおり、プロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `Yes`
-    - **Would you like to use TypeScript?: (TypeScript を使用しますか)** `No`
-    - **Choose a framework: (フレームワークを選択してください)** `Jquery`
-
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
+    - **Choose a project type (プロジェクト タイプを選んでください):** `Jquery`
+    - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
+    - **What do you want to name your add-in? (アドインの名前を入力してください):** `My Office Add-in`
+    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Powerpoint`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint-jquery.png)
+    
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
 ### <a name="update-the-code"></a>コードを更新する
 
@@ -354,7 +352,7 @@
 
 ## <a name="next-steps"></a>次のステップ
 
-これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明します。PowePoint アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明し、PowePoint アドインのチュートリアルにしたがって、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)

@@ -2,12 +2,12 @@
 title: Office アドインを実行するための要件
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: a4859af73d8e9cf041990a3533894b24f1cbde6f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 944ac0c26b864124a8c86b46e023609120d8ea75
+ms.sourcegitcommit: 3e4e3a45a07ed91176cab182c44184c196c23d35
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437424"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "20159678"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -50,6 +50,10 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
     - [Office 2013 for Home (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
 
 - Internet Explorer 11 以降をインストールする必要がありますが、必ずしも既定のブラウザーにする必要はありません。Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 以降に組み込まれているブラウザー コンポーネントを使用します。
+
+  > [!NOTE]
+  > Office Web アドインが機能するには、Internet Explorer のセキュリティ強化の構成 (ESC) を無効にする必要があります。 アドインの開発時に Windows Server コンピュータをクライアントとして使用している場合、Windows Server では既定値で ESC がオンになっていることに注意してください。
+
 - 既定のブラウザーとして次のいずれか:Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
 - メモ帳などの HTML および JavaScript エディター、[Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
 
@@ -78,7 +82,7 @@ Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS
 |OWA for Android|Android スマートフォン。技術的には、「 [Android OS](https://developer.android.com/guide/practices/screens_support.html)」によって「小型」または「標準」に分類されるデバイス。|Android 4.4 KitKat 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|Android 用のネイティブ アドイン、ブラウザーは適用外|
 |OWA for iPad|iPad 2 以降|iOS 6 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|iOS 用のネイティブ アドイン、ブラウザーは適用外|
 |OWA for iPhone|iPhone 4S 以降|iOS 6 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|iOS 用のネイティブ アドイン、ブラウザーは適用外|
-|Outlook Web App|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Office 365、Exchange Online、または Exchange Server 2013 以降の社内型が対象|Safari|
+|Outlook Web アプリ|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Office 365、Exchange Online、または Exchange Server 2013 以降の社内型が対象|Safari|
 
 
 ## <a name="see-also"></a>関連項目
