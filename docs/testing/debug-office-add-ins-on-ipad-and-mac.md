@@ -2,12 +2,12 @@
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 5d68fa000e19d81ebbcd1b383a790958f2bbac72
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
+ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439636"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "19722332"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
@@ -15,7 +15,7 @@ Windows でのアドインの開発とデバッグには Visual Studio を使用
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
 
-Safari Web インスペクタを使用して、Office アドインをデバッグできます。 
+タスクペインまたはコンテンツアドインに UI を表示するアドインがある場合は、Safari Web Inspector を使用して Office アドインをデバッグできます。 
 
 Mac で Office アドインをデバッグできるようにするには、Mac OS High Sierra および Mac Office バージョン 16.9.1（ビルド 18012504）以降が必要です。 Office Mac ビルドをお持ちでない場合は、 [Office 365 開発者向けプログラム](https://aka.ms/o365devprogram)に加入すると入手できます。
 
@@ -36,7 +36,7 @@ Mac で Office アドインをデバッグできるようにするには、Mac O
 
 ## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>iPad または Mac での Vorlon.JS を使用したデバッグ
 
-iPad または Mac でアドインをデバッグするには、F12 ツールに似た Web ページのデバッガである Vorlon.JS を使用します。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については、[Vorlon の Web サイト](http://www.vorlonjs.com) を参照してください。  
+iPad または Mac でアドインをデバッグするには、F12 ツールに似た Web ページのデバッガである Vorlon.JS を使用します。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については [Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
 
 
 ### <a name="install-and-set-up-vorlonjs"></a>Vorlon.JS のインストールとセットアップ  

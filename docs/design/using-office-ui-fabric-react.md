@@ -2,12 +2,12 @@
 title: Office アドインでの Office UI Fabric React の使用
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8ae8bac8c8043b51188d765dd7170922dcc1c84e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e078640cbcc6217e9ed0a1ad99ef02afbfd317a8
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437599"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084078"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -108,23 +108,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 変更を保存します。アドインを含む開いているすべてのブラウザー インスタンスは、自動的に更新され、`ButtonPrimaryExample` React コンポーネントが表示されます。既定のテキストとボタンが、`ButtonPrimaryExample` で定義されたテキストとプライマリ ボタンに置き換えられることに注意してください。
 
-## <a name="recommended-components"></a>推奨されるコンポーネント
 
-次のリストは、アドインでの使用に推奨される Fabric React UX コンポーネントです。
-
-- [パンくずリスト](breadcrumb.md)
-- [ボタン](button.md)
-- [チェックボックス](checkbox.md)
-- [ChoiceGroup](choicegroup.md)
-- [ドロップダウン](dropdown.md)
-- [ラベル](label.md)
-- [リスト](list.md)
-- [コアドキュメント](pivot.md)
-- [テキストボックス](textfield.md)
-- [切り替え](toggle.md)
-
-> [!NOTE]
-> 追加のコンポーネントを徐々に増やしていく予定です。
 
 ## <a name="see-also"></a>関連項目
 

@@ -2,9 +2,13 @@
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084064"
 ---
-
-
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。ユーザーがアドイン コマンドを選択すると、JavaScript コードを実行したり、アドインのページを作業ウィンドウに表示するなどのアクションが開始されます。アドイン コマンドは、ユーザーがアドインを検索して使用ために役立ちます。これにより、アドインの導入と再利用を促進し、顧客維持率を向上させることができます。
@@ -12,7 +16,7 @@ ms.date: 01/23/2018
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
+> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
 
 *図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
@@ -66,9 +70,9 @@ ms.date: 01/23/2018
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
 
      > [!NOTE]
-     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)を通過しない場合があります。
+     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)を通過しない場合があります。
 
-- すべてのアイコンについては、[アイコン デザインのガイドライン](design-icons.md)に従ってください。
+- すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
 
    *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*

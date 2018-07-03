@@ -22,29 +22,27 @@
     cd my-onenote-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します：
 
     ```bash
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `OneNote Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `Yes`
-    - **Would you like to use TypeScript?: (TypeScript を使用しますか)** `No`
-    - **Choose a framework: (フレームワークを選択してください)** `Jquery`
-
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
+    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Jquery`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Onenote`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote-jquery.png)
+    
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
 
 ## <a name="update-the-code"></a>コードを更新する
 
 1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
 
-2. `<body>` 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。 これは、[Office UI Fabric コンポーネント](http://dev.office.com/fabric/components)を使用してテキスト領域とボタンを追加します。
+2. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>` これは、[Office UI Fabric コンポーネント](http://dev.office.com/fabric/components)を使用してテキスト領域とボタンを追加します。
 
     ```html
     <main class="ms-welcome__main">
@@ -112,9 +110,9 @@
 
 1. **one-note-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for OneNote** に置き換えてください。
+3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for OneNote** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -148,7 +146,9 @@
 
 3. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **one-note-add-in-manifest.xml** を参照し、**[アップロード]** を選択します。 
 
-4. アドインは、OneNote ページの横にある iFrame で開きます。テキスト領域にテキストを入力し、**[アウトラインの追加]** をクリックします。入力したテキストは、ページに追加されます。 
+4. **ホーム**タブから、リボンの**タスクペインを表示**ボタンを選択します。 アドインは、OneNote ページの横にある iFrame で開きます。
+
+5. テキスト領域にテキストを入力し、**[枠線の追加]** を選択します。 入力したテキストは、ページに追加されます。 
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in.png)
 
