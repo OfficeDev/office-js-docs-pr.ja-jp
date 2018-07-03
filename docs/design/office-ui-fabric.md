@@ -2,9 +2,13 @@
 title: Office アドインでの Office UI Fabric
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 04964d5864eea4a960f7b57e5df6f7bd7c844fde
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084071"
 ---
-
-
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric 
 
 Office UI Fabric は、Office と Office 365 のユーザー エクスペリエンスをビルドするための JavaScript フロントエンドのフレームワークです。Fabric は、拡張や改訂が可能な視覚効果に焦点を合わせたコンポーネントであり、Office アドインで使用できます。Fabric は Office デザイン言語を使用するため、Fabric の UX コンポーネントは Office に元々組み込まれているかのように自然に使うことができます。 
@@ -40,15 +44,25 @@ Fabric Core の使用を開始するには
 Fabric には、次のタイプのコンポーネントを含む、さまざまな UX コンポーネントが用意されています。これらを使用してアドインを作成できます。
 
 - 入力コンポーネント - 例: ボタン、チェック ボックス、および切り替え
-- ナビゲーション コンポーネント - 例: Pivot Breadcrumb
+- 移動コンポーネント - 例: コアドキュメントおよびパンくずリスト
 - 通知コンポーネント - 例: MessageBar および Callout  
 
-すべての Fabric コンポーネントがアドインでの使用に適しているわけではありません。このセクションで推奨されるコンポーネントの使用方法については、ガイダンスが用意されています。たとえば、アドインで Fabric のボタンを使用するためのガイダンスについては、「[ボタン](button.md)」を参照してください。 
+すべての Fabric コンポーネントがアドインでの使用を推奨しているわけではありません。アドインでの使用を推奨する Fabric React UX コンポーネントのリストを以下に示します。
+
+- [パンくずリスト](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
+- [ボタン](https://developer.microsoft.com/en-us/fabric#/components/button)
+- [チェックボックス](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
+- [ドロップダウン](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
+- [ラベル](https://developer.microsoft.com/en-us/fabric#/components/label)
+- [リスト](https://developer.microsoft.com/en-us/fabric#/components/list)
+- [コアドキュメント](https://developer.microsoft.com/en-us/fabric#/components/pivot)
+- [テキスト フィールド](https://developer.microsoft.com/en-us/fabric#/components/textfield)
+- [切り替え](https://developer.microsoft.com/en-us/fabric#/components/toggle)
 
 アドインの作成には、Angular や React など別の JavaScript フレームワークも使用できます。フレームワークで Fabric コンポーネントを使用するには、次のリソースを参照してください。
 
 |**フレームワーク**|**例**|
 |:------------|:----------|
-|**JavaScript のみ** (フレームワークでない)|[Office アドインで Office UI Fabric JS を使用する](using-office-ui-fabric-js.md)。|
 |**React**|[Office アドインで Office UI Fabric React を使用する](using-office-ui-fabric-react.md )|
 |**Angular**| Angular 1.5 ディレクティブのコミュニティ プロジェクトである「[ngOfficeUIFabric](http://ngofficeuifabric.com/)」と、「[Fabric コンポーネントと Angular 2 コンポーネントとのラッピングについて検討する](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)」を参照してください。|

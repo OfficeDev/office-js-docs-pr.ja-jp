@@ -45,15 +45,15 @@ vue init webpack my-add-in
 2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `No`
+    - **プロジェクト タイプを選択してください：** `Manifest`
+    - **アドインの名前を何にしますか？** `My Office Add-in`
+    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
 
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
+
+    ウィザードを完了すると、マニフェストファイルとリソースファイルを使用してプロジェクトをビルドできます。
 
     ![Yeoman ジェネレーター](../images/yo-office.png)
     
@@ -204,7 +204,7 @@ vue init webpack my-add-in
 これで完了です。Vue を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>関連項目
 

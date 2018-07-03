@@ -2,6 +2,12 @@
 
 この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
 
+## <a name="environment"></a>環境
+
+- **Office Desktop**最新バージョンのOfficeがインストールされていることを確認してください。 アドインコマンドにはビルド16.0.6769.0000以上が必要です（**16.0.6868.0000** 推奨）。 [Officeアプリケーションの最新バージョンをインストールする](http://aka.ms/latestoffice)のやり方を学ぼう。 
+ 
+- **Office Online**：追加設定はありません。 Office Online の職場/学校アカウント用コマンドのサポートはプレビューになっています。
+
 ## <a name="prerequisites"></a>前提条件
 
 - [Create React App](https://github.com/facebookincubator/create-react-app) をグローバルにインストールします。
@@ -37,16 +43,16 @@ create-react-app my-addin
 2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下のスクリーンショットに示すとおり、プロンプトに応答します。
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクト用の新しいサブフォルダーを作成しますか)** `No`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Manifest`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `No`
 
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
 
+    ウィザードを完了すると、マニフェスト ファイルとリソース ファイルを使用してプロジェクトをビルドできます。
+    
     ![Yeoman ジェネレーター](../images/yo-office.png)
     
     > [!NOTE]
@@ -154,12 +160,12 @@ create-react-app my-addin
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
-    Windows: 
+    Windows
     ```bash
     set HTTPS=true&&npm start
     ```
 
-    macOS:
+    macOS
     ```bash
     HTTPS=true npm start
     ```
@@ -182,7 +188,7 @@ create-react-app my-addin
 これで完了です。React を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>関連項目
 

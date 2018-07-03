@@ -12,7 +12,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="prerequisites"></a>前提条件
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -242,22 +242,20 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     cd my-word-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のとおり、プロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `Yes`
-    - **Would you like to use TypeScript?: (TypeScript を使用しますか)** `No`
-    - **Choose a framework: (フレームワークを選択してください)** `Jquery`
-
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
+    - **Choose a project type (プロジェクト タイプを選んでください):** `Jquery`
+    - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
+    - **What do you want to name your add-in? (アドインの名前を入力してください):** `My Office Add-in`
+    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Word`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
+    
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
 ### <a name="update-the-code"></a>コードを更新する
 
@@ -473,7 +471,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの能力の詳細について説明し、Word アドイン チュートリアルにしたがってさらに複雑なアドインを構築します。
+これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがって、さらに複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Word アドイン チュートリアル](../tutorials/word-tutorial.yml)

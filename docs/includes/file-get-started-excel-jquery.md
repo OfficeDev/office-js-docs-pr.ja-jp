@@ -150,7 +150,6 @@
 - [Node.js](https://nodejs.org)
 
 - [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
-
     ```bash
     npm install -g yo generator-office
     ```
@@ -171,17 +170,16 @@
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクト用の新しいサブフォルダーを作成しますか)** `No`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Jquery`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `Yes`
-    - **Would you like to use TypeScript?: (TypeScript を使用しますか)** `No`
-    - **Choose a framework: (フレームワークを選択してください)** `Jquery`
-
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
 
     ![Yeoman ジェネレーター](../images/yo-office-jquery.png)
+    
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
+    
 
 4. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルでは、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 
  
