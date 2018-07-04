@@ -28,22 +28,20 @@
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?: (プロジェクトの新しいサブフォルダーを作成しますか)** `No`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Jquery`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
-    - **Would you like to create a new add-in?: (新しいアドインを作成しますか)** `Yes`
-    - **Would you like to use TypeScript?: (TypeScript を使用しますか)** `No`
-    - **Choose a framework: (フレームワークを選択してください)** `Jquery`
-
-    次に、**resource.html** を開くかどうかを確認するメッセージがジェネレーターによって表示されます。このチュートリアルでは開く必要はありませんが、関心がある場合は自由に開くことができます。[はい] または [いいえ] を選択してウィザードを完了し、ジェネレーターが作業を実行することを許可します。
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project-jquery.png)
+    
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
 ## <a name="update-the-code"></a>コードを更新する
 
 1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
 
-2. `<body>` 要素内の `<header>` 要素を次のマークアップに置き換えます。
+2. 要素内の `<header>` 要素を次のマークアップに置き換えます。`<body>`
 
     ```html
     <div id="content-header">
@@ -53,7 +51,7 @@
     </div>
     ```
 
-3. `<body>` 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+3. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>`
 
     ```html
     <div id="content-main">
@@ -156,9 +154,9 @@
 
 1. **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Project** に置き換えてください。
+3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Project** に置き換えてください。
 
 4. ファイルを保存します。
 
