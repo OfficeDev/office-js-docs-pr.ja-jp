@@ -22,7 +22,7 @@
     cd my-onenote-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します：
+3. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
@@ -59,7 +59,7 @@
     </main>
     ```
 
-3. **app.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. ファイル**index/src.js** を開けてアドインのスクリプトを特定します。コンテンツ全体を次のコードに置き換えてファイルを保存します。
 
     ```js
     'use strict';
@@ -68,8 +68,6 @@
 
         Office.initialize = function (reason) {
             $(document).ready(function () {
-                app.initialize();
-
                 // Set up event handler for the UI.
                 $('#addOutline').click(addOutlineToPage);
             });

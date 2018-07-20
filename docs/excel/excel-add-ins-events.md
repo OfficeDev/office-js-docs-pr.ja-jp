@@ -1,15 +1,17 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 01/29/2018
+ms.date: 05/25/2018
+ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
+ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "20596520"
 ---
-
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
 
 この記事では、Excel のイベント操作に関連する重要な概念について説明します。また、Excel JavaScript API を使用したイベント ハンドラーの登録、イベントの処理、およびイベント ハンドラーの削除の方法を示すコード例も提供します。 
-
-> [!IMPORTANT]
-> この記事で説明する API は、現時点ではパブリック プレビュー (ベータ) としてのみ利用可能であり、運用環境で使用するためのものではありません。 この記事に記載したコード例を実行するには、十分に新しい Office のビルドを使用して、Office.js CDN のベータ ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を参照する必要があります。
 
 ## <a name="events-in-excel"></a>Excel のイベント
 
@@ -17,11 +19,14 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
-| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | **WorksheetCollection** |
-| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | **WorksheetCollection**、**Worksheet** |
-| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | **WorksheetCollection**、**Worksheet** |
-| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | **Worksheet**、**Table**、**TableCollection**、**Binding** |
-| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | **Worksheet**、**Table**、**Binding** |
+| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、 [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、 [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、 [**Table**](https://dev.office.com/reference/add-ins/excel/table)、 [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
+| `onDataChanged` | バインディングでデータまたは書式設定が変更されるときに発生します。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [ **worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)、[ **Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生します。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
@@ -48,7 +53,7 @@ Excel の既定の動作に準拠する変更により、それに対応する�
 ```js
 Excel.run(function (context) {
     var worksheet = context.workbook.worksheets.getItem("Sample");
-    worksheet.onChanged.add(handleDataChange);
+    worksheet.onChanged.add(handleChange);
 
     return context.sync()
         .then(function () {
@@ -62,7 +67,7 @@ Excel.run(function (context) {
 前の例で示したように、イベント ハンドラーの登録時には、特定のイベントが発生したときに実行する関数を指定します。 その関数は、目的のシナリオに必要なアクションを実行するように設計できます。 次のコード例は、イベントに関する情報を単にコンソールに出力するイベント ハンドラー関数を示しています。 
 
 ```js
-function handleDataChange(event)
+function handleChange(event)
 { 
     return Excel.run(function(context){
         return context.sync()
@@ -119,4 +124,3 @@ function remove() {
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API オープン仕様](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Excel イベント機能の概要 (プレビュー)](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/Event_README.md)
