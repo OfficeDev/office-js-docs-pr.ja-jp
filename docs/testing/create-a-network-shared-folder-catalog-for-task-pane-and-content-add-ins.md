@@ -2,18 +2,28 @@
 title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 01/25/2018
+ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270294"
 ---
-
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
-共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。 
+次のいずれかの方法で、Windows 上で実行されている Office クライアントにテスト用の Office アドインをインストールできます。
+
+- 共有フォルダ カタログを使用してマニフェストをネットワーク ファイル共有に公開する（以下の手順）
+- [アドイン プロジェクト フォルダのルートから「**npm run sideload**」コマンドを実行。](sideload-office-addin-using-sideload-command.md) 
+>[!NOTE]
+>「npm run sideload」メソッドは、Excel、Word、および PowerPoint アドインでのみ機能します）。
 
 Word、Excel、PowerPoint のアドインを Windows でテストしない場合は、以下のいずれかのトピックを参照してアドインをサイドロードします。
 
 - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。  
+次のビデオでは、共有フォルダ カタログを使用して Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]

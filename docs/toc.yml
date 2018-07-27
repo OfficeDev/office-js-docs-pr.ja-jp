@@ -25,7 +25,7 @@
         - name: Vue の使用
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-    - name: Word アドインの作成
+    - name: Excel アドインの作成
       href: quickstarts/word-quickstart.md
       displayName: Word
     - name: OneNote アドインの作成
@@ -344,6 +344,8 @@
           items:
             - name: Windows で Office アドインをサイドロードする
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+            - name: サイドロード コマンドを使用した Sideload Office アドイン
+              href: testing/sideload-office-addin-using-sideload-command.md
             - name: 作業ウィンドウからデバッガーをアタッチする
               href: testing/attach-debugger-from-task-pane.md
             - name: F12 開発者ツールを使用してデバッグする
@@ -366,7 +368,7 @@
           href: testing/testing-and-troubleshooting.md
         - name: アドインのマニフェストを検証し問題のトラブルシューティングを行う
           href: testing/troubleshoot-manifest.md
-    - name: 発行する
+    - name: 公開する
       href: publish/publish.md
       items:
         - name: Microsoft Azure で Office アドインをホストする

@@ -186,7 +186,7 @@
     cd my-powerpoint-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のとおり、プロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
@@ -194,8 +194,8 @@
 
     - **Choose a project type (プロジェクト タイプを選んでください):** `Jquery`
     - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
-    - **What do you want to name your add-in? (アドインの名前を入力してください):** `My Office Add-in`
-    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Powerpoint`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Powerpoint`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint-jquery.png)
     
@@ -230,7 +230,7 @@
     </div>
     ```
 
-4. プロジェクトのルートにある **app.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換えて、ファイルを保存します。
+4. ファイル**src\index.js** を開いてアドインのスクリプトを特定します。コンテンツ全体を次のコードに置き換えてファイルを保存します。
 
     ```js
     'use strict';
