@@ -2,12 +2,12 @@
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
-ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
+ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "20596520"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270273"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
 
@@ -24,9 +24,22 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、 [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、 [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、 [**Table**](https://dev.office.com/reference/add-ins/excel/table)、 [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | バインディングでデータまたは書式設定が変更されるときに発生します。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onDataChanged` | バインディングでデータまたは書式設定が変更されたときに発生するイベント。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [ **worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)、[ **Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生します。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+| `onSettingsChanged` | ドキュメント内の設定が変更されたときに発生するイベント。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+
+## <a name="preview-beta-events-in-excel"></a>Excel でのプレビュー（ベータ）イベント
+
+> [!NOTE]
+> これらのイベントは現在、公開プレビュー（ベータ版）でのみ利用できます。 これらの機能を使用するには、Office.js CDN のベータ ライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+
+| イベント | 説明 | サポートされているオブジェクト |
+|:---------------|:-------------|:-----------|
+| `onAdded` | グラフが追加されたときに発生するイベント。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | グラフが削除されたときに発生するイベント。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | グラフがアクティブになったときに発生するイベント。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、 [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | グラフが非アクティブ化されたときに発生するイベント。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、 [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | ワークシートの計算が終了した（またはコレクションのすべてのワークシートが終了した）ときに発生するイベント。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、 [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 

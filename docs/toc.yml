@@ -85,7 +85,7 @@
               href: design/add-in-color.md
             - name: レイアウト
               href: design/add-in-layout.md
-            - name: アイコン
+            - name: アイコンの場合
               href: design/add-in-icons.md
             - name: モーションの使用
               href: design/using-motion-office-addins.md
@@ -126,7 +126,7 @@
           href: develop/office-versions-and-requirement-sets.md
         - name: 最新の Office バージョンをインストール
           href: develop/install-latest-office-version.md
-        - name: Office の JavaScript API
+        - name: Office JavaScript API
           href: develop/understanding-the-javascript-api-for-office.md
           items:
             - name: コンテンツおよび作業ウィンドウのアドインのサポート
@@ -159,7 +159,7 @@
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: Node.js を使用して SSO アドインを作成する
                   href: develop/create-sso-office-add-ins-nodejs.md
-                - name: Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する
+                - name: Azure AD v2.0 で SSO を使用する Office アドインを登録する
                   href: develop/register-sso-add-in-aad-v2.md
                 - name: アドインに管理者の同意を付与する
                   href: develop/grant-admin-consent-to-an-add-in.md
@@ -186,7 +186,7 @@
               href: develop/get-javascript-intellisense-in-visual-studio.md
             - name: JavaScript を TypeScript に変換する
               href: develop/convert-javascript-to-typescript.md
-        - name: iPad 用の Office アドインを開発する
+        - name: iPad 用のアドインを開発
           href: develop/develop-office-add-ins-for-the-ipad.md
         - name: Angular でアドインを開発
           href: develop/add-ins-with-angular2.md
@@ -277,7 +277,7 @@
         - name: 辞書の作業ウィンドウ アドイン
           href: word/dictionary-task-pane-add-ins.md
           displayName: Word
-        - name: アドインからドキュメント全体を取得する
+        - name: アドインからドキュメント全体を取得
           href: word/get-the-whole-document-from-an-add-in-for-word.md
           displayName: Word
         - name: 現在の選択肢にデータを読み書きする
@@ -285,6 +285,9 @@
           displayName: Word
         - name: ドキュメント内の領域にバインド
           href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+          displayName: Word
+        - name: 検索オプションを使用して Word アドインでテキストを検索する
+          href: word/search-option-guidance.md
           displayName: Word
         - name: Word JavaScript API リファレンス
           href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
@@ -305,7 +308,7 @@
         - name: PowerPoint アドインでドキュメントのテーマを使用する
           href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
           displayName: PowerPoint
-        - name: アドインからドキュメント全体を取得する
+        - name: アドインからドキュメント全体を取得
           href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
           displayName: PowerPoint
     - name: OneNote アドイン
@@ -370,7 +373,7 @@
           href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: Visual Studio を使用してアドインをパッケージ化
           href: publish/package-your-add-in-using-visual-studio.md
-        - name: 一元展開でアドインを発行する
+        - name: 一元展開でアドインを公開する
           href: publish/centralized-deployment.md
         - name: アドインを SharePoint カタログに公開する
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
@@ -378,12 +381,12 @@
           href: 'https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store'
         - name: AppSource の検証ポリシー
           href: 'https://docs.microsoft.com/en-us/office/dev/store/validation-policies'
-- name: リファレンス
+- name: 参照
   items:
     - name: Office アドイン マニフェスト
       href: 'https://dev.office.com/reference/add-ins/manifest/allowsnapshot'
       displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-    - name: Office の JavaScript API
+    - name: Office JavaScript API
       href: 'https://dev.office.com/reference/add-ins/javascript-api-for-office'
       displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
     - name: Excel JavaScript API

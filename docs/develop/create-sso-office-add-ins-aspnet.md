@@ -2,12 +2,12 @@
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6a1c8ea7a8634d701a43e08fd8bb9c5f9c1863cd
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
+ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437718"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "21241139"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -42,11 +42,11 @@ ms.locfileid: "19437718"
 
    > 1. **[ツール]** メニューで **[Nuget パッケージ マネージャー]** > **[パッケージ マネージャー コンソール]** に移動します。 
 
-   > 2. コンソールで、次のコマンドを実行します。 これは高速インターネット接続の場合でも、完了までに数分かかることがあります。 完了すると、コンソールの出力の末尾に **'Microsoft.Identity.Client 1.1.1-alpha0393' が正常にインストールされました...** というメッセージが表示されます。
+   > 2. コンソールで、次のコマンドを実行します。高速インターネット接続でも完了に１分以上かかることがあります。完了するとコンソールの出力の最後付近に ** 「Microsoft.Identity.Client 1.1.4-alpha0002」が正常にインストールされました ...** と表示されます。
 
-   >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
+   >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。**Microsoft.Identity.Client** がリストされていることを確認します。リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
+   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。**Microsoft.Identity.Client** がリストされていることを確認します。リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
 
 1. もう一度プロジェクトをビルドします。
 
@@ -59,12 +59,12 @@ ms.locfileid: "19437718"
     * Files.Read.All
     * offline_access
     * openid
-    * profile
+    * プロフィール
 
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>アドインに管理者の同意を与える
+## <a name="grant-administrator-consent-to-the-add-in"></a>アドインに管理者の同意を付与する
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
@@ -120,7 +120,7 @@ ms.locfileid: "19437718"
     </WebApplicationInfo>
     ```
 
-1. このマークアップ内の*両方の場所の*プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 "{}" はIDの一部ではないので、それらを含めないでください。 これは、web.config の ClientID と Audience に使用したものと同じ ID です。
+1. このマークアップ内の*両方の場所の*プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 「{} 」は ID の一部ではないので、これらを含めないでください。 これは、web.config の ClientID と Audience に使用したものと同じ ID です。
 
     > [!NOTE]
     > * **[リソース]** の値は、アドインの登録に Web API プラットフォームを追加したときに設定した **[アプリケーション ID URI]** です。
@@ -165,7 +165,7 @@ ms.locfileid: "19437718"
     * メソッドは、作業ウィンドウの下側に Microsoft Graph から返されたデータ (またはエラー メッセージ) を表示するものです。`showResult`
     * メソッドは、エンド ユーザーを対象としていないエラーをコンソールにログ出力するものです。`logErrors`
 
-1. `Office.initialize` への割り当ての下に、次に示すコードを追加します。このコードについては、次の点に注意してください。
+1. |||UNTRANSLATED_CONTENT_START|||Below the assignment to `Office.initialize`, add the code below. Note the following about this code:|||UNTRANSLATED_CONTENT_END|||
 
     * アドインのエラー処理により、アクセス トークンの取得が別のオプションのセットを使用して自動的に再試行されることがあります。 カウンター変数 `timesGetOneDriveFilesHasRun` とフラグ変数 `triedWithoutForceConsent` を使用して、失敗するトークン取得の繰り返しからユーザーが抜け出せるようにします。 
     * この後の手順では `getDataWithToken` メソッドを作成しますが、そのメソッドで `forceConsent` というオプションが `false` に設定される点に注意してください。詳細については、次の手順で説明します。
@@ -309,7 +309,7 @@ ms.locfileid: "19437718"
         break;      
     ```
 
-1. `TODO7` を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync` の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
+1. |||UNTRANSLATED_CONTENT_START|||Replace `TODO7` with the following code. Error 13008 occurs when the user tiggered an operation that calls `getAccessTokenAsync` before a previous call of it completed.|||UNTRANSLATED_CONTENT_END|||
 
     ```javascript
     case 13008:
@@ -368,7 +368,7 @@ ms.locfileid: "19437718"
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. `TODO11` を次のコードに置き換えます。このコードの注意点は次のとおりです。
+1. |||UNTRANSLATED_CONTENT_START|||Replace `TODO11` with the following code. Note about this code:|||UNTRANSLATED_CONTENT_END|||
 
     * エラー 50076 は、Microsoft Graph が認証の追加フォームを必要とする場合に発生します。
     * Office ホストは、`authChallenge` オプションとして **Claims** 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。 
@@ -383,7 +383,7 @@ ms.locfileid: "19437718"
     }    
     ```
 
-1. `TODO12` を次のコードに置き換えます。このコードの注意点は次のとおりです。
+1. |||UNTRANSLATED_CONTENT_START|||Replace `TODO12` with the following code. Note about this code:|||UNTRANSLATED_CONTENT_END|||
 
     * エラー 65001 は、1 つ以上のアクセス許可について Microsoft Graph にアクセスするための同意が与えられていない (または取り消されている) ことを意味します。 
     * アドインでは、`forceConsent` オプションを `true` に設定して新しいトークンを取得する必要があります。
@@ -593,7 +593,7 @@ ms.locfileid: "19437718"
     string[] graphScopes = { "Files.Read.All" };
     ```
 
-7. `TODO3` を次のコードに置き換えます。このコードの注意点は次のとおりです。
+7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO3` with the following code. Note about this code:|||UNTRANSLATED_CONTENT_END|||
 
     * メソッドは、最初にメモリ内の MSAL キャッシュで一致するアクセス トークンを探します。それが見つからなかった場合にのみ、Azure AD V2 エンドポイントとの「代理」フローを開始します。`ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync`
     * MS Graph リソースが多要素認証を必要とし、ユーザーがまだそれを提供していない場合、AAD は Claims プロパティが含まれている例外をスローします。
