@@ -25,7 +25,7 @@
         - name: Vue の使用
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-    - name: Excel アドインの作成
+    - name: Word アドインの作成
       href: quickstarts/word-quickstart.md
       displayName: Word
     - name: OneNote アドインの作成
@@ -45,10 +45,10 @@
     - name: Excel アドインのチュートリアル
       href: tutorials/excel-tutorial.yml
       displayName: Excel
-    - name: PowerPoint アドイン チュートリアル
+    - name: PowerPoint アドインのチュートリアル
       href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
-    - name: Word アドイン チュートリアル
+    - name: Word アドインのチュートリアル
       href: tutorials/word-tutorial.yml
       displayName: Word
 - name: 概念
@@ -116,7 +116,7 @@
           items:
             - name: デザイン ツールキット
               href: design/design-toolkits.md
-            - name: Office の UI ファブリック
+            - name: Office UI Fabric
               href: design/office-ui-fabric.md
             - name: Fabric React の使用を開始
               href: design/using-office-ui-fabric-react.md
@@ -135,6 +135,8 @@
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
             - name: Office.js を読み込む
               href: develop/loading-the-dom-and-runtime-environment.md
+            - name: Office JavaScript オブジェクト モデル
+              href: develop/office-javascript-api-object-model.md
             - name: Office アドインにおける非同期プログラミング
               href: develop/asynchronous-programming-in-office-add-ins.md
             - name: 状態と設定の保持
@@ -161,7 +163,7 @@
                   href: develop/create-sso-office-add-ins-nodejs.md
                 - name: Azure AD v2.0 で SSO を使用する Office アドインを登録する
                   href: develop/register-sso-add-in-aad-v2.md
-                - name: アドインに管理者の同意を付与する
+                - name: アドインに管理者の同意を与える
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
                   href: develop/troubleshoot-sso-in-office-add-ins.md
@@ -175,14 +177,14 @@
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: 同一生成元ポリシー制限への対処
           href: develop/addressing-same-origin-policy-limitations.md
-        - name: ローカリゼーション
+        - name: ローカライズ
           href: develop/localization.md
         - name: Visual Studio でアドインを開発
           items:
             - name: Visual Studio での Office アドインの作成とデバッグ
               href: develop/create-and-debug-office-add-ins-in-visual-studio.md
               items: null
-            - name: Visual Studio で JavaScript IntelliSense を取得
+            - name: Visual Studio で JavaScript IntelliSense を利用できるようにする
               href: develop/get-javascript-intellisense-in-visual-studio.md
             - name: JavaScript を TypeScript に変換する
               href: develop/convert-javascript-to-typescript.md
@@ -258,7 +260,7 @@
             - name: パフォーマンスの最適化
               href: excel/performance.md
               displayName: Excel
-        - name: Excel の JavaScript API リファレンス
+        - name: Excel JavaScript API リファレンス
           href: 'https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview'
           displayName: Excel
     - name: Word アドイン
@@ -268,7 +270,7 @@
         - name: 最初の Word アドインをビルドする
           href: word/word-add-ins.md
           displayName: Word
-        - name: Word アドイン チュートリアル
+        - name: Word アドインのチュートリアル
           href: tutorials/word-tutorial.yml
           displayName: Word
         - name: Office Open XML を使用してより良い Word 用アドインを作成する
@@ -302,7 +304,7 @@
         - name: 最初の PowerPoint アドインをビルドする
           href: powerpoint/powerpoint-add-ins-get-started.md
           displayName: PowerPoint
-        - name: PowerPoint アドイン チュートリアル
+        - name: PowerPoint アドインのチュートリアル
           href: tutorials/powerpoint-tutorial.yml
           displayName: PowerPoint
         - name: PowerPoint アドインでドキュメントのテーマを使用する
@@ -364,18 +366,18 @@
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
         - name: ユーザビリティ テスト
           href: develop/usability-testing.md
-        - name: ユーザーのエラーのトラブルシューティング
+        - name: ユーザー エラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
-        - name: アドインのマニフェストを検証し問題のトラブルシューティングを行う
+        - name: アドインのマニフェストを検証し、問題のトラブルシューティングを行う
           href: testing/troubleshoot-manifest.md
-    - name: 公開する
+    - name: 公開
       href: publish/publish.md
       items:
         - name: Microsoft Azure で Office アドインをホストする
           href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Visual Studio を使用してアドインをパッケージ化
+        - name: Visual Studio を使用してアドインをパッケージ化する
           href: publish/package-your-add-in-using-visual-studio.md
-        - name: 一元展開でアドインを公開する
+        - name: 一元展開によるアドインの発行
           href: publish/centralized-deployment.md
         - name: アドインを SharePoint カタログに公開する
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
