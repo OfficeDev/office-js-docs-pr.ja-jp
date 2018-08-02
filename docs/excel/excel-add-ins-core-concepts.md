@@ -2,9 +2,13 @@
 title: Excel JavaScript API の中心概念
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: fb22ae41718c459366a628c8f06531cc6978a178
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703841"
 ---
-
-
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API の中心概念
  
 この記事では、[Excel JavaScript API を使用して Excel 2016](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
@@ -38,7 +42,7 @@ Excel とユーザーのアドインは、2 つの異なるプロセスで実行
  
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
  
-アドインで宣言し、使用する Excel JavaScript オブジェクトはプロキシ オブジェクトです。 起動するメソッドや、プロキシ オブジェクトに設定または読み込まれるプロパティは、保留中のコマンドのキューに単純に追加されます。 `context.sync()` など、要求コンテキスト上で **sync()** メソッドを呼び出すと、キューに入れられたコマンドは Excel にディスパッチされて実行されます。 Excel の JavaScript API では、基本的にバッチを中心としています。 要求コンテキストに必要なだけ変更内容をキューに登録し、**sync()** メソッドを呼び出して、キューに入れられたコマンドをバッチで実行することができます。
+アドインで宣言し、使用する Excel JavaScript オブジェクトはプロキシ オブジェクトです。 起動するメソッドや、プロキシ オブジェクトに設定または読み込まれるプロパティは、保留中のコマンドのキューに単純に追加されます。 など、要求コンテキスト上で **sync()** メソッドを呼び出すと、キューに入れられたコマンドは Excel にディスパッチされて実行されます。`context.sync()` Excel の JavaScript API では、基本的にバッチを中心としています。 要求コンテキストに必要なだけ変更内容をキューに登録し、**sync()** メソッドを呼び出して、キューに入れられたコマンドをバッチで実行することができます。
  
 たとえば、次のコード スニペットでは、ローカル JavaScript オブジェクト **selectedRange** が Excel ドキュメント内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 **selectedRange** オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが **context.sync()** を呼び出すまで Excel ドキュメントには反映されません。
  
@@ -52,9 +56,6 @@ selectedRange.format.autofitColumns();
 ### <a name="sync"></a>sync()
  
 要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行されて [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
- 
-> [!NOTE]
-> Excel JavaScript API では、**sync()** が唯一の非同期操作です。パフォーマンスを最適化するには、**sync()** を呼び出す前にできる限り変更内容をキューに登録し、**sync()** を呼び出す回数を最小限に抑えてください。
  
 次の例は、ローカル JavaScript proxy オブジェクト (**selectedRange**) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して **context.sync()** を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
  
@@ -76,7 +77,7 @@ Excel.run(function (context) {
  
 前の例では、**selectedRange** が設定され、**context.sync()** が呼び出されるとその **address** プロパティが読み込まれます。
  
-**sync()** は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) **返す**必要があります。 このようにして、スクリプトの実行を継続する前に、**sync()** 操作を完了します。
+**sync()** は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) **返す**必要があります。 このようにして、スクリプトの実行を継続する前に、**sync()** 操作を完了します。 **sync()** を用いたパフォーマンスの最適化の詳細については、「 [Excel JavaScript API のパフォーマンス最適化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)」を参照してください。
  
 ### <a name="load"></a>load()
  
@@ -115,31 +116,8 @@ Excel.run(function (context) {
 ```
  
 前の例では、`format/font` が **myRange.load()** の呼び出しで指定されていないため、`format.font.color` プロパティは読み取れませんでした。
- 
-パフォーマンスを最適化するため、オブジェクトに対して **load()** メソッドを使用するときに読み込むプロパティとリレーションシップを明示的に指定する必要があります。 たとえば、範囲オブジェクトの **address** プロパティのみを読み取る場合、**load()** メソッドを呼び出すときにそのプロパティのみを指定します。
- 
-```js
-range.load('address');
-```
- 
-**load()** メソッドは、次のいずれかの方法で呼び出すことができます。
- 
-_構文:_
- 
-```js
-object.load(string: properties);
-// or
-object.load(array: properties);
-// or
-object.load({ loadOption });
-```
- 
-_各部分の意味は次のとおりです。_
- 
-* `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。 詳細については、「[Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)」でオブジェクトに対して定義されている **load()** メソッドを参照してください。
-* `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](https://dev.office.com/reference/add-ins/excel/loadoption)を参照してください。
 
-**load()** メソッドの詳細は、「[Excel JavaScript API の高度な概念](excel-add-ins-advanced-concepts.md)」を参照してください。
+パフォーマンスを最適化するには、「 **Excel JavaScript API のパフォーマンス最適化**」にあるように、[load()](performance.md) メソッドをオブジェクトに使用する際、プロパティとリレーションシップを明示的に指定する必要があります。 **load()** メソッドの詳細は、「[Excel JavaScript API の高度な概念](excel-add-ins-advanced-concepts.md)」を参照してください。
 
 ## <a name="null-or-blank-property-values"></a>null または空白のプロパティ値
  
@@ -181,9 +159,9 @@ range.format.fill.color =  null;
  
 * 範囲の `values` プロパティに空白の値を指定すると、範囲のコンテンツはクリアされます。
  
-* `numberFormat` プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。
+* プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。`numberFormat`
  
-* `formula` プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。
+* プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。`formula`
  
 ### <a name="blank-property-values-in-the-response"></a>応答内の空白のプロパティ値
  
@@ -206,7 +184,7 @@ range.formula = [['', '', '=Rand()']];
 * 範囲のアドレスは、列全体で構成されます。<ul><li>`C:C`</li><li>`A:F`</li></ul>
 * 範囲のアドレスは、行全体で構成されます。<ul><li>`2:2`</li><li>`1:4`</li></ul>
  
-API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`values`、`text`、`numberFormat`、または `formula` などのセル レベルのプロパティに `null` 値が含まれます。 `address` または `cellCount` など、範囲のその他のプロパティには、無制限の範囲に有効な値が含まれます。
+API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`values`、`text`、`numberFormat`、または `formula` などのセル レベルのプロパティに `null` 値が含まれます。 または `cellCount` など、範囲のその他のプロパティには、無制限の範囲に有効な値が含まれます。`address`
  
 ### <a name="write-to-an-unbounded-range"></a>無制限の範囲への書き込み
  
@@ -279,5 +257,6 @@ API エラーが発生すると、API ではコードとメッセージを含む
 ## <a name="see-also"></a>関連項目
  
 * [Excel アドインを使う](excel-add-ins-get-started-overview.md)
-* [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+* [Excel JavaScript API パフォーマンスの最適化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
 * [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

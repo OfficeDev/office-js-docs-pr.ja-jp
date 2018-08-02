@@ -2,8 +2,13 @@
 title: Office アドインの XML マニフェスト
 description: ''
 ms.date: 02/09/2018
+ms.openlocfilehash: 71c77e190d5d2d6cc67ada671b9efe3168b7f7b5
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703820"
 ---
-
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
 Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
@@ -23,7 +28,7 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 * Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
 
 ## <a name="required-elements"></a>必要な要素
 
@@ -39,10 +44,10 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
+| [説明][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
 | [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
+| [DefaultSettings（ContentApp）][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
@@ -58,56 +63,32 @@ _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で�
 
 <!-- Links for above table -->
 
-
-  [officeapp]: http://msdn.microsoft.com/ja-jp/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
-
-  [id]: http://msdn.microsoft.com/ja-jp/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
-
-  [version]: http://msdn.microsoft.com/ja-jp/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
-
-  [providername]: http://msdn.microsoft.com/ja-jp/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
-
-  [defaultlocale]: http://msdn.microsoft.com/ja-jp/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
-
-  [displayname]: http://msdn.microsoft.com/ja-jp/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
-
-  [description]: http://msdn.microsoft.com/ja-jp/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
+[officeapp]: http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
+[id]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
+[version]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
+[providername]: http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
+[defaultlocale]: http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
+[displayname]: http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
+[description]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
 [iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
 [highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
-
-  [defaultsettings (contentapp)]: http://msdn.microsoft.com/ja-jp/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
-
-  [defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
-
-  [sourcelocation (contentapp)]: http://msdn.microsoft.com/ja-jp/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
-
-  [sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
-
-  [desktopsettings]: http://msdn.microsoft.com/ja-jp/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
-
-  [sourcelocation (mailapp)]: http://msdn.microsoft.com/ja-jp/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-
-  [permissions (contentapp)]: http://msdn.microsoft.com/ja-jp/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
-
-  [permissions (taskpaneapp)]: http://msdn.microsoft.com/ja-jp/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
-
-  [permissions (mailapp)]: http://msdn.microsoft.com/ja-jp/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
-
-  [rule (rulecollection)]: http://msdn.microsoft.com/ja-jp/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
-
-  [rule (mailapp)]: http://msdn.microsoft.com/ja-jp/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
-
-  [requirements (mailapp)*]: http://msdn.microsoft.com/ja-jp/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
-
-  [set*]: http://msdn.microsoft.com/ja-jp/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
-
-  [sets (mailapprequirements)*]: http://msdn.microsoft.com/ja-jp/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
-
-  [form*]: http://msdn.microsoft.com/ja-jp/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
-
-  [formsettings*]: http://msdn.microsoft.com/ja-jp/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
-
-  [sets (requirements)*]: http://msdn.microsoft.com/ja-jp/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
+[defaultsettings (contentapp)]: http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
+[defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
+[sourcelocation (contentapp)]: http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
+[sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
+[desktopsettings]: http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
+[sourcelocation (mailapp)]: http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[permissions (contentapp)]: http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
+[permissions (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
+[permissions (mailapp)]: http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
+[rule (rulecollection)]: http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
+[rule (mailapp)]: http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
+[requirements (mailapp)*]: http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
+[set*]: http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
+[sets (mailapprequirements)*]: http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
+[form*]: http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
+[formsettings*]: http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
+[sets (requirements)*]: http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
 [hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
 
 ## <a name="hosting-requirements"></a>ホストするための要件
@@ -126,11 +107,14 @@ AppSource に提出するアドインには、[SupportUrl](https://dev.office.co
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-既定では、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。この既定の動作は、埋め込まれている **iframe** 要素によるアドイン ウィンドウ内での予期しないページ ナビゲーションからユーザーを守るためのものです。
+Office Onlineで実行している場合、作業ウィンドウは任意の URL にナビゲートできます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (アドインのマニフェスト ファイルの [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
 
-この動作を変更するには、マニフェスト ファイルの [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+この動作 (Office デスクトップ) を変更するには、マニフェスト ファイルの [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 この一覧にないドメインの URL にアドインが移動しようとすると、その URL が Office デスクトップと Office Online の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、Office デスクトップでは、その URL が新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
-次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](http://msdn.microsoft.com/ja-jp/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが www.northwindtraders.com ドメイン内のページに移動すると、そのページはアドイン ウィンドウで開きます。
+> [!NOTE]
+> この現象は、アドインのルート ウィンドウにのみ当てはまります。 アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL にダイレクトすることができます。
+
+次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。 また、この例では、**AppDomains** 要素リストの [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) 要素で `https://www.northwindtraders.com` ドメインも指定しています。 アドインが www.northwindtraders.com ドメイン内のページに移動すると、Office デスクトップでも、そのページがアドイン ウィンドウで開きます。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

@@ -192,7 +192,7 @@
     yo office
     ```
 
-    - **Choose a project type (プロジェクト タイプを選んでください):** `Jquery`
+    - **Choose a project type (プロジェクト タイプを選んでください):** `Office Add-in project using Jquery framework`
     - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Powerpoint`
@@ -230,7 +230,7 @@
     </div>
     ```
 
-4. ファイル**src\index.js** を開いてアドインのスクリプトを特定します。コンテンツ全体を次のコードに置き換えてファイルを保存します。
+4. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';

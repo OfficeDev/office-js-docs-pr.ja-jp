@@ -242,16 +242,16 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     cd my-word-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のとおり、プロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type (プロジェクト タイプを選んでください):** `Jquery`
+    - **Choose a project type (プロジェクト タイプを選んでください):** `Office Add-in project using Jquery framework`
     - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
-    - **What do you want to name your add-in? (アドインの名前を入力してください):** `My Office Add-in`
-    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Word`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
     

@@ -2,9 +2,13 @@
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703827"
 ---
-
-
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
 ユーザーのベスト エクスペリエンスを実現するために、Office アドイン実行時の CPU コアとメモリの使用量、および信頼性を一定の範囲内に保つ必要があります。Outlook アドインでは、これに加えて正規表現の評価の応答時間を一定以内に保つ必要があります。これらの実行時のリソース使用量の制限は、Windows と OS X 用の Office クライアントに適用され、Office Online、Outlook Web App、デバイス用 OWA には適用されません。 
@@ -42,11 +46,11 @@ CPU コア、メモリ、および信頼性ルールだけでなく、Outlook �
 
 - **正規表現の応答時間**: Outlook で Outlook アドインのマニフェスト内のすべての正規表現を評価する時間の既定のしきい値は 1,000 ミリ秒。このしきい値を超えると、Outlook は後で評価を再試行します。
 
-    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the  **OutlookActivationAlertThreshold** setting. For more information, see [Overriding resource usage settings for performance of Office Add-ins](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx).
+    Windows レジストリでグループ ポリシーまたはアプリケーションに固有の設定を使用すると、管理者は **OutlookActivationAlertThreshold** 設定でこの既定のしきい値の 1,000 ミリ秒を調整することができます。
 
 - **正規表現の再評価**: Outlook でマニフェスト内の正規表現を再評価する既定の制限は 3 回。適用されるしきい値 (既定の 1,000 ミリ秒、または Windows レジストリに **OutlookActivationAlertThreshold** 設定が存在する場合はその設定で指定された値) を 3 回とも超えて評価に失敗すると、その Outlook アドインは Outlook で無効化されます。Exchange 管理センターには無効状態が表示され、そのアドインは Outlook リッチ クライアント、Outlook Web App、および デバイス用 OWA で使用できなくなります。
 
-    Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the  **OutlookActivationManagerRetryLimit** setting. For more information, see [Overriding resource usage settings for performance of Office Add-ins](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx).
+    Windows レジストリでグループ ポリシーまたはアプリケーションに固有の設定を使用すると、管理者は **OutlookActivationManagerRetryLimit** 設定の評価を再試行する時間の数字を調整することができます。
 
 ### <a name="task-pane-and-content-add-ins"></a>作業ウィンドウ アドインとコンテンツ アドイン
     
@@ -65,7 +69,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 
 |**日付/時刻**|**イベント ID**|**重大度**|**タイトル**|**ファイル**|**ID**|**アプリケーション**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7||アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|2012/10/8 5:57:10 PM|7||アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
 |10/8/2012 5:57:01 PM|7||アドインのマニフェストが正常にダウンロードされました|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 次の表は、通常、Office アドインについてテレメトリ ログで追跡されるイベントを示しています。
@@ -75,13 +79,13 @@ Office には、Office アドインでのリソースの使用に関する問題
 |7|アドインのマニフェストが正常にダウンロードされました||Office アドインのマニフェストがホスト アプリケーションによって正常に読み込まれ、読み取られました。|
 |8|アドインのマニフェストがダウンロードされませんでした|重大|ホスト アプリケーションは Office アドインのマニフェスト ファイルを、SharePoint カタログ、コーポレート カタログ、AppSource のいずれからも読み込めませんでした。|
 |9|アドインのマークアップを解析できませんでした|重大|ホスト アプリケーションは Office アドインのマニフェストを読み込みましたが、アプリの HTML マークアップを読み取れませんでした。|
-|10 個|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
+|10|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
 |15|アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。 **[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
 |18|アドインは正常に終了しました||ホスト アプリケーションによって Office アドインが正常に閉じられました。|
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 |20|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 
-詳細については、「[テレメトリ ダッシュボードを展開する](http://msdn.microsoft.com/ja-jp/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx)」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)」を参照してください。
+詳細については、「[テレメトリ ダッシュボードを展開する](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx)」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)」を参照してください。
 
 
 ## <a name="design-and-implementation-techniques"></a>設計および実装上のテクニック
@@ -90,9 +94,9 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 - 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 
     
-   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](http://msdn.microsoft.com/ja-jp/library/ie/ms536753%28v=vs.85%29.aspx) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
+   無制限のデータに対する一連の入出力操作による長時間に及ぶ CPU の集中的な消費を回避する JavaScript と jQuery のサンプル コードは「[集中的な JavaScript の処理中にブラウザ制御を簡潔に戻す方法](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)」を参照してください。 この例では、グローバル オブジェクトの [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) メソッドを使用して、入力と出力の時間を制限しています。また、ランダムな無制限データの代わりに定義されたチャンク内のデータを処理します。
     
-- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](http://msdn.microsoft.com/ja-jp/library/IE/hh772807%28v=vs.85%29.aspx)」を参照してください。
+- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx)」を参照してください。
     
 - アドインで CPU 使用率の高いアルゴリズムを使用しているが、データの入出力を小さなセットに分割できる場合は、Web サービスの作成を検討します。データを Web サービスに渡して CPU の負荷をオフロードし、非同期コールバックを待機します。
     
@@ -102,6 +106,5 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
-- 
-  [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/ja-jp/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
     

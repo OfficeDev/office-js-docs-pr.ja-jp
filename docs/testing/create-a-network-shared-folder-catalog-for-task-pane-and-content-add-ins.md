@@ -2,21 +2,22 @@
 title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
-ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.openlocfilehash: 42af5d0665fc6cb1135103789adcb4414c4763ff
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "21270294"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703806"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
 次のいずれかの方法で、Windows 上で実行されている Office クライアントにテスト用の Office アドインをインストールできます。
 
 - 共有フォルダ カタログを使用してマニフェストをネットワーク ファイル共有に公開する（以下の手順）
-- [アドイン プロジェクト フォルダのルートから「**npm run sideload**」コマンドを実行。](sideload-office-addin-using-sideload-command.md) 
->[!NOTE]
->「npm run sideload」メソッドは、Excel、Word、および PowerPoint アドインでのみ機能します）。
+- [アドイン プロジェクト フォルダのルートから「**npm run sideload**」コマンドを実行。](sideload-office-addin-using-sideload-command.md)
+
+    > [!NOTE]
+    > 「npm run sideload」メソッドは、Excel、Word、および PowerPoint アドインでのみ機能します）。
 
 Word、Excel、PowerPoint のアドインを Windows でテストしない場合は、以下のいずれかのトピックを参照してアドインをサイドロードします。
 

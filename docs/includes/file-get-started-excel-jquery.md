@@ -170,7 +170,7 @@
     yo office
     ```
 
-    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Jquery`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`
     - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
@@ -206,7 +206,7 @@
     </div>
     ```
 
-7. ファイル**src\index.js** を開いてアドインのスクリプトを特定します。コンテンツ全体を次のコードに置き換えてファイルを保存します。
+7. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -234,7 +234,7 @@
     })();
     ```
 
-8. **app.css** ファイルを開いて、アドインのカスタム スタイルを特定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+8. **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```css
     #content-header {

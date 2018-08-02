@@ -2,12 +2,12 @@
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42ef569ddc868fb82730e445d4d34fd9caa94b0e
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241216"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703897"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -69,7 +69,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
     ![Office 365 管理センターの [アドインの選択] ダイアログ](../images/select-an-add-in.png)
 
-9. アドインが有効になります。アドインのページでは、次のスクリーンショットで示す Power BI タイルのアドインと同様に、状態が **[オン]** になっています。 **[アクセス許可があるユーザー]** セクションで、  **[編集]** を選択してユーザーおよび/またはグループにアドインを割り当てます。
+9. 現在、アドインを割り当てることができます。 アドインのページでは、次のスクリーンショットで示す Power BI タイルのアドインと同様に、状態が **[オン]** になっています。 **[アクセス許可があるユーザー]** セクションで、**[編集]** をクリックして、ユーザーやグループにアドインを割り当てます。
 
     ![Office 365 管理センターの [Power BI タイル] ページ](../images/power-bi-tiles.png)
 
@@ -136,6 +136,14 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
     ![Office アプリケーションの [Office アドイン] ページにある [管理者が管理] タブを示すスクリーンショット。 [引用文献] アドインがタブに表示されます。](../images/office-add-ins-admin-managed.png)
     
+ただし、Outlook の場合、ユーザーは次の操作を実行できます。
+
+1.  Outlook 2016 では、 **ホーム** > **ストア**を選択します。
+2.  アドインタブの下の **管理者が管理する** 項目を選択します。
+3.  アドインを選択して、**[追加]** を選択します。
+
+    ![スクリーンショットは、Outlook アプリケーションのストアページの管理者が管理する領域を示しています。](../images/outlook-add-ins-admin-managed.png)
+
 ## <a name="see-also"></a>関連項目
 [アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

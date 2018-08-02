@@ -1,9 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、および OneNote のサポートされる要件セット。
-ms.date: 3/20/2018
+ms.date: 07/31/2018
+ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703911"
 ---
-
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
 Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API の要件セットが含まれています。 
@@ -33,6 +38,9 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -47,7 +55,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 用 Office 2013</td>
     <td>
         - 作業ウィンドウ<br>
         - コンテンツ</td>
@@ -64,7 +72,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 用 Office 2016</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -72,6 +80,9 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -84,12 +95,16 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - TextCoercion</td> 
   </tr>
   <tr>
-    <td>Office for iOS</td>
+    <td>iOS 用 Office</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -102,13 +117,17 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Mac 用 Office 2016</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -141,11 +160,12 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
-    <td>利用不可</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 用 Office 2013</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -153,10 +173,10 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
-    <td>利用不可</td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 用 Office 2016</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
@@ -167,10 +187,10 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>利用不可</td> 
+    <td>使用不可</td> 
   </tr>
   <tr>
-    <td>Office for iOS</td>
+    <td>iOS 用 Office</td>
     <td> - メールの読み取り<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
@@ -178,10 +198,10 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
-    <td>利用不可</td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Mac 用 Office 2016</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -189,18 +209,20 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
-    <td>利用不可</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office for Android</td>
+    <td>Android 用 Office</td>
     <td> - メールの読み取り<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
-    <td>利用不可</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
+    <td>使用不可</td>
   </tr>
 </table>
 
@@ -225,7 +247,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
-         - CustomXmlParts<br>
+         - CustomXMLParts<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - TableBindings<br>
@@ -238,7 +260,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 用 Office 2013</td>
     <td> - 作業ウィンドウ</td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
@@ -259,7 +281,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - Matrix Bindings</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 用 Office 2016</td>
     <td> - 作業ウィンドウ<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -284,7 +306,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - Matrix Bindings </td> 
   </tr>
   <tr>
-    <td>Office for iOS</td>
+    <td>iOS 用 Office</td>
     <td> - 作業ウィンドウ</td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -309,7 +331,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - Matrix Bindings </td> 
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Mac 用 Office 2016</td>
     <td> - 作業ウィンドウ<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -363,7 +385,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 用 Office 2013</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
     </td>
@@ -378,7 +400,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 用 Office 2016</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -386,14 +408,14 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - DocuentEvents<br>
          - Selection<br>
          - Settings<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office for iOS</td>
+    <td>iOS 用 Office</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ</td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -407,7 +429,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Mac 用 Office 2016</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -448,35 +470,9 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - HtmlCoercion<br>
          - ImageCoercion</td>
   </tr>
-  <tr>
-    <td>Office 2013 for Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr> 
-  <tr>
-    <td>Office 2016 for Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
-  </tr>
-  <tr>
-    <td>Office for iOS</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
-  <tr>
-    <td>Office 2016 for Mac</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
 </table>
 
 <br/>
-
-\* = 準備中。 
 
 ## <a name="see-also"></a>関連項目
 
