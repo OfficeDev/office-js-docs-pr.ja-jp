@@ -5,7 +5,7 @@
 
 ## <a name="prerequisites"></a>前提条件
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ## <a name="setup"></a>セットアップ
 

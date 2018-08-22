@@ -10,7 +10,7 @@
 
 このチュートリアルを使用するには、以下のバージョンがインストールされている必要があります。 
 
-- Word 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/ja-jp/office-insider?tab=tab-1)」を参照してください。
+- Word 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
 - [Node と npm](https://nodejs.org/en/) 
 - [Git バッシュ](https://git-scm.com/downloads) (またはその他の Git クライアント)
 
