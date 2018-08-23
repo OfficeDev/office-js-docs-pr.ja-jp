@@ -2,8 +2,13 @@
 title: Office のホストと API の要件を指定する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: bd517dee1faf8d3f3009a0b9ce7127f5760e730d
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437711"
 ---
-
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
 期待どおりの動作をするうえで、Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。たとえば、次のようなアドインがあります。
@@ -84,7 +89,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 | ブック      | Windows、Mac、iPad 用の Excel、Excel Online           |
 
 > [!NOTE]
-> `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。アドインを実行するために使用するプラットフォームを指定することはできません。たとえば、`Mailbox` を指定した場合、Outlook と Outlook Web App の両方を利用してアドインを実行できます。 
+> 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。アドインを実行するために使用するプラットフォームを指定することはできません。たとえば、`Mailbox` を指定した場合、Outlook と Outlook Web App の両方を利用してアドインを実行できます。`Name` 
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>マニフェストで Requirements 要素を設定する

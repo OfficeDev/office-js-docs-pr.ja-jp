@@ -1,212 +1,212 @@
-# Contribute to this documentation
+# <a name="contribute-to-this-documentation"></a>このドキュメントに投稿する
 
-Thank you for your interest in our documentation!
+このドキュメントをご感心をお寄せいただき、ありがとうございます。
 
-* [Ways to contribute](#ways-to-contribute)
-* [Contribute using GitHub](#contribute-using-github)
-* [Contribute using Git](#contribute-using-git)
-* [How to use Markdown to format your topic](#how-to-use-markdown-to-format-your-topic)
+* [投稿方法](#ways-to-contribute)
+* [GitHub を使用して投稿する](#contribute-using-github)
+* [Git を使用して投稿する](#contribute-using-git)
+* [Markdown を使用してトピックを書式設定する方法](#how-to-use-markdown-to-format-your-topic)
 * [FAQ](#faq)
-* [More resources](#more-resources)
+* [その他のリソース](#more-resources)
 
-## Ways to contribute
+## <a name="ways-to-contribute"></a>投稿する方法
 
-Here are some ways you can contribute to this documentation:
+このドキュメントに投稿するいくつかの方法を下に示します。
 
-* To make small changes to an article, [Contribute using GitHub](#contribute-using-github).
-* To make large changes, or changes that involve code, [Contribute using Git](#contribute-using-git).
-* Report documentation bugs via GitHub Issues
-* Request new documentation at the [Office Developer Platform UserVoice](http://officespdev.uservoice.com) site.
+* 記事に小さな変更を加える方法については、「[GitHub を使用して投稿する](#contribute-using-github)」を参照してください。
+* 大きな変更やコードが関係する変更を加える方法については、「[Git を使用して投稿する](#contribute-using-git)」を参照してください。
+* GitHub の [問題] を使用してドキュメントの不具合を報告する
+* 「[Office Developer Platform UserVoice](http://officespdev.uservoice.com)」サイトで新しいドキュメントをリクエストします。
 
-## Contribute using GitHub
+## <a name="contribute-using-github"></a>GitHub を使用して投稿する
 
-Use GitHub to contribute to this documentation without having to clone the repo to your desktop. This is the easiest way to create a pull request in this repository. Use this method to make a minor change that doesn't involve code changes. 
+リポジトリをデスクトップに複製せずにこのドキュメントに投稿するには、GitHub を使用します。これは、このリポジトリでプル リクエストを作成する最も簡単な方法です。コードの変更に関係しない小さな変更を加えるには、この方法を使用します。 
 
-**Note** Using this method allows you to contribute to one article at a time.
+**注** この方法では、一度に 1 つの記事に投稿できます。
 
-### To Contribute using GitHub
+### <a name="to-contribute-using-github"></a>GitHub を使用して投稿するには
 
-1. Find the article you want to contribute to on GitHub. 
+1. 投稿する記事を GitHub で検索します。 
 
-    If the article is in MSDN, choose the **suggest and submit changes** link in the **Contribute to this content** section and you'll be taken to the same article on GitHub.
-2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join).
-3. Choose the **pencil icon** (edit the file in your fork of this project) and make your changes in the **<>Edit file** window. 
-4. Scroll to the bottom and enter a description.
-5. Choose **Propose file change**>**Create pull request**.
+    MSDN 内の記事の場合、「**このコンテンツへの投稿**」セクションで **[変更を提案して送信する]** リンクを選択すると、GitHub の同じ記事に移動します。
+2. GitHub で記事が表示されたら、GitHub にサインインします (無料アカウントを取得するには、「[GitHub に参加](https://github.com/join)」にアクセスします)。
+3. **鉛筆アイコン** (このプロジェクトのフォークでファイルを編集します) を選択し、**[<>ファイルの編集]** ウィンドウで変更を加えます。 
+4. 一番下までスクロールし、説明を入力します。
+5. [**ファイル変更の提案**] > [**プル リクエストの作成**] を選択します。
 
-You now have successfully submitted a pull request. Pull requests are typically reviewed within 10 business days. 
+これでプル リクエストを正常に提出できました。プル リクエストは、通常 10 営業日以内に審査されます。 
 
 
-## Contribute using Git
+## <a name="contribute-using-git"></a>Git を使用して投稿する
 
-Use Git to contribute substantive changes, such as:
+次のような実質的な変更を投稿するには、Git を使用します。
 
-* Contributing code.
-* Contributing changes that affect meaning.
-* Contributing large changes to text.
-* Adding new topics.
+* コードの投稿。
+* 意味に影響する変更の投稿。
+* テキストの大規模な変更の投稿。
+* 新しいトピックの追加。
 
-### To Contribute using Git
+### <a name="to-contribute-using-git"></a>Git を使用して投稿するには
 
-1. If you don't have a GitHub account, set one up at [GitHub](https://github.com/join). 
-2. After you have an account, install Git on your computer. Follow the steps in [Setting up Git Tutorial](https://help.github.com/articles/set-up-git/).
-3. To submit a pull request using Git, follow the steps in [Use GitHub, Git, and this repository](#use-github-git-and-this-repository).
-4. You will be asked to sign the Contributor's License Agreement if you are:
+1. GitHub アカウントを持っていない場合は、[GitHub](https://github.com/join) でセットアップします。 
+2. アカウントを取得したら、コンピューターに Git をインストールします。  [Git チュートリアルを設定する](https://help.github.com/articles/set-up-git/) のステップに従います。
+3. Git を使用してプル要求を提出するには、「[GitHub、Git、およびこのリポジトリを使用する](#use-github-git-and-this-repository)」の手順を実行します。
+4. 次の場合は、投稿者のライセンス同意書に署名するように求められます。
 
-    * A member of the Microsoft Open Technologies group.
-    * A contributors who doesn't work for Microsoft.
+    * Microsoft Open Technologies グループのメンバーである
+    * Microsoft の従業員でない投稿者である
 
-As a community member, you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to a project. You only need to complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
+コミュニティ メンバーは、プロジェクトへの大規模な投稿を行う前に投稿者のライセンス同意書 (CLA) に署名する必要があります。このドキュメントに記入して送信する必要があるのは 1 回だけです。注意深く確認してください。雇用主がこのドキュメントに署名することが要求される場合もあります。
 
-Signing the CLA does not grant you rights to commit to the main repository, but it does mean that the Office Developer and Office Developer Content Publishing teams will be able to review and approve your contributions. You will be credited for your submissions.
+CLA への署名により、メイン リポジトリにコミットする権限が付与されるわけではありませんが、Office Developer および Office Developer Content Publishing チームから投稿への承認を受けることができるようになります。提出内容には自身の名義が入ります。
 
-Pull requests are typically reviewed within 10 business days.
+プル リクエストは、通常 10 営業日以内に審査されます。
 
-## Use GitHub, Git, and this repository
+## <a name="use-github-git-and-this-repository"></a>GitHub、Git、およびこのリポジトリを使用する
 
-**Note:** Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the specifics of the code/content flow of this repository.
+**注:** このセクションの情報のほとんどは [GitHub ヘルプ] の記事で見つけることができます。  Git と GitHub のことをよく知っている場合は、「**コンテンツを投稿して編集する**」のセクションまでスキップして、このリポジトリのコード/コンテンツ フローの詳細を参照してください。
 
-### To set up your fork of the repository
+### <a name="to-set-up-your-fork-of-the-repository"></a>リポジトリのフォークをセットアップするには
 
-1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
-2.	Install Git on your computer. Follow the steps in the [Setting up Git Tutorial] [Set Up Git].
-3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
-4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
+1.  このプロジェクトに投稿できるように、GitHub のアカウントをセットアップします。 まだ行っていない場合は、今すぐ [GitHub](https://github.com/join) にアクセスしてセットアップします。
+2.  Git をコンピューターにインストールします。 [Git チュートリアルを設定する] [Set Up Git] のステップに従います。
+3.  このリポジトリの独自のフォークを作成します。 これを行うには、ページの上部にある **フォーク** ボタンを選択します。
+4.  フォークをコンピューターにコピーします。これを行うには、Git Bash を開きます。コマンド プロンプトで、次のように入力します。
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Next, create a reference to the root repository by entering these commands:
+    次に、以下のコマンドを入力して、ルート リポジトリに対する参照を作成します。
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
         git fetch upstream
 
-Congratulations! You've now set up your repository. You won't need to repeat these steps again.
+おめでとうございます。リポジトリをセットアップできました。今後、同じ手順をもう一度繰り返す必要はありません。
 
-### Contribute and edit content
+### <a name="contribute-and-edit-content"></a>コンテンツを投稿して編集する
 
-To make the contribution process as seamless as possible, follow these steps.
+投稿プロセスをできるだけシームレスにするため、以下の手順に従ってください。
 
-#### To contribute and edit content
+#### <a name="to-contribute-and-edit-content"></a>コンテンツを投稿して編集するには
 
-1. Create a new branch.
-2. Add new content or edit existing content.
-3. Submit a pull request to the main repository.
-4. Delete the branch.
+1. 新しい分岐を作成します。
+2. 新しい内容を追加するか、既存の内容を編集します。
+3. メイン リポジトリにプル リクエストを提出します。
+4. 分岐を削除します。
 
-**Important** Limit each branch to a single concept/article to streamline the work flow and reduce the chance of merge conflicts. Content appropriate for a new branch includes:
+**重要**: 作業フローを効率化してマージによる競合の可能性を減らすため、各分岐を単一の概念 / 記事に限定してください。 新しい分岐に適した内容には、次のものが含まれます。
 
-* A new article.
-* Spelling and grammar edits.
-* Applying a single formatting change across a large set of articles (for example, applying a new copyright footer).
+* 新しい記事。
+* スペルと文法の編集。
+* 大規模な記事セット全体への単一の書式設定変更の適用 (たとえば、新しい著作権フッターの適用)。
 
-#### To create a new branch
+#### <a name="to-create-a-new-branch"></a>新しい分岐を作成するには
 
-1.	Open Git Bash.
-2.	At the Git Bash command prompt, type `git pull upstream master:<new branch name>`. This creates a new branch locally that is copied from the latest OfficeDev master branch.
-3.	At the Git Bash command prompt, type `git push origin <new branch name>`. This alerts GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
-4.	At the Git Bash command prompt, type `git checkout <new branch name>` to switch to your new branch.
+1.  Git Bash を開きます。
+2.  Git Bash のコマンド プロンプトで、`git pull upstream master:<new branch name>` と入力します。 これにより、最新の OfficeDev マスター分岐からコピーされた新しい分岐がローカルに作成されます。
+3.  Git Bash のコマンド プロンプトで、`git push origin <new branch name>` と入力します。 これにより、新しい分岐に関するアラートが GitHub に送信されます。 これで、GitHub 上のリポジトリのフォーク内に新しい分岐が表示されるはずです。
+4.  新しい分岐に切り替えるには、Git Bash コマンド プロンプトで `git checkout <new branch name>` と入力します。
 
-#### Add new content or edit existing content
+#### <a name="add-new-content-or-edit-existing-content"></a>新しい内容を追加するか既存の内容を編集する
 
-You navigate to the repository on your computer by using File Explorer. The repository files are in `C:\Users\<yourusername>\<repo name>`.
+ファイル エクスプローラーを使用して、コンピューター上のリポジトリに移動します。 リポジトリ ファイルは、`C:\Users\<yourusername>\<repo name>` にあります。
 
-To edit files, open them in an editor of your choice and modify them. To create a new file, use the editor of your choice and save the new file in the appropriate location in your local copy of the repository. While working, save your work frequently.
+ファイルを編集するには、好みのエディターで開いて変更します。新しいファイルを作成するには、好みのエディターを使用して、リポジトリのローカル コピー内の適切な場所に新しいファイルを保存します。作業中は、頻繁に作業内容を保存してください。
 
-The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash:
+内のファイルは、ローカル リポジトリ内で作成した新しい分岐の作業コピーです。`C:\Users\<yourusername>\<repo name>` このフォルダーで行った変更は、変更をコミットするまでローカル リポジトリに影響しません。 ローカル リポジトリに変更をコミットするには、GitBash で次のコマンドを入力します。
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
 
-The `add` command adds your changes to a staging area in preparation for committing them to the repository. The period after the `add` command specifies that you want to stage all of the files that you added or modified, checking subfolders recursively. (If you don't want to commit all of the changes, you can add specific files. You can also undo a commit. For help, type `git add -help` or `git status`.)
+コマンドにより、変更はリポジトリへのコミットの準備としてステージング領域に追加されます。`add` コマンドの後のピリオドは、サブフォルダーを再帰的にチェックして、追加または変更したすべてのファイルをステージングすることを指定します。`add` (すべての変更をコミットするのでない場合は、特定のファイルを追加できます。 コミットを元に戻すこともできます。 ヘルプを表示するには、「`git add -help`」または「`git status`」と入力してください。)
 
-The `commit` command applies the staged changes to the repository. The switch `-m` means you are providing the commit comment in the command line. The -v and -a switches can be omitted. The -v switch is for verbose output from the command, and -a does what you already did with the add command.
+コマンドにより、ステージングされた変更がリポジトリに適用されます。`commit` スイッチ `-m` は、コミット コメントをコマンド ラインで提供することを意味します。 -v および -a スイッチは省略できます。 -v スイッチはコマンドからの詳細 (verbose) 出力用で、-a スイッチは add コマンドですでに行ったことを行います。
 
-You can commit multiple times while you are doing your work, or you can commit once when you're done.
+作業の途中で複数回コミットするか、完了時に 1 回コミットすることができます。
 
-#### Submit a pull request to the main repository
+#### <a name="submit-a-pull-request-to-the-main-repository"></a>メイン リポジトリにプル リクエストを送信する
 
-When you're finished with your work and are ready to have it merged into the main repository, follow these steps.
+作業が完了し、メイン リポジトリにマージする準備ができたら、以下の手順を実行します。
 
-#### To submit a pull request to the main repository
+#### <a name="to-submit-a-pull-request-to-the-main-repository"></a>メイン リポジトリにプル リクエストを送信するには
 
-1.	In the Git Bash command prompt, type `git push origin <new branch name>`. In your local repository, `origin` refers to your GitHub repository that you cloned the local repository from. This command pushes the current state of your new branch, including all commits made in the previous steps, to your GitHub fork.
-2.	On the GitHub site, navigate in your fork to the new branch.
-3.	Choose the **Pull Request** button at the top of the page.
-4.	Verify the Base branch is `OfficeDev/<repo name>@master` and the Head branch is `<your username>/<repo name>@<branch name>`.
-5.	Choose the **Update Commit Range** button.
-6.	Add a title to your pull request, and describe all the changes you're making.
-7.	Submit the pull request.
+1.  Git Bash のコマンド プロンプトで、`git push origin <new branch name>` と入力します。 ローカル リポジトリにおいて、`origin` はローカル リポジトリの複製元である GitHub リポジトリを指します。 このコマンドにより、前の手順で行ったすべてのコミットを含む新しい分岐の現在の状態が GitHub フォークにプッシュされます。
+2.  GitHub サイト上のフォーク内で、新しい分岐まで移動します。
+3.  ページの上部にある [**プル リクエスト**] ボタンを選択します。
+4.  Base 分岐が `OfficeDev/<repo name>@master` で、Head 分岐が `<your username>/<repo name>@<branch name>` であることを確認します。
+5.  [**コミット範囲の更新**] ボタンを選択します。
+6.  プル リクエストにタイトルを追加し、作成しているすべての変更についての説明を入力します。
+7.  プル リクエストを提出します。
 
-One of the site administrators will process your pull request. Your pull request will surface on the OfficeDev/<repo name> site under Issues. When the pull request is accepted, the issue will be resolved.
+サイト管理者の 1 人がプル要求を処理します。 プル要求が OfficeDev/<repo name> サイトの [問題] に表示されます。 プル要求が承諾されると、問題は解決されます。
 
-#### Create a new branch after merge
+#### <a name="create-a-new-branch-after-merge"></a>マージの後に新しい分岐を作成する
 
-After a branch is successfully merged (that is, your pull request is accepted), don't continue working in that local branch. This can lead to merge conflicts if you submit another pull request. To do another update, create a new local branch from the successfully merged upstream branch, and then delete your initial local branch.
+分岐が正常にマージされた (つまり、プル リクエストが承諾された) 後は、ローカル分岐で作業を継続しないでください。別のプル リクエストを提出する場合にマージの競合が発生する可能性があります。別の更新を行うには、正常にマージされたアップストリーム分岐から新しいローカル分岐を作成した後、最初のローカル分岐を削除します。
 
-For example, if your local branch X was successfully merged into the OfficeDev/microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands:
+たとえば、ローカル分岐 X が正常に OfficeDev/microsoft-graph-docs マスター分岐にマージされた後、マージされた内容に追加の更新を行う場合を考えます。OfficeDev/microsoft-graph-docs マスター分岐から新しいローカル分岐 X2 を作成します。これを行うには、GitBash を開き、次のコマンドを実行します。
 
     cd microsoft-graph-docs
     git pull upstream master:X2
     git push origin X2
 
-You now have local copies (in a new local branch) of the work that you submitted in branch X. The X2 branch also contains all the work other writers have merged, so if your work depends on others' work (for example, shared images), it is available in the new branch. You can verify that your previous work (and others' work) is in the branch by checking out the new branch...
+これで、分岐 X で提出した作業のローカル コピーを (新しいローカル分岐内に) 作成できました。X2 ブランチには他のライターがマージしたすべての作業も含まれるため、自身の作業が他のライターの作業 (たとえば、共有画像) に依存している場合はその作業が新しい分岐で使用可能になります。以前の作業 (および他のライターの作業) が分岐にあることを確認するには、新しい分岐をチェックアウトして...
 
     git checkout X2
 
-...and verifying the content. (The `checkout` command updates the files in `C:\Users\<yourusername>\microsoft-graph-docs` to the current state of the X2 branch.) Once you check out the new branch, you can make updates to the content and commit them as usual. However, to avoid working in the merged branch (X) by mistake, it's best to delete it (see the following **Delete a branch** section).
+...内容を確認します。 (`checkout` コマンドは、`C:\Users\<yourusername>\microsoft-graph-docs` 内のファイルを X2 分岐の現在の状態に更新します。新しい分岐をチェックアウトした後は、内容への更新を行って通常どおりにコミットすることができます。 ただし、誤って作業することを避けるため、結合済みの分岐 (X) は削除することをお勧めします (次の「**分岐を削除する**」のセクションを参照してください)。
 
-#### Delete a branch
+#### <a name="delete-a-branch"></a>分岐を削除する
 
-Once your changes are successfully merged into the main repository, delete the branch you used because you no longer need it.  Any additional work should be done in a new branch.  
+変更内容がメイン リポジトリにマージされたら、使用した分岐は不要になったので削除します。追加の作業は新しい分岐で行う必要があります。  
 
-#### To delete a branch
+#### <a name="to-delete-a-branch"></a>分岐を削除するには
 
-1.	In the Git Bash command prompt, type `git checkout master`. This ensures that you aren't in the branch to be deleted (which isn't allowed).
-2.	Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `–D` flag, but first be sure you want to do this.)
-3.	Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your github fork.  
+1.  Git Bash のコマンド プロンプトで、`git checkout master` と入力します。 これにより、削除される分岐にいないことが保証されます (削除される分岐にいることは許可されません)。
+2.  次に、コマンド プロンプトで `git branch -d <branch name>` と入力します。 これにより、アップストリーム リポジトリに正常にマージ済みの場合にのみ、コンピューター上の分岐が削除されます。 (この動作は `–D` フラグでオーバーライドすることができますが、最初にその必要があるかどうかを確かめてください)。
+3.  最後に、コマンド プロンプトで `git push origin :<branch name>` (コロンの前にはスペースを 1 つ入れ、後にはスペースを入れません) と入力します。  これにより、GitHub フォーク上の分岐が削除されます。  
 
-Congratulations, you have successfully contributed to the project!
+おめでとうございます。プロジェクトに正しく投稿できました。
 
-## How to use Markdown to format your topic
+## <a name="how-to-use-markdown-to-format-your-topic"></a>Markdown を使用してトピックを書式設定する方法
 
-### Standard Markdown
+### <a name="standard-markdown"></a>標準の Markdown
 
-All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Markdown Home](http://daringfireball.net/projects/markdown/ 
-).
+このリポジトリ内のすべての記事では、Markdown を使用しています。 完全な紹介 (および、すべての構文のリスト) は、[[Markdown ホーム]](http://daringfireball.net/projects/markdown/ 
+) にあります。
  
-## FAQ
+## <a name="faq"></a>FAQ
 
-### How do I get a GitHub account?
+### <a name="how-do-i-get-a-github-account"></a>GitHub アカウントを取得する方法を教えてください。
 
-Fill out the form at [Join GitHub](https://github.com/join) to open a free GitHub account. 
+無料の GitHub アカウントを開設するには、「[Join GitHub](https://github.com/join)」(GitHub に参加) にあるフォームに記入します。 
 
-### Where do I get a Contributor's License Agreement? 
+### <a name="where-do-i-get-a-contributors-license-agreement"></a>投稿者のライセンス同意書はどこで入手するのでしょうか。 
 
-You will automatically be sent a notice that you need to sign the Contributor's License Agreement (CLA) if your pull request requires one. 
+プル リクエストで投稿者のライセンス同意書 (CLA) が必要な場合、CLA の署名が必要であることを述べる通知が自動的に送信されます。 
 
-As a community member, **you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to this project**. You only need complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
+コミュニティ メンバーは、**このプロジェクトへの大規模な投稿を行う前に投稿者のライセンス同意書 (CLA) に署名する必要があります**。 このドキュメントに記入して送信する必要があるのは 1 回だけです。 注意深く確認してください。 雇用主がこのドキュメントに署名することが要求される場合もあります。
 
-### What happens with my contributions?
+### <a name="what-happens-with-my-contributions"></a>私が投稿した内容はどうなりますか。
 
-When you submit your changes, via a pull request, our team will be notified and will review your pull request. You will receive notifications about your pull request from GitHub; you may also be notified by someone from our team if we need more information. If your pull request is approved, we'll update the documentation. We reserve the right to edit your submission for legal, style, clarity, or other issues.
+プル リクエストを使用して変更を提出すると、弊社チームがその通知を受け、プル リクエストを審査します。投稿者には、プル リクエストに関する通知が GitHub から送られます。さらに情報が必要な場合、弊社チームのメンバーからも通知が送られます。プル リクエストが承認された場合、ドキュメントを更新します。弊社は、投稿された内容を、法律、スタイル、わかりやすさ、またはその他の理由で編集する権利を保持します。
 
-### Can I become an approver for this repository's GitHub pull requests?
+### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>このリポジトリの GitHub プル リクエストの承認者になることができますか。
 
-Currently, we are not allowing external contributors to approve pull requests in this repository.
+現在、外部の投稿者がこのリポジトリ内のプル リクエストを承認することは許可されていません。
 
-### How soon will I get a response about my change request?
+### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>変更リクエストに関する応答をどのくらいの期間内に受けることができますか。
 
-Pull requests are typically reviewed within 10 business days.
+プル リクエストは、通常 10 営業日以内に審査されます。
 
 
-## More resources
+## <a name="more-resources"></a>その他のリソース
 
-* To learn more about Markdown, go to the Git creator's site [Daring Fireball].
-* To learn more about using Git and GitHub, first check out the [GitHub Help section] [GitHub Help].
+* Markdown の詳細については、Markdown の作成者のサイト [Daring Fireball] を参照してください。
+* Git と GitHub の使用について詳しくは、まず [GitHub Help セクション] [GitHub Help] をご確認ください。
 
 [GitHub Home]: http://github.com
-[GitHub Help]: http://help.github.com/
+[GitHub ヘルプ]: http://help.github.com/
 [Set Up Git]: http://help.github.com/win-set-up-git/
 [Markdown Home]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/

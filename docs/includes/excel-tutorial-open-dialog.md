@@ -127,7 +127,7 @@
     }
     ``` 
 
-8. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
+8. `TODO1` を次のコードに置き換えます。次の点に注意してください。
    - メソッドでは、画面の中央にダイアログを開きます。`displayDialogAsync`
    - 最初のパラメーターは、開くページの URL です。
    - 2 番目のパラメーターでオプションを渡します。`height` と `width` は、Office アプリケーションのウィンドウ サイズの比率です。 
