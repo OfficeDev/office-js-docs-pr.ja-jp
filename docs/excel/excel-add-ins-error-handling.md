@@ -2,9 +2,13 @@
 title: エラー処理
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 59619ff4ccba1985f875d13a29ab691c1617d21b
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437207"
 ---
-
-
 # <a name="error-handling"></a>エラー処理
 
 Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。

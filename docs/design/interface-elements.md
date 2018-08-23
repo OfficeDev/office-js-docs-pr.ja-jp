@@ -2,9 +2,13 @@
 title: Office アドイン用の Office の UI 要素
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 8282caff412a9a258e54092bc77e07571f0d8ac1
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437305"
 ---
-
-
 # <a name="office-ui-elements-for-office-add-ins"></a>Office アドイン用の Office の UI 要素
 
 アドイン コマンドおよび HTML のコンテナーを含むいくつかの種類の UI 要素を使用して Office UI を拡張することができます。これらの UI 要素は、Office の元々の拡張機能のように自然に、あらゆるプラットフォームで使えます。これらのいずれの要素にも、Web ベースのカスタム コードを挿入できます。

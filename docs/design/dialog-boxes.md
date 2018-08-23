@@ -2,9 +2,13 @@
 title: Office アドインのダイアログ ボックス
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: af47fd338872d3ecfce06145783fcc9ff314f7bc
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437144"
 ---
-
-
 # <a name="dialog-boxes-in-office-add-ins"></a>Office アドインのダイアログ ボックス
  
 ダイアログ ボックスは、作業中の Office アプリケーション ウインドウの手前に浮動するサーフェスです。ダイアログ ボックスを使用すれば、作業ウィンドウで直接開くことができないサインイン ページ、ユーザーによるアクションを確認するための要求、作業ウィンドウ内で再生すると小さすぎるビデオの表示などのタスクのために追加の画面領域を提供できます。

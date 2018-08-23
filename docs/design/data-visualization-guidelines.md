@@ -2,10 +2,13 @@
 title: Office アドインのデータ可視化のスタイル ガイドライン
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 3255c1aeff6cba4b9f13aa2555b8c84ac773fb75
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437354"
 ---
-
-
-
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
 データ可視化が良好なら、ユーザーはデータから洞察が得やすくなります。ユーザーは、これらの洞察を使って通知や説得の話ができます。この記事では、Excel やその他の Office アプリ用のアドインで効果的なデータ可視化を設計するためのガイドラインを示します。

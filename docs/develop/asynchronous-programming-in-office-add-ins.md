@@ -2,9 +2,13 @@
 title: Office アドインにおける非同期プログラミング
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: d251ebfd03227569b9a24bcd7f17baada6099938
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437886"
 ---
-
-
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
 Office アドイン API で非同期プログラミングを使用する理由 JavaScript はシングルスレッドの言語であるため、スクリプトで実行時間の長い同期プロセスが呼び出されると、そのプロセスが完了するまで後続のすべてのスクリプト実行がブロックされます。Office Web クライアント (リッチ クライアントも同様) に特定の操作を同時に実行した場合、実行がブロックされることがあるので、JavaScript API for Office のほとんどのメソッドは非同期で実行されるように設計されています。これにより、Office アドインの応答性とパフォーマンスが向上します。このような非同期メソッドを利用するときは、多くの場合、コールバック関数の記述も必要です。

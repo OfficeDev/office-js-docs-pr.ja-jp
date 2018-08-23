@@ -2,9 +2,13 @@
 title: Excel JavaScript API を使用して表を操作する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c7d5f3f975092250747350501bbe011a17db9852
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437501"
 ---
-
-
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
 この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Table** および **TableCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/tablecollection)」を参照してください。

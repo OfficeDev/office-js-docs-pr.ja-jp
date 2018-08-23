@@ -2,9 +2,13 @@
 title: Office アドインで OAuth 認証フレームワークを使用する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 36eb0e34ed96bb9289926170bea1b82546695fa8
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437375"
 ---
-
-
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Office アドインで OAuth 認証フレームワークを使用する
 
 OAuth は、Office 365、Facebook、Google、SalesForce、LinkedIn などのオンライン サービス プロバイダーがユーザー認証を実行するのに使用する認証のオープン標準です。OAuth 認証フレームワークは、Azure と Office 365 で使用される既定の認証プロトコルです。OAuth 認証フレームワークは、エンタープライズ (企業) とコンシューマー シナリオの両方で使用されます。

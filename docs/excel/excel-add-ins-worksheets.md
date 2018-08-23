@@ -2,9 +2,13 @@
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: f4c129f34460340a9abed3eda4a47e3bb6dd5978
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437438"
 ---
-
-
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
 この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)」を参照してください。
