@@ -2,9 +2,13 @@
 title: Excel アドインの概要
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: fedeb65e32e96431b56e7b1c029fa4ef4e137b61
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925158"
 ---
-
-
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
 Excel アドインを使用すると、Office for Windows、Office Online、Office for the Mac、Office for the iPad など、複数のプラットフォームにわたって Excel アプリケーションの機能を拡張できます。ブック内で Excel アドインを使用すると、次の操作を実行できます。
@@ -20,7 +24,7 @@ Office アドインのプラットフォームには、Excel アドインの作�
 * **一元展開**:管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
 * **シングル サインオン (SSO)**:Excel のアドインを Microsoft Graph に簡単に統合できます。
 * **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
-* **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/en-us/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
+* **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
 
 > [!NOTE]
 > Excel アドインは、Office for Windows 上でのみ実行する以前の Office 統合ソリューションである COM アドインや VSTO アドインとは異なります。 COM アドインとは異なり、Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。 

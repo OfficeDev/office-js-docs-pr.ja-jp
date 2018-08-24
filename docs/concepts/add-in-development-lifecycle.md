@@ -2,12 +2,17 @@
 title: Office アドインの開発ライフ サイクル
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925438"
 ---
-
 # <a name="office-add-ins-development-lifecycle"></a>Office アドインの開発ライフ サイクル
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
 
 Office アドインの一般的な開発ライフサイクルには、次の手順が含まれます。
 
@@ -44,7 +49,7 @@ Office アドインの一般的な開発ライフサイクルには、次の手�
     
     これらの質問のいずれかに「はい」と答えた場合は、**Outlook アドイン**の作成を検討します。その後、アドインをトリガーするコンテキストを明らかにします (作成フォーム、特定のメッセージ タイプ、添付ファイル、アドレス、タスクのヒント、または会議提案の存在、メールや予定の内容に特定の文字列パターンなど)。 
         
-    Outlook アドインのコンテキストによるアクティブ化方法については、「[Outlook アドインのアクティブ化ルール](https://docs.microsoft.com/ja-jp/outlook/add-ins/activation-rules)」を参照してください。 
+    Outlook アドインのコンテキストによるアクティブ化方法については、「[Outlook アドインのアクティブ化ルール](https://docs.microsoft.com/outlook/add-ins/activation-rules)」を参照してください。 
     
 - ユーザーはドキュメントの表示または作成エクスペリエンスを向上するためにアドインを使用しますか。その場合は、**作業ウィンドウ アドイン**の作成を検討します。 
 
@@ -69,7 +74,7 @@ Outlook アドインの場合は、現在のメッセージまたは予定に基
     
 アドインのマニフェスト ファイルで指定した Web サーバーに、HTML ファイル、JavaScript ファイル、CSS ファイルを配置します。アドインをインストールする手順は、アドインの種類によって異なります。詳細については、「[テスト用に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)」を参照してください。
     
-Outlook アドインの場合、Exchange メールボックスにインストールし、Exchange 管理センター (EAC) でアドインのマニフェスト ファイルの場所を指定します。詳細については、「[テスト用に Outlook アドインを展開してインストールする](https://docs.microsoft.com/ja-jp/outlook/add-ins/testing-and-tips)」を参照してください。
+Outlook アドインの場合、Exchange メールボックスにインストールし、Exchange 管理センター (EAC) でアドインのマニフェスト ファイルの場所を指定します。詳細については、「[テスト用に Outlook アドインを展開してインストールする](https://docs.microsoft.com/outlook/add-ins/testing-and-tips)」を参照してください。
 
     
 ## <a name="7-publish-the-add-in"></a>7. アドインを発行する

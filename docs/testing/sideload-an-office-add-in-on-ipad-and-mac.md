@@ -2,8 +2,13 @@
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 9b4bcb92e1123c627a8b1a6df4785ff357453189
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925270"
 ---
-
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
 Office for iOS でアドインを実行するしくみを確認するには、iTunes を利用し、アドインのマニフェストを iPad にサイドロードするか、Office for Mac で直接、アドインのマニフェストをサイドロードします。このアクションでは、実行中、ブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使えることと適切にレンダリングされることを確認できます。 
@@ -19,7 +24,7 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 
 ## <a name="prerequisites-for-office-for-mac"></a>Office for Mac の前提条件
 
-- OS X v10.10 "Yosemite" 以降が動作し、 [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) がインストールされている Mac。
+- OS X v10.10 "Yosemite" 以降が動作し、 [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) がインストールされている Mac。
     
 - Word for Mac バージョン 15.18 (160109)。
    
@@ -60,7 +65,7 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>Office for Mac でアドインをサイドロードする
 
 > [!NOTE]
-> Outlook 2016 for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/ja-jp/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
+> Outlook 2016 for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
 
 1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     

@@ -2,9 +2,13 @@
 title: Office アドインにおける同一生成元ポリシーの制限への対処
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 536e02d2367bef81d4a6e49098d66833c99f5e50
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925109"
 ---
-
-
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
 
@@ -51,10 +55,8 @@ function loadVideoDetails(videoIndex) {
 
 同一生成元ポリシーの制限に対処する他の方法として、OAuth を使用する ASP ページ、または Cookie で資格情報をキャッシュする ASP ページとして、アドインの Web ページを実装する方法があります。
 
-認証に OAuth を使用する例については、「[OAuth による Twitter SharePoint Web パーツ](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth)」を参照してください。
 
-
-  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](https://msdn.microsoft.com/ja-jp/library/4f772twc) プロパティを参照してください。
+  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](https://msdn.microsoft.com/library/4f772twc) プロパティを参照してください。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>クロス オリジン リソース共有 (CORS) の使用

@@ -2,8 +2,13 @@
 title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
 ms.date: 03/14/2018
+ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925340"
 ---
-
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
 
@@ -16,7 +21,7 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 - Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
     
   > [!NOTE]
-  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/en-us/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](https://docs.microsoft.com/ja-jp/office/developer-program/office-365-developer-program)を参照してください。
+  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 Developer プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 Developer プログラムのドキュメント](https://docs.microsoft.com/office/developer-program/office-365-developer-program)を参照してください。
      
 - Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
     
@@ -58,8 +63,8 @@ Office Online を使用してアドインをデバッグするには、
 
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - 
-  [AppSource の検証ポリシー](https://docs.microsoft.com/ja-jp/office/dev/store/validation-policies)  
+  [AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)  
 - 
-  [効率的な AppSource アプリおよびアドインを作成する](https://docs.microsoft.com/ja-jp/office/dev/store/create-effective-office-store-listings)  
+  [効率的な AppSource アプリおよびアドインを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
     

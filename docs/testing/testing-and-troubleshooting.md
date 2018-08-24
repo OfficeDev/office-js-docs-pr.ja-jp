@@ -2,15 +2,20 @@
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: b9f55b5487aec1a2e700863e58cd5bbbf2daf146
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925459"
 ---
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
 時折、ユーザーは開発した Office アドインの問題に遭遇することがあります。たとえば、アドインが読み込みに失敗したり、アクセスできないなどです。この記事の情報は、ユーザーが Office アドインを使用する際に遭遇する一般的な問題を解決するために用いることができます。 
 
 また、[Fiddler](http://www.telerik.com/fiddler) を使用して、アドインの問題を特定してデバッグすることもできます。
 
-ユーザーの問題を解決した後、[AppSource でカスタマー レビューに直接返信することができます](https://docs.microsoft.com/ja-jp/office/dev/store/create-effective-office-store-listings)。
+ユーザーの問題を解決した後、[AppSource でカスタマー レビューに直接返信することができます](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>一般的なエラーとトラブルシューティングの手順
 
@@ -21,7 +26,7 @@ ms.date: 01/23/2018
 |**エラー メッセージ**|**解決策**|
 |:-----|:-----|
 |アプリのエラー: カタログに到達できませんでした|ファイアウォールの設定を確認します。「カタログ」は、AppSource を指します。このメッセージは、ユーザーが AppSource にアクセスできないことを示しています。|
-|アプリのエラー: このアプリを起動できませんでした。このダイアログを閉じて問題を無視するか、[再起動] をクリックしてもう一度お試しください。|Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム ](https://support.microsoft.com/en-us/kb/2986156/)をダウンロードします。|
+|アプリのエラー: このアプリを起動できませんでした。このダイアログを閉じて問題を無視するか、[再起動] をクリックしてもう一度お試しください。|Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム](https://support.microsoft.com/kb/2986156/)をダウンロードしてください。|
 |エラー: オブジェクトがプロパティまたはメソッド 'defineProperty' をサポートしていません|Internet Explorerが互換モードで実行されていないことを確認します。 [ツール] >  **[互換表示設定]** に移動します。|
 |ブラウザーのバージョンがサポートされていないため、アプリを読み込めませんでした。サポートされているブラウザーのバージョンの一覧についてはここをクリックしてください。|ブラウザーが HTML5 のローカル ストレージをサポートしていることを確認するか、Internet Explorer の設定をリセットします。サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md)」を参照してください。|
 
@@ -49,7 +54,7 @@ Windows で実行している Outlook アドインが正常に機能しない場
     
 3. アドインを挿入しようとする際に、メッセージに従って ID の確認を行う。
     
-Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム](https://support.microsoft.com/en-us/kb/2986156/)をダウンロードしてください。
+Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム](https://support.microsoft.com/kb/2986156/)をダウンロードしてください。
 
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題

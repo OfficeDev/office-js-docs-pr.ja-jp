@@ -2,8 +2,13 @@
 title: Office 2016 の最新バージョンをインストールする
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 98dc69a7971a94b96bc3f7304fc7905f31013a87
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925235"
 ---
-
 # <a name="install-the-latest-version-of-office-2016"></a>Office 2016 の最新バージョンをインストールする
 
 新しい開発者用機能 (現時点ではプレビュー版のものを含む) は、Office の最新ビルドの取得をオプトインしたサブスクライバーに最初に配信されます。 
@@ -12,8 +17,8 @@ ms.date: 12/04/2017
 
 Office 2016 の最新ビルドを取得するためにオプトインするには: 
 
-- Office 365 Home、Personal、または University のサブスクライバーは、「[Office Insider プログラム](https://products.office.com/ja-jp/office-insider)」を参照してください。
-- 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/ja-jp/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US)」を参照してください。
+- Office 365 Home、Personal、または University のサブスクライバーは、「[Office Insider プログラム](https://products.office.com/office-insider)」を参照してください。
+- 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
 - Mac で Office 2016 を実行している場合:
     - Office 2016 for Mac プログラムを起動します。
     - [ヘルプ] メニューで [**更新プログラムのチェック**] を選びます。
@@ -23,7 +28,7 @@ Office 2016 の最新ビルドを取得するためにオプトインするに�
 
 Office 2016 の最新ビルドを取得するには: 
 
-1. [Office 2016 展開ツール](https://www.microsoft.com/en-us/download/details.aspx?id=49117)をダウンロードします。 
+1. [Office 2016 展開ツール](https://www.microsoft.com/download/details.aspx?id=49117)をダウンロードします。 
 2. ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。
 3. configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。
 4. 次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml` 

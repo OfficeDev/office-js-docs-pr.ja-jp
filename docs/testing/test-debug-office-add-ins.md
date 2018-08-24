@@ -1,9 +1,14 @@
 ---
 title: Office アドインのテストとデバッグ
-description: null
+description: ''
 ms.date: 11/24/2017
+ms.openlocfilehash: f645482fa92faad2e28484fa4b878bd35c0a27b6
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925263"
 ---
-
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
 このセクションでは、Office アドインのテスト、デバッグ、トラブルシューティングに関するガイダンスを示します。
@@ -19,7 +24,7 @@ ms.date: 11/24/2017
 - [iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - 
-  [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/ja-jp/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+  [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>Office アドインのデバッグ
 

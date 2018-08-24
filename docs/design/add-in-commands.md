@@ -2,12 +2,12 @@
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084064"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925200"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -16,7 +16,7 @@ ms.locfileid: "20084064"
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
+> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
 
 *図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
@@ -70,7 +70,7 @@ ms.locfileid: "20084064"
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
 
      > [!NOTE]
-     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)を通過しない場合があります。
+     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/office/dev/store/validation-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
