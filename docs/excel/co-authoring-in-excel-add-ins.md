@@ -2,13 +2,16 @@
 title: Excel アドインの共同編集機能
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 1919f66a3c93c42ec24520f971eda33dac491355
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925242"
 ---
-
-
-
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
-[共同編集機能](https://support.office.com/ja-jp/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
+[共同編集機能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
 
 > [!IMPORTANT]
 > Office 365 の Excel 2016 には、左上隅に [自動保存] があります。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
@@ -17,8 +20,8 @@ ms.date: 12/04/2017
 
 - Excel Online
 - Excel for Android
-- Excel for iOS
-- Excel Mobile for Windows 10
+- iOS 用の Excel
+- Windows 10 用の Excel Mobile
 - Excel for Windows Desktop for Office 365 のユーザー (Windows デスクトップ ビルド 16.0.8326.2076 以降、2017 年 8 月から Current Channel のユーザーに公開)
 
 ## <a name="coauthoring-overview"></a>共同編集機能の概要
@@ -53,5 +56,5 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 
 ## <a name="see-also"></a>関連項目 
 
-- [Excel (VBA) の共同編集機能について](https://msdn.microsoft.com/ja-jp/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [自動保存がアドインとマクロ (VBA) に及ぼす影響](https://msdn.microsoft.com/ja-jp/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Excel (VBA) の共同編集機能について](https://msdn.microsoft.com/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [自動保存がアドインとマクロ (VBA) に及ぼす影響](https://msdn.microsoft.com/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
