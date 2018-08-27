@@ -2,8 +2,13 @@
 title: Office アドインで外部サービスを承認する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925291"
 ---
-
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 
 大手のオンライン サービス (Office 365、Google、Facebook、LinkedIn、SalesForce、GitHub など) では、開発者は、ユーザーが自分のアカウントに別のアプリケーションからアクセスできるようにすることが可能です。これにより、開発者は、これらのサービスを Office アドインに含めることができるようになります。
@@ -26,7 +31,7 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 
 ## <a name="authorization-to-microsoft-graph"></a>Microsoft Graph への承認
 
-Microsoft Graph を使用して Office 365 や OneDrive などの外部サービスにアクセスできる場合、「[Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)」と関連記事に記載されているシングル サインオン システムを使用することにより、ユーザーは最適なエクスペリエンスが得られ、開発者は最も簡単な開発エクスペリエンスが得られます。 この記事に記載されている手法は、Microsoft Graph を使用してアクセスできない外部サービスに最適です。 ただし、Microsoft Graph にアクセスするためにそれらの手法を使用することも*できます*。そのため、シングル サインオンの利点よりも、それらを好まれるかもしれません。 たとえば、シングル サインオン システムにはサーバー側のコードが必要であるため、真の単一ページのアプリでは使用できません。 また、シングル サインオン システムは一部のプラットフォームではまだサポートされていません。
+Microsoft Graph を使用して Office 365 や OneDrive などの外部サービスにアクセスできる場合、「[Office アドインのシングル サインオンを有効化する](authorize-to-microsoft-graph.md)」とその関連記事に記載されているシングル サインオン システムを使用することにより、ユーザーには最適な、そして開発者には最も簡単な開発経験が得られます。 この記事に記載されている手法は、Microsoft Graph を使用してアクセスできない外部サービスに最適です。 ただし、Microsoft Graph にアクセスするためにそれらの手法を使用することも*できます*。そのため、シングル サインオンの利点よりも、それらを好まれるかもしれません。 たとえば、シングル サインオン システムにはサーバー側のコードが必要であるため、真の単一ページのアプリでは使用できません。 また、シングル サインオン システムは一部のプラットフォームではまだサポートされていません。
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Office アドインに暗黙的フローを使用する
 オンライン サービスが暗黙的フローをサポートしているかどうかを判断する最良の方法は、サービスのドキュメントを調べることです。 サービスが暗黙的フローをサポートしている場合、**Office-js-helpers** Javascript ライブラリを使って細かい作業を行うことができます。
@@ -46,7 +51,7 @@ Microsoft Graph を使用して Office 365 や OneDrive などの外部サービ
 
 ### <a name="relayproxy-functions"></a>Relay 関数と Proxy 関数
 
-サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/en-us/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で**クライアント ID** と**クライアント シークレット**の値を使用すると、認証コード フローを使用できます。この関数は、特定のコードを**アクセス トークン**に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
+サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で**クライアント ID** と**クライアント シークレット**の値を使用すると、認証コード フローを使用できます。この関数は、特定のコードを**アクセス トークン**に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
 
 この技法を使用する場合は、アドインでオンライン サービス (Google や Facebook など) のログイン画面を示す UI やポップアップを表示します。ユーザーがオンライン サービスにサインインして、自分のリソースへのアクセス許可をアドインに付与すると、アドインはオンライン関数に送信できるコードを受信します。後述の「**仲介者サービス**」セクションで説明しているサービスでも同様のフローを使用します。
 
@@ -54,7 +59,7 @@ Microsoft Graph を使用して Office 365 や OneDrive などの外部サービ
 
 各種の言語とプラットフォームで暗黙的フローと認証コード フローを実装するために利用できるライブラリが多数あります。 ライブラリには汎用のものや、特定のオンライン サービス向けのものがあります。
 
-**認証プロバイダーとして Azure Active Directory を使用する Office 365 などのサービス**:[Azure Active Directory 認証ライブラリ](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/)。[Microsoft 認証ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client)のプレビュー版も利用できます。
+**認証プロバイダーとして Azure Active Directory を使用する Office 365 などのサービス**:[Azure Active Directory 認証ライブラリ](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/)。[Microsoft 認証ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client)のプレビュー版も利用できます。
 
 **Google**:[GitHub.com/Google](https://github.com/google) で "auth" または目的の言語の名前を検索します。最も関連のあるリポジトリには、`google-auth-library-[name of language]` という名前が付いています。
 
@@ -74,4 +79,4 @@ Microsoft Graph を使用して Office 365 や OneDrive などの外部サービ
 
 ## <a name="what-is-cors"></a>CORS とは
 
-CORS は [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) の略です。アドイン内で CORS を使用する方法の詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](addressing-same-origin-policy-limitations.md)」を参照してください。
+CORS は [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS) の略です。アドイン内で CORS を使用する方法の詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](addressing-same-origin-policy-limitations.md)」を参照してください。
