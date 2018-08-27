@@ -2,10 +2,13 @@
 title: Excel JavaScript API の高度な概念
 description: ''
 ms.date: 1/18/2018
+ms.openlocfilehash: 7abf905233a872de07410b6ae6f0da4330bec7b7
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925396"
 ---
-
-
-
 # <a name="excel-javascript-api-advanced-concepts"></a>Excel JavaScript API の高度な概念
 
 この記事では、「[Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)」の情報を基にして、より高度な概念をいくつか説明します。これらは Excel 2016 の複雑なアドインを構築するために不可欠です。 
@@ -64,7 +67,7 @@ else {
 
 ## <a name="loading-the-properties-of-an-object"></a>オブジェクトのプロパティを読み込む
 
-Excel JavaScript オブジェクトで `load()` メソッドを呼び出すと、API は `sync()` メソッドの実行時にオブジェクトを JavaScript メモリに読み込むように指示されます。 `load()` メソッドには、読み込むプロパティのコンマで区切られた名前を含む文字列や、読み込むプロパティを指定するオブジェクト、改ページのオプションなどを指定できます。 
+Excel JavaScript オブジェクトで `load()` メソッドを呼び出すと、API は `sync()` メソッドの実行時にオブジェクトを JavaScript メモリに読み込むように指示されます。 メソッドには、読み込むプロパティのコンマで区切られた名前を含む文字列や、読み込むプロパティを指定するオブジェクト、改ページのオプションなどを指定できます。`load()` 
 
 > [!NOTE]
 > パラメーターを指定せずにオブジェクト (またはコレクション) の `load()` メソッドを呼び出すと、オブジェクトのすべてのスカラー プロパティ (またはコレクション内のすべてのオブジェクトのすべてのスカラー プロパティ) が読み込まれます。 Excel ホスト アプリケーションとアドイン間のデータ転送量を減らすには、読み込むプロパティを明示的に指定しないで `load()` メソッドを呼び出さないようにします。
@@ -119,7 +122,7 @@ Excel.run(function (ctx) {
 
 ### <a name="load-option-properties"></a>オプションのプロパティを読み込む
 
-`load()` メソッドを呼び出すときに、コンマで区切られた文字列または配列を渡す代わりに、次のプロパティを含むオブジェクトを渡すことができます。 
+メソッドを呼び出すときに、コンマで区切られた文字列または配列を渡す代わりに、次のプロパティを含むオブジェクトを渡すことができます。`load()` 
 
 |**プロパティ**|**型**|**説明**|
 |:-----------|:-------|:----------|
@@ -128,7 +131,7 @@ Excel.run(function (ctx) {
 |`top`|int| 結果に含めることができるコレクション項目の最大数を指定します。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 |`skip`|int|スキップされて結果に組み込まれないコレクション内の項目の数を指定します。`top` が指定されている場合は、指定された数の項目がスキップされた後で結果セットが開始されます。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 
-次のコード サンプルは、コレクション内の各ワークシートの使用範囲の `name` プロパティと `address` を選択することにより、ワークシートのコレクションを読み込みます。 また、コレクションの上位 5 つのワークシートのみを読み込むように指定しています。 `top: 10` と `skip: 5` を属性値として指定することで、次の 5 つのワークシートのセットを処理できます。 
+次のコード サンプルは、コレクション内の各ワークシートの使用範囲の `name` プロパティと `address` を選択することにより、ワークシートのコレクションを読み込みます。 また、コレクションの上位 5 つのワークシートのみを読み込むように指定しています。 と `skip: 5` を属性値として指定することで、次の 5 つのワークシートのセットを処理できます。`top: 10` 
 
 ```js 
 myWorksheets.load({
@@ -143,7 +146,7 @@ myWorksheets.load({
 
 Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、[Worksheet](https://dev.office.com/reference/add-ins/excel/worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
 
-### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>`object.load()` を使用したスカラー プロパティとナビゲーション プロパティ
+### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>を使用したスカラー プロパティとナビゲーション プロパティ `object.load()`
 
 パラメーターを指定しないで `object.load()` メソッドを呼び出すと、オブジェクトのすべてのスカラー プロパティが読み込まれます。オブジェクトのナビゲーション プロパティは読み込まれません。 さらに、ナビゲーション プロパティを直接読み込むことはできません。 その代わりに、`load()` メソッドを使用して、目的のナビゲーション プロパティ内のスカラー プロパティを個別に参照する必要があります。 たとえば、範囲のフォント名を読み込むには、**name** プロパティへのパスとして **format** および **font** ナビゲーション プロパティを指定する必要があります。
 
@@ -159,7 +162,7 @@ someRange.load("format/font/name")
 入れ子になったナビゲーション プロパティを持つオブジェクトのプロパティを設定するのは面倒です。 前述のナビゲーション パスを使用してプロパティを個別に設定する代わりに、Excel JavaScript API のすべてのオブジェクトで使用できる、`object.set()` メソッドを使用できます。 このメソッドを使用すると、同じ Office.js 型の別のオブジェクト、またはメソッドが呼び出されるオブジェクトのプロパティと同様に構造化されたプロパティを持つ JavaScript オブジェクトを渡すことによって、オブジェクトの複数のプロパティを一度に設定できます。
 
 > [!NOTE]
-> `set()` メソッドは、Excel JavaScript API などホスト固有の Office JavaScript API のオブジェクトでのみ実装されます。 共通 (共有) API は、このメソッドをサポートしていません。 
+> メソッドは、Excel JavaScript API などホスト固有の Office JavaScript API のオブジェクトでのみ実装されます。`set()` 共通 (共有) API は、このメソッドをサポートしていません。 
 
 ### <a name="set-properties-object-options-object"></a>set (properties: object, options: object)
 
@@ -211,11 +214,11 @@ Excel.run(function (ctx) {
     }
 });
 ```
-## <a name="42ornullobject-methods"></a>&#42;OrNullObject メソッド
+## <a name="42ornullobject-methods"></a>*OrNullObject メソッド
 
 多くの Excel JavaScript API メソッドは、API の条件が満たされない場合に例外を返します。 たとえば、ブックに存在しないワークシート名を指定してワークシートを取得しようとすると、`getItem()` メソッドは `ItemNotFound` 例外を返します。 
 
-このようなシナリオの複雑な例外処理ロジックを実装する代わりに、Excel JavaScript API のいくつかのメソッドで使用できる `*OrNullObject` メソッドのバリエーションを使用できます。 指定された項目が存在しない場合、`*OrNullObject` メソッドは例外をスローするのではなく、null オブジェクト (JavaScript `null` ではない) を返します。 たとえば、**Worksheets** などのコレクションで `getItemOrNullObject()` メソッドを呼び出して、コレクションからのアイテムの取得を試行できます。 `getItemOrNullObject()` メソッドは、指定された項目が存在する場合はその項目を返し、それ以外の場合は null オブジェクトを返します。 返される null オブジェクトには、ブール型プロパティ `isNullObject` が含まれています。これを評価して、オブジェクトが存在するかどうかを判断できます。
+このようなシナリオの複雑な例外処理ロジックを実装する代わりに、Excel JavaScript API のいくつかのメソッドで使用できる `*OrNullObject` メソッドのバリエーションを使用できます。 指定された項目が存在しない場合、`*OrNullObject` メソッドは例外をスローするのではなく、null オブジェクト (JavaScript `null` ではない) を返します。 たとえば、**Worksheets** などのコレクションで `getItemOrNullObject()` メソッドを呼び出して、コレクションからのアイテムの取得を試行できます。 メソッドは、指定された項目が存在する場合はその項目を返し、それ以外の場合は null オブジェクトを返します。`getItemOrNullObject()` 返される null オブジェクトには、ブール型プロパティ `isNullObject` が含まれています。これを評価して、オブジェクトが存在するかどうかを判断できます。
 
 次のコード サンプルは `getItemOrNullObject()` メソッドを使用して、"Data" という名前のワークシートの取得を試行します。 メソッドが null オブジェクトを返す場合は、新しいシートを作成し、そのシート上で操作を実行する必要があります。
 
@@ -237,4 +240,5 @@ return context.sync()
  
 * [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Excel JavaScript API パフォーマンスの最適化](performance.md)
 * [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

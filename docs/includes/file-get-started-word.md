@@ -270,7 +270,6 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
             <title>Boilerplate text app</title>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="app.js" type="text/javascript"></script>
             <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
@@ -297,7 +296,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. **app.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
+2. ファイル **src/index.js** を開き、アドインのスクリプトを指定します。内容をすべて次のコードとで置き換えファイルを保存します。このスクリプトには、初期化コードと、ボタンが選択されたときに Word 文書にテキストを挿入することにより文書を変更するコードが含まれています。 
 
     ```js
     'use strict';
@@ -398,7 +397,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+3. プロジェクトのルートにある **app.css** ファイルを開き、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
 
     ```css
     #content-header {
@@ -471,7 +470,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがって、さらに複雑なアドインをビルドします。
+これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [Word アドイン チュートリアル](../tutorials/word-tutorial.yml)

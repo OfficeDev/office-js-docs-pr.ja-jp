@@ -2,12 +2,12 @@
 title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d07f302f5527d69b458d88ae47e7957e828a1e2f
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703960"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925529"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -33,13 +33,13 @@ Office アドインは、アドインのランタイム環境、複数層のア�
 
 以降のセクションでは、Windows ベース デバイスの Office クライアント、OS X Mac デバイス、および Web 上の Office Online クライアントでのアドインの実行がランタイム アーキテクチャによってどのようにサポートされるかについて簡潔に説明します。
 
-> **注:**  WIP と Intune の Office アドインとの併用の詳細については、「[Office アドインを実行するドキュメントでエンタープライズ データを保護するために WIP と Intune を使用する](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip)」を参照してください。
+> **注:**  WIP と Intune の Office アドインとの併用の詳細については、「[Office アドインを実行するドキュメントでエンタープライズ データを保護するために WIP と Intune を使用する](https://docs.microsoft.com/microsoft-365/enterprise/office-add-ins-wip)」を参照してください。
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Windows および OS X のデバイス用のクライアント
 
 Excel、Outlook、および Outlook for Mac など、デスクトップおよびタブレット デバイス用のサポート対象クライアントでは、インプロセス コンポーネントである Office アドイン ランタイムを統合することで、Office アドインをサポートしています。このランタイムは、アドインのライフサイクルを管理し、アドインとクライアント アプリケーションの相互運用を可能にします。アドインの Web ページ自体は、プロセスの外部にホストされます。図 1 に示すように、Windows のデスクトップ デバイスやタブレット デバイスでは、アドインの Web ページは Internet Explorer コントロール内にホストされ、この Internet Explorer コントロールのほうはアドインのランタイム プロセス内にホストされます。そのようにして、セキュリティとパフォーマンスの分離が実現されます。
 
-Windows デスクトップの場合は、制限付きサイト ゾーンに対して Internet Explorer の保護モードを有効にする必要があります。これは通常、既定で有効にされています。無効になっている場合、アドインを起動しようとすると[エラーが発生](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)します。
+Windows デスクトップの場合は、制限付きサイト ゾーンに対して Internet Explorer の保護モードを有効にする必要があります。これは通常、既定で有効にされています。無効になっている場合、アドインを起動しようとすると[エラーが発生](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)します。
 
 *図 1.Windows ベースのデスクトップおよびタブレットのクライアントにおける Office アドインのランタイム環境*
 
@@ -90,7 +90,7 @@ Office アドインは、ブラウザー コントロールまたは **iframe** 
 
 - ドキュメントを共有する場合、ユーザーはそのドキュメントに挿入されているアドインまたはそのドキュメントに関連付けられているアドインも共有することになります。ユーザーがこれまで使用したことのないアドインが含まれたドキュメントを開いた場合、ホスト アプリケーションは、そのドキュメントでアドインを実行するために必要なアクセス許可を付与するようにユーザーに促します。組織環境では、ドキュメントが外部ソースから取得される場合にも、Office ホスト アプリケーションは確認のためのプロンプトを表示します。
 
-- ユーザーは、AppSource へのアクセスを有効または無効にすることができます。コンテンツ アドインと作業ウィンドウ アドインの場合は、ユーザーがホスト Office クライアント上の **[セキュリティ センター]** (**[ファイル]** > **[オプション]** > **[セキュリティ センター]** > **[セキュリティ センターの設定]** > **[信頼できるアドイン カタログ]** から開く) から信頼できるアドインとカタログへのアクセスを管理します。Outlook アドインの場合は、**[アドインの管理]** ボタンを選択してアドインを管理できます。Outlook for Windows では、**[ファイル]** > **[アドインの管理]** を選択します。Outlook for Mac では、アドイン バーの **[アドインの管理]** ボタンを選択します。Outlook Web App の場合、**[設定]** メニュー (歯車アイコン) の **[アドインの管理]** を選択します。管理者は、[グループ ポリシーを使用](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing)してこのアクセスを管理することもできます。
+- ユーザーは、AppSource へのアクセスを有効または無効にすることができます。コンテンツ アドインと作業ウィンドウ アドインの場合は、ユーザーがホスト Office クライアント上の **[セキュリティ センター]** (**[ファイル]** > **[オプション]** > **[セキュリティ センター]** > **[セキュリティ センターの設定]** > **[信頼できるアドイン カタログ]** から開く) から信頼できるアドインとカタログへのアクセスを管理します。Outlook アドインの場合は、**[アドインの管理]** ボタンを選択してアドインを管理できます。Outlook for Windows では、**[ファイル]** > **[アドインの管理]** を選択します。Outlook for Mac では、アドイン バーの **[アドインの管理]** ボタンを選択します。Outlook Web App の場合、**[設定]** メニュー (歯車アイコン) の **[アドインの管理]** を選択します。管理者は、[グループ ポリシーを使用](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)してこのアクセスを管理することもできます。
 
 - アドイン プラットフォームの設計を通して、次のような方法でセキュリティとパフォーマンスがエンド ユーザーに提供されます。
 
@@ -98,11 +98,11 @@ Office アドインは、ブラウザー コントロールまたは **iframe** 
 
   - アドインは Web ブラウザー コントロール下で動作するため、ブラウザーで動作する通常の Web ページとほぼ同じ処理を実行できますが、同時に、ドメイン分離のための同一生成元ポリシーとセキュリティ ゾーンを遵守するように制限されます。
 
-Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security)」を参照してください。
+Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)」を参照してください。
 
 ### <a name="developer-guidelines-to-handle-pii"></a>PII の取り扱いに関する開発ガイドライン
 
-IT 管理者と開発者が PII を保護するための一般的なガイドラインは、「[人事管理アプリケーションの開発とテストにおけるプライバシーの保護](http://technet.microsoft.com/en-us/library/gg447064.aspx)」に記載されています。Office アドインを開発するときに適用される PII 保護ガイドラインを以下に示します。
+Office アドインを開発するときに適用される PII 保護ガイドラインを以下に示します。
 
 - [Settings](https://dev.office.com/reference/add-ins/shared/settings) オブジェクトは、コンテンツ アドインまたは作業ウィンドウ アドインに関する設定やセッション間の状態データの永続化に使用できますが、パスワードやその他の機密性の高い PII を **Settings** オブジェクトに保存してはいけません。**Settings** オブジェクト内のデータはエンド ユーザーには表示されませんが、容易にアクセスできるドキュメントのファイル形式の一部として保存されます。アドインの PII の使用を制限し、アドインに必要な PII はユーザー保護リソースとしてアドインをホストするサーバーに保存する必要があります。
 
@@ -139,7 +139,7 @@ Office アドインのセキュリティ モデルをサポートするための
 </OfficeApp>
 ```
 
-作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」を参照してください。
+作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」を参照してください。
 
 Outlook アドインのアクセス許可の詳細については、次のトピックを参照してください。
 
@@ -176,23 +176,23 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 悪意のあるユーザーは、アドインのドキュメントまたはフィールドを介して悪質なスクリプトを入力して、アドインの発行元を攻撃する可能性があります。 開発者は、ユーザーの入力を処理して、悪意のあるユーザーの JavaScript をドメイン内で実行しないようにする必要があります。 ドキュメントやメール メッセージからのユーザー入力、またはアドインのフィールドを使用してユーザー入力を処理するには、次のような優れた方法があります。
 
 
-- 可能であれば、DOM プロパティの [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) ではなく、[innerText](https://msdn.microsoft.com/library/ms533899.aspx) および [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) プロパティを使用します。次のように実行して、Internet Explorer と Firefox のクロス ブラウザー サポートを提供します。
+- 可能であれば、DOM プロパティの [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) ではなく、[innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) および [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) プロパティを使用します。次のように実行して、Internet Explorer と Firefox のクロス ブラウザー サポートを提供します。
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    **innerText** と **textContent** の違いについては、「[Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent)」を参照してください。一般的なブラウザー間での DOM の互換性の詳細については、「[W3C DOM 互換性](http://www.quirksmode.org/dom/w3c_html.html#t07)」を参照してください。
+    **innerText** と **textContent** の違いについては、「[Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)」を参照してください。一般的なブラウザー間での DOM の互換性の詳細については、「[W3C DOM 互換性](http://www.quirksmode.org/dom/w3c_html.html#t07)」を参照してください。
 
-- **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) プロパティを参照してください。
+- **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) プロパティを参照してください。
 
 - jQuery を使用している場合は、[.html()](http://api.jquery.com/text/) メソッドの代わりに [.text()](http://api.jquery.com/html/) メソッドを使用してください。
 
-- [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+- [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
-- [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) または [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
+- [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
 
-- より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx)」を参照してください。
+- より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10))」を参照してください。
 
 ### <a name="tips-to-prevent-clickjacking"></a>「クリックジャック」を防止するためのヒント
 
@@ -241,7 +241,7 @@ Office アドインは Office Online ホスト アプリケーションと通信
   - 法規制に準拠したプライバシー ポリシーを記載した声明を作成する。
   - アドインの提出時に契約合意書に署名する。
 
-Outlook アドインの開発者は、リソース使用量のルール以外に、アクティブ化ルールの指定と JavaScript API の使用に関する制限についてもアドインが遵守していることを確認する必要があります。詳細については、「[Outlook アドインのアクティブ化と JavaScript API に関する制限事項](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)」を参照してください。
+Outlook アドインの開発者は、リソース使用量のルール以外に、アクティブ化ルールの指定と JavaScript API の使用に関する制限についてもアドインが遵守していることを確認する必要があります。詳細については、「[Outlook アドインのアクティブ化と JavaScript API に関する制限事項](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)」を参照してください。
 
 ## <a name="it-administrators-control"></a>IT 管理者による制御
 
@@ -249,12 +249,12 @@ Outlook アドインの開発者は、リソース使用量のルール以外に
 
 ## <a name="see-also"></a>関連項目
 
-- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
-- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
-- [Outlook アドインのアクセス許可を理解する](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Outlook アドインのアクティブ化と JavaScript API の制限](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
-- [Office アドインにおける同一生成元ポリシーの制限への対処](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [Outlook アドインのアクセス許可を理解する](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Office アドインにおける同一生成元ポリシーの制限への対処](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同一生成元ポリシー](http://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同一生成元ポリシー パート 1:ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [JavaScript の同一生成元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
-- [IE 保護モード](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [IE 保護モード](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

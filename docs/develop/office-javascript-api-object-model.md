@@ -2,25 +2,25 @@
 title: Office JavaScript API オブジェクト モデル
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: a1fca2c8dd5a92cadb6f2798c3732093578360e5
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 999383ae07472ec8d07be0fa714a44339c8ce76d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21719882"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925508"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
-Office JavaScript アドインは、ホストの基本機能にアクセスできるようにします。 このアクセスのほとんどは、いくつかの重要なオブジェクトを経由します。  [Context](#context-object) オブジェクトは、初期化後にランタイム環境にアクセスします。  [Document](#document-object) オブジェクトを使用すると、ユーザーはExcel、PowerPoint、または Word ドキュメントを制御できます。  [Mailbox](#mailbox-object) オブジェクトは、メッセージとユーザー プロファイルへの Outlook アドイン アクセスを提供します。 これらの高水準オブジェクト間の関係を理解することは、JavaScript アドインの基礎となります。
+Office JavaScript アドインは、ホストの基本機能にアクセスできるようにします。 このアクセスのほとんどは、いくつかの重要なオブジェクトを経由します。 [Context](#context-object) オブジェクトは、初期化後にランタイム環境にアクセスします。 [Document](#document-object) オブジェクトを使用すると、ユーザーはExcel、PowerPoint、または Word ドキュメントを制御できます。 [Mailbox](#mailbox-object) オブジェクトは、メッセージとユーザー プロファイルへの Outlook アドイン アクセスを提供します。 これらの高水準オブジェクト間の関係を理解することは、JavaScript アドインの基礎となります。
 
 ## <a name="context-object"></a>Context オブジェクト
 
 **適用対象:** すべてのアドインの種類
 
-アドインが [初期化される](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)と、多数のさまざまなオブジェクトとランタイム環境でやり取りできます。 アドインのランタイム コンテキストは、 [Context](https://dev.office.com/reference/add-ins/shared/office.context) オブジェクトによって API に反映されます。  **Context** は API の最も重要なオブジェクトへのアクセスを提供する主なオブジェクトです。 [Document](https://dev.office.com/reference/add-ins/shared/document) と [メールボックス](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトは、ドキュメントとメールボックスのコンテンツへのアクセスを提供します。
+アドインが [初期化される](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)と、多数のさまざまなオブジェクトとランタイム環境でやり取りできます。 アドインのランタイム コンテキストは、 [Context](https://dev.office.com/reference/add-ins/shared/office.context) オブジェクトによって API に反映されます。 **Context** は API の最も重要なオブジェクトへのアクセスを提供する主要オブジェクトです。[Document](https://dev.office.com/reference/add-ins/shared/document) と [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトは、ドキュメントとメールボックスのコンテンツへのアクセスを提供します。
 
 たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](https://dev.office.com/reference/add-ins/shared/office.context.document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトを使用すると、[contentLanguage](https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) プロパティと [displayLanguage](https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) プロパティにもアクセスできるようになり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。  [roamingSettings](https://dev.office.com/reference/add-ins/outlook/Office.context) プロパティを使用すると、 [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクトは、個々のユーザーのメールボックスのアドインに固有の設定を格納します。 最後に、**Context** オブジェクトの [ui](https://dev.office.com/reference/add-ins/shared/officeui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトを使用すると、[contentLanguage](https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) プロパティと [displayLanguage](https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) プロパティにもアクセスが可能になり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。 [roamingSettings](https://dev.office.com/reference/add-ins/outlook/Office.context) プロパティを使用すると、 [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) オブジェクトは、個々のユーザーのメールボックスのアドインに固有の設定を格納します。 最後に、**Context** オブジェクトの [ui](https://dev.office.com/reference/add-ins/shared/officeui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 
 ## <a name="document-object"></a>Document オブジェクト
@@ -171,4 +171,4 @@ var item = Office.context.mailbox.item;
     
 -  **RoamingSettings** オブジェクト: アドインがインストールされているユーザーのメールボックスに Outlook アドイン固有のカスタム設定を保存する際に使用します。
     
-Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](https://docs.microsoft.com/en-us/outlook/add-ins/)」を参照してください。
+Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](https://docs.microsoft.com/outlook/add-ins/)」を参照してください。

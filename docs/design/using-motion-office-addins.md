@@ -25,7 +25,7 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 
 ## <a name="use-expected-motions"></a>予想される動作を使用する
-[Office UI Fabric](https://developer.microsoft.com/en-us/fabric) を使用して、Office プラットフォームと視覚的に関連付けることをお勧めします。また、Fabric モーション言語に合わせてモーションを作成するため、[Fabric アニメーション](https://developer.microsoft.com/en-us/fabric#/styles/animations)を使用することをお勧めします。 
+[Office UI Fabric](https://developer.microsoft.com/fabric) を使用して、Office プラットフォームと視覚的に関連付けることをお勧めします。また、Fabric モーション言語に合わせてモーションを作成するため、[Fabric アニメーション](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 
 
 これを、Office とシームレスに適合するように使用します。こうすることにより、直感的なエクスペリエンスを実現できます。アニメーション CSS クラスには、Office のメンタル モデルを明確にするのに役立つ、方向性、開始/終了、期間に関する詳細な設定が用意されており、アドインの操作方法も学べるようになっています。
 
@@ -49,7 +49,7 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 |するべきこと|してはいけないこと|
 |:-----|:-----|
 | [推奨モーション期間](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
-| [推奨されるイージング曲線](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従います。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
+| [推奨イージング曲線](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
 
 ![ゆっくりフェードインしてタイルが読み込まれる gif と、バウンスを使用してタイルが読み込まれる gif](../images/add-in-motion-character.gif)
 

@@ -2,19 +2,19 @@
 title: JavaScript API for Office について
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fef2cdad69408f099296461066f1ea380e3b118b
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: a9e1e26d4ba94a933ecb98250c19afee90750f5d
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703813"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22928036"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
 この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>アドインで JavaScript API for Office ライブラリを参照する
 
@@ -71,7 +71,7 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript オブジェクト モデル
 
-初期化されると、アドインはホスト (たとえば Excel、Outlook など) を操作できるようになります。 特定の使用パターンに関する詳細については、「[Office JavaScript API オブジェクトモデル](/office-javascript-api-object-model.md)」ページを参照してください。 [共有 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) および特定のホスト両方についても、詳細な参照ドキュメントがあります。
+初期化されたアドインはホスト (例 : Excel、Outlook) と連携できます。「[Office JavaScript API オブジェクトモデル](office-javascript-api-object-model.md)」のページで特定の使用パターンの詳細を見ることができます。また、[共有 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) と特定のホストに関する詳細なリファレンス ドキュメントも用意されています。
 
 ## <a name="api-support-matrix"></a>API サポート マトリックス
 

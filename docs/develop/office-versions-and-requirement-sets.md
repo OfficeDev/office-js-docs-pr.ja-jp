@@ -1,3 +1,14 @@
+---
+title: Office のバージョンと要件セット
+description: ''
+ms.date: 03/29/2018
+ms.openlocfilehash: 3900dbc50d879b9dec809e19b0fc3458a3f46729
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925186"
+---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
 Office にはプラットフォームやバージョンが異なるものが数多くあり、それらは Office JavaScript API (Office.js) に含まれる API をすべてサポートしているわけではありません。 ユーザーがインストールしている Office のバージョンを制御できない場合があります。  このような状況に対処するため、Office アドインで必要な機能を Office ホストがサポートしているかどうかを判別するのに役立つ要件セットと呼ばれるシステムが用意されています。 
@@ -37,21 +48,18 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [ダイアログ API の要件セット](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets?product=excel)
 - [Identity API の要件セット](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets?product=excel)
 
-`ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office ホストを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office ホスト (Word、Outlook など) の要件セットにも対応していません。  Office ホストの要件セットがリリースされる早さや時期は、ホストによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
+の "1.1" など、要件セットのバージョン番号は Office ホストを基準にしています。`ExcelApi 1.1` 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office ホスト (Word、Outlook など) の要件セットにも対応していません。  Office ホストの要件セットがリリースされる早さや時期は、ホストによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
 
-JavaScript API for Office ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 `ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。 Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[JavaScript API for Office について](https://docs.microsoft.com/ja-jp/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
+JavaScript API for Office ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。`ExcelApi 1.3` Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[JavaScript API for Office について](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>Office ホストと要件セットを指定する
 
-アドインに必要となる Office ホストと要件セットは、さまざまな方法で指定できます。  詳細については、「[Office のホストと API の要件を指定する](https://docs.microsoft.com/ja-jp/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
+アドインに必要となる Office ホストと要件セットは、さまざまな方法で指定できます。  詳細については、「[Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
 
 
 ## <a name="see-also"></a>関連項目
 
-- 
-  [Office のホストと API の要件を指定する](https://docs.microsoft.com/ja-jp/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- 
-  [Office の最新バージョンをインストールする](https://docs.microsoft.com/ja-jp/office/dev/add-ins/develop/install-latest-office-version)
-- 
-  [Office 365 ProPlus 更新プログラムのチャネルの概要](https://docs.microsoft.com/ja-jp/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Office 365 で Office を最大限に活用する](https://products.office.com/en-us/compare-all-microsoft-office-products?tab=2)
+- [Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office の最新バージョンをインストールする](https://docs.microsoft.com/office/dev/add-ins/develop/install-latest-office-version)
+- [Office 365 ProPlus 更新プログラムのチャネルの概要](https://docs.microsoft.com/deployoffice/overview-of-update-channels-for-office-365-proplus)
+- [Office 365 で Office を最大限に活用する](https://products.office.com/compare-all-microsoft-office-products?tab=2)

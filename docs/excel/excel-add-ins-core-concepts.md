@@ -2,12 +2,12 @@
 title: Excel JavaScript API の中心概念
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: fb22ae41718c459366a628c8f06531cc6978a178
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 37d652d2ad2f323d0f94583e530e91e775e06ddf
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703841"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925410"
 ---
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API の中心概念
  
@@ -15,7 +15,7 @@ ms.locfileid: "21703841"
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
-Web ベースの Excel アドインは、Office for Windows などのデスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office Online の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。 サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。 このため、Office.js 内の **sync()** API の呼び出しにより [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。 また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの起動など、複数の操作をキューに登録し、**sync()** の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。 次のセクションでは、**Excel.run()** と **sync()** API を使用してこれを実行する方法について説明します。
+Web ベースの Excel アドインは、Office for Windows などのデスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office Online の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。 サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。 このため、Office.js 内の **sync()** API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。 また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの起動など、複数の操作をキューに登録し、**sync()** の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。 次のセクションでは、**Excel.run()** と **sync()** API を使用してこれを実行する方法について説明します。
  
 ## <a name="excelrun"></a>Excel.run
  
@@ -55,7 +55,7 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行されて [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
+要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行され [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
  
 次の例は、ローカル JavaScript proxy オブジェクト (**selectedRange**) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して **context.sync()** を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
  

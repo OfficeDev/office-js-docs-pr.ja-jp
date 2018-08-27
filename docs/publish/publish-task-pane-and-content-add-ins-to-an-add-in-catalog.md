@@ -2,8 +2,13 @@
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925298"
 ---
-
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 
 アドイン カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアドイン カタログに Office アドインのマニフェスト ファイルをアップロードできます。管理者がアドイン カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。
@@ -11,7 +16,7 @@ ms.date: 01/23/2018
 > [!IMPORTANT]
 > - SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。
 > - クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインの発行に [Office 365 管理センターからの一元展開を使用する](../publish/centralized-deployment.md)ことをお勧めします。
-> - SharePoint カタログは Office 2016 for Mac ではサポートされていません。Office アドインを Mac クライアントに展開するには、それを [AppSource](https://docs.microsoft.com/ja-jp/office/dev/store/submit-to-the-office-store) に提出する必要があります。   
+> - SharePoint カタログは Office 2016 for Mac ではサポートされていません。Office アドインを Mac クライアントに展開するには、それを [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) に提出する必要があります。   
 
 ## <a name="set-up-an-add-in-catalog"></a>アドイン カタログのセットアップ
 
@@ -19,7 +24,7 @@ ms.date: 01/23/2018
 
 ### <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>SharePoint 上でアドイン カタログをセットアップするには
 
-1. **中央管理サイト**を参照 (**[スタート]** > **[すべてのプログラム]** > **[Microsoft SharePoint 2013 製品]** > **[SharePoint 2013 サーバーの全体管理]**の順にクリック) します。
+1. **中央管理サイト**を参照 (**[スタート]** > **[すべてのプログラム]** > **[Microsoft SharePoint 2013 製品]** > **[SharePoint 2013 サーバーの全体管理]** の順にクリック) します。
     
 2. 左側の作業ウィンドウで、 [ **アドイン**] を選択します。
     
@@ -97,4 +102,4 @@ ms.date: 01/23/2018
     
 3. Office アプリケーションを閉じ、もう一度開きます。アドイン カタログが **[Office アドイン]** ダイアログ ボックスに表示されます。
 
-または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。詳細については、TechNet で「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](https://technet.microsoft.com/ja-jp/library/jj219429.aspx#BKMK_GP)」のセクションを参照してください。
+または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。 詳細は「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。

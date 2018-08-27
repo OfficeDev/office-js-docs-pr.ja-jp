@@ -2,12 +2,12 @@
 title: Office アドインのユーザビリティ テスト
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 410b8d7ede22cf222ee2df794e438c7f5f8881dd
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085443"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925452"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
@@ -24,7 +24,7 @@ ms.locfileid: "20085443"
 デザインに関するほとんどのユーザビリティの問題を見出すのに必要な参加者は 5 人だけです。製品がユーザー中心になっていることを確認するには、開発サイクル全体にわたって小規模なテストを定期的に組み込んでください。
 
 > [!NOTE]
-> 複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) にアドインを公開するには、[定義したメソッドをサポートするプラットフォーム](../overview/office-add-in-availability.md)すべてでそのアドインが作動する必要があります。
+> 複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) にアドインを公開するには、[定義したメソッドをサポートするプラットフォーム](../overview/office-add-in-availability.md)すべてでそのアドインが作動する必要があります。
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1.   テスト サービスにサインアップする
 

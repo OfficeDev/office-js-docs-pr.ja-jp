@@ -2,8 +2,13 @@
 title: Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925606"
 ---
-
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
 
 Windows 10 に含まれている F12 開発者ツールにより、web ページのデバッグ、テスト、および高速化ができます。それらを使用すれば、Visual Studio などの IDE を使用していない場合や、アドインを IDE の外部で実行中に問題を調査する必要がある場合に、Office アドインの開発とデバッグを行うことも可能です。アドインの実行後、F12 開発者ツールを起動できます。
@@ -19,9 +24,9 @@ Windows 10 に含まれている F12 開発者ツールにより、web ページ
 
 - Windows 10 に含まれる F12 開発者ツール。 
     
-- アドインをホストする Office クライアント アプリケーション。  
+- アドインをホストする Office クライアント アプリケーション。 
     
-- アドイン。  
+- アドイン。 
 
 ## <a name="using-the-debugger"></a>デバッガーの使用
 
@@ -33,15 +38,15 @@ Windows 10 に含まれている F12 開発者ツールにより、web ページ
     
 3. Office のバージョンに対応する F12 開発者ツールを起動します。
     
-   - 32 ビット版の Office の場合は、C:\Windows\System32\F12\F12Chooser.exe を使用します。
+   - 32 ビット版の Office の場合は、C:\Windows\System32\F12\IEChooser.exe を使用します。
     
-   - 64 ビット版の Office の場合は、C:\Windows\SysWOW64\F12\F12Chooser.exe を使用します。
+   - 64 ビット版の Office の場合は、C:\Windows\SysWOW64\F12\IEChooser.exe を使用します。
     
-   F12Chooser を起動すると、[デバッグするターゲットの選択] という名前の別ウィンドウに、デバッグの対象になりうるアプリケーションが表示されます。デバッグするアプリケーションを選択します。独自のアドインを記述している場合、アドインを展開した Web サイトを選択します。ローカル ホストの URL も選択できます。 
+   IEChooser を起動すると、[デバッグするターゲットの選択] という名前の別ウィンドウに、デバッグの対象になりうるアプリケーションが表示されます。 デバッグするアプリケーションを選択します。 独自のアドインを記述している場合、アドインを展開した Web サイトを選択します。ローカル ホストの URL も選択できます。 
     
    たとえば、**home.html** を選択します。 
     
-   ![バブルのアドインを示す F12Chooser 画面](../images/choose-target-to-debug.png)
+   ![IEChooser 画面、バブル アドインを示す](../images/choose-target-to-debug.png)
 
 4. F12 ウィンドウで、デバッグするファイルを選択します。
     
@@ -49,7 +54,7 @@ Windows 10 に含まれている F12 開発者ツールにより、web ページ
     
 5. ブレークポイントを設定します。
     
-   home.js にブレークポイントを設定するには、_textChanged_ 関数内の行 144 を選択します。その行の左側と **[コールスタックとブレークポイント]** (右下) ウィンドウの対応する行に赤い点が表示されます。ブレークポイントを設定するその他の方法については、「[デバッガーを使用して実行中の JavaScript を検査する](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)」を参照してください。 
+   home.js にブレークポイントを設定するには、_textChanged_ 関数内の行 144 を選択します。その行の左側と **[コールスタックとブレークポイント]** (右下) ウィンドウの対応する行に赤い点が表示されます。ブレークポイントを設定するその他の方法については、「[デバッガーを使用して実行中の JavaScript を検査する](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))」を参照してください。 
     
    ![home.js ファイルのブレークポイントを含むデバッガー](../images/debugger-home-js-02.png)
 
@@ -62,7 +67,6 @@ Windows 10 に含まれている F12 開発者ツールにより、web ページ
 
 ## <a name="see-also"></a>関連項目
 
-- [デバッガーを使用して実行中の JavaScript を検査する](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
-- 
-  [F12 開発者ツールの使用](https://msdn.microsoft.com/ja-jp/library/bg182326%28v=vs.85%29.aspx)
+- [デバッガーを使用して実行中の JavaScript を検査する](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [F12 開発者ツールの使用](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
     

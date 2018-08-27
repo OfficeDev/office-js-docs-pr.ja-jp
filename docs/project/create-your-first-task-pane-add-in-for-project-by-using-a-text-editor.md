@@ -2,12 +2,12 @@
 title: テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: eda7555d2ac054ff233482309d733f74d1946aa6
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438887"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925550"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
 
@@ -17,7 +17,7 @@ Project 2013では、他の Microsoft Office 2013 クライアントと同じア
 
 Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。 Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
 
-[Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、`\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルがあり、`\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。 
+[Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、`\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルがあり、`\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。 
 
 サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。 これらの関数は、対応するデバッグ ファイル (office.debug.js と project-15.debug.js) を使用して検証できます。
 
@@ -752,7 +752,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     
     2 つのローカル リソース R1 と R2 を作成し、それぞれを 50% でタスク T2 に割り当てて、**getTaskAsync** を再び選択します。テキスト ボックスの結果にはリソース情報が含まれます。結果が同期された SharePoint タスク リスト内にある場合は、SharePoint のタスク ID も結果に含まれます。
     
-    - タスク名: `T2`
+    - Task name: `T2`
     - GUID: `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
@@ -1097,5 +1097,5 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API for Office アドイン](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)     
-- [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

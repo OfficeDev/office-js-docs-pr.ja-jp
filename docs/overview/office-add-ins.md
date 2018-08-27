@@ -2,12 +2,12 @@
 title: Office アドイン プラットフォームの概要
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
-ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
+ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "20023166"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925277"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -41,7 +41,7 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 *図1. アドイン マニフェスト (XML) + Web ページ (HTML、JS) = Office アドイン*
 
-![マニフェストと Web ページで構成される Office アドイン](../images/about-addins-manifestwebpage.png)
+![マニフェストと Web ページから構成される Office アドイン](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>マニフェスト 
 
@@ -101,7 +101,7 @@ Outlook アドインは Office のリボンを拡張したり、コンテキス�
 
 Outlook アドインでは、アドレスや追跡 ID などのアイテムからコンテキスト情報にアクセスし、そのデータを使用してサーバー上の追加情報や Web サービスから魅力的なユーザー エクスペリエンスを作成することができます。Outlook アドインはほとんどの場合、Outlook、Outlook for Mac、Outlook Web App、デバイス用 Outlook Web App などのさまざまなサポートしているホスト アプリケーションで変更なしで実行でき、デスクトップ、Web、およびタブレットとモバイル デバイスでシームレスな操作を提供します。 
 
-Outlook アドインの概要については、「[Outlook アドインの概要](https://docs.microsoft.com/en-us/outlook/add-ins/)」を参照してください。 
+Outlook アドインの概要については、「[Outlook アドインの概要](https://docs.microsoft.com/outlook/add-ins/)」を参照してください。 
 
 ### <a name="create-new-objects-in-office-documents"></a>Office ドキュメント内に新しいオブジェクトを作成する 
 
@@ -117,13 +117,13 @@ Office JavaScript API には、アドインを構築したり、Office のコン
 
 ## <a name="next-steps"></a>次の手順 
 
-Officeアドインの構築を開始する詳細な方法は、[5 分間クイック スタート](https://docs.microsoft.com/en-us/office/dev/add-ins/)を参照してください。 Visual Studio やその他のエディタを使用してすぐにアドインを作成することができます。 
+Officeアドインの構築を開始する詳細な方法は、[5 分間クイック スタート](https://docs.microsoft.com/office/dev/add-ins/)を参照してください。 Visual Studioやその他のエディタを使用してすぐにアドインを作成できます。 
 
-効果的で魅力的なユーザー エクスペリエンスを生み出すソリューションの計画を開始するには、Office アドインの[設計ガイドライン](../design/add-in-design.md)と[ベスト プラクティス](../concepts/add-in-development-best-practices.md)の理解を深めてください。    
+効果的で魅力的なユーザー エクスペリエンスを作成するソリューションの計画を始めるには、Office アドインの[設計のガイドライン](../design/add-in-design.md)と[ベスト プラクティス](../concepts/add-in-development-best-practices.md)の理解を深めてください。    
    
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのサンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [Office アドインのサンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 - [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
 - [Office アドインのホストとプラットフォームの可用性](../overview/office-add-in-availability.md)
 
