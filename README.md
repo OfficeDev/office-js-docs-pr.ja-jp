@@ -1,8 +1,8 @@
 # <a name="office-javascript-apis"></a>Office JavaScript API
 
-Office JavaScript API の概念に関するドキュメントへようこそ。 このリポジトリには、Office JavaScript API の概念、クイックスタート、チュートリアル、および使用ガイドのドキュメント ソース ファイルがあります。 最適にご利用いただくには、このコンテンツを [docs.microsoft.com](https://docs.microsoft.com/en-us/office/dev/add-ins/)で表示することをお勧めします。
+Office JavaScript API の概念に関するドキュメントへようこそ。 このリポジトリには、Office JavaScript API の概念、クイックスタート、チュートリアル、および使用ガイドのドキュメント ソース ファイルがあります。 最適にご利用いただくには、このコンテンツを [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins) で表示することをお勧めします。
 
-> **注**: Office JavaScript API リファレンスのドキュメント ソース ファイルは、[office-js-docs](https://github.com/OfficeDev/office-js-docs) リポジトリにあります。
+> **注**: Office JavaScript API 参照のドキュメント ソース ファイルは、[office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) リポジトリにあります。
 
 ## <a name="give-us-your-feedback"></a>フィードバックをお寄せください
 

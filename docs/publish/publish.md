@@ -2,12 +2,12 @@
 title: Office アドインを展開し、発行する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d8264667306dcdac2e9d5e5d6e6607a2a2100546
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 83581b729f5004c36d267bda14795275a5153a9c
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438782"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925347"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
@@ -18,12 +18,12 @@ ms.locfileid: "19438782"
 |[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|開発プロセスの一環として、Windows、Office Online、iPad、Mac で実行するアドインをテストします。|
 |[一元展開](centralized-deployment.md)|クラウド環境またはハイブリッド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
 |[SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|オンプレミス環境で、組織内のユーザーにアドインを配布します。|
-|[AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)|ユーザーに配布する目的でアドインを公開します。|
+|[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|ユーザーに配布する目的でアドインを公開します。|
 |[Exchange サーバー](#outlook-add-in-deployment)|オンプレミス環境またはオンライン環境で、ユーザーに Outlook アドインを配布します。|
 |[ネットワーク共有](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|アドインをホストさせようとしているネットワーク上の Windows コンピューターで、共有フォルダー カタログとして使用するフォルダーの親フォルダーまたはドライブ文字に移動します。|
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
 
 ## <a name="deployment-options-by-office-host"></a>Office のホストごとの展開オプション
 
@@ -76,15 +76,15 @@ Outlook アドインの展開には以下が必要です。
 - Office 365、Exchange Online、または Exchange Server 2013 以降
 - Outlook 2013 以降
 
-アドインをテナントに割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL から直接マニフェストをアップロードするか、または AppSource からアドインを追加します。アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。詳細については、TechNet の「[組織の Outlook アドインをインストールまたは削除する](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx)」を参照してください。
+アドインをテナントに割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL から直接マニフェストをアップロードするか、または AppSource からアドインを追加します。アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。詳細については、TechNet の「[組織の Outlook アドインをインストールまたは削除する](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [テスト用に Outlook アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [AppSource に提出する][AppSource]
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
-- [効果的な AppSource 登録リストを作成する](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)
+- [効果的な AppSource 登録リストを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

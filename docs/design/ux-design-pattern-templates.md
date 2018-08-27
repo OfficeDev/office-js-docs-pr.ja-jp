@@ -12,7 +12,7 @@ UX パターン テンプレートを使用して、次の作業を行います�
 
 * よくある顧客のシナリオにソリューションとして適用する。
 * 設計のベスト プラクティスとして適用する。
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started) のコンポーネントとスタイルを組み込む。
+* [Office UI Fabric](https://developer.microsoft.com/fabric#/get-started) のコンポーネントとスタイルを組み込む。
 * Office の既定の UI に視覚的に溶け込むアドインをビルドする。
 * UX を概念化し、視覚化する。
 
@@ -37,6 +37,6 @@ UX パターン テンプレートを使用して、次の作業を行います�
 
 ## <a name="see-also"></a>関連項目
 * [デザイン ツールキット](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
-* [Office アドイン開発のベスト プラクティス](https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React の使用を開始する](https://docs.microsoft.com/en-us/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Office アドイン開発のベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Fabric React の使用を開始する](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)

@@ -2,12 +2,12 @@
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703827"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925389"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -85,7 +85,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 |20|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 
-詳細については、「[テレメトリ ダッシュボードを展開する](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx)」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)」を参照してください。
+詳細については、「[テレメトリ ダッシュボードを展開する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)」を参照してください。
 
 
 ## <a name="design-and-implementation-techniques"></a>設計および実装上のテクニック
@@ -94,9 +94,9 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 - 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 
     
-   無制限のデータに対する一連の入出力操作による長時間に及ぶ CPU の集中的な消費を回避する JavaScript と jQuery のサンプル コードは「[集中的な JavaScript の処理中にブラウザ制御を簡潔に戻す方法](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)」を参照してください。 この例では、グローバル オブジェクトの [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) メソッドを使用して、入力と出力の時間を制限しています。また、ランダムな無制限データの代わりに定義されたチャンク内のデータを処理します。
+   無制限のデータに対する一連の入出力操作による長時間に及ぶ CPU の集中的な消費を回避する JavaScript と jQuery のサンプル コードは「[集中的な JavaScript の処理中にブラウザ制御を簡潔に戻す方法](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)」を参照してください。 この例では、グローバル オブジェクトの [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) メソッドを使用して、入力と出力の時間を制限しています。また、ランダムな無制限データの代わりに定義されたチャンク内のデータを処理します。
     
-- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx)」を参照してください。
+- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
     
 - アドインで CPU 使用率の高いアルゴリズムを使用しているが、データの入出力を小さなセットに分割できる場合は、Web サービスの作成を検討します。データを Web サービスに渡して CPU の負荷をオフロードし、非同期コールバックを待機します。
     
@@ -106,5 +106,5 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
-- [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
     

@@ -29,7 +29,7 @@
 
 
 
-3. ID プロバイダのサインイン - ID プロバイダには独自のUIがあります。 Microsoft Azure Active Directoryではサインインパネルとアクセスパネルのページをカスタマイズして、一貫したルック・アンド・フィールをサービスに提供できます。 ([詳細を見る](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding))。
+3. ID プロバイダのサインイン - ID プロバイダには独自のUIがあります。 Microsoft Azure Active Directoryではサインインパネルとアクセスパネルのページをカスタマイズして、一貫したルック・アンド・フィールをサービスに提供できます。 ([詳細を見る](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding))。
 ![](../images/add-in-auth-identity-sign-in.png)
 
 4. 進行状況 - 設定やUIの読み込み中に進行状況を示します。
@@ -49,4 +49,4 @@
 ![](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>関連項目
-- [SSO アドインの開発](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins)について詳細を知る
+- [SSO アドインの開発](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)について詳細を知る

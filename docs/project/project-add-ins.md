@@ -2,14 +2,19 @@
 title: Project 用の作業ウィンドウ アドイン
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: aa7117ebc1c5bf0038346881b2c6e6f7a80e1bac
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925487"
 ---
-
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
 Project Standard 2013 と Project Professional 2013 はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint のリスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
 
 > [!NOTE]
-> [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
+> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
 
 Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
@@ -157,7 +162,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 1. アドイン マニフェスト用のローカル ディレクトリを作成します。たとえば、 `C:\Project\AppManifests` ディレクトリを作成します。
     
-2. `C:\Project\AppManifests` ディレクトリをAppManifests として共有し、ファイル共有へのネットワーク パスが `\\ServerName\AppManifests` になるようにします。
+2. ディレクトリをAppManifests として共有し、ファイル共有へのネットワーク パスが `\\ServerName\AppManifests` になるようにします。`C:\Project\AppManifests`
     
 3. BingSearch.xml マニフェスト ファイルを  `C:\Project\AppManifests` ディレクトリにコピーします。
     
@@ -203,5 +208,5 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 用の作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-- [Project 2013 SDK のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

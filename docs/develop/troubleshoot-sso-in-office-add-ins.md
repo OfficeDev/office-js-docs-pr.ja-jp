@@ -2,8 +2,13 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
+ms.openlocfilehash: 8906a168db7be938ecc572ad41a9feec2500c189
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925501"
 ---
-
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
@@ -25,22 +30,25 @@ ms.date: 12/08/2017
 - [Office-Add-in-ASPNET-SSO の Home.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js)
 - [Office-Add-in-NodeJS-SSO の program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
+> [!NOTE]
+> このセクションでの提案に加えて、Outlook アドインには、どのような 13*nnn* エラーにも応答する追加の機能があります。 詳細については、「 [シナリオ：Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」 および「[AtachmentDemo サンプル アドイン](https://github.com/OfficeDev/outlook-add-in-attachments-demo)」を参照してください。 
+
 ### <a name="13000"></a>13000
 
 [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API は、このアドインまたは Office バージョンではサポートされていません。 
 
-- このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/ja-jp/office-insider?tab=tab-1)」を参照してください。 
+- このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 
 - アドインのマニフェストに適切な [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) セクションがありません。
 
 ### <a name="13001"></a>13001
 
-ユーザーは Office にサインインしていません。 コードでは、`getAccessTokenAsync` メソッドを再度呼び出して、[options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) パラメーターでオプション `forceAddAccount: true` を渡す必要があります。 
+ユーザーは Office にサインインしていません。 コードでは、 `getAccessTokenAsync` メソッドを再度呼び出して、 [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) パラメーターでオプション `forceAddAccount: true` を渡す必要があります。 しかし、これを一回以上実行しないでください。 ユーザーがサインインしないと決定した可能性があります。
 
 Office Online では、このエラーが発生することはありません。 ユーザーの Cookie が失効している場合、Office Online はエラー 13006 を返します。 
 
 ### <a name="13002"></a>13002
 
-ユーザーはサインインまたは同意を中止しました。 
+ユーザーはサインインまたは同意を中止しました。（コンセント ダイアログで **Cancel** を選択した場合など） 
 - アドインがユーザーのサインイン (または同意) の必要がない機能を提供している場合、コードはこのエラーをキャッチし、アドインが継続して実行するようにしなければなりません。
 - アドインで、同意を得たサインイン ユーザーが必要な場合、コードはユーザーに操作を繰り返すよう 1 度だけ要求する必要があります。 
 
@@ -50,7 +58,7 @@ Office Online では、このエラーが発生することはありません。
 
 ### <a name="13004"></a>13004
 
-無効なリソースです。 アドイン マニフェストは、正しく構成されていません。 マニフェストを更新してください。 詳細は、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照してください。
+無効なリソースです。 アドイン マニフェストは、正しく構成されていません。 マニフェストを更新してください。 詳細は、 [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md) を参照してください。 最も一般的な問題は、 **Resource** 要素（ **WebApplicationInfo** 要素の中にあるもの）に、アドインのドメインと一致しないドメインがあることです。 リソース値のプロトコルの部分は、"https" ではなく "api" である必要がありますが、ドメイン名 (もしあれば、ポートを含む) の他のすべての部分は、アドインの場合と同じにする必要があります。
 
 ### <a name="13005"></a>13005
 
@@ -63,8 +71,12 @@ Office Online では、このエラーが発生することはありません。
 ### <a name="13007"></a>13007
 
 Office ホストは、アドインの Web サービスへのアクセス トークンを取得できませんでした。
-- アドインの登録とアドインのマニフェストで `openid` および `profile` のアクセス許可が指定されていることを確認してください。詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
-- コードでは、ユーザーが後で操作を再試行するよう指示します。
+- 開発中にこのエラーが発生した場合は、アドインの登録とアドインマニフェストが、 `openid` および `profile` のアクセス許可を指定していることを確認してください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
+- 運用環境では、このエラーの原因となることがいくつかあります。 以下はその中のいくつかの例です。
+    - ユーザーは、事前に同意し、のちにその同意を取り消しました。 コードは `getAccessTokenAsync` オプション付きのメソッド `forceConsent: true` を再び呼び出す必要があります。しかし、1 度のみです。
+    - ユーザーは、Microsoft Account (MSA) ID を持っています。 職場または学校のアカウントで、他の13nnnエラーの1つが発生する状況によっては、MSAを使用した場合に13007が発生することがあります。 
+
+  これらすべてのケースについて、すでに `forceConsent` オプションを試行した場合には、ユーザーがのちに操作を再試行することをコードで示唆することができます。
 
 ### <a name="13008"></a>13008
 
@@ -80,6 +92,10 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 ### <a name="13010"></a>13010
 
 ユーザーが Office Online でアドインを実行していて、Edge または Internet Explorer を使用しています。 ユーザーの Office 365 ドメインと、login.microsoftonline.com ドメインは、ブラウザー設定で異なるセキュリティ ゾーンに含まれています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+
+### <a name="50001"></a>50001
+
+このエラー（`getAccessTokenAsync` 特有のものではありません）は、ブラウザが office.js ファイルの古いコピーをキャッシュしたことを示している可能性があります。 ブラウザのキャッシュをクリアしてください。 もう 1 つの可能性は、Office のバージョンが SSO をサポートできる新しいものでないということです。  [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites) を参照してください。
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
