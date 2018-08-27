@@ -2,12 +2,12 @@
 title: Office アドインでの Office UI Fabric
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 04964d5864eea4a960f7b57e5df6f7bd7c844fde
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084071"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925193"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric 
 
@@ -49,16 +49,16 @@ Fabric には、次のタイプのコンポーネントを含む、さまざま�
 
 すべての Fabric コンポーネントがアドインでの使用を推奨しているわけではありません。アドインでの使用を推奨する Fabric React UX コンポーネントのリストを以下に示します。
 
-- [パンくずリスト](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
-- [ボタン](https://developer.microsoft.com/en-us/fabric#/components/button)
-- [チェックボックス](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
-- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
-- [ドロップダウン](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
-- [ラベル](https://developer.microsoft.com/en-us/fabric#/components/label)
-- [リスト](https://developer.microsoft.com/en-us/fabric#/components/list)
-- [コアドキュメント](https://developer.microsoft.com/en-us/fabric#/components/pivot)
-- [テキスト フィールド](https://developer.microsoft.com/en-us/fabric#/components/textfield)
-- [切り替え](https://developer.microsoft.com/en-us/fabric#/components/toggle)
+- [パンくずリスト](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [ボタン](https://developer.microsoft.com/fabric#/components/button)
+- [チェックボックス](https://developer.microsoft.com/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [ドロップダウン](https://developer.microsoft.com/fabric#/components/dropdown)
+- [ラベル](https://developer.microsoft.com/fabric#/components/label)
+- [リスト](https://developer.microsoft.com/fabric#/components/list)
+- [コアドキュメント](https://developer.microsoft.com/fabric#/components/pivot)
+- [テキスト フィールド](https://developer.microsoft.com/fabric#/components/textfield)
+- [切り替え](https://developer.microsoft.com/fabric#/components/toggle)
 
 アドインの作成には、Angular や React など別の JavaScript フレームワークも使用できます。フレームワークで Fabric コンポーネントを使用するには、次のリソースを参照してください。
 

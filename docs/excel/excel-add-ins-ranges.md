@@ -2,9 +2,13 @@
 title: Excel JavaScript API を使用して範囲を操作する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925620"
 ---
-
-
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
 この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)」を参照してください。
@@ -530,6 +534,67 @@ Excel.run(function (context) {
 **数値の書式を設定した後の範囲内のデータ**
 
 ![書式設定した後の Excel のデータ](../images/excel-ranges-format-numbers.png)
+
+## <a name="copy-and-paste"></a>コピーと貼り付け
+
+> [!NOTE]
+> copyFrom 関数は現在、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリ: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js を使用する必要があります。
+> TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+
+範囲の copyFrom 関数は、Excel の UI のコピーと貼り付けの動作を複製します。 その copyFrom が呼び出された範囲オブジェクトがコピーする宛先です。 コピー元のソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、 ** G1**から始まる範囲に **  A1:E1**からデータをコピーします  (これは最終的には G1:K1 の範囲に貼り付けられます) 。** **
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range starting at a single cell destination
+    sheet.getRange("G1").copyFrom("A1:E1");
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Range.copyFrom には、次の 3 つの省略可能なパラメーターがあります。
+
+```ts
+copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+``` 
+
+`copyType` は、どのようなデータがソースからターゲットにコピーされるかを指定します。 
+`“Formulas”` は、コピー元のセルの数式を転送し、その数式の範囲の相対位置を保持します。 数式ではないエントリはすべて、そのままコピーされます。 
+`“Values”` は、データ値をコピーします。数式の場合は、数式の結果をコピーします。 
+`“Formats”` 値を除く、フォント、色、およびその他の書式設定の設定など、範囲の書式設定をコピーします。 
+`”All”`  は (デフォルトのオプションです) は、データと書式設定の両方をコピーし、セルに数式があれば、これを保持します。
+
+`skipBlanks` は、空白のセルが宛先にコピーされているかどうかを設定します。 True の場合、`copyFrom` は、ソース範囲内の空白のセルをスキップします。 スキップしたセルは、コピー先の範囲で対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
+
+次のコード サンプルとイメージは、単純なシナリオの場合のこの動作をデモンストレーションしています。 
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+    sheet.getRange("D1").copyFrom("A1:C1",
+        Excel.RangeCopyType.all,
+        true, // skipBlanks
+        false); // transpose
+    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    sheet.getRange("D2").copyFrom("A2:C2",
+        Excel.RangeCopyType.all,
+        false, // skipBlanks
+        false); // transpose
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+*前出の関数を実行する前。*
+
+![範囲のコピー メソッドを実行する前の Excel データ。](../images/excel-range-copyfrom-skipblanks-before.png)
+
+*前出の関数を実行した後。*
+
+![範囲のコピー メソッドが実行された後の Excel データ。](../images/excel-range-copyfrom-skipblanks-after.png)
+
+`transpose` データをコピー元の場所に転置するかどうか、つまり行と列の順番を入れ替えるかどうかを決定します。 転置の範囲は、主な対角線に沿って反転します。行 **1**、**2**、**3** は列 **A**、**B**、**C**になります。 
+
 
 ## <a name="see-also"></a>関連項目
 

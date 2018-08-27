@@ -2,12 +2,12 @@
 title: サイドロード コマンドを使用した Sideload Office アドイン
 description: ''
 ms.date: 07/24/2018
-ms.openlocfilehash: 90084fad0e79ab8acdf59eaa305825737401c0c8
-ms.sourcegitcommit: e094aaa06d9aff3d13f8ffd3429d4a31f0b65b81
+ms.openlocfilehash: 3aacfdb09f362ea10ba0e2393caca335fe4c04c6
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "21782827"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925102"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>**サイドロードコマンド** を使用したテストの Sideload Office アドイン
  >[!NOTE]
@@ -17,7 +17,7 @@ ms.locfileid: "21782827"
 > 
 > - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 > - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [テスト用に Outlook アドインをサイドロードする](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 1. コマンド プロンプトを管理者として開きます。
 

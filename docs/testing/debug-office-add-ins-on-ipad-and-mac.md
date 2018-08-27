@@ -2,12 +2,12 @@
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
-ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
+ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "19722332"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925207"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
@@ -36,7 +36,7 @@ Mac で Office アドインをデバッグできるようにするには、Mac O
 
 ## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>iPad または Mac での Vorlon.JS を使用したデバッグ
 
-iPad または Mac でアドインをデバッグするには、F12 ツールに似た Web ページのデバッガである Vorlon.JS を使用します。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については [Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
+iPad または Mac でアドインをデバッグするには、F12 ツールに似た Web ページのデバッガである Vorlon.JS を使用します。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については、[Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
 
 
 ### <a name="install-and-set-up-vorlonjs"></a>Vorlon.JS のインストールとセットアップ  
@@ -115,7 +115,7 @@ Vorlon.JS を使用してアプリケーションをデバッグするには、�
 
 3.  ブラウザー ウィンドウを開き、Vorlon.JS インターフェイスの `https://localhost:1337` に進みます。
 
-4. アドインをサイドロードします。アドインが Excel、PowerPoint、または Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。それ以外の場合は、ボタンを選択してアドインを開きます。Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
+4. アドインをサイドロードします。アドインが Excel、PowerPoint、または Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。それ以外の場合は、ボタンを選択してアドインを開きます。Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
 
 アドインは、Vorlon.JS のクライアントのリスト (Vorlon.JS インターフェイスの左側) に **{OS} - n** として表示されます。*n* は数値、*{OS}* は "Macintosh" などのデバイスの種類です。 
 

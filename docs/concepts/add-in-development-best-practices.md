@@ -2,19 +2,19 @@
 title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: abb04439d40d412acba51d62bcc7544d01810f52
-ms.sourcegitcommit: 376a80e8bc740a80802af81cabcdabe099217b3e
+ms.openlocfilehash: 2ad5cf1e4c34fdbae827cdd115c57313f6faeda9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "20246088"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925480"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
 効果的なアドインは、目で見て分かる方法で Office アプリケーションを拡張する、ユニークで頼もしい機能を提供します。優れたアドインを作成するには、魅力的な初回エクスペリエンスをユーザーに提供して、最高の UI エクスペリエンスを設計し、アドインのパフォーマンスを最適化します。この記事で説明するベスト プラクティスを適用して、ユーザーが迅速かつ効率的に仕事を遂行するための助けになるアドインを作成してください。
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
 
 ## <a name="provide-clear-value"></a>価値を明確にする
 
@@ -24,7 +24,7 @@ ms.locfileid: "20246088"
  - Office ホストに補助サービスを埋め込みます。
  - Office エクスペリエンスを向上させて生産性を高めます。
 - [魅力的な初回実行時エクスペリエンス](#create-an-engaging-first-run-experience)を作成して、ユーザーがアドインの価値をすぐに感じられるようにしてください。
-- [効果的な AppSource リスト](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
+- [効果的な AppSource リスト](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
 
 
 ## <a name="create-an-engaging-first-run-experience"></a>魅力的な初回実行時エクスペリエンスを作成する
@@ -43,13 +43,13 @@ ms.locfileid: "20246088"
 
    ![データを含まないコンテンツ アドインの隣に、データを含むコンテンツ アドインを示すスクリーンショット](../images/add-in-title.png)
 
-- [無料の試用版](https://docs.microsoft.com/en-us/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
+- [無料の試用版](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
 
 - サインアップをシンプルにします。情報 (電子メール、表示名) を事前に入力し、電子メールの確認はスキップします。
 
 - ポップアップは使用しないようにします。使用する必要がある場合は、ポップアップを有効にするようユーザーに指示します。
 
-- [シングル サインオン (SSO) 認証](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-identity-token)を使用します。
+- [シングル サインオン (SSO) 認証](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-identity-token)を使用します。
 
 最初の実行エクスペリエンスを開発する際に適用できるパターンを示すテンプレートについては、「[Office アドインの UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)」を参照してください。
 
@@ -59,7 +59,7 @@ ms.locfileid: "20246088"
 
 ## <a name="apply-ux-design-principles"></a>UX 設計原則を適用する
 
-- アドインの外観と機能が、Office のエクスペリエンスと合っていることを確認します。[Office UI Fabric](https://developer.microsoft.com/en-us/fabric) を使用します。
+- アドインの外観と機能が、Office のエクスペリエンスと合っていることを確認します。[Office UI Fabric](https://developer.microsoft.com/fabric) を使用します。
 
 - クロムよりもコンテンツを優先します。ユーザー エクスペリエンスの価値を高めない余分な UI 要素を追加しないようにします。
 
@@ -128,7 +128,7 @@ ms.locfileid: "20246088"
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 
-- アドインを [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) に公開して、Web サイトで[それを宣伝](https://docs.microsoft.com/en-us/office/dev/store/promote-your-office-store-solution)します。[効果的な AppSource リストを作成します](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)。
+- アドインを [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) に公開して、Web サイトで[それを宣伝](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution)します。[効果的な AppSource リストを作成します](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
 
 - アドイン タイトルを簡潔でわかりやすいものにします。128 文字以下にします。
 

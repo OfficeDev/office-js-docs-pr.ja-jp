@@ -2,12 +2,12 @@
 title: 発行のための準備として Visual Studio を使用してアドインをパッケージ化する
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e03959294536eeb416a1531d2d281ba83f2d3732
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438754"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925249"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>発行のための準備として Visual Studio を使用してアドインをパッケージ化する
 
@@ -28,11 +28,11 @@ Office アドイン パッケージには、アドインの発行に使用する
 
     [**新規...**] を選択した場合、[**発行プロファイルの作成**] ウィザードが表示されます。このウィザードを使用して、Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。
     
-    発行プロファイルのインポートまたは発行プロファイルの新規作成については、「[発行プロファイルの作成](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile)」を参照してください。
+    発行プロファイルのインポートまたは発行プロファイルの新規作成については、「[発行プロファイルの作成](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)」を参照してください。
     
 3. [ **アドインを発行する**] ページで、 [ **Web プロジェクトの配置**] リンクを選択します。
     
-    **[Web を発行する]** ダイアログ ボックスが表示されます。このウィザードの使用方法については、「[方法: Visual Studio でワンクリック発行を使用して Web アプリケーション プロジェクトを配置する](http://msdn.microsoft.com/en-us/library/dd465337.aspx)」を参照してください。
+    **[Web を発行する]** ダイアログ ボックスが表示されます。このウィザードの使用方法については、「[方法: Visual Studio でワンクリック発行を使用して Web アプリケーション プロジェクトを配置する](http://msdn.microsoft.com/library/dd465337.aspx)」を参照してください。
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Visual Studio 2015 を使用してアドインをパッケージ化するには
@@ -62,5 +62,5 @@ XML マニフェストを適切な場所にアップロードして[アドイン
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインを発行する](../publish/publish.md)
-- [AppSource と Office 内でソリューションを使用できるようにする](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
+- [AppSource と Office 内でソリューションを使用できるようにする](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
     

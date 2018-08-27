@@ -2,28 +2,28 @@
 title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: b143999422866dba9b43432359c12f3607261c60
-ms.sourcegitcommit: e094aaa06d9aff3d13f8ffd3429d4a31f0b65b81
+ms.openlocfilehash: 94803a2c610fc869aefb6c77d53965981778e62e
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "21782813"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925123"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
-マニフェストをネットワーク ファイル共有に公開することで、Windows 上で実行されている Office クライアントにテスト用の Office アドインをインストールできます（以下の手順）。
+マニフェストをネットワーク ファイル共有に公開することで、Windows 上で実行されている Office クライアントにテスト用の Office アドインをインストールできます (以下の手順)。
 
 > [!NOTE]
-> [**yo office **ツール](https://github.com/OfficeDev/generator-office)を使用してアドイン プロジェクトを作成した場合、お客様に適した別のサイドロードの方法があります。 詳細は、 [sideload コマンドを使用した Sideload Office アドイン](sideload-office-addin-using-sideload-command.md)を参照してください。
+> [**yo office **ツール](https://github.com/OfficeDev/generator-office)を使用してアドイン プロジェクトを作成した場合、お客様に適した別のサイドロードの方法があります。 詳細は、[sideload コマンドを使用した Sideload Office アドイン](sideload-office-addin-using-sideload-command.md)を参照してください。
 
 この記事は、Windows 上の Word、Excel、または PowerPoint アドインのテストにのみ適用されます。 別のプラットフォームでテストする場合、または Outlook アドインをテストする場合は、次のトピックのいずれかを参照してアドインをサイドロードします。
 
 - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [テスト用に Outlook アドインをサイドロードする](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
-次のビデオでは、共有フォルダ カタログを使用して Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。  
+次のビデオでは、共有フォルダ カタログを使用して Office デスクトップまたは Office Online のアドインをサイドロードする手順を説明します。  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
@@ -61,7 +61,8 @@ ms.locfileid: "21782813"
 
 ## <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。なお、Web サーバーに Web アプリケーション自体を展開します。必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
+
+1. テストするアドインのマニフェスト XML ファイルを共有フォルダー カタログに置きます。Web アプリケーションを Web サーバーに展開します。必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

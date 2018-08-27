@@ -2,12 +2,12 @@
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 06e1cce3a45a5af744a1be4b3feabbf051940d76
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085453"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925354"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -27,7 +27,7 @@ Autoopen 機能では、特定のドキュメントに特定の作業ウィン�
 
 |**製品**|**プラットフォーム**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラ​​ットフォーム。<ul><li>Windows デスクトップ版 Office (ビルド 16.0.8121.1000 以降)</li><li>Office for Mac。ビルド 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラ​​ットフォーム。<ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office for Mac。ビルド 15.34.17051500+</li><li>Office Online</li></ul>|
 
 
 ## <a name="best-practices"></a>ベスト プラクティス
@@ -112,13 +112,13 @@ webextension パートには、プロパティ バッグと **Office.AutoShowTas
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
-|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Office 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。
+|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Office 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
 > [!NOTE]
 > AppSource でのアドインのアセット ID とバージョンを確認するには、そのアドインの AppSource ランディング ページに移動します。アセット ID は、ブラウザーのアドレス バーに表示されます。バージョンは、そのページの **[詳細]** セクションに示されます。
 
-webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx)」を参照してください。
+webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx)」を参照してください。
 
 次の例は、taskpane パートを追加する方法を示しています。
 
@@ -137,10 +137,10 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 > [!NOTE]
 > ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
 
-この XML を簡単に記述する 1 つの方法として、最初にアドインを実行し、値を書き込むために[クライアント側でドキュメントにタグを設定](#tag-the-document-on-the-client-side)して、ドキュメントを保存してから生成された XML を調べます。Office により、適切な属性値が検出されて設定されます。また、[Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) ツールを使用して生成した C# コードにより、生成する XML 基づいてプログラムでマークアップを追加することもできます。
+この XML を簡単に記述する 1 つの方法として、最初にアドインを実行し、値を書き込むために[クライアント側でドキュメントにタグを設定](#tag-the-document-on-the-client-side)して、ドキュメントを保存してから生成された XML を調べます。Office により、適切な属性値が検出されて設定されます。また、[Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) ツールを使用して生成した C# コードにより、生成する XML 基づいてプログラムでマークアップを追加することもできます。
 
 ## <a name="test-and-verify-opening-taskpanes"></a>タスクパネル表示のテストと検証
-アドインのテストバージョンを展開すると、Office 365  管理センターを介した集中展開を使用して自動的にタスクペインが開きます。 次の例は、EXCatalog ストア バージョンを使用して、集中展開カタログからアドインを挿入する方法を示しています。
+自動的に作業ウィンドウを開くアドインのテスト バージョンは、Office 365 Admin センターによる一元展開を使用して展開できます。次の例は、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示すものです。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -151,11 +151,11 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-前の例をテストするには、 [「Office 365 開発環境のセットアップ」](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment) をご参照いただき、 [［Office 365開発者アカウント］](https://developer.microsoft.com/en-us/office/dev-program)にサインアップすることを検討してください。 実際に一元展開のテストを実施し、アドインが期待どおりに動作することを確認できます。
+前の例をテストするために、[Office 365 開発者プログラム](https://docs.microsoft.com/office/developer-program/office-365-developer-program) に参加し、Office 365 サブスクリプションを購入していない場合は、[Office 365 開発者アカウント](https://developer.microsoft.com/office/dev-program) にサインアップすることを検討してください。 実際に一元展開のテストを実施し、アドインが期待どおりに動作することを確認できます。
 
 
 ## <a name="see-also"></a>関連項目
 
-Autoopen 機能の使用方法を示すサンプルは、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。 
-[Office 365 開発者プログラムに参加する](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program)。 
+Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。 
+[Office 365 開発者プログラムに参加する](https://docs.microsoft.com/office/developer-program/office-365-developer-program)。 
 

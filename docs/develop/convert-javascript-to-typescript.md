@@ -2,8 +2,13 @@
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
 ms.date: 01/19/2018
+ms.openlocfilehash: 783d47e04fc6d28604501ac77345470c26d36c89
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925382"
 ---
-
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 アドイン プロジェクトの作成に Visual Studio を使用することで、Office アドイン TypeScript プロジェクトをゼロから作成する必要がなくなります。 
@@ -11,19 +16,19 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 この記事では、Visual Studio を使用して Excel アドインを作成して、そのアドイン プロジェクトを JavaScript から TypeScript に変換する方法について説明します。 同じ手順を使用すると、その他の種類の Office アドイン JavaScript プロジェクトを Visual Studio の TypeScript に変換できます。
 
 > [!NOTE]
-> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.yml)」の「任意のエディター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間クイック スタート](../index.yml)」の「任意のエディタ」セクションに示された手順を実行して、[Office アドイン用 Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
 - **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
 
     > [!NOTE]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/ja-jp/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
+    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
 
 - TypeScript 2.3 for Visual Studio 2017
 
     > [!NOTE]
-    > TypeScript は、既定で Visual Studio 2017 と共にインストールされますが、TypeScript がインストールされているかどうかは、[Visual Studio インストーラーを使用して](https://docs.microsoft.com/ja-jp/visualstudio/install/modify-visual-studio)確認できます。 Visual Studio インストーラーで、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** の下で **[TypeScript 2.3 SDK]** が選択されていることを確認します。
+    > TypeScript は、既定で Visual Studio 2017 と共にインストールされますが、TypeScript がインストールされているかどうかは、[Visual Studio インストーラーを使用して](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)確認できます。 Visual Studio インストーラーで、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** の下で **[TypeScript 2.3 SDK]** が選択されていることを確認します。
 
 - Excel 2016
 

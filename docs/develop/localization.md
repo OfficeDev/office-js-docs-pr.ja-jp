@@ -2,12 +2,12 @@
 title: Office アドインのローカライズ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d7888859ca29a62541020b45b0b7a3638c41f4f2
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: c700dfa2f424577edf364505b0da47854467f77b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437739"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925578"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -62,7 +62,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 |[SourceLocation]   |指定した各ロケールのユーザーには、そのロケールのアドイン専用にデザインした Web ページが表示されます。 |
 
 
-> **メモ** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219.aspx)」を参照してください。
+> **メモ** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))」を参照してください。
 
 
 ### <a name="examples"></a>例
@@ -158,7 +158,7 @@ Outlook アドインについては、[SourceLocation] 要素もフォーム フ
 
 Visual Studio で Office アドインを作成する場合, .NET Framework と Ajax を使用してクライアント スクリプト ファイルをグローバライズおよびローカライズできます。
 
-現在のブラウザーのロケール設定に基づいて値を表示するには、Office アドイン向けの JavaScript コード内で [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) および [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 型の拡張と JavaScript [Date](http://msdn.microsoft.com/library/ce2202bb-7ec9-4f5a-bf48-3a04feff283e.aspx) オブジェクトをグローバライズして使用できます。詳細については、「 [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)」を参照してください。
+現在のブラウザーのロケール設定に基づいて値を表示するには、Office アドイン向けの JavaScript コード内で [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) および [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 型の拡張と JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) オブジェクトをグローバライズして使用できます。詳細については、「 [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)」を参照してください。
 
 ローカライズされたリソース文字列をスタンドアロンの JavaScript ファイルに直接埋め込むことで、異なるロケール用のクライアント スクリプト ファイルを作成できます。クライアント スクリプト ファイルは、ブラウザーで設定されるかユーザーが指定できます。サポートされているすべてのロケールに個別のスクリプト ファイルを作成してください。各スクリプト ファイルには、特定のロケール用のリソース文字列を含むオブジェクトを JSON 形式で埋め込みます。ローカライズされた値は、スクリプトがブラウザーで実行されると適用されます。 
 
@@ -175,7 +175,7 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>表示または編集用の追加言語を使用できるように Office 2013 を構成する
 
-追加言語は、Office 2013 言語パックを使用してインストールできます。言語パックの詳細と入手先については、「 [Office 2013 の言語オプション](http://office.microsoft.com/en-us/language-packs/)」を参照してください。
+追加言語は、Office 2013 言語パックを使用してインストールできます。言語パックの詳細と入手先については、「 [Office 2013 の言語オプション](http://office.microsoft.com/language-packs/)」を参照してください。
 
 > **メモ** MSDN サブスクリプション会員の場合は、Office 2013 言語パックを既に利用している可能性があります。サブスクリプションでダウンロード用の Office 2013 言語パックが提供されているかどうかを調べるには、[MSDN サブスクリプションのホーム](https://msdn.microsoft.com/subscriptions/manage/)にアクセスし、**[ソフトウェアのダウロード]** で「Office 2013 Language Pack」と入力します。次に、**[検索]** を選択して **[自分のサブスクリプションで利用できる製品]** を選択します。**[言語]** でダウンロードする言語パックのチェック ボックスをオンにして、**[検索]** をクリックします。 
 
@@ -419,7 +419,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)    
-- [Office 2013 の言語識別子と OptionState ID 値](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
 [説明]:          https://dev.office.com/reference/add-ins/manifest/description
