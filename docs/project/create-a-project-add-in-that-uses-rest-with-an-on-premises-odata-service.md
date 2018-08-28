@@ -2,8 +2,13 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925543"
 ---
-
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
 この記事では、アクティブなプロジェクトのコストと作業のデータを現在の Project Web App インスタンスの全プロジェクトの平均と比較する Project Professional 2013 用の作業ウィンドウ アドインを作成する方法を説明します。このアドインは、REST と jQuery ライブラリを使って、Project Server 2013 の **ProjectData** OData レポート サービスにアクセスします。
@@ -24,7 +29,7 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
     > [!NOTE]
     > Project Standard 2013 でも作業ウィンドウ アドインをホストできますが、Project Web App にはログオンできません。
 
-- Office Developer Tools for Visual Studio を備えた Visual Studio 2015 には、Office アドインと SharePoint アドインの作成用のテンプレートが含まれています。最新バージョンの Office Developer Tools がインストールされていることを確認してください。 _Office アドインと SharePoint のダウンロード_の「 [ツール](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx) 」セクションを参照してください。
+- Office Developer Tools for Visual Studio を備えた Visual Studio 2015 には、Office アドインと SharePoint アドインの作成用のテンプレートが含まれています。最新バージョンの Office Developer Tools がインストールされていることを確認してください。 _Office アドインと SharePoint のダウンロード_の「 [ツール](https://developer.microsoft.com/office/docs) 」セクションを参照してください。
     
 - この記事の手順とコード例では、ローカル ドメインの Project Server 2013の  **ProjectData** サービスにアクセスします。この記事の jQuery メソッドは Project Online には対応していません。
     
@@ -34,9 +39,9 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
 ### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>手順 1. ProjectData サービスにアクセスできることを確認するには
 
 
-1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)」の手順 1. のステップ 4. を参照してください。
+1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))」の手順 1. のステップ 4. を参照してください。
     
-2. **ProjectData** サービスにクエリを実行するには、ブラウザーで URL **http://ServerName /ProjectServerName /_api/ProjectData** にアクセスします。たとえば、Project Web App インスタンスが `http://MyServer/pwa` の場合、ブラウザーは次の結果を示します。
+2. 次の URL のブラウザを使用して、**ProjectData** サービスのクエリを行います: **http://ServerName / ProjectServerName /_api / ProjectData** 。 たとえば、Project Web App インスタンスが `http://MyServer/pwa`の場合、ブラウザは次の結果を表示します。
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -123,7 +128,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
 1. **ソリューション エクスプローラー**で、Images という名前のフォルダーに移動します。
     
-2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。
+2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。 `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
     または、独自の 32 x 32 アイコンを使用するか、NewIcon.png という名前のファイルに次の画像をコピーして、`HelloProjectODataWeb\Images` フォルダーにそのファイルを追加します。
     
@@ -662,7 +667,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     
 
 > [!NOTE]
-> **ProjectData** サービスの 1 回のクエリで返すことのできるデータ量には制限があります。このデータ量はエンティティによって異なります。たとえば、**Projects** エンティティ セットでの既定の制限は 1 回のクエリで 100 プロジェクトですが、**Risks** エンティティ セットでの既定の制限は 200 プロジェクトです。運用インストールでは、**HelloProjectOData** のコード例に変更を加えて、100 プロジェクト以上のクエリを使用できるようにする必要があります。詳細については、「[次のステップ](#next-steps)」および「[Project レポート データの OData フィードにクエリを実行する](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)」を参照してください。
+> **ProjectData** サービスの 1 回のクエリで返すことのできるデータ量には制限があります。このデータ量はエンティティによって異なります。たとえば、**Projects** エンティティ セットでの既定の制限は 1 回のクエリで 100 プロジェクトですが、**Risks** エンティティ セットでの既定の制限は 200 プロジェクトです。運用インストールでは、**HelloProjectOData** のコード例に変更を加えて、100 プロジェクト以上のクエリを使用できるようにする必要があります。詳細については、「[次のステップ](#next-steps)」および「[Project レポート データの OData フィードにクエリを実行する](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))」を参照してください。
 
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>HelloProjectOData アドインのコード例
@@ -1113,7 +1118,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
 
 このアドインには、追加のエラー チェックと、エッジ ケースをキャッチして説明または表示するためのロジックを組み込む必要があります。たとえば、Project Web App インスタンスに、平均期間が 5 日で平均コストが $2400 になる 1000 個のプロジェクトがあって、期間が 20 日より長いのはアクティブ プロジェクトだけだとすると、コストと作業の比較は歪んだものになるでしょう。それは頻度グラフで示すことができます。期間を表示したり、同じような長さのプロジェクトを比較したり、同じ部門または異なる部門のプロジェクトを比較したりするオプションを追加するとよいでしょう。あるいは、表示するフィールドのリストからユーザーが選択できるような方法を追加することもできます。
 
-**ProjectData** サービスの他のクエリについては、クエリ文字列の長さに制限があり、これは親コレクションから子コレクションのオブジェクトまでにクエリが取ることのできるステップ数に影響します。たとえば、**Projects** から **Tasks** へ、そしてタスク アイテムへという 2 ステップのクエリはうまく動作しますが、**Projects** から、**Tasks**、**Assignments** を経て、割り当てアイテムへという 3 ステップのクエリになると、URL の既定の最大長を超える可能性があります。詳しくは、「[Project レポート データの OData フィードにクエリを実行する](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)」をご覧ください。
+**ProjectData** サービスの他のクエリについては、クエリ文字列の長さに制限があり、これは親コレクションから子コレクションのオブジェクトまでにクエリが取ることのできるステップ数に影響します。たとえば、**Projects** から **Tasks** へ、そしてタスク アイテムへという 2 ステップのクエリはうまく動作しますが、**Projects** から、**Tasks**、**Assignments** を経て、割り当てアイテムへという 3 ステップのクエリになると、URL の既定の最大長を超える可能性があります。詳しくは、「[Project レポート データの OData フィードにクエリを実行する](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))」をご覧ください。
 
 **HelloProjectOData** アドインを運用環境で使えるように変更する場合は、次の手順を実行してください。
 
@@ -1127,7 +1132,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  For more information, see [OData System Query Options Using the REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). You can also use the [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+  詳細については、「[ OData System Query Options Using the REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7))」をご参照下さい。また、Windows PowerShell の [[Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx)] コマンドを使用し、 **Projects** エンティティ―セット（あるいはその他の 33 のエンティティ―セット）に関して、既定のページ サイズを超過することができます。これに関しましては、「[ProjectData - Project OData service reference](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15))  」をご参照下さい。
     
 - アドインを展開するには、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
     
@@ -1136,7 +1141,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
 
 - [Project 用の作業ウィンドウ アドイン](project-add-ins.md)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-- [ProjectData - Project OData サービス リファレンス](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
+- [ProjectData - Project OData サービス リファレンス](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)) 
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md) 
 - [Office アドインを発行する](../publish/publish.md)
     
