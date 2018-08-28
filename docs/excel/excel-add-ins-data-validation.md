@@ -2,30 +2,30 @@
 title: Excel の範囲にデータの入力規則を追加する
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: 3d6a901e2f8296806cff470340b40f4d77e79e34
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703946"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925312"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Excel 範囲にデータの入力規則を追加する (プレビュー)
 
 > [!NOTE]
-> データの入力規則 API はプレビューとして提供されていますが、使用するには Office JavaScript ライブラリのベータ版を読み込む必要があります。 URL は、  https://appsforoffice.microsoft.com/lib/beta/hosted/office.jsです。 TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+> データの入力規則 API はプレビューとして提供されていますが、使用するには Office JavaScript ライブラリのベータ版を読み込む必要があります。 URL は、 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js です。 TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
 
 > [!NOTE]
 > データの入力規則 API はプレビュー中ですが、この記事の API リファレンスへのリンクは機能しません。 その間、 [ドラフト Excel API リファレンス](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel)を使用することができます。
 
 Excel JavaScript ライブラリには、ワークブックに、表、列、行、その他の範囲に自動データ入力規則をアドインで追加できる API が用意されています。 データの入力規則の概念と用語を把握するには、ユーザーが Excel UI によってデータの入力規則を追加する方法に関する次の記事をご覧ください。
 
-- [セルに対するデータの入力規則の適用](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [データの入力規則の詳細](https://support.office.com/en-us/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Excel でのデータの入力規則の説明と例](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+- [セルにデータの入力規則を適用する](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [データの入力規則の詳細](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Excel でのデータの入力規則の説明と例](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
 ## <a name="programmatic-control-of-data-validation"></a>データの入力規則のプログラムによる制御
 
-`Range.dataValidation` プロパティは、[データの入力規則](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation) オブジェクトを取得しますが、これが Excel でデータの入力規則をプログラムにより制御するためのエントリポイントとなります。 `DataValidation` オブジェクトには、次のような 5つのプロパティがあります。
+プロパティは、[データの入力規則](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation) オブジェクトを取得しますが、これが Excel でデータの入力規則をプログラムにより制御するためのエントリポイントとなります。`Range.dataValidation` オブジェクトには、次のような 5つのプロパティがあります。`DataValidation`
 
 - `rule` — 範囲の有効データの構成要素を定義します。 「[DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule)」を参照してください。
 - `errorAlert` — ユーザーが無効なデータを入力した場合にエラーがポップアップ表示されるかどうかを指定し、アラートのテキスト、タイトル、スタイルを定義します。たとえば、 **[情報提供]**、 **[警告]**、**[停止]** などです。 「[DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert)」を参照してください。
@@ -50,8 +50,8 @@ Excel JavaScript ライブラリには、ワークブックに、表、列、行
 
 次に、入力規則のルールを作成する例を示します。 このコードについては、次の点に注意してください。
 
--  `operator` は二項演算子「GreaterThan」です。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値が左側のオペランドになり、 `formula1` で指定された値が右側のオペランドになります。 したがって、このルールでは、0 より大きな整数だけが有効です。 
-- `formula1` は、ハードコーディングされた数字です。 コード時にどの値にすべきかわからない場合は、値の Excel 式を (文字列として) 使用することもできます。 たとえば、「= A3」および「= SUM（A4、B5）」も、 `formula1`の値にできます。
+- は二項演算子「GreaterThan」です。`operator` 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値が左側のオペランドになり、 `formula1` で指定された値が右側のオペランドになります。 したがって、このルールでは、0 より大きな整数だけが有効です。 
+- は、ハードコーディングされた数字です。`formula1` コード時にどの値にすべきかわからない場合は、値の Excel 式を (文字列として) 使用することもできます。 たとえば、「= A3」および「= SUM（A4、B5）」も、 `formula1`の値にできます。
 
 ```js
 Excel.run(function (context) {
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 
 他の二項演算子のリストについては、「[BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) 」を参照してください。 
 
-また、「Between」と「NotBetween」の2つの三項演算子もあります。 これらを使用するには、オプションの `formula2` プロパティを指定する必要があります。 `formula1` と `formula2` 値はバウンディング オペランドです。 ユーザーがセルに入力しようとする値は、3 番目の (評価された) オペランドです。 以下は「Between」演算子の使用例です。
+また、「Between」と「NotBetween」の2つの三項演算子もあります。 これらを使用するには、オプションの `formula2` プロパティを指定する必要があります。 と `formula2` 値はバウンディング オペランドです。`formula1` ユーザーがセルに入力しようとする値は、3 番目の (評価された) オペランドです。 以下は「Between」演算子の使用例です。
 
 ```js
 Excel.run(function (context) {
@@ -95,7 +95,7 @@ Excel.run(function (context) {
 - `date`
 - `time`
 
-`DateTimeDataValidation` オブジェクトは `BasicDataValidation` と構成が似ています。つまり、プロパティ `formula1`、 `formula2`、`operator`が備わっており、同じ方法で使われます。 違うのは、数式プロパティで数値を使えませんが、 [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) を入力できる点です。 以下は、2018 年 4 月の第 1 週の日付として有効な値を定義する例です。 
+オブジェクトは `BasicDataValidation` と構成が似ています。つまり、プロパティ `formula1`、 `formula2`、`operator`が備わっており、同じ方法で使われます。`DateTimeDataValidation` 違うのは、数式プロパティで数値を使えませんが、 [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) を入力できる点です。 以下は、2018 年 4 月の第 1 週の日付として有効な値を定義する例です。 
 
 ```js
 Excel.run(function (context) {
@@ -119,8 +119,8 @@ Excel.run(function (context) {
 有限リストからの値のみが有効な値であるように指定するには、`list` オブジェクトの `DataValidationRule` プロパティを使用します。 次に例を示します。 このコードについては、次の点に注意してください。
 
 - 「Names」という名前のワークシートがあり、「A1：A3」の範囲の値が名前であることが前提です。
-- `source` プロパティは、有効な値のリストを指定します。 名前を含んだ範囲が割り当てられています。 コンマ区切りのリストを割り当てることもできます。たとえば、「Sue、Ricky、Liz」です。 
-- `inCellDropDown` プロパティでは、ユーザーがセルを選択したときにセルにドロップダウン コントロールを表示するかどうかを指定します。 `true` に設定されている場合 、ドロップダウンには `source` からの値のリストが表示されます。
+- プロパティは、有効な値のリストを指定します。`source` 名前を含んだ範囲が割り当てられています。 コンマ区切りのリストを割り当てることもできます。たとえば、「Sue、Ricky、Liz」です。 
+- プロパティでは、ユーザーがセルを選択したときにセルにドロップダウン コントロールを表示するかどうかを指定します。`inCellDropDown` に設定されている場合 、ドロップダウンには `source` からの値のリストが表示されます。`true`
 
 ```js
 Excel.run(function (context) {
@@ -167,8 +167,8 @@ Excel.run(function (context) {
 
 ユーザーがセルに無効なデータを入力しようとすると表示されるカスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては、次の点に注意してください。
 
--  `style` プロパティは、ユーザーが情報アラート、警告、または「停止」アラートを取得するかどうかを決定します。 実際のところ、ユーザーが無効なデータを追加できないようにするのは、`Stop` のみです。 `Warning` と `Information` のポップアップには、設定にかかわらずユーザーが無効なデータを入力できるオプションがあります。
-- `showAlert` プロパティの既定値は `true` です。 つまり、`showAlert` を `false` に設定するか、カスタムのメッセージ、タイトル、スタイルを設定するカスタム アラートを作成するかしない限り、Excel ホストは (`Stop` タイプの) 汎用アラートをポップアップ表示します。 このコードはカスタム メッセージとタイトルを設定します。
+- プロパティは、ユーザーが情報アラート、警告、または「停止」アラートを取得するかどうかを決定します。`style` 実際のところ、ユーザーが無効なデータを追加できないようにするのは、`Stop` のみです。 と `Information` のポップアップには、設定にかかわらずユーザーが無効なデータを入力できるオプションがあります。`Warning`
+- プロパティの既定値は `true` です。`showAlert` つまり、`showAlert` を `false` に設定するか、カスタムのメッセージ、タイトル、スタイルを設定するカスタム アラートを作成するかしない限り、Excel ホストは (`Stop` タイプの) 汎用アラートをポップアップ表示します。 このコードはカスタム メッセージとタイトルを設定します。
 
 
 ```js
@@ -189,7 +189,7 @@ Excel.run(function (context) {
 })
 ```
 
-詳細情報については、「[DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert)」を参照してください。
+詳細情報については、「 [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert) 」を参照してください。
 
 ### <a name="create-validation-prompts"></a>入力規則プロンプトを作成する
 
@@ -212,7 +212,7 @@ Excel.run(function (context) {
 })
 ```
 
-詳細情報については、「[DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt)」を参照してください。
+詳細情報については、「 [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt) 」を参照してください。
 
 ### <a name="remove-data-validation-from-a-range"></a>範囲からデータ入力規則を削除する
 
