@@ -2,12 +2,12 @@
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: 70662a01d86d3fa111b39deb4c16702a4f8530f5
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241139"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925641"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "21241139"
 
 * 入手可能な Visual Studio 2017 プレビューの最新バージョン。
 
-* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。
+* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -38,15 +38,15 @@ ms.locfileid: "21241139"
     > [!NOTE]
     > ID 名前空間に関するエラーが表示されます。 これは構成の問題の副作用ですが、次のステップで修正します。 重要な点は、パッケージがインストールされていることです。
 
-1. 現在、SSO (バージョン `1.1.1-alpha0393`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。 
+1. 現在、SSO (バージョン `1.1.4-preview0002`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。 
 
    > 1. **[ツール]** メニューで **[Nuget パッケージ マネージャー]** > **[パッケージ マネージャー コンソール]** に移動します。 
 
-   > 2. コンソールで、次のコマンドを実行します。高速インターネット接続でも完了に１分以上かかることがあります。完了するとコンソールの出力の最後付近に ** 「Microsoft.Identity.Client 1.1.4-alpha0002」が正常にインストールされました ...** と表示されます。
+   > 2. コンソールで、次のコマンドを実行します。 これは高速インターネット接続の場合でも、完了までに数分かかることがあります。 完了すると、コンソールの出力の末尾に **'Microsoft.Identity.Client 1.1.4-alpha0002' が正常にインストールされました...** というメッセージが表示されます。
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。**Microsoft.Identity.Client** がリストされていることを確認します。リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
+   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。 **Microsoft.Identity.Client** がリストされていることを確認します。 リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
 
 1. もう一度プロジェクトをビルドします。
 
@@ -70,7 +70,7 @@ ms.locfileid: "21241139"
 
 ## <a name="configure-the-add-in"></a>アドインを構成する
 
-1. 次の文字列内のプレースホルダー "{tenant_ID}" を Office 365 テナントIDに置き換えます。 「 [Office 365テナントIDを見つける](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) 」にあるいずれかの方法を使用して、IDを取得します。
+1. 次の文字列内のプレースホルダー "{tenant_ID}" を Office 365 テナントIDに置き換えます。 「 [Office 365テナントIDを見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、IDを取得します。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -548,7 +548,7 @@ ms.locfileid: "21241139"
 3. を宣言している行のすぐ上に、属性 `[Authorize]` を追加します。これにより、アドインはコントローラー メソッドが呼び出されたときに、最後の手順で構成した承認プロセスを必ず実行するようになります。アドインへの有効なアクセス トークンを持つ呼び出し元のみが、コントローラーのメソッドを起動できます。`ValuesController`
 
     > [!NOTE]
-    > 運用環境の ASP.NET MVC Web API サービスには、1 つ以上のカスタム [FilterAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.filters(v=vs.108).aspx) クラスに代理 (on-behalf-of) フロー用のカスタム ロジックを用意する必要があります。 この学習用サンプルでは、メイン コントローラーにロジックを配置して、認証とデータのフェッチ ロジックの全体的なフローを簡単に把握できるようにしています。 さらに、このサンプルが「[Azure Samples](https://github.com/Azure-Samples/)」の承認サンプルのパターンと一致するようになります。    
+    > 運用環境の ASP.NET MVC Web API サービスには、1 つ以上のカスタム [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) クラスに代理 (on-behalf-of) フロー用のカスタム ロジックを用意する必要があります。 この学習用サンプルでは、メイン コントローラーにロジックを配置して、認証とデータのフェッチ ロジックの全体的なフローを簡単に把握できるようにしています。 さらに、このサンプルが「[Azure Samples](https://github.com/Azure-Samples/)」の承認サンプルのパターンと一致するようになります。    
 
 4. 次のメソッドを `ValuesController` に追加します。 戻り値は、`Task<IEnumerable<string>>` ではなく `GET api/values` メソッドでより一般的な `Task<HttpResponseMessage>` になる点に注意してください。 これは、カスタムの承認ロジックがコントローラー内にあることの副作用です。そのロジックの一部のエラー条件では、HTTP 応答オブジェクトをアドインのクライアントに送信することが必要になります。 
 
