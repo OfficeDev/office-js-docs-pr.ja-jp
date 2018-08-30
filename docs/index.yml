@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c56cc86f11a43fff1a089dc4e24eced24799c327
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e3a2ccbc7a8d626ad48f7ff8513bbf4acd5910ea
+ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925326"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "23271344"
 documentType: LandingData
 title: Office アドイン ドキュメント
 metadata:
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office アドインのプラットフォーム</a> を使用すると、Office アプリケーションを拡張し、Office ドキュメントのコンテンツと対話するソリューションを構築できます。 Office アドインで、HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、および Outlookを拡張して対話操作することができます。 ソリューションは、Office for Windows、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームで実行できます。 クイック スタート、ハウツー ガイド、および API リファレンス ドキュメントで Office アドインを作成する方法を学びます。<br/><br/><b>注意：</b> COM または VSTO アドインについては、<a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank">MSDN ドキュメント</a>を参照してください。
+  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office アドインのプラットフォーム</a> を使用すると、Office アプリケーションを拡張し、Office ドキュメントのコンテンツと対話するソリューションを構築できます。 Office アドインで、HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、および Outlookを拡張して対話操作することができます。 ソリューションは、Office for Windows、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームの Office で実行できます。 クイック スタート、ハウツー ガイド、および API リファレンス ドキュメントで Office アドインを作成する方法を学びます。<br/><br/><b>注:</b> COM または VSTO アドインの詳細については、 <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office クライアント開発のマニュアル</a>をご覧ください。
   aside:
     image:
       alt: 
@@ -55,7 +55,7 @@ sections:
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
-      text: Project
+      text: プロジェクト
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
 - title: ハウツー ガイド
   items:
@@ -81,9 +81,9 @@ sections:
     className: cardsD
     items:
     - title: 共通 API (2013)
-      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">JavaScript API for Office</a></p>
+      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">Office の JavaScript API</a></p>
     - title: ホスト固有の API (2016)
-      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel の JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
     - title: >
         その他
       html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">API オープン仕様</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office アドインのマニフェスト</a></p>
