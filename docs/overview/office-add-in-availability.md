@@ -1,19 +1,19 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、および OneNote のサポートされる要件セット。
-ms.date: 07/31/2018
-ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.date: 08/30/2018
+ms.openlocfilehash: 06fb073693bd8adca7d196f4361699ac3f54cee1
+ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703911"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "23797302"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
-Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API の要件セットが含まれています。 
+Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API の要件セットが含まれています。
 
-表のセルにアスタリスク ( * ) が含まれる場合は、準備中です。 Project または Access の要件セットについては、「[Office の共有要件セット](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)」を参照してください。  
+表のセルにアスタリスク ( * ) が含まれる場合は、準備中です。 Project または Access の要件セットについては、「[Office の共有要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)」を参照してください。  
 
 > [!NOTE]
 > MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1、WordApi 1.1、および共通 API の要件セットのみが含まれています。
@@ -23,35 +23,37 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 <table style="width:80%">
   <tr>
     <th style="width:10%">プラットフォーム</th>
-    <th style="width:10%">拡張点</th> 
-    <th style="width:20%">API 要件セット</th> 
-    <th style="width:40%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th> 
+    <th style="width:10%">拡張点</th>
+    <th style="width:20%">API 要件セット</th>
+    <th style="width:40%"><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - 作業ウィンドウ<br>
         - コンテンツ<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a>
     </td>
     <td>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - ファイル<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - CompressedFile<br>
-        - Settings<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -59,80 +61,98 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>
         - 作業ウィンドウ<br>
         - コンテンツ</td>
-    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>  - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - ファイル<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
         - TextCoercion</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2016</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - ファイル<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
-        - TextCoercion</td> 
+        - TextCoercion</td>
   </tr>
   <tr>
     <td>iOS 用 Office</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - ファイル<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
         - TextCoercion</td>
   </tr>
   <tr>
     <td>Mac 用 Office 2016</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - ファイル<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - PdfFile<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -147,81 +167,81 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 <table style="width:80%">
   <tr>
     <th>プラットフォーム</th>
-    <th>拡張点</th> 
-    <th>API 要件セット</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th> 
+    <th>拡張点</th>
+    <th>API 要件セット</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
     <td>使用不可</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2013</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
     <td>使用不可</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2016</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
       - モジュール</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>使用不可</td> 
-  </tr>
-  <tr>
-    <td>iOS 用 Office</td>
-    <td> - メールの読み取り<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Mac 用 Office 2016</td>
+    <td>iOS 版 Office</td>
+    <td> - メールの読み取り<br>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
+    <td>使用不可</td>
+  </tr>
+  <tr>
+    <td>Mac 版 Office 2016</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Android 用 Office</td>
+    <td>Android 版 Office</td>
     <td> - メールの読み取り<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
     <td>使用不可</td>
   </tr>
 </table>
@@ -233,128 +253,141 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 <table style="width:80%">
   <tr>
     <th>プラットフォーム</th>
-    <th>拡張点</th> 
-    <th>API 要件セット</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th> 
+    <th>拡張点</th>
+    <th>API 要件セット</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CustomXMLParts<br>
+         - DocumentEvents<br>
+         - ファイル<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
+         - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - DocumentEvents<br>
-         - TextFile<br>
-         - ImageCoercion<br>
-         - Settings<br>
-         - TextCoercion</td>
+         - TextCoercion<br>
+         - TextFile</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2013</td>
     <td> - 作業ウィンドウ</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXMLParts<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Settings<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Matrix Bindings</td>
+         - TextFile</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2016</td>
     <td> - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXMLParts<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Settings<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Matrix Bindings </td> 
+         - TextFile </td>
   </tr>
   <tr>
     <td>iOS 用 Office</td>
     <td> - 作業ウィンドウ</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXMLParts<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Settings<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Matrix Bindings </td> 
+         - TextFile </td>
   </tr>
   <tr>
     <td>Mac 用 Office 2016</td>
     <td> - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXMLParts<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Settings<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Matrix Bindings </td> 
+         - TextFile </td>
   </tr>
 </table>
 
@@ -365,66 +398,72 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 <table style="width:80%">
   <tr>
     <th>プラットフォーム</th>
-    <th>拡張点</th> 
-    <th>API 要件セット</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th> 
+    <th>拡張点</th>
+    <th>API 要件セット</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - DocumentEvents<br>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2013</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
     </td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TextCoercion</td>
   </tr>
   <tr>
     <td>Windows 用 Office 2016</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - DocuentEvents<br>
-         - Selection<br>
-         - Settings<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>iOS 用 Office</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - ファイル<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -432,16 +471,17 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>Mac 用 Office 2016</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TextCoercion</td>
   </tr>
 </table>
 
@@ -452,23 +492,23 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 <table style="width:80%">
   <tr>
     <th>プラットフォーム</th>
-    <th>拡張点</th> 
-    <th>API 要件セット</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th> 
+    <th>拡張点</th>
+    <th>API 要件セット</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
-         - Settings<br>
-         - TextCoercion<br>
          - HtmlCoercion<br>
-         - ImageCoercion</td>
+         - ImageCoercion<br>
+         - 設定<br>
+         - TextCoercion</td>
   </tr>
 </table>
 
@@ -477,7 +517,6 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md)
-- [共通 API の要件セット](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
-- [アドイン コマンドの要件セット](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets)
-- [JavaScript API for Office リファレンス](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-
+- [共通 API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)
+- [アドイン コマンドの要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets)
+- [JavaScript API for Office リファレンス](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
