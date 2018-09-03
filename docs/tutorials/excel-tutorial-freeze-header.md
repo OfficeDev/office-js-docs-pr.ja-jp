@@ -3,10 +3,10 @@ title: Excel JavaScript API を使用して Excel で表のヘッダーを固定
 description: ''
 ms.date: 12/08/2017
 ms.openlocfilehash: dbfacebd7fea786373a5f91b03d55b0b4fc778d3
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
+ms.lasthandoff: 09/03/2018
 ms.locfileid: "19439657"
 ---
 # <a name="freeze-a-table-header-in-excel-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して Excel で表のヘッダーを固定する
