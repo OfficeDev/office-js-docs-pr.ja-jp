@@ -1,21 +1,21 @@
-<span data-ttu-id="5c927-101">このチュートリアルの手順では、その日の [Bing](https://www.bing.com) 写真を取得し、そのイメージをスライドに挿入します。</span><span class="sxs-lookup"><span data-stu-id="5c927-101">In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.</span></span>
+<span data-ttu-id="4a54c-101">このチュートリアルの手順では、その日の [Bing](https://www.bing.com) 写真を取得し、そのイメージをスライドに挿入します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-101">In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5c927-102">このページでは、PowerPoint アドインのチュートリアルの個々の手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c927-102">This page describes an individual step of the PowerPoint add-in tutorial.</span></span> <span data-ttu-id="5c927-103">このページに検索エンジンの結果から、または直接リンクからアクセスした場合は、「[PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)」の紹介ページに移動し、チュートリアルを最初から始めてください。</span><span class="sxs-lookup"><span data-stu-id="5c927-103">If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.</span></span>
+> <span data-ttu-id="4a54c-102">このページでは、PowerPoint アドインのチュートリアルの個々の手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-102">This page describes an individual step of the PowerPoint add-in tutorial.</span></span> <span data-ttu-id="4a54c-103">このページに検索エンジンの結果から、または直接リンクからアクセスした場合は、「[PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)」の紹介ページに移動し、チュートリアルを最初から始めてください。</span><span class="sxs-lookup"><span data-stu-id="4a54c-103">If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.</span></span>
 
-## <a name="add-the-bing-photo-of-the-day-to-a-slide"></a><span data-ttu-id="5c927-104">その日の Bing の写真をスライドに追加する</span><span class="sxs-lookup"><span data-stu-id="5c927-104">Add the Bing photo of the day to a slide</span></span>
+## <a name="add-the-bing-photo-of-the-day-to-a-slide"></a><span data-ttu-id="4a54c-104">その日の Bing の写真をスライドに追加する</span><span class="sxs-lookup"><span data-stu-id="4a54c-104">Add the Bing photo of the day to a slide</span></span>
 
-1. <span data-ttu-id="5c927-105">ソリューション エクスプローラーを使用して、**Controllers** という名前の新しいフォルダーを **HelloWorldWeb** プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c927-105">Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.</span></span>
+1. <span data-ttu-id="4a54c-105">ソリューション エクスプローラーを使用して、**Controllers** という名前の新しいフォルダーを **HelloWorldWeb** プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-105">Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.</span></span>
 
     ![PowerPoint のチュートリアル - HelloWorldWeb プロジェクトの Controllers フォルダーを強調表示する Visual Studio ソリューション エクスプローラー ウィンドウ](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. <span data-ttu-id="5c927-107">**Controllers** フォルダーを右クリックし、**[追加] > [新規スキャフォールディング アイテム...]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5c927-107">Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.</span></span>
+2. <span data-ttu-id="4a54c-107">**Controllers** フォルダーを右クリックし、**[追加] > [新規スキャフォールディング アイテム...]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-107">Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.</span></span>
 
-3. <span data-ttu-id="5c927-108">**[スキャフォールディングを追加]** ダイアログ ウィンドウで、「**Web API 2 Controller - Empty**」を選択し、**[追加]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="5c927-108">In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.</span></span> 
+3. <span data-ttu-id="4a54c-108">**[スキャフォールディングを追加]** ダイアログ ウィンドウで、「**Web API 2 Controller - Empty**」を選択し、**[追加]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-108">In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.</span></span> 
 
-4. <span data-ttu-id="5c927-109">**[コントローラーの追加]** ダイアログ ウィンドウでコントローラー名として「**PhotoController**」と入力し、**[追加]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="5c927-109">In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button.</span></span> <span data-ttu-id="5c927-110">Visual Studio によって **PhotoController.cs** ファイルが作成され、表示されます。</span><span class="sxs-lookup"><span data-stu-id="5c927-110">Visual Studio creates and opens the **PhotoController.cs** file.</span></span>
+4. <span data-ttu-id="4a54c-109">**[コントローラーの追加]** ダイアログ ウィンドウでコントローラー名として「**PhotoController**」と入力し、**[追加]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-109">In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button.</span></span> <span data-ttu-id="4a54c-110">Visual Studio によって **PhotoController.cs** ファイルが作成され、表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-110">Visual Studio creates and opens the **PhotoController.cs** file.</span></span>
 
-5. <span data-ttu-id="5c927-111">**PhotoController.cs** ファイルの内容全体を、Bing サービスを呼び出す次のコードに置き換え、その日の写真を Base64 でエンコードされた文字列として取得します。</span><span class="sxs-lookup"><span data-stu-id="5c927-111">Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string.</span></span> <span data-ttu-id="5c927-112">Office JavaScript API を使用してイメージをドキュメントに挿入する場合は、イメージ データを Base64 でエンコードされた文字列として指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5c927-112">When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.</span></span>
+5. <span data-ttu-id="4a54c-111">**PhotoController.cs** ファイルの内容全体を、Bing サービスを呼び出す次のコードに置き換え、その日の写真を Base64 でエンコードされた文字列として取得します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-111">Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string.</span></span> <span data-ttu-id="4a54c-112">Office JavaScript API を使用してイメージをドキュメントに挿入する場合は、イメージ データを Base64 でエンコードされた文字列として指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a54c-112">When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.</span></span>
 
     ```csharp
     using System;
@@ -63,7 +63,7 @@
     }
     ```
 
-6. <span data-ttu-id="5c927-113">**Home.html** ファイルで `TODO1` を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5c927-113">In the **Home.html** file, replace `TODO1` with the following markup.</span></span> <span data-ttu-id="5c927-114">このマークアップにより、アドインの作業ウィンドウ内に表示される **[イメージの挿入]** ボタンを定義します。</span><span class="sxs-lookup"><span data-stu-id="5c927-114">This markup defines the **Insert Image** button that will appear within the add-in's task pane.</span></span>
+6. <span data-ttu-id="4a54c-113">**Home.html** ファイルで `TODO1` を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-113">In the **Home.html** file, replace `TODO1` with the following markup.</span></span> <span data-ttu-id="4a54c-114">このマークアップにより、アドインの作業ウィンドウ内に表示される **[イメージの挿入]** ボタンを定義します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-114">This markup defines the **Insert Image** button that will appear within the add-in's task pane.</span></span>
 
     ```html
     <button class="ms-Button ms-Button--primary" id="insert-image">
@@ -73,13 +73,13 @@
     </button>
     ```
 
-7. <span data-ttu-id="5c927-115">**Home.js** ファイルで `TODO1` を次のコードに置き換え、**[イメージの挿入]** ボタンのイベント ハンドラーを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5c927-115">In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.</span></span>
+7. <span data-ttu-id="4a54c-115">**Home.js** ファイルで `TODO1` を次のコードに置き換え、**[イメージの挿入]** ボタンのイベント ハンドラーを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-115">In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.</span></span>
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. <span data-ttu-id="5c927-116">**Home.js** ファイルで `TODO2` を次のコードに置き換え、**insertImage** 関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="5c927-116">In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function.</span></span> <span data-ttu-id="5c927-117">この関数は Bing Web サービスからイメージをフェッチし、`insertImageFromBase64String` 関数を呼び出してそのイメージをドキュメントに挿入します。</span><span class="sxs-lookup"><span data-stu-id="5c927-117">This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.</span></span>
+8. <span data-ttu-id="4a54c-116">**Home.js** ファイルで `TODO2` を次のコードに置き換え、**insertImage** 関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-116">In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function.</span></span> <span data-ttu-id="4a54c-117">この関数は Bing Web サービスからイメージをフェッチし、`insertImageFromBase64String` 関数を呼び出してそのイメージをドキュメントに挿入します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-117">This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.</span></span>
 
     ```js
     function insertImage() {
@@ -94,11 +94,11 @@
     }
     ```
 
-9. <span data-ttu-id="5c927-118">**Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="5c927-118">In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function.</span></span> <span data-ttu-id="5c927-119">この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。</span><span class="sxs-lookup"><span data-stu-id="5c927-119">This function uses the Office JavaScript API to insert the image into the document.</span></span> <span data-ttu-id="5c927-120">注意:</span><span class="sxs-lookup"><span data-stu-id="5c927-120">Note:</span></span> 
+9. <span data-ttu-id="4a54c-118">**Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-118">In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function.</span></span> <span data-ttu-id="4a54c-119">この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-119">This function uses the Office JavaScript API to insert the image into the document.</span></span> <span data-ttu-id="4a54c-120">注意:</span><span class="sxs-lookup"><span data-stu-id="4a54c-120">Note:</span></span> 
 
-    - <span data-ttu-id="5c927-121">`setSelectedDataAsyc` 要求の 2 番目のパラメーターとして指定されている `coercionType` オプションは、挿入されるデータの種類を示します。</span><span class="sxs-lookup"><span data-stu-id="5c927-121">The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` request indicates the type of data being inserted.</span></span> 
+    - <span data-ttu-id="4a54c-121">`setSelectedDataAsyc` 要求の 2 番目のパラメーターとして指定されている `coercionType` オプションは、挿入されるデータの種類を示します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-121">The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` request indicates the type of data being inserted.</span></span> 
 
-    - <span data-ttu-id="5c927-122">`asyncResult` オブジェクトは `setSelectedDataAsync` 要求が失敗した場合の状態やエラー情報など、その要求の結果をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="5c927-122">The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.</span></span>
+    - <span data-ttu-id="4a54c-122">`asyncResult` オブジェクトは `setSelectedDataAsync` 要求が失敗した場合の状態やエラー情報など、その要求の結果をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-122">The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.</span></span>
 
     ```js
     function insertImageFromBase64String(image) {
@@ -114,20 +114,20 @@
     }
     ```
 
-## <a name="test-the-add-in"></a><span data-ttu-id="5c927-123">アドインのテスト</span><span class="sxs-lookup"><span data-stu-id="5c927-123">Test the add-in</span></span>
+## <a name="test-the-add-in"></a><span data-ttu-id="4a54c-123">アドインのテスト</span><span class="sxs-lookup"><span data-stu-id="4a54c-123">Test the add-in</span></span>
 
-1. <span data-ttu-id="5c927-p107">Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、`F5` キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="5c927-p107">Using Visual Studio, test the newly created PowerPoint add-in by pressing `F5` or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="4a54c-p107">Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、`F5` キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-p107">Using Visual Studio, test the newly created PowerPoint add-in by pressing `F5` or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
     ![[開始] ボタンが強調表示されている Visual Studio のスクリーンショット](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="5c927-127">PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="5c927-127">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="4a54c-127">PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-127">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![[ホーム] リボンで [作業ウィンドウの表示] ボタンが強調表示されている Visual Studio のスクリーンショット](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="5c927-129">作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c927-129">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.</span></span>
+3. <span data-ttu-id="4a54c-129">作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-129">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.</span></span>
 
     ![[イメージの挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. <span data-ttu-id="5c927-131">Visual Studio で `Shift + F5` を押すか **[停止]** ボタンを選択してアドインを停止します。</span><span class="sxs-lookup"><span data-stu-id="5c927-131">In Visual Studio, stop the add-in by pressing `Shift + F5` or choosing the **Stop** button.</span></span> <span data-ttu-id="5c927-132">アドインが停止すると、PowerPoint は自動的に閉じます。</span><span class="sxs-lookup"><span data-stu-id="5c927-132">PowerPoint will automatically close when the add-in is stopped.</span></span>
+4. <span data-ttu-id="4a54c-131">Visual Studio で `Shift + F5` を押すか **[停止]** ボタンを選択してアドインを停止します。</span><span class="sxs-lookup"><span data-stu-id="4a54c-131">In Visual Studio, stop the add-in by pressing `Shift + F5` or choosing the **Stop** button.</span></span> <span data-ttu-id="4a54c-132">アドインが停止すると、PowerPoint は自動的に閉じます。</span><span class="sxs-lookup"><span data-stu-id="4a54c-132">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![[停止] ボタンが強調表示されている Visual Studio のスクリーンショット](../images/powerpoint-tutorial-stop.png)
