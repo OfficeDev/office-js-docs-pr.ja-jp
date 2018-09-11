@@ -1,12 +1,12 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: 2018/01/23
-ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: bb77d037140f8c56ca05f3817fb2b9d0271297ae
+ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927391"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "23876614"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -70,15 +70,15 @@ ms.locfileid: "22927391"
 
 2. `client_id` プロパティの場合は、アドインの登録時に保存したアプリケーション IDでプレースホルダー `{client GUID}` を置き換えます。 完了したら、GUID を単一引用符で囲んでください。 "{}" 符号は使用しないでください。
 
-3. `client_secret` プロパティの場合は、アドインの登録時に保存したアプリケーション シークレットでプレースホルダー `{client secret}` を置き換えます。
+3. `client_secret` プロパティの場合は、アドインの登録時に保存したアプリケーション シークレットでプレースホルダーの `{client secret}` を置き換えます。
 
 4. プロパティの場合は、アドインの登録時に保存したアプリケーション ID でプレースホルダーの `{audience GUID}` を置き換えます。(`client_id` プロパティに割り当てた値とまったく同じになります)。`audience`
   
-3. `issuer` プロパティに割り当てられた文字列には、プレースホルダー *{O365 tenant GUID}* が表示されます。 これを Office 365 テナント ID に置き換えます。 「 [Office 365 テナント ID を見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、IDを取得します。 完了したら、 `issuer` プロパティの値は次のようになります。
+3. プロパティに割り当てられた文字列には、プレースホルダー *{O365 tenant GUID}* が表示されます。`issuer` これを Office 365 テナント ID に置き換えます。 「 [Office 365 テナント ID を見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、ID を取得します。 完了したら、 `issuer` プロパティの値は次のようになります。
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-1. `AuthModule` コンストラクターのその他のパラメータは変更しないでください。 ファイルを保存して閉じます。
+1. `AuthModule` コンストラクターのその他の値は未変更のままにしておきます。 ファイルを保存して閉じます。
 
 1. プロジェクトのルートにある、アドイン マニフェスト ファイル「Office-Add-in-NodeJS-SSO.xml」を開きます。
 
@@ -97,7 +97,7 @@ ms.locfileid: "22927391"
     </WebApplicationInfo>
     ```
 
-1. このマークアップ内の * 両方の場所の *プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 ("{}" は ID の一部ではないので、これらを含めないでください。) これは、web.config の ClientID と Audience に使用したものと同じ ID です。
+1. このマークアップ内の*両方の場所の*プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 ("{}" は ID の一部ではないので、これらを含めないでください。) これは、web.config の ClientID と Audience に使用したものと同じ ID です。
 
     > [!NOTE]
     > * **[リソース]** の値は、アドインの登録に Web API プラットフォームを追加したときに設定した **[アプリケーション ID URI]** です。
@@ -132,7 +132,7 @@ ms.locfileid: "22927391"
 
 1. メソッドの下に、次のコードを追加します。このコードについては、次の点に注意してください。`getOneDriveFiles`
 
-    * は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにトークンを要求します。アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はトークンを送信します。`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにトークンを要求します。アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はトークンを送信します。
     * Office にサインインしているユーザーがいない場合、Office ホストはユーザーにサインインを求めるダイアログを表示します。
     * オプションのパラメーター `forceConsent` を `false` に設定すると、ユーザーがアドインを使用するたびに、Office ホストにアドインへのアクセス権を付与するための同意を求めるダイアログが表示されなくなります。 ユーザーが初めてアドインを実行すると、`getAccessTokenAsync` の呼び出しは失敗しますが、この後の手順で追加するエラー処理ロジックにより、`forceConsent` オプションを `true` に設定した再呼び出しが自動的に実行され、ユーザーに同意を求めるダイアログが表示されます。ただし、これは初回時のみ実行されます。
     * メソッドは、この後の手順で作成します。`handleClientSideErrors`
