@@ -48,10 +48,9 @@ vue init webpack my-add-in
     yo office 
     ```
 
-    - **プロジェクト タイプを選択してください：** `Manifest`
-    - **アドインの名前を何にしますか？** `My Office Add-in`
-    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
-
+    - **プロジェクト タイプを選択してください：** `Office Add-in containing the manifest only`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ウィザードを完了すると、マニフェストファイルとリソースファイルを使用してプロジェクトをビルドできます。
 
@@ -210,5 +209,5 @@ vue init webpack my-add-in
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

@@ -2,12 +2,12 @@
 title: OneNote の JavaScript API のプログラミングの概要
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a2161484991888a6a8c834ba61398cc8c0afb955
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d45e73841c191d5760963cbc684f03cf23ea1989
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925172"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944152"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -84,11 +84,12 @@ function getPagesInSection() {
 }
 ```
 
-[API リファレンス](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
+[API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
-**ドキュメント** オブジェクトを使って、[getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッドや [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) メソッドなどの共通 API にアクセスします。 
+**ドキュメント** オブジェクトを使って、[getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) メソッドや [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) メソッドなどの共通 API にアクセスします。 
+
 
 例:  
 
@@ -110,13 +111,13 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 | API | メモ |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | **Office.CoercionType.Text** と **Office.CoercionType.Matrix** のみ |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | **Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.Html** のみ | 
-| [var mySetting = Office.context.document.settings.get(名前);](https://dev.office.com/reference/add-ins/shared/settings.get) | 設定はコンテンツ アドインによってのみサポートされます | 
-| [Office.context.document.settings.set(名前, 値);](https://dev.office.com/reference/add-ins/shared/settings.set) | 設定はコンテンツ アドインによってのみサポートされます | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** と **Office.CoercionType.Matrix** のみ |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.Html** のみ | 
+| [var mySetting = Office.context.document.settings.get(名前);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | 設定はコンテンツ アドインによってのみサポートされます | 
+| [Office.context.document.settings.set(名前, 値);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | 設定はコンテンツ アドインによってのみサポートされます | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-一般に、豊富な API でサポートされていない操作を行う場合は、共通 API のみを使います。共通 API の使用について詳しくは、Office アドインの[ドキュメント](../overview/office-add-ins.md)と[リファレンス](https://dev.office.com/reference/add-ins/javascript-api-for-office)をご覧ください。
+一般に、豊富な API でサポートされていない操作を行う場合は、共通 API のみを使います。共通 API の使用について詳しくは、Office アドインの[ドキュメント](../overview/office-add-ins.md)と[リファレンス](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)をご覧ください。
 
 
 <a name="om-diagram"></a>
@@ -129,6 +130,6 @@ OneNote アドインは、次の共通 API のみをサポートします。
 ## <a name="see-also"></a>関連項目
 
 - [最初の OneNote アドインをビルドする](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API リファレンス](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
