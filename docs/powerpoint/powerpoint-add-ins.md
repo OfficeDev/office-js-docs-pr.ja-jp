@@ -2,12 +2,12 @@
 title: PowerPoint アドイン
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e5c605410601d711e28ca04ff6e26387019cbb41
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 21f6ec0b00003a90df6850562e399d33da7b49b9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925319"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943888"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -30,13 +30,13 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、Office.Initialize ハンドラーの一部として、ActiveViewChanged イベントを処理する必要があります。
 
 
-- `getActiveFileView` 関数は [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getactiveviewasync-options--callback-) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントのハンドラーを登録するための [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッドを呼び出します。 
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) イベントのハンドラーを登録するための [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出します。 
 
 > [!NOTE]
-> PowerPoint Online では [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
+> PowerPoint Online では [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
 
 ```js
 //general Office.initialize function. Fires on load of the add-in.
@@ -85,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-`getSelectedRange` 関数は [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
+`getSelectedRange` 関数は [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
 
 ```js
@@ -105,7 +105,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 関数は [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
+`goToFirstSlide` 関数は [Document.goToByIdAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#gotobyidasync-id--gototype--options--callback-) メソッドを呼び出して、上記の `getSelectedRange` 関数が格納した最初のスライドの ID に移動します。
 
 
 
@@ -149,7 +149,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
-`getFileUrl` 関数は [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+`getFileUrl` 関数は [Document.getFileProperties](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfilepropertiesasync-options--callback-) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
 
 ```js
@@ -170,7 +170,7 @@ function getFileUrl() {
 
 
 ## <a name="see-also"></a>関連項目
-- [PowerPoint のコード サンプル](https://dev.office.com/code-samples#?filters=powerpoint)
+- [PowerPoint のコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [PowerPoint や Word 用のアドインからドキュメント全体を取得する](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

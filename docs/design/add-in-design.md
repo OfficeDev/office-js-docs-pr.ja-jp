@@ -2,12 +2,12 @@
 title: Office アドインを設計する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 80e349c677a3727f2867a0780a202277f3a6a0d9
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: a864dc0fc6d30ecfcd7a71d1b2677d408519af0e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437403"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944199"
 ---
 # <a name="design-your-office-add-ins"></a>Office アドインを設計する
 
@@ -32,6 +32,6 @@ Office の設計原則に従って、ポジティブなアドイン体験を作�
 - **すべてのプラットフォームおよび入力方式に対応するように設計する**。アドインは、Office がサポートしている、すべてのプラットフォームで動作するように設計します。また、アドインの UX は、あらゆるプラットフォームおよびフォーム ファクターで最適に機能する必要があります。マウス/キーボードとタッチ入力のデバイスをサポートして、カスタムの HTML UI が各種のフォーム ファクターに順応するようにします。詳細は、「[タッチ](../concepts/add-in-development-best-practices.md#optimize-for-touch)」をご参照ください。 
 
 ## <a name="see-also"></a>関連項目
-- [Office UI Fabric](https://dev.office.com/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
 - [アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 

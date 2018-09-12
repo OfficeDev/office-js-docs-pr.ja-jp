@@ -2,12 +2,12 @@
 title: Office アドインにおける非同期プログラミング
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: babf71499ad63be757efdfa6ccf7ad9dfd292932
-ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
+ms.openlocfilehash: c4008eb2238e166095d017bb1477e24f118c0ea0
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "23271358"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945468"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -101,7 +101,7 @@ function write(message){
 
 **AsyncResult** オブジェクトの **asyncContext** プロパティ、**status** プロパティ、および **error** プロパティは、すべての "Async" メソッドに渡されるコールバック関数に同じ種類の情報を返します。ただし、**AsyncResult.value** プロパティに返される内容は "Async" メソッドの機能によって異なります。
 
-たとえば、(**Binding** オブジェクト、 [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.binding) オブジェクト、 [Document](https://docs.microsoft.com/javascript/api/office/office.customxmlpart) オブジェクト、 [RoamingSettings](https://docs.microsoft.com/javascript/api/office/office.document) オブジェクト、および [Settings](https://docs.microsoft.com/en-us/javascript/api/outlook/office.roamingsettings) オブジェクトの) [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.settings) メソッドは、それらのオブジェクトにより表されるアイテムにイベント ハンドラー関数を追加するために使用されます。 **AsyncResult.value** プロパティには、いずれかの **addHandlerAsync** メソッドに渡すコールバック関数からアクセスできますが、イベント ハンドラーを追加すると、データまたはオブジェクトはアクセスされないため、アクセスを試行すると **value** プロパティは常に **undefined** を返します。
+たとえば、(**Binding** オブジェクト、 [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.binding) オブジェクト、 [Document](https://docs.microsoft.com/javascript/api/office/office.customxmlpart) オブジェクト、 [RoamingSettings](https://docs.microsoft.com/javascript/api/office/office.document) オブジェクト、および [Settings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings) オブジェクトの) [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.settings) メソッドは、それらのオブジェクトにより表されるアイテムにイベント ハンドラー関数を追加するために使用されます。 **AsyncResult.value** プロパティには、いずれかの **addHandlerAsync** メソッドに渡すコールバック関数からアクセスできますが、イベント ハンドラーを追加すると、データまたはオブジェクトはアクセスされないため、アクセスを試行すると **value** プロパティは常に **undefined** を返します。
 
 一方で、**Document.getSelectedDataAsync** メソッドを呼び出すと、ドキュメントでユーザーが選択したデータがコールバックの **AsyncResult.value** プロパティに返されます。あるいは、[Bindings.getAllAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-) メソッドを呼び出すと、ドキュメントですべての **Binding** オブジェクトの配列が返されます。また、[Bindings.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) メソッドを呼び出すと、**Binding** オブジェクトが 1 つ返されます。
 

@@ -2,12 +2,12 @@
 title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a5458df9ef266f6ec2811e0f7004125d50d18c22
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 3ce0da16a134c435147f7106d6bea9c006ce2922
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437333"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944049"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -35,7 +35,7 @@ ms.locfileid: "19437333"
     
 4. ブラウザー コントロールが、DOM と HTML 本文を読み込み、 **window.onload** イベントに対するイベント ハンドラーを呼び出します。
     
-5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、 [Office](https://dev.office.com/reference/add-ins/shared/office.initialize) オブジェクトの [initialize](https://dev.office.com/reference/add-ins/shared/office) イベントに対するアドインのイベント ハンドラーを呼び出します。
+5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、 [Office](https://docs.microsoft.com/javascript/api/office?view=office-js) オブジェクトの [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) イベントに対するアドインのイベント ハンドラーを呼び出します。
     
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
     
@@ -62,7 +62,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
     
 5. ブラウザー コントロールが DOM と HTML 本文を読み込んで、 **onload** イベントに対するイベント ハンドラーを呼び出します。
     
-6. Outlook がアドインの [Office](https://dev.office.com/reference/add-ins/shared/office) オブジェクトの [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) イベントに対するイベント ハンドラーを呼び出します。
+6. Outlook がアドインの [Office](https://docs.microsoft.com/javascript/api/office?view=office-js) オブジェクトの [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) イベントに対するイベント ハンドラーを呼び出します。
     
 7. DOM および HTML 本文の読み込みが終わると、アドインは初期化を完了し、アドインのメイン関数は処理を続行できます。
     
@@ -70,7 +70,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
 ## <a name="checking-the-load-status"></a>読み込み状態のチェック
 
 
-DOM と ランタイム環境の両方の読み込みが完了したことを確認する方法の 1 つに、jQuery [.ready()](http://api.jquery.com/ready/)関数の  `$(document).ready()` を使用する方法があります。たとえば、次の **initialize** イベント ハンドラー関数は、アプリを初期化する固有のコードを実行する前に、DOM が読み込まれていることを確認します。その後、 **initialize** イベント ハンドラーは [mailbox.item](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アプリのメイン関数 `initDialer` を呼び出します。
+DOM と ランタイム環境の両方の読み込みが完了したことを確認する方法の 1 つに、jQuery [.ready()](http://api.jquery.com/ready/)関数の  `$(document).ready()` を使用する方法があります。たとえば、次の **initialize** イベント ハンドラー関数は、アプリを初期化する固有のコードを実行する前に、DOM が読み込まれていることを確認します。その後、 **initialize** イベント ハンドラーは [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アプリのメイン関数 `initDialer` を呼び出します。
 
 
 ```js

@@ -2,12 +2,12 @@
 title: 辞書の作業ウィンドウ アドインを作成する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 781e2d07c88e56cbb64a7e7c5671dbbbc1b00894
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 234585f1d7909fde5c595865c73394346a11abd5
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438866"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945195"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -526,13 +526,13 @@ a:hover, a:active
 この実装で呼び出している JavaScript API for Office (Office.js) の主なメンバーを次に示します。
 
 
-- **Office** オブジェクトの [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](https://dev.office.com/reference/add-ins/shared/document) オブジェクトのインスタンスへのアクセスを提供します。
+- **Office** オブジェクトの [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) オブジェクトのインスタンスへのアクセスを提供します。
     
-- **Document** オブジェクトの [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
+- **Document** オブジェクトの [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
     
-- **Document** オブジェクトの [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
+- **Document** オブジェクトの [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
     
-- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult)) から取得します。
+- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)) から取得します。
     
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
     

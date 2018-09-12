@@ -2,17 +2,17 @@
 title: Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6d435c0e3a0383d03f28e095c56b62e967394e22
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 9d3328ba09e2f69e76bd55f21064d52a8537cfa9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437137"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943902"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 
 
-[JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
+[JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
 
 
 最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
@@ -31,5 +31,5 @@ AppSource から Office アドインを発行する場合は、この CDN の参
 ## <a name="see-also"></a>関連項目
 
 - [JavaScript API for Office について](understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
     

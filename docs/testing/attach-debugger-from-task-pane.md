@@ -2,12 +2,12 @@
 title: 作業ウィンドウからデバッガーをアタッチする
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 28f7741a6d04f8f1492fec45649cb55a9447bdd7
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2bc3d44f1d554fb065dbb8004a744acac67ed06c
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925151"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944452"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -30,7 +30,7 @@ Visual Studio では、**ソリューション エクスプローラー**内に�
 Visual Studio でのデバッグの詳細については、以下を参照してください。
 
 -   DOM Explorer を Visual Studio で起動して使用するには、ブログ記事「[新しいプロジェクト テンプレートを使って見栄えの良い Office 用アプリをビルドする](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)」の[ヒントとコツ](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) セクションのヒント 4 を参照してください。
--   ブレークポイントの設定については、「[ブレークポイントの使用](https://msdn.microsoft.com/library/5557y8b4.aspx)」を参照してください。
+-   ブレークポイントの設定については、「[ブレークポイントの使用](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015)」を参照してください。
 -   F12 を使用するには、「[F12 開発者ツールの使用](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))」を参照してください。
 
 ## <a name="see-also"></a>関連項目
