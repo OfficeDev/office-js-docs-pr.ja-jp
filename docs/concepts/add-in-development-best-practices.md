@@ -2,12 +2,12 @@
 title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2ad5cf1e4c34fdbae827cdd115c57313f6faeda9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: efb637cfd31f95688d6b0db0e17b24fefe51c2fc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925480"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944649"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -81,7 +81,7 @@ ms.locfileid: "22925480"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- アドインを実行するホスト アプリケーションがタッチに対応しているかどうかを検出するには、[Context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled) プロパティを使用します。
+- アドインを実行するホスト アプリケーションがタッチに対応しているかどうかを検出するには、[Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) プロパティを使用します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
