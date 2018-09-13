@@ -2,12 +2,12 @@
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 783d47e04fc6d28604501ac77345470c26d36c89
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925382"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945349"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
@@ -25,12 +25,12 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
     > [!NOTE]
     > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
 
-- TypeScript 2.3 for Visual Studio 2017
+- Visual Studio 2017 用 TypeScript 2.3
 
     > [!NOTE]
     > TypeScript は、既定で Visual Studio 2017 と共にインストールされますが、TypeScript がインストールされているかどうかは、[Visual Studio インストーラーを使用して](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)確認できます。 Visual Studio インストーラーで、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** の下で **[TypeScript 2.3 SDK]** が選択されていることを確認します。
 
-- Excel 2016
+- Excel 2016 以降
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -121,7 +121,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016, use fallback logic.
+            // If not using Excel 2016 or later, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
