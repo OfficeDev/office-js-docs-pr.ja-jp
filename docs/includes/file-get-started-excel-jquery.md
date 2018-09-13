@@ -109,13 +109,13 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
+3. `DefaultValue`要素の`DisplayName`属性にはプレースホルダーが含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Excel** に置き換えてください。
+4. `DefaultValue`要素の`Description`属性にはプレースホルダーが含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -320,5 +320,5 @@
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

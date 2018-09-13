@@ -2,12 +2,12 @@
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d624a34e5eb7c23a885aec42c8ed14914f413578
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925354"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944793"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -56,7 +56,7 @@ Autoopen 機能を実装するには:
 > 自動的に開くように指定したウィンドウは、アドインがユーザーのデバイスに既にインストールされている場合にのみ開きます。ユーザーがドキュメントを開いたときに、アドインがインストールされていない場合、Autoopen 機能は動作せずに、設定は無視されます。また、アドインをドキュメントと共に配布する必要がある場合は、可視性プロパティを 1 に設定する必要があります。これは、OpenXML を使用する場合にのみ実行できます。例については、この記事で後述します。 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>手順 1: 開く作業ウィンドウを指定する
-自動的に開く作業ウィンドウを指定するには、[TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。 
+自動的に開く作業ウィンドウを指定するには、[TaskpaneId](https://docs.microsoft.com/javascript/office/manifest/action?view=office-js#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。 
 
 次の例では、Office.AutoShowTaskpaneWithDocument に設定された TaskPaneId の値を示しています。
           
@@ -73,7 +73,7 @@ Autoopen 機能をトリガーするよう、2 つのうちどちらかの方法
 
 
 #### <a name="tag-the-document-on-the-client-side"></a>クライアント側でドキュメントにタグを設定する
-Office.js の [settings.set](https://dev.office.com/reference/add-ins/shared/settings.set) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。   
+Office.js の [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。   
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -112,7 +112,7 @@ webextension パートには、プロパティ バッグと **Office.AutoShowTas
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
-|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Office 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。
+|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Office 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
 > [!NOTE]
@@ -140,7 +140,7 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 この XML を簡単に記述する 1 つの方法として、最初にアドインを実行し、値を書き込むために[クライアント側でドキュメントにタグを設定](#tag-the-document-on-the-client-side)して、ドキュメントを保存してから生成された XML を調べます。Office により、適切な属性値が検出されて設定されます。また、[Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) ツールを使用して生成した C# コードにより、生成する XML 基づいてプログラムでマークアップを追加することもできます。
 
 ## <a name="test-and-verify-opening-taskpanes"></a>タスクパネル表示のテストと検証
-自動的に作業ウィンドウを開くアドインのテスト バージョンは、Office 365 Admin センターによる一元展開を使用して展開できます。次の例は、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示すものです。
+アドインのテストバージョンを展開すると、Office 365  管理センターを介した集中展開を使用して自動的にタスクペインが開きます。 次の例は、EXCatalog ストア バージョンを使用して、集中展開カタログからアドインを挿入する方法を示しています。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
