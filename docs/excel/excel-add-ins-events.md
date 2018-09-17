@@ -2,12 +2,12 @@
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: df3a677cc804e0cc066a6a380e2eb8aac39a1d92
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.openlocfilehash: fbeb0e6efabe37afb0f73ab8e7448d8cf01ebace
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797281"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943979"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
 
@@ -23,8 +23,8 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
 | `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、 [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、 [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | バインディングでデータまたは書式設定が変更されたときに発生するイベント。 | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、 [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、 [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | バインディング内でデータまたは書式設定が変更されたときに発生するイベント。 | [**バインディング**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [ **Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[ **Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSettingsChanged` | ドキュメント内の設定が変更されたときに発生するイベント。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
@@ -140,7 +140,7 @@ function remove() {
 
 イベントを無効にするアドインのパフォーマンスを向上させる可能性があります。 たとえば、アプリケーションがイベントを受け取る必要がない可能性、または複数のエンティティを一括編集しているときにイベントを無視する可能性があります。 
 
-イベントは、 [ランタイム](https://docs.microsoft.com/javascript/api/excel/excel.runtime) レベルで有効と無効にされます。 `enableEvents` プロパティは、イベントが発生し、そのハンドラーがアクティブ化されるかどうかを決定します。 
+イベントは、 [ランタイム](https://docs.microsoft.com/javascript/api/excel/excel.runtime) レベルで有効と無効にされます。 |||UNTRANSLATED_CONTENT_START|||The `enableEvents` property determines if events are fired and their handlers are activated.|||UNTRANSLATED_CONTENT_END||| 
 
 イベントをオンとオフを切り替える方法を次のコード例に示します。
 

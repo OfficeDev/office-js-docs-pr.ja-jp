@@ -2,16 +2,16 @@
 title: Excel JavaScript API を使用して範囲を操作する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925620"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945779"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
-この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)」を参照してください。
+この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js)」を参照してください。
 
 ## <a name="get-a-range"></a>範囲を取得する
 
@@ -541,7 +541,7 @@ Excel.run(function (context) {
 > copyFrom 関数は現在、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリ: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js を使用する必要があります。
 > TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
 
-範囲の copyFrom 関数は、Excel の UI のコピーと貼り付けの動作を複製します。 その copyFrom が呼び出された範囲オブジェクトがコピーする宛先です。 コピー元のソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、 ** G1**から始まる範囲に **  A1:E1**からデータをコピーします  (これは最終的には G1:K1 の範囲に貼り付けられます) 。** **
+範囲の copyFrom 関数は、Excel の UI のコピーと貼り付けの動作を複製します。 その copyFrom が呼び出された範囲オブジェクトがコピーする宛先です。 コピー元のソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、 ** G1**から始まる範囲に **  A1:E1**からデータをコピーします  (これは最終的には G1:K1 の範囲に貼り付けられます) 。****
 
 ```js
 Excel.run(function (context) {
@@ -562,7 +562,7 @@ copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" |
 `“Formulas”` は、コピー元のセルの数式を転送し、その数式の範囲の相対位置を保持します。 数式ではないエントリはすべて、そのままコピーされます。 
 `“Values”` は、データ値をコピーします。数式の場合は、数式の結果をコピーします。 
 `“Formats”` 値を除く、フォント、色、およびその他の書式設定の設定など、範囲の書式設定をコピーします。 
-`”All”`  は (デフォルトのオプションです) は、データと書式設定の両方をコピーし、セルに数式があれば、これを保持します。
+`”All”` は (デフォルトのオプションです) は、データと書式設定の両方をコピーし、セルに数式があれば、これを保持します。
 
 `skipBlanks` は、空白のセルが宛先にコピーされているかどうかを設定します。 True の場合、`copyFrom` は、ソース範囲内の空白のセルをスキップします。 スキップしたセルは、コピー先の範囲で対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
 
@@ -599,4 +599,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Range オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)
+

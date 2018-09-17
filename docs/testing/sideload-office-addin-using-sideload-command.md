@@ -2,16 +2,16 @@
 title: サイドロード コマンドを使用した Sideload Office アドイン
 description: ''
 ms.date: 07/24/2018
-ms.openlocfilehash: 3aacfdb09f362ea10ba0e2393caca335fe4c04c6
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 1ab0277493f2899adb479c2f24b1635a881af3cc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925102"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944042"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>**サイドロードコマンド** を使用したテストの Sideload Office アドイン
  >[!NOTE]
->「npm run sideload」メソッドは、Windows 上で実行されるExcel、Word、および PowerPoint アドインでのみ機能します。[**yo office** ツールで作成され](https://github.com/OfficeDev/generator-office)、 package.json ファイルの`sideload`  セクションに`scripts`  スクリプトのあるアドイン プロジェクトのみを対象とします。 (**yo office** の古いバージョンで作成されたプロジェクトには、このスクリプトもありません。) プロジェクトが Visual Studio で作成されている、またはサイドロードスクリプトがない場合は、[ネットワーク共有から Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)で記述したメソッドを使用して、Windows でサイドロードできます。
+>[Npm 実行 sideload] メソッドだけが、Excel、Word、および PowerPoint のアドイン ウィンドウ上で実行されます。作成されたアドインのプロジェクトに対してのみ、 [**yo office** ツール](https://github.com/OfficeDev/generator-office) があると、 `sideload` 内のスクリプトを作成、 `scripts` 、package.json ファイルのセクション。(プロジェクトの以前のバージョンで作成された **yo office** も、このスクリプトはありません)。プロジェクトは、Visual Studio で作成されたか、sideload スクリプトがない、 [Office アドインをネットワーク共有から Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)に記載されているメソッドを使用して Windows に sideload することができます。
 >
 > Word、Excel、PowerPoint のアドインを Windows でテストしない場合は、以下のいずれかのトピックを参照してアドインをサイドロードします。
 > 

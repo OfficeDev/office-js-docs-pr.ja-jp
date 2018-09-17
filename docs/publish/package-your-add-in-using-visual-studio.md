@@ -2,12 +2,12 @@
 title: 発行のための準備として Visual Studio を使用してアドインをパッケージ化する
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: aa93fc6befd133127c3542a420d779d070316a57
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925249"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944382"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>発行のための準備として Visual Studio を使用してアドインをパッケージ化する
 
@@ -26,7 +26,7 @@ Office アドイン パッケージには、アドインの発行に使用する
     > [!NOTE]
     > 発行プロファイルでは、展開先のサーバー、サーバーへのログオンに必要な資格情報、展開するデータベース、およびその他の展開オプションを指定します。
 
-    [**新規...**] を選択した場合、[**発行プロファイルの作成**] ウィザードが表示されます。このウィザードを使用して、Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。
+    [**新規作成**] を選択した場合、発行プロファイルの作成ウィザードが表示されます。このウィザードを使用して、 Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。
     
     発行プロファイルのインポートまたは発行プロファイルの新規作成については、「[発行プロファイルの作成](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)」を参照してください。
     
@@ -41,7 +41,7 @@ Office アドイン パッケージには、アドインの発行に使用する
 
 1. **[アドインを発行する]** ページで、**[アドインのパッケージ化]** リンクをクリックします。
     
-    **[Office/SharePoint アドインの発行]** ウィザードが表示されます。
+    Office/SharePoint アドインの発行 ウィザードが表示されます。
     
 2. **[Web サイトがホストされている場所]** ドロップダウン リストで、アドインのコンテンツ ファイルをホストする Web サイトの HTTPS URL を選択するか入力して、**[完了]** を選択します。 
     

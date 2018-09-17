@@ -2,12 +2,12 @@
 title: Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 57e0818da0a115380bcb11f1226c48d3ded1078a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925606"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943727"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
 

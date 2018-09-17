@@ -2,18 +2,18 @@
 title: Office アドインを展開し、発行する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 83581b729f5004c36d267bda14795275a5153a9c
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925347"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944341"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
 さまざまな方法を利用し、テスト目的またはユーザーに配布する目的で、Office アドインを展開できます。
 
-|**メソッド**|**Use...**|
+|**メソッド**|**使用してください**|
 |:---------|:------------|
 |[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|開発プロセスの一環として、Windows、Office Online、iPad、Mac で実行するアドインをテストします。|
 |[一元展開](centralized-deployment.md)|クラウド環境またはハイブリッド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
@@ -31,17 +31,17 @@ ms.locfileid: "22925347"
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel、PowerPoint のアドインの展開オプション
 
-| 拡張点 | サイドロード | Office 365 管理センター |AppSource| SharePoint カタログ\*  |
+| 拡張点 | サイドロード | Office 365 管理センター |AppSource   | SharePoint カタログ\* |
 |:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
 | コンテンツ         | X           | X                       | X          | X                    |
 | 作業ウィンドウ       | X           | X                       | X          | X                    |
-| コマンド           | X           | X                       | X          |                      |
+| コマンド         | X           | X                       | X          |                      |
 
 * SharePoint カタログは、Office 2016 for Mac をサポートしません。
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Outlook アドインの展開オプション
 
-| 拡張点 | サイドロード | Exchange サーバー | AppSource |
+| 拡張点 | サイドロード | Exchange サーバー | AppSource    |
 |:----------------|:-----------:|:---------------:|:------------:|
 | メール アプリ        | X           | X               | X            |
 | コマンド         | X           | X               | X            |
@@ -65,7 +65,7 @@ SharePoint アドイン カタログは、Word、Excel、PowerPoint のアドイ
 オンプレミス環境でアドインを展開する場合は、SharePoint カタログを使用します。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、Office 2016 for Mac をサポートしません。Office アドインを Mac クライアントに展開するには、それを [AppSource] に提出する必要があります。 
+> SharePoint カタログは、Office for Mac をサポートしません。Office アドインを Mac クライアントに展開するには、それを [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) に提出する必要があります。 
 
 ### <a name="outlook-add-in-deployment"></a>Outlook アドインの展開
 
@@ -81,7 +81,7 @@ Outlook アドインの展開には以下が必要です。
 ## <a name="see-also"></a>関連項目
 
 - [テスト用に Outlook アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-- [AppSource に提出する][AppSource]
+- [AppSource にアプリを送信する][AppSource]
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [効果的な AppSource 登録リストを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)

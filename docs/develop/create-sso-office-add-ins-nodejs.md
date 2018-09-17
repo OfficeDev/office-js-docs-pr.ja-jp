@@ -1,12 +1,12 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: 2018/01/23
-ms.openlocfilehash: bb77d037140f8c56ca05f3817fb2b9d0271297ae
-ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
+ms.openlocfilehash: 62d32a3f2c8946b21eabd5b0f71aaeeea7c85bb4
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "23876614"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945737"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -31,7 +31,7 @@ ms.locfileid: "23876614"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-1. 「[Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso)」にあるリポジトリを複製するかダウンロードします。 
+1. [OfficeアドインNodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso)にあるリポジトリを複製またはダウンロードします。 
 
     > [!NOTE]
     > サンプルには 3 つのバージョンがあります。  
@@ -70,11 +70,11 @@ ms.locfileid: "23876614"
 
 2. `client_id` プロパティの場合は、アドインの登録時に保存したアプリケーション IDでプレースホルダー `{client GUID}` を置き換えます。 完了したら、GUID を単一引用符で囲んでください。 "{}" 符号は使用しないでください。
 
-3. `client_secret` プロパティの場合は、アドインの登録時に保存したアプリケーション シークレットでプレースホルダーの `{client secret}` を置き換えます。
+3. `client_secret` プロパティの場合は、アドインの登録時に保存した`{client secret}` アプリケーションシークレットでプレースホルダーの  を置き換えます。
 
 4. プロパティの場合は、アドインの登録時に保存したアプリケーション ID でプレースホルダーの `{audience GUID}` を置き換えます。(`client_id` プロパティに割り当てた値とまったく同じになります)。`audience`
   
-3. プロパティに割り当てられた文字列には、プレースホルダー *{O365 tenant GUID}* が表示されます。`issuer` これを Office 365 テナント ID に置き換えます。 「 [Office 365 テナント ID を見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、ID を取得します。 完了したら、 `issuer` プロパティの値は次のようになります。
+3. プロパティに割り当てられた文字列には、プレースホルダー *{O365 tenant GUID}* が表示されます。`issuer` これを Office 365 テナント ID に置き換えます。 「 [Office 365テナントIDを見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、IDを取得します。 完了したら、 `issuer` プロパティの値は次のようになります。
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -132,7 +132,7 @@ ms.locfileid: "23876614"
 
 1. メソッドの下に、次のコードを追加します。このコードについては、次の点に注意してください。`getOneDriveFiles`
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにトークンを要求します。アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はトークンを送信します。
+    *  [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。 その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにこのトークンを要求します。 アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はそのトークンを送信します。
     * Office にサインインしているユーザーがいない場合、Office ホストはユーザーにサインインを求めるダイアログを表示します。
     * オプションのパラメーター `forceConsent` を `false` に設定すると、ユーザーがアドインを使用するたびに、Office ホストにアドインへのアクセス権を付与するための同意を求めるダイアログが表示されなくなります。 ユーザーが初めてアドインを実行すると、`getAccessTokenAsync` の呼び出しは失敗しますが、この後の手順で追加するエラー処理ロジックにより、`forceConsent` オプションを `true` に設定した再呼び出しが自動的に実行され、ユーザーに同意を求めるダイアログが表示されます。ただし、これは初回時のみ実行されます。
     * メソッドは、この後の手順で作成します。`handleClientSideErrors`
@@ -258,7 +258,7 @@ ms.locfileid: "23876614"
         break;      
     ```
 
-1. `TODO7` を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync` の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
+1. `TODO7`を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync`の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
 
     ```javascript
     case 13008:
@@ -424,7 +424,7 @@ ms.locfileid: "23876614"
         }
         ```
 
-2. `TODO3` を次のコードに置き換えます。このコードの注意点は次のとおりです。
+2.  `TODO3` を以下のコードに置き換えます。このコードの注意点は次のとおりです。
     * 「代理」ワークフローをサポートする STS は、HTTP 要求の本文に特定のプロパティ/値ペアが含まれていることを期待します。このコードは、要求の本文になるオブジェクトを構築します。 
     * resource プロパティは、リソースがメソッドに渡された場合にのみ本文に追加されます。
 
@@ -540,7 +540,7 @@ ms.locfileid: "23876614"
     ```
 
     > [!NOTE]
-    > スコープのみを使用して、Office アドインの代理 (on-behalf-of) フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。`access_as_user`
+    > `access_as_user`スコープのみを使用して、Office アドインの代理フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。
 
 5. を次のコードに置き換えます。このコードについては、次の点に注意してください。`TODO8`
 

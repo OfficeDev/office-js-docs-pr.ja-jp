@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを作成する
 
-この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順を説明します。
+この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
 
 ## <a name="environment"></a>環境
 
@@ -41,7 +41,7 @@
     
     ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
-4.   **Src/components/App.tsx** を開き、コメントの「塗りつぶしの色を更新する」を検索し、塗りつぶしの色を '青' から'黄' に変更してから保存します。 
+4.  **Src/components/App.tsx** を開き、コメントの「塗りつぶしの色を更新する」を検索し、塗りつぶしの色を '青' から'黄' に変更してから保存します。 
 
     ```js
     range.format.fill.color = 'blue'
@@ -95,5 +95,5 @@
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

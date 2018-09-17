@@ -2,12 +2,12 @@
 title: Office アドインでの Office UI Fabric
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 7b1e4a9c377c9a60195a51115d7f275603f1ca5a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925193"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944035"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric 
 
@@ -36,33 +36,33 @@ Fabric Core の使用を開始するには
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    その他の Office UI Fabric で使用可能なアイコンを見つけるには、「[アイコン](https://dev.office.com/fabric#/styles/icons)」ページの検索機能を使用します。アドインで使用するアイコンを検索するときには、アイコン名の先頭に `ms-Icon--` を追加してください。 
+    その他の Office UI Fabric で使用可能なアイコンを見つけるには、「[アイコン](https://developer.microsoft.com/fabric#/styles/icons)」ページの検索機能を使用します。アドインで使用するアイコンを検索するときには、アイコン名の先頭に `ms-Icon--` を追加してください。 
 
-    Office UI Fabric で使用可能なフォントのサイズと色については、「[文字体裁](https://dev.office.com/fabric#/styles/typography)」および「[色](https://dev.office.com/fabric#/styles/colors)」を参照してください。
+    Office UI Fabric で使用可能なフォントのサイズと色については、「[文字体裁](https://developer.microsoft.com/fabric#/styles/typography)」および「[色](https://developer.microsoft.com/fabric#/styles/colors)」を参照してください。
  
 ## <a name="use-fabric-components"></a>Fabric コンポーネントを使用する 
 Fabric には、次のタイプのコンポーネントを含む、さまざまな UX コンポーネントが用意されています。これらを使用してアドインを作成できます。
 
 - 入力コンポーネント - 例: ボタン、チェック ボックス、および切り替え
-- 移動コンポーネント - 例: コアドキュメントおよびパンくずリスト
-- 通知コンポーネント - 例: MessageBar および Callout  
+- ナビゲーション コンポーネント - 例: ピボットおよび階層リンク
+- 通知コンポーネントの MessageBar や吹き出しなど  
 
 すべての Fabric コンポーネントがアドインでの使用を推奨しているわけではありません。アドインでの使用を推奨する Fabric React UX コンポーネントのリストを以下に示します。
 
-- [パンくずリスト](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [階層リンク](https://developer.microsoft.com/fabric#/components/breadcrumb)
 - [ボタン](https://developer.microsoft.com/fabric#/components/button)
 - [チェックボックス](https://developer.microsoft.com/fabric#/components/checkbox)
-- [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [選択肢グループ](https://developer.microsoft.com/fabric#/components/choicegroup)
 - [ドロップダウン](https://developer.microsoft.com/fabric#/components/dropdown)
 - [ラベル](https://developer.microsoft.com/fabric#/components/label)
 - [リスト](https://developer.microsoft.com/fabric#/components/list)
 - [コアドキュメント](https://developer.microsoft.com/fabric#/components/pivot)
-- [テキスト フィールド](https://developer.microsoft.com/fabric#/components/textfield)
+- [TextField](https://developer.microsoft.com/fabric#/components/textfield)
 - [切り替え](https://developer.microsoft.com/fabric#/components/toggle)
 
 アドインの作成には、Angular や React など別の JavaScript フレームワークも使用できます。フレームワークで Fabric コンポーネントを使用するには、次のリソースを参照してください。
 
 |**フレームワーク**|**例**|
 |:------------|:----------|
-|**React**|[Office アドインで Office UI Fabric React を使用する](using-office-ui-fabric-react.md )|
-|**Angular**| Angular 1.5 ディレクティブのコミュニティ プロジェクトである「[ngOfficeUIFabric](http://ngofficeuifabric.com/)」と、「[Fabric コンポーネントと Angular 2 コンポーネントとのラッピングについて検討する](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)」を参照してください。|
+|**応答**|[Office アドインで Office UI Fabric React を使用する](using-office-ui-fabric-react.md )|
+|**角度**| Angular 1.5 ディレクティブのコミュニティ プロジェクトである「[ngOfficeUIFabric](http://ngofficeuifabric.com/)」と、「[Fabric コンポーネントと Angular 2 コンポーネントとのラッピングについて検討する](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)」を参照してください。|

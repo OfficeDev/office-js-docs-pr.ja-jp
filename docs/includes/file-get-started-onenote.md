@@ -42,7 +42,7 @@
 
 1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
 
-2. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>` これは、[Office UI Fabric コンポーネント](http://dev.office.com/fabric/components)を使用してテキスト領域とボタンを追加します。
+2. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>` これは、[Office UI Fabric コンポーネント](https://developer.microsoft.com/en-us/fabric#/components)を使用してテキスト領域とボタンを追加します。
 
     ```html
     <main class="ms-welcome__main">
@@ -59,7 +59,7 @@
     </main>
     ```
 
-3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換えて、ファイルを保存します。
+3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -146,7 +146,7 @@
 
 4. **ホーム**タブから、リボンの**タスクペインを表示**ボタンを選択します。 アドインは、OneNote ページの横にある iFrame で開きます。
 
-5. テキスト領域にテキストを入力し、**[枠線の追加]** を選択します。 入力したテキストは、ページに追加されます。 
+5. テキスト領域にテキストを入力し、**[アウトラインの追加]** をクリックします。 入力したテキストは、ページに追加されます。 
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in.png)
 
@@ -172,6 +172,6 @@
 ## <a name="see-also"></a>関連項目
 
 - [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

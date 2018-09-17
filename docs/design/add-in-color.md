@@ -6,7 +6,7 @@ Office UI Fabric には、既定のテーマの色のセットが含まれてい
 Office アプリケーションを使用すると、お客様は、Office UI テーマを適用することによって、インタ フェースをカスタマイズできます。お客様は、4 つの UI テーマから選択でき、Word、PowerPoint、Excel、Office スイートに含まれる他のアプリの背景やボタンをさまざまなスタイルに変えることができます。Office の自然な一部であるかのような、個人用設定に対応するアドインを作成するには、テーマ API を使用します。たとえば、作業ウィンドウの背景色を、いくつかのテーマで濃い灰色に切り替えます。テーマ API を使用すると、先例に倣い、[アクセシビリティ](../design/accessibility-guidelines.md)を確保するために前景色を調整することができます。
 
 > [!NOTE]
-> - メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。
+> - メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) プロパティを使用して Office アプリケーションのテーマに合わせます。この API は、現在 Office 2016 でのみ使用できます。
 > - PowerPoint のコンテンツ アドインの場合は、「[PowerPoint アドインで Office テーマを使用する](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)」を参照してください。
 
 色について、次の一般的なガイドラインが適用されます。

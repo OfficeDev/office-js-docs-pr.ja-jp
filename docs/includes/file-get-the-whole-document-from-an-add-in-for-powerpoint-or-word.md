@@ -122,7 +122,7 @@ PowerPoint 用アドインの XML マニフェスト ファイルは、アドイ
     
 ## <a name="add-the-javascript-to-get-the-document"></a>ドキュメントを取得するための JavaScript を追加する
 
-アドインのコードでは、[Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) イベントのハンドラーが、フォーム上の **[送信]** ボタンのクリック イベントのハンドラーを追加し、アドインの準備ができたことをユーザーに知らせます。
+アドインのコードでは、[Office.initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) イベントのハンドラーが、フォーム上の **[送信]** ボタンのクリック イベントのハンドラーを追加し、アドインの準備ができたことをユーザーに知らせます。
 
 次のコード例は、 **Office.initialize** イベントのイベント ハンドラーと、status div に書き込むためのヘルパー関数 `updateStatus` を示しています。
 
@@ -150,11 +150,11 @@ function updateStatus(message) {
 }
 ```
 
-UI の **[送信]** ボタンをクリックすると、アドインは `sendFile` 関数を呼び出します。この関数には、[Document.getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync) メソッドの呼び出しが含まれています。**getFileAsync** メソッドでは、JavaScript API for Office の他のメソッドと同様に、非同期パターンを使用しています。このメソッドには、_fileType_ という 1 つの必須パラメーターと、_options_ と _callback_ という 2 つの省略可能なパラメーターがあります。 
+UI の **[送信]** ボタンをクリックすると、アドインは `sendFile` 関数を呼び出します。この関数には、[Document.getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-) メソッドの呼び出しが含まれています。**getFileAsync** メソッドでは、JavaScript API for Office の他のメソッドと同様に、非同期パターンを使用しています。このメソッドには、_fileType_ という 1 つの必須パラメーターと、_options_ と _callback_ という 2 つの省略可能なパラメーターがあります。 
 
-_fileType_ パラメーターは、[FileType](https://dev.office.com/reference/add-ins/shared/filetype-enumeration) 列挙子の 3 つの定数 (**Office.FileType.Compressed** ("compressed")、**Office.FileType.PDF** ("pdf")、または **Office.FileType.Text** ("text")) のうちいずれかを受け付けます。PowerPoint は引数として **Compressed** のみをサポートし、Word は 3 つすべてをサポートしています。**fileType** パラメーターとして _Compressed_ を渡した場合、**getFileAsync** メソッドは、ローカル コンピューター上にファイルの一時コピーを作成することにより、ドキュメントを PowerPoint 2013 のプレゼンテーション ファイル (*.pptx) または Word 2013 のドキュメント ファイル (*.docx) として返します。
+_fileType_ パラメーターは、[FileType](https://docs.microsoft.com/javascript/api/office/office.filetype?view=office-js) 列挙子の 3 つの定数 (**Office.FileType.Compressed** ("compressed")、**Office.FileType.PDF** ("pdf")、または **Office.FileType.Text** ("text")) のうちいずれかを受け付けます。PowerPoint は引数として **Compressed** のみをサポートし、Word は 3 つすべてをサポートしています。**fileType** パラメーターとして _Compressed_ を渡した場合、**getFileAsync** メソッドは、ローカル コンピューター上にファイルの一時コピーを作成することにより、ドキュメントを PowerPoint 2013 のプレゼンテーション ファイル (*.pptx) または Word 2013 のドキュメント ファイル (*.docx) として返します。
 
-**getFileAsync** メソッドは、このファイルへの参照を [File](https://dev.office.com/reference/add-ins/shared/file) オブジェクトとして返します。**File** オブジェクトは、[size](https://dev.office.com/reference/add-ins/shared/file.size) プロパティ、[sliceCount](https://dev.office.com/reference/add-ins/shared/file.slicecount) プロパティ、[getSliceAsync](https://dev.office.com/reference/add-ins/shared/file.getsliceasync) メソッド、[closeAsync](https://dev.office.com/reference/add-ins/shared/file.closeasync) メソッドという 4 つのメンバーを公開します。**size** プロパティはファイルのバイト数を返します。**sliceCount** は、ファイル内の [Slice](https://dev.office.com/reference/add-ins/shared/document) オブジェクト (この記事で後述) の数を返します。
+**getFileAsync** メソッドは、このファイルへの参照を [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js) オブジェクトとして返します。**File** オブジェクトは、[size](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#size) プロパティ、[sliceCount](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#slicecount) プロパティ、[getSliceAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#getsliceasync-sliceindex--callback-) メソッド、[closeAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#closeasync-callback-) メソッドという 4 つのメンバーを公開します。**size** プロパティはファイルのバイト数を返します。**sliceCount** は、ファイル内の [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js) オブジェクト (この記事で後述) の数を返します。
 
 次のコードでは、 **Document.getFileAsync** メソッドを使用して PowerPoint または Word のドキュメントを **File** オブジェクトとして取得してから、ローカルに定義された `getSlice` 関数を呼び出します。匿名オブジェクトの `getSlice` の呼び出しで、 **File** オブジェクト、カウンター変数、ファイル内のスライスの総数が渡されていることに注意してください。
 
@@ -187,7 +187,7 @@ function sendFile() {
 
 ローカル関数  `getSlice` は、 **File** オブジェクトからスライスを取得するために **File.getSliceAsync** メソッドの呼び出しを行います。 **getSliceAsync** メソッドは、スライスのコレクションから **Slice** オブジェクトを返します。このメソッドには、 _sliceIndex_ と _callback_ という 2 つの必須パラメーターがあります。 _sliceIndex_ パラメーターは、スライスのコレクションへのインデクサーとして整数を取ります。JavaScript API for Office の他の関数と同様、 **getSliceAsync** メソッドもメソッド呼び出しからの結果を処理するためにパラメーターとしてコールバック関数を取ります。
 
-**Slice** オブジェクトにより、ファイルに含まれているデータにアクセスできます。_getFileAsync_ メソッドの **options** パラメーターで特に指定しない限り、**Slice** のサイズは 4 MB になります。**Slice** オブジェクトは、[size](https://dev.office.com/reference/add-ins/shared/slice.size)、[data](https://dev.office.com/reference/add-ins/shared/slice.data)、[index](https://dev.office.com/reference/add-ins/shared/slice.index) という 3 つのプロパティを公開します。**size** プロパティは、スライスのサイズ (バイト数) を取得します。**index** プロパティは、スライスのコレクション内でのそのスライスの位置を表す整数を取得します。
+ **スライス** オブジェクトは、ファイル内のデータにアクセスできます。  **GetFileAsync** メソッドの _options_ パラメーターで特に指定しない限り、 **スライス** は、4 MB のサイズです。  **スライス** オブジェクトは、3 つのプロパティを公開する: [サイズ](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size)、 [データ](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data)、および [インデックス](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index)。  **Size** プロパティは、スライスのバイト単位のサイズを取得します。  **Index** プロパティは、スライスのコレクション内のスライスの位置を表す整数値を取得します。
 
 ```js
 // Get a slice from the file and then call sendSlice.

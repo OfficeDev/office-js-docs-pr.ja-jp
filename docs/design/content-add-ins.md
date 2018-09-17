@@ -1,13 +1,13 @@
 ---
 title: コンテンツ Office アドイン
-description: ''
+description: コンテンツのアドインは、Word、Excel に直接埋め込むことができるサーフェスまたはインターフェイスのコントロールにアクセスできるように PowerPoint ドキュメントがドキュメントの変更や、データ ソースからデータを表示するコードを実行します。
 ms.date: 12/04/2017
-ms.openlocfilehash: f2632e94e0a797836f73caf0d53fdc0f24bd6790
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 8692b6e8af4504a5eadcba64c9659adaa9122975
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703918"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944084"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 

@@ -2,12 +2,12 @@
 title: Office アドインの開発ライフ サイクル
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 713daff9a0d16f904209f8b4561f3cf51bd9a9c9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925438"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944283"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Office アドインの開発ライフ サイクル
 
@@ -53,7 +53,7 @@ Office アドインの一般的な開発ライフサイクルには、次の手�
     
 - ユーザーはドキュメントの表示または作成エクスペリエンスを向上するためにアドインを使用しますか。その場合は、**作業ウィンドウ アドイン**の作成を検討します。 
 
-Office アプリケーションと、アプリケーションが稼働しているプラットフォーム (Windows、Mac、Web、モバイル) では、特定のアドイン API のサポートが異なる場合があります。クライアントとプラットフォームによる現在の API 対応を確認するには、「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。  
+Office アプリケーションと、それが動作しているプラットフォーム (Windows、Mac、Web、モバイル) では、特定のアドイン API のサポートが異なる場合があります。 クライアントとプラットフォームによる現在の API 対応を確認するには、「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。  
 
     
 ## <a name="4-design-and-implement-the-user-experience-and-user-interface-for-the-add-in"></a>4. アドインのユーザー エクスペリエンスとユーザー インターフェイスを設計および実装する
@@ -86,5 +86,5 @@ Outlook アドインの場合、Exchange メールボックスにインストー
     
 アドインから Web サービスを呼び出していて、アドインの公開後に Web サービスを更新する場合、アドインを再発行する必要はありません。 ただし、アドイン マニフェスト、スクリーンショット、アイコン、HTML、JavaScript のファイルなど、アドインに送信したアイテムやデータを変更する場合は、アドインを再発行する必要があります。 
     
-具体的には、AppSource にアドインを発行した場合は、AppSource が変更を実装できるようにアドインを再送信する必要があります。アドインと一緒に、新しいバージョン番号を含む更新されたアドイン マニフェストを再送信する必要があります。また、新しいマニフェストのバージョン番号と一致するように、送信フォームのアドイン バージョン番号を更新する必要があります。Outlook アドインの場合は、[ID](https://dev.office.com/reference/add-ins/manifest/id) 要素にアドイン マニフェストの異なる UUID が含まれることを確認する必要があります。
+具体的には、AppSource にアドインを発行した場合は、AppSource が変更を実装できるようにアドインを再送信する必要があります。アドインと一緒に、新しいバージョン番号を含む更新されたアドイン マニフェストを再送信する必要があります。また、新しいマニフェストのバージョン番号と一致するように、送信フォームのアドイン バージョン番号を更新する必要があります。Outlook アドインの場合は、[ID](https://docs.microsoft.com/javascript/office/manifest/id?view=office-js) 要素にアドイン マニフェストの異なる UUID が含まれることを確認する必要があります。
     

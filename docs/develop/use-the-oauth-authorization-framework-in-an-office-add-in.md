@@ -2,23 +2,23 @@
 title: Office アドインで OAuth 認証フレームワークを使用する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 36eb0e34ed96bb9289926170bea1b82546695fa8
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: cd9f15b66b7509f5fd9b1e8d9c7e1e2978968116
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437375"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944746"
 ---
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Office アドインで OAuth 認証フレームワークを使用する
 
 OAuth は、Office 365、Facebook、Google、SalesForce、LinkedIn などのオンライン サービス プロバイダーがユーザー認証を実行するのに使用する認証のオープン標準です。OAuth 認証フレームワークは、Azure と Office 365 で使用される既定の認証プロトコルです。OAuth 認証フレームワークは、エンタープライズ (企業) とコンシューマー シナリオの両方で使用されます。
 
-オンライン サービス プロバイダーは、REST 経由で公開されているパブリックの API を提供することがあります。開発者は、オンライン サービス プロバイダーにデータを読み書きするために、Office アドインでこれらのパブリック API を使用できます。アドインでオンライン サービス プロバイダーからのデータを統合することにより、その価値が高められ、ユーザーによる採用状況が向上します。アドインでこれらの API を使用する場合、ユーザーは OAuth 認証フレームワークを使用して認証することが必要です。
+オンライン サービス プロバイダーは、REST 経由で公開されているパブリックの Api を提供することができます。 開発者は、オンライン サービス プロバイダーにデータを読み書きする、Office アドインでこれらのパブリック Api を使用できます。 アドインでのオンライン サービス プロバイダーからのデータを統合すること、その価値を幅広く導入してユーザーに潜在顧客が増加します。 アドインでこれらの Api を使用するときにユーザーを OAuth 認証フレームワークを使用して認証する必要があります。
 
 このトピックでは、アドインで認証フローを実装して、ユーザー認証を実行する方法について説明します。このトピックに含まれているコード セグメントは、[Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) のコード サンプルから採用されています。
 
 > [!NOTE]
-> セキュリティ上の理由から、ブラウザーは IFrame のサインイン ページを表示できません。お客様が使用している Office のバージョンによって、特に Web ベースのバージョンによっては、アドインは IFrame で表示されます。これは、認証フローを管理する方法におけるいくつかの考慮事項を提起します。  
+> セキュリティ上の理由から、ブラウザーは IFrame のサインイン ページを表示できません。お客様が使用している Office のバージョンによって、特に Web ベースのバージョンによっては、アドインは IFrame で表示されます。これは、認証フローを管理する方法におけるいくつかの考慮事項を提起します。 
 
 次のダイアグラムは、必要なコンポーネントと、アドインで認証を実装するときに発生するイベントのフローを示します。
 
@@ -82,7 +82,7 @@ onclick="window.open('/connect/azure/#{sessionID}', 'AuthPopup', 'width=500,heig
 ```
 
 
-## <a name="steps-2-amp-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>手順 2 と 3 - 認証フローを開始して、サインイン ページを表示する
+## <a name="steps-2-amp-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>手順 2 と 3 - 認証フローを開始して、サインイン ページを表示する&amp;
 
 アドインは認証フローを開始する必要があります。次のコード セグメントでは、Passport OAuth ライブラリを使用します。認証フローを開始するときは、OAuth プロバイダーの認証 URL と、アドインのセッション ID を渡すことを確認します。アドインのセッション ID は、State パラメーターで渡す必要があります。ポップアップ ウィンドウに、ユーザーがサインインするための OAuth プロバイダーのサインイン ページが表示されます。
 
@@ -96,7 +96,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## <a name="steps-4-5-amp-6---user-signs-in-and-web-server-receives-tokens"></a>手順 4、5、6 - ユーザーがサインインして、Web サーバーでトークンを受信する
+## <a name="steps-4-5-amp-6---user-signs-in-and-web-server-receives-tokens"></a>手順 4、5、6 - ユーザーがサインインして、Web サーバーでトークンを受信する&amp;
 
  正常にサインインした後で、アクセス トークン、リフレッシュ トークン、State パラメーターがアドインに返されます。State パラメーターには、セッション ID が含まれます。これは、手順 7 でソケットへ認証状態情報を送信するために使用されます。app.js から取られた次のコード セグメントは、データベースにアクセス トークンを格納します。
 
