@@ -2,12 +2,12 @@
 title: Office Open XML を使用してより良い Word 用アドインを作成する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 2e8545f175143c26b3f65af78ad4c47053e927cd
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 26a9db81931fdfe5872d31d79a9d46450a50f449
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925557"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945800"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
@@ -102,7 +102,7 @@ Office 2013 は幅広い種類の SmartArt 図レイアウトを提供します 
 
 ![Word 2013 内のグラフ。](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Word 文書に Excel グラフをライブ グラフとして挿入できます。また、このようなグラフを Word のアドインでも使用できます。先ほどの例でお分かりのように、Office Open XML 強制型変換を使用すると、基本的にはコンテンツの任意の型を挿入できるため、ユーザーは、独自の文書を挿入できます。必要な Open XML マークアップを取得する簡単な方法が 2 つあります。もともと空白の Word 2013 ドキュメントにリッチ コンテンツを追加してから、Word XML ドキュメント形式でファイルを保存するか、[getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) メソッドでテスト アドインを使用して、マークアップを取得します。どちらのアプローチでも、基本的には同じ結果になります。
+Word 文書に Excel グラフをライブ グラフとして挿入できます。また、このようなグラフを Word のアドインでも使用できます。先ほどの例でお分かりのように、Office Open XML 強制型変換を使用すると、基本的にはコンテンツの任意の型を挿入できるため、ユーザーは、独自の文書を挿入できます。必要な Open XML マークアップを取得する簡単な方法が 2 つあります。もともと空白の Word 2013 ドキュメントにリッチ コンテンツを追加してから、Word XML ドキュメント形式でファイルを保存するか、[getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) メソッドでテスト アドインを使用して、マークアップを取得します。どちらのアプローチでも、基本的には同じ結果になります。
 
     
 > [!NOTE]
@@ -113,7 +113,7 @@ Word 文書に Excel グラフをライブ グラフとして挿入できます�
 ## <a name="exploring-the-office-open-xml-document-package"></a>Office Open XML ドキュメント パッケージを探る
 
 
-[getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) を使用して選択したコンテンツの Office Open XML を取得すると (あるいは、ドキュメントを Word XML Document 形式で保存すると)、選択したコンテンツを表すマークアップだけではなく、ほとんど必要ないオプションと設定が多数付属したドキュメント全体が得られます。事実、作業ウィンドウ アドインを含むドキュメントからそのメソッドを使用すると、取得するマークアップにはその作業ウィンドウ アプリまでもが含まれています。
+[getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) を使用して選択したコンテンツの Office Open XML を取得すると (あるいは、ドキュメントを Word XML Document 形式で保存すると)、選択したコンテンツを表すマークアップだけではなく、ほとんど必要ないオプションと設定が多数付属したドキュメント全体が得られます。事実、作業ウィンドウ アドインを含むドキュメントからそのメソッドを使用すると、取得するマークアップにはその作業ウィンドウ アプリまでもが含まれています。
 
 単純な Word ドキュメント パッケージであっても、実際のコンテンツだけではなく、ドキュメント プロパティ、スタイル、テーマ (書式設定)、Web 設定、フォントなどが含まれています。
 
@@ -218,7 +218,7 @@ Word 文書に Excel グラフをライブ グラフとして挿入できます�
 
 先ほどの Office Open XML をお使いのソリューションからアクセスできない XML ファイルとして保存する場合、次の関数を使用し、Office Open XML 強制型変換を使用してドキュメントの書式設定テキスト コンテンツを設定できます。 
 
-この関数では、最後の行を除くすべてを使用し、関数の終わりの [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) メソッド呼び出しで使用するために保存したマークアップを取得します。**setSelectedDataASync** では、挿入するコンテンツと強制型変換タイプを指定することのみが要求されます。
+この関数では、最後の行を除くすべてを使用し、関数の終わりの [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) メソッド呼び出しで使用するために保存したマークアップを取得します。**setSelectedDataASync** では、挿入するコンテンツと強制型変換タイプを指定することのみが要求されます。
 
 
 > [!NOTE]
@@ -552,9 +552,9 @@ function addAndBindControl() {
 ここに示すコードは次の手順で行われます。
 
 
-- [addFromNamedItemAsync](https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync) を使用して、名前付きコンテンツ コントロールにバインドしようとします。 
+- [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-) を使用して、名前付きコンテンツ コントロールにバインドしようとします。 
     
-    コードの実行時に名前付きコントロールがドキュメントに既に存在する可能性があるアドインのシナリオの場合は、このステップを最初に行います。たとえば、コントロールが事前に配置されているアドインで動作するように設計されているテンプレートにアドインが挿入されて、テンプレート共に保存される場合は、これを実行します。また、アドインによって前に配置されたコントロールにバインドする必要がある場合にも、これを行う必要があります。
+  コードの実行時に名前付きコントロールがドキュメントに既に存在する可能性があるアドインのシナリオの場合は、このステップを最初に行います。たとえば、コントロールが事前に配置されているアドインで動作するように設計されているテンプレートにアドインが挿入されて、テンプレート共に保存される場合は、これを実行します。また、アドインによって前に配置されたコントロールにバインドする必要がある場合にも、これを行う必要があります。
     
 - **addFromNamedItemAsync** メソッドの最初の呼び出しのコールバックにより、結果のステータスがチェックされ、名前付きアイテムがドキュメントに存在しないためにバインドが失敗したかどうかが確認されます  (つまり、この例の MyContentControlTitle という名前のコンテンツ コントロール)。失敗した場合、(**setSelectedDataAsync** を使用して) コードにより、アクティブな選択範囲にコントロールが追加され、それにバインドされます。
     
@@ -854,7 +854,7 @@ Word 2013 でネイティブで作成し、編集できるグラフは Excel 201
 
 ## <a name="see-also"></a>関連項目
 
-- [JavaScript API for Office ](https://dev.office.com/reference/add-ins/javascript-api-for-office) 
+- [Office用JavaScript API ](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 
 - [ECMA 376 標準: Office Open XML ファイル形式](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (Open XML の完全な言語リファレンス ドキュメントおよび関連ドキュメントについては、ここにアクセス) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
 - [JavaScript API for Office に関する説明:データ バインドとカスタム XML パーツ](https://msdn.microsoft.com/magazine/dn166930.aspx)

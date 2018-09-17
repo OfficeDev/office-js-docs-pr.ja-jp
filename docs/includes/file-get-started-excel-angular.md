@@ -36,7 +36,7 @@ ng new my-addin
     cd my-addin
     ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すようにプロンプトに応答します。
+2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
     ```bash
     yo office 
@@ -57,7 +57,7 @@ ng new my-addin
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-このクイック スタートでは、**Office アドイン用 Yeoman ジェネレーター** が提供する証明書を使用できます。 ジェネレーターは、クイック スタートの**前提条件**の一部としてグローバルにインストールされているため、証明書をグローバル インストールのフォルダーからアプリ フォルダーにコピーするだけです。 次の手順は、このプロセスを実行する方法を示しています。
+このクイック スタートでは、**Office アドイン用 Yeoman ジェネレーター** が提供する証明書を使用できます。 ジェネレーターは、クイック スタートの**前提条件**の一部としてグローバルにインストールされているため、証明書をグローバル インストールのフォルダーからアプリ フォルダーにコピーするだけです。 次の手順では、このプロセスを実行する方法を示しています。
 
 1. 端末から次のコマンドを実行し、グローバル **npm** ライブラリがインストールされているフォルダーを識別します。
 
@@ -250,5 +250,5 @@ ng new my-addin
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

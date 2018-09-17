@@ -2,12 +2,12 @@
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 6c0568fc1c608c4f1586d783ea5ac49aef944542
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e709884db0bef36f1ff9a59ebf25d000f160d043
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925564"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945807"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
@@ -455,4 +455,4 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API オープン仕様](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [ワークシート関数のオブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/functions)
+- [ワークシート関数のオブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)

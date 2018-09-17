@@ -2,12 +2,12 @@
 title: Microsoft Azure で Office アドインをホストする
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 62fc3c6dc212efc47493f2bcb3a994fb4db6a752
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925522"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945566"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -22,7 +22,7 @@ ms.locfileid: "22925522"
     > [!NOTE]
     > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Azure 開発**ワークロードがインストールされていることを確認してください。 
 
-2. Office 2016 をインストールします。 
+2. Office をインストールする。 
     
     > [!NOTE]
     > まだ Office 2016 を所持していない場合は、[1 か月間無料試用版の登録](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)が可能です。
@@ -65,7 +65,7 @@ ms.locfileid: "22925522"
     > [!NOTE]
     > 信頼できるアドイン カタログとして指定されている共有にアドインの XML マニフェスト ファイルを保存すると、そのアドインは、ユーザーがリボンの **[挿入]** タブから **[個人用アドイン]** をクリックしたときに、**[Office アドイン]** ダイアログ ボックスの **[共有フォルダー]** に表示されるようになります。
 
-6. Word 2016 を終了します。
+6. Word を終了します。
 
 ## <a name="step-3-create-a-web-app-in-azure"></a>手順 3: Azure に Web アプリを作成する
 
@@ -166,7 +166,7 @@ Visual Studio により、基本的な Word アドインが作成されます。
 
 7. アドインのWebページを表示するには、URLを変更してHTTPSを使用し、アドインのHTMLページのパスを指定します (例 : https://YourDomain.azurewebsites.net/Home.html)。 これにより、アドインの Web アプリが Azure でホストされるようになったことを確認できます。 ルート URL をコピーします (例 : https://YourDomain.azurewebsites.net)、この資料の後半でアドイン マニフェスト ファイルを編集するときに必要になります。
     
-## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>手順 6: アドインの XML マニフェスト ファイルを編集して展開する
+## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>手順 6: アドインの XML マニフェストファイルを編集して展開する
 
 1. Visual Studio の **[ソリューション エクスプローラー]** でサンプルの Office アドインを開いて、ソリューションを展開し、両方のプロジェクトが表示されるようにします。
     

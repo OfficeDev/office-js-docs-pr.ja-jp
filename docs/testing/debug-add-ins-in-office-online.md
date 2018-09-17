@@ -2,17 +2,17 @@
 title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
 ms.date: 03/14/2018
-ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925340"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945765"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
 
-Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。 
+ビルドし、Windows または Office のデスクトップ クライアントを実行していないコンピューター上のアドインをデバッグする&mdash;、mac 上で開発している場合など、 Office Online を使用してアドインのテストとデバッグを行う方法 
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -62,9 +62,7 @@ Office Online を使用してアドインをデバッグするには、
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-- 
-  [AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- 
-  [効率的な AppSource アプリおよびアドインを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)  
+- [効率的な AppSource アプリおよびアドインを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
     

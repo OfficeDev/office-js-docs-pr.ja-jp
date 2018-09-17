@@ -2,12 +2,12 @@
 title: Office アドインで外部サービスを承認する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925291"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945744"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 

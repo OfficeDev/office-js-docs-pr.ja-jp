@@ -2,24 +2,24 @@
 title: Excel の範囲にデータの入力規則を追加する
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: fd40cab045da0472a060752651a27f0b26028b4b
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925312"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944878"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Excel 範囲にデータの入力規則を追加する (プレビュー)
 
 > [!NOTE]
-> データの入力規則 API はプレビューとして提供されていますが、使用するには Office JavaScript ライブラリのベータ版を読み込む必要があります。 URL は、 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js です。 TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+> データの入力規則 API はプレビューとして提供されていますが、使用するには Office JavaScript ライブラリのベータ版を読み込む必要があります。 URL は、  https://appsforoffice.microsoft.com/lib/beta/hosted/office.js です。 TypeScript を使用している場合、またはコードエディタで Intellisense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
 
 > [!NOTE]
 > データの入力規則 API はプレビュー中ですが、この記事の API リファレンスへのリンクは機能しません。 その間、 [ドラフト Excel API リファレンス](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel)を使用することができます。
 
 Excel JavaScript ライブラリには、ワークブックに、表、列、行、その他の範囲に自動データ入力規則をアドインで追加できる API が用意されています。 データの入力規則の概念と用語を把握するには、ユーザーが Excel UI によってデータの入力規則を追加する方法に関する次の記事をご覧ください。
 
-- [セルにデータの入力規則を適用する](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [セルに対するデータの入力規則の適用](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
 - [データの入力規則の詳細](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
 - [Excel でのデータの入力規則の説明と例](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
@@ -38,11 +38,11 @@ Excel JavaScript ライブラリには、ワークブックに、表、列、行
 
 ### <a name="creating-validation-rules"></a>入力規則ルールを作成する
 
-範囲にデータの入力規則を追加するには、コードで `rule` にある `DataValidation` オブジェクトの `Range.dataValidation` プロパティを設定する必要があります 。 これは、7 つのオプション プロパティのある [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule) オブジェクトを取得します。 *どの `DataValidationRule` オブジェクトでも、これらの特性が 1 つ以上表示されることはありません。* 含めるプロパティによって、入力規則のタイプが決まります。
+範囲にデータの入力規則を追加するには、コードで `rule` にある `DataValidation` オブジェクトの `Range.dataValidation` プロパティを設定する必要があります 。 これは、7 つのオプション プロパティのある [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) オブジェクトを取得します。 *どの `DataValidationRule` オブジェクトでも、これらの特性が 1 つ以上表示されることはありません。* 含めるプロパティによって、入力規則のタイプが決まります。
 
 #### <a name="basic-and-datetime-validation-rule-types"></a>Basic および DateTime 入力規則ルールのタイプ
 
-最初の 3 つの `DataValidationRule` プロパティ (つまり、入力規則ルール タイプ) は、[BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) オブジェクトをその値として取得します。
+最初の 3 つの `DataValidationRule` プロパティ (つまり、入力規則ルール タイプ) は、[BasicDataValidation](https://docs.microsoft.com/javascript/api/excel?view=office-js) オブジェクトをその値として取得します。
 
 - `wholeNumber` ー  `BasicDataValidation` オブジェクトで指定された他の妥当性確認に加えて整数を必要とします。
 - `decimal` ー  `BasicDataValidation` オブジェクトで指定された他の妥当性確認に加えて、10進数が必要です。
@@ -116,7 +116,7 @@ Excel.run(function (context) {
 
 #### <a name="list-validation-rule-type"></a>リスト入力規則ルール タイプ
 
-有限リストからの値のみが有効な値であるように指定するには、`list` オブジェクトの `DataValidationRule` プロパティを使用します。 次に例を示します。 このコードについては、次の点に注意してください。
+有限リストからの値のみが有効な値であるように指定するには、`list` オブジェクトの `DataValidationRule` プロパティを使用します。 以下に例を示します。 このコードについては、次の点に注意してください。
 
 - 「Names」という名前のワークシートがあり、「A1：A3」の範囲の値が名前であることが前提です。
 - プロパティは、有効な値のリストを指定します。`source` 名前を含んだ範囲が割り当てられています。 コンマ区切りのリストを割り当てることもできます。たとえば、「Sue、Ricky、Liz」です。 
@@ -141,7 +141,7 @@ Excel.run(function (context) {
 
 #### <a name="custom-validation-rule-type"></a>カスタムの入力規則ルール タイプ
 
-カスタムの入力規則式を指定するには、`custom` オブジェクトの `DataValidationRule` プロパティ を使用します。 次に例を示します。 このコードについては、次の点に注意してください。
+カスタムの入力規則式を指定するには、`custom` オブジェクトの `DataValidationRule` プロパティ を使用します。 以下に例を示します。 このコードについては、次の点に注意してください。
 
 - ワークシートの A 列と B 列に **Athlete Name** と **Comments** という列をもつ 2 列のテーブルがあると仮定します。
 - **Comments** 列の冗長性を軽減するには、アスリート名を含むデータを無効にします。

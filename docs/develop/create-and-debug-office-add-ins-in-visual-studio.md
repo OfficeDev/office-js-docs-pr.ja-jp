@@ -2,12 +2,12 @@
 title: Visual Studio での Office アドインの作成とデバッグ
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927448"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945356"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -16,7 +16,7 @@ ms.locfileid: "22927448"
 > [!NOTE]
 > OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../onenote/onenote-add-ins-getting-started.md)」を参照してください。
 
-## <a name="create-an-office-add-in-project-in-visual-studio"></a>Visual Studio での Office アドイン プロジェクトの作成
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>Visual StudioでOfficeアドインプロジェクトを作成する
 
 
 作業を開始するために、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) がインストールされていることと、Microsoft Office のバージョンを確認します。[Office 365 Developer プログラム](https://developer.microsoft.com/office/dev-program)に参加するか、以下の手順を実行して[最新バージョン](../develop/install-latest-office-version.md)を取得できます。
@@ -91,7 +91,7 @@ Web アプリケーション プロジェクトには、作業の開始時に使
 ### <a name="to-open-the-property-pages-of-a-project"></a>プロジェクトのプロパティ ページを開くには
 
 
-1.  **ソリューション エクスプ ローラー**では、Web プロジェクトではなく、基本的なアドイン プロジェクトを選択します。
+1. **ソリューション エクスプ ローラー**では、Web プロジェクトではなく、基本的なアドイン プロジェクトを選択します。
     
 2. メニュー バーで、[ **表示**]、[ **プロパティ ウィンドウ**] の順に選択します。
     
@@ -152,14 +152,14 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
 
 1. XML マニフェスト ファイルのコピーを作成し、それを  _プロジェクト名_\Output ディレクトリに追加します。このコピーは、Visual Studio を起動してアドインをデバッグするときにホスト アプリケーションで使用されます。
     
-2. アドインをホスト アプリケーションに表示するための一連のレジストリ エントリをコンピューターに作成します。
+2. アドインをホストアプリケーションに表示するための一連のレジストリエントリをコンピューターに作成します。
     
 3. Web アプリケーション プロジェクトをビルドし、ローカルの IIS Web サーバー (http://localhost)) に展開します。 
     
 次に、Visual Studio は次の操作を実行します。
 
 
-1. ~remoteAppUrl トークンを開始ページの完全修飾アドレス (例: http://localhost/MyAgave.html)) で置き換えることによって、XML マニフェスト ファイルの  [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation)  要素を変更します。
+1. ~remoteAppUrlトークンを開始ページの完全修飾アドレス (例: http://localhost/MyAgave.html)) で置き換えることによって、XML マニフェストファイルの  [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js)  要素を変更します。
     
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
     
@@ -167,7 +167,7 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
     
 プロジェクトをビルドする際、Visual Studio は **出力**ウィンドウに検証エラーを表示しません。Visual Studio は、エラーと警告を、発生時に  **ERRORLIST** ウィンドウ内で報告します。Visual Studio は、コードおよびテキスト エディター内で検証エラーを別の色の波形の下線 (波線と呼びます) で示します。このようなマークにより、Visual Studio がコード内で検出した問題が通知されます。詳細については、「 [コードおよびテキスト エディター](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)」を参照してください。検証を有効化または無効化する方法の詳細については、次のトピックを参照してください。 
 
-- [[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
+- [[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
 - [方法:Visual Web Developer で HTML 編集用の検証オプションを設定する](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     

@@ -73,11 +73,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -188,9 +188,9 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| それを自分の名前に置き換えます。
 
 3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
 
@@ -296,7 +296,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. ファイル **src/index.js** を開き、アドインのスクリプトを指定します。内容をすべて次のコードとで置き換えファイルを保存します。このスクリプトには、初期化コードと、ボタンが選択されたときに Word 文書にテキストを挿入することにより文書を変更するコードが含まれています。 
+2. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
 
     ```js
     'use strict';
@@ -313,11 +313,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -397,7 +397,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. プロジェクトのルートにある **app.css** ファイルを開き、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+3. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
 
     ```css
     #content-header {
@@ -478,5 +478,5 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 ## <a name="see-also"></a>関連項目
 
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
-* [Word アドインのコード サンプル](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API リファレンス](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Word JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)

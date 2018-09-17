@@ -2,12 +2,12 @@
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 6f6ba8744a6510a37166325595407c990a53b079
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925207"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945037"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
@@ -15,7 +15,7 @@ Windows でのアドインの開発とデバッグには Visual Studio を使用
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
 
-タスクペインまたはコンテンツアドインに UI を表示するアドインがある場合は、Safari Web Inspector を使用して Office アドインをデバッグできます。 
+タスクペインまたはコンテンツアドインに UI を表示するアドインがある場合は、Safari Web インスペクター を使用して Office アドインをデバッグできます。 
 
 Mac で Office アドインをデバッグできるようにするには、Mac OS High Sierra および Mac Office バージョン 16.9.1（ビルド 18012504）以降が必要です。 Office Mac ビルドをお持ちでない場合は、 [Office 365 開発者向けプログラム](https://aka.ms/o365devprogram)に加入すると入手できます。
 

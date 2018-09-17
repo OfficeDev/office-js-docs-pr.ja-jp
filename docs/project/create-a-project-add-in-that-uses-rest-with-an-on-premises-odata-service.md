@@ -2,12 +2,12 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 462b151a12c7c19f445e86bf59af633b699e7e60
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925543"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945709"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -316,7 +316,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     }
     ```
 
-2. **setOdataUrl** 関数と関連する関数を追加します。**setOdataUrl** 関数は **getProjectGuid** と **getDocumentUrl** を呼び出して、グローバル変数を初期化します。[getProjectFieldAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync) メソッドでは、_callback_ パラメーター用の匿名関数が、jQuery ライブラリ内の **removeAttr** メソッドを使って **[すべてのプロジェクトを比較]** ボタンを有効にし、**ProjectData** サービスの URL を表示します。Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。SurfaceErrors.js ファイルには、**throwError** メソッドが含まれています。
+2. **setOdataUrl** 関数と関連する関数を追加します。**setOdataUrl** 関数は **getProjectGuid** と **getDocumentUrl** を呼び出して、グローバル変数を初期化します。[getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) メソッドでは、_callback_ パラメーター用の匿名関数が、jQuery ライブラリ内の **removeAttr** メソッドを使って **[すべてのプロジェクトを比較]** ボタンを有効にし、**ProjectData** サービスの URL を表示します。Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。SurfaceErrors.js ファイルには、**throwError** メソッドが含まれています。
     
    > [!NOTE]
    > Visual Studio を Project Server コンピューターで実行している場合、**F5** キーによるデバッグを使用するには、**_pwa** グローバル変数を初期化する行の後にあるコードをコメント解除します。Project Server コンピューターでのデバッグ時に jQuery の **ajax** メソッドを使用できるようにするには、PWA URL に **localhost** 値を設定する必要があります。Visual Studio をリモート コンピューターで実行する場合は、**localhost** は必要ありません。アドインを展開する前に、そのコードをコメント化してください。

@@ -2,12 +2,12 @@
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 12b44b86f94f5807ce514f48b00b1dbfd4fe99bf
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703897"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945786"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -24,10 +24,10 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 - ユーザーのアドインの自動インストール (Office アプリケーション起動時)。
 - ユーザーのアドインの自動削除 (管理者がアドインをオフにした場合や削除した場合。または、ユーザーが Azure Active Directory から削除された場合やアドインが展開されているグループから削除された場合)。
 
-一元展開は、一元展開を使用するためのすべての要件を組織が満たしているときに、Office 365 管理者が組織内で Office アドインを展開する際に推奨される方法です。 組織で一元展開を使用できるかどうかを判断する方法の詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)」を参照してください。
+集中開発は、組織が集中開発を使用するためのすべての要件を満たしているという条件で、Office 365アドミンが組織内でOfficeアドインを配置することは、推薦される方法です。どのように組織が集中開発を使用できるかを判断するかについての情報は、[アドインの集中開発がOffice 365の 組織で使用できるかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)を参照してください。
 
 > [!NOTE]
-> Office 365 に接続していないオンプレミス環境の場合や、Office 2013 を対象とした SharePoint アドインまたは Office アドインを展開する場合は、[SharePoint アドイン カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用してください。 COM/VSTO アドインを展開する場合は、ClickOnce または Windows インストーラーを使用してください。詳細については、「[Office ソリューションの配置](https://msdn.microsoft.com/en-us/library/bb386179.aspx)」を参照してください。
+> Office 365 に接続していないオンプレミス環境の場合や、Office 2013 を対象とした SharePoint アドインまたは Office アドインを展開する場合は、[SharePoint アドイン カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用してください。 COM/VSTO アドインを展開する場合は、ClickOnce または Windows インストーラーを使用してください。詳細については、「[Office ソリューションの配置](https://docs.microsoft.com/visualstudio/vsto/deploying-an-office-solution)」を参照してください。
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Office アドインの展開に推奨されるアプローチ
 
@@ -43,7 +43,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>一元展開による Office アドインの発行
 
-作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)」を参照してください。
+作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)」を参照してください。
 
 組織がすべての要件を満たしている場合は、次に示す手順を実行して、一元展開によって Office アドインを発行します。
 
@@ -62,7 +62,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 7.  **[次へ]** を選択します。
 
-8.  AppSource からアドインを追加するオプションを選択した場合は、アドインを選択します。 選択可能なアドインは、**[あなたへのおすすめ]**、**[評価]**、**[名前]** のカテゴリから表示できます。 AppSource からは無料のアドインのみを追加できます。現時点では、有料のアドインの追加はサポートされていません。
+8.  AppSourceからアドインを追加するオプションを選択した場合は、アドインを選択します。** Suggested for you**、**Rating**、 または **Name**のカテゴリーから使用できるアドインを閲覧できます。 AppSourceから無料のアドインのみを追加できます。有料のアドインを追加することは現在のところサポートされていません。
 
     > [!NOTE]
     > AppSource のオプションの場合、ユーザーは、管理者の操作なしでアドインの更新と機能強化を自動的に利用できるようになります。
@@ -130,7 +130,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 アドインがアドイン コマンドをサポートしていない場合、ユーザーは次の手順を実行することで、Office アプリケーションにアドインを追加できます。
 
-1.  Word 2016、Excel 2016、PowerPoint 2016 では、**[挿入]** > **[個人用アドイン]** を選択します。
+1.  Word 2016 以降では、2016 以降の Excel や PowerPoint 2016 以降を選択して **挿入** > **私のアドイン**です。
 2.  アドイン ウィンドウで **[管理者が管理]** タブを選択します。
 3.  アドインを選択して、**[追加]** を選択します。 
 
@@ -138,12 +138,13 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
     
 ただし、Outlook の場合、ユーザーは次の操作を実行できます。
 
-1.  Outlook 2016 では、 **ホーム** > **ストア**を選択します。
+1.  Outlook 2016 では、**ホーム** > **ストア**を選択します。
 2.  アドインタブの下の **管理者が管理する** 項目を選択します。
 3.  アドインを選択して、**[追加]** を選択します。
 
     ![スクリーンショットは、Outlook アプリケーションのストアページの管理者が管理する領域を示しています。](../images/outlook-add-ins-admin-managed.png)
 
 ## <a name="see-also"></a>関連項目
-[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+
+- [アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

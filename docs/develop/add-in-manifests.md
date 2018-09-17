@@ -2,12 +2,12 @@
 title: Office アドインの XML マニフェスト
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 449c6ae3f98383ddff5f866cc47d19ea82ea89c2
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925403"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944933"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -17,7 +17,7 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 * ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
-* アドインのブランド化に使用するイメージと、Office リボンで[アドイン コマンド][]に使用する画像を指定する。
+* アドインのブランド化に使用するイメージと、Office リボンで [アドイン コマンド][] に使用する画像を指定します。
 
 * アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
 
@@ -39,8 +39,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 | 要素                                                                                      | コンテンツ | 作業ウィンドウ | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
+| [ID][]                                                                                       |    X    |     X     |    X    |
+| [バージョン][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
@@ -63,58 +63,58 @@ _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で�
 
 <!-- Links for above table -->
 
-[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
-[id]: https://dev.office.com/reference/add-ins/manifest/id
-[version]: https://dev.office.com/reference/add-ins/manifest/version
-[providername]: https://dev.office.com/reference/add-ins/manifest/providername
-[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
-[description]: https://dev.office.com/reference/add-ins/manifest/description
-[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
-[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[officeapp]: https://docs.microsoft.com/javascript/office/manifest/officeapp?view=office-js
+[ID]: https://docs.microsoft.com/javascript/office/manifest/id
+[バージョン]: https://docs.microsoft.com/javascript/office/manifest/version
+[providername]: https://docs.microsoft.com/javascript/office/manifest/providername
+[defaultlocale]: https://docs.microsoft.com/javascript/office/manifest/defaultlocale
+[displayname]: https://docs.microsoft.com/javascript/office/manifest/displayname
+[説明]: https://docs.microsoft.com/javascript/office/manifest/description
+[iconurl]: https://docs.microsoft.com/javascript/office/manifest/iconurl
+[highresolutioniconurl]: https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[rule (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
-[rule (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
-[requirements (mailapp)*]: https://dev.office.com/reference/add-ins/manifest/requirements
-[set*]: https://dev.office.com/reference/add-ins/manifest/set
-[sets (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[form*]: https://dev.office.com/reference/add-ins/manifest/form
-[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
-[sets (requirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
+[permissions (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[rule (rulecollection)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[rule (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[requirements (mailapp)*]: https://docs.microsoft.com/javascript/office/manifest/requirements
+[set*]: https://docs.microsoft.com/javascript/office/manifest/set
+[sets (mailapprequirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[form*]: https://docs.microsoft.com/javascript/office/manifest/form
+[formsettings*]: https://docs.microsoft.com/javascript/office/manifest/formsettings
+[sets (requirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[hosts*]: https://docs.microsoft.com/javascript/office/manifest/hosts
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
-[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
+すべて URI などに使用されるイメージ [ のアドインのコマンド ][] は、キャッシュをサポートする必要があります。イメージをホストするサーバーを返さないでください、 `Cache-Control` ヘッダーを指定する `no-cache`、 `no-store`、 または HTTP 応答のようなオプションです。
 
-[SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+[SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
 アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。
 
-AppSource に提出するアドインには、[SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)」をご覧ください。
+AppSource に提出するアドインには、[SupportUrl](https://docs.microsoft.com/javascript/office/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)」をご覧ください。
 
-必ず [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。
+必ず [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-Office Onlineで実行している場合、作業ウィンドウは任意の URL にナビゲートできます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (アドインのマニフェスト ファイルの [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
+Office Onlineで実行している場合、作業ウィンドウは任意の URL にナビゲートできます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (アドインのマニフェスト ファイルの [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
 
-この動作 (Office デスクトップ) を変更するには、マニフェスト ファイルの [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 この一覧にないドメインの URL にアドインが移動しようとすると、その URL が Office デスクトップと Office Online の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、Office デスクトップでは、その URL が新しいブラウザ ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+この動作 (Office デスクトップ) を変更するには、マニフェスト ファイルの [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 この一覧にないドメインの URL にアドインが移動しようとすると、その URL が Office デスクトップと Office Online の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、Office デスクトップでは、その URL が新しいブラウザ ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
 > [!NOTE]
 > この現象は、アドインのルート ウィンドウにのみ当てはまります。 アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL にダイレクトすることができます。
 
-次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。 また、この例では、**AppDomains** 要素リストの [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) 要素で `https://www.northwindtraders.com` ドメインも指定しています。 アドインが www.northwindtraders.com ドメイン内のページに移動すると、Office デスクトップでも、そのページがアドイン ウィンドウで開きます。
+次に示す XML マニフェストの例では、 **SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。 また、この例では、**AppDomains** 要素リストの [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) 要素で `https://www.northwindtraders.com` ドメインも指定しています。 アドインが www.northwindtraders.com ドメイン内のページに移動すると、Office デスクトップでも、そのページがアドイン ウィンドウで開きます。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

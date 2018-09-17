@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API の中心概念
-description: ''
+description: ExcelのJavaScript APIを使用して、Excel2016用アドインを構築します。
 ms.date: 12/04/2017
-ms.openlocfilehash: 37d652d2ad2f323d0f94583e530e91e775e06ddf
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0833640d06f97f84a4fe5d33da6532dbd540bd5d
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925410"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945447"
 ---
-# <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API の中心概念
+# <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript APIの中核概念
  
-この記事では、[Excel JavaScript API を使用して Excel 2016](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
+この記事では、[ Excel JavaScript API ](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)  を使用して Excel 2016 のアドインを構築する方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
@@ -55,7 +55,7 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行され [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
+要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行されて [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
  
 次の例は、ローカル JavaScript proxy オブジェクト (**selectedRange**) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して **context.sync()** を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
  
@@ -239,14 +239,14 @@ API エラーが発生すると、API ではコードとメッセージを含む
 |InvalidReference|この参照は、現在の操作に対して無効です。|
 |InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
 |InvalidSelection|現在の選択内容は、この操作では無効です。|
-|Unauthenticated |必要な認証情報が見つからないか、無効です。|
+|認証されていません |必要な認証情報が見つからないか、無効です。|
 |AccessDenied |要求された操作を実行できません。|
 |ItemNotFound |要求されたリソースは存在しません。|
 |ActivityLimitReached|アクティビティの制限に達しました。|
 |GeneralException|要求の処理中に内部エラーが発生しました。|
 |NotImplemented  |要求された機能は実装されていません。|
 |ServiceNotAvailable|サービスを利用できません。|
-|Conflict              |競合のため、要求を処理できませんでした。|
+|一致しません              |競合のため、要求を処理できませんでした。|
 |ItemAlreadyExists|作成中のリソースはすでに存在しています。|
 |UnsupportedOperation|試行中の操作はサポートされていません。|
 |RequestAborted|実行時に要求が中止されました。|
@@ -259,4 +259,4 @@ API エラーが発生すると、API ではコードとメッセージを含む
 * [Excel アドインを使う](excel-add-ins-get-started-overview.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Excel JavaScript API パフォーマンスの最適化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API リファレンス](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

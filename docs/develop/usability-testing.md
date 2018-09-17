@@ -2,12 +2,12 @@
 title: Office アドインのユーザビリティ テスト
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925452"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945606"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
@@ -78,7 +78,7 @@ ms.locfileid: "22925452"
 
 アドインの Live ビルドのテストを計画している場合は、次の質問により、このテストを行えるユーザーを選別できます。 
 
-**このテストには、Microsoft PowerPoint 2016 が必要です。PowerPoint 2016 がありますか。**  
+**このテストでは、Microsoft PowerPoint のバージョンが最新にする必要があります。最新バージョンの PowerPoint を使用していますか。**  
  a. はい *[必ず選択]*  
  b. いいえ *[拒否]*  
  c. わからない *[拒否]*  
