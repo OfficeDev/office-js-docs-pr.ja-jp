@@ -1,12 +1,12 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: 2018/01/23
-ms.openlocfilehash: 62d32a3f2c8946b21eabd5b0f71aaeeea7c85bb4
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b257729bbf868c91b2e98509b6ef04a0c38d9b42
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945737"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016424"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -31,7 +31,7 @@ ms.locfileid: "23945737"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-1. [OfficeアドインNodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso)にあるリポジトリを複製またはダウンロードします。 
+1. 「[Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso)」にあるリポジトリを複製またはダウンロードします。 
 
     > [!NOTE]
     > サンプルには 3 つのバージョンがあります。  
@@ -53,14 +53,14 @@ ms.locfileid: "23945737"
 次の手順は、複数の場所で使用できるように一般的に記述されています。 この記事では、以下を実行します：
 - プレースホルダー **$ ADD-IN-NAME $** を `“Office-Add-in-NodeJS-SSO` に置き換えます。
 - プレースホルダー **$ FQDN-WITHOUT-PROTOCOL$** を `localhost:3000` に置き換えます。
-- **アクセス許可を選択** ダイアログでアクセス許可を指定するときに、次のアクセス許可のボックスをオンにします。 実際にアドイン自体に必要なのは最初のものだけですが、 `profile` Office ホストがアドインの Web アプリケーションに対してトークンを取得するために、アクセス許可が必要です。
+- **[アクセス許可を選択]** ダイアログでアクセス許可を指定するときに、次のアクセス許可のボックスをオンにします。 実際にアドイン自体に必要なのは最初のものだけですが、 `profile` Office ホストがアドインの Web アプリケーションに対してトークンを取得するために、アクセス許可が必要です。
     * Files.Read.All
     * profile
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>アドインに管理者の同意を付与する
+## <a name="grant-administrator-consent-to-the-add-in"></a>アドインに管理者の同意を許可する
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
@@ -68,9 +68,9 @@ ms.locfileid: "23945737"
 
 1. コード エディターで、src\server.ts ファイルを開きます。先頭近くに、`AuthModule` クラスのコンストラクターの呼び出しがあります。コンストラクターには、値を割り当てる必要がある、文字列のパラメーターがあります。
 
-2. `client_id` プロパティの場合は、アドインの登録時に保存したアプリケーション IDでプレースホルダー `{client GUID}` を置き換えます。 完了したら、GUID を単一引用符で囲んでください。 "{}" 符号は使用しないでください。
+2. `client_id` プロパティの場合は、アドインの登録時に保存したアプリケーション IDでプレースホルダーの `{client GUID}` を置き換えます。 完了したら、GUID を単一引用符で囲んでください。 "{}" 符号は使用しないでください。
 
-3. `client_secret` プロパティの場合は、アドインの登録時に保存した`{client secret}` アプリケーションシークレットでプレースホルダーの  を置き換えます。
+3. `client_secret` プロパティの場合は、アドインの登録時に保存したアプリケーション シークレットでプレースホルダーの `{client secret}` を置き換えます。
 
 4. プロパティの場合は、アドインの登録時に保存したアプリケーション ID でプレースホルダーの `{audience GUID}` を置き換えます。(`client_id` プロパティに割り当てた値とまったく同じになります)。`audience`
   
@@ -78,7 +78,7 @@ ms.locfileid: "23945737"
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-1. `AuthModule` コンストラクターのその他の値は未変更のままにしておきます。 ファイルを保存して閉じます。
+1. `AuthModule` コンストラクターのその他の値は変更しないでください。 ファイルを保存して閉じます。
 
 1. プロジェクトのルートにある、アドイン マニフェスト ファイル「Office-Add-in-NodeJS-SSO.xml」を開きます。
 
@@ -97,7 +97,7 @@ ms.locfileid: "23945737"
     </WebApplicationInfo>
     ```
 
-1. このマークアップ内の*両方の場所の*プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 ("{}" は ID の一部ではないので、これらを含めないでください。) これは、web.config の ClientID と Audience に使用したものと同じ ID です。
+1. このマークアップ内の*両方の場所の*プレースホルダー “{application_GUID here}” を、アドインの登録時にコピーしたアプリケーション ID に置き換えます。 ("{}" は ID の一部ではないので、含めないでください。) これは、web.config の ClientID と Audience に使用したのと同じ ID です。
 
     > [!NOTE]
     > * **[リソース]** の値は、アドインの登録に Web API プラットフォームを追加したときに設定した **[アプリケーション ID URI]** です。
@@ -113,7 +113,7 @@ ms.locfileid: "23945737"
     * メソッドは、作業ウィンドウの下側に Microsoft Graph から返されたデータ (またはエラー メッセージ) を表示するものです。`showResult`
     * メソッドは、エンド ユーザーを対象としていないエラーをコンソールにログ出力するものです。`logErrors`
 
-11. `Office.initialize` への割り当ての下に、次に示すコードを追加します。このコードについては、次の点に注意してください。
+11. `Office.initialize` への割り当ての下に、次のコードを追加します。このコードについては、次の点に注意してください。
 
     * アドインのエラー処理により、アクセス トークンの取得が別のオプションのセットを使用して自動的に再試行されることがあります。 カウンター変数 `timesGetOneDriveFilesHasRun` とフラグ変数 `triedWithoutForceConsent` および `timesMSGraphErrorReceived` を使用して、失敗するトークン取得の繰り返しからユーザーが抜け出せるようにします。 
     * この後の手順では `getDataWithToken` メソッドを作成しますが、そのメソッドで `forceConsent` というオプションが `false` に設定される点に注意してください。詳細については、次の手順で説明します。
@@ -132,7 +132,7 @@ ms.locfileid: "23945737"
 
 1. メソッドの下に、次のコードを追加します。このコードについては、次の点に注意してください。`getOneDriveFiles`
 
-    *  [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。 その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにこのトークンを要求します。 アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はそのトークンを送信します。
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。 その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにこのトークンを要求します。 アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はそのトークンを送信します。
     * Office にサインインしているユーザーがいない場合、Office ホストはユーザーにサインインを求めるダイアログを表示します。
     * オプションのパラメーター `forceConsent` を `false` に設定すると、ユーザーがアドインを使用するたびに、Office ホストにアドインへのアクセス権を付与するための同意を求めるダイアログが表示されなくなります。 ユーザーが初めてアドインを実行すると、`getAccessTokenAsync` の呼び出しは失敗しますが、この後の手順で追加するエラー処理ロジックにより、`forceConsent` オプションを `true` に設定した再呼び出しが自動的に実行され、ユーザーに同意を求めるダイアログが表示されます。ただし、これは初回時のみ実行されます。
     * メソッドは、この後の手順で作成します。`handleClientSideErrors`
@@ -258,7 +258,7 @@ ms.locfileid: "23945737"
         break;      
     ```
 
-1. `TODO7`を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync`の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
+1. `TODO7` を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync` の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
 
     ```javascript
     case 13008:
@@ -307,7 +307,7 @@ ms.locfileid: "23945737"
     }
     ```
 
-1. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO10`
+1. `TODO10` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * ユーザーがパスワードだけで Office にサインオンできる場合でも、Microsoft Graph のいくつかのターゲット (たとえば、OneDrive) にアクセスするために、追加の認証要素を提供するようにユーザーに要求する、Azure Active Directory の構成があります。その場合、AAD は `Claims` プロパティを含むエラー 50076 で応答を送信します。 
     * Office ホストは、`authChallenge` オプションとして **Claims** 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。 
@@ -424,7 +424,7 @@ ms.locfileid: "23945737"
         }
         ```
 
-2.  `TODO3` を以下のコードに置き換えます。このコードの注意点は次のとおりです。
+2. `TODO3` を次のコードに置き換えます。このコードの注意点は次のとおりです。
     * 「代理」ワークフローをサポートする STS は、HTTP 要求の本文に特定のプロパティ/値ペアが含まれていることを期待します。このコードは、要求の本文になるオブジェクトを構築します。 
     * resource プロパティは、リソースがメソッドに渡された場合にのみ本文に追加されます。
 
@@ -540,7 +540,7 @@ ms.locfileid: "23945737"
     ```
 
     > [!NOTE]
-    > `access_as_user`スコープのみを使用して、Office アドインの代理フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。
+    > 注: `access_as_user` スコープだけを使用して、Office アドインの代理フローを処理する API を承認する必要があります。サービス内の他の API には、独自のスコープ要件が必要です。 これにより、Office が取得するトークンでアクセスできる対象が制限されます。
 
 5. を次のコードに置き換えます。このコードについては、次の点に注意してください。`TODO8`
 
@@ -569,7 +569,7 @@ ms.locfileid: "23945737"
     ```
 
 
-1. を次に示すコードに置き換えます。Microsoft Graph は、`name` プロパティのみを要求した場合でも、アイテムごとに、いくつかの OData メタデータと 1 つの **eTag** プロパティを返す点に注意してください。このコードでは、アイテムの名前のみをクライアントに送信します。`TODO11`
+1. `TODO11` を次に示すコードに置き換えます。Microsoft Graph は、`name` プロパティのみを要求した場合でも、アイテムごとに、いくつかの OData メタデータと 1 つの **eTag** プロパティを返す点に注意してください。このコードでは、アイテムの名前のみをクライアントに送信します。
 
     ```javascript
     const itemNames: string[] = [];
@@ -607,7 +607,7 @@ ms.locfileid: "23945737"
 1.  `TODO2` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * OData ソースからのエラー応答には、常に statusCode が含まれています。また、通常は statusMessage が含まれています。 また、一部の OData ソースは、詳細な情報 (内部のコードやメッセージ、より具体的なコードやメッセージなど) を含む error プロパティも本文に追加します。
-    * Promise オブジェクトは解決されます。拒否されません。 は、Web サービスがサーバー間の OData エンドポイントを呼び出すときに実行されます。`https.get` ただし、その呼び出しは、クライアントから Web サービスの Web API への呼び出しのコンテキストで行われます。 クライアントから Web サービスへの「外部」の要求は、「内部」の要求が拒否されると完了できなくなります。 さらに、`http.get` の呼び出し元が OData エンドポイントからクライアントにエラーを中継する必要がある場合は、カスタムの `Error` オブジェクトを含む要求も解決する必要があります。
+    * Promise オブジェクトは解決されます。拒否されません。 `https.get` は、Web サービスがサーバー間の OData エンドポイントを呼び出すときに実行されます。 ただし、その呼び出しは、クライアントから Web サービスの Web API への呼び出しのコンテキストで行われます。 クライアントから Web サービスへの「外部」の要求は、「内部」の要求が拒否されると完了できなくなります。 さらに、`http.get` の呼び出し元が OData エンドポイントからクライアントにエラーを中継する必要がある場合は、カスタムの `Error` オブジェクトを含む要求も解決する必要があります。
 
     ```javascript
     error = new Error();
@@ -664,7 +664,12 @@ ms.locfileid: "23945737"
 
 ## <a name="add-the-add-in-to-an-office-document"></a>Office ドキュメントにアドインを追加する
 
-1. PowerPoint を再起動して、プレゼンテーションを開くか作成します。 
+1. PowerPoint を再起動して、プレゼンテーションを開くか作成します。
+
+1. **[開発]** タブがリボンに表示されていない場合は、次の手順で有効にします。
+ 1.  **[ファイル]** | **[オプション]** | **[リボンのカスタマイズ]** と移動します。
+ 2.  **[リボンのカスタマイズ]** ] ページの右上のコントロールの名前のツリーの **[開発]** を有効にするためにチェック ボックスをクリックします。
+ 3. [**OK**] をクリックします。
 
 2. PowerPoint の **[開発]** タブで、**[個人用アドイン]** を選択します。
 

@@ -8,7 +8,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
 
 メタデータは、オブジェクトの配列を値としてもつ単一の `functions` プロパティを含む JSON オブジェクトです。 各オブジェクトは、それぞれ 1 つのカスタム関数を表します。 次の表に、プロパティを示します。
 
-|  プロパティ  |  データ型  |  必須かどうか?  |  説明  |
+|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  文字列  |  いいえ  |  Excel UI に表示される関数の説明。 例:「摂氏を華氏に変換する。」 |
 |  `helpUrl`  |  文字列  |   いいえ  |  ユーザーが関数に関するヘルプを見ることができる URL。 (タスクペインに表示されます)。例: "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
@@ -17,21 +17,20 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
 |  `parameters`  |  配列  |  はい  |  関数に渡すパラメータに関するメタデータ。 詳細は、「[パラメータ配列](#parameters-array)」を参照してください。 |
 |  `result`  |  オブジェクト  |  はい  |  関数が返す値に関するメタデータ。 詳細は、「[結果オブジェクト](#result-object)」を参照してください。 |
 
-## <a name="options-object"></a>オプション オブジェクト
+## <a name="options-object"></a>Options オブジェクト
 
 オブジェクトは、Excel が関数を処理する方法を設定します。`options` 次の表に、プロパティを示します。
 
-|  プロパティ  |  データ型  |  必須かどうか?  |  説明  |
+|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  ブール値  |  いいえ。既定値は `false` です。  |  の場合、Excel はユーザーが関数をキャンセルする操作をするたびに `onCanceled` ハンドラを呼び出します。たとえば、手動で再計算をトリガするか、関数が参照するセルを編集する場合です。`true` このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメータを `parameters` プロパティに登録***しない***でください)。 関数本体では、`caller.onCanceled` メンバーにハンドラを割り当てる必要があります。 注意: `cancelable` と `sync` の両方を `true` にすることはできません。  |
-|  `stream`  |  ブール値  |  いいえ。既定値は `false` です。  |  の場合、関数は一度の呼び出しで繰り返しセルに出力できます。`true` このオプションは、株価など急激に変化するデータソースで役立ちます。 このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメーターを `parameters` プロパティに登録***しない***でください)。 関数では、`return` 文を使いません。 代わりに、戻り値を `caller.setResult` コールバック メソッドの引数として渡します。 注意: `stream` と `sync` の両方が `true` ではない可能性があります。|
-|  `sync`  |  ブール値  |  いいえ。既定値は `false`  |  の場合、関数は同期して実行され、値を返す必要があります。`true` の場合、関数は非同期に実行され、`OfficeExtension.Promise` オブジェクトを返す必要があります。`false` 注意: `sync` は、`cancelable` か `stream` が `true` の場合、`true` ではない可能性があります。  |
+|  `cancelable`  |  ブール値  |  いいえ。既定値は `false` です。  |  `true` を使用する場合、関数をキャンセルすることになる操作をユーザーが実行するたびに Excel は、 `onCanceled` ハンドラーを呼び出します。例えば、手動で再計算をトリガーしたり、関数が参照しているセルを編集したりなどの操作です。このオプションを使用する場合、Excel は、`caller` パラメータを追加して、JavaScript 関数を呼び出します 。(`parameters` プロパティにこのパラメータを登録***しない***でください )。関数の本文では、`caller.onCanceled` のメンバーにハンドラーを割り当てる必要があります。|
+|  `stream`  |  ブール値  |  いいえ。既定値は `false` です。  |  の場合、関数は一度の呼び出しで繰り返しセルに出力できます。`true` このオプションは、株価など急激に変化するデータソースで役立ちます。 このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメーターを `parameters` プロパティに登録***しない***でください)。 関数では、`return` 文を使いません。 代わりに、戻り値を `caller.setResult` コールバック メソッドの引数として渡します。|
 
 ## <a name="parameters-array"></a>パラメータ配列
 
 プロパティはオブジェクトの配列です。`parameters` 各オブジェクトはそれぞれ 1 つのパラメータを表します。 次の表に、プロパティを示します。
 
-|  プロパティ  |  データ型  |  必須かどうか?  |  説明  |
+|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  文字列  |  いいえ |  パラメータの説明。  |
 |  `dimensionality`  |  文字列  |  はい  |  非配列値を意味する "scalar" か、行配列の配列を意味する "matrix" のどちらかでなければなりません。  |
@@ -42,7 +41,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
 
 プロパティは、関数から返された値に関するメタデータです。`results` 次の表に、プロパティを示します。
 
-|  プロパティ  |  データ型  |  必須かどうか?  |  説明  |
+|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  文字列  |  いいえ  |  非配列値を意味する "scalar" か、行配列の配列を意味する "matrix" のどちらかでなければなりません。  |
 |  `type`  |  文字列  |  はい  |  パラメータのデータ型。 "boolean"、"number"、または "string" のいずれかです。  |
@@ -69,10 +68,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "ADD42ASYNC", 
@@ -89,10 +85,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": false
-            }
+            ]
         },
         {
             "name": "ISEVEN", 
@@ -109,10 +102,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "GETDAY",
@@ -121,10 +111,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
             "result": {
                 "type": "string"
             },
-            "parameters": [],
-            "options": {
-                "sync": true
-            }
+            "parameters": []
         },
         {
             "name": "INCREMENTVALUE", 
@@ -143,7 +130,6 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
                 }
             ],
             "options": {
-                "sync": false,
                 "stream": true,
                 "cancelable": true
             }
@@ -163,10 +149,7 @@ JSON ファイルの詳細なサンプルは[こちら](https://github.com/Offic
                     "type": "number",
                     "dimensionality": "matrix"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         }
     ]
 }

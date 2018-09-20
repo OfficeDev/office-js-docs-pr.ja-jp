@@ -2,12 +2,12 @@
 title: Visual Studio での Office アドインの作成とデバッグ
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 991b5cf31f05f18f315311a5735d3ed207a655c6
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945356"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016417"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -16,7 +16,7 @@ ms.locfileid: "23945356"
 > [!NOTE]
 > OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../onenote/onenote-add-ins-getting-started.md)」を参照してください。
 
-## <a name="create-an-office-add-in-project-in-visual-studio"></a>Visual StudioでOfficeアドインプロジェクトを作成する
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>Visual Studio での Office アドイン プロジェクトの作成
 
 
 作業を開始するために、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) がインストールされていることと、Microsoft Office のバージョンを確認します。[Office 365 Developer プログラム](https://developer.microsoft.com/office/dev-program)に参加するか、以下の手順を実行して[最新バージョン](../develop/install-latest-office-version.md)を取得できます。
@@ -93,7 +93,7 @@ Web アプリケーション プロジェクトには、作業の開始時に使
 
 1. **ソリューション エクスプ ローラー**では、Web プロジェクトではなく、基本的なアドイン プロジェクトを選択します。
     
-2. メニュー バーで、[ **表示**]、[ **プロパティ ウィンドウ**] の順に選択します。
+2. メニュー バーで、[**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
     
 次の表に、プロジェクトのプロパティを示します。
 
@@ -152,7 +152,7 @@ Visual Studio はプロジェクトをビルドし、次の操作を実行しま
 
 1. XML マニフェスト ファイルのコピーを作成し、それを  _プロジェクト名_\Output ディレクトリに追加します。このコピーは、Visual Studio を起動してアドインをデバッグするときにホスト アプリケーションで使用されます。
     
-2. アドインをホストアプリケーションに表示するための一連のレジストリエントリをコンピューターに作成します。
+2. アドインをホスト アプリケーションに表示するための一連のレジストリ エントリをコンピューターに作成します。
     
 3. Web アプリケーション プロジェクトをビルドし、ローカルの IIS Web サーバー (http://localhost)) に展開します。 
     
