@@ -1,5 +1,5 @@
 items:
-- name: Office アドイン文書化
+- name: Office アドイン ドキュメント
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   href: index.yml
 - name: 概要
@@ -49,7 +49,7 @@ items:
   - name: PowerPoint アドイン チュートリアル
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
-  - name: Word アドイン チュートリアル
+  - name: Word アドインのチュートリアル
     displayName: Word
     href: tutorials/word-tutorial.yml
 - name: 概念
@@ -86,7 +86,7 @@ items:
         href: design/add-in-color.md
       - name: レイアウト
         href: design/add-in-layout.md
-      - name: アイコンの場合
+      - name: アイコン
         href: design/add-in-icons.md
       - name: モーションの使用
         displayName: Motion
@@ -117,7 +117,7 @@ items:
       items:
       - name: デザイン ツールキット
         href: design/design-toolkits.md
-      - name: Office の UI ファブリック
+      - name: Office UI Fabric
         href: design/office-ui-fabric.md
       - name: Fabric React の使用開始
         href: design/using-office-ui-fabric-react.md
@@ -125,12 +125,12 @@ items:
     items:
     - name: Office のバージョンと要件セット
       href: develop/office-versions-and-requirement-sets.md
-    - name: 最新の Office バージョンをインストール
+    - name: " Office の最新バージョンをインストール"
       href: develop/install-latest-office-version.md
     - name: Office の JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
       items:
-      - name: コンテンツおよび作業ウィンドウ・アドインのサポート
+      - name: コンテンツと作業ウィンドウ アドインのサポート
         href: develop/support-for-task-pane-and-content-add-ins.md
       - name: Office.js の参照
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
@@ -151,11 +151,11 @@ items:
         href: develop/specify-office-hosts-and-api-requirements.md
       - name: コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-      - name: API とマニフェストのバージョンを更新
+      - name: API とマニフェストのバージョンを更新する
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
     - name: 認証と承認
       items:
-      - name: アドインにおけるSSO を有効にする
+      - name: アドインにおける SSO を有効にする
         href: develop/sso-in-office-add-ins.md
         items:
         - name: ASP.NET を使用して SSO アドインを作成する
@@ -178,7 +178,7 @@ items:
       href: develop/automatically-open-a-task-pane-with-a-document.md
     - name: 同一生成元ポリシー制限への対処
       href: develop/addressing-same-origin-policy-limitations.md
-    - name: ローカリゼーション
+    - name: ローカライズ
       href: develop/localization.md
     - name: Visual Studio でアドインを開発
       items:
@@ -190,7 +190,7 @@ items:
         href: develop/convert-javascript-to-typescript.md
     - name: iPad 用のアドインを開発
       href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Angular でアドインを開発
+    - name: Angular でアドインを開発する
       href: develop/add-ins-with-angular2.md
   - name: Excel のアドイン
     displayName: Excel
@@ -235,7 +235,7 @@ items:
       - name: ピボットテーブル
         displayName: Excel
         href: excel/excel-add-ins-pivottables.md
-      - name: "\n範囲"
+      - name: 範囲
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
       - name: テーブル
@@ -254,7 +254,7 @@ items:
       - name: Excel アドインの共同編集機能
         displayName: Excel
         href: excel/co-authoring-in-excel-add-ins.md
-      - name: データ検証
+      - name: データの入力規則
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
       - name: エラー処理
@@ -268,7 +268,7 @@ items:
         href: excel/excel-add-ins-multiple-ranges.md
     - name: Excel の JavaScript API リファレンス
       displayName: Excel
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
   - name: Word アドイン
     displayName: Word
     href: word/word-add-ins-programming-overview.md
@@ -299,7 +299,7 @@ items:
       href: word/search-option-guidance.md
     - name: Word JavaScript API リファレンス
       displayName: Word
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
   - name: Outlook アドイン
     displayName: Outlook
     href: https://docs.microsoft.com/outlook/add-ins/
@@ -331,7 +331,7 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: OneNote JavaScript API リファレンス
       displayName: OneNote
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
   - name: Project アドイン
     displayName: Project
     href: project/project-add-ins.md
@@ -368,7 +368,7 @@ items:
       items:
       - name: iPad と Mac で Office アドインをサイドロードする
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-      - name: iPad とMac でデバッグする
+      - name: iPad と Mac でデバッグする
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: ユーザビリティ テスト
       href: develop/usability-testing.md
@@ -383,7 +383,7 @@ items:
       href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Visual Studio を使用してアドインをパッケージ化
       href: publish/package-your-add-in-using-visual-studio.md
-    - name: 一元展開によるアドインの発行
+    - name: 一元展開を使用したアドインの発行
       href: publish/centralized-deployment.md
     - name: アドインを SharePoint カタログに公開する
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
@@ -396,7 +396,7 @@ items:
   - name: Office アドイン マニフェスト参照
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
-  - name: Office の JavaScript API
+  - name: Office JavaScript API
     displayName: Excel, Word, Outlook, Visio, OneNote
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
   - name: Excel JavaScript API
@@ -416,15 +416,15 @@ items:
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
   - name: 共有 API
     displayName: PowerPoint, Project
-    href: https://docs.microsoft.com/en-us/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
+    href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
   - name: API オープン仕様
     displayName: Excel, Word
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: リソース
   href: resources/resources-links-help.md
-ms.openlocfilehash: 8ba30f4411fd0744d2271e64c694279561cb4e22
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 19c424952936e03a982f1c0eba2b01e47e2ff7c4
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945814"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016431"
