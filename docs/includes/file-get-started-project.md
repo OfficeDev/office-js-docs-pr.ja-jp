@@ -1,47 +1,53 @@
-# <a name="build-your-first-project-add-in"></a><span data-ttu-id="383cb-101">最初の Project アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="383cb-101">Build your first Project add-in</span></span>
+# <a name="build-your-first-project-add-in"></a><span data-ttu-id="eae59-101">最初の Project アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="eae59-101">Build your first Project add-in</span></span>
 
-<span data-ttu-id="383cb-102">この記事では、jQuery と Office JavaScript API を使用して Project アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="383cb-102">In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="eae59-102">この記事では、jQuery と Office JavaScript API を使用して Project アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="eae59-102">In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="383cb-103">前提条件</span><span class="sxs-lookup"><span data-stu-id="383cb-103">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="eae59-103">前提条件</span><span class="sxs-lookup"><span data-stu-id="eae59-103">Prerequisites</span></span>
 
-- [<span data-ttu-id="383cb-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="383cb-104">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="eae59-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="eae59-104">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="383cb-105">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="383cb-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="eae59-105">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="eae59-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in"></a><span data-ttu-id="383cb-106">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="383cb-106">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="eae59-106">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="eae59-106">Create the add-in</span></span>
 
-1. <span data-ttu-id="383cb-107">ローカル ドライブにフォルダーを作成し、`my-project-addin` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="383cb-107">Create a folder on your local drive and name it `my-project-addin`.</span></span> <span data-ttu-id="383cb-108">ここにアドインのファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="383cb-108">This is where you'll create the files for your add-in.</span></span>
+1. <span data-ttu-id="eae59-107">ローカル ドライブにフォルダーを作成し、`my-project-addin` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="eae59-107">Create a folder on your local drive and name it `my-project-addin`.</span></span> <span data-ttu-id="eae59-108">ここにアドインのファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="eae59-108">This is where you'll create the files for your add-in.</span></span>
 
-2. <span data-ttu-id="383cb-109">新しいフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="383cb-109">Navigate to your new folder.</span></span>
+2. <span data-ttu-id="eae59-109">新しいフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="eae59-109">Navigate to your new folder.</span></span>
 
     ```bash
     cd my-project-addin
     ```
 
-3. <span data-ttu-id="383cb-110">Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="383cb-110">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="383cb-111">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="383cb-111">Run the following command and then answer the prompts as follows:</span></span>
+3. <span data-ttu-id="eae59-110">Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="eae59-110">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="eae59-111">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="eae59-111">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="383cb-112">**Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="383cb-112">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="383cb-113">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="383cb-113">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="383cb-114">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="383cb-114">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="383cb-115">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`</span><span class="sxs-lookup"><span data-stu-id="383cb-115">**Which Office client application would you like to support?:** `Project`</span></span>
+    - <span data-ttu-id="eae59-112">**Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="eae59-112">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="eae59-113">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="eae59-113">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="eae59-114">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="eae59-114">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="eae59-115">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`</span><span class="sxs-lookup"><span data-stu-id="eae59-115">**Which Office client application would you like to support?:** `Project`</span></span>
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project-jquery.png)
     
-    <span data-ttu-id="383cb-117">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="383cb-117">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="eae59-117">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="eae59-117">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    
+4. <span data-ttu-id="eae59-118">Web アプリケーション プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="eae59-118">Navigate to the root folder of the web application project.</span></span>
 
-## <a name="update-the-code"></a><span data-ttu-id="383cb-118">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="383cb-118">Update the code</span></span>
+    ```bash
+    cd "My Office Add-in"
+    ```
 
-1. <span data-ttu-id="383cb-119">コード エディターで、プロジェクトのルートにある **index.html** を開きます。</span><span class="sxs-lookup"><span data-stu-id="383cb-119">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="383cb-120">このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。</span><span class="sxs-lookup"><span data-stu-id="383cb-120">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="eae59-119">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="eae59-119">Update the code</span></span>
 
-2. <span data-ttu-id="383cb-121">要素内の `<header>` 要素を次のマークアップに置き換えます。`<body>`</span><span class="sxs-lookup"><span data-stu-id="383cb-121">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
+1. <span data-ttu-id="eae59-120">コード エディターで、プロジェクトのルートにある **index.html** を開きます。</span><span class="sxs-lookup"><span data-stu-id="eae59-120">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="eae59-121">このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。</span><span class="sxs-lookup"><span data-stu-id="eae59-121">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+
+2. <span data-ttu-id="eae59-122">要素内の `<header>` 要素を次のマークアップに置き換えます。`<body>`</span><span class="sxs-lookup"><span data-stu-id="eae59-122">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
 
     ```html
     <div id="content-header">
@@ -51,7 +57,7 @@
     </div>
     ```
 
-3. <span data-ttu-id="383cb-122">要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>`</span><span class="sxs-lookup"><span data-stu-id="383cb-122">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
+3. <span data-ttu-id="eae59-123">`<body>` 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="eae59-123">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <div id="content-main">
@@ -68,7 +74,7 @@
     </div>
     ```
 
-4. <span data-ttu-id="383cb-p104">ファイル **src/index.js** を開きアドインのスクリプトを特定します。コンテンツ全体を次のコードに置き換えてファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="383cb-p104">Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+4. <span data-ttu-id="eae59-124">**src/index.js** ファイルを開いて、アドインのスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="eae59-124">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="eae59-125">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="eae59-125">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -121,7 +127,7 @@
     })();
     ```
 
-4. <span data-ttu-id="383cb-125">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="383cb-125">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="383cb-126">すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="383cb-126">Replace the entire contents with the following and save the file.</span></span>
+4. <span data-ttu-id="eae59-126">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="eae59-126">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="eae59-127">すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="eae59-127">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -150,15 +156,15 @@
     }
     ```
 
-## <a name="update-the-manifest"></a><span data-ttu-id="383cb-127">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="383cb-127">Update the manifest</span></span>
+## <a name="update-the-manifest"></a><span data-ttu-id="eae59-128">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="eae59-128">Update the manifest</span></span>
 
-1. <span data-ttu-id="383cb-128">**my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="383cb-128">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="eae59-129">**my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="eae59-129">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="383cb-129">要素にはプレースホルダー値が含まれています。`ProviderName`</span><span class="sxs-lookup"><span data-stu-id="383cb-129">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="383cb-130">それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="383cb-130">Replace it with your name.</span></span>
+2. <span data-ttu-id="eae59-130">要素にはプレースホルダー値が含まれています。`ProviderName`</span><span class="sxs-lookup"><span data-stu-id="eae59-130">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="eae59-131">それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="eae59-131">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="383cb-131">要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description`</span><span class="sxs-lookup"><span data-stu-id="383cb-131">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="383cb-132">これは、**A task pane add-in for Project** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="383cb-132">Replace it with **A task pane add-in for Project**.</span></span>
+3. <span data-ttu-id="eae59-132">要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description`</span><span class="sxs-lookup"><span data-stu-id="eae59-132">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="eae59-133">これは、**A task pane add-in for Project** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="eae59-133">Replace it with **A task pane add-in for Project**.</span></span>
 
-4. <span data-ttu-id="383cb-133">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="383cb-133">Save the file.</span></span>
+4. <span data-ttu-id="eae59-134">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="eae59-134">Save the file.</span></span>
 
     ```xml
     ...
@@ -170,35 +176,35 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="383cb-134">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="383cb-134">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="eae59-135">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="eae59-135">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a><span data-ttu-id="383cb-135">試してみる</span><span class="sxs-lookup"><span data-stu-id="383cb-135">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="eae59-136">試してみる</span><span class="sxs-lookup"><span data-stu-id="eae59-136">Try it out</span></span>
 
-1. <span data-ttu-id="383cb-136">少なくとも 1 つのタスクを含むシンプルなプロジェクトを Project で作成します。</span><span class="sxs-lookup"><span data-stu-id="383cb-136">In Project, create a simple project that has at least one task.</span></span>
+1. <span data-ttu-id="eae59-137">少なくとも 1 つのタスクを含むシンプルなプロジェクトを Project で作成します。</span><span class="sxs-lookup"><span data-stu-id="eae59-137">In Project, create a simple project that has at least one task.</span></span>
 
-2. <span data-ttu-id="383cb-137">アドインを実行して、Project 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="383cb-137">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.</span></span>
+2. <span data-ttu-id="eae59-138">アドインを実行して、Project 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="eae59-138">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.</span></span>
 
-    - <span data-ttu-id="383cb-138">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="383cb-138">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="383cb-139">Project Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="383cb-139">Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="383cb-140">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="383cb-140">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="eae59-139">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="eae59-139">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="eae59-140">Project Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="eae59-140">Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="eae59-141">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="eae59-141">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-3. <span data-ttu-id="383cb-141">Project でタスクを選択します。</span><span class="sxs-lookup"><span data-stu-id="383cb-141">In Project, select a task.</span></span>
+3. <span data-ttu-id="eae59-142">Project でタスクを選択します。</span><span class="sxs-lookup"><span data-stu-id="eae59-142">In Project, select a task.</span></span>
 
     ![1 つのタスクが選択された Project のプロジェクト計画のスクリーンショット](../images/project_quickstart_addin_1.png)
 
-4. <span data-ttu-id="383cb-143">作業ウィンドウで **[タスク GUID を取得]** ボタンを選択して、タスク GUID を **[結果]** テキストボックスに記入します。</span><span class="sxs-lookup"><span data-stu-id="383cb-143">In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.</span></span>
+4. <span data-ttu-id="eae59-144">作業ウィンドウで **[タスク GUID を取得]** ボタンを選択して、タスク GUID を **[結果]** テキストボックスに記入します。</span><span class="sxs-lookup"><span data-stu-id="eae59-144">In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.</span></span>
 
     ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入されたタスク GUID のスクリーンショット](../images/project_quickstart_addin_2.png)
 
-5. <span data-ttu-id="383cb-145">作業ウィンドウで **[タスク データを取得]** ボタンを選択して、選択したタスクのいくつかのプロパティを **[結果]** テキストボックスに記入します。</span><span class="sxs-lookup"><span data-stu-id="383cb-145">In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.</span></span>
+5. <span data-ttu-id="eae59-146">作業ウィンドウで **[タスク データを取得]** ボタンを選択して、選択したタスクのいくつかのプロパティを **[結果]** テキストボックスに記入します。</span><span class="sxs-lookup"><span data-stu-id="eae59-146">In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.</span></span>
 
     ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入された複数のタスクのプロパティのスクリーンショット](../images/project_quickstart_addin_3.png)
 
-## <a name="next-steps"></a><span data-ttu-id="383cb-147">次の手順</span><span class="sxs-lookup"><span data-stu-id="383cb-147">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="eae59-148">次の手順</span><span class="sxs-lookup"><span data-stu-id="eae59-148">Next steps</span></span>
 
-<span data-ttu-id="383cb-148">これで完了です。Project アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="383cb-148">Congratulations, you've successfully created a Project add-in!</span></span> <span data-ttu-id="383cb-149">この後は、Project アドインの機能と一般的なシナリオについて調べます。</span><span class="sxs-lookup"><span data-stu-id="383cb-149">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
+<span data-ttu-id="eae59-149">これで完了です。Project アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="eae59-149">Congratulations, you've successfully created a Project add-in!</span></span> <span data-ttu-id="eae59-150">この後は、Project アドインの機能と一般的なシナリオについて調べます。</span><span class="sxs-lookup"><span data-stu-id="eae59-150">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="383cb-150">Project 用アドイン</span><span class="sxs-lookup"><span data-stu-id="383cb-150">Project add-ins</span></span>](../project/project-add-ins.md)
+> [<span data-ttu-id="eae59-151">Project 用アドイン</span><span class="sxs-lookup"><span data-stu-id="eae59-151">Project add-ins</span></span>](../project/project-add-ins.md)
