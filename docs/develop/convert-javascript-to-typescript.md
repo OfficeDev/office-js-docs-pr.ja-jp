@@ -2,21 +2,21 @@
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 015fd9d7e9bf4412c09b76f0de5a97c9946e4d58
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945349"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016333"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 アドイン プロジェクトの作成に Visual Studio を使用することで、Office アドイン TypeScript プロジェクトをゼロから作成する必要がなくなります。 
 
-この記事では、Visual Studio を使用して Excel アドインを作成して、そのアドイン プロジェクトを JavaScript から TypeScript に変換する方法について説明します。 同じ手順を使用すると、その他の種類の Office アドイン JavaScript プロジェクトを Visual Studio の TypeScript に変換できます。
+この記事では、Visual Studio を使用して Excel アドインを作成して、そのアドイン プロジェクトを JavaScript から TypeScript に変換する方法について説明します。 同じ手順を使用して、その他の種類の Office アドイン JavaScript プロジェクトを Visual Studio の TypeScript に変換できます。
 
 > [!NOTE]
-> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間クイック スタート](../index.yml)」の「任意のエディタ」セクションに示された手順を実行して、[Office アドイン用 Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用せずに Office アドイン TypeScript プロジェクトを作成するには、「[5 分間クイック スタート](../index.yml)」の「任意のエディタ」セクションに示された手順を実行して、[Office アドイン用 Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 

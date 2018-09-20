@@ -188,9 +188,9 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
 3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
 
@@ -256,6 +256,12 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
     
     ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
+    
+4. Web アプリケーション プロジェクトのルート フォルダーに移動します。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>コードを更新する
 
@@ -470,7 +476,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。
+これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルに従って、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [Word アドイン チュートリアル](../tutorials/word-tutorial.yml)

@@ -2,12 +2,12 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 1dd36d99715937e12a9194baace3731ac331e658
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: a0eb0839596bad0dfe45c2cbbc05c2c3d74eda24
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945440"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016319"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -16,9 +16,9 @@ ms.locfileid: "23945440"
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「IdentityAPI の要件セット」https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)をご覧ください。
 > SSO を使用するには、アドインの HTML 起動ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js からベータ版 Office の JavaScript ライブラリを読み込む必要があります。
-> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」をご覧ください。
 
-## <a name="debugging-tools"></a>デバッグツール
+## <a name="debugging-tools"></a>デバッグ ツール
 
 開発時は、アドインの Web サービスからの HTTP 要求および応答を傍受して表示することができるツールを使用することを強くお勧めします。最も一般的なものは、次の 2 つです。 
 
@@ -33,10 +33,10 @@ ms.locfileid: "23945440"
 
 このセクションで説明するエラー処理の例については、次を参照してください。
 - [Office-Add-in-ASPNET-SSO の Home.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js)
-- [OfficeアドインNodeJS-SSO の program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
+- [Office-Add-in-NodeJS-SSO の program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> このセクションでの提案に加えて、Outlook アドインには、どのような 13*nnn* エラーにも応答する追加の機能があります。 詳細については、「 [シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」 および「[AtachmentDemo サンプル アドイン](https://github.com/OfficeDev/outlook-add-in-attachments-demo)」を参照してください。 
+> このセクションでの提案に加えて、Outlook アドインには、どのような 13*nnn* エラーにも応答する追加の機能があります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」および「[AtachmentDemo サンプル アドイン](https://github.com/OfficeDev/outlook-add-in-attachments-demo)」をご覧ください。 
 
 ### <a name="13000"></a>13000
 
@@ -63,7 +63,7 @@ Office Online では、このエラーが発生することはありません。
 
 ### <a name="13004"></a>13004
 
-無効なリソースです。 アドイン マニフェストは、正しく構成されていません。 マニフェストを更新してください。 詳細は、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、 **Resource** 要素（ **WebApplicationInfo** 要素の中にあるもの）に、アドインのドメインと一致しないドメインがあることです。 リソース値のプロトコルの部分は、"https" ではなく "api" である必要がありますが、ドメイン名 (もしあれば、ポートを含む) の他のすべての部分は、アドインの場合と同じにする必要があります。
+無効なリソースです。 アドイン マニフェストは、正しく構成されていません。 マニフェストを更新してください。 詳細は、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」をご覧ください。 最も一般的な問題は、 **Resource** 要素（ **WebApplicationInfo** 要素の中にあるもの）に、アドインのドメインと一致しないドメインがあることです。 リソース値のプロトコルの部分は、"https" ではなく "api" である必要がありますが、ドメイン名 (もしあれば、ポートを含む) の他のすべての部分は、アドインの場合と同じにする必要があります。
 
 ### <a name="13005"></a>13005
 
@@ -97,6 +97,10 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 ### <a name="13010"></a>13010
 
 ユーザーが Office Online でアドインを実行していて、Edge または Internet Explorer を使用しています。 ユーザーの Office 365 ドメインと、login.microsoftonline.com ドメインは、ブラウザー設定で異なるセキュリティ ゾーンに含まれています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+
+### <a name="13012"></a>13012
+
+アドインが、`getAccessTokenAsync` API をサポートしていないプラットフォームで実行されています。 たとえば、この APIは iPad 上ではサポートされていません。 「[ユーザー API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)」をご覧ください。
 
 ### <a name="50001"></a>50001
 

@@ -128,9 +128,9 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
 
 3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
 
@@ -200,6 +200,12 @@
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint-jquery.png)
     
     ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
+    
+4. Web アプリケーション プロジェクトのルート フォルダーに移動します。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>コードを更新する
 
@@ -352,7 +358,7 @@
 
 ## <a name="next-steps"></a>次のステップ
 
-これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明し、PowePoint アドインのチュートリアルにしたがって、さらに複雑なアドインを構築します。
+これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明し、PowePoint アドインのチュートリアルに従って、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)

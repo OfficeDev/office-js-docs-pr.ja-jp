@@ -1,13 +1,13 @@
 ---
 title: Office アドインのローカライズ
-description: ''
+description: JavaScript API for Office を使用すれば、ロケールを決定し、ホスト アプリケーションのロケールに基づいて文字列を表示できます。あるいは、データのロケールに基づいてデータを解釈または表示することもできます。
 ms.date: 01/23/2018
-ms.openlocfilehash: c700dfa2f424577edf364505b0da47854467f77b
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2b47a54acd2018be0d4c6c6fdac2e5d3bd1d6770
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925578"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016445"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -17,7 +17,7 @@ Office アドイン に適切なローカライズ方法を任意に選んで実
 
 JavaScript API for Office は、ホスト アプリケーションまたはデータのロケールに対応する値の表示または変換をサポートする 2 つのプロパティを提供しています。
 
-- [Context.displayLanguage][displayLanguage] には、ホスト アプリケーションのユーザー インターフェイスのロケール (または言語) を指定します。次の例では、ホスト アプリケーションで en-US または fr-Fr のどちらのロケールが使用されるかを確認し、ロケールに合った挨拶文を表示します。
+- [Context.displayLanguage][displayLanguage] には、ホスト アプリケーションのユーザー インターフェイスのロケール (または言語) を指定します。 次の例では、ホスト アプリケーションで en-US または fr-FR のどちらのロケールを使用するかを確認し、ロケールに合った挨拶文を表示します。
     
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -62,7 +62,8 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 |[SourceLocation]   |指定した各ロケールのユーザーには、そのロケールのアドイン専用にデザインした Web ページが表示されます。 |
 
 
-> **メモ** Office でサポートされているロケールに限り、説明と表示名をローカライズできます。現在のリリースの Office でサポートされている言語とロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))」を参照してください。
+> [!NOTE] 
+> Office がサポートしているロケールのみ、説明と表示名をローカライズできます。 Office の現在のリリースの言語とロケールにリストについては、「[Office 2013 の言語識別子と OptionState の Id 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))」をご覧ください。
 
 
 ### <a name="examples"></a>例
@@ -78,11 +79,13 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 </DisplayName>
 ```
 
-> **メモ** `de-de` や `de-at` のように、言語ファミリ内で複数の領域をローカライズする必要がある場合は、領域ごとに別々の `Override` 要素を使用することをお勧めします。言語名 (この場合は `de`) のみを使用することは、Office ホスト アプリケーションとプラットフォームのすべての組み合わせでサポートされていません。
+> [!NOTE] 
+> `de-de` や `de-at` など、ある語族内の複数の地域向けにローカライズする必要がある場合は、各地域に対して別々の `Override` 要素を使用することをお勧めします。 言語名のみ (この場合は `de`) の使用は、Office のホスト アプリケーションとプラットフォームのどの組み合わせでもサポートされていません。
 
 このように指定すると、既定ではアドインは `en-us` ロケールを想定します。ほとんどのロケールでは、英語の表示名 "Video player" が表示されます。ただし、クライアント コンピューターのロケールが `fr-fr` の場合は、フランス語の表示名 "Lecteur vidéo" が表示されます。
 
-> **メモ** 既定のロケールを含め、1 つの言語につき 1 つの override のみを指定できます。たとえば、既定のロケールが `en-us` の場合、`en-us` の override も指定することはできません。 
+> [!NOTE] 
+> 既定のロケールを含め、1 つの言語につき 1 つの override のみを指定できます。 たとえば、既定のロケールが `en-us` の場合、`en-us` の override も指定することはできません。 
 
 次の例では、[Description] 要素に対してロケールのオーバーライドを適用しています。最初に、既定のロケールを `en-us` に指定し、英語の説明を記述しています。その後で、[Override] 要素を使用して、`fr-fr` ロケールに対応するフランス語の説明を記述しています。
 
@@ -171,13 +174,15 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 
 また、Visual Studio 2015 Office アドイン プロジェクトを作成する必要があります。
 
-> **メモ** Visual Studio 2015 をダウンロードするには、[Office Developer Tools ページ](https://www.visualstudio.com/features/office-tools-vs)を参照してください。このページには、Office Developer Tools へのリンクもあります。
+> [!NOTE] 
+> Visual Studio 2015 をダウンロードするには、「[Office 開発者ツール ページ](https://www.visualstudio.com/features/office-tools-vs)」をご覧ください。 このページには、Office 開発者ツールへのリンクもあります。
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>表示または編集用の追加言語を使用できるように Office 2013 を構成する
 
 追加言語は、Office 2013 言語パックを使用してインストールできます。言語パックの詳細と入手先については、「 [Office 2013 の言語オプション](http://office.microsoft.com/language-packs/)」を参照してください。
 
-> **メモ** MSDN サブスクリプション会員の場合は、Office 2013 言語パックを既に利用している可能性があります。サブスクリプションでダウンロード用の Office 2013 言語パックが提供されているかどうかを調べるには、[MSDN サブスクリプションのホーム](https://msdn.microsoft.com/subscriptions/manage/)にアクセスし、**[ソフトウェアのダウロード]** で「Office 2013 Language Pack」と入力します。次に、**[検索]** を選択して **[自分のサブスクリプションで利用できる製品]** を選択します。**[言語]** でダウンロードする言語パックのチェック ボックスをオンにして、**[検索]** をクリックします。 
+> [!NOTE] 
+> MSDN のサブスクリプション会員である場合は、利用可能な Office 2013 言語パックがすでに入手している可能性があります。 サブスクリプションでダウンロード用の Office 2013 言語パックが提供されているかどうか確認するには、[[MSDN サブスクリプション ホーム](https://msdn.microsoft.com/subscriptions/manage/)] に移動し、[**ソフトウェアのダウンロード**] で Office 2013 言語パックに入り、[**検索**] を選択して、[**サブスクリプションで利用可能な製品**] を選択します。 [**言語**] の下で、ダウンロードする言語パックのチェック ボックスをオンにし、[**進む**] を選択します。 
 
 言語パックをインストールしたら、インストールした言語を UI の表示、ドキュメント コンテンツの編集、またはその両方に使用するように Office 2013 を構成できます。この記事の例では、スペイン語の言語パックが適用された Office 2013 のインストールを使用します。
 
@@ -206,7 +211,8 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
     
 2. WorldReadyAddInManifest.xml で、[DisplayName] 要素と [Description] 要素を次のコード ブロックに置き換えます。
     
-    > **メモ** この例の [DisplayName] 要素および [Description] 要素で使用されているスペイン語にローカライズされた文字列を、別の言語にローカライズされた文字列で置き換えることができます。
+    > [!NOTE] 
+    > この例の [DisplayName] 要素および [Description] 要素で使用されているスペイン語にローカライズされた文字列を、別の言語にローカライズされた文字列で置き換えることができます。
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
@@ -354,7 +360,8 @@ UIStrings.js リソース ファイルは、アドインの UI のローカラ�
 
 Home.js ファイルのコードを次のコードで置き換えます。このコードは、ホスト アプリケーションの表示言語または編集言語に基づいて、Home.html で UI 要素に使用される文字列を変更する方法を示しています。
 
-> **メモ** 編集言語に基づくアドインのローカライズの変更に切り替えるには、コード行 `var myLanguage = Office.context.contentLanguage;` のコメントを解除し、コード行 `var myLanguage = Office.context.displayLanguage;` をコメント化します。 `var myLanguage = Office.context.displayLanguage;`
+> [!NOTE] 
+> 編集に使用している言語に基づいてアドインのローカライズ変更を切り替えるには、コード行 `var myLanguage = Office.context.contentLanguage;` をコメント解除し、コード行をコメントにします。 `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -421,17 +428,17 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)    
 - [Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[説明]:          https://dev.office.com/reference/add-ins/manifest/description
-[DisplayName]:          https://dev.office.com/reference/add-ins/manifest/displayname
-[IconUrl]:              https://dev.office.com/reference/add-ins/manifest/iconurl
-[HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[リソース]:            https://dev.office.com/reference/add-ins/manifest/resources
-[SourceLocation]:       https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[オーバーライド]:             https://dev.office.com/reference/add-ins/manifest/override
-[デスクトップ設定]:      https://dev.office.com/reference/add-ins/manifest/desktopsettings
-[タブレット設定]:       https://dev.office.com/reference/add-ins/manifest/tabletsettings
-[スマホ設定]:        https://dev.office.com/reference/add-ins/manifest/phonesettings
-[言語表示]:  https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
-[コンテンツ言語]:  https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
+[DefaultLocale]:        https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
+[説明]:          https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
+[DisplayName]:          https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
+[IconUrl]:              https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
+[リソース]:            https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
+[SourceLocation]:       https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
+[オーバーライド]:             https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
+[デスクトップ設定]:      https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
+[タブレット設定]:       https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
+[スマホ設定]:        https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[言語表示]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
+[コンテンツ言語]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066
