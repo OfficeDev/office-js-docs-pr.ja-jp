@@ -43,13 +43,13 @@ items:
     href: quickstarts/project-quickstart.md
 - name: チュートリアル
   items:
-  - name: Excel アドインのチュートリアル
+  - name: Excel アドイン チュートリアル
     displayName: Excel
     href: tutorials/excel-tutorial.yml
   - name: PowerPoint アドイン チュートリアル
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
-  - name: Word アドインのチュートリアル
+  - name: Word アドイン チュートリアル
     displayName: Word
     href: tutorials/word-tutorial.yml
 - name: 概念
@@ -113,11 +113,11 @@ items:
         href: design/navigation-patterns.md
       - name: ブランド化
         href: design/branding-patterns.md
-    - name: リソース
+    - name: 参照資料
       items:
       - name: デザイン ツールキット
         href: design/design-toolkits.md
-      - name: Office UI Fabric
+      - name: Office の UI ファブリック
         href: design/office-ui-fabric.md
       - name: Fabric React の使用開始
         href: design/using-office-ui-fabric-react.md
@@ -125,7 +125,7 @@ items:
     items:
     - name: Office のバージョンと要件セット
       href: develop/office-versions-and-requirement-sets.md
-    - name: " Office の最新バージョンをインストール"
+    - name: Office の最新バージョンをインストール
       href: develop/install-latest-office-version.md
     - name: Office の JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
@@ -212,7 +212,7 @@ items:
       - name: Vue の使用
         displayName: Excel
         href: excel/excel-add-ins-get-started-vue.md
-    - name: Excel アドインのチュートリアル
+    - name: Excel アドイン チュートリアル
       displayName: Excel
       href: tutorials/excel-tutorial.yml
     - name: 中心概念
@@ -223,9 +223,15 @@ items:
         displayName: Excel
         href: excel/custom-functions-overview.md
         items:
-        - name: Excel カスタム関数の登録 JSON
+        - name: カスタム関数のランタイム
+          displayName: Excel
+          href: excel/custom-functions-runtime.md
+        - name: カスタム関数のメタデータ
           displayName: Excel
           href: excel/custom-functions-json.md
+        - name: カスタム関数のベスト プラクティス
+          displayName: Excel
+          href: excel/custom-functions-best-practices.md
       - name: グラフ
         displayName: Excel
         href: excel/excel-add-ins-charts.md
@@ -254,7 +260,7 @@ items:
       - name: Excel アドインの共同編集機能
         displayName: Excel
         href: excel/co-authoring-in-excel-add-ins.md
-      - name: データの入力規則
+      - name: データ検証
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
       - name: エラー処理
@@ -276,7 +282,7 @@ items:
     - name: 最初の Word アドインをビルドする
       displayName: Word
       href: word/word-add-ins.md
-    - name: Word アドインのチュートリアル
+    - name: Word アドイン チュートリアル
       displayName: Word
       href: tutorials/word-tutorial.yml
     - name: Office Open XML を使用してより良い Word 用アドインを作成する
@@ -285,7 +291,7 @@ items:
     - name: 辞書の作業ウィンドウ アドイン
       displayName: Word
       href: word/dictionary-task-pane-add-ins.md
-    - name: アドインからドキュメント全体を取得
+    - name: アドインからドキュメント全体を取得する
       displayName: Word
       href: word/get-the-whole-document-from-an-add-in-for-word.md
     - name: 現在の選択肢にデータを読み書きする
@@ -316,7 +322,7 @@ items:
     - name: PowerPoint アドインでドキュメントのテーマを使用する
       displayName: PowerPoint
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-    - name: アドインからドキュメント全体を取得
+    - name: アドインからドキュメント全体を取得する
       displayName: PowerPoint
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
   - name: OneNote アドイン
@@ -374,7 +380,7 @@ items:
       href: develop/usability-testing.md
     - name: ユーザーのエラーのトラブルシューティング
       href: testing/testing-and-troubleshooting.md
-    - name: アドインのマニフェストを検証し、問題のトラブルシューティングを行う
+    - name: アドインのマニフェストとトラブルシューティングの問題を検証する
       href: testing/troubleshoot-manifest.md
   - name: 発行する
     href: publish/publish.md
@@ -396,7 +402,7 @@ items:
   - name: Office アドイン マニフェスト参照
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
-  - name: Office JavaScript API
+  - name: Office の JavaScript API
     displayName: Excel, Word, Outlook, Visio, OneNote
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
   - name: Excel JavaScript API
@@ -420,11 +426,11 @@ items:
   - name: API オープン仕様
     displayName: Excel, Word
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
-- name: リソース
+- name: 参照資料
   href: resources/resources-links-help.md
-ms.openlocfilehash: 19c424952936e03a982f1c0eba2b01e47e2ff7c4
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: b02b37aa7b85e2a2e1126c065636158928bd1ced
+ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016431"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "24062117"
