@@ -2,12 +2,12 @@
 title: Office アドインでダイアログ API を使用する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 65ac55baa31f298ea5a17d789ba96772c8f5bb02
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
+ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945611"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "24062138"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -47,7 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
-> - ドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js)にすることができます。ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
+> - ダイアログ リソースのドメインは、ホスト ページのドメインと同じです。これは、作業ウィンドウまたはアドインのコマンドの [関数のファイル](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) 内のページで、必須です。ページ、コント ローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインである必要があります。
+
+> [!IMPORTANT]
+> ホスト ページとダイアログ ボックスのリソースには、同じ、完全なドメインがある場合があります。 アドインのドメインのサブドメインに`displayDialogAsync` を渡そうとする場合、それは動作しなくなります。 任意のサブドメインを含む完全なドメインが一致する必要があります。
 
 最初のページ (または他のリソース) が読み込まれると、ユーザーは HTTPS を使用する任意の Web サイト (または他のリソース) に移動できます。また、すぐに別のサイトにリダイレクトするように最初のページを設計することもできます。
 
@@ -391,7 +394,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 このパターンを使用するサンプル アドインについては、以下を参照してください。
 
-- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart):ダイアログ ウィンドウで最初に開かれるリソースは、独自のビューがないコントローラーのメソッドです。これは次に、Office 365 のサインイン ページにリダイレクトします。
+- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): ダイアログ ウィンドウで最初に開かれるリソースは、独自のビューがないコントローラーのメソッドです。 Office 365 のサインイン ページにリダイレクトします。
 - [Office アドイン Office 365 のクライアント認証 AngularJS 用](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth):ダイアログ ウィンドウで最初に開かれるリソースは、ページです。
 
 #### <a name="support-multiple-identity-providers"></a>複数の ID プロバイダーのサポート

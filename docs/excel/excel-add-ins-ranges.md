@@ -2,16 +2,16 @@
 title: Excel JavaScript API を使用して範囲を操作する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: dea015c028d58a708bb83f79fcbfebc3cf3bfc1e
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945779"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967712"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
-この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js)」を参照してください。
+この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)」を参照してください。
 
 ## <a name="get-a-range"></a>範囲を取得する
 
