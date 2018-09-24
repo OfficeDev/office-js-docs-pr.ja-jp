@@ -1,13 +1,13 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、および OneNote のサポートされる要件セット。
-ms.date: 08/30/2018
-ms.openlocfilehash: 06fb073693bd8adca7d196f4361699ac3f54cee1
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.date: 09/19/2018
+ms.openlocfilehash: 09fb72c88bd0496c413f94b7ba4149192380d664
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797302"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967705"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -46,11 +46,11 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - ファイル<br>
+        - File<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - 選択<br>
-        - 設定<br>
+        - Selection<br>
+        - Settings<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -66,12 +66,12 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - ファイル<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - 選択<br>
-        - 設定<br>
+        - Selection<br>
+        - Settings<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -93,11 +93,11 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - ファイル<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - 選択<br>
+        - Selection<br>
         - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
@@ -119,7 +119,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - ファイル<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -146,7 +146,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - ファイル<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -206,11 +206,12 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>iOS 版 Office</td>
+    <td>iOS 用 Office</td>
     <td> - メールの読み取り<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -221,7 +222,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Mac 版 Office 2016</td>
+    <td>Mac 用 Office 2016</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -234,7 +235,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Android 版 Office</td>
+    <td>Android 用 Office</td>
     <td> - メールの読み取り<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -269,7 +270,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - BindingEvents<br>
          - CustomXMLParts<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -292,7 +293,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - CompressedFile<br>
          - CustomXMLParts<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -319,7 +320,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - CompressedFile<br>
          - CustomXMLParts<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -346,7 +347,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - CompressedFile<br>
          - CustomXMLParts<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -374,7 +375,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - CompressedFile<br>
          - CustomXMLParts<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -412,7 +413,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -429,7 +430,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -445,7 +446,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -460,7 +461,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - PdfFile<br>
          - 選択<br>
          - 設定<br>
@@ -476,7 +477,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - ファイル<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>

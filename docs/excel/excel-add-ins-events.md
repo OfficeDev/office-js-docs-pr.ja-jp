@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 05/25/2018
-ms.openlocfilehash: fbeb0e6efabe37afb0f73ab8e7448d8cf01ebace
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 09/21/2018
+ms.openlocfilehash: 6da36938d13c540b310fb5870f310681364803e9
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943979"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967698"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
 
@@ -19,27 +19,15 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
-| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onCalculated` | ワークシートの計算が終了した（またはコレクションのすべてのワークシートが終了した）ときに発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、 [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、 [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
 | `onDataChanged` | バインディング内でデータまたは書式設定が変更されたときに発生するイベント。 | [**バインディング**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [ **Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[ **Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSettingsChanged` | ドキュメント内の設定が変更されたときに発生するイベント。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
-
-## <a name="preview-beta-events-in-excel"></a>Excel でのプレビュー（ベータ）イベント
-
-> [!NOTE]
-> これらのイベントは現在、公開プレビュー (ベータ版) でのみ利用できます。 これらの機能を使用するには、Office.js CDN のベータ ライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-
-| イベント | 説明 | サポートされているオブジェクト |
-|:---------------|:-------------|:-----------|
-| `onAdded` | グラフが追加されたときに発生するイベント。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onDeleted` | グラフが削除されたときに発生するイベント。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onActivated` | グラフがアクティブ化されたときに発生するイベント。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、 [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onDeactivated` | グラフが非アクティブ化されたときに発生するイベント。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、 [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onCalculated` | ワークシートの計算が終了した（またはコレクションのすべてのワークシートが終了した）ときに発生するイベント。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、[**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
@@ -95,7 +83,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>イベント ハンドラーを削除する
 
-次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。
+次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。
 
 ```js
 var eventResult;
@@ -135,12 +123,9 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
-> [!NOTE]
-> この機能は現在、公開プレビュー (ベータ版) でのみ利用できます。 これを使用するには、Office.js CDN のベータ版のライブラリを参照する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+イベントを無効にするアドインのパフォーマンスは向上する可能性があります。 たとえば、アプリケーションがイベントを受け取る必要がない可能性、または複数のエンティティを一括編集しているときにイベントを無視する可能性があります。 
 
-イベントを無効にするアドインのパフォーマンスを向上させる可能性があります。 たとえば、アプリケーションがイベントを受け取る必要がない可能性、または複数のエンティティを一括編集しているときにイベントを無視する可能性があります。 
-
-イベントは、 [ランタイム](https://docs.microsoft.com/javascript/api/excel/excel.runtime) レベルで有効と無効にされます。 |||UNTRANSLATED_CONTENT_START|||The `enableEvents` property determines if events are fired and their handlers are activated.|||UNTRANSLATED_CONTENT_END||| 
+イベントは、 [ランタイム](https://docs.microsoft.com/javascript/api/excel/excel.runtime) レベルで有効と無効にされます。 `enableEvents`プロパティは、イベントが発生し、そのハンドラーがアクティブ化されるかどうかを決定します。 
 
 イベントをオンとオフを切り替える方法を次のコード例に示します。
 
@@ -163,4 +148,3 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API オープン仕様](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
