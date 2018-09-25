@@ -1,15 +1,15 @@
 ---
 ms.date: 09/20/2018
 description: JavaScript を使用して Excel でカスタム関数を作成します。
-title: Excel でカスタム関数を作成する (プレビュー)
-ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Excel でのカスタム関数の作成 (プレビュー)
+ms.openlocfilehash: b214329fe50955d0f39d50f674152f475ca24b4d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985810"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005044"
 ---
-# <a name="create-custom-functions-in-excel-preview"></a>Excel でカスタム関数を作成する (プレビュー)
+# <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
 開発者はカスタム関数を使用すれば、アドインの一部として新しい関数を定義して、これらの関数を追加することができます。 Excel 内のユーザーは、Excel の他のネイティブ関数 (`SUM()` など) と同様に、カスタム関数にアクセスできます。 この記事では、Excel でカスタム関数を作成する方法について説明します。
 
@@ -135,7 +135,7 @@ function ADD42(a, b) {
 | `name` | ユーザーがセルに数式を入力した際に、オートコンプリート メニューに表示される関数の名前です。 オートコンプリート メニューでは、XML マニフェスト ファイルで指定されるカスタム関数の名前空間が、この値に接頭辞としてつきます。 |
 | `helpUrl` | ユーザーがヘルプを要求したときに表示されるページの Url です。 |
 | `description` | 関数が実行することについて説明します。 この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
-| `result`  | 関数によって返される情報の種類を定義するオブジェクトです。 子プロパティには、**文字列**、**数値**、または**ブール値**を使用できます。`type` `dimensionality` 子プロパティの値には、**スカラー**または**マトリックス** (指定された `type` の値の 2 次元配列) を使用できます。 |
+| `result`  | 関数によって返される情報の種類を定義するオブジェクトです。 子プロパティには、**文字列**、**数値**、または**ブール値**を使用できます。`type` `dimensionality` 子プロパティの値には、**スカラー**または**マトリックス** (指定された `type` の値の 2 次元配列) が使用できます。 |
 | `parameters` | 関数の入力パラメーターを定義する配列。 `name` および `description` 子プロパティが Excel intelliSense に表示されます。 および `dimensionality` 子プロパティは、この表で前述した `result` オブジェクトの子プロパティと同じです。`type` |
 | `options` | Excel がいつどのように関数を実行するのかについて、いくつかの機能をカスタマイズできるようになります。 このプロパティの使用方法の詳細については、この記事で後述する「[ストリーム関数](#streamed-functions)」および「[キャンセル](#canceling-a-function)」を参照してください。 |
 
@@ -214,7 +214,7 @@ function incrementValue(increment, handler){
 
 ## <a name="saving-and-sharing-state"></a>状態の保存と共有
 
-カスタム関数は、JavaScript のグローバル変数にデータを保存できます。 後続の呼び出しでは、カスタム関数はこれらの変数に保存されている値を使用できます。 保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を追加する場合に便利です。 たとえば、同じ Web リソースへの追加呼び出しを避けるために、呼び出しから返されたデータを Web リソースに保存することができます。
+カスタム関数では、JavaScript のグローバル変数にデータを保存できます。 後続の呼び出しでは、カスタム関数はこれらの変数に保存されている値を使用できます。 保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を追加する場合に便利です。 たとえば、同じ Web リソースへの追加呼び出しを避けるために、呼び出しから返されたデータを Web リソースに保存することができます。
 
 次のコード サンプルは、 状態をグローバルで保存する前述の温度ストリーミング関数の実装を示しています。 このコードについては、次の点に注意してください。
 
@@ -273,14 +273,13 @@ function secondHighest(values){
  }
 ```
 
-## <a name="handling-errors"></a>エラー処理
+## <a name="handling-errors"></a>エラーの処理
 
 カスタム関数を定義するアドインをビルドする場合には、実行時エラーに対処するエラー処理ロジックを含めるようにしてください。 カスタム関数のエラー処理は、[一般的な Excel JavaScript API のエラー処理](excel-add-ins-error-handling.md) と同じです。 以下のコード サンプルでは、`.catch` がコード内で発生するエラーを処理します。
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+    let url = "https://yourhypotheticalapi/comments/" + x;
 
     return fetch(url)
         .then(function (data) {
@@ -297,11 +296,11 @@ function getComment(x) {
 
 ## <a name="known-issues"></a>既知の問題
 
-- ヘルプの URL とパラメーターの説明は、Excel ではまだ使用されていません。
+- ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。
 - カスタム機能は現在、モバイル クライアント用の Excel では使用できません。
 - 揮発性関数（スプレッドシート内の無関係なデータが変更されたときに自動的に再計算する関数）はまだサポートされていません。
 - Office 365 管理ポータルと AppSource による展開はまだ有効になっていません。
-- Excel Online のカスタム関数は、一定期間使用しないとセッション中に機能しなくなることがあります。 ブラウザページを更新 (F5) し、カスタム関数を再入力して機能を復元します。
+- Excel Online のカスタム関数は、一定期間使用しないとセッション中に機能しなくなることがあります。 ブラウザページを更新（F5）し、カスタム関数を再入力して機能を復元します。
 - Excel for Windows で実行されている複数のアドインがある場合には、ワークシートのセル内に **#GETTING_DATA** の一時的な結果が表示される場合があります。 すべての Excel ウィンドウを閉じて、Excel を再起動します。
 - 将来的には、カスタム関数用のデバッグ ツールが利用可能となる可能性があります。 それまでは、F12 開発者ツールを使用して Excel オンラインでデバッグできます。 詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)」を参照してください。
 

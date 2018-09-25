@@ -2,12 +2,12 @@
 title: Office ライブラリ用の最新 JavaScript API、およびバージョン 1.1 のアドイン マニフェスト スキーマへの更新
 description: Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 12/04/2017
-ms.openlocfilehash: c597c7456da2749d1061ab3e2c5bf9f41800a9cf
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: e58239a4e67871eb955d7fc205e26d0eb95af327
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944399"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004939"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Office ライブラリ用の最新 JavaScript API、およびバージョン 1.1 のアドイン マニフェスト スキーマへの更新
 
@@ -59,7 +59,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
     ```
 
    > [!NOTE] 
-   > CDN URL で `/1/`  の前にある `office.js`  は、Office.js のバージョン 1 内で最新の増分リリースを使用するように指定します。   
+   > CDN URL  `/1/`  の前にある `office.js`  は、Office.js のバージョン 1 内で最新の増分リリースを使用するように指定します。   
 
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>プロジェクト内のマニフェスト ファイルがバージョン 1.1 のスキーマを使用するように更新する
@@ -69,7 +69,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -78,7 +78,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 ```
 
 > [!NOTE] 
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js) 要素と [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** と **Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js) と [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js) 要素または [Requirementsと Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -103,7 +103,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
     ```
 
    > [!NOTE] 
-   > CDN URL で `/1/`  の前にある `office.js`  は、Office.js のバージョン 1 内で最新の増分リリースを使用するように指定します。   
+   > CDN URL  `/1/`  の前にある `office.js`  は、Office.js のバージョン 1 内で最新の増分リリースを使用するように指定します。   
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>プロジェクト内のマニフェスト ファイルがバージョン 1.1 のスキーマを使用するように更新する
 
@@ -112,7 +112,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -121,7 +121,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 ```
 
 > [!NOTE] 
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と **Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js) 要素と [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** と **Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js) と [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js) 要素または [Requirementsと Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
     
 
 ## <a name="see-also"></a>関連項目

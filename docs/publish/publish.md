@@ -1,13 +1,13 @@
 ---
-title: Office アドインを展開し、発行する
-description: ''
+title: Office アドインを展開し発行する| Microsoft Docs
+description: テストまたはユーザーへの配布用にOffice アドインを展開するメソッドとオプション
 ms.date: 01/23/2018
-ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ada786ed7ded1f34d564389c09c2cd5c25c2a331
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944341"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004932"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
@@ -37,7 +37,7 @@ ms.locfileid: "23944341"
 | 作業ウィンドウ       | X           | X                       | X          | X                    |
 | コマンド         | X           | X                       | X          |                      |
 
-* SharePoint カタログは、Office 2016 for Mac をサポートしません。
+* SharePoint カタログは、Office for Mac をサポートしません。
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Outlook アドインの展開オプション
 
@@ -48,7 +48,7 @@ ms.locfileid: "23944341"
 
 ## <a name="deployment-methods"></a>展開方法
 
-次からの各セクションでは、組織内のユーザーに Office アドインを配布する際に最も一般的に使用される展開方法についての追加情報を示します。
+次の各セクションでは、組織内のユーザーに Office アドインを配布する際に最も一般的に使用される展開方法についての追加情報を示します。
 
 エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)」を参照してください。
 
@@ -65,7 +65,7 @@ SharePoint アドイン カタログは、Word、Excel、PowerPoint のアドイ
 オンプレミス環境でアドインを展開する場合は、SharePoint カタログを使用します。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、Office for Mac をサポートしません。Office アドインを Mac クライアントに展開するには、それを [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) に提出する必要があります。 
+> * SharePoint カタログは、Office for Mac をサポートしません。 Mac クライアントに Office のアドインを展開するに [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)に送信する必要があります。 
 
 ### <a name="outlook-add-in-deployment"></a>Outlook アドインの展開
 

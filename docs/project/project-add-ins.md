@@ -2,12 +2,12 @@
 title: Project 用の作業ウィンドウ アドイン
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f8e36e157ce78f4c93dc192c42c997e5f022a4d2
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ae9353d62923f4ac0a914f578948b3434fd9b178
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945772"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005023"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -77,7 +77,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -115,7 +115,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -204,7 +204,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
-- [Office用JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 用の作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

@@ -2,12 +2,12 @@
 title: Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 54e14f27f7acc9c61e613e834ff0dff0d466e916
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: cb4bb003966639fd5518fefcd3983ee9ca2fb101
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945499"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005016"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
@@ -121,7 +121,7 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 
 多くの場合、ユーザー設定やアドインの状態など、アドインのカスタム データを保存し、次回、アドインを開いたとき、そのデータにアクセスする必要があります。一般的な Web プログラミング手法を利用し、ブラウザーの Cookie や HTML 5 Web ストレージなど、そのデータを保存できます。あるいは、アドインを Excel、PowerPoint、Word で実行する場合、[Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) オブジェクトのメソッドを使用できます。**Settings** オブジェクトで作成したデータは、アドインを挿入して保存したスプレッドシート、プレゼンテーション、文書に保存されます。このデータは、それを作成したアドインでのみ利用できます。
 
-文書が保存されているサーバーとのやり取りを避けるために、**Settings** オブジェクトを使用して作成されたデータはランタイムでメモリ上で管理されます。過去に保存した設定データがアドインの初期化時にメモリに読み込まれ、そのデータに対する変更は [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) メソッドを呼び出したときにのみ文書に保存されます。内部的に、データはシリアル化された JSON オブジェクト内に名前と値のペアとして保存されます。データのメモリ内コピーに対してアイテムの読み取り、書き込み、および削除を実行するには、[Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) オブジェクトの [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) メソッド、[set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) メソッド、および **remove** メソッドを使用します。次のコード行は、`themeColor` という名前の設定を作成して、その値を 'green' に設定する方法を示しています。
+ドキュメントが保存されているサーバーへのラウンドト リップを避けるために、 **設定** オブジェクトで作成されたデータは実行時にメモリ内で管理されます。 以前に保存したデータはアドインが初期化される時にメモリに読み込まれ、 [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) メソッドを呼び出す時、データが文書のみに保存されます。 内部的には、データはシリアル化された JSON オブジェクトの名前と値のペアとして格納されます。 データのメモリ内コピーからアイテムの読み取り、書き込み、および削除をするには、 **設定**オブジェクトの [取得](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-)、 [設定](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) 、および [削除](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) のメソッドを使用します。 次のコード行は名前の設定を作成する方法を示し `themeColor` '緑' の値を設定します。
 
 
 
@@ -150,7 +150,7 @@ Project データの読み取りの例については、「[テキスト エデ�
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

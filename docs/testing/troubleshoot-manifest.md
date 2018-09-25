@@ -2,12 +2,12 @@
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
 ms.date: 12/04/2017
-ms.openlocfilehash: 19f7caaf1d5482972432aad3d2774d69c75cde76
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: c3eed1a74cf4830556d977e6217a89c1fd016548
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438761"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004953"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -57,9 +57,9 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in-manifest"></a>ランタイム ログを使用して、アドイン マニフェストをデバッグする
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>ランタイム ログを使用して、アドインをデバッグする 
 
-ランタイムのログを使用して、アドインのマニフェストをデバッグできます。この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。ランタイムのログは、アドイン コマンドを実装するアドインのデバッグに特に有効です。  
+アドインのマニフェストといくつかのインストール エラーをデバッグするのに、実行時のログを使用できます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイムのログは、アドイン コマンドおよびExcel関数を実装するアドインのデバッグに特に有効です。   
 
 > [!NOTE]
 > ランタイムのログ機能は現在、Office 2016 デスクトップで利用可能です。
@@ -73,7 +73,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 1. Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。 
 
-2. `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。 
+2. の下に `RuntimeLogging` レジストリ キーを追加します。`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` 
 
 3. キーの既定値にログを書き込むファイルの完全なパスを設定します。例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。 
 
@@ -110,7 +110,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 - SolutionId が含まれていないメッセージ "`Unexpected Add-in is missing required manifest fields DisplayName`" は、多くの場合、エラーはデバッグ対象のアドインと関係ありません。 
 
-- `Monitorable` メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。 
+- メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。`Monitorable` 
 
 ## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -119,10 +119,10 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 #### <a name="for-windows"></a>Windows の場合:
 フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除します。
 
-#### <a name="for-mac"></a>Mac の場合: 
+#### <a name="for-mac"></a>Mac の場合:
 フォルダー `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除します。
 
-#### <a name="for-ios"></a>iOS の場合: 
+#### <a name="for-ios"></a>iOS の場合:
 アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
 
 ## <a name="see-also"></a>関連項目

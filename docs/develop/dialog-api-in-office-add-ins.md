@@ -2,12 +2,12 @@
 title: Office アドインでダイアログ API を使用する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 148f4b564169e62f6444e87074c45cb8e4ce5c63
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062138"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005058"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
-> - ダイアログ リソースのドメインは、ホスト ページのドメインと同じです。これは、作業ウィンドウまたはアドインのコマンドの [関数のファイル](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) 内のページで、必須です。ページ、コント ローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインである必要があります。
+> - ダイアログ リソースのドメインは、作業ウィンドウまたはアドインのコマンドの [関数のファイル](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) 内のページは、[ホスト] ページのドメインと同じです。 ページ、コント ローラーのメソッド、またはその他のリソースに渡される、 `displayDialogAsync` メソッドは、ホスト ページと同じドメインである必要があります。
 
 > [!IMPORTANT]
 > ホスト ページとダイアログ ボックスのリソースには、同じ、完全なドメインがある場合があります。 アドインのドメインのサブドメインに`displayDialogAsync` を渡そうとする場合、それは動作しなくなります。 任意のサブドメインを含む完全なドメインが一致する必要があります。
@@ -318,7 +318,7 @@ function processDialogEvent(arg) {
 ホスト ページがダイアログ ボックスに情報を渡す必要がある場合もあります。これは主に 2 つの方法で実行することができます。
 
 - に渡される URL にクエリ パラメーターを追加します。`displayDialogAsync`
-- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](http://www.w3schools.com/html/html5_webstorage.asp)を共有します。
+- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。
 
 ### <a name="use-local-storage"></a>ローカル ストレージの使用
 

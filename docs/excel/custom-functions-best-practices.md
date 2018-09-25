@@ -2,12 +2,12 @@
 ms.date: 09/20/2018
 description: Excel のカスタム関数のベスト プラクティスと推奨パターンについて説明します。
 title: カスタム関数のベスト プラクティス
-ms.openlocfilehash: 3934910c397aea348c4fe2d7f95f1dc20ebeb4d3
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.openlocfilehash: 4fe0ddc36ce1b08ea360bb556121e76cd57c3823
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985789"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004911"
 ---
 # <a name="custom-functions-best-practices"></a>カスタム関数のベスト プラクティス
 
@@ -15,11 +15,11 @@ ms.locfileid: "24985789"
 
 ## <a name="error-handling"></a>エラー処理
 
-カスタム関数を定義するアドインを作成する場合は、実行時エラーに対処するエラー処理ロジックを含めてください。 カスタム関数のエラー処理は、[一般的な Excel JavaScript API のエラー処理](excel-add-ins-error-handling.md) と同じです。 次のコード サンプルでは、`.catch` がコード内で発生するエラーを処理します。
+カスタム関数を定義するアドインを作成する場合は、実行時エラーに対処するエラー処理ロジックを含めてください。 カスタム関数のエラー処理は、[一般的な Excel JavaScript API のエラー処理](excel-add-ins-error-handling.md) と同じです。 以下のコード サンプルでは、`.catch` がコード内で発生するエラーを処理します。
 
 ```js
 function getComment(x) {
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x; 
+    let url = "https://yourhypotheticalapi.com/comments/" + x; 
     return fetch(url)
         .then(function (data) {
             return data.json();
@@ -33,22 +33,13 @@ function getComment(x) {
 }
 ```
 
-## <a name="error-logging"></a>エラー ログ
-
-カスタム関数のエラーログは、次のような複数の方法で有効にすることができます。 
-
-- アドインの XML マニフェスト ファイルをデバッグするために、[ 実行時ログを使用する](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in-manifest)。 
-
-- カスタム関数内の `console.log` 文を使用し、コンソールにリアルタイムに出力を送信する。
-
-> [!NOTE]
-> 現時点では、実行時ログ機能は Office 2016 デスクトップでのみ利用可能です。
-
 ## <a name="debugging"></a>デバッグ
-
-現時点で Excel カスタム関数をデバッグするための最良の方法は、Excel Online 内でアドインを最初に[サイドロード](../testing/sideload-office-add-ins-for-testing.md)することです。  [お使いのブラウザーにネイティブの F12 デバッグ ツール](../testing/debug-add-ins-in-office-online.md)を使用して、カスタム関数をデバッグできます。
+現時点で Excel カスタム関数をデバッグするための最良の方法は、[ Excel Online ](../testing/sideload-office-add-ins-for-testing.md) 内でアドインを最初に** サイドロード** することです。 [お使いのブラウザーにネイティブの F12 デバッグ ツール](../testing/debug-add-ins-in-office-online.md)を使用して、カスタム関数をデバッグできます。 カスタム関数内の `console.log` 文を使用し、コンソールにリアルタイムに出力を送信する。
 
 アドインの登録に失敗した場合は、アドイン アプリケーションをホストしている Web サーバーに、 [SSL 証明書が正しく構成されていることを確認してください](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) 。
+
+Office 2016 のデスクトップで、アドインをテストする場合、いくつかのインストールと実行時の条件と同様に、追加の XML マニフェスト ファイルの問題をデバッグする [実行時のログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) を有効にできます。 
+
 
 ## <a name="mapping-names"></a>名前のマッピング
 
@@ -85,6 +76,6 @@ CustomFunctionsMappings = {
 
  ## <a name="see-also"></a>関連項目
 
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
-* [Excel のカスタム関数のランタイム](custom-functions-runtime.md)
+- [Excel でカスタム関数を作成する](custom-functions-overview.md)
+- [カスタム関数のメタデータ](custom-functions-json.md)
+- [Excel のカスタム関数のランタイム](custom-functions-runtime.md)

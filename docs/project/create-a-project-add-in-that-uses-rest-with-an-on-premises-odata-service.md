@@ -2,12 +2,12 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 462b151a12c7c19f445e86bf59af633b699e7e60
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945709"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005037"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -46,8 +46,8 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
         <service xml:base="http://myserver/pwa/_api/ProjectData/" 
-        xmlns="http://www.w3.org/2007/app" 
-        xmlns:atom="http://www.w3.org/2005/Atom">
+        xmlns="https://www.w3.org/2007/app" 
+        xmlns:atom="https://www.w3.org/2005/Atom">
         <workspace>
             <atom:title>Default</atom:title>
             <collection href="Projects">
@@ -103,7 +103,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
     Visual Studio によって、**HelloProjectOdata** プロジェクトと **HelloProjectODataWeb** プロジェクトが作成されます。
     
-[ **AddIn**] フォルダー (次のスクリーンショットを参照) には、カスタム CSS スタイルの App.css ファイルが含まれています。 [ **Home**] サブフォルダーの Home.html ファイルには、CSS ファイルへの参照とアドインが使用する JavaScript ファイル、およびアドインの HTML5 コンテンツが含まれています。また、Home.js ファイルは、カスタムの JavaScript コード用のファイルです。[ **Scripts**] フォルダーには、jQuery ライブラリ ファイルが含まれています。[ **Office**] サブフォルダーには、office.js や project-15.js などの JavaScript ライブラリ、および Office アドインの標準文字列の言語ライブラリが含まれます。[ **Content**] フォルダーの Office.css ファイルには、すべての Office アドインの既定のスタイルが含まれます。
+ **アドイン** フォルダーには、カスタムの CSS スタイルの App.css ファイルが含まれています (次のスクリーン ショットを参照してください)。  **ホーム** のサブフォルダー内の、Home.html ファイルには、CSS ファイルとアドインを使用している JavaScript ファイル、およびアドインの HTML5 のコンテンツへの参照が含まれています。 また、Home.js ファイルは、カスタムの JavaScript コード用です。  **Scripts** フォルダーには、jQuery ライブラリのファイルが含まれています。  **Office** のサブフォルダーには、Office アドインでの office.js などプロジェクトの 15.js、JavaScript ライブラリと標準の文字列の言語のライブラリが含まれています。 **コンテンツ** フォルダーで Office.css ファイルには、Office のアドインのすべての既定のスタイルが含まれます。
 
 *図 4. ソリューション エクスプローラーでの既定の Web プロジェクト ファイルの表示*
 
@@ -139,7 +139,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>

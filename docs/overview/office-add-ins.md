@@ -1,13 +1,13 @@
 ---
-title: Office アドイン プラットフォームの概要
-description: ''
+title: Office アドインのプラットフォームの概要 | Microsoft Docs
+description: Office アドインで、HTML、CSS、JavaScript などの一般的な Web テクノロジーを使用し、Word、Excel、PowerPoint、OneNote、Project、および Outlookを拡張して対話操作することができます。
 ms.date: 01/23/2018
-ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 4249e675f4f6a0371e13c5933b3277e7e38841d0
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925277"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004981"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -41,7 +41,7 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 *図1. アドイン マニフェスト (XML) + Web ページ (HTML、JS) = Office アドイン*
 
-![マニフェストと Web ページから構成される Office アドイン](../images/about-addins-manifestwebpage.png)
+![Office アドインはマニフェストと Web ページによって構成される](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>マニフェスト 
 
@@ -93,7 +93,7 @@ Office アドインは、Office ホスト アプリケーション内で次を�
 
 *図 4. 作業ウィンドウ*
 
-![作業ウィンドウ](../images/about-addins-taskpane.png)
+![アドイン コマンドの他の作業ウィンドウを使用します。](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する 
 
@@ -109,7 +109,7 @@ Excel および PowerPoint のドキュメント内に、コンテンツ アド�
 
 *図 5. コンテンツ アドイン*
 
-![コンテンツ アドイン](../images/about-addins-contentaddin.png)
+![コンテンツのアドインと呼ばれる web ベースのオブジェクトを埋め込む](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API 
 

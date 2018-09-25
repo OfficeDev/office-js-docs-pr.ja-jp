@@ -2,12 +2,12 @@
 title: Angular で Office アドインを開発する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6ce0080bcff67956665cf25f45df8c598b781538
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944558"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004974"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -82,7 +82,7 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する
 
-Office のアドインの Dialog API を使えば、アドインは、メイン ページと情報をやり取りできるセミモーダル ダイアログ ボックスでページを開けることができます。通常、これは作業ウィンドウにあります。 
+Office アドインのダイアログ API を使えば、アドインは、メイン ページと情報をやり取りできるセミモーダル ダイアログ ボックスでページを開けることができます。通常、これは作業ウィンドウにあります。 
 
 [DisplayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 
@@ -111,7 +111,7 @@ export class MyComponent {
 
 Angular は RxJS (JavaScript の事後対応型の拡張機能) を使用し、RxJS は `Observable` と `Observer` のオブジェクトを導入して非同期処理を実装します。このセクションでは、`Observables` の使い方についての概要を簡単に紹介しています。さらに詳細な情報については、[RxJS](http://reactivex.io/rxjs/) の公式ドキュメントを参照してください。
 
-は、ある意味で `Promise` オブジェクトに似ています。非同期の呼び出しからすぐに返されますが、すぐには解決されない可能性があります。しかし、`Promise` は、単一の値 (配列オブジェクトのことがあります) なのに対し、`Observable` は、オブジェクトの配列 (メンバーが 1 つだけの可能性あり) です。そのため、コードで `concat`、`map`、`filter` などの[配列メソッド](http://www.w3schools.com/jsref/jsref_obj_array.asp)を `Observable` オブジェクトで呼び出すことができます。`Observable` 
+は、ある意味で `Promise` オブジェクトに似ています。非同期の呼び出しからすぐに返されますが、すぐには解決されない可能性があります。しかし、`Promise` は、単一の値 (配列オブジェクトのことがあります) なのに対し、`Observable` は、オブジェクトの配列 (メンバーが 1 つだけの可能性あり) です。そのため、コードで `concat`、`map`、`filter` などの[配列メソッド](https://www.w3schools.com/jsref/jsref_obj_array.asp)を `Observable` オブジェクトで呼び出すことができます。`Observable` 
 
 ### <a name="pushing-instead-of-pulling"></a>プルではなくプッシュ
 

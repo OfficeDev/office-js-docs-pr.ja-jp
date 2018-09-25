@@ -3,7 +3,7 @@
     > [!NOTE]
     > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
 
-- Office 2016 またはそれ以降
+- Office 2016 以降
     
     > [!NOTE]
-    > まだ Office 2016 を所持していない場合は、[1 か月間無料試用版の登録](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)が可能です。
+    > まだ Office を所持していない場合は、[1 か月間無料試用版の登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)が可能です。

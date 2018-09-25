@@ -2,12 +2,12 @@
 title: Office アドインの XML マニフェスト
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b2e0db2712ecfcd9e7df740548968c91ff1c1af2
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944933"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004988"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -93,7 +93,7 @@ _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で�
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
-すべて URI などに使用されるイメージ [ のアドインのコマンド ][] は、キャッシュをサポートする必要があります。イメージをホストするサーバーを返さないでください、 `Cache-Control` ヘッダーを指定する `no-cache`、 `no-store`、 または HTTP 応答のようなオプションです。
+[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
 
 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -118,7 +118,7 @@ Office Onlineで実行している場合、作業ウィンドウは任意の URL
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -144,7 +144,7 @@ Office Onlineで実行している場合、作業ウィンドウは任意の URL
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
 <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -343,7 +343,7 @@ Office Onlineで実行している場合、作業ウィンドウは任意の URL
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -380,7 +380,7 @@ Office Onlineで実行している場合、作業ウィンドウは任意の URL
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
