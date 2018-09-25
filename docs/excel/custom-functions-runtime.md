@@ -2,20 +2,20 @@
 ms.date: 09/20/2018
 description: Excel のカスタム関数は、標準のアドインの WebView コントロールのランタイムと異なる、新しい JavaScript ランタイムを使用します。
 title: Excel のカスタム関数のランタイム
-ms.openlocfilehash: d31002096fccd682c0f2a23a8b43249af5d4df8f
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24068824"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985796"
 ---
-# <a name="runtime-for-excel-custom-functions"></a>Excel のカスタム関数のランタイム
+# <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
 カスタム関数は、web ブラウザーではなく、サンドボックス JavaScript エンジンを使用する新しい JavaScript ランタイムを使用して、Excel の機能を拡張します。 カスタム関数は UI 要素をレンダリングする必要がなく、新しい JavaScript のランタイムは計算に最適化されているため、何千ものカスタム関数を同時に実行できます。
 
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>新しい JavaScript ランタイムに関する重要な事実 
 
-アドイン内のカスタム関数だけが、この記事で説明する新しい JavaScript ランタイムを使用します。 カスタム関数に加え、作業ウィンドウや他の UI 要素など他のコンポーネントがアドインに含まれる場合、アドインのこれら他のコンポーネントは、ブラウザーのような WebView ランタイムで引き続き実行されます。  さらに、次の特徴を備えています。 
+アドイン内のカスタム関数だけが、この記事で説明する新しい JavaScript ランタイムを使用します。 カスタム関数に加え、作業ウィンドウや他の UI 要素など他のコンポーネントがアドインに含まれる場合、アドインのこれら他のコンポーネントは、ブラウザーのような WebView ランタイムで引き続き実行されます。  さらに: 
 
 - JavaScript ランタイムは、ドキュメント オブジェクト モデル (DOM)、または DOM に依存している jQuery のようなサポート ライブラリ へのアクセスを行いません。
 
@@ -36,7 +36,7 @@ ms.locfileid: "24068824"
 
 XHR は [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を表し、これはサーバーと対話する HTTP 要求を発行する標準的な web API です。 新しい JavaScript ランタイムでは、XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。  
 
-次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。  `sendWebRequest()`関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。  
+次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。 関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。`sendWebRequest()`  
 
 ```js
 function getTemperature(thermometerID) {
@@ -88,7 +88,7 @@ AsyncStorage は、認証トークンを格納するために使用するキー�
 
 AsyncStorage は、アドイン内のすべての部分にグローバルに利用できます。 カスタム関数では、 `AsyncStorage` は、グローバル オブジェクトとして公開されます。 (WebView ランタイムを使用する作業ウィンドウおよびその他の要素などのアドインの他の部分では、`OfficeRuntime` を通じて AsyncStorage が公開されます。) 各アドインは、既定サイズが 5 MB の独自のストレージ パーティションを持ちます。 
 
- `AsyncStorage` オブジェクトでは、以下の方法が利用可能です。
+オブジェクトでは、以下の方法が利用可能です。`AsyncStorage`
  
  - `getItem`
  - `setItem`

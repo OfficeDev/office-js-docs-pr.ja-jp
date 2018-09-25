@@ -1,13 +1,13 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、および OneNote のサポートされる要件セット。
-ms.date: 09/19/2018
-ms.openlocfilehash: 09fb72c88bd0496c413f94b7ba4149192380d664
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.date: 09/24/2018
+ms.openlocfilehash: b06602e35ec906866ad16d667036a4cbaff2d89e
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967705"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985824"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -46,11 +46,11 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - ファイル<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - Selection<br>
-        - Settings<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -66,12 +66,12 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - ファイル<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - Selection<br>
-        - Settings<br>
+        - 選択<br>
+        - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -93,11 +93,38 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - ファイル<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - Selection<br>
+        - 選択<br>
+        - 設定<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Windows 用 Office 2019</td>
+    <td>- 作業ウィンドウ<br>
+        - コンテンツ<br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- BindingEvents<br>
+        - CompressedFile<br>
+        - DocumentEvents<br>
+        - ファイル<br>
+        - ImageCoercion<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - 選択<br>
         - 設定<br>
         - TableBindings<br>
         - TableCoercion<br>
@@ -119,7 +146,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - ファイル<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -146,7 +173,35 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - ファイル<br>
+        - ImageCoercion<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - PdfFile<br>
+        - 選択<br>
+        - 設定<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Mac 用 Office 2019</td>
+    <td>- 作業ウィンドウ<br>
+        - コンテンツ<br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- BindingEvents<br>
+        - CompressedFile<br>
+        - DocumentEvents<br>
+        - ファイル<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -211,6 +266,20 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td>使用不可</td>
   </tr>
   <tr>
+    <td>Windows 用 Office 2019</td>
+    <td> - メールの読み取り<br>
+      - メールの作成<br>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
+      - モジュール</td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+    <td>使用不可</td>
+  </tr>
+  <tr>
     <td>iOS 用 Office</td>
     <td> - メールの読み取り<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -223,6 +292,19 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
   </tr>
   <tr>
     <td>Mac 用 Office 2016</td>
+    <td> - メールの読み取り<br>
+      - メールの作成<br>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+    <td>使用不可</td>
+  </tr>
+  <tr>
+    <td>Mac 用 Office 2019</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -336,6 +418,33 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - TextFile </td>
   </tr>
   <tr>
+    <td>Windows 用 Office 2019</td>
+    <td> - 作業ウィンドウ<br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXMLParts<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
+         - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextCoercion<br>
+         - TextFile </td>
+  </tr>
+  <tr>
     <td>iOS 用 Office</td>
     <td> - 作業ウィンドウ</td>
     <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -390,6 +499,34 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - TextCoercion<br>
          - TextFile </td>
   </tr>
+  <tr>
+    <td>Mac 用 Office 2019</td>
+    <td> - 作業ウィンドウ<br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+</td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXMLParts<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
+         - OoxmlCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextCoercion<br>
+         - TextFile </td>
+  </tr>
 </table>
 
 <br/>
@@ -413,7 +550,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -430,7 +567,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -446,7 +583,23 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Windows 用 Office 2019</td>
+    <td> - コンテンツ<br>
+         - 作業ウィンドウ<br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - ActiveView<br>
+         - CompressedFile<br>
+         - DocumentEvents<br>
+         - ファイル<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
@@ -477,7 +630,23 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - ファイル<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - 選択<br>
+         - 設定<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Mac 用 Office 2019</td>
+    <td> - コンテンツ<br>
+         - 作業ウィンドウ<br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - ActiveView<br>
+         - CompressedFile<br>
+         - DocumentEvents<br>
+         - ファイル<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - 選択<br>
