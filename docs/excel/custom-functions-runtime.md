@@ -1,17 +1,19 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Excel のカスタム関数は、標準のアドインの WebView コントロールのランタイムと異なる、新しい JavaScript ランタイムを使用します。
-title: Excel のカスタム関数のランタイム
-ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Excel カスタム関数のランタイム
+ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985796"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348760"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
-カスタム関数は、web ブラウザーではなく、サンドボックス JavaScript エンジンを使用する新しい JavaScript ランタイムを使用して、Excel の機能を拡張します。 カスタム関数は UI 要素をレンダリングする必要がなく、新しい JavaScript のランタイムは計算に最適化されているため、何千ものカスタム関数を同時に実行できます。
+カスタム関数は、Web ブラウザではなく、サンドボックス JavaScript エンジンを使用する新しい JavaScript ランタイムを使用して、Excel の機能を拡張します。 カスタム関数は UI 要素をレンダリングする必要がなく、新しい JavaScript のランタイムは計算に最適化されているため、何千ものカスタム関数を同時に実行できます。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>新しい JavaScript ランタイムに関する重要な事実 
 
@@ -28,7 +30,7 @@ ms.locfileid: "24985796"
 カスタム関数で使用されている JavaScript のランタイムには、次の API があります。
 
 - [XHR](#xhr)
-- [WebSocket](#websockets)
+- [WebSockets](#websockets)
 - [AsyncStorage](#asyncstorage)
 - [ダイアログ API](#dialog-api)
 
@@ -36,7 +38,7 @@ ms.locfileid: "24985796"
 
 XHR は [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を表し、これはサーバーと対話する HTTP 要求を発行する標準的な web API です。 新しい JavaScript ランタイムでは、XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。  
 
-次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。 関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。`sendWebRequest()`  
+次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。 `sendWebRequest()`関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。  
 
 ```js
 function getTemperature(thermometerID) {
@@ -68,7 +70,7 @@ function sendWebRequest(thermometerID, data) {
 
 次のコード サンプルに示すように、カスタム関数は Websocket を使用できます。 この例では、WebSocket は、受信した各メッセージを記録します。
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -88,7 +90,7 @@ AsyncStorage は、認証トークンを格納するために使用するキー�
 
 AsyncStorage は、アドイン内のすべての部分にグローバルに利用できます。 カスタム関数では、 `AsyncStorage` は、グローバル オブジェクトとして公開されます。 (WebView ランタイムを使用する作業ウィンドウおよびその他の要素などのアドインの他の部分では、`OfficeRuntime` を通じて AsyncStorage が公開されます。) 各アドインは、既定サイズが 5 MB の独自のストレージ パーティションを持ちます。 
 
-オブジェクトでは、以下の方法が利用可能です。`AsyncStorage`
+`AsyncStorage` オブジェクトでは、以下の方法が利用可能です。
  
  - `getItem`
  - `setItem`
@@ -104,7 +106,7 @@ AsyncStorage は、アドイン内のすべての部分にグローバルに利�
 
 次のコード サンプルは、ストレージから値を取得するために `AsyncStorage.getItem` を呼び出します。
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -130,11 +132,11 @@ _goGetData = async () => {
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -211,3 +213,4 @@ function getStock (ticker) {
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
+* [Excel カスタム関数のチュートリアル](excel-tutorial-custom-functions.md)
