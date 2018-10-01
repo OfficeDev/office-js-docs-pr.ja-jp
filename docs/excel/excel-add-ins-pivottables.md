@@ -2,20 +2,20 @@
 title: Excel の JavaScript API を使用してピボット テーブルで作業します
 description: Excel JavaScript API を使用してピボットテーブルを作成し、そのコンポーネントと対話します。
 ms.date: 09/21/2018
-ms.openlocfilehash: b8704389ced3686858f488b2a50f80c22b1b8bd6
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: 7178ae0d578e9f52bd9590c764c488c7fa4d2b43
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967670"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348185"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用してピボット テーブルで作業します
 
 ピボット テーブルより大きなデータ セットを合理化します。 グループ化されたデータのクイック操作が可能です。 Excel の JavaScript API では、アドインにピボット テーブルを作成させ、それらのコンポーネントと対話することができます。 
 
-ピボット テーブルの機能に慣れていない場合は、エンド ユーザーとしてこれらの操作を検討してください。 これらのツールの良い入門書については、[ピボットテーブルを作成してワークシートのデータを分析する ](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を参照してください。 
+ピボット テーブルの機能に慣れていない場合は、エンド ユーザーとしてこれらの調査を検討してください。これらのツールの適切な入門書には、 [ワークシートのデータを分析するピボット テーブルの作成](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を参照してください。 
 
-この資料では、一般的なシナリオのコード サンプルを提供します。 ピボットテーブルAPI の理解をさらに深めるには、 [**ピボットテーブルを**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) と [**ピボットテーブルコレクション**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable)を参照してください。
+この記事では、一般的なシナリオのコード サンプルを提供します。 ピボットテーブルAPI の理解をさらに深めるには、 [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) と [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable)を参照してください。
 
 > [!IMPORTANT]
 > OLAP で作成されたピボット テーブルは、現在サポートされていません。
