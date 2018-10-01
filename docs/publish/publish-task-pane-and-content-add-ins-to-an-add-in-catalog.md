@@ -2,104 +2,107 @@
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 description: Office アドインを組織内のユーザーにアクセスできるようにするには、自分の組織のために追加でカタログを Office アドイン マニフェスト ファイルをアップロードできます。
 ms.date: 01/23/2018
-ms.openlocfilehash: 2d1328b9944366d063934ff5781029beccfc82c8
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 5ba6a54c4540f79c65082cd7de3b76f300831341
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944847"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348122"
 ---
-# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a><span data-ttu-id="f7868-103">作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する</span><span class="sxs-lookup"><span data-stu-id="f7868-103">Publish task pane and content add-ins to a SharePoint catalog</span></span>
+# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a><span data-ttu-id="83ec0-103">作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する</span><span class="sxs-lookup"><span data-stu-id="83ec0-103">Publish task pane and content add-ins to a SharePoint catalog</span></span>
 
-<span data-ttu-id="f7868-p101">アドイン カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアドイン カタログに Office アドインのマニフェスト ファイルをアップロードできます。管理者がアドイン カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。</span><span class="sxs-lookup"><span data-stu-id="f7868-p101">An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.</span></span>
+<span data-ttu-id="83ec0-p101">アドイン カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアドイン カタログに Office アドインのマニフェスト ファイルをアップロードできます。管理者がアドイン カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-p101">An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.</span></span>
 
 > [!IMPORTANT]
-> - <span data-ttu-id="f7868-106">SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="f7868-106">Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../develop/add-in-manifests.md), such as add-in commands.</span></span>
-> - <span data-ttu-id="f7868-107">クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインの発行に [Office 365 管理センターからの一元展開を使用する](../publish/centralized-deployment.md)ことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f7868-107">If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.</span></span>
-> - <span data-ttu-id="f7868-108">SharePoint カタログは Office 2016 for Mac ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="f7868-108">SharePoint catalogs are not supported for Office 2016 for Mac.</span></span> <span data-ttu-id="f7868-109">Mac クライアントに Office のアドインを配置するに [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)に送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f7868-109">To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).</span></span>   
+> - <span data-ttu-id="83ec0-106">SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="83ec0-106">Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../develop/add-in-manifests.md), such as add-in commands.</span></span>
+> - <span data-ttu-id="83ec0-107">クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインの発行に [Office 365 管理センターからの一元展開を使用する](../publish/centralized-deployment.md)ことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="83ec0-107">If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.</span></span>
+> - <span data-ttu-id="83ec0-108">SharePoint カタログは Office 2016 for Mac ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="83ec0-108">SharePoint catalogs are not supported for Office 2016 for Mac.</span></span> <span data-ttu-id="83ec0-109">Mac クライアントに Office のアドインを配置するに [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)に送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="83ec0-109">To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).</span></span>   
 
-## <a name="set-up-an-add-in-catalog"></a><span data-ttu-id="f7868-110">アドイン カタログのセットアップ</span><span class="sxs-lookup"><span data-stu-id="f7868-110">Set up an add-in catalog</span></span>
+## <a name="set-up-an-add-in-catalog"></a><span data-ttu-id="83ec0-110">アドイン カタログのセットアップ</span><span class="sxs-lookup"><span data-stu-id="83ec0-110">Set up an add-in catalog</span></span>
 
-<span data-ttu-id="f7868-111">次のいずれかのセクションに示す手順を完了して、SharePoint または Office 365 にアドイン カタログをセットアップします。</span><span class="sxs-lookup"><span data-stu-id="f7868-111">Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.</span></span>
+<span data-ttu-id="83ec0-111">次のいずれかのセクションに示す手順を完了して、SharePoint または Office 365 にアドイン カタログをセットアップします。</span><span class="sxs-lookup"><span data-stu-id="83ec0-111">Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.</span></span>
 
-### <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a><span data-ttu-id="f7868-112">SharePoint 上でアドイン カタログをセットアップするには</span><span class="sxs-lookup"><span data-stu-id="f7868-112">To set up an add-in catalog on SharePoint</span></span>
+### <a name="to-set-up-an-add-in-catalog-for-on-premises-sharepoint"></a><span data-ttu-id="83ec0-112">オンプレミスの SharePoint 上でアドイン カタログをセットアップするには</span><span class="sxs-lookup"><span data-stu-id="83ec0-112">To set up an add-in catalog on SharePoint</span></span>
 
-1. <span data-ttu-id="f7868-113">**中央管理サイト**を参照 (**[スタート]** > **[すべてのプログラム]** > **[Microsoft SharePoint 2013 製品]** > **[SharePoint 2013 サーバーの全体管理]** の順にクリック) します。</span><span class="sxs-lookup"><span data-stu-id="f7868-113">Browse to the  **Central Administration Site** ( **Start** > **All Programs** > **Microsoft SharePoint 2013 Products** > **SharePoint 2013 Central Administration**).</span></span>
-    
-2. <span data-ttu-id="f7868-114">左側の作業ウィンドウで、 [ **アドイン**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-114">In the left task pane, choose  **Add-ins**.</span></span>
-    
-3. <span data-ttu-id="f7868-115">[ **アドイン**] ページの [ **アドイン管理**] で、[ **アドイン カタログの管理**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-115">On the  **Add-ins** page, under **Add-in Management**, choose  **Manage Add-in Catalog**.</span></span>
-    
-4. <span data-ttu-id="f7868-116">[ **アドイン カタログの管理**] ページの  **Web アプリケーション セレクター**で正しい Web アプリケーションが選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="f7868-116">On the  **Manage Add-in Catalog** page, make sure you have the right web application selected in the **Web Application Selector**.</span></span>
-    
-5. <span data-ttu-id="f7868-117">[ **サイトの設定の表示**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-117">Choose  **View site settings**.</span></span>
-    
-6. <span data-ttu-id="f7868-118">[ **サイトの設定**] ページで、[ **サイト コレクション管理者**] を選択してサイト コレクション管理者を指定してから、[ **OK**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-118">On the  **Site Settings** page, choose **Site collection administrators** to specify the site collection administrators, and then choose **OK**.</span></span>
-    
-7. <span data-ttu-id="f7868-119">ユーザーにサイト アクセス許可を付与するには、[ **サイトの権限**] を選択してから、[ **アクセス許可の付与**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-119">To grant site permissions to users, choose  **Site Permissions**, and then choose  **Grant Permissions**.</span></span>
-    
-8. <span data-ttu-id="f7868-120">[ **アプリ カタログ サイトの共有**] ダイアログ ボックスで、1 人以上のサイト ユーザーを指定して、それらに適切なアクセス許可を設定し、必要に応じて他のオプションを設定してから、[  **共有**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-120">In the  **Share 'App Catalog Site'** dialog box, specify one or more site users, set the appropriate permissions for them, optionally set other options, and then choose **Share**.</span></span>
-    
-9. <span data-ttu-id="f7868-121">Office アドインのアドイン カタログにアドインを追加する場合は、**[Office アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-121">To add an add-in to the Office Add-ins add-in catalog, choose **Office Add-ins**.</span></span>
+> [!NOTE]
+> <span data-ttu-id="83ec0-113">オンプレミスの SharePoint の UI は、**アプリケーション**としてアドインから引き続き参照されます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-113">The UI in on-premises SharePoint still refers to add-ins as **apps**.</span></span>
 
-### <a name="to-set-up-an-add-in-catalog-on-office-365"></a><span data-ttu-id="f7868-122">Office 365 でアドイン カタログをセットアップするには</span><span class="sxs-lookup"><span data-stu-id="f7868-122">To set up an add-in catalog on Office 365</span></span>
+1. <span data-ttu-id="83ec0-114"> *\*サーバーの全体管理サイト*\*を参照します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-114">Browse to the SharePoint 2010 Central Administration page.</span></span>
+    
+2. <span data-ttu-id="83ec0-115">左側の作業ウィンドウで、[**アプリ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-115">In the left task pane, choose **Apps**.</span></span>
+    
+3. <span data-ttu-id="83ec0-116">[**アプリ**] ページの [**アプリ管理**] で、[**アプリ カタログの管理**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-116">On the **Apps** page, under **App Management**, choose **Manage App Catalog**.</span></span>
+    
+4. <span data-ttu-id="83ec0-117">[**アプリ カタログの管理**] ページの **Web アプリケーション セレクター**で正しい Web アプリケーションが選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-117">On the **Manage App Catalog** page, make sure you have the right web application selected in the **Web Application Selector**.</span></span>
+    
+5. <span data-ttu-id="83ec0-118">[ **サイトの設定の表示**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-118">Choose  **View site settings**.</span></span>
+    
+6. <span data-ttu-id="83ec0-119">[ **サイトの設定**] ページで、[ **サイト コレクション管理者**] を選択してサイト コレクション管理者を指定してから、[ **OK**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-119">On the  **Site Settings** page, choose **Site collection administrators** to specify the site collection administrators, and then choose **OK**.</span></span>
+    
+7. <span data-ttu-id="83ec0-120">ユーザーにサイト アクセス許可を付与するには、[ **サイトの権限**] を選択してから、[ **アクセス許可の付与**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-120">To grant site permissions to users, choose  **Site Permissions**, and then choose  **Grant Permissions**.</span></span>
+    
+8. <span data-ttu-id="83ec0-121">[ **アプリ カタログ サイトの共有**] ダイアログ ボックスで指定した 1 人以上のサイト ユーザーに適切なアクセス許可を設定し、他のオプションを必要に応じて設定してから、[**共有**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-121">In the  **Share 'App Catalog Site'** dialog box, specify one or more site users, set the appropriate permissions for them, optionally set other options, and then choose **Share**.</span></span>
+    
+9. <span data-ttu-id="83ec0-122">Office アドインのアドイン カタログにアドインを追加する場合は、**[Office アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-122">To add an add-in to the Office Add-ins add-in catalog, choose **Office Add-ins**.</span></span>
 
-1. <span data-ttu-id="f7868-123">[Office 365 管理センター] ページで、 **[管理]**、 **[SharePoint]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="f7868-123">On the Office 365 admin center page, choose  **Admin**, and then choose  **SharePoint**.</span></span>
-    
-2. <span data-ttu-id="f7868-124">左側の作業ウィンドウで、[ **アドイン**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-124">In the left task pane, choose  **add-ins**.</span></span>
-    
-3. <span data-ttu-id="f7868-125">[ **アドイン**] ページで、[ **アドイン カタログ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-125">On the  **add-ins** page, choose **Add-in Catalog**.</span></span>
-    
-4. <span data-ttu-id="f7868-126">[ **アドイン カタログ サイト**] ページで、[ **OK**] を選択して既定のオプションを受け入れ、新しいアドイン カタログ サイトを作成します。</span><span class="sxs-lookup"><span data-stu-id="f7868-126">On the  **Add-in Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.</span></span>
-    
-5. <span data-ttu-id="f7868-127">[ **アドイン カタログ サイト コレクションの作成**] ページで、アドイン カタログ サイトのタイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="f7868-127">On the  **Create Add-in Catalog Site Collection** page, specify the title of your Add-in Catalog site.</span></span>
-    
-6. <span data-ttu-id="f7868-128">Web サイト アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="f7868-128">Specify the web site address.</span></span>
-    
-7. <span data-ttu-id="f7868-p103">[ **記憶域のクォータ**] を可能な限り小さい値に設定します (現在は 110)。このサイト コレクションにはアドイン パッケージだけをインストールしますが、パッケージは非常に小さなものです。</span><span class="sxs-lookup"><span data-stu-id="f7868-p103">Set the  **Storage Quota** to the lowest possible value (currently 110). You will only be installing add-in packages on this site collection and they are very small.</span></span>
-    
-8. <span data-ttu-id="f7868-p104">[ **サーバー リソース クォータ**] を 0 (ゼロ) に設定します。(サーバー リソース クォータは、パフォーマンスが低いサンドボックス ソリューションのスロットルに関連していますが、このアドインのカタログ サイトにはサンドボックス ソリューションをインストールしません。)</span><span class="sxs-lookup"><span data-stu-id="f7868-p104">Set the  **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your add-in catalog site.)</span></span>
-    
-9. <span data-ttu-id="f7868-133">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="f7868-133">Choose  **OK**.</span></span>
-    
-10. <span data-ttu-id="f7868-p105">アドイン カタログ サイトにアドインを追加するために、前の手順で作成したサイトを参照します。左側のナビゲーション ウィンドウで、**[Office アドイン]** を選択して Office アドイン マニフェスト ファイルをアップロードし、**[新規アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-p105">To add an add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.</span></span>
+### <a name="to-set-up-an-add-in-catalog-on-office-365"></a><span data-ttu-id="83ec0-123">Office 365 でアドイン カタログをセットアップする</span><span class="sxs-lookup"><span data-stu-id="83ec0-123">To set up an add-in catalog on Office 365</span></span>
 
-## <a name="publish-an-add-in-to-an-add-in-catalog"></a><span data-ttu-id="f7868-136">アドイン カタログへのアドインの発行</span><span class="sxs-lookup"><span data-stu-id="f7868-136">Publish an add-in to an add-in catalog</span></span>
+1. <span data-ttu-id="83ec0-124">[Office 365 管理センター] ページで、 **[管理]**、 **[SharePoint]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="83ec0-124">On the Office 365 admin center page, choose  **Admin**, and then choose  **SharePoint**.</span></span>
+    
+2. <span data-ttu-id="83ec0-125">左側の作業ウィンドウで、[**アドイン**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-125">In the left task pane, choose  **add-ins**.</span></span>
+    
+3. <span data-ttu-id="83ec0-126">[ **アドイン**] ページで、[ **アドイン カタログ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-126">On the  **add-ins** page, choose **Add-in Catalog**.</span></span>
+    
+4. <span data-ttu-id="83ec0-127">[**アドイン カタログ サイト**] ページで [**OK**] を選択して既定のオプションを受け入れ、新しいアドイン カタログ サイトを作成します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-127">On the  **Add-in Catalog Site** page, choose **OK** to accept the default option and create a new add-in catalog site.</span></span>
+    
+5. <span data-ttu-id="83ec0-128">[ **アドイン カタログ サイト コレクションの作成**] ページで、アドイン カタログ サイトのタイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-128">On the  **Create Add-in Catalog Site Collection** page, specify the title of your Add-in Catalog site.</span></span>
+    
+6. <span data-ttu-id="83ec0-129">Web サイト アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-129">Specify the web site address.</span></span>
+    
+7. <span data-ttu-id="83ec0-p103">[ **記憶域のクォータ**] を可能な限り小さい値に設定します (現在は 110)。このサイト コレクションにはアドイン パッケージだけをインストールしますが、パッケージは非常に小さなものです。</span><span class="sxs-lookup"><span data-stu-id="83ec0-p103">Set the  **Storage Quota** to the lowest possible value (currently 110). You will only be installing add-in packages on this site collection and they are very small.</span></span>
+    
+8. <span data-ttu-id="83ec0-p104">[**サーバー リソース クォータ**] を 0 (ゼロ) に設定します。(サーバー リソース クォータは、パフォーマンスが低いサンドボックス ソリューションのスロットルに関連していますが、このアドインのカタログ サイトにはサンドボックス ソリューションをインストールしません。)</span><span class="sxs-lookup"><span data-stu-id="83ec0-p104">Set the  **Server Resource Quota** to 0 (zero). (The server resource quota is related to throttling poorly performing sandboxed solutions, but you won't be installing any sandboxed solutions on your add-in catalog site.)</span></span>
+    
+9. <span data-ttu-id="83ec0-134">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="83ec0-134">Choose  **OK**.</span></span>
+    
+10. <span data-ttu-id="83ec0-p105">アドイン カタログ サイトにアドインを追加するには前の手順で作成したサイトを参照します。続いて、左側のナビゲーション ウィンドウで、**[Office アドイン]** を選択して Office アドイン マニフェスト ファイルをアップロードし、**[新規アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-p105">To add an add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.</span></span>
 
-<span data-ttu-id="f7868-137">アドイン カタログにアドインを発行するには、次に示す手順を完了します。</span><span class="sxs-lookup"><span data-stu-id="f7868-137">To publish an add-in to an add-in catalog, complete the following steps.</span></span>
+## <a name="publish-an-add-in-to-an-add-in-catalog"></a><span data-ttu-id="83ec0-137">アドイン カタログへのアドインの発行</span><span class="sxs-lookup"><span data-stu-id="83ec0-137">Publish an add-in to an add-in catalog</span></span>
 
-1. <span data-ttu-id="f7868-138">アドイン カタログを参照します。</span><span class="sxs-lookup"><span data-stu-id="f7868-138">Browse to the add-in catalog:</span></span>
+<span data-ttu-id="83ec0-138">アドイン カタログにアドインを発行するには、次に示す手順で行います。</span><span class="sxs-lookup"><span data-stu-id="83ec0-138">To publish an add-in to an add-in catalog, complete the following steps.</span></span>
 
-    - <span data-ttu-id="f7868-139">SharePoint サーバーの全体管理メイン ページを開きます。</span><span class="sxs-lookup"><span data-stu-id="f7868-139">Open the SharePoint Central Administration main page.</span></span>
-    
-    - <span data-ttu-id="f7868-140">**[アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-140">Select  **Add-ins**.</span></span>
-    
-    - <span data-ttu-id="f7868-141">**[アドイン カタログの管理]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-141">Select  **Manage Add-in Catalog**.</span></span>
-    
-    - <span data-ttu-id="f7868-142">表示されたリンクを選択し、左側のナビゲーション バーで **[Office アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-142">Choose the link provided, and then choose  **Office Add-ins** on the left navigation bar.</span></span>
-    
-2. <span data-ttu-id="f7868-143">**[新しいアイテムの追加]** リンクを選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-143">Choose the  **Click to add new item** link.</span></span>
-    
-3. <span data-ttu-id="f7868-144">**[参照]** を選択し、アップロードする [[マニフェスト]](../develop/add-in-manifests.md) を指定します。</span><span class="sxs-lookup"><span data-stu-id="f7868-144">Choose  **Browse**, and then specify the [manifest](../develop/add-in-manifests.md) to upload.</span></span>
-    
-    <span data-ttu-id="f7868-p106">このカタログのコンテンツおよび作業ウィンドウのアドインが **[Office アドイン]** ダイアログ ボックスから使用できるようになりました。これらにアクセスするには、**[挿入]** タブで **[個人用アドイン]** を選択して、**[自分の所属組織]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="f7868-p106">Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.</span></span>
+1. <span data-ttu-id="83ec0-139">アドイン カタログを参照します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-139">Browse to the add-in catalog:</span></span>
 
-## <a name="end-user-experience-with-the-add-in-catalog"></a><span data-ttu-id="f7868-147">アドイン カタログのエンド ユーザー エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="f7868-147">End user experience with the add-in catalog</span></span>
-
-<span data-ttu-id="f7868-148">エンド ユーザーは、次に示す手順を実行することで Office アプリケーションのアドイン カタログにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="f7868-148">End users can access the add-in catalog in an Office application by completing the following steps:</span></span>
-
-1. <span data-ttu-id="f7868-149">Office アプリケーションで、**[ファイル]**  >  **[オプション]**  >  **[セキュリティ センター]**  >  **[セキュリティ センターの設定]**  >  **[信頼できるアドイン カタログ]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="f7868-149">In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.</span></span>
+    - <span data-ttu-id="83ec0-140">SharePoint Central Administration のメイン ページを開きます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-140">Open the SharePoint Central Administration main page.</span></span>
     
-2. <span data-ttu-id="f7868-150">アドイン カタログの _親 SharePoint サイト コレクション_の URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="f7868-150">Specify the URL of the  _parent SharePoint site collection_ of the add-in catalog.</span></span> 
+    - <span data-ttu-id="83ec0-141">**[アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-141">Select  **Add-ins**.</span></span>
     
-    <span data-ttu-id="f7868-151">たとえば、Office アドイン カタログの URL が次のような場合:</span><span class="sxs-lookup"><span data-stu-id="f7868-151">For example, if the URL of the Office Add-ins catalog is:</span></span>
+    - <span data-ttu-id="83ec0-142">**[アドイン カタログの管理]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-142">Select  **Manage Add-in Catalog**.</span></span>
+    
+    - <span data-ttu-id="83ec0-143">表示されたリンクを選択し、左側のナビゲーション バーで **[Office アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-143">Choose the link provided, and then choose  **Office Add-ins** on the left navigation bar.</span></span>
+    
+2. <span data-ttu-id="83ec0-144">**[新しいアイテムの追加]** リンクを選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-144">Choose the  **Click to add new item** link.</span></span>
+    
+3. <span data-ttu-id="83ec0-145">**[参照]** を選択し、アップロードする [[マニフェスト]](../develop/add-in-manifests.md) を指定します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-145">Choose  **Browse**, and then specify the [manifest](../develop/add-in-manifests.md) to upload.</span></span>
+    
+    <span data-ttu-id="83ec0-p106">このカタログのコンテンツおよび作業ウィンドウのアドインが **[Office アドイン]** ダイアログ ボックスから使用できるようになりました。アドインにアクセスするには、**[挿入]** タブで **[個人用アドイン]** を選択し、**[自分の所属組織]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-p106">Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.</span></span>
+
+## <a name="end-user-experience-with-the-add-in-catalog"></a><span data-ttu-id="83ec0-148">アドイン カタログのエンド ユーザー エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="83ec0-148">End user experience with the add-in catalog</span></span>
+
+<span data-ttu-id="83ec0-149">エンド ユーザーは、次に示す手順で Office アプリケーションのアドイン カタログにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-149">End users can access the add-in catalog in an Office application by completing the following steps:</span></span>
+
+1. <span data-ttu-id="83ec0-150">Office アプリケーションで、**[ファイル]**  >  **[オプション]**  >  **[セキュリティ センター]**  >  **[セキュリティ センターの設定]**  >  **[信頼できるアドイン カタログ]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-150">In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.</span></span>
+    
+2. <span data-ttu-id="83ec0-151">アドイン カタログの_親 SharePoint サイト コレクション_の URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-151">Specify the URL of the  _parent SharePoint site collection_ of the add-in catalog.</span></span> 
+    
+    <span data-ttu-id="83ec0-152">たとえば、Office アドイン カタログの URL が次のような場合:</span><span class="sxs-lookup"><span data-stu-id="83ec0-152">For example, if the URL of the Office Add-ins catalog is:</span></span>
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
     
-    <span data-ttu-id="f7868-152">親サイト コレクションの URL のみを指定します。</span><span class="sxs-lookup"><span data-stu-id="f7868-152">Specify just the URL of the parent site collection:</span></span>
+    <span data-ttu-id="83ec0-153">親サイト コレクションの URL のみを指定します。</span><span class="sxs-lookup"><span data-stu-id="83ec0-153">Specify just the URL of the parent site collection:</span></span>
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
-3. <span data-ttu-id="f7868-p107">Office アプリケーションを閉じ、もう一度開きます。アドイン カタログが **[Office アドイン]** ダイアログ ボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="f7868-p107">Close and reopen the Office application. The add-in catalog will be available in the **Office Add-ins** dialog box.</span></span>
+3. <span data-ttu-id="83ec0-p107">Office アプリケーションを閉じ、もう一度開きます。アドイン カタログが **[Office アドイン]** ダイアログ ボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-p107">Close and reopen the Office application. The add-in catalog will be available in the **Office Add-ins** dialog box.</span></span>
 
-<span data-ttu-id="f7868-155">または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。</span><span class="sxs-lookup"><span data-stu-id="f7868-155">Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy.</span></span> <span data-ttu-id="f7868-156">詳細は「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f7868-156">For details, see the section [Using Group Policy to manage how users can install and use Office Add-ins](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) on TechNet.</span></span>
+<span data-ttu-id="83ec0-156">または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。</span><span class="sxs-lookup"><span data-stu-id="83ec0-156">Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy.</span></span> <span data-ttu-id="83ec0-157">詳細は「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="83ec0-157">For details, see the section [Using Group Policy to manage how users can install and use Office Add-ins](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) on TechNet.</span></span>
