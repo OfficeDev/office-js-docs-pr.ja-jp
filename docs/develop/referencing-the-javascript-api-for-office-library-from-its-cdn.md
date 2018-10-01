@@ -1,16 +1,22 @@
 ---
-title: Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
+title: Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9d3328ba09e2f69e76bd55f21064d52a8537cfa9
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 422cbd947dde09a8cd19559db9a86ddacd5e2dba
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943902"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348094"
 ---
-# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する
 
+> [!NOTE]
+> この記事で説明する手順に加えて TypeScript を使用する場合は、 Intellisense を取得するために、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行する必要があります。  [Node.js](https://nodejs.org) がインストールされている (これには npm が含まれています) ことが必要です。
+> 
+> ```
+> npm install --save-dev @types/office-js
+> ```
 
 [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
 
@@ -21,12 +27,12 @@ ms.locfileid: "23943902"
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-CDN URL で `office.js` の前にある `/1/` は、Office.js のバージョン 1 内で最新の増分リリースを指定します。JavaScript API for Office が旧バージョンとの互換性を維持するので、最新リリースはバージョン 1 で以前導入されていた API メンバーを引き続きサポートします。既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。 
+CDN URL で `office.js` の前にある `/1/` は、Office.js のバージョン 1 内で最新の増分リリースを指定します。JavaScript API for Office は旧バージョンとの互換性を維持しているため、最新リリースにおいてもバージョン 1 の時点で導入されていた API メンバーを引き続きサポートします。既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API for Office とマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。 
 
 AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。
 
 > [!IMPORTANT]
->  Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの内側から JavaScript API for Office を参照します。これにより、あらゆる body 要素の前に API が完全に初期化されます。Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。       
+>  Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの中から JavaScript API for Office を参照します。これにより、すべての body 要素の前に API が完全に初期化されます。Office ホストでは、アクティブ化から 5 秒以内にアドインを初期化する必要があります。このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。       
 
 ## <a name="see-also"></a>関連項目
 
