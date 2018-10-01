@@ -2,19 +2,19 @@
 title: Project 用の作業ウィンドウ アドイン
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ae9353d62923f4ac0a914f578948b3434fd9b178
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 2aa8a88878082357949935305b9d39d203f5fb5d
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005023"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348164"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
-Project Standard 2013 と Project Professional 2013 はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint のリスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
+Project Standard 2013 と Project Professional 2013 (version 15.1 以上)  はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
 
 > [!NOTE]
-> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
+> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を抽出してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
 
 Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
@@ -23,31 +23,31 @@ Office アドインの概要については、「[Office アドイン プラッ�
 プロジェクト管理者は、Project の作業ウィンドウ アドインを使用して、プロジェクトの管理作業を円滑に進めることができます。よく使用する情報を調べるときに、Project から離れて別のアプリケーションを起動する必要がなく、Project 内で情報に直接アクセスできます。作業ウィンドウ アドインはコンテキストに応じたコンテンツを表示でき、選択中のタスク、リソース、またはビューに基づくコンテンツや、ガント チャート、タスク使用状況ビュー、またはリソース使用状況ビューのセルに含まれているその他のデータに基づくコンテンツを使用できます。
 
 > [!NOTE]
-> Project Professional 2013 では、社内インストールの Project Server 2013、Project Online、および社内またはオンラインの SharePoint 2013 にアクセスする作業ウィンドウ アドインを開発できます。Project Standard 2013 では、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
+> Project Professional 2013 では、社内インストールの Project Server 2013、Project Online、および社内またはオンラインの SharePoint 2013 にアクセスする作業ウィンドウ アドインを開発できます。Project Standard 2013 は、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
 
 Project 用のアドインのシナリオとして、次のようなものがあります。
 
--  **プロジェクトのスケジュール**???関連性がありスケジュールに影響するプロジェクトのデータを表示できます。作業ウィンドウ アドインでは、Project Server 2013 の他のプロジェクトから、関連するデータを統合できます。たとえば、部署ごとのプロジェクトとマイルストーンの日付の一覧を確認したり、選択したカスタム フィールドに基づいて他のプロジェクトの特定のデータを参照したりできます。
+-  **プロジェクトのスケジュール**スケジュールに影響する関連するプロジェクトのデータを表示できます。作業ウィンドウ アドインでは、Project Server 2013 の他のプロジェクトから、関連するデータを統合できます。たとえば、部署ごとのプロジェクトとマイルストーンの日付の一覧を確認したり、選択したカスタム フィールドに基づく他のプロジェクトの特定のデータを参照したりできます。
     
--  **リソース管理**???Project Server 2013のリソース共有元の全データや、特定のスキルに基づく一部のデータを、コスト データやリソースの使用可能時間を含めて確認でき、適切なリソースの選択に役立ちます。
+-  **リソース管理**Project Server 2013のリソース共有元の全データや、特定のスキルに基づく一部のデータを、コスト データやリソースの使用可能時間を含めて確認でき、適切なリソースの選択に役立ちます。
     
--  **状況と承認**???作業ウィンドウ アドインの Web アプリケーションを使用して、外部のエンタープライズ リソース プラニング (ERP) アプリケーション、タイムシート システム、または会計アプリケーションのデータを更新または参照できます。または、Project Web App と Project Professional 2013の両方で使用できるカスタムの状況承認 Web パーツを作成します。
+-  **状況と承認**作業ウィンドウ アドインの Web アプリケーションを使用して、外部のエンタープライズ リソース プラニング (ERP) アプリケーション、タイムシート システム、または会計アプリケーションのデータを更新または参照できます。または、Project Web App と Project Professional 2013の両方で使用できるカスタムの状況承認 Web パーツを作成します。
     
--  **チームのコミュニケーション**???プロジェクトのコンテキスト内で、作業ウィンドウ アドインからチームのメンバーやリソースと直接コミュニケーションを図ることができます。または、プロジェクトに従事する中で、コンテキストに応じた自分用のメモを簡単に保持できます。
+-  **チームのコミュニケーション**プロジェクトのコンテキスト内で、作業ウィンドウ アドインからチームのメンバーやリソースと直接コミュニケーションを図ることができます。または、プロジェクトに従事する中で、コンテキストに応じた自分用のメモを簡単に保持できます。
     
--  **作業用のパッケージ**???SharePoint ライブラリやオンラインのテンプレート コレクションから、特別な種類のプロジェクト テンプレートを検索できます。たとえば、建設プロジェクト用のテンプレートを見つけ、自分の Project テンプレート コレクションに追加できます。
+-  **作業用のパッケージ**SharePoint ライブラリやオンラインのテンプレート コレクションから、特別な種類のプロジェクト テンプレートを検索できます。たとえば、建設プロジェクト用のテンプレートを見つけ、自分の Project テンプレート コレクションに追加できます。
     
--  **関連アイテム**???プロジェクト計画の特定のタスクに関連するメタデータ、ドキュメント、およびメッセージを参照できます。たとえば、Project Professional 2013 で SharePoint タスク リストからインポートしたプロジェクトを管理し、プロジェクトに加えた変更にタスク リストを同期できます。作業ウィンドウ アドインを使用して、SharePoint リストのタスクに関して Project がインポートしなかった追加のフィールドやメタデータを表示できます。
+-  **関連アイテム**プロジェクト計画の特定のタスクに関連するメタデータ、ドキュメント、およびメッセージを参照できます。たとえば、Project Professional 2013 で SharePoint タスク リストからインポートしたプロジェクトを管理し、プロジェクトに加えた変更にタスク リストを同期できます。作業ウィンドウ アドインを使用して、SharePoint リストのタスクに関して Project がインポートしなかった追加のフィールドやメタデータを表示できます。
     
--  **Project Server のオブジェクト モデルの使用**???選択したタスクの GUID を、Project Server Interface (PSI) または Project Server のクライアント側オブジェクト モデル (CSOM) のメソッドで使用できます。たとえば、アドインの Web アプリケーションで、選択したタスクとリソースの状況データの読み取りや更新を行ったり、外部のタイムシート アプリケーションと統合したりできます。
+-  **Project Server のオブジェクト モデルの使用**選択したタスクの GUID を、Project Server Interface (PSI) または Project Server のクライアント側オブジェクト モデル (CSOM) のメソッドで使用できます。たとえば、アドインの Web アプリケーションで、選択したタスクとリソースの状況データの読み取りや更新を行ったり、外部のタイムシート アプリケーションと統合したりできます。
     
--  **レポート データの取得**???Representational State Transfer (REST)、JavaScript、または LINQ クエリを使用して、Project Web App のレポート テーブル用 OData サービスで、選択したタスクまたはリソースに関連する情報を検索します。OData サービスを使用するクエリは、Project Server 2013のオンライン インストールまたは社内インストールで実行できます。
+-  **レポート データの取得**Representational State Transfer (REST)、JavaScript、または LINQ クエリを使用して、Project Web App のレポート テーブル用 OData サービスで、選択したタスクまたはリソースに関連する情報を検索します。OData サービスを使用するクエリは、Project Server 2013のオンライン インストールまたは社内インストールで実行できます。
     
     「[社内の Project Server OData サービスで REST を使用する Project アドインを作成する](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)」などを参照してください。
     
 ## <a name="developing-project-add-ins"></a>Project アドインの開発
 
-Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
+Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションやタスクのプロパティ、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
 
 アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、 **type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「 _Office アドイン プラットフォームの概要_」の「 [開発の基本](../overview/office-add-ins.md) 」セクションを参照してください。
 
@@ -56,11 +56,11 @@ Project アドイン の JavaScript ライブラリには、 **Office** 名前�
 Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
 
 
--  **Bing Search:**??BingSearch.xml マニフェスト ファイルでは、モバイル デバイス用の Bing の検索ページが指定されています。Bing の Web アドインは既にインターネット上に存在するため、Bing Search アドインでは他のソース コード ファイルや Project 用のアドイン オブジェクト モデルは使用しません。
+-  **Bing Search:** BingSearch.xml マニフェスト ファイルでは、モバイル デバイス用の Bing の検索ページが指定されています。Bing の Web アプリは既にインターネット上に存在するため、Bing Search アドインでは他のソース コード ファイルや Project 用のアドイン オブジェクト モデルは使用しません。
     
--  **Project OM Test:**??JSOM_SimpleOMCalls.xml マニフェスト ファイルと JSOM_Call.html ファイルのペアは、オブジェクト モデルとアドインの機能を Project 2013でテストするサンプルです。HTML ファイルでは JSOM_Sample.js ファイルを参照しています。この中には JavaScript 関数が記述されており、Office.js ファイルと Project-15.js ファイルを使用して主な機能を実現しています。Project OM Test アドインに必要なソース コード ファイルとマニフェスト XML ファイルは SDK のダウンロード ファイルにすべて含まれています。Project OM Test サンプルの開発とインストールについては、「 [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」で説明しています。
+-  **Project OM Test:** JSOM_SimpleOMCalls.xml マニフェスト ファイルと JSOM_Call.html ファイルのペアは、オブジェクト モデルとアドインの機能を Project 2013でテストするサンプルです。HTML ファイルでは JSOM_Sample.js ファイルを参照しています。この中には JavaScript 関数が記述されており、Office.js ファイルと Project-15.js ファイルを使用して主な機能を実現しています。Project OM Test アドインに必要なソース コード ファイルとマニフェスト XML ファイルは SDK のダウンロード ファイルにすべて含まれています。Project OM Test サンプルの開発とインストールについては、「 [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」で説明しています。
     
--  **HelloProject_OData:**??これは Project Professional 2013 用の Visual Studio ソリューションです。アクティブ プロジェクトのコスト、作業時間、達成率などのデータを示し、アクティブ プロジェクトが格納されている Project Web App インスタンス内のすべての発行済みプロジェクトの平均と比較します。サンプル (Project Web App の  **ProjectData** サービスと REST プロトコルを使用) の開発、インストール、およびテストについては、「 [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)」を参照してください。
+-  **HelloProject_OData:** これは Project Professional 2013 用の Visual Studio ソリューションです。コスト、作業時間、達成率などのアクティブ プロジェクトのデータを示し、アクティブ プロジェクトが格納されている Project Web App インスタンス内のすべての発行済みプロジェクトの平均と比較します。サンプル (Project Web App の  **ProjectData** サービスと REST プロトコルを使用) の開発、インストール、およびテストについては、「 [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)」を参照してください。
     
 
 ### <a name="creating-an-add-in-manifest-file"></a>アドインのマニフェスト ファイルの作成
@@ -103,14 +103,14 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 - アドインのマニフェストで必要な要素を次に示します。
   - **OfficeApp** 要素では、アドインの種類が作業ウィンドウであることを `xsi:type="TaskPaneApp"` 属性で指定します。
   - **Id** 要素は UUID で、一意である必要があります。
-  - **Version** 要素は、アドインのバージョンです。 **ProviderName** 要素は、アドインを提供する企業または開発者の名前です。 **DefaultLocale** 要素は、マニフェストで指定する文字列の既定のロケールです。
+  - **Version** 要素は、アドインのバージョンです。 **ProviderName** 要素は、アドインを提供する企業または開発者の名前です。 **DefaultLocale** 要素は、マニフェスト内で文字列の既定のロケールを指定します。
   - **DisplayName** 要素は、Project 2013 のリボンの [ **ビュー**] タブで [ **作業ウィンドウ アドイン**] ドロップダウン リストに表示される名前です。値は最大 32 文字です。
   - **Description** 要素は、既定のロケールでのアドインの説明です。値は最大 2000 文字です。
   - **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中でホスト アプリケーションを指定します。
   - **DefaultSettings** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **SourceLocation** 要素が含まれています。作業ウィンドウ アドインでは、 **RequestedHeight** 要素と **RequestedWidth** 要素は無視されます。
   - **IconUrl** 要素は省略可能です。ファイル共有のアイコンまたは Web アプリケーションのアイコンの URL を指定できます。
     
-- (省略可能) 他のロケール用の値を表す  **Override** 要素を追加します。たとえば、次のマニフェストでは、 **DisplayName**、 **Description**、 **IconUrl**、および  **SourceLocation** に対し、フランス語の値を表す **Override** 要素を指定しています。
+- (省略可能) 他のロケール用の値を表す  **Override** 要素を追加します。たとえば、次のマニフェストでは、 **DisplayName**、 **Description**、 **IconUrl**、および  **SourceLocation** のフランス語の値の **Override** 要素を提供しています。
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -162,7 +162,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 1. アドイン マニフェスト用のローカル ディレクトリを作成します。たとえば、 `C:\Project\AppManifests` ディレクトリを作成します。
     
-2. ディレクトリをAppManifests として共有し、ファイル共有へのネットワーク パスが `\\ServerName\AppManifests` になるようにします。`C:\Project\AppManifests`
+2. `C:\Project\AppManifests` ディレクトリをAppManifests として共有し、ファイル共有へのネットワーク パスが `\\ServerName\AppManifests` になるようにします。
     
 3. BingSearch.xml マニフェスト ファイルを  `C:\Project\AppManifests` ディレクトリにコピーします。
     
@@ -177,13 +177,13 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
     *図 1. セキュリティ センターを使用したアドインのマニフェストのカタログの追加*
 
-    ![セキュリティ センターを使用してアプリ マニフェストを追加](../images/pj15-agave-overview-trust-centers.png)
+    ![セキュリティ センターを使用してアプリ マニフェストを追加する](../images/pj15-agave-overview-trust-centers.png)
 
-7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択します (図 2 を参照)。
+7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダ**] を選択します (図 2 を参照)。
     
     *図 2. ファイル共有にあるアドインの起動*
 
-    ![ファイル共有にある Office アプリの起動](../images/pj15-agave-overview-start-agave-apps.png)
+    ![ファイル共有にある Office アプリを起動する](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Bing Search アドインを選択し、 [ **挿入**] を選択します。
     
@@ -191,7 +191,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
     *図 3. Bing Search アドインの使用*
 
-    ![Bing Search アプリの使用](../images/pj15-agave-overview-bing-search.png)
+    ![Bing Search アプリを使用する](../images/pj15-agave-overview-bing-search.png)
 
 
 ## <a name="distributing-project-add-ins"></a>Project 用アドインの配布
@@ -204,7 +204,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
-- [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [Office用JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 用の作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

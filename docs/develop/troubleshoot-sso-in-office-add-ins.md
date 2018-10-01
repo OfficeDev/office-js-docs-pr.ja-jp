@@ -2,12 +2,12 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: a0eb0839596bad0dfe45c2cbbc05c2c3d74eda24
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: 270cc2c636f982d271f22fa93415515dbc63ad43
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016319"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348178"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -16,24 +16,24 @@ ms.locfileid: "24016319"
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「IdentityAPI の要件セット」https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)をご覧ください。
 > SSO を使用するには、アドインの HTML 起動ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js からベータ版 Office の JavaScript ライブラリを読み込む必要があります。
-> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」をご覧ください。
+> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
 
 開発時は、アドインの Web サービスからの HTTP 要求および応答を傍受して表示することができるツールを使用することを強くお勧めします。最も一般的なものは、次の 2 つです。 
 
 - [Fiddler](http://www.telerik.com/fiddler): 無料 ([ドキュメント](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com/): 30 日間無料 ([ドキュメント](https://www.charlesproxy.com/documentation/))
+- [Charles](https://www.charlesproxy.com/): 30 日間無料。([ドキュメント](https://www.charlesproxy.com/documentation/))
 
 サービス API を開発する際には、次のツールを試してみることもできます。
 
-- [Postman](http://www.getpostman.com/postman):無料 ([ドキュメント](https://www.getpostman.com/docs/))
+- [Postman](http://www.getpostman.com/postman): 無料 ([ドキュメント](https://www.getpostman.com/docs/))
 
 ## <a name="causes-and-handling-of-errors-from-getaccesstokenasync"></a>getAccessTokenAsync からのエラーの原因と処理
 
 このセクションで説明するエラー処理の例については、次を参照してください。
 - [Office-Add-in-ASPNET-SSO の Home.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js)
-- [Office-Add-in-NodeJS-SSO の program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
+- [OfficeアドインNodeJS-SSO の program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
 > このセクションでの提案に加えて、Outlook アドインには、どのような 13*nnn* エラーにも応答する追加の機能があります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」および「[AtachmentDemo サンプル アドイン](https://github.com/OfficeDev/outlook-add-in-attachments-demo)」をご覧ください。 
@@ -45,6 +45,8 @@ ms.locfileid: "24016319"
 - このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 
 - アドインのマニフェストに適切な [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) セクションがありません。
 
+アドインは、このエラーに対処するため、ユーザー認証の代替システムに戻る必要があります。 詳細については、 [要件とベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)を参照してください。
+
 ### <a name="13001"></a>13001
 
 ユーザーは Office にサインインしていません。 コードでは、`getAccessTokenAsync` メソッドを再度呼び出して、[options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) パラメーターでオプション `forceAddAccount: true` を渡す必要があります。 しかし、これを一回以上実行しないでください。 ユーザーがサインインしないと決定した可能性があります。
@@ -54,12 +56,14 @@ Office Online では、このエラーが発生することはありません。
 ### <a name="13002"></a>13002
 
 ユーザーはサインインまたは同意を中止しました。（コンセント ダイアログで **Cancel** を選択した場合など） 
+
 - アドインがユーザーのサインイン (または同意) の必要がない機能を提供している場合、コードはこのエラーをキャッチし、アドインが継続して実行するようにしなければなりません。
 - アドインで、同意を得たサインイン ユーザーが必要な場合、コードはユーザーに操作を繰り返すよう 1 度だけ要求する必要があります。 
 
 ### <a name="13003"></a>13003
 
-ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウント、職場または学校のアカウントで Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードは、ユーザーに Office にサインインするよう要求する必要があります。
+ユーザーの種類がサポートされていません。 ユーザーが、有効な Microsoft アカウントまたは Office 365 (「職場または学校」) アカウントで Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザーに Office にサインインするよう要求するか、ユーザー認証の代替システムに戻る必要があります。 詳細については、 [要件とベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)を参照してください。
+
 
 ### <a name="13004"></a>13004
 
@@ -76,6 +80,7 @@ Office Online では、このエラーが発生することはありません。
 ### <a name="13007"></a>13007
 
 Office ホストは、アドインの Web サービスへのアクセス トークンを取得できませんでした。
+
 - 開発中にこのエラーが発生した場合は、アドインの登録とアドインマニフェストが、 `openid` および `profile` のアクセス許可を指定していることを確認してください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 - 運用環境では、このエラーの原因となることがいくつかあります。 以下はその中のいくつかの例です。
     - ユーザーは、事前に同意し、のちにその同意を取り消しました。 コードは `getAccessTokenAsync` オプション付きのメソッド `forceConsent: true` を再び呼び出す必要があります。しかし、1 度のみです。
@@ -89,7 +94,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13009"></a>13009
 
-アドインは、オプション `forceConsent: true` を指定して `getAccessTokenAsync` メソッドを呼び出しましたが、アドインのマニフェストが強制的な同意をサポートしていない種類のカタログに展開されています。 コードでは、`getAccessTokenAsync` メソッドを再度呼び出して、[options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) パラメーターでオプション `forceConsent: false` を渡す必要があります。 ただし、`forceConsent: true` を指定した `getAccessTokenAsync` の呼び出し自体が、`forceConsent: false` を指定した `getAccessTokenAsync` の失敗した呼び出しに対する自動的な応答の可能性があるため、コードでは、`forceConsent: false` を指定した `getAccessTokenAsync` が既に呼び出されているかどうかを追跡記録する必要があります。 既に呼び出されていた場合、コードでは、ユーザーに Office からサインアウトして、再度サインインするように求める必要があります。
+アドインは、オプション `forceConsent: true` を指定して `getAccessTokenAsync` メソッドを呼び出しましたが、アドインのマニフェストが強制的な同意をサポートしていない種類のカタログに展開されています。 コードでは、`getAccessTokenAsync` メソッドを再度呼び出して、[options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) パラメーターでオプション `forceConsent: false` を渡す必要があります。 ただし、`forceConsent: true` を指定した `getAccessTokenAsync` の呼び出し自体が、`forceConsent: false` を指定した `getAccessTokenAsync` の失敗した呼び出しに対する自動的な応答の可能性があるため、コードでは、`forceConsent: false` を指定した `getAccessTokenAsync` が既に呼び出されているかどうかを追跡記録する必要があります。 既に呼び出されていた場合、コードでは、ユーザーに Office からサインアウトして、再度サインインするように求めるか、ユーザー認証の代替システムに戻る必要があります。 詳細については、 [要件とベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)を参照してください。
 
 > [!NOTE]
 > Microsoft は、必ずしもすべての種類のアドイン カタログに、この制約を課す予定はありません。 制約が課されなかった場合、このエラーが発生することはなくなります。
@@ -104,7 +109,10 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="50001"></a>50001
 
-このエラー（`getAccessTokenAsync` 特有のものではありません）は、ブラウザが office.js ファイルの古いコピーをキャッシュしたことを示している可能性があります。 ブラウザのキャッシュをクリアしてください。 もう 1 つの可能性は、Office のバージョンが SSO をサポートできる新しいものでないということです。 [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites) を参照してください。
+このエラー（`getAccessTokenAsync` 特有のものではありません）は、ブラウザが office.js ファイルの古いコピーをキャッシュしたことを示している可能性があります。 開発するとき、ブラウザのキャッシュをオフにします。 もう 1 つの可能性は、Office のバージョンが SSO をサポートできる新しいものでないということです。 [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites) を参照してください。
+
+生産アドインでは、アドインは、このエラーに対処するため、ユーザー認証の代替システムに戻る必要があります。 詳細については、 [要件とベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)を参照してください。
+
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
@@ -123,14 +131,14 @@ AAD および Office 365 の特定の ID 構成では、Microsoft Graph でア�
 
 AAD に、ユーザー (またはテナント管理者) がアドインに (Microsoft Graph リソースに対して) 同意した記録がない場合、AAD はエラー メッセージを Web サービスに送信します。 コードは、`forceConsent: true` オプションで `getAccessTokenAsync` を再呼び出しするよう、(`403 Forbidden` 応答の本文などで) クライアントに指示する必要があります。
 
-### <a name="invalid-or-missing-scope-permission-errors"></a>無効または不足した範囲 (アクセス許可) のエラー
+### <a name="invalid-or-missing-scope-permission-errors"></a>無効または不足したスコープ (アクセス許可) のエラー
 
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示する必要があります。可能な場合は、そのエラーをコンソールに出力するか、ログに記録します。
 - アドイン マニフェストの [Scopes](https://docs.microsoft.com/javascript/office/manifest/scopes?view=office-js) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Microsoft Graph 呼び出し時の期限切れまたは無効なトークンのエラー
 
-MSAL を含む一部の認証および承認ライブラリは、必要に応じてキャッシュされた更新トークンを使用することにより、期限切れトークンのエラーが発生しないようにします。 独自のトークン キャッシュ システムをコーディングすることもできます。 コーディングを行うサンプルについては、[Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)、特にファイル [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) を参照してください。
+MSAL を含む一部の認証および承認ライブラリは、必要に応じてキャッシュされた更新トークンを使用することにより、期限切れトークンのエラーが発生しないようにします。 独自のトークン キャッシュ システムをコーディングすることもできます。 コーディングを行うサンプルについては、[Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)、特にファイル [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) を参照してください。
 
 しかし、期限切れトークンや無効なトークンのエラーが発生した場合、コードは `getAccessTokenAsync` を再呼び出しして、アドインの Web API のエンドポイントへの呼び出しを繰り返すよう、(`401 Unauthorized` 応答の本文などで) クライアントに指示しなければなりません。つまり、Microsoft Graph に対する新しいトークンを取得する代理フローを繰り返します。 
 

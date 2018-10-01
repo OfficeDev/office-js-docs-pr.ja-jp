@@ -2,12 +2,12 @@
 title: Excel アドインの概要
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4a81487290e77314e5a53c1f258716ca5cc29c2b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: dac1b4e19f3773d4e21711b1585dfbbebc39784a
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945168"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348150"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -20,9 +20,9 @@ Excel アドインを使用すると、Office for Windows、Office Online、Offi
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
 
-* **クロスプラットフォーム サポート**:Excel アドインは、Windows 版、Mac 版、iOS 版の Office と、Office Online で実行できます。
-* **一元展開**:管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
-* **シングル サインオン (SSO)**:Excel のアドインを Microsoft Graph に簡単に統合できます。
+* **クロスプラットフォーム サポート**: Excel アドインは、Windows 版、Mac 版、iOS 版の Office と Office Online で実行できます。
+* **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
+* **シングル サインオン (SSO)**: Excel のアドインを Microsoft Graph に簡単に統合できます。
 * **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
 * **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
 
@@ -98,9 +98,9 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
+* **Excel JavaScript API**: Office 2016 で導入された [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
 
-* **Shared API**:Office 2013 で導入された共有 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。 共有 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
+* **Shared API**: Office 2013 で導入された共有 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。 共有 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
 ## <a name="next-steps"></a>次の手順
 
@@ -112,4 +112,4 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+- [Excel の JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
