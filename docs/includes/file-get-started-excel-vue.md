@@ -1,4 +1,4 @@
-# <a name="build-an-excel-add-in-using-vue"></a>Vue を使用して Excel アドインをビルドする
+# <a name="build-an-excel-add-in-using-vue"></a>Vue を使用して Excel アドインを構築する
 
 この記事では、Vue と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
 
@@ -16,19 +16,19 @@
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-vue-app"></a>新しい Vue アプリの生成
+## <a name="generate-a-new-vue-app"></a>新しい Vue アプリを生成する
 
-Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行し、次に示すとおり、プロンプトに応答します。
+Vue CLI を使用して新しい Vue アプリを生成します。端末から次のコマンドを実行して、下記のようにプロンプトに応答します。
 
 ```bash
 vue init webpack my-add-in
 ```
 
-前のコマンドで生成されたプロンプトに応答すると、次の 3 つのプロンプトの既定の応答を上書きします。 その他のプロンプトについては、すべて既定の応答を受け入れることができます。
+前のコマンドで生成されたプロンプトに応答すると、次の 3 つのプロンプトの既定の応答を上書きします。その他のプロンプトについては、すべて既定の応答を受け入れることができます。
 
-- **Install vue-router? (Vue ルーターをインストールしますか)** `No`
+- **Install vue-router? (Vue ルーターをインストールしますか？)** `No`
 - **Set up unit tests: (単体テストのセットアップ:)** `No`
-- **Setup e2e tests with Nightwatch? (Nightwatch とともに e2e テストをセットアップしますか)** `No`
+- **Setup e2e tests with Nightwatch? (Nightwatch とともに e2e テストをセットアップしますか？)** `No`
 
 ![Vue CLI のプロンプト](../images/vue-cli-prompts.png)
 
@@ -42,17 +42,17 @@ vue init webpack my-add-in
     cd my-add-in
     ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
+2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。次のコマンドを実行し、以下に示すとおりにプロンプトに応答します。
 
     ```bash
     yo office 
     ```
 
-    - **プロジェクト タイプを選択してください：** `Office Add-in containing the manifest only`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください:)** `Office Add-in containing the manifest only`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
 
-    ウィザードを完了すると、マニフェストファイルとリソースファイルを使用してプロジェクトをビルドできます。
+    ウィザードを完了すると、マニフェスト ファイルとリソース ファイルを使用してプロジェクトをビルドできます。
 
     ![Yeoman ジェネレーター](../images/yo-office.png)
     
@@ -168,7 +168,7 @@ vue init webpack my-add-in
     </style>
     ```
 
-## <a name="start-the-dev-server"></a>開発用サーバーの起動
+## <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
@@ -176,13 +176,13 @@ vue init webpack my-add-in
     npm start
     ```
 
-2. Web ブラウザーで `https://localhost:8080` に移動します。 ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼するようコンピューターを構成する必要があります。 
+2. Web ブラウザで `https://localhost:8080` に移動します。ブラウザにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼するようコンピュータを構成する必要があります。 
 
-3. ブラウザーに証明書エラーなしでアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
+3. 証明書エラーなしにブラウザにアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
 
 ## <a name="try-it-out"></a>お試しください
 
-1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+1. アドインを実行して、Excel 内のアドインをサイドロードするために使用するプラットフォームの手順に従います。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -192,7 +192,7 @@ vue init webpack my-add-in
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+3. ワークシート内で任意のセル範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
@@ -200,7 +200,7 @@ vue init webpack my-add-in
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。Vue を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+これで完了です。Vue を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細を説明します。Excel アドインのチュートリアルに従って、より複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
@@ -208,6 +208,6 @@ vue init webpack my-add-in
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

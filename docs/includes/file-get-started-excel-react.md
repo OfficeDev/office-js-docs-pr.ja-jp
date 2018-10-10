@@ -1,12 +1,12 @@
-# <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを作成する
+# <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを構築する
 
-この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
+この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順を説明します。
 
 ## <a name="environment"></a>環境
 
-- **Office Desktop**最新バージョンのOfficeがインストールされていることを確認してください。 アドインコマンドにはビルド 16.0.6769.0000 以上が必要です (**16.0.6868.0000** 推奨)。 [Office アプリケーションの最新バージョンをインストールする](http://aka.ms/latestoffice)方法。 
+- **オフィス デスクトップ**: 最新バージョンの Office がインストールされていることを確認してください。アドイン コマンドには、ビルド 16.0.6769.0000 以上が必要です (**16.0.6868.0000** 推奨)。「[Office アプリケーションの最新バージョンをインストールする](http://aka.ms/latestoffice)」方法を参照してください。 
  
-- **Office Online**：追加設定はありません。 Office Online の職場/学校アカウント用コマンドのサポートはプレビューになっています。
+- **Office Online**: 追加設定はありません。Office Online の職場/学校アカウント用コマンドのサポートはプレビューになっていることにご注意ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -19,7 +19,7 @@
 
 ### <a name="create-the-web-app"></a>Web アプリを作成する
 
-1. ローカル ドライブにフォルダーを作成し、**my-addin** という名前を付けます。 ここにアプリのファイルを作成します。
+1. ローカル ドライブにフォルダーを作成し、**my-addin** という名前を付けます。ここにアプリのファイルを作成します。
 
 2. アプリ フォルダーに移動します。
 
@@ -27,7 +27,7 @@
     cd my-addin
     ```
 
-3. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下のスクリーンショットに示すとおり、プロンプトに応答します。
+3. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。次のコマンドを実行し、以下のスクリーンショットに示すとおり、プロンプトに応答します。
 
     ```bash
     yo office
@@ -59,7 +59,7 @@
 
 6. 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」の手順を実行して、開発用コンピューターのオペレーティング システムの証明書を信頼します。
 
-7. アドインをサイドロードすると Excel に表示されます。 ターミナルで次のコマンドを実行します。 
+7. アドインをサイドロードすると Excel に表示されます。ターミナルで次のコマンドを実行します。 
     
     ```bash
     npm run sideload
@@ -94,6 +94,6 @@
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
