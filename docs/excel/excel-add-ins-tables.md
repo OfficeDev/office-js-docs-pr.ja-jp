@@ -2,20 +2,20 @@
 title: Excel JavaScript API を使用して表を操作する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c7d5f3f975092250747350501bbe011a17db9852
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 1e8c71f34de7a295fcac8e5ea6a4fff5cae4fdcf
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437501"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459162"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Table** および **TableCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/tablecollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Table** および **TableCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.table?view=office-js)」および「[TableCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection?view=office-js)」を参照してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 > [!NOTE]
 > 表名を指定するには、次の例に示すように、最初に表を作成し、その **name** プロパティを設定します。
@@ -55,10 +55,10 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 > [!NOTE]
-> [TableRow](https://dev.office.com/reference/add-ins/excel/tablerow) オブジェクトの **index** プロパティは、表の行コレクション内の行のインデックス番号を示しています。 **TableRow** オブジェクトには、行を一意に識別できる **id** プロパティは含まれていません。
+> [TableRow](https://docs.microsoft.com/javascript/api/excel/excel.tablerow?view=office-js) オブジェクトの **index** プロパティは、表の行コレクション内の行のインデックス番号を示しています。 **TableRow** オブジェクトには、行を一意に識別できる **id** プロパティは含まれていません。
 
 ```js
 Excel.run(function (context) {
@@ -93,11 +93,11 @@ Excel.run(function (context) {
 以下の例では、表に列を追加する方法を示します。 最初の例では、新しい列に静的な値を作成し、2 番目の例では新しい列に数式を作成します。
 
 > [!NOTE]
-> [TableColumn](https://dev.office.com/reference/add-ins/excel/tablecolumn) オブジェクトの **index** プロパティは、表の列コレクション内の列のインデックス番号を示しています。 **TableColumn** オブジェクトの **id** プロパティには、列を識別する一意のキーが含まれています。
+> [TableColumn](https://docs.microsoft.com/javascript/api/excel/excel.tablecolumn?view=office-js) オブジェクトの **index** プロパティは、表の列コレクション内の列のインデックス番号を示しています。 **TableColumn** オブジェクトの **id** プロパティには、列を識別する一意のキーが含まれています。
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。コードが実行されている Excel ホスト アプリケーションが [要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。コードが実行されている Excel ホスト アプリケーションが [要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -314,7 +314,7 @@ Excel.run(function (context) {
 
 ![Excel のフィルター処理されていない表データ](../images/excel-tables-filters-clear.png)
 
-## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
+## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得する
 
 次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すとおり、**getVisibleView()** メソッドを使用して、列フィルターが適用されているときに表に表示されるコンテンツを取得します。
 
@@ -335,7 +335,7 @@ Excel.run(function (context) {
 
 ## <a name="format-a-table"></a>表を書式設定する
 
-次のコード サンプルでは、表に書式を適用します。 表のヘッダー行、表の本体、表の 2 行目、表の 1 列目にそれぞれ別の塗りつぶし色を指定します。 書式の指定に使用できるプロパティの詳細については、「[RangeFormat オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/rangeformat)」を参照してください。
+次のコード サンプルでは、表に書式を適用します。 表のヘッダー行、表の本体、表の 2 行目、表の 1 列目にそれぞれ別の塗りつぶし色を指定します。 書式の指定に使用できるプロパティの詳細については、「[RangeFormat オブジェクト (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.rangeformat?view=office-js)」を参照してください。
 
 ```js
 Excel.run(function (context) {
@@ -395,13 +395,13 @@ Excel.run(function (context) {
 
 ![Excel の範囲データ](../images/excel-ranges.png)
 
-**範囲データ (範囲を表に変換した後)**
+**表データ (範囲を表に変換した後)**
 
 ![Excel の表データ](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -448,6 +448,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Table オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)
-- [TableCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/tablecollection)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+

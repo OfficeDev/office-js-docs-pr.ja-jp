@@ -18,9 +18,9 @@
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-angular-app"></a>新しい Angular アプリを作成する
+## <a name="generate-a-new-angular-app"></a>新しい Angular アプリを生成する
 
-Angular CLI を使用して Angular アプリを生成します。 ターミナルから、次のコマンドを実行します。
+Angular CLI を使用して Angular アプリを生成します。端末では、次のコマンドを実行します。
 
 ```bash
 ng new my-addin
@@ -36,15 +36,15 @@ ng new my-addin
     cd my-addin
     ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
+2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。次のコマンドを実行し、以下に示すとおりにプロンプトに応答します。
 
     ```bash
     yo office 
     ```
 
-    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in containing the manifest only`
+    - **Choose a project type:​ (プロジェクト タイプを選択してください:)** `Office Add-in containing the manifest only`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
 
     ウィザードを完了すると、マニフェスト ファイルとリソース ファイルを使用してプロジェクトをビルドできます。
 
@@ -57,7 +57,7 @@ ng new my-addin
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-このクイック スタートでは、**Office アドイン用 Yeoman ジェネレーター** が提供する証明書を使用できます。 ジェネレーターは、クイック スタートの**前提条件**の一部としてグローバルにインストールされているため、証明書をグローバル インストールのフォルダーからアプリ フォルダーにコピーするだけです。 次の手順では、このプロセスを実行する方法を示しています。
+このクイック スタートでは、証明書を使用できますが、 **Yeoman Office アドイン用のジェネレーター** が用意されています。ジェネレーターをグローバルに (このクイック スタートの **前提条件** の一部) としてインストールして、グローバルから証明書をコピーする必要がありますだけで、インストールの場所、アプリケーション フォルダーにするとします。次の手順では、このプロセスを完了する方法について説明します。
 
 1. 端末から次のコマンドを実行し、グローバル **npm** ライブラリがインストールされているフォルダーを識別します。
 
@@ -68,19 +68,19 @@ ng new my-addin
     > [!TIP]    
     > このコマンドで生成された出力の最初の行は、グローバル **npm** ライブラリがインストールされているフォルダーを示します。          
     
-2. エクスプローラーを使用して `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base` フォルダーに移動します。 その場所から `certs` フォルダーをクリップボードにコピーします。
+2. ファイル エクスプローラーを使用して`{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`フォルダーに移動します。その場所から`certs`フォルダーをクリップボードにコピーします。
 
 3. 前のセクションの手順 1 で作成した Angular アプリのルート フォルダーに移動して、クリップボードからそのフォルダーに `certs` フォルダーを貼り付けます。
 
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. コード エディターで、プロジェクトのルートにある **package.json** を開きます。 スクリプトを変更してサーバーを SSL およびポート 3000 を使用して実行するよう指定し、ファイルを保存します。`start`
+1. コード エディターでプロジェクトのルートに **package.json** を開きます。変更、 `start` サーバーが SSL およびポート 3000 を使用して実行し、ファイルを保存するを指定するためのスクリプトです。
 
     ```json
     "start": "ng serve --ssl true --port 3000"
     ```
 
-2. プロジェクトのルートで **.angular-cli.json** を開きます。 証明書ファイルの場所を指定するように **defaults** オブジェクトを変更し、ファイルを保存します。
+2. プロジェクトのルートに **.angular cli.json** を開きます。証明書ファイルの場所を指定する **既定の設定** オブジェクトを変更し、ファイルを保存します。
 
     ```json
     "defaults": {
@@ -205,7 +205,7 @@ ng new my-addin
     }
     ```
 
-## <a name="start-the-dev-server"></a>開発用サーバーの起動
+## <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
@@ -216,13 +216,13 @@ ng new my-addin
 2. Web ブラウザーで `https://localhost:3000` に移動します。ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼された証明書として追加する必要があります。詳細については、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。
 
     > [!NOTE]
-    > 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」で説明されているプロセスを完了した後でも、Chrome (Web ブラウザー) は、サイトの証明書が信頼されていないことを引き続き示すことがあります。 Chrome でのこの警告は無視して構いません。また、Internet Explorer あるいは Microsoft Edge の `https://localhost:3000` に移動して、証明書が信頼されていることを確認することもできます。 
+    > 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」で説明されているプロセスを完了した後でも、Chrome (Web ブラウザー) は、サイトの証明書が信頼されていないことを引き続き示すことがあります。Chrome でこの警告を無視して、Internet Explorer または Microsoft Edge のいずれかで`https://localhost:3000` に移動して証明書が信頼できるかを確認することができます。 
 
-3. ブラウザーに証明書エラーなしでアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
+3. 証明書エラーなしにブラウザにアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
 
 ## <a name="try-it-out"></a>お試しください
 
-1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+1. アドインを実行して、Excel 内のアドインをサイドロードするために使用するプラットフォームの手順に従います。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -233,7 +233,7 @@ ng new my-addin
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+3. ワークシート内で任意のセル範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
@@ -249,6 +249,6 @@ ng new my-addin
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API の中心概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
