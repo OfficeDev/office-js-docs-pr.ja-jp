@@ -1,74 +1,61 @@
 ---
-ms.date: 09/27/2018
-description: Excel のカスタム関数は、標準のアドインの WebView コントロールのランタイムと異なる、新しい JavaScript ランタイムを使用します。
+ms.date: 10/03/2018
+description: 新しい JavaScript ランタイムを使用する Excel のカスタム機能開発の主要なシナリオを理解しましょう。
 title: Excel カスタム関数のランタイム
-ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
-ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
+ms.openlocfilehash: a48b02a8ca404b51740d9052d199da934eb9312e
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "25348760"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459106"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a><span data-ttu-id="dd407-103">Excel カスタム関数のランタイム (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="dd407-103">Runtime for Excel custom functions</span></span>
+# <a name="runtime-for-excel-custom-functions-preview"></a><span data-ttu-id="8f025-103">Excel カスタム関数のランタイム (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="8f025-103">Runtime for Excel custom functions</span></span>
 
-<span data-ttu-id="dd407-104">カスタム関数は、Web ブラウザではなく、サンドボックス JavaScript エンジンを使用する新しい JavaScript ランタイムを使用して、Excel の機能を拡張します。</span><span class="sxs-lookup"><span data-stu-id="dd407-104">Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser.</span></span> <span data-ttu-id="dd407-105">カスタム関数は UI 要素をレンダリングする必要がなく、新しい JavaScript のランタイムは計算に最適化されているため、何千ものカスタム関数を同時に実行できます。</span><span class="sxs-lookup"><span data-stu-id="dd407-105">Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.</span></span>
+<span data-ttu-id="8f025-104">カスタム関数は、作業ウィンドウやその他の UI 要素など、アドインの他の部分で用いられるランタイムとは異なる、新しい JavaScript ランタイムを使用します。</span><span class="sxs-lookup"><span data-stu-id="8f025-104">Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements.</span></span> <span data-ttu-id="8f025-105">この JavaScript ランタイムは、カスタム関数での計算のパフォーマンスを最適化するよう設計されており、外部データの要求やサーバーとの固定接続によるデータ交換など、カスタム関数内で一般的な Web ベースアクションを実行する際に使用可能な、新しい API を公開します。</span><span class="sxs-lookup"><span data-stu-id="8f025-105">This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data or exchanging data over a persistent connection with a server.</span></span> <span data-ttu-id="8f025-106">JavaScript ランタイムは、カスタム関数内またはアドインの他の部分で使用してデータを格納、または、ダイアログボックスを表示するために使用できる、`OfficeRuntime` 名前空間内の新しい API へのアクセスも提供します。</span><span class="sxs-lookup"><span data-stu-id="8f025-106">The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or display a dialog box.</span></span> <span data-ttu-id="8f025-107">この記事では、これらのAPIをカスタム関数内で使用する方法と、カスタム関数を展開する際に留意すべき追加の考慮事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="8f025-107">This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind as you develop custom functions.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="key-facts-about-the-new-javascript-runtime"></a><span data-ttu-id="dd407-106">新しい JavaScript ランタイムに関する重要な事実</span><span class="sxs-lookup"><span data-stu-id="dd407-106">Key facts about the new JavaScript runtime</span></span> 
+## <a name="requesting-external-data"></a><span data-ttu-id="8f025-108">外部データの要求</span><span class="sxs-lookup"><span data-stu-id="8f025-108">Requesting external data</span></span>
 
-<span data-ttu-id="dd407-107">アドイン内のカスタム関数だけが、この記事で説明する新しい JavaScript ランタイムを使用します。</span><span class="sxs-lookup"><span data-stu-id="dd407-107">Only custom functions within an add-in will use the new JavaScript runtime that's described in this article.</span></span> <span data-ttu-id="dd407-108">カスタム関数に加え、作業ウィンドウや他の UI 要素など他のコンポーネントがアドインに含まれる場合、アドインのこれら他のコンポーネントは、ブラウザーのような WebView ランタイムで引き続き実行されます。</span><span class="sxs-lookup"><span data-stu-id="dd407-108">If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.</span></span>  <span data-ttu-id="dd407-109">さらに:</span><span class="sxs-lookup"><span data-stu-id="dd407-109">Additionally:</span></span> 
+<span data-ttu-id="8f025-109">カスタム関数内では、[ Fetch ](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である[   XmlHttpRequest (XHR) ](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます 。</span><span class="sxs-lookup"><span data-stu-id="8f025-109">Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span> <span data-ttu-id="8f025-110">JavaScript ランタイムでは、 XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[ CORS ](https://www.w3.org/TR/cors/)を要求することにより、追加セキュリティ対策を実装します。</span><span class="sxs-lookup"><span data-stu-id="8f025-110">In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>  
 
-- <span data-ttu-id="dd407-110">JavaScript ランタイムは、ドキュメント オブジェクト モデル (DOM)、または DOM に依存している jQuery のようなサポート ライブラリ へのアクセスを行いません。</span><span class="sxs-lookup"><span data-stu-id="dd407-110">The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM.</span></span>
+### <a name="xhr-example"></a><span data-ttu-id="8f025-111">XHR の使用例</span><span class="sxs-lookup"><span data-stu-id="8f025-111">XHR example</span></span>
 
-- <span data-ttu-id="dd407-111">アドインの JavaScript ファイルで定義されているカスタム関数は、`Promise` を返す代わりに `OfficeExtension.Promise`通常の JavaScript を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="dd407-111">A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of returning `OfficeExtension.Promise`.</span></span>  
+<span data-ttu-id="8f025-112">以下のコードサンプルでは、`getTemperature`関数は`sendWebRequest`関数を呼び出して温度計IDに基づく特定の領域の温度を取得します。</span><span class="sxs-lookup"><span data-stu-id="8f025-112">In the following code sample, the  function sends a web request to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="8f025-113">`sendWebRequest` 関数は、XHR を使用してデータを提供するエンドポイントへの`GET`要求を発行します。</span><span class="sxs-lookup"><span data-stu-id="8f025-113">The `sendWebRequest` function uses XHR to issue a `GET` request to an endpoint that can provide the data.</span></span> 
 
-- <span data-ttu-id="dd407-112">カスタム関数メタデータを指定する JSON ファイルは、**オプション** 内で **同期**または**非同期**を指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="dd407-112">The JSON file that specifies custom function metatdata does not need to specify **sync** or **async** within **options**.</span></span>
-
-## <a name="new-apis"></a><span data-ttu-id="dd407-113">新しい API</span><span class="sxs-lookup"><span data-stu-id="dd407-113">New and updated APIs</span></span> 
-
-<span data-ttu-id="dd407-114">カスタム関数で使用されている JavaScript のランタイムには、次の API があります。</span><span class="sxs-lookup"><span data-stu-id="dd407-114">The JavaScript runtime that's used by custom functions has the following APIs:</span></span>
-
-- [<span data-ttu-id="dd407-115">XHR</span><span class="sxs-lookup"><span data-stu-id="dd407-115">XHR</span></span>](#xhr)
-- [<span data-ttu-id="dd407-116">WebSockets</span><span class="sxs-lookup"><span data-stu-id="dd407-116">WebSockets</span></span>](#websockets)
-- [<span data-ttu-id="dd407-117">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="dd407-117">AsyncStorage</span></span>](#asyncstorage)
-- [<span data-ttu-id="dd407-118">ダイアログ API</span><span class="sxs-lookup"><span data-stu-id="dd407-118">Dialog API requirement sets</span></span>](#dialog-api)
-
-### <a name="xhr"></a><span data-ttu-id="dd407-119">XHR</span><span class="sxs-lookup"><span data-stu-id="dd407-119">XHR</span></span>
-
-<span data-ttu-id="dd407-120">XHR は [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を表し、これはサーバーと対話する HTTP 要求を発行する標準的な web API です。</span><span class="sxs-lookup"><span data-stu-id="dd407-120">XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span> <span data-ttu-id="dd407-121">新しい JavaScript ランタイムでは、XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。</span><span class="sxs-lookup"><span data-stu-id="dd407-121">In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>  
-
-<span data-ttu-id="dd407-122">次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="dd407-122">In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="dd407-123">`sendWebRequest()`関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。</span><span class="sxs-lookup"><span data-stu-id="dd407-123">The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.</span></span>  
+> [!NOTE] 
+> <span data-ttu-id="8f025-114">fetch または XHR を使用すると、新しい JavaScript  `Promise`が返されます。</span><span class="sxs-lookup"><span data-stu-id="8f025-114">When using fetch or XHR, a new JavaScript `Promise` is returned.</span></span> <span data-ttu-id="8f025-115">2018年9月より前は、Office JavaScript API 内で約束を使用するには`OfficeExtension.Promise`を指定する必要がありましたが、今は JavaScript  `Promise`を使用するだけです。</span><span class="sxs-lookup"><span data-stu-id="8f025-115">Prior to September 2018, you had to specify `OfficeExtension.Promise` to use promises within the Office JavaScript API, but now you can simply use a JavaScript `Promise`.</span></span>
 
 ```js
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ //sendWebRequest is defined later in this code sample
+      sendWebRequest(thermometerID, function(data){ 
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
   });
 }
 
-//Helper method that uses Office's implementation of XMLHttpRequest in the new JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
-          };
+        };
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
 }
-
 ```
 
-### <a name="websockets"></a><span data-ttu-id="dd407-124">WebSocket</span><span class="sxs-lookup"><span data-stu-id="dd407-124">WebSockets</span></span>
+## <a name="receiving-data-via-websockets"></a><span data-ttu-id="8f025-116">Websocket を使用したデータ受信</span><span class="sxs-lookup"><span data-stu-id="8f025-116">Receiving data via WebSockets</span></span>
 
-<span data-ttu-id="dd407-125">[Websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) は、サーバーと 1 つ以上のクライアント間でリアルタイムのコミュニケーションを作成するネットワーク プロトコルです。</span><span class="sxs-lookup"><span data-stu-id="dd407-125">[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is a networking protocol that creates real-time communication between a server and one or more clients.</span></span> <span data-ttu-id="dd407-126">テキストを同時に読み書きすることができるので、多くの場合チャット アプリケーションに使用します。</span><span class="sxs-lookup"><span data-stu-id="dd407-126">It is often used for chat applications because it allows you to read and write text simultaneously.</span></span>  
+<span data-ttu-id="8f025-117">カスタム関数内部サーバーとの固定接続を介してのデータ交換には、 [ Websocket ](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) を使用できます。</span><span class="sxs-lookup"><span data-stu-id="8f025-117">Within a custom function, you can use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server.</span></span> <span data-ttu-id="8f025-118">WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信しますので、サーバーに明示的にデータをポーリングする必要がありません。</span><span class="sxs-lookup"><span data-stu-id="8f025-118">By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.</span></span>
 
-<span data-ttu-id="dd407-127">次のコード サンプルに示すように、カスタム関数は Websocket を使用できます。</span><span class="sxs-lookup"><span data-stu-id="dd407-127">As shown in the following code sample, custom functions can use WebSockets.</span></span> <span data-ttu-id="dd407-128">この例では、WebSocket は、受信した各メッセージを記録します。</span><span class="sxs-lookup"><span data-stu-id="dd407-128">In this example, the WebSocket logs each message that it receives.</span></span>
+### <a name="websockets-example"></a><span data-ttu-id="8f025-119">Websocket の使用例</span><span class="sxs-lookup"><span data-stu-id="8f025-119">WebSockets example</span></span>
+
+<span data-ttu-id="8f025-120">以下のコードサンプルは`WebSocket`接続を確立し、サーバーからの各受信メッセージを記録します。</span><span class="sxs-lookup"><span data-stu-id="8f025-120">The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server.</span></span> 
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
@@ -80,17 +67,11 @@ ws.onerror = (error) => {
 }
 ```
 
-### <a name="asyncstorage"></a><span data-ttu-id="dd407-129">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="dd407-129">AsyncStorage</span></span>
+## <a name="storing-and-accessing-data"></a><span data-ttu-id="8f025-121">データの格納およびアクセス</span><span class="sxs-lookup"><span data-stu-id="8f025-121">Storing and accessing data</span></span>
 
-<span data-ttu-id="dd407-130">AsyncStorage は、認証トークンを格納するために使用するキーと値のストレージ システムです。</span><span class="sxs-lookup"><span data-stu-id="dd407-130">AsyncStorage is a key-value storage system that can be used to store authentication tokens.</span></span> <span data-ttu-id="dd407-131">たとえば、</span><span class="sxs-lookup"><span data-stu-id="dd407-131">It is framework-agnostic.</span></span>
+<span data-ttu-id="8f025-122">カスタム関数（またはアドインの他の部分）内では、`OfficeRuntime.AsyncStorage`オブジェクトを使用してデータを格納およびアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="8f025-122">Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.AsyncStorage` object.</span></span> <span data-ttu-id="8f025-123">`AsyncStorage` [X]は、[  localStorage ](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) の代替機能を提供する、暗号化されていない永続的キー値ストレージシステムであり、カスタム関数内では使用できません。</span><span class="sxs-lookup"><span data-stu-id="8f025-123">`AsyncStorage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions.</span></span> <span data-ttu-id="8f025-124">アドインは、`AsyncStorage`を使用して最大 10 MB のデータを格納できます。</span><span class="sxs-lookup"><span data-stu-id="8f025-124">An add-in can store up to 10 MB of data using `AsyncStorage`.</span></span>
 
-- <span data-ttu-id="dd407-132">持続性</span><span class="sxs-lookup"><span data-stu-id="dd407-132">persistent</span></span>
-- <span data-ttu-id="dd407-133">暗号化なし</span><span class="sxs-lookup"><span data-stu-id="dd407-133">Unencrypted</span></span>
-- <span data-ttu-id="dd407-134">非同期</span><span class="sxs-lookup"><span data-stu-id="dd407-134">Asynchronous calls</span></span>
-
-<span data-ttu-id="dd407-135">AsyncStorage は、アドイン内のすべての部分にグローバルに利用できます。</span><span class="sxs-lookup"><span data-stu-id="dd407-135">AsyncStorage is globally available to all parts of your add-in.</span></span> <span data-ttu-id="dd407-136">カスタム関数では、 `AsyncStorage` は、グローバル オブジェクトとして公開されます。</span><span class="sxs-lookup"><span data-stu-id="dd407-136">For custom functions, `AsyncStorage` is exposed as a global object.</span></span> <span data-ttu-id="dd407-137">(WebView ランタイムを使用する作業ウィンドウおよびその他の要素などのアドインの他の部分では、`OfficeRuntime` を通じて AsyncStorage が公開されます。) 各アドインは、既定サイズが 5 MB の独自のストレージ パーティションを持ちます。</span><span class="sxs-lookup"><span data-stu-id="dd407-137">(For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.) Each add-in has its own storage partition, with a default size of 5MB.</span></span> 
-
-<span data-ttu-id="dd407-138">`AsyncStorage` オブジェクトでは、以下の方法が利用可能です。</span><span class="sxs-lookup"><span data-stu-id="dd407-138">The following methods are available on the `AsyncStorage` object:</span></span>
+<span data-ttu-id="8f025-125">`AsyncStorage`オブジェクトでは、以下のメソッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8f025-125">The following methods are available on the `AsyncStorage` object:</span></span>
  
  - `getItem`
  - `setItem`
@@ -101,10 +82,10 @@ ws.onerror = (error) => {
  - `multiGet`
  - `multiSet`
  - `multiRemove`
- 
-<span data-ttu-id="dd407-139">この時点で、 `mergeItem` と `multiMerge` のメソッドはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="dd407-139">At this time, the `mergeItem` and `multiMerge` methods are not supported.</span></span>
 
-<span data-ttu-id="dd407-140">次のコード サンプルは、ストレージから値を取得するために `AsyncStorage.getItem` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="dd407-140">The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.</span></span>
+### <a name="asyncstorage-example"></a><span data-ttu-id="8f025-126">AsyncStorage の使用例</span><span class="sxs-lookup"><span data-stu-id="8f025-126">AsyncStorage example</span></span> 
+
+<span data-ttu-id="8f025-127">以下のコードサンプルは、`AsyncStorage.getItem`関数を呼び出してストレージから値を取得します。</span><span class="sxs-lookup"><span data-stu-id="8f025-127">The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.</span></span>
 
 ```typescript
 _goGetData = async () => {
@@ -112,29 +93,30 @@ _goGetData = async () => {
         const value = await AsyncStorage.getItem('toDoItem');
         if (value !== null) {
             //data exists and you can do something with it here
-            }
-        } catch (error) {
-            //handle errors here
         }
+    } catch (error) {
+        //handle errors here
     }
 }
 ```
 
-### <a name="dialog-api"></a><span data-ttu-id="dd407-141">ダイアログ API</span><span class="sxs-lookup"><span data-stu-id="dd407-141">Dialog API scenarios</span></span>
+## <a name="displaying-a-dialog-box"></a><span data-ttu-id="8f025-128">ダイアログボックスの表示</span><span class="sxs-lookup"><span data-stu-id="8f025-128">Open a dialog box</span></span>
 
-<span data-ttu-id="dd407-142">ダイアログ API を使用すると、ユーザーのサインインを求めるダイアログ ボックスを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="dd407-142">The Dialog API enables you to open a dialog box that prompts user sign-in.</span></span> <span data-ttu-id="dd407-143">ユーザーが関数を使用する前に、Google や Facebook などの外部のリソースを通じ、ダイアログ API を使用してユーザー認証を要求します。</span><span class="sxs-lookup"><span data-stu-id="dd407-143">You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.</span></span>   
+<span data-ttu-id="8f025-129">カスタム関数（またはアドインの他の部分）内では、`OfficeRuntime.displayWebDialogOptions`  API を使用してダイアログボックスを表示できます。</span><span class="sxs-lookup"><span data-stu-id="8f025-129">Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box.</span></span> <span data-ttu-id="8f025-130">このダイアログボックス API は、[ Dialog API ](../develop/dialog-api-in-office-add-ins.md) の代わりに作業ウィンドウやアドインコマンドで使用できますが、カスタム関数では使用できません。</span><span class="sxs-lookup"><span data-stu-id="8f025-130">This dialog API provides an alternative to the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands, but not within custom functions.</span></span>
 
-<span data-ttu-id="dd407-144">次のコード サンプルで、 `getTokenViaDialog()` メソッドは、ダイアログ API の `displayWebDialog()` メソッドを使用してダイアログ ボックスを開きます。</span><span class="sxs-lookup"><span data-stu-id="dd407-144">In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.</span></span>
+### <a name="dialog-api-example"></a><span data-ttu-id="8f025-131">ダイアログ API の使用例</span><span class="sxs-lookup"><span data-stu-id="8f025-131">Dialog API example</span></span> 
+
+<span data-ttu-id="8f025-132">以下のコードサンプルでは、関数`getTokenViaDialog`は Dialog API の`displayWebDialogOptions`関数を使用してダイアログボックスを表示しています。</span><span class="sxs-lookup"><span data-stu-id="8f025-132">In the following code sample, the `getTokenViaDialog` method uses the Dialog API’s `displayWebDialogOptions` method to open a dialog box.</span></span>
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
- 
+
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
     getToken("https://www.contoso.com/auth")
     .then(function (token) {
-      
+
       // Use token to get stock price
       fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
@@ -184,7 +166,7 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
+        OfficeRuntime.displayWebDialogOptions(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
@@ -205,12 +187,13 @@ function getStock (ticker) {
 }
 ```
 
-> [!NOTE]
-> <span data-ttu-id="dd407-145">このセクションで説明しているダイアログ API は、カスタム関数の新しい JavaScript ランタイムの一部であり、カスタム関数内でのみ使用することができます。</span><span class="sxs-lookup"><span data-stu-id="dd407-145">The Dialog API described in this section is part of the new JavaScript runtime for custom functions and can be used only within custom functions.</span></span> <span data-ttu-id="dd407-146">この API は、作業ウィンドウおよびアドイン コマンド内で使用できる [ダイアログ API](../develop/dialog-api-in-office-add-ins.md) とは異なります。</span><span class="sxs-lookup"><span data-stu-id="dd407-146">This API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands.</span></span>
+## <a name="additional-considerations"></a><span data-ttu-id="8f025-133">その他の考慮事項</span><span class="sxs-lookup"><span data-stu-id="8f025-133">Additional considerations</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="dd407-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="dd407-147">See also</span></span>
+<span data-ttu-id="8f025-134">複数のプラットフォーム（Officeアドインの主要テナントの一つ）で動作するアドインを作成する際は、カスタム関数でドキュメント オブジェクト モデル (DOM) にアクセスしたり、jQueryのようなDOMに依存するライブラリーを使用してはいけません。</span><span class="sxs-lookup"><span data-stu-id="8f025-134">In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM.</span></span> <span data-ttu-id="8f025-135">カスタム関数が JavaScript ランタイムを使用する Excel for Windows では、カスタム関数は DOM にアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="8f025-135">On Excel for Windows, where custom functions use the JavaScript runtime, custom functions cannot access the DOM.</span></span>
 
-* [<span data-ttu-id="dd407-148">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="dd407-148">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
-* [<span data-ttu-id="dd407-149">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="dd407-149">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="dd407-150">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="dd407-150">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="dd407-151">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="dd407-151">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)
+## <a name="see-also"></a><span data-ttu-id="8f025-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f025-136">See also</span></span>
+
+* [<span data-ttu-id="8f025-137">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="8f025-137">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="8f025-138">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="8f025-138">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="8f025-139">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="8f025-139">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="8f025-140">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="8f025-140">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)
