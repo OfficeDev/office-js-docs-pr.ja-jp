@@ -1,74 +1,61 @@
 ---
-ms.date: 09/27/2018
-description: Excel のカスタム関数は、標準のアドインの WebView コントロールのランタイムと異なる、新しい JavaScript ランタイムを使用します。
+ms.date: 10/03/2018
+description: 新しい JavaScript ランタイムを使用する Excel のカスタム機能開発の主要なシナリオを理解しましょう。
 title: Excel カスタム関数のランタイム
-ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
-ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
+ms.openlocfilehash: a48b02a8ca404b51740d9052d199da934eb9312e
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "25348760"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459106"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
-カスタム関数は、Web ブラウザではなく、サンドボックス JavaScript エンジンを使用する新しい JavaScript ランタイムを使用して、Excel の機能を拡張します。 カスタム関数は UI 要素をレンダリングする必要がなく、新しい JavaScript のランタイムは計算に最適化されているため、何千ものカスタム関数を同時に実行できます。
+カスタム関数は、作業ウィンドウやその他の UI 要素など、アドインの他の部分で用いられるランタイムとは異なる、新しい JavaScript ランタイムを使用します。 この JavaScript ランタイムは、カスタム関数での計算のパフォーマンスを最適化するよう設計されており、外部データの要求やサーバーとの固定接続によるデータ交換など、カスタム関数内で一般的な Web ベースアクションを実行する際に使用可能な、新しい API を公開します。 JavaScript ランタイムは、カスタム関数内またはアドインの他の部分で使用してデータを格納、または、ダイアログボックスを表示するために使用できる、`OfficeRuntime` 名前空間内の新しい API へのアクセスも提供します。 この記事では、これらのAPIをカスタム関数内で使用する方法と、カスタム関数を展開する際に留意すべき追加の考慮事項について説明します。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="key-facts-about-the-new-javascript-runtime"></a>新しい JavaScript ランタイムに関する重要な事実 
+## <a name="requesting-external-data"></a>外部データの要求
 
-アドイン内のカスタム関数だけが、この記事で説明する新しい JavaScript ランタイムを使用します。 カスタム関数に加え、作業ウィンドウや他の UI 要素など他のコンポーネントがアドインに含まれる場合、アドインのこれら他のコンポーネントは、ブラウザーのような WebView ランタイムで引き続き実行されます。  さらに: 
+カスタム関数内では、[ Fetch ](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である[   XmlHttpRequest (XHR) ](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます 。 JavaScript ランタイムでは、 XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[ CORS ](https://www.w3.org/TR/cors/)を要求することにより、追加セキュリティ対策を実装します。  
 
-- JavaScript ランタイムは、ドキュメント オブジェクト モデル (DOM)、または DOM に依存している jQuery のようなサポート ライブラリ へのアクセスを行いません。
+### <a name="xhr-example"></a>XHR の使用例
 
-- アドインの JavaScript ファイルで定義されているカスタム関数は、`Promise` を返す代わりに `OfficeExtension.Promise`通常の JavaScript を返すことができます。  
+以下のコードサンプルでは、`getTemperature`関数は`sendWebRequest`関数を呼び出して温度計IDに基づく特定の領域の温度を取得します。 `sendWebRequest` 関数は、XHR を使用してデータを提供するエンドポイントへの`GET`要求を発行します。 
 
-- カスタム関数メタデータを指定する JSON ファイルは、**オプション** 内で **同期**または**非同期**を指定する必要はありません。
-
-## <a name="new-apis"></a>新しい API 
-
-カスタム関数で使用されている JavaScript のランタイムには、次の API があります。
-
-- [XHR](#xhr)
-- [WebSockets](#websockets)
-- [AsyncStorage](#asyncstorage)
-- [ダイアログ API](#dialog-api)
-
-### <a name="xhr"></a>XHR
-
-XHR は [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を表し、これはサーバーと対話する HTTP 要求を発行する標準的な web API です。 新しい JavaScript ランタイムでは、XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。  
-
-次のコード例で、 `getTemperature()` 関数は、温度計の ID に基づいて、特定の領域の温度を取得する web 要求を送信します。 `sendWebRequest()`関数は、XHR を使用して、データを提供するエンドポイントへの`GET`要求を発行します。  
+> [!NOTE] 
+> fetch または XHR を使用すると、新しい JavaScript  `Promise`が返されます。 2018年9月より前は、Office JavaScript API 内で約束を使用するには`OfficeExtension.Promise`を指定する必要がありましたが、今は JavaScript  `Promise`を使用するだけです。
 
 ```js
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ //sendWebRequest is defined later in this code sample
+      sendWebRequest(thermometerID, function(data){ 
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
   });
 }
 
-//Helper method that uses Office's implementation of XMLHttpRequest in the new JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
-          };
+        };
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
 }
-
 ```
 
-### <a name="websockets"></a>WebSocket
+## <a name="receiving-data-via-websockets"></a>Websocket を使用したデータ受信
 
-[Websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) は、サーバーと 1 つ以上のクライアント間でリアルタイムのコミュニケーションを作成するネットワーク プロトコルです。 テキストを同時に読み書きすることができるので、多くの場合チャット アプリケーションに使用します。  
+カスタム関数内部サーバーとの固定接続を介してのデータ交換には、 [ Websocket ](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) を使用できます。 WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信しますので、サーバーに明示的にデータをポーリングする必要がありません。
 
-次のコード サンプルに示すように、カスタム関数は Websocket を使用できます。 この例では、WebSocket は、受信した各メッセージを記録します。
+### <a name="websockets-example"></a>Websocket の使用例
+
+以下のコードサンプルは`WebSocket`接続を確立し、サーバーからの各受信メッセージを記録します。 
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
@@ -80,17 +67,11 @@ ws.onerror = (error) => {
 }
 ```
 
-### <a name="asyncstorage"></a>AsyncStorage
+## <a name="storing-and-accessing-data"></a>データの格納およびアクセス
 
-AsyncStorage は、認証トークンを格納するために使用するキーと値のストレージ システムです。 たとえば、
+カスタム関数（またはアドインの他の部分）内では、`OfficeRuntime.AsyncStorage`オブジェクトを使用してデータを格納およびアクセスできます。 `AsyncStorage` [X]は、[  localStorage ](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) の代替機能を提供する、暗号化されていない永続的キー値ストレージシステムであり、カスタム関数内では使用できません。 アドインは、`AsyncStorage`を使用して最大 10 MB のデータを格納できます。
 
-- 持続性
-- 暗号化なし
-- 非同期
-
-AsyncStorage は、アドイン内のすべての部分にグローバルに利用できます。 カスタム関数では、 `AsyncStorage` は、グローバル オブジェクトとして公開されます。 (WebView ランタイムを使用する作業ウィンドウおよびその他の要素などのアドインの他の部分では、`OfficeRuntime` を通じて AsyncStorage が公開されます。) 各アドインは、既定サイズが 5 MB の独自のストレージ パーティションを持ちます。 
-
-`AsyncStorage` オブジェクトでは、以下の方法が利用可能です。
+`AsyncStorage`オブジェクトでは、以下のメソッドを使用できます。
  
  - `getItem`
  - `setItem`
@@ -101,10 +82,10 @@ AsyncStorage は、アドイン内のすべての部分にグローバルに利�
  - `multiGet`
  - `multiSet`
  - `multiRemove`
- 
-この時点で、 `mergeItem` と `multiMerge` のメソッドはサポートされていません。
 
-次のコード サンプルは、ストレージから値を取得するために `AsyncStorage.getItem` を呼び出します。
+### <a name="asyncstorage-example"></a>AsyncStorage の使用例 
+
+以下のコードサンプルは、`AsyncStorage.getItem`関数を呼び出してストレージから値を取得します。
 
 ```typescript
 _goGetData = async () => {
@@ -112,29 +93,30 @@ _goGetData = async () => {
         const value = await AsyncStorage.getItem('toDoItem');
         if (value !== null) {
             //data exists and you can do something with it here
-            }
-        } catch (error) {
-            //handle errors here
         }
+    } catch (error) {
+        //handle errors here
     }
 }
 ```
 
-### <a name="dialog-api"></a>ダイアログ API
+## <a name="displaying-a-dialog-box"></a>ダイアログボックスの表示
 
-ダイアログ API を使用すると、ユーザーのサインインを求めるダイアログ ボックスを開くことができます。 ユーザーが関数を使用する前に、Google や Facebook などの外部のリソースを通じ、ダイアログ API を使用してユーザー認証を要求します。   
+カスタム関数（またはアドインの他の部分）内では、`OfficeRuntime.displayWebDialogOptions`  API を使用してダイアログボックスを表示できます。 このダイアログボックス API は、[ Dialog API ](../develop/dialog-api-in-office-add-ins.md) の代わりに作業ウィンドウやアドインコマンドで使用できますが、カスタム関数では使用できません。
 
-次のコード サンプルで、 `getTokenViaDialog()` メソッドは、ダイアログ API の `displayWebDialog()` メソッドを使用してダイアログ ボックスを開きます。
+### <a name="dialog-api-example"></a>ダイアログ API の使用例 
+
+以下のコードサンプルでは、関数`getTokenViaDialog`は Dialog API の`displayWebDialogOptions`関数を使用してダイアログボックスを表示しています。
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
- 
+
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
     getToken("https://www.contoso.com/auth")
     .then(function (token) {
-      
+
       // Use token to get stock price
       fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
@@ -184,7 +166,7 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
+        OfficeRuntime.displayWebDialogOptions(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
@@ -205,8 +187,9 @@ function getStock (ticker) {
 }
 ```
 
-> [!NOTE]
-> このセクションで説明しているダイアログ API は、カスタム関数の新しい JavaScript ランタイムの一部であり、カスタム関数内でのみ使用することができます。 この API は、作業ウィンドウおよびアドイン コマンド内で使用できる [ダイアログ API](../develop/dialog-api-in-office-add-ins.md) とは異なります。
+## <a name="additional-considerations"></a>その他の考慮事項
+
+複数のプラットフォーム（Officeアドインの主要テナントの一つ）で動作するアドインを作成する際は、カスタム関数でドキュメント オブジェクト モデル (DOM) にアクセスしたり、jQueryのようなDOMに依存するライブラリーを使用してはいけません。 カスタム関数が JavaScript ランタイムを使用する Excel for Windows では、カスタム関数は DOM にアクセスできません。
 
 ## <a name="see-also"></a>関連項目
 
