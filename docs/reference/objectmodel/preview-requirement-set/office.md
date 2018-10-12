@@ -8,12 +8,12 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
-| メンバー | 型 |
+| メンバー | 種類 |
 |--------|------|
 | [AsyncResultStatus](#asyncresultstatus-string) | メンバー |
 | [CoercionType](#coerciontype-string) | メンバー |
@@ -32,13 +32,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 非同期呼び出しの結果を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Succeeded`| 文字列|呼び出しが成功しました。|
 |`Failed`| 文字列|呼び出しが失敗しました。|
@@ -47,7 +47,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ---
@@ -56,13 +56,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Html`| 文字列|HTML 形式で返されるデータを要求します。|
 |`Text`| 文字列|テキスト形式で返されるデータを要求します。|
@@ -71,7 +71,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ---
@@ -80,13 +80,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 イベント ハンドラに関連付けられているイベントを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="properties"></a>プロパティ:
 
-| 名前 | 型 | 説明 | 最小要件セット |
+| 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|---|
 |`AppointmentTimeChanged`| 文字列 | 選択した予定または系列の日付または時間が変更されました。 | 1.7 |
 |`ItemChanged`| 文字列 | 選択したアイテムが変更されました。 | 1.5 |
@@ -98,7 +98,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り |
 
 ---
@@ -107,13 +107,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Body`| 文字列|データのソースは、メッセージの本文です。|
 |`Subject`| 文字列|データのソースは、メッセージの件名です。|
@@ -122,5 +122,5 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
