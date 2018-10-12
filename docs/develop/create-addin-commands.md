@@ -1,18 +1,18 @@
 ---
 title: Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
-description: マニフェストに VersionOverrides を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
+description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
 ms.date: 12/04/2017
-ms.openlocfilehash: 6542084e5f63480100a72121e6acf25e7fc49ac8
-ms.sourcegitcommit: 4b2e93db537d89e8aa7a9eb05b0338debb42ba56
+ms.openlocfilehash: 652add3eeadcbeefc20db1bf65a3255e4175332a
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25018213"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506316"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
 
 
-マニフェストに **[VersionOverrides](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js)** を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
+Use **[VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。  
   
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。    
@@ -29,8 +29,7 @@ ms.locfileid: "25018213"
       
 この記事では、アドイン コマンドを定義するマニフェストの編集方法について説明します。次の図に、アドイン コマンドを定義するのに使用される要素の階層を示します。これらの要素は、この記事で詳細に説明します。 
       
-次の画像は、マニフェスト内のアドイン コマンド要素の概要です。 
-![マニフェスト内のアドイン コマンド要素の概要](../images/version-overrides.png)
+The following image is an overview of add-in commands elements in the manifest. ![Overview of add-in commands elements in the manifest](../images/version-overrides.png)
  
 ## <a name="step-1-start-from-a-sample"></a>手順 1: サンプルから始める
 
@@ -143,7 +142,7 @@ ms.locfileid: "25018213"
 
 ## <a name="step-5-add-the-functionfile-element"></a>手順 5: FunctionFile 要素を追加する
 
-**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](https://docs.microsoft.com/javascript/office/manifest/control?view=office-js#Button-control)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
+**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
         
 **FunctionFile** 要素の例を次に示します。
   
@@ -161,7 +160,7 @@ ms.locfileid: "25018213"
 > [!IMPORTANT]
 > JavaScript コードが `Office.initialize` を呼び出していることを確認します。 
    
-**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](https://docs.microsoft.com/javascript/office/manifest/control?view=office-js#Button-control)」の説明を参照) は、**FunctionFile** の関数を使用します。
+**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control)」の説明を参照) は、**FunctionFile** の関数を使用します。
      
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
@@ -247,13 +246,13 @@ ms.locfileid: "25018213"
 |**要素**|**説明**|
 |:-----|:-----|
 |**CustomTab** <br/> |カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 <br/> |
-|**Office Tab** <br/> |既定の Office リボン タブを拡張する場合は必須 (**PrimaryCommandSurface** を使用)。**OfficeTab** 要素を使用する場合、**CustomTab** 要素は使用できません。 <br/> **id** 属性と共に使用するその他のタブの値については、「[既定の Office リボン タブ](https://docs.microsoft.com/javascript/office/manifest/officetab?view=office-js)」を参照してください。  <br/> |
+|**Office Tab** <br/> |既定の Office リボン タブを拡張する場合は必須 (**PrimaryCommandSurface** を使用)。**OfficeTab** 要素を使用する場合、**CustomTab** 要素は使用できません。 <br/> **id** 属性と共に使用するその他のタブの値については、「[既定の Office リボン タブ](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officetab?view=office-js)」を参照してください。  <br/> |
 |**OfficeMenu** <br/> | 既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は **ContextMenuText**。ユーザーがテキストを選択し、選択したテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。 <br/> |
 |**グループ** <br/> |タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 <br/> |
 |**ラベル** <br/> |必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**アイコン** <br/> |必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
 |**ヒント** <br/> |省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
-|**コントロール** <br/> |各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](https://docs.microsoft.com/javascript/office/manifest/control?view=office-js#Button-control)」および「[メニュー コントロール](https://docs.microsoft.com/javascript/office/manifest/control?view=office-js#menu-dropdown-button-controls)」のセクションをご覧ください。 <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
+|**コントロール** <br/> |各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control)」および「[メニュー コントロール](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#menu-dropdown-button-controls)」のセクションをご覧ください。 <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
    
 
 ### <a name="button-controls"></a>Button コントロール
@@ -381,7 +380,7 @@ ms.locfileid: "25018213"
 |**ヒント** <br/> |省略可能。メニューのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**SuperTip** <br/> | 必須。メニューのヒントであり、次のものによって定義されます。 <br/> **タイトル** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**アイコン** <br/> | 必須。メニューの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **画像** <br/>  メニューの画像。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズ (ピクセル単位) が必要です。16、32、および 80。次の 5 つのオプションのサイズ (ピクセル単位) もサポートされています。20、24、40、48、および 64。 <br/> |
-|**アイテム** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](https://docs.microsoft.com/javascript/office/manifest/control?view=office-js#Button-control)と同じ子要素を含みます。  <br/> |
+|**アイテム** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control)と同じ子要素を含みます。  <br/> |
    
 ## <a name="step-7-add-the-resources-element"></a>手順 7: Resources 要素を追加する
 

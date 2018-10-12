@@ -2,12 +2,12 @@
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 101c34748f0eba5502caeab63ecbc00992ac548e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944517"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506267"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -85,7 +85,7 @@ ms.locfileid: "23944517"
 
 アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
-マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js)」のリファレンス資料をご覧ください。
+マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)」のリファレンス資料をご覧ください。
 
 
 
