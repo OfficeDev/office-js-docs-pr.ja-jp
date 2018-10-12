@@ -2,40 +2,40 @@
 title: Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 422cbd947dde09a8cd19559db9a86ddacd5e2dba
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 0ad589ee98342ee72259cddc0957277e9018f186
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348094"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505420"
 ---
-# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a><span data-ttu-id="ea8c0-102">Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する</span><span class="sxs-lookup"><span data-stu-id="ea8c0-102">Referencing the JavaScript API for Office library from its content delivery network (CDN)</span></span>
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a><span data-ttu-id="aa428-102">Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する</span><span class="sxs-lookup"><span data-stu-id="aa428-102">Referencing the JavaScript API for Office library from its content delivery network (CDN)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ea8c0-103">この記事で説明する手順に加えて TypeScript を使用する場合は、 Intellisense を取得するために、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-103">In addition to the steps described in this article, if you want to use TypeScript, then to get Intellisense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder.</span></span> <span data-ttu-id="ea8c0-104"> [Node.js](https://nodejs.org) がインストールされている (これには npm が含まれています) ことが必要です。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-104">You must have [Node.js](https://nodejs.org) installed (which includes npm).</span></span>
+> <span data-ttu-id="aa428-p101">この記事で説明する手順に加えて TypeScript を使用する場合は、 Intellisense を取得するために、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行する必要があります。[Node.js](https://nodejs.org) がインストールされている必要があります (npm を含む)。</span><span class="sxs-lookup"><span data-stu-id="aa428-p101">In addition to the steps described in this article, if you want to use TypeScript, then to get Intellisense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).</span></span>
 > 
 > ```
 > npm install --save-dev @types/office-js
 > ```
 
-<span data-ttu-id="ea8c0-105">[JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-105">The [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js.</span></span> 
+<span data-ttu-id="aa428-105">[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="aa428-105">The [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js.</span></span> 
 
 
-<span data-ttu-id="ea8c0-106">最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-106">The simplest way to reference the API is to use our CDN by adding the following `<script>` to your page's `<head>` tag:</span></span>  
+<span data-ttu-id="aa428-106">最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。</span><span class="sxs-lookup"><span data-stu-id="aa428-106">The simplest way to reference the API is to use our CDN by adding the following `<script>` to your page's `<head>` tag:</span></span>  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-<span data-ttu-id="ea8c0-p102">CDN URL で `office.js` の前にある `/1/` は、Office.js のバージョン 1 内で最新の増分リリースを指定します。JavaScript API for Office は旧バージョンとの互換性を維持しているため、最新リリースにおいてもバージョン 1 の時点で導入されていた API メンバーを引き続きサポートします。既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API for Office とマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-p102">The  `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the JavaScript API for Office maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1. If you need to upgrade an existing project, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).</span></span> 
+<span data-ttu-id="aa428-p102">CDN URL で `office.js` の前にある `/1/` は、Office.js のバージョン 1 内で最新の増分リリースを指定します。JavaScript API for Office は旧バージョンとの互換性を維持しているため、最新リリースにおいてもバージョン 1 の時点で導入されていた API メンバーを引き続きサポートします。既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API for Office とマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="aa428-p102">The  `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the JavaScript API for Office maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1. If you need to upgrade an existing project, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).</span></span> 
 
-<span data-ttu-id="ea8c0-p103">AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-p103">If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.</span></span>
+<span data-ttu-id="aa428-p103">AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="aa428-p103">If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.</span></span>
 
 > [!IMPORTANT]
->  <span data-ttu-id="ea8c0-p104">Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの中から JavaScript API for Office を参照します。これにより、すべての body 要素の前に API が完全に初期化されます。Office ホストでは、アクティブ化から 5 秒以内にアドインを初期化する必要があります。このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="ea8c0-p104">When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.</span></span>       
+>  <span data-ttu-id="aa428-p104">Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの中から JavaScript API for Office を参照します。これにより、すべての body 要素の前に API が完全に初期化されます。Office ホストでは、アクティブ化から 5 秒以内にアドインを初期化する必要があります。このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa428-p104">When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.</span></span>       
 
-## <a name="see-also"></a><span data-ttu-id="ea8c0-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea8c0-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aa428-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="aa428-116">See also</span></span>
 
-- [<span data-ttu-id="ea8c0-117">JavaScript API for Office について</span><span class="sxs-lookup"><span data-stu-id="ea8c0-117">Understanding the JavaScript API for Office</span></span>](understanding-the-javascript-api-for-office.md)    
-- [<span data-ttu-id="ea8c0-118">JavaScript API for Office</span><span class="sxs-lookup"><span data-stu-id="ea8c0-118">JavaScript API for Office</span></span>](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [<span data-ttu-id="aa428-117">JavaScript API for Office について</span><span class="sxs-lookup"><span data-stu-id="aa428-117">Understanding the JavaScript API for Office</span></span>](understanding-the-javascript-api-for-office.md)    
+- [<span data-ttu-id="aa428-118">JavaScript API for Office</span><span class="sxs-lookup"><span data-stu-id="aa428-118">JavaScript API for Office</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
     
