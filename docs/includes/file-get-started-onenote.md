@@ -14,7 +14,7 @@
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. ローカル ドライブにフォルダーを作成し、`my-onenote-addin` という名前を付けます。 ここにアドインのファイルを作成します。
+1. ローカル ドライブにフォルダーを作成し、`my-onenote-addin`という名前を付けます。ここにアドインのファイルを作成します。
 
 2. 新しいフォルダーに移動します。
 
@@ -22,7 +22,7 @@
     cd my-onenote-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+3. Yeoman を使用して OneNote アドイン プロジェクトを作成するジェネレーターです。次のコマンドを実行し、プロンプトに次のように応答し、します。
 
     ```bash
     yo office
@@ -31,7 +31,7 @@
     - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`
     - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Onenote`
+    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Onenote`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote-jquery.png)
     
@@ -45,9 +45,9 @@
 
 ## <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
+1. コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。
 
-2. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>` これは、[Office UI Fabric コンポーネント](https://developer.microsoft.com/en-us/fabric#/components)を使用してテキスト領域とボタンを追加します。
+2. `<body>` 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。これは、[Office UI Fabric コンポーネント](https://developer.microsoft.com/en-us/fabric#/components)を使用してテキスト領域とボタンを追加します。
 
     ```html
     <main class="ms-welcome__main">
@@ -64,7 +64,7 @@
     </main>
     ```
 
-3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. ファイル **src\index.js** を開いてアドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -113,9 +113,9 @@
 
 1. **one-note-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for OneNote** に置き換えてください。
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
 
 4. ファイルを保存します。
 
@@ -129,7 +129,7 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a>開発用サーバーの起動
+## <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
@@ -149,9 +149,9 @@
 
 3. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **one-note-add-in-manifest.xml** を参照し、**[アップロード]** を選択します。 
 
-4. **ホーム**タブから、リボンの **[タスクペインを表示]** ボタンを選択します。 アドインは、OneNote ページの横にある iFrame で開きます。
+4.  **[ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame で追加の作業ウィンドウを開きます。
 
-5. テキスト領域にテキストを入力し、**[アウトラインの追加]** を選択します。 入力したテキストは、ページに追加されます。 
+5. テキスト領域にテキストを入力し、 **アウトラインを追加**します。入力したテキストは、ページに追加されます。 
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in.png)
 
@@ -169,14 +169,14 @@
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。OneNote アドインが正常に作成されました。 次に、OneNote アドイン構築の中心概念の詳細について説明します。
+これで完了です。OneNote アドインが正常に作成されました。次に、OneNote アドイン構築の中心概念の詳細について説明します。
 
 > [!div class="nextstepaction"]
-> [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
+> [OneNote JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
 
 ## <a name="see-also"></a>関連項目
 
-- [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

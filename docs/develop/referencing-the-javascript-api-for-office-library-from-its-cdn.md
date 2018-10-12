@@ -2,23 +2,23 @@
 title: Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 422cbd947dde09a8cd19559db9a86ddacd5e2dba
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 0ad589ee98342ee72259cddc0957277e9018f186
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348094"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505420"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API を Office コンテンツ配信ネットワーク (CDN) から参照する
 
 > [!NOTE]
-> この記事で説明する手順に加えて TypeScript を使用する場合は、 Intellisense を取得するために、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行する必要があります。  [Node.js](https://nodejs.org) がインストールされている (これには npm が含まれています) ことが必要です。
+> この記事で説明する手順に加えて TypeScript を使用する場合は、 Intellisense を取得するために、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行する必要があります。[Node.js](https://nodejs.org) がインストールされている必要があります (npm を含む)。
 > 
 > ```
 > npm install --save-dev @types/office-js
 > ```
 
-[JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
+[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有の .js ファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
 
 
 最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
@@ -37,5 +37,5 @@ AppSource から Office アドインを発行する場合は、この CDN の参
 ## <a name="see-also"></a>関連項目
 
 - [JavaScript API for Office について](understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
     

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2d9cd30df34fee32821e4746ca369c2dc850f2b1
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: a9cb9bfcca336398117de5000bb9f5e9bc2c16de
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967649"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505616"
 documentType: LandingData
 title: Office アドイン ドキュメント
 metadata:
@@ -15,14 +15,14 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office アドインのプラットフォーム</a> を使用すると、Office アプリケーションを拡張し、Office ドキュメントのコンテンツと対話するソリューションを構築できます。 Office アドインで、HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、および Outlookを拡張して対話操作することができます。 ソリューションは、Office for Windows、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームの Office で実行できます。 クイック スタート、ハウツー ガイド、および API リファレンス ドキュメントで Office アドインを作成する方法を学びます。<br/><br/><b>注:</b> COM または VSTO アドインの詳細については、<a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office クライアント開発のドキュメント</a>をご覧ください。
+  description: " <a href=\"https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins\">Office アドインのプラットフォーム</a> を使用すると、Office アプリケーションを拡張して、Office ドキュメント内のコンテンツと対話するためのソリューションを構築できます。Office アドインで拡張し、Word、Excel、PowerPoint、OneNote、プロジェクト、および Outlook と対話する HTML、CSS、JavaScript などの一般的な web テクノロジを使用できます。オフィスの Windows、Office オンライン、Office for Mac、iPad のオフィスなど、複数のプラットフォーム間で Office ソリューションを実行できます。クイック スタート、ご利用ガイド、API リファレンス ドキュメントと Office アドインを作成する方法について説明します。<br/><br/><b>注:</b> COM または VSTO アドインの詳細については、<a href=\"https://docs.microsoft.com/office/client-developer/office-client-development\" target=\"_blank\">Office クライアント開発のドキュメント</a>をご覧ください。"
   aside:
     image:
       alt: 
       height: 130
       src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
       width: 250
-    title: Office アドインを開始する。(14:10)
+    title: Office アドインを始める。(14:10)
     href: https://channel9.msdn.com/Events/Connect/2017/T192
     width: 250
 sections:
@@ -74,15 +74,15 @@ sections:
     - html: <a href="/office/dev/add-ins/project/project-add-ins">Project アドインの開発</a>
     - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Office アドインのテストとデバッグ</a>
     - html: <a href="/office/dev/add-ins/publish/publish">Office アドインを公開する</a>
-- title: リファレンス
+- title: 参照
   items:
   - type: list
     style: cards
     className: cardsD
     items:
     - title: 共通 API (2013)
-      html: <p><a href="https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js" target="_blank">Office の JavaScript API</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js" target="_blank">JavaScript API for Office</a></p>
     - title: ホスト固有の API (2016)
-      html: <p><a href="https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
     - title: その他
-      html: <p><a href="https://docs.microsoft.com/javascript/office/openspec?view=office-js" target="_blank">API オープン仕様</a></p><p><a href="https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js" target="_blank">Office アドインのマニフェスト</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/openspec?view=office-js" target="_blank">API オープン仕様</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/manifest/allowsnapshot?view=office-js" target="_blank">Office アドインのマニフェスト</a></p>

@@ -3,18 +3,18 @@
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
-Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧では、Outlook のアドインで使うインターフェイスのみを記載しています。Office.context 名前空間の完全な一覧については、「[共有 API の Office.context リファレンス](/javascript/api/office/office.context)」をご覧ください。
+Office.context の名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧では、Outlook アドインで使うインターフェイスのみを記載しています。Office.context の名前空間の完全な一覧については、[ 共有 API の 中のOffice.context リファレンス](/javascript/api/office/office.context) をご覧ください。
 
 ##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
-|[メールボックスの最低要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ### <a name="namespaces"></a>名前空間
 
-[mailbox](office.context.mailbox.md): Microsoft Outlook と Microsoft Outlook on the Web の Outlook アドイン オブジェクト モデルへアクセスできるようにします。
+[メ―ルボックス](office.context.mailbox.md): Microsoft Outlook と Microsoft Outlook on the Web の Outlook アドイン オブジェクト モデルへアクセスできるようにします。
 
 ### <a name="members"></a>メンバー
 
@@ -22,9 +22,9 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 
 Office ホスト アプリケーションの UI 用にユーザーが指定した RFC 1766 言語タグ形式のロケール (言語) を取得します。
 
-`displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル] > [選択肢] > [言語]** によって指定される現在の **[表示言語]** 設定を反映します。
+値`displayLanguage`は電流を反映する**言語を表示する** Office ホスト アプリケーション内で、**ファイル > オプション > 言語**によって指定された設定
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
@@ -32,7 +32,7 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最低要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
@@ -57,31 +57,31 @@ function write(message){
 
 ####  <a name="officetheme-object"></a>officeTheme: オブジェクト
 
-Office テーマ色のプロパティにアクセスできるようにします。
+Office のテーマの色のプロパティにアクセスできるようにします。
 
 > [!NOTE]
-> このメンバーは、Outlook for iOS および Outlook for Android ではサポートされていません。
+> このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
-Office テーマカラーを使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマカラーは、メール アドインと作業ウィンドウ アドインに適合しています。
+Office のテーマの色を使うと、**ファイル >Office アカウント >Office テーマ UI**によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Officeの テーマの色は、メール アドインと作業ウィンドウ アドインに適合しています。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   オブジェクト
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-|`bodyBackgroundColor`| 文字列|Office テーマの本文背景色を 16 進数の組み合わせとして取得します。|
-|`bodyForegroundColor`| 文字列|Office テーマの本文前景色を 16 進数の組み合わせとして取得します。|
-|`controlBackgroundColor`| 文字列|Office テーマコントロールの背景色を 16 進数の組み合わせとして取得します。|
-|`controlForegroundColor`| 文字列|Office テーマの本文コントロール色を 16 進数の組み合わせとして取得します。|
+|`bodyBackgroundColor`| 文字列|Office テーマの本文背景色を 16 進法のカラートリプレットとして取得します。|
+|`bodyForegroundColor`| 文字列|Office テーマの本文の前景色を 16 進トリプレットとして取得します。|
+|`controlBackgroundColor`| 文字列|Office テーマコントロールの背景色を 16 進法のカラートリプレットとして取得します。|
+|`controlForegroundColor`| 文字列|Office テーマの本文コントロール色を 16 進法のカラートリプレットとして取得します。|
 
 ##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
-|[メールボックスの最低要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
@@ -103,9 +103,9 @@ function applyOfficeTheme(){
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
-`RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションからメール アドインを実行してもこのデータを使うことができます。
+`RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのためのデータの保存やアクセスができます。そのため、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションからメール アドインを実行してもこのデータを使うことができます。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   [RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
 
@@ -113,6 +113,6 @@ function applyOfficeTheme(){
 
 |要件| 値|
 |---|---|
-|[メールボックスの最低要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
