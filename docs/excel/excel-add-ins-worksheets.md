@@ -2,16 +2,16 @@
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f4c129f34460340a9abed3eda4a47e3bb6dd5978
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437438"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459134"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
-この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js)」を参照してください。
 
 > [!NOTE]
 > この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
@@ -281,6 +281,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API の中心概念](excel-add-ins-core-concepts.md)
-- [Worksheet オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
-- [WorksheetCollection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+
