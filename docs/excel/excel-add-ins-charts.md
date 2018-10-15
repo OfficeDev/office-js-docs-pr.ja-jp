@@ -2,10 +2,13 @@
 title: Excel JavaScript API を使用してグラフを操作する
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c0f45892cb937a565a6855390344855f75e7473e
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437445"
 ---
-
-
-
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)」を参照してください。
@@ -40,7 +43,7 @@ Excel.run(function (context) {
 次のコード サンプルは、ワークシートの最初のグラフにデータ系列を追加します。 新しいデータ系列は **2016** という名前の列に対応し、範囲 **D2:D5** のデータに基づいています。
 
 > [!NOTE]
-> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> このサンプルでは、現在パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDNのベータライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {
@@ -110,7 +113,7 @@ Excel.run(function (context) {
 次のコード サンプルは、ワークシートの最初のグラフの、数値軸の表示単位を **Hundreds** に設定します。
 
 > [!NOTE]
-> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> このサンプルでは、現在パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDNのベータライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {
@@ -129,7 +132,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 `chart.axes.valueAxis.majorGridlines.visible` を **true** に設定すると、グラフの数値軸の主な枠線を表示できます。
+次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 を **true** に設定すると、グラフの数値軸の主な枠線を表示できます。`chart.axes.valueAxis.majorGridlines.visible`
 
 ```js
 Excel.run(function (context) {
@@ -153,7 +156,7 @@ Excel.run(function (context) {
 次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に移動平均の近似曲線を追加します。近似曲線は 5 期間にわたる移動平均を示します。
 
 > [!NOTE]
-> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> このサンプルでは、現在パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDNのベータライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {
@@ -176,7 +179,7 @@ Excel.run(function (context) {
 次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に対して、近似曲線の種類を**線形**に設定しています。
 
 > [!NOTE]
-> このサンプルでは、現在、パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDN のベータ版ライブラリ (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) を使用する必要があります。
+> このサンプルでは、現在パブリック プレビュー (ベータ版) でのみ使用可能な API を使用しています。 このサンプルを実行するには、Office.js CDNのベータライブラリを使用する必要があります。 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {

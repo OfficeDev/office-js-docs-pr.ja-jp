@@ -1,6 +1,6 @@
 # <a name="authentication-patterns"></a>認証パターン
 
-アドインでは、機能にアクセスするためにユーザーにサインインまたはサインアップする必要があります。 ユーザー名とパスワードの入力ボックス、またはサードパーティの資格情報フローを開始するボタンは、認証エクスペリエンスにおける共通のインターフェイス コントロールです。 シンプルで効率的な認証エクスペリエンスは、アドインを使用してユーザーを開始させるための重要な第一歩です。
+アドインは、機能や機能にアクセスするためにユーザーがサインインまたはサインアップをする必要があります。ユーザー名とパスワードの入力ボックス、またはサードパーティの資格情報フローを開始するボタンは、認証エクスペリエンスにおける共通のインターフェイス コントロールです。シンプルで効率的な認証エクスペリエンスは、アドインを使用してユーザーを開始させるための重要な第一歩です。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -15,38 +15,35 @@
 |ユーザーがサインアウトして再認証する方法を提供します。    |ユーザーを強制的にアンインストールしてIDを切り替えます。|
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> Word、Excel、Outlook、および PowerPoint のプレビューでは、現在、シングル サインオンの API がサポートされています。シングル サインオンの API がサポートされている現在の詳細については、 [IdentityAPI 要件の設定](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)を参照してください。Outlook のアドインで作業している場合は、Office 365 テナントの先進認証を必ず有効にします。詳細な方法については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 
 ## <a name="authentication-flow"></a>認証フロー
-ユーザーがシングルサインオンをまだ利用できない場合は、代替認証フローを検討してください。 ユーザーには、サービスや Microsoft などのID プロバイダに直接サインインする選択肢を与えます。
+シングル サインオンがまだ使用できないユーザーの場合は、代替の認証フローを検討してください。直接サービスまたはマイクロソフトのように ID プロバイダーを選択できるようにします。
 
-1. First Run Placemat  - サインインボタンを、アドインの最初の実行経験の中に明確なコールアクトアクションとして配置します。
+1. 最初の実行プレイスマット - サインイン ボタンを、アドインの最初の実行経験の中に明確なコール トゥ アクションとして配置します。
 ![](../images/add-in-fre-value-placemat.png)
 
-2. ID プロバイダの選択肢ダイアログ - 必要に応じてユーザー名とパスワードのフォームを含む ID プロバイダの明確な一覧を表示します。 認証ダイアログが開いている間、アドインUIがブロックされることがあります。
-![](../images/add-in-auth-choices-dialog.png)
+2. ID プロバイダの選択肢ダイアログ - 必要に応じてユーザー名とパスワードのフォームを含む ID プロバイダの明確な一覧を表示します。認証ダイアログが開いている間、アドイン UI がブロックされることがあります。 ![](../images/add-in-auth-choices-dialog.png)
 
 
 
-3. ID プロバイダのサインイン - ID プロバイダには独自のUIがあります。 Microsoft Azure Active Directoryではサインインパネルとアクセスパネルのページをカスタマイズして、一貫したルック・アンド・フィールをサービスに提供できます。 ([詳細を見る](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding))。
-![](../images/add-in-auth-identity-sign-in.png)
+3. ID プロバイダのサインイン - ID プロバイダには独自のUIがあります。Microsoft Azure Active Directory では、サインイン パネルとアクセス パネルのページをカスタマイズして、一貫したルック アンド フィールをサービスに提供できます。[詳細](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。 ![](../images/add-in-auth-identity-sign-in.png)
 
-4. 進行状況 - 設定やUIの読み込み中に進行状況を示します。
+4. 進行状況 - 設定や UI の読み込み中に進行状況を示します。
 ![](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE] 
-> マイクロソフトのIDサービスを使用する場合は、明暗のテーマに合わせてカスタマイズ可能なブランドのサイン インボタンを使用することができます。 詳しい情報をご覧ください。
+> マイクロソフトの ID サービスを使用する場合は、明暗のテーマに合わせてカスタマイズ可能なブランドのサイン インボタンを使用することができます。
 
 ## <a name="single-sign-on-authentication-flow"></a>シングル サインオン認証フロー
-シングル サインオンはまだプレビュー中です。 一般に利用可能になったら、それを使用して最もスムーズなエンドユーザー体験を実現します。 Office内のユーザーのIDは、アドインにサインインするために使用されます。 結果として、ユーザーは一度だけサインインします。 これにより、経験の中の摩擦が排除され、顧客が簡単に開始することができます。
+シングル サインオンが、まだプレビューです。一般に利用可能なスムーズのエンド ユーザー エクスペリエンスの値を使用します。Office 内でユーザーの ID は、アドインへのサインインに使用されます。結果としてユーザーのみサインインは 1 回のみです。これにより摩擦が削除され、ユーザーは容易に開始することができます。
 
 1. アドインがインストールされると、以下のような同意ウィンドウが表示されます。 ![](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
-> アドインパブリッシャーは、同意ウィンドウに含まれるロゴ、文字列、および権限スコープを制御します。 UI は Microsoft によって事前設定されています。
+> アドインパブリッシャーは、同意ウィンドウに含まれるロゴ、文字列、および権限スコープを制御します。
 
-2. ユーザーが同意すると、アドインが読み込まれます。 必要なユーザー カスタマイズ情報を抽出して表示することができます。
-![](../images/add-in-ribbon.png)
+2. ユーザーが同意すると、アドインが読み込まれます。必要なユーザー カスタマイズ情報を抽出して表示することができます。 ![](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>関連項目
 - [SSO アドインの開発](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)について詳細を知る
