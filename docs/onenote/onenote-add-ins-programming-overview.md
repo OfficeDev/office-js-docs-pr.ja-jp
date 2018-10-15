@@ -1,20 +1,20 @@
 ---
-title: OneNote の JavaScript API のプログラミングの概要
+title: OneNote JavaScript API のプログラミングの概要
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d45e73841c191d5760963cbc684f03cf23ea1989
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 557fd1807d860960e7d34587d8ad685c15a883fb
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944152"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506274"
 ---
-# <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
+# <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API のプログラミングの概要
 
 OneNote では、OneNote Online アドインの JavaScript API が導入されています。OneNote オブジェクトを操作する作業ウィンドウ アドイン、コンテンツ アドイン、アドイン コマンドを作成し、Web サービスや他の Web ベースのリソースに接続できます。
 
 > [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
+> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するためには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
 
 ## <a name="components-of-an-office-add-in"></a>Office アドインのコンポーネント
 
@@ -43,12 +43,12 @@ OneNote では、OneNote Online アドインの JavaScript API が導入され�
 
 2. 操作する OneNote オブジェクトを表すプロキシを作成します。プロキシ オブジェクトのプロパティの読み取りや書き込みを行い、メソッドを呼び出すことにより、プロキシ オブジェクトを同期的に操作します。 
 
-3. プロキシで**読み込み**を呼び出し、パラメーターで指定されたプロパティ値を設定します。この呼び出しは、コマンドのキューに追加されます。
+3. プロキシで**読み込み**を呼び出し、パラメータで指定されたプロパティ値を設定します。この呼び出しは、コマンドのキューに追加されます。
 
    > [!NOTE]
    > API へのメソッドの呼び出し (`context.application.getActiveSection().pages;` など) も、キューに追加されます。
 
-4. キューに置かれたすべてのコマンドをキューに置かれた順序で実行するには、**context.sync** を呼び出します。これにより、実行中のスクリプトと実際のオブジェクトの間の状態が同期されます。また、読み込まれた OneNote オブジェクトのプロパティを取得して、スクリプトで使います。追加のアクションのチェーン処理には、返された約束オブジェクトを使うことができます。
+4. キューに置かれたすべてのコマンドをキューに置かれた順序で実行するには、**context.sync** を呼び出します。これにより、実行中のスクリプトと実際のオブジェクトの間の状態が同期されます。また、読み込まれた OneNote オブジェクトのプロパティを取得して、スクリプトで使えるようにします。追加のアクションのチェーン処理には、返された約束オブジェクトを使うことができます。
 
 例: 
 
@@ -84,7 +84,7 @@ function getPagesInSection() {
 }
 ```
 
-[API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
+[API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
@@ -117,19 +117,19 @@ OneNote アドインは、次の共通 API のみをサポートします。
 | [Office.context.document.settings.set(名前, 値);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | 設定はコンテンツ アドインによってのみサポートされます | 
 | [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-一般に、豊富な API でサポートされていない操作を行う場合は、共通 API のみを使います。共通 API の使用について詳しくは、Office アドインの[ドキュメント](../overview/office-add-ins.md)と[リファレンス](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)をご覧ください。
+一般に、豊富な API でサポートされていない操作を行う場合は、共通 API のみを使います。共通 API の使用についての詳細は、Office アドインの[ドキュメント](../overview/office-add-ins.md)と[リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)をご覧ください。
 
 
 <a name="om-diagram"></a>
-## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図 
+## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル ダイアグラム 
 次の図では、OneNote JavaScript API で現在使用可能なものが示されます。
 
-  ![OneNote のオブジェクト モデル図](../images/onenote-om.png)
+  ![OneNote のオブジェクト モデル ダイアグラム](../images/onenote-om.png)
 
 
 ## <a name="see-also"></a>関連項目
 
 - [最初の OneNote アドインをビルドする](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API 参照](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
