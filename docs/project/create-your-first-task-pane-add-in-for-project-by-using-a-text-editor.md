@@ -2,12 +2,12 @@
 title: テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: eb12f1d15135301fe27b143781e1f622475f7b66
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 03d8ad30e4ee52274c6b96ab6290337e6f2a2223
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004897"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506246"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
 
@@ -15,11 +15,11 @@ Visual Studio 2015 を使用して複雑な Web アプリケーションを作�
 
 Project 2013では、他の Microsoft Office 2013 クライアントと同じアドイン マニフェスト スキーマを使用し、JavaScript API も同じものを多数使用します。この記事で説明するアドインの完全なコードは、Project 2013 SDK ダウンロードの  `Samples\Apps` サブディレクトリ内にあります。
 
-Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。 Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
+Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
 
 [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、`\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルがあり、`\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。 
 
-サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。 これらの関数は、対応するデバッグ ファイル (office.debug.js と project-15.debug.js) を使用して検証できます。
+JSOMCall.html サンプルでは、含まれている office.js ファイルとプロジェクトの 15.js ファイル、JavaScript 関数を使用します。(Office.debug.js およびプロジェクト 15.debug.js) 関数を調べるには、対応するデバッグ ファイルを使用することができます。
 
 Office アドインでの JavaScript の使用の概要については、「[JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
@@ -106,7 +106,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
    次のコードでは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。**text** オブジェクトは、HTML ファイル内にある **textarea** コントロールの ID です。
     
-   **\_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストおよびプロジェクト ドキュメント コンテキストのプロパティを取得する **getContextValues** 関数が含まれています。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)」を参照してください。
+   **\_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストおよびプロジェクト ドキュメント コンテキストのプロパティを取得する **getContextValues** 関数が含まれています。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)」を参照してください。
 
     ```javascript
     /*
@@ -168,7 +168,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     }
     ```
 
-   Office.debug.js ファイル内の関数については、「[JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)」を参照してください。たとえば、**getDocumentUrl** 関数は、開かれているプロジェクトの URL またはファイル パスを取得します。
+   Office.debug.js ファイル内の関数については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)」を参照してください。たとえば、**getDocumentUrl** 関数は、開かれているプロジェクトの URL またはファイル パスを取得します。
     
 3. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
     
@@ -545,9 +545,9 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     }
     ```
 
-4. JavaScript イベント ハンドラーのコールバックと関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。**manageEventHandlerAsync** 関数は、_operation_ パラメーターに応じて、指定されたイベント ハンドラーを追加または削除します。この操作は **addHandlerAsync** または **removeHandlerAsync** のどちらかになります。
+4. JavaScript イベント ハンドラのコールバックと関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラの登録と登録解除を行います。**manageEventHandlerAsync** 関数は、_operation_ パラメータに応じて、指定されたイベント ハンドラを追加または削除します。この操作は **addHandlerAsync** または **removeHandlerAsync** のどちらかになります。
     
-   **manageTaskEventHandler**、**manageResourceEventHandler**、**manageViewEventHandler** の各関数は、_docMethod_ パラメーターの指定に応じて、イベント ハンドラーを追加または削除できます。
+   **manageTaskEventHandler**、**manageResourceEventHandler**、**manageViewEventHandler** の各関数は、_docMethod_ パラメータの指定に応じて、イベント ハンドラを追加または削除できます。
 
     ```javascript
     // Task selection changed event handler.
@@ -742,7 +742,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     
 9. 3 つのタスクすべての [ **期間**] セル (3 つ) を選択します。 **getSelectedDataAsync** 関数により、各行で選択されたセルのセミコロン区切りテキスト値が返されます (例: `2 days;4 days;0 days`)。
     
-   **getSelectedDataAsync** 関数は、行内の選択されたセルに対してコンマ区切りのテキスト値を返します。たとえば、図 3 では、タスク T2 の行全体が選択されます。**getSelectedDataAsync** を選択すると、テキスト ボックスには "`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`" と表示されます。  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   **getSelectedDataAsync** 関数は、行内の選択されたセルに対してコンマ区切りのテキスト値を返します。たとえば、図 3 では、タスク T2 の行全体が選択されます。**getSelectedDataAsync** を選択すると、テキスト ボックスには次のように表示されます。  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
     
    **[状況説明マーク]** 列と **[リソース名]** 列はどちらも空なので、テキスト配列ではこれらの列に空の値が表示されます。**[新しい列の追加]** セルの値は [`<NA>`] です。
     
@@ -764,7 +764,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - 開始: `Thu 6/14/12`
     - 期間: `4d`
     - 優先度: `500`
-    - ノート: これは、タスク T2 のノートです。 単なるテスト ノートです。 実際のノートの場合は、実際の情報になります。
+    - メモ: これは、T2 のタスクのメモです。テスト注記のみです。実際のノートの場合は、実際の情報になります。
 
 13. **[getWSSUrlAsync]** ボタンを選択します。プロジェクトが次の種類のどちらかであれば、タスク リストの URL と名前が結果に表示されます。
     
@@ -780,9 +780,9 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - リスト名: `Test task list`
     
 
-14. **[TaskSelectionChanged イベント]** セクションの **[追加]** ボタンを選択します。このボタンを選択すると、**manageTaskEventHandler** 関数の呼び出しにより、タスク選択の変更イベントが登録され、"`In onComplete function for addHandlerAsync Status: succeeded`" が返されてテキスト ボックス内に表示されます。別のタスクを選択すると、テキスト ボックスには "`In task selection changed event handler`" と表示されます。これは、タスク選択の変更イベントに対するコールバック関数の出力です。**[削除]** ボタンを選択して、イベント ハンドラーの登録を解除します。
+14. **[TaskSelectionChanged イベント]** セクションの **[追加]** ボタンを選択します。このボタンを選択すると、**manageTaskEventHandler** 関数の呼び出しにより、タスク選択の変更イベントが登録され、"`In onComplete function for addHandlerAsync Status: succeeded`" が返されてテキスト ボックス内に表示されます。別のタスクを選択すると、テキスト ボックスには "`In task selection changed event handler`" と表示されます。これは、タスク選択の変更イベントに対するコールバック関数の出力です。**[削除]** ボタンを選択して、イベント ハンドラの登録を解除します。
     
-15. リソースに関するメソッドを使用するには、最初に [ **リソース シート**]、[ **リソース配分状況**]、[ **リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。[ **getSelectedResourceAsync**] を選択して  **resourceGuid** 変数を初期化し、[ **リソース フィールドの取得**] を選択して、 **getResourceFieldAsync** の複数回の呼び出しによってリソースのプロパティを取得します。また、リソース選択変更のイベント ハンドラーを追加または削除することもできます。
+15. リソースに関するメソッドを使用するには、最初に [ **リソース シート**]、[ **リソース配分状況**]、[ **リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。[ **getSelectedResourceAsync**] を選択して  **resourceGuid** 変数を初期化し、[ **リソース フィールドの取得**] を選択して、 **getResourceFieldAsync** の複数回の呼び出しによってリソースのプロパティを取得します。また、リソース選択変更のイベント ハンドラを追加または削除することもできます。
     
     - リソース名: `R1`
     - 原価: `$800.00`
@@ -791,7 +791,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - 実績作業時間 : `0h`
     - 単位: `100%`
 
-16. **[getSelectedViewAsync]** を選択して、アクティブなビューの種類と名前を表示します。また、ビュー選択変更のイベント ハンドラーを追加または削除することもできます。たとえば、**[リソース フォーム]** がアクティブなビューである場合、**getSelectedViewAsync** 関数は、テキスト ボックスに次のように表示します。
+16. **[getSelectedViewAsync]** を選択して、アクティブなビューの種類と名前を表示します。また、ビュー選択変更のイベント ハンドラを追加または削除することもできます。たとえば、**[リソース フォーム]** がアクティブなビューである場合、**getSelectedViewAsync** 関数は、テキスト ボックスに次のように表示します。
     
     - ビューの種類: `6`
     - 名前: `Resource Form`
@@ -1095,7 +1095,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office アドイン](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office アドイン](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

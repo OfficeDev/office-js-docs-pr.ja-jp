@@ -2,20 +2,20 @@
 ms.date: 09/27/2018
 description: JavaScript を使用して Excel でカスタム関数を作成します。
 title: Excel でカスタム関数を作成する (プレビュー)
-ms.openlocfilehash: 98e418f843f6f5574088cea9c7393afc4a42060b
-ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
+ms.openlocfilehash: f6b658bbd119a785b342ec22bc1b341f6902da3f
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "25348802"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459344"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でカスタム関数を作成する (プレビュー)
 
-JavaScript で関数をアドインの一部として定義することにより、開発者はカスタム関数を使用して Excel に新しい関数を追加することができます。Excel 内のユーザーは、`SUM()` などの Excel のネイティブ関数にアクセスするのと同様に、カスタム関数にアクセスできます。この記事では、Excel でカスタム関数を作成する方法について説明します。
+開発者はカスタム関数を使用すると、JavaScriptでこれらの関数をアドインの一部として定義することにより、Excelに新しい関数を追加できます。 Excel内のユーザーは、Excel の他のネイティブ関数（`SUM()` など）と同様に、カスタム関数にアクセスできます。 この記事では、Excel でカスタム関数を作成する方法について説明します。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-次の図では、エンド ユーザーが Excel ワークシートのセルにカスタム関数を挿入する例を示します。 `CONTOSO.ADD42` カスタム関数は、ユーザーが関数への入力パラメーターとして指定する数値ペアに、42 を足すように設計されています。
+次の図は、Excel ワークシートのセルにカスタム関数を挿入する、エンド ユーザーを示します。 `CONTOSO.ADD42` カスタム関数は、関数への入力パラメーターとしてユーザーが指定した数値のペアに 42 を追加するように設計されています。
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
@@ -30,24 +30,24 @@ function add42(a, b) {
 > [!NOTE]
 > この記事で後述する「[既知の問題](#known-issues)」セクションで、カスタム関数の現状の制限事項を記載します。
 
-## <a name="components-of-a-custom-functions-add-in-project"></a>カスタム関数アドイン プロジェクトのコンポーネント
+## <a name="components-of-a-custom-functions-add-in-project"></a>カスタム関数アドインプロジェクトのコンポーネント
 
-[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して Excel カスタム関数アドイン プロジェクトを作成する場合は、ジェネレーターが作成するプロジェクトに以下のようなファイルが表示されます。
+[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office) を使用して Excel カスタム関数アドイン プロジェクトを作成する場合は、ジェネレーターが作成するプロジェクトに以下のようなファイルが表示されます。
 
 | ファイル | ファイル形式 | 説明 |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>または<br/>**./src/customfunctions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含まれています。 |
-| **./config/customfunctions.json** | JSON | カスタム関数を説明するメタデータが含まれており、Excel でカスタム関数を登録してエンドユーザーが使用できるようにします。 |
+| **./src/customfunctions.js**<br/>または<br/>**./src/customfunctions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードを含みます。 |
+| **./config/customfunctions.json** | JSON | カスタム関数を定義し、Excel に関数を登録してエンドユーザーが使用できるようにするためのメタデータを含みます。 |
 | **./index.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
-| **./manifest.xml** | XML | アドイン内のすべてのカスタム関数の名前空間と、このテーブルで前に一覧表示した JavaScript、JSON、HTML ファイルの位置を指定します。 |
+| **./manifest.xml** | XML | アドイン内のすべてのカスタム関数の名前空間と、この表で前述した JavaScript、JSON、HTML ファイルの位置を指定します。 |
 
-次のセクションでは、これらのファイルの詳細についてを説明します。
+次のセクションでは、これらのファイルに関する詳細について説明します。
 
 ### <a name="script-file"></a>スクリプト ファイル 
 
 スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義して、カスタム関数の名前を [JSON メタデータ ファイル](#json-metadata-file)のオブジェクトにマップするコードが含まれています。 
 
-たとえば、以下のコードでは、`add` と `increment` というカスタム関数を定義して、次に両方の関数のマッピング情報を指定します。 `add` 関数は、`id` プロパティの値が **ADD** である JSON メタデータ ファイルのオブジェクトにマップされ、`increment` 関数は、`id` プロパティの値が **INCREMENT** であるメタデータ ファイルのオブジェクトにマップされます。 スクリプト ファイルの関数名を JSON メタデータ ファイルのオブジェクトにマップする方法の詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)」を参照してください。
+例えば、次のコードでカスタム関数 `add` と `increment` を定義し、両方の関数のマッピング情報を指定します。 `add` 関数は、JSON メタデータ ファイル内のオブジェクトにマップされ、 この場所に`id` プロパティの値が**追加**されます。`increment` 関数は、メタデータ ファイル内のオブジェクトにマップされ、この場所に`id` プロパティの値が**インクリメント**します。JSON メタデータ ファイル内のオブジェクトへのスクリプト ファイル内関数名のマッピングの詳細については、 [カスタム関数のベスト ・ プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) を参照してください。
 
 ```js
 function add(first, second){
@@ -73,12 +73,12 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ### <a name="json-metadata-file"></a>JSON メタデータ ファイル 
 
-カスタム関数のメタデータ ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./config/customfunctions.json**) は、Excel でカスタム関数を登録してエンドユーザーが使用できるようにするのに必要な情報を示しています。 カスタム関数は、ユーザーがはじめてアドインを実行したときに登録されます。 その後、その同じユーザーは、最初にアドインが実行されたブックだけでなく、すべてのブックでそれらのカスタム関数を使用できるようになります。
+カスタム関数のメタデータ ファイル (Yo Office ジェネレーターが作成するプロジェクトでは **./config/customfunctions.json** ) は、Excel がカスタム関数の登録を要求し、エンドユーザーが利用できるよう、情報を提供します。カスタム関数は、ユーザーがアドインを初めて実行するときに登録されます。その後は、同じユーザーに対しては、（アドインが最初に実行されたワークブック内のみでなく）すべてのワークブック内で利用が可能になります。
 
 > [!TIP]
-> JSON ファイルをホストするサーバーのサーバー設定では、カスタム関数が Excel Online で正しく作動するために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) を有効にする必要があります。
+> JSON ファイルをホストするサーバーは、カスタム関数が Excel Online で正しく作動するために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)  を有効に設定する必要があります。
 
-以下の **customfunctions.json** のコードでは、この記事で前述した `add` 関数と `increment` 関数のメタデータを指定します。 このコード サンプルの次の表では、この JSON オブジェクト内の個々のプロパティについての詳細情報を示しています。 JSON メタデータ ファイルの `id` および `name` プロパティの値を指定する方法の詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)」を参照してください。
+ **Customfunctions.json** の次のコードは、`add` 関数のメタデータと `increment` 、上述の関数を指定します。このコード サンプルを基にした表は、この JSON オブジェクト内の個別のプロパティについての詳細情報を提供します。`id`の値とJSON のメタデータ ファイル内の`name`プロパティの指定に関する詳細については、 [ベスト プラクティスのカスタム関数](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) を参照してください。
 
 ```json
 {
@@ -134,21 +134,21 @@ CustomFunctionMappings.INCREMENT = increment;
 }
 ```
 
-以下の表では、通常 JSON メタデータ ファイルに格納されているプロパティを一覧表示しています。 JSON メタデータ ファイルの詳細については、「[カスタム関数のメタデータ](custom-functions-json.md)」を参照してください。
+次の表は、通常、JSON メタデータ ファイルに格納されているプロパティの一覧表示です。JSON メタデータ ファイルの詳細については、 [カスタム関数のメタデータ](custom-functions-json.md)を参照してください。
 
 | プロパティ  | 説明 |
 |---------|---------|
-| `id` | 関数の一意の ID です。 設定後は、この ID は変更しないでください。 |
-| `name` | Excel でエンド ユーザーに対して表示される関数の名前です。 Excel では、 [XML マニフェスト ファイル](#manifest-file)で指定されているカスタム関数の名前空間が、関数名に接頭辞として付きます。 |
+| `id` | 関数のユニーク ID です。設定後、この ID は変更できません。 |
+| `name` | Excel でエンドユーザーに表示される関数の名前です。Excel では、この関数名の前に、[ XML マニフェスト ファイル](#manifest-file)で指定されているカスタム関数の名前空間が接頭辞として付されます。 |
 | `helpUrl` | ユーザーがヘルプを要求したときに表示されるページの URL です。 |
-| `description` | 関数が実行することについて説明します。 この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
-| `result`  | 関数によって返される情報の種類を定義するオブジェクトです。 `type` 子プロパティには、**文字列**、**数値**、または**ブール値**を使用できます。 `dimensionality` 子プロパティの値には、**スカラー**または**マトリックス** (指定された `type` の値の 2 次元配列) が使用できます。 |
-| `parameters` | 関数の入力パラメーターを定義する配列。 `name` および `description` 子プロパティが Excel intelliSense に表示されます。 `type` 子プロパティ値には、**文字列**、**数値**、または**ブール値**を使用できます。 `dimensionality` 子プロパティの値には、**スカラー**または **マトリックス** (指定された `type` の値の 2 次元配列) が使用できます。 |
-| `options` | Excel がいつどのように関数を実行するのかについて、いくつかの機能をカスタマイズできるようになります。 このプロパティの使用方法の詳細については、この記事で後述する「[ストリーム関数](#streamed-functions)」および「[関数のキャンセル](#canceling-a-function)」を参照してください。 |
+| `description` | 関数について説明します。この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
+| `result`  | 関数によって返される情報の種類を定義するオブジェクト。`type` 子プロパティの値は、 **文字列**、 **数値**、または **ブール値**を使用できます。子プロパティの値は、 `dimensionality` **スカラー** または **マトリックス** を使用できます (指定された `type`の値の2 次元配列)。 |
+| `parameters` | 関数の入力パラメーターを定義する配列。 `name` と `description` Excel の intelliSense の子のプロパティが表示されます。 `type` 子プロパティの値には、 **文字列**、 **数値**、または **ブール値**を使用できます。`dimensionality` 子プロパティの値には、**スカラー** または **マトリックス** を使用できます (指定された `type`の値の2次元配列)。 |
+| `options` | Excel で関数を実行する方法とタイミングのいくつかの側面をカスタマイズできます。このプロパティの使用方法の詳細については、この記事で後述する [ストリーミング機能](#streaming-functions) と [関数のキャンセルする](#canceling-a-function) を参照してください。 |
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 (Yo Office ジェネレーターが作成するプロジェクト内の **./manifest.xml**) は、アドイン内のすべてのカスタム関数の名前空間と、JavaScript、JSON、HTML ファイルの位置を指定します。 以下の XML マークアップでは、カスタム関数を有効にするためにアドインのマニフェストに含める必要のある `<ExtensionPoint>` および `<Resources>` 要素の例を示します。  
+カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml** ) を定義するアドインの XML マニフェスト ファイルは、アドインとJavaScript、JSON、および HTML のロケーション内のすべてのカスタム関数の名前空間を指定します。次の XML マークアップでは、 `<ExtensionPoint>` と `<Resources>` カスタム関数を有効にするアドインのマニフェストに含める必要がある要素の一例を示します。  
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -184,7 +184,7 @@ CustomFunctionMappings.INCREMENT = increment;
 ```
 
 > [!NOTE]
-> Excel 内の関数の先頭には、XML マニフェスト ファイルで指定される名前空間が追加されます。 関数の名前空間は関数名の前に配置され、それらはピリオドで区切られます。 たとえば、Excel ワークシートのセル内の関数 `ADD42` を呼び出すには、`=CONTOSO.ADD42` と入力します。これは、CONTOSO が名前空間で、`ADD42` が JSON ファイルで指定された関数の名前であるからです。 名前空間は、所属する会社またはアドインの識別子として使用することを想定しています。 
+> Excel の関数は、XML マニフェスト ファイルで指定された名前空間が接頭辞として付加されます。関数の名前空間は、関数名の前に付けられ、ピリオドで区切られます。例えば、Excel ワークシートのセル内で、関数を呼び出すためには `ADD42` 、 `=CONTOSO.ADD42`を入力します。これは、CONTOSO が、名前空間であり、 `ADD42` JSON ファイルで指定された関数の名前であるためです。名前空間は、会社またはアドインの識別子としての使用を目的としています。 
 
 ## <a name="functions-that-return-data-from-external-sources"></a>外部ソースからデータを返す関数
 
@@ -192,11 +192,11 @@ CustomFunctionMappings.INCREMENT = increment;
 
 1. JavaScript Promise を Excel に返す。
 
-2. コールバック関数を使用して Promise を最終値で解決します。
+2. コールバック関数を使用して Promise を最終値で解決する。
 
-カスタム関数は、Excel が最終結果を待つ間、セルに `#GETTING_DATA` の一時的な結果を表示します。 ユーザーは、カスタム関数が結果を待つ間、ワークシートの他の部分を通常通り操作することができます。
+カスタム関数は、 Excelが `#GETTING_DATA` セルの最終結果を待っている間、一時的な結果を表示します。ユーザーは、結果待機中も通常はワークシートの残りの部分を操作することができます。
 
-以下のコード サンプルでは、`getTemperature()` カスタム関数が温度計の現在の温度を取得します。 `sendWebRequest` は [XHR](custom-functions-runtime.md#xhr) を使用して温度 Web サービスを呼び出す仮想関数 (ここでは説明していません) であることに注意してください。
+次のコード例は、 現在の温度計の温度を取得する `getTemperature()` カスタム関数です。 `sendWebRequest` は、温度 web サービスを呼び出す [XHR](custom-functions-runtime.md#xhr-example) を使用した仮想関数 (ここでは指定なし) であることに留意してください。
 
 ```js
 function getTemperature(thermometerID){
@@ -208,15 +208,15 @@ function getTemperature(thermometerID){
 }
 ```
 
-## <a name="streamed-functions"></a>ストリーム関数
+## <a name="streaming-functions"></a>ストリーミング関数
 
-ストリーム カスタム関数を使用すると、時間の経過とともにセルに繰り返しデータを出力でき、ユーザーが再計算を要求することは特に必要ありません。 以下のコード サンプルは、1 秒おきに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
+ストリーミングのカスタム関数を使用すると、データ更新を明確に要求するユーザーを必要とせず、時間の経過と共に繰り返しセルにデータを出力します。次のコード サンプルは、1 秒ごとの結果の数値を追加するカスタム関数です。このコードについては、以下のことに留意してください。
 
 - Excel は、`setResult`コールバックを使用して自動的に新しい値を表示します。
 
-- 2 番目のパラメーター `handler` は、[オートコンプリート] メニューから関数を選択する場合には、エンドユーザーに対して表示されません。
+- 2 番目のパラメーター入力 `handler` は、[オートコンプリート] メニューから関数を選択する場合には、Excelのエンドユーザーには表示されません。
 
-- `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。 すべてのストリーム関数に対して、このようなキャンセル ハンドラーを実装する必要があります。 詳細については、 「[関数のキャンセル](#canceling-a-function)」を参照してください。 
+-  `onCanceled` コールバックは、関数がキャンセルされたときに実行される関数を定義します。どのストリーミング関数に対してもキャンセル ハンドラーを実装する必要があります。詳細については、 [関数をキャンセルする](#canceling-a-function)を参照してください。 
 
 ```js
 function incrementValue(increment, handler){
@@ -232,7 +232,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-JSON メタデータ ファイルでストリーム関数にメタデータを指定する場合には、以下の例に示すように、`options` オブジェクトにプロパティ `"cancelable": true` および `"stream": true` を設定する必要があります。
+JSON メタデータ ファイルでストリーミング関数にメタデータを指定する場合には、以下の例のように、プロパティ`"cancelable": true` および `options` オブジェクト `"stream": true` 内を設定する必要があります。
 
 ```json
 {
@@ -259,29 +259,29 @@ JSON メタデータ ファイルでストリーム関数にメタデータを�
 }
 ```
 
-## <a name="canceling-a-function"></a>関数のキャンセル
+## <a name="canceling-a-function"></a>関数をキャンセルする
 
-状況によっては、帯域幅の消費量、作業メモリ、UPC への負荷を減らすために、ストリーム カスタム関数の実行をキャンセルする必要がある場合もあります。 Excel は、以下のような状況では関数の実行をキャンセルします。
+ある状況では、帯域幅の消費、作業メモリ、および CPU の負荷を減らすためにストリーミングカスタム関数の実行をキャンセルする必要があります。Excel では、次のような関数の実行をキャンセルします。
 
 - ユーザーが、関数への参照があるセルを編集または削除した場合。
 
-- 関数の引数 (入力) のいずれかが変更された場合。 この場合、キャンセルに続いて新しい関数の呼び出しがトリガーされます。
+- 関数の引数 (入力) のいずれかが変更されたとき。この例では、キャンセルの後、新しい関数の呼び出しがトリガーされます。
 
-- ユーザーが手動で再計算をトリガーした場合。 この場合、キャンセルに続いて新しい関数の呼び出しがトリガーされます。
+- ユーザーが手動で再計算をトリガーしたとき。この例では、キャンセルの後、新しい関数の呼び出しがトリガーされます。
 
-関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装して、関数を記述する JSON メタデータの `options` オブジェクト内にプロパティ `"cancelable": true` を指定する必要があります。 この記事の前のセクションのコード サンプルは、これらの手法の例を示しています。
+関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装し、関数を記述するJSONのメタデータの`options` オブジェクト内のプロパティ`"cancelable": true`を指定する必要があります。この記事の前のセクションのコード サンプルに、これらの手法の例が示されています。
 
 ## <a name="saving-and-sharing-state"></a>状態の保存と共有
 
-カスタム関数では、JavaScript のグローバル変数にデータを保存できます。 後続の呼び出しでは、カスタム関数はこれらの変数に保存されている値を使用できます。 保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を追加する場合に便利です。 たとえば、Web リソースへの呼び出しから返されたデータを保存しておけば、同じ Web リソースへ繰り返し呼び出しを行わなくて済みます。
+カスタム関数は、JavaScript のグローバル変数にデータを保存できます。以降の呼び出しで、カスタム関数は、これらの変数に保存されている値を使用することができます。ユーザーが複数のセルに同じカスタム関数を追加するとき、関数のすべてのインスタンスが状態を共有できるため、状態が保存されているのは役に立ちます。例えば、同一の web リソースへの追加の呼び出しを避けるため、 web リソースへの呼び出しから返されたデータを保存することができます。
 
-以下のコード サンプルは、 状態をグローバルで保存する温度ストリーミング関数の実装を示しています。 このコードについては、次の点に注意してください。
+次のコード サンプルでは、グローバル状態を保存する温度ストリーミング関数の実装を示します。このコードについては、以下のことにに留意してください。
 
-- `refreshTemperature` は、1 秒おきに特定の温度計の温度を読み取るストリーム関数です。 新しい温度は `savedTemperatures` 変数に保存されますが、セルの値を直接更新することはありません。 ワークシート・セルから直接呼び出されません。*したがって、JSON ファイルには登録されません *
+- `refreshTemperature` 1 秒ごとに特定の温度計の温度を読み取るストリーミング関数です。新しい温度が `savedTemperatures` 変数に保存されますが、セルの値を直接更新することはありません。ワークシートのセルから直接呼び出されないので、*JSON ファイルには登録されません*。
 
-- `streamTemperature` 1 秒おきにセルに表示される温度値を更新します。また、 `savedTemperatures` 変数をデータ ソースとして使用します。 JSON ファイルに登録し、すべて大文字で `STREAMTEMPERATURE` という名前をつける必要があります。
+- `streamTemperature` 毎秒、セルに表示される温度の値を更新し、 `savedTemperatures` 変数をデータ ソースとして使用します。それには、JSON ファイルに登録されており、大文字で、 `STREAMTEMPERATURE`名前を付けられている必要があります。
 
-- ユーザーは、Excel UI の複数のセルから `streamTemperature` を呼び出すことができます。 呼び出すたびに、同じ `savedTemperatures` 変数からデータを読み取ります。
+- ユーザーが、Excel UI の複数のセルから`streamTemperature` を呼び出すことができます。各呼び出しは、同じ `savedTemperatures` 変数のデータを読み取ります。
 
 ```js
 var savedTemperatures;
@@ -310,9 +310,9 @@ function refreshTemperature(thermometerID){
 
 ## <a name="working-with-ranges-of-data"></a>データの範囲を使用する
 
-カスタム関数は、入力パラメーターとしてデータの範囲を受け取ることができます。または、データの範囲を返すこともできます。 JavaScript では、データの範囲は、2 次元配列として表されます。
+カスタム関数は、入力パラメーターとしてのデータの範囲を受け入れる、もしくは、データの範囲を返すことがあります。JavaScript では、データの範囲は、2 次元配列として表されます。
 
-たとえば、関数が Excel に格納されている数値の範囲から 2 番目に高い値を返すとします。 以下の関数が、タイプ `Excel.CustomFunctionDimensionality.matrix` のものである `values` パラメーターを受け取ります。 この関数の JSON メタデータでは、パラメーターの `type` プロパティを `matrix` に設定するように注意してください。
+例えば、関数がExcel に保存されている数値の範囲から 2 番目に大きい値を返すとします。次の関数は、種類`Excel.CustomFunctionDimensionality.matrix`のパラメータ`values`を受け取ります。この関数の JSON のメタデータには、パラメーターの `type` プロパティを `matrix`に設定するよう留意してください。
 
 ```js
 function secondHighest(values){
@@ -334,7 +334,7 @@ function secondHighest(values){
 
 ## <a name="handling-errors"></a>エラーの処理
 
-カスタム関数を定義するアドインをビルドする場合には、実行時エラーに対処するエラー処理ロジックを含めるようにしてください。 カスタム関数のエラー処理は、[一般的な Excel JavaScript API のエラー処理](excel-add-ins-error-handling.md) と同じです。 以下のコード サンプルでは、`.catch` がコード内で発生するエラーを処理します。
+カスタム関数を定義するアドインをビルドする場合は、ランタイムエラーを考慮するためのエラー処理 ロジックを含めるようにしてください。カスタム関数のエラー処理は、 [大規模な Excel の JavaScript API のエラー処理](excel-add-ins-error-handling.md)と同じです。次のコード サンプルでは、 `.catch`がコード内で以前に発生したエラーを処理します。
 
 ```js
 function getComment(x) {
@@ -358,10 +358,10 @@ function getComment(x) {
 - ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。
 - カスタム関数は現在、モバイル クライアント用の Excel では使用できません。
 - 揮発性関数（スプレッドシート内の無関係なデータが変更されたときに自動的に再計算する関数）はまだサポートされていません。
-- Office 365 管理ポータルと AppSource による展開はまだ有効になっていません。
-- Excel Online のカスタム関数は、一定期間使用しないとセッション中に機能しなくなることがあります。 ブラウザページを更新（F5）し、カスタム関数を再入力して機能を復元します。
-- Excel for Windows で実行されている複数のアドインがある場合には、ワークシートのセル内に **#GETTING_DATA** の一時的な結果が表示される場合があります。 すべての Excel ウィンドウを閉じて、Excel を再起動します。
-- 将来的には、カスタム関数用のデバッグ ツールが利用可能となる可能性があります。 それまでは、F12 開発者ツールを使用して Excel オンラインでデバッグできます。 詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)」を参照してください。
+- Office 365 管理ポータルと AppSource による展開は、まだ有効になっていません。
+- Excel Onlineでのカスタム関数は、一定期間動作していないと、セッション中に停止することがあります。ブラウザーのページを更新 (F5) し、機能を復元するカスタム関数を再入力します。
+- WindowsのExcelで複数のアドイン Excel for Windows で実行されている場合は、 **#GETTING_DATA** の一時的な結果がワークシートのセル内に表示されることがあります。その場合には、Excel のウィンドウをすべて閉じ、Excel を再起動します。
+- カスタム関数向けのデバッグ ツールが、将来利用できるようになります。それまでは、F12 開発者ツールを使用してExcel Onlineでデバッグすることができます。詳細は、[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)を参照してください。
 
 ## <a name="changelog"></a>変更ログ
 
@@ -369,7 +369,7 @@ function getComment(x) {
 - **2017 年 11 月 20 日**: ビルド 8801 以降を使用しているユーザー向けに互換性バグを修正
 - **2017 年 11 月 28 日**: 非同期関数のキャンセルへのサポートを公開* (ストリーム関数への変更が必要)
 - **2018 年 5 月 7 日**: Mac、Excel Online、およびインプロセスで実行される同期関数へのサポートを公開*
-- **2018 年 9 月 20日**: JavaScript 実行時のカスタム関数へのサポートを公開 詳細については、「[Excel カスタム関数のランタイム](custom-functions-runtime.md)」を参照してください。
+- **2018 年 9 月 20日**:  JavaScript の実行時のカスタム関数へのサポートを公開。詳細については、 [Excel のカスタム関数ランタイム](custom-functions-runtime.md)を参照してください。
 
 \* Office Insiders チャネル対象
 
