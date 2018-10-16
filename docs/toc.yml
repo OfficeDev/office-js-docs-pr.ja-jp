@@ -43,7 +43,7 @@ items:
     href: quickstarts/project-quickstart.md
 - name: チュートリアル
   items:
-  - name: Excel アドインのチュートリアル
+  - name: Excel アドイン チュートリアル
     displayName: Excel
     href: tutorials/excel-tutorial.yml
   - name: Excel カスタム関数のチュートリアル
@@ -215,7 +215,7 @@ items:
       - name: Vue の使用
         displayName: Excel
         href: excel/excel-add-ins-get-started-vue.md
-    - name: Excel アドインのチュートリアル
+    - name: Excel アドイン チュートリアル
       displayName: Excel
       href: tutorials/excel-tutorial.yml
     - name: 概念
@@ -280,10 +280,10 @@ items:
       - name: ワークシート
         displayName: Excel
         href: excel/excel-add-ins-worksheets.md
-    - name: Excel の JavaScript API の概要
+    - name: Excel JavaScript API 概要
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
-    - name: Excel の JavaScript API リファレンス
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+    - name: Excel JavaScript API リファレンス
       displayName: Excel
       href: https://docs.microsoft.com/javascript/api/excel?view=office-js
   - name: Word アドイン
@@ -316,7 +316,7 @@ items:
       href: word/search-option-guidance.md
     - name: Word の JavaScript API の使用状況の概要
       displayName: Word
-      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
     - name: Word JavaScript API リファレンス
       displayName: Word
       href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
@@ -351,7 +351,7 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: OneNote の JavaScript API の概要
       displayName: OneNote
-      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
     - name: OneNote JavaScript API リファレンス
       displayName: OneNote
       href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
@@ -623,11 +623,11 @@ items:
       href: reference/manifest/defaultlocale.md
     - name: DefaultSettings
       href: reference/manifest/defaultsettings.md
-    - name: 説明
+    - name: Description
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
-    - name: ディレクトリ
+    - name: Dictionary
       href: reference/manifest/dictionary.md
     - name: DictionaryHomePage
       href: reference/manifest/dictionaryhomepage.md
@@ -635,35 +635,35 @@ items:
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
-    - name: フォーム
+    - name: Form
       href: reference/manifest/form.md
     - name: FormSettings
       href: reference/manifest/formsettings.md
     - name: HighResolutionIconUrl
       href: reference/manifest/highresolutioniconurl.md
-    - name: ホスト
+    - name: Host
       href: reference/manifest/host.md
-    - name: ホスト
+    - name: Hosts
       href: reference/manifest/hosts.md
     - name: IconUrl
       href: reference/manifest/iconurl.md
     - name: ID
       href: reference/manifest/id.md
-    - name: メタデータ
+    - name: Metadata
       href: reference/manifest/metadata.md
-    - name: メソッド
+    - name: Method
       href: reference/manifest/method.md
-    - name: メソッド
+    - name: Methods
       href: reference/manifest/methods.md
-    - name: 名前空間
+    - name: Namespace
       href: reference/manifest/namespace.md
     - name: OfficeApp
       href: reference/manifest/officeapp.md
-    - name: 上書き
+    - name: Override
       href: reference/manifest/override.md
-    - name: アクセス許可
+    - name: Permissions
       href: reference/manifest/permissions.md
-    - name: スマホ設定
+    - name: PhoneSettings
       href: reference/manifest/phonesettings.md
     - name: ProviderName
       href: reference/manifest/providername.md
@@ -673,38 +673,38 @@ items:
       href: reference/manifest/requestedheight.md
     - name: RequestedWidth
       href: reference/manifest/requestedwidth.md
-    - name: 要件
+    - name: Requirements
       href: reference/manifest/requirements.md
-    - name: ルール
+    - name: Rule
       href: reference/manifest/rule.md
-    - name: 設定
+    - name: Set
       href: reference/manifest/set.md
-    - name: セット
+    - name: Sets
       href: reference/manifest/sets.md
     - name: SourceLocation
       href: reference/manifest/sourcelocation.md
     - name: SupportUrl
       href: reference/manifest/supporturl.md
-    - name: タブレット設定
+    - name: TabletSettings
       href: reference/manifest/tabletsettings.md
     - name: TargetDialect
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
-    - name: バージョン
+    - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
       items:
-      - name: アクション
+      - name: Action
         href: reference/manifest/action.md
       - name: AllFormFactors
         href: reference/manifest/allformfactors.md
-      - name: コントロール
+      - name: Control
         href: reference/manifest/control.md
       - name: CustomTab
         href: reference/manifest/customtab.md
-      - name: イベント
+      - name: Event
         href: reference/manifest/event.md
       - name: ExtensionPoint
         href: reference/manifest/extensionpoint.md
@@ -714,11 +714,11 @@ items:
         href: reference/manifest/functionfile.md
       - name: GetStarted
         href: reference/manifest/getstarted.md
-      - name: グループ
+      - name: Group
         href: reference/manifest/group.md
-      - name: ホスト
+      - name: Hosts
         href: reference/manifest/hosts.md
-      - name: アイコン
+      - name: Icon
         href: reference/manifest/icon.md
       - name: MobileFormFactor
         href: reference/manifest/mobileformfactor.md
@@ -726,13 +726,13 @@ items:
         href: reference/manifest/officemenu.md
       - name: OfficeTab
         href: reference/manifest/officetab.md
-      - name: ページ
+      - name: Page
         href: reference/manifest/page.md
-      - name: リソース
+      - name: Resources
         href: reference/manifest/resources.md
-      - name: スコープ
+      - name: Scopes
         href: reference/manifest/scopes.md
-      - name: スクリプト
+      - name: Script
         href: reference/manifest/script.md
       - name: SourceLocation (カスタム関数)
         href: reference/manifest/customfunctionssourcelocation.md
@@ -740,11 +740,11 @@ items:
         href: reference/manifest/supertip.md
       - name: WebApplicationInfo
         href: reference/manifest/webapplicationinfo.md
-- name: リソース
+- name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 0aecde804271ab187658129b478371363404eef5
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459218"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506281"
