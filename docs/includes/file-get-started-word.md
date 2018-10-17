@@ -30,7 +30,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+1. **Home.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。**Home.html** は `<body>` 要素を以下のマークアップと置き換え、ファイルを保存します。
  
     ```html
     <body>
@@ -56,7 +56,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+2. Web アプリケーション プロジェクトのルートで **Home.js** ファイルを開きます。このファイルは、アドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -157,7 +157,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. Web アプリケーション プロジェクトのルートで **Home.css** ファイルを開きます。このファイルは、アドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -188,13 +188,13 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクトで XML マニフェスト ファイルを開きます。このファイルはアドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
+3.  `DefaultValue`  要素の`DisplayName`   属性にはプレースホルダーがあります。これを ** My Office アドイン**   で置き換えます。
 
-4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Word** に置き換えてください。
+4.  `DefaultValue` 要素の `Description`  属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン**で置き換えます。
 
 5. ファイルを保存します。
 
@@ -208,11 +208,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     ...
     ```
 
-### <a name="try-it-out"></a>お試しください
+### <a name="try-it-out"></a>試してみる
 
 1. Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。
 
-2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Office 365 バージョンではなく、サブスクリプション版でない Office の 2016 年を使用している場合、カスタム ボタンはサポートされません。 その代わり、作業ウィンドウはすぐに開きます)。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
 
@@ -242,16 +242,16 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     cd my-word-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のとおり、プロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type (プロジェクト タイプを選んでください):** `Office Add-in project using Jquery framework`
-    - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
+    - **プロジェクト タイプを選択してください** `Office Add-in project using Jquery framework`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
+    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Word`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
     
@@ -265,7 +265,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。 すべての内容を次のコードに置き換え、ファイルを保存します。 このアドインには、3 つのボタンが表示されます。いずれかのボタンを選択すると、文書に定型句が追加されます。
+1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。 コンテンツ全体を次のコードに置き換え、ファイルを保存します。 このアドインには、3 つのボタンが表示されます。いずれかのボタンを選択すると、文書に定型句が追加されます。
 
     ```html
     <!DOCTYPE html>
@@ -302,7 +302,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
+2. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 コンテンツ全体を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
 
     ```js
     'use strict';
@@ -434,11 +434,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
+1. ファイル **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Word** に置き換えてください。
+3.  `DefaultValue`  要素の `Description`  属性にはプレースホルダーが含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -452,7 +452,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     ...
     ```
 
-### <a name="start-the-dev-server"></a>開発用サーバーの起動
+### <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
@@ -476,7 +476,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルに従って、さらに複雑なアドインを構築します。
+これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [Word アドイン チュートリアル](../tutorials/word-tutorial.yml)
@@ -485,4 +485,4 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
 * [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
+* [Word JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
