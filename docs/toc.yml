@@ -627,7 +627,7 @@ items:
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
-    - name: Dictionary
+    - name: 辞書
       href: reference/manifest/dictionary.md
     - name: DictionaryHomePage
       href: reference/manifest/dictionaryhomepage.md
@@ -635,7 +635,7 @@ items:
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
-    - name: Form
+    - name: フォーム
       href: reference/manifest/form.md
     - name: FormSettings
       href: reference/manifest/formsettings.md
@@ -651,9 +651,9 @@ items:
       href: reference/manifest/id.md
     - name: Metadata
       href: reference/manifest/metadata.md
-    - name: Method
+    - name: メソッド
       href: reference/manifest/method.md
-    - name: Methods
+    - name: メソッド
       href: reference/manifest/methods.md
     - name: Namespace
       href: reference/manifest/namespace.md
@@ -661,7 +661,7 @@ items:
       href: reference/manifest/officeapp.md
     - name: Override
       href: reference/manifest/override.md
-    - name: Permissions
+    - name: アクセス許可
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
@@ -673,7 +673,7 @@ items:
       href: reference/manifest/requestedheight.md
     - name: RequestedWidth
       href: reference/manifest/requestedwidth.md
-    - name: Requirements
+    - name: 要件
       href: reference/manifest/requirements.md
     - name: Rule
       href: reference/manifest/rule.md
@@ -691,7 +691,7 @@ items:
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
-    - name: Version
+    - name: バージョン
       href: reference/manifest/version.md
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
@@ -700,7 +700,7 @@ items:
         href: reference/manifest/action.md
       - name: AllFormFactors
         href: reference/manifest/allformfactors.md
-      - name: Control
+      - name: コントロール
         href: reference/manifest/control.md
       - name: CustomTab
         href: reference/manifest/customtab.md
@@ -714,7 +714,7 @@ items:
         href: reference/manifest/functionfile.md
       - name: GetStarted
         href: reference/manifest/getstarted.md
-      - name: Group
+      - name: グループ
         href: reference/manifest/group.md
       - name: Hosts
         href: reference/manifest/hosts.md
@@ -738,13 +738,15 @@ items:
         href: reference/manifest/customfunctionssourcelocation.md
       - name: Supertip
         href: reference/manifest/supertip.md
+      - name: SupportsSharedFolders
+        href: reference/manifest/supportssharedfolders.md
       - name: WebApplicationInfo
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506281"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579885"

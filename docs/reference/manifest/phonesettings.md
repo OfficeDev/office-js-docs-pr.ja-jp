@@ -2,7 +2,7 @@
 
 このメール アドインが電話で使用されるときに適用するソースの場所と制御の設定を指定します。
 
-**アドインの種類: **コンテンツ、作業ウィンドウ、メール
+**アドインの種類:** メール
 
 ## <a name="syntax"></a>構文
 
@@ -12,7 +12,7 @@
 </PhoneSettings>
 ```
 
-## <a name="contained-in"></a>Contained in
+## <a name="contained-in"></a>以下に含まれます
 
 [フォーム](form.md)
 
