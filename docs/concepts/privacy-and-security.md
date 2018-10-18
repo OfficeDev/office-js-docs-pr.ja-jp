@@ -2,12 +2,12 @@
 title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945580"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005051"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -129,7 +129,7 @@ Office アドインのセキュリティ モデルをサポートするための
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
@@ -149,7 +149,7 @@ Outlook アドインのアクセス許可の詳細については、次のトピ
 
 ### <a name="same-origin-policy"></a>同一生成元ポリシー
 
-Office アドインは Web ブラウザー コントロール内で動作する Web ページのため、ブラウザーによって強制された同一生成元ポリシーに従う必要があります。既定で、あるドメイン内の Web ページから、それがホストされているドメイン以外のドメインに対して、[XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) Web サービス呼び出しを実行することはできません。
+Office アドインは Web ブラウザー コントロール内で動作する Web ページのため、ブラウザーによって強制された同一生成元ポリシーに従う必要があります。既定で、あるドメイン内の Web ページから、それがホストされているドメイン以外のドメインに対して、[XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web サービス呼び出しを実行することはできません。
 
 この制限に対処する 1 つの方法として JSON/P を使用します。JSON/P は、**script** タグと、別のドメインでホストされている一部のスクリプトを指している **src** 属性を追加することによって、Web サービスのプロキシを構成します。**src** 属性を指している URL を動的に作成し、URI クエリ パラメーター経由で URL にパラメーターを渡す **script** タグをプログラムで作成できます。Web サービス プロバイダーは、特定の URL で JavaScript コードを作成してホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。これらのスクリプトが挿入先で実行され、想定どおりに機能します。
 
@@ -188,7 +188,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 
 - jQuery を使用している場合は、[.html()](http://api.jquery.com/text/) メソッドの代わりに [.text()](http://api.jquery.com/html/) メソッドを使用してください。
 
-- [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+- [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
 - [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
 
@@ -254,7 +254,7 @@ Outlook アドインの開発者は、リソース使用量のルール以外に
 - [Outlook アドインのアクセス許可を理解する](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Office アドインにおける同一生成元ポリシーの制限への対処](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
-- [同一生成元ポリシー](http://www.w3.org/Security/wiki/Same_Origin_Policy)
+- [同一生成元ポリシー](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同一生成元ポリシー パート 1:ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [JavaScript の同一生成元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保護モード](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
