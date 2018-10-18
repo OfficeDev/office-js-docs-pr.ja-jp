@@ -1,0 +1,18 @@
+# <a name="api-open-specifications"></a><span data-ttu-id="38035-101">API オープン仕様</span><span class="sxs-lookup"><span data-stu-id="38035-101">API open specifications</span></span>
+
+<span data-ttu-id="38035-102">Office JavaScript API オープン 仕様は、Excel、Word およびその他のホスト アプリケーション向けに設計されている新しい JavaScript API に関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="38035-102">The Office JavaScript API open specifications provide information about new JavaScript APIs that are being designed for Excel, Word, and other host applications.</span></span> <span data-ttu-id="38035-103"> *\*OfficeDev/office-js-docs** GitHub レポジトリの[ブランチ](https://github.com/OfficeDev/office-js-docs/branches/all)でこのオープン仕様を確認して、今後リリース予定の API について学ぶことができます。また、GitHub レポジトリで問題のログを記録して、リリース予定の API 機能やデザインに関するフィードバックを提供することができます。</span><span class="sxs-lookup"><span data-stu-id="38035-103">You can review the open specifications in [branches](https://github.com/OfficeDev/office-js-docs/branches/all) of the **OfficeDev/office-js-docs** GitHub repository to learn about APIs that are planned for future releases and can provide feedback about the planned API features and design by logging issues in the GitHub repository.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="38035-104">API オープン仕様に記載されている機能は、初期設計やパブリック プレビューなど様々な開発段階にあるため、変更の対象となります。</span><span class="sxs-lookup"><span data-stu-id="38035-104">Features described in the API open specifications may be in various stages of development, such as early design or public preview, and are subject to change.</span></span> <span data-ttu-id="38035-105">API 機能が一般的に利用可能になると、関連文書がオープン仕様から削除されて、[Office アドイン文書](https://docs.microsoft.com/office/dev/add-ins/)に追加されます。</span><span class="sxs-lookup"><span data-stu-id="38035-105">When an API feature becomes generally available, related documentation is removed from the open specification and added to the [Office Add-ins documentation](https://docs.microsoft.com/office/dev/add-ins/).</span></span> 
+
+## <a name="new-excel-javascript-apis"></a><span data-ttu-id="38035-106">新しい Excel JavaScript API</span><span class="sxs-lookup"><span data-stu-id="38035-106">New Excel JavaScript APIs</span></span>
+
+<span data-ttu-id="38035-107">新しい Excel JavaScript API の設計のレビューにご参加ください。</span><span class="sxs-lookup"><span data-stu-id="38035-107">Join us in reviewing our design for new Excel JavaScript APIs.</span></span> 
+
+<span data-ttu-id="38035-108">**詳細については、[Excel JavaScript のオープン仕様ページ](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)を参照し、フィードバックを提供してください。**</span><span class="sxs-lookup"><span data-stu-id="38035-108">**See the [Excel JavaScript open design page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) to learn more and provide your feedback.**</span></span>
+
+## <a name="new-word-javascript-apis"></a><span data-ttu-id="38035-109">新しい Word JavaScript API</span><span class="sxs-lookup"><span data-stu-id="38035-109">New Word JavaScript APIs</span></span>
+
+<span data-ttu-id="38035-110">新しい Word JavaScript API の設計のレビューにご参加ください。</span><span class="sxs-lookup"><span data-stu-id="38035-110">Join us in reviewing our design for new Excel JavaScript APIs.</span></span> 
+
+<span data-ttu-id="38035-111">**詳細については、[Word JavaScript オープン仕様ページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_OpenSpec)を参照し、フィードバックを提供してください。**</span><span class="sxs-lookup"><span data-stu-id="38035-111">**See the [Excel JavaScript open design page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_OpenSpec) to learn more and provide your feedback.**</span></span>
