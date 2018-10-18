@@ -7,7 +7,7 @@
 
 1. コード エディターでプロジェクトを開きます。 
 2. index.html ファイルを開きます。
-3. `change-font` ボタンを格納している `div` の下に、次のマークアップを追加します。
+3. ボタンを格納している `div` の下に、次のマークアップを追加します。`change-font`
 
     ```html
     <div class="padding">            
@@ -17,13 +17,13 @@
 
 4. app.js ファイルを開きます。
 
-5. `change-font` ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。
+5. ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。`change-font`
 
     ```js
     $('#insert-text-into-range').click(insertTextIntoRange);
     ```
 
-6. `changeFont` 関数の下に、次の関数を追加します。
+6. 関数の下に、次の関数を追加します。`changeFont`
 
     ```js
     function insertTextIntoRange() {
@@ -48,9 +48,9 @@
     }
     ``` 
 
-7. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
    - このメソッドの目的は、テキストが Click-to-Run という範囲の末尾に (C2R) という省略形を挿入することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
-   - `Range.insertText` メソッドの最初のパラメーターは、`Range` オブジェクトに挿入する文字列です。
+   - メソッドの最初のパラメーターは、`Range` オブジェクトに挿入する文字列です。`Range.insertText`
    - 2 番目のパラメーターは、範囲内のどの位置にテキストを挿入するかを指定します。 End の他に、Start、Before、After、Replace が選択できます。 
    - End と After の違いは、End が既存の範囲の内部の末尾に新しいテキストを挿入するのに対し、After の場合は文字列の入った新しい範囲を作成し、既存の範囲の後にその新しい範囲が挿入されることです。 同様に、Start はテキストを既存の範囲の内部の先頭に挿入しますが、Before の場合は新しい範囲を挿入します。 Replace は、既存の範囲のテキストを最初のパラメーターで指定した文字列に置き換えます。
    - チュートリアルの前の段階で示したとおり、ボディ オブジェクトの insert* メソッドに Before オプションや After オプションはありません。 これは、文書の本文の外部にはコンテンツを挿入できないからです。
@@ -61,7 +61,7 @@
     originalRange.insertText(" (C2R)", "End");
     ``` 
 
-8. `TODO2` はスキップし、次のセクションに移ります。 `TODO3` を次のコードに置き換えます。 このコードは、このチュートリアルの最初の段階で作成したコードに似ていますが、文書の先頭ではなく末尾に新しい段落を挿入する点が異なります。 この新しい段落で、新しいテキストが元の範囲の一部になっていることが示されます。
+8. はスキップし、次のセクションに移ります。`TODO2` を次のコードに置き換えます。`TODO3` このコードは、このチュートリアルの最初の段階で作成したコードに似ていますが、文書の先頭ではなく末尾に新しい段落を挿入する点が異なります。 この新しい段落で、新しいテキストが元の範囲の一部になっていることが示されます。
  
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text,
@@ -74,11 +74,11 @@
 
    1. コードで読み取る必要があるプロパティをロードする (つまりフェッチする) コマンドをキューに登録します。
    2. コンテキスト オブジェクトの `sync` メソッドを呼び出します。このメソッドは、キューに登録されたコマンドを実行対象のドキュメントに送信して、要求された情報を返します。
-   3. `sync` メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。
+   3. メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。`sync`
 
 こうした手順は、コードで Office ドキュメントから情報を*読み取る*必要がある場合には必ず完了する必要があります。
 
-1. `TODO2` を次のコードに置き換えます。
+1. を次のコードに置き換えます。`TODO2`
   
     ```js
     originalRange.load("text");
@@ -95,10 +95,10 @@
     ``` 
 
 2. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Word.run` の最後にある最終行の `return context.sync();` を削除します。新しい最後の `context.sync` は、このチュートリアルの後の方で追加します。 
-3. `doc.body.insertParagraph` 行を切り取り、`TODO4` の代わりに貼り付けます。 
-4. `TODO5` を次のコードに置き換えます。次の点に注意してください。
-   - `sync` メソッドを `then` 関数に渡すことで、`insertParagraph` ロジックがキューに登録されるまで、そのメソッドが実行されないようにします。
-   - `then` メソッドは渡されたどんな関数でも呼び出します。`sync` が 2 回呼び出されないように、context.sync の末尾の "()" は省略します。
+3. 行を切り取り、`TODO4` の代わりに貼り付けます。`doc.body.insertParagraph` 
+4. を次のコードに置き換えます。次の点に注意してください。`TODO5`
+   - メソッドを `then` 関数に渡すことで、`insertParagraph` ロジックがキューに登録されるまで、そのメソッドが実行されないようにします。`sync`
+   - メソッドは渡されたどんな関数でも呼び出します。`sync` が 2 回呼び出されないように、context.sync の末尾の "()" は省略します。`then`
 
     ```js
     .then(context.sync);
@@ -136,7 +136,7 @@ function insertTextIntoRange() {
 ## <a name="add-text-between-ranges"></a>範囲間にテキストを追加する
 
 1. index.html ファイルを開きます。
-2. `insert-text-into-range` ボタンを格納している `div` の下に、次のマークアップを追加します。
+2. ボタンを格納している `div` の下に、次のマークアップを追加します。`insert-text-into-range`
 
     ```html
     <div class="padding">            
@@ -146,13 +146,13 @@ function insertTextIntoRange() {
 
 3. app.js ファイルを開きます。
 
-4. `insert-text-into-range` ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。
+4. ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。`insert-text-into-range`
 
     ```js
     $('#insert-text-outside-range').click(insertTextBeforeRange);
     ```
 
-5. `insertTextIntoRange` 関数の下に、次の関数を追加します。
+5. 関数の下に、次の関数を追加します。`insertTextIntoRange`
 
     ```js
     function insertTextBeforeRange() {
@@ -174,9 +174,9 @@ function insertTextIntoRange() {
     }
     ``` 
 
-6. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+6. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
    - このメソッドの目的は、Office 365 というテキストから成る範囲の前に Office 2019 というテキストの範囲を追加することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
-   - `Range.insertText` メソッドの最初のパラメーターは、追加する文字列です。
+   - メソッドの最初のパラメーターは、追加する文字列です。`Range.insertText`
    - 2 番目のパラメーターは、範囲内のどの位置にテキストを挿入するかを指定します。 位置オプションの詳細については、`insertTextIntoRange` 関数に関する上記の説明を参照してください。
 
     ```js
@@ -185,7 +185,7 @@ function insertTextIntoRange() {
     originalRange.insertText("Office 2019, ", "Before");
     ``` 
 
-7. `TODO2` を次のコードに置き換えます。 
+7. を次のコードに置き換えます。`TODO2` 
  
      ```js
     originalRange.load("text");
@@ -203,14 +203,14 @@ function insertTextIntoRange() {
             //        been queued.
     ``` 
 
-8. `TODO3` を次のコードに置き換えます。 この新しい段落で、新しいテキストが元の選択範囲の一部になって***いない***ことが示されます。 元の範囲には、依然として選択時のテキストのみが含まれています。
+8. を次のコードに置き換えます。`TODO3` この新しい段落で、新しいテキストが元の選択範囲の一部になって***いない***ことが示されます。 元の範囲には、依然として選択時のテキストのみが含まれています。
  
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text,
                              "End");
     ``` 
 
-9. `TODO4` を次のコードに置き換えます。
+9. を次のコードに置き換えます。`TODO4`
 
     ```js
     .then(context.sync);
@@ -220,7 +220,7 @@ function insertTextIntoRange() {
 ## <a name="replace-the-text-of-a-range"></a>範囲のテキストを置き換える
 
 1. index.html ファイルを開きます。
-2. `insert-text-outside-range` ボタンを格納している `div` の下に、次のマークアップを追加します。
+2. ボタンを格納している `div` の下に、次のマークアップを追加します。`insert-text-outside-range`
 
     ```html
     <div class="padding">            
@@ -230,13 +230,13 @@ function insertTextIntoRange() {
 
 3. app.js ファイルを開きます。
 
-4. `insert-text-outside-range` ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。
+4. ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。`insert-text-outside-range`
 
     ```js
     $('#replace-text').click(replaceText);
     ```
 
-5. `insertTextBeforeRange` 関数の下に、次の関数を追加します。
+5. 関数の下に、次の関数を追加します。`insertTextBeforeRange`
 
     ```js
     function replaceText() {
@@ -255,7 +255,7 @@ function insertTextIntoRange() {
     }
     ``` 
 
-6. `TODO1` を次のコードに置き換えます。 このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
+6. を次のコードに置き換えます。`TODO1` このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
     ```js
     const doc = context.document;
@@ -270,8 +270,8 @@ function insertTextIntoRange() {
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 これを行うには、プロンプトが表示されてビルド コマンドを入力できるようにするため、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-2. `npm run build` コマンドを実行し、Office アドインを実行できるすべてのホストでサポートされている以前のバージョンの JavaScript に ES6 ソース コードをトランスパイルします。
-3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
+2. コマンドを実行し、Office アドインを実行できるすべてのホストでサポートされている以前のバージョンの JavaScript に ES6 ソース コードをトランスパイルします。`npm run build`
+3. コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。`npm start`
 4. 作業ウィンドウを再読み込みするために、そのウィンドウを閉じて、**[ホーム]** メニューの **[作業ウィンドウの表示]** を選択してアドインを再度開きます。
 5. 作業ウィンドウで **[段落の挿入]** を選択し、文書の先頭に段落があることを確認します。
 6. 一部のテキストを選択します。 Click-to-Run という語句を選択します。 *選択範囲の前後にあるスペースは含めないように注意してください。*

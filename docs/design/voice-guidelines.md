@@ -1,4 +1,4 @@
-# <a name="voice-guidelines"></a>音声ガイドライン
+# <a name="voice-guidelines"></a>スタイル ガイドライン
 
 Office アドインを設計する際は、UI のテキストと要素に使用するスタイルをよくご検討ください。Office UI のスタイルと一致させるように努めてください。Office UI のスタイルは、ユーザーにとって会話的で魅力的かつ理解しやすいものになっています。 
 
@@ -9,11 +9,11 @@ Office アドインを設計する際は、UI のテキストと要素に使用�
 - **一貫性を持たせます。** 同じ概念に対しては一貫して同じ単語を使用します。
 - **ユーザーをひきつける表現を用います。** ユーザーを表現する際は「お客様」を用います。3 人称を使用しないようにします。ユーザー タスクには、命令法 (～してください) を使用します。
 - **ユーザーの立場に立った親切なものにします。** 積極的で丁寧かつ協力的な雰囲気を醸し出す明るい表現を用います。できないことではなく、できることを強調します。
-- **顧客を理解するようにします。** イディオムや口語表現を使用する際には、文化に対する配慮やグローバリゼーションを意識します。
+- **顧客を理解するようにします。** イディオムや口語表現を使用する際には、文化的な背景を考慮し、グローバリゼーションを意識します。
 
 ## <a name="see-also"></a>関連項目
 
--  [身体障害をもつ方へ配慮した書き方](https://docs.microsoft.com/en-us/style-guide/accessibility/writing-all-abilities) のガイドライン
-- [マイクロソフトのスタイルと音声のためのヒント トップ 10](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice)
-- [言葉の選択](https://docs.microsoft.com/en-us/style-guide/word-choice/) についてのガイドライン
--  Office アドインの [妥当性確認ポリシー](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)
+- [身体障害をもつ方へ配慮した書き方](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities) のガイドライン
+- [マイクロソフトのスタイルと音声のためのヒント トップ 10](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- [言葉の選択](https://docs.microsoft.com/style-guide/word-choice/) についてのガイドライン
+-  Office アドインの [妥当性確認ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)

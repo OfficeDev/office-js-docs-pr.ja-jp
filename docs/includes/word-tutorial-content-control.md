@@ -3,7 +3,7 @@
 > [!NOTE]
 > このページでは、Word アドインのチュートリアルの個々の手順について説明します。このページに検索エンジンの結果から、またはその他の直接リンクからアクセスした場合は、「[Word アドインのチュートリアル](../tutorials/word-tutorial.yml)」の紹介ページに移動し、チュートリアルを最初から始めてください。
 
-チュートリアルのこの手順を開始する前に、Word UI からリッチ テキスト コンテンツ コントロールを作成して操作し、コントロールとそのプロパティを理解しておくことをお勧めします。 詳細については、「[ユーザーが Word 上で記入または印刷するフォームを作成する](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b)」を参照してください。
+チュートリアルのこの手順を開始する前に、Word UI からリッチ テキスト コンテンツ コントロールを作成して操作し、コントロールとそのプロパティを理解しておくことをお勧めします。 詳細については、「[ユーザーが Word 上で記入または印刷するフォームを作成する](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b)」を参照してください。
 
 > [!NOTE]
 > UI から Word 文書に追加できるコンテンツ コントロールにはいくつかの種類がありますが、Word.js では現在のところリッチ テキスト コンテンツ コントロールのみがサポートされています。
@@ -48,7 +48,7 @@
     }
     ``` 
 
-7.  `TODO1` を次のコードに置換します。次の点に注意してください。
+7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
    - このコードの目的は、コンテンツ コントロール内の Office 365 という語句をラップすることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
    - プロパティは、コンテンツ コントロールの表示タイトルを指定します。`ContentControl.title` 
    - プロパティは、`ContentControlCollection.getByTag` メソッドを使用してコンテンツ コントロールへの参照を取得するために使用できるタグを指定します。これを後述する関数で使用します。`ContentControl.tag` 
@@ -103,9 +103,9 @@
     }
     ``` 
 
-7.  `TODO1` を次のコードに置換します。 
+7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code.|||UNTRANSLATED_CONTENT_END||| 
     > [!NOTE]
-    >  `ContentControlCollection.getByTag` メソッドは、特定のタグの全てのコンテンツコントロールの `ContentControlCollection` を返します。  `getFirst` を使って、目的のコントロールへの参照を取得します。
+    > メソッドは、特定のタグの全てのコンテンツコントロールの `ContentControlCollection` を返します。`ContentControlCollection.getByTag` を使って、目的のコントロールへの参照を取得します。`getFirst`
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();

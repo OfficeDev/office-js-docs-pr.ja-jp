@@ -6,7 +6,7 @@
 ## <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>2 つ目のリボン ボタンを追加するようにマニフェストを構成する
 
 1. マニフェスト ファイル **my-office-add-in-manifest.xml** を開きます。
-2. `<Control>` 要素を検索します。 この要素では、アドインの起動に使用している **[ホーム]** リボンの **[作業ウィンドウの表示]** ボタンを定義しています。 ここでは、**[ホーム]** リボンの同じグループに 2 つ目のボタンを追加します。 Control 終了タグ (`</Control>`) と Group 終了タグ (`</Group>`) の間に、次のマークアップを追加します。
+2. 要素を検索します。`<Control>` この要素では、アドインの起動に使用している **[ホーム]** リボンの **[作業ウィンドウの表示]** ボタンを定義しています。 ここでは、**[ホーム]** リボンの同じグループに 2 つ目のボタンを追加します。 Control 終了タグ (`</Control>`) と Group 終了タグ (`</Group>`) の間に、次のマークアップを追加します。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -26,7 +26,7 @@
     </Control>
     ```
 
-3. `TODO1` は文字列に置き換えて、このマニフェスト ファイル内で一意の ID をボタンに割り当てます。 このマニフェストには、別のボタンが 1 つしか存在していないため難しいことではありません。 このボタンでは、ワークシートの保護のオン/オフを切り替える予定なので、"ToggleProtection" を使用することにします。 作業が完了すると、Control 開始タグの全体は次のようになります。
+3. は文字列に置き換えて、このマニフェスト ファイル内で一意の ID をボタンに割り当てます。`TODO1` このマニフェストには、別のボタンが 1 つしか存在していないため難しいことではありません。 このボタンでは、ワークシートの保護のオン/オフを切り替える予定なので、"ToggleProtection" を使用することにします。 作業が完了すると、Control 開始タグの全体は次のようになります。
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -38,7 +38,7 @@
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 要素では、このボタンのツール ヒントを定義します。 ツール ヒントのタイトルはボタンのラベルと同じにする必要があるため、リソース ID にはまったく同じ "ProtectionButtonLabel" を使用することにします。 ツール ヒントの説明は、"Click to turn protection of the worksheet on and off" にする予定です。 ただし、`ID` は "ProtectionButtonToolTip" にします。 作業が完了すると、`SuperTip` マークアップの全体は次のコードのようになります。 
+5. 要素では、このボタンのツール ヒントを定義します。`SuperTip` ツール ヒントのタイトルはボタンのラベルと同じにする必要があるため、リソース ID にはまったく同じ "ProtectionButtonLabel" を使用することにします。 ツール ヒントの説明は、"Click to turn protection of the worksheet on and off" にする予定です。 ただし、`ID` は "ProtectionButtonToolTip" にします。 作業が完了すると、`SuperTip` マークアップの全体は次のコードのようになります。 
 
     ```xml
     <Supertip>            
@@ -50,7 +50,7 @@
    > [!NOTE] 
    > 運用アドインでは、異なる 2 つのボタンに同じアイコンを使用することは避けたいところですが、このチュートリアルでは説明を簡単にするために同じアイコンを使用します。 そのため、この新しい `Control` の `Icon` マークアップは、単に既存の `Control` から `Icon` 要素をコピーします。 
 
-6. 既にマニフェストに存在している元の `Control` 要素の内側にある `Action` 要素では、その要素のタイプが `ShowTaskpane` に設定されていますが、新しいボタンで作業ウィンドウを開く予定はありません。このボタンでは、この後の手順で作成するカスタム関数を実行する予定です。 そのため、`TODO5` は、カスタム関数をトリガーするボタンのアクション タイプである `ExecuteFunction` に置き換えます。 `Action` 開始タグは次のようになります。
+6. 既にマニフェストに存在している元の `Control` 要素の内側にある `Action` 要素では、その要素のタイプが `ShowTaskpane` に設定されていますが、新しいボタンで作業ウィンドウを開く予定はありません。このボタンでは、この後の手順で作成するカスタム関数を実行する予定です。 そのため、`TODO5` は、カスタム関数をトリガーするボタンのアクション タイプである `ExecuteFunction` に置き換えます。 開始タグは次のようになります。`Action`
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -62,7 +62,7 @@
     <FunctionName>toggleProtection</FunctionName>
     ```
 
-    `Control` マークアップの全体は、次のようになりました。
+    マークアップの全体は、次のようになりました。`Control`
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -84,13 +84,13 @@
 
 8. マニフェストの `Resources` セクションまで下にスクロールします。
 
-9. `bt:ShortStrings` 要素の子として、次のマークアップを追加します。
+9. 要素の子として、次のマークアップを追加します。`bt:ShortStrings`
 
     ```xml
     <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
     ```
 
-10. `bt:LongStrings` 要素の子として、次のマークアップを追加します。
+10. 要素の子として、次のマークアップを追加します。`bt:LongStrings`
 
     ```xml
     <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
@@ -102,7 +102,7 @@
 
 1. ファイル \function-file\function-file.js を開きます。
 
-2. このファイルには、即時実行関数式 (IIFE) が既に含まれています。 カスタムの初期化ロジックは必要ないため、`Office.initialize` に割り当てられた関数は空のままにしておきます  (ただし、削除してはいけません。 `Office.initialize` プロパティは Null や未定義にすることはできません)。*IIFE の外側に*、次のコードを追加します。 メソッドに `args` パラメーターを指定していることと、メソッドの最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office ホスト アプリケーションに通知します。
+2. このファイルには、即時実行関数式 (IIFE) が既に含まれています。 カスタムの初期化ロジックは必要ないため、`Office.initialize` に割り当てられた関数は空のままにしておきます (ただし、削除してはいけません。 プロパティは Null や未定義にすることはできません)。*IIFE の外側に*、次のコードを追加します。`Office.initialize` メソッドに `args` パラメーターを指定していることと、メソッドの最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office ホスト アプリケーションに通知します。
 
     ```javascript
     function toggleProtection(args) {
@@ -122,7 +122,7 @@
     }
     ```
 
-3. `TODO1` を次のコードに置き換えます。 このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。 `TODO2` については、次のセクションで説明します。
+3. を次のコードに置き換えます。`TODO1` このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。 については、次のセクションで説明します。`TODO2`
 
     ```javascript
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -143,13 +143,13 @@
 
    1. コードで読み取る必要があるプロパティをロードする (つまりフェッチする) コマンドをキューに登録します。
    2. コンテキスト オブジェクトの `sync` メソッドを呼び出します。このメソッドは、キューに登録されたコマンドを実行対象のドキュメントに送信して、要求された情報を返します。
-   3. `sync` メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。
+   3. メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。`sync`
 
 こうした手順は、コードで Office ドキュメントから情報を*読み取る*必要がある場合には必ず完了する必要があります。
 
-1. `toggleProtection` 関数で、`TODO2` を次のコードに置き換えます。次の点に注意してください。
+1. |||UNTRANSLATED_CONTENT_START|||In the `toggleProtection` function, replace `TODO2` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
    - すべての Excel オブジェクトに `load` メソッドがあります。 読み取る必要のあるオブジェクトのプロパティは、コンマ区切りの名前の文字列としてパラメーターで指定します。 この場合、読み取る必要のあるプロパティは、`protection` プロパティのサブプロパティです。 サブプロパティはその他のコードの場合とほとんど同じ方法で参照しますが、"." 記号の代わりにスラッシュ ('/') 記号を使用する点が異なります。
-   - `sync` が完了してドキュメントからフェッチされた適切な値が `sheet.protection.protected` に割り当てられるまで、`sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするために、そのロジックを `sync` が完了するまで実行されない `then` 関数に (この後の手順で) 移動します。 
+   - が完了してドキュメントからフェッチされた適切な値が `sheet.protection.protected` に割り当てられるまで、`sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするために、そのロジックを `sync` が完了するまで実行されない `then` 関数に (この後の手順で) 移動します。`sync` 
 
     ```javascript
     sheet.load('protection/protected');
@@ -164,10 +164,10 @@
     ``` 
 
 2. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Excel.run` の最後にある最終行の `return context.sync();` を削除します。 この後の手順で、新しい最終の `context.sync` を追加します。
-3. `toggleProtection` 関数内の `if ... else` 構造を切り取って、`TODO3` の代わりに貼り付けます。
-4. `TODO4` を次のコードに置き換えます。次の点に注意してください。
-   - `sync` メソッドを `then` 関数に渡すことで、`sheet.protection.unprotect()` または `sheet.protection.protect()` のどちらかがキューに登録されるまで、そのメソッドが実行されないようにします。
-   - `then` メソッドは渡された関数を呼び出します。`sync` が 2 回呼び出されないように、`context.sync` の末尾の "()" は省略します。
+3. 関数内の `if ... else` 構造を切り取って、`TODO3` の代わりに貼り付けます。`toggleProtection`
+4. を次のコードに置き換えます。次の点に注意してください。`TODO4`
+   - メソッドを `then` 関数に渡すことで、`sheet.protection.unprotect()` または `sheet.protection.protect()` のどちらかがキューに登録されるまで、そのメソッドが実行されないようにします。`sync`
+   - メソッドは渡された関数を呼び出します。`sync` が 2 回呼び出されないように、`context.sync` の末尾の "()" は省略します。`then`
 
     ```javascript
     .then(context.sync);

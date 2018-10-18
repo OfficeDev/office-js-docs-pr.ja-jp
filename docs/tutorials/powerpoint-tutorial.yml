@@ -1,39 +1,44 @@
 ### YamlMime:Tutorial
-title: PowerPoint アドインのチュートリアル
+title: PowerPoint のアドインのチュートリアル
 metadata:
-  title: PowerPoint アドインのチュートリアル
-  description: このチュートリアルでは、イメージの挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-  audience: 開発者
-  level: 初心者
+  title: PowerPoint のアドインのチュートリアル
+  description: このチュートリアルでは、イメージとテキストを挿入し、スライドのメタデータを取得し、スライド間を移動できるPowerPoint のアドインを作成します。
+  audience: Developer
+  level: Beginner
   displayType: one-column
   ms.date: 02/28/2018
+  ms.openlocfilehash: 8ef93ed2a55f427f2c162d76231d9bf4801fa69a
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19438558"
 items:
 - durationInMinutes: 1
-  content: |
-    このチュートリアルでは、その日の <a href="https://www.bing.com">Bing</a> 写真をスライドへ追加し、テキストをスライドへ追加し、スライドのメタデータを取得し、スライド間を移動するための PowerPoint 作業ウィンドウを作成する方法について説明します。途中で問題が発生した場合は、<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">ご連絡ください</a>。
-- title: アドイン プロジェクトの作成
+  content: >
+    このチュートリアルでは、 <a href="https://www.bing.com">Bing</a> のイメージとテキストをスライドに挿入し、スライドのメタデータを取得し、スライド間を移動したりすることができるPowerPointタスクペインアドインを作成します。 途中で問題が発生した場合は、 <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">お知らせください</a>。
+- title: アドインのプロジェクトの作成
   durationInMinutes: 5
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
-- title: 画像の挿入
+- title: イメージの挿入
   durationInMinutes: 8
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
-- title: ユーザー インターフェイス (UI) 要素のカスタマイズ
+- title: ユーザーインターフェイス（UI）要素をカスタマイズ
   durationInMinutes: 3
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
 - title: テキストの挿入
   durationInMinutes: 4
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
 - title: スライドのメタデータの取得
   durationInMinutes: 4
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
-- title: スライド間の移動
+- title: スライド間を移動
   durationInMinutes: 5
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
-- content: |
-    PowerPoint アドインのチュートリアルが完了しました。PowerPoint アドインの作成の詳細については、<a href="../powerpoint/powerpoint-add-ins.md">PowerPoint アドインの概要</a>をご覧ください。
+- content: PowerPointアドインのチュートリアルを完了しました。 PowerPoint アドインの作成の詳細については、 <a href="../powerpoint/powerpoint-add-ins.md">PowerPoint アドインの概要</a>ご確認下さい。
