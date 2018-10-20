@@ -1,20 +1,20 @@
 ---
 title: エラー処理
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: b07012516cbe15374d0707c157738117a9c8fe96
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/16/2018
+ms.openlocfilehash: caba29f7d6949cc6d9df1498ac0a3d4f5de6c4ee
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459232"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579815"
 ---
 # <a name="error-handling"></a>エラー処理
 
 Excel の JavaScript API を使用してアドインをビルドする場合は、ランタイム エラーを考慮するためのエラー処理ロジックを含めるようにしてください。これは、API の非同期の性質のために重要です。
 
 > [!NOTE]
->  **Sync()** メソッドと非同期であるため Excel の JavaScript API の詳細については、 [Excel の JavaScript API を使用して基本的なプログラミングの概念](excel-add-ins-core-concepts.md)を参照してください。
+> **Sync()** メソッドと非同期であるため Excel の JavaScript API の詳細については、 [Excel の JavaScript API を使用して基本的なプログラミングの概念](excel-add-ins-core-concepts.md)を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -44,7 +44,33 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 - **debugInfo**: 存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。 
 
 > [!NOTE]
-> `console.log()`を使用してコンソールにエラー メッセージを印刷する場合は、サーバー上にそれらのメッセージのみが表示されます。エンド ユーザーには、アドイン作業ウィンドウでまたはホスト アプリケーションの任意の場所にこれらのエラー メッセージは表示されません。
+> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンド ユーザーに対して表示されることはありません。
+
+## <a name="error-messages"></a>エラー メッセージ
+
+次の表は、API から返されるエラー一覧の定義を示します。
+
+|error.code | error.message |
+|:----------|:--------------|
+|InvalidArgument |引数が無効であるか、存在しません。または形式が正しくありません。|
+|InvalidRequest  |要求を処理できません。|
+|InvalidReference|この参照は、現在の操作に対して無効です。|
+|InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
+|InvalidSelection|現在の選択内容は、この操作では無効です。|
+|認証されていません |必要な認証情報が見つからないか、無効です。|
+|AccessDenied |要求された操作を実行できません。|
+|ItemNotFound |要求されたリソースは存在しません。|
+|ActivityLimitReached|アクティビティの制限に達しました。|
+|GeneralException|リクエストの処理中に内部エラーが発生しました。|
+|NotImplemented  |リクエストされた機能は実装されていません。|
+|ServiceNotAvailable|サービスを利用できません。|
+|一致しません|競合のため、要求を処理できませんでした。|
+|ItemAlreadyExists|作成中のリソースはすでに存在しています。|
+|UnsupportedOperation|試行中の操作はサポートされていません。|
+|RequestAborted|実行時に要求が中止されました。|
+|ApiNotAvailable|要求された API は使用できません。|
+|InsertDeleteConflict|試行された挿入操作または削除操作で競合が発生しました。|
+|InvalidOperation|試行された操作は、このオブジェクトでは無効です。|
 
 ## <a name="see-also"></a>関連項目
 
