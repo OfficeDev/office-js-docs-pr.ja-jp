@@ -1,12 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを構築する
 
-この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順を説明します。
-
-## <a name="environment"></a>環境
-
-- **オフィス デスクトップ**: 最新バージョンの Office がインストールされていることを確認してください。アドイン コマンドには、ビルド 16.0.6769.0000 以上が必要です (**16.0.6868.0000** 推奨)。「[Office アプリケーションの最新バージョンをインストールする](http://aka.ms/latestoffice)」方法を参照してください。 
- 
-- **Office Online**: 追加設定はありません。Office Online の職場/学校アカウント用コマンドのサポートはプレビューになっていることにご注意ください。
+この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -17,23 +11,15 @@
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a>Web アプリを作成する
+## <a name="create-the-web-app"></a>Web アプリを作成する
 
-1. ローカル ドライブにフォルダーを作成し、**my-addin** という名前を付けます。ここにアプリのファイルを作成します。
-
-2. アプリ フォルダーに移動します。
-
-    ```bash
-    cd my-addin
-    ```
-
-3. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。次のコマンドを実行し、以下のスクリーンショットに示すとおり、プロンプトに応答します。
+1. Yeoman ジェネレーターを使用して、Outlook アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using React framework`
+    - **プロジェクトタイプを選択します。** `Office Add-in project using React framework`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
@@ -41,46 +27,219 @@
     
     ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
-4.  **Src/components/App.tsx** を開き、コメントの「塗りつぶしの色を更新する」を検索し、塗りつぶしの色を '青' から'黄' に変更してから保存します。 
+2. Web アプリケーション プロジェクトのルート フォルダーに移動します。
 
-    ```js
-    range.format.fill.color = 'blue'
-
-    ```
-
-5. **src/components/App.tsx** 内の `render` 関数の `return` ブロックで、`<Herolist>` を次のコードに更新し、ファイルを保存します。 
-
-    ```js
-      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
-        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
-        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
-    </HeroList>
-    ```
-
-6. 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」の手順を実行して、開発用コンピューターのオペレーティング システムの証明書を信頼します。
-
-7. アドインをサイドロードすると Excel に表示されます。ターミナルで次のコマンドを実行します。 
-    
     ```bash
-    npm run sideload
+    cd "My Office Add-in"
     ```
+
+## <a name="update-the-code"></a>コードを更新する
+
+1. コード エディターで、ファイル **src/styles.less**を開く、ファイルの末尾に次のスタイルを追加し、ファイルを保存します。
+
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+        font-family: Arial;
+    }
+
+    .padding {
+        padding: 15px;
+    }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
+    ```
+
+2. Office アドイン Yeoman ジェネレーターを作成したプロジェクト テンプレートには、このクイック スタートの不要な反応するコンポーネントが含まれています。 ファイル **src/components/HeroList.tsx**を削除します。
+
+3. ファイル **src/components/Header.tsx**を開き、次のコードで全体の内容を置き換えてファイルを保存します。
+
+    ```typescript
+    import * as React from 'react';
+
+    export interface HeaderProps {
+        title: string;
+    }
+
+    export class Header extends React.Component<HeaderProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-header'>
+                    <div className='padding'>
+                        <h1>{this.props.title}</h1>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+4.  **Src とコンポーネント** ] フォルダーに **Content.tsx** という名前の新しい対応コンポーネントを作成、次のコードを追加し、ファイルを保存します。
+
+    ```typescript
+    import * as React from 'react';
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+
+    export interface ContentProps {
+        message: string;
+        buttonLabel: string;
+        click: any;
+    }
+
+    export class Content extends React.Component<ContentProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-main'>
+                    <div className='padding'>
+                        <p>{this.props.message}</p>
+                        <br />
+                        <h3>Try it out</h3>
+                        <br/>
+                        <Button className='normal-button' buttonType={ButtonType.hero} onClick={this.props.click}>{this.props.buttonLabel}</Button>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+5. ファイル **src/components/App.tsx**を開き、次のコードで全体の内容を置き換えてファイルを保存します。
+
+    ```typescript
+    import * as React from 'react';
+    import { Header } from './Header';
+    import { Content } from './Content';
+    import Progress from './Progress';
+
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
+
+    export interface AppProps {
+        title: string;
+        isOfficeInitialized: boolean;
+    }
+
+    export interface AppState {
+    }
+
+    export default class App extends React.Component<AppProps, AppState> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        setColor = async () => {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
+        render() {
+            const {
+                title,
+                isOfficeInitialized,
+            } = this.props;
+
+            if (!isOfficeInitialized) {
+                return (
+                    <Progress
+                        title={title}
+                        logo='assets/logo-filled.png'
+                        message='Please sideload your addin to see app body.'
+                    />
+                );
+            }
+
+            return (
+                <div className='ms-welcome'>
+                    <Header title='Welcome' />
+                    <Content message='Choose the button below to set the color of the selected range to green.' buttonLabel='Set color' click={this.setColor} />
+                </div>
+            );
+        }
+    }
+    ```
+
+## <a name="update-the-manifest"></a>マニフェストを更新する
+
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
+
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
+
+4. ファイルを保存します。
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
+    ```
+
+## <a name="start-the-dev-server"></a>開発用サーバーを起動する
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 ## <a name="try-it-out"></a>お試しください
 
-1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
+1. アドインを実行するのに使用するプラットフォームの手順に従い、Excel 内でアドインをサイドロードします。
 
-    Windows
-    ```bash
-    npm start
-    ```
+    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+3. ワークシート内で任意のセル範囲を選択します。
 
-4. 作業ウィンドウで **[色の設定]** ボタンをクリックし、選択範囲の色を青に設定します。
+4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
@@ -94,6 +253,6 @@
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
