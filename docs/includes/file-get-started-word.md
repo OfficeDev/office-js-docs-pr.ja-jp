@@ -1,36 +1,36 @@
-# <a name="build-your-first-word-add-in"></a><span data-ttu-id="bc6d7-101">最初の Word アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="bc6d7-101">Build your first Word add-in</span></span>
+# <a name="build-your-first-word-add-in"></a><span data-ttu-id="9683b-101">最初の Word アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="9683b-101">Build your first Word add-in</span></span>
 
-<span data-ttu-id="bc6d7-102">_適用対象: Word 2016、Word for iPad、Word for Mac_</span><span class="sxs-lookup"><span data-stu-id="bc6d7-102">_Applies to: Word 2016, Word for iPad, Word for Mac_</span></span>
+<span data-ttu-id="9683b-102">_適用対象: Word 2016、Word for iPad、Word for Mac_</span><span class="sxs-lookup"><span data-stu-id="9683b-102">_Applies to: Word 2016, Word for iPad, Word for Mac_</span></span>
 
-<span data-ttu-id="bc6d7-103">この記事では、jQuery と Word JavaScript API を使用して Word アドインを構築する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-103">In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.</span></span> 
+<span data-ttu-id="9683b-103">この記事では、jQuery と Word JavaScript API を使用して Word アドインを構築する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="9683b-103">In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="bc6d7-104">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-104">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="9683b-104">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="9683b-104">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="bc6d7-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bc6d7-105">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="9683b-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="9683b-105">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="bc6d7-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="bc6d7-106">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="9683b-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="9683b-106">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="bc6d7-107">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="bc6d7-107">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="9683b-107">アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="9683b-107">Create the add-in project</span></span>
 
-1. <span data-ttu-id="bc6d7-108">[Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="9683b-108">[Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="9683b-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="bc6d7-109">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Word Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="9683b-109">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Word Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9683b-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="bc6d7-110">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-110">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="9683b-110">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9683b-110">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="bc6d7-p101">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+4. <span data-ttu-id="9683b-p101">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="bc6d7-113">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-113">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="9683b-113">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="9683b-113">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="bc6d7-114">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-114">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="9683b-114">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="9683b-114">Update the code</span></span>
 
-1. <span data-ttu-id="bc6d7-p102">**Home.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。**Home.html** は `<body>` 要素を以下のマークアップと置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="9683b-p102">**Home.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。**Home.html** は `<body>` 要素を以下のマークアップと置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body>
@@ -56,7 +56,7 @@
     </body>
     ```
 
-2. <span data-ttu-id="bc6d7-p103">Web アプリケーション プロジェクトのルートで **Home.js** ファイルを開きます。このファイルは、アドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="9683b-p103">Web アプリケーション プロジェクトのルートで **Home.js** ファイルを開きます。このファイルは、アドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -157,7 +157,7 @@
     })();
     ```
 
-3. <span data-ttu-id="bc6d7-p104">Web アプリケーション プロジェクトのルートで **Home.css** ファイルを開きます。このファイルは、アドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="9683b-p104">Web アプリケーション プロジェクトのルートで **Home.css** ファイルを開きます。このファイルは、アドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -186,17 +186,17 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="bc6d7-123">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-123">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="9683b-123">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="9683b-123">Update the manifest</span></span>
 
-1. <span data-ttu-id="bc6d7-p105">アドイン プロジェクトで XML マニフェスト ファイルを開きます。このファイルはアドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p105">Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="9683b-p105">アドイン プロジェクトで XML マニフェスト ファイルを開きます。このファイルはアドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p105">Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="bc6d7-p106">`ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="9683b-p106">`ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="bc6d7-p107"> `DefaultValue`  要素の`DisplayName`   属性にはプレースホルダーがあります。これを \*\* My Office アドイン\*\*   で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="9683b-p107">`DefaultValue`  要素の`DisplayName`   属性にはプレースホルダーがあります。これを \*\* My Office アドイン\*\*   で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="bc6d7-p108"> `DefaultValue` 要素の `Description`  属性にはプレースホルダーがあります。これを *\*Excel の作業ウィンドウ アドイン*\*で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
+4. <span data-ttu-id="9683b-p108">`Description`要素の`DefaultValue`属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン**に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
 
-5. <span data-ttu-id="bc6d7-132">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-132">Save the file.</span></span>
+5. <span data-ttu-id="9683b-132">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-132">Save the file.</span></span>
 
     ```xml
     ...
@@ -208,101 +208,86 @@
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="bc6d7-133">試してみる</span><span class="sxs-lookup"><span data-stu-id="bc6d7-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="9683b-133">試してみる</span><span class="sxs-lookup"><span data-stu-id="9683b-133">Try it out</span></span>
 
-1. <span data-ttu-id="bc6d7-p109">Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p109">Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="9683b-p109">Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p109">Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="bc6d7-136">Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-136">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="bc6d7-137">(Office 365 バージョンではなく、サブスクリプション版でない Office の 2016 年を使用している場合、カスタム ボタンはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-137">(If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="bc6d7-138">その代わり、作業ウィンドウはすぐに開きます)。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-138">Instead, the task pane will open immediately.)</span></span>
+2. <span data-ttu-id="9683b-p110">Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。(Office 365 バージョンではなく、サブスクリプション版でない Office の 2016 年を使用している場合、カスタム ボタンはサポートされません。代わりに、作業ウィンドウがすぐに開きます。)</span><span class="sxs-lookup"><span data-stu-id="9683b-p110">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)</span></span>
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
 
-3. <span data-ttu-id="bc6d7-140">作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-140">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="9683b-140">作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。</span><span class="sxs-lookup"><span data-stu-id="9683b-140">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1b.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="bc6d7-142">任意のエディター</span><span class="sxs-lookup"><span data-stu-id="bc6d7-142">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="9683b-142">任意のエディター</span><span class="sxs-lookup"><span data-stu-id="9683b-142">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="bc6d7-143">前提条件</span><span class="sxs-lookup"><span data-stu-id="bc6d7-143">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="9683b-143">前提条件</span><span class="sxs-lookup"><span data-stu-id="9683b-143">Prerequisites</span></span>
 
-- [<span data-ttu-id="bc6d7-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="bc6d7-144">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="9683b-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="9683b-144">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="bc6d7-145">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="9683b-145">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="9683b-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="bc6d7-146">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="bc6d7-146">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="9683b-146">アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="9683b-146">Create the add-in project</span></span>
 
-1. <span data-ttu-id="bc6d7-147">ローカル ドライブにフォルダーを作成し、`my-word-addin` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-147">Create a folder on your local drive and name it `my-word-addin`.</span></span> <span data-ttu-id="bc6d7-148">ここにアドインのファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-148">This is where you'll create the files for your add-in.</span></span>
-
-2. <span data-ttu-id="bc6d7-149">新しいフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-149">Navigate to your new folder.</span></span>
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. <span data-ttu-id="bc6d7-150">Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-150">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="bc6d7-151">次のコマンドを実行し、以下のとおり、プロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-151">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="9683b-147">Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="9683b-147">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="9683b-148">次のコマンドを実行し、以下のとおり、プロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="9683b-148">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="bc6d7-152">**プロジェクト タイプを選択してください** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="bc6d7-152">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="bc6d7-153">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="bc6d7-153">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="bc6d7-154">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="bc6d7-154">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="bc6d7-155">**Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Word`</span><span class="sxs-lookup"><span data-stu-id="bc6d7-155">**Which Office client application would you like to support?:** `Word`</span></span>
+    - <span data-ttu-id="9683b-149">**プロジェクトタイプを選択してください** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="9683b-149">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="9683b-150">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="9683b-150">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="9683b-151">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="9683b-151">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="9683b-152">**Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Word`</span><span class="sxs-lookup"><span data-stu-id="9683b-152">**Which Office client application would you like to support?:** `Word`</span></span>
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
     
-    <span data-ttu-id="bc6d7-157">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-157">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="9683b-154">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="9683b-154">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-4. <span data-ttu-id="bc6d7-158">Web アプリケーション プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-158">Navigate to the root folder of the web application project.</span></span>
+2. <span data-ttu-id="9683b-155">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="9683b-155">Navigate to the root folder of the web application project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a><span data-ttu-id="bc6d7-159">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-159">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="9683b-156">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="9683b-156">Update the code</span></span>
 
-1. <span data-ttu-id="bc6d7-160">コード エディターで、プロジェクトのルートにある **index.html** を開きます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-160">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="bc6d7-161">このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-161">This file contains the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="bc6d7-162">コンテンツ全体を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-162">Replace the entire contents with the following code and save the file.</span></span> <span data-ttu-id="bc6d7-163">このアドインには、3 つのボタンが表示されます。いずれかのボタンを選択すると、文書に定型句が追加されます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-163">This add-in will display three buttons and when any of the buttons are chosen, boilerplate text will be added to the document.</span></span>
+1. <span data-ttu-id="9683b-p112">コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p112">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span> 
+
+2. <span data-ttu-id="9683b-159">`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-159">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span>
 
     ```html
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-            <title>Boilerplate text app</title>
-            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <link href="app.css" rel="stylesheet" type="text/css" />
-        </head>
-        <body>
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>    
-            <div id="content-main">
-                <div class="padding">
-                    <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                    <br /><br />
-                    <button id="checkhov">Add quote from Anton Chekhov</button>
-                    <br /><br />
-                    <button id="proverb">Add Chinese proverb</button>
-                </div>
+    <body>
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
             </div>
-            <br />
-            <div id="supportedVersion"/>
-        </body>
-    </html>
+        </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br /><br />
+                <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br /><br />
+                <button id="proverb">Add Chinese proverb</button>
+            </div>
+        </div>
+        <br />
+        <div id="supportedVersion" />
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-2. <span data-ttu-id="bc6d7-164">**src/index.js** ファイルを開いて、アドインのスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-164">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="bc6d7-165">コンテンツ全体を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-165">Replace the entire contents with the following code and save the file.</span></span> <span data-ttu-id="bc6d7-166">このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-166">This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen.</span></span> 
+2. <span data-ttu-id="9683b-160">**src/index.js**ファイルを開いて、アドインのスクリプトを特定します。</span><span class="sxs-lookup"><span data-stu-id="9683b-160">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="9683b-161">コンテンツ全体を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-161">Replace the entire contents with the following code and save the file.</span></span> <span data-ttu-id="9683b-162">このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9683b-162">This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen.</span></span> 
 
     ```js
     'use strict';
@@ -403,7 +388,7 @@
     })();
     ```
 
-3. <span data-ttu-id="bc6d7-167">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-167">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="bc6d7-168">すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-168">Replace the entire contents with the following and save the file.</span></span>
+3. <span data-ttu-id="9683b-p114">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-p114">Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -432,15 +417,15 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="bc6d7-169">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-169">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="9683b-165">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="9683b-165">Update the manifest</span></span>
 
-1. <span data-ttu-id="bc6d7-170">ファイル **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-170">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="9683b-166">アドインの設定と機能を定義するように、[ **one-note-add-in-manifest.xml**]ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="9683b-166">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="bc6d7-p116">`ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-p116">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="9683b-p115">`ProviderName`要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p115">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="bc6d7-173"> `DefaultValue`  要素の `Description`  属性にはプレースホルダーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-173">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="bc6d7-174">これは、**A task pane add-in for Word** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-174">Replace it with **A task pane add-in for Word**.</span></span>
+3. <span data-ttu-id="9683b-p116">`Description`要素の`DefaultValue`属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン**に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9683b-p116">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
 
-4. <span data-ttu-id="bc6d7-175">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-175">Save the file.</span></span>
+4. <span data-ttu-id="9683b-171">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9683b-171">Save the file.</span></span>
 
     ```xml
     ...
@@ -452,37 +437,37 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="bc6d7-176">開発用サーバーを起動する</span><span class="sxs-lookup"><span data-stu-id="bc6d7-176">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="9683b-172">開発用サーバーを起動する</span><span class="sxs-lookup"><span data-stu-id="9683b-172">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="bc6d7-177">試してみる</span><span class="sxs-lookup"><span data-stu-id="bc6d7-177">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="9683b-173">試してみる</span><span class="sxs-lookup"><span data-stu-id="9683b-173">Try it out</span></span>
 
-1. <span data-ttu-id="bc6d7-178">Word 内でアドインをサイドロードするには、アドインの実行に使用するプラットフォームの指示に従います。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-178">To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.</span></span>
+1. <span data-ttu-id="9683b-174">Word 内でアドインをサイドロードするには、アドインの実行に使用するプラットフォームの指示に従います。</span><span class="sxs-lookup"><span data-stu-id="9683b-174">To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.</span></span>
 
-    - <span data-ttu-id="bc6d7-179">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="bc6d7-179">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="bc6d7-180">Word Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="bc6d7-180">Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="bc6d7-181">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="bc6d7-181">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="9683b-175">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="9683b-175">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="9683b-176">Word Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="9683b-176">Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="9683b-177">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="9683b-177">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="bc6d7-182">Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-182">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="9683b-178">Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="9683b-178">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2.png)
 
-3. <span data-ttu-id="bc6d7-184">作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-184">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="9683b-180">作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。</span><span class="sxs-lookup"><span data-stu-id="9683b-180">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="bc6d7-186">次の手順</span><span class="sxs-lookup"><span data-stu-id="bc6d7-186">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="9683b-182">次の手順</span><span class="sxs-lookup"><span data-stu-id="9683b-182">Next steps</span></span>
 
-<span data-ttu-id="bc6d7-187">これで完了です。jQuery を使用して Word アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-187">Congratulations, you've successfully created a Word add-in using jQuery!</span></span> <span data-ttu-id="bc6d7-188">次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。</span><span class="sxs-lookup"><span data-stu-id="bc6d7-188">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="9683b-183">これで完了です。jQuery を使用して Word アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="9683b-183">Congratulations, you've successfully created a Word add-in using jQuery!</span></span> <span data-ttu-id="9683b-184">次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。</span><span class="sxs-lookup"><span data-stu-id="9683b-184">Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the Advanced Outlook add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="bc6d7-189">Word アドイン チュートリアル</span><span class="sxs-lookup"><span data-stu-id="bc6d7-189">Word add-in tutorial</span></span>](../tutorials/word-tutorial.yml)
+> [<span data-ttu-id="9683b-185">Word アドイン チュートリアル</span><span class="sxs-lookup"><span data-stu-id="9683b-185">Word add-in tutorial</span></span>](../tutorials/word-tutorial.yml)
 
-## <a name="see-also"></a><span data-ttu-id="bc6d7-190">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc6d7-190">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9683b-186">関連項目</span><span class="sxs-lookup"><span data-stu-id="9683b-186">See also</span></span>
 
-* [<span data-ttu-id="bc6d7-191">Word アドインの概要</span><span class="sxs-lookup"><span data-stu-id="bc6d7-191">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
-* [<span data-ttu-id="bc6d7-192">Word アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="bc6d7-192">Word add-in code samples</span></span>](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [<span data-ttu-id="bc6d7-193">Word JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="bc6d7-193">Word JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* [<span data-ttu-id="9683b-187">Word アドインの概要</span><span class="sxs-lookup"><span data-stu-id="9683b-187">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
+* [<span data-ttu-id="9683b-188">Word アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="9683b-188">Word add-in code samples</span></span>](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [<span data-ttu-id="9683b-189">Word JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="9683b-189">Word JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
