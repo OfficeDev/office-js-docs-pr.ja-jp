@@ -4,13 +4,7 @@
 
 ## <a name="prerequisites"></a>前提条件
 
-- 既に [Angular CLI の必須コンポーネント](https://github.com/angular/angular-cli#prerequisites)がインストールされているかを確認し、足りない場合は必須コンポーネントをインストールします。
-
-- [Angular CLI](https://github.com/angular/angular-cli) をグローバルにインストールします。 
-
-    ```bash
-    npm install -g @angular/cli
-    ```
+- [Node.js](https://nodejs.org)
 
 - [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
 
@@ -18,142 +12,32 @@
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-angular-app"></a>新しい Angular アプリを生成する
+## <a name="create-the-web-app"></a>Web アプリを作成する
 
-Angular CLI を使用して Angular アプリを生成します。端末では、次のコマンドを実行します。
-
-```bash
-ng new my-addin
-```
-
-## <a name="generate-the-manifest-file"></a>マニフェスト ファイルを生成する
-
-アドインのマニフェスト ファイルは、その設定と機能を定義します。
-
-1. アプリ フォルダーに移動します。
+1. Yeoman のジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
-    cd my-addin
+    yo office
     ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。次のコマンドを実行し、以下に示すとおりにプロンプトに応答します。
-
-    ```bash
-    yo office 
-    ```
-
-    - **Choose a project type:​ (プロジェクト タイプを選択してください:)** `Office Add-in containing the manifest only`
+    - **プロジェクトタイプを選択してください** `Office Add-in project using Angular framework`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Typescript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ウィザードを完了すると、マニフェスト ファイルとリソース ファイルを使用してプロジェクトをビルドできます。
-
-    ![Yeoman ジェネレーター](../images/yo-office.png)
+    ![Yeoman ジェネレーター](../images/yo-office-excel-angular.png)
     
-    > [!NOTE]
-    > **package.json** を上書きするメッセージが表示された場合は、**No** (上書きしない) と応答します。
+    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
 
-## <a name="secure-the-app"></a>アプリをセキュリティ保護する
+2. プロジェクトのルート フォルダーに移動します。
 
-[!include[HTTPS guidance](../includes/https-guidance.md)]
-
-このクイック スタートでは、証明書を使用できますが、 **Yeoman Office アドイン用のジェネレーター** が用意されています。ジェネレーターをグローバルに (このクイック スタートの **前提条件** の一部) としてインストールして、グローバルから証明書をコピーする必要がありますだけで、インストールの場所、アプリケーション フォルダーにするとします。次の手順では、このプロセスを完了する方法について説明します。
-
-1. 端末から次のコマンドを実行し、グローバル **npm** ライブラリがインストールされているフォルダーを識別します。
-
-    ```bash 
-    npm list -g 
-    ``` 
-    
-    > [!TIP]    
-    > このコマンドで生成された出力の最初の行は、グローバル **npm** ライブラリがインストールされているフォルダーを示します。          
-    
-2. ファイル エクスプローラーを使用して`{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`フォルダーに移動します。その場所から`certs`フォルダーをクリップボードにコピーします。
-
-3. 前のセクションの手順 1 で作成した Angular アプリのルート フォルダーに移動して、クリップボードからそのフォルダーに `certs` フォルダーを貼り付けます。
-
-## <a name="update-the-app"></a>アプリを更新する
-
-1. コード エディターでプロジェクトのルートに **package.json** を開きます。変更、 `start` サーバーが SSL およびポート 3000 を使用して実行し、ファイルを保存するを指定するためのスクリプトです。
-
-    ```json
-    "start": "ng serve --ssl true --port 3000"
+    ```bash
+    cd "My Office Add-in"
     ```
 
-2. プロジェクトのルートに **.angular cli.json** を開きます。証明書ファイルの場所を指定する **既定の設定** オブジェクトを変更し、ファイルを保存します。
+## <a name="update-the-code"></a>コードを更新する
 
-    ```json
-    "defaults": {
-      "styleExt": "css",
-      "component": {},
-      "serve": {
-        "sslKey": "certs/server.key",
-        "sslCert": "certs/server.crt"
-      }
-    }
-    ```
-
-3. **src/index.html** を開き、`</head>` タグの直前に次の `<script>` タグを追加して、ファイルを保存します。
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-4. **src/main.ts** を開き、`platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` を次のコードで置き換えて、ファイルを保存します。 
-
-    ```typescript 
-    declare const Office: any;
-
-    Office.initialize = () => {
-    platformBrowserDynamic().bootstrapModule(AppModule)
-        .catch(err => console.log(err));
-    };
-    ```
-
-5. **src/polyfills.ts** を開き、存在する他のすべての `import` ステートメントの上に次のコード行を追加して、ファイルを保存します。
-
-    ```typescript
-    import 'core-js/client/shim';
-    ```
-
-6. **src/polyfills.ts** で、次の行のコメントを解除してファイルを保存します。
-
-    ```typescript
-    import 'core-js/es6/symbol';
-    import 'core-js/es6/object';
-    import 'core-js/es6/function';
-    import 'core-js/es6/parse-int';
-    import 'core-js/es6/parse-float';
-    import 'core-js/es6/number';
-    import 'core-js/es6/math';
-    import 'core-js/es6/string';
-    import 'core-js/es6/date';
-    import 'core-js/es6/array';
-    import 'core-js/es6/regexp';
-    import 'core-js/es6/map';
-    import 'core-js/es6/weak-map';
-    import 'core-js/es6/set';
-    ```
-
-7. **src/app/app.component.html** を開き、ファイルのコンテンツを次の HTML で置き換えて、ファイルを保存します。 
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button (click)="onSetColor()">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. **src/app/app.component.css** を開き、ファイルのコンテンツを次の CSS コードで置き換えて、ファイルを保存します。
+1. コード エディターで、　**app.css** のファイルを開き、ファイルの末尾に次のスタイルを追加し、ファイルを保存します。
 
     ```css
     #content-header {
@@ -165,6 +49,8 @@ ng new my-addin
         width: 100%;
         height: 80px; 
         overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
     }
 
     #content-main {
@@ -175,52 +61,103 @@ ng new my-addin
         right: 0;
         bottom: 0;
         overflow: auto; 
+        font-family: Arial;
     }
 
     .padding {
         padding: 15px;
     }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
     ```
 
-9. **src/app/app.component.ts** を開き、ファイルのコンテンツを次のコードで置き換えて、ファイルを保存します。 
+2.  **src/app/app.component.html** のファイルを開き、次のコードで全体のコンテンツを置き換え、そのファイルを保存します。
+
+    ```html
+    <div id="content-header">
+        <div class="padding">
+            <h1>{{welcomeMessage}}</h1>
+        </div>
+    </div>
+    <div id="content-main">
+        <div class="padding">
+            <p>Choose the button below to set the color of the selected range to green.</p>
+            <br />
+            <h3>Try it out</h3>
+            <br />
+            <div role="button" class="ms-Button" (click)="setColor()">
+                <span class="ms-Button-label">Set color</span>
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+            </div>
+        </div>
+    </div>
+    ```
+
+3.  **src/app/app.component.ts** のファイルを開き、次のコードで全体のコンテンツを置き換え、そのファイルを保存します。
 
     ```typescript
     import { Component } from '@angular/core';
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
 
-    declare const Excel: any;
+    const template = require('./app.component.html');
 
     @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+        selector: 'app-home',
+        template
     })
-    export class AppComponent {
-    onSetColor() {
-        Excel.run(async (context) => {
-        const range = context.workbook.getSelectedRange();
-        range.format.fill.color = 'green';
-        await context.sync();
-        });
+    export default class AppComponent {
+        welcomeMessage = 'Welcome';
+
+        async setColor() {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
     }
-    }
+    ```
+
+## <a name="update-the-manifest"></a>マニフェストを更新する
+
+1.  **manifest.xml** のファイルを開き、アドインの設定と機能を定義します。 
+
+2.  `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+
+3.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
+
+4. ファイルを保存します。
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
     ```
 
 ## <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
-1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-    ```bash
-    npm run start
-    ```
-
-2. Web ブラウザーで `https://localhost:3000` に移動します。ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼された証明書として追加する必要があります。詳細については、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。
-
-    > [!NOTE]
-    > 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」で説明されているプロセスを完了した後でも、Chrome (Web ブラウザー) は、サイトの証明書が信頼されていないことを引き続き示すことがあります。Chrome でこの警告を無視して、Internet Explorer または Microsoft Edge のいずれかで`https://localhost:3000` に移動して証明書が信頼できるかを確認することができます。 
-
-3. 証明書エラーなしにブラウザにアドイン ページが読み込まれたら、アドインをテストする準備ができています。 
-
-## <a name="try-it-out"></a>お試しください
+## <a name="try-it-out"></a>試してみる
 
 1. アドインを実行して、Excel 内のアドインをサイドロードするために使用するプラットフォームの手順に従います。
 
@@ -231,7 +168,7 @@ ng new my-addin
    
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
+    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
 
 3. ワークシート内で任意のセル範囲を選択します。
 
@@ -249,6 +186,6 @@ ng new my-addin
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
