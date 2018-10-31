@@ -2,12 +2,12 @@
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: d98fdc6604f0b4bf0c7437e75f27759fc6c5c83f
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241139"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945723"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "21241139"
 
 * 入手可能な Visual Studio 2017 プレビューの最新バージョン。
 
-* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1)」を参照してください。
+* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -38,15 +38,15 @@ ms.locfileid: "21241139"
     > [!NOTE]
     > ID 名前空間に関するエラーが表示されます。 これは構成の問題の副作用ですが、次のステップで修正します。 重要な点は、パッケージがインストールされていることです。
 
-1. 現在、SSO (バージョン `1.1.1-alpha0393`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。 
+1. 現在、SSO (バージョン `1.1.4-preview0002`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。 
 
    > 1. **[ツール]** メニューで **[Nuget パッケージ マネージャー]** > **[パッケージ マネージャー コンソール]** に移動します。 
 
-   > 2. コンソールで、次のコマンドを実行します。高速インターネット接続でも完了に１分以上かかることがあります。完了するとコンソールの出力の最後付近に ** 「Microsoft.Identity.Client 1.1.4-alpha0002」が正常にインストールされました ...** と表示されます。
+   > 2. コンソールで、次のコマンドを実行します。 これは高速インターネット接続の場合でも、完了までに数分かかることがあります。 完了すると、コンソールの出力の末尾に「**'Microsoft.Identity.Client 1.1.4-alpha0002' が正常にインストールされました...**」というメッセージが表示されます。
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。**Microsoft.Identity.Client** がリストされていることを確認します。リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
+   > 3. **ソリューション エクスプローラー**で **[参照]** を右クリックします。**Microsoft.Identity.Client** がリストされていることを確認します。リストされていない場合やエントリに警告アイコンが表示されている場合は、エントリを削除してから Visual Studio 参照の追加ウィザードを使用して、**... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** のアセンブリへの参照を追加します。
 
 1. もう一度プロジェクトをビルドします。
 
@@ -70,7 +70,7 @@ ms.locfileid: "21241139"
 
 ## <a name="configure-the-add-in"></a>アドインを構成する
 
-1. 次の文字列内のプレースホルダー "{tenant_ID}" を Office 365 テナントIDに置き換えます。 「 [Office 365テナントIDを見つける](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) 」にあるいずれかの方法を使用して、IDを取得します。
+1. 次の文字列内のプレースホルダー "{tenant_ID}" を Office 365 テナントIDに置き換えます。 「 [Office 365テナントIDを見つける](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 」にあるいずれかの方法を使用して、IDを取得します。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -165,7 +165,7 @@ ms.locfileid: "21241139"
     * メソッドは、作業ウィンドウの下側に Microsoft Graph から返されたデータ (またはエラー メッセージ) を表示するものです。`showResult`
     * メソッドは、エンド ユーザーを対象としていないエラーをコンソールにログ出力するものです。`logErrors`
 
-1. |||UNTRANSLATED_CONTENT_START|||Below the assignment to `Office.initialize`, add the code below. Note the following about this code:|||UNTRANSLATED_CONTENT_END|||
+1. `Office.initialize` への割り当ての下に、次に示すコードを追加します。このコードについては、次の点に注意してください。
 
     * アドインのエラー処理により、アクセス トークンの取得が別のオプションのセットを使用して自動的に再試行されることがあります。 カウンター変数 `timesGetOneDriveFilesHasRun` とフラグ変数 `triedWithoutForceConsent` を使用して、失敗するトークン取得の繰り返しからユーザーが抜け出せるようにします。 
     * この後の手順では `getDataWithToken` メソッドを作成しますが、そのメソッドで `forceConsent` というオプションが `false` に設定される点に注意してください。詳細については、次の手順で説明します。
@@ -183,7 +183,7 @@ ms.locfileid: "21241139"
 
 1. メソッドの下に、次のコードを追加します。このコードについては、次の点に注意してください。`getOneDriveFiles`
 
-    * は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにトークンを要求します。アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はトークンを送信します。`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) は Office.js の新しい API です。これにより、アドインは Office ホスト アプリケーション (Excel、PowerPoint、Word など) に、アドインへのアクセス トークン (Office にサインインしているユーザーのトークン) を要求できるようになります。 その Office ホスト アプリケーションが、Azure AD 2.0 エンドポイントにこのトークンを要求します。 アドインの登録時に、アドインに対する Office ホストを事前認証しているため、Azure AD はそのトークンを送信します。
     * Office にサインインしているユーザーがいない場合、Office ホストはユーザーにサインインを求めるダイアログを表示します。
     * オプションのパラメーター `forceConsent` を `false` に設定すると、ユーザーがアドインを使用するたびに、Office ホストにアドインへのアクセス権を付与するための同意を求めるダイアログが表示されなくなります。 ユーザーが初めてアドインを実行すると、`getAccessTokenAsync` の呼び出しは失敗しますが、この後の手順で追加するエラー処理ロジックにより、`forceConsent` オプションを `true` に設定した再呼び出しが自動的に実行され、ユーザーに同意を求めるダイアログが表示されます。ただし、これは初回時のみ実行されます。
     * メソッドは、この後の手順で作成します。`handleClientSideErrors`
@@ -262,7 +262,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-1. を次のコードに置き換えます。`TODO2` エラー 13001 は、ユーザーがログインしていない場合、または 2 番目の認証要素の指定を求めるダイアログに応答しないでキャンセルした場合に発生します。 どちらの場合も、このコードでは `getDataWithToken` メソッドを再実行して、サインインを求めるダイアログの表示を強制するようにオプションを設定します。
+1.  `TODO2`を次のコードに置き換えます。 エラー 13001 は、ユーザーがログインしていない場合、または 2 番目の認証要素の指定を求めるダイアログに応答しないでキャンセルした場合に発生します。 どちらの場合も、このコードでは `getDataWithToken` メソッドを再実行して、サインインを求めるダイアログの表示を強制するようにオプションを設定します。
 
     ```javascript
     case 13001:
@@ -270,7 +270,7 @@ ms.locfileid: "21241139"
         break;
     ```
 
-1. を次のコードに置き換えます。`TODO3` エラー 13002 は、ユーザーのサインインまたは同意が中断された場合に発生します。 ユーザーに対して 1 回だけ再試行を求めます。
+1.  `TODO3`を次のコードに置き換えます。 エラー 13002 は、ユーザーのサインインまたは同意が中断された場合に発生します。 ユーザーに対して 1 回だけ再試行を求めます。
 
     ```javascript
     case 13002:
@@ -282,11 +282,11 @@ ms.locfileid: "21241139"
         break; 
     ```
 
-1. を次のコードに置き換えます。`TODO4` エラー 13003 は、ユーザーが職場または学校アカウントと、Micrososoft アカウントのどちらでもないアカウントでログインしている場合に発生します。 ユーザーに対して、サインアウトしてからサポートされているアカウントの種類で再度サインインするように求めます。
+1.  `TODO4`を次のコードに置き換えます。 エラー 13003 は、ユーザーが職場または学校アカウントと、Micrososoft アカウントのどちらでもないアカウントでログインしている場合に発生します。 ユーザーに対して、サインアウトしてからサポートされているアカウントの種類で再度サインインするように求めます。
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -301,7 +301,7 @@ ms.locfileid: "21241139"
         break;        
     ```
 
-1. を次のコードに置き換えます。`TODO6` エラー 13007 は、Office ホストの AAD との相互作用に問題があり、ホストがアドイン Web サービス/アプリケーションへのアクセス トークンを取得できない場合に発生します。 ネットワークに一時的な問題が発生している可能性があります。 しばらく待ってから再試行するようにユーザーに求めます。
+1.  `TODO6`を次のコードに置き換えます。 エラー 13007 は、Office ホストの AAD との相互作用に問題があり、ホストがアドイン Web サービス/アプリケーションへのアクセス トークンを取得できない場合に発生します。 ネットワークに一時的な問題が発生している可能性があります。 しばらく待ってから再試行するようにユーザーに求めます。
 
     ```javascript
     case 13007:
@@ -309,7 +309,7 @@ ms.locfileid: "21241139"
         break;      
     ```
 
-1. `TODO7` を次のコードと置き換えます。エラー 13008 は、前回の `getAccessTokenAsync` の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
+1. `TODO7` を次のコードに置き換えます。エラー 13008 は、前回の `getAccessTokenAsync` 呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
 
     ```javascript
     case 13008:
@@ -317,19 +317,19 @@ ms.locfileid: "21241139"
         break;
     ```      
 
-1. を次のコードに置き換えます。`TODO8` エラー 13009 は、アドインが強制的な同意をサポートしていないときに、`forceConsent` オプションを `true` に設定して `getAccessTokenAsync` を呼び出した場合に発生します。 通常、この場合は、コードによって同意オプションを `false` に設定して自動的に `getAccessTokenAsync` を再実行する必要があります。 ただし、`forceConsent` を `true` に設定してメソッドを呼び出すこと自体が、そのオプションを `false` に設定したメソッドの呼び出しで発生したエラーに対する自動的な応答の場合もあります。 その場合は、コードで再試行するのではなく、ユーザーにサインアウトしてから再度サインインするように通知する必要があります。
+1.  `TODO8`を次のコードに置き換えます。 エラー 13009 は、アドインが強制的な同意をサポートしていないときに、`forceConsent` オプションを `true` に設定して `getAccessTokenAsync` を呼び出した場合に発生します。 通常、この場合は、コードによって同意オプションを `false` に設定して自動的に `getAccessTokenAsync` を再実行する必要があります。 ただし、`forceConsent` を `true` に設定してメソッドを呼び出すこと自体が、そのオプションを `false` に設定したメソッドの呼び出しで発生したエラーに対する自動的な応答の場合もあります。 その場合は、コードで再試行するのではなく、ユーザーにサインアウトしてから再度サインインするように通知する必要があります。
 
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
         break;
     ```      
     
-1. を次のコードに置き換えます。`TODO9`
+1.  `TODO9`を次のコードに置き換えます。
 
     ```javascript
     default:
@@ -347,28 +347,23 @@ ms.locfileid: "21241139"
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
 
-        // TODO12: Handle the case where consent has not been granted, or has been revoked.
+        // TODO12: Handle missing consent and scope (permission) related issues.
 
-        // TODO13: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
-
-        // TODO14: Handle the case where the token that the add-in's client-side sends to it's 
-        //         server-side is not valid because it is missing `access_as_user` scope (permission).
-
-        // TODO15: Handle the case where the token sent to Microsoft Graph in the request for 
+        // TODO13: Handle the case where the token sent to Microsoft Graph in the request for 
         //         data is expired or invalid.
 
-        // TODO16: Log all other server errors.
+        // TODO14: Log all other server errors.
     }
     ```
 
-1. を次のコードに置き換えます。`TODO10` アドインの Web サービスがアドインのクライアント側に渡すほとんどの `4xx` エラーには、その応答内に **ExceptionMessage** プロパティが含まれています。このプロパティには、AADSTS (Azure Active Directory Secure Token Service) エラー番号などのデータが格納されています。 ただし、AAD がアドインの Web サービスに追加の認証要素を求めるメッセージを送信するときには、そのメッセージに特殊な **Claims** プロパティが含まれます。このプロパティによって、どの追加要素が必要になるかが (コード番号で) 示されます。 HTTP 応答を作成してクライアントに送信する ASP.NET API は、この **Claims** プロパティを認識しないため、このプロパティを応答オブジェクトに含めません。 この後の手順で作成するサーバー側のコードでは、これに対処するために、手動で応答オブジェクトに **Claims** 値を追加しています。 この値は、**Message** プロパティに含めるため、コードでは、そのプロパティも解析する必要があります。
+1.  `TODO10`を次のコードに置き換えます。 アドインの Web サービスがアドインのクライアント側に渡すほとんどの `4xx` エラーには、その応答内に **ExceptionMessage** プロパティが含まれています。このプロパティには、AADSTS (Azure Active Directory Secure Token Service) エラー番号などのデータが格納されています。 ただし、AAD がアドインの Web サービスに追加の認証要素を求めるメッセージを送信するときには、そのメッセージに特殊な **Claims** プロパティが含まれます。このプロパティによって、どの追加要素が必要になるかが (コード番号で) 示されます。 HTTP 応答を作成してクライアントに送信する ASP.NET API は、この **Claims** プロパティを認識しないため、このプロパティを応答オブジェクトに含めません。 この後の手順で作成するサーバー側のコードでは、これに対処するために、手動で応答オブジェクトに **Claims** 値を追加しています。 この値は、**Message** プロパティに含めるため、コードでは、そのプロパティも解析する必要があります。
 
     ```javascript
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. `TODO11`を次のコードに置き換えます。このコードの注意点は次のとおりです。
+1. `TODO11` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * エラー 50076 は、Microsoft Graph が認証の追加フォームを必要とする場合に発生します。
     * Office ホストは、`authChallenge` オプションとして **Claims** 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。 
@@ -383,7 +378,23 @@ ms.locfileid: "21241139"
     }    
     ```
 
-1. `TODO12`を次のコードに置き換えます。このコードの注意点は次のとおりです。
+1.  `TODO12`を次のコードに置き換えます。 このコードの3つの `TODO` を次のいくつかの手順で *内部* 条件ブロックに置き換えます。
+
+    ```javascript
+    else if (exceptionMessage) {
+
+        // TODO12A: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12B: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
+
+        // TODO12C: Handle the case where the token that the add-in's client-side sends to it's 
+        //          server-side is not valid because it is missing `access_as_user` scope (permission).
+    }
+  
+    ```
+
+
+1.  `TODO12A`を次のコードに置き換えます。 (これは *内部* の条件付きブロックの最初の部分)このコードに関する注意してください。
 
     * エラー 65001 は、1 つ以上のアクセス許可について Microsoft Graph にアクセスするための同意が与えられていない (または取り消されている) ことを意味します。 
     * アドインでは、`forceConsent` オプションを `true` に設定して新しいトークンを取得する必要があります。
@@ -400,7 +411,7 @@ ms.locfileid: "21241139"
     }    
     ```
 
-1. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO13`
+1. `TODO12B` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * エラー 70011 には複数の意味があります。無効なスコープ (アクセス許可) が要求されていることを意味する場合、このアドインに重要となります。コードでは番号だけでなくエラーの説明全体を確認します。
     * アドインでは、エラーを報告する必要があります。
@@ -411,7 +422,7 @@ ms.locfileid: "21241139"
     }    
     ```
 
-1. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO14`
+1. `TODO12C` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * この後の手順で作成するサーバー側のコードでは、アドインのクライアントが AAD に送信して代理 (on-behalf-of) フローで使用されるアクセス トークンに `access_as_user` スコープ (アクセス許可) が含まれていない場合に、メッセージ `Missing access_as_user` を送信します。
     * アドインでは、エラーを報告する必要があります。
@@ -422,7 +433,7 @@ ms.locfileid: "21241139"
     }    
     ```
 
-1. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO15`
+1.  `TODO13`を次のコードに置き換えます。 (これは、 *外側* の条件付きブロックの一部であり、かっこで始まる構造体の直後にする必要があります `else if (exceptionMessage) {` と同じレベルのインデント設定されます)。このコードに関する注意してください。
 
     * サーバー側のコードで使用する ID ライブラリ (Microsoft Authentication Library - MSAL) では、期限切れのトークンや無効なトークンが Microsoft Graph に送信されないようにする必要があります。ただし、その事態が発生した場合は、アドインの Web サービスに Microsoft Graph から返されるエラーにコード `InvalidAuthenticationToken` が含まれています。後の手順で作成するサーバー側のコードは、このメッセージをアドインのクライアントに中継します。
     * この場合、アドインはカウンター変数とフラグ変数をリセットしてから、ボタン ハンドラー メソッドを再呼び出しすることで、認証プロセス全体を最初から開始する必要があります。
@@ -436,7 +447,7 @@ ms.locfileid: "21241139"
     }    
     ```
 
-1. を次のコードに置き換えます。`TODO16`
+1.  `TODO14`を次のコードに置き換えます。
 
     ```javascript
     else {
@@ -548,7 +559,7 @@ ms.locfileid: "21241139"
 3. を宣言している行のすぐ上に、属性 `[Authorize]` を追加します。これにより、アドインはコントローラー メソッドが呼び出されたときに、最後の手順で構成した承認プロセスを必ず実行するようになります。アドインへの有効なアクセス トークンを持つ呼び出し元のみが、コントローラーのメソッドを起動できます。`ValuesController`
 
     > [!NOTE]
-    > 運用環境の ASP.NET MVC Web API サービスには、1 つ以上のカスタム [FilterAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.filters(v=vs.108).aspx) クラスに代理 (on-behalf-of) フロー用のカスタム ロジックを用意する必要があります。 この学習用サンプルでは、メイン コントローラーにロジックを配置して、認証とデータのフェッチ ロジックの全体的なフローを簡単に把握できるようにしています。 さらに、このサンプルが「[Azure Samples](https://github.com/Azure-Samples/)」の承認サンプルのパターンと一致するようになります。    
+    > 運用環境の ASP.NET MVC Web API サービスには、1 つ以上のカスタム [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) クラスに代理 (on-behalf-of) フロー用のカスタム ロジックを用意する必要があります。 この学習用サンプルでは、メイン コントローラーにロジックを配置して、認証とデータのフェッチ ロジックの全体的なフローを簡単に把握できるようにしています。 さらに、このサンプルが「[Azure Samples](https://github.com/Azure-Samples/)」の承認サンプルのパターンと一致するようになります。    
 
 4. 次のメソッドを `ValuesController` に追加します。 戻り値は、`Task<IEnumerable<string>>` ではなく `GET api/values` メソッドでより一般的な `Task<HttpResponseMessage>` になる点に注意してください。 これは、カスタムの承認ロジックがコントローラー内にあることの副作用です。そのロジックの一部のエラー条件では、HTTP 応答オブジェクトをアドインのクライアントに送信することが必要になります。 
 
@@ -560,7 +571,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-5. を次のコードに置き換えます。このコードでは、`access_as_user` を含むトークンで指定されているスコープを検証します。`TODO1`
+5. `TODO1`を次のコードに置き換えます。このコードでは、`access_as_user` を含むトークンで指定されているスコープを検証します。
 
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
@@ -575,9 +586,9 @@ ms.locfileid: "21241139"
     ```
 
     > [!NOTE]
-    > スコープのみを使用して、Office アドインの代理 (on-behalf-of) フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。`access_as_user`
+    > 注:`access_as_user` スコープだけを使用して、Office アドインの代理フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。 これにより、Office が取得するトークンでアクセスできるものが制限されます。
 
-6. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO2`
+6. `TODO2` を次のコードに置き換えます。このコードの注意点は次のとおりです。
     * このコードでは、Office ホストから受け取った Raw アクセス トークンを別のメソッドに渡される `UserAssertion` オブジェクトに変換します。
     * アドインは、Office ホストとユーザーがアクセスする必要のあるリソース (または対象ユーザー) の役割を果たさなくなります。この時点で、それ自体が Microsoft Graph にアクセスする必要があるクライアントになります。`ConfidentialClientApplication` は MSAL の「クライアント コンテキスト」オブジェクトになります。
     * コンストラクターへの 3 番目のパラメーターはリダイレクト URL です。これは、実際には「代理」フローで使用されることはありませんが、正しい URL を使用することをお勧めします。4 番目と 5 番目のパラメーターは、永続ストアを定義するために使用できます。このストアにより、有効期限が切れていないトークンをアドインの異なるセッション間で再使用できるようになります。このサンプルでは、永続ストアは実装していません。`ConfidentialClientApplication`
@@ -593,7 +604,7 @@ ms.locfileid: "21241139"
     string[] graphScopes = { "Files.Read.All" };
     ```
 
-7. `TODO3`を次のコードに置き換えます。このコードの注意点は次のとおりです。
+7. `TODO3` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * メソッドは、最初にメモリ内の MSAL キャッシュで一致するアクセス トークンを探します。それが見つからなかった場合にのみ、Azure AD V2 エンドポイントとの「代理」フローを開始します。`ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync`
     * MS Graph リソースが多要素認証を必要とし、ユーザーがまだそれを提供していない場合、AAD は Claims プロパティが含まれている例外をスローします。
@@ -615,7 +626,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-8. を次のコードに置き換えます。このコードの注意点は次のとおりです。`TODO3a`
+8. `TODO3a` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * MS Graph リソースが多要素認証を必要としているときに、その認証をユーザーがまだ指定していない場合、AAD はエラー AADSTS50076 と **Claims** プロパティを含む "400 Bad Request" を返します。MSAL は **MsalUiRequiredException** (**MsalServiceException** から継承) をこの情報とともにスローします。 
     * **Claims** プロパティの値は、クライアントに渡す必要があります。クライアントは、その値を Office ホストに渡します。Office ホストは、その値を新しいトークンの要求に含めます。AAD は、認証のすべての必要なフォームのための指示をユーザーに示します。
@@ -630,7 +641,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-9. `TODO3b` と `TODO3c` を次のコードに置き換えます。このコードの注意点は次のとおりです。
+9. |||UNTRANSLATED_CONTENT_START|||Replace `TODO3b` and `TODO3c` with the following code. Note about this code:|||UNTRANSLATED_CONTENT_END|||
 
     * AAD の呼び出しにユーザーまたはテナント管理者のどちらも同意していない (または同意が取り消された) スコープ (アクセス許可) が少なくとも 1 つ含まれていると、 AAD はエラー `AADSTS65001` と共に "400 Bad Request" を返します。 MSAL は、この情報と共に **MsalUiRequiredException** をスローします。 クライアントは、オプション `{ forceConsent: true }` を使用して `getAccessTokenAsync` を再呼び出しする必要があります。
     *  AAD の呼び出しに AAD が認識しないスコープが少なくとも 1 つ含まれていると、AAD はエラー `AADSTS70011` と共に "400 Bad Request" を返します。 MSAL は、この情報と共に **MsalUiRequiredException** をスローします。 クライアントは、ユーザーに通知する必要があります。
@@ -646,7 +657,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-10. を次のコードに置き換えます。`TODO3d` このコードでは、**HttpStatusCode.Forbidden** (401) によるカスタムの HTTP 応答で例外を中継するのではなく、例外を再スローしています。 これにより、ASP.NET はステータス "500 Server Error" による独自の HTTP 応答を送信するようになります。
+10.  `TODO3d`を次のコードに置き換えます。 このコードでは、**HttpStatusCode.Forbidden** (401) によるカスタムの HTTP 応答で例外を中継するのではなく、例外を再スローしています。 これにより、ASP.NET はステータス "500 Server Error" による独自の HTTP 応答を送信するようになります。
 
     ```csharp
     else
@@ -655,7 +666,7 @@ ms.locfileid: "21241139"
     }  
     ```
 
-11. |||UNTRANSLATED_CONTENT_START|||Replace `TODO4` with the following. Note about this code:|||UNTRANSLATED_CONTENT_END|||
+11. `TODO4`を次のように置き換えます。このコードの注意点は次のとおりです。
 
     * クラスと `ODataHelper` クラスは、**[Helpers]** フォルダー内のファイルで定義されています。`OneDriveItem` クラスは、**[Models]** フォルダー内のファイルで定義されています。これらのクラスについての詳しい説明は、承認や SSO に関連していないため、この記事の対象外になります。`GraphApiHelper`
     * 実際に必要なデータのみを Microsoft Graph に要求することでパフォーマンスが向上します。そのため、このコードでは、` $select` クエリ パラメーターで name プロパティのみが必要なことを指定し、`$top` パラメーターで最初の 3 つのフォルダー名またはファイル名のみが必要なことを指定しています。
@@ -674,7 +685,7 @@ ms.locfileid: "21241139"
     }
     ```
 
-12. `TODO5` を次のように置き換えます。このコードの注意点は次のとおりです。 
+12. `TODO5`を次のように置き換えます。このコードの注意点は次のとおりです。 
 
     * 上記のコードでは OneDrive アイテムの *name* プロパティのみを要求していますが、Microsoft Graph は常に OneDrive アイテムの *eTag* プロパティを含めます。クライアントに送信するペイロードを縮小するために、次に示すコードではアイテム名のみで結果を再構築しています。
     * 3 つの OneDrive ファイルとフォルダーのリストは、"200 OK" HTTP 応答としてクライアントに送信されます。

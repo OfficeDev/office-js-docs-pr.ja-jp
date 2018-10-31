@@ -2,16 +2,16 @@
 title: Visual Studio での Office アドインの作成とデバッグ
 description: ''
 ms.date: 10/01/2018
-ms.openlocfilehash: 0bbc1b167924ce4b7a1310f04b41751173312cd6
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 224a4781b894e9bf165d279c30ca16d18bea956d
+ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506127"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "25681841"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
-この記事では、Visual Studio を使用して、最初の Office アドインを作成する方法について説明します。ここに示す手順は Visual Studio 2015 に基づいたものです。別のバージョンの Visual Studio を使用している場合は、わずかに手順が異なることがあります。
+この記事では、Visual Studio を使用して、最初の Office アドインを作成する方法について説明します。ここに示す手順は Visual Studio 2017 に基づいたものです。別のバージョンの Visual Studio を使用している場合は、わずかに手順が異なることがあります。
 
 > [!NOTE]
 > OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../onenote/onenote-add-ins-getting-started.md)」を参照してください。
@@ -42,7 +42,7 @@ Visual Studio 2017 で **[OK]** を選択した後、次のアドイン プロ�
 |**プロジェクト**|**説明**|
 |:-----|:-----|
 |アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。これらの設定は、Office ホストがアドインをアクティブ化するタイミングと、アドインの表示場所を決定するのに役立ちます。すぐにプロジェクトを実行し、アドインを使用できるように、Visual Studio によってこのファイルのコンテンツが生成されます。これらの設定は、マニフェスト エディターを使用していつでも変更できます。|
-|Web アプリケーション プロジェクト|Office 対応 HTML および JavaScript ページを開発するために必要なすべてのファイルおよびファイル参照を含む、アドインのコンテンツ ページが含まれています。 アドインを開発している間、Visual Studio はローカル IIS サーバー上の Web アプリケーションをホストします。 発行する準備ができたら、このプロジェクトをホストするサーバーを検索する必要があります。  ASP.NET Web アプリケーション プロジェクト の詳細については、「[ ASP.NET Web プロジェクト](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx) 」を参照してください。|
+|Web アプリケーション プロジェクト|Office 対応 HTML および JavaScript ページを開発するために必要なすべてのファイルおよびファイル参照を含む、アドインのコンテンツ ページが含まれています。 アドインを開発している間、Visual Studio はローカル IIS サーバー上の Web アプリケーションをホストします。 発行する準備ができたら、このプロジェクトをホストするサーバーを検索する必要があります。 ASP.NET Web アプリケーション プロジェクト の詳細については、「[ ASP.NET Web プロジェクト](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx) 」を参照してください。|
 
 ## <a name="modify-your-add-in-settings"></a>アドイン設定の変更
 
@@ -120,7 +120,7 @@ Visual Studio のビルドを提供して、アドインのデバッグを支援
 
 ### <a name="start-the-solution"></a>ソリューションの起動
 
- **デバッグ**を選択して、メニュー バーからソリューションを開始 > **デバッグを開始**します。 Visual Studio は自動的にソリューションをビルドし、アドインをホストするための Office を起動します。
+**デバッグ**を選択して、メニュー バーからソリューションを開始 > **デバッグを開始**します。 Visual Studio は自動的にソリューションをビルドし、アドインをホストするための Office を起動します。
 
 Visual Studio プロジェクトをビルドするときは、次のタスクを実行します。
 
@@ -153,7 +153,7 @@ Visual Studio プロジェクトをビルドするときは、次のタスクを
 アドイン プロジェクトの **開始ドキュメント** プロパティを Excel または Word に設定した場合、Visual Studio はドキュメントを新規作成し、アドインが表示されます。 アドイン プロジェクトの**  開始ドキュメント** プロパティを既存のドキュメントを使用するように設定した場合、Visual Studio はドキュメントを開きますが、アドインは手動で挿入する必要があります。
 
 1. Excel または Word の [ **挿入** ] タブで、ドロップダウン リストの **[アドイン]** を選択します。 ボタン自体ではなくドロップダウン リストから[**Office の アドイン** ] ダイアログを開きます。
-2.  **アドインの開発者**下の、アドインを選択します。
+2. **アドインの開発者**下の、アドインを選択します。
 
 Visual Studio は、ブレーク ポイントを設定し、アドインと対話し、HTML や JavaScript ファイルにコードをステップ実行します。
 

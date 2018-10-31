@@ -1,13 +1,13 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Excel のカスタム関数のベスト プラクティスと推奨パターンについて説明します。
 title: カスタム関数のベスト プラクティス
-ms.openlocfilehash: 218e62cd074ccf3f3708bba90c938f7ddef059cb
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 10ba29966c1e991ca23674ce3e5da88de2772e00
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579822"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640002"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 

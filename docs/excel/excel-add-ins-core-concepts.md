@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript APIを使用して、Excel 用アドインを構築します。
-ms.date: 10/03/2018
-ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 10/16/2018
+ms.openlocfilehash: 21fcbc32dab2057f6d1f5e97a62a6b00bf1f7f03
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505987"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579892"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
  
@@ -203,7 +203,7 @@ range.values = 'Due Date';
  
 範囲内のすべてのセルに同じ更新 (すべてのセルに同じ値を入力する、同じ数値書式を設定する、同じ数式ですべてのセルにデータを入力するなど) を適用するには、**range** オブジェクトの該当するプロパティを必要な 1 つの値に設定します。
  
-次の例では、20 個のセルを含む範囲を取得し、数値書式を設定してその範囲のすべてのセルに **3/11/2015** という値を設定します。
+次の例では、20 個のセルを含む範囲を取得た後、数値書式を設定してその範囲内のすべてのセルを **3/11/2015** という値で追加します。
  
 ```js
 Excel.run(function (context) {
@@ -228,31 +228,9 @@ Excel.run(function (context) {
 });
 ```
  
-## <a name="error-messages"></a>エラー メッセージ
- 
-API エラーが発生すると、API ではコードとメッセージを含む **error** オブジェクトが返されます。次の表は、API から返されるエラー一覧の定義を示します。
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |引数が無効であるか、存在しません。または形式が正しくありません。|
-|InvalidRequest  |要求を処理できません。|
-|InvalidReference|この参照は、現在の操作に対して無効です。|
-|InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
-|InvalidSelection|現在の選択内容は、この操作では無効です。|
-|認証されていません |必要な認証情報が見つからないか、無効です。|
-|AccessDenied |要求された操作を実行できません。|
-|ItemNotFound |要求されたリソースは存在しません。|
-|ActivityLimitReached|アクティビティの制限に達しました。|
-|GeneralException|リクエストの処理中に内部エラーが発生しました。|
-|NotImplemented  |リクエストされた機能は実装されていません。|
-|ServiceNotAvailable|サービスを利用できません。|
-|一致しません              |競合のため、要求を処理できませんでした。|
-|ItemAlreadyExists|作成中のリソースはすでに存在しています。|
-|UnsupportedOperation|試行中の操作はサポートされていません。|
-|RequestAborted|実行時に要求が中止されました。|
-|ApiNotAvailable|要求された API は使用できません。|
-|InsertDeleteConflict|試行された挿入操作または削除操作で競合が発生しました。|
-|InvalidOperation|試行された操作は、このオブジェクトでは無効です。|
+##<a name="handle-errors"></a>エラーを処理する
+
+API エラーが発生すると、API ではコードとメッセージを含む **error** オブジェクトが返されます。 API のエラーの一覧を含む、エラー処理の詳細については、「 [エラー処理](excel-add-ins-error-handling.md) 」を参照してください。
  
 ## <a name="see-also"></a>関連項目
  

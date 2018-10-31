@@ -4,6 +4,8 @@
 
 ## <a name="prerequisites"></a>前提条件
 
+- [Node.js](https://nodejs.org)
+
 - [Vue CLI](https://github.com/vuejs/vue-cli) をグローバルにインストールします。
 
     ```bash
@@ -50,20 +52,17 @@ vue init webpack my-add-in
 
     - **Choose a project type:​ (プロジェクト タイプを選択してください:)** `Office Add-in containing the manifest only`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **どの Office クライアント アプリケーションをサポートしますか？** `Excel`
-
-    ウィザードを完了すると、マニフェスト ファイルとリソース ファイルを使用してプロジェクトをビルドできます。
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office.png)
     
-    > [!NOTE]
-    > **package.json** を上書きするメッセージが表示された場合は、**No** (上書きしない) と応答します。
+    ウィザードを完了すると、ジェネレーターは、マニフェスト ファイルを作成します。
 
 ## <a name="secure-the-app"></a>アプリをセキュリティ保護する
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-アプリに対して HTTPS を有効にするには、プロジェクトのルートで **package.json** を開き、`--https` フラグを追加するよう `dev` スクリプトを変更して、ファイルを保存します。
+アプリに対して HTTPS を有効にするには、Vue プロジェクトのルート フォルダー内のファイル **package.json** を開き、`--https` フラグを追加するよう `dev` スクリプトを変更して、ファイルを保存します。
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -71,9 +70,11 @@ vue init webpack my-add-in
 
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. コード エディターで、マニフェスト ファイル (つまり、アプリのルート ディレクトリ内にある、名前が "manifest.xml" で終わるファイル) を開きます。`https://localhost:3000` の出現箇所すべてを `https://localhost:8080` で置き換えて、ファイルを保存します。
+1. コード エディターで Yo Office が Vue プロジェクトのルートに作成したフォルダー、 **My Office アドイン** を開きます。 フォルダーに、アドインの設定を定義するマニフェスト ファイルが表示されます: **manifest.xml**。
 
-2. **index.html** を開き、`</head>` タグの直前に次の `<script>` タグを追加して、ファイルを保存します。
+2. マニフェスト ファイルを開き、 `https://localhost:3000` のすべての出現箇所を `https://localhost:8080` と置換し、ファイルを保存します。
+
+3. (Vue プロジェクトのルートにある) **index.html** ファイルを開き、次の追加 `<script>` タグの直前に、 `</head>` タグ、およびファイルを保存します。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -198,7 +199,7 @@ vue init webpack my-add-in
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 これで完了です。Vue を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細を説明します。Excel アドインのチュートリアルに従って、より複雑なアドインを構築します。
 

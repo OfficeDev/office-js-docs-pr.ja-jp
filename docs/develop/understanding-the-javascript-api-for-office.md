@@ -1,13 +1,13 @@
 ---
 title: JavaScript API for Office について
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: e9d9efdda5e237ab076d22d50b1f7ded5e075845
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 10/17/2018
+ms.openlocfilehash: 58829c623c06225bcc7d15925fb02a082df039c6
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505951"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640093"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
@@ -34,7 +34,7 @@ ms.locfileid: "25505951"
 
 Office アドインでは、次のように処理を実行するスタートアップ ロジックが多くある場合があります。
 
-- ユーザーの Office のバージョンがコードを呼び出すすべての Office APIをサポートするかを確認します。
+- ユーザーの Office のバージョンがコードを呼び出すすべての Office Api をサポートするかを確認します。
 
 - 特定の名前を含むワークシートなどの特定の成果物の有無を確認します。
 
@@ -42,17 +42,20 @@ Office アドインでは、次のように処理を実行するスタートア�
 
 - バインディングを確立します。
 
-- Office ダイアログ ボックス API を使用して、アドインの設定の既定値をユーザーに確認します。
+- Office ダイアログ API を使用して、アドインの設定の既定値をユーザーに確認します。
 
-ライブラリが完全にロードされるまで、スタートアップ コードは Office.js Api を呼び出すしない必要があります。コードがライブラリがロードされていることを確認する 2 つの方法があります。それらについては、以下のセクションで説明します。新しいより柔軟性が高いこの手法を使用することをお勧めします。 呼び出し `Office.onReady()`。ハンドラーを割り当て、古いテクニック `Office.initialize`、まだサポートされています。 [Office.initialize と Office.onReady() の間の主な相違点](#major-differences-between-office-initialize-and-office-onready)を参照してください。
+しかし、ライブラリが完全にロードされるまで、スタートアップ コードは Office.js Api を呼び出してはいけません。コードがライブラリがロードされていることを確認するには 2 つの方法があります。それらについては、以下のセクションで説明します。 
 
-アドインの初期化時のイベントのシーケンスの詳細については、[DOM とランタイム環境を読み込む](loading-the-dom-and-runtime-environment.md)を参照してください。
+- [Office.onReady() を使用した初期化](#initialize-with-officeonready)
+- [Office.initialize を使用した初期化](#initialize-with-officeinitialize)
 
-### <a name="initialize-with-officeonready"></a>Office.onReady() を使用して初期化します。
+これらの手法の違いの詳細については、 [Office.initialize と Office.onReady() の間の主な相違点](#major-differences-between-officeinitialize-and-officeonready)を参照してください。 アドインの初期化時のイベントのシーケンスの詳細については、[DOM とランタイム環境を読み込む](loading-the-dom-and-runtime-environment.md)を参照してください。
 
-`Office.onReady()` は、Office.js ライブラリが完全に読み込まれているかどうかをチェックインするときに、Promise オブジェクトを返す非同期メソッドです。ライブラリが読み込まれるときのみ、 `Office.HostType` 列挙型の値 (`Excel`、 `Word`など) およびプラットフォーム `Office.PlatformType` 列挙型の値 (`PC`、 `Mac`、 `OfficeOnline`、など)を持つ Office ホスト アプリケーションを指定するオブジェクトとして、約束を解決します。ライブラリが既に読み込まれている場合に `Office.onReady()` を呼び出すと、約束をすぐに解決します。
+### <a name="initialize-with-officeonready"></a>Office.onReady() を使用した初期化
 
-呼び出す方法の 1 つ `Office.onReady()` コールバック メソッドを渡すことです。例を以下に示します。
+`Office.onReady()` Office.js ライブラリが完全に読み込まれているかどうかをチェックするときに、Promise オブジェクトを返す非同期メソッドは、です。 ライブラリが読み込まれるときのみ、 Office ホスト アプリケーションを指定するオブジェクトとして、 `Office.HostType` 列挙型の値 (`Excel`、 `Word`など) および `Office.PlatformType` 列挙型の値 (`PC`、 `Mac`、 `OfficeOnline`、など)プラットフォームでPromiseを解決します。 ライブラリが既に読み込まれている場合に `Office.onReady()` を呼び出すと、Promiseをすぐに解決します。
+
+`Office.onReady()`を呼び出す方法の 1 つは、 コールバック メソッドを渡すことです。 次に例を示します:
 
 ```js
 Office.onReady(function(info) {
@@ -67,7 +70,7 @@ Office.onReady(function(info) {
 });
 ```
 
-また、繰り返すことができます、 `then()` メソッドの呼び出しを `Office.onReady()`、コールバックを渡す代わりにします。たとえば、次のコードは、ユーザーのバージョンの Excel がアドインを呼び出すすべての Api をサポートしているを確認します。
+また、 `then()` メソッドの呼び出し `Office.onReady()`を、コールバックを渡す代わりにすることもできます。 たとえば、次のコードは、ユーザーのバージョンの Excel がアドインを呼び出すすべての Api をサポートしているかどうかを確認します。
 
 ```js
 Office.onReady()
@@ -78,7 +81,7 @@ Office.onReady()
     });
 ```
 
-これの同じ例では、 `async` と `await` キーワードを TypeScript で使用します。
+これの同じ例では、 `async` と `await` キーワードをTypeScriptで使用します。
 
 ```typescript
 (async () => {
@@ -89,7 +92,7 @@ Office.onReady()
 })();
 ```
 
-独自の初期化ハンドラーやテストを含む追加の JavaScript フレームワークを使用している場合、そのようなフレームワークは `Office.onReady()` 応答の内側に配置する* 必要 * があります。たとえば、[ JQuery](https://jquery.com) の `$(document).ready()`  関数は次のように参照します。
+独自のハンドラーの初期化またはテストを含む追加の JavaScript フレームワークを使用する場合、これらは *通常*  `Office.onReady()`への応答内に設置されます。 例えば、[ JQuery の  ](https://jquery.com) `$(document).ready()` 関数は次のように参照されます。
 
 ```js
 Office.onReady(function() {
@@ -100,11 +103,11 @@ Office.onReady(function() {
 });
 ```
 
-ただし、この実習には例外があります。たとえば、ブラウザーで、アドインを開く (sideload の代わりに、Office ホストで) ブラウザーのツールを使用して UI をデバッグするためにします。Office.js がブラウザーに読み込まれないので `onReady` を実行できないと、 `$(document).ready` 、Office の中に呼び出されます場合は実行されません `onReady`。別の例外: アドインの読み込み中に、作業ウィンドウに表示する進行状況のインジケーターを選択します。このシナリオでは、コードは、jQuery を呼び出す必要があります `ready` のコールバックを使用して、進行状況インジケーターを表示するとします。Office では、 `onReady`のコールバックは、進行状況インジケーターを最終的な UI に置き換えることができます。 
+ただし、この実習には例外があります。 たとえば、ブラウザーのツールを使用して UI をデバッグするため、ブラウザーでアドインを開く (Office ホスト内にsideload する代わりに）ことを考えます。 Office.js がブラウザーに読み込まれないので `onReady` は実行できず、 Office の中に呼び出される場合は`$(document).ready` は実行されません `onReady`。 別の例外: アドインの読み込み中に、作業ウィンドウに表示する進行状況のインジケーターを表示するようにします。 このシナリオでは、コードは、jQuery  `ready` を呼び出す必要があり、コールバックを使用して、進行状況のインジケーターを表示します。 Office では、 `onReady`のコールバックは、進行状況のインジケーターを最終的な UI に置き換えることができます。 
 
 ### <a name="initialize-with-officeinitialize"></a>Office.initialize を使用した初期化
 
-Office.js ライブラリは、完全に読み込まれ、ユーザーとの対話の準備が完了すると、initialize イベントが発生します。ハンドラーを割り当てることができます `Office.initialize` 、初期化ロジックを実装します。次に、ユーザーのバージョンの Excel がアドインを呼び出すすべての APIをサポートしているかを確認する例を示します。
+Office.js ライブラリが完全に読み込まれ、ユーザーとの対話の準備が完了すると、initialize イベントが発生します。 初期化ロジックを実装する `Office.initialize` にハンドラーを割り当てることができます。 次に示すのは、ユーザーのバージョンの Excel がアドインを呼び出すすべての Api をサポートしているかを確認する例です。
 
 ```js
 Office.initialize = function () {
@@ -114,7 +117,7 @@ Office.initialize = function () {
 };
 ```
 
- *通常* これらは、独自のハンドラーの初期化またはテストを含む追加の JavaScript フレームワークを使用する場合に、 `Office.initialize` イベントです。(しかし、以前にこの例で適用された **Office.onReady() を使用して初期化** のセクションで説明した例外もあります)。 [JQuery](https://jquery.com) の例では、 `$(document).ready()` 関数は次のように参照されるでしょう。
+独自のハンドラーの初期化またはテストを含む追加の JavaScript フレームワークを使用する場合、これらは *通常*  `Office.initialize`への応答内に設置されます。 (しかし、前に **Office.onReady() を使用した初期化** のセクションで説明した例外がこの場合も適用されます)。 [JQuery](https://jquery.com) の例では、 `$(document).ready()` 関数は次のように参照されるでしょう。
 
 ```js
 Office.initialize = function () {
@@ -125,7 +128,7 @@ Office.initialize = function () {
   };
 ```
 
-作業ウィンドウ アドインとコンテンツ アドインについては、`Office.initialize` は、追加の _reason_ パラメーター提供します。このパラメーターは、アドインがどのように現在のドキュメントに追加されたかを判断するために使用できます。これは、最初にアドインが挿入されたときと、既にアドインがドキュメント内に存在しているときに別のロジックを提供するために使用できます。
+作業ウィンドウおよびコンテンツのアドインには、 `Office.initialize` が追加の _理由_ のパラメーターを提供します。 このパラメーターは、どのようにアドインが現在のドキュメントに追加されたかを指定します。 アドインが最初の挿入される場合と、文書内に既に存在していた場合に異なるロジックを提供するには、これを使用します。
 
 ```js
 Office.initialize = function (reason) {
@@ -140,28 +143,31 @@ Office.initialize = function (reason) {
 
 詳細については、「[Office.initialize イベント](https://docs.microsoft.com/javascript/api/office?view=office-js)」および「[InitializationReason 列挙型](https://docs.microsoft.com/javascript/api/office/office.initializationreason?view=office-js)」を参照してください。
 
+> [!NOTE]
+> 現時点では、`Office.onReady()`も呼び出したかどうかに関係なく、`Office.Initialize`を設定する必要があります。  `Office.Initialize`が必要ない場合には、次の例に示すように空の関数を設定することができます。
+> 
+>```js
+>Office.initialize = function () {};
+>```
+
 ### <a name="major-differences-between-officeinitialize-and-officeonready"></a>Office.initialize と Office.onReady の間の主な相違点
 
-- ハンドラーを 1 つだけを`Office.initialize`に割り当てることができ、1 回だけ、Office のインフラストラクチャで呼び出すことができます。しかしコードの異なる場所で `Office.onReady()` を呼び出すことができますが、異なるコールバックを使用してください。  初期化ロジックを実行するコールバックをカスタム スクリプトが読み込まれるとすぐにコードは`Office.onReady()`を呼び出すかもしれません。コードは、作業ウィンドウに、そのスクリプトが異なるコールバックで `Office.onReady()` を呼び出すボタンをもっているかもしれません。その場合は、ボタンがクリックされたときに 2 番目のコールバックが実行されます。
+- `Office.initialize`にハンドラーを 1 つだけを割り当てることができ、1 回だけは、Office のインフラストラクチャで呼び出すことができますが、 `Office.onReady()`の呼び出しは コードと異なる場所にして、異なるコールバックを使用します。 例えば、コードは、カスタム スクリプトが初期化ロジックを実行するコールバックを読み込むとすぐに `Office.onReady()` をコールしますが、そのスクリプトが異なるコールバックで `Office.onReady()` を呼び出す作業ウィンドウにボタンを置くことができます。 その場合は、ボタンがクリックされたときに 2 番目のコールバックが実行されます。
 
--  `Office.initialize` イベントが、 Office.js 自身の初期化の内部プロセスの最後に発生します。内部のプロセスが終了した後に *すぐ* に発生します。イベント発生後、イベントにハンドラーを割り当てるコードが長時間実行した場合、ハンドラーは実行されません。たとえば、WebPack タスク マネージャーを使用する場合は、Office.js が読みこんで、しかしカスタムの JavaScriptを読み込む前に、polyfillファイルをロードするようにアドインのホーム ページを構成する場合があります。この時点で、スクリプトをロードし、ハンドラーを割り当てます、initialize イベントは、すでに実行されています。`Office.onReady()` を呼び出すことは決して「手遅れ」ではありません、Initialize イベントは、すでに実行されており、すぐにコールバックが実行されます。
+- `Office.initialize` イベントは、 Office.js 自分自身の初期化の内部プロセスの最後に発生します。 内部のプロセスが終了した後 *すぐ* に発生します。 イベントにハンドラーを割り当てるコードが、イベント発生後長時間実行した場合、ハンドラーは実行されません。 たとえば、WebPack タスク マネージャーを使用する場合は、Office.js が読み込まれた後で、カスタムjavascript を読み込む前に、ポリフィルのファイルをロードためのアドインのホーム ページを構成する場合があります。 この時点では、スクリプトはハンドラーをロードし、割り当てます。初期化 イベントは、すでに実行されています。 `Office.onReady()`呼び出すことは決して「手遅れ」ではありません。 Initialize イベントがすでに実行されている場合には、すぐにコールバックが実行されます。
 
 > [!NOTE]
-> スタートアップ ロジックがない場合でも、 JアドインのJavaScript を読み込む際に `Office.onReady()` を呼び出すか、または `Office.initialize` に空の関数を割り当てることは良い練習になります。これは、Office のホストとプラットフォームの組み合わせによっては、これらのいずれかが発生するまで、作業ウィンドウをロードできないためです。以下の二つの行は、これが行われる二つの方法を示しています。
->
->```js
->Office.onReady();
->```
->
+> スタートアップ ロジックがない場合でも、次の例に示すようにアドイン JavaScript をロードする時には、空の関数を`Office.initialize` に割り当てる必要があります。 Office のホストとプラットフォームの組み合わせによっては、initialize イベントが発生し、指定されたイベント ハンドラ関数を実行するまで、作業ウィンドウはロードできません。
+> 
 >```js
 >Office.initialize = function () {};
 >```
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript オブジェクト モデル
 
-初期化されたアドインはホスト (例 : Excel、Outlook) と連携できます。「[Office JavaScript API オブジェクトモデル](office-javascript-api-object-model.md)」のページで特定の使用パターンの詳細を見ることができます。また、[共有 API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) と特定のホストに関する詳細なリファレンス ドキュメントも用意されています。
+初期化されると、アドインはホスト (たとえば Excel、Outlook など) を操作できるようになります。 特定の使用パターンに関する詳細については、[Office JavaScript API オブジェクトモデル](office-javascript-api-object-model.md)ページを参照してください。 [共有 API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) および特定のホスト両方についても、詳細な参照ドキュメントがあります。
 
-## <a name="api-support-matrix"></a>API サポート マトリックス
+## <a name="api-support-matrix"></a>APIサポートマトリックス
 
 次の表は、アドインの種類 (コンテンツ、作業ウィンドウ、および Outlook) 全体でサポートされている API と機能、および [1.1 アドイン マニフェスト スキーマと機能 (JavaScript API for Office v1.1 でサポート)](update-your-javascript-api-for-office-and-manifest-schema-version.md) を使用してアドインがサポートする Office のホスト アプリケーションを指定する際に、これらの API と機能をホストする Office アプリケーションについてまとめたものです。
 

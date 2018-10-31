@@ -2,23 +2,23 @@
 title: Excel のアドインで同時に複数の範囲の操作をします。
 description: ''
 ms.date: 9/4/2018
-ms.openlocfilehash: bcb14d1f4c015fe675c2d65cb5f1198d485dd4c5
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: a00bbf15b53649147fb2c2b1dfa590f15c5739be
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016459"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506295"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Excel のアドイン (プレビュー) で同時に複数のセル範囲を操作します。
 
-Excel の JavaScript ライブラリは、アドインに操作を実行し、同時に複数の範囲のプロパティを設定するようにします。 範囲が隣接している必要はありません。 コードを簡単にするには、このプロパティの方法が、範囲ごとに個別に同じプロパティを設定するよりもはるかに高速に実行されます。
+Excel の JavaScript ライブラリは、操作を実行し、同時に複数の範囲のプロパティを設定するように追加できます。範囲が隣接している必要はありません。コードを簡単にするだけでなく、このプロパティを設定する方法は、範囲ごとに個別に同じプロパティを設定するよりもはるかに高速実行されます。
 
 > [!NOTE]
-> この資料に記載されている APIは、 **Office 2016 クイック実行バージョン 1809 10820.20000 の構築** 以降を必要とします。 (適切なビルドを取得するため、 [Office 内部プログラム](https://products.office.com/office-insider) に参加する必要があります。)　また、 [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)からベータ版の Office の JavaScript ライブラリを読み込む必要があります。 最後に、これらの API は、参照ページはまだ必要はありません。 次の定義型ファイルは、それらについての説明です: [ベータ版 office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)です。
+> この資料に記載されている Apiは、 **Office 2016 クイック実行バージョン ビルト 1809 10820.20000 の** 以降を日梅雨とします。(適切なビルドを取得する [Office 内部からのプログラム](https://products.office.com/office-insider) に参加する必要があります)。また、 [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)からベータ版の Office の JavaScript ライブラリを読み込む必要があります。最後に、これらの Api の参照ページまだありません。次の種類の定義ファイルにはそれらについての説明: [ベータ版の office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)です。
 
 ## <a name="rangeareas"></a>RangeAreas
 
-(場合によっては連続していない) 範囲のセットは、 `Excel.RangeAreas` オブジェクトで表示されます。 型(多くの場合、同じまたは同様の名前を持つ)に似たプロパティとメソッドを持っていますが、以下の補正が加えられました。`Range`
+(場合によっては連続していない) の範囲のセットは、 `Excel.RangeAreas` オブジェクトで表されます。`Range`に似ているプロパティとメソッドを持ちますが、 (多くの場合、同じまたは同様の名前を持つ)、以下のような修正が加えられました。
 
 - プロパティのデータ型とセッターとゲッターの動作です。
 - メソッドパラメーターのデータ型と、メソッドの動作です。
@@ -26,24 +26,24 @@ Excel の JavaScript ライブラリは、アドインに操作を実行し、�
 
 例:
 
-- `RangeAreas` プロパティとともに1 つのアドレスとしてではなく、範囲のアドレスのコンマ区切りの文字列を返す`address` プロパティを持ちます。`Range.address`
-- `RangeAreas` 一貫性がある場合、`RangeAreas`  内のすべての範囲のデータの入力規則を表す`DataValidation` オブジェクトを返す`dataValidation` プロパティを持ちます。 同一な `DataValidation` オブジェクトが、 `RangeAreas`内のすべての範囲に適用されない場合、プロパティは `null` です。 全般的に、汎用的でない場合、 `RangeAreas` オブジェクトの原則は: *もしプロパティが、 `RangeAreas`内のすべての範囲の値に一貫性を持っていない場合、 `null`です*。 いくつかの例外の詳細については、 [RangeAreas のプロパティを読み取り中](#reading-properties-of-rangeareas) を参照してください。
-- `RangeAreas.cellCount` 内のすべての範囲内のセルの合計数を取得します。`RangeAreas`
-- `RangeAreas.calculate` 内のすべての範囲のセルを再計算します。`RangeAreas`
-- `RangeAreas.getEntireColumn` また、 `RangeAreas.getEntireRow` は、 `RangeAreas`内のすべての範囲のすべての列 (または行) を表す他の `RangeAreas` オブジェクトを返します。 例えば、 `RangeAreas` が”A1: C4"と”F14:L15”を表し、`RangeAreas.getEntireColumn` が "A:C"と"F:L"を表すオブジェクト `RangeAreas`を返します。
-- `RangeAreas.copyFrom` コピー操作のソース範囲を表すパラメーター`Range` または `RangeAreas` のいずれがをとることができます。
+- `RangeAreas` `Range.address` プロパティとともに1 つのアドレスとしてではなく、範囲のアドレスのコンマ区切りの文字列を返す`address` プロパティを持ちます。
+- `RangeAreas` 一貫性のある場合に`RangeAreas`内のすべての範囲のデータの有効性を表す`DataValidation`オブジェクトを返す `dataValidation` プロパティを持ちます。`RangeAreas`内のすべての範囲に適用されない  `DataValidation`と同一の場合、  プロパティは、オブジェクトは`null` です。これは、全般的でかつ汎用的でない `RangeAreas` オブジェクト: *プロパティが、`RangeAreas`すべての範囲の値に一貫性を持っていない場合、  `null`です* 。いくつかの例外の詳細については、 [RangeAreas のプロパティを読み取り中](#reading-properties-of-rangeareas) を参照してください。
+- `RangeAreas.cellCount` `RangeAreas` 内のすべての範囲内のセルの合計数を取得します。
+- `RangeAreas.calculate` `RangeAreas` 内のすべての範囲のセルを再計算します。
+- `RangeAreas.getEntireColumn` また `RangeAreas.getEntireRow` は、 `RangeAreas` 内のすべての範囲のすべての列 (または行) を表す `RangeAreas`オブジェクトを返します。例えば、 `RangeAreas` が、「a1: c4」および「F14:L15」を表す場合、 `RangeAreas.getEntireColumn` は、 "A:C"と"F:L"を表すオブジェクト`RangeAreas` を返します。
+- `RangeAreas.copyFrom` コピー操作のソース範囲を表すパラメーターである`Range` または `RangeAreas` のいずれをとることができます。
 
 #### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>RangeAreas でも利用できる範囲のメンバーの完全なリスト
 
 ##### <a name="properties"></a>プロパティ
 
-リストされた任意のプロパティを読み取るコードを記述する前に、「[RangeAreas のプロパティを読み取る](#reading-properties-of-rangeareas)」をご確認ください。 返されるものは微妙に異なります。
+任意のプロパティを読み取るコードの一覧を記述する前に、 [RangeAreas のプロパティを読み取り中](#reading-properties-of-rangeareas) に精通します。何が返されるかは微妙です。
 
-- address
+- アドレス
 - addressLocal
 - cellCount
 - conditionalFormats
-- context
+- コンテキスト
 - dataValidation
 - format
 - isEntireColumn
@@ -69,7 +69,7 @@ Excel の JavaScript ライブラリは、アドインに操作を実行し、�
 - getSpecialCellsOrNullObject() (プレビュー)
 - getTables() (プレビュー)
 - getUsedRange() (RangeAreas オブジェクトの getUsedRangeAreas を名前付け)
-- getUsedRangeOrNullObject() (RangeAreas オブジェクトの named getUsedRangeAreasOrNullObject を名前付け)
+- getUsedRangeOrNullObject() (RangeAreas オブジェクトでは getUsedRangeAreasOrNullObject という名前)
 - load()
 - set()
 - setDirty() (プレビュー)
@@ -79,31 +79,31 @@ Excel の JavaScript ライブラリは、アドインに操作を実行し、�
 
 ### <a name="rangearea-specific-properties-and-methods"></a>RangeArea に固有のプロパティおよびメソッド
 
-`RangeAreas` 型には、`Range` オブジェクト上にないいくつかのプロパティとメソッドがあります。 次はその一部です。
+`RangeAreas` 型には、 `Range` オブジェクト上にないいくつかのプロパティとメソッドがあります。それらのいくつかを次に示します。
 
-- `areas``RangeAreas` オブジェクトで表される範囲のすべてを含む `RangeCollection` オブジェクトです。 オブジェクトは、新しく、他の Excel のコレクション オブジェクトに似ています。`RangeCollection` 範囲を表す `Range` オブジェクトの配列である`items` プロパティを持ちます。
-- `areaCount`: 範囲内の合計数は、 `RangeAreas`です。
+- `areas`  `RangeAreas` で表される範囲のすべてを含むオブジェクトの  `RangeCollection` オブジェクトです。 `RangeCollection` オブジェクトは新しく、他の Excel のコレクション オブジェクトに似ています。 プロパティの範囲を表す `Range` オブジェクトの配列である`items` プロパティを持ちます。
+- `areaCount`: `RangeAreas` 内の合計数。
 - `getOffsetRangeAreas`:[   が返され、元の](https://docs.microsoft.com/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-) `RangeAreas`   の範囲の一つからそれぞれからのオフセットの範囲を含む点を除き、 Range.getOffsetRange`RangeAreas` と同じように動作します。
 
 ## <a name="create-rangeareas-and-set-properties"></a>RangeAreas の作成と、プロパティの設定
 
-オブジェクトを2 つの基本的な方法で作成することができます。`RangeAreas`
+`RangeAreas`オブジェクトを 2 つの基本的な方法で作成することができます。
 
-- を呼び出し、コンマで区切られた範囲のアドレスを使用して文字列を渡します。`Worksheet.getRanges()` 含めたい任意の範囲が、 [NamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem)された場合は、文字列内のアドレスではなく、名前を含めることができます。
-- `Workbook.getSelectedRanges()` を呼び出します。 このメソッドは、現在アクティブなワークシートで選択されているすべての範囲を表す `RangeAreas` を返します。
+- `Worksheet.getRanges()` を呼び出し、コンマで区切られた範囲アドレスを含む文字列を渡します。含めたい任意の範囲を [NamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem)  とした場合、文字列にアドレスではなく、名前を含めることができます。
+- `Workbook.getSelectedRanges()`を呼出します。このメソッドは、現在アクティブなワークシートで選択されているすべての範囲を表す`RangeAreas`を返します。
 
-オブジェクトを作成したら、  `getOffsetRangeAreas` と `getIntersection`のような`RangeAreas` を返すオブジェクト上のメソッドを使用して他のユーザーを作成することができます。`RangeAreas`
+`RangeAreas` オブジェクトを作成したら、`getOffsetRangeAreas` および `getIntersection` のような `RangeAreas` を返すオブジェクト上のメソッドを使用して他のユーザーを作成することができます。
 
 > [!NOTE]
-> オブジェクトに、追加の範囲を直接追加することはできません。`RangeAreas` 例えば、`RangeAreas.areas`内のコレクションは、 `add` メソッドを持ちません。
+> `RangeAreas`オブジェクトに、追加の範囲を直接追加することはできません。例えば、`RangeAreas.areas`内のコレクションは、`add`メソッドを持ちません。
 
 
 > [!WARNING] 
-> の配列のメンバーを、直接追加または削除しないようにしてください。`RangeAreas.areas.items` コード内で望ましくない動作をしてしまいます。 たとえば、さらに配列上に追加の `Range` オブジェクトをプッシュすることは可能ですが、 `RangeAreas` プロパティやメソッドは、新しいアイテムがない場合と同様に動作するため、これを行うとエラーが発生します。 例えば、 `areaCount` プロパティには、この方法によりプッシュされた範囲を含みません。 `index` よりも大きい `areasCount-1`場合、 `RangeAreas.getItemAt(index)` は、エラーをスローします。 同様に、参照を取得し、その`Range.delete` メソッドを呼び出して、  `RangeAreas.areas.items`内の`Range` オブジェクトを削除すると、バグが発生します:  `Range` オブジェクト *は、* 削除されましたが、親の `RangeAreas` オブジェクトのプロパティとメソッドは、それがまだ存在するかのように動作、またはしようとします。 例えば、コードが `RangeAreas.calculate`を呼び出した場合、Office は、範囲を計算しようとしますが、がエラーが発生し、range オブジェクトは失われます。
+> `RangeAreas.areas.items`  の配列のメンバーを直接追加または削除しないようにしてください。コード内で望ましくない動作をしてしまいます。例えば、配列に追加の `Range`  オブジェクトをプッシュすることは可能ですが、これにより `RangeAreas`  プロパティやメソッドは、新しいアイテムがないかのように動作するためエラーが発生します。例えば、`areaCount` プロパティには、このような方法でプッシュされた範囲を含んでおらず、`RangeAreas.getItemAt(index)` が `index`より大きい場合に、`areasCount-1` がエラーをスローします。同様に、参照を取得し、その メソッドを呼び出して、`Range` 内の <オブ`RangeAreas.areas.items`  `Range.delete`ジェクトを削除すると、バグが発生します。 オブジェクト`Range`は* 、* 削除されますが、親の`RangeAreas`オブジェクトのプロパティとメソッドは、それがまだ存在するかのように動作するか、動作しようとします。例えば、`RangeAreas.calculate` を呼出した場合、Office は範囲を計算しようとしますが、範囲オブジェクトがないためエラーが生じます。
 
-上のプロパティの設定は、 `RangeAreas.areas` コレクション上のすべての範囲に対応するプロパティを設定します。`RangeAreas`
+`RangeAreas`上のプロパティの設定は、`RangeAreas.areas`コレクション上のすべての範囲に対応するプロパティを設定します。
 
-次は、複数の範囲のプロパティの設定の例です。 関数には、 **F3:F5** と **H3:H5**の範囲が強調表示されます。
+次は、複数の範囲のプロパティの設定の例です。関数には、**F3:F5** と **H3:H5** の範囲が強調表示されます。
 
 ```js
 Excel.run(function (context) {
@@ -115,16 +115,16 @@ Excel.run(function (context) {
 })
 ```
 
-この例では、 `getRanges`に渡す範囲のアドレスを渡すハード コードできるか 、簡単に実行時に自動的に計算できるシナリオを適用します。 これが正しいであろうシナリオの一部は次のとおりです。 
+この例では、`getRanges`に渡す範囲のアドレスを渡すハード コードできるか 、簡単に実行時に自動的に計算できるシナリオを適用します。これが正しいであろうシナリオの一部は次のとおりです。 
 
 - コードは、既知のテンプレートのコンテキストで実行されます。
 - コードは、データのスキーマがわかっているインポートされたデータのコンテキストで実行されます。
 
-コーディング時に動作する必要がある範囲を知ることはできません、実行時に検出する必要があります。 次のセクションでは、これらのシナリオについて説明します。
+コーディング時にどのような範囲で実行すれはよいかわからない場合には、ランタイムで検出する必要があります。
 
 ### <a name="discover-range-areas-programmatically"></a>範囲の領域をプログラムで検出します。
 
-`Range.getSpecialCells()` と `Range.getSpecialCellsOrNullObject()` メソッドを使用すると、実行時に、セルの特性とセルの値の型を基に操作し実行したい範囲を検索できます。 TypeScriptデータ型のファイルからのメソッドのシグネチャを次に示します。
+`Range.getSpecialCells()` と `Range.getSpecialCellsOrNullObject()` メソッドを使用すると、実行時に、セルの特性とセルの値の型を基に操作し範囲を検索できます。TypeScript データタイプのファイルからのメソッドのシグネチャを次に示します。
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -134,11 +134,11 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-次は、最初のシグネチャを使用する場合の例です。 このコードの注意点は次のとおりです。
+次は、最初のシグネチャを使用する場合の例です。このコードに関して以下に注意してください。
 
-- 最初の呼び出しで検索する必要があるシートの一部を制限して、その範囲のみで `Worksheet.getUsedRange`  `getSpecialCells` を呼び出します。
-- 列挙型からの値の文字列バージョンをパラメーターとして`getSpecialCells`  に渡します。`Excel.SpecialCellType` 代わりに渡される他の値のいくつかは、空白のセルには「空白」、数式のかわりにリテラル値を持つセルには「定数」、 `usedRange`の最初のセルと同じ条件付き書式が設定されるセルには"SameConditionalFormat"です。 最初のセルは、上の左端のセルです。 列挙型の値の完全な一覧は、 [ベータ版の office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)を参照してください。
-- `getSpecialCells` メソッドは、 `RangeAreas` オブジェクトを返します。数式を入力した全てのセルは、すべて連続していない場合でも、ピンク色に色分け表示されます。 
+- その範囲のみで最初に`Worksheet.getUsedRange`を呼び出し、`getSpecialCells`を呼出して検索する必要があるシートの一部を制限します。
+- `Excel.SpecialCellType`列挙型からの値の文字列バージョンをパラメータとして`getSpecialCells`に渡します。代わりに渡される他の値のいくつかは、空白のセルには「空白」、数式のかわりにリテラル値を持つセルには「定数」、`usedRange`の最初のセルと同じ条件付き書式が設定されるセルには「SameConditionalFormat」です。最初のセルは、上の左端のセルです。列挙型の値の一覧は、[ベータ版の「office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)」を参照してください。
+- `getSpecialCells`メソッドは、`RangeAreas`オブジェクトを返します。数式を入力した全てのセルは、すべて連続していない場合も、ピンク色に色分け表示されます。 
 
 ```js
 Excel.run(function (context) {
@@ -151,13 +151,13 @@ Excel.run(function (context) {
 })
 ```
 
-場合によっては、対象となる特性を持つ *任意* のセルが範囲にありません。 `getSpecialCells` が対象となるセルをどうしても見つけられない場合、 **ItemNotFound** エラーがスローされます。 これは、一つだけある場合、コントロールのフローを `catch` ブロックまたはメソッドにそらします。 そうでない場合、エラーは、機能を停止します。 エラーをスローすることが、対象となる特性を持つセルが存在しない場合に、正確に必要されることであるシナリオがある可能性があります。 
+対象となる特性を持つ*任意*のセル範囲はありません。`getSpecialCells`が何も検出しない場合は、**ItemNotFound** エラーがスローされます。これがある場合は、`catch`ブロック/メソッドへのコントロールのフローを逸します。ない場合は、エラーは、機能を停止します。エラーをスローすることが、対象となる特性を持つセルが存在しない場合に、正確に必要されることであるシナリオがある可能性があります。 
 
-通常の動作では、シナリオでは、一致するセルがない場合もありますが、これはおそらく一般的ではありません。コードは、この可能性を確認し、エラーをスローすることがなく適切に処理すること必要があります。 これらのシナリオでは、 `getSpecialCellsOrNullObject` メソッドを使用し、 `RangeAreas.isNullObject` プロパティをテストします。 次に例を示します。 このコードの注意点は次のとおりです。
+通常の動作では、シナリオでは、一致するセルがない場合もありますが、これはおそらく一般的ではありません。コードは、この可能性を確認し、エラーをスローすることがなく適切に処理すること必要があります。これらのシナリオに関しては、`getSpecialCellsOrNullObject`メソッドを使用して`RangeAreas.isNullObject`プロパティをテストします。次に、例を示します。このコードに関して以下に注意してください。
 
-- メソッドは、常にプロキシ オブジェクトを返します。したがって、通常 JavaScript という意味では、決して `null` にはなりません。`getSpecialCellsOrNullObject` 一致するセルが見つからない場合は、 `isNullObject` オブジェクトのプロパティが、 `true`に設定されます。
-- プロパティをテストする前に、 を呼び出します。`context.sync`**`isNullObject` 読みだすために常にプロパティを読み込み同期させる必要があるため、これはすべての `*OrNullObject` メソッドとプロパティの必要条件です。 ただし、 `isNullObject` プロパティを *明示的に* 読み込む必要はありません。 がオブジェクト上に呼び出されない場合でも、 `context.sync` により自動的に読み込まれます。`load` 詳細については、「[\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」をご覧ください。
-- 最初に数式のセルを含まない範囲を選択して実行することで、このコードをテストできます。 次に、少なくとも 1 つのセルに数式がある範囲を選択し、それをもう一度実行します。
+- `getSpecialCellsOrNullObject`メソッドは、常にプロキシ オブジェクトを返します。したがって、通常 JavaScript という意味では、決して`null`にはなりません。一致するセルが見つからない場合は、オブジェクトの`isNullObject`プロパティが、`true`に設定されます。
+- `isNullObject`プロパティをテストする*前に* 、`context.sync`を呼び出す。読み込むために常にプロパティを読み込み同期させる必要があるため、これはすべての`*OrNullObject`メソッドとプロパティの必要条件です。ただし、`isNullObject`プロパティを*明示的に*ロードする必要はありません。`load`がオブジェクトで呼び出されない場合でも、`context.sync`が自動的にロードします。詳細情報に関しては、[\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods) を参照してください 。
+- 最初に数式のセルを含まない範囲を選択して実行することで、このコードをテストできます。次に、少なくとも 1 つのセルに数式がある範囲を選択し、それをもう一度実行します。
 
 ```js
 Excel.run(function (context) {
@@ -176,13 +176,13 @@ Excel.run(function (context) {
 })
 ```
 
-この資料の他のすべての例をわかりやすくするためには、 `getSpecialCells` メソッドを `getSpecialCellsOrNullObject`の代わりに使用します。
+わかりやすくするために、この記事の他のすべての例では、`getSpecialCellsOrNullObject` ではなく`getSpecialCells` メソッドを使用しています。
 
 #### <a name="narrow-the-target-cells-with-cell-value-types"></a>セルの値の型で対象セルを絞り込む
 
-列挙型の省略可能な 2 番目のパラメーターがあり、対象とするセルをさらに絞り込みます。`Excel.SpecialCellValueType` 「数式」または「定数」のいずれかを渡す場合にのみに `getSpecialCells` または `getSpecialCellsOrNullObject`を使用できます。 パラメータは、必要な特定の種類の値のセルのみを指定します。 4 つの基本的な種類があります:「エラー」、「論理」(つまり、ブール値)、「番号」、および「テキスト」です。 (列挙型は、これら以外の他の値について次に説明する 4 つの他の値です。)次に、例を示します。 このコードの注意点は次のとおりです。
+列挙型`Excel.SpecialCellValueType`の省略可能な 2 番目のパラメータがあり、対象に対してさらにセルを狭めるます。「数式」または「定数」のいずれかを`getSpecialCells`または`getSpecialCellsOrNullObject`に渡す場合にのみ使用できます。パラメータは、特定の種類の値のあるセルが必要であることを指定します。「エラー」、「論理」(ブール値を指す)、「番号」、および「テキスト」の 4 つの基本的な種類があります。(列挙型は、これら以外の他の値について次に説明する 4 つです。)次に、例を示します。このコードに関して次に注意してください。
 
-- リテラルの数値のあるセルのみがハイライト表示されます。 数式(結果は数値の場合でも)またはブール値、文字列、またはエラーの状態のセルが強調表示されます。
+- リテラルの数値のあるセルのみが強調表示されます。数式(結果は数値の場合でも)またはブール値、文字列、またはエラーの状態のセルが強調表示されます。
 - コードをテストするには、リテラルの数値、他の種類のリテラル値、一部の数式のセルがワークシートにあることを確認してください。
 
 ```js
@@ -196,7 +196,7 @@ Excel.run(function (context) {
 })
 ```
 
-場合によって 、すべてのテキスト値を持ち、すべてのブール値 (「論理」) を持つセルのよう1 つ以上のセル値型を操作する必要があります。 列挙型には値の種類を組み合わせることができます。`Excel.SpecialCellValueType` たとえば、"LogicalText"は、すべてのブール値、テキスト値を持つセルを対象にします。 4 つの基本的なタイプの内 2 つまたは 3 つを組み合わせることができます。 基本的な種類を組み合わせているこれらの列挙値の名前は、常にアルファベット順にします。 セルのエラー値、テキスト値、およびブール値を結合するには、"LogicalErrorText"または"TextErrorLogical"ではなく"ErrorLogicalText"を使用します。 「すべて」の既定のパラメーターは、4 種類全てを結合します。 次の使用例では、数値またはブール値を生成する数式を持つすべてのセルを強調表示しています。
+場合によってすべてのテキスト値およびすべてのブール値 (「論理」) のセルのように 1 つ以上のセル値の種類を操作する必要があります。`Excel.SpecialCellValueType`列挙型はタイプを組み合わせることができる値を持っています。たとえば、「LogicalText」はブール値、テキスト値を持つすべてのセルをターゲットにします。4 つの基本的なタイプの 2 つまたは 3 つを組み合わせることができます。基本的な種類を組み合わせるこれらの列挙値の名前は、常にアルファベット順にします。したがって、エラー値、テキスト値、およびブール値を持つセルを組み合わせるには、「LogicalErrorText」または「TextErrorLogical」ではなく「ErrorLogicalText」を使用します。「すべて」の既定のパラメータが全 4 種類を組み合わせます。次の使用例では、数値またはブール値を生成する式を持つすべてのセルが強調表示されています。
 
 ```js
 Excel.run(function (context) {
@@ -210,15 +210,15 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> `Excel.SpecialCellValueType` パラメーターは、 `Excel.SpecialCellType` パラメーターが "数式" または "定数" である場合にのみ使用できます。
+> `Excel.SpecialCellValueType` パラメータは、`Excel.SpecialCellType` パラメータが 「式」または「定数」である場合にのみ使用できます。
 
 ### <a name="get-rangeareas-within-rangeareas"></a>RangeAreas 内の RangeAreas を取得します。
 
-型自体も、同じの 2 つのパラメーターを受け取る `getSpecialCells` と `getSpecialCellsOrNullObject` メソッドを持ちます。`RangeAreas` これらのメソッドは、 `RangeAreas.areas` コレクション内のすべての範囲のセル範囲からすべての対象となるセルを返します。 オブジェクト の代わりに オブジェクトを呼び出した場合のメソッドの動作のには1 つの小さな違いがあります :"SameConditionalFormat"を最初のパラメーターとして渡すと、メソッドは、  コレクション 内の最初の範囲の上の左端のセル と同じ条件付き書式を持つすべてのセルを返します。`RangeAreas``Range`*`RangeAreas.areas`* 同じポイントは、"SameDataValidation"に適用されます:  に渡される場合、 範囲内の  一番左上と同じデータの入力規則をもつすべてのセルを返します。`Range.getSpecialCells`** しかｈしに渡された売位、  コレクション内の 最初の範囲の左端のセルと同じデータの入力規則が持つすべてのセルが返されます。`RangeAreas.getSpecialCells`*`RangeAreas.areas`*
+`RangeAreas`タイプ自体も `getSpecialCells` と `getSpecialCellsOrNullObject` を持ち、これらは 2 つの同じパラメータを受け取るメソッドです。これらのメソッドは、`RangeAreas.areas` コレクションのすべての範囲から対象となるセルを返します。`Range` オブジェクトではなく`RangeAreas` オブジェクトを呼び出した場合のメソッドの動作には 1 つの小さな違いがあります。「SameConditionalFormat」を最初のパラメータとして渡すと、メソッドは、*`RangeAreas.areas` コレクション内の最初の範囲の*上の左端のセルと同じ条件付き書式を持つすべてのセルを返します。同じポイントが、「SameDataValidation」にも当てはまります。`Range.getSpecialCells`に渡される場合、 *範囲内の*上の左端のセルと同じデータの入力規則をもつすべてのセルを返します。しかし、`RangeAreas.getSpecialCells` に渡される場合、*`RangeAreas.areas` コレクション内の最初の範囲の*上の左端のセルと同じデータの入力規則を持つすべてのセルを返します。
 
 ## <a name="read-properties-of-rangeareas"></a>RangeAreas のプロパティの読み取り
 
-プロパティ値を読み取るときは、指定したプロパティが、 `RangeAreas`内の別の範囲内の異なる値を持つ可能性があるため、注意が必要です。`RangeAreas` 一般的な規則は、一貫性のある値 *が* 返される場合、それが返されることです。 例えば、次のコードでは、ピンク色の (`#FFC0CB`) と `true` 用のRGBコードは、 `RangeAreas` オブジェクトの両方の範囲がピンク色の塗りであり、両方が全体の列であるため、コンソールに格納されます。
+`RangeAreas`のプロパティ値の読み取りには、`RangeAreas`内の指定したプロパティの別の範囲内の値が異なる可能性があるため、注意が必要です。一般的な規則では、一貫性のある値を返すことが*できる*場合は、返されます。例えば、次のコードでは、ピンク色の (`#FFC0CB`) と`true`用のRGBコードは、`RangeAreas`オブジェクトの両方の範囲がピンク色で塗りつぶされ、両方が全列であるため、コンソールに格納されます。
 
 ```js
 Excel.run(function (context) {
@@ -239,13 +239,13 @@ Excel.run(function (context) {
 })
 ```
 
-整合性が可能でない場合、より複雑になります。 プロパティの動作は、次の 3 つの原則に従います。`RangeAreas`
+整合性が可能でない場合、より複雑になります。`RangeAreas`プロパティのビヘイビアーは、次の 3 つの原則に従います。
 
-- オブジェクトのブール型のプロパティは、すべてのメンバーの範囲が true でない限り、 `false` を返します。`RangeAreas`
+- `RangeAreas`オブジェクトのブール値プロパティは、すべてのメンバーの範囲が真でない限り、`false`を返します。
 - 非ブール値プロパティは、 `address` プロパティ例外を除いて、全てのメンバーの範囲に対応するプロパティが同じ値を持っていない限り、 `null` を返します。
-- プロパティは、メンバーの範囲のアドレスのコンマ区切りの文字列を返します。`address`
+- `address`プロパティは、メンバーの範囲のアドレスのコンマ区切りの文字列を返します。
 
-たとえば、次のコードは、1 つだけ列全体であり、 1 つだけがピンク色で塗りつぶされます `RangeAreas` を生成します。 コンソールが、塗りつぶしの色に `null` を、 `false` を `isEntireRow` プロパティに、および"Sheet1!F3:F5、Sheet1!H:H"("Sheet1"は、シート名と仮定した場合) を `address` プロパティに表示します。 
+たとえば、次のコードは、1 つだけ列全体であり、 1 つだけがピンク色で塗りつぶされる`RangeAreas`を生成します。コンソールが、塗りつぶしの色に`null`を、`isEntireRow`プロパティに`false`を、および「Sheet1!F3:F5, Sheet1!H:H」(シート名は「Sheet1」と仮定) を`address`プロパティに表示します。 
 
 ```js
 Excel.run(function (context) {
@@ -269,6 +269,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API の中心概念](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
-- [Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)
-- [RangeAreas オブジェクト (EXCELL用JavaScript API )](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (API がプレビュー中の場合、このリンクが動作しない 可能性があります。 代わりに、 [ベータ版 office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)を参照してください。)
+- [Excel の JavaScript API を使用した基本的なプログラミングの概念](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Range Object (Excel 向け JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range)
+- [RangeAreas Object (Excel 向け JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (API がプレビュー中の場合、このリンクが動作しない 可能性があります。代わりに[ベータ版 office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) を参照してください。)

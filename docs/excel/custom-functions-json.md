@@ -1,13 +1,13 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/17/2018
 description: Excel でカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
-ms.openlocfilehash: b7c7f26d56309f43758b9b13025ebaad661aeaed
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: cff1cbc22f39c99597d4abe7005d7b8bbce6e185
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579871"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640009"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -126,7 +126,7 @@ Excel アドインで [カスタム関数](custom-functions-overview.md) を定�
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  いいえ<br/><br/>既定値は `false` です。  |  `true` を使用する場合、関数をキャンセルすることになる操作をユーザーが実行するたびに Excel は、 `onCanceled` ハンドラーを呼び出します。例えば、手動で再計算をトリガーしたり、関数が参照しているセルを編集したりなどの操作です。このオプションを使用する場合、Excel は、`caller` パラメータを追加して、JavaScript 関数を呼び出します 。(`parameters` プロパティにこのパラメータを登録***しない***でください )。関数の本文では、`caller.onCanceled` のメンバーにハンドラーを割り当てる必要があります。詳細については、 [関数をキャンセルする](custom-functions-overview.md#canceling-a-function)を参照してください。 |
-|  `stream`  |  boolean  |  いいえ<br/><br/>既定値は `false` です。  |  `true` の場合、関数を一度呼び出すだけでセルに繰り返し出力できます。 このオプションは、株価など急激に変化するデータソースで役立ちます。 このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメーターを `parameters` プロパティに登録***しない***でください)。 関数では、`return` 文を使わないでください。 代わりに、戻り値を `caller.setResult` コールバック メソッドの引数として渡します。 詳細については、「 [ストリーミング関数](custom-functions-overview.md#streaming-functions)」を参照してください。 |
+|  `stream`  |  ブール値  |  いいえ<br/><br/>既定値は `false` です。  |  `true` の場合、関数を一度呼び出すだけでセルに繰り返し出力できます。 このオプションは、株価など急激に変化するデータソースで役立ちます。 このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメーターを `parameters` プロパティに登録***しない***でください)。 関数では、`return` 文を使わないでください。 代わりに、戻り値を `caller.setResult` コールバック メソッドの引数として渡します。 詳細については、「 [ストリーミング関数](custom-functions-overview.md#streaming-functions)」を参照してください。 |
 
 ## <a name="parameters"></a>パラメーター
 
