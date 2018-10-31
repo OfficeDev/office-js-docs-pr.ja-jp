@@ -12,7 +12,7 @@
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
+### <a name="create-the-add-in-project"></a>アドイン プロジェクトを作成する
 
 1. [Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
     
@@ -22,7 +22,7 @@
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+5. Visual Studio によってソリューションが作成され、そのソリューションの 2 つのプロジェクトが**ソリューション エクスプローラ**に表示されます。**Home.html** ファイルが Visual Studio で開きます。
     
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -30,7 +30,7 @@
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+1. **Home.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。**Home.html** は `<body>` 要素を以下のマークアップと置き換え、ファイルを保存します。
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -52,7 +52,7 @@
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+2. Web アプリケーション プロジェクトのルートで **Home.js** ファイルを開きます。このファイルは、アドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -97,7 +97,7 @@
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. Web アプリケーション プロジェクトのルートで **Home.css** ファイルを開きます。このファイルは、アドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -128,13 +128,13 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクトで XML マニフェスト ファイルを開きます。このファイルはアドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
+3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **My Office アドイン** で置き換えます。
 
-4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for PowerPoint** に置き換えてください。
+4. `Description` 要素の `DefaultValue`  属性にはプレースホルダーがあります。 これを**PowerPoint の作業ウィンドウ アドイン** に置き換えます。
 
 5. ファイルを保存します。
 
@@ -178,24 +178,28 @@
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. ローカル ドライブにフォルダーを作成し、`my-powerpoint-addin` という名前を付けます。 ここにアドインのファイルを作成します。
+1. ローカル ドライブにフォルダーを作成し、`my-powerpoint-addin`という名前を付けます。ここにアドインのファイルを作成します。
 
-2. 新しいフォルダーに移動します。
+    ```bash
+    mkdir my-powerpoint-addin
+    ```
+
+2. 新しいフォルダーに移動してください。
 
     ```bash
     cd my-powerpoint-addin
     ```
 
-3. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+3. Yeoman ジェネレータを使用して PowerPoint アドインのプロジェクトを作成してください。次のコマンドを実行し、プロンプトに次のように応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type (プロジェクト タイプを選んでください):** `Office Add-in project using Jquery framework`
-    - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
+    - **プロジェクト タイプを選択してください:** `Office Add-in project using Jquery framework`
+    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Powerpoint`
+    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `PowerPoint`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint-jquery.png)
     
@@ -209,34 +213,33 @@
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
+1. コード エディターで、プロジェクトのルートに**index.html**を開きます。このファイルには、アドインの作業ウインドウでレンダリングされる HTML が含まれています。
 
-2. 要素内の `<header>` 要素を次のマークアップに置き換えます。`<body>`
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
-        </div>
-    </div>
-    ```
-
-3. 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。`<body>`
+2. `<body>`要素を次のマークアップに置き換えます。
 
     ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Select a slide and then choose the buttons below to add content to it.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="insert-image">Insert Image</button>
-            <br/><br/>
-            <button class="ms-Button" id="insert-text">Insert Text</button>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Select a slide and then choose the buttons to below to add content to it.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="insert-image">Insert Image</button>
+                <br /><br />
+                <button class="ms-Button" id="insert-text">Insert Text</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-4. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. ファイル **src\index.js** を開いてアドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -281,7 +284,7 @@
     })();
     ```
 
-5. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+4. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
 
     ```css
     #content-header {
@@ -312,11 +315,11 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
+1. ファイル **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. 要素にはプレースホルダー値が含まれています。`ProviderName` それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for PowerPoint** に置き換えてください。
+3. 要素`Description`の`DefaultValue` 属性にはプレースホルダーが含まれています。 これは、**PowerPoint 用の作業ウィンドウ アドイン** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -330,7 +333,7 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a>開発用サーバーの起動
+### <a name="start-the-dev-server"></a>開発用サーバーを起動する
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
@@ -342,7 +345,7 @@
     - PowerPoint Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. PowerPoint で、新しいファイルを作成して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
+2. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1b.png)
 
@@ -356,9 +359,9 @@
 
 ---
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明し、PowePoint アドインのチュートリアルに従って、さらに複雑なアドインを構築します。
+これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明し、PowePoint アドインのチュートリアルにしたがって、さらに複雑なアドインを構築します。
 
 > [!div class="nextstepaction"]
 > [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)

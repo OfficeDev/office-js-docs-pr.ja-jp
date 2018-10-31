@@ -2,19 +2,19 @@
 title: Project 用の作業ウィンドウ アドイン
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2aa8a88878082357949935305b9d39d203f5fb5d
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 1b7554920c0f6e76ec0b351e103781e152c70a9d
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348164"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506106"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
-Project Standard 2013 と Project Professional 2013 (version 15.1 以上)  はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
+Project Standard 2013 と Project Professional 2013 (version 15.1 以上)  はどちらも作業ウィンドウ アドインに対応しています。Word 2013 または Excel 2013 用に開発された一般的な作業ウィンドウ アドインを実行できます。 また、カスタム アドインを開発して、Project の一部のイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービス、エンタープライズ アプリケーションなどに統合することもできます。
 
 > [!NOTE]
-> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を抽出してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
+> [Project 2013 SDK ダウンロード パッケージ](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。展開した SDK をインストール後、`\Samples\Apps\` サブディレクトリを参照してください。
 
 Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
@@ -148,13 +148,13 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 
 Project 2013 では、ファイル共有上のスタンドアロン ソリューションとして、またはプライベート アドイン カタログに、アドインをインストールできます。AppSource でアドインをレビューおよび購入することもできます。
 
-ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の [ **セキュリティ センター**] ダイアログ ボックスの [ **信頼されているアドイン カタログ**] タブを使用します。Project にアドインを表示するには、マニフェスト内の  **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
+ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の [ **セキュリティ センター**] ダイアログ ボックスの [ **信頼できるアドイン カタログ**] タブを使用します。Project にアドインを表示するには、マニフェスト内の  **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
 
 
 > [!NOTE]
 > Internet Explorer 9 以降がインストールされている必要がありますが、既定のブラウザーになっている必要はありません。Office アドインには Internet Explorer 9 のコンポーネントが必要です。既定のブラウザーとして使用できるのは、Internet Explorer 9、Safari 5.0.6、Firefox 5、Chrome 13、これらのブラウザーのいずれかの最新バージョンです。
 
-手順 2. では、Project 2013 がインストールされているローカル コンピューター上に Bing Search アドインをインストールします。しかし、アドインのインフラストラクチャでは  `C:\Project\AppManifests` などのローカル ファイル パスを直接使用しないので、ローカル コンピューター上にネットワーク共有を作成できます。希望に応じて、リモート コンピューター上にファイル共有を作成することもできます。
+手順 2. では、Project 2013 がインストールされているローカル コンピュータ上に Bing Search アドインをインストールします。しかし、アドインのインフラストラクチャは  `C:\Project\AppManifests` などのローカル ファイル パスを直接使用しないため、ローカル コンピュータ上にネットワーク共有を作成できます。必要に応じて、リモート コンピュータ上にファイル共有を作成することもできます。
 
 
 ### <a name="procedure-2-to-install-the-bing-search-add-in"></a>手順 2. Bing Search アドインをインストールするには
@@ -168,7 +168,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
     
 4. Project 2013で、[ **Project のオプション**] ダイアログ ボックスを開き、[ **セキュリティ センター**]、[ **セキュリティ センターの設定**] の順に選択します。
     
-5. [ **セキュリティ センター**] ダイアログ ボックスの左側のウィンドウで、[ **信頼されているアドイン カタログ**] を選択します。
+5. [ **セキュリティ センター**] ダイアログ ボックスの左側のウィンドウで、[ **信頼できるアドイン カタログ**] を選択します。
     
 6. [ **信頼されているアドイン カタログ**] ウィンドウ (図 1 を参照) で、 [ **カタログの URL**] テキスト ボックスにパス「 `\\ServerName\AppManifests`」を追加し、[ **カタログの追加**]、[ **OK**] の順に選択します。
     
@@ -204,7 +204,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
-- [Office用JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 用の作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

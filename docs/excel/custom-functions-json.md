@@ -2,18 +2,18 @@
 ms.date: 09/27/2018
 description: Excel でカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
-ms.openlocfilehash: e8af13b8855d6c5e1a3b1ce99edb24445e066756
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: b7c7f26d56309f43758b9b13025ebaad661aeaed
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459239"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579871"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
-Excel アドインで[カスタム関数](custom-functions-overview.md) を定義する場合には、Excel でカスタム関数を登録してエンドユーザーが使用できるようにするための情報を提供する JSON メタデータ ファイルを、アドイン プロジェクトに含める必要があります。 この記事では、JSON メタデータ ファイルの形式について説明します。
+Excel アドインで [カスタム関数](custom-functions-overview.md) を定義する場合、アドイン プロジェクトには、Excel がカスタム関数を登録してエンド ユーザーが利用できるようにするために必要な情報を提供する JSON メタデータ ファイルを含める必要があります。この記事では、JSON メタデータ ファイルの形式について説明します。
 
-カスタム関数を有効にするためにアドイン プロジェクトに含める必要のある、その他のファイルに関する情報については、「[Excel でカスタム関数を作成する](custom-functions-overview.md)」を参照してください。
+カスタム関数を有効にするためにアドイン プロジェクトに含める必要のあるその他のファイルに関する情報については、「[Excel でカスタム関数を作成する](custom-functions-overview.md)」を参照してください。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -107,13 +107,13 @@ Excel アドインで[カスタム関数](custom-functions-overview.md) を定�
 
 ## <a name="functions"></a>functions 
 
- `functions` プロパティは、カスタム関数オブジェクトの配列です。次の表は、各オブジェクトのプロパティを一覧表示しています。
+`functions` プロパティは、カスタム関数オブジェクトの配列です。次の表は、各オブジェクトのプロパティを一覧表示しています。
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  文字列  |  いいえ  |  Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**摂氏の値を華氏に変換する**」などです。 |
-|  `helpUrl`  |  文字列  |   いいえ  |  関数に関する情報を提供する URL です。 (作業ウィンドウに表示されます。) たとえば、 **http://contoso.com/help/convertcelsiustofahrenheit.html**です。 |
-| `id`     | 文字列 | はい | 関数の一意の ID です。設定後、この ID は変更できません。 |
+|  `description`  |  文字列  |  いいえ  |  Excel でエンド ユーザーに表示される関数の説明です。例: "**華氏温度値を摂氏に変換する**" 。 |
+|  `helpUrl`  |  文字列  |   いいえ  |  関数に関する情報を提供する URL です。(作業ウィンドウに表示されます。) 例: **http://contoso.com/help/convertcelsiustofahrenheit.html**。 |
+| `id`     | 文字列 | はい | 関数の一意の ID です。 この ID は、英数字とピリオドのみを含めることができ、設定された後、変更してはいけません。 |
 |  `name`  |  文字列  |  はい  |  Excel でエンド ユーザーに表示される関数の名前です。Excel では、この関数名が XML マニフェスト ファイルで指定されているカスタム関数の名前空間で接頭辞となります。 |
 |  `options`  |  object  |  いいえ  |  Excel で関数を実行する方法とタイミングのいくつかの側面をカスタマイズできます。詳細については、 [オプションのオブジェクト](#options-object) を参照してください。 |
 |  `parameters`  |  配列  |  はい  |  関数の入力パラメーターを定義する配列。詳細については、 [パラメーター配列](#parameters-array) を参照してください。 |
@@ -121,18 +121,18 @@ Excel アドインで[カスタム関数](custom-functions-overview.md) を定�
 
 ## <a name="options"></a>options
 
- `options` オブジェクトは、Excel で関数を実行する方法とタイミングのいくつかの側面をカスタマイズすることができます。次の表に`options` オブジェクトのプロパティを一覧表示しています。
+`options` オブジェクトは、Excel で関数を実行する方法とタイミングのいくつかの側面をカスタマイズすることができます。次の表に`options` オブジェクトのプロパティを一覧表示しています。
 
-|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
+|  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  いいえ<br/><br/>既定値は `false` です。  |  `true` を使用する場合、関数をキャンセルすることになる操作をユーザーが実行するたびに Excel は、 `onCanceled` ハンドラーを呼び出します。例えば、手動で再計算をトリガーしたり、関数が参照しているセルを編集したりなどの操作です。このオプションを使用する場合、Excel は、`caller` パラメータを追加して、JavaScript 関数を呼び出します 。(`parameters` プロパティにこのパラメータを登録***しない***でください )。関数の本文では、`caller.onCanceled` のメンバーにハンドラーを割り当てる必要があります。詳細については、 [関数をキャンセルする](custom-functions-overview.md#canceling-a-function)を参照してください。 |
-|  `stream`  |  ブール値  |  いいえ<br/><br/>既定値は `false` です。  |  `true`を使用する場合、1 回だけ呼び出される場合でも、セルに関数を繰り返し出力できます。このオプションは、急速に変化するデータ ソース、株価などに便利です。このオプションを使用する場合、Excel は、`caller`  パラメータを追加して、JavaScript 関数を呼び出します 。( `parameters` プロパティにこのパラメータを登録*** しない***でください )。関数には `return` 文を入れてはいけません。代わりに、結果の値が`caller.setResult` コールバック メソッドの引数として渡されます。詳細については、 [ストリーミング機能](custom-functions-overview.md#streaming-functions)を参照してください。 |
+|  `stream`  |  boolean  |  いいえ<br/><br/>既定値は `false` です。  |  `true` の場合、関数を一度呼び出すだけでセルに繰り返し出力できます。 このオプションは、株価など急激に変化するデータソースで役立ちます。 このオプションを使用すると、Excelは `caller` パラメータを追加して JavaScript 関数を呼び出します。 (このパラメーターを `parameters` プロパティに登録***しない***でください)。 関数では、`return` 文を使わないでください。 代わりに、戻り値を `caller.setResult` コールバック メソッドの引数として渡します。 詳細については、「 [ストリーミング関数](custom-functions-overview.md#streaming-functions)」を参照してください。 |
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>パラメーター
 
 `parameters` プロパティは、カスタム関数オブジェクトの配列です。次の表は、各オブジェクトのプロパティを一覧表示しています。
 
-|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
+|  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  文字列  |  いいえ |  パラメータの説明。  |
 |  `dimensionality`  |  文字列  |  いいえ  |  **scholar** (非配列値) または **matrix** (2 次元配列) のいずれかである必要があります。  |
@@ -141,9 +141,9 @@ Excel アドインで[カスタム関数](custom-functions-overview.md) を定�
 
 ## <a name="result"></a>result
 
- `results` オブジェクトは、関数によって返される情報の種類を定義します。次の表のプロパティの `result` オブジェクトです。
+`results` オブジェクトは、関数によって返される情報の種類を定義します。次の表のプロパティの `result` オブジェクトです。
 
-|  プロパティ  |  データ型  |  必須かどうか  |  説明  |
+|  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  文字列  |  いいえ  |  **scholar** (非配列値) または **matrix** (2 次元配列) のいずれかである必要があります。 |
 |  `type`  |  文字列  |  はい  |  パラメーターのデータ型です。 **ブール値**、 **数値**、または **文字列**である必要があります。  |

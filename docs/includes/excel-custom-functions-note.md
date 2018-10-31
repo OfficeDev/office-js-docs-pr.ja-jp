@@ -1,2 +1,2 @@
 > [!NOTE]
-> カスタム関数は、開発者向けプレビュー版で現在利用できます。 カスタム関数は Windows 版 Excel 2016 (ビルド 10827 またはそれ以降)、Mac 版 Excel 2016 (ビルド 13.329 またはそれ以降)、Excel Online でサポートされています。 さらに、カスタム関数を使用するために [Office Insider](https://products.office.com/office-insider) プログラムに参加する必要があります。 Office Insider プログラムのメンバーでない場合、カスタム関数は、Office のすべてのビルドの間で現在使用できません。
+> カスタム関数は、開発者向けプレビューで現在利用できます。カスタム関数は Windows 版 Excel 2016 (ビルド 10827 またはそれ以降)、Mac 版 Excel 2016 (ビルド 13.329 またはそれ以降)、Excel Online でサポートされています。カスタム関数を使用するために [Office Insider](https://products.office.com/office-insider) プログラム (**Insider** レベル -- 以前の「Insider Fast」) に参加する必要があります。現時点では、Office Insider プログラム (**Insider** レベル) のメンバーでない限り、カスタム関数はすべての Office のビルド間で無効となっています。

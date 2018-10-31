@@ -2,12 +2,12 @@
 title: OneNote ページ コンテンツを使用する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 3ceb693b85490e5b7046880a79ae46753a1d3238
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 246c864cfb6a63b5f78da8c1189ac5545411168c
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944128"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505665"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する 
 
@@ -29,7 +29,8 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 - [ページ](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
 - [アウトライン](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
-- [段落](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
+- [段落
+](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
 
 OneNote ページのコンテンツと構造は、HTML で表されます。次に説明するように、ページ コンテンツの作成や更新には、HTML のサブセットだけがサポートされています。
 
@@ -54,7 +55,7 @@ OneNote ページのコンテンツと構造は、HTML で表されます。次�
 
 ## <a name="see-also"></a>関連項目
 
-- [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

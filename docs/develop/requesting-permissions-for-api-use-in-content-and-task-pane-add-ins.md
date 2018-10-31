@@ -2,12 +2,12 @@
 title: コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f1293bbf6bbb5c455ecdaba150cd1c0bb0929d79
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 2105dab859cdfa114c4b6f3c9eeaa73d3ae49ce8
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944348"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505308"
 ---
 # <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
 
@@ -28,7 +28,7 @@ ms.locfileid: "23944348"
 
 
 
-これらのアクセス許可は、ユーザーがアドインを挿入してアクティブ化 (信頼) したときに、アドイン ランタイムがコンテンツ アドインまたはタスク ウィンドウ アドインに使用を許可する API のサブセットを指定します。コンテンツ アドインまたは作業ウィンドウ アドインに必要なアクセス許可レベルを宣言するには、アドインのマニフェストの [Permissions](https://docs.microsoft.com/javascript/office/manifest/permissions?view=office-js) 要素に、いずれかのアクセス許可テキスト値を指定します。以下の例では、ドキュメントに書き込みができる (しかし読み取りはできない) メソッドだけを許可する、 **WriteDocument** アクセス許可を要求します。
+これらのアクセス許可は、ユーザーがアドインを挿入してアクティブ化 (信頼) したときに、アドイン ランタイムがコンテンツ アドインまたはタスク ウィンドウ アドインに使用を許可する API のサブセットを指定します。コンテンツ アドインまたは作業ウィンドウ アドインに必要なアクセス許可レベルを宣言するには、アドインのマニフェストの [Permissions](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions?view=office-js) 要素に、いずれかのアクセス許可テキスト値を指定します。以下の例では、ドキュメントに書き込みができる (しかし読み取りはできない) メソッドだけを許可する、 **WriteDocument** アクセス許可を要求します。
 
 
 

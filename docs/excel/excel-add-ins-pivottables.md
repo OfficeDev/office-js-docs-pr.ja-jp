@@ -1,19 +1,19 @@
 ---
-title: Excel の JavaScript API を使用してピボット テーブルで作業します
+title: Excel JavaScript API を使用してピボット テーブルで作業する
 description: Excel JavaScript API を使用してピボットテーブルを作成し、そのコンポーネントと対話します。
 ms.date: 09/21/2018
-ms.openlocfilehash: 00dd982d4ba4de0db34277cd546b572d4394e258
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459281"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505910"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用してピボット テーブルで作業します
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボット テーブルで作業する
 
-ピボット テーブルより大きなデータ セットを効率化します。このことにより、グループ化されたデータのクイック操作が可能になります。Excel の JavaScript API では、アドインにピボット テーブルを作成させ、それらのコンポーネントと対話することができます。 
+ピボット テーブルより大きなデータ セットを効率化します。このことにより、グループ化されたデータのクイック操作が可能になります。Excel JavaScript API では、アドインにピボット テーブルを作成させ、それらのコンポーネントと対話することができます。 
 
-ピボット テーブルの機能に慣れていない場合は、エンド ユーザーとしてこれらの調査を検討してください。これらのツールの適切な入門書には、 [ワークシートのデータを分析するピボット テーブルの作成](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を参照してください。 
+ピボット テーブルの機能に慣れていない場合は、エンド ユーザーとしてこれらを使用してみることを検討してください。これらのツールの適切な入門書には、 [ワークシートのデータを分析するピボット テーブルの作成](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を参照してください。 
 
 この資料では、一般的なシナリオのコード サンプルを提供します。ピボットテーブル API の理解をさらに深めるには、 [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) と [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) を参照してください。
 
@@ -156,9 +156,9 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>集計関数を変更する
 
-データの階層の値は集計されています。数値のデータセットの場合、規定で和となります。`summarizeBy` プロパティは `AggregrationFunction`  タイプに基づいてこの動作を定義します。 
+データの階層の値は集計されています。数値のデータセットの場合、規定で和となります。`summarizeBy` プロパティは [AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) タイプに基づいてこの動作を定義します。 
 
-現在サポートされている集計関数のタイプは、 `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`,  `Automatic` (既定値) です。
+現在サポートされている集計関数のタイプは、 `Sum`、`Count`、`Average`、`Max`、`Min`、`Product`、`CountNumbers`、`StandardDeviation`、`StandardDeviationP`、`Variance`、`VarianceP`、 `Automatic` (既定値) です。
 
 次のコード サンプルでは、データの平均値を使用する集計を変更します。
 
@@ -177,12 +177,12 @@ await Excel.run(async (context) => {
 
 ## <a name="change-calculations-with-a-showasrule"></a>ShowAsRule を使用しての計算の変更
 
-規定でピボット テーブルは、行と列の階層のデータを個別に集計します。 `ShowAsRule` は、ピボット テーブル内の他の項目に基づいた値を出力するために、データの階層を変更します。
+規定でピボット テーブルは、行と列の階層のデータを個別に集計します。[ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) では、ピボット テーブルの他の項目に基づいて出力値をデータの階層を変更します。
 
 `ShowAsRule` オブジェクトには次の 3 つのプロパティがあります。
 -   `calculation`: データの階層に適用する相対的な計算の種類 (既定値は `none`)。
--   `baseField`: 計算が適用される前の基本データを含む階層内のフィールド。通常、`PivotField` は親階層と同じ名前です。
--   `baseItem`:計算の種類に基づいた基本フィールドの値と比較した個々の項目。すべての計算にこのフィールドが必要なわけではありません。
+-   `baseField`: 計算が適用される前の基本データを含む階層内のフィールド。通常、[ PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield)  は親階層と同じ名前です。
+-   `baseItem`:計算の種類に基づいた基本フィールドの値と比較した個々の[PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) 。すべての計算にこのフィールドが必要なわけではありません。
 
 次の例では、 **農場で販売された木箱の合計** のデータ階層の計算を、列合計のパーセント値に設定します。粒度を果物の種類レベルに拡張するため、 ** 種類** の行の階層と基になるフィールドを使用するようにします。この例でも、最初の行の階層として **農場**  も示しているため、農場の合計エントリは、各農場の生産責任の割合も表示します。
 
@@ -235,7 +235,7 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>ピボット テーブルのレイアウト
 
-ピボット テーブルのレイアウトは、階層とそのデータの配置を定義します。データが保存されている範囲を決定するためレイアウトにアクセスします。 
+[PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) は、階層とそのデータの配置を定義します。データが保存されている範囲を決定するためレイアウトにアクセスします。 
 
 次のダイアグラムは、どのレイアウト関数の呼び出しがピボット テーブルのどの範囲に対応しているか示しています。
 
@@ -304,5 +304,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [Excel の JavaScript API リファレンス](https://docs.microsoft.com/javascript/api/excel)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API のリファレンス](https://docs.microsoft.com/javascript/api/excel)

@@ -2,12 +2,12 @@
 title: Office のホストと API の要件を指定する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1a1b98763b73d4c41cb9853c139866b727c125a1
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: ff6c0e4b4b2f8a517a62932722c34142ffdab609
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005011"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505980"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -30,7 +30,7 @@ ms.locfileid: "25005011"
 |:-----|:-----|
 |Office アプリケーション、Office ホスト アプリケーション、Office ホスト、またはホスト|アドインを実行するために使用される Office アプリケーション。たとえば、Word、Word Online、Excel など。|
 |プラットフォーム|Office Online、Office for iPad などの Office ホストを実行する場所。|
-|要件セット|関連する API メンバーの名前付きグループ。アドインは要件セットを使用して、Office ホストが、アドインによって使用される API メンバーをサポートしているかどうかを判別します。個々の API メンバーのサポートをテストするよりも、要件セットのサポートをテストするほうが簡単です。要件セットのサポートは、Office ホストと Office ホストのバージョンによって異なります。 <br >要件セットはマニフェスト ファイルで指定されます。 マニフェストで要件セットを指定するときは、アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートを設定します。 マニフェストで指定されている要件のセットをサポートしていない Office ホストがアドインを実行できませんし、アドインは <span class="ui">[個人用アドイン]</span>に表示されません。これは、アドインが使用可能な場所を制限しています。ランタイムを使用してコードを入力します。 要件セットの完全な一覧については、「[Office add-in requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)」を参照してください。|
+|要件セット|関連する API メンバーの名前付きグループ。アドインは要件セットを使用して、Office ホストが、アドインによって使用される API メンバーをサポートしているかどうかを判別します。個々の API メンバーのサポートをテストするよりも、要件セットのサポートをテストするほうが簡単です。要件セットのサポートは、Office ホストと Office ホストのバージョンによって異なります。 <br >要件セットはマニフェスト ファイルで指定されます。マニフェストで要件セットを指定するときは、アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートを設定します。マニフェストで指定されている要件セットをサポートしていない Office ホストはアドインを実行できず、アドインは <span class="ui">[個人用アドイン]</span> に表示されません。これにより、アドインが利用できる場所が制限されます。コードでは、ランタイム チェックを使用します。要件セットの詳細な一覧については、「[Office アドインの要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)」を参照してください。|
 |ランタイム チェック|アドインを実行している Office ホストが、アドインで使用されている要件セットまたはメソッドをサポートしているかどうかを判別するために実行時に行われるテスト。ランタイム チェックを実行するには、**if** ステートメントに **isSetSupported** メソッド、要件セット、または要件セットの一部ではないメソッド名を指定して使用します。ランタイム チェックを使用し、多くのユーザーが対象のアドインを使用できることを確認します。要件セットとは異なり、ランタイム チェックでは、対象アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートは指定しません。代わりに、**if** ステートメントを使用して API メンバーがサポートされているかどうかを判別します。サポートされている場合には、アドインで追加機能を提供できます。ランタイム チェックを使用するときは、自分のアドインは必ず **[個人用アドイン]** に表示されます。|
 
 ## <a name="before-you-begin"></a>始める前に
@@ -85,7 +85,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 | ドキュメント      | Windows、Mac、iPad 用の Word、Word Online        |
 | メールボックス       | Windows、Mac、Web 用の Outlook、Outlook.com | 
 | プレゼンテーション  | Windows、Mac、iPad 用の PowerPoint、PowerPoint Online  |
-| プロジェクト       | プロジェクト                                       |
+| プロジェクト       | Project                                       |
 | ブック      | Windows、Mac、iPad 用の Excel、Excel Online           |
 
 > [!NOTE]
@@ -123,7 +123,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
     
 - **Sets** 要素には、1 つ以上の **Set** 要素を含めることができます。**DefaultMinVersion** は、すべての **Set** 子要素の **MinVersion** の既定値を指定します。
     
--  **設定** 要素は、アドインを実行する Office ホストをサポートする必要がある要件のセットを指定します。  **[名前** ]の 属性は、要件のセットの名前を指定します。  **MinVersion** は、要件のセットの最小バージョンを指定します。 **MinVersion** は、 **DefaultMinVersion**の値に優先します。 要件セットおよびAPI メンバーが属する要件セットのバージョンの詳細については、 [Office アドインの要件のセット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)を参照してください。
+- ** Set**要素は、アドインを実行するために Office ホストがサポートする必要のある要件セットを指定します。** Name**属性は要件セットの名前を指定します。** MinVersion**  は要件セットの最小バージョンを指定します。** MinVersion**  は ** DefaultMinVersion**の値を上書きします。要件セットと API メンバーが属する要件セットのバージョンの詳細については、[ 「Office アドインの要件セット」](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js) をご覧ください。
     
 - **Methods** 要素には、1 つ以上の **Method** 要素を含めることができます。Outlook アドインで **Methods** 要素を使用することはできません。
     
@@ -145,7 +145,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 ```
 
 
--  _RequirementSetName_ (必須) は、要件セットの名前を表す文字列です。 利用可能な要件セットの詳細については、「[Office アドイン要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)」を参照してください。
+-  _RequirementSetName_ (必須) は、要件セットの名前を表す文字列です。利用できる要件セットの詳細については、「[Office アドイン要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)」を参照してください。
     
 -  _VersionNumber_ (省略可能) は要件セットのバージョンです。
     
@@ -180,7 +180,7 @@ else
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>要件セットにないメソッドを使用したランタイム チェック
 
 
-API の一部のメンバーは、要件のセットに属していません。 これは [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 名前空間 (Office. で始まるすべての名前空間) に属する API メンバーにのみ適用され、Word JavaScript API 名前空間 (Word. で始まるすべての名前空間) や [Excel アドイン JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) 名前空間 (Excel. で始まるすべての名前空間) に属する API メンバーには適用されません。 要件セットに属さないメソッドにアドインが依存するとき、ランタイム チェックを利用し、メソッドが Office ホストでサポートされているかどうかを判断できます。たとえば、次のコード例のようになります。 要件に属さないメソッドの完全な一覧については、 [Office のアドイン要件のセット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)を参照してください。
+API の一部のメンバーは、要件のセットに属していません。これは [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 名前空間 (Office. で始まるすべての名前空間) に属する API メンバーにのみ適用され、Word JavaScript API 名前空間 (Word. で始まるすべての名前空間) や [Excel アドイン JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) 名前空間 (Excel. で始まるすべての名前空間) に属する API メンバーには適用されません。要件セットに属さないメソッドにアドインが依存するとき、ランタイム チェックを利用し、メソッドが Office ホストでサポートされているかどうかを判断できます。たとえば、次のコード例のようになります。要件セットに属さないメソッドの詳細な一覧については、「[Office アドインの要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)」を参照してください。
 
 
 > [!NOTE]
@@ -202,5 +202,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの XML マニフェスト](add-in-manifests.md)
-- [Office アドインの要件のセット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Office アドインの要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

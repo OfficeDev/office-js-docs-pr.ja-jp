@@ -9,7 +9,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ### <a name="namespaces"></a>名前空間
 
@@ -23,7 +23,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 非同期呼び出しの結果を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
@@ -39,12 +39,12 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 ####  <a name="coerciontype-string"></a>CoercionType: 文字列
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
@@ -60,12 +60,12 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 ####  <a name="sourceproperty-string"></a>SourceProperty: 文字列
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
@@ -81,4 +81,4 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|

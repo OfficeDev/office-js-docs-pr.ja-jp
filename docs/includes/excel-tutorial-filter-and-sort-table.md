@@ -43,7 +43,7 @@
     }
     ``` 
 
-7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
+7. `TODO1`を次のコードに置き換えます。次の点に注意してください。
    - このコードでは最初に、`getItem` メソッドに列名を渡すことによって、フィルター処理が必要な列への参照を取得します。`createTable` メソッドが行うように、列のインデックスを `getItemAt` メソッドに渡すわけではありません。 ユーザーは表の列を移動させることができるので、表を作成した後、指定したインデックスにある列が変わってしまう可能性があります。 そのため、列名を使用して列への参照を取得するほうが安全です。 前のチュートリアルでは、表を作成するのとまったく同じ方法で `getItemAt` を使用したため、ユーザーが列を移動させた可能性はなく、よって安全に使用できました。
    - メソッドは、`Filter` オブジェクトのフィルター処理方法の 1 つです。`applyValuesFilter`
 
@@ -92,10 +92,10 @@
     }
     ``` 
 
-7. を次のコードに置き換えます。次の点に注意してください。`TODO1`
+7. `TODO1`を次のコードに置き換えます。次の点に注意してください。
    - アドインで並べ替えるのは Merchant 列のみであるため、このコードでは、1 つのメンバーだけを含む `SortField` オブジェクトの配列を作成します。
    - オブジェクトの `key` プロパティは、並べ替える対象列の 0 から始まるインデックスです。`SortField`
-   - |||UNTRANSLATED_CONTENT_START|||The `sort` member of a `Table` is a `TableSort` object, not a method.|||UNTRANSLATED_CONTENT_END||| |||UNTRANSLATED_CONTENT_START|||The `SortField`s are passed to the `TableSort` object's `apply` method.|||UNTRANSLATED_CONTENT_END|||
+   - |||UNTRANSLATED_CONTENT_START|||The `sort` member of a `Table` is a `TableSort` object, not a method.|||UNTRANSLATED_CONTENT_END||| `TableSort`オブジェクトの `apply`メソッドでは、`SortField` が渡されます。
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();

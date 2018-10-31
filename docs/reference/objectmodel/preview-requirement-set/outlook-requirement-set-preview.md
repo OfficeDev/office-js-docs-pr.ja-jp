@@ -3,7 +3,7 @@
 JavaScript API for Office の Outlook アドイン API サブセットには、Outlook アドインで利用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
-> 注:このドキュメントは、[要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)  の**プレビュー** 用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。 この要件のセットに導入されているメソッドとプロパティは、使用前に可用性を個別にテストする必要があります。
+> このドキュメントは、 **プレビュー**[要件セット用です](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。アドインのマニフェストでこの要件を指定しないでください。この要件のセットに導入されているメソッドとプロパティは、使用前に可用性を個別にテストする必要があります。
 
 要件セットのプレビューには、[要件セット 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) のすべての機能が含まれています。
 
@@ -18,7 +18,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback) - は、メッセージ アイテムまたは予定の sharedProperties を表すオブジェクトを取得する新しいメソッドを追加します。
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) - Microsoft Graph API の[アクセス トークンの取得](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)をアドインに対して許可する、`getAccessTokenAsync` へのアクセスが追加されました。
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - は、代理アクセス権を指定する新しいビット フラグ列挙を追加します。
-- [Office.EventType](/javascript/api/office/office.eventtype) をサポートするように OfficeThemeChanged のイベントの追加を `OfficeThemeChanged` のエントリです。
+- [Office.EventType](/javascript/api/office/office.eventtype) - `OfficeThemeChanged`エントリの追加を通してOfficeThemeChanged イベントをサポートするために変更されました。
+- [SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md) - [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェストの要素に子要素が追加されました。 アドインが委任のシナリオで使用可能かどうかを定義します。
 
 ## <a name="see-also"></a>関連項目
 

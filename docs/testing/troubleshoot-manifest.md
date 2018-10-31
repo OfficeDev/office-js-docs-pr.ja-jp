@@ -1,15 +1,15 @@
 ---
-title: マニフェストの問題を検証し、トラブルシューティングする
+title: マニフェストの問題を検証し、トラブルシューティングを行う
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
 ms.date: 12/04/2017
-ms.openlocfilehash: c3eed1a74cf4830556d977e6217a89c1fd016548
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 51d644f7cfb7fbad5c9b66be41dc57015202b9be
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004953"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639988"
 ---
-# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
+# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングを行う
 
 以下の方法を使用して、Office アドイン マニフェストの問題を検証し、トラブルシューティングを行います。 
 
@@ -35,7 +35,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
     > [!NOTE]
     > Yo Office が既にインストールされている場合、最新のバージョンにアップグレードすると、検証ツールが依存関係としてインストールされます。
 
-3. マニフェストを検証するには、次のコマンドを実行します。MANIFEST.XML をマニフェスト XML ファイルへのパスに置き換えます。
+3. マニフェストを検証するには、次のコマンドを実行し、MANIFEST.XML をマニフェスト XML ファイルへのパスに置き換えます。
 
     ```bash
     validate-office-addin MANIFEST.XML
@@ -43,11 +43,11 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 
-マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認するには 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。 [XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較してマニフェストを検証できます。 XML スキーマの検証ツールを使用して、この検証を実行できます。 
+マニフェスト ファイルが、使用している要素の名前空間を含む正しいスキーマに従っていることを確認します。サンプル マニフェストから要素をコピーした場合は、**適切な名前空間が含まれる**か再度確認してください。マニフェストは [XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルに照らして検証することができます。XML スキーマの検証ツールを使用すると、この検証を実行します。 
 
 
 
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンドライン XML スキーマ検証ツールを使用してマニフェストを検証するには
 
 1.  [tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。
 
@@ -57,9 +57,9 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>ランタイム ログを使用して、アドインをデバッグする 
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>ランタイムのログを使用して、アドインをデバッグする 
 
-アドインのマニフェストといくつかのインストール エラーをデバッグするのに、実行時のログを使用できます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイムのログは、アドイン コマンドおよびExcel関数を実装するアドインのデバッグに特に有効です。   
+アドインのマニフェストといくつかのインストール エラーをデバッグするには、ランタイムのログが使用できます。この機能を使用すると、リソース ID の不一致など、XSD スキーマ検証では検出されない問題を修正することができます。ランタイムのログは、アドインのコマンドと Excel のカスタム関数を実装するアドインをデバッグするために特に便利です。   
 
 > [!NOTE]
 > ランタイムのログ機能は現在、Office 2016 デスクトップで利用可能です。
@@ -73,14 +73,14 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 1. Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。 
 
-2. の下に `RuntimeLogging` レジストリ キーを追加します。`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` 
+2. `RuntimeLogging` の下にレジストリ キーを追加します`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` 。 
 
 3. キーの既定値にログを書き込むファイルの完全なパスを設定します。例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。 
 
     > [!NOTE]
-    > ログ ファイルが書き込まれるディレクトリが既に存在しており、書き込みアクセス許可がある必要があります。 
+    > ログ ファイルが書き込まれるディレクトリが既に存在し、書き込みアクセス許可がある必要があります。 
  
-レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。 
+レジストリは次の図のようになります。この機能を無効にするには、`RuntimeLogging`キーをレジストリから削除します。 
 
 ![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
 
@@ -96,7 +96,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 2. 何も起こらず、アドインが表示されない (アドイン ダイアログ ボックスにも表示されない) 場合は、ログ ファイルを開きます。
 
-3. ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイルでは、この ID には `SolutionId` というラベルが付いています。 
+3. ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイル内で、この ID には `SolutionId` というラベルが付いています。 
 
 次の例のログ ファイルでは、存在しないリソース ファイルを参照しているコントロールが示されています。この例の問題を修正するには、マニフェストの入力ミスを訂正するか、足りないリソースを追加します。
 
@@ -110,7 +110,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 - SolutionId が含まれていないメッセージ "`Unexpected Add-in is missing required manifest fields DisplayName`" は、多くの場合、エラーはデバッグ対象のアドインと関係ありません。 
 
-- メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。`Monitorable` 
+- すべての `Monitorable`  メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素をはじめとする、マニフェストの問題を示していることがあります。 
 
 ## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 

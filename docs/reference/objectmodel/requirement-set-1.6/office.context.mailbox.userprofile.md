@@ -1,19 +1,19 @@
 
-# <a name="userprofile"></a>ユーザー プロファイル
+# <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md)。ユーザー プロファイル
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[アクセス許可のレベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
-| メンバー | 型 |
+| メンバー | 種類 |
 |--------|------|
 | [accountType](#accounttype-string) | メンバー |
 | [displayName](#displayname-string) | メンバー |
@@ -27,7 +27,7 @@
 > [!NOTE]
 > このメンバーは、現在 Outlook 2016 for Mac またはそれ以降でのみサポートされています (ビルド 16.9.1212 またはそれ以降)。
 
-メールボックスに関連付けられているユーザーのアカウントの種類を取得します。 使用可能な値は、次の表に表示されます。
+メールボックスに関連付けられているユーザーのアカウントの種類を取得します。使用可能な値は、次の表に表示されます。
 
 | 値 | 説明 |
 |-------|-------------|
@@ -36,15 +36,15 @@
 | `office365` | メールボックスは、Office 365 の職場や学校のアカウントに関連付けられます。 |
 | `outlookCom` | メールボックスは、個人の Outlook.com アカウントに関連付けられます。 |
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
@@ -58,16 +58,16 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 ユーザーの表示名を取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[アクセス許可のレベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
@@ -77,20 +77,20 @@ console.log(Office.context.mailbox.userProfile.accountType);
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress: 文字列
+####  <a name="emailaddress-string"></a>emailAddress : 文字列
 
 ユーザーの SMTP 電子メール アドレスを取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[アクセス許可のレベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
@@ -100,20 +100,20 @@ console.log(Office.context.mailbox.userProfile.displayName);
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>タイム ゾーン: 文字列
+####  <a name="timezone-string"></a>タイム ゾーン : 文字列
 
 ユーザーの既定のタイム ゾーンを取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>種類:
 
 *   文字列
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[メールボックス要件セットの最小バージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[アクセス許可のレベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例

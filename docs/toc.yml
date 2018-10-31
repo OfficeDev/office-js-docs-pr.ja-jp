@@ -34,7 +34,7 @@ items:
     href: quickstarts/onenote-quickstart.md
   - name: Outlook アドインの作成
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+    href: /outlook/add-ins/quick-start
   - name: PowerPoint アドインの作成
     displayName: PowerPoint
     href: quickstarts/powerpoint-quickstart.md
@@ -280,12 +280,12 @@ items:
       - name: ワークシート
         displayName: Excel
         href: excel/excel-add-ins-worksheets.md
-    - name: Excel JavaScript API 概要
+    - name: Excel の JavaScript API の概要
       displayName: Excel
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
     - name: Excel JavaScript API リファレンス
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
+      href: /javascript/api/excel
   - name: Word アドイン
     displayName: Word
     href: word/word-add-ins-programming-overview.md
@@ -316,13 +316,13 @@ items:
       href: word/search-option-guidance.md
     - name: Word の JavaScript API の使用状況の概要
       displayName: Word
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
     - name: Word JavaScript API リファレンス
       displayName: Word
-      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
+      href: /javascript/api/word
   - name: Outlook アドイン
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/
+    href: /outlook/add-ins/
   - name: PowerPoint アドイン
     displayName: PowerPoint
     href: powerpoint/powerpoint-add-ins.md
@@ -351,10 +351,10 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: OneNote の JavaScript API の概要
       displayName: OneNote
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
     - name: OneNote JavaScript API リファレンス
       displayName: OneNote
-      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
+      href: /javascript/api/onenote
   - name: Project アドイン
     displayName: Project
     href: project/project-add-ins.md
@@ -411,9 +411,9 @@ items:
     - name: アドインを SharePoint カタログに公開する
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: アドインを AppSource に公開する
-      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+      href: /office/dev/store/submit-to-the-office-store
     - name: AppSource の検証ポリシー
-      href: https://docs.microsoft.com/office/dev/store/validation-policies
+      href: /office/dev/store/validation-policies
 - name: リファレンス
   items:
   - name: JavaScript API for Office
@@ -623,7 +623,7 @@ items:
       href: reference/manifest/defaultlocale.md
     - name: DefaultSettings
       href: reference/manifest/defaultsettings.md
-    - name: Description
+    - name: 説明
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
@@ -696,7 +696,7 @@ items:
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
       items:
-      - name: Action
+      - name: アクション
         href: reference/manifest/action.md
       - name: AllFormFactors
         href: reference/manifest/allformfactors.md
@@ -744,9 +744,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 1102af4ae8618cd2c2ced018bffa7e64c4fb2ece
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579885"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640086"

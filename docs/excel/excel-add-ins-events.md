@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 09/21/2018
-ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/17/2018
+ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459176"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639939"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
 
@@ -41,7 +41,11 @@ Excel の既定の動作に準拠する変更により、それに対応する�
 
 ### <a name="lifecycle-of-an-event-handler"></a>イベント ハンドラーのライフサイクル
 
-イベント ハンドラーは、アドインでイベント ハンドラーを登録するときに作成され、アドインでイベント ハンドラーの登録を解除したとき、またはアドインが閉じられたときに破棄されます。イベント ハンドラーは、Excel ファイルの一部として保持はされません。
+イベント ハンドラーは、アドインでイベント ハンドラーを登録するときに作成されます。アドインでイベント ハンドラーの登録を解除したとき、またはアドインが更新、再読み込みされた場合、閉じられたときに破棄されます。イベント ハンドラーは、Excel ファイルのまたは複数の Excel のオンラインでのセッションの一部として保持はされません。
+
+
+> [!CAUTION]
+> イベントが登録されているオブジェクトが削除されたとき（たとえば`onChanged` イベントが登録されたテーブル）、 イベントハンドラがトリガーしなくなりますが、アドインセッションまたはExcel のセッションを更新または閉じるまでメモリに残ります。
 
 ### <a name="events-and-coauthoring"></a>イベントと共同編集
 
@@ -147,4 +151,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)

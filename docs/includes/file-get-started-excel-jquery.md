@@ -115,7 +115,7 @@
 
 3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **My Office アドイン** で置き換えます。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
+4.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
 
 5. ファイルを保存します。
 
@@ -129,7 +129,7 @@
     ...
     ```
 
-### <a name="try-it-out"></a>試してみる
+### <a name="try-it-out"></a>お試しください
 
 1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。
 
@@ -158,6 +158,10 @@
 
 1. ローカル ドライブにフォルダーを作成し、**my-addin** という名前を付けます。ここにアプリのファイルを作成します。
 
+    ```bash
+    mkdir my-addin
+    ```
+
 2. アプリ フォルダーに移動します。
 
     ```bash
@@ -185,32 +189,33 @@
     cd "My Office Add-in"
     ```
 
-5. コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。 
+### <a name="update-the-code"></a>コードの更新 
+
+1. コード エディターで、プロジェクトのルートに **index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。 
  
-6. **index.html** 内で、生成された `header` タグを以下のマークアップに置き換えます。
+2.  **index.html** 内で、生成された `body` タグを以下のマークアップに置き換えて、ファイルを保存します。
  
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the button below to set the color of the selected range to green.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="set-color">Set color</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>    
     ```
 
-7. **index.html** 内で、生成された `main` タグを以下のマークアップに置き換えて、ファイルを保存します。
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. ファイル **src\index.js** を開いてアドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
+3.  **src\index.js** のファイルを開いてアドインのスクリプトを指定します。コンテンツ全体を以下のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -238,7 +243,7 @@
     })();
     ```
 
-9. ファイル **app.css** を開いてアドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
+4. ファイル **app.css** を開いてアドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -269,15 +274,13 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. ファイル **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
+1.  **manifest.xml** ファイルを開いて、アドインの設定および機能を定義します。 
 
-2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
+2.  `ProviderName` 要素にはプレースホルダー値があります。 これを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **My Office アドイン** で置き換えます。
+3.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
-
-5. ファイルを保存します。
+4. ファイルを保存します。
 
     ```xml
     ...
@@ -293,7 +296,7 @@
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a>試してみる
+### <a name="try-it-out"></a>お試しください
 
 1. アドインを実行するのに使用するプラットフォームの手順に従い、Excel 内でアドインをサイドロードします。
 
@@ -313,7 +316,7 @@
 
 ---
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 これで完了です。jQuery を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインを作成します。
 

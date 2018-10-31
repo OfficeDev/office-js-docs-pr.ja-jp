@@ -2,20 +2,19 @@
 title: Office アドインで Microsoft Graph へ承認する
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 83a9dd0beda9cb17a4f404c32cbe08a1e07f277e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 6d0b6f2002b71c4680b72d2f40492fff1abf15e2
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944300"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505860"
 ---
 # <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Office アドインで  Microsoft Graph へ承認（プレビュー）
 
-ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。Office アドインで[ Microsoft Graph](https://developer.microsoft.com/graph/docs) への承認されたアクセス権を取得するには、ユーザーの office サインオンの資格情報を使用するのが最善の方法です。これにより、もう一度サインインすることがなく、Microsoft Graph のデータにアクセスすることができます。 
+ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、デスクトップ プラットフォーム) にサインインします。 Office アドインが [Microsoft Graph](https://developer.microsoft.com/graph/docs) への承認されたアクセスを得る最善の方法は、ユーザーの Office サインオンからの認証情報を使用することです。 これにより、2 回目のサインインをせず に Microsoft Graph データにアクセスすることができます。 
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。
-> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> Word、Excel、Outlook、および PowerPoint のプレビューでは、現在、シングル サインオンの API がサポートされています。シングル サインオンの API がサポートされている現在の詳細については、 [IdentityAPI 要件の設定](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)を参照してください。Outlook のアドインで作業している場合は、Office 365 テナントの先進認証を必ず有効にします。詳細な方法については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>SSO と Microsoft Graph のアドイン アーキテクチャ
 
@@ -29,7 +28,7 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ![SSO プロセスを示す図](../images/sso-access-to-microsoft-graph.png)
 
-1. アドインでは、JavaScript は新しい Office.js API [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) を呼び出します。 これにより、Office ホスト アプリケーションにアドインへのアクセス トークンを取得するように指示します。 （後の手順で 2 番目のトークンに置き換えられるため、以下、これを **ブートストラップ アクセス トークン** と呼びます。 デコードされたブートストラップ アクセス トークンの例については、「[アクセストークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。）
+1. アドインでは、JavaScript は、新しい Office.js API [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) を呼び出します。これにより、Office ホスト アプリケーションがアドインにアクセス トークンを取得する (プロセスの後半で 2 番目のトークンに置き換えられるため、以下、これを**ブートストラップ アクセス トークン**と呼びます。デコードされたブートス トラップ アクセス トークンの例は、[アクセス トークンの使用例](sso-in-office-add-ins.md#example-access-token)を参照してください。)
 1. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 1. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 1. Office ホスト アプリケーションは、現在のユーザーについて Azure AD v2.0 エンドポイントから**ブートストラップ アクセス トークン** を要求します。
@@ -46,13 +45,13 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Microsoft Graph にアクセスする SSO アドインの開発
 
-SSO を使用する他のアドインと同様に、Microsoft Graphにアクセスするアドインを開発します。 詳細な説明については、 [Officeアドインのシングル サインオンを有効にする](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)を参照してください。違いは、アドインにはサーバー側の Web API が必須であり、その記事ではアクセス トークンと呼ばれるものを「ブートストラップ アクセス トークン」と呼びます。 
+Microsoft Graph をその他のアドインで SSO を使用する場合と同様にアクセスするアドインを開発するとします。詳細については、 [Office アドイン用のシングル サインオンを有効にする](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)を参照してください。違いは、そのアドインをサーバー側 Web API があり、その資料にアクセス トークンというものは「ブートストラップのアクセス トークン」と呼ばれる必須であります。 
 
-使用する言語とフレームワークによっては、記述が必要なサーバー側コードを単純化することが可能なライブラリを使用できる場合があります。 コードでは次のことを行う必要があります。
+使用する言語とフレームワークによっては、記述が必要なサーバー側コードを単純化することが可能なライブラリを使用できる場合があります。
 
-* 前の手順で作成したトークン ハンドラーから受け取ったアドイン ブートストラップ アクセス トークンを検証します。 詳細については、「[アクセス トークンを検証する](sso-in-office-add-ins.md#validate-the-access-token)」を参照してください。 
+* 以前に作成したトークン ハンドラから受信した追加のブートストラップのアクセス トークンを検証します。詳細については、 [アクセス トークンの検証](sso-in-office-add-ins.md#validate-the-access-token)を参照してください。 
 * ブートストラップ アクセス トークン、ユーザーに関するメタデータ、アドインの認証情報 (ID と秘匿情報) を含む Azure AD v2.0 エンドポイントへの呼び出しを使用して 「On-Behalf-Of」 フローを開始します。
-* 返されたアクセス トークンを Microsoft Graph にキャッシュします。 このフローの詳細については、「[Azure Active Directory v2.0 および OAuth 2.0 On-Behalf-Of フロー](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)」を参照してください。
+* Graph に返されたアクセス トークンをキャッシュします。このフローの詳細については、 [Azure Active Directory のバージョン 2.0 と OAuth 2.0 On-Behalf-Of のフロー](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を参照してください。
 * キャッシュされた アクセス トークン を Microsoft Graph に渡すことで Microsoft Graph データを取得する、 1 つ以上のWeb APIメソッドを作成します。
 
 > [!NOTE]

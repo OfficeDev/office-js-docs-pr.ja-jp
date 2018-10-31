@@ -16,6 +16,10 @@
 
 1. ローカル ドライブにフォルダーを作成し、`my-onenote-addin`という名前を付けます。ここにアドインのファイルを作成します。
 
+    ```bash
+    mkdir my-onenote-addin
+    ```
+
 2. 新しいフォルダーに移動します。
 
     ```bash
@@ -47,73 +51,154 @@
 
 1. コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。
 
-2. `<body>` 要素内の `<main>` 要素を次のマークアップに置き換えて、ファイルを保存します。これは、[Office UI Fabric コンポーネント](https://developer.microsoft.com/en-us/fabric#/components)を使用してテキスト領域とボタンを追加します。
+2. 要素内の `<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。 
 
     ```html
-    <main class="ms-welcome__main">
-        <br />
-        <p class="ms-font-l">Enter content below</p>
-        <div class="ms-TextField ms-TextField--placeholder">
-            <textarea id="textBox" rows="5"></textarea>
-        </div>
-        <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
-            <span class="ms-Button-label">Add Outline</span>
-            <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-            <span class="ms-Button-description">Adds the content above to the current page.</span>
-        </button>
-    </main>
+    <body class="ms-font-m ms-welcome">
+        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
+            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
+        </header>
+        <main id="app-body" class="ms-welcome__main">
+            <br />
+            <p class="ms-font-m">Enter HTML content here:</p>
+            <div class="ms-TextField ms-TextField--placeholder">
+                <textarea id="textBox" rows="8" cols="30"></textarea>
+            </div>
+            <button id="addOutline" class="ms-Button ms-Button--primary">
+                <span class="ms-Button-label">Add outline</span>
+            </button>
+        </main>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
 3. ファイル **src\index.js** を開いてアドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
 
     ```js
-    'use strict';
+    import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    (function () {
-
-        Office.initialize = function (reason) {
-            $(document).ready(function () {
-                // Set up event handler for the UI.
-                $('#addOutline').click(addOutlineToPage);
-            });
-        };
-
-        // Add the contents of the text area to the page.
-        function addOutlineToPage() {        
-            OneNote.run(function (context) {
-                var html = '<p>' + $('#textBox').val() + '</p>';
+    Office.initialize = (reason) => {
+        $(document).ready(() => {
+            $('#addOutline').click(addOutlineToPage);
+        });
+    };
+    
+    async function addOutlineToPage() {
+        try {
+            await OneNote.run(async context => {
+                var html = "<p>" + $("#textBox").val() + "</p>";
 
                 // Get the current page.
                 var page = context.application.getActivePage();
 
-                // Queue a command to load the page with the title property.             
-                page.load('title'); 
+                // Queue a command to load the page with the title property.
+                page.load("title");
 
-                // Add an outline with the specified HTML to the page.
+                // Add text to the page by using the specified HTML.
                 var outline = page.addOutline(40, 90, html);
 
                 // Run the queued commands, and return a promise to indicate task completion.
                 return context.sync()
                     .then(function() {
-                        console.log('Added outline to page ' + page.title);
+                        console.log("Added outline to page " + page.title);
                     })
                     .catch(function(error) {
-                        app.showNotification("Error: " + error); 
-                        console.log("Error: " + error); 
-                        if (error instanceof OfficeExtension.Error) { 
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                        } 
-                    }); 
-            });
+                        app.showNotification("Error: " + error);
+                        console.log("Error: " + error);
+                        if (error instanceof OfficeExtension.Error) {
+                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                        }
+                    });
+                });
+        } catch (error) {
+            OfficeHelpers.UI.notify(error);
+            OfficeHelpers.Utilities.log(error);
         }
-    })();
+    }
+    ```
+
+4. **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+
+    ```css
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ms-welcome {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        min-height: 500px;
+        min-width: 320px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .ms-welcome__header {
+        min-height: 30px;
+        padding: 0px;
+        padding-bottom: 5px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    .ms-welcome__header > h1 {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .ms-welcome__main {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: left;
+        -webkit-flex: 1 0 0;
+        flex: 1 0 0;
+        padding: 30px 20px;
+    }
+
+    .ms-welcome__main > h2 {
+        width: 100%;
+        text-align: left;
+    }
+
+    @media (min-width: 0) and (max-width: 350px) {
+        .ms-welcome__features {
+            width: 100%;
+        }
+    }
     ```
 
 ## <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **one-note-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
+1. ファイル **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
+2. 要`ProviderName`素にはプレースホルダー値が含まれています。それを自分の名前に置き換えます。
 
 3. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
 
@@ -124,7 +209,7 @@
     <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="OneNote Add-in" />
+    <DisplayName DefaultValue="My Office Add-in" />
     <Description DefaultValue="A task pane add-in for OneNote"/>
     ...
     ```
@@ -149,11 +234,22 @@
 
 3. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **one-note-add-in-manifest.xml** を参照し、**[アップロード]** を選択します。 
 
-4.  **[ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame で追加の作業ウィンドウを開きます。
+4. **[ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame で追加の作業ウィンドウを開きます。
 
-5. テキスト領域にテキストを入力し、 **アウトラインを追加**します。入力したテキストは、ページに追加されます。 
+5. テキスト領域で、次の HTML コンテンツを入力し、 **アウトラインを追加**します。  
 
-    ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in.png)
+    ```html
+    <ol>
+    <li>Item #1</li>
+    <li>Item #2</li>
+    <li>Item #3</li>
+    <li>Item #4</li>
+    </ol>
+    ```
+
+    指定したアウトラインは、ページに追加されます。
+
+    ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in-3.png)
 
 ## <a name="troubleshooting-and-tips"></a>トラブルシューティングとヒント
 

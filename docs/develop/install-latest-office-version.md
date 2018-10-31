@@ -2,12 +2,12 @@
 title: Office の最新バージョンをインストールする
 description: Office の最新のビルドを取得するを有効にする方法に関する情報です。
 ms.date: 12/04/2017
-ms.openlocfilehash: 14e26d9fa9f7ec3b2724cbf2e9787cde9dbe4094
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 0e6e147144757004575fa086e1066b7cdf133ee8
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943881"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505791"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -36,7 +36,7 @@ Office 2016 の最新ビルドを取得するには:
     > [!NOTE]
     > このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。
 
-インストール プロセスが完了すると、インストールされている最新の Office アプリケーションがあります。 最新のビルドがあることを確認するには、 **ファイル**に移動 > 任意の Office アプリケーションからの**アカウント** です。 [Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
+インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**  >  **[アカウント]** に移動します。[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
 ![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/office-insiders.png)
 
@@ -44,8 +44,8 @@ Office 2016 の最新ビルドを取得するには:
 
 API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
 
-- [Word JavaScript API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets?view=office-js)
-- [Excel JavaScript API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js)
-- [OneNote JavaScript API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets?view=office-js)
-- [ダイアログ API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)
-- [Office 共通 API の要件セット](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Word JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets?view=office-js)
+- [Excel JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)
+- [OneNote JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets?view=office-js)
+- [ダイアログ API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)
+- [Office 共通 API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)
