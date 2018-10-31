@@ -1,33 +1,20 @@
-# <a name="build-your-first-project-add-in"></a>最初の Project アドインを作成する
+# <a name="build-your-first-project-add-in"></a>最初のプロジェクトアドインを作成する
 
-この記事では、jQuery と Office JavaScript API を使用して Project アドインを作成する手順について説明します。
+この記事では、jQuery と Office JavaScript API を使用してプロジェクトアドインを作成する手順につ説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
 - [Node.js](https://nodejs.org)
 
-- [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) の最新バージョンをインストールします。
-
+- [Yeoman](https://github.com/yeoman/yo)の最新バージョンと[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を大域的にインストールしてください。
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in"></a>アドインを作成する
+## <a name="create-the-add-in"></a>アドインの作成
 
-1. ローカルドライブにフォルダーを作成し、`my-project-addin`という名前を付けてください。ここにアドインのファイルを作成します。
-
-    ```bash
-    mkdir my-project-addin
-    ```
-
-2. 新しいフォルダーに移動してください。
-
-    ```bash
-    cd my-project-addin
-    ```
-
-3. Yeomange ジェネレータを使用して Project アドインのプロジェクトを作成してください。次のコマンドを実行し、プロンプトに次のように応答します。
+1. Yeoman ジェネレーターを使用して、プロジェクト アドイン プロジェクトを作成します。 次のコマンドを実行してから以下のプロンプトに応答します。
 
     ```bash
     yo office
@@ -42,17 +29,17 @@
     
     ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
     
-4. Web アプリケーション プロジェクトのルート フォルダーに移動します。
+2. プロジェクトのルート フォルダーに移動します。
 
     ```bash
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a>コードを更新する
+## <a name="update-the-code"></a>コードの更新
 
-1. コード エディターで、プロジェクトのルートに**index.html**を開きます。このファイルには、アドインの作業ウインドウでレンダリングされる HTML が含まれています。
+1. コード エディターで、プロジェクトのルートに**index.html**を開きます。このファイルは、アドインのタスクウィンドウでレンダリングされる HTML を指定します。
 
-2. 要素`<body>`を次のマークアップに置き換えます。
+2. 次のマークアップにエレメント`<body>`を置き換えます。
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -78,7 +65,7 @@
     </body>
     ```
 
-3. **src/index.js**ファイルを開いて、アドインのスクリプトを特定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. アドインのスクリプトを指定のように**src/index.js**ファイルを開きます。 すべてのコンテンツを次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -131,7 +118,7 @@
     })();
     ```
 
-4. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+4. プロジェクトのルートにある **app.css** ファイルを開き、アドインのカスタム スタイルを指定します。 すべてのコンテンツを以下に置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -160,13 +147,13 @@
     }
     ```
 
-## <a name="update-the-manifest"></a>マニフェストを更新する
+## <a name="update-the-manifest"></a>マニフェストの更新
 
-1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
+1. アドインの設定と機能を定義するように、[ **one-note-add-in-manifest.xml**]ファイルを開きます。
 
-2. `ProviderName`要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値があります。これを自分の名前で置き換えます。
 
-3. 要素 `DefaultValue` の属性 `Description` にはプレースホルダーが含まれています。 それを ** Project 用の作業ウィンドウ アドイン** に置き換えます。
+3. `Description` 要素の `DefaultValue`  属性にはプレースホルダーが含まれています。 これを**プロジェクトのA タスクペイン アドイン** に置き換えます。
 
 4. ファイルを保存します。
 
@@ -191,24 +178,24 @@
 2. アドインを実行するのに使用するプラットフォームの手順に従い、プロジェクト 内でアドインをサイドロードします。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - プロジェクト Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 3. プロジェクトには、タスクを選択してください。
 
     ![1 つのタスクが選択されたプロジェクトのプロジェクト計画のスクリーンショット](../images/project_quickstart_addin_1.png)
 
-4. 作業ウィンドウで **[タスク GUID を取得]** ボタンを選択して、タスク GUID を **[結果]** テキストボックスに記入してください。
+4. タスクウィンドウで **[タスク GUID を取得]** ボタンを選択して、タスク GUID を **[結果]** テキストボックスに記入してください。
 
-    ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入されたタスク GUID のスクリーンショット](../images/project_quickstart_addin_2.png)
+    ![1 つのタスクが選択されたプロジェクトのプロジェクト計画およびタスクウィンドウのテキストボックスに記入されたタスク GUID のスクリーンショット](../images/project_quickstart_addin_2.png)
 
-5. 作業ウィンドウで **[タスク データを取得]** ボタンを選択して、選択したタスクのいくつかのプロパティを **[結果]** テキストボックスに記入してください。
+5. タスクウィンドウで **[タスク データを取得]** ボタンを選択して、選択したタスクのいくつかのプロパティを **[結果]** テキストボックスに記入してください。
 
-    ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入された複数のタスクのプロパティのスクリーンショット](../images/project_quickstart_addin_3.png)
+    ![1 つのタスクが選択されたプロジェクトのプロジェクト計画およびタスクウィンドウのテキストボックスに記入された複数のタスクのプロパティのスクリーンショット](../images/project_quickstart_addin_3.png)
 
 ## <a name="next-steps"></a>次の手順
 
-完了しました。 Project アドインが正常に作成されました！ 次に、 Project アドインの機能と一般的なシナリオについて調べます。
+おめでとうございます。プロジェクト アドインが正常に作成されました。 この後は、プロジェクト アドインの機能と一般的なシナリオについて調べます。
 
 > [!div class="nextstepaction"]
-> [  Project アドイン](../project/project-add-ins.md)
+> [プロジェクト アドイン](../project/project-add-ins.md)
