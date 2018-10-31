@@ -1,13 +1,13 @@
 ---
-ms.date: 10/09/2018
+ms.date: 10/17/2018
 description: JavaScript を使用して Excel でカスタム関数を作成します。
 title: Excel でのカスタム関数の作成 (プレビュー)
-ms.openlocfilehash: 75d6bd6db28207323027f6f4470c06e7c0ccb29b
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: cc06664a0acb582344448ceec1ec36319d1c3b4c
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579913"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640100"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でカスタム関数を作成する (プレビュー)
 
@@ -216,7 +216,7 @@ function getTemperature(thermometerID){
 
 - 2 番目の入力パラメーター`handler` は、[オートコンプリート] メニューから関数を選択したとき Excel でエンドユーザーに表示されません。
 
--  `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。 すべてのストリーム関数には、このようなキャンセル ハンドラーの実装が必要です。 詳細については、 [ [関数をキャンセルする](#canceling-a-function) ] を参照してください。
+- `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。 すべてのストリーム関数には、このようなキャンセル ハンドラーの実装が必要です。 詳細については、 [ [関数をキャンセルする](#canceling-a-function) ] を参照してください。
 
 ```js
 function incrementValue(increment, handler){
@@ -277,13 +277,13 @@ JSON メタデータ ファイルでストリーミング関数にメタデー�
 
 次のコード サンプルでは、グローバル状態を保存する温度ストリーミング関数の実装を示します。このコードについては、以下のことにに留意してください。
 
--  `streamTemperature` 関数が 毎秒セルに表示される温度の値を更新し、 `savedTemperatures` 変数をデータ ソースとして使用します。
+- `streamTemperature` 関数が 毎秒セルに表示される温度の値を更新し、 `savedTemperatures` 変数をデータ ソースとして使用します。
 
--  `streamTemperature` は、ストリーム関数であるため、その関数がキャンセルされたときに実行されるキャンセル ハンドラーを実装します。
+- `streamTemperature` は、ストリーム関数であるため、その関数がキャンセルされたときに実行されるキャンセル ハンドラーを実装します。
 
 - ユーザーが `streamTemperature` 関数を Excel の複数のセルから呼び出す場合、 `streamTemperature` 関数は実行のたびに、同じ `savedTemperatures` 変数からのデータを読み取ります。 
 
--  `refreshTemperature` 関数は、毎秒特定の温度計の温度を読み取り、結果を `savedTemperatures` 変数に格納します。  `refreshTemperature` 関数は、Excel でのエンド ユーザーには公開されないので、JSON ファイルに登録する必要はありません。
+- `refreshTemperature` 関数は、毎秒特定の温度計の温度を読み取り、結果を `savedTemperatures` 変数に格納します。 `refreshTemperature` 関数は、Excel でのエンド ユーザーには公開されないので、JSON ファイルに登録する必要はありません。
 
 ```js
 var savedTemperatures;
@@ -376,9 +376,9 @@ function getComment(x) {
 - **2017 年 11 月 20 日**: ビルド 8801 以降を使用しているユーザー向けに互換性バグを修正
 - **2017 年 11 月 28 日**: 非同期関数のキャンセルへのサポートを公開* (ストリーム関数への変更が必要)
 - **2018 年 5 月 7 日**: Mac、Excel Online、およびインプロセスで実行される同期関数へのサポートを公開*
-- **2018 年 9 月 20日**:  JavaScript の実行時のカスタム関数へのサポートを公開。詳細については、 [Excel のカスタム関数ランタイム](custom-functions-runtime.md)を参照してください。
+-  **2018 年 9 月 20日**:  JavaScript ランタイムのカスタム関数へのサポートを公開されました。詳細については、 [「Excel のカスタム関数ランタイム」](custom-functions-runtime.md)をご覧ください。
 
-\* Office Insiders チャネル対象
+\*  [Office Insider](https://products.office.com/office-insider) チャネル (旧称 '' Insider Fast ")
 
 ## <a name="see-also"></a>関連項目
 
