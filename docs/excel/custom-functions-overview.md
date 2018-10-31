@@ -1,168 +1,206 @@
-# <a name="create-custom-functions-in-excel-preview"></a><span data-ttu-id="9a754-101">Excel でのカスタム関数の作成 (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="9a754-101">Create custom functions in Excel (Preview)</span></span>
+---
+ms.date: 10/09/2018
+description: JavaScript を使用して Excel でカスタム関数を作成します。
+title: Excel でのカスタム関数の作成 (プレビュー)
+ms.openlocfilehash: e52039f2618f793f688cd89c5d62bac0a8632667
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506120"
+---
+# <a name="create-custom-functions-in-excel-preview"></a><span data-ttu-id="cd57a-103">Excel でカスタム関数を作成する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="cd57a-103">Create custom functions in Excel (Preview)</span></span>
 
-<span data-ttu-id="9a754-102">カスタム関数（ユーザー定義関数 UDF と同様のもの）を使用すると、開発者はアドインを使用して任意の JavaScript 関数を Excel に追加できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-102">Custom functions (similar to user-defined functions, or UDFs), allow developers to add any JavaScript function to Excel using an add-in.</span></span> <span data-ttu-id="9a754-103">ユーザーは、Excel の他のネイティブ関数（`=SUM()` など）と同様に、カスタム関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9a754-103">Users can then access custom functions like any other native function in Excel (like =SUM()).</span></span> <span data-ttu-id="9a754-104">この記事では、Excel でカスタム関数を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9a754-104">This article explains how to create custom functions in Excel.</span></span>
+<span data-ttu-id="cd57a-104">カスタム関数を使用すると、開発者は JavaScript でこれらの関数をアドインの一部として定義することにより、 Excel に新しい関数を追加できます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-104">Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="cd57a-105">Excel 内のユーザーは、Excel の他のネイティブ関数（`SUM()` など）とまったく同様に、カスタム関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-105">Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="cd57a-106">この記事では、Excel でカスタム関数を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-106">This article describes how to create custom functions in Excel.</span></span>
 
-<span data-ttu-id="9a754-105">次の図は、エンドユーザーがカスタム関数をセルに挿入する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-105">The following illustration shows you how an end user would insert a custom function into a cell.</span></span> <span data-ttu-id="9a754-106">1 組の数字に 42 を加える関数。</span><span class="sxs-lookup"><span data-stu-id="9a754-106">Here’s the code for a sample custom function that adds 42 to a pair of numbers.</span></span>
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<img alt="custom functions" src="../images/custom-function.gif" width="579" height="383" />
+<span data-ttu-id="cd57a-p102">次の図は、Excel ワークシートのセルにカスタム関数を挿入する、エンド ユーザーを示します。 `CONTOSO.ADD42` カスタム関数は、関数への入力パラメーターとしてユーザーが指定した数値のペアに 42 を追加するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p102">The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.</span></span>
 
-<span data-ttu-id="9a754-107">同じカスタム関数のコードは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9a754-107">Here’s the code for the same custom function.</span></span>
+<img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
+
+<span data-ttu-id="cd57a-109">次のコードは、`ADD42` カスタム関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-109">The following code defines the `ADD42` custom function.</span></span>
 
 ```js
-function ADD42(a, b) {
-    return a + b + 42;
+function add42(a, b) {
+  return a + b + 42;
 }
 ```
 
-<span data-ttu-id="9a754-108">カスタム機能は、Windows、Mac、および Excel Online の開発者プレビューで利用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9a754-108">Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online.</span></span> <span data-ttu-id="9a754-109">以下の手順に従って試してみましょう。</span><span class="sxs-lookup"><span data-stu-id="9a754-109">Follow these steps to try them:</span></span>
-
-1.  <span data-ttu-id="9a754-110">Office（Windows では build 9325、Mac では 13.329）をインストールし、 [Office Insider](https://products.office.com/en-us/office-insider) プログラムに参加します。</span><span class="sxs-lookup"><span data-stu-id="9a754-110">Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/en-us/office-insider) program.</span></span> <span data-ttu-id="9a754-111">（最新のビルドを入手するだけでは不十分であることに注意してください。Insider プログラムに参加するまでは、どのビルドでも機能が無効になります）</span><span class="sxs-lookup"><span data-stu-id="9a754-111">(Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)</span></span>
-2.  <span data-ttu-id="9a754-112">[Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) リポジトリを複製し、README.md の指示に従って Excel でアドインを起動し、コードを変更してデバッグします。</span><span class="sxs-lookup"><span data-stu-id="9a754-112">Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel, make changes in the code, and debug.</span></span>
-3.  <span data-ttu-id="9a754-113">任意のセルに `=CONTOSO.ADD42(1,2)` を入力し、**Enter** を押してカスタム関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="9a754-113">Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.</span></span>
-
-<span data-ttu-id="9a754-114">この記事の末尾にある **既知の問題** のセクションを参照してください。このセクションには、カスタム関数の現在の制限が記載されており、時間の経過に従って更新されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-114">See the Known Issues section at the end of this article, which includes current limitations of custom functions and will be updated over time.</span></span>
-
-## <a name="learn-the-basics"></a><span data-ttu-id="9a754-115">基本操作の説明</span><span class="sxs-lookup"><span data-stu-id="9a754-115">Learn the basics</span></span>
-
-<span data-ttu-id="9a754-116">複製されたサンプル リポジトリには、次のファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-116">In the cloned sample repo, you’ll see the following files:</span></span>
-
-- <span data-ttu-id="9a754-117">**customfunctions.js** カスタム関数コードが含まれています（`ADD42` 関数については、上記の単純なコード例を参照してください）。</span><span class="sxs-lookup"><span data-stu-id="9a754-117">**customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).</span></span>
-- <span data-ttu-id="9a754-118">**customfunctions.json** カスタム関数について Excel に通知する登録 JSON が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a754-118">**customfunctions.json**, which contains the registration JSON that tells Excel about your custom function.</span></span> <span data-ttu-id="9a754-119">登録すると、ユーザーがセルに入力するときに表示される使用可能な関数のリストにカスタム関数が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-119">Registration makes your custom functions appear in the list of available functions displayed when users type in cells.</span></span>
-- <span data-ttu-id="9a754-120">**customfunctions.html** JS ファイルへの &lt;Script&gt; 参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="9a754-120">customfunctions.html, which provides a Script reference to customfunctions.js.</span></span> <span data-ttu-id="9a754-121">このファイルでは、Excel の UI は表示されません。</span><span class="sxs-lookup"><span data-stu-id="9a754-121">This file does not display UI in Excel.</span></span>
-- <span data-ttu-id="9a754-122">**customfunctions.xml** HTML、JavaScript、およびJSON ファイルの場所を Excel に通知します。また、アドインと共にインストールされているすべてのカスタム関数の名前空間も指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-122">**customfunctions.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.</span></span>
-
-### <a name="json-file-customfunctionsjson"></a><span data-ttu-id="9a754-123">JSONファイル（customfunctions.json）</span><span class="sxs-lookup"><span data-stu-id="9a754-123">JSON file (customfunctions.json)</span></span>
-
-<span data-ttu-id="9a754-124">customfunctions.json の以下のコードは、同じ `ADD42` 関数のメタデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-124">The following code in customfunctions.json specifies the metadata for the same `ADD42` function.</span></span>
-
 > [!NOTE]
-> <span data-ttu-id="9a754-125">この例で使用されていないオプションを含むJSONファイルの詳細な参照情報は、「[カスタム関数登録 JSON](custom-functions-json.md)」 にあります。。</span><span class="sxs-lookup"><span data-stu-id="9a754-125">Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](custom-functions-json.md).</span></span>
+> <span data-ttu-id="cd57a-110">この記事で後述する「[既知の問題](#known-issues)」セクションで、カスタム関数の現状の制限事項を記載します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-110">The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.</span></span>
 
-<span data-ttu-id="9a754-126">この例では、以下のことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-126">Note that for this example:</span></span>
+## <a name="components-of-a-custom-functions-add-in-project"></a><span data-ttu-id="cd57a-111">カスタム関数アドインプロジェクトのコンポーネント</span><span class="sxs-lookup"><span data-stu-id="cd57a-111">Components of a custom functions add-in project</span></span>
 
-- <span data-ttu-id="9a754-127">カスタム関数は1つしかないので、 `functions` ARRAY のメンバーも1つです。</span><span class="sxs-lookup"><span data-stu-id="9a754-127">There's only one custom function, so there's only one member of the `functions` array.</span></span>
-- <span data-ttu-id="9a754-128">`name` プロパティは関数名を定義します。</span><span class="sxs-lookup"><span data-stu-id="9a754-128">The `name` property defines the function name.</span></span> <span data-ttu-id="9a754-129">前に示したアニメーションGIFのように、名前空間（`CONTOSO`）は、Excel オートコンプリート メニューの関数名の前に付加されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-129">As you see in the animated gif shown previously, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu.</span></span> <span data-ttu-id="9a754-130">このプレフィックスは、後述するアドインマニフェストで定義されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-130">This prefix is defined in the add-in manifest, described below.</span></span> <span data-ttu-id="9a754-131">プレフィックスと関数名はピリオドで区切られ、慣例では接頭辞と関数名は大文字です。</span><span class="sxs-lookup"><span data-stu-id="9a754-131">The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase.</span></span> <span data-ttu-id="9a754-132">カスタム関数を使用するには、ユーザーが名前空間に続けて関数の名前（`ADD42` ）をセルに入力します。この場合、 `=CONTOSO.ADD42` です。</span><span class="sxs-lookup"><span data-stu-id="9a754-132">To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`.</span></span> <span data-ttu-id="9a754-133">プレフィックスは、所属する会社やアドインの識別子として使用することが想定されています。</span><span class="sxs-lookup"><span data-stu-id="9a754-133">The prefix is intended to be used as an identifier for your add-in.</span></span> 
-- <span data-ttu-id="9a754-134">Excel のオートコンプリート メニュー `description` 表示されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-134">`description`: The description appears in the autocomplete menu in Excel.</span></span>
-- <span data-ttu-id="9a754-135">ユーザーが関数のヘルプを要求すると、Excel は作業ウィンドウを開き、`helpUrl` に指定された URL にある Web ページを表示します。</span><span class="sxs-lookup"><span data-stu-id="9a754-135">`helpUrl`: When the user requests help for a function, Excel opens a task pane and displays the web page found at this URL.</span></span>
-- <span data-ttu-id="9a754-136">`result` プロパティは、関数が返す情報の種類を Excel に指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-136">`result`: Defines the type of information returned by the function to Excel.</span></span> <span data-ttu-id="9a754-137">`type` 子のプロパティは `"string"`、 `"number"`、または `"boolean"` ができます。。</span><span class="sxs-lookup"><span data-stu-id="9a754-137">The `type` child property can `"string"`, `"number"`, or `"boolean"`.</span></span> <span data-ttu-id="9a754-138">`dimensionality` プロパティは `scalar` または `matrix` （指定された`type` の値の2次元配列）とすることができます。</span><span class="sxs-lookup"><span data-stu-id="9a754-138">The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.)</span></span>
-- <span data-ttu-id="9a754-139">`parameters` 配列は、 関数に渡される各パラメーターのデータの種類を *順番に* 指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-139">The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function.</span></span> <span data-ttu-id="9a754-140">`name` と `description` 子のプロパティは Excel intellisense で使用されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-140">The `name` and `description` child properties are used in the Excel intellisense.</span></span> <span data-ttu-id="9a754-141">`type` と `dimensionality` 子のプロパティは上記で説明した `result` プロパティの子プロパティと同じです。</span><span class="sxs-lookup"><span data-stu-id="9a754-141">The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.</span></span>
-- <span data-ttu-id="9a754-142">`options` プロパティを使用すると、Excel がいつどのようにして関数を実行するかについてのいくつかの側面をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="9a754-142">The `options` property enables you to customize some aspects of how and when Excel executes the function.</span></span> <span data-ttu-id="9a754-143">これらのオプションについての詳細がこの記事の後半にあります。</span><span class="sxs-lookup"><span data-stu-id="9a754-143">There is more information about these options later in this article.</span></span>
+<span data-ttu-id="cd57a-112">[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office) を使用して Excel カスタム関数アドイン プロジェクトを作成する場合は、ジェネレーターが作成するプロジェクトに以下のようなファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-112">If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll see the following files in the project that the generator creates:</span></span>
 
- ```js
+| <span data-ttu-id="cd57a-113">ファイル</span><span class="sxs-lookup"><span data-stu-id="cd57a-113">File</span></span> | <span data-ttu-id="cd57a-114">ファイル形式</span><span class="sxs-lookup"><span data-stu-id="cd57a-114">File format</span></span> | <span data-ttu-id="cd57a-115">説明</span><span class="sxs-lookup"><span data-stu-id="cd57a-115">Description</span></span> |
+|------|-------------|-------------|
+| <span data-ttu-id="cd57a-116">**./src/customfunctions.js**</span><span class="sxs-lookup"><span data-stu-id="cd57a-116">**./src/customfunctions.js**</span></span><br/><span data-ttu-id="cd57a-117">または</span><span class="sxs-lookup"><span data-stu-id="cd57a-117">or</span></span><br/><span data-ttu-id="cd57a-118">**./src/customfunctions.ts**</span><span class="sxs-lookup"><span data-stu-id="cd57a-118">**./src/customfunctions.ts**</span></span> | <span data-ttu-id="cd57a-119">JavaScript</span><span class="sxs-lookup"><span data-stu-id="cd57a-119">JavaScript</span></span><br/><span data-ttu-id="cd57a-120">または</span><span class="sxs-lookup"><span data-stu-id="cd57a-120">or</span></span><br/><span data-ttu-id="cd57a-121">TypeScript</span><span class="sxs-lookup"><span data-stu-id="cd57a-121">TypeScript</span></span> | <span data-ttu-id="cd57a-122">カスタム関数を定義するコードを含みます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-122">Contains the code that defines custom functions.</span></span> |
+| <span data-ttu-id="cd57a-123">**./config/customfunctions.json**</span><span class="sxs-lookup"><span data-stu-id="cd57a-123">**./config/customfunctions.json**</span></span> | <span data-ttu-id="cd57a-124">JSON</span><span class="sxs-lookup"><span data-stu-id="cd57a-124">JSON</span></span> | <span data-ttu-id="cd57a-125">カスタム関数を定義し、Excel に関数を登録してエンドユーザーが使用できるようにするためのメタデータを含みます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-125">Contains metadata that describes custom functions and enables Excel to register the custom functions in order to make them available to end-users.</span></span> |
+| <span data-ttu-id="cd57a-126">**./index.html**</span><span class="sxs-lookup"><span data-stu-id="cd57a-126">**./index.html**</span></span> | <span data-ttu-id="cd57a-127">HTML</span><span class="sxs-lookup"><span data-stu-id="cd57a-127">HTML</span></span> | <span data-ttu-id="cd57a-128">カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-128">Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions.</span></span> |
+| <span data-ttu-id="cd57a-129">**./manifest.xml**</span><span class="sxs-lookup"><span data-stu-id="cd57a-129">**Manifest.xml**</span></span> | <span data-ttu-id="cd57a-130">XML</span><span class="sxs-lookup"><span data-stu-id="cd57a-130">XML</span></span> | <span data-ttu-id="cd57a-131">アドイン内のすべてのカスタム関数の名前空間と、この表で前述した JavaScript、JSON、HTML ファイルの位置を指定します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-131">Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table.</span></span> |
+
+<span data-ttu-id="cd57a-132">次のセクションでは、これらのファイルに関する詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-132">The following sections provide more details about these settings.</span></span>
+
+### <a name="script-file"></a><span data-ttu-id="cd57a-133">スクリプト ファイル</span><span class="sxs-lookup"><span data-stu-id="cd57a-133">Script file</span></span> 
+
+<span data-ttu-id="cd57a-134">スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **./src/customfunctions.ts**) には、カスタム関数を定義して、カスタム関数の名前を [JSON メタデータ ファイル](#json-metadata-file)のオブジェクトにマップするコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="cd57a-134">The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file).</span></span> 
+
+<span data-ttu-id="cd57a-p103">例えば、次のコードでカスタム関数 `add` と `increment` を定義し、両方の関数のマッピング情報を指定します。 `add` 関数は、JSON メタデータ ファイル内のオブジェクトにマップされ、 この場所に`id` プロパティの値が**追加**されます。`increment` 関数は、メタデータ ファイル内のオブジェクトにマップされ、この場所に`id` プロパティの値が**インクリメント**します。JSON メタデータ ファイル内のオブジェクトへのスクリプト ファイル内関数名のマッピングの詳細については、 「 [カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) 」 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p103">For example, the following code defines the custom functions `add` and `increment` and then specifies mapping information for both functions. The `add` function is mapped to the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is mapped to the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about mapping function names in the script file to objects in the JSON metadata file.</span></span>
+
+```js
+function add(first, second){
+  return first + second;
+}
+
+function increment(incrementBy, callback) {
+  var result = 0;
+  var timer = setInterval(function() {
+    result += incrementBy;
+    callback.setResult(result);
+  }, 1000);
+
+  callback.onCanceled = function() {
+    clearInterval(timer);
+  };
+}
+
+// map `id` values in the JSON metadata file to the JavaScript function names
+CustomFunctionMappings.ADD = add;
+CustomFunctionMappings.INCREMENT = increment;
+```
+
+### <a name="json-metadata-file"></a><span data-ttu-id="cd57a-138">JSON メタデータ ファイル</span><span class="sxs-lookup"><span data-stu-id="cd57a-138">JSON metadata file</span></span> 
+
+<span data-ttu-id="cd57a-p104">カスタム関数のメタデータ ファイル (Yo Office ジェネレーターが作成するプロジェクトでは **./config/customfunctions.json** ) は、Excel がカスタム関数の登録を要求し、エンドユーザーが利用できるよう、情報を提供します。カスタム関数は、ユーザーがアドインを初めて実行するときに登録されます。その後は、同じユーザーに対しては、（アドインが最初に実行されたブック内のみでなく）すべてのブック内で利用が可能になります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p104">The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)</span></span>
+
+> [!TIP]
+> <span data-ttu-id="cd57a-142">JSON ファイルをホストするサーバーは、カスタム関数が Excel Online で正しく作動するために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)  を有効に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-142">Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.</span></span>
+
+<span data-ttu-id="cd57a-p105">**Customfunctions.json** の次のコードは、上述の `add` 関数および `increment` 関数のメタデータを指定します。このコード サンプルを基にした表は、この JSON オブジェクト内の個別のプロパティについての詳細情報を提供します。JSON メタデータ ファイル内の `id` および `name` プロパティの指定に関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p105">The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.</span></span>
+
+```json
 {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "functions": [
+    {
+      "id": "ADD",
+      "name": "ADD",
+      "description": "Add two numbers",
+      "helpUrl": "http://www.contoso.com",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
         {
-            "name": "ADD42", 
-            "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "number 1",
-                    "description": "the first number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                },
-                {
-                    "name": "number 2",
-                    "description": "the second number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ],
-            "options": {
-                "sync": true
-            }
+          "name": "first",
+          "description": "first number to add",
+          "type": "number",
+          "dimensionality": "scalar"
+        },
+        {
+          "name": "second",
+          "description": "second number to add",
+          "type": "number",
+          "dimensionality": "scalar"
         }
-    ]
+      ]
+    },
+    {
+      "id": "INCREMENT",
+      "name": "INCREMENT",
+      "description": "Periodically increment a value",
+      "helpUrl": "http://www.contoso.com",
+      "result": {
+          "type": "number",
+          "dimensionality": "scalar"
+    },
+    "parameters": [
+        {
+            "name": "increment",
+            "description": "Amount to increment",
+            "type": "number",
+            "dimensionality": "scalar"
+        }
+    ],
+    "options": {
+        "cancelable": true,
+        "stream": true
+      }
+    }
+  ]
 }
 ```
 
-> [!NOTE]
-> <span data-ttu-id="9a754-144">カスタム関数は、ユーザーが最初にアドインを実行したときに登録されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-144">The custom functions are registered when a user runs the add-in for the first time.</span></span> <span data-ttu-id="9a754-145">その後、同じユーザーに対して、すべてのブック（アドインが最初に実行されたものだけでなく）で関数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-145">After that, they are available, for that same user, in all workbooks (not only the one where the add-in ran initially.)</span></span>
+<span data-ttu-id="cd57a-p106">次の表は、通常、JSON メタデータ ファイルに格納されているプロパティの一覧表示です。JSON メタデータ ファイルの詳細については、[カスタム関数のメタデータ](custom-functions-json.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p106">The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, see [Custom functions metadata](custom-functions-json.md).</span></span>
 
-<span data-ttu-id="9a754-146">JSON ファイルのサーバー設定では、カスタム関数が Excel Online で正しく作動するために [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) が有効になっていなければなりません。</span><span class="sxs-lookup"><span data-stu-id="9a754-146">Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.</span></span>
+| <span data-ttu-id="cd57a-148">プロパティ</span><span class="sxs-lookup"><span data-stu-id="cd57a-148">Property</span></span>  | <span data-ttu-id="cd57a-149">説明</span><span class="sxs-lookup"><span data-stu-id="cd57a-149">Description</span></span> |
+|---------|---------|
+| `id` | <span data-ttu-id="cd57a-p107">関数のユニーク ID です。設定後、この ID は変更できません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p107">A unique ID for the function. This ID should not be changed after it is set.</span></span> |
+| `name` | <span data-ttu-id="cd57a-p108">Excel でエンドユーザーに表示される関数の名前です。Excel では、この関数名の前に、[XML マニフェスト ファイル](#manifest-file)で指定されているカスタム関数の名前空間が接頭辞として付されます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p108">Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file).</span></span> |
+| `helpUrl` | <span data-ttu-id="cd57a-154">ユーザーがヘルプを要求したときに表示されるページの URL です。</span><span class="sxs-lookup"><span data-stu-id="cd57a-154">Url for a page that is shown when a user requests help.</span></span> |
+| `description` | <span data-ttu-id="cd57a-p109">関数について説明します。この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p109">Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel.</span></span> |
+| `result`  | <span data-ttu-id="cd57a-p110">関数によって返される情報の種類を定義するオブジェクト。`type` 子プロパティの値は、 **文字列**、 **数値**、または **ブール値**を使用できます。子プロパティの値は、 `dimensionality` **スカラー** または **マトリックス** を使用できます (指定された `type`の値の 2 次元配列)。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p110">Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`).</span></span> |
+| `parameters` | <span data-ttu-id="cd57a-p111">関数の入力パラメーターを定義する配列。 `name` と `description` Excel の intelliSense の子のプロパティが表示されます。 `type` 子プロパティの値には、 **文字列**、 **数値**、または **ブール値**を使用できます。`dimensionality` 子プロパティの値には、**スカラー** または **マトリックス** を使用できます (指定された `type`の値の 2 次元配列)。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p111">Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`).</span></span> |
+| `options` | <span data-ttu-id="cd57a-p112">Excel で関数を実行する方法とタイミングのいくつかの側面をカスタマイズできます。このプロパティの使用方法の詳細については、この記事で後述する 「[ストリーム関数](#streaming-functions)」と「[関数のキャンセル](#canceling-a-function)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p112">Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streaming-functions) and [Canceling a function](#canceling-a-function) later in this article.</span></span> |
 
+### <a name="manifest-file"></a><span data-ttu-id="cd57a-166">マニフェスト ファイル</span><span class="sxs-lookup"><span data-stu-id="cd57a-166">Manifest file</span></span>
 
-### <a name="manifest-file-customfunctionsxml"></a><span data-ttu-id="9a754-147">マニフェスト ファイル（customfunctions.xml）</span><span class="sxs-lookup"><span data-stu-id="9a754-147">Manifest file (customfunctions.xml)</span></span>
-
-
-<span data-ttu-id="9a754-148">以下は、作成した関数を Excel が実行できるようにアドインのマニフェストに組み込んだ `<ExtensionPoint>` および `<Resources>` マークアップの例です。</span><span class="sxs-lookup"><span data-stu-id="9a754-148">The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions.</span></span> <span data-ttu-id="9a754-149">このマークアップについて、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-149">Note the following facts about this markup:</span></span>
-
-- <span data-ttu-id="9a754-150">`<Script>` 要素とそれに対応するリソース ID は、関数で JavaScript ファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-150">The `<Script>` element and its corresponding resource ID specifies the location of the JavaScript file with your functions.</span></span>
-- <span data-ttu-id="9a754-151">`<Page>` 要素とそれに対応するリソース ID は、アドインの HTML ページの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-151">The `<Page>` element and its corresponding resource ID specifies the location of the HTML page of your add-in.</span></span> <span data-ttu-id="9a754-152">HTML ページには、JavaScript ファイル（customfunctions.js）を読み込む `<Script>` タグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a754-152">The HTML page includes a `<Script>` tag that loads the JavaScript file (customfunctions.js).</span></span> <span data-ttu-id="9a754-153">HTML ページは非表示のページであり、UI に表示されることはありません。</span><span class="sxs-lookup"><span data-stu-id="9a754-153">The HTML page is a hidden page and is never displayed in the UI.</span></span>
-- <span data-ttu-id="9a754-154">`<Metadata>` 要素とそれに対応するリソース ID は、JSON ファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-154">The `<Metadata>` element and its corresponding resource ID specifies the location of the JSON file.</span></span>
-- <span data-ttu-id="9a754-155">`<Namespace>` 要素および対応するリソース ID は、アドインのすべてのカスタム関数のプレフィックスを指定します。</span><span class="sxs-lookup"><span data-stu-id="9a754-155">A `<Namespace>` element and its corresponding resource ID specifies the prefix for all custom functions in the add-in.</span></span>
-
+<span data-ttu-id="cd57a-p113">カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml** ) を定義するアドインの XML マニフェスト ファイルは、アドインとJavaScript、JSON、および HTML のロケーション内のすべてのカスタム関数の名前空間を指定します。次の XML マークアップでは、 `<ExtensionPoint>` と `<Resources>` カスタム関数を有効にするアドインのマニフェストに含める必要がある要素の一例を示します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p113">The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions.</span></span>  
 
 ```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
         <Host xsi:type="Workbook">
             <AllFormFactors>
                 <ExtensionPoint xsi:type="CustomFunctions">
                     <Script>
-                        <SourceLocation resid="residjs" />
+                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
                     </Script>
                     <Page>
-                        <SourceLocation resid="residhtml"/>
+                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
                     </Page>
                     <Metadata>
-                        <SourceLocation resid="residjson" />
+                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
                     </Metadata>
-                    <Namespace resid="residNS" />
+                    <Namespace resid="namespace" />
                 </ExtensionPoint>
             </AllFormFactors>
         </Host>
     </Hosts>
     <Resources>
         <bt:Urls>
-            <bt:Url id="residjson" DefaultValue="http://127.0.0.1:8080/customfunctions.json" />
-            <bt:Url id="residjs" DefaultValue="http://127.0.0.1:8080/customfunctions.js" />
-            <bt:Url id="residhtml" DefaultValue="http://127.0.0.1:8080/customfunctions.html" />
+            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
+            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
+            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="residNS" DefaultValue="CONTOSO" />
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. -->
         </bt:ShortStrings>
     </Resources>
 </VersionOverrides>
-
 ```
 
-## <a name="initializing-custom-functions"></a><span data-ttu-id="9a754-156">カスタム関数の初期化</span><span class="sxs-lookup"><span data-stu-id="9a754-156">Initializing custom functions</span></span>
+> [!NOTE]
+> <span data-ttu-id="cd57a-p114">Excel の関数には、XML マニフェスト ファイルで指定された名前空間が接頭辞として付加されます。関数の名前空間は、関数名の前に付けられ、ピリオドで区切られます。例えば、Excel ワークシートのセル内で、関数を呼び出すためには `ADD42` 、 `=CONTOSO.ADD42`を入力します。これは、CONTOSO が、名前空間であり、 `ADD42` JSON ファイルで指定された関数の名前であるためです。名前空間は、会社またはアドインの識別子としての使用を目的としています。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p114">Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in.</span></span> 
 
-<span data-ttu-id="9a754-157">コードは、使用する前にカスタム関数の機能を初期化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a754-157">Your code must initialize the custom functions feature before using it.</span></span> <span data-ttu-id="9a754-158">初期化は、HTML ファイル （customfunctions.html）の &lt;Script&gt; タグ、または JavaScript ファイル（customfuntions.js）のトップで実行できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-158">You can do this either in a &lt;Script&gt; tag in the HTML file (customfunctions.html) or at the top of the JavaScript file (customfunctions.js).</span></span> <span data-ttu-id="9a754-159">カスタム関数のプレビュー中に、初期化のための 2 つの構文を選択できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-159">During the preview of custom functions, you have your choice of two syntaxes for intializing.</span></span> <span data-ttu-id="9a754-160">リポジトリ内の HTML ファイルは、次の構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="9a754-160">The HTML file in the repo uses the following syntax:</span></span>
+## <a name="functions-that-return-data-from-external-sources"></a><span data-ttu-id="cd57a-173">外部ソースからデータを返す関数</span><span class="sxs-lookup"><span data-stu-id="cd57a-173">Functions that return data from external sources</span></span>
 
-```js
-Office.initialize = function (reason) {
-    return Excel.CustomFunctions.initialize();
-};
-```
+<span data-ttu-id="cd57a-174">カスタム関数が外部ソースからデータを取得する場合には、以下のことを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-174">If a custom function retrieves data from an external source such as the web, it must:</span></span>
 
-<span data-ttu-id="9a754-161">次の構文も使用できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-161">You can also use the following syntax:</span></span>
+1. <span data-ttu-id="cd57a-175">JavaScript Promise を Excel に返す。</span><span class="sxs-lookup"><span data-stu-id="cd57a-175">Return a JavaScript Promise to Excel.</span></span>
 
-```js
-Office.Preview.StartCustomFunctions();
-```
+2. <span data-ttu-id="cd57a-176">コールバック関数を使用して Promise を最終値で解決する。</span><span class="sxs-lookup"><span data-stu-id="cd57a-176">Resolve the Promise with the final value using the callback function.</span></span>
 
-## <a name="synchronous-and-asynchronous-functions"></a><span data-ttu-id="9a754-162">同期関数と非同期関数</span><span class="sxs-lookup"><span data-stu-id="9a754-162">Synchronous and asynchronous processing</span></span>
+<span data-ttu-id="cd57a-p115">カスタム関数は、 Excel が `#GETTING_DATA` セルの最終結果を待っている間、一時的な結果を表示します。ユーザーは、結果待機中も通常はワークシートの残りの部分を操作することができます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p115">Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the worksheet while they wait for the result.</span></span>
 
-<span data-ttu-id="9a754-163">上記の `ADD42` 関数は Excel （JSON ファイルのオプション `"sync": true` を使用して指定したもの ）と同期しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-163">The function `ADD42` above is synchronous with respect to Excel (designated by setting the option `"sync": true` in the JSON file).</span></span> <span data-ttu-id="9a754-164">同期関数は、Excel と同じプロセスで実行され、マルチスレッド計算中に並行して実行されるため、高速なパフォーマンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="9a754-164">Synchronous functions offer fast performance because they run in the same process as Excel and they run in parallel during multithreaded calculation.</span></span>   
-
-<span data-ttu-id="9a754-165">一方、カスタム関数が Web からデータを取得する場合は、Excel と非同期でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="9a754-165">On the other hand, if your custom function retrieves data from the web, it must be asynchronous with respect to Excel.</span></span> <span data-ttu-id="9a754-166">非同期関数は以下を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a754-166">Asynchronous functions must:</span></span>
-
-1. <span data-ttu-id="9a754-167">JavaScript Promise を Excel に返します。</span><span class="sxs-lookup"><span data-stu-id="9a754-167">Return a JavaScript Promise to Excel.</span></span>
-3. <span data-ttu-id="9a754-168">コールバック関数を使用して Promise を最終値で解決します。</span><span class="sxs-lookup"><span data-stu-id="9a754-168">Resolve the Promise with the final value using the callback function.</span></span>
-
-<span data-ttu-id="9a754-169">次のコードは、温度計の温度を取得する非同期カスタム関数の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-169">The following code shows an example of a custom function that retrieves the temperature of a thermometer.</span></span> <span data-ttu-id="9a754-170">`sendWebRequest` は、XHR を使用して温度 Web サービスを呼び出す、ここでは指定されていない仮想関数であることにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="9a754-170">Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.</span></span>
+<span data-ttu-id="cd57a-p116">次のコード例は、 温度計の現在温度を取得する `getTemperature()` カスタム関数です。 `sendWebRequest` は、温度 web サービスを呼び出す [XHR](custom-functions-runtime.md#xhr-example) を使用した仮想関数 (ここでは指定なし) であることに留意してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p116">In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses [XHR](custom-functions-runtime.md#xhr-example) to call a temperature web service.</span></span>
 
 ```js
 function getTemperature(thermometerID){
-    return new OfficeExtension.Promise(function(setResult){
+    return new Promise(function(setResult){
         sendWebRequest(thermometerID, function(data){
             setResult(data.temperature);
         });
@@ -170,134 +208,182 @@ function getTemperature(thermometerID){
 }
 ```
 
-<span data-ttu-id="9a754-171">非同期関数は、 Excelが最終結果を待つ間、セルに `GETTING_DATA` 一時的エラーを表示します。</span><span class="sxs-lookup"><span data-stu-id="9a754-171">Asynchronous functions display a `GETTING_DATA` temporary error in the cell while Excel waits for the final result.</span></span> <span data-ttu-id="9a754-172">ユーザーは、結果を待つ間、スプレッドシートの他の部分と通常通りやりとりすることができます。</span><span class="sxs-lookup"><span data-stu-id="9a754-172">Users can interact normally with the rest of the spreadsheet while they wait for the result.</span></span>
+## <a name="streaming-functions"></a><span data-ttu-id="cd57a-181">ストリーミング関数</span><span class="sxs-lookup"><span data-stu-id="cd57a-181">Streaming functions</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="9a754-173">カスタム関数は既定では非同期です。</span><span class="sxs-lookup"><span data-stu-id="9a754-173">Custom functions are asynchronous by default.</span></span> <span data-ttu-id="9a754-174">同期として関数を指定するには、登録 JSON ファイル内のカスタム関数の `"sync": true`プロパティでオプション `options`を設定してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-174">To designate functions as synchronous set the option `"sync": true` in the `options` property for the custom function in the registration JSON file.</span></span>
+<span data-ttu-id="cd57a-p117">ストリーミングのカスタム関数を使用すると、データ更新を明確に要求するユーザーを必要とせず、時間の経過と共に繰り返しセルにデータを出力します。次のコード サンプルは、1 秒ごとの結果の数値を追加するカスタム関数です。このコードについては、以下のことに留意してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p117">Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:</span></span>
 
-## <a name="streamed-functions"></a><span data-ttu-id="9a754-175">ストリーム関数</span><span class="sxs-lookup"><span data-stu-id="9a754-175">Streamed functions</span></span>
+- <span data-ttu-id="cd57a-185">Excel は、`setResult`コールバックを使用して自動的に新しい値を表示します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-185">Excel displays each new value automatically using the `setResult` callback.</span></span>
 
-<span data-ttu-id="9a754-176">非同期関数をストリーミングできます。</span><span class="sxs-lookup"><span data-stu-id="9a754-176">An asynchronous function can be streamed.</span></span> <span data-ttu-id="9a754-177">カスタムのストリーム関数を使用すると、Excel やユーザーが再計算を要求するのを待たずに、時間の経過に従ってセルに繰り返しデータを出力できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-177">Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations.</span></span> <span data-ttu-id="9a754-178">次の例は、1 秒おきに結果に数値を追加するカスタム関数です。</span><span class="sxs-lookup"><span data-stu-id="9a754-178">The following example is a custom function that adds a number to the result every second.</span></span> <span data-ttu-id="9a754-179">このコードについては、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-179">Note the following about this code:</span></span>
+- <span data-ttu-id="cd57a-186">[オートコンプリート] メニューから関数を選択する場合、2 番目の入力パラメータ `handler` は、Excel のエンドユーザーに表示されません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-186">The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.</span></span>
 
-- <span data-ttu-id="9a754-180">Excel は、`setResult`コールバックを使用して自動的に新しい値を表示します。</span><span class="sxs-lookup"><span data-stu-id="9a754-180">Excel displays each new value automatically using the `setResult` callback.</span></span>
-- <span data-ttu-id="9a754-181">最終的なパラメータ `caller` は登録コードでは指定されず、Excel ユーザーが関数を入力するときにオートコンプリート メニューに表示されません。</span><span class="sxs-lookup"><span data-stu-id="9a754-181">For streamed functions, the final parameter, `caller`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function.</span></span> <span data-ttu-id="9a754-182">これは、関数のデータを Excel に渡してセルの値を更新するために使用される `setResult` コールバック関数を含むオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="9a754-182">It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.</span></span>
-- <span data-ttu-id="9a754-183">Excel が `setResult`オブジェクト内の `caller`関数を渡すには、関数登録の際に、登録 JSON ファイル内のカスタム関数の `"stream": true`プロパティでオプション `options`を設定して、ストリーミングのサポートを宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a754-183">In order for Excel to pass the `setResult` function in the `caller` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the registration JSON file.</span></span>
+- <span data-ttu-id="cd57a-p118">`onCanceled` コールバックは、関数がキャンセルされたときに実行される関数を定義します。どのストリーミング関数に対してもキャンセル ハンドラーを実装する必要があります。詳細については、 「[関数のキャンセル](#canceling-a-function)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p118">The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streamed function. For more information, see [Canceling a function](#canceling-a-function).</span></span>
 
 ```js
-function incrementValue(increment, caller){
-    var result = 0;
-    setInterval(function(){
-         result += increment;
-         caller.setResult(result);
-    }, 1000);
+function incrementValue(increment, handler){
+  var result = 0;
+  setInterval(function(){
+    result += increment;
+    handler.setResult(result);
+  }, 1000);
+
+  handler.onCanceled = function(){
+    clearInterval(timer);
+  }
 }
 ```
 
-## <a name="cancellation"></a><span data-ttu-id="9a754-184">キャンセル</span><span class="sxs-lookup"><span data-stu-id="9a754-184">Cancellation</span></span>
+<span data-ttu-id="cd57a-190">JSON メタデータ ファイルでストリーミング関数にメタデータを指定する場合には、以下の例のように、プロパティ`"cancelable": true` および `options` オブジェクト内の `"stream": true` を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-190">When you specify metadata for a streamed function in the JSON metadata file, you must set the properties `"cancelable": true` and `"stream": true` within the `options` object, as shown in the following example.</span></span>
 
-<span data-ttu-id="9a754-185">ストリーム関数と非同期関数をキャンセルできます。</span><span class="sxs-lookup"><span data-stu-id="9a754-185">You can cancel streamed functions and asynchronous functions.</span></span> <span data-ttu-id="9a754-186">関数呼び出しのキャンセルは、帯域幅の使用量、作業メモリ、および CPU の負荷を減らすために重要です。</span><span class="sxs-lookup"><span data-stu-id="9a754-186">Canceling your function calls is important to reduce their bandwith consumption, working memory, and CPU load.</span></span> <span data-ttu-id="9a754-187">Excel では、次のような状況で関数の呼び出しをキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="9a754-187">Excel cancels function calls in the following situations:</span></span>
-
-- <span data-ttu-id="9a754-188">ユーザーが関数を参照するセルを編集または削除する。</span><span class="sxs-lookup"><span data-stu-id="9a754-188">The user edits or deletes a cell that references the function.</span></span>
-- <span data-ttu-id="9a754-189">関数の引数 (入力) の 1 つが変更される。</span><span class="sxs-lookup"><span data-stu-id="9a754-189">One of the arguments (inputs) for the function changes.</span></span> <span data-ttu-id="9a754-190">この場合、キャンセルに加えて新しい関数の呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="9a754-190">In this case, a new function call is triggered in addition to the cancelation.</span></span>
-- <span data-ttu-id="9a754-p124">ユーザーは手動で再計算をトリガーします。上記の場合と同様に、キャンセルに加えて新しい関数の呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="9a754-p124">The user triggers recalculation manually. As with the above case, a new function call is triggered in addition to the cancelation.</span></span>
-
-<span data-ttu-id="9a754-193">すべてのストリーミング関数に対してキャンセル ハンドラを実装することが *必須* です。</span><span class="sxs-lookup"><span data-stu-id="9a754-193">You *must* implement a cancellation handler for every streaming function.</span></span> <span data-ttu-id="9a754-194">非同期の非ストリーミング関数は、キャンセル可能にもキャンセル不可にもでき、ご自分で決定できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-194">Asynchronous, non-streaming functions may or may not be cancelable; it's up to you.</span></span> <span data-ttu-id="9a754-195">同期機能はキャンセルすることはできません。</span><span class="sxs-lookup"><span data-stu-id="9a754-195">Synchronous functions cannot be canceled.</span></span>
-
-<span data-ttu-id="9a754-196">関数をキャンセル可能にするには、登録 JSON ファイル内のカスタム関数の `"cancelable": true`プロパティでオプション `options`を設定してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-196">To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the registration JSON file.</span></span>
-
-<span data-ttu-id="9a754-197">次のコードでは、前述の例にキャンセルを実装しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-197">The following code shows the previous example with cancellation implemented.</span></span> <span data-ttu-id="9a754-198">コードでは、`caller` オブジェクトに `onCanceled` 関数が含まれており、キャンセル可能な各カスタム関数ごとに定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a754-198">In the code, the `caller` object contains an `onCanceled` function which should be defined for each custom function.</span></span>
-
-```js
-function incrementValue(increment, caller){ 
-    var result = 0;
-    var timer = setInterval(function(){
-         result += increment;
-         caller.setResult(result);
-    }, 1000);
-
-    caller.onCanceled = function(){
-        clearInterval(timer);
+```json
+{
+  "id": "INCREMENT",
+  "name": "INCREMENT",
+  "description": "Periodically increment a value",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+    "type": "number",
+    "dimensionality": "scalar"
+  },
+  "parameters": [
+    {
+      "name": "increment",
+      "description": "Amount to increment",
+      "type": "number",
+      "dimensionality": "scalar"
     }
+  ],
+  "options": {
+    "cancelable": true,
+    "stream": true
+  }
 }
 ```
 
-## <a name="saving-and-sharing-state"></a><span data-ttu-id="9a754-199">状態の保存と共有</span><span class="sxs-lookup"><span data-stu-id="9a754-199">Saving and sharing state</span></span>
+## <a name="canceling-a-function"></a><span data-ttu-id="cd57a-191">関数のキャンセル
+</span><span class="sxs-lookup"><span data-stu-id="cd57a-191">Canceling a function</span></span>
 
-<span data-ttu-id="9a754-200">非同期カスタム関数では、JavaScript のグローバル変数にデータを保存できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-200">Custom functions can save data in global JavaScript variables.</span></span> <span data-ttu-id="9a754-201">後続の呼び出しでは、カスタム関数はこれらの変数に保存されている値を使用できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-201">In subsequent calls, your custom function may use the values saved in these variables.</span></span> <span data-ttu-id="9a754-202">保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を追加する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="9a754-202">Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state.</span></span> <span data-ttu-id="9a754-203">たとえば、同じ Web リソースへの追加呼び出しを避けるために、呼び出しから返されたデータを Web リソースに保存することができます。</span><span class="sxs-lookup"><span data-stu-id="9a754-203">For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.</span></span>
+<span data-ttu-id="cd57a-p119">状況によっては、帯域幅の消費、作業メモリ、および CPU への負荷を縮小するために、ストリーミング カスタム関数の実行をキャンセルする必要が生じます。Excel では、次のような場合、関数の実行をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p119">In some situations, you may need to cancel the execution of a streamed custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:</span></span>
 
-<span data-ttu-id="9a754-204">次のコードは、 状態をグローバルで保存する前述の温度ストリーミング関数の実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-204">The following code shows an implementation of the previous temperature-streaming function that saves state using the  variable.</span></span> <span data-ttu-id="9a754-205">このコードについては、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-205">Note the following about this code:</span></span>
+- <span data-ttu-id="cd57a-194">ユーザーが、関数への参照があるセルを編集または削除した場合。</span><span class="sxs-lookup"><span data-stu-id="cd57a-194">The user edits or deletes a cell that references the function.</span></span>
 
-- <span data-ttu-id="9a754-206">`refreshTemperature` は、1 秒おきに特定の温度計の温度を読み取るストリーム関数です。</span><span class="sxs-lookup"><span data-stu-id="9a754-206">`refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second.</span></span> <span data-ttu-id="9a754-207">新しい温度は `savedTemperatures` 変数に保存されますが、セルの値を直接更新することはありません。</span><span class="sxs-lookup"><span data-stu-id="9a754-207">New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value.</span></span> <span data-ttu-id="9a754-208">ワークシート・セルから直接呼び出されません。\*したがって、JSON ファイルには登録されません \*</span><span class="sxs-lookup"><span data-stu-id="9a754-208">It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.</span></span>
-- <span data-ttu-id="9a754-209">`streamTemperature` 1 秒おきにセルに表示される温度値を更新します。また、 `savedTemperatures` 変数をデータソースとして使用します。</span><span class="sxs-lookup"><span data-stu-id="9a754-209">`streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source.</span></span> <span data-ttu-id="9a754-210">JSON ファイルに登録し、すべて大文字で `STREAMTEMPERATURE` という名前をつける必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a754-210">It must be registered in the JSON file, and named with all upper-case letters, `STREAMTEMPERATURE`.</span></span>
-- <span data-ttu-id="9a754-211">ユーザーは、Excel UI の複数のセルから `streamTemperature` を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="9a754-211">Users may call `streamTemperature` from several cells in the Excel UI.</span></span> <span data-ttu-id="9a754-212">呼び出すたびに、同じ `savedTemperatures` 変数からデータを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9a754-212">Each call reads data from the same `savedTemperatures` variable.</span></span>
+- <span data-ttu-id="cd57a-p120">関数の引数 (入力) のいずれかが変更されたとき。この例では、キャンセルに続いて新しい関数呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p120">When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.</span></span>
+
+- <span data-ttu-id="cd57a-p121">ユーザーが手動で再計算をトリガーしたとき。この例では、キャンセルに続いて新しい関数呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p121">When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.</span></span>
+
+<span data-ttu-id="cd57a-p122">関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装し、関数を定義する JSON のメタデータの`options` オブジェクト内のプロパティ `"cancelable": true` を指定する必要があります。この記事の前のセクションのコード サンプルに、これらの手法の例が示されています。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p122">To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.</span></span>
+
+## <a name="saving-and-sharing-state"></a><span data-ttu-id="cd57a-201">状態の保存と共有</span><span class="sxs-lookup"><span data-stu-id="cd57a-201">Saving and sharing state</span></span>
+
+<span data-ttu-id="cd57a-p123">カスタム関数は、以降の呼び出しで使用できるJavaScript のグローバル変数にデータを保存できます。保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を呼び出す場合に便利です。例えば、同一の Web リソースへの追加呼び出しを避けるため、Web リソースへの呼び出しから返されたデータを保存することができます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p123">Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.</span></span>
+
+<span data-ttu-id="cd57a-205">以下のコード サンプルは、 状態をグローバルで保存する温度ストリーミング関数の実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="cd57a-205">The following code shows an implementation of the previous temperature-streaming function that saves state using the  variable.</span></span> <span data-ttu-id="cd57a-206">このコードについては、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-206">Note the following about this code:</span></span>
+
+- <span data-ttu-id="cd57a-207">`streamTemperature` 関数が 毎秒セルに表示される温度の値を更新し、 `savedTemperatures` 変数をデータ ソースとして使用します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-207">`streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source.</span></span>
+
+- <span data-ttu-id="cd57a-208">`streamTemperature` は、ストリーム関数であるため、その関数がキャンセルされたときに実行されるキャンセル ハンドラーを実装します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-208">Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.</span></span>
+
+- <span data-ttu-id="cd57a-209">ユーザーが `streamTemperature` 関数を Excel の複数のセルから呼び出す場合、 `streamTemperature` 関数は実行のたびに、同じ `savedTemperatures` 変数からのデータを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-209">If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs.</span></span> 
+
+- <span data-ttu-id="cd57a-210">`refreshTemperature` 関数は、毎秒特定の温度計の温度を読み取り、結果を `savedTemperatures` 変数に格納します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-210">The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable.</span></span> <span data-ttu-id="cd57a-211">`refreshTemperature` 関数は、Excel でのエンド ユーザーには公開されないので、JSON ファイルに登録する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-211">Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.</span></span>
 
 ```js
 var savedTemperatures;
 
-function streamTemperature(thermometerID, caller){ 
-     if(!savedTemperatures[thermometerID]){
-         refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-     }
+function streamTemperature(thermometerID, handler){
+  if(!savedTemperatures[thermometerID]){
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+  }
 
-     function getNextTemperature(){
-         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-         setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
-     }
-     getNextTemperature();
+  function getNextTemperature(){
+    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
+  }
+  getNextTemperature();
 }
 
 function refreshTemperature(thermometerID){
-     sendWebRequest(thermometerID, function(data){
-         savedTemperatures[thermometerID] = data.temperature;
-     });
-     setTimeout(function(){
-         refreshTemperature(thermometerID);
-     }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
+  sendWebRequest(thermometerID, function(data){
+    savedTemperatures[thermometerID] = data.temperature;
+  });
+  setTimeout(function(){
+    refreshTemperature(thermometerID);
+  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
 
-> [!NOTE]
-> <span data-ttu-id="9a754-213">同期関数（JSON ファイル内のオプション `"sync": true` で指定されたもの）は、Excel がマルチスレッド計算中にそれらを並行して行うため、状態を共有できません。</span><span class="sxs-lookup"><span data-stu-id="9a754-213">Synchronous functions (designated by setting the option `"sync": true` in the JSON file) cannot share state because Excel parallelizes them during multithreaded calculation.</span></span> <span data-ttu-id="9a754-214">アドインの同期関数が各セッションで同じ JavaScript コンテキストを共有するため、非同期関数のみが状態を共有できます。</span><span class="sxs-lookup"><span data-stu-id="9a754-214">Only asynchronous functions may share state because an add-in's synchronous functions share the same JavaScript context in each session.</span></span>
+## <a name="working-with-ranges-of-data"></a><span data-ttu-id="cd57a-212">データの範囲の操作</span><span class="sxs-lookup"><span data-stu-id="cd57a-212">Working with ranges of data</span></span>
 
-## <a name="working-with-ranges-of-data"></a><span data-ttu-id="9a754-215">データの範囲を使用する</span><span class="sxs-lookup"><span data-stu-id="9a754-215">Working with ranges of data</span></span>
+<span data-ttu-id="cd57a-213">カスタム関数は、入力パラメーターとしてデータの範囲を受け取ることができます。または、データの範囲を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-213">Your custom function may accept a range of data as an input parameter, or it may return a range of data.</span></span> <span data-ttu-id="cd57a-214">JavaScript では、データの範囲は、2 次元配列として表されます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-214">In JavaScript, a range of data is represented as a 2-dimensional array.</span></span>
 
-<span data-ttu-id="9a754-216">カスタム関数は、データ範囲をパラメーターとして受け取ったり、カスタム関数からデータ範囲を返したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="9a754-216">Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.</span></span>
-
-<span data-ttu-id="9a754-217">たとえば、関数が Excel に格納されている数値の範囲から2番目に高い値を返すとします。</span><span class="sxs-lookup"><span data-stu-id="9a754-217">For example, suppose that your function returns the second highest temperature from a range of temperature values stored in Excel.</span></span> <span data-ttu-id="9a754-218">次の関数は、パラメータ `values` を取ります。これは `Excel.CustomFunctionDimensionality.matrix` パラメータ タイプです。</span><span class="sxs-lookup"><span data-stu-id="9a754-218">The following function takes the parameter `values`, which is an `Excel.CustomFunctionDimensionality.matrix` parameter type.</span></span> <span data-ttu-id="9a754-219">この関数の登録 JSON では、パラメータの `type` プロパティを `matrix` に設定するよう注意してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-219">Note that in the registration JSON for this function, you would set the parameter's `type` property to `matrix`.</span></span>
+<span data-ttu-id="cd57a-215">たとえば、関数が Excel に格納されている数値の範囲から 2 番目に高い値を返すとします。</span><span class="sxs-lookup"><span data-stu-id="cd57a-215">For example, suppose that your function returns the second highest temperature from a range of temperature values stored in Excel.</span></span> <span data-ttu-id="cd57a-216">以下の関数が、タイプ `Excel.CustomFunctionDimensionality.matrix` のものである `values` パラメーターを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-216">The following function takes the parameter `values`, which is an `Excel.CustomFunctionDimensionality.matrix` parameter type.</span></span> <span data-ttu-id="cd57a-217">この関数の JSON メタデータでは、パラメーターの `type` プロパティを `matrix` に設定するように注意してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-217">Note that in the registration JSON for this function, you would set the parameter's `type` property to `matrix`.</span></span>
 
 ```js
-function secondHighest(values){ 
-     var highest = values[0][0], secondHighest = values[0][0];
-     for(var i = 0; i < values.length; i++){
-         for(var j = 1; j < values[i].length; j++){
-             if(values[i][j] >= highest){
-                 secondHighest = highest;
-                 highest = values[i][j];
-             }
-             else if(values[i][j] >= secondHighest){
-                 secondHighest = values[i][j];
-             }
-         }
-     }
-     return secondHighest;
- }
+function secondHighest(values){
+  let highest = values[0][0], secondHighest = values[0][0];
+  for(var i = 0; i < values.length; i++){
+    for(var j = 1; j < values[i].length; j++){
+      if(values[i][j] >= highest){
+        secondHighest = highest;
+        highest = values[i][j];
+      }
+      else if(values[i][j] >= secondHighest){
+        secondHighest = values[i][j];
+      }
+    }
+  }
+  return secondHighest;
+}
 ```
 
-<span data-ttu-id="9a754-220">ご覧のとおり、範囲は JavaScript で行配列の配列（2次元配列など）として処理されます。</span><span class="sxs-lookup"><span data-stu-id="9a754-220">As you can see, ranges are handled in JavaScript as arrays of row arrays (like a 2-dimensional array).</span></span>
+## <a name="handling-errors"></a><span data-ttu-id="cd57a-218">エラーの処理</span><span class="sxs-lookup"><span data-stu-id="cd57a-218">Handling errors</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="9a754-221">既知の問題</span><span class="sxs-lookup"><span data-stu-id="9a754-221">Known issues</span></span>
+<span data-ttu-id="cd57a-p128">カスタム関数を定義するアドインをビルドする場合は、ランタイム エラーを考慮するためのエラー処理 ロジックを含めるようにしてください。カスタム関数のエラー処理は、 [大規模な Excel の JavaScript API のエラー処理](excel-add-ins-error-handling.md)と同じです。次のコード サンプルでは、 `.catch`がコード内で以前に発生したエラーを処理します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-p128">When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.</span></span>
 
-- <span data-ttu-id="9a754-222">ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。</span><span class="sxs-lookup"><span data-stu-id="9a754-222">Help URLs and parameter descriptions are not yet used by Excel.</span></span>
-- <span data-ttu-id="9a754-223">カスタム機能は現在、モバイル クライアント用の Excel では使用できません。</span><span class="sxs-lookup"><span data-stu-id="9a754-223">Custom functions are not currently available on Excel for mobile clients.</span></span>
-- <span data-ttu-id="9a754-224">現在、アドインは、非同期関数カスタム関数を実行するための非表示ブラウザ プロセスに依存しています。</span><span class="sxs-lookup"><span data-stu-id="9a754-224">Currently, add-ins rely on a hidden browser process to run custom functions.</span></span> <span data-ttu-id="9a754-225">カスタム関数をより高速にし、使用メモリを少なくするために、今後 JavaScript はいくつかのプラットフォームで直接実行されるようになります。</span><span class="sxs-lookup"><span data-stu-id="9a754-225">In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory.</span></span> <span data-ttu-id="9a754-226">また、マニフェストの `<Page>` 要素によって参照される HTML ページは、Excel が JavaScript を直接実行するようになれば、ほとんどのプラットフォームで不要になります。</span><span class="sxs-lookup"><span data-stu-id="9a754-226">Additionally, the HTML page referenced by the `<Page>`Page element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly.</span></span> <span data-ttu-id="9a754-227">この変更に備えるため、カスタム関数が Web ページ DOM を使用しないことを徹底してください。</span><span class="sxs-lookup"><span data-stu-id="9a754-227">To prepare for this change, ensure your custom functions do not use the webpage DOM.</span></span> <span data-ttu-id="9a754-228">Web にアクセスするためにサポートされているホスト API は、GET または POST を使用する [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) および [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) になります。</span><span class="sxs-lookup"><span data-stu-id="9a754-228">The supported host APIs for accessing the web will be [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) and [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) using GET or POST.</span></span>
-- <span data-ttu-id="9a754-229">揮発性関数（スプレッドシート内の無関係なデータが変更されたときに自動的に再計算する関数）はまだサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="9a754-229">Volatile functions (those which recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.</span></span>
-- <span data-ttu-id="9a754-230">デバッグは、Excel for Windows の非同期関数に対してのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="9a754-230">Debugging is only enabled for asynchronous functions on Excel for Windows.</span></span>
-- <span data-ttu-id="9a754-231">Office 365 管理ポータルと AppSource による展開はまだ有効になっていません。</span><span class="sxs-lookup"><span data-stu-id="9a754-231">Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.</span></span>
-- <span data-ttu-id="9a754-232">Excel Online のカスタム関数は、一定期間使用しないとセッション中に機能しなくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="9a754-232">Custom functions in Excel Online may stop working during a session after a period of inactivity.</span></span> <span data-ttu-id="9a754-233">ブラウザページを更新（F5）し、カスタム関数を再入力して機能を復元します。</span><span class="sxs-lookup"><span data-stu-id="9a754-233">Refresh the browser page (F5) and re-enter a custom function to restore the feature.</span></span>
+```js
+function getComment(x) {
+  let url = "https://www.contoso.com/comments/" + x;
 
-## <a name="changelog"></a><span data-ttu-id="9a754-234">変更ログ</span><span class="sxs-lookup"><span data-stu-id="9a754-234">Changelog</span></span>
+  return fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then((json) => {
+      return json.body;
+    })
+    .catch(function (error) {
+      throw error;
+    })
+}
+```
 
-- <span data-ttu-id="9a754-235">**2017 年 11 月 7 日**: カスタム関数のプレビューとサンプルを公開</span><span class="sxs-lookup"><span data-stu-id="9a754-235">**Nov 7, 2017**: Shipped the custom functions preview and samples</span></span>
-- <span data-ttu-id="9a754-236">**2017 年 11 月 20 日**: ビルド 8801 以降を使用する場合の互換性バグを修正</span><span class="sxs-lookup"><span data-stu-id="9a754-236">**Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later</span></span>
-- <span data-ttu-id="9a754-237">**2017 年 11 月 28 日**: 非同期関数のキャンセルのサポートを公開 (ストリーミング機能の変更が必要)</span><span class="sxs-lookup"><span data-stu-id="9a754-237">**Nov 28, 2017**: Shipped support for cancellation on asynchronous functions (requires change for streaming functions)</span></span>
-- <span data-ttu-id="9a754-238">**2018 年 5 月 7 日**：Mac、Excel Online、およびインプロセスで実行される同期関数のサポートを公開</span><span class="sxs-lookup"><span data-stu-id="9a754-238">**May 7, 2018**: Shipped support for Mac, Excel Online, and synchronous functions running in-process</span></span>
+## <a name="known-issues"></a><span data-ttu-id="cd57a-222">既知の問題</span><span class="sxs-lookup"><span data-stu-id="cd57a-222">Known issues</span></span>
+
+- <span data-ttu-id="cd57a-223">ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-223">Help URLs and parameter descriptions are not yet used by Excel.</span></span>
+- <span data-ttu-id="cd57a-224">カスタム関数は現在、モバイル クライアント用の Excel では使用できません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-224">Custom functions are not currently available on Excel for mobile clients.</span></span>
+- <span data-ttu-id="cd57a-225">揮発性関数（スプレッドシート内の無関係なデータが変更されたときに自動的に再計算する関数）はまだサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-225">Volatile functions (those which recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.</span></span>
+- <span data-ttu-id="cd57a-226">Office 365 管理ポータルと AppSource による展開はまだ有効になっていません。</span><span class="sxs-lookup"><span data-stu-id="cd57a-226">Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.</span></span>
+- <span data-ttu-id="cd57a-227">Excel Online のカスタム関数は、一定期間使用しないとセッション中に機能しなくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-227">Custom functions in Excel Online may stop working during a session after a period of inactivity.</span></span> <span data-ttu-id="cd57a-228">ブラウザページを更新（F5）し、カスタム関数を再入力して機能を復元します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-228">Refresh the browser page (F5) and re-enter a custom function to restore the feature.</span></span>
+- <span data-ttu-id="cd57a-229">Excel for Windows で実行されている複数のアドインがある場合には、ワークシートのセル内に **#GETTING_DATA** の一時的な結果が表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-229">You may see the **#GETTING_DATA** temporary result within the cell(s) of a worksheet if you have multiple add-ins running on Excel for Windows.</span></span> <span data-ttu-id="cd57a-230">すべての Excel ウィンドウを閉じて、Excel を再起動します。</span><span class="sxs-lookup"><span data-stu-id="cd57a-230">Close all Excel windows and restart Excel.</span></span>
+- <span data-ttu-id="cd57a-231">将来的には、カスタム関数用のデバッグ ツールが利用可能となる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cd57a-231">Debugging tools specifically for custom functions may be available in the future.</span></span> <span data-ttu-id="cd57a-232">それまでは、F12 開発者ツールを使用して Excel オンラインでデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="cd57a-232">In the meantime, you can debug on Excel Online using F12 developer tools.</span></span> <span data-ttu-id="cd57a-233">詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-233">See more details in [Custom functions best practices](custom-functions-best-practices.md).</span></span>
+
+## <a name="changelog"></a><span data-ttu-id="cd57a-234">変更ログ</span><span class="sxs-lookup"><span data-stu-id="cd57a-234">Changelog</span></span>
+
+- <span data-ttu-id="cd57a-235">**2017 年 11 月 7 日**: カスタム関数のプレビューとサンプルを公開\*</span><span class="sxs-lookup"><span data-stu-id="cd57a-235">**Nov 7, 2017**: Shipped the custom functions preview and samples</span></span>
+- <span data-ttu-id="cd57a-236">**2017 年 11 月 20 日**: ビルド 8801 以降を使用しているユーザー向けに互換性バグを修正</span><span class="sxs-lookup"><span data-stu-id="cd57a-236">**Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later</span></span>
+- <span data-ttu-id="cd57a-237">**2017 年 11 月 28 日**: 非同期関数のキャンセルへのサポートを公開\* (ストリーム関数への変更が必要)</span><span class="sxs-lookup"><span data-stu-id="cd57a-237">**Nov 28, 2017**: Shipped support for cancellation on asynchronous functions (requires change for streaming functions)</span></span>
+- <span data-ttu-id="cd57a-238">**2018 年 5 月 7 日**: Mac、Excel Online、およびインプロセスで実行される同期関数へのサポートを公開\*</span><span class="sxs-lookup"><span data-stu-id="cd57a-238">**May 7, 2018**: Shipped support for Mac, Excel Online, and synchronous functions running in-process</span></span>
+- <span data-ttu-id="cd57a-239">**2018 年 9 月 20日**: JavaScript 実行時のカスタム関数へのサポートを公開</span><span class="sxs-lookup"><span data-stu-id="cd57a-239">**September 20, 2018**: Shipped support for custom functions JavaScript runtime.</span></span> <span data-ttu-id="cd57a-240">詳細については、「[Excel カスタム関数のランタイム](custom-functions-runtime.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd57a-240">For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).</span></span>
+
+<span data-ttu-id="cd57a-241">\* Office Insiders チャネル対象</span><span class="sxs-lookup"><span data-stu-id="cd57a-241">\* to the Office Insiders Channel</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="cd57a-242">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd57a-242">See also</span></span>
+
+* [<span data-ttu-id="cd57a-243">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="cd57a-243">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="cd57a-244">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="cd57a-244">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="cd57a-245">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cd57a-245">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="cd57a-246">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="cd57a-246">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)

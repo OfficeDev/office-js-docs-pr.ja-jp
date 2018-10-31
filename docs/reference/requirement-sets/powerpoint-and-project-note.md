@@ -1,0 +1,9 @@
+# <a name="powerpoint-and-project-in-the-javascript-api"></a><span data-ttu-id="ab02f-101">PowerPoint と JavaScript API でのプロジェクト</span><span class="sxs-lookup"><span data-stu-id="ab02f-101">PowerPoint and Project support add-ins made with the JavaScript API.</span></span>
+
+<span data-ttu-id="ab02f-102">PowerPoint および Project は、JavaScript API で作成されたアドインをサポートします。</span><span class="sxs-lookup"><span data-stu-id="ab02f-102">PowerPoint and Project support add-ins made with the JavaScript API.</span></span> <span data-ttu-id="ab02f-103">ただし、現在、PowerPoint と Project にはホスト固有の API がありません。</span><span class="sxs-lookup"><span data-stu-id="ab02f-103">However, they currently do not have host-specific APIs.</span></span> <span data-ttu-id="ab02f-104">共有 API を介して、これらのホストと対話します。</span><span class="sxs-lookup"><span data-stu-id="ab02f-104">You interact with these hosts through the Shared API.</span></span> 
+
+## <a name="see-also"></a><span data-ttu-id="ab02f-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab02f-105">See also</span></span>
+
+- [<span data-ttu-id="ab02f-106">JavaScript API for Office</span><span class="sxs-lookup"><span data-stu-id="ab02f-106">JavaScript API for Office</span></span>](/office/dev/add-ins/reference/javascript-api-for-office)
+- [<span data-ttu-id="ab02f-107">Office アドインのホストとプラットフォームの可用性</span><span class="sxs-lookup"><span data-stu-id="ab02f-107">Office Add-in host and platform availability</span></span>](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
+- [<span data-ttu-id="ab02f-108">共有 API リファレンス</span><span class="sxs-lookup"><span data-stu-id="ab02f-108">Shared API Reference</span></span>](/javascript/api/overview/office)
