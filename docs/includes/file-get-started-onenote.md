@@ -1,57 +1,45 @@
-# <a name="build-your-first-onenote-add-in"></a><span data-ttu-id="5ca5e-101">最初の OneNote アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="5ca5e-101">Build your first OneNote add-in</span></span>
+# <a name="build-your-first-onenote-add-in"></a><span data-ttu-id="e7e54-101">最初の OneNote アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="e7e54-101">Build your first OneNote add-in</span></span>
 
-<span data-ttu-id="5ca5e-102">この記事では、jQuery と Office JavaScript API を使用して OneNote アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-102">In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="e7e54-102">この記事では、jQuery と Office JavaScript API を使用して OneNote アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-102">In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="5ca5e-103">前提条件</span><span class="sxs-lookup"><span data-stu-id="5ca5e-103">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="e7e54-103">前提条件</span><span class="sxs-lookup"><span data-stu-id="e7e54-103">Prerequisites</span></span>
 
-- [<span data-ttu-id="5ca5e-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="5ca5e-104">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="e7e54-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="e7e54-104">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="5ca5e-105">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="e7e54-105">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="e7e54-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="5ca5e-106">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="5ca5e-106">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="e7e54-106">アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="e7e54-106">Create the add-in project</span></span>
 
-1. <span data-ttu-id="5ca5e-p101">ローカル ドライブにフォルダーを作成し、`my-onenote-addin`という名前を付けます。ここにアドインのファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p101">Create a folder on your local drive and name it `my-onenote-addin`. This is where you'll create the files for your add-in.</span></span>
-
-    ```bash
-    mkdir my-onenote-addin
-    ```
-
-2. <span data-ttu-id="5ca5e-109">新しいフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-109">Navigate to your new folder.</span></span>
-
-    ```bash
-    cd my-onenote-addin
-    ```
-
-3. <span data-ttu-id="5ca5e-p102">Yeoman を使用して OneNote アドイン プロジェクトを作成するジェネレーターです。次のコマンドを実行し、プロンプトに次のように応答し、します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p102">Use the Yeoman generator to create a OneNote add-in project. Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="e7e54-p101">Yeoman ジェネレーターを使用して OneNote アドイン プロジェクトを作成してください。次のコマンドを実行し、プロンプトに次のように応答します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p101">Use the Yeoman generator to create a OneNote add-in project. Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="5ca5e-112">**Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="5ca5e-112">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="5ca5e-113">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="5ca5e-113">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="5ca5e-114">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="5ca5e-114">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="5ca5e-115">**Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Onenote`</span><span class="sxs-lookup"><span data-stu-id="5ca5e-115">**Which Office client application would you like to support?:** `Onenote`</span></span>
+    - <span data-ttu-id="e7e54-109">**Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="e7e54-109">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="e7e54-110">**Choose a script type: (スクリプト タイプを選択してください)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="e7e54-110">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="e7e54-111">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="e7e54-111">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="e7e54-112">**Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Onenote`</span><span class="sxs-lookup"><span data-stu-id="e7e54-112">**Which Office client application would you like to support?:** `Onenote`</span></span>
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote-jquery.png)
     
-    <span data-ttu-id="5ca5e-117">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-117">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="e7e54-114">ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポート Node コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="e7e54-114">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-4. <span data-ttu-id="5ca5e-118">Web アプリケーション プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-118">Navigate to the root folder of the web application project.</span></span>
+2. <span data-ttu-id="e7e54-115">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-115">Navigate to the root folder of the web application project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a><span data-ttu-id="5ca5e-119">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="5ca5e-119">Update the code</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="e7e54-116">コードの更新</span><span class="sxs-lookup"><span data-stu-id="e7e54-116">Update the code</span></span>
 
-1. <span data-ttu-id="5ca5e-p103">コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p103">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+1. <span data-ttu-id="e7e54-p102">コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p102">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
 
-2. <span data-ttu-id="5ca5e-122">要素内の `<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-122">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span> 
+2. <span data-ttu-id="e7e54-119">`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-119">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span> 
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -73,7 +61,7 @@
     </body>
     ```
 
-3. <span data-ttu-id="5ca5e-p104">ファイル **src\index.js** を開いてアドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p104">Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="e7e54-120">**src\index.js**ファイルを開いて、アドインのスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-120">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="e7e54-121">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-121">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
@@ -118,7 +106,7 @@
     }
     ```
 
-4. <span data-ttu-id="5ca5e-125">**app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-125">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="5ca5e-126">すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-126">Replace the entire contents with the following and save the file.</span></span>
+4. <span data-ttu-id="e7e54-122">**app.css**ファイルを開いて、アドインのカスタム スタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-122">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="e7e54-123">すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-123">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     html, body {
@@ -194,15 +182,15 @@
     }
     ```
 
-## <a name="update-the-manifest"></a><span data-ttu-id="5ca5e-127">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="5ca5e-127">Update the manifest</span></span>
+## <a name="update-the-manifest"></a><span data-ttu-id="e7e54-124">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="e7e54-124">Update the manifest</span></span>
 
-1. <span data-ttu-id="5ca5e-128">[ **one-note-add-in-manifest.xml** ]ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-128">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="e7e54-125">アドインの設定と機能を定義するように、[ **one-note-add-in-manifest.xml**]ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-125">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="5ca5e-p106"> `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="e7e54-p105">`ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p105">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="5ca5e-p107">`Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p107">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.</span></span>
+3. <span data-ttu-id="e7e54-p106">`Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p106">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.</span></span>
 
-4. <span data-ttu-id="5ca5e-133">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-133">Save the file.</span></span>
+4. <span data-ttu-id="e7e54-130">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-130">Save the file.</span></span>
 
     ```xml
     ...
@@ -214,29 +202,29 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="5ca5e-134">開発用サーバーを起動する</span><span class="sxs-lookup"><span data-stu-id="5ca5e-134">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="e7e54-131">開発用サーバーを起動する</span><span class="sxs-lookup"><span data-stu-id="e7e54-131">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
-## <a name="try-it-out"></a><span data-ttu-id="5ca5e-135">試してみる</span><span class="sxs-lookup"><span data-stu-id="5ca5e-135">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="e7e54-132">試してみる</span><span class="sxs-lookup"><span data-stu-id="e7e54-132">Try it out</span></span>
 
-1. <span data-ttu-id="5ca5e-136">[OneNote Online](https://www.onenote.com/notebooks) でノートブックを開きます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-136">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.</span></span>
+1. <span data-ttu-id="e7e54-133">[OneNote Online](https://www.onenote.com/notebooks) でノートブックを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-133">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.</span></span>
 
-2. <span data-ttu-id="5ca5e-137">**[挿入] > [Office アドイン]** の順に選択し、[Office アドイン] ダイアログを開きます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-137">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
+2. <span data-ttu-id="e7e54-134">**[挿入] > [Office アドイン]** の順に選択し、[Office アドイン] ダイアログを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-134">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
 
-    - <span data-ttu-id="5ca5e-138">コンシューマー アカウントでサインインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-138">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
+    - <span data-ttu-id="e7e54-135">コンシューマー アカウントでサインインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-135">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
 
-    - <span data-ttu-id="5ca5e-139">職場または学校アカウントでサインインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-139">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
+    - <span data-ttu-id="e7e54-136">職場または学校アカウントでサインインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-136">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
 
-    <span data-ttu-id="5ca5e-140">次の図は、コンシューマー ノートブックの [ **マイ アドイン** ]タブを示しています。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-140">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
+    <span data-ttu-id="e7e54-137">次の図は、コンシューマー ノートブックの [ **マイ アドイン** ]タブを示しています。</span><span class="sxs-lookup"><span data-stu-id="e7e54-137">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. <span data-ttu-id="5ca5e-141">アップロード アドインダイアログで、プロジェクト フォルダー内の [ **manifest.xml** ] を参照し、[ **アップロード** ]を選択します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-141">In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
+3. <span data-ttu-id="e7e54-138">アップロード アドインダイアログで、プロジェクト フォルダー内の [ **manifest.xml** ] を参照し、[ **アップロード** ]を選択します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-138">In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
 
-4. <span data-ttu-id="5ca5e-p108">[ **ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame にアドインの作業ウィンドウが開きます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p108">From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
+4. <span data-ttu-id="e7e54-p107">[ **ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame にアドインの作業ウィンドウが開きます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p107">From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
 
-5. <span data-ttu-id="5ca5e-144">テキスト領域で、次の HTML コンテンツを入力し、 **アウトラインを追加**します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-144">Enter some text in the text area and then choose **Add outline**.</span></span>  
+5. <span data-ttu-id="e7e54-141">テキスト領域で、次の HTML コンテンツを入力し、 **アウトラインを追加**します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-141">Enter some text in the text area, and then choose **Add outline**.</span></span>  
 
     ```html
     <ol>
@@ -247,32 +235,32 @@
     </ol>
     ```
 
-    <span data-ttu-id="5ca5e-145">指定したアウトラインは、ページに追加されます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-145">The outline that you specified is added to the page.</span></span>
+    <span data-ttu-id="e7e54-142">指定したアウトラインは、ページに追加されます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-142">The outline that you specified is added to the page.</span></span>
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in-3.png)
 
-## <a name="troubleshooting-and-tips"></a><span data-ttu-id="5ca5e-147">トラブルシューティングとヒント</span><span class="sxs-lookup"><span data-stu-id="5ca5e-147">Troubleshooting and tips</span></span>
+## <a name="troubleshooting-and-tips"></a><span data-ttu-id="e7e54-144">トラブルシューティングとヒント</span><span class="sxs-lookup"><span data-stu-id="e7e54-144">Troubleshooting and tips</span></span>
 
-- <span data-ttu-id="5ca5e-p109">ブラウザーの開発者ツールを使ってアドインをデバッグできます。Gulp Web サーバーを使っており、Internet Explorer や Chrome でデバッグしている場合は、ローカルで変更を保存して、アドインの iFrame を更新するだけです。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p109">You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.</span></span>
+- <span data-ttu-id="e7e54-p108">ブラウザーの開発者ツールを使ってアドインをデバッグできます。Gulp Web サーバーを使っており、Internet Explorer や Chrome でデバッグしている場合は、ローカルで変更を保存して、アドインの iFrame を更新するだけです。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p108">You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.</span></span>
 
-- <span data-ttu-id="5ca5e-p110">OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p110">When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.</span></span>
+- <span data-ttu-id="e7e54-p109">OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p109">When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.</span></span>
 
    ![デバッガーでアンロードされた OneNote オブジェクト](../images/onenote-debug.png)
 
-- <span data-ttu-id="5ca5e-p111">アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p111">You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.</span></span>
+- <span data-ttu-id="e7e54-p110">アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p110">You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.</span></span>
 
-- <span data-ttu-id="5ca5e-156">作業ウィンドウ アドインは、任意の場所から開くことができますが、コンテンツアドインは、通常のページ コンテンツ (タイトル、イメージ、iframe などは含まない) の内部にのみ挿入できます。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-156">Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.).</span></span> 
+- <span data-ttu-id="e7e54-153">作業ウィンドウ アドインは、任意の場所から開くことができますが、コンテンツアドインは、通常のページ コンテンツ (タイトル、イメージ、iframe などは含まない) の内部にのみ挿入できます。</span><span class="sxs-lookup"><span data-stu-id="e7e54-153">Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.).</span></span> 
 
-## <a name="next-steps"></a><span data-ttu-id="5ca5e-157">次の手順</span><span class="sxs-lookup"><span data-stu-id="5ca5e-157">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="e7e54-154">次の手順</span><span class="sxs-lookup"><span data-stu-id="e7e54-154">Next steps</span></span>
 
-<span data-ttu-id="5ca5e-p112">これで完了です。OneNote アドインが正常に作成されました。次に、OneNote アドイン構築の中心概念の詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="5ca5e-p112">Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.</span></span>
+<span data-ttu-id="e7e54-p111">これで完了です。OneNote アドインが正常に作成されました。次に、OneNote アドイン構築の中心概念の詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="e7e54-p111">Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="5ca5e-160">OneNote JavaScript API のプログラミングの概要</span><span class="sxs-lookup"><span data-stu-id="5ca5e-160">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+> [<span data-ttu-id="e7e54-157">OneNote JavaScript API のプログラミングの概要</span><span class="sxs-lookup"><span data-stu-id="e7e54-157">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
 
-## <a name="see-also"></a><span data-ttu-id="5ca5e-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ca5e-161">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7e54-158">関連項目</span><span class="sxs-lookup"><span data-stu-id="e7e54-158">See also</span></span>
 
-- [<span data-ttu-id="5ca5e-162">OneNote JavaScript API のプログラミングの概要</span><span class="sxs-lookup"><span data-stu-id="5ca5e-162">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
-- [<span data-ttu-id="5ca5e-163">OneNote JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="5ca5e-163">OneNote JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
-- [<span data-ttu-id="5ca5e-164">Rubric Grader のサンプル</span><span class="sxs-lookup"><span data-stu-id="5ca5e-164">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [<span data-ttu-id="5ca5e-165">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="5ca5e-165">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+- [<span data-ttu-id="e7e54-159">OneNote JavaScript API のプログラミングの概要</span><span class="sxs-lookup"><span data-stu-id="e7e54-159">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+- [<span data-ttu-id="e7e54-160">OneNote JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="e7e54-160">OneNote JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [<span data-ttu-id="e7e54-161">Rubric Grader のサンプル</span><span class="sxs-lookup"><span data-stu-id="e7e54-161">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [<span data-ttu-id="e7e54-162">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="e7e54-162">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
