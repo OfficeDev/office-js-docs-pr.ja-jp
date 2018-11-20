@@ -2,12 +2,12 @@
 title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: efb637cfd31f95688d6b0db0e17b24fefe51c2fc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 93af27de1f5e22aada7caf9ded97ab6fb200b332
+ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944649"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "26237515"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -49,8 +49,6 @@ ms.locfileid: "23944649"
 
 - ポップアップは使用しないようにします。使用する必要がある場合は、ポップアップを有効にするようユーザーに指示します。
 
-- [シングル サインオン (SSO) 認証](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-identity-token)を使用します。
-
 最初の実行エクスペリエンスを開発する際に適用できるパターンを示すテンプレートについては、「[Office アドインの UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)」を参照してください。
 
 ## <a name="use-add-in-commands"></a>アドイン コマンドを使用する
@@ -65,7 +63,8 @@ ms.locfileid: "23944649"
 
 - ユーザーをよく管理します。ユーザーが重要な決定事項を理解し、アドインが実行するアクションを簡単に取り消すことができるようにします。
 
-- ユーザーの信頼を得て、ユーザーを引き込むためにブランドを利用します。ユーザーを圧倒するためや、宣伝のためにブランドを使用しないでください。
+- ユーザーの信頼を得て、ユーザーを引き込むために
+ブランドを利用します。ユーザーを圧倒するためや、宣伝のためにブランドを使用しないでください。
 
 - スクロールしないようにします。1366 x 768 の解像度用に最適化します。
 

@@ -1,7 +1,7 @@
-# <a name="action-element"></a>操作要素
+# <a name="action-element"></a>Action 要素
 
 ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。
- 
+
 ## <a name="attributes"></a>属性
 
 |  属性  |  必須  |  説明  |
@@ -12,11 +12,11 @@
 
 |  要素 |  説明  |
 |:-----|:-----|
-|  [FunctionName](#functionname) |    実行するFUNCTIONの名前を指定します。 |
-|  [SourceLocation](#sourcelocation) |    この操作のソース ファイルの位置を指定します。 |
-|  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。|
-|  [タイトル](#title) | 作業ウィンドウのカスタム タイトルを指定します。|
-|  [SupportsPinning](#supportspinning) | 作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。|
+|  [FunctionName](#functionname) |    実行する関数の名前を指定します。 |
+|  [SourceLocation](#sourcelocation) |    この操作のソース ファイルの場所を指定します。 |
+|  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。|
+|  [Title](#title) | 作業ウィンドウのカスタム タイトルを指定します。|
+|  [SupportsPinning](#supportspinning) | 作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。|
   
 
 ## <a name="xsitype"></a>xsi:type
@@ -28,7 +28,7 @@
 
 ## <a name="functionname"></a>FunctionName
 
-**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行するFUNCTIONの名前を指定します。FUNCTIONは、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
+**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -38,7 +38,7 @@
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi:type** が "ShowTaskpane" のときに必ず指定する要素です。この操作のソース ファイルの位置を指定します。 **resid** 属性は、 **Resources** 要素内の **Urls** 要素にある **Url** 要素の [id](resources.md) 属性の値に指定しなければなりません。
+**xsi:type** が "ShowTaskpane" のときに必ず指定する要素です。このアクションのソース ファイルの場所を指定します。 **resid** 属性は、 **Resources** 要素の **Urls** 要素にある **Url** 要素の [id](resources.md) 属性の値を指定します。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -48,12 +48,12 @@
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。作業ウィンドウ コンテナーの ID を指定します。複数の "ShowTaskpane" の操作があり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する操作の "SourceLocation" に置き換えられます。 
+ **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 作業ウィンドウ コンテナーの ID を指定します。 複数の "ShowTaskpane" アクションがあり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。 同じウィンドウを共有する異なるアクションに対しては、同じ **TaskpaneId** を使用します。 ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する Action "SourceLocation" に置き換えられます。
 
 > [!NOTE]
 > この要素は、Outlook ではサポートされていません。
 
-次の例では、同じ **TaskpaneId** を共有する 2 つの操作を示します。 
+次の例では、同じ **TaskpaneId** を共有する 2 つのアクションを示します。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -88,10 +88,11 @@
 </bt:Urls>
 ```  
 
-## <a name="title"></a>タイトル
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。この操作に関する、作業ウィンドウのカスタム タイトルを指定します。 
+## <a name="title"></a>役職
 
-以下の例は、**Title** 要素を使用する 2 つの異なる操作を示します。
+ **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
+
+以下の例は、**Title** 要素を使用する 2 つの異なるアクションを示します。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -99,32 +100,32 @@
 <SourceLocation resid="PG.Code.Url" />
 <Title resid="PG.CodeCommand.Title" />
 </Action>
-``` 
+```
 
 ```xml
 <Action xsi:type="ShowTaskpane">
 <SourceLocation resid="PG.Run.Url" />
 <Title resid="PG.RunCommand.Title" />
 </Action>
-``` 
+```
 
 ```xml
 <bt:Urls>
 <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
 <bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
 </bt:Urls>
-``` 
+```
 
 ```xml
 <bt:ShortStrings>
 <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
 <bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
 </bt:ShortStrings>
-``` 
+```
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 [VersionOverrides](versionoverrides.md) 収容の要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。ユーザーは、作業ウィンドウをピン留めできるようになり、ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)」を参照してください。
+**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)」を参照してください。
 
 > [!NOTE]
 > 現時点で、SupportsPinning は Outlook 2016 for Windows (ビルド 7628.1000 以降) でのみサポートされます。
@@ -135,5 +136,3 @@
   <SupportsPinning>true</SupportsPinning>
 </Action>
 ```
-
-

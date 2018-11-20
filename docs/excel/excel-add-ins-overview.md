@@ -2,12 +2,12 @@
 title: Excel アドインの概要
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6d67cd05e7021c8b76fb69135000d4079024713a
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: b8fc1aadaf47195f55fb3ed3c6281d33b32f2e4e
+ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505959"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "26237459"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -20,22 +20,21 @@ Excel アドインを使用すると、Office for Windows、Office Online、Offi
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
 
-* **クロスプラットフォーム サポート**: Excel アドインは、Windows 版、Mac 版、iOS 版の Office と Office Online で実行できます。
+* **クロスプラットフォーム サポート**:Excel アドインは、Windows 版、Mac 版、iOS 版の Office と、Office Online で実行できます。
 * **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
-* **シングル サインオン (SSO)**: Excel のアドインを Microsoft Graph に簡単に統合できます。
 * **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
-* **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、広範囲のユーザーと共有します。
+* **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
 
 > [!NOTE]
-> Excel アドインは、Office for Windows上でのみ実行する、以前のOffice統合ソリューションである COM および VSTO アドインとは異なります。COM アドインとは異なり、 Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。 
+> Excel アドインは、Office for Windows 上でのみ実行する以前の Office 統合ソリューションである COM アドインや VSTO アドインとは異なります。 COM アドインとは異なり、Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。 
 
 ## <a name="components-of-an-excel-add-in"></a>Excel アドインのコンポーネント 
 
 Excel アドインには 2 つの基本コンポーネントが含まれています。Web アプリケーションと、マニフェスト ファイルと呼ばれる構成ファイルです。 
 
-Web アプリケーションは、 [ JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を簡単にすることもできます。たとえば、アドインは次の全てのタスクを実行可能です。
+Web アプリケーションは、[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を簡単にすることもできます。 たとえば、アドインでは次の操作を実行できます。
 
-* ブック内のデータ (ワークシート、範囲、テーブル、グラフ、名前付きの項目など) を作成、読み込み、更新、および削除します。
+* ブック内のデータ (ワークシート、範囲、表、グラフ、名前付きの項目など) を作成、読み込み、更新、および削除します。
 * 標準の OAuth 2.0 のフローを使用して、オンライン サービスでユーザー認証を実行します。
 * Microsoft Graph やその他の API に、API 要求を発行します。
 
@@ -76,7 +75,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ### <a name="dialog-boxes"></a>ダイアログ ボックス
 
-ダイアログ ボックスは、有効な Excel アプリケーション ウィンドウ前にフロートするサーフェスです。作業ウィンドウで直接開くことができないサインイン ページの表示、ユーザーによるアクションを確認するための要求、作業ウィンドウ内で再生すると小さすぎるビデオのホストなどの作業に使用できます。ダイアログ ボックスを 使用中の Excel アドインで開くには、[ Dialog API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)を使用してください。
+ダイアログ ボックスは、作業中の Excel アプリケーション ウィンドウの手前に浮動するサーフェスです。 ダイアログ ボックスは、作業ウィンドウに直接開くことができないサインイン ページの表示、ユーザーによるアクションを確認するための要求、作業ウィンドウ内で再生すると小さすぎるビデオのホストなどの作業に使用できます。 Excel アドインでダイアログ ボックスを開くには、[ダイアログ API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) を使用します。
 
 **ダイアログ ボックス**
 
@@ -86,7 +85,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ### <a name="content-add-ins"></a>コンテンツ アドイン
 
-コンテンツ アドインは、Excel ドキュメントに直接埋め込むことができるサーフェイスです。コンテンツ アドインを使用すると、グラフ、データのビジュアル化、メディアなど豊富な Web ベース オブジェクトをワークシートに埋め込んだり、Excel ドキュメントの変更またはデータ ソースのデータ表示のためのコードを実行するインターフェイス コントロールへのアクセスをユーザーに提供したりできます。機能を直接ドキュメントに埋め込む場合は、コンテンツ アドインを使用します。
+コンテンツ アドインは、Excel ドキュメントに直接埋め込むことができるサーフェスです。 コンテンツ アドインを使用すると、グラフ、データのビジュアル化、メディアなど豊富な Web ベース オブジェクトをワークシートに埋め込んだり、Excel ドキュメントの変更またはデータ ソースのデータの表示のためのコードを実行するインターフェイス コントロールへのアクセスをユーザーに提供したりできます。 機能を直接ドキュメントに埋め込む場合は、コンテンツ アドインを使用します。
 
 **コンテンツ アドイン**
 
@@ -98,18 +97,18 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**: Office 2016 で導入された [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
 
-* **Shared API**: Office 2013 で導入された共有 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。共有 API はExcelでの相互作用機能が制限されているため、 Excel 2013上でアドインを実行しなければいけない場合に使用できます。
+* **Shared API**:Office 2013 で導入された共有 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。 共有 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
 ## <a name="next-steps"></a>次の手順
 
-[最初の Excel アドインを作成する](excel-add-ins-get-started-overview.md)ことから始めます。次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
+[最初の Excel アドインを作成する](excel-add-ins-get-started-overview.md)ことから始めます。 次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

@@ -11,30 +11,30 @@
 
 ## <a name="create-a-content-control"></a>コンテンツ コントロールを作成する
 
-1. コード エディターでプロジェクトを開きます。 
+1. コード エディターでプロジェクトを開きます。
 2. index.html ファイルを開きます。
-3. ボタンを格納している `div` の下に、次のマークアップを追加します。`replace-text`
+3. `replace-text` ボタンを格納している `div` の下に、次のマークアップを追加します。
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="create-content-control">Create Content Control</button>            
+    <div class="padding">
+        <button class="ms-Button" id="create-content-control">Create Content Control</button>
     </div>
     ```
 
 4. app.js ファイルを開きます。
 
-5. ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。`insert-table`
+5. `insert-table` ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。
 
     ```js
     $('#create-content-control').click(createContentControl);
     ```
 
-6. 関数の下に、次の関数を追加します。`insertTable`
+6. `insertTable` 関数の下に、次の関数を追加します。
 
     ```js
     function createContentControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to create a content control.
 
             return context.sync();
@@ -46,14 +46,14 @@
             }
         });
     }
-    ``` 
+    ```
 
-7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code. Note:|||UNTRANSLATED_CONTENT_END|||
+7. `TODO1` を次のコードに置き換えます。次の点に注意してください。
    - このコードの目的は、コンテンツ コントロール内の Office 365 という語句をラップすることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
-   - プロパティは、コンテンツ コントロールの表示タイトルを指定します。`ContentControl.title` 
-   - プロパティは、`ContentControlCollection.getByTag` メソッドを使用してコンテンツ コントロールへの参照を取得するために使用できるタグを指定します。これを後述する関数で使用します。`ContentControl.tag` 
-   - プロパティは、コントロールの外観を指定します。`ContentControl.appearance` Tags という値を使用すると、コントロールは開始タグと終了タグにラップされます。開始タグには、コンテンツ コントロールのタイトルが設定されます。 その他の値として、BoundingBox と None が使用できます。
-   - プロパティは、タグまたは境界ボックスの境界線の色を指定します。`ContentControl.color`
+   - `ContentControl.title` プロパティは、コンテンツ コントロールの表示タイトルを指定します。
+   - `ContentControl.tag` プロパティは、`ContentControlCollection.getByTag` メソッドを使用してコンテンツ コントロールへの参照を取得するために使用できるタグを指定します。これを後述する関数で使用します。
+   - `ContentControl.appearance` プロパティは、コントロールの外観を指定します。 Tags という値を使用すると、コントロールは開始タグと終了タグにラップされます。開始タグには、コンテンツ コントロールのタイトルが設定されます。 その他の値として、BoundingBox と None が使用できます。
+   - `ContentControl.color` プロパティは、タグまたは境界ボックスの境界線の色を指定します。
 
     ```js
     const serviceNameRange = context.document.getSelection();
@@ -62,33 +62,33 @@
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
     serviceNameContentControl.color = "blue";
-    ``` 
+    ```
 
 ## <a name="replace-the-content-of-the-content-control"></a>コンテンツ コントロールのコンテンツを置き換える
 
 1. index.html ファイルを開きます。
-2. ボタンを格納している `div` の下に、次のマークアップを追加します。`create-content-control`
+2. `create-content-control` ボタンを格納している `div` の下に、次のマークアップを追加します。
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>
     </div>
     ```
 
 3. app.js ファイルを開きます。
 
-4. ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。`create-content-control`
+4. `create-content-control` ボタンにクリック ハンドラーを割り当てる行の下に、次のコードを追加します。
 
     ```js
     $('#replace-content-in-control').click(replaceContentInControl);
     ```
 
-5. 関数の下に、次の関数を追加します。`createContentControl`
+5. `createContentControl` 関数の下に、次の関数を追加します。
 
     ```js
     function replaceContentInControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
@@ -101,24 +101,24 @@
             }
         });
     }
-    ``` 
+    ```
 
-7. |||UNTRANSLATED_CONTENT_START|||Replace `TODO1` with the following code.|||UNTRANSLATED_CONTENT_END||| 
+7. `TODO1` を次のコードに置き換えます。
     > [!NOTE]
-    > メソッドは、特定のタグの全てのコンテンツコントロールの `ContentControlCollection` を返します。`ContentControlCollection.getByTag` を使って、目的のコントロールへの参照を取得します。`getFirst`
+    > `ContentControlCollection.getByTag` メソッドによって、指定されたタグのすべてのコンテンツ コントロールの `ContentControlCollection` が返されます。 `getFirst` を使用して、目的のコントロールの参照を取得します。
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>アドインをテストする
 
 1. Git bash ウィンドウまたは Node.JS 対応のシステム プロンプトが前の段階のチュートリアルから開いたままになっている場合は、Ctrl + C を 2 回入力して実行中の Web サーバーを停止します。 それ以外の場合は、Git bash ウィンドウまたは Node.JS 対応のシステム プロンプトを開いて、プロジェクトの **Start** フォルダーに移動します。
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 これを行うには、プロンプトが表示されてビルド コマンドを入力できるようにするため、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
-2. コマンドを実行し、Office アドインを実行できるすべてのホストでサポートされている以前のバージョンの JavaScript に ES6 ソース コードをトランスパイルします。`npm run build`
-3. コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。`npm start`
+2. `npm run build` コマンドを実行し、Office アドインを実行できるすべてのホストでサポートされている以前のバージョンの JavaScript に ES6 ソース コードをトランスパイルします。
+3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 4. 作業ウィンドウを再読み込みするために、そのウィンドウを閉じて、**[ホーム]** メニューの **[作業ウィンドウの表示]** を選択してアドインを再度開きます。
 5. 作業ウィンドウで **[段落の挿入]** を選択し、文書の先頭が Office 365 となっている段落があることを確認します。
 6. 追加した段落の Office 365 という語句を選択し、**[コンテンツ コントロールの作成]** ボタンを選択します。 Service Name というラベルが付いたタグで語句がラップされていることに注意してください。

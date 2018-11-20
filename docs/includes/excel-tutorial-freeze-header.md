@@ -5,13 +5,13 @@
 
 ## <a name="freeze-the-tables-header-row"></a>表のヘッダー行を固定する
 
-1. コード エディターでプロジェクトを開きます。 
+1. コード エディターでプロジェクトを開きます。
 2. index.html ファイルを開きます。
-3. ボタンを格納している `div` の下に、次のマークアップを追加します。`create-chart`
+3. `create-chart` ボタンを格納している `div` の下に、次のマークアップを追加します。
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>            
+    <div class="padding">
+        <button class="ms-Button" id="freeze-header">Freeze Header</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@
     ```js
     function freezeHeader() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
             return context.sync();
@@ -40,7 +40,7 @@
             }
         });
     }
-    ``` 
+    ```
 
 7. `TODO1` を次のコードに置き換えます。次の点に注意してください。
    - `Worksheet.freezePanes` コレクションは、ワークシートのスクロール操作時に、ワークシート上でピン留めつまり固定される一式のペインのことです。
@@ -49,7 +49,7 @@
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>アドインのテスト
 
@@ -58,11 +58,11 @@
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 そのためには、ビルド コマンドの入力を求めるプロンプトが表示されるように、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-1. コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。`npm run build`
-2. コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。`npm start`
+1. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 4. 作業ウィンドウを再読み込みするために、そのウィンドウを閉じ、**[ホーム]** メニューの **[作業ウィンドウの表示]** を選択してアドインを再度開きます。
 6. ワークシート内に表があれば、削除します。
-7. 作業ウィンドウで、**[Create Table]** (表の作成) を選択します。 
+7. 作業ウィンドウで、**[Create Table]** (表の作成) を選択します。
 8. **[Freeze Header]** (ヘッダーを固定) ボタンを選択します。
 9. ヘッダー以降の行が画面の外に出て見えなくなるまでワークシートを下にスクロールしても、表のヘッダーが最上部に表示されていることを確認します。
 

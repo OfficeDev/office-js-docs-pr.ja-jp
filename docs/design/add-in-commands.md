@@ -2,12 +2,12 @@
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506267"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533666"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -35,7 +35,7 @@ ms.locfileid: "25506267"
 **拡張点**
 
 - リボン タブ: 組み込みのタブを拡張するか、新しいカスタム タブを作成します。
-- コンテキスト メニュー: 選択されたコンテキスト メニューを拡張します。 
+- コンテキスト メニュー: 選択されたコンテキスト メニューを拡張します。
 
 **コントロールの種類**
 
@@ -51,9 +51,9 @@ ms.locfileid: "25506267"
 
 現在、アドイン コマンドは次のプラットフォームでサポートされています。
 
-- Windows デスクトップ 2016 版 Office (ビルド 16.0.6769 以降)
+- Outlook 2016 for Windows 以降 (ビルド 16.0.6769 以降)
 - Office for Mac (ビルド 15.33 以降)
-- Office Online 
+- Office Online
 
 その他のプラットフォームが近日中に公開されます。
 
@@ -74,7 +74,7 @@ ms.locfileid: "25506267"
      > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/office/dev/store/validation-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
-- コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
+- コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
 
    *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
 
@@ -86,7 +86,3 @@ ms.locfileid: "25506267"
 アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
 マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)」のリファレンス資料をご覧ください。
-
-
-
-
