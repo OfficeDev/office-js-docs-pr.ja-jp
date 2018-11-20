@@ -14,20 +14,20 @@
 
 ## <a name="create-the-web-app"></a>Web アプリを作成する
 
-1. Yeoman のジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+1. Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **プロジェクトタイプを選択してください** `Office Add-in project using Angular framework`
-    - **Choose a script type: (スクリプト タイプを選択してください)** `Typescript`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Angular framework`
+    - **Choose a script type: (スクリプトの種類を選択)** `Typescript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-excel-angular.png)
     
-    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
+    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 2. プロジェクトのルート フォルダーに移動します。
 
@@ -37,7 +37,7 @@
 
 ## <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、　**app.css** のファイルを開き、ファイルの末尾に次のスタイルを追加し、ファイルを保存します。
+1. コード エディターでファイル **app.css** を開き、次のスタイルをファイルの末尾に追加してファイルを保存します。
 
     ```css
     #content-header {
@@ -78,7 +78,7 @@
     }
     ```
 
-2.  **src/app/app.component.html** のファイルを開き、次のコードで全体のコンテンツを置き換え、そのファイルを保存します。
+2. ファイル **src/app/app.component.html** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```html
     <div id="content-header">
@@ -100,7 +100,7 @@
     </div>
     ```
 
-3.  **src/app/app.component.ts** のファイルを開き、次のコードで全体のコンテンツを置き換え、そのファイルを保存します。
+3. ファイル **src/app/app.component.ts** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```typescript
     import { Component } from '@angular/core';
@@ -135,11 +135,11 @@
 
 ## <a name="update-the-manifest"></a>マニフェストを更新する
 
-1.  **manifest.xml** のファイルを開き、アドインの設定と機能を定義します。 
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
 
-2.  `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -153,16 +153,16 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a>開発用サーバーを起動する
+## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a>試してみる
+## <a name="try-it-out"></a>お試しください。
 
-1. アドインを実行して、Excel 内のアドインをサイドロードするために使用するプラットフォームの手順に従います。
+1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
    
@@ -170,7 +170,7 @@
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
 
-3. ワークシート内で任意のセル範囲を選択します。
+3. ワークシート内で任意のセルの範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 

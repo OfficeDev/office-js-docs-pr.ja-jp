@@ -2,23 +2,23 @@
 title: Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 95b690e21bddf7f2754cc308c8b771e629bbc630
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 7b9c0dbcdf8a892ffcb810972c4d3674acbc31f7
+ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437256"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "26298538"
 ---
 # <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する
 
-この記事では、Azure AD v2.0 のエンドポイントに Office アドインを登録する方法について説明します。 アドインの開発を開始するときには、アドインを登録する必要があります。 テストまたは運用に進むと、アドインの開発、テスト、および運用バージョン用に、既存の登録を変更するか、別々の登録を作成するかできます。 
+この記事では、Azure AD v2.0 のエンドポイントに Office アドインを登録する方法について説明します。 開発を開始する前に、アドインを登録する必要があります。 テストまたは運用環境に進んだ場合、既存の登録を変更するか、アドインの開発、テスト、および運用バージョン用に別の登録を作成できます。
 
-次の表には、このプロシージャを実行するために必要な情報と、指示に表示される対応するプレースホルダーを挙げてあります。 
+次の表では、この手順を実行するために必要な情報と、指示に表示される対応するプレースホルダーが項目ごとに分類されています。 
 
 |情報  |例  |プレースホルダー  |
 |---------|---------|---------|
-|アドインの読みやすい名前。 (一意であることが推奨されます。ただし、一意でなくてもかまいません。)    |`Contoso Marketing Excel Add-in (Prod)`        |**$ADD-IN-NAME$**         |
-|アドインの完全修飾ドメイン名（プロトコルを除く）。 *自分が所有するドメインを使用する必要があります。* このため、 `azurewebsites.net` や `cloudapp.net` のような特定のよく知られたドメインは使用できません。   |`localhost:6789`, `addins.contoso.com`         |**$FQDN-WITHOUT-PROTOCOL$**         |
-|アドインに必要な AAD と Microsoft Graph へのアクセス許可。 （`profile` が常に必要です。）    |`profile`, `Files.Read.All`         |該当なし         |
+|人間が判読できるアドインの名前です  (一意であることが推奨されますが、必須ではありません)。    |`Contoso Marketing Excel Add-in (Prod)`        |**$ADD-IN-NAME$**         |
+|アドインの完全修飾ドメイン名 (プロトコルを除く) です。 *所有しているドメインを使用する必要があります。* この理由から、`azurewebsites.net` または `cloudapp.net` などのよく知られている特定のドメインは使用できません。 このドメインは、アドインのマニフェストの `<Resources>` のセクションにある URL で使用されている、すべてのサブドメインを含むドメインと一致している必要があります。  |`localhost:6789`, `addins.contoso.com`         |**$FQDN-WITHOUT-PROTOCOL$**         |
+|ご使用のアドインに必要な AAD および Microsoft Graph へのアクセス許可です  (`profile` は常に必須です)。    |`profile`, `Files.Read.All`         |N/A         |
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]

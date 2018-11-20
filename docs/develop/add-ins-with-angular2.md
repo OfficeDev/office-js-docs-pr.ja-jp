@@ -1,13 +1,13 @@
 ---
 title: Angular で Office アドインを開発する
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.date: 11/02/2018
+ms.openlocfilehash: 312317e594024125e2dc86d23840750e48d81e40
+ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004974"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "25942252"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -82,7 +82,7 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する
 
-Office アドインのダイアログ API を使えば、アドインは、メイン ページと情報をやり取りできるセミモーダル ダイアログ ボックスでページを開けることができます。通常、これは作業ウィンドウにあります。 
+Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモーダル ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。 
 
 [DisplayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 
@@ -111,13 +111,13 @@ export class MyComponent {
 
 Angular は RxJS (JavaScript の事後対応型の拡張機能) を使用し、RxJS は `Observable` と `Observer` のオブジェクトを導入して非同期処理を実装します。このセクションでは、`Observables` の使い方についての概要を簡単に紹介しています。さらに詳細な情報については、[RxJS](http://reactivex.io/rxjs/) の公式ドキュメントを参照してください。
 
-は、ある意味で `Promise` オブジェクトに似ています。非同期の呼び出しからすぐに返されますが、すぐには解決されない可能性があります。しかし、`Promise` は、単一の値 (配列オブジェクトのことがあります) なのに対し、`Observable` は、オブジェクトの配列 (メンバーが 1 つだけの可能性あり) です。そのため、コードで `concat`、`map`、`filter` などの[配列メソッド](https://www.w3schools.com/jsref/jsref_obj_array.asp)を `Observable` オブジェクトで呼び出すことができます。`Observable` 
+`Observable` は、ある意味で `Promise` オブジェクトに似ています。非同期の呼び出しからすぐに返されますが、すぐには解決されない可能性があります。しかし、`Promise` は、単一の値 (配列オブジェクトのことがあります) なのに対し、`Observable` は、オブジェクトの配列 (メンバーが 1 つだけの可能性あり) です。そのため、コードで `concat`、`map`、`filter` などの[配列メソッド](https://www.w3schools.com/jsref/jsref_obj_array.asp)を `Observable` オブジェクトで呼び出すことができます。 
 
 ### <a name="pushing-instead-of-pulling"></a>プルではなくプッシュ
 
 コードは `Promise` オブジェクトを変数に割り当てることによって "プル" しますが、`Observable` オブジェクトは、値を `Observable` に*登録*するオブジェクトに、"プッシュ" します。サブスクライバーは、`Observer` オブジェクトです。プッシュ アーキテクチャの利点は、時間の経過と共に新しいメンバーを `Observable` 配列に追加できることです。新しいメンバーが追加されると、`Observable` に登録されるすべての `Observer` オブジェクトは通知を受信します。 
 
-は、関数とともに新規の各オブジェクト ("next" オブジェクトと呼ばれる) を処理するように構成されます。(また、エラーと完了の通知に応答するようにも構成されます。例については、次のセクションを参照してください。)このため、`Observable` オブジェクトは、`Promise` オブジェクトよりも幅広いシナリオで使用できます。たとえば、AJAX 呼び出しから `Observable` を返すことに加えて、`Promise` を返し、`Observable` をテキスト ボックスの "変更" イベント ハンドラーなどのイベント ハンドラーから返すことができます。ユーザーがボックスにテキストを入力するたびに、登録されているすべての `Observer` オブジェクトが、最新のテキストや、アプリケーションの現在の状態を入力として使用することによって、すぐに対応します。`Observer` 
+`Observer` は、関数とともに新規の各オブジェクト ("next" オブジェクトと呼ばれる) を処理するように構成されます。(また、エラーと完了の通知に応答するようにも構成されます。例については、次のセクションを参照してください。)このため、`Observable` オブジェクトは、`Promise` オブジェクトよりも幅広いシナリオで使用できます。たとえば、AJAX 呼び出しから `Observable` を返すことに加えて、`Promise` を返し、`Observable` をテキスト ボックスの "変更" イベント ハンドラーなどのイベント ハンドラーから返すことができます。ユーザーがボックスにテキストを入力するたびに、登録されているすべての `Observer` オブジェクトが、最新のテキストや、アプリケーションの現在の状態を入力として使用することによって、すぐに対応します。 
 
 
 ### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>すべての非同期呼び出しが完了するまで待機する
@@ -130,7 +130,7 @@ myPromise.all([x, y, z]).then(
 )
 ``` 
 
-オブジェクトで同じことを行うには、[Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) メソッドを使います。`Observable`  
+`Observable` オブジェクトで同じことを行うには、[Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) メソッドを使います。  
 
 ```js
 const source = Observable.forkJoin([x, y, z]);
@@ -144,3 +144,16 @@ const subscription = source.subscribe(
 );
 ``` 
 
+## <a name="compile-the-angular-application-using-the-ahead-of-time-aot-compiler"></a>Ahead-of-Time (AOT) コンパイラを使って Angular アプリケーションをコンパイルする
+
+アプリケーションのパフォーマンスは、ユーザー エクスペリエンスの中でも重要度が高いものの 1 つです。 Angular アプリケーションは、ビルド時に Angular Ahead-of-Time (AOT) コンパイラを使用してアプリをコンパイルすることで最適化することができます。 すべてのソース コード (HTML テンプレートと TypeScript) を効率的な JavaScript コードに変換します。 AOT コンパイラを使用してアプリをコンパイルすると、実行時に追加のコンパイルは実行されません。そのため、HTML テンプレートのレンダリングと非同期要求が高速になります。 さらに、Angular コンパイラを配布可能なアプリケーションに含める必要がないため、アプリケーション全体のサイズが小さくなります。 
+
+AOT コンパイラを使用するには、`ng build` または `ng serve` コマンドに `--aot` を追加します。
+
+```bash
+ng build --aot
+ng serve --aot
+```
+
+> [!NOTE]
+> Angular Ahead-of-Time (AOT) コンパイラの詳細については、[公式ガイド](https://angular.io/guide/aot-compiler)を参照してください。

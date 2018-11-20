@@ -12,22 +12,22 @@
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in-project"></a>アドイン プロジェクトを作成する
+## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. Yeoman ジェネレーターを使用して OneNote アドイン プロジェクトを作成してください。次のコマンドを実行し、プロンプトに次のように応答します。
+1. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type:​ (プロジェクト タイプを選択してください)** `Office Add-in project using Jquery framework`
-    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`
+    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support? (サポートする Office クライアント アプリケーションを選んでください):** `Onenote`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Onenote`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote-jquery.png)
     
-    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポート Node コンポーネントをインストールします。
+    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
     
 2. プロジェクトのルート フォルダーに移動します。
 
@@ -35,11 +35,11 @@
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a>コードの更新
+## <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートに**index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。
+1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
 
-2. `<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。 
+2. `<body>` 要素を次のマークアップに置き換え、ファイルを保存します。 
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -61,7 +61,7 @@
     </body>
     ```
 
-3. **src\index.js**ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
@@ -106,7 +106,7 @@
     }
     ```
 
-4. **app.css**ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+4. **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次のものに置き換え、ファイルを保存します。
 
     ```css
     html, body {
@@ -184,11 +184,11 @@
 
 ## <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドインの設定と機能を定義するように、[ **one-note-add-in-manifest.xml**]ファイルを開きます。
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** で置き換えます。
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for OneNote** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -202,7 +202,7 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a>開発用サーバーを起動する
+## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
@@ -216,15 +216,15 @@
 
     - 職場または学校アカウントでサインインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。 
 
-    次の図は、コンシューマー ノートブックの [ **マイ アドイン** ]タブを示しています。
+    次の図は、コンシューマー ノートブックの **[マイ アドイン]** タブを示しています。
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. アップロード アドインダイアログで、プロジェクト フォルダー内の [ **manifest.xml** ] を参照し、[ **アップロード** ]を選択します。 
+3. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **manifest.xml** を参照し、**[アップロード]** を選択します。 
 
-4. [ **ホーム** ] タブから、リボンの [ **作業ウィンドウの表示** ] ボタンを選択します。OneNote のページの横にある iFrame にアドインの作業ウィンドウが開きます。
+4. **[ホーム]** タブから、リボンの **[作業ウィンドウの表示]** ボタンをクリックします。 アドインの作業ウィンドウは、OneNote ページの横にある iFrame で開きます。
 
-5. テキスト領域で、次の HTML コンテンツを入力し、 **アウトラインを追加**します。  
+5. テキスト エリアに次の HTML コンテンツを入力し、**[アウトラインの追加]** を選択します。  
 
     ```html
     <ol>
@@ -235,7 +235,7 @@
     </ol>
     ```
 
-    指定したアウトラインは、ページに追加されます。
+    指定したアウトラインがページに追加されます。
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in-3.png)
 
@@ -253,14 +253,14 @@
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。OneNote アドインが正常に作成されました。次に、OneNote アドイン構築の中心概念の詳細について説明します。
+これで完了です。OneNote アドインが正常に作成されました。 次に、OneNote アドイン構築の中心概念の詳細について説明します。
 
 > [!div class="nextstepaction"]
-> [OneNote JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
+> [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
 
 ## <a name="see-also"></a>関連項目
 
-- [OneNote JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
+- [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

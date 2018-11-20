@@ -188,13 +188,13 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. 要`ProviderName`素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`DisplayName` これは、**My Office Add-in** に置き換えてください。
+3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Word** に置き換えてください。
+4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -212,7 +212,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 1. Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。
 
-2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます  (Office 365 バージョンではなく、サブスクリプション バージョンではない Office 2016 を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
 
@@ -234,66 +234,57 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. ローカル ドライブにフォルダーを作成し、`my-word-addin` という名前を付けます。 ここにアドインのファイルを作成します。
-
-2. 新しいフォルダーに移動します。
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+1. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **Choose a project type (プロジェクト タイプを選んでください):** `Office Add-in project using Jquery framework`
-    - **Choose a script type (スクリプト タイプを選んでください):** `Javascript`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`
+    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
     
-    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
+    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+    
+2. プロジェクトのルート フォルダーに移動します。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。 すべての内容を次のコードに置き換え、ファイルを保存します。 このアドインには、3 つのボタンが表示されます。いずれかのボタンを選択すると、文書に定型句が追加されます。
+1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。 
+
+2. `<body>` 要素を次のマークアップに置き換え、ファイルを保存します。
 
     ```html
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-            <title>Boilerplate text app</title>
-            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <link href="app.css" rel="stylesheet" type="text/css" />
-        </head>
-        <body>
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>    
-            <div id="content-main">
-                <div class="padding">
-                    <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                    <br /><br />
-                    <button id="checkhov">Add quote from Anton Chekhov</button>
-                    <br /><br />
-                    <button id="proverb">Add Chinese proverb</button>
-                </div>
+    <body>
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
             </div>
-            <br />
-            <div id="supportedVersion"/>
-        </body>
-    </html>
+        </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br /><br />
+                <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br /><br />
+                <button id="proverb">Add Chinese proverb</button>
+            </div>
+        </div>
+        <br />
+        <div id="supportedVersion" />
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
 2. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
@@ -428,11 +419,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **my-office-add-in-manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
-2. 要`ProviderName`素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。`Description` これは、**A task pane add-in for Word** に置き換えてください。
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -455,7 +446,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 1. Word 内でアドインをサイドロードするには、アドインの実行に使用するプラットフォームの指示に従います。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Word Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
@@ -470,13 +461,14 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明し、Word アドインのチュートリアルにしたがい、さらに複雑なアドインを構築します。
+これで完了です。jQuery を使用して Word アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明します。Word アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [Word アドイン チュートリアル](../tutorials/word-tutorial.yml)
+> [Word アドインのチュートリアル](../tutorials/word-tutorial.yml)
 
 ## <a name="see-also"></a>関連項目
 
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
-* [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API リファレンス](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
+* 
+  [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Word JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)

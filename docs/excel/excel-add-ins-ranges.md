@@ -1,25 +1,25 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 246b882a921b5a43ca747238262af7c4b23c97ee
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/19/2018
+ms.openlocfilehash: 9ac2ce808390dce90572aa27f3f8da2bce9cb572
+ms.sourcegitcommit: 8b079005eb042035328e89b29bf2ec775dd08a96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459169"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "25772250"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
-この記事では、Excel の JavaScript API を使用して範囲の共通のタスクを実行する方法を示すコード サンプルを提供します。**Range** オブジェクトでサポートされているプロパティとメソッドの完全なリストについては、「[Range オブジェクト (Excel の JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range)」をご覧ください。
+この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)」を参照してください。
 
 ## <a name="get-a-range"></a>範囲を取得する
 
-次の例では、ワークシート内の範囲への参照を取得するさまざまな方法を示しています。
+次の例では、ワークシート内の範囲への参照を取得する、さまざまな方法を示しています。
 
 ### <a name="get-range-by-address"></a>アドレスによって範囲を取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートからアドレス **B2:B5** の範囲を取得し、その **address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートからアドレス **B2:B5** の範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -36,7 +36,7 @@ Excel.run(function (context) {
 
 ### <a name="get-range-by-name"></a>名前によって範囲を取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートから **MyRange** という名前の範囲を取得し、その **address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートから **MyRange** という名前の範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -53,7 +53,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>使用範囲を取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートから使用済みの範囲を取得し、その **address** プロパティを読み込んで、コンソールにメッセージを書き込みます。使用済みの範囲とは、値または書式が割り当てられているワークシート内の任意のセルを含む最小の範囲です。ワークシート全体が空白の場合、**getUsedRange()** メソッドは、ワークシートの左上のセルのみで構成される範囲を返します。
+次のコード サンプルでは、**Sample** という名前のワークシートから使用範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。 使用範囲とは、値または書式設定が割り当てられているワークシート内のセルを含む、最小の範囲です。 ワークシート全体が空白の場合、**getUsedRange()** メソッドは、ワークシートの左上のセルのみで構成される範囲を返します。
 
 ```js
 Excel.run(function (context) {
@@ -70,7 +70,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>範囲全体を取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートからワークシート全体の範囲を取得し、その **address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートからワークシートの範囲全体を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -87,7 +87,7 @@ Excel.run(function (context) {
 
 ## <a name="insert-a-range-of-cells"></a>セルの範囲を挿入する
 
-次のコードサンプルは、場所 **B4:E4** にセルの範囲を挿入し、新しいセルのためのスペースを確保するために他のセルを下にシフトします。
+次のコードサンプルは、場所 **B4:E4** にセルの範囲を挿入し、他のセルを下にシフトして、新しいセルのためのスペースを提供します。
 
 ```js
 Excel.run(function (context) {
@@ -110,7 +110,7 @@ Excel.run(function (context) {
 
 ## <a name="clear-a-range-of-cells"></a>セルの範囲をクリアする
 
-次のコード サンプルでは、範囲 **E2:E5** のセルの内容と書式をすべてクリアします。  
+次のコード サンプルは、範囲 **E2：E5** のセルの内容と書式をすべてクリアします。  
 
 ```js
 Excel.run(function (context) {
@@ -133,7 +133,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-a-range-of-cells"></a>セルの範囲を削除する
 
-次のコード サンプルでは、範囲 **B4:E4** のセルを削除し、他のセルを上にシフトして、削除されたセルによって空いたスペースを充填します。
+次のコード サンプルは、範囲 **B4:E4** のセルを削除し、他のセルを上にシフトして、削除されたセルのために空いたスペースに入力します。
 
 ```js
 Excel.run(function (context) {
@@ -156,7 +156,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-selected-range"></a>選択範囲を設定する
 
-次のコード サンプルでは、作業中のワークシートの範囲 **B2:E6** を選択します。
+次のコード サンプルは、作業中のワークシートの範囲 **B2:E6** を選択します。
 
 ```js
 Excel.run(function (context) {
@@ -175,7 +175,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-selected-range"></a>選択範囲を取得する
 
-次のコード サンプルでは、選択範囲を取得し、その **address** プロパティを読み込んで、コンソールにメッセージを書き込みます。 
+次のコード サンプルでは、選択範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。 
 
 ```js
 Excel.run(function (context) {
@@ -219,7 +219,7 @@ Excel.run(function (context) {
 
 ### <a name="set-values-for-a-range-of-cells"></a>複数のセルの範囲の値を設定する
 
-次のコード サンプルでは、範囲 **B5:D5** のセルの値を設定し、データに最も適した列の幅を設定します。
+次のコード サンプルでは、範囲 **B5：D5** のセルの値を設定し、データに最も適した列の幅を設定します。
 
 ```js
 Excel.run(function (context) {
@@ -269,7 +269,7 @@ Excel.run(function (context) {
 
 ![セルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formula.png)
 
-### <a name="set-formulas-for-a-range-of-cells"></a>複数のセルの範囲の数式を設定する
+### <a name="set-formulas-for-a-range-of-cells"></a>セルの範囲の数式を設定する
 
 次のコード サンプルでは、範囲 **E2:E6** のセルの数式を設定し、データに最も適した列の幅を設定します。
 
@@ -306,7 +306,7 @@ Excel.run(function (context) {
 
 ### <a name="get-values-from-a-range-of-cells"></a>セルの範囲から値を取得する
 
-次のコード サンプルでは、範囲 **B2:E6**を取得し、その  **values** プロパティを読み込み、その値をコンソールに書き込みます。範囲の **values** プロパティは、セルに含まれている生の値を指定します。範囲内のいくつかのセルに数式が含まれている場合でも、範囲の **values** プロパティは数式ではなく、それらのセルの生の値を指定します。
+次のコード サンプルでは、範囲 **B2:E6** を取得し、**values** プロパティを読み込んで、コンソールに値を書き込みます。 範囲の **values** プロパティは、セルに含まれる未処理の値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、範囲の **values** プロパティは、それらのセルの未処理の値 (数式ではなく) を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -325,7 +325,7 @@ Excel.run(function (context) {
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.values (上のコード サンプルによりコンソールに記録される)**
+**range.values (上記のコード サンプルによりコンソールに記録される)**
 
 ```json
 [
@@ -364,7 +364,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>セルの範囲からテキストを取得する
 
-次のコード サンプルでは、範囲 **B2:E6** を取得し、その **text** プロパティを読み込んで、コンソールに書き込みます。範囲の **text** プロパティは、範囲内のセルの表示値を指定します。範囲内のいくつかのセルに数式が含まれている場合でも、範囲の **text** プロパティは数式ではなく、それらのセルの表示値を指定します。
+次のコード サンプルでは、範囲 **B2:E6** を取得し、**text** プロパティを読み込んでコンソールに書き込みます。  範囲の **text** プロパティは、範囲内のセルの表示値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、範囲の **text** プロパティは、それらのセルの表示値 (数式ではなく) を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -383,7 +383,7 @@ Excel.run(function (context) {
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.text (上のコード サンプルによりコンソールに記録される)**
+**range.text (上記のコード サンプルによりコンソールに記録される)**
 
 ```json
 [
@@ -422,7 +422,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>セルの範囲から数式を取得する
 
-次のコード例では、範囲 **B2:E6** を取得し、その **formulas** プロパティを読み込んで、コンソールに書き込みます。範囲の **formulas** プロパティは、数式が含まれている範囲内のセルの数式と、数式が含まれていない範囲内のセルの生の値を指定します。
+次のコード サンプルでは、範囲 **B2:E6** を取得し、**formulas** プロパティを読み込んでコンソールに書き込みます。  範囲の **formulas** プロパティは、数式と数式を含まない範囲のセルの未処理の値が含まれる、範囲内のセルの数式を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -441,7 +441,7 @@ Excel.run(function (context) {
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (上のコード サンプルによりコンソールに記録される)**
+**range.formulas (上記のコード サンプルによりコンソールに記録される)**
 
 ```json
 [
@@ -480,11 +480,11 @@ Excel.run(function (context) {
 
 ## <a name="set-range-format"></a>範囲の書式を設定する
 
-次の例は、範囲内のセルのフォントの色、塗りつぶしの色、および数値の書式を設定する方法を示します。
+次の例は、範囲内のセルのフォントの色、塗りつぶしの色、および数値の書式を設定する方法を示しています。
 
 ### <a name="set-font-color-and-fill-color"></a>フォントの色と塗りつぶしの色を設定する
 
-次のコード サンプルでは、範囲 **B2:E2** のセルのフォントの色と塗りつぶしの色を設定します。
+次のコード サンプルは、範囲 **B2：E2** のセルのフォントの色と塗りつぶしの色を設定します。
 
 ```js
 Excel.run(function (context) {
@@ -500,15 +500,15 @@ Excel.run(function (context) {
 
 **フォントの色と塗りつぶしの色を設定する前の範囲内のデータ**
 
-![書式を設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
+![書式設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
 
 **フォントの色と塗りつぶしの色を設定した後の範囲内のデータ**
 
-![書式を設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
+![書式設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>数値の書式を設定する
 
-次のコード サンプルでは、範囲 **D3:E5** のセルの数値を書式を設定します。
+次のコード サンプルは、範囲 **D3：E5** のセルの数値を書式を設定します。
 
 ```js
 Excel.run(function (context) {
@@ -529,18 +529,23 @@ Excel.run(function (context) {
 
 **数値の書式を設定する前の範囲内のデータ**
 
-![書式を設定する前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
+![書式設定する前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
 **数値の書式を設定した後の範囲内のデータ**
 
 ![書式設定した後の Excel のデータ](../images/excel-ranges-format-numbers.png)
 
+### <a name="conditional-formatting-of-ranges"></a>範囲の条件付き書式
+
+範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。 この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。
+
 ## <a name="copy-and-paste"></a>コピーと貼り付け
 
 > [!NOTE]
-> CopyFrom 関数は現在、パブリック プレビュー (ベータ版) でのみ使用可能です。この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。TypeScript を使用している場合、またはコード エディターで IntelliSense 用の TypeScript 型定義ファイルを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+> 現在、copyFrom 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
 
-範囲の copyFrom 関数は、Excel の UI のコピーと貼り付けの動作と同じ動作をします。copyFrom が呼び出された範囲オブジェクトがコピー先です。コピー元のソースは、範囲、または範囲を表す文字列のアドレスとして渡されます。次のコード サンプルでは、**A1:E1** からデータを **G1** で始まる範囲にコピーします (これは **G1:K1** への貼り付けとなります)。
+範囲の copyFrom 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 copyFrom が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
 ```js
 Excel.run(function (context) {
@@ -551,17 +556,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Range.copyFrom には、次の 3 つの省略可能なパラメーターがあります。
+Range.copyFrom には、オプションのパラメーターが 3 つあります。
 
 ```ts
 copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
 ``` 
 
-`copyType` はコピー元からコピー先へコピーするデータを指定します。`“Formulas”` はコピー元のセル内の数式を移動し、それらの数式の範囲の相対的な位置を保存します。数式でない内容はそのままコピーされます。`“Values”` はデータの値をコピーしますが、数式の場合は数式の結果をコピーします。`“Formats”` はフォント、色、その他の書式設定を含めた範囲の書式をコピーしますが、値はコピーしません。`”All”` (規定の選択肢) はデータと書式の両方をコピーし、セルに数式がある場合はそれを保存します。
+`copyType` では、ソースからコピー先にコピーされるデータを指定します。 
+`“Formulas”` では、ソースのセルの数式が転送され、それらの数式の範囲の相対配置は保持されます。 任意の数式以外のエントリはそのままコピーされます。 
+`“Values”` では、データ値と、数式の場合は数式の結果をコピーします。 
+`“Formats”` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。 
+`”All”` (既定のオプション) では、データと書式設定の両方がコピーされます。見つかった場合、セルの数式は保持されます。
 
-`skipBlanks` は空白のセルをコピー先にコピーするかどうかを設定します。True の場合、`copyFrom` はコピー元範囲内の空白のセルをスキップします。スキップしたセルは、コピー先範囲内の対応するセルの既存のデータに上書きされることはありません。既定では false です。
+`skipBlanks` では、空白セルをコピー先にコピーするかどうかを設定します。 true の場合、`copyFrom` ではソースの範囲にある空白セルはスキップされます。 スキップされたセルでは、コピー先の範囲内の対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
 
-次のコード サンプルとイメージは、簡単なシナリオでのこの動作を示しています。 
+次のコード サンプルと画像は、この動作をシンプルなシナリオで示しています。 
 
 ```js
 Excel.run(function (context) {
@@ -580,18 +589,18 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-*前出の関数を実行する前。*
+*前の関数が実行される前。*
 
-![範囲のコピー メソッドを実行する前の Excel データ。](../images/excel-range-copyfrom-skipblanks-before.png)
+![範囲のコピー メソッドが実行される前の Excel のデータ。](../images/excel-range-copyfrom-skipblanks-before.png)
 
-*前出の関数を実行した後。*
+*前の関数が実行された後。*
 
-![範囲のコピー メソッドが実行された後の Excel データ。](../images/excel-range-copyfrom-skipblanks-after.png)
+![範囲のコピー メソッドが実行された後の Excel のデータ。](../images/excel-range-copyfrom-skipblanks-after.png)
 
-`transpose` はデータが転置されているかどうか、すなわち行と列が交換されているかどうかを決定します。転置された範囲は主な対角線に沿って反転し、行 **1**、**2**、および **3** は列 **A**、**B**、および **C** になります。 
+`transpose` では、ソースの場所へのデータの行と列の入れ替えを行うかどうかを決定します。 行と列を入れ替える範囲は対角線で反転されるため、行 **1**、**2**、**3** が列 **A**、**B**、**C** になります。 
 
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
 

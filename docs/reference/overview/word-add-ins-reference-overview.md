@@ -1,4 +1,4 @@
-# <a name="word-javascript-api-overview"></a>Word の JavaScript API の使用状況の概要
+# <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
 Word には、ドキュメント コンテンツおよびメタデータとデータをやり取りするアドインを作成するために使用できる豊富な API のセットが用意されています。これらの API を使用して、Word を統合および拡張する魅力的なエクスペリエンスを作成します。コンテンツのインポートとエクスポート、別のデータ ソースから新しいドキュメントのアセンブル、カスタムのドキュメント ソリューションを作成するドキュメント ワークフローとの統合を行えます。
 
@@ -15,8 +15,8 @@ Word JavaScript API は Office.js によって読み込まれます。Word JavaS
 
 Office.js は、次の場所から参照できます。
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js -生産のアドインの場合、このリソースを使用します。
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js -プレビュー機能を開こうとしているときにこのリソースを使用します。
+* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 運用環境のアドインには、このリソースを使用します。
+* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - プレビュー機能を試している場合は、このリソースを使用します。
 
 [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs) を使用している場合、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) をダウンロードして、Office.js を含むプロジェクト テンプレートを取得できます。[nuget から Office.js を取得する](https://www.nuget.org/packages/Microsoft.Office.js/)こともできます。
 
@@ -24,9 +24,9 @@ TypeScript を使用していて npm がある場合、コマンド ライン �
 
 ## <a name="running-word-add-ins"></a>Word アドインを実行します
 
-アドインを実行するには、Office.initialize イベント ハンドラーを使用します。アドインの初期化の詳細については、「[API について](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
+アドインを実行するには、Office.initialize イベント ハンドラーを使用します。アドインの初期化の詳細については、「[JavaScript API for Office について](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
 
-Word 2016以降をターゲットとするアドインは、関数を **Word.run()** メソッドに渡すことで実行されます。  **Run** メソッドに渡される関数は、コンテキストの引数が必要です。 この [コンテキスト オブジェクト](/javascript/api/word/word.requestcontext) は、 Office オブジェクトから取得するコンテキストオブジェクトとは異なりますが、 Word　のランタイム環境と対話するためにも使用されます。 コンテキスト オブジェクトでは、JavaScript API の Word オブジェクト モデルへのアクセスを提供します。 次の例では、 **Word.run()** メソッドを使用して、アドインを初期化し、Word を実行する方法を示します。
+Word 2016 以降を対象とするアドインは、関数を **Word.run()** メソッドに渡すことによって後で実行されます。 **run** メソッドに渡される関数には、context 引数を含める必要があります。 この[コンテキスト オブジェクト](/javascript/api/word/word.requestcontext)は、Office オブジェクトから取得するコンテキスト オブジェクトとは異なりますが、これは Word ランタイム環境とやりとりするためにも使用されます。 コンテキスト オブジェクトを使用して、Word JavaScript API オブジェクト モデルにアクセスできます。 次の例では、**Word.run()** メソッドを使用することにより、Word アドインを初期化して実行する方法について示します。
 
 ```js
 (function () {
@@ -58,7 +58,7 @@ Word 2016以降をターゲットとするアドインは、関数を **Word.run
 })();
 ```
 
-### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Word 文書を Word JavaScript API のプロキシ オブジェクトと同期します
+### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Word 文書を Word JavaScript API のプロキシ オブジェクトと同期する
 
 Word JavaScript API オブジェクト モデルは、Word 内のオブジェクトと緩く結合されています。Word JavaScript API のオブジェクトは、Word 文書内のオブジェクトのプロキシです。プロキシ オブジェクトで実行されたアクションは、ドキュメントの状態が同期されるまで、Word では認識されません。逆に、Word 文書の状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトでは認識されません。ドキュメントの状態を同期するには、**context.sync()** メソッドを実行します。次の例では、本文のプロキシ オブジェクトと、その本文プロキシ オブジェクトにテキスト プロパティを読み込むためのキューに登録済みのコマンドを作成し、さらに **context.sync()** メソッドを使用してWord 文書内の本文と本文プロキシ オブジェクトとを同期します。
 
@@ -110,13 +110,17 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>単語の JavaScript API 仕様を開く
+## <a name="word-javascript-api-open-specifications"></a>Word JavaScript API オープン仕様
 
 新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](../openspec.md) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
+## <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
+
+要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 Word JavaScript API 要件セットの詳細については、「[Word JavaScript API の要件セット](../requirement-sets/word-api-requirement-sets.md)」の記事を参照してください。
+
 ## <a name="word-javascript-api-reference"></a>Word JavaScript API リファレンス
 
-単語の JavaScript API の詳細については、 [Word の JavaScript API リファレンス ドキュメント](/javascript/api/word)を参照してください。
+Word JavaScript API の詳細については、[Word JavaScript API リファレンス ドキュメント](/javascript/api/word)に関するページを参照してください。
 
 ## <a name="see-also"></a>関連項目
 

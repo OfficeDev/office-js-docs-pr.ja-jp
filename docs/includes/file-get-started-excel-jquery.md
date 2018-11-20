@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-jquery"></a>jQuery を使用して Excel のアドインを作成する
 
-この記事では、jQuery と Excel の JavaScript API を使用して Excel アドインを作成する手順について説明します。 
+この記事では、jQuery と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。 
 
 ## <a name="create-the-add-in"></a>アドインを作成する 
 
@@ -12,7 +12,7 @@
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a>アドイン プロジェクトを作成する
+### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
 1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
     
@@ -22,7 +22,7 @@
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションが作成され、そのソリューションの 2 つのプロジェクトが**ソリューション エクスプローラ**に表示されます。**Home.html** ファイルが Visual Studio で開きます。
+5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
     
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -30,7 +30,7 @@
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **Home.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。**Home.html** は `<body>` 要素を以下のマークアップと置き換え、ファイルを保存します。
+1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -50,7 +50,7 @@
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートで **Home.js** ファイルを開きます。このファイルは、アドインのスクリプトを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。 
+2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 
 
     ```js
     'use strict';
@@ -78,7 +78,7 @@
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートで **Home.css** ファイルを開きます。このファイルは、アドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。 
+3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 
 
     ```css
     #content-header {
@@ -109,13 +109,13 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクトで XML マニフェスト ファイルを開きます。このファイルはアドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダーの値があります。これを自分の名前で置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **My Office アドイン** で置き換えます。
+3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
+4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -131,13 +131,13 @@
 
 ### <a name="try-it-out"></a>お試しください
 
-1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
-3. ワークシート内で任意のセル範囲を選択します。
+3. ワークシート内で任意のセルの範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
@@ -156,44 +156,32 @@
 
 ### <a name="create-the-web-app"></a>Web アプリを作成する
 
-1. ローカル ドライブにフォルダーを作成し、**my-addin** という名前を付けます。ここにアプリのファイルを作成します。
-
-    ```bash
-    mkdir my-addin
-    ```
-
-2. アプリ フォルダーに移動します。
-
-    ```bash
-    cd my-addin
-    ```
-
-3. Yeoman ジェネレーターを使用して、アドインのマニフェスト ファイルを生成します。以下のコマンドを実行して、以下のスクリーンショットに示すようにプロンプトに応答します。
+1. Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    - **プロジェクトの種類を選択します。** `Office Add-in project using Jquery framework`
-    - **Choose a script type: (スクリプト タイプを選択してください)** `Javascript`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`
+    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-jquery.png)
     
-    ウィザードが完了すると、ジェネレーターはプロジェクトを作成し、サポートする Node コンポーネントをインストールします。
+    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
-4. Web アプリケーション プロジェクトのルート フォルダーに移動します。
+2. プロジェクトのルート フォルダーに移動します。
 
     ```bash
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a>コードの更新 
+### <a name="update-the-code"></a>コードを更新する 
 
-1. コード エディターで、プロジェクトのルートに **index.html** を開きます。このファイルは、アドインの作業ウィンドウでレンダリングされる HTML を指定します。 
+1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルでは、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 
  
-2.  **index.html** 内で、生成された `body` タグを以下のマークアップに置き換えて、ファイルを保存します。
+2. **index.html** 内で、`body` タグを次に示すマークアップに置き換え、ファイルを保存します。
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -215,7 +203,7 @@
     </body>    
     ```
 
-3.  **src\index.js** のファイルを開いてアドインのスクリプトを指定します。コンテンツ全体を以下のコードに置き換え、ファイルを保存します。
+3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -243,7 +231,7 @@
     })();
     ```
 
-4. ファイル **app.css** を開いてアドインのカスタム スタイルを指定します。内容全体を以下のコードで置き換え、ファイルを保存します。
+4. **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -274,11 +262,11 @@
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1.  **manifest.xml** ファイルを開いて、アドインの設定および機能を定義します。 
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
 
-2.  `ProviderName` 要素にはプレースホルダー値があります。 これを自分の名前に置き換えます。
+2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3.  `Description` 要素の `DefaultValue` 属性にはプレースホルダーがあります。これを **Excel の作業ウィンドウ アドイン** に置き換えます。
+3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -292,23 +280,23 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a>開発用サーバーを起動する
+### <a name="start-the-dev-server"></a>開発用サーバーの起動
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a>お試しください
+### <a name="try-it-out"></a>試してみる
 
-1. アドインを実行するのに使用するプラットフォームの手順に従い、Excel 内でアドインをサイドロードします。
+1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
 
-3. ワークシート内で任意のセル範囲を選択します。
+3. ワークシート内で任意のセルの範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
@@ -316,9 +304,9 @@
 
 ---
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-これで完了です。jQuery を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインを作成します。
+これで完了です。jQuery を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
@@ -326,6 +314,6 @@
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel の JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

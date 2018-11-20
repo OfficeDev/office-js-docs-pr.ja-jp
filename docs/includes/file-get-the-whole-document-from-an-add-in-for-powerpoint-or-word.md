@@ -187,7 +187,7 @@ function sendFile() {
 
 ローカル関数  `getSlice` は、 **File** オブジェクトからスライスを取得するために **File.getSliceAsync** メソッドの呼び出しを行います。 **getSliceAsync** メソッドは、スライスのコレクションから **Slice** オブジェクトを返します。このメソッドには、 _sliceIndex_ と _callback_ という 2 つの必須パラメーターがあります。 _sliceIndex_ パラメーターは、スライスのコレクションへのインデクサーとして整数を取ります。JavaScript API for Office の他の関数と同様、 **getSliceAsync** メソッドもメソッド呼び出しからの結果を処理するためにパラメーターとしてコールバック関数を取ります。
 
- **スライス** オブジェクトは、ファイル内のデータにアクセスできます。  **GetFileAsync** メソッドの _options_ パラメーターで特に指定しない限り、 **スライス** は、4 MB のサイズです。  **スライス** オブジェクトは、3 つのプロパティを公開する: [サイズ](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size)、 [データ](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data)、および [インデックス](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index)。  **Size** プロパティは、スライスのバイト単位のサイズを取得します。  **Index** プロパティは、スライスのコレクション内のスライスの位置を表す整数値を取得します。
+**Slice** オブジェクトを使用すると、ファイルに含まれるデータにアクセスできます。 **getFileAsync** メソッドの _options_ パラメーターで指定していない限り、**Slice** オブジェクトのサイズは 4 MB です。 **Slice** オブジェクトは、[size](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size)、[data](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data)、および [index](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index) の 3 つのプロパティが公開されています。 **size** プロパティでは、スライスのサイズ (バイト単位) が取得されます。 **index** プロパティでは、スライスのコレクション内のスライスの位置を表す整数が取得されます。
 
 ```js
 // Get a slice from the file and then call sendSlice.
