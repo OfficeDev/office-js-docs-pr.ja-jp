@@ -1,51 +1,51 @@
-# <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でカスタム関数を作成します。
+# <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
 ## <a name="introduction"></a>概要
 
-カスタム関数とは、開発者がアドインの一部として、JavaScript でカスタム関数を定義して Excel に追加する新しい関数です。Excel 内のユーザーは、Excel の他のネイティブ関数 (`SUM()` など) と同様に、カスタム関数にアクセスできます。 ユーザー設定の計算などの単純なタスク、または Web からワークシートにリアルタイムにデータをストリーミングするといったより複雑なタスクを実行するカスタム関数を作成できます。
+カスタム関数では、関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。 ユーザーは Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。 ユーザー定義の計算のような単純なタスク、または Web からワークシートへのデータのリアルタイム ストリーミングのようなより複雑なタスクを実行するカスタム関数を作成できます。
 
-このチュートリアルでは、以下の操作を実行します。
+このチュートリアルの内容:
 > [!div class="checklist"]
-> * Yo Office ジェネレーターを使用してカスタム関数プロジェクトを作成します。
-> * 作成済みのカスタム関数を使用して、単純な計算を実行するには
-> * Web サイトからデータを要求するカスタム関数を作成します。
-> * Web サイトからのリアルタイムのデータをストリームするカスタム関数を作成します。
+> * Yo Office ジェネレーターを使用してカスタム関数プロジェクトを作成する
+> * あらかじめ用意されているカスタム関数を使用し、単純な計算を実行する
+> * Web からデータを要求するカスタム関数を作成する
+> * Web からデータをリアルタイムでストリーミングするカスタム関数を作成する
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Node.js および npm](https://nodejs.org/en/)
+* [Node.js と npm](https://nodejs.org/en/)
 
-* [Git バッシュ](https://git-scm.com/downloads) (またはその他の Git クライアント)
+* [Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)
 
-* [Yeoman](http://yeoman.io/) と [Yo Office  ジェネレーター](https://www.npmjs.com/package/generator-office)の最新バージョンです。グローバルにこれらのツールをインストールするには、コマンド プロンプトを使用して次のコマンドを実行します。
+* [Yeoman](http://yeoman.io/) と [Yo Office ジェネレーター](https://www.npmjs.com/package/generator-office)の最新版。 以上のツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```bash
     npm install -g yo generator-office
     ```
 
-*  Windows 版 Excel  (ビルド番号 10827 以降) または Excel Online
+* Windows 版 Excel (バージョン 1810 以降) または Excel Online
 
-* [  Office Insider プログラム](https://products.office.com/office-insider) に参加します。（** Insider** レベルは、以前は「Insider Fast」と呼ばれていました）
+* [Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)
 
-## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成します。
+## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
-Yo Office ジェネレーターを使用するカスタム関数プロジェクトに必要なファイルを作成するこのチュートリアルを開始するでしょう。
+このチュートリアルでは最初に、Yo Office ジェネレーターを使用し、カスタム関数プロジェクトに必要なファイルを作成します。
 
-1. 次のコマンドを実行し、以下のプロンプトに応答します。
+1. 次のコマンドを実行し、以下のようにプロンプトに応答します。
 
     ```bash
     yo office
     ```
 
-    * プロジェクト タイプを選択してください `Excel Custom Functions Add-in project (...)`
-    * スクリプト タイプを選択してください `JavaScript`
-    * アドインの名前を何にしますか？ `stock-ticker`
+    * Choose a project type (プロジェクトの種類を選択): `Excel Custom Functions Add-in project (...)`
+    * Choose a script type (スクリプトの種類を選択): `JavaScript`
+    * What would you want to name your add-in? (アドインの名前を何にしますか) `stock-ticker`
 
-    ![Yo Office バッシュは、カスタム関数のプロンプトを表示します](../images/yo-office-cfs-stock-ticker-3.png)
+    ![カスタム関数の Yo Office バッシュ プロンプト](../images/yo-office-cfs-stock-ticker-3.png)
 
-    ウィザードを完了すると、ジェネレーターがプロジェクト ファイルを作成し、ノードのサポート コンポーネントをインストールします。プロジェクト ファイルは、 [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) の GitHub のリポジトリから取得されます。
+    ウィザードを完了すると、ジェネレーターによってプロジェクト ファイルが作成され、サポート ノード コンポーネントがインストールされます。 プロジェクト ファイルは [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub リポジトリにあります。
 
 2. プロジェクト フォルダーに移動します。
 
@@ -53,63 +53,64 @@ Yo Office ジェネレーターを使用するカスタム関数プロジェク�
     cd stock-ticker
     ```
 
-3. ローカル Web サーバーを起動します。
+3. ローカル Web サーバーを開始します。
 
-    * Windows 版 Excel のテストに使用する場合、ローカルの Web サーバーを起動するのには次のコマンドを実行、カスタム関数は Excel、およびアドインが Sideload を起動します。
+    * Windows 版 Excel を使用してカスタム関数をテストする場合、次のコマンドを実行してローカル Web サーバーを開始し、Excel を起動し、アドインをサイドロードします。
 
         ```bash
         npm start
         ```
 
-    * Excel Online を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル Web サーバーを起動します。 
+    * Excel Online を使用してカスタム関数をテストする場合、次のコマンドを実行してローカル Web サーバーを開始します。 
 
         ```bash
         npm run start-web
         ```
 
-## <a name="try-out-a-prebuilt-custom-function"></a>作成済みのカスタム関数を試してみてください。
+## <a name="try-out-a-prebuilt-custom-function"></a>あらかじめ用意されているカスタム関数をテストする
 
-Yo Office ジェネレーターを使用して作成したカスタム関数プロジェクトには、 **src/customfunction.js** ファイル内で定義されたいくつか作成済みのカスタム関数が含まれています。プロジェクトのルートディレクトリにある **manifest.xml** ファイルは、すべてのカスタム関数が `CONTOSO` 名前空間に属することを指定します。
+Yo Office ジェネレーターで作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**src/customfunction.js** ファイル内で定義されています。 プロジェクトのルート ディレクトリの **manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。
 
-作成済みのカスタム関数のいずれかを使用する前に、Excel でカスタム関数アドインを登録する必要があります。このチュートリアルで使用するプラットフォームの手順を完了するようにします。
+あらかじめ用意されているカスタム関数を使用する前に、Excel でカスタム関数アドインを登録する必要があります。 そのためには、このチュートリアルで使用しているプラットフォームの場合、次の手順を実行します。
 
-* カスタム関数をテストするには 、Windows 版 Excel を使用します。
+* Windows 版 Excel を使用してカスタム関数をテストする場合:
 
-    1. Excel では、 **[挿入]** タブを選択し、 **[個人用アドイン]** の右にある下向き矢印を選択します。![[個人用アドイン]の矢印が強調表示された状態で Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-1b.png)
+    1. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)
 
-    2. 利用可能なアドインの一覧で、  **アドインの開発者** のセクションを検索し、** Excel カスタム関数**   アドインを選択して登録します。 ![Excel カスタム関数アドインを[個人用アドイン] リストで強調表示して Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-2.png)
+    2. 使用可能なアドインの一覧から [**開発者向けアドイン**] を見つけ、[**Excel カスタム関数**] アドインを選択して登録します。
+        ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
 
-* カスタム関数をテストするには 、Excel Online を使用します。 
+* Excel Online を使用してカスタム関数をテストする場合: 
 
-    1. Excel Online で** [挿入]** ]タブを選択し、** [アドイン]** を選択します。![  [個人用アドイン]アイコンを強調表示して Excel Online でリボンを挿入します。](../images/excel-cf-online-register-add-in-1.png)
+    1. Excel Online で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
-    2. ** [個人用アドインの管理] ** を選択し、 ** [個人用アドインのアップロード] **を選択します。 
+    2. [**マイ アドインの管理**] を選択し、[**マイ アドインのアップロード**] を選択します。 
 
-    3. ** [参照... ]**  を選択し、Yo Officeジェネレータが作成したプロジェクトのルートディレクトリに移動します。 
+    3. [**参照...**] を選択し、Yo Office ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。 
 
-    4. ** Manifest.xml**ファイルを選択して ** 開く** を選択し、** アップロード** を選択します。
+    4. ファイル **manifest.xml** を選択し、[**開く**] を選択し、[**アップロード**] を選択します。
 
-この時点で、プロジェクトの作成済みのカスタム関数がロードされて Excel 内で使用できます。Excel で次の手順を実行して`ADD` カスタム関数を試してみてください。
+この時点で、プロジェクトにあらかじめ用意されているカスタム関数が読み込まれており、Excel 内で使用できます。 Excel で次の手順を実行し、`ADD` カスタム関数を試してみてください。
 
-1. セル内には、**=CONTOSO** を入力します。オートコンプリートメニューには、 `CONTOSO` 名前空間内のすべての関数の一覧が表示されます。
+1. セル内に「**=CONTOSO**」と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
-2. セルに次の値を指定し、Enter キーを押して、`CONTOSO.ADD` 数値 `10` および`200` 入力パラメータとして関数を実行します。
+2. `CONTOSO.ADD` 関数を実行します。入力パラメーターとして `10` と `200` をセル内で指定し、Enter キーを押します。
 
     ```
     =CONTOSO.ADD(10,200)
     ```
 
- `ADD` カスタム関数は、入力パラメータとして指定されている 2 つの数値の合計を計算します。 `=CONTOSO.ADD(10,200)` を入力すると、Enter キーを押した後にセル内に **210** という結果が表示されます。
+`ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
-## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Web サイトからデータを要求するカスタム関数を作成します。
+## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Web からデータを要求するカスタム関数を作成する
 
-API からの在庫の価格を要求し、その結果をワークシートのセルに表示する機能が必要な場合はどうなりますか？カスタム関数は、Web サイトから非同期にデータを簡単に要求できるように設計されています。
+API に株価を要求し、ワークシートのセルに結果を表示する関数が必要になった場合、どうすればよいでしょうか。 カスタム関数は、Web にデータを非同期で簡単に要求できるように設計されています。
 
- `stockPrice` というカスタム関数を作成し、株価表示（例：**MSFT** ）を受け取り、その株式の価格を返す次の手順を実行します。このカスタム関数は、無料で認証を必要としない IEX 取引 API を使用します。
+次の手順を実行し、銘柄コード (**MSFT** など) を受け取り、その株価を返す、`stockPrice` という名前のカスタム関数を作成します。 このカスタム関数では、IEX Trading API が使用されます。これは無料であり、認証を必要としません。
 
-1. Yo Office ジェネレーターが作成した **株価表示** プロジェクトでは、ファイル **src/customfunctions.js** を検索し、コード エディターで開きます。
+1. Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、ファイル **src/customfunctions.js** を見つけ、それをコード エディターで開きます。
 
-2. 次のコードを **customfunctions.js** に追加して、ファイルを保存します。
+2. 次のコードを **customfunctions.js** に追加し、ファイルを保存します。
 
     ```js
     function stockPrice(ticker) {
@@ -129,9 +130,9 @@ API からの在庫の価格を要求し、その結果をワークシートの�
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Excel でエンドユーザーがこの新しい機能を利用できるようにする前に、この機能を説明するメタデータを指定する必要があります。Yo Office ジェネレーターを作成した**株価表示** プロジェクトでは、ファイル **config/customfunctions.json** を検索し、コード エディターで開きます。  `functions` 次のオブジェクトを  **config/customfunctions.json**  ファイル内の配列に追加し、ファイルを保存します。
+3. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、ファイル **config/customfunctions.json** を見つけ、それをコード エディターで開きます。 **config/customfunctions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
 
-    この JSON は`stockPrice`関数を記述します。
+    この JSON では、`stockPrice` 関数について説明しています。
 
     ```json
     {
@@ -154,35 +155,36 @@ API からの在庫の価格を要求し、その結果をワークシートの�
     }
     ```
 
-4. エンドユーザーが新しい機能を利用できるようにするには、アドインを Excel に再登録する必要があります。このチュートリアルで使用しているプラットフォームの次の手順を実行します。
+4. 新しい関数をエンドユーザーが使用できるようにするには、Excel にアドインを登録する必要があります。 このチュートリアルで使用しているプラットフォームの場合、次の手順を実行します。
 
-    * Windows 版 Excel の場合
+    * Windows 版 Excel を使用する場合:
 
-        1. Excel を終了し、再度Excel を開きます。
+        1. Excel を閉じて再び開きます。
 
-        2. Excel では、 **[挿入]** タブを選択し、 **[個人用アドイン]** の右にある下向き矢印を選択します。![[個人用アドイン]の矢印が強調表示された状態で Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-1b.png)
+        2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)
 
-        1. 利用可能なアドインの一覧で、  **アドインの開発者** のセクションを検索し、** Excel カスタム関数**   アドインを選択して登録します。 ![Excel カスタム関数アドインを[個人用アドイン] リストで強調表示して Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-2.png)
+        1. 使用可能なアドインの一覧から [**開発者向けアドイン**] を見つけ、[**Excel カスタム関数**] アドインを選択して登録します。
+            ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
 
-    * Excel Online を使用している場合 
+    * Excel Online を使用する場合: 
 
-        1. Excel Online で** [挿入]** ]タブを選択し、** [アドイン]** を選択します。![  [個人用アドイン]アイコンを強調表示して Excel Online でリボンを挿入します。](../images/excel-cf-online-register-add-in-1.png)
+        1. Excel Online で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
-        2. ** [個人用アドインの管理] ** を選択し、 ** [個人用アドインのアップロード] **を選択します。 
+        2. [**マイ アドインの管理**] を選択し、[**マイ アドインのアップロード**] を選択します。 
 
-        3. ** [参照... ]**  を選択し、Yo Officeジェネレータが作成したプロジェクトのルートディレクトリに移動します。 
+        3. [**参照...**] を選択し、Yo Office ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。 
 
-        4. ** Manifest.xml**ファイルを選択して ** 開く** を選択し、** アップロード** を選択します。
+        4. ファイル **manifest.xml** を選択し、[**開く**] を選択し、[**アップロード**] を選択します。
 
-5. ここで、新しい機能を試してみましょう。セル **B1**テキストを入力 `=CONTOSO.STOCKPRICE("MSFT")` し、Enter キーを押します。セル **B1** の結果は、Microsoft 株式の 1 株当たりの現在の株価であることがわかります。
+5. それでは、新しい関数を試してみましょう。 セル **B1** にテキスト `=CONTOSO.STOCKPRICE("MSFT")` を入力し、Enter キーを押します。 セル **B1** の結果が Microsoft の最新株価になっているはずです。
 
-## <a name="create-a-streaming-asynchronous-custom-function"></a>ストリーミング非同期のカスタム関数を作成します
+## <a name="create-a-streaming-asynchronous-custom-function"></a>非同期でデータをストリーミングするカスタム関数を作成する
 
- `stockPrice` 関数を作成した時点で株式の価格を返しますが、株価は常に変化しています。株価のリアルタイム更新を取得するために、API からデータをストリーミングするカスタム関数を作成しましょう。
+作成した `stockPrice` 関数では、特定の時点での株価が返されますが、株価は常に変動するものです。 API からデータをストリーミングし、株価をリアルタイム更新するカスタム関数を作成しましょう。
 
-`stockPriceStream`という名前のカスタム関数を作成するには、次の手順を実行して、1000 ミリ秒ごとに指定した在庫の価格を要求します（前の要求が完了している場合）。最初の要求が進行中に、関数が呼び出されているセルのプレースホルダ値 **#GETTING_DATA** が表示される場合があります。関数によって値が返されると、**#GETTING_DATA**  はセル内の値に置き換えられます。
+次の手順を実行し、(前の要求が完了しているという条件で) 1,000 ミリ秒ごとに指定の株価を要求する、`stockPriceStream` という名前のカスタム関数を作成します。 最初の要求が進行中のとき、関数が呼び出されているセルに **#GETTING_DATA** というプレースホルダー値が表示されることがあります。 関数によって値が返されると、そのセルの **#GETTING_DATA** がその値で置換されます。
 
-1. Yo Office ジェネレーターが作成した **株価表示** プロジェクトでは、 **src/customfunctions.js** に次のコードを追加し、ファイルを保存します。
+1. Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、次のコードを **src/customfunctions.js** に追加し、ファイルを保存します。
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -221,9 +223,9 @@ API からの在庫の価格を要求し、その結果をワークシートの�
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Excel がこの新しい関数を使用できるようにエンドユーザーにする前にこの関数を記述するメタデータを指定してください。Yo Office ジェネレーターを作成した **株価表示** プロジェクトに `functions`  次のオブジェクトを ** config/customfunctions.json**  ファイル内の配列に追加し、ファイルを保存します。
+2. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、**config/customfunctions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
 
-    この JSON は`stockPriceStream`関数を記述します。ストリーミング関数の場合は、 `stream` プロパティと `cancelable`  プロパティは、`true` 次のコード例に示すように `options` オブジェクト 内 に設定する必要があります。
+    この JSON では、`stockPriceStream` 関数について説明しています。 ストリーミング関数の場合、このコード サンプルで示すように、`options` オブジェクト内で `stream` プロパティと `cancelable` プロパティを `true` に設定する必要があります。
 
     ```json
     { 
@@ -250,35 +252,36 @@ API からの在庫の価格を要求し、その結果をワークシートの�
     }
     ```
 
-3. エンドユーザーが新しい機能を利用できるようにするには、アドインを Excel に再登録する必要があります。このチュートリアルで使用しているプラットフォームの次の手順を実行します。
+3. 新しい関数をエンドユーザーが使用できるようにするには、Excel にアドインを登録する必要があります。 このチュートリアルで使用しているプラットフォームの場合、次の手順を実行します。
 
-    * Windows 版 Excel の場合
+    * Windows 版 Excel を使用する場合:
 
-        1. Excel を終了し、再度Excel を開きます。
+        1. Excel を閉じて再び開きます。
         
-        2. Excel では、 **[挿入]** タブを選択し、 **[個人用アドイン]** の右にある下向き矢印を選択します。![[個人用アドイン]の矢印が強調表示された状態で Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-1b.png)
+        2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)
 
-        3. 利用可能なアドインの一覧で、  **アドインの開発者** のセクションを検索し、** Excel カスタム関数**   アドインを選択して登録します。 ![Excel カスタム関数アドインを[個人用アドイン] リストで強調表示して Windows 版 Excel にリボンを挿入します。](../images/excel-cf-register-add-in-2.png)
+        3. 使用可能なアドインの一覧から [**開発者向けアドイン**] を見つけ、[**Excel カスタム関数**] アドインを選択して登録します。
+            ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
 
-    * Excel Online を使用している場合 
+    * Excel Online を使用する場合: 
 
-        1. Excel Online で** [挿入]** ]タブを選択し、** [アドイン]** を選択します。![  [個人用アドイン]アイコンを強調表示して Excel Online でリボンを挿入します。](../images/excel-cf-online-register-add-in-1.png)
+        1. Excel Online で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
-        2. ** [個人用アドインの管理] ** を選択し、 ** [個人用アドインのアップロード] **を選択します。 
+        2. [**マイ アドインの管理**] を選択し、[**マイ アドインのアップロード**] を選択します。 
 
-        3. ** [参照... ]**  を選択し、Yo Officeジェネレータが作成したプロジェクトのルートディレクトリに移動します。 
+        3. [**参照...**] を選択し、Yo Office ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。 
 
-        4. ** Manifest.xml**ファイルを選択して ** 開く** を選択し、** アップロード** を選択します。
+        4. ファイル **manifest.xml** を選択し、[**開く**] を選択し、[**アップロード**] を選択します。
 
-4. ここで、新しい機能を試してみましょう。セル**C1** テキストを入力 し、`=CONTOSO.STOCKPRICESTREAM("MSFT")`Enter キーを押します。株式市場が開いている Microsoft の株 1 株のリアルタイムの価格を反映するようにセル **C1** の結果が常に更新されているはずです。
+4. それでは、新しい関数を試してみましょう。 セル **C1** にテキスト `=CONTOSO.STOCKPRICESTREAM("MSFT")` を入力し、Enter キーを押します。 株式市場が開いている場合、セル **C1** の結果が継続的に更新され、Microsoft の株価がリアルタイムで反映されます。
 
 ## <a name="next-steps"></a>次の手順
 
-このチュートリアルでは、新しいカスタム関数プロジェクトを作成し、事前ビルドされた関数を試し、Web からデータを要求するカスタム関数を作成し、Web からリアルタイムデータをストリームするカスタム関数を作成しました。Excel のカスタム関数の詳細については、次の記事を参照してください。 
+このチュートリアルでは、新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。 
 
 > [!div class="nextstepaction"]
 > [Excel でカスタム関数を作成する](../excel/custom-functions-overview.md)
 
 ## <a name="legal-information"></a>法的情報
 
- [IEX](https://iextrading.com/developer/)が無料で提供されるデータです。 [IEX の利用規約](https://iextrading.com/api-exhibit-a/)を表示します。このチュートリアルで Microsoft が IEX API を使用するのは、教育目的でのみです。
+データは [IEX](https://iextrading.com/developer/) より無料提供されました。 [IEX の利用規約](https://iextrading.com/api-exhibit-a/)をご覧ください。 Microsoft はこのチュートリアルで IEX API を教育目的でのみ使用しています。

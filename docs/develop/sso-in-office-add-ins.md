@@ -1,76 +1,76 @@
 ---
-title: Office アドインのシングル サインオンを有効にする
+title: Office アドインのシングル サインオンを有効化する
 description: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: 1a75f7d619d2375a2f7fcb07f6afb7e0d6261ead
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: ca8280b72ab863d0e34330585fb307475e3aa9b9
+ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579906"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "26298566"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効にする (プレビュー)
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
-ユーザーは、Office (オンライン、モバイル、デスクトップ プラットフォーム)に個人用の Microsoft アカウントまたは仕事か学校(Office 365)の アカウントのいずれかを用いてサインインします。これの特徴を利用し、ユーザーに2 回目のサインインを要求しないよう、アドインへユーザーを承認するためシングル サインオン (SSO) を使用できます。
+ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 これとシングル サインオン (SSO) を使用すれば、ユーザーに 2 度目のサインインを求めずに、ご自分のアドインをユーザーに許可できます。
 
 ![アドインのサインイン プロセスを示す画像](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>プレビュー ステータス
+### <a name="preview-status"></a>プレビューの状態
 
-シングル サインオンの API は、現在プレビューのみです。実験のための開発者に使用可能になります。ですが、本番のアドインで使用できません。さらに、SSO を使用するアドインは、 [AppSource](https://appsource.microsoft.com)では受け入れられません。
+現在、シングル サインオン API はプレビューのみでサポートされています。 これは、試験目的のみで開発者に提供されており、運用環境のアドインには使用してはいけません。 また、SSO を使用するアドインは [AppSource](https://appsource.microsoft.com) では許可されていません。
 
-すべての Office アプリケーションでは、SSO のプレビューをサポートします。Word、Excel、Outlook、および PowerPoint で使用可能になります。シングル サインオンの API がサポートされている現在の詳細については、 [IdentityAPI 要件の設定](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)を参照してください。
+SSO のプレビューは、すべての Office アプリケーションではサポートされていません。 これは、Word、Excel、Outlook、および PowerPoint で利用できます。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。
 
 ### <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
 
-SSO を使用するには、アドインの HTML 起動ページの `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` からベータ版 Office の JavaScript ライブラリを読み込む必要があります。
+SSO を使用するには、アドインのスタートアップ HTML ページの `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` から Office JavaScript ライブラリのベータ版を読み込む必要があります。
 
- ** Outlook ** アドインで SSO を使用するには、Office 365 テナントの先進認証を有効にする必要があります。詳細な方法については、「[ Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+**Outlook** アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
-** SSOを、アドインの唯一の方法の認証として使用しないでください。エラーの特定の状況で、アドインに戻る可能性がある代替の認証システムを実装する必要があります。ユーザー テーブル、および認証のシステムを使用することができます。 またはソーシャル ログイン プロバイダーのいずれかを活用することができます。これを行う Office のアドインの使用方法の詳細については、 [Office アドインで外部サービスの承認](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins)を参照してください。 *Outlook*では、推奨されるフォールバック システムです。詳細についてを参照してください [シナリオ: Outlook のアドインで、サービスへのシングル サインオンを実装](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)。
+SSO をアドインの唯一の認証方法と*しない*ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](https://docs.microsoft.com/ja-JP/office/dev/add-ins/develop/auth-external-add-ins)」を参照してください。 *Outlook* には切り替えることが可能な推奨システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」を参照してください。
 
-### <a name="how-sso-works-at-runtime"></a>実行時に SSO が動作する仕組み
+### <a name="how-sso-works-at-runtime"></a>実行時の SSO の動作のしくみ
 
-次の図は、SSO の動作の仕組みを示しています。
+次の図は、SSO の動作のしくみを示しています。
 
 ![SSO プロセスを示す図](../images/sso-overview-diagram.png)
 
-1. アドインでは、JavaScript は新しい Office.js API [getAccessTokenAsync](#sso-api-reference) を呼び出します。これにより、Office ホスト アプリケーションにアドインへのアクセス トークンを取得するように指示します。「[アクセス トークンの使用例](#example-access-token)」 をご覧ください。
+1. アドインの JavaScript により、新しい Office.js API [getAccessTokenAsync](#sso-api-reference) が呼び出されます。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するよう指示されます。 「[アクセス トークンの例](#example-access-token)」を参照してください。
 2. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
-3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーの同意を求めるダイアログを表示します。
-4. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントに現在のユーザーの**アドイン トークン**を要求します。
+3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
+4. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**アドイン トークン**を要求します。
 5. Azure AD は、Office ホスト アプリケーションにアドイン トークンを送信します。
-6. Office ホスト アプリケーションは、`getAccessTokenAsync` 呼び出しによって返される結果オブジェクトの一部として、アドインに**アドイン トークン**を送信します。
-7. アドインの JavaScript は、トークンを解析し、必要な情報 (ユーザーの電子メールアドレスなど) を抽出できます。 
-8. オプションで、アドインはHTTP 要求をそのサーバー側にユーザーについて、ユーザーの環境などのより多くのデータを送信できます。また、自身のアクセス トークンを解析および検証するためにサーバー側に送信できます。 
+6. Office ホスト アプリケーションが、`getAccessTokenAsync` 呼び出しによって返される結果オブジェクトの一部として、アドインに**アドイン トークン**を送信します。
+7. アドイン内の JavaScript が、トークンを解析し、ユーザーのメール アドレスなど必要な情報を抽出します。 
+8. オプションで、アドインで HTTP 要求を送信して、ユーザー設定などユーザーに関する情報をさらにサーバー側から求めることができます。 または、アクセス トークン自体が解析および検証されるようにサーバー側に送信することができます。 
 
 ## <a name="develop-an-sso-add-in"></a>SSO アドインの開発
 
-このセクションでは、SSO を使用している Office アドインを作成するための作業について説明します。これらのタスクについては、言語とフレームワークにとらわれない方法でここで説明します。詳細なチュートリアルの例については、次のように表示されます。
+このセクションでは、SSO を使用する Office アドインの作成に関連するタスクについて説明します。 ここでは、これらのタスクについて、言語とフレームワークに依存しない方法で説明しています。 詳細なチュートリアルの例については、次を参照してください。
 
 * [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 * [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 
-Azure v2.0 エンドポイントの登録ポータルでアドインを登録します。 https://apps.dev.microsoft.comこのプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
+Azure v2.0 エンドポイントの登録ポータル https://apps.dev.microsoft.com にアドインを登録します。 このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
 
 * アドインのクライアント ID とシークレットを取得します。
-* アドイン 2.0 エンドポイント v. AAD に (および必要に応じて Microsoft Graph) を必要とするアクセス許可を指定します。”プロファイル” のアクセス許可は、常に必要です。
-* Office ホスト アプリケーション信頼をアドインに付与します。
+* アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" のアクセス許可は常に必要です。
+* Office ホスト アプリケーションにアドインへの信頼を付与します。
 * 既定のアクセス許可 *access_as_user* を使用して、Office ホスト アプリケーションのアドインへのアクセスを事前認証します。
 
-このプロセスの詳細については、「 [Azure AD v2.0 のエンドポイントで SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
+この手順の詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
 
 ### <a name="configure-the-add-in"></a>アドインを構成する
 
-アドイン マニフェストに新しいマークアップを追加します。
+新しいマークアップをアドイン マニフェストに追加します。
 
 * **WebApplicationInfo** - 次の要素の親。
-* **Id** -アドインのアドインの登録の一部として取得したアプリケーション ID は、このクライアント ID です。 [Azure AD v2.0 のエンドポイントで SSO を使用している Office アドインの登録](register-sso-add-in-aad-v2.md)を参照してください。
-* **Resource** - アドインの URL。
+* **Id** -このアドインのクライアント ID。これはアドインを登録する一貫として取得するアプリケーション ID です。 詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
+* **Resource** - アドインの URL。 これは、AAD にアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` のセクションの URL で使用されている、すべてのサブドメインを含むドメインと一致している必要があります。
 * **Scopes** - 1 つ以上の **Scope** 要素の親。
-* **スコープ**  - AAD に必要な追加のアクセス許可を指定します。 `profile`許可 は、常に必要で、アドインがアクセスしていない Microsoft Graph に対して、必要な唯一のアクセス許可がある可能性があります。その場合は、また **範囲** 要素がMicrosoft Graph に必要なアクセス許可です。たとえば、 `User.Read`、 `Mail.Read`です。グラフにアクセスするためにコード内で使用するライブラリには、追加のアクセス許可が必要です。たとえば、、Microsoft 認証ライブラリ (MSAL) .NET は `offline_access` のアクセス許可を必要とします。詳細については、 [Office アドインから Graph に承認](authorize-to-microsoft-graph.md)を参照してください。
+* **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` のアクセス許可は常に必要です。ご使用のアドインが Microsoft Graph にアクセスしない場合、これは必要な唯一のアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
 Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
@@ -90,16 +90,16 @@ Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="Vers
 
 ### <a name="add-client-side-code"></a>クライアント側のコードを追加する
 
-アドインに JavaScript を追加します。
+アドインに次のために JavaScript を追加します。
 
-* [GetAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)を呼び出します。
+* [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) の呼び出し。
 
-* アクセストークンを解析するか、アドインのサーバー側コードに渡します。 
+* アクセス トークンを解析するか、それをアドインのサーバー側コードに渡す。 
 
-ここでは、`getAccessTokenAsync` の呼び出しの簡単な例を示します。 
+`getAccessTokenAsync` への呼び出しの単純な例を示します。 
 
 > [!NOTE]
-> 次の使用例は、エラーの種類を明示的に処理します。複雑なエラー処理の例については、 [Office の追加-で-ASPNET の SSO で Home.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) と [program.js では、Office の追加-で-NodeJS に SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)を参照してください。 [シングル サインオン (SSO) のエラー メッセージのトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)を参照してください。
+> この例では、1 種類のエラーのみを明示的に処理します。 より複雑なエラー処理の例については、「[Home.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js)」 (Office-Add-in-ASPNET-SSO の Home.js) と 「[program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)」 (Office-Add-in-NodeJS-SSO の program.js) を参照してください。 また、「[シングル サインオン (SSO) のエラー メッセージのトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)」を参照してください。
  
 
 ```js
@@ -119,7 +119,7 @@ Office.context.auth.getAccessTokenAsync(function (result) {
 });
 ```
 
-ここでは、サーバー側に追加のトークンを渡すことの簡単な例です。トークンとしては、 `Authorization` ヘッダーは、要求をサーバー側に送信するときです。次の使用例を使うように、JSON データを送信することを避けるため、 `POST` メソッドが、 `GET` サーバーに書き込むときに、アクセス トークンを送信するだけで十分です。
+サーバー側にアドイン トークンを渡す単純な例を次に示します。 このトークンは、サーバー側に要求を戻すときの `Authorization` ヘッダーとして含まれています。 この例では JSON データの送信が想定されているので、`POST` メソッドを使用しています。ただし、サーバーに書き込まない場合は、アクセス トークンの送信に `GET` で十分です。
 
 ```js
 $.ajax({
@@ -141,27 +141,27 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>メソッドを呼び出すタイミング
 
-Office にログインしているユーザーがなく、アドインを使用できない場合には、*アドインを起動するときに* `getAccessTokenAsync` を呼び出す必要があります。
+Office にログインしているユーザーがいないときにアドインを使用できない場合、*アドインを起動するときに* `getAccessTokenAsync` を呼び出す必要があります。
 
-アドインがログインを必要としないいくつかの機能を持っている場合、ユーザーがログインしているユーザーを必要とするとき 、 `getAccessTokenAsync` *を呼び出します* 。 `getAccessTokenAsync` の冗長な呼び出しによるパフォーマンスの大幅な低下はありません。Office は、アクセス トークンをキャッシュし、期限切れになるまで再利用して、 `getAccessTokenAsync` が呼び出される際、AAD v. 2.0 エンドポイントに別の呼び出しを行うことはありません。すべての関数と、トークンが必要な操作を開始するハンドラへの `getAccessTokenAsync` 呼び出しを追加することができます。
+アドインに、ログイン ユーザーを必要としない機能がある場合、*ユーザーがログイン ユーザーを必要とするアクションを実行するときに* `getAccessTokenAsync` を呼び出します。 `getAccessTokenAsync` の重複呼び出しによってパフォーマンスが大幅に低下することはありません。これは、Office ではアクセス トークンがキャッシュされ、それが期限切れになるまで、 `getAccessTokenAsync` が呼び出されても AAD V.2.0 エンドポイントが再度呼び出されずに再利用されるためです。 このため、`getAccessTokenAsync` の呼び出しを、このトークンが必要とされる場所でアクションを開始するすべての関数とハンドラーに追加できます。
 
 ### <a name="add-server-side-code"></a>サーバー側のコードを追加する
 
-ほとんどのシナリオでは、アドインがアクセス トークンをサーバー側に渡さず、そこで使わない場合、アクセス トークンの入手はあまり意味がありません。いくつかのサーバ側のタスクでは、アドインは以下のことが可能です。
+ほとんどの場合、アドインがサーバー側に渡してそこで使用しない場合は、アクセス トークンを取得してもあまり意味はありません。 アドインでは、次のいくつかのサーバー側のタスクを実行できます。
 
-* トークンから抽出されるユーザーに関する情報を使用する 1 つまたは複数の Web API のメソッドを作成します。たとえば、メソッドを検索、ホストされているデータベース内のユーザーの基本設定をします。( **Id として SSO トークンを使用して** 以下を参照してください)。お使いの言語とフレームワークを使用して、ライブラリがあること、記述するコードが簡略化します。
-* グラフのデータを取得します。サーバー側コードは、次の操作を行います。
+* ホストされている使用しているデータベースのユーザー設定を検索するメソッドなど、トークンから抽出されるユーザーに関する情報を使用する 1 つ以上の Web API メソッドを作成します。 (以下の「**ID として SSO トークンを使用する**」を参照) 使用する言語とフレームワークによっては、記述する必要のあるコードを簡単に記述できるライブラリが使用できることがあります。
+* Microsoft Graph データを取得します。 サーバー側のコードでは、次に示す操作を実行する必要があります。
 
-    * アクセストークンを検証する (以下の「**アクセストークンを検証する**」を参照してください)。
-    * アクセス トークン、ユーザー、およびアドイン (ID とシークレット) の資格情報に関するいくつかのメタデータが含まれている Azure AD v2.0  エンドポイントへの呼び出しに ”on behalf of” フローを開始します。ここでは、アクセス トークンは、ブートス トラップのトークンと呼ばれます。
-    * "On-Behalf-Of" フローから返された新しいアクセス トークンをキャッシュします。
+    * アクセス トークンを検証します (以下の「**アクセス トークンを検証する**」を参照)。
+    * Azure AD v2.0 エンドポイントを呼び出して、「代理」フローを開始します。これには、アクセス トークン、ユーザーに関するメタデータ、およびアドインの資格情報 (ID とシークレット) を含めます。 このコンテキストでは、アクセス トークンはブートストラップ トークンと呼ばれます。
+    * 代理フローから戻される新しいアクセス トークンをキャッシュします。
     * 新しいトークンを使用して Microsoft Graph からデータを取得します。
 
- ユーザーの Microsoft Graph データへの承認済みアクセスを取得する方法の詳細については、「[Office アドインで Microsoft Graph を承認する](authorize-to-microsoft-graph.md)」を参照してください。
+ ユーザーの Microsoft Graph のデータへのアクセス許可を取得するには、「[Microsoft Graph への認証](authorize-to-microsoft-graph.md)」を参照してください。
 
 #### <a name="validate-the-access-token"></a>アクセス トークンを検証する
 
-Web API では、アクセス トークンを受信した後は、使用する前に検証にする必要があります。トークンでは、JSON Web トークン (JWT) で、検証の動作と同じように OAuth の標準的なフローでトークンの検証を意味します。JWT の検証を処理するライブラリのいくつかが、基本機能が含まれます。
+Web API でアクセス トークンを受信したら、そのアクセス トークンを使用する前に検証する必要があります。 このトークンは、JSON Web トークン (JWT) です。そのため、この検証は最も標準的な OAuth でのトークンの検証とまったく同様に動作します。 JWT の検証を処理できるライブラリが複数入手可能ですが、その基本は次のとおりです。
 
 - トークンが整形式であることを確認する
 - トークンが意図した証明機関から発行されたことを確認する
@@ -169,26 +169,26 @@ Web API では、アクセス トークンを受信した後は、使用する�
 
 トークンの検証時には、次のガイドラインに注意してください。
 
-- SSO の有効なトークンは、Azure の機関によって発行される `https://login.microsoftonline.com`です。このトークン内の `iss` 要求は、この値で開始します。
-- トークンの `aud` パラメータは、アドインの登録のアプリケーション ID に設定します。
-- トークンの `scp` パラメータは `access_as_user` に設定します。
+- 有効な SSO トークンは Azure 証明機関 `https://login.microsoftonline.com` から発行されます。 トークン内の `iss` クレームは、この値で始まっている必要があります。
+- トークンの `aud` パラメーターは、アドインの登録のアプリケーション ID に設定します。
+- トークンの `scp` パラメーターは `access_as_user` に設定します。
 
 #### <a name="using-the-sso-token-as-an-identity"></a>ID として SSO トークンを使用する
 
-アドインは、ユーザーの身元を確認する必要がある場合、SSO トークンには、id を確立するために使用できる情報が含まれています。トークンの次の要求は、id に関連しています。
+アドインでユーザーの ID を検証する必要がある場合、SSO トークンには ID を確定するために使用できる情報が含まれています。 ID に関連するトークン内のクレームは次のとおりです。
 
-- `name` -ユーザーの表示名。
-- `preferred_username` - ユーザーの電子メール アドレス。
-- `oid` -Azure Active Directory でユーザーの ID を表す GUID。
-- `tid` - Azure Active Directory でユーザーの組織の ID を表す GUID。
+- `name`: ユーザーの表示名。
+- `preferred_username`: ユーザーの電子メール アドレス。
+- `oid`: Azure Active Directory でユーザーの ID を表す GUID。
+- `tid`: Azure Active Directory でユーザーの組織の ID を表す GUID。
 
-`name` と `preferred_username` の値は変化することがあるため、`oid` と `tid` の値を ID とバックエンドの承認サービスを関連付けるために使用するようにしてください。
+`name` と `preferred_username` の値は変化することがあるため、この ID とバックエンドの承認サービスを、`oid` と `tid` の値を使用して関連付けることをお勧めします。
 
-例えば、サービスは、それらの値を `{oid-value}@{tid-value}`と一緒のようにフォーマットでき、内部のユーザー データベース内のユーザーのレコードの値として格納します。以降の要求で、ユーザー同じ値を使用して取得でき、特定のリソースへのアクセスは、既存のアクセス制御機構に基づて判断できます。
+たとえば、サービスでは、これらの値を `{oid-value}@{tid-value}` のような形式にまとめて、内部ユーザー データベースのユーザーのレコードに値として保存できます。 その後の要求では、同じ値を使用してユーザーを取得できるようになり、特定のリソースへのアクセスについては既存のアクセス制御メカニズムに基づいて決定できます。
 
 ### <a name="example-access-token"></a>アクセス トークンの例
 
-以下は、アクセス トークンの標準的なデコードされたペイロードです。プロパティの詳細については、 [Azure Active Directory バージョン 2.0 のトークンの参照](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens)を参照してください。
+アクセス トークンの標準的なデコードされたペイロードを次に示します。 プロパティの詳細については、[Azure Active Directory v2.0 トークンのリファレンス](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens)に関するページを参照してください。
 
 
 ```js
@@ -213,36 +213,36 @@ Web API では、アクセス トークンを受信した後は、使用する�
 }
 ```
 
-## <a name="using-sso-with-an-outlook-add-in"></a>Outlook のアドインでの SSO の使用
+## <a name="using-sso-with-an-outlook-add-in"></a>Outlook のアドインで SSO を使用する
 
-SSO を Outlook のアドインで使用する場合と、Excel、PowerPoint、または  Word のアドインで使用する場合とでは、小さくても重要な違いがあります。「[Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)」と「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」を必ずお読みください。
+Excel、PowerPoint、または Word のアドインで SSO を使用する場合と Outlook のアドインでそれを使用する場合とでは、小さいけれど重要な違いがいくつかあります。 「[Authenticate a user with a single sign-on token in an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)」 (Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する) と「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」を参照してください。
 
-## <a name="sso-api-reference"></a>SSO API 参照
+## <a name="sso-api-reference"></a>SSO API リファレンス
 
 ### <a name="getaccesstokenasync"></a>getAccessTokenAsync
 
-Office Authの名前空間で、 `Office.context.auth`は、メソッドを用意しています。 `getAccessTokenAsync`は Office ホストがアドインの web アプリケーションにアクセス トークンを取得できるようにします。間接的に、これはアドインが、ユーザーに二回目のサインインを必要とさせず、サインイン中のユーザーの Microsoft のグラフのデータにアクセスすることを可能とします。
+Office Auth 名前空間 (`Office.context.auth`) には、Office ホストがアドインの Web アプリケーションへのアクセス トークンを取得することを可能にする `getAccessTokenAsync` というメソッドがあります。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
 
 ```typescript
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
-メソッドは、アドインの web アプリケーションにアクセス トークンを取得するため、 Azure Active Directory V 2.0 エンドポイントを呼び出します。これにより、アドインを使用してユーザーを識別できます。サーバー側コードでは、 [ "on behalf of"  OAuth フロー](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を使用して、アドインの Web アプリケーションのMicrosoft Graphにアクセスするのに、このトークンを使用できます。
+このメソッドは、Azure Active Directory V 2.0 のエンドポイントを呼び出して、アドインの Web アプリケーションへのアクセス トークンを取得します。 これにより、アドインがユーザーを識別できるようになります。 ["on behalf of" OAuth フロー](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を使用することにより、サーバー側のコードはこのトークンを使用して、アドインの Web アプリケーションの Microsoft Graph にアクセスできます。
 
 > [!NOTE]
-> Outlook では、アドインが Outlook.com または Gmail のメールボックスに読み込まれている場合は、この API はサポートされていません。
+> Outlook でアドインが Outlook.com または Gmail のメールボックスに読み込まれている場合、この API はサポートされません。
 
-<table><tr><td>Hosts</td><td>Excel、OneNote、Outlook、PowerPoint、Word</td></tr>
+<table><tr><td>ホスト</td><td>Excel、OneNote、Outlook、PowerPoint、Word</td></tr>
 
  <tr><td>[要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)</td></tr></table>
 
-#### <a name="parameters"></a>パラメータ
+#### <a name="parameters"></a>パラメーター
 
-`options` -省略可能です。サインオン時の動作を定義するために、`AuthOptions` オブジェクト (下記参照) を受け入れます。
+`options` - 省略可能。 サインイン動作を定義する `AuthOptions` オブジェクトが許可されます (下記参照)。
 
-`callback` -省略可能です。ユーザーの ID のトークンを解析したり、Microsoft のグラフへのアクセスを取得する "on behalf of"  フローでトークンを使用するコールバック メソッドを受け取ります。[AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)`.status` が「成功した」場合、 `AsyncResult.value` は、  生のAAD v. 2.0 形式のアクセス トークンです。
+`callback` - 省略可能。 ユーザー ID 用のトークンを解析できるコールバック メソッドが許可されます。または、トークンを Microsoft Graph へのアクセスを取得するために、「代理」フローで使用します。 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)`.status` が "succeeded" である場合、`AsyncResult.value` が生の AAD v. 2.0 形式のアクセス トークンになります。
 
-`AuthOptions` インターフェイスは、Office が`getAccessTokenAsync` メソッドでAAD v からアドインへのアクセス トークンを取得する場合に、ユーザー エクスペリエンスのオプションを提供します。
+`AuthOptions` インターフェイスには、Office が `getAccessTokenAsync` メソッドを使用して AAD v. 2.0 からアドインに対するアクセス トークンを取得する場合用のユーザー エクスペリエンス用のオプションがあります。
 
 ```typescript
 interface AuthOptions {
