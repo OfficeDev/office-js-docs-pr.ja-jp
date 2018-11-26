@@ -4,7 +4,7 @@
 
 **アドインの種類:** メール コンテキスト アドイン
 
-## <a name="contained-in"></a>次に含まれる:
+## <a name="contained-in"></a>次に含まれる
 
 - [OfficeApp](officeapp.md)
 - [ExtensionPoint](extensionpoint.md)
@@ -31,9 +31,9 @@
 
 | 属性 | 必須 | 説明 |
 |:-----|:-----|:-----|
-| **アイテムタイプ** | はい | 照合するアイテムの種類を指定します。`Message` または `Appointment` になります。`Message` のアイテムの種類には、電子メール、会議出席依頼、会議出席依頼の返信、および会議のキャンセルが含まれます。 |
+| **ItemType** | はい | 照合するアイテムの種類を指定します。`Message` または `Appointment` になります。`Message` のアイテムの種類には、電子メール、会議出席依頼、会議出席依頼の返信、および会議のキャンセルが含まれます。 |
 | **FormType** | いいえ ([ExtensionPoint](extensionpoint.md) 内)、いいえ ([OfficeApp](officeapp.md) 内) | アプリがアイテムの読み取りまたは編集フォームで表示されるかどうかを指定します。`Read`、`Edit` または `ReadOrEdit` のいずれかになります。`ExtensionPoint` 内の `Rule` で指定されている場合、この値は `Read` である必要があります。 |
-| **itemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](https://docs.microsoft.com/outlook/add-ins/activation-rules)」を参照してください。 |
+| **ItemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](https://docs.microsoft.com/outlook/add-ins/activation-rules)」をご覧ください。 |
 | **IncludeSubClasses** | いいえ | アイテムが指定したメッセージ クラスのサブクラスである場合に、このルールは true と評価する必要があるかどうかを指定します。既定値は `false` です。 |
 
 ### <a name="example"></a>例
@@ -60,13 +60,13 @@
 
 | 属性 | 必須 | 説明 |
 |:-----|:-----|:-----|
-| **EntityType** | はい | このルールが true と評価するために見つける必要のあるエンティティの型を指定します。`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress`、または `Contact` のいずれかになります。 |
+| **EntityType** | はい | このルールが true と評価されるために見つける必要のあるエンティティの型を指定します。`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress`、または `Contact` のいずれかになります。 |
 | **RegExFilter** | いいえ | このエンティティに対してアクティブ化を実行するための正規表現を指定します。 |
 | **FilterName** | いいえ | 正規表現フィルターの名前を指定します。指定すると、以後このフィルターをアドインのコード内で参照できます。 |
 | **IgnoreCase** | いいえ | **RegExFilter** 属性で指定した正規表現の実行時に、大文字と小文字の違いを無視するように指定します。 |
-| **ハイライト** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するエンティティを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
+| **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するエンティティを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
-### <a name="example"></a>例
+### <a name="example"></a>使用例
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" EntityType="EmailAddress" />
@@ -82,14 +82,14 @@
 |:-----|:-----|:-----|
 | **RegExName** | はい | アドインのコードで参照できるように、正規表現の名前を指定します。 |
 | **RegExValue** | はい | メール アドインを表示するかどうかを判断するために評価する正規表現を指定します。 |
-| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHtml`、または `SenderSTMPAddress` のいずれかになります。 |
+| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSTMPAddress` のいずれかになります。 |
 | **IgnoreCase** | いいえ | 正規表現の実行時に大文字と小文字の違いを無視するように指定します。 |
-| **ハイライト** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するテキストを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
+| **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するテキストを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
-### <a name="example"></a>例
+### <a name="example"></a>使用例
 
 ```XML
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHtml" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHTML" IgnoreCase="true" />
 ```
 
 ## <a name="rulecollection"></a>RuleCollection
@@ -100,9 +100,9 @@
 
 | 属性 | 必須 | 説明 |
 |:-----|:-----|:-----|
-| **モード** | はい | このルール コレクションの評価時に使用する論理演算子を指定します。`And` または `Or` のどちらかになります。 |
+| **Mode** | はい | このルール コレクションの評価時に使用する論理演算子を指定します。次のいずれかを指定できます。`And` または `Or` のどちらかになります。 |
 
-### <a name="example"></a>例
+### <a name="example"></a>使用例
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="And">
