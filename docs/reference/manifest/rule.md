@@ -82,7 +82,7 @@
 |:-----|:-----|:-----|
 | **RegExName** | はい | アドインのコードで参照できるように、正規表現の名前を指定します。 |
 | **RegExValue** | はい | メール アドインを表示するかどうかを判断するために評価する正規表現を指定します。 |
-| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSTMPAddress` のいずれかになります。 |
+| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSMTPAddress` のいずれかになります。 |
 | **IgnoreCase** | いいえ | 正規表現の実行時に大文字と小文字の違いを無視するように指定します。 |
 | **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するテキストを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
