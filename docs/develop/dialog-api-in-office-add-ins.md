@@ -1,13 +1,13 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: bf93a6aeb4d0b92015351d924d417be0631daf37
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.date: 11/28/2018
+ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237529"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992234"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -80,6 +80,17 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > [!NOTE]
 > どの時点であっても、iframe で開けないページにダイアログがリダイレクトされることになる場合は、`displayInIframe: true` を使用**しないでください**。たとえば、Google や Microsoft アカウントなどの多くの一般的な Web サービスのサインイン ページは iframe で開くことができません。
 
+### <a name="handling-pop-up-blockers-with-office-online"></a>Office Online を使用したポップアップ ブロックの処理
+
+Office Online の使用中にダイアログを表示しようとすると、ブラウザーのポップアップ ブロックによってダイアログがブロックされる可能性があります。 アドインのユーザーがアドインからのプロンプトに初めて同意する場合、ブラウザーのポップアップ ブロックが回避される可能性があります。 `displayDialogAsync` の [DialogOptions](/javascript/api/office/office.dialogoptions) には、そのようなポップアップをトリガーするための `promptBeforeOpen` プロパティがあります。 `promptBeforeOpen` は、次の動作を設定するブール値です。
+ 
+ - `true` - ナビゲーションをトリガーし、ブラウザーのポップアップ ブロックを回避するためのポップアップがフレームワークに表示されます。 
+ - `false` - ダイアログは表示されず、(ナビゲーションをトリガーするユーザー インターフェイス アーティファクトを提供することにより) 開発者はポップアップを処理する必要があります。 
+ 
+ポップアップの外観は、次のスクリーンショットに類似したものになります。
+
+![ブラウザー内のポップアップ ブロックを回避するために、アドインのダイアログで生成できるプロンプト。](../images/dialog-prompt-before-open.png)
+ 
 ### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>ダイアログ ボックスからホスト ページに情報を送信する
 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。

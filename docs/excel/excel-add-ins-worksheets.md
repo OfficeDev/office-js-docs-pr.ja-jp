@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 11/27/2018
+ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459134"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992227"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
-この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js)」を参照してください。
+この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)」を参照してください。
 
 > [!NOTE]
 > この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
@@ -279,7 +279,31 @@ Excel.run(function (context) {
 
 ワークシート内の範囲を取得する方法を示す例については、「[Excel の JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。
 
+## <a name="data-protection"></a>データの保護
+
+ご使用のアドインでは、ワークシート内のデータを編集するユーザー機能を制御できます。 ワークシートの `protection` プロパティは [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) オブジェクトであり、`protect()` メソッドを備えています。 次の例では、アクティブなワークシートの完全な保護を切り替える基本的なシナリオを示します。
+
+```js
+Excel.run(function (context) {
+    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+    activeSheet.load("protection/protected");
+
+    return context.sync().then(function() {
+        if (!activeSheet.protection.protected) {
+            activeSheet.protection.protect();
+        }
+    })
+}).catch(errorHandlerFunction);
+```
+
+`protect` メソッドには、2 つの省略可能なパラメーターがあります。
+
+ - `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。
+ - `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
+
+ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
+
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
 
