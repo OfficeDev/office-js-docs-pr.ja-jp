@@ -2,12 +2,12 @@
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: c2695f35214bd418ad06debbdf81ed7f25596840
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925389"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210078"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -69,7 +69,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 
 |**日付/時刻**|**イベント ID**|**重大度**|**タイトル**|**ファイル**|**ID**|**アプリケーション**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|2012/10/8 5:57:10 PM|7||アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:10 PM|7||アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
 |10/8/2012 5:57:01 PM|7||アドインのマニフェストが正常にダウンロードされました|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 次の表は、通常、Office アドインについてテレメトリ ログで追跡されるイベントを示しています。
@@ -79,7 +79,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 |7|アドインのマニフェストが正常にダウンロードされました||Office アドインのマニフェストがホスト アプリケーションによって正常に読み込まれ、読み取られました。|
 |8|アドインのマニフェストがダウンロードされませんでした|重大|ホスト アプリケーションは Office アドインのマニフェスト ファイルを、SharePoint カタログ、コーポレート カタログ、AppSource のいずれからも読み込めませんでした。|
 |9|アドインのマークアップを解析できませんでした|重大|ホスト アプリケーションは Office アドインのマニフェストを読み込みましたが、アプリの HTML マークアップを読み取れませんでした。|
-|10|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
+|10 個|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
 |15|アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。 **[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
 |18|アドインは正常に終了しました||ホスト アプリケーションによって Office アドインが正常に閉じられました。|
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
@@ -94,7 +94,7 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 - 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 
     
-   無制限のデータに対する一連の入出力操作による長時間に及ぶ CPU の集中的な消費を回避する JavaScript と jQuery のサンプル コードは「[集中的な JavaScript の処理中にブラウザ制御を簡潔に戻す方法](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)」を参照してください。 この例では、グローバル オブジェクトの [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) メソッドを使用して、入力と出力の時間を制限しています。また、ランダムな無制限データの代わりに定義されたチャンク内のデータを処理します。
+   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
     
 - アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
     
@@ -107,4 +107,5 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)
     

@@ -2,12 +2,12 @@
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
 ms.date: 11/07/2018
-ms.openlocfilehash: c3da40be21c0e569028dd10e93e33760ba2bd39d
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: c601eac5ed3fcad76b63fff5ae6eeadb7662c8b7
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26644754"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210106"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
