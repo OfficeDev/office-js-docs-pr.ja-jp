@@ -1,13 +1,13 @@
 ---
-ms.date: 10/24/2018
-description: Excel のカスタム関数のベスト プラクティスと推奨パターンについて説明します。
+ms.date: 11/29/2018
+description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス
-ms.openlocfilehash: 0408318227e1f89726ed7c0e4dfbb8e6340abef4
-ms.sourcegitcommit: 52d18dd8a60e0cec1938394669d577570700e61e
+ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "25797400"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156587"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
@@ -39,7 +39,7 @@ function getComment(x) {
 
 Windows 版 Office でアドインを検証する場合は、アドインの XML マニフェスト ファイルおよびインストールと実行時の条件のトラブルシューティングを行うために**[実行時ログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にすることをおすすめします。 実行時ログは、ログファイルに `console.log` ステートメントを書き込んで、問題を発見します。
 
-このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数 チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。 
+このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
 
 ## <a name="debugging"></a>デバッグ
 
@@ -47,7 +47,7 @@ Windows 版 Office でアドインを検証する場合は、アドインの XML
 
 - カスタム関数のコード内で `console.log` ステートメントを使用して、コンソールにリアルタイムに出力を送信します。
 
-- カスタム関数コード内の `debugger;` ステートメントを使用して、F12 ウィンドウが開いているときに実行が一時停止するブレークポイントを指定します。 例えば F12 ウィンドウが開いているときに以下の関数が動作している場合には、`debugger;` ステートメント上で実行が停止し、 関数が返される前に、パラメーター値を手動で検査することができます。 `debugger;` ステートメントは、F12 ウィンドウが開いていない場合、Excel Onlineには影響しません。 現在、`debugger;` ステートメントはWindows 版 Excel には効果がありません。
+- カスタム関数コード内の `debugger;` ステートメントを使用して、F12 ウィンドウが開いているときに実行が一時停止するブレークポイントを指定します。 例えば F12 ウィンドウが開いているときに以下の関数が動作している場合には、`debugger;` ステートメント上で実行が停止し、 関数が返される前に、パラメーター値を手動で検査することができます。 `debugger;` ステートメントは、F12 ウィンドウが開いていない場合、Excel Online には影響しません。 現在、`debugger;` ステートメントは Windows 版 Excel には効果がありません。
 
     ```js
     function add(first, second){
@@ -74,7 +74,7 @@ CustomFunctionMappings.ADD = add;
 
 JavaScript ファイルでカスタム関数を作成し、JSON のメタデータ ファイルに対応する情報を指定するときは、次のベスト プラクティスに留意してください。
 
-* JavaScript ファイルでは関数名を キャメルケース で記述します。 たとえば、関数名 `addTenToInput` はキャメルケースで記述されています: 名前の最初の単語は小文字で開始し、後続の各単語は大文字で開始します。
+* JavaScript ファイルでは関数名を キャメルケースで記述します。 たとえば、関数名 `addTenToInput` はキャメルケースで記述されています: 名前の最初の単語は小文字で開始し、後続の各単語は大文字で開始します。
 
 * JSON メタデータ ファイル内で、各 `name` プロパティの値に大文字を指定します。  `name` プロパティは、Excel でエンド ユーザーに表示される関数の名前を定義します。 各カスタム関数の名前の大文字を使用することで、すべての組み込み関数の名前は大文字である Excel で、一貫性のあるエクスペリエンスをエンド ユーザーに提供します。
 
@@ -82,11 +82,11 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 * JSON のメタデータ ファイルにそれぞれの `id` プロパティには、英数字とピリオドのみが含まれています。 
 
-* JSON のメタデータ ファイルで、各 `id` プロパティの値が、ファイルのスコープ内で一意であることを確認します。 すなわち、メタデータ ファイル内の 2 つの関数オブジェクトは同じ `id` 値であってはいけません。 さらに、2 つの 大文字と小文字だけが異なるメタデータ ファイル内の `id` 値を指定しないでください。 たとえば、 **add**の値 `id` の関数オブジェクトを、**ADD**の値 `id` の別の関数オブジェクトと定義しないでください。
+* JSON のメタデータ ファイルで、各 `id` プロパティの値が、ファイルのスコープ内で一意であることを確認します。 すなわち、メタデータ ファイル内の 2 つの関数オブジェクトは同じ `id` 値であってはいけません。 さらに、2 つの大文字と小文字だけが異なるメタデータ ファイル内の `id` 値を指定しないでください。 たとえば、 **add**の値 `id` の関数オブジェクトを、**ADD**の値 `id` の別の関数オブジェクトと定義しないでください。
 
 * 対応する JavaScript 関数の名前にマップされた後では、JSON のメタデータ ファイル内の `id` プロパティの値を変更しないでください。 JSON のメタデータ ファイル内の `name` プロパティを更新することによって Excel でエンド ユーザーに表示される関数の名前を変更することができます。しかし、確立された後は、 `id` プロパティの値を決して変更しないでください。
 
-* JavaScript ファイルで同じ場所にすべてのカスタム関数のマッピングを指定します。 例えば次のコード サンプル は、2 つのカスタム関数を定義し、両方の関数のマッピング情報を指定します。
+* JavaScript ファイルで同じ場所にすべてのカスタム関数のマッピングを指定します。 例えば次のコード サンプルは、2 つのカスタム関数を定義し、両方の関数のマッピング情報を指定します。
 
     ```js
     function add(first, second){
@@ -129,6 +129,66 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
       ]
     }
     ```
+
+## <a name="declaring-optional-parameters"></a>省略可能なパラメーターの宣言 
+Windows 版 Excel (バージョン 1812 以降) では、カスタム関数に省略可能なパラメーターを宣言できます。 ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 たとえば、関数 `FOO` に 1 つの必須パラメーター `parameter1` と 1 つの省略可能なパラメーター `parameter2` があるとすると、Excel では `=FOO(parameter1, [parameter2])` のように表示されます。
+
+パラメーターを省略可能にするには、関数を定義している JSON メタデータ ファイルでパラメーターに `"optional": true` を追加します。 次の例では、関数 `=ADD(first, second, [third])` について、これがどのような内容になるかを示しています。 省略可能な `[third]` パラメーターが 2 つの必須パラメーターの後にある点に注目してください。 Excel の数式 UI では、必須パラメーターが最初に表示されます。
+
+```json
+{
+    "id": "add",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+            "name": "first",
+            "description": "first number to add",
+            "type": "number",
+            "dimensionality": "scalar"
+        },
+        {
+            "name": "second",
+            "description": "second number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+        },
+        {
+            "name": "third",
+            "description": "third optional number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+            "optional": true
+        }
+    ],
+    "options": {
+        "sync": false
+    }
+}
+```
+
+関数の定義時に 1 つ以上の省略可能なパラメーターを含める場合は、省略可能なパラメーターが未定義のときの処理を指定しておく必要があります。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 `zipCode` パラメーターが未定義の場合は、既定値が 98052 に設定されます。 `dayOfWeek` パラメーターが未定義の場合は、Wednesday が設定されます。
+
+```js
+function getWeatherReport(zipCode, dayOfWeek)
+{
+  if (zipCode === undefined) {
+      zipCode = "98052";
+  }
+
+  if (dayOfWeek === undefined) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
+}
+```
 
 ## <a name="additional-considerations"></a>その他の考慮事項
 

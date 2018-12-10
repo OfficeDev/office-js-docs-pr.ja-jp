@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する
 description: ''
-ms.date: 10/19/2018
-ms.openlocfilehash: 9ac2ce808390dce90572aa27f3f8da2bce9cb572
-ms.sourcegitcommit: 8b079005eb042035328e89b29bf2ec775dd08a96
+ms.date: 12/04/2018
+ms.openlocfilehash: 4a6e0014da82956b15e11e2739f6f58fb82d5030
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "25772250"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156608"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -538,6 +538,54 @@ Excel.run(function (context) {
 ### <a name="conditional-formatting-of-ranges"></a>範囲の条件付き書式
 
 範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。 この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。
+
+## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Moment-MSDate プラグインを使用した日付の操作
+
+[Moment JavaScript ライブラリ](https://momentjs.com/)により、日付とタイムスタンプが便利に使用できるようになります。 [Moment-MSDate プラグイン](https://www.npmjs.com/package/moment-msdate)は、日付と時刻の形式を Excel に適したものに変換します。 これは、[NOW 関数](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)から返される形式と同じです。
+
+次のコードは、範囲 **B4** に時刻のタイムスタンプを設定する方法を示しています。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    
+    var now = Date.now();
+    var nowMoment = moment(now);
+    var nowMS = nowMoment.toOADate();
+    
+    var dateRange = sheet.getRange("B4");
+    dateRange.values = [[nowMS]];
+    
+    dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
+    
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+これは、次の例に示すように、セルから日付を取得して、その日付を時刻などの形式に変換するのと同様の手法です。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var dateRange = sheet.getRange("B4");
+    dateRange.load("values");
+        
+    return context.sync().then(function () {
+        var nowMS = dateRange.values[0][0];
+
+        // log the date as a moment
+        var nowMoment = moment.fromOADate(nowMS);
+        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+        // log the date as a UNIX-style timestamp 
+        var now = nowMoment.unix();
+        console.log(`get (timestamp): ${now}`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
 
 ## <a name="copy-and-paste"></a>コピーと貼り付け
 

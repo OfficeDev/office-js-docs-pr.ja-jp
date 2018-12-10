@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/26/2018
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
-ms.openlocfilehash: 0c77474188a2deefd23a73bb64e87569bb1fa52a
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: a3d4427af2c6ab46133cb4e2fd9ce384a6a8336c
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298545"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156594"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -127,6 +127,7 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `onCanceled` ハンドラーが呼び出されます。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数の本文では、ハンドラーを `caller.onCanceled` メンバーに割り当てる必要があります。 詳細については、「[関数をキャンセルする](custom-functions-overview.md#canceling-a-function)」を参照してください。 |
 |  `stream`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `caller.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-overview.md#streaming-functions)」を参照してください。 |
+|  `volatile`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> `true` の場合は、数式の依存値が変更されたときのみではなく、Excel が再計算するたびに関数が再計算されます。 関数は、ストリーミングと揮発性の両方にすることはできません。 `stream` と `volatile` の両方のプロパティが `true` に設定されている場合は、揮発性のオプションが無視されます。 |
 
 ## <a name="parameters"></a>parameters
 
@@ -138,6 +139,10 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 |  `dimensionality`  |  文字列  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
 |  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、Excel の intelliSense に表示されます。  |
 |  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 **boolean**、**number**、**string**、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
+|  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |
+
+>[!NOTE]
+> 省略可能なパラメーターの `type` プロパティが指定されていない場合や `any` に設定している場合は、Excel のセルに関数が入力されているときに、IDE の linting エラーや省略可能なパラメーターが表示されないなどの問題が発生することがあります。 これについては、2018 年 12 月に変更される予定です。
 
 ## <a name="result"></a>result
 
