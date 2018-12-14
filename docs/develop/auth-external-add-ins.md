@@ -2,12 +2,12 @@
 title: Office アドインで外部サービスを承認する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6cdf07886ba883a7dfe935b59c918948c2b45afa
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 65b9325cc838dafca7f7e8e3402fc45762321459
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237480"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270748"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 
@@ -61,7 +61,7 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 
 **Facebook**:[Facebook for Developers](https://developers.facebook.com) で "library" または "sdk" を検索します。
 
-**汎用の OAuth 2.0**:数十の言語に対応したライブラリへのリンクが、「[OAuth Code](http://oauth.net/code/)」のページに掲載されています。このページは、IETF OAuth 作業部会によって維持されています。これらのライブラリの一部は、OAuth 準拠のサービスを実装するためのものです。アドイン開発者にとって重要なライブラリは、このページに記載された*クライアント*と呼ばれるライブラリです。これは、目的の Web サーバーが OAuth 準拠のサービスのクライアントになるためです。
+**汎用の OAuth 2.0**:数十の言語に対応したライブラリへのリンクが、「[OAuth Code](https://oauth.net/code/)」のページに掲載されています。このページは、IETF OAuth 作業部会によって維持されています。これらのライブラリの一部は、OAuth 準拠のサービスを実装するためのものです。アドイン開発者にとって重要なライブラリは、このページに記載された*クライアント*と呼ばれるライブラリです。これは、目的の Web サーバーが OAuth 準拠のサービスのクライアントになるためです。
 
 ## <a name="middleman-services"></a>仲介者サービス
 

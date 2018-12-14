@@ -2,12 +2,12 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 28493809c537cecc392f73f5f047e62741c5f77c
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 42f0bf50e65e10f21df11403f53942cc4753a79b
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237494"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270895"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -22,12 +22,12 @@ ms.locfileid: "26237494"
 
 開発時は、アドインの Web サービスからの HTTP 要求および応答を傍受して表示することができるツールを使用することを強くお勧めします。最も一般的なものは、次の 2 つです。
 
-- [Fiddler](http://www.telerik.com/fiddler): 無料 ([ドキュメント](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
+- [Fiddler](https://www.telerik.com/fiddler): 無料 ([ドキュメント](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com/): 30 日間無料  ([ドキュメント](https://www.charlesproxy.com/documentation/))。
 
 サービス API を開発する際には、次のツールを試してみることもできます。
 
-- [Postman](http://www.getpostman.com/postman):無料 ([ドキュメント](https://www.getpostman.com/docs/))
+- [Postman](https://www.getpostman.com/postman):無料 ([ドキュメント](https://www.getpostman.com/docs/))
 
 ## <a name="causes-and-handling-of-errors-from-getaccesstokenasync"></a>getAccessTokenAsync からのエラーの原因と処理
 

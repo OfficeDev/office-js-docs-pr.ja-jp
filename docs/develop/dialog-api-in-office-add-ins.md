@@ -2,12 +2,12 @@
 title: Office アドインでダイアログ API を使用する
 description: ''
 ms.date: 11/28/2018
-ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992234"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270958"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -131,7 +131,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office は [AsyncResult]() オブジェクトをコールバックに渡します。Office はダイアログ ボックスを開こうとした結果を表します。ただし、ダイアログ ボックスでのイベントの結果は表しません。この違いの詳細については、「[エラーとイベントの処理](#handle-errors-and-events)」セクションを参照してください。
+> - Office は [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) オブジェクトをコールバックに渡します。Office はダイアログ ボックスを開こうとした結果を表します。ただし、ダイアログ ボックスでのイベントの結果は表しません。この違いの詳細については、「[エラーとイベントの処理](#handle-errors-and-events)」セクションを参照してください。
 > - `asyncResult` の `value` プロパティは [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) オブジェクトに設置されます。このオブジェクトはダイアログ ボックスの実行コンテキストではなく、ホスト ページに存在します。
 > - `processMessage` はイベントを処理する関数です。任意の名前を指定できます。
 > - `dialog` 変数は、`processMessage` でも参照されるため、コールバックよりも広い範囲で宣言されます。

@@ -2,12 +2,12 @@
 title: Office アドインにおける同一生成元ポリシーの制限への対処
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 054a01d554c529579917218361bcb8aeebb04c3c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004883"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270601"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
@@ -62,7 +62,7 @@ function loadVideoDetails(videoIndex) {
 ## <a name="using-cross-origin-resource-sharing-cors"></a>クロス オリジン リソース共有 (CORS) の使用
 
 
-[XmlHttpRequest2](http://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) のクロス オリジン リソース共有機能を使用する例については、「[New Tricks in XMLHttpRequest2 に関する新しいヒント](http://www.html5rocks.com/en/tutorials/file/xhr2/)」の「Cross Origin Resource Sharing (CORS)」セクションを参照してください。
+[XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) のクロス オリジン リソース共有機能を使用する例については、「[New Tricks in XMLHttpRequest2 に関する新しいヒント](https://www.html5rocks.com/en/tutorials/file/xhr2/)」の「Cross Origin Resource Sharing (CORS)」セクションを参照してください。
 
 
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>IFRAME および POST MESSAGE を使用する独自のプロキシの作成

@@ -2,12 +2,12 @@
 title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 93af27de1f5e22aada7caf9ded97ab6fb200b332
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 5f412de24f1210259ec4255c1776f5e572f0529e
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237515"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270769"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -43,7 +43,7 @@ ms.locfileid: "26237515"
 
    ![データを含まないコンテンツ アドインの隣に、データを含むコンテンツ アドインを示すスクリーンショット](../images/add-in-title.png)
 
-- [無料の試用版](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
+- [無料の試用版](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
 
 - サインアップをシンプルにします。情報 (電子メール、表示名) を事前に入力し、電子メールの確認はスキップします。
 
