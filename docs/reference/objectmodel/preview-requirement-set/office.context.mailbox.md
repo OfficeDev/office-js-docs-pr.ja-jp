@@ -46,7 +46,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 #### <a name="ewsurl-string"></a>ewsUrl :String
 
-このメール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。閲覧モードのみです。
+このメール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。読み取りモードのみです。
 
 > [!NOTE]
 > このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
@@ -62,13 +62,13 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 #### <a name="resturl-string"></a>restUrl :String
 
@@ -84,13 +84,13 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ### <a name="methods"></a>メソッド
 
@@ -116,7 +116,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
 
@@ -144,11 +144,11 @@ REST 形式のアイテム ID を EWS 形式に変換します。
 > [!NOTE]
 > このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
-REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](http://graph.microsoft.io/) など) で取得されたアイテム ID は、Exchange Web サービス (EWS) に使用される形式とは異なる形式を使用します。`convertToEwsId` メソッドは、REST 形式の ID を EWS 用の適切な形式に変換します。
+REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](https://graph.microsoft.io/) など) で取得されたアイテム ID は、Exchange Web サービス (EWS) に使用される形式とは異なる形式を使用します。`convertToEwsId` メソッドは、REST 形式の ID を EWS 用の適切な形式に変換します。
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
@@ -159,7 +159,7 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -186,9 +186,9 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-|`timeValue`| Date|日付オブジェクト|
+|`timeValue`| 日付|日付オブジェクト|
 
 ##### <a name="requirements"></a>要件
 
@@ -196,7 +196,7 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -209,11 +209,11 @@ EWS 形式のアイテム ID を REST 形式に変換します。
 > [!NOTE]
 > このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
-EWS または `itemId` プロパティで取得されるアイテム ID は、REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](http://graph.microsoft.io/) など) に使用される形式とは異なる形式を使用します。`convertToRestId` メソッドは、EWS 形式の ID を REST 用の適切な形式に変換します。
+EWS または `itemId` プロパティで取得されるアイテム ID は、REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](https://graph.microsoft.io/) など) に使用される形式とは異なる形式を使用します。`convertToRestId` メソッドは、EWS 形式の ID を REST 用の適切な形式に変換します。
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
@@ -224,7 +224,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -249,7 +249,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|変換するローカル時刻の値。|
 
@@ -259,7 +259,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -275,7 +275,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
-既存の予定表の予定を表示します。
+既存の予定を表示します。
 
 > [!NOTE]
 > このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
@@ -290,7 +290,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
@@ -300,7 +300,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
 
@@ -325,7 +325,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -335,7 +335,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
 
@@ -345,7 +345,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
-新しい予定表の予定を作成するためのフォームを表示します。
+新しい予定を作成するためのフォームを表示します。
 
 > [!NOTE]
 > このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
@@ -361,9 +361,9 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 ##### <a name="parameters"></a>パラメーター:
 
 > [!NOTE]
-> パラメーターはすべて省略可能です。
+> すべてのパラメーターは省略可能です。
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
@@ -381,7 +381,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 読み取り|
 
 ##### <a name="example"></a>例
 
@@ -414,9 +414,9 @@ Office.context.mailbox.displayNewAppointmentForm(
 ##### <a name="parameters"></a>パラメーター:
 
 > [!NOTE]
-> パラメーターはすべて省略可能です。
+> すべてのパラメーターは省略可能です。
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 | `parameters` | Object | 新しいメッセージを記述するパラメーターのディクショナリ。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | メール アドレスを含む文字列の配列、または To 行の各受信者の `EmailAddressDetails` オブジェクトを含む配列。 配列の上限は 100 エントリです。 |
@@ -428,7 +428,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.attachments.type` | String | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
 | `parameters.attachments.name` | String | 添付ファイル名を含む文字列。最大の長さは 255 文字です。|
 | `parameters.attachments.url` | String | `type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。 |
-| `parameters.attachments.isInline` | ブール値 | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
+| `parameters.attachments.isInline` | Boolean | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
 | `parameters.attachments.itemId` | String | `type` が `item` に設定されている場合にのみ使用されます。 新しいメッセージに添付する必要がある既存の電子メールの EWS のアイテム ID です。 最大 100 文字の文字列です。 |
 
 
@@ -438,7 +438,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 読み取り|
 
 ##### <a name="example"></a>例
 
@@ -485,8 +485,8 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.isRest` | Boolean |  &lt;省略可能&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
+| `options` | オブジェクト | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
 | `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データ。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
 
@@ -496,7 +496,7 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成および閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成と閲覧|
 
 ##### <a name="example"></a>例
 
@@ -540,7 +540,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成および閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成と閲覧|
 
 ##### <a name="example"></a>例
 
@@ -573,7 +573,7 @@ function cb(asyncResult) {
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
 
@@ -598,7 +598,7 @@ function cb(asyncResult) {
 > 
 > このような場合は、アドインでは [REST API を使用](https://docs.microsoft.com/outlook/add-ins/use-rest-api)して、代わりにユーザーのメールボックスにアクセスする必要があります。
 
-`makeEwsRequestAsync` メソッドでは、アドインの代わりに Exchange に EWS 要求を送信します。 サポートされている EWS 操作の一覧については、「[Outlook アドインからの Web サービスの呼び出し](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)」を参照してください。
+`makeEwsRequestAsync` メソッドは、アドインの代わりに Exchange に EWS 要求を送信します。 サポートされている EWS 操作の一覧については、「[Outlook アドインからの Web サービスの呼び出し](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)」を参照してください。
 
 `makeEwsRequestAsync` メソッドでは、フォルダー関連アイテムを要求できません。
 
@@ -629,7 +629,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>EWS 呼び出しの XML 結果は、`asyncResult.value` プロパティ内の文字列として提供されています。 結果のサイズが 1 MB を超える場合、代わりにエラー メッセージが返されます。|
-|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -637,7 +637,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
 
 ##### <a name="example"></a>例
 
@@ -696,7 +696,7 @@ function callback(asyncResult)  {
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
-| `handler` | Function || イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。 |
+| `handler` | 職務 || イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。 |
 | `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.asyncContext` | Object | &lt;optional&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
@@ -707,4 +707,4 @@ function callback(asyncResult)  {
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
