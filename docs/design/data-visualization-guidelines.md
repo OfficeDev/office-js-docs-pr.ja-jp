@@ -2,12 +2,12 @@
 title: Office アドインのデータ可視化のスタイル ガイドライン
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 686ae69c4bfdbd5f8623a80c9e1b61548a3f2bda
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945793"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270692"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
@@ -59,7 +59,7 @@ ms.locfileid: "23945793"
 データ可視化における色の使用のベスト プラクティスについては、次をご覧ください。
 
 
-- [なぜ虹色はデータの可視化に適していないか](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [なぜ虹色はデータの可視化に適していないか](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0:地図作成の色のアドバイス](http://colorbrewer2.org/)
 - [色相が必要だ](http://tools.medialab.sciences-po.fr/iwanthue/)
 
@@ -108,7 +108,7 @@ ms.locfileid: "23945793"
 - 新しい洞察をもたらす、オブジェクトとの直接の対話的操作 (たとえばドラッグで並べ替え) を考慮に入れます。
 - 単純で直接的な、慣れ親しんだ対話的操作モデルを使用します。
 
-使いやすい対話型のデータ可視化をデザインする方法については、「[UI の原則と落とし穴](http://uitraps.com/)」をご覧ください。
+使いやすい対話型のデータ可視化をデザインする方法については、「[UI の原則と落とし穴](https://uitraps.com/)」をご覧ください。
 
 ### <a name="motion-design-principles"></a>モーション デザインの原則
 
@@ -124,7 +124,7 @@ ms.locfileid: "23945793"
 
 因果関係を知覚できるようにします。アニメーションをステージングする場合には、次のようにします。
 
-- 一度に 1 つだけステージングします。 
+- 一度に 1 つだけステージングします。 
 - データ インクの変更より前に、軸の変更をステージングします。
 - 複数のオブジェクトが同じ速度で同じ方向に向かって移動している場合は、グループとしてステージングおよびアニメーション処理します。
 - データ要素をステージングするグループのオブジェクト数はせいぜい 4 から 5 個とします。4 から 5 個を超えると、見る人がオブジェクトを個別に追跡しにくくなります。
@@ -133,7 +133,7 @@ ms.locfileid: "23945793"
 
 - アニメーションは、ユーザーがデータの変化をより良く理解できるようにしたり、コンテキストを示したり、言語によらない注釈層として機能したりします。
 - モーションは、意味のある可視化の座標空間で行わなければなりません。
-- アニメーションはビジュアルに合わせます。 
+- アニメーションはビジュアルに合わせます。 
 - 余計なアニメーションは避けてください。
 
 モーションはデータに従います。
@@ -149,6 +149,5 @@ ms.locfileid: "23945793"
 
 ## <a name="see-also"></a>関連項目 
 
-- [データ + デザイン:情報の準備と可視化の簡単な紹介](https://infoactive.co/data-design)
-- [データ可視化を構築するための 5 つの最適なライブラリ](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [データ可視化を構築するための 5 つの最適なライブラリ](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [定量的情報のビジュアル表示](https://www.edwardtufte.com/tufte/books_vdqi)

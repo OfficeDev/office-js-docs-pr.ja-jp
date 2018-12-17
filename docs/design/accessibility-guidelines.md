@@ -34,4 +34,4 @@ Office アドインを設計して開発する際は、アドインを使用す�
 
 - [Web コンテンツ アクセシビリティ ガイドライン (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [WCAG 2.0 の非 Web 情報および通信テクノロジへの適用ガイダンス (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
-- [情報および通信テクノロジ (ICT) におけるユーザー補助要件の欧州基準](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
+- [情報および通信テクノロジ (ICT) におけるユーザー補助要件の欧州基準](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
