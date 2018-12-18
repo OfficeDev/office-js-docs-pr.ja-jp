@@ -2,12 +2,12 @@
 title: Office アドインのユーザビリティ テスト
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 38f0416d56f3fc43c6d5f68df9b5c84586b03c8c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945606"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270930"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
@@ -26,11 +26,11 @@ ms.locfileid: "23945606"
 > [!NOTE]
 > 複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) にアドインを公開するには、[定義したメソッドをサポートするプラットフォーム](../overview/office-add-in-availability.md)すべてでそのアドインが作動する必要があります。
 
-## <a name="1---sign-up-for-a-testing-service"></a>1.   テスト サービスにサインアップする
+## <a name="1---sign-up-for-a-testing-service"></a>1. テスト サービスにサインアップする
 
-詳細については、「[モデレートされていないリモート ユーザー テスト用のオンライン ツールの選択](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)」を参照してください。
+詳細については、「[Selecting an Online Tool for Unmoderated Remote User Testing](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)」 (モデレートされていないリモート ユーザー テスト用のオンライン ツールの選択) を参照してください。
 
-## <a name="2-develop-your-research-questions"></a>2.調査での質問項目を設定する
+## <a name="2-develop-your-research-questions"></a>2. 調査での質問項目を設定する
  
 調査での質問項目を設定することにより、調査の目的を定義し、テストの計画を導いていることになります。質問項目は、募集する参加者や実行するタスクを特定するのに役立ちます。調査での質問項目は、可能な限り具体的に設定してください。広範な質問に回答するように努めることもできます。
  
@@ -57,9 +57,9 @@ ms.locfileid: "23945606"
  - アドインが Office アプリケーションのドキュメント領域と相互作用する方法
  - ユーザーがコンテンツ挿入フローを制御できる程度
 
-詳細については、[効果的な質問の作成](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions)を参照してください。
+詳細については、「[Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/ja-JP/articles/115003378572-Writing-effective-questions)」 (実際の反応と主観的データを収集する) を参照してください。
  
-## <a name="3-identify-participants-to-target"></a>3.ターゲットとする参加者を特定する
+## <a name="3-identify-participants-to-target"></a>3. ターゲットとする参加者を特定する
  
 リモートのテスト サービスで、テストの参加者の多くの特性を制御できます。ターゲットとするユーザーの種類を慎重に検討してください。データ収集の初期段階では、幅広く参加者を募集して、ユーザビリティの問題をより明確に識別する方が良い場合があります。後の段階では、上級の Office ユーザー、特定の職業、特定の年齢範囲などのグループをターゲットとするよう選択することもできます。
  
@@ -78,18 +78,18 @@ ms.locfileid: "23945606"
 
 アドインの Live ビルドのテストを計画している場合は、次の質問により、このテストを行えるユーザーを選別できます。 
 
-**このテストでは、Microsoft PowerPoint のバージョンが最新にする必要があります。最新バージョンの PowerPoint を使用していますか。**  
+**このテストでは、Microsoft PowerPoint の最新バージョンを所有している必要があります。最新バージョンの PowerPoint を使用していますか。**  
  a. はい *[必ず選択]*  
  b. いいえ *[拒否]*  
  c. わからない *[拒否]*  
 
-**このテストでは、PowerPoint 2016 の無料のアドインをインストールし、これを使用するために無料のアカウントを作成する必要があります。アドインをインストールし、無料のアカウントを作成する予定がありますか。**  
+**このテストでは、PowerPoint の無料のアドインをインストールし、これを使用するために無料のアカウントを作成する必要があります。アドインをインストールし、無料のアカウントを作成する予定がありますか。**  
  a. はい *[必ず選択]*  
  b. いいえ *[拒否]*  
 
-詳細については、[スクリーナーの質問のベスト プラクティス](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)を参照してください。
+詳細については、「[Screener Questions Best Practices](https://help.usertesting.com/hc/ja-JP/articles/115003370731-Screener-question-best-practices)」 (スクリーナーの質問のベスト プラクティス) を参照してください。
  
-## <a name="5-create-tasks-and-questions-for-participants"></a>5.参加者のタスクと質問を作成する
+## <a name="5-create-tasks-and-questions-for-participants"></a>5. 参加者のタスクと質問を作成する
  
 参加者のタスクと質問の数を制限できるように、テストしようとしている項目の優先度の設定を試みてください。一定の時間だけ参加者に利益になるサービスもあるので、超過しないように確認することもできます。
 
@@ -99,17 +99,17 @@ ms.locfileid: "23945606"
 
 テスト中の特定の時点で、ユーザーは想定している画面上にいるとは限らないことに注意してください。次のタスクを開始するにはどの画面上にいる必要があるかユーザーに伝えることを検討してください。 
 
-詳細については、「[Writing Great Tasks (優れたタスクの作成)](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)」をご覧ください。
+詳細については、「[Writing Great Tasks](https://help.usertesting.com/hc/ja-JP/articles/115003371651-Writing-great-tasks)」 (優れたタスクの作成) を参照してください。
 
-## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6.タスクや質問に対応するプロトタイプを作成する
+## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. タスクや質問に対応するプロトタイプを作成する
  
-Live アドインをテストするか、プロトタイプをテストすることができます。Live アドインをテストしようとしている場合は、Office 2016 があり、アドインのインストールを予定しており、アカウントのサインアップを予定している (ログオン資格情報を提供しない場合) 参加者を選別する必要があることに留意してください。後で、アドインを正常にインストールしたか確認する必要があります。 
+Live アドインをテストするか、プロトタイプをテストすることができます。 Live アドインをテストする場合は、Office の最新バージョンがあり、アドインのインストールを予定しており、アカウントのサインアップを予定している (ログオン資格情報を提供しない場合) 参加者を選別する必要があることに注意してください。後で、アドインを正常にインストールしたかどうかを確認する必要があります。 
 
 平均すると、ユーザーがアドインのインストール方法をひととおり実行するには約 5 分間かかります。明確で簡潔なインストール手順の例を次に示します。テストの仕様に基づいて手順を調整してください。
 
-**次の手順を使用して、PowerPoint 2016 の (ここにアドイン名を挿入する) アドインをインストールしてください。** 
+**次の手順を使用して、PowerPoint の (ここにアドイン名を挿入する) アドインをインストールしてください。** 
 
-1. Microsoft PowerPoint 2016 を開きます。
+1. Microsoft PowerPoint を開きます。
 2. **[新しいプレゼンテーション]** を選択します。
 3. **[挿入] > [個人用アドイン]** に進みます。
 5. ポップアップ ウィンドウで、**[ストア]** を選択します。
@@ -139,6 +139,6 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 ## <a name="see-also"></a>関連項目
  
- - [ユーザビリティ テストを実施する方法](http://whatpixel.com/howto-conduct-usability-testing/)  
- - [ベスト プラクティス](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
- - [偏りを最小限に抑える](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+ - [ユーザビリティ テストを実施する方法](https://whatpixel.com/howto-conduct-usability-testing/)  
+ - [UserTesting のベスト プラクティス](https://help.usertesting.com/hc/ja-JP/articles/115003370231-Best-practices-for-UserTesting)  
+ - [偏りを最小限に抑える](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

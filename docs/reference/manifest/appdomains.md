@@ -13,14 +13,17 @@ Office アドイン でページを読み込むのに使う SourceLocation 要�
 </AppDomains>
 ```
 
-## <a name="contained-in"></a>次に含まれる:
+> [!IMPORTANT]
+> すべての **AppDomain** 要素の値には、プロトコル (例: `<AppDomain>https://myappdomain<AppDomain>`) が含まれている必要があります。
+
+## <a name="contained-in"></a>含まれる場所
 
 [OfficeApp](officeapp.md)
 
-## <a name="can-contain"></a>含めることができるもの:
+## <a name="can-contain"></a>含めることができるもの
 
 [AppDomain](appdomain.md)
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-アドインは、既定では **SourceLocation** 要素で指定されたのと同じ場所のドメインのページを読み込みます。アドインと同じドメインにないページを読み込む場合は、**AppDomains** 要素と **AppDomain** 要素を使ってドメインを指定します。この要素は空にすることはできません。 
+アドインは、既定では [SourceLocation](sourcelocation.md) 要素で指定されたものと同じ場所のドメインのページを読み込みます。 アドインと同じドメインにないページを読み込む場合は、**AppDomains** 要素と **AppDomain** 要素を使用してドメインを指定します。 この要素は空にできません。

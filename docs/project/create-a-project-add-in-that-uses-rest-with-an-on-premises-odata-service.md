@@ -2,12 +2,12 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005037"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27271028"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -41,7 +41,7 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
 
 1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))」の手順 1. のステップ 4. を参照してください。
     
-2. 次の URL のブラウザを使用して、**ProjectData** サービスのクエリを行います: **http://ServerName / ProjectServerName /_api / ProjectData** 。 たとえば、Project Web App インスタンスが `http://MyServer/pwa`の場合、ブラウザは次の結果を表示します。
+2. **ProjectData** サービスにクエリを実行するには、お使いのブラウザーで次の URL にアクセスしてください: **http://ServerName /ProjectServerName /_api/ProjectData**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
     Visual Studio によって、**HelloProjectOdata** プロジェクトと **HelloProjectODataWeb** プロジェクトが作成されます。
     
- **アドイン** フォルダーには、カスタムの CSS スタイルの App.css ファイルが含まれています (次のスクリーン ショットを参照してください)。  **ホーム** のサブフォルダー内の、Home.html ファイルには、CSS ファイルとアドインを使用している JavaScript ファイル、およびアドインの HTML5 のコンテンツへの参照が含まれています。 また、Home.js ファイルは、カスタムの JavaScript コード用です。  **Scripts** フォルダーには、jQuery ライブラリのファイルが含まれています。  **Office** のサブフォルダーには、Office アドインでの office.js などプロジェクトの 15.js、JavaScript ライブラリと標準の文字列の言語のライブラリが含まれています。 **コンテンツ** フォルダーで Office.css ファイルには、Office のアドインのすべての既定のスタイルが含まれます。
+**アドイン** フォルダーには、カスタムの CSS スタイル用の App.css ファイルが含まれています (次のスクリーンショットを参照してください)。 **ホーム** サブフォルダー内の、Home.html ファイルには、CSS ファイル、アドインを使用している JavaScript ファイル、およびアドインの HTML5 コンテンツへの参照が含まれています。 また、Home.js ファイルは、カスタムの JavaScript コード用です。 **Scripts** フォルダーには、jQuery ライブラリのファイルが含まれています。 **Office** サブフォルダーには、office.js や project-15.js などの JavaScript ライブラリ、および Office アドインでの標準の文字列用の言語ライブラリが含まれています。**コンテンツ** フォルダーで Office.css ファイルには、Office のアドインのすべてに使用する既定のスタイルが含まれます。
 
 *図 4. ソリューション エクスプローラーでの既定の Web プロジェクト ファイルの表示*
 
@@ -128,7 +128,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     
 1. **ソリューション エクスプローラー**で、Images という名前のフォルダーに移動します。
     
-2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。 `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
+2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。
     
     または、独自の 32 x 32 アイコンを使用するか、NewIcon.png という名前のファイルに次の画像をコピーして、`HelloProjectODataWeb\Images` フォルダーにそのファイルを追加します。
     
@@ -1132,7 +1132,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  詳細については、「[ OData System Query Options Using the REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7))」をご参照下さい。また、Windows PowerShell の [[Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx)] コマンドを使用し、 **Projects** エンティティ―セット（あるいはその他の 33 のエンティティ―セット）に関して、既定のページ サイズを超過することができます。これに関しましては、「[ProjectData - Project OData service reference](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15))  」をご参照下さい。
+  For more information, see [OData System Query Options Using the REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
     
 - アドインを展開するには、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
     

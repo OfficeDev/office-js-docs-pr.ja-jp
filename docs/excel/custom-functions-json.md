@@ -2,12 +2,12 @@
 ms.date: 11/26/2018
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
-ms.openlocfilehash: a3d4427af2c6ab46133cb4e2fd9ce384a6a8336c
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 60b22283d533cec6546d4ba8e7217868ef2be97c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156594"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270643"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -115,9 +115,9 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 |  `helpUrl`  |  文字列  |   いいえ  |  関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、**http://contoso.com/help/convertcelsiustofahrenheit.html** です。 |
 | `id`     | 文字列 | はい | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。 |
 |  `name`  |  文字列  |  はい  |  Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
-|  `options`  |  オブジェクト  |  いいえ  |  Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options オブジェクト](#options-object)に関する説明を参照してください。 |
-|  `parameters`  |  配列  |  はい  |  関数の入力パラメーターを定義する配列です。 詳細については、[parameters 配列](#parameters-array)に関する説明を参照してください。 |
-|  `result`  |  オブジェクト  |  はい  |  関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result オブジェクト](#result-object)に関する説明を参照してください。 |
+|  `options`  |  オブジェクト  |  いいえ  |  Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。 |
+|  `parameters`  |  配列  |  はい  |  関数の入力パラメーターを定義する配列です。 詳細については、[parameters](#parameters) に関する説明を参照してください。 |
+|  `result`  |  object  |  はい  |  関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result](#result) に関する説明を参照してください。 |
 
 ## <a name="options"></a>options
 

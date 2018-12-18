@@ -17,35 +17,35 @@
 シングル サインオンのプレビューが終わるまで、実稼働アドインでは、サービスや ID プロバイダー (Microsoft など) で直接サインインする選択肢をユーザーに与えてください。
 
 1. 初回実行プレースマット - アドインの最初の実行エクスペリエンス内にわかりやすい行動喚起としてサインイン ボタンを配置します。
-![](../images/add-in-fre-value-placemat.png)
+![Office アプリケーションのアドイン作業ウィンドウのスクリーンショット](../images/add-in-fre-value-placemat.png)
 
 2. ID プロバイダーの選択肢ダイアログ - ID プロバイダーのわかりやすい一覧を表示します。該当する場合、ユーザー名やパスワードのフォームも含めます。 認証ダイアログが開いているとき、アドイン UI はブロックされることがあります。
-![](../images/add-in-auth-choices-dialog.png)
+![Office アプリケーションの ID プロバイダーの選択肢ダイアログのスクリーンショット](../images/add-in-auth-choices-dialog.png)
 
 
 
-3. ID プロバイダー サインイン - ID プロバイダーには独自の UI が与えられます。 Microsoft Azure Active Directory では、サービスのルック アンド フィールに一貫性が与えられるように、サインイン ページとアクセス パネル ページをカスタマイズできます。 [詳細情報](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
-![](../images/add-in-auth-identity-sign-in.png)
+3. ID プロバイダーのサインイン - ID プロバイダーによって独自の UI が提供されます。 Microsoft Azure Active Directory では、サービスの外観に一貫性が与えられるように、サインイン ページとアクセス パネル ページをカスタマイズできます。 [詳細情報](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
+![Office アプリケーションの ID プロバイダーのサインイン ダイアログのスクリーンショット](../images/add-in-auth-identity-sign-in.png)
 
-4. 進捗状況 - 設定や UI 読み込みの進捗状況を示します。
-![](../images/add-in-auth-modal-interstitial.png)
+4. 進捗状況 - 設定や UI の読み込みの進行状況を示します。
+![Office アプリケーションの進行状況インジケーターを示すダイアログのスクリーンショット](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE] 
-> Microsoft の ID サービスを使用すると、商標付きのサインイン ボタンを使用できます。このボタンは明るいまたは暗い配色のテーマにカスタマイズできます。詳細情報。
+> Microsoft の ID サービスを使用すると、商標付きのサインイン ボタンを使用できます。このボタンは淡色テーマまたは濃色テーマにカスタマイズできます。詳細情報。
 
 ## <a name="single-sign-on-authentication-flow-preview"></a>シングル サインオン認証フロー (プレビュー)
 
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
-実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの ID (Microsoft アカウントまたは Office 365 ID) がアドインのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、速やかに利用を開始できます。
+実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの ID (Microsoft アカウントまたは Office 365 ID) がアドインのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 
-1. アドインがインストールされると、下のような同意を求めるウィンドウが表示されます: ![](../images/add-in-auth-SSO-consent-dialog.png)
+1. アドインがインストールされると、以下のような同意を求めるウィンドウが表示されます。![アドインのインストール時の Office アプリケーションの同意ウィンドウのスクリーンショット](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
-> この同意ウィンドウに含まれるロゴ、文字列、アクセス許可の範囲については、アドインの発行元が決定します。 UI は Microsoft が事前に構成したものです。
+> この同意ウィンドウに含まれるロゴ、文字列、アクセス許可の範囲については、アドインの発行元が制御します。 UI は Microsoft が事前に構成したものです。
 
 2. アドインはユーザーが同意した後で読み込まれます。 ユーザーがカスタマイズした情報が必要であれば、それを抽出し、表示できます。
-![](../images/add-in-ribbon.png)
+![リボンにアドイン ボタンが表示されている Office アプリケーションのスクリーンショット](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>関連項目
 - 詳細については、[SSO アドイン (プレビュー) の開発](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)に関するページを参照してください。

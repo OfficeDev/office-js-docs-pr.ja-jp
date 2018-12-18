@@ -2,12 +2,12 @@
 title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 339726df186860ba23a51e842d55231d2e8797f0
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005051"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270874"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -102,7 +102,7 @@ Outlook アドイン固有のリソース使用量監視機能により、Outloo
 
 ### <a name="developer-guidelines-to-handle-pii"></a>PII の取り扱いに関する開発ガイドライン
 
-Office アドインを開発するときに適用される PII 保護ガイドラインを以下に示します。
+次に、Office アドインの開発者向けの PII の保護に関するガイドラインをいくつか具体的に示します。
 
 - [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) オブジェクトは、コンテンツ アドインまたは作業ウィンドウ アドインに関する設定やセッション間の状態データの永続化に使用できますが、パスワードやその他の機密性の高い PII を **Settings** オブジェクトに保存してはいけません。**Settings** オブジェクト内のデータはエンド ユーザーには表示されませんが、容易にアクセスできるドキュメントのファイル形式の一部として保存されます。アドインの PII の使用を制限し、アドインに必要な PII はユーザー保護リソースとしてアドインをホストするサーバーに保存する必要があります。
 
@@ -118,7 +118,7 @@ Office アドインのセキュリティ モデルをサポートするための
 
 ### <a name="permissions-choices"></a>アクセス許可の選択
 
-アドイン プラットフォームは、アドインがその機能に必要なユーザー データへのアクセス レベルを宣言するために使用するアクセス許可モデルを提供します。 各アクセス許可レベルは、アドインがその機能に使用できる JavaScript API for Office のサブセットに対応しています。 たとえば、コンテンツおよび作業ウインドウのアドインに対する **WriteDocument** アクセス許可により、 [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) メソッドは、ユーザーのドキュメントにアドインの書き込みを許可しますが、ドキュメントからデータを読み取るメソッドへのアクセスは許可しません。 このアクセス許可レベルは、ユーザーがドキュメントに挿入するデータを照会できるアドインなど、ドキュメントに書き込むだけでよいアドインに適しています。
+アドイン プラットフォームは、その機能で必要なユーザー データへのアクセス レベルを宣言する、アドインが使用するアクセス許可のモデルを提供します。 それぞれのアクセス許可レベルは、アドインがその機能で使用することが許可されている JavaScript API for Office のサブセットに対応しています。 たとえば、コンテンツおよび作業ウィンドウ アドイン用の **WriteDocument** アクセス許可では、アドインがユーザーのドキュメントに書き込むことは許可しますが、そのドキュメントからデータを読み込むためのいずれのメソッドへのアクセスも許可しない [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) メソッドへのアクセスを許可しています。 このアクセス許可レベルは、ユーザーのドキュメントにデータを挿入するためにユーザーが照会できるアドインなど、ドキュメントに書き込みのみを行う必要があるアドインに適しています。
 
 ベスト プラクティスとしては、_最小限の特権_の原則に基づいてアクセス許可を要求するべきです。つまり、アドインが正しく機能するために必要な最小限の API サブセットにのみアクセスする許可を要求します。たとえば、ユーザーのドキュメントのデータさえ読み込めばアドインが正しく機能する場合、**ReadDocument** 以外のアクセス許可を要求しません。(ただし、要求したアクセス許可が不十分な場合は、アドイン プラットフォームによってアドインによる一部の API の使用がブロックされ、ランタイム エラーが発生する可能性があることに注意してください)。
 
@@ -169,11 +169,11 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange と SharePoint は、クロス ドメイン アクセスを可能にするためにクライアント側のプロキシを提供します。一般に、イントラネット上の同一生成元ポリシーは、インターネット上のポリシーほど厳密ではありません。詳細については、「[同一生成元ポリシー第 1 部: ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)」および「[Office アドインにおける同一生成元ポリシーの制限事項に対応する](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
+Exchange と SharePoint は、クロス ドメイン アクセスを可能にするためにクライアント側のプロキシを提供します。一般に、イントラネット上の同一生成元ポリシーは、インターネット上のポリシーほど厳密ではありません。詳細については、「[同一生成元ポリシー第 1 部: ピーク禁止](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)」および「[Office アドインにおける同一生成元ポリシーの制限事項に対応する](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>悪意のあるクロスサイト スクリプティングを回避するヒント
 
-悪意のあるユーザーは、アドインのドキュメントまたはフィールドを介して悪質なスクリプトを入力して、アドインの発行元を攻撃する可能性があります。 開発者は、ユーザーの入力を処理して、悪意のあるユーザーの JavaScript をドメイン内で実行しないようにする必要があります。 ドキュメントやメール メッセージからのユーザー入力、またはアドインのフィールドを使用してユーザー入力を処理するには、次のような優れた方法があります。
+悪意のあるユーザーが、ドキュメントやアドインのフィールドを経由して悪意のあるスクリプトを入力し、アドインの入手元を攻撃する場合があります。 開発者は、ドメイン内で悪意のあるユーザーの JavaScript が実行されないようにユーザー入力を処理する必要があります。 ドキュメントやメール メッセージ、またはアドインのフィールドを経由したユーザー入力の処理に推奨される方法を次にいくつか紹介します。
 
 
 - 可能であれば、DOM プロパティの [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) ではなく、[innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) および [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) プロパティを使用します。次のように実行して、Internet Explorer と Firefox のクロス ブラウザー サポートを提供します。
@@ -182,21 +182,24 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
      var text = x.innerText || x.textContent
     ```
 
-    **innerText** と **textContent** の違いについては、「[Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)」を参照してください。一般的なブラウザー間での DOM の互換性の詳細については、「[W3C DOM 互換性](http://www.quirksmode.org/dom/w3c_html.html#t07)」を参照してください。
+    **innerText** と **textContent** の違いについては、「[Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)」を参照してください。一般的なブラウザー間での DOM の互換性の詳細については、「[W3C DOM 互換性](https://www.quirksmode.org/dom/w3c_html.html#t07)」を参照してください。
 
-- **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) プロパティを参照してください。
+- 
+  **innerHTML** を使用する必要がある場合は、ユーザーの入力を **innerHTML** に渡す前に、悪意のあるコンテンツが含まれていないことを確認してください。**innerHTML** を安全に使用する方法とその例については、[innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) プロパティを参照してください。
 
-- jQuery を使用している場合は、[.html()](http://api.jquery.com/text/) メソッドの代わりに [.text()](http://api.jquery.com/html/) メソッドを使用してください。
+- jQuery を使用している場合は、[.html()](https://api.jquery.com/text/) メソッドの代わりに [.text()](https://api.jquery.com/html/) メソッドを使用してください。
 
-- [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+- 
+  [toStaticHTML](https://developer.mozilla.org/ja-JP/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
-- [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
+- 
+  [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
 
 - より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10))」を参照してください。
 
 ### <a name="tips-to-prevent-clickjacking"></a>「クリックジャック」を防止するためのヒント
 
-Office アドインは Office Online ホスト アプリケーションと通信するブラウザーの iframe 内でレンダリングされるため、次のヒントを参照して、[クリックジャック](http://en.wikipedia.org/wiki/Clickjacking)と呼ばれる、ユーザーをだまして機密情報を公開させようとするハッカーが利用するテクニックのリスクを最小限に抑えてください。
+Office アドインは Office Online ホスト アプリケーションと通信するブラウザーの iframe 内でレンダリングされるため、次のヒントを参照して、[クリックジャック](https://en.wikipedia.org/wiki/Clickjacking)と呼ばれる、ユーザーをだまして機密情報を公開させようとするハッカーが利用するテクニックのリスクを最小限に抑えてください。
 
 まず、アドインが実行できる機密性の高いアクションを特定します。これには、未承認のユーザーが悪用できる、財務トランザクションの開始や機密データの公開などのアクションが含まれます。たとえば、アドインが支払いをユーザー定義の受信者に送信できる場合があります。
 
@@ -255,6 +258,6 @@ Outlook アドインの開発者は、リソース使用量のルール以外に
 - [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Office アドインにおける同一生成元ポリシーの制限への対処](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同一生成元ポリシー](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [同一生成元ポリシー パート 1:ピーク禁止](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [同一生成元ポリシー パート 1:ピーク禁止](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [JavaScript の同一生成元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保護モード](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

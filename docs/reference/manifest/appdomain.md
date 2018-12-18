@@ -2,20 +2,21 @@
 
 アドイン ウィンドウにページを読み込むために使用される追加のドメインを指定します。
 
- **アドインの種類 :** コンテンツ、作業ウィンドウ、メール
+**アドインの種類:** コンテンツ、作業ウィンドウ、メール
 
-## <a name="syntax"></a>シンタックス
+## <a name="syntax"></a>構文
 
 ```XML
-<AppDomain>string </AppDomain>
+<AppDomain>string</AppDomain>
 ```
 
-## <a name="contained-in"></a>次に含まれる:
+> [!IMPORTANT]
+> **AppDomain** 要素の値には、プロトコル (例: `<AppDomain>https://myappdomain<AppDomain>`) が含まれている必要があります。
+
+## <a name="contained-in"></a>含まれる場所
 
 [AppDomains](appdomains.md)
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-SourceLocation 要素で指定されたドメイン以外の追加のドメインを指定するには、 **アプリケーション ドメイン** と **アプリケーション ドメイン** の要素を使用します。
- 詳細については、「Office アドイン XML マニフェスト」をご覧ください。
-
+**AppDomain** 要素は、[SourceLocation](sourcelocation.md) 要素で指定したドメイン以外のものを追加指定するために使用する必要があります。 詳細については、「[Office アドイン XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)」を参照してください。
