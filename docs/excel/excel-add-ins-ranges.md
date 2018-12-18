@@ -1,17 +1,20 @@
 ---
-title: Excel JavaScript API を使用して範囲を操作する
+title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: ''
-ms.date: 12/04/2018
-ms.openlocfilehash: 4a6e0014da82956b15e11e2739f6f58fb82d5030
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.date: 12/14/2018
+ms.openlocfilehash: 4c64abec1f79bd1194a106e46b8a6fe6c4b71d07
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156608"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283103"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
 この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)」を参照してください。
+
+> [!NOTE]
+> 範囲を指定してより詳細なタスクを実行する方法のサンプル コードについては、「[Excel JavaScript API を使用して範囲を操作する (詳細)](excel-add-ins-ranges-advanced.md)」を参照してください。
 
 ## <a name="get-a-range"></a>範囲を取得する
 
@@ -539,116 +542,7 @@ Excel.run(function (context) {
 
 範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。 この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。
 
-## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Moment-MSDate プラグインを使用した日付の操作
-
-[Moment JavaScript ライブラリ](https://momentjs.com/)により、日付とタイムスタンプが便利に使用できるようになります。 [Moment-MSDate プラグイン](https://www.npmjs.com/package/moment-msdate)は、日付と時刻の形式を Excel に適したものに変換します。 これは、[NOW 関数](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)から返される形式と同じです。
-
-次のコードは、範囲 **B4** に時刻のタイムスタンプを設定する方法を示しています。
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    
-    var now = Date.now();
-    var nowMoment = moment(now);
-    var nowMS = nowMoment.toOADate();
-    
-    var dateRange = sheet.getRange("B4");
-    dateRange.values = [[nowMS]];
-    
-    dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
-    
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-これは、次の例に示すように、セルから日付を取得して、その日付を時刻などの形式に変換するのと同様の手法です。
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-
-    var dateRange = sheet.getRange("B4");
-    dateRange.load("values");
-        
-    return context.sync().then(function () {
-        var nowMS = dateRange.values[0][0];
-
-        // log the date as a moment
-        var nowMoment = moment.fromOADate(nowMS);
-        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
-
-        // log the date as a UNIX-style timestamp 
-        var now = nowMoment.unix();
-        console.log(`get (timestamp): ${now}`);
-    });
-}).catch(errorHandlerFunction);
-```
-
-アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
-
-## <a name="copy-and-paste"></a>コピーと貼り付け
-
-> [!NOTE]
-> 現在、copyFrom 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
-
-範囲の copyFrom 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 copyFrom が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
-    sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-Range.copyFrom には、オプションのパラメーターが 3 つあります。
-
-```ts
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
-``` 
-
-`copyType` では、ソースからコピー先にコピーされるデータを指定します。 
-`“Formulas”` では、ソースのセルの数式が転送され、それらの数式の範囲の相対配置は保持されます。 任意の数式以外のエントリはそのままコピーされます。 
-`“Values”` では、データ値と、数式の場合は数式の結果をコピーします。 
-`“Formats”` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。 
-`”All”` (既定のオプション) では、データと書式設定の両方がコピーされます。見つかった場合、セルの数式は保持されます。
-
-`skipBlanks` では、空白セルをコピー先にコピーするかどうかを設定します。 true の場合、`copyFrom` ではソースの範囲にある空白セルはスキップされます。 スキップされたセルでは、コピー先の範囲内の対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
-
-次のコード サンプルと画像は、この動作をシンプルなシナリオで示しています。 
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
-    sheet.getRange("D1").copyFrom("A1:C1",
-        Excel.RangeCopyType.all,
-        true, // skipBlanks
-        false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
-    sheet.getRange("D2").copyFrom("A2:C2",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-*前の関数が実行される前。*
-
-![範囲のコピー メソッドが実行される前の Excel のデータ。](../images/excel-range-copyfrom-skipblanks-before.png)
-
-*前の関数が実行された後。*
-
-![範囲のコピー メソッドが実行された後の Excel のデータ。](../images/excel-range-copyfrom-skipblanks-after.png)
-
-`transpose` では、ソースの場所へのデータの行と列の入れ替えを行うかどうかを決定します。 行と列を入れ替える範囲は対角線で反転されるため、行 **1**、**2**、**3** が列 **A**、**B**、**C** になります。 
-
-
 ## <a name="see-also"></a>関連項目
 
+- [Excel JavaScript API を使用して範囲を操作する (高度)](excel-add-ins-ranges-advanced.md)
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-

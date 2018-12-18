@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1cfde9bfdf306e35f47595f936679d9fa6e1814e
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/13/2018
+ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "27002342"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283124"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -92,7 +92,7 @@ Excel.run(function (context) {
 
 保護は、不必要なデータ編集をできないようにするため、ワークシート レベルで設定することもできます。 詳細については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md#data-protection)」の**データの保護**のセクションを参照してください。
 
-> [!NOTE] 
+> [!NOTE]
 > Excel のブックの保護の詳細については、「[ブックを保護する](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)」を参照してください。
 
 ## <a name="access-document-properties"></a>ドキュメント プロパティへのアクセス
@@ -147,6 +147,53 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="add-custom-xml-data-to-the-workbook"></a>カスタム XML データをブックに追加する
+
+Excel の Open XML **.xlsx** ファイル形式を使用すると、アドインでカスタム XML データをブックに埋め込むことができます。 このデータは、アドインに関係なく、ブックで保持されます。
+
+ブックには [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection) が含まれます。これは [CustomXmlParts](/javascript/api/excel/excel.customxmlpart) のリストです。 これにより、XML 文字列と対応する一意の ID へのアクセスが提供されます。 これらの ID を設定として保管することにより、アドインはセッション間で XML パーツへのキーを保持できます。
+
+以下のサンプルは、カスタム XML パーツを使用する方法を示しています。 最初のコード ブロックは、XML データをドキュメントに埋め込む方法を示しています。 レビュー担当者のリストを保管してから、ブックの設定を使用して XML の `id` を保存して、後から取得できるようにします。 2 番目のブロックでは、後からその XML にアクセスする方法が示されています。 "ContosoReviewXmlPartId" 設定がロードされ、ブックの `customXmlParts` に渡されます。 それから、XML データがコンソールに出力されます。
+
+```js
+Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+
+    return context.sync().then(function() {
+        // Store the XML part's ID in a setting
+        var settings = context.workbook.settings;
+        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+    });
+}).catch(errorHandlerFunction);
+```
+
+```js
+Excel.run(async (context) => {
+    // Retrieve the XML part's id from the setting
+    var settings = context.workbook.settings;
+    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+
+    return context.sync().then(function () {
+        if (xmlPartIDSetting.value) {
+            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+            var xmlBlob = customXmlPart.getXml();
+
+            return context.sync().then(function () {
+                // Add spaces to make more human readable in the console
+                var readableXML = xmlBlob.value.replace(/></g, "> <");
+                console.log(readableXML);
+            });
+        }
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> `CustomXMLPart.namespaceUri` にデータが入れられるのは、トップレベルのカスタム XML 要素に `xmlns` 属性が含まれている場合に限ります。
+
 ## <a name="control-calculation-behavior"></a>計算の動作を制御する
 
 ### <a name="set-calculation-mode"></a>計算モードを設定する
@@ -156,7 +203,7 @@ Excel.run(function (context) {
  - `automatic`: 既定の再計算動作。関連するデータが変更されるたびに、Excel は新しい数式の結果を計算します。
  - `automaticExceptTables`: `automatic` と同様ですが、テーブル内の値に加えた変更は無視されます。
  - `manual`: ユーザーまたはアドインが要求した場合にのみ計算します。
- 
+
 ### <a name="set-calculation-type"></a>計算タイプを設定する
 
 [Application](/javascript/api/excel/excel.application) オブジェクトは、強制的に即時再計算する方法を提供します。 `Application.calculate(calculationType)` は、指定した `calculationType` に基づいて手動再計算を開始します。 次の値を指定できます。
@@ -165,7 +212,7 @@ Excel.run(function (context) {
  - `fullRebuild`: 最後に再計算されてから変更されたかどうかに関係なく、依存関係のある数式を確認してから、開いているすべてのブックのすべての数式を再計算します。
  - `recalculate`: すべてのアクティブなブックで、最後に計算されてから変更された数式 (またはプログラムで再計算用にマークされている数式)、およびそれに依存する数式を再計算します。
  
-> [!NOTE] 
+> [!NOTE]
 > 再計算の詳細については、「[数式の再計算、反復計算、または精度を変更する](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4)」を参照してください。
 
 ### <a name="temporarily-suspend-calculations"></a>計算を一時的に中断する

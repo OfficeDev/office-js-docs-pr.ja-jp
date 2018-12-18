@@ -19,7 +19,7 @@
 
 * [Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)
 
-* [Yeoman](http://yeoman.io/) と [Yo Office ジェネレーター](https://www.npmjs.com/package/generator-office)の最新版。 以上のツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
+* [Yeoman](https://yeoman.io/) と [Yo Office ジェネレーター](https://www.npmjs.com/package/generator-office)の最新版。 以上のツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```bash
     npm install -g yo generator-office
@@ -58,7 +58,7 @@
     * Windows 版 Excel を使用してカスタム関数をテストする場合、次のコマンドを実行してローカル Web サーバーを開始し、Excel を起動し、アドインをサイドロードします。
 
         ```bash
-        npm start
+        npm run start-desktop
         ```
 
     * Excel Online を使用してカスタム関数をテストする場合、次のコマンドを実行してローカル Web サーバーを開始します。 
@@ -69,7 +69,7 @@
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>あらかじめ用意されているカスタム関数をテストする
 
-Yo Office ジェネレーターで作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**src/customfunction.js** ファイル内で定義されています。 プロジェクトのルート ディレクトリの **manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。
+Yo Office ジェネレーターで作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**src/functions/functions.js** ファイル内で定義されています。 プロジェクトのルート ディレクトリの **manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。
 
 あらかじめ用意されているカスタム関数を使用する前に、Excel でカスタム関数アドインを登録する必要があります。 そのためには、このチュートリアルで使用しているプラットフォームの場合、次の手順を実行します。
 
@@ -94,11 +94,7 @@ Yo Office ジェネレーターで作成したカスタム関数プロジェク�
 
 1. セル内に「**=CONTOSO**」と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
-2. `CONTOSO.ADD` 関数を実行します。入力パラメーターとして `10` と `200` をセル内で指定し、Enter キーを押します。
-
-    ```
-    =CONTOSO.ADD(10,200)
-    ```
+2. セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
@@ -108,7 +104,7 @@ API に株価を要求し、ワークシートのセルに結果を表示する�
 
 次の手順を実行し、銘柄コード (**MSFT** など) を受け取り、その株価を返す、`stockPrice` という名前のカスタム関数を作成します。 このカスタム関数では、IEX Trading API が使用されます。これは無料であり、認証を必要としません。
 
-1. Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、ファイル **src/customfunctions.js** を見つけ、それをコード エディターで開きます。
+1. Yo Office ジェネレーターによって作成された**株価情報** プロジェクトで、ファイル **src/functions/functions.js** を見つけ、それをコード エディターで開きます。
 
 2. 次のコードを **customfunctions.js** に追加し、ファイルを保存します。
 
@@ -130,7 +126,7 @@ API に株価を要求し、ワークシートのセルに結果を表示する�
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、ファイル **config/customfunctions.json** を見つけ、それをコード エディターで開きます。 **config/customfunctions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
+3. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**株価情報** プロジェクトで、ファイル **src/functions/functions.json** を見つけ、それをコード エディターで開きます。 **src/functions/functions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
 
     この JSON では、`stockPrice` 関数について説明しています。
 
@@ -184,7 +180,7 @@ API に株価を要求し、ワークシートのセルに結果を表示する�
 
 次の手順を実行し、(前の要求が完了しているという条件で) 1,000 ミリ秒ごとに指定の株価を要求する、`stockPriceStream` という名前のカスタム関数を作成します。 最初の要求が進行中のとき、関数が呼び出されているセルに **#GETTING_DATA** というプレースホルダー値が表示されることがあります。 関数によって値が返されると、そのセルの **#GETTING_DATA** がその値で置換されます。
 
-1. Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、次のコードを **src/customfunctions.js** に追加し、ファイルを保存します。
+1. Yo Office ジェネレーターによって作成された**株価情報** プロジェクトで、次のコードを **src/functions/functions.js** に追加し、ファイルを保存します。
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -223,7 +219,7 @@ API に株価を要求し、ワークシートのセルに結果を表示する�
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**銘柄コード** プロジェクトで、**config/customfunctions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
+2. Excel のエンドユーザーがこの新しい関数を使用できるようにするには、この関数について説明するメタデータを指定する必要があります。 Yo Office ジェネレーターによって作成された**株価情報** プロジェクトで、**src/functions/functions.json** ファイル内の `functions` 配列に次のオブジェクトを追加し、ファイルを保存します。
 
     この JSON では、`stockPriceStream` 関数について説明しています。 ストリーミング関数の場合、このコード サンプルで示すように、`options` オブジェクト内で `stream` プロパティと `cancelable` プロパティを `true` に設定する必要があります。
 
