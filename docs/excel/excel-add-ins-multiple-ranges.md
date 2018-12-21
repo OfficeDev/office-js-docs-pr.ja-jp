@@ -2,12 +2,12 @@
 title: Excel アドインで複数の範囲を同時に操作する
 description: ''
 ms.date: 09/04/2018
-ms.openlocfilehash: 37f9c8a9f3127d78e1cc794aea9e6d1502cdeaf9
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: f1217fc76d14269882a73ec5eb7758e519563456
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270979"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383226"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Excel アドインで複数の範囲を同時に操作する (プレビュー)
 
@@ -97,8 +97,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 > [!NOTE]
 > `RangeAreas` オブジェクトに新たな範囲を直接追加することはできません。 たとえば、`RangeAreas.areas` 内のコレクションには `add` メソッドが存在しません。
 
-
-> [!WARNING] 
+> [!WARNING]
 > `RangeAreas.areas.items` 配列のメンバーの追加または削除を直接試行してはいけません。 これにより、後でコード内で望ましくない動作が発生します。 たとえば、追加の `Range` オブジェクトを配列にプッシュすることは可能ですが、エラーが発生します。`RangeAreas` のプロパティとメソッドは、その新しいアイテムがその場所に存在していないかのように動作するためです。 たとえば、`areaCount` プロパティにはこの方法でプッシュされた範囲は含まれません。また、`RangeAreas.getItemAt(index)` は、`index` が `areasCount-1`より大きい場合、エラーをスローします。 同様に、`RangeAreas.areas.items` 配列内の `Range` オブジェクトを、参照を取得してその `Range.delete` メソッドを呼び出すという方法で削除すると、バグとなります。`Range` オブジェクトは*削除されます*が、親 `RangeAreas` オブジェクトのプロパティとメソッドは、そのオブジェクトがまだ存在するものとして動作するためです。 たとえば、コードで `RangeAreas.calculate` を呼び出すと、Office は範囲を計算しようとしますが、範囲オブジェクトが既に存在しないためにエラーとなります。
 
 `RangeAreas` に対してプロパティを設定すると、`RangeAreas.areas` コレクション内の全範囲の対応するプロパティが設定されます。
@@ -107,8 +106,8 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
     return context.sync();
@@ -142,9 +141,9 @@ getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Exc
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaRanges = usedRange.getSpecialCells("Formulas");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells("Formulas");
     formulaRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -161,8 +160,8 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const range = context.workbook.getSelectedRange();
-    const formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
     return context.sync()
         .then(function() {
             if (formulaRanges.isNullObject) {
@@ -187,9 +186,9 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
     constantNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -200,9 +199,9 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -222,10 +221,10 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    const rangeAreas = sheet.getRanges("F:F, H:H");  
+    var rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
@@ -249,10 +248,10 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H:H");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    const pinkColumnRange = sheet.getRange("H:H");
+    var pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
