@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
-ms.openlocfilehash: 87f56f4c697d19296fe1b539e4071c8e79fbed6a
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.openlocfilehash: be90f1f16b2e32b1b835781df95a1872516e4cfb
+ms.sourcegitcommit: 1b90ec48be51629625d21ca04e3b8880399c0116
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283117"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "27378086"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -127,8 +127,7 @@ CustomFunctionMappings.INCREMENT = increment;
     ],
     "options": {
         "cancelable": true,
-        "stream": true,
-        "volatile": false
+        "stream": true
       }
     }
   ]
@@ -145,7 +144,7 @@ CustomFunctionMappings.INCREMENT = increment;
 | `description` | 関数について説明します。 この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
 | `result`  | 関数が返す情報の種類を定義するオブジェクトです。 このオブジェクトに関する詳細情報については [result](custom-functions-json.md#result) を参照してください。 |
 | `parameters` | 関数の入力パラメーターを定義する配列です。 このオブジェクトに関する詳細情報については [parameters](custom-functions-json.md#parameters) を参照してください。 |
-| `options` | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 このプロパティの使用方法の詳細については、この記事で後述する[ストリーム関数](#streaming-functions)、[関数のキャンセル](#canceling-a-function)、および[揮発性関数の宣言](#declaring-a-volatile-function)を参照してください。 |
+| `options` | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 このプロパティの使用方法の詳細については、[ストリーム関数](#streaming-functions)および[関数のキャンセル](#canceling-a-function)を参照してください。 |
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
@@ -277,31 +276,6 @@ JSON メタデータ ファイルでストリーミング関数にメタデー�
 - ユーザーが手動で再計算をトリガーしたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
 
 関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装し、関数を記述するJSONのメタデータの `options` オブジェクト内のプロパティ `"cancelable": true` を指定する必要があります。 この記事の前のセクションのコード サンプルに、これらの手法の例が示されています。
-
-## <a name="declaring-a-volatile-function"></a>揮発性関数の宣言
-
-[揮発性関数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)とは、関数のいずれの引数にも変更がない場合でも、値が刻々と変化する関数のことです。 これらの関数は、Excel が再計算するたびに再計算を行います。 たとえば、`NOW` 関数を呼び出すセルがあるとします。 `NOW` が呼び出される度に、現在の日付と時刻を自動的に返します。
-
-Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel のすべての揮発性関数の一覧は、「[揮発性および非揮発性関数](https://docs.microsoft.com/ja-JP/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」をご覧ください。  
-  
-カスタム関数を使用すると独自の揮発性関数を作成することができ、日時、時間、乱数、およびモデルを処理するときに役立つ場合があります。 たとえば、モンテカルロ シミュレーションでは、最適なソリューションを決定するにはランダムな入力値の生成が必要です。  
-  
-関数を揮発性であると宣言するには、次のコードで示されるように、JSON メタデータファイルの関数で、`options` オブジェクトに`"volatile": true` を追加します。 関数で `"streaming": true`と`"volatile": true` の両方をマークすることはできません。両方とも `true` とマークされている場合、揮発性のオプションは無視されます。  
-
-```json
-{
-  "name": "TOMORROW",
-  "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-      "type": "string",
-      "dimensionality": "scalar"
-  },
-  "options": {
-      "volatile": true
-  }
-}
-```
 
 ## <a name="saving-and-sharing-state"></a>状態の保存と共有
 
