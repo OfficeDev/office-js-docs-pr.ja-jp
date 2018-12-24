@@ -1,17 +1,17 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 024b7d1c7e05e8b7a7a71871eec4b088d45afdc1
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 80f8e41a2409873283a38e30506fa954771ecb1e
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270783"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383282"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
-Project Standard 2013 と Project Professional 2013 (バージョン 15.1 以降) はいずれも、作業ウィンドウ アドインをサポートしています。ユーザーは Word 2013 または Excel 2013 用に開発された一般の作業ウィンドウ アドインを実行できます。 Project で選択イベントを処理するカスタム アドインを開発し、プロジェクトのタスク、リソース、ビューおよびその他のセル レベルのデータを SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービスおよびエンタープライズ アプリケーションに統合することも可能です。
+Project Standard 2013 と Project Professional 2013 (バージョン 15.1 以降) はいずれも、作業ウィンドウ アドインをサポートしています。ユーザーは Word または Excel 用に開発された一般の作業ウィンドウ アドインを実行できます。 Project で選択イベントを処理するカスタム アドインを開発し、プロジェクトのタスク、リソース、ビューおよびその他のセル レベルのデータを SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービスおよびエンタープライズ アプリケーションに統合することも可能です。
 
 > [!NOTE]
 > [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
@@ -50,8 +50,6 @@ Project 用のアドインのシナリオとして、次のようなものがあ
 Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
 
 アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、 **type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「 _Office アドイン プラットフォームの概要_」の「 [開発の基本](../overview/office-add-ins.md) 」セクションを参照してください。
-
-複雑なカスタム アプリケーションを作成する場合、デバッグを容易にするには、Visual Studio 2015 を使用してアドイン用の Web サイトを開発することをお勧めします。Visual Studio 2015 にはアドイン プロジェクト用のテンプレートが含まれており、アドインの種類 (作業ウィンドウ、コンテンツ、またはメール) とホスト アプリケーション (Project、Word、Excel、または Outlook) を選択できます。
 
 Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
 

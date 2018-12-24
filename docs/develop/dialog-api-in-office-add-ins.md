@@ -1,13 +1,13 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 11/28/2018
-ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/20/2018
+ms.openlocfilehash: 0c45a17935cb264db4b8488ec8eaae2535848770
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270958"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383247"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -218,6 +218,9 @@ function processMessage(arg) {
     }
 }
 ```
+
+> [!NOTE]
+> `showNotification`の実装は、この記事のサンプル コードでは表示されません。 アドインでこの関数を実装する方法の例は、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。
 
 ### <a name="closing-the-dialog-box"></a>ダイアログ ボックスを閉じる
 

@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 12/14/2018
-ms.openlocfilehash: 42b1127580c46120d337553fdb86a19a78b37567
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 12/18/2018
+ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283794"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383240"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -61,7 +61,15 @@ Excel.run(function (context) {
 
 アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
 
-## <a name="copy-and-paste"></a>コピーと貼り付け
+## <a name="work-with-multiple-ranges-simultaneously-preview"></a>複数の範囲を同時に操作する (プレビュー)
+
+> [!NOTE]
+> 現在、`RangeAreas` オブジェクトは、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+
+`RangeAreas` オブジェクトを使用すると、アドインの操作を一度に複数の範囲で実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
+
+## <a name="copy-and-paste-preview"></a>コピーと貼り付け (プレビュー)
 
 > [!NOTE]
 > 現在、`Range.copyFrom` 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
@@ -125,7 +133,7 @@ Excel.run(function (context) {
 
 ![範囲のコピー メソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates"></a>重複を削除
+## <a name="remove-duplicates-preview"></a>重複を削除 (プレビュー)
 
 > [!NOTE]
 > 現在、Range オブジェクトの `removeDuplicates` 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
