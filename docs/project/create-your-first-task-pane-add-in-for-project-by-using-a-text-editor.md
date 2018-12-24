@@ -1,25 +1,25 @@
 ---
-title: テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
+title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 03d8ad30e4ee52274c6b96ab6290337e6f2a2223
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 12/17/2018
+ms.openlocfilehash: 46d632684c9d2fa301ab398b36e778d7543d1749
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506246"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383275"
 ---
-# <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する
+# <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
-Visual Studio 2015 を使用して複雑な Web アプリケーションを作成したり、テキスト エディターを使用してローカル アドイン用のファイルを作成したりすることで、Project Standard 2013または Project Professional 2013 用の作業ウィンドウ アドインを作成できます。この記事では、ファイル共有上の HTML ファイルを参照する XML マニフェストを使用するシンプルなアドインの作成方法について説明します。Project OM Test サンプル アドインは、アドイン用のオブジェクト モデルを使用するいくつかの JavaScript 関数をテストします。Project 2013の **セキュリティ センター**を使用して、マニフェスト ファイルを含むファイル共有を登録した後は、作業ウィンドウ アドインをリボンの [ **プロジェクト**] タブから開くことができます (この記事のサンプル コードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づくものです)。
+Office アドイン用の Yeoman ジェネレーターを使用して Project Standard 2013、Project Professional 2013、または新しいバージョン用の作業ウィンドウ アドインを作成することができます。この記事では、ファイル共有上の HTML ファイルを指し示す XML マニフェストを使用するシンプルなアドインを作成する方法について説明します。 Project OM テストのサンプル アドインは、アドインでオブジェクト モデルを使用する JavaScript 関数をテストします。Project で [**セキュリティ センター**] を使用してマニフェスト ファイルが含まれるファイル共有を登録すると、リボンの [**Project**] タブから作業ウィンドウ アドインを開くことができます。 (この記事のシンプルなコードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づいています。)
 
-Project 2013では、他の Microsoft Office 2013 クライアントと同じアドイン マニフェスト スキーマを使用し、JavaScript API も同じものを多数使用します。この記事で説明するアドインの完全なコードは、Project 2013 SDK ダウンロードの  `Samples\Apps` サブディレクトリ内にあります。
+Project では、他の Microsoft Office クライアントで使われるものと同じアドイン マニフェスト スキーマが使用され、JavaScript API の多くも同じものが使用されます。 この記事に記載されているアドインの完全なコードは、Project 2013 SDK ダウンロードのサブディレクトリ `Samples\Apps` で提供されています。
 
-Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
+Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。 Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
 
 [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には完全なソース コードが含まれています。Project2013SDK.msi に含まれる SDK を展開してインストールしたら、`\Samples\Apps\Copy_to_AppManifests_FileShare` サブディレクトリにマニフェスト ファイルがあり、`\Samples\Apps\Copy_to_AppSource_FileShare` サブディレクトリにソース コードがあることを確認します。 
 
-JSOMCall.html サンプルでは、含まれている office.js ファイルとプロジェクトの 15.js ファイル、JavaScript 関数を使用します。(Office.debug.js およびプロジェクト 15.debug.js) 関数を調べるには、対応するデバッグ ファイルを使用することができます。
+サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。 これらの関数は、対応するデバッグ ファイル (office.debug.js と project-15.debug.js) を使用して検証できます。
 
 Office アドインでの JavaScript の使用の概要については、「[JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
@@ -68,7 +68,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
 1. JSOM_SimpleOMCalls.xml マニフェスト内の **SourceLocation** 要素で指定されている名前の HTML ファイルを作成します。 
 
-   たとえば、JSOMCall.html というファイルを `C:\Project\AppSource` ディレクトリ内に作成します。簡単なテキスト エディターを使用してソース ファイルを作成することもできますが、Visual Studio 2015 などのツールを使用した方が簡単です。このツールは、特定のドキュメント タイプ (HTML や JavaScript など) に対応し、その他の編集支援機能も備えています。「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」の説明にある Bing Search サンプルをまだ実行していない場合は、手順 3. に記されている、マニフェストで指定する `\\ServerName\AppSource` ファイル共有の作成方法を参照してください。
+   たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 単純なテキスト エディターソースを使用してソース ファイルを作成することはできますが、特定のドキュメントの種類 (HTML や JavaScript など) を取り扱え、他の編集機能も備わった Visual Studio コードなどのツールを使用する方が簡単です。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
     
    Microsoft Office 2013 アプリケーションの JSOMCall.html ファイルは、AJAX 機能に対しては共通の MicrosoftAjax.js ファイルを使用し、アドイン機能に対しては Office.js ファイルを使用します。
 
@@ -545,9 +545,9 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     }
     ```
 
-4. JavaScript イベント ハンドラのコールバックと関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラの登録と登録解除を行います。**manageEventHandlerAsync** 関数は、_operation_ パラメータに応じて、指定されたイベント ハンドラを追加または削除します。この操作は **addHandlerAsync** または **removeHandlerAsync** のどちらかになります。
+4. JavaScript イベント ハンドラーのコールバックと関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。**manageEventHandlerAsync** 関数は、_operation_ パラメーターに応じて、指定されたイベント ハンドラーを追加または削除します。この操作は **addHandlerAsync** または **removeHandlerAsync** のどちらかになります。
     
-   **manageTaskEventHandler**、**manageResourceEventHandler**、**manageViewEventHandler** の各関数は、_docMethod_ パラメータの指定に応じて、イベント ハンドラを追加または削除できます。
+   **manageTaskEventHandler**、**manageResourceEventHandler**、**manageViewEventHandler** の各関数は、_docMethod_ パラメーターの指定に応じて、イベント ハンドラーを追加または削除できます。
 
     ```javascript
     // Task selection changed event handler.
@@ -684,7 +684,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     </div>
     ```
 
-8. ボタンの要素の書式設定を行うために、CSS の **style** 要素を追加します。たとえば、**head** 要素の子要素として次の要素を追加します。
+8. ボタンの要素の書式設定を行うために、CSS の  **style** 要素を追加します。たとえば、 **head** 要素の子要素として次の要素を追加します。
     
     ```HTML
     <style type="text/css">
@@ -701,8 +701,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     </style>
     ```
 
-> [!NOTE]
-> Visual Studio 2015 の**作業ウィンドウ アドイン (プロジェクト)** テンプレートには、一般的なアドインの外観に対応する既定の .css ファイルが含まれています。手順 3. では、Project OM Test アドインの機能をインストールして使用する方法を示します。
+手順 3. では、Project OM Test アドインの機能をインストールして使用する方法を示します。
 
 ## <a name="procedure-3-to-install-and-use-the-project-om-test-add-in"></a>手順 3. Project OM Test アドインをインストールして使用するには
 
@@ -742,7 +741,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     
 9. 3 つのタスクすべての [ **期間**] セル (3 つ) を選択します。 **getSelectedDataAsync** 関数により、各行で選択されたセルのセミコロン区切りテキスト値が返されます (例: `2 days;4 days;0 days`)。
     
-   **getSelectedDataAsync** 関数は、行内の選択されたセルに対してコンマ区切りのテキスト値を返します。たとえば、図 3 では、タスク T2 の行全体が選択されます。**getSelectedDataAsync** を選択すると、テキスト ボックスには次のように表示されます。  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   **getSelectedDataAsync** 関数は、行内の選択されたセルに対してコンマ区切りのテキスト値を返します。たとえば、図 3 では、タスク T2 の行全体が選択されます。**getSelectedDataAsync** を選択すると、テキスト ボックスには "`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`" と表示されます。
     
    **[状況説明マーク]** 列と **[リソース名]** 列はどちらも空なので、テキスト配列ではこれらの列に空の値が表示されます。**[新しい列の追加]** セルの値は [`<NA>`] です。
     
@@ -764,7 +763,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - 開始: `Thu 6/14/12`
     - 期間: `4d`
     - 優先度: `500`
-    - メモ: これは、T2 のタスクのメモです。テスト注記のみです。実際のノートの場合は、実際の情報になります。
+    - ノート: これは、タスク T2 のノートです。 単なるテスト ノートです。 実際のノートの場合は、実際の情報になります。
 
 13. **[getWSSUrlAsync]** ボタンを選択します。プロジェクトが次の種類のどちらかであれば、タスク リストの URL と名前が結果に表示されます。
     
@@ -780,9 +779,9 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - リスト名: `Test task list`
     
 
-14. **[TaskSelectionChanged イベント]** セクションの **[追加]** ボタンを選択します。このボタンを選択すると、**manageTaskEventHandler** 関数の呼び出しにより、タスク選択の変更イベントが登録され、"`In onComplete function for addHandlerAsync Status: succeeded`" が返されてテキスト ボックス内に表示されます。別のタスクを選択すると、テキスト ボックスには "`In task selection changed event handler`" と表示されます。これは、タスク選択の変更イベントに対するコールバック関数の出力です。**[削除]** ボタンを選択して、イベント ハンドラの登録を解除します。
+14. **[TaskSelectionChanged イベント]** セクションの **[追加]** ボタンを選択します。このボタンを選択すると、**manageTaskEventHandler** 関数の呼び出しにより、タスク選択の変更イベントが登録され、"`In onComplete function for addHandlerAsync Status: succeeded`" が返されてテキスト ボックス内に表示されます。別のタスクを選択すると、テキスト ボックスには "`In task selection changed event handler`" と表示されます。これは、タスク選択の変更イベントに対するコールバック関数の出力です。**[削除]** ボタンを選択して、イベント ハンドラーの登録を解除します。
     
-15. リソースに関するメソッドを使用するには、最初に [ **リソース シート**]、[ **リソース配分状況**]、[ **リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。[ **getSelectedResourceAsync**] を選択して  **resourceGuid** 変数を初期化し、[ **リソース フィールドの取得**] を選択して、 **getResourceFieldAsync** の複数回の呼び出しによってリソースのプロパティを取得します。また、リソース選択変更のイベント ハンドラを追加または削除することもできます。
+15. リソースに関するメソッドを使用するには、最初に [ **リソース シート**]、[ **リソース配分状況**]、[ **リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。[ **getSelectedResourceAsync**] を選択して  **resourceGuid** 変数を初期化し、[ **リソース フィールドの取得**] を選択して、 **getResourceFieldAsync** の複数回の呼び出しによってリソースのプロパティを取得します。また、リソース選択変更のイベント ハンドラーを追加または削除することもできます。
     
     - リソース名: `R1`
     - 原価: `$800.00`
@@ -791,7 +790,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     - 実績作業時間 : `0h`
     - 単位: `100%`
 
-16. **[getSelectedViewAsync]** を選択して、アクティブなビューの種類と名前を表示します。また、ビュー選択変更のイベント ハンドラを追加または削除することもできます。たとえば、**[リソース フォーム]** がアクティブなビューである場合、**getSelectedViewAsync** 関数は、テキスト ボックスに次のように表示します。
+16. **[getSelectedViewAsync]** を選択して、アクティブなビューの種類と名前を表示します。また、ビュー選択変更のイベント ハンドラーを追加または削除することもできます。たとえば、**[リソース フォーム]** がアクティブなビューである場合、**getSelectedViewAsync** 関数は、テキスト ボックスに次のように表示します。
     
     - ビューの種類: `6`
     - 名前: `Resource Form`
@@ -932,7 +931,7 @@ function getSelectedResourceAsync() {
 }
 ```
 
-Visual Studio 2015 を使用すると、ブレークポイントを設定して JavaScript コードを容易にデバッグしたり、エラー処理用の一般的なルーチンをすばやく組み込んだりできるため、アドインの開発がいっそう簡単になります。たとえば、Project 2013 SDK ダウンロードのサンプル  **HelloProject_OData** には、JQuery ライブラリを使用してポップアップ エラー メッセージを表示する SurfaceErrors.js ファイルが含まれています。図 4 に、"toast" 通知のエラー メッセージを示します。また、このサンプルには、Office.js ファイルと Project-15.js ファイルの JavaScript 関数に Intellisense を提供する Office-vsdoc.js ファイルも含まれています。
+Project 2013 SDK のダウンロードの **HelloProject_OData** サンプルには、JQuery ライブラリを使用してポップアップ エラー メッセージを表示する SurfaceErrors.js ファイルが含まれています。 図 4 に、"toast" 通知のエラー メッセージを示します。
 
 SurfaceErrors.js ファイル内の次のコードには、 **Toast** オブジェクトを作成する **throwError** 関数が含まれています。
 
@@ -1096,6 +1095,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API for Office アドイン](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
-- [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)     
+- [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
     
