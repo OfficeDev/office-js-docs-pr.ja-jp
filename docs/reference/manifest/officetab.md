@@ -1,14 +1,25 @@
+---
+title: マニフェスト ファイルの OfficeTab 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 721064687c3c892b565a94e418815726cc0817f5
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432873"
+---
 # <a name="officetab-element"></a>OfficeTab 要素
 
 アドイン コマンドを表示するリボン タブを定義します。これは既定のタブ (**[ホーム]**、**[メッセージ]**、または **[会議]** のいずれか) か、アドインで定義されたカスタム タブになります。この要素は必須です。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  必須  |  説明  |
+|  要素 |  必須  |  Description  |
 |:-----|:-----|:-----|
-|  グループ      | はい |  コマンドのグループを定義します。既定のタブには、アドインごとに 1 つのグループのみを追加できます。  |
+|  Group      | はい |  コマンドのグループを定義します。既定のタブには、アドインごとに 1 つのグループのみを追加できます。  |
 
-ホストごとの有効なタブ `id` 値は次のとおりです。 **太字** の値は、デスクトップとオンラインの両方でサポートされています (たとえば、Word 2016 for Windows 以降と Word Online)。
+ホストごとの有効なタブ `id` 値は次のとおりです。 **太字**の値は、デスクトップとオンラインの両方でサポートされています (たとえば、Windows 用の Word 2016 以降と Word Online)。
 
 ### <a name="outlook"></a>Outlook
 
@@ -79,7 +90,7 @@
 - TabDeveloper
 - TabAddIns
 
-## <a name="group"></a>グループ
+## <a name="group"></a>Group
 
 タブの UI 拡張ポイントのグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性は必須であり、各 **id** 属性はマニフェスト内で一意でなければなりません。**id** は最大 125 文字の文字列です。「[Group 要素](group.md)」を参照してください。
 

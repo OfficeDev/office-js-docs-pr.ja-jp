@@ -1,17 +1,28 @@
-# <a name="resources-element"></a>Resources  要素
+---
+title: マニフェスト ファイルの Resources 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433902"
+---
+# <a name="resources-element"></a>Resources 要素
 
-[VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。リソースの **id** を使用することによりマニフェスト要素によりリソースが指定されます。それにより、リソースにさまざまなロケールのバージョンがある場合は特に、マニフェストのサイズはコントロールできる大きさに抑えられます。** id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
+[VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。マニフェスト要素によりリソースが指定されます。リソースの **id** を使用します。それにより、特にリソースにさまざまなロケールのバージョンがあるとき、マニフェストのサイズが管理できる大きさに抑えられます。**id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
 
 各リソースは、特定のロケールに異なるリソースを定義する 1 つ以上の **Override** 子要素を持つことができます。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  型  |  説明  |
+|  要素 |  支払期日  |  説明  |
 |:-----|:-----|:-----|
-|  [画像](#images)            |  イメージ   |  アイコンの画像への HTTPS URL を指定します。 |
-|  **Url**                |  url     |  HTTPS URL の場所を指定します。URL の長さは最大で 2048 文字です。 |
-|  **ShortStrings** |  文字列  |  **Label** 要素と **Title** 要素のテキスト。各 **String** には、最大 125 文字を使用できます。|
-|  **LongStrings**  |  文字列  | **Description** 属性のテキスト。各 **String** には、最大 250 文字を使用できます。|
+|  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
+|  **Urls**                |  url     |  HTTPS URL の場所を指定します。URL の長さは最大で 2048 文字です。 |
+|  **ShortStrings** |  string  |  **Label** 要素と **Title** 要素のテキスト。各 **String** には、最大 125 文字を使用できます。|
+|  **LongStrings**  |  string  | **Description** 属性のテキスト。各 **String** には、最大 250 文字を使用できます。|
 
 > [!NOTE]
 > **Image** 要素と **Url** 要素のすべての URL で Secure Sockets Layer (SSL) を使用する必要があります。
@@ -19,20 +30,20 @@
 ### <a name="images"></a>画像
 各アイコンに 3 つの **Images** 要素を指定する必要があります。各要素の必須サイズは次のようになります。
 
-- 16 x 16
-- 32 x 32
-- 80 x 80
+- 16x16
+- 32x32
+- 80x80
 
 上記の他に次のサイズもサポートされていますが、指定する必要はありません。
 
-- 20 x 20
-- 24 x 24
-- 40 x 40
-- 48 x 48
-- 64 x 64
+- 20x20
+- 24x24
+- 40x40
+- 48x48
+- 64x64
 
 > [!IMPORTANT] 
-> Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホスティングするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加してはいけません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。    
+> Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。    
 
 ## <a name="resources-examples"></a>リソースの例 
 

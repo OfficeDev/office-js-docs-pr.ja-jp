@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの Form 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: bfb39af7059fd6ab80be6fa8668832b852924df8
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433482"
+---
 # <a name="form-element"></a>Form 要素
 
 メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。
@@ -12,15 +23,15 @@
 </Form>
 ```
 
-## <a name="contained-in"></a>次に含まれる:
+## <a name="contained-in"></a>含まれる場所
 
 [FormSettings](formsettings.md)
 
 
-## <a name="can-contain"></a>含めることができるもの:
+## <a name="can-contain"></a>含めることができるもの
 
-|**要素**|
+|**Element**|
 |:-----|
-|[デスクトップ設定](desktopsettings.md)|
-|[タブレット設定](tabletsettings.md)|
-|[スマホ設定](phonesettings.md)|
+|[DesktopSettings](desktopsettings.md)|
+|[TabletSettings](tabletsettings.md)|
+|[PhoneSettings](phonesettings.md)|

@@ -1,6 +1,17 @@
+---
+title: マニフェスト ファイルの DefaultSettings 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0c109d5d893cf9d3502f1cbf1724007f01e623e6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433755"
+---
 # <a name="defaultsettings-element"></a>DefaultSettings 要素
 
-コンテンツ アドインまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。
+コンテンツまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ
 
@@ -12,13 +23,13 @@
 </DefaultSettings>
 ```
 
-## <a name="contained-in"></a>次に含まれる:
+## <a name="contained-in"></a>含まれる場所
 
 [OfficeApp](officeapp.md)
 
-## <a name="can-contain"></a>含めることができるもの:
+## <a name="can-contain"></a>含めることができるもの
 
-|**要素**|**コンテンツ**|**Eメール**|**作業ウィンドウ**|
+|**要素**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[SourceLocation](sourcelocation.md)|x||x|
 |[RequestedWidth](requestedwidth.md)|x|||

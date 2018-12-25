@@ -1,22 +1,33 @@
+---
+title: Visio JavaScript API の概要
+description: ''
+ms.date: 10/11/2018
+ms.openlocfilehash: f530e1541146fb2f38209845791132b789577640
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432936"
+---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
-Visio JavaScript API を使ってSharePoint オンライン で Visio のダイアグラムを埋め込むことができます。 埋め込まれた Visio のダイアグラムは、SharePoint ドキュメント ライブラリに保存され、SharePoint ページに表示されます。 Visio のダイアグラムを HTML `<iframe>` 要素に表示して埋め込みます。 そうすると、Visio JavaScript API を使用して、プログラムで埋め込まれたダイアグラムを使った作業ができるようになります。
+Visio JavaScript API を使うと、SharePoint Online で Visio 図面を埋め込むことができます。 埋め込んだ Visio 図面は、SharePoint ドキュメント ライブラリに保存され、SharePoint ページに表示されます。 Visio 図面を埋め込むには、その図面を HTML の`<iframe>` 要素に表示します。 そうすると、Visio JavaScript API を使用して、プログラムで埋め込み済みの図面を使った作業ができるようになります。
 
-![SharePoint ページの iframe 上にある Visio のダイアグラムとスクリプト エディター Web パーツ](../images/visio-api-block-diagram.png)
+![SharePoint ページの iframe 上にある Visio の図とスクリプト エディター Web パーツ](../images/visio-api-block-diagram.png)
 
 
-Visio JavaScript API を使用して次のことができるようになります。
+Visio JavaScript API を使用して、次のことを行えます。
 
-* ページや図形などの Visio ダイアグラムの要素を使って操作する。
-* Visioダイアグラムのキャンバスにビジュアル マークアップを作成する。
-* 図面の中でのマウス イベント用のカスタム ハンドラーを記述する。
-* 図形テキスト、図形データ、およびハイパーリンクなどのダイアグラムのデータをソリューションに公開する。
+* ページや図形などの Visio 図面の要素を操作する。
+* Visio 図面のキャンバスにビジュアル マークアップを作成する。
+* 図面の中でのマウス イベントのカスタム ハンドラーを記述する。
+* 図形テキスト、図形データ、およびハイパーリンクなどの図面データをソリューションに公開する。
 
-ここでは、Visio オンラインで Visio JavaScript API を使って SharePoint オンライン のソリューションをビルドする方法について説明します。また、 **EmbeddedSession**、 **RequestContext**、JavaScript プロキシ オブジェクトなどの API、および **sync()**、 **Visio.run()**、 **load()** のメソッドを使用するための根本的な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
+この記事では、Visio Online で Visio JavaScript API を使って SharePoint Online のソリューションをビルドする方法について説明します。また、**EmbeddedSession**、**RequestContext**、JavaScript プロキシ オブジェクトなどの API、および **sync()**、**Visio.run()**、**load()** のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
-EmbeddedSession オブジェクトは、開発者のフレームと Visio Online のフレームの間の通信を初期化します。
+EmbeddedSession オブジェクトは、開発者のフレームと Visio Online のフレーム間の通信を初期化します。
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -27,13 +38,13 @@ session.init().then(function () {
 
 ## <a name="visiorunsession-functioncontext--batch-"></a>Visio.run(session, function(context) { batch })
 
-**Visio.run()** は、Visio オブジェクト モデルに対して作用するバッチ スクリプトを実行します。 バッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Visio オブジェクトの間で状態を同期し、promise　レゾリューションの **sync()** メソッドが含まれます。  **Visio.run()** で要求をバッチ処理する利点は、promiseが返されるときに、実行中に割り当てられた追跡ページ オブジェクトが自動的に解放されることです。
+**Visio.run()** は、Visio オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。 このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Visio オブジェクトの間で状態を同期し、解決される約束を返す **sync()** メソッドが含まれます。 **Visio.run()** で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡ページ オブジェクトが自動的に解放されることです。
 
-run メソッドはセッションと RequestContext オブジェクトを取り込み、promise（通常は**context.sync()** の結果)を返します。 バッチ操作は **Visio.run()** の外部で実行することができます。 ただし、この場合、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
+run メソッドはセッションと RequestContext オブジェクトを取り込み、promise (通常は **context.sync()** の結果) を返します。 バッチ操作は **Visio.run()** の外部で実行することができます。 ただし、このようなシナリオでは、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
 
 ## <a name="requestcontext"></a>RequestContext
 
-RequestContext オブジェクトは、Visio アプリケーションへのリクエストを簡単にするものです。 開発者のフレームと Visio Online アプリケーションは、異なる 2 つの iframe で実行されるため、開発者のフレームから Visio およびページや図形などの関連するオブジェクトへのアクセスを取得する RequestContext オブジェクト (次の例の内容を含む) が必要です。
+RequestContext オブジェクトは、Visio アプリケーションへの要求を容易にします。 開発者のフレームと Visio Online アプリケーションは、異なる 2 つの iframe で実行されるため、開発者のフレームから Visio およびページや図形などの関連するオブジェクトへのアクセスを取得する RequestContext オブジェクト (次の例の内容を含む) が必要です。
 
 ```js
 function hideToolbars() {
@@ -52,9 +63,9 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
 
-アドインで申告され使用される Visio の JavaScript オブジェクトは、Visio ドキュメント内の実際のオブジェクトのためのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、 `context.sync()` の実行時に同期されます。
+アドインで宣言され使用される Visio の JavaScript オブジェクトは、Visio 図面の実際のオブジェクトのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、`context.sync()` の実行時に同期されます。
 
-たとえば、ローカルの JavaScript オブジェクトの getActivePage は、選択したページを参照するよう表示されます。 これは、オブジェクトのプロパティの設定およびメソッドの呼び出しをキューに入れるために使用します。  **sync()** メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
+たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 **sync()** メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
 
 ```js
 var activePage = context.document.getActivePage();
@@ -62,28 +73,28 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
- **sync()** メソッドは、Visio内のJavaScript のプロキシ オブジェクトと 実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを検索することで同期させます。 このメソッドは、同期処理が完了したときに解決されるpromiseを返します。 
+**sync()** メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。 
 
 ## <a name="load"></a>load()
 
- **load()** メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに埋めるために使用します。ドキュメントなどのオブジェクトを検索する場合、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティの設定とメソッドの呼び出しをキューに登録するために使用されます。ただし、オブジェクトのプロパティや関係を読み取りには、最初に **load()** メソッドと**sync()** メソッドを呼び出す必要があります。 load() メソッドは、 **sync()** メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
+**load()** メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に **load()** メソッドと **sync()** メソッドを呼び出す必要があります。load() メソッドは、**sync()** メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
- **load()** メソッドの構文を以下に示します。
+以下に示すのは **load()** メソッドの構文です。
 
 ```js
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **プロパティ** は、読み込まれるプロパティ名の一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、各オブジェクトの下の **.load()** メソッドを参照してください。
+1. **properties** は、読み込まれるプロパティ名の一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、各オブジェクトの下の **.load()** メソッドを参照してください。
 
-2. **loadOption** は、選択、拡大、トップ、スキップ の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
+2. **loadOption** は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>例: アクティブ ページですべての図形テキストを印刷する
 
-次の例では、図形の配列オブジェクトから図形テキストの値を印刷する方法を説明します。
- **Visio.run()** メソッドには、指示のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
+次の例では、図形の配列オブジェクトから図形テキストの値を印刷する方法を示します。
+**Visio.run()** メソッドには、命令のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
 
-すべてのコマンドはキューに登録され、 **context.sync()** が呼び出されたときに実行されます。  **sync()** メソッドが返すpromiseは、このメソッドを他の操作とリンクするために使用することができます。
+これらのすべてのコマンドがキューに登録され、**context.sync()** が呼び出されたときに実行されます。 **sync()** メソッドが返す promise は、このメソッドを他の操作とチェーンにするために使用できます。
 
 ```js
 Visio.run(session, function (context) {
@@ -106,20 +117,20 @@ Visio.run(session, function (context) {
 
 ## <a name="error-messages"></a>エラー メッセージ
 
-エラーは、コードとメッセージで構成される エラー オブジェクトを使用して返されます。次の表は、発生する可能性があるエラー状態の一覧を示しています。
+エラーは、コードとメッセージで構成される error オブジェクトを使用して返されます。次の表は、発生する可能性があるエラー状態の一覧を示しています。
 
 | error.code            | error.message |
 |-----------------------|----------------------------------------------------------------|
 | InvalidArgument       | 引数が無効であるか、存在しません。または形式が正しくありません。 |
-| GeneralException      | リクエストの処理中に内部エラーが発生しました。 |
-| NotImplemented        | リクエストされた機能は実装されていません。  |
+| GeneralException      | 要求の処理中に内部エラーが発生しました。 |
+| NotImplemented        | 要求された機能は実装されていません。  |
 | UnsupportedOperation  | 試行中の操作はサポートされていません。 |
-| AccessDenied          | リクエストされた操作は実行されません。 |
+| AccessDenied          | 要求された操作を実行できません。 |
 | ItemNotFound          | 要求されたリソースは存在しません。 |
 
-## <a name="get-started"></a>はじめてみよう
+## <a name="get-started"></a>作業の開始
 
-このセクションの例を使用して、実際に試してみましょう。 この例では、プログラムを使用して Visio のダイアグラムで選択した形の図形のテキストを表示する方法を表示します。 まずは、SharePoint Online で通常のページを作成するか、既存のページを編集します。 スクリプト エディターの web パーツをページに追加し、次のコードをコピー＆ペーストします。
+このセクションの例を使用して作業を開始できます。 この例では、プログラムを使用して Visio 図面で選択した形の図形のテキストを表示する方法を表示します。 最初に、SharePoint Online で通常のページを作成するか、既存のページを編集します。 スクリプト エディターの Web パーツをページに追加し、次のコードをコピーして貼り付けます。
 
 ```js
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
@@ -181,16 +192,16 @@ function getSelectedShapeText() {
 </script>
 ```
 
-次に、作業する Visio ダイアグラムの URL が必要になります。 Visio ダイアグラムを SharePoint オンライン にアップロードし、 Visio Online で開きます。 そこから埋め込みダイアログ ボックスを開き、上の例の埋め込み URL を使用します。
+次に、作業する Visio 図面の URL が必要になります。 Visio 図面を SharePoint Online にアップロードし、Visio Online で開きます。 そこから [埋め込み] ダイアログ ボックスを開き、上の例の埋め込み URL を使用します。
 
-![埋め込みダイアログから Visio ファイルの URL をコピーする](../images/Visio-embed-url.png)
+![[埋め込み] ダイアログ ボックスから Visio ファイル URL をコピーする](../images/Visio-embed-url.png)
 
-Visio Onlineを編集モードで使用している場合は、**[File]** > **[Share]** > **[Embed]** を選択し、埋め込みダイアログを開きます。 Visio Onlineをビュー モードで使用している場合は、［...］の後 **［埋め込み］** を選択し、埋め込みダイアログを開きます。
+Visio Online を編集モードで使用している場合、**[ファイル]** > **[共有]** > **[埋め込み]** を選択し、[埋め込み] ダイアログを開きます。 Visio Online を表示モードで使用している場合には、[...]、**[埋め込み]** の順に選択して [埋め込み] ダイアログを開きます。
 
 ## <a name="open-api-specifications"></a>Open API の仕様
 
-新しい API の設計と開発にあたり、 [「Open API の仕様」](../openspec.md) ページでフィードバックが可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
+新しい API の設計と開発にあたり、[Open API の仕様](../openspec.md)ページでこれらに対するフィードバックの提供が可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 ## <a name="visio-javascript-api-reference"></a>Visio JavaScript API リファレンス
 
-Visio JavaScript API の詳細情報については、 [「Visio JavaScript API リファレンス ドキュメント」](/javascript/api/visio) を参照してください。
+Visio JavaScript API の詳細については、[Visio JavaScript API リファレンス ドキュメント](/javascript/api/visio)に関するページを参照してください。

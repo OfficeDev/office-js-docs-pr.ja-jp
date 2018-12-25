@@ -1,3 +1,14 @@
+---
+title: Office アドインでモーションを使用する
+description: ''
+ms.date: 03/23/2018
+ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432964"
+---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 
 Office アドインを設計する際、モーションを使用してユーザー エクスペリエンスを向上させられます。 UI 要素、コントロール、コンポーネントには多くの場合、切り替え、モーション、アニメーションを必要とする対話型の動作が関係します。 UI 要素全体においてモーションの共通の特性は、デザイン言語のアニメーション要素を定義することです。 
@@ -49,7 +60,7 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 |するべきこと|してはいけないこと|
 |:-----|:-----|
 | [推奨モーション期間](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
-| [推奨イージング曲線](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
+| [推奨イージング曲線](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きや、ばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
 
 ![ゆっくりフェードインしてタイルが読み込まれる gif と、バウンスを使用してタイルが読み込まれる gif](../images/add-in-motion-character.gif)
 

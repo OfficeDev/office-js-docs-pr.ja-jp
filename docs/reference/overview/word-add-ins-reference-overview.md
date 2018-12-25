@@ -1,3 +1,14 @@
+---
+title: Word JavaScript API の概要
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: fb45b4197b464f1bf9799a557be0dd3c2881c63d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433853"
+---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
 Word には、ドキュメント コンテンツおよびメタデータとデータをやり取りするアドインを作成するために使用できる豊富な API のセットが用意されています。これらの API を使用して、Word を統合および拡張する魅力的なエクスペリエンスを作成します。コンテンツのインポートとエクスポート、別のデータ ソースから新しいドキュメントのアセンブル、カスタムのドキュメント ソリューションを作成するドキュメント ワークフローとの統合を行えます。

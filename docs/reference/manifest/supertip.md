@@ -1,4 +1,15 @@
-# <a name="supertip"></a>ヒント
+---
+title: マニフェスト ファイルの Supertip 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: bae997eda8e1055c5be76382456ba83acca7b91c
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433671"
+---
+# <a name="supertip"></a>Supertip
 
 豊富なヒント (タイトルと説明の両方) を定義します。[ボタン](control.md#button-control) または [メニュー](control.md#menu-dropdown-button-controls) コントロールの両方で使用されます。
 
@@ -6,7 +17,7 @@
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [タイトル](#title)        | はい |   ヒントのテキストです。         |
+|  [Title](#title)        | はい |   ヒントのテキストです。         |
 |  [説明](#description)  | はい |  ヒントの説明です。    |
 
 ### <a name="title"></a>タイトル

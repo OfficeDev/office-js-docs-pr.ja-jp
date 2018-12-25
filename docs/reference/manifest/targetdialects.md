@@ -1,6 +1,17 @@
+---
+title: マニフェスト ファイルの TargetDialects 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 9dab79e10d332181da39f49f572597b7c24d9d88
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433776"
+---
 # <a name="targetdialects-element"></a>TargetDialects 要素
 
-地域言語または、この辞書でサポートされる言語を定義します。
+この辞書でサポートされる地域言語を定義します。
 
 **アドインの種類:** 作業ウィンドウ
 
@@ -12,9 +23,9 @@
 </TargetDialects>
 ```
 
-## <a name="contained-in"></a>次に含まれる:
+## <a name="contained-in"></a>含まれる場所
 
-[辞書](dictionary.md)
+[Dictionary](dictionary.md)
 
 ## <a name="see-also"></a>関連項目
 

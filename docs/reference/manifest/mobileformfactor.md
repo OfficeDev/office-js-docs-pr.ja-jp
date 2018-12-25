@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの MobileFormFactor 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: f0a68c7127f7872207a58ed252def7a2977c33ed
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433695"
+---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 要素
 
 モバイル フォーム ファクターについてアドインの設定を指定します。**Resources** ノードを除くモバイル フォーム ファクターのアドイン情報をすべて含みます。

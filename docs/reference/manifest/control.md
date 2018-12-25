@@ -1,29 +1,40 @@
+---
+title: マニフェスト ファイルの Control 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433937"
+---
 # <a name="control-element"></a>Control 要素
 
-アクションを実行したり、作業ウィンドウを起動する JavaScript 関数を定義します。**Control** 要素は、[ボタン] または [メニュー] オプションのいずれかになります。** Group** 要素には少なくとも 1 つの [   Control](group.md) を含む必要があります。
+アクションを実行したり、作業ウィンドウを起動する JavaScript 関数を定義します。**Control** 要素は、[ボタン] または [メニュー] オプションのどちらかになります。少なくとも 1 つの **Control** に 1 つの [Group](group.md) 要素を含む必要があります。
 
 ## <a name="attributes"></a>属性
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|**xsi:type**|はい|定義されているコントロールの型です。`Button`、`Menu`、または `MobileButton` です。 |
-|**ID**|いいえ|コントロール要素の ID です。最大で 125 文字です。|
+|**xsi:type**|はい|定義されているコントロールの型。`Button`、`Menu`、または `MobileButton` です。 |
+|**id**|いいえ|コントロール要素の ID です。最大で 125 文字です。|
 
 > [!NOTE]
-> |||UNTRANSLATED_CONTENT_START|||The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 1.1.|||UNTRANSLATED_CONTENT_END||| これは ** MobileFormFactor** 要素内に含まれる [  Control](mobileformfactor.md) 要素にのみ当てはまります
+> **xsi:type** の `MobileButton` 値は、VersionOverrides スキーマ 1.1 で定義されます。 これは、[MobileFormFactor](mobileformfactor.md) 要素内に含まれる **Control** 要素にのみ当てはまります。
 
 ## <a name="button-control"></a>ボタン コントロール
 
-ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。関数を実行するか、作業ウィンドウを表示します。各ボタン コントロールには、マニフェストに固有の `id` がある必要があります。 
+ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。関数を実行するか、作業ウィンドウを表示します。各ボタン コントロールには、マニフェストで一意の `id` を持っている必要があります。 
 
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **ラベル**     | はい |  |||UNTRANSLATED_CONTENT_START|||The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.|||UNTRANSLATED_CONTENT_END|||        |
-|  **ヒント**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
-|  [ヒント](supertip.md)  | はい |  このボタンのヒントです。    |
-|  [アイコン](icon.md)      | はい |  ボタンの画像です。         |
-|  [アクション](action.md)    | はい |  実行するアクションを指定します。  |
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
+|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
+|  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
+|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
+|  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
 
@@ -67,15 +78,15 @@
 
 ## <a name="menu-dropdown-button-controls"></a>メニュー (ドロップダウン ボタン) コントロール
 
-メニューは、静的なオプションのリストを定義します。各メニュー項目は、関数を実行したり、作業ウィンドウを表示します。サブメニューはサポートされません。 
+メニューは、静的なオプションの一覧を定義します。各メニュー項目は、関数を実行したり、作業ウィンドウを表示したりします。サブメニューはサポートされません。 
 
 [**PrimaryCommandSurface**] または [**ContextMenu**] [の拡張点](extensionpoint.md)が使用されている場合、メニュー コントロールによって以下が定義されます。
 
-- ルートレベルのメニュー項目。
+- ルートレベルのメニュー項目です。
 
 - サブメニュー項目のリスト。
 
-**PrimaryCommandSurface** と共に使用すると、ルートのメニュー項目がリボンのボタンとして表示されます。ボタンを選択すると、サブメニューがドロップダウン リストとして表示されます。**ContextMenu** と共に使用すると、サブメニューのあるメニュー項目がコンテキスト メニューに挿入されます。どちらの場合も、各サブメニュー項目は JavaScript 関数を実行するか、作業ウィンドウを表示することができます。現時点では、サブメニューの 1 つのレベルのみがサポートされます。
+When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with  **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
 
 次の例では、2 つのサブメニュー項目を持つメニュー項目を定義する方法を示します。最初のサブメニュー項目は作業ウィンドウを示し、2 番目のサブメニュー項目は JavaScript 関数を実行します。
 
@@ -133,11 +144,11 @@
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **ラベル**     | はい |  ボタンのテキストです。**resid** 属性は、**Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値に設定する必要があります。      |
-|  **ヒント**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
-|  [ヒント](supertip.md)  | はい |  このボタンのヒント。    |
-|  [アイコン](icon.md)      | はい |  ボタンの画像です。         |
-|  **アイテム**     | はい |  メニュー内で表示するボタンのコレクションです。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性は、[Resources](resources.md) 要素の **ShortStrings** 要素にある **String** 要素の **id** 属性の値に設定する必要があります。      |
+|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
+|  [Supertip](supertip.md)  | はい |  このボタンのヒント。    |
+|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
+|  **Items**     | はい |  メニュー内で表示するボタンのコレクションです。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
 
 ### <a name="menu-control-examples"></a>メニュー コントロールの例
 
@@ -225,16 +236,16 @@
 
 ## <a name="mobilebutton-control"></a>MobileButton コントロール
 
-モバイル ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。関数を実行するか、作業ウィンドウを表示することができます。各モバイル ボタン コントロールには、マニフェストに固有の `id` がある必要があります。
+モバイル ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。関数を実行するか、作業ウィンドウを表示します。各モバイル ボタン コントロールには、マニフェストで一意の `id` を持っている必要があります。
 
-|||UNTRANSLATED_CONTENT_START|||The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 1.1. The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.|||UNTRANSLATED_CONTENT_END|||
+**xsi:type** の `MobileButton` 値は、VersionOverrides スキーマ 1.1 で定義されます。これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
 
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **ラベル**     | はい |  |||UNTRANSLATED_CONTENT_START|||The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md)  element.|||UNTRANSLATED_CONTENT_END|||        |
-|  [アイコン](icon.md)      | はい |  ボタンの画像です。         |
-|  [アクション](action.md)    | はい |  実行するアクションを指定します。  |
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
+|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
+|  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 
 ### <a name="executefunction-mobile-button-example"></a>ExecuteFunction モバイル ボタンの例
 

@@ -1,42 +1,53 @@
-# <a name="ux-design-patterns-for-office-add-ins"></a>Office アドインの UX 設計パターン
+---
+title: Office アドイン用 UX 設計パターン
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: 635fc27d18a2c671dd1ac5a521c9d0a920c154ed
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432474"
+---
+# <a name="ux-design-patterns-for-office-add-ins"></a>Office アドイン用 UX 設計パターン
 
-Office アドインのユーザーエクスペリエンスの設計では、Office ユーザーが優れたエクスペリエンスを得られるとともに、既定の Office UI 内にシームレスに合致することで、Office の全体的なエクスペリエンスが拡張するようにします。  
+Office アドインのユーザー エクスペリエンスの設計では、Office ユーザーにとって魅力的なエクスペリエンスを提供し、既定の Office UI 内でシームレスに適合させることにより Office 全体のエクスペリエンスを拡張する必要があります。  
 
-当社の UX パターンはコンポーネントで構成されます。 コンポーネントは、お客様がソフトウェアやサービスの要素を操作するのに役立ちます。 ボタン、ナビゲーション、メニューは、整合性のあるスタイルと動作を持つことの多い、一般的なコンポーネントの例です。
+この UX パターンはコンポーネントで構成されています。 コンポーネントは、お客様がソフトウェアやサービスの要素を操作するのに役立ちます。 ボタン、ナビゲーション、メニューは、整合性のあるスタイルと動作を持つことの多い、一般的なコンポーネントの例です。
 
-Office UI Fabric では、外観も動作も Office の一部のようなコンポーネントを表示します。 Fabric を活用して、Office とシームレスに統合します。 アドインに既存のコンポーネント言語がある場合、Fabric のためにその言語を削除する必要はありません。 Office と統合する際に、それを保持する機会を探します。 スタイル要素の入れ替え、競合の削除、ユーザーの混乱を取り除くためのスタイルやと動作の採用を行う方法を検討してください。
+Office UI Fabric では、外観も動作も Office の一部のようなコンポーネントを表示します。 Fabric を活用して、Office と簡単に統合します。 アドインに既存のコンポーネント言語がある場合、Fabric のためにその言語を削除する必要はありません。 Office と統合する際に、それを保持する機会を探します。 スタイル要素の入れ替え、競合の削除、ユーザーの混乱を取り除くためのスタイルと動作の採用を行う方法を検討してください。
 
-規定のパターンは、共通の顧客シナリオとユーザー エクスペリエンスについての調査に基づくベスト プラクティスのソリューションです。 このようなパターンにより、アドインの設計と開発を素早く始められるとともに、Microsoft とブランド要素の間のバランスを取るためのガイダンスとしても役立ちます。 Microsoft の Fabric デザイン言語のデザイン要素とパートナー固有のブランドの独自性の間のバランスを取る、すっきりしてモダンなユーザー エクスペリエンスによって、ユーザー定着率とアドイン導入率を高められます。
+提供されるパターンは、一般的な顧客シナリオとユーザー エクスペリエンス調査に基づくベスト プラクティス ソリューションです。 それは、アドインの設計と開発のためのクイック エントリ ポイントと、Microsoft とブランド要素のバランスを実現するためのガイダンスの両方を提供することを目的としています。 Microsoft の Fabric 設計言語とパートナー特有のブランドの独自性から得たデザイン要素のバランスを取る、クリーンでモダンなユーザー エクスペリエンスを提供することにより、ユーザーの保持とアドインの採用を向上させることができます。
 
-UX パターン テンプレートを使用して、次の作業を行います。
+UX パターン テンプレートを使用して、次のことを行います。
 
 * よくある顧客のシナリオにソリューションとして適用する。
 * 設計のベスト プラクティスとして適用する。
 * [Office UI Fabric](https://developer.microsoft.com/fabric#/get-started) のコンポーネントとスタイルを組み込む。
 * Office の既定の UI に視覚的に溶け込むアドインをビルドする。
-* UX を概念化し、視覚化する。
+* UX を観念化および可視化する。
 
 
 ## <a name="getting-started"></a>はじめに
 
-パターンは、アドインで共通する主要な操作やエクスペリエンスによって整理されています。 主なグループは次のとおりです。
+パターンは、キーの動作またはアドインに共通のエクスペリエンスによって構成されます。 主なグループは次のとおりです。
 
-* [最初の実行エクスペリエンス  (FRE)](../design/first-run-experience-patterns.md)
+* [最初の実行エクスペリエンス (FRE)](../design/first-run-experience-patterns.md)
 * [認証](../design/authentication-patterns.md)
 * [ナビゲーション](../design/navigation-patterns.md)
-* [ブランド化デザイン](../design/branding-patterns.md)
+* [ブランド デザイン](../design/branding-patterns.md)
 
-各グループを確認して、ベスト プラクティスを使用してアドインを設計する方法を理解してください。
+各グループを参照して、ベスト プラクティスを使ってアドインを設計する方法を理解します。
 
 
 
->注記: この文書全体で示されている画面の例は、**1366x768** の解像度で設計し、表示されています。
+>注: このドキュメント全体で示す画面の例は、解像度 **1366x768** で設計および表示されています。
 
 
 
 
 ## <a name="see-also"></a>関連項目
-* [デザイン ツールキット](design-toolkits.md)
+* [デザインのツールキット](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
 * [Office アドイン開発のベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React の使用を開始する](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Fabric React の使用の開始](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)

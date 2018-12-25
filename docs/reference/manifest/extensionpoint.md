@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの ExtensionPoint 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 21def2de7168ff06c1eda26add07c33d366ec296
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433965"
+---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
  Office UI でアドインが機能を公開する場所を定義します。 **ExtensionPoint** 要素は、[AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md)、[MobileFormFactor](mobileformfactor.md) の子要素です。 
@@ -12,17 +23,17 @@
 
 - **CustomFunctions** - Excel 向けの JavaScript で記述されたカスタム関数。
 
-[この XML コードのサンプル](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) では、 **CustomFunctions** 属性値とともに**ExtensionPoint** 要素を使用する方法と、使用する子要素を示します。
+[この XML コード サンプル](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml)は、**CustomFunctions** 属性の値を持つ **ExtensionPoint** 要素を使用する方法と、使用する子要素を示しています。
 
 ## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
 
 - **PrimaryCommandSurface** - Office のリボン。
-- **ContextMenu**- Office UI で右クリックしたときに表示されるショートカット メニュー。
+- **ContextMenu**Office UI で右クリックしたときに表示されるショートカット メニュー。
 
 次の例は、 **PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
 > [!IMPORTANT] 
-> ID 属性を含む要素では、一意の ID を指定してください。 あなたの ID と共に、会社の名前を使用することをお勧めします。 たとえば、次の形式にします。 <CustomTab id="mycompanyname.mygroupname">
+> ID 属性を含む要素では、一意の ID を指定してください。 会社の名前と ID を使用することをお勧めします。 たとえば、次の形式にします。 <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -59,20 +70,20 @@
 
 #### <a name="child-elements"></a>子要素
  
-|**要素**|**説明**|
+|**Element**|**説明**|
 |:-----|:-----|
 |**CustomTab**|カスタム タブをリボンに追加する場合は必須です (  **PrimaryCommandSurface** を使用)。 **CustomTab** 要素を使用する場合、 **OfficeTab** 要素は使用できません。 **id** 属性が必要です。|
 |**OfficeTab**|既定の Office リボン タブを拡張する場合は必須です (**PrimaryCommandSurface** を使用)。**OfficeTab** 要素を使用する場合、**CustomTab** 要素は使用できません。詳細については、「[OfficeTab](officetab.md)」を参照してください。|
-|**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須です (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> - Excel または Word の ** ContextMenuText** 。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> - Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
-|**グループ**|タブのユーザー インターフェイスの拡張点のグループ。グループには、最大 6 個のコントロールを指定できます。 **id** 属性が必要です。id は最大 125 文字の文字列です。|
-|**ラベル**|必須。グループのラベル。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
-|**アイコン**|必須。小型のフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid** 属性は、 **Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。3 つのイメージのサイズ (16、32、80) が必要です。5 つのサイズ オプション (20、24、40、48、64) もサポートされています。|
-|**ヒント**|省略可能。グループのツールヒント。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
-|**コントロール**|各グループには、最低でもコントロールが一つ必要です。  **Control** 要素は、**Button** または **Menu** のどちらかになります。 ボタン コントロールのドロップダウン リストを指定する場合は、**Menu** を使用します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注**  トラブルシューティングを簡単にするために、 **Control**  要素と関連する  **Resources**  子要素を一度に 1 つずつ追加することをお勧めします。|
+|**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須です (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
+|**Group**|タブのユーザー インターフェイスの拡張点のグループ。グループには、最大 6 個のコントロールを指定できます。 **id** 属性が必要です。id は最大 125 文字の文字列です。|
+|**Label**|必須。グループのラベル。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
+|**Icon**|必須。小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid** 属性は、 **Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。3 つのイメージのサイズ (16、32、80) が必要です。5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
+|**Tooltip**|省略可能。グループのツールヒント。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
+|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 **Control** 要素は、**Button** または **Menu** のどちらかになります。 ボタン コントロールのドロップダウン リストを指定する場合は、**Menu** を使用します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:** トラブルシューティングを簡単にするために、**Control** 要素と関連する **Resources** 子要素を一度に 1 つずつ追加することをお勧めします。|
 |**スクリプト**|カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。 Developer Preview では、この要素は使用しません。 代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。|
-|**ページ**|カスタム関数についての HTML ページにリンクします。|
+|**Page**|カスタム関数についての HTML ページにリンクします。|
 
-## <a name="extension-points-for-outlook"></a>Outlook の拡張ポイント
+## <a name="extension-points-for-outlook"></a>Outlook のみの拡張点
 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
@@ -80,7 +91,7 @@
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [イベント](#events)
+- [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
@@ -216,9 +227,9 @@
 
 |  要素 |  説明  |
 |:-----|:-----|
-|  [グループ](group.md) |  コマンド領域にボタングループを追加します。  |
+|  [Group](group.md) |  コマンド領域にボタンのグループを追加します。  |
 
-この種類の **ExtensionPoint** 要素は子要素を一つだけ含むことができます (**Group** 要素)。
+この種類の **ExtensionPoint** 要素には子要素を 1 つだけ含めることができます (**Group** 要素)。
 
 この拡張点に含まれる **Control** 要素の **xsi:type** 属性を `MobileButton` に設定する必要があります。
 
@@ -234,7 +245,7 @@
 </ExtensionPoint>
 ```
 
-### <a name="events"></a>イベント
+### <a name="events"></a>Events
 
 この拡張点は、指定したイベントのイベント ハンドラーを追加します。
 
@@ -243,14 +254,14 @@
 
 | 要素 | 説明  |
 |:-----|:-----|
-|  [イベント](event.md) |  イベントとイベント ハンドラーの関数を指定します。  |
+|  [Event](event.md) |  イベントとイベント ハンドラーの関数を指定します。  |
 
 #### <a name="itemsend-event-example"></a>ItemSend イベントの例
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
@@ -264,13 +275,13 @@
 
 |  要素 |  説明  |
 |:-----|:-----|
-|  [ラベル](#label) |  アドインのコンテキスト ウィンドウのラベルを指定します。  |
+|  [Label](#label) |  アドインのコンテキスト ウィンドウのラベルを指定します。  |
 |  [SourceLocation](sourcelocation.md) |  コンテキスト ウィンドウの URL を指定します。  |
-|  [ルール](rule.md) |  アドインをアクティブ化するタイミングを決定するルールを一つ以上指定します。  |
+|  [Rule](rule.md) |  アドインをアクティブ化するタイミングを決定する 1 つ以上のルールを指定します。  |
 
-#### <a name="label"></a>ラベル
+#### <a name="label"></a>Label
 
-必須。グループのラベルです。**resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
+必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
 
 #### <a name="highlight-requirements"></a>強調表示の要件
 

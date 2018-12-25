@@ -1,4 +1,15 @@
-# <a name="icon-element"></a>アイコン要素
+---
+title: マニフェスト ファイルの Icon 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 476e5720e4959c3c766a7ae6206f2bf12731bfd2
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432271"
+---
+# <a name="icon-element"></a>Icon 要素
 
 [ボタン](control.md#button-control) または [メニュー](control.md#menu-dropdown-button-controls) コントロールの **Image** 要素を定義します。
 
@@ -12,9 +23,9 @@
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [イメージ](#image)        | はい |   使用するイメージの resid         |
+|  [Image](#image)        | はい |   使用するイメージの resid         |
 
-### <a name="image"></a>イメージ
+### <a name="image"></a>Image
 
 ボタンの画像。**resid** 属性には、**Resources** 要素の **Images** 要素にある **Image** 要素の [id](resources.md) 属性の値を設定する必要があります。**size** 属性は、画像のサイズをピクセル単位で示します。他に 5 つのサイズ (20、24、40、48、64 ピクセル) がサポートされていますが、3 つの画像のサイズ (16、32、80 ピクセル) を必ず指定します。|
 

@@ -1,3 +1,14 @@
+---
+title: Office アドインのアイコン ガイドライン
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: 853f47d5ce8d9ce7efd5e7e048f4f3151448887e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433944"
+---
 # <a name="icons"></a>アイコン
 アイコンは、動作や概念を視覚的に表現するものです。 多くの場合、コントロールとコマンドに意味を与えるために使用します。 環境内でユーザーが移動するのにサインが役立つのと同じように、リアルなビジュアルや象徴的なビジュアルにより、ユーザーは UI 間を移動できるようになります。 お客様がコントロールを選択するときの動作をすばやく解析できるにように、必要な詳細のみを含む、シンプルで明確なビジュアルにする必要があります。
 

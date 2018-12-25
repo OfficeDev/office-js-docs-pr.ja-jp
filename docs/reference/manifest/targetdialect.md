@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの TargetDialect 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 3bdcd1d8cfd23f18e5eec5061a987aafe7c2bc4b
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432250"
+---
 # <a name="targetdialect-element"></a>TargetDialect 要素
 
 この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表現されます。
@@ -12,7 +23,7 @@
 </TargetDialect>
 ```
 
-## <a name="contained-in"></a>含まれるもの
+## <a name="contained-in"></a>含まれる場所
 
 [TargetDialects](targetdialects.md)
 

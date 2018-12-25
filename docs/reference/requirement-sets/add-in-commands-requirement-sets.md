@@ -1,3 +1,14 @@
+---
+title: アドイン コマンドの要件セット
+description: ''
+ms.date: 11/21/2018
+ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432782"
+---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。

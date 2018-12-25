@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの DesktopFormFactor 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: dea632f7f8afa5d9b69f257798022e9e520e9394
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433741"
+---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
 デスクトップ フォーム ファクターについてアドインの設定を指定します。デスクトップ フォーム ファクターには、Office for Windows、Office for Mac、Office Online が含まれています。**Resources** ノードを除くデスクトップ フォーム ファクターのアドイン情報をすべて含みます。
@@ -11,7 +22,7 @@
 | [ExtensionPoint](extensionpoint.md)   | はい      | アドインが機能を公開する場所を定義します。 |
 | [FunctionFile](functionfile.md)       | はい      | JavaScript 関数を含むファイルの URL。|
 | [GetStarted](getstarted.md)           | いいえ       | Word、Excel、または PowerPoint のホストにアドインをインストールするときに表示される吹き出しを定義します。 |
-| [SupportsSharedFolders](supportssharedfolders.md) | いいえ | Outlook アドインが委任のシナリオでは使用可能か、既定で *false* に設定されているかどうかを定義します。<br><br>**重要**: この要素は、Exchange Online への Outlook アドイン プレビュー要求セットでのみ使用可能です。 この要素を使用するアドインは、AppSource に発行または一元展開で展開できません。 |
+| [SupportsSharedFolders](supportssharedfolders.md) | いいえ | 代理人のシナリオで Outlook アドインを使用できるかどうかを定義し、既定では *false* に設定します。<br><br>**重要事項**: この要素は、Outlook アドイン要件セットのプレビューの Exchange Online に対してのみ使用できます。 この要素を使用するアドインは、AppSource に発行したり、一元展開によって展開したりすることはできません。 |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor の例
 
