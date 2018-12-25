@@ -1,8 +1,19 @@
-# <a name="supporturl-element"></a><span data-ttu-id="5712f-101">SupportUrl 要素</span><span class="sxs-lookup"><span data-stu-id="5712f-101">SupportUrl element</span></span>
+---
+title: マニフェスト ファイルの SupportUrl 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 00234ef9fe8960b9956e6a2595e2e2e71bfb97c6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432670"
+---
+# <a name="supporturl-element"></a><span data-ttu-id="d2b59-102">SupportUrl 要素</span><span class="sxs-lookup"><span data-stu-id="d2b59-102">SupportUrl element</span></span>
 
-<span data-ttu-id="5712f-102">アドインのサポート情報を提供するページの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="5712f-102">Specifies the URL of a page that provides support information for your add-in.</span></span>
+<span data-ttu-id="d2b59-103">アドインのサポート情報を提供するページの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="d2b59-103">Specifies the URL of a page that provides support information for your add-in.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="5712f-103">構文</span><span class="sxs-lookup"><span data-stu-id="5712f-103">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="d2b59-104">構文</span><span class="sxs-lookup"><span data-stu-id="d2b59-104">Syntax</span></span>
 
 ```XML
 <OfficeApp>
@@ -21,18 +32,18 @@
 </OfficeApp>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="5712f-104">次に含まれる:</span><span class="sxs-lookup"><span data-stu-id="5712f-104">Contained in:</span></span>
+## <a name="contained-in"></a><span data-ttu-id="d2b59-105">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="d2b59-105">Contained in</span></span>
 
-[<span data-ttu-id="5712f-105">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="5712f-105">OfficeApp</span></span>](officeapp.md)
+[<span data-ttu-id="d2b59-106">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="d2b59-106">OfficeApp</span></span>](officeapp.md)
 
-## <a name="can-contain"></a><span data-ttu-id="5712f-106">含めることができるもの:</span><span class="sxs-lookup"><span data-stu-id="5712f-106">Can contain:</span></span>
+## <a name="can-contain"></a><span data-ttu-id="d2b59-107">含めることができるもの</span><span class="sxs-lookup"><span data-stu-id="d2b59-107">Can contain</span></span>
 
-|  <span data-ttu-id="5712f-107">要素</span><span class="sxs-lookup"><span data-stu-id="5712f-107">Element</span></span> | <span data-ttu-id="5712f-108">必須</span><span class="sxs-lookup"><span data-stu-id="5712f-108">Required</span></span> | <span data-ttu-id="5712f-109">説明</span><span class="sxs-lookup"><span data-stu-id="5712f-109">Description</span></span>  |
+|  <span data-ttu-id="d2b59-108">要素</span><span class="sxs-lookup"><span data-stu-id="d2b59-108">Element</span></span> | <span data-ttu-id="d2b59-109">必須</span><span class="sxs-lookup"><span data-stu-id="d2b59-109">Required</span></span> | <span data-ttu-id="d2b59-110">説明</span><span class="sxs-lookup"><span data-stu-id="d2b59-110">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="5712f-110">オーバーライド</span><span class="sxs-lookup"><span data-stu-id="5712f-110">Override</span></span>](override.md)   | <span data-ttu-id="5712f-111">いいえ</span><span class="sxs-lookup"><span data-stu-id="5712f-111">No</span></span> | <span data-ttu-id="5712f-112">追加のロケール URL の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="5712f-112">Specifies the setting for additional locale urls</span></span> |
+|  [<span data-ttu-id="d2b59-111">Override</span><span class="sxs-lookup"><span data-stu-id="d2b59-111">Override</span></span>](override.md)   | <span data-ttu-id="d2b59-112">なし</span><span class="sxs-lookup"><span data-stu-id="d2b59-112">No</span></span> | <span data-ttu-id="d2b59-113">追加のロケール URL の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="d2b59-113">Specifies the setting for additional locale urls</span></span> |
 
-## <a name="attributes"></a><span data-ttu-id="5712f-113">属性</span><span class="sxs-lookup"><span data-stu-id="5712f-113">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="d2b59-114">属性</span><span class="sxs-lookup"><span data-stu-id="d2b59-114">Attributes</span></span>
 
-|<span data-ttu-id="5712f-114">**属性**</span><span class="sxs-lookup"><span data-stu-id="5712f-114">**Attribute**</span></span>|<span data-ttu-id="5712f-115">**型**</span><span class="sxs-lookup"><span data-stu-id="5712f-115">**Type**</span></span>|<span data-ttu-id="5712f-116">**必須**</span><span class="sxs-lookup"><span data-stu-id="5712f-116">**Required**</span></span>|<span data-ttu-id="5712f-117">**説明**</span><span class="sxs-lookup"><span data-stu-id="5712f-117">**Description**</span></span>|
+|<span data-ttu-id="d2b59-115">**属性**</span><span class="sxs-lookup"><span data-stu-id="d2b59-115">**Attribute**</span></span>|<span data-ttu-id="d2b59-116">**型**</span><span class="sxs-lookup"><span data-stu-id="d2b59-116">**Type**</span></span>|<span data-ttu-id="d2b59-117">**必須**</span><span class="sxs-lookup"><span data-stu-id="d2b59-117">**Required**</span></span>|<span data-ttu-id="d2b59-118">**説明**</span><span class="sxs-lookup"><span data-stu-id="d2b59-118">**Description**</span></span>|
 |:-----|:-----|:-----|:-----|
-|<span data-ttu-id="5712f-118">DefaultValue</span><span class="sxs-lookup"><span data-stu-id="5712f-118">DefaultValue</span></span>|<span data-ttu-id="5712f-119">URL</span><span class="sxs-lookup"><span data-stu-id="5712f-119">URL</span></span>|<span data-ttu-id="5712f-120">必須</span><span class="sxs-lookup"><span data-stu-id="5712f-120">required</span></span>|<span data-ttu-id="5712f-121">この設定の既定値を指定します。この値は、[DefaultLocale](defaultlocale.md) 要素に指定されるロケールを対象としています。</span><span class="sxs-lookup"><span data-stu-id="5712f-121">Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.</span></span>|
+|<span data-ttu-id="d2b59-119">DefaultValue</span><span class="sxs-lookup"><span data-stu-id="d2b59-119">DefaultValue</span></span>|<span data-ttu-id="d2b59-120">URL</span><span class="sxs-lookup"><span data-stu-id="d2b59-120">URL</span></span>|<span data-ttu-id="d2b59-121">必須</span><span class="sxs-lookup"><span data-stu-id="d2b59-121">required</span></span>|<span data-ttu-id="d2b59-122">この設定の既定値を指定します。この値は、[DefaultLocale](defaultlocale.md) 要素に指定されるロケールを対象としています。</span><span class="sxs-lookup"><span data-stu-id="d2b59-122">Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.</span></span>|
