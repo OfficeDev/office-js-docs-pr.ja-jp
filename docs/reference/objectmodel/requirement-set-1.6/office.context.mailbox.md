@@ -1,7 +1,17 @@
-
+---
+title: Office.context.mailbox - 要件セット 1.6
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: cf7c5620d9109f2350972e0f797e7f195f91a90e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433349"
+---
 # <a name="mailbox"></a>mailbox
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
 

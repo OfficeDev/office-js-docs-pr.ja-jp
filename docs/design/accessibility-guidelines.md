@@ -1,3 +1,14 @@
+---
+title: Office アドインのアクセシビリティ ガイドライン
+description: ''
+ms.date: 09/24/2018
+ms.openlocfilehash: d23041e874792a5718708c2171b1fdbe0675cddf
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433391"
+---
 # <a name="accessibility-guidelines"></a>アクセシビリティ ガイドライン
 
 Office アドインを設計して開発する際は、アドインを使用する可能性のあるすべてのユーザーおよび顧客が正常に使用できるものにするよう努める必要があります。ソリューションを、すべての対象ユーザーがアクセス可能なものにするためには、次のガイドラインを適用します。

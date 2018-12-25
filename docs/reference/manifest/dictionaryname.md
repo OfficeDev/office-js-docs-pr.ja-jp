@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの DictionaryName 要素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: e5a6829101448c9142fea60f4bd8929af7ae3df6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433244"
+---
 # <a name="dictionaryname-element"></a>DictionaryName 要素
 
 この辞書の名前を指定します。
@@ -10,9 +21,9 @@
 <DictionaryName DefaultValue="string" />
 ```
 
-## <a name="contained-in"></a>以下に包含
+## <a name="contained-in"></a>含まれる場所
 
-[辞書](dictionary.md)
+[Dictionary](dictionary.md)
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの AppDomain 要素
+description: ''
+ms.date: 12/13/2018
+ms.openlocfilehash: 2b55f2c1ea7a2a3dc7dec42c913d74006c0f2e3b
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433069"
+---
 # <a name="appdomain-element"></a>AppDomain 要素
 
 アドイン ウィンドウにページを読み込むために使用される追加のドメインを指定します。

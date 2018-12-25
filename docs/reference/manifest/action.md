@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの Action 要素
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: 04c081a02768446fcf587b8b6a7c4e1dcd66012f
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433272"
+---
 # <a name="action-element"></a>Action 要素
 
 ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。

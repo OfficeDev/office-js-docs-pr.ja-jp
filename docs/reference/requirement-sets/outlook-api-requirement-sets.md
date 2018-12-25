@@ -1,3 +1,14 @@
+---
+title: Outlook JavaScript API の要件セット
+description: ''
+ms.date: 12/04/2018
+ms.openlocfilehash: 3d2b17de4e1bc8510b06901b4cfd1949d9490564
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433027"
+---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
 Outlook アドインでは、[マニフェスト](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)で [Requirements](/office/dev/add-ins/reference/manifest/requirements) 要素を使用し、必要な API のバージョンを宣言します。 Outlook アドインには、`Name` 属性が `Mailbox` に設定され、`MinVersion` 属性がアドインのシナリオをサポートする最小 API 要件セットに設定された [Set](/office/dev/add-ins/reference/manifest/set) 要素が常に含まれます。

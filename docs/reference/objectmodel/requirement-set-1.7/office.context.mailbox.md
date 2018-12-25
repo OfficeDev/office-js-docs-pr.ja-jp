@@ -1,7 +1,17 @@
-
+---
+title: Office.context.mailbox - 要件セット 1.7
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 3f4cee427e49a691b42d47d6821c54cd428207d9
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433342"
+---
 # <a name="mailbox"></a>mailbox
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
 
@@ -62,7 +72,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -84,7 +94,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -148,7 +158,7 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
@@ -186,9 +196,9 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
-|`timeValue`| 日付|日付オブジェクト|
+|`timeValue`| Date|日付オブジェクト|
 
 ##### <a name="requirements"></a>要件
 
@@ -213,7 +223,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
@@ -249,7 +259,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)|変換するローカル時刻の値。|
 
@@ -290,7 +300,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
@@ -325,7 +335,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -363,7 +373,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 > [!NOTE]
 > すべてのパラメーターは省略可能です。
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
@@ -416,7 +426,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 > [!NOTE]
 > すべてのパラメーターは省略可能です。
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 | `parameters` | Object | 新しいメッセージを記述するパラメーターのディクショナリ。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | メール アドレスを含む文字列の配列、または To 行の各受信者の `EmailAddressDetails` オブジェクトを含む配列。 配列の上限は 100 エントリです。 |
@@ -428,7 +438,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.attachments.type` | String | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
 | `parameters.attachments.name` | String | 添付ファイル名を含む文字列。最大の長さは 255 文字です。|
 | `parameters.attachments.url` | String | `type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。 |
-| `parameters.attachments.isInline` | Boolean | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
+| `parameters.attachments.isInline` | ブール値 | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
 | `parameters.attachments.itemId` | String | `type` が `item` に設定されている場合にのみ使用されます。 新しいメッセージに添付する必要がある既存の電子メールの EWS のアイテム ID です。 最大 100 文字の文字列です。 |
 
 
@@ -485,8 +495,8 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | オブジェクト | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
+| `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options.isRest` | Boolean |  &lt;省略可能&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
 | `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データ。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
 

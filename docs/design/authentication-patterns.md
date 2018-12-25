@@ -1,3 +1,14 @@
+---
+title: Office アドインの認証設計ガイドライン
+description: ''
+ms.date: 11/02/2018
+ms.openlocfilehash: a812a1fe6feaa1c6744205db6bfd4ed81793fefe
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432978"
+---
 # <a name="authentication-patterns"></a>認証パターン
 
 アドインの機能にユーザーがアクセスするには、サインインまたはサインアップする必要があります。 認証時の典型的なインターフェイス コントロールには、ユーザー名とパスワードの入力ボックスやサードパーティの資格情報フローを開始するボタンがあります。 ユーザーにアドインの使用を開始してもらうには、簡単で効率的に認証を導入することが重要な最初の一歩となります。

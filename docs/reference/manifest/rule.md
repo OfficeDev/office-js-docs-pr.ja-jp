@@ -1,3 +1,14 @@
+---
+title: マニフェスト ファイルの Rule 要素
+description: ''
+ms.date: 11/30/2018
+ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433116"
+---
 # <a name="rule-element"></a>Rule 要素
 
 このコンテキスト メール アドインに対して評価する必要のあるアクティブ化ルールを指定します。

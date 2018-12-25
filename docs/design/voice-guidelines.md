@@ -1,4 +1,15 @@
-# <a name="voice-guidelines"></a>スタイル ガイドライン
+---
+title: Office アドインの音声ガイドライン
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433286"
+---
+# <a name="voice-guidelines"></a>音声のガイドライン
 
 Office アドインを設計する際は、UI のテキストと要素に使用するスタイルをよくご検討ください。Office UI のスタイルと一致させるように努めてください。Office UI のスタイルは、ユーザーにとって会話的で魅力的かつ理解しやすいものになっています。 
 
@@ -13,7 +24,7 @@ Office アドインを設計する際は、UI のテキストと要素に使用�
 
 ## <a name="see-also"></a>関連項目
 
-- [身体障害をもつ方へ配慮した書き方](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities) のガイドライン
-- [マイクロソフトのスタイルと音声のためのヒント トップ 10](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- [言葉の選択](https://docs.microsoft.com/style-guide/word-choice/) についてのガイドライン
--  Office アドインの [妥当性確認ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)
+- [すべての機能の文書作成](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)のためのガイドライン
+- [Microsoft のスタイルと音声のためのヒント トップ 10](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- [言葉の選択](https://docs.microsoft.com/style-guide/word-choice/)についてのガイドライン
+-  Office アドインの[検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)

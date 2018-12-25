@@ -1,7 +1,17 @@
-
+---
+title: Office.context.mailbox - 要件セット 1.1
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 352132fcc4645463b922cd3bab200fb8efb167b4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433328"
+---
 # <a name="mailbox"></a>mailbox
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
 
@@ -308,12 +318,12 @@ function cb(asyncResult) {
 
 > [!NOTE]
 > このメソッドは、次のシナリオではサポートされていません。
-> - Outlook for iOS または Outlook for Android
+> - Outlook for iOS または Outlook for Android を使用している場合
 > - アドインが Gmail のメールボックスに読み込まれる場合
 > 
-> このような場合は、[REST API による](https://docs.microsoft.com/outlook/add-ins/use-rest-api)アドインのユーザー メールボックスへのアクセスが必要になります。
+> このような場合は、アドインでは [REST API を使用](https://docs.microsoft.com/outlook/add-ins/use-rest-api)して、代わりにユーザーのメールボックスにアクセスする必要があります。
 
-`makeEwsRequestAsync` メソッドは、アドインの代わりに Exchange に EWS 要求を送信します。 サポートされている EWS 操作の一覧については、「[Outlook アドインから Web サービスを呼び出す](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)」を参照してください。
+`makeEwsRequestAsync` メソッドは、アドインの代わりに Exchange に EWS 要求を送信します。 サポートされている EWS 操作の一覧については、「[Outlook アドインからの Web サービスの呼び出し](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)」を参照してください。
 
 `makeEwsRequestAsync` メソッドでは、フォルダー関連アイテムを要求できません。
 
