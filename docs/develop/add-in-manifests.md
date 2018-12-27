@@ -1,13 +1,13 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 12/04/2018
-ms.openlocfilehash: 412b271be406f9c44cc3e93609ddd2836922243a
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/26/2018
+ms.openlocfilehash: d4b83e0d450f98877169be16ea1cd391f2a6e9d6
+ms.sourcegitcommit: 89e090a2a9ed85fe1b829820fb3b4dc6fb1fa6e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270720"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447006"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -154,7 +154,7 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
   <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -171,6 +171,8 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -354,7 +356,7 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -365,6 +367,9 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -392,7 +397,7 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
@@ -411,6 +416,8 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
   <!-- the web server that hosts the icon files. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
 
   <Hosts>
     <Host Name="Mailbox" />
