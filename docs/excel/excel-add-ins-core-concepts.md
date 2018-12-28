@@ -2,16 +2,16 @@
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 11/29/2018
-ms.openlocfilehash: c92006fe8b1b51daa7cac420c63c5926a2414b61
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b32efc539b983a0fc0d1e8696869cedbb0a14095
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992220"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457902"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
  
-この記事では、[Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
+この記事では、[Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
@@ -248,4 +248,4 @@ API エラーが発生すると、API はコードとメッセージを含む **
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
 * [Excel の JavaScript API を使用した、パフォーマンスの最適化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

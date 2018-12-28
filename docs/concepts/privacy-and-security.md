@@ -2,12 +2,12 @@
 title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 339726df186860ba23a51e842d55231d2e8797f0
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6723ef757772a992b134d4f2a9d4590cc74965c2
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270874"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458133"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -104,7 +104,7 @@ Outlook アドイン固有のリソース使用量監視機能により、Outloo
 
 次に、Office アドインの開発者向けの PII の保護に関するガイドラインをいくつか具体的に示します。
 
-- [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) オブジェクトは、コンテンツ アドインまたは作業ウィンドウ アドインに関する設定やセッション間の状態データの永続化に使用できますが、パスワードやその他の機密性の高い PII を **Settings** オブジェクトに保存してはいけません。**Settings** オブジェクト内のデータはエンド ユーザーには表示されませんが、容易にアクセスできるドキュメントのファイル形式の一部として保存されます。アドインの PII の使用を制限し、アドインに必要な PII はユーザー保護リソースとしてアドインをホストするサーバーに保存する必要があります。
+- [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) オブジェクトは、コンテンツ アドインまたは作業ウィンドウ アドインに関する設定やセッション間の状態データの永続化に使用できますが、パスワードやその他の機密性の高い PII を **Settings** オブジェクトに保存してはいけません。**Settings** オブジェクト内のデータはエンド ユーザーには表示されませんが、容易にアクセスできるドキュメントのファイル形式の一部として保存されます。アドインの PII の使用を制限し、アドインに必要な PII はユーザー保護リソースとしてアドインをホストするサーバーに保存する必要があります。
 
 - 一部のアプリケーションを使用すると PII が公開されてしまう可能性があります。ユーザーの ID、所在、アクセス時間、およびその他の資格情報に関するデータが安全に保存されていて、アドインの他のユーザーが使用できないことを確認してください。
 
@@ -118,7 +118,7 @@ Office アドインのセキュリティ モデルをサポートするための
 
 ### <a name="permissions-choices"></a>アクセス許可の選択
 
-アドイン プラットフォームは、その機能で必要なユーザー データへのアクセス レベルを宣言する、アドインが使用するアクセス許可のモデルを提供します。 それぞれのアクセス許可レベルは、アドインがその機能で使用することが許可されている JavaScript API for Office のサブセットに対応しています。 たとえば、コンテンツおよび作業ウィンドウ アドイン用の **WriteDocument** アクセス許可では、アドインがユーザーのドキュメントに書き込むことは許可しますが、そのドキュメントからデータを読み込むためのいずれのメソッドへのアクセスも許可しない [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) メソッドへのアクセスを許可しています。 このアクセス許可レベルは、ユーザーのドキュメントにデータを挿入するためにユーザーが照会できるアドインなど、ドキュメントに書き込みのみを行う必要があるアドインに適しています。
+アドイン プラットフォームは、その機能で必要なユーザー データへのアクセス レベルを宣言する、アドインが使用するアクセス許可のモデルを提供します。 それぞれのアクセス許可レベルは、アドインがその機能で使用することが許可されている JavaScript API for Office のサブセットに対応しています。 たとえば、コンテンツおよび作業ウィンドウ アドイン用の **WriteDocument** アクセス許可では、アドインがユーザーのドキュメントに書き込むことは許可しますが、そのドキュメントからデータを読み込むためのいずれのメソッドへのアクセスも許可しない [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document) メソッドへのアクセスを許可しています。 このアクセス許可レベルは、ユーザーのドキュメントにデータを挿入するためにユーザーが照会できるアドインなど、ドキュメントに書き込みのみを行う必要があるアドインに適しています。
 
 ベスト プラクティスとしては、_最小限の特権_の原則に基づいてアクセス許可を要求するべきです。つまり、アドインが正しく機能するために必要な最小限の API サブセットにのみアクセスする許可を要求します。たとえば、ユーザーのドキュメントのデータさえ読み込めばアドインが正しく機能する場合、**ReadDocument** 以外のアクセス許可を要求しません。(ただし、要求したアクセス許可が不十分な場合は、アドイン プラットフォームによってアドインによる一部の API の使用がブロックされ、ランタイム エラーが発生する可能性があることに注意してください)。
 
@@ -190,7 +190,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 - jQuery を使用している場合は、[.html()](https://api.jquery.com/text/) メソッドの代わりに [.text()](https://api.jquery.com/html/) メソッドを使用してください。
 
 - 
-  [toStaticHTML](https://developer.mozilla.org/ja-JP/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+  [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
 - 
   [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。

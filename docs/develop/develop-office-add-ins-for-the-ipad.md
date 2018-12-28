@@ -2,12 +2,12 @@
 title: iPad 用の Office アドインを開発する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 56226d5b3111b1496bd2175329f68814f6d2980a
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 18fb7be558671cc30e7419ac451b8ae24add25c4
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505819"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457594"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>iPad 用の Office アドインを開発する
 
@@ -17,7 +17,7 @@ ms.locfileid: "25505819"
 
 |**タスク**|**説明**|**リソース**|
 |:-----|:-----|:-----|
-|アドインを更新して、Office.js バージョン 1.1 をサポートします。|Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。|[JavaScript API for Office の変更点](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js)|
+|アドインを更新して、Office.js バージョン 1.1 をサポートします。|Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。|[JavaScript API for Office の変更点](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)|
 |UI デザインのベスト プラクティスを適用します。|アドイン UI を iOS エクスペリエンスとシームレスに統合します。|[iOS の設計](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |アドイン デザインのベスト プラクティスを適用します。|アドインが明確な価値を提供し、魅力的であり、一貫して機能することを確認します。|[Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)|
 |タッチ用にアドインを最適化します。|マウスとキーボードに加え、タッチ入力に対して、UI が素早く応答するようにします。|[UX 設計原則を適用する](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
@@ -29,8 +29,8 @@ ms.locfileid: "25505819"
   [AppSource と Office 内でソリューションを使用できるようにする](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
 
 他のプラットフォームで実行されている Office アプリケーション用にアドインをそのまま保持することができます。また、アドインが実行されているブラウザーとデバイスに基づく別の UI も提供できます。iPad 上でアドインが実行されているかどうかを検出するためには、次の API を使用できます。
-- var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#touchenabled)
-- var allowCommerce = [Office.context.commerceAllowed](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#commerceallowed)
+- var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context#touchenabled)
+- var allowCommerce = [Office.context.commerceAllowed](https://docs.microsoft.com/javascript/api/office/office.context#commerceallowed)
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>iOS および Mac 用 Office アドイン開発のベスト プラクティス

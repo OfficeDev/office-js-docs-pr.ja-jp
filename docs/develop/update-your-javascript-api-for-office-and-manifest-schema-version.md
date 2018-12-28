@@ -2,12 +2,12 @@
 title: Office ライブラリ用の最新 JavaScript API、およびバージョン 1.1 のアドイン マニフェスト スキーマへの更新
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 12/12/2018
-ms.openlocfilehash: 1f88d6a7f663af06304326a78bb4ff47d82dab94
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: bc49aa1a6eaa9f074f25c41ebe7d2dca072e3dae
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270741"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458098"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Office ライブラリ用の最新 JavaScript API、およびバージョン 1.1 のアドイン マニフェスト スキーマへの更新
 
@@ -18,7 +18,7 @@ ms.locfileid: "27270741"
 
 ## <a name="use-the-most-up-to-date-project-files"></a>最新のプロジェクト ファイルを使用する
 
-Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js)と[アドイン マニフェスト v1.1 の機能](../develop/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、Visual Studio 2017 をダウンロードする必要があります。 Visual Studio 2017 をダウンロードするには、[Visual Studio IDE のページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
+Visual Studio を使用してアドインを開発するときに、JavaScript API for Office の[最新の API メンバー](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)と[アドイン マニフェスト v1.1 の機能](../develop/add-in-manifests.md) (offappmanifest-1.1.xsd に対して検証される) を使用する場合は、Visual Studio 2017 をダウンロードする必要があります。 Visual Studio 2017 をダウンロードするには、[Visual Studio IDE のページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
 
 テキスト エディター、または Visual Studio 以外の IDE を使用してアドインを開発する場合は、Office.js に対する CDN への参照と、アドインのマニフェストで参照するスキーマのバージョンを更新する必要があります。
 
@@ -76,7 +76,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 ```
 
 > [!NOTE] 
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と**Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts?view=office-js) 要素と [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host?view=office-js) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と**Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts) 要素と [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -119,13 +119,13 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 ```
 
 > [!NOTE] 
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と**Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts?view=office-js) 要素と [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host?view=office-js) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新したら、**Capabilities** 要素と**Capability** 要素を削除し、それらを [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts) 要素と [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host) 要素または [Requirements 要素と Requirement 要素](specify-office-hosts-and-api-requirements.md)に置き換える必要があります。
     
 
 ## <a name="see-also"></a>関連項目
 
 - [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md) 
 - [JavaScript API for Office について](understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)   
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)   
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)
     

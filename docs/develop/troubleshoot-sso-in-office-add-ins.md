@@ -2,12 +2,12 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 42f0bf50e65e10f21df11403f53942cc4753a79b
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: d0235f767dd6c41b10d7d594425da603d6a523da
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270895"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457937"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -43,7 +43,7 @@ ms.locfileid: "27270895"
 [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API は、このアドインまたは Office バージョンではサポートされていません。
 
 - このバージョンの Office は、SSO をサポートしていません。所要のバージョンは Office 2016 バージョン 1710、ビルド 8629.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン) です。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 
-- アドインのマニフェストに適切な [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo?view=office-js) セクションがありません。
+- アドインのマニフェストに適切な [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo) セクションがありません。
 
 アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)」を参照してください。
 
@@ -133,7 +133,7 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 ### <a name="invalid-or-missing-scope-permission-errors"></a>無効または不足した範囲 (アクセス許可) のエラー
 
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示する必要があります。可能な場合は、そのエラーをコンソールに出力するか、ログに記録します。
-- アドイン マニフェストの [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes?view=office-js) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
+- アドイン マニフェストの [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes) セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint)」(ASP.NET) または「[Azure AD V2.0 エンドポイントにアドインを登録する](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)」(Node JS)、および「[アドインを構成する](create-sso-office-add-ins-aspnet.md#configure-the-add-in)」(ASP.NET) または「[アドインを構成する](create-sso-office-add-ins-nodejs.md#configure-the-add-in)」(Node JS) を参照してください。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Microsoft Graph 呼び出し時の期限切れまたは無効なトークンのエラー
 

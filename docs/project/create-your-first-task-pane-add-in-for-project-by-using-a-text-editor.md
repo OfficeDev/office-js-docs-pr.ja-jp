@@ -2,12 +2,12 @@
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 46d632684c9d2fa301ab398b36e778d7543d1749
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.openlocfilehash: 6370895311f341acd0d65826b2fc721587cf8e4a
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383275"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457958"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -106,7 +106,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
    次のコードでは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。**text** オブジェクトは、HTML ファイル内にある **textarea** コントロールの ID です。
     
-   **\_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストおよびプロジェクト ドキュメント コンテキストのプロパティを取得する **getContextValues** 関数が含まれています。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)」を参照してください。
+   **\_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストおよびプロジェクト ドキュメント コンテキストのプロパティを取得する **getContextValues** 関数が含まれています。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)」を参照してください。
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
     }
     ```
 
-   Office.debug.js ファイル内の関数については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)」を参照してください。たとえば、**getDocumentUrl** 関数は、開かれているプロジェクトの URL またはファイル パスを取得します。
+   Office.debug.js ファイル内の関数については、「[JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)」を参照してください。たとえば、**getDocumentUrl** 関数は、開かれているプロジェクトの URL またはファイル パスを取得します。
     
 3. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
     
-   - たとえば、**getSelectedDataAsync** は、選択されているデータの書式設定されていないテキストを取得する、Office.js 内の汎用関数です。詳細については、「[AsyncResult オブジェクト](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)」を参照してください。
+   - たとえば、**getSelectedDataAsync** は、選択されているデータの書式設定されていないテキストを取得する、Office.js 内の汎用関数です。詳細については、「[AsyncResult オブジェクト](https://docs.microsoft.com/javascript/api/office/office.asyncresult)」を参照してください。
     
    - Project-15.js 内の **getSelectedTaskAsync** 関数は、選択されているタスクの GUID を取得します。同様に、**getSelectedResourceAsync** 関数は、選択されているリソースの GUID を取得します。タスクまたはリソースが選択されていない状態でこれらの関数を呼び出すと、未定義のエラーが発生します。
     
@@ -188,7 +188,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
    - プロジェクトが SharePoint タスク リストと同期されている場合、 **getWSSUrlAsync** 関数はそのタスク リストの URL と名前を取得します。プロジェクトが SharePoint タスク リストと同期されていない場合、 **getWSSUrlAsync** 関数はエラーによって終了します。
     
      > [!NOTE]
-     > タスク リストの SharePoint URL と名前を取得するには、**getProjectFieldAsync** 関数に [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js) 列挙型の定数 **WSSUrl** と **WSSList** を使用することをお勧めします。
+     > タスク リストの SharePoint URL と名前を取得するには、**getProjectFieldAsync** 関数に [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields) 列挙型の定数 **WSSUrl** と **WSSList** を使用することをお勧めします。
 
    次のコードの各関数には、`function (asyncResult)` によって指定されている匿名関数が含まれます。これは、非同期の結果を取得するコールバックです。匿名関数の代わりに、複雑なアドインの保守に役立つ名前付き関数を使用できます。
 
@@ -1094,7 +1094,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office アドイン](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office アドイン](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

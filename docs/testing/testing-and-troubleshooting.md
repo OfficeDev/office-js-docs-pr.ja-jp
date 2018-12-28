@@ -2,12 +2,12 @@
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fb1b15236214056e6e15b4581a3813d42e31dc54
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6106b138eabb0360b11671eeb2a467e93311321e
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270776"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457916"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -86,7 +86,7 @@ URL を信頼済みサイトのリストに追加する方法:
 3. エラー メッセージに表示される URL を入力して、**[追加]** を選択します。
 4. アドインの使用をもう一度お試しください。問題が続く場合は、他のセキュリティ ゾーンの設定を変えて、アドインのドメインが Office アプリケーションのアドレス バーに表示される URL と同じゾーンに存在するようにします。
 
-この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
+この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
 
 ```js
 

@@ -2,12 +2,12 @@
 title: ドキュメントやスプレッドシート内の領域へのバインド
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 7d5fbeb53423917703bb9671720be59d9812e62e
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: 7b751fa49699c0b40f7bdf7f97e535ec9ab25580
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016375"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458063"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
@@ -37,11 +37,11 @@ ms.locfileid: "24016375"
 
     Excel では、セルの連続する選択範囲を使用してマトリックス バインドを設定できます。Word では、表のみがマトリックス バインドをサポートします。
 
-3. **[テーブル バインド][TableBinding]** - ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata?view=office-js) オブジェクトとして書き込みまたは読み取りが行われます。`TableData` オブジェクトは `headers` および `rows` プロパティを通じてデータを公開します。
+3. **[テーブル バインド][TableBinding]** - ヘッダーがある表が含まれるドキュメントの領域にバインドします。テーブル バインド内のデータは、[TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata) オブジェクトとして書き込みまたは読み取りが行われます。`TableData` オブジェクトは `headers` および `rows` プロパティを通じてデータを公開します。
 
     Excel または Word の表はすべて、テーブル バインドの基礎にできます。テーブル バインドを確立すると、ユーザーが表に追加する新しい各行または各列が、自動的にバインドに含まれます。
 
-オブジェクトの 3 つの "addFrom" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding]、[TableBinding]、または [TextBinding] のうち対応するオブジェクトのメソッドを使用して、バインドのデータとプロパティを操作できます。この 3 つのオブジェクトはすべて、`Binding` オブジェクトの [getDataAsync] メソッドおよび [setDataAsync] メソッドを継承しているので、バインドされたデータを操作できます。`Bindings`
+`Bindings` オブジェクトの 3 つの "addFrom" メソッドのいずれかを使用してバインドを作成すると、[MatrixBinding]、[TableBinding]、または [TextBinding] のうち対応するオブジェクトのメソッドを使用して、バインドのデータとプロパティを操作できます。この 3 つのオブジェクトはすべて、`Binding` オブジェクトの [getDataAsync] メソッドおよび [setDataAsync] メソッドを継承しているので、バインドされたデータを操作できます。
 
 > [!NOTE]
 > **マトリックス バインドとテーブル バインドの使い分け**作業中の表形式のデータに集計行が含まれ、アドインのスクリプトが集計行の値にアクセスする必要がある場合、またはユーザーの選択が集計行にあることを検出する必要がある場合は、マトリックス バインドを使用する必要があります。集計行を含む表形式データに対するテーブル バインドを設定する場合、[TableBinding.rowCount] プロパティおよびイベント ハンドラーの [BindingSelectionChangedEventArgs] オブジェクトの `rowCount` および `startRow` プロパティは、集計行のそれらの値に反映されません。この制限を回避するには、集計行を処理するマトリックス バインドを設定する必要があります。
@@ -136,7 +136,7 @@ function write(message){
 
 
 > [!NOTE]
-> Excel では、テーブルを名前付きアイテムとして指定する場合、`"Sheet1!Table1"` の形式で完全修飾名を指定して、テーブルの名前にワークシートの名前を含める必要があります。  `"Sheet1!Table1"`
+> Excel では、テーブルを名前付きアイテムとして指定する場合、`"Sheet1!Table1"` の形式で完全修飾名を指定して、テーブルの名前にワークシートの名前を含める必要があります。
 
 以下の例では、Excel のバインドを列 A の最初の 3 つのセル (`"A1:A3"`) に対して作成し、id `"MyCities"` を割り当て、バインドに 3 つの都市名を書き込みます。
 
@@ -212,7 +212,7 @@ function write(message){
 }
 ```
 
-パラメーターとして関数に渡される匿名関数は、操作の完了時に実行されます。この関数は、ドキュメント内のバインドの配列が格納される `asyncResult` という 1 つのパラメーターを使用して呼び出されます。配列は反復処理されて、バインドの ID を含む文字列が作成されます。この文字列がメッセージ ボックスに表示されます。`callback`
+`callback` パラメーターとして関数に渡される匿名関数は、操作の完了時に実行されます。この関数は、ドキュメント内のバインドの配列が格納される `asyncResult` という 1 つのパラメーターを使用して呼び出されます。配列は反復処理されて、バインドの ID を含む文字列が作成されます。この文字列がメッセージ ボックスに表示されます。
 
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Bindings オブジェクトの getByIdAsync メソッドを使用して ID でバインドを取得する
@@ -265,7 +265,7 @@ function write(message){
 
 
 > [!NOTE]
-> メソッドの promise が正常に [Binding] オブジェクトを返す場合、このオブジェクトはオブジェクトの [getDataAsync]、[setDataAsync]、[addHandlerAsync]、および [removeHandlerAsync] の 4 つのメソッドのみを公開します。promise が Binding オブジェクトを返すことができない場合は、`onError` コールバックを使用して [asyncResult].error オブジェクトにアクセスし、詳細情報を取得できます。`select` メソッドによって返される Binding オブジェクトの promise によって公開される 4 つのメソッド以外の Binding オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [getByIdAsync] メソッドを使用します。[Document.bindings] プロパティと Bindings.[getByIdAsync] メソッドを使用して Binding** オブジェクトを取得します。`select`
+> `select` メソッドの promise が正常に [Binding] オブジェクトを返す場合、このオブジェクトはオブジェクトの [getDataAsync]、[setDataAsync]、[addHandlerAsync]、および [removeHandlerAsync] の 4 つのメソッドのみを公開します。promise が Binding オブジェクトを返すことができない場合は、`onError` コールバックを使用して [asyncResult].error オブジェクトにアクセスし、詳細情報を取得できます。`select` メソッドによって返される Binding オブジェクトの promise によって公開される 4 つのメソッド以外の Binding オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [getByIdAsync] メソッドを使用します。[Document.bindings] プロパティと Bindings.[getByIdAsync] メソッドを使用して Binding** オブジェクトを取得します。
 
 ## <a name="release-a-binding-by-id"></a>ID でバインドを解除する
 
@@ -340,7 +340,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>バインド内のデータまたは選択範囲の変更を検出する
 
 
-次の例は、ID が "MyBinding" であるバインドの [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js) イベントにイベント ハンドラーを関連付ける方法を示しています。
+次の例は、ID が "MyBinding" であるバインドの [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding) イベントにイベント ハンドラーを関連付ける方法を示しています。
 
 
 ```js
@@ -357,7 +357,7 @@ function write(message){
 }
 ```
 
-は、ドキュメント内の既存のテキスト バインドを格納している変数です。`myBinding`
+`myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。
 
 [addHandlerAsync] メソッドの最初の `eventType` パラメーターは、サブスクライブするイベントの名前を指定します。[Office.EventType] は、使用できるイベントの種類の値の列挙型です。`Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`。
 
@@ -392,30 +392,30 @@ function removeEventHandlerFromBinding() {
 - [Office アドインにおける非同期プログラミング](asynchronous-programming-in-office-add-ins.md)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]:               https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js
-[MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding?view=office-js
+[Binding]:               https://docs.microsoft.com/javascript/api/office/office.binding
+[MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding
 [TableBinding]:          https://docs.microsoft.com/javascript/api/office/office.tablebinding
 [TextBinding]:           https://docs.microsoft.com/javascript/api/office/office.textbinding
-[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#getdataasync-options--callback-
-[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#setdataasync-data--options--callback-
-[SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
-[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
+[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/office.binding#getdataasync-options--callback-
+[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/office.binding#setdataasync-data--options--callback-
+[SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
+[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-
 
-[Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js
-[getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getbyidasync-id--options--callback- 
-[getAllAsync]:           https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getallasync-options--callback-
-[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]:    https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]:      https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#releasebyidasync-id--options--callback-
+[Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings
+[getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
+[getAllAsync]:           https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-
+[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
+[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
+[addFromPromptAsync]:    https://docs.microsoft.com/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
+[releaseByIdAsync]:      https://docs.microsoft.com/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
 
-[AsyncResult]:          https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js
-[Office.BindingType]:   https://docs.microsoft.com/javascript/api/office/office.bindingtype?view=office-js
-[Office.select]:        https://docs.microsoft.com/javascript/api/office?view=office-js 
-[Office.EventType]:     https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js 
-[Document.bindings]:    https://docs.microsoft.com/javascript/api/office/office.document?view=office-js
+[AsyncResult]:          https://docs.microsoft.com/javascript/api/office/office.asyncresult
+[Office.BindingType]:   https://docs.microsoft.com/javascript/api/office/office.bindingtype
+[Office.select]:        https://docs.microsoft.com/javascript/api/office 
+[Office.EventType]:     https://docs.microsoft.com/javascript/api/office/office.eventtype 
+[Document.bindings]:    https://docs.microsoft.com/javascript/api/office/office.document
 
 
-[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding?view=office-js
-[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
+[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding
+[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs

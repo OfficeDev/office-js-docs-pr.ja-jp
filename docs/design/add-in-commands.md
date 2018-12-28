@@ -2,12 +2,12 @@
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 17bc464793e8a85c54b4e2d3abe2e94e38c2e185
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533666"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457678"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -45,7 +45,7 @@ ms.locfileid: "26533666"
 **アクション**
 
 - ShowTaskpane: カスタムの HTML ページをロードする 1 つまたは複数のウィンドウを表示します。
-- ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) API を使用できます。  
+- ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui) API を使用できます。  
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
@@ -85,4 +85,4 @@ ms.locfileid: "26533666"
 
 アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
-マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)」のリファレンス資料をご覧ください。
+マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides)」のリファレンス資料をご覧ください。

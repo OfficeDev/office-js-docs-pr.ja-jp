@@ -2,12 +2,12 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9fc6e526587a6256e5ee51effe3bdb5cfe27af47
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271028"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458035"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -316,7 +316,7 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     }
     ```
 
-2. **setOdataUrl** 関数と関連する関数を追加します。**setOdataUrl** 関数は **getProjectGuid** と **getDocumentUrl** を呼び出して、グローバル変数を初期化します。[getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) メソッドでは、_callback_ パラメーター用の匿名関数が、jQuery ライブラリ内の **removeAttr** メソッドを使って **[すべてのプロジェクトを比較]** ボタンを有効にし、**ProjectData** サービスの URL を表示します。Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。SurfaceErrors.js ファイルには、**throwError** メソッドが含まれています。
+2. **setOdataUrl** 関数と関連する関数を追加します。**setOdataUrl** 関数は **getProjectGuid** と **getDocumentUrl** を呼び出して、グローバル変数を初期化します。[getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document) メソッドでは、_callback_ パラメーター用の匿名関数が、jQuery ライブラリ内の **removeAttr** メソッドを使って **[すべてのプロジェクトを比較]** ボタンを有効にし、**ProjectData** サービスの URL を表示します。Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。SurfaceErrors.js ファイルには、**throwError** メソッドが含まれています。
     
    > [!NOTE]
    > Visual Studio を Project Server コンピューターで実行している場合、**F5** キーによるデバッグを使用するには、**_pwa** グローバル変数を初期化する行の後にあるコードをコメント解除します。Project Server コンピューターでのデバッグ時に jQuery の **ajax** メソッドを使用できるようにするには、PWA URL に **localhost** 値を設定する必要があります。Visual Studio をリモート コンピューターで実行する場合は、**localhost** は必要ありません。アドインを展開する前に、そのコードをコメント化してください。

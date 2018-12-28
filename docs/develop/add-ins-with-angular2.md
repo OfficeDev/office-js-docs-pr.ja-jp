@@ -2,12 +2,12 @@
 title: Angular で Office アドインを開発する
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: b8756b9336e0d39c5544b264a110950fdd4d75ce
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 0ae27efb3a89244e76860048d6c8ef4d78b613d1
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270664"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457860"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -84,7 +84,7 @@ export class AppRoutingModule { }
 
 Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモーダル ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。 
 
-[DisplayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
+[DisplayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 
 重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。同様に、ダイアログ ボックスには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。  
 

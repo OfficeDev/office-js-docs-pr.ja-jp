@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 12/18/2018
-ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.date: 12/26/2018
+ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
+ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383240"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447240"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -69,6 +69,116 @@ Excel.run(function (context) {
 
 `RangeAreas` オブジェクトを使用すると、アドインの操作を一度に複数の範囲で実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
 
+## <a name="find-special-cells-within-a-range-preview"></a>範囲内の特殊なセルの検索 (プレビュー)
+
+> [!NOTE]
+> 現在、`getSpecialCells` メソッドと `getSpecialCellsOrNullObject` メソッドは、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+
+`Range.getSpecialCells()` メソッドと`Range.getSpecialCellsOrNullObject()` メソッドでは、対象セルの特性と対象セルの値の型に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
+
+```typescript
+getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+```typescript
+getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+次の例では、`getSpecialCells` メソッドを使用して、数式を含むすべてのセルを検索します。 このコードの注意点は次のとおりです。
+
+- 検索が必要なシートの部分を制限するために、まず `Worksheet.getUsedRange` を呼び出し、その範囲に関してのみ `getSpecialCells` を呼び出します。
+- `getSpecialCells` メソッドは `RangeAreas` オブジェクトを返すため、数式を含むセルはすべて、連続していないセルであっても、ピンク色になります。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+    formulaRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 `catch` ブロックが存在しない場合は、このエラーにより関数が停止します。
+
+対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードの注意点は次のとおりです。
+
+- `getSpecialCellsOrNullObject` メソッドは常にプロキシ オブジェクトを返します。そのため、通常の JavaScript 使用環境では `null` となることはありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
+- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」を参照してください。
+- このコードをテストするには、最初に数式を含まないセルの範囲を選択してからコードを実行します。 次に、少なくとも 1 つのセルが数式を含む範囲を選択してからコードを再実行します。
+
+```js
+Excel.run(function (context) {
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    return context.sync()
+        .then(function() {
+            if (formulaRanges.isNullObject) {
+                console.log("No cells have formulas");
+            }
+            else {
+                formulaRanges.format.fill.color = "pink";
+            }
+        })
+        .then(context.sync);
+})
+```
+
+わかりやすくするため、この記事内のすべての他の例では、`getSpecialCells` メソッドを `getSpecialCellsOrNullObject` の代わりに使用しています。
+
+### <a name="narrow-the-target-cells-with-cell-value-types"></a>セルの値の型に応じて対象のセルを絞り込む
+
+`Range.getSpecialCells()` メソッドと `Range.getSpecialCellsOrNullObject()` メソッドでは、対象セルをさらに絞り込むためにオプションとして使用される 2 番目のパラメーターを承諾します。 この 2 番目のパラメーターは、特定の種類の値を含むセルのみを指定するために使用される `Excel.SpecialCellValueType` パラメーターです。
+
+> [!NOTE]
+> `Excel.SpecialCellValueType` パラメーターは、`Excel.SpecialCellType` が `Excel.SpecialCellType.formulas` または `Excel.SpecialCellType.constants` の場合にのみ使用できます。
+
+#### <a name="test-for-a-single-cell-value-type"></a>単一のセル値の型のテスト
+
+`Excel.SpecialCellValueType` 列挙型には、次の 4 つの基本型があります (このセクションで後述する他の値の組み合わせに加えて)。
+
+- `Excel.SpecialCellValueType.errors`
+- `Excel.SpecialCellValueType.logical` (ブール型)
+- `Excel.SpecialCellValueType.numbers`
+- `Excel.SpecialCellValueType.text`
+
+次の例では、数値定数である特殊なセルを検索し、そのセルをピンク色にします。 このコードの注意点は次のとおりです。
+
+- リテラル数値を持つセルのみ強調表示されます。 数式 (結果が数字の場合であっても)、ブール値、テキストを持つセル、およびエラー状態にあるセルは強調表示されません。
+- コードをテストするには、リテラル数値を持ついくつかのセル、他の型のリテラル値を持ついくつかのセル、そして数式を持ついくつかのセルをそれぞれワークシートに含めるようにしてください。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.constants,
+        Excel.SpecialCellValueType.numbers);
+    constantNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+#### <a name="test-for-multiple-cell-value-types"></a>複数のセル値の型のテスト
+
+テキスト値のセルすべてとブール値 (`Excel.SpecialCellValueType.logical`) のセルすべてなど、セル値の型を複数操作する必要がある場合もあります。 `Excel.SpecialCellValueType` 列挙型には、結合された型の値があります。 たとえば、`Excel.SpecialCellValueType.logicalText` は、すべてのブール値のセルとテキスト値のセルを対象としています。 `Excel.SpecialCellValueType.all` は既定値であり、返されるセル値の型は制限されません。 次の例では、結果が数値またはブール値となる数式を含むすべてのセルが色付けされます。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.formulas,
+        Excel.SpecialCellValueType.logicalNumbers);
+    formulaLogicalNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
 ## <a name="copy-and-paste-preview"></a>コピーと貼り付け (プレビュー)
 
 > [!NOTE]
@@ -76,7 +186,8 @@ Excel.run(function (context) {
 > TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
 
 範囲の `copyFrom` 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。
-コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
+コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
 ```js
 Excel.run(function (context) {
@@ -90,15 +201,15 @@ Excel.run(function (context) {
 `Range.copyFrom` には、省略可能なパラメーターが 3 つあります。
 
 ```TypeScript
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean): void;
 ```
 
 `copyType` では、ソースからコピー先にコピーされるデータを指定します。
 
-- `"Formulas"` では、ソースのセルの数式が転送され、それらの数式の範囲の相対配置は保持されます。 任意の数式以外のエントリはそのままコピーされます。
-- `"Values"` では、データ値と、数式の場合は数式の結果をコピーします。
-- `"Formats"` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。
-- `"All"` (既定のオプション) では、データと書式設定の両方がコピーされます。見つかった場合、セルの数式は保持されます。
+- `Excel.RangeCopyType.formulas` では、ソースのセルの数式が転送され、それらの数式の範囲の相対配置は保持されます。 任意の数式以外のエントリはそのままコピーされます。
+- `Excel.RangeCopyType.values` では、データ値と、数式の場合は数式の結果をコピーします。
+- `Excel.RangeCopyType.formats` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。
+- `Excel.RangeCopyType.all` (既定のオプション) では、データと書式設定の両方がコピーされます。見つかった場合、セルの数式は保持されます。
 
 `skipBlanks` では、空白セルをコピー先にコピーするかどうかを設定します。 true の場合、`copyFrom` ではソースの範囲にある空白セルはスキップされます。
 スキップされたセルでは、コピー先の範囲内の対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
@@ -177,3 +288,4 @@ Excel.run(async (context) => {
 
 - [Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

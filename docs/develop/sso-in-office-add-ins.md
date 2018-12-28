@@ -2,12 +2,12 @@
 title: Office アドインのシングル サインオンを有効化する
 description: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: ca8280b72ab863d0e34330585fb307475e3aa9b9
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: a823c1c58a79d97094e97ffe66f082b45601c10c
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298566"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457874"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
@@ -19,7 +19,7 @@ ms.locfileid: "26298566"
 
 現在、シングル サインオン API はプレビューのみでサポートされています。 これは、試験目的のみで開発者に提供されており、運用環境のアドインには使用してはいけません。 また、SSO を使用するアドインは [AppSource](https://appsource.microsoft.com) では許可されていません。
 
-SSO のプレビューは、すべての Office アプリケーションではサポートされていません。 これは、Word、Excel、Outlook、および PowerPoint で利用できます。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。
+SSO のプレビューは、すべての Office アプリケーションではサポートされていません。 これは、Word、Excel、Outlook、および PowerPoint で利用できます。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。
 
 ### <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
 
@@ -27,7 +27,7 @@ SSO を使用するには、アドインのスタートアップ HTML ページ�
 
 **Outlook** アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
-SSO をアドインの唯一の認証方法と*しない*ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](https://docs.microsoft.com/ja-JP/office/dev/add-ins/develop/auth-external-add-ins)」を参照してください。 *Outlook* には切り替えることが可能な推奨システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」を参照してください。
+SSO をアドインの唯一の認証方法と*しない*ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins)」を参照してください。 *Outlook* には切り替えることが可能な推奨システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)」を参照してください。
 
 ### <a name="how-sso-works-at-runtime"></a>実行時の SSO の動作のしくみ
 
@@ -234,7 +234,7 @@ getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<strin
 
 <table><tr><td>ホスト</td><td>Excel、OneNote、Outlook、PowerPoint、Word</td></tr>
 
- <tr><td>[要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)</td></tr></table>
+ <tr><td>[要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)</td></tr></table>
 
 #### <a name="parameters"></a>パラメーター
 

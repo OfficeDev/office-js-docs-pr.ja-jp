@@ -2,12 +2,12 @@
 title: Office アドインのローカライズ
 description: JavaScript API for Office を使用すると、ロケールを決定し、ホスト アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりできます。
 ms.date: 12/11/2018
-ms.openlocfilehash: 0455c28913dd1a7eb8cb0853cd872a4284f44270
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: e86421ac0b201e6092a3d112c04de57a6b6cc1dd
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271000"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458000"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -407,17 +407,17 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 - 
   [Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale?view=office-js
-[Description]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description?view=office-js
-[DisplayName]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname?view=office-js
-[IconUrl]:              https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl?view=office-js
-[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl?view=office-js
-[Resources]:            https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources?view=office-js
-[SourceLocation]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js
-[Override]:             https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override?view=office-js
-[DesktopSettings]:      https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings?view=office-js
-[TabletSettings]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings?view=office-js
-[PhoneSettings]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings?view=office-js
-[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
-[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
+[DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
+[Description]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
+[DisplayName]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
+[IconUrl]:              https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
+[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
+[Resources]:            https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources
+[SourceLocation]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
+[Override]:             https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
+[DesktopSettings]:      https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings
+[TabletSettings]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings
+[PhoneSettings]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings
+[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context#displaylanguage 
+[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

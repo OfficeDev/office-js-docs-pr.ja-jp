@@ -2,12 +2,12 @@
 title: Office アドインの認証設計ガイドライン
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: a812a1fe6feaa1c6744205db6bfd4ed81793fefe
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: ab34c7b0ecfbdfeab4947bd5463b94801b1b1a29
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432978"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457825"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -47,7 +47,7 @@ ms.locfileid: "27432978"
 ## <a name="single-sign-on-authentication-flow-preview"></a>シングル サインオン認証フロー (プレビュー)
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
 実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの ID (Microsoft アカウントまたは Office 365 ID) がアドインのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 

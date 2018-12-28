@@ -2,17 +2,17 @@
 title: 検索オプションを使用して Word アドインでテキストを検索する
 description: ''
 ms.date: 07/20/2018
-ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 36946f7b9bbcb4c8b5ceca1e8b88e7588c0814ce
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270622"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457727"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>検索オプションを使用して Word アドインでテキストを検索する 
 
 アドインは、ドキュメントのテキストに基づいて動作することが必要な場合がよくあります。
-検索関数は、各コンテンツ コントロール (これには、[Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js)、およびベース [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) オブジェクトが含まれます) で公開されます。 この関数には、検索しているテキストおよび [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) オブジェクトを表す文字列 (またはワイルドカード式) を使用します。 これにより、検索テキストと一致する範囲のコレクションが返されます。
+検索関数は、各コンテンツ コントロール (これには、[Body](https://docs.microsoft.com/javascript/api/word/word.body)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph)、[Range](https://docs.microsoft.com/javascript/api/word/word.range)、[Table](https://docs.microsoft.com/javascript/api/word/word.table)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow)、およびベース [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol) オブジェクトが含まれます) で公開されます。 この関数には、検索しているテキストおよび [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions) オブジェクトを表す文字列 (またはワイルドカード式) を使用します。 これにより、検索テキストと一致する範囲のコレクションが返されます。
 
 ## <a name="search-options"></a>検索オプション
 検索オプションとは、検索パラメーターをどのように処理するかを定義するブール値のコレクションです。 
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-詳細については、「[Word JavaScript API の概要](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)」を参照してください。
+詳細については、「[Word JavaScript API の概要](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)」を参照してください。
