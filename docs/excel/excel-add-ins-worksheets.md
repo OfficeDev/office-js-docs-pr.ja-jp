@@ -1,24 +1,24 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/28/2018
+ms.openlocfilehash: 804d047270f5236209c1555190f465a760548875
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992227"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460864"
 ---
-# <a name="work-with-worksheets-using-the-excel-javascript-api"></a><span data-ttu-id="7c165-102">Excel JavaScript API を使用してワークシートを操作する</span><span class="sxs-lookup"><span data-stu-id="7c165-102">Work with Worksheets using the Excel JavaScript API</span></span>
+# <a name="work-with-worksheets-using-the-excel-javascript-api"></a><span data-ttu-id="859b7-102">Excel JavaScript API を使用してワークシートを操作する</span><span class="sxs-lookup"><span data-stu-id="859b7-102">Work with worksheets using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="7c165-103">この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。</span><span class="sxs-lookup"><span data-stu-id="7c165-103">This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.</span></span> <span data-ttu-id="7c165-104">**Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c165-104">For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection).</span></span>
+<span data-ttu-id="859b7-103">この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。</span><span class="sxs-lookup"><span data-stu-id="859b7-103">This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.</span></span> <span data-ttu-id="859b7-104">**Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-104">For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c165-105">この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。</span><span class="sxs-lookup"><span data-stu-id="7c165-105">The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.</span></span>
+> <span data-ttu-id="859b7-105">この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。</span><span class="sxs-lookup"><span data-stu-id="859b7-105">The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.</span></span>
 
-## <a name="get-worksheets"></a><span data-ttu-id="7c165-106">ワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-106">Get worksheets</span></span>
+## <a name="get-worksheets"></a><span data-ttu-id="859b7-106">ワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-106">Get worksheets</span></span>
 
-<span data-ttu-id="7c165-107">次のコード サンプルでは、ワークシートのコレクションを取得し、各ワークシートの **name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-107">The following code sample gets the collection of worksheets, loads the **name** property of each worksheet, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-107">次のコード サンプルでは、ワークシートのコレクションを取得し、各ワークシートの **name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-107">The following code sample gets the collection of worksheets, loads the **name** property of each worksheet, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -40,17 +40,17 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="7c165-108">ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。</span><span class="sxs-lookup"><span data-stu-id="7c165-108">The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved.</span></span> <span data-ttu-id="7c165-109">Excel for Mac のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7c165-109">When a worksheet is deleted from a workbook in Excel for Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.</span></span>
+> <span data-ttu-id="859b7-108">ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。</span><span class="sxs-lookup"><span data-stu-id="859b7-108">The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved.</span></span> <span data-ttu-id="859b7-109">Excel for Mac のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="859b7-109">When a worksheet is deleted from a workbook in Excel for Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.</span></span>
 
-## <a name="get-the-active-worksheet"></a><span data-ttu-id="7c165-110">作業中のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-110">Get the active worksheet</span></span>
+## <a name="get-the-active-worksheet"></a><span data-ttu-id="859b7-110">作業中のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-110">Get the active worksheet</span></span>
 
-<span data-ttu-id="7c165-111">次のコード サンプルでは、作業中のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-111">The following code sample gets the active worksheet, loads its **name** property, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-111">次のコード サンプルでは、作業中のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-111">The following code sample gets the active worksheet, loads its **name** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
-    
+
     return context.sync()
         .then(function () {
             console.log(`The active worksheet is "${sheet.name}"`);
@@ -58,9 +58,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="set-the-active-worksheet"></a><span data-ttu-id="7c165-112">作業中のワークシートを設定する</span><span class="sxs-lookup"><span data-stu-id="7c165-112">Set the active worksheet</span></span>
+## <a name="set-the-active-worksheet"></a><span data-ttu-id="859b7-112">作業中のワークシートを設定する</span><span class="sxs-lookup"><span data-stu-id="859b7-112">Set the active worksheet</span></span>
 
-<span data-ttu-id="7c165-113">次のコード サンプルでは、作業中のワークシートを **Sample** という名前のワークシートに設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-113">The following code sample sets the active worksheet to the worksheet named **Sample**, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="7c165-114">その名前を持つワークシートが存在しない場合、**activate()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="7c165-114">If there is no worksheet with that name, the **activate()** method throws an **ItemNotFound** error.</span></span>
+<span data-ttu-id="859b7-113">次のコード サンプルでは、作業中のワークシートを **Sample** という名前のワークシートに設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-113">The following code sample sets the active worksheet to the worksheet named **Sample**, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="859b7-114">その名前を持つワークシートが存在しない場合、**activate()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="859b7-114">If there is no worksheet with that name, the **activate()** method throws an **ItemNotFound** error.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -75,13 +75,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="reference-worksheets-by-relative-position"></a><span data-ttu-id="7c165-115">相対位置でワークシートを参照する</span><span class="sxs-lookup"><span data-stu-id="7c165-115">Reference worksheets by relative position</span></span>
+## <a name="reference-worksheets-by-relative-position"></a><span data-ttu-id="859b7-115">相対位置でワークシートを参照する</span><span class="sxs-lookup"><span data-stu-id="859b7-115">Reference worksheets by relative position</span></span>
 
-<span data-ttu-id="7c165-116">以下の例は、相対位置でワークシートを参照する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7c165-116">These examples show how to reference a worksheet by its relative position.</span></span>
+<span data-ttu-id="859b7-116">以下の例は、相対位置でワークシートを参照する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="859b7-116">These examples show how to reference a worksheet by its relative position.</span></span>
 
-### <a name="get-the-first-worksheet"></a><span data-ttu-id="7c165-117">最初のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-117">Get the first worksheet</span></span>
+### <a name="get-the-first-worksheet"></a><span data-ttu-id="859b7-117">最初のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-117">Get the first worksheet</span></span>
 
-<span data-ttu-id="7c165-118">次のコード サンプルでは、ブックの最初のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-118">The following code sample gets the first worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-118">次のコード サンプルでは、ブックの最初のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-118">The following code sample gets the first worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -95,9 +95,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-the-last-worksheet"></a><span data-ttu-id="7c165-119">最後のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-119">Get the last worksheet</span></span>
+### <a name="get-the-last-worksheet"></a><span data-ttu-id="859b7-119">最後のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-119">Get the last worksheet</span></span>
 
-<span data-ttu-id="7c165-120">次のコード サンプルでは、ブックの最後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-120">The following code sample gets the last worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-120">次のコード サンプルでは、ブックの最後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-120">The following code sample gets the last worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -111,9 +111,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-the-next-worksheet"></a><span data-ttu-id="7c165-121">次のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-121">Get the next worksheet</span></span>
+### <a name="get-the-next-worksheet"></a><span data-ttu-id="859b7-121">次のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-121">Get the next worksheet</span></span>
 
-<span data-ttu-id="7c165-122">次のコード サンプルでは、ブックで作業中のワークシートの後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-122">The following code sample gets the worksheet that follows the active worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="7c165-123">作業中のワークシートの後にワークシートがない場合、**getNext()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="7c165-123">If there is no worksheet after the active worksheet, the **getNext()** method throws an **ItemNotFound** error.</span></span>
+<span data-ttu-id="859b7-122">次のコード サンプルでは、ブックで作業中のワークシートの後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-122">The following code sample gets the worksheet that follows the active worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="859b7-123">作業中のワークシートの後にワークシートがない場合、**getNext()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="859b7-123">If there is no worksheet after the active worksheet, the **getNext()** method throws an **ItemNotFound** error.</span></span>
 
 ```js
  Excel.run(function (context) {
@@ -128,9 +128,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-the-previous-worksheet"></a><span data-ttu-id="7c165-124">前のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-124">Get the previous worksheet</span></span>
+### <a name="get-the-previous-worksheet"></a><span data-ttu-id="859b7-124">前のワークシートを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-124">Get the previous worksheet</span></span>
 
-<span data-ttu-id="7c165-125">次のコード サンプルでは、ブックで作業中のワークシートの前のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-125">The following code sample gets the worksheet that precedes the active worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="7c165-126">作業中のワークシートの前にワークシートが存在しない場合、**getPrevious()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="7c165-126">If there is no worksheet before the active worksheet, the **getPrevious()** method throws an **ItemNotFound** error.</span></span>
+<span data-ttu-id="859b7-125">次のコード サンプルでは、ブックで作業中のワークシートの前のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-125">The following code sample gets the worksheet that precedes the active worksheet in the workbook, loads its **name** property, and writes a message to the console.</span></span> <span data-ttu-id="859b7-126">作業中のワークシートの前にワークシートが存在しない場合、**getPrevious()** メソッドにより **ItemNotFound** エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="859b7-126">If there is no worksheet before the active worksheet, the **getPrevious()** method throws an **ItemNotFound** error.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -145,9 +145,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="add-a-worksheet"></a><span data-ttu-id="7c165-127">ワークシートを追加する</span><span class="sxs-lookup"><span data-stu-id="7c165-127">Add a worksheet</span></span>
+## <a name="add-a-worksheet"></a><span data-ttu-id="859b7-127">ワークシートを追加する</span><span class="sxs-lookup"><span data-stu-id="859b7-127">Add a worksheet</span></span>
 
-<span data-ttu-id="7c165-p106">次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、**name** プロパティと **position** プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。</span><span class="sxs-lookup"><span data-stu-id="7c165-p106">The following code sample adds a new worksheet named **Sample** to the workbook, loads its **name** and **position** properties, and writes a message to the console. The new worksheet is added after all existing worksheets.</span></span>
+<span data-ttu-id="859b7-p106">次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、**name** プロパティと **position** プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。</span><span class="sxs-lookup"><span data-stu-id="859b7-p106">The following code sample adds a new worksheet named **Sample** to the workbook, loads its **name** and **position** properties, and writes a message to the console. The new worksheet is added after all existing worksheets.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -155,7 +155,7 @@ Excel.run(function (context) {
 
     var sheet = sheets.add("Sample");
     sheet.load("name, position");
-    
+
     return context.sync()
         .then(function () {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
@@ -163,9 +163,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="delete-a-worksheet"></a><span data-ttu-id="7c165-130">ワークシートの削除</span><span class="sxs-lookup"><span data-stu-id="7c165-130">Delete a worksheet</span></span>
+## <a name="delete-a-worksheet"></a><span data-ttu-id="859b7-130">ワークシートの削除</span><span class="sxs-lookup"><span data-stu-id="859b7-130">Delete a worksheet</span></span>
 
-<span data-ttu-id="7c165-131">次のコード サンプルでは、ブックの最後のワークシートを (ただし、ブック内の唯一のシートでない場合に) 削除し、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-131">The following code sample deletes the final worksheet in the workbook (as long as it's not the only sheet in the workbook) and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-131">次のコード サンプルでは、ブックの最後のワークシートを (ただし、ブック内の唯一のシートでない場合に) 削除し、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-131">The following code sample deletes the final worksheet in the workbook (as long as it's not the only sheet in the workbook) and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -188,9 +188,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="rename-a-worksheet"></a><span data-ttu-id="7c165-132">ワークシートの名前を変更する</span><span class="sxs-lookup"><span data-stu-id="7c165-132">Rename a worksheet</span></span>
+## <a name="rename-a-worksheet"></a><span data-ttu-id="859b7-132">ワークシートの名前を変更する</span><span class="sxs-lookup"><span data-stu-id="859b7-132">Rename a worksheet</span></span>
 
-<span data-ttu-id="7c165-133">次のコード サンプルでは、作業中のワークシートの名前を **New Name** に変更します。</span><span class="sxs-lookup"><span data-stu-id="7c165-133">The following code sample changes the name of the active worksheet to **New Name**.</span></span>
+<span data-ttu-id="859b7-133">次のコード サンプルでは、作業中のワークシートの名前を **New Name** に変更します。</span><span class="sxs-lookup"><span data-stu-id="859b7-133">The following code sample changes the name of the active worksheet to **New Name**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -201,9 +201,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="move-a-worksheet"></a><span data-ttu-id="7c165-134">ワークシートを移動する</span><span class="sxs-lookup"><span data-stu-id="7c165-134">Move a worksheet</span></span>
+## <a name="move-a-worksheet"></a><span data-ttu-id="859b7-134">ワークシートを移動する</span><span class="sxs-lookup"><span data-stu-id="859b7-134">Move a worksheet</span></span>
 
-<span data-ttu-id="7c165-135">次のコード サンプルでは、ブックの最後の位置からブックの最初の位置にワークシートを移動します。</span><span class="sxs-lookup"><span data-stu-id="7c165-135">The following code sample moves a worksheet from the last position in the workbook to the first position in the workbook.</span></span>
+<span data-ttu-id="859b7-135">次のコード サンプルでは、ブックの最後の位置からブックの最初の位置にワークシートを移動します。</span><span class="sxs-lookup"><span data-stu-id="859b7-135">The following code sample moves a worksheet from the last position in the workbook to the first position in the workbook.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -220,13 +220,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="set-worksheet-visibility"></a><span data-ttu-id="7c165-136">ワークシートの可視性を設定する</span><span class="sxs-lookup"><span data-stu-id="7c165-136">Set worksheet visibility</span></span>
+## <a name="set-worksheet-visibility"></a><span data-ttu-id="859b7-136">ワークシートの可視性を設定する</span><span class="sxs-lookup"><span data-stu-id="859b7-136">Set worksheet visibility</span></span>
 
-<span data-ttu-id="7c165-137">これらの例では、ワークシートの可視性を設定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7c165-137">These examples show how to set the visibility of a worksheet.</span></span>
+<span data-ttu-id="859b7-137">これらの例では、ワークシートの可視性を設定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="859b7-137">These examples show how to set the visibility of a worksheet.</span></span>
 
-### <a name="hide-a-worksheet"></a><span data-ttu-id="7c165-138">ワークシートを非表示にする</span><span class="sxs-lookup"><span data-stu-id="7c165-138">Hide a worksheet</span></span>
+### <a name="hide-a-worksheet"></a><span data-ttu-id="859b7-138">ワークシートを非表示にする</span><span class="sxs-lookup"><span data-stu-id="859b7-138">Hide a worksheet</span></span>
 
-<span data-ttu-id="7c165-139">次のコード サンプルでは、**Sample** という名前のワークシートの可視性を非表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-139">The following code sample sets the visibility of worksheet named **Sample** to hidden, loads its **name** property, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-139">次のコード サンプルでは、**Sample** という名前のワークシートの可視性を非表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-139">The following code sample sets the visibility of worksheet named **Sample** to hidden, loads its **name** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -241,9 +241,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="unhide-a-worksheet"></a><span data-ttu-id="7c165-140">ワークシートを再表示する</span><span class="sxs-lookup"><span data-stu-id="7c165-140">Unhide a worksheet</span></span>
+### <a name="unhide-a-worksheet"></a><span data-ttu-id="859b7-140">ワークシートを再表示する</span><span class="sxs-lookup"><span data-stu-id="859b7-140">Unhide a worksheet</span></span>
 
-<span data-ttu-id="7c165-141">次のコード サンプルでは、**Sample** という名前のワークシートの可視性を表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-141">The following code sample sets the visibility of worksheet named **Sample** to visible, loads its **name** property, and writes a message to the console.</span></span>
+<span data-ttu-id="859b7-141">次のコード サンプルでは、**Sample** という名前のワークシートの可視性を表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-141">The following code sample sets the visibility of worksheet named **Sample** to visible, loads its **name** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -258,16 +258,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-cell-within-a-worksheet"></a><span data-ttu-id="7c165-142">ワークシート内でセルを取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-142">Get a cell within a worksheet</span></span>
+## <a name="get-a-single-cell-within-a-worksheet"></a><span data-ttu-id="859b7-142">ワークシート内で単一のセルを取得する</span><span class="sxs-lookup"><span data-stu-id="859b7-142">Get a cell within a worksheet</span></span>
 
-<span data-ttu-id="7c165-143">次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、**address** プロパティと **values** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="7c165-143">The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console.</span></span> <span data-ttu-id="7c165-144">**getCell(行番号、列番号)** メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。</span><span class="sxs-lookup"><span data-stu-id="7c165-144">The values that are passed into the **getCell(row: number, column:number)** method are the zero-indexed row number and column number for the cell that is being retrieved.</span></span>
+<span data-ttu-id="859b7-143">次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、**address** プロパティと **values** プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="859b7-143">The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console.</span></span> <span data-ttu-id="859b7-144">`getCell(row: number, column:number)` メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。</span><span class="sxs-lookup"><span data-stu-id="859b7-144">The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.</span></span>
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var cell = sheet.getCell(1, 4);
     cell.load("address, values");
-    
+
     return context.sync()
         .then(function() {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
@@ -275,13 +275,38 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-range-within-a-worksheet"></a><span data-ttu-id="7c165-145">ワークシート内の範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="7c165-145">Get a range within a worksheet</span></span>
+## <a name="find-all-cells-with-matching-text-preview"></a><span data-ttu-id="859b7-145">一致するテキストがあるすべてのセルを検索する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="859b7-145">Find all cells with matching text (preview)</span></span>
 
-<span data-ttu-id="7c165-146">ワークシート内の範囲を取得する方法を示す例については、「[Excel の JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c165-146">For examples that show how to get a range within a worksheet, see [Work with Ranges using the Excel JavaScript API](excel-add-ins-ranges.md).</span></span>
+> [!NOTE]
+> <span data-ttu-id="859b7-146">現在、Worksheet オブジェクトの `findAll` 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。</span><span class="sxs-lookup"><span data-stu-id="859b7-146">The Range object's `findAll` function is currently available only in public preview (beta).</span></span> <span data-ttu-id="859b7-147">この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。</span><span class="sxs-lookup"><span data-stu-id="859b7-147">To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.</span></span>
+> <span data-ttu-id="859b7-148">TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-148">If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.</span></span>
 
-## <a name="data-protection"></a><span data-ttu-id="7c165-147">データの保護</span><span class="sxs-lookup"><span data-stu-id="7c165-147">Data protection</span></span>
+<span data-ttu-id="859b7-149">`Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="859b7-149">The `Worksheet` object has a `find` method to search for a specified string within the worksheet.</span></span> <span data-ttu-id="859b7-150">このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。</span><span class="sxs-lookup"><span data-stu-id="859b7-150">It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.</span></span> <span data-ttu-id="859b7-151">以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。</span><span class="sxs-lookup"><span data-stu-id="859b7-151">The following code sample finds all cells with values equal to the string **Complete** and colors them green.</span></span> <span data-ttu-id="859b7-152">指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。</span><span class="sxs-lookup"><span data-stu-id="859b7-152">Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet.</span></span> <span data-ttu-id="859b7-153">指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) メソッドを使用するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="859b7-153">If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) method instead, so your code gracefully handles that scenario.</span></span>
 
-<span data-ttu-id="7c165-148">ご使用のアドインでは、ワークシート内のデータを編集するユーザー機能を制御できます。</span><span class="sxs-lookup"><span data-stu-id="7c165-148">Your add-in can control a user's ability to edit data in a worksheet.</span></span> <span data-ttu-id="7c165-149">ワークシートの `protection` プロパティは [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) オブジェクトであり、`protect()` メソッドを備えています。</span><span class="sxs-lookup"><span data-stu-id="7c165-149">The worksheet's `protection` property is a [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method.</span></span> <span data-ttu-id="7c165-150">次の例では、アクティブなワークシートの完全な保護を切り替える基本的なシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="7c165-150">The following example shows a basic scenario toggling the complete protection of the active worksheet.</span></span>
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, // findAll will match the whole cell value
+        matchCase: false // findAll will not match case
+    });
+
+    return context.sync()
+        .then(function() {
+            foundRanges.format.fill.color = "green"
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> <span data-ttu-id="859b7-154">このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="859b7-154">This section describes how to find cells and ranges using the `Worksheet` object's functions.</span></span> <span data-ttu-id="859b7-155">範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。</span><span class="sxs-lookup"><span data-stu-id="859b7-155">More range retrieval information can be found in object-specific articles.</span></span>
+> - <span data-ttu-id="859b7-156">`Range` オブジェクトを使用して、ワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-156">For examples that show how to get a range within a worksheet, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).</span></span>
+> - <span data-ttu-id="859b7-157">`Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-157">For examples that show how to get a range within a worksheet, see Work with ranges using the Excel JavaScript API.</span></span>
+> - <span data-ttu-id="859b7-158">セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-158">For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).</span></span>
+
+## <a name="data-protection"></a><span data-ttu-id="859b7-159">データの保護</span><span class="sxs-lookup"><span data-stu-id="859b7-159">Data protection</span></span>
+
+<span data-ttu-id="859b7-160">ご使用のアドインでは、ワークシート内のデータを編集するユーザー機能を制御できます。</span><span class="sxs-lookup"><span data-stu-id="859b7-160">Your add-in can control a user's ability to edit data in a worksheet.</span></span> <span data-ttu-id="859b7-161">ワークシートの `protection` プロパティは [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) オブジェクトであり、`protect()` メソッドを備えています。</span><span class="sxs-lookup"><span data-stu-id="859b7-161">The worksheet's `protection` property is a [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method.</span></span> <span data-ttu-id="859b7-162">次の例では、アクティブなワークシートの完全な保護を切り替える基本的なシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="859b7-162">The following example shows a basic scenario toggling the complete protection of the active worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -296,14 +321,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="7c165-151">`protect` メソッドには、2 つの省略可能なパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="7c165-151">The AddDependentLookup`protect` method has two parameters:</span></span>
+<span data-ttu-id="859b7-163">`protect` メソッドには、2 つの省略可能なパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="859b7-163">The `protect` method has two optional parameters:</span></span>
 
- - <span data-ttu-id="7c165-152">`options`: 特定の編集制限を定義する [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7c165-152">`options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.</span></span>
- - <span data-ttu-id="7c165-153">`password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。</span><span class="sxs-lookup"><span data-stu-id="7c165-153">`password`: A string representing the password needed for a user to bypass protection and edit the worksheet.</span></span>
+- <span data-ttu-id="859b7-164">`options`: 特定の編集制限を定義する [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="859b7-164">`options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.</span></span>
+- <span data-ttu-id="859b7-165">`password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。</span><span class="sxs-lookup"><span data-stu-id="859b7-165">`password`: A string representing the password needed for a user to bypass protection and edit the worksheet.</span></span>
 
-<span data-ttu-id="7c165-154">ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c165-154">The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.</span></span>
+<span data-ttu-id="859b7-166">ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="859b7-166">The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7c165-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c165-155">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="859b7-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="859b7-167">See also</span></span>
 
-- [<span data-ttu-id="7c165-156">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="7c165-156">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
-
+- [<span data-ttu-id="859b7-168">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="859b7-168">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
