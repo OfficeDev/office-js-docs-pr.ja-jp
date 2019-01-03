@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/28/2018
+ms.openlocfilehash: 804d047270f5236209c1555190f465a760548875
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992227"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460864"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -50,7 +50,7 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
-    
+
     return context.sync()
         .then(function () {
             console.log(`The active worksheet is "${sheet.name}"`);
@@ -155,7 +155,7 @@ Excel.run(function (context) {
 
     var sheet = sheets.add("Sample");
     sheet.load("name, position");
-    
+
     return context.sync()
         .then(function () {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
@@ -258,16 +258,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-cell-within-a-worksheet"></a>ワークシート内でセルを取得する
+## <a name="get-a-single-cell-within-a-worksheet"></a>ワークシート内で単一のセルを取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、**address** プロパティと **values** プロパティを読み込み、コンソールにメッセージを書き込みます。 **getCell(行番号、列番号)** メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。
+次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、**address** プロパティと **values** プロパティを読み込み、コンソールにメッセージを書き込みます。 `getCell(row: number, column:number)` メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var cell = sheet.getCell(1, 4);
     cell.load("address, values");
-    
+
     return context.sync()
         .then(function() {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
@@ -275,9 +275,34 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-range-within-a-worksheet"></a>ワークシート内の範囲を取得する
+## <a name="find-all-cells-with-matching-text-preview"></a>一致するテキストがあるすべてのセルを検索する (プレビュー)
 
-ワークシート内の範囲を取得する方法を示す例については、「[Excel の JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。
+> [!NOTE]
+> 現在、Worksheet オブジェクトの `findAll` 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+
+`Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。 以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。 指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) メソッドを使用するようにしてください。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, // findAll will match the whole cell value
+        matchCase: false // findAll will not match case
+    });
+
+    return context.sync()
+        .then(function() {
+            foundRanges.format.fill.color = "green"
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
+> - `Range` オブジェクトを使用して、ワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。
+> - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
+> - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
 ## <a name="data-protection"></a>データの保護
 
@@ -298,12 +323,11 @@ Excel.run(function (context) {
 
 `protect` メソッドには、2 つの省略可能なパラメーターがあります。
 
- - `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。
- - `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
+- `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。
+- `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
 
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-

@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: ''
-ms.date: 12/14/2018
-ms.openlocfilehash: 4c64abec1f79bd1194a106e46b8a6fe6c4b71d07
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 12/28/2018
+ms.openlocfilehash: 843f57f8e5dc20d4341749f4594e0bd8139e60fa
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283103"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460871"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -541,6 +541,35 @@ Excel.run(function (context) {
 ### <a name="conditional-formatting-of-ranges"></a>範囲の条件付き書式
 
 範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。 この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。
+
+## <a name="find-a-cell-using-string-matching-preview"></a>文字列のマッチングを使用してセルを検索する (プレビュー)
+
+> [!NOTE]
+> 現在、Range オブジェクトの `find` 関数は、パブリック プレビュー (ベータ版) でのみ利用できます。 この機能を使用するには、Office.js CDN のベータ版のライブラリを使用する必要があります: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> TypeScript を使用している場合、または IntelliSense に TypeScript 型定義ファイルを使用するコード エディターを使用している場合は、https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts を使用してください。
+
+`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) メソッドを使用するようにしてください。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var table = sheet.tables.getItem("ExpensesTable");
+    var searchRange = table.getRange();
+    var foundRange = searchRange.find("Food", {
+        completeMatch: true, // find will match the whole cell value
+        matchCase: false, // find will not match case
+        searchDirection: Excel.SearchDirection.forward // find will start searching at the beginning of the range
+    });
+
+    foundRange.load("address");
+    return context.sync()
+        .then(function() {
+            console.log(foundRange.address);
+    });
+}).catch(errorHandlerFunction);
+```
+
+単一のセルを表す範囲に対して `find` メソッドが呼び出されると、ワークシート全体が検索されます。 検索はその単一のセルから始まり、`SearchCriteria.searchDirection` によって指定された方向へ行われ、場合によってはワークシートの最終部分で折り返されます。
 
 ## <a name="see-also"></a>関連項目
 
