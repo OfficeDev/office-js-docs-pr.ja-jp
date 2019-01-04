@@ -1,51 +1,51 @@
 ---
 title: Office の最新バージョンをインストールする
-description: Office の最新のビルドを取得するを有効にする方法に関する情報です。
+description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 12/04/2017
-ms.openlocfilehash: 0e6e147144757004575fa086e1066b7cdf133ee8
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 96a9a44687ece98c08651e4a4eb2ab29dd3ee6ad
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505791"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457587"
 ---
-# <a name="install-the-latest-version-of-office"></a><span data-ttu-id="cd2a3-103">Office の最新バージョンをインストールする</span><span class="sxs-lookup"><span data-stu-id="cd2a3-103">Install the latest version of Office</span></span>
+# <a name="install-the-latest-version-of-office"></a><span data-ttu-id="05b70-103">Office の最新バージョンをインストールする</span><span class="sxs-lookup"><span data-stu-id="05b70-103">Install the latest version of Office</span></span>
 
-<span data-ttu-id="cd2a3-104">新しい開発者用機能 (現時点ではプレビュー版のものを含む) は、Office の最新ビルドの取得をオプトインしたサブスクライバーに最初に配信されます。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-104">New developer features, including those still in preview, are delivered first to subscribers who opt in to get the latest builds of Office.</span></span> 
+<span data-ttu-id="05b70-104">新しい開発者用機能 (現時点ではプレビュー版のものを含む) は、Office の最新ビルドの取得をオプトインしたサブスクライバーに最初に配信されます。</span><span class="sxs-lookup"><span data-stu-id="05b70-104">New developer features, including those still in preview, are delivered first to subscribers who opt in to get the latest builds of Office.</span></span> 
 
-## <a name="opt-in-to-getting-the-latest-builds"></a><span data-ttu-id="cd2a3-105">最新のビルドを取得するためにオプトインする</span><span class="sxs-lookup"><span data-stu-id="cd2a3-105">Opt in to getting the latest builds</span></span>
+## <a name="opt-in-to-getting-the-latest-builds"></a><span data-ttu-id="05b70-105">最新のビルドを取得するためにオプトインする</span><span class="sxs-lookup"><span data-stu-id="05b70-105">Opt in to getting the latest builds</span></span>
 
-<span data-ttu-id="cd2a3-106">Office 2016 の最新ビルドを取得するためにオプトインするには:</span><span class="sxs-lookup"><span data-stu-id="cd2a3-106">To opt in to getting the latest builds of Office 2016:</span></span> 
+<span data-ttu-id="05b70-106">Office の最新ビルドを取得するためにオプトインするには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="05b70-106">To opt in to getting the latest builds of Office 2016:</span></span> 
 
-- <span data-ttu-id="cd2a3-107">Office 365 Home、Personal、または University のサブスクライバーは、「[Office Insider プログラム](https://products.office.com/office-insider)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-107">If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/office-insider).</span></span>
-- <span data-ttu-id="cd2a3-108">一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-108">If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).</span></span>
-- <span data-ttu-id="cd2a3-109">Mac で Office 2016 を実行している場合:</span><span class="sxs-lookup"><span data-stu-id="cd2a3-109">If you're running Office 2016 on a Mac:</span></span>
-    - <span data-ttu-id="cd2a3-110">Office 2016 for Mac プログラムを起動します。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-110">Start an Office 2016 for Mac program.</span></span>
-    - <span data-ttu-id="cd2a3-111">[ヘルプ] メニューで [**更新プログラムのチェック**] を選びます。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-111">Select **Check for Updates** on the Help menu.</span></span>
-    - <span data-ttu-id="cd2a3-112">[Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-112">In the Microsoft AutoUpdate box, check the box to join the Office Insider program.</span></span> 
+- <span data-ttu-id="05b70-107">Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://products.office.com/office-insider)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="05b70-107">If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/office-insider).</span></span>
+- <span data-ttu-id="05b70-108">一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="05b70-108">If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).</span></span>
+- <span data-ttu-id="05b70-109">Mac で Office を実行している場合は、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="05b70-109">If you're running Office 2016 on a Mac:</span></span>
+    - <span data-ttu-id="05b70-110">Office for Mac プログラムを起動します。</span><span class="sxs-lookup"><span data-stu-id="05b70-110">Start an Office 2016 for Mac program.</span></span>
+    - <span data-ttu-id="05b70-111">[ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="05b70-111">Select **Check for Updates** on the Help menu.</span></span>
+    - <span data-ttu-id="05b70-112">[Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。</span><span class="sxs-lookup"><span data-stu-id="05b70-112">In the Microsoft AutoUpdate box, check the box to join the Office Insider program.</span></span> 
 
-## <a name="get-the-latest-build"></a><span data-ttu-id="cd2a3-113">最新ビルドを取得する:</span><span class="sxs-lookup"><span data-stu-id="cd2a3-113">Get the latest build</span></span>
+## <a name="get-the-latest-build"></a><span data-ttu-id="05b70-113">最新ビルドを取得する</span><span class="sxs-lookup"><span data-stu-id="05b70-113">Get the latest build</span></span>
 
-<span data-ttu-id="cd2a3-114">Office 2016 の最新ビルドを取得するには:</span><span class="sxs-lookup"><span data-stu-id="cd2a3-114">To get the latest build of Office 2016:</span></span> 
+<span data-ttu-id="05b70-114">Office の最新ビルドを取得するには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="05b70-114">To get the latest build of Office 2016:</span></span> 
 
-1. <span data-ttu-id="cd2a3-115">[ Office 展開ツールのダウンロード](https://www.microsoft.com/download/details.aspx?id=49117) 。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-115">Download the Office Deployment Tool</span></span> 
-2. <span data-ttu-id="cd2a3-p101">ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-p101">Run the tool. This extracts the following two files: Setup.exe and configuration.xml.</span></span>
-3. <span data-ttu-id="cd2a3-118">configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-118">Replace the configuration.xml file with the [First Release Configuration File](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).</span></span>
-4. <span data-ttu-id="cd2a3-119">次のコマンドを管理者として実行します:  `setup.exe /configure configuration.xml`</span><span class="sxs-lookup"><span data-stu-id="cd2a3-119">Run the following command as an administrator:  `setup.exe /configure configuration.xml`</span></span> 
+1. <span data-ttu-id="05b70-115">[Office 展開ツール](https://www.microsoft.com/download/details.aspx?id=49117)をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="05b70-115">Download the [Office 2016 Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).</span></span> 
+2. <span data-ttu-id="05b70-p101">ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。</span><span class="sxs-lookup"><span data-stu-id="05b70-p101">Run the tool. This extracts the following two files: Setup.exe and configuration.xml.</span></span>
+3. <span data-ttu-id="05b70-118">configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="05b70-118">Replace the configuration.xml file with the [First Release Configuration File](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).</span></span>
+4. <span data-ttu-id="05b70-119">次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml`</span><span class="sxs-lookup"><span data-stu-id="05b70-119">Run the following command as an administrator:  `setup.exe /configure configuration.xml`</span></span> 
 
     > [!NOTE]
-    > <span data-ttu-id="cd2a3-120">このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-120">The command might take a long time to run without indicating progress.</span></span>
+    > <span data-ttu-id="05b70-120">このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。</span><span class="sxs-lookup"><span data-stu-id="05b70-120">The command might take a long time to run without indicating progress.</span></span>
 
-<span data-ttu-id="cd2a3-p102">インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**  >  **[アカウント]** に移動します。[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-p102">When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.</span></span>
+<span data-ttu-id="05b70-121">インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。</span><span class="sxs-lookup"><span data-stu-id="05b70-121">When the installation process finishes, you will have the latest Office applications installed.</span></span> <span data-ttu-id="05b70-122">最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**、**[アカウント]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="05b70-122">To verify that you have the latest build, go to **File** > **Account** from any Office application.</span></span> <span data-ttu-id="05b70-123">[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。</span><span class="sxs-lookup"><span data-stu-id="05b70-123">Under Office Updates, you'll see the (Office Insiders) label above the version number.</span></span>
 
 ![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/office-insiders.png)
 
-## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a><span data-ttu-id="cd2a3-125">Office JavaScript API の要件セットの最小 Office ビルド</span><span class="sxs-lookup"><span data-stu-id="cd2a3-125">Minimum Office builds for Office JavaScript API requirement sets</span></span>
+## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a><span data-ttu-id="05b70-125">Office JavaScript API の要件セットの最小 Office ビルド</span><span class="sxs-lookup"><span data-stu-id="05b70-125">Minimum Office builds for Office JavaScript API requirement sets</span></span>
 
-<span data-ttu-id="cd2a3-126">API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cd2a3-126">For information about the minimum product builds for each platform for the API requirement sets, see the following:</span></span>
+<span data-ttu-id="05b70-126">API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="05b70-126">For information about the minimum product builds for each platform for the API requirement sets, see the following:</span></span>
 
-- [<span data-ttu-id="cd2a3-127">Word JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="cd2a3-127">Word JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets?view=office-js)
-- [<span data-ttu-id="cd2a3-128">Excel JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="cd2a3-128">Excel JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)
-- [<span data-ttu-id="cd2a3-129">OneNote JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="cd2a3-129">OneNote JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets?view=office-js)
-- [<span data-ttu-id="cd2a3-130">ダイアログ API の要件セット</span><span class="sxs-lookup"><span data-stu-id="cd2a3-130">Dialog API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)
-- [<span data-ttu-id="cd2a3-131">Office 共通 API の要件セット</span><span class="sxs-lookup"><span data-stu-id="cd2a3-131">Office common API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [<span data-ttu-id="05b70-127">Word JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="05b70-127">Word JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
+- [<span data-ttu-id="05b70-128">Excel JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="05b70-128">Excel JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
+- [<span data-ttu-id="05b70-129">OneNote JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="05b70-129">OneNote JavaScript API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
+- [<span data-ttu-id="05b70-130">ダイアログ API の要件セット</span><span class="sxs-lookup"><span data-stu-id="05b70-130">Dialog API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
+- [<span data-ttu-id="05b70-131">Office 共通 API の要件セット</span><span class="sxs-lookup"><span data-stu-id="05b70-131">Office common API requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
