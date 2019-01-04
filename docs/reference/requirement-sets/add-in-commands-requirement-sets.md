@@ -2,12 +2,12 @@
 title: アドイン コマンドの要件セット
 description: ''
 ms.date: 11/21/2018
-ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: c308112a923483ac9ac82cd08b42d7744d93c8e3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432782"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457608"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
@@ -29,7 +29,7 @@ ms.locfileid: "27432782"
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | N/A | 16.0.4678.1000 *Outlook でのみサポートされています*  | バージョン 1705 (ビルド 8121.1000) 以降 | N/A | 15.34 以降\*| 2017 年 5 月 |
 
->\* [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて*います*。
+>\* [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて*います*。
 
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
@@ -40,7 +40,7 @@ ms.locfileid: "27432782"
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-共通 API の要件セットの詳細は、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」を参照してください。
+共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -2,26 +2,26 @@
 title: エラー処理
 description: ''
 ms.date: 10/16/2018
-ms.openlocfilehash: caba29f7d6949cc6d9df1498ac0a3d4f5de6c4ee
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: d9545831c27bdf11d1567f4c012ff678b1edb026
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579815"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457643"
 ---
 # <a name="error-handling"></a>エラー処理
 
-Excel の JavaScript API を使用してアドインをビルドする場合は、ランタイム エラーを考慮するためのエラー処理ロジックを含めるようにしてください。これは、API の非同期の性質のために重要です。
+Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期の性質のために重要です。
 
 > [!NOTE]
-> **Sync()** メソッドと非同期であるため Excel の JavaScript API の詳細については、 [Excel の JavaScript API を使用して基本的なプログラミングの概念](excel-add-ins-core-concepts.md)を参照してください。
+> **sync()** メソッドと Excel JavaScript API の非同期性の詳細については、「[Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-このドキュメントのコード サンプル全体にわたり、`Excel.run`へのすべての呼び出しが`Excel.run`内で発生するエラーをキャッチする`catch`ステートメントに付属していることが分かります。Excel の JavaScript Api を使用してアドインをビルドするときは、同じパターンを使用することをお勧めします。
+このドキュメントのコード サンプルでは、`Excel.run` へのすべての呼び出しに、`Excel.run` 内で発生したエラーを検出するための `catch` ステートメントが付いていることがわかります。 Excel JavaScript Api を使用してアドインを構築するときには、同じパターンを使用することをお勧めします。
 
 ```js
-Excel.run(function (context) { 
+Excel.run(function (context) {
   
   // Excel JavaScript API calls here
 
@@ -30,25 +30,25 @@ Excel.run(function (context) {
     .then(function () {
       console.log("Finished!");
     })
-}).catch(errorHandlerFunction);     
+}).catch(errorHandlerFunction);
 ```
 
-## <a name="api-errors"></a>API エラー 
+## <a name="api-errors"></a>API エラー
 
-Excel JavaScript API 要求が正常に実行されない場合、API は次のプロパティを含むエラー オブジェクトを返します。 
+Excel JavaScript API 要求が正常に実行されない場合、API は次のプロパティを含むエラー オブジェクトを返します。
 
-- **コード**: `code` エラー メッセージのプロパティが含まれている文字列を含む、 `OfficeExtension.ErrorCodes` または `Excel.ErrorCodes` リストです。たとえば、エラー コード"InvalidReference"では、参照が指定された操作に対して有効ではないことを示します。エラー コードはローカライズされません。 
+- **code**:エラー メッセージの `code` プロパティには、`OfficeExtension.ErrorCodes` または `Excel.ErrorCodes` リストの一部である文字列が含まれます。 たとえば、エラー コード "InvalidReference" は、参照が指定された操作に対して有効でないことを示します。 エラー コードはローカライズされません。
 
-- **メッセージ**: `message` エラー メッセージのプロパティには、ローカライズされた文字列のエラーの概要が含まれています。エラー メッセージは、エンド ユーザーの消費対象ではありません。アドインがエンド ユーザーに示すエラー メッセージを確認するには、エラー コードと適切なビジネス ロジックを使用してください。
+- **message**: エラー メッセージの `message` プロパティには、ローカライズされた文字列のエラーの概要が含まれています。 このエラー メッセージは、エンド ユーザーが使用するためのものではありません。アドインによってエンド ユーザーに表示されるエラー メッセージは、エラー コードと適切なビジネス ロジックを使用して、判断する必要があります。
 
-- **debugInfo**: 存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。 
+- **debugInfo**:存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。
 
 > [!NOTE]
-> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンド ユーザーに対して表示されることはありません。
+> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンド ユーザーに対して表示されることはありません。
 
 ## <a name="error-messages"></a>エラー メッセージ
 
-次の表は、API から返されるエラー一覧の定義を示します。
+次の表は、API から返される可能性のあるエラー一覧です。
 
 |error.code | error.message |
 |:----------|:--------------|
@@ -57,14 +57,14 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 |InvalidReference|この参照は、現在の操作に対して無効です。|
 |InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
 |InvalidSelection|現在の選択内容は、この操作では無効です。|
-|認証されていません |必要な認証情報が見つからないか、無効です。|
+|Unauthenticated |必要な認証情報が見つからないか、無効です。|
 |AccessDenied |要求された操作を実行できません。|
 |ItemNotFound |要求されたリソースは存在しません。|
 |ActivityLimitReached|アクティビティの制限に達しました。|
-|GeneralException|リクエストの処理中に内部エラーが発生しました。|
-|NotImplemented  |リクエストされた機能は実装されていません。|
+|GeneralException|要求の処理中に内部エラーが発生しました。|
+|NotImplemented  |要求された機能は実装されていません。|
 |ServiceNotAvailable|サービスを利用できません。|
-|一致しません|競合のため、要求を処理できませんでした。|
+|Conflict|競合のため、要求を処理できませんでした。|
 |ItemAlreadyExists|作成中のリソースはすでに存在しています。|
 |UnsupportedOperation|試行中の操作はサポートされていません。|
 |RequestAborted|実行時に要求が中止されました。|
@@ -74,5 +74,5 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error)

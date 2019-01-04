@@ -1,13 +1,13 @@
 ---
 title: Office の最新バージョンをインストールする
-description: Office の最新のビルドを取得するを有効にする方法に関する情報です。
+description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 12/04/2017
-ms.openlocfilehash: 0e6e147144757004575fa086e1066b7cdf133ee8
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 96a9a44687ece98c08651e4a4eb2ab29dd3ee6ad
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505791"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457587"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -15,28 +15,28 @@ ms.locfileid: "25505791"
 
 ## <a name="opt-in-to-getting-the-latest-builds"></a>最新のビルドを取得するためにオプトインする
 
-Office 2016 の最新ビルドを取得するためにオプトインするには: 
+Office の最新ビルドを取得するためにオプトインするには、次の操作を行います。 
 
-- Office 365 Home、Personal、または University のサブスクライバーは、「[Office Insider プログラム](https://products.office.com/office-insider)」を参照してください。
+- Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://products.office.com/office-insider)」を参照してください。
 - 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
-- Mac で Office 2016 を実行している場合:
-    - Office 2016 for Mac プログラムを起動します。
-    - [ヘルプ] メニューで [**更新プログラムのチェック**] を選びます。
+- Mac で Office を実行している場合は、次の操作を行います。
+    - Office for Mac プログラムを起動します。
+    - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。
     - [Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。 
 
-## <a name="get-the-latest-build"></a>最新ビルドを取得する:
+## <a name="get-the-latest-build"></a>最新ビルドを取得する
 
-Office 2016 の最新ビルドを取得するには: 
+Office の最新ビルドを取得するには、次の操作を行います。 
 
-1. [ Office 展開ツールのダウンロード](https://www.microsoft.com/download/details.aspx?id=49117) 。 
+1. [Office 展開ツール](https://www.microsoft.com/download/details.aspx?id=49117)をダウンロードします。 
 2. ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。
 3. configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。
-4. 次のコマンドを管理者として実行します:  `setup.exe /configure configuration.xml` 
+4. 次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml` 
 
     > [!NOTE]
     > このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。
 
-インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**  >  **[アカウント]** に移動します。[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
+インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。 最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**、**[アカウント]** の順に移動します。 [Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
 ![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/office-insiders.png)
 
@@ -44,8 +44,8 @@ Office 2016 の最新ビルドを取得するには:
 
 API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
 
-- [Word JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets?view=office-js)
-- [Excel JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)
-- [OneNote JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets?view=office-js)
-- [ダイアログ API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)
-- [Office 共通 API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Word JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
+- [Excel JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
+- [OneNote JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
+- [ダイアログ API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
+- [Office 共通 API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)

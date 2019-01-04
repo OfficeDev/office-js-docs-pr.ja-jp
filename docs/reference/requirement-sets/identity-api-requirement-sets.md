@@ -2,12 +2,12 @@
 title: Identity API の要件セット
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 43a220cfada5883f292edd13cc753dc6c70e3504
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 4ed3fde5b3cef6dd6633d9eafbd098b24cc27308
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433923"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457664"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -30,7 +30,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-共通 API の要件セットの詳細は、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」を参照してください。
+共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
 
 ## <a name="identityapi-11"></a>IdentityAPI 1.1 
 

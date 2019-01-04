@@ -2,16 +2,16 @@
 title: Office 名前空間 - 要件セット 1.6
 description: ''
 ms.date: 11/08/2018
-ms.openlocfilehash: 73411efee9dcfffa5f9f0fa9de85dafc31a4173a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: bf6304515c511eea580a3f37d898b7e80adffaee
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432285"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457895"
 ---
 # <a name="office"></a>Office
 
-Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共有 API](/javascript/api/office)」を参照してください。
+Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
 
 ##### <a name="requirements"></a>要件
 

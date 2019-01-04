@@ -2,12 +2,12 @@
 title: マニフェスト ファイルの Rule 要素
 description: ''
 ms.date: 11/30/2018
-ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2c5ae07e5d0a3c9c8979abcada3d758c415e2e59
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433116"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457454"
 ---
 # <a name="rule-element"></a>Rule 要素
 
@@ -74,7 +74,7 @@ ms.locfileid: "27433116"
 | **EntityType** | はい | このルールが true と評価されるために見つける必要のあるエンティティの型を指定します。`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress`、または `Contact` のいずれかになります。 |
 | **RegExFilter** | いいえ | このエンティティに対してアクティブ化を実行するための正規表現を指定します。 |
 | **FilterName** | いいえ | 正規表現フィルターの名前を指定します。指定すると、以後このフィルターをアドインのコード内で参照できます。 |
-| **IgnoreCase** | いいえ | **RegExFilter** 属性で指定した正規表現の実行時に、大文字と小文字の違いを無視するように指定します。 |
+| **IgnoreCase** | いいえ | **RegExFilter** 属性で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。 |
 | **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するエンティティを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
 ### <a name="example"></a>使用例
@@ -93,11 +93,12 @@ ms.locfileid: "27433116"
 |:-----|:-----|:-----|
 | **RegExName** | はい | アドインのコードで参照できるように、正規表現の名前を指定します。 |
 | **RegExValue** | はい | メール アドインを表示するかどうかを判断するために評価する正規表現を指定します。 |
-| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSMTPAddress` のいずれかになります。 |
-| **IgnoreCase** | いいえ | 正規表現の実行時に大文字と小文字の違いを無視するように指定します。 |
-| **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するテキストを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
+| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSMTPAddress` のいずれかになります。<br/><br/>`BodyAsHTML` を指定した場合、アイテムの本文が HTML の場合にのみ Outlook は正規表現を適用します。 HTML 以外の場合、Outlook はその正規表現に対して一致を返しません。<br/><br/>`BodyAsPlaintext` を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。<br/><br/>**注:** **Rule** 要素に **Highlight** 属性を指定した場合は、**PropertyName** 属性を `BodyAsPlaintext` に設定する必要があります。|
+| **IgnoreCase** | いいえ | **RegExName** 属性で指定された正規表現の一致で大文字と小文字の違いを無視するかどうかを指定します。 |
+| **Highlight** | いいえ | クライアントが一致するテキストを強調表示にする方法を指定します。 この属性は、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用できます。 `all` または `none` のいずれかになります。 指定のない場合、既定値は `all` に設定されます。<br/><br/>**注:** **Rule** 要素に **Highlight** 属性を指定した場合は、**PropertyName** 属性を `BodyAsPlaintext` に設定する必要があります。
+|
 
-### <a name="example"></a>使用例
+### <a name="example"></a>例
 
 ```XML
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHTML" IgnoreCase="true" />

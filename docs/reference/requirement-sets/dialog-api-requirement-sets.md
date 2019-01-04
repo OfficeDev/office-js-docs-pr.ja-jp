@@ -2,12 +2,12 @@
 title: ダイアログ API の要件セット
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: ad0d472ebdcbdb9d61e78f6bdc9bfe7c08311cd7
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: be8d8fd8d3f459e236d1acc0e4fb5a2f0bdcfd22
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432656"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457979"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -28,7 +28,7 @@ Office アドインは Office の複数のバージョンで機能します。�
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-共通 API の要件セットについて詳しくは、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
+共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
 
 ## <a name="dialog-api-11"></a>ダイアログ API 1.1 
 

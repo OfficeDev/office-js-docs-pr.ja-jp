@@ -2,19 +2,19 @@
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
 ms.date: 11/07/2018
-ms.openlocfilehash: c601eac5ed3fcad76b63fff5ae6eeadb7662c8b7
-ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
+ms.openlocfilehash: 9490fca9663737e2397de159169b545e3900289f
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "27210106"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458042"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
-Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API の要件セットが含まれています。
+Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、各 Office アプリケーションで現在サポートされている共通 API が記載されています。
 
 > [!NOTE]
-> MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1、WordApi 1.1、および共通 API の要件セットのみが含まれています。
+> MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1、WordApi 1.1、共通 API の要件セットのみが含まれています。
 
 ## <a name="excel"></a>Excel
 

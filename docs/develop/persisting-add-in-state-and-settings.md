@@ -2,12 +2,12 @@
 title: アドインの状態および設定を保持する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f0f2333e3b4ab7148a86b5aa376598c46155883c
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: ce2b9ffce97e6338d62cdf07d722ffa384283d28
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506113"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458070"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -23,23 +23,23 @@ Office アドインは、基本的にブラウザー コントロールのステ
 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>JavaScript API for Office を使用してアドインの状態および設定を保持する
 
-JavaScript API for Office には、次の表に示すように、セッション間でアドインの状態を保存するために [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) オブジェクト、 [RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js) オブジェクト、および [CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties?view=office-js) オブジェクトが用意されています。すべてのケースで、保存された設定値は、それを作成したアドインの [Id](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id?view=office-js) にのみ関連付けられます。
+JavaScript API for Office には、次の表に示すように、セッション間でアドインの状態を保存するために [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) オブジェクト、 [RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings) オブジェクト、および [CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties) オブジェクトが用意されています。すべてのケースで、保存された設定値は、それを作成したアドインの [Id](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id) にのみ関連付けられます。
 
 |**オブジェクト**|**アドインの種類のサポート**|**ストレージの場所**|**サポートされる Office のホスト**|
 |:-----|:-----|:-----|:-----|
-|[設定](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js)|コンテンツおよび作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。コンテンツおよび作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:****Settings** オブジェクトを使用して、パスワードおよびその他の機密の個人を特定できる情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されているため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word、Excel、または PowerPoint<br/><br/> **メモ:** Project 2013 の作業ウィンドウ アドインでは、アドインの状態または設定を保存するための **Settings** API をサポートしていません。ただし、Project (および他の Office ホスト アプリケーション) で動作するアドインの場合は、ブラウザーの Cookie や Web ストレージなどの技術を使用できます。こうした技術の詳細については、「[Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)」を参照してください。 |
-|[RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js)|Outlook|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。これらの設定はユーザーのサーバー メールボックスに保存されるので、ユーザーと共に "ローミング" でき、そのユーザーのメールボックスにアクセスしている、サポートされているクライアント ホスト アプリケーションまたはブラウザーのコンテキストでアドインが実行されている場合、そのアドインでこれらの設定を利用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|Outlook|
-|[CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties?view=office-js)|Outlook|アドインが連携するメッセージ、予定、または会議出席依頼アイテム。 Outlook アドイン アイテムのカスタム プロパティは、そのプロパティを作成したアドインのみが利用でき、また、プロパティが保存されているアイテムからのみ利用できます。|Outlook|
-|[CustomXMLParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js)|作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:** カスタム XML 部分には、パスワードなどの個人情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されるため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word (Office JavaScript 共通 API を使用)、Excel (ホスト固有の Excel JavaScript API を使用)|
+|[Settings](https://docs.microsoft.com/javascript/api/office/office.settings)|コンテンツおよび作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。コンテンツおよび作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:****Settings** オブジェクトを使用して、パスワードおよびその他の機密の個人を特定できる情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されているため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word、Excel、または PowerPoint<br/><br/> **メモ:** Project 2013 の作業ウィンドウ アドインでは、アドインの状態または設定を保存するための **Settings** API をサポートしていません。ただし、Project (および他の Office ホスト アプリケーション) で動作するアドインの場合は、ブラウザーの Cookie や Web ストレージなどの技術を使用できます。こうした技術の詳細については、「[Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)」を参照してください。 |
+|[RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings)|Outlook|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。これらの設定はユーザーのサーバー メールボックスに保存されるので、ユーザーと共に "ローミング" でき、そのユーザーのメールボックスにアクセスしている、サポートされているクライアント ホスト アプリケーションまたはブラウザーのコンテキストでアドインが実行されている場合、そのアドインでこれらの設定を利用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|Outlook|
+|[CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties)|Outlook|アドインが連携するメッセージ、予定、または会議出席依頼アイテム。 Outlook アドイン アイテムのカスタム プロパティは、そのプロパティを作成したアドインのみが利用でき、また、プロパティが保存されているアイテムからのみ利用できます。|Outlook|
+|[CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts)|作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:** カスタム XML 部分には、パスワードなどの個人情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されるため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word (Office JavaScript 共通 API を使用)、Excel (ホスト固有の Excel JavaScript API を使用)|
 
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>実行時のメモリ内での設定データの管理
 
 > [!NOTE]
-> 次の 2 つのセクションでは、Office の一般的な JavaScript API のコンテキストでの設定について説明します。ホスト固有の Excel の JavaScript API は、カスタム設定にもアクセスを提供します。Excel API およびプログラミング パターンは、やや異なります。詳細については、 [Excel の SettingCollection](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection?view=office-js)を参照してください。
+> この後の 2 つのセクションでは、Office 共通 JavaScript API のコンテキストでの設定について説明します。 ホスト固有の Excel JavaScript API でも、カスタム設定にアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の SettingCollection](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) を参照してください。
 
-内部的には、 **設定**、 **ユーザー設定プロパティ**、または **RoamingSettings** オブジェクトを使用してアクセスするプロパティ バッグ内のデータは、シリアル化された JavaScript オブジェクト表記法 (JSON) が格納されたオブジェクトの名前と値のペアとして格納されます。 各値の名前 (キー) は**  string** である必要があり、格納された値は JavaScript の ** string**、 ** number**,  ** date**、または**   object** にすることが可能ですが、 ** function** にすることはできません。
+内部的には、**Settings** オブジェクト、**CustomProperties** オブジェクト、または **RoamingSettings** オブジェクトでアクセスされるプロパティ バッグ内のデータは、名前/値のペアを含むシリアル化された JavaScript Object Notation (JSON) オブジェクトとして格納されます。 各値の名前 (キー) は **string** である必要があり、格納された値は JavaScript の **string**、**number**、**date**、または **object** にすることが可能ですが、**function** にすることはできません。
 
-この例はプロパティ バッグの構造を示し、3 つの定義された  **string** 値 ( `firstName`、 `location`、および  `defaultView` という名前) が含まれます。
+この例はプロパティ バッグの構造を示し、3 つの定義された **string** 値 (`firstName`、`location`、`defaultView` という名前) が含まれます。
 
 ```json
 {
@@ -49,26 +49,26 @@ JavaScript API for Office には、次の表に示すように、セッション
 }
 ```
 
-前のアドイン セッションで設定プロパティ バッグが保存されると、アドインが初期化されるとき、またはその後のアドインの現在のセッション中の任意の時点で、その設定プロパティ バッグを読み込むことができます。  セッションの間、設定は、作成している設定の種類に対応するオブジェクト ( **Settings**、 **CustomProperties**、または  **RoamingSettings**) の  **get**、 **set**、および  **remove** メソッドを使用して、全体がメモリ内で管理されます。 
+設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッションの間、作成している設定の種類に対応するオブジェクト (**Settings**、**CustomProperties**、**RoamingSettings**) の **get**、**set**、**remove** メソッドを使用し、メモリ内で設定全体が管理されます。 
 
 
 > [!IMPORTANT]
-> 追加、更新、またはアドインの中に行われた削除を保持する現在のセッションが、ストレージの場所にそのような設定を操作するために使用する対応するオブジェクトの **saveAsync** メソッドを呼び出す必要があります。  **取得**、 **設定**、および **削除** の方法は、設定のプロパティ バッグのメモリ内のコピーでのみ動作します。 ** saveAsync** の呼び出しなしにアドインが閉じられた場合、そのセッションの間に設定に対して行われた変更は失われます。 
+> アドインの現行セッション中に行われた追加、更新、または削除を保存場所に保持するには、その種の設定の操作で使用される、対応するオブジェクトの **saveAsync** メソッドを呼び出す必要があります。 **get**、**set**、**remove** メソッドは、設定プロパティ バッグのメモリ内コピーでのみ動作します。 **saveAsync** の呼び出しなしにアドインが閉じられた場合、そのセッション中に設定に対して行われた変更は失われます。 
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法
 
 
-Word、Excel、または PowerPoint 用のコンテンツ アドインまたは作業ウィンドウ アドインの状態またはカスタム設定を保持するには、[Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) オブジェクトとそのメソッドを使用します。**Settings** オブジェクトのメソッドを使用して作成されたプロパティ バッグは、それを作成したコンテンツ アドインまたは作業ウィンドウ アドインのインスタンスのみが利用でき、プロパティ バッグが保存されているドキュメント以外からは使用できません。
+Word、Excel、または PowerPoint 用のコンテンツ アドインまたは作業ウィンドウ アドインの状態またはカスタム設定を保持するには、[Settings](https://docs.microsoft.com/javascript/api/office/office.settings) オブジェクトとそのメソッドを使用します。**Settings** オブジェクトのメソッドを使用して作成されたプロパティ バッグは、それを作成したコンテンツ アドインまたは作業ウィンドウ アドインのインスタンスのみが利用でき、プロパティ バッグが保存されているドキュメント以外からは使用できません。
 
-**Settings** オブジェクトは、[Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) オブジェクトの一部として自動的に読み込まれ、作業ウィンドウ アドインまたはコンテンツ アドインがアクティブ化されると使用できるようになります。  **ドキュメント** オブジェクトのインスタンスを作成した後は、 **ドキュメント** オブジェクトの [設定](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#settings) のプロパティを **設定** オブジェクトを表示できます。 セッションの存続中は、** Settings.get**、 ** Settings.set**、および ** Settings.remove** メソッドを使用するだけで、永続的な設定およびアドインの状態の読み取り、書き込み、または削除をプロパティ バッグのメモリ内コピーで行うことができます。
+**Settings** オブジェクトは、[Document](https://docs.microsoft.com/javascript/api/office/office.document) オブジェクトの一部として自動的に読み込まれ、作業ウィンドウまたはコンテンツ アドインがアクティブ化されると使用できるようになります。 **Document** オブジェクトがインスタンス化された後は、**Document** オブジェクトの [settings](https://docs.microsoft.com/javascript/api/office/office.document#settings) プロパティを使用して、**Settings** オブジェクトにアクセスできます。 セッションの期間中は、**Settings.get**、**Settings.set**、**Settings.remove** メソッドを使用するだけで、永続的な設定およびアドインの状態の読み取り、書き込み、または削除をプロパティ バッグのメモリ内コピーで行うことができます。
 
-set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) メソッドを呼び出す必要があります。
+set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出す必要があります。
 
 
 ### <a name="creating-or-updating-a-setting-value"></a>設定値の作成または更新
 
-次のコード例では、[Settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) メソッドを使用して `'themeColor'` という名前の設定を作成し、値 `'green'` を指定する方法を説明します。set メソッドの最初のパラメーターは、設定するか作成する設定の _name_ (Id) であり、これは大文字と小文字が区別されます。2 番目のパラメーターは、設定の _value_ です。
+次のコード例では、[Settings.set](https://docs.microsoft.com/javascript/api/office/office.settings#set-name--value-) メソッドを使用して `'themeColor'` という名前の設定を作成し、値 `'green'` を指定する方法を説明します。set メソッドの最初のパラメーターは、設定するか作成する設定の _name_ (Id) であり、これは大文字と小文字が区別されます。2 番目のパラメーターは、設定の _value_ です。
 
 
 ```js
@@ -80,7 +80,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>設定値の取得
 
-次の例では、[Settings.get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。**get** メソッドの唯一のパラメーターは、設定の _name_ であり、これは大文字と小文字が区別されます。
+次の例では、[Settings.get](https://docs.microsoft.com/javascript/api/office/office.settings#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。**get** メソッドの唯一のパラメーターは、設定の _name_ であり、これは大文字と小文字が区別されます。
 
 
 ```js
@@ -97,19 +97,19 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>設定の削除
 
-次の例では、[Settings.remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。**remove** メソッドの唯一のパラメーターは設定の _name_ であり、これは大文字と小文字が区別されます。
+次の例では、[Settings.remove](https://docs.microsoft.com/javascript/api/office/office.settings#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。**remove** メソッドの唯一のパラメーターは設定の _name_ であり、これは大文字と小文字が区別されます。
 
 
 ```js
 Office.context.document.settings.remove('themeColor');
 ```
 
-設定が存在しない場合、何も起こりません。 ドキュメントから設定を削除したままにする場合は、 **Settings.saveAsync** メソッドを使用します。
+該当する設定が存在しない場合は何も起きません。 ドキュメントから設定を削除したままにする場合は、**Settings.saveAsync** メソッドを使用します。
 
 
 ### <a name="saving-your-settings"></a>設定の保存
 
-現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、[Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。**saveAsync** メソッドの唯一のパラメーターは _callback_ であり、これはパラメーターを 1 つだけ取るコールバック関数です。 
+現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、[Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。**saveAsync** メソッドの唯一のパラメーターは _callback_ であり、これはパラメーターを 1 つだけ取るコールバック関数です。 
 
 
 ```js
@@ -126,14 +126,14 @@ function write(message){
 }
 ```
 
-匿名関数は、操作が完了したときに _コールバック_ パラメーターを実行するときに、 **saveAsync** メソッドに渡されます。  _AsyncResult_ のパラメーター、コールバックでは、操作の状態を格納している **AsyncResult** オブジェクトへのアクセスを提供します。 例では、関数は ** AsyncResult.status** プロパティを調べて、保存操作が成功したのか失敗したのかを確認し、アドインのページにその結果を表示します。
+**saveAsync** メソッドに _callback_ パラメーターとして渡した匿名関数は、操作の完了時に実行されます。 コールバックの _asyncResult_ パラメーターは、処理の状況を含む **AsyncResult** オブジェクトへのアクセスを提供します。 例では、関数が **AsyncResult.status** プロパティを調べて、保存操作が成功したのか失敗したのかを確認し、アドインのページにその結果を表示します。
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>ドキュメントにカスタム XML を保存する方法
 
 > [!NOTE]
-> このセクションでは、Word でサポートされている Office 一般的な JavaScript API のコンテキストでカスタム XML 部分について説明します。ホスト固有の Excel の JavaScript API では、カスタム XML 部分へのアクセスも提供します。Excel Api およびプログラミング パターンは、やや異なります。詳細については、 [Excel の CustomXmlPart](https://docs.microsoft.com/javascript/api/excel/excel.customxmlpart?view=office-js)を参照してください。
+> このセクションでは、Word でサポートされている Office 共通 JavaScript API のコンテキストでのカスタム XML 部分について説明します。 ホスト固有の Excel JavaScript API でも、カスタム XML 部分にアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の CustomXmlPart](https://docs.microsoft.com/javascript/api/excel/excel.customxmlpart) を参照してください。
 
-文書設定または構成文字を含む、容量制限を超える情報を保存する必要があるときは、追加の保存オプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードは、カスタム XML パーツを作成し、ページ上の div の ID と、そのコンテンツが表示されます。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
+ドキュメントの Settings のサイズ制限を超過する情報や構造化された特徴を持つ情報を保存する必要がある場合には、追加のストレージ オプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードでは、カスタム XML パーツを作成して、その ID とコンテンツをページの div に表示します。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
 
 ```js
 function createCustomXmlPart() {
@@ -151,7 +151,7 @@ function createCustomXmlPart() {
 }
 ```
 
-カスタム XML 部分を取得するには、[getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js#getbyidasync-id--options--callback-) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。次のメソッドでは、これを行う方法を示します。(ただし、カスタム設定を使用する場合は、詳細情報とベスト プラクティスは、この資料の前半を参照してください)。
+カスタム XML 部分を取得するには、[getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。 そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。 次のメソッドは、この方法を示してます  (ただし、カスタム設定の操作に関する詳細とベスト プラクティスについては、この記事の前半のセクションを参照してください)。
 
  ```js
 function createCustomXmlPartAndStoreId() {
@@ -186,13 +186,13 @@ function getReviewers() {
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Outlook アドインでユーザーのメールボックスに設定をローミング設定として保存する方法
 
 
-Outlook アドインでは、[RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js) を使用することにより、アドインの状態およびユーザーのメールボックスに固有の設定データを保存することができます。このデータは、アドインを実行するユーザーに代わり、Outlook アドインだけがアクセスできます。データはユーザーの Exchange Server メールボックスに格納され、そのユーザーが自分のアカウントにログインして Outlookアドインを実行するとアクセスできます。
+Outlook アドインは、[RoamingSettings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings) オブジェクトを使用して、ユーザーのメールボックスに固有の、アドインの状態および設定のデータを保存できます。 このデータには、アドインを実行しているユーザーではなく、Outlook アドインのみがアクセスできます。 データはユーザーの Exchange Server メールボックスに格納されます。データには、ユーザーが自分のアカウントにログインして Outlook アドインを実行したときにアクセスできるようになります。
 
 
 ### <a name="loading-roaming-settings"></a>ローミング設定の読み込み
 
 
-通常、Outlook アドインでは、 [Office.initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) イベント ハンドラーでローミング設定を読み込みます。次の JavaScript のコード例は、既存のローミング設定を読み込む方法を示しています。
+通常、Outlook アドインでは、 [Office.initialize](https://docs.microsoft.com/javascript/api/office) イベント ハンドラーでローミング設定を読み込みます。次の JavaScript のコード例は、既存のローミング設定を読み込む方法を示しています。
 
 
 ```js
@@ -216,7 +216,7 @@ Office.initialize = function (reason) {
 ### <a name="creating-or-assigning-a-roaming-setting"></a>ローミング設定の作成または割り当て
 
 
-前の例に続けて、次の  `setAppSetting` 関数では、 [RoamingSettings.set](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js#set-name--value-) メソッドを使用して、 `cookie` という名前の設定項目に今日の日付を設定、または今日の日付で更新する方法を示しています。次に、 [RoamingSettings.saveAsync](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js#saveasync-callback-) メソッドを使用して Exchange Server にすべてのローミング設定を保存し直しています。
+前の例に続けて、次の  `setAppSetting` 関数では、 [RoamingSettings.set](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings#set-name--value-) メソッドを使用して、 `cookie` という名前の設定項目に今日の日付を設定、または今日の日付で更新する方法を示しています。次に、 [RoamingSettings.saveAsync](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings#saveasync-callback-) メソッドを使用して Exchange Server にすべてのローミング設定を保存し直しています。
 
 
 ```js
@@ -234,13 +234,13 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-**saveAsync** メソッドは、ローミング設定を非同期で保存し、オプションのコールバック関数を受け取ります。このコード例では、`saveMyAppSettingsCallback` という名前のコールバック関数を **saveAsync** メソッドに渡します。非同期呼び出しが返ると、`saveMyAppSettingsCallback` 関数の _asyncResult_ パラメーターが [AsyncResult](https://docs.microsoft.com/javascript/api/outlook?view=office-js) オブジェクトにアクセスします。このオブジェクトを使用すると、**AsyncResult.status** プロパティで操作の成功または失敗を判定することができます。
+**saveAsync** メソッドは、ローミング設定を非同期で保存し、オプションのコールバック関数を受け取ります。 このコード例では、`saveMyAppSettingsCallback` という名前のコールバック関数を **saveAsync** メソッドに渡します。 非同期呼び出しが返されると、`saveMyAppSettingsCallback` 関数の _asyncResult_ パラメーターが [AsyncResult](https://docs.microsoft.com/javascript/api/outlook) オブジェクトにアクセスします。このオブジェクトを使用すると、**AsyncResult.status** プロパティで操作の成功または失敗を判定することができます。
 
 
 ### <a name="removing-a-roaming-setting"></a>ローミング設定の削除
 
 
-また、次の  `removeAppSetting` 関数は、前の例をさらに拡張するものです。この例では、 [RoamingSettings.remove](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js#remove-name-) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に保存し直す方法を示しています。
+また、次の  `removeAppSetting` 関数は、前の例をさらに拡張するものです。この例では、 [RoamingSettings.remove](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings#remove-name-) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に保存し直す方法を示しています。
 
 
 ```js
@@ -258,14 +258,14 @@ function removeAppSetting()
 
 カスタム プロパティを使用すると、Outlook アドインは処理しているアイテムに関する情報を保存できます。たとえば、Outlook アドインを使用して、メッセージ内の会議の提案から予定を作成する場合は、カスタム プロパティを使用して、会議が作成されたという事実を保存できます。これにより、メッセージを再び開いたときに、Outlook アドインが再び予定の作成を行うことはありません。
 
-メッセージ、予定、または会議出席依頼の特定のアイテムに対してカスタム プロパティを使用するには、その前に、 [Item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) オブジェクトの **loadCustomPropertiesAsync** メソッドを呼び出して、プロパティをメモリに読み込む必要があります。現在のアイテムに対してカスタム プロパティが既に設定されている場合は、この時点で Exchange サーバーから読み込まれます。プロパティを読み込んだ後、 [CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties?view=office-js#set-name--value-) オブジェクトの [set](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings?view=office-js) メソッドおよび **get** メソッドを使用して、メモリ内のプロパティの追加、更新、および取得を実行できます。アイテムのカスタム プロパティに対して行った変更を保存するには、 [saveAsync](https://docs.microsoft.com/javascript/api/outlook/office.customproperties?view=office-js#saveasync-callback--asynccontext-) メソッドを使用して、アイテムに加えた変更を Exchange サーバー上で保持する必要があります。
+メッセージ、予定、または会議出席依頼の特定のアイテムに対してカスタム プロパティを使用するには、その前に、 [Item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) オブジェクトの **loadCustomPropertiesAsync** メソッドを呼び出して、プロパティをメモリに読み込む必要があります。現在のアイテムに対してカスタム プロパティが既に設定されている場合は、この時点で Exchange サーバーから読み込まれます。プロパティを読み込んだ後、 [CustomProperties](https://docs.microsoft.com/javascript/api/outlook/office.customproperties#set-name--value-) オブジェクトの [set](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings) メソッドおよび **get** メソッドを使用して、メモリ内のプロパティの追加、更新、および取得を実行できます。アイテムのカスタム プロパティに対して行った変更を保存するには、 [saveAsync](https://docs.microsoft.com/javascript/api/outlook/office.customproperties#saveasync-callback--asynccontext-) メソッドを使用して、アイテムに加えた変更を Exchange サーバー上で保持する必要があります。
 
 
 ### <a name="custom-properties-example"></a>カスタム プロパティの例
 
 以下の例では、カスタム プロパティを使用する Outlook アドインの一連の関数を、簡略化して示しています。この例を出発点として、カスタム プロパティを使用する Outlook アドインを作成できます。 
 
-これらの関数を使用する Outlook アドインは、次の例に示すように、 `_customProps` 変数で **get** メソッドを呼び出すことによって、任意のカスタム プロパティを取得します。
+これらの関数を使用する Outlook アドインは、次の例に示すように、`_customProps` 変数で **get** メソッドを呼び出すことによって、任意のカスタム プロパティを取得します。
 
 
 
@@ -284,7 +284,7 @@ var property = _customProps.get("propertyName");
 | `customPropsCallback`|Exchange サーバーから返されるカスタム プロパティを取得し、後で使用できるように保存します。|
 | `updateProperty`|特定のプロパティを設定または更新し、その変更を Exchange サーバーに保存します。|
 | `removeProperty`|特定のプロパティを削除し、その削除を Exchange サーバーに保存します。|
-| `saveCallback`|`updateProperty`関数および `removeProperty`関数内で**saveAsync** メソッドを呼び出すためのコールバック。|
+| `saveCallback`|`updateProperty` 関数および `removeProperty` 関数内で **saveAsync** メソッドを呼び出すためのコールバック。|
 
 
 

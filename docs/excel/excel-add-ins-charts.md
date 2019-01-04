@@ -2,16 +2,16 @@
 title: Excel JavaScript API を使用してグラフを操作する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 80b537ec66caf6e173dfe4453a257c5963156e6f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: b804e2130e30626a9caf21bca1f3955c57a3f94c
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459302"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457552"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
-この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js)」を参照してください。
+この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)」を参照してください。
 
 ## <a name="create-a-chart"></a>グラフを作成する
 
@@ -188,4 +188,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)

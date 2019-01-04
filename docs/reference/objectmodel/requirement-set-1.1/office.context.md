@@ -2,18 +2,18 @@
 title: Office.context - 要件セット 1.1
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: 392e54f1004bb395672c026ef749113f94ec7479
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: a736588233db33b04e64c517f4b0802c17084d99
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432726"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457986"
 ---
 # <a name="context"></a>context
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
-Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office.context 名前空間の完全な一覧は、「[共有 API の Office.context リファレンス](/javascript/api/office/office.context)」をご覧ください。
+Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office.context 名前空間の完全な一覧は、「[共通 API の Office.context リファレンス](/javascript/api/office/office.context)」をご覧ください。
 
 
 ##### <a name="requirements"></a>要件
