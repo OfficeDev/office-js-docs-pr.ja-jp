@@ -2,12 +2,12 @@
 ms.date: 12/21/2018
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
-ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433041"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724873"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -428,7 +428,7 @@ function getComment(x) {
 - **2017 年 11 月 28 日**: 非同期関数のキャンセルのサポートを公開* (ストリーミング機能の変更が必要)
 - **2018 年 5 月 7 日**: Mac、Excel Online、およびインプロセスで実行される同期関数へのサポートを公開*
 - **2018 年 9 月 20日**: JavaScript ランタイムのカスタム関数へのサポートを公開。 詳細については、「[Excel カスタム関数のランタイム](custom-functions-runtime.md)」をご覧ください。
-- **2018 年 10 月 20 日**: [10 月の Insider ビルド](https://support.office.com/ja-JP/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)では、カスタム関数は、 Windows デスクトップ用およびオンライン用の[カスタム定義メタデータ](custom-functions-json.md)で 'id' パラメーターが必要になりました。 Mac では、このパラメーターは無視します。
+- **2018 年 10 月 20 日**: [10 月の Insider ビルド](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)では、カスタム関数は、 Windows デスクトップ用およびオンライン用の[カスタム定義メタデータ](custom-functions-json.md)で 'id' パラメーターが必要になりました。 Mac では、このパラメーターは無視します。
 
 
 \* は、[Office Insider](https://products.office.com/office-insider) チャンネル (旧称 "Insider Fast") 
@@ -438,4 +438,4 @@ function getComment(x) {
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [チュートリアル: Excel でカスタム関数を作成します。](excel-tutorial-custom-functions.md)
+* [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)

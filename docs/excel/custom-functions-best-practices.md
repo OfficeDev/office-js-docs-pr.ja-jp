@@ -2,12 +2,12 @@
 ms.date: 11/29/2018
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス
-ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156587"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724887"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
@@ -199,4 +199,4 @@ function getWeatherReport(zipCode, dayOfWeek)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [Excel カスタム関数のチュートリアル](excel-tutorial-custom-functions.md)
+* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

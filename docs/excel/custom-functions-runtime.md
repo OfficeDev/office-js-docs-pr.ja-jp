@@ -2,12 +2,12 @@
 ms.date: 12/5/2018
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム
-ms.openlocfilehash: 715690c5cba2466e4a50ba2a33d2324a1abe02f5
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: a2e59c24addecbf0159b816b15c3bf6faf623475
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270832"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724845"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
@@ -199,4 +199,4 @@ function getStock (ticker) {
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [チュートリアル: Excel でカスタム関数を作成します。](excel-tutorial-custom-functions.md)
+* [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)
