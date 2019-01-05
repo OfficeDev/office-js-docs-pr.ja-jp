@@ -248,7 +248,7 @@
 これで完了です。React を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.yml)
+> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>関連項目
 
