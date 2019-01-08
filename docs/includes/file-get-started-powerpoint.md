@@ -148,9 +148,9 @@
     ...
     ```
 
-### <a name="try-it-out"></a>お試しください
+### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
 2. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
@@ -352,4 +352,4 @@
 これで完了です。PowerPoint アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明します。PowerPoint アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
-> [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.yml)
+> [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.md)
