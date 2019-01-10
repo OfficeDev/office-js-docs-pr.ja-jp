@@ -1,13 +1,13 @@
 ---
-ms.date: 11/26/2018
+ms.date: 01/08/2019
 description: Excel のカスタム関数のメタデータを定義します。
-title: Excel のカスタム関数のメタデータ
-ms.openlocfilehash: 4bdf27173c5e912aa3eba3c8661ba45dd8b453cb
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Excel のカスタム関数のメタデータ (プレビュー)
+ms.openlocfilehash: 79fb5ac0ebcbe91b154c48cb10aad65451b6e5ee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724859"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770631"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -158,4 +158,5 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)
+* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

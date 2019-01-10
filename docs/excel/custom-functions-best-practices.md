@@ -1,13 +1,13 @@
 ---
-ms.date: 11/29/2018
+ms.date: 01/08/2019
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
-title: カスタム関数のベスト プラクティス
-ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: カスタム関数のベスト プラクティス (プレビュー)
+ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724887"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770652"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
@@ -58,35 +58,33 @@ Windows 版 Office でアドインを検証する場合は、アドインの XML
 
 アドインが登録に失敗した場合は、アドイン アプリケーションをホストしている Web サーバーに、 [SSL 証明書が正しく構成されていることを確認してください](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 
-## <a name="mapping-function-names-to-json-metadata"></a>関数名を JSON のメタデータにマップする
+## <a name="associating-function-names-with-json-metadata"></a>関数名を JSON メタデータに関連付ける
 
-[カスタム関数の概要](custom-functions-overview.md)資料で説明したように、カスタム関数プロジェクトには、カスタム関数を登録し、エンド ユーザーが利用できるように Excel が必要とする情報を提供する JSON のメタデータ ファイルを含める必要があります。 さらに、カスタム関数を定義する JavaScript ファイル内で、JSON のメタデータ ファイルにあるどの関数オブジェクトが JavaScript ファイル内の各カスタム関数に対応するかを指定する情報を提供する必要があります。
+[カスタム関数の概要](custom-functions-overview.md)という記事で取り上げたように、カスタム関数プロジェクトには、カスタム関数を作成するために、JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) の両方を含める必要があります。 関数が正しく動作するには、スクリプト ファイル内の関数名を、JSON ファイルに記載されている ID にバインドしなければなりません。 このプロセスは関連付けと呼ばれます。 JavaScript コード ファイルの最後に関連付けを含める点に注意してください。そのようにしない限り、関数は動作しません。
 
-たとえば、次のコード サンプルは、カスタム関数 `add` を定義し、`id` プロパティの値が **ADD** である JSON のメタデータ ファイル内のオブジェクトに関数 `add` が対応するよう指定します。
+次のコード サンプルは、この関連付けを実行する方法を示しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
 
 ```js
 function add(first, second){
   return first + second;
 }
 
-CustomFunctionMappings.ADD = add;
+CustomFunctions.associate("ADD", add); 
 ```
 
 JavaScript ファイルでカスタム関数を作成し、JSON のメタデータ ファイルに対応する情報を指定するときは、次のベスト プラクティスに留意してください。
 
-* JavaScript ファイルでは関数名を キャメルケースで記述します。 たとえば、関数名 `addTenToInput` はキャメルケースで記述されています: 名前の最初の単語は小文字で開始し、後続の各単語は大文字で開始します。
+* JSON メタデータ ファイルでは関数の `name` と `id` に大文字のみを使用します。 小文字と大文字を組み合わせたり、小文字のみを使用したりしないでください。 このような文字を使用すると、大文字小文字だけが異なる 2 つの値が存在するようになり、関数で意図しない上書きが生じる原因となる場合があります。 たとえば、`id` 値が **add** の関数オブジェクトが、`id` 値 **ADD** の関数オブジェクトのファイルに含まれる宣言によって後ほど上書きされる場合があります。 また `name` プロパティは、Excel でエンド ユーザーに表示される関数の名前を定義します。 各カスタム関数の名前の大文字を使用することで、すべての組み込み関数の名前は大文字である Excel で、一貫性のあるエクスペリエンスを提供します。
 
-* JSON メタデータ ファイル内で、各 `name` プロパティの値に大文字を指定します。  `name` プロパティは、Excel でエンド ユーザーに表示される関数の名前を定義します。 各カスタム関数の名前の大文字を使用することで、すべての組み込み関数の名前は大文字である Excel で、一貫性のあるエクスペリエンスをエンド ユーザーに提供します。
+* ただし、関連付けを行う場合、関数の `name` を大文字にしなければならないわけではありません。 たとえば、`CustomFunctions.associate("add", add)` は `CustomFunctions.associate("ADD", add)` に相当します。
 
-* JSON メタデータ ファイル内で、各 `id` プロパティの値に大文字を指定します。  このようにすると、JavaScript コード内の `CustomFunctionMappings` ステートメントのどの部分が、JSON のメタデータの `id` プロパティに対応するかが明らかになります (推奨したように、関数名はキャメルケースを使用している前提で)。
+* JSON のメタデータ ファイルにそれぞれの `id` プロパティには、英数字とピリオドのみが含まれています。
 
-* JSON のメタデータ ファイルにそれぞれの `id` プロパティには、英数字とピリオドのみが含まれています。 
+* JSON のメタデータ ファイルで、各 `id` プロパティの値が、ファイルのスコープ内で一意であることを確認します。 すなわち、メタデータ ファイル内の 2 つの関数オブジェクトは同じ `id` 値であってはいけません。 
 
-* JSON のメタデータ ファイルで、各 `id` プロパティの値が、ファイルのスコープ内で一意であることを確認します。 すなわち、メタデータ ファイル内の 2 つの関数オブジェクトは同じ `id` 値であってはいけません。 さらに、2 つの大文字と小文字だけが異なるメタデータ ファイル内の `id` 値を指定しないでください。 たとえば、 **add**の値 `id` の関数オブジェクトを、**ADD**の値 `id` の別の関数オブジェクトと定義しないでください。
+* 対応する JavaScript 関数の名前に関連付けられた後では、JSON のメタデータ ファイル内の `id` プロパティの値を変更しないでください。 JSON のメタデータ ファイル内の `name` プロパティを更新することによって Excel でエンド ユーザーに表示される関数の名前を変更することができます。しかし、確立された後は、 `id` プロパティの値を決して変更しないでください。
 
-* 対応する JavaScript 関数の名前にマップされた後では、JSON のメタデータ ファイル内の `id` プロパティの値を変更しないでください。 JSON のメタデータ ファイル内の `name` プロパティを更新することによって Excel でエンド ユーザーに表示される関数の名前を変更することができます。しかし、確立された後は、 `id` プロパティの値を決して変更しないでください。
-
-* JavaScript ファイルで同じ場所にすべてのカスタム関数のマッピングを指定します。 例えば次のコード サンプルは、2 つのカスタム関数を定義し、両方の関数のマッピング情報を指定します。
+* JavaScript ファイルで同じ場所にすべてのカスタム関数の関連付けを指定します。 たとえば次のコード サンプルは、2 つのカスタム関数を定義し、両方の関数の関連付け情報を指定します。
 
     ```js
     function add(first, second){
@@ -105,12 +103,12 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
       };
     }
 
-    // map `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctionMappings.ADD = add;
-    CustomFunctionMappings.INCREMENT = increment;
+    // associate `id` values in the JSON metadata file to JavaScript function names
+    CustomFunctions.associate("ADD", add);
+    CustomFunctions.associate("INCREMENT", increment);
     ```
 
-    次のサンプルは、JavaScript コード サンプルで定義された関数に対応する JSON メタデータを示します。
+    次のサンプルは、JavaScript コード サンプルで定義された関数に対応する JSON メタデータを示します。 `id` と `name` のプロパティがこのファイル内で大文字であることに注意してください。 
 
     ```json
     {
@@ -137,7 +135,7 @@ Windows 版 Excel (バージョン 1812 以降) では、カスタム関数に�
 
 ```json
 {
-    "id": "add",
+    "id": "ADD",
     "name": "ADD",
     "description": "Add two numbers",
     "helpUrl": "http://www.contoso.com",
@@ -199,4 +197,5 @@ function getWeatherReport(zipCode, dayOfWeek)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
+* [カスタム関数の変更ログ](custom-functions-changelog.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

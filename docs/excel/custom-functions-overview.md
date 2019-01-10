@@ -1,13 +1,13 @@
 ---
-ms.date: 12/21/2018
+ms.date: 01/08/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
-ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: 0bc1b9face240f6218b501dd195bde39e8781205
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724873"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770638"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -36,18 +36,18 @@ function add42(a, b) {
 
 | ファイル | ファイル形式 | 説明 |
 |------|-------------|-------------|
-| **./src/functions/functions.js**<br/>または<br/>**./src/functions/functions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含みます。 |
-| **./src/functions/functions.json** | JSON | カスタム関数を定義し、Excel に関数を登録してエンドユーザーが使用できるようにするためのメタデータを含みます。 |
-| **./src/functions/functions.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
+| **./src/customfunctions.js**<br/>または<br/>**./src/customfunctions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含みます。 |
+| **./config/customfunctions.json** | JSON | カスタム関数を定義し、Excel に関数を登録してエンドユーザーが使用できるようにするためのメタデータを含みます。 |
+| **./index.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
 | **./manifest.xml** | XML | アドイン内のすべてのカスタム関数の名前空間と、この表で前述した JavaScript、JSON、HTML ファイルの位置を指定します。 |
 
 次のセクションでは、これらのファイルに関する詳細について説明します。
 
 ### <a name="script-file"></a>スクリプト ファイル
 
-スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義して、カスタム関数の名前を [JSON メタデータ ファイル](#json-metadata-file)のオブジェクトにマップするコードが含まれています。 
+スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **./src/customfunctions.ts**) には、カスタム関数を定義して、カスタム関数の名前を [JSON メタデータ ファイル](#json-metadata-file)のオブジェクトにマップするコードが含まれています。 
 
-例えば、次のコードはカスタム関数 `add` と `increment` を定義し、両方の関数のマッピング情報を指定します。  `add` 関数は、`id` プロパティの値が **ADD** の JSON メタデータ ファイル内のオブジェクトにマップされ、`increment` 関数は、`id` プロパティの値が **INCREMENT** のメタデータ ファイル内のオブジェクトにマップされます。 JSON メタデータ ファイル内のオブジェクトへのスクリプト ファイル内関数名のマッピングの詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)」を参照してください。
+たとえば、次のコードはカスタム関数 `add` と `increment` を定義し、両方の関数の関連付け情報を指定します。 `add` 関数は、`id` プロパティの値が **ADD** の JSON メタデータ ファイル内のオブジェクトに関連付けられ、`increment` 関数は、`id` プロパティの値が **INCREMENT** のメタデータ ファイル内のオブジェクトに関連付けられます。 JSON メタデータ ファイル内のオブジェクトへのスクリプト ファイル内関数名の関連付けの詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
 
 ```js
 function add(first, second){
@@ -66,19 +66,19 @@ function increment(incrementBy, callback) {
   };
 }
 
-// map `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctionMappings.ADD = add;
-CustomFunctionMappings.INCREMENT = increment;
+// associate `id` values in the JSON metadata file to the JavaScript function names
+ CustomFunctions.associate("ADD", add);
+ CustomFunctions.associate("INCREMENT", increment);
 ```
 
-### <a name="json-metadata-file"></a>JSON メタデータ ファイル 
+### <a name="json-metadata-file"></a>JSON メタデータ ファイル
 
 カスタム関数のメタデータ ファイル (Yo Office ジェネレーターが作成するプロジェクトでは **./config/customfunctions.json**) は、Excel がカスタム関数の登録し、エンドユーザーが利用できるようするために必要な情報を提供します。 カスタム関数は、ユーザーがアドインを初めて実行するときに登録されます。 その後は、同じユーザーに対しては、(アドインが最初に実行されたワークブック内のみでなく) すべてのワークブック内で利用が可能になります。
 
 > [!TIP]
 > JSON ファイルをホストするサーバーでは、カスタム関数を Excel Online で正しく作動させるために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) を有効に設定する必要があります。
 
-**functions.json** の次のコードは、`add` 関数のメタデータと上述の `increment` 関数を指定します。 このコード サンプルに続く表では、JSON オブジェクト内の個別のプロパティについての詳細情報を提供します。 JSON メタデータ ファイル内の `id` と `name` 各プロパティーの値の指定に関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)」を参照してください。
+**customfunctions.json** の次のコードは、`add` 関数のメタデータと上述の `increment` 関数を指定します。 このコード サンプルに続く表では、JSON オブジェクト内の個別のプロパティについての詳細情報を提供します。 JSON メタデータ ファイル内の `id` と `name` 各プロパティーの値の指定に関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
 
 ```json
 {
@@ -151,42 +151,52 @@ CustomFunctionMappings.INCREMENT = increment;
 カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml**) を定義するアドインの XML マニフェスト ファイルは、アドイン内のすべてのカスタム関数の名前空間と、 JavaScript、JSON、および HTML の場所を指定します。 次の XML マークアップでは、`<ExtensionPoint>` と `<Resources>` カスタム関数を有効にするアドインのマニフェストに含める必要がある要素の例を示します。  
 
 ```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-        <Hosts>
-            <Host xsi:type="Workbook">
-                <AllFormFactors>
-                    <ExtensionPoint xsi:type="CustomFunctions">
-                        <Script>
-                            <SourceLocation resid="Contoso.Functions.Script.Url" />
-                        </Script>
-                        <Page>
-                            <SourceLocation resid="Contoso.Functions.Page.Url"/>
-                        </Page>
-                        <Metadata>
-                            <SourceLocation resid="Contoso.Functions.Metadata.Url" />
-                        </Metadata>
-                        <Namespace resid="Contoso.Functions.Namespace" />
-                    </ExtensionPoint>
-                </AllFormFactors>
-            </Host>
-        </Hosts>
-        <Resources>
-            <bt:Images>
-                <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
-                <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
-                <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
-            </bt:Images>
-            <bt:Urls>
-                <bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js" />
-                <bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json" />
-                <bt:Url id="Contoso.Functions.Page.Url" DefaultValue="https://localhost:3000/dist/functions.html" />
-                <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-            </bt:Urls>
-            <bt:ShortStrings>
-                <bt:String id="Contoso.Functions.Namespace" DefaultValue="CONTOSO" />
-            </bt:ShortStrings>
-        </Resources>
-    </VersionOverrides>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>6f4e46e8-07a8-4644-b126-547d5b539ece</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="helloworld"/>
+  <Description DefaultValue="Samples to test custom functions"/>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:8081/index.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="JS-URL"/>
+            </Script>
+            <Page>
+              <SourceLocation resid="HTML-URL"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="JSON-URL"/>
+            </Metadata>
+            <Namespace resid="namespace"/>
+          </ExtensionPoint>
+        </AllFormFactors>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="namespace" DefaultValue="CONTOSO"/>
+      </bt:ShortStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
 ```
 
 > [!NOTE]
@@ -345,13 +355,13 @@ function secondHighest(values){
 }
 ```
 
-## <a name="discovering-cells-that-invoke-custom-functions"></a>カスタム関数を呼び出すセルを検出する
+## <a name="determine-which-cell-invoked-your-custom-function"></a>カスタム関数が呼び出したセルを特定する
 
-カスタム関数を使用すると、範囲の書式設定、キャッシュされた値の表示、およびを `caller.address` を使用しての値の調整を行うこともでき、カスタム関数を呼び出すセルを検出することができます。 次のシナリオの一部で `caller.address` を使用します。
+場合によっては、カスタム関数が呼び出したセルのアドレスを取得する必要が生じます。 これは、次の種類のシナリオで役立ちます。
 
-- 範囲の書式設定: [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data)で情報を格納するセルのキーとして `caller.address` を使用します。 Excel で [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) を使用して`AsyncStorage` からキーを読み込みます。
+- 範囲の書式設定: [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) で情報を格納するキーとしてセル アドレスを使用します。 Excel で [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) を使用して`AsyncStorage` からキーを読み込みます。
 - キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `AsyncStorage` に格納されているキャッシュされた値を表示します。
-- 調整: `caller.address` を使用して元のセルを検出し、処理が発生している場所での調整を行えます。
+- 調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。
 
 セルのアドレスに関する情報は、関数の JSON メタデータ ファイルで `requiresAddress` が`true` とマークされている場合にのみ公開されます。 これの例を次のサンプルに示します。
 
@@ -421,21 +431,11 @@ function getComment(x) {
 - 今後、カスタム関数向けのデバッグ ツールが利用できるようになる可能性があります。 それまでは、F12 開発者ツールを使用して Excel Online をデバッグすることができます。 詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)」を参照してください。
 - 32 ビット版の Office 365 *December* インサイダー バージョン 1901 (ビルド 11128.20000) では、カスタム関数が正常に動作しない可能性があります。 https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle でファイルをダウンロードして、このバグを回避できる場合があります。 それから、"C:\Program Files (x86)\Microsoft Office\root\Office16" フォルダーにそれをコピーします。
 
-## <a name="changelog"></a>変更ログ
-
-- **2017 年 11 月 7 日**: カスタム関数のプレビューとサンプルを公開*
-- **2017 年 11 月 20 日**: ビルド 8801 以降を使用する場合の互換性バグを修正
-- **2017 年 11 月 28 日**: 非同期関数のキャンセルのサポートを公開* (ストリーミング機能の変更が必要)
-- **2018 年 5 月 7 日**: Mac、Excel Online、およびインプロセスで実行される同期関数へのサポートを公開*
-- **2018 年 9 月 20日**: JavaScript ランタイムのカスタム関数へのサポートを公開。 詳細については、「[Excel カスタム関数のランタイム](custom-functions-runtime.md)」をご覧ください。
-- **2018 年 10 月 20 日**: [10 月の Insider ビルド](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)では、カスタム関数は、 Windows デスクトップ用およびオンライン用の[カスタム定義メタデータ](custom-functions-json.md)で 'id' パラメーターが必要になりました。 Mac では、このパラメーターは無視します。
-
-
-\* は、[Office Insider](https://products.office.com/office-insider) チャンネル (旧称 "Insider Fast") 
-
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)
+* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+
