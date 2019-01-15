@@ -1,14 +1,14 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 12/31/2018
+ms.date: 01/09/2019
 ms.topic: tutorial
-ms.openlocfilehash: fe4350f5f3fdbe34250c1739c7651a1dde1e28ef
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: de5a08be53d7a6c2f4df4d9419e3713266800f7e
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724958"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896358"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -801,23 +801,23 @@ ms.locfileid: "27724958"
 
 4. プロジェクトのルートに popup.js というファイルを作成します。
 
-5. popup.js に、次のコードを追加します。次の点に注意してください。
+5. popup.js に、次のコードを追加します。 このコードについては、次の点に注意してください。
 
-   - *Office.JS 内の API を呼び出すページは、どのページでも `Office.initialize` プロパティに関数を割り当てる必要があります。* 初期化が不要な場合は、関数の本体を空にすることができますが、プロパティを未定義のままにすることや、Null または関数以外の値を割り当てることはできません。 たとえば、プロジェクト ルートにある app.js ファイルを確認してください。 この割り当てを実施するコードは、Office.JS を呼び出す前に実行する必要があります。そのため、この例で示すように、割り当てはページによって読み込まれるスクリプト ファイル内に入れてあります。
-   
-   - jQuery の `ready` 関数は、`initialize` メソッド内から呼び出します。別の JavaScript ライブラリのコードの読み込み、初期化、またはブートストラップを `Office.initialize` 関数内に入れることは、ほとんどすべての場合に通用するルールです。
+   - *Office.JS ライブラリ内の API を呼び出すすべてのページでは、まずライブラリが完全に初期化されていることを確認する必要があります。* これを行う最善の方法は `Office.onReady()` メソッドを呼び出すことです。 アドインに独自の初期化タスクがある場合、コードを `Office.onReady()` の呼び出しにチェーンされている `then()` メソッドに含める必要があります。 たとえば、プロジェクト ルートにある app.js ファイルを確認してください。 `Office.onReady()` の呼び出しは、Office.JS を呼び出す前に実行する必要があります。そのため、この例で示すように、割り当てはページによって読み込まれるスクリプト ファイル内に入れてあります。
+   - jQuery の `ready` 関数は、`then()` メソッドの内側から呼び出します。 通常は、その他の JavaScript ライブラリの読み込み、初期化、ブートストラップのコードを、`Office.onReady()` の呼び出しにチェーンされている `then()` メソッドの内側に含める必要があります。
 
     ```js
     (function () {
     "use strict";
 
-        Office.initialize = function() {
-            $(document).ready(function () {  
+        Office.onReady()
+            .then(function() {
+                $(document).ready(function () {  
 
-                // TODO1: Assign handler to the OK button.
+                    // TODO1: Assign handler to the OK button.
 
+                });
             });
-        }
 
         // TODO2: Create the OK button handler
 

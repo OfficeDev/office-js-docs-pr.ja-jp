@@ -1,15 +1,15 @@
 ---
 title: OneNote ページ コンテンツを使用する
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 1/10/2019
+ms.openlocfilehash: 617c30f2a9a0c72b1c309ce299f388b5a16b983f
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457615"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896337"
 ---
-# <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する 
+# <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
 
@@ -25,7 +25,7 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 - [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
-その後、次のオブジェクトのメソッドを使用して、Page.addOutline や Outline.appendHtml などのページのコンテンツを操作します。 
+その後、次のオブジェクトのメソッドを使用して、`Page.addOutline` や `Outline.appendHtml` などのページ コンテンツを操作します。
 
 - [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
 - [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
@@ -37,17 +37,19 @@ OneNote ページのコンテンツと構造は、HTML で表されます。次�
 
 ページ コンテンツを作成して更新するために、OneNote アドインの JavaScript API では次の HTML がサポートされています。
 
-- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
+- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`
 - `<img>`
 - `<a>`
-- `<ul>`, `<ol>`, `<li>` 
+- `<ul>`, `<ol>`, `<li>`
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
 > [!NOTE]
 > HTML を OneNote にインポートすると、空白文字が統合されます。 結果のコンテンツは、1 つのアウトラインに貼り付けられます。
+
+OneNote では、ユーザーのセキュリティを確保しながら、HTML をページ コンテンツに変換します。 HTML と CSS の基準は OneNote のコンテンツ モデルと完全に一致しないため、特に CSS スタイルでは外観が異なります。 特定の書式設定が必要な場合は、JavaScript オブジェクトを使用することをお勧めします。
 
 ## <a name="accessing-page-contents"></a>ページ コンテンツへのアクセス
 
