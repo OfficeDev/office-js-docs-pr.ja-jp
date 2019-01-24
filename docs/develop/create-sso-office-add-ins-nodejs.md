@@ -2,12 +2,13 @@
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: 6579549fbad4a44d73edfacefe53875e2a6e0918
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433335"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387339"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -537,7 +538,7 @@ ms.locfileid: "27433335"
     ```
 
     > [!NOTE]
-    > `access_as_user` スコープだけを使用して、Office アドインの代理フローを処理する API を承認する必要があります。ご利用のサービス内の他の API には、独自のスコープ要件が必要です。 これにより、Office が取得するトークンでアクセスできるものが制限されます。
+    > `access_as_user` スコープのみを使用して、Office アドインの代理 (on-behalf-of) フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。
 
 5. `TODO8` を次のコードに置き換えます。このコードについては、次の点に注意してください。
 
@@ -658,7 +659,7 @@ ms.locfileid: "27433335"
 2. VS Code を使用している場合:
  1. VS Code でプロジェクトを開きます。
  2. CTRL + SHIFT + B を押して、プロジェクトをビルドします。
- 3. F5 を押して、デバッグ セッションでプロジェクトを実行します。
+ 3. **F5** を押して、デバッグ セッションでプロジェクトを実行します。
 
 
 ## <a name="add-the-add-in-to-an-office-document"></a>Office ドキュメントにアドインを追加する

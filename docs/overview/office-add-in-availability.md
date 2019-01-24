@@ -2,12 +2,13 @@
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
 ms.date: 11/07/2018
-ms.openlocfilehash: 9490fca9663737e2397de159169b545e3900289f
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 9f8b94483d22f24dcb0a6a2ad99df6167533133f
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458042"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388340"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -319,8 +320,7 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
     <td>利用不可</td>
   </tr>
   <tr>

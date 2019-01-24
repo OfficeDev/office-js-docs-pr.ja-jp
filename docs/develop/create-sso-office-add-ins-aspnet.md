@@ -2,12 +2,13 @@
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9ccabfcb2f3dc071ab9be181dda1ed5cadadd763
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+localization_priority: Priority
+ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852946"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388305"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -132,7 +133,7 @@ ms.locfileid: "25852946"
 
         1. マニフェストの `</VersionOverrides>` の終了タグの直前の `<WebApplicationInfo>` セクションをコメント アウトします。
 
-        2. F5 キーを押してデバッグ セッションを開始します。これにより、次のフォルダーにマニフェストのコピーが作成されます (これには、Visual Studio よりも**ファイル エクスプローラー**の方が容易にアクセスできます): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. **F5** キーを押してデバッグ セッションを開始します。これにより、次のフォルダーにマニフェストのコピーが作成されます (これには、Visual Studio よりも**ファイル エクスプローラー**の方が容易にアクセスできます): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. マニフェストのコピーから、`<WebApplicationInfo>` セクションの周囲のコメント構文を削除します。
 

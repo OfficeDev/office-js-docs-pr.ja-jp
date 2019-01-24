@@ -2,12 +2,13 @@
 title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6723ef757772a992b134d4f2a9d4590cc74965c2
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 0edde27eebed667040ae3aded5bbc4268f0f5d58
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458133"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388816"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -190,7 +191,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 - jQuery を使用している場合は、[.html()](https://api.jquery.com/text/) メソッドの代わりに [.text()](https://api.jquery.com/html/) メソッドを使用してください。
 
 - 
-  [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+  [toStaticHTML](https://developer.mozilla.org/ja-JP/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
 - 
   [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。

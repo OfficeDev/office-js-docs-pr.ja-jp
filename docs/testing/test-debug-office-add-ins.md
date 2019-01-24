@@ -2,12 +2,13 @@
 title: Office アドインのテストとデバッグ
 description: ''
 ms.date: 11/24/2017
-ms.openlocfilehash: f645482fa92faad2e28484fa4b878bd35c0a27b6
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: 7ffa281807ca1541f8ebcc5f722c1043db115509
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925263"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388837"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
@@ -23,8 +24,7 @@ ms.locfileid: "22925263"
 
 - [iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-- 
-  [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>Office アドインのデバッグ
 

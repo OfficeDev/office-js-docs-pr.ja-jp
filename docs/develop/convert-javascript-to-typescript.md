@@ -1,34 +1,34 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
-ms.date: 01/19/2018
-ms.openlocfilehash: 015fd9d7e9bf4412c09b76f0de5a97c9946e4d58
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.date: 10/30/2018
+localization_priority: Priority
+ms.openlocfilehash: 6587665d57121619f9730448b27b045630f9e1aa
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016333"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386604"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
-Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 アドイン プロジェクトの作成に Visual Studio を使用することで、Office アドイン TypeScript プロジェクトをゼロから作成する必要がなくなります。 
-
-この記事では、Visual Studio を使用して Excel アドインを作成して、そのアドイン プロジェクトを JavaScript から TypeScript に変換する方法について説明します。 同じ手順を使用して、その他の種類の Office アドイン JavaScript プロジェクトを Visual Studio の TypeScript に変換できます。
+Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 この記事では、Excel アドイン用のこの変換プロセスについて説明します。 同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。
 
 > [!NOTE]
-> Visual Studio を使用せずに Office アドイン TypeScript プロジェクトを作成するには、「[5 分間クイック スタート](../index.yml)」の「任意のエディタ」セクションに示された手順を実行して、[Office アドイン用 Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.yml)」の「任意のエディター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/officedev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
 - **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
 
-    > [!NOTE]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
+    > [!TIP]
+    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)してください。
 
-- Visual Studio 2017 用 TypeScript 2.3
+- TypeScript SDK バージョン 2.3 以降 (Visual Studio 2017 用)
 
-    > [!NOTE]
-    > TypeScript は、既定で Visual Studio 2017 と共にインストールされますが、TypeScript がインストールされているかどうかは、[Visual Studio インストーラーを使用して](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)確認できます。 Visual Studio インストーラーで、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** の下で **[TypeScript 2.3 SDK]** が選択されていることを確認します。
+    > [!TIP]
+    > [Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 
+  **TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)します。 
 
 - Excel 2016 以降
 
@@ -61,7 +61,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 6. Web アプリケーション プロジェクトのルートに、**jQuery.d.ts** という名前の新しいファイルを作成します。
 
-7. Web ブラウザーで、[jQuery の型定義ファイル](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts)を開きます。 このファイルの内容をクリップボードにコピーします。
+7. Web ブラウザーで、[jQuery の型定義ファイル](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts)を開きます。 このファイルの内容をクリップボードにコピーします。
 
 8. Visual Studio で、**jQuery.d.ts** ファイルを開きます。このファイルにクリップボードの内容を貼り付けてから、ファイルを保存します。
 
@@ -69,7 +69,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 10. **tsconfig.json** ファイルを開いて、次の内容をファイルに追加してから、ファイルを保存します。
 
-    ```javascript
+    ```json
     {
         "compilerOptions": {
             "skipLibCheck": true,
@@ -80,19 +80,35 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 11. **Home.ts** ファイルを開いて、次の宣言をファイルの先頭に追加します。
 
-    ```javascript
+    ```typescript
     declare var fabric: any;
     ```
 
-12. **Home.ts** ファイルで、次に示す行の **'1.1'** を **1.1** に変更して (つまり、引用符を削除して)、ファイルを保存します。
+12. **Home.ts** ファイルで、次に示す行の **'1.1'** を **1.1** に変更します (つまり、引用符を削除します)。
 
-    ```javascript
+    ```typescript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+    ```
+
+13. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
+
+    ```typescript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
     ```
 
 ## <a name="run-the-converted-add-in-project"></a>変換後のアドイン プロジェクトを実行する
 
-1. Visual Studio で、F5 キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。
+1. Visual Studio で、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。 アドインは IIS 上でローカルにホストされます。
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
@@ -104,7 +120,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 参考のために、次のコード スニペットで、これまでに説明した変更点を適用した後の **Home.ts** ファイルの内容を示します。 このコードには、アドインを実行するために必要な最小限の変更点が含まれています。
 
-```javascript
+```typescript
 declare var fabric: any;
 
 (function () {
@@ -121,7 +137,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016 or later, use fallback logic.
+            // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
@@ -201,6 +217,7 @@ declare var fabric: any;
 
     function displaySelectedCells() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
                     showNotification('The selected text is:', '"' + result.value + '"');

@@ -2,16 +2,17 @@
 title: Outlook JavaScript API の要件セット
 description: ''
 ms.date: 12/04/2018
-ms.openlocfilehash: 3d2b17de4e1bc8510b06901b4cfd1949d9490564
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 5737cf61c9c9abc7602c678889d3e9c96d040ee0
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433027"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388830"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
-Outlook アドインでは、[マニフェスト](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)で [Requirements](/office/dev/add-ins/reference/manifest/requirements) 要素を使用し、必要な API のバージョンを宣言します。 Outlook アドインには、`Name` 属性が `Mailbox` に設定され、`MinVersion` 属性がアドインのシナリオをサポートする最小 API 要件セットに設定された [Set](/office/dev/add-ins/reference/manifest/set) 要素が常に含まれます。
+Outlook アドインは、マニフェストで要件要素を使用して、必要な API のバージョンを宣言します。Outlook アドインには、 属性が  に設定され、 属性がアドインのシナリオをサポートする最小 API 要件セットに設定された設定要素が常に含まれます。
 
 たとえば、次のマニフェストのスニペットは、最小要件セットの 1.1 を表します。
 
@@ -29,7 +30,7 @@ Outlook アドインでは、[マニフェスト](https://docs.microsoft.com/off
 
 ## <a name="using-apis-from-later-requirement-sets"></a>後続の要件セットからの API の使用
 
-要件セットを設定しても、アドインで使用できる API は制限されません。 たとえば、アドインでは要件セット 1.1 が指定されていますが、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインでは要件セット 1.3 の API を使用できます。
+要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。
 
 より新しい API を使用するには、開発者は標準の JavaScript の技法を使用することで、新しい API の有無を確認できます。
 
@@ -52,7 +53,7 @@ if (item.somePropertyOrFunction !== undefined) {
 | クライアント | サポートされる API の要件セット |
 | --- | --- |
 | Windows 用 Outlook 2019 | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4)、[1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5)、[1.6](/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6)、[1.7](/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7) |
-| Outlook 2019 for Mac | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4)、[1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5)、[1.6](/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6)、[1.7](/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7) |
+| Outlook 2019 for Mac | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4)、[1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5)、[1.6](/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6) |
 | Windows 用 Outlook 2016 (クイック実行) | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4)、[1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5)、[1.6](/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6)、[1.7](/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7) |
 | Windows 用 Outlook 2016 (MSI) | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4) |
 | Outlook 2016 for Mac | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1)、[1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2)、[1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3)、[1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4)、[1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5)、[1.6](/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6) |

@@ -2,12 +2,13 @@
 title: ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 76f6f5f6a2d117b59e1a7794e35e181383022269
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 8f45c5f92bb8c2b38ee744331ce74c93220f69fb
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457888"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387780"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
 

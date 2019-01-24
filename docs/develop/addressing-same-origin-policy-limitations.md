@@ -2,12 +2,13 @@
 title: Office アドインにおける同一生成元ポリシーの制限への対処
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: 75bc42cd7d2a7acc8cb57ee08807a8486e21f467
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270601"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387758"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
@@ -55,8 +56,7 @@ function loadVideoDetails(videoIndex) {
 
 同一生成元ポリシーの制限に対処する他の方法として、OAuth を使用する ASP ページ、または Cookie で資格情報をキャッシュする ASP ページとして、アドインの Web ページを実装する方法があります。
 
-
-  `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2) プロパティを参照してください。
+`System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2) プロパティを参照してください。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>クロス オリジン リソース共有 (CORS) の使用

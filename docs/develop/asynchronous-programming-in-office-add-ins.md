@@ -2,12 +2,13 @@
 title: Office アドインにおける非同期プログラミング
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: badaf14123c3a70d28394d0286377d7e0920d453
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+localization_priority: Priority
+ms.openlocfilehash: 811ea251641720f6e4c945a0b7182335b399bb65
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505931"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387156"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
