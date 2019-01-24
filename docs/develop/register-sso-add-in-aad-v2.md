@@ -2,12 +2,13 @@
 title: Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 7b9c0dbcdf8a892ffcb810972c4d3674acbc31f7
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+localization_priority: Priority
+ms.openlocfilehash: c6cc775fc796f2235d8613a9ca9f6ee385721f85
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298538"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388179"
 ---
 # <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する
 

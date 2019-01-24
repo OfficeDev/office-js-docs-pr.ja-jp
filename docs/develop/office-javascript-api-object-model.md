@@ -2,12 +2,13 @@
 title: Office JavaScript API オブジェクト モデル
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: 2947ae2bf0da4f1a0e5151ae8d6d8a723cf6d4b9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388529"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
 Office JavaScript アドインを利用すると、ホストの基本機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox](#mailbox-object) オブジェクトによって、Outlook アドインがメッセージやユーザー プロファイルにアクセスできるようになります。 このような上位オブジェクト間の関係を理解することが JavaScript アドインの基礎となります。

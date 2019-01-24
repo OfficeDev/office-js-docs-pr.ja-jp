@@ -2,12 +2,13 @@
 title: アドインの状態および設定を保持する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ce2b9ffce97e6338d62cdf07d722ffa384283d28
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 7739dd46499c3ab5ccda13d362950ec86d761660
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458070"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388242"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -37,7 +38,7 @@ JavaScript API for Office には、次の表に示すように、セッション
 > [!NOTE]
 > この後の 2 つのセクションでは、Office 共通 JavaScript API のコンテキストでの設定について説明します。 ホスト固有の Excel JavaScript API でも、カスタム設定にアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の SettingCollection](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) を参照してください。
 
-内部的には、**Settings** オブジェクト、**CustomProperties** オブジェクト、または **RoamingSettings** オブジェクトでアクセスされるプロパティ バッグ内のデータは、名前/値のペアを含むシリアル化された JavaScript Object Notation (JSON) オブジェクトとして格納されます。 各値の名前 (キー) は **string** である必要があり、格納された値は JavaScript の **string**、**number**、**date**、または **object** にすることが可能ですが、**function** にすることはできません。
+内部的には、 **Settings** オブジェクト、 **CustomProperties** オブジェクト、または **RoamingSettings** オブジェクトでアクセスされるプロパティ バッグ内のデータは、名前/値のペアを含むシリアル化された JavaScript Object Notation (JSON) オブジェクトとして格納されます。各値の名前 (キー) は **string** である必要があり、格納された値は JavaScript の **string**、 **number**,  **date**、または  **object** にすることが可能ですが、 **function** にすることはできません。
 
 この例はプロパティ バッグの構造を示し、3 つの定義された **string** 値 (`firstName`、`location`、`defaultView` という名前) が含まれます。
 
@@ -49,11 +50,11 @@ JavaScript API for Office には、次の表に示すように、セッション
 }
 ```
 
-設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッションの間、作成している設定の種類に対応するオブジェクト (**Settings**、**CustomProperties**、**RoamingSettings**) の **get**、**set**、**remove** メソッドを使用し、メモリ内で設定全体が管理されます。 
+前のアドイン セッションで設定プロパティ バッグが保存されると、アドインが初期化されるとき、またはその後のアドインの現在のセッション中の任意の時点で、その設定プロパティ バッグを読み込むことができます。セッションの間、設定は、作成している設定の種類に対応するオブジェクト ( **Settings**、 **CustomProperties**、または  **RoamingSettings**) の  **get**、 **set**、および  **remove** メソッドを使用して、全体がメモリ内で管理されます。 
 
 
 > [!IMPORTANT]
-> アドインの現行セッション中に行われた追加、更新、または削除を保存場所に保持するには、その種の設定の操作で使用される、対応するオブジェクトの **saveAsync** メソッドを呼び出す必要があります。 **get**、**set**、**remove** メソッドは、設定プロパティ バッグのメモリ内コピーでのみ動作します。 **saveAsync** の呼び出しなしにアドインが閉じられた場合、そのセッション中に設定に対して行われた変更は失われます。 
+> アドインの現在のセッションの間に行われた追加、更新、または削除を保存場所に保持するには、その種の設定を操作する際に使用する、対応するオブジェクトの **saveAsync** メソッドを呼び出す必要があります。**get**、**set**、および **remove** メソッドは、設定プロパティ バッグのメモリ内コピーにのみ作用します。**saveAsync** の呼び出しなしにアドインが閉じられた場合、そのセッションの間に設定に対して行われた変更は失われます。 
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法

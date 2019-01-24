@@ -2,12 +2,13 @@
 title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 01/09/2019
-ms.openlocfilehash: 2e829fbdb73b8ea450486fe2fef3e839213c970b
-ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
+localization_priority: Priority
+ms.openlocfilehash: ce56518759740e20f2643bb675274602b3d968a4
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "27896344"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389229"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 

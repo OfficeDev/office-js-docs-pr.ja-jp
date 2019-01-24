@@ -2,12 +2,13 @@
 title: 検索オプションを使用して Word アドインでテキストを検索する
 description: ''
 ms.date: 07/20/2018
-ms.openlocfilehash: 36946f7b9bbcb4c8b5ceca1e8b88e7588c0814ce
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 3e97a9ff41ac2969eddafe8c5b4e762bcc70289b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457727"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386765"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>検索オプションを使用して Word アドインでテキストを検索する 
 

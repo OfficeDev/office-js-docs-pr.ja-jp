@@ -2,12 +2,13 @@
 title: Office アドインの認証設計ガイドライン
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: ab34c7b0ecfbdfeab4947bd5463b94801b1b1a29
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 937f1a78dfb4276df4aa17ab48dfa15cfd937861
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457825"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388865"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 

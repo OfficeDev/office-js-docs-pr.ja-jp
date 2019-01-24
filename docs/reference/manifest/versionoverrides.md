@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの VersionOverrides 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: a8bdc18b289d8d83336b0ce270f36d71170aecbf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433881"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387801"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -34,9 +35,10 @@ ms.locfileid: "27433881"
 |  **VersionOverrides**    |  いいえ  | より新しいスキーマ バージョンでアドイン コマンドを定義します。詳細については、「[複数のバージョンを実装する](#implementing-multiple-versions)」を参照してください。 |
 |  **WebApplicationInfo**    |  いいえ  | アドインの関連 Web アプリケーションについての詳細を指定します。 |
 
-
-
 ### <a name="versionoverrides-example"></a>VersionOverrides の例
+
+次の一般的な例では`<VersionOverrides>`、必須ではありませんが、通常使用されるいくつかの子要素を含む要素です。
+
 ```xml
 <OfficeApp>
 ...
@@ -97,6 +99,7 @@ VersionOverrides v1.0 と v1.1 の両方のスキーマを実装するための�
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

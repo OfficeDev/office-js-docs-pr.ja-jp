@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 21def2de7168ff06c1eda26add07c33d366ec296
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: ec00196521c2de18e63c9092064eb32a8a6e8c1a
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433965"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386842"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -33,7 +34,7 @@ ms.locfileid: "27433965"
 次の例は、 **PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
 > [!IMPORTANT] 
-> ID 属性を含む要素では、一意の ID を指定してください。 会社の名前と ID を使用することをお勧めします。 たとえば、次の形式にします。 <CustomTab id="mycompanyname.mygroupname">
+> ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -79,7 +80,7 @@ ms.locfileid: "27433965"
 |**Label**|必須。グループのラベル。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
 |**Icon**|必須。小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid** 属性は、 **Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。3 つのイメージのサイズ (16、32、80) が必要です。5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
 |**Tooltip**|省略可能。グループのツールヒント。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
-|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 **Control** 要素は、**Button** または **Menu** のどちらかになります。 ボタン コントロールのドロップダウン リストを指定する場合は、**Menu** を使用します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:** トラブルシューティングを簡単にするために、**Control** 要素と関連する **Resources** 子要素を一度に 1 つずつ追加することをお勧めします。|
+|**Control**|各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](control.md#button-control)」および「[メニュー コントロール](control.md#menu-dropdown-button-controls)」のセクションをご覧ください。<br/>**注:** トラブルシューティングを簡単にするために、**Control** 要素と関連する **Resources** 子要素を一度に 1 つずつ追加することをお勧めします。|
 |**スクリプト**|カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。 Developer Preview では、この要素は使用しません。 代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。|
 |**Page**|カスタム関数についての HTML ページにリンクします。|
 

@@ -2,12 +2,13 @@
 title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: ''
 ms.date: 12/28/2018
-ms.openlocfilehash: 843f57f8e5dc20d4341749f4594e0bd8139e60fa
-ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
+localization_priority: Priority
+ms.openlocfilehash: 505c22d2a3230aeafaf4d0c62a371a2ab93b3a9a
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/29/2018
-ms.locfileid: "27460871"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386786"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 

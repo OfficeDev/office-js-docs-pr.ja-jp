@@ -2,23 +2,24 @@
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 4130f6cce3906e2d1f455ec82b5e250d84dcdf9d
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5ce8ac0c56a7d6a499f601fcc0767a1e76ea14cc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459323"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388613"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
-この記事では、 `VLOOKUP` や `SUM` などのExcel の JavaScript API を使用して組み込みの Excel ワークシート関数を呼び出す方法を説明います。Excel の JavaScript API を使用して呼び出すことができる組み込みの Excel ワークシート関数の完全な一覧も提供します。
+この記事では、Excel JavaScript API を使用して、Excel の組み込みワークシート関数 (`VLOOKUP` や `SUM` など) を呼び出す方法について説明します。 また、Excel JavaScript API を使用して呼び出し可能な Excel の組み込みワークシート関数の完全な一覧も示します。
 
 > [!NOTE]
 > Excel JavaScript API を使用して Excel の*カスタム関数*を作成する方法については、「[Excel でのカスタム関数の作成](custom-functions-overview.md)」を参照してください。
 
 ## <a name="calling-a-worksheet-function"></a>ワークシート関数の呼び出し
 
-次のコード スニペットは、ワークシート関数を呼び出す方法を示しまています。 `sampleFunction()` は関数呼び出しと関数を必要とする入力パラメーターの名前で置き換えられるプレース ホルダーです。ワークシート関数によって返される **FunctionResult** オブジェクトの **value** プロパティには、指定した関数の結果が含まれています。次の使用例が示すようにする必要があります `load` ことを確認できる前に、 **FunctionResult** オブジェクトの **value** プロパティです。この例では、関数の結果が単にコンソールに書き込まれています。 
+次のコード スニペットは、ワークシート関数の呼び出し方法を示しています。`sampleFunction()` の部分はプレースホルダーであり、呼び出す関数の名前と関数が必要とする入力パラメーターに置き換えます。 ワークシート関数から返される **FunctionResult** オブジェクトの **value** プロパティには、指定した関数の結果が格納されます。 この例に示すように、**FunctionResult** の **value** プロパティは、読み込み前に `load` しておく必要があります。 この例では、関数の結果は単にコンソールに書き出されます。 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -34,7 +35,7 @@ return context.sync()
 
 ## <a name="sample-data"></a>サンプル データ
 
-次の図は、3 か月にわたるさまざまな種類のツールの販売データを含む Excel ワークシートでテーブルを示しています。テーブルの各番号は、特定の月の特定のツールの販売単位の数を表します。以下の例では、このデータに組み込みワークシート関数を適用する方法を示します。
+次の画像は、各種工具の 3 か月間の販売データを格納する Excel ワークシートのテーブルを示しています。 テーブル内のそれぞれの数値は、特定の期間に特定のツールが販売された単位数を表しています。 この後の各例では、このデータに組み込みワークシート関数を適用する方法を示します。
 
 ![11 月、12 月、および 1 月のハンマー、レンチ、およびノコギリの販売データに関する Excel のスクリーンショット](../images/worksheet-functions-chaining-results.jpg)
 
@@ -59,7 +60,7 @@ Excel.run(function (context) {
 
 次のコード例では、前述のサンプル データに `VLOOKUP` 関数を適用して 11 月のレンチの販売数と 12 月のレンチの販売数を特定してから、その 2 か月間に販売したレンチの合計数を計算するために `SUM` 関数を適用しています。 
 
-この例が示すように、複数の関数の呼び出しが別の関数の呼び出しの中で入れ子になっている場合、必要なのは `load` を後で参照する最終的な結果 (この例では、 `sumOfTwoLookups`)だけです。中間結果 (この例では、それぞれの `VLOOKUP` 関数の結果) が計算され、最終的な結果を計算するために使用します。
+この例で示すように、1 つ以上の関数呼び出しが別の関数呼び出し内で入れ子にされているときには、その後で読み取ることが必要になる最終結果 (この例では、`sumOfTwoLookups`) の `load` を実行するだけで済みます。 中間結果 (この例では、それぞれの `VLOOKUP` 関数の結果) は計算され、最終結果を計算するために使用されます。
 
 ```js
 Excel.run(function (context) {
@@ -212,7 +213,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/FINVRT-function-d371aa8f-b0b1-40ef-9cc2-496f0693ac00" target="_blank">F.INV.RT 関数</a> | FunctionResult | F 分布の確率関数の逆関数の値を返します。 |
 | <a href="https://support.office.com/article/FACT-function-ca8588c2-15f2-41c0-8e8c-c11bd471a4f3" target="_blank">FACT 関数</a> | FunctionResult | 数値の階乗を返します。 |
 | <a href="https://support.office.com/article/FACTDOUBLE-function-e67697ac-d214-48eb-b7b7-cce2589ecac8" target="_blank">FACTDOUBLE 関数</a> | FunctionResult | 数値の二重階乗を返します。 |
-| <a href="https://support.office.com/article/FALSE-function-2d58dfa5-9c03-4259-bf8f-f0ae14346904" target="_blank">FALSE 関数</a> | FunctionResult | |||UNTRANSLATED_CONTENT_START|||Returns the logical value|||UNTRANSLATED_CONTENT_END||| `FALSE` |
+| <a href="https://support.office.com/article/FALSE-function-2d58dfa5-9c03-4259-bf8f-f0ae14346904" target="_blank">FALSE 関数</a> | FunctionResult | 論理値 `FALSE` を返します。 |
 | <a href="https://support.office.com/article/FIND-FINDB-functions-c7912941-af2a-4bdf-a553-d0d89b0a0628" target="_blank">FIND 関数、FINDB 関数</a> | FunctionResult | 指定されたテキスト値を他のテキスト値の中で検索します。大文字と小文字は区別されます。 |
 | <a href="https://support.office.com/article/FISHER-function-d656523c-5076-4f95-b87b-7741bf236c69" target="_blank">FISHER 関数</a> | FunctionResult | フィッシャー変換の値を返します。 |
 | <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">FISHERINV 関数</a> | FunctionResult | フィッシャー変換の逆関数値を返します。 |
@@ -398,11 +399,11 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/SUMSQ-function-e3313c02-51cc-4963-aae6-31442d9ec307" target="_blank">SUMSQ 関数</a> | FunctionResult | 引数の 2 乗の和 (平方和) を返します。 |
 | <a href="https://support.office.com/article/SYD-function-069f8106-b60b-4ca2-98e0-2a0f206bdb27" target="_blank">SYD 関数</a> | FunctionResult | 級数法 (Sum-of-Year's Digits Method) を使用して、特定の期における減価償却費を返します。 |
 | <a href="https://support.office.com/article/T-function-fb83aeec-45e7-4924-af95-53e073541228" target="_blank">T 関数</a> | FunctionResult | 引数をテキストに変換します。 |
-| <a href="https://support.office.com/article/TDIST-function-4329459f-ae91-48c2-bba8-1ead1c6c21b2" target="_blank">T.DIST 関数</a> | FunctionResult | 学生の t 分布のパーセンテージ (確率) を返します。 |
-| <a href="https://support.office.com/article/TDIST2T-function-198e9340-e360-4230-bd21-f52f22ff5c28" target="_blank">T.DIST.2T 関数</a> | FunctionResult | 学生の t 分布のパーセンテージ (確率) を返します。 |
-| <a href="https://support.office.com/article/TDISTRT-function-20a30020-86f9-4b35-af1f-7ef6ae683eda" target="_blank">T.DIST.RT 関数</a> | FunctionResult | 学生の t 分布の値を返します。 |
-| <a href="https://support.office.com/article/TINV-function-2908272b-4e61-4942-9df9-a25fec9b0e2e" target="_blank">T.INV 関数</a> | FunctionResult | 学生の t 分布の t 値を、確率の関数と自由度で返します。 |
-| <a href="https://support.office.com/article/TINV2T-function-ce72ea19-ec6c-4be7-bed2-b9baf2264f17" target="_blank">T.INV.2T 関数</a> | FunctionResult | 学生の t 分布の逆関数値を返します。 |
+| <a href="https://support.office.com/article/TDIST-function-4329459f-ae91-48c2-bba8-1ead1c6c21b2" target="_blank">T.DIST 関数</a> | FunctionResult | スチューデントの t 分布のパーセンテージ (確率) を返します。 |
+| <a href="https://support.office.com/article/TDIST2T-function-198e9340-e360-4230-bd21-f52f22ff5c28" target="_blank">T.DIST.2T 関数</a> | FunctionResult | スチューデントの t 分布のパーセンテージ (確率) を返します。 |
+| <a href="https://support.office.com/article/TDISTRT-function-20a30020-86f9-4b35-af1f-7ef6ae683eda" target="_blank">T.DIST.RT 関数</a> | FunctionResult | スチューデントの t 分布の値を返します。 |
+| <a href="https://support.office.com/article/TINV-function-2908272b-4e61-4942-9df9-a25fec9b0e2e" target="_blank">T.INV 関数</a> | FunctionResult | スチューデントの t 分布の t 値を、確率の関数と自由度で返します。 |
+| <a href="https://support.office.com/article/TINV2T-function-ce72ea19-ec6c-4be7-bed2-b9baf2264f17" target="_blank">T.INV.2T 関数</a> | FunctionResult | スチューデントの t 分布の逆関数値を返します。 |
 | <a href="https://support.office.com/article/TAN-function-08851a40-179f-4052-b789-d7f699447401" target="_blank">TAN 関数</a> | FunctionResult | 数値の正接 (タンジェント) を返します。 |
 | <a href="https://support.office.com/article/TANH-function-017222f0-a0c3-4f69-9787-b3202295dc6c" target="_blank">TANH 関数</a> | FunctionResult | 数値の双曲線正接を返します。 |
 | <a href="https://support.office.com/article/TBILLEQ-function-2ab72d90-9b4d-4efe-9fc2-0f81f2c19c8c" target="_blank">TBILLEQ 関数</a> | FunctionResult | 米国財務省短期証券 (TB) の債券換算利回りを返します。 |
@@ -414,7 +415,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/TODAY-function-5eb3078d-a82c-4736-8930-2f51a028fdd9" target="_blank">TODAY 関数</a> | FunctionResult | 現在の日付に対応するシリアル値を返します。 |
 | <a href="https://support.office.com/article/TRIM-function-410388fa-c5df-49c6-b16c-9e5630b479f9" target="_blank">TRIM 関数</a> | FunctionResult | テキストからスペースを削除します。 |
 | <a href="https://support.office.com/article/TRIMMEAN-function-d90c9878-a119-4746-88fa-63d988f511d3" target="_blank">TRIMMEAN 関数</a> | FunctionResult | データ セットの中間項の平均を返します。 |
-| <a href="https://support.office.com/article/TRUE-function-7652c6e3-8987-48d0-97cd-ef223246b3fb" target="_blank">TRUE 関数</a> | FunctionResult | |||UNTRANSLATED_CONTENT_START|||Returns the logical value|||UNTRANSLATED_CONTENT_END||| `TRUE` |
+| <a href="https://support.office.com/article/TRUE-function-7652c6e3-8987-48d0-97cd-ef223246b3fb" target="_blank">TRUE 関数</a> | FunctionResult | 論理値 `TRUE` を返します。 |
 | <a href="https://support.office.com/article/TRUNC-function-8b86a64c-3127-43db-ba14-aa5ceb292721" target="_blank">TRUNC 関数</a> | FunctionResult | 数値の小数部を切り捨てて整数にします。 |
 | <a href="https://support.office.com/article/TYPE-function-45b4e688-4bc3-48b3-a105-ffa892995899" target="_blank">TYPE 関数</a> | FunctionResult | 値のデータ型を表す数値を返します。 |
 | <a href="https://support.office.com/article/UNICHAR-function-ffeb64f5-f131-44c6-b332-5cd72f0659b8" target="_blank">UNICHAR 関数</a> | FunctionResult | 指定された数値により参照される Unicode 文字を返します。 |
@@ -444,6 +445,6 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel の JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
 - [関数クラス (Excel の JavaScript API を参照)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [Workbook オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [ブック関数オブジェクト (Excel の JavaScript API を参照)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)

@@ -2,12 +2,13 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: d0235f767dd6c41b10d7d594425da603d6a523da
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: d25461b3d3bdb6db96cb897575efe0ecb5fe1439
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457937"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386856"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 

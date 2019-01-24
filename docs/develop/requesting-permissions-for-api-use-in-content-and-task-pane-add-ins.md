@@ -2,12 +2,13 @@
 title: コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: eb80c0b18848da9f0844ae3eef5f3c5dc467d932
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 83e0ef9c77ad74b6d4557ac49555beda3800e6f1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457965"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386884"
 ---
 # <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
 

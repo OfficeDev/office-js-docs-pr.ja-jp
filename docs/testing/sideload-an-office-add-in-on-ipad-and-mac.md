@@ -2,12 +2,13 @@
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: be8202d740182dd472daa685cd8ce4dd5ff29e40
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: cf27b72fe744358f902d36ebd2b89a432aa305f5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270797"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388193"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 

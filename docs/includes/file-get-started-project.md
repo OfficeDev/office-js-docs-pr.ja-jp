@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 838db9c0e4a65a8b3ee95deeff5dc04fb0907355
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726983"
+---
 # <a name="build-your-first-project-add-in"></a>最初の Project アドインをビルドする
 
 この記事では、jQuery と Office JavaScript API を使用して Project アドインを作成する手順について説明します。
@@ -74,13 +82,14 @@
 
         var taskGuid;
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#get-task-guid').click(getTaskGUID);
                 $('#get-task').click(getTask);
             });
-        };
+        });
 
         function getTaskGUID() {
             Office.context.document.getSelectedTaskAsync(function (asyncResult) {

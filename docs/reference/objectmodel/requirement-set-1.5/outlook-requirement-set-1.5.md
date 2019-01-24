@@ -1,13 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.5
 description: ''
-ms.date: 11/14/2018
-ms.openlocfilehash: dc6432c3e55ed75c120c2872233ca0f275010e73
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/16/2019
+localization_priority: Normal
+ms.openlocfilehash: fde394ff4b75e0f6b160f5d56cb73adc9da9dede
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433930"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388381"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook アドイン API 要件セット 1.5
 
@@ -28,7 +29,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 ### <a name="change-log"></a>変更ログ
 
 - [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#addhandlerasynceventtype-handler-options-callback) が追加されました。サポートされているイベントのイベント ハンドラーを追加します。
-- [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-handler-options-callback) が追加されました。サポートされているイベントのイベント ハンドラーを削除します。
+- [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback)を追加する: サポートされているイベントの種類のイベント ハンドラーを削除します。
 - [Office.EventType](office.md#eventtype-string) が追加されました。イベント ハンドラーに関連付けられているイベントを指定し、ItemChanged イベントのサポートが含まれるようになります。
 - [Office.context.mailbox.restUrl](office.context.mailbox.md#resturl-string) が追加されました。この電子メール アカウントの REST エンドポイントの URL を取得します。
 - [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback) が変更されました。このメソッドの新しい署名付きの新しいバージョン (`getCallbackTokenAsync([options], callback)`) が追加されました。元のバージョンは引き続き使用でき、変更されていません。

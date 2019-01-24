@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f090023acbeae8bab9e25a36b64669c7d033daea
+ms.sourcegitcommit: 319780e4fb77b97d16d5657950e4eb84415eb7eb
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "28725533"
+---
 # <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを作成する
 
 この記事では、React と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
@@ -140,6 +148,8 @@
 5. ファイル **src/components/App.tsx** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```typescript
+    /* global Office, Excel */
+
     import * as React from 'react';
     import { Header } from './Header';
     import { Content } from './Content';

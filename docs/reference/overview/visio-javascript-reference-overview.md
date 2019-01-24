@@ -2,12 +2,13 @@
 title: Visio JavaScript API の概要
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: f530e1541146fb2f38209845791132b789577640
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 0a3a141ec624a2e509ae34290691bff6e8e529a5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432936"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389439"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -65,7 +66,7 @@ function hideToolbars() {
 
 アドインで宣言され使用される Visio の JavaScript オブジェクトは、Visio 図面の実際のオブジェクトのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、`context.sync()` の実行時に同期されます。
 
-たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 **sync()** メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
+たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。Sync() メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
 
 ```js
 var activePage = context.document.getActivePage();

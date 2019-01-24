@@ -2,12 +2,13 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9fc6e526587a6256e5ee51effe3bdb5cfe27af47
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: db38a25f87cf8d4de65b611d26de15da06892f05
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458035"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388347"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
