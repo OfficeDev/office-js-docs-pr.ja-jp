@@ -1,13 +1,14 @@
 ---
-title: React を使用して Excel のアドインを構築する
+title: React を使用して Excel のアドインを作成する
 description: ''
 ms.date: 10/19/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: b15c7b11428518c6317e73af996af8a05ee17031
-ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
+localization_priority: Priority
+ms.openlocfilehash: 3a45dd0bcb0ba309e21a28e68fa175d088060678
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "25681792"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388676"
 ---
 [!include[Excel add-ins get started react](../includes/file-get-started-excel-react.md)]
