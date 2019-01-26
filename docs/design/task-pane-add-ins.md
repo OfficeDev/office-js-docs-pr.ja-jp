@@ -1,13 +1,14 @@
 ---
 title: Office アドインの作業ウィンドウ
-description: 作業ウィンドウは、ドキュメントや電子メールを変更するコードを実行するインターフェイスのコントロールにユーザーがアクセスできるようにまたは、データ ソースからデータを表示します。
+description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 12/04/2017
-ms.openlocfilehash: fefba14528a4fc3a75b0936c8f5e2ae1bf01ca1b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: f9cbbf3a696eb4b3b6a8622f275c2b1808aff643
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943944"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389320"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
@@ -22,7 +23,7 @@ ms.locfileid: "23943944"
 |**するべきこと**|**してはいけないこと**|
 |:-----|:--------|
 |<ul><li>タイトルにアドインの名前を含めます。</li></ul>|<ul><li>タイトルには会社名を追加しません。</li></ul>|
-|<ul><li>タイトルには短い説明的な名前を使用します。</li></ul>|<ul><li>アドインのタイトルに “Add-in”、“For Word”、“for Office” などの文字列を追加しません。</li></ul>|
+|<ul><li>タイトルには短くわかりやすい名前を使用します。</li></ul>|<ul><li>アドインのタイトルに “add-in”、“for Word”、“for Office” などの文字列を追加しません。</li></ul>|
 |<ul><li>アドインの上部に CommandBar や Pivot などのナビゲーション要素やコマンド要素を含めます。</li></ul>||
 |<ul><li>アドインを Outlook 内で使用する場合を除き、アドインの下部に BrandBar などのブランド化の要素を含めます。</li></ul>||
 

@@ -2,17 +2,18 @@
 title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
 ms.date: 03/14/2018
-ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6252a713444f7ec8bf955c3283a650f72cbcbed1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945765"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386555"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
 
-ビルドし、Windows または Office のデスクトップ クライアントを実行していないコンピューター上のアドインをデバッグする&mdash;、mac 上で開発している場合など、 Office Online を使用してアドインのテストとデバッグを行う方法 
+Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。 この記事では、Office Online を使用してアドインのテストとデバッグを行う方法を説明します。 
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -21,7 +22,7 @@ ms.locfileid: "23945765"
 - Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
     
   > [!NOTE]
-  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 Developer プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 Developer プログラムのドキュメント](https://docs.microsoft.com/office/developer-program/office-365-developer-program)を参照してください。
+  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](https://docs.microsoft.com/office/developer-program/office-365-developer-program)を参照してください。
      
 - Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
     

@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox - 要件セット 1.5
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: c80ed3837315f3bf51da302d91f08e2114af3b2f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 01/16/2019
+localization_priority: Priority
+ms.openlocfilehash: fb84d1e7a5ffd1a5549f213e63ae827f8a883d34
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433958"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389432"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -41,7 +42,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | メソッド |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | メソッド |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | メソッド |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | メソッド |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | メソッド |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -637,9 +638,9 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-handler-options-callback"></a>removeHandlerAsync(eventType, handler, [options], [callback])
+####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
-サポートされているイベントのイベント ハンドラーを削除します。
+サポートされているイベントの種類のイベント ハンドラーを削除します。
 
 現在、サポートされているイベントの種類は `Office.EventType.ItemChanged` だけです。
 
@@ -648,8 +649,7 @@ function callback(asyncResult)  {
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
-| `handler` | 職務 || イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。 |
-| `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options` | オブジェクト | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.asyncContext` | Object | &lt;optional&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 

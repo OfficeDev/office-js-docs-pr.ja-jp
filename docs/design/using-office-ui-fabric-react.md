@@ -2,12 +2,13 @@
 title: Office アドインでの Office UI Fabric React の使用
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 4baeea20457892bcc7b94b381f5c0a577274408a
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944276"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389285"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -20,12 +21,12 @@ Office UI Fabric は、Office と Office 365 のユーザー エクスペリエ�
 
 ## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>手順 1 - Office 用の Yeoman ジェネレーターでプロジェクトを作成
 
-Fabric React を使用するアドインを作成するには、Office 用の Yeoman ジェネレーターの使用をお勧めします。Office 用の Yeoman ジェネレーターは、Office アドインを開発するために必要なプロジェクトのスキャフォールディングとビルドの管理を提供します。
+Fabric React を使用するアドインを作成するには、Office 用の Yeoman ジェネレーターの使用をお勧めします。 Office 用の Yeoman ジェネレーターは、Office アドインを開発するために必要なプロジェクトのスキャフォールディングとビルドの管理を提供します。
 
 プロジェクトを作成するには、**Windows PowerShell** (コマンド プロンプトではありません) を使用して、次の手順を実行します。
 
 1. 必須コンポーネントをインストールします。
-2. を実行して、アドイン用のプロジェクト ファイルを作成します。`yo office`
+2. `yo office` を実行して、アドイン用のプロジェクト ファイルを作成します。
 3. Office クライアント アプリケーションを選択するように促されたら、**Word** を選択します。
 4. プロジェクト ファイルと同じディレクトリにいることを確認し、`npm start` を実行します。スピナーを表示するブラウザー ウィンドウが自動的に開きます。
 5. [マニフェストをサイドロード](..\testing\test-debug-office-add-ins.md)し、アドインのすべての UI を表示します。
@@ -75,11 +76,11 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 このコードは、次の処理を実行します。
 
-- を使用して、React ライブラリを参照します。`import * as React from 'react';`
-- の作成に使用する Fabric コンポーネント (PrimaryButton、IButtonProps、Label) を参照します。`ButtonPrimaryExample`
-- を使用して、新しいパブリック `ButtonPrimaryExample` コンポーネントを宣言して作成します。`export class ButtonPrimaryExample extends React.Component`
-- イベントを処理する `insertText` 関数を宣言します。`onClick`
-- 関数で React コンポーネントの UI を定義します。レンダリングで、コンポーネントの構造を定義します。`render` で、`this.insertText` を使って `onClick` イベントの関連付けを行います。`render`
+- `import * as React from 'react';` を使用して、React ライブラリを参照します。
+- `ButtonPrimaryExample` の作成に使用する Fabric コンポーネント (PrimaryButton、IButtonProps、Label) を参照します。
+- `export class ButtonPrimaryExample extends React.Component` を使用して、新しいパブリック `ButtonPrimaryExample` コンポーネントを宣言して作成します。
+- `onClick` イベントを処理する `insertText` 関数を宣言します。
+- `render` 関数で React コンポーネントの UI を定義します。レンダリングで、コンポーネントの構造を定義します。`render` で、`this.insertText` を使って `onClick` イベントの関連付けを行います。
 
 ## <a name="step-3---add-the-react-component-to-your-add-in"></a>手順 3 - React コンポーネントをアドインに追加
 

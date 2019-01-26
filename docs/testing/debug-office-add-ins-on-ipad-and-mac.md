@@ -2,12 +2,13 @@
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 6f6ba8744a6510a37166325595407c990a53b079
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 058f3cb4a4acc77a5c4fcd4559970187842c2c4b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945037"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388032"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
@@ -15,11 +16,11 @@ Windows でのアドインの開発とデバッグには Visual Studio を使用
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
 
-タスクペインまたはコンテンツアドインに UI を表示するアドインがある場合は、Safari Web インスペクター を使用して Office アドインをデバッグできます。 
+作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
 
-Mac で Office アドインをデバッグできるようにするには、Mac OS High Sierra および Mac Office バージョン 16.9.1（ビルド 18012504）以降が必要です。 Office Mac ビルドをお持ちでない場合は、 [Office 365 開発者向けプログラム](https://aka.ms/o365devprogram)に加入すると入手できます。
+Mac の Office アドインをデバッグするには、Mac OS High Sierra と Mac Office バージョン 16.9.1 (ビルド 18012504) 以降の両方が必要です。 Office Mac ビルドをまだお持ちでない場合は、[Office 365 Developer Program](https://aka.ms/o365devprogram) に参加することで入手できます。
 
-開始するには、端末を開いて、以下のとおりに `OfficeWebAddinDeveloperExtras` 関連する Office アプリケーションのプロパティを設定します。
+最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
 
 - `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
 
@@ -29,28 +30,34 @@ Mac で Office アドインをデバッグできるようにするには、Mac O
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-次に、Office アプリケーションを開き、アドインを挿入します。 アドインを右クリックすると、コンテキストメニューで **[要素の検査]** オプションが表示されます。  そのオプションを選択すると、インスペクタが起動します。インスペクタで、ブレークポイントを設定してアドインをデバッグできます。
+次に Office アプリケーションを開き、アドインを挿入します。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。  このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
 
 > [!NOTE]
-> これは実験的な機能であり、Office アプリケーションの今後のバージョンでこの機能が維持されるという保証はありません。
+> これは試験的な機能であり、Office アプリケーションの将来のバージョンでこの機能が維持されるかどうかは保証されない点に注意してください。
+>
+> インスペクタを使用するとダイアログのちらつきが発生する場合は、次の回避策を試してください。
+> 1. ダイアログのサイズを変更します。
+> 2. **[要素の検査]** を選択します (新しいウィンドウが開きます)。
+> 3. ダイアログを元のサイズに変更します。
+> 4. 必要に応じてインスペクタを使用します。
 
 ## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>iPad または Mac での Vorlon.JS を使用したデバッグ
 
-iPad または Mac でアドインをデバッグするには、F12 ツールに似た Web ページのデバッガである Vorlon.JS を使用します。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については、[Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
+iPad または Mac でアドインをデバッグするには、Vorlon.JS (F12 ツールに似ている Web ページのデバッガー) を使用できます。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については、[Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
 
 
-### <a name="install-and-set-up-vorlonjs"></a>Vorlon.JS のインストールとセットアップ  
+### <a name="install-and-set-up-vorlonjs"></a>Vorlon をインストールしてセットアップする  
 
 1.  管理者としてデバイスにログオンします。
 
-2.  まだ [Node.js](https://nodejs.org) をインストールしていない場合は、インストールします。 
+2.  まだ [Node.js](https://nodejs.org) をインストールしていない場合は、インストールします。
 
 3.  **[ターミナル]** ウィンドウを開き、コマンド `npm i -g vorlon` を入力します。ツールが `/usr/local/lib/node_modules/vorlon` にインストールされます。
 
 
 ### <a name="configure-vorlonjs-to-use-https"></a>Vorlon.JS を構成して HTTPS を使用する
 
-Vorlon.JS を使用してアプリケーションをデバッグするには、既知の場所から Vorlon.JS スクリプトを読み込むアプリケーションの開始ページに `<script>` タグを追加します (詳細については、次の手順を参照してください)。アドインが SSL 保護付き (HTTPS) の場合、アドインで使用するすべてのスクリプトは HTTPS サーバーからホストされるように拡張する必要があります。これには、Vorlon.JS スクリプトも含まれます。そのため、アドインで Vorlon.JS を使用するには、Vorlon.JS を構成して SSL を使用することが必要になります。 
+Vorlon.JS を使用してアプリケーションをデバッグするには、既知の場所から Vorlon.JS スクリプトを読み込むアプリケーションの開始ページに `<script>` タグを追加します (詳細については、次の手順を参照してください)。アドインが SSL 保護付き (HTTPS) の場合、アドインで使用するすべてのスクリプトは HTTPS サーバーからホストされるように拡張する必要があります。これには、Vorlon.JS スクリプトも含まれます。そのため、アドインで Vorlon.JS を使用するには、Vorlon.JS を構成して SSL を使用することが必要になります。
 
 > [!IMPORTANT]
 > [!include[HTTPS guidance](../includes/https-guidance.md)]
@@ -75,14 +82,14 @@ Vorlon.JS を使用してアプリケーションをデバッグするには、�
 
 10. ファイルを保存し、エディターを閉じます。
 
-11. **[検索]** で `/usr/local/lib/node_modules/vorlon` に移動して、`Server` サブフォルダーを右クリックし、**[フォルダーの新しいターミナル]** を選択します。 
-    
+11. **[検索]** で `/usr/local/lib/node_modules/vorlon` に移動して、`Server` サブフォルダーを右クリックし、**[フォルダーの新しいターミナル]** を選択します。
+
 12. **[ターミナル]** ウィンドウで、`sudo vorlon` と入力します。管理者パスワードの入力を求めるダイアログ ボックスが表示されます。Vorlon サーバーが起動します。**[ターミナル]** ウィンドウを開いたままにしておきます。
 
-13. ブラウザー ウィンドウを開き、Vorlon.JS インターフェイスの `https://localhost:1337` に進みます。ダイアログ ボックスが表示されたら、**[常に]** を選択して、セキュリティ証明書を信頼します。 
+13. ブラウザー ウィンドウを開き、Vorlon.JS インターフェイスの `https://localhost:1337` に進みます。ダイアログ ボックスが表示されたら、**[常に]** を選択して、セキュリティ証明書を信頼します。
 
     > [!NOTE]
-    > ダイアログ ボックスが表示されない場合は、手動で証明書を信頼する必要があります。証明書ファイルは `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt` です。次の手順を実行し、問題が発生した場合は、Macintosh または iPad のヘルプを参照してください。 
+    > ダイアログ ボックスが表示されない場合は、手動で証明書を信頼する必要があります。証明書ファイルは `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt` です。次の手順を実行し、問題が発生した場合は、Macintosh または iPad のヘルプを参照してください。
     >
     > 1. ブラウザー ウィンドウを閉じ、Vorlon サーバーを実行している **[ターミナル]** ウィンドウで、Control-C を使用してサーバーを停止します。
     > 2. **[Finder]** で、`server.crt` ファイルを右クリックして、**[キーチェーンアクセス]** を選択します。**[キーチェーンアクセス]** ウィンドウが開きます。
@@ -97,10 +104,10 @@ Vorlon.JS を使用してアプリケーションをデバッグするには、�
 1. 次のスクリプト タグを、アドインの home.html ファイル (またはメイン HTML ファイル) の `<head>` セクションに追加します。
 
     ```html
-    <script src="https://localhost:1337/vorlon.js"></script>    
+    <script src="https://localhost:1337/vorlon.js"></script>
     ```  
 
-2. Azure Web サイトなど、Mac または iPad からアクセス可能な Web サーバーにアドイン Web アプリケーションを展開します。 
+2. Azure Web サイトなど、Mac または iPad からアクセス可能な Web サーバーにアドイン Web アプリケーションを展開します。
 
 3. アドイン マニフェストに URL が表示されるすべての場所で、アドインの URL を更新します。
 
@@ -110,18 +117,18 @@ Vorlon.JS を使用してアプリケーションをデバッグするには、�
 ### <a name="inspect-an-add-in-in-vorlonjs"></a>Vorlon.JS でアドインを検査する
 
 1. Vorlon サーバーが実行されていない場合、**[Finder]** で `/usr/local/lib/node_modules/vorlon` に移動して、`Server` サブフォルダーを右クリックし、**[フォルダーの新しいターミナル]** を選択します。 
-    
+
 2.  **[ターミナル]** ウィンドウで、`sudo vorlon` と入力します。管理者パスワードの入力を求めるダイアログ ボックスが表示されます。Vorlon サーバーが起動します。**[ターミナル]** ウィンドウを開いたままにしておきます。
 
 3.  ブラウザー ウィンドウを開き、Vorlon.JS インターフェイスの `https://localhost:1337` に進みます。
 
-4. アドインをサイドロードします。アドインが Excel、PowerPoint、または Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。それ以外の場合は、ボタンを選択してアドインを開きます。Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
+4. アドインをサイドロードします。 アドインが Excel、PowerPoint、Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。 アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。 アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。 それ以外の場合は、ボタンを選択してアドインを開きます。 Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
 
-アドインは、Vorlon.JS のクライアントのリスト (Vorlon.JS インターフェイスの左側) に **{OS} - n** として表示されます。*n* は数値、*{OS}* は "Macintosh" などのデバイスの種類です。 
+アドインは、Vorlon.JS のクライアントのリスト (Vorlon.JS インターフェイスの左側) に **{OS} - n** として表示されます。*n* は数値、*{OS}* は "Macintosh" などのデバイスの種類です。
 
-![Vorlon.js インターフェイスを示すスクリーン ショット](../images/vorlon-interface.png)
+![Vorlon.js インターフェイスを示すスクリーンショット](../images/vorlon-interface.png)
 
-Vorlon ツールには、さまざまなプラグインがあります。現在有効になっているプラグインはツールの上部にタブとして表示されます。(左側にある歯車アイコンを選択すると、さらに別のプラグインを有効にすることができます。)これらのプラグインは、F12 ツールの機能に似ています。たとえば、DOM 要素の強調表示、コマンドの実行などを行えます。詳細については、[Vorlon ドキュメントの「コア プラグイン」](http://vorlonjs.com/documentation/#console)を参照してください。 
+Vorlon ツールには、さまざまなプラグインがあります。現在有効になっているプラグインはツールの上部にタブとして表示されます。 (左側にある歯車アイコンを選択すると、さらに別のプラグインを有効にすることができます。)これらのプラグインは、F12 ツールの機能に似ています。 たとえば、DOM 要素の強調表示、コマンドの実行などを行えます。 詳細については、[Vorlon ドキュメントの「コア プラグイン」](http://vorlonjs.com/documentation/#console)を参照してください。
 
 **Office アドイン** プラグインにより Office.js に特別な機能 (オブジェクト モデルを調査する機能、Office.js の呼び出しを実行する機能、およびオブジェクト プロパティの値を読み取る機能など) が追加されます。手順については、「[Office アドインをデバッグするための VorlonJS プラグイン](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/)」を参照してください。
 
@@ -131,8 +138,8 @@ Vorlon ツールには、さまざまなプラグインがあります。現在�
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Mac または iPad 上の Office アプリケーションのキャッシュのクリア
 
-アドインはパフォーマンス上の理由から、Office for Mac でキャッシュされることが多いです。通常、キャッシュはアドインを再読み込みすることでクリアされます。同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。 
+アドインはパフォーマンス上の理由から、Office for Mac でキャッシュされることが多いです。通常、キャッシュはアドインを再読み込みすることでクリアされます。同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
 
-Mac では、`/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダー内にあるすべてを削除することによってキャッシュを手動でクリアできます。 
+Mac では、`/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダー内にあるすべてを削除することによってキャッシュを手動でクリアできます。
 
 iPad では、アドインの JavaScript から `window.location.reload(true)` を呼び出して、強制的に再読み込みすることができます。または、Office を再インストールすることができます。

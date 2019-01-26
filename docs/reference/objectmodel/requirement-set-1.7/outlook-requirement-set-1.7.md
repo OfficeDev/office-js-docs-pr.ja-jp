@@ -1,13 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.7
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 2e233c614a902a724ead0240c4e5229e1053ee81
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 01/16/2019
+localization_priority: Priority
+ms.openlocfilehash: 9023997e06a659252abeecca4681b2ec250fd63c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432313"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387969"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook アドイン API 要件セット 1.7
 
@@ -32,7 +33,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) が変更されました。作成モードで from 値を取得するように変更されました。
 - [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) が変更されました。作成モードで organizer 値を取得するように変更されました。
 - [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) が追加されました。予定アイテムの定期的なパターンを管理するメソッドを提供するオブジェクトを取得または設定する新しいプロパティが追加されました。 このプロパティを使用して、会議出席依頼アイテムの定期的なパターンを取得することもできます。
-- [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-handler-options-callback) が追加されました。イベント ハンドラーを削除する新しいメソッドが追加されました。
+- [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback) が追加されました。サポートされているイベントの種類のイベント ハンドラーを削除する新しいメソッドが追加されました。
 - [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string) が追加されました。オカレンスが属する系列の ID を取得する新しいプロパティが追加されました。
 - [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days) が追加されました。曜日または日付の種類を指定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.Month](/javascript/api/outlook_1_7/office.mailboxenums.month) が追加されました。月を指定する新しい列挙型が追加されました。

@@ -1,15 +1,16 @@
 ---
 title: Microsoft Azure で Office アドインをホストする | Microsoft Docs
-description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションにテスト用のアドインをサイドロードする方法について説明します。
+description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 01/25/2018
-ms.openlocfilehash: 32560fdd0655fbba937140152f16cc91c2185411
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+localization_priority: Priority
+ms.openlocfilehash: ce1cea8078c1842f4ce8cc57b8702c30393d8be8
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005002"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386835"
 ---
-# <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure 上での Office アドインのホスト
+# <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
 最も簡単な Office アドインは、XML マニフェスト ファイルと HTML ページで成り立っています。XML マニフェスト ファイルには、アドインの特性 (アドインの名前や実行可能な Office クライアント アプリケーションの種類、アドインの HTML ページの URL など) を記述します。HTML ページには、ユーザーが Office クライアント アプリケーションにアドインをインストールして実行したときに操作する、Web アプリが含まれています。Office アドインの Web アプリは、Azure を含む、あらゆる Web ホスティング プラットフォームでホストできます。
 
@@ -22,7 +23,7 @@ ms.locfileid: "25005002"
     > [!NOTE]
     > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Azure 開発**ワークロードがインストールされていることを確認してください。 
 
-2. Office をインストールします。 
+2. Office をインストールする。 
     
     > [!NOTE]
     > まだ Office を所持していない場合は、[1 か月間無料試用版の登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)が可能です。
@@ -30,7 +31,7 @@ ms.locfileid: "25005002"
 3.  Azure サブスクリプションを取得します。
     
     > [!NOTE]
-    > まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [Visual Studio  サブスクリプションの一部として取得](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/)できます。また、[無料試用版の登録](https://azure.microsoft.com/pricing/free-trial)も可能です。 
+    > まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [Visual Studio サブスクリプションの一部として取得](https://azure.microsoft.com/ja-JP/pricing/member-offers/visual-studio-subscriptions/)できます。また、[無料試用版の登録](https://azure.microsoft.com/pricing/free-trial)も可能です。 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>手順 1: アドインの XML マニフェスト ファイルをホストするための共有フォルダーを作成する
 
@@ -49,12 +50,12 @@ ms.locfileid: "25005002"
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>手順 2: 信頼できるアドイン カタログにファイル共有を追加する
 
-1.  Word を起動して、ドキュメントを作成します。
+1.  Word を起動してドキュメントを作成します。
 
     > [!NOTE]
-    > この例では Word を使用していますが、Office アドインをサポートしている任意の Office アプリケーションを使用できます (Excel、Outlook、PowerPoint、Project 2016 など)。
+    > この例では Word を使用していますが、Office アドインをサポートしている任意の Office アプリケーションを使用できます (Excel、Outlook、PowerPoint、Project など)。
     
-2.  **[ファイル]** > **[オプション]** をクリックします。
+2.  **[ファイル]**  >  **[オプション]** を選択します。
     
 3.  **[Word オプション]** ダイアログ ボックスで、**[セキュリティ センター]** をクリックして、**[セキュリティ センターの設定]** をクリックします。 
     
@@ -98,9 +99,9 @@ Visual Studio 2017 を使用して Web アプリを作成するには、次の�
 5. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の web サイトは、自動的に HTTPS エンドポイントを提供します。
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。
     
-### <a name="using-the-azure-portal"></a>Azure ポータルの使用
+### <a name="using-the-azure-portal"></a>Azure ポータルを使用する場合
 
 Azure ポータルを使用して Web アプリケーションを作成するには、次の手順を実行します。
 
@@ -132,7 +133,7 @@ Azure ポータルを使用して Web アプリケーションを作成するに
 6. ブラウザーのアドレス バーで、HTTPS を使用するように Web アプリの URL を変更してから **Enter** キーを押して、HTTPS プロトコルが有効であることを確認します。 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の web サイトは、自動的に HTTPS エンドポイントを提供します。
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。
 
 ## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>手順 4: Visual Studio で Office アドインを作成する
 
@@ -164,7 +165,7 @@ Visual Studio により、基本的な Word アドインが作成されます。
 
     Visual Studio により、Office アドインの Web プロジェクトが Azure Web アプリに発行されます。Visual Studio による Web プロジェクトの発行が完了すると、ブラウザーが開いて、「App Service アプリが作成されました」というテキストを示す Web ページが表示されます。これは、Web アプリの現在の既定のページです。
 
-7. アドインのWebページを表示するには、URLを変更してHTTPSを使用し、アドインのHTMLページのパスを指定します (例 : https://YourDomain.azurewebsites.net/Home.html)。 これにより、アドインの Web アプリが Azure でホストされていることが確認されます。 ルート URL をコピーします (例 : https://YourDomain.azurewebsites.net)、この資料の後半でアドイン マニフェスト ファイルを編集するときに必要になります。
+7. アドインの Web ページを確認するには、そのアドインが HTTPS を使用するように URL を変更して、アドインの HTML ページのパスを指定します (たとえば https://YourDomain.azurewebsites.net/Home.html))。 こうすることで、アドインの Web アプリが Azure でホストされるようになったことを確認します。 ルート URL (たとえば https://YourDomain.azurewebsites.net)) をコピーします。この URL は、アドイン マニフェスト ファイルの編集時に必要になります。これについては、この記事で説明します。
     
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>手順 6: アドインの XML マニフェスト ファイルを編集して展開する
 
@@ -172,7 +173,7 @@ Visual Studio により、基本的な Word アドインが作成されます。
     
 2. Office アドイン プロジェクト (たとえば、WordWebAddIn) を展開し、マニフェスト フォルダーを右クリックして **[開く]** をクリックします。アドインの XML マニフェスト ファイルが開きます。
     
-3. XML マニフェスト ファイルで、 "〜remoteAppUrl" のすべてのインスタンスを検索し、Azure 上のアドイン Web アプリケーションのルート URL に置き換えます。 これは、アドイン Web アプリを Azure に公開した後、事前にコピーした URL です (例 : https://YourDomain.azurewebsites.net)。 
+3. XML マニフェスト ファイルで、"~remoteAppUrl" というインスタンスをすべて検索して、Azure のアドイン Web アプリのルート URL に置換します。 この URL は、前の手順で Azure にアドイン Web アプリを発行した後にコピーしたものです (たとえば https://YourDomain.azurewebsites.net))。 
     
 4. **[ファイル]** をクリックして、**[すべてを保存]** をクリックします。アドインの XML マニフェスト ファイルを閉じます。
     
@@ -184,7 +185,7 @@ Visual Studio により、基本的な Word アドインが作成されます。
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>手順 7: Office クライアント アプリケーションにアプリを挿入し、実行する
 
-1. Word を起動して、ドキュメントを作成します。
+1. Word を起動してドキュメントを作成します。
     
 2. リボンで、**[挿入]** > **[個人用アドイン]** をクリックします。 
     

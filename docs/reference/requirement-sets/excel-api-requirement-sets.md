@@ -2,12 +2,13 @@
 title: Excel JavaScript API の要件セット
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 4456ac3cb2411f9a22cb131b7a53884a760a2f22
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: fdcbee0374851f0f88130ae8afe28eec3a0fe77c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458147"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388725"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -147,7 +148,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_プロパティ_ > overlap|横棒と縦棒の配置方法を指定します。 -100 から 100 の範囲内で値を指定できます。 2-D 横棒グラフと 2-D 縦棒グラフにのみ適用されます。 読み取り/書き込み可能。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_プロパティ_ > secondPlotSize|補助円グラフ付き円グラフまたは補助縦棒グラフ付き円グラフのセカンダリ セクションのサイズを、プライマリ セクションのサイズのパーセンテージとして返すか設定します。 5 から 200 の範囲内で値を指定できます。 読み取り/書き込み可能。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_プロパティ_ > varyByCategories|true の場合、Microsoft Excel により、データ マーカーごとに異なる色またはパターンが割り当てられます。 グラフに含まれるデータ系列は 1 つだけでなければなりません。 読み取り/書き込み可能。|1.8|
-|[chartSeries](/javascript/api/excel/excel.chartseries)|_リレーションシップ_ > axisGroup|指定されたデータ系列のグループを返すか設定します。 読み取り/書き込み可能。|1.8|
+|[chartSeries](/javascript/api/excel/excel.chartseries)|_リレーションシップ_ > axisGroup|指定した系列のグループを取得または設定します。値の取得および設定が可能です。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_リレーションシップ_ > dataLabels|系列に含まれるすべてのデータ ラベルのコレクションを表します。 読み取り専用です。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_リレーションシップ_ > splitType|補助円グラフ付き円グラフまたは補助縦棒グラフ付き円グラフを 2 つの部分に分割する方法を返すか設定します。 読み取り/書き込み可能。|1.8|
 |[chartTrendline](/javascript/api/excel/excel.charttrendline)|_プロパティ_ > backwardPeriod|近似曲線を後方へ拡張するときの区間数を表します。|1.8|
@@ -1005,7 +1006,7 @@ API には、キーを使用して設定エントリを取得するための `ge
 
 ## <a name="excel-javascript-api-11"></a>Excel JavaScript API 1.1
 
-Excel JavaScript API 1.1 は、この API の最初のバージョンです。 この API について詳しくは、[Excel JavaScript API](/javascript/api/excel) リファレンスのトピックをご覧ください。
+Excel JavaScript API 1.1 は、API の最初のバージョンです。API について詳しくは、[Excel JavaScript API](/javascript/api/excel) リファレンスのトピックをご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
