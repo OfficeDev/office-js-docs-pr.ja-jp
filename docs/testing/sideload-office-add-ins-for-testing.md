@@ -1,17 +1,18 @@
 ---
 title: テスト用に Office Online で Office アドインをサイドロードする
-description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 10e236366012bb402b968d0f61ea64326bb9172d
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+description: Office Online で Office アドインをサイドロードしてテストをする
+ms.date: 10/19/2018
+localization_priority: Priority
+ms.openlocfilehash: f656b83a7d9841cc362276ccc7c5729927cbc392
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925305"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389404"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>テスト用に Office Online で Office アドインをサイドロードする
 
-まずアドイン カタログに置かなくても、サイドロードを使用すると、テスト用に Office アドインをインストールすることができます。サイドロードは、Office 365 または Office Online 上のいずれかで実行できます。2 つのプラットフォームで手順が少し異なります。 
+サイドロードを使用することで、最初にアドイン カタログに置かなくても、テスト用に Office アドインをインストールすることができます。 サイドロードは、Office 365 または Office Online 上のいずれかで実行できます。 2 つのプラットフォームで手順が少し異なります。 
 
 アドインをサイドロードするとき、アドイン マニフェストはブラウザーのローカル ストレージに格納されます。そのため、ブラウザーのキャッシュを消去したり、別のブラウザーに切り替えたりする場合、アドインを再びサイドロードする必要があります。
 
@@ -19,15 +20,15 @@ ms.locfileid: "22925305"
 > [!NOTE]
 > この記事で説明したようにサイドロードは、Word、Excel、および PowerPoint でサポートされています。Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
 
-次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。  
+次のビデオでは、Office デスクトップまたは Office Online でアドインをサイドロードする手順について説明します。  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-on-office-365"></a>Office アドインを Office 365 にサイドロードする
+## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
 
 
-1. Office 365 サイトにサインインします。
+1. Office 365 アカウントにサインインします。
     
 2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
     
@@ -44,7 +45,7 @@ ms.locfileid: "22925305"
 6. アドイン がインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
     
 
-## <a name="sideload-an-office-add-in-on-office-online"></a>Office アドイン を Office Online にサイドロードする
+## <a name="sideload-an-office-add-in-in-office-online"></a>Office Online で Office アドインをサイドロードする
 
 
 1. [Microsoft Office Online](https://office.live.com/) を開きます。
@@ -64,18 +65,26 @@ ms.locfileid: "22925305"
 6. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
 
 > [!NOTE]
->Office アドインを Edge でテストするには、Edge の検索バーに "**abou:flags**" を入力し、[開発者設定] オプションを表示します。  "**ローカルホスト ループバックを許可する**" オプションにチェックを入れ、Edgeを再起動します。
+>Office アドインを Microsoft Edge でテストするには、2 つの構成手順が必要です。 
+>
+> - Windows コマンド プロンプトで、次のコマンドを実行します: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
+>
+> - Microsoft Edge の検索バーに "**about:flags**" と入力して開発者向け設定のオプションを表示させます。  [**ローカルホスト ループバックを許可する**] オプションをオンにし、Microsoft Edge を再起動します。
 
->    ![Edge の [ローカルホスト ループバックを許可する] オプションにチェックを入れます。](../images/allow-localhost-loopback.png)
+>    ![[ローカルホスト ループバックを許可する] オプションがオンになった Microsoft Edge。](../images/allow-localhost-loopback.png)
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Visual Studio の使用時にアドインをサイドロードする
 
-アドインの開発に Visual Studio を使用している場合、サイドロードするプロセスは似ています。唯一の違いは、マニフェストの **SourceURL** 要素の値を更新して、アドインが展開されている完全な URL を含める必要がある点です。 
+アドインの開発に Visual Studio を使用している場合、サイドロードするプロセスは似ています。 アドインの開発に Visual Studio を使用している場合、サイドロードするプロセスは似ています。唯一の違いは、マニフェストの **SourceURL** 要素の値を更新して、アドインが展開されている完全な URL を含める必要がある点です。
 
-現在アドインを開発している場合、アドイン manifest.xml ファイルを見つけて、**SourceLocation** 要素の値を更新することにより、絶対 URI を含めます。Visual Studio は、localhost を展開するためのトークンを配置します。
+> [!NOTE]
+> アドインを Visual Studio から Office Online にサイドロードすることはできますが、Visual Studio からはデバッグできません。 デバッグするには、ブラウザー デバッグ ツールを使用する必要があります。 詳細については、「[Office Online でアドインをデバッグする](debug-add-ins-in-office-online.md)」を参照してください。
 
-次に例を示します。 
-
-```xml
-<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-```
+1. Visual Studio で、[**表示**]  ->  [**プロパティ ウィンドウ**] の順に選択して [**プロパティ**] ウィンドウを表示させます。
+2. [**ソリューション エクスプローラー**] で Web プロジェクトを選択します。 プロジェクトのプロパティが [**プロパティ**] ウィンドウに表示されます。
+3. [プロパティ] ウィンドウで、[**SSL URL**] をコピーします。
+4. アドイン プロジェクトで、マニフェスト XML ファイルを開きます。 編集しているのがソース XML であることを確認します。 一部の種類のプロジェクトでは、Visual Studio は XML のビジュアル ビューを開きますが、これは次の手順で使用できません。
+5. **~remoteAppUrl/** のすべてのインスタンスを検索し、先ほどコピーした SSL URL と置き換えます。 プロジェクトの種類に応じていくつかの置換が表示され、新しい URL の表示は `https://localhost:44300/Home.html` に似たものになりま。
+6. XML ファイルを保存します。
+7. Web プロジェクトを右クリックして、[**デバッグ**]  ->  [**新しいインスタンスを開始**] の順に選択します。 これにより、Office を起動することなく Web プロジェクトが実行されます。
+8. 上記の「[Office Online で Office アドインをサイドロードする](#sideload-an-office-add-in-in-office-online)」で説明された手順を使用して、Office Online からアドインをサイドロードします。
