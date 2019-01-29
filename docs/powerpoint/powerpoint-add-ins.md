@@ -1,14 +1,14 @@
 ---
 title: PowerPoint アドイン
 description: ''
-ms.date: 10/16/2018
+ms.date: 01/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 022bed349dde061b61a8db0711a94a0a4d77f2e1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: da60c87993bc67057aeec6a4e754f57ae376ddd4
+ms.sourcegitcommit: b3812245ee1426c299e6484fdd2096a9212ce823
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388634"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "29539864"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -30,7 +30,7 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
 
-コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、`Office.Initialize` ハンドラーの一部として、`ActiveViewChanged` イベントを処理する必要があります。 
+コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、`Office.Initialize` ハンドラーの一部として、`ActiveViewChanged` イベントを処理する必要があります。
 
 > [!NOTE]
 > PowerPoint Online では [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。 この場合、次のコード サンプルに示すように、アドインで読み込むアクティブ ビューをフェッチする必要があります。
@@ -39,7 +39,7 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 
 - `getActiveFileView` 関数は [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出します。 
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出します。
 
 
 ```js
@@ -74,7 +74,7 @@ function registerActiveViewChanged() {
         app.showNotification(JSON.stringify(args));
     }
 
-    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
+    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler,
         function (asyncResult) {
             if (asyncResult.status == "failed") {
                 app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -163,13 +163,37 @@ function getFileUrl() {
 }
 ```
 
+## <a name="create-a-presentation"></a>プレゼンテーションの作成
 
+アドインでは、アドインが現在実行されている PowerPoint のインスタンスとは異なる新しいプレゼンテーションを作成できます。 PowerPoint の名前空間には、この目的のための `createPresentation` メソッドがあります。 このメソッドが呼び出されると、新しいプレゼンテーションが PowerPoint の新しいインスタンスですぐに開いて表示されます。 アドインは前のプレゼンテーションで開いて実行されたままになります。
+
+```js
+PowerPoint.createPresentation();
+```
+
+`createPresentation` メソッドでは既存のプレゼンテーションのコピーの作成もできます。 このメソッドは、オプションのパラメーターとして .pptx ファイルの base64 エンコード文字列表現を受け取ります。 文字列の引数は有効な .pptx ファイルと見なされ、作成されるプレゼンテーションはそのファイルのコピーになります。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
+
+```js
+var myFile = document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = function (event) {
+    // strip off the metadata before the base64-encoded string
+    var startIndex = event.target.result.indexOf("base64,");
+    var copyBase64 = event.target.result.substr(startIndex + 7);
+
+    PowerPoint.createPresentation(copyBase64);
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
 
 ## <a name="see-also"></a>関連項目
+
 - 
   [PowerPoint のコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [PowerPoint や Word 用のアドインからドキュメント全体を取得する](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
 - [PowerPoint アドインでドキュメントのテーマを使用する](use-document-themes-in-your-powerpoint-add-ins.md)
-    
