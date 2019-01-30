@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの VersionOverrides 要素
 description: ''
-ms.date: 01/15/2019
+ms.date: 01/29/2019
 localization_priority: Normal
-ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387801"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635910"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -22,7 +22,7 @@ ms.locfileid: "29387801"
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
 
 > [!NOTE]
-> 現時点では、Outlook 2016 のみが VersionOverrides v1.1 スキーマおよび `VersionOverridesV1_1` タイプをサポートしています。
+> 2016 またはそれ以降、現在は Outlook には、VersionOverrides v1.1 のスキーマがサポートされていると、`VersionOverridesV1_1`型です。
 
 ## <a name="child-elements"></a>子要素
 

@@ -3,12 +3,12 @@ title: Office JavaScript API オブジェクト モデル
 description: ''
 ms.date: 07/27/2018
 localization_priority: Priority
-ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7e93a46019816daa236c986aac921a2962ca1af2
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388529"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635959"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
 Office JavaScript アドインを利用すると、ホストの基本機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox](#mailbox-object) オブジェクトによって、Outlook アドインがメッセージやユーザー プロファイルにアクセスできるようになります。 このような上位オブジェクト間の関係を理解することが JavaScript アドインの基礎となります。
@@ -87,7 +87,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 > [!TIP]
 > **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。** 行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
 
-指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult.error) プロパティが `"failed"` を返すため、[AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult.context) プロパティを使用して [Error](https://docs.microsoft.com/javascript/api/office/office.error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
+指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) プロパティが `"failed"` を返すため、[AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult#error) プロパティを使用して [Error](https://docs.microsoft.com/javascript/api/office/office.error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>Document オブジェクトによる選択範囲の操作

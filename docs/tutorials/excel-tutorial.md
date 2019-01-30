@@ -1,14 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 01/09/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
-ms.openlocfilehash: de5a08be53d7a6c2f4df4d9419e3713266800f7e
-ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 6fe72a9170862dbb0c422db7d8efd3f187bf45ae
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "27896358"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635966"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -31,6 +32,8 @@ ms.locfileid: "27896358"
 - [ノード](https://nodejs.org/en/) 
 
 - [Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)
+
+- このチュートリアルでアドインをテストするのにはインターネットに接続する必要があります。
 
 ## <a name="create-your-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -604,7 +607,7 @@ ms.locfileid: "27896358"
 
 1. ファイル \function-file\function-file.js を開きます。
 
-2. このファイルには、即時実行関数式 (IIFE) が既に含まれています。 カスタムの初期化ロジックは必要ないため、`Office.initialize` に割り当てられた関数は空のままにしておきます  (ただし、削除してはいけません。 `Office.initialize` プロパティは Null や未定義にすることはできません)。*IIFE の外側に*、次のコードを追加します。 メソッドに `args` パラメーターを指定していることと、メソッドの最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office ホスト アプリケーションに通知します。
+2. このファイルには、即時実行関数式 (IIFE) が既に含まれています。 *、IIFE 以外で*、次のコードを追加します。 メソッドに `args` パラメーターを指定していることと、メソッドの最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office ホスト アプリケーションに通知します。
 
     ```js
     function toggleProtection(args) {

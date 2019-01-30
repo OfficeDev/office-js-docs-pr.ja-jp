@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの Action 要素
 description: ''
 ms.date: 11/14/2018
-ms.openlocfilehash: 04c081a02768446fcf587b8b6a7c4e1dcd66012f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 589a4af94c7abbcf61cd7a5210d5df29ba8a3a4e
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433272"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635896"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -139,7 +140,7 @@ ms.locfileid: "27433272"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)」を参照してください。
 
 > [!NOTE]
-> 現時点で、SupportsPinning は Outlook 2016 for Windows (ビルド 7628.1000 以降) でのみサポートされます。
+> SupportsPinning は現在、Windows (ビルド 7628.1000 以降) の Outlook 2016 および Mac 用の Outlook 2016 でのみサポートされて (ビルド 16.13.503 またはそれ以降)。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

@@ -2,12 +2,13 @@
 title: Office.context.mailbox.userProfile - 要件セット 1.7
 description: ''
 ms.date: 10/31/2018
-ms.openlocfilehash: 866bf063cf4ad8bf040753714986a7b2db05b6d6
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: b07ff5bee3adc18cc1006bb574e373182b29f5fe
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433860"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635903"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -35,7 +36,7 @@ ms.locfileid: "27433860"
 ####  <a name="accounttype-string"></a>accountType :String
 
 > [!NOTE]
-> 現在、このメンバーは Outlook 2016 for Mac (ビルド 16.9.1212 以上) でのみサポートされています。
+> このメンバーは現在、for Mac Outlook 2016 でのみサポートされている (ビルド 16.9.1212 またはそれ以降)。
 
 メールボックスに関連付けられているユーザーのアカウントの種類を取得します。 次の表に使用可能な値を示します。
 
