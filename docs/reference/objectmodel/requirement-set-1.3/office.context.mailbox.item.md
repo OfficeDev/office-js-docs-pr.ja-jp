@@ -1,4 +1,15 @@
-
+---
+title: Office.context.mailbox.item ・要件設定 1.3
+description: ''
+ms.date: 12/18/2018
+localization_priority: Normal
+ms.openlocfilehash: c418c69e369e5f8ed6da151345013897f1a87e26
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387325"
+---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
@@ -40,7 +51,7 @@ Office.initialize = function () {
 > [!NOTE]
 > セキュリティ上の問題がある可能性があるため、特定の種類のファイルは Outlook によってブロックされるので、返されません。 詳細については、「[Outlook でブロックされる添付ファイル](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)」を参照してください。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook_1_3/office.attachmentdetails)>
 
@@ -132,7 +143,7 @@ function callback(asyncResult) {
 
 `cc` プロパティは、メッセージの **CC** 行にある受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_3/office.recipients)
 
@@ -281,7 +292,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 > [!NOTE]
 > `from` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)
 
@@ -495,7 +506,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 `optionalAttendees` プロパティは会議への任意出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_3/office.recipients)
 
@@ -554,7 +565,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 `requiredAttendees` プロパティは会議への必須出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_3/office.recipients)
 
@@ -587,7 +598,7 @@ function callback(asyncResult) {
 > [!NOTE]
 > `sender` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)
 
@@ -705,7 +716,7 @@ function callback(asyncResult) {
 
 `to` プロパティは、メッセージの **To** 行の受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type"></a>種類:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_3/office.recipients)
 
@@ -1431,8 +1442,8 @@ function saveCallback(asyncResult) {
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`attachmentId`| String||削除する添付ファイルの識別子。文字列の最大長は 100 文字です。|
-|`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`attachmentId`| String||削除する添付ファイルの識別子。|
+|`options`| オブジェクト| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| Object| &lt;optional&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。|
 
@@ -1486,7 +1497,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`options`| オブジェクト| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| Object| &lt;optional&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>成功すると、アイテム識別子が `asyncResult.value` プロパティに提供されます。|
 
