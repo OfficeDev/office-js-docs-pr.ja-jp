@@ -1,4 +1,15 @@
-
+---
+title: Office.context.mailbox.item - requirement set 1.5
+description: ''
+ms.date: 12/18/2018
+localization_priority: Priority
+ms.openlocfilehash: 48bc1291e7aa6d8e335c07d16ddd74e6e9455f0d
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389572"
+---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
@@ -1501,8 +1512,8 @@ function saveCallback(asyncResult) {
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`attachmentId`| String||削除する添付ファイルの識別子。文字列の最大長は 100 文字です。|
-|`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`attachmentId`| String||削除する添付ファイルの識別子。|
+|`options`| オブジェクト| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| Object| &lt;optional&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。|
 
