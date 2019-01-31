@@ -2,13 +2,12 @@
 title: Excel の範囲にデータの入力規則を追加する
 description: ''
 ms.date: 10/03/2018
-localization_priority: Priority
-ms.openlocfilehash: dfe29bce5e23f7f251f6b52bf3eb359101f274ca
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e584d80403969ca15527afb69251832a96f3003e
+ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386989"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "25852918"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
