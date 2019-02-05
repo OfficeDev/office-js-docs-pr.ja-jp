@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d79dde68b8222a8aafa01a01dc21a4f932f101a9
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388305"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701821"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -21,9 +21,9 @@ ms.locfileid: "29388305"
 
 ## <a name="prerequisites"></a>前提条件
 
-* 入手可能な Visual Studio 2017 プレビューの最新バージョン。
+* 入手可能な Visual Studio 2017 の最新バージョン。
 
-* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)。このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
+* Office 365 (「クイック実行」と呼ばれることもあるサブスクリプション バージョン)。 Insider チャネルからの最新の月次バージョンとビルド。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -39,7 +39,7 @@ ms.locfileid: "29388305"
     > [!NOTE]
     > ID 名前空間に関するエラーが表示されます。 これは構成の問題の副作用ですが、次のステップで修正します。 重要な点は、パッケージがインストールされていることです。
 
-1. 現在、SSO (バージョン `1.1.4-preview0002`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。 
+1. 現在、SSO (バージョン `1.1.4-preview0002`) に必要な MSAL ライブラリ (Microsoft.Identity.Client) は標準の nuget カタログの一部ではないため、package.config にはリストされていません。これは、個別にインストールする必要があります。
 
    > 1. **[ツール]** メニューで **[Nuget パッケージ マネージャー]** > **[パッケージ マネージャー コンソール]** に移動します。 
 
@@ -587,7 +587,7 @@ ms.locfileid: "29388305"
     ```
 
     > [!NOTE]
-    > `access_as_user` スコープだけを使用して、Office アドインの代理フローを処理する API を承認する必要があります。ご利用のサービス内の他の API には、独自のスコープ要件が必要です。 これにより、Office が取得するトークンでアクセスできるものが制限されます。
+    > `access_as_user` スコープのみを使用して、Office アドインの代理 (on-behalf-of) フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。
 
 6. `TODO2` を次のコードに置き換えます。このコードの注意点は次のとおりです。
     * このコードでは、Office ホストから受け取った Raw アクセス トークンを別のメソッドに渡される `UserAssertion` オブジェクトに変換します。

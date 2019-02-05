@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 10/31/2018
+ms.date: 01/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb920224f9ceb39b334b5f489442da695004f22c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386401"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701786"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -24,10 +24,14 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 次の機能はプレビュー段階です。
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent) - 添付ファイルのコンテンツを表す新しいオブジェクトが追加されました。
+- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) - 予定の場所のセットを表す新しいオブジェクトが追加されました。
 - [InternetHeaders](/javascript/api/outlook/office.internetheaders) - メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトが追加されました。
+- [LocationDetails](/javascript/api/outlook/office.locationdetails) - 場所を表す新しいオブジェクトが追加されました。 読み取り専用です。
+- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier) - 場所の ID を表す新しいオブジェクトが追加されました。
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties) - 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトが追加されました。
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) - 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション パラメーター `options`。この値は、イベントの実行をキャンセルするために使用されます。
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) - メッセージまたは予定に base 64 エンコード文字列として表されるファイルを添付する新しい方法が追加されました。
+- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) - 予定の場所のセットを表す新しいプロパティが追加されました。
 - [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent) - 特定の添付ファイルのコンテンツを取得する新しい方法が追加されました。
 - [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails) - 作成モードで、アイテムの添付ファイルを取得する新しい方法が追加されました。
 - [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback) - アドインが[操作可能メッセージによってアクティブ化](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message)されると渡される初期化データを返す新しい機能が追加されました。
@@ -37,6 +41,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) - 添付ファイルのコンテンツに適用されるフォーマットを特定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) - アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - 代理人のアクセス権を指定する新しいビット フラグ列挙型が追加されました。
+- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - 予定の場所の種類を指定する新しい列挙型が追加されました。
 - [Office.EventType](/javascript/api/office/office.eventtype) - AttachmentsChanged イベントおよび OfficeThemeChanged イベントを、それぞれに `AttachmentsChanged` エントリと `OfficeThemeChanged` エントリを追加することによりサポートするように変更されました。
 - [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
