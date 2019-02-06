@@ -2,13 +2,14 @@
 title: アドイン コマンドの要件セット
 description: ''
 ms.date: 11/21/2018
+ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: a4d50f5e0396cbcd5837d7d22bcceacbf1687a01
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 952cff4877fcdd0fbdf9b380f9ae34e83e271a46
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388802"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742353"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 

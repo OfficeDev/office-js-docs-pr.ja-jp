@@ -3,12 +3,12 @@ title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 用の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
 ms.date: 11/02/2018
 localization_priority: Priority
-ms.openlocfilehash: 377c65d089ef43814bbc419435d2b817e80b3fcc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389453"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742381"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -16,9 +16,9 @@ ms.locfileid: "29389453"
 
 > [!NOTE]
 > Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていませんが、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してこれらの種類のアドインを作成できます。
-> - OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../onenote/onenote-add-ins-getting-started.md)」を参照してください。
+> - OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)」を参照してください。
 > 
-> - Project 用のアドインを使い始めるには、「[最初の Project アドインをビルドする](../project/project-add-ins-get-started.md)」を参照してください。
+> - Project 用のアドインを使い始めるには、「[最初の Project アドインをビルドする](../quickstarts/project-quickstart.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
