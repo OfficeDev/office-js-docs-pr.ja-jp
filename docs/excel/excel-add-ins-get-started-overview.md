@@ -3,12 +3,12 @@ title: Excel アドインを使う
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: b75a25f986d4dd141a3858a357592c5ba9c28bd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ad0c948be710f6274d50c341854e43fc42639ee8
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388970"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742262"
 ---
 # <a name="get-started-with-excel-add-ins"></a>Excel アドインを使う
 
@@ -16,7 +16,7 @@ HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する
 
 ## <a name="create-your-first-excel-add-in"></a>最初の Excel アドインを作成する
 
-開始するには、このセクションにあるチュートリアルの 1 つを完了して、[React](excel-add-ins-get-started-react.md)、[Angular](excel-add-ins-get-started-angular.md)、または [jQuery](excel-add-ins-get-started-jquery.md) を使用する Excel アドインを作成します。 それぞれのチュートリアルでは、Excel JavaScript API を使用してワークシートと対話する簡単な作業ウィンドウ アドインを作成するための、ステップバイステップのガイダンスを提供します。 
+開始するには、このセクションにあるチュートリアルの 1 つを完了して、[React](../quickstarts/excel-quickstart-react.md)、[Angular](../quickstarts/excel-quickstart-angular.md)、[jQuery](../quickstarts/excel-quickstart-jquery.md)、または [Vue](../quickstarts/excel-quickstart-vue.md) を使用する Excel アドインを作成します。 それぞれのチュートリアルでは、Excel JavaScript API を使用してワークシートと対話する簡単な作業ウィンドウ アドインを作成するための、ステップバイステップのガイダンスを提供します。 
 
 ## <a name="explore-snippets-with-script-lab"></a>Script Lab でスニペットを探す
 
