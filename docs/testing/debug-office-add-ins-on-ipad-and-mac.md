@@ -1,47 +1,20 @@
 ---
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
-ms.date: 03/21/2018
+ms.date: 02/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 058f3cb4a4acc77a5c4fcd4559970187842c2c4b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388032"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742332"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
-Windows でのアドインの開発とデバッグには Visual Studio を使用できますが、iPad と Mac で使用して アドインをデバッグすることはできません。アドインは HTML と Javascript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、iPad または Mac で動作するアドインをデバッグする方法を説明します。 
+Windows でのアドインの開発とデバッグには Visual Studio を使用できますが、iPad と Mac で使用して アドインをデバッグすることはできません。アドインは HTML と Javascript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、iPad または Mac で動作するアドインをデバッグする方法を説明します。
 
-## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
-
-作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
-
-Mac の Office アドインをデバッグするには、Mac OS High Sierra と Mac Office バージョン 16.9.1 (ビルド 18012504) 以降の両方が必要です。 Office Mac ビルドをまだお持ちでない場合は、[Office 365 Developer Program](https://aka.ms/o365devprogram) に参加することで入手できます。
-
-最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
-
-- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
-
-次に Office アプリケーションを開き、アドインを挿入します。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。  このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
-
-> [!NOTE]
-> これは試験的な機能であり、Office アプリケーションの将来のバージョンでこの機能が維持されるかどうかは保証されない点に注意してください。
->
-> インスペクタを使用するとダイアログのちらつきが発生する場合は、次の回避策を試してください。
-> 1. ダイアログのサイズを変更します。
-> 2. **[要素の検査]** を選択します (新しいウィンドウが開きます)。
-> 3. ダイアログを元のサイズに変更します。
-> 4. 必要に応じてインスペクタを使用します。
-
-## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>iPad または Mac での Vorlon.JS を使用したデバッグ
+## <a name="debugging-with-vorlonjs-on-ipad-or-mac"></a>iPad または Mac での Vorlon.JS を使用したデバッグ
 
 iPad または Mac でアドインをデバッグするには、Vorlon.JS (F12 ツールに似ている Web ページのデバッガー) を使用できます。 リモートで動作するように設計されているため、異なるデバイス間で Web ページをデバッグすることができます。 詳細については、[Vorlon の Web サイト](http://www.vorlonjs.com)を参照してください。  
 
@@ -134,6 +107,34 @@ Vorlon ツールには、さまざまなプラグインがあります。現在�
 
 > [!NOTE]
 > Vorlon.JS にブレーク ポイントを設定する方法はありません。
+
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
+
+> [!IMPORTANT]
+> **要素の検査**アドイン コンテキスト メニュー オプションは試験的な機能であり、Office アプリケーションの将来のバージョンでこの機能が維持されるかどうかは保証されない点に注意してください。
+
+作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
+
+Mac の Office アドインをデバッグするには、Mac OS High Sierra 以降 と Mac Office バージョン 16.9.1 (ビルド 18012504) 以降の両方が必要です。 Office for Mac ビルドをまだお持ちでない場合は、[Office 365 Developer Program](https://aka.ms/o365devprogram) に参加することで入手できます。
+
+最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。  このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
+
+> [!NOTE]
+> インスペクタを使用するとダイアログのちらつきが発生する場合は、次の回避策を試してください。
+> 1. ダイアログのサイズを変更します。
+> 2. **[要素の検査]** を選択します (新しいウィンドウが開きます)。
+> 3. ダイアログを元のサイズに変更します。
+> 4. 必要に応じてインスペクタを使用します。
 
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Mac または iPad 上の Office アプリケーションのキャッシュのクリア
