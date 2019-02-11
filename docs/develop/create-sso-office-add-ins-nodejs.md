@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: ''
 ms.date: 12/07/2018
 localization_priority: Priority
-ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cf249e47709a325f22fc1fda49ee76b7a3357b4f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387339"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701933"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -27,9 +27,7 @@ ms.locfileid: "29387339"
 
 * TypeScript バージョン 2.2.2 以降
 
-* Office 2016 バージョン 1708、ビルド 8424.nnnn 以降 (「クイック実行」と呼ばれることもある Office 365 のサブスクリプション バージョン)
-
-  このバージョンを入手するには、Office Insider への参加が必要になることがあります。詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
+* Office 365 (「クイック実行」と呼ばれることもあるサブスクリプション バージョン)。 Insider チャネルからの最新の月次バージョンとビルド。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
