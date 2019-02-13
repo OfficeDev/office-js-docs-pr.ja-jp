@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2019
+ms.date: 02/06/2019
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: dd8158da4ebcccac61b8ab6958a101489bf5a668
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742319"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982042"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
@@ -18,7 +18,11 @@ ms.locfileid: "29742319"
 
 ## <a name="requesting-external-data"></a>外部データの要求
 
-カスタム関数内では、[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます。 JavaScript ランタイムでは、XHR は[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、追加セキュリティ対策を実装します。  
+カスタム関数内では、[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます。
+
+カスタム関数で使用される JavaScript ランタイム内では、XHR は、[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。
+
+CORS の単純な実装は cookie を使用することはできません、単純なメソッド (GET、HEAD、POST) のみをサポートすることに注意してください。 フィールド名を持つ単純なヘッダーを受け入れる単純な CORS `Accept`、 `Accept-Language`、 `Content-Language`。 使用することも、`Content-Type`で単純な CORS は、ヘッダーのコンテンツ型があるが提供される`application/x-www-form-urlencoded`、 `text/plain`、または`multipart/form-data`。
 
 ### <a name="xhr-example"></a>XHR の使用例
 
@@ -44,6 +48,9 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
+        
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }

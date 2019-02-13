@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - プレビュー要件セット
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 73495cfaceceec5da9c737f31f6ee96a7452dc3c
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: a660f8bafdd2587f97d704e42c47abbe6c7d533d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701919"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982049"
 ---
 # <a name="item"></a>item
 
@@ -52,8 +52,8 @@ ms.locfileid: "29701919"
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | メンバー |
 | [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | メンバー |
 | [seriesId](#nullable-seriesid-string) | メンバー |
-| [start](#start-datetimejavascriptapioutlookofficetime) | メンバー |
-| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | メンバー |
+| [start](#start-datetimejavascriptapioutlookofficetime) | Member |
+| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
 | [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | メソッド |
@@ -402,7 +402,7 @@ function callbackFunction(asyncResult) {
 `from` プロパティは `EmailAddressDetails` オブジェクトを返します。
 
 ```javascript
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>新規作成モード

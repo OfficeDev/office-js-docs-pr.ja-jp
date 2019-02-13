@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - 1.7 を設定する要件
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ac795d426cf80071d7b83d5e10714f4d3a6036b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: e4bfbd9629913f775edff66f4592c220c4e5d580
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701891"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982056"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ ms.locfileid: "29701891"
 | [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | メンバー |
 | [seriesId](#nullable-seriesid-string) | メンバー |
 | [start](#start-datetimejavascriptapioutlook17officetime) | メンバー |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | メンバー |
+| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | メソッド |
@@ -346,7 +346,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 `from` プロパティは `EmailAddressDetails` オブジェクトを返します。
 
 ```js
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>新規作成モード

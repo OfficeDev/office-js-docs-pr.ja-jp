@@ -5,12 +5,12 @@ ms.date: 01/08/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 5ec99be6aec35ab659f5ddb6bdd270aa892a45eb
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742430"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982021"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>チュートリアル: Excel でのカスタム関数の作成 (プレビュー)
 
@@ -89,7 +89,7 @@ npm run start
 このコマンドは、Web サーバーを開始し、カスタム関数アドインを Windows 用 Excel にサイドロードします。
 
 > [!NOTE]
-> アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。
+> アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。 **[実行時のログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を、任意のインストールまたは実行時の問題と同様に、アドインの XML マニフェスト ファイルの問題をトラブルシューティングすることもできます。 実行時のログの書き込み`console.log`ステートメントを検索して、問題を解決するためにログ ファイルにします。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -317,7 +317,8 @@ Web からデータを統合することは、カスタム関数を使用して 
 <li>新しい関数をお試しください。 セル <strong>C1</strong> に <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> と入力し、Enter キーを押します。 株式市場が開いている場合、セル <strong>C1</strong> の結果が継続的に更新され、Microsoft の株価がリアルタイムで反映されます。</li>
 </ol>
 
-## <a name="next-steps"></a>次のステップ
+
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます。 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。
 
