@@ -4,10 +4,10 @@ description: ''
 ms.date: 01/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 062dedceb671d5a98a1656823a6f6803e7dc0094
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
+ms.lasthandoff: 02/13/2019
 ms.locfileid: "29387064"
 ---
 # <a name="mailbox"></a>mailbox
@@ -73,7 +73,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -95,7 +95,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -107,7 +107,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 ####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
-サポートされているイベントにイベント ハンドラーを追加します。
+サポートされているイベントのイベント ハンドラーを追加します。
 
 現在、サポートされているイベントの種類は `Office.EventType.ItemChanged` だけです。
 
@@ -117,8 +117,8 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを呼び出す必要のあるイベント。 |
 | `handler` | Function || イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。 |
-| `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.asyncContext` | Object | &lt;optional&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
+| `options` | Object | &lt;省略可能&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
 ##### <a name="requirements"></a>要件
@@ -159,7 +159,7 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
@@ -170,7 +170,7 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -197,9 +197,9 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 ##### <a name="parameters"></a>パラメーター:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-|`timeValue`| Date|日付オブジェクト|
+|`timeValue`| 日付|日付オブジェクト|
 
 ##### <a name="requirements"></a>要件
 
@@ -374,7 +374,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 > [!NOTE]
 > すべてのパラメーターは省略可能です。
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
@@ -427,7 +427,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 > [!NOTE]
 > すべてのパラメーターは省略可能です。
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 | `parameters` | Object | 新しいメッセージを記述するパラメーターのディクショナリ。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | メール アドレスを含む文字列の配列、または To 行の各受信者の `EmailAddressDetails` オブジェクトを含む配列。 配列の上限は 100 エントリです。 |
@@ -439,7 +439,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.attachments.type` | String | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
 | `parameters.attachments.name` | String | 添付ファイル名を含む文字列。最大の長さは 255 文字です。|
 | `parameters.attachments.url` | String | `type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。 |
-| `parameters.attachments.isInline` | ブール値 | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
+| `parameters.attachments.isInline` | Boolean | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
 | `parameters.attachments.itemId` | String | `type` が `item` に設定されている場合にのみ使用されます。 新しいメッセージに添付する必要がある既存の電子メールの EWS のアイテム ID です。 最大 100 文字の文字列です。 |
 
 
@@ -496,8 +496,8 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | Object | &lt;optional&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.isRest` | Boolean |  &lt;省略可能&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
+| `options` | オブジェクト | &lt;省略可能&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
 | `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データ。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
 
@@ -543,7 +543,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
-|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -575,7 +575,7 @@ function cb(asyncResult) {
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
 |`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
@@ -640,7 +640,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>EWS 呼び出しの XML 結果は、`asyncResult.value` プロパティ内の文字列として提供されています。 結果のサイズが 1 MB を超える場合、代わりにエラー メッセージが返されます。|
-|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -696,7 +696,7 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync (イベントの種類、[オプション]、[コールバック])
+####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
 サポートされているイベントの種類のイベント ハンドラーを削除します。
 
@@ -707,7 +707,7 @@ function callback(asyncResult)  {
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
-| `options` | Object | &lt;省略可能&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options` | オブジェクト | &lt;省略可能&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
