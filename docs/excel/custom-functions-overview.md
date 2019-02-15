@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 7df07d7abda182c5b9413047f74a5cc31f7d4057
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742360"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982028"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -423,14 +423,7 @@ function getComment(x) {
 
 ## <a name="known-issues"></a>既知の問題
 
-- ヘルプの URL とパラメーターの説明。Excel ではまだ使用されていません。
-- カスタム関数は現在、モバイル クライアント用の Excel では使用できません。
-- 揮発性関数 (スプレッドシート内の無関係なデータが変更されたときに自動的に再計算する関数) はまだサポートされていません。
-- Office 365 管理ポータルと AppSource による展開は、まだ有効になっていません。
-- Excel Onlineでのカスタム関数は、一定期間動作していないと、セッション中に停止することがあります。 ブラウザーのページを更新 (F5) し、機能を復元するカスタム関数を再入力します。
-- Windows 版 Excel で複数のアドインが実行されている場合、ワークシートのセル内に **#GETTING_DATA** という一時的な結果が表示されることがあります。 その場合には、Excel のウィンドウをすべて閉じ、Excel を再起動します。
-- 今後、カスタム関数向けのデバッグ ツールが利用できるようになる可能性があります。 それまでは、F12 開発者ツールを使用して Excel Online をデバッグすることができます。 詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md)」を参照してください。
-- 32 ビット版の Office 365 *December* インサイダー バージョン 1901 (ビルド 11128.20000) では、カスタム関数が正常に動作しない可能性があります。 https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle でファイルをダウンロードして、このバグを回避できる場合があります。 それから、"C:\Program Files (x86)\Microsoft Office\root\Office16" フォルダーにそれをコピーします。
+既知の問題については、[Excel カスタム関数についての GitHub のレポート](https://github.com/OfficeDev/Excel-Custom-Functions/issues)を参照してください。 
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 12/20/2018
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: fa6524e36319d2031ab005c8dec2fc8b5c50d7cd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386968"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982035"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -200,10 +200,6 @@ if (loginSuccess) {
 > - `getProfile` 関数と `getError` 関数の実装は表示されません。両方の関数はそれぞれ、クエリ パラメーターまたは HTTP 応答の本文からデータを取得します。
 > - サインインが成功したかどうかに応じて、さまざまな種類の匿名のオブジェクトが送信されます。両方の関数に `messageType` プロパティがありますが、一方には `profile` プロパティ、もう一方には `error` プロパティがあります。
 
-条件付きメッセージを使用するサンプルについては、次を参照してください。
-- [Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 次の例に示すように、ホスト ページのハンドラー コードは分岐に `messageType` プロパティの値を使用します。`showUserName` 関数は上記の例と同じであり、`showNotification` 関数はホスト ページの UI にエラーを表示することに注意してください。
 
 ```js
@@ -352,11 +348,6 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-この方法でローカル ストレージを使用するサンプル アドインについては、次を参照してください。
-
-- [Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 ### <a name="use-query-parameters"></a>クエリ パラメーターの使用
 
 次の例では、クエリ パラメーターを使用してデータを渡す方法を示します。
@@ -417,8 +408,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 アドインによってユーザーが Microsoft アカウント、Google、Facebook などのプロバイダーを選択できる場合は、ユーザーがプロバイダーを選択するための UI を提供するローカルの最初のページ (前述のセクションを参照) が必要です。選択すると、サインイン URL とその URL へのリダイレクトの構築がトリガーされます。
 
-このパターンを使用するサンプルについては、「[Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)」を参照してください。
-
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>外部リソースへのアドインの承認
 
 最新の Web では、Web アプリケーションはユーザと同等の重要なセキュリティ プリンシパルであり、アプリケーションは Office 365、Google+、Facebook、LinkedIn などのオンライン リソースに対する独自の ID とアクセス許可を持っています。アプリケーションは、展開前にリソース プロバイダーに登録されます。登録には以下が含まれています。
@@ -433,9 +422,8 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 - ユーザーがアプリケーションが必要とするアクセス許可をアプリケーションに付与したことがない場合は、サインインすると、ユーザーに対してこれを実行するよう求めるメッセージがダイアログ ボックスに表示されます。
 - ダイアログ ウィンドウは、`messageParent` を使用して文字列に変換されたアクセス トークンを送信するか、またはホスト ウィンドウがアクセス トークンを取得できる場所にアクセス トークンを格納することで、アクセス トークンをホスト ウィンドウに送信します。トークンには制限時間がありますが、制限時間内であれば追加のメッセージを表示することなく、ホスト ウィンドウはトークンを使用して、ユーザーのリソースに直接アクセスできます。
 
-これを実現するため、次のサンプルではダイアログ API を使用します。
+これを実現するために、次のサンプルではダイアログ API を使用します。
 - [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - データベースにアクセス トークンを格納します。
-- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 アドインにおける認証と承認の詳細については、以下を参照してください。
 - [Office アドインで外部サービスを承認する](auth-external-add-ins.md)
