@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 1/7/2019
+ms.date: 01/07/2019
 localization_priority: Priority
-ms.openlocfilehash: c7a7a4ca9d420c637d096896ec6bae166fb5b355
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 9e88809ea7174df972dfc31110e8370a5294fb6c
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388368"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052757"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 

@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 01/09/2019
 localization_priority: Priority
-ms.openlocfilehash: ce56518759740e20f2643bb675274602b3d968a4
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c569825ae73d32259fc1554aa8233461bbbe9813
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389229"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052750"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -70,7 +70,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
 
 ## <a name="checking-the-load-status"></a>読み込み状態のチェック
 
-DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](http://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次の **onReady** イベント ハンドラーは、アドインの実行の初期化に固有のコードの前に、DOM が最初に読み込まれることを確認します。 その後、**onReady** ハンドラーは [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) プロパティを使用して、Outlook で現在選択されている項目を取得し、アドインのメイン関数 `initDialer` を呼び出します。
+DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](https://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次の **onReady** イベント ハンドラーは、アドインの実行の初期化に固有のコードの前に、DOM が最初に読み込まれることを確認します。 その後、**onReady** ハンドラーは [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) プロパティを使用して、Outlook で現在選択されている項目を取得し、アドインのメイン関数 `initDialer` を呼び出します。
 
 ```js
 Office.onReady()
