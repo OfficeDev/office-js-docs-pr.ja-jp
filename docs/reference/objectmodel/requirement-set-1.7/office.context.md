@@ -1,13 +1,14 @@
 ---
 title: Office.context - 要件セット 1.7
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: 7b2886901fc23f998c2254bca834e3608f8cf5c3
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 2d17d1a91d4ecbf8a46d0aa9c972187b0006fb82
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457468"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068316"
 ---
 # <a name="context"></a>context
 
@@ -20,7 +21,7 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
@@ -42,7 +43,7 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 `displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル]、[選択肢]、[言語]** によって指定される現在の **[表示言語]** 設定を反映します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -51,11 +52,11 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -67,6 +68,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -82,7 +84,7 @@ Office テーマの色のプロパティにアクセスできるようにしま�
 
 Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   Object
 
@@ -100,11 +102,11 @@ Office テーマの色を使うと、**[ファイル] > [Office アカウント]
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -123,7 +125,7 @@ function applyOfficeTheme(){
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   [RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
@@ -133,4 +135,4 @@ function applyOfficeTheme(){
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|

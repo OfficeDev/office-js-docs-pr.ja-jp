@@ -1,13 +1,14 @@
 ---
 title: Office 名前空間 - 要件セット 1.4
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: f447c3c46db553c0a6d4ba8bf2d4e108848c3f4d
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: af5e05e2243c0132018bc4eba7006f9a5aad4099
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457685"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067952"
 ---
 # <a name="office"></a>Office
 
@@ -18,13 +19,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ### <a name="namespaces"></a>名前空間
 
 [context](Office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
+[MailboxEnums](/javascript/api/outlook_1_4/office.mailboxenums.attachmenttype): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
 
 ### <a name="members"></a>メンバー
 
@@ -32,7 +33,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 非同期呼び出しの結果を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -48,12 +49,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -69,12 +71,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -90,4 +93,4 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|

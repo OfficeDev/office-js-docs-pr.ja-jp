@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile - 要件セット 1.5
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 748daf4d14aae1d14560d29e1d76eeea09830573
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: e98e88cde184db121e69fdd267dff4e39d887b1f
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432719"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067832"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -19,7 +20,7 @@ ms.locfileid: "27432719"
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
@@ -35,7 +36,7 @@ ms.locfileid: "27432719"
 
 ユーザーの表示名を取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -45,11 +46,11 @@ ms.locfileid: "27432719"
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -58,7 +59,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ユーザーの SMTP 電子メール アドレスを取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -68,11 +69,11 @@ console.log(Office.context.mailbox.userProfile.displayName);
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -81,7 +82,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ユーザーの既定のタイム ゾーンを取得します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -91,11 +92,11 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

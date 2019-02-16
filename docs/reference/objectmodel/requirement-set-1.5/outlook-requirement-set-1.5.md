@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.5
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: fde394ff4b75e0f6b160f5d56cb73adc9da9dede
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: edc34bd088c1e8a2e88732518dcb335d38b8ba21
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388381"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067924"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook アドイン API 要件セット 1.5
 
@@ -29,14 +29,14 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 ### <a name="change-log"></a>変更ログ
 
 - [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#addhandlerasynceventtype-handler-options-callback) が追加されました。サポートされているイベントのイベント ハンドラーを追加します。
-- [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback)を追加する: サポートされているイベントの種類のイベント ハンドラーを削除します。
+- 追加された、サポートされているイベントの種類のイベントハンドラを削除[し](office.context.mailbox.md#removehandlerasynceventtype-options-callback)ました。
 - [Office.EventType](office.md#eventtype-string) が追加されました。イベント ハンドラーに関連付けられているイベントを指定し、ItemChanged イベントのサポートが含まれるようになります。
 - [Office.context.mailbox.restUrl](office.context.mailbox.md#resturl-string) が追加されました。この電子メール アカウントの REST エンドポイントの URL を取得します。
 - [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback) が変更されました。このメソッドの新しい署名付きの新しいバージョン (`getCallbackTokenAsync([options], callback)`) が追加されました。元のバージョンは引き続き使用でき、変更されていません。
 - [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) が追加されました。
 - [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback) が変更されました。`isInline` と呼ばれる `options` ディクショナリの新しい値。イメージがインラインでメッセージ本文で使用されることを指定するために使用されます。
-- [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata) が変更されました。`isInline` と呼ばれる `formData.attachments` ディクショナリの新しい値。イメージがインラインでメッセージ本文で使用されることを指定するために使用されます。
-- [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata) が変更されました。`isInline` と呼ばれる `formData.attachments` ディクショナリの新しい値。イメージがインラインでメッセージ本文で使用されることを指定するために使用されます。
+- [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback) が変更されました。`isInline` と呼ばれる `formData.attachments` ディクショナリの新しい値。イメージがインラインでメッセージ本文で使用されることを指定するために使用されます。
+- [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata-callback) が変更されました。`isInline` と呼ばれる `formData.attachments` ディクショナリの新しい値。イメージがインラインでメッセージ本文で使用されることを指定するために使用されます。
 
 ## <a name="see-also"></a>関連項目
 

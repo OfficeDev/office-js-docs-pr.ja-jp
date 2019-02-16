@@ -1,13 +1,14 @@
 ---
 title: Office 名前空間 - プレビュー要件セット
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: f4a4f0d7a4ce0de433d4e70b6a4675b5f63f26f0
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: bbec602680da7914666daf33ed36c45751ae69c6
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457930"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068323"
 ---
 # <a name="office"></a>Office
 
@@ -18,7 +19,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
@@ -41,7 +42,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 非同期呼び出しの結果を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -57,7 +58,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ---
 
@@ -65,7 +66,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -81,7 +82,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
 
 ---
 
@@ -89,7 +90,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 イベント ハンドラーに関連付けられているイベントを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -97,11 +98,11 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 型 | 説明 | 最小要件セット |
 |---|---|---|---|
-|`AppointmentTimeChanged`| 文字列 | 選択した予定または一連の予定の日付または時刻が変更された。 | 1.7 |
-|`AttachmentsChanged`| 文字列 | アイテムに添付ファイルが追加されたか、アイテムから添付ファイルが削除された。 | プレビュー |
-|`ItemChanged`| 文字列 | 作業ウィンドウがピン留めされている間、別の Outlook アイテムが選択されて表示されている。 | 1.5 |
+|`AppointmentTimeChanged`| String | 選択した予定または一連の予定の日付または時刻が変更された。 | 1.7 |
+|`AttachmentsChanged`| String | アイテムに添付ファイルが追加されたか、アイテムから添付ファイルが削除された。 | プレビュー |
+|`ItemChanged`| String | 作業ウィンドウがピン留めされている間、別の Outlook アイテムが選択されて表示されている。 | 1.5 |
 |`OfficeThemeChanged`| 文字列 | メールボックスの Office テーマが変更された。 | プレビュー |
-|`RecipientsChanged`| 文字列 | 選択したアイテムまたは予定の場所の受信者リストが変更された。 | 1.7 |
+|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更された。 | 1.7 |
 |`RecurrenceChanged`| 文字列 | 選択した一連の予定の定期的なパターンが変更された。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
@@ -109,7 +110,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り |
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り |
 
 ---
 
@@ -117,7 +118,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -133,4 +134,4 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
