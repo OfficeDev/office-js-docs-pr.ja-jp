@@ -1,14 +1,14 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 02/12/2019
+ms.date: 02/13/2019
 localization_priority: Priority
-ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982035"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052771"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -402,7 +402,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 このパターンを使用するサンプル アドインについては、以下を参照してください。
 
 - [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart):ダイアログ ウィンドウで最初に開かれるリソースは、独自のビューがないコントローラーのメソッドです。 これは Office 365 のサインイン ページにリダイレクトされます。
-- [Office アドイン Office 365 のクライアント認証 AngularJS 用](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth):ダイアログ ウィンドウで最初に開かれるリソースは、ページです。
 
 #### <a name="support-multiple-identity-providers"></a>複数の ID プロバイダーのサポート
 
