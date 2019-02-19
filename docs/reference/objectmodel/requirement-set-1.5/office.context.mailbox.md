@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要件セット 1.5
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/15/2019
 localization_priority: Priority
-ms.openlocfilehash: fb84d1e7a5ffd1a5549f213e63ae827f8a883d34
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 511d4353998ff46f9402865453d8e7b29b6d0758
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389432"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068050"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -22,7 +22,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
@@ -68,7 +68,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してから、`ewsUrl` メンバーを使用する必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -78,7 +78,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 #### <a name="resturl-string"></a>restUrl :String
 
@@ -93,7 +93,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 > [!NOTE]
 > 構成されたカスタム REST URL を使用する Exchange 2016 以降のオンプレミスのインストールに接続されている Outlook クライアントは、`restUrl` に無効な値を返します。
 
-##### <a name="type"></a>型:
+##### <a name="type"></a>型
 
 *   String
 
@@ -103,7 +103,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ### <a name="methods"></a>メソッド
 
@@ -113,7 +113,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 現在サポートされている唯一のイベントの種類は `Office.EventType.ItemChanged` です。これはユーザーが新しいアイテムを選択したときに呼び出されます。 このイベントは、ピン留め可能な作業ウィンドウを実装するアドインで使用され、現在選択されているアイテムに基づいて作業ウィンドウ UI をアドインで更新できるようにします。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
@@ -129,23 +129,23 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
+        // Handle error.
       }
     });
   });
 };
 
 function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
+  // Load the properties of the newly selected item.
   loadProps(Office.context.mailbox.item);
 };
 ```
@@ -159,7 +159,7 @@ REST 形式のアイテム ID を EWS 形式に変換します。
 
 REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](https://graph.microsoft.io/) など) で取得されたアイテム ID は、Exchange Web サービス (EWS) に使用される形式とは異なる形式を使用します。`convertToEwsId` メソッドは、REST 形式の ID を EWS 用の適切な形式に変換します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -172,7 +172,7 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -180,12 +180,11 @@ REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office
 
 ##### <a name="example"></a>例
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -197,7 +196,7 @@ Outlook 用メール アプリや Outlook Web App で使う日付と時刻では
 
 Outlook でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、クライアント コンピューターのタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。Outlook Web Apps でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、EAC に指定されたタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -209,7 +208,7 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -224,7 +223,7 @@ EWS 形式のアイテム ID を REST 形式に変換します。
 
 EWS または `itemId` プロパティで取得されるアイテム ID は、REST API ([Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) や [Microsoft Graph](https://graph.microsoft.io/) など) に使用される形式とは異なる形式を使用します。`convertToRestId` メソッドは、EWS 形式の ID を REST 用の適切な形式に変換します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -237,7 +236,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -245,12 +244,11 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="example"></a>例
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -260,7 +258,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 `convertToUtcClientTime` メソッドは、ローカルの日付と時刻を含むディクショナリを、ローカルの日付と時刻の正しい値を持つ日付オブジェクトに変換します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -272,7 +270,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="returns"></a>戻り値:
 
@@ -301,7 +299,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 指定のアイテム識別子が既存の予定を表していない場合は、クライアント コンピューターまたはデバイスで空のウィンドウが開き、エラー メッセージは返されません。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -313,11 +311,11 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -336,7 +334,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 予定を表す `itemId` を含む `displayMessageForm` を使用しないでください。既存の予定を表示するには、`displayAppointmentForm` メソッドを使用します。新しい予定を作成するフォームを表示するには、`displayNewAppointmentForm` メソッドを使用します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -348,11 +346,11 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -371,7 +369,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 パラメーターのいずれかが指定のサイズ制限を超える場合、または不明なパラメーター名が指定されている場合は、例外がスローされます。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 説明|
 |---|---|---|
@@ -395,7 +393,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -434,7 +432,7 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 アドインでは、`ewsUrl` プロパティを使用して、EWS 呼び出しを行うときに使用する正しい URL を決定する必要があります。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -453,7 +451,7 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -480,7 +478,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してアイテムの識別子を `getCallbackTokenAsync` メソッドに渡す必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -497,7 +495,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -513,7 +511,7 @@ function cb(asyncResult) {
 
 `getUserIdentityTokenAsync` メソッドは、[アドインとユーザーをサード パーティのシステムで識別して認証](https://docs.microsoft.com/outlook/add-ins/authentication)することのできるトークンを返します。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -526,11 +524,11 @@ function cb(asyncResult) {
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -576,7 +574,7 @@ XML 要求では UTF-8 エンコードを指定する必要があります。
 
 Outlook on the web でメール アプリを実行している場合は、エンコード値を設定する必要はありません。mailbox.diagnostics.hostName プロパティを使って、メール アプリを Outlook で実行しているのか、Outlook on the web で実行しているのかを確認できます。mailbox.diagnostics.hostVersion プロパティを使って、どのバージョンの Outlook を使って実行しているかを確認できます。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -590,16 +588,16 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
 次の例は、`GetItem` 操作を使ってアイテムの件名を取得するため、`makeEwsRequestAsync` を呼び出します。
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -621,20 +619,20 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```
 
@@ -644,7 +642,7 @@ function callback(asyncResult)  {
 
 現在、サポートされているイベントの種類は `Office.EventType.ItemChanged` だけです。
 
-##### <a name="parameters"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター
 
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
@@ -659,4 +657,4 @@ function callback(asyncResult)  {
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
