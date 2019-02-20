@@ -1,15 +1,15 @@
 ---
 title: Identity API の要件セット
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8db095c54322f04781b7dfa7bfadd857800678e3
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742199"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091240"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -17,11 +17,11 @@ ms.locfileid: "29742199"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表は、Identity API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Office 2013 for Windows | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
+|  要件セット  | Windows 版 Office 2013/2016/2019 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | 該当なし | プレビュー **&#42;** | 間もなく提供開始 | プレビュー **&#42;**| プレビュー | プレビュー| 間もなく提供開始 | 間もなく提供開始 |
+| IdentityAPI 1.1  | N/A **& # 42;** | プレビュー **&#42;** | 間もなく提供開始 | プレビュー **&#42;**| プレビュー | プレビュー| 間もなく提供開始 | 間もなく提供開始 |
 
-> **&#42;** プレビュー段階では、Identity API は Windows 2016 および Mac で、ファースト オプションを使用する Insider プログラムのユーザーに対してのみサポートされます。 Insider プログラムに参加するには、「[Office Insider に登録する](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ファースト トラックに切り替えるには、「[Insider ファースト](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961)」を参照してください。
+> **& # 42;** プレビューフェーズでは、id API に office 365 (office のサブスクリプション版 ("クリックして実行" とも呼ばれます) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
 
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
