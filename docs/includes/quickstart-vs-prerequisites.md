@@ -6,4 +6,4 @@
 - Office 2016 以降
     
     > [!NOTE]
-    > まだ Office を所持していない場合は、[Office 開発者プログラムに参加](https://developer.microsoft.com/ja-JP/office/dev-program)して、アドインの開発および試用を行うためのライセンスを取得してください。
+    > まだ Office を所持していない場合は、[Office 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、アドインの開発および試用を行うためのライセンスを取得してください。
