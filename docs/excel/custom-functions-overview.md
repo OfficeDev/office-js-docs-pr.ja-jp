@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982028"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052764"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -145,7 +145,7 @@ function increment(incrementBy, callback) {
 | `description` | 関数について説明します。 この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
 | `result`  | 関数が返す情報の種類を定義するオブジェクトです。 このオブジェクトに関する詳細情報については [result](custom-functions-json.md#result) を参照してください。 |
 | `parameters` | 関数の入力パラメーターを定義する配列です。 このオブジェクトに関する詳細情報については [parameters](custom-functions-json.md#parameters) を参照してください。 |
-| `options` | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 このプロパティの使用方法の詳細については、[ストリーム関数](#streaming-functions)および[関数のキャンセル](#canceling-a-function)を参照してください。 |
+| `options` | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 このプロパティの使用方法の詳細については、「[ストリーム関数](#streaming-functions)」および「[関数のキャンセル](#canceling-a-function)」を参照してください。 |
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
@@ -288,6 +288,32 @@ JSON メタデータ ファイルでストリーミング関数にメタデー�
 
 関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装し、関数を記述するJSONのメタデータの `options` オブジェクト内のプロパティ `"cancelable": true` を指定する必要があります。 この記事の前のセクションのコード サンプルに、これらの手法の例が示されています。
 
+## <a name="declaring-a-volatile-function"></a>揮発性関数の宣言
+
+[揮発性関数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)とは、関数のいずれの引数にも変更がない場合でも、値が刻々と変化する関数のことです。 これらの関数は、Excel が再計算するたびに再計算を行います。 たとえば、`NOW` 関数を呼び出すセルがあるとします。 `NOW` が呼び出される度に、現在の日付と時刻を自動的に返します。
+
+Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel のすべての揮発性関数の一覧は、「[揮発性および非揮発性関数](https://docs.microsoft.com/ja-JP/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」をご覧ください。
+
+カスタム関数を使用すると独自の揮発性関数を作成することができ、日時、時間、乱数、およびモデルを処理するときに役立つ場合があります。 たとえば、モンテカルロ シミュレーションでは、最適なソリューションを決定するにはランダムな入力値の生成が必要です。
+
+関数を揮発性であると宣言するには、次のコードで示されるように、JSON メタデータファイルの関数で、`options` オブジェクトに`"volatile": true` を追加します。 関数で `"streaming": true`と`"volatile": true` の両方をマークすることはできません。両方とも `true` とマークされている場合、揮発性のオプションは無視されます。
+
+```json
+{
+ "id": "TOMORROW",
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
+```
+
 ## <a name="saving-and-sharing-state"></a>状態の保存と共有
 
 カスタム関数は、グローバル JavaScript 変数にデータを保存でき、以降の呼び出しで使用することができます。 保存された状態は、関数のすべてのインスタンスが状態を共有できるため、ユーザーが複数のセルに同じカスタム関数を呼び出す場合に便利です。 たとえば、同じ Web リソースへの追加呼び出しを避けるために、呼び出しから返されたデータを Web リソースに保存することができます。
@@ -331,6 +357,11 @@ function refreshTemperature(thermometerID){
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
+
+## <a name="co-authoring"></a>共同編集
+Excel Online と Excel for Windows で Office 365 サブスクリプションを利用している場合、ドキュメントの共同編集を行うことができ、カスタム関数を使用できます。 ブックでカスタム関数を使用している場合、仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
+
+共同編集の詳細については、「[Excel での共同編集](https://docs.microsoft.com/ja-JP/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
 ## <a name="working-with-ranges-of-data"></a>データの範囲を使用する
 

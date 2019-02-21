@@ -4,12 +4,12 @@ description: ''
 ms.date: 10/19/2018
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a7600b5e53fa9c7361f2dd0c117d97937ec954c7
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742374"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091254"
 ---
 # <a name="build-an-excel-add-in-using-angular"></a>Angular を使用して Excel のアドインを作成する
 
