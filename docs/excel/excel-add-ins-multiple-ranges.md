@@ -1,24 +1,25 @@
 ---
 title: Excel アドインで複数の範囲を同時に操作する
 description: ''
-ms.date: 12/26/2018
-ms.openlocfilehash: ab7cd9757adaedf2b6cc43fdcc604b98a60b6ecd
-ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
-ms.translationtype: HT
+ms.date: 02/20/2019
+localization_priority: Normal
+ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "27447233"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "30199607"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Excel アドインで複数の範囲を同時に操作する (プレビュー)
 
 Excel JavaScript ライブラリを使用すると、同時に複数の範囲に対してアドインによる操作の実行とプロパティの設定が可能になります。 範囲は連続している必要はありません。 コードがよりシンプルになることに加え、この方法でプロパティを設定すれば、各範囲に同じプロパティを個別に設定する方法よりも処理速度が格段に速くなります。
 
 > [!NOTE]
-> この記事で説明する API には、**Office 2016 クイック実行バージョン 1809 Build 10820.20000** 以降が必要です  ([Office Insider プログラム](https://products.office.com/office-insider)に参加して、適切なビルドを取得することが必要な場合があります)。また、Office JavaScript ライブラリのベータ版を [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) からロードする必要があります。 最後に、これらの API セットに関する参照ページはまだありません。 ただし、定義の種類ファイル [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) に説明が含まれています。
+> この記事で説明する API には、**Office 2016 クイック実行バージョン 1809 Build 10820.20000** 以降が必要です  (適切なビルドを取得するには、 [Office Insider プログラム](https://products.office.com/office-insider)に参加する必要がある場合があります)。[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 
-範囲のセット (連続している必要はなし) は、`Excel.RangeAreas` オブジェクトで表されます。 `Range` 型と同様のプロパティとメソッドを持ちますが (多くの場合は同じまたは類似した名前)、以下に対しては調整が行われています。
+範囲の集合 (連続している可能性もあります) は、 [rangeareas](/javascript/api/excel/excel.rangeareas)オブジェクトによって表されます。 `Range` 型と同様のプロパティとメソッドを持ちますが (多くの場合は同じまたは類似した名前)、以下に対しては調整が行われています。
 
 - プロパティのデータ型と、セッターとゲッターの動作。
 - メソッド パラメーターのデータ型と、メソッドの動作。
@@ -89,7 +90,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 `RangeAreas` オブジェクトの作成には、2 つの基本的な方法があります。
 
-- `Worksheet.getRanges()` を呼び出して、範囲のアドレスがコンマで区切られた文字列を渡します。 含める対象の範囲が既に [NamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem) に指定されている場合、文字列にはアドレスではなくその名前を指定することができます。
+- `Worksheet.getRanges()` を呼び出して、範囲のアドレスがコンマで区切られた文字列を渡します。 含める対象の範囲が既に [NamedItem](/javascript/api/excel/excel.nameditem) に指定されている場合、文字列にはアドレスではなくその名前を指定することができます。
 - `Workbook.getSelectedRanges()` を呼び出します。 このメソッドは、現在アクティブなワークシート上で選択されている全範囲を表す `RangeAreas` を返します。
 
 一度 `RangeAreas` オブジェクトを作成すると、`getOffsetRangeAreas` や `getIntersection` など、`RangeAreas` を返すオブジェクト上のメソッドを使用して別のオブジェクトを作成できます。
