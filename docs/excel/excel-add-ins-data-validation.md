@@ -28,11 +28,11 @@ Excel の JavaScript ライブラリには、ブック内の表、列、行、�
 - `type` &#8212; WholeNumber、Date、TextLength などの入力規則のタイプの読み取り専用 ID です。これは `rule` プロパティを設定すると間接的に設定されます。
 
 > [!NOTE]
-> プログラムによって追加されたデータの入力規則は、手動で追加したデータの入力規則と同様に動作します。 特に、データの入力規則は、ユーザーがセルに値を直接入力した場合、またはブックの別の場所からセルをコピーして貼り付けたときに、**値**の貼り付けオプションを選択した場合にのみトリガーされます。 ユーザーがセルをコピーしてデータの入力規則のある範囲内に単に貼り付けた場合は、データの入力規則はトリガーされません。
+> プログラムによって追加されたデータの入力規則は、手動で追加したデータの入力規則と同様に動作します。 具体的に言うと、データの入力規則は、ユーザーがセルに値を直接入力した場合、またはブックの別の場所からセルをコピーして貼り付けたときに、**値**の貼り付けオプションを選択した場合にのみトリガーされます。 ユーザーがセルをコピーしてデータの入力規則のある範囲内に単に貼り付けた場合は、データの入力規則はトリガーされません。
 
 ## <a name="creating-validation-rules"></a>入力規則を作成する
 
-範囲にデータの入力規則を追加するには、コードで `Range.dataValidation` にある `DataValidation` オブジェクトの `rule` プロパティを設定する必要があります。 これには 7 つの省略可能なプロパティを持つ [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) オブジェクトが必要です。 *これらのプロパティの 1 つのみが、任意の `DataValidationRule` オブジェクト内に存在することができます。* 含まれているプロパティにより、入力規則のタイプが決定されます。
+範囲にデータの入力規則を追加するには、コードで `Range.dataValidation` にある `DataValidation` オブジェクトの `rule` プロパティを設定する必要があります。 これには 7 つの省略可能なプロパティを持つ [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) オブジェクトが必要です。 *`DataValidationRule` オブジェクトにはこれらのプロパティの 1 つのみを設定できます。* 設定したプロパティにより、入力規則のタイプが決まります。
 
 ### <a name="basic-and-datetime-validation-rule-types"></a>Basic および DateTime 入力規則のタイプ
 
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 - `date`
 - `time`
 
-`DateTimeDataValidation` オブジェクトは `BasicDataValidation` と同様に構成されています。つまり、プロパティ `formula1`、`formula2`、および `operator` があり、同じ方法で使用されます。 数式プロパティで数値は使用できませんが、[ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) は入力できます。この点が違います。 次に、2018 年 4 月の最初の週の日付として有効な値を定義する例を示します。 
+`DateTimeDataValidation` オブジェクトは `BasicDataValidation` と同様に構成されています。つまり、プロパティ `formula1`、`formula2`、および `operator` があり、同じ方法で使用されます。 ただし、数式プロパティで数値が使用できない代わりに [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) を入力できる点が異なります。 次に、2018 年 4 月の最初の週の日付として有効な値を定義する例を示します。 
 
 ```js
 Excel.run(function (context) {
