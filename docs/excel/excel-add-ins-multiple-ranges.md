@@ -7,7 +7,7 @@ ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
 ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
+ms.lasthandoff: 02/28/2019
 ms.locfileid: "30199607"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Excel アドインで複数の範囲を同時に操作する (プレビュー)

@@ -8,7 +8,7 @@ ms.openlocfilehash: e627576d328dabafe6301c142519cb80befb9f77
 ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
+ms.lasthandoff: 02/28/2019
 ms.locfileid: "30199558"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット

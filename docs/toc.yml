@@ -207,16 +207,16 @@ items:
       items:
       - name: Angular の使用
         displayName: Excel
-        href: excel/excel-add-ins-get-started-angular.md
+        href: quickstarts/excel-quickstart-angular.md
       - name: jQuery の使用
         displayName: Excel
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
       - name: React の使用
         displayName: Excel
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
       - name: Vue の使用
         displayName: Excel
-        href: excel/excel-add-ins-get-started-vue.md
+        href: quickstarts/excel-quickstart-vue.md
     - name: Excel アドインのチュートリアル
       displayName: Excel
       href: tutorials/excel-tutorial.md
@@ -258,9 +258,18 @@ items:
         - name: カスタム関数のベスト プラクティス
           displayName: Excel
           href: excel/custom-functions-best-practices.md
+        - name: カスタム関数の認証
+          displayName: Excel
+          href: excel/custom-functions-authentication.md
         - name: カスタム関数の変更ログ
           displayName: Excel
           href: excel/custom-functions-changelog.md
+        - name: カスタム関数の要件
+          displayName: Excel
+          href: excel/custom-functions-requirements.md
+        - name: カスタム関数の名前付けガイドライン
+          displayName: Excel
+          href: excel/custom-functions-naming.md
       - name: データ検証
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
@@ -306,7 +315,7 @@ items:
     items:
     - name: 最初の Word アドインをビルドする
       displayName: Word
-      href: word/word-add-ins.md
+      href: quickstarts/word-quickstart.md
     - name: Word アドインのチュートリアル
       displayName: Word
       href: tutorials/word-tutorial.md
@@ -343,7 +352,7 @@ items:
     items:
     - name: 最初の PowerPoint アドインをビルドする
       displayName: PowerPoint
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
     - name: PowerPoint アドインのチュートリアル
       displayName: PowerPoint
       href: tutorials/powerpoint-tutorial.md
@@ -359,7 +368,7 @@ items:
     items:
     - name: 最初の OneNote アドインをビルドする
       displayName: OneNote
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
     - name: OneNote ページ コンテンツを使用する
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
@@ -375,7 +384,7 @@ items:
     items:
     - name: 最初の Project アドインをビルドする
       displayName: Project
-      href: project/project-add-ins-get-started.md
+      href: quickstarts/project-quickstart.md
     - name: 社内の OData サービスで REST を使用する Project アドインを作成する
       displayName: Project
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -759,9 +768,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: リソース
   href: resources/resources-links-help.md
-ms.openlocfilehash: 7ad59f66ad87a5bbdbcb52d0af4e98af2a69a6da
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+ms.openlocfilehash: e2dde2b09439c3de60363cb29609df8dbb39365a
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770624"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199768"
