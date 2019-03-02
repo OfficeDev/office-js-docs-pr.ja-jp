@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
-ms.openlocfilehash: cf27b72fe744358f902d36ebd2b89a432aa305f5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388193"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359255"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -41,18 +41,13 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 1. 同期ケーブルを使用し、iPad をコンピューターに接続します。iPad を初めてコンピューターに接続する場合、**[このコンピューターを信頼しますか?]** と問われます。**[信頼する]** を選択して続行します。
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
-    
-    ![iTunes の iPad アイコン](../images/ipad.png)
 
 3. iTunes の左側の  **[設定]** で、 **[App]** をクリックします。
-    
-    ![iTunes アプリの設定](../images/file-settings-apps.png)
 
 4. iTunes の右側で、 **[ファイル共有]** までスクロールしてから、 **[アドイン]** 列で **[Excel]** または **[Word]** をクリックします。
-    
-    ![iTunes のファイル共有](../images/file-sharing.png)
 
-5. **[Excel]** 列または **[Word ドキュメント]** 列の下部で、 **[ファイルの追加]** をクリックしてから、サイドロードするアドインのマニフェスト .xml ファイルを選択します。 
+5. 
+            **[Excel]** 列または **[Word ドキュメント]** 列の下部で、 **[ファイルの追加]** をクリックしてから、サイドロードするアドインのマニフェスト .xml ファイルを選択します。 
     
 6. iPad で Excel または Word アプリを開きます。Excel または Word アプリがすでに実行されている場合は、 **[ホーム]** ボタンを選択して、アプリを閉じて再起動します。
     
@@ -97,4 +92,3 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 ## <a name="see-also"></a>関連項目
 
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
-    

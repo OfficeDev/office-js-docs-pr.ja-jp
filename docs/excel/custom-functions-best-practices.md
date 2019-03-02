@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス (プレビュー)
-ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770652"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359262"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
@@ -37,9 +38,12 @@ function getComment(x) {
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-Windows 版 Office でアドインを検証する場合は、アドインの XML マニフェスト ファイルおよびインストールと実行時の条件のトラブルシューティングを行うために**[実行時ログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にすることをおすすめします。 実行時ログは、ログファイルに `console.log` ステートメントを書き込んで、問題を発見します。
+1. Windows 版 Office でアドインを検証する場合は、アドインの XML マニフェスト ファイルおよびインストールと実行時の条件のトラブルシューティングを行うために**[実行時ログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にすることをおすすめします。 実行時ログは、ログファイルに `console.log` ステートメントを書き込んで、問題を発見します。
 
-このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
+2. 1つ以上のカスタム関数が以前に登録されたアドインのカスタム関数と競合する場合、アドインは読み込まれません。 この場合、既存のアドインを削除するか、アドインの開発時にこのエラーが発生した場合は、マニフェストで別の名前空間名を指定することができます。
+
+3. このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
+
 
 ## <a name="debugging"></a>デバッグ
 

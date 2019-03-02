@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間 - プレビュー要件セット
 description: ''
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bbec602680da7914666daf33ed36c45751ae69c6
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 7b27963a85f1dcdaa6f269fce242c45bf1bdd146
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068323"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359234"
 ---
 # <a name="office"></a>Office
 
@@ -19,7 +19,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
@@ -58,7 +58,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ---
 
@@ -82,7 +82,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ---
 
@@ -100,6 +100,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |---|---|---|---|
 |`AppointmentTimeChanged`| String | 選択した予定または一連の予定の日付または時刻が変更された。 | 1.7 |
 |`AttachmentsChanged`| String | アイテムに添付ファイルが追加されたか、アイテムから添付ファイルが削除された。 | プレビュー |
+|`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | プレビュー |
 |`ItemChanged`| String | 作業ウィンドウがピン留めされている間、別の Outlook アイテムが選択されて表示されている。 | 1.5 |
 |`OfficeThemeChanged`| 文字列 | メールボックスの Office テーマが変更された。 | プレビュー |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更された。 | 1.7 |
@@ -110,7 +111,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り |
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
 
 ---
 
@@ -134,4 +135,4 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
