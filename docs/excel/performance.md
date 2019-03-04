@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
-ms.date: 12/06/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c288f3e29d2a956238d9597730312ae0608a7ec
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389124"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199579"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -106,7 +106,7 @@ Excel.run(async function(ctx) {
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
-    // Suspending recalc
+    // Suspending recalculation
     app.suspendApiCalculationUntilNextSync();
     rangeToSet = sheet.getRange("A1:B1");
     rangeToSet.values = [[10, 20]];
@@ -116,7 +116,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
-    // Calculation mode should still be "Automatic" even with supend recalc
+    // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>画面の更新を停止する
 
 > [!NOTE]
-> この記事で説明している `suspendScreenUpdatingUntilNextSync()` メソッドには、[Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) の Office JavaScript ライブラリのベータ版が必要です。 [種類の定義のファイル] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は CDN にもあります。 予定されている API については、GitHub に掲載されている [オープン仕様](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) をご覧ください。
+> この記事に記載されている `suspendScreenUpdatingUntilNextSync` メソッドは、現在パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
 
@@ -137,7 +137,7 @@ Excel では、コード内で発生したのとほぼ同時に、アドイン�
 
 イベントを無効にすると、アドインのパフォーマンスが向上する可能性があります。 イベントを有効化および無効化する方法を示すコード サンプルは、「[イベントの操作](excel-add-ins-events.md#enable-and-disable-events)」の記事に記載されています。
 
-## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新 
+## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
 
 範囲内のすべてのセルを同じ値またはプロパティで更新する必要がある場合は、同じ値を繰り返し指定する 2 次元配列で行うと、更新が遅くなる可能性があります。このアプローチだと、範囲内のすべてのセルを Excel が反復しなければ、それぞれ個別に設定できないからです。 Excel には、範囲内のすべてのセルを同じ値またはプロパティで更新するより効率的な方法が備わっています。
 
@@ -182,7 +182,7 @@ Excel.run(async (ctx) => {
 
 JavaScript レイヤーは、アドインが Excel のブックと基になる範囲を操作するためのプロキシ オブジェクトを作成します。 こうしたオブジェクトは、`context.sync()` が呼び出されるまでメモリに維持されます。 大規模なバッチ操作では、アドインが 1 回のみ必要とするプロキシ オブジェクトが大量に生成されることがあります。それらのオブジェクトは、バッチの実行前にメモリから解放できます。
 
-[Range.untrack()](/javascript/api/excel/excel.range#untrack--) メソッドにより、Excel の Range オブジェクトがメモリから解放されます。 範囲に対してアドインを実行した後に、このメソッドを呼び出すと、大量の Range オブジェクトを使用しているときのパフォーマンスが大幅に向上します。 
+[Range.untrack()](/javascript/api/excel/excel.range#untrack--) メソッドにより、Excel の Range オブジェクトがメモリから解放されます。 範囲に対してアドインを実行した後に、このメソッドを呼び出すと、大量の Range オブジェクトを使用しているときのパフォーマンスが大幅に向上します。
 
 > [!NOTE]
 > `Range.untrack()` は、[ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-) のショートカットです。 プロキシ オブジェクトは、コンテキスト内の追跡対象オブジェクト リストから削除することで追跡解除できます。 通常、Range オブジェクトは追跡の解除が正当化されるほどの量で使用される唯一の Excel オブジェクトです。
