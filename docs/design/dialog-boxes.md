@@ -1,14 +1,14 @@
 ---
 title: Office アドインのダイアログ ボックス
 description: ''
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 78a3419dd93f2a19e3addbeb5a77271b5b124680
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 1710d609910cc3c15143605570f97d013a104194
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388403"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359220"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office アドインのダイアログ ボックス
  
@@ -31,7 +31,7 @@ ms.locfileid: "29388403"
 
 ## <a name="see-also"></a>関連項目
 
-- [GitHub の開発リソース](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Dialog オブジェクト](https://docs.microsoft.com/javascript/api/office/office.dialog)
+- [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
 
 

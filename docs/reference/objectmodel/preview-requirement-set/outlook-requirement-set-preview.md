@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: 233bc6770faefaa0e101fd01c353e7ce0df972a1
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701786"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359248"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -42,7 +42,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) - アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - 代理人のアクセス権を指定する新しいビット フラグ列挙型が追加されました。
 - [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - 予定の場所の種類を指定する新しい列挙型が追加されました。
-- [Office.EventType](/javascript/api/office/office.eventtype) - AttachmentsChanged イベントおよび OfficeThemeChanged イベントを、それぞれに `AttachmentsChanged` エントリと `OfficeThemeChanged` エントリを追加することによりサポートするように変更されました。
+- [Office.EventType](/javascript/api/office/office.eventtype) - AttachmentsChanged イベント、EnhancedLocationsChanged イベント、OfficeThemeChanged イベントを、それぞれに `AttachmentsChanged` エントリ、`EnhancedLocationsChanged` エントリ、`OfficeThemeChanged` エントリを追加することによりサポートするように変更されました。
 - [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
 ## <a name="see-also"></a>関連項目

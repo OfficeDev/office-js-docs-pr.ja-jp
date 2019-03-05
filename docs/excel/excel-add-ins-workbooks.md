@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 02/20/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d0cbc21d7e6b5c987df5a29d1aa83790c5685bc
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30199593"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359269"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -86,14 +86,14 @@ addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: 
 次の例では、ブックのワークシートが現在のブックのアクティブ ワークシートの直後に挿入されています。 `null` が `sheetNamesToInsert?: string[]` パラメーターに渡されている点に注意してください。 つまり、すべてのワークシートが挿入されます。
 
 ```js
-var myFile = <HTMLInputElement>document.getElementById("file");
+var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
-        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+        var startIndex = event.target.result.indexOf("base64,");
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
@@ -260,6 +260,37 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="save-the-workbook"></a>ブックを保存する
+
+> [!NOTE]
+> 現在、`Workbook.save(saveBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.save(saveBehavior)` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
+
+- `Excel.SaveBehavior.save` (既定値): ファイル名や保存場所を指定するようにユーザーに促すダイアログは表示されず、そのままファイルが保存されます。 ファイルが以前に保存されていない場合は、既定の場所に保存されます。 ファイルが以前に保存されている場合は、同じ場所に保存されます。
+- `Excel.SaveBehavior.prompt`: ファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。 ファイルが以前に保存されている場合、ファイルは同じ場所に保存され、ダイアログは表示されません。
+
+> [!CAUTION]
+> 保存を促すダイアログが表示されたのにユーザーがその操作をキャンセルすると、`save` は例外をスローします。
+
+```js
+context.workbook.save(Excel.SaveBehavior.prompt);
+```
+
+## <a name="close-the-workbook"></a>ブックを閉じる
+
+> [!NOTE]
+> 現在、`Workbook.close(closeBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.close(closeBehavior)` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
+
+- `Excel.CloseBehavior.save` (既定値): ファイルは閉じる前に保存されます。 そのファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。
+- `Excel.CloseBehavior.skipSave`: ファイルはそのまま閉じられ、保存されません。 未保存の変更は失われます。
+
+```js
+context.workbook.close(Excel.CloseBehavior.save);
 ```
 
 ## <a name="see-also"></a>関連項目

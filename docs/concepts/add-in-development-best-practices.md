@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 774dacc2fa48a75a95b88740d65eca88ad7dcfdd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388983"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359283"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -50,7 +50,7 @@ ms.locfileid: "29388983"
 
 - ポップアップは使用しないようにします。使用する必要がある場合は、ポップアップを有効にするようユーザーに指示します。
 
-最初の実行エクスペリエンスを開発する際に適用できるパターンを示すテンプレートについては、「[Office アドインの UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)」を参照してください。
+最初の実行エクスペリエンスを開発する際に適用できるパターンについては、「[Office アドインの UX 設計パターン](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns)」を参照してください。
 
 ## <a name="use-add-in-commands"></a>アドイン コマンドを使用する
 
@@ -76,8 +76,6 @@ ms.locfileid: "29388983"
 - アクセシビリティを考慮してください。すべてのユーザーにとって操作しやすいアドインにして、画面リーダーなどの支援テクノロジが利用できるようにしてください。
 
 - すべてのプラットフォームと入力方法 (マウスやキーボード、および [タッチ](#optimize-for-touch)など) に対応するように設計してください。UI が様々なフォーム ファクターに対応するようにしてください。
-
-設計原則を適用し、アドインの開発時に使用したりカスタマイズすることができるテンプレートについては、「[Office アドインの UX 設計パターン](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)」を参照してください。
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 

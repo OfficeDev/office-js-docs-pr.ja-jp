@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
 description: ''
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389285"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359241"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -114,7 +114,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 ## <a name="see-also"></a>関連項目
 
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
 - [Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [UX 設計パターン (Fabric 2.6.1 を使用)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office アドイン Fabric UI サンプル (Fabric 1.0 を使用)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)
