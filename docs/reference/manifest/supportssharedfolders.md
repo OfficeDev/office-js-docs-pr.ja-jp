@@ -1,20 +1,21 @@
 ---
 title: マニフェスト ファイルの SupportsSharedFolders 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 776d44ec66c4e27a72e5487051bed1edf4b3dcaf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/01/2019
+localization_priority: Normal
+ms.openlocfilehash: bfbce42c7d1aa5eefab40b528c5b622aa7d2d54f
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432684"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413616"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 要素
 
 代理人のシナリオで Outlook アドインが使用できるかどうかを定義します。 **SupportsSharedFolders** 要素は、[DesktopFormFactor](desktopformfactor.md) の子要素です。 既定では *false* になっています。
 
 > [!IMPORTANT]
-> この要素は、[Outlook アドイン要件セットのプレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)の Exchange Online に対してのみ使用できます。 この要素を使用するアドインは、AppSource に発行したり、一元展開によって展開したりすることはできません。
+> Outlook アドインの代理人アクセスは現在プレビュー段階であり、Exchange Online に対して実行されるクライアントでのみサポートされています。 この要素を使用するアドインは、AppSource に発行したり、一元展開によって展開したりすることはできません。
 
 **SupportsSharedFolders** 要素の例を次に示します。
 
@@ -22,8 +23,8 @@ ms.locfileid: "27432684"
 <DesktopFormFactor>
   <FunctionFile resid="residDesktopFuncUrl" />
   <SupportsSharedFolders>true</SupportsSharedFolders>
-  <ExtensionPoint xsi:type="PrimaryCommandSurface">
-    <!-- information about this extension point -->
+  <ExtensionPoint xsi:type="MessageReadCommandSurface">
+    <!-- configure selected extension point -->
   </ExtensionPoint>
 
   <!-- You can define more than one ExtensionPoint element as needed -->
