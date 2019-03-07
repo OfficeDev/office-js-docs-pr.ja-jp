@@ -1,14 +1,14 @@
 ---
 title: Office アドインのアイコン ガイドライン
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: d6e98014227250420c34c63afa85e06a351ba4a1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388095"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413637"
 ---
 # <a name="icons"></a>アイコン
 アイコンは、動作や概念を視覚的に表現するものです。 多くの場合、コントロールとコマンドに意味を与えるために使用します。 環境内でユーザーが移動するのにサインが役立つのと同じように、リアルなビジュアルや象徴的なビジュアルにより、ユーザーは UI 間を移動できるようになります。 お客様がコントロールを選択するときの動作をすばやく解析できるにように、必要な詳細のみを含む、シンプルで明確なビジュアルにする必要があります。
@@ -131,6 +131,9 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 
 
 ## <a name="icon-colors"></a>アイコンの色
+
+> [!NOTE]
+> これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは Microsoft UI Fabric では表示されず、色のパレットは「[Microsoft UI Fabric | 色 | 共有](https://fluentfabric.azurewebsites.net/#/color/shared)」に記載されているパレットとは異なります。
 
 Office のアイコンには、限定されたカラー パレットがあります。Office UI とのシームレスな統合を保証するために、以下の表に記載されている色を使用してください。色の使用について、以下のガイドラインに従ってください。 
 
