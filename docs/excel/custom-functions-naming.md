@@ -3,12 +3,12 @@ ms.date: 02/08/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel でのカスタム関数の名前付けのガイドライン (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: bdf31879fb6e750fb9dea51f66c55dbc83a2dc90
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30203850"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512840"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
@@ -16,7 +16,9 @@ ms.locfileid: "30203850"
 
 関数名と関数 id は、いくつかの一般的な要件を共有します。
 
-- これらの文字は英数字 (Unicode を含む) である必要があります。数字 0 ~ 9、アンダースコア、ピリオドを使用する必要があります。
+- 関数 id は、文字 a ~ Z、0 ~ 9、アンダースコア、およびピリオドのみを使用できます。
+
+- 関数名には、Unicode の英字、アンダースコア、ピリオドを使用できます。
 
 - 文字で始まる必要があり、最小で3文字に制限されています。
 
