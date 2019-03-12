@@ -1,18 +1,18 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 localization_priority: Priority
-ms.openlocfilehash: a3e9c508a5bae0e7eb660458835b9242d0602818
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 636c6290d8c67901beb195990593727485467460
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30199614"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512882"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
-Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。 次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、各 Office アプリケーションで現在サポートされている共通 API が記載されています。
+期待どおりの動作をするうえで、Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API が含まれています。
 
 > [!NOTE]
 > MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1、WordApi 1.1、共通 API の要件セットのみが含まれています。
@@ -203,6 +203,8 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
         - TextCoercion</td>
   </tr>
 </table>
+
+*&ast; - リリース後の更新プログラムで追加されました。*
 
 <br/>
 
@@ -511,6 +513,8 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
   </tr>
 </table>
 
+*&ast; - リリース後の更新プログラムで追加されました。*
+
 <br/>
 
 ## <a name="powerpoint"></a>PowerPoint
@@ -632,6 +636,8 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
   </tr>
 </table>
 
+*&ast; - リリース後の更新プログラムで追加されました。*
+
 <br/>
 
 ## <a name="onenote"></a>OneNote
@@ -657,7 +663,6 @@ Office アドインは特定の Office ホスト、要件セット、API メン�
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; - リリース後の更新プログラムで追加されました。*
 
 <br/>
 
