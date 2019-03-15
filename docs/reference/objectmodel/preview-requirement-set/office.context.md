@@ -1,14 +1,14 @@
 ---
-title: Office.context - プレビュー要件セット
+title: Office コンテキスト-プレビュー要件セット
 description: ''
 ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: afc74aba3ebacd2d8f54cdc94e02b9f9ba19dcbf
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 0d47ab4f136cfc51808ca509de8177bb331e3cb7
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068288"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600271"
 ---
 # <a name="context"></a>context
 
@@ -18,18 +18,18 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
 | メンバー | 種類 |
 |--------|------|
-| [displayLanguage](#displaylanguage-string) | メンバー |
-| [officeTheme](#officetheme-object) | メンバー |
-| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings) | メンバー |
+| [displayLanguage](#displaylanguage-string) | Member |
+| [officeTheme](#officetheme-object) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | メンバー |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -43,16 +43,16 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 `displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル]、[選択肢]、[言語]** によって指定される現在の **[表示言語]** 設定を反映します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
-*   String
+*   文字列
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -99,10 +99,10 @@ Office テーマの色を使うと、**[ファイル] > [Office アカウント]
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -131,8 +131,8 @@ function applyOfficeTheme(){
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
 |[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
