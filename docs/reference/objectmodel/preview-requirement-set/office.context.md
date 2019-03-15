@@ -1,60 +1,60 @@
 ---
-title: Office.context - プレビュー要件セット
+title: Office コンテキスト-プレビュー要件セット
 description: ''
 ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: afc74aba3ebacd2d8f54cdc94e02b9f9ba19dcbf
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 0d47ab4f136cfc51808ca509de8177bb331e3cb7
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068288"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600271"
 ---
-# <a name="context"></a><span data-ttu-id="7cc4c-102">context</span><span class="sxs-lookup"><span data-stu-id="7cc4c-102">context</span></span>
+# <a name="context"></a><span data-ttu-id="faa99-102">context</span><span class="sxs-lookup"><span data-stu-id="faa99-102">context</span></span>
 
-### <a name="officeofficemdcontext"></a><span data-ttu-id="7cc4c-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="7cc4c-103">[Office](Office.md).context</span></span>
+### <a name="officeofficemdcontext"></a><span data-ttu-id="faa99-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="faa99-103">[Office](Office.md).context</span></span>
 
-<span data-ttu-id="7cc4c-p101">Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office.context 名前空間の完全な一覧は、「[共通 API の Office.context リファレンス](/javascript/api/office/office.context)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-p101">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
+<span data-ttu-id="faa99-p101">Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office.context 名前空間の完全な一覧は、「[共通 API の Office.context リファレンス](/javascript/api/office/office.context)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="faa99-p101">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7cc4c-106">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-106">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="faa99-106">要件</span><span class="sxs-lookup"><span data-stu-id="faa99-106">Requirements</span></span>
 
-|<span data-ttu-id="7cc4c-107">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-107">Requirement</span></span>| <span data-ttu-id="7cc4c-108">値</span><span class="sxs-lookup"><span data-stu-id="7cc4c-108">Value</span></span>|
+|<span data-ttu-id="faa99-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="faa99-107">Requirement</span></span>| <span data-ttu-id="faa99-108">値</span><span class="sxs-lookup"><span data-stu-id="faa99-108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7cc4c-109">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7cc4c-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7cc4c-110">1.0</span><span class="sxs-lookup"><span data-stu-id="7cc4c-110">1.0</span></span>|
-|[<span data-ttu-id="7cc4c-111">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7cc4c-111">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="7cc4c-112">新規作成または読み取り</span><span class="sxs-lookup"><span data-stu-id="7cc4c-112">Compose or Read</span></span>|
+|[<span data-ttu-id="faa99-109">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="faa99-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="faa99-110">1.0以降</span><span class="sxs-lookup"><span data-stu-id="faa99-110">1.0</span></span>|
+|[<span data-ttu-id="faa99-111">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="faa99-111">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="faa99-112">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="faa99-112">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="7cc4c-113">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="7cc4c-113">Members and methods</span></span>
+##### <a name="members-and-methods"></a><span data-ttu-id="faa99-113">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="faa99-113">Members and methods</span></span>
 
-| <span data-ttu-id="7cc4c-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="7cc4c-114">Member</span></span> | <span data-ttu-id="7cc4c-115">種類</span><span class="sxs-lookup"><span data-stu-id="7cc4c-115">Type</span></span> |
+| <span data-ttu-id="faa99-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="faa99-114">Member</span></span> | <span data-ttu-id="faa99-115">種類</span><span class="sxs-lookup"><span data-stu-id="faa99-115">Type</span></span> |
 |--------|------|
-| [<span data-ttu-id="7cc4c-116">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="7cc4c-116">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="7cc4c-117">メンバー</span><span class="sxs-lookup"><span data-stu-id="7cc4c-117">Member</span></span> |
-| [<span data-ttu-id="7cc4c-118">officeTheme</span><span class="sxs-lookup"><span data-stu-id="7cc4c-118">officeTheme</span></span>](#officetheme-object) | <span data-ttu-id="7cc4c-119">メンバー</span><span class="sxs-lookup"><span data-stu-id="7cc4c-119">Member</span></span> |
-| [<span data-ttu-id="7cc4c-120">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="7cc4c-120">roamingSettings</span></span>](#roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings) | <span data-ttu-id="7cc4c-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="7cc4c-121">Member</span></span> |
+| [<span data-ttu-id="faa99-116">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="faa99-116">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="faa99-117">Member</span><span class="sxs-lookup"><span data-stu-id="faa99-117">Member</span></span> |
+| [<span data-ttu-id="faa99-118">officeTheme</span><span class="sxs-lookup"><span data-stu-id="faa99-118">officeTheme</span></span>](#officetheme-object) | <span data-ttu-id="faa99-119">Member</span><span class="sxs-lookup"><span data-stu-id="faa99-119">Member</span></span> |
+| [<span data-ttu-id="faa99-120">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="faa99-120">roamingSettings</span></span>](#roamingsettings-roamingsettings) | <span data-ttu-id="faa99-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="faa99-121">Member</span></span> |
 
-### <a name="namespaces"></a><span data-ttu-id="7cc4c-122">名前空間</span><span class="sxs-lookup"><span data-stu-id="7cc4c-122">Namespaces</span></span>
+### <a name="namespaces"></a><span data-ttu-id="faa99-122">名前空間</span><span class="sxs-lookup"><span data-stu-id="faa99-122">Namespaces</span></span>
 
-<span data-ttu-id="7cc4c-123">[mailbox](office.context.mailbox.md): Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-123">[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.</span></span>
+<span data-ttu-id="faa99-123">[mailbox](office.context.mailbox.md): Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="faa99-123">[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.</span></span>
 
-### <a name="members"></a><span data-ttu-id="7cc4c-124">メンバー</span><span class="sxs-lookup"><span data-stu-id="7cc4c-124">Members</span></span>
+### <a name="members"></a><span data-ttu-id="faa99-124">メンバー</span><span class="sxs-lookup"><span data-stu-id="faa99-124">Members</span></span>
 
-####  <a name="displaylanguage-string"></a><span data-ttu-id="7cc4c-125">displayLanguage :String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-125">displayLanguage :String</span></span>
+####  <a name="displaylanguage-string"></a><span data-ttu-id="faa99-125">displayLanguage :String</span><span class="sxs-lookup"><span data-stu-id="faa99-125">displayLanguage :String</span></span>
 
-<span data-ttu-id="7cc4c-126">Office ホスト アプリケーションの UI 用にユーザーが指定した RFC 1766 言語タグ形式のロケール (言語) を取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-126">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
+<span data-ttu-id="faa99-126">Office ホスト アプリケーションの UI 用にユーザーが指定した RFC 1766 言語タグ形式のロケール (言語) を取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-126">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
 
-<span data-ttu-id="7cc4c-127">`displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル]、[選択肢]、[言語]** によって指定される現在の **[表示言語]** 設定を反映します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-127">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
+<span data-ttu-id="faa99-127">`displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル]、[選択肢]、[言語]** によって指定される現在の **[表示言語]** 設定を反映します。</span><span class="sxs-lookup"><span data-stu-id="faa99-127">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7cc4c-128">Type</span><span class="sxs-lookup"><span data-stu-id="7cc4c-128">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="faa99-128">型</span><span class="sxs-lookup"><span data-stu-id="faa99-128">Type</span></span>
 
-*   <span data-ttu-id="7cc4c-129">String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-129">String</span></span>
+*   <span data-ttu-id="faa99-129">文字列</span><span class="sxs-lookup"><span data-stu-id="faa99-129">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7cc4c-130">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-130">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="faa99-130">要件</span><span class="sxs-lookup"><span data-stu-id="faa99-130">Requirements</span></span>
 
-|<span data-ttu-id="7cc4c-131">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-131">Requirement</span></span>| <span data-ttu-id="7cc4c-132">値</span><span class="sxs-lookup"><span data-stu-id="7cc4c-132">Value</span></span>|
+|<span data-ttu-id="faa99-131">必要条件</span><span class="sxs-lookup"><span data-stu-id="faa99-131">Requirement</span></span>| <span data-ttu-id="faa99-132">値</span><span class="sxs-lookup"><span data-stu-id="faa99-132">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7cc4c-133">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7cc4c-133">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7cc4c-134">1.0</span><span class="sxs-lookup"><span data-stu-id="7cc4c-134">1.0</span></span>|
-|[<span data-ttu-id="7cc4c-135">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7cc4c-135">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="7cc4c-136">新規作成または読み取り</span><span class="sxs-lookup"><span data-stu-id="7cc4c-136">Compose or Read</span></span>|
+|[<span data-ttu-id="faa99-133">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="faa99-133">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="faa99-134">1.0以降</span><span class="sxs-lookup"><span data-stu-id="faa99-134">1.0</span></span>|
+|[<span data-ttu-id="faa99-135">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="faa99-135">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="faa99-136">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="faa99-136">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="7cc4c-137">例</span><span class="sxs-lookup"><span data-stu-id="7cc4c-137">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="faa99-137">例</span><span class="sxs-lookup"><span data-stu-id="faa99-137">Example</span></span>
 
 ```javascript
 function sayHelloWithDisplayLanguage() {
@@ -75,36 +75,36 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-object"></a><span data-ttu-id="7cc4c-138">officeTheme :Object</span><span class="sxs-lookup"><span data-stu-id="7cc4c-138">officeTheme :Object</span></span>
+####  <a name="officetheme-object"></a><span data-ttu-id="faa99-138">officeTheme :Object</span><span class="sxs-lookup"><span data-stu-id="faa99-138">officeTheme :Object</span></span>
 
-<span data-ttu-id="7cc4c-139">Office テーマの色のプロパティにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-139">Provides access to the properties for Office theme colors.</span></span>
+<span data-ttu-id="faa99-139">Office テーマの色のプロパティにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="faa99-139">Provides access to the properties for Office theme colors.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7cc4c-140">このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-140">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="faa99-140">このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="faa99-140">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="7cc4c-p102">Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-p102">Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.</span></span>
+<span data-ttu-id="faa99-p102">Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。</span><span class="sxs-lookup"><span data-stu-id="faa99-p102">Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7cc4c-143">型</span><span class="sxs-lookup"><span data-stu-id="7cc4c-143">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="faa99-143">型</span><span class="sxs-lookup"><span data-stu-id="faa99-143">Type</span></span>
 
-*   <span data-ttu-id="7cc4c-144">Object</span><span class="sxs-lookup"><span data-stu-id="7cc4c-144">Object</span></span>
+*   <span data-ttu-id="faa99-144">Object</span><span class="sxs-lookup"><span data-stu-id="faa99-144">Object</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="7cc4c-145">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="7cc4c-145">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="faa99-145">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="faa99-145">Properties:</span></span>
 
-|<span data-ttu-id="7cc4c-146">名前</span><span class="sxs-lookup"><span data-stu-id="7cc4c-146">Name</span></span>| <span data-ttu-id="7cc4c-147">型</span><span class="sxs-lookup"><span data-stu-id="7cc4c-147">Type</span></span>| <span data-ttu-id="7cc4c-148">説明</span><span class="sxs-lookup"><span data-stu-id="7cc4c-148">Description</span></span>|
+|<span data-ttu-id="faa99-146">名前</span><span class="sxs-lookup"><span data-stu-id="faa99-146">Name</span></span>| <span data-ttu-id="faa99-147">型</span><span class="sxs-lookup"><span data-stu-id="faa99-147">Type</span></span>| <span data-ttu-id="faa99-148">説明</span><span class="sxs-lookup"><span data-stu-id="faa99-148">Description</span></span>|
 |---|---|---|
-|`bodyBackgroundColor`| <span data-ttu-id="7cc4c-149">String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-149">String</span></span>|<span data-ttu-id="7cc4c-150">Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-150">Gets the Office theme body background color as a hexadecimal color triplet.</span></span>|
-|`bodyForegroundColor`| <span data-ttu-id="7cc4c-151">String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-151">String</span></span>|<span data-ttu-id="7cc4c-152">Office テーマの本文の前景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-152">Gets the Office theme body foreground color as a hexadecimal color triplet.</span></span>|
-|`controlBackgroundColor`| <span data-ttu-id="7cc4c-153">String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-153">String</span></span>|<span data-ttu-id="7cc4c-154">Office テーマのコントロールの背景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-154">Gets the Office theme control background color as a hexadecimal color triplet.</span></span>|
-|`controlForegroundColor`| <span data-ttu-id="7cc4c-155">String</span><span class="sxs-lookup"><span data-stu-id="7cc4c-155">String</span></span>|<span data-ttu-id="7cc4c-156">Office テーマの本文のコントロール色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-156">Gets the Office theme body control color as a hexadecimal color triplet.</span></span>|
+|`bodyBackgroundColor`| <span data-ttu-id="faa99-149">String</span><span class="sxs-lookup"><span data-stu-id="faa99-149">String</span></span>|<span data-ttu-id="faa99-150">Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-150">Gets the Office theme body background color as a hexadecimal color triplet.</span></span>|
+|`bodyForegroundColor`| <span data-ttu-id="faa99-151">String</span><span class="sxs-lookup"><span data-stu-id="faa99-151">String</span></span>|<span data-ttu-id="faa99-152">Office テーマの本文の前景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-152">Gets the Office theme body foreground color as a hexadecimal color triplet.</span></span>|
+|`controlBackgroundColor`| <span data-ttu-id="faa99-153">String</span><span class="sxs-lookup"><span data-stu-id="faa99-153">String</span></span>|<span data-ttu-id="faa99-154">Office テーマのコントロールの背景色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-154">Gets the Office theme control background color as a hexadecimal color triplet.</span></span>|
+|`controlForegroundColor`| <span data-ttu-id="faa99-155">String</span><span class="sxs-lookup"><span data-stu-id="faa99-155">String</span></span>|<span data-ttu-id="faa99-156">Office テーマの本文のコントロール色を 16 進数の組み合わせとして取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-156">Gets the Office theme body control color as a hexadecimal color triplet.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="7cc4c-157">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-157">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="faa99-157">要件</span><span class="sxs-lookup"><span data-stu-id="faa99-157">Requirements</span></span>
 
-|<span data-ttu-id="7cc4c-158">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-158">Requirement</span></span>| <span data-ttu-id="7cc4c-159">値</span><span class="sxs-lookup"><span data-stu-id="7cc4c-159">Value</span></span>|
+|<span data-ttu-id="faa99-158">必要条件</span><span class="sxs-lookup"><span data-stu-id="faa99-158">Requirement</span></span>| <span data-ttu-id="faa99-159">値</span><span class="sxs-lookup"><span data-stu-id="faa99-159">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7cc4c-160">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7cc4c-160">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7cc4c-161">1.3</span><span class="sxs-lookup"><span data-stu-id="7cc4c-161">1.3</span></span>|
-|[<span data-ttu-id="7cc4c-162">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7cc4c-162">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="7cc4c-163">新規作成または読み取り</span><span class="sxs-lookup"><span data-stu-id="7cc4c-163">Compose or Read</span></span>|
+|[<span data-ttu-id="faa99-160">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="faa99-160">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="faa99-161">1.3</span><span class="sxs-lookup"><span data-stu-id="faa99-161">1.3</span></span>|
+|[<span data-ttu-id="faa99-162">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="faa99-162">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="faa99-163">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="faa99-163">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="7cc4c-164">例</span><span class="sxs-lookup"><span data-stu-id="7cc4c-164">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="faa99-164">例</span><span class="sxs-lookup"><span data-stu-id="faa99-164">Example</span></span>
 
 ```javascript
 function applyOfficeTheme(){
@@ -119,20 +119,20 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a><span data-ttu-id="7cc4c-165">roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)</span><span class="sxs-lookup"><span data-stu-id="7cc4c-165">roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)</span></span>
+####  <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a><span data-ttu-id="faa99-165">roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)</span><span class="sxs-lookup"><span data-stu-id="faa99-165">roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)</span></span>
 
-<span data-ttu-id="7cc4c-166">ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-166">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
+<span data-ttu-id="faa99-166">ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="faa99-166">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
 
-<span data-ttu-id="7cc4c-167">`RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="7cc4c-167">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
+<span data-ttu-id="faa99-167">`RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="faa99-167">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7cc4c-168">型</span><span class="sxs-lookup"><span data-stu-id="7cc4c-168">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="faa99-168">型</span><span class="sxs-lookup"><span data-stu-id="faa99-168">Type</span></span>
 
-*   [<span data-ttu-id="7cc4c-169">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="7cc4c-169">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
+*   [<span data-ttu-id="faa99-169">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="faa99-169">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a><span data-ttu-id="7cc4c-170">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-170">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="faa99-170">要件</span><span class="sxs-lookup"><span data-stu-id="faa99-170">Requirements</span></span>
 
-|<span data-ttu-id="7cc4c-171">要件</span><span class="sxs-lookup"><span data-stu-id="7cc4c-171">Requirement</span></span>| <span data-ttu-id="7cc4c-172">値</span><span class="sxs-lookup"><span data-stu-id="7cc4c-172">Value</span></span>|
+|<span data-ttu-id="faa99-171">必要条件</span><span class="sxs-lookup"><span data-stu-id="faa99-171">Requirement</span></span>| <span data-ttu-id="faa99-172">値</span><span class="sxs-lookup"><span data-stu-id="faa99-172">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7cc4c-173">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7cc4c-173">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7cc4c-174">1.0</span><span class="sxs-lookup"><span data-stu-id="7cc4c-174">1.0</span></span>|
-|[<span data-ttu-id="7cc4c-175">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7cc4c-175">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="7cc4c-176">制限あり</span><span class="sxs-lookup"><span data-stu-id="7cc4c-176">Restricted</span></span>|
-|[<span data-ttu-id="7cc4c-177">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7cc4c-177">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="7cc4c-178">新規作成または読み取り</span><span class="sxs-lookup"><span data-stu-id="7cc4c-178">Compose or Read</span></span>|
+|[<span data-ttu-id="faa99-173">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="faa99-173">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="faa99-174">1.0以降</span><span class="sxs-lookup"><span data-stu-id="faa99-174">1.0</span></span>|
+|[<span data-ttu-id="faa99-175">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="faa99-175">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="faa99-176">制限あり</span><span class="sxs-lookup"><span data-stu-id="faa99-176">Restricted</span></span>|
+|[<span data-ttu-id="faa99-177">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="faa99-177">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="faa99-178">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="faa99-178">Compose or Read</span></span>|
