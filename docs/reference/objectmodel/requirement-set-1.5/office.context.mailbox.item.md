@@ -3,18 +3,18 @@ title: Office.context.mailbox.item - requirement set 1.5
 description: ''
 ms.date: 02/15/2019
 localization_priority: Priority
-ms.openlocfilehash: b95985f7ed76b9952e5698e9190ff4c1fa00a7cb
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 999a9b732a7efd3f4a9c289e5ff0b97e87278e60
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068239"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600278"
 ---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-`item` の名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。[itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype) プロパティを使用して、`item` の種類を指定できます。
+`item` の名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。[itemType](#itemtype-officemailboxenumsitemtype) プロパティを使用して、`item` の種類を指定できます。
 
 ##### <a name="requirements"></a>要件
 
@@ -28,37 +28,37 @@ ms.locfileid: "30068239"
 
 | メンバー | 種類 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook15officeattachmentdetails) | メンバー |
-| [bcc](#bcc-recipientsjavascriptapioutlook15officerecipients) | メンバー |
-| [body](#body-bodyjavascriptapioutlook15officebody) | メンバー |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | メンバー |
+| [attachments](#attachments-arrayattachmentdetails) | メンバー |
+| [bcc](#bcc-recipients) | メンバー |
+| [body](#body-body) | メンバー |
+| [cc](#cc-arrayemailaddressdetails) | メンバー |
 | [conversationId](#nullable-conversationid-string) | メンバー |
 | [dateTimeCreated](#datetimecreated-date) | メンバー |
 | [dateTimeModified](#datetimemodified-date) | メンバー |
-| [end](#end-datetimejavascriptapioutlook15officetime) | メンバー |
-| [from](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | メンバー |
+| [end](#end-datetime) | メンバー |
+| [from](#from-emailaddressdetails) | メンバー |
 | [internetMessageId](#internetmessageid-string) | メンバー |
 | [itemClass](#itemclass-string) | メンバー |
 | [itemId](#nullable-itemid-string) | メンバー |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype) | メンバー |
-| [location](#location-stringlocationjavascriptapioutlook15officelocation) | メンバー |
+| [itemType](#itemtype-officemailboxenumsitemtype) | メンバー |
+| [location](#location-stringlocation) | メンバー |
 | [normalizedSubject](#normalizedsubject-string) | メンバー |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook15officenotificationmessages) | メンバー |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | メンバー |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | メンバー |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Member |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | メンバー |
-| [start](#start-datetimejavascriptapioutlook15officetime) | メンバー |
-| [subject](#subject-stringsubjectjavascriptapioutlook15officesubject) | メンバー |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | メンバー |
+| [notificationMessages](#notificationmessages-notificationmessages) | メンバー |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | メンバー |
+| [organizer](#organizer-emailaddressdetails) | メンバー |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | メンバー |
+| [start](#start-datetime) | メンバー |
+| [subject](#subject-stringsubject) | メンバー |
+| [to](#to-arrayemailaddressdetails) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | メソッド |
 | [close](#close) | メソッド |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | メソッド |
 | [displayReplyForm](#displayreplyformformdata-callback) | メソッド |
-| [getEntities](#getentities--entitiesjavascriptapioutlook15officeentities) | メソッド |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | メソッド |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | メソッド |
+| [getEntities](#getentities--entities) | メソッド |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | メソッド |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | メソッド |
 | [getRegExMatches](#getregexmatches--object) | メソッド |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | メソッド |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | メソッド |
@@ -316,7 +316,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 予定が終了する日時を取得または設定します。
 
-`end` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) メソッドを使用して、end プロパティ値をクライアントのローカル日時に変換することができます。
+`end` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、end プロパティ値をクライアントのローカル日時に変換することができます。
 
 ##### <a name="read-mode"></a>閲覧モード
 
@@ -367,7 +367,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
-メッセージが代理人から送信された場合を除き、`from` プロパティと [`sender`](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
+メッセージが代理人から送信された場合を除き、`from` プロパティと [`sender`](#sender-emailaddressdetails) プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
 
 > [!NOTE]
 > `from` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。
@@ -550,7 +550,7 @@ function callback(asyncResult) {
 
 すべてのプレフィックス (`RE:` や `FWD:` など) が削除されたアイテムの件名を取得します。閲覧モードのみ。
 
-normalizedSubject プロパティは、アイテムの件名に電子メール プログラムによって標準のプレフィックス (`RE:` や `FW:` など) が追加されたものを取得します。これらのプレフィックスが付いたままの状態でアイテムの件名を取得するには、[`subject`](#subject-stringsubjectjavascriptapioutlook15officesubject) プロパティを使用します。
+normalizedSubject プロパティは、アイテムの件名に電子メール プログラムによって標準のプレフィックス (`RE:` や `FW:` など) が追加されたものを取得します。これらのプレフィックスが付いたままの状態でアイテムの件名を取得するには、[`subject`](#subject-stringsubject) プロパティを使用します。
 
 ##### <a name="type"></a>型
 
@@ -705,7 +705,7 @@ function callback(asyncResult) {
 
 電子メール メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
-メッセージが代理人から送信された場合を除き、[`from`](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) プロパティと `sender` プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
+メッセージが代理人から送信された場合を除き、[`from`](#from-emailaddressdetails) プロパティと `sender` プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
 
 > [!NOTE]
 > `sender` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。
@@ -734,7 +734,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 予定を開始する日時を取得または設定します。
 
-`start` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) メソッドを使用して、値をクライアントのローカル日時に変換することができます。
+`start` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、値をクライアントのローカル日時に変換することができます。
 
 ##### <a name="read-mode"></a>閲覧モード
 
@@ -1031,7 +1031,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
-|`formData`| String &#124; Object| |回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
+|`formData`| String &#124; Object| |回答フォームの本文を表すテキストと HTML が含まれる文字列。 文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
 | `formData.htmlBody` | String | &lt;省略可能&gt; | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;省略可能&gt; | ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。 |
 | `formData.attachments.type` | String | | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
@@ -1150,7 +1150,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 | 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
-|`formData`| String &#124; Object| | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
+|`formData`| String &#124; Object| | 回答フォームの本文を表すテキストと HTML が含まれる文字列。 文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
 | `formData.htmlBody` | String | &lt;省略可能&gt; | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;省略可能&gt; | ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。 |
 | `formData.attachments.type` | String | | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
