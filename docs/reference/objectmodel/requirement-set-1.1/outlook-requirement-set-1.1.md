@@ -2,12 +2,13 @@
 title: Outlook アドイン API 要件セット 1.1
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: 13334029cd30742e6d7dd77cb569a1028a35106a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: a074d0e38f8d872f0d75a68851aef947989c625e
+ms.sourcegitcommit: c4d6ecdc41ea67291b6d155c3b246e31ec2e38b7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433034"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "30600257"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook アドイン API 要件セット 1.1
 
@@ -30,8 +31,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback) が追加されました。ファイルを添付ファイルとしてメッセージまたは予定に追加します。
 - [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback) が追加されました。メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。
 - [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) が追加されました。メッセージまたは予定から添付ファイルを削除します。
-- [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-bodyjavascriptapioutlook11officebody) が追加されました。アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
-- [Office.context.mailbox.item.bcc](office.context.mailbox.item.md#bcc-recipientsjavascriptapioutlook11officerecipients) が追加されました。メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または設定します。
+- [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body) が追加されました。アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
+- メッセージの[bcc](office.context.mailbox.item.md#bcc-recipients)行を追加しました。
 - [Office.MailboxEnums.RecipientType](/javascript/api/outlook_1_1/office.mailboxenums.recipienttype) が追加されました。予定の受信者の種類を指定します。
 
 ## <a name="see-also"></a>関連項目
