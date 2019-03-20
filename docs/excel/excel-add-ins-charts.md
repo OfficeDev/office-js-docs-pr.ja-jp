@@ -1,20 +1,20 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 72724c4efd6f87bad90b64b4ac363c796de952bd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f058110c7c150a75c847a07df83aa2795c891025
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387878"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600264"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)」を参照してください。
 
-## <a name="create-a-chart"></a>グラフを作成する
+## <a name="create-a-chart"></a>グラフの作成
 
 次のコード サンプルでは、**Sample** というワークシートにグラフを作成します。 グラフは、範囲 **A1:B13** のデータに基づいた**折れ線**グラフです。
 
@@ -66,7 +66,7 @@ Excel.run(function (context) {
 
 ## <a name="set-chart-title"></a>グラフ タイトルを設定する
 
-次のコード サンプルは、ワークシートの最初のグラフのタイトルを **Sales Data by Year** に設定します。 
+次のコード サンプルは、ワークシートの最初のグラフのタイトルを **Sales Data by Year** に設定します。
 
 ```js
 Excel.run(function (context) {
@@ -186,6 +186,33 @@ Excel.run(function (context) {
 **線形の近似曲線が記入されたグラフ**
 
 ![線形の近似曲線が記入された Excel のグラフ](../images/excel-charts-trendline-linear.png)
+
+## <a name="export-a-chart-as-an-image"></a>グラフを画像としてエクスポートする
+
+グラフを Excel の外部で画像としてレンダリングできます。 `Chart.getImage` からは、グラフを JPEG 画像として表す base 64 エンコード文字列が返されます。 次のコードでは、画像の文字列を取得してコンソールに表示する方法を示します。
+
+```js
+Excel.run(function (ctx) {
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    var imageAsString = chart.getImage();
+    return context.sync().then(function () {
+        console.log(imageAsString.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
+
+`Chart.getImage` は、省略可能なパラメーターとして幅、高さ、自動調整モードの 3 つを受け取ります。
+
+```typescript
+getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
+```
+
+これらのパラメーターにより、画像のサイズが決まります。 画像は常に同じ縦横比でスケーリングされます。 幅と高さのパラメーターにより、スケーリングされた画像の上端または下端が設定されます。 `ImageFittingMode` には 3 つの値があり、次のように動作します。
+
+- `Fill`: 画像の最小の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。 これは、自動調整モードが指定されていない場合の既定の動作です。
+- `Fit`: 画像の最大の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。
+- `FitAndCenter`: 画像の最大の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。 結果の画像は、他の寸法について中央に配置されます。
 
 ## <a name="see-also"></a>関連項目
 
