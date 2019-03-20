@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
 description: ''
-ms.date: 2/28/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359241"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691147"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -29,7 +29,7 @@ Fabric React を使用するアドインを作成するには、Office 用の Ye
 2. `yo office` を実行して、アドイン用のプロジェクト ファイルを作成します。
 3. Office クライアント アプリケーションを選択するように促されたら、**Word** を選択します。
 4. プロジェクト ファイルと同じディレクトリにいることを確認し、`npm start` を実行します。スピナーを表示するブラウザー ウィンドウが自動的に開きます。
-5. [マニフェストをサイドロード](..\testing\test-debug-office-add-ins.md)し、アドインのすべての UI を表示します。
+5. [マニフェストをサイドロード](../testing/test-debug-office-add-ins.md)し、アドインのすべての UI を表示します。
 
 ## <a name="step-2---add-a-fabric-react-component"></a>手順 2 - Fabric React コンポーネントを追加
 

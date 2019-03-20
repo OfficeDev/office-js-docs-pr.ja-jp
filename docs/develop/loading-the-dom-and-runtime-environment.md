@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 01/09/2019
 localization_priority: Priority
-ms.openlocfilehash: c569825ae73d32259fc1554aa8233461bbbe9813
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: e4975a979939b9af74630c5794b8f02cc0b15cba
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052750"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691154"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -36,7 +36,7 @@ ms.locfileid: "30052750"
     
 4. ブラウザー コントロールが、DOM と HTML 本文を読み込み、**window.onload** イベントに対するイベント ハンドラーを呼び出します。
     
-5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、[Office](/javascript/api/office#initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するアドインのイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
+5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、[Office](/javascript/api/office#office-initialize) オブジェクトの [initialize](/javascript/api/office) イベントに対するアドインのイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
     
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
     
@@ -63,7 +63,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
     
 5. ブラウザー コントロールが DOM と HTML 本文を読み込んで、**onload** イベントに対するイベント ハンドラーを呼び出します。
     
-6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
+6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#office-initialize) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
     
 7. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
     
