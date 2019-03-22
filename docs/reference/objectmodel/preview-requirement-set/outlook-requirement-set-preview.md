@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 03/07/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1a3f5c675b2bcb43003ad15b3358e3febd80260
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: d24c4647116b4af56d85a434f3ece5ccf4662a39
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512861"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691168"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -37,43 +37,43 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 添付ファイルのコンテンツを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 メッセージまたは予定に base 64 エンコード文字列として表されるファイルを添付する新しい方法が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
-#### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent)
+#### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 特定の添付ファイルのコンテンツを取得する新しい方法が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
-#### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails)
+#### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 新規作成モードでアイテムの添付ファイルを取得する新しい方法が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 添付ファイルのコンテンツに適用されるフォーマットを特定する新しい列挙型が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 `AttachmentsChanged` イベントが `Item` に追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 ### <a name="delegate-access"></a>代理人アクセス
 
@@ -81,25 +81,25 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 代理人のアクセス権を指定する新しいビット フラグ列挙型が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md)
 
 [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 ### <a name="enhanced-location"></a>強化された場所
 
@@ -107,45 +107,45 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 予定の場所のセットを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 場所を表す新しいオブジェクトが追加されました。 読み取り専用です。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 場所の ID を表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
-#### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation)
+#### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 予定の場所のセットを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 予定の場所の種類を指定する新しい列挙型が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 `EnhancedLocationsChanged` イベントが `Item` に追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 ### <a name="integration-with-actionable-messages"></a>操作可能なメッセージとの統合
 
 #### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
 
-アドインが[操作可能メッセージによってアクティブ化](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
+アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**使用できる場所**: Office 2019 for Windows (Office 365 サブスクリプション)、Outlook on the web (クラシック)
+**使用できる場所**: Outlook for Windows (Office 365)、Outlook on the web (クラシック)
 
 ### <a name="internet-headers"></a>インターネット ヘッダー
 
@@ -153,13 +153,13 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
-#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheadersjavascriptapioutlookofficeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders)
+#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 ### <a name="office-theme"></a>Office テーマ
 
@@ -167,24 +167,24 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 Office テーマを取得する機能が追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 #### <a name="officeeventtypeofficethemechangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)
+**使用できる場所**: Outlook for Windows (Office 365)
 
 ### <a name="sso"></a>SSO
 
-#### <a name="officecontextauthgetaccesstokenasynchttpsdocsmicrosoftcomofficedevadd-insdevelopsso-in-office-add-inssso-api-reference"></a>[Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officecontextauthgetaccesstokenasyncofficedevadd-insdevelopsso-in-office-add-inssso-api-reference"></a>[Office.context.auth.getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
 
-Microsoft Graph API の[アクセス トークンの取得](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)をアドインに対して許可する、`getAccessTokenAsync` へのアクセスが追加されました。
+Microsoft Graph API の[アクセス トークンの取得](/outlook/add-ins/authenticate-a-user-with-an-sso-token)をアドインに対して許可する、`getAccessTokenAsync` へのアクセスが追加されました。
 
-**使用できる場所**: Windows 用 Outlook 2019 (Office 365 サブスクリプション)、Mac 用 Outlook 2019、Outlook on the web (Office 365 および Outlook.com)、Outlook on the web (クラシック)
+**使用できる場所**: Outlook for Windows (Office 365)、Outlook for Mac (Office 365)、Outlook on the web (Office 365 および Outlook.com)、Outlook on the web (クラシック)
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook アドイン](/outlook/add-ins/)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [作業の開始](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [作業の開始](/outlook/add-ins/quick-start)

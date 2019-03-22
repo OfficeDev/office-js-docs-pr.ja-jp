@@ -1,23 +1,23 @@
 ---
 title: 最初の Word アドインをビルドする
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 20f63c7e61fd4b576eda7c1d737d377439055fe2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 9da974ff604570367771c98e47d549ecc70eee7b
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742325"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691175"
 ---
 # <a name="build-your-first-word-add-in"></a>最初の Word アドインをビルドする
 
-_適用対象: Word 2016、Word for iPad、Word for Mac_
+_適用対象: Windows 版 Word 2016 以降、Word for iPad、Word for Mac_
 
-この記事では、jQuery と Word JavaScript API を使用して Word アドインを構築する手順について説明します。 
+この記事では、jQuery と Word JavaScript API を使用して Word アドインを構築する手順について説明します。
 
-## <a name="create-the-add-in"></a>アドインを作成する 
+## <a name="create-the-add-in"></a>アドインを作成する
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -30,13 +30,13 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
 1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
-    
+
 2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Word Web アドイン]** を選択します。 
 
 3. プロジェクトに名前を付けて、**[OK]** を選択します。
 
 4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,14 +44,14 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 ### <a name="update-the-code"></a>コードを更新する
 
 1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
- 
+
     ```html
     <body>
         <div id="content-header">
             <div class="padding">
                 <h1>Welcome</h1>
             </div>
-        </div>    
+        </div>
         <div id="content-main">
             <div class="padding">
                 <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
@@ -73,7 +73,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -191,7 +191,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -205,9 +205,9 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
+4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -225,7 +225,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 1. Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。
 
-2. Word で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Office 365 バージョンではなく、サブスクリプション バージョンではない Office 2016 を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
+2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Office 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
 
@@ -259,9 +259,9 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word-jquery.png)
-    
+
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
-    
+
 2. プロジェクトのルート フォルダーに移動します。
 
     ```bash
@@ -270,7 +270,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。 
+1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
 
 2. `<body>` 要素を次のマークアップに置き換え、ファイルを保存します。
 
@@ -300,11 +300,11 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     </body>
     ```
 
-2. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。 
+3. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 このスクリプトには、初期化のコードと、Word 文書に変更を加える (ボタンが選択されたときに、ドキュメントにテキストを挿入する) コードが含まれています。
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -401,7 +401,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
+4. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
 
     ```css
     #content-header {
@@ -422,7 +422,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -436,7 +436,7 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -484,5 +484,4 @@ _適用対象: Word 2016、Word for iPad、Word for Mac_
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
 * 
   [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Word JavaScript API リファレンス](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

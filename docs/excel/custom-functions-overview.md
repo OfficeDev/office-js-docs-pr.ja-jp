@@ -1,14 +1,14 @@
 ---
-ms.date: 01/30/2019
+ms.date: 03/19/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052764"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691203"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -290,9 +290,9 @@ JSON メタデータ ファイルでストリーミング関数にメタデー�
 
 ## <a name="declaring-a-volatile-function"></a>揮発性関数の宣言
 
-[揮発性関数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)とは、関数のいずれの引数にも変更がない場合でも、値が刻々と変化する関数のことです。 これらの関数は、Excel が再計算するたびに再計算を行います。 たとえば、`NOW` 関数を呼び出すセルがあるとします。 `NOW` が呼び出される度に、現在の日付と時刻を自動的に返します。
+[揮発性関数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)とは、関数のいずれの引数にも変更がない場合でも、値が刻々と変化する関数のことです。 これらの関数は、Excel が再計算するたびに再計算を行います。 たとえば、`NOW` 関数を呼び出すセルがあるとします。 `NOW` が呼び出される度に、現在の日付と時刻を自動的に返します。
 
-Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel のすべての揮発性関数の一覧は、「[揮発性および非揮発性関数](https://docs.microsoft.com/ja-JP/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」をご覧ください。
+Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel の揮発性関数の完全なリストは、「[揮発性および非揮発性関数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」を参照してください。
 
 カスタム関数を使用すると独自の揮発性関数を作成することができ、日時、時間、乱数、およびモデルを処理するときに役立つ場合があります。 たとえば、モンテカルロ シミュレーションでは、最適なソリューションを決定するにはランダムな入力値の生成が必要です。
 
@@ -358,10 +358,10 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="co-authoring"></a>共同編集
+## <a name="coauthoring"></a>共同編集
 Excel Online と Excel for Windows で Office 365 サブスクリプションを利用している場合、ドキュメントの共同編集を行うことができ、カスタム関数を使用できます。 ブックでカスタム関数を使用している場合、仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
-共同編集の詳細については、「[Excel での共同編集](https://docs.microsoft.com/ja-JP/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
+共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
 ## <a name="working-with-ranges-of-data"></a>データの範囲を使用する
 
@@ -391,7 +391,7 @@ function secondHighest(values){
 
 場合によっては、カスタム関数が呼び出したセルのアドレスを取得する必要が生じます。 これは、次の種類のシナリオで役立ちます。
 
-- 範囲の書式設定: [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) で情報を格納するキーとしてセル アドレスを使用します。 Excel で [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) を使用して`AsyncStorage` からキーを読み込みます。
+- 範囲の書式設定: [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) で情報を格納するキーとしてセル アドレスを使用します。 Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`AsyncStorage` からキーを読み込みます。
 - キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `AsyncStorage` に格納されているキャッシュされた値を表示します。
 - 調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。
 
@@ -431,27 +431,6 @@ function getAddress(parameter1, invocationContext) {
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
-## <a name="handling-errors"></a>エラーの処理
-
-カスタム関数を定義するアドインをビルドする場合は、実行時エラーを考慮して、エラー処理ロジックを含めるようにします。 カスタム関数のエラー処理は、[全体的な Excel の JavaScript API のエラー処理](excel-add-ins-error-handling.md)と同じです。 次のコード サンプルでは、`.catch` がコード内で以前に発生したエラーを処理します。
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
-
 ## <a name="known-issues"></a>既知の問題
 
 既知の問題については、[Excel カスタム関数についての GitHub のレポート](https://github.com/OfficeDev/Excel-Custom-Functions/issues)を参照してください。 
@@ -463,4 +442,3 @@ function getComment(x) {
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [カスタム関数の変更ログ](custom-functions-changelog.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
-

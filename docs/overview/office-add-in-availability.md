@@ -1,14 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
-ms.date: 03/15/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4348881c35e4c79975d34406e4668b2693405134
-ms.sourcegitcommit: c4d6ecdc41ea67291b6d155c3b246e31ec2e38b7
+ms.openlocfilehash: fe5b1d1278d2c14192fb6fd212f24bb08571d35d
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "30654964"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691126"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -331,7 +331,7 @@ ms.locfileid: "30654964"
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
     <td>利用不可</td>
   </tr>
   <tr>
@@ -340,8 +340,8 @@ ms.locfileid: "30654964"
       - メールの作成</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
     <td>利用不可</td>
   </tr>
   <tr>
@@ -406,6 +406,8 @@ ms.locfileid: "30654964"
     <td>利用不可</td>
   </tr>
 </table>
+
+*&ast; - リリース後の更新プログラムで追加されました。*
 
 <br/>
 
@@ -796,7 +798,8 @@ ms.locfileid: "30654964"
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - コンテンツ<br>
-         - 作業ウィンドウ/td> <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - 作業ウィンドウ</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -876,6 +879,6 @@ ms.locfileid: "30654964"
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md)
-- [共通 API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [アドイン コマンドの要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [JavaScript API for Office リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [アドイン コマンドの要件セット](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
+- [JavaScript API for Office リファレンス](/office/dev/add-ins/reference/javascript-api-for-office)
