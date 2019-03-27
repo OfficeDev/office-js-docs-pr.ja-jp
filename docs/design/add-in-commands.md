@@ -1,14 +1,14 @@
 ---
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f375a7f59a6918e812fb03b46c55bf964e62419d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e255e6e517f6292b7e7cb7df7b59476b21306911
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388410"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872250"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -17,7 +17,7 @@ ms.locfileid: "29388410"
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
+> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](/office/dev/store/submit-to-the-office-store) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
 
 *図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
@@ -28,6 +28,7 @@ ms.locfileid: "29388410"
 ![Excel Online のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
+
 現在は、次のコマンド機能がサポートされています。
 
 > [!NOTE]
@@ -46,7 +47,7 @@ ms.locfileid: "29388410"
 **アクション**
 
 - ShowTaskpane: カスタムの HTML ページをロードする 1 つまたは複数のウィンドウを表示します。
-- ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui) API を使用できます。  
+- ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](/javascript/api/office/office.ui) API を使用できます。  
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
@@ -67,12 +68,12 @@ ms.locfileid: "29388410"
 - Office リボンにコマンドを配置するために。
     - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。 
     - 別のタブに機能が適応せず、トップ レベル コマンドが 6 個未満の場合は、[ホーム] タブにコマンドを配置します。Office デスクトップと Office Online など、Office の複数のバージョン間でアドインを操作する必要があり、タブがどのバージョンでも利用できるわけではない場合 (たとえば、[デザイン] タブは Office Online にはありません) は、[ホーム] タブにコマンドを追加できます。  
-    - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。 
+    - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。
     - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
 
      > [!NOTE]
-     > 占有領域が大きすぎるアドインは [AppSource 検証](https://docs.microsoft.com/office/dev/store/validation-policies)を通過しない場合があります。
+     > 占有領域が大きすぎるアドインは [AppSource 検証](/office/dev/store/validation-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
@@ -86,4 +87,4 @@ ms.locfileid: "29388410"
 
 アドイン コマンドの使用を開始するために最適な方法は、GitHub の「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照することです。
 
-マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides)」のリファレンス資料をご覧ください。
+マニフェストでのアドイン コマンドの指定の詳細については、「[マニフェストでアドイン コマンドを作成する](../develop/create-addin-commands.md)」と「[VersionOverrides 要素](/office/dev/add-ins/reference/manifest/versionoverrides)」のリファレンス資料をご覧ください。

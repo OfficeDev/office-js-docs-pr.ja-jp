@@ -1,16 +1,16 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 58bb6c01babc19840444a4bee9daef03ad9a7df5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 08653a84c051709d16371d89672d3f7ebe2030b7
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386527"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872019"
 ---
-# <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する 
+# <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
 この記事では、Excel のイベント操作に関連する重要な概念について説明します。また、Excel JavaScript API を使用したイベント ハンドラーの登録、イベントの処理、およびイベント ハンドラーの削除の方法を示すコード例も提供します。 
 
@@ -20,15 +20,15 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
-| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onCalculated` | ワークシートの計算が完了したとき (あるいはコレクションのすべてのワークシートが完了したとき) に発生するイベント。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | バインド内でデータまたは書式設定が変更されるときに発生するイベント。 | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生するイベント。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+| `onAdded` | オブジェクトが追加されたときに発生するイベント。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | オブジェクトが削除されたときに発生するイベント。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | オブジェクトがアクティブ化されたときに発生するイベント。 | [**Chart**](/javascript/api/excel/excel.chart)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | オブジェクトが非アクティブ化されたときに発生するイベント。 | [**Chart**](/javascript/api/excel/excel.chart)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onCalculated` | ワークシートの計算が完了したとき (あるいはコレクションのすべてのワークシートが完了したとき) に発生するイベント。 | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onChanged` | セル内のデータが変更されたときに発生するイベント。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**Table**](/javascript/api/excel/excel.table)、[**TableCollection**](/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | バインド内でデータまたは書式設定が変更されるときに発生するイベント。 | [**Binding**](/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生するイベント。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**Table**](/javascript/api/excel/excel.table)、[**Binding**](/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生するイベント。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
@@ -73,7 +73,7 @@ Excel.run(function (context) {
 
 ```js
 function handleChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -103,7 +103,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 
 function handleSelectionChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -115,7 +115,7 @@ function handleSelectionChange(event)
 function remove() {
     return Excel.run(eventResult.context, function (context) {
         eventResult.remove();
-        
+
         return context.sync()
             .then(function() {
                 eventResult = null;
@@ -127,9 +127,10 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
-イベントを無効にすると、アドインのパフォーマンスが向上する可能性があります。 たとえば、アプリがイベントを受信する必要がないことや、複数エンティティの一括編集を実行中にイベントを無視できるすることがあります。 
+イベントを無効にすると、アドインのパフォーマンスが向上する可能性があります。 たとえば、アプリがイベントを受信する必要がないことや、複数エンティティの一括編集を実行中にイベントを無視できるすることがあります。
 
-イベントは[ランタイム](https://docs.microsoft.com/javascript/api/excel/excel.runtime) レベルで有効または無効にできます。 `enableEvents` プロパティは、イベントが発生したかどうかと、イベント ハンドラーがアクティブになったかどうかを判別します。 
+イベントは[ランタイム](/javascript/api/excel/excel.runtime) レベルで有効または無効にできます。
+`enableEvents` プロパティは、イベントが発生したかどうかと、イベント ハンドラーがアクティブになったかどうかを判別します。
 
 次のコード サンプルは、イベントのオンとオフを切り替える方法を示しています。
 

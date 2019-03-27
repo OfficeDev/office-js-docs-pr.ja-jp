@@ -1,21 +1,21 @@
 ---
 title: jQuery を使用して初めての Excel アドインをビルドする
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7931e06899a94a0dcda2a5ab442d37ce21c119c0
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742444"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872124"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>jQuery を使用して Excel のアドインを作成する
 
 この記事では、jQuery と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。 
 
-## <a name="create-the-add-in"></a>アドインを作成する 
+## <a name="create-the-add-in"></a>アドインを作成する
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "29742444"
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
 1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
-    
+
 2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Excel Web アドイン]** を選択します。 
 
 3. プロジェクトに名前を付けて、**[OK]** を選択します。
@@ -36,7 +36,7 @@ ms.locfileid: "29742444"
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
 5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "29742444"
 ### <a name="update-the-code"></a>コードを更新する
 
 1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -129,9 +129,9 @@ ms.locfileid: "29742444"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -184,7 +184,7 @@ ms.locfileid: "29742444"
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-jquery.png)
-    
+
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 2. プロジェクトのルート フォルダーに移動します。
@@ -196,9 +196,9 @@ ms.locfileid: "29742444"
 ### <a name="update-the-code"></a>コードを更新する 
 
 1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルでは、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 
- 
+
 2. **index.html** 内で、`body` タグを次に示すマークアップに置き換え、ファイルを保存します。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -216,14 +216,14 @@ ms.locfileid: "29742444"
         </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>    
+    </body>
     ```
 
 3. **src\index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
-    
+
     (function () {
         Office.onReady(function() {
             // Office is ready
@@ -259,7 +259,7 @@ ms.locfileid: "29742444"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -270,7 +270,7 @@ ms.locfileid: "29742444"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -280,11 +280,11 @@ ms.locfileid: "29742444"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
+1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -334,5 +334,4 @@ ms.locfileid: "29742444"
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

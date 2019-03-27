@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: ''
 ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c911bf6e908d06298e768bdaf047262d78808321
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199586"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872166"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -546,9 +546,9 @@ Excel.run(function (context) {
 ## <a name="find-a-cell-using-string-matching-preview"></a>文字列のマッチングを使用してセルを検索する (プレビュー)
 
 > [!NOTE]
-> 現在、Range オブジェクトの `find` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、Range オブジェクトの `find` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) メソッドを使用するようにしてください。
+`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。
 
 ```js
 Excel.run(function (context) {

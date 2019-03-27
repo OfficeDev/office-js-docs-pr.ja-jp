@@ -1,14 +1,14 @@
 ---
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ad6b45c9f7797b5f47ef52ce604710b3d6b4853
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388893"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872180"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -21,23 +21,23 @@ ms.locfileid: "29388893"
 実行時のリソース使用量の制限は、すべての種類の Office アドインに適用されます。このような制限は、ユーザーのパフォーマンスの向上およびサービス拒否攻撃の影響緩和にも役立ちます。想定される一連のデータを使用して対象のホスト アプリケーションで Office アドインをテストし、次に示す制限の範囲内でパフォーマンスを調整してください。
 
 - **CPU コアの使用率**: 単一の CPU コアの使用率しきい値 90%、既定の 5 秒間隔で 3 回観測。
-    
+
    CPU コアの使用率を確認するホスト リッチ クライアントの既定の間隔は、5 秒間隔です。ホスト クライアントでアドインの CPU コアの使用率がしきい値を超えたことを検知した場合、ユーザーがアドインの実行を継続するかどうかを確認するメッセージが表示されます。ユーザーが継続することを選択した場合、編集セッション中にホスト クライアントがユーザーにもう一度確認することはありません。ユーザーが CPU を集中的に使用するアドインを実行する場合、この警告メッセージの表示を減らすには、管理者は **AlertInterval** レジストリ キーを使用する必要がある可能性があります。
-    
+
 - **メモリ使用量**: デバイスの利用可能な物理メモリに基づいて動的に決定される、既定のメモリ使用量しきい値。
-    
+
    既定では、ホスト リッチ クライアントが、デバイスの物理メモリの使用率が利用可能なメモリの 80% を超えたことを検知した場合、クライアントはコンテンツ アドインおよびタスク ウィンドウ アドインのドキュメント レベル、および Outlook アドインのメールボックス レベルで、アドインのメモリ使用率の監視を開始します。既定の 5 秒間隔で、ドキュメントまたはメールボックス レベルでアドインのセットの物理メモリの使用率が 50% を超えた場合、クライアントはそのユーザーに警告します。このメモリ使用量の制限では、タブレットなど、限られた RAM が搭載されたデバイスのパフォーマンスを確保するために、仮想メモリよりも物理メモリを使用します。管理者は、グローバル設定として **MemoryAlertThreshold** Windows レジストリ キーを使用して、この動的設定を明示的な制限で上書きできます。また、グローバル設定として **AlertInterval** キーを使用して、警告の間隔を調整することもできます。
-    
+
 - **クラッシュ許容度**: 既定の制限は、1 つのアドインにつき 4 回。
-    
+
    管理者は、**RestartManagerRetryLimit** レジストリ キーを使用して、クラッシュのしきい値を調整できます。
-    
+
 - **アプリケーションのブロッキング**: アドインが応答しないままになる時間のしきい値は 5 秒間。
-    
+
    これは、アドインとホスト アプリケーションのユーザー エクスペリエンスに影響します。このような場合、ホスト アプリケーションは、自動的にドキュメントまたはメールボックス (該当する場合) のアクティブなアドインをすべて再起動し、ユーザーに応答しなくなったアドインに関する警告を行います。アドインが時間のかかるタスクを実行していて定期的に処理を発生させないときに、このしきい値に到達する場合があります。ブロッキングが発生しないようにする手法があります。管理者は、このしきい値を上書きすることはできません。
-    
+
 ### <a name="outlook-add-ins"></a>Outlook アドイン
-    
+
 Outlook アドインが前述の CPU コア使用率、メモリ使用量、またはクラッシュ許容度のしきい値を超えると、そのアドインは Outlook で無効化されます。Exchange 管理センターにはそのアプリの無効状態が表示されます。
 
 > [!NOTE]
@@ -54,7 +54,7 @@ CPU コア、メモリ、および信頼性ルールだけでなく、Outlook �
     Windows レジストリでグループ ポリシーまたはアプリケーションに固有の設定を使用すると、管理者は **OutlookActivationManagerRetryLimit** 設定の評価を再試行する時間の数字を調整することができます。
 
 ### <a name="task-pane-and-content-add-ins"></a>作業ウィンドウ アドインとコンテンツ アドイン
-    
+
 コンテンツ アドインまたは作業ウィンドウ アドインが前述の CPU コア使用率、メモリ使用量、またはクラッシュ許容度のしきい値を超えると、対応するホスト アプリケーションにユーザーへの警告が表示されます。この時点で、ユーザーは次のどちらかの処理を実行できます。
 
 - アドインを再起動します。
@@ -86,7 +86,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 |20|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して  **Microsoft Office Alerts** ログを確認してください。|
 
-詳細については、「[テレメトリ ダッシュボードを展開する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)」を参照してください。
+詳細については、「[テレメトリ ダッシュボードを展開する](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))」および「[テレメトリ ログを使用した Office ファイルおよびカスタム ソリューションのトラブルシューティング](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)」を参照してください。
 
 
 ## <a name="design-and-implementation-techniques"></a>設計および実装上のテクニック
@@ -94,19 +94,18 @@ Office には、Office アドインでのリソースの使用に関する問題
 CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性に対するリソース制限は、リッチ クライアント上で実行される Office アドインにのみ適用されますが、サポートするすべてのクライアントおよびデバイス上でアドインが十分なパフォーマンスを発揮するためには、これらのリソース使用量およびバッテリーの使用量を最適化することが重要になります。アドインで長時間実行される処理があったり、大規模なデータ セットを処理したりする場合は、最適化が特に重要です。ここでは、CPU 使用率の高い操作やデータを大量に処理する操作を小さなチャンクに分割して、アドインで過度にリソースが消費されることを回避し、ホスト アプリケーションの応答性が保たれるようにするためのテクニックをいくつか紹介します。
 
 - 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 
-    
+
    For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-    
+
 - アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「 [ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Internet Explorer Web Workers API の詳細については、「 [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
-    
+
 - アドインで CPU 使用率の高いアルゴリズムを使用しているが、データの入出力を小さなセットに分割できる場合は、Web サービスの作成を検討します。データを Web サービスに渡して CPU の負荷をオフロードし、非同期コールバックを待機します。
-    
+
 - 想定する最大量のデータでアドインをテストして、アドインにおける処理をその最大量までに制限します。
-    
+
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
-- [Outlook アドインのアクティブ化と JavaScript API の制限](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)
-    

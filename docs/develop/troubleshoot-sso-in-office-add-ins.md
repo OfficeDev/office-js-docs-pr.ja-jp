@@ -1,22 +1,22 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
-ms.date: 03/19/2019
+ms.date: 03/22/2019
 localization_priority: Priority
-ms.openlocfilehash: 9045ebc55813644cdfba4787579022d78c47b13f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691189"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872159"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細については、[IdentityAPI の要件セット]https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)を参照してください。
-> SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。
+> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
@@ -122,7 +122,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件付きアクセスおよび多要素認証のエラー
- 
+
 AAD および Office 365 の特定の ID 構成では、Microsoft Graph でアクセス可能な一部のリソースで、ユーザーの Office 365 のテナントでは必要ない場合でも、多要素認証 (MFA) が必要な場合があります。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
 
 サーバー側のコードはこのメッセージをテストし、クライアント側のコードに claims 値を中継する必要があります。 Office が SSO アドインの認証を処理するため、この情報がクライアントで必要になります。クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 claims 値が中継されている場合、コードは `getAccessTokenAsync` を再呼び出しして `authChallenge: CLAIMS-STRING-HERE` パラメーターのオプション [](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) を渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。

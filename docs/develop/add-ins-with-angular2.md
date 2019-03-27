@@ -1,14 +1,14 @@
 ---
 title: Angular で Office アドインを開発する
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: a385fb1abc0e43423471d02f2a05bfb1824f8aeb
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388872"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872229"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -20,7 +20,8 @@ ms.locfileid: "29388872"
 Angular フレームワークを使用してビルドされる Office アドインのサンプルについては、「[Angular でビルドする Word スタイル チェック アドイン](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)」を参照してください。
 
 ## <a name="install-the-typescript-type-definitions"></a>TypeScript 型の定義をインストールする
-nodejs ウィンドウを開き、コマンド ラインで次のように入力します: 
+
+nodejs ウィンドウを開き、コマンド ラインで次のように入力します:
 
 ```bash
 npm install --save-dev @types/office-js
@@ -73,7 +74,7 @@ const routes: Routes = // route definitions go here
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-```   
+```
 
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Fabric コンポーネントと Angular コンポーネントとのラッピングについて検討する
@@ -83,9 +84,9 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する
 
-Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモーダル ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。 
+Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモーダル ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。
 
-[DisplayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
+[DisplayDialogAsync](/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 
 重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。同様に、ダイアログ ボックスには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。  
 
@@ -106,7 +107,7 @@ export class MyComponent {
     });
   }
 }
-``` 
+```
 
 ## <a name="using-observable"></a>Observable を使用する
 
