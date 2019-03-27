@@ -1,16 +1,16 @@
 ---
 title: Excel カスタム関数のチュートリアル (プレビュー)
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 01/08/2019
+ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982021"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870675"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>チュートリアル: Excel でのカスタム関数の作成 (プレビュー)
 
@@ -89,7 +89,7 @@ npm run start
 このコマンドは、Web サーバーを開始し、カスタム関数アドインを Windows 用 Excel にサイドロードします。
 
 > [!NOTE]
-> アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。 **[実行時のログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を、任意のインストールまたは実行時の問題と同様に、アドインの XML マニフェスト ファイルの問題をトラブルシューティングすることもできます。 実行時のログの書き込み`console.log`ステートメントを検索して、問題を解決するためにログ ファイルにします。
+> アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。 **[ランタイムログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にして、アドインの XML マニフェストファイルに関する問題のトラブルシューティングを行ったり、インストールやランタイムの問題を確認したりすることもできます。 ランタイムログは`console.log` 、問題を見つけて解決するために、ステートメントをログファイルに書き込みます。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -151,7 +151,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 > [!NOTE]
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
@@ -318,7 +318,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 </ol>
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 おめでとうございます。 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。
 

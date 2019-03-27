@@ -3,38 +3,18 @@ ms.date: 01/08/2019
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359262"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871347"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
 この記事では、Excel でカスタム関数を開発するためのベスト プラクティスについて説明します。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-## <a name="error-handling"></a>エラー処理
-
-カスタム関数を定義するアドインをビルドする場合は、実行時エラーを考慮して、エラー処理ロジックを含めるようにします。 カスタム関数のエラー処理は、[全体的な Excel の JavaScript API のエラー処理](excel-add-ins-error-handling.md)と同じです。 次のコード サンプルでは、`.catch` がコード内で以前に発生したエラーを処理します。
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -43,7 +23,6 @@ function getComment(x) {
 2. 1つ以上のカスタム関数が以前に登録されたアドインのカスタム関数と競合する場合、アドインは読み込まれません。 この場合、既存のアドインを削除するか、アドインの開発時にこのエラーが発生した場合は、マニフェストで別の名前空間名を指定することができます。
 
 3. このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
-
 
 ## <a name="debugging"></a>デバッグ
 
@@ -73,7 +52,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 JavaScript ファイルでカスタム関数を作成し、JSON のメタデータ ファイルに対応する情報を指定するときは、次のベスト プラクティスに留意してください。
@@ -133,6 +112,7 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
     ```
 
 ## <a name="declaring-optional-parameters"></a>省略可能なパラメーターの宣言 
+
 Windows 版 Excel (バージョン 1812 以降) では、カスタム関数に省略可能なパラメーターを宣言できます。 ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 たとえば、関数 `FOO` に 1 つの必須パラメーター `parameter1` と 1 つの省略可能なパラメーター `parameter2` があるとすると、Excel では `=FOO(parameter1, [parameter2])` のように表示されます。
 
 パラメーターを省略可能にするには、関数を定義している JSON メタデータ ファイルでパラメーターに `"optional": true` を追加します。 次の例では、関数 `=ADD(first, second, [third])` について、これがどのような内容になるかを示しています。 省略可能な `[third]` パラメーターが 2 つの必須パラメーターの後にある点に注目してください。 Excel の数式 UI では、必須パラメーターが最初に表示されます。

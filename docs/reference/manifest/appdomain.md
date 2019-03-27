@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの AppDomain 要素
 description: ''
-ms.date: 12/13/2018
-ms.openlocfilehash: 2b55f2c1ea7a2a3dc7dec42c913d74006c0f2e3b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/21/2019
+localization_priority: Normal
+ms.openlocfilehash: 8216603c87a7dcafde84d25a82f068c9aa86ed96
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433069"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870409"
 ---
 # <a name="appdomain-element"></a>AppDomain 要素
 
@@ -22,7 +23,8 @@ ms.locfileid: "27433069"
 ```
 
 > [!IMPORTANT]
-> **AppDomain** 要素の値には、プロトコル (例: `<AppDomain>https://myappdomain<AppDomain>`) が含まれている必要があります。
+> 1. **AppDomain** 要素の値には、プロトコル (例: `<AppDomain>https://myappdomain</AppDomain>`) が含まれている必要があります。
+> 2. 値には、末尾にスラッシュ "/" を付け*ない*でください。
 
 ## <a name="contained-in"></a>含まれる場所
 

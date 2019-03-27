@@ -1,50 +1,51 @@
 ---
-title: Excel JavaScript API を使用してピボット テーブルで作業する
-description: Excel JavaScript API を使用してピボットテーブルを作成し、そのコンポーネントと対話します。
-ms.date: 09/21/2018
-ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
-ms.translationtype: HT
+title: Excel JavaScript API を使用してピボットテーブルを操作する
+description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
+ms.date: 03/21/2019
+localization_priority: Normal
+ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505910"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870325"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボット テーブルで作業する
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
 
-ピボット テーブルより大きなデータ セットを効率化します。このことにより、グループ化されたデータのクイック操作が可能になります。Excel JavaScript API では、アドインにピボット テーブルを作成させ、それらのコンポーネントと対話することができます。 
+ピボットテーブルは、より大きなデータセットを合理化します。 グループ化されたデータのクイック操作を可能にします。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。
 
-ピボット テーブルの機能に慣れていない場合は、エンド ユーザーとしてこれらを使用してみることを検討してください。これらのツールの適切な入門書には、 [ワークシートのデータを分析するピボット テーブルの作成](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を参照してください。 
+ピボットテーブルの機能についてよく知らない場合は、エンドユーザーとしての調査を検討してください。 これらのツールの詳細については、「[ワークシートデータを分析するためのピボットテーブルを作成する](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)」を参照してください。 
 
-この資料では、一般的なシナリオのコード サンプルを提供します。ピボットテーブル API の理解をさらに深めるには、 [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) と [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) を参照してください。
+この記事では、一般的なシナリオのコードサンプルを示します。 ピボットテーブル API について理解するには、「 [**pivottable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottable)」を参照してください。
 
 > [!IMPORTANT]
-> OLAP で作成されたピボット テーブルは、現在サポートされていません。
+> OLAP を使用して作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
 
-## <a name="hierarchies"></a>階層
+## <a name="hierarchies"></a>Hierarchies
 
-ピボット テーブルは、行、列、データ、フィルターの 4 つの階層カテゴリに基づいて構成されています。この記事全体を通して、さまざまな農場の果物の売り上げを記述した次のデータを使用します。
+ピボットテーブルは、行、列、データ、およびフィルターの4つの階層カテゴリに基づいて編成されます。 この記事では、さまざまなファームからの果物 sales について説明する次のデータが使用されます。
 
-![さまざまな農場における、多種の果物の売り上げのコレクション。](../images/excel-pivots-raw-data.png)
+![さまざまなファームからのさまざまな種類の果物販売のコレクション。](../images/excel-pivots-raw-data.png)
 
-このデータには **農家**、 **種類**、 **分類**、**農場で販売された箱数**、および **卸売りで販売された箱数** の 5 つの階層があります。各階層は、 4 つのカテゴリのいずれかにのみ存在できます。 ** 種類** が列の階層に追加され、さらに行の階層に追加された場合、行の階層にのみ残ります。
+このデータには、**畑**、 **Type**、**分類**、 **Crates で販売**されたファーム、 **Crates 販売**された卸売の5つの階層があります。 各階層は、4つのカテゴリのいずれかにのみ存在できます。 **Type**が列階層に追加されてから、行階層に追加されても、後者には残ります。
 
-行と列の階層は、データをグループ化する方法を定義します。たとえば、 **農場** の行の階層は、同じ農場のすべてのデータ セットをまとめてグループ化します。行と列の階層から選択すると、ピボット テーブルの向きが定義されます。
+行と列の階層は、データをグループ化する方法を定義します。 たとえば、**ファーム**の行階層は、同じファームのすべてのデータセットをグループ化します。 行と列の階層を選択すると、ピボットテーブルの向きが定義されます。
 
-データ階層は、行と列の階層に基づいて集計する値です。**農場** の行の階層と **卸売りで販売された木箱** のデータ階層からなるピボット テーブルは、各農場のさまざまな種類の果物の総計 (既定) を示します。
+データ階層は、行と列の階層に基づいて集計される値です。 ファームの行階層があり、 **** **Crates**のデータ階層があるピボットテーブルには、各ファームのすべての異なる fruits の合計 (既定では) が表示されます。
 
-フィルター階層は、フィルターされた種類の中の値に基づいてピボットにデータを取り込むか、取り除きます。**分類** のフィルター階層で **有機栽培** を選択すると、有機栽培の果物のデータのみが表示されます。
+フィルター階層では、フィルター処理された種類の値に基づいて、ピボットのデータが含まれるか、除外されます。 **有機**的に選択された種類の**分類**のフィルター階層は、有機フルーツのデータのみを表示します。
 
-こちらにもまた、ピボット テーブルを添えた農場のデータがあります。ピボット テーブルは、**農場** と **種類**を行階層、 **農場で販売された箱数** と**卸売りで販売された箱数** をデータ階層 (既定の合計の集計関数)、**分類**  をフィルター階層 (**有機栽培**を選択) として使用しています。 
+次に、ファームデータをピボットテーブルと共に示します。 ピボットテーブルでは、**ファーム**と**タイプ**を行階層として使用し、**ファームで販売**された Crates と Crates がデータ階層として**卸売販売**され、フィルターとして**分類**されています。階層 (**有機**が選択されている)。 
 
-![行、データ、フィルターの階層で構成したピボット テーブルの次に果物の売り上げデータの選択範囲があります。](../images/excel-pivot-table-and-data.png)
+![行、データ、およびフィルター階層を使用したピボットテーブルの横の、果物 sales データの選択。](../images/excel-pivot-table-and-data.png)
 
-このピボット テーブルは、JavaScript API または Excel の UI で作られた可能性があります。両方のオプションで、アドインを通じ、さらに操作することができます。
+このピボットテーブルは、JavaScript API または Excel UI を使用して生成できます。 両方のオプションを使用すると、アドインをさらに操作できます。
 
-## <a name="create-a-pivottable"></a>ピボット テーブルの作成
+## <a name="create-a-pivottable"></a>ピボットテーブルを作成する
 
-ピボット テーブルには、名前、ソース、および宛先を必要とします。ソースは、範囲アドレス、またはテーブル名を指定できます ( `Range`、 `string`、`Table` 型として渡されます)。同期先は、範囲アドレスです (`Range`  または `string`  のいずれかとして付与されます)。
+ピボットテーブルには、名前、ソース、および出力先が必要です。 ソースは、範囲内のアドレスまたはテーブル名 (、、 `Range`、 `string`または`Table`型として渡されます) を指定できます。 宛先は、または`Range` `string`のいずれかとして指定された範囲のアドレスです。 次のサンプルは、さまざまなピボットテーブル作成手法を示しています。
 
-### <a name="create-a-pivottable-with-range-addresses"></a>範囲アドレスを使用してピボット テーブルを作成
+### <a name="create-a-pivottable-with-range-addresses"></a>範囲のアドレスを使用してピボットテーブルを作成する
 
 ```typescript
 await Excel.run(async (context) => {
@@ -55,22 +56,22 @@ await Excel.run(async (context) => {
 });
 ```
 
-### <a name="create-a-pivottable-with-range-objects"></a>Range オブジェクトを使用してピボット テーブルを作成
+### <a name="create-a-pivottable-with-range-objects"></a>Range オブジェクトを使用してピボットテーブルを作成する
 
 ```typescript
-await Excel.run(async (context) => {    
+await Excel.run(async (context) => {
     // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
     const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
     const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
         "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
-    
+
     await context.sync();
 });
 ```
 
-### <a name="create-a-pivottable-at-the-workbook-level"></a>ワークブック レベルでピボット テーブルを作成
+### <a name="create-a-pivottable-at-the-workbook-level"></a>ブックレベルでピボットテーブルを作成する
 
 ```typescript
 await Excel.run(async (context) => {
@@ -82,11 +83,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="use-an-existing-pivottable"></a>既存のピボット テーブルの使用
+## <a name="use-an-existing-pivottable"></a>既存のピボットテーブルを使用する
 
-手動で作成したピボット テーブルも、ブックのピボット テーブルのコレクションまたはここのワークシートを使用してアクセス可能です。 
+手動で作成したピボットテーブルは、ブックまたは個々のワークシートの PivotTable コレクションからアクセスすることもできます。 
 
-次のコードは、ブックに最初のピボットテーブルを追加します。以降に参照しやすくするため、テーブルに名前を付与します。
+次のコードは、ブック内の最初のピボットテーブルを取得します。 その後、表の名前を後で簡単に参照できるようにします。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -95,13 +96,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="add-rows-and-columns-to-a-pivottable"></a>ピボット テーブルに行と列を追加
+## <a name="add-rows-and-columns-to-a-pivottable"></a>ピボットテーブルに行と列を追加する
 
-行と列は、これらのフィールドの値の周りでデータをピボットします。
+行と列は、それらのフィールド値を中心にデータをピボットします。
 
-**農場** 列を追加すると、各農場のすべての売り上げをピボットします。** 種類** と ** 分類** 行を追加すると、どの果物が販売されたか、そしてそれが有機栽培かどうかに基づいて、データがさらに分解されます。
+[**ファーム**] 列を追加すると、各ファームのすべての売上が回転します。 **種類**と**分類**行を追加すると、果物が販売されたものと、それが有機であったかどうかに基づいてデータがさらに分解されます。
 
-![農場の列、種類と、分類の行を含むピボット テーブル。](../images/excel-pivots-table-rows-and-columns.png)
+![ファーム列と種類と分類行を含む PivotTable。](../images/excel-pivots-table-rows-and-columns.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -109,14 +110,14 @@ await Excel.run(async (context) => {
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
     await context.sync();
 });
 ```
 
-行または列のみを含むピボット テーブルも可能です。
+行または列だけのピボットテーブルを作成することもできます。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -124,18 +125,18 @@ await Excel.run(async (context) => {
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     await context.sync();
 });
 ```
 
-## <a name="add-data-hierarchies-to-the-pivottable"></a>ピボット テーブルへのデータ階層の追加
+## <a name="add-data-hierarchies-to-the-pivottable"></a>データ階層をピボットテーブルに追加する
 
-データ階層は、行と列に基づいて組み合わせる情報でピボット テーブルを入力します。 **農場で販売された箱数** と **卸売りで販売された箱数** のデータ階層を追加すると、各行と列にそれらの数値の合計が表示されます。 
+データ階層は、行と列に基づいて結合する情報で、ピボットテーブルに格納されます。 **ファームで販売**された Crates のデータ階層を追加し、 **Crates に販売**されたものは、行と列ごとにこれらの数値を合計します。 
 
-この例では、 **農場** と **種類** はともに行となり、箱の販売数をデータとして表示します。 
+この例では、**ファーム**と**種類**の両方が行で、箱 sales がデータとして含まれています。 
 
-![出荷された農場別に果物の総売り上げを示すピボット テーブル。](../images/excel-pivots-data-hierarchy.png)
+![元のファームに基づいたさまざまな果物の総売上高を示すピボットテーブル。](../images/excel-pivots-data-hierarchy.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -156,11 +157,11 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>集計関数を変更する
 
-データの階層の値は集計されています。数値のデータセットの場合、規定で和となります。`summarizeBy` プロパティは [AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) タイプに基づいてこの動作を定義します。 
+データ階層の値が集計されます。 数値のデータセットの場合は、既定でこれが合計になります。 この`summarizeBy`プロパティは、この動作を[集約 ationfunction](/javascript/api/excel/excel.aggregationfunction)型に基づいて定義します。
 
-現在サポートされている集計関数のタイプは、 `Sum`、`Count`、`Average`、`Max`、`Min`、`Product`、`CountNumbers`、`StandardDeviation`、`StandardDeviationP`、`Variance`、`VarianceP`、 `Automatic` (既定値) です。
+現在サポートされている集計`Sum`関数`Count`の`Average`種類`Max`は`Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP`、、、、、、、、 `Automatic` 、、、、および (既定値) です。
 
-次のコード サンプルでは、データの平均値を使用する集計を変更します。
+次のコードサンプルでは、集計をデータの平均値に変更します。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -175,18 +176,19 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="change-calculations-with-a-showasrule"></a>ShowAsRule を使用しての計算の変更
+## <a name="change-calculations-with-a-showasrule"></a>showasrule を使用して計算を変更する
 
-規定でピボット テーブルは、行と列の階層のデータを個別に集計します。[ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) では、ピボット テーブルの他の項目に基づいて出力値をデータの階層を変更します。
+既定では、ピボットテーブルでは、行と列の階層のデータが個別に集計されます。 [showasrule](/javascript/api/excel/excel.showasrule)は、データ階層を、ピボットテーブル内の他のアイテムに基づいて出力値に変更します。
 
-`ShowAsRule` オブジェクトには次の 3 つのプロパティがあります。
--   `calculation`: データの階層に適用する相対的な計算の種類 (既定値は `none`)。
--   `baseField`: 計算が適用される前の基本データを含む階層内のフィールド。通常、[ PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield)  は親階層と同じ名前です。
--   `baseItem`:計算の種類に基づいた基本フィールドの値と比較した個々の[PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) 。すべての計算にこのフィールドが必要なわけではありません。
+オブジェクト`ShowAsRule`には、次の3つのプロパティがあります。
 
-次の例では、 **農場で販売された木箱の合計** のデータ階層の計算を、列合計のパーセント値に設定します。粒度を果物の種類レベルに拡張するため、 ** 種類** の行の階層と基になるフィールドを使用するようにします。この例でも、最初の行の階層として **農場**  も示しているため、農場の合計エントリは、各農場の生産責任の割合も表示します。
+-   `calculation`: データ階層に適用する相対的な計算の種類 (既定値は`none`)。
+-   `baseField`: 計算を適用する前に、基本データを含む階層内のフィールド。 通常、[ピボットフィールド](/javascript/api/excel/excel.pivotfield)の名前は親階層と同じです。
+-   `baseItem`: 計算の種類に基づいて、基準フィールドの値と比較した個々の[ピボット](/javascript/api/excel/excel.pivotitem)テーブル。 すべての計算にこのフィールドが必要なわけではありません。
 
-![個別の農場別、そして各農場内の果物別両方総計に関する、果物の売り上げ高のパーセント値を示すピボット テーブル。](../images/excel-pivots-showas-percentage.png)
+次の例では、ファームデータ階層で販売された**Crates の合計**の計算を列の合計のパーセンテージに設定します。 さらに、粒度をフルーツの種類レベルにまで拡張する必要があるので、 **type**行階層とその基になるフィールドを使用します。 この例は、最初の行階層としても**ファーム**を持っているので、farm total エントリには各ファームがそれぞれを生成する割合が表示されます。
+
+![各ファーム内の個々のファームと個々の果物の種類の総計を基準とした果物 sales の割合を示すピボットテーブル。](../images/excel-pivots-showas-percentage.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -207,11 +209,12 @@ await Excel.run(async (context) => {
 });
 ```
 
-前の例では、個別の行階層に関して、列に計算を設定します。計算が個々の項目に関連する場合は、 `baseItem` プロパティを使用します。 
+前の例では、列の各行階層を基準にして計算を設定しています。 計算が個々のアイテムに関連している場合`baseItem`は、プロパティを使用します。
 
-次の例では、 `differenceFrom` 計算を示します。「A農場」に関する、農場で販売された木箱のデータ階層の入力値の差を表示します。`baseField`  は **農場**なので、各果物の種類のブレークダウン図形と同様に、他の農場間の差がわかります (この例では**種類** も行の階層) 。
+次の例は、 `differenceFrom`計算を示しています。 この例では、"ファーム" と比較した場合の、ファームの箱売上データ階層エントリの違いを示します。
+`baseField`は**ファーム**ですので、他のファームの違いと、果物などの種類ごとの内訳 (この例では、**type**が行階層になっています) を確認しています。
 
-![「A 農場」と他の農場の果物売上高の差を表示するピボット テーブル。これは、農場の果物総売上高と種類別の果物販売高の、両方の差を示しています。「A 農場」で特定の種類の果物が販売されなかった場合、"#N/A"と表示されます。](../images/excel-pivots-showas-differencefrom.png)
+!["畑" とその他の果物の売上の違いを示すピボットテーブル。 これは、畑の総売上合計と果物の種類の売上の違いを示しています。 "畑" が特定の種類の果物を販売していない場合は、"#N/a" が表示されます。](../images/excel-pivots-showas-differencefrom.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -233,15 +236,15 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="pivottable-layouts"></a>ピボット テーブルのレイアウト
+## <a name="pivottable-layouts"></a>ピボットテーブルのレイアウト
 
-[PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) は、階層とそのデータの配置を定義します。データが保存されている範囲を決定するためレイアウトにアクセスします。 
+[PivotLayout](/javascript/api/excel/excel.pivotlayout)は、階層とそのデータの配置を定義します。 レイアウトにアクセスして、データが格納される範囲を決定します。
 
-次のダイアグラムは、どのレイアウト関数の呼び出しがピボット テーブルのどの範囲に対応しているか示しています。
+次の図は、ピボットテーブルの範囲に対応するどの layout 関数呼び出しを示しています。
 
-![ピボット テーブルのどの部分がレイアウトの取得範囲の関数によって返されるかを示す図。](../images/excel-pivots-layout-breakdown.png)
+![レイアウトの範囲取得機能によって返されるピボットテーブルのセクションを示す図。](../images/excel-pivots-layout-breakdown.png)
 
-次のコードでは、レイアウトを使用するピボット テーブルのデータの最後の行を取得する方法を示します。これらの値は、総計用にまとめて集計されます。
+次のコードは、レイアウトを使用してピボットテーブルデータの最後の行を取得する方法を示しています。 これらの値は総計に対して合計されます。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -260,21 +263,21 @@ await Excel.run(async (context) => {
 });
 ```
 
-ピボット テーブルには、コンパクト、アウトラインおよび表形式の3 つのレイアウトがあります。前の例はコンパクトスタイルです。 
+ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。 
 
-次の例は、アウトライン、表形式のスタイルをそれぞれ使用します。コード サンプルでは、さまざまなレイアウトを交互に表示する方法を示します。
+次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 このコードサンプルは、さまざまなレイアウト間で循環する方法を示しています。
 
-### <a name="outline-layout"></a>アウトライン レイアウト表示
+### <a name="outline-layout"></a>アウトラインレイアウト
 
-![アウトライン表示のレイアウトを使用するピボットテーブル。](../images/excel-pivots-outline-layout.png)
+![アウトラインレイアウトを使用したピボットテーブル。](../images/excel-pivots-outline-layout.png)
 
-### <a name="tabular-layout"></a>表形式のレイアウト
+### <a name="tabular-layout"></a>表形式レイアウト
 
-![表形式のレイアウトを使用するピボットテーブル。](../images/excel-pivots-tabular-layout.png)
+![表形式レイアウトを使用したピボットテーブル。](../images/excel-pivots-tabular-layout.png)
 
-## <a name="change-hierarchy-names"></a>階層名の変更
+## <a name="change-hierarchy-names"></a>階層名を変更する
 
-階層のフィールドは編集できます。次のコードでは、2 つのデータ階層の表示名をどのように変更するかを説明します。
+階層フィールドは編集できます。 次のコードは、2つのデータ階層の表示名を変更する方法を示しています。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -282,7 +285,7 @@ await Excel.run(async (context) => {
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
     await context.sync();
-    
+
     // changing the displayed names of these entries
     dataHierarchies.items[0].name = "Farm Sales";
     dataHierarchies.items[1].name = "Wholesale";
@@ -290,9 +293,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="delete-a-pivottable"></a>ピボット テーブルの削除
+## <a name="delete-a-pivottable"></a>ピボットテーブルを削除する
 
-ピボットテーブルをその名前を用いて削除します。
+ピボットテーブルは、名前を使用して削除されます。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -305,4 +308,4 @@ await Excel.run(async (context) => {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API のリファレンス](https://docs.microsoft.com/javascript/api/excel)
+- [Excel JavaScript API リファレンス](/javascript/api/excel)

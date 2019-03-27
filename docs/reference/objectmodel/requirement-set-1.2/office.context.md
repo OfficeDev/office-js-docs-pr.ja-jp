@@ -1,14 +1,14 @@
 ---
-title: Office.context - 要件セット 1.2
+title: Office コンテキスト要件セット1.2
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068134"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870304"
 ---
 # <a name="context"></a>context
 
@@ -22,11 +22,11 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ### <a name="namespaces"></a>名前空間
 
-[mailbox](office.context.mailbox.md) - Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
+[メールボックス](office.context.mailbox.md)-microsoft outlook と microsoft outlook on the web の outlook アドインオブジェクトモデルへのアクセスを提供します。
 
 ### <a name="members"></a>メンバー
 
@@ -36,16 +36,16 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 `displayLanguage` の値は、Office ホスト アプリケーションの **[ファイル]、[選択肢]、[言語]** によって指定される現在の **[表示言語]** 設定を反映します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -83,5 +83,5 @@ function write(message){
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 589a4af94c7abbcf61cd7a5210d5df29ba8a3a4e
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 59df6cce6af1277f365a1dd3cd0b3ef11230804e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635896"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870829"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -60,7 +60,7 @@ ms.locfileid: "29635896"
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
- **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 作業ウィンドウ コンテナーの ID を指定します。 複数の "ShowTaskpane" アクションがあり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。 同じウィンドウを共有する異なるアクションに対しては、同じ **TaskpaneId** を使用します。 ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する Action "SourceLocation" に置き換えられます。
+ **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 作業ウィンドウ コンテナーの ID を指定します。 複数の "ShowTaskpane" の操作があり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。 同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。 ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する Action "SourceLocation" に置き換えられます。
 
 > [!NOTE]
 > この要素は、Outlook ではサポートされていません。
@@ -137,10 +137,10 @@ ms.locfileid: "29635896"
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)」を参照してください。
+**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](/outlook/add-ins/pinnable-taskpane)」を参照してください。
 
 > [!NOTE]
-> SupportsPinning は現在、Windows (ビルド 7628.1000 以降) の Outlook 2016 および Mac 用の Outlook 2016 でのみサポートされて (ビルド 16.13.503 またはそれ以降)。
+> サポートされている回転は、現在、outlook 2016 for Windows (ビルド7628.1000 以降) と outlook 2016 for Mac (ビルド16.13.503 以降) でのみサポートされています。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

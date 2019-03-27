@@ -1,26 +1,27 @@
 ---
 title: Excel JavaScript API を使用して範囲に条件付き書式を適用する
 description: ''
-ms.date: 10/22/2018
-ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433181"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870381"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
 Excel の JavaScript ライブラリは、ワークシートのデータ範囲に条件付き書式を適用するための API を提供します。 この機能により、大量のデータ セットの視覚的な解析を簡単に行うことができます。 範囲内で行われた変更に応じて、書式も動的に更新されます。 
 
-> [!NOTE] 
+> [!NOTE]
 > この記事では、Excel の JavaScript のアドインのコンテキストにおける条件付き書式について説明します。次の記事では、Excel の完全な条件付き書式機能に関する詳細情報を提供しています。
--   [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+> -  [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件付き書式のプログラムによる制御
 
-`Range.conditionalFormats` プロパティは、範囲に適用される [ConditionalFormat](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat) オブジェクトのコレクションです。  `ConditionalFormat` オブジェクトには、[ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype) に基づいて適用される書式を定義するためのプロパティがいくつか含まれています。 
+`Range.conditionalFormats` プロパティは、範囲に適用される [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) オブジェクトのコレクションです。  `ConditionalFormat` オブジェクトには、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) に基づいて適用される書式を定義するためのプロパティがいくつか含まれています。 
 
 -   `cellValue`
 -   `colorScale`
@@ -32,17 +33,17 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 -   `topBottom`
 
 > [!NOTE]
-> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「[*OrNullObject メソッド](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」セクションを参照してください。
+> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「[*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」セクションを参照してください。
 
-ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。 
+ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。 
 
 ## <a name="creating-conditional-formatting-rules"></a>条件付き書式のルールの作成
 
 条件付き書式を範囲に追加するには、`conditionalFormats.add` を使用します。 追加後、その条件付き書式に固有のプロパティを設定できます。 以下に、さまざまな種類の書式の作成例を示します。
 
-### <a name="cell-valuehttpsdocsmicrosoftcomjavascriptapiexcelexcelcellvalueconditionalformat"></a>[セルの値](https://docs.microsoft.com/javascript/api/excel/excel.cellvalueconditionalformat)
+### <a name="cell-valuejavascriptapiexcelexcelcellvalueconditionalformat"></a>[セルの値](/javascript/api/excel/excel.cellvalueconditionalformat)
 
-セルの値の条件付き書式では、[ConditionalCellValueRule]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvaluerule) 内の 1 つまたは 2 つの数式の結果に基づいて、ユーザー定義の書式を適用することができます。 `operator` プロパティは、結果式がどのように書式に関係するかを定義する [ConditionalCellValueOperator]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvalueoperator) です。 
+セルの値の条件付き書式では、[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule) 内の 1 つまたは 2 つの数式の結果に基づいて、ユーザー定義の書式を適用することができます。 `operator` プロパティは、結果式がどのように書式に関係するかを定義する [ConditionalCellValueOperator](/javascript/api/excel/excel.conditionalcellvalueoperator) です。
 
 次に、範囲内の 0 未満の値すべてに赤のフォント色を適用する例を示します。
 
@@ -62,9 +63,9 @@ conditionalFormat.cellValue.rule = { formula1: "=0", operator: "LessThan" };
 await context.sync();
 ```
 
-### <a name="color-scalehttpsdocsmicrosoftcomjavascriptapiexcelexcelcolorscaleconditionalformat"></a>[カラー スケール](https://docs.microsoft.com/javascript/api/excel/excel.colorscaleconditionalformat)
+### <a name="color-scalejavascriptapiexcelexcelcolorscaleconditionalformat"></a>[カラー スケール](/javascript/api/excel/excel.colorscaleconditionalformat)
 
-カラー スケールの条件付き書式では、データの範囲に色のグラデーションを適用することができます。 `ColorScaleConditionalFormat` 上の `criteria` プロパティは、3 つの [ConditionalColorScaleCriterion](https://docs.microsoft.com/javascript/api/excel/excel.conditionalcolorscalecriterion) を定義します: `minimum`、`maximum`、`midpoint` (オプション) です。 これらの条件スケール ポイントにはそれぞれ、3 つのプロパティが存在します。
+カラー スケールの条件付き書式では、データの範囲に色のグラデーションを適用することができます。 `ColorScaleConditionalFormat` 上の `criteria` プロパティは、3 つの [ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion) を定義します: `minimum`、`maximum`、`midpoint` (オプション) です。 これらの条件スケール ポイントにはそれぞれ、3 つのプロパティが存在します。
 
 -   `color` - エンドポイントに対する HTML カラー コード。
 -   `formula` - エンドポイントを表す数値または数式。 `type` が `lowestValue` または `highestValue` の場合、`null` となります。
@@ -104,11 +105,11 @@ conditionalFormat.colorScale.criteria = criteria;
 await context.sync();
 ```
 
-### <a name="customhttpsdocsmicrosoftcomjavascriptapiexcelexcelcustomconditionalformat"></a>[ユーザー設定](https://docs.microsoft.com/javascript/api/excel/excel.customconditionalformat) 
+### <a name="customjavascriptapiexcelexcelcustomconditionalformat"></a>[ユーザー設定](/javascript/api/excel/excel.customconditionalformat)
 
-ユーザー設定の条件付き書式では、任意の複雑な数式に基づいて、ユーザー定義の書式をセルに適用することができます。 [ConditionalFormatRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformatrule) オブジェクトでは、さまざまな表記で数式を定義することができます。
+ユーザー設定の条件付き書式では、任意の複雑な数式に基づいて、ユーザー定義の書式をセルに適用することができます。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) オブジェクトでは、さまざまな表記で数式を定義することができます。
 
--   `formula` - 標準の表記法。 
+-   `formula` - 標準の表記法。
 -   `formulaLocal` - ユーザーの言語の地域向けの表記法。
 -   `formulaR1C1` - R1C1 スタイルの表記法。
 
@@ -130,7 +131,7 @@ conditionalFormat.custom.format.font.color = "green";
 await context.sync();
 
 ```
-### <a name="data-barhttpsdocsmicrosoftcomjavascriptapiexcelexceldatabarconditionalformat"></a>[データ バー](https://docs.microsoft.com/javascript/api/excel/excel.databarconditionalformat)
+### <a name="data-barjavascriptapiexcelexceldatabarconditionalformat"></a>[データ バー](/javascript/api/excel/excel.databarconditionalformat)
 
 データ バーの条件付き書式では、セルにデータ バーを追加することができます。 既定では、範囲内の最小値と最大値を基準にデータ バーのサイズ比が決まります。 `DataBarConditionalFormat` オブジェクトには、バーの外観を制御するプロパティがいくつか存在します。 
 
@@ -150,13 +151,13 @@ conditionalFormat.dataBar.barDirection = Excel.ConditionalDataBarDirection.leftT
 await context.sync();
 ```
 
-### <a name="icon-sethttpsdocsmicrosoftcomjavascriptapiexcelexceliconsetconditionalformat"></a>[アイコン セット](https://docs.microsoft.com/javascript/api/excel/excel.iconsetconditionalformat)
+### <a name="icon-setjavascriptapiexcelexceliconsetconditionalformat"></a>[アイコン セット](/javascript/api/excel/excel.iconsetconditionalformat)
 
-アイコン セットの条件付き書式では、Excel の[アイコン]( https://docs.microsoft.com/javascript/api/excel/excel.icon)を使用してセルを強調表示することができます。 `criteria` プロパティは、[ConditionalIconCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalIconCriterion) の配列です。挿入する記号と、その記号の挿入条件を定義します。 この配列には、既定のプロパティを持つ条件要素が事前設定されています。 個々のプロパティは上書きできません。 プロパティを書き換えるには、条件オブジェクト全体を置き換える必要があります。 
+アイコン セットの条件付き書式では、Excel の[アイコン](/javascript/api/excel/excel.icon)を使用してセルを強調表示することができます。 `criteria` プロパティは、[ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion) の配列です。挿入する記号と、その記号の挿入条件を定義します。 この配列には、既定のプロパティを持つ条件要素が事前設定されています。 個々のプロパティは上書きできません。 プロパティを書き換えるには、条件オブジェクト全体を置き換える必要があります。 
 
 次に、3 つの三角形のアイコン セットを範囲に適用する例を示します。
 
-![数値が 1000 を超える場合は緑の上向き三角形、700 から 1000 の場合は黄色の線、700 未満の場合は赤の下向き三角形が表示されている範囲。](../images/excel-conditional-format-iconset.png)
+![1000を超える値に対して緑の上向き三角形が付いた範囲、700から1000までの値の黄色の線、および小さい値の赤の下三角形。](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -193,9 +194,9 @@ iconSetCF.criteria = [
 await context.sync();
 ```
 
-### <a name="preset-criteriahttpsdocsmicrosoftcomjavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[事前設定の条件](https://docs.microsoft.com/javascript/api/excel/excel.presetcriteriaconditionalformat)
+### <a name="preset-criteriajavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[事前設定の条件](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-事前設定の条件付き書式では、選択した標準ルールに基づいて、ユーザー定義の書式を範囲に適用することができます。 これらのルールは、[ConditionalPresetCriteriaRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalpresetcriteriarule) 内の [ConditionalFormatPresetCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalFormatPresetCriterion) で定義します。 
+事前設定の条件付き書式では、選択した標準ルールに基づいて、ユーザー定義の書式を範囲に適用することができます。 これらのルールは、[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 内の [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) で定義します。 
 
 次に、セルの値が、範囲の平均値を超える少なくとも 1 つの標準偏差である場合、フォント色を白に設定する例を示します。
 
@@ -217,9 +218,9 @@ conditionalFormat.preset.rule = {
 await context.sync();
 ```
 
-### <a name="text-comparisonhttpsdocsmicrosoftcomjavascriptapiexcelexceltextconditionalformat"></a>[テキストの比較](https://docs.microsoft.com/javascript/api/excel/excel.textconditionalformat)
+### <a name="text-comparisonjavascriptapiexcelexceltextconditionalformat"></a>[テキストの比較](/javascript/api/excel/excel.textconditionalformat)
 
-テキストの比較の条件付き書式では、条件として文字列比較を使用します。 `rule` プロパティは、セルと比較する文字列と、比較の種類を指定する演算子を定義する、[ConditionalTextComparisonRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltextcomparisonrule) です。 
+テキストの比較の条件付き書式では、条件として文字列比較を使用します。 `rule` プロパティは、セルと比較する文字列と、比較の種類を指定する演算子を定義する、[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) です。 
 
 次に、セルのテキストとして "Delayed" が含まれている場合に、そのセルのフォント色を赤に設定する例を示します。
 
@@ -242,9 +243,9 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottomhttpsdocsmicrosoftcomjavascriptapiexcelexceltopbottomconditionalformat"></a>[上位/下位](https://docs.microsoft.com/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottomjavascriptapiexcelexceltopbottomconditionalformat"></a>[上位/下位](/javascript/api/excel/excel.TopBottomconditionalformat)
 
-上位/下位の条件付き書式では、範囲内の上位または下位の値を持つセルに書式を適用することができます。 [ConditionalTopBottomRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltopbottomrule) の種類である `rule` プロパティでは、条件を上位または下位のどちらで設定するのか、また順位とパーセンテージのどちらでランクを決定するのかを、設定します。 
+上位/下位の条件付き書式では、範囲内の上位または下位の値を持つセルに書式を適用することができます。 [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule) の種類である `rule` プロパティでは、条件を上位または下位のどちらで設定するのか、また順位とパーセンテージのどちらでランクを決定するのかを、設定します。 
 
 次に、範囲内で一番上位の値を持つセルの色を緑に設定する例を示します。
 
@@ -334,8 +335,9 @@ await context.sync();
 ```
 
 ## <a name="see-also"></a>関連項目
--   [Excel JavaScript API を使用した基本的なプログラミングの概念]( https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-core-concepts)
--   [Excel JavaScript API を使用して範囲を操作する](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges)
--   [ConditionalFormat オブジェクト (JavaScript API for Excel)]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat)
--   [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](/office/dev/add-ins/excel/excel-add-ins-core-concepts)
+- [Excel JavaScript API を使用して範囲を操作する](/office/dev/add-ins/excel/excel-add-ins-ranges)
+- [ConditionalFormat オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
+- [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+- [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

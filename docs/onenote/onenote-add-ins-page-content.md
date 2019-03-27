@@ -1,14 +1,14 @@
 ---
 title: OneNote ページ コンテンツを使用する
 description: ''
-ms.date: 01/10/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b92f83ee85943ca4e819b04e2b6fa90e6d4fe4b3
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052722"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872187"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
@@ -23,14 +23,14 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 
 空の OneNote ページを作成するには、次の方法のいずれかを使用します。
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 その後、次のオブジェクトのメソッドを使用して、`Page.addOutline` や `Outline.appendHtml` などのページ コンテンツを操作します。
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
+- [Page](/javascript/api/onenote/onenote.page)
+- [Outline](/javascript/api/onenote/onenote.outline)
+- [Paragraph](/javascript/api/onenote/onenote.paragraph)
 
 OneNote ページのコンテンツと構造は、HTML で表されます。次に説明するように、ページ コンテンツの作成や更新には、HTML のサブセットだけがサポートされています。
 
@@ -61,6 +61,6 @@ OneNote では、ユーザーのセキュリティを確保しながら、HTML �
 ## <a name="see-also"></a>関連項目
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

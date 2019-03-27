@@ -3,19 +3,19 @@ title: Excel アドインで複数の範囲を同時に操作する
 description: ''
 ms.date: 02/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199607"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870822"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Excel アドインで複数の範囲を同時に操作する (プレビュー)
 
 Excel JavaScript ライブラリを使用すると、同時に複数の範囲に対してアドインによる操作の実行とプロパティの設定が可能になります。 範囲は連続している必要はありません。 コードがよりシンプルになることに加え、この方法でプロパティを設定すれば、各範囲に同じプロパティを個別に設定する方法よりも処理速度が格段に速くなります。
 
 > [!NOTE]
-> この記事で説明する API には、**Office 2016 クイック実行バージョン 1809 Build 10820.20000** 以降が必要です  (適切なビルドを取得するには、 [Office Insider プログラム](https://products.office.com/office-insider)に参加する必要がある場合があります)。[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> この記事で説明する API には、**Office 2016 クイック実行バージョン 1809 Build 10820.20000** 以降が必要です  (適切なビルドを取得するには、 [Office Insider プログラム](https://products.office.com/office-insider)に参加する必要がある場合があります)。[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 

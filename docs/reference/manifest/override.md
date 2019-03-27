@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの Override 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: d1d2400312f12116b1ac5f4010135541e783dcc7
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 020ae490dacbb9b8c493dc022c23d0ebf311a1b9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432866"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870059"
 ---
 # <a name="override-element"></a>Override 要素
 
@@ -26,7 +27,7 @@ ms.locfileid: "27432866"
 |**要素**|
 |:-----|
 |[CitationText](citationtext.md)|
-|[Description](description.md)|
+|[説明](description.md)|
 |[DictionaryName](dictionaryname.md)|
 |[DictionaryHomePage](dictionaryhomepage.md)|
 |[DisplayName](displayname.md)|
@@ -45,5 +46,5 @@ ms.locfileid: "27432866"
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのローカライズ](https://docs.microsoft.com/office/dev/add-ins/develop/localization)
+- [Office アドインのローカライズ](/office/dev/add-ins/develop/localization)
     

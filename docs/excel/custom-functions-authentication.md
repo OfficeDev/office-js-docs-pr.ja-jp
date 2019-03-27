@@ -1,13 +1,13 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Excel でカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
-ms.openlocfilehash: 4358d9f570ef8b31db98b1886c01ff4a89a6b1be
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512854"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871494"
 ---
 # <a name="authentication"></a>認証
 
@@ -15,7 +15,7 @@ ms.locfileid: "30512854"
   
 ## <a name="asyncstorage-object"></a>asyncstorage オブジェクト
 
-カスタム関数ランタイムには、通常`localStorage` 、データを格納するグローバルウィンドウで使用できるオブジェクトがありません。 代わりに、データを設定して取得するために、 [officeruntime](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage)を使用して、カスタム関数と作業ウィンドウ間でデータを共有する必要があります。
+カスタム関数ランタイムには、通常`localStorage` 、データを格納するグローバルウィンドウで使用できるオブジェクトがありません。 代わりに、データを設定して取得するために、 [officeruntime](/javascript/api/office-runtime/officeruntime.asyncstorage)を使用して、カスタム関数と作業ウィンドウ間でデータを共有する必要があります。
 
 さらに、を使用`AsyncStorage`するメリットがあります。セキュリティで保護されたサンドボックス環境を使用して、他のアドインがデータにアクセスできないようにします。
 
@@ -30,7 +30,7 @@ ms.locfileid: "30512854"
 > [!NOTE]
 > カスタム関数ランタイムは、作業ウィンドウで使用されるブラウザーエンジンランタイムの dialog オブジェクトとは少し異なるダイアログオブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれています`Officeruntime.Dialog`が、カスタム関数ランタイムでユーザーを認証するために使用します。
 
-の`OfficeRuntime.Dialog`使用方法については、「[カスタム関数ランタイム](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)」を参照してください。
+の`OfficeRuntime.Dialog`使用方法については、「[カスタム関数ランタイム](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)」を参照してください。
 
 全体として認証プロセス全体を構想する場合は、アドインの作業ウィンドウと UI 要素、およびアドインのカスタム関数の部分を、を通じて`AsyncStorage`相互に通信できる個別のエンティティと考えることをお勧めします。
 
@@ -42,7 +42,7 @@ ms.locfileid: "30512854"
 4. 次に、カスタム関数は、 `AsyncStorage`このアクセストークンをに設定します。
 5. アドインの作業ウィンドウで、から`AsyncStorage`トークンにアクセスできます。
 
-![カスタム関数、officeruntime、および共同作業ウィンドウの図](../images/Authdiagram.png "認証の図。")
+![ダイアログ API を使用してアクセストークンを取得し、asyncstorage API を使用してトークンを作業ウィンドウで共有するカスタム関数の図。](../images/authentication-diagram.png "認証の図。")
 
 ## <a name="storing-the-token"></a>トークンの保存
 
@@ -77,7 +77,7 @@ function ReceiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般的なガイダンス
 
-Office アドインは web ベースであり、任意の web 認証方法を使用できます。 カスタム関数を使用して独自の認証を実装するために従う必要のある特定のパターンやメソッドはありません。 [外部サービスによる承認については、この記事](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)から始まるさまざまな認証パターンに関するドキュメントを参照してください。  
+Office アドインは web ベースであり、任意の web 認証方法を使用できます。 カスタム関数を使用して独自の認証を実装するために従う必要のある特定のパターンやメソッドはありません。 [外部サービスによる承認については、この記事](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)から始まるさまざまな認証パターンに関するドキュメントを参照してください。  
 
 カスタム関数を開発する際に、次の場所を使用してデータを保存しないようにします。  
 
@@ -89,4 +89,4 @@ Office アドインは web ベースであり、任意の web 認証方法を使
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [チュートリアル: Excel でカスタム関数を作成します。](excel-tutorial-custom-functions.md)
+* [Excel カスタム関数のチュートリアル](excel-tutorial-custom-functions.md)

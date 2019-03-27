@@ -1,14 +1,14 @@
 ---
-title: Office 名前空間 - プレビュー要件セット
+title: Office 名前空間-プレビュー要件セット
 description: ''
-ms.date: 02/26/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 7b27963a85f1dcdaa6f269fce242c45bf1bdd146
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: e426ea87c14c4ad21ebdbfd3df05988ba848b906
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359234"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872236"
 ---
 # <a name="office"></a>Office
 
@@ -19,15 +19,15 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
 | メンバー | 種類 |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | メンバー |
-| [CoercionType](#coerciontype-string) | メンバー |
-| [EventType](#eventtype-string) | メンバー |
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [EventType](#eventtype-string) | Member |
 | [SourceProperty](#sourceproperty-string) | メンバー |
 
 ### <a name="namespaces"></a>名前空間
@@ -48,7 +48,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Succeeded`| String|呼び出しが成功しました。|
 |`Failed`| String|呼び出しが失敗しました。|
@@ -58,7 +58,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ---
 
@@ -72,7 +72,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
@@ -82,7 +82,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ---
 
@@ -96,22 +96,22 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ##### <a name="properties"></a>プロパティ:
 
-| 名前 | 型 | 説明 | 最小要件セット |
+| 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|---|
-|`AppointmentTimeChanged`| String | 選択した予定または一連の予定の日付または時刻が変更された。 | 1.7 |
-|`AttachmentsChanged`| String | アイテムに添付ファイルが追加されたか、アイテムから添付ファイルが削除された。 | プレビュー |
+|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
+|`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | プレビュー |
 |`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | プレビュー |
-|`ItemChanged`| String | 作業ウィンドウがピン留めされている間、別の Outlook アイテムが選択されて表示されている。 | 1.5 |
-|`OfficeThemeChanged`| 文字列 | メールボックスの Office テーマが変更された。 | プレビュー |
-|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更された。 | 1.7 |
-|`RecurrenceChanged`| 文字列 | 選択した一連の予定の定期的なパターンが変更された。 | 1.7 |
+|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`OfficeThemeChanged`| String | メールボックスの Office テーマが変更されました。 | プレビュー |
+|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
+|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
 
 ---
 
@@ -125,7 +125,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`Body`| String|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|
@@ -135,4 +135,4 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
