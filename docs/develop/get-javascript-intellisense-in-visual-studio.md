@@ -1,18 +1,18 @@
 ---
 title: Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: acbdd3e7bec080509cf957f8de42bfe585ed6f31
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7a4e2962933ccef0912ba3f96ed67af580fab60b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388053"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870976"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする 
+# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする
 
-Visual Studio 2017 を使用して Office アドインを開発する場合は、JSDoc を使用することで、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を有効にできます。この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。詳細については、「[JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
+Visual Studio 2017 を使用して Office アドインを開発する場合は、JSDoc を使用することで、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を有効にできます。この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。詳細については、「[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
 
 ## <a name="officejs-type-definitions"></a>Office.js の型定義
 
@@ -22,7 +22,7 @@ Visual Studio に Office.js の型の定義を提供する必要があります�
 - アドイン ソリューションの Web アプリケーション プロジェクトのルートに、tsconfig.json ファイルを追加することで、Office.js のオンライン バージョンを使用します。ファイルには、次のコンテンツが含まれている必要があります。
 
     ```json
-        {        
+        {
             "compilerOptions": {
                 "allowJs": true,            // These settings apply to JavaScript files also.
                 "noEmit":  true             // Do not compile the JS (or TS) files in this project.

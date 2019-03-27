@@ -3,12 +3,12 @@ ms.date: 03/19/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691203"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870451"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -203,91 +203,6 @@ function increment(incrementBy, callback) {
 > [!NOTE]
 > Excel の関数は、XML マニフェスト ファイルで指定された名前空間が接頭辞として付加されます。 関数の名前空間は、関数名の前に付けられ、ピリオドで区切られます。 例えば、Excel ワークシートのセル内で、`ADD42` 関数を呼び出すためには、`=CONTOSO.ADD42` と入力します。これは、`CONTOSO` が名前空間で、`ADD42` が JSON ファイルで指定された関数の名前だからです。 名前空間は、会社またはアドインの識別子としての使用を目的としています。 名前空間にはアルファベットとピリオドのみを含めることが出来ます。
 
-## <a name="functions-that-return-data-from-external-sources"></a>外部ソースからデータを返す関数
-
-カスタム関数が外部ソースからデータを取得する場合には、以下のことを実行する必要があります。
-
-1. JavaScript Promise を Excel に返します。
-
-2. コールバック関数を使用して Promise を最終値で解決します。
-
-カスタム関数は、Excel での最終結果を待つ間、`#GETTING_DATA` という一時的な結果をセルに表示します。 ユーザーは、結果を待つ間もワークシートの残りの部分を通常通り操作することができます。
-
-次のコード例では、`getTemperature()` カスタム関数が温度計の現在の温度を取得します。  `sendWebRequest` は、[XHR](custom-functions-runtime.md#xhr-example) を使用して温度 Web サービスを呼び出す仮想の関数 (ここでは指定なし) であることに留意してください。
-
-```js
-function getTemperature(thermometerID){
-    return new Promise(function(setResult){
-        sendWebRequest(thermometerID, function(data){
-            setResult(data.temperature);
-        });
-    });
-}
-```
-
-## <a name="streaming-functions"></a>ストリーミング関数
-
-ストリーム カスタム関数を使用すると、セルに繰り返しデータを長期的に出力でき、ユーザーが再計算を明示的に要求することは特に必要ありません。 以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
-
-- Excel は、`setResult` コールバックを使用して自動的に新しい値を表示します。
-
-- 2 番目の入力パラメーターの `handler` は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。
-
-- `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。 すべてのストリーム関数には、このようなキャンセル ハンドラーの実装が必要です。 詳細については、「[関数をキャンセルする](#canceling-a-function)」を参照してください。
-
-```js
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
-  }, 1000);
-
-  handler.onCanceled = function(){
-    clearInterval(timer);
-  }
-}
-```
-
-JSON メタデータ ファイルでストリーミング関数にメタデータを指定する場合には、`options` オブジェクト内のプロパティ`"cancelable": true` および `"stream": true` を以下の例のように設定する必要があります。
-
-```json
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
-
-## <a name="canceling-a-function"></a>関数をキャンセルする
-
-状況によっては、帯域幅の消費量、作業メモリ、UPC への負荷を軽減するために、ストリーム カスタム関数の実行をキャンセルする必要があります。 Excel では、次のような状況で関数の実行をキャンセルします。
-
-- ユーザーが、関数を参照するセルを編集または削除した場合。
-
-- 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
-
-- ユーザーが手動で再計算をトリガーしたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
-
-関数をキャンセルする機能を有効にするには、JavaScript 関数内にキャンセル ハンドラーを実装し、関数を記述するJSONのメタデータの `options` オブジェクト内のプロパティ `"cancelable": true` を指定する必要があります。 この記事の前のセクションのコード サンプルに、これらの手法の例が示されています。
-
 ## <a name="declaring-a-volatile-function"></a>揮発性関数の宣言
 
 [揮発性関数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)とは、関数のいずれの引数にも変更がない場合でも、値が刻々と変化する関数のことです。 これらの関数は、Excel が再計算するたびに再計算を行います。 たとえば、`NOW` 関数を呼び出すセルがあるとします。 `NOW` が呼び出される度に、現在の日付と時刻を自動的に返します。
@@ -359,6 +274,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## <a name="coauthoring"></a>共同編集
+
 Excel Online と Excel for Windows で Office 365 サブスクリプションを利用している場合、ドキュメントの共同編集を行うことができ、カスタム関数を使用できます。 ブックでカスタム関数を使用している場合、仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
@@ -433,7 +349,7 @@ function getAddress(parameter1, invocationContext) {
 
 ## <a name="known-issues"></a>既知の問題
 
-既知の問題については、[Excel カスタム関数についての GitHub のレポート](https://github.com/OfficeDev/Excel-Custom-Functions/issues)を参照してください。 
+既知の問題については、[Excel カスタム関数についての GitHub のレポート](https://github.com/OfficeDev/Excel-Custom-Functions/issues)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

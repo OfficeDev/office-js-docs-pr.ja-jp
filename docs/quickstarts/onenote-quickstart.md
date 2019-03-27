@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote アドインをビルドする
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: a0b2820f33e3a7cd31c12aec017ca552575a3f9b
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742339"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871921"
 ---
 # <a name="build-your-first-onenote-add-in"></a>最初の OneNote アドインをビルドする
 
@@ -203,7 +203,7 @@ ms.locfileid: "29742339"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for OneNote** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for OneNote** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -276,7 +276,7 @@ ms.locfileid: "29742339"
 ## <a name="see-also"></a>関連項目
 
 - [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 

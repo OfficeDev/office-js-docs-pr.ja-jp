@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアドイン カタログに Office アドインのマニフェスト ファイルをアップロードできます。
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 9ce5d6b1ebce4fc5589df2c349eb6676c2c02bbc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ed4f9778e4cd7dccba00d2e8c019bd4441b70eeb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386870"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870962"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 
@@ -17,7 +17,7 @@ ms.locfileid: "29386870"
 > [!IMPORTANT]
 > - SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。
 > - クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインの発行に [Office 365 管理センターからの一元展開を使用する](../publish/centralized-deployment.md)ことをお勧めします。
-> - SharePoint カタログは Office for Mac ではサポートされていません。 Office アドインを Mac クライアントに展開するには、そのアドインを [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) に提出する必要があります。   
+> - SharePoint カタログは Office for Mac ではサポートされていません。 Office アドインを Mac クライアントに展開するには、そのアドインを [AppSource](/office/dev/store/submit-to-the-office-store) に提出する必要があります。   
 
 ## <a name="set-up-an-add-in-catalog"></a>アドイン カタログのセットアップ
 
@@ -29,43 +29,43 @@ ms.locfileid: "29386870"
 > オンプレミス SharePoint の UI はアドインを**アプリ**として参照します。
 
 1. **サーバーの全体管理 Web サイト**を参照します。
-    
+
 2. 左側の作業ウィンドウで、**[アプリ]** を選択します。
-    
+
 3. **[アプリ]** ページの **[アプリの管理]** で **[アプリ カタログの管理]** を選択します。
-    
+
 4. **[アプリ カタログの管理]** ページの **Web アプリケーション セレクター** で正しい Web アプリケーションが選択されていることを確認します。
-    
+
 5. **[サイトの設定の表示]** を選択します。
-    
+
 6. [ **サイトの設定**] ページで、[ **サイト コレクション管理者**] を選択してサイト コレクション管理者を指定してから、[ **OK**] を選択します。
-    
+
 7. ユーザーにサイト アクセス許可を付与するには、[ **サイトの権限**] を選択してから、[ **アクセス許可の付与**] を選択します。
-    
+
 8. [ **アプリ カタログ サイトの共有**] ダイアログ ボックスで、1 人以上のサイト ユーザーを指定して、それらに適切なアクセス許可を設定し、必要に応じて他のオプションを設定してから、[  **共有**] を選択します。
-    
+
 9. Office アドインのアドイン カタログにアドインを追加する場合は、**[Office 用アプリ]** を選択します。
 
 ### <a name="to-set-up-an-add-in-catalog-on-office-365"></a>Office 365 でアドイン カタログをセットアップするには
 
 1. [Office 365 管理センター] ページで、 **[管理]**、 **[SharePoint]** の順にクリックします。
-    
+
 2. 左側の作業ウィンドウで、[ **アドイン**] を選択します。
-    
+
 3. [ **アドイン**] ページで、[ **アドイン カタログ**] を選択します。
-    
+
 4. [ **アドイン カタログ サイト**] ページで、[ **OK**] を選択して既定のオプションを受け入れ、新しいアドイン カタログ サイトを作成します。
-    
+
 5. [ **アドイン カタログ サイト コレクションの作成**] ページで、アドイン カタログ サイトのタイトルを指定します。
-    
+
 6. Web サイト アドレスを指定します。
-    
+
 7. [ **記憶域のクォータ**] を可能な限り小さい値に設定します (現在は 110)。このサイト コレクションにはアドイン パッケージだけをインストールしますが、パッケージは非常に小さなものです。
-    
+
 8. [ **サーバー リソース クォータ**] を 0 (ゼロ) に設定します。(サーバー リソース クォータは、パフォーマンスが低いサンドボックス ソリューションのスロットルに関連していますが、このアドインのカタログ サイトにはサンドボックス ソリューションをインストールしません。)
-    
+
 9. **[OK]** をクリックします。
-    
+
 10. アドイン カタログ サイトにアドインを追加するために、前の手順で作成したサイトを参照します。左側のナビゲーション ウィンドウで、**[Office アドイン]** を選択して Office アドイン マニフェスト ファイルをアップロードし、**[新規アドイン]** を選択します。
 
 ## <a name="publish-an-add-in-to-an-add-in-catalog"></a>アドイン カタログへのアドインの発行
@@ -75,17 +75,17 @@ ms.locfileid: "29386870"
 1. アドイン カタログを参照します。
 
     - SharePoint サーバーの全体管理メイン ページを開きます。
-    
+
     - **[アドイン]** を選択します。
-    
+
     - **[アドイン カタログの管理]** を選択します。
-    
+
     - 表示されたリンクを選択し、左側のナビゲーション バーで **[Office アドイン]** を選択します。
-    
+
 2. **[新しいアイテムの追加]** リンクを選択します。
-    
+
 3. **[参照]** を選択し、アップロードする [[マニフェスト]](../develop/add-in-manifests.md) を指定します。
-    
+
     このカタログのコンテンツおよび作業ウィンドウのアドインが **[Office アドイン]** ダイアログ ボックスから使用できるようになりました。これらにアクセスするには、**[挿入]** タブで **[個人用アドイン]** を選択して、**[自分の所属組織]** を選択します。
 
 ## <a name="end-user-experience-with-the-add-in-catalog"></a>アドイン カタログのエンド ユーザー エクスペリエンス
@@ -93,17 +93,17 @@ ms.locfileid: "29386870"
 エンド ユーザーは、次に示す手順を実行することで Office アプリケーションのアドイン カタログにアクセスできます。
 
 1. Office アプリケーションで、**[ファイル]**  >  **[オプション]**  >  **[セキュリティ センター]**  >  **[セキュリティ センターの設定]**  >  **[信頼できるアドイン カタログ]** の順に移動します。
-    
+
 2. アドイン カタログの _親 SharePoint サイト コレクション_の URL を指定します。 
-    
+
     たとえば、Office アドイン カタログの URL が次のような場合:
-    
+
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
-    
+
     親サイト コレクションの URL のみを指定します。
-    
+
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
-    
+
 3. Office アプリケーションを閉じ、もう一度開きます。アドイン カタログが **[Office アドイン]** ダイアログ ボックスに表示されます。
 
-または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。 詳細については、「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。
+または、管理者はグループ ポリシーを使用して SharePoint の Office アドイン カタログを指定できます。 詳細については、「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。

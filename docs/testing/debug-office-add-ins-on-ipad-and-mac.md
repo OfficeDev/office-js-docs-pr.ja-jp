@@ -1,14 +1,14 @@
 ---
 title: iPad と Mac で Office アドインをデバッグする
 description: ''
-ms.date: 02/01/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 5bf626c4c18bcedccd331570b6b892a8c6a903fd
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742332"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870402"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
@@ -95,7 +95,7 @@ Vorlon.JS を使用してアプリケーションをデバッグするには、�
 
 3.  ブラウザー ウィンドウを開き、Vorlon.JS インターフェイスの `https://localhost:1337` に進みます。
 
-4. アドインをサイドロードします。 アドインが Excel、PowerPoint、Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。 アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。 アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。 それ以外の場合は、ボタンを選択してアドインを開きます。 Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
+4. アドインをサイドロードします。 アドインが Excel、PowerPoint、Word 用の場合は、「[iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)」の説明に従ってサイドロードします。 アドインが Outlook アドインである場合は、「[テストのために Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の説明に従ってサイドロードします。 アドインでアドイン コマンドを使用しない場合は、アドインが直ちに開きます。 それ以外の場合は、ボタンを選択してアドインを開きます。 Office ホスト アプリケーションのビルドに応じて、ボタンは **[ホーム]** タブまたは **[アドイン]** タブのいずれかに表示されます。
 
 アドインは、Vorlon.JS のクライアントのリスト (Vorlon.JS インターフェイスの左側) に **{OS} - n** として表示されます。*n* は数値、*{OS}* は "Macintosh" などのデバイスの種類です。
 

@@ -1,15 +1,15 @@
 ---
 title: JavaScript API での PowerPoint と Project
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 7cd2c1cd1e9ddfbbbcbb6d645f7f7a3afb0125b2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 656639f8383ca30b5bf4c9ed78f46d3ec6cbcefc
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742216"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870731"
 ---
 # <a name="powerpoint-and-project-in-the-javascript-api"></a>JavaScript API での PowerPoint と Project
 
@@ -18,5 +18,5 @@ PowerPoint と Project は JavaScript API で作成されたアドインをサ�
 ## <a name="see-also"></a>関連項目
 
 - [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)
-- [Office アドインのホストとプラットフォームの可用性](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
+- [Office アドインのホストとプラットフォームの可用性](/office/dev/add-ins/overview/office-add-in-availability)
 - [共通 API リファレンス](/javascript/api/overview/office)

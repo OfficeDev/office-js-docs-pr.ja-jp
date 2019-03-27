@@ -1,21 +1,21 @@
 ---
 title: Office 共通 API の要件セット
 description: ''
-ms.date: 11/20/2018
+ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 59280a2e61713e27b44e3068b9e77afa58230517
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 84eee3c085821e741f44fc4a413005cbc1a61951
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742388"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870199"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
-Office ホストによってアドインがサポートされる場所に関する情報が必要ですか? 「[Office アドインのホストとプラットフォームの可用性](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)」を参照してください。
+Office ホストによってアドインがサポートされる場所に関する情報が必要ですか? 「[Office アドインのホストとプラットフォームの可用性](/office/dev/add-ins/overview/office-add-in-availability)」を参照してください。
 
 *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
  
@@ -60,7 +60,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
-JavaScript API for Office の以下のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「[Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
+JavaScript API for Office の以下のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「[Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
 
 |**メソッド名**|**サポートされる Office のホスト**|
 |:-----|:-----|
@@ -83,6 +83,6 @@ JavaScript API for Office の以下のメソッドは、要件セットの一部
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office アドインの XML マニフェスト](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)

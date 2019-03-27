@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
-ms.date: 02/25/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359255"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871977"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -61,7 +61,7 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>Office for Mac でアドインをサイドロードする
 
 > [!NOTE]
-> Outlook for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)」を参照してください。
+> Outlook for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」を参照してください。
 
 1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     

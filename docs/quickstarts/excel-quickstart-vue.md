@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel アドインをビルドする
 description: ''
-ms.date: 10/18/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d68c30cbff61de9374dff483aa259864a1d86baf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742206"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870997"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Vue を使用して Excel アドインをビルドする
 
@@ -60,7 +60,7 @@ vue init webpack my-add-in
 2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
     ```bash
-    yo office 
+    yo office
     ```
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in containing the manifest only`
@@ -68,7 +68,7 @@ vue init webpack my-add-in
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office.png)
-    
+
     ウィザードを完了すると、ジェネレーターによってマニフェスト ファイルが作成されます。
 
 ## <a name="secure-the-app"></a>アプリをセキュリティ保護する
@@ -224,5 +224,5 @@ vue init webpack my-add-in
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 

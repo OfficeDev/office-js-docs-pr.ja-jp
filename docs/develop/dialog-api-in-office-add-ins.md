@@ -1,21 +1,21 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 02/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: c474e0f3bf27b70565174b797d726a1651a55952
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 64740d6965209bf6e8b824cae7b149e3ee4f02e6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359290"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871837"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
-[ダイアログ API](https://docs.microsoft.com/javascript/api/office/office.ui) を使用して、Office アドインでダイアログ ボックスを開くことができます。この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
+[ダイアログ API](/javascript/api/office/office.ui) を使用して、Office アドインでダイアログ ボックスを開くことができます。この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
 
 > [!NOTE]
-> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
+> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
 
 > ダイアログ API の主要なシナリオは、Google や Facebook などのリソースで認証を有効にすることです。
 
@@ -36,11 +36,11 @@ ms.locfileid: "30359290"
 
 ## <a name="dialog-api-scenarios"></a>ダイアログ API のシナリオ
 
-Office JavaScript API は、[Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) オブジェクトと [Office.context.ui 名前空間](https://docs.microsoft.com/javascript/api/office/office.ui)の 2 つの関数を使用する次のシナリオをサポートしています。
+Office JavaScript API は、[Dialog](/javascript/api/office/office.dialog) オブジェクトと [Office.context.ui 名前空間](/javascript/api/office/office.ui)の 2 つの関数を使用する次のシナリオをサポートしています。
 
 ### <a name="open-a-dialog-box"></a>ダイアログ ボックスを開く
 
-ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) メソッドを呼び出して、開くリソースの URL を渡します。これは、通常はページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、またはその他のリソースの場合もあります。この記事では、'ページ' または 'Web サイト' とは、ダイアログ内のリソースを意味します。次のコードは簡単な例を示しています。
+ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](/javascript/api/office/office.ui) メソッドを呼び出して、開くリソースの URL を渡します。これは、通常はページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、またはその他のリソースの場合もあります。この記事では、'ページ' または 'Web サイト' とは、ダイアログ内のリソースを意味します。次のコードは簡単な例を示しています。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -48,7 +48,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - この URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページで必須です。
-> - ダイアログのリソースのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
+> - ダイアログのリソースのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](/office/dev/add-ins/reference/manifest/functionfile)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
 > [!IMPORTANT]
 > ダイアログのホスト ページとリソースのフル ドメインは、同じである必要があります。 `displayDialogAsync` にアドインのドメインのサブドメインを渡そうとすると、正常に動作しません。 サブドメインを含む、フル ドメインが一致している必要があります。
@@ -84,7 +84,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ### <a name="handling-pop-up-blockers-with-office-online"></a>Office Online を使用したポップアップ ブロックの処理
 
 Office Online の使用中にダイアログを表示しようとすると、ブラウザーのポップアップ ブロックによってダイアログがブロックされる可能性があります。 アドインのユーザーがアドインからのプロンプトに初めて同意する場合、ブラウザーのポップアップ ブロックが回避される可能性があります。 `displayDialogAsync` の [DialogOptions](/javascript/api/office/office.dialogoptions) には、そのようなポップアップをトリガーするための `promptBeforeOpen` プロパティがあります。 `promptBeforeOpen` は、次の動作を設定するブール値です。
- 
+
  - `true` - ナビゲーションをトリガーし、ブラウザーのポップアップ ブロックを回避するためのポップアップがフレームワークに表示されます。 
  - `false` - ダイアログは表示されず、(ナビゲーションをトリガーするユーザー インターフェイス アーティファクトを提供することにより) 開発者はポップアップを処理する必要があります。 
  
@@ -132,8 +132,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office は [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) オブジェクトをコールバックに渡します。Office はダイアログ ボックスを開こうとした結果を表します。ただし、ダイアログ ボックスでのイベントの結果は表しません。この違いの詳細については、「[エラーとイベントの処理](#handle-errors-and-events)」セクションを参照してください。
-> - `asyncResult` の `value` プロパティは [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) オブジェクトに設置されます。このオブジェクトはダイアログ ボックスの実行コンテキストではなく、ホスト ページに存在します。
+> - Office は [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトをコールバックに渡します。Office はダイアログ ボックスを開こうとした結果を表します。ただし、ダイアログ ボックスでのイベントの結果は表しません。この違いの詳細については、「[エラーとイベントの処理](#handle-errors-and-events)」セクションを参照してください。
+> - `asyncResult` の `value` プロパティは [Dialog](/javascript/api/office/office.dialog) オブジェクトに設置されます。このオブジェクトはダイアログ ボックスの実行コンテキストではなく、ホスト ページに存在します。
 > - `processMessage` はイベントを処理する関数です。任意の名前を指定できます。
 > - `dialog` 変数は、`processMessage` でも参照されるため、コールバックよりも広い範囲で宣言されます。
 
@@ -179,17 +179,18 @@ function processMessage(arg) {
 これを実行するアドインの例については、「[Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)」 (PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入) のサンプルを参照してください。
 
 #### <a name="conditional-messaging"></a>条件付きのメッセージング
+
 ダイアログ ボックスから複数の `messageParent` 呼び出しを送信できますが、`DialogMessageReceived` イベントのホスト ページにあるハンドラーは 1 つのみのため、ハンドラーは条件ロジックを使用してさまざまなメッセージを区別する必要があります。たとえば、ユーザーに対して Microsoft アカウントまたは Google などの ID プロバイダーにサインインするよう求めるダイアログ ボックスが表示されると、ダイアログ ボックスはユーザーのプロファイルをメッセージとして送信します。認証が失敗した場合、次の例のように、ダイアログ ボックスはホスト ページにエラー情報を送信します。
 
 ```js
 if (loginSuccess) {
     var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};            
+    var messageObject = {messageType: "signinSuccess", profile: userProfile};
     var jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
     var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};            
+    var messageObject = {messageType: "signinFailure", error: errorDetails};
     var jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
@@ -225,7 +226,7 @@ function processMessage(arg) {
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};            
+    var messageObject = {messageType: "dialogClosed"};
     var jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
@@ -263,7 +264,7 @@ function processMessage(arg) {
 |<span id="12007">12007</span>|ダイアログ ボックスは、このホスト ウィンドウで既に開いています。作業ウィンドウなどのホスト ウィンドウで一度に開けるダイアログ ボックスは 1 つだけです。|
 |12009|ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ダイアログの表示をアドインに許可しないようにユーザーが選択すると、Office のオンライン バージョンで発生することがあります。|
 
-`displayDialogAsync` が呼び出されると、常に [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) オブジェクトがコールバック関数に渡されます。 呼び出しが成功した場合 (つまり、ダイアログ ウィンドウが開いた場合)、`AsyncResult` オブジェクトの `value` プロパティは [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) オブジェクトです。 この例は、「[ダイアログ ボックスからホスト ページに情報を送信する](#send-information-from-the-dialog-box-to-the-host-page)」セクションで参照できます。 `displayDialogAsync` への呼び出しが失敗した場合は、ウィンドウは作成されず、`AsyncResult` オブジェクトの `status` プロパティが `Office.AsyncResultStatus.Failed` に設定され、オブジェクトの `error` プロパティが設定されます。 `status` をテストして、エラーが発生したときに応答するコールバックを常に設定しておく必要があります。 コード番号に関係なくエラー メッセージのみを報告するコードの例を、次に示します。
+`displayDialogAsync` が呼び出されると、常に [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトがコールバック関数に渡されます。 呼び出しが成功した場合 (つまり、ダイアログ ウィンドウが開いた場合)、`AsyncResult` オブジェクトの `value` プロパティは [Dialog](/javascript/api/office/office.dialog) オブジェクトです。 この例は、「[ダイアログ ボックスからホスト ページに情報を送信する](#send-information-from-the-dialog-box-to-the-host-page)」セクションで参照できます。 `displayDialogAsync` への呼び出しが失敗した場合は、ウィンドウは作成されず、`AsyncResult` オブジェクトの `status` プロパティが `Office.AsyncResultStatus.Failed` に設定され、オブジェクトの `error` プロパティが設定されます。 `status` をテストして、エラーが発生したときに応答するコールバックを常に設定しておく必要があります。 コード番号に関係なくエラー メッセージのみを報告するコードの例を、次に示します。
 
 ```js
 var dialog;
@@ -378,7 +379,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 3.  ホスト ページで `displayDialogAsync` の呼び出しを使用して、video.dialogbox.html を開きます。
 4.  ユーザーがダイアログ ボックスを閉じたときに、アドインに通知する必要がある場合は、`DialogEventReceived` イベントのハンドラーを登録して、12006 イベントを処理します。詳しくは、「[ダイアログ ウィンドウでのエラーとイベント](#errors-and-events-in-the-dialog-window)」セクションを参照してください。
 
-ダイアログ ボックスにビデオを表示するサンプルについては、[ビデオ プレイスマット設計パターン](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat)を参照してください。
+ダイアログ ボックスにビデオを表示するサンプルについては、[ビデオ プレイスマット設計パターン](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat)を参照してください。
 
 ![アドイン ダイアログ ボックスに表示されるビデオのスクリーン ショット](../images/video-placemats-dialog-open.png)
 
@@ -429,7 +430,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>単一ページ アプリケーションとクライアント側ルーティングで Office ダイアログ API を使用する
 
-単一ページ アプリケーションが通常使用するように、アドインがクライアント側ルーティングを使用している場合は、HTML の完了ページと個別ページの URL の代わりに、ルートの URL を [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) メソッドに渡すこともできます。
+単一ページ アプリケーションが通常使用するように、アドインがクライアント側ルーティングを使用している場合は、HTML の完了ページと個別ページの URL の代わりに、ルートの URL を [displayDialogAsync](/javascript/api/office/office.ui) メソッドに渡すこともできます。
 
 > [!IMPORTANT]
 >ダイアログ ボックスは、独自の実行コンテキストを含む新しいウィンドウ内にあります。ルートを渡すと、ダイアログ ウィンドウで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。この手法により、ダイアログ ウィンドウで、アプリケーションの 2 番目のインスタンスが起動します。ダイアログ ウィンドウ内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。同様に、ダイアログ ウィンドウには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。

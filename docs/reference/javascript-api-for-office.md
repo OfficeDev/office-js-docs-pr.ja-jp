@@ -1,18 +1,18 @@
 ---
 title: JavaScript API for Office
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 51ae2a2391a63ab20a33e8ae590834f33311230a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387843"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870619"
 ---
 # <a name="javascript-api-for-office"></a>JavaScript API for Office
 
-JavaScript API for Office を使用すると、Office ホスト アプリケーションのオブジェクト モデルと対話する Web アプリケーションを作成できます。ユーザーのアプリケーションは、スクリプト ローダーである office.js ライブラリを参照します。Office.js ライブラリは、アドインを実行している Office アプリケーションに適用可能なオブジェクト モデルを読み込みます。次の JavaScript オブジェクト モデルを使用できます。
+JavaScript API for Office を使用すると、Office ホスト アプリケーションのオブジェクト モデルと対話する Web アプリケーションを作成できます。 ユーザーのアプリケーションは、スクリプト ローダーである office.js ライブラリを参照します。 Office.js ライブラリは、アドインを実行している Office アプリケーションに適用可能なオブジェクト モデルを読み込みます。 次の JavaScript オブジェクト モデルを使用できます。
 
 - **共通 API** - **Office 2013** で導入された API。 これは、**すべての Office ホスト アプリケーション**に読み込まれ、アドイン アプリケーションを Office クライアント アプリケーションに接続します。 オブジェクト モデルには、Office クライアントに固有の API と複数の Office クライアントのホスト アプリケーションに適用可能な API が含まれています。 このコンテンツは、すべて**共通 API** の下にあります。 このオブジェクト モデルは、コールバックを使用します。 
 
@@ -40,4 +40,4 @@ JavaScript API for Office を使用すると、Office ホスト アプリケー�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office JavaScript API リファレンス](https://docs.microsoft.com/javascript/api/overview/office)
+- [Office JavaScript API リファレンス](/javascript/api/overview/office)

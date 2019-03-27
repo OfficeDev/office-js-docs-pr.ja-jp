@@ -1,14 +1,14 @@
 ---
 title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
-ms.date: 03/14/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 6252a713444f7ec8bf955c3283a650f72cbcbed1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386555"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871151"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
@@ -22,7 +22,7 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 - Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
     
   > [!NOTE]
-  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](https://docs.microsoft.com/office/developer-program/office-365-developer-program)を参照してください。
+  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
      
 - Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
     
@@ -63,7 +63,7 @@ Office Online を使用してアドインをデバッグするには、
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-- [AppSource の検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- [効率的な AppSource アプリおよびアドインを作成する](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [AppSource の検証ポリシー](/office/dev/store/validation-policies)  
+- [効率的な AppSource アプリおよびアドインを作成する](/office/dev/store/create-effective-office-store-listings)  
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
     

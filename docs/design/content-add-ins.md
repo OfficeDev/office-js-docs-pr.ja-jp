@@ -1,14 +1,14 @@
 ---
 title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-ms.date: 12/13/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8114fe1d95739ba14fe54c379e44148f451010b2
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389397"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870542"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -49,12 +49,14 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 コンテンツ アドインの実装サンプルについては、GitHub の「[Excel コンテンツ アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)」を参照してください。
 
 ## <a name="support-considerations"></a>サポートに関する考慮事項
-- 使用している Office アドインが[特定の Office ホスト プラットフォーム](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)で動作するかどうかを確認します。 
-- コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)を宣言することができます。  
+
+- 使用している Office アドインが[特定の Office ホスト プラットフォーム](/office/dev/add-ins/overview/office-add-in-availability)で動作するかどうかを確認します。 
+- コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)を宣言することができます。  
 - コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
 ## <a name="see-also"></a>関連項目
-- [Office アドインのホストとプラットフォームの可用性](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
-- [Office アドインの Office UI Fabric](https://docs.microsoft.com/office/dev/add-ins/design/office-ui-fabric) 
-- [Office アドインの UX 設計パターン](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-pattern-templates)
-- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+
+- [Office アドインのホストとプラットフォームの可用性](/office/dev/add-ins/overview/office-add-in-availability)
+- [Office アドインの Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
+- [Office アドインの UX 設計パターン](/office/dev/add-ins/design/ux-design-pattern-templates)
+- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

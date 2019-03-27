@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8996cab27fc2ad9368d959086cd9ca53902e9be1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 84f18543c7bafac905805095c89f8e19a855ea76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388949"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871074"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -16,7 +16,7 @@ ms.locfileid: "29388949"
 
 また、[Fiddler](https://www.telerik.com/fiddler) を使用して、アドインの問題を特定してデバッグすることもできます。
 
-ユーザーの問題を解決した後、[AppSource でカスタマー レビューに直接返信することができます](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
+ユーザーの問題を解決した後、[AppSource でカスタマー レビューに直接返信することができます](/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>一般的なエラーとトラブルシューティングの手順
 
@@ -87,7 +87,7 @@ URL を信頼済みサイトのリストに追加する方法:
 3. エラー メッセージに表示される URL を入力して、**[追加]** を選択します。
 4. アドインの使用をもう一度お試しください。問題が続く場合は、他のセキュリティ ゾーンの設定を変えて、アドインのドメインが Office アプリケーションのアドレス バーに表示される URL と同じゾーンに存在するようにします。
 
-この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
+この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](/javascript/api/office/office.ui) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
 
 ```js
 

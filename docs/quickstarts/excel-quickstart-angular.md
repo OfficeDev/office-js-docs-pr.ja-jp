@@ -1,15 +1,15 @@
 ---
 title: Angular を使用して Excel のアドインを作成する
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091254"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870990"
 ---
 # <a name="build-an-excel-add-in-using-angular"></a>Angular を使用して Excel のアドインを作成する
 
@@ -39,7 +39,7 @@ ms.locfileid: "30091254"
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-excel-angular.png)
-    
+
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 2. プロジェクトのルート フォルダーに移動します。
@@ -60,7 +60,7 @@ ms.locfileid: "30091254"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -73,7 +73,7 @@ ms.locfileid: "30091254"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -152,7 +152,7 @@ ms.locfileid: "30091254"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -178,7 +178,6 @@ ms.locfileid: "30091254"
     - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-   
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
@@ -201,5 +200,4 @@ ms.locfileid: "30091254"
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

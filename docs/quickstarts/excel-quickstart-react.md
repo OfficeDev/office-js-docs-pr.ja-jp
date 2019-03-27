@@ -1,15 +1,15 @@
 ---
 title: React を使用して Excel のアドインを作成する
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02fd62dca59136fe85ff9b29a6b44576f1ceb8e9
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 6b56054337d14b8836e9b9994cbdfda8feee5b33
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742367"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871956"
 ---
 # <a name="build-an-excel-add-in-using-react"></a>React を使用して Excel のアドインを作成する
 
@@ -37,7 +37,7 @@ ms.locfileid: "29742367"
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-excel-react.png)
-    
+
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 2. プロジェクトのルート フォルダーに移動します。
@@ -58,7 +58,7 @@ ms.locfileid: "29742367"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -71,7 +71,7 @@ ms.locfileid: "29742367"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -201,7 +201,7 @@ ms.locfileid: "29742367"
                     <Progress
                         title={title}
                         logo='assets/logo-filled.png'
-                        message='Please sideload your addin to see app body.'
+                        message='Please sideload your add-in to see app body.'
                     />
                 );
             }
@@ -222,7 +222,7 @@ ms.locfileid: "29742367"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
 4. ファイルを保存します。
 
@@ -238,7 +238,7 @@ ms.locfileid: "29742367"
 
 ## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
 ## <a name="try-it-out"></a>試してみる
 
@@ -270,4 +270,4 @@ ms.locfileid: "29742367"
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

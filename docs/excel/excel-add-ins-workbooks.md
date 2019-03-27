@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してブックを操作する
 description: ''
 ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359269"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870311"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>既存のブックのコピーを現在のブックに挿入する
 
 > [!NOTE]
-> 現在、`WorksheetCollection.addFromBase64` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、`WorksheetCollection.addFromBase64` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブックの [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) にある `addFromBase64` メソッドは、対象のブックのワークシートのコピーを現在のブックに挿入します。 他のブックのファイルは、`Excel.createWorkbook` 呼び出しの場合と同様に、base64 エンコード文字列として渡されます。
 
@@ -265,7 +265,7 @@ context.application.suspendApiCalculationUntilNextSync();
 ## <a name="save-the-workbook"></a>ブックを保存する
 
 > [!NOTE]
-> 現在、`Workbook.save(saveBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、`Workbook.save(saveBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.save(saveBehavior)` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
 
@@ -282,7 +282,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 ## <a name="close-the-workbook"></a>ブックを閉じる
 
 > [!NOTE]
-> 現在、`Workbook.close(closeBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、`Workbook.close(closeBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.close(closeBehavior)` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
 

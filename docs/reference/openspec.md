@@ -1,21 +1,21 @@
 ---
 title: Office JavaScript API の API オープン仕様
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 5115b2ebc0d969456de289a618df48c6d6d9555f
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cc991151f13194bf000024457b8b9b47a49a497f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388011"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871914"
 ---
 # <a name="api-open-specifications"></a>API オープン仕様
 
 Office JavaScript API オープン仕様では、Excel、Word、その他のホスト アプリケーション用に設計されている新しい JavaScript API に関する情報が提供されます。 **OfficeDev/office-js-docs** GitHub レポジトリの[ブランチ](https://github.com/OfficeDev/office-js-docs/branches/all)でオープン仕様を確認して、今後リリース予定の API について学ぶことができます。また、GitHub レポジトリで問題のログを記録して、リリース予定の API 機能やデザインに関するフィードバックを提供することができます。
 
 > [!IMPORTANT]
-> API オープン仕様に記載されている機能は、初期設計やパブリック プレビューなどさまざまな開発段階にあるため、変更の対象となります。 API 機能が一般公開されると、関連文書がオープン仕様から削除されて、[Office アドイン文書](https://docs.microsoft.com/office/dev/add-ins/)に追加されます。 
+> API オープン仕様に記載されている機能は、初期設計やパブリック プレビューなどさまざまな開発段階にあるため、変更の対象となります。 API 機能が一般公開されると、関連文書がオープン仕様から削除されて、[Office アドイン文書](/office/dev/add-ins/)に追加されます。 
 
 ## <a name="new-excel-javascript-apis"></a>新しい Excel JavaScript API
 

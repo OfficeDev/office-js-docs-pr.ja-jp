@@ -1,14 +1,14 @@
 ---
 title: Word アドインの概要
 description: ''
-ms.date: 09/24/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b279034b285a1b73fd32d21d55b6cced6e40818a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b6fa62a41e97c6814e282db4a5c338d2d422d0fc
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389390"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871893"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -17,7 +17,7 @@ Word の機能を拡張するソリューション (たとえば、ドキュメ�
 Word のアドインは、[Office アドイン プラットフォーム](../overview/office-add-ins.md)にある数多くの開発オプションのひとつです。アドイン コマンドを使用して、Word の UI を拡張したり、Word 文書のコンテンツと対話する JavaScript を実行する作業ウィンドウを起動したりすることができます。ブラウザーで実行できるあらゆるコードは、Word アドインで実行できます。Word 文書のコンテンツと対話するアドインは、Word オブジェクトを操作し、オブジェクトの状態を同期する要求を作成します。 
 
 > [!NOTE]
-> アドインをビルドするとき、アドインを AppSource に[発行](../publish/publish.md)する予定であれば、[AppSource 検証ポリシー](https://docs.microsoft.com/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」のページを参照してください)。
+> アドインをビルドするとき、アドインを AppSource に[発行](../publish/publish.md)する予定であれば、[AppSource 検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」のページを参照してください)。
 
 次の図は、作業ウィンドウで実行される Word アドインの例を示します。
 
@@ -56,7 +56,7 @@ Word JavaScript API を使用すると、アプリケーションから Word 文
 
 2 つ目は、[Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) です。これは、Mac と Windows の Word 2016 を対象とする Word アドインを作成するために使用できる、厳密に型指定されたオブジェクト モデルです。このオブジェクト モデルは promise を使用し、[本文](/javascript/api/word/word.body)、[コンテンツ コントロール](/javascript/api/word/word.contentcontrol)、[インライン画像](/javascript/api/word/word.inlinepicture)、および[段落](/javascript/api/word/word.paragraph)などの Word 固有のオブジェクトへのアクセスを提供します。Word JavaScript API には、IDE 内のコード ヒントを取得できるように、TypeScript の定義と vsdoc ファイルが含まれています。
 
-現在、Word のすべてのクライアントは共有の JavaScript API for Office をサポートし、ほとんどのクライアントは Word JavaScript API をサポートします。サポート対象のクライアントの詳細については、「[API リファレンスのドキュメント](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?product=word)」を参照してください。
+現在、Word のすべてのクライアントは共有の JavaScript API for Office をサポートし、ほとんどのクライアントは Word JavaScript API をサポートします。サポート対象のクライアントの詳細については、「[API リファレンスのドキュメント](/office/dev/add-ins/reference/javascript-api-for-office?product=word)」を参照してください。
 
 Word JavaScript API のオブジェクト モデルはより簡単に使用できるため、Word JavaScript APから始めることをお勧めします。次のような必要がある場合は、Word JavaScript API を使用します。
 
@@ -74,7 +74,7 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="next-steps"></a>次の手順
 
-最初の Word アドインを作成する準備はできましたか?「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。また、対話式の「[作業の開始エクスペリエンス](https://docs.microsoft.com/office/dev/add-ins/?product=Word)」も使用できます。[アドインのマニフェスト](../develop/add-in-manifests.md)を使用して、アドインがホストされている場所や表示方法の説明と、アクセス許可およびその他の情報の定義を行います。
+最初の Word アドインを作成する準備はできましたか?「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。また、対話式の「[作業の開始エクスペリエンス](/office/dev/add-ins/?product=Word)」も使用できます。[アドインのマニフェスト](../develop/add-in-manifests.md)を使用して、アドインがホストされている場所や表示方法の説明と、アクセス許可およびその他の情報の定義を行います。
 
 ユーザーにとって魅力的なエクスペリエンスを提供する世界クラスの Word アドインを設計する方法の詳細については、「[設計のガイドライン](../design/add-in-design.md)」と「[ベスト プラクティス](../concepts/add-in-development-best-practices.md)」を参照してください。
 
@@ -82,10 +82,9 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>今後の Word アドイン
 
-新しい Word アドイン用の API の設計と開発にあたり、[API のオープン仕様](https://docs.microsoft.com/office/dev/add-ins/reference/openspec)ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
+新しい Word アドイン用の API の設計と開発にあたり、[API のオープン仕様](/office/dev/add-ins/reference/openspec)ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Word JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Word JavaScript API リファレンス](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

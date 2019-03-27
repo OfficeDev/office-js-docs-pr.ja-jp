@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office アドインをサイドロードする
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 7d7aa136e7268183c5a064f16315d433ee53a38b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388844"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871585"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -21,7 +21,7 @@ ms.locfileid: "29388844"
 
 - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [テスト用に Outlook アドインをサイドロードする](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
 次のビデオでは、共有フォルダー カタログを使用して Office デスクトップまたは Office Online でアドインをサイドロードする手順について説明します。  

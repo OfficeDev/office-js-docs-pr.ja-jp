@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の概要
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9a884e0e092779cc5959aa9b32ae6a5c4f3c0893
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742304"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870577"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
@@ -37,7 +37,7 @@ TypeScript を使用していて npm がある場合、コマンド ライン �
 
 ## <a name="running-word-add-ins"></a>Word アドインを実行します
 
-アドインを実行するには、Office.initialize イベント ハンドラーを使用します。アドインの初期化の詳細については、「[JavaScript API for Office について](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
+アドインを実行するには、Office.initialize イベント ハンドラーを使用します。アドインの初期化の詳細については、「[JavaScript API for Office について](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
 
 Word 2016 以降を対象とするアドインは、関数を **Word.run()** メソッドに渡すことによって後で実行されます。 **run** メソッドに渡される関数には、context 引数を含める必要があります。 この[コンテキスト オブジェクト](/javascript/api/word/word.requestcontext)は、Office オブジェクトから取得するコンテキスト オブジェクトとは異なりますが、これは Word ランタイム環境とやりとりするためにも使用されます。 コンテキスト オブジェクトを使用して、Word JavaScript API オブジェクト モデルにアクセスできます。 次の例では、**Word.run()** メソッドを使用することにより、Word アドインを初期化して実行する方法について示します。
 
@@ -137,6 +137,6 @@ Word JavaScript API の詳細については、[Word JavaScript API リファレ
 
 ## <a name="see-also"></a>関連項目
 
-* [Word アドインの概要](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office アドイン プラットフォームの概要](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Word アドインの概要](/office/dev/add-ins/word/word-add-ins-programming-overview)
+* [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
 * [GitHub の Word アドインのサンプル](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)

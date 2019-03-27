@@ -1,19 +1,19 @@
 ---
 title: Word JavaScript API の要件セット
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: ec33a55c20fbc1b7b2cb0603034bd74f54b0b4b2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742458"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870801"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
 Word アドインは、Office for Windows 2016 以降、Office for iPad、Office for Mac、Office Online など、複数のバージョンの Office で機能します。 次の表は、Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
@@ -36,7 +36,7 @@ Word アドインは、Office for Windows 2016 以降、Office for iPad、Office
 - [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server 概要](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -296,6 +296,6 @@ Word JavaScript API 1.1 は、API の最初のバージョンです。API の詳
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office アドインの XML マニフェスト](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)

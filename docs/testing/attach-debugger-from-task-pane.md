@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウからデバッガーをアタッチする
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1c2be843fcd911c1bfd87408d603bb750d6e738a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 941a67695f573cbf0955038916cb1e7ada9cc08f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386478"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870430"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -26,7 +26,7 @@ Office 2016 for Windows のビルド 77xx.xxxx 以降では、作業ウィンド
 
 ![Visual Studio JIT デバッガー ダイアログのスクリーンショット](../images/visual-studio-debugger.png)
 
-Visual Studio では、**ソリューション エクスプローラー**内にコード ファイルが表示されます。   Visual Studio でデバッグするコードの行にブレークポイントを設定できます。
+Visual Studio では、**ソリューション エクスプローラー**内にコード ファイルが表示されます。   Visual Studio でデバッグするコードの行にブレークポイントを設定することができます。
 
 > [!NOTE]
 > [パーソナリティ] メニューが表示されない場合は、Visual Studio を使用してアドインをデバッグできます。 Office で作業ウィンドウ アドインが開いていることを確認してから、次の手順を実行します。
@@ -37,8 +37,8 @@ Visual Studio では、**ソリューション エクスプローラー**内に�
 Visual Studio でのデバッグの詳細については、以下を参照してください。
 
 -   DOM Explorer を Visual Studio で起動して使用するには、ブログ記事「[新しいプロジェクト テンプレートを使って見栄えの良い Office 用アプリをビルドする](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)」の[ヒントとコツ](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) セクションのヒント 4 を参照してください。
--   ブレークポイントの設定については、「[ブレークポイントの使用](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015)」を参照してください。
--   F12 を使用するには、「[F12 開発者ツールの使用](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))」を参照してください。
+-   ブレークポイントの設定については、「[ブレークポイントの使用](/visualstudio/debugger/using-breakpoints?view=vs-2015)」を参照してください。
+-   F12 を使用するには、「[F12 開発者ツールの使用](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
