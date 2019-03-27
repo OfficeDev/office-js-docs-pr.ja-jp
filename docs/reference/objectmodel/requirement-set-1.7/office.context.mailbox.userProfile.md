@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.userProfile - 要件セット 1.7
+title: Office.-mailbox-要件セット1.7
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: fb55d11fd46a9957dab124514ef3bfe5a7c138eb
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 335c20a242d08031e6f21c48e99c8527dab6d714
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067868"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871739"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -19,16 +19,16 @@ ms.locfileid: "30067868"
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
 | メンバー | 種類 |
 |--------|------|
-| [accountType](#accounttype-string) | メンバー |
-| [displayName](#displayname-string) | メンバー |
-| [emailAddress](#emailaddress-string) | メンバー |
+| [accountType](#accounttype-string) | Member |
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
 | [timeZone](#timezone-string) | メンバー |
 
 ### <a name="members"></a>メンバー
@@ -47,7 +47,7 @@ ms.locfileid: "30067868"
 | `office365` | メールボックスは、Office 365 の職場または学校のアカウントに関連付けられます。 |
 | `outlookCom` | メールボックスは、個人の Outlook.com アカウントに関連付けられます。 |
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -56,8 +56,8 @@ ms.locfileid: "30067868"
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -69,7 +69,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 ユーザーの表示名を取得します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -78,8 +78,8 @@ console.log(Office.context.mailbox.userProfile.accountType);
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -92,7 +92,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ユーザーの SMTP 電子メール アドレスを取得します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -101,8 +101,8 @@ console.log(Office.context.mailbox.userProfile.displayName);
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 
@@ -115,7 +115,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ユーザーの既定のタイム ゾーンを取得します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -124,8 +124,8 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例
 

@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの Permissions 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 9193651ec0c795cdb55eb3fc6576dbacd59e0fb2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 3442a8e0caee442ce1b38c5ff39cfd1ef5088fb7
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432355"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872061"
 ---
 # <a name="permissions-element"></a>Permissions 要素
 
@@ -33,6 +34,6 @@ Office アドインの API アクセスのレベルを指定します。最小�
 
 [OfficeApp](officeapp.md)
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
-詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」と「[Outlook アドインのアクセス許可について](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)」をご覧ください。
+詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」と「[Outlook アドインのアクセス許可について](/outlook/add-ins/understanding-outlook-add-in-permissions)」をご覧ください。

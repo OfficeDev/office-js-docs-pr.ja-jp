@@ -3,12 +3,12 @@ ms.date: 02/06/2019
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982042"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871781"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
@@ -20,9 +20,9 @@ ms.locfileid: "29982042"
 
 カスタム関数内では、[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます。
 
-カスタム関数で使用される JavaScript ランタイム内では、XHR は、[同一生成元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな[CORS](https://www.w3.org/TR/cors/)を要求することによって追加のセキュリティ対策を実装します。
+カスタム関数によって使用される JavaScript ランタイムでは、xhr は[同じ送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)と単純な[CORS](https://www.w3.org/TR/cors/)を要求することによって、追加のセキュリティ対策を実装します。
 
-CORS の単純な実装は cookie を使用することはできません、単純なメソッド (GET、HEAD、POST) のみをサポートすることに注意してください。 フィールド名を持つ単純なヘッダーを受け入れる単純な CORS `Accept`、 `Accept-Language`、 `Content-Language`。 使用することも、`Content-Type`で単純な CORS は、ヘッダーのコンテンツ型があるが提供される`application/x-www-form-urlencoded`、 `text/plain`、または`multipart/form-data`。
+単純な CORS 実装は cookie を使用できず、単純なメソッド (GET、HEAD、POST) のみをサポートすることに注意してください。 単純な CORS は、フィールド名`Accept`、 `Accept-Language`、 `Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ`Content-Type`タイプが`application/x-www-form-urlencoded` `text/plain`、、またはの場合は`multipart/form-data`、単純な CORS のヘッダーを使用することもできます。
 
 ### <a name="xhr-example"></a>XHR の使用例
 
@@ -67,10 +67,10 @@ function sendWebRequest(thermometerID, data) {
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
@@ -96,105 +96,16 @@ ws.onerror = (error) => {
 
 ### <a name="asyncstorage-example"></a>AsyncStorage の使用例 
 
-以下のコード サンプルでは、`AsyncStorage.getItem` 関数を呼び出してストレージから値を取得します。
+次のコードサンプルでは`AsyncStorage.setItem` 、関数を呼び出してキーと値`AsyncStorage`をに設定します。
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
-}
-```
+```JavaScript
+function StoreValue(key, value) {
 
-## <a name="displaying-a-dialog-box"></a>ダイアログ ボックスの表示
-
-カスタム関数 (またはアドインの他の部分) 内で、`OfficeRuntime.displayWebDialog` API を使用してダイアログ ボックスを表示することができます。 このダイアログ API は、作業ウィンドウとアドイン コマンド内では使用可能であるが、カスタム関数内では使用できない[ダイアログ API](../develop/dialog-api-in-office-add-ins.md) の代わりに、使用できます。
-
-### <a name="dialog-api-example"></a>ダイアログ API の使用例
-
-以下のコード サンプルでは、関数 `getTokenViaDialog` がダイアログ API の `displayWebDialog` 関数を使用して、ダイアログ ボックスを表示します。
-
-```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
-      });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.close();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 

@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの TargetDialect 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 3bdcd1d8cfd23f18e5eec5061a987aafe7c2bc4b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: bfdeac9d2533bc95c2e17d0275728e234d193914
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432250"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871004"
 ---
 # <a name="targetdialect-element"></a>TargetDialect 要素
 
@@ -33,5 +34,5 @@ ms.locfileid: "27432250"
 
 ## <a name="see-also"></a>関連項目
 
-- [辞書の作業ウィンドウ アドインを作成する](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [辞書の作業ウィンドウ アドインを作成する](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

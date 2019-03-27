@@ -1,13 +1,14 @@
 ---
 title: マニフェスト ファイルの Methods 要素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 6e280cb49eadef587cd3a91e0664ece3c3d59f50
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432754"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871662"
 ---
 # <a name="methods-element"></a>Methods 要素
 
@@ -33,5 +34,5 @@ Office アドインをアクティブにするために必要な JavaScript API 
 
 ## <a name="remarks"></a>解説
 
-**Methods** と **Method** 要素はメール アドインではサポートされていません。要件セットの詳細については、「[Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+**Methods** と **Method** 要素はメール アドインではサポートされていません。要件セットの詳細については、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 

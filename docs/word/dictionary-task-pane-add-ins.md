@@ -1,14 +1,14 @@
 ---
 title: 辞書の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a97c378092da783e748f014515de587383201818
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 5f48d4aa96609f92e7ea1e38dcdd93c91b61a755
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388214"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871207"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -272,7 +272,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **注釈**
+ **解説**
 
 **Dictionary** 要素とその子要素は、辞書アドインを作成するときに作業ウィンドウ アドインのマニフェストに追加されます。
 
@@ -329,7 +329,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<TargetDialects>`
 
- **注釈**
+ **解説**
 
 RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の値を指定します。
 
@@ -350,7 +350,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
  `<Dictionary>`
 
- **注釈**
+ **解説**
 
 これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。 
 
@@ -371,7 +371,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
  `<Dictionary>`
 
- **注釈**
+ **解説**
 
 この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。
 
@@ -394,7 +394,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
  `<Dictionary>`
 
- **注釈**
+ **解説**
 
 この要素では、引用テキスト内のリンク テキストを指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。
 
@@ -416,7 +416,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
  `<Dictionary>`
 
- **注釈**
+ **解説**
 
 この要素では、引用テキスト内のリンクの URL を指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。
 
@@ -522,18 +522,18 @@ a:hover, a:active
 ### <a name="writing-the-javascript-implementation"></a>JavaScript の実装の記述
 
 
-次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。このスクリプトでは、上で説明した XML Web サービスを再利用しています。例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されますこのスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。
+次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。 このスクリプトでは、上で説明した XML Web サービスを再利用しています。 例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されます このスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。
 
 この実装で呼び出している JavaScript API for Office (Office.js) の主なメンバーを次に示します。
 
 
-- **Office** オブジェクトの [initialize](https://docs.microsoft.com/javascript/api/office) イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](https://docs.microsoft.com/javascript/api/office/office.document) オブジェクトのインスタンスへのアクセスを提供します。
+- [Office](/javascript/api/office) オブジェクトの **initialize** イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](/javascript/api/office/office.document) オブジェクトのインスタンスへのアクセスを提供します。
     
-- **Document** オブジェクトの [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
+- [Document](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) オブジェクトの **addHandlerAsync** メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。
     
-- **Document** オブジェクトの [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッド。これは、**SelectionChanged** イベント ハンドラーの発生時に `tryUpdatingSelectedWord()` 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
+- [Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) オブジェクトの **getSelectedDataAsync** メソッド。これは、`tryUpdatingSelectedWord()` イベント ハンドラーの発生時に **** 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。
     
-- **getSelectedDataAsync** メソッドの _callback_ 引数で渡した非同期コールバック関数 `selectTextCallback` が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された **AsyncResult** オブジェクトの [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) プロパティを使用することによって、コールバックの _selectedText_ 引数 (型は [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)) から取得します。
+- `selectTextCallback` メソッドの _callback_ 引数で渡した非同期コールバック関数 **** が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された _AsyncResult_ オブジェクトの [value](/javascript/api/office/office.asyncresult) プロパティを使用することによって、コールバックの [selectedText](/javascript/api/office/office.asyncresult#status) 引数 (型は **AsyncResult**) から取得します。
     
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
     

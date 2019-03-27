@@ -1,13 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.3
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: c34be8f30a2c674035e5ab0ca223f630d9bb5e5a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432628"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871277"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook アドイン API 要件セット 1.3
 
@@ -20,7 +21,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 要件セット 1.3 には、[要件セット 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) のすべての機能が含まれています。次の機能が追加されました。
 
-- [アドイン コマンド](https://docs.microsoft.com/outlook/add-ins/add-in-commands-for-outlook)のサポートが追加されました。
+- [アドイン コマンド](/outlook/add-ins/add-in-commands-for-outlook)のサポートが追加されました。
 - 作成中のアイテムを保存または閉じる機能が追加されました。
 - アドインで本文全体を取得または設定できるようにする [Body](/javascript/api/outlook_1_3/office.body) オブジェクトが強化されました。
 - EWS 形式と REST 形式間で ID を変換する変換メソッドが追加されました。
@@ -34,7 +35,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Event](/javascript/api/office/office.addincommands.event) オブジェクトが追加されました。パラメーターとして、Outlook アドインの UI を使用しないコマンド関数に渡されます。処理の完了を通知するために使用されます。
 - [Office.context.mailbox.item.close](office.context.mailbox.item.md#close) が追加されました。作成中の現在のアイテムを閉じます。
 - [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback) が追加されました。アイテムを非同期的に保存します。
-- [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessagesjavascriptapioutlook13officenotificationmessages) が追加されました。アイテムの通知メッセージを取得します。
+- [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessages) が追加されました。アイテムの通知メッセージを取得します。
 - [Office.context.mailbox.convertToEwsId](office.context.mailbox.md#converttoewsiditemid-restversion--string) が追加されました。REST 形式のアイテム ID を EWS 形式に変換します。
 - [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) が追加されました。EWS 形式のアイテム ID を REST 形式に変換します。
 - [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook_1_3/office.mailboxenums.itemnotificationmessagetype) が追加されました。予定またはメッセージの通知メッセージの種類を指定します。
@@ -44,6 +45,6 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook アドイン](/outlook/add-ins/)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [作業の開始](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [作業の開始](/outlook/add-ins/quick-start)

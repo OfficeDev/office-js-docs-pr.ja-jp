@@ -1,13 +1,14 @@
 ---
 title: Office アドインでモーションを使用する
 description: ''
-ms.date: 03/23/2018
-ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432964"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871536"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 
@@ -22,8 +23,6 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 アドインで使用される標準的な要素では、モーションを組み込むことにより、ユーザーの注意を引く、要素どうしの関連性を示す、ユーザーの操作を確認するなどの用途に役立てられます。 要素にモーションを付けることで、階層モデルやメンタル モデルを明確にできます。
 
-
-
 ### <a name="best-practices"></a>ベスト プラクティス
 
 |するべきこと|してはいけないこと|
@@ -33,20 +32,18 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 ![最小限の要素が動いてパネルが開く gif と、たくさんの要素が動いてパネルが開く gif](../images/add-in-motion-purpose.gif)
 
-
-
 ## <a name="use-expected-motions"></a>予想される動作を使用する
+
 [Office UI Fabric](https://developer.microsoft.com/fabric) を使用して、Office プラットフォームと視覚的に関連付けることをお勧めします。また、Fabric モーション言語に合わせてモーションを作成するため、[Fabric アニメーション](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 
 
 これを、Office とシームレスに適合するように使用します。こうすることにより、直感的なエクスペリエンスを実現できます。アニメーション CSS クラスには、Office のメンタル モデルを明確にするのに役立つ、方向性、開始/終了、期間に関する詳細な設定が用意されており、アドインの操作方法も学べるようになっています。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
-
 |するべきこと|してはいけないこと|
 |:-----|:-----|
-|Fabric の動作と合うモーションを使用します。| Office の一般的なモーション パターンに干渉または競合するモーションは作成しないでください。 
-|要素全体で、モーションが一貫して適用されるようにします。| 同じコンポーネントやオブジェクトのアニメーションに、異なるモーションを使用しないでください。|
+|Fabric の動作と合うモーションを使用します。| Office の一般的なモーション パターンに干渉または競合するモーションは作成しないでください。
+|同じような要素に対して一貫したアプリケーションの動作があることを確認します。| 同じコンポーネントやオブジェクトのアニメーションに、異なるモーションを使用しないでください。|
 |アニメーションの方向にも一貫性があるようにします。 たとえば、右側から開くパネルは、右側に閉じるようにします。|要素をアニメーション化する際に、複数の方向を使用しないでください。
 
 ![予想される方法でモーダルが開く gif と、予想に反する方法でモーダル開く gif](../images/add-in-motion-expected.gif)
@@ -60,12 +57,11 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 |するべきこと|してはいけないこと|
 |:-----|:-----|
 | [推奨モーション期間](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
-| [推奨イージング曲線](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きや、ばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
+| [推奨イージング曲線](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
 
 ![ゆっくりフェードインしてタイルが読み込まれる gif と、バウンスを使用してタイルが読み込まれる gif](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>関連項目
 
 * [Fabric アニメーションのガイドライン](https://developer.microsoft.com/fabric#/styles/animations)
-* [ユニバーサル Windows プラットフォーム アプリ用のモーション](https://docs.microsoft.com/windows/uwp/design/motion)
-
+* [ユニバーサル Windows プラットフォーム アプリ用のモーション](/windows/uwp/design/motion)

@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ (プレビュー)
-ms.openlocfilehash: 79fb5ac0ebcbe91b154c48cb10aad65451b6e5ee
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770631"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872089"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -111,8 +112,8 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  文字列  |  いいえ  |  Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。 |
-|  `helpUrl`  |  文字列  |   いいえ  |  関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、**http://contoso.com/help/convertcelsiustofahrenheit.html** です。 |
+|  `description`  |  string  |  いいえ  |  Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。 |
+|  `helpUrl`  |  string  |   いいえ  |  関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、**http://contoso.com/help/convertcelsiustofahrenheit.html** です。 |
 | `id`     | 文字列 | はい | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。 |
 |  `name`  |  文字列  |  はい  |  Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
 |  `options`  |  オブジェクト  |  いいえ  |  Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。 |
@@ -125,8 +126,8 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `onCanceled` ハンドラーが呼び出されます。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数の本文では、ハンドラーを `caller.onCanceled` メンバーに割り当てる必要があります。 詳細については、「[関数をキャンセルする](custom-functions-overview.md#canceling-a-function)」を参照してください。 |
-|  `stream`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `caller.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-overview.md#streaming-functions)」を参照してください。 |
+|  `cancelable`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `onCanceled` ハンドラーが呼び出されます。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数の本文では、ハンドラーを `caller.onCanceled` メンバーに割り当てる必要があります。 詳細については、「[関数をキャンセルする](custom-functions-web-reqs.md#canceling-a-function)」を参照してください。 |
+|  `stream`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `caller.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-web-reqs.md#streaming-functions)」を参照してください。 |
 |  `volatile`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> `true` の場合は、数式の依存値が変更されたときのみではなく、Excel が再計算するたびに関数が再計算されます。 関数は、ストリーミングと揮発性の両方にすることはできません。 `stream` と `volatile` の両方のプロパティが `true` に設定されている場合は、揮発性のオプションが無視されます。 |
 
 ## <a name="parameters"></a>parameters
@@ -135,8 +136,8 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  文字列  |  いいえ |  パラメーターの説明です。 これは、Excel の intelliSense に表示されます。  |
-|  `dimensionality`  |  文字列  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
+|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは、Excel の intelliSense に表示されます。  |
+|  `dimensionality`  |  string  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
 |  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、Excel の intelliSense に表示されます。  |
 |  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 **boolean**、**number**、**string**、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
 |  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |
@@ -150,7 +151,7 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `dimensionality`  |  文字列  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。 |
+|  `dimensionality`  |  string  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。 |
 |  `type`  |  文字列  |  はい  |  パラメーターのデータ型です。 **boolean**、**number**、**string**、または **any** である必要があります。ここでは、前の 3 種類のいずれかを使用できます。 |
 
 ## <a name="see-also"></a>関連項目

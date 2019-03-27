@@ -1,19 +1,19 @@
 ---
 title: OneNote JavaScript API の要件セット
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 3d274700d002963937294c8bcb235331d2829542
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 287e405955477a98854b1df4a81fe90ec16e5bbc
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742108"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871599"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
 次の表は、OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日の一覧です。
 
@@ -27,7 +27,7 @@ ms.locfileid: "29742108"
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1 
 
-OneNote JavaScript API 1.1 は、API の最初のバージョンです。 API について詳しくは、「[OneNote の JavaScript API のプログラミングの概要](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)」をご覧ください。
+OneNote JavaScript API 1.1 は、API の最初のバージョンです。 API について詳しくは、「[OneNote の JavaScript API のプログラミングの概要](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)」をご覧ください。
 
 ## <a name="runtime-requirement-support-check"></a>ランタイム要件のサポートのチェック
 
@@ -58,6 +58,6 @@ OneNoteApi 要件セット、バージョン 1.1 をサポートするすべて�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のバージョンと要件セット](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Office のホストと API の要件を指定する](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office アドインの XML マニフェスト](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)

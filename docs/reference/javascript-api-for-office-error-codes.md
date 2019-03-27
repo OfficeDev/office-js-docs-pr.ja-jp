@@ -1,13 +1,14 @@
 ---
 title: JavaScript API for Office のエラー コード
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1e7d479b9b6f6f8f619f799c34ba18ac83bd3afd
-ms.sourcegitcommit: 3f8eee355579f9234a8e46ae88090342002b4681
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "26734022"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871946"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>JavaScript API for Office のエラー コード
 
@@ -87,7 +88,7 @@ ms.locfileid: "26734022"
 |12006|||ダイアログ ボックスは閉じられました。通常、ユーザーが [**X**] ボタンを選択したためです。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12007|||ダイアログ ボックスは、このホスト ウィンドウで既に開いています。 作業ウィンドウなどのホスト ウィンドウで、一度に開けるダイアログ ボックスは 1 つだけです。 `displayDialogAsync` の呼び出しによってスローされます。|
 |12009|||ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ダイアログの表示をアドインに許可しないようにユーザーが選択すると、Office のオンライン バージョンで発生することがあります。 `displayDialogAsync` の呼び出しによってスローされます。|
-|13000 - 13010|||「[getAccessTokenAsync からのエラーの原因と処理](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)」を参照してください。|
+|13000 - 13010|||「[getAccessTokenAsync からのエラーの原因と処理](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)」を参照してください。|
 
 ## <a name="binding-creation-error-conditions"></a>バインディングの作成エラーの条件
 
@@ -134,5 +135,5 @@ API でバインディングを作成するとき、使用するバインドの�
 
 ## <a name="see-also"></a>関連項目
    
-- [Office アドインの開発ライフ サイクル](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Office アドインの開発ライフ サイクル](/office/dev/add-ins/concepts/add-in-development-lifecycle)
     

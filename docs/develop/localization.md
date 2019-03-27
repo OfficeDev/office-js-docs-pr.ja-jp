@@ -1,13 +1,14 @@
 ---
 title: Office アドインのローカライズ
 description: JavaScript API for Office を使用すると、ロケールを決定し、ホスト アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりできます。
-ms.date: 12/11/2018
-ms.openlocfilehash: e86421ac0b201e6092a3d112c04de57a6b6cc1dd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458000"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871711"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -63,7 +64,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
 
 
 > [!NOTE]
-> Office がサポートするロケールでのみ、説明と表示名をローカライズできます。 現在の Office のリリースの言語およびロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))」を参照してください。
+> Office がサポートするロケールでのみ、説明と表示名をローカライズできます。 現在の Office のリリースの言語およびロケールの一覧については、「[Office 2013 の言語識別子と OptionState ID 値](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))」を参照してください。
 
 
 ### <a name="examples"></a>例
@@ -183,10 +184,10 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
 
 ### <a name="create-an-office-add-in-project"></a>Office アドイン プロジェクトの作成
 
-Visual Studio 2017 Office アドイン プロジェクトを作成する必要があります。 
+Visual Studio 2017 Office アドイン プロジェクトを作成する必要があります。
 
 > [!NOTE]
-> Visual Studio 2017 をインストールしていない場合は、ダウンロードの手順について、「[Visual Studio IDE](https://visualstudio.microsoft.com/vs/)」のページを参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/)を使用して、Office/SharePoint 開発ワークロードがインストールされていることを確認してください。
+> Visual Studio 2017 をインストールしていない場合は、ダウンロードの手順について、「[Visual Studio IDE](https://visualstudio.microsoft.com/vs/)」のページを参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio/)を使用して、Office/SharePoint 開発ワークロードがインストールされていることを確認してください。
 
 
 1. Visual Studio で、**[ファイル]** > **[新しいプロジェクト]** を選択します。
@@ -390,7 +391,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 
 3. **[OK]** を選択して選択内容を確認し、Word を閉じます。
 
-4. Visual Studio で F5 キーを押してサンプル アドインを実行するか、メニュー バーから **[デバッグ]**、**[デバッグの開始]** の順に選択します。
+4. Visual Studio で**F5**キーを押すとサンプルアドインが実行されます**** > 。それ以外の場合は、メニューバーからデバッグ**開始デバッグ**を選択します。
 
 5. Word で **[ホーム]**、**[作業ウィンドウを表示]** の順に選択します。
 
@@ -404,11 +405,10 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
-- 
-  [Office 2013 の言語識別子と OptionState ID 値](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
+- [Office 2013 の言語識別子と OptionState ID 値](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
+[説明]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [DisplayName]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [IconUrl]:              https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
 [HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: bca6ec8656450b4753287be95c047496b5d40435
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199600"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871830"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
         var nowMoment = moment.fromOADate(nowMS);
         console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
 
-        // log the date as a UNIX-style timestamp 
+        // log the date as a UNIX-style timestamp
         var now = nowMoment.unix();
         console.log(`get (timestamp): ${now}`);
     });
@@ -65,14 +65,14 @@ Excel.run(function (context) {
 ## <a name="work-with-multiple-ranges-simultaneously-preview"></a>複数の範囲を同時に操作する (プレビュー)
 
 > [!NOTE]
-> 現在`RangeAreas` 、オブジェクトはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在`RangeAreas` 、オブジェクトはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `RangeAreas` オブジェクトを使用すると、アドインの操作を一度に複数の範囲で実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
 
 ## <a name="find-special-cells-within-a-range-preview"></a>範囲内の特殊なセルの検索 (プレビュー)
 
 > [!NOTE]
-> 現在`getSpecialCells` 、 `getSpecialCellsOrNullObject`およびメソッドはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在`getSpecialCells` 、 `getSpecialCellsOrNullObject`およびメソッドはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Range.getSpecialCells()` メソッドと`Range.getSpecialCellsOrNullObject()` メソッドでは、対象セルの特性と対象セルの値の型に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードの注意点は次のとおりです。
 
 - `getSpecialCellsOrNullObject` メソッドは常にプロキシ オブジェクトを返します。そのため、通常の JavaScript 使用環境では `null` となることはありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
-- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」を参照してください。
+- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」を参照してください。
 - このコードをテストするには、最初に数式を含まないセルの範囲を選択してからコードを実行します。 次に、少なくとも 1 つのセルが数式を含む範囲を選択してからコードを再実行します。
 
 ```js
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>コピーと貼り付け (プレビュー)
 
 > [!NOTE]
-> 現在、`Range.copyFrom` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、`Range.copyFrom` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 範囲の `copyFrom` 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。
 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
@@ -245,7 +245,7 @@ Excel.run(function (context) {
 ## <a name="remove-duplicates-preview"></a>重複を削除 (プレビュー)
 
 > [!NOTE]
-> Range オブジェクトの`removeDuplicates`関数は、現在、パブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 現在、Range オブジェクトの `removeDuplicates` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Range オブジェクトの `removeDuplicates` 関数は、指定された列で重複するエントリを持つ行を削除します。 関数は、範囲の一番小さい値のインデックスから一番大きい値のインデックスへ向かって各行を移動します (上から下へ)。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
 

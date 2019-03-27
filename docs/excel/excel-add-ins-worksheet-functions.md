@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
 description: ''
-ms.date: 01/24/2017
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5ce8ac0c56a7d6a499f601fcc0767a1e76ea14cc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6994a6075732b9eac7e9d8c911e7a9e2c5e87cb4
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388613"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871459"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
@@ -19,7 +19,7 @@ ms.locfileid: "29388613"
 
 ## <a name="calling-a-worksheet-function"></a>ワークシート関数の呼び出し
 
-次のコード スニペットは、ワークシート関数の呼び出し方法を示しています。`sampleFunction()` の部分はプレースホルダーであり、呼び出す関数の名前と関数が必要とする入力パラメーターに置き換えます。 ワークシート関数から返される **FunctionResult** オブジェクトの **value** プロパティには、指定した関数の結果が格納されます。 この例に示すように、**FunctionResult** の **value** プロパティは、読み込み前に `load` しておく必要があります。 この例では、関数の結果は単にコンソールに書き出されます。 
+次のコード スニペットは、ワークシート関数の呼び出し方法を示しています。`sampleFunction()` の部分はプレースホルダーであり、呼び出す関数の名前と関数が必要とする入力パラメーターに置き換えます。 ワークシート関数から返される **FunctionResult** オブジェクトの **value** プロパティには、指定した関数の結果が格納されます。 この例に示すように、`load` の **value** プロパティは、読み込み前に **** しておく必要があります。 この例では、関数の結果は単にコンソールに書き出されます。 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -60,13 +60,13 @@ Excel.run(function (context) {
 
 次のコード例では、前述のサンプル データに `VLOOKUP` 関数を適用して 11 月のレンチの販売数と 12 月のレンチの販売数を特定してから、その 2 か月間に販売したレンチの合計数を計算するために `SUM` 関数を適用しています。 
 
-この例で示すように、1 つ以上の関数呼び出しが別の関数呼び出し内で入れ子にされているときには、その後で読み取ることが必要になる最終結果 (この例では、`sumOfTwoLookups`) の `load` を実行するだけで済みます。 中間結果 (この例では、それぞれの `VLOOKUP` 関数の結果) は計算され、最終結果を計算するために使用されます。
+この例で示すように、1 つ以上の関数呼び出しが別の関数呼び出し内で入れ子にされているときには、その後で読み取ることが必要になる最終結果 (この例では、`load`) の `sumOfTwoLookups` を実行するだけで済みます。 中間結果 (この例では、それぞれの `VLOOKUP` 関数の結果) は計算され、最終結果を計算するために使用されます。
 
 ```js
 Excel.run(function (context) {
     var range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
     var sumOfTwoLookups = context.workbook.functions.sum(
-        context.workbook.functions.vlookup("Wrench", range, 2, false), 
+        context.workbook.functions.vlookup("Wrench", range, 2, false),
         context.workbook.functions.vlookup("Wrench", range, 3, false)
     );
     sumOfTwoLookups.load('value');
@@ -80,9 +80,9 @@ Excel.run(function (context) {
 
 ## <a name="supported-worksheet-functions"></a>サポートされているワークシート関数
 
-Excel JavaScript API を使用して呼び出し可能な Excel の組み込みワークシート関数は次のとおりです。 
+Excel JavaScript API を使用して呼び出し可能な Excel の組み込みワークシート関数は次のとおりです。
 
-| 関数 | 戻り値の種類 | 説明 |
+| Function | 戻り値の種類 | 説明 |
 |:---------------|:-------------|:-----------|
 | <a href="https://support.office.com/article/ABS-function-3420200f-5628-4e8c-99da-c99d7c87713c" target="_blank">ABS 関数</a> | FunctionResult | 数値の絶対値を返します。 |
 | <a href="https://support.office.com/article/ACCRINT-function-fe45d089-6722-4fb3-9379-e1f911d8dc74" target="_blank">ACCRINT 関数</a> | FunctionResult | 定期的に利息が支払われる証券の未収利息額を返します。 |
@@ -126,7 +126,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 関数</a> | FunctionResult | 2 つの数値のビット演算 OR を返します。 |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT 関数</a> | FunctionResult | 右に移動数ビット (shift_amount) 移動する数値を返します。 |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR 関数</a> | FunctionResult | 2 つの数値のビット演算 "排他的 OR" を返します。 |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">天井。計算、ECMA_CEILING 関数</a> | FunctionResult | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。 |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">限度.MATH 関数、ECMA_CEILING 関数</a> | FunctionResult | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。 |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE 関数</a> | FunctionResult | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。数値の符号に関係なく、切り上げます。 |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR 関数</a> | FunctionResult | コード番号で指定された文字を返します。 |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST 関数</a> | FunctionResult | 累積 β 確率密度関数の値を返します。 |
@@ -185,7 +185,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 関数</a> | FunctionResult | 証券に対する割引率を返します。 |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 関数</a> | FunctionResult | 選択したデータベース レコードの最大値を返します。 |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 関数</a> | FunctionResult | 選択したデータベース レコードの最小値を返します。 |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">ドル、USDOLLAR 関数</a> | FunctionResult | ドル ($) 通貨書式を使用して、数値を文字列に変換します。 |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">ドル関数、usdollar 関数</a> | FunctionResult | ドル ($) 通貨書式を使用して、数値を文字列に変換します。 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 関数</a> | FunctionResult | 分数で表されたドル単位の価格を、小数表示のドル価格に変換します。 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 関数</a> | FunctionResult | 小数で表されたドル単位の価格を、分数表示のドル価格に変換します。 |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT 関数</a> | FunctionResult | データベース内の、条件に一致するレコードの特定のフィールド値を乗算します。 |
@@ -446,5 +446,5 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [関数クラス (Excel の JavaScript API を参照)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [ブック関数オブジェクト (Excel の JavaScript API を参照)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [関数クラス (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
+- [Workbook 関数オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)

@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.diagnostics - 要件セットのプレビュー
+title: Office の設定-プレビュー要件セット
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: edeb0ce8a19dae4ec12705f81c216d4d7857ae90
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 3bcc1004ddcee638965c15c7f320e2320a6faf06
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068169"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871900"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -21,16 +21,16 @@ Outlook アドインに診断情報を提供します。
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="members-and-methods"></a>メンバーとメソッド
 
 | メンバー | 種類 |
 |--------|------|
-| [hostName](#hostname-string) | メンバー |
-| [hostVersion](#hostversion-string) | メンバー |
-| [OWAView](#owaview-string) | メンバー |
+| [名](#hostname-string) | Member |
+| [上 diagnostics.hostversion](#hostversion-string) | Member |
+| [owaview](#owaview-string) | メンバー |
 
 ### <a name="members"></a>メンバー
 
@@ -40,7 +40,7 @@ Outlook アドインに診断情報を提供します。
 
 文字列は、値 `Outlook`、`Mac Outlook`、`OutlookIOS`、または `OutlookWebApp` のいずれかになります。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -49,8 +49,8 @@ Outlook アドインに診断情報を提供します。
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ####  <a name="hostversion-string"></a>hostVersion :String
 
@@ -58,7 +58,7 @@ Outlook アドインに診断情報を提供します。
 
 メール アドインを Outlook デスクトップ クライアントまたは Outlook for iOS で実行している場合、`hostVersion` プロパティは、ホスト アプリケーションである Outlook のバージョンを返します。Outlook Web App では、プロパティは、Exchange Server のバージョンを返します。たとえば、文字列 `15.0.468.0` です。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -67,8 +67,8 @@ Outlook アドインに診断情報を提供します。
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ####  <a name="owaview-string"></a>OWAView :String
 
@@ -84,7 +84,7 @@ Outlook Web App には、画面とウィンドウの幅、および表示可能�
 *   画面幅がやや広い場合に表示される `TwoColumns`。Outlook Web App は、ほとんどのタブレットでこのビューを使用します。
 *   画面幅が広い場合に表示される `ThreeColumns`。Outlook Web App は、デスクトップ コンピューターのフル スクリーン ウィンドウなどでこのビューを使用します。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>型
 
 *   String
 
@@ -93,5 +93,5 @@ Outlook Web App には、画面とウィンドウの幅、および表示可能�
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 新規作成または読み取り|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|

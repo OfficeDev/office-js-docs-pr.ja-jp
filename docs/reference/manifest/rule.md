@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Rule 要素
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 38e724e6962c48efd0902be315c49ebb4cf6c798
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388501"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871515"
 ---
 # <a name="rule-element"></a>Rule 要素
 
@@ -45,7 +45,7 @@ ms.locfileid: "29388501"
 |:-----|:-----|:-----|
 | **ItemType** | はい | 照合するアイテムの種類を指定します。`Message` または `Appointment` になります。`Message` のアイテムの種類には、電子メール、会議出席依頼、会議出席依頼の返信、および会議のキャンセルが含まれます。 |
 | **FormType** | いいえ ([ExtensionPoint](extensionpoint.md) 内)、いいえ ([OfficeApp](officeapp.md) 内) | アプリがアイテムの読み取りまたは編集フォームで表示されるかどうかを指定します。`Read`、`Edit` または `ReadOrEdit` のいずれかになります。`ExtensionPoint` 内の `Rule` で指定されている場合、この値は `Read` である必要があります。 |
-| **ItemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](https://docs.microsoft.com/outlook/add-ins/activation-rules)」をご覧ください。 |
+| **ItemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](/outlook/add-ins/activation-rules)」を参照してください。 |
 | **IncludeSubClasses** | いいえ | アイテムが指定したメッセージ クラスのサブクラスである場合に、このルールは true と評価する必要があるかどうかを指定します。既定値は `false` です。 |
 
 ### <a name="example"></a>例
@@ -72,13 +72,13 @@ ms.locfileid: "29388501"
 
 | 属性 | 必須 | 説明 |
 |:-----|:-----|:-----|
-| **EntityType** | はい | このルールが true と評価されるために見つける必要のあるエンティティの型を指定します。`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress`、または `Contact` のいずれかになります。 |
+| **EntityType** | はい | このルールが true と評価するために見つける必要のあるエンティティの型を指定します。`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress`、または `Contact` のいずれかになります。 |
 | **RegExFilter** | いいえ | このエンティティに対してアクティブ化を実行するための正規表現を指定します。 |
 | **FilterName** | いいえ | 正規表現フィルターの名前を指定します。指定すると、以後このフィルターをアドインのコード内で参照できます。 |
 | **IgnoreCase** | いいえ | **RegExFilter** 属性で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。 |
 | **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するエンティティを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
-### <a name="example"></a>使用例
+### <a name="example"></a>例
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" EntityType="EmailAddress" />
@@ -94,7 +94,7 @@ ms.locfileid: "29388501"
 |:-----|:-----|:-----|
 | **RegExName** | はい | アドインのコードで参照できるように、正規表現の名前を指定します。 |
 | **RegExValue** | はい | メール アドインを表示するかどうかを判断するために評価する正規表現を指定します。 |
-| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSMTPAddress` のいずれかになります。<br/><br/>`BodyAsHTML` を指定した場合、アイテムの本文が HTML の場合にのみ Outlook は正規表現を適用します。 HTML 以外の場合、Outlook はその正規表現に対して一致を返しません。<br/><br/>`BodyAsPlaintext` を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。<br/><br/>**注:** **Rule** 要素に **Highlight** 属性を指定した場合は、**PropertyName** 属性を `BodyAsPlaintext` に設定する必要があります。|
+| **PropertyName** | はい | 正規表現の評価対象となるプロパティの名前を指定します。`Subject`、`BodyAsPlaintext`、`BodyAsHTML`、または `SenderSMTPAddress` のいずれかになります。<br/><br/>`BodyAsHTML` を指定した場合、アイテムの本文が HTML の場合にのみ Outlook は正規表現を適用します。 HTML 以外の場合、Outlook は適用する正規表現を返しません。<br/><br/>`BodyAsPlaintext` を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。<br/><br/>**注:** **Rule** 要素に **Highlight** 属性を指定した場合は、**PropertyName** 属性を `BodyAsPlaintext` に設定する必要があります。|
 | **IgnoreCase** | いいえ | **RegExName** 属性で指定された正規表現の一致で大文字と小文字の違いを無視するかどうかを指定します。 |
 | **Highlight** | いいえ | クライアントが一致するテキストを強調表示にする方法を指定します。 この属性は、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用できます。 `all` または `none` のいずれかになります。 指定のない場合、既定値は `all` に設定されます。<br/><br/>**注:** **Rule** 要素に **Highlight** 属性を指定した場合は、**PropertyName** 属性を `BodyAsPlaintext` に設定する必要があります。
 |
@@ -127,6 +127,6 @@ ms.locfileid: "29388501"
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドインのアクティブ化ルール](https://docs.microsoft.com/outlook/add-ins/activation-rules)
-- [Outlook アイテム内の文字列を既知のエンティティとして照合する](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](https://docs.microsoft.com/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Outlook アドインのアクティブ化ルール](/outlook/add-ins/activation-rules)
+- [Outlook アイテム内の文字列を既知のエンティティとして照合する](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
+- [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)

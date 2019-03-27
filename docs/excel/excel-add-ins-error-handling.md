@@ -1,24 +1,25 @@
 ---
 title: エラー処理
 description: ''
-ms.date: 10/16/2018
-ms.openlocfilehash: d9545831c27bdf11d1567f4c012ff678b1edb026
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457643"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871067"
 ---
 # <a name="error-handling"></a>エラー処理
 
-Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期の性質のために重要です。
+Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
 
 > [!NOTE]
 > **sync()** メソッドと Excel JavaScript API の非同期性の詳細については、「[Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-このドキュメントのコード サンプルでは、`Excel.run` へのすべての呼び出しに、`Excel.run` 内で発生したエラーを検出するための `catch` ステートメントが付いていることがわかります。 Excel JavaScript Api を使用してアドインを構築するときには、同じパターンを使用することをお勧めします。
+このドキュメントのコード サンプルでは、`Excel.run` へのすべての呼び出しに、`catch` 内で発生したエラーを検出するための `Excel.run` ステートメントが付いていることがわかります。 Excel JavaScript Api を使用してアドインを構築するときには、同じパターンを使用することをお勧めします。
 
 ```js
 Excel.run(function (context) {
@@ -75,4 +76,4 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error)
