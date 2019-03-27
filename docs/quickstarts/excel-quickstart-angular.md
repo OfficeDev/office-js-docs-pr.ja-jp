@@ -1,56 +1,56 @@
 ---
 title: Angular を使用して Excel のアドインを作成する
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091254"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870990"
 ---
-# <a name="build-an-excel-add-in-using-angular"></a><span data-ttu-id="56eef-102">Angular を使用して Excel のアドインを作成する</span><span class="sxs-lookup"><span data-stu-id="56eef-102">Build an Excel add-in using Angular</span></span>
+# <a name="build-an-excel-add-in-using-angular"></a><span data-ttu-id="abf6c-102">Angular を使用して Excel のアドインを作成する</span><span class="sxs-lookup"><span data-stu-id="abf6c-102">Build an Excel add-in using Angular</span></span>
 
-<span data-ttu-id="56eef-103">この記事では、Angular と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="56eef-103">In this article, you'll walk you through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
+<span data-ttu-id="abf6c-103">この記事では、Angular と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-103">In this article, you'll walk through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="56eef-104">前提条件</span><span class="sxs-lookup"><span data-stu-id="56eef-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="abf6c-104">前提条件</span><span class="sxs-lookup"><span data-stu-id="abf6c-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="56eef-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="56eef-105">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="abf6c-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="abf6c-105">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="56eef-106">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="56eef-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="abf6c-106">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="abf6c-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-web-app"></a><span data-ttu-id="56eef-107">Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="56eef-107">Create the web app</span></span>
+## <a name="create-the-web-app"></a><span data-ttu-id="abf6c-107">Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="abf6c-107">Create the web app</span></span>
 
-1. <span data-ttu-id="56eef-108">Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="56eef-108">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="56eef-109">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="56eef-109">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="abf6c-108">Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-108">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="abf6c-109">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-109">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="56eef-110">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="56eef-110">**Choose a project type:** `Office Add-in project using Angular framework`</span></span>
-    - <span data-ttu-id="56eef-111">**Choose a script type: (スクリプトの種類を選択)** `Typescript`</span><span class="sxs-lookup"><span data-stu-id="56eef-111">**Choose a script type:** `Typescript`</span></span>
-    - <span data-ttu-id="56eef-112">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="56eef-112">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="56eef-113">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`</span><span class="sxs-lookup"><span data-stu-id="56eef-113">**Which Office client application would you like to support?:** `Excel`</span></span>
+    - <span data-ttu-id="abf6c-110">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="abf6c-110">**Choose a project type:** `Office Add-in project using Angular framework`</span></span>
+    - <span data-ttu-id="abf6c-111">**Choose a script type: (スクリプトの種類を選択)** `Typescript`</span><span class="sxs-lookup"><span data-stu-id="abf6c-111">**Choose a script type:** `Typescript`</span></span>
+    - <span data-ttu-id="abf6c-112">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="abf6c-112">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="abf6c-113">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`</span><span class="sxs-lookup"><span data-stu-id="abf6c-113">**Which Office client application would you like to support?:** `Excel`</span></span>
 
     ![Yeoman ジェネレーター](../images/yo-office-excel-angular.png)
-    
-    <span data-ttu-id="56eef-115">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="56eef-115">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="56eef-116">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="56eef-116">Navigate to the root folder of the project.</span></span>
+    <span data-ttu-id="abf6c-115">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="abf6c-115">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+
+2. <span data-ttu-id="abf6c-116">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-116">Navigate to the root folder of the project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a><span data-ttu-id="56eef-117">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="56eef-117">Update the code</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="abf6c-117">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="abf6c-117">Update the code</span></span>
 
-1. <span data-ttu-id="56eef-118">コード エディターでファイル **app.css** を開き、次のスタイルをファイルの末尾に追加してファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="56eef-118">In your code editor, open the file **app.css**, add the following styles to the end of the file, and save the file.</span></span>
+1. <span data-ttu-id="abf6c-118">コード エディターでファイル **app.css** を開き、次のスタイルをファイルの末尾に追加してファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-118">In your code editor, open the file **app.css**, add the following styles to the end of the file, and save the file.</span></span>
 
     ```css
     #content-header {
@@ -60,7 +60,7 @@ ms.locfileid: "30091254"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -73,7 +73,7 @@ ms.locfileid: "30091254"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -91,7 +91,7 @@ ms.locfileid: "30091254"
     }
     ```
 
-2. <span data-ttu-id="56eef-119">ファイル **src/app/app.component.html** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="56eef-119">Open the file **src/app/app.component.html**, replace the entire contents with the following code, and save the file.</span></span>
+2. <span data-ttu-id="abf6c-119">ファイル **src/app/app.component.html** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-119">Open the file **src/app/app.component.html**, replace the entire contents with the following code, and save the file.</span></span>
 
     ```html
     <div id="content-header">
@@ -113,7 +113,7 @@ ms.locfileid: "30091254"
     </div>
     ```
 
-3. <span data-ttu-id="56eef-120">ファイル **src/app/app.component.ts** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="56eef-120">Open the file **src/app/app.component.ts**, replace the entire contents with the following code, and save the file.</span></span>
+3. <span data-ttu-id="abf6c-120">ファイル **src/app/app.component.ts** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-120">Open the file **src/app/app.component.ts**, replace the entire contents with the following code, and save the file.</span></span>
 
     ```typescript
     import { Component } from '@angular/core';
@@ -146,15 +146,15 @@ ms.locfileid: "30091254"
     }
     ```
 
-## <a name="update-the-manifest"></a><span data-ttu-id="56eef-121">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="56eef-121">Update the manifest</span></span>
+## <a name="update-the-manifest"></a><span data-ttu-id="abf6c-121">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="abf6c-121">Update the manifest</span></span>
 
-1. <span data-ttu-id="56eef-122">**manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="56eef-122">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span> 
+1. <span data-ttu-id="abf6c-122">**manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-122">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span> 
 
-2. <span data-ttu-id="56eef-123">`ProviderName` 要素にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="56eef-123">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="56eef-124">それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="56eef-124">Replace it with your name.</span></span>
+2. <span data-ttu-id="abf6c-p102">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="abf6c-p102">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="56eef-125">`Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="56eef-125">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="56eef-126">これは、**A task pane add-in for Excel** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="56eef-126">Replace it with **A task pane add-in for Excel**.</span></span>
+3. <span data-ttu-id="abf6c-p103">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="abf6c-p103">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
 
-4. <span data-ttu-id="56eef-127">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="56eef-127">Save the file.</span></span>
+4. <span data-ttu-id="abf6c-127">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-127">Save the file.</span></span>
 
     ```xml
     ...
@@ -166,40 +166,38 @@ ms.locfileid: "30091254"
     ...
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="56eef-128">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="56eef-128">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="abf6c-128">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="abf6c-128">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a><span data-ttu-id="56eef-129">お試しください。</span><span class="sxs-lookup"><span data-stu-id="56eef-129">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="abf6c-129">お試しください。</span><span class="sxs-lookup"><span data-stu-id="abf6c-129">Try it out</span></span>
 
-1. <span data-ttu-id="56eef-130">アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="56eef-130">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
+1. <span data-ttu-id="abf6c-130">アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="abf6c-130">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
 
-    - <span data-ttu-id="56eef-131">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="56eef-131">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="56eef-132">Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="56eef-132">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="56eef-133">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="56eef-133">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="abf6c-131">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="abf6c-131">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="abf6c-132">Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="abf6c-132">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="abf6c-133">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="abf6c-133">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-   
-2. <span data-ttu-id="56eef-134">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="56eef-134">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="abf6c-134">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="abf6c-134">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
 
-3. <span data-ttu-id="56eef-136">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="56eef-136">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="abf6c-136">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-136">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="56eef-137">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="56eef-137">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="abf6c-137">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="abf6c-137">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="56eef-139">次の手順</span><span class="sxs-lookup"><span data-stu-id="56eef-139">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="abf6c-139">次の手順</span><span class="sxs-lookup"><span data-stu-id="abf6c-139">Next steps</span></span>
 
-<span data-ttu-id="56eef-p104">これで完了です。Angular を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="56eef-p104">Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="abf6c-p104">これで完了です。Angular を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="abf6c-p104">Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="56eef-142">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="56eef-142">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="abf6c-142">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="abf6c-142">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="56eef-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="56eef-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="abf6c-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="abf6c-143">See also</span></span>
 
-* [<span data-ttu-id="56eef-144">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="56eef-144">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="56eef-145">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="56eef-145">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="56eef-146">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="56eef-146">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="56eef-147">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="56eef-147">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [<span data-ttu-id="abf6c-144">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="abf6c-144">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="abf6c-145">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="abf6c-145">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="abf6c-146">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="abf6c-146">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="abf6c-147">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="abf6c-147">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
