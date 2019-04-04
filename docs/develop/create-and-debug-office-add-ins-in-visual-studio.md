@@ -1,14 +1,14 @@
 ---
 title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 用の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742381"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870717"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -17,7 +17,7 @@ ms.locfileid: "29742381"
 > [!NOTE]
 > Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていませんが、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してこれらの種類のアドインを作成できます。
 > - OneNote 用のアドインを使い始めるには、「[最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)」を参照してください。
-> 
+>
 > - Project 用のアドインを使い始めるには、「[最初の Project アドインをビルドする](../quickstarts/project-quickstart.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
@@ -25,7 +25,7 @@ ms.locfileid: "29742381"
 - **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)してください。
+    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)してください。
 
 - Office 2013 以降
 
@@ -126,7 +126,7 @@ Web アプリケーション プロジェクトには、開始するために使
 |**メール アドレス**<br/>(Outlook アドインのみ)|Outlook アドインのテストに使用する Exchange Server または Exchange Online のユーザー アカウントのメール アドレスを指定します。|
 |**EWS の URL**<br/>(Outlook アドインのみ)|Exchange Web サービスの URL (例: `https://www.contoso.com/ews/exchange.aspx`)。 |
 |**OWA の URL**<br/>(Outlook アドインのみ)|Outlook Web App の URL (例: `https://www.contoso.com/owa`)。|
-|**多要素認証を使用する**<br/>(Outlook アドインのみ)|多要素認証を使用する必要があるかどうかを示すブール値です。|
+|**多要素認証を使用する**<br/>(Outlook アドインのみ)|多要素認証を使用する必要があるかどうかを示すブール値。|
 |**ユーザー名**<br/>(Outlook アドインのみ)|Outlook アドインのテストに使用する Exchange Server または Exchange Online のユーザー アカウントの名前を指定します。|
 |**プロジェクト ファイル**|ビルド、構成、およびその他のプロジェクト情報が含まれているファイルの名前を指定します。|
 |**プロジェクト フォルダー**|プロジェクト ファイルの場所です。|
@@ -157,13 +157,13 @@ Web アプリケーション プロジェクトの [**プロパティ**] ウィ�
 Excel、PowerPoint、または Word アドインのデバッグ時に使用するテスト データを含むドキュメントがある場合、プロジェクトの開始時にドキュメントが開くように、Visual Studio を構成できます。 アドインのデバッグ時に使用する既存のドキュメントを指定するには、次の手順を完了します。
 
 1. **ソリューション エクスプローラー**で、(Web アプリケーション プロジェクトでは*なく*) アドイン プロジェクトを選択します。
-    
+
 2. メニュー バーから [**プロジェクト**]、[**既存のアイテムを追加**] の順に選択します。
-    
+
 3. [**既存のアイテムを追加**] ダイアログ ボックスで、追加するドキュメントを探して選択します。
-    
+
 4. [**追加**] を選択して、ドキュメントをプロジェクトに追加します。
-    
+
 5. **ソリューション エクスプローラー**で、(Web アプリケーション プロジェクトでは*なく*) アドイン プロジェクトを選択します。
 
 6. メニュー バーから [**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
@@ -180,21 +180,21 @@ Excel、PowerPoint、または Word アドインのデバッグ時に使用す�
 Visual Studio によってプロジェクトがビルドされると、次のタスクが実行されます。
 
 1. XML マニフェスト ファイルのコピーを作成し、`_ProjectName_\bin\Debug\OfficeAppManifests` ディレクトリに追加します。 Visual Studio を起動してアドインをデバッグするときに、ホスト アプリケーションでこのコピーが使用されます。
-    
+
 2. アドインをホスト アプリケーションに表示するための一連のレジストリ エントリをお使いのコンピューターに作成します。
-    
-3. Web アプリケーション プロジェクトをビルドし、ローカルの IIS Web サーバー (https://localhost)) に展開します。 
-    
+
+3. Web アプリケーション プロジェクトをビルドし、ローカルの IIS Web サーバー (https://localhost)) に展開します。
+
 次に、Visual Studio で次の操作が行われます。
 
-1. `~remoteAppUrl` トークンを開始ページの完全修飾アドレス (例: `https://localhost:44302/Home.html`) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 要素を変更します。
-    
+1. `~remoteAppUrl` トークンを開始ページの完全修飾アドレス (例: `https://localhost:44302/Home.html`) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素を変更します。
+
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
-    
-3. ホスト アプリケーションを開きます。 
-    
-プロジェクトをビルドするときに、Visual Studio では**出力**ウィンドウに検証エラーは表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 詳細については、[コードとテキスト エディター](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)に関するページを参照してください。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)」を参照してください。
-    
+
+3. ホスト アプリケーションを開きます。
+
+プロジェクトをビルドするときに、Visual Studio では**出力**ウィンドウに検証エラーは表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 詳細については、[コードとテキスト エディター](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)に関するページを参照してください。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)」を参照してください。
+
 プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 
 ### <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Excel、PowerPoint、または Word アドイン用のコードのデバッグ
@@ -234,4 +234,3 @@ Outlook アドインを表示するには、Outlook アドインのボタンを�
 ## <a name="next-steps"></a>次のステップ
 
 アドインが意図したとおりに動作した後、アドインをユーザーに配布する方法については、「[Office アドインを展開し、発行する](../publish/publish.md)」を参照してください。
-    

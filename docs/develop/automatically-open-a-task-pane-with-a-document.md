@@ -1,14 +1,14 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
-ms.date: 05/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dd0fb8befdfe41ec96f1f418b3e4eb43f6ba98da
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: a231255200d6edd1fc923a82711c8c24819bf914
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386758"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870241"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -25,7 +25,7 @@ Autoopen 機能では、特定のドキュメントに特定の作業ウィン�
 
 ## <a name="support-and-availability"></a>サポートと可用性
 
-現時点では、Autoopen 機能は次の製品およびプラットフォームで<!-- in **developer preview** and it is only -->サポートされています。
+autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の製品およびプラットフォームでサポートされています。
 
 |**製品**|**プラットフォーム**|
 |:-----------|:------------|
@@ -60,7 +60,7 @@ Autoopen 機能を実装するには:
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>手順 1: 開く作業ウィンドウを指定する
 
-自動的に開く作業ウィンドウを指定するには、[TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。
+自動的に開く作業ウィンドウを指定するには、[TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。
 
 次の例では、Office.AutoShowTaskpaneWithDocument に設定された TaskPaneId の値を示しています。
 
@@ -78,7 +78,7 @@ Autoopen 機能をトリガーするよう、2 つのうちどちらかの方法
 
 #### <a name="tag-the-document-on-the-client-side"></a>クライアント側でドキュメントにタグを設定する
 
-Office.js の [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。
+Office.js の [settings.set](/javascript/api/office/office.settings) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -159,10 +159,10 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 </we:webextension>
 ```
 
-前の例をテストするには、[Office 365 開発者プログラム](https://docs.microsoft.com/office/developer-program/office-365-developer-program)に参加することを検討してください。Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者アカウント](https://developer.microsoft.com/office/dev-program)にサインアップすることを検討してください。 実際に一元展開をテストし、アドインが期待どおりに動作することを確認できます。
+前の例をテストするには、[Office 365 開発者プログラム](/office/developer-program/office-365-developer-program)に参加することを検討してください。Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者アカウント](https://developer.microsoft.com/office/dev-program)にサインアップすることを検討してください。 実際に一元展開をテストし、アドインが期待どおりに動作することを確認できます。
 
 
 ## <a name="see-also"></a>関連項目
 
 Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
-[Office 365 開発者プログラムに参加してください](https://docs.microsoft.com/office/developer-program/office-365-developer-program)。
+[Office 365 開発者プログラムに参加してください](/office/developer-program/office-365-developer-program)。

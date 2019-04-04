@@ -1,14 +1,14 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Excel のカスタム関数で一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: ada60fb4184095f194ff425823b04456a7bf0e76
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30693761"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871340"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -18,11 +18,11 @@ ms.locfileid: "30693761"
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
-Windows 上の Office でアドインをテストする場合は、[ランタイム ログを有効にする](https://docs.microsoft.com/ja-JP/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)必要があります。 ランタイム ログでは、問題解明用に別に作成したログ ファイルに `console.log` ステートメントが配信されます。 ステートメントでは、アドインの XML マニフェスト ファイルに関するエラー、実行時の条件、カスタム関数のインストールなど、さまざまなエラーがカバーされます。  ランタイム ログの詳細については、「[アドインのデバッグにランタイム ログを使用する](https://docs.microsoft.com/ja-JP/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)」をご覧ください。  
+Windows 上の Office でアドインをテストする場合は、[ランタイム ログを有効にする](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)必要があります。 ランタイム ログでは、問題解明用に別に作成したログ ファイルに `console.log` ステートメントが配信されます。 ステートメントでは、アドインの XML マニフェスト ファイルに関するエラー、実行時の条件、カスタム関数のインストールなど、さまざまなエラーがカバーされます。  ランタイム ログの詳細については、「[アドインのデバッグにランタイム ログを使用する](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)」をご覧ください。  
 
 ### <a name="check-for-excel-error-messages"></a>Excel のエラー メッセージを確認する
 
-Excel には多くの組み込みエラー メッセージがあり、計算エラーが発生するとセルに返されます。 カスタム関数では、`#NULL!`、`#DIV/0!`、`#VALUE!`、`#REF!`、`#NAME?`、`#NUM!`、`#N/A`、`#GETTING_DATA` の各エラー メッセージのみが使用されます。
+Excel には多くの組み込みエラー メッセージがあり、計算エラーが発生するとセルに返されます。 カスタム関数では、`#NULL!`、`#DIV/0!`、`#VALUE!`、`#REF!`、`#NAME?`、`#NUM!`、`#N/A`、`#BUSY!` の各エラー メッセージのみが使用されます。
 
 ## <a name="common-issues"></a>一般的な問題
 
@@ -44,11 +44,11 @@ function add(first, second){
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](https://docs.microsoft.com/ja-JP/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)」をご覧ください。
+このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)」をご覧ください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
-Excel がカスタム関数の完了を待っているときは、セルに #GETTING_DATA が表示されます。 カスタム関数のコードで promise が返されているのに、promise で結果が返されない場合、Excel は #GETTING_DATA を表示し続けます。 すべての promise でセルに結果が正しく返されていることを、関数で確認します。
+Excelがカスタム関数の完了を待っている間、＃BUSY！と表示されます セル内に。 カスタム関数のコードで promise が返されているのに、promise で結果が返されない場合、Excel は #BUSY! を表示し続けます。 すべての promise でセルに結果が正しく返されていることを、関数で確認します。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 

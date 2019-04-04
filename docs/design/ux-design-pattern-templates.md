@@ -1,14 +1,14 @@
 ---
 title: Office アドイン用 UX 設計パターン
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 65875bced876bb20243e3f2f0a353aa10c158a79
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 40b36fb138169bdf848e5f58569e6fc3dee8c09b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387822"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871543"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Office アドイン用 UX 設計パターン
 
@@ -28,7 +28,6 @@ UX パターン テンプレートを使用して、次のことを行います�
 * Office の既定の UI に視覚的に溶け込むアドインをビルドする。
 * UX を観念化および可視化する。
 
-
 ## <a name="getting-started"></a>はじめに
 
 パターンは、キーの動作またはアドインに共通のエクスペリエンスによって構成されます。 主なグループは次のとおりです。
@@ -40,15 +39,12 @@ UX パターン テンプレートを使用して、次のことを行います�
 
 各グループを参照して、ベスト プラクティスを使ってアドインを設計する方法を理解します。
 
-
-
->注: このドキュメント全体で示す画面の例は、解像度 **1366x768** で設計および表示されています。
-
-
-
+> [!NOTE]
+> このドキュメント全体を通して表示されている画面例は、**1366x768**の解像度で設計および表示されています。
 
 ## <a name="see-also"></a>関連項目
+
 * [デザインのツールキット](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Office アドイン開発のベスト プラクティス](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React の使用の開始](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office アドイン開発のベスト プラクティス](/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Fabric React の使用の開始](/office/dev/add-ins/design/using-office-ui-fabric-react)

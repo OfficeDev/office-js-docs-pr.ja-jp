@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した高度なプログラミングの概念
 description: ''
-ms.date: 10/03/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e623e87cbda8b8aeb6e51104bec818d62bf489e
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e7220a36293171fcc13a6311c297584ea51e9006
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388483"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871046"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 
@@ -18,19 +18,19 @@ ms.locfileid: "29388483"
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
 * **共通 API**: Office 2013 で導入された[共通 API](../reference/javascript-api-for-office.md) を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。
 
 Excel 2016 以降を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。 次に例を示します。
 
-- [Context](https://docs.microsoft.com/javascript/api/office/office.context): **Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。 
+- [Context](/javascript/api/office/office.context): **Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。 
 
-- [Document](https://docs.microsoft.com/javascript/api/office/office.document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。 
+- [Document](/javascript/api/office/office.document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。 
 
 ## <a name="requirement-sets"></a>要件セット
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを確認できます。 サポートされている各プラットフォームで使用できる特定の要件セットを確認するには、「[Excel JavaScript API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを確認できます。 サポートされている各プラットフォームで使用できる特定の要件セットを確認するには、「[Excel JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)」を参照してください。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>実行時に要件セットのサポートを確認する
 
@@ -47,7 +47,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。 
+アドインのマニフェストで [Requirements 要素](/office/dev/add-ins/reference/manifest/requirements) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。 
 
 次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office ホスト アプリケーションのすべて読み込まれる必要があることを指定する、アドインのマニフェストの **Requirements** 要素を示しています。
 
@@ -64,7 +64,7 @@ else {
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 共通 API の要件セット
 
-共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」をご覧ください。
+共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」をご覧ください。
 
 ## <a name="loading-the-properties-of-an-object"></a>オブジェクトのプロパティを読み込む
 
@@ -89,7 +89,7 @@ object.load(param);
 
 |**パラメーター**|**型**|**説明**|
 |:------------|:-------|:----------|
-|`param`|object|省略可能。 パラメーターとリレーションシップ名を、コンマで区切られた文字列または 1 つの配列として指定します。 オブジェクトを渡して、選択プロパティとナビゲーション プロパティを設定することもできます (次の例を参照)。|
+|`param`|オブジェクト|省略可能。 パラメーターとリレーションシップ名を、コンマで区切られた文字列または 1 つの配列として指定します。 オブジェクトを渡して、選択プロパティとナビゲーション プロパティを設定することもできます (次の例を参照)。|
 
 #### <a name="returns"></a>戻り値
 
@@ -100,7 +100,7 @@ void
 次のコード サンプルでは、別の範囲のプロパティをコピーして 1 つの Excel 範囲のプロパティを設定します。 プロパティ値にアクセスして対象範囲に書き込む前に、ソース オブジェクトを最初に読み込む必要があることに注意してください。 この例では、2 つの範囲 (**B2:E2** および **B7:E7**) のデータがあり、2 つの範囲の書式設定が最初は異なっていると仮定します。
 
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
     var sheet = ctx.workbook.worksheets.getItem("Sample");
     var sourceRange = sheet.getRange("B2:E2");
     sourceRange.load("format/fill/color, format/font/name, format/font/color");
@@ -108,7 +108,7 @@ Excel.run(function (ctx) {
     return ctx.sync()
         .then(function () {
             var targetRange = sheet.getRange("B7:E7");
-            targetRange.set(sourceRange); 
+            targetRange.set(sourceRange);
             targetRange.format.autofitColumns();
 
             return ctx.sync();
@@ -132,7 +132,7 @@ Excel.run(function (ctx) {
 |`top`|int| 結果に含めることができるコレクション項目の最大数を指定します。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 |`skip`|int|スキップされて結果に組み込まれないコレクション内の項目の数を指定します。`top` が指定されている場合は、指定された数の項目がスキップされた後で結果セットが開始されます。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 
-次のコード サンプルは、コレクション内の各ワークシートの使用範囲の `name` プロパティと `address` を選択することにより、ワークシートのコレクションを読み込みます。 また、コレクションの上位 5 つのワークシートのみを読み込むように指定しています。 `top: 10` と `skip: 5` を属性値として指定することで、次の 5 つのワークシートのセットを処理できます。 
+次のコードサンプルは、`name` プロパティと `address`コレクション内の各ワークシートの使用範囲を選択して、ワークシートコレクションを読み込みます。 また、コレクションの上位 5 つのワークシートのみを読み込むように指定しています。 `top: 10` と `skip: 5` を属性値として指定することで、次の 5 つのワークシートのセットを処理できます。
 
 ```js 
 myWorksheets.load({
@@ -143,9 +143,9 @@ myWorksheets.load({
 });
 ```
 
-## <a name="scalar-and-navigation-properties"></a>スカラー プロパティとナビゲーション プロパティ 
+## <a name="scalar-and-navigation-properties"></a>スカラー プロパティとナビゲーション プロパティ
 
-Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、[Worksheet](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
+Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、`name` オブジェクトの `position` メンバーと [](/javascript/api/excel/excel.worksheet) メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>`object.load()` を使用したスカラー プロパティとナビゲーション プロパティ
 
@@ -184,14 +184,14 @@ object.set(properties[, options]);
 
 #### <a name="returns"></a>戻り値
 
-void    
+void
 
 #### <a name="example"></a>例
 
 次のコード サンプルは、`set()` メソッドを呼び出し、**Range** オブジェクトのプロパティの構造を反映するプロパティ名と型を持つ JavaScript オブジェクトを渡すことによって、範囲のいくつかの書式プロパティを設定します。この例では、範囲 **B2:E2** にデータがあると仮定します。
 
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
     var sheet = ctx.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
@@ -207,7 +207,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync(); 
+    return ctx.sync();
 }).catch(function(error) {
     console.log("Error: " + error);
     if (error instanceof OfficeExtension.Error) {
@@ -215,20 +215,21 @@ Excel.run(function (ctx) {
     }
 });
 ```
+
 ## <a name="42ornullobject-methods"></a>&#42;OrNullObject メソッド
 
 多くの Excel JavaScript API メソッドは、API の条件が満たされない場合に例外を返します。 たとえば、ブックに存在しないワークシート名を指定してワークシートを取得しようとすると、`getItem()` メソッドは `ItemNotFound` 例外を返します。 
 
-このようなシナリオの複雑な例外処理ロジックを実装する代わりに、Excel JavaScript API のいくつかのメソッドで使用できる `*OrNullObject` メソッドのバリエーションを使用できます。 指定された項目が存在しない場合、`*OrNullObject` メソッドは例外をスローするのではなく、null オブジェクト (JavaScript `null` ではない) を返します。 たとえば、**Worksheets** などのコレクションで `getItemOrNullObject()` メソッドを呼び出して、コレクションからのアイテムの取得を試行できます。 `getItemOrNullObject()` メソッドは、指定された項目が存在する場合はその項目を返し、それ以外の場合は null オブジェクトを返します。 返される null オブジェクトには、ブール型プロパティ `isNullObject` が含まれています。これを評価して、オブジェクトが存在するかどうかを判断できます。
+このようなシナリオの複雑な例外処理ロジックを実装する代わりに、Excel JavaScript API のいくつかのメソッドで使用できる `*OrNullObject` メソッドのバリエーションを使用できます。 指定された項目が存在しない場合、`*OrNullObject` メソッドは例外をスローするのではなく、null オブジェクト (JavaScript `null` ではない) を返します。 たとえば、`getItemOrNullObject()` などのコレクションで **** メソッドを呼び出して、コレクションからのアイテムの取得を試行できます。 `getItemOrNullObject()` メソッドは、指定された項目が存在する場合はその項目を返し、それ以外の場合は null オブジェクトを返します。 返される null オブジェクトには、ブール型プロパティ `isNullObject` が含まれています。これを評価して、オブジェクトが存在するかどうかを判断できます。
 
 次のコード サンプルは `getItemOrNullObject()` メソッドを使用して、"Data" という名前のワークシートの取得を試行します。 メソッドが null オブジェクトを返す場合は、新しいシートを作成し、そのシート上で操作を実行する必要があります。
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
   .then(function() {
-    if (dataSheet.isNullObject) { 
+    if (dataSheet.isNullObject) {
         // Create the sheet
     }
 
@@ -238,9 +239,8 @@ return context.sync()
 ```
 
 ## <a name="see-also"></a>関連項目
- 
+
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-* 
-  [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)
-* [Excel JavaScript API リファレンス](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
