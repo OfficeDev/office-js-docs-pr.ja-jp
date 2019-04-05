@@ -3,12 +3,12 @@ ms.date: 01/08/2019
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871347"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477545"
 ---
 # <a name="custom-functions-best-practices-preview"></a>カスタム関数のベスト プラクティス (プレビュー)
 
@@ -24,26 +24,9 @@ ms.locfileid: "30871347"
 
 3. このトラブルシューティングの方法に関するフィードバックを Excel のユーザー設定関数チームに報告するには、チームにフィードバックを送信します。 これを行うには、**[ファイル] > [フィードバック] > [問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
 
-## <a name="debugging"></a>デバッグ
-
-現時点で Excel カスタム関数をデバッグするための最良の方法は、**Excel Online** 内で最初にアドインを[サイドロード](../testing/sideload-office-add-ins-for-testing.md)する方法です。 その後に、次の手法と組み合わせて [お使いのブラウザでネイティブのF12 デバッグ ツール](../testing/debug-add-ins-in-office-online.md)を使用して、カスタム関数をデバッグできます。
-
-- カスタム関数のコード内で `console.log` ステートメントを使用して、コンソールにリアルタイムに出力を送信します。
-
-- カスタム関数コード内の `debugger;` ステートメントを使用して、F12 ウィンドウが開いているときに実行が一時停止するブレークポイントを指定します。 例えば F12 ウィンドウが開いているときに以下の関数が動作している場合には、`debugger;` ステートメント上で実行が停止し、 関数が返される前に、パラメーター値を手動で検査することができます。 `debugger;` ステートメントは、F12 ウィンドウが開いていない場合、Excel Online には影響しません。 現在、`debugger;` ステートメントは Windows 版 Excel には効果がありません。
-
-    ```js
-    function add(first, second){
-      debugger;
-      return first + second;
-    }
-    ```
-
-アドインが登録に失敗した場合は、アドイン アプリケーションをホストしている Web サーバーに、 [SSL 証明書が正しく構成されていることを確認してください](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
-
 ## <a name="associating-function-names-with-json-metadata"></a>関数名を JSON メタデータに関連付ける
 
-[カスタム関数の概要](custom-functions-overview.md)という記事で取り上げたように、カスタム関数プロジェクトには、カスタム関数を作成するために、JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) の両方を含める必要があります。 関数が正しく動作するには、スクリプト ファイル内の関数名を、JSON ファイルに記載されている ID にバインドしなければなりません。 このプロセスは関連付けと呼ばれます。 JavaScript コード ファイルの最後に関連付けを含める点に注意してください。そのようにしない限り、関数は動作しません。
+[カスタム関数の概要](custom-functions-overview.md)という記事で取り上げたように、カスタム関数プロジェクトには、カスタム関数を作成するために、JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) の両方を含める必要があります。 関数が正しく動作するには、id を JavaScript 実装に関連付ける必要があります。 関連付けがあることを確認してください。それ以外の場合は、関数は呼び出されません。
 
 次のコード サンプルは、この関連付けを実行する方法を示しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
 
@@ -58,8 +41,6 @@ CustomFunctions.associate("ADD", add);
 JavaScript ファイルでカスタム関数を作成し、JSON のメタデータ ファイルに対応する情報を指定するときは、次のベスト プラクティスに留意してください。
 
 * JSON メタデータ ファイルでは関数の `name` と `id` に大文字のみを使用します。 小文字と大文字を組み合わせたり、小文字のみを使用したりしないでください。 このような文字を使用すると、大文字小文字だけが異なる 2 つの値が存在するようになり、関数で意図しない上書きが生じる原因となる場合があります。 たとえば、`id` 値が **add** の関数オブジェクトが、`id` 値 **ADD** の関数オブジェクトのファイルに含まれる宣言によって後ほど上書きされる場合があります。 また `name` プロパティは、Excel でエンド ユーザーに表示される関数の名前を定義します。 各カスタム関数の名前の大文字を使用することで、すべての組み込み関数の名前は大文字である Excel で、一貫性のあるエクスペリエンスを提供します。
-
-* ただし、関連付けを行う場合、関数の `name` を大文字にしなければならないわけではありません。 たとえば、`CustomFunctions.associate("add", add)` は `CustomFunctions.associate("ADD", add)` に相当します。
 
 * JSON のメタデータ ファイルにそれぞれの `id` プロパティには、英数字とピリオドのみが含まれています。
 

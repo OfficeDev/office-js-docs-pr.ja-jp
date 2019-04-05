@@ -1,22 +1,31 @@
 ---
-ms.date: 01/08/2019
+ms.date: 03/29/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872089"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477552"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
-Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定義する場合、カスタム関数を登録し、エンド ユーザーが利用できるようにするために Excel が必要とする情報を提供する JSON メタデータ ファイルをアドイン プロジェクトに含める必要があります。 この記事では、その JSON メタデータ ファイルの形式について説明します。
+excel アドイン内で[カスタム関数](custom-functions-overview.md)を定義する場合、アドインプロジェクトには、カスタム関数を登録してエンドユーザーが使用できるようにするために excel が必要とする情報を提供する JSON メタデータファイルが含まれています。 このファイルは、次のいずれかの方法で生成されます。
+
+- 手書きの JSON ファイル
+- 関数の先頭に入力した JSDoc コメントから
+
+ユーザーが初めてアドインを実行したときに、すべてのブックの同じユーザーがそのアドインを使用できるようになると、カスタム関数が登録されます。
+
+この記事では、JSON メタデータファイルの形式について説明しています (手動で記述する場合を想定しています)。 JSDoc comment json ファイル生成の詳細については、「[カスタム関数の json メタデータの生成](custom-functions-json-autogeneration.md)」を参照してください。
 
 カスタム関数を有効にするためにアドイン プロジェクトに含める必要のあるその他のファイルに関する情報については、「[Excel でのカスタム関数の作成](custom-functions-overview.md)」を参照してください。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+> JSON ファイルをホストするサーバーでは、カスタム関数を Excel Online で正しく作動させるために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) を有効に設定する必要があります。
 
 ## <a name="example-metadata"></a>メタデータの例
 
@@ -104,7 +113,7 @@ Excel アドイン内に[カスタム関数](custom-functions-overview.md)を定
 ```
 
 > [!NOTE]
-> 完全な JSON ファイルのサンプルは、[OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json) GitHub リポジトリにあります。
+> 完全な JSON ファイルのサンプルは、[OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub リポジトリにあります。
 
 ## <a name="functions"></a>functions 
 
