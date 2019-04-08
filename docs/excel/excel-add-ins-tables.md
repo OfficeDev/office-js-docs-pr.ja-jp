@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: a628c182ccb570fcda3db813f7debb237682b915
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869975"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479719"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -237,7 +237,31 @@ Excel.run(function (context) {
 
 ![Excel の表データ](../images/excel-tables-get-data.png)
 
-## <a name="sort-data-in-a-table"></a>表内でデータを並べ替える
+## <a name="detect-data-changes"></a>データの変更の検出
+
+表のデータをユーザーが変更した場合に、アドインを使用して対応する必要がある場合があります。 そのような変更を検出するには、表の `onChanged` イベントについて[イベント ハンドラーを登録](excel-add-ins-events.md#register-an-event-handler)します。 `onChanged`イベントのイベント ハンドラーは、そのイベントが発生した際に [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) オブジェクトを受け取ります。
+
+`TableChangedEventArgs` オブジェクトは、変更内容とソースに関する情報を提供します。 `onChanged` が発生するのは書式設定またはデータの値が変更された時であるため、値が実際に変更されたかどうかを確認するのにアドインを使用すると便利です。 `details`プロパティは、この情報を [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) としてカプセル化します。 次のコード サンプルでは、変更前と変更後の値および変更されたセルの種類を表示する方法を示します。
+
+> [!NOTE]
+> `TableChangedEventArgs.details` 現在、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
+## <a name="sort-data-in-a-table"></a>表のデータを並べ替える
 
 次のコード サンプルでは、表の 4 番目の列の値に従って降順で表データを並べ替えます。
 
@@ -260,7 +284,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**金額 (降順) で並べ替えた表データ**
+**Amount (降順) で並べ替えた表データ**
 
 ![Excel の表データ](../images/excel-tables-sort.png)
 
@@ -396,7 +420,7 @@ Excel.run(function (context) {
 
 ![Excel の範囲データ](../images/excel-ranges.png)
 
-**範囲データ (範囲を表に変換した後)**
+**表内のデータ (範囲を表に変換した後)**
 
 ![Excel の表データ](../images/excel-tables-from-range.png)
 
