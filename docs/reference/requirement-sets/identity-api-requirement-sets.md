@@ -1,15 +1,15 @@
 ---
 title: Identity API の要件セット
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e1f646df7756f16467d1191f926f831ba375752e
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691161"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764391"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -19,7 +19,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 |  要件セット  | Windows 版 Office 2013 以降 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A **& # 42;** | プレビュー **&#42;** | 近日公開 | プレビュー **&#42;**| プレビュー | プレビュー| 近日公開 | 近日公開 |
+| IdentityAPI 1.1  | N/A | プレビュー<b>*</b> | 近日公開 | プレビュー<b>*</b> | プレビュー<b>*</b> | プレビュー<b>*</b>| 近日公開 | 近日公開 |
 
 > **& # 42;** プレビューフェーズでは、id API に office 365 (サブスクリプション版の office) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
 
@@ -28,7 +28,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 - [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
+- [Office Online Server の概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
