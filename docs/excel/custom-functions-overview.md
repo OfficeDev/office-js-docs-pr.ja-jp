@@ -1,14 +1,14 @@
 ---
-ms.date: 03/19/2019
+ms.date: 03/29/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870451"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764412"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -33,123 +33,47 @@ function add42(a, b) {
 
 ## <a name="components-of-a-custom-functions-add-in-project"></a>カスタム関数 アドイン プロジェクトのコンポーネント
 
-[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して Excel のカスタム関数アドイン プロジェクトを作成する場合、ジェネレーターが作成するプロジェクトに以下のようなファイルが表示されます。
+[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して Excel のカスタム関数アドイン プロジェクトを作成する場合、使用する関数、作業ウィンドウ、およびアドイン全体をこのジェネレーターが作成します。 このため、カスタム関数に重要なファイルに注意を集中できます。 
 
 | ファイル | ファイル形式 | 説明 |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>または<br/>**./src/customfunctions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含みます。 |
-| **./config/customfunctions.json** | JSON | カスタム関数を定義し、Excel に関数を登録してエンドユーザーが使用できるようにするためのメタデータを含みます。 |
-| **./index.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
-| **./manifest.xml** | XML | アドイン内のすべてのカスタム関数の名前空間と、この表で前述した JavaScript、JSON、HTML ファイルの位置を指定します。 |
-
-次のセクションでは、これらのファイルに関する詳細について説明します。
+| **./src/functions/functions.js**<br/>または<br/>**./src/functions/functions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含みます。 |
+| **./src/functions/functions.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
+| **./manifest.xml** | XML | アドイン内のすべてのカスタム関数の名前空間と、この表で前述した JavaScript ファイルと HTML ファイルの位置を指定します。 また、作業ウィンドウ ファイルやコマンド ファイルなど、アドインで使用する可能性のある他のファイルの位置もリストされます。 |
 
 ### <a name="script-file"></a>スクリプト ファイル
 
-スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **./src/customfunctions.ts**) には、カスタム関数を定義して、カスタム関数の名前を [JSON メタデータ ファイル](#json-metadata-file)のオブジェクトにマップするコードが含まれています。 
+スクリプト ファイル (Yo Office ジェネレーターが作成するプロジェクト内の **./src/customfunctions.js** または **/src/customfunctions.ts**) は、カスタム関数を定義し、どのコードがその関数を定義するかをコメントし、カスタム関数の名前を JSON メタデータ ファイルのオブジェクトに関連付けるコードを格納しています。
 
-たとえば、次のコードはカスタム関数 `add` と `increment` を定義し、両方の関数の関連付け情報を指定します。 `add` 関数は、`id` プロパティの値が **ADD** の JSON メタデータ ファイル内のオブジェクトに関連付けられ、`increment` 関数は、`id` プロパティの値が **INCREMENT** のメタデータ ファイル内のオブジェクトに関連付けられます。 JSON メタデータ ファイル内のオブジェクトへのスクリプト ファイル内関数名の関連付けの詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
+次のコードはカスタム関数 `add` を定義し、その関数の関連付け情報を指定します。 関数の関連付けに関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
+
+次のコードも、関数を定義するコード コメントを提供します。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 さらに、お気付きのように `first` と `second` の 2 つのパラメーターが宣言されており、その後にそれらの `description` プロパティが記述されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)」を参照してください。
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
 
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
- CustomFunctions.associate("INCREMENT", increment);
 ```
-
-### <a name="json-metadata-file"></a>JSON メタデータ ファイル
-
-カスタム関数のメタデータ ファイル (Yo Office ジェネレーターが作成するプロジェクトでは **./config/customfunctions.json**) は、Excel がカスタム関数の登録し、エンドユーザーが利用できるようするために必要な情報を提供します。 カスタム関数は、ユーザーがアドインを初めて実行するときに登録されます。 その後は、同じユーザーに対しては、(アドインが最初に実行されたワークブック内のみでなく) すべてのワークブック内で利用が可能になります。
-
-> [!TIP]
-> JSON ファイルをホストするサーバーでは、カスタム関数を Excel Online で正しく作動させるために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) を有効に設定する必要があります。
-
-**customfunctions.json** の次のコードは、`add` 関数のメタデータと上述の `increment` 関数を指定します。 このコード サンプルに続く表では、JSON オブジェクト内の個別のプロパティについての詳細情報を提供します。 JSON メタデータ ファイル内の `id` と `name` 各プロパティーの値の指定に関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true
-      }
-    }
-  ]
-}
-```
-
-次の表は、JSON メタデータ ファイルに通常格納されているプロパティの一覧表示です。 JSON メタデータ ファイルの詳細については、「[カスタム関数のメタデータ](custom-functions-json.md)」を参照してください。
-
-| プロパティ  | 説明 |
-|---------|---------|
-| `id` | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。 |
-| `name` | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は [XML マニフェスト ファイル](#manifest-file)で指定されているカスタム関数の名前空間でプレフィックスされます。 |
-| `helpUrl` | ユーザーがヘルプを要求したときに表示されるページの URL です。 |
-| `description` | 関数について説明します。 この値は、関数が Excel 内のオートコンプリート メニューで選択された項目となっている場合に、ツールヒントとして表示されます。 |
-| `result`  | 関数が返す情報の種類を定義するオブジェクトです。 このオブジェクトに関する詳細情報については [result](custom-functions-json.md#result) を参照してください。 |
-| `parameters` | 関数の入力パラメーターを定義する配列です。 このオブジェクトに関する詳細情報については [parameters](custom-functions-json.md#parameters) を参照してください。 |
-| `options` | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 このプロパティの使用方法の詳細については、「[ストリーム関数](#streaming-functions)」および「[関数のキャンセル](#canceling-a-function)」を参照してください。 |
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml**) を定義するアドインの XML マニフェスト ファイルは、アドイン内のすべてのカスタム関数の名前空間と、 JavaScript、JSON、および HTML の場所を指定します。 次の XML マークアップでは、`<ExtensionPoint>` と `<Resources>` カスタム関数を有効にするアドインのマニフェストに含める必要がある要素の例を示します。  
+カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml**) を定義するアドインの XML マニフェスト ファイルは、アドイン内のすべてのカスタム関数の名前空間と、 JavaScript、JSON、および HTML の場所を指定します。 
+
+次の基本的な XML マークアップは、カスタム関数を有効にするアドインのマニフェストに含める必要がある要素`<ExtensionPoint>` と `<Resources>` の例を示しています。 Yo Office ジェネレーターを使用する場合、生成されたカスタム関数ファイルには、さらに複雑なマニフェスト ファイルが格納されます。こちらの[Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml)で比較できます。
+
+> [!NOTE] 
+> カスタム関数のJavaScript、JSON、HTML ファイルのマニフェスト ファイルで指定した URL はだれでもアクセスでき、同じサブドメインを持つ必要があります。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -188,9 +112,9 @@ function increment(incrementBy, callback) {
     </Hosts>
     <Resources>
       <bt:Urls>
-        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
-        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
-        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+        <bt:Url id="JSON-URL" DefaultValue="https://subdomain.contoso.com/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://subdomain.contoso.com/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://subdomain.contoso.com/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="namespace" DefaultValue="CONTOSO"/>
@@ -337,7 +261,7 @@ function secondHighest(values){
 }
 ```
 
-セルのアドレスを検索するために、スクリプト ファイル (**./src/customfunctions.js**または **./src/customfunctions.ts**) に `getAddress` 関数を追加する必要があります。 この関数は、次のサンプルで示される `parameter1` のようなパラメーターを受け取ることができます。 最後のパラメーターは常に `invocationContext` で、これはJSON メタデータ ファイルで `requiresAddress` が `true` とマークされているときに Excel が返すセルの位置が格納されているオブジェクトのことです。
+セルのアドレスを検索するために、スクリプト ファイル (**./src/functions/functions.js** または **./src/functions/functions.ts**) に `getAddress` 関数を追加する必要があります。 この関数は、次のサンプルで示される `parameter1` のようなパラメーターを受け取ることができます。 最後のパラメーターは常に `invocationContext` で、これはJSON メタデータ ファイルで `requiresAddress` が `true` とマークされているときに Excel が返すセルの位置が格納されているオブジェクトのことです。
 
 ```js
 function getAddress(parameter1, invocationContext) {
@@ -358,3 +282,4 @@ function getAddress(parameter1, invocationContext) {
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [カスタム関数の変更ログ](custom-functions-changelog.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+* [カスタム関数のデバッグ](custom-functions-debugging.md)
