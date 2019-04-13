@@ -14,7 +14,7 @@ ms.locfileid: "30926668"
 
 カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) など workbook以外からのデータの受信です。 カスタム関数はXHRを通してデータを要求し、同時に要求を fetch したりデータをストリーミングする事ができます。
 
-次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。
+次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。
 
 ## <a name="functions-that-return-data-from-external-sources"></a>外部ソースからデータを返す関数
 
@@ -61,7 +61,7 @@ function sendWebRequest(thermometerID, data) {
 CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 ```
 
-コンテキストを使った XHR リクエストのその他のサンプルについては、`getFile` 関数範囲内で[このファイル ](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js)[Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload)の Github リポジトリ を参照ください。
+コンテキストを使った XHR リクエストのその他のサンプルについては、[Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload)の Github リポジトリの、`getFile` 関数範囲内で[このファイル ](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) を参照ください。
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
@@ -148,7 +148,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-JSON メタデータ ファイルでストリーミング関数のメタデータを指定する場合は、オプション オブジェクト内のプロパティを以下の例のように設定する必要があります。 "cancelable": true and "stream": true
+JSON メタデータ ファイルでストリーミング関数のメタデータを指定する場合は、オプション オブジェクト内のプロパティ "cancelable": true と "stream": true を以下の例のように設定する必要があります。
 
 ```JSON
 {
