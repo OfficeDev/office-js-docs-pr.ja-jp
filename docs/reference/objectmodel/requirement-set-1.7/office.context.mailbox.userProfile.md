@@ -1,14 +1,14 @@
 ---
 title: Office.-mailbox-要件セット1.7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 335c20a242d08031e6f21c48e99c8527dab6d714
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 8cfee874bbb5183d62cc3a9ce8b042a76617ec72
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871739"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838523"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -65,6 +65,9 @@ ms.locfileid: "30871739"
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
+---
+---
+
 ####  <a name="displayname-string"></a>displayName :String
 
 ユーザーの表示名を取得します。
@@ -88,6 +91,9 @@ console.log(Office.context.mailbox.userProfile.accountType);
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+---
+---
+
 ####  <a name="emailaddress-string"></a>emailAddress :String
 
 ユーザーの SMTP 電子メール アドレスを取得します。
@@ -110,6 +116,9 @@ console.log(Office.context.mailbox.userProfile.displayName);
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+---
+---
 
 ####  <a name="timezone-string"></a>timeZone :String
 

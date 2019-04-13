@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 533e997fc7f8be6eb6d3aefefaf023e8c7666af2
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 523df189b28fc568ac32e8d17d4a226b52cbd23c
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870528"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838453"
 ---
 # <a name="office"></a>Office
 
@@ -50,8 +50,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Succeeded`| String|呼び出しが成功しました。|
-|`Failed`| String|呼び出しが失敗しました。|
+|`Succeeded`| 文字列|呼び出しが成功しました。|
+|`Failed`| 文字列|呼び出しが失敗しました。|
 
 ##### <a name="requirements"></a>要件
 
@@ -60,6 +60,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+---
 ---
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
@@ -74,7 +75,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Html`| String|HTML 形式で返されるデータを要求します。|
+|`Html`| 文字列|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
 ##### <a name="requirements"></a>要件
@@ -84,6 +85,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+---
 ---
 
 ####  <a name="eventtype-string"></a>EventType :String
@@ -98,10 +100,10 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|---|
-|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
-|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
+|`AppointmentTimeChanged`| 文字列 | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
+|`ItemChanged`| 文字列 | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`RecipientsChanged`| 文字列 | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
+|`RecurrenceChanged`| 文字列 | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 
@@ -110,6 +112,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
 
+---
 ---
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
@@ -124,8 +127,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Body`| String|データのソースは、メッセージの本文です。|
-|`Subject`| String|データのソースは、メッセージの件名です。|
+|`Body`| 文字列|データのソースは、メッセージの本文です。|
+|`Subject`| 文字列|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>要件
 

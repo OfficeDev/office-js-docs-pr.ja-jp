@@ -1,14 +1,14 @@
 ---
 title: Office の設定-プレビュー要件セット
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bcc1004ddcee638965c15c7f320e2320a6faf06
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: dc68aac6e50005415d0a76780c5d56c083709992
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871900"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838397"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -52,6 +52,9 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+---
+---
+
 ####  <a name="hostversion-string"></a>hostVersion :String
 
 ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。
@@ -69,6 +72,9 @@ Outlook アドインに診断情報を提供します。
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+---
+---
 
 ####  <a name="owaview-string"></a>OWAView :String
 

@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト要件セット1.7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6a6c7e01df7a063759d3658283f6d724a2b16ca7
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: dddf0035f52daadc926ca5a707383730a97c1002
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871354"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838474"
 ---
 # <a name="context"></a>context
 
@@ -45,7 +45,7 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 ##### <a name="type"></a>型
 
-*   String
+*   文字列
 
 ##### <a name="requirements"></a>要件
 
@@ -75,6 +75,9 @@ function write(message){
 }
 ```
 
+---
+---
+
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
 Office テーマの色のプロパティにアクセスできるようにします。
@@ -84,7 +87,7 @@ Office テーマの色のプロパティにアクセスできるようにしま�
 
 Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>タイプ
 
 *   Object
 
@@ -92,8 +95,8 @@ Office テーマの色を使うと、**[ファイル] > [Office アカウント]
 
 |名前| 種類| 説明|
 |---|---|---|
-|`bodyBackgroundColor`| String|Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。|
-|`bodyForegroundColor`| String|Office テーマの本文の前景色を 16 進数の組み合わせとして取得します。|
+|`bodyBackgroundColor`| 文字列|Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。|
+|`bodyForegroundColor`| 文字列|Office テーマの本文の前景色を 16 進数の組み合わせとして取得します。|
 |`controlBackgroundColor`| String|Office テーマのコントロールの背景色を 16 進数の組み合わせとして取得します。|
 |`controlForegroundColor`| String|Office テーマの本文のコントロール色を 16 進数の組み合わせとして取得します。|
 
@@ -119,13 +122,16 @@ function applyOfficeTheme(){
 }
 ```
 
+---
+---
+
 ####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>タイプ
 
 *   [RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
