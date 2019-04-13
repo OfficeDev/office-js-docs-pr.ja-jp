@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Priority
-ms.openlocfilehash: c31deaf3fad0fbfbf4075d85c422a05a418707de
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 2f9394751180296d876d8c577d68adc1b5abb692
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871788"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838579"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ ms.locfileid: "30871788"
 | [attachments](#attachments-arrayattachmentdetails) | メンバー |
 | [bcc](#bcc-recipients) | メンバー |
 | [body](#body-body) | メンバー |
-| [cc](#cc-arrayemailaddressdetails) | メンバー |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | メンバー |
 | [conversationId](#nullable-conversationid-string) | メンバー |
 | [dateTimeCreated](#datetimecreated-date) | メンバー |
 | [dateTimeModified](#datetimemodified-date) | メンバー |
@@ -44,21 +44,21 @@ ms.locfileid: "30871788"
 | [location](#location-stringlocation) | メンバー |
 | [normalizedSubject](#normalizedsubject-string) | メンバー |
 | [notificationMessages](#notificationmessages-notificationmessages) | メンバー |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | メンバー |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | メンバー |
 | [organizer](#organizer-emailaddressdetails) | メンバー |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
 | [sender](#sender-emailaddressdetails) | メンバー |
 | [start](#start-datetime) | メンバー |
 | [subject](#subject-stringsubject) | メンバー |
-| [to](#to-arrayemailaddressdetails) | メンバー |
+| [to](#to-arrayemailaddressdetailsrecipients) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | メソッド |
 | [close](#close) | メソッド |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | メソッド |
 | [displayReplyForm](#displayreplyformformdata-callback) | メソッド |
 | [getEntities](#getentities--entities) | メソッド |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | メソッド |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | メソッド |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | メソッド |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | メソッド |
 | [getRegExMatches](#getregexmatches--object) | メソッド |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | メソッド |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | メソッド |
