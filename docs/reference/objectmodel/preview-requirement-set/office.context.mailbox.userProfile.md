@@ -1,133 +1,142 @@
 ---
 title: Office.context.mailbox.userProfile - プレビュー要件セット
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 204097497c958c26a6e67fc01d6dbd5142d8dced
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871872"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838439"
 ---
-# <a name="userprofile"></a><span data-ttu-id="20584-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="20584-102">userProfile</span></span>
+# <a name="userprofile"></a><span data-ttu-id="93fa7-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="93fa7-102">userProfile</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="20584-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="20584-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="93fa7-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="93fa7-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="20584-104">要件</span><span class="sxs-lookup"><span data-stu-id="20584-104">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="93fa7-104">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-104">Requirements</span></span>
 
-|<span data-ttu-id="20584-105">要件</span><span class="sxs-lookup"><span data-stu-id="20584-105">Requirement</span></span>| <span data-ttu-id="20584-106">値</span><span class="sxs-lookup"><span data-stu-id="20584-106">Value</span></span>|
+|<span data-ttu-id="93fa7-105">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-105">Requirement</span></span>| <span data-ttu-id="93fa7-106">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-106">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="20584-107">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="20584-107">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="20584-108">1.0</span><span class="sxs-lookup"><span data-stu-id="20584-108">1.0</span></span>|
-|[<span data-ttu-id="20584-109">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="20584-109">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="20584-110">ReadItem</span><span class="sxs-lookup"><span data-stu-id="20584-110">ReadItem</span></span>|
-|[<span data-ttu-id="20584-111">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="20584-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="20584-112">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="20584-112">Compose or Read</span></span>|
+|[<span data-ttu-id="93fa7-107">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="93fa7-107">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="93fa7-108">1.0</span><span class="sxs-lookup"><span data-stu-id="93fa7-108">1.0</span></span>|
+|[<span data-ttu-id="93fa7-109">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="93fa7-109">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="93fa7-110">ReadItem</span><span class="sxs-lookup"><span data-stu-id="93fa7-110">ReadItem</span></span>|
+|[<span data-ttu-id="93fa7-111">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="93fa7-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="93fa7-112">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="93fa7-112">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="20584-113">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="20584-113">Members and methods</span></span>
+##### <a name="members-and-methods"></a><span data-ttu-id="93fa7-113">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="93fa7-113">Members and methods</span></span>
 
-| <span data-ttu-id="20584-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="20584-114">Member</span></span> | <span data-ttu-id="20584-115">種類</span><span class="sxs-lookup"><span data-stu-id="20584-115">Type</span></span> |
+| <span data-ttu-id="93fa7-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="93fa7-114">Member</span></span> | <span data-ttu-id="93fa7-115">種類</span><span class="sxs-lookup"><span data-stu-id="93fa7-115">Type</span></span> |
 |--------|------|
-| [<span data-ttu-id="20584-116">accountType</span><span class="sxs-lookup"><span data-stu-id="20584-116">accountType</span></span>](#accounttype-string) | <span data-ttu-id="20584-117">Member</span><span class="sxs-lookup"><span data-stu-id="20584-117">Member</span></span> |
-| [<span data-ttu-id="20584-118">displayName</span><span class="sxs-lookup"><span data-stu-id="20584-118">displayName</span></span>](#displayname-string) | <span data-ttu-id="20584-119">Member</span><span class="sxs-lookup"><span data-stu-id="20584-119">Member</span></span> |
-| [<span data-ttu-id="20584-120">emailAddress</span><span class="sxs-lookup"><span data-stu-id="20584-120">emailAddress</span></span>](#emailaddress-string) | <span data-ttu-id="20584-121">Member</span><span class="sxs-lookup"><span data-stu-id="20584-121">Member</span></span> |
-| [<span data-ttu-id="20584-122">timeZone</span><span class="sxs-lookup"><span data-stu-id="20584-122">timeZone</span></span>](#timezone-string) | <span data-ttu-id="20584-123">メンバー</span><span class="sxs-lookup"><span data-stu-id="20584-123">Member</span></span> |
+| [<span data-ttu-id="93fa7-116">accountType</span><span class="sxs-lookup"><span data-stu-id="93fa7-116">accountType</span></span>](#accounttype-string) | <span data-ttu-id="93fa7-117">Member</span><span class="sxs-lookup"><span data-stu-id="93fa7-117">Member</span></span> |
+| [<span data-ttu-id="93fa7-118">displayName</span><span class="sxs-lookup"><span data-stu-id="93fa7-118">displayName</span></span>](#displayname-string) | <span data-ttu-id="93fa7-119">Member</span><span class="sxs-lookup"><span data-stu-id="93fa7-119">Member</span></span> |
+| [<span data-ttu-id="93fa7-120">emailAddress</span><span class="sxs-lookup"><span data-stu-id="93fa7-120">emailAddress</span></span>](#emailaddress-string) | <span data-ttu-id="93fa7-121">Member</span><span class="sxs-lookup"><span data-stu-id="93fa7-121">Member</span></span> |
+| [<span data-ttu-id="93fa7-122">timeZone</span><span class="sxs-lookup"><span data-stu-id="93fa7-122">timeZone</span></span>](#timezone-string) | <span data-ttu-id="93fa7-123">メンバー</span><span class="sxs-lookup"><span data-stu-id="93fa7-123">Member</span></span> |
 
-### <a name="members"></a><span data-ttu-id="20584-124">メンバー</span><span class="sxs-lookup"><span data-stu-id="20584-124">Members</span></span>
+### <a name="members"></a><span data-ttu-id="93fa7-124">メンバー</span><span class="sxs-lookup"><span data-stu-id="93fa7-124">Members</span></span>
 
-####  <a name="accounttype-string"></a><span data-ttu-id="20584-125">accountType :String</span><span class="sxs-lookup"><span data-stu-id="20584-125">accountType :String</span></span>
+####  <a name="accounttype-string"></a><span data-ttu-id="93fa7-125">accountType :String</span><span class="sxs-lookup"><span data-stu-id="93fa7-125">accountType :String</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="20584-126">現在、このメンバーは Outlook 2016 for Mac 以降 (ビルド 16.9.1212 以降) でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="20584-126">This member is currently only supported in Outlook 2016 or later for Mac (build 16.9.1212 or later).</span></span>
+> <span data-ttu-id="93fa7-126">現在、このメンバーは Outlook 2016 for Mac 以降 (ビルド 16.9.1212 以降) でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="93fa7-126">This member is currently only supported in Outlook 2016 or later for Mac (build 16.9.1212 or later).</span></span>
 
-<span data-ttu-id="20584-127">メールボックスに関連付けられているユーザーのアカウントの種類を取得します。</span><span class="sxs-lookup"><span data-stu-id="20584-127">Gets the account type of the user associated with the mailbox.</span></span> <span data-ttu-id="20584-128">次の表に使用可能な値を示します。</span><span class="sxs-lookup"><span data-stu-id="20584-128">The possible values are listed in the following table.</span></span>
+<span data-ttu-id="93fa7-127">メールボックスに関連付けられているユーザーのアカウントの種類を取得します。</span><span class="sxs-lookup"><span data-stu-id="93fa7-127">Gets the account type of the user associated with the mailbox.</span></span> <span data-ttu-id="93fa7-128">次の表に使用可能な値を示します。</span><span class="sxs-lookup"><span data-stu-id="93fa7-128">The possible values are listed in the following table.</span></span>
 
-| <span data-ttu-id="20584-129">値</span><span class="sxs-lookup"><span data-stu-id="20584-129">Value</span></span> | <span data-ttu-id="20584-130">説明</span><span class="sxs-lookup"><span data-stu-id="20584-130">Description</span></span> |
+| <span data-ttu-id="93fa7-129">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-129">Value</span></span> | <span data-ttu-id="93fa7-130">説明</span><span class="sxs-lookup"><span data-stu-id="93fa7-130">Description</span></span> |
 |-------|-------------|
-| `enterprise` | <span data-ttu-id="20584-131">メールボックスは、オンプレミスの Exchange サーバーにあります。</span><span class="sxs-lookup"><span data-stu-id="20584-131">The mailbox is on an on-premises Exchange server.</span></span> |
-| `gmail` | <span data-ttu-id="20584-132">メールボックスは、Gmail アカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="20584-132">The mailbox is associated with a Gmail account.</span></span> |
-| `office365` | <span data-ttu-id="20584-133">メールボックスは、Office 365 の職場または学校のアカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="20584-133">The mailbox is associated with an Office 365 work or school account.</span></span> |
-| `outlookCom` | <span data-ttu-id="20584-134">メールボックスは、個人の Outlook.com アカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="20584-134">The mailbox is associated with a personal Outlook.com account.</span></span> |
+| `enterprise` | <span data-ttu-id="93fa7-131">メールボックスは、オンプレミスの Exchange サーバーにあります。</span><span class="sxs-lookup"><span data-stu-id="93fa7-131">The mailbox is on an on-premises Exchange server.</span></span> |
+| `gmail` | <span data-ttu-id="93fa7-132">メールボックスは、Gmail アカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="93fa7-132">The mailbox is associated with a Gmail account.</span></span> |
+| `office365` | <span data-ttu-id="93fa7-133">メールボックスは、Office 365 の職場または学校のアカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="93fa7-133">The mailbox is associated with an Office 365 work or school account.</span></span> |
+| `outlookCom` | <span data-ttu-id="93fa7-134">メールボックスは、個人の Outlook.com アカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="93fa7-134">The mailbox is associated with a personal Outlook.com account.</span></span> |
 
-##### <a name="type"></a><span data-ttu-id="20584-135">型</span><span class="sxs-lookup"><span data-stu-id="20584-135">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="93fa7-135">型</span><span class="sxs-lookup"><span data-stu-id="93fa7-135">Type</span></span>
 
-*   <span data-ttu-id="20584-136">String</span><span class="sxs-lookup"><span data-stu-id="20584-136">String</span></span>
+*   <span data-ttu-id="93fa7-136">String</span><span class="sxs-lookup"><span data-stu-id="93fa7-136">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="20584-137">要件</span><span class="sxs-lookup"><span data-stu-id="20584-137">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="93fa7-137">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-137">Requirements</span></span>
 
-|<span data-ttu-id="20584-138">要件</span><span class="sxs-lookup"><span data-stu-id="20584-138">Requirement</span></span>| <span data-ttu-id="20584-139">値</span><span class="sxs-lookup"><span data-stu-id="20584-139">Value</span></span>|
+|<span data-ttu-id="93fa7-138">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-138">Requirement</span></span>| <span data-ttu-id="93fa7-139">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-139">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="20584-140">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="20584-140">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="20584-141">1.6</span><span class="sxs-lookup"><span data-stu-id="20584-141">1.6</span></span> |
-|[<span data-ttu-id="20584-142">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="20584-142">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="20584-143">ReadItem</span><span class="sxs-lookup"><span data-stu-id="20584-143">ReadItem</span></span>|
-|[<span data-ttu-id="20584-144">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="20584-144">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="20584-145">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="20584-145">Compose or Read</span></span>|
+|[<span data-ttu-id="93fa7-140">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="93fa7-140">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="93fa7-141">1.6</span><span class="sxs-lookup"><span data-stu-id="93fa7-141">1.6</span></span> |
+|[<span data-ttu-id="93fa7-142">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="93fa7-142">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="93fa7-143">ReadItem</span><span class="sxs-lookup"><span data-stu-id="93fa7-143">ReadItem</span></span>|
+|[<span data-ttu-id="93fa7-144">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="93fa7-144">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="93fa7-145">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="93fa7-145">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="20584-146">例</span><span class="sxs-lookup"><span data-stu-id="20584-146">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="93fa7-146">例</span><span class="sxs-lookup"><span data-stu-id="93fa7-146">Example</span></span>
 
 ```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a><span data-ttu-id="20584-147">displayName :String</span><span class="sxs-lookup"><span data-stu-id="20584-147">displayName :String</span></span>
+---
+---
 
-<span data-ttu-id="20584-148">ユーザーの表示名を取得します。</span><span class="sxs-lookup"><span data-stu-id="20584-148">Gets the user's display name.</span></span>
+####  <a name="displayname-string"></a><span data-ttu-id="93fa7-147">displayName :String</span><span class="sxs-lookup"><span data-stu-id="93fa7-147">displayName :String</span></span>
 
-##### <a name="type"></a><span data-ttu-id="20584-149">型</span><span class="sxs-lookup"><span data-stu-id="20584-149">Type</span></span>
+<span data-ttu-id="93fa7-148">ユーザーの表示名を取得します。</span><span class="sxs-lookup"><span data-stu-id="93fa7-148">Gets the user's display name.</span></span>
 
-*   <span data-ttu-id="20584-150">String</span><span class="sxs-lookup"><span data-stu-id="20584-150">String</span></span>
+##### <a name="type"></a><span data-ttu-id="93fa7-149">型</span><span class="sxs-lookup"><span data-stu-id="93fa7-149">Type</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="20584-151">要件</span><span class="sxs-lookup"><span data-stu-id="20584-151">Requirements</span></span>
+*   <span data-ttu-id="93fa7-150">String</span><span class="sxs-lookup"><span data-stu-id="93fa7-150">String</span></span>
 
-|<span data-ttu-id="20584-152">要件</span><span class="sxs-lookup"><span data-stu-id="20584-152">Requirement</span></span>| <span data-ttu-id="20584-153">値</span><span class="sxs-lookup"><span data-stu-id="20584-153">Value</span></span>|
+##### <a name="requirements"></a><span data-ttu-id="93fa7-151">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-151">Requirements</span></span>
+
+|<span data-ttu-id="93fa7-152">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-152">Requirement</span></span>| <span data-ttu-id="93fa7-153">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-153">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="20584-154">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="20584-154">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="20584-155">1.0</span><span class="sxs-lookup"><span data-stu-id="20584-155">1.0</span></span>|
-|[<span data-ttu-id="20584-156">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="20584-156">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="20584-157">ReadItem</span><span class="sxs-lookup"><span data-stu-id="20584-157">ReadItem</span></span>|
-|[<span data-ttu-id="20584-158">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="20584-158">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="20584-159">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="20584-159">Compose or Read</span></span>|
+|[<span data-ttu-id="93fa7-154">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="93fa7-154">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="93fa7-155">1.0</span><span class="sxs-lookup"><span data-stu-id="93fa7-155">1.0</span></span>|
+|[<span data-ttu-id="93fa7-156">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="93fa7-156">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="93fa7-157">ReadItem</span><span class="sxs-lookup"><span data-stu-id="93fa7-157">ReadItem</span></span>|
+|[<span data-ttu-id="93fa7-158">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="93fa7-158">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="93fa7-159">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="93fa7-159">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="20584-160">例</span><span class="sxs-lookup"><span data-stu-id="20584-160">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="93fa7-160">例</span><span class="sxs-lookup"><span data-stu-id="93fa7-160">Example</span></span>
 
 ```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a><span data-ttu-id="20584-161">emailAddress :String</span><span class="sxs-lookup"><span data-stu-id="20584-161">emailAddress :String</span></span>
+---
+---
 
-<span data-ttu-id="20584-162">ユーザーの SMTP 電子メール アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="20584-162">Gets the user's SMTP email address.</span></span>
+####  <a name="emailaddress-string"></a><span data-ttu-id="93fa7-161">emailAddress :String</span><span class="sxs-lookup"><span data-stu-id="93fa7-161">emailAddress :String</span></span>
 
-##### <a name="type"></a><span data-ttu-id="20584-163">型</span><span class="sxs-lookup"><span data-stu-id="20584-163">Type</span></span>
+<span data-ttu-id="93fa7-162">ユーザーの SMTP 電子メール アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="93fa7-162">Gets the user's SMTP email address.</span></span>
 
-*   <span data-ttu-id="20584-164">String</span><span class="sxs-lookup"><span data-stu-id="20584-164">String</span></span>
+##### <a name="type"></a><span data-ttu-id="93fa7-163">型</span><span class="sxs-lookup"><span data-stu-id="93fa7-163">Type</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="20584-165">要件</span><span class="sxs-lookup"><span data-stu-id="20584-165">Requirements</span></span>
+*   <span data-ttu-id="93fa7-164">String</span><span class="sxs-lookup"><span data-stu-id="93fa7-164">String</span></span>
 
-|<span data-ttu-id="20584-166">要件</span><span class="sxs-lookup"><span data-stu-id="20584-166">Requirement</span></span>| <span data-ttu-id="20584-167">値</span><span class="sxs-lookup"><span data-stu-id="20584-167">Value</span></span>|
+##### <a name="requirements"></a><span data-ttu-id="93fa7-165">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-165">Requirements</span></span>
+
+|<span data-ttu-id="93fa7-166">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-166">Requirement</span></span>| <span data-ttu-id="93fa7-167">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-167">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="20584-168">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="20584-168">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="20584-169">1.0</span><span class="sxs-lookup"><span data-stu-id="20584-169">1.0</span></span>|
-|[<span data-ttu-id="20584-170">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="20584-170">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="20584-171">ReadItem</span><span class="sxs-lookup"><span data-stu-id="20584-171">ReadItem</span></span>|
-|[<span data-ttu-id="20584-172">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="20584-172">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="20584-173">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="20584-173">Compose or Read</span></span>|
+|[<span data-ttu-id="93fa7-168">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="93fa7-168">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="93fa7-169">1.0</span><span class="sxs-lookup"><span data-stu-id="93fa7-169">1.0</span></span>|
+|[<span data-ttu-id="93fa7-170">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="93fa7-170">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="93fa7-171">ReadItem</span><span class="sxs-lookup"><span data-stu-id="93fa7-171">ReadItem</span></span>|
+|[<span data-ttu-id="93fa7-172">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="93fa7-172">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="93fa7-173">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="93fa7-173">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="20584-174">例</span><span class="sxs-lookup"><span data-stu-id="20584-174">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="93fa7-174">例</span><span class="sxs-lookup"><span data-stu-id="93fa7-174">Example</span></span>
 
 ```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a><span data-ttu-id="20584-175">timeZone :String</span><span class="sxs-lookup"><span data-stu-id="20584-175">timeZone :String</span></span>
+---
+---
 
-<span data-ttu-id="20584-176">ユーザーの既定のタイム ゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="20584-176">Gets the user's default time zone.</span></span>
+####  <a name="timezone-string"></a><span data-ttu-id="93fa7-175">timeZone :String</span><span class="sxs-lookup"><span data-stu-id="93fa7-175">timeZone :String</span></span>
 
-##### <a name="type"></a><span data-ttu-id="20584-177">型</span><span class="sxs-lookup"><span data-stu-id="20584-177">Type</span></span>
+<span data-ttu-id="93fa7-176">ユーザーの既定のタイム ゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="93fa7-176">Gets the user's default time zone.</span></span>
 
-*   <span data-ttu-id="20584-178">String</span><span class="sxs-lookup"><span data-stu-id="20584-178">String</span></span>
+##### <a name="type"></a><span data-ttu-id="93fa7-177">型</span><span class="sxs-lookup"><span data-stu-id="93fa7-177">Type</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="20584-179">要件</span><span class="sxs-lookup"><span data-stu-id="20584-179">Requirements</span></span>
+*   <span data-ttu-id="93fa7-178">String</span><span class="sxs-lookup"><span data-stu-id="93fa7-178">String</span></span>
 
-|<span data-ttu-id="20584-180">要件</span><span class="sxs-lookup"><span data-stu-id="20584-180">Requirement</span></span>| <span data-ttu-id="20584-181">値</span><span class="sxs-lookup"><span data-stu-id="20584-181">Value</span></span>|
+##### <a name="requirements"></a><span data-ttu-id="93fa7-179">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-179">Requirements</span></span>
+
+|<span data-ttu-id="93fa7-180">要件</span><span class="sxs-lookup"><span data-stu-id="93fa7-180">Requirement</span></span>| <span data-ttu-id="93fa7-181">値</span><span class="sxs-lookup"><span data-stu-id="93fa7-181">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="20584-182">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="20584-182">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="20584-183">1.0</span><span class="sxs-lookup"><span data-stu-id="20584-183">1.0</span></span>|
-|[<span data-ttu-id="20584-184">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="20584-184">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="20584-185">ReadItem</span><span class="sxs-lookup"><span data-stu-id="20584-185">ReadItem</span></span>|
-|[<span data-ttu-id="20584-186">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="20584-186">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="20584-187">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="20584-187">Compose or Read</span></span>|
+|[<span data-ttu-id="93fa7-182">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="93fa7-182">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="93fa7-183">1.0</span><span class="sxs-lookup"><span data-stu-id="93fa7-183">1.0</span></span>|
+|[<span data-ttu-id="93fa7-184">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="93fa7-184">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="93fa7-185">ReadItem</span><span class="sxs-lookup"><span data-stu-id="93fa7-185">ReadItem</span></span>|
+|[<span data-ttu-id="93fa7-186">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="93fa7-186">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="93fa7-187">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="93fa7-187">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="20584-188">例</span><span class="sxs-lookup"><span data-stu-id="20584-188">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="93fa7-188">例</span><span class="sxs-lookup"><span data-stu-id="93fa7-188">Example</span></span>
 
 ```javascript
 // Example: Pacific Standard Time
