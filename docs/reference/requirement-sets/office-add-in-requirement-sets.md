@@ -1,15 +1,15 @@
 ---
 title: Office 共通 API の要件セット
 description: ''
-ms.date: 04/09/2019
+ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 05b1c4a3dde09f223a3383b49bf2f48e15f1e3e7
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.openlocfilehash: f3aa63b65768ab27015d59687ec9929a82bc99ab
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764405"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838600"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -33,7 +33,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="activeview"></a>ActiveView
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac|Document.getActiveViewAsync|
 
@@ -47,7 +47,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="bindingevents"></a>BindingEvents
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 
@@ -55,7 +55,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="compressedfile"></a>CompressedFile
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
 
@@ -63,7 +63,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="customxmlparts"></a>CustomXmlParts
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
@@ -71,7 +71,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="dialogapi"></a>DialogApi
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[ダイアログ API の要件セット](dialog-api-requirement-sets.md)」を参照してください。 | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 
@@ -79,7 +79,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="documentevents"></a>DocumentEvents
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
@@ -87,7 +87,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="file"></a>File
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
@@ -95,7 +95,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="htmlcoercion"></a>HtmlCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | OneNote Online<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync メソッドを使用してデータを読み書きするときの、<br>HTML (Office.CoercionType.Html) への強制型変換をサポートします。|
 
@@ -103,7 +103,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="identityapi"></a>IdentityAPI
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[Identity API の要件セット](identity-api-requirement-sets.md)」を参照してください。 | Auth.getAccessTokenAsync |
 
@@ -111,7 +111,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="imagecoercion"></a>ImageCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.setSelectedDataAsync メソッドを使用してデータを書き込むときに、画像 (Office.CoercionType.Image) への変換をサポートしています。|
 
@@ -119,7 +119,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="mailbox"></a>メールボックス
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 |Outlook for Windows<br>Outlook for web<br>Outlook for Android<br>Outlook for Mac<br>Outlook Web App |「[Outlook API 要件セットについて](outlook-api-requirement-sets.md)」をご覧ください。|
 
@@ -127,15 +127,15 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="matrixbindings"></a>MatrixBindings
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word<br>Word Online<br>Word for iPad<br>Word for Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word<br>Word Online<br>Word for iPad<br>Word for Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="matrixcoercion"></a>MatrixCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、"matrix" (配列の配列) データ構造への強制型変換 (Office.CoercionType.Matrix) をサポートします。|
 
@@ -143,7 +143,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="ooxmlcoercion"></a>OoxmlCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、Open Office XML (OOXML) 形式への強制型変換 (Office.CoercionType.Ooxml) をサポートします。|
 
@@ -151,7 +151,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App||
 
@@ -159,7 +159,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="pdffile"></a>PdfFile
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
 
@@ -167,7 +167,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="selection"></a>Selection
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Project<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
@@ -175,7 +175,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="settings"></a>Settings
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
@@ -183,15 +183,15 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="tablebindings"></a>TableBindings
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Access Web App<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
+| Access Web App<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="tablecoercion"></a>TableCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、"table" データ構造への強制型変換 (Office.CoercionType.Table) をサポートします。|
 
@@ -199,15 +199,15 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="textbindings"></a>TextBindings
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="textcoercion"></a>TextCoercion
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Project<br>Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、テキスト形式への強制型変換 (Office.CoercionType.Text) をサポートします。|
 
@@ -215,7 +215,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ### <a name="textfile"></a>TextFile
 
-|**Office ホスト**|**セット内のメソッド**|
+|**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Word 2013 以降<br>Word 2016 for Mac 以降<br>Word Online<br>Word for iPad|Document.getFileAsync メソッドを使用するとき、テキスト形式 (Office.FileType.Text) への出力をサポートします。|
 
