@@ -3,12 +3,12 @@ ms.date: 03/13/2019
 description: Excel でカスタム関数をデバッグします。
 title: カスタム関数のデバッグ (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 66b55855fdbdc3b3cfc7a316cb8fd7e06f073213
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478964"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914390"
 ---
 # <a name="custom-functions-debugging-preview"></a>カスタム関数のデバッグ (プレビュー)
 
@@ -18,27 +18,27 @@ Windows の場合:
 - [Excel デスクトップと Visual Studio code (VS コード) デバッガー](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel Online および VS コードデバッガー](#use-the-vs-code-debugger-for-excel-online-in-microsoft-edge)
 - [Excel Online およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
-- [コマンド ライン](#use-the-command-line-tools-to-debug)
+- [コマンドライン](#use-the-command-line-tools-to-debug)
 
 On Mac:
 - [Excel Online およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
-- [コマンド ライン](#use-the-command-line-tools-to-debug)
+- [コマンドライン](#use-the-command-line-tools-to-debug)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
-> 簡単にするために、この記事では、Visual Studio Code を使用した編集、タスクの実行、および場合によってはデバッグビューを使用するためのデバッグについて説明します。 別のエディターまたはコマンドラインツールを使用している場合は、この記事の最後にある[コマンドラインの手順](#Use-the-command-line-tools-to-debug)を参照してください。
+> 簡単にするために、この記事では、Visual Studio Code を使用した編集、タスクの実行、および場合によってはデバッグビューを使用するためのデバッグについて説明します。 別のエディターまたはコマンドラインツールを使用している場合は、この記事の最後にある[コマンドラインの手順](#use-the-command-line-tools-to-debug)を参照してください。
 
 ## <a name="requirements"></a>要件
 
-デバッグを開始する前に、Yo Office ジェネレーターを使用してカスタム関数アドインプロジェクトを作成し、プロジェクトに対して信頼できる自己署名証明書があることを確認する必要があります。 プロジェクトを作成する手順については、「[カスタム関数のチュートリアル](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions)」を参照してください。 証明書の信頼の手順については、「[自己署名証明書を信頼できるルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。
+デバッグを開始する前に、Yo Office ジェネレーターを使用してカスタム関数アドインプロジェクトを作成し、プロジェクトに対して信頼できる自己署名証明書があることを確認する必要があります。 プロジェクトを作成する手順については、「[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)」を参照してください。 証明書の信頼の手順については、「[自己署名証明書を信頼できるルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Excel デスクトップ用の VS コードデバッガーを使用する
 
 VS コードを使用して、デスクトップ上の Office Excel でカスタム関数をデバッグできます。
 
 > [!NOTE]
-> Mac のデスクトップデバッグは利用できませんが[、ブラウザーツールを使用して Excel Online をデバッグする](#debug-in-excel-online-by-using-the-browser-developer-tools)ことで実現できます。
+> Mac のデスクトップデバッグは利用できませんが[、ブラウザーツールを使用して Excel Online をデバッグする](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)ことで実現できます。
 
 ### <a name="run-your-add-in-from-vs-code"></a>VS コードからアドインを実行する
 
@@ -145,7 +145,7 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
     
     `npm run start web`
     
-    Excel Online の場合は、アドインをサイドロードする必要もあります。 「[サイドロード](#Sideload-your-add-in)を使用してアドインをサイドロードする」の手順に従います。 その後、次のセクションに進み、デバッグを開始します。
+    Excel Online の場合は、アドインをサイドロードする必要もあります。 「[サイドロード](#sideload-your-add-in)を使用してアドインをサイドロードする」の手順に従います。 その後、次のセクションに進み、デバッグを開始します。
     
 4. 開発者ツールをブラウザーで開きます。 Chrome およびほとんどのブラウザー F12 では、開発者ツールが開きます。
 5. [開発者ツール] で、ソースコードスクリプトファイル (node.js または関数 ts) を開きます。 カスタム関数のコードは、ファイルの末尾付近に配置されている場合があります。

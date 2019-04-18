@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲に条件付き書式を適用する
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7c6b5b5433e2dc59259eb937ef553ff265443f75
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870381"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914383"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
@@ -33,7 +33,7 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 -   `topBottom`
 
 > [!NOTE]
-> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「[*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)」セクションを参照してください。
+> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「[*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods)」セクションを参照してください。
 
 ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。 
 

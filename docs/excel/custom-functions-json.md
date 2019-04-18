@@ -3,12 +3,12 @@ ms.date: 03/29/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 3703699348e99fd076fe0e3affac88038e3aaf59
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477552"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914257"
 ---
 # <a name="custom-functions-metadata-preview"></a>カスタム関数のメタデータ (プレビュー)
 
@@ -136,6 +136,7 @@ excel アドイン内で[カスタム関数](custom-functions-overview.md)を定
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `onCanceled` ハンドラーが呼び出されます。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数の本文では、ハンドラーを `caller.onCanceled` メンバーに割り当てる必要があります。 詳細については、「[関数をキャンセルする](custom-functions-web-reqs.md#canceling-a-function)」を参照してください。 |
+|  `requiresAddress`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> true の場合、カスタム関数は、カスタム関数を呼び出したセルのアドレスにアクセスできます。 カスタム関数を呼び出したセルのアドレスを取得するには、カスタム関数で context を使用します。 詳しくは、「[カスタム関数が呼び出したセルを特定する](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function)」をご覧ください。 カスタム関数は、streaming と requiresAddress の両方として設定することはできません。 このオプションを使用する場合、' invocationContext ' パラメーターは、オプションで渡された最後のパラメーターである必要があります。 |
 |  `stream`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 このオプションを使用する場合、Excel は追加の `caller` パラメーターを使用して JavaScript 関数を呼び出します  (このパラメーターを `parameters` プロパティには登録し***ない***でください)。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `caller.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-web-reqs.md#streaming-functions)」を参照してください。 |
 |  `volatile`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> `true` の場合は、数式の依存値が変更されたときのみではなく、Excel が再計算するたびに関数が再計算されます。 関数は、ストリーミングと揮発性の両方にすることはできません。 `stream` と `volatile` の両方のプロパティが `true` に設定されている場合は、揮発性のオプションが無視されます。 |
 
@@ -148,7 +149,7 @@ excel アドイン内で[カスタム関数](custom-functions-overview.md)を定
 |  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは、Excel の intelliSense に表示されます。  |
 |  `dimensionality`  |  string  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
 |  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、Excel の intelliSense に表示されます。  |
-|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 **boolean**、**number**、**string**、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
+|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型を指定します。 **boolean**、**number**、**string**、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
 |  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |
 
 >[!NOTE]

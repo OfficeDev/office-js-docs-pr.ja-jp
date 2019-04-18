@@ -1,14 +1,14 @@
 ---
 title: Office のメールボックス-プレビュー要件セット
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 localization_priority: Normal
-ms.openlocfilehash: d19cb7c664cda42469cf7cde31d69f87101278c8
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.openlocfilehash: 557dedf3943be12fbb9e384873d0b9079b251c2f
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838537"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914334"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -29,6 +29,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 | メンバー | 種類 |
 |--------|------|
 | [ewsUrl](#ewsurl-string) | メンバー |
+| [masterCategories](#mastercategories-mastercategories) | メンバー |
 | [restUrl](#resturl-string) | メンバー |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | メソッド |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | メソッド |
@@ -80,6 +81,42 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+---
+---
+
+#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategories"></a>mastercategories:[mastercategories](/javascript/api/outlook/office.mastercategories)
+
+このメールボックスのカテゴリマスターリストを管理するためのメソッドを提供するオブジェクトを取得します。
+
+> [!NOTE]
+> このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
+
+##### <a name="type"></a>型
+
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+##### <a name="requirements"></a>要件
+
+|要件| 値|
+|---|---|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| プレビュー |
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox |
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
+
+##### <a name="example"></a>例
+
+この例では、このメールボックスのカテゴリマスターリストを取得します。
+
+```javascript
+Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Master categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
 
 ---
 ---
@@ -165,9 +202,9 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-|`itemId`| 文字列|Outlook REST API 形式のアイテム ID|
+|`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
@@ -205,7 +242,7 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`timeValue`| Date|日付オブジェクト|
 
@@ -237,7 +274,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 |名前| 種類| 説明|
 |---|---|---|
-|`itemId`| 文字列|Exchange Web サービス (EWS) 形式のアイテム ID|
+|`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
@@ -319,7 +356,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`itemId`| 文字列|既存の予定の Exchange Web サービス (EWS) 識別子。|
+|`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
 ##### <a name="requirements"></a>要件
 
@@ -355,9 +392,9 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
-|`itemId`| 文字列|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
+|`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
 ##### <a name="requirements"></a>要件
 
@@ -405,7 +442,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 | `parameters.end` | 日付 | 予定の終了日時を指定する `Date` オブジェクト。 |
 | `parameters.location` | String | 予定の場所を含む文字列。文字列は最大 255 文字に制限されます。 |
 | `parameters.resources` | Array.&lt;String&gt; | 予定に必要なリソースを含む文字列の配列。配列の上限は 100 エントリです。 |
-| `parameters.subject` | 文字列 | 予定の件名を含む文字列です。文字列は最大 255 文字に制限されます。 |
+| `parameters.subject` | String | 予定の件名を含む文字列です。文字列は最大 255 文字に制限されます。 |
 | `parameters.body` | String | 予定の本文。本文の内容は、最大サイズが 32 KB に制限されます。 |
 
 ##### <a name="requirements"></a>要件
@@ -458,14 +495,14 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
 | `parameters.bccRecipients` | 配列。&lt;文字列&gt; | 配列。&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
-| `parameters.subject` | 文字列 | A string containing the subject of the message. The string is limited to a maximum of 255 characters. |
-| `parameters.htmlBody` | 文字列 | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
+| `parameters.subject` | String | A string containing the subject of the message. The string is limited to a maximum of 255 characters. |
+| `parameters.htmlBody` | String | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
 | `parameters.attachments` | 配列。&lt;オブジェクト&gt; | 添付ファイルまたは添付アイテムである JSON オブジェクトの配列。 |
-| `parameters.attachments.type` | 文字列 | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
+| `parameters.attachments.type` | String | 添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。 |
 | `parameters.attachments.name` | String | 添付ファイル名を含む文字列。最大の長さは 255 文字です。|
 | `parameters.attachments.url` | 文字列 | `type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。 |
 | `parameters.attachments.isInline` | ブール値 | `type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
-| `parameters.attachments.itemId` | 文字列 | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
+| `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
 
 
 ##### <a name="requirements"></a>要件
@@ -525,9 +562,9 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options` | Object | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
-| `options.asyncContext` | オブジェクト |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
+| `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データ。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
 
 ##### <a name="requirements"></a>要件
@@ -575,7 +612,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
-|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -611,7 +648,7 @@ function cb(asyncResult) {
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
-|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -676,7 +713,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`data`| 文字列||EWS 要求です。|
+|`data`| String||EWS 要求です。|
 |`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
@@ -749,7 +786,7 @@ function callback(asyncResult)  {
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.asyncContext` | オブジェクト | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
+| `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
 ##### <a name="requirements"></a>要件

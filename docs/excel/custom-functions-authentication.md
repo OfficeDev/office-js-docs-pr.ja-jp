@@ -1,13 +1,13 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Excel でカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
-ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871494"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914187"
 ---
 # <a name="authentication"></a>認証
 
@@ -30,7 +30,7 @@ ms.locfileid: "30871494"
 > [!NOTE]
 > カスタム関数ランタイムは、作業ウィンドウで使用されるブラウザーエンジンランタイムの dialog オブジェクトとは少し異なるダイアログオブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれています`Officeruntime.Dialog`が、カスタム関数ランタイムでユーザーを認証するために使用します。
 
-の`OfficeRuntime.Dialog`使用方法については、「[カスタム関数ランタイム](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)」を参照してください。
+の`OfficeRuntime.Dialog`使用方法については、「 [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。
 
 全体として認証プロセス全体を構想する場合は、アドインの作業ウィンドウと UI 要素、およびアドインのカスタム関数の部分を、を通じて`AsyncStorage`相互に通信できる個別のエンティティと考えることをお勧めします。
 
