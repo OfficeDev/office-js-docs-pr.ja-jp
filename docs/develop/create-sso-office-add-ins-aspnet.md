@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 3dd78866c53863a5847fe6f6cf1083d804b2ca2f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691112"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914306"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -69,7 +69,7 @@ ms.locfileid: "30691112"
 
 ## <a name="configure-the-add-in"></a>アドインを構成する
 
-1. 次の文字列で、プレースホルダー "{tenant_ID}" を Office 365 テナント ID に置き換えます。 「[Office 365 のテナント ID を検索します](/onedrive/find-your-office-365-tenant-id)」のいずれかのメソッドを使用して、テナント ID を取得します。
+1. 次の文字列で、プレースホルダー "{tenant_ID}" を Office 365 テナント ID に置き換えます。 アドインを AAD に登録したときにテナント ID をコピーしなかった場合は、「[Office 365 テナント ID を検索する](/onedrive/find-your-office-365-tenant-id)」のいずれかの方法でテナント ID を取得します。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -592,7 +592,7 @@ ms.locfileid: "30691112"
     > [!NOTE]
     > `access_as_user` スコープのみを使用して、Office アドインの代理 (on-behalf-of) フローを処理する API を承認する必要があります。サービス内の他の API は、独自のスコープ要件が必要です。これにより、Office が取得するトークンでアクセスできるものが制限されます。
 
-1. `TODO2` を次のコードに置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO2` を次のコードに置き換えます。このコードの注意点は次のとおりです。
     * このコードでは、Office ホストから受け取った Raw アクセス トークンを別のメソッドに渡される `UserAssertion` オブジェクトに変換します。
     * アドインは、Office ホストとユーザーがアクセスする必要のあるリソース (または対象ユーザー) の役割を果たさなくなります。この時点で、それ自体が Microsoft Graph にアクセスする必要があるクライアントになります。`ConfidentialClientApplication` は MSAL の「クライアント コンテキスト」オブジェクトになります。
     * `ConfidentialClientApplication` コンストラクターへの 3 番目のパラメーターはリダイレクト URL です。これは、実際には「代理」フローで使用されることはありませんが、正しい URL を使用することをお勧めします。4 番目と 5 番目のパラメーターは、永続ストアを定義するために使用できます。このストアにより、有効期限が切れていないトークンをアドインの異なるセッション間で再使用できるようになります。このサンプルでは、永続ストアは実装していません。
@@ -670,7 +670,7 @@ ms.locfileid: "30691112"
     }  
     ```
 
-1. `TODO4` を次のように置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO4` を次のように置き換えます。このコードの注意点は次のとおりです。
 
     * `GraphApiHelper` クラスと `ODataHelper` クラスは、**[Helpers]** フォルダー内のファイルで定義されています。`OneDriveItem` クラスは、**[Models]** フォルダー内のファイルで定義されています。これらのクラスについての詳しい説明は、承認や SSO に関連していないため、この記事の対象外になります。
     * 実際に必要なデータのみを Microsoft Graph に要求することでパフォーマンスが向上します。そのため、このコードでは、`$select` クエリ パラメーターで name プロパティのみが必要なことを指定し、`$top` パラメーターで最初の 3 つのフォルダー名またはファイル名のみが必要なことを指定しています。

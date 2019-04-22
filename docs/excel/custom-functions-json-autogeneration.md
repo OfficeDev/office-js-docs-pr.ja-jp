@@ -3,12 +3,12 @@ ms.date: 04/03/2019
 description: JSDOC タグを使用して、カスタム関数の JSON メタデータを動的に作成する。
 title: カスタム関数の JSON メタデータを作成する (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: c6d89684da2d0773ccfb1763e5e3e426e647523b
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478963"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914285"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>カスタム関数の JSON メタデータを作成する (プレビュー)
 
@@ -16,12 +16,12 @@ Excel カスタム関数が JavaScript または TypeScript で記述されて�
 
 JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。
 
-関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](http://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。 詳細については、「[@param](#param) タグ」セクションと「[型](#Types)」セクションを参照してください。
+関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](https://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。 詳細については、「[@param](#param) タグ」セクションと「[型](#types)」セクションを参照してください。
 
 ## <a name="jsdoc-tags"></a>JSDoc タグ
 Excel カスタム関数では、次の JSDoc タグを利用できます。
 * [@cancelable](#cancelable)
-* [@customfunction](#customfunction) id name
+* [@customfunction](#customfunction) id 名
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ 名前の説明
 * [@requiresAddress](#requiresAddress)
@@ -45,13 +45,13 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 ### <a name="customfunction"></a>@customfunction
 <a id="customfunction"/>
 
-構文: @customfunction _id_ _name_
+構文: @customfunction _id_ _名_
 
 このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。
 
 このタグは、カスタム関数のメタデータを作成するために必要です。
 
-次への呼び出しもあります:  `CustomFunctions.associate("id", functionName);`
+次への呼び出しもあります: `CustomFunctions.associate("id", functionName);`
 
 #### <a name="id"></a>id 
 
@@ -84,10 +84,10 @@ id は、文書に格納されているカスタム関数の不変の識別子�
 
 #### <a name="javascript"></a>JavaScript
 
-JavaScript 構文: @param{type} 名_の説明_
+JavaScript 構文: @param {type} 名_の説明_
 
 * `{type}` は、中かっこ内の型の情報を指定します。 使用できる型に関する詳細については、「[型](##types)」を参照してください。 省略可能: 指定しない場合、`any` 型が使用されます。
-* `name` は、タグ @param を適用するパラメーターを指定します。 必須です。
+* `name` は、@param タグを適用するパラメーターを指定します。 必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 カスタム関数内のパラメーターを省略可能と指定する方法:
@@ -95,18 +95,18 @@ JavaScript 構文: @param{type} 名_の説明_
 
 #### <a name="typescript"></a>TypeScript
 
-TypeScript 構文: @paramname_description_
+TypeScript 構文: @param 名 _の説明_
 
-* `name` は、タグ @param を適用するパラメーターを指定します。 必須です。
+* `name` は、@param タグを適用するパラメーターを指定します。 必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 使用できる関数のパラメーターの型に関する詳細については、「[型](##types)」を参照してください。
 
 カスタム関数のパラメーターを省略可能として示すには、以下のいずれかを実行します。
-* 省略可能なパラメーターを使用する。 例:  `function f(text?: string)`
-* パラメーターに既定値を指定する。 例:  `function f(text: string = "abc")`
+* 省略可能なパラメーターを使用する。 例: `function f(text?: string)`
+* パラメーターに既定値を指定する。 例: `function f(text: string = "abc")`
 
-@paramの詳しい説明については、「[JSDoc](http://usejsdoc.org/tags-param.html)」を参照してください。
+@param の詳しい説明については、「[JSDoc](http://usejsdoc.org/tags-param.html)」を参照してください。
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress

@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: e304813422dea5917202ed8933c9e53df18ba9de
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691217"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914327"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -77,7 +77,7 @@ ms.locfileid: "30691217"
 
 1. `audience` プロパティの場合は、アドインの登録時に保存したアプリケーション ID でプレースホルダーの `{audience GUID}` を置き換えます。(`client_id` プロパティに割り当てた値とまったく同じになります)。
   
-1. `issuer` プロパティに割り当てた文字列には、*{O365 tenant GUID}* のプレースホルダーがあります。 これを Office 365 のテナント ID に置き換えます。 「[Office 365 のテナント ID を検索する](/onedrive/find-your-office-365-tenant-id)」に記載されているいずれかの方法で、テナント ID を取得します。 完了すると、`issuer` プロパティの値は、次のようになります。
+1. `issuer` プロパティに割り当てた文字列には、*{O365 tenant GUID}* のプレースホルダーがあります。 これを Office 365 のテナント ID に置き換えます。 アドインを AAD に登録したときにテナント ID をコピーしなかった場合は、「[Office 365 テナント ID を検索する](/onedrive/find-your-office-365-tenant-id)」のいずれかの方法でテナント ID を取得します。 完了すると、`issuer` プロパティの値は、次のようになります。
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -321,7 +321,7 @@ ms.locfileid: "30691217"
     }
     ```
 
-1. `TODO11` を次のコードに置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO11` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * ユーザーがパスワードだけで Office にサインオンできる場合でも、Microsoft Graph のいくつかのターゲット (たとえば、OneDrive) にアクセスするために、追加の認証要素を提供するようにユーザーに要求する、Azure Active Directory の構成があります。その場合、AAD は `Claims` プロパティを含むエラー 50076 で応答を送信します。
     * Office ホストは、**** オプションとして `authChallenge` 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。

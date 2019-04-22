@@ -1,14 +1,14 @@
 ---
 title: Office アドインのシングル サインオンを有効化する
 description: ''
-ms.date: 03/22/2019
+ms.date: 04/10/2019
 localization_priority: Priority
-ms.openlocfilehash: ef2e2c275a3b7d157029d873e34cc17339dcee66
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 27a5d8e1dba55f1479fbdc4c23706e4322181c62
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870038"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914320"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
@@ -45,7 +45,7 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 4. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**アドイン トークン**を要求します。
 5. Azure AD は、Office ホスト アプリケーションにアドイン トークンを送信します。
 6. Office ホスト アプリケーションが、`getAccessTokenAsync` 呼び出しによって返される結果オブジェクトの一部として、アドインに**アドイン トークン**を送信します。
-7. アドイン内の JavaScript が、トークンを解析し、ユーザーのメール アドレスなど必要な情報を抽出します。 
+7. アドイン内の JavaScript が、トークンを解析し、ユーザーのメール アドレスなど必要な情報を抽出します。
 8. オプションで、アドインで HTTP 要求を送信して、ユーザー設定などユーザーに関する情報をさらにサーバー側から求めることができます。 または、アクセス トークン自体が解析および検証されるようにサーバー側に送信することができます。
 
 ## <a name="develop-an-sso-add-in"></a>SSO アドインの開発
@@ -57,7 +57,7 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 
-Azure v2.0 エンドポイントの登録ポータル (https://apps.dev.microsoft.com でアドインを登録します。このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
+Azure v2.0 エンドポイントの登録ポータルでアドインを登録します。このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
 
 * アドインのクライアント ID とシークレットを取得します。
 * アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" のアクセス許可は常に必要です。

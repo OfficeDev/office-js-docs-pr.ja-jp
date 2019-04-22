@@ -1,20 +1,20 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Excel のカスタム関数で一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871340"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914222"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
 カスタム関数を作成してテストするとき、製品でエラーが発生する可能性があります。
 
-問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[SSL 証明書の検証](#verify-ssl-certificates)を正しく行っていない、[promises を未解決のままにしている](#ensure-promises-return)、[関数の関連付け](#associate-your-functions)を忘れる、などの一般的な誤りを確認します。
+問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[SSL 証明書の検証](#my-add-in-wont-load-verify-certificates)を正しく行っていない、[promises を未解決のままにしている](#ensure-promises-return)、[関数の関連付け](#my-functions-wont-load-associate-functions)を忘れる、などの一般的な誤りを確認します。
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
@@ -26,7 +26,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ## <a name="common-issues"></a>一般的な問題
 
-### <a name="my-add-in-wont-load-verify-certifications"></a>アドインが読み込まれない: 証明書を確認する
+### <a name="my-add-in-wont-load-verify-certificates"></a>アドインが読み込まれない: 証明書を確認する
 
 アドインのインストールが失敗する場合は、アドインをホストしている Web サーバーに対して SSL 証明書が正しく構成されていることを確認します。 通常、SSL 証明書に問題がある場合は、アドインを正しくインストールできなかったことを警告する Excel のエラー メッセージが表示されます。 詳細については、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」をご覧ください。
 

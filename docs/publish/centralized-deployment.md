@@ -1,14 +1,14 @@
 ---
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 422fae01328a76c0d815fcf007b9970c3eceba36
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: ab308620c71cfb6fb08243973997fbd189b0625f
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871855"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914264"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -17,7 +17,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 現在、Office 365 管理センターは次のシナリオをサポートしています。
 
 - 新しいアドインおよび更新されたアドインの個人、グループ、組織への一元展開。
-- Windows、Office Online を含む複数のプラットフォームへの展開 (Mac は準備中)。
+- Windows、Mac、Office Online を含む複数のプラットフォームへの展開。
 - 英語および世界各国のテナントへの展開。
 - クラウド ホスト型アドインの展開。
 - ファイアウオール内でホストされているアドインの展開。
@@ -25,7 +25,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 - ユーザーのアドインの自動インストール (Office アプリケーション起動時)。
 - ユーザーのアドインの自動削除 (管理者がアドインをオフにした場合や削除した場合。または、ユーザーが Azure Active Directory から削除された場合やアドインが展開されているグループから削除された場合)。
 
-一元展開は、一元展開を使用するためのすべての要件を組織が満たしているときに、Office 365 管理者が組織内で Office アドインを展開する場合に推奨される方法です。 組織で一元展開を使用できるかどうかを判断する方法の詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)」を参照してください。
+一元展開は、一元展開を使用するためのすべての要件を組織が満たしているときに、Office 365 管理者が組織内で Office アドインを展開する場合に推奨される方法です。 組織で一元展開を使用できるかどうかを判断する方法の詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/office365/admin/manage/centralized-deployment-of-add-ins)」を参照してください。
 
 > [!NOTE]
 > Office 365 に接続していないオンプレミス環境の場合や、Office 2013 を対象とした SharePoint アドインまたは Office アドインを展開する場合は、[SharePoint アドイン カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用してください。 COM/VSTO アドインを展開する場合は、ClickOnce または Windows インストーラーを使用してください。詳細については、「[Office ソリューションの配置](/visualstudio/vsto/deploying-an-office-solution)」を参照してください。
@@ -44,7 +44,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>一元展開による Office アドインの発行
 
-作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)」を参照してください。 
+作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)」を参照してください。 
 
 組織がすべての要件を満たしている場合は、次に示す手順を実行して、一元展開によって Office アドインを発行します。
 
@@ -146,4 +146,4 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+- [アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/office365/admin/manage/centralized-deployment-of-add-ins)

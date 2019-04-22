@@ -1,22 +1,22 @@
 ---
 title: PowerPoint アドイン
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 8a7039981ee408dbb74c9f15be9ec98f1f631d5b
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870934"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914229"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
 PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac などのプラットフォームでユーザーのプレゼンテーションのための魅力的なソリューションを構築することができます。 次の 2 種類の PowerPoint アドインを作成できます。
 
-- **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
+- **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/WA104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
-- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Shutterstock イメージ](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。 
+- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pixton コミック キャラクター](https://appsource.microsoft.com/product/office/WA104380907) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。 
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドインのシナリオ
 
@@ -191,8 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>関連項目
 
-- 
-  [PowerPoint のコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
+- [PowerPoint のコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [PowerPoint や Word 用のアドインからドキュメント全体を取得する](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

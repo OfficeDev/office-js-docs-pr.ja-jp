@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 localization_priority: Priority
-ms.openlocfilehash: d24c4647116b4af56d85a434f3ece5ccf4662a39
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9a3d09a78a7644b3b26c345ba2588a1fae59c1eb
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691168"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914271"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -30,6 +30,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション パラメーター `options` が追加されました。 この値は、イベントの実行をキャンセルするために使用されます。
 
 **使用できる場所**: Outlook on the web (クラシック)
+
+---
 
 ### <a name="attachments"></a>添付ファイル
 
@@ -75,6 +77,53 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 **使用できる場所**: Outlook for Windows (Office 365)
 
+---
+
+### <a name="categories"></a>カテゴリ
+
+Outlook では、ユーザーはカテゴリを使用してメッセージと予定を色分けしてグループ化できます。 ユーザーは自分のメールボックスのマスター リストにカテゴリを定義します。 その後、アイテムに 1 つ以上のカテゴリを適用できます。
+
+> [!NOTE]
+> この機能は、Outlook for iOS または Outlook for Android ではサポートされていません。
+
+#### <a name="categoriesjavascriptapioutlookofficecategories"></a>[カテゴリ](/javascript/api/outlook/office.categories)
+
+項目カテゴリを表す新しいオブジェクトが追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+#### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[CategoryDetails](/javascript/api/outlook/office.categorydetails)
+
+カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトが追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+#### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+メールボックスのカテゴリ マスター リストを表す新しいオブジェクトが追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+#### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
+
+メールボックスのカテゴリ マスター リストを表す新しいプロパティが追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+#### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
+
+アイテムのカテゴリのセットを表す新しいプロパティが追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+#### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
+
+カテゴリに関連付ける使用可能な色を指定する新しい列挙が追加されました。
+
+**使用できる場所**: Outlook for Windows (Office 365)
+
+---
+
 ### <a name="delegate-access"></a>代理人アクセス
 
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
@@ -100,6 +149,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
 **使用できる場所**: Outlook for Windows (Office 365)
+
+---
 
 ### <a name="enhanced-location"></a>強化された場所
 
@@ -139,6 +190,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 **使用できる場所**: Outlook for Windows (Office 365)
 
+---
+
 ### <a name="integration-with-actionable-messages"></a>操作可能なメッセージとの統合
 
 #### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
@@ -146,6 +199,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
 **使用できる場所**: Outlook for Windows (Office 365)、Outlook on the web (クラシック)
+
+---
 
 ### <a name="internet-headers"></a>インターネット ヘッダー
 
@@ -161,6 +216,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 **使用できる場所**: Outlook for Windows (Office 365)
 
+---
+
 ### <a name="office-theme"></a>Office テーマ
 
 #### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
@@ -174,6 +231,8 @@ Office テーマを取得する機能が追加されました。
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
 **使用できる場所**: Outlook for Windows (Office 365)
+
+---
 
 ### <a name="sso"></a>SSO
 
