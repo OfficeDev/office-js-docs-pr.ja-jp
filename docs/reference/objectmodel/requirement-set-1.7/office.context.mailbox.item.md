@@ -4,78 +4,78 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: cbcb770a9037694fa4094f389adda6ffd4b84af8
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838572"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451753"
 ---
-# <a name="item"></a><span data-ttu-id="ac1ea-102">item</span><span class="sxs-lookup"><span data-stu-id="ac1ea-102">item</span></span>
+# <a name="item"></a><span data-ttu-id="22bf4-102">item</span><span class="sxs-lookup"><span data-stu-id="22bf4-102">item</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a><span data-ttu-id="ac1ea-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span><span class="sxs-lookup"><span data-stu-id="ac1ea-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a><span data-ttu-id="22bf4-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span><span class="sxs-lookup"><span data-stu-id="22bf4-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span></span>
 
-<span data-ttu-id="ac1ea-p101">`item` の名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。[itemType](#itemtype-officemailboxenumsitemtype) プロパティを使用して、`item` の種類を指定できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p101">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtype) property.</span></span>
+<span data-ttu-id="22bf4-p101">`item` の名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。[itemType](#itemtype-officemailboxenumsitemtype) プロパティを使用して、`item` の種類を指定できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p101">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtype) property.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-106">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-106">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-106">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-106">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-107">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-107">Requirement</span></span>|<span data-ttu-id="ac1ea-108">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-108">Value</span></span>|
+|<span data-ttu-id="22bf4-107">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-107">Requirement</span></span>|<span data-ttu-id="22bf4-108">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-109">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-110">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-110">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-111">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-111">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-112">制限あり</span><span class="sxs-lookup"><span data-stu-id="ac1ea-112">Restricted</span></span>|
-|[<span data-ttu-id="ac1ea-113">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-113">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-114">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-114">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-109">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-110">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-110">1.0</span></span>|
+|[<span data-ttu-id="22bf4-111">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-111">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-112">制限あり</span><span class="sxs-lookup"><span data-stu-id="22bf4-112">Restricted</span></span>|
+|[<span data-ttu-id="22bf4-113">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-113">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-114">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-114">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="ac1ea-115">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-115">Members and methods</span></span>
+##### <a name="members-and-methods"></a><span data-ttu-id="22bf4-115">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-115">Members and methods</span></span>
 
-| <span data-ttu-id="ac1ea-116">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-116">Member</span></span> | <span data-ttu-id="ac1ea-117">種類</span><span class="sxs-lookup"><span data-stu-id="ac1ea-117">Type</span></span> |
+| <span data-ttu-id="22bf4-116">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-116">Member</span></span> | <span data-ttu-id="22bf4-117">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-117">Type</span></span> |
 |--------|------|
-| [<span data-ttu-id="ac1ea-118">attachments</span><span class="sxs-lookup"><span data-stu-id="ac1ea-118">attachments</span></span>](#attachments-arrayattachmentdetails) | <span data-ttu-id="ac1ea-119">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-119">Member</span></span> |
-| [<span data-ttu-id="ac1ea-120">bcc</span><span class="sxs-lookup"><span data-stu-id="ac1ea-120">bcc</span></span>](#bcc-recipients) | <span data-ttu-id="ac1ea-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-121">Member</span></span> |
-| [<span data-ttu-id="ac1ea-122">body</span><span class="sxs-lookup"><span data-stu-id="ac1ea-122">body</span></span>](#body-body) | <span data-ttu-id="ac1ea-123">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-123">Member</span></span> |
-| [<span data-ttu-id="ac1ea-124">cc</span><span class="sxs-lookup"><span data-stu-id="ac1ea-124">cc</span></span>](#cc-arrayemailaddressdetailsrecipients) | <span data-ttu-id="ac1ea-125">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-125">Member</span></span> |
-| [<span data-ttu-id="ac1ea-126">conversationId</span><span class="sxs-lookup"><span data-stu-id="ac1ea-126">conversationId</span></span>](#nullable-conversationid-string) | <span data-ttu-id="ac1ea-127">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-127">Member</span></span> |
-| [<span data-ttu-id="ac1ea-128">dateTimeCreated</span><span class="sxs-lookup"><span data-stu-id="ac1ea-128">dateTimeCreated</span></span>](#datetimecreated-date) | <span data-ttu-id="ac1ea-129">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-129">Member</span></span> |
-| [<span data-ttu-id="ac1ea-130">dateTimeModified</span><span class="sxs-lookup"><span data-stu-id="ac1ea-130">dateTimeModified</span></span>](#datetimemodified-date) | <span data-ttu-id="ac1ea-131">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-131">Member</span></span> |
-| [<span data-ttu-id="ac1ea-132">end</span><span class="sxs-lookup"><span data-stu-id="ac1ea-132">end</span></span>](#end-datetime) | <span data-ttu-id="ac1ea-133">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-133">Member</span></span> |
-| [<span data-ttu-id="ac1ea-134">from</span><span class="sxs-lookup"><span data-stu-id="ac1ea-134">from</span></span>](#from-emailaddressdetailsfrom) | <span data-ttu-id="ac1ea-135">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-135">Member</span></span> |
-| [<span data-ttu-id="ac1ea-136">internetMessageId</span><span class="sxs-lookup"><span data-stu-id="ac1ea-136">internetMessageId</span></span>](#internetmessageid-string) | <span data-ttu-id="ac1ea-137">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-137">Member</span></span> |
-| [<span data-ttu-id="ac1ea-138">itemClass</span><span class="sxs-lookup"><span data-stu-id="ac1ea-138">itemClass</span></span>](#itemclass-string) | <span data-ttu-id="ac1ea-139">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-139">Member</span></span> |
-| [<span data-ttu-id="ac1ea-140">itemId</span><span class="sxs-lookup"><span data-stu-id="ac1ea-140">itemId</span></span>](#nullable-itemid-string) | <span data-ttu-id="ac1ea-141">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-141">Member</span></span> |
-| [<span data-ttu-id="ac1ea-142">itemType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-142">itemType</span></span>](#itemtype-officemailboxenumsitemtype) | <span data-ttu-id="ac1ea-143">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-143">Member</span></span> |
-| [<span data-ttu-id="ac1ea-144">location</span><span class="sxs-lookup"><span data-stu-id="ac1ea-144">location</span></span>](#location-stringlocation) | <span data-ttu-id="ac1ea-145">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-145">Member</span></span> |
-| [<span data-ttu-id="ac1ea-146">normalizedSubject</span><span class="sxs-lookup"><span data-stu-id="ac1ea-146">normalizedSubject</span></span>](#normalizedsubject-string) | <span data-ttu-id="ac1ea-147">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-147">Member</span></span> |
-| [<span data-ttu-id="ac1ea-148">notificationMessages</span><span class="sxs-lookup"><span data-stu-id="ac1ea-148">notificationMessages</span></span>](#notificationmessages-notificationmessages) | <span data-ttu-id="ac1ea-149">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-149">Member</span></span> |
-| [<span data-ttu-id="ac1ea-150">optionalAttendees</span><span class="sxs-lookup"><span data-stu-id="ac1ea-150">optionalAttendees</span></span>](#optionalattendees-arrayemailaddressdetailsrecipients) | <span data-ttu-id="ac1ea-151">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-151">Member</span></span> |
-| [<span data-ttu-id="ac1ea-152">organizer</span><span class="sxs-lookup"><span data-stu-id="ac1ea-152">organizer</span></span>](#organizer-emailaddressdetailsorganizer) | <span data-ttu-id="ac1ea-153">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-153">Member</span></span> |
-| [<span data-ttu-id="ac1ea-154">繰り返さ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-154">recurrence</span></span>](#nullable-recurrence-recurrence) | <span data-ttu-id="ac1ea-155">Member</span><span class="sxs-lookup"><span data-stu-id="ac1ea-155">Member</span></span> |
-| [<span data-ttu-id="ac1ea-156">requiredAttendees</span><span class="sxs-lookup"><span data-stu-id="ac1ea-156">requiredAttendees</span></span>](#requiredattendees-arrayemailaddressdetailsrecipients) | <span data-ttu-id="ac1ea-157">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-157">Member</span></span> |
-| [<span data-ttu-id="ac1ea-158">sender</span><span class="sxs-lookup"><span data-stu-id="ac1ea-158">sender</span></span>](#sender-emailaddressdetails) | <span data-ttu-id="ac1ea-159">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-159">Member</span></span> |
-| [<span data-ttu-id="ac1ea-160">系列 id</span><span class="sxs-lookup"><span data-stu-id="ac1ea-160">seriesId</span></span>](#nullable-seriesid-string) | <span data-ttu-id="ac1ea-161">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-161">Member</span></span> |
-| [<span data-ttu-id="ac1ea-162">start</span><span class="sxs-lookup"><span data-stu-id="ac1ea-162">start</span></span>](#start-datetime) | <span data-ttu-id="ac1ea-163">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-163">Member</span></span> |
-| [<span data-ttu-id="ac1ea-164">subject</span><span class="sxs-lookup"><span data-stu-id="ac1ea-164">subject</span></span>](#subject-stringsubject) | <span data-ttu-id="ac1ea-165">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-165">Member</span></span> |
-| [<span data-ttu-id="ac1ea-166">to</span><span class="sxs-lookup"><span data-stu-id="ac1ea-166">to</span></span>](#to-arrayemailaddressdetailsrecipients) | <span data-ttu-id="ac1ea-167">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-167">Member</span></span> |
-| [<span data-ttu-id="ac1ea-168">addFileAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-168">addFileAttachmentAsync</span></span>](#addfileattachmentasyncuri-attachmentname-options-callback) | <span data-ttu-id="ac1ea-169">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-169">Method</span></span> |
-| [<span data-ttu-id="ac1ea-170">addHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-170">addHandlerAsync</span></span>](#addhandlerasynceventtype-handler-options-callback) | <span data-ttu-id="ac1ea-171">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-171">Method</span></span> |
-| [<span data-ttu-id="ac1ea-172">addItemAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-172">addItemAttachmentAsync</span></span>](#additemattachmentasyncitemid-attachmentname-options-callback) | <span data-ttu-id="ac1ea-173">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-173">Method</span></span> |
-| [<span data-ttu-id="ac1ea-174">close</span><span class="sxs-lookup"><span data-stu-id="ac1ea-174">close</span></span>](#close) | <span data-ttu-id="ac1ea-175">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-175">Method</span></span> |
-| [<span data-ttu-id="ac1ea-176">displayReplyAllForm</span><span class="sxs-lookup"><span data-stu-id="ac1ea-176">displayReplyAllForm</span></span>](#displayreplyallformformdata-callback) | <span data-ttu-id="ac1ea-177">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-177">Method</span></span> |
-| [<span data-ttu-id="ac1ea-178">displayReplyForm</span><span class="sxs-lookup"><span data-stu-id="ac1ea-178">displayReplyForm</span></span>](#displayreplyformformdata-callback) | <span data-ttu-id="ac1ea-179">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-179">Method</span></span> |
-| [<span data-ttu-id="ac1ea-180">getEntities</span><span class="sxs-lookup"><span data-stu-id="ac1ea-180">getEntities</span></span>](#getentities--entities) | <span data-ttu-id="ac1ea-181">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-181">Method</span></span> |
-| [<span data-ttu-id="ac1ea-182">getEntitiesByType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-182">getEntitiesByType</span></span>](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | <span data-ttu-id="ac1ea-183">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-183">Method</span></span> |
-| [<span data-ttu-id="ac1ea-184">getFilteredEntitiesByName</span><span class="sxs-lookup"><span data-stu-id="ac1ea-184">getFilteredEntitiesByName</span></span>](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | <span data-ttu-id="ac1ea-185">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-185">Method</span></span> |
-| [<span data-ttu-id="ac1ea-186">getRegExMatches</span><span class="sxs-lookup"><span data-stu-id="ac1ea-186">getRegExMatches</span></span>](#getregexmatches--object) | <span data-ttu-id="ac1ea-187">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-187">Method</span></span> |
-| [<span data-ttu-id="ac1ea-188">getRegExMatchesByName</span><span class="sxs-lookup"><span data-stu-id="ac1ea-188">getRegExMatchesByName</span></span>](#getregexmatchesbynamename--nullable-array-string-) | <span data-ttu-id="ac1ea-189">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-189">Method</span></span> |
-| [<span data-ttu-id="ac1ea-190">getSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-190">getSelectedDataAsync</span></span>](#getselecteddataasynccoerciontype-options-callback--string) | <span data-ttu-id="ac1ea-191">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-191">Method</span></span> |
-| [<span data-ttu-id="ac1ea-192">office.context.mailbox.item.getselectedentities</span><span class="sxs-lookup"><span data-stu-id="ac1ea-192">getSelectedEntities</span></span>](#getselectedentities--entities) | <span data-ttu-id="ac1ea-193">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-193">Method</span></span> |
-| [<span data-ttu-id="ac1ea-194">office.context.mailbox.item.getselectedregexmatches</span><span class="sxs-lookup"><span data-stu-id="ac1ea-194">getSelectedRegExMatches</span></span>](#getselectedregexmatches--object) | <span data-ttu-id="ac1ea-195">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-195">Method</span></span> |
-| [<span data-ttu-id="ac1ea-196">loadCustomPropertiesAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-196">loadCustomPropertiesAsync</span></span>](#loadcustompropertiesasynccallback-usercontext) | <span data-ttu-id="ac1ea-197">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-197">Method</span></span> |
-| [<span data-ttu-id="ac1ea-198">removeAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-198">removeAttachmentAsync</span></span>](#removeattachmentasyncattachmentid-options-callback) | <span data-ttu-id="ac1ea-199">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-199">Method</span></span> |
-| [<span data-ttu-id="ac1ea-200">removeHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-200">removeHandlerAsync</span></span>](#removehandlerasynceventtype-options-callback) | <span data-ttu-id="ac1ea-201">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-201">Method</span></span> |
-| [<span data-ttu-id="ac1ea-202">saveAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-202">saveAsync</span></span>](#saveasyncoptions-callback) | <span data-ttu-id="ac1ea-203">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-203">Method</span></span> |
-| [<span data-ttu-id="ac1ea-204">setSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="ac1ea-204">setSelectedDataAsync</span></span>](#setselecteddataasyncdata-options-callback) | <span data-ttu-id="ac1ea-205">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-205">Method</span></span> |
+| [<span data-ttu-id="22bf4-118">attachments</span><span class="sxs-lookup"><span data-stu-id="22bf4-118">attachments</span></span>](#attachments-arrayattachmentdetails) | <span data-ttu-id="22bf4-119">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-119">Member</span></span> |
+| [<span data-ttu-id="22bf4-120">bcc</span><span class="sxs-lookup"><span data-stu-id="22bf4-120">bcc</span></span>](#bcc-recipients) | <span data-ttu-id="22bf4-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-121">Member</span></span> |
+| [<span data-ttu-id="22bf4-122">body</span><span class="sxs-lookup"><span data-stu-id="22bf4-122">body</span></span>](#body-body) | <span data-ttu-id="22bf4-123">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-123">Member</span></span> |
+| [<span data-ttu-id="22bf4-124">cc</span><span class="sxs-lookup"><span data-stu-id="22bf4-124">cc</span></span>](#cc-arrayemailaddressdetailsrecipients) | <span data-ttu-id="22bf4-125">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-125">Member</span></span> |
+| [<span data-ttu-id="22bf4-126">conversationId</span><span class="sxs-lookup"><span data-stu-id="22bf4-126">conversationId</span></span>](#nullable-conversationid-string) | <span data-ttu-id="22bf4-127">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-127">Member</span></span> |
+| [<span data-ttu-id="22bf4-128">dateTimeCreated</span><span class="sxs-lookup"><span data-stu-id="22bf4-128">dateTimeCreated</span></span>](#datetimecreated-date) | <span data-ttu-id="22bf4-129">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-129">Member</span></span> |
+| [<span data-ttu-id="22bf4-130">dateTimeModified</span><span class="sxs-lookup"><span data-stu-id="22bf4-130">dateTimeModified</span></span>](#datetimemodified-date) | <span data-ttu-id="22bf4-131">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-131">Member</span></span> |
+| [<span data-ttu-id="22bf4-132">end</span><span class="sxs-lookup"><span data-stu-id="22bf4-132">end</span></span>](#end-datetime) | <span data-ttu-id="22bf4-133">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-133">Member</span></span> |
+| [<span data-ttu-id="22bf4-134">from</span><span class="sxs-lookup"><span data-stu-id="22bf4-134">from</span></span>](#from-emailaddressdetailsfrom) | <span data-ttu-id="22bf4-135">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-135">Member</span></span> |
+| [<span data-ttu-id="22bf4-136">internetMessageId</span><span class="sxs-lookup"><span data-stu-id="22bf4-136">internetMessageId</span></span>](#internetmessageid-string) | <span data-ttu-id="22bf4-137">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-137">Member</span></span> |
+| [<span data-ttu-id="22bf4-138">itemClass</span><span class="sxs-lookup"><span data-stu-id="22bf4-138">itemClass</span></span>](#itemclass-string) | <span data-ttu-id="22bf4-139">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-139">Member</span></span> |
+| [<span data-ttu-id="22bf4-140">itemId</span><span class="sxs-lookup"><span data-stu-id="22bf4-140">itemId</span></span>](#nullable-itemid-string) | <span data-ttu-id="22bf4-141">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-141">Member</span></span> |
+| [<span data-ttu-id="22bf4-142">itemType</span><span class="sxs-lookup"><span data-stu-id="22bf4-142">itemType</span></span>](#itemtype-officemailboxenumsitemtype) | <span data-ttu-id="22bf4-143">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-143">Member</span></span> |
+| [<span data-ttu-id="22bf4-144">location</span><span class="sxs-lookup"><span data-stu-id="22bf4-144">location</span></span>](#location-stringlocation) | <span data-ttu-id="22bf4-145">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-145">Member</span></span> |
+| [<span data-ttu-id="22bf4-146">normalizedSubject</span><span class="sxs-lookup"><span data-stu-id="22bf4-146">normalizedSubject</span></span>](#normalizedsubject-string) | <span data-ttu-id="22bf4-147">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-147">Member</span></span> |
+| [<span data-ttu-id="22bf4-148">notificationMessages</span><span class="sxs-lookup"><span data-stu-id="22bf4-148">notificationMessages</span></span>](#notificationmessages-notificationmessages) | <span data-ttu-id="22bf4-149">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-149">Member</span></span> |
+| [<span data-ttu-id="22bf4-150">optionalAttendees</span><span class="sxs-lookup"><span data-stu-id="22bf4-150">optionalAttendees</span></span>](#optionalattendees-arrayemailaddressdetailsrecipients) | <span data-ttu-id="22bf4-151">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-151">Member</span></span> |
+| [<span data-ttu-id="22bf4-152">organizer</span><span class="sxs-lookup"><span data-stu-id="22bf4-152">organizer</span></span>](#organizer-emailaddressdetailsorganizer) | <span data-ttu-id="22bf4-153">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-153">Member</span></span> |
+| [<span data-ttu-id="22bf4-154">繰り返さ</span><span class="sxs-lookup"><span data-stu-id="22bf4-154">recurrence</span></span>](#nullable-recurrence-recurrence) | <span data-ttu-id="22bf4-155">Member</span><span class="sxs-lookup"><span data-stu-id="22bf4-155">Member</span></span> |
+| [<span data-ttu-id="22bf4-156">requiredAttendees</span><span class="sxs-lookup"><span data-stu-id="22bf4-156">requiredAttendees</span></span>](#requiredattendees-arrayemailaddressdetailsrecipients) | <span data-ttu-id="22bf4-157">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-157">Member</span></span> |
+| [<span data-ttu-id="22bf4-158">sender</span><span class="sxs-lookup"><span data-stu-id="22bf4-158">sender</span></span>](#sender-emailaddressdetails) | <span data-ttu-id="22bf4-159">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-159">Member</span></span> |
+| [<span data-ttu-id="22bf4-160">系列 id</span><span class="sxs-lookup"><span data-stu-id="22bf4-160">seriesId</span></span>](#nullable-seriesid-string) | <span data-ttu-id="22bf4-161">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-161">Member</span></span> |
+| [<span data-ttu-id="22bf4-162">start</span><span class="sxs-lookup"><span data-stu-id="22bf4-162">start</span></span>](#start-datetime) | <span data-ttu-id="22bf4-163">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-163">Member</span></span> |
+| [<span data-ttu-id="22bf4-164">subject</span><span class="sxs-lookup"><span data-stu-id="22bf4-164">subject</span></span>](#subject-stringsubject) | <span data-ttu-id="22bf4-165">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-165">Member</span></span> |
+| [<span data-ttu-id="22bf4-166">to</span><span class="sxs-lookup"><span data-stu-id="22bf4-166">to</span></span>](#to-arrayemailaddressdetailsrecipients) | <span data-ttu-id="22bf4-167">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-167">Member</span></span> |
+| [<span data-ttu-id="22bf4-168">addFileAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-168">addFileAttachmentAsync</span></span>](#addfileattachmentasyncuri-attachmentname-options-callback) | <span data-ttu-id="22bf4-169">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-169">Method</span></span> |
+| [<span data-ttu-id="22bf4-170">addHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-170">addHandlerAsync</span></span>](#addhandlerasynceventtype-handler-options-callback) | <span data-ttu-id="22bf4-171">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-171">Method</span></span> |
+| [<span data-ttu-id="22bf4-172">addItemAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-172">addItemAttachmentAsync</span></span>](#additemattachmentasyncitemid-attachmentname-options-callback) | <span data-ttu-id="22bf4-173">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-173">Method</span></span> |
+| [<span data-ttu-id="22bf4-174">close</span><span class="sxs-lookup"><span data-stu-id="22bf4-174">close</span></span>](#close) | <span data-ttu-id="22bf4-175">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-175">Method</span></span> |
+| [<span data-ttu-id="22bf4-176">displayReplyAllForm</span><span class="sxs-lookup"><span data-stu-id="22bf4-176">displayReplyAllForm</span></span>](#displayreplyallformformdata-callback) | <span data-ttu-id="22bf4-177">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-177">Method</span></span> |
+| [<span data-ttu-id="22bf4-178">displayReplyForm</span><span class="sxs-lookup"><span data-stu-id="22bf4-178">displayReplyForm</span></span>](#displayreplyformformdata-callback) | <span data-ttu-id="22bf4-179">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-179">Method</span></span> |
+| [<span data-ttu-id="22bf4-180">getEntities</span><span class="sxs-lookup"><span data-stu-id="22bf4-180">getEntities</span></span>](#getentities--entities) | <span data-ttu-id="22bf4-181">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-181">Method</span></span> |
+| [<span data-ttu-id="22bf4-182">getEntitiesByType</span><span class="sxs-lookup"><span data-stu-id="22bf4-182">getEntitiesByType</span></span>](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | <span data-ttu-id="22bf4-183">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-183">Method</span></span> |
+| [<span data-ttu-id="22bf4-184">getFilteredEntitiesByName</span><span class="sxs-lookup"><span data-stu-id="22bf4-184">getFilteredEntitiesByName</span></span>](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | <span data-ttu-id="22bf4-185">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-185">Method</span></span> |
+| [<span data-ttu-id="22bf4-186">getRegExMatches</span><span class="sxs-lookup"><span data-stu-id="22bf4-186">getRegExMatches</span></span>](#getregexmatches--object) | <span data-ttu-id="22bf4-187">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-187">Method</span></span> |
+| [<span data-ttu-id="22bf4-188">getRegExMatchesByName</span><span class="sxs-lookup"><span data-stu-id="22bf4-188">getRegExMatchesByName</span></span>](#getregexmatchesbynamename--nullable-array-string-) | <span data-ttu-id="22bf4-189">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-189">Method</span></span> |
+| [<span data-ttu-id="22bf4-190">getSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-190">getSelectedDataAsync</span></span>](#getselecteddataasynccoerciontype-options-callback--string) | <span data-ttu-id="22bf4-191">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-191">Method</span></span> |
+| [<span data-ttu-id="22bf4-192">office.context.mailbox.item.getselectedentities</span><span class="sxs-lookup"><span data-stu-id="22bf4-192">getSelectedEntities</span></span>](#getselectedentities--entities) | <span data-ttu-id="22bf4-193">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-193">Method</span></span> |
+| [<span data-ttu-id="22bf4-194">office.context.mailbox.item.getselectedregexmatches</span><span class="sxs-lookup"><span data-stu-id="22bf4-194">getSelectedRegExMatches</span></span>](#getselectedregexmatches--object) | <span data-ttu-id="22bf4-195">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-195">Method</span></span> |
+| [<span data-ttu-id="22bf4-196">loadCustomPropertiesAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-196">loadCustomPropertiesAsync</span></span>](#loadcustompropertiesasynccallback-usercontext) | <span data-ttu-id="22bf4-197">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-197">Method</span></span> |
+| [<span data-ttu-id="22bf4-198">removeAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-198">removeAttachmentAsync</span></span>](#removeattachmentasyncattachmentid-options-callback) | <span data-ttu-id="22bf4-199">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-199">Method</span></span> |
+| [<span data-ttu-id="22bf4-200">removeHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-200">removeHandlerAsync</span></span>](#removehandlerasynceventtype-options-callback) | <span data-ttu-id="22bf4-201">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-201">Method</span></span> |
+| [<span data-ttu-id="22bf4-202">saveAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-202">saveAsync</span></span>](#saveasyncoptions-callback) | <span data-ttu-id="22bf4-203">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-203">Method</span></span> |
+| [<span data-ttu-id="22bf4-204">setSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="22bf4-204">setSelectedDataAsync</span></span>](#setselecteddataasyncdata-options-callback) | <span data-ttu-id="22bf4-205">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-205">Method</span></span> |
 
-### <a name="example"></a><span data-ttu-id="ac1ea-206">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-206">Example</span></span>
+### <a name="example"></a><span data-ttu-id="22bf4-206">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-206">Example</span></span>
 
-<span data-ttu-id="ac1ea-207">次の JavaScript のコード例は、Outlook の現在のアイテムの `subject` プロパティにアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-207">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
+<span data-ttu-id="22bf4-207">次の JavaScript のコード例は、Outlook の現在のアイテムの `subject` プロパティにアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-207">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
 
 ```javascript
 // The initialize function is required for all apps.
@@ -91,30 +91,30 @@ Office.initialize = function () {
 };
 ```
 
-### <a name="members"></a><span data-ttu-id="ac1ea-208">メンバー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-208">Members</span></span>
+### <a name="members"></a><span data-ttu-id="22bf4-208">メンバー</span><span class="sxs-lookup"><span data-stu-id="22bf4-208">Members</span></span>
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a><span data-ttu-id="ac1ea-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="ac1ea-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a><span data-ttu-id="22bf4-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="22bf4-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
 
-<span data-ttu-id="ac1ea-p102">アイテムの添付ファイルの配列を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p102">Gets an array of attachments for the item. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p102">アイテムの添付ファイルの配列を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p102">Gets an array of attachments for the item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-212">セキュリティ上の問題がある可能性があるため、特定の種類のファイルは Outlook によってブロックされるので、返されません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-212">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="ac1ea-213">詳細については、「[Outlook でブロックされる添付ファイル](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-213">For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
+> <span data-ttu-id="22bf4-212">セキュリティ上の問題がある可能性があるため、特定の種類のファイルは Outlook によってブロックされるので、返されません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-212">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="22bf4-213">詳細については、「[Outlook でブロックされる添付ファイル](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="22bf4-213">For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-214">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-214">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-214">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-214">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="ac1ea-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
+*   <span data-ttu-id="22bf4-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="22bf4-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-216">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-216">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-216">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-216">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-217">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-217">Requirement</span></span>|<span data-ttu-id="ac1ea-218">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-218">Value</span></span>|
+|<span data-ttu-id="22bf4-217">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-217">Requirement</span></span>|<span data-ttu-id="22bf4-218">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-218">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-219">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-219">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-220">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-220">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-221">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-221">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-222">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-222">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-223">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-223">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-224">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-224">Read</span></span>|
+|[<span data-ttu-id="22bf4-219">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-219">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-220">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-220">1.0</span></span>|
+|[<span data-ttu-id="22bf4-221">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-221">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-222">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-222">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-223">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-223">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-224">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-224">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-225">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-225">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-225">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-225">Example</span></span>
 
-<span data-ttu-id="ac1ea-226">次のコードでは、現在のアイテムのすべての添付ファイルの詳細を含む HTML 文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-226">The following code builds an HTML string with details of all attachments on the current item.</span></span>
+<span data-ttu-id="22bf4-226">次のコードでは、現在のアイテムのすべての添付ファイルの詳細を含む HTML 文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-226">The following code builds an HTML string with details of all attachments on the current item.</span></span>
 
 ```javascript
 var item = Office.context.mailbox.item;
@@ -139,23 +139,23 @@ console.log(outputString);
 ---
 ---
 
-####  <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="ac1ea-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="22bf4-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="ac1ea-228">メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または更新するメソッドを提供するオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-228">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="ac1ea-229">新規作成モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-229">Compose mode only.</span></span>
+<span data-ttu-id="22bf4-228">メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または更新するメソッドを提供するオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-228">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="22bf4-229">新規作成モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-229">Compose mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-230">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-230">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-230">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-230">Type</span></span>
 
-*   [<span data-ttu-id="ac1ea-231">受信者</span><span class="sxs-lookup"><span data-stu-id="ac1ea-231">Recipients</span></span>](/javascript/api/outlook_1_7/office.recipients)
+*   [<span data-ttu-id="22bf4-231">受信者</span><span class="sxs-lookup"><span data-stu-id="22bf4-231">Recipients</span></span>](/javascript/api/outlook_1_7/office.recipients)
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-232">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-232">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-232">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-232">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-233">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-233">Requirement</span></span>|<span data-ttu-id="ac1ea-234">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-234">Value</span></span>|
+|<span data-ttu-id="22bf4-233">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-233">Requirement</span></span>|<span data-ttu-id="22bf4-234">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-234">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-235">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-235">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-236">1.1</span><span class="sxs-lookup"><span data-stu-id="ac1ea-236">1.1</span></span>|
-|[<span data-ttu-id="ac1ea-237">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-237">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-238">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-238">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-239">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-239">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-240">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-240">Compose</span></span>|
+|[<span data-ttu-id="22bf4-235">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-235">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-236">1.1</span><span class="sxs-lookup"><span data-stu-id="22bf4-236">1.1</span></span>|
+|[<span data-ttu-id="22bf4-237">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-237">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-238">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-238">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-239">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-239">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-240">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-240">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-241">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-241">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-241">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-241">Example</span></span>
 
 ```javascript
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -170,25 +170,25 @@ function callback(asyncResult) {
 ---
 ---
 
-####  <a name="body-bodyjavascriptapioutlook17officebody"></a><span data-ttu-id="ac1ea-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span></span>
+####  <a name="body-bodyjavascriptapioutlook17officebody"></a><span data-ttu-id="22bf4-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span><span class="sxs-lookup"><span data-stu-id="22bf4-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span></span>
 
-<span data-ttu-id="ac1ea-243">アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-243">Gets an object that provides methods for manipulating the body of an item.</span></span>
+<span data-ttu-id="22bf4-243">アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-243">Gets an object that provides methods for manipulating the body of an item.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-244">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-244">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-244">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-244">Type</span></span>
 
-*   [<span data-ttu-id="ac1ea-245">Body</span><span class="sxs-lookup"><span data-stu-id="ac1ea-245">Body</span></span>](/javascript/api/outlook_1_7/office.body)
+*   [<span data-ttu-id="22bf4-245">Body</span><span class="sxs-lookup"><span data-stu-id="22bf4-245">Body</span></span>](/javascript/api/outlook_1_7/office.body)
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-246">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-246">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-246">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-246">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-247">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-247">Requirement</span></span>|<span data-ttu-id="ac1ea-248">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-248">Value</span></span>|
+|<span data-ttu-id="22bf4-247">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-247">Requirement</span></span>|<span data-ttu-id="22bf4-248">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-248">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-249">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-249">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-250">1.1</span><span class="sxs-lookup"><span data-stu-id="ac1ea-250">1.1</span></span>|
-|[<span data-ttu-id="ac1ea-251">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-251">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-252">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-252">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-253">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-253">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-254">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-254">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-249">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-249">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-250">1.1</span><span class="sxs-lookup"><span data-stu-id="22bf4-250">1.1</span></span>|
+|[<span data-ttu-id="22bf4-251">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-251">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-252">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-252">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-253">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-253">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-254">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-254">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-255">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-255">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-255">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-255">Example</span></span>
 
-<span data-ttu-id="ac1ea-256">この例では、メッセージの本文をプレーン テキストで取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-256">This example gets the body of the message in plain text.</span></span>
+<span data-ttu-id="22bf4-256">この例では、メッセージの本文をプレーン テキストで取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-256">This example gets the body of the message in plain text.</span></span>
 
 ```javascript
 Office.context.mailbox.item.body.getAsync(
@@ -200,7 +200,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ```
 
-<span data-ttu-id="ac1ea-257">次の例は、コールバック関数に渡される結果パラメーターの例です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-257">The following is an example of the result parameter passed to the callback function.</span></span>
+<span data-ttu-id="22bf4-257">次の例は、コールバック関数に渡される結果パラメーターの例です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-257">The following is an example of the result parameter passed to the callback function.</span></span>
 
 ```json
 {
@@ -213,21 +213,21 @@ Office.context.mailbox.item.body.getAsync(
 ---
 ---
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="ac1ea-258">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-258">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="22bf4-258">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-258">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="ac1ea-259">メッセージの CC (カーボン コピー) の受信者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-259">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="ac1ea-260">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-260">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="22bf4-259">メッセージの CC (カーボン コピー) の受信者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-259">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="22bf4-260">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-260">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-261">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-261">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-261">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-261">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-p106">`cc` プロパティは、メッセージの **CC** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p106">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+<span data-ttu-id="22bf4-p106">`cc` プロパティは、メッセージの **CC** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p106">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
 ```javascript
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-264">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-264">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-264">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-264">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-265">`cc` プロパティは、メッセージの **Cc** 行にある受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-265">The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.</span></span>
+<span data-ttu-id="22bf4-265">`cc` プロパティは、メッセージの **Cc** 行にある受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-265">The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.</span></span>
 
 ```javascript
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -239,42 +239,42 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-266">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-266">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-266">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-266">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-267">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-267">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="22bf4-267">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-267">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-268">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-268">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-268">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-268">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-269">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-269">Requirement</span></span>|<span data-ttu-id="ac1ea-270">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-270">Value</span></span>|
+|<span data-ttu-id="22bf4-269">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-269">Requirement</span></span>|<span data-ttu-id="22bf4-270">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-270">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-271">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-271">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-272">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-272">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-273">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-273">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-274">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-274">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-275">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-275">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-276">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-276">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-271">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-271">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-272">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-272">1.0</span></span>|
+|[<span data-ttu-id="22bf4-273">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-273">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-274">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-274">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-275">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-275">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-276">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-276">Compose or Read</span></span>|
 
 ---
 ---
 
-####  <a name="nullable-conversationid-string"></a><span data-ttu-id="ac1ea-277">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-277">(nullable) conversationId :String</span></span>
+####  <a name="nullable-conversationid-string"></a><span data-ttu-id="22bf4-277">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="22bf4-277">(nullable) conversationId :String</span></span>
 
-<span data-ttu-id="ac1ea-278">特定のメッセージが含まれている電子メールの会話の識別子を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-278">Gets an identifier for the email conversation that contains a particular message.</span></span>
+<span data-ttu-id="22bf4-278">特定のメッセージが含まれている電子メールの会話の識別子を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-278">Gets an identifier for the email conversation that contains a particular message.</span></span>
 
-<span data-ttu-id="ac1ea-p107">メール アプリを閲覧フォームでアクティブ化するか、新規作成フォームの返信でアクティブ化すると、このプロパティで整数を取得することができます。その後、ユーザーが返信の件名を変更した場合、その返信の送信時にメッセージの会話 ID が変更され、以前に取得した値は適用されなくなります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p107">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
+<span data-ttu-id="22bf4-p107">メール アプリを閲覧フォームでアクティブ化するか、新規作成フォームの返信でアクティブ化すると、このプロパティで整数を取得することができます。その後、ユーザーが返信の件名を変更した場合、その返信の送信時にメッセージの会話 ID が変更され、以前に取得した値は適用されなくなります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p107">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
 
-<span data-ttu-id="ac1ea-p108">新規作成フォームで新しいアイテムに対してこのプロパティに null を取得します。ユーザーが件名を設定し、アイテムを保存する場合、`conversationId` プロパティは値を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p108">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
+<span data-ttu-id="22bf4-p108">新規作成フォームで新しいアイテムに対してこのプロパティに null を取得します。ユーザーが件名を設定し、アイテムを保存する場合、`conversationId` プロパティは値を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p108">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-283">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-283">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-283">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-283">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-284">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-284">String</span></span>
+*   <span data-ttu-id="22bf4-284">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-284">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-285">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-285">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-285">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-285">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-286">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-286">Requirement</span></span>|<span data-ttu-id="ac1ea-287">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-287">Value</span></span>|
+|<span data-ttu-id="22bf4-286">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-286">Requirement</span></span>|<span data-ttu-id="22bf4-287">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-287">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-288">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-288">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-289">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-289">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-290">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-290">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-291">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-291">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-292">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-292">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-293">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-293">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-288">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-288">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-289">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-289">1.0</span></span>|
+|[<span data-ttu-id="22bf4-290">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-290">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-291">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-291">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-292">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-292">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-293">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-293">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-294">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-294">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-294">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-294">Example</span></span>
 
 ```javascript
 var conversationId = Office.context.mailbox.item.conversationId;
@@ -284,23 +284,23 @@ console.log("conversationId: " + conversationId);
 ---
 ---
 
-#### <a name="datetimecreated-date"></a><span data-ttu-id="ac1ea-295">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="ac1ea-295">dateTimeCreated :Date</span></span>
+#### <a name="datetimecreated-date"></a><span data-ttu-id="22bf4-295">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="22bf4-295">dateTimeCreated :Date</span></span>
 
-<span data-ttu-id="ac1ea-p109">アイテムが作成された日時を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p109">Gets the date and time that an item was created. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p109">アイテムが作成された日時を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p109">Gets the date and time that an item was created. Read mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-298">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-298">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-298">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-298">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-299">日付</span><span class="sxs-lookup"><span data-stu-id="ac1ea-299">Date</span></span>
+*   <span data-ttu-id="22bf4-299">日付</span><span class="sxs-lookup"><span data-stu-id="22bf4-299">Date</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-300">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-300">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-300">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-300">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-301">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-301">Requirement</span></span>|<span data-ttu-id="ac1ea-302">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-302">Value</span></span>|
+|<span data-ttu-id="22bf4-301">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-301">Requirement</span></span>|<span data-ttu-id="22bf4-302">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-302">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-303">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-303">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-304">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-304">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-305">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-305">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-306">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-306">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-307">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-307">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-308">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-308">Read</span></span>|
+|[<span data-ttu-id="22bf4-303">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-303">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-304">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-304">1.0</span></span>|
+|[<span data-ttu-id="22bf4-305">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-305">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-306">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-306">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-307">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-307">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-308">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-308">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-309">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-309">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-309">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-309">Example</span></span>
 
 ```javascript
 var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
@@ -310,26 +310,26 @@ console.log("Date and time created: " + dateTimeCreated);
 ---
 ---
 
-#### <a name="datetimemodified-date"></a><span data-ttu-id="ac1ea-310">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="ac1ea-310">dateTimeModified :Date</span></span>
+#### <a name="datetimemodified-date"></a><span data-ttu-id="22bf4-310">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="22bf4-310">dateTimeModified :Date</span></span>
 
-<span data-ttu-id="ac1ea-p110">アイテムが最後に変更された日時を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p110">Gets the date and time that an item was last modified. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p110">アイテムが最後に変更された日時を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p110">Gets the date and time that an item was last modified. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-313">このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-313">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-313">このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-313">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-314">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-314">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-314">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-314">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-315">日付</span><span class="sxs-lookup"><span data-stu-id="ac1ea-315">Date</span></span>
+*   <span data-ttu-id="22bf4-315">日付</span><span class="sxs-lookup"><span data-stu-id="22bf4-315">Date</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-316">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-316">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-316">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-316">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-317">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-317">Requirement</span></span>|<span data-ttu-id="ac1ea-318">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-318">Value</span></span>|
+|<span data-ttu-id="22bf4-317">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-317">Requirement</span></span>|<span data-ttu-id="22bf4-318">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-318">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-319">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-319">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-320">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-320">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-321">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-321">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-322">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-322">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-323">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-323">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-324">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-324">Read</span></span>|
+|[<span data-ttu-id="22bf4-319">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-319">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-320">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-320">1.0</span></span>|
+|[<span data-ttu-id="22bf4-321">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-321">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-322">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-322">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-323">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-323">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-324">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-324">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-325">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-325">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-325">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-325">Example</span></span>
 
 ```javascript
 var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
@@ -339,28 +339,28 @@ console.log("Date and time modified: " + dateTimeModified);
 ---
 ---
 
-####  <a name="end-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="ac1ea-326">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-326">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
+####  <a name="end-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="22bf4-326">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="22bf4-326">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-<span data-ttu-id="ac1ea-327">予定が終了する日時を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-327">Gets or sets the date and time that the appointment is to end.</span></span>
+<span data-ttu-id="22bf4-327">予定が終了する日時を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-327">Gets or sets the date and time that the appointment is to end.</span></span>
 
-<span data-ttu-id="ac1ea-p111">`end` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、end プロパティ値をクライアントのローカル日時に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p111">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the end property value to the client’s local date and time.</span></span>
+<span data-ttu-id="22bf4-p111">`end` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、end プロパティ値をクライアントのローカル日時に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p111">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the end property value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-330">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-330">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-330">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-330">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-331">`end` プロパティは `Date` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-331">The `end` property returns a `Date` object.</span></span>
+<span data-ttu-id="22bf4-331">`end` プロパティは `Date` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-331">The `end` property returns a `Date` object.</span></span>
 
 ```javascript
 var end = Office.context.mailbox.item.end;
 console.log("Appointment end: " + end);
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-332">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-332">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-332">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-332">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-333">`end` プロパティは `Time` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-333">The `end` property returns a `Time` object.</span></span>
+<span data-ttu-id="22bf4-333">`end` プロパティは `Time` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-333">The `end` property returns a `Time` object.</span></span>
 
-<span data-ttu-id="ac1ea-334">[`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して終了時刻を設定する場合、[`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-334">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="22bf4-334">[`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して終了時刻を設定する場合、[`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-334">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
 
-<span data-ttu-id="ac1ea-335">次の例では、`Time` オブジェクトの [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して、予定の終了時刻を設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-335">The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
+<span data-ttu-id="22bf4-335">次の例では、`Time` オブジェクトの [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して、予定の終了時刻を設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-335">The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -378,42 +378,42 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-336">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-336">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-336">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-336">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-337">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-337">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
+*   <span data-ttu-id="22bf4-337">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="22bf4-337">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-338">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-338">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-338">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-338">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-339">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-339">Requirement</span></span>|<span data-ttu-id="ac1ea-340">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-340">Value</span></span>|
+|<span data-ttu-id="22bf4-339">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-339">Requirement</span></span>|<span data-ttu-id="22bf4-340">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-340">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-341">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-341">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-342">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-342">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-343">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-343">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-344">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-344">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-345">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-345">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-346">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-346">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-341">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-341">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-342">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-342">1.0</span></span>|
+|[<span data-ttu-id="22bf4-343">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-343">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-344">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-344">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-345">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-345">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-346">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-346">Compose or Read</span></span>|
 
 ---
 ---
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a><span data-ttu-id="ac1ea-347">from:[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[from](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-347">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span></span>
+#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a><span data-ttu-id="22bf4-347">from:[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[from](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="22bf4-347">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span></span>
 
-<span data-ttu-id="ac1ea-348">メッセージの送信者の電子メール アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-348">Gets the email address of the sender of a message.</span></span>
+<span data-ttu-id="22bf4-348">メッセージの送信者の電子メール アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-348">Gets the email address of the sender of a message.</span></span>
 
-<span data-ttu-id="ac1ea-p112">メッセージが代理人から送信された場合を除き、`from` プロパティと [`sender`](#sender-emailaddressdetails) プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p112">The `from` and [`sender`](#sender-emailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+<span data-ttu-id="22bf4-p112">メッセージが代理人から送信された場合を除き、`from` プロパティと [`sender`](#sender-emailaddressdetails) プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p112">The `from` and [`sender`](#sender-emailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-351">`from` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-351">The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
+> <span data-ttu-id="22bf4-351">`from` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-351">The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-352">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-352">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-352">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-352">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-353">プロパティ`from`は`EmailAddressDetails`オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-353">The `from` property returns an `EmailAddressDetails` object.</span></span>
+<span data-ttu-id="22bf4-353">プロパティ`from`は`EmailAddressDetails`オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-353">The `from` property returns an `EmailAddressDetails` object.</span></span>
 
 ```javascript
 var from = Office.context.mailbox.item.from;
 console.log("From " + from);
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-354">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-354">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-354">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-354">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-355">プロパティ`from`は、from `From`値を取得するメソッドを提供するオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-355">The `from` property returns a `From` object that provides a method to get the from value.</span></span>
+<span data-ttu-id="22bf4-355">プロパティ`from`は、from `From`値を取得するメソッドを提供するオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-355">The `from` property returns a `From` object that provides a method to get the from value.</span></span>
 
 ```javascript
 Office.context.mailbox.item.from.getAsync(callback);
@@ -423,38 +423,38 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-356">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-356">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-356">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-356">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-357">[電子メールアドレス](/javascript/api/outlook_1_7/office.emailaddressdetails) | [の](/javascript/api/outlook_1_7/office.from)詳細</span><span class="sxs-lookup"><span data-stu-id="ac1ea-357">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span></span>
+*   <span data-ttu-id="22bf4-357">[電子メールアドレス](/javascript/api/outlook_1_7/office.emailaddressdetails) | [の](/javascript/api/outlook_1_7/office.from)詳細</span><span class="sxs-lookup"><span data-stu-id="22bf4-357">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-358">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-358">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-358">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-358">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-359">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-359">Requirement</span></span>|||
+|<span data-ttu-id="22bf4-359">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-359">Requirement</span></span>|||
 |---|---|---|
-|[<span data-ttu-id="ac1ea-360">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-360">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-361">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-361">1.0</span></span>|<span data-ttu-id="ac1ea-362">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-362">1.7</span></span>|
-|[<span data-ttu-id="ac1ea-363">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-363">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-364">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-364">ReadItem</span></span>|<span data-ttu-id="ac1ea-365">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-365">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-366">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-366">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-367">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-367">Read</span></span>|<span data-ttu-id="ac1ea-368">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-368">Compose</span></span>|
+|[<span data-ttu-id="22bf4-360">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-360">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-361">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-361">1.0</span></span>|<span data-ttu-id="22bf4-362">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-362">1.7</span></span>|
+|[<span data-ttu-id="22bf4-363">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-363">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-364">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-364">ReadItem</span></span>|<span data-ttu-id="22bf4-365">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-365">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-366">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-366">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-367">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-367">Read</span></span>|<span data-ttu-id="22bf4-368">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-368">Compose</span></span>|
 
 ---
 ---
 
-#### <a name="internetmessageid-string"></a><span data-ttu-id="ac1ea-369">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-369">internetMessageId :String</span></span>
+#### <a name="internetmessageid-string"></a><span data-ttu-id="22bf4-369">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="22bf4-369">internetMessageId :String</span></span>
 
-<span data-ttu-id="ac1ea-p113">電子メール メッセージのインターネット メッセージ ID を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p113">Gets the Internet message identifier for an email message. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p113">電子メール メッセージのインターネット メッセージ ID を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p113">Gets the Internet message identifier for an email message. Read mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-372">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-372">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-372">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-372">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-373">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-373">String</span></span>
+*   <span data-ttu-id="22bf4-373">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-373">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-374">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-374">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-374">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-374">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-375">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-375">Requirement</span></span>|<span data-ttu-id="ac1ea-376">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-376">Value</span></span>|
+|<span data-ttu-id="22bf4-375">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-375">Requirement</span></span>|<span data-ttu-id="22bf4-376">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-376">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-377">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-377">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-378">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-378">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-379">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-379">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-380">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-380">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-381">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-381">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-382">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-382">Read</span></span>|
+|[<span data-ttu-id="22bf4-377">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-377">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-378">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-378">1.0</span></span>|
+|[<span data-ttu-id="22bf4-379">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-379">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-380">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-380">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-381">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-381">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-382">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-382">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-383">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-383">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-383">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-383">Example</span></span>
 
 ```javascript
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
@@ -463,32 +463,32 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ---
 ---
 
-#### <a name="itemclass-string"></a><span data-ttu-id="ac1ea-384">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-384">itemClass :String</span></span>
+#### <a name="itemclass-string"></a><span data-ttu-id="22bf4-384">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="22bf4-384">itemClass :String</span></span>
 
-<span data-ttu-id="ac1ea-p114">選択されたアイテムの Exchange Web サービスのアイテム クラスを取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p114">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p114">選択されたアイテムの Exchange Web サービスのアイテム クラスを取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p114">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
 
-<span data-ttu-id="ac1ea-p115">`itemClass` プロパティには、選択したアイテムのメッセージ クラスを指定します。次に、メッセージまたは予定アイテムの既定のメッセージ クラスを示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p115">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
+<span data-ttu-id="22bf4-p115">`itemClass` プロパティには、選択したアイテムのメッセージ クラスを指定します。次に、メッセージまたは予定アイテムの既定のメッセージ クラスを示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p115">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
 
-|<span data-ttu-id="ac1ea-389">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-389">Type</span></span>|<span data-ttu-id="ac1ea-390">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-390">Description</span></span>|<span data-ttu-id="ac1ea-391">アイテム クラス</span><span class="sxs-lookup"><span data-stu-id="ac1ea-391">item class</span></span>|
+|<span data-ttu-id="22bf4-389">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-389">Type</span></span>|<span data-ttu-id="22bf4-390">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-390">Description</span></span>|<span data-ttu-id="22bf4-391">アイテム クラス</span><span class="sxs-lookup"><span data-stu-id="22bf4-391">item class</span></span>|
 |---|---|---|
-|<span data-ttu-id="ac1ea-392">予定アイテム</span><span class="sxs-lookup"><span data-stu-id="ac1ea-392">Appointment items</span></span>|<span data-ttu-id="ac1ea-393">アイテム クラス `IPM.Appointment` または `IPM.Appointment.Occurrence` の予定表アイテムは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-393">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.</span></span>|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
-|<span data-ttu-id="ac1ea-394">メッセージ アイテム</span><span class="sxs-lookup"><span data-stu-id="ac1ea-394">Message items</span></span>|<span data-ttu-id="ac1ea-395">これには、既定のメッセージ クラス `IPM.Note` を持つ電子メール メッセージ、および基本メッセージ クラスとして `IPM.Schedule.Meeting` を使用する会議出席依頼、返信、または取り消しが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-395">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span>|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
+|<span data-ttu-id="22bf4-392">予定アイテム</span><span class="sxs-lookup"><span data-stu-id="22bf4-392">Appointment items</span></span>|<span data-ttu-id="22bf4-393">アイテム クラス `IPM.Appointment` または `IPM.Appointment.Occurrence` の予定表アイテムは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-393">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.</span></span>|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
+|<span data-ttu-id="22bf4-394">メッセージ アイテム</span><span class="sxs-lookup"><span data-stu-id="22bf4-394">Message items</span></span>|<span data-ttu-id="22bf4-395">これには、既定のメッセージ クラス `IPM.Note` を持つ電子メール メッセージ、および基本メッセージ クラスとして `IPM.Schedule.Meeting` を使用する会議出席依頼、返信、または取り消しが含まれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-395">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span>|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
-<span data-ttu-id="ac1ea-396">既定のメッセージ クラスを拡張したカスタム メッセージ クラス (たとえば、カスタム予定表メッセージ クラス `IPM.Appointment.Contoso` など) を作成できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-396">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
+<span data-ttu-id="22bf4-396">既定のメッセージ クラスを拡張したカスタム メッセージ クラス (たとえば、カスタム予定表メッセージ クラス `IPM.Appointment.Contoso` など) を作成できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-396">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-397">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-397">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-397">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-397">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-398">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-398">String</span></span>
+*   <span data-ttu-id="22bf4-398">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-398">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-399">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-399">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-399">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-399">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-400">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-400">Requirement</span></span>|<span data-ttu-id="ac1ea-401">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-401">Value</span></span>|
+|<span data-ttu-id="22bf4-400">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-400">Requirement</span></span>|<span data-ttu-id="22bf4-401">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-401">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-402">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-402">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-403">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-403">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-404">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-404">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-405">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-405">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-406">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-406">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-407">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-407">Read</span></span>|
+|[<span data-ttu-id="22bf4-402">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-402">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-403">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-403">1.0</span></span>|
+|[<span data-ttu-id="22bf4-404">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-404">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-405">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-405">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-406">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-406">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-407">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-407">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-408">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-408">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-408">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-408">Example</span></span>
 
 ```javascript
 var itemClass = Office.context.mailbox.item.itemClass;
@@ -498,30 +498,30 @@ console.log("Item class: " + itemClass);
 ---
 ---
 
-#### <a name="nullable-itemid-string"></a><span data-ttu-id="ac1ea-409">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-409">(nullable) itemId :String</span></span>
+#### <a name="nullable-itemid-string"></a><span data-ttu-id="22bf4-409">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="22bf4-409">(nullable) itemId :String</span></span>
 
-<span data-ttu-id="ac1ea-p116">現在のアイテムの Exchange Web サービスのアイテム識別子を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p116">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p116">現在のアイテムの Exchange Web サービスのアイテム識別子を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p116">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-412">`itemId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-412">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="ac1ea-413">`itemId` プロパティは、Outlook Entry ID または Outlook REST API で使用される ID と同一ではありません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-413">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="ac1ea-414">この値を使用して REST API を呼び出す前に、[Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) を使用して変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-414">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="ac1ea-415">詳細は、「[Outlook アドインからの Outlook REST API の使用](/outlook/add-ins/use-rest-api#get-the-item-id)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-415">For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
+> <span data-ttu-id="22bf4-412">`itemId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-412">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="22bf4-413">`itemId` プロパティは、Outlook Entry ID または Outlook REST API で使用される ID と同一ではありません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-413">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="22bf4-414">この値を使用して REST API を呼び出す前に、[Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) を使用して変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-414">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="22bf4-415">詳細は、「[Outlook アドインからの Outlook REST API の使用](/outlook/add-ins/use-rest-api#get-the-item-id)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="22bf4-415">For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
 
-<span data-ttu-id="ac1ea-p118">新規作成モードでは、`itemId` プロパティは使用できません。アイテム識別子が必要な場合、[`saveAsync`](#saveasyncoptions-callback) メソッドを使用してアイテムをストアに保存できます。そうすると、コールバック関数の [`AsyncResult.value`](/javascript/api/office/office.asyncresult) パラメーターでアイテム識別子が返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p118">The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.</span></span>
+<span data-ttu-id="22bf4-p118">新規作成モードでは、`itemId` プロパティは使用できません。アイテム識別子が必要な場合、[`saveAsync`](#saveasyncoptions-callback) メソッドを使用してアイテムをストアに保存できます。そうすると、コールバック関数の [`AsyncResult.value`](/javascript/api/office/office.asyncresult) パラメーターでアイテム識別子が返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p118">The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-418">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-418">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-418">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-418">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-419">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-419">String</span></span>
+*   <span data-ttu-id="22bf4-419">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-419">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-420">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-420">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-420">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-420">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-421">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-421">Requirement</span></span>|<span data-ttu-id="ac1ea-422">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-422">Value</span></span>|
+|<span data-ttu-id="22bf4-421">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-421">Requirement</span></span>|<span data-ttu-id="22bf4-422">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-422">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-423">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-423">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-424">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-424">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-425">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-425">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-426">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-426">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-427">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-427">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-428">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-428">Read</span></span>|
+|[<span data-ttu-id="22bf4-423">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-423">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-424">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-424">1.0</span></span>|
+|[<span data-ttu-id="22bf4-425">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-425">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-426">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-426">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-427">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-427">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-428">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-428">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-429">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-429">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-429">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-429">Example</span></span>
 
-<span data-ttu-id="ac1ea-p119">次のコードは、アイテム識別子の有無を確認します。`itemId` プロパティが `null` または `undefined` を返す場合、アイテムはストアに保存され、非同期の結果からアイテム識別子が取得されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p119">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
+<span data-ttu-id="22bf4-p119">次のコードは、アイテム識別子の有無を確認します。`itemId` プロパティが `null` または `undefined` を返す場合、アイテムはストアに保存され、非同期の結果からアイテム識別子が取得されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p119">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
 
 ```javascript
 var itemId = Office.context.mailbox.item.itemId;
@@ -535,25 +535,25 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a><span data-ttu-id="ac1ea-432">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-432">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span></span>
+####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a><span data-ttu-id="22bf4-432">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="22bf4-432">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span></span>
 
-<span data-ttu-id="ac1ea-433">インスタンスが表しているアイテムの種類を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-433">Gets the type of item that an instance represents.</span></span>
+<span data-ttu-id="22bf4-433">インスタンスが表しているアイテムの種類を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-433">Gets the type of item that an instance represents.</span></span>
 
-<span data-ttu-id="ac1ea-434">`itemType` プロパティは、`ItemType` 列挙値の 1 つを返します。これは `item` オブジェクト インスタンスがメッセージと予定のどちらであるかを示すものです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-434">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
+<span data-ttu-id="22bf4-434">`itemType` プロパティは、`ItemType` 列挙値の 1 つを返します。これは `item` オブジェクト インスタンスがメッセージと予定のどちらであるかを示すものです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-434">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-435">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-435">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-435">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-435">Type</span></span>
 
-*   [<span data-ttu-id="ac1ea-436">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-436">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
+*   [<span data-ttu-id="22bf4-436">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="22bf4-436">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-437">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-437">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-437">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-437">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-438">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-438">Requirement</span></span>|<span data-ttu-id="ac1ea-439">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-439">Value</span></span>|
+|<span data-ttu-id="22bf4-438">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-438">Requirement</span></span>|<span data-ttu-id="22bf4-439">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-439">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-440">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-440">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-441">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-441">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-442">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-442">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-443">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-443">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-444">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-444">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-445">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-445">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-440">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-440">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-441">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-441">1.0</span></span>|
+|[<span data-ttu-id="22bf4-442">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-442">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-443">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-443">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-444">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-444">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-445">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-445">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-446">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-446">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-446">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-446">Example</span></span>
 
 ```javascript
 if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Message) {
@@ -566,22 +566,22 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ---
 ---
 
-####  <a name="location-stringlocationjavascriptapioutlook17officelocation"></a><span data-ttu-id="ac1ea-447">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-447">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span></span>
+####  <a name="location-stringlocationjavascriptapioutlook17officelocation"></a><span data-ttu-id="22bf4-447">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="22bf4-447">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span></span>
 
-<span data-ttu-id="ac1ea-448">予定の場所を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-448">Gets or sets the location of an appointment.</span></span>
+<span data-ttu-id="22bf4-448">予定の場所を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-448">Gets or sets the location of an appointment.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-449">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-449">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-449">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-449">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-450">`location` プロパティは、予定の場所を格納した文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-450">The `location` property returns a string that contains the location of the appointment.</span></span>
+<span data-ttu-id="22bf4-450">`location` プロパティは、予定の場所を格納した文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-450">The `location` property returns a string that contains the location of the appointment.</span></span>
 
 ```javascript
 var location = Office.context.mailbox.item.location;
 console.log("location: " + location);
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-451">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-451">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-451">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-451">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-452">`location` プロパティは予定の場所を取得または設定するために使用するメソッドを提供する `Location` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-452">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
+<span data-ttu-id="22bf4-452">`location` プロパティは予定の場所を取得または設定するために使用するメソッドを提供する `Location` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-452">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
 
 ```javascript
 var userContext = { value : 1 };
@@ -593,40 +593,40 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-453">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-453">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-453">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-453">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-454">String | [Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-454">String | [Location](/javascript/api/outlook_1_7/office.location)</span></span>
+*   <span data-ttu-id="22bf4-454">String | [Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="22bf4-454">String | [Location](/javascript/api/outlook_1_7/office.location)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-455">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-455">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-455">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-455">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-456">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-456">Requirement</span></span>|<span data-ttu-id="ac1ea-457">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-457">Value</span></span>|
+|<span data-ttu-id="22bf4-456">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-456">Requirement</span></span>|<span data-ttu-id="22bf4-457">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-457">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-458">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-458">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-459">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-459">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-460">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-460">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-461">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-461">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-462">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-462">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-463">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-463">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-458">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-458">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-459">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-459">1.0</span></span>|
+|[<span data-ttu-id="22bf4-460">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-460">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-461">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-461">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-462">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-462">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-463">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-463">Compose or Read</span></span>|
 
 ---
 ---
 
-#### <a name="normalizedsubject-string"></a><span data-ttu-id="ac1ea-464">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-464">normalizedSubject :String</span></span>
+#### <a name="normalizedsubject-string"></a><span data-ttu-id="22bf4-464">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="22bf4-464">normalizedSubject :String</span></span>
 
-<span data-ttu-id="ac1ea-p120">すべてのプレフィックス (`RE:` や `FWD:` など) が削除されたアイテムの件名を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p120">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
+<span data-ttu-id="22bf4-p120">すべてのプレフィックス (`RE:` や `FWD:` など) が削除されたアイテムの件名を取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p120">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
 
-<span data-ttu-id="ac1ea-p121">normalizedSubject プロパティは、アイテムの件名に電子メール プログラムによって標準のプレフィックス (`RE:` や `FW:` など) が追加されたものを取得します。これらのプレフィックスが付いたままの状態でアイテムの件名を取得するには、[`subject`](#subject-stringsubject) プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p121">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubject) property.</span></span>
+<span data-ttu-id="22bf4-p121">normalizedSubject プロパティは、アイテムの件名に電子メール プログラムによって標準のプレフィックス (`RE:` や `FW:` など) が追加されたものを取得します。これらのプレフィックスが付いたままの状態でアイテムの件名を取得するには、[`subject`](#subject-stringsubject) プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p121">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubject) property.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-469">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-469">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-469">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-469">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-470">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-470">String</span></span>
+*   <span data-ttu-id="22bf4-470">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-470">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-471">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-471">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-471">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-471">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-472">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-472">Requirement</span></span>|<span data-ttu-id="ac1ea-473">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-473">Value</span></span>|
+|<span data-ttu-id="22bf4-472">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-472">Requirement</span></span>|<span data-ttu-id="22bf4-473">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-473">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-474">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-474">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-475">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-475">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-476">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-476">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-477">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-477">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-478">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-478">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-479">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-479">Read</span></span>|
+|[<span data-ttu-id="22bf4-474">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-474">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-475">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-475">1.0</span></span>|
+|[<span data-ttu-id="22bf4-476">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-476">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-477">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-477">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-478">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-478">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-479">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-479">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-480">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-480">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-480">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-480">Example</span></span>
 
 ```javascript
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
@@ -636,23 +636,23 @@ console.log("Normalized subject: " + normalizedSubject);
 ---
 ---
 
-####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a><span data-ttu-id="ac1ea-481">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-481">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span></span>
+####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a><span data-ttu-id="22bf4-481">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span><span class="sxs-lookup"><span data-stu-id="22bf4-481">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span></span>
 
-<span data-ttu-id="ac1ea-482">アイテムの通知メッセージを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-482">Gets the notification messages for an item.</span></span>
+<span data-ttu-id="22bf4-482">アイテムの通知メッセージを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-482">Gets the notification messages for an item.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-483">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-483">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-483">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-483">Type</span></span>
 
-*   [<span data-ttu-id="ac1ea-484">NotificationMessages</span><span class="sxs-lookup"><span data-stu-id="ac1ea-484">NotificationMessages</span></span>](/javascript/api/outlook_1_7/office.notificationmessages)
+*   [<span data-ttu-id="22bf4-484">NotificationMessages</span><span class="sxs-lookup"><span data-stu-id="22bf4-484">NotificationMessages</span></span>](/javascript/api/outlook_1_7/office.notificationmessages)
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-485">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-485">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-485">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-485">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-486">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-486">Requirement</span></span>|<span data-ttu-id="ac1ea-487">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-487">Value</span></span>|
+|<span data-ttu-id="22bf4-486">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-486">Requirement</span></span>|<span data-ttu-id="22bf4-487">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-487">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-488">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-488">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-489">1.3</span><span class="sxs-lookup"><span data-stu-id="ac1ea-489">1.3</span></span>|
-|[<span data-ttu-id="ac1ea-490">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-490">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-491">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-491">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-492">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-492">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-493">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-493">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-488">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-488">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-489">1.3</span><span class="sxs-lookup"><span data-stu-id="22bf4-489">1.3</span></span>|
+|[<span data-ttu-id="22bf4-490">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-490">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-491">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-491">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-492">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-492">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-493">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-493">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-494">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-494">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-494">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-494">Example</span></span>
 
 ```javascript
 // Get all notifications.
@@ -666,22 +666,22 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="ac1ea-495">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-495">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="22bf4-495">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-495">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="ac1ea-496">イベントの任意出席者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-496">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="ac1ea-497">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-497">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="22bf4-496">イベントの任意出席者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-496">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="22bf4-497">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-497">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-498">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-498">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-498">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-498">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-499">`optionalAttendees` プロパティは、会議への各任意出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-499">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
+<span data-ttu-id="22bf4-499">`optionalAttendees` プロパティは、会議への各任意出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-499">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
 
 ```javascript
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
 console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-500">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-500">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-500">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-500">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-501">`optionalAttendees` プロパティは会議への任意出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-501">The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.</span></span>
+<span data-ttu-id="22bf4-501">`optionalAttendees` プロパティは会議への任意出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-501">The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.</span></span>
 
 ```javascript
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -693,28 +693,28 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-502">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-502">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-502">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-502">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="22bf4-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-504">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-504">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-504">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-504">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-505">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-505">Requirement</span></span>|<span data-ttu-id="ac1ea-506">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-506">Value</span></span>|
+|<span data-ttu-id="22bf4-505">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-505">Requirement</span></span>|<span data-ttu-id="22bf4-506">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-506">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-507">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-507">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-508">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-508">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-509">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-509">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-510">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-510">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-511">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-511">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-512">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-512">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-507">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-507">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-508">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-508">1.0</span></span>|
+|[<span data-ttu-id="22bf4-509">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-509">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-510">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-510">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-511">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-511">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-512">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-512">Compose or Read</span></span>|
 
 ---
 ---
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a><span data-ttu-id="ac1ea-513">開催者:[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[開催者](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-513">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a><span data-ttu-id="22bf4-513">開催者:[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[開催者](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="22bf4-513">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
 
-<span data-ttu-id="ac1ea-514">指定した会議の開催者の電子メールアドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-514">Gets the email address of the organizer for a specified meeting.</span></span>
+<span data-ttu-id="22bf4-514">指定した会議の開催者の電子メールアドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-514">Gets the email address of the organizer for a specified meeting.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-515">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-515">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-515">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-515">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-516">プロパティ`organizer`は、会議の開催者を表す[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-516">The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) object that represents the meeting organizer.</span></span>
+<span data-ttu-id="22bf4-516">プロパティ`organizer`は、会議の開催者を表す[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-516">The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) object that represents the meeting organizer.</span></span>
 
 ```javascript
 var organizerName = Office.context.mailbox.item.organizer.displayName;
@@ -722,9 +722,9 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-517">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-517">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-517">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-517">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-518">プロパティ`organizer`は、開催者の値を取得するためのメソッドを提供する[オーガナイザー](/javascript/api/outlook_1_7/office.organizer)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-518">The `organizer` property returns an [Organizer](/javascript/api/outlook_1_7/office.organizer) object that provides a method to get the organizer value.</span></span>
+<span data-ttu-id="22bf4-518">プロパティ`organizer`は、開催者の値を取得するためのメソッドを提供する[オーガナイザー](/javascript/api/outlook_1_7/office.organizer)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-518">The `organizer` property returns an [Organizer](/javascript/api/outlook_1_7/office.organizer) object that provides a method to get the organizer value.</span></span>
 
 ```javascript
 Office.context.mailbox.item.organizer.getAsync(
@@ -734,43 +734,43 @@ Office.context.mailbox.item.organizer.getAsync(
 );
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-519">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-519">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-519">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-519">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-520">[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [開催者](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-520">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
+*   <span data-ttu-id="22bf4-520">[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [開催者](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="22bf4-520">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-521">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-521">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-521">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-521">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-522">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-522">Requirement</span></span>|||
+|<span data-ttu-id="22bf4-522">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-522">Requirement</span></span>|||
 |---|---|---|
-|[<span data-ttu-id="ac1ea-523">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-523">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-524">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-524">1.0</span></span>|<span data-ttu-id="ac1ea-525">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-525">1.7</span></span>|
-|[<span data-ttu-id="ac1ea-526">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-526">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-527">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-527">ReadItem</span></span>|<span data-ttu-id="ac1ea-528">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-528">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-529">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-529">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-530">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-530">Read</span></span>|<span data-ttu-id="ac1ea-531">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-531">Compose</span></span>|
+|[<span data-ttu-id="22bf4-523">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-523">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-524">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-524">1.0</span></span>|<span data-ttu-id="22bf4-525">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-525">1.7</span></span>|
+|[<span data-ttu-id="22bf4-526">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-526">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-527">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-527">ReadItem</span></span>|<span data-ttu-id="22bf4-528">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-528">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-529">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-529">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-530">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-530">Read</span></span>|<span data-ttu-id="22bf4-531">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-531">Compose</span></span>|
 
 ---
 ---
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a><span data-ttu-id="ac1ea-532">(nullable) 定期的なスケジュール:[定期的](/javascript/api/outlook_1_7/office.recurrence)なアイテム</span><span class="sxs-lookup"><span data-stu-id="ac1ea-532">(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)</span></span>
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a><span data-ttu-id="22bf4-532">(nullable) 定期的なスケジュール:[定期的](/javascript/api/outlook_1_7/office.recurrence)なアイテム</span><span class="sxs-lookup"><span data-stu-id="22bf4-532">(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)</span></span>
 
-<span data-ttu-id="ac1ea-533">予定の定期的なパターンを取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-533">Gets or sets the recurrence pattern of an appointment.</span></span> <span data-ttu-id="ac1ea-534">会議出席依頼の定期的なパターンを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-534">Gets the recurrence pattern of a meeting request.</span></span> <span data-ttu-id="ac1ea-535">予定アイテムの読み取りおよび作成モード。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-535">Read and compose modes for appointment items.</span></span> <span data-ttu-id="ac1ea-536">会議出席依頼アイテムの閲覧モード。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-536">Read mode for meeting request items.</span></span>
+<span data-ttu-id="22bf4-533">予定の定期的なパターンを取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-533">Gets or sets the recurrence pattern of an appointment.</span></span> <span data-ttu-id="22bf4-534">会議出席依頼の定期的なパターンを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-534">Gets the recurrence pattern of a meeting request.</span></span> <span data-ttu-id="22bf4-535">予定アイテムの読み取りおよび作成モード。</span><span class="sxs-lookup"><span data-stu-id="22bf4-535">Read and compose modes for appointment items.</span></span> <span data-ttu-id="22bf4-536">会議出席依頼アイテムの閲覧モード。</span><span class="sxs-lookup"><span data-stu-id="22bf4-536">Read mode for meeting request items.</span></span>
 
-<span data-ttu-id="ac1ea-537">この`recurrence`プロパティは、アイテムが series または series 内のインスタンスの場合、定期的な予定または会議出席依頼に対して[定期的](/javascript/api/outlook_1_7/office.recurrence)なオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-537">The `recurrence` property returns a [recurrence](/javascript/api/outlook_1_7/office.recurrence) object for recurring appointments or meetings requests if an item is a series or an instance in a series.</span></span> <span data-ttu-id="ac1ea-538">`null`は、単一の予定および1つの予定の会議出席依頼に対して返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-538">`null` is returned for single appointments and meeting requests of single appointments.</span></span> <span data-ttu-id="ac1ea-539">`undefined`は、会議出席依頼ではないメッセージに対して返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-539">`undefined` is returned for messages that are not meeting requests.</span></span>
+<span data-ttu-id="22bf4-537">この`recurrence`プロパティは、アイテムが series または series 内のインスタンスの場合、定期的な予定または会議出席依頼に対して[定期的](/javascript/api/outlook_1_7/office.recurrence)なオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-537">The `recurrence` property returns a [recurrence](/javascript/api/outlook_1_7/office.recurrence) object for recurring appointments or meetings requests if an item is a series or an instance in a series.</span></span> <span data-ttu-id="22bf4-538">`null`は、単一の予定および1つの予定の会議出席依頼に対して返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-538">`null` is returned for single appointments and meeting requests of single appointments.</span></span> <span data-ttu-id="22bf4-539">`undefined`は、会議出席依頼ではないメッセージに対して返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-539">`undefined` is returned for messages that are not meeting requests.</span></span>
 
-> <span data-ttu-id="ac1ea-540">注: 会議出席依頼に`itemClass`は、IPM という値があります。出席依頼。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-540">Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.</span></span>
+> <span data-ttu-id="22bf4-540">注: 会議出席依頼に`itemClass`は、IPM という値があります。出席依頼。</span><span class="sxs-lookup"><span data-stu-id="22bf4-540">Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.</span></span>
 
-> <span data-ttu-id="ac1ea-541">注: 定期的なオブジェクトが`null`の場合は、そのオブジェクトが単一の予定または1つの予定の会議出席依頼であり、データ系列の一部ではないことを示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-541">Note: If the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.</span></span>
+> <span data-ttu-id="22bf4-541">注: 定期的なオブジェクトが`null`の場合は、そのオブジェクトが単一の予定または1つの予定の会議出席依頼であり、データ系列の一部ではないことを示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-541">Note: If the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-542">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-542">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-542">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-542">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-543">この`recurrence`プロパティは、定期的な予定を表す[定期的](/javascript/api/outlook_1_7/office.recurrence)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-543">The `recurrence` property returns a [Recurrence](/javascript/api/outlook_1_7/office.recurrence) object that represents the appointment recurrence.</span></span> <span data-ttu-id="ac1ea-544">これは、予定および会議出席依頼に対して使用できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-544">This is available for appointments and meeting requests.</span></span>
+<span data-ttu-id="22bf4-543">この`recurrence`プロパティは、定期的な予定を表す[定期的](/javascript/api/outlook_1_7/office.recurrence)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-543">The `recurrence` property returns a [Recurrence](/javascript/api/outlook_1_7/office.recurrence) object that represents the appointment recurrence.</span></span> <span data-ttu-id="22bf4-544">これは、予定および会議出席依頼に対して使用できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-544">This is available for appointments and meeting requests.</span></span>
 
 ```javascript
 var recurrence = Office.context.mailbox.item.recurrence;
 console.log("Recurrence: " + JSON.stringify(recurrence));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-545">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-545">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-545">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-545">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-546">この`recurrence`プロパティは、予定の繰り返しを管理するためのメソッドを提供する[定期的](/javascript/api/outlook_1_7/office.recurrence)なオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-546">The `recurrence` property returns a [Recurrence](/javascript/api/outlook_1_7/office.recurrence) object that provides methods to manage the appointment recurrence.</span></span> <span data-ttu-id="ac1ea-547">これは予定に対して使用できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-547">This is available for appointments.</span></span>
+<span data-ttu-id="22bf4-546">この`recurrence`プロパティは、予定の繰り返しを管理するためのメソッドを提供する[定期的](/javascript/api/outlook_1_7/office.recurrence)なオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-546">The `recurrence` property returns a [Recurrence](/javascript/api/outlook_1_7/office.recurrence) object that provides methods to manage the appointment recurrence.</span></span> <span data-ttu-id="22bf4-547">これは予定に対して使用できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-547">This is available for appointments.</span></span>
 
 ```javascript
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -797,35 +797,35 @@ Recurrence = {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-548">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-548">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-548">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-548">Type</span></span>
 
-* [<span data-ttu-id="ac1ea-549">Recurrence</span><span class="sxs-lookup"><span data-stu-id="ac1ea-549">Recurrence</span></span>](/javascript/api/outlook_1_7/office.recurrence)
+* [<span data-ttu-id="22bf4-549">Recurrence</span><span class="sxs-lookup"><span data-stu-id="22bf4-549">Recurrence</span></span>](/javascript/api/outlook_1_7/office.recurrence)
 
-|<span data-ttu-id="ac1ea-550">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-550">Requirement</span></span>|<span data-ttu-id="ac1ea-551">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-551">Value</span></span>|
+|<span data-ttu-id="22bf4-550">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-550">Requirement</span></span>|<span data-ttu-id="22bf4-551">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-551">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-552">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-552">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-553">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-553">1.7</span></span>|
-|[<span data-ttu-id="ac1ea-554">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-554">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-555">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-555">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-556">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-556">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-557">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-557">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-552">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-552">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-553">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-553">1.7</span></span>|
+|[<span data-ttu-id="22bf4-554">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-554">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-555">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-555">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-556">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-556">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-557">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-557">Compose or Read</span></span>|
 
 ---
 ---
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="ac1ea-558">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-558">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="22bf4-558">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-558">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="ac1ea-559">イベントの必須出席者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-559">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="ac1ea-560">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-560">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="22bf4-559">イベントの必須出席者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-559">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="22bf4-560">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-560">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-561">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-561">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-561">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-561">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-562">`requiredAttendees` プロパティは、会議への各必須出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-562">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
+<span data-ttu-id="22bf4-562">`requiredAttendees` プロパティは、会議への各必須出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-562">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
 
 ```javascript
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
 console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-563">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-563">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-563">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-563">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-564">`requiredAttendees` プロパティは会議への必須出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-564">The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.</span></span>
+<span data-ttu-id="22bf4-564">`requiredAttendees` プロパティは会議への必須出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-564">The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.</span></span>
 
 ```javascript
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -838,43 +838,43 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-565">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-565">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-565">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-565">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-566">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-566">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="22bf4-566">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-566">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-567">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-567">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-567">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-567">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-568">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-568">Requirement</span></span>|<span data-ttu-id="ac1ea-569">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-569">Value</span></span>|
+|<span data-ttu-id="22bf4-568">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-568">Requirement</span></span>|<span data-ttu-id="22bf4-569">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-569">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-570">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-570">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-571">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-571">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-572">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-572">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-573">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-573">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-574">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-574">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-575">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-575">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-570">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-570">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-571">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-571">1.0</span></span>|
+|[<span data-ttu-id="22bf4-572">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-572">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-573">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-573">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-574">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-574">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-575">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-575">Compose or Read</span></span>|
 
 ---
 ---
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a><span data-ttu-id="ac1ea-576">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-576">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span></span>
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a><span data-ttu-id="22bf4-576">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="22bf4-576">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span></span>
 
-<span data-ttu-id="ac1ea-p128">電子メール メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p128">Gets the email address of the sender of an email message. Read mode only.</span></span>
+<span data-ttu-id="22bf4-p128">電子メール メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p128">Gets the email address of the sender of an email message. Read mode only.</span></span>
 
-<span data-ttu-id="ac1ea-p129">メッセージが代理人から送信された場合を除き、[`from`](#from-emailaddressdetailsfrom) プロパティと `sender` プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p129">The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+<span data-ttu-id="22bf4-p129">メッセージが代理人から送信された場合を除き、[`from`](#from-emailaddressdetailsfrom) プロパティと `sender` プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p129">The [`from`](#from-emailaddressdetailsfrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-581">`sender` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-581">The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
+> <span data-ttu-id="22bf4-581">`sender` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-581">The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-582">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-582">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-582">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-582">Type</span></span>
 
-*   [<span data-ttu-id="ac1ea-583">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="ac1ea-583">EmailAddressDetails</span></span>](/javascript/api/outlook_1_7/office.emailaddressdetails)
+*   [<span data-ttu-id="22bf4-583">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="22bf4-583">EmailAddressDetails</span></span>](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-584">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-584">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-584">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-584">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-585">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-585">Requirement</span></span>|<span data-ttu-id="ac1ea-586">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-586">Value</span></span>|
+|<span data-ttu-id="22bf4-585">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-585">Requirement</span></span>|<span data-ttu-id="22bf4-586">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-586">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-587">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-587">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-588">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-588">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-589">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-589">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-590">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-590">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-591">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-591">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-592">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-592">Read</span></span>|
+|[<span data-ttu-id="22bf4-587">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-587">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-588">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-588">1.0</span></span>|
+|[<span data-ttu-id="22bf4-589">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-589">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-590">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-590">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-591">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-591">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-592">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-592">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-593">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-593">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-593">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-593">Example</span></span>
 
 ```javascript
 var senderName = Office.context.mailbox.item.sender.displayName;
@@ -885,30 +885,30 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ---
 ---
 
-#### <a name="nullable-seriesid-string"></a><span data-ttu-id="ac1ea-594">(nullable) 系列 id: String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-594">(nullable) seriesId :String</span></span>
+#### <a name="nullable-seriesid-string"></a><span data-ttu-id="22bf4-594">(nullable) 系列 id: String</span><span class="sxs-lookup"><span data-stu-id="22bf4-594">(nullable) seriesId :String</span></span>
 
-<span data-ttu-id="ac1ea-595">インスタンスが属する系列の id を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-595">Gets the id of the series that an instance belongs to.</span></span>
+<span data-ttu-id="22bf4-595">インスタンスが属する系列の id を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-595">Gets the id of the series that an instance belongs to.</span></span>
 
-<span data-ttu-id="ac1ea-596">OWA および Outlook で、は`seriesId` 、このアイテムが属する親 (シリーズ) アイテムの Exchange Web サービス (EWS) ID を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-596">In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to.</span></span> <span data-ttu-id="ac1ea-597">ただし、iOS と Android では、 `seriesId`は親アイテムの REST ID を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-597">However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.</span></span>
+<span data-ttu-id="22bf4-596">OWA および Outlook で、は`seriesId` 、このアイテムが属する親 (シリーズ) アイテムの Exchange Web サービス (EWS) ID を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-596">In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to.</span></span> <span data-ttu-id="22bf4-597">ただし、iOS と Android では、 `seriesId`は親アイテムの REST ID を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-597">However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-598">`seriesId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-598">The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="ac1ea-599">`seriesId`プロパティが outlook REST API で使用される outlook id と同じではありません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-599">The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API.</span></span> <span data-ttu-id="ac1ea-600">この値を使用して REST API を呼び出す前に、[Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) を使用して変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-600">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="ac1ea-601">詳細は、「[Outlook アドインからの Outlook REST API の使用](/outlook/add-ins/use-rest-api)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-601">For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api).</span></span>
+> <span data-ttu-id="22bf4-598">`seriesId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-598">The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="22bf4-599">`seriesId`プロパティが outlook REST API で使用される outlook id と同じではありません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-599">The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API.</span></span> <span data-ttu-id="22bf4-600">この値を使用して REST API を呼び出す前に、[Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) を使用して変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-600">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="22bf4-601">詳細は、「[Outlook アドインからの Outlook REST API の使用](/outlook/add-ins/use-rest-api)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="22bf4-601">For more details, see [Use the Outlook REST APIs from an Outlook add-in](/outlook/add-ins/use-rest-api).</span></span>
 
-<span data-ttu-id="ac1ea-602">この`seriesId`プロパティは`null` 、単一の予定、系列のアイテム、会議出席依頼などの親アイテムを持たないアイテムに`undefined`対して、会議出席依頼以外のアイテムに対して返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-602">The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.</span></span>
+<span data-ttu-id="22bf4-602">この`seriesId`プロパティは`null` 、単一の予定、系列のアイテム、会議出席依頼などの親アイテムを持たないアイテムに`undefined`対して、会議出席依頼以外のアイテムに対して返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-602">The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-603">Type</span><span class="sxs-lookup"><span data-stu-id="ac1ea-603">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-603">Type</span><span class="sxs-lookup"><span data-stu-id="22bf4-603">Type</span></span>
 
-* <span data-ttu-id="ac1ea-604">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-604">String</span></span>
+* <span data-ttu-id="22bf4-604">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-604">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-605">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-605">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-605">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-605">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-606">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-606">Requirement</span></span>|<span data-ttu-id="ac1ea-607">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-607">Value</span></span>|
+|<span data-ttu-id="22bf4-606">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-606">Requirement</span></span>|<span data-ttu-id="22bf4-607">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-607">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-608">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-608">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-609">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-609">1.7</span></span>|
-|[<span data-ttu-id="ac1ea-610">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-610">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-611">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-611">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-612">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-612">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-613">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-613">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-608">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-608">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-609">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-609">1.7</span></span>|
+|[<span data-ttu-id="22bf4-610">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-610">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-611">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-611">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-612">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-612">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-613">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-613">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-614">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-614">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-614">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-614">Example</span></span>
 
 ```javascript
 var seriesId = Office.context.mailbox.item.seriesId;
@@ -924,28 +924,28 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 ---
 ---
 
-####  <a name="start-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="ac1ea-615">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-615">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
+####  <a name="start-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="22bf4-615">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="22bf4-615">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-<span data-ttu-id="ac1ea-616">予定を開始する日時を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-616">Gets or sets the date and time that the appointment is to begin.</span></span>
+<span data-ttu-id="22bf4-616">予定を開始する日時を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-616">Gets or sets the date and time that the appointment is to begin.</span></span>
 
-<span data-ttu-id="ac1ea-p132">`start` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、値をクライアントのローカル日時に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p132">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the value to the client’s local date and time.</span></span>
+<span data-ttu-id="22bf4-p132">`start` プロパティは、世界協定時刻 (UTC) 形式の日時値として表されます。[`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) メソッドを使用して、値をクライアントのローカル日時に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p132">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-619">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-619">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-619">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-619">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-620">`start` プロパティは `Date` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-620">The `start` property returns a `Date` object.</span></span>
+<span data-ttu-id="22bf4-620">`start` プロパティは `Date` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-620">The `start` property returns a `Date` object.</span></span>
 
 ```javascript
 var start = Office.context.mailbox.item.start;
 console.log("Appointment start: " + JSON.stringify(start));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-621">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-621">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-621">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-621">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-622">`start` プロパティは `Time` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-622">The `start` property returns a `Time` object.</span></span>
+<span data-ttu-id="22bf4-622">`start` プロパティは `Time` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-622">The `start` property returns a `Time` object.</span></span>
 
-<span data-ttu-id="ac1ea-623">[`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して開始時刻を設定する場合、[`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-623">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="22bf4-623">[`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して開始時刻を設定する場合、[`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-623">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
 
-<span data-ttu-id="ac1ea-624">次の例では、`Time` オブジェクトの [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して、新規作成モードで予定の開始時刻を設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-624">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
+<span data-ttu-id="22bf4-624">次の例では、`Time` オブジェクトの [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) メソッドを使用して、新規作成モードで予定の開始時刻を設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-624">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
 ```javascript
 var startTime = new Date("3/14/2015");
@@ -963,41 +963,41 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-625">タイプ</span><span class="sxs-lookup"><span data-stu-id="ac1ea-625">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-625">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-625">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-626">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-626">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
+*   <span data-ttu-id="22bf4-626">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="22bf4-626">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-627">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-627">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-627">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-627">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-628">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-628">Requirement</span></span>|<span data-ttu-id="ac1ea-629">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-629">Value</span></span>|
+|<span data-ttu-id="22bf4-628">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-628">Requirement</span></span>|<span data-ttu-id="22bf4-629">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-629">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-630">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-630">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-631">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-631">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-632">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-632">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-633">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-633">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-634">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-634">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-635">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-635">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-630">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-630">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-631">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-631">1.0</span></span>|
+|[<span data-ttu-id="22bf4-632">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-632">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-633">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-633">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-634">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-634">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-635">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-635">Compose or Read</span></span>|
 
 ---
 ---
 
-####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a><span data-ttu-id="ac1ea-636">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-636">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
+####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a><span data-ttu-id="22bf4-636">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="22bf4-636">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
 
-<span data-ttu-id="ac1ea-637">アイテムの件名フィールドに示される説明を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-637">Gets or sets the description that appears in the subject field of an item.</span></span>
+<span data-ttu-id="22bf4-637">アイテムの件名フィールドに示される説明を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-637">Gets or sets the description that appears in the subject field of an item.</span></span>
 
-<span data-ttu-id="ac1ea-638">`subject` プロパティは、電子メール サーバーによって送信されたアイテムの件名全体を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-638">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
+<span data-ttu-id="22bf4-638">`subject` プロパティは、電子メール サーバーによって送信されたアイテムの件名全体を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-638">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-639">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-639">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-639">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-639">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-p133">`subject` プロパティは文字列を返します。[`normalizedSubject`](#normalizedsubject-string) プロパティを使用して、`RE:` や `FW:` のような先頭部分のすべてのプレフィックスを除去した件名を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p133">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
+<span data-ttu-id="22bf4-p133">`subject` プロパティは文字列を返します。[`normalizedSubject`](#normalizedsubject-string) プロパティを使用して、`RE:` や `FW:` のような先頭部分のすべてのプレフィックスを除去した件名を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p133">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
 
-<span data-ttu-id="ac1ea-642">次の JavaScript のコード例は、Outlook の現在のアイテムの `subject` プロパティにアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-642">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
+<span data-ttu-id="22bf4-642">次の JavaScript のコード例は、Outlook の現在のアイテムの `subject` プロパティにアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-642">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
 
 ```javascript
 var subject = Office.context.mailbox.item.subject;
 console.log(subject);
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-643">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-643">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-643">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-643">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-644">`subject` プロパティは件名を取得および設定するためのメソッドを提供する `Subject` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-644">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
+<span data-ttu-id="22bf4-644">`subject` プロパティは件名を取得および設定するためのメソッドを提供する `Subject` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-644">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
 
 ```javascript
 Office.context.mailbox.item.subject.getAsync(callback);
@@ -1008,36 +1008,36 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-645">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-645">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-645">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-645">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-646">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-646">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
+*   <span data-ttu-id="22bf4-646">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="22bf4-646">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-647">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-647">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-647">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-647">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-648">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-648">Requirement</span></span>|<span data-ttu-id="ac1ea-649">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-649">Value</span></span>|
+|<span data-ttu-id="22bf4-648">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-648">Requirement</span></span>|<span data-ttu-id="22bf4-649">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-649">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-650">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-650">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-651">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-651">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-652">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-652">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-653">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-653">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-654">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-654">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-655">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-655">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-650">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-650">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-651">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-651">1.0</span></span>|
+|[<span data-ttu-id="22bf4-652">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-652">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-653">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-653">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-654">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-654">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-655">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-655">Compose or Read</span></span>|
 
 ---
 ---
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="ac1ea-656">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-656">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="22bf4-656">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-656">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="ac1ea-657">メッセージの **To** 行にある受信者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-657">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="ac1ea-658">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-658">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="22bf4-657">メッセージの **To** 行にある受信者へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-657">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="22bf4-658">オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-658">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="ac1ea-659">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-659">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="22bf4-659">閲覧モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-659">Read mode</span></span>
 
-<span data-ttu-id="ac1ea-p135">`to` プロパティは、メッセージの **To** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p135">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+<span data-ttu-id="22bf4-p135">`to` プロパティは、メッセージの **To** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p135">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
 ```javascript
 console.log(JSON.stringify(Office.context.mailbox.item.to));
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="ac1ea-662">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-662">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="22bf4-662">新規作成モード</span><span class="sxs-lookup"><span data-stu-id="22bf4-662">Compose mode</span></span>
 
-<span data-ttu-id="ac1ea-663">`to` プロパティは、メッセージの **To** 行の受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-663">The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.</span></span>
+<span data-ttu-id="22bf4-663">`to` プロパティは、メッセージの **To** 行の受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-663">The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.</span></span>
 
 ```javascript
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1049,55 +1049,55 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="ac1ea-664">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-664">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="22bf4-664">型</span><span class="sxs-lookup"><span data-stu-id="22bf4-664">Type</span></span>
 
-*   <span data-ttu-id="ac1ea-665">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-665">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="22bf4-665">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="22bf4-665">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-666">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-666">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-666">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-666">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-667">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-667">Requirement</span></span>|<span data-ttu-id="ac1ea-668">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-668">Value</span></span>|
+|<span data-ttu-id="22bf4-667">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-667">Requirement</span></span>|<span data-ttu-id="22bf4-668">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-668">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-669">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-669">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-670">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-670">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-671">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-671">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-672">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-672">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-673">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-673">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-674">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-674">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-669">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-669">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-670">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-670">1.0</span></span>|
+|[<span data-ttu-id="22bf4-671">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-671">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-672">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-672">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-673">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-673">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-674">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-674">Compose or Read</span></span>|
 
-### <a name="methods"></a><span data-ttu-id="ac1ea-675">メソッド</span><span class="sxs-lookup"><span data-stu-id="ac1ea-675">Methods</span></span>
+### <a name="methods"></a><span data-ttu-id="22bf4-675">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bf4-675">Methods</span></span>
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="ac1ea-676">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-676">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="22bf4-676">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-676">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
 
-<span data-ttu-id="ac1ea-677">ファイルを添付ファイルとしてメッセージまたは予定に追加します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-677">Adds a file to a message or appointment as an attachment.</span></span>
+<span data-ttu-id="22bf4-677">ファイルを添付ファイルとしてメッセージまたは予定に追加します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-677">Adds a file to a message or appointment as an attachment.</span></span>
 
-<span data-ttu-id="ac1ea-678">`addFileAttachmentAsync` メソッドは、指定した URI にあるファイルをアップロードし、新規作成フォーム内のアイテムに添付します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-678">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
+<span data-ttu-id="22bf4-678">`addFileAttachmentAsync` メソッドは、指定した URI にあるファイルをアップロードし、新規作成フォーム内のアイテムに添付します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-678">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
 
-<span data-ttu-id="ac1ea-679">その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-679">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+<span data-ttu-id="22bf4-679">その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-679">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-680">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-680">Parameters</span></span>
-|<span data-ttu-id="ac1ea-681">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-681">Name</span></span>|<span data-ttu-id="ac1ea-682">種類</span><span class="sxs-lookup"><span data-stu-id="ac1ea-682">Type</span></span>|<span data-ttu-id="ac1ea-683">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-683">Attributes</span></span>|<span data-ttu-id="ac1ea-684">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-684">Description</span></span>|
+##### <a name="parameters"></a><span data-ttu-id="22bf4-680">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-680">Parameters</span></span>
+|<span data-ttu-id="22bf4-681">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-681">Name</span></span>|<span data-ttu-id="22bf4-682">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-682">Type</span></span>|<span data-ttu-id="22bf4-683">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-683">Attributes</span></span>|<span data-ttu-id="22bf4-684">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-684">Description</span></span>|
 |---|---|---|---|
-|`uri`|<span data-ttu-id="ac1ea-685">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-685">String</span></span>||<span data-ttu-id="ac1ea-p136">メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p136">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
-|`attachmentName`|<span data-ttu-id="ac1ea-688">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-688">String</span></span>||<span data-ttu-id="ac1ea-p137">添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p137">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
-|`options`|<span data-ttu-id="ac1ea-691">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-691">Object</span></span>|<span data-ttu-id="ac1ea-692">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-692">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-693">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-693">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-694">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-694">Object</span></span>|<span data-ttu-id="ac1ea-695">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-695">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-696">開発者は、コールバック メソッドでアクセスする任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-696">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`options.isInline`|<span data-ttu-id="ac1ea-697">Boolean</span><span class="sxs-lookup"><span data-stu-id="ac1ea-697">Boolean</span></span>|<span data-ttu-id="ac1ea-698">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-698">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-699">`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-699">If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-700">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-700">function</span></span>|<span data-ttu-id="ac1ea-701">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-701">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-702">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-702">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="ac1ea-703">成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-703">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="ac1ea-704">添付ファイルのアップロードに失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-704">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+|`uri`|<span data-ttu-id="22bf4-685">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-685">String</span></span>||<span data-ttu-id="22bf4-p136">メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p136">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
+|`attachmentName`|<span data-ttu-id="22bf4-688">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-688">String</span></span>||<span data-ttu-id="22bf4-p137">添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p137">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
+|`options`|<span data-ttu-id="22bf4-691">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-691">Object</span></span>|<span data-ttu-id="22bf4-692">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-692">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-693">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-693">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-694">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-694">Object</span></span>|<span data-ttu-id="22bf4-695">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-695">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-696">開発者は、コールバック メソッドでアクセスする任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-696">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`options.isInline`|<span data-ttu-id="22bf4-697">Boolean</span><span class="sxs-lookup"><span data-stu-id="22bf4-697">Boolean</span></span>|<span data-ttu-id="22bf4-698">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-698">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-699">`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-699">If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-700">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-700">function</span></span>|<span data-ttu-id="22bf4-701">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-701">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-702">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-702">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="22bf4-703">成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-703">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="22bf4-704">添付ファイルのアップロードに失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-704">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="ac1ea-705">エラー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-705">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="22bf4-705">エラー</span><span class="sxs-lookup"><span data-stu-id="22bf4-705">Errors</span></span>
 
-|<span data-ttu-id="ac1ea-706">エラー コード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-706">Error code</span></span>|<span data-ttu-id="ac1ea-707">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-707">Description</span></span>|
+|<span data-ttu-id="22bf4-706">エラー コード</span><span class="sxs-lookup"><span data-stu-id="22bf4-706">Error code</span></span>|<span data-ttu-id="22bf4-707">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-707">Description</span></span>|
 |------------|-------------|
-|`AttachmentSizeExceeded`|<span data-ttu-id="ac1ea-708">添付ファイルのサイズが上限を超えています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-708">The attachment is larger than allowed.</span></span>|
-|`FileTypeNotSupported`|<span data-ttu-id="ac1ea-709">許可されていない拡張子の添付ファイルです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-709">The attachment has an extension that is not allowed.</span></span>|
-|`NumberOfAttachmentsExceeded`|<span data-ttu-id="ac1ea-710">メッセージまたは予定の添付ファイルが多すぎます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-710">The message or appointment has too many attachments.</span></span>|
+|`AttachmentSizeExceeded`|<span data-ttu-id="22bf4-708">添付ファイルのサイズが上限を超えています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-708">The attachment is larger than allowed.</span></span>|
+|`FileTypeNotSupported`|<span data-ttu-id="22bf4-709">許可されていない拡張子の添付ファイルです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-709">The attachment has an extension that is not allowed.</span></span>|
+|`NumberOfAttachmentsExceeded`|<span data-ttu-id="22bf4-710">メッセージまたは予定の添付ファイルが多すぎます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-710">The message or appointment has too many attachments.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-711">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-711">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-711">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-711">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-712">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-712">Requirement</span></span>|<span data-ttu-id="ac1ea-713">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-713">Value</span></span>|
+|<span data-ttu-id="22bf4-712">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-712">Requirement</span></span>|<span data-ttu-id="22bf4-713">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-713">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-714">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-714">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-715">1.1</span><span class="sxs-lookup"><span data-stu-id="ac1ea-715">1.1</span></span>|
-|[<span data-ttu-id="ac1ea-716">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-716">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-717">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-717">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-718">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-718">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-719">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-719">Compose</span></span>|
+|[<span data-ttu-id="22bf4-714">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-714">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-715">1.1</span><span class="sxs-lookup"><span data-stu-id="22bf4-715">1.1</span></span>|
+|[<span data-ttu-id="22bf4-716">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-716">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-717">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-717">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-718">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-718">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-719">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-719">Compose</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="ac1ea-720">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-720">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="22bf4-720">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-720">Examples</span></span>
 
 ```javascript
 function callback(result) {
@@ -1117,7 +1117,7 @@ function addAttachment() {
 }
 ```
 
-<span data-ttu-id="ac1ea-721">次の例では、インライン添付ファイルとしてイメージ ファイルを追加し、メッセージの本文の添付ファイルを参照します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-721">The following example adds an image file as an inline attachment and references the attachment in the message body.</span></span>
+<span data-ttu-id="22bf4-721">次の例では、インライン添付ファイルとしてイメージ ファイルを追加し、メッセージの本文の添付ファイルを参照します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-721">The following example adds an image file as an inline attachment and references the attachment in the message body.</span></span>
 
 ```javascript
 Office.context.mailbox.item.addFileAttachmentAsync(
@@ -1141,31 +1141,31 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 ---
 ---
 
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a><span data-ttu-id="ac1ea-722">addHandlerAsync(eventType, handler, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-722">addHandlerAsync(eventType, handler, [options], [callback])</span></span>
+####  <a name="addhandlerasynceventtype-handler-options-callback"></a><span data-ttu-id="22bf4-722">addHandlerAsync(eventType, handler, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-722">addHandlerAsync(eventType, handler, [options], [callback])</span></span>
 
-<span data-ttu-id="ac1ea-723">サポートされているイベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-723">Adds an event handler for a supported event.</span></span>
+<span data-ttu-id="22bf4-723">サポートされているイベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-723">Adds an event handler for a supported event.</span></span>
 
-<span data-ttu-id="ac1ea-724">現在、サポートされて`Office.EventType.AppointmentTimeChanged`いる`Office.EventType.RecipientsChanged`イベントの種類は、、、です。`Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="ac1ea-724">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
+<span data-ttu-id="22bf4-724">現在、サポートされて`Office.EventType.AppointmentTimeChanged`いる`Office.EventType.RecipientsChanged`イベントの種類は、、、です。`Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="22bf4-724">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-725">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-725">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-725">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-725">Parameters</span></span>
 
-| <span data-ttu-id="ac1ea-726">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-726">Name</span></span> | <span data-ttu-id="ac1ea-727">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-727">Type</span></span> | <span data-ttu-id="ac1ea-728">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-728">Attributes</span></span> | <span data-ttu-id="ac1ea-729">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-729">Description</span></span> |
+| <span data-ttu-id="22bf4-726">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-726">Name</span></span> | <span data-ttu-id="22bf4-727">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-727">Type</span></span> | <span data-ttu-id="22bf4-728">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-728">Attributes</span></span> | <span data-ttu-id="22bf4-729">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-729">Description</span></span> |
 |---|---|---|---|
-| `eventType` | [<span data-ttu-id="ac1ea-730">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-730">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="ac1ea-731">ハンドラーを呼び出す必要のあるイベント。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-731">The event that should invoke the handler.</span></span> |
-| `handler` | <span data-ttu-id="ac1ea-732">関数</span><span class="sxs-lookup"><span data-stu-id="ac1ea-732">Function</span></span> || <span data-ttu-id="ac1ea-p138">イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p138">The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`.</span></span> |
-| `options` | <span data-ttu-id="ac1ea-736">Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-736">Object</span></span> | <span data-ttu-id="ac1ea-737">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-737">&lt;optional&gt;</span></span> | <span data-ttu-id="ac1ea-738">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-738">An object literal that contains one or more of the following properties.</span></span> |
-| `options.asyncContext` | <span data-ttu-id="ac1ea-739">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-739">Object</span></span> | <span data-ttu-id="ac1ea-740">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-740">&lt;optional&gt;</span></span> | <span data-ttu-id="ac1ea-741">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-741">Developers can provide any object they wish to access in the callback method.</span></span> |
-| `callback` | <span data-ttu-id="ac1ea-742">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-742">function</span></span>| <span data-ttu-id="ac1ea-743">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-743">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-744">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-744">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+| `eventType` | [<span data-ttu-id="22bf4-730">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="22bf4-730">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="22bf4-731">ハンドラーを呼び出す必要のあるイベント。</span><span class="sxs-lookup"><span data-stu-id="22bf4-731">The event that should invoke the handler.</span></span> |
+| `handler` | <span data-ttu-id="22bf4-732">関数</span><span class="sxs-lookup"><span data-stu-id="22bf4-732">Function</span></span> || <span data-ttu-id="22bf4-p138">イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p138">The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`.</span></span> |
+| `options` | <span data-ttu-id="22bf4-736">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-736">Object</span></span> | <span data-ttu-id="22bf4-737">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-737">&lt;optional&gt;</span></span> | <span data-ttu-id="22bf4-738">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-738">An object literal that contains one or more of the following properties.</span></span> |
+| `options.asyncContext` | <span data-ttu-id="22bf4-739">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-739">Object</span></span> | <span data-ttu-id="22bf4-740">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-740">&lt;optional&gt;</span></span> | <span data-ttu-id="22bf4-741">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-741">Developers can provide any object they wish to access in the callback method.</span></span> |
+| `callback` | <span data-ttu-id="22bf4-742">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-742">function</span></span>| <span data-ttu-id="22bf4-743">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-743">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-744">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-744">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-745">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-745">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-745">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-745">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-746">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-746">Requirement</span></span>| <span data-ttu-id="ac1ea-747">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-747">Value</span></span>|
+|<span data-ttu-id="22bf4-746">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-746">Requirement</span></span>| <span data-ttu-id="22bf4-747">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-747">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-748">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-748">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="ac1ea-749">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-749">1.7</span></span> |
-|[<span data-ttu-id="ac1ea-750">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-750">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="ac1ea-751">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-751">ReadItem</span></span> |
-|[<span data-ttu-id="ac1ea-752">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-752">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="ac1ea-753">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-753">Compose or Read</span></span> |
+|[<span data-ttu-id="22bf4-748">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-748">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="22bf4-749">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-749">1.7</span></span> |
+|[<span data-ttu-id="22bf4-750">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-750">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="22bf4-751">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-751">ReadItem</span></span> |
+|[<span data-ttu-id="22bf4-752">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-752">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="22bf4-753">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-753">Compose or Read</span></span> |
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-754">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-754">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-754">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-754">Example</span></span>
 
 ```javascript
 function myHandlerFunction(eventarg) {
@@ -1182,43 +1182,43 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 ---
 ---
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="ac1ea-755">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-755">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="22bf4-755">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-755">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
 
-<span data-ttu-id="ac1ea-756">メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-756">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
+<span data-ttu-id="22bf4-756">メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-756">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
 
-<span data-ttu-id="ac1ea-p139">`addItemAttachmentAsync` メソッドは、指定した Exchange 識別子を持つアイテムを新規作成フォーム内のアイテムに添付します。コールバック メソッドを指定する場合、`asyncResult` という 1 つのパラメーターがあるメソッドが呼び出されます。このパラメーターには、添付ファイルの識別子、またはアイテムの添付中に発生したエラーを示すコードが含まれます。必要に応じて、`options` パラメーターを使用して、状態情報をコールバック メソッドに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p139">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
+<span data-ttu-id="22bf4-p139">`addItemAttachmentAsync` メソッドは、指定した Exchange 識別子を持つアイテムを新規作成フォーム内のアイテムに添付します。コールバック メソッドを指定する場合、`asyncResult` という 1 つのパラメーターがあるメソッドが呼び出されます。このパラメーターには、添付ファイルの識別子、またはアイテムの添付中に発生したエラーを示すコードが含まれます。必要に応じて、`options` パラメーターを使用して、状態情報をコールバック メソッドに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p139">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
 
-<span data-ttu-id="ac1ea-760">その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-760">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+<span data-ttu-id="22bf4-760">その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-760">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
 
-<span data-ttu-id="ac1ea-761">Office アドインを Outlook Web App で実行している場合、`addItemAttachmentAsync` メソッドはアイテムを、編集中のアイテム以外のアイテムに添付できますが、これはサポートされておらず、お勧めできません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-761">If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
+<span data-ttu-id="22bf4-761">Office アドインを Outlook Web App で実行している場合、`addItemAttachmentAsync` メソッドはアイテムを、編集中のアイテム以外のアイテムに添付できますが、これはサポートされておらず、お勧めできません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-761">If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-762">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-762">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-762">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-762">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-763">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-763">Name</span></span>|<span data-ttu-id="ac1ea-764">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-764">Type</span></span>|<span data-ttu-id="ac1ea-765">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-765">Attributes</span></span>|<span data-ttu-id="ac1ea-766">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-766">Description</span></span>|
+|<span data-ttu-id="22bf4-763">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-763">Name</span></span>|<span data-ttu-id="22bf4-764">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-764">Type</span></span>|<span data-ttu-id="22bf4-765">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-765">Attributes</span></span>|<span data-ttu-id="22bf4-766">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-766">Description</span></span>|
 |---|---|---|---|
-|`itemId`|<span data-ttu-id="ac1ea-767">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-767">String</span></span>||<span data-ttu-id="ac1ea-p140">添付するアイテムの Exchange 識別子。最大長は 100 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p140">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
-|`attachmentName`|<span data-ttu-id="ac1ea-770">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-770">String</span></span>||<span data-ttu-id="ac1ea-771">添付するアイテムの件名。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-771">The subject of the item to be attached.</span></span> <span data-ttu-id="ac1ea-772">最大の長さは、255 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-772">The maximum length is 255 characters.</span></span>|
-|`options`|<span data-ttu-id="ac1ea-773">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-773">Object</span></span>|<span data-ttu-id="ac1ea-774">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-774">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-775">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-775">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-776">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-776">Object</span></span>|<span data-ttu-id="ac1ea-777">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-777">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-778">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-778">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-779">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-779">function</span></span>|<span data-ttu-id="ac1ea-780">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-780">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-781">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-781">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="ac1ea-782">成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-782">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="ac1ea-783">添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-783">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+|`itemId`|<span data-ttu-id="22bf4-767">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-767">String</span></span>||<span data-ttu-id="22bf4-p140">添付するアイテムの Exchange 識別子。最大長は 100 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p140">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
+|`attachmentName`|<span data-ttu-id="22bf4-770">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-770">String</span></span>||<span data-ttu-id="22bf4-771">添付するアイテムの件名。</span><span class="sxs-lookup"><span data-stu-id="22bf4-771">The subject of the item to be attached.</span></span> <span data-ttu-id="22bf4-772">最大の長さは、255 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-772">The maximum length is 255 characters.</span></span>|
+|`options`|<span data-ttu-id="22bf4-773">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-773">Object</span></span>|<span data-ttu-id="22bf4-774">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-774">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-775">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-775">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-776">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-776">Object</span></span>|<span data-ttu-id="22bf4-777">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-777">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-778">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-778">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-779">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-779">function</span></span>|<span data-ttu-id="22bf4-780">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-780">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-781">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-781">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="22bf4-782">成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-782">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="22bf4-783">添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-783">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="ac1ea-784">エラー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-784">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="22bf4-784">エラー</span><span class="sxs-lookup"><span data-stu-id="22bf4-784">Errors</span></span>
 
-|<span data-ttu-id="ac1ea-785">エラー コード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-785">Error code</span></span>|<span data-ttu-id="ac1ea-786">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-786">Description</span></span>|
+|<span data-ttu-id="22bf4-785">エラー コード</span><span class="sxs-lookup"><span data-stu-id="22bf4-785">Error code</span></span>|<span data-ttu-id="22bf4-786">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-786">Description</span></span>|
 |------------|-------------|
-|`NumberOfAttachmentsExceeded`|<span data-ttu-id="ac1ea-787">メッセージまたは予定の添付ファイルが多すぎます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-787">The message or appointment has too many attachments.</span></span>|
+|`NumberOfAttachmentsExceeded`|<span data-ttu-id="22bf4-787">メッセージまたは予定の添付ファイルが多すぎます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-787">The message or appointment has too many attachments.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-788">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-788">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-788">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-788">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-789">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-789">Requirement</span></span>|<span data-ttu-id="ac1ea-790">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-790">Value</span></span>|
+|<span data-ttu-id="22bf4-789">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-789">Requirement</span></span>|<span data-ttu-id="22bf4-790">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-790">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-791">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-791">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-792">1.1</span><span class="sxs-lookup"><span data-stu-id="ac1ea-792">1.1</span></span>|
-|[<span data-ttu-id="ac1ea-793">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-793">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-794">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-794">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-795">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-795">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-796">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-796">Compose</span></span>|
+|[<span data-ttu-id="22bf4-791">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-791">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-792">1.1</span><span class="sxs-lookup"><span data-stu-id="22bf4-792">1.1</span></span>|
+|[<span data-ttu-id="22bf4-793">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-793">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-794">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-794">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-795">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-795">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-796">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-796">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-797">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-797">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-797">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-797">Example</span></span>
 
-<span data-ttu-id="ac1ea-798">次の例では、既存の Outlook アイテムが名前 `My Attachment` の添付ファイルとして追加されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-798">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
+<span data-ttu-id="22bf4-798">次の例では、既存の Outlook アイテムが名前 `My Attachment` の添付ファイルとして追加されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-798">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
 
 ```javascript
 function callback(result) {
@@ -1243,79 +1243,79 @@ function addAttachment() {
 ---
 ---
 
-####  <a name="close"></a><span data-ttu-id="ac1ea-799">close()</span><span class="sxs-lookup"><span data-stu-id="ac1ea-799">close()</span></span>
+####  <a name="close"></a><span data-ttu-id="22bf4-799">close()</span><span class="sxs-lookup"><span data-stu-id="22bf4-799">close()</span></span>
 
-<span data-ttu-id="ac1ea-800">作成中の現在の項目を閉じます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-800">Closes the current item that is being composed.</span></span>
+<span data-ttu-id="22bf4-800">作成中の現在の項目を閉じます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-800">Closes the current item that is being composed.</span></span>
 
-<span data-ttu-id="ac1ea-p142">`close` メソッドの動作は、作成中のアイテムの現在の状態によって異なります。アイテムに未保存の変更がある場合は、クライアントはユーザーに対して閉じる操作を保存、破棄、またはキャンセルするように求めるプロンプトを表示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p142">The behavior of the `close` method depends on the current state of the item being composed. If the item has unsaved changes, the client prompts the user to save, discard, or cancel the close action.</span></span>
+<span data-ttu-id="22bf4-p142">`close` メソッドの動作は、作成中のアイテムの現在の状態によって異なります。アイテムに未保存の変更がある場合は、クライアントはユーザーに対して閉じる操作を保存、破棄、またはキャンセルするように求めるプロンプトを表示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p142">The behavior of the `close` method depends on the current state of the item being composed. If the item has unsaved changes, the client prompts the user to save, discard, or cancel the close action.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-803">Outlook on the web で、予定のアイテムが `saveAsync` を利用して以前に保存されている場合、アイテムが最後に保存された後に変更が行われていなくても、保存、破棄、キャンセルのいずれかを行うようダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-803">In Outlook on the web, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.</span></span>
+> <span data-ttu-id="22bf4-803">Outlook on the web で、予定のアイテムが `saveAsync` を利用して以前に保存されている場合、アイテムが最後に保存された後に変更が行われていなくても、保存、破棄、キャンセルのいずれかを行うようダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-803">In Outlook on the web, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.</span></span>
 
-<span data-ttu-id="ac1ea-804">Outlook デスクトップ クライアントでは、メッセージがインライン返信の場合、`close` メソッドは無効になります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-804">In the Outlook desktop client, if the message is an inline reply, the `close` method has no effect.</span></span>
+<span data-ttu-id="22bf4-804">Outlook デスクトップ クライアントでは、メッセージがインライン返信の場合、`close` メソッドは無効になります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-804">In the Outlook desktop client, if the message is an inline reply, the `close` method has no effect.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-805">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-805">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-805">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-805">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-806">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-806">Requirement</span></span>|<span data-ttu-id="ac1ea-807">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-807">Value</span></span>|
+|<span data-ttu-id="22bf4-806">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-806">Requirement</span></span>|<span data-ttu-id="22bf4-807">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-807">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-808">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-808">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-809">1.3</span><span class="sxs-lookup"><span data-stu-id="ac1ea-809">1.3</span></span>|
-|[<span data-ttu-id="ac1ea-810">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-810">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-811">制限あり</span><span class="sxs-lookup"><span data-stu-id="ac1ea-811">Restricted</span></span>|
-|[<span data-ttu-id="ac1ea-812">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-812">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-813">新規作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-813">Compose</span></span>|
+|[<span data-ttu-id="22bf4-808">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-808">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-809">1.3</span><span class="sxs-lookup"><span data-stu-id="22bf4-809">1.3</span></span>|
+|[<span data-ttu-id="22bf4-810">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-810">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-811">制限あり</span><span class="sxs-lookup"><span data-stu-id="22bf4-811">Restricted</span></span>|
+|[<span data-ttu-id="22bf4-812">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-812">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-813">新規作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-813">Compose</span></span>|
 
 ---
 ---
 
-#### <a name="displayreplyallformformdata-callback"></a><span data-ttu-id="ac1ea-814">displayReplyAllForm(formData, [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-814">displayReplyAllForm(formData, [callback])</span></span>
+#### <a name="displayreplyallformformdata-callback"></a><span data-ttu-id="22bf4-814">displayReplyAllForm(formData, [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-814">displayReplyAllForm(formData, [callback])</span></span>
 
-<span data-ttu-id="ac1ea-815">選択したメッセージの送信者とすべての受信者、または選択した予定の開催者とすべての参加者を示した回答フォームが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-815">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
+<span data-ttu-id="22bf4-815">選択したメッセージの送信者とすべての受信者、または選択した予定の開催者とすべての参加者を示した回答フォームが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-815">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-816">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-816">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-816">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-816">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-817">Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-817">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="22bf4-817">Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-817">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="ac1ea-818">文字列パラメーターのいずれかが制限値を超えると、`displayReplyAllForm` は例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-818">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
+<span data-ttu-id="22bf4-818">文字列パラメーターのいずれかが制限値を超えると、`displayReplyAllForm` は例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-818">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
 
-<span data-ttu-id="ac1ea-p143">`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p143">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="22bf4-p143">`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p143">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-822">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-822">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-822">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-822">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-823">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-823">Name</span></span>|<span data-ttu-id="ac1ea-824">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-824">Type</span></span>|<span data-ttu-id="ac1ea-825">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-825">Attributes</span></span>|<span data-ttu-id="ac1ea-826">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-826">Description</span></span>|
+|<span data-ttu-id="22bf4-823">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-823">Name</span></span>|<span data-ttu-id="22bf4-824">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-824">Type</span></span>|<span data-ttu-id="22bf4-825">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-825">Attributes</span></span>|<span data-ttu-id="22bf4-826">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-826">Description</span></span>|
 |---|---|---|---|
-|`formData`|<span data-ttu-id="ac1ea-827">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-827">String &#124; Object</span></span>||<span data-ttu-id="ac1ea-p144">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p144">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="ac1ea-830">**または**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-830">**OR**</span></span><br/><span data-ttu-id="ac1ea-p145">本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p145">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
-|`formData.htmlBody`|<span data-ttu-id="ac1ea-833">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-833">String</span></span>|<span data-ttu-id="ac1ea-834">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-834">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-p146">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p146">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-|`formData.attachments`|<span data-ttu-id="ac1ea-837">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-837">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="ac1ea-838">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-838">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-839">ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-839">An array of JSON objects that are either file or item attachments.</span></span>|
-|`formData.attachments.type`|<span data-ttu-id="ac1ea-840">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-840">String</span></span>||<span data-ttu-id="ac1ea-p147">添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p147">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
-|`formData.attachments.name`|<span data-ttu-id="ac1ea-843">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-843">String</span></span>||<span data-ttu-id="ac1ea-844">添付ファイル名を含む文字列。最大の長さは 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-844">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-|`formData.attachments.url`|<span data-ttu-id="ac1ea-845">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-845">String</span></span>||<span data-ttu-id="ac1ea-p148">`type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p148">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
-|`formData.attachments.isInline`|<span data-ttu-id="ac1ea-848">ブール値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-848">Boolean</span></span>||<span data-ttu-id="ac1ea-p149">`type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p149">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`formData.attachments.itemId`|<span data-ttu-id="ac1ea-851">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-851">String</span></span>||<span data-ttu-id="ac1ea-p150">`type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p150">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-855">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-855">function</span></span>|<span data-ttu-id="ac1ea-856">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-856">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-857">メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-857">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`formData`|<span data-ttu-id="22bf4-827">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-827">String &#124; Object</span></span>||<span data-ttu-id="22bf4-p144">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p144">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="22bf4-830">**または**</span><span class="sxs-lookup"><span data-stu-id="22bf4-830">**OR**</span></span><br/><span data-ttu-id="22bf4-p145">本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p145">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
+|`formData.htmlBody`|<span data-ttu-id="22bf4-833">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-833">String</span></span>|<span data-ttu-id="22bf4-834">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-834">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-p146">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p146">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+|`formData.attachments`|<span data-ttu-id="22bf4-837">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-837">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="22bf4-838">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-838">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-839">ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。</span><span class="sxs-lookup"><span data-stu-id="22bf4-839">An array of JSON objects that are either file or item attachments.</span></span>|
+|`formData.attachments.type`|<span data-ttu-id="22bf4-840">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-840">String</span></span>||<span data-ttu-id="22bf4-p147">添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p147">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
+|`formData.attachments.name`|<span data-ttu-id="22bf4-843">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-843">String</span></span>||<span data-ttu-id="22bf4-844">添付ファイル名を含む文字列。最大の長さは 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-844">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+|`formData.attachments.url`|<span data-ttu-id="22bf4-845">文字列</span><span class="sxs-lookup"><span data-stu-id="22bf4-845">String</span></span>||<span data-ttu-id="22bf4-p148">`type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p148">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
+|`formData.attachments.isInline`|<span data-ttu-id="22bf4-848">ブール値</span><span class="sxs-lookup"><span data-stu-id="22bf4-848">Boolean</span></span>||<span data-ttu-id="22bf4-p149">`type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p149">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`formData.attachments.itemId`|<span data-ttu-id="22bf4-851">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-851">String</span></span>||<span data-ttu-id="22bf4-p150">`type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p150">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-855">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-855">function</span></span>|<span data-ttu-id="22bf4-856">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-856">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-857">メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-857">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-858">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-858">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-858">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-858">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-859">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-859">Requirement</span></span>|<span data-ttu-id="ac1ea-860">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-860">Value</span></span>|
+|<span data-ttu-id="22bf4-859">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-859">Requirement</span></span>|<span data-ttu-id="22bf4-860">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-860">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-861">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-861">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-862">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-862">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-863">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-863">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-864">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-864">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-865">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-865">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-866">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-866">Read</span></span>|
+|[<span data-ttu-id="22bf4-861">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-861">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-862">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-862">1.0</span></span>|
+|[<span data-ttu-id="22bf4-863">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-863">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-864">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-864">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-865">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-865">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-866">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-866">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="ac1ea-867">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-867">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="22bf4-867">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-867">Examples</span></span>
 
-<span data-ttu-id="ac1ea-868">次のコードは `displayReplyAllForm` 関数に文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-868">The following code passes a string to the `displayReplyAllForm` function.</span></span>
+<span data-ttu-id="22bf4-868">次のコードは `displayReplyAllForm` 関数に文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-868">The following code passes a string to the `displayReplyAllForm` function.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm('hello there');
 Office.context.mailbox.item.displayReplyAllForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="ac1ea-869">空の本文を返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-869">Reply with an empty body.</span></span>
+<span data-ttu-id="22bf4-869">空の本文を返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-869">Reply with an empty body.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm({});
 ```
 
-<span data-ttu-id="ac1ea-870">本文だけを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-870">Reply with just a body.</span></span>
+<span data-ttu-id="22bf4-870">本文だけを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-870">Reply with just a body.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1324,7 +1324,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-871">本文とファイルの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-871">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="22bf4-871">本文とファイルの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-871">Reply with a body and a file attachment.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1341,7 +1341,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-872">本文とアイテムの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-872">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="22bf4-872">本文とアイテムの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-872">Reply with a body and an item attachment.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1358,7 +1358,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-873">本文、ファイルの添付ファイル、アイテムの添付ファイル、およびコールバックを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-873">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="22bf4-873">本文、ファイルの添付ファイル、アイテムの添付ファイル、およびコールバックを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-873">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1387,57 +1387,57 @@ Office.context.mailbox.item.displayReplyAllForm(
 ---
 ---
 
-#### <a name="displayreplyformformdata-callback"></a><span data-ttu-id="ac1ea-874">displayReplyForm(formData, [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-874">displayReplyForm(formData, [callback])</span></span>
+#### <a name="displayreplyformformdata-callback"></a><span data-ttu-id="22bf4-874">displayReplyForm(formData, [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-874">displayReplyForm(formData, [callback])</span></span>
 
-<span data-ttu-id="ac1ea-875">選択したメッセージの送信者のみ、または選択した予定の開催者のみを含む回答フォームが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-875">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
+<span data-ttu-id="22bf4-875">選択したメッセージの送信者のみ、または選択した予定の開催者のみを含む回答フォームが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-875">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-876">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-876">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-876">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-876">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-877">Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-877">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="22bf4-877">Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-877">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="ac1ea-878">文字列パラメーターのいずれかが制限値を超えると、`displayReplyForm` は例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-878">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
+<span data-ttu-id="22bf4-878">文字列パラメーターのいずれかが制限値を超えると、`displayReplyForm` は例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-878">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
 
-<span data-ttu-id="ac1ea-p151">`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p151">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="22bf4-p151">`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p151">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-882">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-882">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-882">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-882">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-883">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-883">Name</span></span>|<span data-ttu-id="ac1ea-884">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-884">Type</span></span>|<span data-ttu-id="ac1ea-885">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-885">Attributes</span></span>|<span data-ttu-id="ac1ea-886">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-886">Description</span></span>|
+|<span data-ttu-id="22bf4-883">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-883">Name</span></span>|<span data-ttu-id="22bf4-884">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-884">Type</span></span>|<span data-ttu-id="22bf4-885">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-885">Attributes</span></span>|<span data-ttu-id="22bf4-886">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-886">Description</span></span>|
 |---|---|---|---|
-|`formData`|<span data-ttu-id="ac1ea-887">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-887">String &#124; Object</span></span>||<span data-ttu-id="ac1ea-p152">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p152">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="ac1ea-890">**または**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-890">**OR**</span></span><br/><span data-ttu-id="ac1ea-p153">本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p153">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
-|`formData.htmlBody`|<span data-ttu-id="ac1ea-893">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-893">String</span></span>|<span data-ttu-id="ac1ea-894">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-894">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-p154">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p154">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-|`formData.attachments`|<span data-ttu-id="ac1ea-897">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-897">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="ac1ea-898">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-898">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-899">ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-899">An array of JSON objects that are either file or item attachments.</span></span>|
-|`formData.attachments.type`|<span data-ttu-id="ac1ea-900">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-900">String</span></span>||<span data-ttu-id="ac1ea-p155">添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p155">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
-|`formData.attachments.name`|<span data-ttu-id="ac1ea-903">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-903">String</span></span>||<span data-ttu-id="ac1ea-904">添付ファイル名を含む文字列。最大の長さは 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-904">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-|`formData.attachments.url`|<span data-ttu-id="ac1ea-905">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-905">String</span></span>||<span data-ttu-id="ac1ea-p156">`type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p156">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
-|`formData.attachments.isInline`|<span data-ttu-id="ac1ea-908">ブール値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-908">Boolean</span></span>||<span data-ttu-id="ac1ea-p157">`type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p157">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`formData.attachments.itemId`|<span data-ttu-id="ac1ea-911">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-911">String</span></span>||<span data-ttu-id="ac1ea-p158">`type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p158">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-915">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-915">function</span></span>|<span data-ttu-id="ac1ea-916">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-916">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-917">メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-917">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`formData`|<span data-ttu-id="22bf4-887">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-887">String &#124; Object</span></span>||<span data-ttu-id="22bf4-p152">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p152">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="22bf4-890">**または**</span><span class="sxs-lookup"><span data-stu-id="22bf4-890">**OR**</span></span><br/><span data-ttu-id="22bf4-p153">本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p153">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
+|`formData.htmlBody`|<span data-ttu-id="22bf4-893">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-893">String</span></span>|<span data-ttu-id="22bf4-894">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-894">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-p154">回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p154">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+|`formData.attachments`|<span data-ttu-id="22bf4-897">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-897">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="22bf4-898">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-898">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-899">ファイルまたはアイテムの添付ファイルである JSON オブジェクトの配列。</span><span class="sxs-lookup"><span data-stu-id="22bf4-899">An array of JSON objects that are either file or item attachments.</span></span>|
+|`formData.attachments.type`|<span data-ttu-id="22bf4-900">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-900">String</span></span>||<span data-ttu-id="22bf4-p155">添付ファイルの種類を示します。ファイルの添付ファイルの場合は `file`、アイテムの添付ファイルの場合は `item` です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p155">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
+|`formData.attachments.name`|<span data-ttu-id="22bf4-903">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-903">String</span></span>||<span data-ttu-id="22bf4-904">添付ファイル名を含む文字列。最大の長さは 255 文字です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-904">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+|`formData.attachments.url`|<span data-ttu-id="22bf4-905">文字列</span><span class="sxs-lookup"><span data-stu-id="22bf4-905">String</span></span>||<span data-ttu-id="22bf4-p156">`type` が `file` に設定されている場合にのみ使用されます。ファイルの場所の URI。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p156">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
+|`formData.attachments.isInline`|<span data-ttu-id="22bf4-908">ブール値</span><span class="sxs-lookup"><span data-stu-id="22bf4-908">Boolean</span></span>||<span data-ttu-id="22bf4-p157">`type` が `file` に設定されている場合にのみ使用されます。`true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p157">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`formData.attachments.itemId`|<span data-ttu-id="22bf4-911">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-911">String</span></span>||<span data-ttu-id="22bf4-p158">`type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p158">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-915">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-915">function</span></span>|<span data-ttu-id="22bf4-916">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-916">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-917">メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-917">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-918">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-918">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-918">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-918">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-919">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-919">Requirement</span></span>|<span data-ttu-id="ac1ea-920">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-920">Value</span></span>|
+|<span data-ttu-id="22bf4-919">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-919">Requirement</span></span>|<span data-ttu-id="22bf4-920">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-920">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-921">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-921">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-922">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-922">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-923">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-923">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-924">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-924">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-925">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-925">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-926">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-926">Read</span></span>|
+|[<span data-ttu-id="22bf4-921">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-921">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-922">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-922">1.0</span></span>|
+|[<span data-ttu-id="22bf4-923">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-923">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-924">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-924">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-925">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-925">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-926">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-926">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="ac1ea-927">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-927">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="22bf4-927">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-927">Examples</span></span>
 
-<span data-ttu-id="ac1ea-928">次のコードは `displayReplyForm` 関数に文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-928">The following code passes a string to the `displayReplyForm` function.</span></span>
+<span data-ttu-id="22bf4-928">次のコードは `displayReplyForm` 関数に文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-928">The following code passes a string to the `displayReplyForm` function.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm('hello there');
 Office.context.mailbox.item.displayReplyForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="ac1ea-929">空の本文を返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-929">Reply with an empty body.</span></span>
+<span data-ttu-id="22bf4-929">空の本文を返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-929">Reply with an empty body.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm({});
 ```
 
-<span data-ttu-id="ac1ea-930">本文だけを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-930">Reply with just a body.</span></span>
+<span data-ttu-id="22bf4-930">本文だけを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-930">Reply with just a body.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm(
@@ -1446,7 +1446,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-931">本文とファイルの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-931">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="22bf4-931">本文とファイルの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-931">Reply with a body and a file attachment.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm(
@@ -1463,7 +1463,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-932">本文とアイテムの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-932">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="22bf4-932">本文とアイテムの添付ファイルを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-932">Reply with a body and an item attachment.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm(
@@ -1480,7 +1480,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="ac1ea-933">本文、ファイルの添付ファイル、アイテムの添付ファイル、およびコールバックを返信します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-933">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="22bf4-933">本文、ファイルの添付ファイル、アイテムの添付ファイル、およびコールバックを返信します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-933">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
 ```javascript
 Office.context.mailbox.item.displayReplyForm(
@@ -1509,28 +1509,28 @@ Office.context.mailbox.item.displayReplyForm(
 ---
 ---
 
-#### <a name="getentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="ac1ea-934">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-934">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
+#### <a name="getentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="22bf4-934">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="22bf4-934">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
 
-<span data-ttu-id="ac1ea-935">選択したアイテムの本文にあるエンティティを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-935">Gets the entities found in the selected item's body.</span></span>
+<span data-ttu-id="22bf4-935">選択したアイテムの本文にあるエンティティを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-935">Gets the entities found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-936">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-936">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-936">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-936">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-937">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-937">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-937">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-937">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-938">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-938">Requirement</span></span>|<span data-ttu-id="ac1ea-939">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-939">Value</span></span>|
+|<span data-ttu-id="22bf4-938">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-938">Requirement</span></span>|<span data-ttu-id="22bf4-939">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-939">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-940">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-940">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-941">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-941">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-942">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-942">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-943">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-943">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-944">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-944">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-945">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-945">Read</span></span>|
+|[<span data-ttu-id="22bf4-940">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-940">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-941">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-941">1.0</span></span>|
+|[<span data-ttu-id="22bf4-942">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-942">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-943">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-943">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-944">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-944">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-945">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-945">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-946">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-946">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-946">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-946">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-947">型:[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-947">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
+<span data-ttu-id="22bf4-947">型:[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="22bf4-947">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-948">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-948">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-948">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-948">Example</span></span>
 
-<span data-ttu-id="ac1ea-949">次の例は、現在のアイテムの本文にある連絡先エンティティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-949">The following example accesses the contacts entities in the current item's body.</span></span>
+<span data-ttu-id="22bf4-949">次の例は、現在のアイテムの本文にある連絡先エンティティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-949">The following example accesses the contacts entities in the current item's body.</span></span>
 
 ```javascript
 var contacts = Office.context.mailbox.item.getEntities().contacts;
@@ -1539,48 +1539,48 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 ---
 ---
 
-#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="ac1ea-950">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-950">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="22bf4-950">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="22bf4-950">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="ac1ea-951">選択したアイテムの本文内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-951">Gets an array of all the entities of the specified entity type found in the selected item's body.</span></span>
+<span data-ttu-id="22bf4-951">選択したアイテムの本文内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-951">Gets an array of all the entities of the specified entity type found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-952">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-952">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-952">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-952">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-953">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-953">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-953">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-953">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-954">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-954">Name</span></span>|<span data-ttu-id="ac1ea-955">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-955">Type</span></span>|<span data-ttu-id="ac1ea-956">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-956">Description</span></span>|
+|<span data-ttu-id="22bf4-954">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-954">Name</span></span>|<span data-ttu-id="22bf4-955">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-955">Type</span></span>|<span data-ttu-id="22bf4-956">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-956">Description</span></span>|
 |---|---|---|
-|`entityType`|[<span data-ttu-id="ac1ea-957">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-957">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.entitytype)|<span data-ttu-id="ac1ea-958">EntityType 列挙値の 1 つ。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-958">One of the EntityType enumeration values.</span></span>|
+|`entityType`|[<span data-ttu-id="22bf4-957">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="22bf4-957">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.entitytype)|<span data-ttu-id="22bf4-958">EntityType 列挙値の 1 つ。</span><span class="sxs-lookup"><span data-stu-id="22bf4-958">One of the EntityType enumeration values.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-959">Requirements</span><span class="sxs-lookup"><span data-stu-id="ac1ea-959">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-959">Requirements</span><span class="sxs-lookup"><span data-stu-id="22bf4-959">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-960">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-960">Requirement</span></span>|<span data-ttu-id="ac1ea-961">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-961">Value</span></span>|
+|<span data-ttu-id="22bf4-960">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-960">Requirement</span></span>|<span data-ttu-id="22bf4-961">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-961">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-962">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-962">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-963">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-963">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-964">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-964">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-965">制限あり</span><span class="sxs-lookup"><span data-stu-id="ac1ea-965">Restricted</span></span>|
-|[<span data-ttu-id="ac1ea-966">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-966">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-967">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-967">Read</span></span>|
+|[<span data-ttu-id="22bf4-962">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-962">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-963">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-963">1.0</span></span>|
+|[<span data-ttu-id="22bf4-964">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-964">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-965">制限あり</span><span class="sxs-lookup"><span data-stu-id="22bf4-965">Restricted</span></span>|
+|[<span data-ttu-id="22bf4-966">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-966">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-967">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-967">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-968">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-968">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-968">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-968">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-969">`entityType` に渡された値が `EntityType` 列挙型の有効なメンバーでない場合、メソッドは null を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-969">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="ac1ea-970">指定した型のエンティティがアイテムの本文に存在しない場合、メソッドは空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-970">If no entities of the specified type are present in the item's body, the method returns an empty array.</span></span> <span data-ttu-id="ac1ea-971">それ以外の場合は、返される配列内のオブジェクトの型は、`entityType` パラメーター内の要求されたエンティティの型によって異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-971">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
+<span data-ttu-id="22bf4-969">`entityType` に渡された値が `EntityType` 列挙型の有効なメンバーでない場合、メソッドは null を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-969">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="22bf4-970">指定した型のエンティティがアイテムの本文に存在しない場合、メソッドは空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-970">If no entities of the specified type are present in the item's body, the method returns an empty array.</span></span> <span data-ttu-id="22bf4-971">それ以外の場合は、返される配列内のオブジェクトの型は、`entityType` パラメーター内の要求されたエンティティの型によって異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-971">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
 
-<span data-ttu-id="ac1ea-972">このメソッドを使用する最小限のアクセス許可レベルは **Restricted** ですが、一部のエンティティ型には、次の表で指定されているように、アクセスに **ReadItem** が必要です。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-972">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
+<span data-ttu-id="22bf4-972">このメソッドを使用する最小限のアクセス許可レベルは **Restricted** ですが、一部のエンティティ型には、次の表で指定されているように、アクセスに **ReadItem** が必要です。</span><span class="sxs-lookup"><span data-stu-id="22bf4-972">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
 
-|<span data-ttu-id="ac1ea-973">`entityType` の値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-973">Value of `entityType`</span></span>|<span data-ttu-id="ac1ea-974">返される配列内のオブジェクトの型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-974">Type of objects in returned array</span></span>|<span data-ttu-id="ac1ea-975">必要なアクセス許可のレベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-975">Required Permission Level</span></span>|
+|<span data-ttu-id="22bf4-973">`entityType` の値</span><span class="sxs-lookup"><span data-stu-id="22bf4-973">Value of `entityType`</span></span>|<span data-ttu-id="22bf4-974">返される配列内のオブジェクトの型</span><span class="sxs-lookup"><span data-stu-id="22bf4-974">Type of objects in returned array</span></span>|<span data-ttu-id="22bf4-975">必要なアクセス許可のレベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-975">Required Permission Level</span></span>|
 |---|---|---|
-|`Address`|<span data-ttu-id="ac1ea-976">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-976">String</span></span>|<span data-ttu-id="ac1ea-977">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-977">**Restricted**</span></span>|
-|`Contact`|<span data-ttu-id="ac1ea-978">連絡先</span><span class="sxs-lookup"><span data-stu-id="ac1ea-978">Contact</span></span>|<span data-ttu-id="ac1ea-979">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-979">**ReadItem**</span></span>|
-|`EmailAddress`|<span data-ttu-id="ac1ea-980">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-980">String</span></span>|<span data-ttu-id="ac1ea-981">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-981">**ReadItem**</span></span>|
-|`MeetingSuggestion`|<span data-ttu-id="ac1ea-982">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="ac1ea-982">MeetingSuggestion</span></span>|<span data-ttu-id="ac1ea-983">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-983">**ReadItem**</span></span>|
-|`PhoneNumber`|<span data-ttu-id="ac1ea-984">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="ac1ea-984">PhoneNumber</span></span>|<span data-ttu-id="ac1ea-985">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-985">**Restricted**</span></span>|
-|`TaskSuggestion`|<span data-ttu-id="ac1ea-986">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="ac1ea-986">TaskSuggestion</span></span>|<span data-ttu-id="ac1ea-987">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-987">**ReadItem**</span></span>|
-|`URL`|<span data-ttu-id="ac1ea-988">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-988">String</span></span>|<span data-ttu-id="ac1ea-989">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="ac1ea-989">**Restricted**</span></span>|
+|`Address`|<span data-ttu-id="22bf4-976">文字列</span><span class="sxs-lookup"><span data-stu-id="22bf4-976">String</span></span>|<span data-ttu-id="22bf4-977">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="22bf4-977">**Restricted**</span></span>|
+|`Contact`|<span data-ttu-id="22bf4-978">連絡先</span><span class="sxs-lookup"><span data-stu-id="22bf4-978">Contact</span></span>|<span data-ttu-id="22bf4-979">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="22bf4-979">**ReadItem**</span></span>|
+|`EmailAddress`|<span data-ttu-id="22bf4-980">文字列</span><span class="sxs-lookup"><span data-stu-id="22bf4-980">String</span></span>|<span data-ttu-id="22bf4-981">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="22bf4-981">**ReadItem**</span></span>|
+|`MeetingSuggestion`|<span data-ttu-id="22bf4-982">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="22bf4-982">MeetingSuggestion</span></span>|<span data-ttu-id="22bf4-983">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="22bf4-983">**ReadItem**</span></span>|
+|`PhoneNumber`|<span data-ttu-id="22bf4-984">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="22bf4-984">PhoneNumber</span></span>|<span data-ttu-id="22bf4-985">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="22bf4-985">**Restricted**</span></span>|
+|`TaskSuggestion`|<span data-ttu-id="22bf4-986">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="22bf4-986">TaskSuggestion</span></span>|<span data-ttu-id="22bf4-987">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="22bf4-987">**ReadItem**</span></span>|
+|`URL`|<span data-ttu-id="22bf4-988">文字列</span><span class="sxs-lookup"><span data-stu-id="22bf4-988">String</span></span>|<span data-ttu-id="22bf4-989">**制限あり**</span><span class="sxs-lookup"><span data-stu-id="22bf4-989">**Restricted**</span></span>|
 
-<span data-ttu-id="ac1ea-990">型:Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="ac1ea-990">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
+<span data-ttu-id="22bf4-990">型:Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="22bf4-990">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-991">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-991">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-991">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-991">Example</span></span>
 
-<span data-ttu-id="ac1ea-992">次の例は、現在のアイテムの本文にある郵送先住所を表す文字列の配列にアクセスする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-992">The following example shows how to access an array of strings that represent postal addresses in the current item's body.</span></span>
+<span data-ttu-id="22bf4-992">次の例は、現在のアイテムの本文にある郵送先住所を表す文字列の配列にアクセスする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-992">The following example shows how to access an array of strings that represent postal addresses in the current item's body.</span></span>
 
 ```javascript
 // The initialize function is required for all apps.
@@ -1599,48 +1599,48 @@ Office.initialize = function () {
 ---
 ---
 
-#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="ac1ea-993">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-993">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="22bf4-993">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="22bf4-993">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="ac1ea-994">マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-994">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
+<span data-ttu-id="22bf4-994">マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-994">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-995">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-995">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-995">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-995">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-996">`getFilteredEntitiesByName` メソッドは、マニフェスト XML ファイル内の、指定された `FilterName` 要素値を持つ [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) ルール要素で定義された正規表現に一致するエンティティを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-996">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
+<span data-ttu-id="22bf4-996">`getFilteredEntitiesByName` メソッドは、マニフェスト XML ファイル内の、指定された `FilterName` 要素値を持つ [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) ルール要素で定義された正規表現に一致するエンティティを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-996">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-997">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-997">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-997">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-997">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-998">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-998">Name</span></span>|<span data-ttu-id="ac1ea-999">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-999">Type</span></span>|<span data-ttu-id="ac1ea-1000">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1000">Description</span></span>|
+|<span data-ttu-id="22bf4-998">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-998">Name</span></span>|<span data-ttu-id="22bf4-999">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-999">Type</span></span>|<span data-ttu-id="22bf4-1000">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1000">Description</span></span>|
 |---|---|---|
-|`name`|<span data-ttu-id="ac1ea-1001">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1001">String</span></span>|<span data-ttu-id="ac1ea-1002">一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1002">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
+|`name`|<span data-ttu-id="22bf4-1001">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-1001">String</span></span>|<span data-ttu-id="22bf4-1002">一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1002">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1003">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1003">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1003">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1003">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1004">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1004">Requirement</span></span>|<span data-ttu-id="ac1ea-1005">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1005">Value</span></span>|
+|<span data-ttu-id="22bf4-1004">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1004">Requirement</span></span>|<span data-ttu-id="22bf4-1005">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1005">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1006">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1006">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1007">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1007">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-1008">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1008">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1009">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1009">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1010">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1010">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1011">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1011">Read</span></span>|
+|[<span data-ttu-id="22bf4-1006">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1006">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1007">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-1007">1.0</span></span>|
+|[<span data-ttu-id="22bf4-1008">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1008">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1009">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1009">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1010">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1010">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1011">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-1011">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1012">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1012">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1012">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1012">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-p160">`FilterName` 要素の値が `name` パラメーターと一致するマニフェスト内に `ItemHasKnownEntity` 要素がない場合、メソッドは `null` を返します。`name` パラメーターがマニフェスト内の `ItemHasKnownEntity` 要素と一致せず、現在のアイテム内に一致するエンティティがない場合は、メソッドは空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p160">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
+<span data-ttu-id="22bf4-p160">`FilterName` 要素の値が `name` パラメーターと一致するマニフェスト内に `ItemHasKnownEntity` 要素がない場合、メソッドは `null` を返します。`name` パラメーターがマニフェスト内の `ItemHasKnownEntity` 要素と一致せず、現在のアイテム内に一致するエンティティがない場合は、メソッドは空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p160">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
 
-<span data-ttu-id="ac1ea-1015">型:Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="ac1ea-1015">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
+<span data-ttu-id="22bf4-1015">型:Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="22bf4-1015">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
 
 ---
 ---
 
-#### <a name="getregexmatches--object"></a><span data-ttu-id="ac1ea-1016">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1016">getRegExMatches() → {Object}</span></span>
+#### <a name="getregexmatches--object"></a><span data-ttu-id="22bf4-1016">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="22bf4-1016">getRegExMatches() → {Object}</span></span>
 
-<span data-ttu-id="ac1ea-1017">選択したアイテム内の、マニフェスト XML ファイルで定義された正規表現に一致する文字列の値を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1017">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
+<span data-ttu-id="22bf4-1017">選択したアイテム内の、マニフェスト XML ファイルで定義された正規表現に一致する文字列の値を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1017">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-1018">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1018">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-1018">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1018">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-p161">`getRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p161">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
+<span data-ttu-id="22bf4-p161">`getRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p161">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
 
-<span data-ttu-id="ac1ea-1022">たとえば、アドイン マニフェストに次のような `Rule` 要素があると見なします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1022">For example, consider an add-in manifest has the following `Rule` element:</span></span>
+<span data-ttu-id="22bf4-1022">たとえば、アドイン マニフェストに次のような `Rule` 要素があると見なします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1022">For example, consider an add-in manifest has the following `Rule` element:</span></span>
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -1652,7 +1652,7 @@ Office.initialize = function () {
 </Rule>
 ```
 
-<span data-ttu-id="ac1ea-1023">`getRegExMatches` から返されるオブジェクトに `fruits` および `veggies` という 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1023">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
+<span data-ttu-id="22bf4-1023">`getRegExMatches` から返されるオブジェクトに `fruits` および `veggies` という 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1023">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
 
 ```json
 {
@@ -1661,35 +1661,35 @@ Office.initialize = function () {
 }
 ```
 
-<span data-ttu-id="ac1ea-p162">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。この場合、代わりに [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) メソッドを使用して本文全体を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p162">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
+<span data-ttu-id="22bf4-p162">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。この場合、代わりに [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) メソッドを使用して本文全体を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p162">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1027">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1027">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1027">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1027">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1028">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1028">Requirement</span></span>|<span data-ttu-id="ac1ea-1029">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1029">Value</span></span>|
+|<span data-ttu-id="22bf4-1028">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1028">Requirement</span></span>|<span data-ttu-id="22bf4-1029">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1029">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1030">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1030">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1031">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1031">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-1032">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1032">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1033">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1033">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1034">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1034">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1035">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1035">Read</span></span>|
+|[<span data-ttu-id="22bf4-1030">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1030">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1031">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-1031">1.0</span></span>|
+|[<span data-ttu-id="22bf4-1032">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1032">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1033">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1033">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1034">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1034">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1035">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-1035">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1036">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1036">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1036">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1036">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-p163">マニフェスト XML ファイルで定義された正規表現に一致する文字列の配列が格納されたオブジェクト。各配列の名前は、一致する `ItemHasRegularExpressionMatch` ルールの `RegExName` 属性、または一致する `ItemHasKnownEntity` ルールの `FilterName` 属性の対応する値と等しくなります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p163">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
+<span data-ttu-id="22bf4-p163">マニフェスト XML ファイルで定義された正規表現に一致する文字列の配列が格納されたオブジェクト。各配列の名前は、一致する `ItemHasRegularExpressionMatch` ルールの `RegExName` 属性、または一致する `ItemHasKnownEntity` ルールの `FilterName` 属性の対応する値と等しくなります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p163">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
 
-<dl class="param-type"><span data-ttu-id="ac1ea-1039">
+<dl class="param-type"><span data-ttu-id="22bf4-1039">
 
 <dt>型</dt>
 
-</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1039">
+</span><span class="sxs-lookup"><span data-stu-id="22bf4-1039">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="ac1ea-1040">Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1040">Object</span></span></dd>
+</span></span><dd><span data-ttu-id="22bf4-1040">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1040">Object</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1041">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1041">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1041">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1041">Example</span></span>
 
-<span data-ttu-id="ac1ea-1042">次の例は、マニフェストで指定された正規表現ルールの要素 `fruits` および `veggies` に一致する配列にアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1042">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
+<span data-ttu-id="22bf4-1042">次の例は、マニフェストで指定された正規表現ルールの要素 `fruits` および `veggies` に一致する配列にアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1042">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
 
 ```javascript
 var allMatches = Office.context.mailbox.item.getRegExMatches();
@@ -1700,48 +1700,48 @@ var veggies = allMatches.veggies;
 ---
 ---
 
-#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="ac1ea-1043">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1043">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
+#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="22bf4-1043">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span><span class="sxs-lookup"><span data-stu-id="22bf4-1043">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
 
-<span data-ttu-id="ac1ea-1044">選択したアイテム内の、マニフェスト XML ファイルで定義された、指定された正規表現に一致する文字列の値を返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1044">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="22bf4-1044">選択したアイテム内の、マニフェスト XML ファイルで定義された、指定された正規表現に一致する文字列の値を返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1044">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-1045">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1045">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-1045">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1045">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-1046">`getRegExMatchesByName` メソッドは、`ItemHasRegularExpressionMatch` ルール要素で定義された正規表現に一致する文字列を返します。このルール要素は、指定された `RegExName` 要素値を持つマニフェスト XML ファイル内にあります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1046">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
+<span data-ttu-id="22bf4-1046">`getRegExMatchesByName` メソッドは、`ItemHasRegularExpressionMatch` ルール要素で定義された正規表現に一致する文字列を返します。このルール要素は、指定された `RegExName` 要素値を持つマニフェスト XML ファイル内にあります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1046">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
 
-<span data-ttu-id="ac1ea-p164">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p164">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
+<span data-ttu-id="22bf4-p164">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p164">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1049">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1049">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1049">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1049">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1050">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1050">Name</span></span>|<span data-ttu-id="ac1ea-1051">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1051">Type</span></span>|<span data-ttu-id="ac1ea-1052">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1052">Description</span></span>|
+|<span data-ttu-id="22bf4-1050">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1050">Name</span></span>|<span data-ttu-id="22bf4-1051">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1051">Type</span></span>|<span data-ttu-id="22bf4-1052">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1052">Description</span></span>|
 |---|---|---|
-|`name`|<span data-ttu-id="ac1ea-1053">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1053">String</span></span>|<span data-ttu-id="ac1ea-1054">一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1054">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
+|`name`|<span data-ttu-id="22bf4-1053">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-1053">String</span></span>|<span data-ttu-id="22bf4-1054">一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1054">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1055">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1055">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1055">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1055">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1056">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1056">Requirement</span></span>|<span data-ttu-id="ac1ea-1057">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1057">Value</span></span>|
+|<span data-ttu-id="22bf4-1056">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1056">Requirement</span></span>|<span data-ttu-id="22bf4-1057">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1057">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1058">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1058">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1059">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1059">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-1060">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1060">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1061">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1061">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1062">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1062">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1063">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1063">Read</span></span>|
+|[<span data-ttu-id="22bf4-1058">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1058">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1059">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-1059">1.0</span></span>|
+|[<span data-ttu-id="22bf4-1060">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1060">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1061">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1061">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1062">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1062">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1063">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-1063">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1064">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1064">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1064">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1064">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-1065">マニフェスト XML ファイルで定義された正規表現に一致する文字列が格納された配列。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1065">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="22bf4-1065">マニフェスト XML ファイルで定義された正規表現に一致する文字列が格納された配列。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1065">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
 
-<dl class="param-type"><span data-ttu-id="ac1ea-1066">
+<dl class="param-type"><span data-ttu-id="22bf4-1066">
 
 <dt>型</dt>
 
-</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1066">
+</span><span class="sxs-lookup"><span data-stu-id="22bf4-1066">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="ac1ea-1067">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="ac1ea-1067">Array.< String ></span></span></dd>
+</span></span><dd><span data-ttu-id="22bf4-1067">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="22bf4-1067">Array.< String ></span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1068">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1068">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1068">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1068">Example</span></span>
 
 ```javascript
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
@@ -1751,46 +1751,46 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ---
 ---
 
-####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="ac1ea-1069">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1069">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
+####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="22bf4-1069">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="22bf4-1069">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
 
-<span data-ttu-id="ac1ea-1070">メッセージの件名または本文から非同期的に選択したデータを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1070">Asynchronously returns selected data from the subject or body of a message.</span></span>
+<span data-ttu-id="22bf4-1070">メッセージの件名または本文から非同期的に選択したデータを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1070">Asynchronously returns selected data from the subject or body of a message.</span></span>
 
-<span data-ttu-id="ac1ea-p165">選択したデータがなく、カーソルが本文または件名にある場合、選択したデータに対して null が返されます。本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p165">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
+<span data-ttu-id="22bf4-p165">選択したデータがなく、カーソルが本文または件名にある場合、選択したデータに対して null が返されます。本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p165">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1073">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1073">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1073">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1073">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1074">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1074">Name</span></span>|<span data-ttu-id="ac1ea-1075">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1075">Type</span></span>|<span data-ttu-id="ac1ea-1076">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1076">Attributes</span></span>|<span data-ttu-id="ac1ea-1077">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1077">Description</span></span>|
+|<span data-ttu-id="22bf4-1074">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1074">Name</span></span>|<span data-ttu-id="22bf4-1075">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1075">Type</span></span>|<span data-ttu-id="22bf4-1076">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1076">Attributes</span></span>|<span data-ttu-id="22bf4-1077">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1077">Description</span></span>|
 |---|---|---|---|
-|`coercionType`|[<span data-ttu-id="ac1ea-1078">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1078">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="ac1ea-p166">データの形式を要求します。テキストの場合、メソッドは文字列としてプレーン テキストを返し、存在する HTML タグはすべて削除されます。HTMLの場合、メソッドは、プレーンテキストまたは HTML のいずれの場合も選択されたテキストを返します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p166">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
-|`options`|<span data-ttu-id="ac1ea-1082">Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1082">Object</span></span>|<span data-ttu-id="ac1ea-1083">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1083">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1084">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1084">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-1085">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1085">Object</span></span>|<span data-ttu-id="ac1ea-1086">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1086">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1087">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1087">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-1088">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1088">function</span></span>||<span data-ttu-id="ac1ea-1089">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1089">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="ac1ea-1090">コールバック メソッドから選択したデータにアクセスするには、`asyncResult.value.data` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1090">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="ac1ea-1091">選択のソース プロパティにアクセスするには、`asyncResult.value.sourceProperty` を呼び出します。これは `body` または `subject` になります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1091">To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.</span></span>|
+|`coercionType`|[<span data-ttu-id="22bf4-1078">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="22bf4-1078">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="22bf4-p166">データの形式を要求します。テキストの場合、メソッドは文字列としてプレーン テキストを返し、存在する HTML タグはすべて削除されます。HTMLの場合、メソッドは、プレーンテキストまたは HTML のいずれの場合も選択されたテキストを返します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p166">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
+|`options`|<span data-ttu-id="22bf4-1082">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1082">Object</span></span>|<span data-ttu-id="22bf4-1083">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1083">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1084">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1084">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-1085">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-1085">Object</span></span>|<span data-ttu-id="22bf4-1086">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1086">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1087">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1087">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-1088">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-1088">function</span></span>||<span data-ttu-id="22bf4-1089">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1089">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="22bf4-1090">コールバック メソッドから選択したデータにアクセスするには、`asyncResult.value.data` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1090">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="22bf4-1091">選択のソース プロパティにアクセスするには、`asyncResult.value.sourceProperty` を呼び出します。これは `body` または `subject` になります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1091">To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1092">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1092">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1092">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1092">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1093">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1093">Requirement</span></span>|<span data-ttu-id="ac1ea-1094">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1094">Value</span></span>|
+|<span data-ttu-id="22bf4-1093">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1093">Requirement</span></span>|<span data-ttu-id="22bf4-1094">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1094">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1095">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1095">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1096">1.2</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1096">1.2</span></span>|
-|[<span data-ttu-id="ac1ea-1097">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1097">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1098">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1098">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-1099">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1099">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1100">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1100">Compose</span></span>|
+|[<span data-ttu-id="22bf4-1095">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1095">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1096">1.2</span><span class="sxs-lookup"><span data-stu-id="22bf4-1096">1.2</span></span>|
+|[<span data-ttu-id="22bf4-1097">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1097">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1098">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1098">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-1099">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1099">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1100">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-1100">Compose</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1101">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1101">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1101">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1101">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-1102">選択されたデータ (`coercionType` で決定された形式の文字列)。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1102">The selected data as a string with format determined by `coercionType`.</span></span>
+<span data-ttu-id="22bf4-1102">選択されたデータ (`coercionType` で決定された形式の文字列)。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1102">The selected data as a string with format determined by `coercionType`.</span></span>
 
-<dl class="param-type"><span data-ttu-id="ac1ea-1103">
+<dl class="param-type"><span data-ttu-id="22bf4-1103">
 
 <dt>型</dt>
 
-</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1103">
+</span><span class="sxs-lookup"><span data-stu-id="22bf4-1103">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="ac1ea-1104">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1104">String</span></span></dd>
+</span></span><dd><span data-ttu-id="22bf4-1104">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-1104">String</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1105">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1105">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1105">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1105">Example</span></span>
 
 ```javascript
 // Get selected data.
@@ -1813,28 +1813,28 @@ function setCallback(asyncResult) {
 ---
 ---
 
-#### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="ac1ea-1106">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1106">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
+#### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="22bf4-1106">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="22bf4-1106">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
 
-<span data-ttu-id="ac1ea-1107">強調表示された一致内で見つかったユーザーが選択しているエンティティを取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1107">Gets the entities found in a highlighted match a user has selected.</span></span> <span data-ttu-id="ac1ea-1108">強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1108">Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).</span></span>
+<span data-ttu-id="22bf4-1107">強調表示された一致内で見つかったユーザーが選択しているエンティティを取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1107">Gets the entities found in a highlighted match a user has selected.</span></span> <span data-ttu-id="22bf4-1108">強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1108">Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-1109">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1109">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-1109">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1109">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1110">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1110">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1110">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1110">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1111">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1111">Requirement</span></span>|<span data-ttu-id="ac1ea-1112">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1112">Value</span></span>|
+|<span data-ttu-id="22bf4-1111">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1111">Requirement</span></span>|<span data-ttu-id="22bf4-1112">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1112">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1113">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1113">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1114">1.6</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1114">1.6</span></span>|
-|[<span data-ttu-id="ac1ea-1115">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1115">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1116">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1116">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1117">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1117">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1118">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1118">Read</span></span>|
+|[<span data-ttu-id="22bf4-1113">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1113">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1114">1.6</span><span class="sxs-lookup"><span data-stu-id="22bf4-1114">1.6</span></span>|
+|[<span data-ttu-id="22bf4-1115">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1115">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1116">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1116">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1117">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1117">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1118">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-1118">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1119">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1119">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1119">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1119">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-1120">型:[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1120">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
+<span data-ttu-id="22bf4-1120">型:[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="22bf4-1120">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1121">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1121">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1121">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1121">Example</span></span>
 
-<span data-ttu-id="ac1ea-1122">次の例では、強調表示された一致内でユーザーが選択した住所エンティティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1122">The following example accesses the addresses entities in the highlighted match selected by the user.</span></span>
+<span data-ttu-id="22bf4-1122">次の例では、強調表示された一致内でユーザーが選択した住所エンティティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1122">The following example accesses the addresses entities in the highlighted match selected by the user.</span></span>
 
 ```javascript
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
@@ -1843,16 +1843,16 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ---
 ---
 
-#### <a name="getselectedregexmatches--object"></a><span data-ttu-id="ac1ea-1123">getSelectedRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1123">getSelectedRegExMatches() → {Object}</span></span>
+#### <a name="getselectedregexmatches--object"></a><span data-ttu-id="22bf4-1123">getSelectedRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="22bf4-1123">getSelectedRegExMatches() → {Object}</span></span>
 
-<span data-ttu-id="ac1ea-p169">マニフェスト XML ファイルで定義した正規表現と一致する、強調表示された一致内の文字列値を返します。強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p169">Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).</span></span>
+<span data-ttu-id="22bf4-p169">マニフェスト XML ファイルで定義した正規表現と一致する、強調表示された一致内の文字列値を返します。強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p169">Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](/outlook/add-ins/contextual-outlook-add-ins).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-1126">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1126">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="22bf4-1126">このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1126">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="ac1ea-p170">`getSelectedRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p170">The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
+<span data-ttu-id="22bf4-p170">`getSelectedRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p170">The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
 
-<span data-ttu-id="ac1ea-1130">たとえば、アドイン マニフェストに次のような `Rule` 要素があると見なします。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1130">For example, consider an add-in manifest has the following `Rule` element:</span></span>
+<span data-ttu-id="22bf4-1130">たとえば、アドイン マニフェストに次のような `Rule` 要素があると見なします。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1130">For example, consider an add-in manifest has the following `Rule` element:</span></span>
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -1864,7 +1864,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 </Rule>
 ```
 
-<span data-ttu-id="ac1ea-1131">`getRegExMatches` から返されるオブジェクトに `fruits` および `veggies` という 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1131">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
+<span data-ttu-id="22bf4-1131">`getRegExMatches` から返されるオブジェクトに `fruits` および `veggies` という 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1131">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
 
 ```json
 {
@@ -1873,23 +1873,23 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 }
 ```
 
-<span data-ttu-id="ac1ea-p171">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。この場合、代わりに [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) メソッドを使用して本文全体を取得します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p171">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
+<span data-ttu-id="22bf4-p171">アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。この場合、代わりに [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) メソッドを使用して本文全体を取得します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p171">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1135">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1135">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1135">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1135">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1136">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1136">Requirement</span></span>|<span data-ttu-id="ac1ea-1137">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1137">Value</span></span>|
+|<span data-ttu-id="22bf4-1136">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1136">Requirement</span></span>|<span data-ttu-id="22bf4-1137">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1137">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1138">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1138">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1139">1.6</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1139">1.6</span></span>|
-|[<span data-ttu-id="ac1ea-1140">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1140">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1141">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1141">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1142">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1142">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1143">読み取り</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1143">Read</span></span>|
+|[<span data-ttu-id="22bf4-1138">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1138">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1139">1.6</span><span class="sxs-lookup"><span data-stu-id="22bf4-1139">1.6</span></span>|
+|[<span data-ttu-id="22bf4-1140">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1140">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1141">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1141">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1142">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1142">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1143">読み取り</span><span class="sxs-lookup"><span data-stu-id="22bf4-1143">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="ac1ea-1144">戻り値:</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1144">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="22bf4-1144">戻り値:</span><span class="sxs-lookup"><span data-stu-id="22bf4-1144">Returns:</span></span>
 
-<span data-ttu-id="ac1ea-p172">マニフェスト XML ファイルで定義された正規表現に一致する文字列の配列が格納されたオブジェクト。各配列の名前は、一致する `ItemHasRegularExpressionMatch` ルールの `RegExName` 属性、または一致する `ItemHasKnownEntity` ルールの `FilterName` 属性の対応する値と等しくなります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p172">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
+<span data-ttu-id="22bf4-p172">マニフェスト XML ファイルで定義された正規表現に一致する文字列の配列が格納されたオブジェクト。各配列の名前は、一致する `ItemHasRegularExpressionMatch` ルールの `RegExName` 属性、または一致する `ItemHasKnownEntity` ルールの `FilterName` 属性の対応する値と等しくなります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p172">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1147">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1147">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1147">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1147">Example</span></span>
 
-<span data-ttu-id="ac1ea-1148">次の例は、マニフェストで指定された正規表現ルールの要素 `fruits` および `veggies` に一致する配列にアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1148">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
+<span data-ttu-id="22bf4-1148">次の例は、マニフェストで指定された正規表現ルールの要素 `fruits` および `veggies` に一致する配列にアクセスする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1148">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
 
 ```javascript
 var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
@@ -1900,30 +1900,30 @@ var veggies = selectedMatches.veggies;
 ---
 ---
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="ac1ea-1149">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1149">loadCustomPropertiesAsync(callback, [userContext])</span></span>
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="22bf4-1149">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="22bf4-1149">loadCustomPropertiesAsync(callback, [userContext])</span></span>
 
-<span data-ttu-id="ac1ea-1150">選択されたアイテムのこのアドインのカスタム プロパティを非同期に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1150">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
+<span data-ttu-id="22bf4-1150">選択されたアイテムのこのアドインのカスタム プロパティを非同期に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1150">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
 
-<span data-ttu-id="ac1ea-p173">カスタム プロパティは、アプリケーションごと、アイテムごとのキーと値のペアとして格納されます。このメソッドは、コールバックで `CustomProperties` オブジェクトを返します。このオブジェクトは、現在のアイテムおよび現在のアドインに固有のカスタム プロパティにアクセスするためのメソッドを提供します。カスタム プロパティは、アイテム上では暗号化されません。そのため、セキュリティ保護記憶域として使用するべきではありません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p173">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
+<span data-ttu-id="22bf4-p173">カスタム プロパティは、アプリケーションごと、アイテムごとのキーと値のペアとして格納されます。このメソッドは、コールバックで `CustomProperties` オブジェクトを返します。このオブジェクトは、現在のアイテムおよび現在のアドインに固有のカスタム プロパティにアクセスするためのメソッドを提供します。カスタム プロパティは、アイテム上では暗号化されません。そのため、セキュリティ保護記憶域として使用するべきではありません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p173">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1154">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1154">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1154">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1154">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1155">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1155">Name</span></span>|<span data-ttu-id="ac1ea-1156">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1156">Type</span></span>|<span data-ttu-id="ac1ea-1157">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1157">Attributes</span></span>|<span data-ttu-id="ac1ea-1158">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1158">Description</span></span>|
+|<span data-ttu-id="22bf4-1155">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1155">Name</span></span>|<span data-ttu-id="22bf4-1156">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1156">Type</span></span>|<span data-ttu-id="22bf4-1157">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1157">Attributes</span></span>|<span data-ttu-id="22bf4-1158">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1158">Description</span></span>|
 |---|---|---|---|
-|`callback`|<span data-ttu-id="ac1ea-1159">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1159">function</span></span>||<span data-ttu-id="ac1ea-1160">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1160">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="ac1ea-1161">カスタム プロパティは `asyncResult.value` プロパティの [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) オブジェクトとして指定されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1161">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="ac1ea-1162">このオブジェクトは、アイテムからカスタム プロパティを取得、設定、削除し、サーバーに設定し直すカスタム プロパティへの変更を保存するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1162">This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
-|`userContext`|<span data-ttu-id="ac1ea-1163">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1163">Object</span></span>|<span data-ttu-id="ac1ea-1164">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1164">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1165">開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1165">Developers can provide any object they wish to access in the callback function.</span></span> <span data-ttu-id="ac1ea-1166">このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1166">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-1159">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-1159">function</span></span>||<span data-ttu-id="22bf4-1160">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1160">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="22bf4-1161">カスタム プロパティは `asyncResult.value` プロパティの [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) オブジェクトとして指定されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1161">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="22bf4-1162">このオブジェクトは、アイテムからカスタム プロパティを取得、設定、削除し、サーバーに設定し直すカスタム プロパティへの変更を保存するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1162">This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
+|`userContext`|<span data-ttu-id="22bf4-1163">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1163">Object</span></span>|<span data-ttu-id="22bf4-1164">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1164">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1165">開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1165">Developers can provide any object they wish to access in the callback function.</span></span> <span data-ttu-id="22bf4-1166">このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1166">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1167">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1167">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1167">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1167">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1168">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1168">Requirement</span></span>|<span data-ttu-id="ac1ea-1169">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1169">Value</span></span>|
+|<span data-ttu-id="22bf4-1168">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1168">Requirement</span></span>|<span data-ttu-id="22bf4-1169">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1169">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1170">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1170">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1171">1.0</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1171">1.0</span></span>|
-|[<span data-ttu-id="ac1ea-1172">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1172">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1173">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1173">ReadItem</span></span>|
-|[<span data-ttu-id="ac1ea-1174">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1174">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1175">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1175">Compose or Read</span></span>|
+|[<span data-ttu-id="22bf4-1170">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1170">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1171">1.0</span><span class="sxs-lookup"><span data-stu-id="22bf4-1171">1.0</span></span>|
+|[<span data-ttu-id="22bf4-1172">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1172">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1173">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1173">ReadItem</span></span>|
+|[<span data-ttu-id="22bf4-1174">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1174">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1175">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-1175">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1176">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1176">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1176">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1176">Example</span></span>
 
-<span data-ttu-id="ac1ea-p176">次のコード例では、`loadCustomPropertiesAsync` メソッドを使用して、現在のアイテムに固有のカスタム プロパティを非同期的に読み込む方法を示します。また、`CustomProperties.saveAsync` メソッドを使用して、これらのプロパティをサーバーに保存する方法も紹介します。カスタム プロパティをロードした後、このコード サンプルでは `CustomProperties.get` メソッドを使用してカスタム プロパティ `myProp` を読み取り、`CustomProperties.set` メソッドでカスタム プロパティ `otherProp` を書き込み、最後に `saveAsync` メソッドを呼び出して、カスタム プロパティを保存します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p176">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
+<span data-ttu-id="22bf4-p176">次のコード例では、`loadCustomPropertiesAsync` メソッドを使用して、現在のアイテムに固有のカスタム プロパティを非同期的に読み込む方法を示します。また、`CustomProperties.saveAsync` メソッドを使用して、これらのプロパティをサーバーに保存する方法も紹介します。カスタム プロパティをロードした後、このコード サンプルでは `CustomProperties.get` メソッドを使用してカスタム プロパティ `myProp` を読み取り、`CustomProperties.set` メソッドでカスタム プロパティ `otherProp` を書き込み、最後に `saveAsync` メソッドを呼び出して、カスタム プロパティを保存します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p176">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
 
 ```javascript
 // The initialize function is required for all add-ins.
@@ -1951,38 +1951,38 @@ function saveCallback(asyncResult) {
 ---
 ---
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="ac1ea-1180">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1180">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="22bf4-1180">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-1180">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
 
-<span data-ttu-id="ac1ea-1181">メッセージまたは予定から添付ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1181">Removes an attachment from a message or appointment.</span></span>
+<span data-ttu-id="22bf4-1181">メッセージまたは予定から添付ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1181">Removes an attachment from a message or appointment.</span></span>
 
-<span data-ttu-id="ac1ea-p177">`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。Outlook Web App とデバイス用 OWA では、添付ファイルの識別子は同じセッション内でのみ有効です。ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p177">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
+<span data-ttu-id="22bf4-p177">`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。Outlook Web App とデバイス用 OWA では、添付ファイルの識別子は同じセッション内でのみ有効です。ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p177">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1186">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1186">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1186">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1186">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1187">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1187">Name</span></span>|<span data-ttu-id="ac1ea-1188">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1188">Type</span></span>|<span data-ttu-id="ac1ea-1189">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1189">Attributes</span></span>|<span data-ttu-id="ac1ea-1190">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1190">Description</span></span>|
+|<span data-ttu-id="22bf4-1187">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1187">Name</span></span>|<span data-ttu-id="22bf4-1188">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1188">Type</span></span>|<span data-ttu-id="22bf4-1189">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1189">Attributes</span></span>|<span data-ttu-id="22bf4-1190">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1190">Description</span></span>|
 |---|---|---|---|
-|`attachmentId`|<span data-ttu-id="ac1ea-1191">文字列</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1191">String</span></span>||<span data-ttu-id="ac1ea-1192">削除する添付ファイルの識別子。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1192">The identifier of the attachment to remove.</span></span>|
-|`options`|<span data-ttu-id="ac1ea-1193">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1193">Object</span></span>|<span data-ttu-id="ac1ea-1194">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1194">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1195">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1195">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-1196">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1196">Object</span></span>|<span data-ttu-id="ac1ea-1197">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1197">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1198">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1198">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-1199">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1199">function</span></span>|<span data-ttu-id="ac1ea-1200">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1200">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1201">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1201">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="ac1ea-1202">添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1202">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
+|`attachmentId`|<span data-ttu-id="22bf4-1191">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-1191">String</span></span>||<span data-ttu-id="22bf4-1192">削除する添付ファイルの識別子。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1192">The identifier of the attachment to remove.</span></span>|
+|`options`|<span data-ttu-id="22bf4-1193">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-1193">Object</span></span>|<span data-ttu-id="22bf4-1194">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1194">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1195">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1195">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-1196">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-1196">Object</span></span>|<span data-ttu-id="22bf4-1197">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1197">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1198">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1198">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-1199">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-1199">function</span></span>|<span data-ttu-id="22bf4-1200">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1200">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1201">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1201">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="22bf4-1202">添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1202">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="ac1ea-1203">エラー</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1203">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="22bf4-1203">エラー</span><span class="sxs-lookup"><span data-stu-id="22bf4-1203">Errors</span></span>
 
-|<span data-ttu-id="ac1ea-1204">エラー コード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1204">Error code</span></span>|<span data-ttu-id="ac1ea-1205">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1205">Description</span></span>|
+|<span data-ttu-id="22bf4-1204">エラー コード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1204">Error code</span></span>|<span data-ttu-id="22bf4-1205">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1205">Description</span></span>|
 |------------|-------------|
-|`InvalidAttachmentId`|<span data-ttu-id="ac1ea-1206">添付ファイル識別子が存在しません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1206">The attachment identifier does not exist.</span></span>|
+|`InvalidAttachmentId`|<span data-ttu-id="22bf4-1206">添付ファイル識別子が存在しません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1206">The attachment identifier does not exist.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1207">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1207">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1207">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1207">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1208">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1208">Requirement</span></span>|<span data-ttu-id="ac1ea-1209">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1209">Value</span></span>|
+|<span data-ttu-id="22bf4-1208">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1208">Requirement</span></span>|<span data-ttu-id="22bf4-1209">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1209">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1210">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1210">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1211">1.1</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1211">1.1</span></span>|
-|[<span data-ttu-id="ac1ea-1212">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1212">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1213">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1213">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-1214">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1214">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1215">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1215">Compose</span></span>|
+|[<span data-ttu-id="22bf4-1210">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1210">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1211">1.1</span><span class="sxs-lookup"><span data-stu-id="22bf4-1211">1.1</span></span>|
+|[<span data-ttu-id="22bf4-1212">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1212">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1213">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1213">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-1214">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1214">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1215">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-1215">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1216">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1216">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1216">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1216">Example</span></span>
 
-<span data-ttu-id="ac1ea-1217">次のコードは、'0' の識別子を持つ添付ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1217">The following code removes an attachment with an identifier of '0'.</span></span>
+<span data-ttu-id="22bf4-1217">次のコードは、'0' の識別子を持つ添付ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1217">The following code removes an attachment with an identifier of '0'.</span></span>
 
 ```javascript
 Office.context.mailbox.item.removeAttachmentAsync(
@@ -1998,30 +1998,30 @@ Office.context.mailbox.item.removeAttachmentAsync(
 ---
 ---
 
-####  <a name="removehandlerasynceventtype-options-callback"></a><span data-ttu-id="ac1ea-1218">removeHandlerAsync(eventType, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1218">removeHandlerAsync(eventType, [options], [callback])</span></span>
+####  <a name="removehandlerasynceventtype-options-callback"></a><span data-ttu-id="22bf4-1218">removeHandlerAsync(eventType, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="22bf4-1218">removeHandlerAsync(eventType, [options], [callback])</span></span>
 
-<span data-ttu-id="ac1ea-1219">サポートされているイベントの種類のイベント ハンドラーを削除します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1219">Removes the event handlers for a supported event type.</span></span>
+<span data-ttu-id="22bf4-1219">サポートされているイベントの種類のイベント ハンドラーを削除します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1219">Removes the event handlers for a supported event type.</span></span>
 
-<span data-ttu-id="ac1ea-1220">現在、サポートされて`Office.EventType.AppointmentTimeChanged`いる`Office.EventType.RecipientsChanged`イベントの種類は、、、です。`Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1220">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
+<span data-ttu-id="22bf4-1220">現在、サポートされて`Office.EventType.AppointmentTimeChanged`いる`Office.EventType.RecipientsChanged`イベントの種類は、、、です。`Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="22bf4-1220">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1221">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1221">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1221">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1221">Parameters</span></span>
 
-| <span data-ttu-id="ac1ea-1222">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1222">Name</span></span> | <span data-ttu-id="ac1ea-1223">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1223">Type</span></span> | <span data-ttu-id="ac1ea-1224">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1224">Attributes</span></span> | <span data-ttu-id="ac1ea-1225">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1225">Description</span></span> |
+| <span data-ttu-id="22bf4-1222">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1222">Name</span></span> | <span data-ttu-id="22bf4-1223">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1223">Type</span></span> | <span data-ttu-id="22bf4-1224">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1224">Attributes</span></span> | <span data-ttu-id="22bf4-1225">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1225">Description</span></span> |
 |---|---|---|---|
-| `eventType` | [<span data-ttu-id="ac1ea-1226">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1226">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="ac1ea-1227">ハンドラーを呼び出す必要のあるイベント。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1227">The event that should invoke the handler.</span></span> |
-| `options` | <span data-ttu-id="ac1ea-1228">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1228">Object</span></span> | <span data-ttu-id="ac1ea-1229">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1229">&lt;optional&gt;</span></span> | <span data-ttu-id="ac1ea-1230">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1230">An object literal that contains one or more of the following properties.</span></span> |
-| `options.asyncContext` | <span data-ttu-id="ac1ea-1231">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1231">Object</span></span> | <span data-ttu-id="ac1ea-1232">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1232">&lt;optional&gt;</span></span> | <span data-ttu-id="ac1ea-1233">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1233">Developers can provide any object they wish to access in the callback method.</span></span> |
-| `callback` | <span data-ttu-id="ac1ea-1234">関数</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1234">function</span></span>| <span data-ttu-id="ac1ea-1235">&lt;任意&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1235">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1236">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1236">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+| `eventType` | [<span data-ttu-id="22bf4-1226">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="22bf4-1226">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="22bf4-1227">ハンドラーを呼び出す必要のあるイベント。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1227">The event that should invoke the handler.</span></span> |
+| `options` | <span data-ttu-id="22bf4-1228">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1228">Object</span></span> | <span data-ttu-id="22bf4-1229">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1229">&lt;optional&gt;</span></span> | <span data-ttu-id="22bf4-1230">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1230">An object literal that contains one or more of the following properties.</span></span> |
+| `options.asyncContext` | <span data-ttu-id="22bf4-1231">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1231">Object</span></span> | <span data-ttu-id="22bf4-1232">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1232">&lt;optional&gt;</span></span> | <span data-ttu-id="22bf4-1233">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1233">Developers can provide any object they wish to access in the callback method.</span></span> |
+| `callback` | <span data-ttu-id="22bf4-1234">関数</span><span class="sxs-lookup"><span data-stu-id="22bf4-1234">function</span></span>| <span data-ttu-id="22bf4-1235">&lt;任意&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1235">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1236">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1236">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1237">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1237">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1237">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1237">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1238">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1238">Requirement</span></span>| <span data-ttu-id="ac1ea-1239">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1239">Value</span></span>|
+|<span data-ttu-id="22bf4-1238">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1238">Requirement</span></span>| <span data-ttu-id="22bf4-1239">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1239">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1240">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1240">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="ac1ea-1241">1.7</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1241">1.7</span></span> |
-|[<span data-ttu-id="ac1ea-1242">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1242">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="ac1ea-1243">ReadItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1243">ReadItem</span></span> |
-|[<span data-ttu-id="ac1ea-1244">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1244">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="ac1ea-1245">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1245">Compose or Read</span></span> |
+|[<span data-ttu-id="22bf4-1240">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1240">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="22bf4-1241">1.7</span><span class="sxs-lookup"><span data-stu-id="22bf4-1241">1.7</span></span> |
+|[<span data-ttu-id="22bf4-1242">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1242">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="22bf4-1243">ReadItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1243">ReadItem</span></span> |
+|[<span data-ttu-id="22bf4-1244">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1244">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="22bf4-1245">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="22bf4-1245">Compose or Read</span></span> |
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1246">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1246">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1246">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1246">Example</span></span>
 
 ```javascript
 Office.initialize = function (reason) {
@@ -2038,40 +2038,40 @@ Office.initialize = function (reason) {
 ---
 ---
 
-####  <a name="saveasyncoptions-callback"></a><span data-ttu-id="ac1ea-1247">saveAsync([options], callback)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1247">saveAsync([options], callback)</span></span>
+####  <a name="saveasyncoptions-callback"></a><span data-ttu-id="22bf4-1247">saveAsync([options], callback)</span><span class="sxs-lookup"><span data-stu-id="22bf4-1247">saveAsync([options], callback)</span></span>
 
-<span data-ttu-id="ac1ea-1248">項目を非同期的に保存します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1248">Asynchronously saves an item.</span></span>
+<span data-ttu-id="22bf4-1248">項目を非同期的に保存します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1248">Asynchronously saves an item.</span></span>
 
-<span data-ttu-id="ac1ea-p178">呼び出されると、このメソッドは現在のメッセージを下書きとして保存し、コールバック メソッドを使用してアイテム ID を返します。Outlook Web App またはオンライン モードの Outlook では、サーバーにアイテムが保存されます。キャッシュ モードの Outlook では、ローカル キャッシュにアイテムが保存されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p178">When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="ac1ea-1252">EWS または REST API で使用するための `itemId` を取得するために、アドインが新規作成モードのアイテムで `saveAsync` を呼び出す場合、Outlook がキャッシュ モードになっていると、アイテムが実際にサーバーに同期されるまでに時間がかかる可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1252">If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server.</span></span> <span data-ttu-id="ac1ea-1253">アイテムが同期されるまで、`itemId` を使用するとエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1253">Until the item is synced, using the `itemId` will return an error.</span></span>
-
-<span data-ttu-id="ac1ea-p180">予定はドラフト状態にはならないため、作成モードで予定に `saveAsync` が呼び出される場合、そのアイテムはユーザーの予定表に通常の予定として保存されます。以前に保存されていない新しい予定の場合、招待状は送信されません。既存の予定を保存すると、追加または削除された出席者に更新が送信されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p180">Since appointments have no draft state, if `saveAsync` is called on an appointment in compose mode, the item will be saved as a normal appointment on the user's calendar. For new appointments that have not been saved before, no invitation will be sent. Saving an existing appointment will send an update to added or removed attendees.</span></span>
+<span data-ttu-id="22bf4-p178">呼び出されると、このメソッドは現在のメッセージを下書きとして保存し、コールバック メソッドを使用してアイテム ID を返します。Outlook Web App またはオンライン モードの Outlook では、サーバーにアイテムが保存されます。キャッシュ モードの Outlook では、ローカル キャッシュにアイテムが保存されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p178">When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ac1ea-1257">次のクライアントの場合、新規作成モードで予約の `saveAsync` に対して動作が異なります。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1257">The following clients have different behavior for `saveAsync` on appointments in compose mode:</span></span>
+> <span data-ttu-id="22bf4-1252">EWS または REST API で使用するための `itemId` を取得するために、アドインが新規作成モードのアイテムで `saveAsync` を呼び出す場合、Outlook がキャッシュ モードになっていると、アイテムが実際にサーバーに同期されるまでに時間がかかる可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1252">If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server.</span></span> <span data-ttu-id="22bf4-1253">アイテムが同期されるまで、`itemId` を使用するとエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1253">Until the item is synced, using the `itemId` will return an error.</span></span>
+
+<span data-ttu-id="22bf4-p180">予定はドラフト状態にはならないため、作成モードで予定に `saveAsync` が呼び出される場合、そのアイテムはユーザーの予定表に通常の予定として保存されます。以前に保存されていない新しい予定の場合、招待状は送信されません。既存の予定を保存すると、追加または削除された出席者に更新が送信されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p180">Since appointments have no draft state, if `saveAsync` is called on an appointment in compose mode, the item will be saved as a normal appointment on the user's calendar. For new appointments that have not been saved before, no invitation will be sent. Saving an existing appointment will send an update to added or removed attendees.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="22bf4-1257">次のクライアントの場合、新規作成モードで予約の `saveAsync` に対して動作が異なります。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1257">The following clients have different behavior for `saveAsync` on appointments in compose mode:</span></span>
 >
-> - <span data-ttu-id="ac1ea-1258">Mac Outlook では、新規作成モードの会議で `saveAsync` をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1258">Mac Outlook does not support `saveAsync` on a meeting in compose mode.</span></span> <span data-ttu-id="ac1ea-1259">Mac Outlook では、会議で `saveAsync` を呼び出すとエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1259">Calling `saveAsync` on a meeting in Mac Outlook will return an error.</span></span>
-> - <span data-ttu-id="ac1ea-1260">Outlook on the web の場合、新規作成モードのとき、予約で `saveAsync` が呼び出されると、招待状または更新が常に送信されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1260">Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.</span></span>
+> - <span data-ttu-id="22bf4-1258">Mac Outlook では、新規作成モードの会議で `saveAsync` をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1258">Mac Outlook does not support `saveAsync` on a meeting in compose mode.</span></span> <span data-ttu-id="22bf4-1259">Mac Outlook では、会議で `saveAsync` を呼び出すとエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1259">Calling `saveAsync` on a meeting in Mac Outlook will return an error.</span></span>
+> - <span data-ttu-id="22bf4-1260">Outlook on the web の場合、新規作成モードのとき、予約で `saveAsync` が呼び出されると、招待状または更新が常に送信されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1260">Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1261">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1261">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1261">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1261">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1262">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1262">Name</span></span>|<span data-ttu-id="ac1ea-1263">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1263">Type</span></span>|<span data-ttu-id="ac1ea-1264">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1264">Attributes</span></span>|<span data-ttu-id="ac1ea-1265">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1265">Description</span></span>|
+|<span data-ttu-id="22bf4-1262">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1262">Name</span></span>|<span data-ttu-id="22bf4-1263">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1263">Type</span></span>|<span data-ttu-id="22bf4-1264">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1264">Attributes</span></span>|<span data-ttu-id="22bf4-1265">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1265">Description</span></span>|
 |---|---|---|---|
-|`options`|<span data-ttu-id="ac1ea-1266">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1266">Object</span></span>|<span data-ttu-id="ac1ea-1267">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1267">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1268">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1268">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-1269">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1269">Object</span></span>|<span data-ttu-id="ac1ea-1270">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1270">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1271">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1271">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-1272">関数</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1272">function</span></span>||<span data-ttu-id="ac1ea-1273">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1273">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="ac1ea-1274">成功すると、アイテム識別子が `asyncResult.value` プロパティに提供されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1274">On success, the item identifier is provided in the `asyncResult.value` property.</span></span>|
+|`options`|<span data-ttu-id="22bf4-1266">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="22bf4-1266">Object</span></span>|<span data-ttu-id="22bf4-1267">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1267">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1268">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1268">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-1269">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1269">Object</span></span>|<span data-ttu-id="22bf4-1270">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1270">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1271">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1271">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-1272">関数</span><span class="sxs-lookup"><span data-stu-id="22bf4-1272">function</span></span>||<span data-ttu-id="22bf4-1273">メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1273">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="22bf4-1274">成功すると、アイテム識別子が `asyncResult.value` プロパティに提供されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1274">On success, the item identifier is provided in the `asyncResult.value` property.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1275">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1275">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1275">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1275">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1276">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1276">Requirement</span></span>|<span data-ttu-id="ac1ea-1277">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1277">Value</span></span>|
+|<span data-ttu-id="22bf4-1276">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1276">Requirement</span></span>|<span data-ttu-id="22bf4-1277">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1277">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1278">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1278">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1279">1.3</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1279">1.3</span></span>|
-|[<span data-ttu-id="ac1ea-1280">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1280">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1281">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1281">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-1282">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1282">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1283">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1283">Compose</span></span>|
+|[<span data-ttu-id="22bf4-1278">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1278">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1279">1.3</span><span class="sxs-lookup"><span data-stu-id="22bf4-1279">1.3</span></span>|
+|[<span data-ttu-id="22bf4-1280">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1280">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1281">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1281">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-1282">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1282">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1283">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-1283">Compose</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="ac1ea-1284">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1284">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="22bf4-1284">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1284">Examples</span></span>
 
 ```javascript
 Office.context.mailbox.item.saveAsync(
@@ -2080,7 +2080,7 @@ Office.context.mailbox.item.saveAsync(
   });
 ```
 
-<span data-ttu-id="ac1ea-p182">次の例は、コールバック関数に渡される `result` パラメーターの例です。`value` プロパティには、アイテムのアイテム ID が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p182">The following is an example of the `result` parameter passed to the callback function. The `value` property contains the item ID of the item.</span></span>
+<span data-ttu-id="22bf4-p182">次の例は、コールバック関数に渡される `result` パラメーターの例です。`value` プロパティには、アイテムのアイテム ID が含まれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p182">The following is an example of the `result` parameter passed to the callback function. The `value` property contains the item ID of the item.</span></span>
 
 ```json
 {
@@ -2092,31 +2092,31 @@ Office.context.mailbox.item.saveAsync(
 ---
 ---
 
-####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="ac1ea-1287">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1287">setSelectedDataAsync(data, [options], callback)</span></span>
+####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="22bf4-1287">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="22bf4-1287">setSelectedDataAsync(data, [options], callback)</span></span>
 
-<span data-ttu-id="ac1ea-1288">メッセージの本文または件名に非同期的にデータを挿入します。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1288">Asynchronously inserts data into the body or subject of a message.</span></span>
+<span data-ttu-id="22bf4-1288">メッセージの本文または件名に非同期的にデータを挿入します。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1288">Asynchronously inserts data into the body or subject of a message.</span></span>
 
-<span data-ttu-id="ac1ea-p183">`setSelectedDataAsync` メソッドは、指定された文字列をアイテムのサブジェクトまたは本文のカーソル位置に挿入します。または、エディターでテキストが選択されている場合は、選択されたテキストを置き換えます。本文または件名フィールド内にカーソルがない場合は、エラーが返されます。挿入後、カーソルは挿入されたコンテンツの末尾に置かれます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p183">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
+<span data-ttu-id="22bf4-p183">`setSelectedDataAsync` メソッドは、指定された文字列をアイテムのサブジェクトまたは本文のカーソル位置に挿入します。または、エディターでテキストが選択されている場合は、選択されたテキストを置き換えます。本文または件名フィールド内にカーソルがない場合は、エラーが返されます。挿入後、カーソルは挿入されたコンテンツの末尾に置かれます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p183">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="ac1ea-1292">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1292">Parameters</span></span>
+##### <a name="parameters"></a><span data-ttu-id="22bf4-1292">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bf4-1292">Parameters</span></span>
 
-|<span data-ttu-id="ac1ea-1293">名前</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1293">Name</span></span>|<span data-ttu-id="ac1ea-1294">型</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1294">Type</span></span>|<span data-ttu-id="ac1ea-1295">属性</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1295">Attributes</span></span>|<span data-ttu-id="ac1ea-1296">説明</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1296">Description</span></span>|
+|<span data-ttu-id="22bf4-1293">名前</span><span class="sxs-lookup"><span data-stu-id="22bf4-1293">Name</span></span>|<span data-ttu-id="22bf4-1294">種類</span><span class="sxs-lookup"><span data-stu-id="22bf4-1294">Type</span></span>|<span data-ttu-id="22bf4-1295">属性</span><span class="sxs-lookup"><span data-stu-id="22bf4-1295">Attributes</span></span>|<span data-ttu-id="22bf4-1296">説明</span><span class="sxs-lookup"><span data-stu-id="22bf4-1296">Description</span></span>|
 |---|---|---|---|
-|`data`|<span data-ttu-id="ac1ea-1297">String</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1297">String</span></span>||<span data-ttu-id="ac1ea-p184">挿入されるデータ。データの最大の長さは 1,000,000 文字です。1,000,000 文字を超えるデータが渡されると、`ArgumentOutOfRange` 例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p184">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
-|`options`|<span data-ttu-id="ac1ea-1301">Object</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1301">Object</span></span>|<span data-ttu-id="ac1ea-1302">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1302">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1303">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1303">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="ac1ea-1304">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1304">Object</span></span>|<span data-ttu-id="ac1ea-1305">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1305">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-1306">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1306">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`options.coercionType`|[<span data-ttu-id="ac1ea-1307">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1307">Office.CoercionType</span></span>](office.md#coerciontype-string)|<span data-ttu-id="ac1ea-1308">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1308">&lt;optional&gt;</span></span>|<span data-ttu-id="ac1ea-p185">`text` の場合、Office Web Apps と Outlook で現在のスタイルが適用されます。フィールドが HTML エディターの場合、データが HTML の場合でも、テキスト データのみが挿入されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p185">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="ac1ea-p186">`html` とフィールドが HTML をサポートする場合 (件名はサポートしない)、Office Web App では現在のスタイルが適用され、Outlook では既定のスタイルが適用されます。フィールドがテキスト フィールドの場合、`InvalidDataFormat` エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-p186">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="ac1ea-1313">`coercionType` が設定されていない場合、結果はフィールドによって変わります。フィールドが HTML の場合は HTML が使用されます。フィールドがテキストの場合はプレーン テキストが使用されます。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1313">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
-|`callback`|<span data-ttu-id="ac1ea-1314">function</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1314">function</span></span>||<span data-ttu-id="ac1ea-1315">メソッドが完了すると、`callback` パラメータに渡された関数が、単一パラメータ `asyncResult` で呼び出されます。これは、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1315">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`data`|<span data-ttu-id="22bf4-1297">String</span><span class="sxs-lookup"><span data-stu-id="22bf4-1297">String</span></span>||<span data-ttu-id="22bf4-p184">挿入されるデータ。データの最大の長さは 1,000,000 文字です。1,000,000 文字を超えるデータが渡されると、`ArgumentOutOfRange` 例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p184">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
+|`options`|<span data-ttu-id="22bf4-1301">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1301">Object</span></span>|<span data-ttu-id="22bf4-1302">&lt;オプション&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1302">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1303">次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1303">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="22bf4-1304">Object</span><span class="sxs-lookup"><span data-stu-id="22bf4-1304">Object</span></span>|<span data-ttu-id="22bf4-1305">&lt;省略可能&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1305">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-1306">開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1306">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`options.coercionType`|[<span data-ttu-id="22bf4-1307">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="22bf4-1307">Office.CoercionType</span></span>](office.md#coerciontype-string)|<span data-ttu-id="22bf4-1308">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="22bf4-1308">&lt;optional&gt;</span></span>|<span data-ttu-id="22bf4-p185">`text` の場合、Office Web Apps と Outlook で現在のスタイルが適用されます。フィールドが HTML エディターの場合、データが HTML の場合でも、テキスト データのみが挿入されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p185">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="22bf4-p186">`html` とフィールドが HTML をサポートする場合 (件名はサポートしない)、Office Web App では現在のスタイルが適用され、Outlook では既定のスタイルが適用されます。フィールドがテキスト フィールドの場合、`InvalidDataFormat` エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-p186">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="22bf4-1313">`coercionType` が設定されていない場合、結果はフィールドによって変わります。フィールドが HTML の場合は HTML が使用されます。フィールドがテキストの場合はプレーン テキストが使用されます。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1313">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
+|`callback`|<span data-ttu-id="22bf4-1314">function</span><span class="sxs-lookup"><span data-stu-id="22bf4-1314">function</span></span>||<span data-ttu-id="22bf4-1315">メソッドが完了すると、`callback` パラメータに渡された関数が、単一パラメータ `asyncResult` で呼び出されます。これは、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="22bf4-1315">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="ac1ea-1316">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1316">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="22bf4-1316">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1316">Requirements</span></span>
 
-|<span data-ttu-id="ac1ea-1317">要件</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1317">Requirement</span></span>|<span data-ttu-id="ac1ea-1318">値</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1318">Value</span></span>|
+|<span data-ttu-id="22bf4-1317">要件</span><span class="sxs-lookup"><span data-stu-id="22bf4-1317">Requirement</span></span>|<span data-ttu-id="22bf4-1318">値</span><span class="sxs-lookup"><span data-stu-id="22bf4-1318">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ac1ea-1319">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1319">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="ac1ea-1320">1.2</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1320">1.2</span></span>|
-|[<span data-ttu-id="ac1ea-1321">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1321">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="ac1ea-1322">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1322">ReadWriteItem</span></span>|
-|[<span data-ttu-id="ac1ea-1323">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1323">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="ac1ea-1324">作成</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1324">Compose</span></span>|
+|[<span data-ttu-id="22bf4-1319">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="22bf4-1319">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="22bf4-1320">1.2</span><span class="sxs-lookup"><span data-stu-id="22bf4-1320">1.2</span></span>|
+|[<span data-ttu-id="22bf4-1321">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="22bf4-1321">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="22bf4-1322">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="22bf4-1322">ReadWriteItem</span></span>|
+|[<span data-ttu-id="22bf4-1323">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="22bf4-1323">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)|<span data-ttu-id="22bf4-1324">作成</span><span class="sxs-lookup"><span data-stu-id="22bf4-1324">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ac1ea-1325">例</span><span class="sxs-lookup"><span data-stu-id="ac1ea-1325">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="22bf4-1325">例</span><span class="sxs-lookup"><span data-stu-id="22bf4-1325">Example</span></span>
 
 ```javascript
 Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
