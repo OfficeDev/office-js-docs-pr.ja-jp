@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/20/2019
 localization_priority: Priority
 ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872166"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449660"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 

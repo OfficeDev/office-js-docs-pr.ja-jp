@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
 ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "30413637"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448935"
 ---
 # <a name="icons"></a>アイコン
 アイコンは、動作や概念を視覚的に表現するものです。 多くの場合、コントロールとコマンドに意味を与えるために使用します。 環境内でユーザーが移動するのにサインが役立つのと同じように、リアルなビジュアルや象徴的なビジュアルにより、ユーザーは UI 間を移動できるようになります。 お客様がコントロールを選択するときの動作をすばやく解析できるにように、必要な詳細のみを含む、シンプルで明確なビジュアルにする必要があります。

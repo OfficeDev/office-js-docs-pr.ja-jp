@@ -4,11 +4,11 @@ description: Excel のカスタム関数で一般的な問題をトラブルシ�
 title: カスタム関数のトラブルシューティング (プレビュー)
 localization_priority: Priority
 ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959105"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449219"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 

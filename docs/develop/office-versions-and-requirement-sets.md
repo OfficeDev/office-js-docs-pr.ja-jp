@@ -1,14 +1,14 @@
 ---
 title: Office のバージョンと要件セット
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1af4840e965d7043505aedc8330cebacacc4d203
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872208"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449700"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -40,7 +40,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [Excel JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
 - [Word JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Outlook API 要件セットについて](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
+- [Outlook API 要件セットについて](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
 
 一部の要件セットには、どの Office ホストでも使用できる API が含まれています。 これらの要件のセットの詳細については、次の記事を参照してください。
 

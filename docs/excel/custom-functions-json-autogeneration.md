@@ -4,11 +4,11 @@ description: JSDOC タグを使用して、カスタム関数の JSON メタデ�
 title: カスタム関数の JSON メタデータを作成する (プレビュー)
 localization_priority: Priority
 ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914285"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449254"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>カスタム関数の JSON メタデータを作成する (プレビュー)
 

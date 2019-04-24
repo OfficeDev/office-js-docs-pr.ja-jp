@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/08/2019
 localization_priority: Priority
 ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29981993"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449072"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 

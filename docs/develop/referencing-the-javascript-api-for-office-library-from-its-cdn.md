@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871592"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449751"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 

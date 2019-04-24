@@ -4,11 +4,11 @@ description: Excel でのカスタム関数を使って外部データを workbo
 title: Web 要求とその他のデータがカスタム関数(プレビュー)を処理します
 localization_priority: Priority
 ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926668"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449709"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>カスタム関数によるデータの受信と処理
 

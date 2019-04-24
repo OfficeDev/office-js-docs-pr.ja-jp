@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/12/2019
 localization_priority: Priority
 ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982000"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448785"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 
