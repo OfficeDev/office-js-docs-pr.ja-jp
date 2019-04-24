@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/16/2019
 localization_priority: Priority
 ms.openlocfilehash: ab308620c71cfb6fb08243973997fbd189b0625f
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914264"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451065"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 

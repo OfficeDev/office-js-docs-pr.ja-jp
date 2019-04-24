@@ -5,11 +5,11 @@ ms.date: 04/10/2019
 ms.prod: outlook
 localization_priority: Priority
 ms.openlocfilehash: d27db830c88385e4e8d6f90b48fca0dab62b8972
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838502"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451592"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 

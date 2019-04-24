@@ -5,11 +5,11 @@ ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742437"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451249"
 ---
 # <a name="build-your-first-powerpoint-add-in"></a>最初の PowerPoint アドインをビルドする
 
@@ -146,9 +146,9 @@ ms.locfileid: "29742437"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。
+4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。
 
 5. ファイルを保存します。
 
@@ -322,7 +322,7 @@ ms.locfileid: "29742437"
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。
+3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。
 
 4. ファイルを保存します。
 

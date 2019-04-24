@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/05/2019
 localization_priority: Priority
 ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764398"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448737"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -23,7 +23,7 @@ ms.locfileid: "31764398"
 
 ![Excel のアドイン コマンドのスクリーンショット](../images/add-in-commands-1.png)
 
-*図 2.  Excel Online で実行するコマンドを含むアドイン*
+*図 2. Excel Online で実行するコマンドを含むアドイン*
 
 ![Excel Online のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "31764398"
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
 
-   *図 3.  Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
+   *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
 
    ![Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドインを示すスクリーンショット](../images/office-task-pane-add-ins.png)
 

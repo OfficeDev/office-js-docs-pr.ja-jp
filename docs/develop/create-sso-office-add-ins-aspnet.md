@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
 ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914306"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450164"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -426,7 +426,7 @@ ms.locfileid: "31914306"
     }
     ```
 
-1. `TODO13C` を次のコードに置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO13C` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * この後の手順で作成するサーバー側のコードでは、アドインのクライアントが AAD に送信して代理 (on-behalf-of) フローで使用されるアクセス トークンに `access_as_user` スコープ (アクセス許可) が含まれていない場合に、メッセージ `Missing access_as_user` を送信します。
     * アドインでは、エラーを報告する必要があります。

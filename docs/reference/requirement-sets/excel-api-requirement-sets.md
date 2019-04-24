@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: e7d9eac6d06fdce8936e92a001ff213b04a50bc1
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691231"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451613"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -1499,7 +1499,7 @@ API には、キーを使用して設定エントリを取得するための `ge
 |[namedItemCollection](/javascript/api/excel/excel.nameditemcollection)|_メソッド_ > getItemOrNullObject(name: string)|名前に基づいて nameditem オブジェクトを取得します。nameditem オブジェクトが存在しない場合は null オブジェクトを返します。|1.4|
 |[pivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|_メソッド_ > getCount()|コレクションに含まれるピボット テーブルの数を取得します。|1.4|
 |[pivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|_メソッド_ > getItemOrNullObject(name: string)|名前に基づいてピボットテーブルを取得します。ピボットテーブルが存在しない場合は null オブジェクトを返します。|1.4|
-|[range](/javascript/api/excel/excel.range)|_メソッド_ > getIntersectionOrNullObject(anotherRange: Range or string)|指定した範囲の長方形の交差を表す範囲オブジェクトを取得します。 交差部分が見つからない場合は、null オブジェクトを返します。|1.4|
+|[range](/javascript/api/excel/excel.range)|_メソッド_ > getIntersectionOrNullObject(anotherRange: Range or string)|指定した範囲の長方形の交差部分を表す Range オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。|1.4|
 |[range](/javascript/api/excel/excel.range)|_メソッド_ > getUsedRangeOrNullObject(valuesOnly: bool)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は null オブジェクトを返します。|1.4|
 |[rangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|_メソッド_ > getCount()|コレクションに含まれる RangeView オブジェクトの数を取得します。|1.4|
 |[setting](/javascript/api/excel/excel.setting)|_プロパティ_ > key|Setting の ID を表すキーを返します。読み取り専用。|1.4|
