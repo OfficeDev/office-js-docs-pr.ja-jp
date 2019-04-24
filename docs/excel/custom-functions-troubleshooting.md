@@ -1,14 +1,14 @@
 ---
-ms.date: 04/15/2019
+ms.date: 04/18/2019
 description: Excel のカスタム関数で一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914222"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959105"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -45,6 +45,10 @@ CustomFunctions.associate("ADD", add);
 ```
 
 このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)」をご覧ください。
+
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
+
+"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
