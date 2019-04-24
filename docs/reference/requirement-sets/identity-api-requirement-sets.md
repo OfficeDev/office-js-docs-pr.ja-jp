@@ -5,11 +5,11 @@ ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764391"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451585"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -28,7 +28,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 - [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server の概要](/officeonlineserver/office-online-server-overview)
+- [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 

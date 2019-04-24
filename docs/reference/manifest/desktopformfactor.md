@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/01/2019
 localization_priority: Normal
 ms.openlocfilehash: cddf76af01ec9f3016b28a3f7692aa6dfeb9bd60
-ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "30413623"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450556"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
@@ -22,7 +22,7 @@ ms.locfileid: "30413623"
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | はい      | アドインが機能を公開する場所を定義します。 |
 | [FunctionFile](functionfile.md)       | はい      | JavaScript 関数を含むファイルの URL。|
-| [GetStarted](getstarted.md)           | 不要       | Word、Excel、または PowerPoint のホストにアドインをインストールするときに表示される吹き出しを定義します。 |
+| [GetStarted](getstarted.md)           | いいえ       | Word、Excel、または PowerPoint のホストにアドインをインストールするときに表示される吹き出しを定義します。 |
 | [SupportsSharedFolders](supportssharedfolders.md) | いいえ | 代理人のシナリオで Outlook アドインを使用できるかどうかを定義し、既定では *false* に設定します。<br><br>**重要**: Outlook アドインの代理人アクセスは現在プレビュー段階であるため、この`SupportSharedFolders`要素を使用するアドインは、appsource に発行することも、一元展開によって展開することもできません。 |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor の例

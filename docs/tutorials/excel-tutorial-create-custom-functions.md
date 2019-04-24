@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477573"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451413"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>チュートリアル: Excel でのカスタム関数の作成 (プレビュー)
 
@@ -54,8 +54,8 @@ ms.locfileid: "31477573"
     yo office
     ```
     
-    * Choose a project type: (プロジェクトの種類を選択) `Excel Custom Functions Add-in project (...)`
-    * Choose a script type: (スクリプトの種類を選択) `JavaScript`
+    * Choose a project type (プロジェクトの種類を選択): `Excel Custom Functions Add-in project (...)`
+    * Choose a script type (スクリプトの種類を選択): `JavaScript`
     * What would you want to name your add-in? (アドインの名前を何にしますか) `stock-ticker`
     
     ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/12-10-fork-cf-pic.jpg)
@@ -78,7 +78,7 @@ ms.locfileid: "31477573"
 
 5. Node.js で実行しているローカル Web サーバーを開始します。 Windows 用 Excel または Excel Online で、カスタム関数アドインを試すことができます。
 
-# [<a name="excel-for-windows"></a>Windows 用 Excel](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Windows 用 Excel](#tab/excel-windows)
 
 次のコマンドを実行します。
 
@@ -91,7 +91,7 @@ npm start desktop
 > [!NOTE]
 > アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。 **[ランタイムログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にして、アドインの XML マニフェストファイルに関する問題のトラブルシューティングを行ったり、インストールやランタイムの問題を確認したりすることもできます。 ランタイムログは`console.log` 、問題を見つけて解決するために、ステートメントをログファイルに書き込みます。
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 次のコマンドを実行します。
 
@@ -191,18 +191,18 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 5. 新しい関数を使用できるようにするには、Excel でアドインを再登録します。 
 
-# [<a name="excel-for-windows"></a>Windows 用 Excel](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Windows 用 Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
 2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)
 
 3. 使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
+    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 用 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-1. Excel Online で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
+1. Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。 
 
@@ -292,18 +292,18 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 3. 新しい関数を使用できるようにするには、Excel でアドインを再登録します。
 
-# [<a name="excel-for-windows"></a>Windows 用 Excel](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Windows 用 Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
 2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)
 
 3. 使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
+    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 用 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-1. Excel Online で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
+1. Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

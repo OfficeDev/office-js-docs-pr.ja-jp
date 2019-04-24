@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: ebbd10e65894a7d038e54ffbaac20c973adf4a9f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691133"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450087"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -17,11 +17,11 @@ ms.locfileid: "30691133"
 
 Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Office 2013 for Windows | Windows 版 Office 2016 以降   | Office 365 for Windows |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
+|  要件セット  | Office 2013 for Windows | Outlook 2016 for Windows 以降   | Office 365 for Windows |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降| 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 
-バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
+バージョン、ビルド番号、および Office Online Server の詳細については以下を参照してください。
 
 - [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)

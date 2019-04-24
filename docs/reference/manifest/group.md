@@ -1,13 +1,14 @@
 ---
-title: マニフェスト ファイルの Group 要素
+title: マニフェストファイルの Group 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 13cd9bbe6f602fd1779caea487e34177c3e9d483
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 7cc1f4c398eeb013eb6033b207b395466f7d72ca
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433700"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450710"
 ---
 # <a name="group-element"></a>Group 要素
 
@@ -21,15 +22,15 @@ ms.locfileid: "27433700"
 
 ### <a name="id-attribute"></a>id 属性
 
-必須。グループの一意識別子。最大 125 文字の文字列です。マニフェスト内で一意にする必要があります。一意ではない場合、レンダリングに失敗します。
+必須。 グループの一意識別子。 最大 125 文字の文字列です。 マニフェスト内で一意にする必要があります。一意ではない場合、レンダリングに失敗します。
 
 ## <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [Label](#label)      | はい |  CustomTab またはグループのラベル。  |
+|  [Label](#label)      | ○ |  CustomTab またはグループのラベル。  |
 |  [Control](#control)    | はい |  1 つ以上のコントロール オブジェクトのコレクション。  |
 
-### <a name="label"></a>ラベル 
+### <a name="label"></a>Label 
 
 必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
 

@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの SourceLocation 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: dc432ebb9482e8e9b8be5d90a838357ccf519ad3
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 7544e2bae480b9431c8912533ea1b761132a355e
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433517"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451977"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 要素
 

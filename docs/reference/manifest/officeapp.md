@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの OfficeApp 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 42b6fe2e1c33322b90016d5e7ceec7b1bfe5b72d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 86f38ab77e98bb01370e40c8ada38bae171e0c2d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433167"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450458"
 ---
 # <a name="officeapp-element"></a>OfficeApp 要素
 
@@ -32,22 +33,22 @@ Office アドインのマニフェストのルート要素。
 
 ## <a name="must-contain"></a>含める必要があるもの
 
-|**要素**|**Content**|**Mail**|**TaskPane**|
+|**要素**|**コンテンツ**|**メール**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
-|[Version](version.md)|x|x|x|
+|[バージョン](version.md)|x|x|x|
 |[ProviderName](providername.md)|x|x|x|
 |[DefaultLocale](defaultlocale.md)|x|x|x|
 |[DefaultSettings](defaultsettings.md)|x||x|
 |[DisplayName](displayname.md)|x|x|x|
-|[Description](description.md)|x|x|x|
+|[説明](description.md)|x|x|x|
 |[FormSettings](formsettings.md)||x||
-|[Permissions](permissions.md)|x||x|
+|[アクセス許可](permissions.md)|x||x|
 |[Rule](rule.md)||x||
 
 ## <a name="can-contain"></a>含めることができるもの
 
-|**要素**|**Content**|**Mail**|**TaskPane**|
+|**Element**|**コンテンツ**|**メール**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -57,7 +58,7 @@ Office アドインのマニフェストのルート要素。
 |[Hosts](hosts.md)|x|x|x|
 |[Requirements](requirements.md)|x|x|x|
 |[AllowSnapshot](allowsnapshot.md)|x|||
-|[Permissions](permissions.md)||x||
+|[アクセス許可](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
 |[VersionOverrides](versionoverrides.md)||x||

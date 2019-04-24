@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: c7c33f31a63fc2a57b9457fc788a80c925d3eef1
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871200"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450290"
 ---
 # <a name="context"></a>context
 
@@ -74,7 +74,7 @@ function write(message){
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 

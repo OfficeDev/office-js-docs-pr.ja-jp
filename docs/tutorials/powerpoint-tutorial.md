@@ -6,11 +6,11 @@ ms.prod: powerpoint
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742416"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451697"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -50,7 +50,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 アドイン コードを次のように編集し、このチュートリアルの後続の手順でアドイン機能を実装するために使用するフレームワークを作成します。
 
-1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** において、`id="content-main"` で **div** を検索し、**div** 全体を次のマークアップと置き換えてファイルを保存します。
+1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** において、**** で `id="content-main"` を検索し、**div** 全体を次のマークアップと置き換えてファイルを保存します。
 
     ```html
     <!-- TODO2: Create the content-header div. -->
@@ -201,7 +201,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 9. **Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。 この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。 注意: 
 
-    - `setSelectedDataAsyc` 要求の 2 番目のパラメーターとして指定されている `coercionType` オプションは、挿入されるデータの種類を示します。 
+    - `coercionType` 要求の 2 番目のパラメーターとして指定されている `setSelectedDataAsyc` オプションは、挿入されるデータの種類を示します。 
 
     - `asyncResult` オブジェクトは `setSelectedDataAsync` 要求が失敗した場合の状態やエラー情報など、その要求の結果をカプセル化します。
 
@@ -231,7 +231,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 3. 作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。
 
-    ![[画像の挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-button.png)
+    ![[イメージの挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-button.png)
 
 4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 

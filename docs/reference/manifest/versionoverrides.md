@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/29/2019
 localization_priority: Normal
 ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635910"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452068"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -18,17 +18,17 @@ ms.locfileid: "29635910"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  はい  |  スキーマの場所。`xsi:type` が `VersionOverridesV1_0` の場合は `http://schemas.microsoft.com/office/mailappversionoverrides` にする必要があり、`xsi:type` が `VersionOverridesV1_1` の場合は `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` にする必要があります。|
+|  **xmlns**       |  はい  |  スキーマの場所。`http://schemas.microsoft.com/office/mailappversionoverrides` が `xsi:type` の場合は `VersionOverridesV1_0` にする必要があり、`http://schemas.microsoft.com/office/mailappversionoverrides/1.1` が `xsi:type` の場合は `VersionOverridesV1_1` にする必要があります。|
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
 
 > [!NOTE]
-> 2016 またはそれ以降、現在は Outlook には、VersionOverrides v1.1 のスキーマがサポートされていると、`VersionOverridesV1_1`型です。
+> 現在、Outlook 2016 以降では、versionoverrides v1.1 スキーマと`VersionOverridesV1_1`種類をサポートしています。
 
 ## <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Description**    |  いいえ   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、[Resources](./resources.md) 要素の **LongString** 要素の子要素に含まれています。**Description** 要素の `resid` の属性は、テキストを含む `String` 要素の `id` 属性の値に設定されています。|
+|  **説明**    |  No/しない   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、**Resources** 要素の [LongString](./resources.md) 要素の子要素に含まれています。`resid` 要素の **** の属性は、テキストを含む `id` 要素の `String` 属性の値に設定されています。|
 |  **Requirements**  |  いいえ   |  アドインに必要な最小の Office.js のセットおよびバージョンを指定します。これは、マニフェストの親部分の `Requirements` 要素を上書きします。|
 |  [Hosts](./hosts.md)                |  はい  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
 |  [Resources](./resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
@@ -37,7 +37,7 @@ ms.locfileid: "29635910"
 
 ### <a name="versionoverrides-example"></a>VersionOverrides の例
 
-次の一般的な例では`<VersionOverrides>`、必須ではありませんが、通常使用されるいくつかの子要素を含む要素です。
+通常、必須ではありません`<VersionOverrides>`が通常使用される子要素を含む一般的な要素の例を次に示します。
 
 ```xml
 <OfficeApp>

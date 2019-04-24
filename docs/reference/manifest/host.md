@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの Host 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 37b772261ad82b4f899e73314a08ffd1dd03b442
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f496e3e0c16f24d20e1d1db76208e61267235131
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432810"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450507"
 ---
 # <a name="host-element"></a>Host 要素
 
@@ -22,9 +23,9 @@ ms.locfileid: "27432810"
 
 ### <a name="attributes"></a>属性
 
-| 属性     | 種類   | 必須 | 説明                                      |
+| 属性     | Type   | 必須 | 説明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | 必須 | Office ホスト アプリケーションの種類の名前。 |
+| [名前](#name) | string | 必須 | Office ホスト アプリケーションの種類の名前。 |
 
 ### <a name="name"></a>名前
 このアドインが対象にするホストの種類を指定します。この値は、次のいずれかである必要があります。

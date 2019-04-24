@@ -6,11 +6,11 @@ ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742402"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451190"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -27,7 +27,7 @@ ms.locfileid: "29742402"
 
 このチュートリアルを使用するには、以下のバージョンがインストールされている必要があります。 
 
-- Word 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
+- Word 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
 
 - [ノード](https://nodejs.org/en/) 
 
@@ -102,7 +102,7 @@ ms.locfileid: "29742402"
     }
     ```
 
-8. `TODO4` を次のコードに置き換えます。次の点に注意してください。
+8. `TODO4` を次のコードに置き換えます。 次の点に注意してください。
 
    - `insertParagraph` メソッドの最初のパラメーターは、新しい段落のテキストです。
 
@@ -231,7 +231,7 @@ ms.locfileid: "29742402"
     }
     ``` 
 
-6. `TODO1` を次のコードに置き換えます。 このコードでは、まだ存在していないカスタム スタイルを適用しています。 「[アドインをテストする](#test-the-add-in)」の手順で **MyCustomStyle** という名前のスタイルを作成します。
+6. `TODO1` を次のコードに置き換えます。 このコードでは、まだ存在していないカスタム スタイルを適用しています。 「**アドインをテストする**」の手順で [MyCustomStyle](#test-the-add-in) という名前のスタイルを作成します。
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
@@ -277,7 +277,7 @@ ms.locfileid: "29742402"
     }
     ``` 
 
-6. `TODO1` を次のコードに置き換えます。 このコードでは、`Paragraph.getNext` メソッドにチェーンされた `ParagraphCollection.getFirst` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
+6. `TODO1` を次のコードに置き換えます。 このコードでは、`ParagraphCollection.getFirst` メソッドにチェーンされた `Paragraph.getNext` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
@@ -364,7 +364,7 @@ ms.locfileid: "29742402"
     }
     ``` 
 
-7. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+7. `TODO1` を次のコードに置き換えます。 次の点に注意してください。
 
    - このメソッドの目的は、テキストが Click-to-Run という範囲の末尾に (C2R) という省略形を挿入することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
@@ -500,7 +500,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+6. `TODO1` を次のコードに置き換えます。 次の点に注意してください。
 
    - このメソッドの目的は、Office 365 というテキストから成る範囲の前に Office 2019 というテキストの範囲を追加することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
@@ -717,7 +717,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+6. `TODO1` を次のコードに置き換えます。 次の点に注意してください。
 
    - 最初の行は、ドキュメントの末尾に空白の段落を追加します。 
 
@@ -776,7 +776,7 @@ function insertTextIntoRange() {
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-7. `TODO2` を次のコードに置き換えます。次の点に注意してください。
+7. `TODO2` を次のコードに置き換えます。 次の点に注意してください。
 
    - `insertTable` メソッドの最初の 2 つのパラメーターは、行と列の数を指定します。
 
@@ -868,7 +868,7 @@ function insertTextIntoRange() {
     }
     ```
 
-7. `TODO1` を次のコードに置き換えます。次の点に注意してください。
+7. `TODO1` を次のコードに置き換えます。 次の点に注意してください。
 
    - このコードの目的は、コンテンツ コントロール内の Office 365 という語句をラップすることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 

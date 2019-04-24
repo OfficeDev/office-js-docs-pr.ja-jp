@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの GetStarted 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e6fb1c56d051e9de607e97979225e484adb9affb
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433115"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452082"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
@@ -21,13 +22,13 @@ ms.locfileid: "27433115"
 | [説明](#description)   | はい      | JavaScript 関数を含むファイルの URL。|
 | [LearnMoreUrl](#learnmoreurl) | いいえ       | アドインの詳細を説明するページの URL。   |
 
-### <a name="title"></a>Title 
+### <a name="title"></a>タイトル 
 
-必須。吹き出しの一番上に使用するタイトル。**resid** 属性は [Resources](resources.md) セクションの **ShortStrings** 要素にある有効な ID を参照します。
+必須。 吹き出しの一番上に使用するタイトル。 **resid** 属性は **Resources** セクションの [ShortStrings](resources.md) 要素にある有効な ID を参照します。
 
 ### <a name="description"></a>説明
 
-必須。吹き出しの説明/本文の内容。**resid** 属性は [Resources](resources.md) セクションの **LongStrings** 要素にある有効な ID を参照します。
+必須。 吹き出しの説明/本文の内容。 **resid** 属性は **Resources** セクションの [LongStrings](resources.md) 要素にある有効な ID を参照します。
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 

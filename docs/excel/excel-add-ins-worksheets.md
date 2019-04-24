@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479726"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959119"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -286,7 +286,7 @@ Excel.run(function (context) {
 この`WorksheetChangedEventArgs`オブジェクトは、変更とソースに関する情報を提供します。 `onChanged` が発生するのは書式設定またはデータの値が変更された時であるため、値が実際に変更されたかどうかを確認するのにアドインを使用すると便利です。 `details`プロパティは、この情報を [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) としてカプセル化します。 次のコード サンプルでは、変更前と変更後の値および変更されたセルの種類を表示する方法を表示します。
 
 > [!NOTE]
-> `WorksheetChangedEventArgs.details` 現在、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetChangedEventArgs.details` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
@@ -306,7 +306,7 @@ function onWorksheetChanged(eventArgs) {
 ## <a name="find-all-cells-with-matching-text-preview"></a>一致するテキストがあるすべてのセルを検索する (プレビュー)
 
 > [!NOTE]
-> 現在、Worksheet オブジェクトの `findAll` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 現在、Worksheet オブジェクトの `findAll` 関数は、パブリック プレビューでのみ利用できます。[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。 以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。 指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。
 
@@ -331,6 +331,52 @@ Excel.run(function (context) {
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
+## <a name="filter-data"></a>データをフィルター処理する
+
+> [!NOTE]
+> `AutoFilter` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメータを持つ `Worksheet.autoFilter.apply` で作成されます。
+
+- `range`: フィルターが適用される範囲を、`Range` オブジェクトまたは文字列の範囲として指定します。
+- `columnIndex`: フィルター条件が評価される 0 から始まる列インデックス。
+- `criteria`: 列のセルに基づいてどの行をフィルター処理するかを決定する [FilterCriteria](/javascript/api/excel/excel.filtercriteria) オブジェクト。
+
+最初のコード サンプルは、ワークシートの使用範囲にフィルターを追加する方法を示しています。 このフィルタは、列 **3** の値に基づいて、上位 25% にないエントリを非表示にします。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var farmData = sheet.getUsedRange();
+
+    // This filter will only show the rows with the top 25% of values in column 3.
+    sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+次のコード サンプルでは、`reapply` メソッドを使用してオート フィルターを更新する方法を示します。 これは、範囲内のデータが変更されたときに実行する必要があります。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.reapply();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+最後のオート フィルター コード サンプルでは、`remove` メソッドを使用してワークシートからオート フィルターを削除する方法を示します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.remove();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`AutoFilter` を個々のテーブルに適用することもできます。 詳しくは、[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md#autofilter)を参照してください。
+
 ## <a name="data-protection"></a>データの保護
 
 ご使用のアドインでは、ワークシート内のデータを編集するユーザー機能を制御できます。 ワークシートの `protection` プロパティは [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) オブジェクトであり、`protect()` メソッドを備えています。 次の例では、アクティブなワークシートの完全な保護を切り替える基本的なシナリオを示します。
@@ -350,8 +396,8 @@ Excel.run(function (context) {
 
 `protect` メソッドには、2 つの省略可能なパラメーターがあります。
 
-- `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)。
-- `password`ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
+- `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。
+- `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
 
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838516"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451956"
 ---
 # <a name="office"></a>Office
 
@@ -50,8 +50,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Succeeded`| 文字列|呼び出しが成功しました。|
-|`Failed`| 文字列|呼び出しが失敗しました。|
+|`Succeeded`| String|呼び出しが成功しました。|
+|`Failed`| String|呼び出しが失敗しました。|
 
 ##### <a name="requirements"></a>要件
 
@@ -75,7 +75,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Html`| 文字列|HTML 形式で返されるデータを要求します。|
+|`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
 ##### <a name="requirements"></a>要件
@@ -100,13 +100,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|---|
-|`AppointmentTimeChanged`| 文字列 | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
-|`AttachmentsChanged`| 文字列 | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | プレビュー |
-|`EnhancedLocationsChanged`| 文字列 | 選択した予定の場所が変更されました。 | プレビュー |
-|`ItemChanged`| 文字列 | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`OfficeThemeChanged`| 文字列 | メールボックスの Office テーマが変更されました。 | プレビュー |
-|`RecipientsChanged`| 文字列 | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
-|`RecurrenceChanged`| 文字列 | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
+|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
+|`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | プレビュー |
+|`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | プレビュー |
+|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`OfficeThemeChanged`| String | メールボックスの Office テーマが変更されました。 | プレビュー |
+|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
+|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 
@@ -130,8 +130,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Body`| 文字列|データのソースは、メッセージの本文です。|
-|`Subject`| 文字列|データのソースは、メッセージの件名です。|
+|`Body`| String|データのソースは、メッセージの本文です。|
+|`Subject`| String|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>要件
 

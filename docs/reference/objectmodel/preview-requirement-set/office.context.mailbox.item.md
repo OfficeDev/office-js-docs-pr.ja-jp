@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/17/2019
 localization_priority: Normal
 ms.openlocfilehash: cb9c298302bf0df9d7842fde4706d9d0c9710ae4
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914348"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450395"
 ---
 # <a name="item"></a>item
 
@@ -51,9 +51,9 @@ ms.locfileid: "31914348"
 | [organizer](#organizer-emailaddressdetailsorganizer) | メンバー |
 | [繰り返さ](#nullable-recurrence-recurrence) | メンバー |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | メンバー |
-| [sender](#sender-emailaddressdetails) | メンバー |
-| [系列 id](#nullable-seriesid-string) | メンバー |
-| [start](#start-datetime) | メンバー |
+| [sender](#sender-emailaddressdetails) | Member |
+| [系列 id](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | メンバー |
 | [to](#to-arrayemailaddressdetailsrecipients) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
@@ -108,7 +108,7 @@ Office.initialize = function () {
 > [!NOTE]
 > セキュリティ上の問題がある可能性があるため、特定の種類のファイルは Outlook によってブロックされるので、返されません。 詳細については、「[Outlook でブロックされる添付ファイル](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)」を参照してください。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -182,7 +182,7 @@ function callback(asyncResult) {
 
 アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [Body](/javascript/api/outlook/office.body)
 
@@ -283,7 +283,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients)
 
@@ -449,7 +449,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 この`enhancedLocation`プロパティは、予定の場所を取得、削除、または追加するためのメソッドを提供する[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)オブジェクトを返します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
 
@@ -512,7 +512,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [電子メールアドレス](/javascript/api/outlook/office.emailaddressdetails) | [の](/javascript/api/outlook/office.from)詳細
 
@@ -531,7 +531,7 @@ function callback(asyncResult) {
 
 メッセージのインターネットヘッダーを取得または設定します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
@@ -589,7 +589,7 @@ console.log("internetMessageId: " + internetMessageId);
 
 `itemClass` プロパティには、選択したアイテムのメッセージ クラスを指定します。次に、メッセージまたは予定アイテムの既定のメッセージ クラスを示します。
 
-|型|説明|アイテム クラス|
+|種類|説明|アイテム クラス|
 |---|---|---|
 |予定アイテム|アイテム クラス `IPM.Appointment` または `IPM.Appointment.Occurrence` の予定表アイテムは次のとおりです。|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |メッセージ アイテム|これには、既定のメッセージ クラス `IPM.Note` を持つ電子メール メッセージ、および基本メッセージ クラスとして `IPM.Schedule.Meeting` を使用する会議出席依頼、返信、または取り消しが含まれます。|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
@@ -661,7 +661,7 @@ if (itemId === null || itemId == undefined) {
 
 `itemType` プロパティは、`ItemType` 列挙値の 1 つを返します。これは `item` オブジェクト インスタンスがメッセージと予定のどちらであるかを示すものです。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
@@ -854,7 +854,7 @@ Office.context.mailbox.item.organizer.getAsync(
 );
 ```
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails) | [開催者](/javascript/api/outlook/office.organizer)
 
@@ -917,7 +917,7 @@ Recurrence = {
 }
 ```
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 * [Recurrence](/javascript/api/outlook/office.recurrence)
 
@@ -1083,7 +1083,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   Date | [Time](/javascript/api/outlook/office.time)
 
@@ -1327,7 +1327,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 
 ##### <a name="parameters"></a>パラメーター
 
-| 名前 | 型 | 属性 | 説明 |
+| 名前 | 種類 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを呼び出す必要のあるイベント。 |
 | `handler` | 関数 || イベントを処理する関数。関数は、オブジェクト リテラルである単一パラメーターを受け入れる必要があります。パラメーターの `type` プロパティは、`addHandlerAsync` に渡される `eventType` パラメーターと一致します。 |
@@ -1372,7 +1372,7 @@ Office アドインを Outlook Web App で実行している場合、`addItemAtt
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`itemId`|String||添付するアイテムの Exchange 識別子。最大長は 100 文字です。|
 |`attachmentName`|String||添付するアイテムの件名。 最大の長さは、255 文字です。|
@@ -1458,7 +1458,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`formData`|String &#124; Object||回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。|
 |`formData.htmlBody`|String|&lt;省略可能&gt;|回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
@@ -1580,7 +1580,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`formData`|String &#124; Object||回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。|
 |`formData.htmlBody`|String|&lt;省略可能&gt;|回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
@@ -1695,7 +1695,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`attachmentId`|String||取得する添付ファイルの識別子を指定します。|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
@@ -1755,7 +1755,7 @@ function handleAttachmentsCallback(result) {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`|Object|&lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
@@ -1840,7 +1840,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|説明|
+|名前|種類|説明|
 |---|---|---|
 |`entityType`|[Office.MailboxEnums.EntityType](/javascript/api/outlook/office.mailboxenums.entitytype)|EntityType 列挙値の 1 つ。|
 
@@ -1902,7 +1902,7 @@ Office.initialize = function () {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|説明|
+|名前|種類|説明|
 |---|---|---|
 |`name`|String|一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。|
 
@@ -1932,7 +1932,7 @@ Office.initialize = function () {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`options`|オブジェクト|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`|オブジェクト|&lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
@@ -2053,7 +2053,7 @@ var veggies = allMatches.veggies;
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|説明|
+|名前|種類|説明|
 |---|---|---|
 |`name`|String|一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。|
 
@@ -2095,7 +2095,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||データの形式を要求します。テキストの場合、メソッドは文字列としてプレーン テキストを返し、存在する HTML タグはすべて削除されます。HTMLの場合、メソッドは、プレーンテキストまたは HTML のいずれの場合も選択されたテキストを返します。|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
@@ -2238,7 +2238,7 @@ var veggies = selectedMatches.veggies;
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`|Object|&lt;optional&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
@@ -2274,7 +2274,7 @@ function callback (asyncResult) {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`callback`|function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>カスタム プロパティは `asyncResult.value` プロパティの [`CustomProperties`](/javascript/api/outlook/office.customproperties) オブジェクトとして指定されます。 このオブジェクトは、アイテムからカスタム プロパティを取得、設定、削除し、サーバーに設定し直すカスタム プロパティへの変更を保存するために使用できます。|
 |`userContext`|Object|&lt;省略可能&gt;|開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。 このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。|
@@ -2325,7 +2325,7 @@ function saveCallback(asyncResult) {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`attachmentId`|String||削除する添付ファイルの識別子。|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
@@ -2372,7 +2372,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 ##### <a name="parameters"></a>パラメーター
 
-| 名前 | 型 | 属性 | 説明 |
+| 名前 | 種類 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
@@ -2409,7 +2409,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`options`|オブジェクト|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`|Object|&lt;任意&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
@@ -2452,7 +2452,7 @@ Office.context.mailbox.item.saveAsync(
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前|型|属性|説明|
+|名前|種類|属性|説明|
 |---|---|---|---|
 |`data`|String||挿入されるデータ。データの最大の長さは 1,000,000 文字です。1,000,000 文字を超えるデータが渡されると、`ArgumentOutOfRange` 例外がスローされます。|
 |`options`|Object|&lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|

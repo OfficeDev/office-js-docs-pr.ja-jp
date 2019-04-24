@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの Control 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433937"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450640"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -30,10 +31,10 @@ ms.locfileid: "27433937"
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
+|  **Label**     | はい |  ボタンのテキストです。 **resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
 |  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
 |  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
-|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
+|  [Icon](icon.md)      | はい |  ボタンの画像。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
@@ -82,7 +83,7 @@ ms.locfileid: "27433937"
 
 [**PrimaryCommandSurface**] または [**ContextMenu**] [の拡張点](extensionpoint.md)が使用されている場合、メニュー コントロールによって以下が定義されます。
 
-- ルートレベルのメニュー項目です。
+- ルートレベルのメニュー項目。
 
 - サブメニュー項目のリスト。
 
@@ -144,7 +145,7 @@ When used with **PrimaryCommandSurface**, the root menu item displays as a butto
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。**resid** 属性は、[Resources](resources.md) 要素の **ShortStrings** 要素にある **String** 要素の **id** 属性の値に設定する必要があります。      |
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性は、**Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値に設定する必要があります。      |
 |  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
 |  [Supertip](supertip.md)  | はい |  このボタンのヒント。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像です。         |
@@ -244,7 +245,7 @@ When used with **PrimaryCommandSurface**, the root menu item displays as a butto
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
-|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
+|  [Icon](icon.md)      | はい |  ボタンの画像。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 
 ### <a name="executefunction-mobile-button-example"></a>ExecuteFunction モバイル ボタンの例

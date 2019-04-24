@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの FunctionFile 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 634d383498698b55990dc73e66ec11616396f968
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432698"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450584"
 ---
 # <a name="functionfile-element"></a>FunctionFile 要素
 
@@ -75,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> **event.completed** シグナルに対する呼び出しにより、イベントが正常に処理されたことが通知されます。 同一のアドイン コマンドを複数回クリックするなどの方法で関数を複数回呼び出すと、すべてのイベントは自動的にキューに入れられます。 最初のイベントが自動的に実行され、その他のイベントはキューに残ります。 関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。 **event.completed** を呼び出す必要があります。そうしないと、関数は実行されません。
+> **event.completed** シグナルに対する呼び出しにより、イベントが正常に処理されたことが通知されます。 同一のアドイン コマンドを複数回クリックするなどの方法で関数を複数回呼び出すと、すべてのイベントは自動的にキューに入れられます。 最初のイベントが自動的に実行され、その他のイベントはキューに残ります。 関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。 そうしないと、関数は実行されません。

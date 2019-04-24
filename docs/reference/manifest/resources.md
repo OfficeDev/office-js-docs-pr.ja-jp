@@ -2,26 +2,27 @@
 title: マニフェスト ファイルの Resources 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433902"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452054"
 ---
 # <a name="resources-element"></a>Resources 要素
 
-[VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。マニフェスト要素によりリソースが指定されます。リソースの **id** を使用します。それにより、特にリソースにさまざまなロケールのバージョンがあるとき、マニフェストのサイズが管理できる大きさに抑えられます。**id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
+[VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。 マニフェスト要素によりリソースが指定されます。リソースの **id** を使用します。 それにより、特にリソースにさまざまなロケールのバージョンがあるとき、マニフェストのサイズが管理できる大きさに抑えられます。 **id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
 
 各リソースは、特定のロケールに異なるリソースを定義する 1 つ以上の **Override** 子要素を持つことができます。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  支払期日  |  説明  |
+|  要素 |  種類  |  説明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
-|  **Urls**                |  url     |  HTTPS URL の場所を指定します。URL の長さは最大で 2048 文字です。 |
-|  **ShortStrings** |  string  |  **Label** 要素と **Title** 要素のテキスト。各 **String** には、最大 125 文字を使用できます。|
+|  **Urls**                |  url     |  HTTPS URL の場所を指定します。 URL の長さは最大で 2048 文字です。 |
+|  **ShortStrings** |  string  |  **Label** 要素と **Title** 要素のテキスト。 各 **String** には、最大 125 文字を使用できます。|
 |  **LongStrings**  |  string  | **Description** 属性のテキスト。各 **String** には、最大 250 文字を使用できます。|
 
 > [!NOTE]

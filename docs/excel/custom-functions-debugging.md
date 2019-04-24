@@ -4,11 +4,11 @@ description: Excel でカスタム関数をデバッグします。
 title: カスタム関数のデバッグ (プレビュー)
 localization_priority: Normal
 ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914390"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448760"
 ---
 # <a name="custom-functions-debugging-preview"></a>カスタム関数のデバッグ (プレビュー)
 

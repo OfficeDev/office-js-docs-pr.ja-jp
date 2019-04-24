@@ -2,12 +2,13 @@
 title: マニフェスト ファイルの RequestedHeight 要素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: ea8c0403146f526b28eb20b8364fd210ac357baf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: e175d9012bb2f2a42fd466c35e5e28ade967d6f2
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433475"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450528"
 ---
 # <a name="requestedheight-element"></a>RequestedHeight 要素
 
