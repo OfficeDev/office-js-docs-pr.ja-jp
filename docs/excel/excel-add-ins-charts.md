@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: adaae105050a01968525e38deb6db570b962ddde
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870885"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448529"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 

@@ -4,11 +4,11 @@ description: Excel のカスタム関数でエラーを処理します。
 title: Excel のカスタム関数でのエラー処理 (プレビュー)
 localization_priority: Priority
 ms.openlocfilehash: 6c1c7f780aea125977510e4eb0e320933cd6ed9c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870010"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448323"
 ---
 # <a name="error-handling-within-custom-functions"></a>カスタム関数内でのエラー処理
 
