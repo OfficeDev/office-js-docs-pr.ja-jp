@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/03/2019
 localization_priority: Priority
 ms.openlocfilehash: 7f05263f5220c2d60d0cebcfc686e1fed3f07900
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479712"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449268"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 

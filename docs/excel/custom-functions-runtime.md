@@ -4,11 +4,11 @@ description: 新しい JavaScript ランタイムを使用する Excel カスタ
 title: Excel カスタム関数のランタイム (プレビュー)
 localization_priority: Normal
 ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871781"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448218"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel カスタム関数のランタイム (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "30871781"
 
 カスタム関数によって使用される JavaScript ランタイムでは、xhr は[同じ送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)と単純な[CORS](https://www.w3.org/TR/cors/)を要求することによって、追加のセキュリティ対策を実装します。
 
-単純な CORS 実装は cookie を使用できず、単純なメソッド (GET、HEAD、POST) のみをサポートすることに注意してください。 単純な CORS は、フィールド名`Accept`、 `Accept-Language`、 `Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ`Content-Type`タイプが`application/x-www-form-urlencoded` `text/plain`、、またはの場合は`multipart/form-data`、単純な CORS のヘッダーを使用することもできます。
+単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ`Content-Type`タイプが`application/x-www-form-urlencoded` `text/plain`、、またはの場合は`multipart/form-data`、単純な CORS のヘッダーを使用することもできます。
 
 ### <a name="xhr-example"></a>XHR の使用例
 

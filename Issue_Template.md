@@ -14,9 +14,8 @@ If your issue is not related to the Office Add-ins documentation, please post it
 
 <!--- Provide a general summary of the documentation issue in the Title above -->
 
-## <a name="article-url"></a>記事のURL
+## <a name="article-url"></a>記事の URL
 <!-- Provide the URL of the article that this documentation issue relates to -->
 
-## <a name="issue"></a>問題点
+## <a name="issue"></a>問題
 <!-- Provide a thorough description of the documentation issue -->
- 

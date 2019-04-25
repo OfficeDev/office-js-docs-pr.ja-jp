@@ -2,12 +2,13 @@
 title: Office アドインのアクセシビリティ ガイドライン
 description: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: d23041e874792a5718708c2171b1fdbe0675cddf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c40ca0c3c1fad238d605e5f3f67b58a0272ff83a
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433391"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448134"
 ---
 # <a name="accessibility-guidelines"></a>アクセシビリティ ガイドライン
 

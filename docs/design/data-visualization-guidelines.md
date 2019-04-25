@@ -2,12 +2,13 @@
 title: Office アドインのデータ可視化のスタイル ガイドライン
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 686ae69c4bfdbd5f8623a80c9e1b61548a3f2bda
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 77e7724725e87ccef60406d00a97d0957059cdd5
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270692"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32447309"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
