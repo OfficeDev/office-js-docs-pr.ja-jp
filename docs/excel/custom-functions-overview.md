@@ -4,11 +4,11 @@ description: JavaScript を使用して Excel でカスタム関数を作成す�
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
 ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764412"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448475"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
