@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959119"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448463"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -400,6 +400,45 @@ Excel.run(function (context) {
 - `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
 
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
+
+## <a name="page-layout-and-print-settings"></a>ページ レイアウトと印刷の設定
+
+> [!NOTE]
+> ページ レイアウトに関連付けられているこのセクションの API は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+アドインは、ワークシート レベルでページ レイアウトの設定にアクセスできます。 シートの印刷方法は、これらの設定により制御されます。 `Worksheet` オブジェクトには、レイアウト関連のプロパティが 3 つ含まれます: `horizontalPageBreaks`、`verticalPageBreaks`、`pageLayout`。
+
+`Worksheet.horizontalPageBreaks` と `Worksheet.verticalPageBreaks` は [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection) です。 これらは [PageBreak](/javascript/api/excel/excel.pagebreak) のコレクションで、手動改ページを挿入する範囲を指定します。 次のコード サンプルは、水平の改ページを行 **21** の上に追加します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`Worksheet.pageLayout` は、[PageLayout](/javascript/api/excel/excel.pagelayout) オブジェクトです。 このオブジェクトには、プリンター固有の実装に依存しないレイアウト設定とプリント設定が含まれています。 これらの設定には、余白、印刷の向き、ページ番号、タイトル行、および印刷範囲が含まれます。
+
+次のコード サンプルは、ページを縦方向と横方向ともに中央に配置、すべてのページの上部に印刷するタイトル行を設定し、ワークシートのサブセクションで印刷範囲を設定します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>関連項目
 
