@@ -4,11 +4,11 @@ description: Excel、Word、Outlook、PowerPoint、OneNote、および Project �
 ms.date: 04/03/2019
 localization_priority: Priority
 ms.openlocfilehash: a9ecd44edf9221a403eb42756cd1e9f5e676ad01
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477594"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448148"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -28,7 +28,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a>
     </td>
@@ -58,7 +58,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for Windows</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a>
     </td>
@@ -88,7 +88,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -116,7 +116,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -137,7 +137,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2013 for Windows</td>
     <td>
-        - TaskPane<br>
+        - 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>  - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td>
@@ -157,7 +157,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for iPad</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
@@ -184,7 +184,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for Mac</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -213,7 +213,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -242,7 +242,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>- TaskPane<br>
+    <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -288,7 +288,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 365 for Windows</td>
@@ -303,7 +303,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
@@ -318,7 +318,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
@@ -330,7 +330,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -340,7 +340,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 365 for iOS</td>
@@ -351,7 +351,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 365 for Mac</td>
@@ -364,7 +364,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
@@ -377,7 +377,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
@@ -390,7 +390,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
   <tr>
     <td>Office 365 for Android</td>
@@ -401,7 +401,7 @@ ms.locfileid: "31477594"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
-    <td>使用不可</td>
+    <td>利用不可</td>
   </tr>
 </table>
 
@@ -420,7 +420,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -446,7 +446,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for Windows</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -473,7 +473,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -500,7 +500,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
@@ -524,7 +524,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -547,7 +547,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for iPad</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -574,7 +574,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 365 for Mac</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -602,7 +602,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td> - TaskPane<br>
+    <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -630,7 +630,7 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
@@ -670,7 +670,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office Online</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -686,7 +686,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 365 for Windows</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -702,7 +702,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2019 for Windows</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -718,7 +718,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - コンテンツ<br>
-         - TaskPane</td>
+         - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -733,7 +733,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
     </td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
@@ -749,7 +749,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 365 for iPad</td>
     <td> - コンテンツ<br>
-         - TaskPane</td>
+         - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
@@ -764,7 +764,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 365 for Mac</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -780,7 +780,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2019 for Mac</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -796,7 +796,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - コンテンツ<br>
-         - TaskPane</td>
+         - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -826,7 +826,7 @@ ms.locfileid: "31477594"
   <tr>
     <td>Office Online</td>
     <td> - コンテンツ<br>
-         - TaskPane<br>
+         - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -851,21 +851,21 @@ ms.locfileid: "31477594"
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> - TaskPane</td>
+    <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
@@ -880,7 +880,7 @@ ms.locfileid: "31477594"
 - [共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [アドイン コマンドの要件セット](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
 - [JavaScript API for Office リファレンス](/office/dev/add-ins/reference/javascript-api-for-office)
-- [Office 2016 C2R および Office 2019 の更新履歴](/officeupdates/update-history-office-2019)
-- [Office 2013 の更新履歴](/officeupdates/update-history-office-2013)
-- [Windows インストーラー (MSI) を使用しているバージョンの Office の最新の更新プログラム](/officeupdates/office-updates-msi)
-- [Windows インストーラー (MSI) を使用しているバージョンの Outlook の最新の更新プログラム](/officeupdates/outlook-updates-msi)
+- [Office 2016および2019の更新履歴（クリックして実行）](/officeupdates/update-history-office-2019)
+- [Office 2013 の更新履歴 （クリックして実行）](/officeupdates/update-history-office-2013)
+- [Office 2010、2013、および2016の更新履歴（MSI）](/officeupdates/office-updates-msi)
+- [Outlook 2010、2013、および2016の更新履歴（MSI）](/officeupdates/outlook-updates-msi)
