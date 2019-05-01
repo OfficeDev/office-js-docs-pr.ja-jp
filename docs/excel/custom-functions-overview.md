@@ -1,14 +1,14 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/20/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でのカスタム関数の作成 (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 634b76ed90a30c7aa8252da346ba3f95684967a4
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448475"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353252"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Excel でのカスタム関数の作成 (プレビュー)
 
@@ -235,7 +235,7 @@ function secondHighest(values){
 - キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `AsyncStorage` に格納されているキャッシュされた値を表示します。
 - 調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。
 
-セルのアドレスに関する情報は、関数の JSON メタデータ ファイルで `requiresAddress` が`true` とマークされている場合にのみ公開されます。 これの例を次のサンプルに示します。
+セルのアドレスに関する情報は、関数の JSON メタデータ ファイルで `requiresAddress` が`true` とマークされている場合にのみ公開されます。 次のサンプルは、この JSON ファイルを手動で作成する場合の例です。 自動的に JSON ファイルを生成する場合は、`@requiresAddress` タグを使うこともできます。 詳細については、「[JSON 自動生成](custom-functions-json-autogeneration.md)」を参照してください。
 
 ```JSON
 {
