@@ -4,46 +4,46 @@ description: ''
 ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 85e0e3ce4899951c3fb2718eb38b834e4c5bbe35
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451249"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517064"
 ---
-# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="ab88b-102">最初の PowerPoint アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="ab88b-102">Build your first PowerPoint add-in</span></span>
+# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="5a54d-102">最初の PowerPoint アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="5a54d-102">Build your first PowerPoint add-in</span></span>
 
-<span data-ttu-id="ab88b-103">この記事では、jQuery と Office JavaScript API を使用して PowerPoint アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-103">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="5a54d-103">この記事では、jQuery と Office JavaScript API を使用して PowerPoint アドインを作成する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-103">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="ab88b-104">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="ab88b-104">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="5a54d-104">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="5a54d-104">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="ab88b-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="ab88b-105">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="5a54d-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5a54d-105">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="ab88b-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="ab88b-106">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="5a54d-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="5a54d-106">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="ab88b-107">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="ab88b-107">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="5a54d-107">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="5a54d-107">Create the add-in project</span></span>
 
-1. <span data-ttu-id="ab88b-108">[Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="5a54d-108">[Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="ab88b-109">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[PowerPoint Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="5a54d-109">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[PowerPoint Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="ab88b-110">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-110">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="5a54d-110">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-110">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="ab88b-111">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-111">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="5a54d-111">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-111">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="ab88b-p101">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="5a54d-p101">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="ab88b-114">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="ab88b-114">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="5a54d-114">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="5a54d-114">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="ab88b-115">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="ab88b-115">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="5a54d-115">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="5a54d-115">Update the code</span></span>
 
-1. <span data-ttu-id="ab88b-p102">**Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="5a54d-p102">**Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -65,7 +65,7 @@ ms.locfileid: "32451249"
     </body>
     ```
 
-2. <span data-ttu-id="ab88b-p103">Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="5a54d-p103">Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -111,7 +111,7 @@ ms.locfileid: "32451249"
     })();
     ```
 
-3. <span data-ttu-id="ab88b-p104">Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="5a54d-p104">Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -140,17 +140,17 @@ ms.locfileid: "32451249"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="ab88b-124">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="ab88b-124">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="5a54d-124">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="5a54d-124">Update the manifest</span></span>
 
-1. <span data-ttu-id="ab88b-125">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-125">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="ab88b-126">このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-126">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="5a54d-125">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-125">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="5a54d-126">このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-126">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="ab88b-p106">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="5a54d-p106">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="ab88b-p107">`DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="5a54d-p107">`DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="ab88b-p108">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.</span></span>
+4. <span data-ttu-id="5a54d-p108">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-5. <span data-ttu-id="ab88b-133">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-133">Save the file.</span></span>
+5. <span data-ttu-id="5a54d-133">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-133">Save the file.</span></span>
 
     ```xml
     ...
@@ -162,62 +162,62 @@ ms.locfileid: "32451249"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="ab88b-134">試してみる</span><span class="sxs-lookup"><span data-stu-id="ab88b-134">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="5a54d-134">試してみる</span><span class="sxs-lookup"><span data-stu-id="5a54d-134">Try it out</span></span>
 
-1. <span data-ttu-id="ab88b-p109">Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="5a54d-p109">Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="ab88b-137">PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-137">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="5a54d-137">PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-137">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1.png)
 
-3. <span data-ttu-id="ab88b-139">作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-139">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="5a54d-139">作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-139">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![スライドに犬の画像が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_2.png)
 
-4. <span data-ttu-id="ab88b-141">作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-141">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="5a54d-141">作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-141">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="ab88b-143">任意のエディター</span><span class="sxs-lookup"><span data-stu-id="ab88b-143">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="5a54d-143">任意のエディター</span><span class="sxs-lookup"><span data-stu-id="5a54d-143">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="ab88b-144">前提条件</span><span class="sxs-lookup"><span data-stu-id="ab88b-144">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="5a54d-144">前提条件</span><span class="sxs-lookup"><span data-stu-id="5a54d-144">Prerequisites</span></span>
 
-- [<span data-ttu-id="ab88b-145">Node.js</span><span class="sxs-lookup"><span data-stu-id="ab88b-145">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="5a54d-145">Node.js</span><span class="sxs-lookup"><span data-stu-id="5a54d-145">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="ab88b-146">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="ab88b-146">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="5a54d-146">[Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="5a54d-146">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="ab88b-147">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="ab88b-147">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="5a54d-147">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="5a54d-147">Create the add-in project</span></span>
 
-1. <span data-ttu-id="ab88b-148">Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-148">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="ab88b-149">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-149">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="5a54d-148">Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-148">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="5a54d-149">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-149">Run the following command and then answer the prompts as follows:</span></span>
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="ab88b-150">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="ab88b-150">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="ab88b-151">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="ab88b-151">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="ab88b-152">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="ab88b-152">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="ab88b-153">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`</span><span class="sxs-lookup"><span data-stu-id="ab88b-153">**Which Office client application would you like to support?:** `PowerPoint`</span></span>
+    - <span data-ttu-id="5a54d-150">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="5a54d-150">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="5a54d-151">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="5a54d-151">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="5a54d-152">**What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="5a54d-152">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="5a54d-153">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`</span><span class="sxs-lookup"><span data-stu-id="5a54d-153">**Which Office client application would you like to support?:** `PowerPoint`</span></span>
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint-jquery.png)
     
-    <span data-ttu-id="ab88b-155">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-155">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="5a54d-155">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-155">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-2. <span data-ttu-id="ab88b-156">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-156">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="5a54d-156">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-156">Navigate to the root folder of the project.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a><span data-ttu-id="ab88b-157">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="ab88b-157">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="5a54d-157">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="5a54d-157">Update the code</span></span>
 
-1. <span data-ttu-id="ab88b-p111">コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p111">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+1. <span data-ttu-id="5a54d-p111">コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p111">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
 
-2. <span data-ttu-id="ab88b-160">`<body>` 要素を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-160">Replace the `<body>` element with the following markup.</span></span>
+2. <span data-ttu-id="5a54d-160">`<body>` 要素を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-160">Replace the `<body>` element with the following markup.</span></span>
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -241,7 +241,7 @@ ms.locfileid: "32451249"
     </body>
     ```
 
-3. <span data-ttu-id="ab88b-161">**src\index.js** ファイルを開いて、アドインのスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-161">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="ab88b-162">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-162">Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="5a54d-161">**src\index.js** ファイルを開いて、アドインのスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-161">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="5a54d-162">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-162">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -287,7 +287,7 @@ ms.locfileid: "32451249"
     })();
     ```
 
-4. <span data-ttu-id="ab88b-p113">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p113">Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.</span></span>
+4. <span data-ttu-id="5a54d-p113">プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p113">Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -316,15 +316,15 @@ ms.locfileid: "32451249"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="ab88b-165">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="ab88b-165">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="5a54d-165">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="5a54d-165">Update the manifest</span></span>
 
-1. <span data-ttu-id="ab88b-166">**manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-166">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="5a54d-166">**manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-166">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="ab88b-p114">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="5a54d-p114">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="ab88b-p115">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="ab88b-p115">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.</span></span>
+3. <span data-ttu-id="5a54d-p115">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for PowerPoint** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="5a54d-p115">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-4. <span data-ttu-id="ab88b-171">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-171">Save the file.</span></span>
+4. <span data-ttu-id="5a54d-171">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-171">Save the file.</span></span>
 
     ```xml
     ...
@@ -336,36 +336,36 @@ ms.locfileid: "32451249"
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="ab88b-172">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="ab88b-172">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="5a54d-172">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="5a54d-172">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="ab88b-173">お試しください</span><span class="sxs-lookup"><span data-stu-id="ab88b-173">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="5a54d-173">お試しください</span><span class="sxs-lookup"><span data-stu-id="5a54d-173">Try it out</span></span>
 
-1. <span data-ttu-id="ab88b-174">アドインの実行に使用するプラットフォームの指示に従って、PowerPoint 内でアドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="ab88b-174">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
+1. <span data-ttu-id="5a54d-174">アドインの実行に使用するプラットフォームの指示に従って、PowerPoint 内でアドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="5a54d-174">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
 
-    - <span data-ttu-id="ab88b-175">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="ab88b-175">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="ab88b-176">PowerPoint Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="ab88b-176">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="ab88b-177">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="ab88b-177">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="5a54d-175">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="5a54d-175">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="5a54d-176">PowerPoint Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="5a54d-176">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="5a54d-177">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="5a54d-177">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="ab88b-178">PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="ab88b-178">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="5a54d-178">PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="5a54d-178">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1b.png)
 
-3. <span data-ttu-id="ab88b-180">作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-180">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="5a54d-180">作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-180">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![スライドに犬の画像が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_2b.png)
 
-4. <span data-ttu-id="ab88b-182">作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。</span><span class="sxs-lookup"><span data-stu-id="ab88b-182">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="5a54d-182">作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。</span><span class="sxs-lookup"><span data-stu-id="5a54d-182">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="ab88b-184">次のステップ</span><span class="sxs-lookup"><span data-stu-id="ab88b-184">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="5a54d-184">次のステップ</span><span class="sxs-lookup"><span data-stu-id="5a54d-184">Next steps</span></span>
 
-<span data-ttu-id="ab88b-185">これで完了です。PowerPoint アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="ab88b-185">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="ab88b-186">次に、PowerPoint アドインの機能の詳細について説明します。PowerPoint アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="ab88b-186">Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.</span></span>
+<span data-ttu-id="5a54d-185">これで完了です。PowerPoint アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="5a54d-185">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="5a54d-186">次に、PowerPoint アドインの機能の詳細について説明します。PowerPoint アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="5a54d-186">Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="ab88b-187">PowerPoint アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="ab88b-187">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.md)
+> [<span data-ttu-id="5a54d-187">PowerPoint アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="5a54d-187">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.md)
 
