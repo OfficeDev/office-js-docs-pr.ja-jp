@@ -1,6 +1,6 @@
 1. プロジェクトのルート (**[...]/My Office Add-in**) で bash ターミナルを開いて、次に示すコマンドを実行して開発用サーバーを起動します。
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d1783d257b0d46c42f16cf5e1f261407a355a63d
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450935"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517080"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>jQuery を使用して Excel のアドインを作成する
 
@@ -166,7 +166,7 @@ ms.locfileid: "32450935"
 - [Node.js](https://nodejs.org)
 
 - [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -174,7 +174,7 @@ ms.locfileid: "32450935"
 
 1. Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -189,7 +189,7 @@ ms.locfileid: "32450935"
 
 2. プロジェクトのルート フォルダーに移動します。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 

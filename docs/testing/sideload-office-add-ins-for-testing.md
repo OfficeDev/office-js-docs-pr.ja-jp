@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office Online で Office アドインをサイドロードする
 description: Office Online で Office アドインをサイドロードしてテストをする
-ms.date: 03/19/2019
+ms.date: 04/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 8870e955ca30c4a3b35f2b51e0e16a3ee634960d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2bcab7b41fa7f5b9590aacc19645253ee822eeb8
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451434"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517087"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>テスト用に Office Online で Office アドインをサイドロードする
 
@@ -25,28 +25,7 @@ ms.locfileid: "32451434"
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
-
-
-1. Office 365 アカウントにサインインします。
-    
-2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
-    
-3. リボンの  **[挿入]** タブを開き、 **[アドイン]** セクションで、 **Office [アドイン]** を選択します。
-    
-4. **[Office アドイン]** ダイアログ ボックスで、**[自分の所属組織]** タブ、**[個人用アドインのアップロード]** の順に選択します。
-    
-    ![左上隅近くの、リンクが付いている Office アドインのダイアログ。タイトルは、[マイ アドインのアップロード]](../images/office-add-ins.png)
-
-5.  アドイン マニフェスト ファイルを**参照**して、**[アップロード]** を選択します。
-    
-    ![[参照]、[アップロード]、[キャンセル] のボタンがある [アドインのアップロード] ダイアログ](../images/upload-add-in.png)
-
-6. アドイン がインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
-    
-
 ## <a name="sideload-an-office-add-in-in-office-online"></a>Office Online で Office アドインをサイドロードする
-
 
 1. [Microsoft Office Online](https://office.live.com/) を開きます。
     
@@ -72,6 +51,16 @@ ms.locfileid: "32451434"
 > - Microsoft Edge の検索バーに "**about:flags**" と入力して開発者向け設定のオプションを表示させます。  [**ローカルホスト ループバックを許可する**] オプションをオンにし、Microsoft Edge を再起動します。
 
 >    ![[ローカルホスト ループバックを許可する] オプションがオンになった Microsoft Edge。](../images/allow-localhost-loopback.png)
+
+
+## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
+
+1. Office 365 アカウントにサインインします。
+    
+2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
+    
+3. 手順 3 ~ 6 は、前のセクションにある**Office Online で Office アドインをサイドロードする**と同じです。
+
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Visual Studio の使用時にアドインをサイドロードする
 

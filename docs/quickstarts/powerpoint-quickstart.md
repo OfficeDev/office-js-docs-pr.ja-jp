@@ -4,12 +4,12 @@ description: ''
 ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 85e0e3ce4899951c3fb2718eb38b834e4c5bbe35
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451249"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517064"
 ---
 # <a name="build-your-first-powerpoint-add-in"></a>最初の PowerPoint アドインをビルドする
 
@@ -186,7 +186,7 @@ ms.locfileid: "32451249"
 
 - [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -194,7 +194,7 @@ ms.locfileid: "32451249"
 
 1. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -209,7 +209,7 @@ ms.locfileid: "32451249"
     
 2. プロジェクトのルート フォルダーに移動します。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450865"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517052"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Vue を使用して Excel アドインをビルドする
 
@@ -21,13 +21,13 @@ ms.locfileid: "32450865"
 
 - [Vue CLI](https://github.com/vuejs/vue-cli) をグローバルにインストールします。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
 - [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ ms.locfileid: "32450865"
 
 Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行し、次に示すとおり、プロンプトに応答します。
 
-```bash
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
@@ -53,13 +53,13 @@ vue init webpack my-add-in
 
 1. アプリ フォルダーに移動します。
 
-    ```bash
+    ```command&nbsp;line
     cd my-add-in
     ```
 
 2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -186,7 +186,7 @@ vue init webpack my-add-in
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 
