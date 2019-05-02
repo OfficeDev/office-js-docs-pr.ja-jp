@@ -4,16 +4,16 @@ description: Excel クイックスタートガイドでのカスタム関数の�
 title: カスタム関数クイックスタート (プレビュー)
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450841"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517073"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
-カスタム関数を使用すると、開発者は、JavaScript または Typescript でアドインの一部として定義することによって、Excel に新しい関数を追加できるようになります。 excel ユーザーは、excel の任意のネイティブ関数の場合と同じように、カスタム`SUM()`関数にアクセスできます。
+カスタム関数を使用すると、開発者は、JavaScript または Typescript でアドインの一部として定義することによって、Excel に新しい関数を追加できるようになります。 Excel ユーザーは、Excel の任意のネイティブ関数の場合と同じように、カスタム`SUM()`関数にアクセスできます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -27,7 +27,7 @@ ms.locfileid: "32450841"
 
 - 最新バージョンの [Yeoman](https://yeoman.io/) と [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -40,7 +40,7 @@ ms.locfileid: "32450841"
 
 1. 次のコマンドを実行し、以下のようにプロンプトに応答します。
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -56,7 +56,7 @@ ms.locfileid: "32450841"
 
 2. 作成したばかりのプロジェクトフォルダーに移動します。
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -64,22 +64,22 @@ ms.locfileid: "32450841"
 
 4. プロジェクトをビルドします。
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
 5. Node.js で実行しているローカル Web サーバーを開始します。
 
-    - Windows 版 excel を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを起動し、Excel を起動して、アドインをサイドロードします。
+    - Windows 版 Excel を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを起動し、Excel を起動して、アドインをサイドロードします。
 
-        ```
+        ```command&nbsp;line
          npm run start
         ```
         このコマンドを実行すると、コマンドプロンプトに web サーバーの起動に関する詳細が表示されます。 Excel は、アドインが読み込まれた状態で起動します。 アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。
 
     - Excel Online を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを開始します。
 
-        ```
+        ```command&nbsp;line
         npm run start-web
         ```
 
@@ -99,7 +99,7 @@ Excel ブックで、次の手順を`ADD`実行してカスタム関数を試し
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。 次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。 次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。
 
