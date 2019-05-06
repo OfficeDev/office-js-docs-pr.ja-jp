@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
-ms.date: 03/19/2019
+ms.date: 04/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c6552ff5df3a8cf9c6c329dcfbbbe001a6a2ed6b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448190"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353259"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -26,14 +26,14 @@ Web ベースの Excel アドインは、Office for Windows などのデスク�
 
 ```js
 Excel.run(function (context) {
-  // You can use the Excel JavaScript API here in the batch function
-  // to execute actions on the Excel object model.
-  console.log('Your code goes here.');
+    // You can use the Excel JavaScript API here in the batch function
+    // to execute actions on the Excel object model.
+    console.log('Your code goes here.');
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 
 **Excel.run** には、[RunOptions](/javascript/api/excel/excel.runoptions) オブジェクトを使用するオーバーロードがあります。 これには、関数の実行時にプラットフォームの動作に影響を与えるプロパティのセットが含まれています。 次のプロパティが現在サポートされています。
 
- - `delayForCellEdit`: ユーザーがセル編集モードを終了するまでバッチ要求を延期するかどうかを指定します。 **true** の場合、バッチ要求は延期され、ユーザーがセル編集モードを終了した時点で実行されます。 **false** の場合、バッチ要求は、ユーザーがセル編集モードにある場合、自動的に失敗します (ユーザーにエラーが表示されます)。 `delayForCellEdit` プロパティが指定されていない場合の既定の動作は、このプロパティが **false** の場合と同じ動作となります。
+- `delayForCellEdit`: ユーザーがセル編集モードを終了するまでバッチ要求を延期するかどうかを指定します。 **true** の場合、バッチ要求は延期され、ユーザーがセル編集モードを終了した時点で実行されます。 **false** の場合、バッチ要求は、ユーザーがセル編集モードにある場合、自動的に失敗します (ユーザーにエラーが表示されます)。 `delayForCellEdit` プロパティが指定されていない場合の既定の動作は、このプロパティが **false** の場合と同じ動作となります。
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
@@ -58,7 +58,7 @@ Excel とユーザーのアドインは、2 つの異なるプロセスで実行
 たとえば、次のコード スニペットでは、ローカル JavaScript オブジェクト **selectedRange** が Excel ドキュメント内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 **selectedRange** オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが **context.sync()** を呼び出すまで Excel ドキュメントには反映されません。
 
 ```js
-const selectedRange = context.workbook.getSelectedRange();
+var selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -72,17 +72,17 @@ selectedRange.format.autofitColumns();
 
 ```js
 Excel.run(function (context) {
-  const selectedRange = context.workbook.getSelectedRange();
-  selectedRange.load('address');
-  return context.sync()
-    .then(function () {
-      console.log('The selected range is: ' + selectedRange.address);
-  });
+    var selectedRange = context.workbook.getSelectedRange();
+    selectedRange.load('address');
+    return context.sync()
+      .then(function () {
+        console.log('The selected range is: ' + selectedRange.address);
+    });
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -103,26 +103,26 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:B2';
-  const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:B2';
+    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
+    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-  return context.sync()
-    .then(function () {
-      console.log (myRange.address);              // ok
-      console.log (myRange.format.wrapText);      // ok
-      console.log (myRange.format.fill.color);    // ok
-      //console.log (myRange.format.font.color);  // not ok as it was not loaded
-  });
-}).then(function () {
-  console.log('done');
+    return context.sync()
+      .then(function () {
+        console.log (myRange.address);              // ok
+        console.log (myRange.format.wrapText);      // ok
+        console.log (myRange.format.fill.color);    // ok
+        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        });
+    }).then(function () {
+        console.log('done');
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -161,18 +161,18 @@ range.format.fill.color =  null;
 
 指定の範囲に複数の値がある場合、`size` および `color` などの書式設定プロパティでは、応答に `null` 値が含まれます。 たとえば、範囲を取得してその `format.font.color` プロパティを読み込む場合:
 
-* 範囲内のすべてのセルのフォントの色が同じ場合、`range.format.font.color` がその色を指定します。
-* 範囲内に複数のフォントの色がある場合、`range.format.font.color` は `null` です。
+- 範囲内のすべてのセルのフォントの色が同じ場合、`range.format.font.color` がその色を指定します。
+- 範囲内に複数のフォントの色がある場合、`range.format.font.color` は `null` です。
 
 ### <a name="blank-input-for-a-property"></a>プロパティに対する空白の入力
 
 プロパティに空白の値 (`''` の間にスペースのない 2 つの引用符) を指定すると、プロパティをクリアまたはリセットする指示として解釈されます。例:
 
-* 範囲の `values` プロパティに空白の値を指定すると、範囲のコンテンツはクリアされます。
+- 範囲の `values` プロパティに空白の値を指定すると、範囲のコンテンツはクリアされます。
 
-* `numberFormat` プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。
+- `numberFormat` プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。
 
-* `formula` プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。
+- `formula` プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。
 
 ### <a name="blank-property-values-in-the-response"></a>応答内の空白のプロパティ値
 
@@ -191,9 +191,9 @@ range.formula = [['', '', '=Rand()']];
 ### <a name="read-an-unbounded-range"></a>無制限の範囲の読み取り
 
 無制限の範囲のアドレスとは、列全体または行全体を指定する範囲のアドレスです。例:
- 
-* 範囲のアドレスは、列全体で構成されます。<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* 範囲のアドレスは、行全体で構成されます。<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+- 範囲のアドレスは、列全体で構成されます。<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- 範囲のアドレスは、行全体で構成されます。<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`null`、`values`、`text`、または `numberFormat` などのセル レベルのプロパティに `formula` 値が含まれます。 `address` または `cellCount` など、範囲のその他のプロパティには、無制限の範囲に有効な値が含まれます。
 
@@ -202,13 +202,16 @@ API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')`
 無制限の範囲では、入力要求が大きすぎるため、`values`、`numberFormat`、`formula` などのセル レベルのプロパティは設定できません。 たとえば、次のコード スニペットは、無制限の範囲に対して `values` を指定しようとしているため無効です。 無制限の範囲にセル レベルのプロパティを設定しようとすると、API からエラーが返されます。
 
 ```js
-const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 
 ## <a name="read-or-write-to-a-large-range"></a>広い範囲に対する読み取りまたは書き込み
 
 範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。
+
+> [!IMPORTANT]
+> Excel Online ではペイロードのサイズが要求と応答で **5MB** に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
 
 ## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
 
@@ -218,24 +221,24 @@ range.values = 'Due Date';
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:A20';
-  const worksheet = context.workbook.worksheets.getItem(sheetName);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:A20';
+    var worksheet = context.workbook.worksheets.getItem(sheetName);
 
-  const range = worksheet.getRange(rangeAddress);
-  range.numberFormat = 'm/d/yyyy';
-  range.values = '3/11/2015';
-  range.load('text');
+    var range = worksheet.getRange(rangeAddress);
+    range.numberFormat = 'm/d/yyyy';
+    range.values = '3/11/2015';
+    range.load('text');
 
-  return context.sync()
-    .then(function () {
-      console.log(range.text);
-  });
+    return context.sync()
+      .then(function () {
+        console.log(range.text);
+    });
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -245,8 +248,8 @@ API エラーが発生すると、API はコードとメッセージを含む **
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel アドインを使う](excel-add-ins-get-started-overview.md)
-* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
-* [Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel アドインを使う](excel-add-ins-get-started-overview.md)
+- [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
+- [Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)
+- [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

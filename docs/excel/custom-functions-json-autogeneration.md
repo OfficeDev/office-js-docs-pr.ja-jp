@@ -1,14 +1,14 @@
 ---
-ms.date: 04/03/2019
+ms.date: 04/25/2019
 description: JSDOC タグを使用して、カスタム関数の JSON メタデータを動的に作成する。
 title: カスタム関数の JSON メタデータを作成する (プレビュー)
 localization_priority: Priority
-ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449254"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353273"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>カスタム関数の JSON メタデータを作成する (プレビュー)
 
@@ -53,7 +53,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 次への呼び出しもあります: `CustomFunctions.associate("id", functionName);`
 
-#### <a name="id"></a>id 
+#### <a name="id"></a>id
 
 id は、文書に格納されているカスタム関数の不変の識別子として使用されます。 変更する必要はありません。
 
@@ -63,7 +63,7 @@ id は、文書に格納されているカスタム関数の不変の識別子�
 
 #### <a name="name"></a>name
 
-カスタム関数の表示名を提供します。 
+カスタム関数の表示名を提供します。
 
 * name が指定されていない場合、id が名前としても使用されます。
 * 使用できる文字は、文字 [Unicode アルファベット](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。
@@ -93,6 +93,9 @@ JavaScript 構文: @param {type} 名_の説明_
 カスタム関数内のパラメーターを省略可能と指定する方法:
 * パラメーター名を角かっこで囲みます。 例: `@param {string} [text] Optional text`。
 
+> [!NOTE]
+> 省略可能なパラメーターの既定値は `null` です。
+
 #### <a name="typescript"></a>TypeScript
 
 TypeScript 構文: @param 名 _の説明_
@@ -107,6 +110,9 @@ TypeScript 構文: @param 名 _の説明_
 * パラメーターに既定値を指定する。 例: `function f(text: string = "abc")`
 
 @param の詳しい説明については、「[JSDoc](http://usejsdoc.org/tags-param.html)」を参照してください。
+
+> [!NOTE]
+> 省略可能なパラメーターの既定値は `null` です。
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress

@@ -1,14 +1,14 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/20/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: Web 要求とその他のデータがカスタム関数(プレビュー)を処理します
 localization_priority: Priority
-ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449709"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353266"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>カスタム関数によるデータの受信と処理
 
@@ -148,32 +148,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-JSON メタデータ ファイルでストリーミング関数のメタデータを指定する場合は、オプション オブジェクト内のプロパティ "cancelable": true と "stream": true を以下の例のように設定する必要があります。
-
-```JSON
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+JSON メタデータ ファイルでストリーミング関数のメタデータを指定する場合は、関数のスクリプト ファイル内の `@streaming` JSDOC コメント タグを使用してこれを自動生成できます。 詳しくは、[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)をご覧ください。
 
 ## <a name="canceling-a-function"></a>関数をキャンセルする
 
@@ -183,12 +158,13 @@ JSON メタデータ ファイルでストリーミング関数のメタデー�
 - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
 - ユーザーが手動で再計算をトリガーしたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
 
-関数をキャンセル可能にするには、関数コードのハンドラーを実装し、キャンセルされたときの対応を指示します。 さらに、関数を表す JavaScript Object Notation メタデータのオプション オブジェクト内のプロパティ`"cancelable": true` を指定します。 この記事の前のセクションのコード サンプルで、これらの手法の例が示されています。
+関数をキャンセル可能にするには、関数コードのハンドラーを実装し、キャンセルされたときの対応を指示します。 または、関数のスクリプト ファイル内の `@cancelable` JSDOC コメント タグを使用します。 詳しくは、[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [カスタム関数の変更ログ](custom-functions-changelog.md)
