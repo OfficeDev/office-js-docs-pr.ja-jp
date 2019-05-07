@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="b7b3b-101">以前に一度使用したバージョンのジェネレーターをインストールしていた場合でも、パッケージを npm から最新バージョンに更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b7b3b-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>

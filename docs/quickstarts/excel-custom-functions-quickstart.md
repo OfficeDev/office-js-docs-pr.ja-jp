@@ -1,115 +1,119 @@
 ---
-ms.date: 03/06/2019
+ms.date: 05/02/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
-title: カスタム関数クイックスタート (プレビュー)
+title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517073"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619897"
 ---
-# <a name="get-started-developing-excel-custom-functions"></a><span data-ttu-id="294cc-103">Excel カスタム関数の開発を始める</span><span class="sxs-lookup"><span data-stu-id="294cc-103">Get started developing Excel custom functions</span></span>
+# <a name="get-started-developing-excel-custom-functions"></a><span data-ttu-id="a0ce9-103">Excel カスタム関数の開発を始める</span><span class="sxs-lookup"><span data-stu-id="a0ce9-103">Get started developing Excel custom functions</span></span>
 
-<span data-ttu-id="294cc-104">カスタム関数を使用すると、開発者は、JavaScript または Typescript でアドインの一部として定義することによって、Excel に新しい関数を追加できるようになります。</span><span class="sxs-lookup"><span data-stu-id="294cc-104">With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in.</span></span> <span data-ttu-id="294cc-105">Excel ユーザーは、Excel の任意のネイティブ関数の場合と同じように、カスタム`SUM()`関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="294cc-105">Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span>
+<span data-ttu-id="a0ce9-104">カスタム関数を使用すると、開発者は、JavaScript または Typescript でアドインの一部として定義することによって、Excel に新しい関数を追加できるようになります。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-104">With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in.</span></span> <span data-ttu-id="a0ce9-105">Excel ユーザーは、Excel の任意のネイティブ関数の場合と同じように、カスタム`SUM()`関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-105">Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="294cc-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="294cc-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="a0ce9-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="a0ce9-106">Prerequisites</span></span>
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-<span data-ttu-id="294cc-107">カスタム関数の作成を開始するには、次のツールと関連するリソースが必要です。</span><span class="sxs-lookup"><span data-stu-id="294cc-107">You'll need the following tools and related resources to begin creating custom functions.</span></span>
+* <span data-ttu-id="a0ce9-107">Windows 版 Excel (64 ビット バージョン 1810 以降) または Excel Online</span><span class="sxs-lookup"><span data-stu-id="a0ce9-107">Excel for Windows (64-bit version 1810 or later) or Excel Online</span></span>
 
-- <span data-ttu-id="294cc-108">[Node.js](https://nodejs.org/en/) (バージョン 8.0.0 以降)</span><span class="sxs-lookup"><span data-stu-id="294cc-108">[Node.js](https://nodejs.org/en/) (version 8.0.0 or later)</span></span>
+* <span data-ttu-id="a0ce9-108">[Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)</span><span class="sxs-lookup"><span data-stu-id="a0ce9-108">Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")</span></span>
 
-- <span data-ttu-id="294cc-109">[Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)</span><span class="sxs-lookup"><span data-stu-id="294cc-109">[Git Bash](https://git-scm.com/downloads) (or another Git client)</span></span>
+## <a name="build-your-first-custom-functions-project"></a><span data-ttu-id="a0ce9-109">最初のカスタム関数プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="a0ce9-109">Build your first custom functions project</span></span>
 
-- <span data-ttu-id="294cc-110">最新バージョンの [Yeoman](https://yeoman.io/) と [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="294cc-110">The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+<span data-ttu-id="a0ce9-110">はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-110">To start, you'll use the Yeoman generator to create the custom functions project.</span></span> <span data-ttu-id="a0ce9-111">これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-111">This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.</span></span>
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > <span data-ttu-id="294cc-111">以前に一度使用したバージョンのジェネレーターをインストールしていた場合でも、パッケージを npm から最新バージョンに更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="294cc-111">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
-
-## <a name="build-your-first-custom-functions-project"></a><span data-ttu-id="294cc-112">最初のカスタム関数プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="294cc-112">Build your first custom functions project</span></span>
-
-<span data-ttu-id="294cc-113">はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="294cc-113">To start, you'll use the Yeoman generator to create the custom functions project.</span></span> <span data-ttu-id="294cc-114">これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。</span><span class="sxs-lookup"><span data-stu-id="294cc-114">This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.</span></span>
-
-1. <span data-ttu-id="294cc-115">次のコマンドを実行し、以下のようにプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="294cc-115">Run the following command and then answer the prompts as follows.</span></span>
+1. <span data-ttu-id="a0ce9-112">任意のフォルダーで、次のコマンドを実行し、次のようにプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-112">In a folder of your choice, run the following command and then answer the prompts as follows.</span></span>
 
     ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="294cc-116">Choose a project type (プロジェクトの種類を選択): `Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="294cc-116">Choose a project type: `Excel Custom Functions Add-in project (...)`</span></span>
+    - <span data-ttu-id="a0ce9-113">**Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="a0ce9-113">**Choose a project type:** `Excel Custom Functions Add-in project (...)`</span></span>
+    - <span data-ttu-id="a0ce9-114">**Choose a script type: (スクリプトの種類を選択)** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="a0ce9-114">**Choose a script type:** `JavaScript`</span></span>
+    - <span data-ttu-id="a0ce9-115">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="a0ce9-115">**What do you want to name your add-in?**</span></span> `stock-ticker`
 
-    - <span data-ttu-id="294cc-117">Choose a script type (スクリプトの種類を選択): `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="294cc-117">Choose a script type: `JavaScript`</span></span>
+    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/yo-office-excel-cf.png)
 
-    - <span data-ttu-id="294cc-118">What would you want to name your add-in? (アドインの名前を何にしますか)</span><span class="sxs-lookup"><span data-stu-id="294cc-118">What do you want to name your add-in?</span></span> `stock-ticker`
+    <span data-ttu-id="a0ce9-117">Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-117">The Yeoman generator will create the project files and install supporting Node components.</span></span>
 
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/12-10-fork-cf-pic.jpg)
-
-    <span data-ttu-id="294cc-120">Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="294cc-120">The Yeoman generator will create the project files and install supporting Node components.</span></span>
-
-2. <span data-ttu-id="294cc-121">作成したばかりのプロジェクトフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="294cc-121">Navigate to the project folder you just created.</span></span>
+2. <span data-ttu-id="a0ce9-118">[ごみ箱] ジェネレーターでは、プロジェクトの処理に関するいくつかの命令がコマンドラインに表示されますが、それらは無視して、手順に従って続行します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-118">The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions.</span></span> <span data-ttu-id="a0ce9-119">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-119">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. <span data-ttu-id="294cc-122">このプロジェクトを実行するには、自己署名証明書を信頼する必要があります。</span><span class="sxs-lookup"><span data-stu-id="294cc-122">Trust the self-signed certificate you need to run this project.</span></span> <span data-ttu-id="294cc-123">Windows または Mac についての詳細な手順については、「[自己署名証明書を信頼済みルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="294cc-123">For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).</span></span>  
-
-4. <span data-ttu-id="294cc-124">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="294cc-124">Build the project.</span></span>
+3. <span data-ttu-id="a0ce9-120">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-120">Build the project.</span></span> <span data-ttu-id="a0ce9-121">これにより、プロジェクトが正常に機能するために必要な証明書もインストールされます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-121">This will also install certificates that your project needs in order to function properly.</span></span> 
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. <span data-ttu-id="294cc-125">Node.js で実行しているローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="294cc-125">Start the local web server, which runs in Node.js.</span></span>
+4. <span data-ttu-id="a0ce9-122">Node.js で実行しているローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-122">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="a0ce9-123">Windows 版 Excel または Excel Online でカスタム関数アドインを試すことができます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-123">You can try out the custom function add-in in Excel for Windows or Excel Online.</span></span> <span data-ttu-id="a0ce9-124">アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-124">You may be prompted to open the add-in's task pane, although this is optional.</span></span> <span data-ttu-id="a0ce9-125">アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-125">You can still run your custom functions without opening your add-in's task pane.</span></span>
 
-    - <span data-ttu-id="294cc-126">Windows 版 Excel を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを起動し、Excel を起動して、アドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="294cc-126">If you use Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:</span></span>
+> [!NOTE]
+> <span data-ttu-id="a0ce9-126">Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-126">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="a0ce9-127">を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-127">If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-        ```command&nbsp;line
-         npm run start
-        ```
-        <span data-ttu-id="294cc-127">このコマンドを実行すると、コマンドプロンプトに web サーバーの起動に関する詳細が表示されます。</span><span class="sxs-lookup"><span data-stu-id="294cc-127">After running this command, your command prompt will show details about starting the web server.</span></span> <span data-ttu-id="294cc-128">Excel は、アドインが読み込まれた状態で起動します。</span><span class="sxs-lookup"><span data-stu-id="294cc-128">Excel will start with your add-in loaded.</span></span> <span data-ttu-id="294cc-129">アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。</span><span class="sxs-lookup"><span data-stu-id="294cc-129">If you add-in does not load, check that you have completed step 3 properly.</span></span>
+# <a name="excel-for-windowstabexcel-windows"></a>[<span data-ttu-id="a0ce9-128">Windows 用 Excel</span><span class="sxs-lookup"><span data-stu-id="a0ce9-128">Excel for Windows</span></span>](#tab/excel-windows)
 
-    - <span data-ttu-id="294cc-130">Excel Online を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="294cc-130">If you use Excel Online to test your custom functions, run the following command to start the local web server:</span></span>
+<span data-ttu-id="a0ce9-129">Windows 版 Excel でアドインをテストするには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-129">To test your add-in in Excel for Windows, run the following command.</span></span> <span data-ttu-id="a0ce9-130">このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-130">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
 
-        ```command&nbsp;line
-        npm run start-web
-        ```
+```command&nbsp;line
+npm run start:desktop
+```
 
-         <span data-ttu-id="294cc-131">このコマンドを実行すると、コマンドプロンプトに web サーバーの起動に関する詳細が表示されます。</span><span class="sxs-lookup"><span data-stu-id="294cc-131">After running this command, your command prompt will show details about starting the web server.</span></span> <span data-ttu-id="294cc-132">関数を使用するには、Excel Online で新しいブックを開きます。</span><span class="sxs-lookup"><span data-stu-id="294cc-132">To use your functions, open a new workbook in Excel Online.</span></span> <span data-ttu-id="294cc-133">このブックでは、アドインを読み込む必要があります。</span><span class="sxs-lookup"><span data-stu-id="294cc-133">In this workbook, you'll need to load your add-in.</span></span> 
+# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="a0ce9-131">Excel Online</span><span class="sxs-lookup"><span data-stu-id="a0ce9-131">Excel Online</span></span>](#tab/excel-online)
 
-        <span data-ttu-id="294cc-134">これを行うには、リボンの [**挿入**] タブを選択して、[アドインの**取得**] を選択します。生成された新しいウィンドウで、[**マイアドイン**] タブが表示されていることを確認します。次に、[**個人用アドインの管理 > [個人用**アドインのアップロード] を選択します。</span><span class="sxs-lookup"><span data-stu-id="294cc-134">To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**.</span></span> <span data-ttu-id="294cc-135">マニフェストファイルを参照してアップロードします。</span><span class="sxs-lookup"><span data-stu-id="294cc-135">Browse for your manifest file and upload it.</span></span> <span data-ttu-id="294cc-136">アドインが読み込まれない場合は、手順3が正しく完了していることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="294cc-136">If your add-in does not load, check you've completed step 3 correctly.</span></span>
+<span data-ttu-id="a0ce9-132">Excel Online でアドインをテストするには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-132">To test your add-in in Excel Online, run the following command.</span></span> <span data-ttu-id="a0ce9-133">このコマンドを実行すると、ローカル web サーバーが起動します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-133">When you run this command, the local web server will start.</span></span>
 
-## <a name="try-out-the-prebuilt-custom-functions"></a><span data-ttu-id="294cc-137">あらかじめ用意されているカスタム関数を試してみる</span><span class="sxs-lookup"><span data-stu-id="294cc-137">Try out the prebuilt custom functions</span></span>
+```command&nbsp;line
+npm run start:web
+```
 
-<span data-ttu-id="294cc-138">Yeoman ジェネレーターで作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**src/customfunctions.js** ファイル内で定義されています。</span><span class="sxs-lookup"><span data-stu-id="294cc-138">The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **src/customfunctions.js** file.</span></span> <span data-ttu-id="294cc-139">プロジェクトのルート ディレクトリの **manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。</span><span class="sxs-lookup"><span data-stu-id="294cc-139">The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.</span></span>
+> [!NOTE]
+> <span data-ttu-id="a0ce9-134">Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="a0ce9-135">を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-135">If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-<span data-ttu-id="294cc-140">Excel ブックで、次の手順を`ADD`実行してカスタム関数を試してみます。</span><span class="sxs-lookup"><span data-stu-id="294cc-140">In your Excel workbook, try out the `ADD` custom function by completing the following steps:</span></span>
+<span data-ttu-id="a0ce9-136">カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-136">To use your custom functions add-in, open a new workbook in Excel Online.</span></span> <span data-ttu-id="a0ce9-137">このブックでは、次の手順を実行して、アドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-137">In this workbook, complete the following steps to sideload your add-in.</span></span>
 
-1. <span data-ttu-id="294cc-141">セルを選択し、 `=CONTOSO`テキストを入力します。</span><span class="sxs-lookup"><span data-stu-id="294cc-141">Select a cell and type `=CONTOSO`.</span></span> <span data-ttu-id="294cc-142">`CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="294cc-142">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+1. <span data-ttu-id="a0ce9-138">Excel Online で、**[挿入]** タブを選択して、**[アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-138">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.</span></span>
 
-2. <span data-ttu-id="294cc-143">セルに`CONTOSO.ADD`値`=CONTOSO.ADD(10,200)`を入力し`10` 、 `200` enter キーを押して、数値と入力パラメーターを使用して、関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="294cc-143">Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+   ![[個人用アドイン] アイコンが強調表示された状態で Excel Online にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   
+2. <span data-ttu-id="a0ce9-140">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-140">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-<span data-ttu-id="294cc-144">`ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。</span><span class="sxs-lookup"><span data-stu-id="294cc-144">The `ADD` custom function computes the sum of the two numbers that you specify as input parameters.</span></span> <span data-ttu-id="294cc-145">「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。</span><span class="sxs-lookup"><span data-stu-id="294cc-145">Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.</span></span>
+3. <span data-ttu-id="a0ce9-141">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-141">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="294cc-146">次の手順</span><span class="sxs-lookup"><span data-stu-id="294cc-146">Next steps</span></span>
+4. <span data-ttu-id="a0ce9-142">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-142">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
-<span data-ttu-id="294cc-147">おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="294cc-147">Congratulations, you've successfully created a custom function in an Excel add-in!</span></span> <span data-ttu-id="294cc-148">次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="294cc-148">Next, build a more complex add-in with streaming data capability.</span></span> <span data-ttu-id="294cc-149">次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="294cc-149">The following link takes you through the next steps in the Excel add-in with custom functions tutorial.</span></span>
+---
+
+## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="a0ce9-143">あらかじめ用意されているカスタム関数を試す</span><span class="sxs-lookup"><span data-stu-id="a0ce9-143">Try out a prebuilt custom function</span></span>
+
+<span data-ttu-id="a0ce9-144">[ごみ箱] ジェネレーターを使用して作成したカスタム関数プロジェクトには、 **/src/functions/functions.js**ファイル内で定義されているいくつかのあらかじめ用意されたカスタム関数があります。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-144">The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="a0ce9-145">プロジェクトのルートディレクトリの **./manifest¥ xml**ファイルは、すべてのカスタム関数が`CONTOSO`名前空間に属することを指定します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-145">The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.</span></span>
+
+<span data-ttu-id="a0ce9-146">Excel ブックで、次の手順を`ADD`実行してカスタム関数を試してみます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-146">In your Excel workbook, try out the `ADD` custom function by completing the following steps:</span></span>
+
+1. <span data-ttu-id="a0ce9-147">セルを選択し、 `=CONTOSO`テキストを入力します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-147">Select a cell and type `=CONTOSO`.</span></span> <span data-ttu-id="a0ce9-148">`CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+
+2. <span data-ttu-id="a0ce9-149">セルに`CONTOSO.ADD`値`=CONTOSO.ADD(10,200)`を入力し`10` 、 `200` enter キーを押して、数値と入力パラメーターを使用して、関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-149">Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+
+<span data-ttu-id="a0ce9-150">`ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-150">The `ADD` custom function computes the sum of the two numbers that you specify as input parameters.</span></span> <span data-ttu-id="a0ce9-151">「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-151">Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="a0ce9-152">次の手順</span><span class="sxs-lookup"><span data-stu-id="a0ce9-152">Next steps</span></span>
+
+<span data-ttu-id="a0ce9-153">おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-153">Congratulations, you've successfully created a custom function in an Excel add-in!</span></span> <span data-ttu-id="a0ce9-154">次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-154">Next, build a more complex add-in with streaming data capability.</span></span> <span data-ttu-id="a0ce9-155">次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="a0ce9-155">The following link takes you through the next steps in the Excel add-in with custom functions tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="294cc-150">Excel カスタム関数アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="294cc-150">Excel custom functions add-in tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
+> [<span data-ttu-id="a0ce9-156">Excel カスタム関数アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a0ce9-156">Excel custom functions add-in tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
 )
 
-## <a name="see-also"></a><span data-ttu-id="294cc-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="294cc-151">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0ce9-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0ce9-157">See also</span></span>
 
-* [<span data-ttu-id="294cc-152">カスタム関数の概要</span><span class="sxs-lookup"><span data-stu-id="294cc-152">Custom functions overview</span></span>](../excel/custom-functions-overview.md)
-* [<span data-ttu-id="294cc-153">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="294cc-153">Custom functions metadata</span></span>](../excel/custom-functions-json.md)
-* [<span data-ttu-id="294cc-154">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="294cc-154">Runtime for Excel custom functions</span></span>](../excel/custom-functions-runtime.md)
-* [<span data-ttu-id="294cc-155">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="294cc-155">Custom functions best practices</span></span>](../excel/custom-functions-best-practices.md)
+* [<span data-ttu-id="a0ce9-158">カスタム関数の概要</span><span class="sxs-lookup"><span data-stu-id="a0ce9-158">Custom functions overview</span></span>](../excel/custom-functions-overview.md)
+* [<span data-ttu-id="a0ce9-159">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="a0ce9-159">Custom functions metadata</span></span>](../excel/custom-functions-json.md)
+* [<span data-ttu-id="a0ce9-160">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="a0ce9-160">Runtime for Excel custom functions</span></span>](../excel/custom-functions-runtime.md)
+* [<span data-ttu-id="a0ce9-161">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="a0ce9-161">Custom functions best practices</span></span>](../excel/custom-functions-best-practices.md)

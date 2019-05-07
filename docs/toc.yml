@@ -16,19 +16,19 @@
   items:
     - name: Excel アドインを作成する
       items:
-        - name: 角度を使用する
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: JQuery の使用
+        - name: 作業ウィンドウ
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: 応答を使用する
+        - name: 作業ウィンドウ (角度)
+          href: quickstarts/excel-quickstart-angular.md
+          displayName: Excel
+        - name: 作業ウィンドウ (反応)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
-        - name: Vue の使用
+        - name: 作業ウィンドウ (Vue)
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-        - name: カスタム関数を作成する
+        - name: カスタム関数
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
     - name: Word アドインの作成
@@ -64,6 +64,8 @@
   items:
     - name: アドインを実行するための要件
       href: concepts/requirements-for-running-office-add-ins.md
+    - name: Office アドインで使用される Web ビューアー
+      href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: アドイン開発のベスト プラクティス
       href: concepts/add-in-development-best-practices.md
     - name: アドインの開発ライフ サイクル
@@ -96,7 +98,7 @@
               href: design/add-in-color.md
             - name: Layout
               href: design/add-in-layout.md
-            - name: アイコンの場合
+            - name: アイコン
               href: design/add-in-icons.md
             - name: モーションの使用
               href: design/using-motion-office-addins.md
@@ -223,17 +225,20 @@
             - name: Excel アドインを使う
               href: excel/excel-add-ins-get-started-overview.md
               displayName: Excel
-            - name: 角度を使用する
-              href: quickstarts/excel-quickstart-angular.md
-              displayName: Excel
-            - name: JQuery の使用
+            - name: 作業ウィンドウ
               href: quickstarts/excel-quickstart-jquery.md
               displayName: Excel
-            - name: 応答を使用する
+            - name: 作業ウィンドウ (角度)
+              href: quickstarts/excel-quickstart-angular.md
+              displayName: Excel
+            - name: 作業ウィンドウ (反応)
               href: quickstarts/excel-quickstart-react.md
               displayName: Excel
-            - name: Vue の使用
+            - name: 作業ウィンドウ (Vue)
               href: quickstarts/excel-quickstart-vue.md
+              displayName: Excel
+            - name: カスタム関数
+              href: quickstarts/excel-custom-functions-quickstart.md
               displayName: Excel
         - name: Excel アドインのチュートリアル
           href: tutorials/excel-tutorial.md
@@ -264,32 +269,20 @@
                 - name: 概要
                   href: excel/custom-functions-overview.md
                   displayName: Excel
-                - name: アーキテクチャ
-                  href: excel/custom-functions-architecture.md
-                  displayName: Excel
                 - name: クイックスタート
                   href: quickstarts/excel-custom-functions-quickstart.md
                   displayName: Excel
                 - name: チュートリアル
                   href: tutorials/excel-tutorial-create-custom-functions.md
                   displayName: Excel
-                - name: Web 要求
-                  href: excel/custom-functions-web-reqs.md
+                - name: アーキテクチャ
+                  href: excel/custom-functions-architecture.md
                   displayName: Excel
-                - name: ランタイム
-                  href: excel/custom-functions-runtime.md
+                - name: 認証
+                  href: excel/custom-functions-authentication.md
                   displayName: Excel
-                - name: 揮発性関数
-                  href: excel/custom-functions-volatile.md
-                  displayName: Excel
-                - name: カスタム関数のパラメータオプション
-                  href: excel/custom-functions-parameter-options.md
-                  displayName: Excel
-                - name: メタデータ
-                  href: excel/custom-functions-json.md
-                  displayName: Excel
-                - name: メタデータ生成
-                  href: excel/custom-functions-json-autogeneration.md
+                - name: バッチ処理
+                  href: excel/custom-functions-batching.md
                   displayName: Excel
                 - name: ベスト プラクティス
                   href: excel/custom-functions-best-practices.md
@@ -297,35 +290,47 @@
                 - name: デバッグ
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
-                - name: 認証
-                  href: excel/custom-functions-authentication.md
-                  displayName: Excel
                 - name: Dialog
                   href: excel/custom-functions-dialog.md
-                  displayName: Excel
-                - name: 変更ログ
-                  href: excel/custom-functions-changelog.md
                   displayName: Excel
                 - name: エラー処理
                   href: excel/custom-functions-errors.md
                   displayName: Excel
-                - name: 要件
-                  href: excel/custom-functions-requirements.md
-                  displayName: Excel
-                - name: 名前付けのガイドライン
-                  href: excel/custom-functions-naming.md
+                - name: 同等の XLL を識別する
+                  href: excel/make-custom-functions-compatible-with-xll-udf.md
                   displayName: Excel
                 - name: ローカライズ
                   href: excel/custom-functions-localize.md
                   displayName: Excel
-                - name: 同等の XLL を識別する
-                  href: excel/make-custom-functions-compatible-with-xll-udf.md
+                - name: メタデータ
+                  href: excel/custom-functions-json.md
                   displayName: Excel
-                - name: バッチ処理
-                  href: excel/custom-functions-batching.md
+                - name: メタデータ生成
+                  href: excel/custom-functions-json-autogeneration.md
+                  displayName: Excel
+                - name: 名前付けのガイドライン
+                  href: excel/custom-functions-naming.md
+                  displayName: Excel
+                - name: パラメータオプション
+                  href: excel/custom-functions-parameter-options.md
+                  displayName: Excel
+                - name: 要件
+                  href: excel/custom-functions-requirements.md
+                  displayName: Excel
+                - name: ランタイム
+                  href: excel/custom-functions-runtime.md
+                  displayName: Excel
+                - name: 保存と共有の状態
+                  href: excel/custom-functions-save-state.md
                   displayName: Excel
                 - name: トラブルシューティング
                   href: excel/custom-functions-troubleshooting.md
+                  displayName: Excel
+                - name: 揮発性関数
+                  href: excel/custom-functions-volatile.md
+                  displayName: Excel
+                - name: Web 要求
+                  href: excel/custom-functions-web-reqs.md
                   displayName: Excel
             - name: データ検証
               href: excel/excel-add-ins-data-validation.md
@@ -342,7 +347,7 @@
             - name: パフォーマンスの最適化
               href: excel/performance.md
               displayName: Excel
-            - name: テーブル
+            - name: PivotTables
               href: excel/excel-add-ins-pivottables.md
               displayName: Excel
             - name: 範囲 (基本)
@@ -507,7 +512,7 @@
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource の検証ポリシー
           href: /office/dev/store/validation-policies
-- name: 参照
+- name: リファレンス
   items:
     - name: API の概要
       items:
@@ -751,7 +756,7 @@
           href: reference/manifest/highresolutioniconurl.md
         - name: ホスト
           href: reference/manifest/host.md
-        - name: ホスト
+        - name: Hosts
           href: reference/manifest/hosts.md
         - name: IconUrl
           href: reference/manifest/iconurl.md
@@ -827,9 +832,9 @@
               href: reference/manifest/functionfile.md
             - name: GetStarted
               href: reference/manifest/getstarted.md
-            - name: Group
+            - name: グループ
               href: reference/manifest/group.md
-            - name: ホスト
+            - name: Hosts
               href: reference/manifest/hosts.md
             - name: Icon
               href: reference/manifest/icon.md
