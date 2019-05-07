@@ -1,22 +1,27 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Excel カスタム関数をローカライズします。
-title: カスタム関数をローカライズする (プレビュー)
+title: カスタム関数をローカライズする
 localization_priority: Normal
-ms.openlocfilehash: 1c7fba297996c8cf050eb23b34823debf87b4e88
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527320"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628033"
 ---
 # <a name="localize-custom-functions"></a>カスタム関数をローカライズする
 
-カスタム関数が世界中で機能するようにするには、それらを異なる言語にローカライズします。 カスタム関数をローカライズするには、関数の JSON ファイルでローカライズされた関数名を指定し、XML マニフェストファイルでロケール情報を提供する必要があります。 自動生成されたメタデータはローカライズには使用できないため、JSON ファイルを手動で更新する必要があります。
+アドインとカスタム関数名の両方をローカライズできます。 関数の JSON ファイルでローカライズされた関数名を指定し、XML マニフェストファイルでロケール情報を指定する必要があります。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+>[!IMPORTANT]
+> 自動生成されたメタデータはローカライズには使用できないため、JSON ファイルを手動で更新する必要があります。
 
 ## <a name="localize-function-names"></a>関数名をローカライズする
 
-カスタム関数をローカライズするには、言語ごとに新しい JSON メタデータファイルを作成します。 各言語 JSON ファイルで、ターゲット`name`言語`description`でプロパティを作成します。 英語の既定のファイルの名前は、**関数 json**です。 追加の JSON ファイル (たとえば、**関数**の識別を容易にする) ごとに、ファイル名のロケールを使用することをお勧めします。 
+カスタム関数をローカライズするには、言語ごとに新しい JSON メタデータファイルを作成します。 各言語 JSON ファイルで、ターゲット`name`言語`description`でプロパティを作成します。 英語の既定のファイルの名前は、**関数 json**です。 追加の JSON ファイル (たとえば、**関数**の識別を容易にする) ごとに、ファイル名のロケールを使用することをお勧めします。
 
 は`name` 、 `description` Excel に表示され、ローカライズされています。 ただし、各`id`関数のはローカライズされていません。 この`id`プロパティは、Excel で関数が一意であることを識別する方法であり、設定後に変更することはできません。
 
@@ -91,13 +96,14 @@ ms.locfileid: "33527320"
 </Resources>
 ```
 
-
 アドインのローカライズプロセスの詳細については、「 [Office アドインのローカライズ](../develop/localization.md#control-localization-from-the-manifest)」を参照してください。
+
+## <a name="next-steps"></a>次の手順
+[カスタム関数の名前付け規則](custom-functions-naming.md)について、または[エラー処理のベストプラクティス](custom-functions-errors.md)を検出する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数の JSON メタデータを自動生成します](custom-functions-json-autogeneration.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)

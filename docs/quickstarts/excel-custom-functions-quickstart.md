@@ -1,15 +1,15 @@
 ---
-ms.date: 03/06/2019
+ms.date: 05/02/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
-title: カスタム関数クイックスタート (プレビュー)
+title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517073"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619897"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -17,79 +17,83 @@ ms.locfileid: "33517073"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-カスタム関数の作成を開始するには、次のツールと関連するリソースが必要です。
+* Windows 版 Excel (64 ビット バージョン 1810 以降) または Excel Online
 
-- [Node.js](https://nodejs.org/en/) (バージョン 8.0.0 以降)
-
-- [Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)
-
-- 最新バージョンの [Yeoman](https://yeoman.io/) と [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > 以前に一度使用したバージョンのジェネレーターをインストールしていた場合でも、パッケージを npm から最新バージョンに更新することをお勧めします。
+* [Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)
 
 ## <a name="build-your-first-custom-functions-project"></a>最初のカスタム関数プロジェクトを作成する
 
 はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。 これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。
 
-1. 次のコマンドを実行し、以下のようにプロンプトに応答します。
+1. 任意のフォルダーで、次のコマンドを実行し、次のようにプロンプトに応答します。
 
     ```command&nbsp;line
     yo office
     ```
 
-    - Choose a project type (プロジェクトの種類を選択): `Excel Custom Functions Add-in project (...)`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project (...)`
+    - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `stock-ticker`
 
-    - Choose a script type (スクリプトの種類を選択): `JavaScript`
-
-    - What would you want to name your add-in? (アドインの名前を何にしますか) `stock-ticker`
-
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/12-10-fork-cf-pic.jpg)
+    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/yo-office-excel-cf.png)
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
-2. 作成したばかりのプロジェクトフォルダーに移動します。
+2. [ごみ箱] ジェネレーターでは、プロジェクトの処理に関するいくつかの命令がコマンドラインに表示されますが、それらは無視して、手順に従って続行します。 プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. このプロジェクトを実行するには、自己署名証明書を信頼する必要があります。 Windows または Mac についての詳細な手順については、「[自己署名証明書を信頼済みルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。  
-
-4. プロジェクトをビルドします。
+3. プロジェクトをビルドします。 これにより、プロジェクトが正常に機能するために必要な証明書もインストールされます。 
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. Node.js で実行しているローカル Web サーバーを開始します。
+4. Node.js で実行しているローカル Web サーバーを開始します。 Windows 版 Excel または Excel Online でカスタム関数アドインを試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
 
-    - Windows 版 Excel を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを起動し、Excel を起動して、アドインをサイドロードします。
+> [!NOTE]
+> Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
 
-        ```command&nbsp;line
-         npm run start
-        ```
-        このコマンドを実行すると、コマンドプロンプトに web サーバーの起動に関する詳細が表示されます。 Excel は、アドインが読み込まれた状態で起動します。 アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。
+# <a name="excel-for-windowstabexcel-windows"></a>[Windows 用 Excel](#tab/excel-windows)
 
-    - Excel Online を使用してカスタム関数をテストする場合は、次のコマンドを実行してローカル web サーバーを開始します。
+Windows 版 Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
-        ```command&nbsp;line
-        npm run start-web
-        ```
+```command&nbsp;line
+npm run start:desktop
+```
 
-         このコマンドを実行すると、コマンドプロンプトに web サーバーの起動に関する詳細が表示されます。 関数を使用するには、Excel Online で新しいブックを開きます。 このブックでは、アドインを読み込む必要があります。 
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-        これを行うには、リボンの [**挿入**] タブを選択して、[アドインの**取得**] を選択します。生成された新しいウィンドウで、[**マイアドイン**] タブが表示されていることを確認します。次に、[**個人用アドインの管理 > [個人用**アドインのアップロード] を選択します。 マニフェストファイルを参照してアップロードします。 アドインが読み込まれない場合は、手順3が正しく完了していることを確認してください。
+Excel Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します。
 
-## <a name="try-out-the-prebuilt-custom-functions"></a>あらかじめ用意されているカスタム関数を試してみる
+```command&nbsp;line
+npm run start:web
+```
 
-Yeoman ジェネレーターで作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**src/customfunctions.js** ファイル内で定義されています。 プロジェクトのルート ディレクトリの **manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。
+> [!NOTE]
+> Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
+
+カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
+
+1. Excel Online で、**[挿入]** タブを選択して、**[アドイン]** を選択します。
+
+   ![[個人用アドイン] アイコンが強調表示された状態で Excel Online にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   
+2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
+
+3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
+
+4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+
+---
+
+## <a name="try-out-a-prebuilt-custom-function"></a>あらかじめ用意されているカスタム関数を試す
+
+[ごみ箱] ジェネレーターを使用して作成したカスタム関数プロジェクトには、 **/src/functions/functions.js**ファイル内で定義されているいくつかのあらかじめ用意されたカスタム関数があります。 プロジェクトのルートディレクトリの **./manifest¥ xml**ファイルは、すべてのカスタム関数が`CONTOSO`名前空間に属することを指定します。
 
 Excel ブックで、次の手順を`ADD`実行してカスタム関数を試してみます。
 
