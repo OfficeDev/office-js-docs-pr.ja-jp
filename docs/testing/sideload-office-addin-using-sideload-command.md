@@ -3,34 +3,43 @@ title: sideload コマンドを使用して Office アドインをサイドロ�
 description: ''
 ms.date: 03/19/201907/24/2018
 localization_priority: Priority
-ms.openlocfilehash: dfa231374133ad857554afaf343362f1415788f4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 69d39c2736312653b5a362aefccd41629e6e3555
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449968"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619078"
 ---
-# <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>**sideload コマンド**を使用して Office アドインをテストのためにサイドロードする
- >[!NOTE]
->"npm run sideload" メソッドは、Windows で実行される Excel、Word、および PowerPoint アドイン、[**yo office** ツール](https://github.com/OfficeDev/generator-office)を使って作成されたアドイン プロジェクト、および package.json ファイルの `scripts` セクションに `sideload` スクリプトが含まれているアドイン プロジェクトでのみ機能します。 (古いバージョンの **yo office** を使用して作成されたプロジェクトにはこのスクリプトがありません。) Visual Studio を使用して作成されたプロジェクト、または sideload スクリプトのないプロジェクトの場合、Windows でこれらのプロジェクトをサイドロードするには、「[テスト用に Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)」で説明するメソッドを使用します。
->
-> Word、Excel、PowerPoint のアドインを Windows でテストしない場合は、以下のいずれかのトピックを参照してアドインをサイドロードします。
+# <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>sideload コマンドを使用してテスト用の Office アドインをサイドロードする
+ 
+> [!NOTE]
+> この記事で説明するサイドローディング手法は、以下の場合にのみ有効です。
 > 
-> - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
-> - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - Windows 上で実行される Excel、Word、および PowerPoint のアドイン
+> 
+> - [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)で作成され、package.json ファイルの `scripts` セクションに `sideload` スクリプトがあるアドイン プロジェクト。 (Office アドイン用の Yeoman ジェネレーターの古いバージョンで作成されたプロジェクトには、このスクリプトはありません。)
+ 
+Office アドイン用の Yeoman ジェネレーターが提供する `sideload` スクリプトを使用してアドインをサイドロードするには、以下の手順を実行します。
 
 1. 管理者としてコマンド プロンプトを開きます。
 
 2. ディレクトリをアドイン プロジェクト フォルダーのルートに変更します。
 
-3. アドイン プロジェクトを処理するため、"**npm run start**" コマンドを実行してポート 3000 でローカル Web サーバーのインスタンスを開始します。
+3. 次のコマンドを実行して、アドイン プロジェクトを提供するためにポート 3000 でローカル Web サーバーインスタンスを起動します。`npm run start`
 
 4. 管理者として 2 番目のコマンド プロンプトを開きます。
 
 5. ディレクトリをアドイン プロジェクト フォルダーのルートに変更します。
 
-6. "**npm run sideload**" コマンドを実行してホスト アプリケーション (Excel、Word など) を起動し、アドインをホスト アプリケーションに登録します。
+6. 次のコマンドを実行してホスト アプリケーション (Excel、Wordなど) を起動し、アドインをホスト アプリケーションに登録します。`npm run sideload`
+
+アドイン プロジェクトが Visual Studio で作成された場合、またはサイドロード スクリプトがない場合は、「[ネットワーク共有からの Office アドインのサイドロード](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)」で説明されている方法で Windows にサイドロードできます。
+
+Windows で Word、Excel、または PowerPoint アドインをテストしていない場合は、アドインのサイドロードについて、次のトピックのいずれかを参照してください。
+ 
+- [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
+- [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="see-also"></a>関連項目
 

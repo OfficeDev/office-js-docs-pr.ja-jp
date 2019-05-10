@@ -1,14 +1,14 @@
 ---
-ms.date: 02/08/2019
+ms.date: 05/03/2019
 description: Excel のカスタム関数でエラーを処理します。
-title: Excel のカスタム関数でのエラー処理 (プレビュー)
+title: 'Excel のカスタム関数でのエラー処理 '
 localization_priority: Priority
-ms.openlocfilehash: 6c1c7f780aea125977510e4eb0e320933cd6ed9c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 188ece6c77bc2cafad6f22448fb698e0c0370ef8
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448323"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628159"
 ---
 # <a name="error-handling-within-custom-functions"></a>カスタム関数内でのエラー処理
 
@@ -19,6 +19,11 @@ ms.locfileid: "32448323"
 次のコード サンプルでは、`.catch` がコード内で以前に発生したエラーを処理します。
 
 ```js
+/**
+ * Gets a comment from the hypothetical contoso.com/comments API.
+ * @customfunction
+ * @param {number} commentID ID of a comment.
+ */
 function getComment(commentID) {
   let url = "https://www.contoso.com/comments/" + x;
 
@@ -35,10 +40,11 @@ function getComment(commentID) {
 }
 ```
 
+## <a name="next-steps"></a>次の手順
+[自分のカスタム関数で問題をトラブルシューティングを行う](custom-functions-troubleshooting.md)方法についての詳細を確認する。
+
 ## <a name="see-also"></a>関連項目
 
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
-* [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [カスタム関数のデバッグ](custom-functions-debugging.md)
+* [カスタム関数の要件](custom-functions-requirements.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)

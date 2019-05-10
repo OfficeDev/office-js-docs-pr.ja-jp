@@ -1,18 +1,20 @@
 ---
-ms.date: 04/25/2019
+ms.date: 05/03/2019
 description: JSDOC タグを使用して、カスタム関数の JSON メタデータを動的に作成する。
-title: カスタム関数の JSON メタデータを作成する (プレビュー)
+title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353273"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628089"
 ---
-# <a name="create-json-metadata-for-custom-functions-preview"></a>カスタム関数の JSON メタデータを作成する (プレビュー)
+# <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
 Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、JSDoc タグが使用されます。 JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。
 
@@ -109,7 +111,7 @@ TypeScript 構文: @param 名 _の説明_
 * 省略可能なパラメーターを使用する。 例: `function f(text?: string)`
 * パラメーターに既定値を指定する。 例: `function f(text: string = "abc")`
 
-@param の詳しい説明については、「[JSDoc](http://usejsdoc.org/tags-param.html)」を参照してください。
+@param の詳しい説明については、「[JSDoc](https://usejsdoc.org/tags-param.html)」を参照してください。
 
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。
@@ -183,11 +185,11 @@ TypeScript 構文: @param 名 _の説明_
 
 その他の型は、エラーとして処理されます。
 
+## <a name="next-steps"></a>次の手順
+[カスタム関数用の命名規則](custom-functions-naming.md)について説明します。 または、[JSON ファイルを手で書く](custom-functions-json.md)必要のある[機能をローカライズする](custom-functions-localize.md)方法を確認してください。
+
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
-* [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
-* [カスタム関数のデバッグ](custom-functions-debugging.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)

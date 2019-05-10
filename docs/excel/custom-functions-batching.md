@@ -1,22 +1,26 @@
 ---
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Priority
-ms.openlocfilehash: 2e31d6aa212e27967448f07fdcb2bd024a7511f9
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: da9f3ee3243b52df5d49f32c8ab6cbada97e17ca
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356898"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628131"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 
-カスタム関数がリモート サービスを呼び出す場合は、リモート サービスへのネットワークの呼び出し数を減らすバッチ処理のパターンを使用できます。 バッチ処理をしたネットワーク ラウンド トリップのウェブ サービスへのすべての呼び出しを、1 回に減らします。 これは、ワークシートが再計算するときに最適な方法です。 たとえば、別のユーザーがスプレッドシートの 100 セル内でカスタム関数を使用し、スプレッドシートを再計算した場合、カスタム関数は 100 回実行され、100 回ネットワークの呼び出しを行います。 バッチ処理のパターンを使用すると、1 つのネットワークの呼び出しで 100 の計算すべてを結合することができます。
+カスタム関数がリモート サービスを呼び出す場合は、リモート サービスへのネットワークの呼び出し数を減らすバッチ処理のパターンを使用できます。 バッチ処理をしたネットワーク ラウンド トリップのウェブ サービスへのすべての呼び出しを、1 回に減らします。 これは、ワークシートが再計算するときに最適な方法です。
+
+たとえば、別のユーザーがスプレッドシートの 100 セル内でカスタム関数を使用し、スプレッドシートを再計算した場合、カスタム関数は 100 回実行され、100 回ネットワークの呼び出しを行います。 バッチ処理のパターンを使用すると、1 つのネットワークの呼び出しで 100 の計算すべてを結合することができます。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>完成したサンプルを表示する
 
-この記事を参考にして、自分のプロジェクトにコードの例を貼り付けることができます。 たとえば、yo office を使用して、TypeScript の新しいカスタム関数のプロジェクトを作成し、この記事からプロジェクトにすべてのコードを追加します。 それからコードを実行し、試してみることができます。
+この記事を参考にして、自分のプロジェクトにコードの例を貼り付けることができます。 たとえば、[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して TypeScript 用の新しいカスタム関数プロジェクトを作成し、この記事のすべてのコードをそのプロジェクトに追加することができます。 その後、コードを実行して試してください。
 
 [カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts)をご覧ください。
 
@@ -28,7 +32,7 @@ ms.locfileid: "33356898"
 2. バッチの準備ができたときのリモート要求を行う関数です。
 3. バッチ要求に応答するサーバー コードは、すべての操作の結果を計算して値を返します。
 
-次のセクションでは、一度に 1 つのコード例を構築する方法が表示されます。 Functions.ts ファイルにそれぞれのコード例を追加します。 yo office 使用して、新しいカスタム関数のプロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、 [Excel のカスタム関数の開発を開始する](../quickstarts/excel-custom-functions-quickstart.md)を参照し、JavaScript ではなく TypeScript を使用してください。
+次のセクションでは、一度に 1 つのコード例を構築する方法が表示されます。 **functions.ts** ファイルにそれぞれのコード例を追加します。 Yo Office ジェネレーター 使用して、新しいカスタム関数のプロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、 [Excel のカスタム関数の開発を開始する](../quickstarts/excel-custom-functions-quickstart.md)を参照し、JavaScript ではなく TypeScript を使用してください。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>カスタム関数の各呼び出しにバッチ処理をする
 
@@ -67,7 +71,7 @@ interface IBatchEntry {
 }
 ```
 
-次に、前のインターフェイスを使用するバッチの配列を作成します。 バッチが予定されているかどうかを追跡するため、`_isBatchedRequestSchedule 変数を作成します。  リモート サービスへのバッチの呼び出しのタイミングは、後で重要になります。
+次に、前のインターフェイスを使用するバッチの配列を作成します。 バッチが予定されているかどうかを追跡するため、`_isBatchedRequestSchedule` 変数を作成します。 リモート サービスへのバッチの呼び出しのタイミングは、後で重要になります。
 
 ```typescript
 const _batch: IBatchEntry[] = [];
@@ -114,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 ## <a name="make-the-remote-request"></a>リモートの要求を行う
 
-`_makeRemoteRequest`関数の目的は、操作のバッチをリモート サービスに渡し、それから各カスタム関数に結果を返します。 まず、バッチ配列のコピーを作成します。 これにより、concurrent カスタム関数は、Excel からすぐに新しい配列にバッチ処理を呼び出すことができます。 そのコピーは、それから promise 情報が含まれていない単純な配列になります。 機能しない場合は、リモート サービスにその promise を渡しても意味をなしません。 リモート サービスが何を返すかによって、`_makeRemoteRequest は拒否するか、またはそれぞれの promise を解決します。
+`_makeRemoteRequest`関数の目的は、操作のバッチをリモート サービスに渡し、それから各カスタム関数に結果を返します。 まず、バッチ配列のコピーを作成します。 これにより、concurrent カスタム関数は、Excel からすぐに新しい配列にバッチ処理を呼び出すことができます。 そのコピーは、それから promise 情報が含まれていない単純な配列になります。 機能しない場合は、リモート サービスにその promise を渡しても意味をなしません。 リモート サービスが何を返すかによって、`_makeRemoteRequest` は拒否するか、またはそれぞれの promise を解決します。
 
 ### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>次の`_makeRemoteRequest`メソッドを functions.ts に追加します。
 
@@ -157,7 +161,7 @@ function _makeRemoteRequest() {
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>リモート サービスでバッチの呼び出しを処理します。
 
-最後の手順では、リモート サービスでバッチの呼び出しを処理をします。 つぎのコード サンプルは、`_fetchFromRemoteService`関数を表しています。 この関数は、それぞれの操作を展開せずに指定した操作を実行し、それから結果を返します。 この記事の学習の目的は、 `_fetchFromRemoteService`関数がリモート サービスを web アドインで実行し、リモート サービスをモックするように設計されています。 Functions.ts ファイルにこのコードを追加することができ、実際のリモート サービスを設定しなくても、この記事内のすべてのコードを学習し実行することができます。
+最後の手順では、リモート サービスでバッチの呼び出しを処理をします。 つぎのコード サンプルは、`_fetchFromRemoteService`関数を表しています。 この関数は、それぞれの操作を展開せずに指定した操作を実行し、それから結果を返します。 この記事の学習の目的は、 `_fetchFromRemoteService`関数がリモート サービスを web アドインで実行し、リモート サービスをモックするように設計されています。 **functions.ts** ファイルにこのコードを追加することができ、実際のリモート サービスを設定しなくても、この記事内のすべてのコードを学習し実行することができます。
 
 ### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>次の `_fetchFromRemoteService` 関数を functions.ts に追加します。
 
@@ -213,9 +217,12 @@ function pause(ms: number) {
 - 適切な認証機構を適用する。 適切な呼び出し元のみが関数にアクセスできることを確認します。
 - リモート サービスで、コードを配置します。
 
+## <a name="next-steps"></a>次の手順
+カスタム関数で使用できる[さまざまなパラメーター](custom-functions-parameter-options.md)について確認してください。 または、[カスタム関数で Web 通話](custom-functions-web-reqs.md)を発信する際の基本事項を確認してください。
+
 ## <a name="see-also"></a>関連項目
 
+* [関数の揮発性の値](custom-functions-volatile.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,34 +1,28 @@
 ---
-title: Vue を使用して Excel アドインをビルドする
+title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517052"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619592"
 ---
-# <a name="build-an-excel-add-in-using-vue"></a>Vue を使用して Excel アドインをビルドする
+# <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
-この記事では、Vue と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
+この記事では、Vue と Excel JavaScript API を使用して Excel 作業ウィンドウ アドインを構築するプロセスについて説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - [Vue CLI](https://github.com/vuejs/vue-cli) をグローバルにインストールします。
 
     ```command&nbsp;line
     npm install -g vue-cli
-    ```
-
-- [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
     ```
 
 ## <a name="generate-a-new-vue-app"></a>新しい Vue アプリの生成
@@ -63,11 +57,11 @@ vue init webpack my-add-in
     yo office
     ```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in containing the manifest only`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ![Yeoman ジェネレーター](../images/yo-office.png)
+    ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
 
     ウィザードを完了すると、ジェネレーターによってマニフェスト ファイルが作成されます。
 
@@ -214,7 +208,7 @@ vue init webpack my-add-in
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。Vue を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+おめでとうございます! これで Vue を使用して Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)

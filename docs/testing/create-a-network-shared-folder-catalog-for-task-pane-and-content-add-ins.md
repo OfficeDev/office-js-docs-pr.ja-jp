@@ -3,32 +3,29 @@ title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 24c7719969ddc59d8bb6e525af804515331a51ad
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450205"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619045"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。
 
 > [!NOTE]
-> プロジェクトのアドインの作成に [**Yo Office**](https://github.com/OfficeDev/generator-office) ツールを使用した場合、別の方法でサイドロードを行える可能性があります。 詳細については、「[サイドロード コマンドを使用して Office アドインをサイドロードする](sideload-office-addin-using-sideload-command.md)」を参照してください。
+> アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)で作成された場合、アドインをサイドロードするのに役に立つ別の方法があります。 詳細については、「[サイドロード コマンドを使用して Office アドインをサイドロードする](sideload-office-addin-using-sideload-command.md)」を参照してください。
 
-この記事は、Windows での Word、Excel、または PowerPoint のアドインのテストにのみ適用されます。 異なるプラットフォームでのテストまたは Outlook アドインのテストをする場合は、以下の、アドインのサイドロードに関するいずれかのトピックを参照してください。
+この記事は、Windows での Word、Excel、PowerPoint、および Project アドインのテストにのみ適用されます。 異なるプラットフォームでのテストまたは Outlook アドインのテストをする場合は、以下の、アドインのサイドロードに関するいずれかのトピックを参照してください。
 
 - [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
-
 次のビデオでは、共有フォルダー カタログを使用して Office デスクトップまたは Office Online でアドインをサイドロードする手順について説明します。  
 
-
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
-
 
 ## <a name="share-a-folder"></a>フォルダーの共有
 
@@ -50,9 +47,9 @@ ms.locfileid: "32450205"
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>共有フォルダーを信頼できるカタログとして指定する
       
-1. Excel、Word、または PowerPoint で新しいドキュメントを開きます。
+1. Excel、Word、PowerPoint、または Project で新しいドキュメントを開きます。
     
-2. [**ファイル**] タブを選択して、[**オプション**] を選択します。
+2. [**ファイル**] タブを選択し、[**オプション**] を選択します。
     
 3. [**セキュリティ センター**] を選択し、[**セキュリティ センターの設定**] ボタンを選択します。
     
@@ -81,12 +78,11 @@ ms.locfileid: "32450205"
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。
+2. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。 Projectで、リボンの [**Project**]タブの [**個人用アドイン**] を選択します。 
 
 3. **[Office アドイン]** ダイアログ ボックスの上部にある **[共有フォルダー]** を選びます。
 
 4. アドインの名前を選び、**[OK]** を選択して、アドインを挿入します。
-
 
 ## <a name="see-also"></a>関連項目
 
