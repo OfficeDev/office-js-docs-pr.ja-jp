@@ -1,196 +1,72 @@
 ---
-title: Angular を使用して Excel のアドインを作成する
+title: Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 66c85ba9914b783295e9ed2143dc9ce107f64c4c
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450953"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619911"
 ---
-# <a name="build-an-excel-add-in-using-angular"></a>Angular を使用して Excel のアドインを作成する
+# <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
-この記事では、Angular と Excel の JavaScript API を使用して Excel アドインを構築する手順について説明します。
+この記事では、Angular と Excel JavaScript API を使用して Excel 作業ウィンドウ アドインを構築するプロセスについて説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
-
-    ```bash
-    npm install -g yo generator-office
-    ```
-
-## <a name="create-the-web-app"></a>Web アプリを作成する
+## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
 1. Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Angular framework`
-    - **Choose a script type: (スクリプトの種類を選択)** `Typescript`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using Angular framework`
+    - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ![Yeoman ジェネレーター](../images/yo-office-excel-angular.png)
+    ![Yeoman ジェネレーター](../images/yo-office-excel-angular-2.png)
 
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 2. プロジェクトのルート フォルダーに移動します。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
+## <a name="explore-the-project"></a>プロジェクトを確認する
 
-## <a name="update-the-code"></a>コードを更新する
+Yeoman ジェネレーターで作成したアドイン プロジェクトには、とても基本的な作業ウィンドウ アドインのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
 
-1. コード エディターでファイル **app.css** を開き、次のスタイルをファイルの末尾に追加してファイルを保存します。
+- プロジェクトのルート ディレクトリにある **manifest.xml** ファイルで、アドインの機能と設定を定義します。
+- **./src/taskpane/app/app.component.html** ファイルには、作業ウィンドウ用の HTML マークアップが含まれています。
+- **./src/taskpane/taskpane.css** ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
+- **./src/taskpane/app/app.component.ts** ファイルには、作業ウィンドウと Excel の間のやり取りを容易にする Office JavaScript API コードが含まれています。
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-        font-family: Arial;
-        padding-top: 25px;
-    }
+## <a name="try-it-out"></a>試してみる
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-        font-family: Arial;
-    }
-
-    .padding {
-        padding: 15px;
-    }
-
-    .padding-sm {
-        padding: 4px;
-    }
-
-    .normal-button {
-        width: 80px;
-        padding: 2px;
-    }
-    ```
-
-2. ファイル **src/app/app.component.html** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>{{welcomeMessage}}</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <br />
-            <div role="button" class="ms-Button" (click)="setColor()">
-                <span class="ms-Button-label">Set color</span>
-                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
-            </div>
-        </div>
-    </div>
-    ```
-
-3. ファイル **src/app/app.component.ts** を開き、すべての内容を次のコードに置き換え、ファイルを保存します。
-
-    ```typescript
-    import { Component } from '@angular/core';
-    import * as OfficeHelpers from '@microsoft/office-js-helpers';
-
-    const template = require('./app.component.html');
-
-    @Component({
-        selector: 'app-home',
-        template
-    })
-    export default class AppComponent {
-        welcomeMessage = 'Welcome';
-
-        async setColor() {
-            try {
-                await Excel.run(async context => {
-                    const range = context.workbook.getSelectedRange();
-                    range.load('address');
-                    range.format.fill.color = 'green';
-                    await context.sync();
-                    console.log(`The range address was ${range.address}.`);
-                });
-            } catch (error) {
-                OfficeHelpers.UI.notify(error);
-                OfficeHelpers.Utilities.log(error);
-            }
-        }
-
-    }
-    ```
-
-## <a name="update-the-manifest"></a>マニフェストを更新する
-
-1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。 
-
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
-
-3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
-
-4. ファイルを保存します。
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Excel"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>開発用サーバーの起動
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-## <a name="try-it-out"></a>お試しください。
-
-1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
-
-    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2b.png)
+    ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
 
 3. ワークシート内で任意のセルの範囲を選択します。
 
-4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
+4. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
+    ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。Angular を使用して Excel アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+おめでとうございます! これで Angular を使用して Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)
