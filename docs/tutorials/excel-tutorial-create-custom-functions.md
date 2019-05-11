@@ -1,140 +1,131 @@
 ---
-title: Excel カスタム関数のチュートリアル (プレビュー)
+title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ed9f16bdb330aa3f092e7d437ccfad6e056e07d4
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451413"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952195"
 ---
-# <a name="tutorial-create-custom-functions-in-excel-preview"></a><span data-ttu-id="3e704-103">チュートリアル: Excel でのカスタム関数の作成 (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="3e704-103">Tutorial: Create custom functions in Excel (preview)</span></span>
+# <a name="tutorial-create-custom-functions-in-excel"></a><span data-ttu-id="78be9-103">チュートリアル: Excel でのカスタム関数の作成</span><span class="sxs-lookup"><span data-stu-id="78be9-103">Tutorial: Create custom functions in Excel</span></span>
 
-<span data-ttu-id="3e704-104">カスタム関数では、関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。</span><span class="sxs-lookup"><span data-stu-id="3e704-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="3e704-105">ユーザーは、Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="3e704-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="3e704-106">計算のような単純なタスク、または Web からワークシートへのデータのリアルタイム ストリーミングのようなより複雑なタスクを実行するカスタム関数を作成できます。</span><span class="sxs-lookup"><span data-stu-id="3e704-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
+<span data-ttu-id="78be9-104">カスタム関数では、関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。</span><span class="sxs-lookup"><span data-stu-id="78be9-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="78be9-105">ユーザーは、Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="78be9-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="78be9-106">計算のような単純なタスク、または Web からワークシートへのデータのリアルタイム ストリーミングのようなより複雑なタスクを実行するカスタム関数を作成できます。</span><span class="sxs-lookup"><span data-stu-id="78be9-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
 
-<span data-ttu-id="3e704-107">このチュートリアルの内容:</span><span class="sxs-lookup"><span data-stu-id="3e704-107">In this tutorial, you will:</span></span>
+<span data-ttu-id="78be9-107">このチュートリアルの内容:</span><span class="sxs-lookup"><span data-stu-id="78be9-107">In this tutorial, you will:</span></span>
 > [!div class="checklist"]
-> * <span data-ttu-id="3e704-108">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
-> * <span data-ttu-id="3e704-109">あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
-> * <span data-ttu-id="3e704-110">Web からデータを取得するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-110">Create a custom function that gets data from the web.</span></span>
-> * <span data-ttu-id="3e704-111">Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-111">Create a custom function that streams real-time data from the web.</span></span>
+> * <span data-ttu-id="78be9-108">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
+> * <span data-ttu-id="78be9-109">あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
+> * <span data-ttu-id="78be9-110">Web からデータを取得するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-110">Create a custom function that gets data from the web.</span></span>
+> * <span data-ttu-id="78be9-111">Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-111">Create a custom function that streams real-time data from the web.</span></span>
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+## <a name="prerequisites"></a><span data-ttu-id="78be9-112">前提条件</span><span class="sxs-lookup"><span data-stu-id="78be9-112">Prerequisites</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="3e704-112">前提条件</span><span class="sxs-lookup"><span data-stu-id="3e704-112">Prerequisites</span></span>
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* <span data-ttu-id="3e704-113">[Node.js](https://nodejs.org/en/) (バージョン 8.0.0 以降)</span><span class="sxs-lookup"><span data-stu-id="3e704-113">[Node.js](https://nodejs.org/en/) (version 8.0.0 or later)</span></span>
+* <span data-ttu-id="78be9-113">Excel on Windows (64 ビットバージョン1810以降) または Excel Online</span><span class="sxs-lookup"><span data-stu-id="78be9-113">Excel on Windows (64-bit version 1810 or later) or Excel Online</span></span>
 
-* <span data-ttu-id="3e704-114">[Git バッシュ](https://git-scm.com/downloads) (または別の Git クライアント)</span><span class="sxs-lookup"><span data-stu-id="3e704-114">[Git Bash](https://git-scm.com/downloads) (or another Git client)</span></span>
+* <span data-ttu-id="78be9-114">[Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)</span><span class="sxs-lookup"><span data-stu-id="78be9-114">Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")</span></span>
 
-* <span data-ttu-id="3e704-115">最新バージョンの [Yeoman](https://yeoman.io/) と [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-115">The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+## <a name="create-a-custom-functions-project"></a><span data-ttu-id="78be9-115">カスタム関数プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="78be9-115">Create a custom functions project</span></span>
 
-    ```
-    npm install -g yo generator-office
-    ```
+ <span data-ttu-id="78be9-116">まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-116">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="78be9-117">[Office アドイン用の [ごみ箱] ジェネレーター](https://www.npmjs.com/package/generator-office)では、プロジェクトに事前に用意されているカスタム関数を使用してセットアップし、試すことができます。カスタム関数のクイックスタートを既に実行してプロジェクトを生成した場合は、そのプロジェクトを引き続き使用して、[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進んでください。</span><span class="sxs-lookup"><span data-stu-id="78be9-117">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.</span></span>
 
-    > [!NOTE]
-    > <span data-ttu-id="3e704-116">以前に Yeoman ジェネレーターをインストールしている場合でも、npm からパッケージを最新バージョンに更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="3e704-116">Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.</span></span>
-
-* <span data-ttu-id="3e704-117">Windows 版 Excel (64 ビット バージョン 1810 以降) または Excel Online</span><span class="sxs-lookup"><span data-stu-id="3e704-117">Excel for Windows (64-bit version 1810 or later) or Excel Online</span></span>
-
-* <span data-ttu-id="3e704-118">[Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)</span><span class="sxs-lookup"><span data-stu-id="3e704-118">Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")</span></span>
-
-## <a name="create-a-custom-functions-project"></a><span data-ttu-id="3e704-119">カスタム関数プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="3e704-119">Create a custom functions project</span></span>
-
- <span data-ttu-id="3e704-120">まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-120">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="3e704-121">[Yeoman Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用すると、プロジェクトをセットアップして、いくつかの初期カスタム関数を試すことができます。</span><span class="sxs-lookup"><span data-stu-id="3e704-121">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some initial custom functions that you can try out.</span></span>
-
-1. <span data-ttu-id="3e704-122">次のコマンドを実行し、以下のようにプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="3e704-122">Run the following command and then answer the prompts as follows.</span></span>
+1. <span data-ttu-id="78be9-118">次のコマンドを実行し、以下のようにプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="78be9-118">Run the following command and then answer the prompts as follows.</span></span>
     
-    ```
+    ```command&nbsp;line
     yo office
     ```
     
-    * <span data-ttu-id="3e704-123">Choose a project type (プロジェクトの種類を選択): `Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="3e704-123">Choose a project type: `Excel Custom Functions Add-in project (...)`</span></span>
-    * <span data-ttu-id="3e704-124">Choose a script type (スクリプトの種類を選択): `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="3e704-124">Choose a script type: `JavaScript`</span></span>
-    * <span data-ttu-id="3e704-125">What would you want to name your add-in? (アドインの名前を何にしますか)</span><span class="sxs-lookup"><span data-stu-id="3e704-125">What do you want to name your add-in?</span></span> `stock-ticker`
-    
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/12-10-fork-cf-pic.jpg)
-    
-    <span data-ttu-id="3e704-127">Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしている Node.js コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="3e704-127">The Yeoman generator creates the project files and installs supporting Node.js components.</span></span>
+    * <span data-ttu-id="78be9-119">**Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="78be9-119">**Choose a project type:** `Excel Custom Functions Add-in project (...)`</span></span>
+    * <span data-ttu-id="78be9-120">**Choose a script type: (スクリプトの種類を選択)** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="78be9-120">**Choose a script type:** `JavaScript`</span></span>
+    * <span data-ttu-id="78be9-121">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="78be9-121">**What do you want to name your add-in?**</span></span> `stock-ticker`
 
-2. <span data-ttu-id="3e704-128">プロジェクト フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="3e704-128">Go to the project folder.</span></span>
+    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/yo-office-excel-cf.png)
     
-    ```
+    <span data-ttu-id="78be9-123">Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="78be9-123">The Yeoman generator will create the project files and install supporting Node components.</span></span>
+
+2. <span data-ttu-id="78be9-124">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="78be9-124">Navigate to the root folder of the project.</span></span>
+    
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. <span data-ttu-id="3e704-129">このプロジェクトを実行するために必要な自己署名証明書を信頼します。</span><span class="sxs-lookup"><span data-stu-id="3e704-129">Trust the self-signed certificate that is needed to run this project.</span></span> <span data-ttu-id="3e704-130">Windows または Mac についての詳細な手順については、「[自己署名証明書を信頼済みルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3e704-130">For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).</span></span>  
-
-4. <span data-ttu-id="3e704-131">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="3e704-131">Build the project.</span></span>
+3. <span data-ttu-id="78be9-125">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="78be9-125">Build the project.</span></span>
     
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
-5. <span data-ttu-id="3e704-132">Node.js で実行しているローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="3e704-132">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="3e704-133">Windows 用 Excel または Excel Online で、カスタム関数アドインを試すことができます。</span><span class="sxs-lookup"><span data-stu-id="3e704-133">You can try out the custom function add-in in Excel for Windows, or Excel Online.</span></span>
+4. <span data-ttu-id="78be9-126">Node.js で実行しているローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="78be9-126">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="78be9-127">カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。</span><span class="sxs-lookup"><span data-stu-id="78be9-127">You can try out the custom function add-in in Excel on Windows or Excel Online.</span></span>
 
-# <a name="excel-for-windowstabexcel-windows"></a>[<span data-ttu-id="3e704-134">Windows 用 Excel</span><span class="sxs-lookup"><span data-stu-id="3e704-134">Excel for Windows</span></span>](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="78be9-128">Windows 上の Excel</span><span class="sxs-lookup"><span data-stu-id="78be9-128">Excel on Windows</span></span>](#tab/excel-windows)
 
-<span data-ttu-id="3e704-135">次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-135">Run the following command.</span></span>
+<span data-ttu-id="78be9-129">Windows の Excel でアドインをテストするには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-129">To test your add-in in Excel on Windows, run the following command.</span></span> <span data-ttu-id="78be9-130">このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel on Windows が開きます。</span><span class="sxs-lookup"><span data-stu-id="78be9-130">When you run this command, the local web server will start and Excel on Windows will open with your add-in loaded.</span></span>
 
+```command&nbsp;line
+npm run start:desktop
 ```
-npm start desktop
-```
-
-<span data-ttu-id="3e704-136">このコマンドは、Web サーバーを開始し、カスタム関数アドインを Windows 用 Excel にサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="3e704-136">This command starts the web server, and sideloads your custom function add-in into Excel for Windows.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3e704-137">アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。</span><span class="sxs-lookup"><span data-stu-id="3e704-137">If your add-in does not load, check that you have completed step 3 properly.</span></span> <span data-ttu-id="3e704-138">**[ランタイムログ](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** を有効にして、アドインの XML マニフェストファイルに関する問題のトラブルシューティングを行ったり、インストールやランタイムの問題を確認したりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3e704-138">You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as any installation or runtime problems.</span></span> <span data-ttu-id="3e704-139">ランタイムログは`console.log` 、問題を見つけて解決するために、ステートメントをログファイルに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="3e704-139">Runtime logging writes `console.log` statements to a log file to help you find and fix issues.</span></span>
+> <span data-ttu-id="78be9-131">Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78be9-131">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="78be9-132">を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。</span><span class="sxs-lookup"><span data-stu-id="78be9-132">If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="3e704-140">Excel Online</span><span class="sxs-lookup"><span data-stu-id="3e704-140">Excel Online</span></span>](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="78be9-133">Excel Online</span><span class="sxs-lookup"><span data-stu-id="78be9-133">Excel Online</span></span>](#tab/excel-online)
 
-<span data-ttu-id="3e704-141">次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-141">Run the following command.</span></span>
+<span data-ttu-id="78be9-134">Excel Online でアドインをテストするには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-134">To test your add-in in Excel Online, run the following command.</span></span> <span data-ttu-id="78be9-135">このコマンドを実行すると、ローカル Web サーバーが起動します。</span><span class="sxs-lookup"><span data-stu-id="78be9-135">When you run this command, the local web server will start.</span></span>
 
+```command&nbsp;line
+npm run start:web
 ```
-npm start web
-```
-
-<span data-ttu-id="3e704-142">このコマンドは、Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="3e704-142">This command starts the web server.</span></span> <span data-ttu-id="3e704-143">アドインをサイドロードするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-143">Use the following steps to sideload your add-in.</span></span>
-
-<ol type="a">
-   <li><span data-ttu-id="3e704-144">Excel Online で、<strong>[挿入]</strong> タブを選択して、<strong>[アドイン]</strong> を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-144">In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.</span></span><br/>
-   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
-   <li><span data-ttu-id="3e704-145"><strong>[マイ アドインの管理]</strong> を選択し、<strong>[マイ アドインのアップロード]</strong> を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-145">Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</span></span></li> 
-   <li><span data-ttu-id="3e704-146"><strong>[参照...]</strong> を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="3e704-146">Choose <strong>Browse...</strong> and navigate to the root directory of the project that the Yeoman generator created.</span></span></li> 
-   <li><span data-ttu-id="3e704-147"><strong>manifest.xml</strong> ファイルを選択し、<strong>[開く]</strong> を選択し、<strong>[アップロード]</strong> を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-147">Select the file <strong>manifest.xml</strong> and choose <strong>Open</strong>, then choose <strong>Upload</strong>.</span></span></li>
-</ol>
 
 > [!NOTE]
-> <span data-ttu-id="3e704-148">アドインが読み込まれない場合は、手順 3 が正しく完了しているか確認してください。</span><span class="sxs-lookup"><span data-stu-id="3e704-148">If your add-in does not load, check that you have completed step 3 properly.</span></span>
+> <span data-ttu-id="78be9-136">Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78be9-136">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="78be9-137">を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。</span><span class="sxs-lookup"><span data-stu-id="78be9-137">If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+
+<span data-ttu-id="78be9-138">カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。</span><span class="sxs-lookup"><span data-stu-id="78be9-138">To use your custom functions add-in, open a new workbook in Excel Online.</span></span> <span data-ttu-id="78be9-139">このブックでは、次の手順を実行して、アドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="78be9-139">In this workbook, complete the following steps to sideload your add-in.</span></span>
+
+1. <span data-ttu-id="78be9-140">Excel Online で、**[挿入]** タブを選択して、**[アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-140">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.</span></span>
+
+   ![[個人用アドイン] アイコンが強調表示された状態で Excel Online にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   
+2. <span data-ttu-id="78be9-142">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-142">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+
+3. <span data-ttu-id="78be9-143">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="78be9-143">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+
+4. <span data-ttu-id="78be9-144">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-144">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
     
-## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="3e704-149">あらかじめ用意されているカスタム関数を試す</span><span class="sxs-lookup"><span data-stu-id="3e704-149">Try out a prebuilt custom function</span></span>
+## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="78be9-145">あらかじめ用意されているカスタム関数を試す</span><span class="sxs-lookup"><span data-stu-id="78be9-145">Try out a prebuilt custom function</span></span>
 
-<span data-ttu-id="3e704-150">既に作成したカスタム関数のプロジェクトには、ADD と INCREMENT という名前のあらかじめ用意されている 2 つのカスタム機能があります。</span><span class="sxs-lookup"><span data-stu-id="3e704-150">The custom functions project that you created alrady has two prebuilt custom functions named ADD and INCREMENT.</span></span> <span data-ttu-id="3e704-151">これらのあらかじめ用意された関数のコードは、 **src/functions/functions**ファイルにあります。</span><span class="sxs-lookup"><span data-stu-id="3e704-151">The code for these prebuilt functions is in the  **src/functions/functions.js** file.</span></span> <span data-ttu-id="3e704-152">**./manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。</span><span class="sxs-lookup"><span data-stu-id="3e704-152">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="3e704-153">Excel でカスタム関数にアクセスするには、CONTOSO 名前空間を使用します。</span><span class="sxs-lookup"><span data-stu-id="3e704-153">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
+<span data-ttu-id="78be9-146">作成したカスタム関数プロジェクトには、 **/src/functions/functions.js**ファイル内で定義されたあらかじめ用意されたカスタム関数がいくつか含まれています。</span><span class="sxs-lookup"><span data-stu-id="78be9-146">The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="78be9-147">**./manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。</span><span class="sxs-lookup"><span data-stu-id="78be9-147">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="78be9-148">Excel でカスタム関数にアクセスするには、CONTOSO 名前空間を使用します。</span><span class="sxs-lookup"><span data-stu-id="78be9-148">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
 
-<span data-ttu-id="3e704-154">その後、次の手順を実行し、`ADD` カスタム関数を試します。</span><span class="sxs-lookup"><span data-stu-id="3e704-154">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
+<span data-ttu-id="78be9-149">その後、次の手順を実行し、`ADD` カスタム関数を試します。</span><span class="sxs-lookup"><span data-stu-id="78be9-149">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
 
-1. <span data-ttu-id="3e704-155">Excel で、任意のセルに移動し、`=CONTOSO` と入力します。</span><span class="sxs-lookup"><span data-stu-id="3e704-155">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="3e704-156">`CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="3e704-156">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+1. <span data-ttu-id="78be9-150">Excel で、任意のセルに移動し、`=CONTOSO` と入力します。</span><span class="sxs-lookup"><span data-stu-id="78be9-150">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="78be9-151">`CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="78be9-151">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
 
-2. <span data-ttu-id="3e704-157">セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして数値 `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="3e704-157">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+2. <span data-ttu-id="78be9-152">セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして数値 `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-152">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
 
-<span data-ttu-id="3e704-158">`ADD` カスタム関数によって、指定した 2 つの数字の合計が計算され、**210** という結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="3e704-158">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
+<span data-ttu-id="78be9-153">`ADD` カスタム関数によって、指定した 2 つの数字の合計が計算され、**210** という結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="78be9-153">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
 
-## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="3e704-159">Web からデータを要求するカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="3e704-159">Create a custom function that requests data from the web</span></span>
+## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="78be9-154">Web からデータを要求するカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="78be9-154">Create a custom function that requests data from the web</span></span>
 
-<span data-ttu-id="3e704-160">Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。</span><span class="sxs-lookup"><span data-stu-id="3e704-160">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="3e704-161">次に、Web API から株価情報を取得し、ワークシートのセルに結果を返す、`stockPrice` というカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-161">Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet.</span></span> <span data-ttu-id="3e704-162">IEX Trading API を使用します。これは無料であり、認証を必要としません。</span><span class="sxs-lookup"><span data-stu-id="3e704-162">You’ll use the IEX Trading API, which is free and does not require authentication.</span></span>
+<span data-ttu-id="78be9-155">Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。</span><span class="sxs-lookup"><span data-stu-id="78be9-155">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="78be9-156">次に、Web API から株価情報を取得し、ワークシートのセルに結果を返す、`stockPrice` というカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-156">Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet.</span></span> <span data-ttu-id="78be9-157">IEX Trading API を使用します。これは無料であり、認証を必要としません。</span><span class="sxs-lookup"><span data-stu-id="78be9-157">You’ll use the IEX Trading API, which is free and does not require authentication.</span></span>
 
-1. <span data-ttu-id="3e704-163">**銘柄**コードプロジェクトで、ファイル**src/functions/node.js**を見つけて、コードエディターで開きます。</span><span class="sxs-lookup"><span data-stu-id="3e704-163">In the **stock-ticker** project, find the file **src/functions/functions.js** and open it in your code editor.</span></span>
+1. <span data-ttu-id="78be9-158">**銘柄**コードプロジェクトで、 **/src/functions/functions.js**を見つけて、コードエディターで開きます。</span><span class="sxs-lookup"><span data-stu-id="78be9-158">In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.</span></span>
 
-2. <span data-ttu-id="3e704-164">**js**で、 `increment`関数を見つけて、その関数の直後に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="3e704-164">In **functions.js**, locate the `increment` function and add the following code immediately after that function.</span></span>
+2. <span data-ttu-id="78be9-159">**Js**で、 `increment`関数を見つけて、その関数の後に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="78be9-159">In **functions.js**, locate the `increment` function and add the following code after that function.</span></span>
 
     ```js
+    /**
+    * Fetches current stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @returns {number} The current stock price.
+    */
     function stockPrice(ticker) {
         var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
         return fetch(url)
@@ -148,82 +139,58 @@ npm start web
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
-
-> [!NOTE]
-> In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
-
-3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
-
-    ```js
-    CustomFunctions.associate("STOCKPRICE", stockprice);
+    CustomFunctions.associate("STOCKPRICE", stockPrice);
     ```
 
-    <span data-ttu-id="3e704-165">`CustomFunctions.associate` コードは、JavaScript で関数の `id` と `increment` の関数アドレスを関連付けて、Excel により関数を呼び出せるようにします。</span><span class="sxs-lookup"><span data-stu-id="3e704-165">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.</span></span>
+    <span data-ttu-id="78be9-160">`CustomFunctions.associate` コードは、JavaScript で関数の `id` と `stockPrice` の関数アドレスを関連付けて、Excel により関数を呼び出せるようにします。</span><span class="sxs-lookup"><span data-stu-id="78be9-160">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPrice` in JavaScript so that Excel can call your function.</span></span>
 
-    <span data-ttu-id="3e704-166">Excel でカスタム関数を使用できるようにするには、その前にメタデータを使用してそれを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3e704-166">Before Excel can use your custom function, you need to describe it using metadata.</span></span> <span data-ttu-id="3e704-167">以前に `associate` メソッドで使用した `id` を、他のいくつかのメタデータと共に定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3e704-167">You need to define the `id` used in the `associate` method previously, along with some other metadata.</span></span>
+3. <span data-ttu-id="78be9-161">プロジェクトを再構築するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-161">Run the following command to rebuild the project.</span></span>
 
-
-4. <span data-ttu-id="3e704-168">**src/functions/functions**ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="3e704-168">Open the **src/functions/functions.json** file.</span></span> <span data-ttu-id="3e704-169">'関数' 配列に次の JSON オブジェクトを追加し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3e704-169">Add the following JSON object to the 'functions' array and save the file.</span></span>
-
-    ```JSON
-    {
-        "id": "STOCKPRICE",
-        "name": "STOCKPRICE",
-        "description": "Fetches current stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ]
-    }
+    ```command&nbsp;line
+    npm run build
     ```
 
-    <span data-ttu-id="3e704-170">この JSON は、`stockPrice` 関数、そのパラメーター、それによって返される結果の種類を記述します。</span><span class="sxs-lookup"><span data-stu-id="3e704-170">This JSON describes the `stockPrice` function, its parameters, and the type of result it returns.</span></span>
+4. <span data-ttu-id="78be9-162">次の手順を実行して (Excel on Windows または Excel Online の場合)、Excel でアドインを再登録します。</span><span class="sxs-lookup"><span data-stu-id="78be9-162">Complete the following steps (for either Excel on Windows or Excel Online) to re-register the add-in in Excel.</span></span> <span data-ttu-id="78be9-163">新しい関数を使用できるようにするには、これらの手順を完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78be9-163">You must complete these steps before the new function will be available.</span></span> 
 
-5. <span data-ttu-id="3e704-171">新しい関数を使用できるようにするには、Excel でアドインを再登録します。</span><span class="sxs-lookup"><span data-stu-id="3e704-171">Re-register the add-in in Excel so that the new function is available.</span></span> 
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="78be9-164">Windows 上の Excel</span><span class="sxs-lookup"><span data-stu-id="78be9-164">Excel on Windows</span></span>](#tab/excel-windows)
 
-# <a name="excel-for-windowstabexcel-windows"></a>[<span data-ttu-id="3e704-172">Windows 用 Excel</span><span class="sxs-lookup"><span data-stu-id="3e704-172">Excel for Windows</span></span>](#tab/excel-windows)
+1. <span data-ttu-id="78be9-165">Excel を閉じて再び開きます。</span><span class="sxs-lookup"><span data-stu-id="78be9-165">Close Excel and then reopen Excel.</span></span>
 
-1. <span data-ttu-id="3e704-173">Excel を閉じて再び開きます。</span><span class="sxs-lookup"><span data-stu-id="3e704-173">Close Excel and then reopen Excel.</span></span>
+2. <span data-ttu-id="78be9-166">Excel で [**挿入**] タブを選択し、[**マイ**アドイン] の右側にある下向き矢印を選択します。 ![[個人用アドイン] 矢印が強調表示されている Windows 上の Excel でのリボンの挿入](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-166">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-2. <span data-ttu-id="3e704-174">Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-174">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)</span></span>
+3. <span data-ttu-id="78be9-167">使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。</span><span class="sxs-lookup"><span data-stu-id="78be9-167">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
+    <span data-ttu-id="78be9-168">![[個人用アドイン] ボックスの一覧で強調表示された Excel カスタム関数アドインを使用して、Excel の Excel にリボンを挿入する](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-168">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
 
-3. <span data-ttu-id="3e704-175">使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。</span><span class="sxs-lookup"><span data-stu-id="3e704-175">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="3e704-176">![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 用 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-176">![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)</span></span>
+# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="78be9-169">Excel Online</span><span class="sxs-lookup"><span data-stu-id="78be9-169">Excel Online</span></span>](#tab/excel-online)
 
-# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="3e704-177">Excel Online</span><span class="sxs-lookup"><span data-stu-id="3e704-177">Excel Online</span></span>](#tab/excel-online)
+1. <span data-ttu-id="78be9-170">Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-170">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-1. <span data-ttu-id="3e704-178">Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-178">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+2. <span data-ttu-id="78be9-171">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-171">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span> 
 
-2. <span data-ttu-id="3e704-179">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-179">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span> 
+3. <span data-ttu-id="78be9-172">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="78be9-172">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span> 
 
-3. <span data-ttu-id="3e704-180">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="3e704-180">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span> 
+4. <span data-ttu-id="78be9-173">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-173">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
-4. <span data-ttu-id="3e704-181">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-181">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+---
 
---- 
-
-<ol start="6">
-<li> <span data-ttu-id="3e704-182">新しい関数をお試しください。</span><span class="sxs-lookup"><span data-stu-id="3e704-182">Try out the new function.</span></span> <span data-ttu-id="3e704-183">セル <strong>B1</strong> に <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> と入力し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="3e704-183">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="3e704-184">セル <strong>B1</strong> の結果が Microsoft の最新株価になっているはずです。</span><span class="sxs-lookup"><span data-stu-id="3e704-184">You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</span></span></li>
+<ol start="5">
+<li> <span data-ttu-id="78be9-174">新しい関数をお試しください。</span><span class="sxs-lookup"><span data-stu-id="78be9-174">Try out the new function.</span></span> <span data-ttu-id="78be9-175">セル <strong>B1</strong> に <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> と入力し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="78be9-175">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="78be9-176">セル <strong>B1</strong> の結果が Microsoft の最新株価になっているはずです。</span><span class="sxs-lookup"><span data-stu-id="78be9-176">You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</span></span></li>
 </ol>
 
-## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="3e704-185">非同期でデータをストリーミングするカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="3e704-185">Create a streaming asynchronous custom function</span></span>
+## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="78be9-177">非同期でデータをストリーミングするカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="78be9-177">Create a streaming asynchronous custom function</span></span>
 
-<span data-ttu-id="3e704-186">`stockPrice` 関数では、特定の時点での株価が返されますが、株価は常に変動するものです。</span><span class="sxs-lookup"><span data-stu-id="3e704-186">The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing.</span></span> <span data-ttu-id="3e704-187">次に、1000 ミリ秒ごと株価を取得する、`stockPriceStream` という名前のカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="3e704-187">Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.</span></span>
+<span data-ttu-id="78be9-178">`stockPrice` 関数では、特定の時点での株価が返されますが、株価は常に変動するものです。</span><span class="sxs-lookup"><span data-stu-id="78be9-178">The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing.</span></span> <span data-ttu-id="78be9-179">次に、1000 ミリ秒ごと株価を取得する、`stockPriceStream` という名前のカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="78be9-179">Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.</span></span>
 
-1. <span data-ttu-id="3e704-188">**銘柄**コードプロジェクトで、 **src/functions/node.js**に次のコードを追加し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3e704-188">In the **stock-ticker** project, add the following code to **src/functions/functions.js** and save the file.</span></span>
+1. <span data-ttu-id="78be9-180">**銘柄**コードプロジェクトで、次のコードを **/src/functions/functions.js**に追加し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="78be9-180">In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.</span></span>
 
     ```js
-    function stockPriceStream(ticker, handler) {
+    /**
+    * Streams real time stock price
+    * @customfunction 
+    * @param {string} ticker Stock symbol
+    * @param {CustomFunctions.StreamingInvocation<number>} invocation
+    */
+    function stockPriceStream(ticker, invocation) {
         var updateFrequency = 1000 /* milliseconds*/;
         var isPending = false;
 
@@ -241,91 +208,65 @@ npm start web
                     return response.text();
                 })
                 .then(function(text) {
-                    handler.setResult(parseFloat(text));
+                    invocation.setResult(parseFloat(text));
                 })
                 .catch(function(error) {
-                    handler.setResult(error);
+                    invocation.setResult(error);
                 })
                 .then(function() {
                     isPending = false;
                 });
         }, updateFrequency);
 
-        handler.onCanceled = () => {
+        invocation.onCanceled = () => {
             clearInterval(timer);
         };
     }
-    
-    CustomFunctions.associate("STOCKPRICESTREAM", stockpricestream);
+    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
     ```
     
-    <span data-ttu-id="3e704-189">Excel でカスタム関数を使用できるようにするには、その前にメタデータを使用してそれを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3e704-189">Before Excel can use your custom function, you need to describe it using metadata.</span></span>
+    <span data-ttu-id="78be9-181">`CustomFunctions.associate` コードは、JavaScript で関数の `id` と `stockPriceStream` の関数アドレスを関連付けて、Excel により関数を呼び出せるようにします。</span><span class="sxs-lookup"><span data-stu-id="78be9-181">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.</span></span>
     
-2. <span data-ttu-id="3e704-190">**銘柄**コードプロジェクトで、 **src/functions/functions**ファイル内`functions`の配列に次のオブジェクトを追加し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3e704-190">In the **stock-ticker** project add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.</span></span>
-    
-    ```json
-    { 
-        "id": "STOCKPRICESTREAM",
-        "name": "STOCKPRICESTREAM",
-        "description": "Streams real time stock price",
-        "helpUrl": "http://www.contoso.com/help",
-        "result": {
-            "type": "number",
-            "dimensionality": "scalar"
-        },  
-        "parameters": [
-            {
-                "name": "ticker",
-                "description": "stock symbol",
-                "type": "string",
-                "dimensionality": "scalar"
-            }
-        ],
-        "options": {
-            "stream": true,
-            "cancelable": true
-        }
-    }
+2. <span data-ttu-id="78be9-182">プロジェクトを再構築するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="78be9-182">Run the following command to rebuild the project.</span></span>
+
+    ```command&nbsp;line
+    npm run build
     ```
 
-    <span data-ttu-id="3e704-191">この JSON では、`stockPriceStream` 関数について説明しています。</span><span class="sxs-lookup"><span data-stu-id="3e704-191">This JSON describes the `stockPriceStream` function.</span></span> <span data-ttu-id="3e704-192">ストリーミング関数の場合、このコード サンプルで示すように、`options` オブジェクト内で `stream` プロパティと `cancelable` プロパティを `true` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3e704-192">For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.</span></span>
+3. <span data-ttu-id="78be9-183">次の手順を実行して (Excel on Windows または Excel Online の場合)、Excel でアドインを再登録します。</span><span class="sxs-lookup"><span data-stu-id="78be9-183">Complete the following steps (for either Excel on Windows or Excel Online) to re-register the add-in in Excel.</span></span> <span data-ttu-id="78be9-184">新しい関数を使用できるようにするには、これらの手順を完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78be9-184">You must complete these steps before the new function will be available.</span></span> 
 
-3. <span data-ttu-id="3e704-193">新しい関数を使用できるようにするには、Excel でアドインを再登録します。</span><span class="sxs-lookup"><span data-stu-id="3e704-193">Re-register the add-in in Excel so that the new function is available.</span></span>
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="78be9-185">Windows 上の Excel</span><span class="sxs-lookup"><span data-stu-id="78be9-185">Excel on Windows</span></span>](#tab/excel-windows)
 
-# <a name="excel-for-windowstabexcel-windows"></a>[<span data-ttu-id="3e704-194">Windows 用 Excel</span><span class="sxs-lookup"><span data-stu-id="3e704-194">Excel for Windows</span></span>](#tab/excel-windows)
+1. <span data-ttu-id="78be9-186">Excel を閉じて再び開きます。</span><span class="sxs-lookup"><span data-stu-id="78be9-186">Close Excel and then reopen Excel.</span></span>
 
-1. <span data-ttu-id="3e704-195">Excel を閉じて再び開きます。</span><span class="sxs-lookup"><span data-stu-id="3e704-195">Close Excel and then reopen Excel.</span></span>
+2. <span data-ttu-id="78be9-187">Excel で [**挿入**] タブを選択し、[**マイ**アドイン] の右側にある下向き矢印を選択します。 ![[個人用アドイン] 矢印が強調表示されている Windows 上の Excel でのリボンの挿入](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-187">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-2. <span data-ttu-id="3e704-196">Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 矢印が強調表示されている Windows 版 Excel の [挿入] リボン](../images/excel-cf-register-add-in-1b.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-196">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)</span></span>
+3. <span data-ttu-id="78be9-188">使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。</span><span class="sxs-lookup"><span data-stu-id="78be9-188">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
+    <span data-ttu-id="78be9-189">![[個人用アドイン] ボックスの一覧で強調表示された Excel カスタム関数アドインを使用して、Excel の Excel にリボンを挿入する](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-189">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
 
-3. <span data-ttu-id="3e704-197">使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。</span><span class="sxs-lookup"><span data-stu-id="3e704-197">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="3e704-198">![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 用 Excel の [挿入] リボン](../images/excel-cf-register-add-in-2.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-198">![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)</span></span>
+# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="78be9-190">Excel Online</span><span class="sxs-lookup"><span data-stu-id="78be9-190">Excel Online</span></span>](#tab/excel-online)
 
-# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="3e704-199">Excel Online</span><span class="sxs-lookup"><span data-stu-id="3e704-199">Excel Online</span></span>](#tab/excel-online)
+1. <span data-ttu-id="78be9-191">Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="78be9-191">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-1. <span data-ttu-id="3e704-200">Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="3e704-200">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+2. <span data-ttu-id="78be9-192">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-192">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-2. <span data-ttu-id="3e704-201">**[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-201">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+3. <span data-ttu-id="78be9-193">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="78be9-193">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-3. <span data-ttu-id="3e704-202">**[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="3e704-202">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
-
-4. <span data-ttu-id="3e704-203">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3e704-203">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+4. <span data-ttu-id="78be9-194">**manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="78be9-194">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
 
 <ol start="4">
-<li><span data-ttu-id="3e704-204">新しい関数をお試しください。</span><span class="sxs-lookup"><span data-stu-id="3e704-204">Try out the new function.</span></span> <span data-ttu-id="3e704-205">セル <strong>C1</strong> に <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> と入力し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="3e704-205">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="3e704-206">株式市場が開いている場合、セル <strong>C1</strong> の結果が継続的に更新され、Microsoft の株価がリアルタイムで反映されます。</span><span class="sxs-lookup"><span data-stu-id="3e704-206">Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</span></span></li>
+<li><span data-ttu-id="78be9-195">新しい関数をお試しください。</span><span class="sxs-lookup"><span data-stu-id="78be9-195">Try out the new function.</span></span> <span data-ttu-id="78be9-196">セル <strong>C1</strong> に <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> と入力し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="78be9-196">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="78be9-197">株式市場が開いている場合、セル <strong>C1</strong> の結果が継続的に更新され、Microsoft の株価がリアルタイムで反映されます。</span><span class="sxs-lookup"><span data-stu-id="78be9-197">Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</span></span></li>
 </ol>
 
-## <a name="next-steps"></a><span data-ttu-id="3e704-207">次のステップ</span><span class="sxs-lookup"><span data-stu-id="3e704-207">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="78be9-198">次のステップ</span><span class="sxs-lookup"><span data-stu-id="78be9-198">Next steps</span></span>
 
-<span data-ttu-id="3e704-208">おめでとうございます。</span><span class="sxs-lookup"><span data-stu-id="3e704-208">Congratulations!</span></span> <span data-ttu-id="3e704-209">新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。</span><span class="sxs-lookup"><span data-stu-id="3e704-209">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web.</span></span> <span data-ttu-id="3e704-210">この関数のデバッグは[、カスタム関数のデバッグ手順](../excel/custom-functions-debugging.md)を使用して実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="3e704-210">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="3e704-211">Excel のカスタム関数に関する詳細については、次の記事にお進みください。</span><span class="sxs-lookup"><span data-stu-id="3e704-211">To learn more about custom functions in Excel, continue to the following article:</span></span>
+<span data-ttu-id="78be9-199">おめでとうございます。</span><span class="sxs-lookup"><span data-stu-id="78be9-199">Congratulations!</span></span> <span data-ttu-id="78be9-200">新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。</span><span class="sxs-lookup"><span data-stu-id="78be9-200">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web.</span></span> <span data-ttu-id="78be9-201">この関数のデバッグは[、カスタム関数のデバッグ手順](../excel/custom-functions-debugging.md)を使用して実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="78be9-201">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="78be9-202">Excel のカスタム関数に関する詳細については、次の記事にお進みください。</span><span class="sxs-lookup"><span data-stu-id="78be9-202">To learn more about custom functions in Excel, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="3e704-212">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="3e704-212">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)
+> [<span data-ttu-id="78be9-203">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="78be9-203">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)
 
-### <a name="legal-information"></a><span data-ttu-id="3e704-213">法的情報</span><span class="sxs-lookup"><span data-stu-id="3e704-213">Legal information</span></span>
+### <a name="legal-information"></a><span data-ttu-id="78be9-204">法的情報</span><span class="sxs-lookup"><span data-stu-id="78be9-204">Legal information</span></span>
 
-<span data-ttu-id="3e704-214">データは [IEX](https://iextrading.com/developer/) より無料提供されました。</span><span class="sxs-lookup"><span data-stu-id="3e704-214">Data provided free by [IEX](https://iextrading.com/developer/).</span></span> <span data-ttu-id="3e704-215">[IEX の利用規約](https://iextrading.com/api-exhibit-a/)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3e704-215">View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/).</span></span> <span data-ttu-id="3e704-216">Microsoft はこのチュートリアルで IEX API を教育目的でのみ使用しています。</span><span class="sxs-lookup"><span data-stu-id="3e704-216">Microsoft's use of the IEX API in this tutorial is for educational purposes only.</span></span>
-
-
+<span data-ttu-id="78be9-205">データは [IEX](https://iextrading.com/developer/) より無料提供されました。</span><span class="sxs-lookup"><span data-stu-id="78be9-205">Data provided free by [IEX](https://iextrading.com/developer/).</span></span> <span data-ttu-id="78be9-206">[IEX の利用規約](https://iextrading.com/api-exhibit-a/)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="78be9-206">View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/).</span></span> <span data-ttu-id="78be9-207">Microsoft はこのチュートリアルで IEX API を教育目的でのみ使用しています。</span><span class="sxs-lookup"><span data-stu-id="78be9-207">Microsoft's use of the IEX API in this tutorial is for educational purposes only.</span></span>
