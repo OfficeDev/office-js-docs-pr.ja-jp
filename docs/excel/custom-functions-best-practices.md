@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: Excel のカスタム関数を開発する際のベスト プラクティスについて説明します。
 title: カスタム関数のベスト プラクティス
 localization_priority: Normal
-ms.openlocfilehash: 7369faa463966dd309258bf431eae8719407be38
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628145"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952104"
 ---
 # <a name="custom-functions-best-practices"></a>カスタム関数のベスト プラクティス
 
@@ -99,13 +99,13 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 ## <a name="additional-considerations"></a>その他の考慮事項
 
-カスタム関数から直接または間接的に (たとえば、jQuery を使用して) ドキュメントオブジェクトモデル (DOM) にアクセスしないようにします。 カスタム関数が [JavaScript ランタイム](custom-functions-runtime.md)を使用する Excel for Windows では、カスタム関数はDOM にアクセスできません。
+カスタム関数から直接または間接的に (たとえば、jQuery を使用して) ドキュメントオブジェクトモデル (DOM) にアクセスしないようにします。 カスタム関数が[JavaScript ランタイム](custom-functions-runtime.md)を使用する Windows 上の Excel では、カスタム関数は DOM にアクセスできません。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [カスタム関数を使用して web 要求を実行](custom-functions-web-reqs.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数の JSON メタデータを自動生成します](custom-functions-json-autogeneration.md)
+* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

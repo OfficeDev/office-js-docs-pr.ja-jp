@@ -1,18 +1,18 @@
 ---
 title: XLL ユーザー定義関数を使用してカスタム関数を拡張する
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする (プレビュー)
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 93e1b52606fca7ea6fbbb9ae3545e4edd7f78742
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628108"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951887"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する (プレビュー)
 
-既存の Excel XLLs がある場合は、Excel アドインで同等のカスタム関数を作成して、online や macOS などの他のプラットフォームにソリューション機能を拡張することができます。 ただし、Excel アドインには、xll で利用可能なすべての機能が含まれているわけではありません。 ソリューションで使用されている機能によっては、XLL によって excel の excel アドインカスタム関数よりも優れた操作が提供されることがあります。
+既存の Excel XLLs がある場合は、Excel アドインで同等のカスタム関数を作成して、online や macOS などの他のプラットフォームにソリューション機能を拡張することができます。 ただし、Excel アドインには、xll で利用可能なすべての機能が含まれているわけではありません。 ソリューションで使用されている機能によっては、XLL の方が excel の excel アドインカスタム関数よりも優れた操作を提供することがあります。
 
 [!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
 
@@ -61,7 +61,7 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 | サポートされるファイル形式 | .XLSX、.XLSB、.XLSM、XLS | .XLSX、.XLSB、.XLSM | .XLSX、.XLSB、.XLSM |
 | 数式オートコンプリート | いいえ | はい | はい |
 | ストリーミング | XlfRTD および XLL コールバックを使用して可能。 | いいえ | はい |
-| 関数のローカライズ | いいえ | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | はい |
+| 関数のローカライズ | 不要 | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | はい |
 | 揮発性関数 | はい | はい | はい |
 | マルチスレッドの再計算のサポート | はい | はい | はい |
 | 計算動作 | UI がありません。 計算中に Excel が応答しなくなることがあります。 | ユーザーには #BUSY が表示されます。 を返します。 | ユーザーには #BUSY が表示されます。 を返します。 |
@@ -71,4 +71,4 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 
 - [既存の COM アドインと互換性のある Excel アドインを作成する](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-- [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

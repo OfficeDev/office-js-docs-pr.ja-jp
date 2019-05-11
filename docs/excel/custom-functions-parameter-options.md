@@ -1,21 +1,23 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/09/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
-title: Excel カスタム関数のオプション (プレビュー)
+title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: b5dba59431f4c6ec4ee08c563e7cb3affeb06608
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: ba437f3a49ec3129b72f3396e85fcbd46af82cb7
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527318"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952076"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
-カスタム関数は、パラメーターにさまざまなオプションを使用して構成できます。 
+カスタム関数は、パラメーターにさまざまなオプションを使用して構成できます。
 - [オプションのパラメーター](#custom-functions-optional-parameters)
 - [範囲パラメーター](#range-parameters)
 - [呼び出しコンテキストパラメーター](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>カスタム関数の省略可能なパラメーター
 
@@ -74,7 +76,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.  
  */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];
@@ -118,10 +120,10 @@ CustomFunctions.associate("ADD", add);
 
 ### <a name="addressing-cells-context-parameter"></a>アドレス指定セルのコンテキストパラメーター
 
-場合によっては、カスタム関数を呼び出したセルのアドレスを取得する必要があります。 これは、次の種類のシナリオで役立ちます。
+場合によっては、カスタム関数を呼び出したセルのアドレスを取得する必要があります。 これは、次のシナリオで役立ちます。
 
-- 範囲の書式設定: セルのアドレスをキーとして使用して、 [Office](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data)に情報を格納します。 Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`Office.storage` からキーを読み込みます。
-- キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `Office.storage` に格納されているキャッシュされた値を表示します。
+- 範囲の書式設定: セルのアドレスをキーとして使用し、データを保存します[。](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`OfficeRuntime.storage` からキーを読み込みます。
+- キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `OfficeRuntime.storage` に格納されているキャッシュされた値を表示します。
 - 調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。
 
 関数内のアドレス指定セルのコンテキストを要求するには、次の例のように、関数を使用してセルのアドレスを検索する必要があります。 セルのアドレスに関する情報は、関数のコメント`@requiresAddress`にタグ付けされている場合にのみ公開されます。
@@ -143,10 +145,14 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
+## <a name="next-steps"></a>次のステップ
+カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
+
 ## <a name="see-also"></a>関連項目
 
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数でデータを受信して​​処理する](custom-functions-web-reqs.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

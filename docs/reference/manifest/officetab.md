@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの OfficeTab 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: b61c245c000f8bf13eb71c991ec57a125993c2fc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1bf9f1d1e08a8147b52f93923229ef8fb8556fcf
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450465"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952272"
 ---
 # <a name="officetab-element"></a>OfficeTab 要素
 
@@ -18,9 +18,9 @@ ms.locfileid: "32450465"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  グループ      | はい |  コマンドのグループを定義します。既定のタブには、アドインごとに 1 つのグループのみを追加できます。  |
+|  グループ      | はい |  コマンドのグループを定義します。 既定のタブには、アドインごとに 1 つのグループのみを追加できます。  |
 
-ホストごとの有効なタブ `id` 値は次のとおりです。 **太字**の値は、デスクトップとオンラインの両方でサポートされています (たとえば、Windows 用の Word 2016 以降と Word Online)。
+ホストごとの有効なタブ `id` 値は次のとおりです。 **太字**の値は、デスクトップとオンラインの両方でサポートされています (たとえば、word 2016 以降の Windows および word online)。
 
 ### <a name="outlook"></a>Outlook
 

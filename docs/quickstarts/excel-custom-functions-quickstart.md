@@ -1,15 +1,15 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619897"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952384"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -19,7 +19,7 @@ ms.locfileid: "33619897"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel (64 ビット バージョン 1810 以降) または Excel Online
+* Excel on Windows (64 ビットバージョン1810以降) または Excel Online
 
 * [Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)
 
@@ -53,14 +53,14 @@ ms.locfileid: "33619897"
     npm run build
     ```
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 Windows 版 Excel または Excel Online でカスタム関数アドインを試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
+4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
 
 > [!NOTE]
-> Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
+> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Windows 用 Excel](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
-Windows 版 Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
+Windows の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,14 +68,14 @@ npm run start:desktop
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-Excel Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します。
+Excel Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
 > [!NOTE]
-> Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
+> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
 
 カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 
@@ -103,7 +103,7 @@ Excel ブックで、次の手順を`ADD`実行してカスタム関数を試し
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。 次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。 次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。
 

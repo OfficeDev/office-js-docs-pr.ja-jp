@@ -2,22 +2,22 @@
 title: スクリプトラボを使用して Office JavaScript API を探索する
 description: スクリプトラボを使用して、Office JS API とプロトタイプ機能を調査します。
 ms.topic: article
-ms.date: 04/23/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 76888716cec8bd1754b7baa22dfcfbe5af984ea5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 968f1c748558ee0d14898a3ad0dbe44bdc7a532a
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32640289"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952229"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
 
-[スクリプトラボアドイン](https://store.office.com/app.aspx?assetid=WA104380862)は office ストアから無料で利用できます。これにより、Excel や Word などの office プログラムで作業しているときに office JavaScript API を調べることができます。 スクリプトラボは、アドインに必要な機能を試作して検証する際に開発ツールキットに追加する便利なツールです。
+[スクリプトラボアドイン](https://store.office.com/app.aspx?assetid=WA104380862)は office ストアから無料で利用できます。これにより、Excel や Word などの office プログラムで作業しているときに OFFICE JavaScript API を調べることができます。 スクリプトラボは、アドインに必要な機能を試作して検証する際に開発ツールキットに追加する便利なツールです。
 
 ## <a name="what-is-script-lab"></a>スクリプトラボとは
 
-スクリプトラボは、Excel、Word、または PowerPoint で office JavaScript API を使用して office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、独自のコードのベースとしてサンプルを選択することもできます。 また、 [office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)にスニペットを追加してサンプルライブラリを拡張することも歓迎します。 スクリプトラボのもう1つの魅力的な機能は、[ユーザー](/office/dev/add-ins/excel/custom-functions-overview)が試すことができるように、ベータ版またはプレビュー機能です。
+スクリプトラボは、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、独自のコードのベースとしてサンプルを選択することもできます。 また、 [office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)にスニペットを追加してサンプルライブラリを拡張することも歓迎します。 スクリプトラボのもう1つの魅力的な機能は、[ユーザー](/office/dev/add-ins/excel/custom-functions-overview)が試すことができるように、ベータ版またはプレビュー機能です。
 
 > [!TIP]
 > ベータ版またはプレビューに参加するには、 [Office Insider プログラム](https://products.office.com/office-insider)にサインアップする必要がある場合があります。
@@ -30,15 +30,15 @@ ms.locfileid: "32640289"
 
 スクリプトラボは、Excel、Word、および PowerPoint の次のクライアントでサポートされています。
 
-- Office 365 for Windows
-- Office 365 for Mac
+- Windows 上の Office (Office 365 に接続)
+- Office for Mac (Office 365 に接続)
 - Office Online
-- Windows 版 Office 2013 以降
+- Office 2013 以降 (Windows)
 - Office 2016 以降 (Mac 版)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-office アドインを作成する準備ができたら、推奨されている office アプリケーションの[5 分間のクイックスタート](/office/dev/add-ins/#5-minute-quick-starts)を参照してください。
+Office アドインを作成する準備ができたら、推奨されている Office アプリケーションの[5 分間のクイックスタート](/office/dev/add-ins/#5-minute-quick-starts)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

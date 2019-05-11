@@ -1,14 +1,14 @@
 ---
 title: Excel アドインの共同編集機能
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 774eee0c81f9fb99424070be0ee42860e44e46f5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449289"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952048"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
@@ -21,9 +21,9 @@ ms.locfileid: "32449289"
 
 - Excel Online
 - Excel for Android
-- Excel for iOS
-- Excel Mobile for Windows 10
-- Excel for Windows Desktop for Office 365 のユーザー (Windows デスクトップ ビルド 16.0.8326.2076 以降、2017 年 8 月から Current Channel のユーザーに公開)
+- Excel for iPad
+- Windows 10 での Excel Mobile
+- Office 365 のお客様向けの Windows デスクトップ上の Excel (Windows デスクトップビルド16.0.8326.2076 以降、現在のチャネルのお客様が利用できます。 2017 8 月)
 
 ## <a name="coauthoring-overview"></a>共同編集機能の概要
 
