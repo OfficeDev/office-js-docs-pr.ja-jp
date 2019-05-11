@@ -1,14 +1,14 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: a231255200d6edd1fc923a82711c8c24819bf914
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6e7dbde7c6efbaacb5ba046678cc0df24446d31c
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448778"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952153"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 

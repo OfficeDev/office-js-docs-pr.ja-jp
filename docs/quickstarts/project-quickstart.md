@@ -1,215 +1,124 @@
 ---
-title: 最初の Project アドインをビルドする
+title: 最初の Project の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 01/17/2019
+ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 4d0dfa98d36d6da56fe2b9687922371eea29062a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450784"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952252"
 ---
-# <a name="build-your-first-project-add-in"></a>最初の Project アドインをビルドする
+# <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
-この記事では、jQuery と Office JavaScript API を使用して Project アドインを作成する手順について説明します。
+この記事では、Project の作業ウィンドウ アドインを作成するプロセスを紹介します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Yeoman](https://github.com/yeoman/yo) の最新バージョンと [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)をグローバルにインストールします。
-
-    ```bash
-    npm install -g yo generator-office
-    ```
+- Windows の Project 2016 またはそれ以降
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
 1. Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project using Jquery framework`
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
     - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
 
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project-jquery.png)
+    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project.png)
     
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
     
 2. プロジェクトのルート フォルダーに移動します。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
+## <a name="explore-the-project"></a>プロジェクトを確認する
+
+Yeoman ジェネレーターで作成したアドイン プロジェクトには、とても基本的な作業ウィンドウ アドインのサンプル コードが含まれています。 
+
+- プロジェクトのルート ディレクトリにある **./manifest.xml**ファイルで、アドインの機能と設定を定義します。
+- **./src/taskpane/taskpane.html**ファイルには、作業ウィンドウ用の HTML マークアップが含まれています。
+- **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
+- **./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
+
 ## <a name="update-the-code"></a>コードを更新する
 
-1. コード エディターで、プロジェクトのルートにある **index.html** を開きます。 このファイルには、アドインの作業ウィンドウにレンダリングされる HTML が含まれています。
+コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを **実行** 関数内に追加します。 このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。
 
-2. `<body>` 要素を次のマークアップに置き換えます。
+```js
+var taskGuid;
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
-                <h3>Try it out</h3>
-                <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
-                <br/><br/>
-                <button class="ms-Button" id="get-task">Get Task data</button>
-                <br/>
-                <h4>Results:</h4>
-                <textarea id="result" rows="6" cols="25"></textarea>
-            </div>
-        </div>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+// Get the GUID of the selected task
+Office.context.document.getSelectedTaskAsync(
+    function (result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            taskGuid = result.value;
 
-3. **src/index.js** ファイルを開いて、アドインのスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+            // Set the specified fields for the selected task.
+            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
+            var fieldValues = ['New task name', 'Notes for the task.'];
 
-    ```js
-    'use strict';
-
-    (function () {
-
-        var taskGuid;
-
-        Office.onReady(function() {
-            // Office is ready
-            $(document).ready(function () {
-                // The document is ready
-                $('#get-task-guid').click(getTaskGUID);
-                $('#get-task').click(getTask);
-            });
-        });
-
-        function getTaskGUID() {
-            Office.context.document.getSelectedTaskAsync(function (asyncResult) {
-                if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    result.value = "Task GUID: " + asyncResult.value;
-                    taskGuid = asyncResult.value;
-                }
-                else {
-                    console.log(asyncResult.error.message);
-                }
-            });
-        }
-
-        function getTask() {
-            if (taskGuid != undefined) {
-                Office.context.document.getTaskAsync(
+            // Set the field value. If the call is successful, set the next field.
+            for (var i = 0; i < targetFields.length; i++) {
+                Office.context.document.setTaskFieldAsync(
                     taskGuid,
-                    function (asyncResult) {
-                        if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-                            var taskInfo = asyncResult.value;
-                            var taskOutput = "Task name: " + taskInfo.taskName +
-                                            "\nGUID: " + taskGuid +
-                                            "\nWSS Id: " + taskInfo.wssTaskId +
-                                            "\nResource names: " + taskInfo.resourceNames;
-                            result.value = taskOutput;
-                        } else {
-                            console.log(asyncResult.error.message);
+                    targetFields[i],
+                    fieldValues[i],
+                    function (result) {
+                        if (result.status === Office.AsyncResultStatus.Succeeded) {
+                            i++;
+                        }
+                        else {
+                            var err = result.error;
+                            console.log(err.name + ' ' + err.code + ' ' + err.message);
                         }
                     }
                 );
-            } else {
-                result.value = 'Task GUID not valid:\n' + taskGuid;
-            } 
+            }
+        } else {
+            var err = result.error;
+            console.log(err.name + ' ' + err.code + ' ' + err.message);
         }
-    })();
-    ```
-
-4. プロジェクトのルートにある **app.css** ファイルを開いて、アドインのカスタム スタイルを指定します。 すべての内容を次の内容に置き換えて、ファイルを保存します。
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
     }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
-
-    .padding {
-        padding: 15px;
-    }
-    ```
-
-## <a name="update-the-manifest"></a>マニフェストを更新する
-
-1. **manifest.xml** ファイルを開いて、アドインの設定と機能を定義します。
-
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
-
-3. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Project** に置き換えてください。
-
-4. ファイルを保存します。
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Project"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>開発用サーバーの起動
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+);
+```
 
 ## <a name="try-it-out"></a>試してみる
 
-1. 少なくとも 1 つのタスクを含むシンプルなプロジェクトを Project で作成します。
+1. 次のコマンドを実行してローカル Web サーバーを起動します:
 
-2. アドインを実行して、Project 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+    ```command&nbsp;line
+    npm start
+    ```
 
-    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online:[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    > [!NOTE]
+    > Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm start`を実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 
 
-3. Project でタスクを選択します。
+2. Project で、簡素なプロジェクト計画を作成します。
 
-    ![1 つのタスクが選択された Project のプロジェクト計画のスクリーンショット](../images/project_quickstart_addin_1.png)
+3. [Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。
 
-4. 作業ウィンドウで **[タスク GUID を取得]** ボタンを選択して、タスク GUID を **[結果]** テキストボックスに記入します。
+4. プロジェクト内の単一のタスクを選択します。
 
-    ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入されたタスク GUID のスクリーンショット](../images/project_quickstart_addin_2.png)
+5. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
 
-5. 作業ウィンドウで **[タスク データを取得]** ボタンを選択して、選択したタスクのいくつかのプロパティを **[結果]** テキストボックスに記入します。
-
-    ![1 つのタスクが選択された Project のプロジェクト計画および作業ウィンドウのテキストボックスに記入された複数のタスクのプロパティのスクリーンショット](../images/project_quickstart_addin_3.png)
+    ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>次の手順
 
-これで完了です。Project アドインが正常に作成されました。 この後は、Project アドインの機能と一般的なシナリオについて調べます。
+おめでとうございます。 Project の作業ウィンドウ アドインが正常に作成されました。 この後は、Project アドインの機能と一般的なシナリオについて調べます。
 
 > [!div class="nextstepaction"]
 > [Project 用アドイン](../project/project-add-ins.md)

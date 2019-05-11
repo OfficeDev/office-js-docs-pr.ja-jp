@@ -1,14 +1,14 @@
 ---
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
-ms.date: 04/05/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448737"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952181"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -53,8 +53,11 @@ ms.locfileid: "32448737"
 
 現在、アドイン コマンドは次のプラットフォームでサポートされています。
 
-- Outlook 2016 for Windows 以降 (ビルド 16.0.6769 以降)
-- Office for Mac (ビルド 15.33 以降)
+- Windows 版 Outlook 2016 (ビルド 16.0.4678.1000 以降)
+- Office 365 に接続している Windows 版 Office (ビルド 16.0.6769 以降) 
+- Windows 版 Office 2019
+- Office 365 に接続している Office for Mac (ビルド 15.33 以降) 
+- Office 2019 for Mac
 - Office Online
 
 その他のプラットフォームが近日中に公開されます。
@@ -70,7 +73,7 @@ ms.locfileid: "32448737"
 - ユーザーに対して、特定のアクションとともにアクションの結果を明確かつ具体的に表すコマンドを使用します。複数のアクションを 1 つのボタンにまとめないでください。
 - アドイン内の一般的なタスクをより効率的に実行できるように、アクションは細分化して提供します。1 つのアクションを完了するまでのステップ数は最小限に抑えます。
 - Office リボンにコマンドを配置するために。
-    - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。 
+    - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
     - 別のタブに機能が適応せず、トップ レベル コマンドが 6 個未満の場合は、[ホーム] タブにコマンドを配置します。Office デスクトップと Office Online など、Office の複数のバージョン間でアドインを操作する必要があり、タブがどのバージョンでも利用できるわけではない場合 (たとえば、[デザイン] タブは Office Online にはありません) は、[ホーム] タブにコマンドを追加できます。  
     - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。
     - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
