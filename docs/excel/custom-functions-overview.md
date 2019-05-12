@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/08/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でカスタム関数を作成する
 localization_priority: Priority
-ms.openlocfilehash: 5a31cc8ddfe98b880ab09803c7c0b7b615ba85db
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: d939d91e2c3fad239436621ae2704309f4f0f868
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659651"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952132"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -141,7 +141,7 @@ function add(first, second){
 
 ## <a name="coauthoring"></a>共同編集
 
-Excel Online と Excel for Windows で Office 365 サブスクリプションを利用している場合、ドキュメントの共同編集を行うことができ、カスタム関数を使用できます。 ブックでカスタム関数を使用している場合、仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
+Excel Online と Windows 版 Excel で Office 365 サブスクリプションを利用している場合、ドキュメントの共同編集を行うことができ、共同編集機能でカスタム関数を使用できます。 ブックでカスタム関数を使用している場合、仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
