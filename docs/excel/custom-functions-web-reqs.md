@@ -1,18 +1,20 @@
 ---
-ms.date: 04/20/2019
+ms.date: 05/07/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
-title: Web 要求とその他のデータがカスタム関数(プレビュー)を処理します
+title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
+ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353266"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "33659636"
 ---
-# <a name="receiving-and-handling-data-with-custom-functions"></a>カスタム関数によるデータの受信と処理
+# <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
-カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) など workbook以外からのデータの受信です。 カスタム関数はXHRを通してデータを要求し、同時に要求を fetch したりデータをストリーミングする事ができます。
+カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) などブック以外からのデータの受信です。 カスタム関数は XHR を通してデータを要求し、同時に要求を `fetch` したりデータをストリーミングしたりすることができます。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。
 
@@ -33,17 +35,22 @@ ms.locfileid: "33353266"
 
 以下のコード サンプルでは、**getTemperature**関数が sendWebRequest 関数を呼び出して、温度計 ID に基づく特定の領域の温度を取得します。 sendWebRequest 関数は XHR を使用して、データを提供するエンドポイントを要求する GET リクエストを発行します。
 
-```JavaScript
+```js
+/**
+ * Receives a temperature from an online source.
+ * @customfunction
+ * @param {number} thermometerID Identification number of the thermometer.
+ */
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ 
+      sendWebRequest(thermometerID, function(data){
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
   });
 }
 
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions.  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -65,10 +72,16 @@ CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-以下のコードサンプルでは、stockPriceStream 関数が ストック ティッカー シンボル を使い、1000 ミリ秒ごとに株価を取得します。 このサンプルに関する詳細および JSON については、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)を参照ください。 
+以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。 このサンプルに関する詳細については、[カスタム関数チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)を参照してください。
 
-```JavaScript
-function stockPriceStream(ticker, handler) {
+```js
+/**
+ * Streams a stock price.
+ * @customfunction 
+ * @param {string} ticker Stock ticker.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
+ */
+function stockPriceStream(ticker, invocation) {
     var updateFrequency = 1000 /* milliseconds*/;
     var isPending = false;
 
@@ -86,17 +99,17 @@ function stockPriceStream(ticker, handler) {
                 return response.text();
             })
             .then(function(text) {
-                handler.setResult(parseFloat(text));
+                invocation.setResult(parseFloat(text));
             })
             .catch(function(error) {
-                handler.setResult(error);
+                invocation.setResult(error);
             })
             .then(function() {
                 isPending = false;
             });
     }, updateFrequency);
 
-    handler.onCanceled = () => {
+    invocation.onCanceled = () => {
         clearInterval(timer);
     };
 }
@@ -104,7 +117,7 @@ function stockPriceStream(ticker, handler) {
 CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 ```
 
-## <a name="receiving-data-via-websockets"></a>WebSocket 経由のデータ受信
+## <a name="receive-data-via-websockets"></a>WebSocket 経由のデータ受信
 
 カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。 WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信するので、サーバーに明示的にデータ用のポーリングを行う必要がありません。
 
@@ -112,11 +125,11 @@ CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 
 以下のコード サンプルは、WebSocket 接続を確立し、サーバーからの各受信メッセージを記録します。
 
-```JavaScript
-var ws = new WebSocket('wss://bundles.office.com');
+```js
+let ws = new WebSocket('wss://bundles.office.com');
 
 ws.onmessage(message) {
-    console.log(`Recieved: ${message}`);
+    console.log(`Received: ${message}`);
 }
 
 ws.onerror(error){
@@ -124,47 +137,66 @@ ws.onerror(error){
 }
 ```
 
-## <a name="streaming-functions"></a>ストリーミング関数
+## <a name="stream-and-cancel-functions"></a>ストリーム関数とキャンセル関数
 
-ストリーム カスタム関数を使用すると、セルに繰り返しデータを長期的に出力でき、ユーザーが再計算を明示的に要求することは特に必要ありません。 以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
+ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新することは特に必要ありません。
 
-- Excel は、setResult コールバックを使用して自動的に新しい値を表示します。
-- 2 番目の入力パラメーター、ハンドラーは、オートコンプリート メニューから変数を選択する場合には Excel のエンドユーザーには表示されません。
-- onCanceled コールバックは、関数がキャンセルされた場合に実行される関数を定義します。 すべてのストリーム関数には、このようなキャンセル ハンドラーの実装が必要です。 詳細については、「[関数をキャンセルする](#canceling-a-function)」を参照してください。
+キャンセル可能なカスタム関数を使用すると、帯域幅の消費量、作業メモリ、CPU への負荷を軽減するために、ストリーム カスタム関数の実行をキャンセルすることができます。
 
-```JavaScript
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
+関数をストリーミングまたはキャンセル可能として宣言するには、JSDOC コメント タグ `@stream` または `@cancelable` を使用します。
+
+### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
+
+`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 `invocation` パラメーターは、セルに関するコンテキスト (アドレスなど) を提供し、`setResult` メソッドや `onCanceled` メソッドを使用することもできます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
+
+TypeScript を使用している場合は、呼び出しハンドラーは `CustomFunctions.StreamingInvocation` 型または `CustomFunctions.CancelableInvocation` 型である必要があります。
+
+### <a name="streaming-and-cancelable-function-example"></a>ストリーム関数とキャンセル可能な関数の例
+以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
+
+- Excel は、`setResult` メソッドを使用して自動的に新しい値を表示します。
+- 2 番目の入力パラメーター、起動は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。
+- `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * @param {number} incrementBy Amount to increment.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
   }, 1000);
 
-  handler.onCanceled = function(){
+  invocation.onCanceled = function(){
     clearInterval(timer);
-  }
+    }
 }
-
-CustomFunctions.associate("INCREMENTVALUE", incrementValue);
+CustomFunctions.associate("INCREMENT", increment);
 ```
 
-JSON メタデータ ファイルでストリーミング関数のメタデータを指定する場合は、関数のスクリプト ファイル内の `@streaming` JSDOC コメント タグを使用してこれを自動生成できます。 詳しくは、[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)をご覧ください。
+>[!NOTE]
+> Excel では、次のような状況で関数の実行をキャンセルします。
+>
+> - ユーザーが、関数を参照するセルを編集または削除した場合。
+> - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
+> - ユーザーが手動で再計算をトリガーしたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
 
-## <a name="canceling-a-function"></a>関数をキャンセルする
+## <a name="next-steps"></a>次の手順
 
-状況によっては、帯域幅の消費量、作業メモリ、UPC への負荷を軽減するために、ストリーム カスタム関数の実行をキャンセルする必要があります。 Excel では、次のような状況で関数の実行をキャンセルします。
-
-- ユーザーが、関数を参照するセルを編集または削除した場合。
-- 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
-- ユーザーが手動で再計算をトリガーしたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
-
-関数をキャンセル可能にするには、関数コードのハンドラーを実装し、キャンセルされたときの対応を指示します。 または、関数のスクリプト ファイル内の `@cancelable` JSDOC コメント タグを使用します。 詳しくは、[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)をご覧ください。
+* [関数で使用できるさまざまなパラメーターのタイプ](custom-functions-parameter-options.md)についての詳細。
+* [複数の API の呼び出しをバッチする](custom-functions-batching.md)方法を探す。
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [関数の揮発性の値](custom-functions-volatile.md)
 * [カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)
+* [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)
+* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
