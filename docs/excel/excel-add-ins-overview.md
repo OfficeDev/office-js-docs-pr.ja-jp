@@ -1,18 +1,18 @@
 ---
 title: Excel アドインの概要
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 3a6e00ebb5c91af135d709c1ae9f86fc5d2e2924
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cbeb1fa6ae0d88724b7da3fbcb45f8216b6010a6
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448350"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951922"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
-Excel アドインを使用すると、Office for Windows、Office Online、Office for the Mac、Office for the iPad など、複数のプラットフォームにわたって Excel アプリケーションの機能を拡張できます。ブック内で Excel アドインを使用すると、次の操作を実行できます。
+Excel アドインを使用すると、Windows での Office、Office Online、Office for Mac、Office for iPad など、複数のプラットフォームで Excel アプリケーションの機能を拡張できます。ブック内で Excel アドインを使用すると、次の操作を実行できます。
 
 - Excel オブジェクトを操作して Excel データを読み書きします。
 - Web ベースの作業ウィンドウまたはコンテンツ ウィンドウを使用して機能を拡張します
@@ -21,13 +21,13 @@ Excel アドインを使用すると、Office for Windows、Office Online、Offi
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
 
-* **クロスプラットフォーム サポート**:Excel アドインは、Windows 版、Mac 版、iOS 版の Office と、Office Online で実行できます。
+* **クロスプラットフォーム サポート**: Excel アドインは、Windows 版、Mac 版、iOS 版の Office と、Office Online で実行できます。
 * **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
 * **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
 * **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
 
 > [!NOTE]
-> Excel アドインは、Office for Windows 上でのみ実行する以前の Office 統合ソリューションである COM アドインや VSTO アドインとは異なります。 COM アドインとは異なり、Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。 
+> Excel アドインは、Windows での Office でのみ実行する、以前の Office 統合ソリューションである COM アドインや VSTO アドインとは異なります。COM アドインとは異なり、Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。
 
 ## <a name="components-of-an-excel-add-in"></a>Excel アドインのコンポーネント
 

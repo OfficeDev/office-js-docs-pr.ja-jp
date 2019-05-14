@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 9e1f92ae6708392157ccaa061cf0a064f3b5ece0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7209998e488e56b66b206d50c7bceb1465fb7206
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449406"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952146"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -70,7 +70,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 アドインを 1 つの Office ホスト アプリケーションで実行するには、マニフェストで **Hosts** 要素と **Host** 要素を使用します。**Hosts** 要素を指定しない場合、アドインはすべてのホストで実行されます。
 
-たとえば、次の **Hosts** と **Host** の宣言は、アドインが Excel のすべてのリリース (これには、Excel for Windows、Excel Online、Excel for iPad が含まれる) で機能することを指定しています。
+たとえば、次の **Hosts** と **Host** の宣言は、アドインが Excel のすべてのリリース (これには、Windows での Excel、Excel Online、Excel for iPad が含まれる) で機能することを指定しています。
 
 ```xml
 <Hosts>
@@ -80,14 +80,14 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 **Hosts** 要素には、1 つ以上の **Host** 要素を含めることができます。**Host** 要素は、アドインで必要な Office ホストを指定します。**Name** 属性は必須で、次のいずれかの値に設定できます。
 
-| 名前          | Office ホスト アプリケーション                      |
-|:--------------|:----------------------------------------------|
-| データベース      | Access Web アプリ                               |
-| ドキュメント      | Windows、Mac、iPad 用の Word、Word Online        |
-| メールボックス       | Windows、Mac、Web 用の Outlook、Outlook.com |
-| プレゼンテーション  | Windows、Mac、iPad 用の PowerPoint、PowerPoint Online  |
-| Project       | Project                                       |
-| ブック      | Windows、Mac、iPad 用の Excel、Excel Online           |
+| 名前          | Office ホスト アプリケーション                                                              |
+|:--------------|:--------------------------------------------------------------------------------------|
+| データベース      | Access Web アプリ                                                                       |
+| Document      | Windows での Word、Word for Mac、Word for iPad、Word Online                         |
+| メールボックス       | Windows での Outlook、Outlook for Mac、Outlook on the web、Outlook.com              |
+| プレゼンテーション  | Windows での PowerPoint、PowerPoint for Mac、PowerPoint for iPad、PowerPoint Online |
+| Project       | Project                                                                               |
+| ブック      | Windows での Excel、Excel for Mac、Excel for iPad、Excel Online                     |
 
 > [!NOTE]
 > `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。アドインを実行するために使用するプラットフォームを指定することはできません。たとえば、`Mailbox` を指定した場合、Outlook と Outlook Web App の両方を利用してアドインを実行できます。 
@@ -98,7 +98,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 **Requirements** 要素は、アドインを実行するために Office ホストによってサポートされている必要がある最小要件セットまたは API メンバーを指定します。**Requirements** 要素は、アドインで使用される要件セットと個々のメソッドの両方を指定できます。アドイン マニフェスト スキーマのバージョン 1.1 では、**Requirements** 要素は Outlook アドイン以外のすべてのアドインで省略可能です。
 
 > [!WARNING]
-> アドインで必須の重要な要件セットまたは API メンバーを指定するには、**Requirements** 要素のみを使用します。Office ホストまたはプラットフォームが、**Requirements** 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** にも表示されません。代わりに、Excel for Windows、Excel Online、Excel for iPad などの Office ホストのすべてのプラットフォームでアドインを使用できるようにすることをお勧めします。_すべて_の Office ホストとプラットフォームでアドインを使用できるようにするには、**Requirements** 要素ではなく、ランタイム チェックを使用します。
+> アドインで必須の重要な要件セットまたは API メンバーを指定するには、**Requirements** 要素のみを使用します。Office ホストまたはプラットフォームが、**Requirements** 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** にも表示されません。代わりに、Windows での Excel、Excel Online、Excel for iPad などの Office ホストのすべてのプラットフォームでアドインを使用できるようにすることをお勧めします。_すべて_の Office ホストとプラットフォームでアドインを使用できるようにするには、**Requirements** 要素ではなく、ランタイム チェックを使用します。
 
 次のものをサポートするすべての Office ホスト アプリケーションで読み込まれるアドインのコード例を以下に示します。
 

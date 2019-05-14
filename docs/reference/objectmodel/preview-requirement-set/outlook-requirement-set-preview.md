@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 04/17/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 9a3d09a78a7644b3b26c345ba2588a1fae59c1eb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e4627699edad801ab4a3a5a65e6307d40d1b4ac9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450479"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952356"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -39,43 +39,43 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 添付ファイルのコンテンツを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 メッセージまたは予定に base 64 エンコード文字列として表されるファイルを添付する新しい方法が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 特定の添付ファイルのコンテンツを取得する新しい方法が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 新規作成モードでアイテムの添付ファイルを取得する新しい方法が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 添付ファイルのコンテンツに適用されるフォーマットを特定する新しい列挙型が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 `AttachmentsChanged` イベントが `Item` に追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -90,37 +90,37 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 項目カテゴリを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[CategoryDetails](/javascript/api/outlook/office.categorydetails)
 
 カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 メールボックスのカテゴリ マスター リストを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
 
 メールボックスのカテゴリ マスター リストを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
 
 アイテムのカテゴリのセットを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
 
 カテゴリに関連付ける使用可能な色を指定する新しい列挙が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -130,25 +130,25 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 代理人のアクセス権を指定する新しいビット フラグ列挙型が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md)
 
 [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -158,37 +158,37 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 予定の場所のセットを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 場所を表す新しいオブジェクトが追加されました。 読み取り専用です。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 場所の ID を表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 予定の場所のセットを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 予定の場所の種類を指定する新しい列挙型が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 `EnhancedLocationsChanged` イベントが `Item` に追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -198,7 +198,7 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)、Outlook on the web (クラシック)
+**使用できる場所**: Office 365 に接続している Outlook for Windows、Outlook on the web (クラシック)
 
 ---
 
@@ -208,13 +208,13 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -224,13 +224,13 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 Office テーマを取得する機能が追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 #### <a name="officeeventtypeofficethemechangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)
+**使用できる場所**: Office 365 に接続している Outlook for Windows
 
 ---
 
@@ -240,7 +240,7 @@ Office テーマを取得する機能が追加されました。
 
 Microsoft Graph API の[アクセス トークンの取得](/outlook/add-ins/authenticate-a-user-with-an-sso-token)をアドインに対して許可する、`getAccessTokenAsync` へのアクセスが追加されました。
 
-**使用できる場所**: Outlook for Windows (Office 365)、Outlook for Mac (Office 365)、Outlook on the web (Office 365 および Outlook.com)、Outlook on the web (クラシック)
+**使用できる場所**: Office 365 に接続している Outlook for Windows、Office 365 に接続している Outlook for Mac、Outlook.com と Office 365 に接続されている Outlook on the web、Outlook on the web (クラシック) 
 
 ## <a name="see-also"></a>関連項目
 

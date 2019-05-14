@@ -1,21 +1,21 @@
 ---
 title: Office のバージョンと要件セット
 description: ''
-ms.date: 04/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6d0952c32c08c9a4a3e9b07ee8bbcf209084c3d0
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440039"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952118"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
 Office にはプラットフォームやバージョンが異なるものが数多くあり、それらは Office JavaScript API (Office.js) に含まれる API をすべてサポートしているわけではありません。 ユーザーがインストールしている Office のバージョンを制御できない場合があります。  このような状況に対処するため、Office アドインで必要な機能を Office ホストがサポートしているかどうかを判別するのに役立つ要件セットと呼ばれるシステムが用意されています。 
 
 > [!NOTE]
-> - Office は、Office for Windows、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームで実行できます。
+> - Office は、Windows での Office、Office Online、Office for Mac、Office for iPad を含む複数のプラットフォームで実行できます。
 > - Office ホストの例は、Excel、Word、PowerPoint、Outlook、OneNote などの Office 製品です。  
 > - 要件セットとは、`ExcelApi 1.5` や `WordApi 1.3` などの、API メンバーの名前付きグループです。  
 
@@ -25,7 +25,6 @@ Office にはプラットフォームやバージョンが異なるものが数�
 使用している Office のバージョンを特定するには、Office アプリケーション内で **[ファイル]** メニューを選択し、**[アカウント]** を選択します。 Office のバージョンは **[製品情報]** セクションに表示されます。 たとえば、次のスクリーン ショットは、Office のバージョンが 1802 (ビルド 9026.1000) であることを示しています。
 
 ![Office のバージョン確認](../images/office-version-number-ui.jpg)
-
 
 ## <a name="office-requirement-sets-availability"></a>Office 要件セットの可用性
 
@@ -37,7 +36,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 アドインは、そのアドインが動作している Office ホストのバージョンでサポートしている要件セットにある API のみを使用できます。 特定の Office ホストのバージョンで使用できる要件セットを正確に確認するには、ホスト固有の要件セットに関する次の記事を参照してください。
 
-- [Excel JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Excel JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
 - [Word JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
 - [Outlook API 要件セットについて](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
