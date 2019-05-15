@@ -98,7 +98,7 @@
               href: design/add-in-color.md
             - name: Layout
               href: design/add-in-layout.md
-            - name: アイコン
+            - name: アイコンの場合
               href: design/add-in-icons.md
             - name: モーションの使用
               href: design/using-motion-office-addins.md
@@ -711,7 +711,9 @@
         - name: Word API リファレンス
           href: /javascript/api/word
     - name: API オープン仕様
-      href: reference/openspec.md
+      items:
+        - name: 概要
+          href: reference/openspec/openspec.md
     - name: エラー コード
       href: reference/javascript-api-for-office-error-codes.md
     - name: Office アドインマニフェストのリファレンス
@@ -806,7 +808,7 @@
           href: reference/manifest/targetdialect.md
         - name: TargetDialects
           href: reference/manifest/targetdialects.md
-        - name: 型
+        - name: 種類
           href: reference/manifest/type.md
         - name: バージョン
           href: reference/manifest/version.md
