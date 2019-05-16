@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: c57534a8d00904336af518d9d32606373b2edab6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448230"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992183"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -28,7 +28,7 @@ Office アドインをインストールおよび実行できるようにする�
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。 
+> Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
 サポートされている Office ホスト アプリケーション (Access Web アプリ、Word、Excel、PowerPoint、または Project) のコンテンツ アドインと作業ウィンドウ アドインでは、アドインの XML マニフェスト ファイルをアップロードするために、SharePoint の [アドイン カタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)も必要になります。
 
@@ -48,12 +48,12 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
   有効な Office 365 サブスクリプションがあり、Office クライアント へのアクセス権がない場合は、[最新バージョンの Office をダウンロードしてインストールする](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)ことができます。
 
-- Internet Explorer 11 以降をインストールする必要がありますが、必ずしも既定のブラウザーにする必要はありません。Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 以降に組み込まれているブラウザー コンポーネントを使用します。
+- Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用される Web ビューアー](web-viewers-used-by-office-web-add-ins.md)」を参照してください。
 
   > [!NOTE]
   > Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
 
-- 既定のブラウザーとして次のいずれか:Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
+- 既定のブラウザーとして次のいずれか: Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
 - メモ帳などの HTML および JavaScript エディター、[Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
@@ -68,7 +68,7 @@ Outlook for Mac は Office 365 に付属していて、Outlook アドインを�
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件: Office Online Web クライアントと SharePoint のブラウザー サポート
 
-Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
+Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット
@@ -90,3 +90,4 @@ Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)
+- [Office アドインによって使用される Web ビューアー](web-viewers-used-by-office-web-add-ins.md)
