@@ -1,20 +1,22 @@
 ---
-ms.date: 04/18/2019
-description: Excel のカスタム関数で一般的な問題をトラブルシューティングします。
-title: カスタム関数のトラブルシューティング (プレビュー)
+ms.date: 05/03/2019
+description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
+title: カスタム関数のトラブルシューティング
 localization_priority: Priority
-ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 04da6d58c2610130961a1b89d2b9a1101b54bcb2
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449219"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628012"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
 カスタム関数を作成してテストするとき、製品でエラーが発生する可能性があります。
 
-問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[SSL 証明書の検証](#my-add-in-wont-load-verify-certificates)を正しく行っていない、[promises を未解決のままにしている](#ensure-promises-return)、[関数の関連付け](#my-functions-wont-load-associate-functions)を忘れる、などの一般的な誤りを確認します。
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[予約を未解決のままにしたり](#ensure-promises-return)、[機能の関連付け](#my-functions-wont-load-associate-functions)を忘れてしまうといったよくある間違いを確認します。
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
@@ -24,11 +26,18 @@ Windows 上の Office でアドインをテストする場合は、[ランタイ
 
 Excel には多くの組み込みエラー メッセージがあり、計算エラーが発生するとセルに返されます。 カスタム関数では、`#NULL!`、`#DIV/0!`、`#VALUE!`、`#REF!`、`#NAME?`、`#NUM!`、`#N/A`、`#BUSY!` の各エラー メッセージのみが使用されます。
 
+通常、これらのエラーは、あなたがExcelで既によく見たことがあるかもしれないエラーと対応関係があります。 カスタム関数に固有の例外はわずかにあります。以下に記載します。
+
+- `#NAME`エラーは通常、関数の登録に問題があることを意味します。
+- `#VALUE`エラーは通常、関数のスクリプトファイル内のエラーを示します。
+- `#N/A`エラーは、登録されている間にその機能を実行できなかったということを示す可能性もあります。 この多くは、`CustomFunctions.associate`コマンドが欠落していることが原因です。
+- `#REF!`エラーは、関数名がアドイン内に既に存在するの関数名と同じであることを示している可能性があります。
+
+## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
+
+カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、記事[マニフェストの問題を検証、問題解決する](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)内「Officeキャッシュをクリアする」の部分を参照してください。
+
 ## <a name="common-issues"></a>一般的な問題
-
-### <a name="my-add-in-wont-load-verify-certificates"></a>アドインが読み込まれない: 証明書を確認する
-
-アドインのインストールが失敗する場合は、アドインをホストしている Web サーバーに対して SSL 証明書が正しく構成されていることを確認します。 通常、SSL 証明書に問題がある場合は、アドインを正しくインストールできなかったことを警告する Excel のエラー メッセージが表示されます。 詳細については、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」をご覧ください。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
@@ -37,7 +46,14 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 次の例では、add 関数の後で、関数の名前 `add` と対応する JSON ID `ADD` を関連付けています。
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
@@ -54,6 +70,10 @@ CustomFunctions.associate("ADD", add);
 
 Excelがカスタム関数の完了を待っている間、＃BUSY！と表示されます セル内に。 カスタム関数のコードで promise が返されているのに、promise で結果が返されない場合、Excel は #BUSY! を表示し続けます。 すべての promise でセルに結果が正しく返されていることを、関数で確認します。
 
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
+
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 しかし場合によっては、開発サーバーが実際に実行を停止するのに数分かかることがあります。
+
 ## <a name="reporting-feedback"></a>フィードバックの報告
 
 ここに記載されていない問題が発生している場合は、お知らせください。 問題を報告するには 2 つの方法があります。
@@ -66,10 +86,13 @@ Windows 用または Mac 用の Excel を使用している場合は、Excel か
 
 ドキュメント ページの下部にある "コンテンツ フィードバック" 機能を使用するか、[カスタム関数リポジトリに直接新しい問題を記入](https://github.com/OfficeDev/Excel-Custom-Functions/issues)して、発生した問題をお気軽に送信してください。
 
+## <a name="next-steps"></a>次の手順
+[カスタム関数をデバッグする](custom-functions-debugging.md)手順をご参照ください。
+
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数メタデータ自動生成](custom-functions-json-autogeneration.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数の変更ログ](custom-functions-changelog.md)
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+* [カスタム関数をXLLユーザー定義関数と互換性のあるものにします](make-custom-functions-compatible-with-xll-udf.md)。
+* [Excel でカスタム関数を作成する](custom-functions-overview.md)
