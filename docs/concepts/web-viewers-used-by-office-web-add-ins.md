@@ -3,12 +3,12 @@ title: Officeアドインで使用されるWebビューア
 description: ''
 ms.date: 05/03/2019
 localization_priority: Priority
-ms.openlocfilehash: 632f62cbc02917d9e28ab260f3710498156194db
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6cb0d6e97dd559727b6a1e140d8417e1146e479a
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33630406"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992127"
 ---
 # <a name="web-viewers-used-by-office-add-ins"></a>Officeアドインで使用されるWebビューア
 
@@ -30,15 +30,15 @@ OfficeアドインはWebアプリケーションなので、Webアプリケー�
 |Windows / 非登録 Office 2013以降|Internet Explorer 11|
 |Windows 10 バージョン < 1903 / Office 365|Internet Explorer 11|
 |Windows 10 バージョン >= 1903 / Office 365 ver < 16.0.11629|Internet Explorer 11|
-|Windows 10 バージョン >= 1903 / Office 365 ver >= 16.0.11629|Edge\*|
+|Windows 10 バージョン >= 1903 / Office 365 ver >= 16.0.11629|Microsoft Edge\*|
 
-\*Edgeが使用されている場合、Windows 10ナレータ（ "スクリーンリーダー"と呼ばれることもあります）は、作業ペインに表示されるページの`<title>`タグを読み取ります。 Internet Explorer 11が使用されている場合、ナレータは作業ペインのタイトルバーを読み取ります。これはアドインのマニフェストの`<DisplayName>`の値から取得されます。
+\*Microsoft Edge が使用されている場合、Windows 10 ナレーター (「スクリーン リーダー」と呼ばれることもあります) は、作業ウィンドウで開いているページの `<title>` タグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
 > [!IMPORTANT]
-> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーがInternet Explorer 11を使用するプラットフォームを使用している場合に、ECMAScript 2015以降の構文と機能を使用するには、JavaScriptをES 5に変換するか、ポリフィルを使用する必要があります。 また、Internet Explorer 11は、メディア、録音、および位置情報などのHTML 5機能の一部をサポートしていません。
+> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
 > [!NOTE]
-> これらが一般に利用可能になるまで、Windowsバージョン1903以降を入手するためWindowsインサイダーである必要があり、また、Officeバージョン16.0.11629以降を入手するためOfficeインサイダーである必要があります。
+> これらが一般に利用可能になるまで、Windows バージョン 1903 以降を入手するには Windows Insider である必要があり、また、Office バージョン 16.0.11629 以降を入手するには Office Insider である必要があります。
 >
 > Windows インサイダーに参加するには
 > 
