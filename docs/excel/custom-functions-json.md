@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: 92e2b1aaae46d376cc8033b304192d7ce8489fd8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628075"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337168"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
@@ -122,7 +122,7 @@ JSON ファイルをホストするサーバーでは、カスタム関数を Ex
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  いいえ  |  Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。 |
-|  `helpUrl`  |  string  |   いいえ  |  関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、**http://contoso.com/help/convertcelsiustofahrenheit.html** です。 |
+|  `helpUrl`  |  string  |   いいえ  |  関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。 |
 | `id`     | 文字列 | はい | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。 |
 |  `name`  |  文字列  |  はい  |  Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
 |  `options`  |  オブジェクト  |  いいえ  |  Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。 |
@@ -165,7 +165,7 @@ JSON ファイルをホストするサーバーでは、カスタム関数を Ex
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数の JSON メタデータを自動生成します](custom-functions-json-autogeneration.md)
+* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
 * [カスタム関数のパラメータオプション](custom-functions-parameter-options.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

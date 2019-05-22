@@ -1,2 +1,3 @@
 > [!IMPORTANT]
-> カスタム関数機能は現在プレビュー段階であり、変更される可能性があります。 運用環境での使用は、現在サポートされていません。 詳細については、「[カスタム関数の要件](../excel/custom-functions-requirements.md)」を参照してください。
+> カスタム関数機能は、運用環境にリリースされています。 [このブログ投稿の](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/)カスタム関数の最新の更新プログラムを検出します。
+

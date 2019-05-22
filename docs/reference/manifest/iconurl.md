@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの IconUrl 要素
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f7eda7ec9e4c5da8ad0b19e5e10649696d4e85c1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0f518741f0139c9cb240196592edae22b1b09ee7
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452110"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337203"
 ---
 # <a name="iconurl-element"></a>IconUrl 要素
 
@@ -37,3 +37,5 @@ ms.locfileid: "32452110"
 メール アドインの場合、アイコンは、**[ファイル]**  >  **[アドインの管理]** UI (Outlook) または **[設定]**  >  **[アドインの管理]** UI (Outlook Web App) に表示されます。コンテンツ アドインまたは作業ウィンドウ アドインでは、アイコンは、**[挿入]**  >  **[アドイン]** UI に表示されます。どのアドインの種類についても、アドインを Office ストアに公開すると、アイコンは Office ストア サイトでも使用されます。
 
 画像のファイル形式は GIF、JPG、PNG、EXIF、BMP、TIFF のいずれかにする必要があります。 コンテンツ アプリおよび作業ウィンドウ アプリの場合、指定する画像は 32 x 32 ピクセルにする必要があります。 メール アプリの場合、推奨される画像の解像度は 64 x 64 ピクセルです。 [HighResolutionIconUrl](highresolutioniconurl.md) 要素を使用して、高 DPI 画面で実行されている Office ホスト アプリケーションで使用するアイコンも指定する必要があります。 詳細については、「[効果的な AppSource と Office 内の登録リストを作成する](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)」の「_アプリに一貫性のあるビジュアル ID を作成する_」セクションを参照してください。
+
+実行時に`IconUrl`要素の値を変更することは現在サポートされていません。

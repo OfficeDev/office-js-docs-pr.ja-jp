@@ -3,12 +3,12 @@ ms.date: 05/09/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: ba437f3a49ec3129b72f3396e85fcbd46af82cb7
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7bf195bbae696274518966e2a24bd9819e9c3f4b
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952076"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337189"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -33,7 +33,7 @@ ms.locfileid: "33952076"
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third === undefined) {
+  if (third !== undefined) {
     return first + second + third;
   }
   return first + second;
@@ -145,7 +145,7 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
