@@ -1,14 +1,14 @@
 ---
 title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
-ms.date: 03/19/2019
+ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451529"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337182"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
@@ -56,7 +56,7 @@ Office Online を使用してアドインをデバッグするには、
     
 - 表示される JavaScript エラーのいくつかは Office Online に起因している可能性があります。
       
-- ブラウザーが、バイパスが必要になる、無効な証明書エラーを表示することがあります。
+- ブラウザーが、バイパスが必要になる、無効な証明書エラーを表示することがあります。 これを行うプロセスは、ブラウザおよびこの変更を定期的に行うさまざまなブラウザの UI によって異なります。 詳細については、ブラウザーのヘルプを検索するか、オンラインで検索してください。 (たとえば、「Edge の無効な証明書警告」を検索します。) ほとんどのブラウザには、警告ページにリンクがあり、このリンクをクリックするとアドイン ページにアクセスされます。 たとえば、Microsoft Edge には「Web ページへ移動 (推奨しません)」 というリンクがあります。 ただし、通常はアドインが再び読み込まれるたびに、このリンクを経由する必要があります。 より長期的なバイパスについては、お勧めのヘルプを参照してください。
       
 - コードにブレークポイントを設定する場合、Office Online から、保存できないというエラーがスローされることがあります。
 

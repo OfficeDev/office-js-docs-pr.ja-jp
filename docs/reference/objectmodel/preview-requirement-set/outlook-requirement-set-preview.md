@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/17/2019
 localization_priority: Priority
-ms.openlocfilehash: e4627699edad801ab4a3a5a65e6307d40d1b4ac9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952356"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337175"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -22,16 +22,6 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 ## <a name="features-in-preview"></a>プレビューの機能
 
 次の機能はプレビュー段階です。
-
-### <a name="add-in-commands"></a>アドイン コマンド
-
-#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
-
-1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション パラメーター `options` が追加されました。 この値は、イベントの実行をキャンセルするために使用されます。
-
-**使用できる場所**: Outlook on the web (クラシック)
-
----
 
 ### <a name="attachments"></a>添付ファイル
 
@@ -76,6 +66,16 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 `AttachmentsChanged` イベントが `Item` に追加されました。
 
 **使用できる場所**: Office 365 に接続している Outlook for Windows
+
+---
+
+### <a name="block-on-send"></a>送信をブロックする
+
+#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
+
+1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション パラメーター `options` が追加されました。 この値は、イベントの実行をキャンセルするために使用されます。
+
+**使用できる場所**: Outlook on the web (クラシック)
 
 ---
 

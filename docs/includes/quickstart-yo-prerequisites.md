@@ -1,5 +1,7 @@
 - [Node.js](https://nodejs.org) (バージョン 8.0.0 以降)
 
+- [Git](https://git-scm.com/downloads)
+
 - 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```command&nbsp;line

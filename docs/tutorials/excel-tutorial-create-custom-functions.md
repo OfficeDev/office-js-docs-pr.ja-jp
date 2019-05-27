@@ -1,16 +1,16 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 05/08/2019
+ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: ed9f16bdb330aa3f092e7d437ccfad6e056e07d4
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952195"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432272"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -29,8 +29,6 @@ ms.locfileid: "33952195"
 
 * Excel on Windows (64 ビットバージョン1810以降) または Excel Online
 
-* [Office Insider プログラム](https://products.office.com/office-insider)に加入する (**Insider** レベル -- 以前は "Insider Fast" と呼ばれていたもの)
-
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
  まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。 [Office アドイン用の [ごみ箱] ジェネレーター](https://www.npmjs.com/package/generator-office)では、プロジェクトに事前に用意されているカスタム関数を使用してセットアップし、試すことができます。カスタム関数のクイックスタートを既に実行してプロジェクトを生成した場合は、そのプロジェクトを引き続き使用して、[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進んでください。
@@ -41,11 +39,11 @@ ms.locfileid: "33952195"
     yo office
     ```
     
-    * **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project (...)`
+    * **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     * **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
     * **What would you want to name your add-in?: (アドインの名前を何にしますか)** `stock-ticker`
 
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/yo-office-excel-cf.png)
+    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/UpdatedYoOfficePrompt.png)
     
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -72,7 +70,7 @@ npm run start:desktop
 ```
 
 > [!NOTE]
-> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:desktop`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
+> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:desktop`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -83,7 +81,7 @@ npm run start:web
 ```
 
 > [!NOTE]
-> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 を実行`npm run start:web`した後に証明書をインストールするように求めるメッセージが表示されたら、このメッセージに同意します。
+> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:web`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
 カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 
@@ -144,7 +142,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 
     `CustomFunctions.associate` コードは、JavaScript で関数の `id` と `stockPrice` の関数アドレスを関連付けて、Excel により関数を呼び出せるようにします。
 
-3. プロジェクトを再構築するには、次のコマンドを実行します。
+3. 次のコマンドを実行してプロジェクトを再構築します。
 
     ```command&nbsp;line
     npm run build
@@ -227,7 +225,7 @@ Web からデータを統合することは、カスタム関数を使用して 
     
     `CustomFunctions.associate` コードは、JavaScript で関数の `id` と `stockPriceStream` の関数アドレスを関連付けて、Excel により関数を呼び出せるようにします。
     
-2. プロジェクトを再構築するには、次のコマンドを実行します。
+2. 次のコマンドを実行してプロジェクトを再構築します。
 
     ```command&nbsp;line
     npm run build
@@ -260,7 +258,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 <li>新しい関数をお試しください。 セル <strong>C1</strong> に <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> と入力し、Enter キーを押します。 株式市場が開いている場合、セル <strong>C1</strong> の結果が継続的に更新され、Microsoft の株価がリアルタイムで反映されます。</li>
 </ol>
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます。 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、Web からデータをリアルタイムでストリーミングするカスタム関数を作成しました。 この関数のデバッグは[、カスタム関数のデバッグ手順](../excel/custom-functions-debugging.md)を使用して実行することもできます。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。
 

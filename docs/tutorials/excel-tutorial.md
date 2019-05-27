@@ -1,16 +1,16 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 01/28/2019
+ms.date: 05/23/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 863c5720c9e23738ba907b722a50a974044cab11
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619071"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432216"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -165,7 +165,7 @@ ms.locfileid: "33619071"
 
 1. Git bash ウィンドウまたは Node.JS 対応のシステム プロンプトを開いて、プロジェクトの **Start** フォルダーに移動します。
 
-2. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. コマンド`npm run build`を実行して、Internet Explorer でサポートされている以前のバージョンの JAVASCRIPT に ES6 のソースコードを transpile します (excel の一部のバージョンでは、excel アドインを実行するために使用されます)。
 
 3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 
@@ -309,7 +309,7 @@ ms.locfileid: "33619071"
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 そのためには、ビルド コマンドの入力を求めるプロンプトが表示されるように、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-2. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. コマンド`npm run build`を実行して、Internet Explorer でサポートされている以前のバージョンの JAVASCRIPT に ES6 のソースコードを transpile します (excel の一部のバージョンでは、excel アドインを実行するために使用されます)。
 
 3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 
@@ -413,7 +413,7 @@ ms.locfileid: "33619071"
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 そのためには、ビルド コマンドの入力を求めるプロンプトが表示されるように、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-2. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. コマンド`npm run build`を実行して、Internet Explorer でサポートされている以前のバージョンの JAVASCRIPT に ES6 のソースコードを transpile します (excel の一部のバージョンでは、excel アドインを実行するために使用されます)。
 
 3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 
@@ -488,7 +488,7 @@ ms.locfileid: "33619071"
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 そのためには、ビルド コマンドの入力を求めるプロンプトが表示されるように、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-2. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. コマンド`npm run build`を実行して、Internet Explorer でサポートされている以前のバージョンの JAVASCRIPT に ES6 のソースコードを transpile します (excel の一部のバージョンでは、excel アドインを実行するために使用されます)。
 
 3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 
@@ -732,7 +732,9 @@ ms.locfileid: "33619071"
 
     - Windows の場合: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
-    - Mac の場合: `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
+    - Mac の場合: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. 何らかの理由で、サーバーが稼働中でない場合は、Git Bash ウィンドウ、または Node.JS 対応のシステム プロンプトで、プロジェクトの **Start** フォルダーに移動して、`npm start` コマンドを実行します。 変更した JavaScript ファイルはビルド済みの bundle.js に含まれていないため、プロジェクトをリビルドする必要はありません。
 
@@ -846,7 +848,7 @@ ms.locfileid: "33619071"
 8. ファイルを保存します。
 
    > [!NOTE]
-   > popup.html ファイルと、そのファイルで読み込む popup.js ファイルは、アドインの作業ウィンドウとは完全に別な Internet Explorer プロセスで実行されます。 popup.js が app.js ファイルと同じ bundle.js ファイルからトランスパイルされていた場合、アドインでは bundle.js の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 さらに、popup.js ファイルには IE で未サポートの JavaScript は含まれていません。 これら 2 つの理由から、このアドインでは popup.js を一切トランスパイルしていません。
+   > ポップアップファイルとそれによって読み込まれるポップアップファイルは、アドインの作業ウィンドウから完全に独立したエッジまたは Internet Explorer 11 プロセスで実行されます。 popup.js が app.js ファイルと同じ bundle.js ファイルからトランスパイルされていた場合、アドインでは bundle.js の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 さらに、ポップアップ .js ファイルには、Internet Explorer 11 でサポートされていない JavaScript は含まれていません。 これら 2 つの理由から、このアドインでは popup.js を一切トランスパイルしていません。
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>作業ウィンドウからダイアログを開く
 
@@ -940,7 +942,7 @@ ms.locfileid: "33619071"
      > [!NOTE]
      > ブラウザー同期サーバーは、app.js ファイルなどのファイルに変更を加えるたびに作業ウィンドウ内のアドインを再読み込みしますが、JavaScript を再トランスパイルしないため、ビルド コマンドを繰り返し実行して、app.js への変更を反映させる必要があります。 そのためには、ビルド コマンドの入力を求めるプロンプトが表示されるように、サーバー プロセスを強制終了する必要があります。 ビルド後に、サーバーを再起動します。 次の数ステップで、このプロセスを実行します。
 
-2. `npm run build` コマンドを実行して、ES6 ソース コードを Internet Explorer でサポートされている以前のバージョンの JavaScript にトランスパイルします (これは、Excel アドインを実行するために Excel の内部で使用されます)。
+2. コマンド`npm run build`を実行して、Internet Explorer でサポートされている以前のバージョンの JAVASCRIPT に ES6 のソースコードを transpile します (excel の一部のバージョンでは、excel アドインを実行するために使用されます)。
 
 3. `npm start` コマンドを実行して、ローカルホストで稼働する Web サーバーを起動します。
 
