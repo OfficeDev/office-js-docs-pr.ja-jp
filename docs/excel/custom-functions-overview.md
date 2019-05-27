@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でカスタム関数を作成する
 localization_priority: Priority
-ms.openlocfilehash: d939d91e2c3fad239436621ae2704309f4f0f868
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952132"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432172"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -18,7 +18,7 @@ ms.locfileid: "33952132"
 
 次のアニメーション画像は、JavaScript または Typescript で作成した関数を呼び出すブックを示しています。 この例では、カスタム関数 `=MYFUNCTION.SPHEREVOLUME` は球の体積を計算します。
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
 
 `=MYFUNCTION.SPHEREVOLUME` カスタム関数は次のコードにより定義されます。
 
