@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451156"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432265"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -30,7 +30,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 2. 管理者としてコマンド プロンプト/ターミナルを開き、次のコマンドを使用して Office アドイン検証ツールとその依存関係をグローバルにインストールします。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g office-addin-validator
     ```
     
@@ -39,7 +39,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 3. マニフェストを検証するには、次のコマンドを実行します。MANIFEST.XML をマニフェスト XML ファイルへのパスに置き換えます。
 
-    ```bash
+    ```command&nbsp;line
     validate-office-addin MANIFEST.XML
     ```
 
@@ -55,7 +55,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 2.  次のコマンドを実行します。`XSD_FILE` をマニフェスト XSD ファイルへのパスに置き換え、`XML_FILE` をマニフェスト XML ファイルへのパスに置き換えます。
     
-    ```bash
+    ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
@@ -63,7 +63,7 @@ Office アドインを記述するマニフェスト ファイルが正確かつ
 
 [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して Office アドインを作成した場合、プロジェクトのルート ディレクトリで次のコマンドを実行すると、マニフェスト ファイルが正しいスキーマに従っていることを確認できます。
 
-```bash
+```command&nbsp;line
 npm run validate
 ```
 
@@ -137,10 +137,12 @@ npm run validate
 リボン ボタンのアイコンのファイル名やアドイン コマンドのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
 
 #### <a name="for-windows"></a>Windows の場合:
-フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除します。
+フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
 
 #### <a name="for-mac"></a>Mac の場合: 
-フォルダー `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除します。
+フォルダー `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除する 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>iOS の場合: 
 アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。

@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f666ffee2c7c139ea18859d995384281a31238dd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449946"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432223"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -86,8 +86,13 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     
     ![Office for Mac に表示される Office アドイン](../images/lorem-ipsum-wikipedia.png)
     
-    > [!NOTE]
-    > Office for Mac では、パフォーマンス上の理由でアドインがよくキャッシュされます。 アドインの開発中にそれを再読み込みする必要がある場合は、`Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーをクリアにすることが可能です。 フォルダーが存在しない場合、`com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/` フォルダーのファイルをクリアします。
+### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュのクリア
+
+Office for Mac では、パフォーマンス上の理由でアドインがよくキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
+
+Mac では、`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアできます。 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 ## <a name="see-also"></a>関連項目
 

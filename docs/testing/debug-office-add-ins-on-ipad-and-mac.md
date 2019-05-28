@@ -1,14 +1,14 @@
 ---
 title: Mac で Office アドインをデバッグする
 description: ''
-ms.date: 04/24/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d77dd0d90e68c2147ffea67d12026fc194fa642
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517094"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432279"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 
@@ -30,7 +30,7 @@ Mac の Office アドインをデバッグするには、Mac OS High Sierra と 
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。  このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
+次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。 このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
 
 > [!NOTE]
 > インスペクタとダイアログ フリッカーを使おうとしている場合は、Office を最新バージョンに更新してください。 それでも、ちらつきが解消しない場合は、次の回避策を試してください。
@@ -39,10 +39,10 @@ Mac の Office アドインをデバッグするには、Mac OS High Sierra と 
 > 3. ダイアログを元のサイズに変更します。
 > 4. 必要に応じてインスペクタを使用します。
 
-## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Mac または iPad 上の Office アプリケーションのキャッシュのクリア
+## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュのクリア
 
 アドインはパフォーマンス上の理由から、Office for Mac でキャッシュされることが多いです。通常、キャッシュはアドインを再読み込みすることでクリアされます。同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
 
-Mac では、`/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダー内にあるすべてを削除することによってキャッシュを手動でクリアできます。
+Mac では、`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアできます。 
 
-iPad では、アドインの JavaScript から `window.location.reload(true)` を呼び出して、強制的に再読み込みすることができます。または、Office を再インストールすることができます。
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: さまざまなプラットフォームでカスタム関数を使用する方法を説明します。
 title: カスタム関数の要件
 localization_priority: Priority
-ms.openlocfilehash: 660230bd82fc31641199a2e3388f10b16c425104
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3ae110bf32b260be1d480a9bce27fffbddee86f5
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951985"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432202"
 ---
 # <a name="custom-functions-requirements"></a>カスタム関数の要件
 
@@ -22,9 +22,7 @@ ms.locfileid: "33951985"
 Excel Online でカスタム関数を使用するには、Office 365 サブスクリプションまたは [Microsoft アカウント](https://account.microsoft.com/account)のいずれかを使用してログインします。
 
 ## <a name="excel-on-windows-and-excel-for-mac"></a>Windows での Excel および Excel for Mac
-Windows での Excel または Excel for Mac でカスタム関数を使用するには、Office 365 サブスクリプションがあり、[Office Insider](https://products.office.com/office-insider) プログラム (**Insider** レベル -- 旧称 "Insider Fast") に参加し、前述の最新バージョンの Excel を使用している必要があります。
-
-Windows ストア からダウンロードしたバージョンのデスクトップ版 Office を使用している場合は、カスタム関数を使用するには、[Windows Insider](https://insider.windows.com/) プログラムに **Insider** レベル (旧称 "Insider Fast") で参加し、2018 年 4 月以降の更新プログラムのバージョンを実行している必要があります。 これは、2019 年 1 月時点での新しい変更点です。
+Windows での Excel または Excel for Mac でカスタム関数を使用するには、Office 365 サブスクリプションがあり、前述の最新バージョンの Excel を使用している必要があります。
 
 ## <a name="subscribe-to-office-365"></a>Office 365 のサブスクリプション
 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 Developer Program](https://developer.microsoft.com/ja-JP/office/dev-program) に参加することで入手できます。

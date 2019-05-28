@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 84f18543c7bafac905805095c89f8e19a855ea76
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449814"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432186"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -90,18 +90,20 @@ URL を信頼済みサイトのリストに追加する方法:
 この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](/javascript/api/office/office.ui) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
 
 ```js
-
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない
-アドイン コマンドにリボン ボタンのアイコンやメニュー項目のテキストなどの変更を加えても、その変更が反映されないことがあります。その場合は、以前のバージョンの Office のキャッシュをクリアしてください。
+
+リボン ボタンのアイコンのファイル名やメニュー アイテムのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
 
 #### <a name="for-windows"></a>Windows の場合:
-フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除します。
+フォルダ `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
 
 #### <a name="for-mac"></a>Mac の場合: 
-フォルダー `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除します。
+フォルダ `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除する 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>iOS の場合: 
 アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
