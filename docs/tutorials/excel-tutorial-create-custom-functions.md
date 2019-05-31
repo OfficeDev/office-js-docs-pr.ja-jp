@@ -5,12 +5,12 @@ ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 7d4d87a6bb3910c1b46698d5a2ff211ea1bbc6dd
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432272"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589175"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -59,18 +59,18 @@ ms.locfileid: "34432272"
     npm run build
     ```
 
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+
 4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
-Windows の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel on Windows が開きます。
+Windows の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
 ```command&nbsp;line
 npm run start:desktop
 ```
-
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:desktop`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -79,9 +79,6 @@ Excel Online でアドインをテストするには、次のコマンドを実�
 ```command&nbsp;line
 npm run start:web
 ```
-
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:web`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
 カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 

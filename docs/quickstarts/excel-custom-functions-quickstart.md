@@ -4,12 +4,12 @@ description: Excel クイックスタートガイドでのカスタム関数の�
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 372e493d85add0a942a8f18ad67f65d08c92f6f2
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 2ef7e05390750173c1679cdb53ed96ff19020e67
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432255"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589112"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -45,16 +45,16 @@ ms.locfileid: "34432255"
     cd stock-ticker
     ```
 
-3. プロジェクトをビルドします。 これにより、プロジェクトが正常に機能するために必要な証明書もインストールされます。 
+3. プロジェクトをビルドします。 
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:desktop`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
@@ -71,9 +71,6 @@ Excel Online でアドインをテストするには、次のコマンドを実�
 ```command&nbsp;line
 npm run start:web
 ```
-
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run start:web`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
 カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 

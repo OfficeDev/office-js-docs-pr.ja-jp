@@ -1,14 +1,14 @@
 ---
 title: Office. アイテム-プレビュー要件セット
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/30/2019
 localization_priority: Normal
-ms.openlocfilehash: d72d7acc285b1a5cf371b1c5e6b2a0a1653d2091
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 12ec5d5558b558c87587e34472c33116478d14b3
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952248"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589203"
 ---
 # <a name="item"></a>item
 
@@ -230,7 +230,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ##### <a name="type"></a>型
 
-*   [Categories](/javascript/api/outlook/office.categories)
+*   [カテゴリ](/javascript/api/outlook/office.categories)
 
 ##### <a name="requirements"></a>要件
 
@@ -2404,7 +2404,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > [!NOTE]
 > 次のクライアントの場合、新規作成モードで予約の `saveAsync` に対して動作が異なります。
 >
-> - Mac Outlook では、新規作成モードの会議で `saveAsync` をサポートしていません。 Mac Outlook では、会議で `saveAsync` を呼び出すとエラーが返されます。
+> - Outlook for Mac は、新規`saveAsync`作成モードの会議ではサポートされていません。 そのため、この`saveAsync`シナリオで呼び出しを行うと、エラーが返されます。 回避策については[、「OFFICE JS API を使用して Outlook For Mac で会議を下書きとして保存できません](https://support.microsoft.com/help/4505745)」を参照してください。
 > - Outlook on the web の場合、新規作成モードのとき、予約で `saveAsync` が呼び出されると、招待状または更新が常に送信されます。
 
 ##### <a name="parameters"></a>パラメーター
