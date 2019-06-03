@@ -3,12 +3,12 @@ title: Office アドインを実行するための要件
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
-ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
+ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "33992183"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589105"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -48,7 +48,7 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
   有効な Office 365 サブスクリプションがあり、Office クライアント へのアクセス権がない場合は、[最新バージョンの Office をダウンロードしてインストールする](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)ことができます。
 
-- Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用される Web ビューアー](web-viewers-used-by-office-web-add-ins.md)」を参照してください。
+- Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
 
   > [!NOTE]
   > Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
@@ -90,4 +90,4 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)
-- [Office アドインによって使用される Web ビューアー](web-viewers-used-by-office-web-add-ins.md)
+- [Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)

@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: JSDOC タグを使用して、カスタム関数の JSON メタデータを動的に作成する。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628089"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589133"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -61,7 +61,7 @@ id は、文書に格納されているカスタム関数の不変の識別子�
 
 * id が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。
 * id はすべてのカスタム関数で一意である必要があります。
-* 使用できる文字は、A～Z、a～z、0～9、ピリオド (.) に制限されています。
+* 指定できる文字は、A から Z、a から z、0-9、アンダースコア (\_)、ピリオド (.) に制限されます。
 
 #### <a name="name"></a>name
 
