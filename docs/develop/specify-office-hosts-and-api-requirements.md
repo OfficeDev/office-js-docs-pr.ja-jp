@@ -1,20 +1,20 @@
 ---
 title: Office のホストと API の要件を指定する
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 7209998e488e56b66b206d50c7bceb1465fb7206
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: ccff7ba1896c9d1683f9fc9d67cdd79fe52da623
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952146"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589147"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
 期待どおりの動作をするうえで、Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。たとえば、次のようなアドインがあります。
 
-- 1 つの Office アプリケーション (Word または Excel)、またはいくつかのアプリケーションで実行します。
+- 1 つの Office アプリケーション (例: Word または Excel)、またはいくつかのアプリケーションで実行します。
 
 - Office の一部のバージョンでのみ利用できる JavaScript API を使用します。たとえば、Excel 2016 で実行するアドインでは、Excel JavaScript API を使用することがあります。
 
@@ -31,7 +31,7 @@ ms.locfileid: "33952146"
 |:-----|:-----|
 |Office アプリケーション、Office ホスト アプリケーション、Office ホスト、またはホスト|アドインを実行するために使用される Office アプリケーション。たとえば、Word、Word Online、Excel など。|
 |プラットフォーム|Office Online、Office for iPad などの Office ホストを実行する場所。|
-|要件セット|関連する API メンバーの名前付きグループ。アドインは要件セットを使用して、Office ホストが、アドインによって使用される API メンバーをサポートしているかどうかを判別します。個々の API メンバーのサポートをテストするよりも、要件セットのサポートをテストするほうが簡単です。要件セットのサポートは、Office ホストと Office ホストのバージョンによって異なります。 <br >要件セットはマニフェスト ファイルで指定されます。 マニフェストで要件セットを指定するときは、アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートを設定します。 マニフェストで指定されている要件セットをサポートしていない Office ホストはアドインを実行できず、アドインは <span class="ui">[個人用アドイン]</span> に表示されません。これにより、アドインが利用できる場所が制限されます。コードでは、ランタイム チェックを使用します。 要件セットの詳細な一覧については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。|
+|要件セット|関連する API メンバーの名前付きグループ。アドインは要件セットを使用して、Office ホストが、アドインによって使用される API メンバーをサポートしているかどうかを判別します。個々の API メンバーのサポートをテストするよりも、要件セットのサポートをテストするほうが簡単です。要件セットのサポートは、Office ホストと Office ホストのバージョンによって異なります。 <br >要件セットはマニフェスト ファイルで指定されます。 マニフェストで要件セットを指定するときは、アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートを設定します。 マニフェストで指定されている要件セットをサポートしていない Office ホストはアドインを実行できず、アドインは <span class="ui">[個人用アドイン]</span> に表示されません。これにより、アドインが利用できる場所が制限されます。 コードでは、ランタイム チェックを使用します。 要件セットの詳細な一覧については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。|
 |ランタイム チェック|アドインを実行している Office ホストが、アドインで使用されている要件セットまたはメソッドをサポートしているかどうかを判別するために実行時に行われるテスト。ランタイム チェックを実行するには、**if** ステートメントに **isSetSupported** メソッド、要件セット、または要件セットの一部ではないメソッド名を指定して使用します。ランタイム チェックを使用し、多くのユーザーが対象のアドインを使用できることを確認します。要件セットとは異なり、ランタイム チェックでは、対象アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートは指定しません。代わりに、**if** ステートメントを使用して API メンバーがサポートされているかどうかを判別します。サポートされている場合には、アドインで追加機能を提供できます。ランタイム チェックを使用するときは、自分のアドインは必ず **[個人用アドイン]** に表示されます。|
 
 ## <a name="before-you-begin"></a>始める前に
@@ -64,7 +64,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 - アドインを実行するために Office ホストがサポートする必要のある最小レベルの要件セットまたは API メンバーを設定するには、マニフェストに **Requirements** 要素を設定します。詳しくは、「[マニフェストで Requirements 要素を設定する](#set-the-requirements-element-in-the-manifest)」をご覧ください。
 
-- Office ホストで特定の要件セットまたは API メンバーが利用可能である場合に追加の機能を提供する場合は、アドインの JavaScript コードでランタイム チェックを実行します。たとえば、アドインが Excel 2016 で機能する場合は、新しい Excel 用の JavaScript API の API メンバーを使用して追加の機能を提供します。詳細については、「[JavaScript コードでランタイム チェックを使用する](#use-runtime-checks-in-your-javascript-code)」をご覧ください。
+- Office ホストで特定の要件セットまたは API メンバーが利用可能である場合に追加の機能を提供する場合は、アドインの JavaScript コードでランタイム チェックを実行します。 たとえば、アドインが Excel 2016 で機能する場合は、Excel JavaScript API の API メンバーを使用して追加の機能を提供します。 詳細については、「[JavaScript コードでランタイム チェックを使用する](#use-runtime-checks-in-your-javascript-code)」をご覧ください。
 
 ## <a name="set-the-hosts-element"></a>Hosts 要素を設定する
 
@@ -86,11 +86,11 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 | Document      | Windows での Word、Word for Mac、Word for iPad、Word Online                         |
 | メールボックス       | Windows での Outlook、Outlook for Mac、Outlook on the web、Outlook.com              |
 | プレゼンテーション  | Windows での PowerPoint、PowerPoint for Mac、PowerPoint for iPad、PowerPoint Online |
-| Project       | Project                                                                               |
+| Project       | Windows での Project                                                                    |
 | ブック      | Windows での Excel、Excel for Mac、Excel for iPad、Excel Online                     |
 
 > [!NOTE]
-> `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。アドインを実行するために使用するプラットフォームを指定することはできません。たとえば、`Mailbox` を指定した場合、Outlook と Outlook Web App の両方を利用してアドインを実行できます。 
+> `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。アドインを実行するために使用するプラットフォームを指定することはできません。たとえば、`Mailbox` を指定した場合、Outlook と Outlook Web App の両方を利用してアドインを実行できます。
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>マニフェストで Requirements 要素を設定する
@@ -134,11 +134,11 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>JavaScript コードでランタイム チェックを使用する
 
 
-特定の要件セットが Office ホストでサポートされる場合、追加の機能を提供すると効果的な場合があります。たとえば、Word 2016 でアドインを実行する場合、既存のアドインで新しい Word JavaScript API Word を使用することがあります。そのためには、要件セットの名前を指定して **isSetSupported** メソッドを使用します。**isSetSupported** は、アドインを実行している Office ホストが要件セットをサポートしているかどうかを実行時に判別します。要件セットがサポートされる場合、**isSetSupported** は **true** を返し、その要件セットから API メンバーを使用する追加コードを実行します。Office ホストで要件セットがサポートされない場合、**isSetSupported** は **false** を返し、追加コードは実行されません。次のコードは、**isSetSupported** と共に使用する構文を示しています。
+特定の要件セットが Office ホストでサポートされる場合、追加の機能を提供すると効果的な場合があります。 たとえば、アドインで Word 2016 を実行する場合、既存のアドインで Word JavaScript API を使用することがあります。 その場合、要件セットの名前を指定し、[isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) メソッドを使用します。 **isSetSupported** により実行時に、アドインを実行する Office ホストが要件セットをサポートするかどうかが判断されます。 要件セットがサポートされる場合、**isSetSupported** は **true** を返し、その要件セットから API メンバーを使用する追加コードを実行します。 Office ホストで要件セットがサポートされない場合、**isSetSupported** は **false** を返し、追加コードは実行されません。 次のコードは、**isSetSupported** と共に使用する構文を示しています。
 
 
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
 {
    // Code that uses API members from RequirementSetName.
 }
@@ -148,19 +148,24 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 -  _RequirementSetName_ (必須) は、要件セットの名前を表す文字列です。 利用できる要件セットの詳細については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。
     
 -  _VersionNumber_ (省略可能) は要件セットのバージョンです。
-    
-Excel 2016 または Word 2016 では、**isSetSupported** と共に **ExcelAPI** または **WordAPI** 要件セットを使用します。**isSetSupported** メソッド、**ExcelAPI**、**WordAPI** 要件セットは、CDN から利用できる最新の Office.js ファイルで利用できます。CDN の Office.js を使用しない場合、**isSetSupported** が定義されていないため、アドインで例外が生成されることがあります。詳細については、「[Office ライブラリの最新の JavaScript API を指定する](#specify-the-latest-javascript-api-for-office-library)」を参照してください。 
 
+次のように、Office ホストに関連付けられている **RequirementSetName** と一緒に **isSetSupported** を使用します。
 
-> [!NOTE]
-> **isSetSupported** は Outlook または Outlook Web App では作動しません。Outlook または Outlook Web App でランタイム チェックを使用するには、「[要件セットにないメソッドを使用したランタイム チェック](#runtime-checks-using-methods-not-in-a-requirement-set)」で説明されている手法を使用してください。
+|Office ホスト|RequirementSetName|
+|---|---|
+|Excel|ExcelApi|
+|OneNote|OneNoteApi|
+|Outlook|Mailbox|
+|Word|WordApi|
+
+**isSetSupported** メソッドおよびこれらの要件セットは、CDN の最新の Office.js ファイルで利用できます。 CDN の Office.js を使用しない場合、アドインで例外が表示されることがあります。**isSetSupported** が定義されていないためです。 詳細については、「[最新の JavaScript API for Office ライブラリを指定する](#specify-the-latest-javascript-api-for-office-library)」を参照してください。
 
 次のコードの例は、さまざまな要件セットや API メンバーをサポートするさまざまな Office ホストにおいて、アドインで各種の機能を提供する方法を示しています。
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 {
-    // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
+    // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 {
@@ -168,7 +173,7 @@ else if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 }
 else
 {
-    // Run additional code when the Office host is not Word 2016, and when the Office host does not support the CustomXmlParts requirement set.
+    // Run additional code when the Office host is not Word 2016 or later and does not support the CustomXmlParts requirement set.
 }
 
 ```
@@ -176,7 +181,7 @@ else
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>要件セットにないメソッドを使用したランタイム チェック
 
-API の一部のメンバーは、要件のセットに属していません。 これは [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office) 名前空間 (Office. で始まるすべての名前空間) に属する API メンバーにのみ適用され、Word JavaScript API 名前空間 (Word. で始まるすべての名前空間) や [Excel アドイン JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 名前空間 (Excel. で始まるすべての名前空間) に属する API メンバーには適用されません。 要件セットに属さないメソッドにアドインが依存するとき、ランタイム チェックを利用し、メソッドが Office ホストでサポートされているかどうかを判断できます。たとえば、次のコード例のようになります。 要件セットに属さないメソッドの詳細な一覧については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。
+API の一部のメンバーは、要件のセットに属していません。 これは [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office) 名前空間 ([Outlook Mailbox API](/javascript/api/outlook) を除く `Office.` で始まるすべての名前空間) に属する API メンバーにのみ適用され、[Word JavaScript API](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview) 名前空間 (`Word.` で始まるすべての名前空間)、[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 名前空間 (`Excel.` で始まるすべての名前空間) や [OneNote JavaScript API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) (`OneNote.` で始まるすべての名前空間) に属する API メンバーには適用されません。 要件セットに属さないメソッドにアドインが依存するとき、ランタイム チェックを利用し、メソッドが Office ホストでサポートされているかどうかを判断できます。たとえば、次のコード例のようになります。 要件セットに属さないメソッドの詳細な一覧については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set)」を参照してください。
 
 > [!NOTE]
 > アドインのコードでのこの種のランタイム チェックは、限定的に使用することをお勧めします。

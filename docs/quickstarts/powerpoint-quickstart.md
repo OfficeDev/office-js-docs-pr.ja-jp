@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 01e2c961ad7bc9a50a6934732fa4cc57220f033c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 75b59e576ea0ed1a6012a08ab75e806cc68390f9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619750"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589231"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -213,18 +213,25 @@ ms.locfileid: "33619750"
 
 ### <a name="try-it-out"></a>試してみる
 
-1. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
+1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
-    - PowerPoint でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれたときに PowerPoint が開きます。
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (既に実行されていない場合)、アドインが読み込まれたときに PowerPoint が開きます。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - PowerPoint Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    - PowerPoint Online でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web

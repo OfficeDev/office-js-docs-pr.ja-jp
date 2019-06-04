@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952252"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589210"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -46,10 +46,10 @@ ms.locfileid: "33952252"
 
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
-Yeoman ジェネレーターで作成したアドイン プロジェクトには、とても基本的な作業ウィンドウ アドインのサンプル コードが含まれています。 
+Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。 
 
-- プロジェクトのルート ディレクトリにある **./manifest.xml**ファイルで、アドインの機能と設定を定義します。
-- **./src/taskpane/taskpane.html**ファイルには、作業ウィンドウ用の HTML マークアップが含まれています。
+- プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。
+- **./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。
 - **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
 - **./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
 
@@ -97,14 +97,14 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>試してみる
 
-1. 次のコマンドを実行してローカル Web サーバーを起動します:
+> [!NOTE]
+> 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
     ```command&nbsp;line
     npm start
     ```
-
-    > [!NOTE]
-    > Office アドインでは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm start`を実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 
 
 2. Project で、簡素なプロジェクト計画を作成します。
 

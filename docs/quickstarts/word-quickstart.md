@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952265"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589224"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -268,18 +268,25 @@ _適用対象: Windows 版 Word 2016 またはそれ以降、Word for iPad、Wor
 
 ### <a name="try-it-out"></a>試してみる
 
-1. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
+1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
-    - Word でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれたときに Word が開きます。
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (既に実行されていない場合)、アドインが読み込まれたときに Word が開きます。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Word Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    - Word Online でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web
@@ -308,5 +315,5 @@ _適用対象: Windows 版 Word 2016 またはそれ以降、Word for iPad、Wor
 
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
 * 
-  [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Word アドインのコード サンプル](https://developer.microsoft.com/ja-JP/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API リファレンス](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
