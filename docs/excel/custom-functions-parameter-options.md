@@ -1,14 +1,14 @@
 ---
-ms.date: 05/09/2019
+ms.date: 05/30/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 7bf195bbae696274518966e2a24bd9819e9c3f4b
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 7bc907157810ce88330fe41b21ca6ff115525491
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337189"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706058"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -98,7 +98,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 
 ## <a name="invocation-parameter"></a>呼び出しパラメーター
 
-すべてのカスタム関数には、 `invocation`最後の引数として引数が自動的に渡されます。 この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。 また、関数[をキャンセル](custom-functions-web-reqs.md#stream-and-cancel-functions)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。 パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数でを使用`invocation`する場合は、最後のパラメーターとして宣言します。
+すべてのカスタム関数には、 `invocation`最後の引数として引数が自動的に渡されます。 この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。 また、関数[をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。 パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数でを使用`invocation`する場合は、最後のパラメーターとして宣言します。
 
 次のコードサンプルでは、 `invocation`コンテキストが参照に対して明示的に指定されています。
 
@@ -145,7 +145,7 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
 
 ## <a name="see-also"></a>関連項目

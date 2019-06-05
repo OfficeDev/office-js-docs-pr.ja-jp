@@ -3,12 +3,12 @@ title: Office. メールボックス-要件セット1.7
 description: ''
 ms.date: 05/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 8895a27938bc6c72d929cf9423a377eaa2cc02a9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: fd618b766a519c522f323e0a9d43105b3258c421
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589189"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706314"
 ---
 # <a name="item"></a>item
 
@@ -666,7 +666,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>任意出席者: <[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>任意出席者: 配列. <[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_7/office.recipients)
 
 イベントの任意出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -810,7 +810,7 @@ Recurrence = {
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredat< dees: 配列.[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredatて dees: 配列. <[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_7/office.recipients)
 
 イベントの必須出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -1023,7 +1023,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>宛先: <[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>宛先: 配列. <[emailaddressdetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_7/office.recipients)
 
 メッセージの **To** 行にある受信者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -2040,7 +2040,7 @@ Office.initialize = function (reason) {
 > [!NOTE]
 > 次のクライアントの場合、新規作成モードで予約の `saveAsync` に対して動作が異なります。
 >
-> - Outlook for Mac は、新規`saveAsync`作成モードの会議ではサポートされていません。 そのため、この`saveAsync`シナリオで呼び出しを行うと、エラーが返されます。 回避策については[、「OFFICE JS API を使用して Outlook For Mac で会議を下書きとして保存できません](https://support.microsoft.com/help/4505745)」を参照してください。
+> - Outlook for Mac では、会議の保存はサポートされていません。 新規`saveAsync`作成モードで会議から呼び出された場合、メソッドは失敗します。 回避策については[、「OFFICE JS API を使用して Outlook For Mac で会議を下書きとして保存できません](https://support.microsoft.com/help/4505745)」を参照してください。
 > - Outlook on the web の場合、新規作成モードのとき、予約で `saveAsync` が呼び出されると、招待状または更新が常に送信されます。
 
 ##### <a name="parameters"></a>パラメーター

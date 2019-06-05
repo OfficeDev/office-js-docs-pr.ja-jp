@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 3abe04eebfa703666b70ecbde1c68ab0c942003c
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628047"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706079"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
@@ -23,7 +23,7 @@ ms.locfileid: "33628047"
 
 いくつかの`name`一般的`id`な要件を共有します。
 
-- 関数では`id` 、A ~ Z の文字を使用することはできません。数字 0 ~ 9、アンダースコア、ピリオド。
+- 関数では`id` 、a ~ Z の文字を使用することはできません。数字 0 ~ 9、アンダースコア、ピリオド。
 
 - 関数では`name` 、Unicode のアルファベット文字、アンダースコア、ピリオドを使用できます。
 
@@ -49,6 +49,7 @@ Excel は、組み込み関数名 (など`SUM`) に大文字を使用します�
 - 関数名は、ではなく、関数のアクションを`=GETZIPCODE`示して`ZIPCODE`いなければなりません。
 - 関数名にあいまいな略語を含めないでください。 わかりやすくすることが重要です。 ではなく、 `=INCREASETIME`という`=INC`名前を選択します。
 - 類似のアクションを実行する関数に対して同じ動詞を一貫して使用します。 たとえば、とで`=DELETEZIPCODE`は`=DELETEADDRESS`なく`=DELETEZIPCODE`を使用し`=REMOVEADDRESS`ます。
+- ストリーミング関数の名前を指定するときは、その効果にメモを追加するか、関数の`STREAM`名前の末尾に追加することを検討してください。
 
 ## <a name="localizing-function-names"></a>関数名のローカライズ
 
@@ -56,7 +57,7 @@ Excel は、組み込み関数名 (など`SUM`) に大文字を使用します�
 
 ローカライズの詳細については、「[カスタム関数をローカライズ](custom-functions-localize.md)する」を参照してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [エラー処理のベストプラクティス](custom-functions-errors.md)について説明します。
 
 ## <a name="see-also"></a>関連項目

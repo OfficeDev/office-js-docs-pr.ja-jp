@@ -1,15 +1,15 @@
 ---
-ms.date: 05/15/2019
+ms.date: 05/30/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2ef7e05390750173c1679cdb53ed96ff19020e67
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 4bf0d6a5bf020ee4196ce89d763fa994b3fd489c
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589112"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706043"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -19,7 +19,7 @@ ms.locfileid: "34589112"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (64 ビットバージョン1810以降) または Excel Online
+* Excel on Windows (バージョン1810以降) または Excel Online
 
 ## <a name="build-your-first-custom-functions-project"></a>最初のカスタム関数プロジェクトを作成する
 
@@ -98,7 +98,7 @@ Excel ブックで、次の手順を`ADD`実行してカスタム関数を試し
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。 次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。 次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。
 
