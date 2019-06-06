@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/03/2019
 localization_priority: Priority
-ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337175"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706352"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -129,6 +129,12 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトが追加されました。
+
+**使用できる場所**: Office 365 に接続している Outlook for Windows
+
+#### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+保存済みの予定またはメッセージ アイテムの ID を取得する新しい方法が追加されました。
 
 **使用できる場所**: Office 365 に接続している Outlook for Windows
 
