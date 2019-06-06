@@ -1,14 +1,14 @@
 ---
-ms.date: 05/07/2019
+ms.date: 05/30/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659636"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706145"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -25,9 +25,9 @@ ms.locfileid: "33659636"
 1. JavaScript Promise を Excel に返します。
 2. コールバック関数を使用して Promise を最終値で解決します。
 
-[`Fetch`](https://developer.mozilla.org/ja-JP/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/ja-JP/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
+[`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
 
-カスタム関数のランタイムは、[同送信元ポリシー](https://developer.mozilla.org/ja-JP/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、XHR が追加のセキュリティ対策を実装します。
+カスタム関数のランタイムは、[同送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、XHR が追加のセキュリティ対策を実装します。
 
 単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが、 `application/x-www-form-urlencoded`、 `text/plain`、または `multipart/form-data`の単純な CORS のコンテンツ タイプ ヘッダーを使う事もできます。
 
@@ -137,13 +137,37 @@ ws.onerror(error){
 }
 ```
 
-## <a name="stream-and-cancel-functions"></a>ストリーム関数とキャンセル関数
+## <a name="make-a-streaming-function"></a>ストリーミング関数を作成する
 
-ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新することは特に必要ありません。
+ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新する必要ありません。 これは、[カスタム関数のチュートリアル](/tutorials/excel-tutorial-create-custom-functions)の関数のように、サービス オンラインのライブ データを確認する際に便利です。
 
-キャンセル可能なカスタム関数を使用すると、帯域幅の消費量、作業メモリ、CPU への負荷を軽減するために、ストリーム カスタム関数の実行をキャンセルすることができます。
+ストリーミング関数を宣言するには、JSDoc コメント タグ `@stream` を使用します。 新しい情報に基づいて関数が再評価する可能性があることをユーザーに警告するには、関数の名前または説明にこれを示すことができるストリームまたはその他の文言を使用することをお勧めします。
 
-関数をストリーミングまたはキャンセル可能として宣言するには、JSDOC コメント タグ `@stream` または `@cancelable` を使用します。
+次の例では、指定した量だけ毎秒指定した数値を増加させるストリーミング関数を示しています。
+
+```JS
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * @param {number} incrementBy Amount to increment
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("INC", increment);
+```
+
+>[!NOTE]
+> また、ストリーミング関数と関連の*ない*、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 以前のバージョンのカスタム関数は、手動で記述された JSON で `"cancelable": true` と `"streaming": true` を宣言する必要がありました。 自動生成されたメタデータの導入以来、1 つの値を返す非同期のカスタム関数のみがキャンセル可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
 ### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
 
