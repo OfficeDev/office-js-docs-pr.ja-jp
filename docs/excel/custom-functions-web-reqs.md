@@ -1,39 +1,39 @@
 ---
-ms.date: 05/07/2019
+ms.date: 05/30/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659636"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706145"
 ---
-# <a name="receive-and-handle-data-with-custom-functions"></a><span data-ttu-id="23ac5-103">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="23ac5-103">Receive and handle data with custom functions</span></span>
+# <a name="receive-and-handle-data-with-custom-functions"></a><span data-ttu-id="414d8-103">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="414d8-103">Receive and handle data with custom functions</span></span>
 
-<span data-ttu-id="23ac5-104">カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) などブック以外からのデータの受信です。</span><span class="sxs-lookup"><span data-stu-id="23ac5-104">One of the ways that custom functions enhance Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets).</span></span> <span data-ttu-id="23ac5-105">カスタム関数は XHR を通してデータを要求し、同時に要求を `fetch` したりデータをストリーミングしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-105">Custom functions can request data through XHR and fetch requests as well as stream this data in real time.</span></span>
+<span data-ttu-id="414d8-104">カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) などブック以外からのデータの受信です。</span><span class="sxs-lookup"><span data-stu-id="414d8-104">One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets).</span></span> <span data-ttu-id="414d8-105">カスタム関数は XHR を通してデータを要求し、同時に要求を `fetch` したりデータをストリーミングしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="414d8-105">Custom functions can request data through XHR and `fetch` requests as well as stream this data in real time.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="23ac5-106">次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="23ac5-106">The documentation below illustrates some samples of web requests, but to build a streaming function for yourself, try the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).</span></span>
+<span data-ttu-id="414d8-106">次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="414d8-106">The documentation below illustrates some samples of web requests, but to build a streaming function for yourself, try the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).</span></span>
 
-## <a name="functions-that-return-data-from-external-sources"></a><span data-ttu-id="23ac5-107">外部ソースからデータを返す関数</span><span class="sxs-lookup"><span data-stu-id="23ac5-107">Functions that return data from external sources</span></span>
+## <a name="functions-that-return-data-from-external-sources"></a><span data-ttu-id="414d8-107">外部ソースからデータを返す関数</span><span class="sxs-lookup"><span data-stu-id="414d8-107">Functions that return data from external sources</span></span>
 
-<span data-ttu-id="23ac5-108">カスタム関数が外部ソースからデータを取得する場合には、以下のことを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="23ac5-108">If a custom function retrieves data from an external source such as the web, it must:</span></span>
+<span data-ttu-id="414d8-108">カスタム関数が外部ソースからデータを取得する場合には、以下のことを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="414d8-108">If a custom function retrieves data from an external source such as the web, it must:</span></span>
 
-1. <span data-ttu-id="23ac5-109">JavaScript Promise を Excel に返します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-109">Return a JavaScript Promise to Excel.</span></span>
-2. <span data-ttu-id="23ac5-110">コールバック関数を使用して Promise を最終値で解決します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-110">Resolve the Promise with the final value using the callback function.</span></span>
+1. <span data-ttu-id="414d8-109">JavaScript Promise を Excel に返します。</span><span class="sxs-lookup"><span data-stu-id="414d8-109">Return a JavaScript Promise to Excel.</span></span>
+2. <span data-ttu-id="414d8-110">コールバック関数を使用して Promise を最終値で解決します。</span><span class="sxs-lookup"><span data-stu-id="414d8-110">Resolve the Promise with the final value using the callback function.</span></span>
 
-<span data-ttu-id="23ac5-111">[`Fetch`](https://developer.mozilla.org/ja-JP/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/ja-JP/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-111">You can request external data through an API like [`Fetch`](https://developer.mozilla.org/ja-JP/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/ja-JP/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span>
+<span data-ttu-id="414d8-111">[`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。</span><span class="sxs-lookup"><span data-stu-id="414d8-111">You can request external data through an API like [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span>
 
-<span data-ttu-id="23ac5-112">カスタム関数のランタイムは、[同送信元ポリシー](https://developer.mozilla.org/ja-JP/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、XHR が追加のセキュリティ対策を実装します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-112">Within custom functions runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/ja-JP/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>
+<span data-ttu-id="414d8-112">カスタム関数のランタイムは、[同送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、XHR が追加のセキュリティ対策を実装します。</span><span class="sxs-lookup"><span data-stu-id="414d8-112">Within custom functions runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>
 
-<span data-ttu-id="23ac5-113">単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="23ac5-113">Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST).</span></span> <span data-ttu-id="23ac5-114">単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-114">Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`.</span></span> <span data-ttu-id="23ac5-115">コンテンツ タイプが、 `application/x-www-form-urlencoded`、 `text/plain`、または `multipart/form-data`の単純な CORS のコンテンツ タイプ ヘッダーを使う事もできます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-115">You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.</span></span>
+<span data-ttu-id="414d8-113">単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="414d8-113">Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST).</span></span> <span data-ttu-id="414d8-114">単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="414d8-114">Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`.</span></span> <span data-ttu-id="414d8-115">コンテンツ タイプが、 `application/x-www-form-urlencoded`、 `text/plain`、または `multipart/form-data`の単純な CORS のコンテンツ タイプ ヘッダーを使う事もできます。</span><span class="sxs-lookup"><span data-stu-id="414d8-115">You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.</span></span>
 
-### <a name="xhr-example"></a><span data-ttu-id="23ac5-116">XHR の使用例</span><span class="sxs-lookup"><span data-stu-id="23ac5-116">XHR example</span></span>
+### <a name="xhr-example"></a><span data-ttu-id="414d8-116">XHR の使用例</span><span class="sxs-lookup"><span data-stu-id="414d8-116">XHR example</span></span>
 
-<span data-ttu-id="23ac5-117">以下のコード サンプルでは、**getTemperature**関数が sendWebRequest 関数を呼び出して、温度計 ID に基づく特定の領域の温度を取得します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-117">In the following code sample, the **getTemperature** function calls the sendWebRequest function to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="23ac5-118">sendWebRequest 関数は XHR を使用して、データを提供するエンドポイントを要求する GET リクエストを発行します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-118">The sendWebRequest function uses XHR to issue a GET request to an endpoint that can provide the data.</span></span>
+<span data-ttu-id="414d8-117">以下のコード サンプルでは、**getTemperature**関数が sendWebRequest 関数を呼び出して、温度計 ID に基づく特定の領域の温度を取得します。</span><span class="sxs-lookup"><span data-stu-id="414d8-117">In the following code sample, the **getTemperature** function calls the sendWebRequest function to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="414d8-118">sendWebRequest 関数は XHR を使用して、データを提供するエンドポイントを要求する GET リクエストを発行します。</span><span class="sxs-lookup"><span data-stu-id="414d8-118">The sendWebRequest function uses XHR to issue a GET request to an endpoint that can provide the data.</span></span>
 
 ```js
 /**
@@ -68,11 +68,11 @@ function sendWebRequest(thermometerID, data) {
 CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 ```
 
-<span data-ttu-id="23ac5-119">コンテキストを使った XHR リクエストのその他のサンプルについては、[Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload)の Github リポジトリの、`getFile` 関数範囲内で[このファイル ](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) を参照ください。</span><span class="sxs-lookup"><span data-stu-id="23ac5-119">For another sample of an XHR request with more context, see the `getFile` function within [this file](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) in the [Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload) Github repository.</span></span>
+<span data-ttu-id="414d8-119">コンテキストを使った XHR リクエストのその他のサンプルについては、[Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload)の Github リポジトリの、`getFile` 関数範囲内で[このファイル ](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) を参照ください。</span><span class="sxs-lookup"><span data-stu-id="414d8-119">For another sample of an XHR request with more context, see the `getFile` function within [this file](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) in the [Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload) Github repository.</span></span>
 
-### <a name="fetch-example"></a><span data-ttu-id="23ac5-120">Fetch の使用例</span><span class="sxs-lookup"><span data-stu-id="23ac5-120">Fetch example</span></span>
+### <a name="fetch-example"></a><span data-ttu-id="414d8-120">Fetch の使用例</span><span class="sxs-lookup"><span data-stu-id="414d8-120">Fetch example</span></span>
 
-<span data-ttu-id="23ac5-121">以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-121">In the following code sample, the stockPriceStream function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds.</span></span> <span data-ttu-id="23ac5-122">このサンプルに関する詳細については、[カスタム関数チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="23ac5-122">For more details about this sample and to get the accompanying JSON, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).</span></span>
+<span data-ttu-id="414d8-121">以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。</span><span class="sxs-lookup"><span data-stu-id="414d8-121">In the following code sample, the `stockPriceStream` function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds.</span></span> <span data-ttu-id="414d8-122">このサンプルに関する詳細については、[カスタム関数チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="414d8-122">For more details about this sample, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).</span></span>
 
 ```js
 /**
@@ -117,13 +117,13 @@ function stockPriceStream(ticker, invocation) {
 CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 ```
 
-## <a name="receive-data-via-websockets"></a><span data-ttu-id="23ac5-123">WebSocket 経由のデータ受信</span><span class="sxs-lookup"><span data-stu-id="23ac5-123">Receiving data via WebSockets</span></span>
+## <a name="receive-data-via-websockets"></a><span data-ttu-id="414d8-123">WebSocket 経由のデータ受信</span><span class="sxs-lookup"><span data-stu-id="414d8-123">Receive data via WebSockets</span></span>
 
-<span data-ttu-id="23ac5-124">カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-124">Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server.</span></span> <span data-ttu-id="23ac5-125">WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信するので、サーバーに明示的にデータ用のポーリングを行う必要がありません。</span><span class="sxs-lookup"><span data-stu-id="23ac5-125">By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.</span></span>
+<span data-ttu-id="414d8-124">カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。</span><span class="sxs-lookup"><span data-stu-id="414d8-124">Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server.</span></span> <span data-ttu-id="414d8-125">WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信するので、サーバーに明示的にデータ用のポーリングを行う必要がありません。</span><span class="sxs-lookup"><span data-stu-id="414d8-125">By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.</span></span>
 
-### <a name="websockets-example"></a><span data-ttu-id="23ac5-126">WebSocket の使用例</span><span class="sxs-lookup"><span data-stu-id="23ac5-126">WebSockets example</span></span>
+### <a name="websockets-example"></a><span data-ttu-id="414d8-126">WebSocket の使用例</span><span class="sxs-lookup"><span data-stu-id="414d8-126">WebSockets example</span></span>
 
-<span data-ttu-id="23ac5-127">以下のコード サンプルは、WebSocket 接続を確立し、サーバーからの各受信メッセージを記録します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-127">The following code sample establishes a WebSocket connection and then logs each incoming message from the server.</span></span>
+<span data-ttu-id="414d8-127">以下のコード サンプルは、WebSocket 接続を確立し、サーバーからの各受信メッセージを記録します。</span><span class="sxs-lookup"><span data-stu-id="414d8-127">The following code sample establishes a WebSocket connection and then logs each incoming message from the server.</span></span>
 
 ```js
 let ws = new WebSocket('wss://bundles.office.com');
@@ -137,26 +137,50 @@ ws.onerror(error){
 }
 ```
 
-## <a name="stream-and-cancel-functions"></a><span data-ttu-id="23ac5-128">ストリーム関数とキャンセル関数</span><span class="sxs-lookup"><span data-stu-id="23ac5-128">Stream and cancel functions</span></span>
+## <a name="make-a-streaming-function"></a><span data-ttu-id="414d8-128">ストリーミング関数を作成する</span><span class="sxs-lookup"><span data-stu-id="414d8-128">Make a streaming function</span></span>
 
-<span data-ttu-id="23ac5-129">ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新することは特に必要ありません。</span><span class="sxs-lookup"><span data-stu-id="23ac5-129">Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh.</span></span>
+<span data-ttu-id="414d8-129">ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新する必要ありません。</span><span class="sxs-lookup"><span data-stu-id="414d8-129">Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything.</span></span> <span data-ttu-id="414d8-130">これは、[カスタム関数のチュートリアル](/tutorials/excel-tutorial-create-custom-functions)の関数のように、サービス オンラインのライブ データを確認する際に便利です。</span><span class="sxs-lookup"><span data-stu-id="414d8-130">This can be useful to check live data from a service online, like the function in [the custom functions tutorial](/tutorials/excel-tutorial-create-custom-functions).</span></span>
 
-<span data-ttu-id="23ac5-130">キャンセル可能なカスタム関数を使用すると、帯域幅の消費量、作業メモリ、CPU への負荷を軽減するために、ストリーム カスタム関数の実行をキャンセルすることができます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-130">In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load.</span></span>
+<span data-ttu-id="414d8-131">ストリーミング関数を宣言するには、JSDoc コメント タグ `@stream` を使用します。</span><span class="sxs-lookup"><span data-stu-id="414d8-131">To declare a streaming function, use the JSDoc comment tag `@stream`.</span></span> <span data-ttu-id="414d8-132">新しい情報に基づいて関数が再評価する可能性があることをユーザーに警告するには、関数の名前または説明にこれを示すことができるストリームまたはその他の文言を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="414d8-132">To alert users to the fact that your function may re-evaluate based on new information, consider putting stream or other wording to indicate this in the name or description of your function.</span></span>
 
-<span data-ttu-id="23ac5-131">関数をストリーミングまたはキャンセル可能として宣言するには、JSDOC コメント タグ `@stream` または `@cancelable` を使用します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-131">To declare a function as streaming or cancelable, use the JSDOC comment tags `@stream` or `@cancelable`.</span></span>
+<span data-ttu-id="414d8-133">次の例では、指定した量だけ毎秒指定した数値を増加させるストリーミング関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="414d8-133">The following example shows a streaming function which increases a given number every second by an amount you specify.</span></span>
 
-### <a name="using-an-invocation-parameter"></a><span data-ttu-id="23ac5-132">起動パラメーターの使用</span><span class="sxs-lookup"><span data-stu-id="23ac5-132">Using an invocation parameter</span></span>
+```JS
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * @param {number} incrementBy Amount to increment
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
+  }, 1000);
 
-<span data-ttu-id="23ac5-133">`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="23ac5-133">The `invocation` parameter is the last parameter of any custom function by default.</span></span> <span data-ttu-id="23ac5-134">`invocation` パラメーターは、セルに関するコンテキスト (アドレスなど) を提供し、`setResult` メソッドや `onCanceled` メソッドを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-134">The `invocation` parameter gives context about the cell (such as its address) and also allows you to use `setResult` and `onCanceled` methods.</span></span> <span data-ttu-id="23ac5-135">これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-135">These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).</span></span>
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("INC", increment);
+```
 
-<span data-ttu-id="23ac5-136">TypeScript を使用している場合は、呼び出しハンドラーは `CustomFunctions.StreamingInvocation` 型または `CustomFunctions.CancelableInvocation` 型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="23ac5-136">If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.</span></span>
+>[!NOTE]
+> <span data-ttu-id="414d8-134">また、ストリーミング関数と関連の*ない*、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。</span><span class="sxs-lookup"><span data-stu-id="414d8-134">Note that there are also a category of functions called cancelable functions, which are *not* related to streaming functions.</span></span> <span data-ttu-id="414d8-135">以前のバージョンのカスタム関数は、手動で記述された JSON で `"cancelable": true` と `"streaming": true` を宣言する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="414d8-135">Previous versions of custom functions required you to declare `"cancelable": true` and `"streaming": true` in JSON written by hand.</span></span> <span data-ttu-id="414d8-136">自動生成されたメタデータの導入以来、1 つの値を返す非同期のカスタム関数のみがキャンセル可能です。</span><span class="sxs-lookup"><span data-stu-id="414d8-136">Since the introduction of autogenerated metadata, only asynchronous custom functions which return one value are cancelable.</span></span> <span data-ttu-id="414d8-137">キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js)を使用します。</span><span class="sxs-lookup"><span data-stu-id="414d8-137">Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) to decide what to do upon cancellation.</span></span> <span data-ttu-id="414d8-138">タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="414d8-138">Declare a cancelable function using the tag `@cancelable`.</span></span>
 
-### <a name="streaming-and-cancelable-function-example"></a><span data-ttu-id="23ac5-137">ストリーム関数とキャンセル可能な関数の例</span><span class="sxs-lookup"><span data-stu-id="23ac5-137">Streaming and cancelable function example</span></span>
-<span data-ttu-id="23ac5-138">以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。</span><span class="sxs-lookup"><span data-stu-id="23ac5-138">The following code sample is a custom function that adds a number to the result every second.</span></span> <span data-ttu-id="23ac5-139">このコードについては、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="23ac5-139">Note the following about this code:</span></span>
+### <a name="using-an-invocation-parameter"></a><span data-ttu-id="414d8-139">起動パラメーターの使用</span><span class="sxs-lookup"><span data-stu-id="414d8-139">Using an invocation parameter</span></span>
 
-- <span data-ttu-id="23ac5-140">Excel は、`setResult` メソッドを使用して自動的に新しい値を表示します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-140">Excel displays each new value automatically using the `setResult` callback.</span></span>
-- <span data-ttu-id="23ac5-141">2 番目の入力パラメーター、起動は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。</span><span class="sxs-lookup"><span data-stu-id="23ac5-141">The second input parameter, , is not displayed to end users in Excel when they select the function from the autocomplete menu.</span></span>
-- <span data-ttu-id="23ac5-142">`onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="23ac5-142">The `onCanceled` callback defines the function that executes when the function is canceled.</span></span>
+<span data-ttu-id="414d8-140">`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="414d8-140">The `invocation` parameter is the last parameter of any custom function by default.</span></span> <span data-ttu-id="414d8-141">`invocation` パラメーターは、セルに関するコンテキスト (アドレスなど) を提供し、`setResult` メソッドや `onCanceled` メソッドを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="414d8-141">The `invocation` parameter gives context about the cell (such as its address) and also allows you to use `setResult` and `onCanceled` methods.</span></span> <span data-ttu-id="414d8-142">これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="414d8-142">These methods define what a function does when the function streams (`setResult`) or is canceled (`onCanceled`).</span></span>
+
+<span data-ttu-id="414d8-143">TypeScript を使用している場合は、呼び出しハンドラーは `CustomFunctions.StreamingInvocation` 型または `CustomFunctions.CancelableInvocation` 型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="414d8-143">If you're using TypeScript, the invocation handler needs to be of type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`.</span></span>
+
+### <a name="streaming-and-cancelable-function-example"></a><span data-ttu-id="414d8-144">ストリーム関数とキャンセル可能な関数の例</span><span class="sxs-lookup"><span data-stu-id="414d8-144">Streaming and cancelable function example</span></span>
+<span data-ttu-id="414d8-145">以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。</span><span class="sxs-lookup"><span data-stu-id="414d8-145">The following code sample is a custom function that adds a number to the result every second.</span></span> <span data-ttu-id="414d8-146">このコードについては、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="414d8-146">Note the following about this code:</span></span>
+
+- <span data-ttu-id="414d8-147">Excel は、`setResult` メソッドを使用して自動的に新しい値を表示します。</span><span class="sxs-lookup"><span data-stu-id="414d8-147">Excel displays each new value automatically using the `setResult` method.</span></span>
+- <span data-ttu-id="414d8-148">2 番目の入力パラメーター、起動は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。</span><span class="sxs-lookup"><span data-stu-id="414d8-148">The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.</span></span>
+- <span data-ttu-id="414d8-149">`onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="414d8-149">The `onCanceled` callback defines the function that executes when the function is canceled.</span></span>
 
 ```js
 /**
@@ -180,23 +204,23 @@ CustomFunctions.associate("INCREMENT", increment);
 ```
 
 >[!NOTE]
-> <span data-ttu-id="23ac5-143">Excel では、次のような状況で関数の実行をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="23ac5-143">Excel cancels the execution of a function in the following situations:</span></span>
+> <span data-ttu-id="414d8-150">Excel では、次のような状況で関数の実行をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="414d8-150">Excel cancels the execution of a function in the following situations:</span></span>
 >
-> - <span data-ttu-id="23ac5-144">ユーザーが、関数を参照するセルを編集または削除した場合。</span><span class="sxs-lookup"><span data-stu-id="23ac5-144">When the user edits or deletes a cell that references the function.</span></span>
-> - <span data-ttu-id="23ac5-145">関数の引数 (入力) の 1 つが変更されたとき。</span><span class="sxs-lookup"><span data-stu-id="23ac5-145">When one of the arguments (inputs) for the function changes.</span></span> <span data-ttu-id="23ac5-146">この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-146">In this case, a new function call is triggered following the cancellation.</span></span>
-> - <span data-ttu-id="23ac5-147">ユーザーが手動で再計算をトリガーしたとき。</span><span class="sxs-lookup"><span data-stu-id="23ac5-147">When the user triggers recalculation manually.</span></span> <span data-ttu-id="23ac5-148">この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="23ac5-148">In this case, a new function call is triggered following the cancellation.</span></span>
+> - <span data-ttu-id="414d8-151">ユーザーが、関数を参照するセルを編集または削除した場合。</span><span class="sxs-lookup"><span data-stu-id="414d8-151">When the user edits or deletes a cell that references the function.</span></span>
+> - <span data-ttu-id="414d8-152">関数の引数 (入力) の 1 つが変更されたとき。</span><span class="sxs-lookup"><span data-stu-id="414d8-152">When one of the arguments (inputs) for the function changes.</span></span> <span data-ttu-id="414d8-153">この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="414d8-153">In this case, a new function call is triggered following the cancellation.</span></span>
+> - <span data-ttu-id="414d8-154">ユーザーが手動で再計算をトリガーしたとき。</span><span class="sxs-lookup"><span data-stu-id="414d8-154">When the user triggers recalculation manually.</span></span> <span data-ttu-id="414d8-155">この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="414d8-155">In this case, a new function call is triggered following the cancellation.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="23ac5-149">次の手順</span><span class="sxs-lookup"><span data-stu-id="23ac5-149">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="414d8-156">次の手順</span><span class="sxs-lookup"><span data-stu-id="414d8-156">Next steps</span></span>
 
-* <span data-ttu-id="23ac5-150">[関数で使用できるさまざまなパラメーターのタイプ](custom-functions-parameter-options.md)についての詳細。</span><span class="sxs-lookup"><span data-stu-id="23ac5-150">Learn about [different parameter types your functions can use](custom-functions-parameter-options.md).</span></span>
-* <span data-ttu-id="23ac5-151">[複数の API の呼び出しをバッチする](custom-functions-batching.md)方法を探す。</span><span class="sxs-lookup"><span data-stu-id="23ac5-151">Discover how to [batch multiple API calls](custom-functions-batching.md).</span></span>
+* <span data-ttu-id="414d8-157">[関数で使用できるさまざまなパラメーターのタイプ](custom-functions-parameter-options.md)についての詳細。</span><span class="sxs-lookup"><span data-stu-id="414d8-157">Learn about [different parameter types your functions can use](custom-functions-parameter-options.md).</span></span>
+* <span data-ttu-id="414d8-158">[複数の API の呼び出しをバッチする](custom-functions-batching.md)方法を探す。</span><span class="sxs-lookup"><span data-stu-id="414d8-158">Discover how to [batch multiple API calls](custom-functions-batching.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="23ac5-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="23ac5-152">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="414d8-159">関連項目</span><span class="sxs-lookup"><span data-stu-id="414d8-159">See also</span></span>
 
-* [<span data-ttu-id="23ac5-153">関数の揮発性の値</span><span class="sxs-lookup"><span data-stu-id="23ac5-153">Volatile values in functions</span></span>](custom-functions-volatile.md)
-* [<span data-ttu-id="23ac5-154">カスタム関数の JSON メタデータを作成する</span><span class="sxs-lookup"><span data-stu-id="23ac5-154">Create JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
-* [<span data-ttu-id="23ac5-155">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="23ac5-155">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="23ac5-156">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="23ac5-156">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
-* [<span data-ttu-id="23ac5-157">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="23ac5-157">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="23ac5-158">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="23ac5-158">Create custom functions in Excel</span></span>](custom-functions-overview.md)
-* [<span data-ttu-id="23ac5-159">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="23ac5-159">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="414d8-160">関数の揮発性の値</span><span class="sxs-lookup"><span data-stu-id="414d8-160">Volatile values in functions</span></span>](custom-functions-volatile.md)
+* [<span data-ttu-id="414d8-161">カスタム関数の JSON メタデータを作成する</span><span class="sxs-lookup"><span data-stu-id="414d8-161">Create JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
+* [<span data-ttu-id="414d8-162">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="414d8-162">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="414d8-163">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="414d8-163">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="414d8-164">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="414d8-164">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="414d8-165">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="414d8-165">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="414d8-166">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="414d8-166">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
