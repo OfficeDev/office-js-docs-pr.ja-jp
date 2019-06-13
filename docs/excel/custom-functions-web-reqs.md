@@ -3,12 +3,12 @@ ms.date: 05/30/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706145"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910337"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -16,7 +16,7 @@ ms.locfileid: "34706145"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)を参照してください。
+次のドキュメンテーションはweb 要求のいくつかの例を説明していますが、ストリーミング機能を構築するには、[カスタム関数 チュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)を参照してください。
 
 ## <a name="functions-that-return-data-from-external-sources"></a>外部ソースからデータを返す関数
 
@@ -72,7 +72,7 @@ CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。 このサンプルに関する詳細については、[カスタム関数チュートリアル](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)を参照してください。
+以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。 このサンプルに関する詳細については、[カスタム関数チュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function)を参照してください。
 
 ```js
 /**
@@ -139,7 +139,7 @@ ws.onerror(error){
 
 ## <a name="make-a-streaming-function"></a>ストリーミング関数を作成する
 
-ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新する必要ありません。 これは、[カスタム関数のチュートリアル](/tutorials/excel-tutorial-create-custom-functions)の関数のように、サービス オンラインのライブ データを確認する際に便利です。
+ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新する必要ありません。 これは、[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)の関数のように、サービス オンラインのライブ データを確認する際に便利です。
 
 ストリーミング関数を宣言するには、JSDoc コメント タグ `@stream` を使用します。 新しい情報に基づいて関数が再評価する可能性があることをユーザーに警告するには、関数の名前または説明にこれを示すことができるストリームまたはその他の文言を使用することをお勧めします。
 
@@ -167,7 +167,7 @@ CustomFunctions.associate("INC", increment);
 ```
 
 >[!NOTE]
-> また、ストリーミング関数と関連の*ない*、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 以前のバージョンのカスタム関数は、手動で記述された JSON で `"cancelable": true` と `"streaming": true` を宣言する必要がありました。 自動生成されたメタデータの導入以来、1 つの値を返す非同期のカスタム関数のみがキャンセル可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
+> また、ストリーミング関数と関連の*ない*、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 以前のバージョンのカスタム関数は、手動で記述された JSON で `"cancelable": true` と `"streaming": true` を宣言する必要がありました。 自動生成されたメタデータの導入以来、1 つの値を返す非同期のカスタム関数のみがキャンセル可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
 ### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
 

@@ -3,14 +3,14 @@ ms.date: 05/08/2019
 description: '`OfficeRuntime.storage`を使用し、カスタム関数で状態を保存します。'
 title: カスタム関数で状態を保存して共有する
 localization_priority: Priority
-ms.openlocfilehash: b1472b0623d15882dabff16f8be3f74756e3b3de
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: fb73c349a9f1048ccc4e01a0958c8efd41cb2b78
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951971"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910351"
 ---
-## <a name="save-and-share-state-in-custom-functions"></a>カスタム関数で状態を保存して共有する
+# <a name="save-and-share-state-in-custom-functions"></a>カスタム関数で状態を保存して共有する
 
 `OfficeRuntime.storage`オブジェクトを使用し、カスタム関数またはアドインの作業ウィンドウに関連した状態を保存します。 ストレージはドメイン 1 つにつき 10 MB に制限されています (複数のアドインで共有される可能性があります)。 Windows での Excel では、`storage`オブジェクトはカスタム関数ランタイムの範囲内の別の場所ですが、Excel Online と Excel for Mac の場合、`storage` オブジェクトはブラウザーの `localStorage` と同じです。
 

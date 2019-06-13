@@ -3,12 +3,12 @@ title: Word アドインの概要
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 143f5b431aff2133c084b6d0f9c390562116dd4e
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952174"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910281"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -82,7 +82,7 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>今後の Word アドイン
 
-新しい Word アドイン用の API の設計と開発にあたり、[API のオープン仕様](/office/dev/add-ins/reference/openspec)ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
+新しい Word アドイン用の API の設計と開発にあたり、[API のオープン仕様](/office/dev/add-ins/reference/openspec/openspec)ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 ## <a name="see-also"></a>関連項目
 
