@@ -3,12 +3,12 @@ title: Project 用の作業ウィンドウ アドイン
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 668e7130d6ef478752f74468130139ca02b1d1e1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450986"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910330"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -184,7 +184,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 ## <a name="distributing-project-add-ins"></a>Project 用アドインの配布
 
-アドインの配布は、ファイル共有、SharePoint ライブラリのアドイン カタログ、または AppSource で行えます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
+アドインの配布は、ファイル共有、SharePoint ライブラリのアプリ カタログ、または AppSource で行えます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

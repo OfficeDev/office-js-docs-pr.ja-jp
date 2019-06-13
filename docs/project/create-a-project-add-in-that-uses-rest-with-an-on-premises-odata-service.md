@@ -3,12 +3,12 @@ title: 社内の Project Server OData サービスで REST を使用する Proje
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d2a3b490a0f82d57444dad4b5281f2f7e3bf2959
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1e50d90b844e78620866e94e44377c903b169783
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451378"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910358"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -1094,9 +1094,9 @@ Table styles
 
 SurfaceErrors.js ファイルのコードは、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」の「_堅牢なプログラミング_」セクションからコピーできます。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-**HelloProjectOData** が、AppSource で販売したり、SharePoint アドイン カタログで配布したりする製品アドインであれば、その設計は異なるでしょう。たとえば、テキスト ボックスのデバッグ出力や、**ProjectData** エンドポイントを取得するためのボタンはおそらくありません。また、100 以上のプロジェクトを持つ Project Web App インスタンスを処理するには **retireveOData** 関数を書き直す必要もあるでしょう。
+**HelloProjectOData** が、AppSource で販売したり、SharePoint アプリ カタログで配布したりする製品アドインであれば、その設計は異なるでしょう。たとえば、テキスト ボックスのデバッグ出力や、**ProjectData** エンドポイントを取得するためのボタンはおそらくありません。また、100 以上のプロジェクトを持つ Project Web App インスタンスを処理するには **retireveOData** 関数を書き直す必要もあるでしょう。
 
 このアドインには、追加のエラー チェックと、エッジ ケースをキャッチして説明または表示するためのロジックを組み込む必要があります。たとえば、Project Web App インスタンスに、平均期間が 5 日で平均コストが $2400 になる 1000 個のプロジェクトがあって、期間が 20 日より長いのはアクティブ プロジェクトだけだとすると、コストと作業の比較は歪んだものになるでしょう。それは頻度グラフで示すことができます。期間を表示したり、同じような長さのプロジェクトを比較したり、同じ部門または異なる部門のプロジェクトを比較したりするオプションを追加するとよいでしょう。あるいは、表示するフィールドのリストからユーザーが選択できるような方法を追加することもできます。
 
