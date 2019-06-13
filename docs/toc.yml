@@ -64,8 +64,8 @@
   items:
     - name: アドインを実行するための要件
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Office アドインで使用される Web ビューアー
-      href: concepts/web-viewers-used-by-office-web-add-ins.md
+    - name: Office アドインで使用されるブラウザー
+      href: concepts/browsers-used-by-office-web-add-ins.md
     - name: アドイン開発のベスト プラクティス
       href: concepts/add-in-development-best-practices.md
     - name: アドインの開発ライフ サイクル
@@ -506,7 +506,7 @@
           href: publish/package-your-add-in-using-visual-studio.md
         - name: 一元展開によるアドインの発行
           href: publish/centralized-deployment.md
-        - name: SharePoint カタログにアドインを発行する
+        - name: SharePoint アプリカタログにアドインを発行する
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
         - name: AppSource にアドインを発行する
           href: /office/dev/store/submit-to-the-office-store
@@ -808,7 +808,7 @@
           href: reference/manifest/targetdialect.md
         - name: TargetDialects
           href: reference/manifest/targetdialects.md
-        - name: 種類
+        - name: 型
           href: reference/manifest/type.md
         - name: バージョン
           href: reference/manifest/version.md

@@ -2,14 +2,14 @@
 title: スクリプトラボを使用して Office JavaScript API を探索する
 description: スクリプトラボを使用して、Office JS API とプロトタイプ機能を調査します。
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 06/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 968f1c748558ee0d14898a3ad0dbe44bdc7a532a
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 0bab566b08ba25dd3c01cff72f331b2dc9ce304d
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952229"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910191"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
 
@@ -17,7 +17,7 @@ ms.locfileid: "33952229"
 
 ## <a name="what-is-script-lab"></a>スクリプトラボとは
 
-スクリプトラボは、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、独自のコードのベースとしてサンプルを選択することもできます。 また、 [office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)にスニペットを追加してサンプルライブラリを拡張することも歓迎します。 スクリプトラボのもう1つの魅力的な機能は、[ユーザー](/office/dev/add-ins/excel/custom-functions-overview)が試すことができるように、ベータ版またはプレビュー機能です。
+スクリプトラボは、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、独自のコードのベースとしてサンプルを選択することもできます。 また、 [office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)にスニペットを追加してサンプルライブラリを拡張することも歓迎します。 スクリプトラボのもう1つの魅力的な機能は、ベータ版またはプレビュー機能を使用して試すことができます。
 
 > [!TIP]
 > ベータ版またはプレビューに参加するには、 [Office Insider プログラム](https://products.office.com/office-insider)にサインアップする必要がある場合があります。
@@ -30,7 +30,7 @@ ms.locfileid: "33952229"
 
 スクリプトラボは、Excel、Word、および PowerPoint の次のクライアントでサポートされています。
 
-- Windows 上の Office (Office 365 に接続)
+- Windows 上の office (Office 365 に接続)
 - Office for Mac (Office 365 に接続)
 - Office Online
 - Office 2013 以降 (Windows)
