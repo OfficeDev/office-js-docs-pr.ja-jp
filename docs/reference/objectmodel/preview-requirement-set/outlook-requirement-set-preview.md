@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 06/03/2019
+ms.date: 06/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 346750557e68508f2a5707433dea122052bc2016
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706352"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997373"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -204,7 +204,7 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**使用できる場所**: Office 365 に接続している Outlook for Windows、Outlook on the web (クラシック)
+**使用できる場所**: Office 365 に接続している Windows 上の Outlook、Outlook on the web (クラシック)
 
 ---
 
@@ -246,7 +246,7 @@ Office テーマを取得する機能が追加されました。
 
 Microsoft Graph API の[アクセス トークンの取得](/outlook/add-ins/authenticate-a-user-with-an-sso-token)をアドインに対して許可する、`getAccessTokenAsync` へのアクセスが追加されました。
 
-**使用できる場所**: Office 365 に接続している Outlook for Windows、Office 365 に接続している Outlook for Mac、Outlook.com と Office 365 に接続されている Outlook on the web、Outlook on the web (クラシック) 
+**使用できる場所**: Office 365 に接続している Windows 上の Outlook、Office 365 に接続している Outlook for Mac、Outlook on the web (新規)、Outlook on the web (クラシック)
 
 ## <a name="see-also"></a>関連項目
 
