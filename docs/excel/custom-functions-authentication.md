@@ -1,92 +1,112 @@
 ---
-ms.date: 04/15/2019
-description: Excel でカスタム関数を使用してユーザーを認証します。
+ms.date: 05/03/2019
+description: Excel のカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
-ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: bfb3acde2e03c8fc13d312977a2ab3c85107a42f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449322"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910309"
 ---
-# <a name="authentication"></a><span data-ttu-id="46944-103">認証</span><span class="sxs-lookup"><span data-stu-id="46944-103">Authentication</span></span>
+# <a name="authentication-for-custom-functions"></a><span data-ttu-id="0ee4b-103">カスタム関数の認証</span><span class="sxs-lookup"><span data-stu-id="0ee4b-103">Authentication for custom functions</span></span>
 
-<span data-ttu-id="46944-104">一部のシナリオでは、カスタム関数は、保護されたリソースにアクセスするためにユーザーを認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46944-104">In some scenarios your custom function will need to authenticate the user in order to access protected resources.</span></span> <span data-ttu-id="46944-105">カスタム関数では、特定の認証方法を使用する必要はありませんが、カスタム関数は、アドインの作業ウィンドウや他の UI 要素とは別のランタイムで実行されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="46944-105">While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in.</span></span> <span data-ttu-id="46944-106">そのため、 `AsyncStorage`オブジェクトとダイアログ API を使用して、2つのランタイム間でデータをやり取りする必要があります。</span><span class="sxs-lookup"><span data-stu-id="46944-106">Because of this, you'll need to pass data back and forth between the two runtimes using the `AsyncStorage` object and the Dialog API.</span></span>
-  
-## <a name="asyncstorage-object"></a><span data-ttu-id="46944-107">asyncstorage オブジェクト</span><span class="sxs-lookup"><span data-stu-id="46944-107">AsyncStorage object</span></span>
+<span data-ttu-id="0ee4b-104">一部のシナリオでは、保護されたリソースにアクセスするために、ユーザーを認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-104">In some scenarios your custom function will need to authenticate the user in order to access protected resources.</span></span> <span data-ttu-id="0ee4b-105">カスタム関数は特定の認証方法を必要としませんが、カスタム関数は、アドインの作業ウィンドウと他の UI 要素とは別のランタイムで実行されます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-105">While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in.</span></span> <span data-ttu-id="0ee4b-106">このため、`OfficeRuntime.storage` オブジェクトとダイアログ API を使用して 2 つのランタイム間でデータを受け渡しする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-106">Because of this, you'll need to pass data back and forth between the two runtimes using the `OfficeRuntime.storage` object and the Dialog API.</span></span>
 
-<span data-ttu-id="46944-108">カスタム関数ランタイムには、通常`localStorage` 、データを格納するグローバルウィンドウで使用できるオブジェクトがありません。</span><span class="sxs-lookup"><span data-stu-id="46944-108">The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data.</span></span> <span data-ttu-id="46944-109">代わりに、データを設定して取得するために、 [officeruntime](/javascript/api/office-runtime/officeruntime.asyncstorage)を使用して、カスタム関数と作業ウィンドウ間でデータを共有する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46944-109">Instead, you should share data between custom functions and task panes by using [OfficeRuntime.AsyncStorage](/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.</span></span>
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="46944-110">さらに、を使用`AsyncStorage`するメリットがあります。セキュリティで保護されたサンドボックス環境を使用して、他のアドインがデータにアクセスできないようにします。</span><span class="sxs-lookup"><span data-stu-id="46944-110">Additionally, there is a benefit to using `AsyncStorage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.</span></span>
+## <a name="officeruntimestorage-object"></a><span data-ttu-id="0ee4b-107">OfficeRuntime.storage オブジェクト</span><span class="sxs-lookup"><span data-stu-id="0ee4b-107">OfficeRuntime.storage object</span></span>
 
-### <a name="suggested-usage"></a><span data-ttu-id="46944-111">推奨される使用法</span><span class="sxs-lookup"><span data-stu-id="46944-111">Suggested usage</span></span>
+<span data-ttu-id="0ee4b-108">カスタム関数ランタイムには、通常はデータを格納するグローバルウィンドウに使用できる `localStorage` オブジェクトがありません。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-108">The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data.</span></span> <span data-ttu-id="0ee4b-109">代わりに、データを設定して取得するためのストレージ[OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage)を使用して、カスタム関数と作業ウィンドウの間でデータを共有する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-109">Instead, you should share data between custom functions and task panes by using [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) to set and get data.</span></span>
 
-<span data-ttu-id="46944-112">作業ウィンドウまたはカスタム関数から認証を受ける必要がある場合は、 `AsyncStorage`アクセストークンが既に取得されているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="46944-112">When you need to authenticate either from the task pane or a custom function, check `AsyncStorage` to see if the access token was already acquired.</span></span> <span data-ttu-id="46944-113">表示されない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得し`AsyncStorage`てから、トークンを後で使用するために格納します。</span><span class="sxs-lookup"><span data-stu-id="46944-113">If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `AsyncStorage` for future use.</span></span>
+<span data-ttu-id="0ee4b-110">また、`storage`オブジェクトを使用すると便利です。セキュリティサンドボックス環境を使用するため、他のアドインがデータにアクセスすることができません。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-110">Additionally, there is a benefit to using the `storage` object; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.</span></span>
 
-## <a name="dialog-api"></a><span data-ttu-id="46944-114">ダイアログ API</span><span class="sxs-lookup"><span data-stu-id="46944-114">Dialog API</span></span>
+### <a name="suggested-usage"></a><span data-ttu-id="0ee4b-111">おすすめの使用法</span><span class="sxs-lookup"><span data-stu-id="0ee4b-111">Suggested usage</span></span>
 
-<span data-ttu-id="46944-115">トークンが存在しない場合は、ダイアログ API を使用して、ユーザーにサインインを要求する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46944-115">If a token doesn't exist, you should use the Dialog API to ask the user to sign in.</span></span> <span data-ttu-id="46944-116">ユーザーが資格情報を入力すると、作成されたアクセストークン`AsyncStorage`がに保存されます。</span><span class="sxs-lookup"><span data-stu-id="46944-116">After a user enters their credentials, the resulting access token can be stored in `AsyncStorage`.</span></span>
+<span data-ttu-id="0ee4b-112">作業ウィンドウまたはカスタム関数から認証する必要がある場合は、アクセストークンが既に取得されているかどうか `storage` を確認します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-112">When you need to authenticate either from the task pane or a custom function, check `storage` to see if the access token was already acquired.</span></span> <span data-ttu-id="0ee4b-113">取得されていない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得して、後で使用するために `storage` に保存します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-113">If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in `storage` for future use.</span></span>
+
+## <a name="dialog-api"></a><span data-ttu-id="0ee4b-114">ダイアログ API</span><span class="sxs-lookup"><span data-stu-id="0ee4b-114">Dialog API example</span></span>
+
+<span data-ttu-id="0ee4b-115">トークンが存在しない場合は、ユーザーにサインインを求めるダイアログ API を表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-115">If a token doesn't exist, you should use the Dialog API to ask the user to sign in.</span></span> <span data-ttu-id="0ee4b-116">ユーザーが資格情報を入力すると、結果のアクセストークンが `storage` に保存されます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-116">After a user enters their credentials, the resulting access token can be stored in `storage`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="46944-117">カスタム関数ランタイムは、作業ウィンドウで使用されるブラウザーエンジンランタイムの dialog オブジェクトとは少し異なるダイアログオブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="46944-117">The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes.</span></span> <span data-ttu-id="46944-118">これらはどちらも "Dialog API" と呼ばれています`Officeruntime.Dialog`が、カスタム関数ランタイムでユーザーを認証するために使用します。</span><span class="sxs-lookup"><span data-stu-id="46944-118">They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.</span></span>
+> <span data-ttu-id="0ee4b-117">カスタム関数のランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは少し異なるダイアログ オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-117">The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes.</span></span> <span data-ttu-id="0ee4b-118">いずれも "ダイアログ API" と呼ばれていますが、カスタム関数のランタイムでユーザーを認証するために `OfficeRuntime.Dialog` を使用します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-118">They're both referred to as the "Dialog API", but use `OfficeRuntime.Dialog` to authenticate users in the custom functions runtime.</span></span>
 
-<span data-ttu-id="46944-119">の`OfficeRuntime.Dialog`使用方法については、「 [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="46944-119">For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).</span></span>
+<span data-ttu-id="0ee4b-119">`Dialog` オブジェクトを使用する方法の詳細については、「[カスタム関数ダイアログ](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-119">For information on how to use the `Dialog` object, see [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog).</span></span>
 
-<span data-ttu-id="46944-120">全体として認証プロセス全体を構想する場合は、アドインの作業ウィンドウと UI 要素、およびアドインのカスタム関数の部分を、を通じて`AsyncStorage`相互に通信できる個別のエンティティと考えることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="46944-120">When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `AsyncStorage`.</span></span>
+<span data-ttu-id="0ee4b-120">認証プロセス全体を構想するときには、アドインの作業ウィンドウと UI 要素、アドインのカスタム関数部分が、`OfficeRuntime.storage` を通じて相互に通信できる個別のエンティティとして考えてみることをおすすめします。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-120">When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `OfficeRuntime.storage`.</span></span>
 
-<span data-ttu-id="46944-121">次の図は、この基本的なプロセスの概要を示しています。</span><span class="sxs-lookup"><span data-stu-id="46944-121">The following diagram outlines this basic process.</span></span> <span data-ttu-id="46944-122">点線では、個別の操作を実行する一方で、カスタム関数とアドインの作業ウィンドウは、どちらもアドインの一部であることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="46944-122">Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.</span></span>
+<span data-ttu-id="0ee4b-121">この基本的な手順を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-121">The following diagram outlines this basic process.</span></span> <span data-ttu-id="0ee4b-122">点線は、ユーザーが個別の操作を実行している間に、カスタム関数とアドインの作業ウィンドウがアドインの一部であることを示しています。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-122">Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.</span></span>
 
-1. <span data-ttu-id="46944-123">Excel ブックのセルからカスタム関数呼び出しを発行します。</span><span class="sxs-lookup"><span data-stu-id="46944-123">You issue a custom function call from a cell in an Excel workbook.</span></span>
-2. <span data-ttu-id="46944-124">カスタム関数を使用`Officeruntime.Dialog`して、ユーザーの資格情報を web サイトに渡します。</span><span class="sxs-lookup"><span data-stu-id="46944-124">The custom function uses `Officeruntime.Dialog` to pass your user credentials to a website.</span></span>
-3. <span data-ttu-id="46944-125">その後、この web サイトは、カスタム関数へのアクセストークンを返します。</span><span class="sxs-lookup"><span data-stu-id="46944-125">This website then returns an access token to the custom function.</span></span>
-4. <span data-ttu-id="46944-126">次に、カスタム関数は、 `AsyncStorage`このアクセストークンをに設定します。</span><span class="sxs-lookup"><span data-stu-id="46944-126">Your custom function then sets this access token to the `AsyncStorage`.</span></span>
-5. <span data-ttu-id="46944-127">アドインの作業ウィンドウで、から`AsyncStorage`トークンにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="46944-127">Your add-in's task pane accesses the token from `AsyncStorage`.</span></span>
+1. <span data-ttu-id="0ee4b-123">Excel ワークブックのセルからカスタム関数を発行します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-123">You issue a custom function call from a cell in an Excel workbook.</span></span>
+2. <span data-ttu-id="0ee4b-124">カスタム関数は、ユーザーの資格情報を web サイトに渡すために `Dialog` を使用します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-124">The custom function uses `Dialog` to pass your user credentials to a website.</span></span>
+3. <span data-ttu-id="0ee4b-125">その後、web サイトは、アクセストークンをカスタム関数に返します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-125">This website then returns an access token to the custom function.</span></span>
+4. <span data-ttu-id="0ee4b-126">このアクセストークンは、カスタム関数によって `storage` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-126">Your custom function then sets this access token to the `storage`.</span></span>
+5. <span data-ttu-id="0ee4b-127">アドインの作業ウィンドウは、`storage` からトークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-127">Your add-in's task pane accesses the token from `storage`.</span></span>
 
-<span data-ttu-id="46944-128">![ダイアログ API を使用してアクセストークンを取得し、asyncstorage API を使用してトークンを作業ウィンドウで共有するカスタム関数の図。](../images/authentication-diagram.png "認証の図。")</span><span class="sxs-lookup"><span data-stu-id="46944-128">![Diagram of custom function using dialog API to get access token, and then share token with task pane through the AsyncStorage API.](../images/authentication-diagram.png "Authentication diagram.")</span></span>
+<span data-ttu-id="0ee4b-128">![アクセス トークンを取得するためのダイアログ API を使用したカスタム関数の図と、OfficeRuntime.storage API を通してトークンを作業ウィンドウと共有します。](../images/authentication-diagram.png "認証図。")</span><span class="sxs-lookup"><span data-stu-id="0ee4b-128">![Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.](../images/authentication-diagram.png "Authentication diagram.")</span></span>
 
-## <a name="storing-the-token"></a><span data-ttu-id="46944-129">トークンの保存</span><span class="sxs-lookup"><span data-stu-id="46944-129">Storing the token</span></span>
+## <a name="storing-the-token"></a><span data-ttu-id="0ee4b-129">トークンの格納</span><span class="sxs-lookup"><span data-stu-id="0ee4b-129">Storing the token</span></span>
 
-<span data-ttu-id="46944-130">次の例は、 [「カスタム関数の asyncstorage を使用する」](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)のコードサンプルのものです。</span><span class="sxs-lookup"><span data-stu-id="46944-130">The following examples are from the [Using AsyncStorage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample.</span></span> <span data-ttu-id="46944-131">カスタム関数と作業ウィンドウとの間でデータを共有する完全な例については、次のコードサンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="46944-131">Refer to this code sample for a complete example of sharing data between custom functions and the task pane.</span></span>
+<span data-ttu-id="0ee4b-130">次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)したコードサンプルです。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-130">The following examples are from the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample.</span></span> <span data-ttu-id="0ee4b-131">カスタム関数と作業ウィンドウ間のデータ共有の例については、このコードサンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-131">Refer to this code sample for a complete example of sharing data between custom functions and the task pane.</span></span>
 
-<span data-ttu-id="46944-132">カスタム関数が認証された場合は、アクセストークンを受け取り、それをに`AsyncStorage`格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46944-132">If the custom function authenticates, then it receives the access token and will need to store it in `AsyncStorage`.</span></span> <span data-ttu-id="46944-133">次のコードサンプルは、メソッドを呼び出し`AsyncStorage.setItem`て値を格納する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="46944-133">The following code sample shows how to call the `AsyncStorage.setItem` method to store a value.</span></span> <span data-ttu-id="46944-134">この`StoreValue`関数は、たとえば、ユーザーの値を格納するためのカスタム関数です。</span><span class="sxs-lookup"><span data-stu-id="46944-134">The `StoreValue` function is a custom function that for example purposes stores a value from the user.</span></span> <span data-ttu-id="46944-135">必要なトークン値を格納するように変更することができます。</span><span class="sxs-lookup"><span data-stu-id="46944-135">You can modify this to store any token value you need.</span></span>
+<span data-ttu-id="0ee4b-132">カスタム関数が認証されたら、アクセストークンを受け取り、`storage`に保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-132">If the custom function authenticates, then it receives the access token and will need to store it in `storage`.</span></span> <span data-ttu-id="0ee4b-133">次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-133">The following code sample shows how to call the `storage.setItem` method to store a value.</span></span> <span data-ttu-id="0ee4b-134">`storeValue` 関数は、ユーザーからの値を格納するためのカスタム関数です。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-134">The `storeValue` function is a custom function that for example purposes stores a value from the user.</span></span> <span data-ttu-id="0ee4b-135">必要なトークン値を格納するように変更できます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-135">You can modify this to store any token value you need.</span></span>
 
-```javascript
-function StoreValue(key, value) {
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+```js
+/**
+ * Stores a key-value pair into OfficeRuntime.storage.
+ * @customfunction
+ * @param {string} key Key of item to put into storage.
+ * @param {*} value Value of item to put into storage.
+ */
+function storeValue(key, value) {
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
+
+CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
-<span data-ttu-id="46944-136">作業ウィンドウでアクセストークンが必要になると、そのトークンを取得`AsyncStorage`することができます。</span><span class="sxs-lookup"><span data-stu-id="46944-136">When the task pane needs the access token, it can retrieve the token from `AsyncStorage`.</span></span> <span data-ttu-id="46944-137">次のコードサンプルは、 `AsyncStorage.getItem`メソッドを使用してトークンを取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="46944-137">The following code sample shows how to use the `AsyncStorage.getItem` method to retrieve the token.</span></span>
+<span data-ttu-id="0ee4b-136">作業ウィンドウにアクセストークンが必要な場合は、`storage`から トークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-136">When the task pane needs the access token, it can retrieve the token from `storage`.</span></span> <span data-ttu-id="0ee4b-137">次のコードサンプルは、`storage.getItem`メソッドを使用してトークンを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-137">The following code sample shows how to use the `storage.getItem` method to retrieve the token.</span></span>
 
-```javascript
-function ReceiveTokenFromCustomFunction() {
-   var key = "token";
-   var tokenSendStatus = document.getElementById('tokenSendStatus');
-   OfficeRuntime.AsyncStorage.getItem(key).then(function (result) {
-      tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
-      document.getElementById('tokenTextBox2').value = result;
-   }, function (error) {
-      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from AsyncStorage. " + error;
-   });
+```js
+/**
+ * Read a token from storage.
+ * @customfunction GETTOKEN
+ */
+function receiveTokenFromCustomFunction() {
+  var key = "token";
+  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  OfficeRuntime.storage.getItem(key).then(function (result) {
+     tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
+     document.getElementById('tokenTextBox2').value = result;
+  }, function (error) {
+     tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from storage. " + error;
+  });
 }
+CustomFunctions.associate("GETTOKEN", receiveTokenFromCustomFunction);
+
 ```
 
-## <a name="general-guidance"></a><span data-ttu-id="46944-138">一般的なガイダンス</span><span class="sxs-lookup"><span data-stu-id="46944-138">General guidance</span></span>
+## <a name="general-guidance"></a><span data-ttu-id="0ee4b-138">一般的なガイダンス</span><span class="sxs-lookup"><span data-stu-id="0ee4b-138">General Guidance</span></span>
 
-<span data-ttu-id="46944-139">Office アドインは web ベースであり、任意の web 認証方法を使用できます。</span><span class="sxs-lookup"><span data-stu-id="46944-139">Office Add-ins are web-based and you can use any web authentication technique.</span></span> <span data-ttu-id="46944-140">カスタム関数を使用して独自の認証を実装するために従う必要のある特定のパターンやメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="46944-140">There is no particular pattern or method you must follow to implement your own authentication with custom functions.</span></span> <span data-ttu-id="46944-141">[外部サービスによる承認については、この記事](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)から始まるさまざまな認証パターンに関するドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="46944-141">You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).</span></span>  
+<span data-ttu-id="0ee4b-139">Office アドインは web ベースで、あらゆる web 認証技術を使用できます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-139">Office Add-ins are web-based and you can use any web authentication technique.</span></span> <span data-ttu-id="0ee4b-140">カスタム関数を使用して独自の認証を実装するのに、特定のパターンやメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-140">There is no particular pattern or method you must follow to implement your own authentication with custom functions.</span></span> <span data-ttu-id="0ee4b-141">さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)</span><span class="sxs-lookup"><span data-stu-id="0ee4b-141">You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).</span></span>  
 
-<span data-ttu-id="46944-142">カスタム関数を開発する際に、次の場所を使用してデータを保存しないようにします。</span><span class="sxs-lookup"><span data-stu-id="46944-142">Avoid using the following locations to store data when developing custom functions:</span></span>  
+<span data-ttu-id="0ee4b-142">カスタム関数を開発するときに、次の場所にデータを格納しないようにします。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-142">Avoid using the following locations to store data when developing custom functions:</span></span>  
 
-- <span data-ttu-id="46944-143">`localStorage`: カスタム関数にはグローバル`window`オブジェクトへのアクセス権がないため、に`localStorage`格納されているデータにアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="46944-143">`localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data     stored in `localStorage`.</span></span>
-- <span data-ttu-id="46944-144">`Office.context.document.settings`: この場所はセキュリティで保護されていないため、アドインを使用するすべてのユーザーが情報を抽出できます。</span><span class="sxs-lookup"><span data-stu-id="46944-144">`Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the     add-in.</span></span>
+- <span data-ttu-id="0ee4b-143">`localStorage`: カスタム関数はグローバル `window` オブジェクトへのアクセス権がないため、`localStorage` に保存されているデータにはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-143">`localStorage`: Custom functions do not have access to the global `window` object and therefore have no access to data stored in `localStorage`.</span></span>
+- <span data-ttu-id="0ee4b-144">`Office.context.document.settings`: この場所は安全ではないため、アドインを使用しているユーザーが情報を抽出できます。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-144">`Office.context.document.settings`:  This location is not secure and information can be extracted by anyone using the add-in.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="46944-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="46944-145">See also</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0ee4b-145">次の手順</span><span class="sxs-lookup"><span data-stu-id="0ee4b-145">Next steps</span></span>
+<span data-ttu-id="0ee4b-146">[カスタム関数のダイアログ API ](custom-functions-dialog.md) について説明します。</span><span class="sxs-lookup"><span data-stu-id="0ee4b-146">Learn about the [dialog API for custom functions](custom-functions-dialog.md).</span></span>
 
-* [<span data-ttu-id="46944-146">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="46944-146">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="46944-147">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="46944-147">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
-* [<span data-ttu-id="46944-148">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="46944-148">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="46944-149">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="46944-149">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)
+## <a name="see-also"></a><span data-ttu-id="0ee4b-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="0ee4b-147">See also</span></span>
+
+* [<span data-ttu-id="0ee4b-148">カスタム関数のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="0ee4b-148">Custom functions architecture</span></span>](custom-functions-architecture.md)
+* [<span data-ttu-id="0ee4b-149">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="0ee4b-149">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
+* [<span data-ttu-id="0ee4b-150">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="0ee4b-150">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="0ee4b-151">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="0ee4b-151">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)
