@@ -1,16 +1,16 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 05/30/2019
+ms.date: 06/15/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: f167125fcc24e47f0805d6c46e5338455d94b277
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: c2eedee19cf4a612c83b7a45f7c5c5dc3b3f6937
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706373"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997387"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -108,7 +108,10 @@ npm run start:web
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Web からデータを要求するカスタム関数を作成する
 
-Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。 次に、Web API から株価情報を取得し、ワークシートのセルに結果を返す、`stockPrice` というカスタム関数を作成します。 IEX Trading API を使用します。これは無料であり、認証を必要としません。
+Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。 次に、Web API から株価情報を取得し、ワークシートのセルに結果を返す、`stockPrice` というカスタム関数を作成します。 
+
+> [!NOTE]
+> 次のコードは、IEX トレーディング API を使用して株式相場を要求します。 コードを実行する前に、 [IEX Cloud を備えた無料のアカウントを作成](https://iexcloud.io/)して、api 要求で必要な api トークンを取得できるようにする必要があります。  
 
 1. **銘柄**コードプロジェクトで、 **/src/functions/functions.js**を見つけて、コードエディターで開きます。
 
@@ -122,7 +125,8 @@ Web からデータを統合することは、カスタム関数を使用して 
     * @returns {number} The current stock price.
     */
     function stockPrice(ticker) {
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         return fetch(url)
             .then(function(response) {
                 return response.text();
@@ -195,7 +199,8 @@ Web からデータを統合することは、カスタム関数を使用して 
                 return;
             }
 
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
             isPending = true;
 
             fetch(url)

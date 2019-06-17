@@ -1,92 +1,112 @@
 ---
-ms.date: 04/15/2019
-description: Excel でカスタム関数を使用してユーザーを認証します。
+ms.date: 05/03/2019
+description: Excel のカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
-ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: bfb3acde2e03c8fc13d312977a2ab3c85107a42f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449322"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910309"
 ---
-# <a name="authentication"></a>認証
+# <a name="authentication-for-custom-functions"></a>カスタム関数の認証
 
-一部のシナリオでは、カスタム関数は、保護されたリソースにアクセスするためにユーザーを認証する必要があります。 カスタム関数では、特定の認証方法を使用する必要はありませんが、カスタム関数は、アドインの作業ウィンドウや他の UI 要素とは別のランタイムで実行されることに注意してください。 そのため、 `AsyncStorage`オブジェクトとダイアログ API を使用して、2つのランタイム間でデータをやり取りする必要があります。
-  
-## <a name="asyncstorage-object"></a>asyncstorage オブジェクト
+一部のシナリオでは、保護されたリソースにアクセスするために、ユーザーを認証する必要があります。 カスタム関数は特定の認証方法を必要としませんが、カスタム関数は、アドインの作業ウィンドウと他の UI 要素とは別のランタイムで実行されます。 このため、`OfficeRuntime.storage` オブジェクトとダイアログ API を使用して 2 つのランタイム間でデータを受け渡しする必要があります。
 
-カスタム関数ランタイムには、通常`localStorage` 、データを格納するグローバルウィンドウで使用できるオブジェクトがありません。 代わりに、データを設定して取得するために、 [officeruntime](/javascript/api/office-runtime/officeruntime.asyncstorage)を使用して、カスタム関数と作業ウィンドウ間でデータを共有する必要があります。
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-さらに、を使用`AsyncStorage`するメリットがあります。セキュリティで保護されたサンドボックス環境を使用して、他のアドインがデータにアクセスできないようにします。
+## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage オブジェクト
 
-### <a name="suggested-usage"></a>推奨される使用法
+カスタム関数ランタイムには、通常はデータを格納するグローバルウィンドウに使用できる `localStorage` オブジェクトがありません。 代わりに、データを設定して取得するためのストレージ[OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage)を使用して、カスタム関数と作業ウィンドウの間でデータを共有する必要があります。
 
-作業ウィンドウまたはカスタム関数から認証を受ける必要がある場合は、 `AsyncStorage`アクセストークンが既に取得されているかどうかを確認します。 表示されない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得し`AsyncStorage`てから、トークンを後で使用するために格納します。
+また、`storage`オブジェクトを使用すると便利です。セキュリティサンドボックス環境を使用するため、他のアドインがデータにアクセスすることができません。
+
+### <a name="suggested-usage"></a>おすすめの使用法
+
+作業ウィンドウまたはカスタム関数から認証する必要がある場合は、アクセストークンが既に取得されているかどうか `storage` を確認します。 取得されていない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得して、後で使用するために `storage` に保存します。
 
 ## <a name="dialog-api"></a>ダイアログ API
 
-トークンが存在しない場合は、ダイアログ API を使用して、ユーザーにサインインを要求する必要があります。 ユーザーが資格情報を入力すると、作成されたアクセストークン`AsyncStorage`がに保存されます。
+トークンが存在しない場合は、ユーザーにサインインを求めるダイアログ API を表示する必要があります。 ユーザーが資格情報を入力すると、結果のアクセストークンが `storage` に保存されます。
 
 > [!NOTE]
-> カスタム関数ランタイムは、作業ウィンドウで使用されるブラウザーエンジンランタイムの dialog オブジェクトとは少し異なるダイアログオブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれています`Officeruntime.Dialog`が、カスタム関数ランタイムでユーザーを認証するために使用します。
+> カスタム関数のランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは少し異なるダイアログ オブジェクトを使用します。 いずれも "ダイアログ API" と呼ばれていますが、カスタム関数のランタイムでユーザーを認証するために `OfficeRuntime.Dialog` を使用します。
 
-の`OfficeRuntime.Dialog`使用方法については、「 [Custom Functions dialog](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。
+`Dialog` オブジェクトを使用する方法の詳細については、「[カスタム関数ダイアログ](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。
 
-全体として認証プロセス全体を構想する場合は、アドインの作業ウィンドウと UI 要素、およびアドインのカスタム関数の部分を、を通じて`AsyncStorage`相互に通信できる個別のエンティティと考えることをお勧めします。
+認証プロセス全体を構想するときには、アドインの作業ウィンドウと UI 要素、アドインのカスタム関数部分が、`OfficeRuntime.storage` を通じて相互に通信できる個別のエンティティとして考えてみることをおすすめします。
 
-次の図は、この基本的なプロセスの概要を示しています。 点線では、個別の操作を実行する一方で、カスタム関数とアドインの作業ウィンドウは、どちらもアドインの一部であることに注意してください。
+この基本的な手順を次の図に示します。 点線は、ユーザーが個別の操作を実行している間に、カスタム関数とアドインの作業ウィンドウがアドインの一部であることを示しています。
 
-1. Excel ブックのセルからカスタム関数呼び出しを発行します。
-2. カスタム関数を使用`Officeruntime.Dialog`して、ユーザーの資格情報を web サイトに渡します。
-3. その後、この web サイトは、カスタム関数へのアクセストークンを返します。
-4. 次に、カスタム関数は、 `AsyncStorage`このアクセストークンをに設定します。
-5. アドインの作業ウィンドウで、から`AsyncStorage`トークンにアクセスできます。
+1. Excel ワークブックのセルからカスタム関数を発行します。
+2. カスタム関数は、ユーザーの資格情報を web サイトに渡すために `Dialog` を使用します。
+3. その後、web サイトは、アクセストークンをカスタム関数に返します。
+4. このアクセストークンは、カスタム関数によって `storage` に設定されます。
+5. アドインの作業ウィンドウは、`storage` からトークンにアクセスします。
 
-![ダイアログ API を使用してアクセストークンを取得し、asyncstorage API を使用してトークンを作業ウィンドウで共有するカスタム関数の図。](../images/authentication-diagram.png "認証の図。")
+![アクセス トークンを取得するためのダイアログ API を使用したカスタム関数の図と、OfficeRuntime.storage API を通してトークンを作業ウィンドウと共有します。](../images/authentication-diagram.png "認証図。")
 
-## <a name="storing-the-token"></a>トークンの保存
+## <a name="storing-the-token"></a>トークンの格納
 
-次の例は、 [「カスタム関数の asyncstorage を使用する」](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)のコードサンプルのものです。 カスタム関数と作業ウィンドウとの間でデータを共有する完全な例については、次のコードサンプルを参照してください。
+次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)したコードサンプルです。 カスタム関数と作業ウィンドウ間のデータ共有の例については、このコードサンプルを参照してください。
 
-カスタム関数が認証された場合は、アクセストークンを受け取り、それをに`AsyncStorage`格納する必要があります。 次のコードサンプルは、メソッドを呼び出し`AsyncStorage.setItem`て値を格納する方法を示しています。 この`StoreValue`関数は、たとえば、ユーザーの値を格納するためのカスタム関数です。 必要なトークン値を格納するように変更することができます。
+カスタム関数が認証されたら、アクセストークンを受け取り、`storage`に保存する必要があります。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 `storeValue` 関数は、ユーザーからの値を格納するためのカスタム関数です。 必要なトークン値を格納するように変更できます。
 
-```javascript
-function StoreValue(key, value) {
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+```js
+/**
+ * Stores a key-value pair into OfficeRuntime.storage.
+ * @customfunction
+ * @param {string} key Key of item to put into storage.
+ * @param {*} value Value of item to put into storage.
+ */
+function storeValue(key, value) {
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
+
+CustomFunctions.associate("STOREVALUE", storeValue);
 ```
 
-作業ウィンドウでアクセストークンが必要になると、そのトークンを取得`AsyncStorage`することができます。 次のコードサンプルは、 `AsyncStorage.getItem`メソッドを使用してトークンを取得する方法を示しています。
+作業ウィンドウにアクセストークンが必要な場合は、`storage`から トークンを取得できます。 次のコードサンプルは、`storage.getItem`メソッドを使用してトークンを取得する方法を示します。
 
-```javascript
-function ReceiveTokenFromCustomFunction() {
-   var key = "token";
-   var tokenSendStatus = document.getElementById('tokenSendStatus');
-   OfficeRuntime.AsyncStorage.getItem(key).then(function (result) {
-      tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
-      document.getElementById('tokenTextBox2').value = result;
-   }, function (error) {
-      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from AsyncStorage. " + error;
-   });
+```js
+/**
+ * Read a token from storage.
+ * @customfunction GETTOKEN
+ */
+function receiveTokenFromCustomFunction() {
+  var key = "token";
+  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  OfficeRuntime.storage.getItem(key).then(function (result) {
+     tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
+     document.getElementById('tokenTextBox2').value = result;
+  }, function (error) {
+     tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from storage. " + error;
+  });
 }
+CustomFunctions.associate("GETTOKEN", receiveTokenFromCustomFunction);
+
 ```
 
 ## <a name="general-guidance"></a>一般的なガイダンス
 
-Office アドインは web ベースであり、任意の web 認証方法を使用できます。 カスタム関数を使用して独自の認証を実装するために従う必要のある特定のパターンやメソッドはありません。 [外部サービスによる承認については、この記事](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)から始まるさまざまな認証パターンに関するドキュメントを参照してください。  
+Office アドインは web ベースで、あらゆる web 認証技術を使用できます。 カスタム関数を使用して独自の認証を実装するのに、特定のパターンやメソッドはありません。 さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)  
 
-カスタム関数を開発する際に、次の場所を使用してデータを保存しないようにします。  
+カスタム関数を開発するときに、次の場所にデータを格納しないようにします。  
 
-- `localStorage`: カスタム関数にはグローバル`window`オブジェクトへのアクセス権がないため、に`localStorage`格納されているデータにアクセスできません。
-- `Office.context.document.settings`: この場所はセキュリティで保護されていないため、アドインを使用するすべてのユーザーが情報を抽出できます。
+- `localStorage`: カスタム関数はグローバル `window` オブジェクトへのアクセス権がないため、`localStorage` に保存されているデータにはアクセスできません。
+- `Office.context.document.settings`: この場所は安全ではないため、アドインを使用しているユーザーが情報を抽出できます。
+
+## <a name="next-steps"></a>次の手順
+[カスタム関数のダイアログ API ](custom-functions-dialog.md) について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数のアーキテクチャ](custom-functions-architecture.md)
+* [カスタム関数でデータを受信して​​処理する](custom-functions-web-reqs.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel カスタム関数のチュートリアル](excel-tutorial-custom-functions.md)
