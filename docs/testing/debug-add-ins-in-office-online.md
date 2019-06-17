@@ -3,67 +3,67 @@ title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
 ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: f6cdb1f0b92a8519315bcff272cd1bc235c57653
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337182"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910167"
 ---
-# <a name="debug-add-ins-in-office-online"></a><span data-ttu-id="02d70-103">Office Online でアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="02d70-103">Debug add-ins in Office Online</span></span>
+# <a name="debug-add-ins-in-office-online"></a><span data-ttu-id="41253-103">Office Online でアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="41253-103">Debug add-ins in Office Online</span></span>
 
 
-<span data-ttu-id="02d70-104">Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="02d70-104">You can build and debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac.</span></span> <span data-ttu-id="02d70-105">この記事では、Office Online を使用してアドインのテストとデバッグを行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="02d70-105">This article describes how to use Office Online to test and debug your add-ins.</span></span> 
+<span data-ttu-id="41253-104">Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="41253-104">You can build and debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac.</span></span> <span data-ttu-id="41253-105">この記事では、Office Online を使用してアドインのテストとデバッグを行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="41253-105">This article describes how to use Office Online to test and debug your add-ins.</span></span> 
 
-## <a name="prerequisites"></a><span data-ttu-id="02d70-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="02d70-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="41253-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="41253-106">Prerequisites</span></span>
 
-<span data-ttu-id="02d70-107">開始するには</span><span class="sxs-lookup"><span data-stu-id="02d70-107">To get started:</span></span>
+<span data-ttu-id="41253-107">開始するには</span><span class="sxs-lookup"><span data-stu-id="41253-107">To get started:</span></span>
 
-- <span data-ttu-id="02d70-108">Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="02d70-108">Get an Office 365 developer account if you don't already have one or have access to a SharePoint site.</span></span>
+- <span data-ttu-id="41253-108">Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="41253-108">Get an Office 365 developer account if you don't already have one or have access to a SharePoint site.</span></span>
     
   > [!NOTE]
-  > <span data-ttu-id="02d70-p102">無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="02d70-p102">To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.</span></span>
+  > <span data-ttu-id="41253-p102">無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="41253-p102">To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program). See the [Office 365 Developer Program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.</span></span>
      
-- <span data-ttu-id="02d70-p103">Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="02d70-p103">Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For more information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).</span></span>
+- <span data-ttu-id="41253-p103">Office 365 (SharePoint Online) 上でアプリ カタログをセットアップするアプリ カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アプリ カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint のアプリ カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41253-p103">Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For more information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).</span></span>
     
 
-## <a name="debug-your-add-in-from-excel-online-or-word-online"></a><span data-ttu-id="02d70-114">Excel Online または Word Online からアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="02d70-114">Debug your add-in from Excel Online or Word Online</span></span>
+## <a name="debug-your-add-in-from-excel-online-or-word-online"></a><span data-ttu-id="41253-114">Excel Online または Word Online からアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="41253-114">Debug your add-in from Excel Online or Word Online</span></span>
 
-<span data-ttu-id="02d70-115">Office Online を使用してアドインをデバッグするには、</span><span class="sxs-lookup"><span data-stu-id="02d70-115">To debug your add-in by using Office Online:</span></span>
+<span data-ttu-id="41253-115">Office Online を使用してアドインをデバッグするには、</span><span class="sxs-lookup"><span data-stu-id="41253-115">To debug your add-in by using Office Online:</span></span>
 
-1. <span data-ttu-id="02d70-116">SSL をサポートするサーバーにアドインを展開します。</span><span class="sxs-lookup"><span data-stu-id="02d70-116">Deploy your add-in to a server that supports SSL.</span></span>
+1. <span data-ttu-id="41253-116">SSL をサポートするサーバーにアドインを展開します。</span><span class="sxs-lookup"><span data-stu-id="41253-116">Deploy your add-in to a server that supports SSL.</span></span>
     
     > [!NOTE]
-    > <span data-ttu-id="02d70-117">[Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="02d70-117">We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.</span></span>
+    > <span data-ttu-id="41253-117">[Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="41253-117">We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.</span></span>
      
-2. <span data-ttu-id="02d70-p104">[アドイン マニフェスト ファイル](../develop/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。</span><span class="sxs-lookup"><span data-stu-id="02d70-p104">In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:</span></span>
+2. <span data-ttu-id="41253-p104">[アドイン マニフェスト ファイル](../develop/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。</span><span class="sxs-lookup"><span data-stu-id="41253-p104">In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:</span></span>
       
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. <span data-ttu-id="02d70-120">SharePoint のアドイン カタログにある Office アドイン ライブラリにマニフェストをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="02d70-120">Upload the manifest to the Office Add-ins library in the add-in catalog on SharePoint.</span></span>
+3. <span data-ttu-id="41253-120">SharePoint のアプリ カタログにある Office アドイン ライブラリにマニフェストをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="41253-120">Upload the manifest to the Office Add-ins library in the add-in catalog on SharePoint.</span></span>
     
-4. <span data-ttu-id="02d70-121">Office 365 のアプリ起動ツールから Excel Online または Word Online を起動し、新しいドキュメントを開きます。</span><span class="sxs-lookup"><span data-stu-id="02d70-121">Launch Excel Online or Word Online from the app launcher in Office 365, and open a new document.</span></span>
+4. <span data-ttu-id="41253-121">Office 365 のアプリ起動ツールから Excel Online または Word Online を起動し、新しいドキュメントを開きます。</span><span class="sxs-lookup"><span data-stu-id="41253-121">Launch Excel Online or Word Online from the app launcher in Office 365, and open a new document.</span></span>
     
-5. <span data-ttu-id="02d70-122">[挿入] タブで、 **[個人用アドイン]** または **[Office アドイン]** をクリックし、アプリにアドインを挿入してテストします。</span><span class="sxs-lookup"><span data-stu-id="02d70-122">On the Insert tab, choose  **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.</span></span>
+5. <span data-ttu-id="41253-122">[挿入] タブで、 **[個人用アドイン]** または **[Office アドイン]** をクリックし、アプリにアドインを挿入してテストします。</span><span class="sxs-lookup"><span data-stu-id="41253-122">On the Insert tab, choose  **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.</span></span>
     
-6. <span data-ttu-id="02d70-123">お気に入りのブラウザーのツール デバッガーを使用してアドインをデバッグします。</span><span class="sxs-lookup"><span data-stu-id="02d70-123">Use your favorite browser tool debugger to debug your add-in.</span></span>
+6. <span data-ttu-id="41253-123">お気に入りのブラウザーのツール デバッガーを使用してアドインをデバッグします。</span><span class="sxs-lookup"><span data-stu-id="41253-123">Use your favorite browser tool debugger to debug your add-in.</span></span>
 
-## <a name="potential-issues"></a><span data-ttu-id="02d70-124">潜在的な問題</span><span class="sxs-lookup"><span data-stu-id="02d70-124">Potential issues</span></span>    
+## <a name="potential-issues"></a><span data-ttu-id="41253-124">潜在的な問題</span><span class="sxs-lookup"><span data-stu-id="41253-124">Potential issues</span></span>    
 
-<span data-ttu-id="02d70-125">以下は、デバッグ時に発生する可能性がある問題です。</span><span class="sxs-lookup"><span data-stu-id="02d70-125">The following are some issues that you might encounter as you debug:</span></span>
+<span data-ttu-id="41253-125">以下は、デバッグ時に発生する可能性がある問題です。</span><span class="sxs-lookup"><span data-stu-id="41253-125">The following are some issues that you might encounter as you debug:</span></span>
     
-- <span data-ttu-id="02d70-126">表示される JavaScript エラーのいくつかは Office Online に起因している可能性があります。</span><span class="sxs-lookup"><span data-stu-id="02d70-126">Some JavaScript errors that you see might originate from Office Online.</span></span>
+- <span data-ttu-id="41253-126">表示される JavaScript エラーのいくつかは Office Online に起因している可能性があります。</span><span class="sxs-lookup"><span data-stu-id="41253-126">Some JavaScript errors that you see might originate from Office Online.</span></span>
       
-- <span data-ttu-id="02d70-127">ブラウザーが、バイパスが必要になる、無効な証明書エラーを表示することがあります。</span><span class="sxs-lookup"><span data-stu-id="02d70-127">The browser might show an invalid certificate error that you will need to bypass.</span></span> <span data-ttu-id="02d70-128">これを行うプロセスは、ブラウザおよびこの変更を定期的に行うさまざまなブラウザの UI によって異なります。</span><span class="sxs-lookup"><span data-stu-id="02d70-128">The process for doing this varies with the browser and the various browsers' UIs for doing this change periodically.</span></span> <span data-ttu-id="02d70-129">詳細については、ブラウザーのヘルプを検索するか、オンラインで検索してください。</span><span class="sxs-lookup"><span data-stu-id="02d70-129">You should search the browser's help or search online for instructions.</span></span> <span data-ttu-id="02d70-130">(たとえば、「Edge の無効な証明書警告」を検索します。) ほとんどのブラウザには、警告ページにリンクがあり、このリンクをクリックするとアドイン ページにアクセスされます。</span><span class="sxs-lookup"><span data-stu-id="02d70-130">(For example, search for "Edge invalid certificate warning".) Most browsers will have a link on the warning page that enables you to click through to the add-in page.</span></span> <span data-ttu-id="02d70-131">たとえば、Microsoft Edge には「Web ページへ移動 (推奨しません)」 というリンクがあります。</span><span class="sxs-lookup"><span data-stu-id="02d70-131">For example, Microsoft Edge has a link "Go on to the webpage (Not recommended)".</span></span> <span data-ttu-id="02d70-132">ただし、通常はアドインが再び読み込まれるたびに、このリンクを経由する必要があります。</span><span class="sxs-lookup"><span data-stu-id="02d70-132">But you will usually have to go through this link every time the add-in reloads.</span></span> <span data-ttu-id="02d70-133">より長期的なバイパスについては、お勧めのヘルプを参照してください。</span><span class="sxs-lookup"><span data-stu-id="02d70-133">For a longer lasting bypass, see the help as suggested.</span></span>
+- <span data-ttu-id="41253-127">ブラウザーが、バイパスが必要になる、無効な証明書エラーを表示することがあります。</span><span class="sxs-lookup"><span data-stu-id="41253-127">The browser might show an invalid certificate error that you will need to bypass.</span></span> <span data-ttu-id="41253-128">これを行うプロセスは、ブラウザおよびこの変更を定期的に行うさまざまなブラウザの UI によって異なります。</span><span class="sxs-lookup"><span data-stu-id="41253-128">The process for doing this varies with the browser and the various browsers' UIs for doing this change periodically.</span></span> <span data-ttu-id="41253-129">詳細については、ブラウザーのヘルプを検索するか、オンラインで検索してください。</span><span class="sxs-lookup"><span data-stu-id="41253-129">You should search the browser's help or search online for instructions.</span></span> <span data-ttu-id="41253-130">(たとえば、「Edge の無効な証明書警告」を検索します。) ほとんどのブラウザには、警告ページにリンクがあり、このリンクをクリックするとアドイン ページにアクセスされます。</span><span class="sxs-lookup"><span data-stu-id="41253-130">(For example, search for "Edge invalid certificate warning".) Most browsers will have a link on the warning page that enables you to click through to the add-in page.</span></span> <span data-ttu-id="41253-131">たとえば、Microsoft Edge には「Web ページへ移動 (推奨しません)」 というリンクがあります。</span><span class="sxs-lookup"><span data-stu-id="41253-131">For example, Microsoft Edge has a link "Go on to the webpage (Not recommended)".</span></span> <span data-ttu-id="41253-132">ただし、通常はアドインが再び読み込まれるたびに、このリンクを経由する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41253-132">But you will usually have to go through this link every time the add-in reloads.</span></span> <span data-ttu-id="41253-133">より長期的なバイパスについては、お勧めのヘルプを参照してください。</span><span class="sxs-lookup"><span data-stu-id="41253-133">For a longer lasting bypass, see the help as suggested.</span></span>
       
-- <span data-ttu-id="02d70-134">コードにブレークポイントを設定する場合、Office Online から、保存できないというエラーがスローされることがあります。</span><span class="sxs-lookup"><span data-stu-id="02d70-134">If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.</span></span>
+- <span data-ttu-id="41253-134">コードにブレークポイントを設定する場合、Office Online から、保存できないというエラーがスローされることがあります。</span><span class="sxs-lookup"><span data-stu-id="41253-134">If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="02d70-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="02d70-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="41253-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="41253-135">See also</span></span>
 
-- [<span data-ttu-id="02d70-136">Office アドイン開発のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="02d70-136">Best practices for developing Office Add-ins</span></span>](../concepts/add-in-development-best-practices.md)
-- [<span data-ttu-id="02d70-137">AppSource の検証ポリシー</span><span class="sxs-lookup"><span data-stu-id="02d70-137">AppSource validation policies</span></span>](/office/dev/store/validation-policies)  
-- [<span data-ttu-id="02d70-138">効率的な AppSource アプリおよびアドインを作成する</span><span class="sxs-lookup"><span data-stu-id="02d70-138">Create effective AppSource apps and add-ins</span></span>](/office/dev/store/create-effective-office-store-listings)  
-- [<span data-ttu-id="02d70-139">Office アドインでのユーザー エラーのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="02d70-139">Troubleshoot user errors with Office Add-ins</span></span>](testing-and-troubleshooting.md)
+- [<span data-ttu-id="41253-136">Office アドイン開発のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="41253-136">Best practices for developing Office Add-ins</span></span>](../concepts/add-in-development-best-practices.md)
+- [<span data-ttu-id="41253-137">AppSource の検証ポリシー</span><span class="sxs-lookup"><span data-stu-id="41253-137">AppSource validation policies</span></span>](/office/dev/store/validation-policies)  
+- [<span data-ttu-id="41253-138">効率的な AppSource アプリおよびアドインを作成する</span><span class="sxs-lookup"><span data-stu-id="41253-138">Create effective AppSource apps and add-ins</span></span>](/office/dev/store/create-effective-office-store-listings)  
+- [<span data-ttu-id="41253-139">Office アドインでのユーザー エラーのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="41253-139">Troubleshoot user errors with Office Add-ins</span></span>](testing-and-troubleshooting.md)
     
