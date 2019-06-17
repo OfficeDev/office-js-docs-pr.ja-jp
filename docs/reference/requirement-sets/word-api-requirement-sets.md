@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の要件セット
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952237"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997394"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
@@ -19,11 +19,12 @@ Word アドインは、Windows での Office 2016 以降、Office for iPad、Off
 
 > [!NOTE]
 > ベータ版としてマークされている要件セットについては、指定されたバージョン以降の Office ソフトウェアを使用し、CDN のベータ版のライブラリを使用します: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 
+>
 > ベータ版として表示されていないエントリは一般公開されており、引き続き Production CDN ライブラリを使用できます: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  要件セット  |   Windows での Office\*<br>(Office 365 に接続)  |  Office for iPad<br>(Office 365 に接続)  |  Office for Mac<br>(Office 365 に接続)  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [プレビュー](/javascript/api/word)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要があります) |
 | WordApi 1.3 | バージョン 1612 (ビルド 7668.1000) 以降| 2017 年 3 月、2.22 以降 | 2017 年 3 月、15.32 以降| 2017 年 3 月 ||
 | WordApi 1.2  | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | |
 | WordApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | |
@@ -38,16 +39,86 @@ Word アドインは、Windows での Office 2016 以降、Office for iPad、Off
 - [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
+## <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 
-共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
+新しい Word JavaScript API は最初に「プレビュー」で導入され、その後、十分なテストが行われ、ユーザー フィードバックが得られてから、番号付きの特定の要件セットの一部になります。
 
-## <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能 
+> [!NOTE]
+> プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
+>
+> プレビュー API を使用するには、CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)) で**ベータ** ライブラリを参照する必要があります。場合によっては、Office Insider プログラムに参加し、新しい Office ビルドを入手する必要があります。
 
-要件セット 1.3 の Word JavaScript API に新たに追加された機能は次のとおりです。 
+以下は、プレビュー中の API の完全な一覧です。
 
-|オブジェクト| 新機能| 説明|要件セット| 
-|:-----|-----|:----|:----| 
+| クラス | フィールド | 説明 |
+|:---|:---|:---|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|コンテンツ コントロール内のデータが変更された場合に発生します。 新しいテキストを取得するには、このコンテンツ コントロールをハンドラーに読み込みます。 古いテキストを取得するには、読み込まないでください。|
+||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|コンテンツ コントロールが変更された場合に発生します。 このコンテンツ コントロールはハンドラーに読み込まないでください。これ以外の場合、元のプロパティを取得することはできません。|
+||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|コンテンツ コントロール内の選択が変更された場合に発生します。|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|イベントを発生させたオブジェクト。 このオブジェクトを読み込み、プロパティを取得します。|
+||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|イベントの種類。 詳細については、「Word.EventType」を参照してください。|
+|[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|カスタム XML パーツを削除します。|
+||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|xpath で識別された要素から、指定された名前を持つ属性を削除します。|
+||[deleteElement(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#deleteelement-xpath--namespacemappings-)|xpath で識別された要素を削除します。|
+||[getXml()](/javascript/api/word/word.customxmlpart#getxml--)|カスタム XML パーツのすべての XML コンテンツを取得します。|
+||[insertAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#insertattribute-xpath--namespacemappings--name--value-)|xpath で識別された要素に、指定された名前および値を持つ属性を挿入します。|
+||[insertElement(xpath: string, xml: string, namespaceMappings: any, index?: number)](/javascript/api/word/word.customxmlpart#insertelement-xpath--xml--namespacemappings--index-)|指定された XML を、子ポジション インデックスの xpath で識別された親要素の下に、挿入します。|
+||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query-xpath--namespacemappings-)|カスタム XML パーツの XML コンテンツをクエリします。|
+||[id](/javascript/api/word/word.customxmlpart#id)|カスタム XML パーツの ID を取得します。 読み取り専用です。|
+||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|カスタム XML パーツの名前空間 URI を取得します。 読み取り専用です。|
+||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|カスタム XML パーツのすべての XML コンテンツを設定します。|
+||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|xpath で識別された要素の指定された名前を持つ属性の値を更新します。|
+||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|xpath で識別された要素の XML を更新します。|
+|[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|ドキュメントに新しいカスタム XML パーツを追加します。|
+||[getByNamespace(namespaceUri: string)](/javascript/api/word/word.customxmlpartcollection#getbynamespace-namespaceuri-)|名前空間が指定した名前空間に一致する、カスタム XML パーツの新しい範囲のコレクションを取得します。|
+||[getCount()](/javascript/api/word/word.customxmlpartcollection#getcount--)|コレクション内のアイテムの数を取得します。|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|ID に基づいて、カスタム XML パーツを取得します。 読み取り専用です。|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|ID に基づいて、カスタム XML パーツを取得します。 CustomXmlPart が存在しない場合は、null オブジェクトを返します。|
+||[items](/javascript/api/word/word.customxmlpartcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|コレクション内のアイテムの数を取得します。|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|ID に基づいて、カスタム XML パーツを取得します。 読み取り専用です。|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|ID に基づいて、カスタム XML パーツを取得します。 コレクション内に CustomXmlPart が存在しない場合は、null オブジェクトを返します。|
+||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|コレクションに含まれる項目が 1 つだけの場合、このメソッドはその項目を返します。 これ以外の場合、このメソッドはエラーになります。|
+||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|コレクションに含まれる項目が 1 つだけの場合、このメソッドはその項目を返します。 これ以外の場合、このメソッドは null オブジェクトを返します。|
+||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|ブックマークが存在する場合は、ドキュメントから削除します。|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、スローします。|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、null オブジェクトを返します。|
+||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|ドキュメントのカスタム XML パーツを取得します。 読み取り専用です。|
+||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|コンテンツ コントロールが追加された場合に発生します。 ハンドラーで context.sync() を実行して、新しいコンテンツ コントロールのプロパティを取得します。|
+||[settings](/javascript/api/word/word.document#settings)|ドキュメント内のアドインの設定を取得します。 読み取り専用です。|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deletebookmark-name-)|ブックマークが存在する場合は、ドキュメントから削除します。|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、スローします。|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、null オブジェクトを返します。|
+||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|ドキュメントのカスタム XML パーツを取得します。 読み取り専用です。|
+||[settings](/javascript/api/word/word.documentcreated#settings)|ドキュメント内のアドインの設定を取得します。 読み取り専用です。|
+|[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|インライン画像の形式を取得します。 読み取り専用です。|
+|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|リスト内の指定したレベルで行頭文字のフォント、番号、画像のいずれかを取得します。|
+||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|リスト内の指定したレベルで画像の base64 エンコード文字列表記を取得します。|
+||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|リスト内の指定したレベルで行頭文字のフォント、番号、画像のいずれかを再設定します。|
+||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|リスト内の指定したレベルで画像を設定します。|
+|[Range](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|範囲内または重なる範囲のすべてのブックマークの名前を取得します。 名前がアンダースコア文字で始まるブックマークは、非表示になります。|
+||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|範囲にブックマークを挿入します。 同じ名前のブックマークがどこかに存在する場合は、最初に削除されます。|
+|[Setting](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|設定を削除します。|
+||[key](/javascript/api/word/word.setting#key)|設定のキーを取得します。 読み取り専用です。|
+||[value](/javascript/api/word/word.setting#value)|設定の値を取得または設定します。|
+|[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|新しい設定を作成するか、既存の設定を設定します。|
+||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|このアドインのすべての設定を削除します。|
+||[getCount()](/javascript/api/word/word.settingcollection#getcount--)|設定の数を取得します。|
+||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|setting オブジェクトをその大文字と小文字が区別されるキーによって取得します。 setting が存在しない場合にスローされます。|
+||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|setting オブジェクトをその大文字と小文字が区別されるキーによって取得します。 setting が存在しない場合は null オブジェクトを返します。|
+||[items](/javascript/api/word/word.settingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|最初と最後のセルによって包括的に囲まれたセルを結合します。|
+|[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|セルを指定した数の行と列に分割します。|
+|[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|行にコンテンツ コントロールを挿入します。|
+||[merge()](/javascript/api/word/word.tablerow#merge--)|行を 1 つのセルに結合します。|
+
+## <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
+
+要件セット 1.3 の Word JavaScript API に新たに追加された機能は次のとおりです。
+
+|オブジェクト| 新機能| 説明|要件セット|
+|:-----|-----|:----|:----|
 |[アプリケーション](/javascript/api/word/word.application)|_メソッド_ > createDocument(base64File: string) | Base64 でエンコードされた .docx ファイルを使用して、新しい文書を作成します。 読み取り専用です。|1.3|
 |[body](/javascript/api/word/word.body)|_リレーションシップ_ > lists|本文に含まれるリスト オブジェクトのコレクションを取得します。読み取り専用。|1.3|
 |[body](/javascript/api/word/word.body)|_リレーションシップ_ > parentBody|本文の親の本文を取得します。たとえば、テーブル セル本文の親本文にはヘッダーを指定できます。読み取り専用。|1.3|
