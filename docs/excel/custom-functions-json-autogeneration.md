@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
-description: JSDOC タグを使用して、カスタム関数の JSON メタデータを動的に作成する。
+ms.date: 06/10/2019
+description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589133"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910302"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -19,6 +19,23 @@ Excel カスタム関数が JavaScript または TypeScript で記述されて�
 JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。
 
 関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](https://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。 詳細については、「[@param](#param) タグ」セクションと「[型](#types)」セクションを参照してください。
+
+### <a name="adding-a-description-to-a-function"></a>関数に説明を追加する
+
+説明は、カスタム関数の機能を理解するためのヘルプが必要な場合に、ヘルプ テキストとしてユーザーに表示されます。 説明に特定のタグは必要ありません。 JSDoc コメントに簡単な説明を入力するだけです。 一般に、説明は JSDoc コメント セクションの先頭に配置されますが、配置場所に関係なく機能します。
+
+組み込み関数の説明の例を表示するには、Excel を開き、**[数式]** タブに移動し、**[関数の​​挿入]** を選択します。 すべての関数の説明を参照したり、独自のカスタム関数を一覧表示したりすることができます。
+
+次の例では、「球の体積を計算します。」 が、カスタム関数の説明です。
+
+```JS
+/**
+/* Calculates the volume of a sphere
+/* @customfunction VOLUME
+...
+ */
+```
+
 
 ## <a name="jsdoc-tags"></a>JSDoc タグ
 Excel カスタム関数では、次の JSDoc タグを利用できます。
@@ -57,20 +74,32 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 #### <a name="id"></a>id
 
-id は、文書に格納されているカスタム関数の不変の識別子として使用されます。 変更する必要はありません。
+`id` は、カスタム関数の不変識別子です。
 
-* id が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。
-* id はすべてのカスタム関数で一意である必要があります。
-* 指定できる文字は、A から Z、a から z、0-9、アンダースコア (\_)、ピリオド (.) に制限されます。
+* `id` が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。
+* `id` はすべてのカスタム関数で一意である必要があります。
+* 指定できる文字は、A から Z、a から z、0 から 9、アンダースコア (\_)、ピリオド (.) に制限されます。
 
 #### <a name="name"></a>name
 
-カスタム関数の表示名を提供します。
+カスタム関数の表示用の `name` を提供します。
 
 * name が指定されていない場合、id が名前としても使用されます。
 * 使用できる文字は、文字 [Unicode アルファベット](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。
 * 最初の文字は、アルファベット文字にする必要があります。
 * 最大文字数は 128 文字です。
+
+### <a name="description"></a>説明
+
+説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。 Excel では、関数の入力時に、ユーザーにこの説明が表示されます。 次の例では、「2 つの数値を合計する関数」というフレーズが、ID プロパティ `SUM` のカスタム関数の説明です。
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
 ### <a name="helpurl"></a>@helpurl
@@ -153,7 +182,7 @@ TypeScript 構文: @param 名 _の説明_
 ### <a name="volatile"></a>@volatile
 <a id="volatile"/>
 
-揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる可能性があると見なされる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
+揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
 
 ストリーミング関数に揮発性関数は使用できません。
 
@@ -175,7 +204,7 @@ TypeScript 構文: @param 名 _の説明_
 
 非ストリーミング関数は、エラーの種類を返すことによりエラーを示すことができます。
 
-ストリーミング関数は、エラーの種類で setResult() を返してエラーを示すことができます。
+ストリーミング関数は、エラーの種類で `setResult()` を返してエラーを示すことができます。
 
 ### <a name="promise"></a>Promise
 

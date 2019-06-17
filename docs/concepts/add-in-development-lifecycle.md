@@ -3,12 +3,12 @@ title: Office アドインの開発ライフ サイクル
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 86c384128640d64c47185a290bc224ffe7b59274
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448365"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910166"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Office アドインの開発ライフ サイクル
 
@@ -80,7 +80,7 @@ Outlook アドインの場合、Exchange メールボックスにインストー
 
 ## <a name="7-publish-the-add-in"></a>7. アドインを発行する
 
-アドインを AppSource に送信できます。お客様はそこからアドインをインストールできます。さらに、作業ウィンドウおよびコンテンツのアドインを SharePoint 上のプライベート フォルダー アドイン カタログまたは共有ネットワーク フォルダーに発行することが可能で、組織の Exchange サーバーに Outlook アドインを直接展開できます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
+アドインを AppSource に送信できます。お客様はそこからアドインをインストールできます。さらに、作業ウィンドウおよびコンテンツのアドインを SharePoint 上のアプリ カタログまたは共有ネットワーク フォルダーに発行することが可能で、組織の Exchange サーバーに Outlook アドインを直接展開できます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
 
 
 ## <a name="8-maintain-the-add-in"></a>8. アドインをメンテナンスする

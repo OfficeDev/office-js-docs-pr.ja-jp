@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1f63d9fe012ed8c8a5cf4a0f7de862ddabcd4d3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449845"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910218"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -24,7 +24,7 @@ ms.locfileid: "32449845"
 
 1. ユーザーは、既にアドインが含まれているドキュメントを開くか、ドキュメントにアドインを挿入します。
 
-2. Office ホスト アプリケーションが、アドインの XML マニフェストを AppSource、SharePoint のアドイン カタログ、またはアドインの発生元である共有フォルダー カタログから読み取ります。
+2. Office ホスト アプリケーションが、アドインの XML マニフェストを AppSource、SharePoint のアプリ カタログ、またはアドインの発生元である共有フォルダー カタログから読み取ります。
 
 3. Office ホスト アプリケーションが、ブラウザー コントロールにアドインの HTML ページを開きます。
 

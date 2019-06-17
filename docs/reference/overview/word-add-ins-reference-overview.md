@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の概要
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/10/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 92b66b98776c1ad6b2d824af8bf13b01f2807384
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450094"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910204"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
@@ -28,8 +28,8 @@ Word JavaScript API は Office.js によって読み込まれます。Word JavaS
 
 Office.js は、次の場所から参照できます。
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 運用環境のアドインには、このリソースを使用します。
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - プレビュー機能を試している場合は、このリソースを使用します。
+- https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 運用環境のアドインには、このリソースを使用します。
+- https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - プレビュー機能を試している場合は、このリソースを使用します。
 
 [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs) を使用している場合、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) をダウンロードして、Office.js を含むプロジェクト テンプレートを取得できます。[nuget から Office.js を取得する](https://www.nuget.org/packages/Microsoft.Office.js/)こともできます。
 
@@ -100,7 +100,6 @@ Word のプロキシ オブジェクトには、オブジェクト モデルに�
 
 次の例では、コマンドのキューが機能する仕組みを示しています。**context.sync()** が呼び出されると、本文テキストを読み込むコマンドが Word で実行されます。次に、Word の本文にテキストを挿入するコマンドが生成されます。その結果は本文のプロキシ オブジェクトに返されます。Word JavaScript API の **body.text** プロパティの値は、テキストが Word 文書に挿入される<u>前</u>の Word 文書本文の値です。
 
-
 ```js
 // Run a batch operation against the Word JavaScript API.
 Word.run(function (context) {
@@ -123,10 +122,6 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>Word JavaScript API オープン仕様
-
-新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](../openspec.md) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
-
 ## <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 Word JavaScript API 要件セットの詳細については、「[Word JavaScript API の要件セット](../requirement-sets/word-api-requirement-sets.md)」の記事を参照してください。
@@ -137,6 +132,7 @@ Word JavaScript API の詳細については、[Word JavaScript API リファレ
 
 ## <a name="see-also"></a>関連項目
 
-* [Word アドインの概要](/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
-* [GitHub の Word アドインのサンプル](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Word アドインの概要](/office/dev/add-ins/word/word-add-ins-programming-overview)
+- [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
+- [GitHub の Word アドインのサンプル](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [API オープン仕様](../openspec/openspec.md)

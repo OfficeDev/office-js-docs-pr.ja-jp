@@ -3,12 +3,12 @@ title: Office Online でアドインをデバッグする
 description: Office Online を使用してアドインのテストとデバッグを行う方法
 ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: f6cdb1f0b92a8519315bcff272cd1bc235c57653
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337182"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910167"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Office Online でアドインをデバッグする
 
@@ -24,7 +24,7 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
   > [!NOTE]
   > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
      
-- Office 365 (SharePoint Online) 上でアドイン カタログをセットアップするアドイン カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アドイン カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
+- Office 365 (SharePoint Online) 上でアプリ カタログをセットアップするアプリ カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アプリ カタログのドキュメント ライブラリをセットアップすることができます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint のアプリ カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」をご覧ください。
     
 
 ## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>Excel Online または Word Online からアドインをデバッグする
@@ -42,7 +42,7 @@ Office Online を使用してアドインをデバッグするには、
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. SharePoint のアドイン カタログにある Office アドイン ライブラリにマニフェストをアップロードします。
+3. SharePoint のアプリ カタログにある Office アドイン ライブラリにマニフェストをアップロードします。
     
 4. Office 365 のアプリ起動ツールから Excel Online または Word Online を起動し、新しいドキュメントを開きます。
     
