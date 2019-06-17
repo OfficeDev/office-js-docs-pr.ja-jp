@@ -1,14 +1,14 @@
 ---
 title: Word アドインの概要
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
+ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910281"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "34933773"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -74,15 +74,11 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="next-steps"></a>次の手順
 
-最初の Word アドインを作成する準備はできましたか?「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。また、対話式の「[作業の開始エクスペリエンス](/office/dev/add-ins/?product=Word)」も使用できます。[アドインのマニフェスト](../develop/add-in-manifests.md)を使用して、アドインがホストされている場所や表示方法の説明と、アクセス許可およびその他の情報の定義を行います。
+最初の Word アドインを作成する準備ができたら「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。[アドインのマニフェスト](../develop/add-in-manifests.md) を使用して、アドインがホストされている場所や表示方法の説明、アクセス許可およびその他の情報の定義を行います。
 
 ユーザーにとって魅力的なエクスペリエンスを提供する世界クラスの Word アドインを設計する方法の詳細については、「[設計のガイドライン](../design/add-in-design.md)」と「[ベスト プラクティス](../concepts/add-in-development-best-practices.md)」を参照してください。
 
 アドインを作成したら、ネットワーク共有、アプリ カタログ、または AppSource に[発行](../publish/publish.md)できます。
-
-## <a name="whats-coming-up-for-word-add-ins"></a>今後の Word アドイン
-
-新しい Word アドイン用の API の設計と開発にあたり、[API のオープン仕様](/office/dev/add-ins/reference/openspec/openspec)ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 ## <a name="see-also"></a>関連項目
 
