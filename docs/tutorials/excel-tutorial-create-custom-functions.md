@@ -1,16 +1,16 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 06/15/2019
+ms.date: 06/17/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: c2eedee19cf4a612c83b7a45f7c5c5dc3b3f6937
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: 70c1d68f585bd4db43c8d66a6fafd142556bd03b
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997387"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059805"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -27,7 +27,7 @@ ms.locfileid: "34997387"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (バージョン1810以降) または Excel Online
+* Windows 上の Excel (バージョン1904以降、Office 365 サブスクリプションに接続されている) または web 上の Excel
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 

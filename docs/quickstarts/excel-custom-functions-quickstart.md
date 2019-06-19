@@ -1,15 +1,15 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4bf0d6a5bf020ee4196ce89d763fa994b3fd489c
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706043"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059931"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -19,7 +19,11 @@ ms.locfileid: "34706043"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (バージョン1810以降) または Excel Online
+* Windows 上の Excel (バージョン1904以降、Office 365 サブスクリプションに接続されている) または web 上の Excel
+* Excel カスタム関数は Office on Mac でサポートされています (Office 365 サブスクリプションに接続されています)。また、このチュートリアルへの更新はまもなく公開されます。
+
+>[!NOTE]
+>Excel カスタム関数は Office 2019 (1 回限りの購入) ではサポートされていません。
 
 ## <a name="build-your-first-custom-functions-project"></a>最初のカスタム関数プロジェクトを作成する
 

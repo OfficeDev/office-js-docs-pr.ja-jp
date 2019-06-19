@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Excel カスタム関数をローカライズします。
 title: カスタム関数をローカライズする
 localization_priority: Normal
-ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 7c289f65a7d75f1c1c07770d43e09f92568ca73b
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628033"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059714"
 ---
 # <a name="localize-custom-functions"></a>カスタム関数をローカライズする
 
 アドインとカスタム関数名の両方をローカライズできます。 関数の JSON ファイルでローカライズされた関数名を指定し、XML マニフェストファイルでロケール情報を指定する必要があります。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!IMPORTANT]
 > 自動生成されたメタデータはローカライズには使用できないため、JSON ファイルを手動で更新する必要があります。
@@ -98,12 +96,12 @@ ms.locfileid: "33628033"
 
 アドインのローカライズプロセスの詳細については、「 [Office アドインのローカライズ](../develop/localization.md#control-localization-from-the-manifest)」を参照してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [カスタム関数の名前付け規則](custom-functions-naming.md)について、または[エラー処理のベストプラクティス](custom-functions-errors.md)を検出する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
-* [カスタム関数の JSON メタデータを自動生成します](custom-functions-json-autogeneration.md)
+* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
 * [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

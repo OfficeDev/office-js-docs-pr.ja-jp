@@ -287,6 +287,9 @@
                 - name: ベスト プラクティス
                   href: excel/custom-functions-best-practices.md
                   displayName: Excel
+                - name: COM アドインと XLL の UDF 互換性要件
+                  href: excel/xll-compatibility-requirements.md
+                  displayName: Excel
                 - name: デバッグ
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
@@ -780,7 +783,7 @@
           href: reference/manifest/permissions.md
         - name: PhoneSettings
           href: reference/manifest/phonesettings.md
-        - name: Id
+        - name: ProgId
           href: reference/manifest/progid.md
         - name: プロバイダー
           href: reference/manifest/providername.md

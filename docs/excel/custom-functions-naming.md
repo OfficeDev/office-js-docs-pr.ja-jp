@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706079"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059827"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
 カスタム関数は、JSON メタデータファイルの**id**および**name**プロパティによって識別されます。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 - この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。 
 - 関数`name`は、Excel でユーザーに表示される表示名として使用されます。 
@@ -35,7 +33,7 @@ Excel は、組み込み関数名 (など`SUM`) に大文字を使用します�
 
 - A1 から XFD1048576 のセル、または R1C1 から R1048576C16384 までのセル。
 
-- 任意の Excel 4.0 マクロ関数 ( `RUN`、 `ECHO`など)。  これらの関数の完全な一覧については、[この記事](https://www.microsoft.com/en-us/download/details.aspx?id=1465)を参照してください。
+- 任意の Excel 4.0 マクロ関数 ( `RUN`、 `ECHO`など)。  これらの関数の完全な一覧については、「 [Excel マクロ関数リファレンスドキュメント](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)」を参照してください。
 
 ## <a name="naming-conflicts"></a>名前付けの競合
 

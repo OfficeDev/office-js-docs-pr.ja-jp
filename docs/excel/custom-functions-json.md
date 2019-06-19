@@ -1,20 +1,18 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: e51e4e8ee89eb1f345ee0c564e9b2ff8119806b2
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706124"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059861"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
 Excel アドイン内で[カスタム関数](custom-functions-overview.md)を定義する場合、アドインプロジェクトには、カスタム関数を登録してエンドユーザーが使用できるようにするために excel が必要とする情報を提供する JSON メタデータファイルが含まれています。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 このファイルは、次のいずれかの方法で生成されます。
 
@@ -113,7 +111,7 @@ JSON ファイルをホストするサーバーでは、カスタム関数を Ex
 ```
 
 > [!NOTE]
-> 完全な JSON ファイルのサンプルは、[OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub リポジトリにあります。
+> 完全なサンプル JSON ファイルは、 [Officedev/Excel-カスタム機能](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)GitHub リポジトリのコミット履歴で入手できます。 JSON を自動的に生成するようにプロジェクトが調整されているため、手書きの JSON の完全なサンプルは、プロジェクトの以前のバージョンでのみ使用できます。
 
 ## <a name="functions"></a>functions 
 

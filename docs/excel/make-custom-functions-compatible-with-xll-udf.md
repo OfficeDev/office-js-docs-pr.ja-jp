@@ -1,14 +1,14 @@
 ---
 title: XLL ユーザー定義関数を使用してカスタム関数を拡張する
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする (プレビュー)
-ms.date: 05/08/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951887"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059693"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する (プレビュー)
 
@@ -22,23 +22,22 @@ ms.locfileid: "33951887"
 
 カスタム関数に対応する XLL を設定するには、 `FileName` xll のを指定します。 ユーザーが XLL から関数を含むブックを開くと、Excel は関数を互換性のある関数に変換します。 ブックは、Windows の Excel で開いたときに XLL を使用し、オンラインまたは macOS を開いたときに Excel アドインのカスタム関数を使用します。
 
-次の例は、COM アドインと XLL の両方を同等として指定する方法を示しています。 多くの場合、この例は完全にコンテキストで指定します。 これらは、 `FileName`それぞれに`ProgID`よって識別されます。 COM アドインの互換性の詳細については、「[既存の com アドインと互換性のある Excel アドインを作成](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)する」を参照してください。
+次の例は、COM アドインと XLL の両方を同等として指定する方法を示しています。 多くの場合、この例は完全にコンテキストで指定します。 これらは、 `FileName`それぞれに`ProgId`よって識別されます。 要素`EquivalentAddins`は、終了`VersionOverrides`タグの直前に配置する必要があります。 COM アドインの互換性の詳細については、「[既存の com アドインと互換性のある Excel アドインを作成](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)する」を参照してください。
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
 
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+    <EquivalentAddin>
+      <FileName>contosofunctions.xll</FileName>
+      <Type>XLL</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
 </VersionOverrides>
 ```
 
@@ -61,7 +60,7 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 | サポートされるファイル形式 | .XLSX、.XLSB、.XLSM、XLS | .XLSX、.XLSB、.XLSM | .XLSX、.XLSB、.XLSM |
 | 数式オートコンプリート | いいえ | はい | はい |
 | ストリーミング | XlfRTD および XLL コールバックを使用して可能。 | いいえ | はい |
-| 関数のローカライズ | 不要 | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | はい |
+| 関数のローカライズ | いいえ | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | はい |
 | 揮発性関数 | はい | はい | はい |
 | マルチスレッドの再計算のサポート | はい | はい | はい |
 | 計算動作 | UI がありません。 計算中に Excel が応答しなくなることがあります。 | ユーザーには #BUSY が表示されます。 を返します。 | ユーザーには #BUSY が表示されます。 を返します。 |
@@ -71,4 +70,4 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 
 - [既存の COM アドインと互換性のある Excel アドインを作成する](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-- [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+- [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)

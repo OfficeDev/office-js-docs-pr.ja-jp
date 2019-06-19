@@ -1,14 +1,14 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 7bc907157810ce88330fe41b21ca6ff115525491
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: f20fd00cb751cc1ab258db6442785f67f3460817
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706058"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059882"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -16,8 +16,6 @@ ms.locfileid: "34706058"
 - [オプションのパラメーター](#custom-functions-optional-parameters)
 - [範囲パラメーター](#range-parameters)
 - [呼び出しコンテキストパラメーター](#invocation-parameter)
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>カスタム関数の省略可能なパラメーター
 

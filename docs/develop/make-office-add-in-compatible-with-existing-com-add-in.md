@@ -1,14 +1,14 @@
 ---
 title: Office アドインを既存の COM アドインと互換できるようにする
 description: Office アドインと同等の COM アドインの互換性を有効にする
-ms.date: 06/13/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1dd6de5e07d835cc017f95cd1a992a5f5d188ef1
-ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
+ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "34933759"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059721"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>既存の COM アドインと互換性のある Office アドインを作成する (プレビュー)
 
@@ -23,18 +23,17 @@ ms.locfileid: "34933759"
 
 Office アドインと COM アドインの互換性を有効にするには、Office アドインの[マニフェスト](add-in-manifests.md)で同等の COM アドインを特定します。 その後、office アドインの両方がインストールされている場合は、Windows で office アドインではなく COM アドインが使用されます。
 
-次の例は、COM アドインを同等のアドインとして指定するマニフェストの一部を示しています。 `ProgID`要素の値は、COM アドインを識別します。
+次の例は、COM アドインを同等のアドインとして指定するマニフェストの一部を示しています。 `ProgId`要素の値は COM アドインを識別し、 `EquivalentAddins`要素は終了`VersionOverrides`タグの直前に配置する必要があります。
 
 ```xml
 <VersionOverrides>
   ...
   <EquivalentAddins>
     <EquivalentAddin>
-      <ProgID>ContosoCOMAddin</ProgID>
+      <ProgId>ContosoCOMAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
   <EquivalentAddins>
-  ...
 </VersionOverrides>
 ```
 
