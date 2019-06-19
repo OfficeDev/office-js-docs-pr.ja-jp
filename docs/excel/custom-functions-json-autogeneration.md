@@ -1,20 +1,18 @@
 ---
-ms.date: 06/10/2019
+ms.date: 06/17/2019
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 246cd53c4ff151dce7422e67cf49e0b5508b672c
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910302"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059832"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
 Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、JSDoc タグが使用されます。 JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。
 
@@ -140,7 +138,7 @@ TypeScript 構文: @param 名 _の説明_
 * 省略可能なパラメーターを使用する。 例: `function f(text?: string)`
 * パラメーターに既定値を指定する。 例: `function f(text: string = "abc")`
 
-@param の詳しい説明については、「[JSDoc](https://usejsdoc.org/tags-param.html)」を参照してください。
+@param の詳しい説明については、「[JSDoc](https://jsdoc.app/tags-param.html)」を参照してください。
 
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。

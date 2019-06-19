@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Excel のカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
 localization_priority: Priority
-ms.openlocfilehash: bfb3acde2e03c8fc13d312977a2ab3c85107a42f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 30ff1b91db8bf7f0183a44f1e7e078a6308c1351
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910309"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059742"
 ---
 # <a name="authentication-for-custom-functions"></a>カスタム関数の認証
 
 一部のシナリオでは、保護されたリソースにアクセスするために、ユーザーを認証する必要があります。 カスタム関数は特定の認証方法を必要としませんが、カスタム関数は、アドインの作業ウィンドウと他の UI 要素とは別のランタイムで実行されます。 このため、`OfficeRuntime.storage` オブジェクトとダイアログ API を使用して 2 つのランタイム間でデータを受け渡しする必要があります。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage オブジェクト
 

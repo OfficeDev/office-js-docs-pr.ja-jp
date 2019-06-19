@@ -1,22 +1,20 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Priority
-ms.openlocfilehash: da9f3ee3243b52df5d49f32c8ab6cbada97e17ca
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 2e01c981dd71a4b6eebf0e191302ba2f8f71ef2a
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628131"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059840"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 
 カスタム関数がリモート サービスを呼び出す場合は、リモート サービスへのネットワークの呼び出し数を減らすバッチ処理のパターンを使用できます。 バッチ処理をしたネットワーク ラウンド トリップのウェブ サービスへのすべての呼び出しを、1 回に減らします。 これは、ワークシートが再計算するときに最適な方法です。
 
 たとえば、別のユーザーがスプレッドシートの 100 セル内でカスタム関数を使用し、スプレッドシートを再計算した場合、カスタム関数は 100 回実行され、100 回ネットワークの呼び出しを行います。 バッチ処理のパターンを使用すると、1 つのネットワークの呼び出しで 100 の計算すべてを結合することができます。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>完成したサンプルを表示する
 
