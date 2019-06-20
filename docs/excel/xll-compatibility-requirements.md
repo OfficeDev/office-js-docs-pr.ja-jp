@@ -1,21 +1,21 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: COM アドインと XLL UDF 互換性機能を使用するための要件について確認します。
 title: COM アドインと XLL UDF 要件
 localization_priority: Priority
-ms.openlocfilehash: a707f5413f05e4f3d65ca039e1ffbc88aecbe252
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 133c9f20c2b82051ee3d42488596707e99a364bc
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432237"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059686"
 ---
 # <a name="com-add-in-and-xll-udf-compatibility-requirements-preview"></a>COM アドインと XLL UDF 互換性要件 (プレビュー)
 
-COM アドインと XLL UDF 互換性は、現在次のプラットフォームで使用できます。
+COM アドインと XLL UDF 互換性は、現在次のプラットフォームで使用できます。いずれも Office 365 サブスクリプションが必要です。
 
-- Excel Online
-- Windows での Excel (64 ビット バージョン 1810 以降)
+- Web 上の Excel
+- Windows での Excel (バージョン 1904 以降)
 - Excel for Mac (バージョン 13.329 以降)
 
 ## <a name="excel-online"></a>Excel Online

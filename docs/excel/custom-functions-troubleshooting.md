@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
 localization_priority: Priority
-ms.openlocfilehash: 999b1fb9b89050ab5c6bcf87e1aac9d2fce13702
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: f407e103d8f628710c5f58a9787b3a802dcd39c8
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952055"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059903"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -65,6 +65,10 @@ CustomFunctions.associate("ADD", add);
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
 
 "We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-for-windows"></a>Windows 版 Excel でランタイム ログが「TypeError: Network request failed」と報告する
+
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
