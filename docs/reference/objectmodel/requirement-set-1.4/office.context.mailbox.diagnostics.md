@@ -1,89 +1,89 @@
 ---
 title: Office.--の要件セット1.4
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e6fcad43628c88d68fccbbfaf1321201bb8394e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: edbaa100ba82b0dd1077e518c1090c07890a3d41
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451907"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127409"
 ---
-# <a name="diagnostics"></a><span data-ttu-id="7c139-102">診断</span><span class="sxs-lookup"><span data-stu-id="7c139-102">diagnostics</span></span>
+# <a name="diagnostics"></a><span data-ttu-id="4140b-102">診断</span><span class="sxs-lookup"><span data-stu-id="4140b-102">diagnostics</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="7c139-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="7c139-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="4140b-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="4140b-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span></span>
 
-<span data-ttu-id="7c139-104">Outlook アドインに診断情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="7c139-104">Provides diagnostic information to an Outlook add-in.</span></span>
+<span data-ttu-id="4140b-104">Outlook アドインに診断情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="4140b-104">Provides diagnostic information to an Outlook add-in.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7c139-105">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-105">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="4140b-105">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-105">Requirements</span></span>
 
-|<span data-ttu-id="7c139-106">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-106">Requirement</span></span>| <span data-ttu-id="7c139-107">値</span><span class="sxs-lookup"><span data-stu-id="7c139-107">Value</span></span>|
+|<span data-ttu-id="4140b-106">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-106">Requirement</span></span>| <span data-ttu-id="4140b-107">値</span><span class="sxs-lookup"><span data-stu-id="4140b-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7c139-108">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7c139-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7c139-109">1.0</span><span class="sxs-lookup"><span data-stu-id="7c139-109">1.0</span></span>|
-|[<span data-ttu-id="7c139-110">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7c139-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="7c139-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="7c139-111">ReadItem</span></span>|
-|[<span data-ttu-id="7c139-112">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7c139-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="7c139-113">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7c139-113">Compose or Read</span></span>|
+|[<span data-ttu-id="4140b-108">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="4140b-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="4140b-109">1.0</span><span class="sxs-lookup"><span data-stu-id="4140b-109">1.0</span></span>|
+|[<span data-ttu-id="4140b-110">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="4140b-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="4140b-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="4140b-111">ReadItem</span></span>|
+|[<span data-ttu-id="4140b-112">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="4140b-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="4140b-113">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="4140b-113">Compose or Read</span></span>|
 
-### <a name="members"></a><span data-ttu-id="7c139-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="7c139-114">Members</span></span>
+### <a name="members"></a><span data-ttu-id="4140b-114">Members</span><span class="sxs-lookup"><span data-stu-id="4140b-114">Members</span></span>
 
-####  <a name="hostname-string"></a><span data-ttu-id="7c139-115">hostName :String</span><span class="sxs-lookup"><span data-stu-id="7c139-115">hostName :String</span></span>
+#### <a name="hostname-string"></a><span data-ttu-id="4140b-115">hostName: String</span><span class="sxs-lookup"><span data-stu-id="4140b-115">hostName: String</span></span>
 
-<span data-ttu-id="7c139-116">ホスト アプリケーションの名前を表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="7c139-116">Gets a string that represents the name of the host application.</span></span>
+<span data-ttu-id="4140b-116">ホスト アプリケーションの名前を表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="4140b-116">Gets a string that represents the name of the host application.</span></span>
 
-<span data-ttu-id="7c139-117">文字列は、値 `Outlook`、`OutlookIOS`、`OutlookWebApp` のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="7c139-117">A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.</span></span>
+<span data-ttu-id="4140b-117">文字列は、値 `Outlook`、`OutlookIOS`、`OutlookWebApp` のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="4140b-117">A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7c139-118">型</span><span class="sxs-lookup"><span data-stu-id="7c139-118">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="4140b-118">型</span><span class="sxs-lookup"><span data-stu-id="4140b-118">Type</span></span>
 
-*   <span data-ttu-id="7c139-119">String</span><span class="sxs-lookup"><span data-stu-id="7c139-119">String</span></span>
+*   <span data-ttu-id="4140b-119">String</span><span class="sxs-lookup"><span data-stu-id="4140b-119">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7c139-120">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-120">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="4140b-120">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-120">Requirements</span></span>
 
-|<span data-ttu-id="7c139-121">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-121">Requirement</span></span>| <span data-ttu-id="7c139-122">値</span><span class="sxs-lookup"><span data-stu-id="7c139-122">Value</span></span>|
+|<span data-ttu-id="4140b-121">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-121">Requirement</span></span>| <span data-ttu-id="4140b-122">値</span><span class="sxs-lookup"><span data-stu-id="4140b-122">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7c139-123">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7c139-123">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7c139-124">1.0</span><span class="sxs-lookup"><span data-stu-id="7c139-124">1.0</span></span>|
-|[<span data-ttu-id="7c139-125">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7c139-125">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="7c139-126">ReadItem</span><span class="sxs-lookup"><span data-stu-id="7c139-126">ReadItem</span></span>|
-|[<span data-ttu-id="7c139-127">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7c139-127">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="7c139-128">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7c139-128">Compose or Read</span></span>|
+|[<span data-ttu-id="4140b-123">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="4140b-123">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="4140b-124">1.0</span><span class="sxs-lookup"><span data-stu-id="4140b-124">1.0</span></span>|
+|[<span data-ttu-id="4140b-125">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="4140b-125">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="4140b-126">ReadItem</span><span class="sxs-lookup"><span data-stu-id="4140b-126">ReadItem</span></span>|
+|[<span data-ttu-id="4140b-127">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="4140b-127">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="4140b-128">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="4140b-128">Compose or Read</span></span>|
 
-####  <a name="hostversion-string"></a><span data-ttu-id="7c139-129">hostVersion :String</span><span class="sxs-lookup"><span data-stu-id="7c139-129">hostVersion :String</span></span>
+#### <a name="hostversion-string"></a><span data-ttu-id="4140b-129">hostVersion: String</span><span class="sxs-lookup"><span data-stu-id="4140b-129">hostVersion: String</span></span>
 
-<span data-ttu-id="7c139-130">ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="7c139-130">Gets a string that represents the version of either the host application or the Exchange Server.</span></span>
+<span data-ttu-id="4140b-130">ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="4140b-130">Gets a string that represents the version of either the host application or the Exchange Server.</span></span>
 
-<span data-ttu-id="7c139-p101">メール アドインを Outlook デスクトップ クライアントまたは Outlook for iOS で実行している場合、`hostVersion` プロパティは、ホスト アプリケーションである Outlook のバージョンを返します。Outlook Web App では、プロパティは、Exchange Server のバージョンを返します。たとえば、文字列 `15.0.468.0` です。</span><span class="sxs-lookup"><span data-stu-id="7c139-p101">If the mail add-in is running on the Outlook desktop client or Outlook for iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook Web App, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.</span></span>
+<span data-ttu-id="4140b-131">メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。</span><span class="sxs-lookup"><span data-stu-id="4140b-131">If the mail add-in is running on the Outlook desktop client or iOS, the `hostVersion` property returns the version of the host application, Outlook.</span></span> <span data-ttu-id="4140b-132">Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。</span><span class="sxs-lookup"><span data-stu-id="4140b-132">In Outlook on the web, the property returns the version of the Exchange Server.</span></span> <span data-ttu-id="4140b-133">たとえば、文字列 `15.0.468.0` です。</span><span class="sxs-lookup"><span data-stu-id="4140b-133">An example is the string `15.0.468.0`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7c139-134">型</span><span class="sxs-lookup"><span data-stu-id="7c139-134">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="4140b-134">型</span><span class="sxs-lookup"><span data-stu-id="4140b-134">Type</span></span>
 
-*   <span data-ttu-id="7c139-135">String</span><span class="sxs-lookup"><span data-stu-id="7c139-135">String</span></span>
+*   <span data-ttu-id="4140b-135">String</span><span class="sxs-lookup"><span data-stu-id="4140b-135">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7c139-136">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-136">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="4140b-136">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-136">Requirements</span></span>
 
-|<span data-ttu-id="7c139-137">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-137">Requirement</span></span>| <span data-ttu-id="7c139-138">値</span><span class="sxs-lookup"><span data-stu-id="7c139-138">Value</span></span>|
+|<span data-ttu-id="4140b-137">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-137">Requirement</span></span>| <span data-ttu-id="4140b-138">値</span><span class="sxs-lookup"><span data-stu-id="4140b-138">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7c139-139">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7c139-139">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7c139-140">1.0</span><span class="sxs-lookup"><span data-stu-id="7c139-140">1.0</span></span>|
-|[<span data-ttu-id="7c139-141">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7c139-141">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="7c139-142">ReadItem</span><span class="sxs-lookup"><span data-stu-id="7c139-142">ReadItem</span></span>|
-|[<span data-ttu-id="7c139-143">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7c139-143">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="7c139-144">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7c139-144">Compose or Read</span></span>|
+|[<span data-ttu-id="4140b-139">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="4140b-139">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="4140b-140">1.0</span><span class="sxs-lookup"><span data-stu-id="4140b-140">1.0</span></span>|
+|[<span data-ttu-id="4140b-141">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="4140b-141">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="4140b-142">ReadItem</span><span class="sxs-lookup"><span data-stu-id="4140b-142">ReadItem</span></span>|
+|[<span data-ttu-id="4140b-143">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="4140b-143">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="4140b-144">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="4140b-144">Compose or Read</span></span>|
 
-####  <a name="owaview-string"></a><span data-ttu-id="7c139-145">OWAView :String</span><span class="sxs-lookup"><span data-stu-id="7c139-145">OWAView :String</span></span>
+#### <a name="owaview-string"></a><span data-ttu-id="4140b-145">OWAView: String</span><span class="sxs-lookup"><span data-stu-id="4140b-145">OWAView: String</span></span>
 
-<span data-ttu-id="7c139-146">Outlook Web App の現在のビューを表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="7c139-146">Gets a string that represents the current view of Outlook Web App.</span></span>
+<span data-ttu-id="4140b-146">Web 上の Outlook の現在のビューを表す文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="4140b-146">Gets a string that represents the current view of Outlook on the web.</span></span>
 
-<span data-ttu-id="7c139-147">返される文字列は、値 `OneColumn`、`TwoColumns`、または `ThreeColumns` のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="7c139-147">The returned string can be one of the following values: `OneColumn`, `TwoColumns`, or `ThreeColumns`.</span></span>
+<span data-ttu-id="4140b-147">返される文字列は、値 `OneColumn`、`TwoColumns`、または `ThreeColumns` のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="4140b-147">The returned string can be one of the following values: `OneColumn`, `TwoColumns`, or `ThreeColumns`.</span></span>
 
-<span data-ttu-id="7c139-148">ホスト アプリケーションが Outlook Web App ではない場合、このプロパティにアクセスすると `undefined` が返されます。</span><span class="sxs-lookup"><span data-stu-id="7c139-148">If the host application is not Outlook Web App, then accessing this property results in `undefined`.</span></span>
+<span data-ttu-id="4140b-148">ホストアプリケーションが web 上の Outlook ではない場合、このプロパティにアクセスする`undefined`と、になります。</span><span class="sxs-lookup"><span data-stu-id="4140b-148">If the host application is not Outlook on the web, then accessing this property results in `undefined`.</span></span>
 
-<span data-ttu-id="7c139-149">Outlook Web App には、画面とウィンドウの幅、および表示可能な列数に応じて 3 つのビューがあります。</span><span class="sxs-lookup"><span data-stu-id="7c139-149">Outlook Web App has three views that correspond to the width of the screen and the window, and the number of columns that can be displayed:</span></span>
+<span data-ttu-id="4140b-149">Outlook on the web には、画面とウィンドウの幅、および表示できる列の数に対応する3つのビューがあります。</span><span class="sxs-lookup"><span data-stu-id="4140b-149">Outlook on the web has three views that correspond to the width of the screen and the window, and the number of columns that can be displayed:</span></span>
 
-*   <span data-ttu-id="7c139-p102">画面幅が狭い場合に表示される `OneColumn`。Outlook Web App は、この単一列レイアウトを使用してスマートフォンの画面全体への表示を行います。</span><span class="sxs-lookup"><span data-stu-id="7c139-p102">`OneColumn`, which is displayed when the screen is narrow. Outlook Web App uses this single-column layout on the entire screen of a smartphone.</span></span>
-*   <span data-ttu-id="7c139-p103">画面幅がやや広い場合に表示される `TwoColumns`。Outlook Web App は、ほとんどのタブレットでこのビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="7c139-p103">`TwoColumns`, which is displayed when the screen is wider. Outlook Web App uses this view on most tablets.</span></span>
-*   <span data-ttu-id="7c139-p104">画面幅が広い場合に表示される `ThreeColumns`。Outlook Web App は、デスクトップ コンピューターのフル スクリーン ウィンドウなどでこのビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="7c139-p104">`ThreeColumns`, which is displayed when the screen is wide. For example, Outlook Web App uses this view in a full screen window on a desktop computer.</span></span>
+*   <span data-ttu-id="4140b-150">画面幅が狭い場合に表示される `OneColumn`。</span><span class="sxs-lookup"><span data-stu-id="4140b-150">`OneColumn`, which is displayed when the screen is narrow.</span></span> <span data-ttu-id="4140b-151">Outlook on the web では、スマートフォンの画面全体でこのような単一の列のレイアウトを使用します。</span><span class="sxs-lookup"><span data-stu-id="4140b-151">Outlook on the web uses this single-column layout on the entire screen of a smartphone.</span></span>
+*   <span data-ttu-id="4140b-152">画面幅がやや広い場合に表示される `TwoColumns`。</span><span class="sxs-lookup"><span data-stu-id="4140b-152">`TwoColumns`, which is displayed when the screen is wider.</span></span> <span data-ttu-id="4140b-153">Web 上の Outlook は、ほとんどのタブレットでこのビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="4140b-153">Outlook on the web uses this view on most tablets.</span></span>
+*   <span data-ttu-id="4140b-154">画面幅が広い場合に表示される `ThreeColumns`。</span><span class="sxs-lookup"><span data-stu-id="4140b-154">`ThreeColumns`, which is displayed when the screen is wide.</span></span> <span data-ttu-id="4140b-155">たとえば、Outlook on the web では、このビューをデスクトップコンピューターの全画面表示ウィンドウで使用します。</span><span class="sxs-lookup"><span data-stu-id="4140b-155">For example, Outlook on the web uses this view in a full screen window on a desktop computer.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="7c139-156">型</span><span class="sxs-lookup"><span data-stu-id="7c139-156">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="4140b-156">型</span><span class="sxs-lookup"><span data-stu-id="4140b-156">Type</span></span>
 
-*   <span data-ttu-id="7c139-157">String</span><span class="sxs-lookup"><span data-stu-id="7c139-157">String</span></span>
+*   <span data-ttu-id="4140b-157">String</span><span class="sxs-lookup"><span data-stu-id="4140b-157">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="7c139-158">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-158">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="4140b-158">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-158">Requirements</span></span>
 
-|<span data-ttu-id="7c139-159">要件</span><span class="sxs-lookup"><span data-stu-id="7c139-159">Requirement</span></span>| <span data-ttu-id="7c139-160">値</span><span class="sxs-lookup"><span data-stu-id="7c139-160">Value</span></span>|
+|<span data-ttu-id="4140b-159">要件</span><span class="sxs-lookup"><span data-stu-id="4140b-159">Requirement</span></span>| <span data-ttu-id="4140b-160">値</span><span class="sxs-lookup"><span data-stu-id="4140b-160">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="7c139-161">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7c139-161">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="7c139-162">1.0</span><span class="sxs-lookup"><span data-stu-id="7c139-162">1.0</span></span>|
-|[<span data-ttu-id="7c139-163">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7c139-163">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="7c139-164">ReadItem</span><span class="sxs-lookup"><span data-stu-id="7c139-164">ReadItem</span></span>|
-|[<span data-ttu-id="7c139-165">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7c139-165">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="7c139-166">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7c139-166">Compose or Read</span></span>|
+|[<span data-ttu-id="4140b-161">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="4140b-161">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="4140b-162">1.0</span><span class="sxs-lookup"><span data-stu-id="4140b-162">1.0</span></span>|
+|[<span data-ttu-id="4140b-163">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="4140b-163">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="4140b-164">ReadItem</span><span class="sxs-lookup"><span data-stu-id="4140b-164">ReadItem</span></span>|
+|[<span data-ttu-id="4140b-165">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="4140b-165">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="4140b-166">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="4140b-166">Compose or Read</span></span>|
