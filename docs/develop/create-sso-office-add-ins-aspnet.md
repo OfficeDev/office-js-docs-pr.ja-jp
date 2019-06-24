@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450164"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128161"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -153,7 +153,7 @@ ms.locfileid: "32450164"
 
         2. 既存のファイルの名前を、`MailAppVersionOverridesV1_1.old` に変更します。
 
-        3. 変更したこのファイルを、フォルダーにコピーします。[変更済みの MailAppVersionOverrides スキーマ](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. 変更したこのファイルを、フォルダーにコピーします。[変更済みの MailAppVersionOverrides スキーマ](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Visual Studio でメインのマニフェスト ファイルを保存して閉じます。
 
@@ -415,7 +415,7 @@ ms.locfileid: "32450164"
     }
     ```
 
-1. `TODO13B` を次のコードに置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO13B` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * エラー 70011 には複数の意味があります。無効なスコープ (アクセス許可) が要求されていることを意味する場合、このアドインに重要となります。コードでは番号だけでなくエラーの説明全体を確認します。
     * アドインでは、エラーを報告する必要があります。

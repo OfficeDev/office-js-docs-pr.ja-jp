@@ -2,14 +2,14 @@
 title: スクリプトラボを使用して Office JavaScript API を探索する
 description: スクリプトラボを使用して、Office JS API とプロトタイプ機能を調査します。
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0bab566b08ba25dd3c01cff72f331b2dc9ce304d
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910191"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128656"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
 
@@ -17,26 +17,52 @@ ms.locfileid: "34910191"
 
 ## <a name="what-is-script-lab"></a>スクリプトラボとは
 
-スクリプトラボは、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、独自のコードのベースとしてサンプルを選択することもできます。 また、 [office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)にスニペットを追加してサンプルライブラリを拡張することも歓迎します。 スクリプトラボのもう1つの魅力的な機能は、ベータ版またはプレビュー機能を使用して試すことができます。
-
-> [!TIP]
-> ベータ版またはプレビューに参加するには、 [Office Insider プログラム](https://products.office.com/office-insider)にサインアップする必要がある場合があります。
+スクリプトラボは、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法について学習する必要があるユーザーのためのツールです。 これにより IntelliSense が提供され、Visual Studio Code で使用されるのと同じフレームワークである、使用可能なものと、モナコフレームワークに基づいて構築されているものがわかります。 スクリプトラボを使用すると、サンプルのライブラリにアクセスして、機能をすばやく試すことができます。また、サンプルを独自のコードの開始点として使用することもできます。 スクリプトラボを使用してプレビュー Api を試すこともできます。
 
 これまでに良好なことがありますか? この1分間のビデオを見て、実行中のスクリプトラボを確認してください。
 
-[![Excel、Word、PowerPoint Online で実行されているスクリプトラボを示すビデオをプレビューします。](../images/screenshot-wide-youtube.png 'スクリプトラボプレビューのビデオ')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、および PowerPoint で実行されているスクリプトラボを示すビデオをプレビューします。](../images/screenshot-wide-youtube.png 'スクリプトラボプレビューのビデオ')](https://aka.ms/scriptlabvideo)
 
-## <a name="script-lab-supported-clients"></a>スクリプトラボでサポートされているクライアント
+## <a name="key-features"></a>主な機能
+
+スクリプトラボ Office JavaScript API と prototype アドインの機能について調べるのに役立つさまざまな機能が用意されています。
+
+### <a name="explore-samples"></a>サンプルを検索する
+
+API を使用して特定のタスクを実行する方法を示す組み込みのサンプルスニペットのコレクションを使用して、すぐに作業を開始できます。 サンプルを実行すると、作業ウィンドウまたはドキュメントの結果をすぐに確認したり、サンプルを調べて API のしくみを確認したり、サンプルスニペットを使用して、独自のアドインのプロトタイプ機能の基礎として使用したりすることもできます。
+
+![サンプル](../images/script-lab-samples.jpg)
+
+### <a name="code-and-style"></a>コードとスタイル
+
+Office JS API を呼び出す JavaScript または TypeScript コードに加えて、各スニペットには、作業ウィンドウの外観を定義する、作業ウィンドウと CSS のコンテンツを定義する HTML マークアップも含まれています。 HTML マークアップと CSS をカスタマイズして、独自のアドインの作業ウィンドウデザインを試作する際に、要素の配置とスタイル設定を試すことができます。
+
+> [!TIP]
+> スニペット内でプレビュー Api を呼び出すには、スニペットのライブラリを更新して、ベータ CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) とプレビューの種類の定義`@types/office-js-preview`を使用する必要があります。 また、一部のプレビュー Api は、 [Office insider プログラム](https://products.office.com/office-insider)にサインアップし、Office の insider ビルドを実行している場合にのみアクセスできます。
+
+### <a name="save-and-share-snippets"></a>スニペットの保存と共有
+
+既定では、スクリプトラボで開いたスニペットはブラウザーのキャッシュに保存されます。 スニペットを完全に保存するには、それを[GitHub gist](https://gist.github.com)にエクスポートします。 独自にスニペットを保存するための secret gist を作成したり、他のユーザーと共有したりする予定がある場合は、共有された gist を作成します。
+
+![共有オプション](../images/script-lab-share.jpg)
+
+### <a name="import-snippets"></a>スニペットのインポート
+
+スニペットをスクリプトラボにインポートするには、スニペット YAML が格納されているパブリック[GitHub gist](https://gist.github.com)への URL を指定するか、スニペットの完全な yaml に貼り付けます。 この機能は、他のユーザーが自分のスニペットを GitHub gist に発行するか、スニペットの YAML を提供することによって、自分のスニペットを共有しているシナリオで役立つことがあります。
+
+![スニペットのインポートオプション](../images/script-lab-import-snippet.jpg)
+
+## <a name="supported-clients"></a>サポートされるクライアント
 
 スクリプトラボは、Excel、Word、および PowerPoint の次のクライアントでサポートされています。
 
-- Windows 上の office (Office 365 に接続)
-- Office for Mac (Office 365 に接続)
-- Office Online
 - Office 2013 以降 (Windows)
-- Office 2016 以降 (Mac 版)
+- Office 2016 以降の Mac
+- Web 上の Office
 
 ## <a name="next-steps"></a>次のステップ
+
+[Office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)の GitHub リポジトリに新しいスニペットを投稿することによって、スクリプトラボのサンプルライブラリを拡張することをお歓迎します。
 
 Office アドインを作成する準備ができたら、推奨されている Office アプリケーションの[5 分間のクイックスタート](/office/dev/add-ins/#5-minute-quick-starts)を参照してください。
 

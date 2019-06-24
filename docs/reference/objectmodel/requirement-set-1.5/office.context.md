@@ -1,14 +1,14 @@
 ---
 title: Office.context - 要件セット 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 4c923010aee7ae62eaef28b64b72140328a1e510
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 864fd8a92d30526cfb87c76754934fd9a9cbd827
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451865"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127318"
 ---
 # <a name="context"></a>context
 
@@ -33,11 +33,11 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 
 ### <a name="namespaces"></a>名前空間
 
-[mailbox](office.context.mailbox.md): Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
+[メールボックス](office.context.mailbox.md): Microsoft Outlook の outlook アドインオブジェクトモデルへのアクセスを提供します。
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: String
 
 Office ホスト アプリケーションの UI 用にユーザーが指定した RFC 1766 言語タグ形式のロケール (言語) を取得します。
 
@@ -75,16 +75,16 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-object"></a>officeTheme :Object
+#### <a name="officetheme-object"></a>officeTheme: オブジェクト
 
 Office テーマの色のプロパティにアクセスできるようにします。
 
 > [!NOTE]
-> このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメンバーは、iOS または Android の Outlook ではサポートされていません。
 
 Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Object
 
@@ -119,13 +119,13 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook15officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook15officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [RoamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
 

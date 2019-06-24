@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile - プレビュー要件セット
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 051615f28db420ad1d198e21d9a9eeb1cad3fe7a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451963"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127528"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -33,10 +33,10 @@ ms.locfileid: "32451963"
 
 ### <a name="members"></a>メンバー
 
-####  <a name="accounttype-string"></a>accountType :String
+#### <a name="accounttype-string"></a>accountType: String
 
 > [!NOTE]
-> 現在、このメンバーは Outlook 2016 for Mac 以降 (ビルド 16.9.1212 以降) でのみサポートされています。
+> このメンバーは、現在、Outlook 2016 以降の Mac (ビルド16.9.1212 以降) でのみサポートされています。
 
 メールボックスに関連付けられているユーザーのアカウントの種類を取得します。 次の表に使用可能な値を示します。
 
@@ -68,7 +68,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 ユーザーの表示名を取得します。
 
@@ -94,7 +94,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: String
 
 ユーザーの SMTP 電子メール アドレスを取得します。
 
@@ -120,7 +120,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>timeZone: String
 
 ユーザーの既定のタイム ゾーンを取得します。
 

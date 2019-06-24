@@ -1,16 +1,16 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 70c1d68f585bd4db43c8d66a6fafd142556bd03b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059805"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126982"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -27,7 +27,7 @@ ms.locfileid: "35059805"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上の Excel (バージョン1904以降、Office 365 サブスクリプションに接続されている) または web 上の Excel
+* Windows 上の Excel (バージョン1904以降、Office 365 サブスクリプションに接続されている) または web
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
@@ -62,7 +62,7 @@ ms.locfileid: "35059805"
     > [!NOTE]
     > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。
+4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
@@ -72,19 +72,19 @@ Windows の Excel でアドインをテストするには、次のコマンド�
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
 
-Excel Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+ブラウザー上の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
+カスタム関数アドインを使用するには、web 上の Excel で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 
-1. Excel Online で、**[挿入]** タブを選択して、**[アドイン]** を選択します。
+1. Excel で、[**挿入**] タブを選択し、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] アイコンが強調表示された状態で Excel Online にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] アイコンが強調表示されている web 上の Excel にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -149,7 +149,7 @@ Web からデータを統合することは、カスタム関数を使用して 
     npm run build
     ```
 
-4. 次の手順を実行して (Excel on Windows または Excel Online の場合)、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。 
+4. Excel on the web または Windows の場合は、次の手順を実行して、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
@@ -160,13 +160,13 @@ Web からデータを統合することは、カスタム関数を使用して 
 3. 使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。
     ![[個人用アドイン] ボックスの一覧で強調表示された Excel カスタム関数アドインを使用して、Excel の Excel にリボンを挿入する](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
 
-1. Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
+1. Excel で、[**挿入**] タブを選択し、[**アドイン**] を選択します。 ![[個人用アドイン] アイコンが強調表示されている web 上の Excel にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
 
-2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。 
+2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。 
+3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
 
 4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
@@ -233,7 +233,7 @@ Web からデータを統合することは、カスタム関数を使用して 
     npm run build
     ```
 
-3. 次の手順を実行して (Excel on Windows または Excel Online の場合)、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。 
+3. Excel on the web または Windows の場合は、次の手順を実行して、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。 
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
@@ -244,9 +244,9 @@ Web からデータを統合することは、カスタム関数を使用して 
 3. 使用可能なアドインの一覧から **[開発者向けアドイン]** セクションを見つけ、**銘柄コード** アドインを選択して登録します。
     ![[個人用アドイン] ボックスの一覧で強調表示された Excel カスタム関数アドインを使用して、Excel の Excel にリボンを挿入する](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
 
-1. Excel Online で **[挿入]** タブを選択し、**[アドイン]** を選択します。![[個人用アドイン] アイコンが強調表示されている Excel Online の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
+1. Excel で、[**挿入**] タブを選択し、[**アドイン**] を選択します。 ![[個人用アドイン] アイコンが強調表示されている web 上の Excel にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
 
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

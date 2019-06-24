@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
-ms.date: 03/22/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f9c69eb937b8931dde3e702cf1f287e0e8c5fdbc
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449961"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128032"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -52,7 +52,7 @@ ms.locfileid: "32449961"
 
 ユーザーは Office にサインインしていません。 コードでは、`getAccessTokenAsync` メソッドを再度呼び出して、[options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) パラメーターでオプション `forceAddAccount: true` を渡す必要があります。 ただし、この操作は複数回実行しないでください。 ユーザーはサインインしないと判断する可能性があります。
 
-Office Online では、このエラーが発生することはありません。 ユーザーの Cookie が失効している場合、Office Online はエラー 13006 を返します。
+Web 上の Office では、このエラーが発生することはありません。 ユーザーの Cookie が失効している場合、Office ではエラー 13006 を返します。
 
 ### <a name="13002"></a>13002
 
@@ -75,7 +75,7 @@ Office Online では、このエラーが発生することはありません。
 
 ### <a name="13006"></a>13006
 
-クライアント エラー。コードでは、ユーザーにサインアウトしてから Office を再起動するように指示するか、Office Online セッションを再開する必要があります。
+クライアント エラー。コードでは、ユーザーにサインアウトしてから Office を再起動するか、Office ブラウザー セッションを再開するように指示します。
 
 ### <a name="13007"></a>13007
 
@@ -101,7 +101,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13010"></a>13010
 
-ユーザーが Office Online でアドインを実行していて、Edge または Internet Explorer を使用しています。 ユーザーの Office 365 ドメインと、login.microsoftonline.com ドメインは、ブラウザー設定で異なるセキュリティ ゾーンに含まれています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。ユーザーの Office 365 ドメインと、login.microsoftonline.com ドメインは、ブラウザー設定の異なるセキュリティ ゾーンに含まれています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 

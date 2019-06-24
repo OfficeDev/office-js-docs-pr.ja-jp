@@ -1,16 +1,16 @@
 ---
 title: Word アドインのチュートリアル
 description: このチュートリアルでは、テキスト範囲、段落、画像、HTML、テーブル、コンテンツ コントロールを挿入 (および置換) する Word アドインを作成します。 テキストに書式を設定する方法と、コンテンツ コントロールにコンテンツを挿入 (および置換) する方法についても説明します。
-ms.date: 12/31/2018
+ms.date: 06/20/2019
 ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a9383128569a2cbe9b300ff9fee78d1dcb20e632
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451190"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126912"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -25,7 +25,7 @@ ms.locfileid: "32451190"
 
 ## <a name="prerequisites"></a>前提条件
 
-このチュートリアルを使用するには、以下のバージョンがインストールされている必要があります。 
+このチュートリアルを使用するには、以下のバージョンがインストールされている必要があります。
 
 - Word 2016、バージョン 1711 (ビルド 8730.1000 クイック実行) 以降。 このバージョンを入手するには、Office Insider への参加が必要になることがあります。 詳細については、「[Office Insider](https://products.office.com/office-insider?tab=tab-1)」を参照してください。
 
@@ -43,7 +43,7 @@ ms.locfileid: "32451190"
 
 3. `npm install` コマンドを実行して、package.json ファイルに一覧表示されているツールとライブラリをインストールします。 
 
-4. 「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」の手順を実行して、開発用コンピューターのオペレーティング システムの証明書を信頼します。
+4. 開発用のコンピューターのオペレーティングシステムの証明書を信頼するように、[自己署名証明書をインストール](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)する手順を実行します。
 
 ## <a name="insert-a-range-of-text"></a>テキスト範囲の挿入
 
@@ -110,7 +110,7 @@ ms.locfileid: "32451190"
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
                             "Start");
     ```
 
@@ -126,7 +126,7 @@ ms.locfileid: "32451190"
 
     - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Word Online: [Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Web ブラウザー:[サイドロード Office アドイン (web)](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
 
     - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

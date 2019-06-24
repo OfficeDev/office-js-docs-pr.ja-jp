@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.1
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d3681f369570995c07256171fb6a65482648e85e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 09956256f856db6a8bea3053ecb64a2ac2a5fcd9
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450381"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128469"
 ---
 # <a name="item"></a>item
 
@@ -44,14 +44,14 @@ Office.initialize = function () {
 
 ### <a name="members"></a>メンバー
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook11officeattachmentdetails"></a>attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_1/office.attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook11officeattachmentdetails"></a>添付ファイル: <[Attachmentdetails](/javascript/api/outlook_1_1/office.attachmentdetails)>
 
 アイテムの添付ファイルの配列を取得します。閲覧モードのみ。
 
 > [!NOTE]
 > セキュリティ上の問題がある可能性があるため、特定の種類のファイルは Outlook によってブロックされるので、返されません。 詳細については、「[Outlook でブロックされる添付ファイル](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)」を参照してください。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook_1_1/office.attachmentdetails)>
 
@@ -87,11 +87,11 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
-####  <a name="bcc-recipientsjavascriptapioutlook11officerecipients"></a>bcc :[Recipients](/javascript/api/outlook_1_1/office.recipients)
+#### <a name="bcc-recipientsjavascriptapioutlook11officerecipients"></a>bcc:[受信者](/javascript/api/outlook_1_1/office.recipients)
 
 メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または更新するメソッドを提供するオブジェクトを取得します。 新規作成モードのみ。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [受信者](/javascript/api/outlook_1_1/office.recipients)
 
@@ -115,11 +115,11 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-bodyjavascriptapioutlook11officebody"></a>body :[Body](/javascript/api/outlook_1_1/office.body)
+#### <a name="body-bodyjavascriptapioutlook11officebody"></a>本文:[本文](/javascript/api/outlook_1_1/office.body)
 
 アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [Body](/javascript/api/outlook_1_1/office.body)
 
@@ -155,7 +155,7 @@ Office.context.mailbox.item.body.getAsync(
 }
 ```
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>cc: <[emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_1/office.recipients)
 
 メッセージの CC (カーボン コピー) の受信者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -181,7 +181,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_1/office.recipients)
 
@@ -193,7 +193,7 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
+#### <a name="nullable-conversationid-string"></a>(nullable) conversationId: String
 
 特定のメッセージが含まれている電子メールの会話の識別子を取得します。
 
@@ -220,7 +220,7 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
-#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated: Date
 
 アイテムが作成された日時を取得します。閲覧モードのみ。
 
@@ -243,14 +243,14 @@ var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
 
-#### <a name="datetimemodified-date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
-アイテムが最後に変更された日時を取得します。閲覧モードのみ。
+アイテムが最後に変更された日時を取得します。 Read mode only.
 
 > [!NOTE]
-> このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメンバーは、iOS または Android の Outlook ではサポートされていません。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   日付
 
@@ -269,7 +269,7 @@ var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
 
-####  <a name="end-datetimejavascriptapioutlook11officetime"></a>end :Date|[Time](/javascript/api/outlook_1_1/office.time)
+#### <a name="end-datetimejavascriptapioutlook11officetime"></a>終了: 日付 |[時間](/javascript/api/outlook_1_1/office.time)
 
 予定が終了する日時を取得または設定します。
 
@@ -308,7 +308,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Date | [Time](/javascript/api/outlook_1_1/office.time)
 
@@ -320,7 +320,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>from :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
+#### <a name="from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>from: [Emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
 メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
@@ -348,7 +348,7 @@ var from = Office.context.mailbox.item.from;
 console.log("From " + from);
 ```
 
-#### <a name="internetmessageid-string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId: String
 
 電子メール メッセージのインターネット メッセージ ID を取得します。閲覧モードのみ。
 
@@ -370,13 +370,13 @@ console.log("From " + from);
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass: String
 
 選択されたアイテムの Exchange Web サービスのアイテム クラスを取得します。閲覧モードのみ。
 
 `itemClass` プロパティには、選択したアイテムのメッセージ クラスを指定します。次に、メッセージまたは予定アイテムの既定のメッセージ クラスを示します。
 
-| 種類 | 説明 | アイテム クラス |
+| 型 | 説明 | アイテム クラス |
 | --- | --- | --- |
 | 予定アイテム | アイテム クラス `IPM.Appointment` または `IPM.Appointment.Occurrence` の予定表アイテムは次のとおりです。 | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
 | メッセージ アイテム | これには、既定のメッセージ クラス `IPM.Note` を持つ電子メール メッセージ、および基本メッセージ クラスとして `IPM.Schedule.Meeting` を使用する会議出席依頼、返信、または取り消しが含まれます。 | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
@@ -402,9 +402,9 @@ var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
 
-#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-現在のアイテムの Exchange Web サービスのアイテム識別子を取得します。閲覧モードのみ。
+現在のアイテムの Exchange Web サービスのアイテム識別子を取得します。 閲覧モードのみ。
 
 > [!NOTE]
 > `itemId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。 `itemId` プロパティは、Outlook Entry ID または Outlook REST API で使用される ID と同一ではありません。 この値を使用して REST API を呼び出す前に、を`Office.context.mailbox.convertToRestId`使用して変換する必要があります。これは、要件セット1.3 から開始できます。 詳細は、「[Outlook アドインからの Outlook REST API の使用](/outlook/add-ins/use-rest-api#get-the-item-id)」を参照してください。
@@ -434,13 +434,13 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook11officemailboxenumsitemtype"></a>itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_1/office.mailboxenums.itemtype)
+#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook11officemailboxenumsitemtype"></a>itemType: [MailboxEnums](/javascript/api/outlook_1_1/office.mailboxenums.itemtype)
 
 インスタンスが表しているアイテムの種類を取得します。
 
 `itemType` プロパティは、`ItemType` 列挙値の 1 つを返します。これは `item` オブジェクト インスタンスがメッセージと予定のどちらであるかを示すものです。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [Office.MailboxEnums.ItemType](/javascript/api/outlook_1_1/office.mailboxenums.itemtype)
 
@@ -462,7 +462,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 }
 ```
 
-####  <a name="location-stringlocationjavascriptapioutlook11officelocation"></a>location :String|[Location](/javascript/api/outlook_1_1/office.location)
+#### <a name="location-stringlocationjavascriptapioutlook11officelocation"></a>場所: String |[場所](/javascript/api/outlook_1_1/office.location)
 
 予定の場所を取得または設定します。
 
@@ -501,7 +501,7 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-#### <a name="normalizedsubject-string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject: String
 
 すべてのプレフィックス (`RE:` や `FWD:` など) が削除されたアイテムの件名を取得します。閲覧モードのみ。
 
@@ -526,7 +526,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>任意出席者: 配列. <[emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_1/office.recipients)
 
 イベントの任意出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -553,7 +553,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_1/office.recipients)
 
@@ -565,11 +565,11 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>organizer :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>開催者: [Emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
 指定の会議の開催者の電子メール アドレスを取得します。閲覧モードのみ。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
@@ -589,7 +589,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>requiredatて dees: 配列. <[emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_1/office.recipients)
 
 イベントの必須出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -629,7 +629,7 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>sender :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>sender: [Emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
 電子メール メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
@@ -638,7 +638,7 @@ function callback(asyncResult) {
 > [!NOTE]
 > `from` プロパティ内の `EmailAddressDetails` オブジェクトの `recipientType` プロパティは `undefined` です。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
@@ -658,7 +658,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-####  <a name="start-datetimejavascriptapioutlook11officetime"></a>start :Date|[Time](/javascript/api/outlook_1_1/office.time)
+#### <a name="start-datetimejavascriptapioutlook11officetime"></a>開始: 日付 |[時間](/javascript/api/outlook_1_1/office.time)
 
 予定を開始する日時を取得または設定します。
 
@@ -697,7 +697,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   Date | [Time](/javascript/api/outlook_1_1/office.time)
 
@@ -709,7 +709,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-####  <a name="subject-stringsubjectjavascriptapioutlook11officesubject"></a>subject :String|[Subject](/javascript/api/outlook_1_1/office.subject)
+#### <a name="subject-stringsubjectjavascriptapioutlook11officesubject"></a>subject: String |[件名](/javascript/api/outlook_1_1/office.subject)
 
 アイテムの件名フィールドに示される説明を取得または設定します。
 
@@ -749,7 +749,7 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>宛先: 配列. <[emailaddressdetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[受信者](/javascript/api/outlook_1_1/office.recipients)
 
 メッセージの **To** 行にある受信者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -789,7 +789,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>メソッド
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+#### <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 ファイルを添付ファイルとしてメッセージまたは予定に追加します。
 
@@ -803,8 +803,8 @@ function callback(asyncResult) {
 |---|---|---|---|
 |`uri`| String||メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。|
 |`attachmentName`| String||添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。|
-|`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
-|`options.asyncContext`| Object| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
+|`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルのアップロードに失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
 
 ##### <a name="errors"></a>エラー
@@ -843,7 +843,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+#### <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。
 
@@ -851,11 +851,11 @@ function addAttachment() {
 
 その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。
 
-Office アドインを Outlook Web App で実行している場合、`addItemAttachmentAsync` メソッドはアイテムを、編集中のアイテム以外のアイテムに添付できますが、これはサポートされておらず、お勧めできません。
+Office アドインが Outlook on the web で実行されている場合、 `addItemAttachmentAsync`メソッドは、編集しているアイテム以外のアイテムにアイテムを添付できます。ただし、これはサポートされておらず、推奨されていません。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`itemId`| String||添付するアイテムの Exchange 識別子。最大長は 100 文字です。|
 |`attachmentName`| String||添付するアイテムの件名。 最大の長さは、255 文字です。|
@@ -906,9 +906,9 @@ function addAttachment() {
 選択したメッセージの送信者とすべての受信者、または選択した予定の開催者とすべての参加者を示した回答フォームが表示されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
-Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。
+Web 上の Outlook では、返信フォームは、3列表示のポップアップフォームとして表示され、2列または1列表示のポップアップフォームとして表示されます。
 
 文字列パラメーターのいずれかが制限値を超えると、`displayReplyAllForm` は例外をスローします。
 
@@ -917,7 +917,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`formData`| String &#124; Object| |回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
 | `formData.htmlBody` | String | &lt;省略可能&gt; | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
@@ -973,9 +973,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 選択したメッセージの送信者のみ、または選択した予定の開催者のみを含む回答フォームが表示されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
-Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。
+Web 上の Outlook では、返信フォームは、3列表示のポップアップフォームとして表示され、2列または1列表示のポップアップフォームとして表示されます。
 
 文字列パラメーターのいずれかが制限値を超えると、`displayReplyForm` は例外をスローします。
 
@@ -984,7 +984,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`formData`| String &#124; Object| | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。<br/>**または**<br/>本文または添付ファイルのデータと、コールバック関数を格納しているオブジェクト。オブジェクトの定義は次のとおりです。 |
 | `formData.htmlBody` | String | &lt;省略可能&gt; | 回答フォームの本文を表すテキストと HTML が含まれる文字列。文字列は、32 KB 以内に制限されています。
@@ -1040,7 +1040,7 @@ Office.context.mailbox.item.displayReplyForm(
 選択したアイテムの本文にあるエンティティを取得します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="requirements"></a>要件
 
@@ -1067,11 +1067,11 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 選択したアイテムの本文内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`entityType`| [Office.MailboxEnums.EntityType](/javascript/api/outlook_1_1/office.MailboxEnums.entitytype)|EntityType 列挙値の 1 つ。|
 
@@ -1125,13 +1125,13 @@ Office.initialize = function () {
 マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getFilteredEntitiesByName` メソッドは、マニフェスト XML ファイル内の、指定された `FilterName` 要素値を持つ [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) ルール要素で定義された正規表現に一致するエンティティを返します。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。|
 
@@ -1156,7 +1156,7 @@ Office.initialize = function () {
 選択したアイテム内の、マニフェスト XML ファイルで定義された正規表現に一致する文字列の値を返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。
 
@@ -1219,7 +1219,7 @@ var veggies = allMatches.veggies;
 選択したアイテム内の、マニフェスト XML ファイルで定義された、指定された正規表現に一致する文字列の値を返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getRegExMatchesByName` メソッドは、`ItemHasRegularExpressionMatch` ルール要素で定義された正規表現に一致する文字列を返します。このルール要素は、指定された `RegExName` 要素値を持つマニフェスト XML ファイル内にあります。
 
@@ -1227,7 +1227,7 @@ var veggies = allMatches.veggies;
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。|
 
@@ -1258,7 +1258,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
+#### <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 選択されたアイテムのこのアドインのカスタム プロパティを非同期に読み込みます。
 
@@ -1266,7 +1266,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>カスタム プロパティは `asyncResult.value` プロパティの [`CustomProperties`](/javascript/api/outlook_1_1/office.customproperties) オブジェクトとして指定されます。 このオブジェクトは、アイテムからカスタム プロパティを取得、設定、削除し、サーバーに設定し直すカスタム プロパティへの変更を保存するために使用できます。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。 このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。|
@@ -1306,15 +1306,15 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+#### <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 メッセージまたは予定から添付ファイルを削除します。
 
-`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。Outlook Web App とデバイス用 OWA では、添付ファイルの識別子は同じセッション内でのみ有効です。ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。
+`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。 ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。 Outlook on the web およびモバイルデバイスでは、添付ファイル識別子は同じセッション内でのみ有効です。 ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`attachmentId`| String||削除する添付ファイルの識別子。|
 |`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|

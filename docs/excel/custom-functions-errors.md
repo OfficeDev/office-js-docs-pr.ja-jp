@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: Excel のカスタム関数でエラーを処理します。
 title: 'Excel のカスタム関数でのエラー処理 '
 localization_priority: Priority
-ms.openlocfilehash: 5b94d3fc2570eaa310027ebc156aa78c359a56fa
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3818d33121ed26bb7d65c56bf6c504f2fb049c72
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059854"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127920"
 ---
 # <a name="error-handling-within-custom-functions"></a>カスタム関数内でのエラー処理
 
 カスタム関数を定義するアドインをビルドする場合は、実行時エラーを考慮して、エラー処理ロジックを含めるようにします。 カスタム関数のエラー処理は、[全体的な Excel の JavaScript API のエラー処理](excel-add-ins-error-handling.md)と同じです。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 次のコード サンプルでは、`.catch` がコード内で以前に発生したエラーを処理します。
 

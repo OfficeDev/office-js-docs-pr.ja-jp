@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.6
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 578e25b4fd7caf08087f24febdfd5b1877ed57bf
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: c9dbf1a7c3acdf4168b4013eea9755ddad24613b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706331"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127276"
 ---
 # <a name="item"></a>item
 
@@ -290,10 +290,10 @@ console.log("Date and time created: " + dateTimeCreated);
 
 #### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
-アイテムが最後に変更された日時を取得します。閲覧モードのみ。
+アイテムが最後に変更された日時を取得します。 閲覧モードのみ。
 
 > [!NOTE]
-> このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメンバーは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="type"></a>型
 
@@ -878,8 +878,8 @@ function callback(asyncResult) {
 |`uri`| String||メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。|
 |`attachmentName`| String||添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。|
 |`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
-| `options.asyncContext` | オブジェクト | &lt;オプション&gt; | 開発者は、コールバック メソッドでアクセスする任意のオブジェクトを提供できます。 |
-| `options.isInline` | Boolean | &lt;省略可能&gt; | `true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
+| `options.asyncContext` | オブジェクト | &lt;任意&gt; | 開発者は、コールバック メソッドでアクセスする任意のオブジェクトを提供できます。 |
+| `options.isInline` | Boolean | &lt;optional&gt; | `true` の場合、添付ファイルがインラインでメッセージ本文に表示され、添付ファイル一覧に表示されないことを示します。 |
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルのアップロードに失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
 
 ##### <a name="errors"></a>エラー
@@ -947,7 +947,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 その後、[`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。
 
-Office アドインを Outlook Web App で実行している場合、`addItemAttachmentAsync` メソッドはアイテムを、編集中のアイテム以外のアイテムに添付できますが、これはサポートされておらず、お勧めできません。
+Office アドインが Outlook on the web で実行されている場合、 `addItemAttachmentAsync`メソッドは、編集しているアイテム以外のアイテムにアイテムを添付できます。ただし、これはサポートされておらず、推奨されていません。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -957,7 +957,7 @@ Office アドインを Outlook Web App で実行している場合、`addItemAtt
 |`attachmentName`| String||添付するアイテムの件名。 最大の長さは、255 文字です。|
 |`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
-|`callback`| 関数| &lt;任意&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
+|`callback`| 関数| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
 
 ##### <a name="errors"></a>エラー
 
@@ -1021,13 +1021,13 @@ Outlook デスクトップ クライアントでは、メッセージがイン�
 選択したメッセージの送信者とすべての受信者、または選択した予定の開催者とすべての参加者を示した回答フォームが表示されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
-Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。
+Web 上の Outlook では、返信フォームは、3列表示のポップアップフォームとして表示され、2列または1列表示のポップアップフォームとして表示されます。
 
 文字列パラメーターのいずれかが制限値を超えると、`displayReplyAllForm` は例外をスローします。
 
-`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。
+`formData.attachments`パラメーターで添付ファイルが指定されている場合、web 上の Outlook およびデスクトップクライアントは、すべての添付ファイルをダウンロードして、返信フォームに添付しようとします。 添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。 表示できない場合、エラー メッセージはスローされません。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1140,13 +1140,13 @@ Office.context.mailbox.item.displayReplyAllForm(
 選択したメッセージの送信者のみ、または選択した予定の開催者のみを含む回答フォームが表示されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
-Outlook Web App では、回答フォームは、3 列表示のポップアウト形式、および 2 列または 1 列表示のポップアップ形式で表示されます。
+Web 上の Outlook では、返信フォームは、3列表示のポップアップフォームとして表示され、2列または1列表示のポップアップフォームとして表示されます。
 
 文字列パラメーターのいずれかが制限値を超えると、`displayReplyForm` は例外をスローします。
 
-`formData.attachments` パラメーターで添付ファイルを指定すると、Outlook と Office Web Apps はすべての添付ファイルをダウンロードし、返信フォームに添付しようと試みます。添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。表示できない場合、エラー メッセージはスローされません。
+`formData.attachments`パラメーターで添付ファイルが指定されている場合、web 上の Outlook およびデスクトップクライアントは、すべての添付ファイルをダウンロードして、返信フォームに添付しようとします。 添付ファイルの追加に失敗すると、フォーム UI でエラーが表示されます。 表示できない場合、エラー メッセージはスローされません。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1259,7 +1259,7 @@ Office.context.mailbox.item.displayReplyForm(
 選択したアイテムの本文にあるエンティティを取得します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="requirements"></a>要件
 
@@ -1286,7 +1286,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 選択したアイテムの本文内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1343,7 +1343,7 @@ Office.initialize = function () {
 マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getFilteredEntitiesByName` メソッドは、マニフェスト XML ファイル内の、指定された `FilterName` 要素値を持つ [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) ルール要素で定義された正規表現に一致するエンティティを返します。
 
@@ -1372,7 +1372,7 @@ Office.initialize = function () {
 選択したアイテム内の、マニフェスト XML ファイルで定義された正規表現に一致する文字列の値を返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。
 
@@ -1434,7 +1434,7 @@ var veggies = allMatches.veggies;
 選択したアイテム内の、マニフェスト XML ファイルで定義された、指定された正規表現に一致する文字列の値を返します。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getRegExMatchesByName` メソッドは、`ItemHasRegularExpressionMatch` ルール要素で定義された正規表現に一致する文字列を返します。このルール要素は、指定された `RegExName` 要素値を持つマニフェスト XML ファイル内にあります。
 
@@ -1533,7 +1533,7 @@ function setCallback(asyncResult) {
 強調表示された一致内で見つかったユーザーが選択しているエンティティを取得します。 強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 ##### <a name="requirements"></a>要件
 
@@ -1560,7 +1560,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 マニフェスト XML ファイルで定義した正規表現と一致する、強調表示された一致内の文字列値を返します。強調表示された一致は、[コンテキスト アドイン](/outlook/add-ins/contextual-outlook-add-ins)に適用されます。
 
 > [!NOTE]
-> このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
+> このメソッドは、iOS または Android の Outlook ではサポートされていません。
 
 `getSelectedRegExMatches` メソッドは、マニフェスト XML ファイル内の、各 `ItemHasRegularExpressionMatch` または `ItemHasKnownEntity` ルール要素で定義された正規表現に一致する文字列を返します。`ItemHasRegularExpressionMatch` ルールの場合、そのルールで指定されたアイテムのプロパティに一致する文字列が発生する必要があります。`PropertyName` 単純型は、サポートされるプロパティを定義します。
 
@@ -1661,7 +1661,7 @@ function saveCallback(asyncResult) {
 
 メッセージまたは予定から添付ファイルを削除します。
 
-`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。Outlook Web App とデバイス用 OWA では、添付ファイルの識別子は同じセッション内でのみ有効です。ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。
+`removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。 ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。 Outlook on the web およびモバイルデバイスでは、添付ファイル識別子は同じセッション内でのみ有効です。 ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1705,7 +1705,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 項目を非同期的に保存します。
 
-呼び出されると、このメソッドは現在のメッセージを下書きとして保存し、コールバック メソッドを使用してアイテム ID を返します。Outlook Web App またはオンライン モードの Outlook では、サーバーにアイテムが保存されます。キャッシュ モードの Outlook では、ローカル キャッシュにアイテムが保存されます。
+呼び出されると、このメソッドは現在のメッセージを下書きとして保存し、コールバック メソッドを使用してアイテム ID を返します。 Outlook on the web または online モードの Outlook では、アイテムはサーバーに保存されます。 キャッシュ モードの Outlook では、ローカル キャッシュにアイテムが保存されます。
 
 > [!NOTE]
 > EWS または REST API で使用するための `itemId` を取得するために、アドインが新規作成モードのアイテムで `saveAsync` を呼び出す場合、Outlook がキャッシュ モードになっていると、アイテムが実際にサーバーに同期されるまでに時間がかかる可能性があることに注意してください。 アイテムが同期されるまで、`itemId` を使用するとエラーが返されます。
@@ -1715,7 +1715,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > [!NOTE]
 > 次のクライアントの場合、新規作成モードで予約の `saveAsync` に対して動作が異なります。
 >
-> - Outlook for Mac では、会議の保存はサポートされていません。 新規`saveAsync`作成モードで会議から呼び出された場合、メソッドは失敗します。 回避策については[、「OFFICE JS API を使用して Outlook For Mac で会議を下書きとして保存できません](https://support.microsoft.com/help/4505745)」を参照してください。
+> - Outlook on Mac では、会議の保存はサポートされていません。 新規`saveAsync`作成モードで会議から呼び出された場合、メソッドは失敗します。 回避策については[、「OFFICE JS API を使用して Outlook For Mac で会議を下書きとして保存できません](https://support.microsoft.com/help/4505745)」を参照してください。
 > - Outlook on the web の場合、新規作成モードのとき、予約で `saveAsync` が呼び出されると、招待状または更新が常に送信されます。
 
 ##### <a name="parameters"></a>パラメーター
@@ -1765,7 +1765,7 @@ Office.context.mailbox.item.saveAsync(
 |`data`| String||挿入されるデータ。データの最大の長さは 1,000,000 文字です。1,000,000 文字を超えるデータが渡されると、`ArgumentOutOfRange` 例外がスローされます。|
 |`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| オブジェクト| &lt;任意&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
-|`options.coercionType`| [Office.CoercionType](office.md#coerciontype-string)| &lt;optional&gt;|`text` の場合、Office Web Apps と Outlook で現在のスタイルが適用されます。フィールドが HTML エディターの場合、データが HTML の場合でも、テキスト データのみが挿入されます。<br/><br/>`html` とフィールドが HTML をサポートする場合 (件名はサポートしない)、Office Web App では現在のスタイルが適用され、Outlook では既定のスタイルが適用されます。フィールドがテキスト フィールドの場合、`InvalidDataFormat` エラーが返されます。<br/><br/>`coercionType` が設定されていない場合、結果はフィールドによって変わります。フィールドが HTML の場合は HTML が使用されます。フィールドがテキストの場合はプレーン テキストが使用されます。|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|の`text`場合、現在のスタイルが Outlook on the web およびデスクトップクライアントで適用されます。 フィールドが HTML エディターの場合、データが HTML の場合でも、テキスト データのみが挿入されます。<br/><br/>フィールド`html`が HTML をサポートする場合 (件名は含まれません)、現在のスタイルが outlook on the web で適用され、既定のスタイルが outlook デスクトップクライアントで適用されます。 フィールドがテキスト フィールドの場合、`InvalidDataFormat` エラーが返されます。<br/><br/>`coercionType` が設定されていない場合、結果はフィールドによって変わります。フィールドが HTML の場合は HTML が使用されます。フィールドがテキストの場合はプレーン テキストが使用されます。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。 |
 
 ##### <a name="requirements"></a>要件

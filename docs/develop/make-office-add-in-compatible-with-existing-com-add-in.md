@@ -1,14 +1,14 @@
 ---
 title: Office アドインを既存の COM アドインと互換できるようにする
 description: Office アドインと同等の COM アドインの互換性を有効にする
-ms.date: 06/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059721"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128053"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>既存の COM アドインと互換性のある Office アドインを作成する (プレビュー)
 
@@ -48,7 +48,7 @@ Office アドインマニフェストで同等の COM アドインが指定さ�
 - リボンマネージャーのエントリとして
 
 > [!NOTE]
-> マニフェストで同等の COM アドインを指定しても、web または Office for Mac の Office などの他のプラットフォームには影響しません。
+> マニフェストで同等の COM アドインを指定しても、web または Mac の Office などの他のプラットフォームには影響しません。
 
 次のシナリオでは、ユーザーが Office アドインを取得する方法によって実行される処理について説明します。
 

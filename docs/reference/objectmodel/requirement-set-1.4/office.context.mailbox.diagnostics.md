@@ -1,14 +1,14 @@
 ---
 title: Office.--の要件セット1.4
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e6fcad43628c88d68fccbbfaf1321201bb8394e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: edbaa100ba82b0dd1077e518c1090c07890a3d41
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451907"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127409"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -24,9 +24,9 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
-####  <a name="hostname-string"></a>hostName :String
+#### <a name="hostname-string"></a>hostName: String
 
 ホスト アプリケーションの名前を表す文字列を取得します。
 
@@ -44,11 +44,11 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-####  <a name="hostversion-string"></a>hostVersion :String
+#### <a name="hostversion-string"></a>hostVersion: String
 
 ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。
 
-メール アドインを Outlook デスクトップ クライアントまたは Outlook for iOS で実行している場合、`hostVersion` プロパティは、ホスト アプリケーションである Outlook のバージョンを返します。Outlook Web App では、プロパティは、Exchange Server のバージョンを返します。たとえば、文字列 `15.0.468.0` です。
+メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。 たとえば、文字列 `15.0.468.0` です。
 
 ##### <a name="type"></a>型
 
@@ -62,19 +62,19 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-####  <a name="owaview-string"></a>OWAView :String
+#### <a name="owaview-string"></a>OWAView: String
 
-Outlook Web App の現在のビューを表す文字列を取得します。
+Web 上の Outlook の現在のビューを表す文字列を取得します。
 
 返される文字列は、値 `OneColumn`、`TwoColumns`、または `ThreeColumns` のいずれかになります。
 
-ホスト アプリケーションが Outlook Web App ではない場合、このプロパティにアクセスすると `undefined` が返されます。
+ホストアプリケーションが web 上の Outlook ではない場合、このプロパティにアクセスする`undefined`と、になります。
 
-Outlook Web App には、画面とウィンドウの幅、および表示可能な列数に応じて 3 つのビューがあります。
+Outlook on the web には、画面とウィンドウの幅、および表示できる列の数に対応する3つのビューがあります。
 
-*   画面幅が狭い場合に表示される `OneColumn`。Outlook Web App は、この単一列レイアウトを使用してスマートフォンの画面全体への表示を行います。
-*   画面幅がやや広い場合に表示される `TwoColumns`。Outlook Web App は、ほとんどのタブレットでこのビューを使用します。
-*   画面幅が広い場合に表示される `ThreeColumns`。Outlook Web App は、デスクトップ コンピューターのフル スクリーン ウィンドウなどでこのビューを使用します。
+*   画面幅が狭い場合に表示される `OneColumn`。 Outlook on the web では、スマートフォンの画面全体でこのような単一の列のレイアウトを使用します。
+*   画面幅がやや広い場合に表示される `TwoColumns`。 Web 上の Outlook は、ほとんどのタブレットでこのビューを使用します。
+*   画面幅が広い場合に表示される `ThreeColumns`。 たとえば、Outlook on the web では、このビューをデスクトップコンピューターの全画面表示ウィンドウで使用します。
 
 ##### <a name="type"></a>型
 

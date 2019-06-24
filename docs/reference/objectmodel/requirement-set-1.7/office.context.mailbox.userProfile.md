@@ -1,14 +1,14 @@
 ---
 title: Office.-mailbox-要件セット1.7
 description: ''
-ms.date: 04/24/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 036f18e4cb98cfe510a19d85a5a79f393ca8bd17
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 45533fb3a879e4e34e91adfb04dd8ce55f815749
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353294"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127143"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -36,7 +36,7 @@ ms.locfileid: "33353294"
 #### <a name="accounttype-string"></a>accountType: String
 
 > [!NOTE]
-> このメンバーは、現在、Outlook 2016 for Mac (ビルド16.9.1212 以降) でのみサポートされています。
+> このメンバーは、現在、Outlook 2016 以降の Mac (ビルド16.9.1212 以降) でのみサポートされています。
 
 メールボックスに関連付けられているユーザーのアカウントの種類を取得します。 次の表に使用可能な値を示します。
 

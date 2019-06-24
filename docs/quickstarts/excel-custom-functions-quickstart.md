@@ -1,15 +1,15 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059931"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128581"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -58,7 +58,7 @@ ms.locfileid: "35059931"
     > [!NOTE]
     > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは、Windows または Excel Online で Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
+4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
 
@@ -68,19 +68,19 @@ Windows の Excel でアドインをテストするには、次のコマンド�
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
 
-Excel Online でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+Web 上の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-カスタム関数アドインを使用するには、Excel Online で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
+カスタム関数アドインを使用するには、ブラウザー上の Excel で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
 
-1. Excel Online で、**[挿入]** タブを選択して、**[アドイン]** を選択します。
+1. Excel で、[**挿入**] タブを選択し、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] アイコンが強調表示された状態で Excel Online にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] アイコンが強調表示されている web 上の Excel にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

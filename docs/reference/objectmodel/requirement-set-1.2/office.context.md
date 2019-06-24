@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト要件セット1.2
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cdf6b76ca090eb78d31fc1a6f328ce83c606e1f5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451858"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128427"
 ---
 # <a name="context"></a>context
 
@@ -26,11 +26,11 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 
 ### <a name="namespaces"></a>名前空間
 
-[メールボックス](office.context.mailbox.md)-microsoft outlook と microsoft outlook on the web の outlook アドインオブジェクトモデルへのアクセスを提供します。
+[mailbox](office.context.mailbox.md) -Microsoft Outlook の outlook アドインオブジェクトモデルへのアクセスを提供します。
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: String
 
 Office ホスト アプリケーションの UI 用にユーザーが指定した RFC 1766 言語タグ形式のロケール (言語) を取得します。
 
@@ -68,13 +68,13 @@ function write(message){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

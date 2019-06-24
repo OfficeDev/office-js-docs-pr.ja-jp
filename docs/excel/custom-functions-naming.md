@@ -1,21 +1,23 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059827"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128312"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
 カスタム関数は、JSON メタデータファイルの**id**および**name**プロパティによって識別されます。
 
-- この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。 
-- 関数`name`は、Excel でユーザーに表示される表示名として使用されます。 
+- この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。
+- 関数`name`は、Excel でユーザーに表示される表示名として使用されます。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 関数`name`は、ローカライズのためなど`id`、関数とは異なる場合があります。 一般的に、関数の`name`違いがない場合は、 `id`関数はと同じにしておく必要があります。
 

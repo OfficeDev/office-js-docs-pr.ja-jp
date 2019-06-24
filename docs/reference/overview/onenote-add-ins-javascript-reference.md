@@ -1,19 +1,19 @@
 ---
 title: OneNote JavaScript API の概要
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 53b120fbe2bba3967c1b89699daef6bd452b5c24
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450255"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127129"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
-適用対象: OneNote Online
+適用対象: web 上の OneNote
 
 以下のリンクは、API で使用できる高レベルの OneNote オブジェクトを示しています。 オブジェクトのページの各リンクには、オブジェクトで使用できるプロパティ、イベント、メソッドの説明が含まれています。 リンクを参照して、詳細を確認してください。 
     

@@ -1,19 +1,19 @@
 ---
 title: iPad 用の Office アドインを開発する
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952090"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128172"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>iPad 用の Office アドインを開発する
 
 
-次の表に、Office for iPad で実行する Office アドインを開発するときに実行するタスクの一覧を示します。
+次の表に、office for iPad で実行する Office アドインを開発するために実行するタスクの一覧を示します。
 
 
 |**タスク**|**説明**|**リソース**|
@@ -38,7 +38,7 @@ iOS 上で実行するアドインを開発するための次のベスト プラ
 
 -  **アドインの開発に Visual Studio を使用する。**
 
-    アドインを Visual Studio で開発する場合、アドインを iPad または Mac にサイドロードする前に、Windows で動作する Office ホスト アプリケーションで、[そのコードのブレークポイントを設定してコードをデバッグ](../develop/create-and-debug-office-add-ins-in-visual-studio.md)できます。 Office for iOS または Office for Mac で実行するアドインは、Windows の Office で実行するアドインと同じ Api をサポートしているため、アドインのコードを両方のプラットフォームで同じように実行する必要があります。
+    アドインを Visual Studio で開発する場合、アドインを iPad または Mac にサイドロードする前に、Windows で動作する Office ホスト アプリケーションで、[そのコードのブレークポイントを設定してコードをデバッグ](../develop/create-and-debug-office-add-ins-in-visual-studio.md)できます。 IOS または Mac 上の Office で実行するアドインは、Windows の Office で実行されるアドインと同じ Api をサポートしているため、アドインのコードは両方のプラットフォームで同じように実行する必要があります。
 
 -  **アドインのマニフェストまたはランタイム チェックを使用して API の要件を指定する。**
 

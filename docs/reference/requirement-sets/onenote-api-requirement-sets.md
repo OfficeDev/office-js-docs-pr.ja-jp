@@ -1,15 +1,15 @@
 ---
 title: OneNote JavaScript API の要件セット
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 287e405955477a98854b1df4a81fe90ec16e5bbc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4664cb042a9b641f2439d0979d2bf9947a2689f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450101"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127059"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "32450101"
 
 次の表は、OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日の一覧です。
 
-|  要件セット  |  Office Online | 
+|  要件セット  |  Web 上の Office |
 |:-----|:-----|
 | OneNoteApi 1.1  | 2016 年 9 月 |  
 
@@ -25,20 +25,20 @@ ms.locfileid: "32450101"
 
 共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
 
-## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1 
+## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
 OneNote JavaScript API 1.1 は、API の最初のバージョンです。 API について詳しくは、「[OneNote の JavaScript API のプログラミングの概要](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)」をご覧ください。
 
 ## <a name="runtime-requirement-support-check"></a>ランタイム要件のサポートのチェック
 
-実行時に、アドインは次のチェックを行うことによって、特定のホストが API 要件をサポートしているかどうかをチェックできます。 
+ランタイムでは、次の操作を実行することによって、特定のホストが API 要件セットをサポートしているかどうかを確認できます。
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', 1.1) === true) {
-  /// perform actions
+  // Perform actions.
 }
 else {
-  /// provide alternate flow/logic
+  // Provide alternate flow/logic.
 }
 ```
 

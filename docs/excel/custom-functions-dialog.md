@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: JavaScript を使用して Excel のカスタム関数でダイアログ ボックスを作成します。
 title: カスタム関数からダイアログ ボックスを表示する
 localization_priority: Priority
-ms.openlocfilehash: cdbd199e8d8484f317d78a91833088c69db18685
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: e513aedd46f129371a5c858e84f7e230f8d7ae11
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059875"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127927"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>カスタム関数からダイアログ ボックスを表示する
 
 ユーザーがカスタム関数を操作する必要がある場合は、[`Office.Dialog` オブジェクト](/javascript/api/office-runtime/officeruntime.dialog?view=office-js)を使用してダイアログ ボックスを作成できます。 ダイアログ ボックスを使用するための一般的なシナリオは、カスタム関数が web サービスにアクセスできるよう、ユーザーを認証することです。 カスタム関数を使用した認証について詳しくは、[カスタム関数認証](./custom-functions-authentication.md)を参照してください。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
 > `Office.Dialog` オブジェクトは、カスタム関数のランタイムの一部です。 作業ウィンドウは `Dialog` オブジェクトを使用しません。 作業ウィンドウからダイアログ ボックスを作成するには、[ダイアログ API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins) を参照してください。

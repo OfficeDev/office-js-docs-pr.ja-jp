@@ -1,14 +1,14 @@
 ---
 title: JavaScript API for Office のエラー コード
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450731"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128532"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>JavaScript API for Office のエラー コード
 
@@ -66,7 +66,7 @@ ms.locfileid: "32450731"
 |5006|セッションのタイムアウト|ドキュメント セッションがタイムアウトしました。 ドキュメントを再読み込みします。 |セッションがタイムアウトになりました。|
 |5007|無効な API 呼び出し|列挙体は、現在のコンテキストではサポートされていません。|列挙体は、現在のコンテキストではサポートされていません。|
 |5009|アクセスが拒否されました|アクセスが拒否されました|アドインに特定の API を呼び出すためのアクセス許可がありません。|
-|5012|無効またはタイム アウトになるセッション|Office Online のセッションは、有効期限が切れたか、無効です。 続行するには、ページを更新します。|Office クライアントとサーバー間のセッションの有効期限が切れたか、お使いのコンピューターで、日付、時刻、タイム ゾーンが正しくありません。|
+|5012|無効またはタイム アウトになるセッション|Office browser セッションの有効期限が切れているか、無効です。 続行するには、ページを更新します。|Office クライアントとサーバー間のセッションの有効期限が切れたか、お使いのコンピューターで、日付、時刻、タイム ゾーンが正しくありません。|
 |6000|無効なノード|指定されたノードが見つかりませんでした。|**CustomXmlPart** ノードが見つかりませんでした。|
 |6100|カスタム XML エラー|カスタム XML エラー|無効な API 呼び出し。|
 |7000|無効な ID|指定された ID が存在しません。|無効な ID。|

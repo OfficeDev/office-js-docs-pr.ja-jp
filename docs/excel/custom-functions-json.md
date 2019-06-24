@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: f97a339972a8ac134bd30c87b86c4701cb4b5fc4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059861"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127871"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
 Excel アドイン内で[カスタム関数](custom-functions-overview.md)を定義する場合、アドインプロジェクトには、カスタム関数を登録してエンドユーザーが使用できるようにするために excel が必要とする情報を提供する JSON メタデータファイルが含まれています。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 このファイルは、次のいずれかの方法で生成されます。
 
@@ -25,7 +27,7 @@ Excel アドイン内で[カスタム関数](custom-functions-overview.md)を定
 
 カスタム関数を有効にするためにアドイン プロジェクトに含める必要のあるその他のファイルに関する情報については、「[Excel でのカスタム関数の作成](custom-functions-overview.md)」を参照してください。
 
-JSON ファイルをホストするサーバーでは、カスタム関数を Excel Online で正しく作動させるために、[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) を有効に設定する必要があります。
+Web 上の Excel でカスタム関数が正しく動作するためには、JSON ファイルをホストするサーバーのサーバー設定で[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)を有効にする必要があります。
 
 ## <a name="example-metadata"></a>メタデータの例
 

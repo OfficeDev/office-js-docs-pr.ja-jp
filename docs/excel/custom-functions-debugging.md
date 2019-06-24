@@ -1,27 +1,29 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Excel でカスタム関数をデバッグします。
 title: カスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 414944e66a6c55228ea009291be42218038fc6fa
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: d7c7f44ffcb22f66e8dccc58c12e957eefe07524
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059868"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128392"
 ---
 # <a name="custom-functions-debugging"></a>カスタム関数のデバッグ
 
 カスタム関数のデバッグは、使用しているプラットフォームによっては複数の方法で実行できます。
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 Windows の場合:
 - [Excel デスクトップと Visual Studio Code (VS コード) デバッガー](#use-the-vs-code-debugger-for-excel-desktop)
-- [Excel Online および VS コードデバッガー](#use-the-vs-code-debugger-for-excel-online-in-microsoft-edge)
-- [Excel Online およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Excel on the web および VS コードデバッガー](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
+- [Excel on the web およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [コマンドライン](#use-the-command-line-tools-to-debug)
 
 On Mac:
-- [Excel Online およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Excel on the web およびブラウザーツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [コマンドライン](#use-the-command-line-tools-to-debug)
 
 > [!NOTE]
@@ -36,7 +38,7 @@ On Mac:
 VS コードを使用して、デスクトップ上の Office Excel でカスタム関数をデバッグできます。
 
 > [!NOTE]
-> Mac のデスクトップデバッグは使用できませんが、 [Excel Online をデバッグするためにブラウザーツールおよびコマンドラインを使用して](#use-the-command-line-tools-to-debug)実現できます。
+> Mac 用のデスクトップデバッグは使用できませんが、[ブラウザーツールおよびコマンドラインを使用して、web 上で Excel をデバッグすることによって](#use-the-command-line-tools-to-debug)実現できます。
 
 ### <a name="run-your-add-in-from-vs-code"></a>VS コードからアドインを実行する
 
@@ -58,26 +60,26 @@ VS コードを使用して、デスクトップ上の Office Excel でカスタ
 
 この時点で、ブレークポイントを設定したコード行では、この時点で実行が停止します。 コードをステップ実行し、ウォッチポイントを設定して、必要な VS コードデバッグ機能を使用できるようになりました。
 
-## <a name="use-the-vs-code-debugger-for-excel-online-in-microsoft-edge"></a>Microsoft Edge で Excel Online 用の VS コードデバッガーを使用する
+## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Microsoft Edge で Excel の VS コードデバッガーを使用する
 
-Microsoft Edge ブラウザーで Excel Online のカスタム関数をデバッグするには、VS コードを使用できます。 Microsoft Edge で VS コードを使用するには、 [Microsoft edge 拡張機能用のデバッガー](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)をインストールする必要があります。
+VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカスタム関数をデバッグできます。 Microsoft Edge で VS コードを使用するには、 [Microsoft edge 拡張機能用のデバッガー](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)をインストールする必要があります。
 
 ### <a name="run-your-add-in-from-vs-code"></a>VS コードからアドインを実行する
 
 1. [VS Code](https://code.visualstudio.com/)でカスタム関数ルートプロジェクトフォルダーを開きます。
 2. [**ターミナル > タスクの実行**] を選択して、[**ウォッチ**] を入力または選択します。 これにより、ファイルの変更が監視され、再構築されます。
-3. [**ターミナル > タスクの実行**] を選択し、[**開発サーバー**] を入力または選択します。 
+3. [**ターミナル > タスクの実行**] を選択し、[**開発サーバー**] を入力または選択します。
 
 ### <a name="start-the-vs-code-debugger"></a>VS コードデバッガーを開始する
 
 4. [**表示 > デバッグ**] を選択するか、 **Ctrl + Shift + D キー**を押してデバッグビューに切り替えます。
 5. [デバッグオプション] で、[ **Office Online (Microsoft Edge)**] を選択します。
-6. Microsoft Edge ブラウザーを使用して Excel Online を開き、Excel Online を開き、新しいブックを作成します。
+6. Microsoft Edge ブラウザーで Excel を開き、新しいブックを作成します。
 7. リボンの [**共有**] を選択し、この新しいブックの URL のリンクをコピーします。
 8. **F5 キーを押し**ます (または、[ **> デバッグ**] を選択して、メニューからデバッグを開始します)。デバッグを開始します。 ドキュメントの URL の入力を求めるプロンプトが表示されます。
 9. ブックの URL を貼り付け、Enter キーを押します。
 
-### <a name="sideload-your-add-in"></a>アドインのサイドロード   
+### <a name="sideload-your-add-in"></a>アドインのサイドロード
 
 1. リボンの [**挿入**] タブを選択し、 **** [アドイン] セクションで、[ **Office アドイン**] を選択します。
 2. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
@@ -94,19 +96,19 @@ Microsoft Edge ブラウザーで Excel Online のカスタム関数をデバッ
 2. カスタム関数のソースコードに[ブレークポイントを設定](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)します。
 3. Excel ブックで、カスタム関数を使用する数式を入力します。
 
-## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online"></a>ブラウザー開発者ツールを使用して Excel Online のカスタム関数をデバッグする
+## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>ブラウザー開発者ツールを使用して、web 上の Excel でカスタム関数をデバッグする
 
-ブラウザー開発者ツールを使用して、Excel Online のカスタム関数をデバッグできます。 次の手順は、Windows と macOS の両方で動作します。
+ブラウザー開発者ツールを使用して、web 上の Excel でカスタム関数をデバッグできます。 次の手順は、Windows と macOS の両方で動作します。
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Visual Studio Code からアドインを実行する
 
 1. カスタム関数のルートプロジェクトフォルダーを[Visual Studio Code (VS コード)](https://code.visualstudio.com/)で開きます。
 2. [**ターミナル > タスクの実行**] を選択して、[**ウォッチ**] を入力または選択します。 これにより、ファイルの変更が監視され、再構築されます。
-3. [**ターミナル > タスクの実行**] を選択し、[**開発サーバー**] を入力または選択します。 
+3. [**ターミナル > タスクの実行**] を選択し、[**開発サーバー**] を入力または選択します。
 
-### <a name="sideload-your-add-in"></a>アドインのサイドロード   
+### <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. [Microsoft Office Online](https://office.live.com/) を開きます。
+1. [Web 上の Microsoft Office を](https://office.live.com/)開きます。
 2. 新しい Excel ブックを開きます。
 3. リボンの  **[挿入]** タブを開き、 **[アドイン]** セクションで、 **Office [アドイン]** を選択します。
 4. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
@@ -130,7 +132,7 @@ Microsoft Edge ブラウザーで Excel Online のカスタム関数をデバッ
 
 ## <a name="use-the-command-line-tools-to-debug"></a>コマンドラインツールを使用してデバッグする
 
-VS コードを使用していない場合は、コマンドライン (bash、PowerShell など) を使用してアドインを実行できます。 Excel Online でコードをデバッグするには、ブラウザー開発者ツールを使用する必要があります。 コマンドラインを使用して、デスクトップ版の Excel をデバッグすることはできません。
+VS コードを使用していない場合は、コマンドライン (bash、PowerShell など) を使用してアドインを実行できます。 Web 上の Excel でコードをデバッグするには、ブラウザー開発者ツールを使用する必要があります。 コマンドラインを使用して、デスクトップ版の Excel をデバッグすることはできません。
 
 1. コマンドラインからを実行`npm run watch`すると、コードの変更が発生したときにを監視し、再構築します。
 2. 2番目のコマンドラインウィンドウを開きます (最初のウィンドウは、ウォッチの実行中にブロックされます)。
@@ -139,11 +141,11 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
     
     `npm run start:desktop`
     
-    または、Excel Online でアドインを起動したい場合は、次のコマンドを実行します。
+    または、web 上の Excel でアドインを開始する場合は、次のコマンドを実行します。
     
     `npm run start:web`
     
-    Excel Online の場合は、アドインをサイドロードする必要もあります。 「[サイドロード](#sideload-your-add-in)を使用してアドインをサイドロードする」の手順に従います。 その後、次のセクションに進み、デバッグを開始します。
+    Excel on the web では、アドインをサイドロードする必要もあります。 「[サイドロード](#sideload-your-add-in)を使用してアドインをサイドロードする」の手順に従います。 その後、次のセクションに進み、デバッグを開始します。
     
 4. 開発者ツールをブラウザーで開きます。 Chrome およびほとんどのブラウザー F12 では、開発者ツールが開きます。
 5. [開発者ツール] で、ソースコードスクリプトファイル (**node.js**または**関数 ts**) を開きます。 カスタム関数のコードは、ファイルの末尾付近に配置されている場合があります。
@@ -161,7 +163,7 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
 
 次のタスクを使用して、デスクトップまたはオンラインでデバッグを開始できます。
 - `npm run start:desktop`: デスクトップ上で Excel を起動し、アドインを読み込みます。
-- `npm run start:web`: Excel Online を起動して、アドインを読み込みます。
+- `npm run start:web`: Web 上で Excel を起動し、アドインを読み込みます。
 - `npm run stop`: Excel およびデバッグを停止します。
 
 ## <a name="next-steps"></a>次のステップ

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 58dcbae57ea2c0e55c9e7708b122484b99e956fe
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952405"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128525"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -140,7 +140,7 @@ ms.locfileid: "33952405"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](/outlook/add-ins/pinnable-taskpane)」を参照してください。
 
 > [!NOTE]
-> サポートされている回転は、現在、Windows 2016 (ビルド7628.1000 以降) および Outlook 2016 for Mac (ビルド16.13.503 以降) でのみサポートされています。
+> サポートされている回転は、現在、Windows 2016 以降 (ビルド7628.1000 以降) および Outlook 2016 以降の Mac (ビルド16.13.503 以降) でのみサポートされています。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

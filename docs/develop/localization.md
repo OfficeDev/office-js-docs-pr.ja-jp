@@ -1,14 +1,14 @@
 ---
 title: Office アドインのローカライズ
 description: JavaScript API for Office を使用すると、ロケールを決定し、ホスト アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりできます。
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6d2df9ffc3364278e48e2fecc5ff427594764482
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449787"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128116"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -98,7 +98,7 @@ JavaScript API for Office は、ホスト アプリケーションまたはデ�
    without leaving your email client.">
    <Override Locale="fr-fr" Value=
    "Visualisez les vidéos YouTube référencées dans vos courriers 
-   électronique directement depuis Outlook et Outlook Web App."/>
+   électronique directement depuis Outlook."/>
 </Description>
 ```
 

@@ -1,14 +1,14 @@
 ---
 title: Excel アドインの共同編集機能
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952048"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128004"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
@@ -17,14 +17,6 @@ ms.locfileid: "33952048"
 > [!IMPORTANT]
 > Office 365 の Excel には、左上隅に [自動保存] があります。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
 
-共同編集機能は、次のプラットフォームで使用できます。
-
-- Excel Online
-- Excel for Android
-- Excel for iPad
-- Windows 10 での Excel Mobile
-- Office 365 のお客様向けの Windows デスクトップ上の Excel (Windows デスクトップビルド16.0.8326.2076 以降、現在のチャネルのお客様が利用できます。 2017 8 月)
-
 ## <a name="coauthoring-overview"></a>共同編集機能の概要
 
 ブックの内容に変更を加えると、その変更は Excel によってすべての共同編集者間で同期されます。 共同編集者はブックの内容を変更できますが、Excel アドイン内で実行するコードもブックの内容を変更できます。 たとえば、次に示す JavaScript のコードを Office アドイン内で実行すると、範囲の値が Contoso になります。
@@ -32,7 +24,7 @@ ms.locfileid: "33952048"
 ```js
 range.values = [['Contoso']];
 ```
-すべての共同編集者間で 'Contoso' が同期されると、同じブックで作業するユーザーまたは実行中のアドインは、新しい範囲の値を認識するようになります。 
+すべての共同編集者間で 'Contoso' が同期されると、同じブックで作業するユーザーまたは実行中のアドインは、新しい範囲の値を認識するようになります。
 
 共同編集機能では、共有ブック内の内容のみが同期されます。 ブックから Excel アドイン内の JavaScript 変数にコピーした値は同期されません。 たとえば、アドインが JavaScript 変数にセルの値 (たとえば 'Contoso') を保存しているときに、そのセルの値を共同編集者が 'Example' に変更すると、同期後に、そのセルの値はすべての共同編集者に対して 'Example' と表示されます。 ただし、JavaScript 変数の値は 'Contoso' に設定されたままです。 さらに、複数の共同編集者が同じアドインを使用しているときに、それぞれの共同編集者が独自に変数をコピーしている場合、その変数のコピーは同期されません。 ブックの内容を使用する変数を使用するときには、その変数を使用する前に、ブック内で更新された値について必ずチェックしてください。
 
