@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 04/18/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6267c9f0ef46bda0beeed1612acce5d620f1e74f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440032"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128347"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。 Excel for Mac のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
+> ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。Mac 版の Excel のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
 
 ## <a name="get-the-active-worksheet"></a>作業中のワークシートを取得する
 
@@ -285,9 +285,6 @@ Excel.run(function (context) {
 
 この`WorksheetChangedEventArgs`オブジェクトは、変更とソースに関する情報を提供します。 `onChanged` が発生するのは書式設定またはデータの値が変更された時であるため、値が実際に変更されたかどうかを確認するのにアドインを使用すると便利です。 `details`プロパティは、この情報を [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) としてカプセル化します。 次のコード サンプルでは、変更前と変更後の値および変更されたセルの種類を表示する方法を表示します。
 
-> [!NOTE]
-> `WorksheetChangedEventArgs.details` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
@@ -303,10 +300,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="find-all-cells-with-matching-text-preview"></a>一致するテキストがあるすべてのセルを検索する (プレビュー)
-
-> [!NOTE]
-> 現在、Worksheet オブジェクトの `findAll` 関数は、パブリック プレビューでのみ利用できます。[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-all-cells-with-matching-text"></a>一致するテキストがあるすべてのセルを検索する
 
 `Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。 以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。 指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。
 
@@ -332,9 +326,6 @@ Excel.run(function (context) {
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
 ## <a name="filter-data"></a>データをフィルター処理する
-
-> [!NOTE]
-> `AutoFilter` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 [AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメータを持つ `Worksheet.autoFilter.apply` で作成されます。
 
@@ -402,9 +393,6 @@ Excel.run(function (context) {
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
 
 ## <a name="page-layout-and-print-settings"></a>ページ レイアウトと印刷の設定
-
-> [!NOTE]
-> ページ レイアウトに関連付けられているこのセクションの API は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 アドインは、ワークシート レベルでページ レイアウトの設定にアクセスできます。 シートの印刷方法は、これらの設定により制御されます。 `Worksheet` オブジェクトには、レイアウト関連のプロパティが 3 つ含まれます: `horizontalPageBreaks`、`verticalPageBreaks`、`pageLayout`。
 

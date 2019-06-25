@@ -1,14 +1,14 @@
 ---
 title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 345b7ad49bab672b9e9dd3a055bd8bfeed2962e3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: adfed2e5e35e2ad86295faafc2ffed91cf728bcd
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449896"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128326"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -21,7 +21,7 @@ Office の最新ビルドを取得するためにオプトインするには、�
 - Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://products.office.com/office-insider)」を参照してください。
 - 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
 - Mac で Office を実行している場合は、次の操作を行います。
-    - Office for Mac プログラムを起動します。
+    - Office アプリケーションを起動します。
     - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。
     - [Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de7b2c991b149f1eb40080e3423044d24dfbf0b9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bf1b62c4ba6e9790cd70a7070dd3c8d682b2dc56
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449023"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127682"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -117,9 +117,9 @@ AppSource に提出するアドインには、[SupportUrl](/office/dev/add-ins/r
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-Office Online で実行している場合、作業ウィンドウは任意の URL に移動できます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
+Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
 
-このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、デスクトップの Office と Office Online の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
 > [!NOTE]
 > この動作は、アドインのルート ウィンドウに対してのみ適用されます。 アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
@@ -411,7 +411,7 @@ Office Online で実行している場合、作業ウィンドウは任意の UR
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook et Outlook Web App."/>
+      directement depuis Outlook."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

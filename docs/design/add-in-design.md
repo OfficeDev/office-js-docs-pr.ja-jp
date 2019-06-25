@@ -1,14 +1,14 @@
 ---
 title: Office アドインを設計する
 description: ''
-ms.date: 12/04/2017
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448155"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127675"
 ---
 # <a name="design-your-office-add-ins"></a>Office アドインを設計する
 
@@ -22,7 +22,7 @@ Office アプリケーションは、一般的な一連の相互作用ガイド�
 
 Office の設計原則に従って、ポジティブなアドイン体験を作成します。
 
-- **Office に合わせて、わかりやすく設計する。** アドインの機能や外観は、Office 体験を調和的に補完する必要があります。アドインはネイティブに感じる必要があります。それらは iPad や PowerPoint Online で、Word とシームレスに連携する必要があります。独自のエクスペリエンス、プラットフォーム、Office アプリケーションの 3 つを適切に組み合わせたアドインが、適切に設計されたアドインといえます。Office UI Fabric を設計言語として使用することを検討してください。可能であれば、ドキュメントと UI テーマを適用します。
+- **Office に合わせて、わかりやすく設計します。** アドインの機能や外観は、Office 体験を調和的に補完する必要があります。アドインはネイティブに感じる必要があります。それらは iPad や PowerPoint on the web で、Word とシームレスに連携する必要があります。独自のエクスペリエンス、プラットフォーム、Office アプリケーションの 3 つを適切に組み合わせたアドインが、適切に設計されたアドインといえます。Office UI Fabric を設計言語として使用することを検討してください。可能であれば、ドキュメントと UI テーマを適用します。
 
 - **いくつかの主要なタスクに重点を置き、それらのタスクを適切に実行できるようにします。** あるジョブの実行が、別のジョブの邪魔にならないように、お客様を支援します。お客様に真の価値を提供します。一般的なユース ケースに焦点を当てて、Office ドキュメントの操作時に、ユーザーにとって最も有益なものを慎重に選択します。
 
@@ -33,6 +33,7 @@ Office の設計原則に従って、ポジティブなアドイン体験を作�
 - **すべてのプラットフォームおよび入力方式に対応するように設計する**。アドインは、Office がサポートしている、すべてのプラットフォームで動作するように設計します。また、アドインの UX は、あらゆるプラットフォームおよびフォーム ファクターで最適に機能する必要があります。マウス/キーボードとタッチ入力のデバイスをサポートして、カスタムの HTML UI が各種のフォーム ファクターに順応するようにします。詳細は、「[タッチ](../concepts/add-in-development-best-practices.md#optimize-for-touch)」をご参照ください。 
 
 ## <a name="see-also"></a>関連項目
-- [Office UI Fabric](https://developer.microsoft.com/ja-JP/fabric) 
+- 
+  [Office UI Fabric](https://developer.microsoft.com/ja-JP/fabric) 
 - [アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 
