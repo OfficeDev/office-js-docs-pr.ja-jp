@@ -1,18 +1,18 @@
 ---
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7feaef4d3b76cbef71a367099382f3f26ea50314
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448141"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127689"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
-ユーザーのベスト エクスペリエンスを実現するために、Office アドイン実行時の CPU コアとメモリの使用量、および信頼性を一定の範囲内に保つ必要があります。Outlook アドインでは、これに加えて正規表現の評価の応答時間を一定以内に保つ必要があります。これらの実行時のリソース使用量の制限は、Windows と OS X 用の Office クライアントに適用され、Office Online、Outlook Web App、デバイス用 OWA には適用されません。 
+ユーザーのベスト エクスペリエンスを実現するために、Office アドイン実行時の CPU コア、メモリの使用量、信頼性、および Outlook アドインの正規表現の評価の応答時間を一定以内に保つ必要があります。これらの実行時のリソース使用量の制限は、Windows と OS X 用の Office クライアントに適用され、モバイルアプリやブラウザーでは適用されません。
 
 また、デスクトップやモバイル デバイス上のアドインについても、アドインの設計と実装でリソース使用量を最適化することによって、そのパフォーマンスを最適化できます。
 
@@ -41,7 +41,7 @@ ms.locfileid: "32448141"
 Outlook アドインが前述の CPU コア使用率、メモリ使用量、またはクラッシュ許容度のしきい値を超えると、そのアドインは Outlook で無効化されます。Exchange 管理センターにはそのアプリの無効状態が表示されます。
 
 > [!NOTE]
-> Outlook Web App およびデバイス用 OWA ではなく、Outlook リッチ クライアントによってのみ、リソース配分状況を監視する場合でも、リッチ クライアントが Outlook アドインを無効化すると、このアドインは Outlook Web App およびデバイス用 OWA の使用でも無効化されます。
+> Outlook on the web やモバイル端末ではなく、Outlook リッチ クライアントによってのみ、リソース使用量をモニターする場合でも、リッチ クライアントが Outlook アドインを無効化すると、このアドインは Outlook on the web やモバイル端末でも無効化されます。
 
 CPU コア、メモリ、および信頼性ルールだけでなく、Outlook アドインは次のアクティブ化のルールを監視する必要があります。
 
@@ -49,7 +49,7 @@ CPU コア、メモリ、および信頼性ルールだけでなく、Outlook �
 
     Windows レジストリでグループ ポリシーまたはアプリケーションに固有の設定を使用すると、管理者は **OutlookActivationAlertThreshold** 設定でこの既定のしきい値の 1,000 ミリ秒を調整することができます。
 
-- **正規表現の再評価**: Outlook でマニフェスト内の正規表現を再評価する既定の制限は 3 回。適用されるしきい値 (既定の 1,000 ミリ秒、または Windows レジストリに **OutlookActivationAlertThreshold** 設定が存在する場合はその設定で指定された値) を 3 回とも超えて評価に失敗すると、その Outlook アドインは Outlook で無効化されます。Exchange 管理センターには無効状態が表示され、そのアドインは Outlook リッチ クライアント、Outlook Web App、および デバイス用 OWA で使用できなくなります。
+- **正規表現の再評価**: Outlook でマニフェスト内の正規表現を再評価する既定の制限は 3 回。適用されるしきい値 (既定の 1,000 ミリ秒、または Windows レジストリに **OutlookActivationAlertThreshold** 設定が指定されている場合はその値) を 3 回とも超えて評価に失敗すると、その Outlook アドインは Outlook で無効化されます。Exchange 管理センターには無効状態が表示され、そのアドインは Outlook リッチ クライアント、Outlook on the web、およびモバイル端末で使用できなくなります。
 
     Windows レジストリでグループ ポリシーまたはアプリケーションに固有の設定を使用すると、管理者は **OutlookActivationManagerRetryLimit** 設定の評価を再試行する時間の数字を調整することができます。
 

@@ -1,14 +1,14 @@
 ---
 title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952097"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128186"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -30,7 +30,7 @@ ms.locfileid: "33952097"
 - Office 2013 以降
 
     > [!TIP]
-    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
+    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/ja-JP/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Visual Studio でアドイン プロジェクトを作成する
 
@@ -102,7 +102,7 @@ Web アプリケーション プロジェクトには、開始するために使
 - [Outlook アドイン用のコードのデバッグ](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> Visual Studio を使用して、Office Online または Office for Mac で Office アドインをデバッグすることはできません。 これらのプラットフォームのデバッグについては、[Office Online での Office アドインのデバッグ](../testing/debug-add-ins-in-office-online.md)に関するページ、または「[iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)」を参照してください。
+> Visual Studio を使用して、Office on the web または Mac でアドインをデバッグすることはできません。 これらのプラットフォームでのデバッグについては、「[Office on the web での Office アドインのデバッグ](../testing/debug-add-ins-in-office-online.md)」または「[iPad と Mac での Office アドインのデバッグ](../testing/debug-office-add-ins-on-ipad-and-mac.md)」を参照してください。
 
 ### <a name="review-the-build-and-debug-properties"></a>ビルドとデバッグのプロパティの確認
 
@@ -125,7 +125,7 @@ Web アプリケーション プロジェクトには、開始するために使
 |**Web プロジェクト**|アドインに関連付けられている Web プロジェクトの名前を指定します。|
 |**メール アドレス**<br/>(Outlook アドインのみ)|Outlook アドインのテストに使用する Exchange Server または Exchange Online のユーザー アカウントのメール アドレスを指定します。|
 |**EWS の URL**<br/>(Outlook アドインのみ)|Exchange Web サービスの URL (例: `https://www.contoso.com/ews/exchange.aspx`)。 |
-|**OWA の URL**<br/>(Outlook アドインのみ)|Outlook Web App の URL (例: `https://www.contoso.com/owa`)。|
+|**OWA の URL**<br/>(Outlook アドインのみ)|Outlook on the web の URL (例: `https://www.contoso.com/owa`)。|
 |**多要素認証を使用する**<br/>(Outlook アドインのみ)|多要素認証を使用する必要があるかどうかを示すブール値。|
 |**ユーザー名**<br/>(Outlook アドインのみ)|Outlook アドインのテストに使用する Exchange Server または Exchange Online のユーザー アカウントの名前を指定します。|
 |**プロジェクト ファイル**|ビルド、構成、およびその他のプロジェクト情報が含まれているファイルの名前を指定します。|

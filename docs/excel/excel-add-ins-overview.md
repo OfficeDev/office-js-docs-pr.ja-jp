@@ -1,18 +1,18 @@
 ---
 title: Excel アドインの概要
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cbeb1fa6ae0d88724b7da3fbcb45f8216b6010a6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951922"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128235"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
-Excel アドインを使用すると、Windows での Office、Office Online、Office for Mac、Office for iPad など、複数のプラットフォームで Excel アプリケーションの機能を拡張できます。ブック内で Excel アドインを使用すると、次の操作を実行できます。
+Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーなどの複数のプラットフォームで Excel アプリケーションの機能を拡張できます。ブック内で Excel アドインを使用すると、次の操作を実行できます。
 
 - Excel オブジェクトを操作して Excel データを読み書きします。
 - Web ベースの作業ウィンドウまたはコンテンツ ウィンドウを使用して機能を拡張します
@@ -21,7 +21,7 @@ Excel アドインを使用すると、Windows での Office、Office Online、O
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
 
-* **クロスプラットフォーム サポート**: Excel アドインは、Windows 版、Mac 版、iOS 版の Office と、Office Online で実行できます。
+* **クロスプラットフォーム サポート**: Excel アドインは、Office on the web、Windows、Mac、iPad で実行できます。
 * **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
 * **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
 * **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。

@@ -1,14 +1,14 @@
 ---
 title: Excel、Word、PowerPoint のアドイン コマンド
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cbdc01a439bf34b089806faf20fffa12c916fea1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952181"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127738"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -23,9 +23,9 @@ ms.locfileid: "33952181"
 
 ![Excel のアドイン コマンドのスクリーンショット](../images/add-in-commands-1.png)
 
-*図 2. Excel Online で実行するコマンドを含むアドイン*
+*図 2. Excel on the web で実行するコマンドを含むアドイン*
 
-![Excel Online のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
+![Excel on the web のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
 
@@ -54,17 +54,17 @@ ms.locfileid: "33952181"
 現在、アドイン コマンドは次のプラットフォームでサポートされています。
 
 - Windows 版 Outlook 2016 (ビルド 16.0.4678.1000 以降)
-- Office 365 に接続している Windows 版 Office (ビルド 16.0.6769 以降) 
+- Windows 上の Office (ビルド 16.0.6769 以降、Office 365 サブスクリプションに接続済み)
 - Windows 版 Office 2019
-- Office 365 に接続している Office for Mac (ビルド 15.33 以降) 
-- Office 2019 for Mac
-- Office Online
+- Mac 上の Office (ビルド 15.33 以降、Office 365 サブスクリプションに接続済み)
+- Mac 上の Office 2019
+- Office on the web
 
 その他のプラットフォームが近日中に公開されます。
 
 ## <a name="debugging"></a>デバッグ
 
-アドイン コマンドをデバッグするには、Office Online で実行する必要があります。 詳細については、「[Office Online でアドインをデバッグする](../testing/debug-add-ins-in-office-online.md)」を参照してください。
+アドイン コマンドをデバッグするには、Office on the web で実行する必要があります。 詳細については、「[Office on the web でアドインをデバッグする](../testing/debug-add-ins-in-office-online.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -74,7 +74,7 @@ ms.locfileid: "33952181"
 - アドイン内の一般的なタスクをより効率的に実行できるように、アクションは細分化して提供します。1 つのアクションを完了するまでのステップ数は最小限に抑えます。
 - Office リボンにコマンドを配置するために。
     - 提供する機能が適応する場合は既存のタブ (挿入、レビューなど) にコマンドを配置します。たとえば、アドインを使用することでユーザーがメディアを挿入できる場合は、[挿入] タブにグループを追加します。Office のすべてのバージョンで、すべてのタブが使用可能なわけではない点に注意してください。詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
-    - 別のタブに機能が適応せず、トップ レベル コマンドが 6 個未満の場合は、[ホーム] タブにコマンドを配置します。Office デスクトップと Office Online など、Office の複数のバージョン間でアドインを操作する必要があり、タブがどのバージョンでも利用できるわけではない場合 (たとえば、[デザイン] タブは Office Online にはありません) は、[ホーム] タブにコマンドを追加できます。  
+    - 別のタブに機能が適応せず、トップ レベル コマンドが 6 個未満の場合は、[ホーム] タブにコマンドを配置します。Office on the web やデスクトップなど、Office の複数のバージョン間でアドインを操作する必要があり、タブがどのバージョンでも利用できるわけではない場合 (たとえば、[デザイン] タブは Office on the web にはありません) は、[ホーム] タブにコマンドを追加できます。  
     - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。
     - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。

@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
 description: ''
-ms.date: 05/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910099"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127703"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -58,29 +58,29 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
-Outlook for Mac は Office 365 に付属していて、Outlook アドインをサポートします。Outlook アドインを Outlook for Mac で実行するための要件は、Outlook for Mac そのものの要件と同じです。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。Outlook for Mac はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
+Mac 上の Outlook は、Office 365 に付属していて、Outlook アドインをサポートします。Mac 上の Outlook で Outlook アドインを実行するための要件は、Mac 上の Outlook そのものの要件と同じです。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。 Mac 上の Outlook はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
 
-次は、Office アドインをサポートする Office for Mac の最小クライアント バージョンです。
+次は、Office アドインをサポートする Mac 上の Office の最小クライアント バージョンです。
 
-- Word for Mac バージョン 15.18 (160109)
-- Excel for Mac バージョン 15.19 (160206)
-- PowerPoint for Mac バージョン 15.24 (160614)
+- Word バージョン 15.18 (160109)
+- Excel バージョン 15.19 (160206)
+- PowerPoint バージョン 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件: Office Online Web クライアントと SharePoint のブラウザー サポート
+## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>クライアントの要件: Office Web クライアントと SharePoint のブラウザー サポート
 
-Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
+Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど、ECMAScript 5.1、HTML5、CSS3 をサポートする任意のブラウザー。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット
 
-特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する Outlook Web App の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
+特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する Outlook の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
 
 
 | ホスト アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook for Android|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|Android 用のネイティブ アプリ、ブラウザーは適用外|
-|Outlook for iOS|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|iOS 用のネイティブ アプリ、ブラウザーは適用外|
-|Outlook Web App|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Office 365、Exchange Online、または Exchange Server 2013 以降のオンプレミスが対象|Safari|
+|Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|Android 用のネイティブ アプリ、ブラウザーは適用外|
+|iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|Office 365 for Business または Exchange Online の最新の更新プログラムが対象|iOS 用のネイティブ アプリ、ブラウザーは適用外|
+|Outlook on the web|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Office 365、Exchange Online、または Exchange Server 2013 以降のオンプレミスが対象|Safari|
 
 > [!NOTE]
 > ネイティブ アプリの OWA for Android、OWA for iPad、および OWA for iPhone は[廃止](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b)され、Outlook アドインのテストには不要になり、利用もできなくなりました。

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/21/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 39be2f0913e2eee4b1e5e7d5f704a47dee279cf5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910337"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128256"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -74,6 +74,9 @@ CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 
 以下のコード サンプルでは、`stockPriceStream` 関数がストック ティッカー シンボルを使い、1000 ミリ秒ごとに株価を取得します。 このサンプルに関する詳細については、[カスタム関数チュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function)を参照してください。
 
+> [!NOTE]
+> 次のコードは、IEX Trading API を使用して株価情報を要求します。 コードを実行する前に、API 要求で必要な API トークンを取得するため、[IEX Cloud を使用して無料アカウントを作成](https://iexcloud.io/)する必要があります。
+
 ```js
 /**
  * Streams a stock price.
@@ -91,7 +94,8 @@ function stockPriceStream(ticker, invocation) {
             return;
         }
 
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         isPending = true;
 
         fetch(url)

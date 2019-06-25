@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した高度なプログラミングの概念
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 43d1f79b629b238afd227978e9c6dc90b9a6d992
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952160"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127799"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 
@@ -60,7 +60,7 @@ else {
 ```
 
 > [!NOTE]
-> Windows での Excel、Excel Online、Excel for iPad などの Office ホストのプラットフォームすべてでアドインを使用できるようにするには、マニフェストで要件セットのサポートを定義するのではなく、実行時に要件のサポートを確認することをお勧めします。
+> Excel on the web、Windows、iPad などの Office ホストのプラットフォームすべてでアドインを使用できるようにするには、マニフェストで要件セットのサポートを定義するのではなく、実行時に要件のサポートを確認することをお勧めします。
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 共通 API の要件セット
 

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: f48b62b47c4000b128043fe2e01f949af7179e73
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449156"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128305"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -16,7 +16,7 @@ Excel JavaScript API を使用して一般的なタスクを実行するには�
 
 ## <a name="minimize-the-number-of-sync-calls"></a>sync() 呼び出しの数を最小限にする
 
-Excel JavaScript API では、```sync()``` は唯一の非同期操作であり、状況によっては遅くなる可能性があり、Excel Online の場合は特にその傾向があります。 パフォーマンスを最適化するには、```sync()``` を呼び出す前にできるだけ多くの変更をキューイングして、呼び出しの数を最小限にします。
+Excel JavaScript API では、```sync()``` は唯一の非同期操作で、状況によっては遅くなる可能性があり、Excel on the web の場合は特にその傾向があります。 パフォーマンスを最適化するには、```sync()``` を呼び出す前にできるだけ多くの変更をキューイングして、呼び出しの数を最小限にします。
 
 このプラクティスに従うコード サンプルについては 「[Core Concepts - sync()](excel-add-ins-core-concepts.md#sync)」を参照してください。
 
@@ -127,9 +127,6 @@ Excel.run(async function(ctx) {
 ```
 
 ### <a name="suspend-screen-updating"></a>画面の更新を停止する
-
-> [!NOTE]
-> この記事に記載されている `suspendScreenUpdatingUntilNextSync` メソッドは、現在パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
 

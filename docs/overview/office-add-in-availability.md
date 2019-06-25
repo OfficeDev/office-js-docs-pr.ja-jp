@@ -1,14 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
-description: Excel、Word、Outlook、PowerPoint、OneNote、および Project のサポートされる要件セット。
-ms.date: 05/23/2019
+description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
+ms.date: 06/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fb1f0db839910e91d7a5215f8e21f5b33ff2165
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 82c276c802cab66ae4f5443d0d556bc42ee57841
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432195"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128623"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -27,7 +27,7 @@ ms.locfileid: "34432195"
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - 作業ウィンドウ<br>
         - コンテンツ<br>
         - カスタム関数<br>
@@ -59,7 +59,7 @@ ms.locfileid: "34432195"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Windows 版 Office<br>(Office 365 に接続された)</td>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - 作業ウィンドウ<br>
         - コンテンツ<br>
         - カスタム関数<br>
@@ -160,7 +160,7 @@ ms.locfileid: "34432195"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(Office 365 に接続された)</td>
+    <td>iPad 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - カスタム関数</td>
@@ -188,7 +188,7 @@ ms.locfileid: "34432195"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(Office 365 に接続された)</td>
+    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - カスタム関数<br>
@@ -219,7 +219,7 @@ ms.locfileid: "34432195"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2019<br>(1 回限りの購入)</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -248,7 +248,7 @@ ms.locfileid: "34432195"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2016<br>(1 回限りの購入)</td>
     <td>- 作業ウィンドウ<br>
         - コンテンツ</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -282,7 +282,7 @@ ms.locfileid: "34432195"
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td>
         - カスタム関数</td>
     <td>
@@ -291,16 +291,7 @@ ms.locfileid: "34432195"
     </td>
   </tr>
   <tr>
-    <td>Windows 版 Office<br>(Office 365 に接続された)</td>
-    <td>
-        - カスタム関数</td>
-    <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
-    <td>
-    </td>
-  </tr>
-  <tr>
-    <td>Office for iPad<br>(Office 365 に接続された)</td>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td>
         - カスタム関数</td>
     <td>
@@ -329,7 +320,7 @@ ms.locfileid: "34432195"
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web<br>(新規)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -343,7 +334,20 @@ ms.locfileid: "34432195"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Windows 版 Office<br>(Office 365 に接続された)</td>
+    <td>Office on the web<br>(クラシック)</td>
+    <td> - メールの読み取り<br>
+      - メールの作成<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+    <td>使用不可</td>
+  </tr>
+  <tr>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
@@ -395,7 +399,7 @@ ms.locfileid: "34432195"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office for iOS<br>(Office 365 に接続された)</td>
+    <td>iOS 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - メールの読み取り<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -406,7 +410,7 @@ ms.locfileid: "34432195"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(Office 365 に接続された)</td>
+    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -420,7 +424,7 @@ ms.locfileid: "34432195"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2019<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -430,10 +434,10 @@ ms.locfileid: "34432195"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>利用不可</td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2016<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -443,10 +447,10 @@ ms.locfileid: "34432195"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>利用不可</td>
+    <td>使用不可</td>
   </tr>
   <tr>
-    <td>Office for Android<br>(Office 365 に接続された)</td>
+    <td>Android 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - メールの読み取り<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -472,7 +476,7 @@ ms.locfileid: "34432195"
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -498,7 +502,7 @@ ms.locfileid: "34432195"
          - TextFile</td>
   </tr>
   <tr>
-    <td>Windows 版 Office<br>(Office 365 に接続された)</td>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -599,7 +603,7 @@ ms.locfileid: "34432195"
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(Office 365 に接続された)</td>
+    <td>iPad 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -626,7 +630,7 @@ ms.locfileid: "34432195"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(Office 365 に接続された)</td>
+    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -654,7 +658,7 @@ ms.locfileid: "34432195"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2019<br>(1 回限りの購入)</td>
     <td> - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -682,7 +686,7 @@ ms.locfileid: "34432195"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2016<br>(1 回限りの購入)</td>
     <td> - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -721,7 +725,7 @@ ms.locfileid: "34432195"
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -737,7 +741,7 @@ ms.locfileid: "34432195"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Windows 版 Office<br>(Office 365 に接続された)</td>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -800,7 +804,7 @@ ms.locfileid: "34432195"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for iPad<br>(Office 365 に接続された)</td>
+    <td>iPad 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -815,7 +819,7 @@ ms.locfileid: "34432195"
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(Office 365 に接続された)</td>
+    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -831,7 +835,7 @@ ms.locfileid: "34432195"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2019<br>(1 回限りの購入)</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
@@ -847,7 +851,7 @@ ms.locfileid: "34432195"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac<br>(1 回限りの購入)</td>
+    <td>Mac 上の Office 2016<br>(1 回限りの購入)</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -877,7 +881,7 @@ ms.locfileid: "34432195"
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>共通 API</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office on the web</td>
     <td> - コンテンツ<br>
          - 作業ウィンドウ<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>

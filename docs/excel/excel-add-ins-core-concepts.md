@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951929"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128214"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -16,7 +16,7 @@ ms.locfileid: "33951929"
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
-Web ベースの Excel アドインは、Windows での Office など、デスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office Online の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。このため、Office.js 内の **sync()** API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの起動など、複数の操作をキューに登録し、**sync()** の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。次のセクションでは、**Excel.run()** と **sync()** API を使用してこれを実行する方法について説明します。
+Web ベースの Excel アドインは、Windows 上の Office など、デスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office on the web の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。このため、Office.js 内の **sync()** API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの呼び出しなど、複数の操作をキューに登録し、**sync()** の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。次のセクションでは、**Excel.run()** と **sync()** API を使用してこれを実行する方法について説明します。
 
 ## <a name="excelrun"></a>Excel.run
 
@@ -211,7 +211,7 @@ range.values = 'Due Date';
 範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。
 
 > [!IMPORTANT]
-> Excel Online ではペイロードのサイズが要求と応答で **5MB** に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
+> Excel on the web ではペイロードのサイズが要求と応答で **5 MB** に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
 
 ## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
 
