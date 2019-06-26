@@ -1,19 +1,19 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589224"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128574"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
-_適用対象: Windows 版 Word 2016 またはそれ以降、Word for iPad、Word for Mac_
+_対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 この記事では、Word の作業ウィンドウ アドインを作成するプロセスを紹介します。
 
@@ -286,13 +286,13 @@ _適用対象: Windows 版 Word 2016 またはそれ以降、Word for iPad、Wor
         npm start
         ```
 
-    - Word Online でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        アドインを使用するには、Word Online で新しいドキュメントを開き、「[Office Online で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)」の手順に従ってアドインをサイドロードします。
+        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
 2. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
 

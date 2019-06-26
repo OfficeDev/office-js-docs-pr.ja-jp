@@ -1,14 +1,14 @@
 ---
 title: Office アドインのテストとデバッグ
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c841608d36f5004a876bec2c899d0e5659d47a7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451102"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126919"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
@@ -20,7 +20,7 @@ ms.locfileid: "32451102"
 
 - [Windows で Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-- [Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
+- [Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 
 - [iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -34,7 +34,7 @@ Office アドインをデバッグする手順も、プラットフォームに�
 
 - [Windows 10 で F12 開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [Office Online でアドインをデバッグする](debug-add-ins-in-office-online.md)
+- [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
 
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
 

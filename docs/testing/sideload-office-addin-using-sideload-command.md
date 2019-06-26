@@ -1,14 +1,14 @@
 ---
 title: sideload コマンドを使用して Office アドインをサイドロードする
 description: ''
-ms.date: 03/19/201907/24/2018
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 69d39c2736312653b5a362aefccd41629e6e3555
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 38aa74963ca750d65e4be7bb17745a59eeed0c83
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619078"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126891"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>sideload コマンドを使用してテスト用の Office アドインをサイドロードする
  
@@ -37,7 +37,7 @@ Office アドイン用の Yeoman ジェネレーターが提供する `sideload`
 
 Windows で Word、Excel、または PowerPoint アドインをテストしていない場合は、アドインのサイドロードについて、次のトピックのいずれかを参照してください。
  
-- [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
+- [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 

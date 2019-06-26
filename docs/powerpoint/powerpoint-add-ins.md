@@ -1,18 +1,18 @@
 ---
 title: PowerPoint アドイン
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450913"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128595"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
-PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac などのプラットフォームでユーザーのプレゼンテーションのための魅力的なソリューションを構築することができます。 次の 2 種類の PowerPoint アドインを作成できます。
+PowerPoint のアドインを使用すると、Windows、iOS、Mac などのプラットフォームやブラウザーで、ユーザーのプレゼンテーションのための魅力的なソリューションを作成できます。 次の 2 種類の PowerPoint アドインを作成できます。
 
 - **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/WA104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
@@ -33,7 +33,7 @@ PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac な
 コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、`Office.Initialize` ハンドラーの一部として、`ActiveViewChanged` イベントを処理する必要があります。
 
 > [!NOTE]
-> PowerPoint Online では [Document.ActiveViewChanged](/javascript/api/office/office.document) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。 この場合、次のコード サンプルに示すように、アドインで読み込むアクティブ ビューをフェッチする必要があります。
+> PowerPoint on the web では [Document.ActiveViewChanged](/javascript/api/office/office.document) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。 この場合、次のコード サンプルに示すように、アドインで読み込むアクティブ ビューをフェッチする必要があります。
 
 コード サンプルは次のとおりです。
 

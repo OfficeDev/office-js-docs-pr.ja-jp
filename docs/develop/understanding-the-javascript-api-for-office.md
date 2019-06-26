@@ -1,14 +1,14 @@
 ---
 title: JavaScript API for Office について
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c1666745e9ffeb6c0e9ecf763b2a30c97c609b4f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449303"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127990"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
@@ -179,7 +179,7 @@ Office.initialize = function (reason) {
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**ホスト名**|データベース|ブック|メールボックス|プレゼンテーション|ドキュメント|Project|
-||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>OWA for Devices|PowerPoint,<br/>PowerPoint Online|Word|プロジェクト|
+||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel on Windows、<br/>Excel on the web|Outlook on Windows、<br/>Outlook on the web、<br/>Outlook on Android、<br>Outlook on iOS|PowerPoint on Windows、<br/>PowerPoint on the web|Word on Windows|Project on Windows|
 |**サポートされるアドインの種類**|コンテンツ|Y|Y||Y|||
 ||作業ウィンドウ||Y||Y|Y|Y|
 ||Outlook|||Y||||

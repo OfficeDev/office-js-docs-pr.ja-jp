@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432186"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126905"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -73,7 +73,7 @@ Office アドインを使用するとき、ユーザーは、ダイアログ ボ
 
 |**影響を受けるブラウザー**|**影響を受けるプラットフォーム**|
 |:--------------------|:---------------------|
-|Internet Explorer、Microsoft Edge|Office Online|
+|Internet Explorer、Microsoft Edge|Office on the web|
 
 この問題を解決するために、エンド ユーザーまたは管理者は、Internet Explore の信頼済みサイトのリストにアドインのドメインを追加することができます。Internet Explorer または Microsoft Edge ブラウザーのどちらを使用していても、同じ手順を使用します。
 
@@ -98,10 +98,10 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 リボン ボタンのアイコンのファイル名やメニュー アイテムのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
 
 #### <a name="for-windows"></a>Windows の場合:
-フォルダ `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
+フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
 
 #### <a name="for-mac"></a>Mac の場合: 
-フォルダ `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除する 
+フォルダー `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除する 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
@@ -110,7 +110,7 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 
 ## <a name="see-also"></a>関連項目
 
-- [Office Online でアドインをデバッグする](debug-add-ins-in-office-online.md) 
+- [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md) 
 - [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
 - [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)

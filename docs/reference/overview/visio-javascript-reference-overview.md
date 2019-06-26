@@ -1,15 +1,15 @@
 ---
 title: Visio JavaScript API の概要
 description: ''
-ms.date: 10/11/2018
+ms.date: 06/20/2019
 ms.prod: visio
 localization_priority: Priority
-ms.openlocfilehash: 22b22db1cc515145ef4f18a30de189a3bbd04f60
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 77a3b3f0b4535d366f492f265087bb4f5988c14f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451798"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127115"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -25,11 +25,11 @@ Visio JavaScript API を使用して、次のことを行えます。
 * 図面の中でのマウス イベントのカスタム ハンドラーを記述する。
 * 図形テキスト、図形データ、およびハイパーリンクなどの図面データをソリューションに公開する。
 
-この記事では、Visio Online で Visio JavaScript API を使って SharePoint Online のソリューションをビルドする方法について説明します。また、**EmbeddedSession**、**RequestContext**、JavaScript プロキシ オブジェクトなどの API、および **sync()**、**Visio.run()**、**load()** のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
+この記事では、Visio on the web で Visio JavaScript API を使用して SharePoint Online のソリューションをビルドする方法について説明します。また、**EmbeddedSession**、**RequestContext**、JavaScript プロキシ オブジェクトなどの API、および **sync()**、**Visio.run()**、**load()** のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
-EmbeddedSession オブジェクトは、開発者のフレームと Visio Online のフレーム間の通信を初期化します。
+EmbeddedSession オブジェクトは、開発者のフレームとブラウザーの Visio フレーム間の通信を初期化します。
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -46,7 +46,7 @@ run メソッドはセッションと RequestContext オブジェクトを取り
 
 ## <a name="requestcontext"></a>RequestContext
 
-RequestContext オブジェクトは、Visio アプリケーションへの要求を容易にします。 開発者のフレームと Visio Online アプリケーションは、異なる 2 つの iframe で実行されるため、開発者のフレームから Visio およびページや図形などの関連するオブジェクトへのアクセスを取得する RequestContext オブジェクト (次の例の内容を含む) が必要です。
+RequestContext オブジェクトは、Visio アプリケーションへの要求を容易にします。 開発者のフレームと Visio Web クライアントは、異なる 2 つの iframe で実行されるため、開発者のフレームから Visio およびページや図形などの関連オブジェクトへのアクセスを取得する RequestContext オブジェクト (次の例の内容を含む) が必要になります。
 
 ```js
 function hideToolbars() {
@@ -194,15 +194,11 @@ function getSelectedShapeText() {
 </script>
 ```
 
-次に、作業する Visio 図面の URL が必要になります。 Visio 図面を SharePoint Online にアップロードし、Visio Online で開きます。 そこから [埋め込み] ダイアログ ボックスを開き、上の例の埋め込み URL を使用します。
+次に、作業する Visio 図面の URL が必要になります。 Visio 図面を SharePoint Online にアップロードして、Visio on the web で開きます。 そこから [埋め込み] ダイアログ ボックスを開き、上の例の埋め込み URL を使用します。
 
 ![[埋め込み] ダイアログ ボックスから Visio ファイル URL をコピーする](../images/Visio-embed-url.png)
 
-Visio Online を編集モードで使用している場合、**[ファイル]** > **[共有]** > **[埋め込み]** を選択し、[埋め込み] ダイアログを開きます。 Visio Online を表示モードで使用している場合には、[...]、**[埋め込み]** の順に選択して [埋め込み] ダイアログを開きます。
-
-## <a name="open-api-specifications"></a>Open API の仕様
-
-新しい API の設計と開発にあたり、[Open API の仕様](../openspec.md)ページでこれらに対するフィードバックの提供が可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
+編集モードで Visio on the web を使用している場合は、**[ファイル]** > **[共有]** > **[埋め込み]** を選択して [埋め込み] ダイアログを開きます。 表示モードで Visio on the web を使用している場合は、[...]、**[埋め込み]** の順に選択して [埋め込み] ダイアログを開きます。
 
 ## <a name="visio-javascript-api-reference"></a>Visio JavaScript API リファレンス
 

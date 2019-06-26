@@ -1,14 +1,14 @@
 ---
 title: DOM とランタイム環境を読み込む
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 78ddd10e9106e6668e2bb8cd40f58cbdb7b862d9
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910218"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128102"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -106,7 +106,7 @@ Office.initialize = function () {
 >Office.initialize = function () {};
 >```
 >
-> **Office.onReady** を呼び出したり、**Office.initialize** イベントを割り当てたりしない場合、アドインを開始するとエラーが発生する可能性があります。 また、ユーザーが Excel Online、PowerPoint Online、Outlook Web App などの Office Online Web クライアントでアドインを使用しようとすると、アドインの実行が失敗します。
+> **Office.onReady** を呼び出したり、**Office.initialize** イベントを割り当てたりしない場合、アドインを開始するとエラーが発生する可能性があります。 また、ユーザーが Excel、PowerPoint、または Outlook などの Office Web クライアントでアドインを使用しようとすると、実行に失敗します。
 >
 > アドインに複数のページが含まれる場合、新しいページが読み込まれるときに、そのページは **Office.onReady** を呼び出すか、**Office.initialize** イベント ハンドラーを割り当てる必要があります。
 

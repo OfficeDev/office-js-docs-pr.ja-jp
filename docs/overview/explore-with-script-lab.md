@@ -4,12 +4,12 @@ description: スクリプトラボを使用して、Office JS API とプロト�
 ms.topic: article
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128656"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226777"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
 
@@ -42,7 +42,7 @@ Office JS API を呼び出す JavaScript または TypeScript コードに加え
 
 ### <a name="save-and-share-snippets"></a>スニペットの保存と共有
 
-既定では、スクリプトラボで開いたスニペットはブラウザーのキャッシュに保存されます。 スニペットを完全に保存するには、それを[GitHub gist](https://gist.github.com)にエクスポートします。 独自にスニペットを保存するための secret gist を作成したり、他のユーザーと共有したりする予定がある場合は、共有された gist を作成します。
+既定では、スクリプトラボで開いたスニペットはブラウザーのキャッシュに保存されます。 スニペットを完全に保存するには、それを[GitHub gist](https://gist.github.com)にエクスポートします。 独自にスニペットを保存するための secret gist を作成したり、他のユーザーと共有する予定がある場合は、パブリックな gist を作成したりします。
 
 ![共有オプション](../images/script-lab-share.jpg)
 

@@ -1,14 +1,14 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e7dbde7c6efbaacb5ba046678cc0df24446d31c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952153"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127612"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -29,7 +29,7 @@ autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の
 
 |**製品**|**プラットフォーム**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラットフォーム: <ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office for Mac。ビルド 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラットフォーム: <ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office on Mac。ビルド 15.34.17051500+</li><li>Office on the web</li></ul>|
 
 
 ## <a name="best-practices"></a>ベスト プラクティス

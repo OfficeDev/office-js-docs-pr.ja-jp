@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
-ms.date: 06/05/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: eba503a9e3d46e8ef187ef564ffa82fa984f3726
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910321"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128560"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -17,7 +17,7 @@ ms.locfileid: "34910321"
 > [!IMPORTANT]
 > - SharePoint のアプリ カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。
 > - クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインの発行に [Office 365 管理センターからの一元展開を使用する](../publish/centralized-deployment.md)ことをお勧めします。
-> - SharePoint のアプリ カタログは Office for Mac ではサポートされていません。 Office アドインを Mac クライアントに展開するには、そのアドインを [AppSource](/office/dev/store/submit-to-the-office-store) に提出する必要があります。
+> - SharePoint のアプリ カタログは Office on Mac ではサポートされていません。 Office アドインを Mac クライアントに展開するには、そのアドインを [AppSource](/office/dev/store/submit-to-the-office-store) に提出する必要があります。
 
 ## <a name="create-an-app-catalog"></a>アプリ カタログを作成する
 

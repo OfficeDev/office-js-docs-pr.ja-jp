@@ -1,42 +1,42 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: f666ffee2c7c139ea18859d995384281a31238dd
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: b97da347064fdceda847403785e0bf792846dfaa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432223"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126968"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
-Office for iOS でアドインを実行するしくみを確認するには、iTunes を利用し、アドインのマニフェストを iPad にサイドロードするか、Office for Mac で直接、アドインのマニフェストをサイドロードします。このアクションでは、実行中、ブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使えることと適切にレンダリングされることを確認できます。 
+Office on iOS でアドインの実行状態を確認するには、iTunes を利用してアドインのマニフェストを iPad にサイドロードするか、Office on Mac でアドインのマニフェストを直接サイドロードします。このアクションでは、実行中にブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使いやすいかどうかや、適切にレンダリングされているかどうかを確認できます。 
 
-## <a name="prerequisites-for-office-for-ios"></a>Office for iOS の前提条件
+## <a name="prerequisites-for-office-on-ios"></a>Office on iOS の前提条件
 
 - [iTunes](https://www.apple.com/itunes/download/) がインストールされた Windows または Mac コンピューター。
     
-- [iPad 用 Excel](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) がインストールされた iOS 8.2 以上の iPad と同期ケーブル。
+- [Excel on iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) がインストールされた iOS 8.2 以降の iPad と同期ケーブル。
     
 - テスト対象アドインのマニフェスト .xml ファイル。
     
 
-## <a name="prerequisites-for-office-for-mac"></a>Office for Mac の前提条件
+## <a name="prerequisites-for-office-on-mac"></a>Office on Mac の前提条件
 
-- OS X v10.10 "Yosemite" 以降が動作し、 [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) がインストールされている Mac。
+- [Office on Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) がインストールされていて OS X v10.10 "Yosemite" を実行している Mac。
     
-- Word for Mac バージョン 15.18 (160109)。
+- Word on Mac バージョン 15.18 (160109)。
    
-- Excel for Mac バージョン 15.19 (160206)。
+- Excel on Mac バージョン 15.19 (160206)。
 
-- PowerPoint for Mac バージョン 15.24 (160614)
+- PowerPoint on Mac バージョン 15.24 (160614)
     
 - テスト対象アドインのマニフェスト .xml ファイル。
     
 
-## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>iPad 用 Excel または Word のアドインをサイドロードする
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Excel または Word on iPad にアドインをサイドロードする
 
 1. 同期ケーブルを使用し、iPad をコンピューターに接続します。iPad を初めてコンピューターに接続する場合、**[このコンピューターを信頼しますか?]** と問われます。**[信頼する]** を選択して続行します。
 
@@ -58,10 +58,10 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
 
 
-## <a name="sideload-an-add-in-on-office-for-mac"></a>Office for Mac でアドインをサイドロードする
+## <a name="sideload-an-add-in-in-office-on-mac"></a>Office on Mac にアドインをサイドロードする
 
 > [!NOTE]
-> Outlook for Mac アドインをサイドロードするには、「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」を参照してください。
+> Mac に Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
 
 1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     
@@ -71,24 +71,24 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     
 2. **Finder** で `open .` コマンドを使用してフォルダーを開きます (ピリオドまたはドットを含みます)。アドインのマニフェスト ファイルをこのフォルダーにコピーします。
     
-    ![Office for Mac の Wef フォルダー](../images/all-my-files.png)
+    ![Office on Mac の Wef フォルダー](../images/all-my-files.png)
 
 3. Word を起動し、ドキュメントを開きます。既に起動している場合は、Word を再起動します。
     
 4. Word で、**[挿入]** > **[アドイン]** > **[個人用アドイン]** (ドロップダウン メニュー) を選択し、アドインを選択します。
     
-    ![Office for Mac のマイ アドイン](../images/my-add-ins-wikipedia.png)
+    ![Office on Mac の個人用アドイン](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > サイドロードしたアドインは [個人用アドイン] ダイアログには表示されません。ドロップダウン メニュー内にのみ表示されます (**[挿入]** タブの [個人用アドイン] の右にある小さい下向き矢印)。サイドロードしたアドインは、このメニューの見出し **[開発者向けアドイン]** の下に一覧表示されます。 
     
 5. アドインが Word に表示されることを確認します。
     
-    ![Office for Mac に表示される Office アドイン](../images/lorem-ipsum-wikipedia.png)
+    ![Office on Mac に表示された Office アドイン](../images/lorem-ipsum-wikipedia.png)
     
-### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュのクリア
+### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュをクリアする
 
-Office for Mac では、パフォーマンス上の理由でアドインがよくキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
+Office on Mac では、多くの場合、パフォーマンス上の理由でアドインがキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
 
 Mac では、`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアできます。 
 

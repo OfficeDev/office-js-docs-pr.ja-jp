@@ -1,14 +1,14 @@
 ---
 title: Word アドインの概要
 description: ''
-ms.date: 06/12/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
-ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
+ms.openlocfilehash: 5516e4dc847d4872a12f769530d0a5cb7d779c7c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "34933773"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126807"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -44,9 +44,9 @@ ASP.NET、NodeJS、Python などの任意の Web サーバー テクノロジを
 Word JavaScript API を使用すると、アプリケーションから Word 文書内にあるオブジェクトやメタデータにアクセスできます。これらの API を使用して、以下をターゲットとするアドインを作成できます。
 
 * Windows での Word 2013 以降
-* Word Online
-* Word 2016 for Mac 以降
-* Word for iPad
+* Word on the web
+* Mac on Word 2016 以降
+* Word on iPad
 
 アドインを 1 回作成すれば、それをプラットフォームの異なるすべてのバージョンの Word で実行できます。詳細については、「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。
 

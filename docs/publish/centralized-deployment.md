@@ -1,14 +1,14 @@
 ---
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: ''
-ms.date: 04/16/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cecd9306bf3357d2f9b99cf01f8863ae3d3fe1f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 5f3fc2a637a125e426f8943794be0a906b0887fb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910183"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128588"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -17,7 +17,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 現在、Office 365 管理センターは次のシナリオをサポートしています。
 
 - 新しいアドインおよび更新されたアドインの個人、グループ、組織への一元展開。
-- Windows、Mac、Office Online を含む複数のプラットフォームへの展開。
+- Windows、Mac、Office on the web を含む複数のプラットフォームへの展開。
 - 英語および世界各国のテナントへの展開。
 - クラウド ホスト型アドインの展開。
 - ファイアウオール内でホストされているアドインの展開。

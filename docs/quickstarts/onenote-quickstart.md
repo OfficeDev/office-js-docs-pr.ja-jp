@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589217"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128539"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -95,7 +95,7 @@ try {
     npm run start:web
     ```
 
-2. [OneNote Online](https://www.onenote.com/notebooks) でノートブックを開いて新しいページを作成します。
+2. [OneNote on the web](https://www.onenote.com/notebooks) でノートブックを開き、新しいページを作成します。
 
 3. **[挿入] > [Office アドイン]** の順に選択し、[Office アドイン] ダイアログを開きます。
 

@@ -1,29 +1,29 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 92218bb012ae9031ebfc429606885a0ec0ea85b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 56b74c0e43c8e9709ecd03a8c60a89d3869e44f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34592130"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128109"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
-Office アドインは、Office Online で実行しているときに iFrame を使用して表示され、デスクトップおよびモバイル クライアント用に Office に埋め込まれたブラウザー コントロールを使用して表示される Web アプリケーションです。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込まれたブラウザーおよびエンジン、どちらもユーザーのコンピュータにインストールされているブラウザによって提供されます。
+Office アドインは、Office on the web での実行時に iFrame を使用して表示され、デスクトップおよびモバイル クライアント用に Office に埋め込まれたブラウザー コントロールを使用して表示される Web アプリケーションです。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込まれたブラウザーおよびエンジン、どちらもユーザーのコンピュータにインストールされているブラウザによって提供されます。
 
 どのブラウザが使用されているかは、以下によります。
 
 - コンピュータのオペレーティングシステム。
-- アドインがOffice Online、Office 365、または登録のないOffice 2013以降で実行されているかどうか。
+- アドインが Office on the web、Office 365、または登録のない Office 2013 以降で実行されているかどうか。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
 |**OS / Platform**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office Online|Office Onlineが開かれているブラウザ。|
+|Office on the web|Office が開かれているブラウザー。|
 |Mac|Safari|
 |iOS|Safari|
 |Android|Chrome|

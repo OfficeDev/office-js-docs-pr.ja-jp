@@ -1,39 +1,39 @@
 ---
 title: Excel JavaScript API の要件セット
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9123714dff894d01475563b4d960c1fad682789a
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: a1710fcc89eeafa1e6314e06ded99b3527972244
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997415"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128448"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
-Excel アドインは、Windows での Office 2016 以降、Office for iPad、Office for Mac、Office Online など、複数のバージョンの Office で機能します。 次の表に、Excel の要件セット、各要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号を記載します。
+Excel アドインは、Windows での Office 2016 以降、Office on the web、Mac、および iPad など、複数のバージョンの Office で機能します。 次の表に、Excel の要件セット、各要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号を記載します。
 
 > [!NOTE]
 > 番号付きの要件セットで API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で**実稼働**ライブラリを参照してください。
 >
 > プレビューの API の使用に関する詳細については、この記事の「[Excel JavaScript プレビュー API](#excel-javascript-preview-apis)」セクションを参照してください。
 
-|  要件セット  |  Windows での Office<br>(Office 365 に接続)  |  Office for iPad<br>(Office 365 に接続)  |  Office for Mac<br>(Office 365 に接続)  | Office Online  |  Office Online Server  |
+|  要件セット  |  Windows での Office<br>(Office 365 サブスクリプションに接続)  |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](/javascript/api/excel)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要があります) |
-| ExcelApi 1.9  | バージョン 1903 (ビルド 11425.20204) 以降 | 2.24 以降 | 16.24 以降 | 2019 年 5 月       | 間もなく提供開始 |
-| ExcelApi 1.8  | バージョン 1808 (ビルド 10730.20102) 以降 | 2.17 以降 | 16.17 以降 | 2018 年 9 月 | 間もなく提供開始 |
-| ExcelApi 1.7  | バージョン 1801 (ビルド 9001.2171) 以降   | 2.9 以降  | 16.9 以降  | 2018 年 4 月     | 間もなく提供開始 |
-| ExcelApi 1.6  | バージョン 1704 (ビルド 8201.2001) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 4 月     | 近日公開 |
-| ExcelApi 1.5  | バージョン 1703 (ビルド 8067.2070) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 3 月     | 近日公開 |
-| ExcelApi 1.4  | バージョン 1701 (ビルド 7870.2024) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 1 月   | 近日公開 |
+| ExcelApi 1.9  | バージョン 1903 (ビルド 11425.20204) 以降 | 2.24 以降 | 16.24 以降 | 2019 年 5 月       | N/A |
+| ExcelApi 1.8  | バージョン 1808 (ビルド 10730.20102) 以降 | 2.17 以降 | 16.17 以降 | 2018 年 9 月 | N/A |
+| ExcelApi 1.7  | バージョン 1801 (ビルド 9001.2171) 以降   | 2.9 以降  | 16.9 以降  | 2018 年 4 月     | N/A |
+| ExcelApi 1.6  | バージョン 1704 (ビルド 8201.2001) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 4 月     | N/A |
+| ExcelApi 1.5  | バージョン 1703 (ビルド 8067.2070) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 3 月     | N/A |
+| ExcelApi 1.4  | バージョン 1701 (ビルド 7870.2024) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 1 月   | N/A |
 | ExcelApi 1.3  | バージョン 1608 (ビルド 7369.2055) 以降   | 1.27 以降 | 15.27 以降 | 2016 年 9 月 | バージョン 1608 (ビルド 7601.6800) 以降|
-| ExcelApi 1.2  | バージョン 1601 (ビルド 6741.2088) 以降   | 1.21 以降 | 15.22 以降 | 2016 年 1 月   ||
-| ExcelApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降   | 1.19 以降 | 15.20 以降 | 2016 年 1 月   ||
+| ExcelApi 1.2  | バージョン 1601 (ビルド 6741.2088) 以降   | 1.21 以降 | 15.22 以降 | 2016 年 1 月   | N/A |
+| ExcelApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降   | 1.19 以降 | 15.20 以降 | 2016 年 1 月   | N/A|
 
 > [!NOTE]
 > MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。 このバージョンには、ExcelApi 1.1 の要件セットのみが含まれています。
@@ -42,9 +42,9 @@ Excel アドインは、Windows での Office 2016 以降、Office for iPad、Of
 
 [カスタム関数](../../excel/custom-functions-overview.md)は、コア Excel JavaScript API の個別の要件セットを使用します。 次の表は、カスタム関数の要件セット、サポートされる Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号の一覧です。
 
-|  要件セット  |  Windows での Office<br>(Office 365 に接続)  |  Office for iPad<br>(Office 365 に接続)  |  Office for Mac<br>(Office 365 に接続)  | Office Online | Office Online Server |
+|  要件セット  |  Windows での Office<br>(Office 365 サブスクリプションに接続)  |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | バージョン 1904 (ビルド 11601.20144) 以降 | サポートされていません | 16.24 以降 | 2019 年 4 月 | 近日対応予定 |
+| CustomFunctionsRuntime 1.1 | バージョン 1904 (ビルド 11601.20144) 以降 | サポートされていません | 16.24 以降 | 2019 年 4 月 | N/A |
 
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
@@ -619,7 +619,7 @@ Excel アドインは、Windows での Office 2016 以降、Office for iPad、Of
 ||[fill](/javascript/api/excel/excel.shape#fill)|この図形の塗りつぶしの書式設定を返します。 読み取り専用です。|
 ||[geometricShape](/javascript/api/excel/excel.shape#geometricshape)|図形に関連付けられた幾何学的図形を返します。 図形の種類が "GeometricShape" ではない場合は、エラーがスローされます。|
 ||[group](/javascript/api/excel/excel.shape#group)|図形に関連付けられた図形グループを返します。 図形の種類が "GroupShape" ではない場合は、エラーがスローされます。|
-||[id](/javascript/api/excel/excel.shape#id)|図形 ID を表します。 読み取り専用です。|
+||[id](/javascript/api/excel/excel.shape#id)|図形 ID を表します。 読み取り専用。|
 ||[image](/javascript/api/excel/excel.shape#image)|図形に関連付けられた画像を返します。 図形の種類が "Image" ではない場合は、エラーがスローされます。|
 ||[level](/javascript/api/excel/excel.shape#level)|指定された図形のレベルを表します。 たとえば、レベル 0 は図形がどのグループの一部でもないことを意味し、レベル 1 は図形が最上位グループの一部であることを意味し、レベル 2 は図形が最上位レベルのサブグループの一部であることを意味します。|
 ||[line](/javascript/api/excel/excel.shape#line)|図形に関連付けられた線を返します。 図形の種類が "Line" ではない場合は、エラーがスローされます。|
@@ -1185,7 +1185,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[chartTrendlineCollection](/javascript/api/excel/excel.charttrendlinecollection)|_メソッド_ > getItem(index: number)|インデックス (項目配列内の挿入順序) に基づいて trendline オブジェクトを取得します。|1.7|
 |[chartTrendlineFormat](/javascript/api/excel/excel.charttrendlineformat)|_リレーションシップ_ > line|グラフの線の書式設定を表します。読み取り専用。|1.7|
 |[customProperty](/javascript/api/excel/excel.customproperty)|_プロパティ_ > key|カスタム プロパティのキーを取得します。読み取り専用。読み取り専用。|1.7|
-|[customProperty](/javascript/api/excel/excel.customproperty)|_プロパティ_ > type|カスタム プロパティの値の型を取得します。 読み取り専用。 読み取り専用です。 有効な値は、Number、Boolean、Date、String、Float です。|1.7|
+|[customProperty](/javascript/api/excel/excel.customproperty)|_プロパティ_ > type|カスタム プロパティの値の型を取得します。 読み取り専用です。 読み取り専用です。 有効な値は、Number、Boolean、Date、String、Float です。|1.7|
 |[customProperty](/javascript/api/excel/excel.customproperty)|_プロパティ_ > value|カスタム プロパティの値を取得または設定します。|1.7|
 |[customProperty](/javascript/api/excel/excel.customproperty)|_メソッド_ > delete()|カスタム プロパティを削除します。|1.7|
 |[customPropertyCollection](/javascript/api/excel/excel.custompropertycollection)|_プロパティ_ > items|customProperty オブジェクトのコレクション。読み取り専用。|1.7|

@@ -1,33 +1,33 @@
 ---
 title: Word JavaScript API の要件セット
 description: ''
-ms.date: 06/11/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: 927dce7bc196c1871fd44d4b91e67ba04a3fbb16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997394"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127003"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
-Word アドインは、Windows での Office 2016 以降、Office for iPad、Office for Mac、Office Online など、複数のバージョンの Office で機能します。 次の表は、Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
+Word アドインは、Windows での Office 2016 以降、Office on the web、iPad、および Mac など、複数のバージョンの Office で機能します。 次の表は、Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
 > [!NOTE]
 > ベータ版としてマークされている要件セットについては、指定されたバージョン以降の Office ソフトウェアを使用し、CDN のベータ版のライブラリを使用します: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 >
 > ベータ版として表示されていないエントリは一般公開されており、引き続き Production CDN ライブラリを使用できます: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  要件セット  |   Windows での Office\*<br>(Office 365 に接続)  |  Office for iPad<br>(Office 365 に接続)  |  Office for Mac<br>(Office 365 に接続)  | Office Online  | Office Online Server  |
+|  要件セット  |   Windows での Office\*<br>(Office 365 サブスクリプションに接続)  |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](/javascript/api/word)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要があります) |
-| WordApi 1.3 | バージョン 1612 (ビルド 7668.1000) 以降| 2017 年 3 月、2.22 以降 | 2017 年 3 月、15.32 以降| 2017 年 3 月 ||
-| WordApi 1.2  | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | |
-| WordApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | |
+| WordApi 1.3 | バージョン 1612 (ビルド 7668.1000) 以降| 2017 年 3 月、2.22 以降 | 2017 年 3 月、15.32 以降| 2017 年 3 月 | N/A |
+| WordApi 1.2  | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | N/A |
+| WordApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | N/A |
 
 > [!NOTE]
 > MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。 このバージョンには、WordApi 1.1 の要件セットのみが含まれています。

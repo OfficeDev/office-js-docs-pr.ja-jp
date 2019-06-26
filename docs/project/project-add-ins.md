@@ -1,14 +1,14 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910330"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128602"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -24,7 +24,7 @@ Office アドインの概要については、「[Office アドイン プラッ�
 プロジェクト管理者は、Project の作業ウィンドウ アドインを使用して、プロジェクトの管理作業を円滑に進めることができます。よく使用する情報を調べるときに、Project から離れて別のアプリケーションを起動する必要がなく、Project 内で情報に直接アクセスできます。作業ウィンドウ アドインはコンテキストに応じたコンテンツを表示でき、選択中のタスク、リソース、またはビューに基づくコンテンツや、ガント チャート、タスク使用状況ビュー、またはリソース使用状況ビューのセルに含まれているその他のデータに基づくコンテンツを使用できます。
 
 > [!NOTE]
-> Project Professional 2013 では、社内インストールの Project Server 2013、Project Online、および社内またはオンラインの SharePoint 2013 にアクセスする作業ウィンドウ アドインを開発できます。Project Standard 2013 では、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
+> Project Professional 2013 を使用すると、Project on the Web にアクセスする作業ウィンドウ アドインや、Project Server 2013 のオンプレミスのインストール、およびオンプレミスまたはオンラインの SharePoint 2013 を開発できます。 Project Standard 2013 では、Project Server データ、または Project Server と同期している SharePoint タスク リストとの直接の統合をサポートしていません。
 
 Project 用のアドインのシナリオとして、次のようなものがあります。
 
@@ -184,7 +184,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 ## <a name="distributing-project-add-ins"></a>Project 用アドインの配布
 
-アドインの配布は、ファイル共有、SharePoint ライブラリのアプリ カタログ、または AppSource で行えます。詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
+アドインは、ファイル共有、SharePoint ライブラリのアプリ カタログ、または AppSource で配布できます。 詳細については、「[Office アドインを発行する](../publish/publish.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
