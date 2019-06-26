@@ -3,20 +3,18 @@ title: Office アドインでのユーザー エラーのトラブルシュー�
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 3222e8b7bc46608996c73284e2ee9b7c26c7afbe
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226784"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
 時折、ユーザーは開発した Office アドインの問題に遭遇することがあります。たとえば、アドインが読み込みに失敗したり、アクセスできないなどです。この記事の情報は、ユーザーが Office アドインを使用する際に遭遇する一般的な問題を解決するために用いることができます。 
 
 また、[Fiddler](https://www.telerik.com/fiddler) を使用して、アドインの問題を特定してデバッグすることもできます。
-
-ユーザーの問題を解決した後、[AppSource でカスタマー レビューに直接返信することができます](/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>一般的なエラーとトラブルシューティングの手順
 

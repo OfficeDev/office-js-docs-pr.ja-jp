@@ -1,14 +1,14 @@
 ---
 title: JavaScript API for Office について
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226742"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
@@ -170,36 +170,3 @@ Office.initialize = function (reason) {
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
 
 初期化されると、アドインでホスト (Excel、Outlook など) とやりとりできるようになります。 特定の使用パターンに関する詳細については、「[Office JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)」ページを参照してください。 [共通 API](/office/dev/add-ins/reference/javascript-api-for-office) とホスト固有 API の両方についても詳細な参照ドキュメントがあります。
-
-## <a name="api-support-matrix"></a>API サポート マトリックス
-
-次の表は、アドインの種類 (コンテンツ、作業ウィンドウ、および Outlook) 全体でサポートされている API と機能、および [1.1 アドイン マニフェスト スキーマと機能 (JavaScript API for Office v1.1 でサポート)](update-your-javascript-api-for-office-and-manifest-schema-version.md) を使用してアドインがサポートする Office のホスト アプリケーションを指定する際に、これらの API と機能をホストする Office アプリケーションについてまとめたものです。
-
-
-|||||||||
-|:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**ホスト名**|データベース|ブック|メールボックス|プレゼンテーション|ドキュメント|Project|
-||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel on Windows、<br/>Excel on the web|Outlook on Windows、<br/>Outlook on the web、<br/>Outlook on Android、<br>Outlook on iOS|PowerPoint on Windows、<br/>PowerPoint on the web|Word on Windows|Project on Windows|
-|**サポートされるアドインの種類**|コンテンツ|Y|Y||Y|||
-||作業ウィンドウ||Y||Y|Y|Y|
-||Outlook|||Y||||
-|**サポートされている API 機能**|テキストの読み取り/書き込み||Y||Y|Y|Y<br/>(読み取り専用)|
-||マトリックスの読み取り/書き込み||Y|||Y||
-||テーブルの読み取り/書き込み||Y|||Y||
-||HTML の読み取り/書き込み|||||Y||
-||読み取り/書き込み<br/>Office Open XML|||||Y||
-||タスク、リソース、ビュー、フィールド プロパティの読み取り||||||Y|
-||選択変更イベント||Y|||Y||
-||ドキュメント全体の取得||||Y|Y||
-||バインドとイベント バインド|Y<br/>(完全および部分的なテーブル バインドのみ)|Y|||Y||
-||カスタム XML パーツの読み取り/書き込み|||||Y||
-||アドイン状態データの保持 (設定)|Y<br/>(ホスト アドインごと)|Y<br/>(ドキュメントごと)|Y<br/>(メールボックスごと)|Y<br/>(ドキュメントごと)|Y<br/>(ドキュメントごと)||
-||設定変更イベント|Y|Y||Y|Y||
-||アクティブ ビュー モード<br/>およびビュー変更イベントの取得||||Y|||
-||ドキュメント内の<br/>場所に移動||Y||Y|Y||
-||ルールと RegEx を使用した<br/>文脈からのアクティブ化|||Y||||
-||アイテム プロパティの読み取り|||Y||||
-||ユーザー プロファイルの読み取り|||Y||||
-||添付ファイルの取得|||Y||||
-||ユーザー ID トークンの取得|||Y||||
-||Exchange Web サービスの呼出|||Y||||
