@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.3
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6e1c8fade7a95cdac4fbcf5b571f4b9be9092e95
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450402"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454889"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook アドイン API 要件セット 1.3
 
@@ -31,7 +31,6 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 - [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-) が追加されました。現在の本文を指定された形式で返します。
 - [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-) が追加されました。本文全体を指定されたテキストに置換します。
-- [Office.context.officeTheme](office.context.md#officetheme-object) が追加されました。Office テーマの色にアクセスできるようにします。
 - [Event](/javascript/api/office/office.addincommands.event) オブジェクトが追加されました。パラメーターとして、Outlook アドインの UI を使用しないコマンド関数に渡されます。処理の完了を通知するために使用されます。
 - [Office.context.mailbox.item.close](office.context.mailbox.item.md#close) が追加されました。作成中の現在のアイテムを閉じます。
 - [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback) が追加されました。アイテムを非同期的に保存します。

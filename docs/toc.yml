@@ -479,7 +479,7 @@
               href: testing/sideload-office-addin-using-sideload-command.md
             - name: 作業ウィンドウからデバッガーをアタッチする
               href: testing/attach-debugger-from-task-pane.md
-            - name: F12 開発者ツールを使用したデバッグ
+            - name: 開発者ツールを使用してデバッグする
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
         - name: Web ブラウザー
           items:

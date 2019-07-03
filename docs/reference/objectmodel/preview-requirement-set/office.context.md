@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト-プレビュー要件セット
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e5d25c4788ec9f35a97f3bd3da6cca6a7314fb4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127486"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454833"
 ---
 # <a name="context"></a>context
 
@@ -83,9 +83,9 @@ function write(message){
 Office テーマの色のプロパティにアクセスできるようにします。
 
 > [!NOTE]
-> このメンバーは、iOS または Android の Outlook ではサポートされていません。
+> このメンバーは、Windows の Outlook でのみサポートされています。
 
-Office テーマの色を使うと、**[ファイル] > [Office アカウント] > [Office テーマ UI]** によってユーザーが選択した現在の Office テーマに合わせてアドインの配色を調整できます。このテーマは Office ホスト アプリケーション全体に適用されます。Office テーマの色を使うことは、メール アドインと作業ウィンドウ アドインに適しています。
+Office テーマの色を使用すると、アドインの配色を、[**ファイル > Office アカウント > Office テーマ UI**を使用してユーザーが選択した現在の office テーマを使用して調整できます。これは、すべての office ホストアプリケーションで適用されます。 Using Office theme colors is appropriate for mail and task pane add-ins.
 
 ##### <a name="type"></a>型
 
@@ -104,7 +104,7 @@ Office テーマの色を使うと、**[ファイル] > [Office アカウント]
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| プレビュー|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 ##### <a name="example"></a>例

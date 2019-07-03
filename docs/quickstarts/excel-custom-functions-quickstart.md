@@ -4,12 +4,12 @@ description: Excel クイックスタートガイドでのカスタム関数の�
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128581"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454910"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -37,16 +37,16 @@ ms.locfileid: "35128581"
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `stock-ticker`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/UpdatedYoOfficePrompt.png)
+    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/starcountPrompt.png)
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
 2. [ごみ箱] ジェネレーターでは、プロジェクトの処理に関するいくつかの命令がコマンドラインに表示されますが、それらは無視して、手順に従って続行します。 プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. プロジェクトをビルドします。 

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Host 要素
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127570"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454896"
 ---
 # <a name="host-element"></a>Host 要素
 
@@ -28,7 +28,8 @@ ms.locfileid: "35127570"
 | [名前](#name) | string | 必須 | Office ホスト アプリケーションの種類の名前。 |
 
 ### <a name="name"></a>名前
-このアドインが対象にするホストの種類を指定します。この値は、次のいずれかである必要があります。
+
+このアドインが対象にするホストの種類を指定します。 この値は、次のいずれかであることが必要です。
 
 - `Document` (Word)
 - `Database` (Access)
@@ -38,7 +39,11 @@ ms.locfileid: "35127570"
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> SharePoint で Access Web アプリとデータベースを作成して使用することは推奨されなくなりました。 代わりに、[Microsoft PowerApps](https://powerapps.microsoft.com/) を使用して、コード作成が不要な Web とモバイル デバイス用ビジネス ソリューションをビルドすることをお勧めします。
+
 ### <a name="example"></a>例
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -47,6 +52,7 @@ ms.locfileid: "35127570"
 ```
 
 ## <a name="versionoverrides-node"></a>VersionOverrides ノード
+
 [VersionOverrides](versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
 
 ### <a name="attributes"></a>属性
@@ -74,6 +80,7 @@ ms.locfileid: "35127570"
 - `Workbook` (Excel)
 
 ## <a name="host-example"></a>ホストの例 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

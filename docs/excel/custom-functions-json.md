@@ -3,12 +3,12 @@ ms.date: 06/20/2019
 description: Excel のカスタム関数のメタデータを定義します。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: f97a339972a8ac134bd30c87b86c4701cb4b5fc4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a9fbefb7ea1c5474d26b668d3a4f64ed68ae36f7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127871"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454637"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
@@ -136,7 +136,7 @@ Web 上の Excel でカスタム関数が正しく動作するためには、JSO
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 通常、取り消し可能な関数は、1つの結果を返す非同期関数で、データの要求のキャンセルを処理する必要がある場合にのみ使用されます。 関数は、ストリーミングと取り消しの両方にすることはできません。 詳細については、「[ストリーミング機能を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」の最後の方にあるメモを参照してください。 |
-|  `requiresAddress`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> True の場合、カスタム関数は、カスタム関数を呼び出したセルのアドレスにアクセスできます。 カスタム関数を呼び出したセルのアドレスを取得するには、カスタム関数で context を使用します。 詳しくは、「[カスタム関数が呼び出したセルを特定する](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function)」をご覧ください。 カスタム関数は、streaming と requiresAddress の両方として設定することはできません。 このオプションを使用する場合、' 呼び ' パラメーターは、オプションで渡された最後のパラメーターである必要があります。 |
+|  `requiresAddress`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | の`true`場合は、カスタム関数を呼び出したセルのアドレスにカスタム関数からアクセスできます。 カスタム関数を呼び出したセルのアドレスを取得するには、カスタム関数で context を使用します。 詳細については、「[アドレス指定セルのコンテキストパラメーター](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter)」を参照してください。 カスタム関数は、streaming と requiresAddress の両方として設定することはできません。 このオプションを使用する場合、' 呼び ' パラメーターは、オプションで渡された最後のパラメーターである必要があります。 |
 |  `stream`  |  ブール  |  いいえ<br/><br/>既定値は、`false` です。  |  `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。 |
 |  `volatile`  | ブール | いいえ <br/><br/>既定値は、`false` です。 | <br /><br /> `true` の場合は、数式の依存値が変更されたときのみではなく、Excel が再計算するたびに関数が再計算されます。 関数は、ストリーミングと揮発性の両方にすることはできません。 `stream` と `volatile` の両方のプロパティが `true` に設定されている場合は、揮発性のオプションが無視されます。 |
 
