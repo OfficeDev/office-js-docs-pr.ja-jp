@@ -1,22 +1,22 @@
 ---
 title: DOM とランタイム環境を読み込む
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 78ddd10e9106e6668e2bb8cd40f58cbdb7b862d9
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: c955df57d09bd7bed0b30a2408e0b65d97afde68
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128102"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454560"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
-アドインでは、DOM と Office アドイン両方のランタイム環境が、独自のカスタム ロジックを実行する前に読み込まれていることを確認する必要があります。 
+アドインでは、DOM と Office アドイン両方のランタイム環境が、独自のカスタム ロジックを実行する前に読み込まれていることを確認する必要があります。
 
 ## <a name="startup-of-a-content-or-task-pane-add-in"></a>コンテンツまたは作業ウィンドウ アドインの起動
 
-次の図は、Excel、PowerPoint、Project、Word、または Access でコンテンツ アドインまたは作業ウィンドウ アドインの起動に関連するイベントのフローを示しています。
+次の図では、Excel、PowerPoint、Project、または Word のコンテンツ アドインまたは作業ウィンドウ アドインの起動に関連するイベントのフローを示しています。
 
 ![コンテンツ アドインまたは作業ウィンドウ アドイン起動時のイベントのフロー](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 

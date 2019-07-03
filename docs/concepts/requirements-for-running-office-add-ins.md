@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5a33af6a3dc23739642a4ad0f6e3d29bff247f4d
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127703"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454616"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -30,7 +30,7 @@ Office アドインをインストールおよび実行できるようにする�
 > [!TIP]
 > Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
-サポートされている Office ホスト アプリケーション (Access Web アプリ、Word、Excel、PowerPoint、または Project) のコンテンツ アドインと作業ウィンドウ アドインでは、アドインの XML マニフェスト ファイルをアップロードするために、SharePoint の[アプリ カタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)も必要になります。
+サポートされている Office ホスト アプリケーション (Excel、PowerPoint、Project、または Word) のコンテンツ アドインと作業ウィンドウ アドインでは、アドインの XML マニフェスト ファイルをアップロードするために、SharePoint の[アプリ カタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)も必要になります。
 
 Outlook アドインをテストおよび実行するには、ユーザーの Outlook 電子メール アカウントが、Office 365、Exchange Online、またはオンプレミスのインストールから使用できる Exchange 2013 以降のバージョン上に存在する必要があります。ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
 
