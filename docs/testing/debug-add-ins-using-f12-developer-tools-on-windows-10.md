@@ -1,35 +1,48 @@
 ---
-title: Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
+title: Windows 10 で開発者ツールを使用してアドインをデバッグする
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450151"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454882"
 ---
-# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Windows 10 で F12 開発者ツールを使用してアドインをデバッグする
+# <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Windows 10 で開発者ツールを使用してアドインをデバッグする
 
-Windows 10 に含まれている F12 開発者ツールにより、web ページのデバッグ、テスト、および高速化ができます。 それらを使用すれば、Visual Studio などの IDE を使用していない場合や、アドインを IDE の外部で実行中に問題を調査する必要がある場合に、Office アドインの開発とデバッグを行うこともできます。 この記事では、Windows 10 で F12 開発者ツールのデバッガー ツールを使用して、ご利用の Office アドインをテストする方法について説明します。
+Windows 10 のアドインのデバッグに役立つ IDE の外部の開発者ツールがあります。 これは、IDE の外部でアドインを実行しているときに問題を調査する必要がある場合に便利です。
+
+使用するツールは、アドインが Edge または Internet Explorer のどちらで実行されているかによって異なります。 これは、Windows 10 のバージョンとコンピューターにインストールされている Office のバージョンによって決まります。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。 
+
 
 > [!NOTE]
 > この記事の手順を使用して、実行関数を使用する Outlook アドインをデバッグすることはできません。 実行関数を使用する Outlook アドインのデバッグには、スクリプト モードの Visual Studio またはその他のスクリプト デバッガーにアタッチすることをお勧めします。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="when-the-add-in-is-running-in-edge"></a>アドインが Edge で実行されている場合
 
-以下のソフトウェアが必要です。
+アドインが Edge で実行されている場合は、[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab) を使用できます。 
 
-- Windows 10 に含まれる F12 開発者ツール。 
-    
-- アドインをホストする Office クライアント アプリケーション。  
-    
-- アドイン。  
+1. アドインを実行します。 
 
-## <a name="using-the-debugger"></a>デバッガーの使用
+2. Microsoft Edge DevTools を実行します。
 
-Windows 10 の F12 開発者ツールからデバッガーを使用して、AppSource からのアドインやその他の場所から追加したアドインをテストすることができます。 アドインの実行後、F12 開発者ツールを起動できます。 F12 ツールは個別のウィンドウに表示され、Visual Studio を使用しません。
+3. ツールで、**[ローカル]** タブを開きます。アドインの名前が一覧表示されます。
+
+4. アドイン名をクリックして、ツールで開きます。
+
+5. **[デバッガー]** タブを開きます。 
+
+6. **[スクリプト]** (左側) ウィンドウの上にあるフォルダー アイコンを選択します。 ドロップダウン リストに表示される利用可能なファイルのリストから、デバッグする JavaScript ファイルを選択します。
+
+7. ブレークポイントを設定するには、行を選択します。 その行の左側と **[呼び出し履歴]** (右下) ウィンドウの対応する行に赤い点が表示されます。
+
+8. 必要に応じてアドインの関数を実行して、ブレークポイントをトリガーします。
+
+## <a name="when-the-add-in-is-running-in-internet-explorer"></a>アドインが Internet Explorer で実行されている場合
+
+Internet Explorer でアドインを実行している場合は、Windows 10 の F12 開発者ツールのデバッガーを使用して、アドインをテストできます。 アドインの実行後、F12 開発者ツールを起動できます。 F12 ツールは個別のウィンドウに表示され、Visual Studio を使用しません。
 
 > [!NOTE]
 > デバッガーは、Windows 10 および Internet Explorer 上の F12 開発者ツールの一部です。Windows の以前のバージョンにはデバッガーは含まれません。 

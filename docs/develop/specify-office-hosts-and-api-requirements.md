@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: b08ef0a304190540ffc82acc4d5d08fc6783014e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128039"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454623"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -32,7 +32,7 @@ ms.locfileid: "35128039"
 |Office アプリケーション、Office ホスト アプリケーション、Office ホスト、またはホスト|アドインの実行に使用される Office アプリケーション。たとえば、Word や Excel など。|
 |プラットフォーム|Office ホストを実行する場所。ブラウザーや iPad など。|
 |要件セット|関連する API メンバーの名前付きグループ。アドインは要件セットを使用して、Office ホストが、アドインによって使用される API メンバーをサポートしているかどうかを判別します。個々の API メンバーのサポートをテストするよりも、要件セットのサポートをテストするほうが簡単です。要件セットのサポートは、Office ホストと Office ホストのバージョンによって異なります。 <br >要件セットはマニフェスト ファイルで指定されます。 マニフェストで要件セットを指定するときは、アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートを設定します。 マニフェストで指定されている要件セットをサポートしていない Office ホストはアドインを実行できず、アドインは <span class="ui">[個人用アドイン]</span> に表示されません。これにより、アドインが利用できる場所が制限されます。 コードでは、ランタイム チェックを使用します。 要件セットの詳細な一覧については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。|
-|ランタイム チェック|アドインを実行している Office ホストが、アドインで使用されている要件セットまたはメソッドをサポートしているかどうかを判別するために実行時に行われるテスト。ランタイム チェックを実行するには、**if** ステートメントに **isSetSupported** メソッド、要件セット、または要件セットの一部ではないメソッド名を指定して使用します。ランタイム チェックを使用し、多くのユーザーが対象のアドインを使用できることを確認します。要件セットとは異なり、ランタイム チェックでは、対象アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートは指定しません。代わりに、**if** ステートメントを使用して API メンバーがサポートされているかどうかを判別します。サポートされている場合には、アドインで追加機能を提供できます。ランタイム チェックを使用するときは、自分のアドインは必ず **[個人用アドイン]** に表示されます。|
+|ランタイム チェック|アドインを実行している Office ホストが、アドインで使用されている要件セットまたはメソッドをサポートしているかどうかを判別するために実行時に行われるテスト。 ランタイム チェックを実行するには、**if** ステートメントを **isSetSupported** メソッド、要件セット、要件セットの一部でないメソッド名を指定して使用します。 ランタイム チェックを使用すると、アドインを、最も多くのお客様が利用できるものにできます。 要件セットとは異なり、ランタイム チェックでは、対象アドインを実行するために Office ホストが提供する必要のある最小レベルの API サポートは指定しません。 代わりに、**if** ステートメントを使用して API メンバーがサポートされているかどうかを判別します。 サポートされている場合には、アドインで追加機能を提供できます。 ランタイム チェックを使用するときは、自分のアドインは必ず **[個人用アドイン]** に表示されます。|
 
 ## <a name="before-you-begin"></a>始める前に
 
@@ -83,14 +83,17 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 | 名前          | Office ホスト アプリケーション                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
 | データベース      | Access Web アプリ                                                                           |
-| Document      | Word on Windows、Word on Mac、Word on iPad、および Word on the web                           |
+| ドキュメント      | Windows 用 Word、Mac 用 Word、iPad 用 Word、Word on the web                               |
 | Mailbox       | Outlook on Windows、Outlook on Mac、Outlook on the web、Outlook on Android、Outlook on iOS|
-| Presentation  | PowerPoint on Windows、PowerPoint on Mac、PowerPoint on iPad、および PowerPoint on the web   |
+| Presentation  | Windows 用 PowerPoint、Mac 用 PowerPoint、iPad 用 PowerPoint、PowerPoint on the web       |
 | Project       | Windows での Project                                                                        |
-| Workbook      | Excel on Windows、Excel on Mac、Excel on iPad、および Excel on the web                       |
+| Workbook      | Windows 用 Excel、Mac 用 Excel、iPad 用 Excel、Excel on the web                           |
 
 > [!NOTE]
-> `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。 Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。 アドインを実行するために使用するプラットフォームを指定することはできません。 たとえば、`Mailbox` を指定した場合は、アドインの実行に Outlook on Windows と Outlook on the web の両方を使用できます。
+> `Name` 属性により、アドインを実行できる Office ホスト アプリケーションが指定されます。 Office ホストはさまざまなプラットフォームに対応しており、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行できます。 アドインを実行するために使用するプラットフォームを指定することはできません。 たとえば、`Mailbox` を指定した場合は、アドインの実行に Windows 用 Outlook と Outlook on the web の両方を使用できます。
+
+> [!IMPORTANT]
+> SharePoint で Access Web アプリとデータベースを作成して使用することは推奨されなくなりました。 代わりに、[Microsoft PowerApps](https://powerapps.microsoft.com/) を使用して、コード作成が不要な Web とモバイル デバイス用ビジネス ソリューションをビルドすることをお勧めします。
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>マニフェストで Requirements 要素を設定する
