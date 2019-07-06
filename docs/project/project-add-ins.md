@@ -1,14 +1,14 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 45f04b2404755d67f1c18c2ae9edcddd02ded7c5
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128602"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575381"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -188,6 +188,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 ## <a name="see-also"></a>関連項目
 
+- [Project アドイン ドキュメント](index.md)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
 - [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)

@@ -3,12 +3,12 @@ title: 作業ウィンドウ アドインとコンテンツ アドインを Shar
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128560"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575304"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -25,13 +25,13 @@ ms.locfileid: "35128560"
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>オンプレミス SharePoint サーバーでアプリ カタログを作成する
 
-SharePoint アプリ カタログを作成するには、[web アプリケーションのアプリ カタログサイトを作成する](https://docs.microsoft.com/ja-JP/sharepoint/administration/manage-the-app-catalog)を参照してください。
+SharePoint アプリ カタログを作成するには、[web アプリケーションのアプリ カタログサイトを作成する](/sharepoint/administration/manage-the-app-catalog)を参照してください。
 
 アプリ カタログを作成したら [Office アドインを発行する](#publish-an-office-add-in) 手順に従います。
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>Office 365 でアプリ カタログを作成する
 
-1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
+1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
 
 2. Microsoft 365 管理センターのページで [**管理センター**] のリストを展開し、[**SharePoint**] を選択します。
 
@@ -62,7 +62,7 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>Office アドインを Office 365 の SharePoint アプリ カタログに発行する
 
-1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
+1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
 2. Microsoft 365 管理センターのページで [**管理センター**] のリストを展開し、[**SharePoint**] を選択します。
     > [!NOTE]
     > カタログを作成するには、従来の SharePoint 管理センターを使用する必要があります。 新しい SharePoint 管理センターにいる場合は、左側のウィンドウで「**従来の SharePoint 管理センター**」を選択します。
