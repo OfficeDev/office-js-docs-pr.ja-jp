@@ -1,67 +1,44 @@
 ---
 title: OneNote JavaScript API の概要
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b6e5cd5f083013a84e75dfd57b30af87eabb42e8
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127129"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575318"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
-適用対象: web 上の OneNote
+OneNote アドインは、次の2つの JavaScript オブジェクトモデルを含む JavaScript API for Office を使用して、web 上の OneNote のオブジェクトと対話します。
 
-以下のリンクは、API で使用できる高レベルの OneNote オブジェクトを示しています。 オブジェクトのページの各リンクには、オブジェクトで使用できるプロパティ、イベント、メソッドの説明が含まれています。 リンクを参照して、詳細を確認してください。 
-    
-- [Application](/javascript/api/onenote/onenote.application): グローバルにアドレス可能な OneNote オブジェクト (アクティブなノートブック、アクティブなセクションなど) すべてへのアクセスに使用する最上位のオブジェクトです。
+* **Onenote JAVASCRIPT api**: Office 2016 で導入された[onenote javascript api](/javascript/api/onenote)には、web 上の onenote のオブジェクトへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
-- [Notebook](/javascript/api/onenote/onenote.notebook): ノートブックです。ノートブックには、セクション グループとセクションが含まれます。
-    - [NotebookCollection](/javascript/api/onenote/onenote.notebookcollection):ノートブックのコレクションです。
+* **共通 api**: office 2013 で導入された[共通 api](/javascript/api/office)を使用して、複数の種類の office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスできます。
 
-- [SectionGroup](/javascript/api/onenote/onenote.sectiongroup):セクション グループです。セクション グループには、セクション グループとセクションが含まれます。
-    - [SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection):セクション グループのコレクションです。
+ドキュメントのこのセクションでは OneNote JavaScript API に重点を置いています。これは、web 上の OneNote を対象とするアドインで大部分の機能を開発するために使用します。 一般的な API の詳細については、「 [JAVASCRIPT api For Office](../javascript-api-for-office.md)」を参照してください。 
 
-- [Section](/javascript/api/onenote/onenote.section):セクションです。セクションには、ページが含まれます。
-    - [SectionCollection](/javascript/api/onenote/onenote.sectioncollection):セクションのコレクションです。
+## <a name="learn-programming-concepts"></a>プログラミングの概念を理解する
 
-- [Page](/javascript/api/onenote/onenote.page):ページです。ページには、PageContent オブジェクトが含まれます。
-    - [PageCollection](/javascript/api/onenote/onenote.pagecollection):ページのコレクションです。
+プログラミングの重要な概念については、以下の記事を参照してください。
 
-- [PageContent](/javascript/api/onenote/onenote.pagecontent):Outline や Image などのコンテンツの種類を含むページの最上位の領域です。PageContent オブジェクトは、ページ上の位置を指定できます。
-    - [PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection):PageContent オブジェクトのコレクションで、ページのコンテンツを表します。
+- [OneNote の JavaScript API のプログラミングの概要](../../onenote/onenote-add-ins-programming-overview.md)
 
-- [Outline](/javascript/api/onenote/onenote.outline):Paragraph オブジェクトのコンテナーです。Outline は、PageContent オブジェクトの直接の子です。
+- [OneNote ページ コンテンツを使用する](../../onenote/onenote-add-ins-page-content.md)
 
-- [Image](/javascript/api/onenote/onenote.image):Image オブジェクトです。Image は、PageContent オブジェクトまたは Paragraph の直接の子にすることができます。
+## <a name="learn-about-api-capabilities"></a>API 機能について
 
-- [Paragraph](/javascript/api/onenote/onenote.paragraph):ページに表示されるコンテンツのコンテナーです。Paragraph は、Outline の直接の子です。
-    - [ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection):Outline 内の Paragraph オブジェクトのコレクションです。
+Onenote JavaScript API を使用して web 上の OneNote のコンテンツを操作する作業を行うには、 [onenote アドインのクイックスタート](../../quickstarts/onenote-quickstart.md)を完了します。 
 
-- [RichText](/javascript/api/onenote/onenote.richtext):RichText オブジェクトです。
-
-- [Table](/javascript/api/onenote/onenote.table):TableRow オブジェクトのコンテナーです。
-
-- [TableRow](/javascript/api/onenote/onenote.tablerow):TableCell オブジェクトのコンテナーです。
-    - [TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection):Table 内の TableRow オブジェクトのコレクションです。
- 
-- [TableCell](/javascript/api/onenote/onenote.tablecell):Paragraph オブジェクトのコンテナーです。
-    - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection): TableRow 内の TableCell オブジェクトのコレクションです。
-
-## <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
-
-要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 OneNote JavaScript API 要件セットの詳細については、「[OneNote JavaScript API の要件セット](../requirement-sets/onenote-api-requirement-sets.md)」の記事を参照してください。
-
-## <a name="onenote-javascript-api-reference"></a>OneNote JavaScript API リファレンス
-
-OneNote JavaScript API の詳細については、[OneNote JavaScript API リファレンス ドキュメント](/javascript/api/onenote)に関するページを参照してください。
+OneNote JavaScript API オブジェクトモデルの詳細については、 [Onenote JAVASCRIPT api リファレンスドキュメント](/javascript/api/onenote)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [OneNote の JavaScript API のプログラミングの概要](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [最初の OneNote 用アドインをビルドする](../../quickstarts/onenote-quickstart.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
+- [OneNote アドインのドキュメント](../../onenote/index.md)
+- [OneNote アドインの概要](../../onenote/onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API リファレンス](/javascript/api/onenote)
+- [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+
