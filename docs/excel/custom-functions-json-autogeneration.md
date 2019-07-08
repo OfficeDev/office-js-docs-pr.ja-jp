@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/27/2019
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: a02ca5fd67f29e1997579385e04d045f01e63bdb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127906"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454658"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -28,9 +28,9 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 次の例では、「球の体積を計算します。」 が、カスタム関数の説明です。
 
-```JS
+```js
 /**
-/* Calculates the volume of a sphere
+/* Calculates the volume of a sphere.
 /* @customfunction VOLUME
 ...
  */
@@ -66,19 +66,39 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 構文: @customfunction _id_ _名_
 
-このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。
+このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。 
 
 このタグは、カスタム関数のメタデータを作成するために必要です。
 
 次への呼び出しもあります: `CustomFunctions.associate("id", functionName);`
 
-#### <a name="id"></a>id
+次の例は、カスタム関数を宣言する最も簡単な方法を示しています。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * ...
+ */
+```
+
+#### <a name="id"></a>ID
 
 `id` は、カスタム関数の不変識別子です。
 
 * `id` が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。
 * `id` はすべてのカスタム関数で一意である必要があります。
 * 指定できる文字は、A から Z、a から z、0 から 9、アンダースコア (\_)、ピリオド (.) に制限されます。
+
+次の例では、インクリメントは関数の `id` と `name` です。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INCREMENT
+ * ...
+ */
+```
 
 #### <a name="name"></a>name
 
@@ -89,15 +109,27 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 * 最初の文字は、アルファベット文字にする必要があります。
 * 最大文字数は 128 文字です。
 
+次の例では、INC は関数の`id` で、 `increment` は`name`です。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INC INCREMENT
+ * ...
+ */
+```
+
 ### <a name="description"></a>説明
 
-説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。 Excel では、関数の入力時に、ユーザーにこの説明が表示されます。 次の例では、「2 つの数値を合計する関数」というフレーズが、ID プロパティ `SUM` のカスタム関数の説明です。
+説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。 Excel では、関数の入力時に、ユーザーにこの説明が表示されます。 次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
 
-```JS
+次の例では、ADD は関数の `id` と `name` で、 説明が加えられています。
+
+```js
 /**
-/* @customfunction SUM
-/* A function that sums two numbers
-...
+ * A function that adds two numbers.
+ * @customfunction ADD
+ * ...
  */
 ```
 
@@ -109,6 +141,17 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 指定された _url_ が Excel で表示されます。
 
+次の例では、 `helpurl` は www.contoso.com/weatherhelp です。
+
+```js
+/**
+ * A function which streams the temperature in a town you specify.
+ * @customfunction getTemperature
+ * @helpurl www.contoso.com/weatherhelp
+ * ...
+ */
+```
+
 ---
 ### <a name="param"></a>@param
 <a id="param"/>
@@ -117,7 +160,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 JavaScript 構文: @param {type} 名_の説明_
 
-* `{type}` は、中かっこ内の型の情報を指定します。 使用できる型に関する詳細については、「[型](##types)」を参照してください。 省略可能: 指定しない場合、`any` 型が使用されます。
+* `{type}` は、中かっこ内の型の情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 省略可能: 指定しない場合、`any` 型が使用されます。
 * `name` は、@param タグを適用するパラメーターを指定します。 必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
@@ -127,6 +170,19 @@ JavaScript 構文: @param {type} 名_の説明_
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。
 
+次の例では、ADD 関数を使用して 2 つまたは 3 つの数値を加算します。3 番目の数値を省略可能なパラメーターとして使用します。
+
+```js
+/**
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction ADDNUMBERS
+ * @param firstNumber {number} First number to add.
+ * @param secondNumber {number} Second number to add.
+ * @param [thirdNumber] {number} Optional third number you wish to add.
+ * ...
+ */
+```
+
 #### <a name="typescript"></a>TypeScript
 
 TypeScript 構文: @param 名 _の説明_
@@ -134,7 +190,7 @@ TypeScript 構文: @param 名 _の説明_
 * `name` は、@param タグを適用するパラメーターを指定します。 必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
-使用できる関数のパラメーターの型に関する詳細については、「[型](##types)」を参照してください。
+使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。
 
 カスタム関数のパラメーターを省略可能として示すには、以下のいずれかを実行します。
 * 省略可能なパラメーターを使用する。 例: `function f(text?: string)`
@@ -145,13 +201,28 @@ TypeScript 構文: @param 名 _の説明_
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。
 
+次の例は、2 つの数値を加算する `add` 関数を示しています。
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
+
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"/>
 
-関数が評価されているセルのアドレスを指定する必要があることを示します。 
+関数が評価されているセルのアドレスを指定する必要があることを示します。
 
-最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
+最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。 `@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](./custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。
 
 ---
 ### <a name="returns"></a>@returns
@@ -162,6 +233,21 @@ TypeScript 構文: @param 名 _の説明_
 戻り値の型を指定します。
 
 `{type}` を省略すると、TypeScript の型情報が使用されます。 型情報がない場合、型は `any` になります。
+
+次の例は、 `@returns` タグを使用する `add` 関数を示しています。
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
 
 ---
 ### <a name="streaming"></a>@streaming
@@ -174,7 +260,7 @@ TypeScript 構文: @param 名 _の説明_
 
 ストリーミング関数は値を直接返さず、代わりに、最後のパラメーターを使用して `setResult(result: ResultType)` を呼び出します。
 
-ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。
+ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。 ストリーミング関数と詳細については、「[ストリーミング関数を作成する](./custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。
 
 ストリーミング関数は、[@volatile](#volatile) としてマークできません。
 
@@ -185,6 +271,19 @@ TypeScript 構文: @param 名 _の説明_
 揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
 
 ストリーミング関数に揮発性関数は使用できません。
+
+次の関数は揮発性で、 `@volatile` タグを使用します。
+
+```js
+/**
+ * Simulates rolling a 6-sided dice.
+ * @customfunction
+ * @volatile
+ */
+function roll6sided(): number {
+  return Math.floor(Math.random() * 6) + 1;
+}
+```
 
 ---
 
