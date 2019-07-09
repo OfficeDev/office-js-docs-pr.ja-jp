@@ -1,14 +1,14 @@
 ---
 title: PowerPoint アドイン
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 29b8a54584446cce77c22684d4d105f9391cfc5e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128595"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575360"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -191,6 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>関連項目
 
+- [PowerPoint アドイン ドキュメント](index.md)
 - [PowerPoint のコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
