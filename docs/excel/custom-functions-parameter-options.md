@@ -1,31 +1,30 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128340"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617045"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
-カスタム関数は、パラメーターにさまざまなオプションを使用して構成できます。
-- [オプションのパラメーター](#custom-functions-optional-parameters)
-- [範囲パラメーター](#range-parameters)
-- [呼び出しコンテキストパラメーター](#invocation-parameter)
+カスタム関数は、さまざまなパラメーターのオプションを使用して構成できます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="custom-functions-optional-parameters"></a>カスタム関数の省略可能なパラメーター
+## <a name="optional-parameters"></a>オプションのパラメーター
 
 通常のパラメーターは必須ですが、省略可能なパラメーターは必須ではありません。 ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 次の例では、add 関数で3番目の番号を追加することもできます。 この関数は Excel `=CONTOSO.ADD(first, second, [third])`のように表示されます。
 
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
@@ -33,31 +32,58 @@ ms.locfileid: "35128340"
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third !== undefined) {
-    return first + second + third;
+  if (third === null) {
+    third = 0;
   }
-  return first + second;
+  return first + second + third;
 }
 CustomFunctions.associate("ADD", add);
 ```
 
-関数の定義時に 1 つ以上の省略可能なパラメーターを含める場合は、省略可能なパラメーターが未定義のときの処理を指定しておく必要があります。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 `zipCode`パラメーターが定義されていない場合、既定値`98052`はに設定されます。 `dayOfWeek` パラメーターが未定義の場合は、Wednesday が設定されます。
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Calculates the sum of the specified numbers
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @param [third] Third number to add. If omitted, third = 0.
+ * @returns The sum of the numbers.
+ */
+function add(first: number, second: number, third?: number): number {
+  if (third === null) {
+    third = 0;
+  }
+  return first + second + third;
+}
+CustomFunctions.associate("ADD", add);
+```
+
+---
+
+> [!NOTE]
+> 省略可能なパラメーターに値が指定されていない場合、 `null`Excel によって値が割り当てられます。 これは、TypeScript の既定の初期化されたパラメーターが期待どおりに動作しないことを意味します。 そのため、この構文`function add(first:number, second:number, third=0):number`は0に初期化`third`されないため、使用しないでください。 その代わりに、前の例のように TypeScript 構文を使用します。
+
+1つ以上のオプションパラメーターを含む関数を定義するときは、省略可能なパラメーターが null の場合の処理を指定する必要があります。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 `zipCode`パラメーターが null の場合、既定値はに`98052`設定されます。 `dayOfWeek`パラメーターが null の場合は、水曜日に設定します。
+
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @param {number} [zipCode] Zip code. If omitted, zipCode = 98052.
+ * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
 {
-  if (zipCode === undefined) {
-      zipCode = "98052";
+  if (zipCode === null) {
+    zipCode = 98052;
   }
 
-  if (dayOfWeek === undefined) {
+  if (dayOfWeek === null) {
     dayOfWeek = "Wednesday";
   }
 
@@ -65,6 +91,33 @@ function getWeatherReport(zipCode, dayOfWeek)
   // ...
 }
 ```
+
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param zipCode Zip code. If omitted, zipCode = 98052.
+ * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @returns Weather report for the day of the week in that zip code.
+ */
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
+{
+  if (zipCode === null) {
+    zipCode = 98052;
+  }
+
+  if (dayOfWeek === null) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek.
+  // ...
+}
+```
+
+---
 
 ## <a name="range-parameters"></a>範囲パラメーター
 

@@ -1,15 +1,15 @@
 ---
 title: ダイアログ API の要件セット
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3135c65120248194603b91510450519f106e0ad1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a524edf6734618a56e050d2c25eedbd23ca13973
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127122"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617023"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -17,9 +17,11 @@ ms.locfileid: "35127122"
 
 Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降 (Windows)<br>(1 回限りの購入)   | Windows 版 Office<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Mac 版 Office<br>(Office 365 サブスクリプションに接続)  | Web 上の Office  |  Office Online Server  |
+|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows 版 Office<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Mac 版 Office<br>(Office 365 サブスクリプションに接続)  | Web 上の Office  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降| 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
+
+>\*ワンタイム購入オフィスのユーザーは、すべての修正プログラムと更新を承諾していない場合があります。 その場合、Office が UI でそのバージョンを報告するために使用する DLL が、ユーザーのコンピューターにインストールされていない更新された Dll がインストールされていない場合でも、ここにリストされているバージョンよりも大きくなる可能性があります。 必要な修正プログラムがインストールされていることを確認するには、ユーザーは Office 更新プログラムの一覧 ([office 2013 リスト](/officeupdates/msp-files-office-2013)または[office 2016 の一覧](/officeupdates/msp-files-office-2016)) に移動し、 **osfclient**を検索して、一覧に記載されている修正プログラムをインストールする必要があります。 
 
 バージョン、ビルド番号、および Office Online Server の詳細については以下を参照してください。
 
