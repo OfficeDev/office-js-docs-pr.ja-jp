@@ -3,12 +3,12 @@ title: Office アドインのアイコン ガイドライン
 description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 189139aaff3807ec5758462dd2bd1ad8916f65ae
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448935"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617073"
 ---
 # <a name="icons"></a>アイコン
 アイコンは、動作や概念を視覚的に表現するものです。 多くの場合、コントロールとコマンドに意味を与えるために使用します。 環境内でユーザーが移動するのにサインが役立つのと同じように、リアルなビジュアルや象徴的なビジュアルにより、ユーザーは UI 間を移動できるようになります。 お客様がコントロールを選択するときの動作をすばやく解析できるにように、必要な詳細のみを含む、シンプルで明確なビジュアルにする必要があります。
@@ -111,10 +111,10 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 - 概念的修飾子は、右下に配置します。
 - アイコン内の要素の数を制限します。32px では、修飾子の数を最大 2 つまでに制限します。16px では、修飾子の数を 1 つに制限します。
 
-###<a name="base-element-padding"></a>基本要素のパディング
+### <a name="base-element-padding"></a>基本要素のパディング
 基本要素は、どのサイズでも同じ配置にします。基本要素をフレームの中央に配置できない場合は、左上にそろえ、余分のピクセルは右下に残します。最良の結果を得るために、次の表に示すパディングのガイドラインを適用してください。
 
-###<a name="modifiers"></a>修飾子
+### <a name="modifiers"></a>修飾子
 すべての修飾子には、背景を含め、各要素の間に 1px の透明なカットアウトが必要です。要素が直接重ならないようにします。ルールとエッジの間に余白を作ります。修飾子はサイズが少しずつ異なっている場合がありますが、開始点としてこれらのサイズを使用します。
 
 

@@ -3,12 +3,12 @@ title: アドインの状態および設定を保持する
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: bae485836b68f3b8b26aada60edd31cc66e1f64a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 6092a93751825561f83cfea1671fe59e273f6142
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226756"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617019"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -141,7 +141,7 @@ function createCustomXmlPart() {
     const xmlString = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
     Office.context.document.customXmlParts.addAsync(xmlString,
         (asyncResult) => {
-            $("#xml-id").text("Your new XML part's ID: " + asyncResult.id);
+            $("#xml-id").text("Your new XML part's ID: " + asyncResult.value.id);
             asyncResult.value.getXmlAsync(
                 (asyncResult) => {
                     $("#xml-blob").text(asyncResult.value);
