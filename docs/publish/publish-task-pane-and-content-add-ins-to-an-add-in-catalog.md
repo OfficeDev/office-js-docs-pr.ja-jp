@@ -3,12 +3,12 @@ title: 作業ウィンドウ アドインとコンテンツ アドインを Shar
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575304"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617031"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -110,6 +110,6 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 4. Office アプリケーションを閉じてから、もう一度開きます。 
 5. **[挿入]** > **[アドインの取得]** の順に選択します。
 4. [Office アドイン] ダイアログの **[自分の所属組織]** タブを選択します。Office アドインのリストが表示されます。
-5. Office アドインを選択し、 **追加** を選択します。
+5. Office アドインを選択し、 **追加**を選択します。
 
-または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 詳細については、「[グループ ポリシーを使用して、ユーザーが Office アドインをインストールおよび使用する方法を管理する](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)」のセクションを参照してください。
+または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 関連するポリシー設定を「[365 ProPlus、Office 2019、Office 2016 の管理用テンプレート ファイル (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030) 」で利用できますし、**ユーザー構成\ポリシー\管理用テンプレート\Microsoft Office 2016\セキュリティ設定\セキュリティ センター\信頼できるカタログ**の下にも見つけられます。
