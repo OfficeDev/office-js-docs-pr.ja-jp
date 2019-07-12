@@ -1,14 +1,14 @@
 ---
 title: Office アドイン プラットフォームの概要 | Microsoft Docs
 description: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、Outlook を拡張および対話操作できます。
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 600a1655dd9a3cfc40f56f46f0a8956f54883ffa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afe9b819cc7834729e0653463c4bd22a36157460
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128616"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617066"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -116,12 +116,12 @@ Office JavaScript API には、アドインを構築したり、Office のコン
 
 ## <a name="next-steps"></a>次の手順
 
-Office アドインの構築を開始する方法の詳細については、「[5 分クイック スタート](/office/dev/add-ins/)」をお試しください。 Visual Studio またはその他の任意のエディターを使用すると、すぐにアドインの構築を開始できます。 
+5 分以内に最初の Office アドインを作成するには、[Excel](../quickstarts/excel-quickstart-jquery.md)、[Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、[Word](../quickstarts/word-quickstart.md)、[OneNote](../quickstarts/onenote-quickstart.md)、[PowerPoint](../quickstarts/powerpoint-quickstart.md)、または [Project](../quickstarts/project-quickstart.md) のクイック スタートを試します。 Visual Studio またはその他の任意のエディターを使用すると、すぐにアドインの構築を開始できます。 
 
 効果的で魅力的なユーザー エクスペリエンスを作成するソリューションの計画を始めるには、Office アドインの[設計のガイドライン](../design/add-in-design.md)と[ベスト プラクティス](../concepts/add-in-development-best-practices.md)の理解を深めてください。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのサンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Office アドインのサンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
 - [Office アドインのホストとプラットフォームの可用性](../overview/office-add-in-availability.md)

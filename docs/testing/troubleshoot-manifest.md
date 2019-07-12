@@ -1,67 +1,22 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 05/21/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432265"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617059"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
-以下の方法を使用して、Office アドイン マニフェストの問題を検証し、トラブルシューティングを行います。 
-
-- [Office アドイン検証ツールを使用してマニフェストを検証する](#validate-your-manifest-with-the-office-add-in-validator)   
-- [XML スキーマと比較してマニフェストを検証する](#validate-your-manifest-against-the-xml-schema)
-- [Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [ランタイム ログを使用してアドインをデバッグする](#use-runtime-logging-to-debug-your-add-in)
-
-
-## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Office アドイン検証ツールを使用してマニフェストを検証する
-
-Office アドインを記述するマニフェスト ファイルが正確かつ完全であることを確認するために、[Office アドイン検証ツール](https://github.com/OfficeDev/office-addin-validator)を使用してマニフェスト ファイルを検証します。
-
-### <a name="to-use-the-office-add-in-validator-to-validate-your-manifest"></a>Office アドイン検証ツールを使用してマニフェストを検証するには
-
-1. [Node.js](https://nodejs.org/download/) をインストールします。 
-
-2. 管理者としてコマンド プロンプト/ターミナルを開き、次のコマンドを使用して Office アドイン検証ツールとその依存関係をグローバルにインストールします。
-
-    ```command&nbsp;line
-    npm install -g office-addin-validator
-    ```
-    
-    > [!NOTE]
-    > Yo Office が既にインストールされている場合、最新のバージョンにアップグレードすると、検証ツールが依存関係としてインストールされます。
-
-3. マニフェストを検証するには、次のコマンドを実行します。MANIFEST.XML をマニフェスト XML ファイルへのパスに置き換えます。
-
-    ```command&nbsp;line
-    validate-office-addin MANIFEST.XML
-    ```
-
-## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
-
-マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。 マニフェストは、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較して検証できます。 XML スキーマの検証ツールを使用して、この検証を実行できます。 
-
-
-
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには
-
-1.  [tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。
-
-2.  次のコマンドを実行します。`XSD_FILE` をマニフェスト XSD ファイルへのパスに置き換え、`XML_FILE` をマニフェスト XML ファイルへのパスに置き換えます。
-    
-    ```command&nbsp;line
-    xmllint --noout --schema XSD_FILE XML_FILE
-    ```
+アドインのマニフェスト ファイルを検証して、それが正しくて完全であることを確認します。 検証を行うと、アドインをサイドロードするときに「アドイン マニフェストが無効です」というエラーが発生している問題も特定することができます。 この記事では、複数の方法でマニフェスト ファイルを検証し、アドインに関する問題のトラブルシューティングについて説明します。
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する
 
-[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して Office アドインを作成した場合、プロジェクトのルート ディレクトリで次のコマンドを実行すると、マニフェスト ファイルが正しいスキーマに従っていることを確認できます。
+[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用してアドインを作成した場合は、それを使用してプロジェクトのマニフェスト ファイルを検証することもできます。 プロジェクトのルート ディレクトリから次のコマンドを実行します。
 
 ```command&nbsp;line
 npm run validate
@@ -72,7 +27,33 @@ npm run validate
 > [!NOTE]
 > この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>アドインのデバッグにランタイム ログを使用する 
+## <a name="validate-your-manifest-with-office-toolbox"></a>office-toolbox でマニフェストを検証する
+
+[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-toolbox](https://www.npmjs.com/package/office-toolbox) を使用してマニフェストを検証することもできます。
+
+1. [Node.js](https://nodejs.org/download/) をインストールします。
+
+2. プロジェクトのルート ディレクトリから次のコマンドを実行します。 `MANIFEST_FILE` をマニフェスト ファイルの名前に置き換えます。
+
+    ```command&nbsp;line
+    npx office-toolbox validate -m MANIFEST_FILE
+    ```
+
+## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
+
+マニフェストは、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較して検証することができます。 マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。 XML スキーマの検証ツールを使用して、この検証を実行できます。
+
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには
+
+1. [tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。
+
+2. 次のコマンドを実行します。`XSD_FILE` をマニフェスト XSD ファイルへのパスに置き換え、`XML_FILE` をマニフェスト XML ファイルへのパスに置き換えます。
+    
+    ```command&nbsp;line
+    xmllint --noout --schema XSD_FILE XML_FILE
+    ```
+
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>アドインのデバッグにランタイム ログを使用する
 
 ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。   
 
@@ -103,7 +84,6 @@ npm run validate
 レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。 
 
 ![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
-
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題のトラブルシューティングを行うには
 
