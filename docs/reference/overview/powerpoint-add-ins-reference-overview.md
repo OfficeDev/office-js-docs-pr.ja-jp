@@ -13,25 +13,25 @@ ms.locfileid: "35576942"
 ---
 # <a name="javascript-api-for-powerpoint"></a>JavaScript API for PowerPoint
 
-PowerPoint アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、PowerPoint のオブジェクトと対話します。
+PowerPoint アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して PowerPoint のオブジェクトを操作します。
 
 * **PowerPoint JavaScript API**: [PowerPoint JavaScript API](/javascript/api/powerpoint)では、PowerPoint のオブジェクトにアクセスするために使用する、厳密に型指定されたオブジェクトを提供します。 
 
-* **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間に共通する UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
+* **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 
-重要なプログラミングの概念に関する情報については、「[PowerPoint アドインの概要](../../powerpoint/powerpoint-add-ins.md)」を参照してください。
+プログラミングの重要な概念に関する情報については、「[PowerPoint アドインの概要](../../powerpoint/powerpoint-add-ins.md)」を参照してください。
 
 ## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
 
-実地体験で Powerpoint のコンテンツと対話するための共通 API を使用する場合は、「[PowerPoint アドインのチュートリアル](../../tutorials/powerpoint-tutorial.md)」を完了します。 
+共通 API を使用して Powerpoint のコンテンツを操作する実習を行うには、「[PowerPoint アドインのチュートリアル](../../tutorials/powerpoint-tutorial.md)」を完了します。 
 
 PowerPoint JavaScript API オブジェクト モデルの詳細については、「[PowerPoint JavaScript API リファレンス ドキュメント](/javascript/api/powerpoint)」を参照してください。 
 
-## <a name="try-out-code-samples-in-script-lab"></a>スクリプト ラボでコード サンプルを試してみる
+## <a name="try-out-code-samples-in-script-lab"></a>Script Lab でコード サンプルを試してみる
 
-[スクリプト ラボ](../../overview/explore-with-script-lab.md)を使用して、API でタスクを完了する方法を示す組み込みのサンプルのコレクションの操作をすぐに開始します。 スクリプト ラボのサンプルを実行して、作業ウィンドウまたはドキュメントで瞬時に結果を表示したり、API のしくみをサンプルで確認して学んだり、独自のアドインのプロトタイプにサンプルを使用することもできます。
+[Script Lab](../../overview/explore-with-script-lab.md) を使用すると、API を使用してタスクを完了する方法を示す組み込みのサンプルのコレクションを使用して操作をすぐに開始できます。 Script Lab のサンプルを実行すると、作業ウィンドウまたはドキュメントですばやく結果を表示したり、API のしくみをサンプルで確認して学んだり、独自のアドインのプロトタイプにサンプルを使用したりもできます。
 
 ## <a name="see-also"></a>関連項目
 
