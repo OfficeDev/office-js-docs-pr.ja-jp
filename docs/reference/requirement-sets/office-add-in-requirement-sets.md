@@ -1,15 +1,15 @@
 ---
 title: Office 共通 API の要件セット
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 71c59331e59ab508cf6a681bc9c594d5b30af9fe
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e08659908b4634b0d6fef58548fb1557e149759f
+ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127031"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "35630523"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -29,7 +29,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
-次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。これらの API 要件セットのバージョンはすべて 1.1 です。
+次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -97,7 +97,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| OneNote on the web<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync メソッドを使用してデータを読み書きするときの、<br>HTML (Office.CoercionType.Html) への強制型変換をサポートします。|
+| OneNote on the web<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、HTML への強制型変換 (Office.CoercionType.Html) をサポートします。|
 
 ---
 
@@ -113,11 +113,11 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on iPad<br>Excel on Mac<br>OneNote on the web<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.setSelectedDataAsync メソッドを使用してデータを書き込むときに、画像 (Office.CoercionType.Image) への変換をサポートしています。|
+| 「[画像強制型変換要件セット](image-coercion-requirement-sets.md)」を参照してください。 | Document.setSelectedDataAsync メソッド|
 
 ---
 
-### <a name="mailbox"></a>メールボックス
+### <a name="mailbox"></a>Mailbox
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
