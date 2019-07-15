@@ -1,21 +1,21 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/10/2019
 localization_priority: Priority
-ms.openlocfilehash: 9b3916dc61fadb3b6d9bf61e43cb22bdc7ff68c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3163052dde98122dceb0d8a1d550e3d8acf788db
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448771"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617010"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 この記事では、Excel アドイン用のこの変換プロセスについて説明します。 同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。
 
 > [!NOTE]
-> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.yml)」の「任意のエディター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/officedev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.md)」の「任意のエディター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -72,7 +72,8 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
     {
         "compilerOptions": {
             "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
+            "lib": [ "es5", "dom", "es2015.promise" ],
+            "sourceMap": true
         }
     }
     ```
@@ -83,13 +84,22 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
     declare var fabric: any;
     ```
 
-12. **Home.ts** ファイルで、次に示す行の **'1.1'** を **1.1** に変更します (つまり、引用符を削除します)。
+12. **Home.ts** ファイルで、行 `Office.initialize = function (reason) {` を見つけます。その直後に一行追加して、ここに示されているようにグローバル `window.Promise` をポリフィルします。
+
+    ```typescript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
+    ```
+
+13. **Home.ts** ファイルで、次に示す行の **'1.1'** を **1.1** に変更します (つまり、引用符を削除します)。
 
     ```typescript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-13. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
+14. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
 
     ```typescript
     function displaySelectedCells() {
@@ -130,6 +140,8 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
+
         $(document).ready(function () {
             // Initialize the FabricUI notification mechanism and hide it
             var element = document.querySelector('.ms-MessageBanner');

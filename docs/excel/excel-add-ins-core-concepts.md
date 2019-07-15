@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した基本的なプログラミングの�
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128214"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617038"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -248,8 +248,8 @@ API エラーが発生すると、API はコードとメッセージを含む **
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドインを使う](excel-add-ins-get-started-overview.md)
-- [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [最初の Excel アドインをビルドする](../quickstarts/excel-quickstart-jquery.md)
+- [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
 - [Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
