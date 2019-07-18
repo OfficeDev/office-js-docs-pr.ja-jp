@@ -1,14 +1,14 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/10/2019
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Priority
-ms.openlocfilehash: 42281b8a98b1172ba32b1525176fd8cadd0f094c
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 1e73898b068ba4ae2d49db7e8de17d5cd8883b24
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617052"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771513"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -47,8 +47,6 @@ function webRequest() {
       })
   })
 }
-
-CustomFunctions.associate("WEBREQUEST", webRequest);
 ```
 
 >[!NOTE]
@@ -130,7 +128,6 @@ function increment(incrementBy, invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("INC", increment);
 ```
 
 `onCanceled`コールバックについて理解するだけでなく、Excel が次のような場合に関数の実行をキャンセルすることも理解しておく必要があります。
@@ -181,6 +178,5 @@ ws.onerror(error){
 - [カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)
 - [カスタム関数のメタデータ](custom-functions-json.md)
 - [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-- [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 - [Excel でカスタム関数を作成する](custom-functions-overview.md)
 - [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

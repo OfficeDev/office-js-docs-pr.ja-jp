@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
 description: ''
-ms.date: 04/18/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 572e4d5d83d60932ec463962d74868848452dad4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449557"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771731"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -39,7 +39,7 @@ Excel.run(function (context) {
         ["1/15/2017", "Best For You Organics Company", "Groceries", "$97"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -243,9 +243,6 @@ Excel.run(function (context) {
 
 `TableChangedEventArgs` オブジェクトは、変更内容とソースに関する情報を提供します。 `onChanged` が発生するのは書式設定またはデータの値が変更された時であるため、値が実際に変更されたかどうかを確認するのにアドインを使用すると便利です。 `details`プロパティは、この情報を [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) としてカプセル化します。 次のコード サンプルでは、変更前と変更後の値および変更されたセルの種類を表示する方法を表示します。
 
-> [!NOTE]
-> `TableChangedEventArgs.details` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
 function onTableChanged(eventArgs) {
@@ -359,9 +356,6 @@ Excel.run(function (context) {
 ```
 
 ## <a name="autofilter"></a>オートフィルター
-
-> [!NOTE]
-> `Table.autoFilter` は、現在公開プレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 アドインは、テーブルの[AutoFilter](/javascript/api/excel/excel.autofilter)オブジェクトを使用してデータをフィルタ処理できます。 `AutoFilter` オブジェクトは、テーブルまたは範囲のフィルタ構造全体です。 この記事で前述したすべてのフィルター操作は、自動フィルターと互換性があります。 単一のアクセスポイントにより、複数のフィルタへのアクセスと管理が簡単になります。
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: '`OfficeRuntime.storage`を使用し、カスタム関数で状態を保存します。'
 title: カスタム関数で状態を保存して共有する
 localization_priority: Priority
-ms.openlocfilehash: c6689393e5d118c779b7b261b0de04ead56aff83
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a1b70433ef0c00d507175b32fc12603ff3de1e3f
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127836"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771590"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>カスタム関数で状態を保存して共有する
 
@@ -37,9 +37,6 @@ function storeValue(key, value) {
 function GetValue(key) {
   return OfficeRuntime.storage.getItem(key);
 }
-
-CustomFunctions.associate("STOREVALUE", StoreValue);
-CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
 [GitHub 上の詳細なコードサンプル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)では、作業ウィンドウに上記の情報を受け渡す例を紹介しています。
@@ -54,6 +51,5 @@ CustomFunctions.associate("GETVALUE", GetValue);
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
 * [カスタム関数のデバッグ](custom-functions-debugging.md)

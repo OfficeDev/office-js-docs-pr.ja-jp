@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: Excel のカスタム関数でエラーを処理します。
 title: 'Excel のカスタム関数でのエラー処理 '
 localization_priority: Priority
-ms.openlocfilehash: 3818d33121ed26bb7d65c56bf6c504f2fb049c72
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127920"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771576"
 ---
 # <a name="error-handling-within-custom-functions"></a>カスタム関数内でのエラー処理
 
@@ -46,5 +46,5 @@ function getComment(commentID) {
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のデバッグ](custom-functions-debugging.md)
-* [カスタム関数の要件](custom-functions-requirements.md)
+* [カスタム関数の要件](custom-functions-requirement-sets.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

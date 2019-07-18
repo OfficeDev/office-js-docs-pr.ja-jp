@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/10/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Priority
-ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 185e6434f963a6dbcc4eefbcb8bbee4d922662e6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127941"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771398"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 
@@ -56,8 +56,6 @@ function div2(dividend: number, divisor: number) {
     [dividend, divisor]
   );
 }
-
-CustomFunctions.associate("DIV2", div2);
 ```
 
 次に、1 つのネットワークの呼び出しに渡されるすべての操作が格納されるバッチの配列を定義します。 次のコードでは、配列内で各バッチのエントリを記述するインターフェイスを定義する方法を表示します。 どの文字列名のどの操作を実行するのか、インターフェイスが操作を定義します。 たとえば、 `multiply` と `divide`という名前の 2 つのカスタム関数がある場合、バッチのエントリ内で操作名として再利用できます。 `args` は、Excel からカスタム関数に渡された引数が保持されます。 最後に、`resolve` または `reject`はリモート サービスが返した情報を保持している promise を格納します。
@@ -223,6 +221,5 @@ function pause(ms: number) {
 ## <a name="see-also"></a>関連項目
 
 * [関数の揮発性の値](custom-functions-volatile.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
