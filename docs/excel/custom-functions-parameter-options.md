@@ -1,14 +1,14 @@
 ---
-ms.date: 07/01/2019
+ms.date: 07/15/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617045"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771424"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -25,7 +25,7 @@ ms.locfileid: "35617045"
 ```js
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @param {number} [third] Third number to add. If omitted, third = 0.
@@ -37,7 +37,6 @@ function add(first, second, third) {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 #### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
@@ -45,7 +44,7 @@ CustomFunctions.associate("ADD", add);
 ```typescript
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param first First number.
  * @param second Second number.
  * @param [third] Third number to add. If omitted, third = 0.
@@ -57,7 +56,6 @@ function add(first: number, second: number, third?: number): number {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 ---
@@ -77,8 +75,7 @@ CustomFunctions.associate("ADD", add);
  * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode, dayOfWeek)
-{
+function getWeatherReport(zipCode, dayOfWeek) {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -102,8 +99,7 @@ function getWeatherReport(zipCode, dayOfWeek)
  * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
-{
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -129,25 +125,110 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {number[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.
  */
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 0; j < values[i].length; j++){
-      if(values[i][j] >= highest){
+function secondHighest(values) {
+  let highest = values[0][0],
+    secondHighest = values[0][0];
+  for (var i = 0; i < values.length; i++) {
+    for (var j = 0; j < values[i].length; j++) {
+      if (values[i][j] >= highest) {
         secondHighest = highest;
         highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
+      } else if (values[i][j] >= secondHighest) {
         secondHighest = values[i][j];
       }
     }
   }
   return secondHighest;
 }
-CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
+
+## <a name="repeating-parameters"></a>繰り返しパラメーター
+
+繰り返しパラメーターを使用すると、ユーザーは関数に一連のオプションの引数を入力できます。 関数が呼び出されると、パラメーターの配列に値が提供されます。 パラメーター名が数値で終わる場合、各引数は、などの数値をインクリメントし`ADD(number1, [number2], [number3],…)`ます。 これは、Excel の組み込み関数で使用される規則に一致します。
+
+次の関数は、合計数、セルの住所、および範囲 (入力した場合) を合計します。
+
+```TS
+/**
+* The sum of all of the numbers.
+* @customfunction
+* @param operands A number (such as 1 or 3.1415), a cell address (such as A1 or $E$11), or a range of cell addresses (such as B3:F12)
+*/
+
+function ADD(operands: number[][][]): number {
+  let total: number = 0;
+
+  operands.forEach(range => {
+    range.forEach(row => {
+      row.forEach(num => {
+        total += num;
+      });
+    });
+  });
+
+  return total;
+}
+```
+
+この関数は`=CONTOSO.ADD([operands], [operands]...)` 、Excel ブックに表示されます。
+
+<img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
+
+### <a name="repeating-single-value-parameter"></a>繰り返し単一値パラメータ
+
+繰り返し単一の値のパラメーターを使用すると、複数の単一の値を渡すことができます。 たとえば、ユーザーは、「ADD (1, B2, 3)」と入力することができます。 次の例は、単一の値のパラメーターを宣言する方法を示しています。
+
+```JS
+/**
+ * @customfunction
+ * @param {number[]} singleValue An array of numbers that are repeating parameters.
+ */
+function addSingleValue(singleValue) {
+  let total = 0;
+  singleValue.forEach(value => {
+    total += value;
+  })
+
+  return total;
+}
+```
+
+### <a name="single-range-parameter"></a>単一範囲のパラメーター
+
+単精度浮動小数点型 (single) のパラメーターは、技術的には繰り返しパラメーターではありませんが、宣言は繰り返しパラメーターによく似ているので、ここに記載されています。 ユーザーには、Excel から1つの範囲が渡される追加 (A2: B3) として表示されます。 次の例は、1つの range パラメーターを宣言する方法を示しています。
+
+```JS
+/**
+ * @customfunction
+ * @param {number[][]} singleRange
+ */
+function addSingleRange(singleRange) {
+  let total = 0;
+  singleRange.forEach(setOfSingleValues => {
+    setOfSingleValues.forEach(value => {
+      total += value;
+    })
+  })
+  return total;
+}
+```
+
+### <a name="repeating-range-parameter"></a>繰り返し範囲のパラメーター
+
+繰り返し範囲パラメーターを使用すると、複数の範囲または数値を渡すことができます。 たとえば、ユーザーは ADD (5、B2、C3、8、E5: E8) を入力することができます。 通常、繰り返し範囲は3次元の`number[][][]`行列として型で指定されます。 サンプルについては、繰り返しパラメーター (#repeating パラメーター) の主なサンプルを参照してください。
+
+
+### <a name="declaring-repeating-parameters"></a>繰り返しパラメーターの宣言
+Typescript で、パラメーターが多次元であることを示します。 たとえば、 `ADD(values: number[])`は1次元配列`ADD(values:number[][])`を示し、2次元配列というように指定します。
+
+JavaScript では、 `@param values {number[]}` 1 次元`@param <name> {number[][]}`配列、2次元配列、およびその他の次元で使用します。
+
+手動で作成した JSON では、パラメーターが JSON `"repeating": true`ファイルで指定されていること、およびパラメーターがにマークさ`"dimensionality”: matrix`れていることを確認することを確認してください。
+
+>[!NOTE]
+>繰り返しパラメーターを含む関数には、最後のパラメーターとして、呼び出しパラメーターが自動的に含まれています。 呼び出しパラメーターの詳細については、以下のセクションを参照してください。
 
 ## <a name="invocation-parameter"></a>呼び出しパラメーター
 
@@ -158,7 +239,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```js
 /**
  * Add two numbers.
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @returns {number} The sum of the two (or optionally three) numbers.
@@ -166,7 +247,6 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 function add(first, second, invocation) {
   return first + second;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 このパラメーターを使用すると、呼び出し元のセルのコンテキストを取得できます。これは、[カスタム関数を呼び出すセルのアドレスを検索](#addressing-cells-context-parameter)するなどの一部のシナリオで役立ちます。
@@ -193,18 +273,17 @@ CustomFunctions.associate("ADD", add);
 function getAddress(invocation) {
   return invocation.address;
 }
-CustomFunctions.associate("GETADDRESS", getAddress);
 ```
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
 ## <a name="next-steps"></a>次のステップ
+
 カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数でデータを受信して​​処理する](custom-functions-web-reqs.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

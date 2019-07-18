@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム
 localization_priority: Normal
-ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951978"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771391"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel カスタム関数のランタイム
 
@@ -118,7 +118,7 @@ function StoreValue(key, value) {
 複数のプラットフォーム (Office アドインのキー テナントの 1 つ) で実行するアドインを作成するには、カスタム関数でドキュメント オブジェクト モデル (DOM) にアクセスしたり、jQuery のような DOM に依存するライブラリを使用したりしないでください。 カスタム関数が JavaScript ランタイムを使用する Windows 上の Excel では、カスタム関数は DOM にアクセスできません。
 
 ## <a name="next-steps"></a>次のステップ
-[カスタム関数の重要なベストプラクティスについて](custom-functions-best-practices.md)説明します。
+[カスタム関数を使用して web 要求を実行](custom-functions-web-reqs.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 

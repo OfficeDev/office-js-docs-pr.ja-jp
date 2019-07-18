@@ -5,12 +5,12 @@ ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: afd5d06e08a899d4441da51fc619d86de45e52d3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9efbd1380587244fae60551fe104f859d22b4aa2
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126989"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771885"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -69,7 +69,7 @@ ms.locfileid: "35126989"
 5. `TODO1` を次のコードに置き換えます。 このコードでは、ユーザーの Excel のバージョンが、このチュートリアルのシリーズで使用する API をすべて含んでいるバージョンの Excel.js をサポートしているかどうかを調べます。 運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。 これにより、ユーザーは、そのユーザーの Excel のバージョンでサポートされているアドインの部分を使用できるようになります。
 
     ```js
-    if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
     ```
@@ -848,7 +848,7 @@ ms.locfileid: "35126989"
 8. ファイルを保存します。
 
    > [!NOTE]
-   > ポップアップファイルとそれによって読み込まれるポップアップファイルは、アドインの作業ウィンドウから完全に独立したエッジまたは Internet Explorer 11 プロセスで実行されます。 popup.js が app.js ファイルと同じ bundle.js ファイルからトランスパイルされていた場合、アドインでは bundle.js の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 さらに、ポップアップ .js ファイルには、Internet Explorer 11 でサポートされていない JavaScript は含まれていません。 これら 2 つの理由から、このアドインでは popup.js を一切トランスパイルしていません。
+   > ポップアップファイルとそれによって読み込まれるポップアップファイルは、アドインの作業ウィンドウから完全に独立した Microsoft Edge または Internet Explorer 11 プロセスで実行されます。 popup.js が app.js ファイルと同じ bundle.js ファイルからトランスパイルされていた場合、アドインでは bundle.js の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 さらに、ポップアップ .js ファイルには、Internet Explorer 11 でサポートされていない JavaScript は含まれていません。 これら 2 つの理由から、このアドインでは popup.js を一切トランスパイルしていません。
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>作業ウィンドウからダイアログを開く
 

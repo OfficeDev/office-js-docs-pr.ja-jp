@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Excel カスタム関数をローカライズします。
 title: カスタム関数をローカライズする
 localization_priority: Normal
-ms.openlocfilehash: 7348562a232f87607d5f9becad85e897f22ad99d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cbb8e3bf5bc12e9df6ff77cbede4c9f0a8deca78
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127864"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771569"
 ---
 # <a name="localize-custom-functions"></a>カスタム関数をローカライズする
 
@@ -105,5 +105,4 @@ ms.locfileid: "35127864"
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
 * [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

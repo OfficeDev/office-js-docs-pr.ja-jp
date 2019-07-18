@@ -2,18 +2,18 @@
 title: スクリプトラボを使用して Office JavaScript API を探索する
 description: スクリプトラボを使用して、Office JS API とプロトタイプ機能を調査します。
 ms.topic: article
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Normal
-ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: f9f4a644c2d7b188c70142f4dcd2fd85dac035a7
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226777"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771857"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
 
-[スクリプトラボアドイン](https://store.office.com/app.aspx?assetid=WA104380862)は office ストアから無料で利用できます。これにより、Excel や Word などの office プログラムで作業しているときに OFFICE JavaScript API を調べることができます。 スクリプトラボは、アドインに必要な機能を試作して検証する際に開発ツールキットに追加する便利なツールです。
+[Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)は appsource から無料で利用できます。これにより、Excel や Word などの office プログラムで作業しているときに OFFICE JavaScript API を調べることができます。 スクリプトラボは、アドインに必要な機能を試作して検証する際に開発ツールキットに追加する便利なツールです。
 
 ## <a name="what-is-script-lab"></a>スクリプトラボとは
 
@@ -29,7 +29,7 @@ ms.locfileid: "35226777"
 
 ### <a name="explore-samples"></a>サンプルを検索する
 
-API を使用して特定のタスクを実行する方法を示す組み込みのサンプルスニペットのコレクションを使用して、すぐに作業を開始できます。 サンプルを実行すると、作業ウィンドウまたはドキュメントの結果をすぐに確認したり、サンプルを調べて API のしくみを確認したり、サンプルスニペットを使用して、独自のアドインのプロトタイプ機能の基礎として使用したりすることもできます。
+API を使用してタスクを実行する方法を示す組み込みのサンプルスニペットのコレクションを使用して、すぐに作業を開始できます。 サンプルを実行すると、作業ウィンドウまたはドキュメントの結果をすぐに確認したり、サンプルを調べて API のしくみを確認したり、サンプルを使用して独自のアドインをプロトタイプしたりすることもできます。
 
 ![サンプル](../images/script-lab-samples.jpg)
 
@@ -62,12 +62,14 @@ Office JS API を呼び出す JavaScript または TypeScript コードに加え
 
 ## <a name="next-steps"></a>次のステップ
 
+Excel、Word、または PowerPoint でスクリプトラボを使用するには、AppSource から[スクリプトラボアドイン](https://appsource.microsoft.com/product/office/WA104380862)をインストールします。 
+
 [Office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)の GitHub リポジトリに新しいスニペットを投稿することによって、スクリプトラボのサンプルライブラリを拡張することをお歓迎します。
 
-Office アドインを作成する準備ができたら、推奨されている Office アプリケーションの[5 分間のクイックスタート](/office/dev/add-ins/#5-minute-quick-starts)を参照してください。
+最初の Office アドインを作成する準備ができたら、 [Excel](../quickstarts/excel-quickstart-jquery.md)、 [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、 [Word](../quickstarts/word-quickstart.md)、 [OneNote](../quickstarts/onenote-quickstart.md)、 [PowerPoint](../quickstarts/powerpoint-quickstart.md)、または[Project](../quickstarts/project-quickstart.md)のクイックスタートをお試しください。
 
 ## <a name="see-also"></a>関連項目
 
-- [スクリプトラボの取得](https://store.office.com/app.aspx?assetid=WA104380862)
+- [スクリプトラボの取得](https://appsource.microsoft.com/product/office/WA104380862)
 - [スクリプトラボの詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [開発者プログラムにサインアップする](https://developer.microsoft.com/office/dev-program)

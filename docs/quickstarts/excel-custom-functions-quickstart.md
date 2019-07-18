@@ -1,15 +1,15 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 3b7ca82a618ef686b14604f96c17dd43b484f901
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454910"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771829"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -115,4 +115,3 @@ Excel ブックで、次の手順を`ADD`実行してカスタム関数を試し
 * [カスタム関数の概要](../excel/custom-functions-overview.md)
 * [カスタム関数のメタデータ](../excel/custom-functions-json.md)
 * [Excel カスタム関数のランタイム](../excel/custom-functions-runtime.md)
-* [カスタム関数のベスト プラクティス](../excel/custom-functions-best-practices.md)

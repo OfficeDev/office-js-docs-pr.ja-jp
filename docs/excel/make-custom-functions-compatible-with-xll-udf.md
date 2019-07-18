@@ -3,12 +3,12 @@ title: XLL ユーザー定義関数を使用してカスタム関数を拡張す
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする (プレビュー)
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: fa80597d48859a29bcdbb5b900c251382dc87caa
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059693"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771654"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する (プレビュー)
 
@@ -69,5 +69,4 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 ## <a name="see-also"></a>関連項目
 
 - [既存の COM アドインと互換性のある Excel アドインを作成する](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
-- [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 - [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)

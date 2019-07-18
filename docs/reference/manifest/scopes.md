@@ -3,20 +3,20 @@ title: マニフェスト ファイルの Scopes 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 903f7ff68313549234c07926cc63dc7e783ae400
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451942"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771787"
 ---
 # <a name="scopes-element"></a>Scopes 要素
 
-アドインで必要な Microsoft Graph に対するアクセス許可が含まれます。 Office ストアは、Scopes 要素を使用して同意ダイアログ ボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
+アドインで必要な Microsoft Graph に対するアクセス許可が含まれます。 AppSource は、スコープ要素を使用して同意ダイアログボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  種類  |  説明  |
+|  要素 |  型  |  説明  |
 |:-----|:-----|:-----|
 |  **Scope**                |  string     |   Microsoft Graph に対するアクセス許可の名前。たとえば、Files.Read.All です。 |
 

@@ -16,7 +16,7 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
 
 - アドインの XML マニフェスト ファイル (GetDoc_App.xml)。共有ネットワーク フォルダーまたはアドイン カタログで使用できます。このマニフェスト ファイルでは、上述の HTML ファイルの場所を指していることが必要です。
 
-また、[Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) または[任意のエディター](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code)を使用して、PowerPoint 用や Word 用のアドインを作成できます。[](../quickstarts/word-quickstart.md?tabs=visual-studio)[](../quickstarts/word-quickstart.md?tabs=visual-studio-code) 
+また、visual studio を使用して、または office [](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)アドイン用に[visual studio](../quickstarts/word-quickstart.md?tabs=visualstudio)またはサード[オマーンジェネレーター](../quickstarts/word-quickstart.md?tabs=yeomangenerator)を使用して Word に対して、PowerPoint 用のアドインを作成することもできます。 [](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>作業ウィンドウ アドインを作成するために知っておくべき主要な概念
 
@@ -212,7 +212,7 @@ function getSlice(state) {
 スライスを Web サービスに送信するために次のコードを追加します。
 
 > [!NOTE]
-> このコードでは、PowerPoint または Word ファイルを複数のスライスの web サーバーに送信します。 web サーバーまたはサービスでは、個々のスライスを1つのファイルに追加してから、.pptx ファイルまたは .docx ファイルとして保存してから、操作を実行する必要があります。
+> このコードでは、PowerPoint または Word ファイルを複数のスライスの web サーバーに送信します。 Web サーバーまたはサービスでは、個々のスライスを1つのファイルに追加してから、.pptx ファイルまたは .docx ファイルとして保存してから、操作を実行する必要があります。
 
 ```js
 function sendSlice(slice, state) {

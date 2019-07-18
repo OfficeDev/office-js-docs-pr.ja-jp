@@ -1,34 +1,31 @@
 ---
 title: Excel JavaScript API を使用して図形を操作する
 description: ''
-ms.date: 03/21/2019
+ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e4d01c387fff01d68cb26369240a1e06e723a54c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fb3aa7495efb54332b2ae0bb4dee8b11249afd3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448271"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771682"
 ---
-# <a name="work-with-shapes-using-the-excel-javascript-api-preview"></a>Excel JavaScript API を使用して図形を操作する (プレビュー)
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して図形を操作する
 
-> [!NOTE]
-> この記事に記載されている api は、現時点ではパブリックプレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-excel では、図形は excel の描画層にある任意のオブジェクトとして定義されます。 つまり、セルの外部にあるものは図形です。 この記事では、ジオメトリック図形、線、およびイメージを [Shape]/javascript/api/excel/excel.shape) および [shapes [ecollection](/javascript/api/excel/excel.shapecollection) ] api と組み合わせて使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、それぞれの記事「excel JavaScript API を使用してグラフを処理する」 (charts.md) を使用してください。
+Excel では、図形は Excel の描画層にある任意のオブジェクトとして定義されます。 つまり、セルの外部にあるものは図形です。 この記事では、[図形](/javascript/api/excel/excel.shape)および shapes [ecollection](/javascript/api/excel/excel.shapecollection) api と組み合わせて、ジオメトリック図形、線、およびイメージを使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、「 [Excel JavaScript API を使用してグラフを操作](excel-add-ins-charts.md)する」で説明されています。
 
 ## <a name="create-shapes"></a>図形を作成する
 
-図形は、ワークシートの shape コレクション (`Worksheet.shapes`) を使用して作成され、格納されます。 `ShapeCollection`には`.add*` 、この目的のためにいくつかの方法があります。 すべての図形には、コレクションに追加されたときに名前と id が生成されます。 これらは、 `name`および`id`プロパティです。 `name`アドインで設定して、 `ShapeCollection.getItem(name)`メソッドを使用して簡単に取得することができます。
+図形は、ワークシートの shape コレクション (`Worksheet.shapes`) を使用して作成され、格納されます。 `ShapeCollection`には`.add*` 、この目的のためにいくつかの方法があります。 すべての図形には、コレクションに追加されたときに名前と Id が生成されます。 これらは、 `name`および`id`プロパティです。 `name`アドインで設定して、 `ShapeCollection.getItem(name)`メソッドを使用して簡単に取得することができます。
 
 次の種類の図形は、関連付けられているメソッドを使用して追加されます。
 
 | Shape | Tabs.Add メソッド (Outlook フォーム スクリプト) | 署名 |
 |-------|------------|-----------|
-| 幾何学的図形 | [addgeometricshape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| 画像 (JPEG または PNG のいずれか) | [addimage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
+| 幾何学的図形 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| 画像 (JPEG または PNG のいずれか) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
 | 枠線 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addsvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | テキスト ボックス | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
 ### <a name="geometric-shapes"></a>幾何学的な図形
@@ -94,7 +91,7 @@ Excel.run(function (context) {
 
 線は、他の Shape オブジェクトに接続することができます。 メソッド`connectBeginShape`と`connectEndShape`メソッドは、指定された接続ポイントにある図形に対して、線の始点と終点を接続します。 これらのポイントの位置は図形によって異なり`Shape.connectionSiteCount`ますが、を使用すると、アドインが範囲外のポイントに接続されないようにすることができます。 `disconnectBeginShape`および`disconnectEndShape`メソッドを使用して、接続されているすべての図形から線が切断されます。
 
-次のコードサンプルでは、" **myline"** 行を **"l shape"** と **"直角図形"** という名前の2つの図形に接続します。
+次のコードサンプルでは、" **Myline"** 行を **"l shape"** と **"直角図形"** という名前の2つの図形に接続します。
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
@@ -140,7 +137,7 @@ Excel.run(function (context) {
 
 幾何学的な図形にはテキストを含めることができます。 図形には`textFrame` 、 [TextFrame](/javascript/api/excel/excel.textframe)型のプロパティがあります。 オブジェクト`TextFrame`は、テキスト表示オプション (余白、テキストオーバーフローなど) を管理します。 `TextFrame.textRange`は、テキストの内容とフォントの設定を含む[TextRange](/javascript/api/excel/excel.textrange)オブジェクトです。
 
-次のコードサンプルでは、テキスト "shape text" を使用して "Wave" という名前のジオメトリック図形を作成します。 また、図形とテキストの色を調整するだけでなく、テキストの水平方向の配置を中央に設定します。
+次のコードサンプルでは、テキスト "Shape Text" を使用して "Wave" という名前のジオメトリック図形を作成します。 また、図形とテキストの色を調整するだけでなく、テキストの水平方向の配置を中央に設定します。
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
@@ -214,7 +211,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>図形を画像としてエクスポートする
 
-任意`Shape`のオブジェクトをイメージに変換できます。 [getAsImage](/javascript/api/excel/excel.shape#getasimage-format-)は、base64 でエンコードされた文字列を返します。 画像の形式は、に`getAsImage`渡される図[形式](/javascript/api/excel/excel.pictureformat)の列挙体として指定されます。
+任意`Shape`のオブジェクトをイメージに変換できます。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)は、base64 でエンコードされた文字列を返します。 画像の形式は、に`getAsImage`渡される図[形式](/javascript/api/excel/excel.pictureformat)の列挙体として指定されます。
 
 ```js
 Excel.run(function (context) {
@@ -233,7 +230,7 @@ Excel.run(function (context) {
 
 図形は、 `Shape`オブジェクトの`delete`メソッドを使用してワークシートから削除されます。 その他のメタデータは必要ありません。
 
-次のコードサンプルでは、 **myworksheet**からすべての図形を削除します。
+次のコードサンプルでは、 **Myworksheet**からすべての図形を削除します。
 
 ```js
 // This deletes all the shapes from "MyWorksheet".

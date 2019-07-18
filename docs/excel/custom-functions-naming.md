@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128312"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771534"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
@@ -63,6 +63,5 @@ Excel は、組み込み関数名 (など`SUM`) に大文字を使用します�
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [チュートリアル: Excel でカスタム関数を作成します。](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
