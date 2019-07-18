@@ -1,68 +1,67 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128312"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771534"
 ---
-# <a name="naming-guidelines"></a><span data-ttu-id="cf682-103">名前付けのガイドライン</span><span class="sxs-lookup"><span data-stu-id="cf682-103">Naming guidelines</span></span>
+# <a name="naming-guidelines"></a><span data-ttu-id="8196f-103">名前付けのガイドライン</span><span class="sxs-lookup"><span data-stu-id="8196f-103">Naming guidelines</span></span>
 
-<span data-ttu-id="cf682-104">カスタム関数は、JSON メタデータファイルの**id**および**name**プロパティによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="cf682-104">A custom function is identified by an **id** and **name** property in the JSON metadata file.</span></span>
+<span data-ttu-id="8196f-104">カスタム関数は、JSON メタデータファイルの**id**および**name**プロパティによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="8196f-104">A custom function is identified by an **id** and **name** property in the JSON metadata file.</span></span>
 
-- <span data-ttu-id="cf682-105">この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="cf682-105">The function `id` is used to uniquely identify custom functions in your JavaScript code.</span></span>
-- <span data-ttu-id="cf682-106">関数`name`は、Excel でユーザーに表示される表示名として使用されます。</span><span class="sxs-lookup"><span data-stu-id="cf682-106">The function `name` is used as the display name that appears to a user in Excel.</span></span>
+- <span data-ttu-id="8196f-105">この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="8196f-105">The function `id` is used to uniquely identify custom functions in your JavaScript code.</span></span>
+- <span data-ttu-id="8196f-106">関数`name`は、Excel でユーザーに表示される表示名として使用されます。</span><span class="sxs-lookup"><span data-stu-id="8196f-106">The function `name` is used as the display name that appears to a user in Excel.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="cf682-107">関数`name`は、ローカライズのためなど`id`、関数とは異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="cf682-107">A function `name` can differ from the function `id`, such as for localization purposes.</span></span> <span data-ttu-id="cf682-108">一般的に、関数の`name`違いがない場合は、 `id`関数はと同じにしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf682-108">In general, a function's `name` should stay the same as the `id` if there is no compelling reason for them to differ.</span></span>
+<span data-ttu-id="8196f-107">関数`name`は、ローカライズのためなど`id`、関数とは異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="8196f-107">A function `name` can differ from the function `id`, such as for localization purposes.</span></span> <span data-ttu-id="8196f-108">一般的に、関数の`name`違いがない場合は、 `id`関数はと同じにしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="8196f-108">In general, a function's `name` should stay the same as the `id` if there is no compelling reason for them to differ.</span></span>
 
-<span data-ttu-id="cf682-109">いくつかの`name`一般的`id`な要件を共有します。</span><span class="sxs-lookup"><span data-stu-id="cf682-109">A function's `name` and `id` share some common requirements:</span></span>
+<span data-ttu-id="8196f-109">いくつかの`name`一般的`id`な要件を共有します。</span><span class="sxs-lookup"><span data-stu-id="8196f-109">A function's `name` and `id` share some common requirements:</span></span>
 
-- <span data-ttu-id="cf682-110">関数では`id` 、a ~ Z の文字を使用することはできません。数字 0 ~ 9、アンダースコア、ピリオド。</span><span class="sxs-lookup"><span data-stu-id="cf682-110">A function's `id` may only use characters A through Z, numbers zero through nine, underscores, and periods.</span></span>
+- <span data-ttu-id="8196f-110">関数では`id` 、a ~ Z の文字を使用することはできません。数字 0 ~ 9、アンダースコア、ピリオド。</span><span class="sxs-lookup"><span data-stu-id="8196f-110">A function's `id` may only use characters A through Z, numbers zero through nine, underscores, and periods.</span></span>
 
-- <span data-ttu-id="cf682-111">関数では`name` 、Unicode のアルファベット文字、アンダースコア、ピリオドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="cf682-111">A function's `name` may use any Unicode alphabetic characters, underscores, and periods.</span></span>
+- <span data-ttu-id="8196f-111">関数では`name` 、Unicode のアルファベット文字、アンダースコア、ピリオドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8196f-111">A function's `name` may use any Unicode alphabetic characters, underscores, and periods.</span></span>
 
-- <span data-ttu-id="cf682-112">どちらの`name`関数`id`も、文字で始まる必要があり、最小で3文字の制限があります。</span><span class="sxs-lookup"><span data-stu-id="cf682-112">Both function `name` and `id` must start with a letter and have a minimum limit of three characters.</span></span>
+- <span data-ttu-id="8196f-112">どちらの`name`関数`id`も、文字で始まる必要があり、最小で3文字の制限があります。</span><span class="sxs-lookup"><span data-stu-id="8196f-112">Both function `name` and `id` must start with a letter and have a minimum limit of three characters.</span></span>
 
-<span data-ttu-id="cf682-113">Excel は、組み込み関数名 (など`SUM`) に大文字を使用します。</span><span class="sxs-lookup"><span data-stu-id="cf682-113">Excel uses uppercase letters for built-in function names (such as `SUM`).</span></span> <span data-ttu-id="cf682-114">そのため、カスタム関数`name`に大文字を使用し、 `id`ベストプラクティスとして使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="cf682-114">Therefore, consider using uppercase letters for your custom function's `name` and `id` as a best practice.</span></span>
+<span data-ttu-id="8196f-113">Excel は、組み込み関数名 (など`SUM`) に大文字を使用します。</span><span class="sxs-lookup"><span data-stu-id="8196f-113">Excel uses uppercase letters for built-in function names (such as `SUM`).</span></span> <span data-ttu-id="8196f-114">そのため、カスタム関数`name`に大文字を使用し、 `id`ベストプラクティスとして使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="8196f-114">Therefore, consider using uppercase letters for your custom function's `name` and `id` as a best practice.</span></span>
 
-<span data-ttu-id="cf682-115">関数`name`には、次のような名前を付けることはできません。</span><span class="sxs-lookup"><span data-stu-id="cf682-115">A function's `name` shouldn't be named the same as:</span></span>
+<span data-ttu-id="8196f-115">関数`name`には、次のような名前を付けることはできません。</span><span class="sxs-lookup"><span data-stu-id="8196f-115">A function's `name` shouldn't be named the same as:</span></span>
 
-- <span data-ttu-id="cf682-116">A1 から XFD1048576 のセル、または R1C1 から R1048576C16384 までのセル。</span><span class="sxs-lookup"><span data-stu-id="cf682-116">Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.</span></span>
+- <span data-ttu-id="8196f-116">A1 から XFD1048576 のセル、または R1C1 から R1048576C16384 までのセル。</span><span class="sxs-lookup"><span data-stu-id="8196f-116">Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.</span></span>
 
-- <span data-ttu-id="cf682-117">任意の Excel 4.0 マクロ関数 ( `RUN`、 `ECHO`など)。</span><span class="sxs-lookup"><span data-stu-id="cf682-117">Any Excel 4.0 Macro Function (such as `RUN`, `ECHO`).</span></span>  <span data-ttu-id="cf682-118">これらの関数の完全な一覧については、「 [Excel マクロ関数リファレンスドキュメント](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf682-118">For a full list of these functions, see [this Excel Macro Functions Reference document](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).</span></span>
+- <span data-ttu-id="8196f-117">任意の Excel 4.0 マクロ関数 ( `RUN`、 `ECHO`など)。</span><span class="sxs-lookup"><span data-stu-id="8196f-117">Any Excel 4.0 Macro Function (such as `RUN`, `ECHO`).</span></span>  <span data-ttu-id="8196f-118">これらの関数の完全な一覧については、「 [Excel マクロ関数リファレンスドキュメント](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8196f-118">For a full list of these functions, see [this Excel Macro Functions Reference document](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).</span></span>
 
-## <a name="naming-conflicts"></a><span data-ttu-id="cf682-119">名前付けの競合</span><span class="sxs-lookup"><span data-stu-id="cf682-119">Naming conflicts</span></span>
+## <a name="naming-conflicts"></a><span data-ttu-id="8196f-119">名前付けの競合</span><span class="sxs-lookup"><span data-stu-id="8196f-119">Naming conflicts</span></span>
 
-<span data-ttu-id="cf682-120">関数`name`が既に存在するアドインの関数`name`と同じ場合は、 **#REF!**</span><span class="sxs-lookup"><span data-stu-id="cf682-120">If your function `name` is the same as a function `name` in an add-in that already exists, the **#REF!**</span></span> <span data-ttu-id="cf682-121">エラーがブックに表示されます。</span><span class="sxs-lookup"><span data-stu-id="cf682-121">error will appear in your workbook.</span></span>
+<span data-ttu-id="8196f-120">関数`name`が既に存在するアドインの関数`name`と同じ場合は、 **#REF!**</span><span class="sxs-lookup"><span data-stu-id="8196f-120">If your function `name` is the same as a function `name` in an add-in that already exists, the **#REF!**</span></span> <span data-ttu-id="8196f-121">エラーがブックに表示されます。</span><span class="sxs-lookup"><span data-stu-id="8196f-121">error will appear in your workbook.</span></span>
 
-<span data-ttu-id="cf682-122">名前付けの競合を修正するに`name`は、アドインでを変更して、関数を再度実行します。</span><span class="sxs-lookup"><span data-stu-id="cf682-122">To fix a naming conflict, change the `name` in your add-in and try the function again.</span></span> <span data-ttu-id="cf682-123">競合する名前を使用してアドインをアンインストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="cf682-123">You can also uninstall the add-in with the conflicting name.</span></span> <span data-ttu-id="cf682-124">または、別の環境でアドインをテストしている場合は、別の名前空間を使用して、関数`NAMESPACE_NAMEOFFUNCTION`を区別します (など)。</span><span class="sxs-lookup"><span data-stu-id="cf682-124">Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as `NAMESPACE_NAMEOFFUNCTION`).</span></span>
+<span data-ttu-id="8196f-122">名前付けの競合を修正するに`name`は、アドインでを変更して、関数を再度実行します。</span><span class="sxs-lookup"><span data-stu-id="8196f-122">To fix a naming conflict, change the `name` in your add-in and try the function again.</span></span> <span data-ttu-id="8196f-123">競合する名前を使用してアドインをアンインストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="8196f-123">You can also uninstall the add-in with the conflicting name.</span></span> <span data-ttu-id="8196f-124">または、別の環境でアドインをテストしている場合は、別の名前空間を使用して、関数`NAMESPACE_NAMEOFFUNCTION`を区別します (など)。</span><span class="sxs-lookup"><span data-stu-id="8196f-124">Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as `NAMESPACE_NAMEOFFUNCTION`).</span></span>
 
-## <a name="best-practices"></a><span data-ttu-id="cf682-125">ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cf682-125">Best practices</span></span>
+## <a name="best-practices"></a><span data-ttu-id="8196f-125">ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="8196f-125">Best practices</span></span>
 
-- <span data-ttu-id="cf682-126">同じまたは似た名前を持つ複数の関数を作成するのではなく、複数の引数を関数に追加することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="cf682-126">Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.</span></span>
-- <span data-ttu-id="cf682-127">関数名は、ではなく、関数のアクションを`=GETZIPCODE`示して`ZIPCODE`いなければなりません。</span><span class="sxs-lookup"><span data-stu-id="cf682-127">Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.</span></span>
-- <span data-ttu-id="cf682-128">関数名にあいまいな略語を含めないでください。</span><span class="sxs-lookup"><span data-stu-id="cf682-128">Avoid ambiguous abbreviations in function names.</span></span> <span data-ttu-id="cf682-129">わかりやすくすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="cf682-129">Clarity is more important than brevity.</span></span> <span data-ttu-id="cf682-130">ではなく、 `=INCREASETIME`という`=INC`名前を選択します。</span><span class="sxs-lookup"><span data-stu-id="cf682-130">Choose a name like `=INCREASETIME` rather than `=INC`.</span></span>
-- <span data-ttu-id="cf682-131">類似のアクションを実行する関数に対して同じ動詞を一貫して使用します。</span><span class="sxs-lookup"><span data-stu-id="cf682-131">Consistently use the same verbs for functions which perform similar actions.</span></span> <span data-ttu-id="cf682-132">たとえば、とで`=DELETEZIPCODE`は`=DELETEADDRESS`なく`=DELETEZIPCODE`を使用し`=REMOVEADDRESS`ます。</span><span class="sxs-lookup"><span data-stu-id="cf682-132">For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.</span></span>
-- <span data-ttu-id="cf682-133">ストリーミング関数の名前を指定するときは、その効果にメモを追加するか、関数の`STREAM`名前の末尾に追加することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="cf682-133">When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.</span></span>
+- <span data-ttu-id="8196f-126">同じまたは似た名前を持つ複数の関数を作成するのではなく、複数の引数を関数に追加することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="8196f-126">Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.</span></span>
+- <span data-ttu-id="8196f-127">関数名は、ではなく、関数のアクションを`=GETZIPCODE`示して`ZIPCODE`いなければなりません。</span><span class="sxs-lookup"><span data-stu-id="8196f-127">Function names should indicate the action of the function, such as `=GETZIPCODE` instead of `ZIPCODE`.</span></span>
+- <span data-ttu-id="8196f-128">関数名にあいまいな略語を含めないでください。</span><span class="sxs-lookup"><span data-stu-id="8196f-128">Avoid ambiguous abbreviations in function names.</span></span> <span data-ttu-id="8196f-129">わかりやすくすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="8196f-129">Clarity is more important than brevity.</span></span> <span data-ttu-id="8196f-130">ではなく、 `=INCREASETIME`という`=INC`名前を選択します。</span><span class="sxs-lookup"><span data-stu-id="8196f-130">Choose a name like `=INCREASETIME` rather than `=INC`.</span></span>
+- <span data-ttu-id="8196f-131">類似のアクションを実行する関数に対して同じ動詞を一貫して使用します。</span><span class="sxs-lookup"><span data-stu-id="8196f-131">Consistently use the same verbs for functions which perform similar actions.</span></span> <span data-ttu-id="8196f-132">たとえば、とで`=DELETEZIPCODE`は`=DELETEADDRESS`なく`=DELETEZIPCODE`を使用し`=REMOVEADDRESS`ます。</span><span class="sxs-lookup"><span data-stu-id="8196f-132">For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.</span></span>
+- <span data-ttu-id="8196f-133">ストリーミング関数の名前を指定するときは、その効果にメモを追加するか、関数の`STREAM`名前の末尾に追加することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="8196f-133">When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.</span></span>
 
-## <a name="localizing-function-names"></a><span data-ttu-id="cf682-134">関数名のローカライズ</span><span class="sxs-lookup"><span data-stu-id="cf682-134">Localizing function names</span></span>
+## <a name="localizing-function-names"></a><span data-ttu-id="8196f-134">関数名のローカライズ</span><span class="sxs-lookup"><span data-stu-id="8196f-134">Localizing function names</span></span>
 
-<span data-ttu-id="cf682-135">個別の JSON ファイルを使用し、アドインのマニフェストファイルで値をオーバーライドすることにより、異なる言語の関数名をローカライズできます。</span><span class="sxs-lookup"><span data-stu-id="cf682-135">You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file.</span></span> <span data-ttu-id="cf682-136">これはローカライズされた関数と競合する`id`可能性`name`があるため、ベストプラクティスとして、関数または組み込みの Excel 関数を別の言語で提供しないようにします。</span><span class="sxs-lookup"><span data-stu-id="cf682-136">As a best practice, avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.</span></span>
+<span data-ttu-id="8196f-135">個別の JSON ファイルを使用し、アドインのマニフェストファイルで値をオーバーライドすることにより、異なる言語の関数名をローカライズできます。</span><span class="sxs-lookup"><span data-stu-id="8196f-135">You can localize your function names for different languages using separate JSON files and override values in your add-in's manifest file.</span></span> <span data-ttu-id="8196f-136">これはローカライズされた関数と競合する`id`可能性`name`があるため、ベストプラクティスとして、関数または組み込みの Excel 関数を別の言語で提供しないようにします。</span><span class="sxs-lookup"><span data-stu-id="8196f-136">As a best practice, avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this could conflict with localized functions.</span></span>
 
-<span data-ttu-id="cf682-137">ローカライズの詳細については、「[カスタム関数をローカライズ](custom-functions-localize.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf682-137">For full information on localizing, see [Localize custom functions](custom-functions-localize.md)</span></span>
+<span data-ttu-id="8196f-137">ローカライズの詳細については、「[カスタム関数をローカライズ](custom-functions-localize.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8196f-137">For full information on localizing, see [Localize custom functions](custom-functions-localize.md)</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="cf682-138">次のステップ</span><span class="sxs-lookup"><span data-stu-id="cf682-138">Next steps</span></span>
-<span data-ttu-id="cf682-139">[エラー処理のベストプラクティス](custom-functions-errors.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="cf682-139">Learn about [error handling best practices](custom-functions-errors.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="8196f-138">次のステップ</span><span class="sxs-lookup"><span data-stu-id="8196f-138">Next steps</span></span>
+<span data-ttu-id="8196f-139">[エラー処理のベストプラクティス](custom-functions-errors.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="8196f-139">Learn about [error handling best practices](custom-functions-errors.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="cf682-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="cf682-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8196f-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="8196f-140">See also</span></span>
 
-* [<span data-ttu-id="cf682-141">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="cf682-141">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="cf682-142">カスタム関数のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cf682-142">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="cf682-143">チュートリアル: Excel でカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="cf682-143">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
-* [<span data-ttu-id="cf682-144">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="cf682-144">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="8196f-141">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="8196f-141">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="8196f-142">チュートリアル: Excel でカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="8196f-142">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="8196f-143">Excel カスタム関数のランタイム</span><span class="sxs-lookup"><span data-stu-id="8196f-143">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
