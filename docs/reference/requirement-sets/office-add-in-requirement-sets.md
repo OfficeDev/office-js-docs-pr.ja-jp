@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: e08659908b4634b0d6fef58548fb1557e149759f
-ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
+ms.openlocfilehash: bd03113b7a91a4cc713cd00336a9582d2e47db5f
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "35630523"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771899"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -19,7 +19,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
 
-- [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
+- [Excel JavaScript API 要件セット](./excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API 要件セット](onenote-api-requirement-sets.md) (OneNoteApi)
 - [Outlook API 要件セットについて](outlook-api-requirement-sets.md) (Mailbox)
