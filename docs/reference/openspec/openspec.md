@@ -1,14 +1,14 @@
 ---
 title: Office JavaScript API の API オープン仕様
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: c7681ad307f290819a3f65185855dfb9c234ce38
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: ee4b8ce52eefe0419dbbc04124b865d5c20fea4c
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771780"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804998"
 ---
 # <a name="api-open-specifications"></a>API オープン仕様
 
@@ -28,4 +28,4 @@ Office JavaScript API オープン仕様は、Excel、Outlook、およびその�
 - [Outlook preview API リファレンス](/javascript/api/outlook)
 - [Outlook JavaScript API のプレビュー要件セット](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Word preview API リファレンス](/javascript/api/word)
-- [Word JavaScript API のプレビュー要件セット](../requirement-sets/word-api-requirement-sets.md#word-javascript-preview-apis)
+- [Word JavaScript API のプレビュー要件セット](../requirement-sets/word-preview-apis.md)

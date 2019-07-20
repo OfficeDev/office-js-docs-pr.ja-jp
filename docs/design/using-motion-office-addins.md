@@ -1,20 +1,20 @@
 ---
 title: Office アドインでモーションを使用する
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d347cbf9d5879d121b226974f70044cf8a4febb7
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449059"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804591"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 
-Office アドインを設計する際、モーションを使用してユーザー エクスペリエンスを向上させられます。 UI 要素、コントロール、コンポーネントには多くの場合、切り替え、モーション、アニメーションを必要とする対話型の動作が関係します。 UI 要素全体においてモーションの共通の特性は、デザイン言語のアニメーション要素を定義することです。 
+Office アドインを設計する際、モーションを使用してユーザー エクスペリエンスを向上させられます。 UI 要素、コントロール、コンポーネントには多くの場合、切り替え、モーション、アニメーションを必要とする対話型の動作が関係します。 UI 要素全体においてモーションの共通の特性は、デザイン言語のアニメーション要素を定義することです。
 
-Office は生産性に重点を置いているため、Office のアニメーション言語は、お客様による業務の遂行を支援するという目的をサポートします。 このアニメーション言語は、優れた応答性、信頼できるビジュアル、きめ細やかな魅力をバランスよく実現しています。 Office に埋め込まれるアドインは、この既存のアニメーション言語を利用します。 したがって、モーションを使用する場合、次のガイドラインを検討することが重要です。 
+Office は生産性に重点を置いているため、Office のアニメーション言語は、お客様による業務の遂行を支援するという目的をサポートします。 このアニメーション言語は、優れた応答性、信頼できるビジュアル、きめ細やかな魅力をバランスよく実現しています。 Office に埋め込まれるアドインは、この既存のアニメーション言語を利用します。 したがって、モーションを使用する場合、次のガイドラインを検討することが重要です。
 
 
 ## <a name="create-motion-with-a-purpose"></a>用途に合わせてモーションを作成する
@@ -34,7 +34,7 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 ## <a name="use-expected-motions"></a>予想される動作を使用する
 
-[Office UI Fabric](https://developer.microsoft.com/fabric) を使用して、Office プラットフォームと視覚的に関連付けることをお勧めします。また、Fabric モーション言語に合わせてモーションを作成するため、[Fabric アニメーション](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 
+[Office UI Fabric](https://developer.microsoft.com/fabric) を使用して、Office プラットフォームと視覚的に関連付けることをお勧めします。また、Fabric モーション言語に合わせてモーションを作成するため、[Fabric アニメーション](https://developer.microsoft.com/fabric#/styles/web/motion)を使用することをお勧めします。
 
 これを、Office とシームレスに適合するように使用します。こうすることにより、直感的なエクスペリエンスを実現できます。アニメーション CSS クラスには、Office のメンタル モデルを明確にするのに役立つ、方向性、開始/終了、期間に関する詳細な設定が用意されており、アドインの操作方法も学べるようになっています。
 
@@ -56,12 +56,12 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 |するべきこと|してはいけないこと|
 |:-----|:-----|
-| [推奨モーション期間](https://developer.microsoft.com/fabric#/styles/animations)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
+| [推奨モーション期間](https://developer.microsoft.com/fabric#/styles/web/motion)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
 | [推奨イージング曲線](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
 
 ![ゆっくりフェードインしてタイルが読み込まれる gif と、バウンスを使用してタイルが読み込まれる gif](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>関連項目
 
-* [Fabric アニメーションのガイドライン](https://developer.microsoft.com/fabric#/styles/animations)
+* [Fabric アニメーションのガイドライン](https://developer.microsoft.com/fabric#/styles/web/motion)
 * [ユニバーサル Windows プラットフォーム アプリ用のモーション](/windows/uwp/design/motion)
