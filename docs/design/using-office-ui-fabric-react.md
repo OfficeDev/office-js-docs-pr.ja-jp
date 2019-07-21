@@ -1,43 +1,95 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
-description: ''
-ms.date: 02/28/2019
+description: Office アドインで Office UI Fabric React を使用する方法について説明します。
+ms.date: 07/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7166e9a13c89a1ef2a52659bf31561574f544420
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449030"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771347"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
 Office UI Fabric は、Office と Office 365 のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。React を使ってアドインをビルドする場合は、ユーザー エクスペリエンスを作成するために Fabric React の使用を検討してください。Fabric は、アドインで使用できるボタンやチェックボックスなど、複数の React ベースの UX コンポーネントを提供しています。
 
-アドインで Fabric React コンポーネントの使用を開始するには、次の手順を実行します。
+この記事では、React で構築され Fabric React コンポーネントを使用するアドインを作成する方法について説明します。 
 
 > [!NOTE]
-> この記事の手順を実行すると、アドインで Fabric Core が使用可能になります。
+> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) は Fabric React に含まれています。つまり、この記事の手順を完了すると、アドインで Fabric Core にアクセスできるようになります。
 
-## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>手順 1 - Office 用の Yeoman ジェネレーターでプロジェクトを作成
+## <a name="create-an-add-in-project"></a>アドイン プロジェクトの作成
 
-Fabric React を使用するアドインを作成するには、Office 用の Yeoman ジェネレーターの使用をお勧めします。 Office 用の Yeoman ジェネレーターは、Office アドインを開発するために必要なプロジェクトのスキャフォールディングとビルドの管理を提供します。
+Office アドイン用の Yeoman ジェネレーターを使用して、React を使用するアドイン プロジェクトを作成します。
 
-プロジェクトを作成するには、**Windows PowerShell** (コマンド プロンプトではありません) を使用して、次の手順を実行します。
+### <a name="install-the-prerequisites"></a>前提条件をインストールする
 
-1. 必須コンポーネントをインストールします。
-2. `yo office` を実行して、アドイン用のプロジェクト ファイルを作成します。
-3. Office クライアント アプリケーションを選択するように促されたら、**Word** を選択します。
-4. プロジェクト ファイルと同じディレクトリにいることを確認し、`npm start` を実行します。スピナーを表示するブラウザー ウィンドウが自動的に開きます。
-5. [マニフェストをサイドロード](../testing/test-debug-office-add-ins.md)し、アドインのすべての UI を表示します。
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## <a name="step-2---add-a-fabric-react-component"></a>手順 2 - Fabric React コンポーネントを追加
+### <a name="create-the-project"></a>プロジェクトを作成する
 
-次に、アドインに Fabric React コンポーネントを追加します。`ButtonPrimaryExample` と呼ばれる、新しい React コンポーネントを作成します。コンポーネントは Fabric React からの Label と PrimaryButton で構成されています。`ButtonPrimaryExample` を作成するには、次のようにします。
+Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-1. Yeoman ジェネレーターで作成したプロジェクト フォルダーを開き、**src\components** に移動します。
-2. **button.tsx** を作成します。
-3. **button.tsx** で、次のコードを入力して `ButtonPrimaryExample` コンポーネントを作成します。
+```command&nbsp;line
+yo office
+```
+
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using React framework`
+- **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
+
+![Yeoman ジェネレーター](../images/yo-office-word-react.png)
+
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+### <a name="try-it-out"></a>試してみる
+
+1. プロジェクトのルート フォルダーに移動します。
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
+
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた Word が開きます。
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
+
+3. Word で [**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、Fabric React の UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンを再定義します。
+
+    ![[作業ウィンドウの表示] リボンのボタンが強調表示され、[実行] ボタンおよびその前のテキストが作業ウィンドウで強調表示された Word アプリケーションのスクリーンショット](../images/word-task-pane-yo-default.png)
+
+
+## <a name="create-a-react-component-that-uses-fabric-react"></a>Fabric React を使用する React コンポーネントの作成
+
+この時点で、React を使用して構築された非常に基本的な作業ウィンドウ アドインが作成されました。 次の手順に従って、アドイン プロジェクト内で新しい React コンポーネント (`ButtonPrimaryExample`) を作成します。 このコンポーネントは、 Fabric React の `Label` と `PrimaryButton` コンポーネントを使用します。
+
+1. Yeoman ジェネレーターで作成したプロジェクト フォルダーを開き、**src\taskpane\components** に移動します。
+2. そのフォルダーで、**button.tsx** という名前の新しいファイルを作成します。
+3. **button.tsx** で、次のコードを追加して `ButtonPrimaryExample` コンポーネントを定義します。
 
 ```typescript
 import * as React from 'react';
@@ -45,18 +97,18 @@ import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
-  public constructor() {
-    super();
+  public constructor(props) {
+    super(props);
   }
 
-   insertText = async () => {
-        // In the click event, write text to the document.
-        await Word.run(async (context) => {
-            let body = context.document.body;
-            body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
-            await context.sync();
-        });
-    }
+  insertText = async () => {
+    // In the click event, write text to the document.
+    await Word.run(async (context) => {
+      let body = context.document.body;
+      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      await context.sync();
+    });
+  }
 
   public render() {
     let { disabled } = this.props;
@@ -77,44 +129,57 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 このコードは、次の処理を実行します。
 
 - `import * as React from 'react';` を使用して、React ライブラリを参照します。
-- `ButtonPrimaryExample` の作成に使用する Fabric コンポーネント (PrimaryButton、IButtonProps、Label) を参照します。
-- `export class ButtonPrimaryExample extends React.Component` を使用して、新しいパブリック `ButtonPrimaryExample` コンポーネントを宣言して作成します。
-- `onClick` イベントを処理する `insertText` 関数を宣言します。
-- `render` 関数で React コンポーネントの UI を定義します。レンダリングで、コンポーネントの構造を定義します。`render` で、`this.insertText` を使って `onClick` イベントの関連付けを行います。
+- `ButtonPrimaryExample` の作成に使用される Fabric コンポーネント (`PrimaryButton`、`IButtonProps`、`Label`) を参照します。
+- `export class ButtonPrimaryExample extends React.Component` を使用して、新しい `ButtonPrimaryExample` コンポーネントを宣言します。
+- ボタンの `onClick` イベントを処理する `insertText` 関数を宣言します。
+- `render` 関数で React コンポーネントの UI を定義します。 HTML マークアップは、Fabric React `Label` と `PrimaryButton` コンポーネントを使用し、`onClick` イベントが発生したときに `insertText` 関数が実行されるように指定します。
 
-## <a name="step-3---add-the-react-component-to-your-add-in"></a>手順 3 - React コンポーネントをアドインに追加
+## <a name="add-the-react-component-to-your-add-in"></a>React コンポーネントをアドインに追加
 
-**src\components\app.tsx** を開いて次の手順を実行することにより、アドインに `ButtonPrimaryExample` を追加します。
+**src\components\App.tsx** を開いて次の手順を完了することにより、アドインに `ButtonPrimaryExample` コンポーネントを追加します。
 
-- 次のインポート ステートメントを追加して、手順 2 で作成した **button.tsx** (ファイル拡張子は必要ありません) から `ButtonPrimaryExample` を参照します。
+1. **Button.tsx** の参照 `ButtonPrimaryExample` に次のインポート ステートメントを追加します。
 
-  ```typescript
-  import {ButtonPrimaryExample} from './button';
-  ```
+    ```typescript
+    import {ButtonPrimaryExample} from './Button';
+    ```
 
-- 既定の `render()` 関数を、`<ButtonPrimaryExample />` を使った以下のコードに置き換えます。
+2. 次の 2 つのインポート ステートメントを削除します。
 
-  ```typescript
-  render() {
+    ```typescript
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+    ...
+    import Progress from './Progress';
+    ```
+
+3. 既定の `render()` 関数を、`ButtonPrimaryExample` を使った以下のコードに置き換えます。
+
+    ```typescript
+    render() {
       return (
-          <div className="ms-welcome">
-          <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
-          <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
-              <ButtonPrimaryExample />
-          </HeroList>
-          </div>
+        <div className="ms-welcome">
+        <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
+        <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
+          <ButtonPrimaryExample />
+        </HeroList>
+        </div>
       );
-  }
-  ```
+    }
+    ```
 
-変更を保存します。アドインを含む開いているすべてのブラウザー インスタンスは、自動的に更新され、`ButtonPrimaryExample` React コンポーネントが表示されます。既定のテキストとボタンが、`ButtonPrimaryExample` で定義されたテキストとプライマリ ボタンに置き換えられることに注意してください。
+  4. **App.tsx** に加えた変更を保存します。
 
+## <a name="see-the-result"></a>結果を表示する
 
+Word で、**App.tsx** に変更を保存すると、アドイン作業ウィンドウが自動的に更新されます。 作業ウィンドウ下部の既定のテキストとボタンに、`ButtonPrimaryExample` コンポーネントによって定義された UI が表示されるようになりました。 [**テキストの挿入**] ボタンを選択してドキュメントにテキストを挿入します。
+
+![[テキストの挿入] ボタンとその前のテキストが強調表示された Word アプリケーションのスクリーンショット](../images/word-task-pane-with-react-component.png)
+
+おめでとうございます! これで React および Office UI Fabric React を使用して作業ウィンドウ アドインを作成できました。 
 
 ## <a name="see-also"></a>関連項目
 
+- [Office アドインでの Office UI Fabric](office-ui-fabric.md)
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
-- [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
+- [Office アドインの UX 設計パターン](ux-design-pattern-templates.md)
 - [Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [Office アドイン Fabric UI サンプル (Fabric 1.0 を使用)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)

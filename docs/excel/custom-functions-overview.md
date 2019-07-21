@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でカスタム関数を作成する
 localization_priority: Priority
-ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: c5b31b494d7b22112e36e245603f58748559bed5
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127892"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771405"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -31,7 +31,6 @@ ms.locfileid: "35127892"
 function sphereVolume(radius) {
   return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
-CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
@@ -49,11 +48,9 @@ CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 
 ### <a name="script-file"></a>スクリプト ファイル
 
-スクリプト ファイル (**./src/customfunctions.js** または **/src/customfunctions.ts**) は、カスタム関数を定義し、どのコードがその関数を定義するかをコメントし、カスタム関数の名前を JSON メタデータ ファイルのオブジェクトに関連付けるコードを格納しています。
+スクリプト ファイル (**./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
 
 `add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 さらに、お気付きのように `first` と `second` の 2 つのパラメーターが宣言されており、その後にそれらの `description` プロパティが記述されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)」を参照してください。
-
-次のコードでは、`CustomFunctions.associate("ADD", add)` も呼び出して、`add()` 関数を JSON メタデータ ファイル `ADD` の ID と関連付けます。 関数の関連付けに関する詳細については、「[カスタム関数のベスト プラクティス](custom-functions-best-practices.md#associating-function-names-with-json-metadata)」を参照してください。
 
 ```js
 /**
@@ -67,9 +64,6 @@ CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 function add(first, second){
   return first + second;
 }
-
-// associate `id` values in the JSON metadata file to the JavaScript function names
- CustomFunctions.associate("ADD", add);
 ```
 
 カスタム関数のランタイムの読み込みを制御する **functions.html** ファイルは、カスタム関数の現在の CDN にリンクしていなければならないことに注意してください。 最新バージョンの Yo Office ジェネレーターを使用して作成されたプロジェクトは、正しい CDN を参照します。 2019 年 3 月以前の古いカスタム関数のプロジェクトを改良する場合は、以下のコードを **functions.html** ページにコピーする必要があります。
@@ -80,7 +74,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml**) を定義するアドインの XML マニフェスト ファイルは、アドイン内のすべてのカスタム関数の名前空間と、 JavaScript、JSON、および HTML の場所を指定します。 
+カスタム関数 (Yo Office ジェネレーターが作成するプロジェクトでは **./manifest.xml**) を定義するアドインの XML マニフェスト ファイルは、アドイン内のすべてのカスタム関数の名前空間と、 JavaScript、JSON、および HTML の場所を指定します。
 
 次の基本的な XML マークアップは、カスタム関数を有効にするアドインのマニフェストに含める必要がある要素`<ExtensionPoint>` と `<Resources>` の例を示しています。 Yo Office ジェネレーターを使用する場合、生成されたカスタム関数ファイルには、さらに複雑なマニフェスト ファイルが格納されます。こちらの[Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)で比較できます。
 
@@ -151,14 +145,13 @@ Excel on the web と Office 365 サブスクリプションに接続している
 
 ## <a name="next-steps"></a>次の手順
 
-カスタム関数を試してみましょう。 もしまだであれば、簡単な[カスタム関数クイックスタート](../quickstarts/excel-custom-functions-quickstart.md)または、詳細な[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)をご覧ください。 
+カスタム関数を試してみましょう。 もしまだであれば、簡単な[カスタム関数クイックスタート](../quickstarts/excel-custom-functions-quickstart.md)または、詳細な[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)をご覧ください。
 
 独自のカスタム関数を試すもう 1 つの簡単な方法は[スクリプト ラボ](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)を使用し、アドインで Excel のカスタム関数を試してみることができます。 独自のカスタム関数を作成したり、提供されたサンプルを再生してみることができます。
 
 カスタム関数の機能の詳細について読む準備はできましたか? [カスタム関数のアーキテクチャ](custom-functions-architecture.md)の概要をご覧ください。
 
 ## <a name="see-also"></a>関連項目 
-* [カスタム関数の要件](custom-functions-requirements.md)
+* [カスタム関数の要件](custom-functions-requirement-sets.md)
 * [名前付けのガイドライン](custom-functions-naming.md)
-* [ベスト プラクティス](custom-functions-best-practices.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)

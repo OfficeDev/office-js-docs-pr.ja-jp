@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 07/15/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
 localization_priority: Priority
-ms.openlocfilehash: f42e9e6ac3e2d868f90ab4f5129684308750b8e2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128284"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771384"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -16,7 +16,7 @@ ms.locfileid: "35128284"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[予約を未解決のままにしたり](#ensure-promises-return)、[機能の関連付け](#my-functions-wont-load-associate-functions)を忘れてしまうといったよくある間違いを確認します。
+問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[promise を未解決のままにしておく](#ensure-promises-return)など、よくある間違いがないか確認します。
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
@@ -29,19 +29,35 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 通常、これらのエラーは、あなたがExcelで既によく見たことがあるかもしれないエラーと対応関係があります。 カスタム関数に固有の例外はわずかにあります。以下に記載します。
 
 - `#NAME`エラーは通常、関数の登録に問題があることを意味します。
-- `#VALUE`エラーは通常、関数のスクリプトファイル内のエラーを示します。
 - `#N/A`エラーは、登録されている間にその機能を実行できなかったということを示す可能性もあります。 この多くは、`CustomFunctions.associate`コマンドが欠落していることが原因です。
+- `#VALUE`エラーは通常、関数のスクリプトファイル内のエラーを示します。
 - `#REF!`エラーは、関数名がアドイン内に既に存在するの関数名と同じであることを示している可能性があります。
 
 ## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
-カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、記事[マニフェストの問題を検証、問題解決する](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)内「Officeキャッシュをクリアする」の部分を参照してください。
+カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、記事「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md#clear-the-office-cache)」内の「Office のキャッシュをクリアする」セクションを参照してください。
 
 ## <a name="common-issues"></a>一般的な問題
 
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
+
+"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
+
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)の*オプション 2* を参照してください。
+
+### <a name="ensure-promises-return"></a>promise の戻り値を確認する
+
+Excelがカスタム関数の完了を待っている間、＃BUSY！と表示されます セル内に。 カスタム関数のコードで promise が返されているのに、promise で結果が返されない場合、Excel は `#BUSY!` を表示し続けます。 すべての promise でセルに結果が正しく返されていることを、関数で確認します。
+
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
+
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 しかし場合によっては、開発サーバーが実際に実行を停止するのに数分かかることがあります。
+
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
-カスタム関数のスクリプト ファイルで、各カスタム関数を、[JSON メタデータ ファイル](custom-functions-json.md)で指定されている ID と関連付ける必要があります。 これを行うには、`CustomFunctions.associate()` メソッドを使用します。 通常、このメソッドの呼び出しは、各関数の後またはスクリプト ファイルの最後に行います。 カスタム関数を関連付けないと、カスタム関数は機能しません。
+JSON が登録されておらず、独自の JSON メタデータを作成した場合、`#VALUE!` エラーが表示されるか、アドインを読み込めないという通知が表示されます。 これは通常、各カスタム関数を [JSON メタデータ ファイル](custom-functions-json.md)で指定されている `id` プロパティと関連付ける必要があります。 これを行うには、`CustomFunctions.associate()` メソッドを使用します。 通常、このメソッドの呼び出しは、各関数の後またはスクリプト ファイルの最後に行います。 カスタム関数を関連付けないと、カスタム関数は機能しません。
 
 次の例では、add 関数の後で、関数の名前 `add` と対応する JSON ID `ADD` を関連付けています。
 
@@ -60,23 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)」をご覧ください。
-
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
-
-"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
-
-### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
-
-localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/ja-JP/help/4490419/local-loopback-exemption-does-not-work)の*オプション 2* を参照してください。
-
-### <a name="ensure-promises-return"></a>promise の戻り値を確認する
-
-Excelがカスタム関数の完了を待っている間、＃BUSY！と表示されます セル内に。 カスタム関数のコードで promise が返されているのに、promise で結果が返されない場合、Excel は #BUSY! を表示し続けます。 すべての promise でセルに結果が正しく返されていることを、関数で確認します。
-
-### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
-
-`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 しかし場合によっては、開発サーバーが実際に実行を停止するのに数分かかることがあります。
+このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata)」をご覧ください。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 
@@ -97,6 +97,5 @@ Windows または Mac で Excel を使用している場合は、Excel から Of
 
 * [カスタム関数メタデータ自動生成](custom-functions-json-autogeneration.md)
 * [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
-* [カスタム関数をXLLユーザー定義関数と互換性のあるものにします](make-custom-functions-compatible-with-xll-udf.md)。
+* [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

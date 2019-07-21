@@ -1,18 +1,18 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/15/2019
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Priority
-ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: afcfb6ff869acf1d508ebda7fc242dd9724bf165
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454658"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771319"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
-Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、JSDoc タグが使用されます。 JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。
+Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。 JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -66,11 +66,9 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 構文: @customfunction _id_ _名_
 
-このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。 
+このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。
 
 このタグは、カスタム関数のメタデータを作成するために必要です。
-
-次への呼び出しもあります: `CustomFunctions.associate("id", functionName);`
 
 次の例は、カスタム関数を宣言する最も簡単な方法を示しています。
 
@@ -222,7 +220,7 @@ function add(first: number, second: number): number {
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
-最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。 `@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](./custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。
+最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。 `@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。
 
 ---
 ### <a name="returns"></a>@returns
@@ -297,7 +295,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>マトリックス型
 
-2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、`number[][]`の型は数字のマトリックスを示します。 `string[][]` は、文字列のマトリックスを示します。 
+2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、`number[][]`の型は数字のマトリックスを示します。 `string[][]` は、文字列のマトリックスを示します。
 
 ### <a name="error-type"></a>エラーの種類
 
@@ -319,5 +317,4 @@ function roll6sided(): number {
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のメタデータ](custom-functions-json.md)
-* [カスタム関数のベスト プラクティス](custom-functions-best-practices.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
