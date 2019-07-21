@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
-description: ''
-ms.date: 06/20/2019
+description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
+ms.date: 07/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9f3c345257bb222e2fdf1aab0b558442d830e89a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128574"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771820"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -21,7 +21,76 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>前提条件
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
+
+Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+
+```command&nbsp;line
+yo office
+```
+
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
+- **Choose a script type: (スクリプトの種類を選択)** `Javascript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
+
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
+
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+### <a name="explore-the-project"></a>プロジェクトを確認する
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>試してみる
+
+1. プロジェクトのルート フォルダーに移動します。
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
+
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた Word が開きます。
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
+
+3. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
+
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2b.png)
+
+4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" とテキストをドキュメントに追加します。
+
+    ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-1c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -81,7 +150,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
             $(document).ready(function () {
                 // The document is ready
                 // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
+                if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
@@ -232,75 +301,6 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 3. 作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1b.png)
-
-# <a name="any-editortabvisual-studio-code"></a>[任意のエディター](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>前提条件
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
-
-1. Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
-    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
-
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
-
-    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
-
-2. プロジェクトのルート フォルダーに移動します。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="explore-the-project"></a>プロジェクトを確認する
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### <a name="try-it-out"></a>試してみる
-
-1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
-
-    > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
-
-    > [!TIP]
-    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (既に実行されていない場合)、アドインが読み込まれたときに Word が開きます。
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
-
-2. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
-
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2b.png)
-
-3. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" とテキストをドキュメントに追加します。
-
-    ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-1c.png)
 
 ---
 

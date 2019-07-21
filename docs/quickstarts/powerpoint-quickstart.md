@@ -1,15 +1,15 @@
 ---
 title: 最初の PowerPoint 作業ウィンドウ アドインをビルドする
-description: ''
-ms.date: 06/20/2019
+description: Office JS API を使用して単純な PowerPoint 作業ウィンドウ アドインを作成する方法について説明します。
+ms.date: 07/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5ede96910c9e9b4462fa5eb566ba25bb4d16ba02
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5b946d1c4ae08a5d0fcd2213f249bd2c7e8b9204
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128546"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771850"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -19,7 +19,76 @@ ms.locfileid: "35128546"
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>前提条件
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
+
+Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+
+```command&nbsp;line
+yo office
+```
+
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
+- **Choose a script type: (スクリプトの種類を選択)** `Javascript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
+
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint.png)
+
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+### <a name="explore-the-project"></a>プロジェクトを確認する
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>試してみる
+
+1. プロジェクトのルート フォルダーに移動します。
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
+
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた PowerPoint が開きます。
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - ブラウザー上の PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        アドインを使用するには、PowerPoint on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
+
+3. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
+
+    ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1c.png)
+
+4. 作業ウィンドウの下部にある **[実行]** リンクを選択して、現在のスライドに "Hello World" とテキストを挿入します。
+
+    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -177,75 +246,6 @@ ms.locfileid: "35128546"
 4. 作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
-
-# <a name="any-editortabvisual-studio-code"></a>[任意のエディター](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>前提条件
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
-
-1. Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
-    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
-
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint.png)
-    
-    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
-    
-2. プロジェクトのルート フォルダーに移動します。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="explore-the-project"></a>プロジェクトを確認する
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### <a name="try-it-out"></a>試してみる
-
-1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
-
-    > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
-
-    > [!TIP]
-    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (既に実行されていない場合)、アドインが読み込まれたときに PowerPoint が開きます。
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - ブラウザー上の PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        アドインを使用するには、PowerPoint on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
-
-2. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
-
-    ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1c.png)
-
-3. 作業ウィンドウの下部にある **[実行]** リンクを選択して、現在のスライドに "Hello World" とテキストを挿入します。
-
-    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3c.png)
 
 ---
 

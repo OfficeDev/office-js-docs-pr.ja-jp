@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 65bcbbbece1e56b5c49abb0d8e31221c0b513340
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128539"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771773"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -21,27 +21,21 @@ ms.locfileid: "35128539"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
-    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
+- **Choose a script type: (スクリプトの種類を選択)** `Javascript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
 
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote.png)
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote.png)
+
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
     
-    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
-    
-2. プロジェクトのルート フォルダーに移動します。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
 Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。 
@@ -77,27 +71,35 @@ try {
 }
 ```
 
-## <a name="try-it-out"></a>お試しください
+## <a name="try-it-out"></a>試してみる
 
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+1. プロジェクトのルート フォルダーに移動します。
 
-> [!TIP]
-> Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
->
-> ```command&nbsp;line
-> npm run dev-server
-> ```
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+2. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
+
+    > [!NOTE]
+    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+    > [!TIP]
+    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-2. [OneNote on the web](https://www.onenote.com/notebooks) でノートブックを開き、新しいページを作成します。
+3. [OneNote on the web](https://www.onenote.com/notebooks) でノートブックを開き、新しいページを作成します。
 
-3. **[挿入] > [Office アドイン]** の順に選択し、[Office アドイン] ダイアログを開きます。
+4. **[挿入] > [Office アドイン]** の順に選択し、[Office アドイン] ダイアログを開きます。
 
     - コンシューマー アカウントでサインインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -107,11 +109,11 @@ try {
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **manifest.xml** を参照し、**[アップロード]** を選択します。 
+5. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **manifest.xml** を参照し、**[アップロード]** を選択します。 
 
-4. **[ホーム]** タブから、リボンの **[作業ウィンドウの表示]** ボタンをクリックします。 アドインの作業ウィンドウは、OneNote ページの横にある iFrame で開きます。
+6. **[ホーム]** タブから、リボンの **[作業ウィンドウの表示]** ボタンをクリックします。 アドインの作業ウィンドウは、OneNote ページの横にある iFrame で開きます。
 
-5. 作業ウィンドウの下部にある [**実行**] リンクをクリックしてページ タイトルを設定し、ページの本文にアウトラインを追加します。
+7. 作業ウィンドウの下部にある [**実行**] リンクをクリックしてページ タイトルを設定し、ページの本文にアウトラインを追加します。
 
     ![このチュートリアルでビルドした OneNote アドイン](../images/onenote-first-add-in-4.png)
 

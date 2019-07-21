@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 66c85ba9914b783295e9ed2143dc9ce107f64c4c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6c7baf237c4ca0be0e11428dcb2661b7b86ed39e
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619911"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771843"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -21,26 +21,21 @@ ms.locfileid: "33619911"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using Angular framework`
-    - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using Angular framework`
+- **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ![Yeoman ジェネレーター](../images/yo-office-excel-angular-2.png)
+![Yeoman ジェネレーター](../images/yo-office-excel-angular-2.png)
 
-    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
-2. プロジェクトのルート フォルダーに移動します。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
 Yeoman ジェネレーターで作成したアドイン プロジェクトには、とても基本的な作業ウィンドウ アドインのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
@@ -52,15 +47,21 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 ## <a name="try-it-out"></a>試してみる
 
-1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. プロジェクトのルート フォルダーに移動します。
 
-2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+
+3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+4. ワークシート内で任意のセルの範囲を選択します。
 
-4. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
+5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
     ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
 

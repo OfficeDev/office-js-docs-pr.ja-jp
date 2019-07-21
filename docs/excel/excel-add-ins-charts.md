@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: adaae105050a01968525e38deb6db570b962ddde
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1cd1644a98ac11b68b6faba7d005d7deecd62d79
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448529"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771661"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589210"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771738"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -23,26 +23,20 @@ ms.locfileid: "34589210"
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
-1. Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
+Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
-    - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
+- **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
+- **Choose a script type: (スクリプトの種類を選択)** `Javascript`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
 
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project.png)
-    
-    ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
-    
-2. プロジェクトのルート フォルダーに移動します。
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
@@ -97,22 +91,30 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>試してみる
 
-> [!NOTE]
-> 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+1. プロジェクトのルート フォルダーに移動します。
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. ローカル Web サーバーを開始します。
+
+    > [!NOTE]
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+
+    プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
     ```command&nbsp;line
     npm start
     ```
 
-2. Project で、簡素なプロジェクト計画を作成します。
+3. Project で、簡素なプロジェクト計画を作成します。
 
-3. [Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。
+4. [Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。
 
-4. プロジェクト内の単一のタスクを選択します。
+5. プロジェクト内の単一のタスクを選択します。
 
-5. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
+6. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
 
     ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット](../images/project-quickstart-addin-1.png)
 
