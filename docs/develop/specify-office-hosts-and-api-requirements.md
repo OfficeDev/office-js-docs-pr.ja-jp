@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: ''
-ms.date: 07/01/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454623"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804619"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -105,9 +105,9 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 次のものをサポートするすべての Office ホスト アプリケーションで読み込まれるアドインのコード例を以下に示します。
 
--  **TableBindings** 要件セット。最小バージョンは 1.1。
+-  **TableBindings** 要件セット。最小バージョンは "1.1"。
 
--  **OOXML** 要件セット。最小バージョンは 1.1。
+-  **OOXML** 要件セット。最小バージョンは "1.1"。
 
 -  **Document.getSelectedDataAsync** メソッド。
 
@@ -166,7 +166,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber
 次のコードの例は、さまざまな要件セットや API メンバーをサポートするさまざまな Office ホストにおいて、アドインで各種の機能を提供する方法を示しています。
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
