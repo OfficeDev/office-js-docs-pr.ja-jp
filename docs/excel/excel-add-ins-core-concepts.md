@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した基本的なプログラミングの�
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617038"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851582"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 前の例では、`format/font` が **myRange.load()** の呼び出しで指定されていないため、`format.font.color` プロパティは読み取れませんでした。
 
-「[Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)」の説明にあるとおり、パフォーマンスを最適化するため、オブジェクトに対して **load()** メソッドを使用するときに読み込むプロパティとリレーションシップを明示的に指定する必要があります。 **load()** メソッドの詳細については、「[Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)」を参照してください。
+「[Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)」の説明にあるとおり、パフォーマンスを最適化するため、オブジェクトに対して **load()** メソッドを使用するときに読み込むプロパティを明示的に指定する必要があります。 **load()** メソッドの詳細については、「[Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)」を参照してください。
 
 ## <a name="null-or-blank-property-values"></a>null または空白のプロパティ値
 

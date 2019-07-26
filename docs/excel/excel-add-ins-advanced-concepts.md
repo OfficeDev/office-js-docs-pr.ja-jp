@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した高度なプログラミングの概�
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 0336362906f2f3c96c1ac5ff2e06d6409637e9b6
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 0270ca30e0add99dadc9fcfaf4a71cdb3fb68f46
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804612"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851589"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 
@@ -18,15 +18,15 @@ ms.locfileid: "35804612"
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
 Excel 2016 以降を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。 次に例を示します。
 
-- [Context](/javascript/api/office/office.context): **Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。 
+- [Context](/javascript/api/office/office.context): **Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。
 
-- [Document](/javascript/api/office/office.document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。 
+- [Document](/javascript/api/office/office.document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。
 
 ## <a name="requirement-sets"></a>要件セット
 
@@ -47,7 +47,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](/office/dev/add-ins/reference/manifest/requirements) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。 
+アドインのマニフェストで [Requirements 要素](/office/dev/add-ins/reference/manifest/requirements) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office ホストまたはプラットフォームが、マニフェストの **Requirements** 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。
 
 次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office ホスト アプリケーションのすべて読み込まれる必要があることを指定する、アドインのマニフェストの **Requirements** 要素を示しています。
 
@@ -68,7 +68,7 @@ else {
 
 ## <a name="loading-the-properties-of-an-object"></a>オブジェクトのプロパティを読み込む
 
-Excel JavaScript オブジェクトで `load()` メソッドを呼び出すと、API は `sync()` メソッドの実行時にオブジェクトを JavaScript メモリに読み込むように指示されます。 `load()` メソッドには、読み込むプロパティのコンマで区切られた名前を含む文字列や、読み込むプロパティを指定するオブジェクト、改ページのオプションなどを指定できます。 
+Excel JavaScript オブジェクトで `load()` メソッドを呼び出すと、API は `sync()` メソッドの実行時にオブジェクトを JavaScript メモリに読み込むように指示されます。 `load()` メソッドには、読み込むプロパティのコンマで区切られた名前を含む文字列や、読み込むプロパティを指定するオブジェクト、改ページのオプションなどを指定できます。
 
 > [!NOTE]
 > パラメーターを指定せずにオブジェクト (またはコレクション) の `load()` メソッドを呼び出すと、オブジェクトのすべてのスカラー プロパティ (またはコレクション内のすべてのオブジェクトのすべてのスカラー プロパティ) が読み込まれます。 Excel ホスト アプリケーションとアドイン間のデータ転送量を減らすには、読み込むプロパティを明示的に指定しないで `load()` メソッドを呼び出さないようにします。
@@ -89,7 +89,7 @@ object.load(param);
 
 |**パラメーター**|**型**|**説明**|
 |:------------|:-------|:----------|
-|`param`|オブジェクト|省略可能。 パラメーターとリレーションシップ名を、コンマで区切られた文字列または 1 つの配列として指定します。 オブジェクトを渡して、選択プロパティとナビゲーション プロパティを設定することもできます (次の例を参照)。|
+|`param`|object|省略可能。プロパティ名を、コンマで区切られた文字列または 1 つの配列として指定します。 オブジェクトを渡して、選択プロパティとナビゲーション プロパティを設定することもできます (次の例を参照)。|
 
 #### <a name="returns"></a>戻り値
 
@@ -123,18 +123,18 @@ Excel.run(function (ctx) {
 
 ### <a name="load-option-properties"></a>オプションのプロパティを読み込む
 
-`load()` メソッドを呼び出すときに、コンマで区切られた文字列または配列を渡す代わりに、次のプロパティを含むオブジェクトを渡すことができます。 
+`load()` メソッドを呼び出すときに、コンマで区切られた文字列または配列を渡す代わりに、次のプロパティを含むオブジェクトを渡すことができます。
 
 |**プロパティ**|**型**|**説明**|
 |:-----------|:-------|:----------|
-|`select`|object|パラメーター/リレーションシップの名前のコンマ区切りリストまたは配列が含まれます。省略可能。|
-|`expand`|object|リレーションシップ名のコンマ区切りリストまたは配列が含まれています。省略可能。|
+|`select`|object|スカラー プロパティ名のコンマ区切りリストまたは配列が含まれています。省略可能。|
+|`expand`|object|ナビゲーション プロパティ名のコンマ区切りリストまたは配列が含まれています。省略可能。|
 |`top`|int| 結果に含めることができるコレクション項目の最大数を指定します。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 |`skip`|int|スキップされて結果に組み込まれないコレクション内の項目の数を指定します。`top` が指定されている場合は、指定された数の項目がスキップされた後で結果セットが開始されます。省略可能。このオプションは、オブジェクト表記オプションを使用する場合にのみ使用できます。|
 
 次のコードサンプルは、`name` プロパティと `address`コレクション内の各ワークシートの使用範囲を選択して、ワークシートコレクションを読み込みます。 また、コレクションの上位 5 つのワークシートのみを読み込むように指定しています。 `top: 10` と `skip: 5` を属性値として指定することで、次の 5 つのワークシートのセットを処理できます。
 
-```js 
+```js
 myWorksheets.load({
     select: 'name, userRange/address',
     expand: 'tables',
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>スカラー プロパティとナビゲーション プロパティ
 
-Excel JavaScript API のリファレンス ドキュメントでは、オブジェクトのメンバーが**プロパティ**と**リレーションシップ**の 2 つのカテゴリにグループ化されています。 オブジェクトのプロパティは、文字列、整数、ブール値などのスカラー メンバーです。一方、オブジェクトのリレーションシップ (ナビゲーション プロパティとも呼ばれる) は、オブジェクトまたはオブジェクトのコレクションのいずれかであるメンバーです。 たとえば、`name` オブジェクトの `position` メンバーと [](/javascript/api/excel/excel.worksheet) メンバーはスカラー プロパティですが、`protection` と `tables` はリレーションシップ (ナビゲーション プロパティ) です。 
+プロパティには、**スカラー**と**ナビゲーション**という 2 つのカテゴリがあります。 スカラー プロパティは、文字列、整数、JSON 構造体などの割り当て可能な型です。 ナビゲーション プロパティは、プロパティを直接割り当てるのではなく、読み取り専用のオブジェクトと、そのフィールドが割り当てられているオブジェクトのコレクションです。 たとえば、[ワークシート](/javascript/api/excel/excel.worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はナビゲーション プロパティです。 [DataValidation] オブジェクトの `prompt` は、サブプロパティ (`dv.prompt.title = "MyPrompt" // will not set the title`) を設定するのではなく、JSON オブジェクト (`dv.prompt = { title: "MyPrompt"}`) を使用して設定する必要があるスカラー プロパティの例です。
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>`object.load()` を使用したスカラー プロパティとナビゲーション プロパティ
 
