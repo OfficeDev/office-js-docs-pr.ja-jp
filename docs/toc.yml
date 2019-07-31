@@ -802,6 +802,9 @@
         - name: 概要
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
+        - name: API 要件セット
+          href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+          displayName: PowerPoint
         - name: API リファレンス
           href: /javascript/api/powerpoint
           displayName: PowerPoint
