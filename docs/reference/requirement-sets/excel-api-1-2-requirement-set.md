@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.2
 description: ExcelApi 1.2 の要件セットの詳細
-ms.date: 07/11/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 887c0430feab71b3ff1c644074d35811e544861c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35772059"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940781"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -17,7 +17,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 
 ## <a name="api-list"></a>API リスト
 
-| クラス | フィールド | 説明 |
+|| クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|バインド内でデータまたは書式設定が変更されるときに発生します。|
 ||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|バインドで選択されているコンテンツが変更されたときに発生します。|
@@ -27,18 +27,13 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|選択されている行の数を取得します。|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|選択範囲の先頭列のインデックス (0 から始まる) を取得します。|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|選択範囲の先頭行のインデックス (0 から始まる) を取得します。|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage (width?: number, height?: number, fittingMode?: "Fit" \| "fittingmode" \| "Fill")](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
-||[getImage (width?: number, height?: number, fittingMode?: Excel-Imageftingmode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
+|[Chart](/javascript/api/excel/excel.chart)|[getImage (width?: number, height?: number, fittingMode?: Excel-Imageftingmode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|現在のグラフを含んでいるワークシート。 読み取り専用です。|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[worksheet](/javascript/api/excel/excel.chartcollectionloadoptions#worksheet)|コレクション内の各アイテムについて: 現在のグラフを含むワークシート。|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[worksheet](/javascript/api/excel/excel.chartloadoptions#worksheet)|現在のグラフを含んでいるワークシート。|
 |[Filter](/javascript/api/excel/excel.filter)|[適用 (条件: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|指定の列に、指定したフィルター条件を適用します。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|指定した数の要素の列に [下位アイテム] フィルターを適用します。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|指定したパーセンテージの要素の列に [下位パーセント] フィルターを適用します。|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|指定した色の列に "セルの色" フィルターを適用します。|
-||[applyCustomFilter (引数 criteria1: string, criteria2?: string, oper?: "And" \| )](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|指定した抽出条件の文字列の列に "アイコン" フィルターを適用します。|
 ||[applyCustomFilter (引数 criteria1: string, criteria2?: string, oper?: Excel. FilterOperator)](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|指定した抽出条件の文字列の列に "アイコン" フィルターを適用します。|
-||[applyDynamicFilter (条件: "Unknown" \| "AboveAverage" \| "AllDatesInPeriodApril" \| "AllDatesInPeriodAugust" \| "AllDatesInPeriodDecember" \| "AllDatesInPeriodFebruray" \| "AllDatesInPeriodJanuary " \| " AllDatesInPeriodJuly " \| " AllDatesInPeriodJune " \| " AllDatesInPeriodMarch " \| " AllDatesInPeriodMay " \| " AllDatesInPeriodNovember " \| " AllDatesInPeriodOctober "\| "AllDatesInPeriodQuarter1" \| "AllDatesInPeriodQuarter2" \| "AllDatesInPeriodQuarter3" \| "AllDatesInPeriodQuarter4" \| "AllDatesInPeriodSeptember" \| "(下平均\| " ")LastMonth " \| \| " lastmonth \| "" lastmonth "" LastYear " \| " nextmonth \| "" nextmonth \| "" nextmonth \| "" nextmonth \| "" 来月\| "" (第1四半期\| "")今週の " \| " ThisYear " \| " 今日 " \| " 明日\| "" YearToDate " \| " 昨日 ")](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|列に "動的" フィルターを適用します。|
 ||[applyDynamicFilter (条件: Excel. DynamicFilterCriteria)](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|列に [動的] フィルターを適用します。|
 ||[applyFontColorFilter(color: string)](/javascript/api/excel/excel.filter#applyfontcolorfilter-color-)|指定した色の列に "フォントの色" フィルターを適用します。|
 ||[applyIconFilter (icon: Excel. Icon)](/javascript/api/excel/excel.filter#applyiconfilter-icon-)|指定したアイコンの列に "アイコン" フィルターを適用します。|
@@ -55,29 +50,12 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|セルをフィルター処理するために使用するアイコン。 「アイコン」フィルター処理で使用します。|
 ||[演算子](/javascript/api/excel/excel.filtercriteria#operator)|「カスタム」フィルター処理を使用するときに、条件 1 と条件 2 を結合するために使用する演算子。|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|"値" フィルター処理の一部として使用する値のセット。|
-|[FilterData](/javascript/api/excel/excel.filterdata)|[criteria](/javascript/api/excel/excel.filterdata#criteria)|指定した列に現在適用されているフィルターです。 読み取り専用です。|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|データのフィルター処理に使用する ISO8601 形式の日付です。|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|データを保持するのに、日付をどの程度詳細に使用するか。 たとえば、date が 2005-04-02 で "month" に設定した場合、フィルター操作では 2005 年 4 月の日付データを含むすべての行が保持されます。|
-|[FilterLoadOptions](/javascript/api/excel/excel.filterloadoptions)|[$all](/javascript/api/excel/excel.filterloadoptions#$all)||
-||[criteria](/javascript/api/excel/excel.filterloadoptions#criteria)|指定した列に現在適用されているフィルターです。 読み取り専用です。|
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|Excel が範囲内のセルの数式を非表示にするかどうかを示します。null 値は、範囲全体に一様な数式非表示設定がないことを表します。|
 ||[locked](/javascript/api/excel/excel.formatprotection#locked)|Excel がオブジェクト内のセルをロックするかどうかを示します。 null 値は、範囲全体に一様なロック設定がないことを表します。|
-||[set (properties: Excel. FormatProtection)](/javascript/api/excel/excel.formatprotection#set-properties-)|既存の読み込まれたオブジェクトに基づいて、オブジェクトに複数のプロパティを設定します。|
-||[set (properties: FormatProtectionUpdateData, options?: Officeextension.error)](/javascript/api/excel/excel.formatprotection#set-properties--options-)|一度に1つのオブジェクトの複数のプロパティを設定します。 適切なプロパティを持つプレーンオブジェクト、または同じ種類の別の API オブジェクトのいずれかを渡すことができます。|
-|[FormatProtectionData](/javascript/api/excel/excel.formatprotectiondata)|[formulaHidden](/javascript/api/excel/excel.formatprotectiondata#formulahidden)|Excel が範囲内のセルの数式を非表示にするかどうかを示します。null 値は、範囲全体に一様な数式非表示設定がないことを表します。|
-||[locked](/javascript/api/excel/excel.formatprotectiondata#locked)|Excel がオブジェクト内のセルをロックするかどうかを示します。 null 値は、範囲全体に一様なロック設定がないことを表します。|
-|[FormatProtectionLoadOptions](/javascript/api/excel/excel.formatprotectionloadoptions)|[$all](/javascript/api/excel/excel.formatprotectionloadoptions#$all)||
-||[formulaHidden](/javascript/api/excel/excel.formatprotectionloadoptions#formulahidden)|Excel が範囲内のセルの数式を非表示にするかどうかを示します。null 値は、範囲全体に一様な数式非表示設定がないことを表します。|
-||[locked](/javascript/api/excel/excel.formatprotectionloadoptions#locked)|Excel がオブジェクト内のセルをロックするかどうかを示します。 null 値は、範囲全体に一様なロック設定がないことを表します。|
-|[FormatProtectionUpdateData](/javascript/api/excel/excel.formatprotectionupdatedata)|[formulaHidden](/javascript/api/excel/excel.formatprotectionupdatedata#formulahidden)|Excel が範囲内のセルの数式を非表示にするかどうかを示します。null 値は、範囲全体に一様な数式非表示設定がないことを表します。|
-||[locked](/javascript/api/excel/excel.formatprotectionupdatedata#locked)|Excel がオブジェクト内のセルをロックするかどうかを示します。 null 値は、範囲全体に一様なロック設定がないことを表します。|
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|エラー値を表すエラー値 ("#DIV/0" など)。 エラー文字列が設定されていない場合は、関数が正常に終了し、その結果が Value フィールドに書き込まれます。 エラーは常に英語のロケールです。|
 ||[value](/javascript/api/excel/excel.functionresult#value)|関数評価の値。 エラーが発生していない場合にのみ、value フィールドに値が設定されます (つまり、Error プロパティが設定されていない場合)。|
-|[FunctionResultData](/javascript/api/excel/excel.functionresultdata)|[error](/javascript/api/excel/excel.functionresultdata#error)|エラー値を表すエラー値 ("#DIV/0" など)。 エラー文字列が設定されていない場合は、関数が正常に終了し、その結果が Value フィールドに書き込まれます。 エラーは常に英語のロケールです。|
-||[value](/javascript/api/excel/excel.functionresultdata#value)|関数評価の値。 エラーが発生していない場合にのみ、value フィールドに値が設定されます (つまり、Error プロパティが設定されていない場合)。|
-|[FunctionResultLoadOptions](/javascript/api/excel/excel.functionresultloadoptions)|[$all](/javascript/api/excel/excel.functionresultloadoptions#$all)||
-||[error](/javascript/api/excel/excel.functionresultloadoptions#error)|エラー値を表すエラー値 ("#DIV/0" など)。 エラー文字列が設定されていない場合は、関数が正常に終了し、その結果が Value フィールドに書き込まれます。 エラーは常に英語のロケールです。|
-||[value](/javascript/api/excel/excel.functionresultloadoptions#value)|関数評価の値。 エラーが発生していない場合にのみ、value フィールドに値が設定されます (つまり、Error プロパティが設定されていない場合)。|
 |[Functions](/javascript/api/excel/excel.functions)|[abs \| (数値: Excel の RangeReference \| \|に指定したセル範囲の数式<any>)](/javascript/api/excel/excel.functions#abs-number-)|数値の絶対値を返します。値は符号なしで指定します。|
 ||[accrInt (issue: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| <any>excel. functionresult, firstinterest: 数値\|文字列\|ブール値\| excel 範囲\|\| RangeReference<any>を指定します。 excel の場合は、 \|数値\|を\|表すブール値\|の excel. \| RangeReference excel. functionresult<any>、rate: number\|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, par: 数値\|文字列\|ブール値\| excel 範囲\|\| RangeReference<any>を指定します。この場合、数字\|文字列\|のブール\|値 excel. \| RangeReference \| excel functionresult<any>、basis?: number\|文字列\|ブール\|型\| \|の RangeReference excel. Functionresult<any>, calcMethod?: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|定期的に利息が支払われる証券の未収利息額を返します。|
 ||[accrIntM (issue: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| <any>Excel. functionresult, 受渡: 数値\|文字列\|ブール値\| excel 範囲\|\| RangeReference<any> \|の excel の場合は、数値を\|表すブール値\| excel. \| RangeReference \| excel. functionresult<any>、par: number \|文字列\|ブール\|型\| \|の RangeReference excel. functionresult<any>, basis?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|満期日に利息が支払われる証券の未収利息額を返します。|
@@ -445,7 +423,6 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[yieldMat (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>の excel の結果、問題: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、rate: number \|文字列\|ブール\| \|型\|の RangeReference excel. functionresult<any>, pr: number \| string \|ブール値\| excel \| 。 RangeReference\| Excel functionresult<any>、by: \|数値文字列\|ブール値\| excel. RangeReference \| \| <any>の範囲で指定します。](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|満期日に利息が支払われる証券の利回りを返します。|
 ||[z_Test (配列: excel \| \| \|の RangeReference<any>の値を指定します。この場合、x: \| \| excel. RangeReference \|の結果<any>、シグマ?: number \|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#z_test-array--x--sigma-)|Z 検定の片側 P 値を返します。|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|指定したセット内のアイコンのインデックスを表します。|
-||[set](/javascript/api/excel/excel.icon#set)|アイコンがその一部であるセットを表します。|
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|現在の範囲のすべての列が非表示になっているかどうかを表します。|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
 ||[Getcolumns After (count?: number)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|現在の Range オブジェクトの右にある特定の列数を取得します。|
@@ -455,38 +432,17 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[getRowsBelow (count?: number)](/javascript/api/excel/excel.range#getrowsbelow-count-)|現在の Range オブジェクトの下にある特定の行数を取得します。|
 ||[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.range#getusedrange-valuesonly-)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は ItemNotFound エラーをスローします。|
 ||[merge (全体: boolean)](/javascript/api/excel/excel.range#merge-across-)|範囲内のセルをワークシートの 1 つの領域に結合します。|
-||[hidden](/javascript/api/excel/excel.range#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用です。|
+||[hidden](/javascript/api/excel/excel.range#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用。|
 ||[並べ替え](/javascript/api/excel/excel.range#sort)|現在の範囲について、範囲の並べ替えを表します。 読み取り専用です。|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|現在の範囲のすべての行が非表示になっているかどうかを表します。|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|範囲内のセルを結合解除して別々のセルにします。|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[columnHidden](/javascript/api/excel/excel.rangedata#columnhidden)|現在の範囲のすべての列が非表示になっているかどうかを表します。|
-||[formulasR1C1](/javascript/api/excel/excel.rangedata#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
-||[hidden](/javascript/api/excel/excel.rangedata#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用です。|
-||[rowHidden](/javascript/api/excel/excel.rangedata#rowhidden)|現在の範囲のすべての行が非表示になっているかどうかを表します。|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns ()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|現在の列のデータに基づいて、現在の範囲の列の幅を最適な幅に変更します。|
 ||[autofitRows ()](/javascript/api/excel/excel.rangeformat#autofitrows--)|現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用。|
+||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用です。|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[columnWidth](/javascript/api/excel/excel.rangeformatdata#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformatdata#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatdata#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[columnWidth](/javascript/api/excel/excel.rangeformatloadoptions#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformatloadoptions#protection)|範囲に対する書式保護オブジェクトを返します。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatloadoptions#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[columnWidth](/javascript/api/excel/excel.rangeformatupdatedata#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformatupdatedata#protection)|範囲に対する書式保護オブジェクトを返します。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatupdatedata#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[columnHidden](/javascript/api/excel/excel.rangeloadoptions#columnhidden)|現在の範囲のすべての列が非表示になっているかどうかを表します。|
-||[formulasR1C1](/javascript/api/excel/excel.rangeloadoptions#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
-||[hidden](/javascript/api/excel/excel.rangeloadoptions#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用です。|
-||[rowHidden](/javascript/api/excel/excel.rangeloadoptions#rowhidden)|現在の範囲のすべての行が非表示になっているかどうかを表します。|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|範囲のアドレスを取得または設定します。たとえば、' SheetName!A1: B5 '。|
-|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase?: boolean, hasHeaders?: boolean, orientation?: "Rows" \| "列", method?: "PinYin" \| "StrokeCount")](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|並べ替え操作を実行します。|
-||[apply (fields: SortField [], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel. SortOrientation, method?: Excel. Sortorientation)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|並べ替え操作を実行します。|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[columnHidden](/javascript/api/excel/excel.rangeupdatedata#columnhidden)|現在の範囲のすべての列が非表示になっているかどうかを表します。|
-||[formulasR1C1](/javascript/api/excel/excel.rangeupdatedata#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
-||[rowHidden](/javascript/api/excel/excel.rangeupdatedata#rowhidden)|現在の範囲のすべての行が非表示になっているかどうかを表します。|
+|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel. SortOrientation, method?: Excel. Sortorientation)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|並べ替え操作を実行します。|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[workbook](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|SelectionChanged イベントを発生させたブック オブジェクトを取得します。|
 |[SortField](/javascript/api/excel/excel.sortfield)|[昇順](/javascript/api/excel/excel.sortfield#ascending)|昇順で並べ替えるかどうかを表します。|
 ||[color](/javascript/api/excel/excel.sortfield#color)|並べ替えがフォントまたはセルの色で行われる場合に、条件の対象となる色を表します。|
@@ -499,44 +455,20 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[並べ替え](/javascript/api/excel/excel.table#sort)|テーブル内の並べ替えを表します。 読み取り専用です。|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|現在のテーブルを含んでいるワークシート。 読み取り専用です。|
 ||[reapplyFilters ()](/javascript/api/excel/excel.table#reapplyfilters--)|テーブルに現在設定されているすべてのフィルターを再適用します。|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[並べ替え](/javascript/api/excel/excel.tablecollectionloadoptions#sort)|コレクション内の各アイテムについて: テーブルの並べ替えを表します。|
-||[worksheet](/javascript/api/excel/excel.tablecollectionloadoptions#worksheet)|コレクション内の各アイテムについて: 現在のテーブルを含むワークシート。|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|列に適用されるフィルターを取得します。 読み取り専用です。|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[filter](/javascript/api/excel/excel.tablecolumncollectionloadoptions#filter)|コレクション内の各アイテムについて: 列に適用されているフィルターを取得します。|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[filter](/javascript/api/excel/excel.tablecolumndata#filter)|列に適用されるフィルターを取得します。 読み取り専用です。|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[filter](/javascript/api/excel/excel.tablecolumnloadoptions#filter)|列に適用されるフィルターを取得します。|
-|[TableData](/javascript/api/excel/excel.tabledata)|[並べ替え](/javascript/api/excel/excel.tabledata#sort)|テーブル内の並べ替えを表します。 読み取り専用です。|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[並べ替え](/javascript/api/excel/excel.tableloadoptions#sort)|テーブル内の並べ替えを表します。|
-||[worksheet](/javascript/api/excel/excel.tableloadoptions#worksheet)|現在のテーブルを含んでいるワークシート。|
-|[TableSort](/javascript/api/excel/excel.tablesort)|[apply (fields: SortField [], matchCase?: boolean, method?: "PinYin" \| "StrokeCount")](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|並べ替え操作を実行します。|
-||[apply (fields: SortField [], matchCase?: boolean, method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|並べ替え操作を実行します。|
+|[TableSort](/javascript/api/excel/excel.tablesort)|[apply (fields: SortField [], matchCase?: boolean, method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|並べ替え操作を実行します。|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear--)|テーブルに現在設定されている並べ替えをクリアします。これにより表の順序が変更されることはありませんが、ヘッダーのボタンの状態がクリアされます。|
 ||[fields](/javascript/api/excel/excel.tablesort#fields)|テーブルの最後の並べ替えに使用する現在の条件を表します。 読み取り専用です。|
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|大文字小文字の区別が、テーブルの最後の並べ替え操作に影響を与えたかどうかを表します。 読み取り専用です。|
 ||[method](/javascript/api/excel/excel.tablesort#method)|テーブルの並べ替えで最後に使用した中国語文字の順序付け方法を表します。 読み取り専用です。|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|テーブルに、現在の並べ替えパラメーターを再適用します。|
-|[TableSortData](/javascript/api/excel/excel.tablesortdata)|[fields](/javascript/api/excel/excel.tablesortdata#fields)|テーブルの最後の並べ替えに使用する現在の条件を表します。 読み取り専用です。|
-||[matchCase](/javascript/api/excel/excel.tablesortdata#matchcase)|大文字小文字の区別が、テーブルの最後の並べ替え操作に影響を与えたかどうかを表します。 読み取り専用です。|
-||[method](/javascript/api/excel/excel.tablesortdata#method)|テーブルの並べ替えで最後に使用した中国語文字の順序付け方法を表します。 読み取り専用です。|
-|[使い方](/javascript/api/excel/excel.tablesortloadoptions)|[$all](/javascript/api/excel/excel.tablesortloadoptions#$all)||
-||[fields](/javascript/api/excel/excel.tablesortloadoptions#fields)|テーブルの最後の並べ替えに使用する現在の条件を表します。 読み取り専用です。|
-||[matchCase](/javascript/api/excel/excel.tablesortloadoptions#matchcase)|大文字小文字の区別が、テーブルの最後の並べ替え操作に影響を与えたかどうかを表します。 読み取り専用です。|
-||[method](/javascript/api/excel/excel.tablesortloadoptions#method)|テーブルの並べ替えで最後に使用した中国語文字の順序付け方法を表します。 読み取り専用です。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[職務](/javascript/api/excel/excel.workbook#functions)|計算に使用できるワークシート関数のコレクションを表します。 読み取り専用です。|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|ドキュメント内で選択が変更されるときに発生します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。 ワークシート全体が空白の場合、この関数は左上のセルを返します (つまり、エラーはスローされ*ません*)。|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用。|
-|[ワークシート Collectionloadoptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[protection](/javascript/api/excel/excel.worksheetcollectionloadoptions#protection)|コレクション内の各アイテムについて: ワークシートのシート保護オブジェクトを返します。|
-|[ワークシートデータ](/javascript/api/excel/excel.worksheetdata)|[protection](/javascript/api/excel/excel.worksheetdata#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用。|
-|[ワークシート Loadoptions](/javascript/api/excel/excel.worksheetloadoptions)|[protection](/javascript/api/excel/excel.worksheetloadoptions#protection)|ワークシートのシート保護オブジェクトを返します。|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect (options?: Excel. ワークシートのオプション, パスワード?: string)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|ワークシートを保護します。 ワークシートが既に保護されている場合は、失敗します。|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|シートの保護のオプション。 読み取り専用です。|
 ||[protected](/javascript/api/excel/excel.worksheetprotection#protected)|ワークシートが保護されているかどうかを示します。 読み取り専用です。|
-|[ワークシートの保護データ](/javascript/api/excel/excel.worksheetprotectiondata)|[options](/javascript/api/excel/excel.worksheetprotectiondata#options)|シートの保護のオプション。 読み取り専用です。|
-||[protected](/javascript/api/excel/excel.worksheetprotectiondata#protected)|ワークシートが保護されているかどうかを示します。 読み取り専用です。|
-|[ワークシートの Protectionloadoptions](/javascript/api/excel/excel.worksheetprotectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetprotectionloadoptions#$all)||
-||[options](/javascript/api/excel/excel.worksheetprotectionloadoptions#options)|シートの保護のオプション。 読み取り専用です。|
-||[protected](/javascript/api/excel/excel.worksheetprotectionloadoptions#protected)|ワークシートが保護されているかどうかを示します。 読み取り専用です。|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|自動フィルター機能の使用を可能にするワークシート保護オプションを表します。|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|列の削除を可能にするワークシート保護オプションを表します。|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|行の削除を可能にするワークシート保護オプションを表します。|

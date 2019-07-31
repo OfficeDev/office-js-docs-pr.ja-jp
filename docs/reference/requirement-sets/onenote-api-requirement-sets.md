@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: c9ea90a8781375d38f191fda63005639c3b8dacf
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: e1012b337b3713f57a5d3df7f7c7ccbcf509b5aa
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804984"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940856"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
@@ -19,11 +19,7 @@ ms.locfileid: "35804984"
 
 |  要件セット  |  Web 上の Office |
 |:-----|:-----|
-| OneNoteApi 1.1  | 2016 年 9 月 |  
-
-## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
-
-共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
+| OneNoteApi 1.1  | 2016 年 9 月 |
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
@@ -31,7 +27,7 @@ OneNote JavaScript API 1.1 は、API の最初のバージョンです。 API �
 
 ## <a name="runtime-requirement-support-check"></a>ランタイム要件のサポートのチェック
 
-ランタイムでは、次の操作を実行することによって、特定のホストが API 要件セットをサポートしているかどうかを確認できます。
+実行時に、アドインは、次の手順に従って、特定のホストが API 要件セットをサポートしているかどうかを確認できます。
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1') === true) {
@@ -44,7 +40,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>マニフェストに基づく要件のサポートのチェック
 
-アドインで必須の、重要な要件セットまたは API メンバーを指定するには、アドインのマニフェストで Requirements 要素を使用します。Office ホストまたはプラットフォームが、Requirements 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、[個人用アドイン] にも表示されません。
+アドインマニフェスト`Requirements`の要素を使用して、アドインが使用する必要がある重要な要件セットまたは API メンバーを指定します。 Office ホストまたはプラットフォームが、 `Requirements`要素で指定されている要件セットや API メンバーをサポートしていない場合、アドインはそのホストまたはプラットフォームでは実行されず、アドインには表示されません。
 
 OneNoteApi 要件セット、バージョン 1.1 をサポートするすべての Office ホスト アプリケーションで読み込まれるアドインのコード例を以下に示します。
 
@@ -56,8 +52,13 @@ OneNoteApi 要件セット、バージョン 1.1 をサポートするすべて�
 </Requirements>
 ```
 
+## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
+
+共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
+
 ## <a name="see-also"></a>関連項目
 
+- [OneNote JavaScript API リファレンスドキュメント](/javascript/api/onenote)
 - [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)

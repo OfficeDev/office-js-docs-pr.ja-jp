@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.44
 description: ExcelApi 1.4 の要件セットの詳細
-ms.date: 07/15/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c0cd380a71c98ab63aa955ec0ff2ed005065577c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: d2ad8af8a9489d8f3038444a25783a880139e8c9
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771982"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940732"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -66,29 +66,13 @@ worksheet.getItemOrNullObject("itemName")
 ||[addFormulaLocal (name: string, formula: string, comment?: string)](/javascript/api/excel/excel.nameditemcollection#addformulalocal-name--formula--comment-)|ユーザーのロケールを数式に使用して、指定のスコープのコレクションに新しい名前を追加します。|
 ||[getCount()](/javascript/api/excel/excel.nameditemcollection#getcount--)|コレクションに含まれる名前付きアイテムの数を取得します。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getitemornullobject-name-)|名前を使用して、NamedItem オブジェクトを取得します。 nameditem オブジェクトが存在しない場合は null オブジェクトを返します。|
-|[NamedItemCollectionLoadOptions](/javascript/api/excel/excel.nameditemcollectionloadoptions)|[comment](/javascript/api/excel/excel.nameditemcollectionloadoptions#comment)|コレクション内の各アイテムについて: この名前に関連付けられているコメントを表します。|
-||[scope](/javascript/api/excel/excel.nameditemcollectionloadoptions#scope)|コレクション内の各アイテムについて: 名前のスコープをブックに適用するか、特定のワークシートにするかを指定します。 可能な値は次のとおりです。ワークシート、ブック。 読み取り専用です。|
-||[worksheet](/javascript/api/excel/excel.nameditemcollectionloadoptions#worksheet)|コレクション内の各アイテムについて: 名前付きアイテムのスコープが設定されているワークシートを返します。 アイテムのスコープがブックに設定されている場合は、エラーをスローします。|
-||[worksheetOrNullObject](/javascript/api/excel/excel.nameditemcollectionloadoptions#worksheetornullobject)|コレクション内の各アイテムについて: 名前付きアイテムのスコープが設定されているワークシートを返します。 アイテムがブックを対象にしている場合は、null オブジェクトを返します。|
-|[NamedItemData](/javascript/api/excel/excel.nameditemdata)|[comment](/javascript/api/excel/excel.nameditemdata#comment)|この名前に関連付けられているコメントを表します。|
-||[scope](/javascript/api/excel/excel.nameditemdata#scope)|ブックまたは特定のワークシートに対して名前のスコープを設定するかどうかを示します。 可能な値は次のとおりです。ワークシート、ブック。 読み取り専用です。|
-|[NamedItemLoadOptions](/javascript/api/excel/excel.nameditemloadoptions)|[comment](/javascript/api/excel/excel.nameditemloadoptions#comment)|この名前に関連付けられているコメントを表します。|
-||[scope](/javascript/api/excel/excel.nameditemloadoptions#scope)|ブックまたは特定のワークシートに対して名前のスコープを設定するかどうかを示します。 可能な値は次のとおりです。ワークシート、ブック。 読み取り専用です。|
-||[worksheet](/javascript/api/excel/excel.nameditemloadoptions#worksheet)|名前付きのアイテムの対象になるワークシートを返します。 アイテムのスコープがブックに設定されている場合は、エラーをスローします。|
-||[worksheetOrNullObject](/javascript/api/excel/excel.nameditemloadoptions#worksheetornullobject)|名前付きのアイテムの対象になるワークシートを返します。 アイテムがブックを対象にしている場合は、null オブジェクトを返します。|
-|[NamedItemUpdateData](/javascript/api/excel/excel.nameditemupdatedata)|[comment](/javascript/api/excel/excel.nameditemupdatedata#comment)|この名前に関連付けられているコメントを表します。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getCount()](/javascript/api/excel/excel.pivottablecollection#getcount--)|コレクションに含まれるピボット テーブルの数を取得します。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getitemornullobject-name-)|名前を使用してピボットテーブルを取得します。 PivotTable が存在しない場合は null オブジェクトを返します。|
 |[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange: Range \|文字列)](/javascript/api/excel/excel.range#getintersectionornullobject-anotherrange-)|指定した範囲の長方形の交差を表す範囲オブジェクトを取得します。 交差部分が見つからない場合は、null オブジェクトを返します。|
 ||[getUsedRangeOrNullObject (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.range#getusedrangeornullobject-valuesonly-)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は null オブジェクトを返します。|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getCount()](/javascript/api/excel/excel.rangeviewcollection#getcount--)|コレクションに含まれる RangeView オブジェクトの数を取得します。|
 |[設定](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete--)|設定を削除します。|
-||[](/javascript/api/excel/excel.setting#datejsonprefix)||
-||[](/javascript/api/excel/excel.setting#datejsonsuffix)||
-||[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
 ||[key](/javascript/api/excel/excel.setting#key)|Setting の ID を表すキーを返します。 読み取り専用です。|
-||[set (properties: Excel. Setting)](/javascript/api/excel/excel.setting#set-properties-)|既存の読み込まれたオブジェクトに基づいて、オブジェクトに複数のプロパティを設定します。|
-||[set (properties: SettingUpdateData, options?: Officeextension.error)](/javascript/api/excel/excel.setting#set-properties--options-)|一度に1つのオブジェクトの複数のプロパティを設定します。 適切なプロパティを持つプレーンオブジェクト、または同じ種類の別の API オブジェクトのいずれかを渡すことができます。|
 ||[value](/javascript/api/excel/excel.setting#value)|この設定に格納されている値を表します。|
 |[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add (key: string, value: string \| number \| boolean \| Date \| Array<any> \| any)](/javascript/api/excel/excel.settingcollection#add-key--value-)|指定した設定をブックに設定または追加します。|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getcount--)|コレクションに含まれる設定の数を取得します。|
@@ -96,28 +80,17 @@ worksheet.getItemOrNullObject("itemName")
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getitemornullobject-key-)|キーから Setting エントリを取得します。 Setting が存在しない場合は null オブジェクトを返します。|
 ||[items](/javascript/api/excel/excel.settingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[onSettingsChanged](/javascript/api/excel/excel.settingcollection#onsettingschanged)|ドキュメント内の設定が変更されるときに発生します。|
-|[SettingCollectionLoadOptions](/javascript/api/excel/excel.settingcollectionloadoptions)|[$all](/javascript/api/excel/excel.settingcollectionloadoptions#$all)||
-||[key](/javascript/api/excel/excel.settingcollectionloadoptions#key)|コレクション内の各アイテムについて: 設定の id を表すキーを返します。 読み取り専用です。|
-||[value](/javascript/api/excel/excel.settingcollectionloadoptions#value)|コレクション内の各アイテムについて: この設定に格納されている値を表します。|
-|[SettingData](/javascript/api/excel/excel.settingdata)|[key](/javascript/api/excel/excel.settingdata#key)|Setting の ID を表すキーを返します。 読み取り専用です。|
-||[value](/javascript/api/excel/excel.settingdata#value)|この設定に格納されている値を表します。|
-|[SettingLoadOptions](/javascript/api/excel/excel.settingloadoptions)|[$all](/javascript/api/excel/excel.settingloadoptions#$all)||
-||[key](/javascript/api/excel/excel.settingloadoptions#key)|Setting の ID を表すキーを返します。 読み取り専用です。|
-||[value](/javascript/api/excel/excel.settingloadoptions#value)|この設定に格納されている値を表します。|
-|[SettingUpdateData](/javascript/api/excel/excel.settingupdatedata)|[value](/javascript/api/excel/excel.settingupdatedata#value)|この設定に格納されている値を表します。|
 |[SettingsChangedEventArgs](/javascript/api/excel/excel.settingschangedeventargs)|[設定](/javascript/api/excel/excel.settingschangedeventargs#settings)|SettingsChanged イベントが発生したバインドを表す Setting オブジェクトを取得します。|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[getCount()](/javascript/api/excel/excel.tablecollection#getcount--)|コレクションに含まれるテーブルの数を取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablecollection#getitemornullobject-key-)|名前または ID でテーブルを取得します。 テーブルが存在しない場合は null オブジェクトを返します。|
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|表の列数を取得します。|
 ||[getItemOrNullObject (key: number \|文字列)](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|名前または ID によって、列オブジェクトを取得します。 列が存在しない場合は null オブジェクトを返します。|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|表の行数を取得します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[設定](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている Setting のコレクションを表します。 読み取り専用。|
-|[WorkbookData](/javascript/api/excel/excel.workbookdata)|[設定](/javascript/api/excel/excel.workbookdata#settings)|ブックに関連付けられている Setting のコレクションを表します。 読み取り専用。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[設定](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている Setting のコレクションを表します。 読み取り専用です。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシート全体が空白の場合、この関数は null オブジェクトを返します。|
 ||[姓名](/javascript/api/excel/excel.worksheet#names)|現在のワークシートにスコープされている名前のコレクション。 読み取り専用です。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|コレクションに含まれるワークシートの数を取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|名前または ID を使用して、ワークシート オブジェクトを取得します。 ワークシートが存在しない場合は null オブジェクトを返します。|
-|[ワークシートデータ](/javascript/api/excel/excel.worksheetdata)|[姓名](/javascript/api/excel/excel.worksheetdata#names)|現在のワークシートにスコープされている名前のコレクション。 読み取り専用です。|
 
 ## <a name="see-also"></a>関連項目
 
