@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: JavaScript を使用して Excel のカスタム関数でダイアログ ボックスを作成します。
 title: カスタム関数からダイアログ ボックスを表示する
 localization_priority: Priority
-ms.openlocfilehash: e513aedd46f129371a5c858e84f7e230f8d7ae11
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b8a2a6a68f23121fe4d3931c13fd45af6034c7d2
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127927"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940634"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>カスタム関数からダイアログ ボックスを表示する
 
@@ -47,7 +47,7 @@ function getTokenViaDialog(url) {
       }, 1000);
     } else {
       _dialogOpen = true;
-      Office.displayWebDialogOptions(url, {
+      OfficeRuntime.displayWebDialog(url, {
         height: '50%',
         width: '50%',
         onMessage: function (message, dialog) {
