@@ -3,12 +3,12 @@ title: Office.context.mailbox - 要件セット 1.5
 description: ''
 ms.date: 04/24/2019
 localization_priority: Priority
-ms.openlocfilehash: a0c1a45fd3eaa9cf324a6854120d642eb7520132
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9ffb0d4d33af80a669fd81bc0130f14f673e9400
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127283"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064754"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -161,10 +161,10 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -188,7 +188,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-15"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)}
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
@@ -198,7 +198,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`timeValue`| Date|日付オブジェクト|
 
@@ -212,7 +212,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 
 ##### <a name="returns"></a>戻り値:
 
-型:[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)
+型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -225,10 +225,10 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -260,9 +260,9 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)|変換するローカル時刻の値。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)|変換するローカル時刻の値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -301,7 +301,7 @@ Outlook on the web では、このメソッドはフォームの本文が 32KB �
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
@@ -336,7 +336,7 @@ Outlook on the web では、このメソッドはフォームの本文が 32 KB 
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -371,11 +371,11 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.start` | 日付 | 予定の開始日時を指定する `Date` オブジェクト。 |
 | `parameters.end` | Date | 予定の終了日時を指定する `Date` オブジェクト。 |
 | `parameters.location` | String | 予定の場所を含む文字列。文字列は最大 255 文字に制限されます。 |

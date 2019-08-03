@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.7
 description: ''
 ms.date: 03/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 8daf10239a704206d53a544185e030afa6b6a27a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: aa5033422d30c41d455ad54aa71cc29c3c4c0c91
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450283"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064467"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook アドイン API 要件セット 1.7
 
@@ -24,22 +24,22 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 ### <a name="change-log"></a>変更ログ
 
-- [From](/javascript/api/outlook_1_7/office.from) が追加されました。From 値を取得するためのメソッドを提供する、新しいオブジェクトが追加されました。
-- [Organizer](/javascript/api/outlook_1_7/office.organizer) が追加されました。Organizer 値を取得するためのメソッドを提供する、新しいオブジェクトが追加されました。
-- [Recurrence](/javascript/api/outlook_1_7/office.recurrence) が追加されました。予定の定期的なパターンを取得および設定するためのメソッドを提供し、会議出席依頼であるメッセージの定期的なパターンのみを取得する新しいオブジェクトが追加されました。
-- [RecurrenceTimeZone](/javascript/api/outlook_1_7/office.recurrencetimezone) が追加されました。定期的なパターンのタイムゾーン構成を表す新しいオブジェクトが追加されました。
-- [SeriesTime](/javascript/api/outlook_1_7/office.seriestime) が追加されました。定期的な一連の予定の日付と時刻を取得および設定したり、定期的な一連の会議出席依頼の日時を取得したりするためのメソッドを提供する新しいオブジェクトが追加されました。
+- [From](/javascript/api/outlook/office.from?view=outlook-js-1.7) が追加されました。From 値を取得するためのメソッドを提供する、新しいオブジェクトが追加されました。
+- [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7) が追加されました。Organizer 値を取得するためのメソッドを提供する、新しいオブジェクトが追加されました。
+- [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) が追加されました。予定の定期的なパターンを取得および設定するためのメソッドを提供し、会議出席依頼であるメッセージの定期的なパターンのみを取得する新しいオブジェクトが追加されました。
+- [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7) が追加されました。定期的なパターンのタイムゾーン構成を表す新しいオブジェクトが追加されました。
+- [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7) が追加されました。定期的な一連の予定の日付と時刻を取得および設定したり、定期的な一連の会議出席依頼の日時を取得したりするためのメソッドを提供する新しいオブジェクトが追加されました。
 - [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#addhandlerasynceventtype-handler-options-callback) が追加されました。サポートされているイベントのイベント ハンドラーを追加するための、新しいメソッドが追加されました。
 - [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsfrom)が変更されました: 作成モードでfrom値を取得する機能を追加しました。
 - [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsorganizer)が変更されました: 作成モードでオーガナイザー値を取得する機能を追加しました。
 - [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrence) が追加されました。予定アイテムの定期的なパターンを管理するメソッドを提供するオブジェクトを取得または設定する新しいプロパティが追加されました。 このプロパティを使用して、会議出席依頼アイテムの定期的なパターンを取得することもできます。
 - [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback) が追加されました。サポートされているイベントの種類のイベント ハンドラーを削除する新しいメソッドが追加されました。
 - [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string) が追加されました。オカレンスが属する系列の ID を取得する新しいプロパティが追加されました。
-- [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days) が追加されました。曜日または日付の種類を指定する新しい列挙型が追加されました。
-- [Office.MailboxEnums.Month](/javascript/api/outlook_1_7/office.mailboxenums.month) が追加されました。月を指定する新しい列挙型が追加されました。
-- [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetimezone) が追加されました。定期的なアイテムに適用されるタイムゾーンを指定する新しい列挙型が追加されました。
-- [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetype) が追加されました。定期的なアイテムの種類を指定する新しい列挙型が追加されました。
-- [Office.MailboxEnums.WeekNumber](/javascript/api/outlook_1_7/office.mailboxenums.weeknumber) が追加されました。月の週を指定する新しい列挙型が追加されました。
+- [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7) が追加されました。曜日または日付の種類を指定する新しい列挙型が追加されました。
+- [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7) が追加されました。月を指定する新しい列挙型が追加されました。
+- [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7) が追加されました。定期的なアイテムに適用されるタイムゾーンを指定する新しい列挙型が追加されました。
+- [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7) が追加されました。定期的なアイテムの種類を指定する新しい列挙型が追加されました。
+- [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7) が追加されました。月の週を指定する新しい列挙型が追加されました。
 - [Office.EventType](/javascript/api/office/office.eventtype)が変更されました: `RecurrenceChanged`、 `RecipientsChanged`と `AppointmentTimeChanged`のイベントにサポートを追加しました。
 
 ## <a name="see-also"></a>関連項目

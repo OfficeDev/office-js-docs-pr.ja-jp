@@ -3,12 +3,12 @@ title: Angular で Office アドインを開発する
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448988"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517367"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -23,7 +23,7 @@ Angular フレームワークを使用してビルドされる Office アドイ�
 
 nodejs ウィンドウを開き、コマンド ラインで次のように入力します:
 
-```bash
+```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
@@ -152,7 +152,7 @@ const subscription = source.subscribe(
 
 AOT コンパイラを使用するには、`ng build` または `ng serve` コマンドに `--aot` を追加します。
 
-```bash
+```command&nbsp;line
 ng build --aot
 ng serve --aot
 ```
