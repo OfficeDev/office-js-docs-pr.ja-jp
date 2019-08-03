@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript プレビュー Api
 description: 今後の Word JavaScript Api の詳細
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 3a539f0e69db7c4c567b6fda14f30d6d41a420cf
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805285"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064845"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー Api
 
@@ -22,7 +22,7 @@ ms.locfileid: "35805285"
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、現在プレビュー中の Api を示します。
+次の表に、現在プレビュー中の Word JavaScript Api を示します。 すべての Word JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストを表示するには、「[すべての Word Javascript api](/javascript/api/word?view=word-js-preview)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|

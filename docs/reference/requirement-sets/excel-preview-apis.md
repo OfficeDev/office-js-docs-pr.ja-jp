@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2199b7c115a1edd66bb7b1fef86eb3bc7bba473e
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 200b187b059c1b03ae3713b5afa11b2152aba0da
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771954"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064852"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -30,6 +30,8 @@ ms.locfileid: "35771954"
 | [ブックを挿入する](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | あるブックを別のブックに挿入します。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、現在プレビュー中の Excel JavaScript Api を示します。 すべての Excel JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストを表示するには、「[すべての Excel Javascript api](/javascript/api/excel?view=excel-js-preview)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -416,5 +418,5 @@ ms.locfileid: "35771954"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-preview)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

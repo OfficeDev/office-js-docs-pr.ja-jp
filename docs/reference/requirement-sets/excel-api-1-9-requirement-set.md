@@ -4,12 +4,12 @@ description: ExcelApi 1.9 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1d7e16a6e0aca202798016c136dfc7e2188c44f0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: b28406f9792278e554ff055a59ef4833be915aba
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940852"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064866"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Excel JavaScript API 1.9 の新機能
 
@@ -28,6 +28,8 @@ ms.locfileid: "35940852"
 | 範囲の形式 | 範囲の形式の新しい機能です。 | [Range](/javascript/api/excel/excel.rangeformat) |
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.9 の Api を示します。 Excel JavaScript API 要件セット1.9 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.9 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.9)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -486,5 +488,5 @@ ms.locfileid: "35940852"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.9)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

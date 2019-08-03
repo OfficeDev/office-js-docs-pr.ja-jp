@@ -4,12 +4,12 @@ description: ExcelApi 1.2 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 88943ce69154b3ea303bbbafabf144a51ae6e674
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940781"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064481"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -17,11 +17,10 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 
 ## <a name="api-list"></a>API リスト
 
-|| クラス | フィールド | 説明 |
+次の表に、Excel JavaScript API 要件セット1.2 の Api を示します。 Excel JavaScript API 要件セット1.2 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.2 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.2)」を参照してください。
+
+| クラス | フィールド | 説明 |
 |:---|:---|:---|
-|[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|バインド内でデータまたは書式設定が変更されるときに発生します。|
-||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|バインドで選択されているコンテンツが変更されたときに発生します。|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|DataChanged イベントが発生したバインドを表す Binding オブジェクトを取得します。|
 |[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|SelectionChanged イベントが発生したバインドを表す Binding オブジェクトを取得します。|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|選択されている列の数を取得します。|
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|選択されている行の数を取得します。|
@@ -483,5 +482,5 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.2)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

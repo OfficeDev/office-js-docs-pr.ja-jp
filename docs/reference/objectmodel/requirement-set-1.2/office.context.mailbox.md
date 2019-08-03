@@ -3,12 +3,12 @@ title: Office. メールボックス要件セット1.2
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 879b6440a91f63568d282b6659aafdf49a5cdb37
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: de7c48faf966f9b3f5d1bb76f69aa16810a5381f
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128441"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064369"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -58,7 +58,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 ### <a name="methods"></a>メソッド
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-12"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)}
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
@@ -82,7 +82,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 ##### <a name="returns"></a>戻り値:
 
-型:[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)
+型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -94,7 +94,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 |名前| 種類| 説明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)|変換するローカル時刻の値。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)|変換するローカル時刻の値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -206,8 +206,8 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 |名前| 型| 説明|
 |---|---|---|
 | `parameters` | オブジェクト | 新しい予定を記述するパラメーターのディクショナリ。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.start` | 日付 | 予定の開始日時を指定する `Date` オブジェクト。 |
 | `parameters.end` | 日付 | 予定の終了日時を指定する `Date` オブジェクト。 |
 | `parameters.location` | String | 予定の場所を含む文字列。文字列は最大 255 文字に制限されます。 |

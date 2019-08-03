@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.6
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: dde96f48863459da5072d6b4864169f198264133
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e211a3a2983567b79b73a791914f8d4ed1501ab1
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450374"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064664"
 ---
 # <a name="office"></a>Office
 
@@ -34,11 +34,11 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 [context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
 
-[MailboxEnums](/javascript/api/outlook_1_6/office.mailboxenums.attachmenttype): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.6): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
 
 ### <a name="members"></a>メンバー
 
-####  <a name="asyncresultstatus-string"></a>AsyncResultStatus :String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
 非同期呼び出しの結果を指定します。
 
@@ -62,7 +62,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+#### <a name="coerciontype-string"></a>CoercionType: String
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
@@ -86,7 +86,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+#### <a name="eventtype-string"></a>EventType: String
 
 イベント ハンドラーに関連付けられているイベントを指定します。
 
@@ -109,7 +109,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+#### <a name="sourceproperty-string"></a>SourceProperty: String
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 

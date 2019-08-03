@@ -4,12 +4,12 @@ description: ExcelApi 1.5 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f59708133504c8e470cfa978611f254fdabf3991
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4860ef7153abea059d04cda5e8709c7bdbd88855
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940711"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064761"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 の新機能
 
@@ -29,6 +29,8 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 * 属性の挿入、更新、および削除を行います。
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.5 の Api を示します。 Excel JavaScript API 要件セット1.5 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.5 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.5)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -60,5 +62,5 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.5)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

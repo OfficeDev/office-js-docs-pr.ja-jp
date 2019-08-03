@@ -4,12 +4,12 @@ description: ExcelApi 1.8 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 297e84a5e86eae42696e5a1c067f81e137d4779a
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 6849ccb3dc83275509d26c63054a518d41cb060e
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940655"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064894"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 の新機能
 
@@ -32,6 +32,8 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 グラフの[イベント](/office/dev/add-ins/excel/excel-add-ins-events)がさらに追加されました。 グラフを操作するユーザーに対し、アドインで対応できます。 ブック全体にわたり、起動する[イベントの切り替え](/office/dev/add-ins/excel/performance#enable-and-disable-events)もできます。
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.8 の Api を示します。 Excel JavaScript API 要件セット1.8 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.8 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.8)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -285,5 +287,5 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.8)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

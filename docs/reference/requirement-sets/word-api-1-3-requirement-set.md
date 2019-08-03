@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要件セット1.3
 description: WordApi 1.3 要件セットの詳細
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: ca18822a60a384f15149531a59245a7b57ea39c3
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805299"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064880"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
@@ -17,7 +17,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、WordApi 1.3 要件セットの一部として追加される Api を示します。
+次の表に、Word JavaScript API 要件セット1.3 の Api を示します。 Word JavaScript API 要件セット1.3 またはそれ以前のバージョンでサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.3 またはそれ以前の Word api](/javascript/api/word?view=word-js-1.3)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|

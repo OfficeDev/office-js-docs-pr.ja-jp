@@ -4,18 +4,20 @@ description: ExcelApi 1.1 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 90d7ee7cef2e8c48e458b2e14893ba9c13c68a30
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4668cebd545cdefeb033f5c397afb1ad796e2d04
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940788"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064488"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Excel JavaScript API 要件セット1.1
 
 Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 2016 でサポートされている唯一の Excel 固有の要件セットです。
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.1 の Api を示します。 Excel JavaScript API 要件セット1.1 でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.1 の Excel api](/javascript/api/excel?view=excel-js-1.1)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -239,5 +241,5 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.1)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

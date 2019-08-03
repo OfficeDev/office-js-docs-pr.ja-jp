@@ -4,12 +4,12 @@ description: ExcelApi 1.6 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1c81a2241d7e82e7fd2146189638c43ec1865296
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940767"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064908"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -31,6 +31,8 @@ ms.locfileid: "35940767"
 * 現在指定している範囲でアクティブなすべての条件付き書式をクリアする。
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.6 の Api を示します。 Excel JavaScript API 要件セット1.6 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.6 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.6)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -147,5 +149,5 @@ ms.locfileid: "35940767"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.6)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

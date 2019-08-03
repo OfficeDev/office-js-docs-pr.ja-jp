@@ -3,12 +3,12 @@ title: Office.context - 要件セット 1.5
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 816e28a5ea8d270b2223ff5c24ca11ab3a762852
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 10e1c9a8b7ba4d62ffb2694cc7cb8edcad15fba7
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454847"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064691"
 ---
 # <a name="context"></a>context
 
@@ -74,7 +74,7 @@ function write(message){
 }
 ```
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook15officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-15"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.5)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
@@ -82,7 +82,7 @@ function write(message){
 
 ##### <a name="type"></a>型
 
-*   [RoamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.5)
 
 ##### <a name="requirements"></a>要件
 

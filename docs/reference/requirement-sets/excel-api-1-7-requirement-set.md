@@ -4,12 +4,12 @@ description: ExcelApi 1.7 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7a4d0dde78a290de61fb6edc1966ea66dc2ba3b0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940697"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064859"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -64,6 +64,8 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 * アクティブ セルの取得: この API を使用して、ブックのアクティブ セルを取得する。
 
 ## <a name="api-list"></a>API リスト
+
+次の表に、Excel JavaScript API 要件セット1.7 の Api を示します。 Excel JavaScript API 要件セット1.7 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.7 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.7)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -334,5 +336,5 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel)
+- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.7)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
