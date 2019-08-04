@@ -3,12 +3,12 @@ title: Office アドインを展開し、発行する | Microsoft Docs
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9fefdece308647dda79a769acc9e8493cbca06f8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9515157f0e6f3d294d381013442f958c903a63c0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128553"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575647"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
@@ -87,5 +87,5 @@ Outlook アドインの展開には以下が必要です。
 - [効果的な AppSource 登録リストを作成する](/office/dev/store/create-effective-office-store-listings)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

@@ -3,12 +3,12 @@ title: ドキュメントやスプレッドシート内の領域へのバイン�
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9f2a201178826e1f049e9e9bd067260741028c84
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5de421f142320d5d1f8c2c31c5dac073142f0d1e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127619"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575591"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
@@ -393,30 +393,30 @@ function removeEventHandlerFromBinding() {
 - [Office アドインにおける非同期プログラミング](asynchronous-programming-in-office-add-ins.md)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込みを行います](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 
-[Binding]:               https://docs.microsoft.com/javascript/api/office/office.binding
-[MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding
-[TableBinding]:          https://docs.microsoft.com/javascript/api/office/office.tablebinding
-[TextBinding]:           https://docs.microsoft.com/javascript/api/office/office.textbinding
-[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding#setdataasync-data--options--callback-
-[SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[Binding]:               /javascript/api/office/office.binding
+[MatrixBinding]:         /javascript/api/office/office.matrixbinding
+[TableBinding]:          /javascript/api/office/office.tablebinding
+[TextBinding]:           /javascript/api/office/office.textbinding
+[getDataAsync]:          /javascript/api/office/Office.Binding#getdataasync-options--callback-
+[setDataAsync]:          /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[SelectionChanged]:      /javascript/api/office/office.bindingselectionchangedeventargs
+[addHandlerAsync]:       /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]:    /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
 
-[Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings
-[getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]:           https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]:    https://docs.microsoft.com/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]:      https://docs.microsoft.com/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[Bindings]:              /javascript/api/office/office.bindings
+[getByIdAsync]:          /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
+[getAllAsync]:           /javascript/api/office/office.bindings#getallasync-options--callback-
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
+[addFromPromptAsync]:    /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
+[releaseByIdAsync]:      /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
 
-[AsyncResult]:          https://docs.microsoft.com/javascript/api/office/office.asyncresult
-[Office.BindingType]:   https://docs.microsoft.com/javascript/api/office/office.bindingtype
-[Office.select]:        https://docs.microsoft.com/javascript/api/office 
-[Office.EventType]:     https://docs.microsoft.com/javascript/api/office/office.eventtype 
-[Document.bindings]:    https://docs.microsoft.com/javascript/api/office/office.document
+[AsyncResult]:          /javascript/api/office/office.asyncresult
+[Office.BindingType]:   /javascript/api/office/office.bindingtype
+[Office.select]:        /javascript/api/office 
+[Office.EventType]:     /javascript/api/office/office.eventtype 
+[Document.bindings]:    /javascript/api/office/office.document
 
 
-[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding
-[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
+[TableBinding.rowCount]: /javascript/api/office/office.tablebinding
+[BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs
