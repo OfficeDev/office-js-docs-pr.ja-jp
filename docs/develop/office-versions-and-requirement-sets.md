@@ -1,14 +1,14 @@
 ---
 title: Office のバージョンと要件セット
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 3f63d9f6d6ce62b39fa97efc62ceb964f2b55394
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128319"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940641"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -18,7 +18,6 @@ Office にはプラットフォームやバージョンが異なるものが数�
 > - Office は、Windows、ブラウザー、Mac、iPad などの複数のプラットフォームで実行されます。
 > - Office ホストの例は、Excel、Word、PowerPoint、Outlook、OneNote などの Office 製品です。  
 > - 要件セットとは、`ExcelApi 1.5` や `WordApi 1.3` などの、API メンバーの名前付きグループです。  
-
 
 ## <a name="how-to-check-your-office-version"></a>Office のバージョンを確認する方法
 
@@ -39,6 +38,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [Excel JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
 - [Word JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
+- [PowerPoint JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
 - [Outlook API 要件セットについて](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
 
 一部の要件セットには、どの Office ホストでも使用できる API が含まれています。 これらの要件のセットの詳細については、次の記事を参照してください。
@@ -55,7 +55,6 @@ JavaScript API for Office ライブラリ (Office.js) には、現在利用可�
 ## <a name="specify-office-hosts-and-requirement-sets"></a>Office ホストと要件セットを指定する
 
 アドインに必要となる Office ホストと要件セットは、さまざまな方法で指定できます。  詳細については、「[Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
-
 
 ## <a name="see-also"></a>関連項目
 

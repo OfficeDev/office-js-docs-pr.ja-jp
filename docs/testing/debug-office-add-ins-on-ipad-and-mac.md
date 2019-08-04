@@ -1,18 +1,18 @@
 ---
 title: Mac で Office アドインをデバッグする
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10b1181cab23252137df299736341c990978aa1d
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126933"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940683"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 
-Windows でのアドインの開発とデバッグには Visual Studio を使用できますが、Mac で使用してアドインをデバッグすることはできません。アドインは HTML と JavaScript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、Mac で動作するアドインをデバッグする方法を説明します。
+アドインは HTML と JavaScript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、Mac で動作するアドインをデバッグする方法を説明します。
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Mac での Safari Web インスペクタを使用したデバッグ
 
@@ -40,9 +40,5 @@ Mac の Office アドインをデバッグするには、Mac OS High Sierra と 
 > 4. 必要に応じてインスペクタを使用します。
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュをクリアする
-
-多くの場合、アドインはパフォーマンス上の理由から、Office for Mac でキャッシュされます。通常、キャッシュはアドインを再読み込みすることでクリアされます。同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
-
-Mac では、`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアできます。 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]

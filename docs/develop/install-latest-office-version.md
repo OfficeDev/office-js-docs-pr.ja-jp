@@ -1,14 +1,14 @@
 ---
 title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: adfed2e5e35e2ad86295faafc2ffed91cf728bcd
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 2308bf8f825201f1074d56bba2ddc67c32ba7f24
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128326"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940627"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -21,9 +21,9 @@ Office の最新ビルドを取得するためにオプトインするには、�
 - Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://products.office.com/office-insider)」を参照してください。
 - 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
 - Mac で Office を実行している場合は、次の操作を行います。
-    - Office アプリケーションを起動します。
-    - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。
-    - [Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。
+  - Office アプリケーションを起動します。
+  - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。
+  - [Microsoft AutoUpdate] ボックスで、チェック ボックスをオンにして Office Insider プログラムに参加します。
 
 ## <a name="get-the-latest-build"></a>最新ビルドを取得する
 
@@ -34,8 +34,8 @@ Office の最新ビルドを取得するには、次の操作を行います。
 3. configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。
 4. 次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml`
 
-    > [!NOTE]
-    > このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。
+> [!NOTE]
+> このコマンドの実行には時間がかかることがあります (進行状況は表示されません)。
 
 インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。 最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**、**[アカウント]** の順に移動します。 [Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
@@ -45,8 +45,10 @@ Office の最新ビルドを取得するには、次の操作を行います。
 
 API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
 
-- [Word JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
 - [Excel JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
 - [OneNote JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
+- [Outlook JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
+- [PowerPoint JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
+- [Word JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
 - [ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
 - [Office 共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)

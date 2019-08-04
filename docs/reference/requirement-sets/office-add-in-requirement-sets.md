@@ -1,15 +1,15 @@
 ---
 title: Office 共通 API の要件セット
 description: ''
-ms.date: 07/11/2019
+ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: bd03113b7a91a4cc713cd00336a9582d2e47db5f
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: bd06b1955d426db4c2c777fe3a370ccaea774bb4
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771899"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940830"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -19,9 +19,10 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
 
-- [Excel JavaScript API 要件セット](./excel-api-requirement-sets.md) (ExcelApi)
+- [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API 要件セット](onenote-api-requirement-sets.md) (OneNoteApi)
+- [PowerPoint JavaScript API 要件セット](powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Outlook API 要件セットについて](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
@@ -29,7 +30,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
-次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
+次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
 
 ### <a name="activeview"></a>ActiveView
 

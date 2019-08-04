@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 07/01/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617059"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940671"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -120,7 +120,6 @@ npm run validate
 フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
 
 #### <a name="for-mac"></a>Mac の場合: 
-フォルダー `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` の内容を削除する 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
