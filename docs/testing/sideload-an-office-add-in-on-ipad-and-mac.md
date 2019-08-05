@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: b97da347064fdceda847403785e0bf792846dfaa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 010812cf02bb96f26db64aa89d6e9fd3ce679ea9
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126968"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940872"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -65,9 +65,9 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     
-    - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
-    - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
-    - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
+    - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
+    - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
+    - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
     
 2. **Finder** で `open .` コマンドを使用してフォルダーを開きます (ピリオドまたはドットを含みます)。アドインのマニフェスト ファイルをこのフォルダーにコピーします。
     
@@ -87,10 +87,6 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
     ![Office on Mac に表示された Office アドイン](../images/lorem-ipsum-wikipedia.png)
     
 ### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュをクリアする
-
-Office on Mac では、多くの場合、パフォーマンス上の理由でアドインがキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない場合があります。
-
-Mac では、`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアできます。 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
