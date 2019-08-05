@@ -1,64 +1,50 @@
 ---
 title: Excel JavaScript API の概要
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa9574a93252c0011b211c39e37cc013beb64432
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e6064bf7e7dce6931079fc2d3eb262533da7edf3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910148"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575633"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API の概要
 
-Excel の JavaScript API を使用して、Excel 2016 以降のアドインをビルドします。 API で使用できる Excel オブジェクトの概要を次に示します。 オブジェクトのページの各リンクには、オブジェクトで使用できるプロパティ、イベント、メソッドの説明が含まれています。 メニューからのリンクを調べて、詳細を確認してください。
+Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、Excel のオブジェクトを操作します。
 
-便宜上、Excel の主要なオブジェクトの一部を以下に示します。
+* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/javascript/api/excel) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
-- [ブック](/javascript/api/excel/excel.workbook): ワークシート、テーブル、範囲などの関連するブック オブジェクトを含む最上位オブジェクトです。関連する参照情報を一覧表示するためにも使用されます。
+* **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-- [Worksheet](/javascript/api/excel/excel.worksheet):ブック内のワークシートを表します。
-  - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection): ブック内の **Worksheet** オブジェクトのコレクション。
-  - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): **Worksheet** オブジェクトの保護を表します。
+ドキュメントのこのセクションでは、Excel JavaScript API に焦点を当てて、そしてそれを Excel on the web または Excel 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[JavaScript API for Office](../javascript-api-for-office.md)」を参照してください。 
 
-- [Range](/javascript/api/excel/excel.range): 1 つのセル、1 つの行、または 1 つの列を表すか、あるいは、1 つ以上の連続したセル範囲を含むセルの選択範囲を表します。
-  - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat): ルールの条件が満たされたときに範囲に適用されるルールと形式を定義するオブジェクトです。
-  - [DataValidation](/javascript/api/excel/excel.datavalidation): さまざまな基準に基づいて範囲へのユーザー入力を制限するオブジェクトです。
-  - [RangeSort](/javascript/api/excel/excel.rangesort): 範囲の並べ替え操作を管理するオブジェクトを表します。
+## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 
-- [Table](/javascript/api/excel/excel.table): データの管理が簡単になるように設計された、体系化されたセルのコレクションを表します。
-  - [TableCollection](/javascript/api/excel/excel.tablecollection):ブックまたはワークシート内のテーブルのコレクション。
-  - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection):テーブル内のすべての列のコレクション。
-  - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection): テーブル内のすべての行のコレクションです。
-  - [TableSort](/javascript/api/excel/excel.tablesort): テーブルの並べ替え操作を管理するオブジェクトを表します。
+重要なプログラミングの概念に関する詳細情報については、次の記事を参照してください。
+ 
+- [Excel JavaScript API を使用した基本的なプログラミングの概念](../../excel/excel-add-ins-core-concepts.md)
 
-- [Chart](/javascript/api/excel/excel.chart): 基になるデータを視覚的に表示する、ワークシート内の Chart オブジェクトを表します。
-  - [ChartCollection](/javascript/api/excel/excel.chartcollection): ワークシート内のグラフのコレクションです。
+- [Excel JavaScript API を使用した高度なプログラミングの概念](../../excel/excel-add-ins-advanced-concepts.md)
 
-- [PivotTable](/javascript/api/excel/excel.pivottable): データの階層型のグループ化とプレゼンテーションを行う Excel のピボットテーブルを表します。
-  - [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection): ワークシート内のピボットテーブルのコレクションです。
+## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
 
-- [Filter](/javascript/api/excel/excel.filter): テーブルの列のフィルター処理を管理するオブジェクトを表します。
+ドキュメントのこのセクションにあるその他の記事を使用して、[イベント](../../excel/excel-add-ins-events.md)、[グラフ](../../excel/excel-add-ins-charts.md)、[範囲](../../excel/excel-add-ins-ranges.md)、[テーブル](../../excel/excel-add-ins-tables.md)、[ワークシート](../../excel/excel-add-ins-worksheets.md)などの操作について学びます。 また、このセクションでは[Excel アドインの共同編集](../../excel/co-authoring-in-excel-add-ins.md)、[データ検証](../../excel/excel-add-ins-data-validation.md)、[エラー処理](../../excel/excel-add-ins-error-handling.md)、[パフォーマンスの最適化](../../excel/performance.md)などの Excel JavaScript API の概念についてのガイダンスを確認できます。 すべての提供可能な記事の一覧については、目次でご確認ください。
 
-- [NamedItem](/javascript/api/excel/excel.nameditem): セルまたは値の範囲の定義済みの名前を表します。
-  - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection):ブック内の **NamedItem** オブジェクトのコレクション。
+Excel JavaScript API を使用して Excel のオブジェクトにアクセスするための実践的なエクスペリエンスに関しては、「[Excel アドインのチュートリアル](../../tutorials/excel-tutorial.md)」を完了してください。 
 
-- [バインド](/javascript/api/excel/excel.binding): ブックのセクションへのバインドを表す抽象クラス。
-  - [BindingCollection](/javascript/api/excel/excel.bindingcollection): ブック内の **Binding** オブジェクトのコレクションです。
+Excel JavaScript API オブジェクト モデルに関する詳細情報については、[Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel)に関するページを参照してください。
 
-## <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
+## <a name="try-out-code-samples-in-script-lab"></a>Script Lab でコード サンプルを試してみる
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 Excel JavaScript API 要件セットの詳細については、「[Excel JavaScript API の要件セット](../requirement-sets/excel-api-requirement-sets.md)」の記事を参照してください。
-
-## <a name="excel-javascript-api-reference"></a>Excel JavaScript API リファレンス
-
-Excel JavaScript API の詳細については、[Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel)に関するページを参照してください。
+[Script Lab](../../overview/explore-with-script-lab.md) を使用すると、API を使用してタスクを完了する方法を示す組み込みのサンプルのコレクションを使用して操作をすぐに開始できます。 Script Lab のサンプルを実行すると、作業ウィンドウまたはワークシートですばやく結果を表示したり、API のしくみをサンプルで確認して学んだり、独自のアドインのプロトタイプにサンプルを使用したりもできます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドインの概要](/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
-- [GitHub の Excel アドインのサンプル](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
+- [Excel アドイン ドキュメント](../../excel/index.md)
+- [Excel アドインの概要](../../excel/excel-add-ins-overview.md)
+- [Excel JavaScript API リファレンス](/javascript/api/excel)
+- [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)
 - [API オープン仕様](../openspec/openspec.md)
