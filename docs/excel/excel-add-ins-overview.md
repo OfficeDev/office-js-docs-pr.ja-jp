@@ -1,14 +1,14 @@
 ---
 title: Excel アドインの概要
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: fbb0f69e7c32776fdd0bce6e5c10f39c562a5cbe
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128235"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575570"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -17,6 +17,7 @@ Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーな
 - Excel オブジェクトを操作して Excel データを読み書きします。
 - Web ベースの作業ウィンドウまたはコンテンツ ウィンドウを使用して機能を拡張します
 - カスタム リボン ボタンやコンテキスト メニューの項目を追加します
+- カスタム関数を追加します
 - ダイアログ ウィンドウを使用して充実した操作を提供します
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
@@ -52,7 +53,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Excel アドインの機能
 
-ブック内のコンテンツの操作の他に、Excel アドインでは、カスタム リボンのボタンやメニュー コマンドを追加したり、作業ウィンドウを挿入したり、ダイアログ ボックスを開いたり、グラフや対話型のビジュアル化などの豊富な Web ベースのオブジェクトをワークシート内に埋め込むことができます。
+ブック内のコンテンツの操作の他に、Excel アドインでは、カスタム リボンのボタンやメニュー コマンドを追加したり、作業ウィンドウを挿入したり、カスタム関数を追加したり、ダイアログ ボックスを開いたり、グラフや対話型のビジュアル化などの豊富な Web ベースのオブジェクトをワークシート内に埋め込むことができます。
 
 ### <a name="add-in-commands"></a>アドイン コマンド
 
@@ -73,6 +74,16 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 ![Excel の作業ウィンドウ アドイン](../images/excel-add-in-task-pane-insights.png)
 
 作業ウィンドウの詳細については、「[Office アドインの作業ウィンドウ](../design/task-pane-add-ins.md)」を参照してください。Excel の作業ウィンドウを実装するサンプルについては、「[Excel アドインの JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)」を参照してください。
+
+### <a name="custom-functions"></a>カスタム関数
+
+開発者は、カスタム関数を使用して関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。 ユーザーは Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。 
+
+**カスタム関数**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+カスタム関数の詳細については、「[Excel でカスタム関数を作成する](custom-functions-overview.md)」を参照してください。
 
 ### <a name="dialog-boxes"></a>ダイアログ ボックス
 
@@ -100,14 +111,15 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 * **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
 
-* **共通 API**: Office 2013 で導入された共通 API を使用すると、Word、Excel、PowerPoint など複数の種類のホスト アプリケーションに共通する UI、ダイアログ、クライアント設定などの機能にアクセスできます。 共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
+* **共通 API**: Office 2013 で導入された共通 API を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
 ## <a name="next-steps"></a>次の手順
 
-[最初の Excel アドインを作成する](excel-add-ins-get-started-overview.md)ことから始めます。 次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
+[最初の Excel アドインを作成する](../quickstarts/excel-quickstart-jquery.md)ことから始めます。 次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
 
 ## <a name="see-also"></a>関連項目
 
+- [Excel アドイン ドキュメント](index.md)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)

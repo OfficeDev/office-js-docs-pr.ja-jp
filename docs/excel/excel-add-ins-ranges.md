@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b434042be7328a6598d46716f2b7020e5972823e
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449660"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620399"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -23,7 +23,7 @@ ms.locfileid: "32449660"
 
 ### <a name="get-range-by-address"></a>アドレスによって範囲を取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートからアドレス **B2:B5** の範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートからアドレス **B2:C5** の範囲を取得し、**address** プロパティを読み込んで、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -543,10 +543,7 @@ Excel.run(function (context) {
 
 範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。 この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。
 
-## <a name="find-a-cell-using-string-matching-preview"></a>文字列のマッチングを使用してセルを検索する (プレビュー)
-
-> [!NOTE]
-> 現在、Range オブジェクトの `find` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-a-cell-using-string-matching"></a>文字列のマッチングを使用してセルを検索する
 
 `Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。
 

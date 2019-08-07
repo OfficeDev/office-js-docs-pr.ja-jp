@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/03/2019
 localization_priority: Priority
-ms.openlocfilehash: bf1b62c4ba6e9790cd70a7070dd3c8d682b2dc56
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 0446147f7a2ca44853c3843f11c9375d020f14d0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127682"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575577"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -74,32 +74,32 @@ _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で�
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
-[id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
-[version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
-[providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
+[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
+[id]: /office/dev/add-ins/reference/manifest/id
+[version]: /office/dev/add-ins/reference/manifest/version
+[providername]: /office/dev/add-ins/reference/manifest/providername
+[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
+[displayname]: /office/dev/add-ins/reference/manifest/displayname
+[description]: /office/dev/add-ins/reference/manifest/description
+[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
-[set*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[form*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
-[formsettings*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[hosts*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts
+[permissions (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissions (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
+[rule (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
+[rule (mailapp)]: /office/dev/add-ins/reference/manifest/rule
+[requirements (mailapp)*]: /office/dev/add-ins/reference/manifest/requirements
+[set*]: /office/dev/add-ins/reference/manifest/set
+[sets (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
+[form*]: /office/dev/add-ins/reference/manifest/form
+[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
+[sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
+[hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
@@ -144,6 +144,10 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Office.js API 呼び出しが行われるドメインを指定する
+
+アドインは、マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で参照されているドメインから Office.js API 呼び出しを行うことができます。 アドイン内に、Office.js API にアクセスする必要がある他の IFrame がある場合は、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定されているリストにそのソース URL のドメインを追加します。 `AppDomains` リストに含まれていないソースを持つ IFrame が Office.js API 呼び出しを行おうとすると、アドインには[アクセス許可の拒否エラー](../reference/javascript-api-for-office-error-codes.md)が返されます。 
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>マニフェスト v1.1 XML ファイルの例とスキーマ
 

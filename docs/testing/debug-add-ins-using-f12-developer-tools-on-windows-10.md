@@ -3,26 +3,26 @@ title: Windows 10 で開発者ツールを使用してアドインをデバッ�
 description: ''
 ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454882"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575675"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Windows 10 で開発者ツールを使用してアドインをデバッグする
 
 Windows 10 のアドインのデバッグに役立つ IDE の外部の開発者ツールがあります。 これは、IDE の外部でアドインを実行しているときに問題を調査する必要がある場合に便利です。
 
-使用するツールは、アドインが Edge または Internet Explorer のどちらで実行されているかによって異なります。 これは、Windows 10 のバージョンとコンピューターにインストールされている Office のバージョンによって決まります。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。 
+使用するツールは、アドインが Microsoft Edge または Internet Explorer のどちらで実行されているかによって異なります。 これは、Windows 10 のバージョンとコンピューターにインストールされている Office のバージョンによって決まります。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。 
 
 
 > [!NOTE]
 > この記事の手順を使用して、実行関数を使用する Outlook アドインをデバッグすることはできません。 実行関数を使用する Outlook アドインのデバッグには、スクリプト モードの Visual Studio またはその他のスクリプト デバッガーにアタッチすることをお勧めします。
 
-## <a name="when-the-add-in-is-running-in-edge"></a>アドインが Edge で実行されている場合
+## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>アドインが Microsoft Edge で実行されている場合
 
-アドインが Edge で実行されている場合は、[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab) を使用できます。 
+アドインが Microsoft Edge で実行されている場合は、[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab) を使用できます。 
 
 1. アドインを実行します。 
 

@@ -3,12 +3,12 @@ title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: acd16bb8a8d08aa6dd05f0f56921e285ee1e2e1f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127021"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575689"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -82,7 +82,7 @@ ms.locfileid: "35127021"
 
 3. **[Office アドイン]** ダイアログ ボックスの上部にある **[共有フォルダー]** を選びます。
 
-4. アドインの名前を選び、**[OK]** を選択して、アドインを挿入します。
+4. アドインの名前を選び、**[追加]** を選択して、アドインを挿入します。
 
 ## <a name="see-also"></a>関連項目
 

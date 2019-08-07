@@ -1,138 +1,46 @@
 ---
 title: Word JavaScript API の概要
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/05/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 92b66b98776c1ad6b2d824af8bf13b01f2807384
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: fbc9e8293642d1ab8edf32d568a5dab7ef77a8f0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910204"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575626"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
-Word には、ドキュメント コンテンツおよびメタデータとデータをやり取りするアドインを作成するために使用できる豊富な API のセットが用意されています。これらの API を使用して、Word を統合および拡張する魅力的なエクスペリエンスを作成します。コンテンツのインポートとエクスポート、別のデータ ソースから新しいドキュメントのアセンブル、カスタムのドキュメント ソリューションを作成するドキュメント ワークフローとの統合を行えます。
+Word アドインは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して、Word のオブジェクトを操作します。
 
-2 つの JavaScript API を使用して、Word 文書のオブジェクトおよびメタデータと対話できます。
+* **Word JavaScript API**: Office 2016 で導入された [Word JavaScript API](/javascript/api/word) には、Word 文書内のオブジェクトとメタデータへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
-- Word JavaScript API - Office 2016 で導入。
-- [JavaScript API for Office](../javascript-api-for-office.md) (Office.js) - Office 2013 で導入。
+* **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-## <a name="word-javascript-api"></a>Word JavaScript API
+ドキュメントのこのセクションでは、Word JavaScript API に焦点を当てて、そしてそれを Word on the web または Word 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[JavaScript API for Office](../javascript-api-for-office.md)」を参照してください。 
 
-Word JavaScript API は Office.js によって読み込まれます。Word JavaScript API では、ドキュメントや段落などのオブジェクトとの対話方法が変わります。Word JavaScript API は、これらのそれぞれのオブジェクトの取得や更新をする個々の非同期の API を提供するのではなく、Word で実行されている実際のオブジェクトに対応する JavaScript の “プロキシ” オブジェクトを提供します。プロキシ オブジェクトのプロパティの読み取りと書き込みを同期的に行い、プロキシ オブジェクトに操作を実行する同期メソッドを呼び出すことによって、それらのプロキシ オブジェクトを操作することができます。プロキシ オブジェクトに対するこうした操作は実行中のスクリプトですぐには認識されません。**context.sync** メソッドは、キューに入れられた命令を実行し、また読み込まれた Word オブジェクトのプロパティをスクリプトで使用するために取得することで、実行中の JavaScript オブジェクトと Office の実際のオブジェクトとの間で状態を同期します。
+## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 
-## <a name="javascript-api-for-office"></a>JavaScript API for Office
+重要なプログラミング概念の詳細については、「[Word JavaScript API を使用した基本的なプログラミングの概念](../../word/word-add-ins-core-concepts.md)」を参照してください。
+ 
+## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
 
-Office.js は、次の場所から参照できます。
+ドキュメントのこのセクションに記載されている他の記事を参照すると、[アドインからドキュメント全体を取得する](../../word/get-the-whole-document-from-an-add-in-for-word.md)方法、[検索オプションを使用して Word アドインでテキストを検索する](../../word/search-option-guidance.md)方法などを学習できます。 すべての提供可能な記事の一覧については、目次でご確認ください。
 
-- https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 運用環境のアドインには、このリソースを使用します。
-- https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - プレビュー機能を試している場合は、このリソースを使用します。
+Word JavaScript API を使用して Word のオブジェクトにアクセスするための実践的なエクスペリエンスに関しては、「[Word アドインのチュートリアル](../../tutorials/word-tutorial.md)」を完了してください。 
 
-[Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs) を使用している場合、[Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) をダウンロードして、Office.js を含むプロジェクト テンプレートを取得できます。[nuget から Office.js を取得する](https://www.nuget.org/packages/Microsoft.Office.js/)こともできます。
+Word JavaScript API オブジェクト モデルの詳細については、[Word JavaScript API リファレンス ドキュメント](/javascript/api/word)に関するページを参照してください。
 
-TypeScript を使用していて npm がある場合、コマンド ライン インターフェイスにこれを入力すると、TypeScript の定義を取得できます: `typings install office-js --ambient`。
+## <a name="try-out-code-samples-in-script-lab"></a>Script Lab でコード サンプルを試してみる
 
-## <a name="running-word-add-ins"></a>Word アドインを実行します
-
-アドインを実行するには、Office.initialize イベント ハンドラーを使用します。アドインの初期化の詳細については、「[JavaScript API for Office について](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
-
-Word 2016 以降を対象とするアドインは、関数を **Word.run()** メソッドに渡すことによって後で実行されます。 **run** メソッドに渡される関数には、context 引数を含める必要があります。 この[コンテキスト オブジェクト](/javascript/api/word/word.requestcontext)は、Office オブジェクトから取得するコンテキスト オブジェクトとは異なりますが、これは Word ランタイム環境とやりとりするためにも使用されます。 コンテキスト オブジェクトを使用して、Word JavaScript API オブジェクト モデルにアクセスできます。 次の例では、**Word.run()** メソッドを使用することにより、Word アドインを初期化して実行する方法について示します。
-
-```js
-(function () {
-    "use strict";
-
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
-
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
-
-### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Word 文書を Word JavaScript API のプロキシ オブジェクトと同期する
-
-Word JavaScript API オブジェクト モデルは、Word 内のオブジェクトと緩く結合されています。Word JavaScript API のオブジェクトは、Word 文書内のオブジェクトのプロキシです。プロキシ オブジェクトで実行されたアクションは、ドキュメントの状態が同期されるまで、Word では認識されません。逆に、Word 文書の状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトでは認識されません。ドキュメントの状態を同期するには、**context.sync()** メソッドを実行します。次の例では、本文のプロキシ オブジェクトと、その本文プロキシ オブジェクトにテキスト プロパティを読み込むためのキューに登録済みのコマンドを作成し、さらに **context.sync()** メソッドを使用してWord 文書内の本文と本文プロキシ オブジェクトとを同期します。
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the document body.
-    // The body object hasn't been set with any property values.
-    var body = context.document.body;
-
-    // Queue a command to load the text property for the proxy document body object.
-    context.load(body, 'text');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log("Body contents: " + body.text);
-    });
-})
-```
-
-### <a name="executing-a-batch-of-commands"></a>コマンドのバッチを実行する
-
-Word のプロキシ オブジェクトには、オブジェクト モデルにアクセスして更新するためのメソッドが用意されています。これらのメソッドは、バッチでキューに入れられた順序で順番に実行されます。context.sync() 呼び出しが行われると、キューに入れられたすべてのコマンドが実行されます。
-
-次の例では、コマンドのキューが機能する仕組みを示しています。**context.sync()** が呼び出されると、本文テキストを読み込むコマンドが Word で実行されます。次に、Word の本文にテキストを挿入するコマンドが生成されます。その結果は本文のプロキシ オブジェクトに返されます。Word JavaScript API の **body.text** プロパティの値は、テキストが Word 文書に挿入される<u>前</u>の Word 文書本文の値です。
-
-```js
-// Run a batch operation against the Word JavaScript API.
-Word.run(function (context) {
-
-    // Create a proxy object for the document body.
-    var body = context.document.body;
-
-    // Queue a command to load the text property of the proxy body object.
-    context.load(body, 'text');
-
-    // Queue a command to insert text into the end of the Word document body.
-    body.insertText('This is text inserted after loading the body.text property',
-                    Word.InsertLocation.end);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log("Body contents: " + body.text);
-    });
-})
-```
-
-## <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
-
-要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 Word JavaScript API 要件セットの詳細については、「[Word JavaScript API の要件セット](../requirement-sets/word-api-requirement-sets.md)」の記事を参照してください。
-
-## <a name="word-javascript-api-reference"></a>Word JavaScript API リファレンス
-
-Word JavaScript API の詳細については、[Word JavaScript API リファレンス ドキュメント](/javascript/api/word)に関するページを参照してください。
+[Script Lab](../../overview/explore-with-script-lab.md) を使用すると、API を使用してタスクを完了する方法を示す組み込みのサンプルのコレクションを使用して操作をすぐに開始できます。 Script Lab のサンプルを実行すると、作業ウィンドウまたはドキュメントですばやく結果を表示したり、API のしくみをサンプルで確認して学んだり、独自のアドインのプロトタイプにサンプルを使用したりもできます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Word アドインの概要](/office/dev/add-ins/word/word-add-ins-programming-overview)
-- [Office アドイン プラットフォームの概要](/office/dev/add-ins/overview/office-add-ins)
-- [GitHub の Word アドインのサンプル](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Word アドイン ドキュメント](../../word/index.md)
+- [Word アドインの概要](../../word/word-add-ins-programming-overview.md)
+- [Word JavaScript API リファレンス](/javascript/api/word)
+- [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)
 - [API オープン仕様](../openspec/openspec.md)

@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: Office on the web で Office アドインをサイドロードしてテストをする
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e382e4de62df28584da2c827433af3102486e057
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 6a61a8bfb4860ac31803c40d8ecea1b550f79368
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126947"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575605"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 

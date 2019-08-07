@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 02/28/2019
+ms.date: 05/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e7ec76846a9097ea9e1ef6269661d51c42c21f62
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620165"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -72,10 +72,10 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>既存のブックのコピーを現在のブックに挿入する
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>既存のブックのコピーを現在のブックに挿入する (プレビュー)
 
 > [!NOTE]
-> 現在、`WorksheetCollection.addFromBase64` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetCollection.addFromBase64` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブックの [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) にある `addFromBase64` メソッドは、対象のブックのワークシートのコピーを現在のブックに挿入します。 他のブックのファイルは、`Excel.createWorkbook` 呼び出しの場合と同様に、base64 エンコード文字列として渡されます。
 
@@ -262,12 +262,60 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook"></a>ブックを保存する
+## <a name="comments-preview"></a>コメント (プレビュー)
 
 > [!NOTE]
-> 現在、`Workbook.save(saveBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> コメント API は現在、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.save(saveBehavior)` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
+ブック内のすべての[コメント](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)は、`Workbook.comments` プロパティによって追跡されます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。
+
+コメントをブックに追加するには、`CommentCollection.add` メソッドを使用して、コメントのテキストを文字列として渡し、コメントを追加するセルを文字列または [Range](/javascript/api/excel/excel.range) オブジェクトのいずれかとして渡します。 次のコード例は、コメントをセル **A2** に追加します。
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.comments;
+
+    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
+    comments.add("TODO: add data.", "A2");
+    return context.sync();
+});
+```
+
+各コメントには、作成者や作成日などの作成に関するメタデータが含まれています。 アドインによって作成されたコメントは、現在のユーザーによって作成されたものと見なされます。 次のサンプルは、**A2** に作成者のメール、作成者の名前、コメントの作成日を表示する方法を示しています。
+
+```js
+Excel.run(function (context) {
+    // Get the comment at cell A2.
+    var comment = context.workbook.comments.getItemByCell("Comments!A2");
+    comment.load(["authorEmail", "authorName", "creationDate"]);
+    return context.sync().then(function () {
+        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
+    });
+});
+```
+
+各コメントには、0 個以上の返信が含まれます。 `Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。 コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。 返信は、追加された順に表示されます。 次のコード サンプルは、ブックの最初のコメントに返信を追加します。
+
+```js
+Excel.run(function (context) {
+    // Get the first comment added to the workbook.
+    var comment = context.workbook.comments.getItemAt(0);
+    comment.replies.add("Thanks for the reminder!");
+    return context.sync();
+});
+```
+
+コメントまたはコメントの返信を編集するには、その `Comment.content` プロパティまたは `CommentReply.content` プロパティを設定します。 コメントまたはコメントの返信を削除するには、`Comment.delete` メソッドまたは `CommentReply.delete` メソッドを使用します。 コメントを削除すると、そのコメントに関連付けられている返信もすべて削除されます。
+
+> [!TIP]
+> コメントは、同じ手法を使用して[ワークシート](/javascript/api/excel/excel.worksheet) レベルでも管理できます。
+
+## <a name="save-the-workbook-preview"></a>ブックを保存する (プレビュー)
+
+> [!NOTE]
+> `Workbook.save` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+`Workbook.save` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションの `saveBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
 
 - `Excel.SaveBehavior.save` (既定値): ファイル名や保存場所を指定するようにユーザーに促すダイアログは表示されず、そのままファイルが保存されます。 ファイルが以前に保存されていない場合は、既定の場所に保存されます。 ファイルが以前に保存されている場合は、同じ場所に保存されます。
 - `Excel.SaveBehavior.prompt`: ファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。 ファイルが以前に保存されている場合、ファイルは同じ場所に保存され、ダイアログは表示されません。
@@ -279,12 +327,12 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook"></a>ブックを閉じる
+## <a name="close-the-workbook-preview"></a>ブックを閉じる (プレビュー)
 
 > [!NOTE]
-> 現在、`Workbook.close(closeBehavior)` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `Workbook.close` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.close(closeBehavior)` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションのパラメーターを 1 つ指定できます。値は次のいずれかになります。
+`Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションの `closeBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
 
 - `Excel.CloseBehavior.save` (既定値): ファイルは閉じる前に保存されます。 そのファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。
 - `Excel.CloseBehavior.skipSave`: ファイルはそのまま閉じられ、保存されません。 未保存の変更は失われます。

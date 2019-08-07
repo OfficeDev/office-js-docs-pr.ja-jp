@@ -1,14 +1,14 @@
 ---
 title: OneNote の JavaScript API のプログラミングの概要
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 852c68bc9edf370d0eef687fb4869b23d4f59fe4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 223d7cdf6770d21a16272b9a8602201cec77d111
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128637"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575661"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -87,6 +87,10 @@ function getPagesInSection() {
 
 [API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
 
+#### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
+
+要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判断します。 OneNote JavaScript API 要件セットの詳細については、「[OneNote JavaScript API の要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md)」を参照してください。
+
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
 **ドキュメント** オブジェクトを使って、[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドや [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) メソッドなどの共通 API にアクセスします。 
@@ -133,6 +137,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 ## <a name="see-also"></a>関連項目
 
+- [OneNote アドイン ドキュメント](index.md)
 - [最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
