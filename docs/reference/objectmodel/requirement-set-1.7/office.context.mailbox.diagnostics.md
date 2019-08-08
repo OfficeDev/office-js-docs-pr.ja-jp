@@ -1,14 +1,14 @@
 ---
 title: Office.--の要件セット1.7
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 2a79dbe7d392b809cf0de0b5ee7096473ea3e197
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e197374267d40056c6cb1dea8808e30f48eef65c
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127192"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231264"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -38,7 +38,7 @@ Outlook アドインに診断情報を提供します。
 
 ホスト アプリケーションの名前を表す文字列を取得します。
 
-文字列は、値 `Outlook`、`Mac Outlook`、`OutlookIOS`、または `OutlookWebApp` のいずれかになります。
+文字列は、値 `Outlook`、`OutlookWebApp`、`OutlookIOS`、または `OutlookAndroid` のいずれかになります。
 
 ##### <a name="type"></a>型
 
@@ -59,7 +59,7 @@ Outlook アドインに診断情報を提供します。
 
 ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。
 
-メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。 たとえば、文字列 `15.0.468.0` です。
+メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。 例として、"15.0.468.0" という文字列があります。
 
 ##### <a name="type"></a>型
 

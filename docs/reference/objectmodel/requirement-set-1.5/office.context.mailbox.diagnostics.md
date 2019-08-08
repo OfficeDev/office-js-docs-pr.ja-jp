@@ -3,12 +3,12 @@ title: Office.--の要件セット1.5
 description: ''
 ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 58325b88019988d55c565b5dc83efc25aca7266b
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9ecbf4382f10b86ecdea41706211094029be09d2
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127346"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231257"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -56,7 +56,7 @@ Outlook アドインに診断情報を提供します。
 
 ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。
 
-メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。 たとえば、文字列 `15.0.468.0` です。
+メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。 例として、"15.0.468.0" という文字列があります。
 
 ##### <a name="type"></a>型
 
