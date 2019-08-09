@@ -4,12 +4,12 @@ description: WordApi 1.3 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064880"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268560"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
@@ -201,16 +201,9 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.table#getrange-rangelocation-)|このテーブルを含む範囲、あるいはテーブルの開始または終了の範囲を取得します。|
 ||[headerRowCount](/javascript/api/word/word.table#headerrowcount)|ヘッダー行の数を取得および設定します。|
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|テーブル内のすべてのセルの水平方向の配置を取得および設定します。 値は、' Left '、' センタリング '、' Right '、または ' ジャスティファイ ' にすることができます。|
-||[ignorePunct](/javascript/api/word/word.table#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.table#ignorespace)||
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|テーブルにコンテンツ コントロールを挿入します。|
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
-||[matchCase](/javascript/api/word/word.table#matchcase)||
-||[matchPrefix](/javascript/api/word/word.table#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.table#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.table#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.table#matchwildcards)||
 ||[font](/javascript/api/word/word.table#font)|フォントを取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
 ||[isUniform](/javascript/api/word/word.table#isuniform)|すべてのテーブル行が均一かどうかを示します。 読み取り専用です。|
 ||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|テーブルの入れ子のレベルを取得します。 最上位のテーブルのレベルは、レベル 1 です。 読み取り専用です。|
@@ -224,7 +217,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[rowCount](/javascript/api/word/word.table#rowcount)|表の行数を取得します。 読み取り専用です。|
 ||[rows](/javascript/api/word/word.table#rows)|すべてのテーブルの行を取得します。 読み取り専用です。|
 ||[テーブル](/javascript/api/word/word.table#tables)|1 レベル深く入れ子にされた子テーブルを取得します。 読み取り専用。|
-||[search (searchText: string, searchOptions?: Word SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Table オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[search (searchText: string, searchOptions?: Word SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions-)|Table オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|テーブル、あるいはテーブルの開始位置または終了位置を選択して、Word の UI に移動します。|
 ||[setCellPadding (cellPaddingLocation: CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|セル内のスペースをポイント単位で設定します。|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|網かけの色を取得および設定します。 色は、"#RRGGBB" 形式で指定するか、色の名前を使用して指定します。|
@@ -274,14 +267,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[getNext ()](/javascript/api/word/word.tablerow#getnext--)|次の行を取得します。 この行が最後の行である場合にスローします。|
 ||[getNextOrNullObject()](/javascript/api/word/word.tablerow#getnextornullobject--)|次の行を取得します。 この行が最後の行の場合は、null オブジェクトを返します。|
 ||[horizontalAlignment](/javascript/api/word/word.tablerow#horizontalalignment)|行のすべてのセルの水平方向の配置を取得および設定します。 値は、' Left '、' センタリング '、' Right '、または ' ジャスティファイ ' にすることができます。|
-||[ignorePunct](/javascript/api/word/word.tablerow#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.tablerow#ignorespace)||
 ||[insertRows (Insertrows: Word Insertrows, rowCount: number, values?: string [] [])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|この行をテンプレートとして使用して、行を挿入します。 値を指定すると、新しい行に値を挿入します。|
-||[matchCase](/javascript/api/word/word.tablerow#matchcase)||
-||[matchPrefix](/javascript/api/word/word.tablerow#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.tablerow#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.tablerow#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.tablerow#matchwildcards)||
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|適切な行の高さをポイント単位で取得および設定します。|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|行のセルの数を取得します。 読み取り専用です。|
 ||[cells](/javascript/api/word/word.tablerow#cells)|セルを取得します。 読み取り専用です。|
@@ -289,7 +275,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|行がヘッダー行であるかどうかを確認します。 読み取り専用。 ヘッダー行の数を設定するには、テーブル オブジェクトの HeaderRowCount を使用します。|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|親テーブルを取得します。 読み取り専用。|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|親テーブル内の行のインデックスを取得します。 読み取り専用です。|
-||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|指定した SearchOptions を使用して、行の範囲に基づいて検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions-)|指定した SearchOptions を使用して、行の範囲に基づいて検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|行を選択し、その行に Word の UI を移動します。|
 ||[setCellPadding (cellPaddingLocation: CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|セル内のスペースをポイント単位で設定します。|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|網かけの色を取得および設定します。 色は、"#RRGGBB" 形式で指定するか、色の名前を使用して指定します。|

@@ -4,12 +4,12 @@ description: WordApi 1.1 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: a2839a2553d42701956fd2e75a86564c133d9a93
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 30a4378a74b0d2848a5a913cbafd4f6eb780f519
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064915"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268573"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 の新機能
 
@@ -24,8 +24,6 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|本文オブジェクトの内容を消去します。ユーザーは、消去された内容を元に戻す操作を実行できます。|
 ||[getHtml()](/javascript/api/word/word.body#gethtml--)|Body オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Body.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|本文オブジェクトの OOXML (Office オープン XML) 表記を取得します。|
-||[ignorePunct](/javascript/api/word/word.body#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.body#ignorespace)||
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 insertLocation の値には、'Start' または 'End' を指定できます。|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|リッチ テキスト コンテンツ コントロールで本文オブジェクトをラップします。|
 ||[insertFileFromBase64 (base64File: string, insertLocation: Word InsertLocation)](/javascript/api/word/word.body#insertfilefrombase64-base64file--insertlocation-)|文書を本文の指定された位置に挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
@@ -33,18 +31,13 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[insertOoxml (ooxml: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertooxml-ooxml--insertlocation-)|指定した位置に OOXML を挿入します。  insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.body#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 insertLocation の値には、'Start' または 'End' を指定できます。|
 ||[insertText (text: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#inserttext-text--insertlocation-)|テキストを本文の指定された位置に挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-||[matchCase](/javascript/api/word/word.body#matchcase)||
-||[matchPrefix](/javascript/api/word/word.body#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.body#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.body#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.body#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.body#contentcontrols)|本文に含まれるリッチテキストコンテンツコントロールオブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[font](/javascript/api/word/word.body#font)|本文のテキスト形式を取得します。 フォント名、サイズ、色、およびその他のプロパティを取得および設定するために使用します。 読み取り専用です。|
 ||[inlinePictures](/javascript/api/word/word.body#inlinepictures)|本文にある InlinePicture オブジェクトのコレクションを取得します。 コレクションに浮動イメージは含まれません。 読み取り専用です。|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|本文に含まれる paragraph オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentContentControl](/javascript/api/word/word.body#parentcontentcontrol)|本文を含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[text](/javascript/api/word/word.body#text)|本文のテキストを取得します。 insertText メソッドを使用して、テキストを挿入します。 読み取り専用です。|
-||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.body#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Body オブジェクトのスコープで、指定された SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.body#search-searchtext--searchoptions-)|Body オブジェクトのスコープで、指定された SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.body#select-selectionmode-)|本文を選択し、その本文に Word の UI を移動します。|
 ||[style](/javascript/api/word/word.body#style)|本文のスタイル名を取得または設定します。カスタム スタイルとローカライズされたスタイルの名前には、このプロパティを使用します。ロケール間で移植可能な組み込みスタイルを使用するには、"styleBuiltIn" プロパティを参照してください。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[外観](/javascript/api/word/word.contentcontrol#appearance)|コンテンツ コントロールの外観を取得または設定します。 値には、' BoundingBox '、' Tags '、または ' Hidden ' を指定できます。|
@@ -55,19 +48,12 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[削除 (keepContent: boolean)](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|コンテンツ コントロールとそのコンテンツを削除します。keepContent が true の場合、コンテンツは削除されません。|
 ||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|コンテンツコントロールオブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`ContentControl.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|コンテンツ コントロール オブジェクトの Office Open XML (OOXML) 表記を取得します。|
-||[ignorePunct](/javascript/api/word/word.contentcontrol#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.contentcontrol#ignorespace)||
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 InsertLocation の値には、' Start '、' End '、' Before '、または ' After ' を指定できます。 このメソッドは、' RichTextTable '、' RichTextTableRow '、および ' RichTextTableCell ' のコンテンツコントロールと共に使用することはできません。|
 ||[insertFileFromBase64 (base64File: string, insertLocation: Word InsertLocation)](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|指定した位置にコンテンツコントロールにドキュメントを挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 ||[insertHtml (html: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserthtml-html--insertlocation-)|コンテンツ コントロール内の指定された位置に HTML を挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 ||[insertOoxml (ooxml: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertooxml-ooxml--insertlocation-)|指定した位置に、コンテンツコントロールに OOXML を挿入します。  insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.contentcontrol#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 InsertLocation の値には、' Start '、' End '、' Before '、または ' After ' を指定できます。|
 ||[insertText (text: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserttext-text--insertlocation-)|コンテンツ コントロール内の指定された位置にテキストを挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-||[matchCase](/javascript/api/word/word.contentcontrol#matchcase)||
-||[matchPrefix](/javascript/api/word/word.contentcontrol#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.contentcontrol#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.contentcontrol#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.contentcontrol#matchwildcards)||
 ||[placeholderText](/javascript/api/word/word.contentcontrol#placeholdertext)|コンテンツ コントロールのプレースホルダー テキストを取得または設定します。 コンテンツ コントロールが空の場合は、淡色のテキストが表示されます。|
 ||[contentControls](/javascript/api/word/word.contentcontrol#contentcontrols)|コンテンツ コントロールのコンテンツ コントロール オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[font](/javascript/api/word/word.contentcontrol#font)|コンテンツ コントロールのテキストの書式設定を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
@@ -78,7 +64,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[text](/javascript/api/word/word.contentcontrol#text)|コンテンツ コントロールのテキストを取得します。 読み取り専用です。|
 ||[type](/javascript/api/word/word.contentcontrol#type)|コンテンツ コントロールの種類を取得します。 現在、リッチ テキストのコンテンツ コントロールのみがサポートされています。 読み取り専用です。|
 ||[removeWhenEdited 済み](/javascript/api/word/word.contentcontrol#removewhenedited)|コンテンツ コントロールを編集後に削除できるかどうかを示す値を取得または設定します。 cannotDelete と同時に使用することはできません。|
-||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|コンテンツコントロールオブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|コンテンツコントロールオブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.contentcontrol#select-selectionmode-)|コンテンツ コントロールを選択します。 その結果、Word は選択範囲にスクロールされます。|
 ||[style](/javascript/api/word/word.contentcontrol#style)|コンテンツコントロールのスタイル名を取得または設定します。 カスタム スタイルとローカライズされたスタイルの名前には、このプロパティを使用します。 ロケール間で移植可能な組み込みスタイルを使用するには、"styleBuiltIn" プロパティを参照してください。|
 ||[マーク](/javascript/api/word/word.contentcontrol#tag)|コンテンツコントロールを識別するタグを取得または設定します。|
@@ -121,8 +107,6 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstlineindent)|最初の行のインデントまたはぶら下げインデントの値をポイント数単位で取得または設定します。最初の行のインデントを設定するには、正の値を使用します。また、ぶら下げインデントを設定するには、負の値を使用します。|
 ||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Paragraph オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Paragraph.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|Paragraph オブジェクトの Office Open XML (OOXML) 表記を取得します。|
-||[ignorePunct](/javascript/api/word/word.paragraph#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.paragraph#ignorespace)||
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|段落オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。|
 ||[insertFileFromBase64 (base64File: string, insertLocation: Word InsertLocation)](/javascript/api/word/word.paragraph#insertfilefrombase64-base64file--insertlocation-)|指定した位置に段落に文書を挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
@@ -135,11 +119,6 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[lineSpacing](/javascript/api/word/word.paragraph#linespacing)|段落の行間をポイント数単位で取得または設定します。 Word UI では、この値が 12 で除算されます。|
 ||[lineUnitAfter](/javascript/api/word/word.paragraph#lineunitafter)|段落後の間隔の量 (グリッド線単位) を取得または設定します。|
 ||[lineUnitBefore](/javascript/api/word/word.paragraph#lineunitbefore)|段落前の間隔の幅をグリッド線数単位で取得または設定します。|
-||[matchCase](/javascript/api/word/word.paragraph#matchcase)||
-||[matchPrefix](/javascript/api/word/word.paragraph#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.paragraph#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.paragraph#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.paragraph#matchwildcards)||
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlinelevel)|段落のアウトライン レベルを取得または設定します。|
 ||[contentControls](/javascript/api/word/word.paragraph#contentcontrols)|段落内のコンテンツコントロールオブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[font](/javascript/api/word/word.paragraph#font)|段落のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用。|
@@ -147,7 +126,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentcontentcontrol)|段落を格納しているコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[text](/javascript/api/word/word.paragraph#text)|段落のテキストを取得します。 読み取り専用です。|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightindent)|段落の右インデントの値をポイント数単位で取得または設定します。|
-||[検索 (searchText: string, searchOptions:: Word SearchOptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Paragraph オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[検索 (searchText: string, searchOptions:: Word SearchOptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions-)|Paragraph オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.paragraph#select-selectionmode-)|段落を選択して、その段落に Word の UI を移動します。|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceafter)|段落後の間隔をポイント数単位で取得または設定します。|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spacebefore)|段落前の間隔をポイント数単位で取得または設定します。|
@@ -157,8 +136,6 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[delete()](/javascript/api/word/word.range#delete--)|文書から範囲と、その範囲の内容を削除します。|
 ||[getHtml()](/javascript/api/word/word.range#gethtml--)|Range オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Range.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|Range オブジェクトの OOXML 表記を取得します。|
-||[ignorePunct](/javascript/api/word/word.range#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.range#ignorespace)||
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|範囲オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。|
 ||[insertFileFromBase64 (base64File: string, insertLocation: Word InsertLocation)](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|指定した位置に文書を挿入します。 InsertLocation の値には、' Replace '、' Start '、' End '、' Before '、または ' After ' を指定できます。|
@@ -166,17 +143,12 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[insertOoxml (ooxml: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|指定した位置に OOXML を挿入します。  InsertLocation の値には、' Replace '、' Start '、' End '、' Before '、または ' After ' を指定できます。|
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertText (text: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#inserttext-text--insertlocation-)|指定した位置にテキストを挿入します。 InsertLocation の値には、' Replace '、' Start '、' End '、' Before '、または ' After ' を指定できます。|
-||[matchCase](/javascript/api/word/word.range#matchcase)||
-||[matchPrefix](/javascript/api/word/word.range#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.range#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.range#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.range#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|範囲内のコンテンツコントロールオブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[font](/javascript/api/word/word.range#font)|範囲のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用。|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|範囲内の paragraph オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentContentControl](/javascript/api/word/word.range#parentcontentcontrol)|範囲を格納するコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[text](/javascript/api/word/word.range#text)|範囲のテキストを取得します。 読み取り専用です。|
-||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.range#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Range オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
+||[search (searchText: string, searchOptions?: Word SearchOptions)](/javascript/api/word/word.range#search-searchtext--searchoptions-)|Range オブジェクトの範囲に対して、指定した SearchOptions を使用して検索を実行します。 検索結果は、範囲オブジェクトのコレクションです。|
 ||[select (selectionMode?:. SelectionMode)](/javascript/api/word/word.range#select-selectionmode-)|範囲を選択して、その範囲に Word の UI を移動します。|
 ||[style](/javascript/api/word/word.range#style)|範囲のスタイル名を取得または設定します。 カスタム スタイルとローカライズされたスタイルの名前には、このプロパティを使用します。 ロケール間で移植可能な組み込みスタイルを使用するには、"styleBuiltIn" プロパティを参照してください。|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|

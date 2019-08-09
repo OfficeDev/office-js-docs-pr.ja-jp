@@ -3,12 +3,12 @@ title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 11/16/2018
 localization_priority: Normal
-ms.openlocfilehash: 8eeaedffcc143b0e8d61e9c151f3786b67a0e3fc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a7ec2e5b0dee5be651e4670effd86bc4acbac028
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449730"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268122"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -19,7 +19,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 例えば、`<OfficeApp>` 要素では、`<Id>`、`<Version>`、`<ProviderName>` はこの順序で表示する必要があります。 `<AlternateId>` 要素が追加された場合、この要素は `<Id>` 要素と `<Version>` 要素の間に配置する必要があります。 順序が間違っている要素が 1 つでもあると、マニフェストは有効にならず、アドインも読み込まれません。
 
 > [!NOTE]
-> [Office アドイン検証ツール](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator)では、要素の順序が間違っている場合と、要素が間違った親の下にある場合とで、同じエラー メッセージが使用されます。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子*である*と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
+> [Office-ツールボックス内のバリデーター](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox)は、要素が不適切な親の下にある場合と同じエラーメッセージを使用します。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子*である*と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
 
 ある親要素の子要素の正しい順序を確認するには、次の手順を実行します。 (XDSD ファイルは非常に複雑なため、ここでご紹介するのは簡素化されたプロセスです。 XSD ファイルの詳細な説明はこのドキュメントの目的の範囲外です。)
 

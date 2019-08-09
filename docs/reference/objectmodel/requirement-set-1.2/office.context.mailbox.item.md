@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: dabc3717738539f92d211acf6d407ff06a796a89
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 536c8b7bece6df6f9609406f3eccc50b330d7925
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064411"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268692"
 ---
 # <a name="item"></a>item
 
@@ -23,6 +23,46 @@ ms.locfileid: "36064411"
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+##### <a name="members-and-methods"></a>メンバーとメソッド
+
+| メンバー | 種類 |
+|--------|------|
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetails) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [organizer](#organizer-emailaddressdetails) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
+| [sender](#sender-emailaddressdetails) | Member |
+| [start](#start-datetime) | Member |
+| [subject](#subject-stringsubject) | メンバー |
+| [to](#to-arrayemailaddressdetailsrecipients) | メンバー |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | メソッド |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | メソッド |
+| [displayReplyForm](#displayreplyformformdata-callback) | メソッド |
+| [getEntities](#getentities--entities) | メソッド |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | メソッド |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | メソッド |
+| [getRegExMatches](#getregexmatches--object) | メソッド |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | メソッド |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | メソッド |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | メソッド |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | メソッド |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | メソッド |
 
 ### <a name="example"></a>例
 
@@ -155,7 +195,7 @@ Office.context.mailbox.item.body.getAsync(
 }
 ```
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>cc: <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>cc: <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 メッセージの CC (カーボン コピー) の受信者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -183,7 +223,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>型
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 ##### <a name="requirements"></a>要件
 
@@ -383,7 +423,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 既定のメッセージ クラスを拡張したカスタム メッセージ クラス (たとえば、カスタム予定表メッセージ クラス `IPM.Appointment.Contoso` など) を作成できます。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>Type
 
 *   String
 
@@ -526,7 +566,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>任意出席者: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>任意出席者: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 イベントの任意出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -555,7 +595,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>型
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 ##### <a name="requirements"></a>要件
 
@@ -589,7 +629,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>requiredatて dees: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>requiredatて dees: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 イベントの必須出席者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -619,7 +659,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>型
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 ##### <a name="requirements"></a>要件
 
@@ -748,7 +788,7 @@ function callback(asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>宛先: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>宛先: 配列. <[emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 メッセージの **To** 行にある受信者へのアクセスを提供します。 オブジェクトの種類とアクセスのレベルは、現在のアイテムのモードによって異なります。
 
@@ -776,7 +816,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>型
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 ##### <a name="requirements"></a>要件
 
@@ -854,13 +894,13 @@ Office アドインが Outlook on the web で実行されている場合、 `add
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 属性| 説明|
+|名前| 種類| 属性| 説明|
 |---|---|---|---|
 |`itemId`| String||添付するアイテムの Exchange 識別子。最大長は 100 文字です。|
 |`attachmentName`| String||添付するアイテムの件名。 最大の長さは、255 文字です。|
 |`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
 |`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
-|`callback`| 関数| &lt;任意&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
+|`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルの追加に失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
 
 ##### <a name="errors"></a>エラー
 
@@ -1163,7 +1203,7 @@ Office.context.mailbox.item.displayReplyForm(
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getEntitiesByType (entityType) > (nullable) {Array. < (String |[連絡先](/javascript/api/outlook/office.contact)|[会議の提案](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[tasksuggestion](/javascript/api/outlook/office.tasksuggestion)? view = outlook-js-1.2) >}
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-12meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-12phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-12tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>}
 
 選択したアイテムの本文内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。
 
@@ -1192,7 +1232,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 | `entityType` の値 | 返される配列内のオブジェクトの型 | 必要なアクセス許可のレベル |
 | --- | --- | --- |
-| `Address` | 文字列 | **制限あり** |
+| `Address` | String | **制限あり** |
 | `Contact` | 連絡先 | **ReadItem** |
 | `EmailAddress` | 文字列 | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
@@ -1200,7 +1240,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
 | `URL` | 文字列 | **制限あり** |
 
-型: < (文字列 |[連絡先](/javascript/api/outlook/office.contact)|[会議の提案](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[tasksuggestion](/javascript/api/outlook/office.tasksuggestion)? view = outlook-js-1.2) >
+型:Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>
 
 ##### <a name="example"></a>例
 
@@ -1220,7 +1260,7 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getFilteredEntitiesByName (name) > (nullable) {Array. < (String |[連絡先](/javascript/api/outlook/office.contact)|[会議の提案](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[tasksuggestion](/javascript/api/outlook/office.tasksuggestion)? view = outlook-js-1.2) >}
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-12meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-12phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-12tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>}
 
 マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。
 
@@ -1247,7 +1287,7 @@ Office.initialize = function () {
 
 `FilterName` 要素の値が `name` パラメーターと一致するマニフェスト内に `ItemHasKnownEntity` 要素がない場合、メソッドは `null` を返します。`name` パラメーターがマニフェスト内の `ItemHasKnownEntity` 要素と一致せず、現在のアイテム内に一致するエンティティがない場合は、メソッドは空の配列を返します。
 
-型: < (文字列 |[連絡先](/javascript/api/outlook/office.contact)|[会議の提案](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[tasksuggestion](/javascript/api/outlook/office.tasksuggestion)? view = outlook-js-1.2) >
+型:Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>
 
 #### <a name="getregexmatches--object"></a>getRegExMatches() → {Object}
 

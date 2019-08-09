@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.2
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 9dd492046df6325c5c2cdb04dbd1c8bc331b3471
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 126e9392980510656bf9da8cf760b616b623d153
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064397"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268706"
 ---
 # <a name="office"></a>Office
 
@@ -20,6 +20,14 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+##### <a name="members-and-methods"></a>メンバーとメソッド
+
+| メンバー | 種類 |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [SourceProperty](#sourceproperty-string) | メンバー |
 
 ### <a name="namespaces"></a>名前空間
 

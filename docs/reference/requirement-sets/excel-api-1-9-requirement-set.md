@@ -4,12 +4,12 @@ description: ExcelApi 1.9 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b28406f9792278e554ff055a59ef4833be915aba
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064866"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268622"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Excel JavaScript API 1.9 の新機能
 
@@ -336,12 +336,8 @@ ms.locfileid: "36064866"
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|`hyperlink` プロパティを表します。|
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)|`style` プロパティを表します。|
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|`columnHidden` プロパティを表します。|
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-||[format: Excel. CellPropertiesFormat & {
-            columnWidth?](/javascript/api/excel/excel.settablecolumnproperties # 形式)|`format` プロパティを表します。|
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel. CellPropertiesFormat & {
-            rowHeight?](/javascript/api/excel/excel.settablerowproperties # 形式)|`format` プロパティを表します。|
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+||[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablecolumnproperties#format)|`format` プロパティを表します。|
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablerowproperties#format)|`format` プロパティを表します。|
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|`rowHidden` プロパティを表します。|
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Shape オブジェクトの代替説明テキストを取得または設定します。|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Shape オブジェクトの代替タイトル テキストを取得または設定します。|

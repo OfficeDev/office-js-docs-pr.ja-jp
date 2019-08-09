@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.7
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: 2cbe219e051eff63e27995e07a288ee787eeaf99
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 88b99a541653138ea9457d417d767ce8aa516cea
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064516"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268384"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -528,7 +528,15 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
 | `options.asyncContext` | オブジェクト |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
+
+##### <a name="errors"></a>エラー
+
+|エラー コード|説明|
+|------------|-------------|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
+|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
 
 ##### <a name="requirements"></a>要件
 
@@ -574,14 +582,22 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+
+##### <a name="errors"></a>エラー
+
+|エラー コード|説明|
+|------------|-------------|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
+|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
 
 ##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成と閲覧|
 
@@ -610,8 +626,16 @@ function cb(asyncResult) {
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+
+##### <a name="errors"></a>エラー
+
+|エラー コード|説明|
+|------------|-------------|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
+|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
 
 ##### <a name="requirements"></a>要件
 
@@ -677,7 +701,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
-|`callback`| 関数||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件

@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: de7c48faf966f9b3f5d1bb76f69aa16810a5381f
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 7e5bbe4e5769cf92de8073d439c3d3472b5c3899
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064369"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268419"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -23,6 +23,20 @@ Microsoft Outlook の Outlook アドインオブジェクトモデルへのア�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+##### <a name="members-and-methods"></a>メンバーとメソッド
+
+| メンバー | 種類 |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | メンバー |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | メソッド |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | メソッド |
+| [displayAppointmentForm](#displayappointmentformitemid) | メソッド |
+| [displayMessageForm](#displaymessageformitemid) | メソッド |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | メソッド |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | メソッド |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | メソッド |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | メソッド |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -257,8 +271,16 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+
+##### <a name="errors"></a>エラー
+
+|エラー コード|説明|
+|------------|-------------|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
+|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
 
 ##### <a name="requirements"></a>要件
 
@@ -290,8 +312,16 @@ function cb(asyncResult) {
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+
+##### <a name="errors"></a>エラー
+
+|エラー コード|説明|
+|------------|-------------|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
+|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
 
 ##### <a name="requirements"></a>要件
 

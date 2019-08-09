@@ -5,12 +5,12 @@ ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9e1dc93079a3930fc5ebd88ef4d91ef2b899e51c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 4b74463eafd5ac1b70e59cef6ef1f9f33cf0ffa2
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771808"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268181"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -64,9 +64,9 @@ ms.locfileid: "35771808"
 
 4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
-Windows の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
+Windows または Mac 上の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -146,9 +146,9 @@ Web からデータを統合することは、カスタム関数を使用して 
     npm run build
     ```
 
-4. Excel on the web または Windows の場合は、次の手順を実行して、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。
+4. Excel でアドインを再登録するには、次の手順を実行します (web、Windows、または Mac の Excel の場合)。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。
 
-### <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
@@ -214,9 +214,9 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Excel on the web または Windows の場合は、次の手順を実行して、Excel でアドインを再登録します。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。 
+3. Excel でアドインを再登録するには、次の手順を実行します (web、Windows、または Mac の Excel の場合)。 新しい関数を使用できるようにするには、これらの手順を完了する必要があります。 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上の Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 

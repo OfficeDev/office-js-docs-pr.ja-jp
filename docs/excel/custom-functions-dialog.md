@@ -3,16 +3,16 @@ ms.date: 06/18/2019
 description: JavaScript を使用して Excel のカスタム関数でダイアログ ボックスを作成します。
 title: カスタム関数からダイアログ ボックスを表示する
 localization_priority: Priority
-ms.openlocfilehash: b8a2a6a68f23121fe4d3931c13fd45af6034c7d2
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 67a61bde409d45b2c96118de95f0839e7a73ddfe
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940634"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268153"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>カスタム関数からダイアログ ボックスを表示する
 
-ユーザーがカスタム関数を操作する必要がある場合は、[`Office.Dialog` オブジェクト](/javascript/api/office-runtime/officeruntime.dialog?view=office-js)を使用してダイアログ ボックスを作成できます。 ダイアログ ボックスを使用するための一般的なシナリオは、カスタム関数が web サービスにアクセスできるよう、ユーザーを認証することです。 カスタム関数を使用した認証について詳しくは、[カスタム関数認証](./custom-functions-authentication.md)を参照してください。
+ユーザーがカスタム関数を操作する必要がある場合は、[`Office.Dialog` オブジェクト](/javascript/api/office-runtime/officeruntime.dialog)を使用してダイアログ ボックスを作成できます。 ダイアログ ボックスを使用するための一般的なシナリオは、カスタム関数が web サービスにアクセスできるよう、ユーザーを認証することです。 カスタム関数を使用した認証について詳しくは、[カスタム関数認証](./custom-functions-authentication.md)を参照してください。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

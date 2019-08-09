@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト要件セット1.2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 194532acc9262357a54e355fcfa9b15336cd95b0
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: a7621c3e9e29d229f66ee950119770cbc31d9fe3
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064292"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268496"
 ---
 # <a name="context"></a>context
 
@@ -23,6 +23,13 @@ Office.context 名前空間は、すべての Office アプリのアドインで
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+##### <a name="members-and-methods"></a>メンバーとメソッド
+
+| メンバー | 種類 |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | メンバー |
 
 ### <a name="namespaces"></a>名前空間
 
