@@ -106,10 +106,20 @@
           href: develop/addressing-same-origin-policy-limitations.md
         - name: 認証と承認
           items:
+            - name: 認証と承認の概要
+              href: develop/overview-authn-authz.md
+            - name: Office ダイアログ API を使用して認証と承認を行う
+              href: develop/auth-with-office-dialog-api.md
+            - name: 外部サービスを承認する
+              href: develop/auth-external-add-ins.md
+            - name: SSO を使用せずに Microsoft Graph に承認する
+              href: develop/authorize-to-microsoft-graph-without-sso.md
             - name: アドインで SSO を有効にする
               items:
                 - name: シングルサインオンを有効にする
                   href: develop/sso-in-office-add-ins.md
+                - name: SSO を使用した Microsoft Graph への承認
+                  href: develop/authorize-to-microsoft-graph.md
                 - name: ASP.NET を使用して SSO アドインを作成する
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: Node.js を使用して SSO アドインを作成する
@@ -120,10 +130,6 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: 外部サービスを承認する
-              href: develop/auth-external-add-ins.md
-            - name: Microsoft Graph への承認
-              href: develop/authorize-to-microsoft-graph.md
         - name: ドキュメントで作業ウィンドウを自動的に開く
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: IPad 用のアドインを開発する
