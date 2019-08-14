@@ -1,18 +1,21 @@
 ---
 title: Office アドインで外部サービスを承認する
-description: ''
-ms.date: 02/12/2019
+description: OAuth 2.0 認証コード フローおよび暗黙的フローを使用して、Google、Facebook、LinkedIn、SalesForce、および GitHub などの Microsoft 以外のデータソースに対する承認を取得します。
+ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 58a1f5980be740ac88589af2b5b0e5ab028a12d4
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448785"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302568"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 
 大手のオンライン サービス (Office 365、Google、Facebook、LinkedIn、SalesForce、GitHub など) では、開発者は、ユーザーが自分のアカウントに別のアプリケーションからアクセスできるようにすることが可能です。これにより、開発者は、これらのサービスを Office アドインに含めることができるようになります。
+
+> [!NOTE]
+> この記事の残りの部分では、Microsoft 以外のサービスへのアクセスについて説明します。 Microsoft graph (Office 365 を含む) へのアクセスに関する詳細については、「[SSO を使用して Microsoft Graph にアクセスする](overview-authn-authz.md#access-to-microsoft-graph-with-sso)」および「[SSO を使用せず Microsoft Graph にアクセスする](overview-authn-authz.md#access-to-microsoft-graph-without-sso)」を参照してください。
 
 Web アプリケーションからオンライン サービスへのアクセスを可能にするための業界標準のフレームワークは **OAuth 2.0** です。ほとんどの場合、このフレームワークをアドインで使用するために、その動作のしくみを詳しく知る必要はありません。開発者は、この詳細を簡略化している多数のライブラリを使用できます。
 
@@ -20,10 +23,10 @@ OAuth の基本的な考え方は、ユーザーやグループと同様に、�
 
 さまざまなシナリオに向けて、*フロー*または*許可の種類*と呼ばれる、いくつかの OAuth パターンが設計されています。 最も一般的な実装パターンは次の 2 つです。
 
-- **暗黙的フロー**: アドインとオンライン サービスとの通信は、クライアント側の JavaScript で実装されます。
-- **認証コード フロー**: アドインの Web アプリケーションとオンライン サービスとの通信は、*サーバー間*で行われます。そのため、これはサーバー側のコードで実装されます。
+- **暗黙的フロー**: アドインとオンライン サービスとの通信は、クライアント側の JavaScript で実装されます。 このフローは、シングル ページ アプリケーション (SPA) で一般的に使用されます。
+- **認証コード フロー**:アドインの Web アプリケーションとオンライン サービスとの通信は、*サーバー間*で行われます。 そのため、これはサーバー側のコードで実装されます。
 
-OAuth フローの目的は、アプリケーションの ID と承認の安全を確保することです。認証コード フローでは、*クライアント シークレット*が提供されます。これは、秘密にしておく必要があります。単一ページ アプリケーション (SPA) には、シークレットを保護する方法がありません。そのため、SPA には暗黙的フローを使用するようにお勧めします。
+OAuth フローの目的は、アプリケーションの ID と承認の安全を確保することです。 認証コード フローでは、*クライアント シークレット*が提供されます。これは、秘密にしておく必要があります。 SPA など、サーバー側のバックエンドがないアプリケーションには、秘密を保護する方法がありませんので、SPA では暗黙的フローを使用することをお勧めします。
 
 暗黙的フローと認証コード フローのメリットとデメリットについて理解しておく必要があります。 これら 2 つのフローの詳細については、「[認証コード フロー](https://tools.ietf.org/html/rfc6749#section-1.3.1)」と「[暗黙的フロー](https://tools.ietf.org/html/rfc6749#section-1.3.2)」を参照してください。
 
@@ -31,32 +34,18 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 > 仲介者サービスを使用するというオプションもあります。このサービスは、自動的に承認を行い、アドインにアクセス トークンを渡します。 このシナリオの詳細については、後述の「**仲介者サービス**」セクションを参照してください。
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Office アドインに暗黙的フローを使用する
-オンライン サービスが暗黙的フローをサポートしているかどうかを判断する最良の方法は、サービスのドキュメントを調べることです。 サービスが暗黙的フローをサポートしている場合、**Office-js-helpers** Javascript ライブラリを使って細かい作業を行うことができます。
 
-- [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
+オンライン サービスが暗黙的フローをサポートしているかどうかを判断する最良の方法は、サービスのドキュメントを調べることです。
 
-暗黙的フローをサポートするその他のライブラリの詳細については、後述の「**ライブラリ**」セクションを参照してください。
+暗黙的フローをサポートするライブラリの詳細については、後述の「**ライブラリ**」セクションを参照してください。
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Office アドインに認証コード フローを使用する
 
 各種の言語とフレームワークで認証コード フローを実装するために利用できるライブラリは多数あります。これらのライブラリの詳細については、後述の「**ライブラリ**」セクションを参照してください。
 
-次のサンプルでは、認証コード フローを実装するアドインの例を示します。
-
-- [Office-Add-in-Nodejs-ServerAuth](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) (NodeJS)
-- [PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) (ASP.NET MVC)
-
-### <a name="relayproxy-functions"></a>Relay 関数と Proxy 関数
-
-サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で**クライアント ID** と**クライアント シークレット**の値を使用すると、認証コード フローを使用できます。この関数は、特定のコードを**アクセス トークン**に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
-
-この技法を使用する場合は、アドインでオンライン サービス (Google や Facebook など) のログイン画面を示す UI やポップアップを表示します。ユーザーがオンライン サービスにサインインして、自分のリソースへのアクセス許可をアドインに付与すると、アドインはオンライン関数に送信できるコードを受信します。後述の「**仲介者サービス**」セクションで説明しているサービスでも同様のフローを使用します。
-
 ## <a name="libraries"></a>ライブラリ
 
 各種の言語とプラットフォームで暗黙的フローと認証コード フローを実装するために利用できるライブラリが多数あります。 ライブラリには汎用のものや、特定のオンライン サービス向けのものがあります。
-
-**認証プロバイダーとして Azure Active Directory を使用する Office 365 などのサービス**:[Azure Active Directory 認証ライブラリ](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/)。[Microsoft 認証ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client)のプレビュー版も利用できます。
 
 **Google**:[GitHub.com/Google](https://github.com/google) で "auth" または目的の言語の名前を検索します。最も関連のあるリポジトリには、`google-auth-library-[name of language]` という名前が付いています。
 
