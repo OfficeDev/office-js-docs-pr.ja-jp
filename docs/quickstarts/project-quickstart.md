@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 466c8354a047c8e36741711881ad1b0e2993ddaf
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771738"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308009"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -23,6 +23,8 @@ ms.locfileid: "35771738"
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -31,10 +33,8 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
-
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -94,7 +94,7 @@ Office.context.document.getSelectedTaskAsync(
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. ローカル Web サーバーを開始します。

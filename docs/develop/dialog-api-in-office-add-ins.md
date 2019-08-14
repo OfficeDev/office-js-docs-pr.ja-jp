@@ -1,14 +1,14 @@
 ---
 title: Office アドインでダイアログ API を使用する
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128207"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302582"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -17,7 +17,7 @@ ms.locfileid: "35128207"
 > [!NOTE]
 > ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
 
-> ダイアログ API の主要なシナリオは、Google や Facebook などのリソースで認証を有効にすることです。
+ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ*後*で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
 作業ウィンドウ アドイン、コンテンツ アドイン、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開いて、次の操作を実行することを検討してください。
 
@@ -70,13 +70,13 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Office on the web のパフォーマンス オプションを利用する
 
-`displayInIframe` プロパティは `displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。このプロパティを `true` に設定し、Office on the web で開いたドキュメントでアドインを実行している場合、ダイアログ ボックスは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。次に例を示します。
+`displayInIframe` プロパティは、`displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。 このプロパティを `true` に設定し、Office on the web で開いたドキュメントでアドインを実行している場合、ダイアログ ボックスは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。 例を次に示します。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。アドインが Office on the web で実行されていない場合、`displayInIframe` は無視されます。
+既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。 アドインが Office on the web で実行されていない場合、`displayInIframe` は無視されます。
 
 > [!NOTE]
 > どの時点であっても、iframe で開けないページにダイアログがリダイレクトされることになる場合は、`displayInIframe: true` を使用**しないでください**。たとえば、Google や Microsoft アカウントなどの多くの一般的な Web サービスのサインイン ページは iframe で開くことができません。
@@ -385,52 +385,12 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>認証フローでダイアログ API を使用する
 
-ダイアログ API の主要なシナリオは、Microsoft アカウント、Office 365、Google、Facebook など、iframe でサインイン ページが開かないようにするリソースまたは ID プロバイダーを使用して認証を有効にすることです。
+「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
-> [!NOTE]
-> このシナリオでダイアログ API を使用する際には、`displayDialogAsync` への呼び出しで `displayInIframe: true` オプションを使用*しない*でください。このオプションの詳細については、この記事で前述の「[Office on the web のパフォーマンス オプションを利用する](#take-advantage-of-a-performance-option-in-office-on-the-web)」を参照してください。
+## <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>単一ページ アプリケーションとクライアント側ルーティングで Office ダイアログ API を使用する
 
-シンプルで標準的な認証フローを、次に示します。
+単一ページ アプリケーション (SPAs) が通常使用するように、アドインがクライアント側ルーティングを使用している場合は、HTML の完了ページと個別ページの URL の代わりに、ルートの URL を [displayDialogAsync](/javascript/api/office/office.ui) メソッド (*推奨*) に渡すこともできます。
 
-1. ダイアログ ボックスで開く最初のページは、アドインのドメイン (つまりホスト ウィンドウのドメイン) でホストされるローカル ページ (または他のリソース) です。このページには、"*NAME-OF-PROVIDER* にサインインが可能なページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。「[情報をダイアログ ボックスに渡す](#pass-information-to-the-dialog-box)」に記載されているように、このページのコードは、ダイアログ ボックスに渡される情報を使用して、ID プロバイダーのサインイン ページの URL を構築します。
-2. 次に、ダイアログ ウィンドウをサインイン ページにリダイレクトします。URL には、ユーザーがサインインしたらダイアログ ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。この記事では、このページを "redirectPage.html" と呼びます。(*このページはホスト ウィンドウと同じドメイン内のページにする必要があります*。これは、ダイアログ ウィンドウがサインイン試行の結果を渡す唯一の方法が `messageParent` の呼び出しを使用することであるためです。この呼び出しは、ホスト ウィンドウと同じドメインのページでしか行うことができません。)
-2. ID プロバイダーのサービスは、ダイアログ ウィンドウからの着信 GET 要求を処理します。ユーザーが既にログオンしている場合は、直ちにウィンドウを redirectPage.html にリダイレクトして、ユーザー データをクエリ パラメーターとして含めます。ユーザーがまだサインインしていない場合は、プロバイダーのサインイン ページがウィンドウに表示され、ユーザーがサインインします。ほとんどのプロバイダーでは、ユーザーが正常にサインインできない場合、プロバイダーはダイアログ ウィンドウにエラー ページを表示して、redirectPage.html にはリダイレクトしません。ユーザーは隅にある **X** を選択して、ウィンドウを閉じる必要があります。ユーザーが正常にサインインした場合は、ダイアログ ウィンドウが redirectPage.html にリダイレクトされ、ユーザー データがクエリ パラメーターとして含まれます。
-3. edirectPage.html ページが開くと、`messageParent` を呼び出して、成功または失敗をホスト ページに報告し、また必要に応じて、ユーザー データまたはエラー データも報告します。
-4. `DialogMessageReceived` イベントがホスト ページで発生し、そのハンドラーはダイアログ ウィンドウを閉じ、メッセージの他の処理を必要に応じて実行します。
+ダイアログ ボックスは、独自の実行コンテキストを含む新しいウィンドウ内にあります。 ルートを渡すと、ダイアログ ウィンドウで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。 そのため、この手法はダイアログ ウィンドウにアプリケーションの 2 番目のインスタンスをダウンロードして起動します。これにより、SPA の目的が部分的に無効になります。 さらに、ダイアログ ウィンドウ内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。 同様に、ダイアログ ウィンドウには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。
 
-このパターンを使用するサンプル アドインについては、以下を参照してください。
-
-- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart):ダイアログ ウィンドウで最初に開かれるリソースは、独自のビューがないコントローラーのメソッドです。 これは Office 365 のサインイン ページにリダイレクトされます。
-
-#### <a name="support-multiple-identity-providers"></a>複数の ID プロバイダーのサポート
-
-アドインによってユーザーが Microsoft アカウント、Google、Facebook などのプロバイダーを選択できる場合は、ユーザーがプロバイダーを選択するための UI を提供するローカルの最初のページ (前述のセクションを参照) が必要です。選択すると、サインイン URL とその URL へのリダイレクトの構築がトリガーされます。
-
-#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>外部リソースへのアドインの承認
-
-最新の Web では、Web アプリケーションはユーザと同等の重要なセキュリティ プリンシパルであり、アプリケーションは Office 365、Google+、Facebook、LinkedIn などのオンライン リソースに対する独自の ID とアクセス許可を持っています。アプリケーションは、展開前にリソース プロバイダーに登録されます。登録には以下が含まれています。
-
-- アプリケーションが必要とする、ユーザーのリソースへのアクセス許可の一覧。
-- アプリケーションがサービスにアクセスするときに、リソース サービスがアクセス トークンを返す宛先の URL。  
-
-リソース サービスのユーザーのデータにアクセスするアプリケーションでユーザーが関数を呼び出すと、ユーザーはサービスにサインインするように求められ、アプリケーションが必要とするユーザーのリソースへのアクセス許可をアプリケーションに付与するように求められます。次に、サービスはサインイン ウィンドウを既に登録済みの URL にリダイレクトし、アクセス トークンを渡します。アプリケーションはアクセス トークンを使用して、ユーザーのリソースにアクセスします。
-
-ユーザーのサインイン用に示されているフローと類似したフローを使用すると、ダイアログ API を使用してこのプロセスを管理できます。違いは次の点のみです。
-
-- ユーザーがアプリケーションが必要とするアクセス許可をアプリケーションに付与したことがない場合は、サインインすると、ユーザーに対してこれを実行するよう求めるメッセージがダイアログ ボックスに表示されます。
-- ダイアログ ウィンドウは、`messageParent` を使用して文字列に変換されたアクセス トークンを送信するか、またはホスト ウィンドウがアクセス トークンを取得できる場所にアクセス トークンを格納することで、アクセス トークンをホスト ウィンドウに送信します。トークンには制限時間がありますが、制限時間内であれば追加のメッセージを表示することなく、ホスト ウィンドウはトークンを使用して、ユーザーのリソースに直接アクセスできます。
-
-これを実現するために、次のサンプルではダイアログ API を使用します。
-- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - データベースにアクセス トークンを格納します。
-
-アドインにおける認証と承認の詳細については、以下を参照してください。
-- [Office アドインで外部サービスを承認する](auth-external-add-ins.md)
-- [Office の JavaScript API ヘルパーのライブラリ](https://github.com/OfficeDev/office-js-helpers)
-
-
-## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>単一ページ アプリケーションとクライアント側ルーティングで Office ダイアログ API を使用する
-
-単一ページ アプリケーションが通常使用するように、アドインがクライアント側ルーティングを使用している場合は、HTML の完了ページと個別ページの URL の代わりに、ルートの URL を [displayDialogAsync](/javascript/api/office/office.ui) メソッドに渡すこともできます。
-
-> [!IMPORTANT]
->ダイアログ ボックスは、独自の実行コンテキストを含む新しいウィンドウ内にあります。ルートを渡すと、ダイアログ ウィンドウで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。この手法により、ダイアログ ウィンドウで、アプリケーションの 2 番目のインスタンスが起動します。ダイアログ ウィンドウ内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。同様に、ダイアログ ウィンドウには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。
+そのため、ルートを `displayDialogAsync` メソッドに渡した場合、実際に SPA はありません。同じ SPA の 2 つのインスタンスがあります。 さらに、作業ウィンドウのインスタンスのコードは大半がそのインスタンスで使用されません。また、ダイアログ インスタンスのコードの大半も、そのインスタンスで使用されません。 同じバンドルに 2 つの SPA があるようなものです。 ダイアログで実行する必要があるコードが複雑な場合は、これを明示的に行う必要がある場合があります。つまり、同じドメインの異なるフォルダーに 2 つの SPA があります。 ただし、ほとんどの場合、ダイアログで必要になるのは単純なロジックのみです。 このような場合、SPA のドメインで単純な HTML ページ (JavaScript が埋め込まれているか、参照されている) をホストするだけで、プロジェクトが大幅に簡略化されます。 ページの URL を `displayDialogAsync` メソッドに渡します。 これは、単一ページのアプリという文字通りの考え方から逸脱していることを意味する場合がありますが、前述のように、ダイアログを使用している場合は、SPA のインスタンスは実際には 1 つではありません。

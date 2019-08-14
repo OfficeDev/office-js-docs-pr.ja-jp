@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128567"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302589"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -58,7 +58,7 @@ vue init webpack my-add-in
     ```
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
@@ -77,7 +77,7 @@ vue init webpack my-add-in
 
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. Yue Office によって Vue プロジェクトのルートに作成されたフォルダー **My Office Add-in** をコード エディターで開きます。 このフォルダーには、アドインの設定が定義されたマニフェスト ファイル **manifest.xml** が表示されます。
+1. Yo Office によって Vue プロジェクトのルートに作成されたフォルダー **my-office-add-in** をコード エディターで開きます。 このフォルダーには、アドインの設定が定義されたマニフェスト ファイル **manifest.xml** が表示されます。
 
 2. マニフェスト ファイルを開き、`https://localhost:3000` のすべてを `https://localhost:8080` に置き換えて、ファイルを保存します。
 
