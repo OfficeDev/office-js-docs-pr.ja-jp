@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-プレビュー要件セット
 description: ''
-ms.date: 04/12/2019
+ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: df4b47f57d634f6c99ce862ed1c0e96d87be0425
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451956"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395667"
 ---
 # <a name="office"></a>Office
 
@@ -34,11 +34,11 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 [context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
-####  <a name="asyncresultstatus-string"></a>AsyncResultStatus :String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
 非同期呼び出しの結果を指定します。
 
@@ -63,7 +63,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 ---
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+#### <a name="coerciontype-string"></a>CoercionType: String
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
@@ -88,7 +88,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 ---
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+#### <a name="eventtype-string"></a>EventType: String
 
 イベント ハンドラーに関連付けられているイベントを指定します。
 
@@ -118,7 +118,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 ---
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+#### <a name="sourceproperty-string"></a>SourceProperty: String
 
 呼び出されたメソッドによって返されるデータのソースを指定します。
 

@@ -1,0 +1,76 @@
+---
+title: Office アドインにおける認証と承認の概要
+description: ''
+ms.date: 08/07/2019
+localization_priority: Priority
+ms.openlocfilehash: 2733f8af9f236347e52269c9e73b322b4310e2a9
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302957"
+---
+# <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
+
+既定では、Web アプリケーション、つまり Office アドインでは匿名アクセスが許可されていますが、ログインによる認証をユーザーに要求できます。 特に、ユーザーが Microsoft アカウントまたは職場や学校 (Office 365) のアカウントのいずれかを使用してログインすることを要求できます。 これによりユーザーの確認がアドインで可能になることから、このタスクはユーザー認証と呼ばれています。
+
+アドインはまた、Microsoft Graph データ (ユーザーの Office 365 プロファイル、OneDrive ファイル、SharePoint データなど) や Google、Facebook、LinkedIn、SalesForce、GitHub などの外部ソース内のデータにアクセスするためのユーザーの同意を取得することもできます。 これにより承認されるのはユーザーではなく*アドイン*であることから、このタスクはアドイン (またはアプリ) 承認と呼ばれています。
+
+これらの認証を実行するには、2 つの方法があります。
+
+- **Office シングル サインオン (SSO)**: *現在プレビュー中*のシステムで、ユーザーが Office にログインすると、それがアドインへのログインとしても機能することを可能にします。 アドインでは、必要に応じて、Microsoft Graph へのアドインの承認を行うために、ユーザーの Office の資格情報を使用できます。 (Microsoft 以外のソースは、このシステムからはアクセスできません。)
+- **Azure Active Directory での Web アプリケーションの認証と承認**: これは、新しい機能または特別な機能ではありません。 これは、Office SSO システムの導入以前に Office アドイン (およびその他の Web アプリ) でユーザーの認証とアプリの承認を行うために使用されていた方法で、Office SSO を使用できないシナリオでは現在でも使用されています。
+
+次のフローチャートは、アドイン開発者が判断する必要がある項目を示しています。 詳細については、この記事で後述します。
+
+![Office アドインで認証および承認を可能にするための判断フローチャートを示す画像](../images/auth-decisions-flowchart.gif)
+
+## <a name="user-authentication-without-sso"></a>SSO を使用しないユーザー認証
+
+他の Web アプリケーションの場合と同様、Office アドインでのユーザーの認証は Azure Active Directory (AAD) を使用して行えますが、ログイン ページを iFrame 内で開くことが AAD により許可されていない点が異なります。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 これは、AAD のログイン画面は、Office ダイアログ API を使用して開かれるダイアログで開く必要があることを意味します。 このことは、認証ヘルパー ライブラリの使用方法に影響します。 詳細については、「[Office ダイアログ API を使用して認証と承認を行う](auth-with-office-dialog-api.md)」を参照してください。
+
+AAD での認証のプログラミングの詳細については、「[Microsoft identity platform (v2.0) overview (Microsoft ID プラットフォーム (v2.0) の概要)](/azure/active-directory/develop/v2-overview)」を参照してください。 このドキュメント セットには、多くのチュートリアルやガイドの他、関連するサンプルやライブラリへのリンクが含まれています。 「[Office ダイアログ API を使用して認証と承認を行う](auth-with-office-dialog-api.md)」の説明にあるように、Office ダイアログで実行するサンプル内のコードを調整する必要がある場合があります。
+
+## <a name="access-to-microsoft-graph-without-sso"></a>SSO を使用しないで Microsoft Graph にアクセスする
+
+Azure Active Directory (AAD) から Graph へのアクセス トークンを取得することで、アドイン用の Microsoft Graph データへの承認を取得できます。 これは、Office SSO を使用せずに行えます。 方法の詳細については、「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](authorize-to-microsoft-graph-without-sso.md)」を参照してください。この記事には詳細情報やサンプルへのリンクが含まれています。
+
+## <a name="user-authentication-with-sso"></a>SSO を使用したユーザー認証
+
+SSO を使用してユーザーを認証するために、作業ウィンドウまたは関数ファイル内のコードが [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 (「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](#access-to-microsoft-graph-with-sso)」を参照してください。) ただし、このトークンには `preferred_username`、`name`、`sub`、および `oid` を含む、現在のユーザーに固有の複数の要求が含まれるため、ID トークンとしても使用できます。 最終的なユーザー ID として使用するプロパティに関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/ja-JP/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+
+コードにより目的の要求がトークンから抽出されると、管理下のユーザー テーブルまたはユーザー データベース内でその値を使用してユーザーが検索されます。 ユーザー設定やユーザーのアカウントの状態などのユーザー関連情報を格納するには、データベースを使用します。 SSO を使用しているため、ユーザーは個別にアドインにサインインを行いません。このため、ユーザーのパスワードを保存する必要はありません。
+
+SSO を使用するユーザー認証を実装する前に、「[Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)」の記事を十分に理解しておく必要があります。次のサンプルも確認しておいてください。
+
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO): 特に、トークンのデコードと解析に [jswebtoken](https://github.com/auth0/node-jsonwebtoken) ライブラリを使用する [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) ファイル。 (ただし、この例では、トークンは ID トークンとしては使用されません。 この例では、トークンは、**代理**フローを使用して Microsoft Graph にアクセスするために使用されます。)
+- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO): 特に、トークンから要求を抽出するために [System.Security.Claims.ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) クラスのライブラリを使用する [ValuesController.ts](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Controllers/ValuesController.cs) ファイル。 (ただし、この例では、トークンは ID トークンとしては使用されません。 この例では `scope` 要求がトークンから抽出され、この要求は、**代理**フローを使用して Microsoft Graph にアクセスするために使用されます。)
+
+## <a name="access-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph へのアクセス
+
+SSO を使用して Microsoft Graph にアクセスするために、作業ウィンドウまたは関数ファイル内のアドインが [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 特に、このトークンには 値 `access_as_user` を持つ `scope` 要求が含まれます。 トークンでの要求に関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/ja-JP/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+
+コードがトークンを取得すると、コードは**代理**フロー内でこのトークンを使用して、2 つ目のトークンである Microsoft Graph へのアクセス トークンを取得します。
+
+Office SSO の実装を開始する前に、次の 2 つの記事を十分に理解しておく必要があります。
+
+- [Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)
+- [SSO を使用した Microsoft Graph への承認](authorize-to-microsoft-graph.md)
+
+また、ここに示すチュートリアル記事のうち少なくとも 1 つに目を通してください。 これらの手順を実行しない場合でも、これらの記事にはOffice SSO の実装方法および**代理**フローに関する重要な情報が含まれています。 
+
+- [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
+- [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
+
+次のサンプルにも目を通してください。
+
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+
+## <a name="access-to-non-microsoft-data-sources"></a>Microsoft 以外のデータ ソースへのアクセス
+
+大手のオンライン サービス (Google、Facebook、LinkedIn、SalesForce、GitHub など) では、開発者は、ユーザーが自分のアカウントに別のアプリケーションからアクセスできるようにすることが可能です。 これにより、開発者はこれらのサービスを Office アドインに含めることができます。 アドインでこれを実行する方法の概要については、「[Authorize external services in your Office Add-in (Office アドインで外部サービスを承認する)](auth-external-add-ins.md)」を参照してください。
+
+> [!IMPORTANT]
+> コーディングを始める前に、データ ソースのログイン画面を iFrame で開くことがデータ ソースにより許可されているかどうかを確認します。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 データ ソースのログインの画面を iFrame で開くことがデータ ソースにより許可されていない場合、ログイン画面は、Office ダイアログ API を使用して開かれるダイアログで開く必要があります。 詳細については、「[Office ダイアログ API を使用して認証と承認を行う](auth-with-office-dialog-api.md)」を参照してください。
+

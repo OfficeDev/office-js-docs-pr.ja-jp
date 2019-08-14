@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 04/15/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: aacbe930e2cf3da4d10b61bfe8f34efe1094c113
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448420"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395597"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -62,17 +62,11 @@ Excel.run(function (context) {
 
 アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
 
-## <a name="work-with-multiple-ranges-simultaneously-preview"></a>複数の範囲を同時に操作する (プレビュー)
-
-> [!NOTE]
-> 現在`RangeAreas` 、オブジェクトはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="work-with-multiple-ranges-simultaneously"></a>複数の範囲を同時に操作する
 
 `RangeAreas` オブジェクトを使用すると、アドインの操作を一度に複数の範囲で実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
 
-## <a name="find-special-cells-within-a-range-preview"></a>範囲内の特殊なセルの検索 (プレビュー)
-
-> [!NOTE]
-> 現在`getSpecialCells` 、 `getSpecialCellsOrNullObject`およびメソッドはパブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-special-cells-within-a-range"></a>範囲内の特殊なセルを検索する
 
 `Range.getSpecialCells()` メソッドと`Range.getSpecialCellsOrNullObject()` メソッドでは、対象セルの特性と対象セルの値の型に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
 
@@ -178,10 +172,7 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste-preview"></a>コピーと貼り付け (プレビュー)
-
-> [!NOTE]
-> 現在、`Range.copyFrom` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="copy-and-paste"></a>Copy and paste
 
 範囲の `copyFrom` 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。
 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
@@ -190,7 +181,7 @@ Excel.run(function (context) {
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
+    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
     sheet.getRange("G1").copyFrom("A1:E1");
     return context.sync();
 }).catch(errorHandlerFunction);
@@ -242,10 +233,7 @@ Excel.run(function (context) {
 
 ![範囲のコピー メソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates-preview"></a>重複を削除 (プレビュー)
-
-> [!NOTE]
-> 現在、Range オブジェクトの `removeDuplicates` 関数は、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="remove-duplicates"></a>重複の削除
 
 Range オブジェクトの `removeDuplicates` 関数は、指定された列で重複するエントリを持つ行を削除します。 関数は、範囲の一番小さい値のインデックスから一番大きい値のインデックスへ向かって各行を移動します (上から下へ)。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
 

@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.3
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 0b22574693fb129be6a08a89b58beceb746fa283
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: fb6036606f3a25cff5101351bd7df2b1b4cd2f21
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268398"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395632"
 ---
 # <a name="office"></a>Office
 
@@ -33,9 +33,9 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 [context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.3): ItemType、EntityType、AttachmentType、RecipientType、ResponseType、および ItemNotificationMessageType 列挙型が含まれます。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.3):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
