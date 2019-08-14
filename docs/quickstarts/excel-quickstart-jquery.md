@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Excel 作業ウィンドウ 
 ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 568f27a596fda77f263a53b551eefebc287e68e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771864"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308051"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -27,6 +27,8 @@ ms.locfileid: "35771864"
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
-
-![Yeoman ジェネレーター](../images/yo-office-excel.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -51,7 +51,7 @@ yo office
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

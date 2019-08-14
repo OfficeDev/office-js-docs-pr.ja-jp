@@ -1,16 +1,16 @@
 ---
-title: Office アドインの Microsoft Graph への承認
+title: SSO を使用した Microsoft Graph への承認
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5c34e00a2083f3554480f5900929806e10576350
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448811"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302561"
 ---
-# <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Office アドインの Microsoft Graph への承認 (プレビュー)
+# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>SSO を使用した Microsoft Graph への承認 (プレビュー)
 
 ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 Office アドインの [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスの承認には、ユーザーの Office サインオン資格証明を使用するのが最良の方法です。 これにより、2 回目はサインインする必要なく Microsoft Graph データにアクセスできます。 
 

@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 07/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5b946d1c4ae08a5d0fcd2213f249bd2c7e8b9204
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: c2e6d32de346b13e2dc353ca758fa7839c8ace87
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771850"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308058"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -27,6 +27,8 @@ ms.locfileid: "35771850"
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Yeoman ジェネレーターを使用して、PowerPoint アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
-
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -51,7 +51,7 @@ yo office
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。

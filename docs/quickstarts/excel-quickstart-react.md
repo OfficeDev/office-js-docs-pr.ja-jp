@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b4c7822d20985ad598d77d128fd3890963c50df3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1c0f2f4af1ee14aaf7d581509733e26013657590
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771764"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308030"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>React を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -21,6 +21,8 @@ ms.locfileid: "35771764"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -29,10 +31,8 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using React framework`
 - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
-
-![Yeoman ジェネレーター](../images/yo-office-excel-react-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -50,7 +50,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
