@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/13/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 71cea37784bd3668d3cb44a136ce12e78256f8ec
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 010dd0519ff6b82f29e2ee7c3cdebb9a64106ac9
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804633"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395660"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -29,9 +29,14 @@ Outlook アドインは、[マニフェスト](/office/dev/add-ins/reference/man
 
 マニフェストに要件セットの最小バージョンを設定することで、アドインが表示される Outlook クライアントをコントロールできます。クライアントが最小要件セットをサポートしない場合、アドインはロードされません。たとえば、要件セットのバージョン 1.3 が指定されている場合、1.3 以上をサポートしていない Outlook クライアントには表示されません。
 
+> [!NOTE]
+> 番号付きの要件セットで API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js) で**実稼働**ライブラリを参照してください。
+>
+> プレビューの API の使用に関する詳細については、この記事の「[プレビュー API の使用](#using-preview-apis)」セクションを参照してください。
+
 ## <a name="using-apis-from-later-requirement-sets"></a>後続の要件セットからの API の使用
 
-要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。
+要件セットを設定しても、アドインで使用できる API は制限されません。 たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。
 
 より新しい API を使用するために、開発者は次の操作を行うことによって、特定のホストが要件セットをサポートしているかどうかをチェックできます。
 
