@@ -188,8 +188,6 @@
           items:
             - name: Windows で Office アドインをサイドロードする
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-            - name: sideload コマンドを使用して Office アドインをサイドロードする
-              href: testing/sideload-office-addin-using-sideload-command.md
             - name: 作業ウィンドウからデバッガーをアタッチする
               href: testing/attach-debugger-from-task-pane.md
             - name: 開発者ツールを使用してデバッグする
@@ -351,10 +349,18 @@
                   href: reference/manifest/action.md
                 - name: AllFormFactors
                   href: reference/manifest/allformfactors.md
+                - name: Authorization
+                  href: reference/manifest/authorization.md
+                - name: 承認
+                  href: reference/manifest/authorizations.md
                 - name: コントロール
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: EquivalentAddin
+                  href: reference/manifest/equivalentaddin.md
+                - name: EquivalentAddins
+                  href: reference/manifest/equivalentaddins.md
                 - name: イベント
                   href: reference/manifest/event.md
                 - name: ExtensionPoint
@@ -365,7 +371,7 @@
                   href: reference/manifest/functionfile.md
                 - name: GetStarted
                   href: reference/manifest/getstarted.md
-                - name: グループ
+                - name: Group
                   href: reference/manifest/group.md
                 - name: Hosts
                   href: reference/manifest/hosts.md

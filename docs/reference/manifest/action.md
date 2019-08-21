@@ -3,44 +3,44 @@ title: マニフェスト ファイルの Action 要素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128525"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477937"
 ---
-# <a name="action-element"></a><span data-ttu-id="8c514-102">Action 要素</span><span class="sxs-lookup"><span data-stu-id="8c514-102">Action element</span></span>
+# <a name="action-element"></a><span data-ttu-id="70b18-102">Action 要素</span><span class="sxs-lookup"><span data-stu-id="70b18-102">Action element</span></span>
 
-<span data-ttu-id="8c514-103">ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-103">Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
+<span data-ttu-id="70b18-103">ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-103">Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="8c514-104">属性</span><span class="sxs-lookup"><span data-stu-id="8c514-104">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="70b18-104">属性</span><span class="sxs-lookup"><span data-stu-id="70b18-104">Attributes</span></span>
 
-|  <span data-ttu-id="8c514-105">属性</span><span class="sxs-lookup"><span data-stu-id="8c514-105">Attribute</span></span>  |  <span data-ttu-id="8c514-106">必須</span><span class="sxs-lookup"><span data-stu-id="8c514-106">Required</span></span>  |  <span data-ttu-id="8c514-107">説明</span><span class="sxs-lookup"><span data-stu-id="8c514-107">Description</span></span>  |
+|  <span data-ttu-id="70b18-105">属性</span><span class="sxs-lookup"><span data-stu-id="70b18-105">Attribute</span></span>  |  <span data-ttu-id="70b18-106">必須</span><span class="sxs-lookup"><span data-stu-id="70b18-106">Required</span></span>  |  <span data-ttu-id="70b18-107">説明</span><span class="sxs-lookup"><span data-stu-id="70b18-107">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="8c514-108">xsi:type</span><span class="sxs-lookup"><span data-stu-id="8c514-108">xsi:type</span></span>](#xsitype)  |  <span data-ttu-id="8c514-109">はい</span><span class="sxs-lookup"><span data-stu-id="8c514-109">Yes</span></span>  | <span data-ttu-id="8c514-110">実行する操作の種類</span><span class="sxs-lookup"><span data-stu-id="8c514-110">Action type to take</span></span>|
+|  [<span data-ttu-id="70b18-108">xsi:type</span><span class="sxs-lookup"><span data-stu-id="70b18-108">xsi:type</span></span>](#xsitype)  |  <span data-ttu-id="70b18-109">はい</span><span class="sxs-lookup"><span data-stu-id="70b18-109">Yes</span></span>  | <span data-ttu-id="70b18-110">実行する操作の種類</span><span class="sxs-lookup"><span data-stu-id="70b18-110">Action type to take</span></span>|
 
-## <a name="child-elements"></a><span data-ttu-id="8c514-111">子要素</span><span class="sxs-lookup"><span data-stu-id="8c514-111">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="70b18-111">子要素</span><span class="sxs-lookup"><span data-stu-id="70b18-111">Child elements</span></span>
 
-|  <span data-ttu-id="8c514-112">要素</span><span class="sxs-lookup"><span data-stu-id="8c514-112">Element</span></span> |  <span data-ttu-id="8c514-113">説明</span><span class="sxs-lookup"><span data-stu-id="8c514-113">Description</span></span>  |
+|  <span data-ttu-id="70b18-112">要素</span><span class="sxs-lookup"><span data-stu-id="70b18-112">Element</span></span> |  <span data-ttu-id="70b18-113">説明</span><span class="sxs-lookup"><span data-stu-id="70b18-113">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="8c514-114">FunctionName</span><span class="sxs-lookup"><span data-stu-id="8c514-114">FunctionName</span></span>](#functionname) |    <span data-ttu-id="8c514-115">実行する関数の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-115">Specifies the name of the function to execute.</span></span> |
-|  [<span data-ttu-id="8c514-116">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="8c514-116">SourceLocation</span></span>](#sourcelocation) |    <span data-ttu-id="8c514-117">この操作のソース ファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-117">Specifies the source file location for this action.</span></span> |
-| <span data-ttu-id="8c514-118"> [TaskpaneId](#taskpaneid)</span><span class="sxs-lookup"><span data-stu-id="8c514-118"> [TaskpaneId](#taskpaneid)</span></span> | <span data-ttu-id="8c514-119">作業ウィンドウ コンテナーの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-119">Specifies the ID of the task pane container.</span></span>|
-| <span data-ttu-id="8c514-120"> [Title](#title)</span><span class="sxs-lookup"><span data-stu-id="8c514-120"> [Title](#title)</span></span> | <span data-ttu-id="8c514-121">作業ウィンドウのカスタム タイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-121">Specifies the custom title for the task pane.</span></span>|
-| <span data-ttu-id="8c514-122"> [SupportsPinning](#supportspinning)</span><span class="sxs-lookup"><span data-stu-id="8c514-122"> [SupportsPinning](#supportspinning)</span></span> | <span data-ttu-id="8c514-123">作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。</span><span class="sxs-lookup"><span data-stu-id="8c514-123">Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.</span></span>|
+|  [<span data-ttu-id="70b18-114">FunctionName</span><span class="sxs-lookup"><span data-stu-id="70b18-114">FunctionName</span></span>](#functionname) |    <span data-ttu-id="70b18-115">実行する関数の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-115">Specifies the name of the function to execute.</span></span> |
+|  [<span data-ttu-id="70b18-116">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="70b18-116">SourceLocation</span></span>](#sourcelocation) |    <span data-ttu-id="70b18-117">この操作のソース ファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-117">Specifies the source file location for this action.</span></span> |
+| <span data-ttu-id="70b18-118"> [TaskpaneId](#taskpaneid)</span><span class="sxs-lookup"><span data-stu-id="70b18-118"> [TaskpaneId](#taskpaneid)</span></span> | <span data-ttu-id="70b18-119">作業ウィンドウ コンテナーの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-119">Specifies the ID of the task pane container.</span></span>|
+| <span data-ttu-id="70b18-120"> [Title](#title)</span><span class="sxs-lookup"><span data-stu-id="70b18-120"> [Title](#title)</span></span> | <span data-ttu-id="70b18-121">作業ウィンドウのカスタム タイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-121">Specifies the custom title for the task pane.</span></span>|
+| <span data-ttu-id="70b18-122"> [SupportsPinning](#supportspinning)</span><span class="sxs-lookup"><span data-stu-id="70b18-122"> [SupportsPinning](#supportspinning)</span></span> | <span data-ttu-id="70b18-123">作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。</span><span class="sxs-lookup"><span data-stu-id="70b18-123">Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.</span></span>|
   
 
-## <a name="xsitype"></a><span data-ttu-id="8c514-124">xsi:type</span><span class="sxs-lookup"><span data-stu-id="8c514-124">xsi:type</span></span>
+## <a name="xsitype"></a><span data-ttu-id="70b18-124">xsi:type</span><span class="sxs-lookup"><span data-stu-id="70b18-124">xsi:type</span></span>
 
-<span data-ttu-id="8c514-p101">この属性は、ユーザーがボタンをクリックしたときに実行される操作の種類を指定します。次のいずれかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="8c514-p101">This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:</span></span>
+<span data-ttu-id="70b18-p101">この属性は、ユーザーがボタンをクリックしたときに実行される操作の種類を指定します。次のいずれかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="70b18-p101">This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:</span></span>
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
-## <a name="functionname"></a><span data-ttu-id="8c514-127">FunctionName</span><span class="sxs-lookup"><span data-stu-id="8c514-127">FunctionName</span></span>
+## <a name="functionname"></a><span data-ttu-id="70b18-127">FunctionName</span><span class="sxs-lookup"><span data-stu-id="70b18-127">FunctionName</span></span>
 
-<span data-ttu-id="8c514-p102">**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。</span><span class="sxs-lookup"><span data-stu-id="8c514-p102">Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.</span></span>
+<span data-ttu-id="70b18-p102">**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。</span><span class="sxs-lookup"><span data-stu-id="70b18-p102">Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.</span></span>
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -48,9 +48,9 @@ ms.locfileid: "35128525"
 </Action>
 ```
 
-## <a name="sourcelocation"></a><span data-ttu-id="8c514-131">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="8c514-131">SourceLocation</span></span>
+## <a name="sourcelocation"></a><span data-ttu-id="70b18-131">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="70b18-131">SourceLocation</span></span>
 
-<span data-ttu-id="8c514-p103">**xsi:type** が "ShowTaskpane" のときに必ず指定する要素です。このアクションのソース ファイルの場所を指定します。 **resid** 属性は、 **Resources** 要素の **Urls** 要素にある **Url** 要素の [id](resources.md) 属性の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-p103">Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="70b18-p103">**xsi:type** が "ShowTaskpane" のときに必ず指定する要素です。このアクションのソース ファイルの場所を指定します。 **resid** 属性は、 **Resources** 要素の **Urls** 要素にある **Url** 要素の [id](resources.md) 属性の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-p103">Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -58,14 +58,14 @@ ms.locfileid: "35128525"
 </Action>
 ```  
 
-## <a name="taskpaneid"></a><span data-ttu-id="8c514-135">TaskpaneId</span><span class="sxs-lookup"><span data-stu-id="8c514-135">TaskpaneId</span></span>
+## <a name="taskpaneid"></a><span data-ttu-id="70b18-135">TaskpaneId</span><span class="sxs-lookup"><span data-stu-id="70b18-135">TaskpaneId</span></span>
 
-<span data-ttu-id="8c514-136"> **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="8c514-136">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="8c514-137">作業ウィンドウ コンテナーの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-137">Specifies the ID of the task pane container.</span></span> <span data-ttu-id="8c514-138">複数の "ShowTaskpane" の操作があり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。</span><span class="sxs-lookup"><span data-stu-id="8c514-138">When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each.</span></span> <span data-ttu-id="8c514-139">同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。</span><span class="sxs-lookup"><span data-stu-id="8c514-139">Use the same **TaskpaneId** for  different actions that share the same pane.</span></span> <span data-ttu-id="8c514-140">ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する Action "SourceLocation" に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="8c514-140">When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".</span></span>
+<span data-ttu-id="70b18-136"> **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="70b18-136">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="70b18-137">作業ウィンドウ コンテナーの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-137">Specifies the ID of the task pane container.</span></span> <span data-ttu-id="70b18-138">複数の "ShowTaskpane" の操作があり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。</span><span class="sxs-lookup"><span data-stu-id="70b18-138">When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each.</span></span> <span data-ttu-id="70b18-139">同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。</span><span class="sxs-lookup"><span data-stu-id="70b18-139">Use the same **TaskpaneId** for  different actions that share the same pane.</span></span> <span data-ttu-id="70b18-140">ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する Action "SourceLocation" に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="70b18-140">When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8c514-141">この要素は、Outlook ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="8c514-141">This element is not supported in Outlook.</span></span>
+> <span data-ttu-id="70b18-141">この要素は、Outlook ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="70b18-141">This element is not supported in Outlook.</span></span>
 
-<span data-ttu-id="8c514-142">次の例では、同じ **TaskpaneId** を共有する 2 つのアクションを示します。</span><span class="sxs-lookup"><span data-stu-id="8c514-142">The following example shows two actions that share the same **TaskpaneId**.</span></span>
+<span data-ttu-id="70b18-142">次の例では、同じ **TaskpaneId** を共有する 2 つのアクションを示します。</span><span class="sxs-lookup"><span data-stu-id="70b18-142">The following example shows two actions that share the same **TaskpaneId**.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -79,7 +79,7 @@ ms.locfileid: "35128525"
 </Action>
 ```  
 
-<span data-ttu-id="8c514-p105">次の例では、異なる **TaskpaneId** を使用する 2 つの操作を示します。これらの例を全体的な流れで確認する場合は、「[Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8c514-p105">The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span></span>
+<span data-ttu-id="70b18-p105">次の例では、異なる **TaskpaneId** を使用する 2 つの操作を示します。これらの例を全体的な流れで確認する場合は、「[Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="70b18-p105">The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -100,47 +100,39 @@ ms.locfileid: "35128525"
 </bt:Urls>
 ```  
 
-## <a name="title"></a><span data-ttu-id="8c514-145">役職</span><span class="sxs-lookup"><span data-stu-id="8c514-145">Title</span></span>
+## <a name="title"></a><span data-ttu-id="70b18-145">役職</span><span class="sxs-lookup"><span data-stu-id="70b18-145">Title</span></span>
 
-<span data-ttu-id="8c514-146"> **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="8c514-146">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="8c514-147">この操作に関する、作業ウィンドウのカスタム タイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="8c514-147">Specifies the custom title for the task pane for this action.</span></span>
+<span data-ttu-id="70b18-146"> **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="70b18-146">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="70b18-147">この操作に関する、作業ウィンドウのカスタム タイトルを指定します。</span><span class="sxs-lookup"><span data-stu-id="70b18-147">Specifies the custom title for the task pane for this action.</span></span>
 
-<span data-ttu-id="8c514-148">以下の例は、**Title** 要素を使用する 2 つの異なるアクションを示します。</span><span class="sxs-lookup"><span data-stu-id="8c514-148">The following examples show two different actions that use the **Title** element.</span></span>
-
-```xml
-<Action xsi:type="ShowTaskpane">
-<TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
-<SourceLocation resid="PG.Code.Url" />
-<Title resid="PG.CodeCommand.Title" />
-</Action>
-```
+<span data-ttu-id="70b18-148">次の例は、 **Title**要素を使用するアクションを示しています。</span><span class="sxs-lookup"><span data-stu-id="70b18-148">The following example shows an action that uses the **Title** element.</span></span> <span data-ttu-id="70b18-149">**タイトル**を文字列に直接割り当てることはないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="70b18-149">Note that you don't assign the **Title** to a string directly.</span></span> <span data-ttu-id="70b18-150">代わりに、マニフェストの [**リソース**] セクションで定義されたリソース ID (resid) を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="70b18-150">Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
-<SourceLocation resid="PG.Run.Url" />
-<Title resid="PG.RunCommand.Title" />
+    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+    <SourceLocation resid="PG.Code.Url" />
+    <Title resid="PG.CodeCommand.Title" />
 </Action>
+
+ ... Other markup omitted ...
+<Resources>
+    <bt:Images> ...
+    </bt:Images>
+    <bt:Urls>
+        <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+    </bt:Urls>
+    <bt:ShortStrings>
+        <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+    </bt:ShortStrings>
+ ... Other markup omitted ...
+</Resources>
 ```
 
-```xml
-<bt:Urls>
-<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
-<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
-</bt:Urls>
-```
+## <a name="supportspinning"></a><span data-ttu-id="70b18-151">SupportsPinning</span><span class="sxs-lookup"><span data-stu-id="70b18-151">SupportsPinning</span></span>
 
-```xml
-<bt:ShortStrings>
-<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
-<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
-</bt:ShortStrings>
-```
-
-## <a name="supportspinning"></a><span data-ttu-id="8c514-149">SupportsPinning</span><span class="sxs-lookup"><span data-stu-id="8c514-149">SupportsPinning</span></span>
-
-<span data-ttu-id="8c514-150">**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="8c514-150">Optional element when **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="8c514-151">これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="8c514-151">The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span> <span data-ttu-id="8c514-152">作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。</span><span class="sxs-lookup"><span data-stu-id="8c514-152">Include this element with a value of `true` to support task pane pinning.</span></span> <span data-ttu-id="8c514-153">ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。</span><span class="sxs-lookup"><span data-stu-id="8c514-153">The user will be able to "pin" the task pane, causing it to stay open when changing the selection.</span></span> <span data-ttu-id="8c514-154">詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](/outlook/add-ins/pinnable-taskpane)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8c514-154">For more information, see [Implement a pinnable task pane in Outlook](/outlook/add-ins/pinnable-taskpane).</span></span>
+<span data-ttu-id="70b18-152">**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。</span><span class="sxs-lookup"><span data-stu-id="70b18-152">Optional element when **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="70b18-153">これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="70b18-153">The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span> <span data-ttu-id="70b18-154">作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。</span><span class="sxs-lookup"><span data-stu-id="70b18-154">Include this element with a value of `true` to support task pane pinning.</span></span> <span data-ttu-id="70b18-155">ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。</span><span class="sxs-lookup"><span data-stu-id="70b18-155">The user will be able to "pin" the task pane, causing it to stay open when changing the selection.</span></span> <span data-ttu-id="70b18-156">詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](/outlook/add-ins/pinnable-taskpane)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="70b18-156">For more information, see [Implement a pinnable task pane in Outlook](/outlook/add-ins/pinnable-taskpane).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8c514-155">サポートされている回転は、現在、Windows 2016 以降 (ビルド7628.1000 以降) および Outlook 2016 以降の Mac (ビルド16.13.503 以降) でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="8c514-155">SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).</span></span>
+> <span data-ttu-id="70b18-157">サポートされている回転は、現在、Windows 2016 以降 (ビルド7628.1000 以降) および Outlook 2016 以降の Mac (ビルド16.13.503 以降) でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="70b18-157">SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">

@@ -1,0 +1,7 @@
+> [!NOTE]
+> <span data-ttu-id="8d43c-101">プレビュー API は変更されることがあります。運用環境での使用は意図されていません。</span><span class="sxs-lookup"><span data-stu-id="8d43c-101">Preview APIs are subject to change and are not intended for use in a production environment.</span></span> <span data-ttu-id="8d43c-102">試用はテスト環境と開発環境に限定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8d43c-102">We recommend that you try them out in test and development environments only.</span></span> <span data-ttu-id="8d43c-103">運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="8d43c-103">Do not use preview APIs in a production environment or within business-critical documents.</span></span>
+>
+> <span data-ttu-id="8d43c-104">プレビュー Api を使用するには:</span><span class="sxs-lookup"><span data-stu-id="8d43c-104">To use preview APIs:</span></span>
+>
+> - <span data-ttu-id="8d43c-105">CDN の**ベータ版**ライブラリを参照する必要がhttps://appsforoffice.microsoft.com/lib/beta/hosted/office.js)あります (。</span><span class="sxs-lookup"><span data-stu-id="8d43c-105">You must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).</span></span>
+> - <span data-ttu-id="8d43c-106">より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://products.office.com/office-insider)に参加する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="8d43c-106">You may need to join the [Office Insider program](https://products.office.com/office-insider) for access to more recent Office builds.</span></span>
