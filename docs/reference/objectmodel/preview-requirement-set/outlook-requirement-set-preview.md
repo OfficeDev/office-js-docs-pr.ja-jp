@@ -1,26 +1,23 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 08/13/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: b563d6cfc279a18a6a61f39c33a5ab42e1bd6984
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395709"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477892"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
 JavaScript API for Office の Outlook アドイン API サブセットには、Outlook アドインで利用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
-> [!NOTE]
-> このドキュメントは、[要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)の**プレビュー**用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。 この要件のセットに導入されているメソッドとプロパティは、使用前に可用性を個別にテストする必要があります。
->
-> プレビュー API を使用するには:
->
-> - CDN (** の**ベータhttps://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ライブラリを参照する必要があります。
-> - 最新の Office ビルドにアクセスするには、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要がある場合もあります。
+> [!IMPORTANT]
+> このドキュメントは、[要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)の**プレビュー**用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。
+
+[!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 要件セットのプレビューには、[要件セット 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) のすべての機能が含まれています。
 
