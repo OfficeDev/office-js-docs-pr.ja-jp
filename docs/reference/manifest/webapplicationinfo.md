@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの WebApplicationInfo 要素
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: bdd327f942009e255dd2515fb926d294212ecec8
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e10aee1bf3fb99099d282acd428fa0348229701c
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910320"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477867"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
@@ -27,11 +27,10 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **Id**    |  はい   |  Azure Active Directory (Azure AD) v2.0 エンドポイントに登録された、アドインの関連サービスの**アプリケーション ID**。|
+|  **MsaId**    |  いいえ   |  Msm.live.com に登録されている、アドインの web アプリケーションのクライアント ID。|
 |  **Resource**  |  はい   |  Azure Active Directory v2.0 エンドポイントに登録されたアドインの**アプリケーション ID URI** を指定します。|
-|  [Scope](scopes.md)                |  いいえ  |  アドインが必要とする Microsoft Graph に対するアクセス許可を指定します。  |
-
-> [!NOTE] 
-> 現時点では、アドインのリソースがそのホストと一致している必要があります。 Office は、所有権が証明できない限り、アドインのトークンを要求できません。現在これを行うには、リソースの完全修飾ドメイン名でアドインをホストします。
+|  [Scope](scopes.md)                |  はい  |  Microsoft Graph などのリソースに対してアドインが必要とするアクセス許可を指定します。  |
+|  [承認](authorizations.md)  |  いいえ   | アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo の例
 
@@ -47,8 +46,16 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
-        <Scope>profile</Scope>        
+        <Scope>profile</Scope>
       </Scopes>
+      <Authorizations>
+        <Authorization>
+          <Resource>https://api.contoso.com</Resource>
+            <Scopes>
+              <Scope>profile</Scope>
+          </Scopes>
+        </Authorization>
+      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

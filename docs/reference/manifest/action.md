@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Action 要素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128525"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477937"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -104,35 +104,27 @@ ms.locfileid: "35128525"
 
  **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
 
-以下の例は、**Title** 要素を使用する 2 つの異なるアクションを示します。
+次の例は、 **Title**要素を使用するアクションを示しています。 **タイトル**を文字列に直接割り当てることはないことに注意してください。 代わりに、マニフェストの [**リソース**] セクションで定義されたリソース ID (resid) を割り当てます。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
-<TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
-<SourceLocation resid="PG.Code.Url" />
-<Title resid="PG.CodeCommand.Title" />
+    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+    <SourceLocation resid="PG.Code.Url" />
+    <Title resid="PG.CodeCommand.Title" />
 </Action>
-```
 
-```xml
-<Action xsi:type="ShowTaskpane">
-<SourceLocation resid="PG.Run.Url" />
-<Title resid="PG.RunCommand.Title" />
-</Action>
-```
-
-```xml
-<bt:Urls>
-<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
-<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
-</bt:Urls>
-```
-
-```xml
-<bt:ShortStrings>
-<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
-<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
-</bt:ShortStrings>
+ ... Other markup omitted ...
+<Resources>
+    <bt:Images> ...
+    </bt:Images>
+    <bt:Urls>
+        <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+    </bt:Urls>
+    <bt:ShortStrings>
+        <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+    </bt:ShortStrings>
+ ... Other markup omitted ...
+</Resources>
 ```
 
 ## <a name="supportspinning"></a>SupportsPinning

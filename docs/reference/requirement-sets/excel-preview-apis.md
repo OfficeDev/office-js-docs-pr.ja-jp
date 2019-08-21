@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細
-ms.date: 08/06/2019
+ms.date: 08/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4362a5e13e0031408236f34c718f0fcb3c4527e2
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: c0b0a5757df2f5766f0e29b599e3e9b36dfd3983
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268734"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477908"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -17,10 +17,7 @@ ms.locfileid: "36268734"
 
 最初の表には API が簡潔にまとめられています。その後の表は詳しい一覧になっています。
 
-> [!NOTE]
-> プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
->
-> プレビュー API を使用するには、CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)) で**ベータ** ライブラリを参照する必要があります。場合によっては、Office Insider プログラムに参加し、新しい Office ビルドを入手する必要があります。
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |

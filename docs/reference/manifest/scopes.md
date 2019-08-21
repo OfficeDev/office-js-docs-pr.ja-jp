@@ -1,24 +1,26 @@
 ---
 title: マニフェスト ファイルの Scopes 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771787"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477734"
 ---
 # <a name="scopes-element"></a>Scopes 要素
 
-アドインで必要な Microsoft Graph に対するアクセス許可が含まれます。 AppSource は、スコープ要素を使用して同意ダイアログボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
+アドインが外部リソース (Microsoft Graph など) に対して必要とするアクセス許可が含まれます。 Microsoft Graph がリソースの場合、AppSource はスコープ要素を使用して同意ダイアログボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
+
+**スコープ**は、マニフェスト内の[Webapplicationinfo](webapplicationinfo.md)要素と[Authorization](authorization.md)要素の子要素です。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  型  |  説明  |
+|  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Scope**                |  string     |   Microsoft Graph に対するアクセス許可の名前。たとえば、Files.Read.All です。 |
+|  **Scope**                |  はい     |   アクセス許可の名前。たとえば、[すべて] または [プロファイル] を参照します。 |
 
 ## <a name="example"></a>例
 

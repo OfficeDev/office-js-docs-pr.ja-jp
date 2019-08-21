@@ -1,24 +1,21 @@
 ---
 title: Word JavaScript プレビュー Api
 description: 今後の Word JavaScript Api の詳細
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 1bc6cf2f4b8d8bf876d0b28ead9643f14c81fde1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064845"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477902"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー Api
 
 新しい Word JavaScript Api は最初に "プレビュー" で導入され、後でテストが行われ、ユーザーのフィードバックが取得された後に、特定の番号付き要件の一部になります。
 
-> [!NOTE]
-> プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
->
-> プレビュー API を使用するには、CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)) で**ベータ** ライブラリを参照する必要があります。場合によっては、Office Insider プログラムに参加し、新しい Office ビルドを入手する必要があります。
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## <a name="api-list"></a>API リスト
 
