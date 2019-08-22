@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804619"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477776"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -133,26 +133,26 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 - **Method** 要素は、アドインが実行される Office ホストでサポートされている必要のある個々のメソッドを指定します。**Name** 属性は必須であり、親オブジェクトで修飾されたメソッドの名前を指定します。
 
-
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>JavaScript コードでランタイム チェックを使用する
-
 
 特定の要件セットが Office ホストでサポートされる場合、追加の機能を提供すると効果的な場合があります。 たとえば、アドインで Word 2016 を実行する場合、既存のアドインで Word JavaScript API を使用することがあります。 その場合、要件セットの名前を指定し、[isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) メソッドを使用します。 **isSetSupported** により実行時に、アドインを実行する Office ホストが要件セットをサポートするかどうかが判断されます。 要件セットがサポートされる場合、**isSetSupported** は **true** を返し、その要件セットから API メンバーを使用する追加コードを実行します。 Office ホストで要件セットがサポートされない場合、**isSetSupported** は **false** を返し、追加コードは実行されません。 次のコードは、**isSetSupported** と共に使用する構文を示しています。
 
-
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))
 {
    // Code that uses API members from RequirementSetName.
 }
 
 ```
 
--  _RequirementSetName_ (必須) は、要件セットの名前を表す文字列です。 利用できる要件セットの詳細については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。
-    
--  _VersionNumber_ (省略可能) は要件セットのバージョンです。
+- _RequirementSetName_ (必須) は、要件セットの名前を表す文字列です (例: "**ExcelApi**"、"**Mailbox**" など)。 利用できる要件セットの詳細については、「[Office アドインの要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)」を参照してください。
+- _MinimumVersion_ (省略可能) では、`if` ステートメントの範囲内でコードを実行するために、ホストがサポートする必要がある最小要件セットのバージョンを指定します (例: "**1.9**")。
 
-次のように、Office ホストに関連付けられている **RequirementSetName** と一緒に **isSetSupported** を使用します。
+> [!WARNING]
+> **isSetSupported** メソッドを呼び出すときに、 `MinimumVersion` パラメーターの値 (指定された場合) は、文字列にする必要があります。  これは、JavaScript パーサーでは、1.1 や 1.10 のような数値の間の差異を区別できないが、"1.1" や "1.10" などの文字列値ではできるからです。
+> `number` のオーバーロードは非推奨になります。
+
+次のように、Office ホストに関連付けられている **RequirementSetName** で **isSetSupported** を使用します。
 
 |Office ホスト|RequirementSetName|
 |---|---|
@@ -180,7 +180,6 @@ else
 }
 
 ```
-
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>要件セットにないメソッドを使用したランタイム チェック
 
