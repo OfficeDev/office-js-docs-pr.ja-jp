@@ -1,14 +1,14 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
-ms.date: 07/17/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 7c51479c1a5d1df5d9b0622dbae4fe9f01ad0c2c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771307"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477769"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
@@ -93,13 +93,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
         ...
     ```
 
-13. **Home.ts** ファイルで、次に示す行の **'1.1'** を **1.1** に変更します (つまり、引用符を削除します)。
-
-    ```typescript
-    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
-    ```
-
-14. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
+13. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
 
     ```typescript
     function displaySelectedCells() {
@@ -165,7 +159,7 @@ declare var fabric: any;
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -189,7 +183,7 @@ declare var fabric: any;
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties

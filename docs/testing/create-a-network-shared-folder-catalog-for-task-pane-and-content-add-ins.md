@@ -1,21 +1,21 @@
 ---
 title: テスト用に Office アドインをサイドロードする
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575689"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477930"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。
 
 > [!NOTE]
-> アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)で作成された場合、アドインをサイドロードするのに役に立つ別の方法があります。 詳細については、「[サイドロード コマンドを使用して Office アドインをサイドロードする](sideload-office-addin-using-sideload-command.md)」を参照してください。
+> アドイン プロジェクトが十分に新しい [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) バージョンで作成されている場合、アドインは `npm start` を実行すると自動的に Office デスクトップ クライアントにサイドロードします。
 
 この記事は、Windows での Word、Excel、PowerPoint、および Project アドインのテストにのみ適用されます。 異なるプラットフォームでのテストまたは Outlook アドインのテストをする場合は、以下の、アドインのサイドロードに関するいずれかのトピックを参照してください。
 

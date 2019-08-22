@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 07/29/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940671"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477923"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -27,17 +27,22 @@ npm run validate
 > [!NOTE]
 > この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。
 
-## <a name="validate-your-manifest-with-office-toolbox"></a>office-toolbox でマニフェストを検証する
+## <a name="validate-your-manifest-with-office-addin-manifest"></a>office-addin-manifest を使用してマニフェストを検証する
 
-[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-toolbox](https://www.npmjs.com/package/office-toolbox) を使用してマニフェストを検証することもできます。
+[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest) を使用してマニフェストを検証することもできます。
 
 1. [Node.js](https://nodejs.org/download/) をインストールします。
 
 2. プロジェクトのルート ディレクトリから次のコマンドを実行します。 `MANIFEST_FILE` をマニフェスト ファイルの名前に置き換えます。
 
     ```command&nbsp;line
-    npx office-toolbox validate -m MANIFEST_FILE
+    npx office-addin-manifest validate MANIFEST_FILE
     ```
+
+    > [!NOTE]
+    > このコマンドを実行すると、「コマンドの構文が無効です」というエラーメッセージが表示されます。 (`validate` コマンドが認識されないため)、次のコマンドを実行してマニフェストを検証します (`MANIFEST_FILE` をマニフェスト ファイル名で置き換えます)。 
+    > 
+    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 
