@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: ''
-ms.date: 04/15/2019
+ms.date: 08/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a5f607ce582408307165e3bc03eeeaf48d3587e3
+ms.sourcegitcommit: 70c6dcecfa2ff7a0dd89987084dc1c8e36ee85fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448627"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "36564596"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -38,8 +38,9 @@ ms.locfileid: "32448627"
     > * **[Before]** フォルダーはスタート プロジェクトです。SSO や承認に直接関連しない UI などの側面は、既に完了しています。この記事で後述する各セクションでは、これを完成させるための手順を順に説明します。
     > * このサンプルの **[Completed]** バージョンは、この記事の手順を完了したときに得られるアドインと同様のものですが、完成済みのプロジェクトには、この記事のテキストと重複するコード コメントが含まれています。完成済みのバージョンを使用する場合は、この記事の手順をそのまま実行しますが、[Before] を [Completed] に置き換えて、「**クライアント側のコードを作成する**」と「**サーバー側のコードを作成する**」のセクションを省略してください。
     > * **完成版のマルチテナント** バージョンは、マルチテナント機能をサポートする完成版のサンプルです。 SSO を使用する異なるドメインの Microsoft アカウントをサポートする場合は、このサンプルを確認してください。
-    >
-    > _ローカル ホストの証明書は、使用するバージョンにかかわらず信頼する必要があります。リポジトリのリリース ノートの「IMPORTANT」 (重要) のメモを参照してください。_
+
+    > [!IMPORTANT]
+    > ローカルホストの証明書は、使用するバージョンにかかわらず信頼する必要があります。 [自己署名入りの証明書をインストールする場合は、これらの手順](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)に従います。ただし、このリポジトリの各バージョンの `certs` フォルダーは、ルート フォルダーではなく `/src` フォルダー内にあります。
 
 1. **[Before]** フォルダー内で Git bash コンソールを開きます。
 
