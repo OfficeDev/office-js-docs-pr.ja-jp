@@ -1,14 +1,14 @@
 ---
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
-ms.date: 08/15/2019
+ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 68eaa21af9a86c910a9e8701ef2ea6cf95a64000
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
+ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477762"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "36642832"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -21,10 +21,10 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 > [!NOTE]
 > 要素が間違った親の下にある場合とは異なり、 [office アドインマニフェスト内のバリデーター](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest)は、要素の順序が間違っている場合に同じエラーメッセージを使用します。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子*である*と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
 
-次のセクションでは、マニフェスト要素を表示する順序で示します。 `<OfficeApp>`要素の`type`属性が`TaskPaneApp`、 `ContentApp`、、のいずれであるかによって、 `MailApp`若干の違いがあります。 これらのセクションの扱いが大きくなりすぎないように`<VersionOverrides>`するため、非常に複雑な要素が別々のセクションに分割されます。
+次のセクションでは、マニフェスト要素を表示する順序で示します。 `<OfficeApp>`要素の`type`属性が`TaskPaneApp`、 `ContentApp`、、のいずれであるかによって`MailApp`、相違点があります。 これらのセクションの扱いが大きくなりすぎないように`<VersionOverrides>`するため、非常に複雑な要素が別々のセクションに分割されます。
 
 > [!Note]
-> すべての要素が表示されるわけではありません。 スキーマで`minOccurs`要素の値が**0**の場合、 [](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)この要素は省略可能です。
+> 表示されている要素の一部は必須ではありません。 スキーマで`minOccurs`要素の値が**0**の場合、 [](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)この要素は省略可能です。
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウアドイン要素の順序付け
 
@@ -145,8 +145,10 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <RequestedHeight>
     <Permissions>
     <AllowSnapshot>
-    <VersionOverrides>
+    <VersionOverrides>*
 ```
+
+\*VersionOverrides の子要素の順序については、 [versionoverrides 内のコンテンツアドイン要素の順序](#content-add-in-element-ordering-within-versionoverrides)を参照してください。
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内の作業ウィンドウアドイン要素の順序付け
 
@@ -478,6 +480,17 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
         <LongStrings>
             <String>
                 <Override>
+    <WebApplicationInfo>
+        <Id>
+        <Resource>
+        <Scopes>
+            <Scope>
+```
+
+## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内でのコンテンツアドイン要素の順序付け
+
+```
+<VersionOverrides>
     <WebApplicationInfo>
         <Id>
         <Resource>
