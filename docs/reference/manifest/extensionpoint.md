@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: ''
-ms.date: 03/11/2018
+ms.date: 08/23/2019
 localization_priority: Priority
-ms.openlocfilehash: 4473790a0dd0daeae8042f8ba15421b8e3f9dc64
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450486"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672797"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -272,7 +272,7 @@ ms.locfileid: "32450486"
 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
 
 > [!NOTE]
-> この要素は、Office 365 の Outlook on the web でのみサポートされています。
+> この要素の種類は、[要件セット 1.6 以降をサポートする Outlook クライアント ](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients)が利用できます。
 
 |  要素 |  説明  |
 |:-----|:-----|
