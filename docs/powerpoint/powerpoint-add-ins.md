@@ -2,13 +2,15 @@
 title: PowerPoint アドイン
 description: ''
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 29b8a54584446cce77c22684d4d105f9391cfc5e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 202799e47b9392c4c41b3b1bf8574d64bb5e4c33
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575360"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672792"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
