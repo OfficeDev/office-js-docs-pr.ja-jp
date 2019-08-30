@@ -3,14 +3,13 @@ title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
 ms.date: 12/31/2018
 ms.prod: powerpoint
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451697"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672888"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
