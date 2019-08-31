@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セットのプレビュー
 description: ''
 ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477892"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696457"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -69,6 +69,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Outlook on the web (モダン)、Office 365 サブスクリプションに接続している Outlook on Mac
 
+<br>
+
 ---
 
 ### <a name="block-on-send"></a>送信のブロック
@@ -78,6 +80,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション パラメーター `options` が追加されました。 この値は、イベントの実行をキャンセルするために使用されます。
 
 **使用できる場所**: Outlook on the web (クラシック)、Office 365 サブスクリプションに接続している Outlook on Windows、Office 365 サブスクリプションに接続している Outlook on Mac
+
+<br>
 
 ---
 
@@ -124,6 +128,8 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Office 365 サブスクリプションに接続している Outlook on Mac
 
+<br>
+
 ---
 
 ### <a name="delegate-access"></a>代理人アクセス
@@ -157,6 +163,8 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素が追加されました。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Outlook on the web (モダン)、Office 365 サブスクリプションに接続している Outlook on Mac
+
+<br>
 
 ---
 
@@ -198,6 +206,8 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Outlook on the web (モダン)、Office 365 サブスクリプションに接続している Outlook on Mac
 
+<br>
+
 ---
 
 ### <a name="integration-with-actionable-messages"></a>操作可能なメッセージとの統合
@@ -207,6 +217,8 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Outlook on the web (クラシック)
+
+<br>
 
 ---
 
@@ -224,6 +236,8 @@ Outlook では、ユーザーはカテゴリを使用してメッセージと予
 
 **使用できる場所**: Office 365 サブスクリプションに接続している Outlook on Windows、Office 365 サブスクリプションに接続している Outlook on Mac
 
+<br>
+
 ---
 
 ### <a name="office-theme"></a>Office テーマ
@@ -239,6 +253,8 @@ Office テーマを取得する機能が追加されました。
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
 **使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+<br>
 
 ---
 

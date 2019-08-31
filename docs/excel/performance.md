@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 7ffca45d1d7f6619fa1d942befed1856f77934d9
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128305"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695848"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -24,7 +24,7 @@ Excel JavaScript API では、```sync()``` は唯一の非同期操作で、状�
 
 同じプロキシ オブジェクトを繰り返し作成することは避けるようにします。 代わりに、複数の操作で同じプロキシ オブジェクトが必要な場合は、一度作成して変数に割り当ててから、その変数をコードで使用します。
 
-```javascript
+```js
 // BAD: repeated calls to .getRange() to create the same proxy object
 worksheet.getRange("A1").format.fill.color = "red";
 worksheet.getRange("A1").numberFormat = "0.00%";

@@ -3,12 +3,12 @@ title: Excel、Word、PowerPoint のマニフェストにアドイン コマン�
 description: マニフェストに VersionOverrides を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128179"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695897"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
 
@@ -166,7 +166,7 @@ ms.locfileid: "35128179"
 
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
-```javascript
+```js
 
 <script>
     // The initialize function must be run each time a new page is loaded.
