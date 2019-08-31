@@ -3,16 +3,16 @@ title: テキスト エディターを使用して Microsoft Project 用の作�
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 84e08c1851312f6ecca6d7c779d0b594666922b4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451010"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695771"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
-project Standard 2013、project Professional 2013、またはそれ以降のバージョン用の作業ウィンドウアドインを作成するには、Office アドイン用のごみ箱のジェネレーターを使用します。この記事では、ファイル共有の HTML ファイルをポイントする XML マニフェストを使用する単純なアドインを作成する方法について説明します。 Project OM テストのサンプル アドインは、アドインでオブジェクト モデルを使用する JavaScript 関数をテストします。Project で [**セキュリティ センター**] を使用してマニフェスト ファイルが含まれるファイル共有を登録すると、リボンの [**Project**] タブから作業ウィンドウ アドインを開くことができます。 (この記事のシンプルなコードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づいています。)
+Project Standard 2013、Project Professional 2013、またはそれ以降のバージョン用の作業ウィンドウアドインを作成するには、Office アドイン用のごみ箱のジェネレーターを使用します。この記事では、ファイル共有の HTML ファイルをポイントする XML マニフェストを使用する単純なアドインを作成する方法について説明します。 Project OM テストのサンプル アドインは、アドインでオブジェクト モデルを使用する JavaScript 関数をテストします。Project で [**セキュリティ センター**] を使用してマニフェスト ファイルが含まれるファイル共有を登録すると、リボンの [**Project**] タブから作業ウィンドウ アドインを開くことができます。 (この記事のシンプルなコードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づいています。)
 
 Project では、他の Microsoft Office クライアントで使われるものと同じアドイン マニフェスト スキーマが使用され、JavaScript API の多くも同じものが使用されます。 この記事に記載されているアドインの完全なコードは、Project 2013 SDK ダウンロードのサブディレクトリ `Samples\Apps` で提供されています。
 
@@ -109,7 +109,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
    **\_projDoc** 変数は、**ProjectDocument** オブジェクトで初期化されます。コードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストおよびプロジェクト ドキュメント コンテキストのプロパティを取得する **getContextValues** 関数が含まれています。Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)」を参照してください。
 
-    ```javascript
+    ```js
     /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
@@ -193,7 +193,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
    次のコードの各関数には、`function (asyncResult)` によって指定されている匿名関数が含まれます。これは、非同期の結果を取得するコールバックです。匿名関数の代わりに、複雑なアドインの保守に役立つ名前付き関数を使用できます。
 
-    ```javascript
+    ```js
     // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
@@ -550,7 +550,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
    **manageTaskEventHandler**、**manageResourceEventHandler**、**manageViewEventHandler** の各関数は、_docMethod_ パラメーターの指定に応じて、イベント ハンドラーを追加または削除できます。
 
-    ```javascript
+    ```js
     // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
@@ -904,7 +904,7 @@ Project 2013 SDK のダウンロードには、JSOMCall.html ファイル、JSOM
 
 次のコード例のエラー出力には  **actionMessage** 変数が含まれています。この変数には、 **getSelectedResourceAsync** 関数のエラーを回避するための操作が指定されています。
 
-```javascript
+```js
 function logError(errorText) {
     text.value = "Error in " + errorText;
 }
@@ -935,7 +935,7 @@ Project 2013 SDK のダウンロードの **HelloProject_OData** サンプルに
 
 SurfaceErrors.js ファイル内の次のコードには、 **Toast** オブジェクトを作成する **throwError** 関数が含まれています。
 
-```javascript
+```js
 /*
  * Show error messages in a "toast" notification.
  */
@@ -1072,7 +1072,7 @@ var Toast = {
 
 <br/>
 
-```javascript
+```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     logError(methodName + " method.\nError name: " + errorName
         + "\nMessage: " + errorMessage

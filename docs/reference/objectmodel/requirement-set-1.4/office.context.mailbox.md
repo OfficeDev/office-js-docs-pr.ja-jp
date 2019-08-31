@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.4
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 909746f2404f23872304e067800beac9c3c801f1
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 66ae7cb05ac56224fd7461c5c29587e21a24020a
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268335"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696212"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -108,13 +108,18 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-14"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)}
 
@@ -141,6 +146,11 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ##### <a name="returns"></a>戻り値:
 
 型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)
+
+<br>
+
+---
+---
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -172,13 +182,18 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -188,7 +203,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)|変換するローカル時刻の値。|
 
@@ -204,13 +219,34 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 時間が UTC で表現された日付オブジェクト。
 
-<dl class="param-type">
+型: Date
 
-<dt>型</dt>
+##### <a name="example"></a>例
 
-<dd>Date</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -229,7 +265,7 @@ Web 上の Outlook では、フォームの本文が 32 KB 以下の文字であ
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
@@ -243,9 +279,14 @@ Web 上の Outlook では、フォームの本文が 32 KB 以下の文字であ
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -264,7 +305,7 @@ Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -278,9 +319,14 @@ Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -299,7 +345,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 | `parameters` | オブジェクト | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
@@ -321,7 +367,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -338,6 +384,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -376,7 +427,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -385,6 +436,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -417,7 +473,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -426,6 +482,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -483,7 +544,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 次の例は、`makeEwsRequestAsync` を呼び出し、`GetItem` 操作を使って項目の件名を取得します。
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =

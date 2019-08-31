@@ -4,12 +4,12 @@ description: ExcelApi 1.4 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8dd672dc8ff30a47f7858934d995d809070eb3cf
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: b0f74d4de5ec867e21e4bec1cd9ab1983a87bab1
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064740"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695834"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -42,7 +42,7 @@ Api は`getItem()` 、キーを使用して設定エントリ`add()`を取得し
 * `range.getColumnsAfter(count: number)` および `range.getColumnsBefore(count: number)` を使用して、現在の Range オブジェクトの左右にある特定の数の列を取得します。
 * [Get item または null オブジェクト関数](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): この機能は、キーを使用してオブジェクトを取得することを可能にします。 オブジェクトが存在しない場合、返されるオブジェクトの`isNullObject`プロパティは true になります。 これにより、開発者は、オブジェクトが存在するかどうかを確認することができます。ただし、例外処理によって処理する必要はありません。 この`*OrNullObject`メソッドは、ほとんどのコレクションオブジェクトで使用できます。
 
-```javascript
+```js
 worksheet.getItemOrNullObject("itemName")
 ```
 

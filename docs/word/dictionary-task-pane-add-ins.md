@@ -3,12 +3,12 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5f48d4aa96609f92e7ea1e38dcdd93c91b61a755
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a7d819ea1fd424ce9d83f8437ef722593cf6efe8
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451566"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695918"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -272,7 +272,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **解説**
+ **注釈**
 
 **Dictionary** 要素とその子要素は、辞書アドインを作成するときに作業ウィンドウ アドインのマニフェストに追加されます。
 
@@ -542,7 +542,7 @@ a:hover, a:active
 
 
 
-```javascript
+```js
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

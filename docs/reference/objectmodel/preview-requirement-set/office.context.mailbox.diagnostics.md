@@ -3,12 +3,12 @@ title: Office の設定-プレビュー要件セット
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d0283edc0b9c331afb15a9b485c8f1447d5e8e5
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 47949fb26629b6619514bbd0d7f760cfa31d5839
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268531"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696492"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -55,6 +55,8 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+<br>
+
 ---
 ---
 
@@ -75,6 +77,8 @@ Outlook アドインに診断情報を提供します。
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+<br>
 
 ---
 ---

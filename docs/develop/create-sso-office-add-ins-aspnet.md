@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128161"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695806"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -169,7 +169,7 @@ ms.locfileid: "35128161"
     * アドインのエラー処理により、アクセス トークンの取得が別のオプションのセットを使用して自動的に再試行されることがあります。 カウンター変数 `timesGetOneDriveFilesHasRun` とフラグ変数 `triedWithoutForceConsent` を使用して、失敗するトークン取得の繰り返しからユーザーが抜け出せるようにします。
     * この後の手順では `getDataWithToken` メソッドを作成しますが、そのメソッドで `forceConsent` というオプションが `false` に設定される点に注意してください。詳細については、次の手順で説明します。
 
-    ```javascript
+    ```js
     var timesGetOneDriveFilesHasRun = 0;
     var triedWithoutForceConsent = false;
 
@@ -187,7 +187,7 @@ ms.locfileid: "35128161"
     * オプションのパラメーター `forceConsent` を `false` に設定すると、ユーザーがアドインを使用するたびに、Office ホストにアドインへのアクセス権を付与するための同意を求めるダイアログが表示されなくなります。 ユーザーが初めてアドインを実行すると、`getAccessTokenAsync` の呼び出しは失敗しますが、この後の手順で追加するエラー処理ロジックにより、`forceConsent` オプションを `true` に設定した再呼び出しが自動的に実行され、ユーザーに同意を求めるダイアログが表示されます。ただし、これは初回時のみ実行されます。
     * `handleClientSideErrors` メソッドは、この後の手順で作成します。
 
-    ```javascript
+    ```js
     function getDataWithToken(options) {
     Office.context.auth.getAccessTokenAsync(options,
         function (result) {
@@ -203,7 +203,7 @@ ms.locfileid: "35128161"
 
 1. TODO1 を次に示す行に置き換えます。`getData` メソッドとサーバー側の "/api/values" ルートは、この後の手順で作成します。エンドポイントには、相対 URL を使用します。これは、その URL がアドインと同じドメインでホストされている必要があるためです。
 
-    ```javascript
+    ```js
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
@@ -213,7 +213,7 @@ ms.locfileid: "35128161"
     * このメソッドは、特定の Web API エンドポイントを呼び出して、Office ホスト アプリケーションがアドインへのアクセスに使用したものと同じアクセス トークンを渡します。サーバー側では、このアクセス トークンが Microsoft Graph へのアクセス トークンを取得するための「代理 (on-behalf-of)」フローで使用されます。
     * `handleServerSideErrors` メソッドは、この後の手順で作成します。
 
-    ```javascript
+    ```js
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -233,7 +233,7 @@ ms.locfileid: "35128161"
 
 1. `getData` メソッドの下に、次のメソッドを追加します。 このメソッドは、Office ホストがアドインの Web サービスへのアクセス トークンを取得できないときに、アドインのクライアントでエラーを処理します。 こうしたエラーはエラー コードで報告されるため、このメソッドでは `switch` ステートメントを使用してエラーを識別します。
 
-    ```javascript
+    ```js
     function handleClientSideErrors(result) {
 
         switch (result.error.code) {
@@ -266,7 +266,7 @@ ms.locfileid: "35128161"
 
 1. `TODO2` を次のコードに置き換えます。 エラー 13001 は、ユーザーがログインしていない場合、または 2 番目の認証要素の指定を求めるダイアログに応答しないでキャンセルした場合に発生します。 どちらの場合も、このコードでは `getDataWithToken` メソッドを再実行して、サインインを求めるダイアログの表示を強制するようにオプションを設定します。
 
-    ```javascript
+    ```js
     case 13001:
         getDataWithToken({ forceAddAccount: true });
         break;
@@ -274,7 +274,7 @@ ms.locfileid: "35128161"
 
 1. `TODO3` を次のコードに置き換えます。 エラー 13002 は、ユーザーのサインインまたは同意が中断された場合に発生します。 ユーザーに対して 1 回だけ再試行を求めます。
 
-    ```javascript
+    ```js
     case 13002:
         if (timesGetOneDriveFilesHasRun < 2) {
             showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
@@ -286,7 +286,7 @@ ms.locfileid: "35128161"
 
 1. `TODO4` を次のコードに置き換えます。 エラー 13003 は、ユーザーが職場または学校アカウントと、Microsoft アカウントのどちらでもないアカウントでログインしている場合に発生します。 サインアウト後にサポートされているアカウントの種類でもう一度サインインするよう、ユーザーに求めます。
 
-    ```javascript
+    ```js
     case 13003:
         showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;
@@ -297,7 +297,7 @@ ms.locfileid: "35128161"
 
 1. `TODO5` を次のコードに置き換えます。 Office がアドインの Web サービスに承認されていない場合や、ユーザーの `profile` に対してサービスのアクセス許可が付与されていない場合、エラー 13005 が発生します。
 
-    ```javascript
+    ```js
     case 13005:
         getDataWithToken({ forceConsent: true });
         break;
@@ -305,7 +305,7 @@ ms.locfileid: "35128161"
 
 1. `TODO6` を次のコードと置き換えます。エラー 13006 は、Office ホストで未指定のエラーがある場合に発生します。ホストが不安定な状態にあることを示している可能性があります。ユーザーに Office の再起動を求めます。
 
-    ```javascript
+    ```js
     case 13006:
         showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
         break;
@@ -313,7 +313,7 @@ ms.locfileid: "35128161"
 
 1. `TODO7` を次のコードに置き換えます。 エラー 13007 は、Office ホストの AAD との相互作用に問題があり、ホストがアドイン Web サービス/アプリケーションへのアクセス トークンを取得できない場合に発生します。 ネットワークに一時的な問題が発生している可能性があります。 しばらく待ってから再試行するようにユーザーに求めます。
 
-    ```javascript
+    ```js
     case 13007:
         showResult(['That operation cannot be done at this time. Please try again later.']);
         break;
@@ -321,7 +321,7 @@ ms.locfileid: "35128161"
 
 1. `TODO8` を次のコードに置き換えます。 エラー 13008 は、前回の `getAccessTokenAsync` の呼び出しが完了する前に、それを呼び出す操作をユーザーがトリガーしたときに発生します。
 
-    ```javascript
+    ```js
     case 13008:
         showResult(['Please try that operation again after the current operation has finished.']);
         break;
@@ -329,7 +329,7 @@ ms.locfileid: "35128161"
 
 1. `TODO9` を次のコードに置き換えます。 エラー 13009 は、アドインが強制的な同意をサポートしていないときに、`getAccessTokenAsync` オプションを `forceConsent` に設定して `true` を呼び出した場合に発生します。 通常、この場合は、コードによって同意オプションを `getAccessTokenAsync` に設定して自動的に `false` を再実行する必要があります。 ただし、`forceConsent` を `true` に設定してメソッドを呼び出すこと自体が、そのオプションを `false` に設定したメソッドの呼び出しで発生したエラーに対する自動的な応答の場合もあります。 その場合は、コードで再試行するのではなく、ユーザーにサインアウトしてから再度サインインするように通知する必要があります。
 
-    ```javascript
+    ```js
     case 13009:
         if (triedWithoutForceConsent) {
             showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
@@ -341,7 +341,7 @@ ms.locfileid: "35128161"
 
 1. `TODO10` を次のコードに置き換えます。
 
-    ```javascript
+    ```js
     default:
         logError(result);
         break;
@@ -350,7 +350,7 @@ ms.locfileid: "35128161"
 
 1. `handleClientSideErrors` メソッドの下に、次のメソッドを追加します。このメソッドは、代理 (on-behalf-of) フローの実行時または Microsoft Graph からのデータの取得時の問題により、アドインの Web サービスで発生したエラーを処理します。
 
-    ```javascript
+    ```js
     function handleServerSideErrors(result) {
 
         // TODO11: Parse the JSON response.
@@ -368,7 +368,7 @@ ms.locfileid: "35128161"
 
 1. `TODO11` を次のコードに置き換えます。 アドインの Web サービスがアドインのクライアント側に渡すほとんどの `4xx` エラーには、その応答内に **ExceptionMessage** プロパティが含まれています。このプロパティには、AADSTS (Azure Active Directory Secure Token Service) エラー番号などのデータが格納されています。 ただし、AAD がアドインの Web サービスに追加の認証要素を求めるメッセージを送信するときには、そのメッセージに特殊な **Claims** プロパティが含まれます。このプロパティによって、どの追加要素が必要になるかが (コード番号で) 示されます。 HTTP 応答を作成してクライアントに送信する ASP.NET API は、この **Claims** プロパティを認識しないため、このプロパティを応答オブジェクトに含めません。 この後の手順で作成するサーバー側のコードでは、これに対処するために、手動で応答オブジェクトに **Claims** 値を追加しています。 この値は、**Message** プロパティに含めるため、コードでは、そのプロパティも解析する必要があります。
 
-    ```javascript
+    ```js
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
     ```
@@ -378,7 +378,7 @@ ms.locfileid: "35128161"
     * エラー 50076 は、Microsoft Graph が認証の追加フォームを必要とする場合に発生します。
     * Office ホストは、**** オプションとして `authChallenge` 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。
 
-    ```javascript
+    ```js
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
             var claims = JSON.parse(message).Claims;
@@ -390,7 +390,7 @@ ms.locfileid: "35128161"
 
 1. `TODO13` を次のコードに置き換えます。 次のいくつかの手順では、このコード内にある 3 つの `TODO` を*内部*の条件ブロックに置き換えます。
 
-    ```javascript
+    ```js
     else if (exceptionMessage) {
 
         // TODO13A: Handle the case where consent has not been granted, or has been revoked.
@@ -409,7 +409,7 @@ ms.locfileid: "35128161"
     * エラー 65001 は、1 つ以上のアクセス許可について Microsoft Graph にアクセスするための同意が与えられていない (または取り消されている) ことを意味します。
     * アドインでは、`forceConsent` オプションを `true` に設定して新しいトークンを取得する必要があります。
 
-    ```javascript
+    ```js
     if (exceptionMessage.indexOf('AADSTS65001') !== -1) {
        getDataWithToken({ forceConsent: true });
     }
@@ -420,7 +420,7 @@ ms.locfileid: "35128161"
     * エラー 70011 には複数の意味があります。無効なスコープ (アクセス許可) が要求されていることを意味する場合、このアドインに重要となります。コードでは番号だけでなくエラーの説明全体を確認します。
     * アドインでは、エラーを報告する必要があります。
 
-    ```javascript
+    ```js
      else if (exceptionMessage.indexOf("AADSTS70011: The provided value for the input parameter 'scope' is not valid.") !== -1) {
         showResult(['The add-in is asking for a type of permission that is not recognized.']);
     }
@@ -431,7 +431,7 @@ ms.locfileid: "35128161"
     * この後の手順で作成するサーバー側のコードでは、アドインのクライアントが AAD に送信して代理 (on-behalf-of) フローで使用されるアクセス トークンに `access_as_user` スコープ (アクセス許可) が含まれていない場合に、メッセージ `Missing access_as_user` を送信します。
     * アドインでは、エラーを報告する必要があります。
 
-    ```javascript
+    ```js
     else if (exceptionMessage.indexOf('Missing access_as_user.') !== -1) {
         showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
     }
@@ -442,7 +442,7 @@ ms.locfileid: "35128161"
     * サーバー側のコードで使用する ID ライブラリ (Microsoft Authentication Library - MSAL) では、期限切れのトークンや無効なトークンが Microsoft Graph に送信されないようにする必要があります。ただし、その事態が発生した場合は、アドインの Web サービスに Microsoft Graph から返されるエラーにコード `InvalidAuthenticationToken` が含まれています。 この後の手順で作成するサーバー側のコードでは、このメッセージをアドインのクライアントに中継します。
     * この場合、アドインはカウンター変数とフラグ変数をリセットしてから、ボタン ハンドラー メソッドを再呼び出しすることで、認証プロセス全体を最初から開始する必要があります。
 
-    ```javascript
+    ```js
     // If the token sent to MS Graph is expired or invalid, start the whole process over.
     else if (result.code === 'InvalidAuthenticationToken') {
         timesGetOneDriveFilesHasRun = 0;
@@ -453,7 +453,7 @@ ms.locfileid: "35128161"
 
 1. `TODO15` を次のコードに置き換えます。
 
-    ```javascript
+    ```js
     else {
         logError(result);
     }

@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.1
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: dc7ea23ca68f46df0a3c1762ed7994420ea7d0c0
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 2b93a8191c0e73c5b236a3fe547dfd2b12a0cd31
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268713"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696429"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -84,7 +84,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 |名前| 種類| 説明|
 |---|---|---|
-|`timeValue`| Date|日付オブジェクト|
+|`timeValue`| 日付|日付オブジェクト|
 
 ##### <a name="requirements"></a>要件
 
@@ -97,6 +97,11 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 ##### <a name="returns"></a>戻り値:
 
 型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.1)
+
+<br>
+
+---
+---
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -122,13 +127,34 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 時間が UTC で表現された日付オブジェクト。
 
-<dl class="param-type">
+型: Date
 
-<dt>型</dt>
+##### <a name="example"></a>例
 
-<dd>日付</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -161,9 +187,14 @@ Web 上の Outlook では、フォームの本文が 32 KB 以下の文字であ
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -196,9 +227,14 @@ Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -239,7 +275,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -256,6 +292,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -292,7 +333,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -301,6 +342,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -333,7 +379,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -342,6 +388,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -399,7 +450,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 次の例は、`makeEwsRequestAsync` を呼び出し、`GetItem` 操作を使って項目の件名を取得します。
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =

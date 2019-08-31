@@ -3,12 +3,12 @@ title: Office 名前空間-要件セット1.3
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: fb6036606f3a25cff5101351bd7df2b1b4cd2f21
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 2d451e9425f900c7a9cfa5ce9d3baadfa112396c
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395632"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696240"
 ---
 # <a name="office"></a>Office
 
@@ -59,6 +59,11 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+<br>
+
+---
+---
+
 #### <a name="coerciontype-string"></a>CoercionType: String
 
 呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
@@ -80,6 +85,11 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+<br>
+
+---
+---
 
 #### <a name="sourceproperty-string"></a>SourceProperty: String
 

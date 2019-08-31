@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.6
 description: ''
-ms.date: 08/06/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: f394c23cf9e35e3798de1fe7559bc8083478cc6b
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 82a7039602c1896488e6a2358cf345bc157b79de
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268363"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695981"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -81,6 +81,11 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+<br>
+
+---
+---
+
 #### <a name="resturl-string"></a>Office.context.mailbox.resturl が: String
 
 この電子メール アカウントの REST エンドポイントの URL を取得します。
@@ -131,7 +136,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -147,6 +152,11 @@ function loadNewItem(eventArgs) {
   loadProps(Office.context.mailbox.item);
 };
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
@@ -178,13 +188,18 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-16"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)}
 
@@ -196,9 +211,9 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
-|`timeValue`| Date|日付オブジェクト|
+|`timeValue`| 日付|日付オブジェクト|
 
 ##### <a name="requirements"></a>要件
 
@@ -212,6 +227,11 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)
 
+<br>
+
+---
+---
+
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 EWS 形式のアイテム ID を REST 形式に変換します。
@@ -223,7 +243,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.6)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
@@ -242,13 +262,18 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -258,7 +283,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|変換するローカル時刻の値。|
 
@@ -274,13 +299,34 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 時間が UTC で表現された日付オブジェクト。
 
-<dl class="param-type">
+型: Date
 
-<dt>型</dt>
+##### <a name="example"></a>例
 
-<dd>日付</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -299,7 +345,7 @@ Web 上の Outlook では、フォームの本文が 32 KB 以下の文字であ
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
@@ -313,9 +359,14 @@ Web 上の Outlook では、フォームの本文が 32 KB 以下の文字であ
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -348,9 +399,14 @@ Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -394,7 +450,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -411,6 +467,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewmessageformparameters"></a>displayNewMessageForm(parameters)
 
@@ -451,7 +512,7 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 Office.context.mailbox.displayNewMessageForm(
   {
     toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
@@ -468,6 +529,11 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
 
@@ -517,7 +583,7 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -531,6 +597,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -569,7 +640,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -578,6 +649,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -610,7 +686,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -619,6 +695,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -676,7 +757,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 次の例は、`GetItem` 操作を使ってアイテムの件名を取得するため、`makeEwsRequestAsync` を呼び出します。
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
@@ -717,6 +798,11 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 

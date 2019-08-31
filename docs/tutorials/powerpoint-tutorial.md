@@ -4,12 +4,12 @@ description: このチュートリアルでは、画像の挿入、テキスト�
 ms.date: 12/31/2018
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672888"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696030"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -65,7 +65,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
-    ```javascript
+    ```js
     (function () {
         "use strict";
 
@@ -179,13 +179,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 7. **Home.js** ファイルで `TODO1` を次のコードに置き換え、**[イメージの挿入]** ボタンのイベント ハンドラーを割り当てます。
 
-    ```javascript
+    ```js
     $('#insert-image').click(insertImage);
     ```
 
 8. **Home.js** ファイルで `TODO2` を次のコードに置き換え、**insertImage** 関数を定義します。 この関数は Bing Web サービスからイメージをフェッチし、`insertImageFromBase64String` 関数を呼び出してそのイメージをドキュメントに挿入します。
 
-    ```javascript
+    ```js
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -204,7 +204,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     - `asyncResult` オブジェクトは `setSelectedDataAsync` 要求が失敗した場合の状態やエラー情報など、その要求の結果をカプセル化します。
 
-    ```javascript
+    ```js
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -291,13 +291,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 2. **Home.js** ファイルで `TODO4` を次のコードに置き換え、**[テキストの挿入]** ボタンのイベント ハンドラーを割り当てます。
 
-    ```javascript
+    ```js
     $('#insert-text').click(insertText);
     ```
 
 3. **Home.js** ファイルで `TODO5` を次のコードに置き換え、**insertText** 関数を定義します。 この関数は、現在のスライドにテキストを挿入します。
 
-    ```javascript
+    ```js
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -348,13 +348,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 2. **Home.js** ファイルで `TODO6` を次のコードに置き換え、**[Get Slide Metadata]** (スライドのメタデータの取得) ボタンのイベント ハンドラーを割り当てます。
 
-    ```javascript
+    ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. **Home.js** ファイルで `TODO7` を次のコードに置き換え、**getSlideMetadata** 関数を定義します。 この関数は選択したスライドのメタデータを取得し、それをアドインの作業ウィンドウ内のポップアップ ダイアログ ウィンドウに書き込みます。
 
-    ```javascript
+    ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -421,7 +421,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 2. **Home.js** ファイルで `TODO8` を次のコードに置き換え、4 つのナビゲーション ボタンのイベント ハンドラーを割り当てます。
 
-    ```javascript
+    ```js
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
@@ -430,7 +430,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 3. **Home.js** ファイルで `TODO9` を次のコードに置き換え、ナビゲーション関数を定義します。 これらの関数では `goToByIdAsync` 関数を使用して、ドキュメント内のその位置 (最初、最後、前、次) に基づいてスライドを選択します。
 
-    ```javascript
+    ```js
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {

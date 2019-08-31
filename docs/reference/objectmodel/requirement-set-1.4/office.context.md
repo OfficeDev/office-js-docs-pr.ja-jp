@@ -3,12 +3,12 @@ title: Office コンテキスト要件セット1.4
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 738c6a5ffbe6bb59f77e3bb82baee78a40be136e
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 2e29c8ba3833010fb58d07fdbae9ee25da401a7e
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268313"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696156"
 ---
 # <a name="context"></a>context
 
@@ -55,7 +55,7 @@ Office ホスト アプリケーションの UI 用にユーザーが指定し�
 
 ##### <a name="example"></a>例
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -73,6 +73,11 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-14"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.4)
 

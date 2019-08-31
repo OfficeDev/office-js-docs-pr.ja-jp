@@ -3,12 +3,12 @@ title: Office 名前空間-要件セット1.7
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: be0223e7ed274abf0e742be13f258c14f6dccf91
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 8d22ce8400916dffe12a15bba35f70ceca4db510
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395695"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695869"
 ---
 # <a name="office"></a>Office
 
@@ -60,6 +60,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
+<br>
+
 ---
 ---
 
@@ -84,6 +86,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
+
+<br>
 
 ---
 ---
@@ -111,6 +115,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧 |
+
+<br>
 
 ---
 ---
