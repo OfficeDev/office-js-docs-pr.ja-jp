@@ -64,16 +64,16 @@ CLA への署名により、メイン リポジトリにコミットする権限
 
 **注:** このセクションの情報のほとんどは、「[GitHub Help]」 (GitHub ヘルプ) の記事にあります。  Git と GitHub のことをよく知っている場合は、「**コンテンツを投稿して編集する**」のセクションまでスキップして、このリポジトリのコード/コンテンツ フローの詳細を参照してください。
 
-### <a name="to-set-up-your-fork-of-the-repository"></a>リポジトリのフォークを設定するには
+### <a name="to-set-up-your-fork-of-the-repository"></a>リポジトリのフォークをセットアップするには
 
 1.  このプロジェクトに投稿できるように、GitHub のアカウントをセットアップします。まだ行っていない場合は、今すぐ [GitHub](https://github.com/join) にアクセスしてセットアップします。
 2.  ご利用のコンピューターに Git をインストールします。 「[Set up Git]」 (Git の設定) チュートリアルの手順を実行します。
-3.  このリポジトリの独自のフォークを作成します。 これを行うには、ページの上部にある **[フォーク]** ボタンを選択します。
+3.  このリポジトリの独自のフォークを作成します。これを行うには、ページの上部にある [**フォーク**] ボタンを選択します。
 4.  フォークをコンピューターにコピーします。これを行うには、Git Bash を開きます。コマンド プロンプトで、次のように入力します。
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    次に、以下のコマンドを入力してルート リポジトリへの参照を作成します。
+    Next, create a reference to the root repository by entering these commands:
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
@@ -101,17 +101,17 @@ CLA への署名により、メイン リポジトリにコミットする権限
 #### <a name="to-create-a-new-branch"></a>新しい分岐を作成するには
 
 1.  Git Bash を開きます。
-2.  Git Bash のコマンド プロンプトで、`git pull upstream master:<new branch name>` と入力します。これにより、最新の OfficeDev マスター分岐からコピーされた新しい分岐がローカルに作成されます。
-3.  Git Bash のコマンド プロンプトで、`git push origin <new branch name>` と入力します。これにより、新しい分岐に関するアラートが GitHub に送信されます。これで、GitHub 上のリポジトリのフォーク内に新しい分岐が表示されるはずです。
-4.  新しい分岐に切り替えるには、Git Bash コマンド プロンプトで `git checkout <new branch name>` と入力します。
+2.  At the Git Bash command prompt, type `git pull upstream master:<new branch name>`. This creates a new branch locally that is copied from the latest OfficeDev master branch.
+3.  At the Git Bash command prompt, type `git push origin <new branch name>`. This alerts GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
+4.  At the Git Bash command prompt, type `git checkout <new branch name>` to switch to your new branch.
 
 #### <a name="add-new-content-or-edit-existing-content"></a>新しい内容を追加するか既存の内容を編集する
 
-ファイル エクスプローラーを使用して、コンピューター上のリポジトリに移動します。リポジトリ ファイルは、`C:\Users\<yourusername>\<repo name>` にあります。
+You navigate to the repository on your computer by using File Explorer. The repository files are in `C:\Users\<yourusername>\<repo name>`.
 
 ファイルを編集するには、好みのエディターで開いて変更します。新しいファイルを作成するには、好みのエディターを使用して、リポジトリのローカル コピー内の適切な場所に新しいファイルを保存します。作業中は、頻繁に作業内容を保存してください。
 
-`C:\Users\<yourusername>\<repo name>` 内のファイルは、ローカル リポジトリ内で作成した新しい分岐の作業コピーです。このフォルダーで行った変更は、変更をコミットするまでローカル リポジトリに影響しません。ローカル リポジトリに変更をコミットするには、GitBash で次のコマンドを入力します。
+The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash:
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
@@ -128,15 +128,15 @@ CLA への署名により、メイン リポジトリにコミットする権限
 
 #### <a name="to-submit-a-pull-request-to-the-main-repository"></a>メイン リポジトリにプル リクエストを送信するには
 
-1.  Git Bash のコマンド プロンプトで、`git push origin <new branch name>` と入力します。ローカル リポジトリにおいて、`origin` はローカル リポジトリの複製元である GitHub リポジトリを指します。このコマンドにより、前の手順で行ったすべてのコミットを含む新しい分岐の現在の状態が GitHub フォークにプッシュされます。
+1.  In the Git Bash command prompt, type `git push origin <new branch name>`. In your local repository, `origin` refers to your GitHub repository that you cloned the local repository from. This command pushes the current state of your new branch, including all commits made in the previous steps, to your GitHub fork.
 2.  GitHub サイト上のフォーク内で、新しい分岐まで移動します。
 3.  ページの上部にある [**プル リクエスト**] ボタンを選択します。
-4.  Base 分岐が `OfficeDev/<repo name>@master` で、Head 分岐が `<your username>/<repo name>@<branch name>` であることを確認します。
+4.  Verify the Base branch is `OfficeDev/<repo name>@master` and the Head branch is `<your username>/<repo name>@<branch name>`.
 5.  [**コミット範囲の更新**] ボタンを選択します。
 6.  プル リクエストにタイトルを追加し、作成しているすべての変更についての説明を入力します。
 7.  プル リクエストを提出します。
 
-サイト管理者の 1 人がプル要求を処理します。プル要求が OfficeDev/<repo name> サイトの [問題] に表示されます。プル要求が承諾されると、問題は解決されます。
+One of the site administrators will process your pull request. Your pull request will surface on the OfficeDev/<repo name> site under Issues. When the pull request is accepted, the issue will be resolved.
 
 #### <a name="create-a-new-branch-after-merge"></a>マージの後に新しい分岐を作成する
 
@@ -152,7 +152,7 @@ CLA への署名により、メイン リポジトリにコミットする権限
 
     git checkout X2
 
-...内容を確認します。(`checkout` コマンドは、`C:\Users\<yourusername>\microsoft-graph-docs` 内のファイルを X2 分岐の現在の状態に更新します。新しい分岐をチェックアウトした後は、内容への更新を行って通常どおりにコミットすることができます。ただし、誤って作業することを避けるため、結合済みの分岐 (X) は削除することをお勧めします (次の「**分岐を削除する**」のセクションを参照してください)。
+...and verifying the content. (The `checkout` command updates the files in `C:\Users\<yourusername>\microsoft-graph-docs` to the current state of the X2 branch.) Once you check out the new branch, you can make updates to the content and commit them as usual. However, to avoid working in the merged branch (X) by mistake, it's best to delete it (see the following **Delete a branch** section).
 
 #### <a name="delete-a-branch"></a>分岐を削除する
 
@@ -161,8 +161,8 @@ CLA への署名により、メイン リポジトリにコミットする権限
 #### <a name="to-delete-a-branch"></a>分岐を削除するには
 
 1.  Git Bash のコマンド プロンプトで、「`git checkout master`」と入力します。これにより、削除される分岐にいないことが保証されます (削除される分岐にいることは許可されません)。
-2.  次に、コマンド プロンプトで `git branch -d <branch name>` と入力します。これにより、アップストリーム リポジトリに正常にマージ済みの場合にのみ、コンピューター上の分岐が削除されます。(この動作は `–D` フラグでオーバーライドすることができますが、最初にその必要があるかどうかを確かめてください)。
-3.  最後に、コマンド プロンプトで `git push origin :<branch name>` (コロンの前にはスペースを 1 つ入れ、後にはスペースを入れません) と入力します。これにより、GitHub フォーク上の分岐が削除されます。  
+2.  Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `–D` flag, but first be sure you want to do this.)
+3.  Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your github fork.  
 
 おめでとうございます。プロジェクトに正しく投稿できました。
 
