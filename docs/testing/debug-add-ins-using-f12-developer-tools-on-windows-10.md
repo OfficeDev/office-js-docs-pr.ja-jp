@@ -85,5 +85,4 @@ Internet Explorer でアドインを実行している場合は、Windows 10 の
 ## <a name="see-also"></a>関連項目
 
 - [デバッガーを使用して実行中の JavaScript を検査する](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
-- 
-  [F12 開発者ツールの使用](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
+- [F12 開発者ツールの使用](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
