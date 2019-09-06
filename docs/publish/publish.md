@@ -1,14 +1,14 @@
 ---
 title: Office アドインを展開し、発行する | Microsoft Docs
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
-ms.date: 06/20/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 9515157f0e6f3d294d381013442f958c903a63c0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: c47f8743edeed1fd366d948d781c97da1c97958a
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575647"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769555"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
@@ -16,7 +16,7 @@ ms.locfileid: "35575647"
 
 |**メソッド**|**Use...**|
 |:---------|:------------|
-|[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|開発プロセスの一環として、Windows、iPad、Mac、またはブラウザーで実行するアドインをテストします。|
+|[サイドロード](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|開発プロセスの一環として、Windows、iPad、Mac、またはブラウザーで実行するアドインをテストします。|
 |[一元展開](centralized-deployment.md)|クラウド環境またはハイブリッド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
 |[SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|オンプレミス環境で、組織内のユーザーにアドインを配布します。|
 |[AppSource](/office/dev/store/submit-to-the-office-store)|ユーザーに配布する目的でアドインを公開します。|
