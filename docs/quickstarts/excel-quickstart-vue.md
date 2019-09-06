@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/04/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302589"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715632"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -19,27 +19,21 @@ ms.locfileid: "36302589"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Vue CLI](https://github.com/vuejs/vue-cli) をグローバルにインストールします。
+- [Vue CLI](https://cli.vuejs.org/) をグローバルにインストールします。
 
-    ```command&nbsp;line
-    npm install -g vue-cli
-    ```
+  ```command&nbsp;line
+  npm install -g @vue/cli
+  ```
 
 ## <a name="generate-a-new-vue-app"></a>新しい Vue アプリの生成
 
-Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行し、次に示すとおり、プロンプトに応答します。
+Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行します。
 
 ```command&nbsp;line
-vue init webpack my-add-in
+vue create my-add-in
 ```
 
-前のコマンドで生成されたプロンプトに応答すると、次の 3 つのプロンプトの既定の応答を上書きします。 その他のプロンプトについては、すべて既定の応答を受け入れることができます。
-
-- **Install vue-router? (Vue ルーターをインストールしますか)** `No`
-- **Set up unit tests: (単体テストのセットアップ:)** `No`
-- **Setup e2e tests with Nightwatch? (Nightwatch とともに e2e テストをセットアップしますか)** `No`
-
-![Vue CLI のプロンプト](../images/vue-cli-prompts.png)
+次に、`default` プリセットを選択します。 Yarn または NPM のいずれかをパッケージとして使用するように求められたら、どちらかを選択できます。
 
 ## <a name="generate-the-manifest-file"></a>マニフェスト ファイルを生成する
 
@@ -47,164 +41,160 @@ vue init webpack my-add-in
 
 1. アプリ フォルダーに移動します。
 
-    ```command&nbsp;line
-    cd my-add-in
-    ```
+   ```command&nbsp;line
+   cd my-add-in
+   ```
 
 2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
 
-    ```command&nbsp;line
-    yo office
-    ```
+   ```command&nbsp;line
+   yo office
+   ```
 
-    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
-    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+   ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
 
-    ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
+   - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
+   - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+   - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ウィザードを完了すると、ジェネレーターによってマニフェスト ファイルが作成されます。
+ウィザードを完了すると、`manifest.xml` ファイルを含む `my-office-add-in` フォルダーが作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
 
 ## <a name="secure-the-app"></a>アプリをセキュリティ保護する
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-アプリに対して HTTPS を有効にするには、Vue プロジェクトのルート フォルダーにあるファイル **package.json** を開き、`--https` フラグを追加するよう `dev` スクリプトを変更して、ファイルを保存します。
+アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。
 
-```json
-"dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
+```js
+module.exports = {
+  devServer: {
+    port: 3000,
+    https: true
+  }
+};
 ```
 
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. Yo Office によって Vue プロジェクトのルートに作成されたフォルダー **my-office-add-in** をコード エディターで開きます。 このフォルダーには、アドインの設定が定義されたマニフェスト ファイル **manifest.xml** が表示されます。
+1. `public/index.html` ファイルを開き、`</head>` タグの直前に次の `<script>` タグを追加します。
 
-2. マニフェスト ファイルを開き、`https://localhost:3000` のすべてを `https://localhost:8080` に置き換えて、ファイルを保存します。
+   ```html
+   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+   ```
 
-3. (Vue プロジェクトのルートにある) ファイル **index.html** を開き、`</head>` タグの直前に次の `<script>` タグを追加してファイルを保存します。
+2. `src/main.js` を開き、内容を次のコードで置き換えます。
 
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
+   ```js
+   import Vue from 'vue';
+   import App from './App.vue';
 
-3. **src/main.js** を開き、次のコード ブロックを*削除*します。
+   Vue.config.productionTip = false;
 
-    ```js
-    new Vue({
-        el: '#app',
-        components: {App},
-        template: '<App/>'
-    })
-    ```
-    
-    その後、同じ場所に次のコードを追加し、ファイルを保存します。 
-                                                         
-    ```js
-    const Office = window.Office
-    Office.initialize = () => {
-      new Vue({
-        el: '#app',
-        components: {App},
-        template: '<App/>'
-      })
-    }
-    ```
+   window.Office.initialize = () => {
+     new Vue({
+       render: h => h(App)
+     }).$mount('#app');
+   };
+   ```
 
-4. **src/App.vue** を開き、ファイルの内容を次のコードに置き換え、ファイルの末尾 (つまり、`</style>` タグの直後) に改行を追加して、ファイルを保存します。 
+3. `src/App.vue` を開き、ファイル内容を次のコードで置き換えます。
 
-    ```html
-    <template>
-    <div id="app">
-        <div id="content">
-        <div id="content-header">
-            <div class="padding">
-            <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br/>
-            <h3>Try it out</h3>
-            <button @click="onSetColor">Set color</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    </template>
+   ```html
+   <template>
+     <div id="app">
+       <div class="content">
+         <div class="content-header">
+           <div class="padding">
+             <h1>Welcome</h1>
+           </div>
+         </div>
+         <div id="content-main">
+           <div class="padding">
+             <p>
+               Choose the button below to set the color of the selected range to
+               green.
+             </p>
+             <br />
+             <h3>Try it out</h3>
+             <button @click="onSetColor">Set color</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </template>
 
-    <script>
-    export default {
-      name: 'App',
-      methods: {
-        onSetColor () {
-          window.Excel.run(async (context) => {
-            const range = context.workbook.getSelectedRange()
-            range.format.fill.color = 'green'
-            await context.sync()
-          })
-        }
-      }
-    }
-    </script>
+   <script>
+     export default {
+       name: 'App',
+       methods: {
+         onSetColor() {
+           window.Excel.run(async context => {
+             const range = context.workbook.getSelectedRange();
+             range.format.fill.color = 'green';
+             await context.sync();
+           });
+         }
+       }
+     };
+   </script>
 
-    <style>
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-    }
+   <style>
+     .content-header {
+       background: #2a8dd4;
+       color: #fff;
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 80px;
+       overflow: hidden;
+     }
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-    }
+     .content-main {
+       background: #fff;
+       position: fixed;
+       top: 80px;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       overflow: auto;
+     }
 
-    .padding {
-        padding: 15px;
-    }
-    </style>
-    ```
+     .padding {
+       padding: 15px;
+     }
+   </style>
+   ```
 
 ## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
 1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
 
-    ```command&nbsp;line
-    npm start
-    ```
+   ```command&nbsp;line
+   npm run serve
+   ```
 
-2. Web ブラウザーで `https://localhost:8080` に移動します。 ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その証明書を信頼するようコンピューターを構成する必要があります。 
+2. Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。 ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その[証明書を信頼するようコンピューターを構成する](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie)必要があります。
 
-3. ブラウザーに証明書エラーなしでアドイン ページが読み込まれたら、アドインをテストする準備ができています。
+3. `https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。 Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。
 
-## <a name="try-it-out"></a>お試しください
+## <a name="try-it-out"></a>試してみる
 
 1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
 
-    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+   - Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
+   ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
 3. ワークシート内で任意のセルの範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
-    ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
+   ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>次の手順
 
@@ -219,4 +209,3 @@ vue init webpack my-add-in
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
