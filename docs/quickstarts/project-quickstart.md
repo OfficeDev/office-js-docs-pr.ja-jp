@@ -1,55 +1,55 @@
 ---
 title: 最初の Project の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 05/08/2019
+ms.date: 09/06/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 466c8354a047c8e36741711881ad1b0e2993ddaf
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 0a7684f3d1bd4f404ba42a798908bb9d2ba2f8d2
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308009"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782283"
 ---
-# <a name="build-your-first-project-task-pane-add-in"></a><span data-ttu-id="7106a-102">最初の Project の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="7106a-102">Build your first Project task pane add-in</span></span>
+# <a name="build-your-first-project-task-pane-add-in"></a><span data-ttu-id="67c4d-102">最初の Project の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="67c4d-102">Build your first Project task pane add-in</span></span>
 
-<span data-ttu-id="7106a-103">この記事では、Project の作業ウィンドウ アドインを作成するプロセスを紹介します。</span><span class="sxs-lookup"><span data-stu-id="7106a-103">In this article, you'll walk through the process of building a Project task pane add-in.</span></span>
+<span data-ttu-id="67c4d-103">この記事では、Project の作業ウィンドウ アドインを作成するプロセスを紹介します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-103">In this article, you'll walk through the process of building a Project task pane add-in.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7106a-104">前提条件</span><span class="sxs-lookup"><span data-stu-id="7106a-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="67c4d-104">前提条件</span><span class="sxs-lookup"><span data-stu-id="67c4d-104">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="7106a-105">Windows の Project 2016 またはそれ以降</span><span class="sxs-lookup"><span data-stu-id="7106a-105">Project 2016 or later on Windows</span></span>
+- <span data-ttu-id="67c4d-105">Windows の Project 2016 またはそれ以降</span><span class="sxs-lookup"><span data-stu-id="67c4d-105">Project 2016 or later on Windows</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="7106a-106">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="7106a-106">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="67c4d-106">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="67c4d-106">Create the add-in</span></span>
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
-<span data-ttu-id="7106a-107">Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7106a-107">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="7106a-108">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="7106a-108">Run the following command and then answer the prompts as follows:</span></span>
+<span data-ttu-id="67c4d-107">Yeoman ジェネレーターを使用して、Project アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-107">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="67c4d-108">次のコマンドを実行し、以下のプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-108">Run the following command and then answer the prompts as follows:</span></span>
 
 ```command&nbsp;line
 yo office
 ```
 
-- <span data-ttu-id="7106a-109">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="7106a-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="7106a-110">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="7106a-110">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="7106a-111">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="7106a-111">**What do you want to name your add-in?**</span></span> `my-office-add-in`
-- <span data-ttu-id="7106a-112">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="7106a-112">**Which Office client application would you like to support?**</span></span> `Project`
+- <span data-ttu-id="67c4d-109">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="67c4d-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="67c4d-110">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="67c4d-110">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="67c4d-111">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="67c4d-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="67c4d-112">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="67c4d-112">**Which Office client application would you like to support?**</span></span> `Project`
 
-<span data-ttu-id="7106a-113">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="7106a-113">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-project.png)
 
-## <a name="explore-the-project"></a><span data-ttu-id="7106a-114">プロジェクトを確認する</span><span class="sxs-lookup"><span data-stu-id="7106a-114">Explore the project</span></span>
+<span data-ttu-id="67c4d-114">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="67c4d-114">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-<span data-ttu-id="7106a-115">Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7106a-115">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
+## <a name="explore-the-project"></a><span data-ttu-id="67c4d-115">プロジェクトを確認する</span><span class="sxs-lookup"><span data-stu-id="67c4d-115">Explore the project</span></span>
 
-- <span data-ttu-id="7106a-116">プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。</span><span class="sxs-lookup"><span data-stu-id="7106a-116">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="7106a-117">**./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7106a-117">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
-- <span data-ttu-id="7106a-118">**./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。</span><span class="sxs-lookup"><span data-stu-id="7106a-118">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="7106a-119">**./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7106a-119">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
+<span data-ttu-id="67c4d-116">Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="67c4d-116">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-## <a name="update-the-code"></a><span data-ttu-id="7106a-120">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="7106a-120">Update the code</span></span>
+- <span data-ttu-id="67c4d-117">プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-117">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="67c4d-118">**./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="67c4d-118">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="67c4d-119">**./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。</span><span class="sxs-lookup"><span data-stu-id="67c4d-119">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="67c4d-120">**./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="67c4d-120">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
 
-<span data-ttu-id="7106a-121">コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを **実行** 関数内に追加します。</span><span class="sxs-lookup"><span data-stu-id="7106a-121">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="7106a-122">このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。</span><span class="sxs-lookup"><span data-stu-id="7106a-122">This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="67c4d-121">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="67c4d-121">Update the code</span></span>
+
+<span data-ttu-id="67c4d-122">コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを **実行** 関数内に追加します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-122">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="67c4d-123">このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-123">This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.</span></span>
 
 ```js
 var taskGuid;
@@ -89,39 +89,39 @@ Office.context.document.getSelectedTaskAsync(
 );
 ```
 
-## <a name="try-it-out"></a><span data-ttu-id="7106a-123">試してみる</span><span class="sxs-lookup"><span data-stu-id="7106a-123">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="67c4d-124">試してみる</span><span class="sxs-lookup"><span data-stu-id="67c4d-124">Try it out</span></span>
 
-1. <span data-ttu-id="7106a-124">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="7106a-124">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="67c4d-125">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-125">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
-2. <span data-ttu-id="7106a-125">ローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="7106a-125">Start the local web server and sideload your add-in.</span></span>
+2. <span data-ttu-id="67c4d-126">ローカル Web サーバーを開始します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-126">Start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="7106a-126">開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7106a-126">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="7106a-127">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="7106a-127">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="67c4d-127">開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67c4d-127">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="67c4d-128">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="67c4d-128">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-    <span data-ttu-id="7106a-128">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="7106a-128">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="7106a-129">このコマンドを実行すると、ローカル Web サーバーが起動します。</span><span class="sxs-lookup"><span data-stu-id="7106a-129">When you run this command, the local web server will start.</span></span>
+    <span data-ttu-id="67c4d-129">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-129">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="67c4d-130">このコマンドを実行すると、ローカル Web サーバーが起動します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-130">When you run this command, the local web server will start.</span></span>
 
     ```command&nbsp;line
     npm start
     ```
 
-3. <span data-ttu-id="7106a-130">Project で、簡素なプロジェクト計画を作成します。</span><span class="sxs-lookup"><span data-stu-id="7106a-130">In Project, create a simple project plan.</span></span>
+3. <span data-ttu-id="67c4d-131">Project で、簡素なプロジェクト計画を作成します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-131">In Project, create a simple project plan.</span></span>
 
-4. <span data-ttu-id="7106a-131">[Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="7106a-131">Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span></span>
+4. <span data-ttu-id="67c4d-132">[Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="67c4d-132">Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span></span>
 
-5. <span data-ttu-id="7106a-132">プロジェクト内の単一のタスクを選択します。</span><span class="sxs-lookup"><span data-stu-id="7106a-132">Select a single task within the project.</span></span>
+5. <span data-ttu-id="67c4d-133">プロジェクト内の単一のタスクを選択します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-133">Select a single task within the project.</span></span>
 
-6. <span data-ttu-id="7106a-133">作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。</span><span class="sxs-lookup"><span data-stu-id="7106a-133">At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.</span></span>
+6. <span data-ttu-id="67c4d-134">作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。</span><span class="sxs-lookup"><span data-stu-id="67c4d-134">At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.</span></span>
 
     ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット](../images/project-quickstart-addin-1.png)
 
-## <a name="next-steps"></a><span data-ttu-id="7106a-135">次の手順</span><span class="sxs-lookup"><span data-stu-id="7106a-135">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="67c4d-136">次の手順</span><span class="sxs-lookup"><span data-stu-id="67c4d-136">Next steps</span></span>
 
-<span data-ttu-id="7106a-136">おめでとうございます。 Project の作業ウィンドウ アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="7106a-136">Congratulations, you've successfully created a Project task pane add-in!</span></span> <span data-ttu-id="7106a-137">この後は、Project アドインの機能と一般的なシナリオについて調べます。</span><span class="sxs-lookup"><span data-stu-id="7106a-137">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
+<span data-ttu-id="67c4d-137">おめでとうございます。 Project の作業ウィンドウ アドインが正常に作成されました。</span><span class="sxs-lookup"><span data-stu-id="67c4d-137">Congratulations, you've successfully created a Project task pane add-in!</span></span> <span data-ttu-id="67c4d-138">この後は、Project アドインの機能と一般的なシナリオについて調べます。</span><span class="sxs-lookup"><span data-stu-id="67c4d-138">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="7106a-138">Project 用アドイン</span><span class="sxs-lookup"><span data-stu-id="7106a-138">Project add-ins</span></span>](../project/project-add-ins.md)
+> [<span data-ttu-id="67c4d-139">Project 用アドイン</span><span class="sxs-lookup"><span data-stu-id="67c4d-139">Project add-ins</span></span>](../project/project-add-ins.md)
 
