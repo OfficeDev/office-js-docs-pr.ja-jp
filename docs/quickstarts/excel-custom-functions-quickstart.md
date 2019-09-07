@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2019
+ms.date: 09/06/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 59f0b0483befda8646d823c50295d035ab7e64c6
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308016"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782234"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -28,8 +28,6 @@ ms.locfileid: "36308016"
 ## <a name="build-your-first-custom-functions-project"></a>最初のカスタム関数プロジェクトを作成する
 
 はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。 これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. 任意のフォルダーで、次のコマンドを実行し、次のようにプロンプトに応答します。
 
