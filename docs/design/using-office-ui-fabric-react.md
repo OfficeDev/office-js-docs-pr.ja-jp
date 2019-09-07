@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
 description: Office アドインで Office UI Fabric React を使用する方法について説明します。
-ms.date: 07/11/2019
+ms.date: 09/06/2019
 localization_priority: Priority
-ms.openlocfilehash: c738521b82d0cb8f234fd28dc8bb24740962b817
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302601"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782227"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -29,8 +29,6 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 ### <a name="create-the-project"></a>プロジェクトを作成する
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using React framework`
 - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
+
+![Yeoman ジェネレーター](../images/yo-office-word-react.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -49,7 +49,7 @@ yo office
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。

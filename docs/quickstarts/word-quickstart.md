@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5b65d20a10b98dc3a4ba1e95c4ef52ff91647e97
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 98fbd61296ef56397241e402830eb8baaeebe577
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308044"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782241"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -29,8 +29,6 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
+
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -53,7 +53,7 @@ yo office
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。

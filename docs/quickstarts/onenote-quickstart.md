@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/06/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 24c8854cb1f9332371f3726409f91f7cdbf53243
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7e31933b5d38cede00983d6f3f31a284043bb769
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782262"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -21,8 +21,6 @@ ms.locfileid: "36308023"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Yeoman ジェネレーターを使用して、OneNote アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
-- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+- **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
+
+![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-onenote.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
     
@@ -76,7 +76,7 @@ try {
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
