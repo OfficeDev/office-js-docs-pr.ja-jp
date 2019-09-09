@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672797"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769590"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -251,7 +251,7 @@ ms.locfileid: "36672797"
 この拡張点は、指定したイベントのイベント ハンドラーを追加します。
 
 > [!NOTE]
-> この要素は、Office 365 の Outlook on the web でのみサポートされています。
+> この要素の種類は、従来の Outlook on the web でサポートされており、Windows、Mac、および最新の Outlook on the web では[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)されています。 Office 365 サブスクリプションも必要です。
 
 | 要素 | 説明  |
 |:-----|:-----|
@@ -260,9 +260,9 @@ ms.locfileid: "36672797"
 #### <a name="itemsend-event-example"></a>ItemSend イベントの例
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
@@ -272,7 +272,7 @@ ms.locfileid: "36672797"
 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
 
 > [!NOTE]
-> この要素の種類は、[要件セット 1.6 以降をサポートする Outlook クライアント ](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients)が利用できます。
+> この要素の種類は、[要件セット 1.6 以降をサポートする Outlook クライアント ](../requirement-sets/outlook-api-requirement-sets.md#clients)が利用できます。
 
 |  要素 |  説明  |
 |:-----|:-----|

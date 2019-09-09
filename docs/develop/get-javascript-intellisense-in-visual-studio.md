@@ -3,12 +3,12 @@ title: Visual Studio 2017 で JavaScript IntelliSense を利用できるよう�
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 7a4e2962933ccef0912ba3f96ed67af580fab60b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449100"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769548"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする
 
@@ -48,7 +48,7 @@ Visual Studio に Office.js の型の定義を提供する必要があります�
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![変数の Intellisense](../images/intellisense-vs17-var.png)
+![変数の IntelliSense](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>パラメーター
 
@@ -58,7 +58,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![パラメーターの Intellisense](../images/intellisense-vs17-param.png)
+![パラメーターの IntelliSense](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![戻り値の  Intellisense](../images/intellisense-vs17-return.png)
+![戻り値の IntelliSense](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>複合型
 
@@ -80,7 +80,7 @@ function myFunc() {
 
 }
 ```
-![複合型の Intellisense](../images/intellisense-vs17-complex-type.png)
+![複合型の IntelliSense](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,17 +3,17 @@ title: Office ライブラリの JavaScript API をそのコンテンツ配信�
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 249d367c7a7032d8ec165661da1d182df4047199
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 6945cb9e2e93209c1568575d8c393cf00ae47431
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517388"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769583"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 
 > [!NOTE]
-> この記事で説明している手順に加え、TypeScript を使用する場合には、ノードが有効になっているシステム プロンプト (または git bash ウィンドウ) でプロジェクト フォルダーのルートから次のコマンドを実行して、Intellisense を入手する必要があります。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
+> この記事で説明している手順に加え、TypeScript を使用する場合には、ノードが有効になっているシステム プロンプト (または git bash ウィンドウ) でプロジェクト フォルダーのルートから次のコマンドを実行して、IntelliSense を入手する必要があります。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
 > 
 > ```command&nbsp;line
 > npm install --save-dev @types/office-js
