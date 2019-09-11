@@ -4,12 +4,12 @@ description: ExcelApi 1.2 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f2a1547cc483448ed299ef657d6f950e9f836336
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: f028208873df363710864a0e2d7942e173acd2c3
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268328"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838495"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -54,8 +54,53 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|"値" フィルター処理の一部として使用する値のセット。|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|データのフィルター処理に使用する ISO8601 形式の日付です。|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|データを保持するのに、日付をどの程度詳細に使用するか。 たとえば、date が 2005-04-02 で "month" に設定した場合、フィルター操作では 2005 年 4 月の日付データを含むすべての行が保持されます。|
+|[FiveArrowsGraySet](/javascript/api/excel/excel.fivearrowsgrayset)|[グレーダウン矢印](/javascript/api/excel/excel.fivearrowsgrayset#graydownarrow)||
+||[grayDownInclineArrow](/javascript/api/excel/excel.fivearrowsgrayset#graydowninclinearrow)||
+||[グレーの Side矢印](/javascript/api/excel/excel.fivearrowsgrayset#graysidearrow)||
+||[グレーの Uparrow](/javascript/api/excel/excel.fivearrowsgrayset#grayuparrow)||
+||[grayUpInclineArrow](/javascript/api/excel/excel.fivearrowsgrayset#grayupinclinearrow)||
+|[FiveArrowsSet](/javascript/api/excel/excel.fivearrowsset)|[greenUpArrow](/javascript/api/excel/excel.fivearrowsset#greenuparrow)||
+||[redDownArrow](/javascript/api/excel/excel.fivearrowsset#reddownarrow)||
+||[yellowDownInclineArrow](/javascript/api/excel/excel.fivearrowsset#yellowdowninclinearrow)||
+||[yellowSideArrow](/javascript/api/excel/excel.fivearrowsset#yellowsidearrow)||
+||[yellowUpInclineArrow](/javascript/api/excel/excel.fivearrowsset#yellowupinclinearrow)||
+|[FiveBoxesSet](/javascript/api/excel/excel.fiveboxesset)|[4の Fil/ボックス](/javascript/api/excel/excel.fiveboxesset#fourfilledboxes)||
+||[[Nofil] ボックス](/javascript/api/excel/excel.fiveboxesset#nofilledboxes)||
+||[Onefil/ボックス](/javascript/api/excel/excel.fiveboxesset#onefilledbox)||
+||[全テキストボックス](/javascript/api/excel/excel.fiveboxesset#threefilledboxes)||
+||[2テキストボックス](/javascript/api/excel/excel.fiveboxesset#twofilledboxes)||
+|[FiveQuartersSet](/javascript/api/excel/excel.fivequartersset)|[ブラックサークル](/javascript/api/excel/excel.fivequartersset#blackcircle)||
+||[circleWithOneWhiteQuarter](/javascript/api/excel/excel.fivequartersset#circlewithonewhitequarter)||
+||[circleWithThreeWhiteQuarters](/javascript/api/excel/excel.fivequartersset#circlewiththreewhitequarters)||
+||[circleWithTwoWhiteQuarters](/javascript/api/excel/excel.fivequartersset#circlewithtwowhitequarters)||
+||[whiteCircleAllWhiteQuarters](/javascript/api/excel/excel.fivequartersset#whitecircleallwhitequarters)||
+|[Fiverアウトセット](/javascript/api/excel/excel.fiveratingset)|[4本線](/javascript/api/excel/excel.fiveratingset#fourbars)||
+||[noBars](/javascript/api/excel/excel.fiveratingset#nobars)||
+||[oneBar](/javascript/api/excel/excel.fiveratingset#onebar)||
+||[全棒](/javascript/api/excel/excel.fiveratingset#threebars)||
+||[twoBars](/javascript/api/excel/excel.fiveratingset#twobars)||
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|Excel が範囲内のセルの数式を非表示にするかどうかを示します。null 値は、範囲全体に一様な数式非表示設定がないことを表します。|
 ||[locked](/javascript/api/excel/excel.formatprotection#locked)|Excel がオブジェクト内のセルをロックするかどうかを示します。 null 値は、範囲全体に一様なロック設定がないことを表します。|
+|[4-4 矢印 Sグレーのセット](/javascript/api/excel/excel.fourarrowsgrayset)|[グレーダウン矢印](/javascript/api/excel/excel.fourarrowsgrayset#graydownarrow)||
+||[grayDownInclineArrow](/javascript/api/excel/excel.fourarrowsgrayset#graydowninclinearrow)||
+||[グレーの Uparrow](/javascript/api/excel/excel.fourarrowsgrayset#grayuparrow)||
+||[grayUpInclineArrow](/javascript/api/excel/excel.fourarrowsgrayset#grayupinclinearrow)||
+|[4の矢印の場合](/javascript/api/excel/excel.fourarrowsset)|[greenUpArrow](/javascript/api/excel/excel.fourarrowsset#greenuparrow)||
+||[redDownArrow](/javascript/api/excel/excel.fourarrowsset#reddownarrow)||
+||[yellowDownInclineArrow](/javascript/api/excel/excel.fourarrowsset#yellowdowninclinearrow)||
+||[yellowUpInclineArrow](/javascript/api/excel/excel.fourarrowsset#yellowupinclinearrow)||
+|[FourRatingSet](/javascript/api/excel/excel.fourratingset)|[4本線](/javascript/api/excel/excel.fourratingset#fourbars)||
+||[oneBar](/javascript/api/excel/excel.fourratingset#onebar)||
+||[全棒](/javascript/api/excel/excel.fourratingset#threebars)||
+||[twoBars](/javascript/api/excel/excel.fourratingset#twobars)||
+|[Fourcc Redtoblackset](/javascript/api/excel/excel.fourredtoblackset)|[ブラックサークル](/javascript/api/excel/excel.fourredtoblackset#blackcircle)||
+||[グレーの円](/javascript/api/excel/excel.fourredtoblackset#graycircle)||
+||[pinkCircle](/javascript/api/excel/excel.fourredtoblackset#pinkcircle)||
+||[redCircle](/javascript/api/excel/excel.fourredtoblackset#redcircle)||
+|[FourTrafficLightsSet](/javascript/api/excel/excel.fourtrafficlightsset)|[blackCircleWithBorder](/javascript/api/excel/excel.fourtrafficlightsset#blackcirclewithborder)||
+||[greenCircle](/javascript/api/excel/excel.fourtrafficlightsset#greencircle)||
+||[redCircleWithBorder](/javascript/api/excel/excel.fourtrafficlightsset#redcirclewithborder)||
+||[yellowCircle](/javascript/api/excel/excel.fourtrafficlightsset#yellowcircle)||
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|エラー値を表すエラー値 ("#DIV/0" など)。 エラー文字列が設定されていない場合は、関数が正常に終了し、その結果が Value フィールドに書き込まれます。 エラーは常に英語のロケールです。|
 ||[value](/javascript/api/excel/excel.functionresult#value)|関数評価の値。 エラーが発生していない場合にのみ、value フィールドに値が設定されます (つまり、Error プロパティが設定されていない場合)。|
 |[Functions](/javascript/api/excel/excel.functions)|[abs \| (数値: Excel の RangeReference \| \|に指定したセル範囲の数式<any>)](/javascript/api/excel/excel.functions#abs-number-)|数値の絶対値を返します。値は符号なしで指定します。|
@@ -67,7 +112,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[acoth (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#acoth-number-)|数値の双曲線逆余接 (ハイパーボリック コタンジェントの逆関数) を返します。|
 ||[amorDegrc (cost: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| excel.<any>Functionresult, datepurchased た日付: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>を指定します。 firstperiod: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>, salvage:数字\|文字列\|の\| \|ブール型\|の RangeReference excel. Functionresult<any>, period: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \| excel<any>の場合は、数値\|を\|ブール値\| \|で指定します。 RangeReference \| excel functionresult<any>、basis?: number \|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#amordegrc-cost--datepurchased--firstperiod--salvage--period--rate--basis-)|各会計期における資産の日割り近似減価償却費を返します。|
 ||[amorLinc (cost: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| excel.<any>Functionresult, datepurchased た日付: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>を指定します。 firstperiod: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>, salvage:数字\|文字列\|の\| \|ブール型\|の RangeReference excel. Functionresult<any>, period: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \| excel<any>の場合は、数値\|を\|ブール値\| \|で指定します。 RangeReference \| excel functionresult<any>、basis?: number \|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#amorlinc-cost--datepurchased--firstperiod--salvage--period--rate--basis-)|各会計期における資産の日割り近似減価償却費を返します。|
-||[and (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#and-...values-)|すべての引数が TRUE であるかどうかを確認し、すべての引数が TRUE の場合は TRUE を返します。|
+||[and (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#and-values-)|すべての引数が TRUE であるかどうかを確認し、すべての引数が TRUE の場合は TRUE を返します。|
 ||[アラビア語 (text: \| \| RangeReference \| excel. @ result<any>)](/javascript/api/excel/excel.functions#arabic-text-)|ローマ数字をアラビア数字に変換します。|
 ||[領域 (参照: \| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#areas-reference-)|参照内のエリアの数を返します。 領域とは、連続したセルまたは1つのセルの範囲のことです。|
 ||[asc (text: RangeReference \| \| \| excel. @ result<any>) (string)](/javascript/api/excel/excel.functions#asc-text-)|全角 (2 バイト) の文字を半角 (1 バイト) の文字に変更します。 2バイト文字セット (DBCS) を使用します。|
@@ -76,11 +121,11 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[atan (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#atan-number-)|ラジアンで表された数値のアークタンジェントを返します。範囲は-Pi/2 から Pi/2 です。|
 ||[atan2 (xNum: excel \| \| . RangeReference \| <any>のセル範囲の値を指定します。指定した\|セル範囲\|の excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#atan2-xnum--ynum-)|指定された x 座標と y 座標のアークタンジェント (-Pi から Pi までのラジアン) を返します。-pi を除く。|
 ||[atanh (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#atanh-number-)|数値の双曲線逆正接 (ハイパーボリック タンジェントの逆関数) を返します。|
-||[aveDev (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#avedev-...values-)|データ全体の平均値に対するそれぞれのデータの絶対偏差の平均を返します。 引数には、数値、数値配列、または数値を含む範囲を参照する名前を指定します。|
-||[平均 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#average-...values-)|引数の平均値 (算術平均) を返します。数値、名前、配列、または数値を含む範囲を参照することができます。|
-||[averageA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#averagea-...values-)|引数の平均値 (算術平均) を返し、引数が0の場合は、文字列を評価します。TRUE は、1と評価されます。 引数には、数値、名前、配列、または参照を指定できます。|
+||[aveDev (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#avedev-values-)|データ全体の平均値に対するそれぞれのデータの絶対偏差の平均を返します。 引数には、数値、数値配列、または数値を含む範囲を参照する名前を指定します。|
+||[平均 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#average-values-)|引数の平均値 (算術平均) を返します。数値、名前、配列、または数値を含む範囲を参照することができます。|
+||[averageA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#averagea-values-)|引数の平均値 (算術平均) を返し、引数が0の場合は、文字列を評価します。TRUE は、1と評価されます。 引数には、数値、名前、配列、または参照を指定できます。|
 ||[averageIf (範囲\| : Excel. RangeReference \| excel. functionresult<any>, 抽出条件: 数値\|文字列\|ブール型\| \| excel. RangeReference \|エクセル. functionresult<any>, averageRange?: excel. \| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#averageif-range--criteria--averagerange-)|指定した条件または抽出条件で指定されたセルの平均値 (算術平均) を検索します。|
-||[averageIfs (averageRange: \| RangeReference \| excel<any>.......\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#averageifs-averagerange--...values-)|指定された一連の条件または抽出条件で指定されたセルの平均値 (算術平均) を検索します。|
+||[averageIfs (averageRange: \| RangeReference \| excel<any>.......\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#averageifs-averagerange--values-)|指定された一連の条件または抽出条件で指定されたセルの平均値 (算術平均) を検索します。|
 ||[bahtText (数値\| : RangeReference \| \|のセル範囲の数式)<any>](/javascript/api/excel/excel.functions#bahttext-number-)|数値を文字列 (バーツ) に変換します。|
 ||[基数\| (数値: \| RangeReference excel. \| result<any>, Radix: number \| \| excel. RangeReference \| excel. functionresult<any>, minLength?: number (数値)\| Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#base-number--radix--minlength-)|数値を特定の基数 (底) を持つ文字列式に変換します。|
 ||[besselI (x: 数値\|文字列\|ブール\|値\| excel. RangeReference \| excel. Result<any>, n: 数値\|文字列\|ブール型\| \| excel. RangeReference\| Excel の functionresult<any>)](/javascript/api/excel/excel.functions#besseli-x--n-)|変更されたベッセル関数 (x) を返します。|
@@ -107,14 +152,14 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[chiSq_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-dist_rt-x--degfreedom-)|カイ 2 乗分布の右側確率の値を返します。|
 ||[chiSq_Inv (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-inv-probability--degfreedom-)|カイ 2 乗分布の左側確率の逆関数の値を返します。|
 ||[chiSq_Inv_RT (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-inv_rt-probability--degfreedom-)|カイ 2 乗分布の右側確率の逆関数の値を返します。|
-||[choose (indexNum \| : RangeReference \| \| excel....」<any>と指定します。値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#choose-indexnum--...values-)|インデックス番号に基づいて、値のリストから実行する値またはアクションを選択します。|
+||[choose (indexNum \| : RangeReference \| \| excel....」<any>と指定します。値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#choose-indexnum--values-)|インデックス番号に基づいて、値のリストから実行する値またはアクションを選択します。|
 ||[clean (text: RangeReference \| \| \| Excel.. excel のセル範囲の文字列<any>)](/javascript/api/excel/excel.functions#clean-text-)|印刷できない文字を文字列から削除します。|
 ||[コード\| (Text: \| RangeReference \|の excel. @ result)<any>](/javascript/api/excel/excel.functions#code-text-)|コンピューターで使用されている文字セットで、テキスト文字列の最初の文字の数値コードを返します。|
 ||[列 (配列: \| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#columns-array-)|配列または参照の列数を返します。|
 ||[\| combin (number: number Excel. RangeReference \| \| <any>の範囲で指定されている番号: excel の\|セル範囲\|の番号。 RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#combin-number--numberchosen-)|すべての項目から指定された個数を選択するときの組み合わせの数を返します。|
 ||[結合 a (number: number \| \| excel. RangeReference \|の excel. functionresult<any>, Number が選択\|されました。 range \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#combina-number--numberchosen-)|すべての項目から指定された個数を選択するときの組み合わせ (反復あり) の数を返します。|
 ||[complex (realNum: number \|文字列\| Boolean \| excel. \| RangeReference \| Result<any>, iNum: number \| string \|ブール値\| excel. 範囲\|\| RangeReference Excel. functionresult<any>, サフィックス?: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#complex-realnum--inum--suffix-)|実数係数と虚数係数を複素数に変換します。|
-||[連結 (...値: 配列<string \| RangeReference \| \|の形式で指定<any>>)](/javascript/api/excel/excel.functions#concatenate-...values-)|複数のテキスト文字列を1つのテキスト文字列に結合します。|
+||[連結 (...値: 配列<string \| RangeReference \| \|の形式で指定<any>>)](/javascript/api/excel/excel.functions#concatenate-values-)|複数のテキスト文字列を1つのテキスト文字列に結合します。|
 ||[confidence_Norm (α: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, standarddev: number \| excel. \| \| <any>の範囲で指定します。size: 数値\| Excel. RangeReference \| \| <any>のセル範囲](/javascript/api/excel/excel.functions#confidence-norm-alpha--standarddev--size-)|正規分布を使用して、母集団の平均に対する信頼区間を返します。|
 ||[confidence_T (α: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, standarddev: number \| excel. \| \| <any>の範囲、サイズ::)。RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#confidence-t-alpha--standarddev--size-)|スチューデントの T 分布を使用して、母集団の平均に対する信頼区間を返します。|
 ||[convert (数値: 数値\|文字列\| Boolean \| excel. \| RangeReference \| result<any>, fromunit: number \| string \|ブール値\| excel. 範囲\|\| RangeReference<any> \|の toUnit: 数値文字列\|のブール値 excel \| \| . RangeReference excel. \|のブール値)<any>](/javascript/api/excel/excel.functions#convert-number--fromunit--tounit-)|数値の単位を変換します。|
@@ -122,11 +167,11 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[cosh (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#cosh-number-)|数値の双曲線余弦 (ハイパーボリック コサイン) を返します。|
 ||[cot (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#cot-number-)|角度のコタンジェントを返します。|
 ||[coth \| (数値: Excel の RangeReference \| \|のセル範囲の数式)<any>](/javascript/api/excel/excel.functions#coth-number-)|数値の双曲線余接を返します。|
-||[カウント (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#count-...values-)|範囲内の数値を含むセルの個数をカウントします。|
-||[countA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#counta-...values-)|範囲内の空白でないセルの個数をカウントします。|
+||[カウント (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#count-values-)|範囲内の数値を含むセルの個数をカウントします。|
+||[countA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#counta-values-)|範囲内の空白でないセルの個数をカウントします。|
 ||[countBlank (範囲: excel. RangeReference \| \|のセル範囲<any>)](/javascript/api/excel/excel.functions#countblank-range-)|指定されたセル範囲に含まれる空白セルの個数をカウントします。|
 ||[countIf \| (範囲: Excel. RangeReference \|の excel. functionresult<any>, criteria: number \| String \| boolean \| excel \| . RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#countif-range--criteria-)|範囲内の指定された条件に一致するセルの個数をカウントします。|
-||[countIfs (...\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#countifs-...values-)|指定した条件または抽出条件のセットによって指定されたセルの個数をカウントします。|
+||[countIfs (...\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#countifs-values-)|指定した条件または抽出条件のセットによって指定されたセルの個数をカウントします。|
 ||[coupDayBs (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>を指定します。この場合、数字\|文字列\|のブール\|値 excel. \| RangeReference \| excel functionresult<any>、basis?: number\|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#coupdaybs-settlement--maturity--frequency--basis-)|利払期間の第 1 日目から受渡日までの日数を返します。|
 ||[coupDays (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>を指定します。この場合、数字\|文字列\|のブール\|値 excel. \| RangeReference \| excel functionresult<any>、basis?: number\|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#coupdays-settlement--maturity--frequency--basis-)|受渡日を含む利払期間内の日数を返します。|
 ||[coupDaysNc (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>を指定します。この場合、数字\|文字列\|のブール\|値 excel. \| RangeReference \| excel functionresult<any>、basis?: number\|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#coupdaysnc-settlement--maturity--frequency--basis-)|受渡日から次の利払日までの日数を返します。|
@@ -154,7 +199,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[10進数 (数値: \| \| RangeReference excel. \| result<any>, radix: Number \| Excel. RangeReference \| \| excel... 範囲 excel. functionresult)<any>](/javascript/api/excel/excel.functions#decimal-number--radix-)|指定された底の数値の文字列式を 10 進数に変換します。|
 ||[度 (角度\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#degrees-angle-)|ラジアンを度に変換します。|
 ||[delta (数値 1: \|数値\|文字列\| boolean excel. \| RangeReference \| <any>result, number2?: 数値\|文字列\|ブール値\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#delta-number1--number2-)|2つの数値が等しいかどうかをテストします。|
-||[devSq (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#devsq-...values-)|標本の平均値に対する各データの偏差の平方和を返します。|
+||[devSq (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#devsq-values-)|標本の平均値に対する各データの偏差の平方和を返します。|
 ||[\| dget (Database: RangeReference \| excel. Functionresult<any>, Field: \| \| \| RangeReference \| excel. functionresult<any>, criteria: string (抽出条件: 文字列)\| Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#dget-database--field--criteria-)|指定した条件に一致する1つのレコードをデータベースから抽出します。|
 ||[ディスク (受渡日: \|数値\|を\|表すブール値\| excel. RangeReference \| Result<any>, 満期日: \|数値文字列\|ブール型\| excel 範囲\|RangeReference \| <any>Excel の関数の結果、pr: number \|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、償還: number \|文字列\|ブール\|型\| \|の RangeReference excel. functionresult<any>, basis?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#disc-settlement--maturity--pr--redemption--basis-)|証券に対する割引率を返します。|
 ||[dmax (database: Excel \| . RangeReference の Excel. \| result<any>, Field \| : number string \| excel \| . RangeReference \| result<any>, criteria: string (抽出条件)\| Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#dmax-database--field--criteria-)|指定した条件に一致するデータベースのレコードのうち、フィールド (列) の最大値を返します。|
@@ -186,7 +231,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[f_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, degFreedom1: number \| \| excel. \| <any>の場合、degFreedom2:):RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#f-dist_rt-x--degfreedom1--degfreedom2-)|2つのデータセットの F 確率分布 (左右の度合い) を返します。|
 ||[\| f_Inv (確率: \| RangeReference \| excel. RangeReference result<any>, DegFreedom1: number \| \| excel. result, excel. functionresult \| <any>,degFreedom2: \| Excel のセル範囲\|を指定し\|ます。 RangeReference excel<any>. functionresult)](/javascript/api/excel/excel.functions#f-inv-probability--degfreedom1--degfreedom2-)|(左辺の) F 確率分布の逆関数の値を返します。 p = F (x,...) の場合は、F (p,...) = x となります。|
 ||[\| f_Inv_RT (確率: \| RangeReference \| excel. RangeReference result<any>, DegFreedom1: number \| \| excel. result, excel. functionresult \| <any>,degFreedom2: \| Excel のセル範囲\|を指定し\|ます。 RangeReference excel<any>. functionresult)](/javascript/api/excel/excel.functions#f-inv_rt-probability--degfreedom1--degfreedom2-)|F が指定されている場合、(右側の) F 確率分布の逆関数の値を返します。RT (x,...)、次に f..RT (p,...) = x。|
-||[ファクト (数値: RangeReference \| \| <any>のように\|数値を指定します。](/javascript/api/excel/excel.functions#fact-number-)|数値の階乗を返します。*2*~ 3 の値** 件数.|
+||[ファクト (数値: RangeReference \| \| <any>のように\|数値を指定します。](/javascript/api/excel/excel.functions#fact-number-)|数値の階乗を返します。*2**~ 3 の*値件数.|
 ||[factDouble (数値: 数値\|文字列\|ブール\|値 Excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#factdouble-number-)|数値の二重階乗を返します。|
 ||[false ()](/javascript/api/excel/excel.functions#false--)|論理値 FALSE を返します。|
 ||[検索する (findText: \| string \| excel. RangeReference \|エクセル. RangeReference<any>の範囲内の\| \| excel. \|の excel. functionresult<any>, startnum?:RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#find-findtext--withintext--startnum-)|別のテキスト文字列内の1つのテキスト文字列の開始位置を返します。 検索では大文字と小文字が区別されます。|
@@ -204,10 +249,10 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[gamma_Dist (x: number \| \| excel \| . RangeReference excel. functionresult<any>, α: number \| \| excel. RangeReference \| result<any>, β: number: number \| \| RangeReference \|のような excel のセル範囲 (Excel<any>)。関数の\|結果はブール\|値の excel \| 。 RangeReference excel.<any>functionresult)](/javascript/api/excel/excel.functions#gamma-dist-x--alpha--beta--cumulative-)|ガンマ分布関数の値を返します。|
 ||[\| gamma_Inv (確率: \| RangeReference \| excel. RangeReference result<any>, α: number \| excel. \| \|の範囲<any>では、ベータ版の excel です。RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#gamma-inv-probability--alpha--beta-)|ガンマ分布の累積分布の逆関数の値を返します。 p = ガンマ。DIST (x,...)、次にガンマ。INV (p,...) = x。|
 ||[gauss (x: 数値\| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#gauss-x-)|標準正規分布の累積分布関数より小さい 0.5 を返します。|
-||[gcd (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#gcd-...values-)|最も一般的な除数を返します。|
+||[gcd (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#gcd-values-)|最も一般的な除数を返します。|
 ||[geStep (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. Functionresult<any>, step?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#gestep-number--step-)|数値がしきい値より大きいかどうかをテストします。|
-||[geoMean (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#geomean-...values-)|正の数値データの配列または範囲の幾何平均を返します。|
-||[ハーの平均値 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#harmean-...values-)|正の数のデータセットの調和平均を返します。 reciprocals の算術平均の逆数。|
+||[geoMean (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#geomean-values-)|正の数値データの配列または範囲の幾何平均を返します。|
+||[ハーの平均値 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#harmean-values-)|正の数のデータセットの調和平均を返します。 reciprocals の算術平均の逆数。|
 ||[hex2Bin (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. functionresult<any>, 位置?: 数値\|文字列\|ブール型\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#hex2bin-number--places-)|16進数を2進数に変換します。|
 ||[hex2Dec (数値: 数値\|文字列\|ブール\|値 Excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#hex2dec-number-)|16 進数を 10 進数に変換します。|
 ||[hex2Oct (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. functionresult<any>, 位置?: 数値\|文字列\|ブール型\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#hex2oct-number--places-)|16 進数を 8 進数に変換します。|
@@ -230,7 +275,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[imLog10 (複素数: 数値\|文字列\|の\|ブール値 Excel \| . RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#imlog10-inumber-)|複素数の10を底とする対数を返します。|
 ||[imLog2 (複素数: 数値\|文字列\|の\|ブール値 Excel \| . RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#imlog2-inumber-)|複素数の2を底とする対数を返します。|
 ||[imPower (複素数: 数値\|文字列\|ブール\|値 excel. \| RangeReference \| <any>result, number: number \| string \|ブール値\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#impower-inumber--number-)|複素数を累乗した値を返します。|
-||[imProduct (...値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#improduct-...values-)|1から255の複素数の積を返します。|
+||[imProduct (...値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#improduct-values-)|1から255の複素数の積を返します。|
 ||[imReal (複素数: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#imreal-inumber-)|複素数の実数係数を返します。|
 ||[imSec (複素数: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#imsec-inumber-)|複素数の正割 (セカント) を返します。|
 ||[imSech (複素数: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#imsech-inumber-)|複素数の双曲線正割を返します。|
@@ -238,7 +283,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[imSinh (複素数: 数値\|文字列\|の\|ブール値 Excel \| . RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#imsinh-inumber-)|複素数の双曲線正弦 (ハイパーボリック サイン) を返します。|
 ||[imSqrt (複素数: 数値\|文字列\|の\|ブール型\| RangeReference \| excel. @ result<any>)](/javascript/api/excel/excel.functions#imsqrt-inumber-)|複素数の平方根を返します。|
 ||[imSub (RangeReference: 数値\|文字列\|ブール\|値 excel. \| \| <any>result, inumber2: number \|文字列\|ブール値\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#imsub-inumber1--inumber2-)|2つの複素数の差を返します。|
-||[imSum (...値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#imsum-...values-)|複素数の和を返します。|
+||[imSum (...値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#imsum-values-)|複素数の和を返します。|
 ||[imTan (複素数: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#imtan-inumber-)|複素数の正接 (タンジェント) を返します。|
 ||[虚数 (複素数: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#imaginary-inumber-)|複素数の虚数係数を返します。|
 ||[int (数値\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#int-number-)|数値を最も近い整数に切り捨てます。|
@@ -259,9 +304,9 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[iso_Ceiling (number: \| \| number excel. RangeReference \| excel. functionresult<any>, 有意値?: 数値\| excel. RangeReference \| \|の範囲内の excel functionresult)<any>](/javascript/api/excel/excel.functions#iso-ceiling-number--significance-)|数値を最も近い整数、または最も近い基準値の倍数に切り上げます。|
 ||[ispmt (rate: \| \| number excel. RangeReference \| <any>: number \| \| excel. RangeReference \| excel. functionresult<any>, nper: number (年単位: number) \|\| \| RangeReference<any>のようになります。エクセルの場合、pv: Number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#ispmt-rate--per--nper--pv-)|投資の特定の期に支払われる利息を返します。|
 ||[isref (値: \| \| RangeReference \| \| \| ) (ブール値の excel. functionresult)<any>](/javascript/api/excel/excel.functions#isref-value-)|値が参照であるかどうかを調べ、TRUE または FALSE を返します。|
-||[kurt (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#kurt-...values-)|データセットの尖度を返します。|
+||[kurt (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#kurt-values-)|データセットの尖度を返します。|
 ||[大規模 (配列: \| Excel. RangeReference \| \| <any>のセル範囲の値を表示します。 k \| : 数字\|の excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#large-array--k-)|1 つのデータ セットの中で順位番目に大きなデータを返します。 たとえば、5番目に大きな数値を指定します。|
-||[lcm (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#lcm-...values-)|最も一般的な複数のを返します。|
+||[lcm (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#lcm-values-)|最も一般的な複数のを返します。|
 ||[left (text \| : \| RangeReference excel. \| result<any>, numchars?: number \| excel. RangeReference \| \| excel. functionresult<any>(excel) の範囲)](/javascript/api/excel/excel.functions#left-text--numchars-)|文字列の先頭から指定した数の文字を返します。|
 ||[leftb (text: string \| Excel \| \| . RangeReference<any>の excel. functionresult, numbytes?: number \| \| excel. RangeReference excel. \| result)<any>](/javascript/api/excel/excel.functions#leftb-text--numbytes-)|文字列の先頭から指定した数の文字を返します。 2バイト文字セット (DBCS) を使用します。|
 ||[len (text: RangeReference \| \| \| Excel.. excel のセル範囲の文字列<any>)](/javascript/api/excel/excel.functions#len-text-)|文字列の文字数を返します。|
@@ -274,20 +319,20 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[lookup (lookupValue: 数値\|文字列\| Boolean \| excel \| . \| RangeReference<any>result, lookupvalue: excel. RangeReference \| \| (range excel)Excel FunctionResult<any>、resultvector?: \| RangeReference \|の excel. functionresult)<any>](/javascript/api/excel/excel.functions#lookup-lookupvalue--lookupvector--resultvector-)|1行または1列の範囲または配列から、値を検索します。 下位互換性のために提供されています。|
 ||[小文字 (text: \| \| RangeReference \| excel. @ result<any>)](/javascript/api/excel/excel.functions#lower-text-)|文字列に含まれるすべての文字を小文字に変換します。|
 ||[match (lookupValue: 数値\|文字列\|ブール\|値 excel. \| RangeReference \| Result<any>, look upar射線: number \| excel. RangeReference \| \| (範囲)Excel<any>functionresult、matchType?: Number \| \| excel RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#match-lookupvalue--lookuparray--matchtype-)|指定された順序での指定された値と一致する要素の、配列内での相対的な位置を表す数値を返します。|
-||[最大値 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#max-...values-)|引数リストに含まれる最大の数値を返します。 論理値と文字列は無視されます。|
-||[maxA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#maxa-...values-)|引数リストに含まれる最大の数値を返します。 論理値およびテキストは無視されません。|
+||[最大値 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#max-values-)|引数リストに含まれる最大の数値を返します。 論理値と文字列は無視されます。|
+||[maxA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#maxa-values-)|引数リストに含まれる最大の数値を返します。 論理値およびテキストは無視されません。|
 ||[mduration (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|RangeReference \| <any>を指定します。クーポン: \|数値文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、利回り: number \|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, frequency: number \| string \|ブール値\| excel 範囲\|RangeReference \| <any>を指定します。整数の場合は、数値\|を\|表す\|ブール値 excel \| 。 RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#mduration-settlement--maturity--coupon--yld--frequency--basis-)|額面 value を $100 と仮定して、セキュリティのマコーレー変更期間を返します。|
-||[メジアン (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#median-...values-)|メジアン、または指定された数値の中央にある数を返します。|
+||[メジアン (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#median-values-)|メジアン、または指定された数値の中央にある数を返します。|
 ||[mid \| (Text: \| RangeReference excel. \| result<any>, Startnum: number \| \| excel. RangeReference \| excel. functionresult<any>, numchars: number (数値) \|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#mid-text--startnum--numchars-)|開始位置と長さを指定して、文字列の途中から文字を返します。|
 ||[midb (text: RangeReference \| Excel. \| \| result<any> \| , Startnum: number \| excel. RangeReference \| excel. functionresult<any>, numbytes: number/数値型\| Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#midb-text--startnum--numbytes-)|開始位置と長さを指定して、文字列の途中から文字を返します。 2バイト文字セット (DBCS) を使用します。|
-||[min (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#min-...values-)|引数リストに含まれる最小の数値を返します。 論理値と文字列は無視されます。|
-||[minA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#mina-...values-)|一連の値のうち、最小の値を返します。 論理値およびテキストは無視されません。|
+||[min (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#min-values-)|引数リストに含まれる最小の数値を返します。 論理値と文字列は無視されます。|
+||[minA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#mina-values-)|一連の値のうち、最小の値を返します。 論理値およびテキストは無視されません。|
 ||[分 ( \|シリアル値: RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#minute-serialnumber-)|分 (0 ~ 59 の数値) を返します。|
 ||[mirr \| (Values: RangeReference \| excel<any>. 借入利率: number \| excel. RangeReference の範囲\|で指定します。 \| <any>の場合は、reinvestRate: number \|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#mirr-values--financerate--reinvestrate-)|一連の定期的なキャッシュフローに対する内部利益率を返します。これは、再投資に対する投資費用と利息の両方を考慮しています。|
 ||[\| mod (数値: Excel. RangeReference \| \| <any>のセル範囲の数式を指定します。除数: \| number \| excel. RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#mod-number--divisor-)|数値を除数で割った後の余りを返します。|
 ||[月\| (シリアル番号: Excel のセル\|範囲 RangeReference \| <any>を指定します。](/javascript/api/excel/excel.functions#month-serialnumber-)|月を 1 (1 月) から 12 (12 月) の数値で返します。|
 ||[mround (数値: 数値\|文字列\|ブール\| \|値 excel. RangeReference \| excel. functionresult<any>, multiple: number \| string \| boolean \| excel range \|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#mround-number--multiple-)|指定された値の倍数になるように、数値を四捨五入します。|
-||[multiNomial (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#multinomial-...values-)|一連の数値の multinomial を返します。|
+||[multiNomial (...値: 配列<数値\| \|を表す RangeReference。 \| excel \| . \|のブール値の<any>>)](/javascript/api/excel/excel.functions#multinomial-values-)|一連の数値の multinomial を返します。|
 ||[n (値: 数値\|文字列\|ブール\|型の excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#n-value-)|数値以外の値を数値に、日付をシリアル値に、TRUE の場合は1に、それ以外の場合は 0 (ゼロ) に変換します。|
 ||[na ()](/javascript/api/excel/excel.functions#na--)|エラー値 #N/A (値を指定できません) を返します。|
 ||[negBinom_Dist (数値\| f: Excel. RangeReference \| \|の範囲<any>で指定したセルの番号: 数値\| : excel のセル\|範囲\| <any>の数式を指定します。probabilityS: RangeReference \| \| \| excel のセル範囲の値を計算<any>します。累積: ブール\|値\|の excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#negbinom-dist-numberf--numbers--probabilitys--cumulative-)|負の二項分布を返します。成功率は成功した場合、成功率の前に失敗した場合は成功します。|
@@ -301,7 +346,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[not \| (論理演算 Excel. RangeReference \| \|の excel の範囲で指定)<any>](/javascript/api/excel/excel.functions#not-logical-)|FALSE を TRUE に、true を FALSE に変更します。|
 ||[now ()](/javascript/api/excel/excel.functions#now--)|日付および時刻として書式設定された現在の日付と時刻を返します。|
 ||[nper (rate: 数値\| \| \| excel. RangeReference result<any>, Pmt: number \| \| excel. RangeReference \| excel. functionresult<any>, pv: number (数値\|形式)\| \| RangeReference<any>の\|ようになります。エクセルの場合、fv?: \| RangeReference \| excel. functionresult<any>、type?: number \| excel. range。\| RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#nper-rate--pmt--pv--fv--type-)|定額の支払いを定期的に行い、利率が一定であると仮定して、投資に必要な期間 (支払回数) を返します。|
-||[npv (rate: RangeReference \| \| <any>の excel の\|セル範囲の数値を指定します。値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#npv-rate--...values-)|割引率、および将来行われる一連の支払い (負の値) と収益 (正の値) に基づいて、投資の正味現在価値を返します。|
+||[npv (rate: RangeReference \| \| <any>の excel の\|セル範囲の数値を指定します。値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#npv-rate--values-)|割引率、および将来行われる一連の支払い (負の値) と収益 (正の値) に基づいて、投資の正味現在価値を返します。|
 ||[数値 (text \| : \| RangeReference excel. \| result<any>, DecimalSeparator?: string \| excel. RangeReference \| \|の範囲<any>で指定した excel...groupSeparator?: string \| Excel. \| RangeReference \| result<any>(excel)](/javascript/api/excel/excel.functions#numbervalue-text--decimalseparator--groupseparator-)|ロケールに依存しない方法でテキストを数値に変換します。|
 ||[oct2Bin (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. functionresult<any>, 位置?: 数値\|文字列\|ブール型\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#oct2bin-number--places-)|8 進数を 2 進数に変換します。|
 ||[oct2Dec (数値: 数値\|文字列\|ブール\|値 Excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#oct2dec-number-)|8 進数を 10 進数に変換します。|
@@ -311,7 +356,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[oddFYield (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|RangeReference \|の Excel. functionresult<any>、issue: number \| string \|ブール値\| excel. \| RangeReference \| excel. functionresult<any>、firstcoupon: number\|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, rate: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \| <any>Excel の関数の結果、pr: number \|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、償還: number \|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, frequency: number \| string \|ブール値\| excel 範囲\|RangeReference \| <any>を指定します。整数の場合は、数値\|を\|表す\|ブール値 excel \| 。 RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#oddfyield-settlement--maturity--issue--firstcoupon--rate--pr--redemption--frequency--basis-)|最初のピリオドが半端な証券の利回りを返します。|
 ||[oddLPrice (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference の Excel の結果<any>、lastinterest: 数値\|文字列\|ブール値\| excel. \| RangeReference \| excel. functionresult<any>、rate: number\|文字列\|ブール\|値\| excel. RangeReference \| result<any>、利回り: number \|文字列\|ブール値\| excel 範囲\|RangeReference \| <any>excel. functionresult, 償還: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>, frequency:数字\|文字列\|の\|ブール値 excel \| . RangeReference \| Result<any>, basis?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#oddlprice-settlement--maturity--lastinterest--rate--yld--redemption--frequency--basis-)|最終期の日数が半端な証券に対して、$100 面での価格を返します。|
 ||[oddLYield (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference の Excel の結果<any>、lastinterest: 数値\|文字列\|ブール値\| excel. \| RangeReference \| excel. functionresult<any>、rate: number\|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, pr: number \|文字列\|ブール値\| excel 範囲\|RangeReference \| <any>excel. functionresult, 償還: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>, frequency:数字\|文字列\|の\|ブール値 excel \| . RangeReference \| Result<any>, basis?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#oddlyield-settlement--maturity--lastinterest--rate--pr--redemption--frequency--basis-)|最終期の日数が半端な証券の利回りを返します。|
-||[または (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#or-...values-)|いずれかの引数が TRUE であるかどうかを調べ、TRUE または FALSE を返します。 すべての引数が FALSE の場合にのみ FALSE を返します。|
+||[または (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#or-values-)|いずれかの引数が TRUE であるかどうかを調べ、TRUE または FALSE を返します。 すべての引数が FALSE の場合にのみ FALSE を返します。|
 ||[pduration \| (Rate: \| RangeReference excel. \| result<any>, Pv: number \| \| excel. RangeReference \| excel. functionresult<any>, fv: number/電話番号\|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#pduration-rate--pv--fv-)|投資が指定した金額に達するまでに必要な期間を返します。|
 ||[percentRank_Exc (配列: excel \| \|の\| RangeReference<any>の値を指定します。この場合、x: \| excel. RangeReference \| \|の値<any>を意味します。\| : RangeReference \| \| <any>を指定します。範囲は excel です。](/javascript/api/excel/excel.functions#percentrank-exc-array--x--significance-)|データセット内の値のランクを、データセットのパーセンテージ (0.. 1、排他) としてデータセットのパーセンテージとして返します。|
 ||[percentRank_Inc (配列: excel \| \|の\| RangeReference<any>の値を指定します。この場合、x: \| excel. RangeReference \| \|の値<any>を意味します。\| : RangeReference \| \| <any>を指定します。範囲は excel です。](/javascript/api/excel/excel.functions#percentrank-inc-array--x--significance-)|データセット内の値のランクを、データセットのパーセンテージとしてデータセットに対する割合 (0 ~ 1 を含む) で返します。|
@@ -328,7 +373,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[価格 (受渡日: \|数値\|文字列\|のブール値\| excel. RangeReference \| Result<any>, 満期日: \|数値文字列\|ブール型\| excel 範囲\|RangeReference \| <any>のように、excel の場合は、数値\|を\|ブール\|値\|で指定します。 \| RangeReference excel. functionresult<any>、利回り: number \|文字列\|ブール\| \|型\|の RangeReference excel. Functionresult<any>, 償還: 数値\|文字列\|ブール値\| excel 範囲\|\| RangeReference<any>を指定します。この場合、数字\|文字列\|のブール\|値 excel. \| RangeReference \| excel functionresult<any>、basis?: number\|文字列\|ブール\|型の\| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#price-settlement--maturity--rate--yld--redemption--frequency--basis-)|定期的に利息が支払われる証券に対して、額面 $100 あたりの価格を返します。|
 ||[priceDisc (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|RangeReference \| excel<any>の場合、割引: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、償還:数字\|文字列\|の\|ブール値 excel \| . RangeReference \| Result<any>, basis?: 数値\|文字列\|ブール型\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#pricedisc-settlement--maturity--discount--redemption--basis-)|割引証券の額面 $100 あたりの価格を返します。|
 ||[priceMat (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>の excel の結果、問題: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、rate: number \|文字列\|ブール\|値\| excel. RangeReference \| result<any>, 利回り: number \|文字列\|ブール値\| excel. RangeReference の範囲で指定\|します。\| Excel functionresult<any>、by: \|数値文字列\|ブール値\| excel. RangeReference \| \| <any>の範囲で指定します。](/javascript/api/excel/excel.functions#pricemat-settlement--maturity--issue--rate--yld--basis-)|満期日に利息が支払われる証券に対して、額面 $100 あたりの価格を返します。|
-||[製品 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#product-...values-)|引数として指定されたすべての数値を乗算します。|
+||[製品 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#product-values-)|引数として指定されたすべての数値を乗算します。|
 ||[適切な (text: \| string \| excel. RangeReference \| result)<any>](/javascript/api/excel/excel.functions#proper-text-)|文字列を適切な大文字/小文字に変換します。各単語の最初の文字を大文字にし、その他の文字を小文字にします。|
 ||[pv (rate \| : \| RangeReference excel. \| result<any>, Nper: number \| \| excel. RangeReference \| excel. functionresult<any>, pmt: number \| /数値/数値\| \| RangeReference<any>の\|ようになります。エクセルの場合、fv?: \| RangeReference \| excel. functionresult<any>、type?: number \| excel. range。\| RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#pv-rate--nper--pmt--fv--type-)|投資の現在価値を返します。これで、将来行われる一連の支払いを現時点での合計金額にすることができます。|
 ||[quartile_Exc ( \|配列: Excel \| . RangeReference \| excel. RangeReference result<any>, クォート: number \| excel. \| \| <any>のセル範囲の数式を指定します。](/javascript/api/excel/excel.functions#quartile-exc-array--quart-)|0 ~ 1 の百分位の値に基づいて、データセットの四分位数を返します。|
@@ -361,23 +406,23 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[sign (数値: RangeReference \| \| <any>のように\| 、excel のセル範囲の数値を指定します。](/javascript/api/excel/excel.functions#sign-number-)|数値の符号を返します。数値が正の場合は1、0の場合は0、数値が負の場合は-1 になります。|
 ||[sin (数値: excel \|の RangeReference \| \|のセル範囲の数値<any>)](/javascript/api/excel/excel.functions#sin-number-)|角度のサインを返します。|
 ||[sinh (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#sinh-number-)|数値の双曲線正弦 (ハイパーボリック サイン) を返します。|
-||[スキュー (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#skew-...values-)|分布の歪度を返します。その平均を中心とした分布の平均値周辺の特性を返します。|
-||[skew_p(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#skew-p-...values-)|母集団に基づく分布の歪度を取得します。歪度とは、分布の平均値周辺での両側の非対称度を表す値です。|
+||[スキュー (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#skew-values-)|分布の歪度を返します。その平均を中心とした分布の平均値周辺の特性を返します。|
+||[skew_p(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#skew-p-values-)|母集団に基づく分布の歪度を取得します。歪度とは、分布の平均値周辺での両側の非対称度を表す値です。|
 ||[\| sln (Cost: RangeReference \| \|を指定すると、excel のセル範囲の<any>数式が返され\|ます。 salvage \| : RangeReference \| excel. functionresult<any>, life: number \|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#sln-cost--salvage--life-)|定額法 (Straight-line Method) を使用して、資産の 1 期あたりの減価償却費を返します。|
 ||[小 (配列: RangeReference \| \| \| <any>のように数値を指定します。この場合、k: \| \| RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#small-array--k-)|1 組のデータの中で順位番目に小さなデータを返します。 たとえば、5番目の最小数。|
 ||[sqrt (数値\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#sqrt-number-)|数値の平方根を返します。|
 ||[sqrtPi (数値: \| RangeReference \| \| \| \|のブール値のセル範囲 excel. @ result)<any>](/javascript/api/excel/excel.functions#sqrtpi-number-)|(数値 * π) の平方根を返します。|
-||[stDevA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdeva-...values-)|論理値や文字列を含む標本に基づいて、標準偏差を予測します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
-||[stDevPA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdevpa-...values-)|論理値や文字列を含む母集団全体に基づいて、標準偏差を計算します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
-||[stDev_P(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdev-p-...values-)|引数として指定された母集団全体に基づく標準偏差を計算します (論理値およびテキストは無視されます)。|
-||[stDev_S(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdev-s-...values-)|標本に基づく標準偏差を予測します (サンプルの論理値およびテキストは無視されます)。|
+||[stDevA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdeva-values-)|論理値や文字列を含む標本に基づいて、標準偏差を予測します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
+||[stDevPA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdevpa-values-)|論理値や文字列を含む母集団全体に基づいて、標準偏差を計算します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
+||[stDev_P(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdev-p-values-)|引数として指定された母集団全体に基づく標準偏差を計算します (論理値およびテキストは無視されます)。|
+||[stDev_S(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#stdev-s-values-)|標本に基づく標準偏差を予測します (サンプルの論理値およびテキストは無視されます)。|
 ||[標準化 (x: \| Excel. RangeReference \| \|のセル範囲: excel のセル範囲<any>の平均値\| \|を計算します。 RangeReference \| excel. functionresult<any>, standarddev: number\| Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#standardize-x--mean--standarddev-)|平均および標準偏差で特徴付けられた分布からの正規化された値を返します。|
 ||[代替\| (Text: \| RangeReference excel. \| result<any>, Oldtext: string \| \| excel. RangeReference エクセル. \| excel<any>... newText::\|文字列\| RangeReference \| excel<any>. functionresult、instanceNum?: string \| excel、RangeReference excel、 \| \|エクセルの各関数<any>のセル範囲](/javascript/api/excel/excel.functions#substitute-text--oldtext--newtext--instancenum-)|既存のテキストをテキスト文字列の新しいテキストに置き換えます。|
-||[subtotal (functionNum: RangeReference \| \| <any>のように\| 、excel のセル範囲の数式を指定します。値: RangeReference を指定\|すると、 \| <any>> の<ようになります。](/javascript/api/excel/excel.functions#subtotal-functionnum--...values-)|リストまたはデータベース内の集計を返します。|
-||[合計 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#sum-...values-)|セル範囲に含まれる数値をすべて合計します。|
+||[subtotal (functionNum: RangeReference \| \| <any>のように\| 、excel のセル範囲の数式を指定します。値: RangeReference を指定\|すると、 \| <any>> の<ようになります。](/javascript/api/excel/excel.functions#subtotal-functionnum--values-)|リストまたはデータベース内の集計を返します。|
+||[合計 (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#sum-values-)|セル範囲に含まれる数値をすべて合計します。|
 ||[sumIf ( \| Range: RangeReference \| excel. functionresult<any>, criteria: Number \| String \|ブール値 excel \| \| . RangeReference \| excel. functionresult<any>, ()sumRange?: \| RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#sumif-range--criteria--sumrange-)|指定した条件または抽出条件で指定されたセルを追加します。|
-||[sumIfs (sumRange: Excel. \| RangeReference \| excel<any>.......\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#sumifs-sumrange--...values-)|指定された条件または抽出条件のセットで指定されたセルを追加します。|
-||[sumSq (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#sumsq-...values-)|引数の 2 乗の和 (平方和) を返します。 引数には、数値、配列、名前、または数値を含むセルへの参照を指定できます。|
+||[sumIfs (sumRange: Excel. \| RangeReference \| excel<any>.......\|値: RangeReference を指定すると、> \| <any> \| \| \|の場合<は excel.](/javascript/api/excel/excel.functions#sumifs-sumrange--values-)|指定された条件または抽出条件のセットで指定されたセルを追加します。|
+||[sumSq (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#sumsq-values-)|引数の 2 乗の和 (平方和) を返します。 引数には、数値、配列、名前、または数値を含むセルへの参照を指定できます。|
 ||[syd (cost: \| \| RangeReference \| excel. RangeReference result<any>, salvage: number \| \| excel. \| result<any>, life: number \| (年の数値) の値\| Excel の RangeReference \|の結果。 excel に<any> \| \|よって指定します。 RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#syd-cost--salvage--life--per-)|級数法 (Sum-of-Year's Digits Method) を使用して、特定の期における減価償却費を返します。|
 ||[t (値: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#t-value-)|値が text であるかどうかを確認し、その場合はテキストを返します。そうでない場合は、二重引用符 (empty text) を返します。|
 ||[t_Dist (x: number \| \| excel \| . RangeReference excel. RangeReference result<any>, degFreedom: number excel. \| \| \| result<any>, (累積値):ブール\|値の RangeReference \| \|の excel で指定<any>)](/javascript/api/excel/excel.functions#t-dist-x--degfreedom--cumulative-)|スチューデントの t 分布の左辺値を返します。|
@@ -404,10 +449,10 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[upper (text: RangeReference \| \| \| Excel.. excel のセル範囲の文字列<any>)](/javascript/api/excel/excel.functions#upper-text-)|文字列をすべて大文字に変換します。|
 ||[usdollar ( \|数値: Excel \| . RangeReference \| result<any>, decimals?: 数値\| Excel. RangeReference \| \| excel... 範囲 excel. functionresult)<any>](/javascript/api/excel/excel.functions#usdollar-number--decimals-)|通貨形式を使用して、数値を文字列に変換します。|
 ||[値 (text: string \| boolean \| Number \| excel RangeReference \| \|のセル範囲の数式<any>)](/javascript/api/excel/excel.functions#value-text-)|数値を表す文字列を数値に変換します。|
-||[varA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#vara-...values-)|標本に基づく、論理的な値やテキストなどの分散を予測します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
-||[varPA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#varpa-...values-)|論理値や文字列を含む母集団全体に基づいて、分散を計算します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
-||[var_P(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#var-p-...values-)|母集団全体に基づいて、分散を計算します (母集団の論理値と文字列は無視されます)。|
-||[var_S(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#var-s-...values-)|標本に基づく予測の推定値を指定します (サンプルの論理値およびテキストは無視されます)。|
+||[varA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#vara-values-)|標本に基づく、論理的な値やテキストなどの分散を予測します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
+||[varPA (...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#varpa-values-)|論理値や文字列を含む母集団全体に基づいて、分散を計算します。 文字列、および論理値 FALSE には値0が設定されます。論理値 TRUE の値は1です。|
+||[var_P(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#var-p-values-)|母集団全体に基づいて、分散を計算します (母集団の論理値と文字列は無視されます)。|
+||[var_S(...値: 配列<数\| excel RangeReference \| \|の範囲で<any>>)](/javascript/api/excel/excel.functions#var-s-values-)|標本に基づく予測の推定値を指定します (サンプルの論理値およびテキストは無視されます)。|
 ||[vdb (cost: \| \| RangeReference \| excel. RangeReference result<any>, salvage: number \| \| excel. \| result<any>, life: number \| (年の数値) の値\| \| Excel の RangeReference の結果<any>、Startperiod: Number \| \| excel. RangeReference \| excel. functionresult<any>、endperiod: number\| \| Excel. RangeReference \|の excel. Functionresult<any>、Factor?: \| \| RangeReference \| excel. functionresult<any>、noswitch?: ブール型\|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#vdb-cost--salvage--life--startperiod--endperiod--factor--noswitch-)|倍額定率法または指定された方法を使用して、特定の期における資産の減価償却費を返します。|
 ||[vlookup (lookupValue: 数値\|文字列\|ブール\|値 excel. \| RangeReference \| result<any>, tablearray: excel. 範囲\|番号\| excel. RangeReference \|Excel FunctionResult<any>, colindexnum: Excel \| \| . RangeReference \| result<any>, rangeLookup?:?: boolean excel. RangeReference \| \| \|Excel の FunctionResult<any>)](/javascript/api/excel/excel.functions#vlookup-lookupvalue--tablearray--colindexnum--rangelookup-)|テーブルの左端の列にある値を検索し、指定した列と同じ行にある値を返します。 既定では、テーブルを昇順で並べ替える必要があります。|
 ||[weekNum (シリアル番号: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, returnType?: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#weeknum-serialnumber--returntype-)|年の週番号を返します。|
@@ -417,7 +462,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[workDay_Intl (startDate: 数値\|文字列\|ブール\| \|値 excel. RangeReference \| excel. functionresult<any>, days: number \| string \| boolean \| excel Range \|RangeReference \| <any> \|のようになります。週末?: \| \| RangeReference \| excel. functionresult<any>, 祭日?: 数値\|文字列 (数式)\| \| RangeReference \|のブール値\|の数式を指定します。<any>](/javascript/api/excel/excel.functions#workday-intl-startdate--days--weekend--holidays-)|ユーザー設定の週末パラメーターを使用して、指定した稼働日数の前または後の日付のシリアル番号を返します。|
 ||[xirr (values: 数値\|文字列\| excel. RangeReference \| \| \| <any>のブール\|値、日付: 数値を表す\| excel. range boolean \| \|\| RangeReference<any>を指定すると、引数 guess?: 数値\|文字列\|のブール\|型\| excel. RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#xirr-values--dates--guess-)|キャッシュフローのスケジュールに対する内部利益率を返します。|
 ||[xnpv (rate: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| <any>excel. functionresult, values: number \| string \| Excel. range boolean \| \|\| RangeReference<any> \|の excel の場合は、日付: 数値を表す\|文字列を指定\|し\|ます。 excel \| . RangeReference excel.<any>functionresult)](/javascript/api/excel/excel.functions#xnpv-rate--values--dates-)|キャッシュフローのスケジュールの正味現在価値を返します。|
-||[xor 演算子 (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#xor-...values-)|すべての引数の論理 ' Exclusive Or ' を返します。|
+||[xor 演算子 (...値: 配列<ブール\|値の RangeReference \| \| 。エクセル検索<any>>)](/javascript/api/excel/excel.functions#xor-values-)|すべての引数の論理 ' Exclusive Or ' を返します。|
 ||[年 (シリアル\|値: Excel の RangeReference \| \| <any>のセル範囲の数式を指定します。](/javascript/api/excel/excel.functions#year-serialnumber-)|日付の年を 1900 ~ 9999 の範囲の整数で返します。|
 ||[yearFrac (startDate: 数値\|文字列\|の\|ブール値 Excel \| . RangeReference \| excel.<any>functionresult, endDate: 数値\|文字列\|ブール値\| excel 範囲\|RangeReference \| <any>を指定します。整数の場合は、数値\|を\|表す\|ブール値 excel \| 。 RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#yearfrac-startdate--enddate--basis-)|開始日と終了日の間の日数を表す年の小数点以下の値を返します。|
 ||[yield (受渡日: \|数値\|文字列\| <any>のブール値\| excel. RangeReference \|の満期日: 数値\|文字列\|のブール値\| excel の範囲\|RangeReference \| <any>excel の場合は、数値\|文字列\|のブール値\| excel. \| RangeReference \| excel. functionresult<any>, pr: number \|文字列\| boolean \| excel \| . RangeReference \| result<any>, 償還: 数値\|文字列\|ブール値 excel. RangeReference (範囲\|外\| )\| Excel の関数の<any>結果、頻度: \|数値\|文字列\|ブール値 excel \| . RangeReference \| result<any>, basis?: 数値文字列\| \|ブール\|値の RangeReference \| \|の excel で指定<any>)](/javascript/api/excel/excel.functions#yield-settlement--maturity--rate--pr--redemption--frequency--basis-)|定期的に利息が支払われる証券の利回りを返します。|
@@ -425,6 +470,26 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[yieldMat (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|\| RangeReference<any>の excel の結果、問題: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult<any>、rate: number \|文字列\|ブール\| \|型\|の RangeReference excel. functionresult<any>, pr: number \| string \|ブール値\| excel \| 。 RangeReference\| Excel functionresult<any>、by: \|数値文字列\|ブール値\| excel. RangeReference \| \| <any>の範囲で指定します。](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|満期日に利息が支払われる証券の利回りを返します。|
 ||[z_Test (配列: excel \| \| \|の RangeReference<any>の値を指定します。この場合、x: \| \| excel. RangeReference \|の結果<any>、シグマ?: number \|Excel で RangeReference \| \| <any>を指定します。](/javascript/api/excel/excel.functions#z-test-array--x--sigma-)|Z 検定の片側 P 値を返します。|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|指定したセット内のアイコンのインデックスを表します。|
+|[IconCollections](/javascript/api/excel/excel.iconcollections)|[Fiv"行"](/javascript/api/excel/excel.iconcollections#fivearrows)||
+||[fiveArrowsGray](/javascript/api/excel/excel.iconcollections#fivearrowsgray)||
+||[fiveBoxes](/javascript/api/excel/excel.iconcollections#fiveboxes)|[Api set: ExcelApi 1.2]|
+||[Fivvldb Arters](/javascript/api/excel/excel.iconcollections#fivequarters)||
+||[fiver](/javascript/api/excel/excel.iconcollections#fiverating)||
+||[4方向矢印](/javascript/api/excel/excel.iconcollections#fourarrows)||
+||[4時矢印 (灰色)](/javascript/api/excel/excel.iconcollections#fourarrowsgray)||
+||[4評価](/javascript/api/excel/excel.iconcollections#fourrating)||
+||[4赤 To黒](/javascript/api/excel/excel.iconcollections#fourredtoblack)||
+||[fourTrafficLights](/javascript/api/excel/excel.iconcollections#fourtrafficlights)||
+||[両列](/javascript/api/excel/excel.iconcollections#threearrows)||
+||[threeArrowsGray](/javascript/api/excel/excel.iconcollections#threearrowsgray)||
+||[すべてのフラグ](/javascript/api/excel/excel.iconcollections#threeflags)||
+||[threeSigns](/javascript/api/excel/excel.iconcollections#threesigns)||
+||[全星](/javascript/api/excel/excel.iconcollections#threestars)||
+||[threeSymbols2](/javascript/api/excel/excel.iconcollections#threesymbols2)||
+||[threeSymbols](/javascript/api/excel/excel.iconcollections#threesymbols)||
+||[threeTrafficLights1](/javascript/api/excel/excel.iconcollections#threetrafficlights1)||
+||[threeTrafficLights2](/javascript/api/excel/excel.iconcollections#threetrafficlights2)||
+||[threeTriangles](/javascript/api/excel/excel.iconcollections#threetriangles)||
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|現在の範囲のすべての列が非表示になっているかどうかを表します。|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
 ||[Getcolumns After (count?: number)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|現在の Range オブジェクトの右にある特定の列数を取得します。|
@@ -434,14 +499,14 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[getRowsBelow (count?: number)](/javascript/api/excel/excel.range#getrowsbelow-count-)|現在の Range オブジェクトの下にある特定の行数を取得します。|
 ||[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.range#getusedrange-valuesonly-)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は ItemNotFound エラーをスローします。|
 ||[merge (全体: boolean)](/javascript/api/excel/excel.range#merge-across-)|範囲内のセルをワークシートの 1 つの領域に結合します。|
-||[hidden](/javascript/api/excel/excel.range#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用。|
+||[hidden](/javascript/api/excel/excel.range#hidden)|現在の範囲のすべてのセルが非表示になっているかどうかを表します。 読み取り専用です。|
 ||[並べ替え](/javascript/api/excel/excel.range#sort)|現在の範囲について、範囲の並べ替えを表します。 読み取り専用です。|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|現在の範囲のすべての行が非表示になっているかどうかを表します。|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|範囲内のセルを結合解除して別々のセルにします。|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns ()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|現在の列のデータに基づいて、現在の範囲の列の幅を最適な幅に変更します。|
 ||[autofitRows ()](/javascript/api/excel/excel.rangeformat#autofitrows--)|現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用です。|
+||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用。|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|範囲のアドレスを取得または設定します。たとえば、' SheetName!A1: B5 '。|
 |[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel. SortOrientation, method?: Excel. Sortorientation)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|並べ替え操作を実行します。|
@@ -464,10 +529,40 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|大文字小文字の区別が、テーブルの最後の並べ替え操作に影響を与えたかどうかを表します。 読み取り専用です。|
 ||[method](/javascript/api/excel/excel.tablesort#method)|テーブルの並べ替えで最後に使用した中国語文字の順序付け方法を表します。 読み取り専用です。|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|テーブルに、現在の並べ替えパラメーターを再適用します。|
+|[ThreeArrowsGraySet](/javascript/api/excel/excel.threearrowsgrayset)|[グレーダウン矢印](/javascript/api/excel/excel.threearrowsgrayset#graydownarrow)||
+||[グレーの Side矢印](/javascript/api/excel/excel.threearrowsgrayset#graysidearrow)||
+||[グレーの Uparrow](/javascript/api/excel/excel.threearrowsgrayset#grayuparrow)||
+|[ThreeArrowsSet](/javascript/api/excel/excel.threearrowsset)|[greenUpArrow](/javascript/api/excel/excel.threearrowsset#greenuparrow)||
+||[redDownArrow](/javascript/api/excel/excel.threearrowsset#reddownarrow)||
+||[yellowSideArrow](/javascript/api/excel/excel.threearrowsset#yellowsidearrow)||
+|[全てのフラグの場合](/javascript/api/excel/excel.threeflagsset)|[greenFlag](/javascript/api/excel/excel.threeflagsset#greenflag)||
+||[redFlag](/javascript/api/excel/excel.threeflagsset#redflag)||
+||[yellowFlag](/javascript/api/excel/excel.threeflagsset#yellowflag)||
+|[月の月](/javascript/api/excel/excel.threesignsset)|[greenCircle](/javascript/api/excel/excel.threesignsset#greencircle)||
+||[redDiamond 形](/javascript/api/excel/excel.threesignsset#reddiamond)||
+||[yellowTriangle](/javascript/api/excel/excel.threesignsset#yellowtriangle)||
+|[全ての star](/javascript/api/excel/excel.threestarsset)|[goldStar](/javascript/api/excel/excel.threestarsset#goldstar)||
+||[halfGoldStar](/javascript/api/excel/excel.threestarsset#halfgoldstar)||
+||[silverStar](/javascript/api/excel/excel.threestarsset#silverstar)||
+|[ThreeSymbols2Set](/javascript/api/excel/excel.threesymbols2set)|[greenCheck](/javascript/api/excel/excel.threesymbols2set#greencheck)||
+||[redCross](/javascript/api/excel/excel.threesymbols2set#redcross)||
+||[yellowExclamation](/javascript/api/excel/excel.threesymbols2set#yellowexclamation)||
+|[すべての月](/javascript/api/excel/excel.threesymbolsset)|[greenCheckSymbol](/javascript/api/excel/excel.threesymbolsset#greenchecksymbol)||
+||[Redクロスバー記号](/javascript/api/excel/excel.threesymbolsset#redcrosssymbol)||
+||[yellowExclamationSymbol](/javascript/api/excel/excel.threesymbolsset#yellowexclamationsymbol)||
+|[ThreeTrafficLights1Set](/javascript/api/excel/excel.threetrafficlights1set)|[greenCircle](/javascript/api/excel/excel.threetrafficlights1set#greencircle)||
+||[redCircleWithBorder](/javascript/api/excel/excel.threetrafficlights1set#redcirclewithborder)||
+||[yellowCircle](/javascript/api/excel/excel.threetrafficlights1set#yellowcircle)||
+|[ThreeTrafficLights2Set](/javascript/api/excel/excel.threetrafficlights2set)|[greenTrafficLight](/javascript/api/excel/excel.threetrafficlights2set#greentrafficlight)||
+||[redTrafficLight](/javascript/api/excel/excel.threetrafficlights2set#redtrafficlight)||
+||[yellowTrafficLight](/javascript/api/excel/excel.threetrafficlights2set#yellowtrafficlight)||
+|[ThreeTrianglesSet](/javascript/api/excel/excel.threetrianglesset)|[greenUpTriangle](/javascript/api/excel/excel.threetrianglesset#greenuptriangle)||
+||[redDownTriangle](/javascript/api/excel/excel.threetrianglesset#reddowntriangle)||
+||[yellowDash](/javascript/api/excel/excel.threetrianglesset#yellowdash)||
 |[Workbook](/javascript/api/excel/excel.workbook)|[職務](/javascript/api/excel/excel.workbook#functions)|計算に使用できるワークシート関数のコレクションを表します。 読み取り専用です。|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|ドキュメント内で選択が変更されるときに発生します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。 ワークシート全体が空白の場合、この関数は左上のセルを返します (つまり、エラーはスローされ*ません*)。|
-||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用。|
+||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用です。|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect (options?: Excel. ワークシートのオプション, パスワード?: string)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|ワークシートを保護します。 ワークシートが既に保護されている場合は、失敗します。|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|シートの保護のオプション。 読み取り専用です。|
 ||[protected](/javascript/api/excel/excel.worksheetprotection#protected)|ワークシートが保護されているかどうかを示します。 読み取り専用です。|

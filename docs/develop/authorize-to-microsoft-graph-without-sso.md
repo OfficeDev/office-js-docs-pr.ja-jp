@@ -3,12 +3,12 @@ title: SSO を使用せずに Microsoft Graph を承認する
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 0bf79daa74542d36d90976dfd3f699591a8646a6
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 9636077553904e7250cf1d6dc740febe9eac61e2
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302955"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838488"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>SSO を使用せずに Microsoft Graph を承認する
 
@@ -26,7 +26,7 @@ SSO を使用せずに Microsoft Graph にアクセスする場合は、次の�
 - NodeJS ベースのサーバー側を使用するアドインの場合は、[Passport Azure AD](https://github.com/AzureAD/passport-azure-ad) を使用します。
 - 暗黙的なフローを使用するアドインの場合は、[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki) を使用します。
 
-Microsoft ID プラットフォーム (以前は AAD v.2.0) を使用するための推奨ライブラリの詳細については、「[Microsoft ID プラットフォームの認証ライブラリ](/azure/active-directory/develop/reference-v2-libraries.md)」を参照してください。
+Microsoft ID プラットフォーム (以前は AAD v.2.0) を使用するための推奨ライブラリの詳細については、「[Microsoft ID プラットフォームの認証ライブラリ](/azure/active-directory/develop/reference-v2-libraries)」を参照してください。
 
 次のサンプルでは、Office アドインから Microsoft Graph のデータを取得します。
 

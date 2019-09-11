@@ -3,12 +3,12 @@ title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
-ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
+ms.openlocfilehash: c8ee9f2f32f7124c4914131e68c9742f87567715
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "36642832"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838502"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -28,7 +28,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウアドイン要素の順序付け
 
-```
+```xml
 <OfficeApp xsi:type="TaskPaneApp">
     <Id>
     <AlternateID>
@@ -70,7 +70,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="basic-mail-add-in-element-ordering"></a>基本的なメールアドイン要素の順序付け
 
-```
+```xml
 <OfficeApp xsi:type="MailApp">
     <Id>
     <AlternateId>
@@ -109,11 +109,11 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <VersionOverrides>*
 ```
 
-\*Versionoverrides の子要素の順序については、「VersionOverrides の[メールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-10)」と「1.0」および「[メールアドイン1.1 要素](#mail-add-in-element-ordering-within-versionoverrides-ver-11)の順序」を参照してください。
+\*Versionoverrides の子要素の順序については、「 [versionoverrides のメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-10)」と「1.0」および「[メールアドイン1.1 要素](#mail-add-in-element-ordering-within-versionoverrides-ver-11)の順序」を参照してください。
 
 ## <a name="basic-content-add-in-element-ordering"></a>基本的なコンテンツアドイン要素の順序付け
 
-```
+```xml
 <OfficeApp xsi:type="ContentApp">
     <Id>
     <AlternateId>
@@ -152,7 +152,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内の作業ウィンドウアドイン要素の順序付け
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -291,7 +291,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.0
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -387,7 +387,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.1
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -489,7 +489,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 
 ## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内でのコンテンツアドイン要素の順序付け
 
-```
+```xml
 <VersionOverrides>
     <WebApplicationInfo>
         <Id>
