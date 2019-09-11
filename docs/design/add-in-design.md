@@ -33,7 +33,6 @@ Office の設計原則に従って、ポジティブなアドイン体験を作�
 - **すべてのプラットフォームおよび入力方式に対応するように設計する**。アドインは、Office がサポートしている、すべてのプラットフォームで動作するように設計します。また、アドインの UX は、あらゆるプラットフォームおよびフォーム ファクターで最適に機能する必要があります。マウス/キーボードとタッチ入力のデバイスをサポートして、カスタムの HTML UI が各種のフォーム ファクターに順応するようにします。詳細は、「[タッチ](../concepts/add-in-development-best-practices.md#optimize-for-touch)」をご参照ください。 
 
 ## <a name="see-also"></a>関連項目
-- 
-  [Office UI Fabric](https://developer.microsoft.com/ja-JP/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/ja-JP/fabric) 
 - [アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 
