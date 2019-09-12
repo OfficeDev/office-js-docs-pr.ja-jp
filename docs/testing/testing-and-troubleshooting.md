@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
-ms.date: 07/29/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: d6ede08411d9f6c69fa9fb31256ab377682fbca0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940865"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838530"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -40,7 +40,7 @@ ms.locfileid: "35940865"
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook アドインが正常に機能しない
 
-Windows で実行している Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
+Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
 
 
 - [ツール] >  **[インターネット オプション]** > **[詳細]** に移動します。
@@ -88,7 +88,7 @@ Office アドインを使用するとき、ユーザーは、ダイアログ ボ
 
 URL を信頼済みサイトのリストに追加する方法:
 
-1. Internet Explorer で [ツール] ボタンを選択し、**[インター ネット オプション]** > **[セキュリティ]** へ移動します。
+1. [**コントロール パネル**]で、[**インターネット オプション**]  >  [**セキュリティ**] に移動します。
 2. **[信頼済みサイト]** ゾーンを選択して、**[サイト]** を選択します。
 3. エラー メッセージに表示される URL を入力して、**[追加]** を選択します。
 4. アドインの使用をもう一度お試しください。問題が続く場合は、他のセキュリティ ゾーンの設定を変えて、アドインのドメインが Office アプリケーションのアドレス バーに表示される URL と同じゾーンに存在するようにします。
