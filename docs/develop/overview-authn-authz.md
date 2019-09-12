@@ -1,18 +1,18 @@
 ---
 title: Office アドインにおける認証と承認の概要
 description: ''
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 2733f8af9f236347e52269c9e73b322b4310e2a9
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302957"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838509"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
-既定では、Web アプリケーション、つまり Office アドインでは匿名アクセスが許可されていますが、ログインによる認証をユーザーに要求できます。 特に、ユーザーが Microsoft アカウントまたは職場や学校 (Office 365) のアカウントのいずれかを使用してログインすることを要求できます。 これによりユーザーの確認がアドインで可能になることから、このタスクはユーザー認証と呼ばれています。
+既定では、Web アプリケーション、つまり Office アドインでは匿名アクセスが許可されていますが、ログインによる認証をユーザーに要求できます。 たとえば、ユーザーに Microsoft アカウント、職場または学校用の Office 365 のアカウント、またはその他の一般的なアカウントでログインするように要求できます。 これによりユーザーの確認がアドインで可能になることから、このタスクはユーザー認証と呼ばれています。
 
 アドインはまた、Microsoft Graph データ (ユーザーの Office 365 プロファイル、OneDrive ファイル、SharePoint データなど) や Google、Facebook、LinkedIn、SalesForce、GitHub などの外部ソース内のデータにアクセスするためのユーザーの同意を取得することもできます。 これにより承認されるのはユーザーではなく*アドイン*であることから、このタスクはアドイン (またはアプリ) 承認と呼ばれています。
 

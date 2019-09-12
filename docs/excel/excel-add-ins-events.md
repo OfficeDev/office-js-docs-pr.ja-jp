@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 3757b4e094bae29bc02f2b360144513fbc7ad1ab
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 338085b297e760057987fd94d7caf96b5134ce6a
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127787"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838481"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -39,7 +39,11 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
+| `onColumnSorted` | 1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onFiltered` | フィルターがオブジェクトに適用されたときに発生します。 | [**Table**](/javascript/api/excel/excel.table)、[**TableCollection**](/javascript/api/excel/excel.tablecollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onRowHiddenChanged` | 特定のワークシート上の行非表示状態が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onRowSorted` | 1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onSingleClicked` | ワークシートで左クリック / タップされたアクションが発生したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
