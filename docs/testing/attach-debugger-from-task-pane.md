@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウからデバッガーをアタッチする
 description: ''
-ms.date: 08/06/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231306"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838474"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -32,13 +32,14 @@ Visual Studio では、**ソリューション エクスプローラー**内に�
 > [パーソナリティ] メニューが表示されない場合は、Visual Studio を使用してアドインをデバッグできます。 Office で作業ウィンドウ アドインが開いていることを確認してから、次の手順を実行します。
 >
 > 1. Visual Studio で、**[デバッグ]** > **[プロセスにアタッチ]** の順に選択します。
-> 2. **[プロセスにアタッチ]** で、利用可能なすべての Iexplore.exe プロセスを選択して、**[アタッチ]** を選択します。
+> 2. **使用可能なプロセス**で、[アドインが Internet Explorer または Microsoft Edge のどちらを使用しているか](../concepts/browsers-used-by-office-web-add-ins.md)に応じて、使用可能なすべての `Iexplore.exe` プロセス*または*使用可能なすべての `MicrosoftEdge*.exe` プロセスの*どちらか*を選択し、[**添付**] ボタンを選択します。
 
 Visual Studio でのデバッグの詳細については、以下を参照してください。
 
 -   DOM Explorer を Visual Studio で起動して使用するには、ブログ記事「[新しいプロジェクト テンプレートを使って見栄えの良い Office 用アプリをビルドする](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)」の[ヒントとコツ](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) セクションのヒント 4 を参照してください。
 -   ブレークポイントの設定については、「[ブレークポイントの使用](/visualstudio/debugger/using-breakpoints?view=vs-2015)」を参照してください。
 -   F12 を使用するには、「[F12 開発者ツールの使用](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))」を参照してください。
+-   Microsoft Edge 開発者ツールを使用するには、「[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

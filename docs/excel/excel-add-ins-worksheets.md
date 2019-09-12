@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7fd6821797269b13ad7fb1900b2024035e27d37b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940739"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838573"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -298,6 +298,56 @@ function onWorksheetChanged(eventArgs) {
         return context.sync();
     });
 }
+```
+
+## <a name="handle-sorting-events-preview"></a>並べ替えイベントを処理する (プレビュー)
+
+> [!NOTE]
+> これらの並べ替え関連イベントの API は現在、パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+`onColumnSorted` および `onRowSorted` イベントは、ワークシート データがいつ並べ替えられるかを示します。 これらのイベントは、個々の `Worksheet` オブジェクトおよびブックの `WorkbookCollection` に接続されています。 これらは、並べ替えがプログラムで実行されるか、Excel ユーザー インターフェイスを介して手動で実行されるかに関係なく起動します。
+
+> [!NOTE]
+> `onColumnSorted` は、左から右への並べ替え操作の結果として列が並べ替えされたときに起動します。 `onRowSorted` は、上から下への並べ替え操作の結果として行が並べ替えされたときに起動します。 列のヘッダーのドロップダウン メニューを使用してテーブルを並べ替えると、`onRowSorted` イベントが発生します。 イベントは、並べ替え条件として考慮されているものではなく、移動しているものに対応します。
+
+`onColumnSorted` および `onRowSorted` イベントは、それぞれ [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) または [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs) でコールバックを提供します。 これらは、イベントの詳細を提供します。 特に、両方の `EventArgs` には、並べ替え操作の結果として移動された行または列を表す `address` プロパティがあります。 セルの値が並べ替え条件の一部ではない場合でも、並べ替えられたコンテンツを持つセルが含まれます。
+
+以下の画像は、並べ替えイベントの `address` プロパティによって返される範囲を示しています。 まず、並べ替えの前のサンプル データを次に示します。
+
+![並べ替えられる前の Excel のテーブル データ](../images/excel-sort-event-before.png)
+
+「**Q1**」(「**B**」の値) で上から下への並べ替えが実行される場合、次の強調表示された行が `WorksheetRowSortedEventArgs.address` によって返されます。
+
+![上から下への並べ替えの後の Excel のテーブル データ。 移動した行が強調表示されます。](../images/excel-sort-event-after-row.png)
+
+元のデータの「**Quinces**」(「**4**」の値) で左から右への並べ替えが実行される場合、次の強調表示された列が `WorksheetColumnsSortedEventArgs.address` によって返されます。
+
+![左から右への並べ替えの後の Excel のテーブル データ。 移動した列が強調表示されます。](../images/excel-sort-event-after-column.png)
+
+次のコード サンプルは、`Worksheet.onRowSorted` イベントのイベント ハンドラーを登録する方法を示しています。 ハンドラーのコールバックは、範囲の塗りつぶしの色をクリアし、移動した行のセルを塗りつぶします。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // This will fire whenever a row has been moved as the result of a sort action.
+    sheet.onRowSorted.add(function (event) {
+        return Excel.run(function (context) {
+            console.log("Row sorted: " + event.address);
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            // Clear formatting for section, then highlight the sorted area.
+            sheet.getRange("A1:E5").format.fill.clear();
+            if (event.address !== "") {
+                sheet.getRanges(event.address).format.fill.color = "yellow";
+            }
+
+            return context.sync();
+        });
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
 
 ## <a name="find-all-cells-with-matching-text"></a>一致するテキストがあるすべてのセルを検索する
