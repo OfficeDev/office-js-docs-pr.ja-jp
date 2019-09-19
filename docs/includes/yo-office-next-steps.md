@@ -1,0 +1,2 @@
+> [!TIP]
+> <span data-ttu-id="c7663-101">アドインプロジェクトを作成した後で、*次の手順に従っ*て、その後に実行することができます。</span><span class="sxs-lookup"><span data-stu-id="c7663-101">You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created.</span></span> <span data-ttu-id="c7663-102">この記事で説明する手順では、このチュートリアルを完了するために必要なすべてのガイダンスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c7663-102">The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.</span></span>
