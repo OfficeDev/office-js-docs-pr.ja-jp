@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782269"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035449"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -32,11 +32,7 @@ ms.locfileid: "36782269"
 
  まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。 [Office アドイン用の [ごみ箱] ジェネレーター](https://www.npmjs.com/package/generator-office)では、プロジェクトに事前に用意されているカスタム関数を使用してセットアップし、試すことができます。カスタム関数のクイックスタートを既に実行してプロジェクトを生成した場合は、そのプロジェクトを引き続き使用して、[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進んでください。
 
-1. 次のコマンドを実行し、以下のようにプロンプトに応答します。
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
     * **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     * **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
@@ -45,6 +41,8 @@ ms.locfileid: "36782269"
     ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/starcountPrompt.png)
     
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 2. プロジェクトのルート フォルダーに移動します。
     
@@ -240,7 +238,7 @@ function clock(invocation) {
 <li>新しい関数をお試しください。 セル<strong>C1</strong>に、「CONTOSO」というテキストを入力し<strong>ます。CLOCK ())</strong>と入力し、enter キーを押します。 現在の日付が表示され、1秒ごとに更新が流れます。 このクロックはループのタイマーにすぎませんが、リアルタイムデータに対する web 要求を行う、より複雑な関数でタイマーを設定するのと同じ概念を使用できます。</li>
 </ol>
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます。 新しいカスタム関数プロジェクトを作成し、あらかじめ作成された関数を試し、web からデータを要求するカスタム関数を作成し、データをストリーム処理するカスタム関数を作成しました。 この関数のデバッグは[、カスタム関数のデバッグ手順](../excel/custom-functions-debugging.md)を使用して実行することもできます。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。
 

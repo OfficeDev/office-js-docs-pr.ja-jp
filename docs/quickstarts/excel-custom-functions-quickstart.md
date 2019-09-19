@@ -1,15 +1,15 @@
 ---
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 description: Excel クイックスタートガイドでのカスタム関数の開発。
 title: カスタム関数のクイックスタート
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: f34a8817a7c8ef2679fc8ce0a6ad17cec600531b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782234"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035330"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
 
@@ -29,11 +29,7 @@ ms.locfileid: "36782234"
 
 はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。 これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。
 
-1. 任意のフォルダーで、次のコマンドを実行し、次のようにプロンプトに応答します。
-
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
@@ -102,7 +98,7 @@ Excel ブックで、次の手順を`ADD`実行してカスタム関数を試し
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。 次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。 次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。
 
