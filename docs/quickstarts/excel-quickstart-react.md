@@ -1,15 +1,15 @@
 ---
 title: React を使用して Excel 作業ウィンドウ アドインを構築する
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 40ecd0f29ab37df56a8d4456ced0b13f8fdc837b
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 1fdc9b9ab3f111414cb114e11f39794c39443918
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782276"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035295"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>React を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -21,11 +21,7 @@ ms.locfileid: "36782276"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using React framework`
 - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
@@ -35,6 +31,8 @@ yo office
 ![Yeoman ジェネレーター](../images/yo-office-excel-react-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
