@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 98fbd61296ef56397241e402830eb8baaeebe577
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 1648e6ee50d45fa4811766a56ad55896267d66f8
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782241"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035309"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -29,11 +29,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
 - **Choose a script type: (スクリプトの種類を選択)** `Javascript`
@@ -43,6 +39,8 @@ yo office
 ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="explore-the-project"></a>プロジェクトを確認する
 

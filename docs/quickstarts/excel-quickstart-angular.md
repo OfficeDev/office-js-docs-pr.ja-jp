@@ -1,15 +1,15 @@
 ---
 title: Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ed805cf5d19a38d543b7fcbba49508dd3f2d6d97
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4c2cfb061dff9b5eb24642facdcb9996432d873b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782255"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035274"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -21,11 +21,7 @@ ms.locfileid: "36782255"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using Angular framework`
 - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
@@ -35,6 +31,8 @@ yo office
 ![Yeoman ジェネレーター](../images/yo-office-excel-angular-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>プロジェクトを確認する
 
