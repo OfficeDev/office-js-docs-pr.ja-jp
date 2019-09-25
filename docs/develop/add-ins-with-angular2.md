@@ -1,14 +1,14 @@
 ---
 title: Angular で Office アドインを開発する
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517367"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035218"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -79,7 +79,13 @@ export class AppRoutingModule { }
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Fabric コンポーネントと Angular コンポーネントとのラッピングについて検討する
 
-アドインには [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) のスタイルを使用することをお勧めしています。Fabric には、[TypeScript に基づいた](https://github.com/OfficeDev/office-ui-fabric-js)バージョンを含む、いくつかのバージョンに由来するコンポーネントが含まれています。Fabric コンポーネントを、Angular のコンポーネントでラッピングすることによってアドインで使用することを検討してください。これを行う方法を説明した例については、「[Angular でビルドする Word スタイル チェック アドイン](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)」を参照してください。たとえば、[fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) で定義されている Angular コンポーネントで Fabric ファイルの TextField.ts をインポートすると、その場所に Fabric コンポーネントが定義されます。 
+アドインには [UI Fabric](https://developer.microsoft.com/fabric#) のスタイルを使用することをお勧めしています。 Web 用の UI Fabric は 2 つの種類で利用可能です。 
+
+- [Fabric React](https://developer.microsoft.com/fabric#/controls/web) は、高度にカスタマイズ可能で堅牢な、常に最新版にアップデートされているアクセスしやすいコンポーネントを提供します。
+
+- [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) は CSS クラスおよび Sass mixin のコレクションで、Fabric の色、アニメーション、フォント、アイコン、グリッドにアクセスできます。
+
+Fabric コンポーネントを、Angular のコンポーネントでラッピングすることによってアドインで使用することを検討してください。 これを行う方法を説明した例については、「[Angular でビルドする Word スタイル チェック アドイン](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)」を参照してください。 たとえば、[fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) で定義されている Angular コンポーネントで Fabric ファイルの TextField.ts をインポートすると、その場所に Fabric コンポーネントが定義されます。 
 
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する

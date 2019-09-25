@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
 description: Office アドインで Office UI Fabric React を使用する方法について説明します。
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 5c266a7b7f87e431f5a1dc4660a5026a7a163d5a
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782227"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035249"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
@@ -29,11 +29,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 ### <a name="create-the-project"></a>プロジェクトを作成する
 
-Yeoman ジェネレーターを使用して、Word アドイン プロジェクトを作成します。 次のコマンドを実行し、以下のプロンプトに応答します。
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project using React framework`
 - **Choose a script type: (スクリプトの種類を選択)** `TypeScript`
@@ -43,6 +39,8 @@ yo office
 ![Yeoman ジェネレーター](../images/yo-office-word-react.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="try-it-out"></a>試してみる
 
