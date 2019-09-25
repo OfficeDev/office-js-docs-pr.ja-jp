@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 08/15/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477923"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035337"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -65,12 +65,10 @@ npm run validate
 > [!NOTE]
 > ランタイムのログ機能は現在、Office 2016 デスクトップで利用可能です。
 
-### <a name="to-turn-on-runtime-logging"></a>ランタイムのログを有効にするには
-
 > [!IMPORTANT]
-> ランタイムのログはパフォーマンスに影響します。アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
+> ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
 
-ランタイムのログを有効にするには、以下を実行します。
+### <a name="runtime-logging-on-windows"></a>Windows でのランタイム ログ
 
 1. Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。 
 
@@ -89,6 +87,47 @@ npm run validate
 レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。 
 
 ![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
+
+### <a name="runtime-logging-on-mac"></a>Mac でのランタイム ログ
+
+1. Office 2016 デスクトップのビルド **16.27** (19071500) 以降を実行していることを確認します。
+
+2. **ターミナル**を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。
+    
+    ```command&nbsp;line
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+    ```
+
+    `<bundle id>`は、ランタイム ログを有効にするホストを識別します。 `<file_name>`は、ログが書き込まれるテキスト ファイルの名前です。
+
+    `<bundle id>`を次の値のいずれかに設定して、対応するホストのランタイム ログを有効にします。
+
+    - `com.microsoft.Word`
+    - `com.microsoft.Excel`
+    - `com.microsoft.Powerpoint`
+    - `com.microsoft.Outlook`
+
+以下の例では、Word のランタイム ログを有効にし、それからログ ファイルを開きます。
+
+```command&nbsp;line
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
+open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
+```
+
+> [!NOTE] 
+> ランタイム ログを有効にするには、`defaults`コマンドを実行した後に Office を再起動する必要があります。
+
+ランタイム ログを無効にするには、`defaults delete`コマンドを使用します。
+
+```command&nbsp;line
+defaults delete <bundle id> CEFRuntimeLoggingFile
+```
+
+以下の例は、Word のランタイム ログをオフにします。
+
+```command&nbsp;line
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
+```
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題のトラブルシューティングを行うには
 

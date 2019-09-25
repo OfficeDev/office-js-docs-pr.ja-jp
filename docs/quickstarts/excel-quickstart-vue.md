@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715632"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035302"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -41,23 +41,31 @@ vue create my-add-in
 
 1. アプリ フォルダーに移動します。
 
-   ```command&nbsp;line
-   cd my-add-in
-   ```
+    ```command&nbsp;line
+    cd my-add-in
+    ```
 
-2. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。 次のコマンドを実行し、以下に示すプロンプトに応答します。
+2. 以下のコマンドを実行し、Yeoman ジェネレーター使用してアドインのマニフェスト ファイルを生成します。
 
-   ```command&nbsp;line
-   yo office
-   ```
+    ```command&nbsp;line
+    yo office
+    ```
 
-   ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
+    > [!NOTE]
+    > `yo office`コマンドを実行すると、Yeoman のデータ収集ポリシーと Office アドイン CLI ツールに関するプロンプトが表示される場合があります。 提供された情報を使用して、必要に応じてプロンプトに応答します。 2 番目のプロンプトに対して [**終了**] を選択した場合、アドイン プロジェクトを作成する準備ができたら`yo office`コマンドを再度実行する必要があります。
 
-   - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
-   - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
-   - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+    プロンプトが表示されたら、以下の情報を入力してアドイン プロジェクトを作成します。
 
-ウィザードを完了すると、`manifest.xml` ファイルを含む `my-office-add-in` フォルダーが作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
+    - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+    - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
+
+    ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
+
+ウィザードを完了すると、`my-office-add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
+
+> [!TIP]
+> アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する*次の手順*ガイダンスは無視できます。 この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。
 
 ## <a name="secure-the-app"></a>アプリをセキュリティ保護する
 
