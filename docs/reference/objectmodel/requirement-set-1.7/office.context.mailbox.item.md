@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.7
 description: ''
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 localization_priority: Normal
-ms.openlocfilehash: ec990b79ef1f1daaa0bdedc77688a927c1a87e23
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9667ccfea2a27a543ead6df98b24bfa4ca233af4
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695974"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167327"
 ---
 # <a name="item"></a>item
 
@@ -1821,7 +1821,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |要件|値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)|作成|
 
 ##### <a name="returns"></a>戻り値:

@@ -1,14 +1,14 @@
 ---
 title: Office. アイテム-プレビュー要件セット
 description: ''
-ms.date: 08/30/2019
+ms.date: 09/23/2019
 localization_priority: Normal
-ms.openlocfilehash: 9939d939e7b1de7af71d7b5532dcf306330e5b6e
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4a209ebde75a2857f4caa6d246c83adbd2cf7c10
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696499"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167376"
 ---
 # <a name="item"></a>item
 
@@ -2245,7 +2245,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |要件|値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)|作成|
 
 ##### <a name="returns"></a>戻り値:
