@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 04/30/2019
+ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395597"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235331"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -64,11 +64,11 @@ Excel.run(function (context) {
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>複数の範囲を同時に操作する
 
-`RangeAreas` オブジェクトを使用すると、アドインの操作を一度に複数の範囲で実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
+[Rangeareas](/javascript/api/excel/excel.rangeareas)オブジェクトを使用すると、アドインで複数の範囲に対して一度に操作を実行できます。 これらの範囲は、連続していても連続していなくても構いません。 `RangeAreas` については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」にさらに詳しい説明があります。
 
 ## <a name="find-special-cells-within-a-range"></a>範囲内の特殊なセルを検索する
 
-`Range.getSpecialCells()` メソッドと`Range.getSpecialCellsOrNullObject()` メソッドでは、対象セルの特性と対象セルの値の型に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
+[範囲](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)の[getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)メソッドは、セルの特性とセルの値の種類に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 `catch` ブロックが存在しない場合は、このエラーにより関数が停止します。
+対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 `catch`ブロックがない場合、エラーによってメソッドは停止します。
 
 対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードの注意点は次のとおりです。
 
@@ -174,8 +174,8 @@ Excel.run(function (context) {
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-範囲の `copyFrom` 関数では、Excel UI のコピーと貼り付けの動作をレプリケートします。 `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。
-コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+このメソッドは、Excel UI のコピーと貼り付けの動作をレプリケートします[。](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
 ```js
@@ -235,11 +235,11 @@ Excel.run(function (context) {
 
 ## <a name="remove-duplicates"></a>重複の削除
 
-Range オブジェクトの `removeDuplicates` 関数は、指定された列で重複するエントリを持つ行を削除します。 関数は、範囲の一番小さい値のインデックスから一番大きい値のインデックスへ向かって各行を移動します (上から下へ)。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
+指定した列に重複するエントリがある行を削除するには、このメソッドを使用し[ます。](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) このメソッドは、値が最小のインデックスから、範囲内の最大値のインデックス (上から下) までの範囲にある各行を処理します。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
 
-`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 この関数は、最初の行がヘッダーかどうかを指定するブール値のパラメーターも受け取ります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 `removeDuplicates` 関数は、削除する行の数と、残りの一意の行の数を指定する `RemoveDuplicatesResult` オブジェクトを返します。
+`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 メソッドには、最初の行がヘッダーであるかどうかを指定するブール値のパラメーターもあります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 メソッド`removeDuplicates`は、削除`RemoveDuplicatesResult`された行数と、残っている一意の行の数を指定するオブジェクトを返します。
 
-範囲の `removeDuplicates` 関数を使う場合、次の点に注意してください。
+範囲の`removeDuplicates`メソッドを使用する場合は、次の点に注意してください。
 
 - `removeDuplicates` は、関数の結果ではなくセルの値を考慮します。 2 つの異なる関数が同じ結果として評価される場合、セルの値は重複と見なしません。
 - 空のセルは、`removeDuplicates` に無視されることはありません。 空のセルの値は、その他の値と同様に扱われます。 つまり、範囲に含まれる空の行は `RemoveDuplicatesResult` に含まれることになります。
@@ -247,7 +247,7 @@ Range オブジェクトの `removeDuplicates` 関数は、指定された列で
 次の例では、最初の列に重複する値があるエントリを削除する方法を示します。
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:D11");
 
@@ -268,6 +268,48 @@ Excel.run(async (context) => {
 *前の関数が実行された後。*
 
 ![範囲の重複を削除するメソッドが実行された後の Excel のデータ](../images/excel-ranges-remove-duplicates-after.png)
+
+## <a name="group-data-for-an-outline"></a>アウトラインのデータをグループ化する
+
+> [!NOTE]
+> 行と列をグループ化するためのアウトライン Api は、現在、パブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+行またはセル範囲の列は、[アウトライン](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)を作成するためにまとめてグループ化することができます。 これらのグループを折りたたんで展開し、対応するセルを非表示にして表示することができます。 これにより、トップ行のデータの簡単な分析が容易になります。 これらのアウトライングループを作成するには、[範囲グループ](/javascript/api/excel/excel.range#group-groupoption-)を使用します。
+
+アウトラインには階層を設定できます。小さなグループは、より大きいグループの下にネストされています。 これにより、アウトラインを異なるレベルで表示できるようになります。 表示されるアウトラインレベルの変更は、 [showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-)メソッドを使用してプログラムによって行うことができます。 Excel では8レベルのアウトライングループのみがサポートされることに注意してください。
+
+次のコードサンプルでは、行と列の両方に対して2つのレベルのグループを持つアウトラインを作成する方法を示します。 次の図は、そのアウトラインのグループを示しています。 コードサンプルでは、グループ化されている範囲に、アウトラインコントロールの行または列が含まれていないことに注意してください (この例の場合は "集計")。 グループは、コントロールのある行または列ではなく、折りたたまれる内容を定義します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on row 10, meaning 4-9 will collapse and expand.
+    sheet.getRange("4:9").group(Excel.GroupOption.byRows);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on rows 6 and 9, meaning 4-5 and 7-8 will collapse and expand.
+    sheet.getRange("4:5").group(Excel.GroupOption.byRows);
+    sheet.getRange("7:8").group(Excel.GroupOption.byRows);
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on column R, meaning C-Q will collapse and expand.
+    sheet.getRange("C:Q").group(Excel.GroupOption.byColumns);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on columns G, L, and R, meaning C-F, H-K, and M-P will collapse and expand.
+    sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
+    sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
+    sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+```
+
+![2レベルの2次元のアウトラインがある範囲](../images/excel-outline.png)
+
+行または列グループのグループ解除を行うには、[範囲の upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-)メソッドを使用します。 これにより、アウトラインから最上位レベルが削除されます。 同じ行または列の種類の複数のグループが指定された範囲内の同じレベルにある場合、それらすべてのグループはグループ解除されます。
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,12 +3,12 @@ title: XLL ユーザー定義関数を使用してカスタム関数を拡張す
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 955a286956987615f904e8041a16b3c29cc80461
-ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
+ms.openlocfilehash: 7ec853e5b4d03267e1c9d33d2df8a79d86860095
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "36048289"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235303"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
@@ -62,7 +62,7 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 
 |         |XLL のユーザー定義関数 |XLL 互換のカスタム関数 |Excel アドインのカスタム関数 |
 |---------|---------|---------|---------|
-| サポートされるプラットフォーム | Windows | Windows、macOS、Excel online | Windows、macOS、Excel online |
+| サポートされるプラットフォーム | Windows | Windows、macOS、Excel on the web | Windows、macOS、Excel on the web |
 | サポートされるファイル形式 | .XLSX、.XLSB、.XLSM、XLS | .XLSX、.XLSB、.XLSM | .XLSX、.XLSB、.XLSM |
 | 数式オートコンプリート | いいえ | はい | はい |
 | ストリーミング | XlfRTD および XLL コールバックを使用して可能。 | いいえ | はい |
@@ -70,7 +70,7 @@ Excel アドインに対して同等の XLL を指定すると、excel アドイ
 | 揮発性関数 | はい | はい | はい |
 | マルチスレッドの再計算のサポート | はい | はい | はい |
 | 計算動作 | UI がありません。 計算中に Excel が応答しなくなることがあります。 | ユーザーには #BUSY が表示されます。 を返します。 | ユーザーには #BUSY が表示されます。 を返します。 |
-| 要件セット | N/A | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
+| 要件セット | なし。 | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
 
 ## <a name="see-also"></a>関連項目
 

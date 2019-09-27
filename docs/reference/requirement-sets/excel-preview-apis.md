@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細
-ms.date: 08/15/2019
+ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c0b0a5757df2f5766f0e29b599e3e9b36dfd3983
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 95cecd1c6a0b26f945e96834fe39757490788a97
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477908"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235317"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -33,21 +33,27 @@ ms.locfileid: "36477908"
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|コメントの内容を取得または設定します。 文字列はテキスト形式です。|
-||[delete()](/javascript/api/excel/excel.comment#delete--)|コメント スレッドを削除します。|
+||[delete()](/javascript/api/excel/excel.comment#delete--)|コメントと、接続されているすべての返信を削除します。|
 ||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|このコメントが配置されているセルを取得します。|
 ||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|コメント作成者のメール アドレスを取得します。|
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|コメント作成者の名前を取得します。|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|コメントの作成日時を取得します。 コメントがメモから変換されている場合、コメントには作成日時がないため、null が返されます。|
 ||[id](/javascript/api/excel/excel.comment#id)|コメント ID を表します。 読み取り専用です。|
+||[mentions](/javascript/api/excel/excel.comment#mentions)|コメントに記載されているエンティティ (人物など) を取得します。|
 ||[replies](/javascript/api/excel/excel.comment#replies)|コメントに関連付けられている返信オブジェクトのコレクションを表します。 読み取り専用です。|
+||[richContent](/javascript/api/excel/excel.comment#richcontent)|リッチコメントの内容 (コメントに含まれるメンションなど) を取得します。 この文字列は、エンドユーザーに表示されることを意図したものではありません。 アドインでは、リッチコメントコンテンツを解析するためにのみ使用する必要があります。|
 ||[解析](/javascript/api/excel/excel.comment#resolved)|コメントスレッドの状態を取得または設定します。 値 "true" は、コメントスレッドが解決された状態であることを意味します。|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|指定したセルに、指定されたコンテンツを含む新しいコメント (コメントスレッド) を作成します。 指定`InvalidArgument`した範囲が1つのセルより大きい場合は、エラーがスローされます。|
+||[updateMentions (contentWithMentions ション: CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|特別に書式設定された文字列とメンションの一覧を使用して、コメントの内容を更新します。|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add (cellAddress: Range \| string, Content: CommentRichContent \| string, contenttype?: Excel)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|指定したセルで、指定した内容の新しいコメントを作成します。 指定`InvalidArgument`した範囲が1つのセルより大きい場合は、エラーがスローされます。|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|コレクションに含まれるコメントの数を取得します。|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|ID に基づいてコレクションからコメントを取得します。 読み取り専用です。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|位置に基づいてコレクションからコメントを取得します。|
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|指定したセルからコメントを取得します。|
-||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|コレクション内のその返信 ID に関連付けられているコメントを取得します。|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|指定した返信が接続されているコメントを取得します。|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[コメントについて](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|コメントで言及されているエンティティの電子メールアドレスを取得または設定します。|
+||[id](/javascript/api/excel/excel.commentmention#id)|エンティティの id を取得または設定します。 これは、の`CommentRichContent.richContent`id 情報に合わせて配置されます。|
+||[name](/javascript/api/excel/excel.commentmention#name)|コメントで言及されているエンティティの名前を取得または設定します。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|コメント返信の内容を取得または設定します。 文字列はテキスト形式です。|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|コメント返信を削除します。|
 ||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|このコメントの返信があるセルを取得します。|
@@ -56,12 +62,17 @@ ms.locfileid: "36477908"
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|コメント返信作成者の名前を取得します。|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|コメント返信の作成日時を取得します。|
 ||[id](/javascript/api/excel/excel.commentreply#id)|コメント返信 ID を表します。 読み取り専用です。|
+||[mentions](/javascript/api/excel/excel.commentreply#mentions)|コメントに記載されているエンティティ (人物など) を取得します。|
 ||[解析](/javascript/api/excel/excel.commentreply#resolved)|コメントの返信状態を取得または設定します。 値 "true" は、コメント応答が解決された状態であることを意味します。|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|コメントのコメント返信を作成します。|
+||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|リッチコメントの内容 (コメントに含まれるメンションなど) を取得します。 この文字列は、エンドユーザーに表示されることを意図したものではありません。 アドインでは、リッチコメントコンテンツを解析するためにのみ使用する必要があります。|
+||[updateMentions (contentWithMentions ション: CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|特別に書式設定された文字列とメンションの一覧を使用して、コメントの内容を更新します。|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add (content: CommentRichContent \| String, contenttype?: Excel)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|コメントのコメント返信を作成します。|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|コレクションのコメント返信数を取得します。|
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|その ID で識別されるコメント返信を返します。 読み取り専用です。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|コレクション内の位置に基づいてコメント返信を取得します。|
 ||[items](/javascript/api/excel/excel.commentreplycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|コメント内で記述されているすべてのエンティティ (人物など) を含む配列。|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|フィールド リストを UI に表示できるかどうかを指定します。|
 ||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。  返されるセルは、指定した階層のデータが含まれる、指定された行と列の交差部分です。  このメソッドは、特定のセルでの getPivotItems および getDataHierarchy の呼び出しを逆にしたものです。|
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|PivotTableStyle を削除します。|
@@ -89,6 +100,7 @@ ms.locfileid: "36477908"
 ||[width](/javascript/api/excel/excel.range#width)|100% ズームの場合の、範囲の左端から範囲の右端までの距離を、ポイント単位で返します。  読み取り専用です。|
 ||[showGroupDetails (groupopoff: Excel. groupopoff)](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|行または列グループの詳細を表示します。|
 ||[グループ解除 (groupOption: Excel. groupoption](/javascript/api/excel/excel.range#ungroup-groupoption-)|アウトラインの列と行のグループ化を解除します。|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (金額: 数値)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|範囲の書式のインデントを調整します。 インデントの値の範囲は 0 ~ 250 です。|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyto-destinationsheet-)|Shape オブジェクトをコピーして貼り付けます。|
 ||[placement](/javascript/api/excel/excel.shape#placement)|オブジェクトがその下のセルに接続されている方法を表します。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|XML 文字列からスケーラブルなベクター グラフィックス (SVG) を作成し、それをワークシートに追加します。 新しい画像を表す Shape オブジェクトを返します。|
@@ -104,8 +116,8 @@ ms.locfileid: "36477908"
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|スライサーに現在適用されているフィルターがすべて消去されている場合、true となります。|
 ||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|スライサーに含まれる SlicerItems のコレクションを表します。 読み取り専用です。|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|スライサーを含んでいるワークシートを表します。 読み取り専用です。|
-||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|キーに基づいてスライサー アイテムを選択します。 前の選択は消去されます。|
-||[sortBy](/javascript/api/excel/excel.slicer#sortby)|スライサーに含まれるアイテムの並べ替え順序を表します。 指定可能な値は DataSourceOrder、Ascending、Descending です。|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|キーに基づいてスライサーアイテムを選択します。 以前の選択はクリアされます。|
+||[sortBy](/javascript/api/excel/excel.slicer#sortby)|スライサーに含まれるアイテムの並べ替え順序を表します。 可能な値は、"DataSourceOrder"、"昇順"、"降順" です。|
 ||[style](/javascript/api/excel/excel.slicer#style)|スライサー スタイルを表す定数値。 可能な値は次のとおりです。 "SlicerStyleLight1" は "SlicerStyleLight6"、"TableStyleOther1" ~ "TableStyleOther2"、"SlicerStyleDark1" ~ "SlicerStyleDark6" です。 ブックに存在するカスタムのユーザー定義スタイルも指定できます。|
 ||[top](/javascript/api/excel/excel.slicer#top)|スライサーの上端からワークシートの上端までの距離を表します (ポイント数)。|
 ||[width](/javascript/api/excel/excel.slicer#width)|スライサーの幅 (ポイント数) を表します。|
@@ -138,7 +150,7 @@ ms.locfileid: "36477908"
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|既定のテーブル スタイルを使用するようにテーブルを変更します。|
 ||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|フィルターが特定のテーブルに適用されたときに発生します。|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|ブックまたはワークシートのテーブルにフィルターが適用されたときに発生します。|
-|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|フィルターが適用されたテーブルの ID を表します。|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|フィルターが適用されているテーブルの id を表します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を表します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルが含まれるワークシートの ID を表します。|
 |[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete--)|TableStyle を削除します。|
@@ -175,31 +187,31 @@ ms.locfileid: "36477908"
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|現在のブックを保存します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|ワークシート上のすべての Comments オブジェクトの集まりを返します。 読み取り専用です。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|列を並べ替えたときに発生します。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|1つ以上の列が並べ替えられたときに発生します。 これは、左から右への並べ替え操作の結果として発生します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|フィルターが特定のワークシートに適用されたときに発生します。|
-||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|特定のワークシートで行の非表示の状態が変更されたときに発生します。|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|行を並べ替えたときに発生します。|
-||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|ワークシートで左クリック/タップしたときに発生します。 このイベントは、次の場合にクリックしても発生しません。 [...]|
+||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|1つ以上の行が並べ替えられたときに発生します。 これは、上から下への並べ替え操作の結果として発生します。|
+||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|ワークシートで左クリック/タップしたときに発生します。 このイベントは、次のケースをクリックしても発生しません。|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|ワークシートに含まれるスライサーをまとめて返します。 読み取り専用です。|
 ||[showOutlineLevels (rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|アウトラインレベルで行または列のグループを表示します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|あるブックの指定されたワークシートを現在のブックに挿入します。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|列を並べ替えたときに発生します。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|1つ以上の列が並べ替えられたときに発生します。 これは、左から右への並べ替え操作の結果として発生します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
-||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|ブック内のすべてのワークシートの行の非表示状態が変更されたときに発生します。|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|行を並べ替えたときに発生します。|
-||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|ワークシートのコレクションで左クリック/タップ操作が行われるときに発生します。 このイベントは、次の場合にクリックしても発生しません。 [...]|
-|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|特定のワークシートで並べ替えられたエリアを表す範囲のアドレスを取得します。|
+||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|1つ以上の行が並べ替えられたときに発生します。 これは、上から下への並べ替え操作の結果として発生します。|
+||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|ワークシートのコレクションで左クリック/タップ操作が行われるときに発生します。 このイベントは、次のケースをクリックしても発生しません。|
+|[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|特定のワークシートで並べ替えられたエリアを表す範囲のアドレスを取得します。 並べ替え操作の結果として変更された列のみが返されます。|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|イベントのソースを取得します。 詳細については、Excel.EventSource をご覧ください。|
 ||[type](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#worksheetid)|並べ替えが発生したワークシートの ID を取得します。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|イベントの種類を表します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|フィルターが適用されたワークシートの ID を表します。|
 |[WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs)|[address](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#address)|特定のワークシートで変更されたエリアを表す範囲のアドレスを取得します。|
-||[changeType](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#changetype)|RowHiddenChanged イベントがトリガーされる方法を表す変更の種類を取得します。 詳細については、「RowHiddenChangeType」を参照してください。|
+||[changeType](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#changetype)|イベントがトリガーされた方法を表す変更の種類を取得します。 詳細は「`Excel.RowHiddenChangeType`」をご覧ください。|
 ||[source](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#source)|イベントのソースを取得します。 詳細については、Excel.EventSource をご覧ください。|
 ||[type](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#worksheetid)|データが変更されたワークシートの ID を取得します。|
-|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|特定のワークシートで並べ替えられたエリアを表す範囲のアドレスを取得します。|
+|[WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs)|[address](/javascript/api/excel/excel.worksheetrowsortedeventargs#address)|特定のワークシートで並べ替えられたエリアを表す範囲のアドレスを取得します。 並べ替え操作の結果として変更された行のみが返されます。|
 ||[source](/javascript/api/excel/excel.worksheetrowsortedeventargs#source)|イベントのソースを取得します。 詳細については、Excel.EventSource をご覧ください。|
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|並べ替えが発生したワークシートの ID を取得します。|
