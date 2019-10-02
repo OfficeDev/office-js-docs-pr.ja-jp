@@ -3,12 +3,12 @@ title: Office ライブラリの JavaScript API をそのコンテンツ配信�
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 6945cb9e2e93209c1568575d8c393cf00ae47431
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 6b9512d5d0969e185902d7ab9d3227e820c4d0dc
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769583"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353819"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 
@@ -25,7 +25,7 @@ ms.locfileid: "36769583"
 最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
 
 ```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 CDN URL で `office.js` の前にある `/1/` は、Office.js のバージョン 1 内で最新の増分リリースを指定します。JavaScript API for Office が旧バージョンとの互換性を維持するので、最新リリースはバージョン 1 で以前導入されていた API メンバーを引き続きサポートします。既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。 

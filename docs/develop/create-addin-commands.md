@@ -1,14 +1,14 @@
 ---
 title: Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
 description: マニフェストに VersionOverrides を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 06/20/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: cf3329df845d206452b1b29ae46de4a3888a1a49
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695897"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353826"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
 
@@ -43,7 +43,8 @@ ms.locfileid: "36695897"
 次の例は、Office 2013 アドインのマニフェストを示します。**VersionOverrides** 要素がないため、このマニフェストにはアドイン コマンドがありません。Office 2013 は、アドイン コマンドをサポートしていませんが、このマニフェストに **VersionOverrides** を追加することで、アドインは Office 2013 と Office 2016 の両方で動作します。Office 2013 では、アドインはアドイン コマンドを表示しません。また、**SourceLocation** の値を使用して、アドインを単一の作業ウィンドウ アドインとして実行します。Office 2016 では、**VersionOverrides** 要素が含まれない場合、アドインを実行するために **SourceLocation** が使用されます。ただし、**VersionOverrides** を含める場合は、アドインにアドイン コマンドのみが表示され、アドインは単一の作業ウィンドウ アドインとして表示されません。
   
 ```xml
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>657a32a9-ab8a-4579-ac9f-df1a11a64e52</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -51,7 +52,7 @@ ms.locfileid: "36695897"
   <DisplayName DefaultValue="Contoso Add-in Commands" />
   <Description DefaultValue="Contoso Add-in Commands"/>
   <IconUrl DefaultValue="~remoteAppUrl/Images/Icon_32.png" />
- 
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
