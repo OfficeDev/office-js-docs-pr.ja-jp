@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 08/14/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: da8e865a78b666d4790df854403604cc03d6a47a
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 1249278dd542de4ca5db3065b0ee41066b642339
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477916"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353833"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -53,6 +53,7 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
+| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
@@ -72,6 +73,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。_
 
+_\*\* SupportUrl は、AppSource 経由で配布されたアドインに対してのみ必要です。_
+
 <!-- Links for above table -->
 
 [officeapp]: /office/dev/add-ins/reference/manifest/officeapp
@@ -82,6 +85,7 @@ _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で�
 [displayname]: /office/dev/add-ins/reference/manifest/displayname
 [description]: /office/dev/add-ins/reference/manifest/description
 [iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
 [defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
@@ -131,13 +135,15 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Northwind Traders Excel" />
   <Description DefaultValue="Search Northwind Traders data from Excel"/>
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <AppDomains>
     <AppDomain>https://www.northwindtraders.com</AppDomain>
   </AppDomains>
@@ -168,7 +174,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
 
-  <!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for your add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -179,9 +185,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
   <Hosts>
@@ -366,6 +370,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
   <Version>1.0.0.0</Version>
@@ -375,9 +380,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -407,7 +410,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   "http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
-
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>
@@ -424,9 +427,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   <!-- the web server that hosts the icon files. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
