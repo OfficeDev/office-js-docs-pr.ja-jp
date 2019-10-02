@@ -1,14 +1,14 @@
 ---
 title: Office アドインのプライバシーとセキュリティ
 description: ''
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 43caca7b255d11d94c3627ad87d048d1f677cd67
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: c26f1f97382b8e8b1807a3eeeaa63cb6b553cb1e
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838521"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353854"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -131,7 +131,7 @@ Office アドインのセキュリティ モデルをサポートするための
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 

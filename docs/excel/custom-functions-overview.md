@@ -1,16 +1,16 @@
 ---
-ms.date: 07/10/2019
+ms.date: 09/26/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でカスタム関数を作成する
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6224bf7ccc87fecfb017c4f195e3e486ad5d2858
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: aeff31dfce62aa9983f9a4ff2d766e127314d967
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672762"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353868"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -86,12 +86,14 @@ function add(first, second){
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>6f4e46e8-07a8-4644-b126-547d5b539ece</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="helloworld"/>
   <Description DefaultValue="Samples to test custom functions"/>
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <Hosts>
     <Host Name="Workbook"/>
   </Hosts>

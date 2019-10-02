@@ -1,14 +1,14 @@
 ---
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4ed9c03082b139ad42bc7bef263a735fde4d9af2
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695771"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353896"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -31,8 +31,9 @@ Office アドインでの JavaScript の使用の概要については、「 [Ja
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
+     <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>
      <ProviderName>Microsoft</ProviderName>
@@ -43,6 +44,7 @@ Office アドインでの JavaScript の使用の概要については、「 [Ja
      <Description DefaultValue="Test the task pane add-in object model for Project - English (US)">
        <Override Locale="fr-fr" Value="Test the task pane add-in object model for Project - French (France)"/>
      </Description>
+     <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
      <Hosts>
        <Host Name="Project"/>
        <Host Name="Workbook"/>

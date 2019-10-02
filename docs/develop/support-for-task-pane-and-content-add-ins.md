@@ -1,14 +1,14 @@
 ---
 title: Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: aeb75d2dbdcae5636bbe81820b9387bd840120c7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449310"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353791"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
@@ -18,7 +18,7 @@ ms.locfileid: "32449310"
 
 1. **他の Office アドインと共有する共通のオブジェクト。** これらのオブジェクトには、[Office](/javascript/api/office)、[Context](/javascript/api/office/office.context)、および [AsyncResult](/javascript/api/office/office.asyncresult) があります。**Office** オブジェクトは Office JavaScript API のルート オブジェクトです。**Context** オブジェクトはアドインのランタイム環境を表します。**Office** と **Context** は、いずれも Office アドインの基礎となるオブジェクトです。**AsyncResult** オブジェクトは、ユーザーが文書内で選択したものを読み取る **getSelectedDataAsync** メソッドに返されたデータなどの非同期操作の結果を表します。
 
-2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツアドインまたは作業ウィンドウアドインは、Office のプロパティを使用して**document**オブジェクトにアクセスすることができます[。](/javascript/api/office/office.context#document)これにより、ドキュメント内のデータを操作するための API のキーメンバー ([バインディング](/javascript/api/office/office.bindings)[など) にアクセスできます。customxmlparts](/javascript/api/office/office.customxmlparts)オブジェクト、 [getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)、および[getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)メソッド。 **Document** オブジェクトは、文書が読み取り専用モードと編集モードのどちらになっているかを判断するための [mode](/javascript/api/office/office.document#mode) プロパティと、現在の文書の URL を取得して、[Settings](/javascript/api/office/office.document#url) オブジェクトにアクセスするための [url](/javascript/api/office/office.settings) プロパティも提供します。 **document**オブジェクトでは、 [selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加することもできます。このため、ユーザーが文書内の選択範囲を変更したときに検出できます。
+2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツアドインまたは作業ウィンドウアドインは、Office のプロパティを使用して**document**オブジェクトにアクセスすることができます[。](/javascript/api/office/office.context#document)これにより、ドキュメント内のデータを操作するための API のキーメンバー ([バインディング](/javascript/api/office/office.bindings)[など) にアクセスできます。CustomXmlParts](/javascript/api/office/office.customxmlparts)オブジェクト、 [getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [Setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)、および[getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)メソッド。 **Document** オブジェクトは、文書が読み取り専用モードと編集モードのどちらになっているかを判断するための [mode](/javascript/api/office/office.document#mode) プロパティと、現在の文書の URL を取得して、[Settings](/javascript/api/office/office.document#url) オブジェクトにアクセスするための [url](/javascript/api/office/office.settings) プロパティも提供します。 **Document**オブジェクトでは、 [selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加することもできます。このため、ユーザーが文書内の選択範囲を変更したときに検出できます。
 
    コンテンツ アドインや作業ウィンドウ アドインが **Document** オブジェクトにアクセスできるのは、DOM とランタイム環境が [Office.initialize](/javascript/api/office) イベント用のイベント ハンドラーなどで読み込まれた後だけです。アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](loading-the-dom-and-runtime-environment.md)」を参照してください。
 
@@ -151,7 +151,7 @@ Project のデータの読み取り操作の例については、「[テキス�
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

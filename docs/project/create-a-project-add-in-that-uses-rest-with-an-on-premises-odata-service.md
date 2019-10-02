@@ -1,14 +1,14 @@
 ---
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 454ef57095102458be1a2bcaa74342add86c7f16
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bae6aa663fa9f59ecd3d949103dd2241be16467b
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128609"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353917"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -130,15 +130,16 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-        <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+        <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
+        <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82</Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>
         <DefaultLocale>en-US</DefaultLocale>
         <DisplayName DefaultValue="Hello ProjectData" />
         <Description DefaultValue="Test REST queries of the ProjectData service"/>
         <IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />
-
+        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
             <Host Name="Project" />
         </Hosts>

@@ -1,16 +1,16 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
 description: ''
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: d2d4019fc5f47e05ea3918d2077006468afc4bec
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 1be7541f5cb1859db5d77bdaae2353cd563e9e80
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838537"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353910"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -73,9 +73,10 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-              xsi:type="TaskPaneApp">
-      <Id>1234-5678</Id>
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:type="TaskPaneApp">
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
+      <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
       <DefaultLocale>en-us</DefaultLocale>
@@ -85,6 +86,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
       </Description>
       <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
       </IconUrl>
+      <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
       <Capabilities>
         <Capability Name="Project"/>
       </Capabilities>
@@ -113,7 +115,8 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
                 xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
-      <Id>1234-5678</Id>
+      <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
+      <Id>01234567-89ab-cedf-0123-456789abcdef</Id>
       <Version>15.0</Version>
       <ProviderName>Microsoft</ProviderName>
       <DefaultLocale>en-us</DefaultLocale>
@@ -126,6 +129,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
       <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
         <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
       </IconUrl>
+      <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
       <Capabilities>
         <Capability Name="Project"/>
       </Capabilities>
