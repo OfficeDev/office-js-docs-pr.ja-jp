@@ -16,7 +16,7 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
 
 - アドインの XML マニフェスト ファイル (GetDoc_App.xml)。共有ネットワーク フォルダーまたはアドイン カタログで使用できます。このマニフェスト ファイルでは、上述の HTML ファイルの場所を指していることが必要です。
 
-また、visual studio を使用して、または office [](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)アドイン用に[visual studio](../quickstarts/word-quickstart.md?tabs=visualstudio)またはサード[オマーンジェネレーター](../quickstarts/word-quickstart.md?tabs=yeomangenerator)を使用して Word に対して、PowerPoint 用のアドインを作成することもできます。 [](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)
+また、 [visual studio を使用し](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)て、または office アドイン用に[visual studio](../quickstarts/word-quickstart.md?tabs=visualstudio)またはサード[オマーンジェネレーター](../quickstarts/word-quickstart.md?tabs=yeomangenerator)を使用して Word に対し[て、PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)用のアドインを作成することもできます。
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>作業ウィンドウ アドインを作成するために知っておくべき主要な概念
 
@@ -31,7 +31,7 @@ PowerPoint 用アドインの XML マニフェスト ファイルは、アドイ
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:type="TaskPaneApp">
         <Id>[Replace_With_Your_GUID]</Id>
         <Version>1.0</Version>
@@ -40,6 +40,7 @@ PowerPoint 用アドインの XML マニフェスト ファイルは、アドイ
         <DisplayName DefaultValue="Get Doc add-in" />
         <Description DefaultValue="My get PowerPoint or Word document add-in." />
         <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
         <Host Name="Document" />
         <Host Name="Presentation" />

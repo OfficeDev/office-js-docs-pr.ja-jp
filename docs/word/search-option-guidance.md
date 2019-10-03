@@ -1,14 +1,14 @@
 ---
 title: 検索オプションを使用して Word アドインでテキストを検索する
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/27/2019
 localization_priority: Priority
-ms.openlocfilehash: 343271b0863379d799c22f9b63a47a9acfd67b93
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e4500d3cbfd704969bd471f87d194b0c0f5690ff
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451207"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353889"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>検索オプションを使用して Word アドインでテキストを検索する
 
@@ -31,7 +31,7 @@ ms.locfileid: "32451207"
 
 ## <a name="wildcard-guidance"></a>ワイルドカードに関する説明
 
-次の表では、Word JavaScript API の検索ワイルドカードについて説明します。
+次の表では、Word JavaScript API の検索ワイルドカードに関するガイダンスを示します。
 
 | 検索方法         | ワイルドカード |  サンプル |
 |:-----------------|:--------|:----------|
@@ -104,7 +104,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
 
-    // Synchronize the document state by executing the queued commands, 
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -179,7 +179,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
 
-    // Synchronize the document state by executing the queued commands, 
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);

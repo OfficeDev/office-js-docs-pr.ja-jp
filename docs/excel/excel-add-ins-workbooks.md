@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 09/03/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: eb2313203e770e173d4db12d2bbc03048a08acaa
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715621"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353875"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -269,14 +269,14 @@ context.application.suspendApiCalculationUntilNextSync();
 
 ブック内のすべての[コメント](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)は、`Workbook.comments` プロパティによって追跡されます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。
 
-コメントをブックに追加するには、`CommentCollection.add` メソッドを使用して、コメントのテキストを文字列として渡し、コメントを追加するセルを文字列または [Range](/javascript/api/excel/excel.range) オブジェクトのいずれかとして渡します。 次のコード例は、コメントをセル **A2** に追加します。
+コメントをブックに追加するには、`CommentCollection.add` メソッドを使用して、コメントを追加するセルを文字列または [Range](/javascript/api/excel/excel.range) オブジェクトとして渡し、コメントのテキストを文字列として渡します。 次のコード例は、コメントをセル **A2** に追加します。
 
 ```js
 Excel.run(function (context) {
     var comments = context.workbook.comments;
 
     // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("TODO: add data.", "A2");
+    comments.add("A2", "TODO: add data.");
     return context.sync();
 });
 ```
