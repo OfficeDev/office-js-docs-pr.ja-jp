@@ -1,6 +1,6 @@
 - name: Office アドイン ドキュメント
   href: index.md
-- name: Office アドインのガイダンス
+- name: Office アドイン ガイダンス
   items:
     - name: Office アドインについて
       href: overview/index.md
@@ -10,10 +10,10 @@
         - name: Office アドイン プラットフォームの概要
           href: overview/office-add-ins.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: ホストとプラットフォームの可用性
+        - name: ホストとプラットフォームの使用可能性
           href: overview/office-add-in-availability.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: スクリプトラボを使用して Office JS API を探索する
+        - name: Script Lab を使用して Office JS API を調べる
           href: overview/explore-with-script-lab.md
           displayName: 'Excel, Word, PowerPoint'
         - name: アドインを実行するための要件
@@ -24,10 +24,10 @@
         - name: アドイン開発のベスト プラクティス
           href: concepts/add-in-development-best-practices.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: アドインの開発ライフ サイクル
+        - name: アドイン開発のライフサイクル
           href: concepts/add-in-development-lifecycle.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Office アドインで使用されるブラウザー
+        - name: Office アドインによって使用されるブラウザー
           href: concepts/browsers-used-by-office-web-add-ins.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Office のバージョンと要件セット
@@ -39,7 +39,7 @@
         - name: パフォーマンス
           href: concepts/resource-limits-and-performance-optimization.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: プライバシーおよびセキュリティ
+        - name: プライバシーとセキュリティ
           href: concepts/privacy-and-security.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: ユーザー インターフェイス
@@ -50,7 +50,7 @@
           items:
             - name: アクセシビリティ
               href: design/accessibility-guidelines.md
-            - name: データビジュアライゼーション
+            - name: データ可視化
               href: design/data-visualization-guidelines.md
             - name: 音声
               href: design/voice-guidelines.md
@@ -60,15 +60,15 @@
               href: design/add-in-design-language.md
             - name: 色
               href: design/add-in-color.md
-            - name: アイコンの場合
+            - name: アイコン
               href: design/add-in-icons.md
-            - name: Layout
+            - name: レイアウト
               href: design/add-in-layout.md
             - name: 文字体裁
               href: design/add-in-typography.md
-            - name: モーションの使用
+            - name: モーションを使用する
               href: design/using-motion-office-addins.md
-        - name: Interface 要素
+        - name: インターフェイス要素
           items:
             - name: 概要
               href: design/interface-elements.md
@@ -80,13 +80,13 @@
               href: design/content-add-ins.md
             - name: 作業ウィンドウ
               href: design/task-pane-add-ins.md
-        - name: UX 設計テンプレート
+        - name: UX デザイン テンプレート
           items:
             - name: 概要
               href: design/ux-design-pattern-templates.md
             - name: 認証
               href: design/authentication-patterns.md
-            - name: ブランディング
+            - name: ブランド化
               href: design/branding-patterns.md
             - name: 最初の実行エクスペリエンス
               href: design/first-run-experience-patterns.md
@@ -98,25 +98,25 @@
               href: design/design-toolkits.md
             - name: Fabric React の使用の開始
               href: design/using-office-ui-fabric-react.md
-            - name: Office の UI ファブリック
+            - name: Office UI Fabric
               href: design/office-ui-fabric.md
     - name: 開発
       items:
-        - name: 同じ送信元ポリシーの制限に対処する
+        - name: 同一生成元ポリシー制限への対処
           href: develop/addressing-same-origin-policy-limitations.md
         - name: 認証と承認
           items:
-            - name: 認証と承認の概要
+            - name: 認証と権限の付与の概要
               href: develop/overview-authn-authz.md
-            - name: Office ダイアログ API を使用して認証と承認を行う
+            - name: Office Dialog API を使用して認証および承認する
               href: develop/auth-with-office-dialog-api.md
             - name: 外部サービスを承認する
               href: develop/auth-external-add-ins.md
-            - name: SSO を使用せずに Microsoft Graph に承認する
+            - name: SSO を使用せずに Microsoft Graph を承認する
               href: develop/authorize-to-microsoft-graph-without-sso.md
             - name: アドインで SSO を有効にする
               items:
-                - name: シングルサインオンを有効にする
+                - name: シングル サインオンを有効にする
                   href: develop/sso-in-office-add-ins.md
                 - name: SSO を使用した Microsoft Graph への承認
                   href: develop/authorize-to-microsoft-graph.md
@@ -124,7 +124,7 @@
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: Node.js を使用して SSO アドインを作成する
                   href: develop/create-sso-office-add-ins-nodejs.md
-                - name: Azure AD v2.0 で SSO を使用する Office アドインを登録する
+                - name: Azure AD v2.0 に SSO を使用する Office アドインを登録する
                   href: develop/register-sso-add-in-aad-v2.md
                 - name: アドインに管理者の同意を許可する
                   href: develop/grant-admin-consent-to-an-add-in.md
@@ -132,33 +132,33 @@
                   href: develop/troubleshoot-sso-in-office-add-ins.md
         - name: ドキュメントで作業ウィンドウを自動的に開く
           href: develop/automatically-open-a-task-pane-with-a-document.md
-        - name: IPad 用のアドインを開発する
+        - name: iPad 用のアドインを開発する
           href: develop/develop-office-add-ins-for-the-ipad.md
-        - name: 角度を使用してアドインを開発する
+        - name: Angular でアドインを開発する
           href: develop/add-ins-with-angular2.md
-        - name: Visual Studio を使用してアドインを開発する
+        - name: Visual Studio でアドインを開発する
           items:
             - name: Visual Studio での Office アドインの作成とデバッグ
               href: develop/create-and-debug-office-add-ins-in-visual-studio.md
-            - name: Visual Studio で JavaScript IntelliSense を取得する
+            - name: Visual Studio で JavaScript IntelliSense を利用できるようにする
               href: develop/get-javascript-intellisense-in-visual-studio.md
             - name: JavaScript を TypeScript に変換する
               href: develop/convert-javascript-to-typescript.md
         - name: ダイアログ API
           href: develop/dialog-api-in-office-add-ins.md
-        - name: ローカライズ
+        - name: ローカリゼーション
           href: develop/localization.md
         - name: マニフェスト
           items:
             - name: Office アドインの XML マニフェスト
               href: develop/add-in-manifests.md
-            - name: アドインコマンドの作成
+            - name: アドイン コマンドを作成する
               href: develop/create-addin-commands.md
-            - name: マニフェスト要素の適切な順序を検索する
+            - name: マニフェスト要素の正しい順序を確認する
               href: develop/manifest-element-ordering.md
-            - name: 同等の COM アドインを識別する
+            - name: 同等な COM アドインを特定する
               href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-            - name: コンテンツアドインと作業ウィンドウアドインでの API 使用のアクセス許可を要求する
+            - name: コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
               href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
             - name: Office ホストを指定する
               href: develop/specify-office-hosts-and-api-requirements.md
@@ -168,11 +168,11 @@
           items:
             - name: JavaScript API for Office について
               href: develop/understanding-the-javascript-api-for-office.md
-            - name: コンテンツアドインと作業ウィンドウアドインのサポート
+            - name: コンテンツ アドインおよび作業ウィンドウ アドインのサポート
               href: develop/support-for-task-pane-and-content-add-ins.md
-            - name: Office を参照する
+            - name: Office.js を参照する
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: Office の読み込み
+            - name: Office.js を読み込む
               href: develop/loading-the-dom-and-runtime-environment.md
             - name: Office JavaScript API オブジェクト モデル
               href: develop/office-javascript-api-object-model.md
@@ -190,62 +190,62 @@
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
             - name: 作業ウィンドウからデバッガーをアタッチする
               href: testing/attach-debugger-from-task-pane.md
-            - name: 開発者ツールを使用してデバッグする
+            - name: 開発者ツールを使用したデバッグ
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
         - name: Web ブラウザー
           items:
-            - name: Web 上の Office のサイドロードアドイン
+            - name: Office on the web でアドインをサイドロードする
               href: testing/sideload-office-add-ins-for-testing.md
-            - name: Office on the web でのデバッグ
+            - name: Office on the web でデバッグする
               href: testing/debug-add-ins-in-office-online.md
         - name: iPad および Mac
           items:
             - name: iPad と Mac で Office アドインをサイドロードする
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-            - name: Mac でのデバッグ
+            - name: Mac でデバッグする
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
         - name: ユーザーのエラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
-        - name: ユーザビリティテスト
+        - name: ユーザビリティ テスト
           href: develop/usability-testing.md
-        - name: アドインマニフェストを検証し、問題をトラブルシューティングする
+        - name: アドイン マニフェストの問題を検証し、トラブルシューティングを行う
           href: testing/troubleshoot-manifest.md
-    - name: 発行
+    - name: 発行する
       items:
         - name: 概要
           href: publish/publish.md
         - name: Microsoft Azure で Office アドインをホストする
           href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Visual Studio を使用してアドインをパッケージ化する
+        - name: Visual Studio を使用してアドインをパッケージ化
           href: publish/package-your-add-in-using-visual-studio.md
-        - name: AppSource にアドインを発行する
+        - name: アドインを AppSource に公開する
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource の検証ポリシー
           href: /office/dev/store/validation-policies
-        - name: 一元展開によるアドインの発行
+        - name: 一元展開でアドインを発行する
           href: publish/centralized-deployment.md
-        - name: SharePoint アプリカタログにアドインを発行する
+        - name: SharePoint アプリ カタログにアドインを発行する
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: リファレンス
       items:
         - name: JavaScript API for Office の概要
           href: reference/javascript-api-for-office.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: API 要件セット (共通)
+        - name: API の要件セット (共通)
           items:
             - name: アドイン コマンドの要件セット
               href: reference/requirement-sets/add-in-commands-requirement-sets.md
             - name: ダイアログ API の要件セット
               href: reference/requirement-sets/dialog-api-requirement-sets.md
-            - name: Identity API の要件セット
+            - name: ID API の要件セット
               href: reference/requirement-sets/identity-api-requirement-sets.md
-            - name: 画像強制の要件セット
+            - name: 画像強制型変換要件セット
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 共通 API の要件セット
               href: reference/requirement-sets/office-add-in-requirement-sets.md
         - name: API リファレンス (共通)
           href: reference/common-api-reference.md
-        - name: Office アドインマニフェストのリファレンス
+        - name: Office アドインのマニフェスト リファレンス
           items:
             - name: AllowSnapshot
               href: reference/manifest/allowsnapshot.md
@@ -261,7 +261,7 @@
               href: reference/manifest/defaultlocale.md
             - name: DefaultSettings
               href: reference/manifest/defaultsettings.md
-            - name: 説明
+            - name: Description
               href: reference/manifest/description.md
             - name: DesktopSettings
               href: reference/manifest/desktopsettings.md
@@ -279,13 +279,13 @@
               href: reference/manifest/equivalentaddins.md
             - name: FileName
               href: reference/manifest/filename.md
-            - name: '[Form/フォーム]'
+            - name: フォーム
               href: reference/manifest/form.md
             - name: FormSettings
               href: reference/manifest/formsettings.md
             - name: HighResolutionIconUrl
               href: reference/manifest/highresolutioniconurl.md
-            - name: ホスト
+            - name: Host
               href: reference/manifest/host.md
             - name: Hosts
               href: reference/manifest/hosts.md
@@ -293,25 +293,25 @@
               href: reference/manifest/iconurl.md
             - name: ID
               href: reference/manifest/id.md
-            - name: メタデータ
+            - name: Metadata
               href: reference/manifest/metadata.md
-            - name: メソッド
+            - name: Method
               href: reference/manifest/method.md
-            - name: メソッド
+            - name: Methods
               href: reference/manifest/methods.md
-            - name: 名前空間
+            - name: Namespace
               href: reference/manifest/namespace.md
             - name: OfficeApp
               href: reference/manifest/officeapp.md
-            - name: '[優先]'
+            - name: Override
               href: reference/manifest/override.md
-            - name: アクセス許可
+            - name: Permissions
               href: reference/manifest/permissions.md
             - name: PhoneSettings
               href: reference/manifest/phonesettings.md
             - name: ProgId
               href: reference/manifest/progid.md
-            - name: プロバイダー
+            - name: ProviderName
               href: reference/manifest/providername.md
             - name: QueryUri
               href: reference/manifest/queryuri.md
@@ -319,9 +319,9 @@
               href: reference/manifest/requestedheight.md
             - name: RequestedWidth
               href: reference/manifest/requestedwidth.md
-            - name: 要件
+            - name: Requirements
               href: reference/manifest/requirements.md
-            - name: ルール
+            - name: Rule
               href: reference/manifest/rule.md
             - name: Set
               href: reference/manifest/set.md
@@ -337,7 +337,7 @@
               href: reference/manifest/targetdialect.md
             - name: TargetDialects
               href: reference/manifest/targetdialects.md
-            - name: 型
+            - name: 種類
               href: reference/manifest/type.md
             - name: バージョン
               href: reference/manifest/version.md
@@ -351,7 +351,7 @@
                   href: reference/manifest/allformfactors.md
                 - name: Authorization
                   href: reference/manifest/authorization.md
-                - name: 承認
+                - name: Authorizations
                   href: reference/manifest/authorizations.md
                 - name: コントロール
                   href: reference/manifest/control.md
@@ -385,11 +385,11 @@
                   href: reference/manifest/officetab.md
                 - name: Page
                   href: reference/manifest/page.md
-                - name: リソース
+                - name: Resources
                   href: reference/manifest/resources.md
-                - name: スコープ
+                - name: Scopes
                   href: reference/manifest/scopes.md
-                - name: スクリプト
+                - name: Script
                   href: reference/manifest/script.md
                 - name: SourceLocation (カスタム関数)
                   href: reference/manifest/customfunctionssourcelocation.md
@@ -406,23 +406,23 @@
     - name: リソース
       href: resources/resources-links-help.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
-- name: Excel のアドイン
+- name: Excel アドイン
   items:
-    - name: Excel アドインのドキュメント
+    - name: Excel アドイン ドキュメント
       href: excel/index.md
       displayName: Excel
     - name: 概要
       href: excel/excel-add-ins-overview.md
       displayName: Excel
-    - name: 初めての Excel アドインを作成する
+    - name: 最初の Excel アドインをビルドする
       items:
         - name: 作業ウィンドウ
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: 作業ウィンドウ (角度)
+        - name: 作業ウィンドウ (Angular)
           href: quickstarts/excel-quickstart-angular.md
           displayName: Excel
-        - name: 作業ウィンドウ (反応)
+        - name: 作業ウィンドウ (React)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
         - name: 作業ウィンドウ (Vue)
@@ -441,43 +441,43 @@
             - name: 概要
               href: reference/requirement-sets/excel-api-requirement-sets.md
               displayName: Excel
-            - name: Excel preview Api
+            - name: Excel プレビュー API
               href: reference/requirement-sets/excel-preview-apis.md
               displayName: Excel
-            - name: ExcelApi 1.9 の要件セット
+            - name: ExcelApi 1.9 要件セット
               href: reference/requirement-sets/excel-api-1-9-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.8 の要件セット
+            - name: ExcelApi 1.8 要件セット
               href: reference/requirement-sets/excel-api-1-8-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.7 の要件セット
+            - name: ExcelApi 1.7 要件セット
               href: reference/requirement-sets/excel-api-1-7-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.6 の要件セット
+            - name: ExcelApi 1.6 要件セット
               href: reference/requirement-sets/excel-api-1-6-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.5 の要件セット
+            - name: ExcelApi 1.5 要件セット
               href: reference/requirement-sets/excel-api-1-5-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.4 の要件セット
+            - name: ExcelApi 1.4 要件セット
               href: reference/requirement-sets/excel-api-1-4-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.3 の要件セット
+            - name: ExcelApi 1.3 要件セット
               href: reference/requirement-sets/excel-api-1-3-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.2 の要件セット
+            - name: ExcelApi 1.2 要件セット
               href: reference/requirement-sets/excel-api-1-2-requirement-set.md
               displayName: Excel
-            - name: ExcelApi 1.1 の要件セット
+            - name: ExcelApi 1.1 要件セット
               href: reference/requirement-sets/excel-api-1-1-requirement-set.md
               displayName: Excel
         - name: API リファレンス
           href: reference/excel-api-reference.md
           displayName: Excel
-        - name: 基本的なプログラミングの概念
+        - name: 基本プログラミングの概念
           href: excel/excel-add-ins-core-concepts.md
           displayName: Excel
-        - name: 高度なプログラミングの概念
+        - name: 高度なプログラミング概念
           href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
         - name: 組み込み関数の呼び出し
@@ -492,7 +492,7 @@
         - name: 範囲の条件付き書式
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
-        - name: データ検証
+        - name: データの入力規則
           href: excel/excel-add-ins-data-validation.md
           displayName: Excel
         - name: エラー処理
@@ -510,10 +510,10 @@
         - name: PivotTables
           href: excel/excel-add-ins-pivottables.md
           displayName: Excel
-        - name: 範囲 (基本)
+        - name: Ranges (基本)
           href: excel/excel-add-ins-ranges.md
           displayName: Excel
-        - name: 範囲 (詳細)
+        - name: Ranges (高度)
           href: excel/excel-add-ins-ranges-advanced.md
           displayName: Excel
         - name: 図形
@@ -522,10 +522,10 @@
         - name: テーブル
           href: excel/excel-add-ins-tables.md
           displayName: Excel
-        - name: Workbooks
+        - name: ブック
           href: excel/excel-add-ins-workbooks.md
           displayName: Excel
-        - name: Worksheets
+        - name: ワークシート
           href: excel/excel-add-ins-worksheets.md
           displayName: Excel
     - name: カスタム関数
@@ -533,7 +533,7 @@
         - name: 概要
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
-        - name: Excel カスタム関数を使い始める
+        - name: Excel カスタム関数の使用を開始する
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: 'Excel, Custom Functions'
         - name: カスタム関数のチュートリアル
@@ -551,28 +551,28 @@
         - name: デバッグ
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
-        - name: Dialog
+        - name: ダイアログ
           href: excel/custom-functions-dialog.md
           displayName: 'Excel, Custom Functions'
         - name: エラー処理
           href: excel/custom-functions-errors.md
           displayName: 'Excel, Custom Functions'
-        - name: 同等の XLL を識別する
+        - name: 同等な XLL を特定する
           href: excel/make-custom-functions-compatible-with-xll-udf.md
           displayName: 'Excel, Custom Functions'
-        - name: ローカライズ
+        - name: ローカリゼーション
           href: excel/custom-functions-localize.md
           displayName: 'Excel, Custom Functions'
-        - name: メタデータ
+        - name: のメタデータ
           href: excel/custom-functions-json.md
           displayName: 'Excel, Custom Functions'
-        - name: メタデータ生成
+        - name: メタデータの生成
           href: excel/custom-functions-json-autogeneration.md
           displayName: 'Excel, Custom Functions'
         - name: 名前付けのガイドライン
           href: excel/custom-functions-naming.md
           displayName: 'Excel, Custom Functions'
-        - name: パラメータオプション
+        - name: パラメーター オプション
           href: excel/custom-functions-parameter-options.md
           displayName: 'Excel, Custom Functions'
         - name: 要件セット
@@ -581,7 +581,7 @@
         - name: ランタイム
           href: excel/custom-functions-runtime.md
           displayName: 'Excel, Custom Functions'
-        - name: 保存と共有の状態
+        - name: 状態の保存と共有
           href: excel/custom-functions-save-state.md
           displayName: 'Excel, Custom Functions'
         - name: トラブルシューティング
@@ -590,12 +590,12 @@
         - name: 揮発性関数
           href: excel/custom-functions-volatile.md
           displayName: 'Excel, Custom Functions'
-        - name: Web 要求
+        - name: Web リクエスト
           href: excel/custom-functions-web-reqs.md
           displayName: 'Excel, Custom Functions'
 - name: OneNote アドイン
   items:
-    - name: OneNote アドインのドキュメント
+    - name: OneNote アドイン ドキュメント
       href: onenote/index.md
       displayName: OneNote
     - name: 概要
@@ -620,7 +620,7 @@
           displayName: OneNote
 - name: Outlook アドイン
   items:
-    - name: Outlook アドインのドキュメント
+    - name: Outlook アドイン ドキュメント
       href: outlook/index.md
       displayName: Outlook
     - name: 概要
@@ -632,7 +632,7 @@
     - name: Outlook アドインのチュートリアル
       href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
       displayName: Outlook
-    - name: Outlook アドインの概念
+    - name: Outlook アドインのコンセプト
       href: /outlook/add-ins/outlook-addin-design
     - name: Outlook JavaScript API
       displayName: Outlook
@@ -646,7 +646,7 @@
         - name: API リファレンス
           href: reference/outlook-api-reference-preview.md
           displayName: Outlook
-        - name: API オブジェクトモデル
+        - name: API オブジェクト モデル
           items:
             - name: 要件セットのプレビュー
               items:
@@ -654,7 +654,7 @@
                   href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
                 - name: Office
                   href: reference/objectmodel/preview-requirement-set/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/preview-requirement-set/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
@@ -666,13 +666,13 @@
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
                 - name: Outlook Preview API リファレンス
                   href: reference/outlook-api-reference-preview.md
-            - name: 要件セット1.7
+            - name: 要件セット 1.7
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.7/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.7/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
@@ -684,13 +684,13 @@
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.7 API リファレンス
                   href: reference/outlook-api-reference-1-7.md
-            - name: 要件セット1.6
+            - name: 要件セット 1.6
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.6/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.6/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
@@ -702,13 +702,13 @@
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.6 API リファレンス
                   href: reference/outlook-api-reference-1-6.md
-            - name: 要件セット1.5
+            - name: 要件セット 1.5
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.5/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.5/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
@@ -720,13 +720,13 @@
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.5 API リファレンス
                   href: reference/outlook-api-reference-1-5.md
-            - name: 要件セット1.4
+            - name: 要件セット 1.4
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.4/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.4/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
@@ -738,13 +738,13 @@
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.4 API リファレンス
                   href: reference/outlook-api-reference-1-4.md
-            - name: 要件セット1.3
+            - name: 要件セット 1.3
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.3/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.3/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
@@ -756,13 +756,13 @@
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.3 API リファレンス
                   href: reference/outlook-api-reference-1-3.md
-            - name: 要件セット1.2
+            - name: 要件セット 1.2
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.2/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.2/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
@@ -774,13 +774,13 @@
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.2 API リファレンス
                   href: reference/outlook-api-reference-1-2.md
-            - name: 要件セット1.1
+            - name: 要件セット 1.1
               items:
                 - name: 概要
                   href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.1/office.md
-                - name: Office コンテキスト
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.1/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
@@ -794,7 +794,7 @@
                   href: reference/outlook-api-reference-1-1.md
 - name: PowerPoint アドイン
   items:
-    - name: PowerPoint アドインのドキュメント
+    - name: PowerPoint アドイン ドキュメント
       href: powerpoint/index.md
       displayName: PowerPoint
     - name: 概要
@@ -806,7 +806,7 @@
     - name: PowerPoint アドインのチュートリアル
       href: tutorials/powerpoint-tutorial.md
       displayName: PowerPoint
-    - name: PowerPoint の JavaScript API
+    - name: JavaScript API for PowerPoint
       items:
         - name: 概要
           href: reference/overview/powerpoint-add-ins-reference-overview.md
@@ -820,12 +820,12 @@
         - name: アドインからドキュメント全体を取得する
           href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
           displayName: PowerPoint
-        - name: PowerPoint アドインでドキュメントのテーマを使用する
+        - name: PowerPoint アドインでドキュメント テーマを使用する
           href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
           displayName: PowerPoint
-- name: Project アドイン
+- name: Project 用アドイン
   items:
-    - name: プロジェクトアドインのドキュメント
+    - name: Project アドイン ドキュメント
       href: project/index.md
       displayName: Project
     - name: 概要
@@ -834,7 +834,7 @@
     - name: 最初の Project アドインをビルドする
       href: quickstarts/project-quickstart.md
       displayName: Project
-    - name: JavaScript API for Project
+    - name: 'JavaScript API for Project '
       items:
         - name: 概要
           href: reference/overview/project-add-ins-reference-overview.md
@@ -847,7 +847,7 @@
           displayName: Project
 - name: Visio アドイン
   items:
-    - name: Visio アドインのドキュメント
+    - name: Visio アドイン ドキュメント
       href: visio/index.md
       displayName: Visio
     - name: 概要
@@ -858,7 +858,7 @@
       displayName: Visio
 - name: Word アドイン
   items:
-    - name: Word アドインのドキュメント
+    - name: Word アドイン ドキュメント
       href: word/index.md
       displayName: Word
     - name: 概要
@@ -880,28 +880,28 @@
             - name: 概要
               href: reference/requirement-sets/word-api-requirement-sets.md
               displayName: Word
-            - name: Word preview Api
+            - name: Word プレビュー API
               href: reference/requirement-sets/word-preview-apis.md
               displayName: Word
-            - name: WordApi 1.3 の要件セット
+            - name: WordApi 1.3 要件セット
               href: reference/requirement-sets/word-api-1-3-requirement-set.md
               displayName: Word
-            - name: WordApi 1.2 の要件セット
+            - name: WordApi 1.2 要件セット
               href: reference/requirement-sets/word-api-1-2-requirement-set.md
               displayName: Word
-            - name: WordApi 1.1 の要件セット
+            - name: WordApi 1.1 要件セット
               href: reference/requirement-sets/word-api-1-1-requirement-set.md
               displayName: Word
         - name: API リファレンス
           href: reference/word-api-reference.md
           displayName: Word
-        - name: 基本的なプログラミングの概念
+        - name: 基本プログラミングの概念
           href: word/word-add-ins-core-concepts.md
           displayName: Word
         - name: ドキュメント内の領域へのバインド
           href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
           displayName: Word
-        - name: Office Open XML を使用してより良い Word 用アドインを作成する
+        - name: Office Open XML を使用して、より高性能な Word 用アドインを作成する
           href: word/create-better-add-ins-for-word-with-office-open-xml.md
           displayName: Word
         - name: 辞書の作業ウィンドウ アドイン
@@ -910,7 +910,7 @@
         - name: アドインからドキュメント全体を取得する
           href: word/get-the-whole-document-from-an-add-in-for-word.md
           displayName: Word
-        - name: アクティブな選択範囲へのデータの読み取りと書き込み
+        - name: 現在の選択範囲での読み取りと書き込み
           href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
           displayName: Word
         - name: 検索オプションを使用して Word アドインでテキストを検索する
