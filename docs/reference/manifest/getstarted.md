@@ -3,12 +3,12 @@ title: マニフェスト ファイルの GetStarted 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
+ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452082"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "37429740"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
@@ -20,7 +20,7 @@ ms.locfileid: "32452082"
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Title](#title)               | はい      | アドインが機能を公開する場所を定義します。     |
 | [説明](#description)   | はい      | JavaScript 関数を含むファイルの URL。|
-| [LearnMoreUrl](#learnmoreurl) | いいえ       | アドインの詳細を説明するページの URL。   |
+| [LearnMoreUrl](#learnmoreurl) | はい       | アドインの詳細を説明するページの URL。   |
 
 ### <a name="title"></a>タイトル 
 

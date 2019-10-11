@@ -1,14 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
-ms.date: 08/13/2019
+ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
-ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
+ms.openlocfilehash: 28d63866a03bcae99829d3a6b6c6198059a92bdc
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "37053327"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440151"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -465,6 +465,9 @@ ms.locfileid: "37053327"
 </table>
 
 *&ast; - リリース後の更新プログラムで追加されました。*
+
+> [!IMPORTANT]
+> 要件セットのクライアント サポートは、Exchange サーバー サポートの制限を受ける場合があります。 Exchange サーバーおよび Outlook クライアントによってサポートされている要件セットの範囲の詳細については、「[Outlook JavaScript APIの要件セット](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)」を参照してください。
 
 <br/>
 
@@ -946,10 +949,10 @@ ms.locfileid: "37053327"
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md)
-- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [アドイン コマンドの要件セット](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [JavaScript API for Office リファレンス](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)
+- [共通 API の要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [アドイン コマンドの要件セット](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [JavaScript API for Office リファレンス](../reference/javascript-api-for-office.md)
 - [Office 365 ProPlus の更新履歴](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016および2019の更新履歴（クリックして実行）](/officeupdates/update-history-office-2019)
 - [Office 2013 の更新履歴 （クリックして実行）](/officeupdates/update-history-office-2013)
