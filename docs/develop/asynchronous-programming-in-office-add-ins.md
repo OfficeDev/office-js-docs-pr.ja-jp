@@ -3,12 +3,12 @@ title: Office アドインにおける非同期プログラミング
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 98247c401fa5214dc3c0e39ec9e1b4c409cfdc25
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a20fe435a9cdff97ed77496ad3aaaf48b1cbbc7f
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127640"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468750"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -212,7 +212,7 @@ function write(message){
 
 コールバック関数を渡し、その関数が戻るのを待ってから実行を続行する代わりに、promise プログラミング パターンを使用すれば、その意図した結果を表す promise オブジェクトがすぐに返されます。ただし、本物の同期プログラミングとは異なり、実際には Office アドインのランタイム環境が要求を完了できるまでは、約束された結果の履行は実際には延期されます。要求が履行されない状況に対処するために _onError_ ハンドラーが用意されています。
 
-JavaScript API for Office には [Office.select](/javascript/api/office#office-select) メソッドが用意されており、既存のバインド オブジェクトと連携するための promise パターンをサポートします。**Office.select** メソッドに返される promise オブジェクトは、[Binding](/javascript/api/office/office.binding) オブジェクトから直接アクセスできる 4 つのメソッド ([getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-)、[setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)、[addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-)、および [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)) のみをサポートします。
+JavaScript API for Office には [Office.select](/javascript/api/office#office-select-expression--callback-) メソッドが用意されており、既存のバインド オブジェクトと連携するための promise パターンをサポートします。**Office.select** メソッドに返される promise オブジェクトは、[Binding](/javascript/api/office/office.binding) オブジェクトから直接アクセスできる 4 つのメソッド ([getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-)、[setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)、[addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-)、および [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)) のみをサポートします。
 
 バインドと連携する promise パターンは次のような形式になります。
 
