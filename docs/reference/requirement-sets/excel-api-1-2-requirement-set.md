@@ -4,12 +4,12 @@ description: ExcelApi 1.2 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f028208873df363710864a0e2d7942e173acd2c3
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 574dcb76ee7edbe6e3c36920dd5de70cf22d8b97
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838495"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468820"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -31,7 +31,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|選択範囲の先頭行のインデックス (0 から始まる) を取得します。|
 |[Chart](/javascript/api/excel/excel.chart)|[getImage (width?: number, height?: number, fittingMode?: Excel-Imageftingmode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|現在のグラフを含んでいるワークシート。 読み取り専用です。|
-|[Filter](/javascript/api/excel/excel.filter)|[適用 (条件: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|指定の列に、指定したフィルター条件を適用します。|
+|[フィルター](/javascript/api/excel/excel.filter)|[適用 (条件: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|指定の列に、指定したフィルター条件を適用します。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|指定した数の要素の列に [下位アイテム] フィルターを適用します。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|指定したパーセンテージの要素の列に [下位パーセント] フィルターを適用します。|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|指定した色の列に "セルの色" フィルターを適用します。|
@@ -138,7 +138,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[bin2Hex (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. functionresult<any>, 位置?: 数値\|文字列\|ブール型\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#bin2hex-number--places-)|2 進数を 16 進数に変換します。|
 ||[bin2Oct (数値: 数値\|文字列\|ブール\| \|値 excel \| . RangeReference excel. functionresult<any>, 位置?: 数値\|文字列\|ブール型\| excel. 範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#bin2oct-number--places-)|2 進数を 8 進数に変換します。|
 ||[binom_Dist \| (NumberS \| : RangeReference \| excel. RangeReference result<any>, 試行回数: \| Excel excel. \| \| <any>の範囲で指定したセルの値probabilityS: RangeReference \| \| \| excel のセル範囲の値を計算<any>します。累積: ブール\|値\|の excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#binom-dist-numbers--trials--probabilitys--cumulative-)|二項分布の確率関数の値を返します。|
-||[binom_Dist_Range (試行回数: \| Excel の RangeReference \| \| <any>のセル範囲の数式を指定します。 ProbabilityS \| : Number \| excel. RangeReference result \| , excel.<any>functionresult数値: 数値\| Excel. \| RangeReference \| result<any>, numberS2?: Number \| excel. RangeReference excel. \| \|のセル範囲の数式)<any>](/javascript/api/excel/excel.functions#binom-dist_range-trials--probabilitys--numbers--numbers2-)|二項分布を使用した試行結果の確率を返します。|
+||[binom_Dist_Range (試行回数: \| Excel の RangeReference \| \| <any>のセル範囲の数式を指定します。 ProbabilityS \| : Number \| excel. RangeReference result \| , excel.<any>functionresult数値: 数値\| Excel. \| RangeReference \| result<any>, numberS2?: Number \| excel. RangeReference excel. \| \|のセル範囲の数式)<any>](/javascript/api/excel/excel.functions#binom-dist-range-trials--probabilitys--numbers--numbers2-)|二項分布を使用した試行結果の確率を返します。|
 ||[binom_Inv (試行回数: \| \| \| Excel. RangeReference excel. RangeReference result<any>, ProbabilityS: number \| \| excel: \| excel. functionresult<any>, α:)RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#binom-inv-trials--probabilitys--alpha-)|累積二項分布の値が基準値以上になるような最小の値を返します。|
 ||[bitand (数値 1: \| \| RangeReference \| excel. RangeReference result<any>, Number2: number \| excel. 範囲\| excel. \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#bitand-number1--number2-)|2つの数値のビット演算 ' And ' を返します。|
 ||[bitlshift (数値: \| \| RangeReference excel. \| result<any>, ShiftAmount: Number \| excel. RangeReference \| \| <any>のセル範囲のセル範囲を指定します。](/javascript/api/excel/excel.functions#bitlshift-number--shiftamount-)|Shift_amount ビット分左にシフトされた数値を返します。|
@@ -149,9 +149,9 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[ceiling_Precise (number: \| \| number excel. RangeReference \| excel. functionresult<any>, 有意値?: 数値\| excel. RangeReference \| \|の範囲内の excel functionresult)<any>](/javascript/api/excel/excel.functions#ceiling-precise-number--significance-)|数値を最も近い整数、または最も近い基準値の倍数に切り上げます。|
 ||[char (数値\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#char-number-)|使用しているコンピューターの文字セットから、コード番号で指定された文字を返します。|
 ||[chiSq_Dist (x: number \| \| excel \| . RangeReference excel. RangeReference result<any>, degFreedom: number excel. \| \| \| result<any>, (累積値):ブール\|値の RangeReference \| \|の excel で指定<any>)](/javascript/api/excel/excel.functions#chisq-dist-x--degfreedom--cumulative-)|カイ2乗分布の左辺確率の値を返します。|
-||[chiSq_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-dist_rt-x--degfreedom-)|カイ 2 乗分布の右側確率の値を返します。|
+||[chiSq_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-dist-rt-x--degfreedom-)|カイ 2 乗分布の右側確率の値を返します。|
 ||[chiSq_Inv (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-inv-probability--degfreedom-)|カイ 2 乗分布の左側確率の逆関数の値を返します。|
-||[chiSq_Inv_RT (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-inv_rt-probability--degfreedom-)|カイ 2 乗分布の右側確率の逆関数の値を返します。|
+||[chiSq_Inv_RT (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#chisq-inv-rt-probability--degfreedom-)|カイ 2 乗分布の右側確率の逆関数の値を返します。|
 ||[choose (indexNum \| : RangeReference \| \| excel....」<any>と指定します。値\|<: RangeReference を指定\| \| \|すると、 \|が> 返さ<any>れます。](/javascript/api/excel/excel.functions#choose-indexnum--values-)|インデックス番号に基づいて、値のリストから実行する値またはアクションを選択します。|
 ||[clean (text: RangeReference \| \| \| Excel.. excel のセル範囲の文字列<any>)](/javascript/api/excel/excel.functions#clean-text-)|印刷できない文字を文字列から削除します。|
 ||[コード\| (Text: \| RangeReference \|の excel. @ result)<any>](/javascript/api/excel/excel.functions#code-text-)|コンピューターで使用されている文字セットで、テキスト文字列の最初の文字の数値コードを返します。|
@@ -228,9 +228,9 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[exp (数値\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#exp-number-)|E を底とする数値のべき乗を返します。|
 ||[expon_Dist (x: \| \| excel. RangeReference \| excel. functionresult<any>, ラムダ: number excel \| \| . RangeReference \| result<any>, 累積的な関数の値を次に示します。ブール\|値の RangeReference \| \|の excel で指定<any>)](/javascript/api/excel/excel.functions#expon-dist-x--lambda--cumulative-)|指数分布関数を返します。|
 ||[f_Dist (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, degFreedom1: number \| \| excel. \| <any>の場合、degFreedom2:):数値\| \| excel. RangeReference \| result<any>, 累積: ブール値\|の excel \| . RangeReference \| excel. functionresult<any>(数式)](/javascript/api/excel/excel.functions#f-dist-x--degfreedom1--degfreedom2--cumulative-)|2つのデータセットの F 確率分布 (多様性の程度) を返します。|
-||[f_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, degFreedom1: number \| \| excel. \| <any>の場合、degFreedom2:):RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#f-dist_rt-x--degfreedom1--degfreedom2-)|2つのデータセットの F 確率分布 (左右の度合い) を返します。|
+||[f_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, degFreedom1: number \| \| excel. \| <any>の場合、degFreedom2:):RangeReference \| <any>の範囲内\|の excel の番号\|](/javascript/api/excel/excel.functions#f-dist-rt-x--degfreedom1--degfreedom2-)|2つのデータセットの F 確率分布 (左右の度合い) を返します。|
 ||[\| f_Inv (確率: \| RangeReference \| excel. RangeReference result<any>, DegFreedom1: number \| \| excel. result, excel. functionresult \| <any>,degFreedom2: \| Excel のセル範囲\|を指定し\|ます。 RangeReference excel<any>. functionresult)](/javascript/api/excel/excel.functions#f-inv-probability--degfreedom1--degfreedom2-)|(左辺の) F 確率分布の逆関数の値を返します。 p = F (x,...) の場合は、F (p,...) = x となります。|
-||[\| f_Inv_RT (確率: \| RangeReference \| excel. RangeReference result<any>, DegFreedom1: number \| \| excel. result, excel. functionresult \| <any>,degFreedom2: \| Excel のセル範囲\|を指定し\|ます。 RangeReference excel<any>. functionresult)](/javascript/api/excel/excel.functions#f-inv_rt-probability--degfreedom1--degfreedom2-)|F が指定されている場合、(右側の) F 確率分布の逆関数の値を返します。RT (x,...)、次に f..RT (p,...) = x。|
+||[\| f_Inv_RT (確率: \| RangeReference \| excel. RangeReference result<any>, DegFreedom1: number \| \| excel. result, excel. functionresult \| <any>,degFreedom2: \| Excel のセル範囲\|を指定し\|ます。 RangeReference excel<any>. functionresult)](/javascript/api/excel/excel.functions#f-inv-rt-probability--degfreedom1--degfreedom2-)|F が指定されている場合、(右側の) F 確率分布の逆関数の値を返します。RT (x,...)、次に f..RT (p,...) = x。|
 ||[ファクト (数値: RangeReference \| \| <any>のように\|数値を指定します。](/javascript/api/excel/excel.functions#fact-number-)|数値の階乗を返します。*2**~ 3 の*値件数.|
 ||[factDouble (数値: 数値\|文字列\|ブール\|値 Excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#factdouble-number-)|数値の二重階乗を返します。|
 ||[false ()](/javascript/api/excel/excel.functions#false--)|論理値 FALSE を返します。|
@@ -341,8 +341,8 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[公称 (effectRate: 数値\|文字列\|ブール\|値 Excel. \| RangeReference \| <any>excel. functionresult, 実行効率: number \| string \|ブール値\| excel。範囲\|RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#nominal-effectrate--npery-)|名目年利率を返します。|
 ||[norm_Dist (x: number \| \| excel. RangeReference \| excel. RangeReference<any> \| \| \| result, standarddev: number<any>/数値形式: excel の範囲で指定します。\| \| RangeReference \|のような excel のセル範囲 (excel<any>)。関数の\|結果はブール\|値の excel \| 。 RangeReference excel.<any>functionresult)](/javascript/api/excel/excel.functions#norm-dist-x--mean--standarddev--cumulative-)|指定した平均と標準偏差に対する正規分布関数の値を返します。|
 ||[norm_Inv (確率: excel \|の RangeReference \| \| <any>の\|セル範囲の値を意味\|します。 RangeReference \|を指定します。 result<any>、standarddev\| : RangeReference \| \| <any>を指定します。範囲は excel です。](/javascript/api/excel/excel.functions#norm-inv-probability--mean--standarddev-)|指定した平均と標準偏差に対する正規分布の累積分布関数の逆関数の値を返します。|
-||[norm_S_Dist (z: number \| \| \| Excel. RangeReference excel. functionresult<any>, 累積: ブール値\| \|の excel. RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#norm-s_dist-z--cumulative-)|標準正規分布を返します (平均が0で標準偏差が 1)。|
-||[norm_S_Inv (確率: 数値\| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#norm-s_inv-probability-)|標準正規分布の累積分布関数の逆関数の値を返します (平均が0で標準偏差が 1)。|
+||[norm_S_Dist (z: number \| \| \| Excel. RangeReference excel. functionresult<any>, 累積: ブール値\| \|の excel. RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#norm-s-dist-z--cumulative-)|標準正規分布を返します (平均が0で標準偏差が 1)。|
+||[norm_S_Inv (確率: 数値\| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#norm-s-inv-probability-)|標準正規分布の累積分布関数の逆関数の値を返します (平均が0で標準偏差が 1)。|
 ||[not \| (論理演算 Excel. RangeReference \| \|の excel の範囲で指定)<any>](/javascript/api/excel/excel.functions#not-logical-)|FALSE を TRUE に、true を FALSE に変更します。|
 ||[now ()](/javascript/api/excel/excel.functions#now--)|日付および時刻として書式設定された現在の日付と時刻を返します。|
 ||[nper (rate: 数値\| \| \| excel. RangeReference result<any>, Pmt: number \| \| excel. RangeReference \| excel. functionresult<any>, pv: number (数値\|形式)\| \| RangeReference<any>の\|ようになります。エクセルの場合、fv?: \| RangeReference \| excel. functionresult<any>、type?: number \| excel. range。\| RangeReference \|の excel<any>)](/javascript/api/excel/excel.functions#nper-rate--pmt--pv--fv--type-)|定額の支払いを定期的に行い、利率が一定であると仮定して、投資に必要な期間 (支払回数) を返します。|
@@ -426,10 +426,10 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[syd (cost: \| \| RangeReference \| excel. RangeReference result<any>, salvage: number \| \| excel. \| result<any>, life: number \| (年の数値) の値\| Excel の RangeReference \|の結果。 excel に<any> \| \|よって指定します。 RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#syd-cost--salvage--life--per-)|級数法 (Sum-of-Year's Digits Method) を使用して、特定の期における減価償却費を返します。|
 ||[t (値: 数値\|文字列\|の\|ブール値 excel \| . RangeReference \| result<any>)](/javascript/api/excel/excel.functions#t-value-)|値が text であるかどうかを確認し、その場合はテキストを返します。そうでない場合は、二重引用符 (empty text) を返します。|
 ||[t_Dist (x: number \| \| excel \| . RangeReference excel. RangeReference result<any>, degFreedom: number excel. \| \| \| result<any>, (累積値):ブール\|値の RangeReference \| \|の excel で指定<any>)](/javascript/api/excel/excel.functions#t-dist-x--degfreedom--cumulative-)|スチューデントの t 分布の左辺値を返します。|
-||[t_Dist_2T (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-dist_2t-x--degfreedom-)|スチューデントの両側 t 分布を返します。|
-||[t_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-dist_rt-x--degfreedom-)|スチューデントの t 分布の値を返します。|
+||[t_Dist_2T (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|スチューデントの両側 t 分布を返します。|
+||[t_Dist_RT (x: number \| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|スチューデントの t 分布の値を返します。|
 ||[t_Inv (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-inv-probability--degfreedom-)|スチューデントの t 分布の左辺の逆関数の値を返します。|
-||[t_Inv_2T (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-inv_2t-probability--degfreedom-)|スチューデントの t 分布の両側逆関数を返します。|
+||[t_Inv_2T (確率: 数値\| \| \| Excel. RangeReference excel. RangeReference result<any>, DegFreedom: Number \| \| excel. エクセルの\|の結果)<any>](/javascript/api/excel/excel.functions#t-inv-2t-probability--degfreedom-)|スチューデントの t 分布の両側逆関数を返します。|
 ||[tan (数値\| : RangeReference \| \|を指定したセル範囲の数式)<any>](/javascript/api/excel/excel.functions#tan-number-)|角度のタンジェントを返します。|
 ||[tanh (number: number \| \| excel. RangeReference \| excel. functionresult<any>)](/javascript/api/excel/excel.functions#tanh-number-)|数値の双曲線正接 (ハイパーボリック タンジェント) を返します。|
 ||[tbillEq (受渡日: \|数値\|文字列\|ブール値 Excel \| . RangeReference \| <any>excel. functionresult, 満期日: 数値\|文字列\|ブール\|値 excel 範囲\|RangeReference \| excel<any>の場合、割引: 数値\|文字列\|ブール値\| excel \| . RangeReference \| excel. functionresult)<any>](/javascript/api/excel/excel.functions#tbilleq-settlement--maturity--discount-)|米国財務省短期証券の債券に相当する利回りを返します。|

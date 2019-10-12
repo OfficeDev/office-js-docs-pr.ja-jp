@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
 ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235331"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471361"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -276,7 +276,7 @@ Excel.run(function (context) {
 
 行またはセル範囲の列は、[アウトライン](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)を作成するためにまとめてグループ化することができます。 これらのグループを折りたたんで展開し、対応するセルを非表示にして表示することができます。 これにより、トップ行のデータの簡単な分析が容易になります。 これらのアウトライングループを作成するには、[範囲グループ](/javascript/api/excel/excel.range#group-groupoption-)を使用します。
 
-アウトラインには階層を設定できます。小さなグループは、より大きいグループの下にネストされています。 これにより、アウトラインを異なるレベルで表示できるようになります。 表示されるアウトラインレベルの変更は、 [showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-)メソッドを使用してプログラムによって行うことができます。 Excel では8レベルのアウトライングループのみがサポートされることに注意してください。
+アウトラインには階層を設定できます。小さなグループは、より大きいグループの下にネストされています。 これにより、アウトラインを異なるレベルで表示できるようになります。 表示されるアウトラインレベルを変更するには、 [showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)メソッドを使用してプログラムで実行できます。 Excel では8レベルのアウトライングループのみがサポートされることに注意してください。
 
 次のコードサンプルでは、行と列の両方に対して2つのレベルのグループを持つアウトラインを作成する方法を示します。 次の図は、そのアウトラインのグループを示しています。 コードサンプルでは、グループ化されている範囲に、アウトラインコントロールの行または列が含まれていないことに注意してください (この例の場合は "集計")。 グループは、コントロールのある行または列ではなく、折りたたまれる内容を定義します。
 
@@ -309,7 +309,7 @@ Excel.run(function (context) {
 
 ![2レベルの2次元のアウトラインがある範囲](../images/excel-outline.png)
 
-行または列グループのグループ解除を行うには、[範囲の upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-)メソッドを使用します。 これにより、アウトラインから最上位レベルが削除されます。 同じ行または列の種類の複数のグループが指定された範囲内の同じレベルにある場合、それらすべてのグループはグループ解除されます。
+行または列グループのグループを解除するには、グループ化を解除するメソッドを使用します[。](/javascript/api/excel/excel.range#ungroup-groupoption-) これにより、アウトラインから最上位レベルが削除されます。 同じ行または列の種類の複数のグループが指定された範囲内の同じレベルにある場合、それらすべてのグループはグループ解除されます。
 
 ## <a name="see-also"></a>関連項目
 
