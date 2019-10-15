@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 338085b297e760057987fd94d7caf96b5134ce6a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 1838ddf2016d5c0d4651991ce569fd98d6ac960e
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838481"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471354"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -31,6 +31,15 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | `onFormatChanged` | ワークシートで書式設定が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding)、[**Table**](/javascript/api/excel/excel.table)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生します。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
+
+> [!WARNING]
+> `onSelectionChanged` は現在不安定です。 `onSelectionChanged` を確実に使用するための回避策があります。 HTML ホーム ページの `<head>` セクションに次のコードを追加します。
+>
+> ```HTML
+> <script> MutationObserver=null; </script>
+> ```
+>
+> この問題に関する説明は、「[office-js GitHub リポジトリ](https://github.com/OfficeDev/office-js/issues/533)」にあります。
 
 ### <a name="events-in-preview"></a>プレビューでのイベント
 
