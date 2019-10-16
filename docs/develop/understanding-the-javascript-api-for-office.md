@@ -3,12 +3,12 @@ title: JavaScript API for Office について
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226742"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524235"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
@@ -22,7 +22,7 @@ ms.locfileid: "35226742"
 [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有のファイル (Excel-15.js や Outlook-15.js など) で構成されています。最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
 
 ```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 これにより、アドインが最初に読み込まれるときに JavaScript API for Office ファイルのダウンロードとキャッシュを実行して、アドインが確実に指定したバージョンの最新の Office.js および関連ファイルを使用するようにします。

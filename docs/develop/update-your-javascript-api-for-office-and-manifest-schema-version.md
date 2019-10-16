@@ -3,12 +3,12 @@ title: Office ライブラリ用の最新 JavaScript API、およびバージョ
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: a685f1a2e482a99af2a7184c2ab44104fa38c6a7
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 83e09cee76aaea7343e456f4fed28af31d978bba
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353861"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524242"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Office ライブラリ用の最新 JavaScript API、およびバージョン 1.1 のアドイン マニフェスト スキーマへの更新
 
@@ -54,7 +54,7 @@ JavaScript API for Office とアドイン マニフェスト スキーマの v1.
 更新を完了するには、さらにいくつか手順を実行する必要があります。 アドインの HTML ページの **head** タグ内で、既存の office.js スクリプトに対する参照をすべてコメント アウトするか削除して、更新した JavaScript API for Office ライブラリを次のように参照します。
 
   ```html
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
   ```
 
    > [!NOTE] 
@@ -98,7 +98,7 @@ Office アドインを開発するために、JavaScript API for Office ファ�
 2. アドインの HTML ページの **head** タグ内で、既存の office.js スクリプトに対する参照をすべてコメント アウトするか削除して、更新した JavaScript API for Office ライブラリを次のように参照します。
 
     ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
     ```
 
    > [!NOTE]
