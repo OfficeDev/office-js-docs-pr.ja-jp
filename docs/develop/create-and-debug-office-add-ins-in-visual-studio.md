@@ -30,7 +30,7 @@ ms.locfileid: "35128186"
 - Office 2013 以降
 
     > [!TIP]
-    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/ja-JP/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
+    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Visual Studio でアドイン プロジェクトを作成する
 
