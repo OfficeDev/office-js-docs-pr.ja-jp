@@ -10,18 +10,18 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "36268153"
 ---
-# <a name="display-a-dialog-box-from-a-custom-function"></a><span data-ttu-id="4dfdc-103">カスタム関数からダイアログ ボックスを表示する</span><span class="sxs-lookup"><span data-stu-id="4dfdc-103">Display a dialog box from a custom function</span></span>
+# <a name="display-a-dialog-box-from-a-custom-function"></a><span data-ttu-id="d3d38-103">カスタム関数からダイアログ ボックスを表示する</span><span class="sxs-lookup"><span data-stu-id="d3d38-103">Display a dialog box from a custom function</span></span>
 
-<span data-ttu-id="4dfdc-104">ユーザーがカスタム関数を操作する必要がある場合は、[`Office.Dialog` オブジェクト](/javascript/api/office-runtime/officeruntime.dialog)を使用してダイアログ ボックスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-104">If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog).</span></span> <span data-ttu-id="4dfdc-105">ダイアログ ボックスを使用するための一般的なシナリオは、カスタム関数が web サービスにアクセスできるよう、ユーザーを認証することです。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-105">A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service.</span></span> <span data-ttu-id="4dfdc-106">カスタム関数を使用した認証について詳しくは、[カスタム関数認証](./custom-functions-authentication.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-106">For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).</span></span>
+<span data-ttu-id="d3d38-104">ユーザーがカスタム関数を操作する必要がある場合は、[`Office.Dialog` オブジェクト](/javascript/api/office-runtime/officeruntime.dialog)を使用してダイアログ ボックスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d3d38-104">If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog).</span></span> <span data-ttu-id="d3d38-105">ダイアログ ボックスを使用するための一般的なシナリオは、カスタム関数が web サービスにアクセスできるよう、ユーザーを認証することです。</span><span class="sxs-lookup"><span data-stu-id="d3d38-105">A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service.</span></span> <span data-ttu-id="d3d38-106">カスタム関数を使用した認証について詳しくは、[カスタム関数認証](./custom-functions-authentication.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d3d38-106">For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> <span data-ttu-id="4dfdc-107">`Office.Dialog` オブジェクトは、カスタム関数のランタイムの一部です。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-107">The `Office.Dialog` object is part of the custom functions runtime.</span></span> <span data-ttu-id="4dfdc-108">作業ウィンドウは `Dialog` オブジェクトを使用しません。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-108">Task panes don't use the `Dialog` object.</span></span> <span data-ttu-id="4dfdc-109">作業ウィンドウからダイアログ ボックスを作成するには、[ダイアログ API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-109">To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span></span>
+> <span data-ttu-id="d3d38-107">`Office.Dialog` オブジェクトは、カスタム関数のランタイムの一部です。</span><span class="sxs-lookup"><span data-stu-id="d3d38-107">The `Office.Dialog` object is part of the custom functions runtime.</span></span> <span data-ttu-id="d3d38-108">作業ウィンドウは `Dialog` オブジェクトを使用しません。</span><span class="sxs-lookup"><span data-stu-id="d3d38-108">Task panes don't use the `Dialog` object.</span></span> <span data-ttu-id="d3d38-109">作業ウィンドウからダイアログ ボックスを作成するには、[ダイアログ API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d3d38-109">To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span></span>
 
-## <a name="dialog-box-api-example"></a><span data-ttu-id="4dfdc-110">ダイアログ ボックス API の例</span><span class="sxs-lookup"><span data-stu-id="4dfdc-110">dialog box API example</span></span>
+## <a name="dialog-box-api-example"></a><span data-ttu-id="d3d38-110">ダイアログ ボックス API の例</span><span class="sxs-lookup"><span data-stu-id="d3d38-110">dialog box API example</span></span>
 
-<span data-ttu-id="4dfdc-111">次のコード サンプルでは、​​関数 `getTokenViaDialog` はダイアログ ボックスを表示するために `Dialog` APIの `displayWebDialogOptions` 関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-111">In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.</span></span>
+<span data-ttu-id="d3d38-111">次のコード サンプルでは、​​関数 `getTokenViaDialog` はダイアログ ボックスを表示するために `Dialog` APIの `displayWebDialogOptions` 関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="d3d38-111">In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.</span></span>
 
 ```js
 /**
@@ -67,11 +67,11 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="4dfdc-112">次の手順</span><span class="sxs-lookup"><span data-stu-id="4dfdc-112">Next steps</span></span>
-<span data-ttu-id="4dfdc-113">「[XLL ユーザー定義関数と互換性のある、カスタム関数を作成する](make-custom-functions-compatible-with-xll-udf.md)」で方法を確認してください。</span><span class="sxs-lookup"><span data-stu-id="4dfdc-113">Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="d3d38-112">次の手順</span><span class="sxs-lookup"><span data-stu-id="d3d38-112">Next steps</span></span>
+<span data-ttu-id="d3d38-113">「[XLL ユーザー定義関数と互換性のある、カスタム関数を作成する](make-custom-functions-compatible-with-xll-udf.md)」で方法を確認してください。</span><span class="sxs-lookup"><span data-stu-id="d3d38-113">Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4dfdc-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="4dfdc-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d3d38-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3d38-114">See also</span></span>
 
-* [<span data-ttu-id="4dfdc-115">カスタム関数の認証</span><span class="sxs-lookup"><span data-stu-id="4dfdc-115">Custom functions authentication</span></span>](custom-functions-authentication.md)
-* [<span data-ttu-id="4dfdc-116">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="4dfdc-116">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
-* [<span data-ttu-id="4dfdc-117">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="4dfdc-117">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="d3d38-115">カスタム関数の認証</span><span class="sxs-lookup"><span data-stu-id="d3d38-115">Custom functions authentication</span></span>](custom-functions-authentication.md)
+* [<span data-ttu-id="d3d38-116">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="d3d38-116">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
+* [<span data-ttu-id="d3d38-117">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="d3d38-117">Create custom functions in Excel</span></span>](custom-functions-overview.md)
