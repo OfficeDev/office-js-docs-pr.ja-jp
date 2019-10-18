@@ -312,5 +312,5 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 ## <a name="see-also"></a>関連項目
 
 * [Word アドインの概要](../word/word-add-ins-programming-overview.md)
-* [Word アドインのコード サンプル](https://developer.microsoft.com/ja-JP/office/gallery/?filterBy=Samples,Word)
+* [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API リファレンス](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

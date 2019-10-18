@@ -80,7 +80,7 @@ let _isBatchedRequestScheduled = false;
 
 このコードは、バッチがスケジュールされているかどうかも確認します。 この例では、それぞれのバッチはすべて100 ミリ秒ごとに実行するようスケジュールされています。 必要に応じて、この値を調整することができます。 高い値は、リモート サービスに送信される大きなバッチで発生し、ユーザーが結果を確認するまでの応答時間が長くなります。 小さい値は、より多くのバッチがリモート サービスに送信されますが、ユーザーの応答時間は短くなる傾向があります。
 
-### <a name="add-the-pushoperation-function-to-functionsts"></a>functions.ts に `_pushOperation` 関数を追加する
+### <a name="add-the-_pushoperation-function-to-functionsts"></a>functions.ts に `_pushOperation` 関数を追加する
 
 ```typescript
 function _pushOperation(op: string, args: any[]) {
@@ -118,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 `_makeRemoteRequest`関数の目的は、操作のバッチをリモート サービスに渡し、それから各カスタム関数に結果を返します。 まず、バッチ配列のコピーを作成します。 これにより、concurrent カスタム関数は、Excel からすぐに新しい配列にバッチ処理を呼び出すことができます。 そのコピーは、それから promise 情報が含まれていない単純な配列になります。 機能しない場合は、リモート サービスにその promise を渡しても意味をなしません。 リモート サービスが何を返すかによって、`_makeRemoteRequest` は拒否するか、またはそれぞれの promise を解決します。
 
-### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>次の`_makeRemoteRequest`メソッドを functions.ts に追加します。
+### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>次の`_makeRemoteRequest`メソッドを functions.ts に追加します。
 
 ```typescript
 function _makeRemoteRequest() {
@@ -150,7 +150,7 @@ function _makeRemoteRequest() {
 }
 ```
 
-### <a name="modify-makeremoterequest-for-your-own-solution"></a>独自のソリューションに`_makeRemoteRequest`を変更します。
+### <a name="modify-_makeremoterequest-for-your-own-solution"></a>独自のソリューションに`_makeRemoteRequest`を変更します。
 
 `_makeRemoteRequest`関数は、あとで表示されますが、リモート サービスを表すモックの`_fetchFromRemoteService`を呼び出します。 これにより、簡単に学習でき、この記事でコードを実行することができます。 ただし、実際のリモート サービスでこのコードを使用するときは、次の変更を行う必要があります:
 
@@ -161,7 +161,7 @@ function _makeRemoteRequest() {
 
 最後の手順では、リモート サービスでバッチの呼び出しを処理をします。 つぎのコード サンプルは、`_fetchFromRemoteService`関数を表しています。 この関数は、それぞれの操作を展開せずに指定した操作を実行し、それから結果を返します。 この記事の学習の目的は、 `_fetchFromRemoteService`関数がリモート サービスを web アドインで実行し、リモート サービスをモックするように設計されています。 **functions.ts** ファイルにこのコードを追加することができ、実際のリモート サービスを設定しなくても、この記事内のすべてのコードを学習し実行することができます。
 
-### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>次の `_fetchFromRemoteService` 関数を functions.ts に追加します。
+### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>次の `_fetchFromRemoteService` 関数を functions.ts に追加します。
 
 ```typescript
 async function _fetchFromRemoteService(
@@ -204,7 +204,7 @@ function pause(ms: number) {
 }
 ```
 
-### <a name="modify-fetchfromremoteservice-for-your-live-remote-service"></a>`_fetchFromRemoteService`をライブ リモート サービスに変更する
+### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>`_fetchFromRemoteService`をライブ リモート サービスに変更する
 
 ライブ リモート サービスで実行する`_fetchFromRemoteService`関数を変更するには、次の変更を行います:
 
