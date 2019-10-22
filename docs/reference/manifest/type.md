@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの Type 要素
 description: ''
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 28514e25d7877c0452fbf006a31f078cd980d819
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 1c053d65c5e3c6ce597c9912ec608e0b36bc623b
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356905"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33628229"
 ---
 # <a name="type-element"></a>Type 要素
 
@@ -30,10 +30,10 @@ ms.locfileid: "33356905"
 
 `Type`要素には、次のいずれかの値を指定する必要があります。
 
-- com: 対応するアドインが COM アドインであることを指定します。
-- xll: 対応するアドインが Excel XLL であることを指定します。
+- COM: 対応するアドインが COM アドインであることを指定します。
+- XLL: 対応するアドインが Excel XLL であることを指定します。
 
 ## <a name="see-also"></a>関連項目
 
-- [カスタム関数を XLL ユーザー定義関数と互換性があるようにする](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [既存の COM アドインと互換性のある Office アドインを作成する](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](../../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [既存の COM アドインと互換性のある Excel アドインを作成する](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

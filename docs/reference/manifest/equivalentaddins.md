@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの EquivalentAddins 要素
 description: ''
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 localization_priority: Normal
-ms.openlocfilehash: ac323968456735a1abd007745381a190a9a25f38
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 1c3ac281561dd5abf234ca53049e0768872fa0dd
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356904"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33628236"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 要素
 
@@ -34,5 +34,5 @@ ms.locfileid: "33356904"
 
 ## <a name="see-also"></a>関連項目
 
-- [カスタム関数を XLL ユーザー定義関数と互換性があるようにする](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [既存の COM アドインと互換性のある Office アドインを作成する](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](../../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [既存の COM アドインと互換性のある Excel アドインを作成する](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

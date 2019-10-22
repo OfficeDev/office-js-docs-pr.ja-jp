@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの AppDomain 要素
 description: ''
-ms.date: 05/15/2019
+ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b1d71648cc7646eec246f3d0a8113c843eed2e74
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 2f65302d1ac3d85f2867cd13501bc67606cd00b5
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337196"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "35575640"
 ---
 # <a name="appdomain-element"></a>AppDomain 要素
 
-アドイン ウィンドウにページを読み込むために使用される追加のドメインを指定します。
+アドインウィンドウにページを読み込む追加のドメインを指定します。 また、アドイン内の Iframe から Office .js API 呼び出しを行うことができる信頼されたドメインも一覧表示されます。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 

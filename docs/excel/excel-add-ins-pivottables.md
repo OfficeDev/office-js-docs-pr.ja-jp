@@ -1,22 +1,23 @@
 ---
 title: Excel JavaScript API を使用してピボットテーブルを操作する
 description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 03/21/2019
+ms.date: 05/01/2019
 localization_priority: Normal
-ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4a60b820d6e50dd44a193dd08df69817330c636d
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449376"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33620200"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
 
 ピボットテーブルは、より大きなデータセットを合理化します。 グループ化されたデータのクイック操作を可能にします。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。
 
-ピボットテーブルの機能についてよく知らない場合は、エンドユーザーとしての調査を検討してください。 これらのツールの詳細については、「[ワークシートデータを分析するためのピボットテーブルを作成する](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)」を参照してください。 
+ピボットテーブルの機能についてよく知らない場合は、エンドユーザーとしての調査を検討してください。
+これらのツールの詳細については、「[ワークシートデータを分析するためのピボットテーブルを作成する](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)」を参照してください。
 
-この記事では、一般的なシナリオのコードサンプルを示します。 ピボットテーブル API について理解するには、「 [**pivottable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottable)」を参照してください。
+この記事では、一般的なシナリオのコードサンプルを示します。 ピボットテーブル API について理解するには、「 [**pivottable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection)」を参照してください。
 
 > [!IMPORTANT]
 > OLAP を使用して作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
@@ -31,7 +32,7 @@ ms.locfileid: "32449376"
 
 行と列の階層は、データをグループ化する方法を定義します。 たとえば、**ファーム**の行階層は、同じファームのすべてのデータセットをグループ化します。 行と列の階層を選択すると、ピボットテーブルの向きが定義されます。
 
-データ階層は、行と列の階層に基づいて集計される値です。 ファームの行階層があり、 **** **Crates**のデータ階層があるピボットテーブルには、各ファームのすべての異なる fruits の合計 (既定では) が表示されます。
+データ階層は、行と列の階層に基づいて集計される値です。 **ファームの行**階層があり、 **Crates**のデータ階層があるピボットテーブルには、各ファームのすべての異なる fruits の合計 (既定では) が表示されます。
 
 フィルター階層では、フィルター処理された種類の値に基づいて、ピボットのデータが含まれるか、除外されます。 **有機**的に選択された種類の**分類**のフィルター階層は、有機フルーツのデータのみを表示します。
 
@@ -43,56 +44,58 @@ ms.locfileid: "32449376"
 
 ## <a name="create-a-pivottable"></a>ピボットテーブルを作成する
 
-ピボットテーブルには、名前、ソース、および出力先が必要です。 ソースは、範囲内のアドレスまたはテーブル名 (、、 `Range`、 `string`または`Table`型として渡されます) を指定できます。 宛先は、または`Range` `string`のいずれかとして指定された範囲のアドレスです。 次のサンプルは、さまざまなピボットテーブル作成手法を示しています。
+ピボットテーブルには、名前、ソース、および出力先が必要です。 ソースは、範囲内のアドレスまたはテーブル名 (、、 `Range`、 `string`または`Table`型として渡されます) を指定できます。 宛先は、または`Range` `string`のいずれかとして指定された範囲のアドレスです。
+次のサンプルは、さまざまなピボットテーブル作成手法を示しています。
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>範囲のアドレスを使用してピボットテーブルを作成する
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
-    context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on the current worksheet at cell
+    // A22 with data from the range A1:E21.
+    context.workbook.worksheets.getActiveWorksheet().pivotTables.add(
+      "Farm Sales", "A1:E21", "A22");
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ### <a name="create-a-pivottable-with-range-objects"></a>Range オブジェクトを使用してピボットテーブルを作成する
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data comes from the worksheet "DataWorksheet" across the range A1:E21
-    const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
-    const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data comes from the worksheet "DataWorksheet" across the range A1:E21.
+    var rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
+    var rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
-        "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+      "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ### <a name="create-a-pivottable-at-the-workbook-level"></a>ブックレベルでピボットテーブルを作成する
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data is from the worksheet "DataWorksheet" across the range A1:E21
-    context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data is from the worksheet "DataWorksheet" across the range A1:E21.
+    context.workbook.pivotTables.add(
+        "Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ## <a name="use-an-existing-pivottable"></a>既存のピボットテーブルを使用する
 
-手動で作成したピボットテーブルは、ブックまたは個々のワークシートの PivotTable コレクションからアクセスすることもできます。 
+手動で作成したピボットテーブルは、ブックまたは個々のワークシートの PivotTable コレクションからアクセスすることもできます。 次のコードは、ブックから**My Pivot**という名前のピボットテーブルを取得します。
 
-次のコードは、ブック内の最初のピボットテーブルを取得します。 その後、表の名前を後で簡単に参照できるようにします。
-
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.pivotTables.getItem("My Pivot");
-    await context.sync();
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.pivotTables.getItem("My Pivot");
+    return context.sync();
 });
 ```
 
@@ -104,54 +107,145 @@ await Excel.run(async (context) => {
 
 ![ファーム列と種類と分類行を含む PivotTable。](../images/excel-pivots-table-rows-and-columns.png)
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 行または列だけのピボットテーブルを作成することもできます。
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>データ階層をピボットテーブルに追加する
 
-データ階層は、行と列に基づいて結合する情報で、ピボットテーブルに格納されます。 **ファームで販売**された Crates のデータ階層を追加し、 **Crates に販売**されたものは、行と列ごとにこれらの数値を合計します。 
+データ階層は、行と列に基づいて結合する情報で、ピボットテーブルに格納されます。 **ファームで販売**された Crates のデータ階層を追加し、 **Crates に販売**されたものは、行と列ごとにこれらの数値を合計します。
 
-この例では、**ファーム**と**種類**の両方が行で、箱 sales がデータとして含まれています。 
+この例では、**ファーム**と**種類**の両方が行で、箱 sales がデータとして含まれています。
 
 ![元のファームに基づいたさまざまな果物の総売上高を示すピボットテーブル。](../images/excel-pivots-data-hierarchy.png)
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // "Farm" and "Type" are the hierarchies on which the aggregation is based
+    // "Farm" and "Type" are the hierarchies on which the aggregation is based.
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 
     // "Crates Sold at Farm" and "Crates Sold Wholesale" are the hierarchies
-    // that will have their data aggregated (summed in this case)
+    // that will have their data aggregated (summed in this case).
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
-    await context.sync();
+    return context.sync();
+});
+```
+
+## <a name="slicers-preview"></a>スライサー (プレビュー)
+
+> [!NOTE]
+> スライサー Api は、現在、パブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+[スライサー](/javascript/api/excel/excel.slicer)を使用すると、Excel のピボットテーブルまたはテーブルからデータをフィルターできます。 スライサーは、指定された列またはピボットテーブルの値を使用して、対応する行にフィルターを適用します。 これらの値は`Slicer`、 [SlicerItem](/javascript/api/excel/excel.sliceritem)オブジェクトとしてに格納されます。 アドインでは、ユーザーと同様に ([EXCEL UI を介し](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)て) これらのフィルターを調整できます。 スライサーは、次のスクリーンショットに示されているように、描画層のワークシートの一番上にあります。
+
+![ピボットテーブルのスライサーフィルターデータ。](../images/excel-slicer.png)
+
+> [!NOTE]
+> このセクションで説明する手法は、ピボットテーブルに接続されたスライサーの使用方法に重点を置いています。 テーブルに接続されたスライサーを使用する場合にも同じ方法が適用されます。
+
+### <a name="create-a-slicer"></a>スライサーを作成する
+
+`Workbook.slicers.add`メソッドまたは`Worksheet.slicers.add`メソッドを使用して、ブックまたはワークシートにスライサーを作成できます。 これにより、指定したオブジェクトまたは`Worksheet`オブジェクト`Workbook`の[SlicerCollection](/javascript/api/excel/excel.slicercollection)にスライサーが追加されます。 メソッド`SlicerCollection.add`には、次の3つのパラメーターがあります。
+
+- `slicerSource`: 新しいスライサーの基になるデータソース。 、、または`PivotTable`の`Table` `PivotTable`名前または ID を表す文字列を指定でき`Table`ます。
+- `sourceField`: フィルター処理の対象となるデータソース内のフィールド。 、、または`PivotField`の`TableColumn` `PivotField`名前または ID を表す文字列を指定でき`TableColumn`ます。
+- `slicerDestination`: 新しいスライサーを作成するワークシートを指定します。 オブジェクト、 `Worksheet`またはの名前または ID を指定でき`Worksheet`ます。 を経由して`SlicerCollection` `Worksheet.slicers`アクセスする場合、このパラメーターは必要ありません。 この例では、コレクションのワークシートがコピー先として使用されます。
+
+次のコードサンプルでは、新しいスライサーを**ピボット**ワークシートに追加します。 スライサーのソースは、**ファームの売上**ピボットテーブルで、**型**データを使用してフィルター処理されます。 スライサーは、後で参照するために**フルーツスライサー**という名前も付けられています。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Pivot");
+    var slicer = sheet.slicers.add(
+        "Farm Sales" /* The slicer data source. For PivotTables, this can be the PivotTable object reference or name. */,
+        "Type" /* The field in the data to filter by. For PivotTables, this can be a PivotField object reference or ID. */
+    );
+    slicer.name = "Fruit Slicer";
+    return context.sync();
+});
+```
+
+### <a name="filter-items-with-a-slicer"></a>スライサーを使用してアイテムをフィルターにかける
+
+スライサーは、 `sourceField`からのアイテムを使用して、ピボットテーブルをフィルターします。 この`Slicer.selectItems`メソッドは、スライサーに残っているアイテムを設定します。 これらのアイテムは、アイテムのキーを`string[]`表すとしてメソッドに渡されます。 これらのアイテムを含む行は、ピボットテーブルの集計に残ります。 以降の呼び出し`selectItems`では、これらの呼び出しで指定されたキーにリストを設定します。
+
+> [!NOTE]
+> データ`Slicer.selectItems`ソースに含まれていないアイテムが渡されると、 `InvalidArgument`エラーがスローされます。 この`Slicer.slicerItems`プロパティを使用して、 [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)の内容を確認できます。
+
+次のコードサンプルでは、スライサーに対して選択されている3つのアイテム (**レモン**、**黄**、**オレンジ色**) を示します。
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    // Anything other than the following three values will be filtered out of the PivotTable for display and aggregation.
+    slicer.selectItems(["Lemon", "Lime", "Orange"]);
+    return context.sync();
+});
+```
+
+スライサーからすべてのフィルターを削除するには`Slicer.clearFilters` 、次の例に示すようにメソッドを使用します。
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.clearFilters();
+    return context.sync();
+});
+```
+
+### <a name="style-and-format-a-slicer"></a>スライサーのスタイルと書式設定
+
+アドインでは、プロパティを使用して`Slicer`スライサーの表示設定を調整できます。 次のコードサンプルでは、スタイルを**SlicerStyleLight6**に設定し、スライサーの上部のテキストを**果物の種類**に設定し、スライサーを描画レイヤーの位置 **(395, 15)** に配置し、スライサーのサイズを**135x150**ピクセルに設定します。
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.caption = "Fruit Types";
+    slicer.left = 395;
+    slicer.top = 15;
+    slicer.height = 135;
+    slicer.width = 150;
+    slicer.style = "SlicerStyleLight6";
+    return context.sync();
+});
+```
+
+### <a name="delete-a-slicer"></a>スライサーを削除する
+
+スライサーを削除するには、 `Slicer.delete`メソッドを呼び出します。 次のコードサンプルでは、現在のワークシートから最初のスライサーを削除します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.slicers.getItemAt(0).delete();
+    return context.sync();
 });
 ```
 
@@ -163,49 +257,49 @@ await Excel.run(async (context) => {
 
 次のコードサンプルでは、集計をデータの平均値に変更します。
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.dataHierarchies.load("no-properties-needed");
-    await context.sync();
+    return context.sync().then(function() {
 
-    // changing the aggregation from the default sum to an average of all the values in the hierarchy
-    pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
-    pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
-    await context.sync();
+        // Change the aggregation from the default sum to an average of all the values in the hierarchy.
+        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+        return context.sync();
+    });
 });
 ```
 
-## <a name="change-calculations-with-a-showasrule"></a>showasrule を使用して計算を変更する
+## <a name="change-calculations-with-a-showasrule"></a>ShowAsRule を使用して計算を変更する
 
-既定では、ピボットテーブルでは、行と列の階層のデータが個別に集計されます。 [showasrule](/javascript/api/excel/excel.showasrule)は、データ階層を、ピボットテーブル内の他のアイテムに基づいて出力値に変更します。
+既定では、ピボットテーブルでは、行と列の階層のデータが個別に集計されます。 [Showasrule](/javascript/api/excel/excel.showasrule)は、データ階層を、ピボットテーブル内の他のアイテムに基づいて出力値に変更します。
 
 オブジェクト`ShowAsRule`には、次の3つのプロパティがあります。
 
--   `calculation`: データ階層に適用する相対的な計算の種類 (既定値は`none`)。
--   `baseField`: 計算を適用する前に、基本データを含む階層内のフィールド。 通常、[ピボットフィールド](/javascript/api/excel/excel.pivotfield)の名前は親階層と同じです。
--   `baseItem`: 計算の種類に基づいて、基準フィールドの値と比較した個々の[ピボット](/javascript/api/excel/excel.pivotitem)テーブル。 すべての計算にこのフィールドが必要なわけではありません。
+- `calculation`: データ階層に適用する相対的な計算の種類 (既定値は`none`)。
+- `baseField`: 計算を適用する前に、基本データを含む階層内のフィールド。 通常、[ピボットフィールド](/javascript/api/excel/excel.pivotfield)の名前は親階層と同じです。
+- `baseItem`: 計算の種類に基づいて、基準フィールドの値と比較した個々の[ピボット](/javascript/api/excel/excel.pivotitem)テーブル。 すべての計算にこのフィールドが必要なわけではありません。
 
 次の例では、ファームデータ階層で販売された**Crates の合計**の計算を列の合計のパーセンテージに設定します。 さらに、粒度をフルーツの種類レベルにまで拡張する必要があるので、 **type**行階層とその基になるフィールドを使用します。 この例は、最初の行階層としても**ファーム**を持っているので、farm total エントリには各ファームがそれぞれを生成する割合が表示されます。
 
 ![各ファーム内の個々のファームと個々の果物の種類の総計を基準とした果物 sales の割合を示すピボットテーブル。](../images/excel-pivots-showas-percentage.png)
 
-``` TypeScript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    await context.sync();
+    return context.sync().then(function () {
 
-    // show the crates of each fruit type sold at the farm as a percentage of the column's total
-    let farmShowAs = farmDataHierarchy.showAs;
-    farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
-    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
-    farmDataHierarchy.showAs = farmShowAs; 
-    farmDataHierarchy.name = "Percentage of Total Farm Sales";
-
-    await context.sync();
+        // Show the crates of each fruit type sold at the farm as a percentage of the column's total.
+        var farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+        farmDataHierarchy.showAs = farmShowAs;
+        farmDataHierarchy.name = "Percentage of Total Farm Sales";
+    });
 });
 ```
 
@@ -214,25 +308,24 @@ await Excel.run(async (context) => {
 次の例は、 `differenceFrom`計算を示しています。 この例では、"ファーム" と比較した場合の、ファームの箱売上データ階層エントリの違いを示します。
 `baseField`は**ファーム**ですので、他のファームの違いと、果物などの種類ごとの内訳 (この例では、**type**が行階層になっています) を確認しています。
 
-!["畑" とその他の果物の売上の違いを示すピボットテーブル。 これは、畑の総売上合計と果物の種類の売上の違いを示しています。 "畑" が特定の種類の果物を販売していない場合は、"#N/a" が表示されます。](../images/excel-pivots-showas-differencefrom.png)
+!["畑" とその他の果物の売上の違いを示すピボットテーブル。 これは、畑の総売上合計と果物の種類の売上の違いを示しています。 "畑" が特定の種類の果物を販売していない場合は、"#N/A" が表示されます。](../images/excel-pivots-showas-differencefrom.png)
 
-``` TypeScript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    await context.sync();
-
-    // show the difference between crate sales of the "A Farms" and the other farms
-    // this difference is both aggregated and shown for individual fruit types (where applicable)
-    let farmShowAs = farmDataHierarchy.showAs;
-    farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
-    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
-    farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
-    farmDataHierarchy.showAs = farmShowAs;
-    farmDataHierarchy.name = "Difference from A Farms";
-    await context.sync();
+    return context.sync().then(function () {
+        // Show the difference between crate sales of the "A Farms" and the other farms.
+        // This difference is both aggregated and shown for individual fruit types (where applicable).
+        var farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+        farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+        farmDataHierarchy.showAs = farmShowAs;
+        farmDataHierarchy.name = "Difference from A Farms";
+    });
 });
 ```
 
@@ -246,24 +339,23 @@ await Excel.run(async (context) => {
 
 次のコードは、レイアウトを使用してピボットテーブルデータの最後の行を取得する方法を示しています。 これらの値は総計に対して合計されます。
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // get the totals for each data hierarchy from the layout
-    const range = pivotTable.layout.getDataBodyRange();
-    const grandTotalRange = range.getLastRow();
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
     grandTotalRange.load("address");
-    await context.sync();
-
-    // sum the totals from the PivotTable data hierarchies and place them in a new range
-    const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-    masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    await context.sync();
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
+    });
 });
 ```
 
-ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。 
+ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。
 
 次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 このコードサンプルは、さまざまなレイアウト間で循環する方法を示しています。
 
@@ -279,17 +371,16 @@ await Excel.run(async (context) => {
 
 階層フィールドは編集できます。 次のコードは、2つのデータ階層の表示名を変更する方法を示しています。
 
-```typescript
-await Excel.run(async (context) => {
-    const dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
+```js
+Excel.run(function (context) {
+    var dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
-    await context.sync();
-
-    // changing the displayed names of these entries
-    dataHierarchies.items[0].name = "Farm Sales";
-    dataHierarchies.items[1].name = "Wholesale";
-    await context.sync();
+    return context.sync().then(function () {
+        // changing the displayed names of these entries
+        dataHierarchies.items[0].name = "Farm Sales";
+        dataHierarchies.items[1].name = "Wholesale";
+    });
 });
 ```
 
@@ -297,11 +388,10 @@ await Excel.run(async (context) => {
 
 ピボットテーブルは、名前を使用して削除されます。
 
-```typescript
-await Excel.run(async (context) => {
+```js
+Excel.run(function (context) {
     context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-
-    await context.sync();
+    return context.sync();
 });
 ```
 
