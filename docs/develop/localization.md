@@ -1,14 +1,14 @@
 ---
 title: Office アドインのローカライズ
 description: JavaScript API for Office を使用すると、ロケールを決定し、ホスト アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりできます。
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: de0037c687e49b79acb90ff59f1babc9da1f13f5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575563"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626769"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -172,7 +172,7 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 このセクションでは、Office アドイン の説明、表示名、および UI をローカライズする方法の例を示します。 
 
 > [!NOTE]
-> Visual Studio 2017 をダウンロードするには、[Visual Studio IDE のページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
+> Visual Studio 2019 をダウンロードするには、 [Visual STUDIO IDE ページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>表示または編集用の追加言語を使用できるように Office を構成する
 
@@ -184,15 +184,19 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
 
 ### <a name="create-an-office-add-in-project"></a>Office アドイン プロジェクトの作成
 
-Visual Studio 2017 Office アドイン プロジェクトを作成する必要があります。
+Visual Studio 2019 Office アドインプロジェクトを作成する必要があります。
 
 > [!NOTE]
-> Visual Studio 2017 をインストールしていない場合は、ダウンロードの手順について、「[Visual Studio IDE](https://visualstudio.microsoft.com/vs/)」のページを参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio/)を使用して、Office/SharePoint 開発ワークロードがインストールされていることを確認してください。
+> Visual Studio 2019 をインストールしていない場合は、「 [Visual STUDIO IDE」ページ](https://visualstudio.microsoft.com/vs/)でダウンロード手順を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 既に Visual Studio 2019 がインストールされている場合は、 [Visual Studio インストーラーを使用](/visualstudio/install/modify-visual-studio/)して、Office/SharePoint 開発ワークロードがインストールされていることを確認してください。
 
+1. [**新しいプロジェクトを作成する**] を選択します。
 
-1. Visual Studio で、**[ファイル]** > **[新しいプロジェクト]** を選択します。
-2. **[新しいプロジェクト]** ダイアログ ボックスの **[テンプレート]** で、**[Visual Basic]** または **[Visual C#]** を展開して、**[アドイン]** を選択します。
-3. **[Word アドイン]** を選択して、アドインに「**WorldReadyAddIn**」と名前を付けます。**[OK]** を選択します。
+2. 検索ボックスを使用して、[**アドイン**] を入力します。 [ **Word Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに**WorldReadyAddIn**という名前を指定し、[**作成**] を選択します。
+
+4. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 Visual Studio で **.html**ファイルが開きます。
+
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>アドインに使用されるテキストのローカライズ
 

@@ -1,20 +1,20 @@
 ---
 title: Office. メールボックス要件セット1.2
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Normal
-ms.openlocfilehash: 2002b7784d0d7295762d1f692e7a0115f1f97059
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 542e8c9899c2d4a3c5b4546c3d5a73ba0d3c3a7e
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696345"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627000"
 ---
 # <a name="mailbox"></a>mailbox
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-Microsoft Outlook の Outlook アドインオブジェクトモデルへのアクセスを提供します。
+Microsoft Outlook の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
 
 ##### <a name="requirements"></a>要件
 
@@ -46,14 +46,14 @@ Microsoft Outlook の Outlook アドインオブジェクトモデルへのア�
 
 [userProfile](Office.context.mailbox.userProfile.md):Outlook アドインのユーザーに関する情報を提供します。
 
-### <a name="members"></a>メンバー
+### <a name="members"></a>Members
 
 #### <a name="ewsurl-string"></a>ewsUrl: String
 
-Gets the URL of the Exchange Web Services (EWS) endpoint for this email account. Read mode only.
+このメール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。読み取りモードのみです。
 
 > [!NOTE]
-> このメンバーは、iOS または Android の Outlook ではサポートされていません。
+> このメンバーは、Outlook on iOS または Android ではサポートされていません。
 
 
   `ewsUrl` 値は、リモート サービスで、ユーザーのメールボックスに EWS 呼び出しを行うために使うことができます。たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
@@ -76,9 +76,9 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
-デスクトップまたは web 上の Outlook 用メールアプリは、日付と時刻に異なるタイムゾーンを使用できます。 デスクトップ上の Outlook では、クライアントコンピューターのタイムゾーンが使用されます。Outlook on the web では、Exchange 管理センター (EAC) で設定されているタイムゾーンが使用されます。 日付と時刻の値を処理して、ユーザーインターフェイスに表示される値が、ユーザーが期待するタイムゾーンに常に一致するようにする必要があります。
+Outlook on the web または Outlook デスクトップのメールアプリでは、日付と時刻に異なるタイムゾーンを使用できます。Outlook デスクトップは、クライアント コンピューターのタイム ゾーンを使用します。Outlook on the web は、Exchange 管理センター (EAC) で設定されたタイム ゾーンを使用します。日付と時刻の値は、ユーザー インターフェイスに表示される値が、常にユーザーが期待するタイム ゾーンと一致するように処理する必要があります。
 
-デスクトップクライアント上の Outlook でメールアプリが実行されている`convertToLocalClientTime`場合、このメソッドは、クライアントコンピューターのタイムゾーンに設定された値を持つ dictionary オブジェクトを返します。 メールアプリが web 上の Outlook で実行されている`convertToLocalClientTime`場合、このメソッドは、EAC で指定されたタイムゾーンに設定された値を持つ dictionary オブジェクトを返します。
+Outlook デスクトップ クライアントでメール アプリを実行している場合、`convertToLocalClientTime` メソッドは、クライアント コンピューターのタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。Outlook on the web でメール アプリを実行している場合、`convertToLocalClientTime` メソッドは、EAC で指定したタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -161,13 +161,13 @@ console.log(result.toISOString());
 既存の予定を表示します。
 
 > [!NOTE]
-> このメソッドは、iOS または Android の Outlook ではサポートされていません。
+> このメソッドは、Outlook on iOS または Android ではサポートされていません。
 
 `displayAppointmentForm` メソッドは、デスクトップ上の新しいウィンドウやモバイル デバイス上のダイアログ ボックスに既存の予定を開きます。
 
-Outlook on the Mac では、このメソッドを使用して、定期的なアイテムの一部ではない単一の予定を表示したり、定期的なアイテムのマスター予定を表示したりすることはできませんが、一連のインスタンスを表示することはできません。 これは、Mac 上の Outlook では、定期的なアイテムのインスタンスのプロパティ (アイテム ID を含む) にアクセスできないためです。
+Outlook on Mac では、このメソッドを使用して定期的な系列に含まれない単発の予定や定期的な系列のマスター予定を表示できます。ただし、系列のインスタンスは表示できません。これは、Outlook on Mac では定期的な系列のインスタンスのプロパティ (アイテム ID を含む) にアクセスできないためです。
 
-Web 上の Outlook では、フォームの本文が 32 KB 以下の文字である場合にのみ、このメソッドは指定されたフォームを開きます。
+Outlook on the web では、このメソッドはフォームの本文が 32KB 以下の文字数の場合にのみ指定のフォームを開きます。
 
 指定のアイテム識別子が既存の予定を表していない場合は、クライアント コンピューターまたはデバイスで空のウィンドウが開き、エラー メッセージは返されません。
 
@@ -201,11 +201,11 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 既存のメッセージを表示します。
 
 > [!NOTE]
-> このメソッドは、iOS または Android の Outlook ではサポートされていません。
+> このメソッドは、Outlook on iOS または Android ではサポートされていません。
 
 `displayMessageForm` メソッドは、デスクトップ上の新しいウィンドウやモバイル デバイス上のダイアログ ボックスに既存のメッセージを開きます。
 
-Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の場合にのみ、このメソッドは指定されたフォームを開きます。
+Outlook on the web では、このメソッドはフォームの本文が 32 KB 以下の文字数の場合にのみ指定のフォームを開きます。
 
 指定のアイテム識別子が既存のメッセージを表していない場合は、クライアント コンピューターにはメッセージは表示されず、エラー メッセージも返されません。
 
@@ -213,7 +213,7 @@ Web 上の Outlook では、フォームの本文が 32 KB の文字数以下の
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| Description|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -241,11 +241,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 新しい予定を作成するためのフォームを表示します。
 
 > [!NOTE]
-> このメソッドは、iOS または Android の Outlook ではサポートされていません。
+> このメソッドは、Outlook on iOS または Android ではサポートされていません。
 
 `displayNewAppointmentForm` メソッドを使用すると、ユーザーが新しい予定または会議を作成できるフォームが開きます。パラメーターを指定すると、予定のフォーム フィールドにパラメーターの内容が自動的に設定されます。
 
-Outlook on the web およびモバイルデバイスでは、このメソッドは常に出席者フィールドを含むフォームを表示します。 入力引数として出席者を指定しないと、このメソッドにより **[保存]** ボタンのあるフォームが表示されます。 出席者を指定した場合には、フォームにその出席者と **[送信]** ボタンが表示されます。
+Outlook on the web およびモバイル デバイスでは、このメソッドは常に出席者フィールドが含まれるフォームを表示します。入力引数として出席者を指定しないと、このメソッドは **[保存]** ボタンのあるフォームを表示します。出席者を指定した場合には、フォームにその出席者と **[送信]** ボタンが表示されます。
 
 Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`optionalAttendees`、または `resources` パラメーターに出席者またはリソースを指定し、このメソッドを実行すると、**[送信]** ボタンがある会議フォームが表示されます。受信者を指定せずにこのメソッドを実行すると、**[保存して閉じる]** ボタンがある予定フォームが表示されます。
 
@@ -253,9 +253,9 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 説明|
+|名前| 種類| 説明|
 |---|---|---|
-| `parameters` | オブジェクト | 新しい予定を記述するパラメーターのディクショナリ。 |
+| `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.start` | 日付 | 予定の開始日時を指定する `Date` オブジェクト。 |
@@ -304,24 +304,24 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 `getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。コールバック トークンの有効期間は 5 分です。
 
-トークンと予定の識別子またはアイテムの識別子をサードパーティ システムに渡すことができます。サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
+トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティのシステムに渡すことができます。 サードパーティシステムは、トークンをベアラー認証トークンとして使用して、Exchange Web サービス (EWS) の[Getattachment](/exchange/client-developer/web-service-reference/getattachment-operation)操作または[GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作を呼び出して、添付ファイルまたはアイテムを返します。 For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-アプリが **** メソッドを呼び出すには、アプリのマニフェスト内に `getCallbackTokenAsync` アクセス許可が指定されている必要があります。
+メソッドを`getCallbackTokenAsync`呼び出すには、 **ReadItem**の最低限のアクセス許可レベルが必要です。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 属性| 説明|
+|名前| 種類| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="errors"></a>エラー
 
 |エラー コード|説明|
 |------------|-------------|
-|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
-|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
-|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードの diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、diagnostics オブジェクトを参照してください。|
+|`NetworkError`|ユーザーはネットワークに接続されていません。 ネットワーク接続を確認し、やり直してください。|
 
 ##### <a name="requirements"></a>要件
 
@@ -356,18 +356,18 @@ function cb(asyncResult) {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 属性| 説明|
+|名前| 種類| 属性| 説明|
 |---|---|---|---|
-|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合は`asyncResult.error` 、 `asyncResult.diagnostics`プロパティとプロパティによって追加情報が提供されることがあります。|
+|`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="errors"></a>エラー
 
 |エラー コード|説明|
 |------------|-------------|
-|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードについては、diagnostics オブジェクトを参照してください。|
-|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、「diagnostics オブジェクト」を参照してください。|
-|`NetworkError`|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|
+|`HTTPRequestFailure`|要求が失敗しました。 HTTP エラーコードの diagnostics オブジェクトを参照してください。|
+|`InternalServerError`|Exchange サーバーがエラーを返しました。 詳細については、diagnostics オブジェクトを参照してください。|
+|`NetworkError`|ユーザーはネットワークに接続されていません。 ネットワーク接続を確認し、やり直してください。|
 
 ##### <a name="requirements"></a>要件
 
@@ -400,7 +400,7 @@ function cb(asyncResult) {
 
 > [!NOTE]
 > このメソッドは、次のシナリオではサポートされていません。
-> - Outlook on iOS または Android
+> - Outlook on iOS または Android の場合
 > - アドインが Gmail のメールボックスに読み込まれる場合
 > 
 > このような場合は、アドインでは [REST API を使用](/outlook/add-ins/use-rest-api)して、代わりにユーザーのメールボックスにアクセスする必要があります。
@@ -432,7 +432,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 型| 属性| 説明|
+|名前| 種類| 属性| 説明|
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|

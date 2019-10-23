@@ -1,14 +1,14 @@
 ---
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 36e2688240ad348669e7d6845f371997cd3c3ec2
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 4834567d88369fdc9b67a5a7e62a996384b131e5
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524277"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626993"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -71,7 +71,7 @@ Project の場合は、**OfficeApp** 要素に `xsi:type="TaskPaneApp"` 属性�
 
 1. JSOM_SimpleOMCalls.xml マニフェスト内の **SourceLocation** 要素で指定されている名前の HTML ファイルを作成します。 
 
-   たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 単純なテキスト エディターソースを使用してソース ファイルを作成することはできますが、特定のドキュメントの種類 (HTML や JavaScript など) を取り扱え、他の編集機能も備わった Visual Studio コードなどのツールを使用する方が簡単です。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
+   たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 簡単なテキストエディターを使用してソースファイルを作成することもできますが、Visual Studio Code などのツールを使用すると、特定のドキュメントの種類 (HTML や JavaScript など) で機能し、他の編集支援を持っているため、簡単に使用できます。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
 
    Microsoft Office 2013 アプリケーションの JSOMCall.html ファイルは、AJAX 機能に対しては共通の MicrosoftAjax.js ファイルを使用し、アドイン機能に対しては Office.js ファイルを使用します。
 

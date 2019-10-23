@@ -4,12 +4,12 @@ description: 今後の Excel JavaScript Api についての詳細
 ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 95cecd1c6a0b26f945e96834fe39757490788a97
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 86be9d60f37950d11b755d89bf2dd1b1190ae4ca
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235317"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627091"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -22,7 +22,7 @@ ms.locfileid: "37235317"
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
 | [スライサー](../../excel/excel-add-ins-pivottables.md#slicers-preview) | テーブルやピボットテーブルにスライサーを挿入し、構成します。 | [Slicer](/javascript/api/excel/excel.slicer) |
-| [コメント](../../excel/excel-add-ins-workbooks.md#comments-preview) | コメントを追加、編集、削除します。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| [コメント](../../excel/excel-add-ins-comments.md) | コメントを追加、編集、削除します。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | ブックを[保存](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview)して[閉じる](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | ブックを保存して閉じます。  | [Workbook](/javascript/api/excel/excel.workbook) |
 | [ブックを挿入する](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | あるブックを別のブックに挿入します。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
@@ -187,18 +187,18 @@ ms.locfileid: "37235317"
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|現在のブックを保存します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|ワークシート上のすべての Comments オブジェクトの集まりを返します。 読み取り専用です。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|1つ以上の列が並べ替えられたときに発生します。 これは、左から右への並べ替え操作の結果として発生します。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|フィルターが特定のワークシートに適用されたときに発生します。|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|1つ以上の行が並べ替えられたときに発生します。 これは、上から下への並べ替え操作の結果として発生します。|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|ワークシートで左クリック/タップしたときに発生します。 このイベントは、次のケースをクリックしても発生しません。|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|ワークシートに含まれるスライサーをまとめて返します。 読み取り専用です。|
 ||[showOutlineLevels (rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|アウトラインレベルで行または列のグループを表示します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|あるブックの指定されたワークシートを現在のブックに挿入します。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|1つ以上の列が並べ替えられたときに発生します。 これは、左から右への並べ替え操作の結果として発生します。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|1つ以上の行が並べ替えられたときに発生します。 これは、上から下への並べ替え操作の結果として発生します。|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|ワークシートのコレクションで左クリック/タップ操作が行われるときに発生します。 このイベントは、次のケースをクリックしても発生しません。|
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|特定のワークシートで並べ替えられたエリアを表す範囲のアドレスを取得します。 並べ替え操作の結果として変更された列のみが返されます。|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|イベントのソースを取得します。 詳細については、Excel.EventSource をご覧ください。|
@@ -223,5 +223,5 @@ ms.locfileid: "37235317"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-preview)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-preview)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

@@ -1,7 +1,7 @@
-- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- **Office/SharePoint 開発**ワークロードがインストールされた[Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!NOTE]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
+    > 既に Visual Studio 2019 がインストールされている場合は、 [Visual Studio インストーラーを使用](/visualstudio/install/modify-visual-studio)して、 **Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 
 
 - Office 2016 以降
 

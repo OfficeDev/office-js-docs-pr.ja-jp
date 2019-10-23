@@ -1,14 +1,14 @@
 ---
-title: PowerPoint アドインでドキュメントのテーマを使用する
+title: PowerPoint アドインでドキュメント テーマを使用する
 description: ''
-ms.date: 12/17/2018
+ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451495"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627007"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
@@ -61,7 +61,7 @@ OfficeThemes.css ファイルを アドイン プロジェクトに追加して�
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>OfficeThemes.css を Visual Studio プロジェクトに追加するには
 
 > [!NOTE]
-> この手順は、Visual Studio 2015 にのみ適用されます。 Visual Studio 2017 を使用している場合は、新しい PowerPoint アドイン プロジェクトを作成すると OfficeThemes.css ファイルが自動的に作成されます。
+> この手順は、Visual Studio 2015 にのみ適用されます。 Visual Studio 2019 を使用している場合は、作成した新しい PowerPoint アドインプロジェクトに対して OfficeThemes ファイルが自動的に作成されます。
 
 1. **ソリューション エクスプローラー**で、_**project_name**_**Web** プロジェクト内の [**コンテンツ**] フォルダーを右クリックし、[**追加**] を選択してから、[**スタイル シート**] を選択します。
     
@@ -143,9 +143,17 @@ Visual Studio でこの作業を行うには、次の手順に従ってくださ
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>PowerPoint 用アドイン内で OfficeThemes.css を参照するには
 
-1. Visual Studio 2017 で、**Office アドイン** プロジェクトを開くか新規作成します。
-    
-2. アドインの UI を実装する HTML ページ (既定のテンプレート内の Home.html など) で、OfficeThemes.css ファイルを参照する次の `<link>` タグを `<head>` タグに追加します。
+1. [**新しいプロジェクトを作成する**] を選択します。
+
+2. 検索ボックスを使用して、[**アドイン**] を入力します。 [ **PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに名前を指定し、[**作成**] を選択します。
+
+3. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
+
+4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+
+5. アドインの UI を実装する HTML ページ (既定のテンプレート内の Home.html など) で、OfficeThemes.css ファイルを参照する次の `<link>` タグを `<head>` タグに追加します。
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

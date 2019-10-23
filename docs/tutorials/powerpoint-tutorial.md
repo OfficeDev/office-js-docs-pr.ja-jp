@@ -1,15 +1,15 @@
 ---
 title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-ms.date: 12/31/2018
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 8f1b67341c2d796ff9213682e7ee759995f915f2
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696030"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627112"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -29,11 +29,11 @@ ms.locfileid: "36696030"
 
 Visual Studio を使用して PowerPoint アドイン プロジェクトを作成するには次の手順を実行します。
 
-1. [Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
-    
-2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[PowerPoint Web アドイン]** を選択します。 
+1. [**新しいプロジェクトを作成する**] を選択します。
 
-3. プロジェクトに **HelloWorld** という名前を付けて、**[OK]** ボタンをクリックします。
+2. 検索ボックスを使用して、[**アドイン**] を入力します。 [ **PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに名前を指定し、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
