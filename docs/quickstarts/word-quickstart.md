@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1648e6ee50d45fa4811766a56ad55896267d66f8
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035309"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626871"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -96,11 +96,12 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
 
-2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Word Web アドイン]** を選択します。 
+1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-3. プロジェクトに名前を付けて、**[OK]** を選択します。
+2. 検索ボックスを使用して、**アドイン**と入力します。 [**Word Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 

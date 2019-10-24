@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6f5b78e1ffb154eb014bb4bb0ef8cb7135b2012f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035323"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626972"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -72,11 +72,12 @@ ms.locfileid: "37035323"
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. [Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
 
-2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Excel Web アドイン]** を選択します。 
+1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-3. プロジェクトに名前を付けて、**[OK]** を選択します。
+2. 検索ボックスを使用して、**アドイン**と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
