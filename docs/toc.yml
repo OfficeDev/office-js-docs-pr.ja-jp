@@ -489,6 +489,9 @@
         - name: Excel アドインの共同編集機能
           href: excel/co-authoring-in-excel-add-ins.md
           displayName: Excel
+        - name: コメント
+          href: excel/excel-add-ins-comments.md
+          displayName: Excel
         - name: 範囲の条件付き書式
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel

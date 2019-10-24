@@ -1,62 +1,50 @@
 ---
-title: 発行のための準備として Visual Studio を使用してアドインをパッケージ化する | Microsoft Docs
-description: Visual Studio 2017 を使用して Web プロジェクトを展開しアドインをパッケージ化する方法です。
-ms.date: 03/19/2019
+title: 発行のための準備として Visual Studio を使用してアドインをパッケージ化する
+description: Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法。
+ms.date: 10/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451088"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626965"
 ---
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a><span data-ttu-id="85df2-103">発行のための準備として Visual Studio を使用してアドインをパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="85df2-103">Package your add-in using Visual Studio to prepare for publishing</span></span>
+# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a><span data-ttu-id="ccdf5-103">発行のための準備として Visual Studio を使用してアドインをパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="ccdf5-103">Package your add-in using Visual Studio to prepare for publishing</span></span>
 
-<span data-ttu-id="85df2-104">Office アドイン パッケージには、アドインの発行に使用する XML [マニフェスト ファイル](../develop/add-in-manifests.md)が含まれています。</span><span class="sxs-lookup"><span data-stu-id="85df2-104">Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in.</span></span> <span data-ttu-id="85df2-105">プロジェクトの Web アプリケーション ファイルは個別に発行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="85df2-105">You'll have to publish the web application files of your project separately.</span></span> <span data-ttu-id="85df2-106">この記事では、Visual Studio 2017 を使用して、Web プロジェクトを展開し、アドインをパッケージ化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="85df2-106">This article describes how to deploy your web project and package your add-in by using Visual Studio 2017.</span></span>
+<span data-ttu-id="ccdf5-104">Office アドイン パッケージには、アドインの発行に使用する XML [マニフェスト ファイル](../develop/add-in-manifests.md)が含まれています。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-104">Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in.</span></span> <span data-ttu-id="ccdf5-105">プロジェクトの Web アプリケーション ファイルは個別に発行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-105">You'll have to publish the web application files of your project separately.</span></span> <span data-ttu-id="ccdf5-106">この記事では、Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-106">This article describes how to deploy your web project and package your add-in by using Visual Studio 2017.</span></span>
 
-## <a name="to-deploy-your-web-project-using-visual-studio-2017"></a><span data-ttu-id="85df2-107">Visual Studio 2017 を使用して Web プロジェクトを展開するには</span><span class="sxs-lookup"><span data-stu-id="85df2-107">To deploy your web project using Visual Studio 2017</span></span>
+## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a><span data-ttu-id="ccdf5-107">Visual Studio 2019 を使用して Web プロジェクトを展開するには</span><span class="sxs-lookup"><span data-stu-id="ccdf5-107">To deploy your web project using Visual Studio 2017</span></span>
 
-<span data-ttu-id="85df2-108">次に示す、Visual Studio 2017 を使用して Web プロジェクトを展開する手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="85df2-108">Complete the following steps to deploy your web project using Visual Studio 2017.</span></span>
+<span data-ttu-id="ccdf5-108">Visual Studio 2019 を使用して Web プロジェクトを展開するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-108">Complete the following steps to deploy your web project using Visual Studio 2017.</span></span>
 
-1. <span data-ttu-id="85df2-109">**[ソリューション エクスプローラー]** で、アドイン プロジェクトのショートカット メニューを開き、**[発行]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="85df2-109">In  **Solution Explorer**, open the shortcut menu for the add-in project, and then choose  **Publish**.</span></span>
+1. <span data-ttu-id="ccdf5-109">[**ビルド**] タブから、[**公開 [アドインの名前]**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-109">From the **Build** tab, choose **Publish [Name of your add-in]**.</span></span>
 
-    <span data-ttu-id="85df2-110">[**アドインの発行**] ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="85df2-110">The  **Publish your add-in** page appears.</span></span>
-
-2. <span data-ttu-id="85df2-111">**[現在のプロファイル]** ドロップダウン リストで、プロファイルを選択するか、**[新規…]** を選択して新しいプロファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="85df2-111">In the  **Current profile** drop-down list, select a profile or choose **New ...** to create a new profile.</span></span>
+2. <span data-ttu-id="ccdf5-110">[**発行先の選択**] ウィンドウで、優先されるターゲットに公開するオプションのいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-110">In the **Pick a publish target** window, choose one of the options to publish to your preferred target.</span></span> <span data-ttu-id="ccdf5-111">各発行ターゲットでは、Azure Virtual Machine やフォルダーの場所など、開始するための詳細な情報を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-111">Each publish target requires you to include more information to get started, such as an Azure Virtual Machine or folder location.</span></span> <span data-ttu-id="ccdf5-112">公開場所を指定し、必要な情報をすべて入力したら、[**公開**] を選択します</span><span class="sxs-lookup"><span data-stu-id="ccdf5-112">Once you have specified a publish location and filled in all of the information required, select **Publish**</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="85df2-112">発行プロファイルでは、展開先のサーバー、サーバーへのログオンに必要な資格情報、展開するデータベース、およびその他の展開オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="85df2-112">A publish profile specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.</span></span>
+    > <span data-ttu-id="ccdf5-113">公開ターゲットを選択すると、展開先のサーバー、サーバーへのログオンに必要な資格情報、展開するデータベース、およびその他の展開オプションが指定されます。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-113">A publish profile specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.</span></span>
 
-    <span data-ttu-id="85df2-113">**[新規...]** を選択すると、ウィザードが表示され、その **[発行プロファイルの作成]** ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="85df2-113">If you choose  **New ...**, a wizard appears with the **Create publishing profile** page.</span></span> <span data-ttu-id="85df2-114">このウィザードを使用して、Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。</span><span class="sxs-lookup"><span data-stu-id="85df2-114">You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.</span></span>
+3. <span data-ttu-id="ccdf5-114">各発行ターゲット オプションの展開手順の詳細については、「[First look at deployment in Visual Studio (Visual Studioでの展開の最初の画面)](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-114">For more information about deployment steps for each publish target option, see [First look at deployment in Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019).</span></span>
 
-    <span data-ttu-id="85df2-115">発行プロファイルのインポートまたは新しい発行プロファイルの作成の詳細については、「[発行プロファイルの作成](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85df2-115">For more information about importing publishing profiles or creating new publishing profiles, see [Creating a Publish Profile](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).</span></span>
+## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a><span data-ttu-id="ccdf5-115">IIS、FTP、または Visual Studio 2019 を使用したWeb 配置を使用してアドインをパッケージ化して公開するには</span><span class="sxs-lookup"><span data-stu-id="ccdf5-115">To package and publish your add-in using IIS, FTP, or Web Deploy using Visual Studio 2019</span></span>
 
-3. <span data-ttu-id="85df2-116">**[アドインを発行する]** ページで、**[Web プロジェクトの配置]** リンクを選択します。</span><span class="sxs-lookup"><span data-stu-id="85df2-116">On the **Publish your add-in** page, choose the **Deploy your web project** link.</span></span>
+<span data-ttu-id="ccdf5-116">Visual Studio 2019 を使用してアドインをパッケージ化するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-116">Complete the following steps to package your add-in using Visual Studio 2017.</span></span>
 
-    <span data-ttu-id="85df2-117">**[発行]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="85df2-117">The  **Publish** dialog box appears.</span></span> <span data-ttu-id="85df2-118">このウィザードの使用法の詳細については、「[手順: Visual Studio でワンクリック発行を使用して Web プロジェクトを展開する](https://msdn.microsoft.com/library/dd465337.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85df2-118">For more information about using this wizard, see [How to: Deploy a Web Project using On-Click Publishing in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).</span></span>
-
-## <a name="to-package-your-add-in-using-visual-studio-2017"></a><span data-ttu-id="85df2-119">Visual Studio 2017 を使用してアドインをパッケージ化するには</span><span class="sxs-lookup"><span data-stu-id="85df2-119">To package your add-in using Visual Studio 2017</span></span>
-
-<span data-ttu-id="85df2-120">次に示す、Visual Studio 2017 を使用してアドインをパッケージ化する手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="85df2-120">Complete the following steps to package your add-in using Visual Studio 2017.</span></span>
-
-1. <span data-ttu-id="85df2-121">**[アドインの発行]** ページで、**[アドインのパッケージ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="85df2-121">In the **Publish your add-in** page, choose the **Package the add-in** button.</span></span>
-
-    <span data-ttu-id="85df2-122">ウィザードが表示され、その **[アドインのパッケージ]** ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="85df2-122">A wizard appears with the **Package the add-in** page.</span></span>
-
-2. <span data-ttu-id="85df2-123">**[Web サイトがホストされている場所]** ドロップダウン リストで、アドインのコンテンツ ファイルをホストする Web サイトの URL を選択するか入力して、**[完了]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="85df2-123">In the **Where is your website hosted?** box, enter the URL of the website that will host the content files of your add-in, and then choose **Finish**.</span></span>
+1. <span data-ttu-id="ccdf5-117">[**ビルド**] タブから、[**公開 [アドインの名前]**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-117">From the **Build** tab, choose **Publish [Name of your add-in]**.</span></span>
+2. <span data-ttu-id="ccdf5-118">[**発行先の選択**]ウィンドウで **IIS、FTPなど**を選択し、[**構成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-118">In the **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**.</span></span> <span data-ttu-id="ccdf5-119">次に、[**発行**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-119">Next, select **Publish**.</span></span>
+3. <span data-ttu-id="ccdf5-120">プロセスをガイドするウィザードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-120">A wizard appears that will help guide you through the process.</span></span> <span data-ttu-id="ccdf5-121">公開方法が Web 配置などの優先される方法であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-121">Ensure the publish method is your preferred method, such as Web Deploy.</span></span>
+4. <span data-ttu-id="ccdf5-122">[**接続先 URL**] ボックスに、アドインのコンテンツ ファイルをホストする Web サイトの URL を入力し、[**次へ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-122">In the **Where is your website hosted?** box, enter the URL of the website that will host the content files of your add-in, and then choose **Finish**.</span></span> <span data-ttu-id="ccdf5-123">アドインを AppSource に提出する場合には、[**接続の検証**] ボタンを選択し、アドインの受け入れを妨げている問題を特定できます。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-123">If you plan to submit your add-in to AppSource, you can choose the **Perform a validation check** button to identify any issues that will prevent your add-in from being accepted.</span></span> <span data-ttu-id="ccdf5-124">アドインをストアに提出する前に、すべての問題に対処する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-124">You should address all issues before you submit your add-in to the store.</span></span>
+5. <span data-ttu-id="ccdf5-125">**ファイル発行オプション**を含む必要な設定を確認し、[**保存**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-125">Confirm any settings desired including **File Publish Options** and select **Save**.</span></span>
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] <span data-ttu-id="85df2-124">Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。</span><span class="sxs-lookup"><span data-stu-id="85df2-124">Azure websites automatically provide an HTTPS endpoint.</span></span>
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] <span data-ttu-id="ccdf5-126">Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-126">Azure websites automatically provide an HTTPS endpoint.</span></span>
 
-    <span data-ttu-id="85df2-125">Visual Studio は、アドインの発行に必要なファイルを生成して、発行の出力フォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="85df2-125">Visual Studio generates the files that you need to publish your add-in and then opens the publish output folder.</span></span>
+<span data-ttu-id="ccdf5-p106">XML マニフェストを適切な場所にアップロードして[アドインを発行](../publish/publish.md)できるようになりました。XML マニフェストは、`app.publish` フォルダーの `OfficeAppManifests` にあります。たとえば、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="ccdf5-p106">You can now upload your XML manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the XML manifest in `OfficeAppManifests` in the `app.publish` folder. For example:</span></span>
 
-<span data-ttu-id="85df2-126">AppSource にアドインを提出する予定がある場合は、**[検証チェックを実行する]** をクリックして、アドインが受け入れられなくなる問題点を特定します。</span><span class="sxs-lookup"><span data-stu-id="85df2-126">If you plan to submit your add-in to AppSource, you can choose the **Perform a validation check** button to identify any issues that will prevent your add-in from being accepted.</span></span> <span data-ttu-id="85df2-127">アドインをストアに提出する前に、すべての問題を解決してください。</span><span class="sxs-lookup"><span data-stu-id="85df2-127">You should address all issues before you submit your add-in to the store.</span></span>
+ `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
-<span data-ttu-id="85df2-p105">XML マニフェストを適切な場所にアップロードして[アドインを発行](../publish/publish.md)できるようになりました。XML マニフェストは、`app.publish` フォルダーの `OfficeAppManifests` にあります。たとえば、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="85df2-p105">You can now upload your XML manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the XML manifest in `OfficeAppManifests` in the `app.publish` folder. For example:</span></span>
+## <a name="see-also"></a><span data-ttu-id="ccdf5-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="ccdf5-130">See also</span></span>
 
- `%UserProfile%\Documents\Visual Studio 2017\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
-
-## <a name="see-also"></a><span data-ttu-id="85df2-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="85df2-131">See also</span></span>
-
-- [<span data-ttu-id="85df2-132">Office アドインを発行する</span><span class="sxs-lookup"><span data-stu-id="85df2-132">Publish your Office Add-in</span></span>](../publish/publish.md)
-- [<span data-ttu-id="85df2-133">AppSource と Office 内でソリューションを使用できるようにする</span><span class="sxs-lookup"><span data-stu-id="85df2-133">Make your solutions available in AppSource and within Office</span></span>](/office/dev/store/submit-to-the-office-store)
+- [<span data-ttu-id="ccdf5-131">Office アドインを発行する</span><span class="sxs-lookup"><span data-stu-id="ccdf5-131">Publish your Office Add-in</span></span>](../publish/publish.md)
+- [<span data-ttu-id="ccdf5-132">AppSource と Office 内でソリューションを使用できるようにする</span><span class="sxs-lookup"><span data-stu-id="ccdf5-132">Make your solutions available in AppSource and within Office</span></span>](/office/dev/store/submit-to-the-office-store)
