@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 76f1a82b22fabaab63f5dc791656720ce82250c9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353875"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626825"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>既存のブックのコピーを現在のブックに挿入する (プレビュー)
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetCollection.addFromBase64` メソッドは現在、パブリック プレビューでのみ使用でき、Windows および Mac 上の Office でのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブックの [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) にある `addFromBase64` メソッドは、対象のブックのワークシートのコピーを現在のブックに挿入します。 他のブックのファイルは、`Excel.createWorkbook` 呼び出しの場合と同様に、base64 エンコード文字列として渡されます。
 
@@ -261,54 +261,6 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 ```js
 context.application.suspendApiCalculationUntilNextSync();
 ```
-
-## <a name="comments-preview"></a>コメント (プレビュー)
-
-> [!NOTE]
-> コメント API は現在、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-ブック内のすべての[コメント](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)は、`Workbook.comments` プロパティによって追跡されます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。
-
-コメントをブックに追加するには、`CommentCollection.add` メソッドを使用して、コメントを追加するセルを文字列または [Range](/javascript/api/excel/excel.range) オブジェクトとして渡し、コメントのテキストを文字列として渡します。 次のコード例は、コメントをセル **A2** に追加します。
-
-```js
-Excel.run(function (context) {
-    var comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("A2", "TODO: add data.");
-    return context.sync();
-});
-```
-
-各コメントには、作成者や作成日などの作成に関するメタデータが含まれています。 アドインによって作成されたコメントは、現在のユーザーによって作成されたものと見なされます。 次のサンプルは、**A2** に作成者のメール、作成者の名前、コメントの作成日を表示する方法を示しています。
-
-```js
-Excel.run(function (context) {
-    // Get the comment at cell A2.
-    var comment = context.workbook.comments.getItemByCell("Comments!A2");
-    comment.load(["authorEmail", "authorName", "creationDate"]);
-    return context.sync().then(function () {
-        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
-    });
-});
-```
-
-各コメントには、0 個以上の返信が含まれます。 `Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。 コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。 返信は、追加された順に表示されます。 次のコード サンプルは、ブックの最初のコメントに返信を追加します。
-
-```js
-Excel.run(function (context) {
-    // Get the first comment added to the workbook.
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.replies.add("Thanks for the reminder!");
-    return context.sync();
-});
-```
-
-コメントまたはコメントの返信を編集するには、その `Comment.content` プロパティまたは `CommentReply.content` プロパティを設定します。 コメントまたはコメントの返信を削除するには、`Comment.delete` メソッドまたは `CommentReply.delete` メソッドを使用します。 コメントを削除すると、そのコメントに関連付けられている返信もすべて削除されます。
-
-> [!TIP]
-> コメントは、同じ手法を使用して[ワークシート](/javascript/api/excel/excel.worksheet) レベルでも管理できます。
 
 ## <a name="save-the-workbook-preview"></a>ブックを保存する (プレビュー)
 

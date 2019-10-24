@@ -1,15 +1,15 @@
 ---
 title: 最初の PowerPoint 作業ウィンドウ アドインをビルドする
 description: Office JS API を使用して単純な PowerPoint 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 62e11129a35a802b8f4088a93687d631c0af2ff4
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: f5fed49632a5e71075cd71e53a74290fdca05614
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035317"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626902"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -94,11 +94,11 @@ ms.locfileid: "37035317"
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. [Visual Studio] メニュー バーで、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
-    
-2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[PowerPoint Web アドイン]** を選択します。 
+1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-3. プロジェクトに名前を付けて、**[OK]** を選択します。
+2. 検索ボックスを使用して、**アドイン**と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+
+3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 

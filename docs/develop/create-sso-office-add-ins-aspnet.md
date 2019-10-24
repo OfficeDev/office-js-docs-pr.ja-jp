@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: ''
-ms.date: 04/15/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9844b8f9b9b966c0a5348f02f5797e7a07eb67b6
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695806"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626797"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -21,7 +21,7 @@ ms.locfileid: "36695806"
 
 ## <a name="prerequisites"></a>前提条件
 
-* 入手可能な Visual Studio 2017 の最新バージョン。
+* 入手可能な Visual Studio 2019 の最新バージョン。
 
 * Office 365 (Office のサブスクリプション バージョン)。 Insider チャネルからの最新の月次バージョンとビルド。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
 
@@ -125,7 +125,7 @@ ms.locfileid: "36695806"
     > * **リソース**の値は、アドインの登録に Web API プラットフォームを追加したときに設定した**アプリケーション ID URI** です。
     > * **[範囲]** セクションは、アドインが AppSource から販売された場合に、同意ダイアログ ボックスを生成するためにのみ使用します。
 
-1. Visual Studio で、**[エラー一覧]** の **[警告]** タブを開きます。 `<WebApplicationInfo>` が `<VersionOverrides>` の有効な子ではないという警告が表示される場合は、Visual Studio 2017 プレビューのバージョンで SSO マークアップが認識されていません。 回避策として、Word、Excel、または PowerPoint のアドインに対して、次の操作を行います。 (Outlook アドインを使用している場合は、以下の回避策を参照してください。)
+1. Visual Studio で、**[エラー一覧]** の **[警告]** タブを開きます。 `<WebApplicationInfo>` が `<VersionOverrides>` の有効な子ではないという警告が表示される場合は、Visual Studio バージョンで SSO マークアップが認識されていません。 回避策として、Word、Excel、または PowerPoint のアドインに対して、次の操作を行います。 (Outlook アドインを使用している場合は、以下の回避策を参照してください。)
 
    - **Word、Excel、および PowerPoint の回避策**
 
@@ -373,7 +373,7 @@ ms.locfileid: "36695806"
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. `TODO12` を次のコードに置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO12` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * エラー 50076 は、Microsoft Graph が認証の追加フォームを必要とする場合に発生します。
     * Office ホストは、**** オプションとして `authChallenge` 値を使用して新しいトークンを取得します。 これにより、認証のすべての必要なフォームをユーザーに表示するように AAD に指示します。

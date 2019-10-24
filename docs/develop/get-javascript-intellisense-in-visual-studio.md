@@ -1,18 +1,18 @@
 ---
-title: Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする
+title: Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769548"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626783"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Visual Studio 2017 で JavaScript IntelliSense を利用できるようにする
+# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 
-Visual Studio 2017 を使用して Office アドインを開発する場合は、JSDoc を使用することで、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を有効にできます。この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。詳細については、「[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
+Visual Studio 2019 を使用して Office アドインを開発する場合は、JSDoc を使用することで、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を有効にできます。この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。詳細については、「[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
 
 ## <a name="officejs-type-definitions"></a>Office.js の型定義
 

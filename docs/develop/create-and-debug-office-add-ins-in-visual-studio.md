@@ -1,18 +1,18 @@
 ---
 title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128186"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626832"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
-この記事では、Visual Studio 2017 を使用して、Excel、Word、PowerPoint、または Outlook の Office アドインを作成し、Windows 上の Office デスクトップ クライアントでそのアドインをデバッグする方法について説明します。 別のバージョンの Visual Studio を使用している場合は、わずかに手順が異なることがあります。
+この記事では、Visual Studio 2019 を使用して、Excel、Word、PowerPoint、または Outlook の Office アドインを作成し、Windows 上の Office デスクトップ クライアントでそのアドインをデバッグする方法について説明します。 別のバージョンの Visual Studio を使用している場合は、わずかに手順が異なることがあります。
 
 > [!NOTE]
 > Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていませんが、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してこれらの種類のアドインを作成できます。
@@ -22,10 +22,10 @@ ms.locfileid: "35128186"
 
 ## <a name="prerequisites"></a>前提条件
 
-- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)してください。
+    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)してください。
 
 - Office 2013 以降
 
@@ -36,19 +36,19 @@ ms.locfileid: "35128186"
 
 最初に次の 3 つの手順を完了して、以下の作成しているアドインの種類に対応するセクションの手順を完了します。 
 
-1. Visual Studio を開いて、Visual Studio のメニュー バーから、[**ファイル**]、[**新規作成**]、[**プロジェクト**] の順に選択します。
+1. Visual Studio を開いて、Visual Studio のメニュー バーから、[**新しいプロジェクトの作成**] を選択します。
 
-2. [**Visual C#**] または [**Visual Basic**] の下にあるプロジェクトの種類のリストで、[**Office/SharePoint**] を展開し、[**アドイン**] を選択して、作成するアドイン プロジェクトの種類を選択します。 
+2. [検索] ボックスを使用して、「**アドイン**」と入力し、作成するアドイン プロジェクトの種類を選択します。
 
-3. プロジェクトに名前を付けて、[**OK**] を選択します。
+3. プロジェクトに名前を付けて、**[OK]** を選択します。
 
 ### <a name="word-web-add-in-or-outlook-web-add-in"></a>Word Web アドインまたは Outlook Web アドイン
 
-**Word Web アドイン**または **Outlook Web アドイン**を作成することを選択した場合、Visual Studio でソリューションが作成され、その 2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 次に、[Visual Studio ソリューションを調べる](#explore-the-visual-studio-solution)ことができます。 
+**Word Web アドイン**または **Outlook Web アドイン**を作成することを選択した場合、Visual Studio でソリューションが作成され、その 2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 次に、[Visual Studio ソリューションを調べる](#explore-the-visual-studio-solution)ことができます。
 
 ### <a name="powerpoint-web-add-in"></a>PowerPoint Web アドイン
 
-**PowerPoint Web アドイン**を作成することを選択した場合、[**Office アドインの作成**] ダイアログが表示されます。 
+**PowerPoint Web アドイン**を作成することを選択した場合、[**Office アドインの作成**] ダイアログが表示されます。
 
 - 作業ウィンドウ アドインを作成するには、[**新機能を PowerPoint に追加する**] を選択して [**完了**] ボタンを選び、Visual Studio ソリューションを作成します。
 
@@ -200,7 +200,7 @@ Visual Studio によってプロジェクトがビルドされると、次のタ
 
 3. ホスト アプリケーションを開きます。
 
-プロジェクトをビルドするときに、Visual Studio では**出力**ウィンドウに検証エラーは表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 詳細については、[コードとテキスト エディター](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)に関するページを参照してください。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)」を参照してください。
+プロジェクトをビルドするときに、Visual Studio では**出力**ウィンドウに検証エラーは表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)」を参照してください。
 
 プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 
