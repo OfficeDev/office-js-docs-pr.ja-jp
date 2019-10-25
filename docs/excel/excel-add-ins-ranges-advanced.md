@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: ''
-ms.date: 09/18/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
-ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
+ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37471361"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681936"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -270,9 +270,6 @@ Excel.run(function (context) {
 ![範囲の重複を削除するメソッドが実行された後の Excel のデータ](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>アウトラインのデータをグループ化する
-
-> [!NOTE]
-> 行と列をグループ化するためのアウトライン Api は、現在、パブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 行またはセル範囲の列は、[アウトライン](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)を作成するためにまとめてグループ化することができます。 これらのグループを折りたたんで展開し、対応するセルを非表示にして表示することができます。 これにより、トップ行のデータの簡単な分析が容易になります。 これらのアウトライングループを作成するには、[範囲グループ](/javascript/api/excel/excel.range#group-groupoption-)を使用します。
 

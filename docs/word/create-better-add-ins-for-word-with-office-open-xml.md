@@ -1,14 +1,14 @@
 ---
 title: Office Open XML を使用してより良い Word 用アドインを作成する
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/10/2019
 localization_priority: Priority
-ms.openlocfilehash: e13911da0dbdb9fdb0215d433a9559bf1b747eb9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1eb143e60da88ac8786b9b56f5db93a20aac4e20
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450050"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627098"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
@@ -833,13 +833,10 @@ Word でネイティブで作成し、編集できるグラフは Excel グラ�
 
 ここで終了するか、削除できる最後の行まで見つけるためにコンテンツをさらに深く調査するかにかかわらず、前に参照したコード サンプル [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) をスクラッチ パッドとして使用し、編集したマークアップをすばやくかつ簡単にテストできることを覚えておいてください。
 
-
 > [!TIP]
-> 開発中に既存のソリューションの Office Open XML スニペットを更新する場合、コードで使用されている Office Open XML を更新するためにソリューションを再実行する前に、インターネット一時ファイルをクリアします。XML ファイルでソリューションに含まれるマークアップは、お使いのコンピューターにキャッシュされます。もちろん、インターネット一時ファイルは既定の Web ブラウザーからクリアすることができます。インターネット オプションにアクセスし、Visual Studio 2017 内からこれらの設定を削除するには、**[デバッグ]** メニューの **[オプション]** を選択します。**[環境]** で、**[Web ブラウザー]** を選択してから、**[Internet Explorer オプション]** を選択します。
-
+> 開発中に既存のソリューションの Office Open XML スニペットを更新する場合、コードで使用されている Office Open XML を更新するためにソリューションを再実行する前に、インターネット一時ファイルをクリアします。XML ファイルでソリューションに含まれるマークアップは、お使いのコンピューターにキャッシュされます。もちろん、インターネット一時ファイルは既定の Web ブラウザーからクリアすることができます。インターネット オプションにアクセスし、Visual Studio 2019 内からこれらの設定を削除するには、**[デバッグ]** メニューの **[オプション]** を選択します。**[環境]** で、**[Web ブラウザー]** を選択してから、**[Internet Explorer オプション]** を選択します。
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>テンプレートとスタンドアロン使用の両方のためにアドインを作成する
-
 
 このトピックでは、アドインの Office Open XML でできることの例をいくつか説明しました。Office Open XML 強制型変換タイプを使用し、ドキュメントに挿入できるリッチ コンテンツ タイプと、選択範囲または指定の (バインドされた) 位置にコンテンツを挿入するための JavaScript メソッドについて、幅広い例を取り上げて考察しました。
 

@@ -1,25 +1,25 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838573"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626846"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
-この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 **Worksheet** オブジェクトおよび **WorksheetCollection** オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、ワークシートでタスクを実行する方法のコード サンプルを示しています。 `Worksheet` オブジェクトおよび `WorksheetCollection` オブジェクトがサポートするプロパティとメソッドの完全なリストについては、「[Worksheet オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet)」および「[WorksheetCollection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection)」を参照してください。
 
 > [!NOTE]
 > この記事の情報は標準のワークシートにのみ適用されます。"グラフ" シートや "マクロ" シートには適用されません。
 
 ## <a name="get-worksheets"></a>ワークシートを取得する
 
-次のコード サンプルでは、ワークシートのコレクションを取得し、各ワークシートの **name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、ワークシートのコレクションを取得し、各ワークシートの `name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -41,11 +41,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> ワークシートの **id** プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。Mac 版の Excel のブックからワークシートを削除すると、削除されたワークシートの **id** はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
+> ワークシートの `id` プロパティは、指定されたブックのワークシートを一意に識別します。その値は、ワークシートの名前変更や移動をしても同じままです。Mac 版の Excel のブックからワークシートを削除すると、削除されたワークシートの `id` はそれ以降に作成される新規ワークシートに再割り当てされる可能性があります。
 
 ## <a name="get-the-active-worksheet"></a>作業中のワークシートを取得する
 
-次のコード サンプルでは、作業中のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、作業中のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-active-worksheet"></a>作業中のワークシートを設定する
 
-次のコード サンプルでは、作業中のワークシートを **Sample** という名前のワークシートに設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。 その名前を持つワークシートが存在しない場合、**activate()** メソッドにより **ItemNotFound** エラーがスローされます。
+次のコード サンプルでは、作業中のワークシートを **Sample** という名前のワークシートに設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 その名前を持つワークシートが存在しない場合、`activate()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
 Excel.run(function (context) {
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-first-worksheet"></a>最初のワークシートを取得する
 
-次のコード サンプルでは、ブックの最初のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、ブックの最初のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-last-worksheet"></a>最後のワークシートを取得する
 
-次のコード サンプルでは、ブックの最後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、ブックの最後のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-next-worksheet"></a>次のワークシートを取得する
 
-次のコード サンプルでは、ブックで作業中のワークシートの後のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの後にワークシートがない場合、**getNext()** メソッドにより **ItemNotFound** エラーがスローされます。
+次のコード サンプルでは、ブックで作業中のワークシートの後のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの後にワークシートがない場合、`getNext()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
  Excel.run(function (context) {
@@ -131,7 +131,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-previous-worksheet"></a>前のワークシートを取得する
 
-次のコード サンプルでは、ブックで作業中のワークシートの前のワークシートを取得し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの前にワークシートが存在しない場合、**getPrevious()** メソッドにより **ItemNotFound** エラーがスローされます。
+次のコード サンプルでは、ブックで作業中のワークシートの前のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの前にワークシートが存在しない場合、`getPrevious()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
 Excel.run(function (context) {
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>ワークシートを追加する
 
-次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、**name** プロパティと **position** プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。
+次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、`name` プロパティと `position` プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。
 
 ```js
 Excel.run(function (context) {
@@ -162,6 +162,24 @@ Excel.run(function (context) {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
         });
 }).catch(errorHandlerFunction);
+```
+
+### <a name="copy-an-existing-worksheet"></a>既存のワークシートをコピーする
+
+`Worksheet.copy` は、既存のワークシートのコピーである新しいワークシートを追加します。 新しいワークシートの名前には、Excel UI を介してワークシートをコピーするのと一貫した方法で、末尾に番号が追加されます (たとえば、**MySheet (2)**)。 `Worksheet.copy` は 2 つのパラメーターを取ることができますが、どちらもオプションです。
+
+- `positionType` - ブック内の新しいワークシートを追加する場所を指定する [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) 列挙。
+- `relativeTo` - `positionType` が `Before` または `After` である場合、新しいシートを追加するワークシートを指定する必要があります (このパラメーターは、「何の前か後に?」という質問に答えます)。
+
+次のコード サンプルは、現在のワークシートをコピーし、現在のワークシートの直後に新しいシートを挿入します。
+
+```js
+Excel.run(function (context) {
+    var myWorkbook = context.workbook;
+    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    return context.sync();
+});
 ```
 
 ## <a name="delete-a-worksheet"></a>ワークシートの削除
@@ -230,7 +248,7 @@ Excel.run(function (context) {
 
 ### <a name="hide-a-worksheet"></a>ワークシートを非表示にする
 
-次のコード サンプルでは、**Sample** という名前のワークシートの可視性を非表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートの可視性を非表示に設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -247,7 +265,7 @@ Excel.run(function (context) {
 
 ### <a name="unhide-a-worksheet"></a>ワークシートを再表示する
 
-次のコード サンプルでは、**Sample** という名前のワークシートの可視性を表示に設定し、**name** プロパティを読み込み、コンソールにメッセージを書き込みます。
+次のコード サンプルでは、**Sample** という名前のワークシートの可視性を表示に設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -264,7 +282,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-single-cell-within-a-worksheet"></a>ワークシート内で単一のセルを取得する
 
-次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、**address** プロパティと **values** プロパティを読み込み、コンソールにメッセージを書き込みます。 `getCell(row: number, column:number)` メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。
+次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、`address` プロパティと `values` プロパティを読み込み、コンソールにメッセージを書き込みます。 `getCell(row: number, column:number)` メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。
 
 ```js
 Excel.run(function (context) {

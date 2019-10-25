@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要件セット 1.5
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 62834db09742f2f11eb73d571f22c7a249f36763
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696100"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627014"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -479,7 +479,11 @@ REST API または Exchange Web サービスを呼び出すために使用する
 `getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。コールバック トークンの有効期間は 5 分です。
 
 > [!NOTE]
-> 可能であれば、アドインでは Exchange Web サービスの代わりに REST API を使用することをお勧めします。 
+> 可能であれば、アドインでは Exchange Web サービスの代わりに REST API を使用することをお勧めします。
+
+閲覧モードで `getCallbackTokenAsync` メソッドを呼び出すには、**ReadItem** の最小限のアクセス許可レベルが必要です。
+
+作成モードで `getCallbackTokenAsync` を呼び出すには、アイテムを保存しておく必要があります。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドは、**ReadWriteItem** の最小限のアクセス許可レベルが必要です。
 
 **REST トークン**
 
@@ -492,6 +496,8 @@ REST トークンが要求された場合 (`options.isRest = true`)、結果ト�
 EWS トークンが要求された場合 (`options.isRest = false`)、結果トークンは REST API 呼び出しを認証するためには機能しません。トークンの範囲は、現在のアイテムへのアクセスに制限されます。
 
 アドインでは、`ewsUrl` プロパティを使用して、EWS 呼び出しを行うときに使用する正しい URL を決定する必要があります。
+
+トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティ システムに渡すことができます。 サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。 たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -546,11 +552,11 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 `getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。コールバック トークンの有効期間は 5 分です。
 
-トークンと予定の識別子またはアイテムの識別子をサードパーティ システムに渡すことができます。サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
+トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティ システムに渡すことができます。 サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。 たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
 
-アプリが閲覧モードで `getCallbackTokenAsync` メソッドを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
+閲覧モードで `getCallbackTokenAsync` メソッドを呼び出すには、**ReadItem** の最小限のアクセス許可レベルが必要です。
 
-新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してアイテムの識別子を `getCallbackTokenAsync` メソッドに渡す必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
+作成モードで `getCallbackTokenAsync` を呼び出すには、アイテムを保存しておく必要があります。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドは、**ReadWriteItem** の最小限のアクセス許可レベルが必要です。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -569,11 +575,11 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
-|---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成と閲覧|
+|要件|||
+|---|---|---|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| Read | Compose |
 
 ##### <a name="example"></a>例
 

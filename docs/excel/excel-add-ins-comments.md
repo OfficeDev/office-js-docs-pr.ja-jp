@@ -1,19 +1,16 @@
 ---
-title: Excel JavaScript API を使用してコメントを操作する (プレビュー)
+title: Excel JavaScript API を使用してコメントを操作する
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: f289808245b64de34f03f4d105dd363c2aa84bc7
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627036"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681915"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api-preview"></a>Excel JavaScript API を使用してコメントを操作する (プレビュー)
-
-> [!NOTE]
-> コメント API は現在、パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
 この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。 コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)を参照してください。
 
@@ -28,8 +25,8 @@ Excel JavaScript API では、コメントは最初のメモと接続された�
 メソッドを`CommentCollection.add`使用して、ブックにコメントを追加します。 このメソッドは、次の3つのパラメーターを取ります。
 
 - `cellAddress`: コメントが追加されるセルを指定します。 文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
-- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
-- `contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。 既定値は `ContentType.plain` です。 
+- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions-preview)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
+- `contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。 既定値は `ContentType.plain` です。
 
 次のコード例は、コメントをセル **A2** に追加します。
 
@@ -172,7 +169,10 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions"></a>メンション
+## <a name="mentions-preview"></a>メンション (プレビュー)
+
+> [!NOTE]
+> コメントコメント Api は、現在、パブリックプレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 > [!IMPORTANT]
 > コメントメンションは、現在 web 上の Excel でのみサポートされています。

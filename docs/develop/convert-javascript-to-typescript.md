@@ -1,43 +1,43 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
-ms.date: 08/14/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477769"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626804"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 この記事では、Excel アドイン用のこの変換プロセスについて説明します。 同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。
 
 > [!NOTE]
-> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.md)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.md)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/officedev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 既に Visual Studio 2017 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)してください。
+    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)してください。
 
-- TypeScript SDK バージョン 2.3 以降 (Visual Studio 2017 用)
+- TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)
 
     > [!TIP]
-    > [Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 **TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)します。 
+    > [Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 **TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)します。 
 
 - Excel 2016 以降
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-1. Visual Studio を開いて、Visual Studio のメニュー バーから、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
+1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-2. **[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開して、**[アドイン]** を選択し、プロジェクトの種類として **[Excel Web アドイン]** を選択します。 
+2. 検索ボックスを使用して、**アドイン**と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに名前を付けて、**[OK]** を選択します。
+3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
@@ -45,69 +45,54 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>アドイン プロジェクトを TypeScript に変換する
 
-1. **ソリューション エクスプローラー**で、**Home.js** ファイルの名前を **Home.ts** に変更します。
+1. **Home.js** ファイルを見つけて、名前を **Home.ts** に変更します。
+
+2. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
+
+3. [**参照**] タブを選択した状態で、検索ボックスに **office-js.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、Office.js ライブラリの TypeScript タイプの定義がプロジェクトに追加されます。
+
+4. 同じ検索ボックスに **jquery.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、jQuery TypeScript 定義がプロジェクトに追加されます。 jQuery と Office.js の両方のパッケージは、**packages.config** と呼ばれる Visual Studio によって生成された新しいファイルに表示されます。
 
     > [!NOTE]
-    > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。 
+    > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。
 
-2. ファイル名拡張子の変更を確認するダイアログが表示されたら、**[はい]** を選択します。
+5. **Home.ts** ファイルを開いて、次の宣言をファイルの先頭に追加します。
 
-3. Web アプリケーション プロジェクトのルートに **Office.d.ts** という名前の新しいファイルを作成します。
-
-4. Web ブラウザーで、[Office.js の型定義ファイル](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts)を開きます。 このファイルの内容をクリップボードにコピーします。
-
-5. Visual Studio で、**Office.d.ts** ファイルを開きます。このファイルにクリップボードの内容を貼り付けてから、ファイルを保存します。
-
-6. Web アプリケーション プロジェクトのルートに、**jQuery.d.ts** という名前の新しいファイルを作成します。
-
-7. Web ブラウザーで、[jQuery の型定義ファイル](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts)を開きます。 このファイルの内容をクリップボードにコピーします。
-
-8. Visual Studio で、**jQuery.d.ts** ファイルを開きます。このファイルにクリップボードの内容を貼り付けてから、ファイルを保存します。
-
-9. Visual Studio で、Web アプリケーション プロジェクトのルートに **tsconfig.json** という名前の新しいファイルを作成します。
-
-10. **tsconfig.json** ファイルを開いて、次の内容をファイルに追加してから、ファイルを保存します。
-
-    ```json
-    {
-        "compilerOptions": {
-            "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ],
-            "sourceMap": true
-        }
-    }
-    ```
-
-11. **Home.ts** ファイルを開いて、次の宣言をファイルの先頭に追加します。
-
-    ```typescript
+    ```TypeScript
     declare var fabric: any;
     ```
 
-12. **Home.ts** ファイルで、行 `Office.initialize = function (reason) {` を見つけます。その直後に一行追加して、ここに示されているようにグローバル `window.Promise` をポリフィルします。
+6. **Home.ts** で、行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` を削除し、次のものに置き換えます。
 
-    ```typescript
+    ```TypeScript
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    ```
+
+7. **Home.ts** ファイルで、行 `Office.initialize = function (reason) {` を見つけます。その直後に一行追加して、ここに示されているようにグローバル `window.Promise` をポリフィルします。
+
+    ```TypeScript
     Office.initialize = function (reason) {
         // add the following line
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-13. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
+8. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
 
-    ```typescript
-    function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-            null,
-            function (result) {
-                if (result.status === Office.AsyncResultStatus.Succeeded) {
-                    showNotification('The selected text is:', '"' + result.value + '"');
-                } else {
-                    showNotification('Error', result.error.message);
-                }
-            });
-    }
-    ```
+```TypeScript
+function displaySelectedCells() {
+    Office.context.document.getSelectedDataAsync(
+        Office.CoercionType.Text,
+        null,
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                showNotification('The selected text is:', '"' + result.value + '"');
+            } else {
+                showNotification('Error', result.error.message);
+            }
+        });
+}
+```
 
 ## <a name="run-the-converted-add-in-project"></a>変換後のアドイン プロジェクトを実行する
 

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してピボットテーブルを操作する
 description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 05/01/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 4a60b820d6e50dd44a193dd08df69817330c636d
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33620200"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681957"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
 
@@ -158,10 +158,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="slicers-preview"></a>スライサー (プレビュー)
-
-> [!NOTE]
-> スライサー Api は、現在、パブリックプレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="slicers"></a>スライサー
 
 [スライサー](/javascript/api/excel/excel.slicer)を使用すると、Excel のピボットテーブルまたはテーブルからデータをフィルターできます。 スライサーは、指定された列またはピボットテーブルの値を使用して、対応する行にフィルターを適用します。 これらの値は`Slicer`、 [SlicerItem](/javascript/api/excel/excel.sliceritem)オブジェクトとしてに格納されます。 アドインでは、ユーザーと同様に ([EXCEL UI を介し](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)て) これらのフィルターを調整できます。 スライサーは、次のスクリーンショットに示されているように、描画層のワークシートの一番上にあります。
 
