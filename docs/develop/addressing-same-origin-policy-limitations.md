@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける同一生成元ポリシーの制限への対処
 description: ''
-ms.date: 02/08/2019
+ms.date: 10/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 353dfc40df79f74614bb2eab026a65c54c3f16b9
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681838"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
@@ -18,11 +18,11 @@ Office アドインはブラウザー コントロールでホストされるの
 
 同一生成元ポリシーは、Web アプリケーションが複数のサブドメインに渡るコンテンツと API をホストしているときなど、多くの場合に不要な制約になることがあります。 同一生成元ポリシーの適用に関する制約を安全に解消するための一般的な手法がいくつかあります。 この記事では、その一部について簡単な紹介のみを示します。 ここに示したリンクを使用して、こうした手法の調査を開始してください。
 
-## <a name="use-jsonp-for-anonymous-access"></a>匿名アクセスに JSON/P を使用する
+## <a name="use-jsonp-for-anonymous-access"></a>匿名アクセスに JSONP を使用する
 
-同一生成元ポリシーの制限を解消する 1 つの方法として、[JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) を使用して Web サービスのプロキシを提供します。 これを行うためには、任意のドメインでホストされているスクリプトを参照する `src` 属性を持つ `script` タグを使用します。 `script` タグをプログラムで作成し、`src` 属性で参照する URL を動的に作成すると、URI クエリ パラメーターを介してパラメーターを URL に渡すことができます。 Web サービス プロバイダーは、固有の URL で JavaScript コードを作成およびホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。 それらのスクリプトは挿入された場所で実行され、想定どおりに動作します。
+同一生成元ポリシーの制限を解消する 1 つの方法として、[JSONP](https://www.w3schools.com/js/js_json_jsonp.asp) を使用して Web サービスのプロキシを提供します。 これを行うためには、任意のドメインでホストされているスクリプトを参照する `src` 属性を持つ `script` タグを使用します。 `script` タグをプログラムで作成し、`src` 属性で参照する URL を動的に作成すると、URI クエリ パラメーターを介してパラメーターを URL に渡すことができます。 Web サービス プロバイダーは、固有の URL で JavaScript コードを作成およびホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。 それらのスクリプトは挿入された場所で実行され、想定どおりに動作します。
 
-次に、あらゆる Office アドインで機能する手法を使用する JSON/P の例を示します。
+次に、あらゆる Office アドインで機能する手法を使用する JSONP の例を示します。
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
