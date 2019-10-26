@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した高度なプログラミングの概�
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: a4639070ed74f9beb757de7c30d1d7e32a3e63fa
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477755"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681929"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>スカラー プロパティとナビゲーション プロパティ
 
-プロパティには、**スカラー**と**ナビゲーション**という 2 つのカテゴリがあります。 スカラー プロパティは、文字列、整数、JSON 構造体などの割り当て可能な型です。 ナビゲーション プロパティは、プロパティを直接割り当てるのではなく、読み取り専用のオブジェクトと、そのフィールドが割り当てられているオブジェクトのコレクションです。 たとえば、[ワークシート](/javascript/api/excel/excel.worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はナビゲーション プロパティです。 [DataValidation] オブジェクトの `prompt` は、サブプロパティ (`dv.prompt.title = "MyPrompt" // will not set the title`) を設定するのではなく、JSON オブジェクト (`dv.prompt = { title: "MyPrompt"}`) を使用して設定する必要があるスカラー プロパティの例です。
+プロパティには、**スカラー**と**ナビゲーション**という 2 つのカテゴリがあります。 スカラー プロパティは、文字列、整数、JSON 構造体などの割り当て可能な型です。 ナビゲーション プロパティは、プロパティを直接割り当てるのではなく、読み取り専用のオブジェクトと、そのフィールドが割り当てられているオブジェクトのコレクションです。 たとえば、[ワークシート](/javascript/api/excel/excel.worksheet) オブジェクトの `name` メンバーと `position` メンバーはスカラー プロパティですが、`protection` と `tables` はナビゲーション プロパティです。 [DataValidation](/javascript/api/excel/excel.datavalidation) オブジェクトの `prompt` は、サブプロパティ (`dv.prompt.title = "MyPrompt" // will not set the title`) を設定するのではなく、JSON オブジェクト (`dv.prompt = { title: "MyPrompt"}`) を使用して設定する必要があるスカラー プロパティの例です。
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>`object.load()` を使用したスカラー プロパティとナビゲーション プロパティ
 

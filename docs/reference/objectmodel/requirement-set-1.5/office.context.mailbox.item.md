@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/23/2019
 localization_priority: Priority
-ms.openlocfilehash: a76440c2353483d0754aa0ba2fed98f051bc1c6f
-ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
+ms.openlocfilehash: 7d585d3fd60d51b68d86b632701e8ac512fe708c
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37167369"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682523"
 ---
 # <a name="item"></a>item
 
@@ -139,6 +139,11 @@ console.log(outputString);
 
 メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または更新するメソッドを提供するオブジェクトを取得します。 新規作成モードのみ。
 
+既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、次の制限が適用されます。
+
+- 最大 500 人のメンバーを取得します。
+- 呼び出しごとに最大 100 人のメンバーを設定し、合計で最大 500 人のメンバーを設定します。
+
 ##### <a name="type"></a>型
 
 *   [受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.5)
@@ -219,7 +224,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ##### <a name="read-mode"></a>閲覧モード
 
-`cc` プロパティは、メッセージの **CC** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。
+`cc` プロパティは、メッセージの **CC** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、最大 500 人のメンバーを取得できます。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,7 +232,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>新規作成モード
 
-`cc` プロパティは、メッセージの **Cc** 行にある受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。
+`cc` プロパティは、メッセージの **Cc** 行にある受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、次の制限が適用されます。
+
+- 最大 500 人のメンバーを取得します。
+- 呼び出しごとに最大 100 人のメンバーを設定し、合計で最大 500 人のメンバーを設定します。
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -684,7 +692,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 
 ##### <a name="read-mode"></a>閲覧モード
 
-`optionalAttendees` プロパティは、会議への各任意出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。
+`optionalAttendees` プロパティは、会議への各任意出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、最大 500 人のメンバーを取得できます。
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -693,7 +701,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>新規作成モード
 
-`optionalAttendees` プロパティは会議への任意出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。
+`optionalAttendees` プロパティは会議への任意出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、次の制限が適用されます。
+
+- 最大 500 人のメンバーを取得します。
+- 呼び出しごとに最大 100 人のメンバーを設定し、合計で最大 500 人のメンバーを設定します。
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -757,7 +768,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="read-mode"></a>閲覧モード
 
-`requiredAttendees` プロパティは、会議への各必須出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。
+`requiredAttendees` プロパティは、会議への各必須出席者の `EmailAddressDetails` オブジェクトを格納した配列を返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、最大 500 人のメンバーを取得できます。
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -766,7 +777,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>新規作成モード
 
-`requiredAttendees` プロパティは会議への必須出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。
+`requiredAttendees` プロパティは会議への必須出席者を取得または更新するためのメソッドを提供する `Recipients` オブジェクトを返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、次の制限が適用されます。
+
+- 最大 500 人のメンバーを取得します。
+- 呼び出しごとに最大 100 人のメンバーを設定し、合計で最大 500 人のメンバーを設定します。
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -937,7 +951,7 @@ function callback(asyncResult) {
 
 ##### <a name="read-mode"></a>閲覧モード
 
-`to` プロパティは、メッセージの **To** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。コレクションは最大 100 メンバーに制限されています。
+`to` プロパティは、メッセージの **To** 行にある各受信者について、`EmailAddressDetails` オブジェクトを含む配列を返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、最大 500 人のメンバーを取得できます。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -945,7 +959,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>新規作成モード
 
-`to` プロパティは、メッセージの **To** 行の受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。
+`to` プロパティは、メッセージの **To** 行の受信者を取得または更新するメソッドを提供する `Recipients` オブジェクトを返します。 既定では、コレクションは最大 100 人のメンバーに制限されています。 ただし、Windows および Mac では、次の制限が適用されます。
+
+- 最大 500 人のメンバーを取得します。
+- 呼び出しごとに最大 100 人のメンバーを設定し、合計で最大 500 人のメンバーを設定します。
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );

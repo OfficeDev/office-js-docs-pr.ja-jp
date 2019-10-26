@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報
-ms.date: 07/11/2019
+ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec49cbdadf65b653170f9b5cbcafa6aaf0fa5177
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 11fcf917b5dddb4a366465f11362c93660881597
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804977"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681943"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -27,6 +27,7 @@ Excel アドインは、Windows での Office 2016 以降、Office on the web、
 |  要件セット  |  Windows での Office<br>(Office 365 サブスクリプションに接続)  |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](excel-preview-apis.md)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要があります) |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | バージョン 1907 (ビルド 11929.20306) 以降 | 2.30 以降 | 16.30 以降 | 2019 年 10 月 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | バージョン 1903 (ビルド 11425.20204) 以降 | 2.24 以降 | 16.24 以降 | 2019 年 5 月 |
 | [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | バージョン 1808 (ビルド 10730.20102) 以降 | 2.17 以降 | 16.17 以降 | 2018 年 9 月 |
 | [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | バージョン 1801 (ビルド 9001.2171) 以降   | 2.9 以降  | 16.9 以降  | 2018 年 4 月 |

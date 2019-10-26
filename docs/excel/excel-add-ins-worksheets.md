@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Priority
-ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 0f5e91d32e0fdd3111364dda2b00a9a62dba3d63
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626846"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681950"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -318,10 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="handle-sorting-events-preview"></a>並べ替えイベントを処理する (プレビュー)
-
-> [!NOTE]
-> これらの並べ替え関連イベントの API は現在、パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-sorting-events"></a>並べ替えイベントを処理する
 
 `onColumnSorted` および `onRowSorted` イベントは、ワークシート データがいつ並べ替えられるかを示します。 これらのイベントは、個々の `Worksheet` オブジェクトおよびブックの `WorkbookCollection` に接続されています。 これらは、並べ替えがプログラムで実行されるか、Excel ユーザー インターフェイスを介して手動で実行されるかに関係なく起動します。
 

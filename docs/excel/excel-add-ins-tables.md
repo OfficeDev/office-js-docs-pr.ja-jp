@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して表を操作する
 description: ''
 ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: d3109d28a4eb8a1a16ff1919a201284024f10c38
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838551"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681978"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -285,7 +285,7 @@ Excel.run(function (context) {
 
 ![Excel の表データ](../images/excel-tables-sort.png)
 
-ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する (プレビュー)](excel-add-ins-worksheets.md#handle-sorting-events-preview)」を参照してください。
+ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する](excel-add-ins-worksheets.md#handle-sorting-events)」を参照してください。
 
 ## <a name="apply-filters-to-a-table"></a>表にフィルターを適用する
 
