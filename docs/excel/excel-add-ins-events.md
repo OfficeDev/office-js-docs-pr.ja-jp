@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/22/2019
 localization_priority: Priority
-ms.openlocfilehash: 1838ddf2016d5c0d4651991ce569fd98d6ac960e
-ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
+ms.openlocfilehash: 09de9bcb280630f883b7894221a17c37b0f73fb1
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37471354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681964"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -25,12 +25,15 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | `onAutoSaveSettingChanged` | ブックで `autoSave` の設定が変更されると発生します。 | [**Workbook**](/javascript/api/excel/excel.workbook) |
 | `onCalculated` | ワークシートの計算が完了したとき (あるいはコレクションのすべてのワークシートが完了したとき) に発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onChanged` | セル内のデータが変更されたときに発生します。 | [**Table**](/javascript/api/excel/excel.table)、[**TableCollection**](/javascript/api/excel/excel.tablecollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onColumnSorted` | 1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onDataChanged` | バインド内でデータまたは書式設定が変更されるときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding) |
 | `onDeactivated` | オブジェクトが非アクティブ化されたときに発生します。 | [**Chart**](/javascript/api/excel/excel.chart)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**Shape**](/javascript/api/excel/excel.shape)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onDeleted` | オブジェクトがコレクションから削除されたときに発生します。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection)、[**TableCollection**](/javascript/api/excel/excel.tablecollection)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onFormatChanged` | ワークシートで書式設定が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onRowSorted` | 1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding)、[**Table**](/javascript/api/excel/excel.table)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生します。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
+| `onSingleClicked` | ワークシートで左クリック / タップされたアクションが発生したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 
 > [!WARNING]
 > `onSelectionChanged` は現在不安定です。 `onSelectionChanged` を確実に使用するための回避策があります。 HTML ホーム ページの `<head>` セクションに次のコードを追加します。
@@ -48,11 +51,8 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
-| `onColumnSorted` | 1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onFiltered` | フィルターがオブジェクトに適用されたときに発生します。 | [**Table**](/javascript/api/excel/excel.table)、[**TableCollection**](/javascript/api/excel/excel.tablecollection)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onRowHiddenChanged` | 特定のワークシート上の行非表示状態が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onRowSorted` | 1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onSingleClicked` | ワークシートで左クリック / タップされたアクションが発生したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
