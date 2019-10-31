@@ -1,14 +1,14 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: dc9384aff605db31ded4197ad00d1a7823f2de6f
+ms.sourcegitcommit: 818036a7163b1513d047e66a20434060415df241
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626804"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "37775292"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
@@ -47,28 +47,31 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 1. **Home.js** ファイルを見つけて、名前を **Home.ts** に変更します。
 
-2. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
+2. **./Functions/FunctionFile.js** ファイルを見つけて、名前を**FunctionFile.ts** に変更します。
 
-3. [**参照**] タブを選択した状態で、検索ボックスに **office-js.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、Office.js ライブラリの TypeScript タイプの定義がプロジェクトに追加されます。
+3. **./Scripts/MessageBanner.js** ファイルを見つけて、名前を **MessageBanner.ts** に変更します。
 
-4. 同じ検索ボックスに **jquery.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、jQuery TypeScript 定義がプロジェクトに追加されます。 jQuery と Office.js の両方のパッケージは、**packages.config** と呼ばれる Visual Studio によって生成された新しいファイルに表示されます。
+4. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
+
+5. [**参照**] タブを選択した状態で、検索ボックスに **office-js.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、Office.js ライブラリの TypeScript タイプの定義がプロジェクトに追加されます。
+
+6. 同じ検索ボックスに **jquery.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、jQuery TypeScript 定義がプロジェクトに追加されます。 jQuery と Office.js の両方のパッケージは、**packages.config** と呼ばれる Visual Studio によって生成された新しいファイルに表示されます。
 
     > [!NOTE]
     > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。
 
-5. **Home.ts** ファイルを開いて、次の宣言をファイルの先頭に追加します。
+7. **Home.ts** で、行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` を見つけて、次のものに置き換えます。
 
     ```TypeScript
-    declare var fabric: any;
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
     ```
 
-6. **Home.ts** で、行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` を削除し、次のものに置き換えます。
+    > [!NOTE]
+    > 現在、TypeScript に変換されたあとのプロジェクトの正常なコンパイルには、以前のコード スニペットに表示されているように数値として要件セット数を指定する必要があります。 これは、実行時に数値`1.10` が `1.1` と評価されるので、残念ながら、要件セット `1.10` サポートに対して `isSetSupported` を使用してテストすることができないためです。 
+    > 
+    > この問題は、**office-js.TypeScript.DefinitelyTyped** NuGet パッケージが現在は旧式であるためです。そしてそれは、プロジェクトでは Office.js に適した最新の TypeScript 定義にアクセスできないことを意味します。 この問題は現在対処中です。問題が解決された場合、この記事は更新されます。
 
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
-    ```
-
-7. **Home.ts** ファイルで、行 `Office.initialize = function (reason) {` を見つけます。その直後に一行追加して、ここに示されているようにグローバル `window.Promise` をポリフィルします。
+8. **Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -77,22 +80,28 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
         ...
     ```
 
-8. **Home.ts** ファイルで、`displaySelectedCells` 関数を検索し、関数全体を次のコードで置換し、ファイルを保存します。
+9. **Home.ts** で、`displaySelectedCells` 関数を見つけて、関数全体を次のコードに置換し、ファイルを保存します。
 
-```TypeScript
-function displaySelectedCells() {
-    Office.context.document.getSelectedDataAsync(
-        Office.CoercionType.Text,
-        null,
-        function (result) {
-            if (result.status === Office.AsyncResultStatus.Succeeded) {
-                showNotification('The selected text is:', '"' + result.value + '"');
-            } else {
-                showNotification('Error', result.error.message);
-            }
-        });
-}
-```
+    ```TypeScript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
+    ```
+
+10. **./Scripts/MessageBanner.ts** で、行 `_onResize(null);` を見つけて、次のものに置き換えます。
+
+    ```TypeScript
+    _onResize();
+    ```
 
 ## <a name="run-the-converted-add-in-project"></a>変換後のアドイン プロジェクトを実行する
 
@@ -109,8 +118,6 @@ function displaySelectedCells() {
 参考のために、次のコード スニペットで、これまでに説明した変更点を適用した後の **Home.ts** ファイルの内容を示します。 このコードには、アドインを実行するために必要な最小限の変更点が含まれています。
 
 ```typescript
-declare var fabric: any;
-
 (function () {
     "use strict";
 
@@ -120,15 +127,14 @@ declare var fabric: any;
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
         (window as any).Promise = OfficeExtension.Promise;
-
         $(document).ready(function () {
-            // Initialize the FabricUI notification mechanism and hide it
-            var element = document.querySelector('.ms-MessageBanner');
-            messageBanner = new fabric.MessageBanner(element);
+            // Initialize the notification mechanism and hide it
+            var element = document.querySelector('.MessageBanner');
+            messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-
+            
             // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -140,7 +146,7 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-
+                
             loadSampleData();
 
             // Add a click event handler for the highlight button.
@@ -206,7 +212,8 @@ declare var fabric: any;
     }
 
     function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
             null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -239,5 +246,5 @@ declare var fabric: any;
 
 ## <a name="see-also"></a>関連項目
 
-* [StackOverflow における Promise 実装に関するディスカッション](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [GitHub における Office アドインのサンプル](https://github.com/officedev)
+- [StackOverflow における Promise 実装に関するディスカッション](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [GitHub における Office アドインのサンプル](https://github.com/officedev)
