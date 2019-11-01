@@ -1,14 +1,14 @@
 ---
-title: Office 名前空間-プレビュー要件セット
+title: Office 名前空間-要件セット1.8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
+ms.openlocfilehash: 91a0bef2a8280a068763c98b17644bd9268e2fb4
 ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902103"
+ms.locfileid: "37902194"
 ---
 # <a name="office"></a>Office
 
@@ -34,7 +34,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 [context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
 
 ### <a name="members"></a>Members
 
@@ -108,7 +108,6 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
 |`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
 |`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`OfficeThemeChanged`| String | メールボックスの Office テーマが変更されました。 | プレビュー |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
 |`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
@@ -134,7 +133,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ##### <a name="properties"></a>プロパティ:
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`Body`| String|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|

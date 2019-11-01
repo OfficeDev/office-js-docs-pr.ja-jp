@@ -1,14 +1,14 @@
 ---
-title: Office のメールボックス-プレビュー要件セット
+title: Office. メールボックス要件セット1.8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ff649029713984b32e817bbeaf7c59a48cc5b023
+ms.openlocfilehash: 3f6d639cdf8bdff6f2df365622f58eba1c4b38e0
 ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902110"
+ms.locfileid: "37902188"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -87,7 +87,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 ---
 ---
 
-#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategories"></a>masterCategories: [Mastercategories](/javascript/api/outlook/office.mastercategories)
+#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategoriesviewoutlook-js-18"></a>masterCategories: [Mastercategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 このメールボックスのカテゴリマスターリストを管理するためのメソッドを提供するオブジェクトを取得します。
 
@@ -96,7 +96,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 ##### <a name="type"></a>種類
 
-*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 ##### <a name="requirements"></a>要件
 
@@ -211,7 +211,7 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 |名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -240,7 +240,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ---
 ---
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-18"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)}
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
@@ -264,7 +264,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 
 ##### <a name="returns"></a>戻り値:
 
-型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+型:[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)
 
 <br>
 
@@ -285,7 +285,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 |名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -324,7 +324,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 |名前| 型| 説明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|変換するローカル時刻の値。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)|変換するローカル時刻の値。|
 
 ##### <a name="requirements"></a>要件
 
@@ -470,8 +470,8 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 |名前| 型| 説明|
 |---|---|---|
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.start` | 日付 | 予定の開始日時を指定する `Date` オブジェクト。 |
 | `parameters.end` | 日付 | 予定の終了日時を指定する `Date` オブジェクト。 |
 | `parameters.location` | String | 予定の場所を含む文字列。文字列は最大 255 文字に制限されます。 |
@@ -528,9 +528,9 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 |名前| 型| 説明|
 |---|---|---|
 | `parameters` | オブジェクト | 新しいメッセージを記述するパラメータの辞書。 |
-| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
-| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
-| `parameters.bccRecipients` | 配列。&lt;文字列&gt; | 配列。&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
+| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
+| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
+| `parameters.bccRecipients` | 配列。&lt;文字列&gt; | 配列。&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
 | `parameters.subject` | String | A string containing the subject of the message. The string is limited to a maximum of 255 characters. |
 | `parameters.htmlBody` | String | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
 | `parameters.attachments` | 配列。&lt;オブジェクト&gt; | 添付ファイルまたは添付アイテムである JSON オブジェクトの配列。 |
