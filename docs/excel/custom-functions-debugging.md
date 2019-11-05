@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Excel でカスタム関数をデバッグします。
 title: カスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
+ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771457"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "37962025"
 ---
 # <a name="custom-functions-debugging"></a>カスタム関数のデバッグ
 
@@ -29,7 +29,7 @@ On Mac:
 > [!NOTE]
 > 簡単にするために、この記事では、Visual Studio Code を使用した編集、タスクの実行、および場合によってはデバッグビューを使用するためのデバッグについて説明します。 別のエディターまたはコマンドラインツールを使用している場合は、この記事の最後にある[コマンドラインの手順](#commands-for-building-and-running-your-add-in)を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>Requirements
 
 デバッグを開始する前に、 [Office アドイン用の [ごみ箱] ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、カスタム関数プロジェクトを作成する必要があります。 カスタム関数プロジェクトを作成する方法のガイダンスについては、「[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)」を参照してください。
 
@@ -81,7 +81,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカ�
 
 ### <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. リボンの [**挿入**] タブを選択し、 **** [アドイン] セクションで、[ **Office アドイン**] を選択します。
+1. リボンの [**挿入**] タブを選択し、 **[アドイン] セクションで**、[ **Office アドイン**] を選択します。
 2. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
     
     ![右上に [個人用アドインの管理] というドロップダウンがあり、その下に [マイ アドインのアップロード] オプションのドロップダウンがある [Office アドイン] ダイアログ](../images/office-add-ins-my-account.png)
@@ -108,7 +108,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカ�
 
 ### <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. [Web 上の Microsoft Office を](https://office.live.com/)開きます。
+1. [Microsoft Office on the web](https://office.live.com/) を開きます。
 2. 新しい Excel ブックを開きます。
 3. リボンの  **[挿入]** タブを開き、 **[アドイン]** セクションで、 **Office [アドイン]** を選択します。
 4. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
@@ -166,11 +166,12 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
 - `npm run start:web`: Web 上で Excel を起動し、アドインを読み込みます。
 - `npm run stop`: Excel およびデバッグを停止します。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [カスタム関数の認証方法](custom-functions-authentication.md)について説明します。 または、[カスタム関数の一意のアーキテクチャ](custom-functions-architecture.md)を確認します。
 
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のトラブルシューティング](custom-functions-troubleshooting.md)
-* [カスタム関数をXLLユーザー定義関数と互換性のあるものにします](make-custom-functions-compatible-with-xll-udf.md)。
+* [Excel のカスタム関数でのエラー処理 ](custom-functions-errors.md)
+* [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
