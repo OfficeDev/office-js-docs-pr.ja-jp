@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した基本的なプログラミングの�
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851582"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924802"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -210,8 +210,7 @@ range.values = 'Due Date';
 
 範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。
 
-> [!IMPORTANT]
-> Excel on the web ではペイロードのサイズが要求と応答で **5 MB** に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
+システムの制限の詳細については、「[Excel の範囲の制限](../develop/common-coding-issues.md#excel-range-limits)」を参照してください。
 
 ## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
 
@@ -253,3 +252,4 @@ API エラーが発生すると、API はコードとメッセージを含む **
 - [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
 - [Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [一般的なコーディングの問題と、予期しないプラットフォームの動作](../develop/common-coding-issues.md)。

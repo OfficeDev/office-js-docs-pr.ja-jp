@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 09/18/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035337"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924809"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 
@@ -68,6 +68,38 @@ npm run validate
 > [!IMPORTANT]
 > ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
 
+### <a name="use-runtime-logging-from-the-command-line"></a>コマンド ラインからランタイム ログを使用する
+
+コマンド ラインからランタイム ログを有効にするのが、このログ ツールを使用する最も簡単な方法です。 これは、npm@5.2.0+ の一部として既定で提供される npx を使用します。 以前のバージョンの [npm](https://www.npmjs.com/) を使用している場合は、[Windows でのランタイム ログ](#runtime-logging-on-windows)の手順か [Mac でのランタイム ログ](#runtime-logging-on-mac)の手順、または [npx のインストール](https://www.npmjs.com/package/npx)をお試しください。
+
+- ランタイムのログを有効にするには、以下を実行します。
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable
+    ```
+- 特定のファイルに対してのみランタイム ログを有効にするには、ファイル名と同じコマンドを使用します。
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    ```
+
+- ランタイム ログを無効にするには、以下を実行します。
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --disable
+    ```
+
+- ランタイム ログが有効になっているかどうかを表示するには、以下を実行します。
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log
+    ```
+
+- ランタイム ログのコマンド ライン内にヘルプを表示するには、以下を実行します。
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --help
+    ```
+
 ### <a name="runtime-logging-on-windows"></a>Windows でのランタイム ログ
 
 1. Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。 
@@ -79,7 +111,7 @@ npm run validate
     > 1. **[WEF]** キー (フォルダー) を右クリックし、**[新規]**、**[キー]** の順に選択します。
     > 2. 新しいキーに **Developer** という名前を付けます。
 
-3. キーの既定値にログを書き込むファイルの完全なパスを設定します。例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。 
+3. **RuntimeLogging** キーの既定値にログを書き込むファイルの完全なパスを設定します。 例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。 
 
     > [!NOTE]
     > ログ ファイルが書き込まれるディレクトリが既に存在しており、書き込みアクセス許可がある必要があります。 
