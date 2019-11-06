@@ -3,12 +3,12 @@ title: JavaScript API for Office のエラー コード
 description: ''
 ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: b5a5480b620f6ba9869a1faa40af0cd0faa3fcfc
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268566"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001943"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>JavaScript API for Office のエラー コード
 
@@ -81,7 +81,7 @@ ms.locfileid: "36268566"
 |8021|範囲外|列のインデックス値が許容範囲外です。列の数よりも少ない正の値 (0 以上) を使用してください。|列のインデックスが、テーブルの最大列のインデックスより大きいか、または 0 より小さいです。|
 |8022|範囲外|値が許容範囲外です。|形式の値の一部がサポート範囲外です。|
 |9016|アクセス許可が拒否されました|アクセスが拒否されました|アクセスが拒否されました。|
-|9041|ネットワークエラー|ユーザーがネットワークに接続されていません。 ネットワーク接続を確認し、もう一度実行してください。|ユーザーがネットワークまたはインターネットにアクセスできなくなった。|
+|9041|ネットワークエラー|ユーザーはネットワークに接続されていません。 ネットワーク接続を確認し、やり直してください。|ユーザーがネットワークまたはインターネットにアクセスできなくなった。|
 |12002|||以下のいずれか:<br> - `displayDialogAsync` に渡された URL にページが存在しない。<br> - `displayDialogAsync` に渡されたページが読み込まれたが、ダイアログ ボックスが見つからないか読み込むことができないページを指していたか、またはダイアログ ボックスが無効な構文を含む URL を指している。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12003|||ダイアログ ボックスが HTTP プロトコルを使用している URL を指していました。 HTTPS が必要です。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12004|||`displayDialogAsync` に渡される URL のドメインは信頼されていません。 ドメインは、ホスト ページと同じドメインにある必要があります (プロトコルとポート番号を含む)。 `displayDialogAsync` の呼び出しによってスローされます。|
@@ -89,7 +89,7 @@ ms.locfileid: "36268566"
 |12006|||ダイアログ ボックスが閉じられました。通常は、ユーザーが **X** ボタンを選択したためです。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12007|||ダイアログ ボックスは、このホスト ウィンドウで既に開いています。 作業ウィンドウなどのホスト ウィンドウで、一度に開けるダイアログ ボックスは 1 つだけです。 `displayDialogAsync` の呼び出しによってスローされます。|
 |12009|||ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ダイアログの表示をアドインに許可しないようにユーザーが選択すると、Office のオンライン バージョンで発生することがあります。 `displayDialogAsync` の呼び出しによってスローされます。|
-|13000 - 13010|||「[getAccessTokenAsync からのエラーの原因と処理](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)」を参照してください。|
+|13000 - 13010|||[GetAccessToken からのエラーの原因と処理を](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken)参照してください。|
 
 ## <a name="binding-creation-error-conditions"></a>バインディングの作成エラーの条件
 
