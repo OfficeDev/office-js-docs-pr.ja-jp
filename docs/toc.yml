@@ -547,6 +547,9 @@
         - name: カスタム関数のチュートリアル
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: 'Excel, Custom Functions'
+        - name: 作業ウィンドウのチュートリアルにデータを共有するカスタム関数
+          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+          displayName: 'Excel, Custom Functions'
         - name: アーキテクチャ
           href: excel/custom-functions-architecture.md
           displayName: 'Excel, Custom Functions'
