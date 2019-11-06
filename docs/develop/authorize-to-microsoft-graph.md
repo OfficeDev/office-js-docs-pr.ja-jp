@@ -1,14 +1,14 @@
 ---
 title: SSO を使用した Microsoft Graph への承認
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 03fa2b862d397ea9a28589d6d1aa9b1030a0b6c5
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302561"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001440"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>SSO を使用した Microsoft Graph への承認 (プレビュー)
 
@@ -29,12 +29,12 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ![SSO プロセスを示す図](../images/sso-access-to-microsoft-graph.png)
 
-1. アドインの JavaScript により、新しい Office.js API [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) が呼び出されます。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するように指示されます  (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では**ブートストラップ アクセス トークン**と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getaccesstoken-options--callback-) を呼び出します。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するように指示されます  (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では**ブートストラップ アクセス トークン**と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
 1. ユーザーがサインインしていない場合、ユーザーにサインインを求めるポップアップ ウィンドウが Office ホスト アプリケーションによって開かれます。
 1. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログが表示されます。
 1. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**ブートストラップ アクセス トークン**を要求します。
 1. Azure AD が、Office ホスト アプリケーションにブートストラップ アクセス トークンを送信します。
-1. Office ホスト アプリケーションが、`getAccessTokenAsync` 呼び出しによって返される結果オブジェクトの一部として、アドインに**ブートストラップ アクセス トークン**を送信します。
+1. Office ホスト アプリケーションが、`getAccessToken` 呼び出しによって返される結果オブジェクトの一部として、アドインに**ブートストラップ アクセス トークン**を送信します。
 1. アドインの JavaScript は、アドインと同じ完全修飾ドメイン名でホストされている Web API に HTTP 要求を送信して、その要求に承認の証拠として**ブートストラップ アクセス トークン**を含めます。  
 1. 受け取った**ブートストラップ アクセス トークン**はサーバー側のコードで検証されます。
 1. サーバー側のコードは、「代理」フロー (「[OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)」と「[デーモンまたはサーバー アプリケーション対 Web API](/azure/active-directory/develop/active-directory-authentication-scenarios)」で定義されているフロー) を使用して、ブートストラップ アクセス トークンと引き換えに Microsoft Graph のアクセス トークンを取得します。
@@ -46,14 +46,14 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Microsoft Graph にアクセスする SSO を開発する
 
-Microsoft Graph にアクセスするアドインは、SSO を使用する他のすべてのアドインと同様に開発できます。 完全な説明については、「[Office アドインのシングル サインオンを有効化する](/office/dev/add-ins/develop/sso-in-office-add-ins)」を参照してください。違いは、アドインにサーバー側の Web API があることが必須であることと、この記事でアクセス トークンと呼ばれているものは “ブートストラップ アクセス トークン” と呼ばれているという点です。 
+Microsoft Graph にアクセスするアドインは、SSO を使用する他のすべてのアドインと同様に開発できます。 完全な説明については、「[Office アドインのシングル サインオンを有効化する](/office/dev/add-ins/develop/sso-in-office-add-ins)」を参照してください。違いは、アドインにサーバー側の Web API があることが必須であることと、この記事でアクセス トークンと呼ばれているものは “ブートストラップ アクセス トークン” と呼ばれているという点です。
 
 使用する言語とフレームワークによっては、記述する必要のあるサーバー側コードが簡単になるライブラリが使用できることがあります。 コードでは、次に示す操作を実行する必要があります。
 
-* 前に作成したトークン ハンドラーから受け取ったアドイン ブートストラップ アクセス トークンを検証します。 詳細については、[アクセス トークンの検証](sso-in-office-add-ins.md#validate-the-access-token)に関するページを参照してください。 
 * Azure AD v2.0 エンドポイントを呼び出して、“代理” フローを開始します。これには、ブートストラップ アクセス トークン、ユーザーに関するメタデータ、およびアドインの資格情報 (ID とシークレット) を含めます。
-* Microsoft Graph に返されたアクセス トークンをキャッシュします。 このフローの詳細については、「[Azure Active Directory v2.0 と OAuth 2.0 の On-Behalf-Of フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)」を参照してください。
-* Microsoft Graph にキャッシュされたアクセス トークンを渡し、Microsoft Graph データを取得する 1 つ以上の Web API メソッドを作成します。
+* Microsoft Graph に (おそらくキャッシュされる) アクセス トークンを渡し、Microsoft Graph データを取得する 1 つ以上の Web API メソッドを作成します。
+* 必要に応じて、フローを開始する前に、以前に作成したトークン ハンドラーから受け取ったアドイン ブートストラップ アクセス トークンを検証します。 詳細については、[アクセス トークンの検証](sso-in-office-add-ins.md#validate-the-access-token)に関するページを参照してください。 
+* 必要に応じて、フローが完了した後に、Microsoft Graph のアクセス トークンをキャッシュします。 アドインで Microsoft Graph を複数回呼び出す場合に、これが行われます。 このフローの詳細については、「[Azure Active Directory v2.0 と OAuth 2.0 の On-Behalf-Of フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)」を参照してください。
 
 > [!NOTE]
 > “代理” フローで取得した Microsoft Graph のデコードされたアクセス トークンの例については、「[Azure Active Directory v2.0 と OAuth 2.0 の On-Behalf-Of フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)」を参照してください。
