@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける認証と承認の概要
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 7960e47b615828bb844660565804db9ec7e4e1db
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838509"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001465"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -37,18 +37,20 @@ Azure Active Directory (AAD) から Graph へのアクセス トークンを取�
 
 ## <a name="user-authentication-with-sso"></a>SSO を使用したユーザー認証
 
-SSO を使用してユーザーを認証するために、作業ウィンドウまたは関数ファイル内のコードが [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 (「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](#access-to-microsoft-graph-with-sso)」を参照してください。) ただし、このトークンには `preferred_username`、`name`、`sub`、および `oid` を含む、現在のユーザーに固有の複数の要求が含まれるため、ID トークンとしても使用できます。 最終的なユーザー ID として使用するプロパティに関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/ja-JP/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+SSO を使用してユーザーを認証するために、作業ウィンドウまたは関数ファイル内のコードが [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 (「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](#access-to-microsoft-graph-with-sso)」を参照してください。) ただし、このトークンには `preferred_username`、`name`、`sub`、および `oid` を含む、現在のユーザーに固有の複数の要求が含まれるため、ID トークンとしても使用できます。 最終的なユーザー ID として使用するプロパティに関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
 
 コードにより目的の要求がトークンから抽出されると、管理下のユーザー テーブルまたはユーザー データベース内でその値を使用してユーザーが検索されます。 ユーザー設定やユーザーのアカウントの状態などのユーザー関連情報を格納するには、データベースを使用します。 SSO を使用しているため、ユーザーは個別にアドインにサインインを行いません。このため、ユーザーのパスワードを保存する必要はありません。
 
 SSO を使用するユーザー認証を実装する前に、「[Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)」の記事を十分に理解しておく必要があります。次のサンプルも確認しておいてください。
 
-- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO): 特に、トークンのデコードと解析に [jswebtoken](https://github.com/auth0/node-jsonwebtoken) ライブラリを使用する [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) ファイル。 (ただし、この例では、トークンは ID トークンとしては使用されません。 この例では、トークンは、**代理**フローを使用して Microsoft Graph にアクセスするために使用されます。)
-- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO): 特に、トークンから要求を抽出するために [System.Security.Claims.ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) クラスのライブラリを使用する [ValuesController.ts](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Controllers/ValuesController.cs) ファイル。 (ただし、この例では、トークンは ID トークンとしては使用されません。 この例では `scope` 要求がトークンから抽出され、この要求は、**代理**フローを使用して Microsoft Graph にアクセスするために使用されます。)
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)、特に [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts) ファイル。 
+- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。 
+
+ただし、これらの例では、トークンは ID トークンとしては使用されません。 ここでは、トークンは、**On-Behalf-Of** フローを使用して Microsoft Graph にアクセスするために使用されます。
 
 ## <a name="access-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph へのアクセス
 
-SSO を使用して Microsoft Graph にアクセスするために、作業ウィンドウまたは関数ファイル内のアドインが [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 特に、このトークンには 値 `access_as_user` を持つ `scope` 要求が含まれます。 トークンでの要求に関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/ja-JP/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+SSO を使用して Microsoft Graph にアクセスするために、作業ウィンドウまたは関数ファイル内のアドインが [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) メソッドを呼び出します。 ユーザーが Office にサインインしていない場合、Office でダイアログが開き、Azure Active Directory のログインページに移動します。 ユーザーがサインインすると、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理**フロー内のブートストラップ トークンです。 特に、このトークンには 値 `access_as_user` を持つ `scope` 要求が含まれます。 トークンでの要求に関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[Example access token (アクセス トークンの例)](sso-in-office-add-ins.md#example-access-token)」を参照してください。
 
 コードがトークンを取得すると、コードは**代理**フロー内でこのトークンを使用して、2 つ目のトークンである Microsoft Graph へのアクセス トークンを取得します。
 
@@ -73,4 +75,3 @@ Office SSO の実装を開始する前に、次の 2 つの記事を十分に理
 
 > [!IMPORTANT]
 > コーディングを始める前に、データ ソースのログイン画面を iFrame で開くことがデータ ソースにより許可されているかどうかを確認します。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 データ ソースのログインの画面を iFrame で開くことがデータ ソースにより許可されていない場合、ログイン画面は、Office ダイアログ API を使用して開かれるダイアログで開く必要があります。 詳細については、「[Office ダイアログ API を使用して認証と承認を行う](auth-with-office-dialog-api.md)」を参照してください。
-

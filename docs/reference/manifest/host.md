@@ -1,20 +1,20 @@
 ---
 title: マニフェスト ファイルの Host 要素
 description: ''
-ms.date: 07/01/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454896"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066278"
 ---
 # <a name="host-element"></a>Host 要素
 
 アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > **Host** 要素の構文は、要素が[基本のマニフェスト](#basic-manifest)で定義されているか、[VersionOverrides](#versionoverrides-node) ノードで定義されているかによって異なります。 ただし、機能は変わりません。  
 
 ## <a name="basic-manifest"></a>基本のマニフェスト
@@ -53,7 +53,7 @@ ms.locfileid: "35454896"
 
 ## <a name="versionoverrides-node"></a>VersionOverrides ノード
 
-[VersionOverrides](versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
+[VersionOverrides](versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。
 
 ### <a name="attributes"></a>属性
 
@@ -66,7 +66,7 @@ ms.locfileid: "35454896"
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  はい   |  デスクトップ フォーム ファクターの設定を定義します。 |
-|  [MobileFormFactor](mobileformfactor.md)    |  いいえ   |  モバイルフォームファクターの設定を定義します。 **注:** この要素は、iOS の Outlook でのみサポートされています。 |
+|  [MobileFormFactor](mobileformfactor.md)    |  いいえ   |  モバイルフォームファクターの設定を定義します。 **注:** この要素は、iOS および Android の Outlook でのみサポートされています。 |
 |  [AllFormFactors](allformfactors.md)    |  いいえ   |  すべてのフォーム ファクターの設定を定義します。 Excel のカスタム関数でのみ使用します。 |
 
 ### <a name="xsitype"></a>xsi:type
@@ -79,7 +79,7 @@ ms.locfileid: "35454896"
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## <a name="host-example"></a>ホストの例 
+## <a name="host-example"></a>ホストの例
 
 ```xml
 <Hosts>

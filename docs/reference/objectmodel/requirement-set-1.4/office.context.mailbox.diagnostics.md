@@ -3,12 +3,12 @@ title: Office.--の要件セット1.4
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c6543cad17d464ce139381270ad1495d43d5cd9
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: eea3384d5ad8a1266b8f71c1669f09c186b6240c
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696261"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066131"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -28,8 +28,8 @@ Outlook アドインに診断情報を提供します。
 
 | メンバー | 種類 |
 |--------|------|
-| [名](#hostname-string) | Member |
-| [上 diagnostics.hostversion](#hostversion-string) | Member |
+| [名](#hostname-string) | メンバー |
+| [上 diagnostics.hostversion](#hostversion-string) | メンバー |
 | [OWAView](#owaview-string) | メンバー |
 
 ### <a name="members"></a>メンバー
@@ -62,7 +62,7 @@ Outlook アドインに診断情報を提供します。
 
 #### <a name="hostversion-string"></a>hostVersion: String
 
-ホストアプリケーションまたは Exchange サーバー (例: "15.0.468.0") のいずれかのバージョンを表す文字列を取得します。
+ホストアプリケーションまたは Exchange サーバー (例: "15.0.468.0") のバージョンを表す文字列を取得します。
 
 メールアドインが Outlook デスクトップクライアントまたは iOS で実行されている場合、 `hostVersion`このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。
 
