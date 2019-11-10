@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 7cb755ecb7bcc836e93cf11e0caa5db55a6ddc29
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c5ab134c91e156368c21722726d7ee502397b99e
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001580"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066257"
 ---
 # <a name="item"></a>item
 
@@ -1640,12 +1640,10 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 メッセージの件名または本文から非同期的に選択したデータを返します。
 
-選択したデータがなく、カーソルが本文または件名にある場合、選択したデータに対して null が返されます。本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。
+選択されていない状態でカーソルが本文または件名にある場合、メソッドは選択されたデータに対し空の文字列を返します。本文または件名以外のフィールドが選択されている場合には、メソッドは`InvalidSelection`エラーを返します。
 
 > [!NOTE]
-> Outlook on the web で、テキストが選択されていないのにカーソルが本文内にある場合、メソッドでは文字列 "null" を返します。 こうした状況をチェックするには、次のようなコードを含めます。
->
-> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+> Outlook on the web で、テキストが選択されていないのにカーソルが本文内にある場合、メソッドでは文字列 "null" を返します。 この状況を確認するには、このセクション後半の例を参照してください。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1682,11 +1680,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 

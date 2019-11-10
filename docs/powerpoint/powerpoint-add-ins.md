@@ -1,30 +1,30 @@
 ---
 title: PowerPoint アドイン
 description: ''
-ms.date: 09/03/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86f05a70478652c546f0015e6f69e71bf3dacec0
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468743"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066285"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
-PowerPoint のアドインを使用すると、Windows、iOS、Mac などのプラットフォームやブラウザーで、ユーザーのプレゼンテーションのための魅力的なソリューションを作成できます。 次の 2 種類の PowerPoint アドインを作成できます。
+PowerPoint アドインを使用して Windows、iPad、Mac、およびブラウザー上など、複数のプラットフォームでのユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。 次の 2 種類の PowerPoint アドインを作成できます。
 
 - **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/WA104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
-- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pixton コミック キャラクター](https://appsource.microsoft.com/product/office/WA104380907) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。 
+- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pixton コミック キャラクター](https://appsource.microsoft.com/product/office/WA104380907) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドインのシナリオ
 
 この記事で紹介するコード例では、PowerPoint のアドインの開発のための基本的なタスクをいくつか示します。 以下のことに注意してください。
 
-- 情報を表示するために、これらの例は `app.showNotification` 関数を使用します。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。 アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。 
+- 情報を表示するために、これらの例は `app.showNotification` 関数を使用します。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。 アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。
 
 - これらの例のうちいくつかでは、これらの関数 `var Globals = {activeViewHandler:0, firstSlideId:0};` の範囲を超えて宣言されている `Globals` オブジェクトも使用しています。
 
