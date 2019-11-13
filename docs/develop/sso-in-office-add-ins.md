@@ -1,14 +1,14 @@
 ---
 title: Office アドインのシングル サインオンを有効化する
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 88bc29b3a1038bf8df74d30621015b472572f7e3
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001447"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301940"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
@@ -39,7 +39,7 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 
 ![SSO プロセスを示す図](../images/sso-overview-diagram.png)
 
-1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) を呼び出します。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するように指示されます  「[アクセス トークンの例](#example-access-token)」を参照してください。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するように指示されます  「[アクセス トークンの例](#example-access-token)」を参照してください。
 2. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 4. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**アドイン トークン**を要求します。
@@ -96,7 +96,7 @@ Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="Vers
 
 アドインに次のために JavaScript を追加します。
 
-* [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) を呼び出します。
+* [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。
 
 * アクセス トークンを解析するか、それをアドインのサーバー側コードに渡す。
 
@@ -227,10 +227,10 @@ Excel、PowerPoint、または Word のアドインで SSO を使用する場合
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-OfficeRuntime [Auth](/javascript/api/office/officeruntime.auth) 名前空間 (`OfficeRuntime.auth`) には、Office ホストがアドインの Web アプリケーションへのアクセス トークンを取得することを可能にする `getAccessToken` というメソッドがあります。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
+OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) 名前空間 (`OfficeRuntime.Auth`) には、Office ホストがアドインの Web アプリケーションへのアクセス トークンを取得することを可能にする `getAccessToken` というメソッドがあります。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
 
 ```typescript
-getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
 ```
 
 このメソッドは、Azure Active Directory V 2.0 のエンドポイントを呼び出して、アドインの Web アプリケーションへのアクセス トークンを取得します。 これにより、アドインがユーザーを識別できるようになります。 ["on behalf of" OAuth フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を使用することにより、サーバー側のコードはこのトークンを使用して、アドインの Web アプリケーションの Microsoft Graph にアクセスできます。
@@ -244,8 +244,8 @@ getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) =
 
 #### <a name="parameters"></a>パラメーター
 
-`options` - 省略可能。 [AuthOptions](/javascript/api/office/officeruntime.authoptions) オブジェクト（下記参照）を、サインオン動作を定義するために受け入れます。
+`options` - 省略可能。 [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) オブジェクト（下記参照）を、サインオン動作を定義するために受け入れます。
 
 `callback` - 省略可能。 ユーザー ID 用のトークンを解析できるコールバック メソッドが許可されます。または、トークンを Microsoft Graph へのアクセスを取得するために、「代理」フローで使用します。 [AsyncResult](/javascript/api/office/office.asyncresult)`.status` が "succeeded" である場合、`AsyncResult.value` が生の AAD v. 2.0 形式のアクセス トークンになります。
 
-[AuthOptions](/javascript/api/office/officeruntime.authoptions) インターフェイスは、OfficeがAAD vからアドインへのアクセストークンを取得するときのユーザーエクスペリエンスのためのオプションを提供します。 `getAccessToken` メソッドを使用して AAD v. 2.0 からアドインに対するアクセス トークンを取得する場合用のユーザー エクスペリエンス用のオプションがあります。
+[AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) インターフェイスは、OfficeがAAD vからアドインへのアクセストークンを取得するときのユーザーエクスペリエンスのためのオプションを提供します。 `getAccessToken` メソッドを使用して AAD v. 2.0 からアドインに対するアクセス トークンを取得する場合用のユーザー エクスペリエンス用のオプションがあります。
