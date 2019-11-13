@@ -1,14 +1,14 @@
 ---
 title: 一般的なコーディングの問題と予期しないプラットフォームの動作
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924795"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301933"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>一般的なコーディングの問題と予期しないプラットフォームの動作
 
@@ -73,16 +73,16 @@ range.format.font.size = 10;
 - 読み取り専用プロパティ: サブプロパティは、ナビゲーションを使用して設定できます。
 - 書き込み可能なプロパティ: サブプロパティは JSON 構造体で設定する必要があります (ナビゲーションで設定することはできません)。
 
-## <a name="excel-range-limits"></a>Excel 範囲制限
+## <a name="excel-data-transfer-limits"></a>Excel データ転送の制限
 
-範囲を使用する Excel アドインを作成している場合は、次のサイズ制限に注意してください。
+Excel アドインを作成している場合は、ブックを操作するときに以下のサイズ制限に注意してください。
 
 - Excel on the web ではペイロードのサイズが要求と応答で 5 MB に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
-- 範囲は、設定操作では500万のセルに制限されます。
+- 範囲は、取得操作に500万のセルに制限されます。
 
-ユーザー入力がこれらの制限を超えていることが予想される場合は、データをチェックして、範囲を複数のオブジェクトに分割します。 また、複数`context.sync()`の呼び出しを送信して、より小さな範囲の操作が同時に一括されないようにする必要もあります。
+ユーザー入力がこれらの制限を超えていることが予想される場合は、 `context.sync()`必ずデータを確認してから、を呼び出してください。 必要に応じて、操作を小さな部分に分割します。 各サブ操作を`context.sync()`呼び出して、それらの操作が再度一括されないようにしてください。
 
-アドインでは、範囲内のセルを戦略的に更新するために[Rangeareas](/javascript/api/excel/excel.rangeareas)を使用できる場合があります。 詳細については、「 [Excel アドインで複数の範囲を同時に操作](../excel/excel-add-ins-multiple-ranges.md)する」を参照してください。
+これらの制限は、通常、大きな範囲を超えています。 アドインでは、範囲内のセルを戦略的に更新するために[Rangeareas](/javascript/api/excel/excel.rangeareas)を使用できる場合があります。 詳細については、「 [Excel アドインで複数の範囲を同時に操作](../excel/excel-add-ins-multiple-ranges.md)する」を参照してください。
 
 ## <a name="setting-read-only-properties"></a>読み取り専用プロパティの設定
 
