@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.3
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: d0a4d5244a3abeed20282b8b548dedf8f60e7ba5
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: 076c3035b0d7f72b9d8b4b5c6515575be1d8243b
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066124"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629722"
 ---
 # <a name="item"></a>item
 
@@ -1019,7 +1019,7 @@ function callback(asyncResult) {
 | `FileTypeNotSupported` | 許可されていない拡張子の添付ファイルです。 |
 | `NumberOfAttachmentsExceeded` | メッセージまたは予定の添付ファイルが多すぎます。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1078,7 +1078,7 @@ Office アドインを Outlook on the web で実行している場合、編集�
 |------------|-------------|
 | `NumberOfAttachmentsExceeded` | メッセージまたは予定の添付ファイルが多すぎます。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1126,7 +1126,7 @@ function addAttachment() {
 
 Outlook デスクトップ クライアントでは、メッセージがインライン返信の場合、`close` メソッドは無効になります。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1288,7 +1288,7 @@ Outlook on the web では、回答フォームは、3 列表示のポップア�
 | `formData.attachments.itemId` | String | | `type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。 |
 | `callback` | function | &lt;optional&gt; | メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1494,7 +1494,7 @@ Office.initialize = function () {
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1545,7 +1545,7 @@ Office.initialize = function () {
 
 アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。この場合、代わりに [`Body.getAsync`](/javascript/api/outlook/office.body?view=outlook-js-1.3#getasync-coerciontype--options--callback-) メソッドを使用して本文全体を取得します。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1591,7 +1591,7 @@ var veggies = allMatches.veggies;
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1621,10 +1621,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 メッセージの件名または本文から非同期的に選択したデータを返します。
 
-選択されていないが、カーソルが本文または件名にある場合、メソッドは選択されたデータに対して空の文字列を返します。 本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。
-
-> [!NOTE]
-> Outlook on the web で、テキストが選択されていないのにカーソルが本文内にある場合、メソッドでは文字列 "null" を返します。 このような状況を確認するには、このセクションで後述する例を参照してください。
+選択されていない状態でカーソルが本文または件名にある場合、メソッドは選択されたデータに対し空の文字列を返します。本文または件名以外のフィールドが選択されている場合には、メソッドは`InvalidSelection`エラーを返します。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1661,12 +1658,6 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
-
   console.log("Selected text in " + prop + ": " + text);
 }
 ```
@@ -1687,9 +1678,9 @@ function getCallback(asyncResult) {
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>カスタム プロパティは `asyncResult.value` プロパティの [`CustomProperties`](/javascript/api/outlook/office.customproperties?view=outlook-js-1.3) オブジェクトとして指定されます。 このオブジェクトは、アイテムからカスタム プロパティを取得、設定、削除し、サーバーに設定し直すカスタム プロパティへの変更を保存するために使用できます。|
-|`userContext`| Object| &lt;省略可能&gt;|開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。 このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。|
+|`userContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック関数でアクセスする任意のオブジェクトを指定できます。 このオブジェクトには、コールバック関数の `asyncResult.asyncContext` プロパティによってアクセスすることができます。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1741,7 +1732,7 @@ function saveCallback(asyncResult) {
 |---|---|---|---|
 |`attachmentId`| String||削除する添付ファイルの識別子。|
 |`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
-|`options.asyncContext`| Object| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
+|`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。 <br/>添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。|
 
 ##### <a name="errors"></a>エラー
@@ -1750,7 +1741,7 @@ function saveCallback(asyncResult) {
 |------------|-------------|
 | `InvalidAttachmentId` | 添付ファイル識別子が存在しません。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1799,8 +1790,8 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
-|`options.asyncContext`| Object| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
+|`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>成功すると、アイテム識別子が `asyncResult.value` プロパティに提供されます。|
 
 ##### <a name="requirements"></a>要件

@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 09/18/2019
+ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035427"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629729"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -41,7 +41,7 @@ ms.locfileid: "37035427"
 
 ![Yeoman ジェネレーター](../images/yo-office-excel.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートノードコンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -172,13 +172,13 @@ ms.locfileid: "37035427"
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. 次の手順を実行して、ローカル web サーバーを開始し、アドインをサイドロードします。
+1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
     > [!TIP]
-    > Mac でアドインをテストしている場合は、先に進む前に、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します。
+    > Mac でアドインをテストしている場合は、先に進む前に、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -190,7 +190,7 @@ ms.locfileid: "37035427"
         npm start
         ```
 
-    - Web 上の Excel でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します (まだ実行していない場合)。
+    - Web 上の Excel でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web
@@ -732,6 +732,7 @@ ms.locfileid: "37035427"
         > [!NOTE]
         > そのフォルダーが存在しない場合は、次のフォルダーをチェックして、見つかった場合はフォルダーの内容を削除します。
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`ここ`{host}`で、は Office ホストです (例`Excel`:)。
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`ここ`{host}`で、は Office ホストです (例`Excel`:)。
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. ローカル web サーバーが既に実行されている場合は、ノードのコマンドウィンドウを閉じて停止します。
@@ -744,7 +745,7 @@ ms.locfileid: "37035427"
         npm start
         ```
 
-    - Web 上の Excel でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します (まだ実行していない場合)。
+    - Web 上の Excel でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web
@@ -927,7 +928,7 @@ ms.locfileid: "37035427"
 
 4. /Src/taskpane/taskpane.js を開きます **。**
 
-5. `Office.onReady`メソッド呼び出し内で、 `freeze-header`ボタンにクリックハンドラーを割り当てる行を見つけ、その行の後に次のコードを追加します。 `openDialog` メソッドは、この後の手順で作成します。
+5. `Office.onReady`メソッド呼び出し内で、 `freeze-header`ボタンにクリックハンドラーを割り当てる行を見つけ、その行の後に次のコードを追加します。 `openDialog`メソッドは後の手順で作成します。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

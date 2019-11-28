@@ -1,14 +1,14 @@
 ---
 title: Office の設定-プレビュー要件セット
 description: ''
-ms.date: 08/08/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 47949fb26629b6619514bbd0d7f760cfa31d5839
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 492e292737417854adfaf98feb2b67788933d874
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696492"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629203"
 ---
 # <a name="diagnostics"></a>診断
 
@@ -16,7 +16,7 @@ ms.locfileid: "36696492"
 
 Outlook アドインに診断情報を提供します。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -24,15 +24,15 @@ Outlook アドインに診断情報を提供します。
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+##### <a name="properties"></a>プロパティ
 
-| メンバー | 種類 |
-|--------|------|
-| [名](#hostname-string) | Member |
-| [上 diagnostics.hostversion](#hostversion-string) | Member |
-| [OWAView](#owaview-string) | メンバー |
+| プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|---|---|
+| [名](#hostname-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
+| [上 diagnostics.hostversion](#hostversion-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
+| [OWAView](#owaview-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
 
-### <a name="members"></a>メンバー
+## <a name="property-details"></a>プロパティの詳細
 
 #### <a name="hostname-string"></a>hostName: String
 
@@ -64,7 +64,7 @@ Outlook アドインに診断情報を提供します。
 
 ホストアプリケーションまたは Exchange サーバー (例: "15.0.468.0") のバージョンを表す文字列を取得します。
 
-メールアドインが Outlook デスクトップクライアント上または iOS 上で実行されている場合`hostVersion` 、このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。
+メールアドインが Outlook デスクトップまたはモバイルクライアント上で実行されている場合`hostVersion` 、このプロパティはホストアプリケーションのバージョン (outlook) を返します。 Web 上の Outlook では、このプロパティは Exchange サーバーのバージョンを返します。
 
 ##### <a name="type"></a>型
 

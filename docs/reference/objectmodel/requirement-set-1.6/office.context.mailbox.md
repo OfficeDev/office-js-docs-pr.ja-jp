@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.6
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Normal
-ms.openlocfilehash: b4bc64aa1ff836408a8b8b1efdaed7ddc8ce5725
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 09c3930daf6f26edbc38b01f515ee5b1830ce802
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627084"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629694"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -73,7 +73,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -92,15 +92,11 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 `restUrl` 値は、ユーザーのメールボックスに [REST API](/outlook/rest/) 呼び出しを行うために使用できます。
 
-アプリが閲覧モードで `restUrl` メンバーを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
-
-新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してから、`restUrl` メンバーを使用する必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
-
 ##### <a name="type"></a>型
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -126,7 +122,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 | `options.asyncContext` | オブジェクト | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -215,7 +211,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 |---|---|---|
 |`timeValue`| 日付|日付オブジェクト|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -243,12 +239,12 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.6)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -283,11 +279,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|変換するローカル時刻の値。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -345,11 +341,11 @@ Outlook on the web では、このメソッドはフォームの本文が 32KB �
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -385,7 +381,7 @@ Outlook on the web では、このメソッドはフォームの本文が 32 KB 
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
@@ -433,7 +429,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 | `parameters` | Object | 新しい予定を記述するパラメーターのディクショナリ。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 予定に必要な各出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 予定の各任意出席者について、メール アドレスを含む文字列の配列、または `EmailAddressDetails` オブジェクトを含む配列。配列の上限は 100 エントリです。 |
-| `parameters.start` | Date | 予定の開始日時を指定する `Date` オブジェクト。 |
+| `parameters.start` | 日付 | 予定の開始日時を指定する `Date` オブジェクト。 |
 | `parameters.end` | 日付 | 予定の終了日時を指定する `Date` オブジェクト。 |
 | `parameters.location` | String | 予定の場所を含む文字列。文字列は最大 255 文字に制限されます。 |
 | `parameters.resources` | Array.&lt;String&gt; | 予定に必要なリソースを含む文字列の配列。配列の上限は 100 エントリです。 |
@@ -502,7 +498,7 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 | `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
 
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -544,9 +540,9 @@ REST API または Exchange Web サービスを呼び出すために使用する
 > [!NOTE]
 > 可能であれば、アドインでは Exchange Web サービスの代わりに REST API を使用することをお勧めします。
 
-読み取りモード`getCallbackTokenAsync`でメソッドを呼び出すには、 **ReadItem**の最低限のアクセス許可レベルが必要です。
+閲覧モードで `getCallbackTokenAsync` メソッドを呼び出すには、**ReadItem** の最小限のアクセス許可レベルが必要です。
 
-新規`getCallbackTokenAsync`作成モードで呼び出しを行うには、アイテムを保存しておく必要があります。 この[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback)メソッドには、 **readwriteitem**の最小アクセス許可レベルが必要です。
+作成モードで `getCallbackTokenAsync` を呼び出すには、アイテムを保存しておく必要があります。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドは、**ReadWriteItem** の最小限のアクセス許可レベルが必要です。
 
 **REST トークン**
 
@@ -560,15 +556,15 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 アドインでは、`ewsUrl` プロパティを使用して、EWS 呼び出しを行うときに使用する正しい URL を決定する必要があります。
 
-トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティのシステムに渡すことができます。 サードパーティシステムは、トークンをベアラー認証トークンとして使用して、Exchange Web サービス (EWS) の[Getattachment](/exchange/client-developer/web-service-reference/getattachment-operation)操作または[GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作を呼び出して、添付ファイルまたはアイテムを返します。 For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
+トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティ システムに渡すことができます。 サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。 たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
-| `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
+| `options.isRest` | ブール値 |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
+| `options.asyncContext` | オブジェクト |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 
 ##### <a name="errors"></a>エラー
@@ -581,7 +577,7 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
@@ -615,15 +611,15 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 `getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。コールバック トークンの有効期間は 5 分です。
 
-トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティのシステムに渡すことができます。 サードパーティシステムは、トークンをベアラー認証トークンとして使用して、Exchange Web サービス (EWS) の[Getattachment](/exchange/client-developer/web-service-reference/getattachment-operation)操作または[GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作を呼び出して、添付ファイルまたはアイテムを返します。 For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
+トークンと、添付ファイル識別子またはアイテム識別子の両方をサードパーティ システムに渡すことができます。 サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作または [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を呼び出して、添付ファイルまたはアイテムを返します。 たとえば、[選択したアイテムから添付ファイルを取得する](/outlook/add-ins/get-attachments-of-an-outlook-item)ためにリモート サービスを作成できます。
 
-読み取りモード`getCallbackTokenAsync`でメソッドを呼び出すには、 **ReadItem**の最低限のアクセス許可レベルが必要です。
+閲覧モードで `getCallbackTokenAsync` メソッドを呼び出すには、**ReadItem** の最小限のアクセス許可レベルが必要です。
 
-新規`getCallbackTokenAsync`作成モードで呼び出しを行うには、アイテムを保存しておく必要があります。 この[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback)メソッドには、 **readwriteitem**の最小アクセス許可レベルが必要です。
+作成モードで `getCallbackTokenAsync` を呼び出すには、アイテムを保存しておく必要があります。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドは、**ReadWriteItem** の最小限のアクセス許可レベルが必要です。
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
@@ -642,7 +638,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 |---|---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 読み取り | 作成 |
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| Read | Compose |
 
 ##### <a name="example"></a>例
 
@@ -669,7 +665,7 @@ function cb(asyncResult) {
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 |`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
@@ -684,9 +680,9 @@ function cb(asyncResult) {
 
 ##### <a name="requirements"></a>要件
 
-|要件| 値|
+|必要条件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0以降|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
@@ -745,11 +741,11 @@ Outlook on the web でメール アプリを実行している場合は、エン
 
 ##### <a name="parameters"></a>パラメーター
 
-|名前| 種類| 属性| 説明|
+|名前| 型| 属性| 説明|
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
-|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -818,14 +814,14 @@ function callback(asyncResult)  {
 
 ##### <a name="parameters"></a>パラメーター
 
-| 名前 | 種類 | 属性 | 説明 |
+| 名前 | 型 | 属性 | 説明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
+| `options.asyncContext` | オブジェクト | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|

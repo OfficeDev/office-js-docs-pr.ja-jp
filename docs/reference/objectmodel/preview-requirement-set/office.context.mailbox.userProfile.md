@@ -1,20 +1,20 @@
 ---
 title: Office.context.mailbox.userProfile - プレビュー要件セット
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 5941c4e1276535091a3ffcf5b2fb6aa972ed8c4d
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4afc64f247155576ab3f0024d1929a29a0f7dc0c
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696471"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629259"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -22,16 +22,16 @@ ms.locfileid: "36696471"
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+##### <a name="properties"></a>プロパティ
 
-| メンバー | 種類 |
-|--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
-| [timeZone](#timezone-string) | メンバー |
+| プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | 作成<br>読み取り | String | 1.6 |
+| [displayName](#displayname-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
 
-### <a name="members"></a>メンバー
+## <a name="property-details"></a>プロパティの詳細
 
 #### <a name="accounttype-string"></a>accountType: String
 

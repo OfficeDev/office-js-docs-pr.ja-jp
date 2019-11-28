@@ -1,34 +1,34 @@
 ---
 title: Office 名前空間-プレビュー要件セット
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: bd37b1be4d77d73cb56b0b2593ccc57dea6cab27
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902103"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629231"
 ---
 # <a name="office"></a>Office
 
 Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+##### <a name="properties"></a>Properties
 
-| メンバー | 型 |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | メンバー |
+| プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|---|
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | 1.0 |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | 1.0 |
+| [EventType](#eventtype-string) | 作成<br>読み取り | String | 1.5 |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | 1.0 |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -36,7 +36,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>プロパティの詳細
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
@@ -53,7 +53,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`Succeeded`| String|呼び出しが成功しました。|
 |`Failed`| String|呼び出しが失敗しました。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -80,7 +80,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -112,7 +112,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
 |`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -139,7 +139,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`Body`| String|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|

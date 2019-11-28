@@ -1,14 +1,14 @@
 ---
 title: Office のメールボックス-プレビュー要件セット
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: ff649029713984b32e817bbeaf7c59a48cc5b023
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902110"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629196"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -24,27 +24,41 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| 制限あり|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+##### <a name="properties"></a>プロパティ
 
-| メンバー | 種類 |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | メンバー |
-| [masterCategories](#mastercategories-mastercategories) | メンバー |
-| [restUrl](#resturl-string) | メンバー |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | メソッド |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | メソッド |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | メソッド |
-| [convertToRestId](#converttorestiditemid-restversion--string) | メソッド |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | メソッド |
-| [displayAppointmentForm](#displayappointmentformitemid) | メソッド |
-| [displayMessageForm](#displaymessageformitemid) | メソッド |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | メソッド |
-| [displayNewMessageForm](#displaynewmessageformparameters) | メソッド |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | メソッド |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | メソッド |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | メソッド |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | メソッド |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | メソッド |
+| プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | 作成<br>読み取り | [MasterCategories](/javascript/api/outlook/office.mastercategories) | プレビュー |
+| [restUrl](#resturl-string) | ReadItem | 作成<br>読み取り | String | 1.5 |
+
+##### <a name="methods"></a>メソッド
+
+| メソッド | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
+|---|---|---|---|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | 作成<br>読み取り | 1.5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | 制限あり | 作成<br>読み取り | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | 作成<br>読み取り | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | 制限あり | 作成<br>読み取り | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | 作成<br>読み取り | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | 作成<br>読み取り | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | 作成<br>読み取り | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | 読み取り | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | 作成<br>読み取り | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | 作成<br>読み取り | 1.5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | 作成<br>読み取り | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | 作成<br>読み取り | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | 作成<br>読み取り | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | 作成<br>読み取り | 1.5 |
+
+##### <a name="events"></a>イベント
+
+[Addハンドラ async](#addhandlerasynceventtype-handler-options-callback)と[removeハンドラ async](#removehandlerasynceventtype-options-callback)を使用して、次のイベントにサブスクライブし、サブスクライブを解除することができます。
+
+| イベント | 説明 | 最小値<br>要件セット |
+|---|---|---|
+|`ItemChanged`| 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`OfficeThemeChanged`| メールボックスの Office テーマが変更されました。 | プレビュー |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -54,7 +68,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 [userProfile](Office.context.mailbox.userProfile.md):Outlook アドインのユーザーに関する情報を提供します。
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>プロパティの詳細
 
 #### <a name="ewsurl-string"></a>ewsUrl: String
 
@@ -74,7 +88,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -98,7 +112,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 *   [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -131,15 +145,11 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 
 `restUrl` 値は、ユーザーのメールボックスに [REST API](/outlook/rest/) 呼び出しを行うために使用できます。
 
-アプリが閲覧モードで `restUrl` メンバーを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
-
-新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してから、`restUrl` メンバーを使用する必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
-
 ##### <a name="type"></a>型
 
 *   String
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -147,7 +157,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-### <a name="methods"></a>メソッド
+## <a name="method-details"></a>メソッドの詳細
 
 #### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -213,7 +223,7 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -254,7 +264,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 |---|---|---|
 |`timeValue`| 日付|日付オブジェクト|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -287,7 +297,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -326,7 +336,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|変換するローカル時刻の値。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -428,7 +438,7 @@ Outlook on the web では、このメソッドはフォームの本文が 32 KB 
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -541,7 +551,7 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 | `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
 
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -606,9 +616,9 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | Object | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
 | `options.isRest` | ブール値 |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
-| `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
+| `options.asyncContext` | オブジェクト |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 
 ##### <a name="errors"></a>エラー
@@ -789,7 +799,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
-|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -862,10 +872,10 @@ function callback(asyncResult)  {
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
+| `options.asyncContext` | オブジェクト | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|

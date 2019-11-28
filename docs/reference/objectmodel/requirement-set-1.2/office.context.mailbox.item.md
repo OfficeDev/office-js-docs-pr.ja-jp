@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス-要件セット1.2
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 50cc2bcf338d2fb2fee5e32e0cd408c72c138214
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: ab8c55d2f91b250b419c7c9c71fc044b6fa68279
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066271"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629210"
 ---
 # <a name="item"></a>item
 
@@ -16,7 +16,7 @@ ms.locfileid: "38066271"
 
 `item` の名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。[itemType](#itemtype-officemailboxenumsitemtype) プロパティを使用して、`item` の種類を指定できます。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -28,26 +28,26 @@ ms.locfileid: "38066271"
 
 | メンバー | 種類 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | メンバー |
-| [bcc](#bcc-recipients) | メンバー |
-| [body](#body-body) | メンバー |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | メンバー |
-| [conversationId](#nullable-conversationid-string) | メンバー |
-| [dateTimeCreated](#datetimecreated-date) | メンバー |
-| [dateTimeModified](#datetimemodified-date) | メンバー |
-| [end](#end-datetime) | メンバー |
-| [from](#from-emailaddressdetails) | メンバー |
-| [internetMessageId](#internetmessageid-string) | メンバー |
-| [itemClass](#itemclass-string) | メンバー |
-| [itemId](#nullable-itemid-string) | メンバー |
-| [itemType](#itemtype-officemailboxenumsitemtype) | メンバー |
-| [location](#location-stringlocation) | メンバー |
-| [normalizedSubject](#normalizedsubject-string) | メンバー |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | メンバー |
-| [organizer](#organizer-emailaddressdetails) | メンバー |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetails) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [organizer](#organizer-emailaddressdetails) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | メンバー |
-| [start](#start-datetime) | メンバー |
+| [sender](#sender-emailaddressdetails) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | メンバー |
 | [to](#to-arrayemailaddressdetailsrecipients) | メンバー |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | メソッド |
@@ -145,7 +145,7 @@ console.log(outputString);
 
 *   [受信者](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -178,7 +178,7 @@ function callback(asyncResult) {
 
 *   [Body](/javascript/api/outlook/office.body?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -248,7 +248,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -395,7 +395,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 *   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -421,7 +421,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -683,7 +683,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -704,7 +704,7 @@ function callback(asyncResult) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -760,7 +760,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -786,7 +786,7 @@ function callback(asyncResult) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -849,7 +849,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 
 *   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -894,7 +894,7 @@ function callback(asyncResult) {
 
 *   String | [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -940,7 +940,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -964,8 +964,8 @@ function callback(asyncResult) {
 |---|---|---|---|
 |`uri`| String||メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。|
 |`attachmentName`| String||添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。|
-|`options`| Object| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
-|`options.asyncContext`| Object| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
+|`options`| オブジェクト| &lt;オプション&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。|
+|`options.asyncContext`| オブジェクト| &lt;省略可能&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルのアップロードに失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。|
 
 ##### <a name="errors"></a>エラー
@@ -1035,7 +1035,7 @@ Office アドインを Outlook on the web で実行している場合、編集�
 |------------|-------------|
 | `NumberOfAttachmentsExceeded` | メッセージまたは予定の添付ファイルが多すぎます。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1221,7 +1221,7 @@ Outlook on the web では、回答フォームは、3 列表示のポップア�
 | `formData.attachments.itemId` | String | | `type` が `item` に設定されている場合にのみ使用されます。添付ファイルの EWS アイテムの ID。最大の長さが 100 文字の文字列です。 |
 | `callback` | function | &lt;optional&gt; | メソッドが完了すると、`callback` パラメーターに渡された関数が、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1427,7 +1427,7 @@ Office.initialize = function () {
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasKnownEntity` ルール要素の名前。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1479,7 +1479,7 @@ Office.initialize = function () {
 > [!NOTE]
 > アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1525,7 +1525,7 @@ var veggies = allMatches.veggies;
 |---|---|---|
 |`name`| String|一致するフィルターを定義する `ItemHasRegularExpressionMatch` ルール要素の名前。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1555,10 +1555,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 メッセージの件名または本文から非同期的に選択したデータを返します。
 
-選択されていないが、カーソルが本文または件名にある場合、メソッドは選択されたデータに対して空の文字列を返します。 本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。
-
-> [!NOTE]
-> Outlook on the web で、テキストが選択されていないのにカーソルが本文内にある場合、メソッドでは文字列 "null" を返します。 このような状況を確認するには、このセクションで後述する例を参照してください。
+選択されていない状態でカーソルが本文または件名にある場合、メソッドは選択されたデータに対し空の文字列を返します。本文または件名以外のフィールドが選択されている場合には、メソッドは`InvalidSelection`エラーを返します。
 
 ##### <a name="parameters"></a>パラメーター
 
@@ -1569,7 +1566,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |`options.asyncContext`| オブジェクト| &lt;optional&gt;|開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>コールバック メソッドから選択したデータにアクセスするには、`asyncResult.value.data` を呼び出します。 選択のソース プロパティにアクセスするには、`asyncResult.value.sourceProperty` を呼び出します。これは `body` または `subject` になります。|
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
@@ -1594,12 +1591,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }
@@ -1684,7 +1675,7 @@ function saveCallback(asyncResult) {
 |------------|-------------|
 | `InvalidAttachmentId` | 添付ファイル識別子が存在しません。 |
 
-##### <a name="requirements"></a>要件
+##### <a name="requirements"></a>Requirements
 
 |要件| 値|
 |---|---|
