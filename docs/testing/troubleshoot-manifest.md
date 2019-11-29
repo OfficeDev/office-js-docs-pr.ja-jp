@@ -1,14 +1,14 @@
 ---
 title: マニフェストの問題を検証し、トラブルシューティングする
 description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 10/29/2019
+ms.date: 11/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: cc9a660cdf3d4e216f9becd90ad58a6c777c6f2d
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924809"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629254"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
 

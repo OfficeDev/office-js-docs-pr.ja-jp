@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要件セット 1.5
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Priority
-ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: eefeab2cf6fbe78451afae7e588640fe7f50dba4
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627014"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629687"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -90,10 +90,6 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 この電子メール アカウントの REST エンドポイントの URL を取得します。
 
 `restUrl` 値は、ユーザーのメールボックスに [REST API](/outlook/rest/) 呼び出しを行うために使用できます。
-
-アプリが閲覧モードで `restUrl` メンバーを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
-
-新規作成モードでは、[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) メソッドを呼び出してから、`restUrl` メンバーを使用する必要があります。アプリには、`saveAsync` メソッドを呼び出す **ReadWriteItem** アクセス許可が必要です。
 
 > [!NOTE]
 > 構成されたカスタム REST URL を使用する Exchange 2016 以降のオンプレミスのインストールに接続されている Outlook クライアントは、`restUrl` に無効な値を返します。

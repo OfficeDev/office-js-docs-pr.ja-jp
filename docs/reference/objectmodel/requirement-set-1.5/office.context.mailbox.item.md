@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c5ab134c91e156368c21722726d7ee502397b99e
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: f52f6bfa510d5949da5b1b542ca2a0f6e6f22750
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066257"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629708"
 ---
 # <a name="item"></a>item
 
@@ -1642,9 +1642,6 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 選択されていない状態でカーソルが本文または件名にある場合、メソッドは選択されたデータに対し空の文字列を返します。本文または件名以外のフィールドが選択されている場合には、メソッドは`InvalidSelection`エラーを返します。
 
-> [!NOTE]
-> Outlook on the web で、テキストが選択されていないのにカーソルが本文内にある場合、メソッドでは文字列 "null" を返します。 この状況を確認するには、このセクション後半の例を参照してください。
-
 ##### <a name="parameters"></a>パラメーター
 
 |名前| 型| 属性| 説明|
@@ -1679,12 +1676,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }
