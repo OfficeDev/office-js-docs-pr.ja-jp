@@ -1,14 +1,14 @@
 ---
 title: Office のメールボックス-プレビュー要件セット
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 864c4f2931762ff6d8a02abb8da1a03e1abcab80
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629196"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670119"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -29,7 +29,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 | プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|---|---|
 | [ewsUrl](#ewsurl-string) | ReadItem | 作成<br>読み取り | String | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | 作成<br>読み取り | [MasterCategories](/javascript/api/outlook/office.mastercategories) | プレビュー |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | 作成<br>読み取り | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 1.8 |
 | [restUrl](#resturl-string) | ReadItem | 作成<br>読み取り | String | 1.5 |
 
 ##### <a name="methods"></a>メソッド
@@ -88,7 +88,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -112,7 +112,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 *   [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -149,7 +149,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -223,7 +223,7 @@ REST API ([Outlook Mail API](/previous-versions/office/office-365-api/api/versio
 |`itemId`| String|Outlook REST API 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|アイテム ID の取得に使用された Outlook REST API のバージョンを示す値。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -264,7 +264,7 @@ Outlook デスクトップ クライアントでメール アプリを実行し�
 |---|---|---|
 |`timeValue`| 日付|日付オブジェクト|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -297,7 +297,7 @@ EWS または `itemId` プロパティで取得されるアイテム ID は、RE
 |`itemId`| String|Exchange Web サービス (EWS) 形式のアイテム ID|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|変換後の ID を使用する Outlook REST API のバージョンを示す値。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -336,7 +336,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|変換するローカル時刻の値。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -438,7 +438,7 @@ Outlook on the web では、このメソッドはフォームの本文が 32 KB 
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -551,7 +551,7 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 | `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
 
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -616,9 +616,9 @@ EWS トークンが要求された場合 (`options.isRest = false`)、結果ト�
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-| `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.isRest` | ブール値 |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
-| `options.asyncContext` | オブジェクト |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
+| `options` | Object | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
+| `options.isRest` | Boolean |  &lt;optional&gt; | 提供されたトークンを Outlook REST API または Exchange Web サービスに使用するかどうかを決定します。既定値は、`false` です。 |
+| `options.asyncContext` | Object |  &lt;省略可能&gt; | 非同期メソッドに渡される状態データです。 |
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。<br/><br/>トークンは、`asyncResult.value` プロパティで文字列として提供されます。<br><br>エラーが発生した場合、 `asyncResult.error` および `asyncResult.diagnostics` のプロパティで追加情報が提供される場合があります。|
 
 ##### <a name="errors"></a>エラー
@@ -799,7 +799,7 @@ Outlook on the web でメール アプリを実行している場合は、エン
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。<br/><br/>The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.|
-|`userContext`| オブジェクト| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+|`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
 ##### <a name="requirements"></a>要件
 
@@ -872,10 +872,10 @@ function callback(asyncResult)  {
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || ハンドラーを取り消すイベント。 |
 | `options` | オブジェクト | &lt;オプション&gt; | 次のプロパティのうち 1 つ以上を含むオブジェクト リテラル。 |
-| `options.asyncContext` | オブジェクト | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
+| `options.asyncContext` | Object | &lt;省略可能&gt; | 開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。 |
 | `callback` | function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`asyncResult`](/javascript/api/office/office.asyncresult) オブジェクトである 1 つのパラメーター `AsyncResult` で呼び出されます。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|

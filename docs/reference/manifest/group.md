@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの Group 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 7cc1f4c398eeb013eb6033b207b395466f7d72ca
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ad1a566e259188ed20032bc5a3004736474e1f01
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450710"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670133"
 ---
 # <a name="group-element"></a>Group 要素
 
@@ -35,7 +35,7 @@ ms.locfileid: "32450710"
 必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
 
 ### <a name="control"></a>Control
-1 つのグループに少なくとも 1 つのコントロールが必要です。
+1 つのグループに少なくとも 1 つのコントロールが必要です。 サポートされているコントロールの種類の詳細については、 [Control](control.md)要素を参照してください。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">
