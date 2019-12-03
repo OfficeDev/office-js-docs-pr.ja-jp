@@ -4,19 +4,19 @@ title: 'チュートリアル: Excel カスタム関数と作業ウィンドウ�
 ms.prod: excel
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
 localization_priority: Priority
-ms.openlocfilehash: dcd4bced7e1419a57256f4ec54e3ff72c0edf9ef
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962108"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670203"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)
 
 Excel カスタム関数と作業ウィンドウはグローバル データを共有し、互いに関数呼び出しを行うことができます。 カスタム関数が作業ウィンドウで機能するようにプロジェクトを構成するには、この記事の指示に従ってください。
 
 > [!NOTE]
-> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 この記事のプレビュー機能は、Windows 上の Excel でのみ使用できます。 プレビュー機能を試すには、[Office Insider に参加する](https://insider.office.com/ja-JP/join)必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) に参加することで入手できます。
+> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 この記事のプレビュー機能は、Windows 上の Excel でのみ使用できます。 プレビュー機能を試すには、[Office Insider に参加する](https://insider.office.com/join)必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) に参加することで入手できます。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 

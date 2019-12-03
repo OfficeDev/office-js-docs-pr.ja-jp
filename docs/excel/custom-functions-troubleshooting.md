@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
 localization_priority: Priority
-ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771384"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670175"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -41,11 +41,11 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
 
-"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
+"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
-localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work)の*オプション 2* を参照してください。
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の*オプション 2* を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 

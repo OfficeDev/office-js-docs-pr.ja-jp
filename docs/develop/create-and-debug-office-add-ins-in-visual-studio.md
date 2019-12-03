@@ -3,12 +3,12 @@ title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626832"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670168"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -30,7 +30,7 @@ ms.locfileid: "37626832"
 - Office 2013 以降
 
     > [!TIP]
-    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
+    > まだ Office をお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して Office 365 サブスクリプションを取得するか、[1 か月間無料試用に登録](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)することができます。
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Visual Studio でアドイン プロジェクトを作成する
 
