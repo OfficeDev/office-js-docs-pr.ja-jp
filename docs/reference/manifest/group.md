@@ -3,12 +3,12 @@ title: マニフェストファイルの Group 要素
 description: ''
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: ad1a566e259188ed20032bc5a3004736474e1f01
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 35db4829b40078e97fbfc007e2fb552e00875f9c
+ms.sourcegitcommit: 164b11b1e9d2ae20b3d816092025b32a9070450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670133"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39818728"
 ---
 # <a name="group-element"></a>Group 要素
 
@@ -28,11 +28,16 @@ ms.locfileid: "39670133"
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | ○ |  CustomTab またはグループのラベル。  |
+|  [Icon](icon.md)      | はい |  グループのイメージ。  |
 |  [Control](#control)    | はい |  1 つ以上のコントロール オブジェクトのコレクション。  |
 
 ### <a name="label"></a>Label 
 
 必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
+
+### <a name="icon"></a>Icon
+
+必ず指定します。 タブに多数のグループが含まれ、プログラムウィンドウのサイズが変更されると、代わりに、指定したイメージが表示されることがあります。
 
 ### <a name="control"></a>Control
 1 つのグループに少なくとも 1 つのコントロールが必要です。 サポートされているコントロールの種類の詳細については、 [Control](control.md)要素を参照してください。
@@ -40,8 +45,13 @@ ms.locfileid: "39670133"
 ```xml
 <Group id="msgreadCustomTab.grp1">
     <Label resid="residCustomTabGroupLabel"/>
+    <Icon>
+        <bt:Image size="16" resid="blue-icon-16" />
+        <bt:Image size="32" resid="blue-icon-32" />
+        <bt:Image size="80" resid="blue-icon-80" />
+    </Icon>
     <Control xsi:type="Button" id="Button2">
-    <!-- information on the control -->
+        <!-- information on the control -->
     </Control>
     <!-- other controls, as needed -->
 </Group>
