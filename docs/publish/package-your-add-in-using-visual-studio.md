@@ -1,18 +1,21 @@
 ---
-title: 発行のための準備として Visual Studio を使用してアドインをパッケージ化する
+title: Visual Studio を使用してアドインを発行する
 description: Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法。
-ms.date: 10/14/2019
+ms.date: 12/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 5da7fc643eb517f777325658d01889f3e51906bd
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626965"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670196"
 ---
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>発行のための準備として Visual Studio を使用してアドインをパッケージ化する
+# <a name="publish-your-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを発行する
 
 Office アドイン パッケージには、アドインの発行に使用する XML [マニフェスト ファイル](../develop/add-in-manifests.md)が含まれています。 プロジェクトの Web アプリケーション ファイルは個別に発行する必要があります。 この記事では、Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法について説明します。
+
+> [!NOTE]
+> Yeoman ジェネレーターを使用して作成し、Visual Studio Code またはその他のエディターで開発した Office アドインの発行については、「[Visual Studio Code で開発したアドインの発行](publish-add-in-vs-code.md)」を参照してください。
 
 ## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>Visual Studio 2019 を使用して Web プロジェクトを展開するには
 

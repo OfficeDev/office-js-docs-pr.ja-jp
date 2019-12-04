@@ -136,6 +136,8 @@
           href: develop/develop-office-add-ins-for-the-ipad.md
         - name: Angular でアドインを開発する
           href: develop/add-ins-with-angular2.md
+        - name: Visual Studio Code でアドインを開発する
+          href: develop/develop-add-ins-vscode.md
         - name: Visual Studio でアドインを開発する
           items:
             - name: Visual Studio での Office アドインの作成とデバッグ
@@ -216,10 +218,14 @@
       items:
         - name: 概要
           href: publish/publish.md
-        - name: Microsoft Azure で Office アドインをホストする
-          href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Visual Studio を使用してアドインをパッケージ化
-          href: publish/package-your-add-in-using-visual-studio.md
+        - name: アドインを発行する (VS Code)
+          href: publish/publish-add-in-vs-code.md
+        - name: Visual Studio
+          items:
+            - name: アドインを発行する (Visual Studio)
+              href: publish/package-your-add-in-using-visual-studio.md
+            - name: Microsoft Azure で Office アドインをホストする
+              href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: アドインを AppSource に公開する
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource の検証ポリシー

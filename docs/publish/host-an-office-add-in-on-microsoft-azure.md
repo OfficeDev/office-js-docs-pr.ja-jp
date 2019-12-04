@@ -3,12 +3,12 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 106c775fa74b83d85111922f5488477772018b90
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626979"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670182"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -26,12 +26,12 @@ ms.locfileid: "37626979"
 2. Office をインストールする。
 
     > [!NOTE]
-    > まだ Office を所持していない場合は、[1 か月間無料試用版の登録](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)が可能です。
+    > まだ Office を所持していない場合は、[1 か月間無料試用版の登録](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)が可能です。
 
 3. Azure サブスクリプションを取得します。
 
     > [!NOTE]
-    > まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [Visual Studio サブスクリプションの一部として取得](https://azure.microsoft.com/ja-JP/pricing/member-offers/visual-studio-subscriptions/)できます。また、[無料試用版の登録](https://azure.microsoft.com/pricing/free-trial)も可能です。 
+    > まだ Azure サブスクリプションを所持していない場合、このサブスクリプションは [Visual Studio サブスクリプションの一部として取得](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)できます。また、[無料試用版の登録](https://azure.microsoft.com/pricing/free-trial)も可能です。 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>手順 1: アドインの XML マニフェスト ファイルをホストするための共有フォルダーを作成する
 
@@ -162,4 +162,4 @@ Visual Studio は、Web プロジェクトに変更を加えることなくそ�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインを発行する](../publish/publish.md)
-- [発行のための準備として Visual Studio を使用してアドインをパッケージ化する](../publish/package-your-add-in-using-visual-studio.md)
+- [Visual Studio を使用してアドインを発行する](../publish/package-your-add-in-using-visual-studio.md)
