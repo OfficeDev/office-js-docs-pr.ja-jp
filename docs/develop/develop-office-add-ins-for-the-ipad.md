@@ -3,12 +3,12 @@ title: iPad 用の Office アドインを開発する
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 1b6d17fd264249dbc8000fe1b1f63605e68fd904
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 3fbe065e111519f81c39d2255b452eab9491fa9d
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226749"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830189"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>iPad 用の Office アドインを開発する
 
@@ -24,7 +24,7 @@ ms.locfileid: "35226749"
 |タッチ用にアドインを最適化します。|マウスとキーボードに加え、タッチ入力に対して、UI が素早く応答するようにします。|[UX 設計原則を適用する](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
 |アドインを無料にします。|iPad 上の Office は、ユーザー数を拡大して、サービスを促進できるチャネルです。これらの新しいユーザーは、お客様になる可能性があります。|[検証ポリシー 10.8](/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
 |アドインを商目的で使用しないようにします。|アドインは、アプリ内購入、試用版の提供、有料版へのアップセルを目的とする UI、またはユーザーが他のコンテンツやアプリやアドインを購入または取得できるすべてのオンライン ストアへのリンクと無縁である必要があります。またプライバシー ポリシーと使用条件のページにも、商用の UI または AppSource へのリンクがないことが必要です。|[検証ポリシー 3.4](/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
-|アドインを AppSource に再送信します。|販売者ダッシュボードで、**[このアドインを iPad の Office アドイン カタログで利用できる状態にする]** チェック ボックスをオンにして、[Apple ID] ボックスに Apple 開発者 ID を入力します。[アプリケーション プロバイダー契約](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)を確認して、契約を十分に理解します。|[AppSource と Office 内でソリューションを使用できるようにする](/office/dev/store/submit-to-the-office-store)|
+|アドインを AppSource に再送信します。|[パートナーセンター] の [**製品のセットアップ**] ページで、[ **iOS および Android で製品を利用できるようにする (該当する場合)** ] チェックボックスをオンにして、[アカウント設定] に APPLE の開発者 ID を入力します。 [アプリケーションプロバイダアグリーメント](https://go.microsoft.com/fwlink/?linkid=715691)を確認して、用語を理解していることを確認してください。|[AppSource と Office 内でソリューションを使用できるようにする](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 他のプラットフォームで実行されている Office アプリケーション用にアドインをそのまま保持することができます。また、アドインが実行されているブラウザーとデバイスに基づく別の UI も提供できます。iPad 上でアドインが実行されているかどうかを検出するためには、次の API を使用できます。
 - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#touchenabled)
