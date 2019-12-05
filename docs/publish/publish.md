@@ -3,12 +3,12 @@ title: Office アドインを展開し、発行する | Microsoft Docs
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c47f8743edeed1fd366d948d781c97da1c97958a
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769555"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830203"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
@@ -19,7 +19,7 @@ ms.locfileid: "36769555"
 |[サイドロード](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|開発プロセスの一環として、Windows、iPad、Mac、またはブラウザーで実行するアドインをテストします。|
 |[一元展開](centralized-deployment.md)|クラウド環境またはハイブリッド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
 |[SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|オンプレミス環境で、組織内のユーザーにアドインを配布します。|
-|[AppSource](/office/dev/store/submit-to-the-office-store)|ユーザーに配布する目的でアドインを公開します。|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|ユーザーに配布する目的でアドインを公開します。|
 |[Exchange サーバー](#outlook-add-in-deployment)|オンプレミス環境またはオンライン環境で、ユーザーに Outlook アドインを配布します。|
 |[ネットワーク共有](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|アドインをホストさせようとしているネットワーク上の Windows コンピューターで、共有フォルダー カタログとして使用するフォルダーの親フォルダーまたはドライブ文字に移動します。|
 
@@ -87,5 +87,5 @@ Outlook アドインの展開には以下が必要です。
 - [効果的な AppSource 登録リストを作成する](/office/dev/store/create-effective-office-store-listings)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: /office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

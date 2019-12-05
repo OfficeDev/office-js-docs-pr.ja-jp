@@ -3,12 +3,12 @@ title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2b07ffa898d0db6d84bb96c9db797b91930446e0
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448249"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830196"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -126,7 +126,7 @@ ms.locfileid: "32448249"
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 
-- アドインを [AppSource](/office/dev/store/submit-to-the-office-store) に公開して、Web サイトで[それを宣伝](/office/dev/store/promote-your-office-store-solution)します。[効果的な AppSource リストを作成します](/office/dev/store/create-effective-office-store-listings)。
+- アドインを [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) に公開して、Web サイトで[それを宣伝](/office/dev/store/promote-your-office-store-solution)します。[効果的な AppSource リストを作成します](/office/dev/store/create-effective-office-store-listings)。
 
 - アドイン タイトルを簡潔でわかりやすいものにします。128 文字以下にします。
 
