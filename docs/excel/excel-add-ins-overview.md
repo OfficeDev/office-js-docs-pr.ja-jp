@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4c60482e557f85edf044ab8e68e6b96f9e860ab
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468785"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830224"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -51,7 +51,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 * アドインと Excel を統合する方法。アドインが作成する任意のカスタム UI (リボンのボタン、コンテキスト メニューなど) の統合を含む。
 * ドキュメントの読み取り、書き込みなど、アドインに必要なアクセス許可。
 
-エンドユーザーが Excel アドインをインストールして使用できるようにするには、そのマニフェストを AppSource かアドイン カタログに公開する必要があります。 
+エンドユーザーが Excel アドインをインストールして使用できるようにするには、そのマニフェストを AppSource かアドイン カタログに公開する必要があります。 AppSource の発行の詳細について、「[AppSource と Office 内でソリューションを使用できるようにする](/office/dev/store/submit-to-appsource-via-partner-center)」を参照してください。
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Excel アドインの機能
 
