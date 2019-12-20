@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e1420bd355c16941c7cb4ce66ecdca56e1c8927
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1a542a0b00bd04674c4da4c45909ff03a152983c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902185"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814160"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -34,16 +34,16 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいオブジェクトを追加します。
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8) が追加されました: 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。
 - [SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md) が追加されました: [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素を追加します。 代理人のシナリオでアドインが使用できるかどうかを定義します。
-- [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいプロパティを追加します。
-- [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item?view=outlook-js-1.8#categories) が追加されました: アイテムのカテゴリのセットを表す新しいプロパティを追加します。
-- [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) が追加されました: メッセージまたは予定に Base 64 エンコード文字列として表されるファイルを添付する新しい方法を追加します。
-- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation) が追加されました: 予定の場所のセットを表す新しいプロパティを追加します。
-- [Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-) が追加されました: メッセージ アイテムのすべてのインターネット ヘッダーを取得する新しいメソッドを追加します。 閲覧モードのみ。
-- [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) が追加されました: 特定の添付ファイルのコンテンツを取得する新しい方法を追加します。
-- [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails) が追加されました: 作成モードで、アイテムの添付ファイルを取得する新しい方法を追加します。
-- [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback) が追加されました: 保存済みの予定またはメッセージ アイテムの ID を取得する新しい方法を追加します。
-- [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback) が追加されました: 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法を追加します。
-- [Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティを追加します。 新規作成モードのみです。
+- [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいプロパティを追加します。
+- [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties) が追加されました: アイテムのカテゴリのセットを表す新しいプロパティを追加します。
+- [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#methods) が追加されました: メッセージまたは予定に Base 64 エンコード文字列として表されるファイルを添付する新しい方法を追加します。
+- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#properties) が追加されました: 予定の場所のセットを表す新しいプロパティを追加します。
+- [Office.context.mailbox.item.getAllInternetHeadersAsync](office.context.mailbox.item.md#methods) が追加されました: メッセージ アイテムのすべてのインターネット ヘッダーを取得する新しいメソッドを追加します。 閲覧モードのみ。
+- [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#methods) が追加されました: 特定の添付ファイルのコンテンツを取得する新しい方法を追加します。
+- [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#methods) が追加されました: 作成モードで、アイテムの添付ファイルを取得する新しい方法を追加します。
+- [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods) が追加されました: 保存済みの予定またはメッセージ アイテムの ID を取得する新しい方法を追加します。
+- [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods) が追加されました: 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法を追加します。
+- [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティを追加します。 新規作成モードのみです。
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) が変更されました: 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション `options` パラメーターを追加します 。 この値は、イベントの実行をキャンセルするために使用されます。
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8) が追加されました: 添付ファイルのコンテンツに適用される書式を特定する新しい列挙型を追加します。
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8) が追加されました: アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型を追加します。

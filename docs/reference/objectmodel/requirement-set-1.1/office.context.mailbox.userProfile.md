@@ -1,112 +1,33 @@
 ---
 title: Office.-mailbox-要件セット1.1
 description: ''
-ms.date: 08/08/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 06492623e0b9ab16792d6b23dfaeb27d99125ff1
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 1bf24eb39329be0139957cc6e0f8629fb9f3b166
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696401"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40815019"
 ---
 # <a name="userprofile"></a>userProfile
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile
+
+Outlook アドインのユーザーに関する情報を提供します。
 
 ##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+## <a name="properties"></a>プロパティ
 
-| メンバー | 種類 |
-|--------|------|
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
-| [timeZone](#timezone-string) | メンバー |
-
-### <a name="members"></a>メンバー
-
-#### <a name="displayname-string"></a>displayName: String
-
-ユーザーの表示名を取得します。
-
-##### <a name="type"></a>型
-
-*   String
-
-##### <a name="requirements"></a>要件
-
-|要件| 値|
-|---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
-
-##### <a name="example"></a>例
-
-```js
-// Example: Allie Bellew
-console.log(Office.context.mailbox.userProfile.displayName);
-```
-
-<br>
-
----
----
-
-#### <a name="emailaddress-string"></a>emailAddress: String
-
-ユーザーの SMTP 電子メール アドレスを取得します。
-
-##### <a name="type"></a>型
-
-*   String
-
-##### <a name="requirements"></a>要件
-
-|要件| 値|
-|---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
-
-##### <a name="example"></a>例
-
-```js
-// Example: allieb@contoso.com
-console.log(Office.context.mailbox.userProfile.emailAddress);
-```
-
-<br>
-
----
----
-
-#### <a name="timezone-string"></a>timeZone: String
-
-ユーザーの既定のタイム ゾーンを取得します。
-
-##### <a name="type"></a>型
-
-*   String
-
-##### <a name="requirements"></a>要件
-
-|要件| 値|
-|---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
-
-##### <a name="example"></a>例
-
-```js
-// Example: Pacific Standard Time
-console.log(Office.context.mailbox.userProfile.timeZone);
-```
+| プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|---|:---:|
+| [displayName](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1#displayname) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [emailAddress](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1#emailaddress) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1#timezone) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

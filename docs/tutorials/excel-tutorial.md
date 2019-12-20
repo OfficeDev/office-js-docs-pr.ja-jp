@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: c0a3df72d600acb34008ff574ec2ab2eee070e2e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629729"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814216"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -790,7 +790,7 @@ ms.locfileid: "39629729"
             <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API のオンラインのみの要件セット
 description: ExcelApiOnline の要件セットの詳細
-ms.date: 11/19/2019
+ms.date: 12/05/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e583c9832f04e17dc1c82d38d056fe2749888a77
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757493"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814153"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API のオンラインのみの要件セット
 
@@ -40,7 +40,23 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API リスト
 
-現時点では、オンライン専用の Api はありません。 新機能が web 上の Excel に追加され、Office JavaScript Api によってサポートされるようになると、もう一度確認してください。
+次の Api は、現在、 `ExcelApiOnline 1.1`要件セットの一部として web 上の Excel で使用できます。
+
+| クラス | フィールド | 説明 |
+|:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|コメントに記載されているエンティティ (人物など) を取得します。|
+||[richContent](/javascript/api/excel/excel.comment#richcontent)|リッチコメントの内容 (コメントに含まれるメンションなど) を取得します。 この文字列は、エンドユーザーに表示されることを意図したものではありません。 アドインでは、リッチコメントコンテンツを解析するためにのみ使用する必要があります。|
+||[updateMentions (contentWithMentions ション: CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|特別に書式設定された文字列とメンションの一覧を使用して、コメントの内容を更新します。|
+|[コメントについて](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|コメントで言及されているエンティティの電子メールアドレスを取得または設定します。|
+||[id](/javascript/api/excel/excel.commentmention#id)|エンティティの id を取得または設定します。 これは、のいずれかの`CommentRichContent.richContent`id と一致します。|
+||[name](/javascript/api/excel/excel.commentmention#name)|コメントで言及されているエンティティの名前を取得または設定します。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[mentions](/javascript/api/excel/excel.commentreply#mentions)|コメントに記載されているエンティティ (人物など) を取得します。|
+||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|リッチコメントの内容 (コメントに含まれるメンションなど) を取得します。 この文字列は、エンドユーザーに表示されることを意図したものではありません。 アドインでは、リッチコメントコンテンツを解析するためにのみ使用する必要があります。|
+||[updateMentions (contentWithMentions ション: CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|特別に書式設定された文字列とメンションの一覧を使用して、コメントの内容を更新します。|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|コメント内で記述されているすべてのエンティティ (人物など) を含む配列。|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
+|[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange: Range \| string)](/javascript/api/excel/excel.range#moveto-destinationrange-)|セルの値、書式設定、および数式を現在の範囲から移動先の範囲に移動し、そのセルの古い情報を置き換えます。|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (金額: 数値)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|範囲の書式のインデントを調整します。 [インデント] の値の範囲は 0 ~ 250 で、文字単位です。|
 
 ## <a name="see-also"></a>関連項目
 

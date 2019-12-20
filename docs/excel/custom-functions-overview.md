@@ -5,12 +5,12 @@ title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 615a20bfcae94445eb21fc460c6718917ff8a20d
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 252ff1badd935dda161f474bb7fefa8e782fd1c4
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468736"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814466"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -71,7 +71,7 @@ function add(first, second){
 カスタム関数のランタイムの読み込みを制御する **functions.html** ファイルは、カスタム関数の現在の CDN にリンクしていなければならないことに注意してください。 最新バージョンの Yo Office ジェネレーターを使用して作成されたプロジェクトは、正しい CDN を参照します。 2019 年 3 月以前の古いカスタム関数のプロジェクトを改良する場合は、以下のコードを **functions.html** ページにコピーする必要があります。
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/custom-functions-runtime.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/custom-functions-runtime.js" type="text/javascript"></script>
 ```
 
 ### <a name="manifest-file"></a>マニフェスト ファイル

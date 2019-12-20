@@ -1,14 +1,14 @@
 ---
 title: 一般的なコーディングの問題と予期しないプラットフォームの動作
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 localization_priority: Normal
-ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301933"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814013"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>一般的なコーディングの問題と予期しないプラットフォームの動作
 
@@ -86,11 +86,27 @@ Excel アドインを作成している場合は、ブックを操作すると�
 
 ## <a name="setting-read-only-properties"></a>読み取り専用プロパティの設定
 
-Office JS の[TypeScript 定義](/referencing-the-javascript-api-for-office-library-from-its-cdn.md)は、読み取り専用のオブジェクトプロパティを指定します。 読み取り専用プロパティを設定しようとすると、エラーがスローされずに書き込み操作が失敗します。 次の例では、誤って読み取り専用プロパティ[Chart.id](/javascript/api/excel/excel.chart#id)を設定しようとしています。
+Office JS の[TypeScript 定義](referencing-the-javascript-api-for-office-library-from-its-cdn.md)は、読み取り専用のオブジェクトプロパティを指定します。 読み取り専用プロパティを設定しようとすると、エラーがスローされずに書き込み操作が失敗します。 次の例では、誤って読み取り専用プロパティ[Chart.id](/javascript/api/excel/excel.chart#id)を設定しようとしています。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
+```
+
+## <a name="removing-event-handlers"></a>イベントハンドラーの削除
+
+イベントハンドラーは、追加したもの`RequestContext`と同じものを使用して削除する必要があります。 実行中にアドインでイベントハンドラーを削除する必要がある場合は、ハンドラーを追加するために使用されるコンテキストオブジェクトを格納する必要があります。
+
+```js
+Excel.run(async (context) => {
+    [...]
+
+    // To later remove an event handler, store the context somewhere accessible to the handler removal function.
+    // You may find it helpful to also store the event handler object and associate it with the context.
+    selectionChangedHandler = myWorksheet.onSelectionChanged.add(callback);
+    savedContext = currentContext;
+    return context.sync();
+}
 ```
 
 ## <a name="see-also"></a>関連項目

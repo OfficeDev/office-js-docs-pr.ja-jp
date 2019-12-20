@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c26f1f97382b8e8b1807a3eeeaa63cb6b553cb1e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353854"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814034"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -33,9 +33,6 @@ Office アドインは、アドインのランタイム環境、複数層のア�
 また、Office アドインによるメモリ、CPU、およびネットワーク リソースの使用が管理可能になり、良好なパフォーマンスと信頼性が確保されます。
 
 以降のセクションでは、Windows ベース デバイスの Office クライアント、OS X Mac デバイス、および Web ブラウザーでのアドインの実行がランタイム アーキテクチャによってどのようにサポートされるかについて簡潔に説明します。
-
-> [!NOTE]
-> WIP と Intune を Office アドインと一緒に使用することの詳細については、「[WIP と Intune を使用して、Office アドインを実行しているドキュメント内のエンタープライズ データを保護する](/microsoft-365/enterprise/office-add-ins-wip)」を参照してください。
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Windows および OS X のデバイス用のクライアント
 

@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.3
 description: ''
-ms.date: 08/13/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 2d451e9425f900c7a9cfa5ce9d3baadfa112396c
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 3c6ddc34001f4d1622bc76d9bca1fbde9425be8b
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696240"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814900"
 ---
 # <a name="office"></a>Office
 
@@ -18,24 +18,28 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
-##### <a name="members-and-methods"></a>メンバーとメソッド
+##### <a name="properties"></a>Properties
 
-| メンバー | 種類 |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | メンバー |
+| プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|:---:|
+| [context](office.context.md) | 作成<br>読み取り | [Context](/javascript/api/office/office.context?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### <a name="enumerations"></a>列挙型
+
+| 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>名前空間
 
-[context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.3): `ItemType`、、、、、 `EntityType` `AttachmentType` `RecipientType` `ResponseType`など、多数の Outlook 固有の列挙を含み`ItemNotificationMessageType`ます。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.3):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。
-
-### <a name="members"></a>Members
+## <a name="enumeration-details"></a>列挙の詳細
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
@@ -56,7 +60,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 <br>
@@ -83,7 +87,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
 
 <br>
@@ -110,5 +114,5 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |要件| 値|
 |---|---|
-|[メールボックスの最小要件セットのバージョン](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)| 新規作成または閲覧|
