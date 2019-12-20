@@ -1,141 +1,145 @@
 ---
 title: Office 名前空間-要件セット1.6
 description: ''
-ms.date: 08/13/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ae764e8cda2b3f14e33b883d054379db7b37a687
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: e15f01db9423a9df38608f18098d2c808f5d944b
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696002"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814669"
 ---
-# <a name="office"></a><span data-ttu-id="bfc80-102">Office</span><span class="sxs-lookup"><span data-stu-id="bfc80-102">Office</span></span>
+# <a name="office"></a><span data-ttu-id="99c20-102">Office</span><span class="sxs-lookup"><span data-stu-id="99c20-102">Office</span></span>
 
-<span data-ttu-id="bfc80-p101">Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bfc80-p101">The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).</span></span>
+<span data-ttu-id="99c20-p101">Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="99c20-p101">The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="bfc80-105">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-105">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="99c20-105">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-105">Requirements</span></span>
 
-|<span data-ttu-id="bfc80-106">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-106">Requirement</span></span>| <span data-ttu-id="bfc80-107">値</span><span class="sxs-lookup"><span data-stu-id="bfc80-107">Value</span></span>|
+|<span data-ttu-id="99c20-106">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-106">Requirement</span></span>| <span data-ttu-id="99c20-107">値</span><span class="sxs-lookup"><span data-stu-id="99c20-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="bfc80-108">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="bfc80-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="bfc80-109">1.0</span><span class="sxs-lookup"><span data-stu-id="bfc80-109">1.0</span></span>|
-|[<span data-ttu-id="bfc80-110">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="bfc80-110">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="bfc80-111">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="bfc80-111">Compose or Read</span></span>|
+|[<span data-ttu-id="99c20-108">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="99c20-108">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="99c20-109">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-109">1.1</span></span>|
+|[<span data-ttu-id="99c20-110">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="99c20-110">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="99c20-111">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="99c20-111">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="bfc80-112">メンバーとメソッド</span><span class="sxs-lookup"><span data-stu-id="bfc80-112">Members and methods</span></span>
+##### <a name="properties"></a><span data-ttu-id="99c20-112">Properties</span><span class="sxs-lookup"><span data-stu-id="99c20-112">Properties</span></span>
 
-| <span data-ttu-id="bfc80-113">メンバー</span><span class="sxs-lookup"><span data-stu-id="bfc80-113">Member</span></span> | <span data-ttu-id="bfc80-114">種類</span><span class="sxs-lookup"><span data-stu-id="bfc80-114">Type</span></span> |
-|--------|------|
-| [<span data-ttu-id="bfc80-115">AsyncResultStatus</span><span class="sxs-lookup"><span data-stu-id="bfc80-115">AsyncResultStatus</span></span>](#asyncresultstatus-string) | <span data-ttu-id="bfc80-116">Member</span><span class="sxs-lookup"><span data-stu-id="bfc80-116">Member</span></span> |
-| [<span data-ttu-id="bfc80-117">CoercionType</span><span class="sxs-lookup"><span data-stu-id="bfc80-117">CoercionType</span></span>](#coerciontype-string) | <span data-ttu-id="bfc80-118">Member</span><span class="sxs-lookup"><span data-stu-id="bfc80-118">Member</span></span> |
-| [<span data-ttu-id="bfc80-119">EventType</span><span class="sxs-lookup"><span data-stu-id="bfc80-119">EventType</span></span>](#eventtype-string) | <span data-ttu-id="bfc80-120">Member</span><span class="sxs-lookup"><span data-stu-id="bfc80-120">Member</span></span> |
-| [<span data-ttu-id="bfc80-121">SourceProperty</span><span class="sxs-lookup"><span data-stu-id="bfc80-121">SourceProperty</span></span>](#sourceproperty-string) | <span data-ttu-id="bfc80-122">メンバー</span><span class="sxs-lookup"><span data-stu-id="bfc80-122">Member</span></span> |
+| <span data-ttu-id="99c20-113">プロパティ</span><span class="sxs-lookup"><span data-stu-id="99c20-113">Property</span></span> | <span data-ttu-id="99c20-114">モード</span><span class="sxs-lookup"><span data-stu-id="99c20-114">Modes</span></span> | <span data-ttu-id="99c20-115">戻り値の種類</span><span class="sxs-lookup"><span data-stu-id="99c20-115">Return type</span></span> | <span data-ttu-id="99c20-116">最小値</span><span class="sxs-lookup"><span data-stu-id="99c20-116">Minimum</span></span><br><span data-ttu-id="99c20-117">要件セット</span><span class="sxs-lookup"><span data-stu-id="99c20-117">requirement set</span></span> |
+|---|---|---|:---:|
+| [<span data-ttu-id="99c20-118">context</span><span class="sxs-lookup"><span data-stu-id="99c20-118">context</span></span>](office.context.md) | <span data-ttu-id="99c20-119">作成</span><span class="sxs-lookup"><span data-stu-id="99c20-119">Compose</span></span><br><span data-ttu-id="99c20-120">読み取り</span><span class="sxs-lookup"><span data-stu-id="99c20-120">Read</span></span> | [<span data-ttu-id="99c20-121">Context</span><span class="sxs-lookup"><span data-stu-id="99c20-121">Context</span></span>](/javascript/api/office/office.context?view=outlook-js-1.6) | [<span data-ttu-id="99c20-122">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-122">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### <a name="namespaces"></a><span data-ttu-id="bfc80-123">名前空間</span><span class="sxs-lookup"><span data-stu-id="bfc80-123">Namespaces</span></span>
+##### <a name="enumerations"></a><span data-ttu-id="99c20-123">列挙型</span><span class="sxs-lookup"><span data-stu-id="99c20-123">Enumerations</span></span>
 
-<span data-ttu-id="bfc80-124">[context](office.context.md): Outlook アドイン API で使用するために、Office アドイン API のコンテキストの名前空間から共有インターフェイスを提供します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-124">[context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.</span></span>
+| <span data-ttu-id="99c20-124">列挙体</span><span class="sxs-lookup"><span data-stu-id="99c20-124">Enumeration</span></span> | <span data-ttu-id="99c20-125">モード</span><span class="sxs-lookup"><span data-stu-id="99c20-125">Modes</span></span> | <span data-ttu-id="99c20-126">戻り値の種類</span><span class="sxs-lookup"><span data-stu-id="99c20-126">Return type</span></span> | <span data-ttu-id="99c20-127">最小値</span><span class="sxs-lookup"><span data-stu-id="99c20-127">Minimum</span></span><br><span data-ttu-id="99c20-128">要件セット</span><span class="sxs-lookup"><span data-stu-id="99c20-128">requirement set</span></span> |
+|---|---|---|:---:|
+| [<span data-ttu-id="99c20-129">AsyncResultStatus</span><span class="sxs-lookup"><span data-stu-id="99c20-129">AsyncResultStatus</span></span>](#asyncresultstatus-string) | <span data-ttu-id="99c20-130">作成</span><span class="sxs-lookup"><span data-stu-id="99c20-130">Compose</span></span><br><span data-ttu-id="99c20-131">読み取り</span><span class="sxs-lookup"><span data-stu-id="99c20-131">Read</span></span> | <span data-ttu-id="99c20-132">String</span><span class="sxs-lookup"><span data-stu-id="99c20-132">String</span></span> | [<span data-ttu-id="99c20-133">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-133">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="99c20-134">CoercionType</span><span class="sxs-lookup"><span data-stu-id="99c20-134">CoercionType</span></span>](#coerciontype-string) | <span data-ttu-id="99c20-135">作成</span><span class="sxs-lookup"><span data-stu-id="99c20-135">Compose</span></span><br><span data-ttu-id="99c20-136">読み取り</span><span class="sxs-lookup"><span data-stu-id="99c20-136">Read</span></span> | <span data-ttu-id="99c20-137">String</span><span class="sxs-lookup"><span data-stu-id="99c20-137">String</span></span> | [<span data-ttu-id="99c20-138">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-138">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="99c20-139">EventType</span><span class="sxs-lookup"><span data-stu-id="99c20-139">EventType</span></span>](#eventtype-string) | <span data-ttu-id="99c20-140">作成</span><span class="sxs-lookup"><span data-stu-id="99c20-140">Compose</span></span><br><span data-ttu-id="99c20-141">読み取り</span><span class="sxs-lookup"><span data-stu-id="99c20-141">Read</span></span> | <span data-ttu-id="99c20-142">String</span><span class="sxs-lookup"><span data-stu-id="99c20-142">String</span></span> | [<span data-ttu-id="99c20-143">1.5</span><span class="sxs-lookup"><span data-stu-id="99c20-143">1.5</span></span>](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [<span data-ttu-id="99c20-144">SourceProperty</span><span class="sxs-lookup"><span data-stu-id="99c20-144">SourceProperty</span></span>](#sourceproperty-string) | <span data-ttu-id="99c20-145">作成</span><span class="sxs-lookup"><span data-stu-id="99c20-145">Compose</span></span><br><span data-ttu-id="99c20-146">読み取り</span><span class="sxs-lookup"><span data-stu-id="99c20-146">Read</span></span> | <span data-ttu-id="99c20-147">String</span><span class="sxs-lookup"><span data-stu-id="99c20-147">String</span></span> | [<span data-ttu-id="99c20-148">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-148">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-<span data-ttu-id="bfc80-125">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.6):、、、、、、などのさまざま`ItemType`な`EntityType`列挙`AttachmentType` `RecipientType` `ResponseType`値が含まれ`ItemNotificationMessageType`ています。</span><span class="sxs-lookup"><span data-stu-id="bfc80-125">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.6): Includes a number of enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.</span></span>
+### <a name="namespaces"></a><span data-ttu-id="99c20-149">名前空間</span><span class="sxs-lookup"><span data-stu-id="99c20-149">Namespaces</span></span>
 
-### <a name="members"></a><span data-ttu-id="bfc80-126">Members</span><span class="sxs-lookup"><span data-stu-id="bfc80-126">Members</span></span>
+<span data-ttu-id="99c20-150">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.6): `ItemType`、、、、、 `EntityType` `AttachmentType` `RecipientType` `ResponseType`など、多数の Outlook 固有の列挙を含み`ItemNotificationMessageType`ます。</span><span class="sxs-lookup"><span data-stu-id="99c20-150">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.6): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.</span></span>
 
-#### <a name="asyncresultstatus-string"></a><span data-ttu-id="bfc80-127">AsyncResultStatus: String</span><span class="sxs-lookup"><span data-stu-id="bfc80-127">AsyncResultStatus: String</span></span>
+## <a name="enumeration-details"></a><span data-ttu-id="99c20-151">列挙の詳細</span><span class="sxs-lookup"><span data-stu-id="99c20-151">Enumeration details</span></span>
 
-<span data-ttu-id="bfc80-128">非同期呼び出しの結果を指定します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-128">Specifies the result of an asynchronous call.</span></span>
+#### <a name="asyncresultstatus-string"></a><span data-ttu-id="99c20-152">AsyncResultStatus: String</span><span class="sxs-lookup"><span data-stu-id="99c20-152">AsyncResultStatus: String</span></span>
 
-##### <a name="type"></a><span data-ttu-id="bfc80-129">型</span><span class="sxs-lookup"><span data-stu-id="bfc80-129">Type</span></span>
+<span data-ttu-id="99c20-153">非同期呼び出しの結果を指定します。</span><span class="sxs-lookup"><span data-stu-id="99c20-153">Specifies the result of an asynchronous call.</span></span>
 
-*   <span data-ttu-id="bfc80-130">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-130">String</span></span>
+##### <a name="type"></a><span data-ttu-id="99c20-154">型</span><span class="sxs-lookup"><span data-stu-id="99c20-154">Type</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="bfc80-131">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="bfc80-131">Properties:</span></span>
+*   <span data-ttu-id="99c20-155">String</span><span class="sxs-lookup"><span data-stu-id="99c20-155">String</span></span>
 
-|<span data-ttu-id="bfc80-132">名前</span><span class="sxs-lookup"><span data-stu-id="bfc80-132">Name</span></span>| <span data-ttu-id="bfc80-133">種類</span><span class="sxs-lookup"><span data-stu-id="bfc80-133">Type</span></span>| <span data-ttu-id="bfc80-134">説明</span><span class="sxs-lookup"><span data-stu-id="bfc80-134">Description</span></span>|
+##### <a name="properties"></a><span data-ttu-id="99c20-156">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="99c20-156">Properties:</span></span>
+
+|<span data-ttu-id="99c20-157">名前</span><span class="sxs-lookup"><span data-stu-id="99c20-157">Name</span></span>| <span data-ttu-id="99c20-158">種類</span><span class="sxs-lookup"><span data-stu-id="99c20-158">Type</span></span>| <span data-ttu-id="99c20-159">説明</span><span class="sxs-lookup"><span data-stu-id="99c20-159">Description</span></span>|
 |---|---|---|
-|`Succeeded`| <span data-ttu-id="bfc80-135">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-135">String</span></span>|<span data-ttu-id="bfc80-136">呼び出しが成功しました。</span><span class="sxs-lookup"><span data-stu-id="bfc80-136">The call succeeded.</span></span>|
-|`Failed`| <span data-ttu-id="bfc80-137">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-137">String</span></span>|<span data-ttu-id="bfc80-138">呼び出しが失敗しました。</span><span class="sxs-lookup"><span data-stu-id="bfc80-138">The call failed.</span></span>|
+|`Succeeded`| <span data-ttu-id="99c20-160">String</span><span class="sxs-lookup"><span data-stu-id="99c20-160">String</span></span>|<span data-ttu-id="99c20-161">呼び出しが成功しました。</span><span class="sxs-lookup"><span data-stu-id="99c20-161">The call succeeded.</span></span>|
+|`Failed`| <span data-ttu-id="99c20-162">String</span><span class="sxs-lookup"><span data-stu-id="99c20-162">String</span></span>|<span data-ttu-id="99c20-163">呼び出しが失敗しました。</span><span class="sxs-lookup"><span data-stu-id="99c20-163">The call failed.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="bfc80-139">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-139">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="99c20-164">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-164">Requirements</span></span>
 
-|<span data-ttu-id="bfc80-140">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-140">Requirement</span></span>| <span data-ttu-id="bfc80-141">値</span><span class="sxs-lookup"><span data-stu-id="bfc80-141">Value</span></span>|
+|<span data-ttu-id="99c20-165">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-165">Requirement</span></span>| <span data-ttu-id="99c20-166">値</span><span class="sxs-lookup"><span data-stu-id="99c20-166">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="bfc80-142">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="bfc80-142">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="bfc80-143">1.0</span><span class="sxs-lookup"><span data-stu-id="bfc80-143">1.0</span></span>|
-|[<span data-ttu-id="bfc80-144">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="bfc80-144">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="bfc80-145">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="bfc80-145">Compose or Read</span></span>|
+|[<span data-ttu-id="99c20-167">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="99c20-167">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="99c20-168">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-168">1.1</span></span>|
+|[<span data-ttu-id="99c20-169">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="99c20-169">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="99c20-170">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="99c20-170">Compose or Read</span></span>|
 
 <br>
 
 ---
 ---
 
-#### <a name="coerciontype-string"></a><span data-ttu-id="bfc80-146">CoercionType: String</span><span class="sxs-lookup"><span data-stu-id="bfc80-146">CoercionType: String</span></span>
+#### <a name="coerciontype-string"></a><span data-ttu-id="99c20-171">CoercionType: String</span><span class="sxs-lookup"><span data-stu-id="99c20-171">CoercionType: String</span></span>
 
-<span data-ttu-id="bfc80-147">呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-147">Specifies how to coerce data returned or set by the invoked method.</span></span>
+<span data-ttu-id="99c20-172">呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="99c20-172">Specifies how to coerce data returned or set by the invoked method.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="bfc80-148">型</span><span class="sxs-lookup"><span data-stu-id="bfc80-148">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="99c20-173">型</span><span class="sxs-lookup"><span data-stu-id="99c20-173">Type</span></span>
 
-*   <span data-ttu-id="bfc80-149">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-149">String</span></span>
+*   <span data-ttu-id="99c20-174">String</span><span class="sxs-lookup"><span data-stu-id="99c20-174">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="bfc80-150">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="bfc80-150">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="99c20-175">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="99c20-175">Properties:</span></span>
 
-|<span data-ttu-id="bfc80-151">名前</span><span class="sxs-lookup"><span data-stu-id="bfc80-151">Name</span></span>| <span data-ttu-id="bfc80-152">種類</span><span class="sxs-lookup"><span data-stu-id="bfc80-152">Type</span></span>| <span data-ttu-id="bfc80-153">説明</span><span class="sxs-lookup"><span data-stu-id="bfc80-153">Description</span></span>|
+|<span data-ttu-id="99c20-176">名前</span><span class="sxs-lookup"><span data-stu-id="99c20-176">Name</span></span>| <span data-ttu-id="99c20-177">種類</span><span class="sxs-lookup"><span data-stu-id="99c20-177">Type</span></span>| <span data-ttu-id="99c20-178">説明</span><span class="sxs-lookup"><span data-stu-id="99c20-178">Description</span></span>|
 |---|---|---|
-|`Html`| <span data-ttu-id="bfc80-154">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-154">String</span></span>|<span data-ttu-id="bfc80-155">HTML 形式で返されるデータを要求します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-155">Requests the data be returned in HTML format.</span></span>|
-|`Text`| <span data-ttu-id="bfc80-156">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-156">String</span></span>|<span data-ttu-id="bfc80-157">テキスト形式で返されるデータを要求します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-157">Requests the data be returned in text format.</span></span>|
+|`Html`| <span data-ttu-id="99c20-179">String</span><span class="sxs-lookup"><span data-stu-id="99c20-179">String</span></span>|<span data-ttu-id="99c20-180">HTML 形式で返されるデータを要求します。</span><span class="sxs-lookup"><span data-stu-id="99c20-180">Requests the data be returned in HTML format.</span></span>|
+|`Text`| <span data-ttu-id="99c20-181">String</span><span class="sxs-lookup"><span data-stu-id="99c20-181">String</span></span>|<span data-ttu-id="99c20-182">テキスト形式で返されるデータを要求します。</span><span class="sxs-lookup"><span data-stu-id="99c20-182">Requests the data be returned in text format.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="bfc80-158">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-158">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="99c20-183">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-183">Requirements</span></span>
 
-|<span data-ttu-id="bfc80-159">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-159">Requirement</span></span>| <span data-ttu-id="bfc80-160">値</span><span class="sxs-lookup"><span data-stu-id="bfc80-160">Value</span></span>|
+|<span data-ttu-id="99c20-184">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-184">Requirement</span></span>| <span data-ttu-id="99c20-185">値</span><span class="sxs-lookup"><span data-stu-id="99c20-185">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="bfc80-161">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="bfc80-161">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="bfc80-162">1.0</span><span class="sxs-lookup"><span data-stu-id="bfc80-162">1.0</span></span>|
-|[<span data-ttu-id="bfc80-163">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="bfc80-163">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="bfc80-164">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="bfc80-164">Compose or Read</span></span>|
+|[<span data-ttu-id="99c20-186">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="99c20-186">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="99c20-187">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-187">1.1</span></span>|
+|[<span data-ttu-id="99c20-188">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="99c20-188">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="99c20-189">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="99c20-189">Compose or Read</span></span>|
 
 <br>
 
 ---
 ---
 
-#### <a name="eventtype-string"></a><span data-ttu-id="bfc80-165">EventType: String</span><span class="sxs-lookup"><span data-stu-id="bfc80-165">EventType: String</span></span>
+#### <a name="eventtype-string"></a><span data-ttu-id="99c20-190">EventType: String</span><span class="sxs-lookup"><span data-stu-id="99c20-190">EventType: String</span></span>
 
-<span data-ttu-id="bfc80-166">イベント ハンドラーに関連付けられているイベントを指定します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-166">Specifies the event associated with an event handler.</span></span>
+<span data-ttu-id="99c20-191">イベント ハンドラーに関連付けられているイベントを指定します。</span><span class="sxs-lookup"><span data-stu-id="99c20-191">Specifies the event associated with an event handler.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="bfc80-167">型</span><span class="sxs-lookup"><span data-stu-id="bfc80-167">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="99c20-192">型</span><span class="sxs-lookup"><span data-stu-id="99c20-192">Type</span></span>
 
-*   <span data-ttu-id="bfc80-168">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-168">String</span></span>
+*   <span data-ttu-id="99c20-193">String</span><span class="sxs-lookup"><span data-stu-id="99c20-193">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="bfc80-169">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="bfc80-169">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="99c20-194">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="99c20-194">Properties:</span></span>
 
-| <span data-ttu-id="bfc80-170">名前</span><span class="sxs-lookup"><span data-stu-id="bfc80-170">Name</span></span> | <span data-ttu-id="bfc80-171">種類</span><span class="sxs-lookup"><span data-stu-id="bfc80-171">Type</span></span> | <span data-ttu-id="bfc80-172">説明</span><span class="sxs-lookup"><span data-stu-id="bfc80-172">Description</span></span> |
-|---|---|---|
-|`ItemChanged`| <span data-ttu-id="bfc80-173">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-173">String</span></span> | <span data-ttu-id="bfc80-174">作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。</span><span class="sxs-lookup"><span data-stu-id="bfc80-174">A different Outlook item is selected for viewing while the task pane is pinned.</span></span> |
+| <span data-ttu-id="99c20-195">名前</span><span class="sxs-lookup"><span data-stu-id="99c20-195">Name</span></span> | <span data-ttu-id="99c20-196">種類</span><span class="sxs-lookup"><span data-stu-id="99c20-196">Type</span></span> | <span data-ttu-id="99c20-197">説明</span><span class="sxs-lookup"><span data-stu-id="99c20-197">Description</span></span> | <span data-ttu-id="99c20-198">最小要件セット</span><span class="sxs-lookup"><span data-stu-id="99c20-198">Minimum requirement set</span></span> |
+|---|---|---|:---:|
+|`ItemChanged`| <span data-ttu-id="99c20-199">String</span><span class="sxs-lookup"><span data-stu-id="99c20-199">String</span></span> | <span data-ttu-id="99c20-200">作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。</span><span class="sxs-lookup"><span data-stu-id="99c20-200">A different Outlook item is selected for viewing while the task pane is pinned.</span></span> | <span data-ttu-id="99c20-201">1.5</span><span class="sxs-lookup"><span data-stu-id="99c20-201">1.5</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="bfc80-175">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-175">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="99c20-202">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-202">Requirements</span></span>
 
-|<span data-ttu-id="bfc80-176">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-176">Requirement</span></span>| <span data-ttu-id="bfc80-177">値</span><span class="sxs-lookup"><span data-stu-id="bfc80-177">Value</span></span>|
+|<span data-ttu-id="99c20-203">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-203">Requirement</span></span>| <span data-ttu-id="99c20-204">値</span><span class="sxs-lookup"><span data-stu-id="99c20-204">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="bfc80-178">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="bfc80-178">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="bfc80-179">1.5</span><span class="sxs-lookup"><span data-stu-id="bfc80-179">1.5</span></span> |
-|[<span data-ttu-id="bfc80-180">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="bfc80-180">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="bfc80-181">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="bfc80-181">Compose or Read</span></span> |
+|[<span data-ttu-id="99c20-205">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="99c20-205">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="99c20-206">1.5</span><span class="sxs-lookup"><span data-stu-id="99c20-206">1.5</span></span> |
+|[<span data-ttu-id="99c20-207">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="99c20-207">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="99c20-208">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="99c20-208">Compose or Read</span></span> |
 
 <br>
 
 ---
 ---
 
-#### <a name="sourceproperty-string"></a><span data-ttu-id="bfc80-182">SourceProperty: String</span><span class="sxs-lookup"><span data-stu-id="bfc80-182">SourceProperty: String</span></span>
+#### <a name="sourceproperty-string"></a><span data-ttu-id="99c20-209">SourceProperty: String</span><span class="sxs-lookup"><span data-stu-id="99c20-209">SourceProperty: String</span></span>
 
-<span data-ttu-id="bfc80-183">呼び出されたメソッドによって返されるデータのソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="bfc80-183">Specifies the source of the data returned by the invoked method.</span></span>
+<span data-ttu-id="99c20-210">呼び出されたメソッドによって返されるデータのソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="99c20-210">Specifies the source of the data returned by the invoked method.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="bfc80-184">型</span><span class="sxs-lookup"><span data-stu-id="bfc80-184">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="99c20-211">型</span><span class="sxs-lookup"><span data-stu-id="99c20-211">Type</span></span>
 
-*   <span data-ttu-id="bfc80-185">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-185">String</span></span>
+*   <span data-ttu-id="99c20-212">String</span><span class="sxs-lookup"><span data-stu-id="99c20-212">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="bfc80-186">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="bfc80-186">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="99c20-213">プロパティ:</span><span class="sxs-lookup"><span data-stu-id="99c20-213">Properties:</span></span>
 
-|<span data-ttu-id="bfc80-187">名前</span><span class="sxs-lookup"><span data-stu-id="bfc80-187">Name</span></span>| <span data-ttu-id="bfc80-188">種類</span><span class="sxs-lookup"><span data-stu-id="bfc80-188">Type</span></span>| <span data-ttu-id="bfc80-189">説明</span><span class="sxs-lookup"><span data-stu-id="bfc80-189">Description</span></span>|
+|<span data-ttu-id="99c20-214">名前</span><span class="sxs-lookup"><span data-stu-id="99c20-214">Name</span></span>| <span data-ttu-id="99c20-215">種類</span><span class="sxs-lookup"><span data-stu-id="99c20-215">Type</span></span>| <span data-ttu-id="99c20-216">説明</span><span class="sxs-lookup"><span data-stu-id="99c20-216">Description</span></span>|
 |---|---|---|
-|`Body`| <span data-ttu-id="bfc80-190">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-190">String</span></span>|<span data-ttu-id="bfc80-191">データのソースは、メッセージの本文です。</span><span class="sxs-lookup"><span data-stu-id="bfc80-191">The source of the data is from the body of a message.</span></span>|
-|`Subject`| <span data-ttu-id="bfc80-192">String</span><span class="sxs-lookup"><span data-stu-id="bfc80-192">String</span></span>|<span data-ttu-id="bfc80-193">データのソースは、メッセージの件名です。</span><span class="sxs-lookup"><span data-stu-id="bfc80-193">The source of the data is from the subject of a message.</span></span>|
+|`Body`| <span data-ttu-id="99c20-217">String</span><span class="sxs-lookup"><span data-stu-id="99c20-217">String</span></span>|<span data-ttu-id="99c20-218">データのソースは、メッセージの本文です。</span><span class="sxs-lookup"><span data-stu-id="99c20-218">The source of the data is from the body of a message.</span></span>|
+|`Subject`| <span data-ttu-id="99c20-219">String</span><span class="sxs-lookup"><span data-stu-id="99c20-219">String</span></span>|<span data-ttu-id="99c20-220">データのソースは、メッセージの件名です。</span><span class="sxs-lookup"><span data-stu-id="99c20-220">The source of the data is from the subject of a message.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="bfc80-194">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-194">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="99c20-221">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-221">Requirements</span></span>
 
-|<span data-ttu-id="bfc80-195">要件</span><span class="sxs-lookup"><span data-stu-id="bfc80-195">Requirement</span></span>| <span data-ttu-id="bfc80-196">値</span><span class="sxs-lookup"><span data-stu-id="bfc80-196">Value</span></span>|
+|<span data-ttu-id="99c20-222">要件</span><span class="sxs-lookup"><span data-stu-id="99c20-222">Requirement</span></span>| <span data-ttu-id="99c20-223">値</span><span class="sxs-lookup"><span data-stu-id="99c20-223">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="bfc80-197">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="bfc80-197">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="bfc80-198">1.0</span><span class="sxs-lookup"><span data-stu-id="bfc80-198">1.0</span></span>|
-|[<span data-ttu-id="bfc80-199">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="bfc80-199">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="bfc80-200">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="bfc80-200">Compose or Read</span></span>|
+|[<span data-ttu-id="99c20-224">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="99c20-224">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="99c20-225">1.1</span><span class="sxs-lookup"><span data-stu-id="99c20-225">1.1</span></span>|
+|[<span data-ttu-id="99c20-226">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="99c20-226">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="99c20-227">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="99c20-227">Compose or Read</span></span>|
