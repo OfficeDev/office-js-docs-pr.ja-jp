@@ -3,12 +3,12 @@ title: Office アドインでダイアログ API を使用する
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 88c7afca2f1e800391443458e0c6f6b930288c44
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302582"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814111"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Office アドインでダイアログ API を使用する
 
@@ -329,7 +329,10 @@ function processDialogEvent(arg) {
 ホスト ページがダイアログ ボックスに情報を渡す必要がある場合もあります。これは主に 2 つの方法で実行することができます。
 
 - `displayDialogAsync` に渡される URL にクエリ パラメーターを追加します。
-- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。
+- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。\*
+
+> [!NOTE]
+> \* トークン処理の戦略に影響を与えるバグがあります。 Safari または Edge ブラウザーの **Office on the web** でアドインを実行している場合、ダイアログとタスク ウィンドウは同じローカル ストレージを共有しないため、これらの間の通信に使用できません。
 
 ### <a name="use-local-storage"></a>ローカル ストレージの使用
 

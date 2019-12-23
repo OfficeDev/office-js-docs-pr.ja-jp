@@ -61,7 +61,13 @@
             - name: 色
               href: design/add-in-color.md
             - name: アイコン
-              href: design/add-in-icons.md
+              items:
+                - name: アイコンのガイドライン
+                  href: design/add-in-icons.md
+                - name: 新しいスタイル
+                  href: design/add-in-icons-fresh.md
+                - name: モノライン スタイル
+                  href: design/add-in-icons-monoline.md
             - name: レイアウト
               href: design/add-in-layout.md
             - name: 文字体裁

@@ -1,14 +1,14 @@
 ---
 title: Visual Studio での Office アドインの作成とデバッグ
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインを作成し、デバッグします
-ms.date: 10/11/2019
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 2a32075420355e1b70c91c676baf00bc202b18b1
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670168"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814125"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Visual Studio での Office アドインの作成とデバッグ
 
@@ -95,6 +95,7 @@ Web アプリケーション プロジェクトには、開始するために使
 
 次のセクションで説明されているように、Visual Studio を使用して、Windows 上の Office デスクトップ クライアントでご自身のアドインをデバッグできます。
 
+- [アドイン コマンドと UI のないコードのデバッグを有効にする](#enable-debugging-for-add-in-commands-and-ui-less-code)
 - [ビルドとデバッグのプロパティの確認](#review-the-build-and-debug-properties)
 - [既存のドキュメントを使用してアドインをデバッグする](#use-an-existing-document-to-debug-the-add-in)
 - [プロジェクトの開始](#start-the-project)
@@ -103,6 +104,12 @@ Web アプリケーション プロジェクトには、開始するために使
 
 > [!NOTE]
 > Visual Studio を使用して、Office on the web または Mac でアドインをデバッグすることはできません。 これらのプラットフォームでのデバッグについては、「[Office on the web での Office アドインのデバッグ](../testing/debug-add-ins-in-office-online.md)」または「[iPad と Mac での Office アドインのデバッグ](../testing/debug-office-add-ins-on-ipad-and-mac.md)」を参照してください。
+
+### <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>アドイン コマンドと UI のないコードのデバッグを有効にする
+
+Visual Studio が Windows 上の Office をデバッグする場合、アドインは、Microsoft Internet Explorer または Microsoft Edge ブラウザー インスタンスのいずれかにホストされています。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
 ### <a name="review-the-build-and-debug-properties"></a>ビルドとデバッグのプロパティの確認
 

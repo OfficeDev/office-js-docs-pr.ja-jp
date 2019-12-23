@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office アドインをサイドロードする
 description: ''
-ms.date: 08/15/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: bb926b09d9381574d22e7634a578adac141e1f8f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477930"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814480"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -45,7 +45,9 @@ ms.locfileid: "36477930"
 
 6. [**閉じる**] を選択して、[**プロパティ**] ダイアログ ウィンドウを閉じます。
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>共有フォルダーを信頼できるカタログとして指定する
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>共有フォルダーを信頼できるカタログとして指定する 
+
+### <a name="configure-the-trust-manually"></a>信頼を手動で構成する
       
 1. Excel、Word、PowerPoint、または Project で新しいドキュメントを開きます。
     
@@ -68,10 +70,43 @@ ms.locfileid: "36477930"
 8. [**OK**] をクリックして [**Word のオプション**] ダイアログ ウィンドウを閉じます。
 
 9. Office アプリケーションを閉じてからもう一度開くと変更内容が有効になります。
+
+### <a name="configure-the-trust-with-a-registry-script"></a>レジストリ スクリプトを使用して信頼を構成する
+
+1. テキスト エディターで、TrustNetworkShareCatalog.reg という名前のファイルを作成します。 
+
+2. 次に示すコンテンツをファイルに追加します。
+
+    ```
+    Windows Registry Editor Version 5.00
     
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+    "Id"="{-random-GUID-here-}"
+    "Url"="\\\\-share-\\-folder-"
+    "Flags"=dword:00000001
+    ```
+3. [GUID ジェネレーター](https://guidgenerator.com/)など、多数のオンライン GUID 生成ツールのいずれかを使用してランダムな GUID を生成し、TrustNetworkShareCatalog.reg ファイル内で*両方の場所*の文字列「-random-GUID-here-」を GUID に置き換えます。 (引用符 `{}` 記号は残しておく必要があります)。
+
+4. `Url` 値を、以前[共有](#share-a-folder)したフォルダーへの完全なネットワーク パスに置き換えます。 (URL の `\` 文字は 2 倍にする必要があります。) フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。 
+
+    ![[共有] タブとネットワーク パスが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog-2.png)
+    
+5. ファイルは、次のようになります。 ファイルを保存します。
+
+    ```
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+    "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+    "Url"="\\\\TestServer\\OfficeAddinManifests"
+    "Flags"=dword:00000001
+    ```
+
+6. *すべて*の Office アプリケーションを閉じます。
+
+7. ダブルクリックするなど、実行可能ファイルと同様に TrustNetworkShareCatalog.reg 実行します。
 
 ## <a name="sideload-your-add-in"></a>アドインのサイドロード
-
 
 1. テストするアドインのマニフェスト XML ファイルを共有フォルダー カタログに置きます。 なお、Web アプリケーション自体を Web サーバーに展開します。 必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
 

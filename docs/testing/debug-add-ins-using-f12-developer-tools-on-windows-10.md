@@ -1,30 +1,33 @@
 ---
 title: Windows 10 で開発者ツールを使用してアドインをデバッグする
-description: ''
-ms.date: 07/01/2019
+description: Windows 10 で Microsoft Edge 開発者ツールを使用してアドインをデバッグする
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575675"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814473"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Windows 10 で開発者ツールを使用してアドインをデバッグする
 
 Windows 10 のアドインのデバッグに役立つ IDE の外部の開発者ツールがあります。 これは、IDE の外部でアドインを実行しているときに問題を調査する必要がある場合に便利です。
 
-使用するツールは、アドインが Microsoft Edge または Internet Explorer のどちらで実行されているかによって異なります。 これは、Windows 10 のバージョンとコンピューターにインストールされている Office のバージョンによって決まります。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。 
-
+使用するツールは、アドインが Microsoft Edge または Internet Explorer のどちらで実行されているかによって異なります。 これは、Windows 10 のバージョンとコンピューターにインストールされている Office のバージョンによって決まります。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 > [!NOTE]
 > この記事の手順を使用して、実行関数を使用する Outlook アドインをデバッグすることはできません。 実行関数を使用する Outlook アドインのデバッグには、スクリプト モードの Visual Studio またはその他のスクリプト デバッガーにアタッチすることをお勧めします。
 
 ## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>アドインが Microsoft Edge で実行されている場合
 
-アドインが Microsoft Edge で実行されている場合は、[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab) を使用できます。 
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-1. アドインを実行します。 
+### <a name="debug-using-microsoft-edge-devtools"></a>Microsoft Edge DevTools を使用してデバッグする
+
+アドインが Microsoft Edge で実行されている場合は、[Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab) を使用できます。
+
+1. アドインを実行します。
 
 2. Microsoft Edge DevTools を実行します。
 

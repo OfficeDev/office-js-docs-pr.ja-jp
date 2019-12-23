@@ -1,14 +1,14 @@
 ---
 title: Office Dialog API を使用して認証および承認する
 description: ''
-ms.date: 08/07/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d61c82f28fd5780176b356e1ab4d394e5fbf8bd
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7c8e012c2ef74e8a8e92203817b4f5f2eb60bd01
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302959"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814027"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office Dialog API を使用して認証および承認する
 
@@ -74,7 +74,10 @@ Office ダイアログと作業ウィンドウが異なるブラウザー、Java
 
 これと密接に関連するのは、ライブラリは通常、トークンを取得するための方法として対話型のメソッドと "サイレント" メソッドの両方を提供しているということです。 リソースに対しての認証とデータの呼び出しの両方を同じブラウザー インスタンス内で行うことができる場合、コードは、トークンを取得するためにコードがトークンをデータの呼び出しに追加する直前にサイレント メソッドを呼び出します。 サイレント メソッドは期限が切れていないトークンがあるかどうかキャッシュを確認し、あった場合はトークンを返します。 それ以外の場合は、サイレント メソッドは対話型のメソッドを呼び出し、対話型のメソッドは STS のログインにリダイレクトします。 ログインが完了すると、対話型のメソッドはトークンを返しますが、トークンはメモリにもキャッシュされます。 ただし、Office ダイアログ API を使用している場合は、リソースへのデータ呼び出し (これは、サイレント メソッドを呼び出します) は、作業ウィンドウのブラウザー インスタンスにあります。 ライブラリのトークン キャッシュはそのインスタンスに存在しません。
 
-別の方法として、アドインのダイアログ ブラウザー インスタンスは、ライブラリの対話型のメソッドを直接呼び出すことができます。 このメソッドがトークンを返した場合、コードはトークンを作業ウィンドウのブラウザー インスタンスが簡単にそれを取得できる場所 (ローカル ストレージやサーバー側のデータベースなど) に明示的に格納する必要があります。 別の方法としては、`messageParent` メソッドを使用してトークンを作業ウィンドウに渡す方法があります。 この方法は、対話型のメソッドが、アクセス トークンをコードが読み取ることができる場所に格納している場合にのみ可能です。 ライブラリの対話型メソッドは、コードがアクセスできないオブジェクトのプライベート プロパティにトークンを格納するように作られている場合があります。
+別の方法として、アドインのダイアログ ブラウザー インスタンスは、ライブラリの対話型のメソッドを直接呼び出すことができます。 このメソッドがトークンを返した場合、コードはトークンを作業ウィンドウのブラウザー インスタンスがそれを取得できる場所 (ローカル ストレージ \* やサーバー側のデータベースなど) に明示的に格納する必要があります。 別の方法としては、`messageParent` メソッドを使用してトークンを作業ウィンドウに渡す方法があります。 この方法は、対話型のメソッドが、アクセス トークンをコードが読み取ることができる場所に格納している場合にのみ可能です。 ライブラリの対話型メソッドは、コードがアクセスできないオブジェクトのプライベート プロパティにトークンを格納するように作られている場合があります。
+
+> [!NOTE]
+> \* トークン処理の戦略に影響を与えるバグがあります。 Safari または Edge ブラウザーの **Office on the web** でアドインを実行している場合、ダイアログとタスク ウィンドウは同じローカル ストレージを共有しないため、これらの間の通信に使用できません。
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>通常、ライブラリの "認証コンテキスト" オブジェクトは使用できません。
 
@@ -84,16 +87,17 @@ Office ダイアログと作業ウィンドウが異なるブラウザー、Java
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Office ダイアログ API でライブラリを使用する方法
 
-ほとんどのライブラリでは、モノリシックの "認証コンテキスト" オブジェクトに加えてまたはその代わりとして、モノリシックの度合いがより低いヘルパー オブジェクトをコードが作成するできるようにする、抽象化レベルの低い API が提供されています。 たとえば、[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) バージョン  3.x.x には、ログイン URL を構築する API と、コードがアクセスできるプロパティ内のアクセス トークンを格納する AuthResult オブジェクトを構築するための別の API が含まれています。 Office アドインの MSAL.NET の例については、「[Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)」および「[Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)」を参照してください。
+ほとんどのライブラリでは、モノリシックの "認証コンテキスト" オブジェクトに加えてまたはその代わりとして、モノリシックの度合いがより低いヘルパー オブジェクトをコードが作成するできるようにする、抽象化レベルの低い API が提供されています。 たとえば、[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) バージョン  3.x.x には、ログイン URL を構築する API と、コードがアクセスできるプロパティ内のアクセス トークンを格納する AuthResult オブジェクトを構築するための別の API が含まれています。 Office アドインの MSAL.NET の例については、「[Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)」および「[Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)」を参照してください。 アドインで [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) を使用する例については、「[Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)」を参照してください。
 
 認証ライブラリおよび承認ライブラリの詳細については、「[Microsoft Graph: 推奨されるライブラリ](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples)」および「[その他の外部サービス: ライブラリ](auth-external-add-ins.md#libraries)」を参照してください。
 
 ## <a name="samples"></a>サンプル
 
-- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): ログインおよび Microsoft Graph データのアクセス トークンの取得を MSAL.NET ライブラリを使用して行う、ASP.NET ベースのアドイン (Excel、Word、PowerPoint)。
+- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): ログインおよび Microsoft Graph データのアクセス トークンの取得を MSAL.NET ライブラリと承認コード フローを使用して行う、ASP.NET ベースのアドイン (Excel、Word、PowerPoint)。
 - [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): 上記のアドインと同様ですが、Office アプリケーションは Outlook です。
+- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): ログインおよび Microsoft Graph データのアクセス トークンの取得を msal.js ライブラリと暗黙的フローを使用して行う、NodeJS ベースのアドイン (Excel、Word、PowerPoint)。
 
-詳細については、次のトピックを参照してください。
+
+詳細については、以下を参照してください。
 - [Office アドインで外部サービスを承認する](auth-external-add-ins.md)
 - [Office アドインでダイアログ API を使用する](dialog-api-in-office-add-ins.md)
-
