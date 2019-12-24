@@ -1,15 +1,15 @@
 ---
 title: Word アドインのチュートリアル
 description: このチュートリアルでは、テキスト範囲、段落、画像、HTML、テーブル、コンテンツ コントロールを挿入 (および置換) する Word アドインを作成します。 テキストに書式を設定する方法と、コンテンツ コントロールにコンテンツを挿入 (および置換) する方法についても説明します。
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24b0ab5cecf9cfbc493da4488a71ac34dff61b47
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: e6f4a0bee75a9f0de648d8354c6b23b87845c00f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035369"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851412"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -40,7 +40,7 @@ ms.locfileid: "37035369"
 
 ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートノードコンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -110,7 +110,7 @@ ms.locfileid: "37035369"
     }
     ```
 
-9. `insertParagraph()`関数内で、を`TODO1`次のコードに置き換えます。 次の点に注意してください。
+9. `insertParagraph()`関数内で、を`TODO1`次のコードに置き換えます。 注意:
 
    - `insertParagraph` メソッドの最初のパラメーターは、新しい段落のテキストです。
 
@@ -126,33 +126,33 @@ ms.locfileid: "37035369"
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. 次の手順を実行して、ローカル web サーバーを開始し、アドインをサイドロードします。
+1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
     > [!TIP]
-    > Mac でアドインをテストしている場合は、先に進む前に、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します。
+    > Mac でアドインをテストしている場合は、先に進む前に、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - Word でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 これにより、ローカル web サーバーが起動 (まだ実行されていない場合) し、アドインが読み込まれた状態で Word が開きます。
+    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた Word が開きます。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Web 上の Word でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動します (まだ実行していない場合)。
+    - Web 上の Word でアドインをテストするには、プロジェクトのルートディレクトリで次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        アドインを使用するには、web 上の Word で新しいドキュメントを開き、 [web 上の「Office アドインのサイドロード Office アドイン](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
+        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
-2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+2. Word で [**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2b.png)
 
@@ -372,7 +372,7 @@ ms.locfileid: "37035369"
     }
     ``` 
 
-6. `insertTextIntoRange()`関数内で、を`TODO1`次のコードに置き換えます。 注意:
+6. `insertTextIntoRange()`関数内で、を`TODO1`次のコードに置き換えます。 次の点に注意してください。
 
    - このメソッドの目的は、テキストが Click-to-Run という範囲の末尾に (C2R) という省略形を挿入することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
@@ -941,3 +941,9 @@ function insertTextIntoRange() {
 
 > [!div class="nextstepaction"]
 > [Word アドインの概要](../word/word-add-ins-programming-overview.md)
+
+## <a name="see-also"></a>関連項目
+
+* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+* [Office アドインを作成する](../overview/office-add-ins-fundamentals.md)
+* [Office アドインを開発する](../develop/develop-overview.md)

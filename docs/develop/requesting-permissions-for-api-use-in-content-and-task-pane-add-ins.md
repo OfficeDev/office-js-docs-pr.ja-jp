@@ -1,16 +1,16 @@
 ---
-title: コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する
+title: アドインで API を使用するためのアクセス許可を要求する
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 56eef177c69b8cdbd62dd630b5e1b5133b0eed86
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: aae5359dce57ffdaf3db324475f6417f2bec63d8
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449231"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851272"
 ---
-# <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する
+# <a name="requesting-permissions-for-api-use-in-add-ins"></a>アドインで API を使用するためのアクセス許可を要求する
 
 この記事では、アドインの機能のために必要となる JavaScript API アクセスのレベルを指定するために、コンテンツ アドインまたは作業ウィンドウ アドインのマニフェストで宣言できるさまざまなアクセス許可レベルについて説明します。 
 

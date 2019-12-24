@@ -1,18 +1,18 @@
 ---
-title: スクリプトラボを使用して Office JavaScript API を探索する
+title: Script Lab を使用して Office JavaScript API を探索する
 description: スクリプトラボを使用して、Office JS API とプロトタイプ機能を調査します。
 ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fcd1863e71bdfa6923ccd598b49879a77e629b4c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468792"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851517"
 ---
-# <a name="explore-office-javascript-api-using-script-lab"></a>スクリプトラボを使用して Office JavaScript API を探索する
+# <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
 [Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)は appsource から無料で利用できます。これにより、Excel や Word などの office プログラムで作業しているときに OFFICE JavaScript API を調べることができます。 スクリプトラボは、アドインに必要な機能を試作して検証する際に開発ツールキットに追加する便利なツールです。
 
@@ -61,7 +61,7 @@ Office JS API を呼び出す JavaScript または TypeScript コードに加え
 - Office 2016 以降の Mac
 - Office on the web
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Excel、Word、または PowerPoint でスクリプトラボを使用するには、AppSource から[スクリプトラボアドイン](https://appsource.microsoft.com/product/office/WA104380862)をインストールします。 
 
@@ -74,3 +74,4 @@ Excel、Word、または PowerPoint でスクリプトラボを使用するに�
 - [スクリプトラボの取得](https://appsource.microsoft.com/product/office/WA104380862)
 - [スクリプトラボの詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [開発者プログラムにサインアップする](https://developer.microsoft.com/office/dev-program)
+- [Office アドインを作成する](../overview/office-add-ins-fundamentals.md)

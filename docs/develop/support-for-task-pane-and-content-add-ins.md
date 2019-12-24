@@ -3,12 +3,12 @@ title: Office 2013 でのコンテンツ アドインと作業ウィンドウ �
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: b9a6d1f81cb86cb84c0f825394d14e8559017d11
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353791"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851384"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
@@ -18,7 +18,7 @@ ms.locfileid: "37353791"
 
 1. **他の Office アドインと共有する共通のオブジェクト。** これらのオブジェクトには、[Office](/javascript/api/office)、[Context](/javascript/api/office/office.context)、および [AsyncResult](/javascript/api/office/office.asyncresult) があります。**Office** オブジェクトは Office JavaScript API のルート オブジェクトです。**Context** オブジェクトはアドインのランタイム環境を表します。**Office** と **Context** は、いずれも Office アドインの基礎となるオブジェクトです。**AsyncResult** オブジェクトは、ユーザーが文書内で選択したものを読み取る **getSelectedDataAsync** メソッドに返されたデータなどの非同期操作の結果を表します。
 
-2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツアドインまたは作業ウィンドウアドインは、Office のプロパティを使用して**document**オブジェクトにアクセスすることができます[。](/javascript/api/office/office.context#document)これにより、ドキュメント内のデータを操作するための API のキーメンバー ([バインディング](/javascript/api/office/office.bindings)[など) にアクセスできます。CustomXmlParts](/javascript/api/office/office.customxmlparts)オブジェクト、 [getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [Setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)、および[getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)メソッド。 **Document** オブジェクトは、文書が読み取り専用モードと編集モードのどちらになっているかを判断するための [mode](/javascript/api/office/office.document#mode) プロパティと、現在の文書の URL を取得して、[Settings](/javascript/api/office/office.document#url) オブジェクトにアクセスするための [url](/javascript/api/office/office.settings) プロパティも提供します。 **Document**オブジェクトでは、 [selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加することもできます。このため、ユーザーが文書内の選択範囲を変更したときに検出できます。
+2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツアドインまたは作業ウィンドウアドインは、 [Office](/javascript/api/office/office.context#document)のプロパティを使用して**document**オブジェクトにアクセスできます。また、このプロパティを使用して、ドキュメント内のデータを操作するための API のキーメンバー ( [Bindings](/javascript/api/office/office.bindings)オブジェクト、 [Customxmlparts](/javascript/api/office/office.customxmlparts)オブジェクト、 [Getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)、および[getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)メソッドなど) にアクセスできます。 **Document** オブジェクトは、文書が読み取り専用モードと編集モードのどちらになっているかを判断するための [mode](/javascript/api/office/office.document#mode) プロパティと、現在の文書の URL を取得して、[Settings](/javascript/api/office/office.document#url) オブジェクトにアクセスするための [url](/javascript/api/office/office.settings) プロパティも提供します。 **Document**オブジェクトでは、 [selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加することもできます。このため、ユーザーが文書内の選択範囲を変更したときに検出できます。
 
    コンテンツ アドインや作業ウィンドウ アドインが **Document** オブジェクトにアクセスできるのは、DOM とランタイム環境が [Office.initialize](/javascript/api/office) イベント用のイベント ハンドラーなどで読み込まれた後だけです。アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](loading-the-dom-and-runtime-environment.md)」を参照してください。
 
@@ -160,7 +160,7 @@ Project のデータの読み取り操作の例については、「[テキス�
 
 ```
 
-詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)」を参照してください。
+詳細については、「[アドインで API を使用するためのアクセス許可を要求](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)する」を参照してください。
 
 
 ## <a name="see-also"></a>関連項目
