@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fbc9e8293642d1ab8edf32d568a5dab7ef77a8f0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 6728c7491d84f2bc044f7e5a3199ad6d90979628
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575626"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851258"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
@@ -19,7 +19,7 @@ Word アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-ドキュメントのこのセクションでは、Word JavaScript API に焦点を当てて、そしてそれを Word on the web または Word 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[JavaScript API for Office](../javascript-api-for-office.md)」を参照してください。 
+ドキュメントのこのセクションでは、Word JavaScript API に焦点を当てて、そしてそれを Word on the web または Word 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[Office JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 

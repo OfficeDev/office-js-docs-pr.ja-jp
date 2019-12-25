@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626972"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851356"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -216,7 +216,9 @@ ms.locfileid: "37626972"
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+* [Office アドインを開発する](../develop/develop-overview.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

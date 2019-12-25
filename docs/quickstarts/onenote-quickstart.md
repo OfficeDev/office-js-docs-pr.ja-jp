@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: dd4e16edc2dc3fa4046e3e587b3d1a1aba058e30
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 2e8c560aa02de690fa4e6abae25d0625379e26ad
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035267"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851566"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -124,8 +124,10 @@ try {
 
 ## <a name="see-also"></a>関連項目
 
+* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+* [Office アドインを開発する](../develop/develop-overview.md)
 - [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 

@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814034"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851300"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -138,7 +138,7 @@ Office アドインのセキュリティ モデルをサポートするための
 </OfficeApp>
 ```
 
-作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」を参照してください。
+作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」を参照してください。
 
 Outlook アドインのアクセス許可の詳細については、次のトピックを参照してください。
 
@@ -262,7 +262,7 @@ Office 設定の管理と適用はグループ ポリシー設定で行われま
 
 ## <a name="see-also"></a>関連項目
 
-- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
 - [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](/outlook/add-ins/privacy-and-security)
 - [Outlook アドインのアクセス許可を理解する](/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)

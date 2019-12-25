@@ -3,12 +3,12 @@ title: Office アドインを使用できるホストおよびプラットフォ
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
 ms.date: 11/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ecb906e595c08b973b5146416a5317d59547ed39
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757486"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851370"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -960,10 +960,11 @@ ms.locfileid: "38757486"
 - [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)
 - [共通 API の要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [アドイン コマンドの要件セット](../reference/requirement-sets/add-in-commands-requirement-sets.md)
-- [JavaScript API for Office リファレンス](../reference/javascript-api-for-office.md)
+- [API リファレンス ドキュメント](../reference/javascript-api-for-office.md)
 - [Office 365 ProPlus の更新履歴](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016および2019の更新履歴（クリックして実行）](/officeupdates/update-history-office-2019)
 - [Office 2013 の更新履歴 （クリックして実行）](/officeupdates/update-history-office-2013)
 - [Office 2010、2013、および2016の更新履歴（MSI）](/officeupdates/office-updates-msi)
 - [Outlook 2010、2013、および2016の更新履歴（MSI）](/officeupdates/outlook-updates-msi)
 - [Office for Mac の更新履歴](/officeupdates/update-history-office-for-mac)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)

@@ -3,12 +3,12 @@ title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f3dec371d1500d85125c8762bbc5e80f0cdfb571
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447111"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851286"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -59,4 +59,4 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 - [Office アドインのホストとプラットフォームの可用性](/office/dev/add-ins/overview/office-add-in-availability)
 - [Office アドインの Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
 - [Office アドインの UX 設計パターン](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

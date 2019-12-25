@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 045b5ff2af3523930e696f5faa296be7c777fe8b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: c08e5af14c43d92a677e28d47b26014fd27f700e
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940819"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851503"
 ---
 # <a name="javascript-api-for-powerpoint"></a>JavaScript API for PowerPoint
 
@@ -39,5 +39,4 @@ PowerPoint JavaScript API オブジェクト モデルの詳細については�
 - [PowerPoint アドインの概要](../../powerpoint/powerpoint-add-ins.md)
 - [PowerPoint JavaScript API リファレンス](/javascript/api/powerpoint)
 - [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)
-- [JavaScript API for Office](../javascript-api-for-office.md)
-- [共通 API リファレンス](/javascript/api/office)
+- [API リファレンス ドキュメント](../javascript-api-for-office.md)

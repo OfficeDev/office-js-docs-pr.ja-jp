@@ -5,12 +5,12 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c8b0953655039556936c631926ed2713bdb62c57
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001496"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851398"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -58,7 +58,7 @@ Word JavaScript API を使用すると、アプリケーションから Word 文
 
 2 つ目は、[Word JavaScript API](/javascript/api/word) です。これは、Mac と Windows の Word 2016 を対象とする Word アドインを作成するために使用できる、厳密に型指定されたオブジェクト モデルです。このオブジェクト モデルは promise を使用し、[本文](/javascript/api/word/word.body)、[コンテンツ コントロール](/javascript/api/word/word.contentcontrol)、[インライン画像](/javascript/api/word/word.inlinepicture)、および[段落](/javascript/api/word/word.paragraph)などの Word 固有のオブジェクトへのアクセスを提供します。Word JavaScript API には、IDE 内のコード ヒントを取得できるように、TypeScript の定義と vsdoc ファイルが含まれています。
 
-現在、Word のすべてのクライアントは共有の JavaScript API for Office をサポートし、ほとんどのクライアントは Word JavaScript API をサポートします。サポート対象のクライアントの詳細については、「[JavaScript API for Office の概要](../reference/javascript-api-for-office.md)」を参照してください。
+現在、Word のすべてのクライアントは共有の JavaScript API for Office をサポートし、ほとんどのクライアントは Word JavaScript API をサポートします。サポート対象のクライアントの詳細については、「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。
 
 Word JavaScript API のオブジェクト モデルはより簡単に使用できるため、Word JavaScript APから始めることをお勧めします。次のような必要がある場合は、Word JavaScript API を使用します。
 
@@ -84,6 +84,6 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="see-also"></a>関連項目
 
-* [Word アドイン ドキュメント](index.md)
+* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 * [Word JavaScript API リファレンス](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

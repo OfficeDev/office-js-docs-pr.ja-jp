@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9b74a6fe9d54218a8ec114a624d085bd68ba6e2c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468813"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851510"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -127,7 +127,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
   [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 設定はコンテンツ アドインによってのみサポートされます | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-一般に、ホスト固有の API でサポートされていない操作を行う場合は、共通 API のみを使います。 共通 API の使用の詳細については、Office アドインの[ドキュメント](../overview/office-add-ins.md)と[リファレンス](../reference/javascript-api-for-office.md)をご覧ください。
+一般に、ホスト固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[Office JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 
 <a name="om-diagram"></a>
@@ -139,7 +139,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 ## <a name="see-also"></a>関連項目
 
-- [OneNote アドイン ドキュメント](index.md)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 - [最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

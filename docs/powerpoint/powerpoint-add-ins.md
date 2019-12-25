@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066285"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851342"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -193,7 +193,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>関連項目
 
-- [PowerPoint アドイン ドキュメント](index.md)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 - [PowerPoint のコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

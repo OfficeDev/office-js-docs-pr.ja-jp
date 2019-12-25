@@ -1,16 +1,16 @@
 ---
-title: Office アドインを展開し、発行する | Microsoft Docs
+title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830203"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851545"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
+# <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
 さまざまな方法を利用し、テスト目的またはユーザーに配布する目的で、Office アドインを展開できます。
 

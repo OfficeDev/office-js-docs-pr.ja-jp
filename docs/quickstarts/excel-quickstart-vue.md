@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: a8ba3ba1c401e1433eb5be121ea37b053b1a4896
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035302"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851328"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -213,7 +213,9 @@ module.exports = {
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+* [Office アドインを開発する](../develop/develop-overview.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

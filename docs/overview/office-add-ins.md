@@ -1,16 +1,16 @@
 ---
 title: Office アドイン プラットフォームの概要 | Microsoft Docs
 description: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、Outlook を拡張および対話操作できます。
-ms.date: 07/05/2019
+ms.date: 12/24/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: daedbc655c62bfb2ce0e363f795a632ec425acdb
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468799"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851363"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -116,14 +116,15 @@ Excel および PowerPoint のドキュメント内に、コンテンツ アド�
 
 Office JavaScript API には、アドインを構築したり、Office のコンテンツおよび Web サービスと対話したりするためのオブジェクトとメンバーが含まれています。Excel、Outlook、Word、PowerPoint、OneNote、Project には、共通のオブジェクト モデルがあり、共有されています。Excel および Word には、さらに多くのホスト固有のオブジェクト モデルが用意されています。これらの API では、特定のホストのアドイン作成を容易にする段落やブックなど、既知のオブジェクトへのアクセスを提供します。  
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-5 分以内に最初の Office アドインを作成するには、[Excel](../quickstarts/excel-quickstart-jquery.md)、[Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、[Word](../quickstarts/word-quickstart.md)、[OneNote](../quickstarts/onenote-quickstart.md)、[PowerPoint](../quickstarts/powerpoint-quickstart.md)、または [Project](../quickstarts/project-quickstart.md) のクイック スタートを試します。 Visual Studio またはその他の任意のエディターを使用すると、すぐにアドインの構築を開始できます。 
-
-効果的で魅力的なユーザー エクスペリエンスを作成するソリューションの計画を始めるには、Office アドインの[設計のガイドライン](../design/add-in-design.md)と[ベスト プラクティス](../concepts/add-in-development-best-practices.md)の理解を深めてください。
+Office アドインの開発の詳細については、「[Office アドインを構築する](../overview/office-add-ins-fundamentals.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのサンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
-- [JavaScript API for Office について](../develop/understanding-the-javascript-api-for-office.md)
-- [Office アドインのホストとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインを設計する](../design/add-in-design.md)
+- [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
+- [Office アドインを発行する](../publish/publish.md)

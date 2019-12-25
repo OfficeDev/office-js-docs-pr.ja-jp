@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: c529dc88f310466c5aaae8c6a0ea4e7d0ea6e287
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830224"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851391"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -121,9 +121,7 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドイン ドキュメント](index.md)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-- [Office アドインの設計ガイドライン](../design/add-in-design.md)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
