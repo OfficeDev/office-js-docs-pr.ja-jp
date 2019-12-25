@@ -1,45 +1,137 @@
 ---
-title: JavaScript API for Office
-description: ''
-ms.date: 05/13/2019
+layout: LandingPage
+ms.topic: landing-page
+title: Office JavaScript API リファレンス ドキュメント
+description: Office JavaScript Api について説明します。
+ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 8d834aee4c21448210d9619fedd42d5ebb79e09d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: c10eeb5c89a74b28e9af44bf72b20a7ad610738b
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575325"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851552"
 ---
-# <a name="javascript-api-for-office"></a>JavaScript API for Office
+# <a name="api-reference-documentation"></a>API リファレンス ドキュメント
 
-JavaScript API for Office を使用すると、Office ホスト アプリケーションのオブジェクト モデルと対話する Web アプリケーションを作成できます。 ユーザーのアプリケーションは、スクリプト ローダーである office.js ライブラリを参照します。 Office.js ライブラリは、アドインを実行している Office アプリケーションに適用可能なオブジェクト モデルを読み込みます。 次の JavaScript オブジェクト モデルを使用できます。
+アドインは Office JavaScript API を使用することで、Office ホスト アプリケーション内のオブジェクトを操作できます。 
 
-- **共通 API** - **Office 2013** で導入された API。 これは、**すべての Office ホスト アプリケーション**に読み込まれ、アドイン アプリケーションを Office クライアント アプリケーションに接続します。 オブジェクト モデルには、Office クライアントに固有の API と複数の Office クライアントのホスト アプリケーションに適用可能な API が含まれています。 このコンテンツは、すべて**共通 API** の下にあります。 このオブジェクト モデルは、コールバックを使用します。 
+<ul>
+    <li><b>ホスト固有</b> API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。</li>
+    <li><b>共通 API</b> を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。</li>
+</ul>
 
-  **Outlook** でも共通 API 構文が使用されます。 Office というエイリアスの下にあるすべてのものの中には、Office アドインから Office ドキュメント、ワークシート、プレゼンテーション、メール アイテム、プロジェクトのコンテンツを操作するスクリプトの記述に利用できるオブジェクトが含まれています。アドインが Office 2013 以降を対象としている場合には、これらの共通 API を使用する必要があります。 このオブジェクト モデルは、コールバックを使用します。
+可能な場合は常にホスト固有 API を使用するようにし、ホスト固有 API でサポートされていないシナリオに対してのみ共通 API を使用するようにします。 これらの 2 つの API モデルの詳細については、「<a href="../overview/office-add-ins-fundamentals.md#api-models">Office アドインの構築</a>」を参照してください。
 
-- **ホスト固有 API** - **Office 2016** で導入された API。 このオブジェクト モデルは、Office クライアントの使用時に見られる使い慣れたオブジェクトに対応するホスト固有の厳密に型指定されたオブジェクトを提供し、Office JavaScript API の将来像を表すものです。 Excel、OneNote、PowerPoint、Word 用のホスト固有の JavaScript API が現在利用できます。
+<h2>API リファレンス</h2>
 
-## <a name="supported-host-applications"></a>サポートされるホスト アプリケーション
+<ul class="panelContent cardsF cols cols3">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/excel"><img src="../images/index/logo-excel.svg" alt="Excel API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Excel API リファレンス</h3>
+                        <p><a href="/javascript/api/excel">Excel アドイン構築用の JavaScript APIs。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/outlook"><img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Outlook API リファレンス</h3>
+                        <p><a href="/javascript/api/outlook">Outlook アドイン構築用の JavaScript APIs。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/word"><img src="../images/index/logo-word.svg" alt="Word API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Word API リファレンス</h3>
+                        <p><a href="/javascript/api/word">Word アドイン構築用の JavaScript APIs。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/powerpoint"><img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>PowerPoint API リファレンス</h3>
+                        <p><a href="/javascript/api/powerpoint">PowerPoint アドイン構築用の JavaScript APIs。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/onenote"><img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>OneNote API リファレンス</h3>
+                        <p><a href="/javascript/api/onenote">OneNote アドイン構築用の JavaScript APIs。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/office"><img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>共通 API リファレンス</h3>
+                        <p><a href="/javascript/api/office">すべての Office アドインで使用できる JavaScript API。</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
-- [Excel](overview/excel-add-ins-reference-overview.md)
-- [OneNote](overview/onenote-add-ins-javascript-reference.md)
-- [Outlook](requirement-sets/outlook-api-requirement-sets.md)
-- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
-- [Project](overview/project-add-ins-reference-overview.md)
-- [Visio](overview/visio-javascript-reference-overview.md)
-- [Word](overview/word-add-ins-reference-overview.md)
-- [共通 API](requirement-sets/office-add-in-requirement-sets.md)
+<b>注</b>: 現在、Project 用のホスト固有 API はありません。Project アドインを構築する場合は、共通 API を使用してください。また、PowerPoint 用のホスト固有 API の範囲は非常に限定的であるため、PowerPoint アドインを構築する際は、主に共通 API を使用してください。
 
-> [!NOTE] 
-> [Project](overview/project-add-ins-reference-overview.md)では、JavaScript API で作成されたアドインがサポートされていますが、現在、Project との対話専用に設計された JavaScript API はありません。 Project アドインの作成に共通 API を使用できます。
-
-[サポートされるホストとその他の要件](../concepts/requirements-for-running-office-add-ins.md)の詳細について説明します。
-
-## <a name="open-api-specifications"></a>Open API の仕様
+<h2>Open API の仕様</h2>
 
 新しい Office アドイン用の API の設計と開発にあたり、[Open API の仕様](openspec/openspec.md) ページでこれらに対するフィードバックの提供が可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
-
-## <a name="see-also"></a>関連項目
-
-- [Office JavaScript API リファレンス](/javascript/api/overview/office)
