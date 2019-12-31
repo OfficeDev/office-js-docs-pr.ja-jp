@@ -1,21 +1,21 @@
 ---
 title: Visual Studio Code を使用して Office アドインを開発する
 description: Visual Studio Code を使用して Office アドインを開発する方法
-ms.date: 12/02/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a18d8a74ff269b32e83c836b06629850873e507b
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: d6c6cafb28c12b2beb07f0b0cc30d8159e1df1b2
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670495"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914866"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Visual Studio Code を使用して Office アドインを開発する
 
 この記事では、[Visual Studio Code (VS Code)](https://code.visualstudio.com) を使用して Office アドインを開発する方法について説明します。
 
 > [!NOTE]
-> Visual Studio を使用して Office アドインを作成する方法については、「[Visual Studio での Office アドインの作成とデバッグ](create-and-debug-office-add-ins-in-visual-studio.md)」を参照してください。
+> Visual Studio を使用して Office アドインを作成する方法については、「[Visual Studio を使用して Office アドインを作成する](develop-add-ins-visual-studio.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -48,7 +48,9 @@ Office アドインのテスト、デバッグ、およびトラブルシュー�
 
 ## <a name="see-also"></a>関連項目
 
-- [5 分間のクイック スタート](../index.md)
-- [Script Lab を使用して Office JavaScript API を探索する](../overview/explore-with-script-lab.md)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインを展開し、発行する](../publish/publish.md)
+- [Office アドインを発行する](../publish/publish.md)

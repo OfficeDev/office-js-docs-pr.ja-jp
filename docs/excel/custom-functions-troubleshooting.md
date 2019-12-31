@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/31/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
 localization_priority: Priority
-ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670175"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915036"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -20,7 +20,7 @@ ms.locfileid: "39670175"
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
-Windows 上の Office でアドインをテストする場合は、[ランタイム ログを有効にする](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)必要があります。 ランタイム ログでは、問題解明用に別に作成したログ ファイルに `console.log` ステートメントが配信されます。 ステートメントでは、アドインの XML マニフェスト ファイルに関するエラー、実行時の条件、カスタム関数のインストールなど、さまざまなエラーがカバーされます。  ランタイム ログの詳細については、「[アドインのデバッグにランタイム ログを使用する](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)」をご覧ください。  
+Windows 上の Office でアドインをテストする場合は、[ランタイム ログを有効にする](../testing/runtime-logging.md)必要があります。 ランタイム ログでは、問題解明用に別に作成したログ ファイルに `console.log` ステートメントが配信されます。 ステートメントでは、アドインの XML マニフェスト ファイルに関するエラー、実行時の条件、カスタム関数のインストールなど、さまざまなエラーがカバーされます。 ランタイム ログの詳細については、「[ランタイム ログを使用してアドインをデバッグする](../testing/runtime-logging.md)」を参照してください。
 
 ### <a name="check-for-excel-error-messages"></a>Excel のエラー メッセージを確認する
 
@@ -35,7 +35,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
-カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、記事「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md#clear-the-office-cache)」内の「Office のキャッシュをクリアする」セクションを参照してください。
+カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、「[Office のキャッシュをクリアする](../testing/clear-cache.md)」を参照してください。
 
 ## <a name="common-issues"></a>一般的な問題
 
