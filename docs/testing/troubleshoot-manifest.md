@@ -1,18 +1,21 @@
 ---
-title: マニフェストの問題を検証し、トラブルシューティングする
-description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 11/26/2019
+title: Office アドインのマニフェストを検証する
+description: XML スキーマやその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cc9a660cdf3d4e216f9becd90ad58a6c777c6f2d
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 09b5841a0180d8cb730ec8b479df1386a0749b60
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629254"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914903"
 ---
-# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
+# <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
-アドインのマニフェスト ファイルを検証して、それが正しくて完全であることを確認します。 検証を行うと、アドインをサイドロードするときに「アドイン マニフェストが無効です」というエラーが発生している問題も特定することができます。 この記事では、複数の方法でマニフェスト ファイルを検証し、アドインに関する問題のトラブルシューティングについて説明します。
+アドインのマニフェスト ファイルを検証して、それが正しくて完全であることを確認します。 検証を行うと、アドインをサイドロードするときに「アドイン マニフェストが無効です」というエラーが発生している問題も特定することができます。 この記事では、マニフェスト ファイルを検証するための複数の方法について説明します。
+
+> [!NOTE]
+> ランタイム ログを使用してアドインのマニフェストでの問題をトラブルシューティングする方法の詳細については、「[ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)」を参照してください。
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する
 
@@ -58,152 +61,10 @@ npm run validate
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>アドインのデバッグにランタイム ログを使用する
-
-ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。   
-
-> [!NOTE]
-> ランタイムのログ機能は現在、Office 2016 デスクトップで利用可能です。
-
-> [!IMPORTANT]
-> ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
-
-### <a name="use-runtime-logging-from-the-command-line"></a>コマンド ラインからランタイム ログを使用する
-
-コマンド ラインからランタイム ログを有効にするのが、このログ ツールを使用する最も簡単な方法です。 これは、npm@5.2.0+ の一部として既定で提供される npx を使用します。 以前のバージョンの [npm](https://www.npmjs.com/) を使用している場合は、[Windows でのランタイム ログ](#runtime-logging-on-windows)の手順か [Mac でのランタイム ログ](#runtime-logging-on-mac)の手順、または [npx のインストール](https://www.npmjs.com/package/npx)をお試しください。
-
-- ランタイムのログを有効にするには、以下を実行します。
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --enable
-    ```
-- 特定のファイルに対してのみランタイム ログを有効にするには、ファイル名と同じコマンドを使用します。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --enable [filename.txt]
-    ```
-
-- ランタイム ログを無効にするには、以下を実行します。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --disable
-    ```
-
-- ランタイム ログが有効になっているかどうかを表示するには、以下を実行します。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log
-    ```
-
-- ランタイム ログのコマンド ライン内にヘルプを表示するには、以下を実行します。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --help
-    ```
-
-### <a name="runtime-logging-on-windows"></a>Windows でのランタイム ログ
-
-1. Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。 
-
-2. `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。 
-
-    > [!NOTE]
-    > `Developer` キー (フォルダー) が `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` の下にまだない場合、次の手順を完了して作成します。 
-    > 1. **[WEF]** キー (フォルダー) を右クリックし、**[新規]**、**[キー]** の順に選択します。
-    > 2. 新しいキーに **Developer** という名前を付けます。
-
-3. **RuntimeLogging** キーの既定値にログを書き込むファイルの完全なパスを設定します。 例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。 
-
-    > [!NOTE]
-    > ログ ファイルが書き込まれるディレクトリが既に存在しており、書き込みアクセス許可がある必要があります。 
- 
-レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。 
-
-![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
-
-### <a name="runtime-logging-on-mac"></a>Mac でのランタイム ログ
-
-1. Office 2016 デスクトップのビルド **16.27** (19071500) 以降を実行していることを確認します。
-
-2. **ターミナル**を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。
-    
-    ```command&nbsp;line
-    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
-    ```
-
-    `<bundle id>`は、ランタイム ログを有効にするホストを識別します。 `<file_name>`は、ログが書き込まれるテキスト ファイルの名前です。
-
-    `<bundle id>`を次の値のいずれかに設定して、対応するホストのランタイム ログを有効にします。
-
-    - `com.microsoft.Word`
-    - `com.microsoft.Excel`
-    - `com.microsoft.Powerpoint`
-    - `com.microsoft.Outlook`
-
-以下の例では、Word のランタイム ログを有効にし、それからログ ファイルを開きます。
-
-```command&nbsp;line
-defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
-open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
-```
-
-> [!NOTE] 
-> ランタイム ログを有効にするには、`defaults`コマンドを実行した後に Office を再起動する必要があります。
-
-ランタイム ログを無効にするには、`defaults delete`コマンドを使用します。
-
-```command&nbsp;line
-defaults delete <bundle id> CEFRuntimeLoggingFile
-```
-
-以下の例は、Word のランタイム ログをオフにします。
-
-```command&nbsp;line
-defaults delete com.microsoft.Word CEFRuntimeLoggingFile
-```
-
-### <a name="to-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題のトラブルシューティングを行うには
-
-ランタイムのログを使用してアドインの読み込みに関する問題のトラブルシューティングを行うには、次のようにします。
- 
-1. テスト用に[アドインをサイドロード](sideload-office-add-ins-for-testing.md)します。 
-
-    > [!NOTE]
-    > ログ ファイルのメッセージ数を最小限に抑えるため、テストするアドインのみをサイドロードすることをお勧めします。
-
-2. 何も起こらず、アドインが表示されない (アドイン ダイアログ ボックスにも表示されない) 場合は、ログ ファイルを開きます。
-
-3. ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイルでは、この ID には `SolutionId` というラベルが付いています。 
-
-次の例のログ ファイルでは、存在しないリソース ファイルを参照しているコントロールが示されています。この例の問題を修正するには、マニフェストの入力ミスを訂正するか、足りないリソースを追加します。
-
-![見つからないリソース ID を指定するエントリが含まれるログ ファイルのスクリーンショット](http://i.imgur.com/f8bouLA.png) 
-
-### <a name="known-issues-with-runtime-logging"></a>ランタイムのログに関する既知の問題
-
-混乱を招くメッセージまたは正しく分類されていないメッセージがログ ファイルに書き込まれることがあります。たとえば次のような場合です。
-
-- メッセージ "`Medium Current host not in add-in's host list`" に続く "`Unexpected Parsed manifest targeting different host`" は、誤ってエラーとして分類されています。
-
-- SolutionId が含まれていないメッセージ "`Unexpected Add-in is missing required manifest fields DisplayName`" は、多くの場合、エラーはデバッグ対象のアドインと関係ありません。 
-
-- `Monitorable` メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。 
-
-## <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
-
-リボン ボタンのアイコンのファイル名やアドイン コマンドのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
-
-#### <a name="for-windows"></a>Windows の場合:
-フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
-
-#### <a name="for-mac"></a>Mac の場合: 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>iOS の場合: 
-アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
-
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
+- [Office のキャッシュをクリアする](clear-cache.md)
+- [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [Office アドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

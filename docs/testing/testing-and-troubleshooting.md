@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: fed23cfde1380e7c5728c78c995d3b89d44451f2
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 76bb71cebb3c6027ac86e046e1fcfe579b7031c9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629736"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915015"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -66,7 +66,7 @@ Office の最新の更新プログラムがインストールされているこ�
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
-「[マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)」を参照して、アドインのマニフェストの問題をデバッグしてください。
+アドインのマニフェストでの問題をデバッグするには、「[Office アドインのマニフェストを検証する](troubleshoot-manifest.md)」および「[ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)」を参照してください。
 
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>アドイン ダイアログ ボックスを表示できない
@@ -143,4 +143,5 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md) 
 - [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
-- [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
+- [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
+- [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)

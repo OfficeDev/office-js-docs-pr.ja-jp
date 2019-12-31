@@ -3,12 +3,12 @@ title: Office アドインの構築
 description: Office アドイン開発の概要を説明します。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: e8e0b3b1ff5578ce75b56534f90be39d4b63d9f5
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851716"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915022"
 ---
 # <a name="building-office-add-ins"></a>Office アドインの構築
 
@@ -33,11 +33,11 @@ Office アドイン用の Yeoman ジェネレーターまたは Visual Studio �
 - Word
 - Excel のカスタム関数
 
-プロジェクトを作成するのに、HTML、CSS、および JavaScript を使用するのか、Angular または React を使用するのかを選択できます。 いずれのフレームワークを選択した場合も、JavaScript と Typescript の間から選択することができます。 それぞれの [5 分間のクイック スタート](../index.md)では、Yeoman ジェネレーターを使用して Office アドインを作成する方法についての詳しい手順が提供されています。
+プロジェクトを作成するのに、HTML、CSS、および JavaScript を使用するのか、Angular または React を使用するのかを選択できます。 いずれのフレームワークを選択した場合も、JavaScript と Typescript の間から選択することができます。 Yeoman ジェネレーターを使用してアドインを作成する方法については、「[Visual Studio Code を使用して Office アドインを開発する](../develop/develop-add-ins-vscode.md)」を参照してください。
 
 ### <a name="visual-studio"></a>Visual Studio
 
-Visual Studio は、Excel、Word、PowerPoint、Outlook 用の Office アドインの作成に使用できます。 Office アドイン プロジェクトは Visual Studio ソリューションの一部として作成され、HTML、CSS、および JavaScript が使用されます。 Excel、Word、PowerPoint、および Outlook 用の [5 分間のクイック スタート](../index.md)では、Visual Studio を使用して Office アドインを作成する方法についての詳しい手順が提供されています。 
+Visual Studio は、Excel、Outlook、Word、および PowerPoint 用の Office アドインの作成に使用できます。 Office アドイン プロジェクトは Visual Studio ソリューションの一部として作成され、HTML、CSS、および JavaScript が使用されます。 Visual Studio を使用してアドインを作成する方法については、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
 
 [!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
 
@@ -163,7 +163,9 @@ Office アドインの開発、テスト、公開の詳細については、こ�
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md)
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
-- [Office アドインの開発](../develop/develop-overview.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Visual Studio Code を使用して Office アドインを開発する](../develop/develop-add-ins-vscode.md)
+- [Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)

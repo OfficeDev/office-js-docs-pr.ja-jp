@@ -3,12 +3,12 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: ''
 ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 0852d70337a3d372ac495824ba2aa50469117f5c
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 835ae68304a6fd69648f0f182c9ff17e9cbfd56d
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001482"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914882"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -64,7 +64,7 @@ ms.locfileid: "38001482"
 
 ### <a name="13004"></a>13004
 
-無効なリソースです。 (このエラーが表示されるのは、開発中のみである必要があります。) アドイン マニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、**Resource** 要素 (**WebApplicationInfo** 要素内) にアドインのドメインと一致しないドメインがあることです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
+無効なリソースです。 (このエラーが表示されるのは、開発中のみである必要があります。) アドイン マニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、**Resource** 要素 (**WebApplicationInfo** 要素内) にアドインのドメインと一致しないドメインがあることです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
 
 ### <a name="13005"></a>13005
 

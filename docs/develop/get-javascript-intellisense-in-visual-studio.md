@@ -3,12 +3,12 @@ title: Visual Studio 2019 で JavaScript IntelliSense を利用できるよう�
 description: ''
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 26fd5b4bff2e244d84f2f8c40e3da7049189aadf
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626783"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914889"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 
@@ -84,4 +84,5 @@ function myFunc() {
 
 ## <a name="see-also"></a>関連項目
 
-- [Visual Studio でのアドインの作成とデバッグ](create-and-debug-office-add-ins-in-visual-studio.md)
+- [Visual Studio を使用して Office アドインを開発する](develop-add-ins-visual-studio.md)
+- [Visual Studio で Office アドインをデバッグする](debug-office-add-ins-in-visual-studio.md)

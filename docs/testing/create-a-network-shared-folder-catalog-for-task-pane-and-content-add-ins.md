@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office アドインをサイドロードする
 description: ''
-ms.date: 12/06/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: bb926b09d9381574d22e7634a578adac141e1f8f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: a30cfeb5af4bccb543e06c20843709083cea21f9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814480"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915029"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -121,6 +121,6 @@ ms.locfileid: "40814480"
 
 ## <a name="see-also"></a>関連項目
 
-- [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
+- [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
+- [Office のキャッシュをクリアする](clear-cache.md)
 - [Office アドインを発行する](../publish/publish.md)
-    

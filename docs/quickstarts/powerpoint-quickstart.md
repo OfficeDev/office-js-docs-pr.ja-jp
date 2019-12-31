@@ -1,15 +1,15 @@
 ---
 title: 最初の PowerPoint 作業ウィンドウ アドインをビルドする
 description: Office JS API を使用して単純な PowerPoint 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: fbf8ca6c52bd5a71f3db24d9661d7cce5f6004d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 56168749b907cdde3b9ea235d55805e1084f020c
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851349"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914945"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -85,6 +85,10 @@ ms.locfileid: "40851349"
 4. 作業ウィンドウの下部にある **[実行]** リンクを選択して、現在のスライドに "Hello World" とテキストを挿入します。
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3c.png)
+
+### <a name="next-steps"></a>次の手順
+
+これで完了です。PowerPoint 作業ウィンドウ アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.md)」をご覧ください。
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -245,14 +249,11 @@ ms.locfileid: "40851349"
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
 
+### <a name="next-steps"></a>次の手順
+
+これで完了です。PowerPoint 作業ウィンドウ アドインが正常に作成されました。 次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
+
 ---
-
-## <a name="next-steps"></a>次の手順
-
-これで完了です。PowerPoint 作業ウィンドウ アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細について説明します。PowerPoint アドインのチュートリアルに従って、より複雑なアドインをビルドします。
-
-> [!div class="nextstepaction"]
-> [PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.md)
 
 ## <a name="see-also"></a>関連項目
 

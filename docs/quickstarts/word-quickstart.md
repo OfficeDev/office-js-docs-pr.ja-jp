@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 7a253f884f509cc933b02c86d4d3d6d16c0ca114
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851335"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914924"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -87,6 +87,10 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" とテキストをドキュメントに追加します。
 
     ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-1c.png)
+
+### <a name="next-steps"></a>次の手順
+
+おめでとうございます。 Word の作業ウィンドウ アドインが正常に作成されました。 次に、Word アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Word アドインのチュートリアル](../tutorials/word-tutorial.md)」をご覧ください。
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -301,14 +305,11 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1b.png)
 
+### <a name="next-steps"></a>次の手順
+
+おめでとうございます。 Word の作業ウィンドウ アドインが正常に作成されました。 次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
+
 ---
-
-## <a name="next-steps"></a>次の手順
-
-おめでとうございます。 Word の作業ウィンドウ アドインが正常に作成されました。 次に、Word アドインの機能の詳細について説明します。Word アドインのチュートリアルに従って、より複雑なアドインをビルドします。
-
-> [!div class="nextstepaction"]
-> [Word アドインのチュートリアル](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,12 +3,12 @@ title: 作業ウィンドウからデバッガーをアタッチする
 description: ''
 ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 0b0cbfc2ba86368d0bdfbaa835ce6d904cc31081
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838474"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914910"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -43,5 +43,5 @@ Visual Studio でのデバッグの詳細については、以下を参照して
 
 ## <a name="see-also"></a>関連項目
 
-- [Visual Studio での Office アドインの作成とデバッグ](../develop/create-and-debug-office-add-ins-in-visual-studio.md)
+- [Visual Studio で Office アドインをデバッグする](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Office アドインを発行する](../publish/publish.md)

@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851356"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914952"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -64,6 +64,10 @@ ms.locfileid: "40851356"
 
     ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
 
+### <a name="next-steps"></a>次の手順
+
+おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)」をご覧ください。
+
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>前提条件
@@ -71,7 +75,6 @@ ms.locfileid: "40851356"
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
-
 
 1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
@@ -205,14 +208,11 @@ ms.locfileid: "40851356"
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
+### <a name="next-steps"></a>次の手順
+
+おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。 次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
+
 ---
-
-## <a name="next-steps"></a>次の手順
-
-おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
-
-> [!div class="nextstepaction"]
-> [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>関連項目
 
