@@ -1,22 +1,25 @@
 ---
-title: マニフェストの問題を検証し、トラブルシューティングする
-description: 以下の方法を使用して、Office アドイン マニフェストを検証します。
-ms.date: 11/26/2019
+title: Office アドインのマニフェストを検証する
+description: XML スキーマやその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cc9a660cdf3d4e216f9becd90ad58a6c777c6f2d
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 09b5841a0180d8cb730ec8b479df1386a0749b60
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629254"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914903"
 ---
-# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="c5748-103">マニフェストの問題を検証し、トラブルシューティングする</span><span class="sxs-lookup"><span data-stu-id="c5748-103">Validate and troubleshoot issues with your manifest</span></span>
+# <a name="validate-an-office-add-ins-manifest"></a><span data-ttu-id="3e36c-103">Office アドインのマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="3e36c-103">Validate an Office Add-in manifest</span></span>
 
-<span data-ttu-id="c5748-104">アドインのマニフェスト ファイルを検証して、それが正しくて完全であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="c5748-104">You may want to validate your add-in's manifest file to ensure that it's correct and complete.</span></span> <span data-ttu-id="c5748-105">検証を行うと、アドインをサイドロードするときに「アドイン マニフェストが無効です」というエラーが発生している問題も特定することができます。</span><span class="sxs-lookup"><span data-stu-id="c5748-105">Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in.</span></span> <span data-ttu-id="c5748-106">この記事では、複数の方法でマニフェスト ファイルを検証し、アドインに関する問題のトラブルシューティングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c5748-106">This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.</span></span>
+<span data-ttu-id="3e36c-104">アドインのマニフェスト ファイルを検証して、それが正しくて完全であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-104">You may want to validate your add-in's manifest file to ensure that it's correct and complete.</span></span> <span data-ttu-id="3e36c-105">検証を行うと、アドインをサイドロードするときに「アドイン マニフェストが無効です」というエラーが発生している問題も特定することができます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-105">Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in.</span></span> <span data-ttu-id="3e36c-106">この記事では、マニフェスト ファイルを検証するための複数の方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-106">This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.</span></span>
 
-## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a><span data-ttu-id="c5748-107">Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="c5748-107">Validate your manifest with the Yeoman generator for Office Add-ins</span></span>
+> [!NOTE]
+> <span data-ttu-id="3e36c-107">ランタイム ログを使用してアドインのマニフェストでの問題をトラブルシューティングする方法の詳細については、「[ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3e36c-107">For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).</span></span>
 
-<span data-ttu-id="c5748-108">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用してアドインを作成した場合は、それを使用してプロジェクトのマニフェスト ファイルを検証することもできます。</span><span class="sxs-lookup"><span data-stu-id="c5748-108">If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file.</span></span> <span data-ttu-id="c5748-109">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-109">Run the following command in the root directory of your project:</span></span>
+## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a><span data-ttu-id="3e36c-108">Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="3e36c-108">Validate your manifest with the Yeoman generator for Office Add-ins</span></span>
+
+<span data-ttu-id="3e36c-109">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用してアドインを作成した場合は、それを使用してプロジェクトのマニフェスト ファイルを検証することもできます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-109">If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file.</span></span> <span data-ttu-id="3e36c-110">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-110">Run the following command in the root directory of your project:</span></span>
 
 ```command&nbsp;line
 npm run validate
@@ -25,185 +28,43 @@ npm run validate
 ![コマンドラインから Yo Office 検証コントロールが実行され、検証の成功結果が生成されたアニメーション gif](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> <span data-ttu-id="c5748-111">この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5748-111">To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.</span></span>
+> <span data-ttu-id="3e36c-112">この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="3e36c-112">To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.</span></span>
 
-## <a name="validate-your-manifest-with-office-addin-manifest"></a><span data-ttu-id="c5748-112">office-addin-manifest を使用してマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="c5748-112">Validate your manifest with office-addin-manifest</span></span>
+## <a name="validate-your-manifest-with-office-addin-manifest"></a><span data-ttu-id="3e36c-113">office-addin-manifest を使用してマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="3e36c-113">Validate your manifest with office-addin-manifest</span></span>
 
-<span data-ttu-id="c5748-113">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest) を使用してマニフェストを検証することもできます。</span><span class="sxs-lookup"><span data-stu-id="c5748-113">If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span></span>
+<span data-ttu-id="3e36c-114">[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest) を使用してマニフェストを検証することもできます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-114">If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span></span>
 
-1. <span data-ttu-id="c5748-114">[Node.js](https://nodejs.org/download/) をインストールします。</span><span class="sxs-lookup"><span data-stu-id="c5748-114">Install [Node.js](https://nodejs.org/download/).</span></span>
+1. <span data-ttu-id="3e36c-115">[Node.js](https://nodejs.org/download/) をインストールします。</span><span class="sxs-lookup"><span data-stu-id="3e36c-115">Install [Node.js](https://nodejs.org/download/).</span></span>
 
-2. <span data-ttu-id="c5748-115">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-115">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="c5748-116">`MANIFEST_FILE` をマニフェスト ファイルの名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="c5748-116">Replace `MANIFEST_FILE` with the name of the manifest file.</span></span>
+2. <span data-ttu-id="3e36c-116">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-116">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="3e36c-117">`MANIFEST_FILE` をマニフェスト ファイルの名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-117">Replace `MANIFEST_FILE` with the name of the manifest file.</span></span>
 
     ```command&nbsp;line
     npx office-addin-manifest validate MANIFEST_FILE
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="c5748-117">このコマンドを実行すると、「コマンドの構文が無効です」というエラーメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c5748-117">If running this command results in the error message "The command syntax is not valid."</span></span> <span data-ttu-id="c5748-118">(`validate` コマンドが認識されないため)、次のコマンドを実行してマニフェストを検証します (`MANIFEST_FILE` をマニフェスト ファイル名で置き換えます)。</span><span class="sxs-lookup"><span data-stu-id="c5748-118">(because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file):</span></span> 
+    > <span data-ttu-id="3e36c-118">このコマンドを実行すると、「コマンドの構文が無効です」というエラーメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-118">If running this command results in the error message "The command syntax is not valid."</span></span> <span data-ttu-id="3e36c-119">(`validate` コマンドが認識されないため)、次のコマンドを実行してマニフェストを検証します (`MANIFEST_FILE` をマニフェスト ファイル名で置き換えます)。</span><span class="sxs-lookup"><span data-stu-id="3e36c-119">(because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file):</span></span> 
     > 
     > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
-## <a name="validate-your-manifest-against-the-xml-schema"></a><span data-ttu-id="c5748-119">XML スキーマと比較してマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="c5748-119">Validate your manifest against the XML schema</span></span>
+## <a name="validate-your-manifest-against-the-xml-schema"></a><span data-ttu-id="3e36c-120">XML スキーマと比較してマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="3e36c-120">Validate your manifest against the XML schema</span></span>
 
-<span data-ttu-id="c5748-120">マニフェストは、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較して検証することができます。</span><span class="sxs-lookup"><span data-stu-id="c5748-120">You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files.</span></span> <span data-ttu-id="c5748-121">マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="c5748-121">This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using.</span></span> <span data-ttu-id="c5748-122">他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。</span><span class="sxs-lookup"><span data-stu-id="c5748-122">If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**.</span></span> <span data-ttu-id="c5748-123">XML スキーマの検証ツールを使用して、この検証を実行できます。</span><span class="sxs-lookup"><span data-stu-id="c5748-123">You can use an XML schema validation tool to perform this validation.</span></span>
+<span data-ttu-id="3e36c-121">マニフェストは、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ファイルと比較して検証することができます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-121">You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files.</span></span> <span data-ttu-id="3e36c-122">マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-122">This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using.</span></span> <span data-ttu-id="3e36c-123">他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。</span><span class="sxs-lookup"><span data-stu-id="3e36c-123">If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**.</span></span> <span data-ttu-id="3e36c-124">XML スキーマの検証ツールを使用して、この検証を実行できます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-124">You can use an XML schema validation tool to perform this validation.</span></span>
 
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a><span data-ttu-id="c5748-124">コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには</span><span class="sxs-lookup"><span data-stu-id="c5748-124">To use a command-line XML schema validation tool to validate your manifest</span></span>
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a><span data-ttu-id="3e36c-125">コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには</span><span class="sxs-lookup"><span data-stu-id="3e36c-125">To use a command-line XML schema validation tool to validate your manifest</span></span>
 
-1. <span data-ttu-id="c5748-125">[tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。</span><span class="sxs-lookup"><span data-stu-id="c5748-125">Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.</span></span>
+1. <span data-ttu-id="3e36c-126">[tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。</span><span class="sxs-lookup"><span data-stu-id="3e36c-126">Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.</span></span>
 
-2. <span data-ttu-id="c5748-p106">次のコマンドを実行します。`XSD_FILE` をマニフェスト XSD ファイルへのパスに置き換え、`XML_FILE` をマニフェスト XML ファイルへのパスに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="c5748-p106">Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.</span></span>
+2. <span data-ttu-id="3e36c-p106">次のコマンドを実行します。`XSD_FILE` をマニフェスト XSD ファイルへのパスに置き換え、`XML_FILE` をマニフェスト XML ファイルへのパスに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3e36c-p106">Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.</span></span>
     
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a><span data-ttu-id="c5748-128">アドインのデバッグにランタイム ログを使用する</span><span class="sxs-lookup"><span data-stu-id="c5748-128">Use runtime logging to debug your add-in</span></span>
+## <a name="see-also"></a><span data-ttu-id="3e36c-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="3e36c-129">See also</span></span>
 
-<span data-ttu-id="c5748-129">ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="c5748-129">You can use runtime logging to debug your add-in's manifest as well as several installation errors.</span></span> <span data-ttu-id="c5748-130">この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c5748-130">This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs.</span></span> <span data-ttu-id="c5748-131">ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。</span><span class="sxs-lookup"><span data-stu-id="c5748-131">Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.</span></span>   
-
-> [!NOTE]
-> <span data-ttu-id="c5748-132">ランタイムのログ機能は現在、Office 2016 デスクトップで利用可能です。</span><span class="sxs-lookup"><span data-stu-id="c5748-132">The runtime logging feature is currently available for Office 2016 desktop.</span></span>
-
-> [!IMPORTANT]
-> <span data-ttu-id="c5748-133">ランタイムのログはパフォーマンスに影響します。</span><span class="sxs-lookup"><span data-stu-id="c5748-133">Runtime Logging affects performance.</span></span> <span data-ttu-id="c5748-134">アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。</span><span class="sxs-lookup"><span data-stu-id="c5748-134">Turn it on only when you need to debug issues with your add-in manifest.</span></span>
-
-### <a name="use-runtime-logging-from-the-command-line"></a><span data-ttu-id="c5748-135">コマンド ラインからランタイム ログを使用する</span><span class="sxs-lookup"><span data-stu-id="c5748-135">Use runtime logging from the command line</span></span>
-
-<span data-ttu-id="c5748-136">コマンド ラインからランタイム ログを有効にするのが、このログ ツールを使用する最も簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="c5748-136">Enabling runtime logging from the command line is the fastest way to use this logging tool.</span></span> <span data-ttu-id="c5748-137">これは、npm@5.2.0+ の一部として既定で提供される npx を使用します。</span><span class="sxs-lookup"><span data-stu-id="c5748-137">These use npx, which is provided by default as part of npm@5.2.0+.</span></span> <span data-ttu-id="c5748-138">以前のバージョンの [npm](https://www.npmjs.com/) を使用している場合は、[Windows でのランタイム ログ](#runtime-logging-on-windows)の手順か [Mac でのランタイム ログ](#runtime-logging-on-mac)の手順、または [npx のインストール](https://www.npmjs.com/package/npx)をお試しください。</span><span class="sxs-lookup"><span data-stu-id="c5748-138">If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).</span></span>
-
-- <span data-ttu-id="c5748-139">ランタイムのログを有効にするには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-139">To enable runtime logging:</span></span>
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --enable
-    ```
-- <span data-ttu-id="c5748-140">特定のファイルに対してのみランタイム ログを有効にするには、ファイル名と同じコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="c5748-140">To enable runtime logging only for a specific file, use the same command with a filename:</span></span>
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --enable [filename.txt]
-    ```
-
-- <span data-ttu-id="c5748-141">ランタイム ログを無効にするには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-141">To disable runtime logging:</span></span>
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --disable
-    ```
-
-- <span data-ttu-id="c5748-142">ランタイム ログが有効になっているかどうかを表示するには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-142">To display whether runtime logging is enabled:</span></span>
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log
-    ```
-
-- <span data-ttu-id="c5748-143">ランタイム ログのコマンド ライン内にヘルプを表示するには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="c5748-143">To display help within the command line for runtime logging:</span></span>
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --help
-    ```
-
-### <a name="runtime-logging-on-windows"></a><span data-ttu-id="c5748-144">Windows でのランタイム ログ</span><span class="sxs-lookup"><span data-stu-id="c5748-144">Runtime logging on Windows</span></span>
-
-1. <span data-ttu-id="c5748-145">Office 2016 デスクトップのビルド **16.0.7019** 以降を実行していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="c5748-145">Make sure that you are running Office 2016 desktop build **16.0.7019** or later.</span></span> 
-
-2. <span data-ttu-id="c5748-146">`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。</span><span class="sxs-lookup"><span data-stu-id="c5748-146">Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="c5748-147">`Developer` キー (フォルダー) が `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` の下にまだない場合、次の手順を完了して作成します。</span><span class="sxs-lookup"><span data-stu-id="c5748-147">If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it:</span></span> 
-    > 1. <span data-ttu-id="c5748-148">**[WEF]** キー (フォルダー) を右クリックし、**[新規]**、**[キー]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="c5748-148">Right-click the **WEF** key (folder) and select **New** > **Key**.</span></span>
-    > 2. <span data-ttu-id="c5748-149">新しいキーに **Developer** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="c5748-149">Name the new key **Developer**.</span></span>
-
-3. <span data-ttu-id="c5748-150">**RuntimeLogging** キーの既定値にログを書き込むファイルの完全なパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="c5748-150">Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written.</span></span> <span data-ttu-id="c5748-151">例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c5748-151">For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="c5748-152">ログ ファイルが書き込まれるディレクトリが既に存在しており、書き込みアクセス許可がある必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5748-152">The directory in which the log file will be written must already exist, and you must have write permissions to it.</span></span> 
- 
-<span data-ttu-id="c5748-p111">レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。</span><span class="sxs-lookup"><span data-stu-id="c5748-p111">The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.</span></span> 
-
-![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
-
-### <a name="runtime-logging-on-mac"></a><span data-ttu-id="c5748-156">Mac でのランタイム ログ</span><span class="sxs-lookup"><span data-stu-id="c5748-156">Runtime logging on Mac</span></span>
-
-1. <span data-ttu-id="c5748-157">Office 2016 デスクトップのビルド **16.27** (19071500) 以降を実行していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="c5748-157">Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.</span></span>
-
-2. <span data-ttu-id="c5748-158">**ターミナル**を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。</span><span class="sxs-lookup"><span data-stu-id="c5748-158">Open **Terminal** and set a runtime logging preference by using the `defaults` command:</span></span>
-    
-    ```command&nbsp;line
-    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
-    ```
-
-    <span data-ttu-id="c5748-159">`<bundle id>`は、ランタイム ログを有効にするホストを識別します。</span><span class="sxs-lookup"><span data-stu-id="c5748-159">`<bundle id>` identifies which the host for which to enable runtime logging.</span></span> <span data-ttu-id="c5748-160">`<file_name>`は、ログが書き込まれるテキスト ファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="c5748-160">`<file_name>` is the name of the text file to which the log will be written.</span></span>
-
-    <span data-ttu-id="c5748-161">`<bundle id>`を次の値のいずれかに設定して、対応するホストのランタイム ログを有効にします。</span><span class="sxs-lookup"><span data-stu-id="c5748-161">Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:</span></span>
-
-    - `com.microsoft.Word`
-    - `com.microsoft.Excel`
-    - `com.microsoft.Powerpoint`
-    - `com.microsoft.Outlook`
-
-<span data-ttu-id="c5748-162">以下の例では、Word のランタイム ログを有効にし、それからログ ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="c5748-162">The following example enables runtime logging for Word and then opens the log file:</span></span>
-
-```command&nbsp;line
-defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
-open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
-```
-
-> [!NOTE] 
-> <span data-ttu-id="c5748-163">ランタイム ログを有効にするには、`defaults`コマンドを実行した後に Office を再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5748-163">You'll need to restart Office after running the `defaults` command to enable runtime logging.</span></span>
-
-<span data-ttu-id="c5748-164">ランタイム ログを無効にするには、`defaults delete`コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="c5748-164">To turn off runtime logging, use the `defaults delete` command:</span></span>
-
-```command&nbsp;line
-defaults delete <bundle id> CEFRuntimeLoggingFile
-```
-
-<span data-ttu-id="c5748-165">以下の例は、Word のランタイム ログをオフにします。</span><span class="sxs-lookup"><span data-stu-id="c5748-165">The following example will turn off runtime logging for Word:</span></span>
-
-```command&nbsp;line
-defaults delete com.microsoft.Word CEFRuntimeLoggingFile
-```
-
-### <a name="to-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="c5748-166">マニフェストの問題のトラブルシューティングを行うには</span><span class="sxs-lookup"><span data-stu-id="c5748-166">To troubleshoot issues with your manifest</span></span>
-
-<span data-ttu-id="c5748-167">ランタイムのログを使用してアドインの読み込みに関する問題のトラブルシューティングを行うには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="c5748-167">To use runtime logging to troubleshoot issues loading an add-in:</span></span>
- 
-1. <span data-ttu-id="c5748-168">テスト用に[アドインをサイドロード](sideload-office-add-ins-for-testing.md)します。</span><span class="sxs-lookup"><span data-stu-id="c5748-168">[Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing.</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="c5748-169">ログ ファイルのメッセージ数を最小限に抑えるため、テストするアドインのみをサイドロードすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c5748-169">We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.</span></span>
-
-2. <span data-ttu-id="c5748-170">何も起こらず、アドインが表示されない (アドイン ダイアログ ボックスにも表示されない) 場合は、ログ ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="c5748-170">If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.</span></span>
-
-3. <span data-ttu-id="c5748-p113">ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイルでは、この ID には `SolutionId` というラベルが付いています。</span><span class="sxs-lookup"><span data-stu-id="c5748-p113">Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.</span></span> 
-
-<span data-ttu-id="c5748-p114">次の例のログ ファイルでは、存在しないリソース ファイルを参照しているコントロールが示されています。この例の問題を修正するには、マニフェストの入力ミスを訂正するか、足りないリソースを追加します。</span><span class="sxs-lookup"><span data-stu-id="c5748-p114">In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.</span></span>
-
-![見つからないリソース ID を指定するエントリが含まれるログ ファイルのスクリーンショット](http://i.imgur.com/f8bouLA.png) 
-
-### <a name="known-issues-with-runtime-logging"></a><span data-ttu-id="c5748-176">ランタイムのログに関する既知の問題</span><span class="sxs-lookup"><span data-stu-id="c5748-176">Known issues with runtime logging</span></span>
-
-<span data-ttu-id="c5748-p115">混乱を招くメッセージまたは正しく分類されていないメッセージがログ ファイルに書き込まれることがあります。たとえば次のような場合です。</span><span class="sxs-lookup"><span data-stu-id="c5748-p115">You might see messages in the log file that are confusing or that are classified incorrectly. For example:</span></span>
-
-- <span data-ttu-id="c5748-179">メッセージ "`Medium Current host not in add-in's host list`" に続く "`Unexpected Parsed manifest targeting different host`" は、誤ってエラーとして分類されています。</span><span class="sxs-lookup"><span data-stu-id="c5748-179">The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.</span></span>
-
-- <span data-ttu-id="c5748-180">SolutionId が含まれていないメッセージ "`Unexpected Add-in is missing required manifest fields DisplayName`" は、多くの場合、エラーはデバッグ対象のアドインと関係ありません。</span><span class="sxs-lookup"><span data-stu-id="c5748-180">If you see the message `Unexpected Add-in is missing required manifest fields DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging.</span></span> 
-
-- <span data-ttu-id="c5748-p116">`Monitorable` メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。</span><span class="sxs-lookup"><span data-stu-id="c5748-p116">Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.</span></span> 
-
-## <a name="clear-the-office-cache"></a><span data-ttu-id="c5748-183">Office のキャッシュをクリアする</span><span class="sxs-lookup"><span data-stu-id="c5748-183">Clear the Office cache</span></span>
-
-<span data-ttu-id="c5748-184">リボン ボタンのアイコンのファイル名やアドイン コマンドのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。</span><span class="sxs-lookup"><span data-stu-id="c5748-184">If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer.</span></span> 
-
-#### <a name="for-windows"></a><span data-ttu-id="c5748-185">Windows の場合:</span><span class="sxs-lookup"><span data-stu-id="c5748-185">For Windows:</span></span>
-<span data-ttu-id="c5748-186">フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する</span><span class="sxs-lookup"><span data-stu-id="c5748-186">Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span></span>
-
-#### <a name="for-mac"></a><span data-ttu-id="c5748-187">Mac の場合: </span><span class="sxs-lookup"><span data-stu-id="c5748-187">For Mac:</span></span>
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a><span data-ttu-id="c5748-188">iOS の場合: </span><span class="sxs-lookup"><span data-stu-id="c5748-188">For iOS:</span></span>
-<span data-ttu-id="c5748-p117">アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。</span><span class="sxs-lookup"><span data-stu-id="c5748-p117">Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="c5748-191">関連項目</span><span class="sxs-lookup"><span data-stu-id="c5748-191">See also</span></span>
-
-- [<span data-ttu-id="c5748-192">Office アドインの XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="c5748-192">Office Add-ins XML manifest</span></span>](../develop/add-in-manifests.md)
-- [<span data-ttu-id="c5748-193">テスト用に Office アドインをサイドロードする</span><span class="sxs-lookup"><span data-stu-id="c5748-193">Sideload Office Add-ins for testing</span></span>](sideload-office-add-ins-for-testing.md)
-- [<span data-ttu-id="c5748-194">Office アドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="c5748-194">Debug Office Add-ins</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [<span data-ttu-id="3e36c-130">Office アドインの XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="3e36c-130">Office Add-ins XML manifest</span></span>](../develop/add-in-manifests.md)
+- [<span data-ttu-id="3e36c-131">Office のキャッシュをクリアする</span><span class="sxs-lookup"><span data-stu-id="3e36c-131">Clear the Office cache</span></span>](clear-cache.md)
+- [<span data-ttu-id="3e36c-132">ランタイム ログを使用してアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="3e36c-132">Debug your add-in with runtime logging</span></span>](runtime-logging.md)
+- [<span data-ttu-id="3e36c-133">テスト用に Office アドインをサイドロードする</span><span class="sxs-lookup"><span data-stu-id="3e36c-133">Sideload Office Add-ins for testing</span></span>](sideload-office-add-ins-for-testing.md)
+- [<span data-ttu-id="3e36c-134">Office アドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="3e36c-134">Debug Office Add-ins</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
