@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851279"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914994"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -493,9 +493,9 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
+## <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
-マニフェストの問題をトラブルシューティングするには、「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照してください。[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法、およびランタイムのログを使用してマニフェストをデバッグする方法についての情報を確認できます。
+[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
@@ -507,6 +507,6 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 * [API とマニフェストのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [同等な COM アドインを特定する](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [アドインでの API 使用についてアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)
+* [Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)
 
 [アドイン コマンド]: create-addin-commands.md

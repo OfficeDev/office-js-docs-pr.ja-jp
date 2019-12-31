@@ -119,8 +119,11 @@
               href: develop/develop-add-ins-vscode.md
             - name: Visual Studio でアドインを開発する
               items:
-                - name: Visual Studio での Office アドインの作成とデバッグ
-                  href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+                - name: 概要
+                  href: develop/develop-add-ins-visual-studio.md
+                  displayName: Visual Studio
+                - name: Visual Studio で Office アドインをデバッグする
+                  href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: Visual Studio で JavaScript IntelliSense を利用できるようにする
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: JavaScript を TypeScript に変換する
@@ -236,11 +239,15 @@
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
             - name: Mac でデバッグする
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
+        - name: Office のキャッシュをクリアする
+          href: testing/clear-cache.md
+        - name: ランタイム ログを使用してデバッグする
+          href: testing/runtime-logging.md
         - name: ユーザーのエラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
         - name: ユーザビリティ テスト
           href: develop/usability-testing.md
-        - name: アドイン マニフェストの問題を検証し、トラブルシューティングを行う
+        - name: アドインのマニフェストを検証する
           href: testing/troubleshoot-manifest.md
     - name: 公開
       items:
