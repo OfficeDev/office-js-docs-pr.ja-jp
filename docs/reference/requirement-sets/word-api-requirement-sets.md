@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の要件セット
 description: Word ビルド用の Office アドイン要件セットの情報
-ms.date: 07/17/2019
+ms.date: 01/06/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 4af7a9c14489d148ffdc06a68ad6c26bf326abc5
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: c90daafe46d301b404ee902b38bb7417562adc44
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804626"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969532"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
@@ -32,7 +32,10 @@ Word アドインは、Windows での Office 2016 以降、Office on the web、i
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 |
 
 > [!NOTE]
-> MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。 このバージョンには、WordApi 1.1 の要件セットのみが含まれています。
+> 永続ライセンス版 Office でサポートされる要件セットは次のとおりです。
+>
+> - Office 2019 では WordApi 1.3 以前がサポートされています。
+> - Office 2016 では WordApi 1.1 要求セットのみがサポートされています。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 

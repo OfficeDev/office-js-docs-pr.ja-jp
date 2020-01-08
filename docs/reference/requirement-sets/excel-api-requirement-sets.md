@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報
-ms.date: 12/24/2019
+ms.date: 01/06/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ce3a51c37128627765b587d1baef35d051c52917
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 742c2e925ed7b1be8e1449cd9021c6cf03519d7b
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851377"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969525"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -40,7 +40,10 @@ Excel アドインは、Windows での Office 2016 以降、Office on the web、
 | [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | バージョン 1509 (ビルド 4266.1001) 以降   | 1.19 以降 | 15.20 以降 | 2016 年 1 月 |
 
 > [!NOTE]
-> MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。 このバージョンには、ExcelApi 1.1 の要件セットのみが含まれています。
+> 永続ライセンス版 Office でサポートされる要件セットは次のとおりです。
+>
+> - Office 2019 では ExcelApi 1.8 以前がサポートされています。
+> - Office 2016 では ExcelApi 1.1 要求セットのみがサポートされています。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 
