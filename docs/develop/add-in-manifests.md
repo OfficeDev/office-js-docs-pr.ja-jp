@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: ''
-ms.date: 12/31/2019
+ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914994"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40970094"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -30,6 +30,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 > [!NOTE]
 > AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="required-elements"></a>必要な要素
 

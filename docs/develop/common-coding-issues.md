@@ -1,14 +1,14 @@
 ---
 title: 一般的なコーディングの問題と予期しないプラットフォームの動作
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814013"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969494"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>一般的なコーディングの問題と予期しないプラットフォームの動作
 
@@ -47,15 +47,15 @@ readDocumentFileAsync(): Promise<any> {
 > [!NOTE]
 > 参照ドキュメントには、 [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-)の Promise ラップによる実装が含まれています。
 
-## <a name="some-properties-must-be-set-with-json-structs"></a>一部のプロパティは、JSON 構造体で設定する必要があります。
+## <a name="some-properties-cannot-be-set-directly"></a>一部のプロパティは直接設定できません
 
 > [!NOTE]
 > このセクションは、Excel および Word のホスト固有の Api にのみ適用されます。
 
-一部のプロパティは、個々のサブプロパティを設定するのではなく、JSON 構造体として設定する必要があります。 この例の1つは、 [PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 この`zoom`プロパティは、次に示すように、1つの[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)オブジェクトで設定する必要があります。
+書き込み可能であっても、一部のプロパティを設定することはできません。 これらのプロパティは、1つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理的な関係を持つサブプロパティに依存しているためです。 このような親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクトリテラル表記を使用して設定し、オブジェクト全体を設定する必要があります。 この例の1つは、 [PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 この`zoom`プロパティは、次に示すように、1つの[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)オブジェクトで設定する必要があります。
 
 ```js
-// PageLayout.zoom must be set with JSON struct representing the PageLayoutZoomOptions object.
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
@@ -68,10 +68,10 @@ sheet.pageLayout.zoom = { scale: 200 };
 range.format.font.size = 10;
 ```
 
-読み取り専用修飾子をチェックすることで、そのサブプロパティを JSON 構造体で設定する必要があるプロパティを識別できます。 読み取り専用のプロパティは、読み取り専用でないサブプロパティを直接設定することができます。 書き込み可能な`PageLayout.zoom`プロパティは、JSON 構造体で設定する必要があります。 概要:
+読み取り専用修飾子をチェックすることによって、そのサブプロパティを直接設定できないプロパティを識別できます。 読み取り専用のプロパティは、読み取り専用でないサブプロパティを直接設定することができます。 書き込み可能な`PageLayout.zoom`プロパティは、そのレベルのオブジェクトで設定する必要があります。 概要:
 
 - 読み取り専用プロパティ: サブプロパティは、ナビゲーションを使用して設定できます。
-- 書き込み可能なプロパティ: サブプロパティは JSON 構造体で設定する必要があります (ナビゲーションで設定することはできません)。
+- 書き込み可能なプロパティ: ナビゲーションを使用してサブプロパティを設定することはできません (最初の親オブジェクトの割り当ての一部として設定する必要があります)。
 
 ## <a name="excel-data-transfer-limits"></a>Excel データ転送の制限
 

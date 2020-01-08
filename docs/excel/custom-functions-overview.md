@@ -1,16 +1,16 @@
 ---
-ms.date: 09/26/2019
+ms.date: 12/28/2019
 description: JavaScript を使用して Excel でカスタム関数を作成する。
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 252ff1badd935dda161f474bb7fefa8e782fd1c4
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 331fe37bdeed55123cb1530f235fc31c00735548
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814466"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969553"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
@@ -136,6 +136,8 @@ function add(first, second){
 
 > [!NOTE]
 > Excel の関数は、XML マニフェスト ファイルで指定された名前空間が接頭辞として付加されます。 関数の名前空間は、関数名の前に付けられ、ピリオドで区切られます。 例えば、Excel ワークシートのセル内で、`ADD42` 関数を呼び出すためには、`=CONTOSO.ADD42` と入力します。これは、`CONTOSO` が名前空間で、`ADD42` が JSON ファイルで指定された関数の名前だからです。 名前空間は、会社またはアドインの識別子としての使用を目的としています。 名前空間にはアルファベットとピリオドのみを含めることが出来ます。
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>共同編集
 
