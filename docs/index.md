@@ -8,18 +8,18 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 09e07d8fff865969f03f2b0547f04dddb130df6f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851405"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111012"
 ---
 # <a name="office-add-ins-documentation"></a>Office アドインのドキュメント
 
 Office アドインのプラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメント内のコンテンツと対話するソリューションを構築します。 Office アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、Windows、Mac、iPad、および web 上で Office で実行できるソリューションを構築できます。
 
-<h2>作業の開始</h2>
+<h2>開始</h2>
 
 <p>Office アドインを構築するのが初めてですか? 最初に、Office アドインプラットフォームと Office アドインの構築について学習します。</p>
 
@@ -51,7 +51,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office アドインを作成する</h3>
+                        <h3>Office アドインを構築する</h3>
                         <p><a href="overview/office-add-ins-fundamentals.md">Office アドインの構築について説明します。</a></p>
                     </div>
                 </div>
@@ -84,6 +84,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint アドインのクイックスタート</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project アドインのクイックスタート</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word アドインのクイックスタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">シングルサインオン (SSO) のクイックスタート</a></li>
                         </ul>
                     </div>
                 </div>
