@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: dac45fd713de8787bd6e51f68d139915d3f572f9
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814104"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111061"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -28,7 +28,7 @@ ms.locfileid: "40814104"
 
 * Office 365 サブスクリプションの OneDrive for Business に保存されている少なくともいくつかのファイルおよびフォルダー。
 
-* Microsoft Azure テナント。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
+* Microsoft Azure サブスクリプション。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 

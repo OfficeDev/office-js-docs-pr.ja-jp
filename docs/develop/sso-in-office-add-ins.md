@@ -1,14 +1,14 @@
 ---
 title: Office アドインのシングル サインオンを有効化する
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301940"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111138"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
@@ -16,7 +16,7 @@ ms.locfileid: "38301940"
 
 ![アドインのサインイン プロセスを示す画像](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>プレビューの状態
+## <a name="preview-status"></a>プレビューの状態
 
 現在、シングル サインオン API はプレビューのみでサポートされています。 これは、試験目的のみで開発者に提供されており、運用環境のアドインには使用してはいけません。 また、SSO を使用するアドインは [AppSource](https://appsource.microsoft.com) では許可されていません。
 
@@ -24,7 +24,7 @@ SSO には Office 365 (Office のサブスクリプション バージョン) �
 
 SSO のプレビューは、すべての Office アプリケーションではサポートされていません。 これは、Word、Excel、Outlook、および PowerPoint で利用できます。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。
 
-### <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
+## <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -33,7 +33,7 @@ SSO のプレビューは、すべての Office アプリケーションでは�
 
 SSO をアドインの唯一の認証方法と*しない*ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](/office/dev/add-ins/develop/auth-external-add-ins)」を参照してください。 *Outlook* には推奨される代替システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](/outlook/add-ins/implement-sso-in-outlook-add-in)」を参照してください。 代替システムとして Azure Active Directory を使用するサンプルについては、「[Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)」と「[Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)」を参照してください。
 
-### <a name="how-sso-works-at-runtime"></a>実行時の SSO の動作のしくみ
+## <a name="how-sso-works-at-runtime"></a>実行時の SSO の動作のしくみ
 
 次の図は、SSO の動作のしくみを示しています。
 
@@ -54,6 +54,9 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 
 * [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 * [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> SSO が有効な Node.js Office アドインの作成に Yeoman ジェネレーターを使用することができます。 Yeoman ジェネレーターは、Azure 内で SSO を構成するために必要な手順を自動化し、SSO を使用するために必要なコードを生成することで、SSO が有効なアドインの作成プロセスを簡素化します。 詳細については、「[シングル サインオン (SSO) のクイック スタート](../quickstarts/sso-quickstart.md)」を参照してください。
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 

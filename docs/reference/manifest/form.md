@@ -1,26 +1,42 @@
 ---
 title: マニフェスト ファイルの Form 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 6539379489aefe81888c33c6edd11e2fa33266b7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d545d471e007f0077a8310b0b847bbbf99a8f7ac
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450696"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120650"
 ---
 # <a name="form-element"></a>Form 要素
 
 メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。
+
+> [!IMPORTANT]
+> 、、および`PhoneSettings`要素は、従来の web 上の outlook (通常は社内の Exchange server の古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 `DesktopSettings` `TabletSettings`
 
 **アドインの種類:** メール
 
 ## <a name="syntax"></a>構文
 
 ```XML
-<Form>
-   ...
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
 </Form>
 ```
 

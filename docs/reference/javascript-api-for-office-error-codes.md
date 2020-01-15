@@ -1,14 +1,14 @@
 ---
 title: JavaScript API for Office のエラー コード
 description: ''
-ms.date: 08/06/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 45882cedf28f47be6bf2e20f9e6f6bf3cb9e816e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815075"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120615"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>JavaScript API for Office のエラー コード
 
@@ -81,6 +81,7 @@ ms.locfileid: "40815075"
 |8021|範囲外|列のインデックス値が許容範囲外です。列の数よりも少ない正の値 (0 以上) を使用してください。|列のインデックスが、テーブルの最大列のインデックスより大きいか、または 0 より小さいです。|
 |8022|範囲外|値が許容範囲外です。|形式の値の一部がサポート範囲外です。|
 |9016|アクセス許可が拒否されました|アクセスが拒否されました|アクセスが拒否されました。|
+|9022|別のストアエラーのメッセージ|メッセージが別のストアに保存されているため、EWS ID を取得できません。|メッセージが移動されたか、送信メールボックスが変更されたため、現在のメッセージの EWS ID を取得できませんでした。|
 |9041|ネットワークエラー|ユーザーはネットワークに接続されていません。 ネットワーク接続を確認し、やり直してください。|ユーザーがネットワークまたはインターネットにアクセスできなくなった。|
 |12002|||以下のいずれか:<br> - `displayDialogAsync` に渡された URL にページが存在しない。<br> - `displayDialogAsync` に渡されたページが読み込まれたが、ダイアログ ボックスが見つからないか読み込むことができないページを指していたか、またはダイアログ ボックスが無効な構文を含む URL を指している。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12003|||ダイアログ ボックスが HTTP プロトコルを使用している URL を指していました。 HTTPS が必要です。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
@@ -135,6 +136,5 @@ API でバインディングを作成するとき、使用するバインドの�
 |テキスト|無効な選択項目 (たとえば、複数のオブジェクト、無効なオブジェクトなど)。|バインドを作成できません。|
 
 ## <a name="see-also"></a>関連項目
-   
+
 - [Office アドインの開発ライフ サイクル](/office/dev/add-ins/concepts/add-in-development-lifecycle)
-    

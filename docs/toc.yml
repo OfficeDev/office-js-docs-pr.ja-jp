@@ -24,6 +24,8 @@
           href: quickstarts/project-quickstart.md
         - name: Word アドイン
           href: quickstarts/word-quickstart.md
+        - name: シングル サインオン (SSO)
+          href: quickstarts/sso-quickstart-redirect.md
     - name: Script Lab を使用して Office JS API を探索する
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
@@ -76,6 +78,8 @@
               items:
                 - name: シングル サインオンを有効にする
                   href: develop/sso-in-office-add-ins.md
+                - name: SSO のクイック スタート
+                  href: quickstarts/sso-quickstart.md
                 - name: SSO を使用した Microsoft Graph への承認
                   href: develop/authorize-to-microsoft-graph.md
                 - name: ASP.NET を使用して SSO アドインを作成する
@@ -364,6 +368,10 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
+            - name: ランタイム
+              href: reference/manifest/runtime.md
+            - name: ランタイム
+              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: Sets

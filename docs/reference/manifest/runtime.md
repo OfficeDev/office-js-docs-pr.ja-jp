@@ -1,22 +1,18 @@
 ---
 title: マニフェストファイル内のランタイム
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 68def44ba74733934198ac3b32fa1fe649156766
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 945a30527632b23a594d7bfb82cec94e74754249
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111171"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120636"
 ---
 # <a name="runtime-element"></a>Runtime 要素
 
-この機能はプレビュー段階です。 [`<Runtimes>`](runtime.md)要素の子要素。 この要素を使用すると、Excel カスタム関数とアドインの作業ウィンドウの間でのグローバルデータと関数呼び出しの共有が容易になります。 
-
-## <a name="contained-in"></a>含まれる場所
-
--[ランタイム](runtimes.md)
+この機能はプレビュー段階です。 [`<Runtimes>`](runtime.md)要素の子要素。 この要素を使用すると、Excel カスタム関数とアドインの作業ウィンドウの間でのグローバルデータと関数呼び出しの共有が容易になります。
 
 **アドインの種類:** 作業ウィンドウ
 
@@ -27,6 +23,10 @@ ms.locfileid: "41111171"
     <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
 </Runtimes>
 ```
+
+## <a name="contained-in"></a>含まれる場所
+
+-[ランタイム](runtimes.md)
 
 ## <a name="attributes"></a>属性
 

@@ -1,23 +1,23 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
-ms.date: 11/20/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 362ca4a534800a683284b049e6e53776b1aa7f38
-ms.sourcegitcommit: 013886c1b08ef2b378cf80bb88bc73ec56c3e869
+ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "39191740"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111068"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
 ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
 
-この記事では、Node.js と Express を使用して作成したアドインで、シングル サインオン (SSO) を有効化するプロセスについて手順を追って説明します。
+この記事では、Node.js と Express を使用して作成したアドインで、シングル サインオン (SSO) を有効化するプロセスについて手順を追って説明します。 ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)」を参照してください。
 
 > [!NOTE]
-> ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)」を参照してください。
+> この記事で説明する手順を完了する代わりに、Yeoman ジェネレーターを使用して SSO が有効な Node.js Office アドインを作成することもできます。 Yeoman ジェネレーターは、Azure 内で SSO を構成するために必要な手順を自動化し、SSO を使用するために必要なコードを生成することで、SSO が有効なアドインの作成プロセスを簡素化します。 詳細については、「[シングル サインオン (SSO) のクイック スタート](../quickstarts/sso-quickstart.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -33,7 +33,7 @@ ms.locfileid: "39191740"
 
 * Office 365 サブスクリプションの OneDrive for Business に保存されている少なくともいくつかのファイルおよびフォルダー。
 
-* Microsoft Azure テナント。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
+* Microsoft Azure サブスクリプション。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -42,7 +42,7 @@ ms.locfileid: "39191740"
     > [!NOTE]
     > このサンプルには、次の 3 つのバージョンがあります。  
     > * **[Before]** フォルダーはスタート プロジェクトです。SSO や承認に直接関連しない UI などの側面は、既に完了しています。この記事で後述する各セクションでは、これを完成させるための手順を順に説明します。
-    > * このサンプルの **[Complete]** バージョンは、この記事の手順を完了したときに得られるアドインと同様のものですが、完成済みのプロジェクトには、この記事のテキストと重複するコード コメントが含まれています。 完成済みのバージョンを使用する場合は、この記事の手順をそのまま実行しますが、[Before] を [Completed] に置き換えて、「**クライアント側のコードを作成する**」と「サーバー側のコードを作成する」のセクションを省略してください。
+    > * このサンプルの **[Complete]** バージョンは、この記事の手順を完了したときに得られるアドインと同様のものですが、完成済みのプロジェクトには、この記事のテキストと重複するコード コメントが含まれています。 完成済みのバージョンを使用する場合は、この記事の手順をそのまま実行しますが、[Before] を [Completed] に置き換えて、「**クライアント側のコードを作成する**」と「**サーバー側のコードを作成する**」のセクションを省略してください。
     > * **SSOAutoSetup** バージョンは、アドインを Azure AD に登録して構成する手順の大部分を自動化する完成されたサンプルです。 SSO で動作するアドインをすばやく表示する場合には、このバージョンを使用します。 フォルダーの Readme の手順に従ってください。 Azure AD とアドインの関係をよりよく理解するために、この記事にある手動での登録およびセットアップのステップを行うことをお勧めします。 
 
 

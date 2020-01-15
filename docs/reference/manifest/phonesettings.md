@@ -1,27 +1,43 @@
 ---
 title: マニフェスト ファイルの PhoneSettings 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 68d0ef2e0ad50ee548535eeb1e2d51e633156e32
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3ea104af7e634b4e6e6cbeaac395af11ae4e376
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452012"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120657"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 要素
 
-このメール アドインが電話で使用されるときに適用するソースの場所と制御の設定を指定します。
+メール アドインが電話で使用されるときに適用されるソースの場所と制御の設定を指定します。
+
+> [!IMPORTANT]
+> この`PhoneSettings`要素は、web 上の従来の Outlook (社内 Exchange サーバーの古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 Android および iOS で Outlook をサポートするには、「 [Outlook Mobile 用のアドイン](/outlook/add-ins/outlook-mobile-addins)」を参照してください。
 
 **アドインの種類:** メール
 
 ## <a name="syntax"></a>構文
 
 ```XML
-<PhoneSettings>
-   ...
-</PhoneSettings>
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
+</Form>
 ```
 
 ## <a name="contained-in"></a>含まれる場所
