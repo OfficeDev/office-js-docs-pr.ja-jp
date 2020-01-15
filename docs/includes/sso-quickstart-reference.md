@@ -1,0 +1,2 @@
+> [!TIP]
+> <span data-ttu-id="c82dd-101">Yeoman ジェネレーターを使用してシングル サインオン (SSO) を使用するアドインを作成するには、「[シングル サインオン (SSO) のクイック スタート](../quickstarts/sso-quickstart.md)」の手順を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c82dd-101">To use the Yeoman generator to create an add-in that uses single sign-on (SSO), see instructions in the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).</span></span>
