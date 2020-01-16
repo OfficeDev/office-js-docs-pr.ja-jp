@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 15121834dc53e31c8872b8ff87ce6a1a58608a6f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: bf8e20891709f8d9d4d4e786976730c58406b803
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915073"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120629"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -20,6 +20,8 @@ ms.locfileid: "40915073"
 ## <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>アドイン コマンドと UI のないコードのデバッグを有効にする
 
 Visual Studio が Windows 上の Office をデバッグする場合、アドインは、Microsoft Internet Explorer または Microsoft Edge ブラウザー インスタンスのいずれかにホストされています。 開発用コンピューターで使用されているブラウザーを確認するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> [!NOTE]
+> 次の手順では、JS_Debug 環境変数が不要になりました。 詳細については、Microsoft Developer Community サポート フォーラムの「[Office Web アドインでのデバッグ動作](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html)」を参照してください。
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
