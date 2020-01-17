@@ -1,14 +1,14 @@
 ---
 title: Office アドインのデータ可視化のスタイル ガイドライン
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: ef82432dacb3f63e85fd305bc682325af3312aca
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268146"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217264"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
@@ -24,10 +24,9 @@ ms.locfileid: "36268146"
 
 ## <a name="data-visualization-elements"></a>データ可視化の要素
 
-データ可視化には、共通の一般的なフレームワークと、共通の視覚および対話型要素があります。次の図に示す、タイトル、ラベル、データ プロットなどです。
+データビジュアライゼーションは、次の図に示すように、一般的なフレームワークと、タイトル、ラベル、データプロットなどの一般的なビジュアル要素と対話要素を共有します。
 
-![タイトル、軸、凡例、ラベル付きプロット エリアのある折れ線グラフのイメージ](../images/data-visualization-line-chart.png)
-![軸、目盛線、凡例、ラベル付きデータ プロットのある縦棒グラフのイメージ](../images/data-visualization-column-chart.png)
+![タイトル、軸、凡例、ラベル付きプロットエリアが付いた折れ線グラフのイメージ](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>グラフのタイトル
 
@@ -37,11 +36,6 @@ ms.locfileid: "36268146"
 - 一般に、文頭だけを大文字にします (最初の単語の最初の文字を大文字にします)。コントラストを付けたり、階層を明確にしたりするには、すべて大文字を使用できますが、控えめに使用する必要があります。
 - [Office UI Fabric の文字体裁](https://developer.microsoft.com/fabric#/styles/typography)を組み込み、グラフを Segoe を使用する Office UI と一貫性をもたせます。グラフのコンテンツを UI と区別するために、異なる書体を使用することもできます。
 - カウンターの大きい sans-serif 書体を使用します。
-
-次の例では、グラフ タイトルにおける serif と sans-serif 書体の使用を示します。スケールのコントラストと空白スペースの効果的な使用によって、視覚で階層関係がどのように強調されるかにご注目ください。
-
-![serif フォントによるデータ可視化のイメージ](../images/data-visualization-serif.png)
-![sans-serif フォントによるデータ可視化のイメージ](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>軸ラベル
 
@@ -71,7 +65,7 @@ ms.locfileid: "36268146"
 
 次の図は、目盛線のあるデータ可視化を示しています。
 
-![目盛線のあるデータ可視化のイメージ](../images/data-visualization-gridlines.png)
+![目盛線のあるデータ可視化のイメージ](../images/data-visualization.png)
 
 ### <a name="legends"></a>凡例
 

@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
 ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111068"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217100"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -27,7 +27,7 @@ ms.locfileid: "41111068"
 
 * TypeScript、バージョン 3.6.2 以降
 
-* Office 365 の 1 年間の無料サブスクリプションを含む [Office 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加することで取得できる Office 365 (Office のサブスクリプション バージョン) アカウント。 最新の月次バージョンを使用し、Insider チャネルからビルドする必要がありますが、このバージョンを入手するには Office Insider である必要があります。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * コード エディター。 Visual Studio Code をお勧めします。
 

@@ -1,14 +1,14 @@
 ---
 title: Office のバージョンと要件セット
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3b9bcbef47cdc27ad77b6bdce2b5c69f25fa6d62
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940641"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217314"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -23,7 +23,7 @@ Office にはプラットフォームやバージョンが異なるものが数�
 
 使用している Office のバージョンを特定するには、Office アプリケーション内で **[ファイル]** メニューを選択し、**[アカウント]** を選択します。 Office のバージョンは **[製品情報]** セクションに表示されます。 たとえば、次のスクリーン ショットは、Office のバージョンが 1802 (ビルド 9026.1000) であることを示しています。
 
-![Office のバージョン確認](../images/office-version-number-ui.jpg)
+![Office のバージョン確認](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Office 要件セットの可用性
 

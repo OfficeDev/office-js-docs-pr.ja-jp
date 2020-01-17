@@ -1,18 +1,20 @@
 ---
 title: Office アドインの色のガイドライン
 description: ''
-ms.date: 03/19/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 3930cf22d40bd853c3fd6d96ade77a1a060cfc9d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a3c9711757369ae7c8709ee4a49e7c75733bc357
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448176"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217210"
 ---
 # <a name="color"></a>色
 
 色は、ブランドを強調し、視覚的な階層を明確にするためにしばしば使用されます。 インターフェイスを識別し、エクスペリエンスに従ってお客様をガイドするのに役立ちます。 Office 内で色は、同じ目的で使用されますが、意図的に適用され、最小限に抑えられます。 お客様のコンテンツを圧倒しないでください。 それぞれの Office アプリは、独自の主要な色を使用してブランド化されているとしても、慎重に使用します。
+
+![Office の配色パターンと、Word、PowerPoint、Excel の配色の画像](../images/office-addins-color-schemes.png)
 
 Office UI Fabric には、既定のテーマの色のセットが含まれています。Fabric が、コンポーネントやレイアウトとして Office アドインに適用されると、同じ目的が適用されます。色は、階層を示して、コンテンツに干渉することなく、意図的にお客様の行動を喚起するものであるべきです。Fabric テーマの色により、インターフェイス全体に新しいアクセント カラーを取り込むことができます。この新しいアクセントは、Office アプリのブランドと競合し、階層に干渉する可能性があります。つまり、Fabric は、アドイン内で使用すると、インターフェイス全体に新しいアクセント カラーを取り込むことができるということです。この新しいアクセント カラーは、注意をそらし、階層全体に干渉する可能性があります。競合との干渉を回避する方法を検討してください。ニュートラルのアクセントを使用したり、Fabric テーマの色を上書きしたりして、Office アプリのブランドや独自のブランドの色に合わせます。
 

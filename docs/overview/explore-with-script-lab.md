@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3212aec08cdf4e0185ae5856ae522b1d81e28ea1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851517"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216974"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -22,7 +22,7 @@ ms.locfileid: "40851517"
 
 これまでに良好なことがありますか? この1分間のビデオを見て、実行中のスクリプトラボを確認してください。
 
-[![Excel、Word、および PowerPoint で実行されているスクリプトラボを示すビデオをプレビューします。](../images/screenshot-wide-youtube.png 'スクリプトラボプレビューのビデオ')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>主な機能
 
@@ -73,5 +73,5 @@ Excel、Word、または PowerPoint でスクリプトラボを使用するに�
 
 - [スクリプトラボの取得](https://appsource.microsoft.com/product/office/WA104380862)
 - [スクリプトラボの詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [開発者プログラムにサインアップする](https://developer.microsoft.com/office/dev-program)
-- [Office アドインを作成する](../overview/office-add-ins-fundamentals.md)
+- [Office 365 Developer Program に参加する](https://developer.microsoft.com/office/dev-program)
+- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)

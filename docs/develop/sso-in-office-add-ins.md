@@ -1,20 +1,20 @@
 ---
 title: Office アドインのシングル サインオンを有効化する
 description: ''
-ms.date: 01/13/2020
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: e8bc5f09b3e9d401fdba992d87ec3ef4faf7fc08
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111138"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217091"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 
 ユーザーは個人用の Microsoft アカウントまたは職場や学校の (Office 365) アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 これとシングル サインオン (SSO) を使用すれば、ユーザーに 2 度目のサインインを求めずに、ご自分のアドインをユーザーに許可できます。
 
-![アドインのサインイン プロセスを示す画像](../images/office-host-title-bar-sign-in.png)
+![アドインのサインイン プロセスを示す画像](../images/sso-for-office-addins.png)
 
 ## <a name="preview-status"></a>プレビューの状態
 

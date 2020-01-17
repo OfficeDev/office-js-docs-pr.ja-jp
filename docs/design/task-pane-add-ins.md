@@ -1,14 +1,14 @@
 ---
 title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 69fc1e2a228aa757613847095c91514264948c65
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1d2e77dd446c787daba18426f74d4788cdc6d99e
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127696"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217297"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
@@ -34,7 +34,7 @@ ms.locfileid: "35127696"
 
 *図 2. Office 2016 デスクトップ作業ウィンドウのサイズ*
 
-![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/add-in-taskpane-sizes-desktop.png)
+![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/office-2016-taskpane-sizes.png)
 
 - Excel - 320x455
 - PowerPoint - 320x531
@@ -45,7 +45,7 @@ ms.locfileid: "35127696"
 
 *図 3. Office 365 の作業ウィンドウのサイズ*
 
-![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/add-in-taskpane-sizes-online.png)
+![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391

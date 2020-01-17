@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける非同期プログラミング
 description: ''
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 009f8e37cc8a6eb2e808278df88f3bfdc5b0d1b1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110907"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217245"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -20,7 +20,7 @@ Office アドイン API で非同期プログラミングを使用する理由 J
 
 *図 1. 非同期プログラミング実行フロー*
 
-![非同期プログラミング スレッドの実行フロー](../images/office15-app-async-prog-fig01.png)
+![非同期プログラミング スレッドの実行フロー](../images/office-addins-asynchronous-programming-flow.png)
 
 リッチ クライアントと Web クライアントの両方でこの非同期設計をサポートすることは、Office アドイン開発モデルの "write once-run cross-platform (一度書けばどんなプラットフォームも実行できる)" 設計目的の一部です。たとえば、Excel 2013 と Excel Online の両方で実行されるシングル コード ベースのコンテンツ アドインまたは作業ウィンドウ アドインを作成できます。
 

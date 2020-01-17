@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: 揮発性およびオフラインのストリーミングカスタム関数を実装する方法について説明します。
 title: 関数の揮発性の値
 localization_priority: Normal
-ms.openlocfilehash: 92d61aff4c3f4b4cbc79a3981db12ed1ce0ffb9d
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 57a41578f400b10806fc169fed09db7d7a66ce84
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771647"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217044"
 ---
 # <a name="volatile-values-in-functions"></a>関数の揮発性の値
 
@@ -24,13 +24,15 @@ JSON ファイルの自動生成を選択する場合は、JSDoc comment タグ`
 
 揮発性のカスタム関数の例を次に示します。これは6つのサイドダイスの重ね合わせをシミュレートします。
 
+![6面のダイスのローリングをシミュレートするためにランダムな値を返すカスタム関数を示す gif](../images/six-sided-die.gif)
+
 ```JS
 /**
  * Simulates rolling a 6-sided dice.
  * @customfunction
  * @volatile
  */
-function roll6sided(): number {
+function roll6sided() {
   return Math.floor(Math.random() * 6) + 1;
 }
 ```

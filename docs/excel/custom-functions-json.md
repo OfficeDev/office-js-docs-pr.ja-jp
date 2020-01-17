@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: Excel でカスタム関数の JSON メタデータを定義し、関数 id と name プロパティを関連付けます。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: b0e015cfa439651420487db4885647f5c7de7da8
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 2a777cb0217d48caf03983d3dbfe662dfe0b2567
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771562"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217049"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
@@ -26,10 +26,13 @@ ms.locfileid: "35771562"
 
 この記事では、これら3つの手順をすべて実行する方法について説明します。
 
-> [!NOTE]
-> スキャフォールディングファイルとは`yo office`異なり、XML マニフェストファイルの`<Resources>`セクションを使用して、作成した JSON ファイルを使用してマニフェストをフックする必要があります。 Web 上の Excel でカスタム関数が正しく動作するためには、JSON ファイルをホストするサーバー上のサーバー設定で[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)を有効にする必要があることに注意してください。
+次の図は、スキャフォールディングファイルを`yo office`使用することと、JSON を一から作成することの違いについて説明しています。
+![Yo Office を使用して独自の JSON を作成することとの違いの画像](../images/custom-functions-json.png)
 
-## <a name="authoring-metadata-and-hooking-up-to-the-manifest"></a>メタデータの作成とマニフェストへのフック
+> [!NOTE]
+> スキャフォールディングファイルとは`yo office`異なり、マニフェストを作成する JSON ファイルには、XML マニフェストファイルの`<Resources>`セクションを使用して接続する必要があります。 Web 上の Excel でカスタム関数が正しく動作するためには、JSON ファイルをホストするサーバー上のサーバー設定で[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)を有効にする必要があることに注意してください。
+
+## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>メタデータの作成とマニフェストへの接続
 
 プロジェクトで JSON ファイルを作成し、関数のパラメーターなど、関数に関するすべての詳細を提供する必要があります。 関数プロパティの完全なリストについては、[次のメタデータの例](#json-metadata-example)と[メタデータリファレンス](#metadata-reference)を参照してください。
 
@@ -144,10 +147,10 @@ ms.locfileid: "35771562"
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
 | `helpUrl`     | string    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
-| `id`          | 文字列    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
-| `name`        | 文字列    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
+| `id`          | 文字列    | あり      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
+| `name`        | 文字列    | あり      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
 | `options`     | オブジェクト    | いいえ       | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。                                                          |
-| `parameters`  | 配列     | はい      | 関数の入力パラメーターを定義する配列です。 詳細については、「 [parameters](#parameters) 」を参照してください。                                                                             |
+| `parameters`  | 配列     | あり      | 関数の入力パラメーターを定義する配列です。 詳細については、「 [parameters](#parameters) 」を参照してください。                                                                             |
 | `result`      | object    | はい      | 関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result](#result) に関する説明を参照してください。                                                                 |
 
 ### <a name="options"></a>options
@@ -168,7 +171,7 @@ ms.locfileid: "35771562"
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは、Excel の intelliSense に表示されます。  |
-|  `dimensionality`  |  string  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
+|  `dimensionality`  |  文字列  |  いいえ  |  **スカラー** (配列以外の値) または**マトリックス** (2 次元配列) のいずれかである必要があります。  |
 |  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、Excel の intelliSense に表示されます。  |
 |  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 **boolean**、**number**、**string**、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
 |  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |

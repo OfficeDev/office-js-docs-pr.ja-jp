@@ -1,18 +1,21 @@
 ---
 title: Excel JavaScript API を使用して図形を操作する
 description: ''
-ms.date: 09/03/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2461416bcd7e64c2ea300d98e504ff27edcb14ac
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715607"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217231"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して図形を操作する
 
 Excel では、図形は Excel の描画層にある任意のオブジェクトとして定義されます。 つまり、セルの外部にあるものは図形です。 この記事では、[図形](/javascript/api/excel/excel.shape)および shapes [ecollection](/javascript/api/excel/excel.shapecollection) api と組み合わせて、ジオメトリック図形、線、およびイメージを使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、「 [Excel JavaScript API を使用してグラフを操作](excel-add-ins-charts.md)する」で説明されています。
+
+次の図は、温度計を形成する図形を示しています。
+![Excel 図形として作成された温度計のイメージ](../images/excel-shapes.png)
 
 ## <a name="create-shapes"></a>図形を作成する
 
@@ -24,7 +27,7 @@ Excel では、図形は Excel の描画層にある任意のオブジェクト�
 |-------|------------|-----------|
 | 幾何学的図形 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
 | 画像 (JPEG または PNG のいずれか) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| 枠線 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| 線 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
 | SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | テキスト ボックス | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
@@ -108,7 +111,7 @@ Excel.run(function (context) {
 
 ワークシートの一番上にある図形。 これらの配置は、 `left`および`top`プロパティによって定義されます。 これらは、ワークシートの各エッジの余白として機能し、[0, 0] が左上隅になります。 これらは、 `incrementLeft`および`incrementTop`メソッドを使用して、現在の位置から直接設定または調整することができます。 既定の位置から図形を回転させる度合いは、この方法で設定します。 `rotation`この方法では、プロパティが`incrementRotation`絶対量で、既存の回転を調整するメソッドも使用されます。
 
-他の図形を基準とした図形の深さは`zorderPosition` 、プロパティによって定義されます。 これは`setZOrder`メソッドを使用して設定され[](/javascript/api/excel/excel.shapezorder)ます。このメソッドは、このメソッドを使用します。 `setZOrder`他の図形を基準に現在の図形の順序を調整します。
+他の図形を基準とした図形の深さは`zorderPosition` 、プロパティによって定義されます。 これは`setZOrder`メソッドを使用して設定され[ます。この](/javascript/api/excel/excel.shapezorder)メソッドは、このメソッドを使用します。 `setZOrder`他の図形を基準に現在の図形の順序を調整します。
 
 アドインには、図形の高さと幅を変更するためのいくつかのオプションがあります。 `height`または`width`プロパティのいずれかを設定すると、他の次元を変更せずに、指定した次元が変更されます。 `scaleHeight`を指定`scaleWidth`して、現在のサイズまたは元のサイズを基準にして図形のそれぞれの寸法を調整します (提供される[ShapeScaleType](/javascript/api/excel/excel.shapescaletype)の値に基づきます)。 省略可能な[ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom)パラメーターは、図形を拡大または縮小する位置 (左上隅、中央、または右下隅) を指定します。 プロパティに`lockAspectRatio` **true**が設定されている場合、scale メソッドは、他の次元も調整して、図形の現在の縦横比を維持します。
 
