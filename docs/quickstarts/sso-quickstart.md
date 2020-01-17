@@ -4,12 +4,12 @@ description: Yeoman ジェネレーターを使用して、シングル サイ�
 ms.date: 01/13/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3c67fdb2b8582546c13624dcb8a6f139bb638df0
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111116"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217366"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
 
@@ -22,9 +22,9 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Node.js](https://nodejs.org) (バージョン 10.15.0 以降)
+* [Node.js](https://nodejs.org) (バージョン 10.15.0 以降)
 
-- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
+* 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,12 +32,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-- Office 365 (Office のサブスクリプション バージョン) アカウント。 Office 365 アカウントをまだお持ちでない場合は、[Office 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。 
-
-- Insider の Office 365 のビルド。 最新の月次バージョンを使用し、Insider チャネルからビルドする必要がありますが、このバージョンを入手するには [Office Insider である](https://products.office.com/office-insider?tab=tab-1)必要があります。 
-
-    > [!NOTE]
-    > ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートは無効になります。
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 

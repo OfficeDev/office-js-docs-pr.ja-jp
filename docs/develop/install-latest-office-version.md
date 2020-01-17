@@ -1,14 +1,14 @@
 ---
 title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 2308bf8f825201f1074d56bba2ddc67c32ba7f24
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8d248e17433a2b6b1b31ad576ecdd237cd8543d0
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940627"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217385"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -39,7 +39,7 @@ Office の最新ビルドを取得するには、次の操作を行います。
 
 インストール処理の完了時点で、最新の Office アプリケーションがインストールされています。 最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**、**[アカウント]** の順に移動します。 [Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
-![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/office-insiders.png)
+![Office Insiders のラベルと製品情報を示すスクリーンショット](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API の要件セットの最小 Office ビルド
 
