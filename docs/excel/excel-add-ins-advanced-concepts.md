@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した高度なプログラミングの概念
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 76308b6ce04dfcaa09e9006373caf07744572112
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681929"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217343"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 
@@ -27,6 +27,10 @@ Excel 2016 以降を対象にしたアドインでは、機能の大部分を Ex
 - [Context](/javascript/api/office/office.context): **Context** オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `contentLanguage` や `officeTheme` などのブック構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。 さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。
 
 - [Document](/javascript/api/office/office.document):**Document** オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。
+
+次の図は、Excel JavaScript API または共通 API を使用するタイミングを示しています。
+
+![Excel JS API と共通 API の違いを示す画像](../images/excel-js-api-common-api.png)
 
 ## <a name="requirement-sets"></a>要件セット
 

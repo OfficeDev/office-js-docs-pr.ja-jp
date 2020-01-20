@@ -4,19 +4,19 @@ title: 'チュートリアル: Excel カスタム関数と作業ウィンドウ�
 ms.prod: excel
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
 localization_priority: Priority
-ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814132"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217359"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)
 
 Excel カスタム関数と作業ウィンドウはグローバル データを共有し、互いに関数呼び出しを行うことができます。 カスタム関数が作業ウィンドウで機能するようにプロジェクトを構成するには、この記事の指示に従ってください。
 
 > [!NOTE]
-> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 この記事のプレビュー機能は、Windows 上の Excel でのみ使用できます。 プレビュー機能を試すには、[Office Insider に参加する](https://insider.office.com/join)必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) に参加することで入手できます。
+> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 この記事のプレビュー機能は、Windows 上の Excel でのみ使用できます。 プレビュー機能を試すには、[Office Insider に参加する](https://insider.office.com/join)必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -41,21 +41,23 @@ yo office
 3. 次のコードに示ように、**CustomFunctionsRuntime** バージョン **1.2** を使用するように `<Requirements>` ションを変更します。
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. ブックの `<Host>` 要素の下に、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。
+4. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. `<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **TaskPaneAndCustomFunction.Url** に変更します。
@@ -150,7 +152,13 @@ yo office
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>グローバル データを操作する作業ウィンドウのコントロールを作成する 
 
 1. ファイル **src/taskpane/taskpane.html** を開きます。
-2. 終了 `</main>` 要素の後に、次の HTML を追加します。 HTML は、グローバル データの取得または保存に使用される 2 つのテキスト ボックスとボタンを作成します。
+2. `</head>` 要素の前に、次のスクリプト要素を追加します。
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. 終了 `</main>` 要素の後に、次の HTML を追加します。 HTML は、グローバル データの取得または保存に使用される 2 つのテキスト ボックスとボタンを作成します。
 
     ```html
     <ol>
@@ -172,7 +180,7 @@ yo office
     </div>
     ```
     
-3. `<body>` 要素の前に、次のスクリプトを追加します。 このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
+4. `<body>` 要素の前に、次のスクリプトを追加します。 このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
     
     ```js
     <script>
@@ -186,8 +194,8 @@ yo office
     }</script>
     ```
     
-4. ファイルを保存します。
-5. プロジェクトをビルドする
+5. ファイルを保存します。
+6. プロジェクトをビルドする
     
     ```command&nbsp;line
     npm run build 

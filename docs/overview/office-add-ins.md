@@ -1,18 +1,20 @@
 ---
 title: Office アドイン プラットフォームの概要 | Microsoft Docs
 description: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、Outlook を拡張および対話操作できます。
-ms.date: 12/24/2019
+ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3ecca3e36108b831899e9488459687cb2acc3c98
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851363"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216990"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
+
+![Office アドインの拡張性の画像](../images/addins-overview.png)
 
 Office アドイン プラットフォームを使用すると、Office アプリケーションを拡張して、Office ドキュメント内のコンテンツを対話方式で操作するソリューションを構築できます。Office アドインでは、HTML、CSS、および JavaScript などの一般的な Web テクノロジを使用することで、Word、Excel、PowerPoint、OneNote、Project、および Outlook を拡張して対話できるようになります。Windows、Mac、iPad、およびブラウザーを含む複数のプラットフォームにわたって Office ソリューションを実行できます。
 
@@ -25,6 +27,8 @@ Office アドインでは、ブラウザー内で Web ページが実行でき�
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office アドインが COM アドインおよび VSTO アドインと異なる点
 
 COM または VSTO アドインは、Office for Windows 上でのみ実行する以前の Office 統合ソリューションです。COM アドインとは異なり、Office アドインにはユーザーのデバイスまたは Office クライアントで実行されるコードは含まれません。Office アドインの場合、ホスト アプリケーション (たとえば Excel) がアドインのマニフェストを読み取り、アドインのカスタム リボン ボタンと UI のメニュー コマンドをフックします。これは必要に応じて、サンド ボックスのブラウザーのコンテキストで実行されるアドインの JavaScript と HTML を読み込みます。
+
+![Office アドインを使用する理由の画像](../images/why.png)
 
 Office アドインは、VBA、COM、または VSTO を使用して作成されたアドインと比較して、次のような利点があります。
 
@@ -39,10 +43,6 @@ Office アドインは、VBA、COM、または VSTO を使用して作成され�
 ## <a name="components-of-an-office-add-in"></a>Office アドインのコンポーネント
 
 Office アドインには、2 つの基本的なコンポーネントが含まれています。XML マニフェスト ファイルと独自の Web アプリケーションです。マニフェストは、アドインを Office クライアントと統合する方法など、さまざまな設定を定義します。Web アプリケーションは Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされる必要があります。
-
-*図 1. アドインのマニフェスト (XML) + Web ページ (HTML, JS) = Office アドイン*
-
-![Office アドインはマニフェストと Web ページによって構成される](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>マニフェスト
 
