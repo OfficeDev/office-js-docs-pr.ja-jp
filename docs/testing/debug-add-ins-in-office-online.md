@@ -3,12 +3,12 @@ title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ebc1296c0d6f13d5327f666e72907e016fbe8c6e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: cf2461184f5163463f3e4fbf93f2cc7a0b70a249
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575682"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217331"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
@@ -22,7 +22,7 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 - Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
 
   > [!NOTE]
-  > 無料の Office 365 開発者サブスクリプションにサインアップするには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。 Office 365 開発者プログラムに参加し、サブスクリプションにサインアップして構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
+  > 90 日間の更新可能な無料の Office 365 開発者サブスクリプションを取得するには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。Office 365 開発者プログラムに参加し、サブスクリプションを構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
 
 - Office 365 (SharePoint Online) 上でアプリ カタログをセットアップします。アプリ カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アプリ カタログのドキュメント ライブラリをセットアップできます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint のアプリ カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
 

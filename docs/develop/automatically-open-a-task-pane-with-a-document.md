@@ -3,12 +3,12 @@ title: ドキュメントで作業ウィンドウを自動的に開く
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 343b7650d9de5dfcda508c4ae134be6dd8696454
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127612"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217016"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -159,10 +159,9 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 </we:webextension>
 ```
 
-前の例をテストするには、[Office 365 開発者プログラム](/office/developer-program/office-365-developer-program)に参加することを検討してください。Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者アカウント](https://developer.microsoft.com/office/dev-program)にサインアップすることを検討してください。 実際に一元展開をテストし、アドインが期待どおりに動作することを確認できます。
-
+Office 365 サブスクリプションを使って一元展開を試し、アドインが正常に動作することを確認することにより、前の例をテストできます。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。
 
 ## <a name="see-also"></a>関連項目
 
 Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
-[Office 365 開発者プログラムに参加してください](/office/developer-program/office-365-developer-program)。
+[Office 365 開発者プログラムに参加する](/office/developer-program/office-365-developer-program)。
