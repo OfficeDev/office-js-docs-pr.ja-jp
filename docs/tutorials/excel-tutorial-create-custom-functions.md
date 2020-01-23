@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035449"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265537"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
