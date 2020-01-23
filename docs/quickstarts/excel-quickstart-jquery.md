@@ -1,54 +1,54 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a51ea833ae107aac677d255de4097726822facbd
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 71253cbc5b50f6d36c8c04b25573c1ed328f9df6
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111131"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265707"
 ---
-# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="8cd4b-103">Excel 作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-103">Build an Excel task pane add-in</span></span>
+# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="06e76-103">Excel 作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="06e76-103">Build an Excel task pane add-in</span></span>
 
-<span data-ttu-id="8cd4b-104">この記事では、Excel の作業ペインアドインを作成するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
+<span data-ttu-id="06e76-104">この記事では、Excel の作業ペインアドインを作成するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="06e76-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="8cd4b-105">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="06e76-105">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="06e76-105">Create the add-in</span></span>
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="8cd4b-106">Yeoman ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="8cd4b-106">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="06e76-106">Yeoman ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="06e76-106">Yeoman generator</span></span>](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
-### <a name="prerequisites"></a><span data-ttu-id="8cd4b-107">前提条件</span><span class="sxs-lookup"><span data-stu-id="8cd4b-107">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="06e76-107">前提条件</span><span class="sxs-lookup"><span data-stu-id="06e76-107">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="8cd4b-108">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="8cd4b-108">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="06e76-108">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="06e76-108">Create the add-in project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="8cd4b-109">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="8cd4b-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="8cd4b-110">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="8cd4b-110">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="8cd4b-111">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="8cd4b-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="8cd4b-112">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="8cd4b-112">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="06e76-109">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="06e76-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="06e76-110">**Choose a script type: (スクリプトの種類を選択)** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="06e76-110">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="06e76-111">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="06e76-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="06e76-112">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="06e76-112">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Yeoman ジェネレーター](../images/yo-office-excel.png)
 
-<span data-ttu-id="8cd4b-114">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="06e76-114">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="06e76-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-### <a name="explore-the-project"></a><span data-ttu-id="8cd4b-115">プロジェクトを確認する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-115">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="06e76-115">プロジェクトを確認する</span><span class="sxs-lookup"><span data-stu-id="06e76-115">Explore the project</span></span>
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="8cd4b-116">試してみる</span><span class="sxs-lookup"><span data-stu-id="8cd4b-116">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="06e76-116">試してみる</span><span class="sxs-lookup"><span data-stu-id="06e76-116">Try it out</span></span>
 
-1. <span data-ttu-id="8cd4b-117">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-117">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="06e76-117">プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="06e76-117">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
@@ -56,45 +56,45 @@ ms.locfileid: "41111131"
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. <span data-ttu-id="8cd4b-118">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="06e76-118">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="06e76-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="8cd4b-120">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-120">Select any range of cells in the worksheet.</span></span>
+4. <span data-ttu-id="06e76-120">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="06e76-120">Select any range of cells in the worksheet.</span></span>
 
-5. <span data-ttu-id="8cd4b-121">作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
+5. <span data-ttu-id="06e76-121">作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。</span><span class="sxs-lookup"><span data-stu-id="06e76-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
     ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
 
-### <a name="next-steps"></a><span data-ttu-id="8cd4b-123">次の手順</span><span class="sxs-lookup"><span data-stu-id="8cd4b-123">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="06e76-123">次の手順</span><span class="sxs-lookup"><span data-stu-id="06e76-123">Next steps</span></span>
 
-<span data-ttu-id="8cd4b-124">おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-124">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="8cd4b-125">次に、Excel アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-125">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the [Excel add-in tutorial](../tutorials/excel-tutorial.md).</span></span>
+<span data-ttu-id="06e76-124">おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="06e76-124">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="06e76-125">次に、Excel アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="06e76-125">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the [Excel add-in tutorial](../tutorials/excel-tutorial.md).</span></span>
 
-# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="8cd4b-126">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="8cd4b-126">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="06e76-126">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="06e76-126">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="8cd4b-127">前提条件</span><span class="sxs-lookup"><span data-stu-id="8cd4b-127">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="06e76-127">前提条件</span><span class="sxs-lookup"><span data-stu-id="06e76-127">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="8cd4b-128">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="8cd4b-128">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="06e76-128">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="06e76-128">Create the add-in project</span></span>
 
-1. <span data-ttu-id="8cd4b-129">Visual Studio で、[**新しいプロジェクトの作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-129">In Visual Studio, choose **Create a new project**.</span></span>
+1. <span data-ttu-id="06e76-129">Visual Studio で、[**新しいプロジェクトの作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="06e76-129">In Visual Studio, choose **Create a new project**.</span></span>
 
-2. <span data-ttu-id="8cd4b-130">検索ボックスを使用して、**アドイン**と入力します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-130">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="8cd4b-131">[**Excel Web アドイン**] を選択し、[**次へ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-131">Choose **Excel Web Add-in**, then select **Next**.</span></span>
+2. <span data-ttu-id="06e76-130">検索ボックスを使用して、**アドイン**と入力します。</span><span class="sxs-lookup"><span data-stu-id="06e76-130">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="06e76-131">[**Excel Web アドイン**] を選択し、[**次へ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="06e76-131">Choose **Excel Web Add-in**, then select **Next**.</span></span>
 
-3. <span data-ttu-id="8cd4b-132">プロジェクトに名前を付けて、[**作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-132">Name your project and select **Create**.</span></span>
+3. <span data-ttu-id="06e76-132">プロジェクトに名前を付けて、[**作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="06e76-132">Name your project and select **Create**.</span></span>
 
-4. <span data-ttu-id="8cd4b-133">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-133">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="06e76-133">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="06e76-133">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="8cd4b-p103">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p103">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="06e76-p103">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="06e76-p103">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="8cd4b-136">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-136">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="06e76-136">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="06e76-136">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="8cd4b-137">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-137">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="06e76-137">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="06e76-137">Update the code</span></span>
 
-1. <span data-ttu-id="8cd4b-p104">**Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p104">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="06e76-p104">**Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="06e76-p104">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -114,7 +114,7 @@ ms.locfileid: "41111131"
     </body>
     ```
 
-2. <span data-ttu-id="8cd4b-p105">Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p105">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+2. <span data-ttu-id="06e76-p105">Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="06e76-p105">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```js
     'use strict';
@@ -145,7 +145,7 @@ ms.locfileid: "41111131"
     })();
     ```
 
-3. <span data-ttu-id="8cd4b-p106">Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p106">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+3. <span data-ttu-id="06e76-p106">Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="06e76-p106">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```css
     #content-header {
@@ -174,17 +174,17 @@ ms.locfileid: "41111131"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="8cd4b-146">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-146">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="06e76-146">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="06e76-146">Update the manifest</span></span>
 
-1. <span data-ttu-id="8cd4b-147">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-147">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="8cd4b-148">このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-148">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="06e76-147">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="06e76-147">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="06e76-148">このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="06e76-148">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="8cd4b-p108">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p108">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="06e76-p108">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="06e76-p108">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="8cd4b-p109">`DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p109">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="06e76-p109">`DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="06e76-p109">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="8cd4b-p110">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p110">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
+4. <span data-ttu-id="06e76-p110">`DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="06e76-p110">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
 
-5. <span data-ttu-id="8cd4b-155">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-155">Save the file.</span></span>
+5. <span data-ttu-id="06e76-155">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="06e76-155">Save the file.</span></span>
 
     ```xml
     ...
@@ -196,31 +196,31 @@ ms.locfileid: "41111131"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="8cd4b-156">試してみる</span><span class="sxs-lookup"><span data-stu-id="8cd4b-156">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="06e76-156">試してみる</span><span class="sxs-lookup"><span data-stu-id="06e76-156">Try it out</span></span>
 
-1. <span data-ttu-id="8cd4b-p111">Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-p111">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="06e76-p111">Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="06e76-p111">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="8cd4b-159">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-159">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="06e76-159">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="06e76-159">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="8cd4b-161">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-161">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="06e76-161">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="06e76-161">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="8cd4b-162">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-162">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="06e76-162">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="06e76-162">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
-### <a name="next-steps"></a><span data-ttu-id="8cd4b-164">次の手順</span><span class="sxs-lookup"><span data-stu-id="8cd4b-164">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="06e76-164">次の手順</span><span class="sxs-lookup"><span data-stu-id="06e76-164">Next steps</span></span>
 
-<span data-ttu-id="8cd4b-165">おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-165">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="8cd4b-166">次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8cd4b-166">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
+<span data-ttu-id="06e76-165">おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="06e76-165">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="06e76-166">次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="06e76-166">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
 
 ---
 
-## <a name="see-also"></a><span data-ttu-id="8cd4b-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="8cd4b-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="06e76-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="06e76-167">See also</span></span>
 
-* [<span data-ttu-id="8cd4b-168">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="8cd4b-168">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
-* [<span data-ttu-id="8cd4b-169">Office アドインを構築する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-169">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
-* [<span data-ttu-id="8cd4b-170">Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="8cd4b-170">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
-* [<span data-ttu-id="8cd4b-171">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="8cd4b-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="8cd4b-172">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="8cd4b-172">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="8cd4b-173">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="8cd4b-173">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="06e76-168">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="06e76-168">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+* [<span data-ttu-id="06e76-169">Office アドインを構築する</span><span class="sxs-lookup"><span data-stu-id="06e76-169">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
+* [<span data-ttu-id="06e76-170">Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="06e76-170">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
+* [<span data-ttu-id="06e76-171">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="06e76-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="06e76-172">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="06e76-172">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="06e76-173">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="06e76-173">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
