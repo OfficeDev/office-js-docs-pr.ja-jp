@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの CustomTab 要素
 description: ''
-ms.date: 04/29/2019
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fa7dd86736b5ab421be5653f2e256a6b84fb480
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c48e526534a3c1295e9c3f0c6fc626df94a874d3
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33517395"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554014"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
@@ -17,6 +17,9 @@ ms.locfileid: "33517395"
 カスタム タブで、アドインは最大 10 個のグループを作成できます。各グループのコントロールは、コントロールが表示されるタブに関係なく、6 個に制限されています。アドインは、カスタム タブ 1 つに制限されています。
 
 **id** 属性はマニフェスト内で一意でなければなりません。
+
+> [!IMPORTANT]
+> Mac 上の Outlook では`CustomTab` 、要素を使用できないため、代わりに[[officetab タブ](officetab.md)を使用する必要があります。
 
 ## <a name="child-elements"></a>子要素
 

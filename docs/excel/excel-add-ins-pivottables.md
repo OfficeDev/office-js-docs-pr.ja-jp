@@ -1,34 +1,46 @@
 ---
 title: Excel JavaScript API を使用してピボットテーブルを操作する
 description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 10/22/2019
+ms.date: 01/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 39dca0ca3f964133af64066641d7bb07222c7834
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681957"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554032"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
 
-ピボットテーブルは、より大きなデータセットを合理化します。 グループ化されたデータのクイック操作を可能にします。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。
+ピボットテーブルは、より大きなデータセットを合理化します。 グループ化されたデータのクイック操作を可能にします。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。 この記事では、Office JavaScript API によってピボットテーブルがどのように表現されるかについて説明し、主要なシナリオのコードサンプルを示します。
 
 ピボットテーブルの機能についてよく知らない場合は、エンドユーザーとしての調査を検討してください。
 これらのツールの詳細については、「[ワークシートデータを分析するためのピボットテーブルを作成する](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)」を参照してください。
 
-この記事では、一般的なシナリオのコードサンプルを示します。 ピボットテーブル API について理解するには、「 [**pivottable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection)」を参照してください。
-
 > [!IMPORTANT]
 > OLAP を使用して作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
 
-## <a name="hierarchies"></a>Hierarchies
+## <a name="object-model"></a>オブジェクト モデル
 
-ピボットテーブルは、行、列、データ、およびフィルターの4つの階層カテゴリに基づいて編成されます。 この記事では、さまざまなファームからの果物 sales について説明する次のデータが使用されます。
+[PivotTable](/javascript/api/excel/excel.pivottable)は、OFFICE JavaScript API のピボットテーブルの中心的なオブジェクトです。
+
+- `Workbook.pivotTables`および`Worksheet.pivotTables`は、ブックとワークシートの[ピボットテーブル](/javascript/api/excel/excel.pivottable)をそれぞれ含む[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection)です。
+- [ピボットテーブル](/javascript/api/excel/excel.pivottable)に、複数の[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)を持つ[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection)が含まれています。
+- [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)には、1つだけの[PivotField](/javascript/api/excel/excel.pivotfield)を持つ[pivotfieldcollection](/javascript/api/excel/excel.pivotfieldcollection)が含まれています。 デザインを拡張して OLAP ピボットテーブルが含まれる場合は、これが変更されることがあります。
+- [PivotField](/javascript/api/excel/excel.pivotfield)には、複数の[PivotItems](/javascript/api/excel/excel.pivotitem)を持つ[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection)が含まれています。
+- [ピボットテーブル](/javascript/api/excel/excel.pivottable)には、ピボット[フィールド](/javascript/api/excel/excel.pivotfield)と[PivotItems](/javascript/api/excel/excel.pivotitem)をワークシートのどこに表示するかを定義する[PivotLayout](/javascript/api/excel/excel.pivotlayout)が含まれています。
+
+これらの関係がいくつかの例のデータにどのように適用されるかを見てみましょう。 次のデータは、さまざまなファームからの果物販売を示しています。 この記事全体の例を示します。
 
 ![さまざまなファームからのさまざまな種類の果物販売のコレクション。](../images/excel-pivots-raw-data.png)
 
-このデータには、**畑**、 **Type**、**分類**、 **Crates で販売**されたファーム、 **Crates 販売**された卸売の5つの階層があります。 各階層は、4つのカテゴリのいずれかにのみ存在できます。 **Type**が列階層に追加されてから、行階層に追加されても、後者には残ります。
+この果物 farm sales データは、ピボットテーブルを作成するために使用されます。 **Types**などの各列は、 `PivotHierarchy`です。 **種類**の階層には、[**種類**] フィールドが含まれています。 [**種類**] フィールドには、 **Apple**、 **Kiwi**、**レモン**、**黄**、**オレンジ色**の項目が含まれています。
+
+### <a name="hierarchies"></a>Hierarchies
+
+ピボットテーブルは、[行](/javascript/api/excel/excel.rowcolumnpivothierarchy)、[列](/javascript/api/excel/excel.rowcolumnpivothierarchy)、[データ](/javascript/api/excel/excel.datapivothierarchy)、および[フィルター](/javascript/api/excel/excel.filterpivothierarchy)の4つの階層カテゴリに基づいて編成されます。
+
+前に示したファームデータには、ファーム、**種類**、**分類**、 **Crates で販売**されたファーム、 **Crates 販売**された卸売の5つの階層が**あります。** 各階層は、4つのカテゴリのいずれかにのみ存在できます。 **型**が列階層に追加されている場合は、行、データ、またはフィルター階層に配置することもできません。 その後、**型**が行階層に追加されると、列階層から削除されます。 この動作は、階層の割り当てが Excel UI または Excel JavaScript Api のどちらで行われた場合でも同じです。
 
 行と列の階層は、データをグループ化する方法を定義します。 たとえば、**ファーム**の行階層は、同じファームのすべてのデータセットをグループ化します。 行と列の階層を選択すると、ピボットテーブルの向きが定義されます。
 
@@ -36,7 +48,7 @@ ms.locfileid: "37681957"
 
 フィルター階層では、フィルター処理された種類の値に基づいて、ピボットのデータが含まれるか、除外されます。 **有機**的に選択された種類の**分類**のフィルター階層は、有機フルーツのデータのみを表示します。
 
-次に、ファームデータをピボットテーブルと共に示します。 ピボットテーブルでは、**ファーム**と**タイプ**を行階層として使用し、**ファームで販売**された Crates と Crates がデータ階層として**卸売販売**され、フィルターとして**分類**されています。階層 (**有機**が選択されている)。 
+次に、ファームデータをピボットテーブルと共に示します。 ピボットテーブルは、**ファーム**と**タイプ**を行階層として使用し、**ファームで販売**された Crates と**Crates**がデータ階層として (既定の集計関数を使用して)、データ階層として (**有機**が選択された状態で)**分類**しています。
 
 ![行、データ、およびフィルター階層を使用したピボットテーブルの横の、果物 sales データの選択。](../images/excel-pivot-table-and-data.png)
 
@@ -275,10 +287,12 @@ Excel.run(function (context) {
 オブジェクト`ShowAsRule`には、次の3つのプロパティがあります。
 
 - `calculation`: データ階層に適用する相対的な計算の種類 (既定値は`none`)。
-- `baseField`: 計算を適用する前に、基本データを含む階層内のフィールド。 通常、[ピボットフィールド](/javascript/api/excel/excel.pivotfield)の名前は親階層と同じです。
+- `baseField`: 計算を適用する前に、基本データを含む階層の[PivotField](/javascript/api/excel/excel.pivotfield) 。 Excel ピボットテーブルには、階層とフィールドの間に一対一のマッピングがあるため、階層とフィールドの両方にアクセスするには同じ名前を使用します。
 - `baseItem`: 計算の種類に基づいて、基準フィールドの値と比較した個々の[ピボット](/javascript/api/excel/excel.pivotitem)テーブル。 すべての計算にこのフィールドが必要なわけではありません。
 
-次の例では、ファームデータ階層で販売された**Crates の合計**の計算を列の合計のパーセンテージに設定します。 さらに、粒度をフルーツの種類レベルにまで拡張する必要があるので、 **type**行階層とその基になるフィールドを使用します。 この例は、最初の行階層としても**ファーム**を持っているので、farm total エントリには各ファームがそれぞれを生成する割合が表示されます。
+次の例では、ファームデータ階層で販売された**Crates の合計**の計算を列の合計のパーセンテージに設定します。
+さらに、粒度をフルーツの種類レベルにまで拡張する必要があるので、 **type**行階層とその基になるフィールドを使用します。
+この例は、最初の行階層としても**ファーム**を持っているので、farm total エントリには各ファームがそれぞれを生成する割合が表示されます。
 
 ![各ファーム内の個々のファームと個々の果物の種類の総計を基準とした果物 sales の割合を示すピボットテーブル。](../images/excel-pivots-showas-percentage.png)
 
@@ -300,9 +314,9 @@ Excel.run(function (context) {
 });
 ```
 
-前の例では、列の各行階層を基準にして計算を設定しています。 計算が個々のアイテムに関連している場合`baseItem`は、プロパティを使用します。
+前の例では、列に対して、個々の行階層のフィールドを基準にして計算を行います。 計算が個々のアイテムに関連している場合`baseItem`は、プロパティを使用します。
 
-次の例は、 `differenceFrom`計算を示しています。 この例では、"ファーム" と比較した場合の、ファームの箱売上データ階層エントリの違いを示します。
+次の例は、 `differenceFrom`計算を示しています。 ファームの箱売上データ階層エントリの違いが **、ファームの**ものと比較して表示されます。
 `baseField`は**ファーム**ですので、他のファームの違いと、果物などの種類ごとの内訳 (この例では、**type**が行階層になっています) を確認しています。
 
 !["畑" とその他の果物の売上の違いを示すピボットテーブル。 これは、畑の総売上合計と果物の種類の売上の違いを示しています。 "畑" が特定の種類の果物を販売していない場合は、"#N/A" が表示されます。](../images/excel-pivots-showas-differencefrom.png)

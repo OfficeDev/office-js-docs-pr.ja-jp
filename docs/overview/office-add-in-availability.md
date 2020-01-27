@@ -1,14 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
-ms.date: 11/15/2019
+ms.date: 01/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851370"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554021"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -279,7 +279,7 @@ ms.locfileid: "40851370"
 
 *&ast; - リリース後の更新プログラムで追加されました。*
 
-## <a name="custom-functions"></a>カスタム関数
+## <a name="custom-functions-excel-only"></a>カスタム関数 (Excel のみ)
 
 <table style="width:80%">
   <tr>
@@ -293,7 +293,7 @@ ms.locfileid: "40851370"
     <td>
         - カスタム関数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -302,7 +302,7 @@ ms.locfileid: "40851370"
     <td>
         - カスタム関数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -311,7 +311,7 @@ ms.locfileid: "40851370"
     <td>
         - カスタム関数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
