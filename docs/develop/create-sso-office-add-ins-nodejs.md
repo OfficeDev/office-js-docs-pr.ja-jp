@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 562351011ef8aaf2ba936cceea862ebfec888b11
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217100"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265453"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -21,7 +21,7 @@ ms.locfileid: "41217100"
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Node および npm](https://nodejs.org/)、バージョン 10.15.0 以降。
+* [Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
 
 * [Git バッシュ](https://git-scm.com/downloads) (またはその他の Git クライアント)
 

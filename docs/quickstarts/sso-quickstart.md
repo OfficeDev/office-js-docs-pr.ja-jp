@@ -1,15 +1,15 @@
 ---
 title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する (プレビュー)
 description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: becc0a03a87dcfd5b37b5ab65f45dd6516bf105a
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217366"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265593"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
 
@@ -22,7 +22,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Node.js](https://nodejs.org) (バージョン 10.15.0 以降)
+* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
 
 * 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
