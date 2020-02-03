@@ -1,14 +1,14 @@
 ---
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
-ms.date: 01/21/2020
+ms.date: 01/29/2020
 localization_priority: Priority
-ms.openlocfilehash: 68e5c022671844ee44bf8ca8ac00bc5af6564bad
-ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
+ms.openlocfilehash: aa30bbeb3f849b7d965a626f6c08791cda1104f9
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "41580968"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650055"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -18,23 +18,21 @@ ms.locfileid: "41580968"
 
 ## <a name="clear-the-office-cache-on-windows"></a>Windows で Office のキャッシュをクリアする
 
-### <a name="excel-word-and-powerpoint"></a>Excel、Word、および PowerPoint 
+Excel、Word、および PowerPoint からサイドロードされたすべてのアドインを削除するには、フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` のコンテンツを削除します。 
 
-Windows で Excel、Word、および PowerPoint の Office のキャッシュをクリアするには、フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 内のコンテンツを削除します。
+サイドロードされたアドインを Outlook から削除するには、「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順を使用して、インストールされているアドインが一覧表示されたダイアログ ボックスの「**カスタム アドイン**」セクションでアドインを検索します。アドインの省略記号 (`...`) を選択し、[**削除**] を選択して、そのアドインを削除します。
 
-### <a name="outlook-windows-10"></a>Outlook (Windows 10)
-
-アドインが Microsoft Edge で実行されているときに Windows 10 で Office のキャッシュをクリアするには、Microsoft Edge DevTools を使用します。
+また、アドインが Microsoft Edge で実行されているときに Windows 10 で Office のキャッシュをクリアするには、Microsoft Edge DevTools を使用します。
 
 > [!TIP]
 > サイドロードされたアドインに HTML や JavaScript のソース ファイルへの最近の変更を反映させたいなら、次の手順でキャッシュをクリアする必要はありません。 代わりに、アドインの作業ウィンドウにフォーカスを置き (タスク ウィンドウ内の任意の場所をクリック)、**F5** キーを押してアドインをリロードします。 
 
 > [!NOTE]
-> 次の手順を使用して Outlook のキャッシュをクリアするには、アドインに作業ウィンドウが必要です。 アドインが UI を使用しない場合 (たとえば、[送信時](/outlook/add-ins/outlook-on-send-addins)機能を使用するアドインの場合)、次の手順でキャッシュをクリアする前に、同じドメインを [SourceLocation](../reference/manifest/sourcelocation.md) に使用するアドインに作業ウィンドウを追加する必要があります。
+> 次の手順を使用して Office のキャッシュをクリアするには、アドインに作業ウィンドウが必要です。 アドインが UI を使用しない場合 (たとえば、[送信時](/outlook/add-ins/outlook-on-send-addins)機能を使用するアドインの場合)、次の手順でキャッシュをクリアする前に、同じドメインを [SourceLocation](../reference/manifest/sourcelocation.md) に使用するアドインに作業ウィンドウを追加する必要があります。
 
 1. [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj) をインストールします。
 
-2. Outlook でアドインを開きます。
+2. アドインを Office クライアントで開きます。
 
 3. Microsoft Edge DevTools を実行します。
 

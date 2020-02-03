@@ -1,14 +1,14 @@
 ---
 title: Angular で Office アドインを開発する
 description: ''
-ms.date: 09/18/2019
+ms.date: 01/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 51e47b72e819a96d4766785243d542811386dca7
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035218"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649978"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -90,7 +90,7 @@ Fabric コンポーネントを、Angular のコンポーネントでラッピ�
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する
 
-Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモーダル ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。
+Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモードレス ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。
 
 [DisplayDialogAsync](/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 

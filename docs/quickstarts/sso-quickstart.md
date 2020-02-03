@@ -1,15 +1,15 @@
 ---
 title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する (プレビュー)
 description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
-ms.date: 01/27/2020
+ms.date: 01/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: d3a78a99574c92d0066003f0e39e835563f473cd
-ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
+ms.openlocfilehash: 263a84a9084f7f75beb13b4336b61027de0bf907
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "41571400"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650027"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
 
@@ -33,6 +33,8 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
+
+* Mac を使用していて Azure CLI がコンピューターにインストールされていない場合は、[Homebrew](https://brew.sh/) をインストールする必要があります。 このクイック スタート中に実行する SSO 構成スクリプトは、Homebrew を使用して Azure CLI をインストールした後、Azure CLI を使用して Azure の SSO を構成します。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
