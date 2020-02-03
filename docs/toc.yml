@@ -68,7 +68,7 @@
           items:
             - name: 認証と権限の付与の概要
               href: develop/overview-authn-authz.md
-            - name: Office Dialog API を使用して認証および承認する
+            - name: Office ダイアログ API を使用して認証および承認する
               href: develop/auth-with-office-dialog-api.md
             - name: 外部サービスを承認する
               href: develop/auth-external-add-ins.md
@@ -139,8 +139,16 @@
               displayName: manifest
             - name: ローカリゼーション
               href: develop/localization.md
-            - name: ダイアログ ボックスを開く
-              href: develop/dialog-api-in-office-add-ins.md
+            - name: ダイアログ ボックス
+              items:
+                - name: Office アドインで Office ダイアログ API を使用する
+                  href: develop/dialog-api-in-office-add-ins.md
+                - name: Office ダイアログ API のベスト プラクティスとルール
+                  href: develop/dialog-best-practices.md
+                - name: Office ダイアログ ボックスでのエラーとイベントの処理
+                  href: develop/dialog-handle-errors-events.md
+                - name: Office ダイアログ ボックスを使用してビデオを再生する
+                  href: develop/dialog-video.md
             - name: パフォーマンス
               href: concepts/resource-limits-and-performance-optimization.md
             - name: プライバシーとセキュリティ
@@ -606,9 +614,6 @@
         - name: 認証
           href: excel/custom-functions-authentication.md
           displayName: 'Excel, Custom Functions'
-        - name: バッチ処理
-          href: excel/custom-functions-batching.md
-          displayName: 'Excel, Custom Functions'
         - name: デバッグ
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
@@ -998,3 +1003,16 @@
         - name: 検索オプションを使用して Word アドインでテキストを検索する
           href: word/search-option-guidance.md
           displayName: Word
+- name: パターンとプラクティス
+  items:
+    - name: VSTO アドインから Office アドインにコードを共有する
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: カスタム関数のリモート呼び出しのバッチ処理
+      href: excel/custom-functions-batching.md
+      displayName: 'Excel, Custom Functions'
+    - name: 認証
+      href: develop/authentication-pnp.md
+    - name: カスタム関数で状態を保存して共有する
+      href: excel/custom-functions-save-state-redirect.md
+    - name: Office ソリューションで高 DPI と DPI スケーリングを処理します
+      href: develop/dynamic-dpi.md
