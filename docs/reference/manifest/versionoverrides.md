@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの VersionOverrides 要素
 description: ''
-ms.date: 08/12/2019
+ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 26183caeb4862038d5304607310aa061d37cf3f1
+ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477881"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "41773573"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -18,8 +18,18 @@ ms.locfileid: "36477881"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  はい  |  スキーマの場所。`http://schemas.microsoft.com/office/mailappversionoverrides` が `xsi:type` の場合は `VersionOverridesV1_0` にする必要があり、`http://schemas.microsoft.com/office/mailappversionoverrides/1.1` が `xsi:type` の場合は `VersionOverridesV1_1` にする必要があります。|
+|  **xmlns**       |  はい  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
+
+### <a name="namespace-values"></a>名前空間の値
+
+次に、親`<OfficeApp>`要素の**xsi: type**値に応じて、 **xmlns**値に必要な値を示します。
+
+- **Task区画アプリ**は、バージョン1.0 の versionoverrides のみをサポート**** し、xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`はにする必要があります。
+- **Contentapp**はバージョン1.0 の versionoverrides のみをサポートし、 **xmlns**は`http://schemas.microsoft.com/office/contentappversionoverrides`である必要があります。
+- **Mailapp**はバージョン1.0 および1.1 の versionoverrides をサポートしているため、 **xmlns**の値`<VersionOverrides>`は次の要素の**xsi: type**値に応じて異なります。
+    - **Xsi: type**が`VersionOverridesV1_0`の場合、 **xmlns**は`http://schemas.microsoft.com/office/mailappversionoverrides`でなければなりません。
+    - **Xsi: type**が`VersionOverridesV1_1`の場合、 **xmlns**は`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`でなければなりません。
 
 > [!NOTE]
 > 現在、Outlook 2016 以降では、VersionOverrides v1.1 スキーマと`VersionOverridesV1_1`種類をサポートしています。
@@ -29,7 +39,6 @@ ms.locfileid: "36477881"
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **説明**    |  No/しない   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、**Resources** 要素の [LongString](./resources.md) 要素の子要素に含まれています。`resid` 要素の **** の属性は、テキストを含む `id` 要素の `String` 属性の値に設定されています。|
-| **EquivalentAddins** | いいえ | 同等の COM アドイン、XLL、またはその両方との下位互換性を指定します。 |
 |  **Requirements**  |  いいえ   |  アドインに必要な最小の Office.js のセットおよびバージョンを指定します。これは、マニフェストの親部分の `Requirements` 要素を上書きします。|
 |  [Hosts](./hosts.md)                |  はい  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
 |  [Resources](./resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
@@ -42,7 +51,7 @@ ms.locfileid: "36477881"
 通常、必須ではありません`<VersionOverrides>`が通常使用される子要素を含む一般的な要素の例を次に示します。
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
@@ -71,7 +80,7 @@ ms.locfileid: "36477881"
 VersionOverrides v1.0 と v1.1 の両方のスキーマを実装するためのマニフェストは、次に示す例のようになります。
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />

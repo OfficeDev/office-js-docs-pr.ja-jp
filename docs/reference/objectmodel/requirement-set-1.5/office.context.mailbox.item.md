@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.5
 description: ''
-ms.date: 12/19/2019
+ms.date: 02/03/2020
 localization_priority: Normal
-ms.openlocfilehash: faee07f3d0dbf28a63ec5fea351d0709ede377c0
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: eace175172836d5adf55a1ee230d3bb368f063e3
+ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814830"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "41773538"
 ---
 # <a name="item"></a>item
 
@@ -22,7 +22,7 @@ ms.locfileid: "40814830"
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[最小限のアクセス許可レベル](/outlook/add-ins/understanding-outlook-add-in-permissions)|制限あり|
-|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)|新規作成または閲覧|
+|[適用可能な Outlook のモード](/outlook/add-ins/#extension-points)|予定の開催者、予定の出席者、<br>メッセージの作成、またはメッセージの読み取り|
 
 ## <a name="properties"></a>プロパティ
 
@@ -67,7 +67,7 @@ ms.locfileid: "40814830"
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | optionalAttendees | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.5#optionalattendees) | [受信者](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#optionalattendees) | <[Emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| organizer | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#organizer) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| 構成内容変更 | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#organizer) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | requiredAttendees | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.5#requiredattendees) | [受信者](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#requiredattendees) | <[Emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | sender | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -89,7 +89,7 @@ ms.locfileid: "40814830"
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.5#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | addItemAttachmentAsync | ReadWriteItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.5#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.5#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| close | 制限あり | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.5#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| close | Restricted | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.5#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.5#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | displayReplyAllForm | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -97,7 +97,7 @@ ms.locfileid: "40814830"
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#displayreplyform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | getEntities | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getEntitiesByType | 制限あり | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getEntitiesByType | Restricted | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | getFilteredEntitiesByName | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.5#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
