@@ -2,13 +2,13 @@
 ms.date: 07/15/2019
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
-localization_priority: Priority
-ms.openlocfilehash: afcfb6ff869acf1d508ebda7fc242dd9724bf165
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 16db164b061840bd8dfb44124f956da773ad9d2b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771319"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950846"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 

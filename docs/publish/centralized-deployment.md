@@ -2,13 +2,13 @@
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: 5f3fc2a637a125e426f8943794be0a906b0887fb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 92602a6056cffd7827d851d777210a90ddda9139
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128588"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950741"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 

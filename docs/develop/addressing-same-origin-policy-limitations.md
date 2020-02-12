@@ -2,13 +2,13 @@
 title: Office アドインにおける同一生成元ポリシーの制限への対処
 description: ''
 ms.date: 10/17/2019
-localization_priority: Priority
-ms.openlocfilehash: 353dfc40df79f74614bb2eab026a65c54c3f16b9
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 2a47339bd5cc0b0bf919152b7078d5373382124f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681838"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950447"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 

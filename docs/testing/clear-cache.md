@@ -2,13 +2,13 @@
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
 ms.date: 01/29/2020
-localization_priority: Priority
-ms.openlocfilehash: aa30bbeb3f849b7d965a626f6c08791cda1104f9
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 711440cb9673a92385acb71391ed834b32d64cff
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650055"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950951"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 

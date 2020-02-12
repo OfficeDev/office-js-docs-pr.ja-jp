@@ -2,13 +2,13 @@
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 12/13/2019
-localization_priority: Priority
-ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40813985"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950363"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -38,6 +38,10 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge の問題のトラブルシューティング
+
+### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Chromium ベースのエッジは開発用のコンピューターにインストールされていますが、アドインでは使用されません
+
+[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)のベースブラウザーが Chromium に変更されました。 Chromium ベースのエッジがインストールされている場合、EdgeHTML と呼ばれる以前のベースは削除されません。 Office は、Chromium をサポートする Office 365 のビルドがコンピューターにインストールされるまで、アドインの EdgeHTML ベースを引き続き使用します。 これらのビルドは2020で出荷されることが予想されます。 そのようなメッセージは、年の前半に、内部の Insider チャネルに表示される可能性があります。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>作業ウィンドウにスクロール バーが表示されない
 

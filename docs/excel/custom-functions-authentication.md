@@ -2,13 +2,13 @@
 ms.date: 07/09/2019
 description: Excel のカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
-localization_priority: Priority
-ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268139"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950685"
 ---
 # <a name="authentication-for-custom-functions"></a>カスタム関数の認証
 
@@ -45,7 +45,7 @@ ms.locfileid: "36268139"
 4. このアクセストークンは、カスタム関数によって `storage` に設定されます。
 5. アドインの作業ウィンドウは、`storage` からトークンにアクセスします。
 
-![アクセス トークンを取得するためのダイアログ API を使用したカスタム関数の図と、OfficeRuntime.storage API を通してトークンを作業ウィンドウと共有します。](../images/authentication-diagram.png "認証図。")
+![アクセストークンを取得するためにダイアログ API を使用したカスタム関数の図。次に、この方法で、作業ウィンドウを使用してトークンを保存します。ストレージ API を使用します。](../images/authentication-diagram.png "認証の図。")
 
 ## <a name="storing-the-token"></a>トークンの格納
 

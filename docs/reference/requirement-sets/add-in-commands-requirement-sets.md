@@ -3,13 +3,13 @@ title: アドイン コマンドの要件セット
 description: ''
 ms.date: 06/20/2019
 ms.prod: non-product-specific
-localization_priority: Priority
-ms.openlocfilehash: 53f2e1424be27dbcc80b1b708b66e4baa5b14cc8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 0d2385f32c314fccb60335d721dd8db3bb30393a
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127108"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950972"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 

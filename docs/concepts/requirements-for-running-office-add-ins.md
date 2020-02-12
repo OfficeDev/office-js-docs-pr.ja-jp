@@ -2,13 +2,13 @@
 title: Office アドインを実行するための要件
 description: ''
 ms.date: 07/01/2019
-localization_priority: Priority
-ms.openlocfilehash: 5a33af6a3dc23739642a4ad0f6e3d29bff247f4d
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 61108b713299f91e3f60993d17885daf022254f8
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454616"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950370"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 

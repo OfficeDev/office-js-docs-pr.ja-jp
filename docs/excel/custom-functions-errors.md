@@ -2,13 +2,13 @@
 ms.date: 11/04/2019
 description: '#NULL! のようなエラーを処理して返す カスタム関数で'
 title: カスタム関数でエラーを処理して返す (プレビュー)
-localization_priority: Priority
-ms.openlocfilehash: 5c62b7ccfbc1f0b450e6f36a0fd32f76fe099716
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 19199a56d6699afd013c98c7b117b93528deb304
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217072"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950825"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>カスタム関数でエラーを処理して返す (プレビュー)
 

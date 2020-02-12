@@ -2,13 +2,13 @@
 title: Office アドインでの Office UI Fabric React の使用
 description: Office アドインで Office UI Fabric React を使用する方法について説明します。
 ms.date: 01/16/2020
-localization_priority: Priority
-ms.openlocfilehash: 2b48695692214f6dd5df9922cc47141aa8238cc8
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 3891b3468b13823712afe93d0d1bb4d6d74faacb
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265472"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950461"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 

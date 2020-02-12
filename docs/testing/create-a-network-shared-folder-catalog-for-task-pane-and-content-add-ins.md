@@ -2,13 +2,13 @@
 title: テスト用に Office アドインをサイドロードする
 description: ''
 ms.date: 12/31/2019
-localization_priority: Priority
-ms.openlocfilehash: a30cfeb5af4bccb543e06c20843709083cea21f9
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5008e75c1932d83070bdbc896675ce342f81e1ea
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915029"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950538"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 

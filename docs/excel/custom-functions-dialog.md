@@ -2,13 +2,13 @@
 ms.date: 06/18/2019
 description: JavaScript を使用して Excel のカスタム関数でダイアログ ボックスを作成します。
 title: カスタム関数からダイアログ ボックスを表示する
-localization_priority: Priority
-ms.openlocfilehash: 67a61bde409d45b2c96118de95f0839e7a73ddfe
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268153"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950769"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>カスタム関数からダイアログ ボックスを表示する
 
