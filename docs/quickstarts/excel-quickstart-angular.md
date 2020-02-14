@@ -1,15 +1,15 @@
 ---
 title: Angular を使用して Excel 作業ウィンドウ アドインをビルドする
-description: ''
+description: Office JS API と Angular を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6fd28f3b572b7bca27d5bf08b9799333285064bc
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1179eba9920949c63c022b525802e0deea3c4d1d
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265579"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950643"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 

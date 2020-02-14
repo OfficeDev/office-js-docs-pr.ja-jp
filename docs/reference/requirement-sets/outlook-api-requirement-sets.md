@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bd6b20e9f0ddb5141f2f889a4e99af2c042a10ab
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217373"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950545"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -66,7 +66,7 @@ if (item.somePropertyOrFunction !== undefined) {
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Exchange サーバーと Outlook クライアントでサポートされる要件セット
 
-このセクションでは、Exchange サーバーと Outlook クライアントでサポートされる一連の要件セットについて説明します。
+このセクションでは、Exchange サーバーと Outlook クライアントでサポートされる一連の要件セットについて説明します。 Outlook アドインを実行するためのサーバーおよびクライアントの要件の詳細については、「[Outlook アドインの要件](/outlook/add-ins/add-in-requirements)」を参照してください。
 
 > [!IMPORTANT]
 > ターゲットとなる Exchange サーバーと Outlook クライアントが異なる要件セットをサポートしている場合、低い要件セットの範囲に制限されます。 たとえば、アドインが Exchange 2013 (最高要件セット: 1.1) に対して Mac 上の Outlook 2016 (最高要件セット: 1.6) で実行されている場合、アドインは要件セット 1.1 に制限されます。

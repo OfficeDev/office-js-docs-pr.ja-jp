@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
-description: ''
+description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d3c759579ebd19cc1f53f68d69db04768b69e1b7
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 41448463f33edf7bdddd27981db4e427dd0fcb74
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265700"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950734"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 

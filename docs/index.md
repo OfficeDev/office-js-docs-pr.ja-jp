@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Office アドインのドキュメント
+title: Office アドイン ドキュメント
 description: Office アドインを構築する方法について説明します。
 author: o365devx
 ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111012"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950762"
 ---
-# <a name="office-add-ins-documentation"></a>Office アドインのドキュメント
+# <a name="office-add-ins-documentation"></a>Office アドイン ドキュメント
 
-Office アドインのプラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメント内のコンテンツと対話するソリューションを構築します。 Office アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、Windows、Mac、iPad、および web 上で Office で実行できるソリューションを構築できます。
+Office アドインのプラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメント内のコンテンツと対話するソリューションを構築します。 Office アドインを使用すると、Windows、Mac、iPad、および Web 上の Office で実行できるソリューションを構築するために、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用できます。
 
-<h2>開始</h2>
+<h2>作業の開始</h2>
 
-<p>Office アドインを構築するのが初めてですか? 最初に、Office アドインプラットフォームと Office アドインの構築について学習します。</p>
+<p>Office アドインを構築するのが初めてですか? まず、Office アドイン プラットフォームについて説明し、Office アドインを構築します。</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -35,7 +35,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                     </div>
                     <div class="cardText">
                         <h3>Office アドイン プラットフォームの概要</h3>
-                        <p><a href="overview/office-add-ins.md">Office アドインプラットフォームについて説明します。</a></p>
+                        <p><a href="overview/office-add-ins.md">Office アドイン プラットフォームについて説明します。</a></p>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
     </li>
 </ul>
 
-<p>次に、クイックスタート、チュートリアル、およびスクリプトラボを使用して、Office アドインの構築について体験します。</p>
+<p>次に、クイック スタート、チュートリアル、および Script Lab を使用して、Office アドインの構築を体験してください。</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -73,18 +73,18 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>5分間のクイックスタート</h3>
-                        <p>5分以内に最初の Office アドインをビルドします。</p>
+                        <h3>5 分間のクイック スタート</h3>
+                        <p>5 分以内で最初の Office アドインを構築します!</p>
                         <br/>
                         <ul>
-                            <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel カスタム関数クイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word アドインのクイックスタート</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">シングルサインオン (SSO) のクイックスタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel カスタム関数のクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word アドインのクイック スタート</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">シングル サインオン (SSO) のクイック スタート</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                     </div>
                     <div class="cardText">
                         <h3>チュートリアル</h3>
-                        <p>アドインの機能の詳細については、「チュートリアルを完了する」を参照してください。</p>
+                        <p>チュートリアルを完了すると、アドインの機能の詳細を確認できます。</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel アドインのチュートリアル</a></li>
@@ -127,7 +127,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                     </div>
                     <div class="cardText">
                         <h3>Script Lab</h3>
-                        <p>スクリプトラボで、Excel、Word、および PowerPoint 用の Office JavaScript Api を試してみてください。</p>
+                        <p>Script Lab で Excel、Word、および PowerPoint 用の Office JavaScript API を試してください。</p>
                         <br/>
                         <ul style="list-style: none!important;">
                         
@@ -142,7 +142,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
 
 ---
 
-<h2>Office アドインを学習する</h2>
+<h2>Office アドインについて学ぶ</h2>
 
 <ul class="cardsM cols cols1">
     <li>
@@ -154,7 +154,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
             </div>
             <div class="cardText">
                 <h3>中心概念</h3>
-                <p>Office アドインの構築に適用されるプラットフォームと重要な概念について説明します。</p>
+                <p>プラットフォームと、Office アドインの構築に適用される重要な概念について説明します。</p>
             </div>
         </a>
     </li>
@@ -254,7 +254,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="overview/explore-with-script-lab.md"><h3>Api を探索する<br/>スクリプトラボの使用</h3></a>
+                        <a href="overview/explore-with-script-lab.md"><h3>スクリプト ラボを使用して<br/>API を探索する</h3></a>
                     </div>
                 </div>
             </div>
@@ -270,7 +270,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>質問をお寄せください</h3></a>
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>質問する</h3></a>
                     </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>レポートに関する問題</h3></a>
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>問題の報告</h3></a>
                     </div>
                 </div>
             </div>
@@ -302,7 +302,7 @@ Office アドインのプラットフォームを使用して、Office アプリ
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>要求の機能</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>機能のリクエスト</h3></a>
                     </div>
                 </div>
             </div>
