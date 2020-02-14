@@ -2,13 +2,13 @@
 title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
-localization_priority: Priority
-ms.openlocfilehash: bf8e20891709f8d9d4d4e786976730c58406b803
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 3bfbc52a8739cb5d51868794f1be701de52b292e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120629"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950601"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 

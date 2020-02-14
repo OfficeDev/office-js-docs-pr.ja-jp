@@ -2,13 +2,13 @@
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: ''
 ms.date: 12/31/2019
-localization_priority: Priority
-ms.openlocfilehash: 76bb71cebb3c6027ac86e046e1fcfe579b7031c9
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 39c36fdf70f3eef9dde97a80edf368ef00913c0e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915015"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950902"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 

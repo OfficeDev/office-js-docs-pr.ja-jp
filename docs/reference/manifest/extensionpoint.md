@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: ''
 ms.date: 09/05/2019
-localization_priority: Priority
-ms.openlocfilehash: c9d3c9313c13a069de2ac105b6a44a7260498e8f
-ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 2ad9e0ccb0393e562ca0bb6951ec9bc4eb9c3eab
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "37440138"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950706"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 

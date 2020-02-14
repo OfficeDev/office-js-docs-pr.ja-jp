@@ -3,12 +3,12 @@ title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
-ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
+ms.openlocfilehash: 95cdce30beda5eeda73e9b06b65eff5048005723
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "41571384"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950699"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -163,102 +163,102 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
             <Runtimes>
                 <Runtime>
             <AllFormFactors>
-            <ExtensionPoint>
-                <Script>
-                    <SourceLocation>
-                <Page>
-                    <SourceLocation>
-                <Metadata>
-                    <SourceLocation>
-                <Namespace>
+                <ExtensionPoint>
+                    <Script>
+                        <SourceLocation>
+                    <Page>
+                        <SourceLocation>
+                    <Metadata>
+                        <SourceLocation>
+                    <Namespace>
             <DesktopFormFactor>
-            <GetStarted>
-                <Title>
-                <Description>
-                <LearnMoreUrl>
-            <FunctionFile>
-            <ExtensionPoint>
-                <OfficeTab>
-                    <Group>
-                        <Label>
-                        <Icon>
-                            <Image>
-                        <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
+                <GetStarted>
+                    <Title>
+                    <Description>
+                    <LearnMoreUrl>
+                <FunctionFile>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
                             <Label>
                             <Supertip>
                                 <Title>
                                 <Description>
+                            <Icon>
+                                <Image>  
                             <Action>
                                 <TaskpaneId>
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
-                <CustomTab>
-                    <Group>
+                            <Items>
+                                <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
                         <Label>
-                        <Icon>
-                            <Image>
+                    <OfficeMenu>
                         <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-                    <Label>
-                <OfficeMenu>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
         <Resources>
             <Images>
                 <Image>
@@ -302,6 +302,102 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <Hosts>
         <Host>
             <DesktopFormFactor>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>
+                                <Action>
+                                    <SourceLocation>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Items>
+                                    <Item>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
+                        <Label>
+                    <OfficeMenu>
+                        <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
+    <Resources>
+        <Images>
+            <Image>
+                <Override>
+        <Urls>
+            <Url>
+                <Override>
+        <ShortStrings>
+            <String>
+                <Override>
+        <LongStrings>
+            <String>
+                <Override>
+    <VersionOverrides>*
+```
+
+\*の`VersionOverridesV1_0`代わりに、 `type`値`VersionOverridesV1_1`を指定した VersionOverrides は、外部 versionoverrides の末尾にネストすることができます。 の要素`VersionOverridesV1_1`の順序については、「 [versionoverrides Overrides でのメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)」を参照してください。
+
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.1
+
+```xml
+<VersionOverrides>
+    <Description>
+    <Requirements>
+    <Sets>
+        <Set>
+    <Hosts>
+    <Host>
+        <DesktopFormFactor>
             <ExtensionPoint>
                 <OfficeTab>
                     <Group>
@@ -352,77 +448,6 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                             <Title>
                             <Description>
                         <Icon>
-                            <Image>
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-    <Resources>
-        <Images>
-            <Image>
-                <Override>
-        <Urls>
-            <Url>
-                <Override>
-        <ShortStrings>
-            <String>
-                <Override>
-        <LongStrings>
-            <String>
-                <Override>
-    <VersionOverrides>*
-```
-
-\*の`VersionOverridesV1_0`代わりに、 `type`値`VersionOverridesV1_1`を指定した VersionOverrides は、外部 versionoverrides の末尾にネストすることができます。 の要素`VersionOverridesV1_1`の順序については、「 [versionoverrides Overrides でのメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)」を参照してください。
-
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.1
-
-```xml
-<VersionOverrides>
-    <Description>
-    <Requirements>
-    <Sets>
-        <Set>
-    <Hosts>
-    <Host>
-        <DesktopFormFactor>
-        <ExtensionPoint>
-            <OfficeTab>
-                <Group>
-                    <Label>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>
-                        <Action>
-                            <SourceLocation>
-                            <FunctionName>
-            <CustomTab>
-                <Group>
-                    <Label>
-                    <Icon>
-                        <Image>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
                             <Image>  
                         <Action>
                             <TaskpaneId>
@@ -440,35 +465,10 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
+                                    <SourceLocation>
+                <SourceLocation>
                 <Label>
-            <OfficeMenu>
-                <Control>
-                    <Label>
-                    <Supertip>
-                        <Title>
-                        <Description>
-                    <Icon>
-                        <Image>  
-                    <Action>
-                        <TaskpaneId>
-                        <SourceLocation>
-                        <Title>
-                        <FunctionName>
-                    <Items>
-                        <Item>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                                <SourceLocation>
-            <SourceLocation>
-            <Label>
-            <CommandSurface>
+                <CommandSurface>
     <Resources>
         <Images>
             <Image>

@@ -2,13 +2,13 @@
 ms.date: 12/31/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
-localization_priority: Priority
-ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 10e1e3ec934d16806aa137a6468bbdada3fc1db2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915036"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950832"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 

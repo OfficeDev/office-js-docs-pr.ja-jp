@@ -2,13 +2,13 @@
 title: Office のホストと API の要件を指定する
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
-ms.openlocfilehash: c3f1979eb216d20f6c409010e84c1388d2069489
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: efd35568bdb997485f29d2ab0dcceac6d3aa1b3b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524270"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950804"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
