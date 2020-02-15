@@ -3,13 +3,13 @@ title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
 ms.date: 12/24/2019
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: 524c6727e8a1b8e4bb42156a5cec9fead45fd45c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851426"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950888"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -33,7 +33,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 2. 検索ボックスを使用して、**アドイン**と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクト`HelloWorld`に名前を指定し、[**作成**] を選択します。
+3. プロジェクトに「`HelloWorld`」という名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
@@ -200,7 +200,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 9. **Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。 この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。 注意: 
 
-    - `coercionType` 要求の 2 番目のパラメーターとして指定されている `setSelectedDataAsyc` オプションは、挿入されるデータの種類を示します。 
+    - `setSelectedDataAsyc` 要求の 2 番目のパラメーターとして指定されている `coercionType` オプションは、挿入されるデータの種類を示します。 
 
     - `asyncResult` オブジェクトは `setSelectedDataAsync` 要求が失敗した場合の状態やエラー情報など、その要求の結果をカプセル化します。
 
@@ -230,7 +230,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 3. 作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。
 
-    ![[イメージの挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-button.png)
+    ![[画像の挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-button.png)
 
 4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
@@ -511,5 +511,5 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを作成する](../overview/office-add-ins-fundamentals.md)
+* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドインを開発する](../develop/develop-overview.md)

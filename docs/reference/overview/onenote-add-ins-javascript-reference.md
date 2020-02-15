@@ -3,23 +3,23 @@ title: OneNote JavaScript API の概要
 description: ''
 ms.date: 07/05/2019
 ms.prod: onenote
-localization_priority: Normal
-ms.openlocfilehash: 3bd90f1bea7c9b3e7f6689341247d66801357f85
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 3ad992bd59c33d9d8b724893db49a6e623fd1ee3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851524"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950979"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
-OneNote アドインは、次の2つの JavaScript オブジェクトモデルを含む JavaScript API for Office を使用して、web 上の OneNote のオブジェクトと対話します。
+OneNote アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して OneNote on the web のオブジェクトを操作します。
 
-* **Onenote JAVASCRIPT api**: Office 2016 で導入された[onenote javascript api](/javascript/api/onenote)には、web 上の onenote のオブジェクトへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
+* **OneNote JavaScript API**: Office 2016 で導入された [OneNote JavaScript API](/javascript/api/onenote) には、OneNote on the web へのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-ドキュメントのこのセクションでは OneNote JavaScript API に重点を置いています。これは、web 上の OneNote を対象とするアドインで大部分の機能を開発するために使用します。 一般的な API の詳細については、「 [Office JAVASCRIPT API オブジェクトモデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
+ドキュメントのこのセクションでは、OneNote JavaScript API に焦点を当てて、そしてそれを OneNote on the web を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[Office JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 
@@ -31,9 +31,9 @@ OneNote アドインは、次の2つの JavaScript オブジェクトモデル�
 
 ## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
 
-Onenote JavaScript API を使用して web 上の OneNote のコンテンツを操作する作業を行うには、 [onenote アドインのクイックスタート](../../quickstarts/onenote-quickstart.md)を完了します。 
+OneNote JavaScript API を使用して OneNote on the web のコンテンツと対話するには、「[OneNote アドインのクイック スタート](../../quickstarts/onenote-quickstart.md)」を実行します。 
 
-OneNote JavaScript API オブジェクトモデルの詳細については、 [Onenote JAVASCRIPT api リファレンスドキュメント](/javascript/api/onenote)を参照してください。
+OneNote JavaScript API オブジェクト モデルの詳細については、[OneNote JavaScript API リファレンス ドキュメント](/javascript/api/onenote)に関するページを参照してください。
 
 ## <a name="see-also"></a>関連項目
 
