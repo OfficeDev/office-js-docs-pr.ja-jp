@@ -1,31 +1,31 @@
 ---
 ms.date: 01/16/2020
-description: Excel クイックスタートガイドでのカスタム関数の開発。
-title: カスタム関数のクイックスタート
+description: Excel カスタム関数開発のためのクイック スタート ガイド。
+title: カスタム関数クイック スタート
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7446de52832a70b30bbe39c71b37e80e006dc62f
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 79c10a7ba032f478843ce94bf2eae39def051f40
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265565"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950727"
 ---
-# <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を始める
+# <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
-カスタム関数を使用すると、開発者は、JavaScript または Typescript でアドインの一部として定義することによって、Excel に新しい関数を追加できるようになります。 Excel ユーザーは、Excel の任意のネイティブ関数の場合と同じように、カスタム`SUM()`関数にアクセスできます。
+カスタム関数機能により、開発者は、アドインの一部としてカスタム関数を JavaScript または Typescript で定義することによって、新しい関数を Excel に追加できるようになりました。 Excel のユーザーは、`SUM()` など、Excel のすべてのネイティブ関数にアクセスするとの同じようにカスタム関数にアクセスできます。
 
 ## <a name="prerequisites"></a>前提条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上の Excel (バージョン1904以降、Office 365 サブスクリプションに接続されている) または web 上の Excel
-* Excel カスタム関数は Office on Mac でサポートされています (Office 365 サブスクリプションに接続されています)。また、このチュートリアルへの更新はまもなく公開されます。
+* Windows 版 Excel (Office 365 サブスクリプションに接続されている、バージョン 1904 以降) または Web 版 Excel
+* Excel カスタム関数は (Office 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
 
 >[!NOTE]
 >Excel カスタム関数は Office 2019 (1 回限りの購入) ではサポートされていません。
 
-## <a name="build-your-first-custom-functions-project"></a>最初のカスタム関数プロジェクトを作成する
+## <a name="build-your-first-custom-functions-project"></a>カスタム関数プロジェクトを初めて作成する
 
 はじめに、Yeoman ジェネレーターを使って、カスタム関数プロジェクトを作成します。 これにより、カスタム関数のコーディングを開始するための正しいフォルダー構造、ソース ファイル、依存関係によるプロジェクトがセットアップされます。
 
@@ -39,7 +39,7 @@ ms.locfileid: "41265565"
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
-2. [ごみ箱] ジェネレーターでは、プロジェクトの処理に関するいくつかの命令がコマンドラインに表示されますが、それらは無視して、手順に従って続行します。 プロジェクトのルート フォルダーに移動します。
+2. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、ここに書かれている手順に従ってください。 プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
     cd starcount
@@ -52,31 +52,31 @@ ms.locfileid: "41265565"
     ```
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これはオプションです。 アドインの作業ウィンドウを開かなくても、カスタム関数を実行できます。
+4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは Web 版 Excel または Windows 版 Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel on Windows](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[Windows 版 Excel](#tab/excel-windows)
 
-Windows の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
+アドインを Windows 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
 ```command&nbsp;line
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Web 版 Excel](#tab/excel-online)
 
-Web 上の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+アドインを Web 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-カスタム関数アドインを使用するには、ブラウザー上の Excel で新しいブックを開きます。 このブックでは、次の手順を実行して、アドインをサイドロードします。
+カスタム関数アドインを使用するには、ブラウザー上の Excel で新しいブックを開きます。 このブックで次の手順を実行してアドインをサイドロードします。
 
-1. Excel で、[**挿入**] タブを選択し、[**アドイン**] を選択します。
+1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] アイコンが強調表示されている web 上の Excel にリボンを挿入する](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] のアイコンが強調表示された Web 上の Excel の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -86,21 +86,21 @@ npm run start:web
 
 ---
 
-## <a name="try-out-a-prebuilt-custom-function"></a>あらかじめ用意されているカスタム関数を試す
+## <a name="try-out-a-prebuilt-custom-function"></a>既製のカスタム関数を試す
 
-[ごみ箱] ジェネレーターを使用して作成したカスタム関数プロジェクトには、 **/src/functions/functions.js**ファイル内で定義されているいくつかのあらかじめ用意されたカスタム関数があります。 プロジェクトのルートディレクトリの **./manifest¥ xml**ファイルは、すべてのカスタム関数が`CONTOSO`名前空間に属することを指定します。
+Yeoman ジェネレーター使用して作成したカスタム関数プロジェクトには既製のカスタム関数がいくつか含まれており、これらは **./src/functions/functions.js** ファイル内で定義されています。 カスタム関数はすべて `CONTOSO` 名前空間に属するということは、プロジェクトのルート ディレクトリの **./manifest.xml** ファイルで指定されています。
 
-Excel ブックで、次の手順を`ADD`実行してカスタム関数を試してみます。
+Excel ブックで次の手順を実行し、`ADD` カスタム関数を試してみてください。
 
-1. セルを選択し、 `=CONTOSO`テキストを入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
+1. セルを 1 つ選択し、「`=CONTOSO`」と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
-2. セルに`CONTOSO.ADD`値`=CONTOSO.ADD(10,200)`を入力し`10` 、 `200` enter キーを押して、数値と入力パラメーターを使用して、関数を実行します。
+2. セル内に「`=CONTOSO.ADD(10,200)`」という値を入力して Enter キーを押し、入力パラメーターとして数値「`10`」 と「`200`」を指定して、`CONTOSO.ADD` 関数を実行します。
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます。 Excel アドインでカスタム関数が正常に作成されました。 次に、ストリーミングデータ機能を使用して、より複雑なアドインをビルドします。 次のリンクでは、「カスタム関数を使用した Excel アドインのチュートリアル」の次の手順を実行します。
+これで、カスタム関数が Excel アドイン内に正常に作成されました。 次は、ストリーミング データ機能を使用してより複雑なアドインを作成してください。 カスタム関数を使用した Excel アドインのチュートリアルの次の手順を確認するには、次のリンクをクリックしてください。
 
 > [!div class="nextstepaction"]
 > [Excel カスタム関数アドインのチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
