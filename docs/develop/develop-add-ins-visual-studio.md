@@ -3,12 +3,12 @@ title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 2acafc08dcbb8e1fde439f2be289afff3185272c
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 9f250078a4da80dea3276c51a2183a072da44f81
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915071"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162812"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
@@ -22,7 +22,7 @@ ms.locfileid: "40915071"
 Visual Studio は、Excel、Outlook、Word、および PowerPoint 用の Office アドインの作成に使用できます。 Office アドイン プロジェクトは Visual Studio ソリューションの一部として作成され、HTML、CSS、および JavaScript が使用されます。 Visual Studio を使用して Office アドインを作成するには、作成するアドインに対応するクイック スタートの指示に従います。
 
 - [Excel クイック スタート](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Outlook クイック スタート](/outlook/add-ins/quick-start?context=office/dev/add-ins/context&tabs=visualstudio)
+- [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
 - [Word クイック スタート](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint クイック スタート](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 

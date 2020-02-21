@@ -1,44 +1,42 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: Office on the web で Office アドインをサイドロードしてテストをする
-ms.date: 06/20/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: b26128a912aff5a89ad839b8240f18959891d299
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950909"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163585"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
-サイドロードを使用することで、最初にアドイン カタログに置かなくても、テスト用に Office アドインをインストールすることができます。 サイドロードは、Office 365 または Office on the web で実行できます。 2 つのプラットフォームで手順が少し異なります。 
+サイドロードを使用することで、最初にアドイン カタログに置かなくても、テスト用に Office アドインをインストールすることができます。 サイドロードは、Office 365 または Office on the web で実行できます。 2 つのプラットフォームで手順が少し異なります。
 
 アドインをサイドロードするとき、アドイン マニフェストはブラウザーのローカル ストレージに格納されます。そのため、ブラウザーのキャッシュを消去したり、別のブラウザーに切り替えたりする場合、アドインを再びサイドロードする必要があります。
 
-
 > [!NOTE]
-> この記事で説明したようにサイドロードは、Word、Excel、および PowerPoint でサポートされています。Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」をご参照ください。
+> この記事で説明したようにサイドロードは、Word、Excel、および PowerPoint でサポートされています。Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
 
 次のビデオでは、Office on the web またはデスクトップでアドインをサイドロードする手順について説明しています。
-
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Office on the web で Office アドインをサイドロードする
 
 1. [Microsoft Office on the web](https://office.live.com/) を開きます。
-    
+
 2. **[オンライン アプリを今すぐ開始する]** で、 **Excel**、 **Word**、または  **PowerPoint** を選択して、新しいドキュメントを開きます。
-    
+
 3. リボンの  **[挿入]** タブを開き、 **[アドイン]** セクションで、 **Office [アドイン]** を選択します。
-    
+
 4. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
-    
+
     ![右上に [個人用アドインの管理] というドロップダウンがあり、その下に [マイ アドインのアップロード] オプションのドロップダウンがある [Office アドイン] ダイアログ](../images/office-add-ins-my-account.png)
 
-5.  アドイン マニフェスト ファイルを**参照**して、**[アップロード]** を選択します。
-    
+5. アドイン マニフェスト ファイルを**参照**して、**[アップロード]** を選択します。
+
     ![[参照]、[アップロード]、[キャンセル] のボタンがある [アドインのアップロード] ダイアログ。](../images/upload-add-in.png)
 
 6. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
@@ -52,15 +50,13 @@ ms.locfileid: "41950909"
 
 >    ![[ローカルホスト ループバックを許可する] オプションがオンになった Microsoft Edge。](../images/allow-localhost-loopback.png)
 
-
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
 
 1. Office 365 アカウントにサインインします。
-    
-2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
-    
-3. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 
+2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
+
+3. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Visual Studio の使用時にアドインをサイドロードする
 
@@ -77,3 +73,7 @@ ms.locfileid: "41950909"
 6. XML ファイルを保存します。
 7. Web プロジェクトを右クリックして、[**デバッグ**]  ->  [**新しいインスタンスを開始**] の順に選択します。 これにより、Office を起動することなく Web プロジェクトが実行されます。
 8. 前述の「[Office on the web で Office アドインをサイドロードする](#sideload-an-office-add-in-in-office-on-the-web)」で説明した手順を使用して、Office on the web からアドインをサイドロードします。
+
+## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
+
+以前のサイドロードアドインを削除するには、ブラウザーのキャッシュをクリアする必要があります。 また、アドインのマニフェストを変更した場合 (たとえば、アイコンの更新ファイル名やアドインコマンドのテキスト)、キャッシュをクリアし、更新されたマニフェストを使用してアドインを再サイドロードする必要がある場合があります。 これを実行することにより、アドインは更新されたマニフェストの記載どおりに Office で表示されるようになります。

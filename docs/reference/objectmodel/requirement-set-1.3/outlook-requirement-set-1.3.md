@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.3
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: ba74102d70d2f2c38e96cb833b779d3381595f0f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 375fc5d7cce8592b8e4a270713c1f611129cc7d0
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814865"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165427"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook アドイン API 要件セット 1.3
 
@@ -21,7 +21,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 要件セット 1.3 には、[要件セット 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) のすべての機能が含まれています。次の機能が追加されました。
 
-- [アドイン コマンド](/outlook/add-ins/add-in-commands-for-outlook)のサポートが追加されました。
+- [アドイン コマンド](../../../outlook/add-in-commands-for-outlook.md)のサポートが追加されました。
 - 作成中のアイテムを保存または閉じる機能が追加されました。
 - アドインが本文全体を取得または設定できるようにする、拡張された[Body](/javascript/api/outlook/office.body?view=outlook-js-1.3)オブジェクト。
 - EWS 形式と REST 形式間で ID を変換する変換メソッドが追加されました。
@@ -44,7 +44,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](/outlook/add-ins/)
+- [Outlook アドイン](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [概要](/outlook/add-ins/quick-start)
+- [概要](../../../quickstarts/outlook-quickstart.md)
 - [要求セットとサポートされているクライアント](../../requirement-sets/outlook-api-requirement-sets.md)

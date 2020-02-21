@@ -3,12 +3,12 @@ title: SSO を使用した Microsoft Graph への承認
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 77dec8eda1c630bef6277008bef4b129e29a8dae
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 06605ab54dc0565aaa5632abd911c68e29aba33f
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949689"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162798"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>SSO を使用した Microsoft Graph への承認 (プレビュー)
 
@@ -62,4 +62,4 @@ Microsoft Graph にアクセスするアドインは、SSO を使用する他の
 
 * [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 * [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
-* [シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](/outlook/add-ins/implement-sso-in-outlook-add-in)
+* [シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](../outlook/implement-sso-in-outlook-add-in.md)

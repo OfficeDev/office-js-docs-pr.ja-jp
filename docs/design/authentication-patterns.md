@@ -3,12 +3,12 @@ title: Office アドインの認証設計ガイドライン
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fb50809139334d4fbbcae67a02b07b3d49734210
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449193"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162847"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -49,7 +49,7 @@ ms.locfileid: "32449193"
 ## <a name="single-sign-on-authentication-flow-preview"></a>シングル サインオン認証フロー (プレビュー)
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
 実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの ID (Microsoft アカウントまたは Office 365 ID) がアドインのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 
@@ -62,4 +62,4 @@ ms.locfileid: "32449193"
 
 ## <a name="see-also"></a>関連項目
 
-- 詳細については、[SSO アドイン (プレビュー) の開発](/office/dev/add-ins/develop/sso-in-office-add-ins)に関するページを参照してください。
+- 詳細については、[SSO アドイン (プレビュー) の開発](../develop/sso-in-office-add-ins.md)に関するページを参照してください。

@@ -4,12 +4,12 @@ description: Yeoman ジェネレーターを使用して、シングル サイ�
 ms.date: 01/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 263a84a9084f7f75beb13b4336b61027de0bf907
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: db3567a17a01af76c9db5f859a35dba46fd4858d
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650027"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163879"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
 
@@ -149,7 +149,7 @@ Outlook アドインを試すには、次の手順を実行します。
     npm start
     ```
 
-2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 [前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Office 365 管理者アカウントと同じ Office 365 組織のメンバーであるユーザーで Outlook にサインインしている必要があります。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
+2. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。 [前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Office 365 管理者アカウントと同じ Office 365 組織のメンバーであるユーザーで Outlook にサインインしている必要があります。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
 
 3. Outlook で新しいメッセージを作成します。
 

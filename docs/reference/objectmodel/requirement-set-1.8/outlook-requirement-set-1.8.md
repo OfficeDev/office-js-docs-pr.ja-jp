@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.8
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 4fc47a5aec1296a88654de44856ecd69ab23cc3a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d836cf2618dce46538b32b95e0d3a8e8025b4154
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950986"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165328"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -54,7 +54,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](/outlook/add-ins/)
+- [Outlook アドイン](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [概要](/outlook/add-ins/quick-start)
+- [概要](../../../quickstarts/outlook-quickstart.md)
 - [要求セットとサポートされているクライアント](../../requirement-sets/outlook-api-requirement-sets.md)

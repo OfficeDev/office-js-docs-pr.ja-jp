@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Rule 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450472"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165532"
 ---
 # <a name="rule-element"></a>Rule 要素
 
@@ -45,7 +45,7 @@ ms.locfileid: "32450472"
 |:-----|:-----|:-----|
 | **ItemType** | はい | 照合するアイテムの種類を指定します。`Message` または `Appointment` になります。`Message` のアイテムの種類には、電子メール、会議出席依頼、会議出席依頼の返信、および会議のキャンセルが含まれます。 |
 | **FormType** | いいえ ([ExtensionPoint](extensionpoint.md) 内)、いいえ ([OfficeApp](officeapp.md) 内) | アプリがアイテムの読み取りまたは編集フォームで表示されるかどうかを指定します。`Read`、`Edit` または `ReadOrEdit` のいずれかになります。`ExtensionPoint` 内の `Rule` で指定されている場合、この値は `Read` である必要があります。 |
-| **ItemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](/outlook/add-ins/activation-rules)」を参照してください。 |
+| **ItemClass** | いいえ | 照合するカスタム メッセージ クラスを指定します。詳細については、「[特定のメッセージ クラスに対して Outlook のメール アドインをアクティブにする](../../outlook/activation-rules.md)」を参照してください。 |
 | **IncludeSubClasses** | いいえ | アイテムが指定したメッセージ クラスのサブクラスである場合に、このルールは true と評価する必要があるかどうかを指定します。既定値は `false` です。 |
 
 ### <a name="example"></a>例
@@ -78,7 +78,7 @@ ms.locfileid: "32450472"
 | **IgnoreCase** | いいえ | **RegExFilter** 属性で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。 |
 | **Highlight** | いいえ | **注意:** これは、**ExtensionPoint** 要素内の **Rule** 要素にのみ適用されます。クライアントが一致するエンティティを強調表示にする方法を指定します。`all` または `none` のいずれかになります。指定のない場合、既定値は `all` に設定されます。 |
 
-### <a name="example"></a>例
+### <a name="example"></a>使用例
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" EntityType="EmailAddress" />
@@ -115,7 +115,7 @@ ms.locfileid: "32450472"
 |:-----|:-----|:-----|
 | **Mode** | はい | このルール コレクションの評価時に使用する論理演算子を指定します。次のいずれかを指定できます。`And` または `Or` のどちらかになります。 |
 
-### <a name="example"></a>使用例
+### <a name="example"></a>例
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -127,6 +127,6 @@ ms.locfileid: "32450472"
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドインのアクティブ化ルール](/outlook/add-ins/activation-rules)
-- [Outlook アイテム内の文字列を既知のエンティティとして照合する](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Outlook アドインのアクティブ化ルール](../../outlook/activation-rules.md)
+- [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

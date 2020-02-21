@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.6
 description: ''
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 22702448b82a108c401f9f81d3b8a321e14ead63
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: aedfa635c5208ddb8a0972e880fafe50ddc0b3d6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814662"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165364"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook アドイン API 要件セット 1.6
 
@@ -30,11 +30,11 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 - [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods) が追加されました: ユーザーが選択した強調表示された一致内で見つかったエンティティを取得する新機能を追加します。 強調表示された一致は、コンテキスト アドインに適用されます。
 - [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods) が追加されました: マニフェスト XML ファイルで定義した正規表現と一致する、強調表示された一致内の文字列値を返す新機能を追加します。 強調表示された一致は、コンテキスト アドインに適用されます。
 - [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods) が追加されました: 新しいメッセージ フォームを表示する新しい関数を追加します。
-- [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#properties) が追加されました: ユーザーのアカウントの種類を示す新しいメンバーをユーザー プロファイルに追加します。
+- [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6#accounttype) が追加されました: ユーザーのアカウントの種類を示す新しいメンバーをユーザー プロファイルに追加します。
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](/outlook/add-ins/)
+- [Outlook アドイン](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [概要](/outlook/add-ins/quick-start)
+- [概要](../../../quickstarts/outlook-quickstart.md)
 - [要求セットとサポートされているクライアント](../../requirement-sets/outlook-api-requirement-sets.md)

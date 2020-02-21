@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950545"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163609"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -66,7 +66,7 @@ if (item.somePropertyOrFunction !== undefined) {
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Exchange サーバーと Outlook クライアントでサポートされる要件セット
 
-このセクションでは、Exchange サーバーと Outlook クライアントでサポートされる一連の要件セットについて説明します。 Outlook アドインを実行するためのサーバーおよびクライアントの要件の詳細については、「[Outlook アドインの要件](/outlook/add-ins/add-in-requirements)」を参照してください。
+このセクションでは、Exchange サーバーと Outlook クライアントでサポートされる一連の要件セットについて説明します。 Outlook アドインを実行するためのサーバーおよびクライアントの要件の詳細については、「[Outlook アドインの要件](../../outlook/add-in-requirements.md)」を参照してください。
 
 > [!IMPORTANT]
 > ターゲットとなる Exchange サーバーと Outlook クライアントが異なる要件セットをサポートしている場合、低い要件セットの範囲に制限されます。 たとえば、アドインが Exchange 2013 (最高要件セット: 1.1) に対して Mac 上の Outlook 2016 (最高要件セット: 1.6) で実行されている場合、アドインは要件セット 1.1 に制限されます。
@@ -108,11 +108,11 @@ if (item.somePropertyOrFunction !== undefined) {
 >
 > **モダン**
 >
-> ![Outlook ツールバー (モダン) の部分的なスクリーンショット](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![Outlook ツールバー (モダン) の部分的なスクリーンショット](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **クラシック**
 >
-> ![Outlook ツールバー (クラシック) の部分的なスクリーンショット](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![Outlook ツールバー (クラシック) の部分的なスクリーンショット](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>プレビュー API の使用
 

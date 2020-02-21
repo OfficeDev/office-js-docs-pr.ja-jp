@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949716"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162805"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -97,7 +97,7 @@ Office アドインは、ブラウザー コントロールまたは **iframe** 
 
   - アドインは Web ブラウザー コントロール下で動作するため、ブラウザーで動作する通常の Web ページとほぼ同じ処理を実行できますが、同時に、ドメイン分離のための同一生成元ポリシーとセキュリティ ゾーンを遵守するように制限されます。
 
-Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](/outlook/add-ins/privacy-and-security)」を参照してください。
+Outlook アドイン固有のリソース使用量監視機能により、Outlook アドインはセキュリティとパフォーマンスの追加の機能を提供します。詳細については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/privacy-and-security.md)」を参照してください。
 
 ### <a name="developer-guidelines-to-handle-pii"></a>PII の取り扱いに関する開発ガイドライン
 
@@ -138,13 +138,13 @@ Office アドインのセキュリティ モデルをサポートするための
 </OfficeApp>
 ```
 
-作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)」を参照してください。
+作業ウィンドウ アドインとコンテンツ アドインのアクセス許可の詳細については、「[アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)」を参照してください。
 
 Outlook アドインのアクセス許可の詳細については、次のトピックを参照してください。
 
-- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](/outlook/add-ins/privacy-and-security)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/privacy-and-security.md)
 
-- [Outlook アドインのアクセス許可を理解する](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Outlook アドインのアクセス許可を理解する](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### <a name="same-origin-policy"></a>同一生成元ポリシー
 
@@ -243,7 +243,7 @@ Office アドインは Office ホスト アプリケーションと通信する�
   - 法規制に準拠したプライバシー ポリシーを記載した声明を作成する。
   - アドインの提出時に契約合意書に署名する。
 
-Outlook アドインの開発者は、リソース使用量のルール以外に、アクティブ化ルールの指定と JavaScript API の使用に関する制限についてもアドインが遵守していることを確認する必要があります。詳細については、「[Outlook アドインのアクティブ化と JavaScript API に関する制限事項](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)」を参照してください。
+Outlook アドインの開発者は、リソース使用量のルール以外に、アクティブ化ルールの指定と JavaScript API の使用に関する制限についてもアドインが遵守していることを確認する必要があります。詳細については、「[Outlook アドインのアクティブ化と JavaScript API に関する制限事項](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」を参照してください。
 
 ## <a name="it-administrators-control"></a>IT 管理者による制御
 
@@ -262,11 +262,11 @@ Office 設定の管理と適用はグループ ポリシー設定で行われま
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](/outlook/add-ins/privacy-and-security)
-- [Outlook アドインのアクセス許可を理解する](/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Outlook アドインのアクティブ化と JavaScript API の制限](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Office アドインにおける同一生成元ポリシーの制限への対処](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/privacy-and-security.md)
+- [Outlook アドインのアクセス許可を理解する](../outlook/understanding-outlook-add-in-permissions.md)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)
 - [同一生成元ポリシー](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同一生成元ポリシー パート 1:ピーク禁止](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [JavaScript の同一生成元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

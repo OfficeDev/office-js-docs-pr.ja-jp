@@ -1,16 +1,16 @@
 ---
-title: Office JavaScript API オブジェクト モデル
+title: 一般的な JavaScript API オブジェクトモデル
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: cc34d6ee9424c00bfc49762f779605f66bc9f36b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 98e53140beb99d557391e332569e594250d37fca
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950776"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163501"
 ---
-# <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
+# <a name="common-javascript-api-object-model"></a>一般的な JavaScript API オブジェクトモデル
 
 Office JavaScript アドインを利用すると、ホストの基本機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox](#mailbox-object) オブジェクトによって、Outlook アドインがメッセージやユーザー プロファイルにアクセスできるようになります。 このような上位オブジェクト間の関係を理解することが JavaScript アドインの基礎となります。
 
@@ -168,4 +168,4 @@ var item = Office.context.mailbox.item;
 
 -  **RoamingSettings** オブジェクト: アドインがインストールされているユーザーのメールボックスに Outlook アドイン固有のカスタム設定を保存する際に使用します。
 
-Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](/outlook/add-ins/)」を参照してください。
+Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](../outlook/outlook-add-ins-overview.md)」を参照してください。

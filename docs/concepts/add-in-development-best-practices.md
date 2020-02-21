@@ -3,12 +3,12 @@ title: Office アドイン開発のベスト プラクティス
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fc1a12e1f6fca44c137aec1ac17d71d76156e1a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: bbf32369e45f126d22c09270459eaaa015a6c0e1
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949711"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162777"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -50,7 +50,7 @@ ms.locfileid: "41949711"
 
 - ポップアップは使用しないようにします。使用する必要がある場合は、ポップアップを有効にするようユーザーに指示します。
 
-最初の実行エクスペリエンスを開発する際に適用できるパターンについては、「[Office アドインの UX 設計パターン](/office/dev/add-ins/design/first-run-experience-patterns)」を参照してください。
+最初の実行エクスペリエンスを開発する際に適用できるパターンについては、「[Office アドインの UX 設計パターン](../design/first-run-experience-patterns.md)」を参照してください。
 
 ## <a name="use-add-in-commands"></a>アドイン コマンドを使用する
 

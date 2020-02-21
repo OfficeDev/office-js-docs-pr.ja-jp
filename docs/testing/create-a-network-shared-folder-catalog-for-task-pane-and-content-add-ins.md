@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office アドインをサイドロードする
 description: ''
-ms.date: 12/31/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 5008e75c1932d83070bdbc896675ce342f81e1ea
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0eb8e6c2114b69575505508f05ed701f74b6849e
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950538"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163592"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -21,7 +21,7 @@ ms.locfileid: "41950538"
 
 - [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 次のビデオでは、共有フォルダー カタログを使用して Office on the web またはデスクトップでアドインをサイドロードする手順について説明します。  
 
@@ -45,22 +45,22 @@ ms.locfileid: "41950538"
 
 6. [**閉じる**] を選択して、[**プロパティ**] ダイアログ ウィンドウを閉じます。
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>共有フォルダーを信頼できるカタログとして指定する 
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>共有フォルダーを信頼できるカタログとして指定する
 
 ### <a name="configure-the-trust-manually"></a>信頼を手動で構成する
-      
+
 1. Excel、Word、PowerPoint、または Project で新しいドキュメントを開きます。
-    
+
 2. [**ファイル**] タブを選択し、[**オプション**] を選択します。
-    
+
 3. [**セキュリティ センター**] を選択し、[**セキュリティ センターの設定**] ボタンを選択します。
-    
+
 4. [**信頼されているアドイン カタログ**] を選びます。
-    
-5. [**カタログの URL**] ボックスで、先ほど[共有](#share-a-folder)したフォルダーの完全なネットワーク パスを入力します。 フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。 
+
+5. [**カタログの URL**] ボックスで、先ほど[共有](#share-a-folder)したフォルダーの完全なネットワーク パスを入力します。 フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。
 
     ![[共有] タブとネットワーク パスが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog-2.png)
-    
+
 6. [**カタロ URL**] ボックスにフォルダーの完全なネットワーク パスを入力したら、[**カタログの追加**] を選択します。
 
 7. 新しく追加されたアイテムの [**メニューに表示する**] チェック ボックスをオンにし、[**OK**] を選択して [**セキュリティ センター** ] ダイアログ ウィンドウを閉じます。 
@@ -73,13 +73,13 @@ ms.locfileid: "41950538"
 
 ### <a name="configure-the-trust-with-a-registry-script"></a>レジストリ スクリプトを使用して信頼を構成する
 
-1. テキスト エディターで、TrustNetworkShareCatalog.reg という名前のファイルを作成します。 
+1. テキスト エディターで、TrustNetworkShareCatalog.reg という名前のファイルを作成します。
 
 2. 次に示すコンテンツをファイルに追加します。
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
     "Id"="{-random-GUID-here-}"
     "Url"="\\\\-share-\\-folder-"
@@ -87,15 +87,15 @@ ms.locfileid: "41950538"
     ```
 3. [GUID ジェネレーター](https://guidgenerator.com/)など、多数のオンライン GUID 生成ツールのいずれかを使用してランダムな GUID を生成し、TrustNetworkShareCatalog.reg ファイル内で*両方の場所*の文字列「-random-GUID-here-」を GUID に置き換えます。 (引用符 `{}` 記号は残しておく必要があります)。
 
-4. `Url` 値を、以前[共有](#share-a-folder)したフォルダーへの完全なネットワーク パスに置き換えます。 (URL の `\` 文字は 2 倍にする必要があります。) フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。 
+4. `Url` 値を、以前[共有](#share-a-folder)したフォルダーへの完全なネットワーク パスに置き換えます。 (URL の `\` 文字は 2 倍にする必要があります。) フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。
 
     ![[共有] タブとネットワーク パスが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog-2.png)
-    
+
 5. ファイルは、次のようになります。 ファイルを保存します。
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
     "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
     "Url"="\\\\TestServer\\OfficeAddinManifests"
@@ -113,11 +113,15 @@ ms.locfileid: "41950538"
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。 Projectで、リボンの [**Project**]タブの [**個人用アドイン**] を選択します。 
+2. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。 Projectで、リボンの [**Project**]タブの [**個人用アドイン**] を選択します。
 
 3. **[Office アドイン]** ダイアログ ボックスの上部にある **[共有フォルダー]** を選びます。
 
 4. アドインの名前を選び、**[追加]** を選択して、アドインを挿入します。
+
+## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
+
+コンピューター上の Office キャッシュをクリアすることによって、以前のサイドロードアドインを削除することができます。 Windows のキャッシュをクリアする方法については、記事「 [Office キャッシュをクリア](clear-cache.md#clear-the-office-cache-on-windows)する」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

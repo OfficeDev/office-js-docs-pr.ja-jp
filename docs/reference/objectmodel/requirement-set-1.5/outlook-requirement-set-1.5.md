@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.5
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1a12156feb7a03e596e521650a757fe7198b4d76
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 65453a0cff8db682f5f573c25a9afa4e9ff63f67
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814746"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163739"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook アドイン API 要件セット 1.5
 
@@ -21,8 +21,8 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 要件セット 1.5 には、[要件セット 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) のすべての機能が含まれています。次の機能が追加されました。
 
-- [ピン留め可能な作業ウィンドウ](/outlook/add-ins/pinnable-taskpane)のサポートが追加されました。
-- [REST API](/outlook/add-ins/use-rest-api) の呼び出しのサポートが追加されました。
+- [ピン留め可能な作業ウィンドウ](../../../outlook/pinnable-taskpane.md)のサポートが追加されました。
+- [REST API](../../../outlook/use-rest-api.md) の呼び出しのサポートが追加されました。
 - インラインで添付ファイルにマークを付ける機能が追加されました。
 - 作業ウィンドウまたはダイアログを閉じる機能が追加されました。
 
@@ -40,7 +40,7 @@ JavaScript API for Office の Outlook アドイン API サブセットには、O
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドイン](/outlook/add-ins/)
+- [Outlook アドイン](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook アドインのコード サンプル](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [概要](/outlook/add-ins/quick-start)
+- [概要](../../../quickstarts/outlook-quickstart.md)
 - [要求セットとサポートされているクライアント](../../requirement-sets/outlook-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: Office アドインのリソースの制限とパフォーマンスの最
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 9cd64943e3ec612fa2cb21adcd500c6522d451a2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950377"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162791"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -107,5 +107,5 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
-- [Outlook アドインのアクティブ化と JavaScript API の制限](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)
