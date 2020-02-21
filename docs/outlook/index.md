@@ -5,12 +5,12 @@ title: Outlook アドイン ドキュメント
 description: Outlook アドイン向けの学習用リソース。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2af0c791ba90df68b80ca7e4af773e1b024e337e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: b9d7c7ff05dddda3e3ae3235e90400c6913f1f49
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576952"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165553"
 ---
 # <a name="outlook-add-ins-documentation"></a>Outlook アドイン ドキュメント
 
@@ -28,7 +28,7 @@ Outlook アドインを使用すると、Windows、Mac、iPad、on the web を�
                     </div>
                     <div class="cardText">
                         <h3>概要</h3>
-                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">Outlook アドインのコンポーネントと機能について学ぶ</a>。</p>
+                        <p><a href="outlook-add-ins-overview.md">Outlook アドインのコンポーネントと機能について学ぶ</a>。</p>
                     </div>
                 </div>
             </div>
@@ -45,24 +45,7 @@ Outlook アドインを使用すると、Windows、Mac、iPad、on the web を�
                     </div>
                     <div class="cardText">
                         <h3>はじめに</h3>
-                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">5 分以内で最初の Outlook アドインを構築する</a>。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Outlook アドインの開発</h3>
-                        <p><a href="/outlook/add-ins/outlook-addin-design">Outlook アドインの開発の主要な側面について学ぶ</a>。</p>
+                        <p><a href="../quickstarts/outlook-quickstart.md">5 分以内で最初の Outlook アドインを構築する</a>。</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +62,7 @@ Outlook アドインを使用すると、Windows、Mac、iPad、on the web を�
                     </div>
                     <div class="cardText">
                         <h3>Outlook JavaScript API</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Outlook のオブジェクトと対話する Outlook JavaScript API を使用する方法を学ぶ</a>。</p>
+                        <p><a href="apis.md">Outlook のオブジェクトと対話する Outlook JavaScript API を使用する方法を学ぶ</a>。</p>
                     </div>
                 </div>
             </div>
