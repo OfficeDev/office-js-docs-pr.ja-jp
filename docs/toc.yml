@@ -17,7 +17,7 @@
         - name: OneNote アドイン
           href: quickstarts/onenote-quickstart.md
         - name: Outlook アドイン
-          href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+          href: quickstarts/outlook-quickstart.md
         - name: PowerPoint アドイン
           href: quickstarts/powerpoint-quickstart.md
         - name: Project アドイン
@@ -54,7 +54,7 @@
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
             - name: Office.js を読み込む
               href: develop/loading-the-dom-and-runtime-environment.md
-            - name: Office JavaScript API オブジェクト モデル
+            - name: 共通 JavaScript API オブジェクト モデル
               href: develop/office-javascript-api-object-model.md
             - name: Office アドインにおける非同期プログラミング
               href: develop/asynchronous-programming-in-office-add-ins.md
@@ -253,6 +253,7 @@
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
         - name: Office のキャッシュをクリアする
           href: testing/clear-cache.md
+          displayName: 'uninstall, sideload'
         - name: ランタイム ログを使用してデバッグする
           href: testing/runtime-logging.md
         - name: ユーザーのエラーのトラブルシューティング
@@ -693,21 +694,19 @@
       href: outlook/index.md
       displayName: Outlook
     - name: 概要
-      href: /outlook/add-ins/index?context=office/dev/add-ins/context
+      href: outlook/outlook-add-ins-overview.md
       displayName: Outlook
     - name: 最初の Outlook アドインをビルドする
-      href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+      href: quickstarts/outlook-quickstart.md
       displayName: Outlook
     - name: Outlook アドインのチュートリアル
-      href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
+      href: tutorials/outlook-tutorial.md
       displayName: Outlook
-    - name: Outlook アドインのコンセプト
-      href: /outlook/add-ins/outlook-addin-design
     - name: Outlook JavaScript API
       displayName: Outlook
       items:
         - name: 概要
-          href: /outlook/add-ins/apis?context=office/dev/add-ins/context
+          href: outlook/apis.md
           displayName: Outlook
         - name: API 要件セット
           href: reference/requirement-sets/outlook-api-requirement-sets.md
@@ -727,12 +726,8 @@
                   href: reference/objectmodel/preview-requirement-set/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
                 - name: Outlook Preview API リファレンス
                   href: reference/outlook-api-reference-preview.md
             - name: 要件セット 1.8
@@ -745,12 +740,8 @@
                   href: reference/objectmodel/requirement-set-1.8/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.8 API リファレンス
                   href: reference/outlook-api-reference-1-8.md
             - name: 要件セット 1.7
@@ -763,12 +754,8 @@
                   href: reference/objectmodel/requirement-set-1.7/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.7 API リファレンス
                   href: reference/outlook-api-reference-1-7.md
             - name: 要件セット 1.6
@@ -781,12 +768,8 @@
                   href: reference/objectmodel/requirement-set-1.6/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.6 API リファレンス
                   href: reference/outlook-api-reference-1-6.md
             - name: 要件セット 1.5
@@ -799,12 +782,8 @@
                   href: reference/objectmodel/requirement-set-1.5/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.5 API リファレンス
                   href: reference/outlook-api-reference-1-5.md
             - name: 要件セット 1.4
@@ -817,12 +796,8 @@
                   href: reference/objectmodel/requirement-set-1.4/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.4 API リファレンス
                   href: reference/outlook-api-reference-1-4.md
             - name: 要件セット 1.3
@@ -835,12 +810,8 @@
                   href: reference/objectmodel/requirement-set-1.3/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.3 API リファレンス
                   href: reference/outlook-api-reference-1-3.md
             - name: 要件セット 1.2
@@ -853,12 +824,8 @@
                   href: reference/objectmodel/requirement-set-1.2/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.2 API リファレンス
                   href: reference/outlook-api-reference-1-2.md
             - name: 要件セット 1.1
@@ -871,14 +838,118 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
-                - name: Office.context.mailbox.diagnostics
-                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
-                - name: Office.context.mailbox.userProfile
-                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.1 API リファレンス
                   href: reference/outlook-api-reference-1-1.md
+    - name: 概念
+      items:
+        - name: Outlook アドインの設計ガイドライン
+          href: outlook/outlook-addin-design.md
+        - name: アドイン コマンド
+          href: outlook/add-in-commands-for-outlook.md
+        - name: コンテキスト アドイン
+          href: outlook/contextual-outlook-add-ins.md
+        - name: モジュール拡張機能アドイン
+          href: outlook/extension-module-outlook-add-ins.md
+        - name: Outlook Mobile のアドイン
+          href: outlook/outlook-mobile-addins.md
+        - name: 送信時アドイン
+          href: outlook/outlook-on-send-addins.md
+        - name: ピン留め可能な作業ウィンドウ
+          href: outlook/pinnable-taskpane.md
+        - name: 代理人アクセス
+          href: outlook/delegate-access.md
+        - name: マニフェスト
+          items:
+            - name: Outlook アドイン マニフェスト
+              href: outlook/manifests.md
+            - name: アクティブ化ルール
+              href: outlook/activation-rules.md
+            - name: Outlook Mobile のサポートを追加する
+              href: outlook/add-mobile-support.md
+        - name: アドインの要件
+          href: outlook/add-in-requirements.md
+        - name: アドイン API
+          href: outlook/apis.md
+        - name: Outlook REST API を呼び出す
+          href: outlook/use-rest-api.md
+        - name: Exchange Web サービスを呼び出す
+          href: outlook/web-services.md
+        - name: アイテム データを取得または設定する
+          href: outlook/item-data.md
+        - name: カテゴリを取得または設定する
+          href: outlook/categories.md
+        - name: インターネット ヘッダーを取得または設定する
+          href: outlook/internet-headers.md
+        - name: 定期的なアイテムを取得または設定する
+          href: outlook/get-and-set-recurrence.md
+        - name: アドイン メタデータを取得または設定する
+          href: outlook/metadata-for-an-outlook-add-in.md
+        - name: 閲覧シナリオ
+          items:
+            - name: 概要
+              href: outlook/read-scenario.md
+            - name: 正規表現を使用して、コンテキスト アドインをアクティブにする
+              href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
+            - name: アイテムでよく知られているエンティティと照合する
+              href: outlook/match-strings-in-an-item-as-well-known-entities.md
+            - name: アイテムからエンティティを抽出する
+              href: outlook/extract-entity-strings-from-an-item.md
+            - name: 添付ファイルを取得する
+              href: outlook/get-attachments-of-an-outlook-item.md
+        - name: 新規作成シナリオ
+          items:
+            - name: 概要
+              href: outlook/compose-scenario.md
+            - name: 添付ファイルを追加および削除する
+              href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
+            - name: アイテム データを取得および設定する
+              href: outlook/get-and-set-item-data-in-a-compose-form.md
+            - name: 受信者を取得および設定する
+              href: outlook/get-set-or-add-recipients.md
+            - name: 本体にデータを挿入する
+              href: outlook/insert-data-in-the-body.md
+            - name: 件名を取得および設定する
+              href: outlook/get-or-set-the-subject.md
+            - name: 時間を取得および設定する
+              href: outlook/get-or-set-the-time-of-an-appointment.md
+            - name: 場所を取得および設定する
+              href: outlook/get-or-set-the-location-of-an-appointment.md
+        - name: プライバシーとセキュリティ
+          items:
+            - name: 概要
+              href: outlook/privacy-and-security.md
+            - name: アドインのアクセス許可を理解する
+              href: outlook/understanding-outlook-add-in-permissions.md
+        - name: 認証
+          items:
+            - name: 概要
+              href: outlook/authentication.md
+            - name: SSO トークンを使用して認証する
+              href: outlook/authenticate-a-user-with-an-sso-token.md
+            - name: ID トークンを使用して認証する
+              href: outlook/authenticate-a-user-with-an-identity-token.md
+            - name: ID トークンを検証する
+              href: outlook/validate-an-identity-token.md
+            - name: ID トークンの内部
+              href: outlook/inside-the-identity-token.md
+            - name: 'シナリオ: シングル サインオンを実装する'
+              href: outlook/implement-sso-in-outlook-add-in.md
+        - name: テストとヒント
+          items:
+            - name: 概要
+              href: outlook/testing-and-tips.md
+            - name: テスト用にアドインをサイドロードする
+              href: outlook/sideload-outlook-add-ins-for-testing.md
+            - name: Mac 上の Outlook でのアドイン サポートの比較
+              href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
+            - name: 日付値を処理するためのヒント
+              href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
+            - name: アクティブ化と JavaScript API の制限
+              href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
+            - name: アドインのアクティブ化のトラブルシューティング
+              href: outlook/troubleshoot-outlook-add-in-activation.md
 - name: PowerPoint
   items:
     - name: PowerPoint アドイン ドキュメント
