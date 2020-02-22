@@ -3,12 +3,12 @@ title: JavaScript API for Office について
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: a82437fc82d9c9a31e75d448579f37d440784aa2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524235"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163515"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
@@ -169,4 +169,4 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API オブジェクト モデル
 
-初期化されると、アドインでホスト (Excel、Outlook など) とやりとりできるようになります。 特定の使用パターンに関する詳細については、「[Office JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)」ページを参照してください。 [共通 API](/office/dev/add-ins/reference/javascript-api-for-office) とホスト固有 API の両方についても詳細な参照ドキュメントがあります。
+初期化されると、アドインでホスト (Excel、Outlook など) とやりとりできるようになります。 特定の使用パターンに関する詳細については、「[共通 JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)」ページを参照してください。 [共通 API](/office/dev/add-ins/reference/javascript-api-for-office) とホスト固有 API の両方についても詳細な参照ドキュメントがあります。

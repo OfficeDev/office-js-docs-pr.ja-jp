@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の概要
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0c07bb7ce964708a9fef737fabebb13939e357f0
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: aa0e18025e539f747851f5dc9f5a25197761c5c8
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851531"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163620"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API の概要
 
@@ -19,7 +19,7 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-ドキュメントのこのセクションでは、Excel JavaScript API に焦点を当てて、そしてそれを Excel on the web または Excel 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[Office JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
+ドキュメントのこのセクションでは、Excel JavaScript API に焦点を当てて、そしてそれを Excel on the web または Excel 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[共通 JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 

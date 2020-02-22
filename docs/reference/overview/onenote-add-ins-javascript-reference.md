@@ -1,15 +1,15 @@
 ---
 title: OneNote JavaScript API の概要
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 3ad992bd59c33d9d8b724893db49a6e623fd1ee3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950979"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165321"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
@@ -19,7 +19,7 @@ OneNote アドインでは、次の 2 つの JavaScript オブジェクト モ�
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-ドキュメントのこのセクションでは、OneNote JavaScript API に焦点を当てて、そしてそれを OneNote on the web を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[Office JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
+ドキュメントのこのセクションでは、OneNote JavaScript API に焦点を当てて、そしてそれを OneNote on the web を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[共通 JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 

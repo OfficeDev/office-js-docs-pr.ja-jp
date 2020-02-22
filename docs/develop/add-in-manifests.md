@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: abc228fda18b432ddd16d04cce95a8d5af17dd8d
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40970094"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162833"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -164,9 +164,9 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 後続の各セクションでは、コンテンツ アドイン、作業ウィンドウ アドイン、および Outlook アドインのマニフェスト v1.1 XML ファイルの例を示します。
 
-# <a name="task-panetabtabid-1"></a>[作業ウィンドウ](#tab/tabid-1)
+# <a name="task-pane"></a>[作業ウィンドウ](#tab/tabid-1)
 
-[作業ウィンドウ アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[アドイン マニフェストのスキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -362,9 +362,9 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[コンテンツ](#tab/tabid-2)
+# <a name="content"></a>[Content](#tab/tabid-2)
 
-[コンテンツ アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[アドイン マニフェストのスキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -402,9 +402,9 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[メール](#tab/tabid-3)
+# <a name="mail"></a>[メール](#tab/tabid-3)
 
-[メール アプリ マニフェストのスキーマ](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[アドイン マニフェストのスキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -497,7 +497,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ## <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
-[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。
+[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) に対してマニフェストを検証する方法については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
@@ -505,7 +505,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 * [マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]
 * [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)
 * [Office アドインのローカライズ](localization.md)
-* [Office アドイン マニフェストのスキーマ参照](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [API とマニフェストのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [同等な COM アドインを特定する](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [アドインでの API 使用についてアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

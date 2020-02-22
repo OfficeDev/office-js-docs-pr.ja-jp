@@ -1,14 +1,14 @@
 ---
 title: Office アドインの構築
 description: Office アドイン開発の概要を説明します。
-ms.date: 12/24/2019
+ms.date: 02/19/2020
 localization_priority: Priority
-ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915022"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163872"
 ---
 # <a name="building-office-add-ins"></a>Office アドインの構築
 
@@ -115,7 +115,7 @@ Office JavaScript API には、2 つの異なるモデルがあります。
 
 - **ホスト固有** API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。 たとえば、Excel JavaScript API を使用して、ワークシート、範囲、テーブル、グラフなどにアクセスすることができます。 ホスト固有API は現在、[Excel](../reference/overview/excel-add-ins-reference-overview.md)、[Word](../reference/overview/word-add-ins-reference-overview.md)、および [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md) 用に使用できます。 この API モデルでは [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が使用され、Office ホストに送信する各要求で複数の操作を指定することが可能です。 この方法によるバッチ操作を行うと、Office on the web アプリケーションのパフォーマンスが大幅に向上します。 ホスト固有の API は Office 2016 で導入されました。Office 2013 の操作には使用できません。
 
-- **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは [Callback](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office ホストに送信する各要求で指定できる操作は、1 つのみです。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook と PowerPoint を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[Office JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
+- **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは [Callback](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office ホストに送信する各要求で指定できる操作は、1 つのみです。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook と PowerPoint を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 > [!NOTE]
 > Excel のカスタム関数の場合は、計算の実行を優先する独自のランタイム内で実行されるため、少し異なるプログラミング モデルが使用されます。 詳細については、「[カスタム関数のアーキテクチャ](../excel/custom-functions-architecture.md)」を参照してください。

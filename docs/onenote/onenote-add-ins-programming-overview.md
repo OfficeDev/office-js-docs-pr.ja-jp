@@ -1,16 +1,16 @@
 ---
 title: OneNote の JavaScript API のプログラミングの概要
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851510"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165567"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -127,7 +127,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
   [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 設定はコンテンツ アドインによってのみサポートされます | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-一般に、ホスト固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[Office JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
+一般に、ホスト固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 
 <a name="om-diagram"></a>
