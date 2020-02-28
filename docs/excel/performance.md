@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 501e074e3ed859cd572aefab8acfcef090c4e9e3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950839"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325053"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -52,13 +52,13 @@ worksheet.getRange("A1").set({
 
 Excel JavaScript API では、プロキシ オブジェクトのプロパティを明示的にロードする必要があります。  空の ```load()``` 呼び出しで、すべてのプロパティを一度にロードすることはできますが、そのアプローチは大きなパフォーマンス オーバーヘッドを持つ可能性があります。  代わりに、必要なプロパティだけをロードすることをお勧めします。特に、多数のプロパティを持つオブジェクトの場合はそうして下さい。
 
-たとえば、範囲オブジェクトの **address** プロパティのみを読み取る場合、**load()** メソッドを呼び出すときにそのプロパティのみを指定します。
+たとえば、range オブジェクトの`address`プロパティのみを読み取る場合は、 `load()`メソッドを呼び出すときにそのプロパティのみを指定します。
 
 ```js
 range.load('address');
 ```
 
-**load()** メソッドは、次のいずれかの方法で呼び出すことができます。
+メソッドは、 `load()`次のいずれかの方法で呼び出すことができます。
 
 _構文:_
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _各部分の意味は次のとおりです。_
 
-* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、「[Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)」でオブジェクトに対して定義されている **load()** メソッドを参照してください。
+* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、 `load()` 「 [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)」のオブジェクトに対して定義されているメソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
 オブジェクトの下の「プロパティ」の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを避けるには、オブジェクト ツリー内の "リーフノード" のみをロードするようにしてください。 

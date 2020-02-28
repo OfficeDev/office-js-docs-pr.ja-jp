@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bfbc52a8739cb5d51868794f1be701de52b292e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950601"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324618"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -35,7 +35,7 @@ Visual Studio が Windows 上の Office をデバッグする場合、アドイ�
 
 1. **ソリューション エクスプローラー**で、(Web アプリケーション プロジェクトでは*なく*) アドイン プロジェクトを選択します。
 
-2. メニュー バーで、[**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
+2. メニュー バーから [**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
 
 次の表では、アドイン プロジェクトのプロパティについて説明します。
 
@@ -59,9 +59,9 @@ Visual Studio が Windows 上の Office をデバッグする場合、アドイ�
 
 Web アプリケーション プロジェクトの [**プロパティ**] ウィンドウを開き、次のプロジェクト プロパティを確認します。
 
-1. **ソリューション エクスプローラー**で、アプリケーション プロジェクトを選択します。
+1. **ソリューションエクスプローラー**で、web アプリケーションプロジェクトを選択します。
 
-2. メニュー バーで、[**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
+2. メニュー バーから [**表示**]、[**プロパティ ウィンドウ**] の順に選択します。
 
 次の表では、Office アドイン プロジェクトに最も関連する Web アプリケーション プロジェクトのプロパティについて説明します。
 
@@ -119,7 +119,7 @@ Visual Studio によってプロジェクトがビルドされると、次のタ
 
 3. ホスト アプリケーションを開きます。
 
-プロジェクトをビルドするときに、Visual Studio では**出力**ウィンドウに検証エラーは表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)」を参照してください。
+Visual Studio では、プロジェクトのビルド時の検証エラーは [**出力**] ウィンドウには表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)」を参照してください。
 
 プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 

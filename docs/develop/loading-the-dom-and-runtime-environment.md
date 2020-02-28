@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: ''
 ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: e4b80ca77bf514960b3f29b3389ae08422d1ebb8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 06b3e9d65d29b257d34d2f4bdad81f464056e558
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950692"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325123"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -30,7 +30,7 @@ ms.locfileid: "41950692"
 
     次の手順 4. と 5. は、同時に実行されることも、同時に実行されないこともあります。したがって、次の処理に進む前に、DOM とアドイン ランタイム環境の両方の読み込みが完了したことをアドインのコードで確認する必要があります。
 
-4. ブラウザー コントロールが、DOM と HTML 本文を読み込み、**window.onload** イベントに対するイベント ハンドラーを呼び出します。
+4. ブラウザーコントロールが DOM と HTML 本文を読み込み、 `window.onload`イベントのイベントハンドラーを呼び出します。
 
 5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、[Office](/javascript/api/office#office-initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するアドインのイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
 
@@ -53,7 +53,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
 
 4. ユーザーがボタンをクリックして Outlook アドインを起動すると、Outlook がアプリの HTML ページをブラウザー コントロール内に表示します。次の手順 5 と 6 は同時に行われます。
 
-5. ブラウザー コントロールが DOM と HTML 本文を読み込んで、**onload** イベントに対するイベント ハンドラーを呼び出します。
+5. ブラウザーコントロールが DOM と HTML 本文を読み込み、 `onload`イベントのイベントハンドラーを呼び出します。
 
 6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#office-initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 `Office.initialize` と `Office.onReady` の違いの詳細については、「[アドインの初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)」をご覧ください。
 
@@ -62,7 +62,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
 
 ## <a name="checking-the-load-status"></a>読み込み状態のチェック
 
-DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](https://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次の **onReady** イベント ハンドラーは、アドインの実行の初期化に固有のコードの前に、DOM が最初に読み込まれることを確認します。 その後、**onReady** ハンドラーは [mailbox.item](/javascript/api/outlook/office.mailbox) プロパティを使用して、Outlook で現在選択されている項目を取得し、アドインのメイン関数 `initDialer` を呼び出します。
+DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](https://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次`onReady`のイベントハンドラーは、アドインの初期化に固有のコードが実行される前に、DOM が最初に読み込まれることを確認します。 その後、 `onReady`ハンドラーは[メールボックス. item](/javascript/api/outlook/office.mailbox)プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アドインの main 関数`initDialer`を呼び出します。
 
 ```js
 Office.onReady()
@@ -77,7 +77,7 @@ Office.onReady()
 );
 ```
 
-また、次の例に示されているように、同じコードを **initialize** イベント ハンドラーで使用することができます。
+または、次の例に示すように`initialize` 、同じコードをイベントハンドラーで使用することもできます。
 
 ```js
 Office.initialize = function () {
@@ -91,12 +91,12 @@ Office.initialize = function () {
 }
 ```
 
-この方法は、任意の Office アドインの **onReady** または **initialize** ハンドラーで使用できます。
+この方法は、 `onReady` Office アドインの`initialize`ハンドラーでも使用できます。
 
 ダイヤラー サンプル Outlook アドインでは、JavaScript のみを使用してこれらと同じ条件を確認するという少し異なる方法を使用しています。 
 
 > [!IMPORTANT]
-> アドインに実行する初期化タスクがない場合でも、次の例に示されているように、**Office.onReady** の呼び出しを少なくとも 1 つ含めるか、最小のイベント ハンドラー関数 **Office.initialize** を割り当てる必要があります。
+> アドインに実行する初期化タスクがない場合でも、次の例に示されているよう`Office.onReady`に、少なく`Office.initialize`とも最小のイベントハンドラー関数の呼び出しを含める必要があります。
 >
 >```js
 >Office.onReady();
@@ -106,10 +106,11 @@ Office.initialize = function () {
 >Office.initialize = function () {};
 >```
 >
-> **Office.onReady** を呼び出したり、**Office.initialize** イベントを割り当てたりしない場合、アドインを開始するとエラーが発生する可能性があります。 また、ユーザーが Excel、PowerPoint、または Outlook などの Office Web クライアントでアドインを使用しようとすると、実行に失敗します。
+> `Office.initialize`イベントハンドラーの呼び出し`Office.onReady`または割り当てを行わない場合、アドインの起動時にエラーが発生することがあります。 また、ユーザーが Excel、PowerPoint、または Outlook などの Office Web クライアントでアドインを使用しようとすると、実行に失敗します。
 >
-> アドインに複数のページが含まれる場合、新しいページが読み込まれるときに、そのページは **Office.onReady** を呼び出すか、**Office.initialize** イベント ハンドラーを割り当てる必要があります。
+> アドインに複数のページが含まれている場合は、新しいページが読み込まれるときに、 `Office.onReady`そのページが`Office.initialize`イベントハンドラーを呼び出すか、または割り当てる必要があります。
 
 ## <a name="see-also"></a>関連項目
 
-- [JavaScript API for Office について](understanding-the-javascript-api-for-office.md)
+- [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
+- [Office アドインを初期化する](initialize-add-in.md)

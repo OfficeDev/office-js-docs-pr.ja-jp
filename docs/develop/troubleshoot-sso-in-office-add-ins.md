@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
-ms.date: 11/05/2019
+ms.date: 02/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 0491a49a09ec747dfb7f63237e5099579402e69a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
+ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950818"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42315873"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -106,6 +106,10 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 開発中は、アドインは Outlook でサイドロードされ、`getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡されます。
 
+### <a name="13013"></a>13013
+
+は`getAccessToken`短時間で何度も呼び出されていたため、Office は最新の通話を調整しました。 これは通常、このメソッドへの呼び出しの無限ループが原因で発生します。 メソッドを取り消すことが推奨されるシナリオがあります。 ただし、コードでカウンターまたはフラグ変数を使用して、メソッドが繰り返し呼び戻されないようにする必要があります。 同じ "再試行" コードパスが再度実行されている場合は、コードは、ユーザー認証の代替システムにフォールバックする必要があります。 コード例については、 `retryGetAccessToken` [HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)または[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)で変数がどのように使用されているかを参照してください。
+
 ### <a name="50001"></a>50001
 
 このエラー (`getAccessToken` に固有ではありません) は、ブラウザーが office.js ファイルの古いコピーをキャッシュしていることを示す可能性があります。 開発中の場合は、ブラウザーのキャッシュをクリアしてください。 また、Office のバージョンが古いため、SSO をサポートしていない可能性も考えられます。 Windows での最小バージョンは、16.0.12215.20006 です。 Mac では、16.32.19102902 です。
@@ -124,7 +128,7 @@ AAD および Office 365 の特定の ID 構成では、Microsoft Graph でア�
 
 コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 
 
-いずれのアーキテクチャの場合も、claims 値が AAD から送信された場合は、コードは `getAccessToken` をリコールし、`options` パラメーターでオプション `authChallenge: CLAIMS-STRING-HERE` を渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
+アーキテクチャに関係なく、クレームの値が AAD から送信されている場合は、 `getAccessToken`コードを呼び出して`authChallenge: CLAIMS-STRING-HERE` `options`パラメーターにオプションを渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
 
 ### <a name="consent-missing-errors"></a>同意なしエラー
 

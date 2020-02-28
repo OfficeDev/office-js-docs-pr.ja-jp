@@ -3,16 +3,16 @@ title: マニフェスト ファイルの Requirements 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 364ab7c943895e1acecedba7970e54da331a2e6f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c4cb81ebd6a38ea311e8fcacfa6d5fcd3b26f68
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450563"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325249"
 ---
 # <a name="requirements-element"></a>Requirements 要素
 
-Office アドインをアクティブにするために必要な JavaScript API for Office の最小要件セット ([要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets)またはメソッド、あるいはその両方) を指定します。
+Office アドインをアクティブにするために必要な Office JavaScript API の要件の最小セット ([要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets)またはメソッド、あるいはその両方) を指定します。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 

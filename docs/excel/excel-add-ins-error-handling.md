@@ -3,19 +3,19 @@ title: エラー処理
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3732af26aeaa6129a4b98d6cbb8e3caf501141f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448162"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325109"
 ---
 # <a name="error-handling"></a>エラー処理
 
 Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
 
 > [!NOTE]
-> **sync()** メソッドと Excel JavaScript API の非同期性の詳細については、「[Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
+> `sync()`メソッドと EXCEL javascript api の非同期性の詳細については、「 [excel javascript api を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 

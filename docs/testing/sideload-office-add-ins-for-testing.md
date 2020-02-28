@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: Office on the web で Office アドインをサイドロードしてテストをする
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163585"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325039"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -27,11 +27,11 @@ ms.locfileid: "42163585"
 
 1. [Microsoft Office on the web](https://office.live.com/) を開きます。
 
-2. **[オンライン アプリを今すぐ開始する]** で、 **Excel**、 **Word**、または  **PowerPoint** を選択して、新しいドキュメントを開きます。
+2. [**オンラインアプリを今すぐ開始する**] で、 **Excel**、 **Word**、または**PowerPoint**を選択します。新しいドキュメントを開きます。
 
-3. リボンの  **[挿入]** タブを開き、 **[アドイン]** セクションで、 **Office [アドイン]** を選択します。
+3. リボンの [**挿入**] タブを開き、 **[アドイン] セクションで**、[ **Office アドイン**] を選択します。
 
-4. **[Office アドイン]** ダイアログ ボックスで、**[個人用アドイン]** タブ、**[個人用アドインの管理]**、**[個人用アドインのアップロード]** の順に選択します。
+4. [ **Office アドイン**] ダイアログボックスで、[**個人用アドイン**] タブ、[**個人用アドインの管理**]、[**個人用アドインのアップロード**] の順に選択します。
 
     ![右上に [個人用アドインの管理] というドロップダウンがあり、その下に [マイ アドインのアップロード] オプションのドロップダウンがある [Office アドイン] ダイアログ](../images/office-add-ins-my-account.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "42163585"
 
 1. Office 365 アカウントにサインインします。
 
-2. ツールバーの左端にあるアプリ起動ツールを開き、**Excel**、**Word**、または **PowerPoint** を選択して、新しいドキュメントを作成します。
+2. ツールバーの左端にあるアプリ起動ツールを開き、 **Excel**、 **Word**、または**PowerPoint**を選択して、新しいドキュメントを作成します。
 
 3. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 

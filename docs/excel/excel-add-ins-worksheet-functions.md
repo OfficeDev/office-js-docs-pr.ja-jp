@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して Excel の組み込みワークシー
 description: ''
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a2c98d21b36a88777e58d85c14169ffc2d67ae59
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915001"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325151"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
@@ -19,7 +19,7 @@ ms.locfileid: "40915001"
 
 ## <a name="calling-a-worksheet-function"></a>ワークシート関数の呼び出し
 
-次のコード スニペットは、ワークシート関数の呼び出し方法を示しています。`sampleFunction()` の部分はプレースホルダーであり、呼び出す関数の名前と関数が必要とする入力パラメーターに置き換えます。 ワークシート関数から返される **FunctionResult** オブジェクトの **value** プロパティには、指定した関数の結果が格納されます。 この例に示すように、`load` の **value** プロパティは、読み込み前に **** しておく必要があります。 この例では、関数の結果は単にコンソールに書き出されます。
+次のコードスニペットは、ワークシート関数を呼び出す方法を`sampleFunction()`示しています。ここで、は、呼び出す関数の名前および関数に必要な入力パラメーターで置き換える必要があるプレースホルダーです。 Worksheet `value`関数によっ`FunctionResult`て返されるオブジェクトのプロパティには、指定された関数の結果が含まれています。 この例に示すように、 `load` `FunctionResult`オブジェクト`value`を読み取る前にプロパティを指定する必要があります。 この例では、関数の結果は単にコンソールに書き込まれています。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();

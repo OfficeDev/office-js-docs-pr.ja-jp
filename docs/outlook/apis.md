@@ -1,18 +1,18 @@
 ---
 title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 2abe365f1606789b1c6ac113b133019055767b28
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: bd7f3b5a1b52ec3ca7a48ae7a2d467c6cd30f1e4
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166607"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325472"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
-Outlook アドインで API を使用するには、Office.js ライブラリの場所、要件セット、スキーマ、アクセス許可を指定する必要があります。
+Outlook アドインで API を使用するには、Office.js ライブラリの場所、要件セット、スキーマ、アクセス許可を指定する必要があります。 [メールボックス](#mailbox-object)オブジェクトを通じて公開される Office JavaScript api を主に使用します。
 
 ## <a name="officejs-library"></a>Office.js ライブラリ
 
@@ -26,7 +26,7 @@ Outlook アドイン API と対話操作するには、Office.js の JavaScript 
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
 > [!IMPORTANT]
-> Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの内側から JavaScript API for Office を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。
+> 任意の Office ホストアプリケーションのアドインを開発する場合は、ページのセクションの`<head>`内側から OFFICE JavaScript API を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。
 
 ## <a name="requirement-sets"></a>要件セット
 
@@ -66,6 +66,9 @@ if (item.somePropertyOrFunction) {
 
 一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェスト内の `<Permissions>` 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題の詳細については、「 [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)」を参照してください。
 
+## <a name="mailbox-object"></a>Mailbox オブジェクト
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## <a name="see-also"></a>関連項目
 

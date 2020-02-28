@@ -3,16 +3,16 @@ title: マニフェスト ファイルの OfficeTab 要素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d073d712cec2fd58e957ffe8f344d7443d1e896e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b8458233ba93e98fe0bd8d51f5734b1fece65864
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127563"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324835"
 ---
 # <a name="officetab-element"></a>OfficeTab 要素
 
-アドイン コマンドを表示するリボン タブを定義します。 これは既定のタブ (**[ホーム]**、**[メッセージ]**、または **[会議]** のいずれか) か、アドインで定義されたカスタム タブになります。 この要素は必須です。
+アドイン コマンドを表示するリボン タブを定義します。 これは、既定のタブ ([**ホーム**]、[**メッセージ**]、または [**会議**]) にするか、アドインで定義されたカスタムタブにすることができます。 この要素は必須です。
 
 ## <a name="child-elements"></a>子要素
 
@@ -93,7 +93,7 @@ ms.locfileid: "35127563"
 
 ## <a name="group"></a>Group
 
-タブの UI 拡張ポイントのグループ。 1 つのグループに、最大 6 個のコントロールを指定できます。 **id** 属性は必須であり、各 **id** 属性はマニフェスト内で一意でなければなりません。 **id** は最大 125 文字の文字列です。 「[Group 要素](group.md)」を参照してください。
+タブ内の UI 拡張ポイントのグループ。グループは最大6つのコントロールを持つことができます。 **Id**属性は必須で、各**id**はマニフェスト内で一意である必要があります。 **Id**は、最大125文字の文字列です。 [Group 要素](group.md)を参照してください。
 
 ## <a name="officetab-example"></a>OfficeTab の例
 

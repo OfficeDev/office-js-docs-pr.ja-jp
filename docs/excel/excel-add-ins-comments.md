@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してコメントを操作する
-description: ''
-ms.date: 10/22/2019
+description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681915"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327783"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
@@ -25,7 +25,7 @@ Excel JavaScript API では、コメントは最初のメモと接続された�
 メソッドを`CommentCollection.add`使用して、ブックにコメントを追加します。 このメソッドは、次の3つのパラメーターを取ります。
 
 - `cellAddress`: コメントが追加されるセルを指定します。 文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
-- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions-preview)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
+- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions-online-only)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。 
 - `contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。 既定値は `ContentType.plain` です。
 
 次のコード例は、コメントをセル **A2** に追加します。
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads"></a>コメントスレッドを解決する
+## <a name="resolve-comment-threads-preview"></a>コメントスレッドを解決する ([プレビュー](../reference/requirement-sets/excel-preview-apis.md)) 
 
 コメントスレッドには、解決可能かどう`resolved`かを示す、構成可能なブール値があります。 の`true`値は、コメントスレッドが解決されたことを意味します。 の`false`値は、コメントスレッドが新規または再オープンのいずれかであることを意味します。
 
@@ -169,7 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-preview"></a>メンション (プレビュー)
+## <a name="mentions-online-only"></a>メンション ([オンラインのみ](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 
 > [!NOTE]
 > コメントコメント Api は、現在、パブリックプレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]

@@ -3,12 +3,12 @@ title: Excel アドインの共同編集機能
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 0c1386eb6662ff47fce585db99fedd32f08aae06
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128004"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324667"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
@@ -45,7 +45,7 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 
 前述したように、シナリオによっては、すべての共同編集者に向けてイベントをトリガーすることで、ユーザー エクスペリエンスが向上します。 ただし、この動作がユーザー エクスペリエンスの低下を招くシナリオも存在することに注意してください。 
 
-たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 **BindingDataChanged** イベントのイベント ハンドラーが UI を表示すると、ユーザーに自分が行った変更とは無関係の UI が表示されるようになるため、ユーザー エクスペリエンスが低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
+たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 `BindingDataChanged`イベントのイベントハンドラーに ui が表示されている場合、ユーザーには、ブック内で作業していた変更に関連しない ui が表示されるので、ユーザーの操作が低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
-description: ''
-ms.date: 10/22/2019
+description: Excel JavaScript オブジェクトのイベントのリスト。 これには、イベントハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c3a31af310edb63561fae1913a1f5541244092c
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: f1a1faf9acc370e7183a078aeeba34019e54900f
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950867"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327776"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -111,7 +111,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>イベント ハンドラーを削除する
 
-次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。
+次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。 イベントハンドラーの`RequestContext`作成に使用されたを削除するには、を使用する必要があることに注意してください。 
 
 ```js
 var eventResult;

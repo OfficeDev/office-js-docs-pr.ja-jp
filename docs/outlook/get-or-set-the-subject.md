@@ -3,16 +3,16 @@ title: Outlook アドインで件名を取得または設定する
 description: Outlook アドインで、メッセージまたは予定の件名を取得または設定する方法について説明します。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: b27f6011b1754fa68a1af87f57034e95fd0d54e0
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 93864aee005af61d9648c39402a843d9105bb021
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166494"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325441"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 
-JavaScript API for Office には、ユーザーが作成する予定やメッセージの件名を取得および設定する非同期メソッド ([subject.getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-) と [subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)) が用意されています。これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
+Office JavaScript API は、非同期メソッド ([getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-)および[subject async](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)) を提供して、ユーザーが作成している予定またはメッセージの件名を取得および設定します。 これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
 
 **subject** プロパティは、予定とメッセージの新規作成フォームと閲覧フォームの両方で読み取りアクセスで利用できます。閲覧フォームでは、次の例に示すとおり、このプロパティに親オブジェクトから直接アクセスできます。
 
@@ -28,7 +28,7 @@ item.subject.getAsync
 
 書き込みアクセスでは、**subject** プロパティは新規作成フォームのみで利用でき、閲覧フォームでは利用できません。
 
-JavaScript API for Office のほとんどの非同期メソッドと同じように、**getAsync** と **setAsync** はオプションの入力パラメーターを受け取ります。オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)」の「オプションのパラメーターを非同期メソッドに渡す」を参照してください。
+Office JavaScript API のほとんどの非同期メソッドと同様に、 **getAsync**および**setasync**はオプションの入力パラメーターを受け取ります。 オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
 ## <a name="get-the-subject"></a>件名を取得する

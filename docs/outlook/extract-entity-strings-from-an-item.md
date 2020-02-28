@@ -3,16 +3,16 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 95f88b6bcd47cbfd85de89a3de89d9a9e2fe571f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166505"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325455"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
-この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。 
+この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。
 
 サポートされるエンティティには次のようなものがあります。
 
@@ -205,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。**getEntities** メソッドは、グローバル変数 `_MyEntities` を返します。この変数は、サポートされているエンティティのインスタンスの配列です。関連する JavaScript コードを次に示します。
+[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この`getEntities`メソッドは、サポートさ`_MyEntities`れているエンティティのインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -373,7 +373,7 @@ function myGetEmailAddresses() {
 
 
  > [!NOTE]
- > **MeetingSuggestion** エンティティ型をサポートしているのはメッセージだけであり、予定ではサポートされていません。
+ > エンティティの種類をサポートして`MeetingSuggestion`いるのは、予定ではなくメッセージのみです。
 
 抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
 

@@ -1,18 +1,18 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
-description: ''
-ms.date: 10/22/2019
+description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681936"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327755"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
-この記事は、「[Excel JavaScript API を使用して範囲を操作する (基本)](excel-add-ins-ranges.md)」の情報に基づいており、コード サンプルでは Excel JavaScript API を使って範囲のより高度なタスクを実行する方法を示します。 **Range** オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
+この記事は、「[Excel JavaScript API を使用して範囲を操作する (基本)](excel-add-ins-ranges.md)」の情報に基づいており、コード サンプルでは Excel JavaScript API を使って範囲のより高度なタスクを実行する方法を示します。 オブジェクトが`Range`サポートするプロパティとメソッドの完全な一覧については、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Moment-MSDate プラグインを使用した日付の操作
 
@@ -78,7 +78,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-次の例では、`getSpecialCells` メソッドを使用して、数式を含むすべてのセルを検索します。 このコードの注意点は次のとおりです。
+次の例では、`getSpecialCells` メソッドを使用して、数式を含むすべてのセルを検索します。 このコードについては、以下の点に注意してください。
 
 - 検索が必要なシートの部分を制限するために、まず `Worksheet.getUsedRange` を呼び出し、その範囲に関してのみ `getSpecialCells` を呼び出します。
 - `getSpecialCells` メソッドは `RangeAreas` オブジェクトを返すため、数式を含むセルはすべて、連続していないセルであっても、ピンク色になります。
@@ -96,7 +96,7 @@ Excel.run(function (context) {
 
 対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 `catch`ブロックがない場合、エラーによってメソッドは停止します。
 
-対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードの注意点は次のとおりです。
+対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードについては、以下の点に注意してください。
 
 - `getSpecialCellsOrNullObject` メソッドは常にプロキシ オブジェクトを返します。そのため、通常の JavaScript 使用環境では `null` となることはありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
 - `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods)」を参照してください。
@@ -172,9 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste"></a>Copy and paste
+## <a name="cut-copy-and-paste"></a>切り取り、コピー、および貼り付け 
 
-このメソッドは、Excel UI のコピーと貼り付けの動作をレプリケートします[。](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+### <a name="copy-and-paste"></a>Copy and paste 
+
+このメソッドは、Excel UI の**コピー**と**貼り付け**の操作をレプリケートします[。](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 
 
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
@@ -232,6 +234,23 @@ Excel.run(function (context) {
 *前の関数が実行された後。*
 
 ![範囲のコピー メソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
+
+### <a name="cut-and-paste-move-cells-online-only"></a>セルの切り取りと貼り付け (移動) ([オンラインのみ](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+
+[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、 `destinationRange`パラメーターとして指定された場所に移動します。 
+
+次のコードサンプルは、 `Range.moveTo`メソッドを使用して移動する範囲を示しています。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。 
+
+```js 
+Excel.run(function (context) { 
+    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    sheet.getRange("F1").values = [["Moved Range"]]; 
+
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
+    sheet.getRange("A1:E1").moveTo("G1"); 
+    return context.sync(); 
+}); 
+``` 
 
 ## <a name="remove-duplicates"></a>重複の削除
 

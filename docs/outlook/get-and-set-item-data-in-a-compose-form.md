@@ -3,12 +3,12 @@ title: Outlook で新規作成フォームのアイテム データを取得お�
 description: 新規作成のシナリオで、受信者、件名、本文、予定の場所と時刻を含む Outlook アドインのアイテムのさまざまなプロパティを取得または設定します。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: ff75c6565b6ff49dfb2ad1ac95c75499c9b32284
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3b82f418ffa2820e5f8cf04805a62b0d85691420
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166587"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325448"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Outlook で新規作成フォームのアイテム データを取得および設定する
 
@@ -20,7 +20,7 @@ ms.locfileid: "42166587"
 
 これらのプロパティのほとんどで、Outlook アドインとユーザーはユーザー インターフェイスの同じプロパティを同時に変更できるため、プロパティの取得と設定のメソッドは非同期になっています。表 1 に、アイテムレベルのプロパティ、および新規作成フォームでそれらのプロパティの取得と設定を行う関連する非同期メソッドを示します。[item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティと [item.conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティは、ユーザーが変更できないため例外です。閲覧フォームの場合と同様に、新規作成フォームでも、直接親オブジェクトからプログラムを使用してプロパティを取得できます。
 
-JavaScript API for Office 内のアイテムのプロパティにアクセスする以外には、Exchange Web Services (EWS) を使用してアイテムレベルのプロパティにアクセスすることができます。 **ReadWriteMailbox** アクセス許可があれば、[mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して EWS 操作の [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) と [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) アクセスし、ユーザーのメールボックス内のアイテムのより多くのプロパティを取得、設定することができます。
+Office JavaScript API でアイテムのプロパティにアクセスする以外に、Exchange Web サービス (EWS) を使用してアイテムレベルのプロパティにアクセスできます。 **ReadWriteMailbox** アクセス許可があれば、[mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して EWS 操作の [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) と [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) アクセスし、ユーザーのメールボックス内のアイテムのより多くのプロパティを取得、設定することができます。
 
 `makeEwsRequestAsync` 関数は、新規作成および読み取りの両フォームで利用可能です。 **ReadWriteMailbox** アクセス許可、および Office アドインのプラットフォームを介した EWS へのアクセスの詳細については、「[Outlook アドインのアクセス許可について](understanding-outlook-add-in-permissions.md)」と「[Outlook アドインから Web サービスを呼び出す](web-services.md)」を参照してください。
 

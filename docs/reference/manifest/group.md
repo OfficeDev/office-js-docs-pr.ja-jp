@@ -3,12 +3,12 @@ title: マニフェストファイルの Group 要素
 description: ''
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 35db4829b40078e97fbfc007e2fb552e00875f9c
-ms.sourcegitcommit: 164b11b1e9d2ae20b3d816092025b32a9070450f
+ms.openlocfilehash: 27a168ea17352482e955e7a0d1f8267c7d6b17d8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39818728"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324863"
 ---
 # <a name="group-element"></a>Group 要素
 
@@ -33,7 +33,7 @@ ms.locfileid: "39818728"
 
 ### <a name="label"></a>Label 
 
-必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
+必須。 グループのラベルです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
 
 ### <a name="icon"></a>Icon
 

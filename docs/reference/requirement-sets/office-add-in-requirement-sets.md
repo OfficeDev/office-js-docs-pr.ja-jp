@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b37adca116c60b465e11858cb813e9a7f9247ed3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950552"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325172"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -182,6 +182,14 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ---
 
+### <a name="sharedruntime"></a>SharedRuntime
+
+|**Office のホスト**|**セット内のメソッド**|
+|:-----|:-----|
+| 「[共有ランタイム要件セット](shared-runtime-requirement-sets.md)」を参照してください。 | Office の getStartupBehavior<br>Office の非表示<br>OnVisibilityModeChanged<br>Office の setStartupBehavior<br>ShowAsTaskpane<br> |
+
+---
+
 ### <a name="tablebindings"></a>TableBindings
 
 |**Office のホスト**|**セット内のメソッド**|
@@ -224,7 +232,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
-JavaScript API for Office の以下のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「[Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
+Office JavaScript API の次のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「[Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
 
 |**メソッド名**|**サポートされる Office のホスト**|
 |:-----|:-----|

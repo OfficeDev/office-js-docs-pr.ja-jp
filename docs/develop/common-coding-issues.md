@@ -1,16 +1,16 @@
 ---
-title: 一般的なコーディングの問題と予期しないプラットフォームの動作
+title: 一般的な問題と予期しないプラットフォームの動作に関するコーディングガイダンス
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
-ms.date: 01/02/2020
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: da6986149172238963a06b3296d9fdd7c2411d9d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969494"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324611"
 ---
-# <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>一般的なコーディングの問題と予期しないプラットフォームの動作
+# <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>一般的な問題と予期しないプラットフォームの動作に関するコーディングガイダンス
 
 この記事では、予期しない動作が発生するか、必要な結果を得るために特定のコーディングパターンが必要になる可能性がある Office JavaScript API の側面について説明します。 このリストに含まれる問題が発生した場合は、記事の下部にあるフィードバックフォームを使用してお知らせください。
 

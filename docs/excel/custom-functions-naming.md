@@ -3,16 +3,16 @@ ms.date: 12/28/2019
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 547d1edd1a8103afce8b233f77085296cd85642b
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: 2dcd35a91f460fcd556dec479fb717942a987908
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969516"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324660"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 
-カスタム関数は、JSON メタデータファイルの**id**および**name**プロパティによって識別されます。
+カスタム関数は、JSON メタデータ`id`ファイル`name`のおよびプロパティによって識別されます。
 
 - この関数`id`は、JavaScript コードのカスタム関数を一意に識別するために使用されます。
 - 関数`name`は、Excel でユーザーに表示される表示名として使用されます。
@@ -59,7 +59,7 @@ Excel は、組み込み関数名 (など`SUM`) に大文字を使用します�
 
 ローカライズの詳細については、「[カスタム関数をローカライズ](custom-functions-localize.md)する」を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [エラー処理のベストプラクティス](custom-functions-errors.md)について説明します。
 
 ## <a name="see-also"></a>関連項目

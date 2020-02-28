@@ -3,41 +3,41 @@ title: 社内の Project Server OData サービスで REST を使用する Proje
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 604bb566a8bd7623da5dde8eaa78bc67b59a3c27
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 73099f244ef68fc1633adc9b842f64830761805f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950748"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324913"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
-この記事では、アクティブなプロジェクトのコストと作業のデータを現在の Project Web App インスタンスの全プロジェクトの平均と比較する Project Professional 2013 用の作業ウィンドウ アドインを作成する方法を説明します。このアドインは、REST と jQuery ライブラリを使って、Project Server 2013 の **ProjectData** OData レポート サービスにアクセスします。
+この記事では、作業中のプロジェクトのコストと作業データを現在の Project Web App インスタンスのすべてのプロジェクトの平均値と比較する、Project Professional 2013 用の作業ウィンドウアドインをビルドする方法について説明します。アドインは、jQuery ライブラリで REST を使用して、Project Server 2013 の**Projectdata** OData レポートサービスにアクセスします。
 
 この記事のコードは、Microsoft Corporation の Saurabh Sanghvi と Arvind Iyer が開発したサンプルに基づいています。
 
 ## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Project Server のレポート データを読み取る作業ウィンドウ アドインを作成するための前提条件
 
-Project Server 2013 の社内インストールにおける Project Web App インスタンスの **ProjectData** サービスを読み取る Project 作業ウィンドウ アドインを作成するための前提条件を以下に示します。
+Project Server 2013 の社内インストールにおける Project Web App インスタンスの**Projectdata**サービスを読み取る project 作業ウィンドウアドインを作成するための前提条件を以下に示します。
 
 - 使用するローカルの開発用コンピューターに最新のサービス パックと Windows 更新プログラムをインストールしてあることを確認します。オペレーティング システムは、Windows 7、Windows 8、Windows Server 2008、Windows Server 2012 のいずれでもかまいません。
 
-- Project Web App との接続には Project Professional 2013が必要です。Visual Studio での  **F5** デバッグを有効にするには、開発用コンピューターに Project Professional 2013がインストールされている必要があります。
+- Project Professional 2013 は、Project Web App に接続するために必要です。Visual Studio での**F5**デバッグを有効にするには、開発コンピューターに Project Professional 2013 がインストールされている必要があります。
 
     > [!NOTE]
     > Project Standard 2013 でも作業ウィンドウ アドインをホストできますが、Project Web App にはログオンできません。
 
 - Office Developer Tools for Visual Studio を備えた Visual Studio 2015 には、Office アドインと SharePoint アドインの作成用のテンプレートが含まれています。最新バージョンの Office Developer Tools がインストールされていることを確認してください。 _Office アドインと SharePoint のダウンロード_の「 [ツール](https://developer.microsoft.com/office/docs) 」セクションを参照してください。
 
-- この記事の手順とコード例では、ローカル ドメインの Project Server 2013 の **ProjectData** サービスにアクセスします。この記事の jQuery メソッドは Project on the web には対応していません。
+- この記事の手順とコード例では、ローカルドメインの Project Server 2013 の**Projectdata**サービスにアクセスします。この記事に記載されている jQuery メソッドは、web 上の Project では機能しません。
 
-    開発用コンピューターから **ProjectData** サービスにアクセスできることを確認します。
+    開発用コンピューターから**Projectdata**サービスにアクセスできることを確認します。
 
 ### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>手順 1. ProjectData サービスにアクセスできることを確認するには
 
 1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](/previous-versions/office/project-odata/jj163048(v=office.15))」の手順 1. のステップ 4. を参照してください。
 
-2. **ProjectData** サービスにクエリを実行するには、お使いのブラウザーで次の URL にアクセスしてください: **http://ServerName /ProjectServerName /_api/ProjectData**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
+2. ブラウザーで次の URL を使用して**projectdata**サービスに対してクエリを実行します。 ** http://ServerName /projectdata/_api/projectdata**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -61,47 +61,47 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
 
 ## <a name="using-visual-studio-to-create-a-task-pane-add-in-for-project"></a>Visual Studio を使用して Project 用の作業ウィンドウ アドインを作成する
 
-Office Developer Tools for Visual Studio には、Project 2013 用の作業ウィンドウ アドインのためのテンプレートが含まれています。 **HelloProjectOData** という名前のソリューションを作成すると、そのソリューションには次の 2 つの Visual Studio プロジェクトが含まれます。
+Office Developer Tools for Visual Studio には、Project 2013 用の作業ウィンドウアドインのテンプレートが含まれています。**HelloProjectOData**という名前のソリューションを作成すると、ソリューションには次の2つの Visual Studio プロジェクトが含まれます。
 
-- アドイン プロジェクト。ソリューションの名前が付けられます。このプロジェクトにはアドインの XML マニフェスト ファイルが含まれます。アドイン プロジェクトは .NET Framework 4.5 をターゲットにします。手順 3. に、 **HelloProjectOData** アドインのマニフェストを変更するための手順を示します。
+- アドインプロジェクトには、ソリューションの名前が指定されます。このファイルには、アドインの XML マニフェストファイルが含まれており、.NET Framework 4.5 を対象としています。手順3は、 **HelloProjectOData**アドインのマニフェストを変更する手順を示しています。
 
-- Web プロジェクト。 **HelloProjectODataWeb** という名前が付けられます。このプロジェクトには、作業ウィンドウ内の Web コンテンツのための Web ページ、JavaScript ファイル、CSS ファイル、イメージ、参照、および構成ファイルが含まれます。Web プロジェクトは .NET Framework 4 をターゲットにします。手順 4. および手順 5. に、Web プロジェクト内のファイルを変更して、 **HelloProjectOData** アドインの機能を作成する方法を示します。
+- Web プロジェクトには、 **HelloProjectODataWeb**という名前が付けられます。これには、作業ウィンドウの web ページ、JavaScript ファイル、CSS ファイル、画像、参照、および構成ファイルが含まれます。Web プロジェクトは .NET Framework 4 を対象としています。手順4および手順5では、web プロジェクト内のファイルを変更して、 **HelloProjectOData**アドインの機能を作成する方法を示します。
 
 ### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>手順 2. Project 用の HelloProjectOData アドインを作成するには
 
-1. 管理者として Visual Studio 2015 を実行し、スタート ページで **[新しいプロジェクト]** を選択します。
+1. 管理者として Visual Studio 2015 を実行し、スタートページで [**新しいプロジェクト**] を選択します。
 
-2. **[新しいプロジェクト]** ダイアログ ボックスで **[テンプレート]**、**[Visual C#]**、**[Office/SharePoint]** ノードを展開し、**[Office アドイン]** を選択します。中央のウィンドウの上部にあるターゲット フレームワークのドロップダウン リストで **[.NET Framework 4.5.2]** を選択し、**[Office アドイン]** を選択します (次のスクリーンショットを参照)。
+2. [**新しいプロジェクト**] ダイアログボックスで、[**テンプレート**]、[ **Visual C#**]、[ **office/SharePoint** ] の各ノードを展開し、[* * Office アドイン * *] を選択します。中央のウィンドウの上部にある [ターゲットフレームワーク] ドロップダウンリストで [ **.Net framework 4.5.2** ] を選択し、[ **Office アドイン**] を選択します (次のスクリーンショットを参照)。
 
-3. これらの Visual Studio プロジェクトを両方とも同じディレクトリに配置するには、 [ **ソリューションのディレクトリを作成**] を選択し、目的の場所を参照します。
+3. これらの Visual Studio プロジェクトを両方とも同じディレクトリに配置するには、[**ソリューションのディレクトリを作成**] を選択し、目的の場所を参照します。
 
-4. **[名前]** フィールドに、「HelloProjectOData」と入力して、**[OK]** を選択します。
+4. [**名前**] フィールドに typeHelloProjectOData と入力し、[ **OK]** を選択します。
 
     *図 1. Office アドインの作成*
 
     ![Office アドインの作成](../images/pj15-hello-project-o-data-creating-app.png)
 
-5. **[アドインの種類の選択]** ダイアログ ボックスで、**[作業ウィンドウ]** を選択して、**[次へ]** を選択します (次のスクリーンショットを参照)。
+5. [**アドインの種類の選択**] ダイアログ ボックスで、[**作業ウィンドウ**] を選択して、[**次へ**] を選択します (次のスクリーンショットを参照)。
 
     *図 2. 作成するアドインの種類の選択*
 
     ![作成するアドインの種類の選択](../images/pj15-hello-project-o-data-choose-project.png)
 
-6. [ **ホスト アプリケーションの選択**] ダイアログ ボックスで、[ **Project**] 以外のすべてのチェック ボックスをオフにし (次のスクリーンショットを参照)、 [ **完了**] をクリックします。
+6. [**ホスト アプリケーションの選択**] ダイアログ ボックスで、[**Project**] 以外のすべてのチェック ボックスをオフにし (次のスクリーンショットを参照)、[**完了**] をクリックします。
 
     *図 3. ホスト アプリケーションの選択*
 
     ![Project を唯一のホスト アプリケーションとして選択する](../images/create-office-add-in.png)
 
-    Visual Studio によって、**HelloProjectOdata** プロジェクトと **HelloProjectODataWeb** プロジェクトが作成されます。
+    Visual Studio によって、 **HelloProjectOdata**プロジェクトと**HelloProjectODataWeb**プロジェクトが作成されます。
 
-**アドイン** フォルダーには、カスタムの CSS スタイル用の App.css ファイルが含まれています (次のスクリーンショットを参照してください)。 **ホーム** サブフォルダー内の、Home.html ファイルには、CSS ファイル、アドインを使用している JavaScript ファイル、およびアドインの HTML5 コンテンツへの参照が含まれています。 また、Home.js ファイルは、カスタムの JavaScript コード用です。 **Scripts** フォルダーには、jQuery ライブラリのファイルが含まれています。 **Office** サブフォルダーには、office.js や project-15.js などの JavaScript ライブラリ、および Office アドインでの標準の文字列用の言語ライブラリが含まれています。**コンテンツ** フォルダーで Office.css ファイルには、Office のアドインのすべてに使用する既定のスタイルが含まれます。
+[**AddIn**] フォルダー (次のスクリーンショットを参照) には、カスタム CSS スタイルの App.css ファイルが含まれています。 **ホーム** サブフォルダー内の、Home.html ファイルには、CSS ファイル、アドインを使用している JavaScript ファイル、およびアドインの HTML5 コンテンツへの参照が含まれています。 また、Home.js ファイルは、カスタムの JavaScript コード用です。 **Scripts** フォルダーには、jQuery ライブラリのファイルが含まれています。 **Office** サブフォルダーには、office.js や project-15.js などの JavaScript ライブラリ、および Office アドインでの標準の文字列用の言語ライブラリが含まれています。**コンテンツ** フォルダーで Office.css ファイルには、Office のアドインのすべてに使用する既定のスタイルが含まれます。
 
 *図 4. ソリューション エクスプローラーでの既定の Web プロジェクト ファイルの表示*
 
 ![ソリューション エクスプローラーで Web プロジェクト ファイルを表示する](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
-**HelloProjectOData** プロジェクトのマニフェストは、HelloProjectOData.xml ファイルです。必要に応じてマニフェストを編集して、アドインの説明、アイコンへの参照、追加言語の情報、その他の設定を追加できます。手順 3 では、アドインの表示名と説明を変更し、アイコンを追加します。
+**HelloProjectOData**プロジェクトのマニフェストは、HelloProjectOData ファイルです。必要に応じて、マニフェストを変更して、アドインの説明、アイコンへの参照、追加の言語の情報、その他の設定を追加できます。手順3は単にアドインの表示名と説明を変更し、アイコンを追加します。
 
 マニフェストについて詳しくは、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」と「[Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md#see-also)」をご覧ください。
 
@@ -109,23 +109,23 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 1. Visual Studio で、HelloProjectOData.xml ファイルを開きます。
 
-2. 既定の表示名は、Visual Studio プロジェクトの名前です ("HelloProjectOData")。たとえば、 **DisplayName** 要素の既定値を"ProjectData 概要" に変更します。
+2. 既定の表示名は、Visual Studio プロジェクトの名前 ("HelloProjectOData") です。たとえば、 **DisplayName**要素の既定値を "Hello projectdata" に変更します。
 
 3. 既定の説明も "HelloProjectOData" です。たとえば、Description 要素の既定値を "Test REST queries of the ProjectData service" に変更します。
 
-4. リボンの **[プロジェクト]** タブの **[Office アドイン]** ドロップダウン リストに表示するアイコンを追加します。Visual Studio ソリューションにアイコン ファイルを追加することも、アイコンの URL を使うこともできます。 
+4. リボンの [**プロジェクト**] タブにある [ **Office アドイン**] ドロップダウンリストに表示するアイコンを追加します。アイコンファイルは、Visual Studio ソリューションに追加することも、アイコンの URL を使用することもできます。 
 
 以下の手順は、Visual Studio ソリューションにアイコン ファイルを追加するための方法を示しています。
 
-1. **ソリューション エクスプローラー**で、Images という名前のフォルダーに移動します。
+1. **ソリューションエクスプローラー**で、Images という名前のフォルダーに移動します。
 
-2. **[Office アドイン]** ドロップダウン リストに表示するためには、アイコンのサイズを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。
+2. [ **Office アドイン**] ドロップダウンリストに表示するには、アイコンを 32 x 32 ピクセルにする必要があります。たとえば、Project 2013 SDK をインストールしてから、[ **Images** ] フォルダーを選択し、次のファイルを SDK から追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
     または、独自の 32 x 32 アイコンを使用するか、NewIcon.png という名前のファイルに次の画像をコピーして、`HelloProjectODataWeb\Images` フォルダーにそのファイルを追加します。
 
     ![HelloProjectOData アプリのアイコン](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. HelloProjectOData.xml マニフェストで、**Description** 要素の下に **IconUrl** 要素を追加します。ここで、アイコン URL の値は 32 x 32 アイコン ファイルへの相対パスです。たとえば、次の行を追加します: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**。HelloProjectOData.xml マニフェスト ファイルには次が含まれるようになりました (実際の **ID** 値は異なります)。
+3. HelloProjectOData マニフェストで、アイコンの URL の値が32x32 のアイコンファイルへの相対パスである**Description**要素の下に**iconurl**要素を追加します。たとえば、次の行**<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />** を追加します。現在、HelloProjectOData マニフェストファイルには次のものが含まれています ( **Id**の値は異なります)。
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -152,35 +152,35 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 ## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>HelloProjectOData アドインの HTML コンテンツを作成する
 
-**HelloProjectOData** アドインは、デバッグとエラー出力を含むサンプルです。運用環境で使うことを想定したものではありません。HTML コンテンツのコーディングを始める前に、このアドインの UI とユーザー エクスペリエンスを設計してください。また、HTML コードとやり取りする JavaScript 関数の概略も記述してください。詳しくは、「[Office アドインの設計ガイドライン](../design/add-in-design.md)」をご覧ください。 
+**HelloProjectOData**アドインは、デバッグとエラー出力を含むサンプルです。これは、運用環境での使用を目的としたものではありません。HTML コンテンツのコーディングを開始する前に、アドインの UI とユーザーの操作手順を設計し、HTML コードを操作する JavaScript 関数の概要を説明します。詳細については、「[Office アドインの設計ガイドライン](../design/add-in-design.md)」を参照してください。 
 
-作業ウィンドウには、上部にアドインの表示名が表示されます。これはマニフェストの  **DisplayName** 要素の値です。HelloProjectOData.html ファイルの **body** 要素には、次のような他の UI 要素が含まれています。
+作業ウィンドウには、上部にあるアドインの表示名が表示されます。これはマニフェスト内の**DisplayName**要素の値です。HelloProjectOData ファイルの**body**要素には、その他の UI 要素が次のように含まれています。
 
-- サブタイトルは、 **ODATA REST QUERY** など、操作の一般的な機能または種類を表します。
+- サブタイトルは、**ODATA REST QUERY** など、操作の一般的な機能または種類を表します。
 
-- [ **ProjectData エンドポイントを取得**] ボタンは、 **setOdataUrl** 関数を呼び出して、 **ProjectData** サービスのエンドポイントを取得し、それをテキスト ボックスに表示します。Project が Project Web App と接続されていない場合、アドインはエラー ハンドラーを呼び出して、ポップアップ エラー メッセージを表示します。
+- [ **Projectdata エンドポイントの取得**] `setOdataUrl`ボタンをクリックすると、関数が呼び出されて**projectdata**サービスのエンドポイントが取得され、テキストボックスに表示されます。Project が Project Web App に接続されていない場合、アドインはエラーハンドラーを呼び出してポップアップエラーメッセージを表示します。
 
-- [ **すべてのプロジェクトを比較**] ボタンは、アドインが有効な OData エンドポイントを取得するまで無効化されています。このボタンを選択すると、 **retrieveOData** 関数が呼び出されます。この関数は REST クエリを使用して、 **ProjectData** サービスからプロジェクトのコストと作業のデータを取得します。
+- アドインが有効な OData エンドポイントを取得するまで、[**すべてのプロジェクトを比較**] ボタンは無効になります。ボタンを選択すると、関数が呼び出さ`retrieveOData`れます。この関数は、REST クエリを使用して**projectdata**サービスからプロジェクトのコストと作業データを取得します。
 
-- テーブルには、プロジェクト コスト、実績コスト、作業、および達成率の平均値が表示されます。このテーブルでは、現在アクティブなプロジェクトの値と平均値との比較も行われます。現在の値が全プロジェクトの平均値より大きい場合は、その値が赤で表示されます。現在の値が平均値より小さい場合は、その値が緑で表示されます。現在の値がない場合は、青の  **NA** が表示されます。
+- テーブルには、プロジェクト コスト、実績コスト、作業、および達成率の平均値が表示されます。このテーブルでは、現在アクティブなプロジェクトの値と平均値との比較も行われます。現在の値が全プロジェクトの平均値より大きい場合は、その値が赤で表示されます。現在の値が平均値より小さい場合は、その値が緑で表示されます。現在の値がない場合は、青の **NA** が表示されます。
 
-    **retrieveOData** 関数は、テーブルの値を計算して表示する **parseODataResult** 関数を呼び出します。
+    関数`retrieveOData`は、テーブル`parseODataResult`の値を計算して表示する関数を呼び出します。
 
     > [!NOTE]
-    > この例では、アクティブなプロジェクトのコストと作業のデータは発行された値から導出されます。Project で値を変更した場合、**ProjectData** サービスは、そのプロジェクトが発行されるまで変更を反映しません。
+    > この例では、作業中のプロジェクトのコストと作業時間データは、発行された値から派生します。Project で値を変更すると、プロジェクトが発行されるまで**Projectdata**サービスは変更されません。
 
 ### <a name="procedure-4-to-create-the-html-content"></a>手順 4. HTML コンテンツを作成するには
 
-1. Home.html ファイルの  **head** 要素内に、アドインで使用する CSS ファイルの **link** 要素を追加します。Visual Studio プロジェクト テンプレートには、カスタム CSS スタイルに使用できる App.css ファイルのリンクが含まれています。
+1. .Html ファイルの**head**要素に、アドインが使用する CSS ファイルの**リンク**要素を追加します。Visual Studio プロジェクトテンプレートには、カスタム CSS スタイルに使用できる App.xaml ファイルへのリンクが含まれています。
 
-2. アドインで使用する JavaScript ライブラリのために、その他の **script** 要素を追加します。プロジェクト テンプレートには、jQuery のリンクが含まれています。**[スクリプト]** フォルダーには、_[バージョン]_.js、office.js、および MicrosoftAjax.js ファイルがあります。
+2. アドインが使用する JavaScript ライブラリの**スクリプト**要素を追加します。プロジェクトテンプレートには、 **Scripts**フォルダーにある jQuery- _[version]_.js、microsoftajax.js、およびファイルへのリンクが含まれています。
 
     > [!NOTE]
     > アドインを展開する前に、office.js の参照と jQuery の参照をコンテンツ配信ネットワーク (CDN) の参照に変更してください。CDN の参照は最新のバージョンと高いパフォーマンスを提供します。
 
-    また、**HelloProjectOData** アドインは、ポップアップ メッセージでエラーを表示する SurfaceErrors.js ファイルを使用します。「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」の「_堅牢なプログラミング_」セクションのコードをコピーし、SurfaceErrors.js ファイルを **HelloProjectODataWeb** プロジェクトの **Scripts\Office** フォルダーに追加できます。
+    **HelloProjectOData**アドインも surfaceerrors.js ファイルを使用します。このファイルには、ポップアップメッセージにエラーが表示されます。[テキストエディターを使用して、「Project 2013 用の作業ウィンドウアドインを初めて作成](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)する」の「堅牢な_プログラミング_」セクションからコードをコピーし、 **HelloProjectODataWeb**プロジェクトの**スクリプト \ Office**フォルダーに surfaceerrors.js ファイルを追加できます。
 
-    次に示すのは、**head** 要素の更新された HTML コードと、SurfaceErrors.js ファイルに追加された行です。
+    次に、Surfaceerrors.js ファイルの追加行を含む**head**要素の更新された HTML コードを示します。
 
     ```HTML
     <!DOCTYPE html>
@@ -216,9 +216,9 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     </html>
     ```
 
-3. **body** 要素内で、テンプレートから既存のコードを削除し、ユーザー インターフェイスのコードを追加します。要素にデータを入れるか、要素を jQuery ステートメントで操作する場合、その要素に一意の **id** 属性が含まれている必要があります。次のコードでは、jQuery の関数で使用する **button** 要素、**span** 要素、および **td** (テーブル セル定義) 要素の **id** 属性を太字で示しています。
+3. **Body**要素で、テンプレートから既存のコードを削除し、ユーザーインターフェイス用のコードを追加します。要素にデータを格納する場合、または jQuery ステートメントで操作する場合、要素には一意の**id**属性が含まれている必要があります。次のコードでは、jQuery 関数が使用する**ボタン**、 **span**、および**td** (table セル定義) 要素の**id**属性は、太字のフォントで表示されます。
 
-   次の HTML は、グラフィックス イメージ (会社のロゴなど) を追加します。適切なロゴを選択するか、Project 2013 SDK ダウンロードから NewLogo.png ファイルをコピーした後、**ソリューション エクスプローラー**を使用してファイルを `HelloProjectODataWeb\Images` フォルダーに追加できます。
+   次の HTML は、会社のロゴなどのグラフィックスイメージを追加します。任意のロゴを使用するか、プロジェクト 2013 SDK のダウンロードから NewLogo .png ファイルをコピーしてから、**ソリューションエクスプローラー**を使用してそのファイルを`HelloProjectODataWeb\Images`フォルダーに追加できます。
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>このアドインの JavaScript コードを作成する
 
-Project 作業ウィンドウ アドイン用のテンプレートには、既定の初期化コードが含まれています。このコードは、典型的な Office 2013 アドイン用にドキュメント内のデータに対する基本的な取得操作と設定操作を例示するものとして設計されています。Project 2013 はアクティブなプロジェクトへの書き込み操作をサポートしておらず、 **HelloProjectOData** アドインは **getSelectedDataAsync** メソッドを使用しないので、 **Office.initialize** 関数内のスクリプトを削除できます。また、既定の HelloProjectOData.js ファイルに含まれている **setData** 関数と **getData** 関数も削除できます。
+Project の作業ウィンドウアドインのテンプレートには、一般的な Office 2013 アドインのドキュメント内のデータに対する基本的な get および set アクションをデモンストレーションするために設計された既定の初期化コードが含まれています。Project 2013 では、作業中のプロジェクトに書き込む操作がサポートされておらず、 **HelloProjectOData**アドインはこの`getSelectedDataAsync`メソッドを使用していないため、 `Office.initialize`関数内のスクリプトを`setData`削除し`getData`て、既定の HelloProjectOData ファイル内の関数と関数を削除することができます。
 
-JavaScript には、REST クエリ用のグローバル定数と、いくつかの関数で使用されるグローバル変数が含まれています。[ **ProjectData エンドポイントを取得**] ボタンによって呼び出される  **setOdataUrl** 関数は、グローバル変数を初期化し、Project が Project Web App と接続されているかどうかを調べます。
+JavaScript には、REST クエリのグローバル定数と、いくつかの関数で使用されるグローバル変数が含まれています。[ **ProjectData エンドポイントの取得**] `setOdataUrl`ボタンを呼び出して、グローバル変数を初期化し、Project が project Web App で接続されているかどうかを判断します。
 
-HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseODataResult** 関数も含まれています。前者の関数は、ユーザーが [ **すべてのプロジェクトを比較**] を選択したときに呼び出されます。後者の関数は、平均値を計算し、色と単位について書式設定された値を比較テーブルに内に設定します。
+HelloProjectOData ファイルの残りの部分には、次の2つ`retrieveOData`の関数が含まれています。この関数は、ユーザーが [**すべてのプロジェクトを比較**するを選択すると呼び出されます。関数は`parseODataResult`平均を計算し、次に、比較表に色と単位を書式設定した値を設定します。
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>手順 5. JavaScript コードを作成するには
 
-1. 既定の HelloProjectOData.js ファイル内のコードをすべて削除し、グローバル変数と  **Office.initialize** 関数を追加します。すべて大文字の変数名は、それらが定数であることを示しており、それらは後で **_pwa** 変数と共に使用されて、この例の REST クエリが作成されます。
+1. 既定の HelloProjectOData ファイル内のすべてのコードを削除してから、グローバル変数と`**`Office initialize ' 関数を追加します。すべて大文字の変数名は定数であることを意味します。この例では、後で REST クエリを作成するために **_pwa**変数を使用しています。
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     }
     ```
 
-2. **setOdataUrl** 関数と関連する関数を追加します。**setOdataUrl** 関数は **getProjectGuid** と **getDocumentUrl** を呼び出して、グローバル変数を初期化します。[getProjectFieldAsync](/javascript/api/office/office.document) メソッドでは、_callback_ パラメーター用の匿名関数が、jQuery ライブラリ内の **removeAttr** メソッドを使って **[すべてのプロジェクトを比較]** ボタンを有効にし、**ProjectData** サービスの URL を表示します。Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。SurfaceErrors.js ファイルには、**throwError** メソッドが含まれています。
+2. 追加`setOdataUrl`および関連する関数。関数`setOdataUrl`は、 `getProjectGuid`グローバル`getDocumentUrl`変数を呼び出し、初期化します。[Getprojectfieldasync メソッド](/javascript/api/office/office.document)の場合、 _callback_ライブラリ`removeAttr`のメソッドを使用して [**すべてのプロジェクトを比較**] ボタンを有効にし、 **projectdata**サービスの URL を表示します。Project が Project Web App に接続されていない場合、この関数はエラーをスローします。これにより、ポップアップエラーメッセージが表示されます。Surfaceerrors.js ファイルには、 `throwError`メソッドが含まれています。
 
    > [!NOTE]
-   > Visual Studio を Project Server コンピューターで実行している場合、**F5** キーによるデバッグを使用するには、**_pwa** グローバル変数を初期化する行の後にあるコードをコメント解除します。Project Server コンピューターでのデバッグ時に jQuery の **ajax** メソッドを使用できるようにするには、PWA URL に **localhost** 値を設定する必要があります。Visual Studio をリモート コンピューターで実行する場合は、**localhost** は必要ありません。アドインを展開する前に、そのコードをコメント化してください。
+   > Project Server コンピュータで Visual Studio を実行している場合、 **F5**デバッグを使用するには、 **_pwa**グローバル変数を初期化する行の後にあるコードをコメント解除します。Project Server コンピュータでデバッグ`ajax`するときに jQuery メソッドを使用できるようにするには`localhost` 、PWA URL の値を設定する必要があります。Visual Studio をリモートコンピューターで実行する場合、 `localhost` URL は必須ではありません。アドインを展開する前に、そのコードをコメントアウトします。
 
     ```js
     function setOdataUrl() {
@@ -367,17 +367,15 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     }
     ```
 
-3. **retrieveOData** 関数を追加します。この関数は REST クエリ用に値を連結し、jQuery の **ajax** 関数を呼び出して、要求されたデータを **ProjectData** サービスから取得します。 **support.cors** 変数は、 **ajax** 関数でのクロス オリジン リソース共有 (CORS) を有効にします。 **support.cors** ステートメントがないか、 **false** に設定されていると、 **ajax** 関数は **No transport** エラーを返します。
+3. `retrieveOData`関数を追加します。この関数は、REST クエリの値を`ajax`連結し、jQuery の関数を呼び出して、 **projectdata**サービスから要求されたデータを取得します。サポートされている**cors**変数は、 `ajax`関数との間でのクロスオリジンリソース共有 (cors) を有効にします。サポートされている**cors**ステートメントが存在しない場合、または`ajax` **false**に設定されている場合、この関数は**No transport**エラーを返します。
 
    > [!NOTE]
    > 次に示すコードは、Project Server 2013 のオンプレミスのインストールで動作します。Project on the web の場合は、トークン ベースの認証に OAuth を使用できます。詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
 
-   **ajax** の呼び出しでは、_headers_ パラメーターまたは _beforeSend_ パラメーターを使用できます。_complete_ パラメーターは匿名関数であり、**retrieveOData** の変数と同じスコープ内にあります。_complete_ パラメーターの関数は、**odataText** コントロールに結果を表示すると共に、**parseODataResult** メソッドを呼び出すことにより JSON 応答を解析して表示します。_error_ パラメーターは名前付きの **getProjectDataErrorHandler** 関数を指定します。この関数は、エラー メッセージを **odataText** コントロールに書き込み、**throwError** メソッドを使用してポップアップ メッセージを表示します。
+   `ajax`呼び出しでは、 _headers_パラメーターまたは_beforesend_パラメーターのいずれかを使用できます。_Complete_パラメーターは、の`retrieveOData`変数と同じスコープにある匿名関数です。_Complete_パラメーターの関数は、 `odataText`コントロールに結果を表示し、JSON 応答`parseODataResult`を解析して表示するメソッドも呼び出します。_Error_パラメーターは、指定さ`getProjectDataErrorHandler`れた関数を指定します。この`odataText`関数は、エラーメッセージ`throwError`をコントロールに書き込み、また、このメソッドを使用してポップアップメッセージを表示します。
 
     ```js
-    /****************************************************************
-    * Functions to get and parse the Project Server reporting data.
-    *****************************************************************/
+    // Functions to get and parse the Project Server reporting data./
 
     // Get data about all projects on Project Server,
     // by using a REST query with the ajax method in jQuery.
@@ -430,9 +428,9 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     }
     ```
 
-4. **parseODataResult** メソッドを追加します。このメソッドは OData サービスからの JSON 応答を逆シリアル化して、処理します。**parseODataResult** メソッドは、コストと作業のデータの平均値を小数点以下 1 桁または 2 桁の精度まで計算し、適切な色で値を書式設定し、単位 (**$**、**hrs**、または **%**) を追加し、指定されたテーブル セルに値を表示します。
+4. このメソッド`parseODataResult`を追加します。このメソッドは、OData サービスから JSON 応答を逆シリアル化し、処理します。この`parseODataResult`メソッドは、コストと作業時間データの平均値を1桁または2桁の小数点以下の桁数で計算し、値を正しい**$** 色で書式設定**%** し、単位 (、**時間**、または) を追加して、指定された表のセルの値を表示します。
 
-   アクティブなプロジェクトの GUID が **ProjectId** の値と一致する場合、**myProjectIndex** 変数はプロジェクトのインデックスに設定されます。アクティブなプロジェクトが Project Server で発行されていることを **myProjectIndex** が示している場合、**parseODataResult** メソッドはそのプロジェクトのコストと作業データを書式設定して表示します。アクティブなプロジェクトが発行されていない場合は、アクティブなプロジェクトの値は青い **NA** と表示されます。
+   アクティブなプロジェクトの GUID が`ProjectId`値と一致する場合、 `myProjectIndex`変数はプロジェクトインデックスに設定されます。作業`myProjectIndex`中のプロジェクトが project Server で発行された`parseODataResult`場合、このメソッドはそのプロジェクトのコストと作業時間データを書式設定して表示します。作業中のプロジェクトが発行されていない場合、作業中のプロジェクトの値は青色の**NA**として表示されます。
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -545,43 +543,43 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
 
 ## <a name="testing-the-helloprojectodata-add-in"></a>HelloProjectOData アドインのテスト
 
-**HelloProjectOData** アドインを Visual Studio 2015 でテストしてデバッグするには、開発用コンピューターに Project Professional 2013 がインストールされている必要があります。他のテスト シナリオを有効にするには、Project がローカル コンピューター上のファイルに対して開くか、Project Web App と接続するかを選択できることを確認してください。たとえば、次の手順を実行します。
+Visual Studio 2015 を使用して**HelloProjectOData**アドインをテストおよびデバッグするには、開発用コンピューターに Project Professional 2013 がインストールされている必要があります。異なるテストシナリオを有効にするには、ローカルコンピューター上のファイルに対してプロジェクトを開くか、Project Web App を使用して接続するかを選択できるようにします。たとえば、次の手順を実行します。
 
-1. リボンの [ **ファイル**] タブで、Backstage ビューの [ **情報**] タブを選択し、[ **アカウントの管理**] を選択します。
+1. リボンの [**ファイル**] タブで、Backstage ビューの [**情報**] タブを選択し、[**アカウントの管理**] を選択します。
 
-2. [ **Project Web App アカウント**] ダイアログ ボックスの [ **利用可能なアカウント**] の一覧には、ローカル  **コンピューター** アカウントだけでなく、複数の Project Web App アカウントが表示されることがあります。[ **開始時**] セクションで、[ **アカウントを選択する**] を選択します。
+2. [ **Project web App アカウント**] ダイアログボックスの [**利用可能なアカウント**] リストには、ローカル**コンピューター**アカウントに加えて、複数の Project web app アカウントを含めることができます。[**開始時**] セクションで、[**アカウントの選択**] を選択します。
 
 3. Project を閉じます。それにより、Visual Studio でアドインのデバッグ用に Project 起動できるようになります。
 
 基本的なテストでは、次のことを行う必要があります。
 
-- アドインを Visual Studio から実行し、コストと作業のデータが含まれている Project Web App から発行済みのプロジェクトを開きます。アドインが  **ProjectData** エンドポイントを表示し、コストと作業のデータをテーブルに正しく表示することを確認します。 **odataText** コントロール内の出力により、REST クエリとその他の情報を確認できます。
+- Visual Studio からアドインを実行し、コストと作業データを含む Project Web App から発行済みのプロジェクトを開きます。アドインに**projectdata**エンドポイントが表示され、テーブル内のコストと作業データが正しく表示されることを確認します。**Odatatext**コントロールの出力を使用して、REST クエリやその他の情報を確認できます。
 
-- アドインを再び実行し、Project の起動時に [ **ログイン**] ダイアログ ボックスでローカル コンピューターのプロファイルを選択します。ローカル .mpp ファイルを開き、アドインをテストします。 **ProjectData** エンドポイントを取得しようとしたときに、アドインがエラー メッセージを表示することを確認します。
+- プロジェクトが開始されたら、[**ログイン**] ダイアログボックスでローカルコンピュータープロファイルを選択して、アドインを再度実行します。ローカルの .mpp ファイルを開き、アドインをテストします。 **Projectdata**エンドポイントを取得しようとしたときに、アドインにエラーメッセージが表示されることを確認します。
 
-- アドインを再び実行し、コストと作業のデータのタスクを持つプロジェクトを作成します。そのプロジェクトを Project Web App に保存することはできますが、発行はしないでください。アドインが Project Server からのデータを表示するものの、現在のプロジェクトについては  **NA** であることを確認します。
+- アドインを再度実行して、コストと作業データを含むタスクを含むプロジェクトを作成します。プロジェクトを Project Web App に保存することはできますが、発行することはできません。アドインに Project Server のデータが表示されることを確認します。ただし、現在のプロジェクトの場合は**NA**となります。
 
 ### <a name="procedure-6-to-test-the-add-in"></a>手順 6. アドインをテストするには
 
 1. Project Professional 2013 を実行し、Project Web App と接続してから、テスト プロジェクトを作成します。ローカル リソースまたはエンタープライズ リソースにタスクを割り当て、いくつかのタスクに対して達成率のさまざまな値を設定してから、そのプロジェクトを発行します。Project を終了します。それにより、Visual Studio がアドインのデバッグ用に Project を起動できるようになります。
 
-2. Visual Studio で  **F5** キーを押します。Project Web App にログオンし、前のステップで作成したプロジェクトを開きます。このとき、読み取り専用モードで開くことも、編集モードで開くこともできます。
+2. Visual Studio で、 **F5**キーを押します。Project Web App にログオンし、前の手順で作成したプロジェクトを開きます。プロジェクトは、読み取り専用モードまたは編集モードで開くことができます。
 
-3. リボンの **[プロジェクト]** タブにある **[Office アドイン]** ドロップダウン リストで、**[Hello ProjectData]** を選択します (図 5 を参照)。**[すべてのプロジェクトを比較]** ボタンが無効化されます。
+3. リボンの [**プロジェクト**] タブの [ **Office アドイン**] ドロップダウンリストで、[ **Hello projectdata** ] を選択します (図5を参照)。[**すべてのプロジェクトを比較**] ボタンを無効にする必要があります。
 
     *図 5. HelloProjectOData アドインの開始*
 
     ![HelloProjectOData アプリのテスト](../images/pj15-hello-project-data-test-the-app.png)
 
-4. **[ProjectData 概要]** 作業ウィンドウで、**[ProjectData エンドポイントを取得]** を選択します。**projectDataEndPoint** 行に **ProjectData** サービスの URL が表示され、**[すべてのプロジェクトを比較]** ボタンが有効化されます (図 6 を参照)。
+4. [**プロジェクトデータの Hello** ] 作業ウィンドウで、[ **Projectdata エンドポイントの取得**] を選択します。**Projectdataendpoint**行に**PROJECTDATA**サービスの URL が表示され、[**すべてのプロジェクトを比較**] ボタンが有効になっている必要があります (図6を参照)。
 
-5. [ **すべてのプロジェクトを比較**] を選択します。アドインは、 **ProjectData** サービスからデータを取得している間、一時停止する可能性がありますが、その後、書式化された平均値と現在値をテーブルに表示します。
+5. [**すべてのプロジェクトを比較**] を選択します。アドインは、 **projectdata**サービスからデータを取得するときに一時停止する可能性があります。その後、書式設定された平均値と現在の値を表に表示する必要があります。
 
     *図 6. REST クエリの結果の表示*
 
     ![REST クエリの結果の表示](../images/pj15-hello-project-data-rest-results.png)
 
-6. テキスト ボックス内の出力を調べます。ここには、ドキュメントのパス、REST クエリ、ステータス情報、および  **ajax** と **parseODataResult** の呼び出しからの JSON 結果が表示されるはずです。この出力は、 **parseODataResult** メソッドのコード ( `projCost += Number(res.d.results[i].ProjectCost);` など) の理解と作成とデバッグに役立ちます。
+6. テキストボックス内の出力を調べます。これは、 **ajax**および**parseodataresult**への呼び出しからのドキュメントパス、REST クエリ、ステータス情報、および JSON 結果を表示する必要があります。出力は、などの`parseODataResult`メソッドでコードを理解、作成、デバッグするの`projCost += Number(res.d.results[i].ProjectCost);`に便利です。
 
     次に示すのは、Project Web App インスタンスの 3 つのプロジェクトの出力例です。わかりやすくするためにテキストに改行と空白を追加してあります。
 
@@ -631,15 +629,15 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
     ]}}
     ```
 
-7. デバッグを停止し (**Shift + F5** キーを押す)、**F5** キーを再び押して、Project の新しいインスタンスを実行します。**[ログイン]** ダイアログ ボックスで、Project Web App ではなく、ローカル **コンピューター** のプロファイルを選択します。ローカル プロジェクト .mpp ファイルを作成するか開き、**[ProjectData 概要]** 作業ウィンドウを開き、**[ProjectData エンドポイントを取得]** を選択します。アドインが「**接続がありません!**」エラーを表示し (図 7 を参照)、**[すべてのプロジェクトを比較]** ボタンは無効化されたままになります。
+7. デバッグを停止し (Shift キーを押し**ながら f5**キーを押し)、もう一度**F5**キーを押して Project の新しいインスタンスを実行します。[**ログイン**] ダイアログボックスで、[Project Web App] ではなく [ローカル**コンピューター** ] プロファイルを選択します。ローカルのプロジェクト .mpp ファイルを作成または開き、[ **Hello projectdata** ] 作業ウィンドウを開き、[ **projectdata エンドポイントの取得**] を選択します。アドインは [**接続しない**] を表示する必要があります。エラー (図7を参照)。 [すべての**プロジェクトを比較**] ボタンは無効のままにしておきます。
 
    *図 7. Project Web App 接続がない状態でのアドインの使用*
 
    ![Project Web App 接続がない状態でのアプリの使用](../images/pj15-hello-project-data-no-connection.png)
 
-8. デバッグを停止してから、 **F5** キーを再び押します。Project Web App にログオンし、コストと作業のデータが含まれるプロジェクトを作成します。このプロジェクトを保存することはできますが、発行しないでください。
+8. デバッグを停止してから、もう一度**F5**キーを押します。Project Web App にログオンし、コストと作業データを含むプロジェクトを作成します。プロジェクトを保存することはできますが、発行することはできません。
 
-   **[ProjectData 概要]** 作業ウィンドウで **[すべてのプロジェクトを比較]** を選択すると、**[現在]** 列のフィールドには青い **[NA]** が表示されます (図 8 を参照)。
+   [ **ProjectData の Hello** ] 作業ウィンドウで、[**すべてのプロジェクトを比較**] を選択すると、**現在**の列のフィールドに青い**NA**が表示されます (図8を参照)。
 
    *図 8. 未発行のプロジェクトと他のプロジェクトの比較*
 
@@ -647,14 +645,14 @@ HelloProjectOData.js ファイルには、 **retrieveOData** 関数と **parseOD
 
 アドインがこれまでのテストで正常に動作しているとしても、実行する必要のあるテストはまだあります。たとえば、次のことを行います。
 
-- Project Web App からタスクのコストと作業のデータがないプロジェクトを開きます。 [ **現在**] 列のフィールドには 0 の値が表示されるはずです。
+- タスクのコストまたは作業時間データを持たないプロジェクトを Project Web App から開きます。**現在**の列のフィールドに0の値が表示されます。
 
 - タスクがないプロジェクトをテストします。
 
 - アドインに変更を加えて発行した場合は、発行したアドインで再び同様のテストを実行する必要があります。その他の考慮事項については、「[次のステップ](#next-steps)」を参照してください。
 
 > [!NOTE]
-> **ProjectData** サービスの 1 回のクエリで返すことのできるデータ量には制限があります。このデータ量はエンティティによって異なります。たとえば、**Projects** エンティティ セットでの既定の制限は 1 回のクエリで 100 プロジェクトですが、**Risks** エンティティ セットでの既定の制限は 200 プロジェクトです。運用インストールでは、**HelloProjectOData** のコード例に変更を加えて、100 プロジェクト以上のクエリを使用できるようにする必要があります。詳細については、「[次のステップ](#next-steps)」および「[Project レポート データの OData フィードにクエリを実行する](/previous-versions/office/project-odata/jj163048(v=office.15))」を参照してください。
+> **Projectdata**サービスの1つのクエリで返されるデータの量には制限があります。データの量は、エンティティによって異なります。たとえば、 `Projects`エンティティセットの既定の制限は、クエリごとに100プロジェクトですが、 `Risks`エンティティセットの既定の制限は200です。運用環境のインストールでは、 **HelloProjectOData**例のコードを変更して、100を超えるプロジェクトのクエリを有効にする必要があります。詳細については、「[プロジェクトレポートデータの OData フィードを照会する](/previous-versions/office/project-odata/jj163048(v=office.15))」と「クエリを実行する[方法](#next-steps)」を参照してください。
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>HelloProjectOData アドインのコード例
 
@@ -831,9 +829,7 @@ function getDocumentUrl() {
     _docUrl = "Document path:\r\n" + Office.context.document.url;
 }
 
-/****************************************************************
-* Functions to get and parse the Project Server reporting data.
-*****************************************************************/
+//  Functions to get and parse the Project Server reporting data./
 
 // Get data about all projects on Project Server,
 // by using a REST query with the ajax method in jQuery.
@@ -1097,13 +1093,13 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
 
 ## <a name="next-steps"></a>次の手順
 
-**HelloProjectOData** が、AppSource で販売したり、SharePoint アプリ カタログで配布したりする製品アドインであれば、その設計は異なるでしょう。たとえば、テキスト ボックスのデバッグ出力や、**ProjectData** エンドポイントを取得するためのボタンはおそらくありません。また、100 以上のプロジェクトを持つ Project Web App インスタンスを処理するには **retireveOData** 関数を書き直す必要もあるでしょう。
+**HelloProjectOData**が appsource で販売される、または SharePoint アプリカタログで配布される運用アドインの場合、設計方法は異なります。たとえば、テキストボックスにデバッグ出力はありません。また、 **Projectdata**エンドポイントを取得するためのボタンがないことがあります。また、 `retireveOData` 100 個を超えるプロジェクトを含む Project Web App インスタンスを処理するように関数を書き換える必要があります。
 
 このアドインには、追加のエラー チェックと、エッジ ケースをキャッチして説明または表示するためのロジックを組み込む必要があります。たとえば、Project Web App インスタンスに、平均期間が 5 日で平均コストが $2400 になる 1000 個のプロジェクトがあって、期間が 20 日より長いのはアクティブ プロジェクトだけだとすると、コストと作業の比較は歪んだものになるでしょう。それは頻度グラフで示すことができます。期間を表示したり、同じような長さのプロジェクトを比較したり、同じ部門または異なる部門のプロジェクトを比較したりするオプションを追加するとよいでしょう。あるいは、表示するフィールドのリストからユーザーが選択できるような方法を追加することもできます。
 
-**ProjectData** サービスの他のクエリについては、クエリ文字列の長さに制限があり、これは親コレクションから子コレクションのオブジェクトまでにクエリが取ることのできるステップ数に影響します。たとえば、**Projects** から **Tasks** へ、そしてタスク アイテムへという 2 ステップのクエリはうまく動作しますが、**Projects** から、**Tasks**、**Assignments** を経て、割り当てアイテムへという 3 ステップのクエリになると、URL の既定の最大長を超える可能性があります。詳しくは、「[Project レポート データの OData フィードにクエリを実行する](/previous-versions/office/project-odata/jj163048(v=office.15))」をご覧ください。
+**Projectdata**サービスのその他のクエリの場合、クエリ文字列の長さに制限があり、クエリが親コレクションから子コレクション内のオブジェクトに対して実行できる手順の数に影響します。たとえば、タスクに対する**プロジェクト**の2段階のクエリ**をタスク**アイテムに対して実行することはできますが **、割り当てアイテムへの****タスク**への**プロジェクト**などの3段階のクエリは、既定の最大 URL の長さを超える場合があります。詳細については、「[プロジェクトレポートデータの OData フィードを照会する](/previous-versions/office/project-odata/jj163048(v=office.15))」を参照してください。
 
-**HelloProjectOData** アドインを運用環境で使えるように変更する場合は、次の手順を実行してください。
+**HelloProjectOData**アドインを運用環境で使用するように変更する場合は、次の手順を実行します。
 
 - HelloProjectOData.html ファイルで、パフォーマンスを向上させるために、office.js の参照をローカル プロジェクトから CDN の参照に変更します。
 
@@ -1111,7 +1107,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- **retrieveOData** 関数を書き換えて、100 以上のプロジェクトのクエリを使えるようにします。たとえば、`~/ProjectData/Projects()/$count` クエリでプロジェクトの数を取得し、プロジェクト データの REST クエリで _$skip_ 操作と _$top_ 操作を使用します。ループの中で複数のクエリを実行し、各クエリからのデータを平均化します。プロジェクト データの各クエリは、次のような形式になります。 
+- 100を`retrieveOData`超えるプロジェクトのクエリを有効にするように関数を書き直します。たとえば、 `~/ProjectData/Projects()/$count`クエリを使用してプロジェクトの数を取得し、プロジェクトデータの REST クエリで _$skip_演算子と _$top_演算子を使用することができます。ループで複数のクエリを実行してから、各クエリのデータの平均値を計算します。プロジェクトデータの各クエリは次の形式になります。 
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

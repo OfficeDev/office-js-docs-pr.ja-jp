@@ -3,16 +3,16 @@ title: Outlook アドインで添付ファイルを追加および削除する
 description: さまざまな添付ファイル Api を使用して、ユーザーが作成しているアイテムに添付されたファイルまたは Outlook アイテムを管理できます。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 977b8fa814a251c76aabc64345762a3a9556a60b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2110c22b65d1410cf4c607b6560eae72d169275c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166600"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325483"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Outlook で新規作成フォーム内のアイテムの添付ファイルを管理する
 
-JavaScript API for Office には、ユーザーの作成時にアイテムの添付ファイルを管理するために使用できるいくつかの Api が用意されています。
+Office JavaScript API には、ユーザーの作成時にアイテムの添付ファイルを管理するために使用できるいくつかの Api が用意されています。
 
 ## <a name="attach-a-file-or-outlook-item"></a>ファイルまたは Outlook アイテムを添付する
 

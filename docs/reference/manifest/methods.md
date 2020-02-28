@@ -3,16 +3,16 @@ title: マニフェスト ファイルの Methods 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452096"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325256"
 ---
 # <a name="methods-element"></a>Methods 要素
 
-Office アドインをアクティブにするために必要な JavaScript API for Office のメソッドの一覧を指定します。
+Office アドインをアクティブにするために必要な Office JavaScript API のメソッドの一覧を指定します。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ
 
@@ -32,7 +32,7 @@ Office アドインをアクティブにするために必要な JavaScript API 
 
 [Method](method.md)
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
-**Methods** と **Method** 要素はメール アドインではサポートされていません。要件セットの詳細については、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+**メソッド**と**メソッド**の要素は、メールアドインではサポートされていません。要件セットの詳細については、「 [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」を参照してください。
 

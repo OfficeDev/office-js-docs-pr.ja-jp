@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Control 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450640"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323799"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -31,8 +31,8 @@ ms.locfileid: "32450640"
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。 **resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
-|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
+|  **ToolTip**  |いいえ|ボタンのヒントです。 **Resid**属性は、 **String**要素の**id**属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|     
 |  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
@@ -87,7 +87,7 @@ ms.locfileid: "32450640"
 
 - サブメニュー項目のリスト。
 
-When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with  **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
+**PrimaryCommandSurface** と共に使用すると、ルートのメニュー項目がリボンのボタンとして表示されます。ボタンを選択すると、サブメニューがドロップダウン リストとして表示されます。**ContextMenu** と共に使用すると、サブメニューのあるメニュー項目がコンテキスト メニューに挿入されます。どちらの場合も、各サブメニュー項目は JavaScript 関数を実行するか、作業ウィンドウを表示することができます。現時点では、サブメニューの 1 つのレベルのみがサポートされます。
 
 次の例では、2 つのサブメニュー項目を持つメニュー項目を定義する方法を示します。最初のサブメニュー項目は作業ウィンドウを示し、2 番目のサブメニュー項目は JavaScript 関数を実行します。
 
@@ -145,11 +145,11 @@ When used with **PrimaryCommandSurface**, the root menu item displays as a butto
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。**resid** 属性は、**Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値に設定する必要があります。      |
-|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。      |
+|  **ToolTip**  |いいえ|ボタンのヒントです。 **Resid**属性は、 **String**要素の**id**属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|     
 |  [Supertip](supertip.md)  | はい |  このボタンのヒント。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像です。         |
-|  **Items**     | はい |  メニュー内で表示するボタンのコレクションです。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
+|  **Items**     | はい |  メニュー内で表示するボタンのコレクションです。 各サブメニュー項目の **Item** 要素を含みます。 各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
 
 ### <a name="menu-control-examples"></a>メニュー コントロールの例
 
@@ -244,7 +244,7 @@ When used with **PrimaryCommandSurface**, the root menu item displays as a butto
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。        |
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
 |  [Icon](icon.md)      | はい |  ボタンの画像。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 

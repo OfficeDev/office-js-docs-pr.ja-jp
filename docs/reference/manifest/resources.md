@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Resources 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7e1cd9fcb383fa4d5881917b3dd8d6dec3bbe4f8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452054"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324828"
 ---
 # <a name="resources-element"></a>Resources 要素
 
@@ -18,18 +18,18 @@ ms.locfileid: "32452054"
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  種類  |  説明  |
+|  要素 |  型  |  説明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
 |  **Urls**                |  url     |  HTTPS URL の場所を指定します。 URL の長さは最大で 2048 文字です。 |
 |  **ShortStrings** |  string  |  **Label** 要素と **Title** 要素のテキスト。 各 **String** には、最大 125 文字を使用できます。|
-|  **LongStrings**  |  string  | **Description** 属性のテキスト。各 **String** には、最大 250 文字を使用できます。|
+|  **LongStrings**  |  string  | **Description** 属性のテキスト。 各 **String** には、最大 250 文字を使用できます。|
 
 > [!NOTE]
 > **Image** 要素と **Url** 要素のすべての URL で Secure Sockets Layer (SSL) を使用する必要があります。
 
 ### <a name="images"></a>画像
-各アイコンに 3 つの **Images** 要素を指定する必要があります。各要素の必須サイズは次のようになります。
+各アイコンには3つの**Images**要素があり、それぞれに3つの必須サイズがあります。
 
 - 16x16
 - 32x32

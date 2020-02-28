@@ -3,12 +3,12 @@ title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d3e5ac55619460e39c3853ea1a0a05c30d767bfd
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 60b65416585b5215ed565a3689c1e7f398e001a5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283906"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325327"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 
@@ -137,7 +137,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - そのアイテムで[添付ファイルを追加または削除](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- JavaScript API for Office の中でメール アドインに適用される、**Mailbox.makeEWSRequestAsync** を除く他のすべてのメンバーの使用。
+- メールアドインに適用される Office JavaScript API の他のすべてのメンバー ( **makeEWSRequestAsync**を除く) を使用します。
 
 ### <a name="cant-do"></a>できないこと
 

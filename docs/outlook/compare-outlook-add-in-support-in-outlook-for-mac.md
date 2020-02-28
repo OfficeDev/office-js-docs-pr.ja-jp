@@ -3,16 +3,16 @@ title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートが他の Outlook ホストと比較する方法について説明します。
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 337938b9bb2e8f0e9b9343841a8240e46741eed9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166504"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325462"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Outlook on Mac での outlook アドインのサポートと他の Outlook ホストの比較
 
-Outlook on the web、Windows、iOS、Android などの他のホストと同じ方法で Outlook アドインを作成して実行すると、各ホストの JavaScript をカスタマイズする必要はありません。 JavaScript API for Office へのアドインからの同じ呼び出しは、次の表で説明する領域を除いて、基本的に同じ方法で動作します。
+Outlook on the web、Windows、iOS、Android などの他のホストと同じ方法で Outlook アドインを作成して実行すると、各ホストの JavaScript をカスタマイズする必要はありません。 通常、アドインから Office JavaScript API への同じ呼び出しは、次の表に示す領域を除き、同じように動作します。
 
 詳細については、「[Outlook 2013 プレビューでのテスト用メール アプリの展開とインストール](testing-and-tips.md)」を参照してください。
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Icon 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 45f3dcda8e74430cf70aa765efc6b3aae0e2b448
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f428588aa206b1f38102b04d2f60a016813a48a6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450619"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324856"
 ---
 # <a name="icon-element"></a>Icon 要素
 
@@ -28,7 +28,7 @@ ms.locfileid: "32450619"
 
 ### <a name="image"></a>Image
 
-ボタンの画像。**resid** 属性には、**Resources** 要素の **Images** 要素にある **Image** 要素の [id](resources.md) 属性の値を設定する必要があります。**size** 属性は、画像のサイズをピクセル単位で示します。他に 5 つのサイズ (20、24、40、48、64 ピクセル) がサポートされていますが、3 つの画像のサイズ (16、32、80 ピクセル) を必ず指定します。|
+ボタンの画像です。 **resid** 属性には、[Resources](resources.md) 要素の **Images** 要素にある **Image** 要素の **id** 属性の値を設定する必要があります。 **size** 属性は、画像のサイズをピクセル単位で示します。 他の5つのサイズ (20、24、40、48、および64ピクセル) をサポートしている場合は、3つの画像サイズ (16、32、80ピクセル) を指定する必要があります。 |
 
 ```xml
 <Icon>

@@ -3,12 +3,12 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 86cc260b1a2fcb2a52145781fbcbef14ba5b2c96
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3bf19f56b11b524ea2ee722e2997465bbd36d55c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166483"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324934"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 前の例の続きで、次の JavaScript 関数 `setAddInSetting` は、[RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、[RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。
 
-この **set** メソッドは、指定した設定が存在しない場合は新規に作成し、指定した値を割り当てます。 **saveAsync** メソッドは非同期でローミング設定を保存します。 このコード サンプルでは、コールバック メソッド `saveMyAddInSettingsCallback` を **saveAsync** に渡しています。 非同期の呼び出しが完了すると、`saveMyAddInSettingsCallback` が呼び出され、単一のパラメーター _asyncResult_ が渡されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
+この`set`設定が存在しない場合、メソッドは設定を作成し、指定された値に設定を割り当てます。 メソッド`saveAsync`は、ローミング設定を非同期的に保存します。 このコードサンプル`saveMyAddInSettingsCallback` `saveMyAddInSettingsCallback`は、コールバックメソッドを渡し`saveAsync`ます。非同期呼び出しが完了すると、は1つのパラメーター _asyncResult_を使用して呼び出されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
 
 ```js
 // Set a roaming setting.
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 ローミング設定と同様に、カスタム プロパティに対する変更は現在の Outlook セッションのプロパティのメモリ内コピーに格納されます。これらのカスタム プロパティが次のセッションで使用できるようにするには、[CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-)を使用します。
 
-これらのアドイン固有およびアイテム固有のカスタム プロパティは、**CustomProperties** オブジェクトを使用することによってのみアクセスできます。これらのプロパティは、Outlook オブジェクト モデル内の MAPI ベースのカスタムの [UserProperties](/office/vba/api/Outlook.UserProperties) および Exchange Web サービス (EWS) の拡張プロパティとは異なります。Outlook オブジェクト モデル、EWS、または REST を使用して **CustomProperties** に直接アクセスすることはできません。EWS または REST を使用して **CustomProperties** にアクセスする方法については、「[EWS または REST を使用してカスタム プロパティを取得する](#get-custom-properties-using-ews-or-rest)」のセクションを参照してください。
+これらのアドイン固有のアイテム固有のカスタムプロパティにアクセスするには、その`CustomProperties`オブジェクトを使用する必要があります。 これらのプロパティは、Outlook オブジェクトモデルのカスタム、MAPI ベースの[UserProperties](/office/vba/api/Outlook.UserProperties) 、および Exchange Web サービス (EWS) の拡張プロパティとは異なります。 Outlook オブジェクトモデル、 `CustomProperties` EWS、または REST を使用して直接アクセスすることはできません。 EWS または REST を`CustomProperties`使用してアクセスする方法については、「 [EWS または rest を使用してカスタムプロパティを取得](#get-custom-properties-using-ews-or-rest)する」を参照してください。
 
 ### <a name="using-custom-properties"></a>カスタム プロパティの使用
 
@@ -197,11 +197,11 @@ EWS または REST を使用して **CustomProperties** を取得する場合は
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>アイテムでのカスタム プロパティの格納方法
 
-アドインによって設定されたカスタム プロパティは、標準の MAPI ベースのプロパティとは異なります。 アドイン API はすべてのアドインの **CustomProperties** を JSON ペイロードとしてシリアル化し、次に、`cecp-<app-guid>` という名前 (`<app-guid>` がアドインの ID です) で プロパティ セット GUID が `{00020329-0000-0000-C000-000000000046}` の単一の MAPI ベースの拡張プロパティに保存します。 (このオブジェクトに関する詳細については、「[MS OXCEXT 2.2.5 メール アプリのカスタム プロパティ](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx)」を参照してください。) その後、EWS または REST を使用してこの MAPI ベースのプロパティを取得できます。
+アドインによって設定されたカスタム プロパティは、標準の MAPI ベースのプロパティとは異なります。 アドイン api は、 `CustomProperties`すべてのアドインを JSON ペイロードとしてシリアル化した後、名前が1つの MAPI ベースの拡張プロパティ`cecp-<app-guid>`に`<app-guid>`保存されます。このプロパティは、名前が ([ `{00020329-0000-0000-C000-000000000046}`アドインの ID がである) およびプロパティセット GUID です。 (このオブジェクトに関する詳細については、「[MS OXCEXT 2.2.5 メール アプリのカスタム プロパティ](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx)」を参照してください。) その後、EWS または REST を使用してこの MAPI ベースのプロパティを取得できます。
 
 #### <a name="get-custom-properties-using-ews"></a>EWS を使用してカスタム プロパティを取得する
 
-メールのアドインは、EWS の [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を使用して MAPI ベースの拡張プロパティ **CustomProperties** を取得できます。 サーバー側でコールバック トークンを使用するか、またはクライアント側で [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して **GetItem** にアクセスアクセスします。 **GetItem**要求で、前のセクション「[アイテムでのカスタム プロパティの格納方法](#how-custom-properties-are-stored-on-an-item)」で説明されている詳細を参考にして、プロパティ セットで MAPI ベースの拡張プロパティ **CustomProperties** を指定します。
+メールアドインは、EWS の[GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作`CustomProperties`を使用して MAPI ベースの拡張プロパティを取得できます。 コール`GetItem`バックトークンを使用して、またはクライアント側で、 [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)メソッドを使用してサーバー側でアクセスします。 `GetItem`要求で、前のセクション`CustomProperties`で説明されている詳細を使用して、プロパティセットに MAPI ベースのプロパティを指定します。このセクションに[は、アイテムにカスタムプロパティが格納](#how-custom-properties-are-stored-on-an-item)されます。
 
 次の例では、アイテムとそれのカスタム プロパティを取得する方法を示します。
 

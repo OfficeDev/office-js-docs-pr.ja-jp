@@ -3,16 +3,16 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: ''
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b89e8dffc45eb2a740b5e26373d92cc8cf4bed3e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950881"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323855"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
-この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。 **Chart** オブジェクトと **ChartCollection** オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Chart Object オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.chart)」および「[Chart Collection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、グラフで一般的なタスクを実行する方法を示すコードサンプルを提供します。およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Chart オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.chart) 」および「 [chart Collection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。 `ChartCollection` `Chart`
 
 ## <a name="create-a-chart"></a>グラフの作成
 
@@ -127,7 +127,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 `chart.axes.valueAxis.majorGridlines.visible` を **true** に設定すると、グラフの数値軸の主な枠線を表示できます。
+次のコードサンプルでは、ワークシートの最初のグラフの数値軸の目盛線を非表示にします。グラフの数値軸の目盛線を表示するには、をに`chart.axes.valueAxis.majorGridlines.visible` `true`設定します。
 
 ```js
 Excel.run(function (context) {
@@ -168,7 +168,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
-次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に対して、近似曲線の種類を**線形**に設定しています。
+次のコードサンプルでは、 **sample**と`Linear`いう名前のワークシートの最初のグラフの最初のデータ系列の近似曲線の種類を設定します。
 
 ```js
 Excel.run(function (context) {

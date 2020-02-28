@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインのダイアログボックス作成の基本について説明します。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 18ea221618e2a674266784517be3aa31d029c612
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950664"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324681"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。
 
 - ダイアログ ボックスの現在のページがホスト ページと同じドメインにある。
-- Office JavaScript ライブラリがページに読み込まれている。(Office JavaScript ライブラリを使用するすべてのページと同様に、ページのスクリプトは `Office.initialize` プロパティにメソッドを割り当てる必要があります (空のメソッドでもかまいません)。詳細については、「[アドインの初期化](understanding-the-javascript-api-for-office.md#initializing-your-add-in)」を参照してください。)
+- Office JavaScript API ライブラリがページにロードされます。(Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはメソッドを`Office.initialize`プロパティに割り当てる必要がありますが、空のメソッドにすることもできます。詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。
 
 ダイアログ ボックスのコードは、[messageParent](/javascript/api/office/office.ui#messageparent-message-) 関数を使用して、ブール値または文字列メッセージのいずれかをホスト ページに送信します。 文字列には、単語、文、XML BLOB、文字列に変換された JSON、文字列にシリアル化できるすべてのものを指定できます。 例を次に示します。
 

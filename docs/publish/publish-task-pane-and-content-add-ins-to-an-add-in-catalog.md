@@ -3,12 +3,12 @@ title: 作業ウィンドウ アドインとコンテンツ アドインを Shar
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: fe97cdb1af0cbf75eb6f1d99f81aef430e362c8e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950713"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325306"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 

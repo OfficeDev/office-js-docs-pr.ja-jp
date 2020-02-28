@@ -3,18 +3,18 @@ title: マニフェスト ファイルの FunctionFile 要素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: eec1dc8eb2e099670469af6ef300592fc4a31e64
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450584"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324870"
 ---
 # <a name="functionfile-element"></a>FunctionFile 要素
 
-UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。**FunctionFile** 要素は、[DesktopFormFactor](desktopformfactor.md) または [MobileFormFactor](mobileformfactor.md) の子要素です。**FunctionFile** 要素の **resid** 属性は、HTML ファイルの URL を含む **Resources** 要素内の **Url** 要素の **id** 属性値に設定されます。この HTML ファイルには、[Control 要素](control.md)の定義に従い、UI なしのアドイン コマンド ボタンに使用されるすべての JavaScript 関数が含まれるか、読み込まれます。
+UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。 要素は[Desktopformfactor](desktopformfactor.md)または MobileFormFactor の子要素です。 [](mobileformfactor.md) `FunctionFile` 要素`resid`の`FunctionFile`属性は、要素内の要素`id`の`Url`属性の値に設定されて`Resources`います。この要素には、 [CONTROL 要素](control.md)で定義されているように、UI に含まれないアドインコマンドボタンによって使用されるすべての JavaScript 関数を含む HTML ファイルへの URL が含まれています。
 
-**FunctionFile** 要素の例を次に示します。
+`FunctionFile`要素の例を次に示します。
 
 ```XML
 <DesktopFormFactor>
@@ -28,9 +28,9 @@ UI を表示する代わりに JavaScript 関数を実行するアドイン コ�
 </DesktopFormFactor>
 ```
 
-**FunctionFile** 要素で示される HTML ファイルの JavaScript は、`Office.initialize` を呼び出し、1 つのパラメーター `event` を取る名前付き関数を定義する必要があります。 ユーザーに進捗状況や、成功か失敗かを通知するには、この関数で `item.notificationMessages` API を使用する必要があります。 実行が終了したときに、`event.completed` を呼び出す必要もあります。 関数の名前は、UI なしボタンの **FunctionName** 要素で使用されます。
+`FunctionFile`要素によって示される HTML ファイル内の JavaScript は`Office.initialize` 、1つのパラメーターを取る名前付き関数`event`を呼び出して定義する必要があります。 ユーザーに進捗状況や、成功か失敗かを通知するには、この関数で `item.notificationMessages` API を使用する必要があります。 実行が終了したときに、`event.completed` を呼び出す必要もあります。 関数の名前は、UI のないボタン`FunctionName`の要素として使用されます。
 
-**trackMessage** 関数を定義する HTML ファイルの例を次に示します。
+関数を`trackMessage`定義する HTML ファイルの例を次に示します。
 
 ```js
 Office.initialize = function () {
@@ -45,7 +45,7 @@ function trackMessage (event) {
 }
 ```
 
-次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
+次のコードは、で`FunctionName`使用される関数を実装する方法を示しています。
 
 ```js
 // The initialize function must be run each time a new page is loaded.
@@ -76,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> **event.completed** シグナルに対する呼び出しにより、イベントが正常に処理されたことが通知されます。 同一のアドイン コマンドを複数回クリックするなどの方法で関数を複数回呼び出すと、すべてのイベントは自動的にキューに入れられます。 最初のイベントが自動的に実行され、その他のイベントはキューに残ります。 関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。 そうしないと、関数は実行されません。
+> この呼び出しは`event.completed` 、イベントが正常に処理されたことを通知します。 同一のアドイン コマンドを複数回クリックするなど、関数を複数回呼び出すと、すべてのイベントが自動的にキューに入れられます。 最初のイベントが自動的に実行され、その他のイベントはキューに残ります。 関数が呼び出さ`event.completed`れると、次にキューに入れられた関数の呼び出しが実行されます。 を呼び出す`event.completed`必要があります。それ以外の場合、関数は実行されません。

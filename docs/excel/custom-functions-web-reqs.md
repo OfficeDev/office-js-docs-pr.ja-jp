@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: c59133389311721c4d0507337a17b346af97e690
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949713"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323834"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -27,7 +27,7 @@ ms.locfileid: "41949713"
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-次のコードサンプルでは、 **webRequest** 関数が Contoso の仮想 API "宇宙にいる人数" にアクセスしています。これは、国際宇宙ステーションに現在どれくらい人数がいるかを追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
+次のコードサンプルでは、 `webRequest`関数は、"スペースがあります" という名前の "API" に到達します。これは、現在、国際宇宙ステーションにいるユーザーの数を追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
 
 独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](./custom-functions-batching.md)を検討してください。
 
@@ -60,7 +60,7 @@ function webRequest() {
 
 単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが、 `application/x-www-form-urlencoded`、 `text/plain`、または `multipart/form-data`の単純な CORS のコンテンツ タイプ ヘッダーを使う事もできます。
 
-次のコードサンプルでは、**getStarCount** 関数が Github API を呼び出して、特定のユーザーのリポジトリに付与されている星の数を調べます。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
+次のコードサンプルでは、 `getStarCount`この関数は Github API を呼び出して、特定のユーザーのリポジトリに与えられた星の量を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
 
 ```TS
 /**

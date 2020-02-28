@@ -3,20 +3,20 @@ title: マニフェスト ファイルの CustomTab 要素
 description: ''
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: c48e526534a3c1295e9c3f0c6fc626df94a874d3
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41554014"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323806"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
-リボン上で、アドイン コマンドに使用するタブとグループを指定します。これは既定のタブ (**[ホーム]**、**[メッセージ]**、または **[会議]** のいずれか) か、アドインで定義されたカスタム タブになります。
+リボン上で、アドイン コマンドに使用するタブとグループを指定します。 これは既定のタブ ([**ホーム**]、[**メッセージ**]、[**会議**] のいずれか)、またはアドインで定義されたカスタム タブになります。
 
 カスタム タブで、アドインは最大 10 個のグループを作成できます。各グループのコントロールは、コントロールが表示されるタブに関係なく、6 個に制限されています。アドインは、カスタム タブ 1 つに制限されています。
 
-**id** 属性はマニフェスト内で一意でなければなりません。
+**Id**属性はマニフェスト内で一意である必要があります。
 
 > [!IMPORTANT]
 > Mac 上の Outlook では`CustomTab` 、要素を使用できないため、代わりに[[officetab タブ](officetab.md)を使用する必要があります。
@@ -34,7 +34,7 @@ ms.locfileid: "41554014"
 
 ### <a name="label-tab"></a>Label (タブ)
 
-必須。カスタム タブのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある **String** 要素の [id](resources.md) 属性の値を設定する必要があります。
+必須です。 ユーザー設定のタブのラベルを示します。**Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
 
 
 ## <a name="customtab-example"></a>CustomTab の例

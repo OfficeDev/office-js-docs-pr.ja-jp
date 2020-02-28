@@ -3,12 +3,12 @@ title: PowerPoint アドインでドキュメント テーマを使用する
 description: ''
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 83b4c2192ba3c01deedfe69a8338265fbf7eaf53
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627007"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324920"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
@@ -26,7 +26,7 @@ OfficeThemes.css を使用すると、次の 2 つの方法でアドインを Po
 
 ![カラー パレット](../images/office15-app-color-palette.png)
 
-PowerPoint でテーマの 12 色をすべて表示したりカスタマイズしたりするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他**] ドロップダウンをクリックしてから、[**色**]  >  [**色のカスタマイズ**] の順に選択して [**新しいテーマの色の作成**] ダイアログ ボックスを表示します。
+PowerPoint の12色のテーマのフルセットを表示またはカスタマイズするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他**] ドロップダウンをクリックし、 **[色の** > **カスタマイズ**] を選択して、[**新しいテーマの色の作成**] ダイアログボックスを表示します。
 
 ![新しいテーマの色のダイアログ ボックスの作成](../images/office15-app-create-new-theme-colors.png)
 
@@ -34,17 +34,17 @@ PowerPoint でテーマの 12 色をすべて表示したりカスタマイズ�
 
 ### <a name="document-theme-fonts"></a>文書のテーマのフォント
 
-すべての Office 文書のテーマには 2 つのフォント (見出し用と本文テキスト用) も定義されています。PowerPoint はこれらのフォントを使用して自動的にテキスト スタイルを構成します。また、テキストと**ワードアート**の**クイック スタイル** ギャラリーでも同じテーマのフォントを使います。これらの 2 つのフォントは、フォント ピッカーを使用してフォントを選択するときに、最初の 2 つの選択項目として利用できます。
+すべての Office 文書のテーマには 2 つのフォント (見出し用と本文テキスト用) も定義されています。 PowerPoint はこれらのフォントを使用して自動的にテキスト スタイルを構成します。 また、テキストと**ワードアート**の**クイック スタイル** ギャラリーでも同じフォントが使用されます。 これらの 2 つのフォントは、フォント ピッカーを使用してフォントを選択するときに、最初の 2 つの選択項目として利用できます。
 
 ![フォント ピッカー](../images/office15-app-font-picker.png)
 
-PowerPoint でテーマを表示したりカスタマイズしたりするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他**] ドロップダウンをクリックしてから、[**フォント**]  >  [**フォントのカスタマイズ**] の順に選択して [**新しいテーマのフォント パターンの作成**] ダイアログ ボックスを表示します。
+PowerPoint でテーマのフォントを表示またはカスタマイズするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他** **] をクリック** > し、[フォントの**カスタマイズ**] を選択して [**新しいテーマのフォントの作成**] ダイアログボックスを表示します。
 
 ![新しいテーマのフォントのダイアログ ボックスの作成](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office の UI のテーマのフォントと色
 
-Office では、すべての Office アプリケーションの UI で使用される色とフォントの一部を指定している複数の事前定義済みのテーマの中から選択することもできます。そのためには、[ **ファイル**]  >  [ **アカウント**]  >  [ **Office テーマ**] ドロップダウンを (Office アプリケーションから) 使用します。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. これを行うには、**ファイル** > **アカウント** > の**office テーマ**ドロップダウンを使用します (任意の office アプリケーションから)。
 
 ![Office テーマ ドロップ ダウン](../images/office15-app-office-theme-picker.png)
 
@@ -143,11 +143,11 @@ Visual Studio でこの作業を行うには、次の手順に従ってくださ
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>PowerPoint 用アドイン内で OfficeThemes.css を参照するには
 
-1. [**新しいプロジェクトを作成する**] を選択します。
+1. [**新規プロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、[**アドイン**] を入力します。 [ **PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+2. 検索ボックスを使用して、**アドイン**と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに名前を指定し、[**作成**] を選択します。
+3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 3. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
@@ -180,7 +180,7 @@ OfficeTheme.css 文書テーマ クラスを使用するコンテンツ アド�
 </body>
 ```
 
-実行時に、既定の **Office テーマ**を使用するプレゼンテーションにコンテンツ アドインを挿入すると、次のように表示されます。
+実行時に、既定の**Office テーマ**を使用するプレゼンテーションにコンテンツアドインを挿入すると、次のように表示されます。
 
 ![Office のテーマを使用して実行しているコンテンツ アプリ](../images/office15-app-content-app-office-theme.png)
 
