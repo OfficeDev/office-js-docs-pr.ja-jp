@@ -3,65 +3,66 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 10eb66c224a7c40346669d630d4316f300d55dcc
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353903"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324723"
 ---
-# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="c3f19-102">辞書の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="c3f19-102">Create a dictionary task pane add-in</span></span>
+# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="f8098-102">辞書の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="f8098-102">Create a dictionary task pane add-in</span></span>
 
 
-<span data-ttu-id="c3f19-103">この記事では、例として、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の同意語を表示する作業ウィンドウ アドインと、それに付随する Web サービスについて取り上げます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-103">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
+<span data-ttu-id="f8098-103">この記事では、例として、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の同意語を表示する作業ウィンドウ アドインと、それに付随する Web サービスについて取り上げます。</span><span class="sxs-lookup"><span data-stu-id="f8098-103">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
 
-<span data-ttu-id="c3f19-104">辞書の Office アドインは、標準的な作業ウィンドウ アドインを基盤として、辞書の XML Web サービスに対するクエリの機能と、取得した定義を Office アプリケーションの UI 上の別の場所に表示する機能が追加されたものです。</span><span class="sxs-lookup"><span data-stu-id="c3f19-104">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
+<span data-ttu-id="f8098-104">辞書の Office アドインは、標準的な作業ウィンドウ アドインを基盤として、辞書の XML Web サービスに対するクエリの機能と、取得した定義を Office アプリケーションの UI 上の別の場所に表示する機能が追加されたものです。</span><span class="sxs-lookup"><span data-stu-id="f8098-104">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
 
-<span data-ttu-id="c3f19-p101">一般的な辞書作業ウィンドウ アドインで、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
+<span data-ttu-id="f8098-p101">一般的な辞書作業ウィンドウ アドインで、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。</span><span class="sxs-lookup"><span data-stu-id="f8098-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
 
-<span data-ttu-id="c3f19-109">*図 1. 選択した語句の定義を表示する辞書アドイン*</span><span class="sxs-lookup"><span data-stu-id="c3f19-109">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
+<span data-ttu-id="f8098-109">*図 1. 選択した語句の定義を表示する辞書アドイン*</span><span class="sxs-lookup"><span data-stu-id="f8098-109">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
 
 ![定義が表示されている辞書アプリ](../images/dictionary-agave-01.jpg)
 
-<span data-ttu-id="c3f19-p102">辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p102">It is up to you to determine if clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase. Figure 2 shows the  **Define** context menu command that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
+<span data-ttu-id="f8098-111">辞書アドインの HTML UI で [**詳細表示**] リンクをクリックすると、作業ウィンドウに詳細情報が表示されるか、または、選択した単語または語句の全 web ページに対して個別のブラウザーウィンドウが開かれるかどうかを判断することができます。</span><span class="sxs-lookup"><span data-stu-id="f8098-111">It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.</span></span>
+<span data-ttu-id="f8098-112">図 2 は、ユーザーがインストール済みの辞書をすばやく起動するために使用できる、コンテキスト メニューの [**Define**] コマンドです。</span><span class="sxs-lookup"><span data-stu-id="f8098-112">Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries.</span></span> <span data-ttu-id="f8098-113">図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。</span><span class="sxs-lookup"><span data-stu-id="f8098-113">Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
 
-<span data-ttu-id="c3f19-114">*図 2. コンテキスト メニューの定義コマンド*</span><span class="sxs-lookup"><span data-stu-id="c3f19-114">*Figure 2. Define command in the context menu*</span></span>
+<span data-ttu-id="f8098-114">*図 2. コンテキスト メニューの定義コマンド*</span><span class="sxs-lookup"><span data-stu-id="f8098-114">*Figure 2. Define command in the context menu*</span></span>
 
 ![コンテキスト メニューの定義](../images/dictionary-agave-02.jpg)
 
 
-<span data-ttu-id="c3f19-116">*図 3. スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示*</span><span class="sxs-lookup"><span data-stu-id="c3f19-116">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
+<span data-ttu-id="f8098-116">*図 3. スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示*</span><span class="sxs-lookup"><span data-stu-id="f8098-116">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
 
 ![スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示](../images/dictionary-agave-03.jpg)
 
 
-<span data-ttu-id="c3f19-118">*図 4. 類義語辞典ウィンドウでの定義の表示*</span><span class="sxs-lookup"><span data-stu-id="c3f19-118">*Figure 4. Definitions in the Thesaurus pane*</span></span>
+<span data-ttu-id="f8098-118">*図 4. 類義語辞典ウィンドウでの定義の表示*</span><span class="sxs-lookup"><span data-stu-id="f8098-118">*Figure 4. Definitions in the Thesaurus pane*</span></span>
 
 ![類義語辞典ウィンドウでの定義の表示](../images/dictionary-agave-04.jpg)
 
 
-<span data-ttu-id="c3f19-120">*図 5. 読み取りモードでの定義*</span><span class="sxs-lookup"><span data-stu-id="c3f19-120">*Figure 5. Definitions in Reading Mode*</span></span>
+<span data-ttu-id="f8098-120">*図 5. 読み取りモードでの定義*</span><span class="sxs-lookup"><span data-stu-id="f8098-120">*Figure 5. Definitions in Reading Mode*</span></span>
 
 ![読み取りモードでの定義](../images/dictionary-agave-05.jpg)
 
-<span data-ttu-id="c3f19-122">辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-122">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
+<span data-ttu-id="f8098-122">辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。</span><span class="sxs-lookup"><span data-stu-id="f8098-122">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
 
 
-- <span data-ttu-id="c3f19-123">XML Web サービス。辞書サービスで定義を検索し、辞書アドインが利用および表示できる XML 形式でその定義を返します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-123">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
+- <span data-ttu-id="f8098-123">XML Web サービス。辞書サービスで定義を検索し、辞書アドインが利用および表示できる XML 形式でその定義を返します。</span><span class="sxs-lookup"><span data-stu-id="f8098-123">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
     
-- <span data-ttu-id="c3f19-124">作業ウィンドウ アドイン。ユーザーの現在の選択範囲を辞書の Web サービスに送信し、定義を表示します。必要に応じてその値をドキュメントに挿入することもできます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-124">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
+- <span data-ttu-id="f8098-124">作業ウィンドウ アドイン。ユーザーの現在の選択範囲を辞書の Web サービスに送信し、定義を表示します。必要に応じてその値をドキュメントに挿入することもできます。</span><span class="sxs-lookup"><span data-stu-id="f8098-124">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
     
-<span data-ttu-id="c3f19-125">以下のセクションでは、これらのコンポーネントの作成方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-125">The following sections provide examples of how to create these components.</span></span>
+<span data-ttu-id="f8098-125">以下のセクションでは、これらのコンポーネントの作成方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="f8098-125">The following sections provide examples of how to create these components.</span></span>
 
-## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="c3f19-126">辞書の XML Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="c3f19-126">Creating a dictionary XML web service</span></span>
-
-
-<span data-ttu-id="c3f19-p103">XML Web サービスでは、クエリを OfficeDefinitions XML スキーマに準拠した XML で Web サービスに返す必要があります。以下の 2 つのセクションでは、OfficeDefinitions XML スキーマについて説明し、この XML 形式でクエリを返す XML Web サービスのコーディング方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
+## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="f8098-126">辞書の XML Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="f8098-126">Creating a dictionary XML web service</span></span>
 
 
-### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="c3f19-129">OfficeDefinitions XML スキーマ</span><span class="sxs-lookup"><span data-stu-id="c3f19-129">OfficeDefinitions XML schema</span></span>
+<span data-ttu-id="f8098-p103">XML Web サービスでは、クエリを OfficeDefinitions XML スキーマに準拠した XML で Web サービスに返す必要があります。以下の 2 つのセクションでは、OfficeDefinitions XML スキーマについて説明し、この XML 形式でクエリを返す XML Web サービスのコーディング方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="f8098-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
 
-<span data-ttu-id="c3f19-130">次のコードは、OfficeDefinitions XML スキーマの XSD を示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-130">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
+
+### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="f8098-129">OfficeDefinitions XML スキーマ</span><span class="sxs-lookup"><span data-stu-id="f8098-129">OfficeDefinitions XML schema</span></span>
+
+<span data-ttu-id="f8098-130">次のコードは、OfficeDefinitions XML スキーマの XSD を示します。</span><span class="sxs-lookup"><span data-stu-id="f8098-130">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
 
 
 ```XML
@@ -93,7 +94,7 @@ ms.locfileid: "37353903"
 </xs:schema>
 ```
 
-<span data-ttu-id="c3f19-p104">OfficeDefinitions スキーマに準拠した XML では、ルートの **Result** 要素の中に **Definitions** 要素を 1 個記述し、その子要素として 0 から 3 個の **Definition** 要素に定義を記述して返します。それぞれの定義は最大 400 文字です。また、辞書サイトの結果ページの URL を **SeeMoreURL** 要素で指定する必要があります。次の例は、OfficeDefinitions スキーマに準拠して返す XML の構造を示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p104">Returned XML that conforms to the OfficeDefinitions schema consists of a root  **Result** element that contains a **Definitions** element with from zero to three **Definition** child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **SeeMoreURL** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
+<span data-ttu-id="f8098-131">OfficeDefinitions スキーマに準拠する返された XML は、0 `Result` ~ 3 個`Definition`の`Definitions`子要素から成る要素を含むルート要素で構成されています。各要素には、長さが400文字を超えない定義が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f8098-131">Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length.</span></span> <span data-ttu-id="f8098-132">さらに、辞書サイトの完全なページの URL を`SeeMoreURL`要素で指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8098-132">Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element.</span></span> <span data-ttu-id="f8098-133">次の例は、OfficeDefinitions スキーマに準拠した、返された XML の構造を示しています。</span><span class="sxs-lookup"><span data-stu-id="f8098-133">The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,9 +110,9 @@ ms.locfileid: "37353903"
 ```
 
 
-### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="c3f19-134">辞書の XML Web サービスのサンプル</span><span class="sxs-lookup"><span data-stu-id="c3f19-134">Sample dictionary XML web service</span></span>
+### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="f8098-134">辞書の XML Web サービスのサンプル</span><span class="sxs-lookup"><span data-stu-id="f8098-134">Sample dictionary XML web service</span></span>
 
-<span data-ttu-id="c3f19-135">次の C# コードは、辞書クエリの結果を OfficeDefinitions XML 形式で返す XML Web サービスのコードの簡単な作成例です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-135">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
+<span data-ttu-id="f8098-135">次の C# コードは、辞書クエリの結果を OfficeDefinitions XML 形式で返す XML Web サービスのコードの簡単な作成例です。</span><span class="sxs-lookup"><span data-stu-id="f8098-135">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
 
 
 ```cs
@@ -181,22 +182,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="c3f19-136">辞書アドインのコンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="c3f19-136">Creating the components of a dictionary add-in</span></span>
+## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="f8098-136">辞書アドインのコンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="f8098-136">Creating the components of a dictionary add-in</span></span>
 
 
-<span data-ttu-id="c3f19-137">辞書アドインは 3 つの主要なコンポーネント ファイルで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-137">A dictionary add-in consists of three main component files:</span></span>
+<span data-ttu-id="f8098-137">辞書アドインは 3 つの主要なコンポーネント ファイルで構成されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-137">A dictionary add-in consists of three main component files:</span></span>
 
 
-- <span data-ttu-id="c3f19-138">アドインについての情報を記述した XML マニフェスト ファイル。</span><span class="sxs-lookup"><span data-stu-id="c3f19-138">An XML manifest file that describes the add-in.</span></span>
+- <span data-ttu-id="f8098-138">アドインについての情報を記述した XML マニフェスト ファイル。</span><span class="sxs-lookup"><span data-stu-id="f8098-138">An XML manifest file that describes the add-in.</span></span>
     
-- <span data-ttu-id="c3f19-139">アドインの UI を記述した HTML ファイル</span><span class="sxs-lookup"><span data-stu-id="c3f19-139">An HTML file that provides the add-in's UI.</span></span>
+- <span data-ttu-id="f8098-139">アドインの UI を記述した HTML ファイル</span><span class="sxs-lookup"><span data-stu-id="f8098-139">An HTML file that provides the add-in's UI.</span></span>
     
-- <span data-ttu-id="c3f19-140">ユーザーの選択範囲をドキュメントから取得し、選択範囲をクエリとして Web サービスに送信し、返された結果をアドインの UI に表示するロジックを記述した JavaScript ファイル。</span><span class="sxs-lookup"><span data-stu-id="c3f19-140">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
+- <span data-ttu-id="f8098-140">ユーザーの選択範囲をドキュメントから取得し、選択範囲をクエリとして Web サービスに送信し、返された結果をアドインの UI に表示するロジックを記述した JavaScript ファイル。</span><span class="sxs-lookup"><span data-stu-id="f8098-140">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
     
 
-### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="c3f19-141">辞書アドインのマニフェスト ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="c3f19-141">Creating a dictionary add-in's manifest file</span></span>
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="f8098-141">辞書アドインのマニフェスト ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="f8098-141">Creating a dictionary add-in's manifest file</span></span>
 
-<span data-ttu-id="c3f19-142">辞書アドインのマニフェスト ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-142">The following is an example manifest file for a dictionary add-in.</span></span>
+<span data-ttu-id="f8098-142">辞書アドインのマニフェスト ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f8098-142">The following is an example manifest file for a dictionary add-in.</span></span>
 
 
 ```XML
@@ -257,45 +258,45 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-<span data-ttu-id="c3f19-p105">辞書アドインのマニフェスト ファイルの作成に固有の **Dictionary** 要素とその子要素については、以下のセクションで説明します。マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p105">The  **Dictionary** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="f8098-143">次`Dictionary`のセクションでは、辞書アドインのマニフェストファイルの作成に固有の要素とその子要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="f8098-143">The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections.</span></span> <span data-ttu-id="f8098-144">マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f8098-144">For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
 
-### <a name="dictionary-element"></a><span data-ttu-id="c3f19-145">Dictionary 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-145">Dictionary element</span></span>
+### <a name="dictionary-element"></a><span data-ttu-id="f8098-145">Dictionary 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-145">Dictionary element</span></span>
 
 
-<span data-ttu-id="c3f19-146">辞書アドインの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-146">Specifies settings for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-146">辞書アドインの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="f8098-146">Specifies settings for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-147">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-147">**Parent element**</span></span>
+ <span data-ttu-id="f8098-147">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-147">**Parent element**</span></span>
 
  `<OfficeApp>`
 
- <span data-ttu-id="c3f19-148">**子要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-148">**Child elements**</span></span>
+ <span data-ttu-id="f8098-148">**子要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-148">**Child elements**</span></span>
 
- <span data-ttu-id="c3f19-149">`<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="c3f19-149"></span></span>
+ <span data-ttu-id="f8098-149">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="f8098-149">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span></span>
 
- <span data-ttu-id="c3f19-150">**注釈**</span><span class="sxs-lookup"><span data-stu-id="c3f19-150">**Remarks**</span></span>
+ <span data-ttu-id="f8098-150">**注釈**</span><span class="sxs-lookup"><span data-stu-id="f8098-150">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-151">**Dictionary** 要素とその子要素は、辞書アドインを作成するときに作業ウィンドウ アドインのマニフェストに追加されます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-151">The  **Dictionary** element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
-
-
-#### <a name="targetdialects-element"></a><span data-ttu-id="c3f19-152">TargetDialects 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-152">TargetDialects element</span></span>
+<span data-ttu-id="f8098-151">要素`Dictionary`とその子要素は、辞書アドインを作成するときに作業ウィンドウアドインのマニフェストに追加されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-151">The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
 
 
-<span data-ttu-id="c3f19-p106">この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+#### <a name="targetdialects-element"></a><span data-ttu-id="f8098-152">TargetDialects 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-152">TargetDialects element</span></span>
 
- <span data-ttu-id="c3f19-155">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-155">**Parent element**</span></span>
+
+<span data-ttu-id="f8098-p106">この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+
+ <span data-ttu-id="f8098-155">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-155">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c3f19-156">**子要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-156">**Child element**</span></span>
+ <span data-ttu-id="f8098-156">**子要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-156">**Child element**</span></span>
 
  `<TargetDialect>`
 
- <span data-ttu-id="c3f19-157">**注釈**</span><span class="sxs-lookup"><span data-stu-id="c3f19-157">**Remarks**</span></span>
+ <span data-ttu-id="f8098-157">**注釈**</span><span class="sxs-lookup"><span data-stu-id="f8098-157">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-p107">**TargetDialects** 要素とその子要素は、辞書に含める地域言語のセットを指定します。たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。異なる言語は、別の辞書として発行してください。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p107">The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.</span></span>
+<span data-ttu-id="f8098-158">要素`TargetDialects`とその子要素は、辞書に含まれている地域の言語のセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="f8098-158">The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains.</span></span> <span data-ttu-id="f8098-159">たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="f8098-159">For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element.</span></span> <span data-ttu-id="f8098-160">このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="f8098-160">Do not specify more than one language (e.g., Spanish and English) in this manifest.</span></span> <span data-ttu-id="f8098-161">異なる言語は、別の辞書として発行してください。</span><span class="sxs-lookup"><span data-stu-id="f8098-161">Publish separate languages as separate dictionaries.</span></span>
 
- <span data-ttu-id="c3f19-162">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-162">**Example**</span></span>
+ <span data-ttu-id="f8098-162">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-162">**Example**</span></span>
 
 ```XML
 <TargetDialects>
@@ -321,20 +322,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="targetdialect-element"></a><span data-ttu-id="c3f19-163">TargetDialect 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-163">TargetDialect element</span></span>
+#### <a name="targetdialect-element"></a><span data-ttu-id="f8098-163">TargetDialect 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-163">TargetDialect element</span></span>
 
 
-<span data-ttu-id="c3f19-p108">この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-p108">この辞書がサポートする地域言語を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-166">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-166">**Parent element**</span></span>
+ <span data-ttu-id="f8098-166">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-166">**Parent element**</span></span>
 
  `<TargetDialects>`
 
- <span data-ttu-id="c3f19-167">**解説**</span><span class="sxs-lookup"><span data-stu-id="c3f19-167">**Remarks**</span></span>
+ <span data-ttu-id="f8098-167">**解説**</span><span class="sxs-lookup"><span data-stu-id="f8098-167">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-168">RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-168">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
+<span data-ttu-id="f8098-168">RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="f8098-168">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
 
- <span data-ttu-id="c3f19-169">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-169">**Example**</span></span>
+ <span data-ttu-id="f8098-169">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-169">**Example**</span></span>
 
 
 ```XML
@@ -342,20 +343,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="queryuri-element"></a><span data-ttu-id="c3f19-170">QueryUri 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-170">QueryUri element</span></span>
+#### <a name="queryuri-element"></a><span data-ttu-id="f8098-170">QueryUri 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-170">QueryUri element</span></span>
 
 
-<span data-ttu-id="c3f19-p109">辞書のクエリ サービスのエンドポイントを指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-p109">辞書のクエリ サービスのエンドポイントを指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-173">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-173">**Parent element**</span></span>
+ <span data-ttu-id="f8098-173">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-173">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c3f19-174">**解説**</span><span class="sxs-lookup"><span data-stu-id="c3f19-174">**Remarks**</span></span>
+ <span data-ttu-id="f8098-174">**解説**</span><span class="sxs-lookup"><span data-stu-id="f8098-174">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-p110">これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
+<span data-ttu-id="f8098-p110">これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
 
- <span data-ttu-id="c3f19-177">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-177">**Example**</span></span>
+ <span data-ttu-id="f8098-177">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-177">**Example**</span></span>
 
 
 ```XML
@@ -363,22 +364,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="citationtext-element"></a><span data-ttu-id="c3f19-178">CitationText 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-178">CitationText element</span></span>
+#### <a name="citationtext-element"></a><span data-ttu-id="f8098-178">CitationText 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-178">CitationText element</span></span>
 
 
-<span data-ttu-id="c3f19-p111">引用で使用するテキストを指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-p111">引用で使用するテキストを指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-181">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-181">**Parent element**</span></span>
+ <span data-ttu-id="f8098-181">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-181">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c3f19-182">**解説**</span><span class="sxs-lookup"><span data-stu-id="c3f19-182">**Remarks**</span></span>
+ <span data-ttu-id="f8098-182">**解説**</span><span class="sxs-lookup"><span data-stu-id="f8098-182">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-183">この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。</span><span class="sxs-lookup"><span data-stu-id="c3f19-183">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
+<span data-ttu-id="f8098-183">この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。</span><span class="sxs-lookup"><span data-stu-id="f8098-183">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
 
-<span data-ttu-id="c3f19-p112">この要素では、**Override** 要素を使用して、別のロケールに対応する値を指定できます。たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p112">For this element, you can specify values for additional locales by using the  **Override** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="f8098-184">この要素では、 `Override`要素を使用して追加のロケールの値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="f8098-184">For this element, you can specify values for additional locales by using the `Override` element.</span></span> <span data-ttu-id="f8098-185">たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。</span><span class="sxs-lookup"><span data-stu-id="f8098-185">For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing".</span></span> <span data-ttu-id="f8098-186">別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f8098-186">For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
- <span data-ttu-id="c3f19-187">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-187">**Example**</span></span>
+ <span data-ttu-id="f8098-187">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-187">**Example**</span></span>
 
 
 ```XML
@@ -386,44 +387,44 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="dictionaryname-element"></a><span data-ttu-id="c3f19-188">DictionaryName 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-188">DictionaryName element</span></span>
+#### <a name="dictionaryname-element"></a><span data-ttu-id="f8098-188">DictionaryName 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-188">DictionaryName element</span></span>
 
 
-<span data-ttu-id="c3f19-p113">この辞書の名前を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-p113">この辞書の名前を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-191">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-191">**Parent element**</span></span>
+ <span data-ttu-id="f8098-191">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-191">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c3f19-192">**解説**</span><span class="sxs-lookup"><span data-stu-id="c3f19-192">**Remarks**</span></span>
+ <span data-ttu-id="f8098-192">**解説**</span><span class="sxs-lookup"><span data-stu-id="f8098-192">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-p114">この要素では、引用テキスト内のリンク テキストを指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="f8098-p114">この要素では、引用テキスト内のリンク テキストを指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="c3f19-195">この要素では、別のロケールに対応する値も指定できます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-195">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="f8098-195">この要素では、別のロケールに対応する値も指定できます。</span><span class="sxs-lookup"><span data-stu-id="f8098-195">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="c3f19-196">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-196">**Example**</span></span>
+ <span data-ttu-id="f8098-196">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-196">**Example**</span></span>
 
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
 
-#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="c3f19-197">DictionaryHomePage 要素</span><span class="sxs-lookup"><span data-stu-id="c3f19-197">DictionaryHomePage element</span></span>
+#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="f8098-197">DictionaryHomePage 要素</span><span class="sxs-lookup"><span data-stu-id="f8098-197">DictionaryHomePage element</span></span>
 
 
-<span data-ttu-id="c3f19-p115">辞書のホーム ページの URL を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="f8098-p115">辞書のホーム ページの URL を指定します。辞書アドインでは必須です。</span><span class="sxs-lookup"><span data-stu-id="f8098-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c3f19-200">**親要素**</span><span class="sxs-lookup"><span data-stu-id="c3f19-200">**Parent element**</span></span>
+ <span data-ttu-id="f8098-200">**親要素**</span><span class="sxs-lookup"><span data-stu-id="f8098-200">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c3f19-201">**解説**</span><span class="sxs-lookup"><span data-stu-id="c3f19-201">**Remarks**</span></span>
+ <span data-ttu-id="f8098-201">**解説**</span><span class="sxs-lookup"><span data-stu-id="f8098-201">**Remarks**</span></span>
 
-<span data-ttu-id="c3f19-p116">この要素では、引用テキスト内のリンクの URL を指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="f8098-p116">この要素では、引用テキスト内のリンクの URL を指定します。引用テキストは、Web サービスから返されたコンテンツの下の行に表示されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="c3f19-204">この要素では、別のロケールに対応する値も指定できます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-204">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="f8098-204">この要素では、別のロケールに対応する値も指定できます。</span><span class="sxs-lookup"><span data-stu-id="f8098-204">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="c3f19-205">**例**</span><span class="sxs-lookup"><span data-stu-id="c3f19-205">**Example**</span></span>
+ <span data-ttu-id="f8098-205">**例**</span><span class="sxs-lookup"><span data-stu-id="f8098-205">**Example**</span></span>
 
 
 ```XML
@@ -431,9 +432,9 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="c3f19-206">辞書アドインの HTML ユーザー インターフェイスの作成</span><span class="sxs-lookup"><span data-stu-id="c3f19-206">Creating a dictionary add-in's HTML user interface</span></span>
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="f8098-206">辞書アドインの HTML ユーザー インターフェイスの作成</span><span class="sxs-lookup"><span data-stu-id="f8098-206">Creating a dictionary add-in's HTML user interface</span></span>
 
-<span data-ttu-id="c3f19-p117">次の 2 つの例は、デモの辞書アドインの UI の HTML ファイルと CSS ファイルを示します。アドインの作業ウィンドウでの UI の表示については、コードの下の図 6 を参照してください。Dictionary.js ファイル内の JavaScript の実装でこの HTML の UI のプログラミング ロジックを実現する方法については、次の「JavaScript の実装の記述」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
+<span data-ttu-id="f8098-p117">次の 2 つの例は、デモの辞書アドインの UI の HTML ファイルと CSS ファイルを示します。アドインの作業ウィンドウでの UI の表示については、コードの下の図 6 を参照してください。Dictionary.js ファイル内の JavaScript の実装でこの HTML の UI のプログラミング ロジックを実現する方法については、次の「JavaScript の実装の記述」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f8098-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
 
 ```HTML
 <!DOCTYPE html>
@@ -474,7 +475,7 @@ public class WebService : System.Web.Services.WebService {
 </html>
 ```
 
-<span data-ttu-id="c3f19-210">次の例は Style.css の内容を示しています。</span><span class="sxs-lookup"><span data-stu-id="c3f19-210">The following example shows the contents of Style.css.</span></span>
+<span data-ttu-id="f8098-210">次の例は Style.css の内容を示しています。</span><span class="sxs-lookup"><span data-stu-id="f8098-210">The following example shows the contents of Style.css.</span></span>
 
 ```CSS
 #mainContainer
@@ -515,30 +516,30 @@ a:hover, a:active
 }
 ```
 
-<span data-ttu-id="c3f19-211">*図 6. 辞書 UI のデモ*</span><span class="sxs-lookup"><span data-stu-id="c3f19-211">*Figure 6. Demo dictionary UI*</span></span>
+<span data-ttu-id="f8098-211">*図 6. 辞書 UI のデモ*</span><span class="sxs-lookup"><span data-stu-id="f8098-211">*Figure 6. Demo dictionary UI*</span></span>
 
 ![辞書 UI のデモ](../images/dictionary-agave-06.jpg)
 
 
-### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="c3f19-213">JavaScript の実装の記述</span><span class="sxs-lookup"><span data-stu-id="c3f19-213">Writing the JavaScript implementation</span></span>
+### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="f8098-213">JavaScript の実装の記述</span><span class="sxs-lookup"><span data-stu-id="f8098-213">Writing the JavaScript implementation</span></span>
 
 
-<span data-ttu-id="c3f19-p118">次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。 このスクリプトでは、上で説明した XML Web サービスを再利用しています。 例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されます このスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
+<span data-ttu-id="f8098-p118">次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。 このスクリプトでは、上で説明した XML Web サービスを再利用しています。 例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されます このスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="f8098-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
 
-<span data-ttu-id="c3f19-218">この実装で呼び出している JavaScript API for Office (Office.js) の主なメンバーを次に示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-218">The primary members of the JavaScript API for Office (Office.js) that are called from this implementation are as follows:</span></span>
+<span data-ttu-id="f8098-218">この実装から呼び出される Office JavaScript API (Office .js) のプライマリメンバーは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="f8098-218">The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:</span></span>
 
 
-- <span data-ttu-id="c3f19-219">[Office](/javascript/api/office) オブジェクトの **initialize** イベント。これは、アドイン コンテキストの初期化時に発生し、アドインの対象のドキュメントを表す [Document](/javascript/api/office/office.document) オブジェクトのインスタンスへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-219">The [initialize](/javascript/api/office) event of the **Office** object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
+- <span data-ttu-id="f8098-219">オブジェクトの initialize イベント。アドインコンテキストが初期化されたときに発生し、アドインが対話するドキュメントを表す[ドキュメント](/javascript/api/office/office.document)オブジェクトインスタンスへのアクセスを提供します。 [](/javascript/api/office) `Office`</span><span class="sxs-lookup"><span data-stu-id="f8098-219">The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
     
-- <span data-ttu-id="c3f19-220">[Document](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) オブジェクトの **addHandlerAsync** メソッド。これは **initialize** 関数で呼び出されて、ドキュメントの [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加して、ユーザーの選択範囲の変更をリッスンします。</span><span class="sxs-lookup"><span data-stu-id="c3f19-220">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the **Document** object, which is called in the **initialize** function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
+- <span data-ttu-id="f8098-220">オブジェクトの[Addhandler async](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) `initialize`メソッド。これは、関数で呼び出されて、ドキュメントの[selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加し、ユーザーの選択範囲の変更をリッスンします。 `Document`</span><span class="sxs-lookup"><span data-stu-id="f8098-220">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
     
-- <span data-ttu-id="c3f19-221">[Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) オブジェクトの **getSelectedDataAsync** メソッド。これは、`tryUpdatingSelectedWord()` イベント ハンドラーの発生時に \*\*\*\* 関数で呼び出されて、ユーザーが選択した語句の取得、プレーン テキストへの変換、および非同期コールバック関数 `selectedTextCallback` を実行します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-221">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the **Document** object, which is called in the `tryUpdatingSelectedWord()` function when the **SelectionChanged** event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
+- <span data-ttu-id="f8098-221">`Document`オブジェクトの[Getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッド。これは、 `SelectionChanged`イベントハンドラーが呼び出さ`tryUpdatingSelectedWord()`れたときに、ユーザーが選択した単語または語句を取得し、それをプレーンテキストに変換し、 `selectedTextCallback`非同期コールバック関数を実行するために関数で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="f8098-221">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
     
-- <span data-ttu-id="c3f19-p119">`selectTextCallback` メソッドの _callback_ 引数で渡した非同期コールバック関数 \*\*\*\* が実行されると、コールバックが戻った時点で、ユーザーが選択したテキストの値を取得します。この値は、返された _AsyncResult_ オブジェクトの [value](/javascript/api/office/office.asyncresult) プロパティを使用することによって、コールバックの [selectedText](/javascript/api/office/office.asyncresult#status) 引数 (型は **AsyncResult**) から取得します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p119">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the **getSelectedDataAsync** method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned **AsyncResult** object.</span></span>
+- <span data-ttu-id="f8098-222">メソッドの`selectTextCallback` callback 引数として渡される非同期コールバック関数が実行されると、コールバックが戻るときに、選択したテキストの値を取得します。 __ `getSelectedDataAsync`</span><span class="sxs-lookup"><span data-stu-id="f8098-222">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns.</span></span> <span data-ttu-id="f8098-223">このメソッド`AsyncResult`は、返されたオブジェクトの[value](/javascript/api/office/office.asyncresult#status)プロパティを使用して、コールバックの_selectedtext_引数 ( [AsyncResult](/javascript/api/office/office.asyncresult)型) から値を取得します。</span><span class="sxs-lookup"><span data-stu-id="f8098-223">It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned `AsyncResult` object.</span></span>
     
-- <span data-ttu-id="c3f19-p120">`selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
+- <span data-ttu-id="f8098-p120">`selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。</span><span class="sxs-lookup"><span data-stu-id="f8098-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
     
-- <span data-ttu-id="c3f19-226">Dictionary.js の残りのコードでは、アドインの HTML の UI に定義のリストと発音のリンクを表示します。</span><span class="sxs-lookup"><span data-stu-id="c3f19-226">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
+- <span data-ttu-id="f8098-226">Dictionary.js の残りのコードでは、アドインの HTML の UI に定義のリストと発音のリンクを表示します。</span><span class="sxs-lookup"><span data-stu-id="f8098-226">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
     
 
 
