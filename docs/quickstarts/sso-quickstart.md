@@ -1,15 +1,15 @@
 ---
 title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する (プレビュー)
 description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
-ms.date: 01/30/2020
+ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: db3567a17a01af76c9db5f859a35dba46fd4858d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: fb543516eb371b422fdd7aa91001aa9ca21ba576
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163879"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283922"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
 
@@ -22,7 +22,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
+* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
 * 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
@@ -58,21 +58,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
 Yeoman ジェネレーターで作成したアドイン プロジェクトには、SSO が有効な作業ウィンドウ アドインのコードが含まれています。
 
-- プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。
-
-- **./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。
-- **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
-- **./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
-
-- **./src/helpers/documentHelper.js** ファイルは、Office JavaScript ライブラリを使用して、Microsoft Graph から Office ドキュメントにデータを追加します。
-- **./src/helpers/fallbackauthdialog.html** ファイルは、フォールバック認証方法の JavaScript を読み込む UI を使用しないページです。
-- **./src/helpers/fallbackauthdialog.js** ファイルには、msal.js でユーザーにサインオンするフォールバック認証方法の JavaScript が含まれています。
-- **./src/helpers/fallbackauthhelper.js** ファイルには、SSO 認証がサポートされていないシナリオでフォールバック認証方法を呼び出す作業ウィンドウの JavaScript が含まれています。
-- **./src/helpers/ssoauthhelper.js** ファイルには、SSO API `getAccessToken` へのJavaScript 呼び出しが含まれ、ブートストラップ トークンの受信し、Microsoft Graph へのアクセス トークンのブートストラップ トークン交換の開始、データのための Microsoft Graph への呼び出しを行います。
-
-- **./ENV** ファイルはプロジェクトのルート ディレクトリにあり、アドイン プロジェクトで使用される定数を定義します。
-    > [!NOTE]
-    > このファイルで定義されている定数の一部は、SSO プロセスを容易するために使用されます。 このファイルの値を、特定のシナリオに合わせて更新できます。 たとえば、アドインで `User.Read` 以外のものが必要な場合は、このファイルを更新して別の範囲を指定できます。
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="configure-sso"></a>SSO を構成する
 
@@ -172,10 +158,11 @@ Outlook アドインを試すには、次の手順を実行します。
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます。可能な場合 SSO を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する作業ウィンドウ アドインを正常に作成しました。 Yeoman ジェネレーターが自動的に完了した SSO の構成手順、および SSO プロセスを容易にするコードの詳細については、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」を参照してください。
+おめでとうございます。可能な場合 SSO を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する作業ウィンドウ アドインを正常に作成しました。 アドインをカスタマイズして異なる権限を必要とする新しい機能を追加する方法については、「[Node.js SSO が有効なアドインのカスタマイズする](sso-quickstart-customize.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのシングル サインオンを有効化する](../develop/sso-in-office-add-ins.md)
+- [Node.js SSO が有効なアドインをカスタマイズする](sso-quickstart-customize.md)
 - [シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)
 - [シングル サインオン (SSO) のエラー メッセージのトラブルシューティング](../develop/troubleshoot-sso-in-office-add-ins.md)
