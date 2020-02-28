@@ -1,216 +1,214 @@
 ---
-ms.date: 11/04/2019
+ms.date: 02/20/2020
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)'
 ms.prod: excel
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
 localization_priority: Priority
-ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 13ef4c199f7cb1de84e58f0ada554c851aee0cad
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217359"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283892"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a><span data-ttu-id="5d431-103">チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="5d431-103">Tutorial: Share data and events between Excel custom functions and the task pane (preview)</span></span>
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a><span data-ttu-id="7c9d1-103">チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="7c9d1-103">Tutorial: Share data and events between Excel custom functions and the task pane (preview)</span></span>
 
-<span data-ttu-id="5d431-104">Excel カスタム関数と作業ウィンドウはグローバル データを共有し、互いに関数呼び出しを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5d431-104">Excel custom functions and the task pane share global data, and can make function calls into each other.</span></span> <span data-ttu-id="5d431-105">カスタム関数が作業ウィンドウで機能するようにプロジェクトを構成するには、この記事の指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="5d431-105">To configure your project so that custom functions can work with the task pane, follow the instructions in this article.</span></span>
+[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
-> [!NOTE]
-> <span data-ttu-id="5d431-106">この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5d431-106">The features described in this article are currently in preview and subject to change.</span></span> <span data-ttu-id="5d431-107">これらを運用環境で使用することは現在サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5d431-107">They are not currently supported for use in production environments.</span></span> <span data-ttu-id="5d431-108">この記事のプレビュー機能は、Windows 上の Excel でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="5d431-108">The preview features in this article are only available on Excel on Windows.</span></span> <span data-ttu-id="5d431-109">プレビュー機能を試すには、[Office Insider に参加する](https://insider.office.com/join)必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d431-109">To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).</span></span>  <span data-ttu-id="5d431-110">プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。</span><span class="sxs-lookup"><span data-stu-id="5d431-110">A good way to try out preview features is by using an Office 365 subscription.</span></span> <span data-ttu-id="5d431-111">Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。</span><span class="sxs-lookup"><span data-stu-id="5d431-111">If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).</span></span>
+<span data-ttu-id="7c9d1-104">共有ランタイムを使用するように Excel アドインを構成できます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-104">You can configure your Excel add-in to use a shared runtime.</span></span> <span data-ttu-id="7c9d1-105">これにより、グローバル データを共有したり、作業ウィンドウとユーザー設定の関数の間でイベントを送信したりできます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-105">This will make it possible to shared global data, or send events between the task pane and custom functions.</span></span>
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="5d431-112">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="5d431-112">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="7c9d1-106">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="7c9d1-106">Create the add-in project</span></span>
 
-<span data-ttu-id="5d431-113">Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="5d431-113">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="5d431-114">次のコマンドを実行し、プロンプトに次の回答を入力します。</span><span class="sxs-lookup"><span data-stu-id="5d431-114">Run the following command and then answer the prompts with the following answers:</span></span>
+<span data-ttu-id="7c9d1-107">Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-107">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="7c9d1-108">次のコマンドを実行し、プロンプトに次の回答を入力します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-108">Run the following command and then answer the prompts with the following answers:</span></span>
 
-```command&nbsp;line
+```command line
 yo office
 ```
 
-- <span data-ttu-id="5d431-115">プロジェクトの種類を選択する:  **Excel カスタム関数アドイン プロジェクト**</span><span class="sxs-lookup"><span data-stu-id="5d431-115">Choose a project type: **Excel Custom Functions Add-in project**</span></span>
-- <span data-ttu-id="5d431-116">スクリプトの種類を選択する:  **JavaScript**</span><span class="sxs-lookup"><span data-stu-id="5d431-116">Choose a script type: **JavaScript**</span></span>
-- <span data-ttu-id="5d431-117">アドインの名前を何にしますか?  **個人用 Office アドイン**</span><span class="sxs-lookup"><span data-stu-id="5d431-117">What do you want to name your add-in? **My Office Add-in**</span></span>
+- <span data-ttu-id="7c9d1-109">プロジェクトの種類を選択する:  **Excel カスタム関数アドイン プロジェクト**</span><span class="sxs-lookup"><span data-stu-id="7c9d1-109">Choose a project type: **Excel Custom Functions Add-in project**</span></span>
+- <span data-ttu-id="7c9d1-110">スクリプトの種類を選択する:  **JavaScript**</span><span class="sxs-lookup"><span data-stu-id="7c9d1-110">Choose a script type: **JavaScript**</span></span>
+- <span data-ttu-id="7c9d1-111">アドインの名前を何にしますか?  **個人用 Office アドイン**</span><span class="sxs-lookup"><span data-stu-id="7c9d1-111">What do you want to name your add-in? **My Office Add-in**</span></span>
 
 ![アドイン プロジェクトを作成するための Office からのプロンプトへ応答するスクリーンショット。](../images/yo-office-excel-project.png)
 
-<span data-ttu-id="5d431-119">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="5d431-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="7c9d1-113">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-113">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
-## <a name="configure-the-manifest"></a><span data-ttu-id="5d431-120">マニフェストを構成する</span><span class="sxs-lookup"><span data-stu-id="5d431-120">Configure the manifest</span></span>
+## <a name="configure-the-manifest"></a><span data-ttu-id="7c9d1-114">マニフェストを構成する</span><span class="sxs-lookup"><span data-stu-id="7c9d1-114">Configure the manifest</span></span>
 
-1. <span data-ttu-id="5d431-121">Visual Studio Code を開始して [**個人用 Office アドイン**] プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="5d431-121">Start Visual Studio Code and open the **My Office Add-in** project.</span></span>
-2. <span data-ttu-id="5d431-122">**manifest.xml** ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="5d431-122">Open the **manifest.xml** file.</span></span>
-3. <span data-ttu-id="5d431-123">次のコードに示ように、**CustomFunctionsRuntime** バージョン **1.2** を使用するように `<Requirements>` ションを変更します。</span><span class="sxs-lookup"><span data-stu-id="5d431-123">Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.</span></span>
-    
-    ```xml
-    <Requirements>
-    <Sets DefaultMinVersion="1.1">
-    <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
-    </Sets>
-    </Requirements>
-    ```
-    
-4. <span data-ttu-id="5d431-124">`<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。</span><span class="sxs-lookup"><span data-stu-id="5d431-124">Find the  `<VersionOverrides>` section and add the following example entry to the `<Runtimes>` section:</span></span> <span data-ttu-id="5d431-125">作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d431-125">The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.</span></span>
-    
-    ```xml
-    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-      <Hosts>
-        <Host xsi:type="Workbook">
-        <Runtimes>
-          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-        </Runtimes>
-        <AllFormFactors>
-    ```
-    
-5. <span data-ttu-id="5d431-126">`<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **TaskPaneAndCustomFunction.Url** に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d431-126">In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
+1. <span data-ttu-id="7c9d1-115">Visual Studio Code を開始して [**個人用 Office アドイン**] プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-115">Start Visual Studio Code and open the **My Office Add-in** project.</span></span>
+2. <span data-ttu-id="7c9d1-116">
+            **manifest.xml** ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-116">Open the **manifest.xml** file.</span></span>
+3. <span data-ttu-id="7c9d1-117">`<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-117">Find the `<VersionOverrides>` section, and add the following `<Runtimes>` section.</span></span> <span data-ttu-id="7c9d1-118">作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-118">The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.</span></span>
 
-    ```xml
-    <AllFormFactors>
-    ...
-    <Page>
-    <SourceLocation resid="TaskPaneAndCustomFunction.Url"/>
-    </Page>
-    ...
-    ```
+   ```xml
+   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+     <Hosts>
+       <Host xsi:type="Workbook">
+         <Runtimes>
+           <Runtime resid="ContosoAddin.Url" lifetime="long" />
+         </Runtimes>
+       <AllFormFactors>
+   ```
 
-6. <span data-ttu-id="5d431-127">`<DesktopFormFactor>` セクションで、**TaskPaneAndCustomFunction.Url** を使用するように、**Command.Url** から **FunctionFile** を変更します。</span><span class="sxs-lookup"><span data-stu-id="5d431-127">In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **TaskPaneAndCustomFunction.Url**.</span></span>
-    
-    ```xml
-    <DesktopFormFactor>
-    <GetStarted>
-    ...
-    </GetStarted>
-    <FunctionFile resid="TaskPaneAndCustomFunction.Url"/>
-    ```
-    
-7. <span data-ttu-id="5d431-128">`<Action>` セクションで、ソースの場所を **Taskpane.Url** から **TaskPaneAndCustomFunction.Url** に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d431-128">In the `<Action>` section, change the source location from **Taskpane.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
-    
-    ```xml
-    <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>ButtonId1</TaskpaneId>
-    <SourceLocation resid="TaskPaneAndCustomFunction.Url"/>
-    </Action>
-    ```
-    
-8. <span data-ttu-id="5d431-129">**taskpane.html** を指す **TaskPaneAndCustomFunction.Url** の新しい **Url ID** を追加します。</span><span class="sxs-lookup"><span data-stu-id="5d431-129">Add a new **Url id** for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.</span></span>
-     
-    ```xml
-    <bt:Urls>
-    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-    ...
-    <bt:Url id="TaskPaneAndCustomFunction.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-    ...
-    ```
-    
-9. <span data-ttu-id="5d431-130">変更を保存してプロジェクトを再ビルドします。</span><span class="sxs-lookup"><span data-stu-id="5d431-130">Save your changes and rebuild the project.</span></span>
-    
-    ```command&nbsp;line
-    npm run build
-    ```
+4. <span data-ttu-id="7c9d1-119">`<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **ContosoAddin.Url** に変更します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-119">In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.</span></span>
 
-## <a name="share-state-between-custom-function-and-task-pane-code"></a><span data-ttu-id="5d431-131">カスタム関数と作業ウィンドウのコードの間で状態を共有する</span><span class="sxs-lookup"><span data-stu-id="5d431-131">Share state between custom function and task pane code</span></span> 
+   ```xml
+   <AllFormFactors>
+   ...
+   <Page>
+   <SourceLocation resid="ContosoAddin.Url"/>
+   </Page>
+   ...
+   ```
 
-<span data-ttu-id="5d431-132">カスタム関数が作業ウィンドウのコードと同じコンテキストで実行されるようになったため、**ストレージ** オブジェクトを使用せずに状態を直接共有できます。</span><span class="sxs-lookup"><span data-stu-id="5d431-132">Now that custom functions run in the same context as your task pane code, they can share state directly without using the **Storage** object.</span></span> <span data-ttu-id="5d431-133">次の手順は、カスタム関数と作業ウィンドウのコードの間でグローバル変数を共有する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5d431-133">The following instructions show how to share a global variable between custom function and task pane code.</span></span>
+5. <span data-ttu-id="7c9d1-120">`<DesktopFormFactor>` セクションで、**ContosoAddin.Url** を使用するように、**Command.Url** から **FunctionFile** を変更します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-120">In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **ContosoAddin.Url**.</span></span>
 
-### <a name="create-custom-functions-to-get-or-store-shared-state"></a><span data-ttu-id="5d431-134">共有状態を取得または保存するカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="5d431-134">Create custom functions to get or store shared state</span></span>
+   ```xml
+   <DesktopFormFactor>
+   <GetStarted>
+   ...
+   </GetStarted>
+   <FunctionFile resid="ContosoAddin.Url"/>
+   ```
 
-1. <span data-ttu-id="5d431-135">Visual Studio Code でファイル **src/functions/functions.js** を開きます。</span><span class="sxs-lookup"><span data-stu-id="5d431-135">In Visual Studio Code open the file **src/functions/functions.js**.</span></span>
-2. <span data-ttu-id="5d431-136">1 行目で、次のコードを一番上に挿入します。</span><span class="sxs-lookup"><span data-stu-id="5d431-136">On line 1, insert the following code at the very top.</span></span> <span data-ttu-id="5d431-137">これにより、**sharedState** という名前のグローバル変数が初期化されます。</span><span class="sxs-lookup"><span data-stu-id="5d431-137">This will initialize a global variable named **sharedState**.</span></span>
-    
-    ```js
-    window.sharedState = "empty";
-    ```
-    
-3. <span data-ttu-id="5d431-138">次のコードを追加して、値を **sharedState** 変数に保存するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="5d431-138">Add the following code to create a custom function that stores values to the **sharedState** variable.</span></span>
-    
-    ```js
-    /**
+6. <span data-ttu-id="7c9d1-121">`<Action>` セクションで、ソースの場所を **Taskpane.Url** から **ContosoAddin.Url** に変更します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-121">In the `<Action>` section, change the source location from **Taskpane.Url** to **ContosoAddin.Url**.</span></span>
+
+   ```xml
+   <Action xsi:type="ShowTaskpane">
+   <TaskpaneId>ButtonId1</TaskpaneId>
+   <SourceLocation resid="ContosoAddin.Url"/>
+   </Action>
+   ```
+
+7. <span data-ttu-id="7c9d1-122">**taskpane.html** を指す **ContosoAddin.Url** の新しい **Url ID** を追加します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-122">Add a new **Url id** for **ContosoAddin.Url** that points to **taskpane.html**.</span></span>
+
+   ```xml
+   <bt:Urls>
+   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
+   ...
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   ...
+   ```
+
+8. <span data-ttu-id="7c9d1-123">変更を保存してプロジェクトを再ビルドします。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-123">Save your changes and rebuild the project.</span></span>
+
+   ```command line
+   npm run build
+   ```
+
+## <a name="share-state-between-custom-function-and-task-pane-code"></a><span data-ttu-id="7c9d1-124">カスタム関数と作業ウィンドウのコードの間で状態を共有する</span><span class="sxs-lookup"><span data-stu-id="7c9d1-124">Share state between custom function and task pane code</span></span>
+
+<span data-ttu-id="7c9d1-125">カスタム関数が作業ウィンドウのコードと同じコンテキストで実行されるようになったため、**ストレージ** オブジェクトを使用せずに状態を直接共有できます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-125">Now that custom functions run in the same context as your task pane code, they can share state directly without using the **Storage** object.</span></span> <span data-ttu-id="7c9d1-126">次の手順は、カスタム関数と作業ウィンドウのコードの間でグローバル変数を共有する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-126">The following instructions show how to share a global variable between custom function and task pane code.</span></span>
+
+### <a name="create-custom-functions-to-get-or-store-shared-state"></a><span data-ttu-id="7c9d1-127">共有状態を取得または保存するカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="7c9d1-127">Create custom functions to get or store shared state</span></span>
+
+1. <span data-ttu-id="7c9d1-128">Visual Studio Code でファイル **src/functions/functions.js** を開きます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-128">In Visual Studio Code open the file **src/functions/functions.js**.</span></span>
+2. <span data-ttu-id="7c9d1-129">1 行目で、次のコードを一番上に挿入します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-129">On line 1, insert the following code at the very top.</span></span> <span data-ttu-id="7c9d1-130">これにより、**sharedState** という名前のグローバル変数が初期化されます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-130">This will initialize a global variable named **sharedState**.</span></span>
+
+   ```js
+   window.sharedState = "empty";
+   ```
+
+3. <span data-ttu-id="7c9d1-131">次のコードを追加して、値を **sharedState** 変数に保存するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-131">Add the following code to create a custom function that stores values to the **sharedState** variable.</span></span>
+
+   ```js
+   /**
     * Saves a string value to shared state with the task pane
     * @customfunction STOREVALUE
     * @param {string} value String to write to shared state with task pane.
     * @return {string} A success value
     */
-    function storeValue(sharedValue) {
-    window.sharedState = sharedValue;
-    return "value stored";
-    }
-    ```
-    
-4. <span data-ttu-id="5d431-139">次のコードを追加して、**sharedState** 変数の現在の値を取得するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="5d431-139">Add the following code to create a custom function that gets the current value of the **sharedState** variable.</span></span>
+   function storeValue(sharedValue) {
+     window.sharedState = sharedValue;
+     return "value stored";
+   }
+   ```
 
-    ```js
-    /**
+4. <span data-ttu-id="7c9d1-132">次のコードを追加して、**sharedState** 変数の現在の値を取得するカスタム関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-132">Add the following code to create a custom function that gets the current value of the **sharedState** variable.</span></span>
+
+   ```js
+   /**
     * Gets a string value from shared state with the task pane
     * @customfunction GETVALUE
     * @returns {string} String value of the shared state with task pane.
     */
-    function getValue() {
-    return window.sharedState;
-    }
-    ```
-    
-5. <span data-ttu-id="5d431-140">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5d431-140">Save the file.</span></span>
+   function getValue() {
+     return window.sharedState;
+   }
+   ```
 
-### <a name="create-task-pane-controls-to-work-with-global-data"></a><span data-ttu-id="5d431-141">グローバル データを操作する作業ウィンドウのコントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="5d431-141">Create task pane controls to work with global data</span></span> 
+5. <span data-ttu-id="7c9d1-133">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-133">Save the file.</span></span>
 
-1. <span data-ttu-id="5d431-142">ファイル **src/taskpane/taskpane.html** を開きます。</span><span class="sxs-lookup"><span data-stu-id="5d431-142">Open the file **src/taskpane/taskpane.html**.</span></span>
-2. <span data-ttu-id="5d431-143">`</head>` 要素の前に、次のスクリプト要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="5d431-143">Add the following script element just before the `</head>` element.</span></span>
+### <a name="create-task-pane-controls-to-work-with-global-data"></a><span data-ttu-id="7c9d1-134">グローバル データを操作する作業ウィンドウのコントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="7c9d1-134">Create task pane controls to work with global data</span></span>
 
-    ```html
-    <script src="functions.js"></script>
-    ```
+1. <span data-ttu-id="7c9d1-135">ファイル **src/taskpane/taskpane.html** を開きます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-135">Open the file **src/taskpane/taskpane.html**.</span></span>
+2. <span data-ttu-id="7c9d1-136">`</head>` 要素の前に、次のスクリプト要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-136">Add the following script element just before the `</head>` element.</span></span>
 
-3. <span data-ttu-id="5d431-144">終了 `</main>` 要素の後に、次の HTML を追加します。</span><span class="sxs-lookup"><span data-stu-id="5d431-144">After the closing `</main>` element, add the following HTML.</span></span> <span data-ttu-id="5d431-145">HTML は、グローバル データの取得または保存に使用される 2 つのテキスト ボックスとボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="5d431-145">The HTML creates two text boxes and buttons used to get or store global data.</span></span>
+   ```html
+   <script src="functions.js"></script>
+   ```
 
-    ```html
-    <ol>
-    <li>Enter a value to send to the custom function and select <strong>Store</strong>.</li>
-    <li>Enter <strong>=CONTOSO.GETVALUE()</strong>strong> into a cell to retrieve it.</li>
-    <li>To send data to the task pane, in a cell, enter <strong>=CONTOSO.STOREVALUE("new value")</strong></li>
-    <li>Select <strong>Get</strong> to display the value in the task pane.</li>
-    </ol>
-    <p>Store new value to shared state</p>
-    <div>
-    <input type="text" id="storeBox" />
-    <button onclick="storeSharedValue()">Store</button>
-    </div>
-     
-    <p>Get shared state value</p>
-    <div>
-    <input type="text" id="getBox" />
-    <button onclick="getSharedValue()">Get</button>
-    </div>
-    ```
-    
-4. <span data-ttu-id="5d431-146">`<body>` 要素の前に、次のスクリプトを追加します。</span><span class="sxs-lookup"><span data-stu-id="5d431-146">Before the `<body>` element add the following script.</span></span> <span data-ttu-id="5d431-147">このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="5d431-147">This code will handle the button click events when the user wants to store or get global data.</span></span>
-    
-    ```js
-    <script>
-    function storeSharedValue() {
-    let sharedValue = document.getElementById('storeBox').value;
-    window.sharedState = sharedValue;
-    }
-    
-    function getSharedValue() {
-    document.getElementById('getBox').value = window.sharedState;
-    }</script>
-    ```
-    
-5. <span data-ttu-id="5d431-148">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="5d431-148">Save the file.</span></span>
-6. <span data-ttu-id="5d431-149">プロジェクトをビルドする</span><span class="sxs-lookup"><span data-stu-id="5d431-149">Build the project</span></span>
-    
-    ```command&nbsp;line
-    npm run build 
-    ```
+3. <span data-ttu-id="7c9d1-137">終了 `</main>` 要素の後に、次の HTML を追加します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-137">After the closing `</main>` element, add the following HTML.</span></span> <span data-ttu-id="7c9d1-138">HTML は、グローバル データの取得または保存に使用される 2 つのテキスト ボックスとボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-138">The HTML creates two text boxes and buttons used to get or store global data.</span></span>
 
-### <a name="try-sharing-data-between-the-custom-functions-and-task-pane"></a><span data-ttu-id="5d431-150">カスタム関数と作業ウィンドウの間でデータの共有を試す</span><span class="sxs-lookup"><span data-stu-id="5d431-150">Try sharing data between the custom functions and task pane</span></span>
+   ```html
+   <ol>
+     <li>
+       Enter a value to send to the custom function and select
+       <strong>Store</strong>.
+     </li>
+     <li>
+       Enter <strong>=CONTOSO.GETVALUE()</strong>strong> into a cell to retrieve
+       it.
+     </li>
+     <li>
+       To send data to the task pane, in a cell, enter
+       <strong>=CONTOSO.STOREVALUE("new value")</strong>
+     </li>
+     <li>Select <strong>Get</strong> to display the value in the task pane.</li>
+   </ol>
+   <p>Store new value to shared state</p>
+   <div>
+     <input type="text" id="storeBox" />
+     <button onclick="storeSharedValue()">Store</button>
+   </div>
 
-- <span data-ttu-id="5d431-151">次のコマンドを使用してプロジェクトを開始します。</span><span class="sxs-lookup"><span data-stu-id="5d431-151">Start the project by using the following command.</span></span>
+   <p>Get shared state value</p>
+   <div>
+     <input type="text" id="getBox" />
+     <button onclick="getSharedValue()">Get</button>
+   </div>
+   ```
 
-    ```command&nbsp;line
-    npm run start
-    ```
+4. <span data-ttu-id="7c9d1-139">`<body>` 要素の前に、次のスクリプトを追加します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-139">Before the `<body>` element add the following script.</span></span> <span data-ttu-id="7c9d1-140">このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-140">This code will handle the button click events when the user wants to store or get global data.</span></span>
 
-<span data-ttu-id="5d431-152">Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。</span><span class="sxs-lookup"><span data-stu-id="5d431-152">Once Excel starts, you can use the task pane buttons to store or get shared data.</span></span> <span data-ttu-id="5d431-153">カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。</span><span class="sxs-lookup"><span data-stu-id="5d431-153">Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data.</span></span> <span data-ttu-id="5d431-154">または `=CONTOSO.STOREVALUE(“new value”)` を使用して、共有データを新しい値に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d431-154">Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.</span></span>
+   ```js
+   <script>
+   function storeSharedValue() {
+   let sharedValue = document.getElementById('storeBox').value;
+   window.sharedState = sharedValue;
+   }
+
+   function getSharedValue() {
+   document.getElementById('getBox').value = window.sharedState;
+   }</script>
+   ```
+
+5. <span data-ttu-id="7c9d1-141">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-141">Save the file.</span></span>
+6. <span data-ttu-id="7c9d1-142">プロジェクトをビルドする</span><span class="sxs-lookup"><span data-stu-id="7c9d1-142">Build the project</span></span>
+
+   ```command line
+   npm run build
+   ```
+
+### <a name="try-sharing-data-between-the-custom-functions-and-task-pane"></a><span data-ttu-id="7c9d1-143">カスタム関数と作業ウィンドウの間でデータの共有を試す</span><span class="sxs-lookup"><span data-stu-id="7c9d1-143">Try sharing data between the custom functions and task pane</span></span>
+
+- <span data-ttu-id="7c9d1-144">次のコマンドを使用してプロジェクトを開始します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-144">Start the project by using the following command.</span></span>
+
+  ```command line
+  npm run start
+  ```
+
+<span data-ttu-id="7c9d1-145">Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-145">Once Excel starts, you can use the task pane buttons to store or get shared data.</span></span> <span data-ttu-id="7c9d1-146">カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-146">Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data.</span></span> <span data-ttu-id="7c9d1-147">または `=CONTOSO.STOREVALUE(“new value”)` を使用して、共有データを新しい値に変更します。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-147">Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5d431-155">この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。</span><span class="sxs-lookup"><span data-stu-id="5d431-155">Configuring your project as shown in this article will share context between custom functions and the task pane.</span></span> <span data-ttu-id="5d431-156">プレビューでカスタム関数から Office API を呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="5d431-156">Calling Office APIs from custom functions is not supported in the preview.</span></span>
-
+> <span data-ttu-id="7c9d1-148">この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-148">Configuring your project as shown in this article will share context between custom functions and the task pane.</span></span> <span data-ttu-id="7c9d1-149">プレビューでカスタム関数から Office API を呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="7c9d1-149">Calling Office APIs from custom functions is not supported in the preview.</span></span>
