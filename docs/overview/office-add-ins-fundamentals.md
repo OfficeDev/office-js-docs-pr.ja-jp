@@ -1,14 +1,14 @@
 ---
 title: Office アドインの構築
 description: Office アドイン開発の概要を説明します。
-ms.date: 02/19/2020
+ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163872"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325313"
 ---
 # <a name="building-office-add-ins"></a>Office アドインの構築
 
@@ -93,42 +93,17 @@ Office アドインのマニフェスト (XML ファイル) は、アドイン�
 
 Office アドインでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作できます。 
 
-#### <a name="accessing-the-office-javascript-library"></a>Office JavaScript API へのアクセス
+#### <a name="accessing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリへのアクセス
 
-Office JavaScript ライブラリには、`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` にある Office JS コンテンツ配信ネットワーク (CDN) を経由してアクセスできます。 アドインの Web ページで Office JavaScript API を使用するには、ページの `<head>` タグにある `<script>` タグに含まれている CDN を参照する必要があります。
-
-```html
-<head>
-    ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-</head>
-```
-
-> [!NOTE]
-> プレビュー API を使用するには、CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) にある Office JavaScript ライブラリのプレビュー バージョンを参照します。
-
-IntelliSense の入手方法など、Office JavaScript ライブラリにアクセスする方法の詳細については、「[JavaScript API for Office ライブラリをそのコンテンツ配信ネットワーク (CDN) から参照する](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)」をご覧ください。
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
 #### <a name="api-models"></a>API モデル
 
-Office JavaScript API には、2 つの異なるモデルがあります。
-
-- **ホスト固有** API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。 たとえば、Excel JavaScript API を使用して、ワークシート、範囲、テーブル、グラフなどにアクセスすることができます。 ホスト固有API は現在、[Excel](../reference/overview/excel-add-ins-reference-overview.md)、[Word](../reference/overview/word-add-ins-reference-overview.md)、および [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md) 用に使用できます。 この API モデルでは [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が使用され、Office ホストに送信する各要求で複数の操作を指定することが可能です。 この方法によるバッチ操作を行うと、Office on the web アプリケーションのパフォーマンスが大幅に向上します。 ホスト固有の API は Office 2016 で導入されました。Office 2013 の操作には使用できません。
-
-- **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは [Callback](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office ホストに送信する各要求で指定できる操作は、1 つのみです。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook と PowerPoint を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
-
-> [!NOTE]
-> Excel のカスタム関数の場合は、計算の実行を優先する独自のランタイム内で実行されるため、少し異なるプログラミング モデルが使用されます。 詳細については、「[カスタム関数のアーキテクチャ](../excel/custom-functions-architecture.md)」を参照してください。
-
-Office JavaScript API の詳細については、「[JavaScript API for Office について」](../develop/understanding-the-javascript-api-for-office.md)を参照してください。
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 
 #### <a name="api-requirement-sets"></a>API 要件セット
 
-[要件セット](../develop/office-versions-and-requirement-sets.md)は、API メンバーの名前付きグループです。 要件セットは、`ExcelApi 1.7` 要件セット (Excel でのみ使用可能な API のセット) などのように Office ホストに固有の場合もあれば、`DialogApi 1.1` 要求セット (ダイアログ API がサポートされているすべての Office アプリケーションで使用できる API セット) などのように複数のホストで共通の場合もあります。
-
-アドインは、要求セットを使用することで、アドインが使用する必要がある API メンバーが Office ホストでサポートされているかどうかを判別できます。 詳細については、「[Office ホストと API 要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。
-
-要件セットのサポートは、Office ホスト、バージョン、プラットフォームごとに異なります。 各 Office アプリケーションでサポートされているプラットフォーム、要求セット、および共通 API の詳細については、「[Office アドイン ホストとプラットフォームの可用性](office-add-in-availability.md)」を参照してください。
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
 ## <a name="testing-and-debugging-an-office-add-in"></a>Office アドインのテストとデバッグ
 

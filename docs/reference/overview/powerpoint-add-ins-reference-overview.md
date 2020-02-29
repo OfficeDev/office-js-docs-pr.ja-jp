@@ -4,16 +4,16 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: c08e5af14c43d92a677e28d47b26014fd27f700e
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: ae079105b508f4e7dabb85fbf0ad8898275bdb67
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851503"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324758"
 ---
 # <a name="javascript-api-for-powerpoint"></a>JavaScript API for PowerPoint
 
-PowerPoint アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して PowerPoint のオブジェクトを操作します。
+PowerPoint アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して PowerPoint のオブジェクトを操作します。
 
 * **PowerPoint JavaScript API**: [PowerPoint JavaScript API](/javascript/api/powerpoint)では、PowerPoint のオブジェクトにアクセスするために使用する、厳密に型指定されたオブジェクトを提供します。
 

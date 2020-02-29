@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165567"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325490"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -33,27 +33,27 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 ## <a name="using-the-javascript-api"></a>JavaScript API の使用
 
-アドインは、ホスト アプリケーションのランタイム コンテキストを使って、JavaScript API にアクセスします。API には次の 2 つの階層があります。 
+アドインは、ホスト アプリケーションのランタイム コンテキストを使って、JavaScript API にアクセスします。API には次の 2 つの階層があります。
 
-- **アプリケーション** オブジェクトを通じてアクセスされる、OneNote 固有の操作のための**ホスト固有の API**。
-- **ドキュメント** オブジェクトを通じてアクセスされ、Office アプリケーション全体で共有される**共通 API**。
+- `Application` オブジェクトを通じてアクセスされる、OneNote 固有の操作のための**ホスト固有の API**。
+- `Document` オブジェクトを通じてアクセスされ、Office アプリケーション全体で共有される**共通 API**。
 
 ### <a name="accessing-the-host-specific-api-through-the-application-object"></a>*アプリケーション* オブジェクトを使ったホスト固有の API へのアクセス
 
-**アプリケーション** オブジェクトを使って、**ノートブック**、**セクション**、**ページ**などの OneNote オブジェクトにアクセスします。 ホスト固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。 基本的な流れは、以下のようになります。 
+`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ**などの OneNote オブジェクトにアクセスします。 ホスト固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。 基本的な流れは、以下のようになります。
 
 1. コンテキストからアプリケーション インスタンスを取得します。
 
 2. 操作する OneNote オブジェクトを表すプロキシを作成します。プロキシ オブジェクトのプロパティの読み取りや書き込みを行い、メソッドを呼び出すことにより、プロキシ オブジェクトを同期的に操作します。
 
-3. プロキシで**読み込み**を呼び出し、パラメーターで指定されたプロパティ値を設定します。この呼び出しは、コマンドのキューに追加されます。
+3. プロキシで`load`を呼び出し、パラメーターで指定されたプロパティ値を設定します。この呼び出しは、コマンドのキューに追加されます。
 
    > [!NOTE]
    > API へのメソッドの呼び出し (`context.application.getActiveSection().pages;` など) も、キューに追加されます。
 
-4. キューに置かれたすべてのコマンドをキューに置かれた順序で実行するには、**context.sync** を呼び出します。これにより、実行中のスクリプトと実際のオブジェクトの間の状態が同期されます。また、読み込まれた OneNote オブジェクトのプロパティを取得して、スクリプトで使います。追加のアクションのチェーン処理には、返された約束オブジェクトを使うことができます。
+4. キューに置かれたすべてのコマンドをキューに置かれた順序で実行するには、`context.sync` を呼び出します。これにより、実行中のスクリプトと実際のオブジェクトの間の状態が同期されます。また、読み込まれた OneNote オブジェクトのプロパティを取得して、スクリプトで使います。追加のアクションのチェーン処理には、返された約束オブジェクトを使うことができます。
 
-例:
+次に例を示します。
 
 ```js
 function getPagesInSection() {
@@ -95,7 +95,7 @@ function getPagesInSection() {
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
-**ドキュメント** オブジェクトを使って、[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドや [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) メソッドなどの共通 API にアクセスします。 
+`Document` オブジェクトを使って、[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドや [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) メソッドなどの共通 API にアクセスします。
 
 
 次に例を示します。  
@@ -119,8 +119,8 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 | API | メモ |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** と **Office.CoercionType.Matrix** のみ |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.Html** のみ | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Office.CoercionType.Text`Office.CoercionType.Text` と Office.CoercionType.Matrix`Office.CoercionType.Matrix` のみ |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | `Office.CoercionType.Text`、`Office.CoercionType.Image` と `Office.CoercionType.Html` のみ | 
 | 
   [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get-name-) | 設定はコンテンツ アドインによってのみサポートされます | 
 | 
