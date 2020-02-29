@@ -4,16 +4,16 @@ description: ''
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 8e97b0ac34e02ea64a1cb944be9c113bd37a9717
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165321"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325186"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
-OneNote アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む JavaScript API for Office を使用して OneNote on the web のオブジェクトを操作します。
+OneNote アドインでは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して OneNote on the web のオブジェクトを操作します。
 
 * **OneNote JavaScript API**: Office 2016 で導入された [OneNote JavaScript API](/javascript/api/onenote) には、OneNote on the web へのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
 

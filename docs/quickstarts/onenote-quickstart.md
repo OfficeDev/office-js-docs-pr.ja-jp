@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な OneNote 作業ウィンド�
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6098e3859103b5869072edfa133fb6ad39d4da8b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: cdf1dbd3f234b77bd406a66927b8fad3d5ef4859
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950639"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325299"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -45,7 +45,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ## <a name="update-the-code"></a>コードを更新する
 
-コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを **実行** 関数内に追加します。 このコードは、OneNote JavaScript API を使用してページ タイトルを設定し、ページの本文にアウトラインを追加します。
+コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。 このコードは、OneNote JavaScript API を使用してページ タイトルを設定し、ページの本文にアウトラインを追加します。
 
 ```js
 try {

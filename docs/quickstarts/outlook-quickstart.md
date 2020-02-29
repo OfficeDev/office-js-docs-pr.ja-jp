@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 12/28/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 9a9835caf4ca729999a0f85a7947b82115841372
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166438"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325292"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -81,7 +81,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     </main>
     ```
 
-1. コードエディターで、ファイル **./src/taskpane/taskpane.js**を開き、**実行**関数内に次のコードを追加してください。 このコードはOffice JavaScript APIを使用して現在のメッセージへの参照を取得し、その`subject`プロパティ値を作業ペインに書き込みます。
+1. コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。 このコードはOffice JavaScript APIを使用して現在のメッセージへの参照を取得し、その`subject`プロパティ値を作業ペインに書き込みます。
 
     ```js
     // Get a reference to the current message

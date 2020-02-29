@@ -4,12 +4,12 @@ description: このチュートリアルでは、画像の挿入、テキスト�
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e45fe0a4d7561329b22f4d29ec295dabb2e2ee0f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950888"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324737"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -183,7 +183,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     $('#insert-image').click(insertImage);
     ```
 
-8. **Home.js** ファイルで `TODO2` を次のコードに置き換え、**insertImage** 関数を定義します。 この関数は Bing Web サービスからイメージをフェッチし、`insertImageFromBase64String` 関数を呼び出してそのイメージをドキュメントに挿入します。
+8. **Home.js** ファイルで `TODO2` を次のコードに置き換え、`insertImage`insertImage`insertImageFromBase64String` 関数を定義します。 この関数は Bing Web サービスからイメージをフェッチし、 関数を呼び出してそのイメージをドキュメントに挿入します。
 
     ```js
     function insertImage() {
@@ -295,7 +295,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     $('#insert-text').click(insertText);
     ```
 
-3. **Home.js** ファイルで `TODO5` を次のコードに置き換え、**insertText** 関数を定義します。 この関数は、現在のスライドにテキストを挿入します。
+3. **Home.js** ファイルで `TODO5` を次のコードに置き換え、`insertText` 関数を定義します。 この関数は、現在のスライドにテキストを挿入します。
 
     ```js
     function insertText() {
@@ -352,7 +352,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. **Home.js** ファイルで `TODO7` を次のコードに置き換え、**getSlideMetadata** 関数を定義します。 この関数は選択したスライドのメタデータを取得し、それをアドインの作業ウィンドウ内のポップアップ ダイアログ ウィンドウに書き込みます。
+3. **Home.js** ファイルで `TODO7` を次のコードに置き換え、`getSlideMetadata`getSlideMetadata 関数を定義します。 この関数は選択したスライドのメタデータを取得し、それをアドインの作業ウィンドウ内のポップアップ ダイアログ ウィンドウに書き込みます。
 
     ```js
     function getSlideMetadata() {

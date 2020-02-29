@@ -3,12 +3,12 @@ title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
 ms.date: 10/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 79751ea0f3b7baab28ada8ac44d71e5f4124b74a
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166484"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324941"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
@@ -238,10 +238,10 @@ Outlook アドインは XML アドイン マニフェストと Web ページの 
 
 |バージョン|説明|
 |:-----|:-----|
-|v1.0|JavaScript API for Office バージョン 1.0 をサポートします。Outlook アドインであれば、閲覧フォームがサポートされることになります。 |
-|v1.1|JavaScript API for Office バージョン 1.1 と **VersionOverrides** をサポートします。Outlook アドインで、新規作成フォームもサポートされることになります。|
-|**VersionOverrides** 1.0|JavaScript API for Office の最新バージョンをサポートします。これは、アドイン コマンドをサポートします。|
-|**VersionOverrides** 1.1|JavaScript API for Office の最新バージョンをサポートします。これは、アドイン コマンドをサポートし、[ピン留め可能な作業ウィンドウ](pinnable-taskpane.md)やモバイル アドインなどの、より新しい機能のサポートを追加します。|
+|v1.0|Office JavaScript API バージョン 1.0 をサポートします。Outlook アドインであれば、閲覧フォームがサポートされることになります。 |
+|v1.1|Office JavaScript API バージョン 1.1 と **VersionOverrides** をサポートします。Outlook アドインで、新規作成フォームもサポートされることになります。|
+|**VersionOverrides** 1.0|Office JavaScript API の最新バージョンをサポートします。これは、アドイン コマンドをサポートします。|
+|**VersionOverrides** 1.1|Office JavaScript API の最新バージョンをサポートします。これは、アドイン コマンドをサポートし、[ピン留め可能な作業ウィンドウ](pinnable-taskpane.md)やモバイル アドインなどの、より新しい機能のサポートを追加します。|
 
 この記事では、v1.1 マニフェストの要件を取り上げます。アドイン マニフェストで **VersionOverrides** 要素を使用するとしても、**VersionOverrides** をサポートしない以前のクライアントでアドインが機能できるように 1.1 マニフェスト要素を組み込むことは重要です。
 

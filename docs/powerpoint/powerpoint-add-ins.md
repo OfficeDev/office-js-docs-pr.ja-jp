@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a6535808a3e59723556efa3133c44767a52a250e
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851342"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324927"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-次のコード サンプルでは、`getSelectedRange` 関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドを呼び出して、`asyncResult.value` によって返される JSON オブジェクトを取得します。このオブジェクトには、**slides** という名前の配列が含まれます。 **slides** 配列には、選択した範囲のスライド (複数のスライドが選択されていない場合は現在のスライド) の ID、タイトル、およびインデックスが含まれます。 また、選択範囲内の最初のスライド ID をグローバル変数に保存します。
+次のコード サンプルでは、`getSelectedRange` 関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドを呼び出して、`asyncResult.value` によって返される JSON オブジェクトを取得します。このオブジェクトには、`slides` という名前の配列が含まれます。 `slides`slides 配列には、選択した範囲のスライド (複数のスライドが選択されていない場合は現在のスライド) の ID、タイトル、およびインデックスが含まれます。 また、選択範囲内の最初のスライド ID をグローバル変数に保存します。
 
 ```js
 function getSelectedRange() {
@@ -126,7 +126,7 @@ function goToFirstSlide() {
 
 ## <a name="navigate-between-slides-in-the-presentation"></a>プレゼンテーション内のスライド間を移動する
 
-次のコード サンプルでは、`goToSlideByIndex` 関数は **Document.goToByIdAsync** メソッドを呼び出して、プレゼンテーションの次のスライドに移動します。
+次のコード サンプルでは、`goToSlideByIndex` 関数は `Document.goToByIdAsync` メソッドを呼び出して、プレゼンテーションの次のスライドに移動します。
 
 ```js
 function goToSlideByIndex() {

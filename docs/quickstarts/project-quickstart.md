@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Project 作業ウィンド�
 ms.date: 01/16/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 821cdc9f32b0fbc2b48e2a92259f340e65a03f64
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 3a1a7e03ef040d24186ed71baa6fe9eea9589b34
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950622"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323848"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -47,7 +47,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ## <a name="update-the-code"></a>コードを更新する
 
-コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを **実行** 関数内に追加します。 このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。
+コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。 このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。
 
 ```js
 var taskGuid;

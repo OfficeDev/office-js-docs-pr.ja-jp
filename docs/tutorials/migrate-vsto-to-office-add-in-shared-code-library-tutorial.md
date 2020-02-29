@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 localization_priority: Priority
-ms.openlocfilehash: c0d90f0f808bb5a7f96f546f0f82a90815676df7
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 87f34c04ce3ac475c82fbb2673d0a4b3e95f04a2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650112"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324744"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -145,7 +145,7 @@ VSTO アドインは .NET プロジェクトとして Visual Studio で作成さ
     > [!NOTE]
     > .NET Core クラス ライブラリは、VSTO プロジェクトでは動作しないので使用しないでください。
 4. **[新しいプロジェクトの構成]** ダイアログで、次のフィールドを設定します。
-    - **[プロジェクト名]** を「**CellAnalyzerSharedLibrary**」に設定します。
+    - [**プロジェクト名**] を「**CellAnalyzerSharedLibrary**」に設定します。
     - **[場所]** は、その既定値のままにしておきます。
     - **[フレームワーク]** を「**4.7.2**」に設定します。
 5. **[作成]** を選択します。
@@ -333,7 +333,7 @@ Office.js ライブラリは、外部呼び出し (REST API サーバーへの `
     ```
     
     > [!NOTE]
-    > **builder.WithOrigins** メソッドで使用する URL の末尾の `/` は取り除いてください。 たとえば、`https://localhost:44000` のようにします。 そのようにしていないと、実行時に CORS エラーが発生します。
+    > `builder.WithOrigins` メソッドで使用する URL の末尾の `/` は取り除いてください。 たとえば、`https://localhost:44000` のようにします。 そのようにしていないと、実行時に CORS エラーが発生します。
     
 6. 次のフィールドを `Startup` クラスに追加します。
     

@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d770356f22f0f9ffb6bd19ecbd5a3fb6460519ac
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: e40349a009638828ded4bd0651f3776bbf7290fa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468757"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324751"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -27,7 +27,7 @@ Visio JavaScript API を使用して、次のことを行えます。
 * 図面の中でのマウス イベントのカスタム ハンドラーを記述する。
 * 図形テキスト、図形データ、およびハイパーリンクなどの図面データをソリューションに公開する。
 
-この記事では、Visio on the web で Visio JavaScript API を使用して SharePoint Online のソリューションをビルドする方法について説明します。また、**EmbeddedSession**、**RequestContext**、JavaScript プロキシ オブジェクトなどの API、および **sync()**、**Visio.run()**、**load()** のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
+この記事では、Visio on the web で Visio JavaScript API を使用して SharePoint Online のソリューションをビルドする方法について説明します。また、`EmbeddedSession`EmbeddedSession`RequestContext`、`sync()`RequestContext`Visio.run()`、JavaScript プロキシ オブジェクトなどの API、および `load()`sync()、Visio.run()、load() のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
@@ -42,9 +42,9 @@ session.init().then(function () {
 
 ## <a name="visiorunsession-functioncontext--batch-"></a>Visio.run(session, function(context) { batch })
 
-**Visio.run()** は、Visio オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。 このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Visio オブジェクトの間で状態を同期し、解決される約束を返す **sync()** メソッドが含まれます。 **Visio.run()** で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡ページ オブジェクトが自動的に解放されることです。
+`Visio.run()` は、Visio オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。 このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Visio オブジェクトの間で状態を同期し、解決される約束を返す `sync()`sync() メソッドが含まれます。 `Visio.run()`Visio.run() で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡ページ オブジェクトが自動的に解放されることです。
 
-run メソッドはセッションと RequestContext オブジェクトを取り込み、promise (通常は **context.sync()** の結果) を返します。 バッチ操作は **Visio.run()** の外部で実行することができます。 ただし、このようなシナリオでは、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
+run メソッドはセッションと RequestContext オブジェクトを取り込み、promise (通常は `context.sync()` の結果) を返します。 バッチ操作は `Visio.run()` の外部で実行することができます。 ただし、このようなシナリオでは、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -69,7 +69,7 @@ function hideToolbars() {
 
 アドインで宣言され使用される Visio の JavaScript オブジェクトは、Visio 図面の実際のオブジェクトのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、`context.sync()` の実行時に同期されます。
 
-たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 **sync()** メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
+たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 `sync()` メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
 
 ```js
 var activePage = context.document.getActivePage();
@@ -77,28 +77,28 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-**sync()** メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。 
+`sync()`sync() メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。 
 
 ## <a name="load"></a>load()
 
-**load()** メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に **load()** メソッドと **sync()** メソッドを呼び出す必要があります。load() メソッドは、**sync()** メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
+`load()`load()`load()` メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に `sync()`load()`sync()` メソッドと sync() メソッドを呼び出す必要があります。load() メソッドは、sync() メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
-以下に示すのは **load()** メソッドの構文です。
+以下に示すのは `load()` メソッドの構文です。
 
 ```js
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **properties** は、読み込まれるプロパティ名の一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、各オブジェクトの下の **.load()** メソッドを参照してください。
+1. **properties** は、読み込まれるプロパティ名の一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、各オブジェクトの下の `.load()` メソッドを参照してください。
 
 2. **loadOption** は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>例: アクティブ ページですべての図形テキストを印刷する
 
 次の例では、図形の配列オブジェクトから図形テキストの値を印刷する方法を示します。
-**Visio.run()** メソッドには、命令のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
+`Visio.run()` メソッドには、命令のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
 
-これらのすべてのコマンドがキューに登録され、**context.sync()** が呼び出されたときに実行されます。 **sync()** メソッドが返す promise は、このメソッドを他の操作とチェーンにするために使用できます。
+これらのすべてのコマンドがキューに登録され、`context.sync()` が呼び出されたときに実行されます。 `sync()` メソッドが返す promise は、このメソッドを他の操作とチェーンにするために使用できます。
 
 ```js
 Visio.run(session, function (context) {
