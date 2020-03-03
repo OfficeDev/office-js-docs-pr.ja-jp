@@ -44,24 +44,28 @@
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Office の JavaScript API
           items:
-            - name: JavaScript API for Office について
+            - name: Office JavaScript API について
               href: develop/understanding-the-javascript-api-for-office.md
             - name: Office のバージョンと要件セット
               href: develop/office-versions-and-requirement-sets.md
-            - name: コンテンツ アドインおよび作業ウィンドウ アドインのサポート
-              href: develop/support-for-task-pane-and-content-add-ins.md
             - name: Office.js を参照する
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: Office.js を読み込む
+            - name: Office アドインのシーケンスを読み込む
               href: develop/loading-the-dom-and-runtime-environment.md
-            - name: 共通 JavaScript API オブジェクト モデル
-              href: develop/office-javascript-api-object-model.md
-            - name: Office アドインにおける非同期プログラミング
-              href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: 状態と設定を保持する
-              href: develop/persisting-add-in-state-and-settings.md
-            - name: 一般的なコーディングの問題
+            - name: アドインを開始する
+              href: develop/initialize-add-in.md
+            - name: 一般的な問題に関するコーディング ガイド
               href: develop/common-coding-issues.md
+            - name: 共通 API (Office 2013 以降)
+              items:
+                - name: 共通 JavaScript API オブジェクト モデル
+                  href: develop/office-javascript-api-object-model.md
+                - name: Office アドインにおける非同期プログラミング
+                  href: develop/asynchronous-programming-in-office-add-ins.md
+                - name: コンテンツ アドインおよび作業ウィンドウ アドインのサポート
+                  href: develop/support-for-task-pane-and-content-add-ins.md
+                - name: 状態と設定を保持する
+                  href: develop/persisting-add-in-state-and-settings.md
         - name: マニフェスト
           href: develop/add-in-manifests.md
         - name: 認証と承認
@@ -80,6 +84,8 @@
                   href: develop/sso-in-office-add-ins.md
                 - name: SSO のクイック スタート
                   href: quickstarts/sso-quickstart.md
+                - name: SSO が有効なアドインをカスタマイズする
+                  href: quickstarts/sso-quickstart-customize.md
                 - name: SSO を使用した Microsoft Graph への承認
                   href: develop/authorize-to-microsoft-graph.md
                 - name: ASP.NET を使用して SSO アドインを作成する
@@ -299,6 +305,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 共通 API の要件セット
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: 共有ランタイム要件のセット
+              href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Office アドインのマニフェスト リファレンス
           items:
             - name: AllowSnapshot
@@ -559,6 +567,9 @@
         - name: 範囲の条件付き書式
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
+        - name: 共有ランタイムを使用するようにアドインを構成する
+          href: excel/configure-your-add-in-to-use-a-shared-runtime.md
+          displayName: Excel
         - name: データの入力規則
           href: excel/excel-add-ins-data-validation.md
           displayName: Excel
@@ -583,6 +594,9 @@
         - name: Ranges (高度)
           href: excel/excel-add-ins-ranges-advanced.md
           displayName: Excel
+        - name: 開いているドキュメントにコードを実行する
+          href: excel/run-code-on-document-open.md
+          displayName: Excel
         - name: 図形
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
@@ -605,9 +619,6 @@
           displayName: 'Excel, Custom Functions'
         - name: カスタム関数のチュートリアル
           href: tutorials/excel-tutorial-create-custom-functions.md
-          displayName: 'Excel, Custom Functions'
-        - name: 作業ウィンドウのチュートリアルにデータを共有するカスタム関数
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
           displayName: 'Excel, Custom Functions'
         - name: アーキテクチャ
           href: excel/custom-functions-architecture.md
@@ -657,6 +668,17 @@
         - name: トラブルシューティング
           href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
+        - name: 共有ランタイムを使用する
+          items:
+            - name: 共有ランタイムの使用の概要
+              href: excel/custom-functions-shared-overview.md
+              displayName: 'Excel, Custom Functions'
+            - name: 作業ウィンドウのチュートリアルとカスタム関数データの共有
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+            - name: カスタム関数から Excel JS API を呼び出す
+              href: excel/call-excel-apis-from-custom-function.md
+              displayName: 'Excel, Custom Functions'
         - name: 揮発性関数
           href: excel/custom-functions-volatile.md
           displayName: 'Excel, Custom Functions'
@@ -886,6 +908,8 @@
           href: outlook/get-and-set-recurrence.md
         - name: アドイン メタデータを取得または設定する
           href: outlook/metadata-for-an-outlook-add-in.md
+        - name: アドインの状態および設定を管理する
+          href: outlook/manage-state-and-settings-outlook.md
         - name: 閲覧シナリオ
           items:
             - name: 概要
