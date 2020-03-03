@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f6d9ed0cd88f6ea2f4ba5297b4a0934bbe84dcc1
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 03f2eec24f4ae8d52f8e46021ff5ee25b8015f94
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851321"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324899"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -50,9 +50,9 @@ Project 用のアドインのシナリオとして、次のようなものがあ
 
 ## <a name="developing-project-add-ins"></a>Project アドインの開発
 
-Project アドイン の JavaScript ライブラリには、 **Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
+Project アドイン の JavaScript ライブラリには、**Office** 名前空間エイリアスの拡張機能が含まれています。開発者は、これらの拡張機能を使用して、プロジェクト内で Project アプリケーションのプロパティとタスク、リソース、およびビューにアクセスできます。Project-15.js ファイルに含まれている JavaScript ライブラリの拡張機能は、Visual Studio 2015 で作成された Project アドインで使用されます。Office.js、Office.debug.js、Project-15.js、Project-15.debug.js、および関連ファイルも、Project 2013 SDK ダウンロードで提供されます。
 
-アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、 **type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「 _Office アドイン プラットフォームの概要_」の「 [開発の基本](../overview/office-add-ins.md) 」セクションを参照してください。
+アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、**type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「_Office アドイン プラットフォームの概要_」の「[開発の基本](../overview/office-add-ins.md)」セクションを参照してください。
 
 Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
 
@@ -68,7 +68,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
 
-- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
+- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには **OfficeApp** 要素と子要素を記述します。詳細については「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -101,14 +101,17 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 - アドインのマニフェストで必要な要素を次に示します。
   - **OfficeApp** 要素では、アドインの種類が作業ウィンドウであることを `xsi:type="TaskPaneApp"` 属性で指定します。
   - **Id** 要素は UUID で、一意である必要があります。
-  - **Version** 要素は、アドインのバージョンです。 **ProviderName** 要素は、アドインを提供する企業または開発者の名前です。 **DefaultLocale** 要素は、マニフェストで指定する文字列の既定のロケールです。
-  - **DisplayName** 要素は、Project 2013 のリボンの [ **ビュー**] タブで [ **作業ウィンドウ アドイン**] ドロップダウン リストに表示される名前です。値は最大 32 文字です。
+  - **Version** 要素は、アドインのバージョンです。**ProviderName** 要素は、アドインを提供する企業または開発者の名前です。**DefaultLocale** 要素は、マニフェストで指定する文字列の既定のロケールです。
+  - **DisplayName** 要素は、Project 2013 のリボンの **[ビュー]** タブで **[作業ウィンドウ アドイン]** ドロップダウン リストに表示される名前です。値は最大 32 文字です。
   - **Description** 要素は、既定のロケールでのアドインの説明です。値は最大 2000 文字です。
-  - **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中でホスト アプリケーションを指定します。
-  - **DefaultSettings** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **SourceLocation** 要素が含まれています。作業ウィンドウ アドインでは、 **RequestedHeight** 要素と **RequestedWidth** 要素は無視されます。
-  - **IconUrl** 要素は省略可能です。ファイル共有のアイコンまたは Web アプリケーションのアイコンの URL を指定できます。
+  - 
+            **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中でホスト アプリケーションを指定します。
+  - 
+            **DefaultSettings** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **SourceLocation** 要素が含まれています。作業ウィンドウ アドインでは、**RequestedHeight** 要素と **RequestedWidth** 要素は無視されます。
+  - 
+            **IconUrl** 要素は省略可能です。ファイル共有のアイコンまたは Web アプリケーションのアイコンの URL を指定できます。
 
-- (省略可能) 他のロケール用の値を表す  **Override** 要素を追加します。たとえば、次のマニフェストでは、 **DisplayName**、 **Description**、 **IconUrl**、および  **SourceLocation** に対し、フランス語の値を表す **Override** 要素を指定しています。
+- (省略可能) 他のロケール用の値を表す **Override** 要素を追加します。たとえば、次のマニフェストでは、**DisplayName**、**Description**、**IconUrl**、および **SourceLocation** に対し、フランス語の値を表す **Override** 要素を指定しています。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +149,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 
 Project 2013 では、ファイル共有上のスタンドアロン ソリューションとして、またはプライベート アドイン カタログに、アドインをインストールできます。AppSource でアドインをレビューおよび購入することもできます。
 
-ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の [ **セキュリティ センター**] ダイアログ ボックスの [ **信頼されているアドイン カタログ**] タブを使用します。Project にアドインを表示するには、マニフェスト内の  **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
+ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の **[セキュリティ センター]** ダイアログ ボックスの **[信頼されているアドイン カタログ]** タブを使用します。Project にアドインを表示するには、マニフェスト内の **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
 
 > [!NOTE]
 > Windows コンピューターで開発している場合は、Internet Explorer または Microsoft Edge をインストールする必要があります。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
@@ -161,26 +164,26 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
 3. BingSearch.xml マニフェスト ファイルを  `C:\Project\AppManifests` ディレクトリにコピーします。
 
-4. Project 2013で、[ **Project のオプション**] ダイアログ ボックスを開き、[ **セキュリティ センター**]、[ **セキュリティ センターの設定**] の順に選択します。
+4. Project 2013 で、**[Project のオプション]** ダイアログ ボックスを開き、**[セキュリティ センター]**、**[セキュリティ センターの設定]** の順に選択します。
 
-5. [ **セキュリティ センター**] ダイアログ ボックスの左側のウィンドウで、[ **信頼されているアドイン カタログ**] を選択します。
+5. **[セキュリティ センター]** ダイアログ ボックスの左側のウィンドウで、**[信頼されているアドイン カタログ]** を選択します。
 
-6. [ **信頼されているアドイン カタログ**] ウィンドウ (図 1 を参照) で、 [ **カタログの URL**] テキスト ボックスにパス「 `\\ServerName\AppManifests`」を追加し、[ **カタログの追加**]、[ **OK**] の順に選択します。
+6. **[信頼されているアドイン カタログ]** ウィンドウ (図 1 を参照) で、**[カタログの URL]** テキスト ボックスにパス「`\\ServerName\AppManifests`」を追加し、**[カタログの追加]**、**[OK]** の順に選択します。
 
     > [!NOTE]
-    > 図 1 は [**信頼できるカタログのアドレス**] リストの非公開カタログの、2 つのファイル共有と 1 つの架空の URL を示しています。既定のファイル共有に設定できるのは 1 つのファイル共有のみで、既定のカタログに設定できるのは 1 つのカタログ URL のみです。たとえば、`\\Server2\AppManifests` を既定に設定した場合、Project は `\\ServerName\AppManifests` の [**既定**] チェック ボックスをオフにします。既定の選択を変更した場合、[**クリア**] を選択すると、インストールしたアドインを削除して、Project を再起動することができます。Project が開いているときに既定のファイル共有または SharePoint カタログにアドインを追加した場合、Project を再起動する必要があります。
+    > 図 1 は **[信頼できるカタログのアドレス]** リストの非公開カタログの、2 つのファイル共有と 1 つの架空の URL を示しています。既定のファイル共有に設定できるのは 1 つのファイル共有のみで、既定のカタログに設定できるのは 1 つのカタログ URL のみです。たとえば、`\\Server2\AppManifests` を既定に設定した場合、Project は `\\ServerName\AppManifests` の **[既定]** チェック ボックスをオフにします。既定の選択を変更した場合、**[クリア]** を選択すると、インストールしたアドインを削除して、Project を再起動することができます。Project が開いているときに既定のファイル共有または SharePoint カタログにアドインを追加した場合、Project を再起動する必要があります。
 
     *図 1. セキュリティ センターを使用したアドインのマニフェストのカタログの追加*
 
     ![セキュリティ センターを使用してアプリ マニフェストを追加](../images/pj15-agave-overview-trust-centers.png)
 
-7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択します (図 2 を参照)。
+7. [**プロジェクト**] リボンで、[**Office アドイン**] ドロップダウン メニューの [**すべて表示**] を選択します。[**アドインの挿入**] ダイアログ ボックスで、[**共有フォルダー**] を選択します (図 2 を参照)。
 
     *図 2. ファイル共有にあるアドインの起動*
 
     ![ファイル共有にある Office アプリの起動](../images/pj15-agave-overview-start-agave-apps.png)
 
-8. Bing Search アドインを選択し、 [ **挿入**] を選択します。
+8. Bing Search アドインを選択し、[**挿入**] を選択します。
 
     図 3 のように、作業ウィンドウに Bing Search アドインが表示されます。作業ウィンドウのサイズを手動で変更して、Bing Search アドインを使用できます。
 
