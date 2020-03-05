@@ -3,79 +3,79 @@ title: Office アドインの XML マニフェスト
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: abc228fda18b432ddd16d04cce95a8d5af17dd8d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2e31286026dedc0c8b67beb6ff6eabfe6d5f8f59
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162833"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413749"
 ---
-# <a name="office-add-ins-xml-manifest"></a><span data-ttu-id="ef758-102">Office アドインの XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="ef758-102">Office Add-ins XML manifest</span></span>
+# <a name="office-add-ins-xml-manifest"></a><span data-ttu-id="7a9c6-102">Office アドインの XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="7a9c6-102">Office Add-ins XML manifest</span></span>
 
-<span data-ttu-id="ef758-103">Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。</span><span class="sxs-lookup"><span data-stu-id="ef758-103">The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.</span></span>
+<span data-ttu-id="7a9c6-103">Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-103">The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.</span></span>
 
-<span data-ttu-id="ef758-104">このスキーマに基づいた XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。</span><span class="sxs-lookup"><span data-stu-id="ef758-104">An XML manifest file based on this schema enables an Office Add-in to do the following:</span></span>
+<span data-ttu-id="7a9c6-104">このスキーマに基づいた XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-104">An XML manifest file based on this schema enables an Office Add-in to do the following:</span></span>
 
-* <span data-ttu-id="ef758-105">ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。</span><span class="sxs-lookup"><span data-stu-id="ef758-105">Describe itself by providing an ID, version, description, display name, and default locale.</span></span>
+* <span data-ttu-id="7a9c6-105">ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-105">Describe itself by providing an ID, version, description, display name, and default locale.</span></span>
 
-* <span data-ttu-id="ef758-106">アドインのブランド化に使用するイメージと、Office リボンで[アドイン コマンド][]に使用する画像を指定する。</span><span class="sxs-lookup"><span data-stu-id="ef758-106">Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.</span></span>
+* <span data-ttu-id="7a9c6-106">アドインのブランド化に使用するイメージと、Office リボンで[アドイン コマンド][]に使用する画像を指定する。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-106">Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.</span></span>
 
-* <span data-ttu-id="ef758-107">アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。</span><span class="sxs-lookup"><span data-stu-id="ef758-107">Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.</span></span>
+* <span data-ttu-id="7a9c6-107">アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-107">Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.</span></span>
 
-* <span data-ttu-id="ef758-108">コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。</span><span class="sxs-lookup"><span data-stu-id="ef758-108">Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.</span></span>
+* <span data-ttu-id="7a9c6-108">コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-108">Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.</span></span>
 
-* <span data-ttu-id="ef758-109">ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。</span><span class="sxs-lookup"><span data-stu-id="ef758-109">Declare permissions that the Office Add-in requires, such as reading or writing to the document.</span></span>
+* <span data-ttu-id="7a9c6-109">ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-109">Declare permissions that the Office Add-in requires, such as reading or writing to the document.</span></span>
 
-* <span data-ttu-id="ef758-110">Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。</span><span class="sxs-lookup"><span data-stu-id="ef758-110">For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.</span></span>
+* <span data-ttu-id="7a9c6-110">Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-110">For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ef758-p101">AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。</span><span class="sxs-lookup"><span data-stu-id="ef758-p101">If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).</span></span>
+> <span data-ttu-id="7a9c6-p101">AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-p101">If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).</span></span>
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
-## <a name="required-elements"></a><span data-ttu-id="ef758-113">必要な要素</span><span class="sxs-lookup"><span data-stu-id="ef758-113">Required elements</span></span>
+## <a name="required-elements"></a><span data-ttu-id="7a9c6-113">必要な要素</span><span class="sxs-lookup"><span data-stu-id="7a9c6-113">Required elements</span></span>
 
-<span data-ttu-id="ef758-114">次の表に、3 種類の Office アドインに必要な要素を示します。</span><span class="sxs-lookup"><span data-stu-id="ef758-114">The following table specifies the elements that are required for the three types of Office Add-ins.</span></span>
+<span data-ttu-id="7a9c6-114">次の表に、3 種類の Office アドインに必要な要素を示します。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-114">The following table specifies the elements that are required for the three types of Office Add-ins.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ef758-115">親要素内で要素を表示する順序も決まっています。</span><span class="sxs-lookup"><span data-stu-id="ef758-115">There is also a mandatory order in which elements must appear within their parent element.</span></span> <span data-ttu-id="ef758-116">詳細については、[マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef758-116">For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).</span></span>
+> <span data-ttu-id="7a9c6-115">親要素内で要素を表示する順序も決まっています。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-115">There is also a mandatory order in which elements must appear within their parent element.</span></span> <span data-ttu-id="7a9c6-116">詳細については、[マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-116">For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).</span></span>
 
 
-### <a name="required-elements-by-office-add-in-type"></a><span data-ttu-id="ef758-117">Office アドインの種類ごとの必要な要素</span><span class="sxs-lookup"><span data-stu-id="ef758-117">Required elements by Office Add-in type</span></span>
+### <a name="required-elements-by-office-add-in-type"></a><span data-ttu-id="7a9c6-117">Office アドインの種類ごとの必要な要素</span><span class="sxs-lookup"><span data-stu-id="7a9c6-117">Required elements by Office Add-in type</span></span>
 
-| <span data-ttu-id="ef758-118">要素</span><span class="sxs-lookup"><span data-stu-id="ef758-118">Element</span></span>                                                                                      | <span data-ttu-id="ef758-119">コンテンツ</span><span class="sxs-lookup"><span data-stu-id="ef758-119">Content</span></span> | <span data-ttu-id="ef758-120">作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="ef758-120">Task pane</span></span> | <span data-ttu-id="ef758-121">Outlook</span><span class="sxs-lookup"><span data-stu-id="ef758-121">Outlook</span></span> |
+| <span data-ttu-id="7a9c6-118">要素</span><span class="sxs-lookup"><span data-stu-id="7a9c6-118">Element</span></span>                                                                                      | <span data-ttu-id="7a9c6-119">コンテンツ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-119">Content</span></span> | <span data-ttu-id="7a9c6-120">作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-120">Task pane</span></span> | <span data-ttu-id="7a9c6-121">Outlook</span><span class="sxs-lookup"><span data-stu-id="7a9c6-121">Outlook</span></span> |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| <span data-ttu-id="ef758-122">[OfficeApp][]</span><span class="sxs-lookup"><span data-stu-id="ef758-122">[OfficeApp][]</span></span>                                                                                |    <span data-ttu-id="ef758-123">X</span><span class="sxs-lookup"><span data-stu-id="ef758-123">X</span></span>    |     <span data-ttu-id="ef758-124">X</span><span class="sxs-lookup"><span data-stu-id="ef758-124">X</span></span>     |    <span data-ttu-id="ef758-125">X</span><span class="sxs-lookup"><span data-stu-id="ef758-125">X</span></span>    |
-| <span data-ttu-id="ef758-126">
-  [Id][]</span><span class="sxs-lookup"><span data-stu-id="ef758-126">[Id][]</span></span>                                                                                       |    <span data-ttu-id="ef758-127">X</span><span class="sxs-lookup"><span data-stu-id="ef758-127">X</span></span>    |     <span data-ttu-id="ef758-128">X</span><span class="sxs-lookup"><span data-stu-id="ef758-128">X</span></span>     |    <span data-ttu-id="ef758-129">X</span><span class="sxs-lookup"><span data-stu-id="ef758-129">X</span></span>    |
-| <span data-ttu-id="ef758-130">
-  [Version][]</span><span class="sxs-lookup"><span data-stu-id="ef758-130">[Version][]</span></span>                                                                                  |    <span data-ttu-id="ef758-131">X</span><span class="sxs-lookup"><span data-stu-id="ef758-131">X</span></span>    |     <span data-ttu-id="ef758-132">X</span><span class="sxs-lookup"><span data-stu-id="ef758-132">X</span></span>     |    <span data-ttu-id="ef758-133">X</span><span class="sxs-lookup"><span data-stu-id="ef758-133">X</span></span>    |
-| <span data-ttu-id="ef758-134">[ProviderName][]</span><span class="sxs-lookup"><span data-stu-id="ef758-134">[ProviderName][]</span></span>                                                                             |    <span data-ttu-id="ef758-135">X</span><span class="sxs-lookup"><span data-stu-id="ef758-135">X</span></span>    |     <span data-ttu-id="ef758-136">X</span><span class="sxs-lookup"><span data-stu-id="ef758-136">X</span></span>     |    <span data-ttu-id="ef758-137">X</span><span class="sxs-lookup"><span data-stu-id="ef758-137">X</span></span>    |
-| <span data-ttu-id="ef758-138">[DefaultLocale][]</span><span class="sxs-lookup"><span data-stu-id="ef758-138">[DefaultLocale][]</span></span>                                                                            |    <span data-ttu-id="ef758-139">X</span><span class="sxs-lookup"><span data-stu-id="ef758-139">X</span></span>    |     <span data-ttu-id="ef758-140">X</span><span class="sxs-lookup"><span data-stu-id="ef758-140">X</span></span>     |    <span data-ttu-id="ef758-141">X</span><span class="sxs-lookup"><span data-stu-id="ef758-141">X</span></span>    |
-| <span data-ttu-id="ef758-142">[DisplayName][]</span><span class="sxs-lookup"><span data-stu-id="ef758-142">[DisplayName][]</span></span>                                                                              |    <span data-ttu-id="ef758-143">X</span><span class="sxs-lookup"><span data-stu-id="ef758-143">X</span></span>    |     <span data-ttu-id="ef758-144">X</span><span class="sxs-lookup"><span data-stu-id="ef758-144">X</span></span>     |    <span data-ttu-id="ef758-145">X</span><span class="sxs-lookup"><span data-stu-id="ef758-145">X</span></span>    |
-| <span data-ttu-id="ef758-146">[Description][]</span><span class="sxs-lookup"><span data-stu-id="ef758-146">[Description][]</span></span>                                                                              |    <span data-ttu-id="ef758-147">X</span><span class="sxs-lookup"><span data-stu-id="ef758-147">X</span></span>    |     <span data-ttu-id="ef758-148">X</span><span class="sxs-lookup"><span data-stu-id="ef758-148">X</span></span>     |    <span data-ttu-id="ef758-149">X</span><span class="sxs-lookup"><span data-stu-id="ef758-149">X</span></span>    |
-| <span data-ttu-id="ef758-150">[IconUrl][]</span><span class="sxs-lookup"><span data-stu-id="ef758-150">[IconUrl][]</span></span>                                                                                  |    <span data-ttu-id="ef758-151">X</span><span class="sxs-lookup"><span data-stu-id="ef758-151">X</span></span>    |     <span data-ttu-id="ef758-152">X</span><span class="sxs-lookup"><span data-stu-id="ef758-152">X</span></span>     |    <span data-ttu-id="ef758-153">X</span><span class="sxs-lookup"><span data-stu-id="ef758-153">X</span></span>    |
-| <span data-ttu-id="ef758-154">[SupportUrl][]\*\*</span><span class="sxs-lookup"><span data-stu-id="ef758-154">[SupportUrl][]\*\*</span></span>                                                                           |    <span data-ttu-id="ef758-155">X</span><span class="sxs-lookup"><span data-stu-id="ef758-155">X</span></span>    |     <span data-ttu-id="ef758-156">X</span><span class="sxs-lookup"><span data-stu-id="ef758-156">X</span></span>     |    <span data-ttu-id="ef758-157">X</span><span class="sxs-lookup"><span data-stu-id="ef758-157">X</span></span>    |
-| <span data-ttu-id="ef758-158">[DefaultSettings (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-158">[DefaultSettings (ContentApp)][]</span></span><br/><span data-ttu-id="ef758-159">[DefaultSettings (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-159">[DefaultSettings (TaskPaneApp)][]</span></span>                       |    <span data-ttu-id="ef758-160">X</span><span class="sxs-lookup"><span data-stu-id="ef758-160">X</span></span>    |     <span data-ttu-id="ef758-161">X</span><span class="sxs-lookup"><span data-stu-id="ef758-161">X</span></span>     |         |
-| <span data-ttu-id="ef758-162">[SourceLocation (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-162">[SourceLocation (ContentApp)][]</span></span><br/><span data-ttu-id="ef758-163">[SourceLocation (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-163">[SourceLocation (TaskPaneApp)][]</span></span>                         |    <span data-ttu-id="ef758-164">X</span><span class="sxs-lookup"><span data-stu-id="ef758-164">X</span></span>    |     <span data-ttu-id="ef758-165">X</span><span class="sxs-lookup"><span data-stu-id="ef758-165">X</span></span>     |         |
-| <span data-ttu-id="ef758-166">[DesktopSettings][]</span><span class="sxs-lookup"><span data-stu-id="ef758-166">[DesktopSettings][]</span></span>                                                                          |         |           |    <span data-ttu-id="ef758-167">X</span><span class="sxs-lookup"><span data-stu-id="ef758-167">X</span></span>    |
-| <span data-ttu-id="ef758-168">[SourceLocation (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-168">[SourceLocation (MailApp)][]</span></span>                                                                 |         |           |    <span data-ttu-id="ef758-169">X</span><span class="sxs-lookup"><span data-stu-id="ef758-169">X</span></span>    |
-| <span data-ttu-id="ef758-170">
-  [Permissions (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-170">[Permissions (ContentApp)][]</span></span><br/><span data-ttu-id="ef758-171">
-  [Permissions (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-171">[Permissions (TaskPaneApp)][]</span></span><br/><span data-ttu-id="ef758-172">
-  [Permissions (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-172">[Permissions (MailApp)][]</span></span> |    <span data-ttu-id="ef758-173">X</span><span class="sxs-lookup"><span data-stu-id="ef758-173">X</span></span>    |     <span data-ttu-id="ef758-174">X</span><span class="sxs-lookup"><span data-stu-id="ef758-174">X</span></span>     |    <span data-ttu-id="ef758-175">X</span><span class="sxs-lookup"><span data-stu-id="ef758-175">X</span></span>    |
-| <span data-ttu-id="ef758-176">
-  [Rule (RuleCollection)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-176">[Rule (RuleCollection)][]</span></span><br/><span data-ttu-id="ef758-177">
-  [Rule (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="ef758-177">[Rule (MailApp)][]</span></span>                                             |         |           |    <span data-ttu-id="ef758-178">X</span><span class="sxs-lookup"><span data-stu-id="ef758-178">X</span></span>    |
-| <span data-ttu-id="ef758-179">[Requirements (MailApp)\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-179">[Requirements (MailApp)\*][]</span></span>                                                                  |         |           |    <span data-ttu-id="ef758-180">X</span><span class="sxs-lookup"><span data-stu-id="ef758-180">X</span></span>    |
-| <span data-ttu-id="ef758-181">[Set\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-181">[Set\*][]</span></span><br/><span data-ttu-id="ef758-182">[Sets (MailAppRequirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-182">[Sets (MailAppRequirements)\*][]</span></span>                                                 |         |           |    <span data-ttu-id="ef758-183">X</span><span class="sxs-lookup"><span data-stu-id="ef758-183">X</span></span>    |
-| <span data-ttu-id="ef758-184">[Form\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-184">[Form\*][]</span></span><br/><span data-ttu-id="ef758-185">[FormSettings\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-185">[FormSettings\*][]</span></span>                                                              |         |           |    <span data-ttu-id="ef758-186">X</span><span class="sxs-lookup"><span data-stu-id="ef758-186">X</span></span>    |
-| <span data-ttu-id="ef758-187">[Sets (Requirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-187">[Sets (Requirements)\*][]</span></span>                                                                     |    <span data-ttu-id="ef758-188">X</span><span class="sxs-lookup"><span data-stu-id="ef758-188">X</span></span>    |     <span data-ttu-id="ef758-189">X</span><span class="sxs-lookup"><span data-stu-id="ef758-189">X</span></span>     |         |
-| <span data-ttu-id="ef758-190">[Hosts\*][]</span><span class="sxs-lookup"><span data-stu-id="ef758-190">[Hosts\*][]</span></span>                                                                                   |    <span data-ttu-id="ef758-191">X</span><span class="sxs-lookup"><span data-stu-id="ef758-191">X</span></span>    |     <span data-ttu-id="ef758-192">X</span><span class="sxs-lookup"><span data-stu-id="ef758-192">X</span></span>     |         |
+| <span data-ttu-id="7a9c6-122">[OfficeApp][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-122">[OfficeApp][]</span></span>                                                                                |    <span data-ttu-id="7a9c6-123">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-123">X</span></span>    |     <span data-ttu-id="7a9c6-124">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-124">X</span></span>     |    <span data-ttu-id="7a9c6-125">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-125">X</span></span>    |
+| <span data-ttu-id="7a9c6-126">
+  [Id][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-126">[Id][]</span></span>                                                                                       |    <span data-ttu-id="7a9c6-127">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-127">X</span></span>    |     <span data-ttu-id="7a9c6-128">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-128">X</span></span>     |    <span data-ttu-id="7a9c6-129">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-129">X</span></span>    |
+| <span data-ttu-id="7a9c6-130">
+  [Version][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-130">[Version][]</span></span>                                                                                  |    <span data-ttu-id="7a9c6-131">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-131">X</span></span>    |     <span data-ttu-id="7a9c6-132">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-132">X</span></span>     |    <span data-ttu-id="7a9c6-133">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-133">X</span></span>    |
+| <span data-ttu-id="7a9c6-134">[ProviderName][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-134">[ProviderName][]</span></span>                                                                             |    <span data-ttu-id="7a9c6-135">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-135">X</span></span>    |     <span data-ttu-id="7a9c6-136">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-136">X</span></span>     |    <span data-ttu-id="7a9c6-137">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-137">X</span></span>    |
+| <span data-ttu-id="7a9c6-138">[DefaultLocale][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-138">[DefaultLocale][]</span></span>                                                                            |    <span data-ttu-id="7a9c6-139">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-139">X</span></span>    |     <span data-ttu-id="7a9c6-140">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-140">X</span></span>     |    <span data-ttu-id="7a9c6-141">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-141">X</span></span>    |
+| <span data-ttu-id="7a9c6-142">[DisplayName][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-142">[DisplayName][]</span></span>                                                                              |    <span data-ttu-id="7a9c6-143">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-143">X</span></span>    |     <span data-ttu-id="7a9c6-144">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-144">X</span></span>     |    <span data-ttu-id="7a9c6-145">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-145">X</span></span>    |
+| <span data-ttu-id="7a9c6-146">[Description][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-146">[Description][]</span></span>                                                                              |    <span data-ttu-id="7a9c6-147">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-147">X</span></span>    |     <span data-ttu-id="7a9c6-148">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-148">X</span></span>     |    <span data-ttu-id="7a9c6-149">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-149">X</span></span>    |
+| <span data-ttu-id="7a9c6-150">[IconUrl][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-150">[IconUrl][]</span></span>                                                                                  |    <span data-ttu-id="7a9c6-151">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-151">X</span></span>    |     <span data-ttu-id="7a9c6-152">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-152">X</span></span>     |    <span data-ttu-id="7a9c6-153">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-153">X</span></span>    |
+| <span data-ttu-id="7a9c6-154">[SupportUrl][]\*\*</span><span class="sxs-lookup"><span data-stu-id="7a9c6-154">[SupportUrl][]\*\*</span></span>                                                                           |    <span data-ttu-id="7a9c6-155">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-155">X</span></span>    |     <span data-ttu-id="7a9c6-156">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-156">X</span></span>     |    <span data-ttu-id="7a9c6-157">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-157">X</span></span>    |
+| <span data-ttu-id="7a9c6-158">[DefaultSettings (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-158">[DefaultSettings (ContentApp)][]</span></span><br/><span data-ttu-id="7a9c6-159">[DefaultSettings (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-159">[DefaultSettings (TaskPaneApp)][]</span></span>                       |    <span data-ttu-id="7a9c6-160">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-160">X</span></span>    |     <span data-ttu-id="7a9c6-161">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-161">X</span></span>     |         |
+| <span data-ttu-id="7a9c6-162">[SourceLocation (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-162">[SourceLocation (ContentApp)][]</span></span><br/><span data-ttu-id="7a9c6-163">[SourceLocation (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-163">[SourceLocation (TaskPaneApp)][]</span></span>                         |    <span data-ttu-id="7a9c6-164">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-164">X</span></span>    |     <span data-ttu-id="7a9c6-165">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-165">X</span></span>     |         |
+| <span data-ttu-id="7a9c6-166">[DesktopSettings][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-166">[DesktopSettings][]</span></span>                                                                          |         |           |    <span data-ttu-id="7a9c6-167">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-167">X</span></span>    |
+| <span data-ttu-id="7a9c6-168">[SourceLocation (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-168">[SourceLocation (MailApp)][]</span></span>                                                                 |         |           |    <span data-ttu-id="7a9c6-169">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-169">X</span></span>    |
+| <span data-ttu-id="7a9c6-170">
+  [Permissions (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-170">[Permissions (ContentApp)][]</span></span><br/><span data-ttu-id="7a9c6-171">
+  [Permissions (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-171">[Permissions (TaskPaneApp)][]</span></span><br/><span data-ttu-id="7a9c6-172">
+  [Permissions (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-172">[Permissions (MailApp)][]</span></span> |    <span data-ttu-id="7a9c6-173">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-173">X</span></span>    |     <span data-ttu-id="7a9c6-174">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-174">X</span></span>     |    <span data-ttu-id="7a9c6-175">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-175">X</span></span>    |
+| <span data-ttu-id="7a9c6-176">
+  [Rule (RuleCollection)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-176">[Rule (RuleCollection)][]</span></span><br/><span data-ttu-id="7a9c6-177">
+  [Rule (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-177">[Rule (MailApp)][]</span></span>                                             |         |           |    <span data-ttu-id="7a9c6-178">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-178">X</span></span>    |
+| <span data-ttu-id="7a9c6-179">[Requirements (MailApp)\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-179">[Requirements (MailApp)\*][]</span></span>                                                                  |         |           |    <span data-ttu-id="7a9c6-180">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-180">X</span></span>    |
+| <span data-ttu-id="7a9c6-181">[Set\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-181">[Set\*][]</span></span><br/><span data-ttu-id="7a9c6-182">[Sets (MailAppRequirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-182">[Sets (MailAppRequirements)\*][]</span></span>                                                 |         |           |    <span data-ttu-id="7a9c6-183">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-183">X</span></span>    |
+| <span data-ttu-id="7a9c6-184">[Form\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-184">[Form\*][]</span></span><br/><span data-ttu-id="7a9c6-185">[FormSettings\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-185">[FormSettings\*][]</span></span>                                                              |         |           |    <span data-ttu-id="7a9c6-186">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-186">X</span></span>    |
+| <span data-ttu-id="7a9c6-187">[Sets (Requirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-187">[Sets (Requirements)\*][]</span></span>                                                                     |    <span data-ttu-id="7a9c6-188">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-188">X</span></span>    |     <span data-ttu-id="7a9c6-189">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-189">X</span></span>     |         |
+| <span data-ttu-id="7a9c6-190">[Hosts\*][]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-190">[Hosts\*][]</span></span>                                                                                   |    <span data-ttu-id="7a9c6-191">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-191">X</span></span>    |     <span data-ttu-id="7a9c6-192">X</span><span class="sxs-lookup"><span data-stu-id="7a9c6-192">X</span></span>     |         |
 
-<span data-ttu-id="ef758-193">_\*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。_</span><span class="sxs-lookup"><span data-stu-id="ef758-193">_\*Added in the Office Add-in Manifest Schema version 1.1._</span></span>
+<span data-ttu-id="7a9c6-193">_\*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。_</span><span class="sxs-lookup"><span data-stu-id="7a9c6-193">_\*Added in the Office Add-in Manifest Schema version 1.1._</span></span>
 
-<span data-ttu-id="ef758-194">_\*\* SupportUrl は、AppSource 経由で配布されたアドインに対してのみ必要です。_</span><span class="sxs-lookup"><span data-stu-id="ef758-194">_\*\* SupportUrl is only required for add-ins that are distributed through AppSource._</span></span>
+<span data-ttu-id="7a9c6-194">_\*\* SupportUrl は、AppSource 経由で配布されたアドインに対してのみ必要です。_</span><span class="sxs-lookup"><span data-stu-id="7a9c6-194">_\*\* SupportUrl is only required for add-ins that are distributed through AppSource._</span></span>
 
 <!-- Links for above table -->
 
@@ -107,33 +107,33 @@ ms.locfileid: "42162833"
 [sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
 [hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
-## <a name="hosting-requirements"></a><span data-ttu-id="ef758-222">ホストするための要件</span><span class="sxs-lookup"><span data-stu-id="ef758-222">Hosting requirements</span></span>
+## <a name="hosting-requirements"></a><span data-ttu-id="7a9c6-222">ホストするための要件</span><span class="sxs-lookup"><span data-stu-id="7a9c6-222">Hosting requirements</span></span>
 
-<span data-ttu-id="ef758-223">[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef758-223">All image URIs, such as those used for [add-in commands][], must support caching.</span></span> <span data-ttu-id="ef758-224">イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。</span><span class="sxs-lookup"><span data-stu-id="ef758-224">The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.</span></span>
+<span data-ttu-id="7a9c6-223">[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-223">All image URIs, such as those used for [add-in commands][], must support caching.</span></span> <span data-ttu-id="7a9c6-224">イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-224">The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.</span></span>
 
-<span data-ttu-id="ef758-225">[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。</span><span class="sxs-lookup"><span data-stu-id="ef758-225">All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**.</span></span> [!include[HTTPS guidance](../includes/https-guidance.md)]
+<span data-ttu-id="7a9c6-225">[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-225">All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**.</span></span> [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-## <a name="best-practices-for-submitting-to-appsource"></a><span data-ttu-id="ef758-226">AppSource に提出するためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="ef758-226">Best practices for submitting to AppSource</span></span>
+## <a name="best-practices-for-submitting-to-appsource"></a><span data-ttu-id="7a9c6-226">AppSource に提出するためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="7a9c6-226">Best practices for submitting to AppSource</span></span>
 
-<span data-ttu-id="ef758-p104">アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。</span><span class="sxs-lookup"><span data-stu-id="ef758-p104">Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</span></span>
+<span data-ttu-id="7a9c6-p104">アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-p104">Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</span></span>
 
-<span data-ttu-id="ef758-229">AppSource に提出するアドインには、[SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 要素も含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef758-229">Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element.</span></span> <span data-ttu-id="ef758-230">詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/office/dev/store/validation-policies)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ef758-230">For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).</span></span>
+<span data-ttu-id="7a9c6-229">AppSource に提出するアドインには、[SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 要素も含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-229">Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element.</span></span> <span data-ttu-id="7a9c6-230">詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/office/dev/store/validation-policies)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-230">For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).</span></span>
 
-<span data-ttu-id="ef758-231">必ず [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。</span><span class="sxs-lookup"><span data-stu-id="ef758-231">Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.</span></span>
+<span data-ttu-id="7a9c6-231">必ず [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-231">Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.</span></span>
 
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a><span data-ttu-id="ef758-232">アドイン ウィンドウで開くドメインの指定</span><span class="sxs-lookup"><span data-stu-id="ef758-232">Specify domains you want to open in the add-in window</span></span>
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a><span data-ttu-id="7a9c6-232">アドイン ウィンドウで開くドメインの指定</span><span class="sxs-lookup"><span data-stu-id="7a9c6-232">Specify domains you want to open in the add-in window</span></span>
 
-<span data-ttu-id="ef758-233">Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。</span><span class="sxs-lookup"><span data-stu-id="ef758-233">When running in Office on the web, your task pane can be navigated to any URL.</span></span> <span data-ttu-id="ef758-234">ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。</span><span class="sxs-lookup"><span data-stu-id="ef758-234">However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.</span></span>
+<span data-ttu-id="7a9c6-233">Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-233">When running in Office on the web, your task pane can be navigated to any URL.</span></span> <span data-ttu-id="7a9c6-234">ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-234">However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.</span></span>
 
-<span data-ttu-id="ef758-235">このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。</span><span class="sxs-lookup"><span data-stu-id="ef758-235">To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="ef758-236">アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="ef758-236">If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop.</span></span> <span data-ttu-id="ef758-237">この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。</span><span class="sxs-lookup"><span data-stu-id="ef758-237">If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).</span></span>
+<span data-ttu-id="7a9c6-235">このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-235">To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="7a9c6-236">アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-236">If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop.</span></span> <span data-ttu-id="7a9c6-237">この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-237">If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ef758-238">この動作に対する例外は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="ef758-238">There are two exceptions to this behavior:</span></span>
+> <span data-ttu-id="7a9c6-238">この動作に対する例外は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-238">There are two exceptions to this behavior:</span></span>
 > 
-> - <span data-ttu-id="ef758-239">これは、アドインのルート ウィンドウに対してのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="ef758-239">It applies only to the root pane of the add-in.</span></span> <span data-ttu-id="ef758-240">アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。</span><span class="sxs-lookup"><span data-stu-id="ef758-240">If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span>
-> - <span data-ttu-id="ef758-241">[displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。</span><span class="sxs-lookup"><span data-stu-id="ef758-241">When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span> 
+> - <span data-ttu-id="7a9c6-239">これは、アドインのルート ウィンドウに対してのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-239">It applies only to the root pane of the add-in.</span></span> <span data-ttu-id="7a9c6-240">アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-240">If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span>
+> - <span data-ttu-id="7a9c6-241">[displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-241">When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span> 
 
-<span data-ttu-id="ef758-242">次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。</span><span class="sxs-lookup"><span data-stu-id="ef758-242">The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element.</span></span> <span data-ttu-id="ef758-243">また、この例では、**AppDomains** 要素リスト内の [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 要素の `https://www.northwindtraders.com` ドメインも指定しています。</span><span class="sxs-lookup"><span data-stu-id="ef758-243">It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list.</span></span> <span data-ttu-id="ef758-244">アドインが www.northwindtraders.com ドメイン内のページに移動すると、Office デスクトップの場合でも、そのページはアドイン ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="ef758-244">If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.</span></span>
+<span data-ttu-id="7a9c6-242">次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-242">The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element.</span></span> <span data-ttu-id="7a9c6-243">また、この例では、**AppDomains** 要素リスト内の [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 要素の `https://www.northwindtraders.com` ドメインも指定しています。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-243">It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list.</span></span> <span data-ttu-id="7a9c6-244">アドインが www.northwindtraders.com ドメイン内のページに移動すると、Office デスクトップの場合でも、そのページはアドイン ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-244">If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.</span></span>
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,17 +156,17 @@ ms.locfileid: "42162833"
 </OfficeApp>
 ```
 
-## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a><span data-ttu-id="ef758-245">Office.js API 呼び出しが行われるドメインを指定する</span><span class="sxs-lookup"><span data-stu-id="ef758-245">Specify domains from which Office.js API calls are made</span></span>
+## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a><span data-ttu-id="7a9c6-245">Office.js API 呼び出しが行われるドメインを指定する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-245">Specify domains from which Office.js API calls are made</span></span>
 
-<span data-ttu-id="ef758-246">アドインは、マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で参照されているドメインから Office.js API 呼び出しを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="ef758-246">Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file.</span></span> <span data-ttu-id="ef758-247">アドイン内に、Office.js API にアクセスする必要がある他の IFrame がある場合は、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定されているリストにそのソース URL のドメインを追加します。</span><span class="sxs-lookup"><span data-stu-id="ef758-247">If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="ef758-248">`AppDomains` リストに含まれていないソースを持つ IFrame が Office.js API 呼び出しを行おうとすると、アドインには[アクセス許可の拒否エラー](../reference/javascript-api-for-office-error-codes.md)が返されます。</span><span class="sxs-lookup"><span data-stu-id="ef758-248">If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).</span></span> 
+<span data-ttu-id="7a9c6-246">アドインは、マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素で参照されているドメインから Office.js API 呼び出しを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-246">Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file.</span></span> <span data-ttu-id="7a9c6-247">アドイン内に、Office.js API にアクセスする必要がある他の IFrame がある場合は、マニフェスト ファイルの [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 要素で指定されているリストにそのソース URL のドメインを追加します。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-247">If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="7a9c6-248">`AppDomains` リストに含まれていないソースを持つ IFrame が Office.js API 呼び出しを行おうとすると、アドインには[アクセス許可の拒否エラー](../reference/javascript-api-for-office-error-codes.md)が返されます。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-248">If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).</span></span> 
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a><span data-ttu-id="ef758-249">マニフェスト v1.1 XML ファイルの例とスキーマ</span><span class="sxs-lookup"><span data-stu-id="ef758-249">Manifest v1.1 XML file examples and schemas</span></span>
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a><span data-ttu-id="7a9c6-249">マニフェスト v1.1 XML ファイルの例とスキーマ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-249">Manifest v1.1 XML file examples and schemas</span></span>
 
-<span data-ttu-id="ef758-250">後続の各セクションでは、コンテンツ アドイン、作業ウィンドウ アドイン、および Outlook アドインのマニフェスト v1.1 XML ファイルの例を示します。</span><span class="sxs-lookup"><span data-stu-id="ef758-250">The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.</span></span>
+<span data-ttu-id="7a9c6-250">後続の各セクションでは、コンテンツ アドイン、作業ウィンドウ アドイン、および Outlook アドインのマニフェスト v1.1 XML ファイルの例を示します。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-250">The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.</span></span>
 
-# <a name="task-pane"></a>[<span data-ttu-id="ef758-251">作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="ef758-251">Task pane</span></span>](#tab/tabid-1)
+# <a name="task-pane"></a>[<span data-ttu-id="7a9c6-251">作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-251">Task pane</span></span>](#tab/tabid-1)
 
-[<span data-ttu-id="ef758-252">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="ef758-252">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+[<span data-ttu-id="7a9c6-252">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-252">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -226,9 +226,9 @@ ms.locfileid: "42162833"
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
                   <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
-                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                 </Icon>
 
                 <!--Control. It can be of type "Button" or "Menu" -->
@@ -242,9 +242,9 @@ ms.locfileid: "42162833"
                     <Description resid="Contoso.FunctionButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon80" />
                   </Icon>
                   <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane-->
                   <!--Look at the FunctionFile.html page for reference on how to implement the function -->
@@ -261,9 +261,9 @@ ms.locfileid: "42162833"
                     <Description resid="Contoso.TaskpaneButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2Id1</TaskpaneId>
@@ -279,9 +279,9 @@ ms.locfileid: "42162833"
                     <Description resid="Contoso.Dropdown.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                   </Icon>
                   <Items>
                     <Item id="Contoso.Menu.Item1">
@@ -291,9 +291,9 @@ ms.locfileid: "42162833"
                         <Description resid="Contoso.Item1.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID1</TaskpaneId>
@@ -308,9 +308,9 @@ ms.locfileid: "42162833"
                         <Description resid="Contoso.Item2.Tooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon16" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon32" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>MyTaskPaneID2</TaskpaneId>
@@ -333,7 +333,9 @@ ms.locfileid: "42162833"
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
         <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
       </bt:Images>
       <bt:Urls>
@@ -362,9 +364,9 @@ ms.locfileid: "42162833"
 </OfficeApp>
 ```
 
-# <a name="content"></a>[<span data-ttu-id="ef758-253">Content</span><span class="sxs-lookup"><span data-stu-id="ef758-253">Content</span></span>](#tab/tabid-2)
+# <a name="content"></a>[<span data-ttu-id="7a9c6-253">Content</span><span class="sxs-lookup"><span data-stu-id="7a9c6-253">Content</span></span>](#tab/tabid-2)
 
-[<span data-ttu-id="ef758-254">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="ef758-254">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+[<span data-ttu-id="7a9c6-254">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-254">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -402,9 +404,9 @@ ms.locfileid: "42162833"
 </OfficeApp>
 ```
 
-# <a name="mail"></a>[<span data-ttu-id="ef758-255">メール</span><span class="sxs-lookup"><span data-stu-id="ef758-255">Mail</span></span>](#tab/tabid-3)
+# <a name="mail"></a>[<span data-ttu-id="7a9c6-255">メール</span><span class="sxs-lookup"><span data-stu-id="7a9c6-255">Mail</span></span>](#tab/tabid-3)
 
-[<span data-ttu-id="ef758-256">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="ef758-256">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+[<span data-ttu-id="7a9c6-256">アドイン マニフェストのスキーマ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-256">Add-in manifest schemas</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -495,21 +497,21 @@ ms.locfileid: "42162833"
 
 ---
 
-## <a name="validate-an-office-add-ins-manifest"></a><span data-ttu-id="ef758-257">Office アドインのマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="ef758-257">Validate an Office Add-in's manifest</span></span>
+## <a name="validate-an-office-add-ins-manifest"></a><span data-ttu-id="7a9c6-257">Office アドインのマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-257">Validate an Office Add-in's manifest</span></span>
 
-<span data-ttu-id="ef758-258">[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) に対してマニフェストを検証する方法については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef758-258">For information about validating a manifest against the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8), see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).</span></span>
+<span data-ttu-id="7a9c6-258">[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) に対してマニフェストを検証する方法については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7a9c6-258">For information about validating a manifest against the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8), see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ef758-259">関連項目</span><span class="sxs-lookup"><span data-stu-id="ef758-259">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a9c6-259">関連項目</span><span class="sxs-lookup"><span data-stu-id="7a9c6-259">See also</span></span>
 
-* [<span data-ttu-id="ef758-260">マニフェスト要素の正しい順序を確認する方法</span><span class="sxs-lookup"><span data-stu-id="ef758-260">How to find the proper order of manifest elements</span></span>](manifest-element-ordering.md)
-* <span data-ttu-id="ef758-261">[マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]</span><span class="sxs-lookup"><span data-stu-id="ef758-261">[Create add-in commands in your manifest][add-in commands]</span></span>
-* [<span data-ttu-id="ef758-262">Office のホストと API の要件を指定する</span><span class="sxs-lookup"><span data-stu-id="ef758-262">Specify Office hosts and API requirements</span></span>](specify-office-hosts-and-api-requirements.md)
-* [<span data-ttu-id="ef758-263">Office アドインのローカライズ</span><span class="sxs-lookup"><span data-stu-id="ef758-263">Localization for Office Add-ins</span></span>](localization.md)
-* [<span data-ttu-id="ef758-264">Office アドイン マニフェストのスキーマ参照</span><span class="sxs-lookup"><span data-stu-id="ef758-264">Schema reference for Office Add-ins manifests</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [<span data-ttu-id="ef758-265">API とマニフェストのバージョンを更新する</span><span class="sxs-lookup"><span data-stu-id="ef758-265">Update API and manifest version</span></span>](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [<span data-ttu-id="ef758-266">同等な COM アドインを特定する</span><span class="sxs-lookup"><span data-stu-id="ef758-266">Identify an equivalent COM add-in</span></span>](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [<span data-ttu-id="ef758-267">アドインでの API 使用についてアクセス許可を要求する</span><span class="sxs-lookup"><span data-stu-id="ef758-267">Requesting permissions for API use in add-ins</span></span>](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [<span data-ttu-id="ef758-268">Office アドインのマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="ef758-268">Validate an Office Add-in's manifest</span></span>](../testing/troubleshoot-manifest.md)
+* [<span data-ttu-id="7a9c6-260">マニフェスト要素の正しい順序を確認する方法</span><span class="sxs-lookup"><span data-stu-id="7a9c6-260">How to find the proper order of manifest elements</span></span>](manifest-element-ordering.md)
+* <span data-ttu-id="7a9c6-261">[マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]</span><span class="sxs-lookup"><span data-stu-id="7a9c6-261">[Create add-in commands in your manifest][add-in commands]</span></span>
+* [<span data-ttu-id="7a9c6-262">Office のホストと API の要件を指定する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-262">Specify Office hosts and API requirements</span></span>](specify-office-hosts-and-api-requirements.md)
+* [<span data-ttu-id="7a9c6-263">Office アドインのローカライズ</span><span class="sxs-lookup"><span data-stu-id="7a9c6-263">Localization for Office Add-ins</span></span>](localization.md)
+* [<span data-ttu-id="7a9c6-264">Office アドイン マニフェストのスキーマ参照</span><span class="sxs-lookup"><span data-stu-id="7a9c6-264">Schema reference for Office Add-ins manifests</span></span>](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+* [<span data-ttu-id="7a9c6-265">API とマニフェストのバージョンを更新する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-265">Update API and manifest version</span></span>](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+* [<span data-ttu-id="7a9c6-266">同等な COM アドインを特定する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-266">Identify an equivalent COM add-in</span></span>](make-office-add-in-compatible-with-existing-com-add-in.md)
+* [<span data-ttu-id="7a9c6-267">アドインでの API 使用についてアクセス許可を要求する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-267">Requesting permissions for API use in add-ins</span></span>](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+* [<span data-ttu-id="7a9c6-268">Office アドインのマニフェストを検証する</span><span class="sxs-lookup"><span data-stu-id="7a9c6-268">Validate an Office Add-in's manifest</span></span>](../testing/troubleshoot-manifest.md)
 
 [アドイン コマンド]: create-addin-commands.md
 [add-in commands]: create-addin-commands.md
