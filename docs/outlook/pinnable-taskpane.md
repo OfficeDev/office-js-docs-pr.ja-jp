@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインにピン留め可能な作業ウィンドウを実装する
 description: アドイン コマンド用の作業ウィンドウ UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作に対応した UI を提供できようになります。
-ms.date: 11/18/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 94c136a74dfddac1af663aea06c3c6ca27f22dcd
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 09baf7f1faa7611baa85a53a3d5d92fad2d140a1
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166462"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413777"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 
@@ -17,7 +17,10 @@ ms.locfileid: "42166462"
 ただし、既定では、ユーザーが新しいメッセージを選択すると、閲覧ウィンドウ内で開いていたメッセージのアドイン作業ウィンドウは自動的に閉じられます。頻繁に使用されるアドインの場合、ユーザーはそのウィンドウを開いたままにして、メッセージごとにアドインを有効化する手間がなくなることを望むでしょう。ピン留め可能な作業ウィンドウでは、これに該当するオプションをユーザーに提供できます。
 
 > [!NOTE]
-> 現在、ピン留め可能な作業ウィンドウは、Windows 版 Outlook 2016 以降 (Current Channel または Office Insider Channel のユーザーはビルド 7668.2000 以降、Deferred Channel のユーザーはビルド 7900.xxxx 以降)、Mac 用 Outlook 2016 以降 (バージョン 16.13.503 以降)、および Outlook on the web を使用している Office 365 サブスクライバーがご利用になれます。
+> Pinnable 作業ウィンドウ機能は[要件セット 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されていますが、現時点では、次のものを使用して Office 365 サブスクライバーのみが利用できます。
+> - Outlook 2016 以降 (現在のまたは Office Insider チャネル内のユーザーのためにビルド7668.2000 以降) (段階的提供チャネルのユーザー用に7900以降をビルドする)
+> - Outlook 2016 以降 (バージョン16.13.503 以降)
+> - モダン Outlook on the web
 
 > [!IMPORTANT]
 > 次の場合、ピン留め可能な作業ウィンドウは使用できません。
