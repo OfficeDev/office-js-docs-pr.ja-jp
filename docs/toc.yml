@@ -600,6 +600,9 @@
         - name: 図形
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
+        - name: 共有ランタイムで Office アドインを表示または非表示にする
+          href: excel/show-hide-add-in.md
+          displayName: Excel
         - name: テーブル
           href: excel/excel-add-ins-tables.md
           displayName: Excel
