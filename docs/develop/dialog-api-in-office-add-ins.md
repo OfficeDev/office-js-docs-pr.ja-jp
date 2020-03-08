@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインのダイアログボックス作成の基本について説明します。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324681"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561759"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -247,8 +247,11 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ダイアログ ボックス内のコードは、URL を解析し、パラメーター値を読み取ることができます。
 
-> [!NOTE]
+> [!IMPORTANT]
 > Office は、`displayDialogAsync` に渡される URL に `_host_info` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません)。Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+
+> [!NOTE]
+> これで、上記の api `messageChild`が`messageParent`ダイアログからメッセージを送信するのと同じように、親ページがダイアログにメッセージを送信するために使用できる api がプレビューされました。 詳細については、「[ホストページからダイアログボックスにデータとメッセージを渡す](parent-to-dialog.md)」を参照してください。 試してみることをお勧めしますが、運用アドインでは、このセクションで説明する手法を使用することをお勧めします。
 
 ## <a name="closing-the-dialog-box"></a>ダイアログ ボックスを閉じる
 

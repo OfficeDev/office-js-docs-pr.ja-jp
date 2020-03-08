@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8410ee6d9ff7a16d58c8efab53d6cc92112f942a
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325172"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561808"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -163,6 +163,14 @@ Office ホストによってアドインがサポートされる場所に関す�
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
+
+---
+
+### <a name="ribbonapi"></a>RibbonApi
+
+|**Office のホスト**|**セット内のメソッド**|
+|:-----|:-----|
+| 「 [Ribbonapi の要件セット](ribbon-api-requirement-sets.md)」を参照してください。|Office. UI. getRibbon<br>リボンの更新|
 
 ---
 

@@ -1,14 +1,14 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
 description: Outlook Mobile アドインはすべての商用版 Office 365 アカウント、Outlook.com アカウントでサポートされ、近いうちに Gmail アカウントでもサポートされる予定です。
-ms.date: 10/31/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ede3165f40e644715dc488214e047f00dafbede
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166555"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561803"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
@@ -25,6 +25,9 @@ Outlook Mobile アドインはすべての商用版 Office 365 アカウント�
 **Outlook on Android の作業ウィンドウの例**
 
 ![Outlook on Android の作業ウィンドウのスクリーンショット](../images/outlook-mobile-addin-taskpane-android.png)
+
+> [!IMPORTANT]
+> アドインは、モバイルブラウザーのモダンバージョンの Outlook では動作しません。 詳細については、「 [Outlook on your mobile browser がアップグレードさ](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)れています。」を参照してください。
 
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 

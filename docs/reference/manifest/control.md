@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Control 要素
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323799"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42562086"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -36,8 +36,11 @@ ms.locfileid: "42323799"
 |  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
+|  [Enabled](enabled.md)    | いいえ |  アドインを起動するときにコントロールを有効にするかどうかを指定します。  |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
+
+次の例では、アドインが起動するとボタンが無効になります。 プログラムを使用して有効にすることができます。 詳細については、「[アドインコマンドを有効または無効](/office/dev/add-ins/design/disable-add-in-commands)にする」を参照してください。
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -54,6 +57,7 @@ ms.locfileid: "42323799"
   <Action xsi:type="ExecuteFunction">
     <FunctionName>getSubject</FunctionName>
   </Action>
+  <Enabled>false</Enabled>
 </Control>
 ```
 
