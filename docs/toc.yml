@@ -151,6 +151,8 @@
                   href: develop/dialog-api-in-office-add-ins.md
                 - name: Office ダイアログ API のベスト プラクティスとルール
                   href: develop/dialog-best-practices.md
+                - name: ホスト ページからダイアログ ボックスにデータを送信する
+                  href: develop/parent-to-dialog.md
                 - name: Office ダイアログ ボックスでのエラーとイベントの処理
                   href: develop/dialog-handle-errors-events.md
                 - name: Office ダイアログ ボックスを使用してビデオを再生する
