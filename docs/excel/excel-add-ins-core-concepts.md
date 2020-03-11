@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用した基本的なプログラミングの�
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: eed6a7a4dcc480d93e15bbb75432a2345364a5dc
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: d06536e08482251e2728bfdfb77a6b2d3c96eb56
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301919"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325116"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -16,13 +16,13 @@ ms.locfileid: "38301919"
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
-Web ベースの Excel アドインは、Windows 上の Office など、デスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office on the web の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。このため、Office.js 内の **sync()** API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの呼び出しなど、複数の操作をキューに登録し、**sync()** の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。次のセクションでは、**Excel.run()** と **sync()** API を使用してこれを実行する方法について説明します。
+Web ベースの Excel アドインは、Windows 上の Office など、デスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office on the web の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。このため、Office.js 内の `sync()` API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの呼び出しなど、複数の操作をキューに登録し、`sync()` の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。次のセクションでは、`Excel.run()` と `sync()` API を使用してこれを実行する方法について説明します。
 
 ## <a name="excelrun"></a>Excel.run
 
-**Excel.run** は Excel オブジェクト モデルに対して実行する操作を指定した関数を実行します。 **Excel.run** は Excel オブジェクトと対話するために使用できる要求コンテキストを自動的に作成します。 **Excel.run**が完了すると、Promose が解決され、実行時に割り当てられたすべてのオブジェクトが自動的に解放されます。
+`Excel.run` は Excel オブジェクト モデルに対して実行する操作を指定した関数を実行します。 `Excel.run` は Excel オブジェクトと対話するために使用できる要求コンテキストを自動的に作成します。 `Excel.run`が完了すると、Promose が解決され、実行時に割り当てられたすべてのオブジェクトが自動的に解放されます。
 
-次の例は、**Excel.run** の使用方法を示しています。 Catch ステートメントは **Excel.run** 内で発生するエラーをキャッチし、ログに記録します。
+次の例は、`Excel.run` の使用方法を示しています。Catch ステートメントは `Excel.run` 内で発生するエラーをキャッチし、ログに記録します。
 
 ```js
 Excel.run(function (context) {
@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 ### <a name="run-options"></a>実行オプション
 
-**Excel.run** には、[RunOptions](/javascript/api/excel/excel.runoptions) オブジェクトを使用するオーバーロードがあります。 これには、関数の実行時にプラットフォームの動作に影響を与えるプロパティのセットが含まれています。 次のプロパティが現在サポートされています。
+`Excel.run` には、[RunOptions](/javascript/api/excel/excel.runoptions) オブジェクトを使用するオーバーロードがあります。 これには、関数の実行時にプラットフォームの動作に影響を与えるプロパティのセットが含まれています。 次のプロパティが現在サポートされています。
 
 - `delayForCellEdit`: ユーザーがセル編集モードを終了するまでバッチ要求を延期するかどうかを指定します。 **true** の場合、バッチ要求は延期され、ユーザーがセル編集モードを終了した時点で実行されます。 **false** の場合、バッチ要求は、ユーザーがセル編集モードにある場合、自動的に失敗します (ユーザーにエラーが表示されます)。 `delayForCellEdit` プロパティが指定されていない場合の既定の動作は、このプロパティが **false** の場合と同じ動作となります。
 
@@ -49,13 +49,13 @@ Excel.run({ delayForCellEdit: true }, function (context) { ... })
 
 ## <a name="request-context"></a>要求コンテキスト
 
-Excel とユーザーのアドインは、2 つの異なるプロセスで実行されます。それらは異なるランタイム環境を使用するため、Excel アドインでは、ワークシート、範囲、グラフ、表など、Excel のオブジェクトにユーザーのアドインを接続するために **RequestContext** オブジェクトが必要です。
+Excel とユーザーのアドインは、2 つの異なるプロセスで実行されます。それらは異なるランタイム環境を使用するため、Excel アドインでは、ワークシート、範囲、グラフ、表など、Excel のオブジェクトにユーザーのアドインを接続するために `RequestContext` オブジェクトが必要です。
 
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
 
-アドインで宣言し、使用する Excel JavaScript オブジェクトはプロキシ オブジェクトです。 起動するメソッドや、プロキシ オブジェクトに設定または読み込まれるプロパティは、保留中のコマンドのキューに単純に追加されます。 **** など、要求コンテキスト上で `context.sync()` メソッドを呼び出すと、キューに入れられたコマンドは Excel にディスパッチされて実行されます。 Excel の JavaScript API では、基本的にバッチを中心としています。 要求コンテキストに必要なだけ変更内容をキューに登録し、**sync()** メソッドを呼び出して、キューに入れられたコマンドをバッチで実行することができます。
+アドインで宣言し、使用する Excel JavaScript オブジェクトはプロキシ オブジェクトです。 起動するメソッドや、プロキシ オブジェクトに設定または読み込まれるプロパティは、保留中のコマンドのキューに単純に追加されます。 `sync()` など、要求コンテキスト上で `context.sync()` メソッドを呼び出すと、キューに入れられたコマンドは Excel にディスパッチされて実行されます。 Excel の JavaScript API では、基本的にバッチを中心としています。 要求コンテキストに必要なだけ変更内容をキューに登録し、`sync()` メソッドを呼び出して、キューに入れられたコマンドをバッチで実行することができます。
 
-たとえば、次のコード スニペットでは、ローカル JavaScript オブジェクト **selectedRange** が Excel ドキュメント内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 **selectedRange** オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが **context.sync()** を呼び出すまで Excel ドキュメントには反映されません。
+たとえば、次のコード スニペットでは、ローカル JavaScript オブジェクト `selectedRange` が Excel ドキュメント内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 `selectedRange` オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが `context.sync()` を呼び出すまで Excel ドキュメントには反映されません。
 
 ```js
 var selectedRange = context.workbook.getSelectedRange();
@@ -66,9 +66,9 @@ selectedRange.format.autofitColumns();
 
 ### <a name="sync"></a>sync()
 
-要求コンテキストで **sync()** メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 **sync()** メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 **sync()** メソッドは非同期で実行されて [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、**sync()** メソッドが完了すると解決されます。
+要求コンテキストで `sync()` メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 `sync()` メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 `sync()` メソッドは非同期で実行されて [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、`sync()` メソッドが完了すると解決されます。
 
-次の例は、ローカル JavaScript proxy オブジェクト (**selectedRange**) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して **context.sync()** を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
+次の例は、ローカル JavaScript proxy オブジェクト (`selectedRange`) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して `context.sync()` を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -86,18 +86,18 @@ Excel.run(function (context) {
 });
 ```
 
-前の例では、**selectedRange** が設定され、**context.sync()** が呼び出されるとその **address** プロパティが読み込まれます。
+前の例では、`selectedRange` が設定されており、`context.sync()` が呼び出されると `address` プロパティが読み込まれます。
 
-**sync()** は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) **返す**必要があります。 このようにして、スクリプトの実行を継続する前に、**sync()** 操作を完了します。 **sync()** を用いたパフォーマンスの最適化の詳細については、「[Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)」をご覧ください。
+`sync()` は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) `return` する必要があります。 このようにして、スクリプトの実行を継続する前に、`sync()` 操作を完了します。 `sync()` を用いたパフォーマンスの最適化の詳細については、「[Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)」をご覧ください。
 
 ### <a name="load"></a>load()
 
-プロキシ オブジェクトのプロパティを読み取るには、まず Excel ドキュメントからプロキシ オブジェクトとデータを入力するプロパティを明示的に読み込み、それから **context.sync()** を呼び出す必要があります。 たとえば、選択範囲を参照するプロキシ オブジェクトを作成した後、選択範囲の **address** プロパティを読み取る必要がある場合、読み取る前に **address** プロパティを読み込む必要があります。 プロキシ オブジェクトのプロパティを読み込むよう要求するには、オブジェクトに対して **load()** メソッドを呼び出し、読み込むプロパティを指定します。 
+プロキシ オブジェクトのプロパティを読み取るには、まず Excel ドキュメントからプロキシ オブジェクトとデータを入力するプロパティを明示的に読み込み、それから `context.sync()` を呼び出す必要があります。 たとえば、選択範囲を参照するプロキシ オブジェクトを作成した後、選択範囲の `address` プロパティを読み取る必要がある場合、読み取る前に `address` プロパティを読み込む必要があります。 プロキシ オブジェクトのプロパティを読み込むよう要求するには、オブジェクトに対して `load()` メソッドを呼び出し、読み込むプロパティを指定します。
 
 > [!NOTE]
-> プロキシ オブジェクト上でメソッドを呼び出す、またはプロパティを設定するだけの場合は、**load()** メソッドを呼び出す必要はありません。 **load()** メソッドは、プロキシ オブジェクト上でプロパティを読み取る場合のみ必要です。
+> プロキシ オブジェクト上でメソッドを呼び出す、またはプロパティを設定するだけの場合は、`load()` メソッドを呼び出す必要はありません。 `load()` メソッドは、プロキシ オブジェクト上でプロパティを読み取る場合のみ必要です。
 
-プロキシ オブジェクトに対してプロパティを設定、またはメソッドを呼び出す要求と同じように、プロキシ オブジェクトに対してプロパティを読み込む要求も、要求コンテキストで保留中のコマンドのキューに追加され、次回 **sync()** メソッドを呼び出すときに実行されます。**load()** の呼び出しは、必要なだけ要求コンテキストのキューに入れることができます。
+プロキシ オブジェクトに対してプロパティを設定、またはメソッドを呼び出す要求と同じように、プロキシ オブジェクトに対してプロパティを読み込む要求も、要求コンテキストで保留中のコマンドのキューに追加され、次回 `sync()` メソッドを呼び出すときに実行されます。`load()` の呼び出しは、必要なだけ要求コンテキストのキューに入れることができます。
 
 次の例では、範囲の特定のプロパティのみが読み込まれます。
 
@@ -126,9 +126,9 @@ Excel.run(function (context) {
 });
 ```
 
-前の例では、`format/font` が **myRange.load()** の呼び出しで指定されていないため、`format.font.color` プロパティは読み取れませんでした。
+前の例では、`format/font` が `myRange.load()` の呼び出しで指定されていないため、`format.font.color` プロパティは読み取れませんでした。
 
-「[Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)」の説明にあるとおり、パフォーマンスを最適化するため、オブジェクトに対して **load()** メソッドを使用するときに読み込むプロパティを明示的に指定する必要があります。 **load()** メソッドの詳細については、「[Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)」を参照してください。
+「[Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)」の説明にあるとおり、パフォーマンスを最適化するため、オブジェクトに対して `load()` メソッドを使用するときに読み込むプロパティを明示的に指定する必要があります。 `load()` メソッドの詳細については、「[Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)」を参照してください。
 
 ## <a name="null-or-blank-property-values"></a>null または空白のプロパティ値
 
@@ -145,13 +145,13 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 
 ### <a name="null-input-for-a-property"></a>プロパティに対する null の入力
 
-`null` は単一プロパティに有効な入力ではありません。たとえば、次のコード スニペットは、範囲の **values** プロパティを `null` に設定できないため無効です。
+`null` は単一プロパティに有効な入力ではありません。たとえば、次のコード スニペットは、範囲の `values` プロパティを `null` に設定できないため無効です。
 
 ```js
 range.values = null;
 ```
 
-同様に、次のコード スニペットは、`null` が **color** プロパティで有効ではないため無効です。
+同様に、次のコード スニペットは、`null` が `color` プロパティで有効な値ではないため無効です。
 
 ```js
 range.format.fill.color =  null;
@@ -214,7 +214,7 @@ range.values = 'Due Date';
 
 ## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
 
-範囲内のすべてのセルに同じ更新 (すべてのセルに同じ値を入力する、同じ数値書式を設定する、同じ数式ですべてのセルにデータを入力するなど) を適用するには、**range** オブジェクトの該当するプロパティを必要な 1 つの値に設定します。
+範囲内のすべてのセルに同じ更新 (すべてのセルに同じ値を入力する、同じ数値書式を設定する、同じ数式ですべてのセルにデータを入力するなど) を適用するには、`range` オブジェクトの該当するプロパティを必要な 1 つの値に設定します。
 
 次の例では、20 個のセルを含む範囲を取得し、数値書式を設定してその範囲のすべてのセルに **3/11/2015** という値を設定します。
 
@@ -243,7 +243,7 @@ Excel.run(function (context) {
 
 ## <a name="handle-errors"></a>エラーを処理する
 
-API エラーが発生すると、API はコードとメッセージを含む **error** オブジェクトを返します。 エラーの処理に関する詳細と、API エラーの一覧については、「[エラー処理](excel-add-ins-error-handling.md)」を参照してください。
+API エラーが発生すると、API はコードとメッセージを含む `error` オブジェクトを返します。 エラーの処理に関する詳細と、API エラーの一覧については、「[エラー処理](excel-add-ins-error-handling.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
