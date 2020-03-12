@@ -207,7 +207,11 @@
             - name: 概要
               href: design/interface-elements.md
             - name: アドイン コマンド
-              href: design/add-in-commands.md
+              items:
+                - name: アドイン コマンドの基本概念
+                  href: design/add-in-commands.md
+                - name: アドイン コマンドを有効または無効にする
+                  href: design/disable-add-in-commands.md
             - name: ダイアログ ボックス
               href: design/dialog-boxes.md
             - name: コンテンツ アドイン
@@ -307,6 +311,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 共通 API の要件セット
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: リボン API の要件セット
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共有ランタイム要件のセット
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Office アドインのマニフェスト リファレンス
@@ -425,6 +431,8 @@
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: Enabled
+                  href: reference/manifest/enabled.md
                 - name: EquivalentAddin
                   href: reference/manifest/equivalentaddin.md
                 - name: EquivalentAddins
