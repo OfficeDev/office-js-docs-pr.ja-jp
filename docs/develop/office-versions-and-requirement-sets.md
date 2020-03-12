@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 946068681070e8f482a8501639f40de4e13a7513
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 95c647b3362fb98402c5d8d20c0975580ae45131
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325137"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596740"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -35,30 +35,30 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 アドインは、そのアドインが動作している Office ホストのバージョンでサポートしている要件セットにある API のみを使用できます。 特定の Office ホストのバージョンで使用できる要件セットを正確に確認するには、ホスト固有の要件セットに関する次の記事を参照してください。
 
-- [Excel JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
-- [Word JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [PowerPoint JavaScript API 要件セット](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [Outlook API 要件セットについて](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
+- [Excel JavaScript API 要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
+- [Word JavaScript API 要件セット](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
+- [OneNote JavaScript API 要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
+- [PowerPoint JavaScript API 要件セット](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
+- [Outlook API 要件セットについて](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
 一部の要件セットには、どの Office ホストでも使用できる API が含まれています。 これらの要件のセットの詳細については、次の記事を参照してください。
 
-- [Office の共通要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [アドイン コマンドの要件セット](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Identity API の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)
+- [Office の共通要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [アドイン コマンドの要件セット](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 `ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office ホストを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office ホスト (Word、Outlook など) の要件セットにも対応していません。  Office ホストの要件セットがリリースされる早さや時期は、ホストによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
 
-Office JavaScript API ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 `ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。 Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office JavaScript API について](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
+Office JavaScript API ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 `ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。 Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>Office ホストと要件セットを指定する
 
-アドインに必要となる Office ホストと要件セットは、さまざまな方法で指定できます。  詳細については、「[Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)」を参照してください。
+アドインに必要となる Office ホストと要件セットは、さまざまな方法で指定できます。  詳細については、「[Office のホストと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office の最新バージョンをインストールする](/office/dev/add-ins/develop/install-latest-office-version)
+- [Office のホストと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)
+- [Office の最新バージョンをインストールする](../develop/install-latest-office-version.md)
 - [Office 365 ProPlus 更新プログラムのチャネルの概要](/deployoffice/overview-of-update-channels-for-office-365-proplus)
 - [Office 365 で Office を最大限に活用する](https://products.office.com/compare-all-microsoft-office-products?tab=2)

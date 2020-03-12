@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Excel 作業ウィンドウ 
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 71253cbc5b50f6d36c8c04b25573c1ed328f9df6
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265707"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596621"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -19,7 +19,7 @@ ms.locfileid: "41265707"
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "41265707"
 
 おめでとうございます! これで Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)」をご覧ください。
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -223,4 +223,4 @@ ms.locfileid: "41265707"
 * [Office アドインを開発する](../develop/develop-overview.md)
 * [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

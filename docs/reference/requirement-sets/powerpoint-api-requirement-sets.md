@@ -1,19 +1,19 @@
 ---
 title: PowerPoint JavaScript API の要件セット
 description: ''
-ms.date: 07/26/2019
+ms.date: 03/11/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5bba2354cabba3c3ccd4ddf38d3e03c25a32b8a9
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ef76077c3a2a975fae8a0dc101e8e1b42ef66094
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950958"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600698"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 次の表は、PowerPoint の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日の一覧です。
 
@@ -25,9 +25,7 @@ ms.locfileid: "41950958"
 
 Office のバージョンとビルド番号の詳細については、次を参照してください。
 
-- [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
 ## <a name="powerpoint-javascript-api-11"></a>PowerPoint JavaScript API 1.1
 
@@ -67,6 +65,6 @@ PowerPoint のほとんどのアドイン機能は、共通の API セットか�
 ## <a name="see-also"></a>関連項目
 
 - [PowerPoint JavaScript API リファレンス ドキュメント](/javascript/api/powerpoint)
-- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)
+- [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
+- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

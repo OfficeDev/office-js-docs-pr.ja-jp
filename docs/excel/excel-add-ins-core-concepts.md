@@ -3,16 +3,16 @@ title: Excel JavaScript API を使用した基本的なプログラミングの�
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: d06536e08482251e2728bfdfb77a6b2d3c96eb56
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2aa159bbccea79c68ec8cb02fe4548b35e2ec88f
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325116"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596551"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
-この記事では、[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
+この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。 ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API の非同期性
 
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 前の例では、`selectedRange` が設定されており、`context.sync()` が呼び出されると `address` プロパティが読み込まれます。
 
-`sync()` は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) `return` する必要があります。 このようにして、スクリプトの実行を継続する前に、`sync()` 操作を完了します。 `sync()` を用いたパフォーマンスの最適化の詳細については、「[Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)」をご覧ください。
+`sync()` は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) `return` する必要があります。 このようにして、スクリプトの実行を継続する前に、`sync()` 操作を完了します。 `sync()` を用いたパフォーマンスの最適化の詳細については、「[Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)」をご覧ください。
 
 ### <a name="load"></a>load()
 
@@ -250,6 +250,6 @@ API エラーが発生すると、API はコードとメッセージを含む `e
 - [最初の Excel アドインをビルドする](../quickstarts/excel-quickstart-jquery.md)
 - [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
-- [Excel の JavaScript API を使用した、パフォーマンスの最適化](/office/dev/add-ins/excel/performance)
-- [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
 - [一般的なコーディングの問題と、予期しないプラットフォームの動作](../develop/common-coding-issues.md)。

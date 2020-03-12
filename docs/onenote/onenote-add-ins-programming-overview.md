@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a4e060570f4eccc3fff9017042ff6bf278714ed6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325490"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596852"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -87,7 +87,7 @@ function getPagesInSection() {
 }
 ```
 
-[API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
+[API リファレンス](../reference/overview/onenote-add-ins-javascript-reference.md)では、サポートされている OneNote オブジェクトと操作を見つけることができます。
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
@@ -141,6 +141,6 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 - [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 - [最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)
-- [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

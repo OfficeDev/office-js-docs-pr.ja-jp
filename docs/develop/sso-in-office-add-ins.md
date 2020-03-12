@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
 ms.openlocfilehash: 5efb400e0999768abb8ae94e30dd271b2cf69a48
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162946"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554644"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
 

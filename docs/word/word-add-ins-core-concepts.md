@@ -3,12 +3,12 @@ title: Word JavaScript API を使用した基本的なプログラミングの�
 description: Word JavaScript API を使用して、Word 用アドインを構築します。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 7849780c1aed48152355c3fdbf350d798b2de1f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 319570a7790504bdf95c6a66c07db67ca29dec55
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325018"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596768"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Word JavaScript API を使用した基本的なプログラミングの概念
 
@@ -28,7 +28,7 @@ Office.js は、次の場所から参照できます。
 
 ## <a name="running-word-add-ins"></a>Word アドインを実行する
 
-アドインを実行するには、`Office.initialize` イベント ハンドラーを使用します。 アドインの初期化の詳細については、「[API について](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)」を参照してください。
+アドインを実行するには、`Office.initialize` イベント ハンドラーを使用します。 アドインの初期化の詳細については、「[API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 Word 2016 以降を対象とするアドインは、関数を `Word.run()` メソッドに渡すことによって実行されます。 `run` メソッドに渡される関数には、context 引数を含める必要があります。 この[コンテキスト オブジェクト](/javascript/api/word/word.requestcontext)は、Office オブジェクトから取得するコンテキスト オブジェクトとは異なりますが、これは Word ランタイム環境とやりとりするためにも使用されます。 コンテキスト オブジェクトを使用して、Word JavaScript API オブジェクト モデルにアクセスできます。 次の例では、`Word.run()` メソッドを使用することにより、Word アドインを初期化して実行する方法について示します。
 
