@@ -1,0 +1,2 @@
+- [<span data-ttu-id="48b45-101">Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号</span><span class="sxs-lookup"><span data-stu-id="48b45-101">Version and build numbers of update channel releases for Office 365 clients</span></span>](/officeupdates/update-history-office365-proplus-by-date)
+- [<span data-ttu-id="48b45-102">使用している Office のバージョンを確認する方法</span><span class="sxs-lookup"><span data-stu-id="48b45-102">What version of Office am I using?</span></span>](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
