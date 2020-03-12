@@ -3,12 +3,12 @@ title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 53b61e5ba97e54a54ccd225745cdc2ce9086ebf8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 7de031de864eadcd3d71fc66fcc9e59d00d3abb6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950398"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596698"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -50,13 +50,13 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 ## <a name="support-considerations"></a>サポートに関する考慮事項
 
-- 使用している Office アドインが[特定の Office ホスト プラットフォーム](/office/dev/add-ins/overview/office-add-in-availability)で動作するかどうかを確認します。 
-- コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)を宣言することができます。  
+- 使用している Office アドインが[特定の Office ホスト プラットフォーム](../overview/office-add-in-availability.md)で動作するかどうかを確認します。
+- コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)を宣言することができます。  
 - コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのホストとプラットフォームの可用性](/office/dev/add-ins/overview/office-add-in-availability)
-- [Office アドインの Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
-- [Office アドインの UX 設計パターン](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [アドインでの API 使用についてアクセス許可を要求する](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Office アドインのホストとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインの Office UI Fabric](../design/office-ui-fabric.md)
+- [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
+- [アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

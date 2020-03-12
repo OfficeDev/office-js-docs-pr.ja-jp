@@ -3,19 +3,19 @@ title: Outlook アドイン API 要件セット 1.2
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: d4fa18f3ab12e22ff30ef841d921f5dac89fd064
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 78ad7c02985b1a61d6a187d7beaff52bef9411b6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325214"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42597062"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Outlook アドイン API 要件セット 1.2
 
 Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
 
 > [!NOTE]
-> このドキュメントは、最新の要件セット以外の[要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)のためのものです。 
+> このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-12"></a>1.2 の新機能
 

@@ -4,12 +4,12 @@ description: ExcelApi 1.7 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064859"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596992"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -29,7 +29,7 @@ Excel JavaScript API 要件セット 1.7 の機能には、グラフ、イベン
 
 ## <a name="events"></a>イベント
 
-Excel イベント API には各種のイベント ハンドラーが用意されています。これらのハンドラーを使用することで、特定のイベントが発生したときに、アドインで目的の関数を自動的に実行できます。 実行する関数は、目的のシナリオに必要な処理を行うように設計できます。 現在利用可能なイベントのリストについては、[Excel JavaScript API を使用してイベントを操作する](/office/dev/add-ins/excel/excel-add-ins-events)を参照してください。
+Excel イベント API には各種のイベント ハンドラーが用意されています。これらのハンドラーを使用することで、特定のイベントが発生したときに、アドインで目的の関数を自動的に実行できます。 実行する関数は、目的のシナリオに必要な処理を行うように設計できます。 現在利用可能なイベントのリストについては、[Excel JavaScript API を使用してイベントを操作する](../../excel/excel-add-ins-events.md)を参照してください。
 
 ## <a name="customize-the-appearance-of-worksheets-and-ranges"></a>ワークシートと範囲の外観のカスタマイズ
 
@@ -210,7 +210,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|ブックのコメントを取得または設定します。|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|ブックの会社を取得または設定します。|
 ||[キーワード](/javascript/api/excel/excel.documentproperties#keywords)|ブックのキーワードを取得または設定します。|
-||[manager](/javascript/api/excel/excel.documentproperties#manager)|ブックのマネージャーを取得または設定します。|
+||[上司](/javascript/api/excel/excel.documentproperties#manager)|ブックのマネージャーを取得または設定します。|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|ブックの作成日を取得します。 読み取り専用です。|
 ||[配色](/javascript/api/excel/excel.documentproperties#custom)|ブックのカスタム プロパティのコレクションを取得します。 読み取り専用です。|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|ブックの最後の作成者を取得します。 読み取り専用です。|
@@ -336,5 +336,5 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.7)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.7)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1f08595ec5d4b7821bf0f2954b306108b0c449bb
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ff573a13a6621e5c9bfa5c2dfd704bb64b731372
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950671"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596607"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -45,10 +45,10 @@ Office の最新ビルドを取得するには、次の操作を行います。
 
 API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
 
-- [Excel JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
-- [OneNote JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
-- [Outlook JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
-- [PowerPoint JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
-- [Word JavaScript API の要件セット](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Office 共通 API の要件セット](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Excel JavaScript API の要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API の要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Outlook JavaScript API の要件セット](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint JavaScript API の要件セット](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
+- [Word JavaScript API の要件セット](../reference/requirement-sets/word-api-requirement-sets.md)
+- [ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office 共通 API の要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)

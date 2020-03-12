@@ -1,26 +1,26 @@
 ---
 title: 共通 JavaScript API オブジェクト モデル
 description: ''
-ms.date: 02/27/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b1e1db21f3deb4b6a311a433dbd922c4bb6b50d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 85ecd3b7b676a11a4ff41868adbbd9a0d907f32a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325130"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596726"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript アドインを利用すると、ホストの基本機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox](#mailbox-object) オブジェクトによって、Outlook アドインがメッセージやユーザー プロファイルにアクセスできるようになります。 このような上位オブジェクト間の関係を理解することが JavaScript アドインの基礎となります。
+Office JavaScript アドインは、ホストの基礎となる機能へのアクセスを提供します。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox](#mailbox-object) オブジェクトによって、Outlook アドインがメッセージやユーザー プロファイルにアクセスできるようになります。 このような上位オブジェクト間の関係を理解することが JavaScript アドインの基礎となります。
 
 ## <a name="context-object"></a>Context オブジェクト
 
 **適用対象:** すべてのアドインの種類
 
-アドインが[初期化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/Office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
+アドインが[初期化](initialize-add-in.md)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/Office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
 
 たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/outlook/Office.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
@@ -84,7 +84,7 @@ Excel、PowerPoint、および Word のドキュメントデータを操作す�
 
 #### <a name="data-type-coercion"></a>データ型の強制型変換
 
-および Binding オブジェクトのデータアクセス方法は、これらのメソッドの_coercionType_パラメーターと対応する[coercionType](/javascript/api/office/office.coerciontype)列挙値を使用して、目的のデータ型を指定することをサポートしています。 [](/javascript/api/office/office.binding) `Document`バインドの実際の形状に関係なく、さまざまな Office アプリケーションは、要求されたデータ型にデータを強制的に変換しようとして、共通のデータ型をサポートしています。たとえば、Word の表または段落が選択されている場合、開発者はこのテキストをプレーンテキスト、HTML、Office Open XML、またはテーブルとして読み取るように指定でき、API 実装は必要な変換とデータ変換を処理します。
+および Binding オブジェクトのデータアクセス方法は、これらのメソッドの_coercionType_パラメーターと対応する[coercionType](/javascript/api/office/office.coerciontype)列挙値を使用して、目的のデータ型を指定することをサポートしています。 [Binding](/javascript/api/office/office.binding) `Document`バインドの実際の形状に関係なく、さまざまな Office アプリケーションは、要求されたデータ型にデータを強制的に変換しようとして、共通のデータ型をサポートしています。たとえば、Word の表または段落が選択されている場合、開発者はこのテキストをプレーンテキスト、HTML、Office Open XML、またはテーブルとして読み取るように指定でき、API 実装は必要な変換とデータ変換を処理します。
 
 
 > [!TIP]

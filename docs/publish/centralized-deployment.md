@@ -3,12 +3,12 @@ title: Office 365 管理センターからの一元展開を使用した Office 
 description: ''
 ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 92ae938669ad53b50c8635a998dcfa4525ac2bef
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 943216ec8f42160a8eb406999fa2c86c45a0081a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165596"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596831"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -78,7 +78,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
     ![Office 365 管理センターでアクセスと展開の方法を管理する](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > アドイン用の[シングル サインオン (SSO)](/office/dev/add-ins/develop/sso-in-office-add-ins) システムは現在プレビューなので、運用環境のアドインとして使用してはいけません。SSO を使用するアドインが展開されている場合、割り当てられているユーザーとグループは、同じ Azure アプリ ID を共有するアドインによっても共有されます。 ユーザーの割り当ての変更は、これらのアドインにも適用されます。関連するアドインは、このページに表示されます。 SSO アドインに限り、アドインで必要な Microsoft Graph アクセス許可のリストがこのページに表示されます。
+    > アドイン用の[シングル サインオン (SSO)](../develop/sso-in-office-add-ins.md) システムは現在プレビューなので、運用環境のアドインとして使用してはいけません。SSO を使用するアドインが展開されている場合、割り当てられているユーザーとグループは、同じ Azure アプリ ID を共有するアドインによっても共有されます。 ユーザーの割り当ての変更は、これらのアドインにも適用されます。関連するアドインは、このページに表示されます。 SSO アドインに限り、アドインで必要な Microsoft Graph アクセス許可のリストがこのページに表示されます。
 
 11. 完了したら、[**展開**] を選択します。 このプロセスには、最大で 3 分かかる場合があります。 その後、**[次へ]** を押してチュートリアルを終了します。 アドインが Office 365 のその他のアプリと共に表示されるようになります。
 

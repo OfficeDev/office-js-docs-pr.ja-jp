@@ -3,12 +3,12 @@ title: Office JavaScript API ライブラリの参照
 description: アドインで Office JavaScript API ライブラリおよび型定義を参照する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f7753b24e0a5861778b09ea93fecdc26fd2ca96
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5e26d5b0454a6833c593ff60c1577d24583dcc51
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325158"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596719"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリの参照
 
@@ -33,7 +33,7 @@ ms.locfileid: "42325158"
 AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。
 
 > [!NOTE]
-> プレビュー Api を使用するには、CDN の Office JavaScript API ライブラリのプレビューバージョンを参照`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`してください。
+> プレビュー API を使用するには、CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) にある Office JavaScript API ライブラリのプレビュー バージョンを参照します。
 
 ## <a name="enabling-intellisense-for-a-typescript-project"></a>TypeScript プロジェクトに対して Intellisense を有効にする
 
@@ -51,4 +51,4 @@ npm install --save-dev @types/office-js
 ## <a name="see-also"></a>関連項目
 
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
-- [Office の JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office の JavaScript API](../reference/javascript-api-for-office.md)

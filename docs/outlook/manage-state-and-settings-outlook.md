@@ -3,19 +3,19 @@ title: Outlook アドインの状態と設定を管理する
 description: Outlook アドインのアドインの状態と設定を保存する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a76da625faab98de1f6ef6d32e0274056dba9f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325348"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596649"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Outlook アドインの状態と設定を管理する
 
 > [!NOTE]
 > この記事を読む前に、このドキュメントの「**コア概念**」セクションの「[アドインの状態と設定を保持](../develop/persisting-add-in-state-and-settings.md)する」を参照してください。
 
-Outlook アドインの場合、Office JavaScript API は、次の表に示すように、セッション間でアドインの状態を保存するための[RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクトと[CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](/office/dev/add-ins/reference/manifest/id) にのみ関連付けられます。
+Outlook アドインの場合、Office JavaScript API は、次の表に示すように、セッション間でアドインの状態を保存するための[RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクトと[CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
 
 |**オブジェクト**|**ストレージの場所**|
 |:-----|:-----|:-----|

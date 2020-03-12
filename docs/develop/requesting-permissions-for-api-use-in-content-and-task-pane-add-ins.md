@@ -3,12 +3,12 @@ title: アドインでの API 使用についてアクセス許可を要求す�
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ef78764e2ccc6d1cab3783584834317331961c2d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d146322c6977e11eedcd7e0b9ffdc9d5eeaac7c2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325497"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596663"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>アドインでの API 使用についてアクセス許可を要求する
 
@@ -22,7 +22,7 @@ ms.locfileid: "42325497"
 
 ![作業ウィンドウ アプリの権限レベル](../images/office15-app-sdk-task-pane-app-permission.png)
 
-これらのアクセス許可は、ユーザーがアドインを挿入してアクティブ化 (信頼) したときに、アドイン ランタイムがコンテンツ アドインまたはタスク ウィンドウ アドインに使用を許可する API のサブセットを指定します。コンテンツ アドインまたは作業ウィンドウ アドインに必要なアクセス許可レベルを宣言するには、アドインのマニフェストの [Permissions](/office/dev/add-ins/reference/manifest/permissions) 要素に、いずれかのアクセス許可テキスト値を指定します。以下の例では、ドキュメントに書き込みができる (しかし読み取りはできない) メソッドだけを許可する、 **WriteDocument** アクセス許可を要求します。
+これらのアクセス許可は、ユーザーがアドインを挿入してアクティブ化 (信頼) したときに、アドイン ランタイムがコンテンツ アドインまたはタスク ウィンドウ アドインに使用を許可する API のサブセットを指定します。コンテンツ アドインまたは作業ウィンドウ アドインに必要なアクセス許可レベルを宣言するには、アドインのマニフェストの [Permissions](../reference/manifest/permissions.md) 要素に、いずれかのアクセス許可テキスト値を指定します。以下の例では、ドキュメントに書き込みができる (しかし読み取りはできない) メソッドだけを許可する、 **WriteDocument** アクセス許可を要求します。
 
 ```XML
 <Permissions>WriteDocument</Permissions>

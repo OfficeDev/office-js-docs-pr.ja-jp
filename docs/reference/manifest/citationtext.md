@@ -3,12 +3,12 @@ title: マニフェスト ファイルの CitationText 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 7882f415467cb8d8233625897e84b6ba8a54e11a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 76aba2081734e239c84b6938950f89f8199544b8
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450682"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596796"
 ---
 # <a name="citationtext-element"></a>CitationText 要素
 
@@ -28,4 +28,4 @@ ms.locfileid: "32450682"
 
 ## <a name="see-also"></a>関連項目
 
-- [辞書の作業ウィンドウ アドインを作成する](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [辞書の作業ウィンドウ アドインを作成する](../../word/dictionary-task-pane-add-ins.md)

@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: JavaScript を使用して Excel のカスタム関数でダイアログ ボックスを作成します。
 title: カスタム関数からダイアログ ボックスを表示する
 localization_priority: Normal
-ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 54648e87cfdcb314c3d9d3ba3a4e0dbe3c708859
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950769"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596635"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>カスタム関数からダイアログ ボックスを表示する
 
@@ -17,11 +17,11 @@ ms.locfileid: "41950769"
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> `Office.Dialog` オブジェクトは、カスタム関数のランタイムの一部です。 作業ウィンドウは `Dialog` オブジェクトを使用しません。 作業ウィンドウからダイアログ ボックスを作成するには、[ダイアログ API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins) を参照してください。
+> `Office.Dialog` オブジェクトは、カスタム関数のランタイムの一部です。 作業ウィンドウは `Dialog` オブジェクトを使用しません。 作業ウィンドウからダイアログ ボックスを作成するには、[ダイアログ API](../develop/dialog-api-in-office-add-ins.md) を参照してください。
 
 ## <a name="dialog-box-api-example"></a>ダイアログ ボックス API の例
 
-次のコード サンプルでは、​​関数 `getTokenViaDialog` はダイアログ ボックスを表示するために `Dialog` APIの `displayWebDialogOptions` 関数を使用します。
+次のコードサンプルでは、関数`getTokenViaDialog`は`Dialog` API の`displayWebDialogOptions`関数を使用してダイアログボックスを表示します。
 
 ```js
 /**

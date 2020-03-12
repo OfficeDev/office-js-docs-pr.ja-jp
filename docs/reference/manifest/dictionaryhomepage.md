@@ -3,12 +3,12 @@ title: マニフェスト ファイルの DictionaryHomePage 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 096ac8f110b8037e86a1a43a1c9e83c684ed1aee
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7a95a82d53df90b539e1ff145cd9c4cfd0608267
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450549"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596908"
 ---
 # <a name="dictionaryhomepage-element"></a>DictionaryHomePage 要素
 
@@ -28,5 +28,4 @@ ms.locfileid: "32450549"
 
 ## <a name="see-also"></a>関連項目
 
-- [辞書の作業ウィンドウ アドインを作成する](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [辞書の作業ウィンドウ アドインを作成する](../../word/dictionary-task-pane-add-ins.md)

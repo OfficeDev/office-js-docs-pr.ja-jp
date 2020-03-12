@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: ''
-ms.date: 02/20/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
-ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
+ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42315873"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596803"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -34,12 +34,12 @@ ms.locfileid: "42315873"
 
 ### <a name="13000"></a>13000
 
-[getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API は、このアドインまたは Office バージョンではサポートされていません。
+[getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API は、このアドインまたは Office バージョンではサポートされていません。
 
-- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、すべての月次チャネルの Office 365 (Office のサブスクリプション バージョン) です。 
-- アドインのマニフェストに適切な [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) セクションがありません。
+- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、すべての月次チャネルの Office 365 (Office のサブスクリプション バージョン) です。
+- アドインのマニフェストに適切な [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) セクションがありません。
 
-アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)」を参照してください。
+アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
 ### <a name="13001"></a>13001
 
@@ -60,11 +60,11 @@ ms.locfileid: "42315873"
 
 ### <a name="13003"></a>13003
 
-ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウントまたは Office 365 ("職場または学校") アカウントで Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)」を参照してください。
+ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウントまたは Office 365 ("職場または学校") アカウントで Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
 ### <a name="13004"></a>13004
 
-無効なリソースです。 (このエラーが表示されるのは、開発中のみである必要があります。) アドイン マニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、**Resource** 要素 (**WebApplicationInfo** 要素内) にアドインのドメインと一致しないドメインがあることです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
+無効なリソースです。 (このエラーは開発環境でのみ表示されます)。アドインマニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、**Resource** 要素 (**WebApplicationInfo** 要素内) にアドインのドメインと一致しないドメインがあることです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
 
 ### <a name="13005"></a>13005
 
@@ -93,13 +93,13 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13010"></a>13010
 
-ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。 ユーザーの Office 365 ドメインと `login.microsoftonline.com` ドメインは、ブラウザー設定の異なるセキュリティ ゾーンに含まれています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。 ユーザーの Office 365 ドメインおよび`login.microsoftonline.com`ドメインは、ブラウザーの設定で異なるセキュリティゾーンに含まれています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 
 いくつかの原因が考えられます。
 
-- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「[Identity API の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」も参照してください。
+- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「[Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」も参照してください。
 - `getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡され、ユーザーが AppSource からアドインを取得しました。 このシナリオでは、アドインが必要とする Microsoft Graph スコープ (権限) について、テナント管理者はアドインに同意していません。 Office では、ユーザーに求めることができるのは AAD `profile` スコープへの同意のみであるため、`allowConsentPrompt` を使用して `getAccessToken` を取り消しても問題は解決できません。
 
 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
@@ -114,7 +114,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 このエラー (`getAccessToken` に固有ではありません) は、ブラウザーが office.js ファイルの古いコピーをキャッシュしていることを示す可能性があります。 開発中の場合は、ブラウザーのキャッシュをクリアしてください。 また、Office のバージョンが古いため、SSO をサポートしていない可能性も考えられます。 Windows での最小バージョンは、16.0.12215.20006 です。 Mac では、16.32.19102902 です。
 
-運用環境のアドインの場合、アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)」を参照してください。
+運用環境のアドインの場合、アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
@@ -141,7 +141,7 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 この種類のエラーが表示されるのは、開発中のみである必要があります。
 
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送り、そのエラーのログをコンソールで作成するか、ログに記録する必要があります。
-- アドイン マニフェストの[範囲](/office/dev/add-ins/reference/manifest/scopes)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
+- アドイン マニフェストの[範囲](../reference/manifest/scopes.md)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 
 ### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>(ブートストラップ トークンではなく) アクセス トークンでの無効な対象ユーザーのエラー
 

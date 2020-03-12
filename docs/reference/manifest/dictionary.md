@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Dictionary 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 506f6ecd7b9120dfbf591762faae3c7d033288b1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b482fb3f58e01b08e7c21be6a3cf6765a014c54b
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450535"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596775"
 ---
 # <a name="dictionary-element"></a>Dictionary 要素
 追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。
@@ -39,5 +39,4 @@ ms.locfileid: "32450535"
 
 ## <a name="see-also"></a>関連項目
 
-- [辞書の作業ウィンドウ アドインを作成する](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [辞書の作業ウィンドウ アドインを作成する](../../word/dictionary-task-pane-add-ins.md)

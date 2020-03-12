@@ -1,23 +1,23 @@
 ---
 title: ID API の要件セット
 description: ''
-ms.date: 11/11/2019
+ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 96f5c305f4ecfe0fdc0ee89aed6955e090f87b02
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 6460516c32f70995d43ae64b213c93153a015bff
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301926"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600691"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 Office アドインは Office の複数のバージョンで機能します。 次の表は、Identity API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Office 2013 以降 (Windows)<br>(1 回限りの購入) | Windows での Office<br>(Office 365 サブスクリプションに接続済み) |  Office on iPad<br>(Office 365 サブスクリプションに接続済み)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
+|  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Identity Api プレビュー  | N/A | プレビュー<b>*</b> | 近日対応予定 | プレビュー<b>*</b> | Preview<b>* &#8224;</b> | Preview<b>* &#8224;</b>| 近日公開 | 近日公開 |
 
@@ -25,11 +25,11 @@ Office アドインは Office の複数のバージョンで機能します。 �
 >
 > **&#8224;** これらのプラットフォームで SSO Api を使用するアドインは、ユーザーのテナント管理者がアドインへの同意を付与されている場合にのみ機能します。 ユーザーが自分の Azure AD プロファイルに対しても同意を付与することはできません。
 
+## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
+
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
-- [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 - [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
@@ -42,6 +42,6 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Office のホストと API の要件を指定する](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office アドインの XML マニフェスト](/office/dev/add-ins/develop/add-in-manifests)
+- [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
+- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

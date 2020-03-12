@@ -3,12 +3,12 @@ title: テキスト エディターを使用して Microsoft Project 用の作�
 description: ''
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 821c2922bd51657f89a82a58f388f8c4616de45f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324906"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596817"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -109,7 +109,7 @@ Project の場合、 `OfficeApp`要素には属性`xsi:type="TaskPaneApp"`値を
 
    次のコードは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。 `text`オブジェクトは、HTML ファイル内の`textarea`コントロールの ID です。
 
-   Projdoc 変数は、 `ProjectDocument`オブジェクトを使用して初期化されます。 ** \_** コードには、いくつかの簡単なエラー処理`getContextValues`関数と、アプリケーションコンテキストおよびプロジェクトドキュメントコンテキストのプロパティを取得する関数が含まれています。 Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)」を参照してください。
+   Projdoc 変数は、 `ProjectDocument`オブジェクトを使用して初期化されます。 ** \_** コードには、いくつかの簡単なエラー処理`getContextValues`関数と、アプリケーションコンテキストおよびプロジェクトドキュメントコンテキストのプロパティを取得する関数が含まれています。 Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
 
 
     ```js
@@ -172,7 +172,7 @@ Project の場合、 `OfficeApp`要素には属性`xsi:type="TaskPaneApp"`値を
     }
     ```
 
-   Office の .js ファイルの関数の詳細については、「 [Office JAVASCRIPT API](/office/dev/add-ins/reference/javascript-api-for-office)」を参照してください。 たとえば、関数は`getDocumentUrl` 、開いているプロジェクトの URL またはファイルパスを取得します。
+   Office の .js ファイルの関数の詳細については、「 [Office JAVASCRIPT API](../reference/javascript-api-for-office.md)」を参照してください。 たとえば、関数は`getDocumentUrl` 、開いているプロジェクトの URL またはファイルパスを取得します。
 
 3. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
 
@@ -1096,6 +1096,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API アドイン](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API アドイン](../reference/javascript-api-for-office.md)
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)

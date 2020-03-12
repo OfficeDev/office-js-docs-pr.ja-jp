@@ -1,22 +1,22 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 12/13/2019
+ms.date: 03/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950363"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596467"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
-Office アドインは、Office on the web での実行時に iFrame を使用して表示され、デスクトップおよびモバイル クライアント用に Office に埋め込まれたブラウザー コントロールを使用して表示される Web アプリケーションです。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込まれたブラウザーおよびエンジン、どちらもユーザーのコンピュータにインストールされているブラウザによって提供されます。
+Office アドインは、Office on the web での実行時に iFrame を使用して表示され、デスクトップおよびモバイル クライアント用に Office に埋め込まれたブラウザー コントロールを使用して表示される Web アプリケーションです。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込みブラウザーとエンジンの両方が、ユーザーのコンピューターにインストールされているブラウザーから提供されます。
 
 どのブラウザが使用されているかは、以下によります。
 
-- コンピュータのオペレーティングシステム。
+- コンピューターのオペレーティングシステム。
 - アドインが Office on the web、Office 365、または登録のない Office 2013 以降で実行されているかどうか。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
@@ -38,6 +38,10 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge の問題のトラブルシューティング
+
+### <a name="service-workers-are-not-working"></a>サービスワーカーが動作しない
+
+Office アドインでは、 [Microsoft Edge WebView](/microsoft-edge/hosting/webview)でサービスワーカーをサポートしていません。 エッジ WebView コントロールでサポートされている最新の機能については、「 [Office アドインの概要](../overview/office-add-ins.md)」を参照してください。 Microsoft は、サービスワーカーをサポートすると予想される Office アドインプラットフォームに新しい[Chromium ベースのエッジ WebView2](/microsoft-edge/hosting/webview2)をもたらすのは困難です。
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Chromium ベースのエッジは開発用のコンピューターにインストールされていますが、アドインでは使用されません
 

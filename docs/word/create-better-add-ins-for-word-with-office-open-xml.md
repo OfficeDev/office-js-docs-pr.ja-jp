@@ -3,12 +3,12 @@ title: Office Open XML を使用してより良い Word 用アドインを作成
 description: ''
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a04edf5fafd9cce69d5e2805fe8e20d157fff7c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 08e3af410d9882ed10982606fe573973365a52ef
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324730"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596978"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
@@ -848,6 +848,6 @@ Word でネイティブで作成し、編集できるグラフは Excel グラ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office の JavaScript API](../reference/javascript-api-for-office.md)
 - [ECMA 376 標準: Office Open XML ファイル形式](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (Open XML の完全な言語リファレンス ドキュメントおよび関連ドキュメントについては、ここにアクセス)
 - [Office JavaScript API の調査: データバインドとカスタム XML パーツ](https://msdn.microsoft.com/magazine/dn166930.aspx)

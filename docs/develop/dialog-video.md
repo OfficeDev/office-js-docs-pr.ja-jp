@@ -1,14 +1,14 @@
 ---
-title: '[Office] ダイアログボックスを使用してビデオを再生する'
+title: Office ダイアログ ボックスを使用してビデオを再生する
 description: Office ダイアログボックスでビデオを開いて再生する方法について説明します。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 407eec467ed8ed51350f6195a3607c430524e6b4
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650106"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596530"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Office ダイアログボックスを使用してビデオを表示する
 
@@ -31,6 +31,6 @@ Office ダイアログ API を使用してダイアログボックス内のビ�
 2. ホスト ページで `displayDialogAsync` の呼び出しを使用して、video.dialogbox.html を開きます。
 3. ユーザーがダイアログ ボックスを閉じたときに、アドインに通知する必要がある場合は、`DialogEventReceived` イベントのハンドラーを登録して、12006 イベントを処理します。 詳細については、「 [Office ダイアログボックスでのエラーとイベント](dialog-handle-errors-events.md)」を参照してください。
 
-ダイアログボックスでビデオを再生する例については、「[ビデオプレイスマット設計パターン](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat)」を参照してください。
+ダイアログボックスでビデオを再生する例については、「[ビデオプレイスマット設計パターン](../design/first-run-experience-patterns.md#video-placemat)」を参照してください。
 
 ![アドインダイアログボックスで再生されるビデオのスクリーンショット](../images/video-placemats-dialog-open.png)

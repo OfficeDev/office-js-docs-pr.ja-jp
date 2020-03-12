@@ -3,12 +3,12 @@ title: 検索オプションを使用して Word アドインでテキストを�
 description: ''
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 213853af31ae7ae15ad3f6386da70f22698d421d
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f90771ebb7e6f70f2f27081ea0409e0f29b0e2d
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950482"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596761"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>検索オプションを使用して Word アドインでテキストを検索する
 
@@ -19,7 +19,7 @@ ms.locfileid: "41950482"
 
 検索オプションとは、検索パラメーターをどのように処理するかを定義するブール値のコレクションです。
 
-| プロパティ     | 説明|
+| プロパティ       | 説明|
 |:---------------|:----|
 |ignorePunct|単語間の句読点文字をすべて無視するかどうかを示す値を取得するか設定します。 [検索と置換] ダイアログ ボックスの [句読点を無視する] チェック ボックスに相当します。|
 |ignoreSpace|単語間のすべての空白を無視するかどうかを示す値を取得または設定します。 [検索と置換] ダイアログ ボックスの [空白文字を無視する] チェック ボックスに相当します。|
@@ -204,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-詳細については、「[Word JavaScript API の概要](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)」を参照してください。
+詳細については、「[Word JavaScript API の概要](../reference/overview/word-add-ins-reference-overview.md)」を参照してください。

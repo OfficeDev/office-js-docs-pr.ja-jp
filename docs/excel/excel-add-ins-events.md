@@ -4,11 +4,11 @@ description: Excel JavaScript オブジェクトのイベントのリスト。 �
 ms.date: 02/11/2020
 localization_priority: Normal
 ms.openlocfilehash: f1a1faf9acc370e7183a078aeeba34019e54900f
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327776"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554812"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 

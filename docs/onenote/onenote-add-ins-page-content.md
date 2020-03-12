@@ -3,12 +3,12 @@ title: OneNote ページ コンテンツを使用する
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 94c12815823e2860615fc731f460f08a468756e6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448441"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596859"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
@@ -61,6 +61,6 @@ OneNote では、ユーザーのセキュリティを確保しながら、HTML �
 ## <a name="see-also"></a>関連項目
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API リファレンス](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)

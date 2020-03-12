@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Methods 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b2ef9725b76b21af8d41b9e571d2851464aa1fcc
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325256"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596887"
 ---
 # <a name="methods-element"></a>Methods 要素
 
@@ -34,5 +34,4 @@ Office アドインをアクティブにするために必要な Office JavaScri
 
 ## <a name="remarks"></a>注釈
 
-**メソッド**と**メソッド**の要素は、メールアドインではサポートされていません。要件セットの詳細については、「 [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」を参照してください。
-
+**メソッド**と**メソッド**の要素は、メールアドインではサポートされていません。要件セットの詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。

@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 7cc8e6acc60c28b44ec7a2b91bb5e388b2618a31
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165385"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554725"
 ---
 # <a name="office"></a>Office
 
@@ -31,10 +31,10 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 作成<br>読み取り | 文字列 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -54,8 +54,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Succeeded`| 文字列|呼び出しが成功しました。|
-|`Failed`| 文字列|呼び出しが失敗しました。|
+|`Succeeded`| String|呼び出しが成功しました。|
+|`Failed`| String|呼び出しが失敗しました。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -81,7 +81,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Html`| 文字列|HTML 形式で返されるデータを要求します。|
+|`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
 ##### <a name="requirements"></a>Requirements
@@ -108,7 +108,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|:---:|
-|`ItemChanged`| 文字列 | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -134,8 +134,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Body`| 文字列|データのソースは、メッセージの本文です。|
-|`Subject`| 文字列|データのソースは、メッセージの件名です。|
+|`Body`| String|データのソースは、メッセージの本文です。|
+|`Subject`| String|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>Requirements
 

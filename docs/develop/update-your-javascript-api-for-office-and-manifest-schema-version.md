@@ -3,12 +3,12 @@ title: 最新の Office JavaScript API ライブラリおよびバージョン1.
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: a8f1193d571278531eae169b12bc56e0e560e62e
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccb6dade39850a656326482c3abc824ecfb6637e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324653"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596586"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>最新の Office JavaScript API ライブラリおよびバージョン1.1 のアドインマニフェストスキーマへの更新
 
@@ -75,7 +75,7 @@ Office JavaScript API およびアドインマニフェストスキーマのリ�
 ```
 
 > [!NOTE]
-> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](/office/dev/add-ins/reference/manifest/hosts)要素と[Host](/office/dev/add-ins/reference/manifest/host)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
+> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](../reference/manifest/hosts.md)要素と[Host](../reference/manifest/host.md)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -118,11 +118,11 @@ Office JavaScript API ファイル (Office .js およびアプリ固有の .js �
 ```
 
 > [!NOTE]
-> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](/office/dev/add-ins/reference/manifest/hosts)要素と[Host](/office/dev/add-ins/reference/manifest/host)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
+> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](../reference/manifest/hosts.md)要素と[Host](../reference/manifest/host.md)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)]
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
-- [Office の JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office の JavaScript API](../reference/javascript-api-for-office.md)
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)

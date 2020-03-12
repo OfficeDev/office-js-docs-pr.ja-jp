@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325053"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596999"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -72,10 +72,10 @@ object.load({ loadOption });
 
 _各部分の意味は次のとおりです。_
 
-* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、 `load()` 「 [Excel JavaScript API リファレンス](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)」のオブジェクトに対して定義されているメソッドを参照してください。
+* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、 `load()` 「 [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)」のオブジェクトに対して定義されているメソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
-オブジェクトの下の「プロパティ」の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを避けるには、オブジェクト ツリー内の "リーフノード" のみをロードするようにしてください。 
+オブジェクトの [プロパティ] の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを回避するには、コードでオブジェクトツリーの "葉 nodes" のみを読み込む必要があります。 
 
 ## <a name="suspend-excel-processes-temporarily"></a>Excel のプロセスを一時的に中断する
 

@@ -3,12 +3,12 @@ ms.date: 12/31/2019
 description: Excel のカスタム関数に関する一般的な問題をトラブルシューティングします。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: 10e1e3ec934d16806aa137a6468bbdada3fc1db2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: f574bdbb385c840fb20de4ab64705b167cd51e05
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950832"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596558"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata)」をご覧ください。
+このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)」をご覧ください。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 

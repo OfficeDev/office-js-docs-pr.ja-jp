@@ -3,12 +3,12 @@ title: Office アドイン用 UX 設計パターン
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d903f6cb2c6cad90c07b05303eac6b25a05a4af2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: db939e12fcc3f81f70fd000a803941d4513ea534
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950419"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596712"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Office アドイン用 UX 設計パターン
 
@@ -46,5 +46,5 @@ UX パターン テンプレートを使用して、次のことを行います�
 
 * [デザインのツールキット](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Office アドイン開発のベスト プラクティス](/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React の使用の開始](/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
+* [Fabric React の使用の開始](../design/using-office-ui-fabric-react.md)

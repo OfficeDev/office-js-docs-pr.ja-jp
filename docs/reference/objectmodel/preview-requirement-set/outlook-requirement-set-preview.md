@@ -1,21 +1,21 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: ''
-ms.date: 12/17/2019
+ms.date: 03/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 87c15ac889a955412e6a8350baaed8611fdb5164
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4365dab3d8dd1ddb876536b3030926d68a89ac49
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325221"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "42605674"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
 Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
 
 > [!IMPORTANT]
-> このドキュメントは、[要件セット](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)の**プレビュー**用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。
+> このドキュメントは、[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)の**プレビュー**用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
@@ -24,6 +24,26 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 ## <a name="features-in-preview"></a>プレビューの機能
 
 次の機能はプレビュー段階です。
+
+### <a name="append-on-send"></a>送信時に追加
+
+#### <a name="officebodyappendonsendasync"></a>[Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+
+新規作成モードで、アイテム`Body`の本文の最後にデータを追加する新しい関数をオブジェクトに追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
+
+拡張されたアクセス許可のコレクションに`AppendOnSend`拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+<br>
+
+---
+
+---
 
 ### <a name="integration-with-actionable-messages"></a>操作可能なメッセージとの統合
 
@@ -59,7 +79,7 @@ Office テーマを取得する機能が追加されました。
 
 ### <a name="sso"></a>SSO
 
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 
 Microsoft Graph API の[アクセス トークンの取得](../../../outlook/authenticate-a-user-with-an-sso-token.md)をアドインに対して許可する、`getAccessToken` へのアクセスが追加されました。
 

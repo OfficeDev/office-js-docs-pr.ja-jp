@@ -3,12 +3,12 @@ title: マニフェスト ファイルの SupportsSharedFolders 要素
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: e76d17b618e2aaf15724f15ee6695a932172bba3
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 81401b79f4c443305e376df7a66a07d916393d17
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325228"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596754"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 要素
 
@@ -17,7 +17,7 @@ ms.locfileid: "42325228"
 > [!IMPORTANT]
 > Web 上の Outlook と Windows のみが**Supportssharedfolders**要素をサポートしています。
 >
-> この要素のサポートは、要件セット1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この要素のサポートは、要件セット1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 **Supportssharedfolders**要素の例を次に示します。
 

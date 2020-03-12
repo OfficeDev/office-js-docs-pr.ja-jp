@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Excel のカスタム関数を使用してユーザーを認証します。
 title: カスタム関数の認証
 localization_priority: Normal
-ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950685"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596503"
 ---
 # <a name="authentication-for-custom-functions"></a>カスタム関数の認証
 
@@ -33,7 +33,7 @@ ms.locfileid: "41950685"
 > [!NOTE]
 > カスタム関数のランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは少し異なるダイアログ オブジェクトを使用します。 いずれも "ダイアログ API" と呼ばれていますが、カスタム関数のランタイムでユーザーを認証するために `OfficeRuntime.Dialog` を使用します。
 
-`Dialog` オブジェクトを使用する方法の詳細については、「[カスタム関数ダイアログ](/office/dev/add-ins/excel/custom-functions-dialog)」を参照してください。
+`Dialog` オブジェクトを使用する方法の詳細については、「[カスタム関数ダイアログ](../excel/custom-functions-dialog.md)」を参照してください。
 
 認証プロセス全体を構想するときには、アドインの作業ウィンドウと UI 要素、アドインのカスタム関数部分が、`OfficeRuntime.storage` を通じて相互に通信できる個別のエンティティとして考えてみることをおすすめします。
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般的なガイダンス
 
-Office アドインは web ベースで、あらゆる web 認証技術を使用できます。 カスタム関数を使用して独自の認証を実装するのに、特定のパターンやメソッドはありません。 さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](/office/dev/add-ins/develop/auth-external-add-ins)  
+Office アドインは web ベースで、あらゆる web 認証技術を使用できます。 カスタム関数を使用して独自の認証を実装するのに、特定のパターンやメソッドはありません。 さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](../develop/auth-external-add-ins.md)  
 
 カスタム関数を開発するときに、次の場所にデータを格納しないようにします。  
 

@@ -1,16 +1,16 @@
 ---
-title: Office ダイアログ API のベストプラクティスとルール
+title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページアプリケーション (SPA) のベストプラクティスなど、Office ダイアログ API のルールとベストプラクティスを提供します。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a38337ca9a263df1f8405f2883fa4481c342e6b
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650107"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596600"
 ---
-# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベストプラクティスとルール
+# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
 この記事では、Office ダイアログ API のルール、ガイドライン、およびベストプラクティスについて説明します。これには、ダイアログの UI を設計し、単一ページアプリケーション (SPA) で API を使用するためのベストプラクティスが含まれています。
 
@@ -23,7 +23,7 @@ ms.locfileid: "41650107"
 
 - このダイアログボックスは、HTTP ではなく HTTPS の Url にのみ移動できます。
 - [Displaydialogasync](/javascript/api/office/office.ui)メソッドに渡される URL は、アドイン自体とまったく同じドメイン内にある必要があります。 サブドメインにすることはできません。 ただし、それに渡されるページは、別のドメイン内のページにリダイレクトすることができます。
-- ホストウィンドウは、作業ウィンドウまたはアドインコマンドの UI に含まれない[関数ファイル](/office/dev/add-ins/reference/manifest/functionfile)の場合がありますが、一度に開くことのできるダイアログボックスは1つだけです。
+- ホストウィンドウは、作業ウィンドウまたはアドインコマンドの UI に含まれない[関数ファイル](../reference/manifest/functionfile.md)の場合がありますが、一度に開くことのできるダイアログボックスは1つだけです。
 - ダイアログボックスでは、次の2つの Office Api のみを呼び出すことができます。
   - [Messageparent](/javascript/api/office/office.ui#messageparent-message-)関数。
   - `Office.context.requirements.isSetSupported`(詳細については、「 [Office ホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)」を参照してください)。
@@ -33,7 +33,7 @@ ms.locfileid: "41650107"
 
 ### <a name="avoid-overusing-dialog-boxes"></a>過剰な使用ダイアログボックスを回避する
 
-UI 要素が重複していないため、シナリオで必要とされていない限り、ダイアログボックスを作業ウィンドウから開くことは避けてください。 作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることに注意してください。 例については、[Excel アドイン JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) のサンプルを参照してください。
+UI 要素を重ねて表示することはお勧めできないため、シナリオで必要な場合を除き、作業ウィンドウでダイアログ ボックスを開かないようにします。 作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることに注意してください。 例については、[Excel アドイン JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) のサンプルを参照してください。
 
 ### <a name="designing-a-dialog-box-ui"></a>ダイアログボックスの UI を設計する
 

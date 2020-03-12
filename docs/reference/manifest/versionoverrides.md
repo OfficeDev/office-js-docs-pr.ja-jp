@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの VersionOverrides 要素
 description: ''
-ms.date: 02/04/2020
+ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 0afa3183e34a736a878217c079b7b8d0259be5b1
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dc1013f24ef6e0cc4f000128b6f5d28ccae4432
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324800"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "42605681"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -18,14 +18,14 @@ ms.locfileid: "42324800"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  はい  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
+|  **xmlns**       |  必要  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
 
 ### <a name="namespace-values"></a>名前空間の値
 
 次に、親`<OfficeApp>`要素の**xsi: type**値に応じて、 **xmlns**値に必要な値を示します。
 
-- **Task区画アプリ**は、バージョン1.0 の versionoverrides のみをサポート**** し、xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`はにする必要があります。
+- **Task区画アプリ**は、バージョン1.0 の versionoverrides のみをサポート**xmlns**し、xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`はにする必要があります。
 - **Contentapp**はバージョン1.0 の versionoverrides のみをサポートし、 **xmlns**は`http://schemas.microsoft.com/office/contentappversionoverrides`である必要があります。
 - **Mailapp**はバージョン1.0 および1.1 の versionoverrides をサポートしているため、 **xmlns**の値`<VersionOverrides>`は次の要素の**xsi: type**値に応じて異なります。
     - **Xsi: type**が`VersionOverridesV1_0`の場合、 **xmlns**は`http://schemas.microsoft.com/office/mailappversionoverrides`でなければなりません。
@@ -38,13 +38,14 @@ ms.locfileid: "42324800"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **説明**    |  No/しない   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、**Resources** 要素の [LongString](./resources.md) 要素の子要素に含まれています。`resid` 要素の **** の属性は、テキストを含む `id` 要素の `String` 属性の値に設定されています。|
+|  **説明**    |  No/しない   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、**Resources** 要素の [LongString](resources.md) 要素の子要素に含まれています。`resid` 要素の **** の属性は、テキストを含む `id` 要素の `String` 属性の値に設定されています。|
 |  **Requirements**  |  いいえ   |  アドインに必要な最小の Office.js のセットおよびバージョンを指定します。これは、マニフェストの親部分の `Requirements` 要素を上書きします。|
-|  [Hosts](./hosts.md)                |  はい  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
-|  [Resources](./resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
-|  [EquivalentAddins](./equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブアドインがインストールされている場合、web アドインはアクティブ化されません。|
+|  [Hosts](hosts.md)                |  必要  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
+|  [Resources](resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
+|  [EquivalentAddins](equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブアドインがインストールされている場合、web アドインはアクティブ化されません。|
 |  **VersionOverrides**    |  いいえ  | より新しいスキーマ バージョンでアドイン コマンドを定義します。詳細については、「[複数のバージョンを実装する](#implementing-multiple-versions)」を参照してください。 |
-|  [WebApplicationInfo](./webapplicationinfo.md)    |  いいえ  | Azure Active Directory v2.0 など、セキュリティで保護されたトークン発行者によるアドインの登録に関する詳細を指定します。 |
+|  [WebApplicationInfo](webapplicationinfo.md)    |  いいえ  | Azure Active Directory v2.0 など、セキュリティで保護されたトークン発行者によるアドインの登録に関する詳細を指定します。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。<br><br>**重要**: [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API は現在プレビュー段階のため、この`ExtendedPermissions`要素を使用するアドインは、appsource に発行することも、一元展開によって展開することもできません。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides の例
 

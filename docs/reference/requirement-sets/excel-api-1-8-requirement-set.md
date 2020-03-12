@@ -4,12 +4,12 @@ description: ExcelApi 1.8 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6849ccb3dc83275509d26c63054a518d41cb060e
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 4a512b10dd23b2165d72226d9df27d5f9454c24e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064894"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42597006"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 の新機能
 
@@ -17,11 +17,11 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="pivottable"></a>ピボットテーブル
 
-ピボットテーブル API の Wave 2 では、アドインでピボットテーブルの階層を設定できます。 データとデータの集計方法を制御できるようになりました。 新しいピボットテーブルの機能について詳しくは、[ピボットテーブルの記事](/office/dev/add-ins/excel/excel-add-ins-pivottables)を参照してください。
+ピボットテーブル API の Wave 2 では、アドインでピボットテーブルの階層を設定できます。 データとデータの集計方法を制御できるようになりました。 新しいピボットテーブルの機能について詳しくは、[ピボットテーブルの記事](../../excel/excel-add-ins-pivottables.md)を参照してください。
 
 ## <a name="data-validation"></a>データの入力規則
 
-データの入力規則により、ユーザーがワークシートに入力する内容を制御できます。 定義済みの回答セットにセルを制限したり、望ましくない入力に関する警告をポップアップ表示したりできます。 詳細については、[データの入力規則を範囲に追加する方法](/office/dev/add-ins/excel/excel-add-ins-data-validation)を参照してください。
+データの入力規則により、ユーザーがワークシートに入力する内容を制御できます。 定義済みの回答セットにセルを制限したり、望ましくない入力に関する警告をポップアップ表示したりできます。 詳細については、[データの入力規則を範囲に追加する方法](../../excel/excel-add-ins-data-validation.md)を参照してください。
 
 ## <a name="charts"></a>グラフ
 
@@ -29,7 +29,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="events"></a>イベント
 
-グラフの[イベント](/office/dev/add-ins/excel/excel-add-ins-events)がさらに追加されました。 グラフを操作するユーザーに対し、アドインで対応できます。 ブック全体にわたり、起動する[イベントの切り替え](/office/dev/add-ins/excel/performance#enable-and-disable-events)もできます。
+グラフの[イベント](../../excel/excel-add-ins-events.md)がさらに追加されました。 グラフを操作するユーザーに対し、アドインで対応できます。 ブック全体にわたり、起動する[イベントの切り替え](../../excel/performance.md#enable-and-disable-events)もできます。
 
 ## <a name="api-list"></a>API リスト
 
@@ -202,7 +202,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[source](/javascript/api/excel/excel.listdatavalidation#source)|データの入力規則のリストのソース。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[name](/javascript/api/excel/excel.pivotfield#name)|PivotField の名前。|
 ||[id](/javascript/api/excel/excel.pivotfield#id)|PivotField の ID。|
-||[items](/javascript/api/excel/excel.pivotfield#items)|PivotField で構成される PivotItems を返します。|
+||[アイテム](/javascript/api/excel/excel.pivotfield#items)|PivotField で構成される PivotItems を返します。|
 ||[showAllItems](/javascript/api/excel/excel.pivotfield#showallitems)|PivotField のすべての項目を表示するかどうかを指定します。|
 ||[sortByLabels (sortBy: SortBy)](/javascript/api/excel/excel.pivotfield#sortbylabels-sortby-)|PivotField を並べ替えます。 DataPivotHierarchy を指定すると、そのピボット階層に基づいて並べ替えが適用されます。指定しない場合、ピボット フィールド自体が並べ替えの基準になります。|
 ||[subtotals](/javascript/api/excel/excel.pivotfield#subtotals)|PivotField の小計。|
@@ -287,5 +287,5 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.8)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.8)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

@@ -3,16 +3,16 @@ title: マニフェスト ファイルの Requirements 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3c4cb81ebd6a38ea311e8fcacfa6d5fcd3b26f68
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 43c66118b9129c4c8ae395254ea82ef1cbcbaab1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325249"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596460"
 ---
 # <a name="requirements-element"></a>Requirements 要素
 
-Office アドインをアクティブにするために必要な Office JavaScript API の要件の最小セット ([要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets)またはメソッド、あるいはその両方) を指定します。
+Office アドインをアクティブにするために必要な Office JavaScript API の要件の最小セット ([要件セット](../../develop/office-versions-and-requirement-sets.md#specify-office-hosts-and-requirement-sets)またはメソッド、あるいはその両方) を指定します。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 
@@ -37,5 +37,4 @@ Office アドインをアクティブにするために必要な Office JavaScri
 
 ## <a name="remarks"></a>解説
 
-利用できる要件セットの詳細については、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」を参照してください。
-
+利用できる要件セットの詳細については、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。

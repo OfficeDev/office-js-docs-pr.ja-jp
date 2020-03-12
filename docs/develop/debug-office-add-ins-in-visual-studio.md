@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c51ae9115482919efe09033360c8b335ee1236f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324618"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596516"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -113,7 +113,7 @@ Visual Studio によってプロジェクトがビルドされると、次のタ
 
 次に、Visual Studio で次の操作が行われます。
 
-1. `~remoteAppUrl` トークンを開始ページの完全修飾アドレス (例: `https://localhost:44302/Home.html`) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 要素を変更します。
+1. `~remoteAppUrl` トークンを開始ページの完全修飾アドレス (例: `https://localhost:44302/Home.html`) で置き換えることによって、XML マニフェスト ファイルの [SourceLocation](../reference/manifest/sourcelocation.md) 要素を変更します。
 
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Method 要素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 2bcc24abf269f5d6c44c03e738bac480fd05d5ca
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 74b7a8b3d0f8511d21eb0df150500850e8b93fe9
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324849"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596894"
 ---
 # <a name="method-element"></a>Method 要素
 
@@ -34,8 +34,7 @@ Office JavaScript API から、Office アドインをアクティブにするた
 
 ## <a name="remarks"></a>注釈
 
-および`Methods` `Method`要素は、メールアドインではサポートされていません。要件セットの詳細については、「 [Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」を参照してください。
+および`Methods` `Method`要素は、メールアドインではサポートされていません。要件セットの詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
-> [!IMPORTANT] 
-> 個々のメソッドの最小バージョン要件を指定する方法がないため、メソッドが実行時に使用可能であることを確認するには、そのメソッドをアドインのスクリプトで呼び出す際に、**if** ステートメントも使用する必要があります。 これを行う方法の詳細については、「 [Office JAVASCRIPT API に](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)ついて」を参照してください。
-
+> [!IMPORTANT]
+> 個々のメソッドの最小バージョン要件を指定する方法がないため、メソッドが実行時に使用可能であることを確認するには、そのメソッドをアドインのスクリプトで呼び出す際に、**if** ステートメントも使用する必要があります。 これを行う方法の詳細については、「 [Office JAVASCRIPT API に](../../develop/understanding-the-javascript-api-for-office.md)ついて」を参照してください。

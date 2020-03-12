@@ -3,12 +3,12 @@ title: マニフェスト ファイルの WebApplicationInfo 要素
 description: ''
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: e10aee1bf3fb99099d282acd428fa0348229701c
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: b6cf82776f683929845df83c642b28ad024d665a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477867"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596733"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
@@ -18,7 +18,7 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 - Microsoft Graph に対するアクセス許可を必要とする可能性のある OAuth 2.0 *クライアント*。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](../requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 **WebApplicationInfo** は、マニフェスト内の [VersionOverrides](versionoverrides.md) 要素の子要素です。  
 
@@ -26,11 +26,11 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Id**    |  はい   |  Azure Active Directory (Azure AD) v2.0 エンドポイントに登録された、アドインの関連サービスの**アプリケーション ID**。|
+|  **Id**    |  必要   |  Azure Active Directory (Azure AD) v2.0 エンドポイントに登録された、アドインの関連サービスの**アプリケーション ID**。|
 |  **MsaId**    |  いいえ   |  Msm.live.com に登録されている、アドインの web アプリケーションのクライアント ID。|
 |  **Resource**  |  はい   |  Azure Active Directory v2.0 エンドポイントに登録されたアドインの**アプリケーション ID URI** を指定します。|
-|  [Scope](scopes.md)                |  はい  |  Microsoft Graph などのリソースに対してアドインが必要とするアクセス許可を指定します。  |
-|  [承認](authorizations.md)  |  いいえ   | アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。|
+|  [Scope](scopes.md)                |  必要  |  Microsoft Graph などのリソースに対してアドインが必要とするアクセス許可を指定します。  |
+|  [Authorizations](authorizations.md)  |  いいえ   | アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo の例
 

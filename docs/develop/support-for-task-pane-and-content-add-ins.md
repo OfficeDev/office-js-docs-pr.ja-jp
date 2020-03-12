@@ -3,12 +3,12 @@ title: Office 2013 でのコンテンツ アドインと作業ウィンドウ �
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a9eb67ca78f89888860ff3ed11ae1632ff62b690
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 043ce34b05b3b158dcf4162fb49cfe94a791dad1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323823"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596656"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
@@ -165,6 +165,6 @@ Project のデータの読み取り操作の例については、「[テキス�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office の JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office の JavaScript API](../reference/javascript-api-for-office.md)
 - [Office アドイン マニフェストのスキーマ参照](../develop/add-in-manifests.md)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
