@@ -1,14 +1,14 @@
 ---
-title: Excel、Word、PowerPoint のアドイン コマンド
-description: ''
-ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
-ms.translationtype: MT
+title: アドイン コマンドの基本概念
+description: Office Web アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
+ms.date: 02/11/2020
+localization_priority: Priority
+ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
+ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162840"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "42566153"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -34,20 +34,27 @@ ms.locfileid: "42162840"
 > [!NOTE]
 > 現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
 
-**拡張点**
+### <a name="extension-points"></a>拡張点
 
 - リボン タブ: 組み込みのタブを拡張するか、新しいカスタム タブを作成します。
 - コンテキスト メニュー: 選択されたコンテキスト メニューを拡張します。
 
-**コントロールの種類**
+### <a name="control-types"></a>コントロールの種類
 
 - 単純なボタン: 特定のアクションをトリガーします。
 - メニュー: アクションをトリガーするボタン付きの単純なメニューのドロップダウン。
 
-**アクション**
+### <a name="actions"></a>アクション
 
 - ShowTaskpane: カスタムの HTML ページをロードする 1 つまたは複数のウィンドウを表示します。
 - ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](/javascript/api/office/office.ui) API を使用できます。  
+
+### <a name="default-enabled-or-disabled-status-preview"></a>既定で有効または無効になっている状態 (プレビュー)
+
+アドイン起動時にコマンドを有効にするか無効にするかを指定したり、プログラムによって設定を変更したりできます。 
+
+> [!NOTE]
+> この機能はプレビュー段階にあり、すべてのホストまたはシナリオでサポートされるわけではありません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
@@ -59,8 +66,6 @@ ms.locfileid: "42162840"
 - Mac 上の Office (ビルド 15.33 以降、Office 365 サブスクリプションに接続済み)
 - Mac 上の Office 2019
 - Office on the web
-
-その他のプラットフォームが近日中に公開されます。
 
 ## <a name="debugging"></a>デバッグ
 
