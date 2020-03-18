@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Namespace 要素
-description: ''
+description: Namespace 要素は、Excel でカスタム関数によって使用される名前空間を定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: faf77fe8b6bddc734f1b47eb544ffe7e1e7c4aaa
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 45fd0caa039fdeb885cba4b739750fbd8b642252
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452103"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718057"
 ---
 # <a name="namespace-element"></a>Namespace 要素
 

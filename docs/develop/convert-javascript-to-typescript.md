@@ -1,14 +1,14 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
-description: ''
+description: Visual Studio の Office アドインプロジェクトを TypeScript を使用するように変換する方法について説明します。
 ms.date: 10/29/2019
 localization_priority: Normal
-ms.openlocfilehash: c497035f1b973fd77e7e460549c239776356b09f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 1dbb3503a521f1a7c3e71764a50f02708b667a11
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950566"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719043"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 

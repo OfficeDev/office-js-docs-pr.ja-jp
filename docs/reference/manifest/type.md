@@ -1,18 +1,18 @@
 ---
 title: マニフェストファイルの Type 要素
-description: ''
-ms.date: 05/03/2019
+description: Type 要素は、対応するアドインが COM アドインまたは XLL であるかどうかを指定します。
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 1c053d65c5e3c6ce597c9912ec608e0b36bc623b
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 9eeab172ed4ebf06fc93e42f56f8d33f5e7a92db
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33628229"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720317"
 ---
 # <a name="type-element"></a>Type 要素
 
-対応するアドインが COM addin または XLL であるかどうかを指定します。
+対応するアドインが COM アドインまたは XLL であるかどうかを指定します。
 
 **アドインの種類:** 作業ウィンドウ、ユーザー設定関数
 

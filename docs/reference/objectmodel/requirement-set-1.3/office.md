@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.3
-description: ''
+description: Outlook アドイン API の最上位レベルの名前空間のオブジェクトモデル (Mailbox API 1.3 バージョン)。
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: b6a8c581670692ed48c4dcc2a7e1f86196b5bce7
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 706f12f4425a883f0d18fcd6f9ee18972972d72b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165434"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717776"
 ---
 # <a name="office"></a>Office
 

@@ -1,14 +1,14 @@
 ---
 title: Mac で Office アドインをデバッグする
-description: ''
+description: Mac を使用して Office アドインをデバッグする方法について説明します。
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 38aca8b9c5245ee83ed79c94497c26250d726245
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0cd7edf8db40cbcb9057dc07e549e11e11b2c51c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950937"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719771"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 

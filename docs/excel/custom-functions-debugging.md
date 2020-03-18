@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Excel でカスタム関数をデバッグします。
 title: カスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324625"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719309"
 ---
 # <a name="custom-functions-debugging"></a>カスタム関数のデバッグ
 
@@ -29,7 +29,7 @@ On Mac:
 > [!NOTE]
 > 簡単にするために、この記事では、Visual Studio Code を使用した編集、タスクの実行、および場合によってはデバッグビューを使用するためのデバッグについて説明します。 別のエディターまたはコマンドラインツールを使用している場合は、この記事の最後にある[コマンドラインの手順](#commands-for-building-and-running-your-add-in)を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>Requirements
 
 デバッグを開始する前に、 [Office アドイン用の [ごみ箱] ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、カスタム関数プロジェクトを作成する必要があります。 カスタム関数プロジェクトを作成する方法のガイダンスについては、「[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)」を参照してください。
 

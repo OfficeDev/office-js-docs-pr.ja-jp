@@ -1,14 +1,14 @@
 ---
 title: Office アドインのマニフェストを検証する
-description: XML スキーマやその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
+description: XML スキーマおよびその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 9cd1c353d6f73decb5e39df96cf66da5912b8f9c
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: bb24cdca34ac92fa1ca9f292bc1f52b5fbd01688
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688809"
+ms.locfileid: "42719750"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 

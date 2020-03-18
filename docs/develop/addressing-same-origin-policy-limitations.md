@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける同一生成元ポリシーの制限への対処
-description: ''
+description: JSONP、CORS、Iframe、およびその他の手法との同一生成元ポリシーの制限に対処する方法について説明します。
 ms.date: 10/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2a47339bd5cc0b0bf919152b7078d5373382124f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: fa478b223f30efe5283cf9eaec10ba3be40e493f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950447"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719197"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 

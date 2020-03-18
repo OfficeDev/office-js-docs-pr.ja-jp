@@ -1,14 +1,14 @@
 ---
 title: OneNote ページ コンテンツを使用する
-description: ''
+description: JavaScript API を使用して OneNote ページコンテンツを操作する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 94c12815823e2860615fc731f460f08a468756e6
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 319ec8a6a92bf6bf58fac9c3c2d22987bc027414
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596859"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720940"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 

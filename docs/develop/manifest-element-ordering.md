@@ -3,12 +3,12 @@ title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 5f6364d8403fccfd9dbb9c2c200a2c2a24a90230
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: 9296c4ec52cb5a0069053efd418e964467a7d7a8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566160"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718889"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -24,7 +24,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 次のセクションでは、マニフェスト要素を表示する順序で示します。 `<OfficeApp>`要素の`type`属性が`TaskPaneApp`、 `ContentApp`、、のいずれであるかによって`MailApp`、相違点があります。 これらのセクションの扱いが大きくなりすぎないように`<VersionOverrides>`するため、非常に複雑な要素が別々のセクションに分割されます。
 
 > [!Note]
-> 表示されている要素の一部は必須ではありません。 スキーマで`minOccurs`要素の値が**0**の場合、 [](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)この要素は省略可能です。
+> 表示されている要素の一部は必須ではありません。 スキーマで`minOccurs`要素の値が**0**の場合、 [schema](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)この要素は省略可能です。
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウアドイン要素の順序付け
 

@@ -3,12 +3,12 @@ title: カテゴリの取得と設定
 description: '[方法] メールボックスとアイテムのカテゴリを管理する'
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 50b98191661674b50c5636733075e4a882183d82
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d0bb2e9f51675c263d0a3a130c64e02e7d55b764
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166592"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42721024"
 ---
 # <a name="get-and-set-categories"></a>カテゴリの取得と設定
 
@@ -65,7 +65,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 
 ### <a name="remove-master-categories"></a>マスターシェイプカテゴリを削除する
 
-次の例は、"至急!" という名前の分類項目を削除する方法を示しています。 マスターリストから、RemoveAsync[カテゴリ](/javascript/api/outlook/office.mailbox#mastercategories)で [ [](/javascript/api/outlook/office.mastercategories#removeasync-categories--options--callback-) ] を呼び出します。
+次の例は、"至急!" という名前の分類項目を削除する方法を示しています。 マスターリストから、RemoveAsync[カテゴリ](/javascript/api/outlook/office.mailbox#mastercategories)で [ [removeAsync](/javascript/api/outlook/office.mastercategories#removeasync-categories--options--callback-) ] を呼び出します。
 
 ```js
 var masterCategoriesToRemove = ["Urgent!"];

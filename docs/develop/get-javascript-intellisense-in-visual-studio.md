@@ -1,14 +1,14 @@
 ---
 title: Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
-description: ''
+description: JSDoc を使用して、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を作成する方法について説明します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: a099d43cc798bb96078825930450dcad954c7418
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 88453151ffced0efcae8569ceb19c4556177fdea
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950678"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718987"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 

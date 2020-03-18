@@ -1,14 +1,14 @@
 ---
 title: iPad 用の Office アドインを開発する
-description: ''
+description: IPad で実行する Office アドインを作成するための概要とベストプラクティスについて説明します。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 410e42623438e872ee61f2befbc8eb0d0196bbbd
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c71e935e92a4d88077c95b88334225ef08818dac
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914875"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719029"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>iPad 用の Office アドインを開発する
 

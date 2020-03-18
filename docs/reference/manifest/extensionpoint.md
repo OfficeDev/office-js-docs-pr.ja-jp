@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
-description: ''
+description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 09/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 44075bd12c15b4ac9117a51d71fdcc7d6436a7ce
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324877"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720569"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -74,9 +74,9 @@ ms.locfileid: "42324877"
 |**Element**|**説明**|
 |:-----|:-----|
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
-|**OfficeTab**|既定の Office リボンタブ ( **Primarycommandsurface**を使用) を拡張する場合に必要です。**Officetab**要素を使用する場合、 **customtab**要素は使用できません。詳細については、「 [Officetab](officetab.md)」を参照してください。|
+|**OfficeTab**|既定の Office リボン タブを拡張する場合は必須です (**PrimaryCommandSurface** を使用)。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
 |**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
-|**Group**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
+|**グループ**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
 |**Label**|必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
 |**Icon**|必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 |
 |**Tooltip**|省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
@@ -282,7 +282,7 @@ ms.locfileid: "42324877"
 
 #### <a name="label"></a>Label
 
-必須。グループのラベルを示します。**Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
+必ず指定します。 グループのラベルです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
 
 #### <a name="highlight-requirements"></a>強調表示の要件
 

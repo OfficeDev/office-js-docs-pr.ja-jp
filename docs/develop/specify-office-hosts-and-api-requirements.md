@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
-description: ''
+description: アドインが意図したとおりに動作するように Office のホストと API の要件を指定する方法について説明します。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ab9b97f3d3232339010179097e1fd03dbeb86aa2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596495"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718812"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Office のホストと API の要件を指定する
 
@@ -36,11 +36,11 @@ ms.locfileid: "42596495"
 
 ## <a name="before-you-begin"></a>始める前に
 
-アドインでは、アドインマニフェストスキーマの最新バージョンを使用する必要があります。アドインでランタイムチェックを使用する場合は、最新の Office JavaScript API (office .js) ライブラリを使用していることを確認してください。
+アドインで最新バージョンのアドイン マニフェスト スキーマを使用する必要があります。 アドインでランタイムチェックを使用する場合は、最新の Office JavaScript API (office .js) ライブラリを使用していることを確認してください。
 
 ### <a name="specify-the-latest-add-in-manifest-schema"></a>最新のアドイン マニフェスト スキーマを指定する
 
-アドインのマニフェストでは、アドインマニフェストスキーマのバージョン1.1 を使用する必要があります。アドインマニフェスト`OfficeApp`の要素を次のように設定します。
+アドインのマニフェストでは、アドイン マニフェスト スキーマのバージョン 1.1 を使用する必要があります。 アドインマニフェスト`OfficeApp`の要素を次のように設定します。
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -48,7 +48,7 @@ ms.locfileid: "42596495"
 
 ### <a name="specify-the-latest-office-javascript-api-library"></a>最新の Office JavaScript API ライブラリを指定する
 
-ランタイムチェックを使用する場合は、コンテンツ配信ネットワーク (CDN) から、最新バージョンの Office JavaScript API ライブラリを参照します。これを行うには、HTML `script`に次のタグを追加します。CDN `/1/` URL でを使用すると、最新バージョンの Office .js を参照できるようになります。
+ランタイムチェックを使用する場合は、コンテンツ配信ネットワーク (CDN) から、最新バージョンの Office JavaScript API ライブラリを参照します。 その場合、HTML に次の `script` タグを追加します。 CDN URL で `/1/` を使用することで、Office.js の最新版が参照されます。
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -60,15 +60,15 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 ![Office のホストまたは API の要件を指定する際に、アドインに最適なオプションを選択する](../images/options-for-office-hosts.png)
 
-- アドインが1つの Office ホストで実行される`Hosts`場合は、マニフェスト内の要素を設定します。詳細については、「 [Hosts 要素を設定する](#set-the-hosts-element)」を参照してください。
+- アドインが1つの Office ホストで実行される`Hosts`場合は、マニフェスト内の要素を設定します。 詳しくは、「[Hosts 要素を設定する](#set-the-hosts-element)」を参照してください。
 
-- Office ホストがアドインを実行するためにサポートする必要のある最小要件セットまたは API メンバーを設定する`Requirements`には、マニフェストで要素を設定します。詳細については、「[マニフェストの要件要素を設定する](#set-the-requirements-element-in-the-manifest)」を参照してください。
+- Office ホストがアドインを実行するためにサポートする必要のある最小要件セットまたは API メンバーを設定する`Requirements`には、マニフェストで要素を設定します。 詳しくは、「[マニフェストで Requirements 要素を設定する](#set-the-requirements-element-in-the-manifest)」をご覧ください。
 
 - Office ホストで特定の要件セットまたは API メンバーが利用可能である場合に追加の機能を提供する場合は、アドインの JavaScript コードでランタイム チェックを実行します。 たとえば、アドインが Excel 2016 で機能する場合は、Excel JavaScript API の API メンバーを使用して追加の機能を提供します。 詳細については、「[JavaScript コードでランタイム チェックを使用する](#use-runtime-checks-in-your-javascript-code)」をご覧ください。
 
 ## <a name="set-the-hosts-element"></a>Hosts 要素を設定する
 
-1つの Office ホストアプリケーションでアドインを実行するには、マニフェスト`Hosts`内`Host`の要素と要素を使用します。`Hosts`要素を指定しない場合、アドインはすべてのホストで実行されます。
+1つの Office ホストアプリケーションでアドインを実行するには、マニフェスト`Hosts`内`Host`の要素と要素を使用します。 `Hosts`要素を指定しない場合、アドインはすべてのホストで実行されます。
 
 たとえば、次`Hosts`のと`Host`宣言は、アドインが excel のすべてのリリースで動作することを指定します。これには、Web、Windows、iPad 上の excel が含まれます。
 
@@ -78,7 +78,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 </Hosts>
 ```
 
-要素`Hosts`には、1つ以上`Host`の要素を含めることができます。要素`Host`は、アドインが必要とする Office ホストを指定します。`Name`属性は必須で、次のいずれかの値に設定できます。
+要素`Hosts`には、1つ以上`Host`の要素を含めることができます。 要素`Host`は、アドインが必要とする Office ホストを指定します。 `Name`属性は必須で、次のいずれかの値に設定できます。
 
 | 名前          | Office ホスト アプリケーション                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
@@ -98,7 +98,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>マニフェストで Requirements 要素を設定する
 
-要素`Requirements`は、アドインを実行するために Office ホストでサポートされている必要のある最小要件セットまたは API メンバーを指定します。要素`Requirements`は、要件セットと、アドインで使用される個々のメソッドの両方を指定できます。アドインマニフェストスキーマのバージョン1.1 では、Outlook アドインを`Requirements`除くすべてのアドインで、この要素は省略可能です。
+要素`Requirements`は、アドインを実行するために Office ホストでサポートされている必要のある最小要件セットまたは API メンバーを指定します。 要素`Requirements`は、要件セットと、アドインで使用される個々のメソッドの両方を指定できます。 アドインマニフェストスキーマのバージョン1.1 では、Outlook アドインを`Requirements`除くすべてのアドインで、この要素は省略可能です。
 
 > [!WARNING]
 > `Requirements`要素のみを使用して、アドインで使用する必要がある重要な要件セットまたは API メンバーを指定します。 Office ホストまたはプラットフォームが、 `Requirements`要素で指定されている要件セットや API メンバーをサポートしていない場合、アドインはそのホストまたはプラットフォームでは実行されず、**アドイン**には表示されません。代わりに、web、Windows、iPad の Excel など、Office ホストのすべてのプラットフォームでアドインを使用できるようにすることをお勧めします。 _すべて_の Office ホストおよびプラットフォームでアドインを使用できるようにするには、 `Requirements`要素の代わりにランタイムチェックを使用します。
@@ -125,13 +125,13 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 
 - 要素`Requirements`には`Sets`および`Methods`子要素が含まれています。
 
-- 要素`Sets`には、1つ以上`Set`の要素を含めることができます。`DefaultMinVersion`すべての子`MinVersion` `Set`要素の既定値を指定します。
+- 要素`Sets`には、1つ以上`Set`の要素を含めることができます。 `DefaultMinVersion`すべての子`MinVersion` `Set`要素の既定値を指定します。
 
 - 要素`Set`は、Office ホストがアドインを実行するためにサポートする必要がある要件セットを指定します。 属性`Name`は、要件セットの名前を指定します。 は`MinVersion` 、要件セットの最小バージョンを指定します。 `MinVersion`API メンバーが属する`DefaultMinVersion`要件セットと要件セットのバージョンの詳細については、「 [Office アドインの要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)」を参照してください。
 
-- 要素`Methods`には、1つ以上`Method`の要素を含めることができます。 Outlook アドインで`Methods`要素を使用することはできません。
+- 要素`Methods`には、1つ以上`Method`の要素を含めることができます。Outlook アドインで`Methods`要素を使用することはできません。
 
-- 要素`Method`は、アドインを実行する Office ホストでサポートする必要がある個別のメソッドを指定します。 この`Name`属性は必須で、その親オブジェクトで修飾されたメソッドの名前を指定します。
+- 要素`Method`は、アドインを実行する Office ホストでサポートする必要がある個別のメソッドを指定します。この`Name`属性は必須で、その親オブジェクトで修飾されたメソッドの名前を指定します。
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>JavaScript コードでランタイム チェックを使用する
 

@@ -1,18 +1,19 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
-description: ''
+description: Excel JavaScript API を使用したグラフタスクをデモンストレーションするコードサンプルです。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dd6c2752c0ab6470c58049aa80ff4f6ebcff76a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323855"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719582"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
-この記事では、Excel JavaScript API を使用して、グラフで一般的なタスクを実行する方法を示すコードサンプルを提供します。およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Chart オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.chart) 」および「 [chart Collection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。 `ChartCollection` `Chart`
+この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。
+およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Chart オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.chart) 」および「 [chart Collection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。 `ChartCollection` `Chart`
 
 ## <a name="create-a-chart"></a>グラフの作成
 
@@ -127,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコードサンプルでは、ワークシートの最初のグラフの数値軸の目盛線を非表示にします。グラフの数値軸の目盛線を表示するには、をに`chart.axes.valueAxis.majorGridlines.visible` `true`設定します。
+次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 グラフの数値軸の目盛線を表示するには、をに`chart.axes.valueAxis.majorGridlines.visible` `true`設定します。
 
 ```js
 Excel.run(function (context) {
@@ -210,9 +211,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 これらのパラメーターにより、画像のサイズが決まります。 画像は常に同じ縦横比でスケーリングされます。 幅と高さのパラメーターにより、スケーリングされた画像の上端または下端が設定されます。 `ImageFittingMode` には 3 つの値があり、次のように動作します。
 
-- `Fill`: 画像の最小の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。 これは、自動調整モードが指定されていない場合の既定の動作です。
-- `Fit`: 画像の最大の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。
-- `FitAndCenter`: 画像の最大の高さまたは幅が、指定された高さまたは幅になります (画像をスケーリングしたときに最初に達した方)。 結果の画像は、他の寸法について中央に配置されます。
+- `Fill`: 画像の最小の高さまたは幅は、指定された高さまたは幅 (イメージをスケーリングするときに最初に到達した方) です。 これは、自動調整モードが指定されていない場合の既定の動作です。
+- `Fit`: 画像の最大の高さまたは幅は、指定された高さまたは幅 (画像を拡大または縮小するときに最初に到達した方) です。
+- `FitAndCenter`: 画像の最大の高さまたは幅は、指定された高さまたは幅 (画像を拡大または縮小するときに最初に到達した方) です。 結果の画像は、他の寸法について中央に配置されます。
 
 ## <a name="see-also"></a>関連項目
 

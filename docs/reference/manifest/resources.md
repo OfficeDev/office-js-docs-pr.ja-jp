@@ -1,16 +1,16 @@
 ---
 title: マニフェスト ファイルの Resources 要素
-description: ''
+description: Resources 要素には、VersionOverrides ノードのアイコン、文字列、URL が含まれます。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7e1cd9fcb383fa4d5881917b3dd8d6dec3bbe4f8
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9efd1f370ff842c9df2d911c64217f489284e767
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324828"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717965"
 ---
-# <a name="resources-element"></a>Resources 要素
+# <a name="resources-element"></a>リソース要素
 
 [VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。 マニフェスト要素によりリソースが指定されます。リソースの **id** を使用します。 それにより、特にリソースにさまざまなロケールのバージョンがあるとき、マニフェストのサイズが管理できる大きさに抑えられます。 **id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
 
@@ -18,7 +18,7 @@ ms.locfileid: "42324828"
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  型  |  説明  |
+|  要素 |  種類  |  説明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
 |  **Urls**                |  url     |  HTTPS URL の場所を指定します。 URL の長さは最大で 2048 文字です。 |

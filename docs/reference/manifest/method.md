@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Method 要素
-description: ''
+description: Method 要素は、office アドインをアクティブにするために必要な、Office JavaScript API からの個別のメソッドを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 74b7a8b3d0f8511d21eb0df150500850e8b93fe9
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 5da25616d25a8d7454fc847727cda38a9935b5c7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596894"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720583"
 ---
 # <a name="method-element"></a>Method 要素
 

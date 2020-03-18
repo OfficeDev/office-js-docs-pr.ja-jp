@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト-プレビュー要件セット
-description: ''
+description: Outlook アドイン API (Mailbox API Preview バージョン) の Outlook コンテキストオブジェクトのオブジェクトモデル。
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c2c661ce870e2007bd891aee040c6b3564f7b9e
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 409f0a5b46eba667f79228f45081c160c3c3ce7f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165518"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717804"
 ---
 # <a name="context"></a>context
 
@@ -45,7 +45,7 @@ Office のコンテキストは、すべての Office アプリでアドイン�
 
 [シングルサインオン (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md)をサポートするために、Office ホストがアドインの web アプリケーションへのアクセストークンを取得できるようにする方法を提供します。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [Auth](/javascript/api/office/office.auth)
 
@@ -121,7 +121,7 @@ function write(message){
 
 アドインが実行されている環境に関する情報を取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
@@ -190,7 +190,7 @@ function write(message){
 
 アドインが実行されている Office アプリケーションホストを取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [HostType](/javascript/api/office/office.hosttype)
 
@@ -221,7 +221,7 @@ Office テーマの色のプロパティにアクセスできるようにしま�
 
 Office テーマの色を使用すると、アドインの配色を、[**ファイル > Office アカウント > Office テーマ UI**を使用してユーザーが選択した現在の office テーマを使用して調整できます。これは、すべての office ホストアプリケーションで適用されます。 Using Office theme colors is appropriate for mail and task pane add-ins.
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [OfficeTheme](/javascript/api/office/office.officetheme)
 
@@ -265,7 +265,7 @@ function applyOfficeTheme(){
 
 アドインが実行されているプラットフォームを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
 
@@ -291,7 +291,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 現在のホストとプラットフォームでサポートされている要件セットを判断するためのメソッドを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
@@ -319,7 +319,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
@@ -340,7 +340,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Office アドインで、ダイアログボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [UI](/javascript/api/office/office.ui)
 

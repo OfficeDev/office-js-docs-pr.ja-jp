@@ -3,12 +3,12 @@ title: Office アドインのローカライズ
 description: Office JavaScript API を使用して、ロケールを決定し、ホストアプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりすることができます。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2b7cc7e414e8d8b3da50afdb1d44b3f693834b62
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323792"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718910"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -411,17 +411,17 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [Office 2013 の言語識別子と OptionState ID 値](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        /office/dev/add-ins/reference/manifest/defaultlocale
-[説明]:          /office/dev/add-ins/reference/manifest/description
-[DisplayName]:          /office/dev/add-ins/reference/manifest/displayname
-[IconUrl]:              /office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]:            /office/dev/add-ins/reference/manifest/resources
-[SourceLocation]:       /office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:             /office/dev/add-ins/reference/manifest/override
-[DesktopSettings]:      /office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]:       /office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]:        /office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]:  /javascript/api/office/office.context#displaylanguage 
-[contentLanguage]:  /javascript/api/office/office.context#contentlanguage 
-[RFC 3066]: https://www.rfc-editor.org/info/rfc3066
+[DefaultLocale]:         ../reference/manifest/defaultlocale.md
+[説明]:           ../reference/manifest/description.md
+[DisplayName]:           ../reference/manifest/displayname.md
+[IconUrl]:               ../reference/manifest/iconurl.md
+[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
+[Resources]:             ../reference/manifest/resources.md
+[SourceLocation]:        ../reference/manifest/sourcelocation.md
+[Override]:              ../reference/manifest/override.md
+[DesktopSettings]:       ../reference/manifest/desktopsettings.md
+[TabletSettings]:        ../reference/manifest/tabletsettings.md
+[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの CustomTab 要素
-description: ''
+description: リボン上で、アドイン コマンドに使用するタブとグループを指定します。
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323806"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718427"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 

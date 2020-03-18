@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの DefaultSettings 要素
-description: ''
+description: コンテンツまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 824c575b39a99c6028ffd603390d2b41ee0ad7dd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b97f692a1fd39e4b1f55080f6ed77e623be0000c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324885"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718371"
 ---
 # <a name="defaultsettings-element"></a>DefaultSettings 要素
 

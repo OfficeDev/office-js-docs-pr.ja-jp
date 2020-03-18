@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの FunctionFile 要素
-description: ''
+description: UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: eec1dc8eb2e099670469af6ef300592fc4a31e64
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 376ea82f48360d502ea9be05dc5d6b02f9294add
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324870"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718196"
 ---
 # <a name="functionfile-element"></a>FunctionFile 要素
 
-UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。 要素は[Desktopformfactor](desktopformfactor.md)または MobileFormFactor の子要素です。 [](mobileformfactor.md) `FunctionFile` 要素`resid`の`FunctionFile`属性は、要素内の要素`id`の`Url`属性の値に設定されて`Resources`います。この要素には、 [CONTROL 要素](control.md)で定義されているように、UI に含まれないアドインコマンドボタンによって使用されるすべての JavaScript 関数を含む HTML ファイルへの URL が含まれています。
+UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。 要素は[Desktopformfactor](desktopformfactor.md)または MobileFormFactor の子要素です。 [MobileFormFactor](mobileformfactor.md) `FunctionFile` 要素`resid`の`FunctionFile`属性は、要素内の要素`id`の`Url`属性の値に設定されて`Resources`います。この要素には、 [CONTROL 要素](control.md)で定義されているように、UI に含まれないアドインコマンドボタンによって使用されるすべての JavaScript 関数を含む HTML ファイルへの URL が含まれています。
 
 `FunctionFile`要素の例を次に示します。
 

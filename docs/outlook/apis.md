@@ -3,12 +3,12 @@ title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: bd7f3b5a1b52ec3ca7a48ae7a2d467c6cd30f1e4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 71e90fd86fc6f85e4522ed98177ef195c8dc0324
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325472"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718469"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 

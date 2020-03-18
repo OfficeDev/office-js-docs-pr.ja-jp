@@ -1,14 +1,14 @@
 ---
 title: Excel アドインの共同編集機能
-description: ''
+description: OneDrive、OneDrive for Business、または SharePoint Online に格納されている Excel ブックの coauthor について説明します。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0c1386eb6662ff47fce585db99fedd32f08aae06
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 3802983df28594d39e116a5af8b87a4d6b7a6590
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324667"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718763"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 

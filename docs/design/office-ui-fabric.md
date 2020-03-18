@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric 
-description: ''
+description: Office アドインで Office UI Fabric コンポーネントを使用する方法の概要について説明します。
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: ddec544b1aac146e75e8b22eba95e243b391d70f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 3e65e123d6195fc435b12c477985a10a3a2b0399
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950475"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718707"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric 
 

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Override 要素
-description: ''
+description: Override 要素を使用すると、追加のロケールの設定値を指定できます。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a1e11257e28d015d6fca9c9a1868e75989616e16
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 39e706dc981d405fcfcc508626578f34931efbcb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596880"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718028"
 ---
 # <a name="override-element"></a>Override 要素
 

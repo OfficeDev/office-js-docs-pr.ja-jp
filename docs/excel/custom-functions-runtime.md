@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム
 localization_priority: Normal
-ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688761"
+ms.locfileid: "42719498"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel カスタム関数のランタイム
 

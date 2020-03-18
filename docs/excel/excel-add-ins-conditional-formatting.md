@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲に条件付き書式を適用する
-description: ''
+description: この記事では、Excel JavaScript アドインのコンテキストでの条件付き書式について説明します。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: b09e15ba000433eaa2cc9b87cc207300a45db2f5
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: a51da3f0053e012ef91fc2b88985efc4fbffbbbf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596572"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719526"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 

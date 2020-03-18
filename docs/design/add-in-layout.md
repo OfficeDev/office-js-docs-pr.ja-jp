@@ -1,14 +1,14 @@
 ---
 title: Office アドインのレイアウト ガイドライン
-description: ''
+description: Office アドインの作業ウィンドウまたはダイアログをレイアウトする方法に関するガイドラインを取得します。
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 9570bf041cf1df70ab95af656decb3c458c0d480
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 38c98aeed1ddd1af5fcda95aa6d44ff1f1f2e53b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447169"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718511"
 ---
 # <a name="layout"></a>レイアウト
 Office に埋め込まれている各 HTML コンテナーは、レイアウトを持つことになります。これらのレイアウトは、アドインのメイン画面です。そこでは、お客様による操作の開始、設定の変更、表示、スクロール、コンテンツ間の移動を可能にするエクスペリエンスを作成します。エクスペリエンスの継続性を保証するために、画面全体のレイアウトが整合性のあるアドインを設計します。お客様が使い慣れている既存の Web サイトがある場合、既存の Web ページのレイアウトを再利用することを検討してください。Office HTML コンテナー内に調和よく収まるようにそれらを適合させます。

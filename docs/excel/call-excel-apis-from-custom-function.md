@@ -3,12 +3,12 @@ title: カスタム関数から Microsoft Excel Api を呼び出す
 description: カスタム関数から呼び出すことができる Microsoft Excel Api について説明します。
 ms.date: 02/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f24f8fc27db65466cb586307d7f4bc8f8eefe20
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284171"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719344"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>カスタム関数から Microsoft Excel Api を呼び出す
 
@@ -58,7 +58,7 @@ Excel を変更すると、パフォーマンスが低下し、タイムアウ�
 
 代わりに、リボンボタンまたは作業ウィンドウのコンテキストから Excel に変更を加えます。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](../reference/overview/excel-add-ins-reference-overview.md)
 

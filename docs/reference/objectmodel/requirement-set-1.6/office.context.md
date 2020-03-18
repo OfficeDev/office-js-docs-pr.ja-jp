@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト要件セット1.6
-description: ''
+description: Outlook アドイン API の Outlook コンテキストオブジェクトのオブジェクトモデル (Mailbox API 1.6 バージョン)。
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ceca9e717f84a596e98ef9d6aade906323ef09fb
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 8ce9b9c9ce1a0e224f57c899ddf065b22d052cd0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165371"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717643"
 ---
 # <a name="context"></a>context
 
@@ -86,7 +86,7 @@ function write(message){
 
 アドインが実行されている環境に関する情報を取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
@@ -155,7 +155,7 @@ function write(message){
 
 アドインが実行されている Office アプリケーションホストを取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [HostType](/javascript/api/office/office.hosttype)
 
@@ -181,7 +181,7 @@ console.log(JSON.stringify(Office.context.host));
 
 アドインが実行されているプラットフォームを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
 
@@ -207,7 +207,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 現在のホストとプラットフォームでサポートされている要件セットを判断するためのメソッドを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
@@ -235,7 +235,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 `RoamingSettings` オブジェクトを使うと、ユーザーのメールボックスに保存されている、メール アドインのデータの保存やアクセスを実行できます。そのため、メール アドインは、このメールボックスへのアクセスに使うどのホスト クライアント アプリケーションから実行されても、このデータを使うことができます。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
@@ -256,7 +256,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Office アドインで、ダイアログボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [UI](/javascript/api/office/office.ui)
 

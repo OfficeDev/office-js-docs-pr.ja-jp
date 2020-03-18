@@ -1,14 +1,14 @@
 ---
 title: Office. メールボックス要件セット1.8
-description: ''
+description: Office. mailbox のオブジェクトモデル (要件セット 1.8)
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 579ff10ec46646d2430537f8cb785af3fd9bb669
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 9a5874da1ad979618fcbfe17cc5b3ddd4e516f49
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688837"
+ms.locfileid: "42717517"
 ---
 # <a name="mailbox"></a>mailbox
 

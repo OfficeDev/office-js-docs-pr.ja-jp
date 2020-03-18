@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの SourceLocation 要素
-description: ''
-ms.date: 10/09/2018
+description: SourceLocation 要素は、Office アドインのソースファイルの場所を指定します。
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 7544e2bae480b9431c8912533ea1b761132a355e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fcca051b0d85c98cb011d5b886981c543ef8e3b0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451977"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717902"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 要素
 
-Office アドインのソース ファイルの場所を、1 から 2018 文字までの長さの URL として指定します。ソースの場所はファイル パスではなく、HTTPS アドレスにする必要があります。
+Office アドインのソースファイルの場所を、1 ~ 2018 文字の長さの URL として指定します。 ソースの場所はファイル パスではなく、HTTPS アドレスにする必要があります。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 

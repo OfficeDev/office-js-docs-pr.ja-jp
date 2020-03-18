@@ -3,12 +3,12 @@ title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートが他の Outlook ホストと比較する方法について説明します。
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 452a162a05a44477c85a99417b3a8cefbf49e515
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325462"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720828"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Outlook on Mac での outlook アドインのサポートと他の Outlook ホストの比較
 

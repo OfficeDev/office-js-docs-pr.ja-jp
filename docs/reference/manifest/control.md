@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Control 要素
-description: ''
+description: アクションを実行したり、作業ウィンドウを起動したりする JavaScript 関数を定義します。
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 0d13fc4fd30f32b4998d385058cff941d3f72353
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688940"
+ms.locfileid: "42720674"
 ---
 # <a name="control-element"></a>Control 要素
 

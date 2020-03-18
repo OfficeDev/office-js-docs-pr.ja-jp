@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの AllFormFactors 要素
-description: ''
+description: すべてのフォーム ファクターについてアドインの設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 8059501f88f966b285398ac7cf243e6b0e4e44ea
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f1285f92b5eb89993e7fcfe79aab2325b86aca3d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450738"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720716"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors 要素
 

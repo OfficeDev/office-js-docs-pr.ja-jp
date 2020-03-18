@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの Action 要素
-description: ''
+description: この要素は、ユーザーがボタンまたはメニューコントロールを選択したときに実行するアクションを指定します。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554919"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720968"
 ---
 # <a name="action-element"></a>Action 要素
 
-ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。
+ユーザーが[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls)コントロールを選択したときに実行するアクションを指定します。
 
 ## <a name="attributes"></a>属性
 

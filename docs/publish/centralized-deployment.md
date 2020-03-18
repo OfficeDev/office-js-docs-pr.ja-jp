@@ -1,14 +1,14 @@
 ---
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
-description: ''
+description: 一元展開を使用して、内部アドインと Isv が提供するアドインを展開する方法について説明します。
 ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 943216ec8f42160a8eb406999fa2c86c45a0081a
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ac17113ee1e8d38d0b891a8decb3b48ca299c8fe
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596831"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720989"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 

@@ -3,12 +3,12 @@ title: Office アドインを初期化する
 description: Office アドインを初期化する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5adce84867a96917135ca379bbd032fcc3bc824a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325011"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718938"
 ---
 # <a name="initialize-your-office-add-in"></a>Office アドインを初期化する
 
@@ -139,7 +139,7 @@ Office.initialize = function (reason) {
 > [!NOTE]
 > スタートアップ ロジックがない場合でも、アドイン JavaScript を読み込むときには、`Office.onReady()` を呼び出すか、または空の関数を `Office.initialize` に割り当てる必要があります。 Office ホストとプラットフォームの組み合わせによっては、これらのいずれかが発生するまでは作業ウィンドウが読み込まれないことがあります。 次の例はこの 2 つの方法を示しています。
 >
->```js  
+>```js    
 >Office.onReady();
 >```
 >

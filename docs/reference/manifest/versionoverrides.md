@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの VersionOverrides 要素
-description: ''
+description: Office アドインのマニフェスト (XML) ファイルの VersionOverrides 要素の参照ドキュメント。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 5dc1013f24ef6e0cc4f000128b6f5d28ccae4432
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 055a796d269ffb230293639a7f69b2dde4e36eee
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605681"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717853"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -18,7 +18,7 @@ ms.locfileid: "42605681"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  必要  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
+|  **xmlns**       |  はい  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
 
 ### <a name="namespace-values"></a>名前空間の値
@@ -40,7 +40,7 @@ ms.locfileid: "42605681"
 |:-----|:-----|:-----|
 |  **説明**    |  No/しない   |  アドインについての説明。これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。説明のテキストは、**Resources** 要素の [LongString](resources.md) 要素の子要素に含まれています。`resid` 要素の **** の属性は、テキストを含む `id` 要素の `String` 属性の値に設定されています。|
 |  **Requirements**  |  いいえ   |  アドインに必要な最小の Office.js のセットおよびバージョンを指定します。これは、マニフェストの親部分の `Requirements` 要素を上書きします。|
-|  [Hosts](hosts.md)                |  必要  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
+|  [Hosts](hosts.md)                |  はい  |  Office ホストのコレクションを指定します。子の Host 要素は、マニフェストの親部分の Host 要素を上書きします。  |
 |  [Resources](resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
 |  [EquivalentAddins](equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブアドインがインストールされている場合、web アドインはアクティブ化されません。|
 |  **VersionOverrides**    |  いいえ  | より新しいスキーマ バージョンでアドイン コマンドを定義します。詳細については、「[複数のバージョンを実装する](#implementing-multiple-versions)」を参照してください。 |

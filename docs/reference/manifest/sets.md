@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Sets 要素
-description: ''
+description: Sets 要素は、office アドインをアクティブにするために必要な最低限の Office JavaScript API のセットを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 80f8a74b64186496ac1579b283b3e2976978328b
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: c9e699b4609004c49d954da2367a6c8f82d13670
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596488"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720394"
 ---
 # <a name="sets-element"></a>Sets 要素
 

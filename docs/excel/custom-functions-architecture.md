@@ -1,14 +1,14 @@
 ---
 ms.date: 07/10/2019
-description: Excelのカスタム関数のランタイムについて解説します。
+description: Excel カスタム関数のランタイムについて説明します。
 title: カスタム関数のアーキテクチャ
 localization_priority: Normal
-ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a11ac40591e11725bb35b16bf53fa07062541c8f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950355"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718770"
 ---
 # <a name="custom-functions-architecture"></a>カスタム関数のアーキテクチャ
 
@@ -24,9 +24,9 @@ Office Webアドインは、作業ウィンドウまたはコンテンツウィ�
 
 次の表は、カスタム関数の実行時とブラウザーのエンジンの実行時の違いを示しています。
 
-| カスタム関数のランタイム  | ブラウザエンジン ランタイム    |
-|------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------------------- |
-| セルの値を返すことをサポートしています    | Office.js Api と UI 要素をサポートしています。   |
+| カスタム関数のランタイム     | ブラウザエンジン ランタイム     |
+|------------------------------------------------------------------    |--------------------------------------------------------------------------------------------------------------    |
+| セルの値を返すことをサポートしています     | Office.js Api と UI 要素をサポートしています。     |
 | `localStorage` オブジェクトを持たず、代わりに `OfficeRuntime.storage` オブジェクトを使用します。     | `localStorage` オブジェクトを持ち, オプションで `OfficeRuntime.storage` オブジェクトを使用することもできます。     |
 | DOM の関連操作や、jQuery など DOM に依存するライブラリの読み込みはサポートされていません。    | DOM の関連操作や、DOM に依存するライブラリの読み込みがサポートされています。 |
 

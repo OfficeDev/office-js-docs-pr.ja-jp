@@ -3,12 +3,12 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 10/09/2019
 localization_priority: Normal
-ms.openlocfilehash: a307b0563b1b0460a1e90b7e2081d4c80b17eabe
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 84ea058e031fd2334706145bcdf8ca8e530c2c38
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166590"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720807"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 

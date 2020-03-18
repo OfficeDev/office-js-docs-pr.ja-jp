@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの IconUrl 要素
-description: ''
+description: IconUrl 要素は、挿入 UX と Office ストアで Office アドインを表すイメージの URL を指定します。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 858f399ed36bfed60c3e091b26ac7400ff901179
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a345971e32e64557005c8d01519589f4be5fb7d7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325263"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718084"
 ---
 # <a name="iconurl-element"></a>IconUrl 要素
 

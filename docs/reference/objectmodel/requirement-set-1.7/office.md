@@ -1,14 +1,14 @@
 ---
 title: Office 名前空間-要件セット1.7
-description: ''
+description: この名前空間は、Outlook Office アドインで使用される共有インターフェイスを提供します (要件セット 1.7)
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 23f3fb705c03eabd8ee7fce53f4c89a48128672f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 50fa22ac14aee3b7276be83813db248681435dc1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165349"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717599"
 ---
 # <a name="office"></a>Office
 

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
-description: ''
+description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 4ebf69058923faab939977bd9a8c4caacfe06a98
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 7c1cf3102e14355650b5556ffca6923e08c12211
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688776"
+ms.locfileid: "42719631"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドイン用の Office の UI 要素
-description: ''
+description: Office アドインのさまざまな種類の UI 要素の概要について説明します。
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: f805926894a33f74914fbd315245c93c826d5fc0
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e4bcc3badd58b3ab73b091bdb3c06eaa130dfc3e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950426"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718644"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office アドイン用の Office の UI 要素
 

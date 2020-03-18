@@ -1,14 +1,14 @@
 ---
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
-description: ''
+description: Project Standard 2013、Project Professional 2013、またはそれ以降のバージョン用の作業ウィンドウアドインを作成するには、Office アドイン用の新しいアプリジェネレーターを使用します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 12d5f898e642989e999034dbcf2764244b0c2379
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596817"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720751"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 

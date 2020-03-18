@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 1b4097e1190c5d9dc284393d1321c8e2d6c1a8a4
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 66e873117b82ed7258b5965a6e964f4b9e01df21
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688813"
+ms.locfileid: "42719484"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 

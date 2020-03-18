@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Scopes 要素
-description: ''
+description: 範囲要素には、アドインが外部リソースに接続するために必要なアクセス許可が含まれています。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 69a394b4cbe324b49c03425e6b2df92f44cbd21f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477734"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717923"
 ---
 # <a name="scopes-element"></a>Scopes 要素
 

@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Normal
-ms.openlocfilehash: 85ab78d92060f4f37aa47b11e7ac2ade5136a65c
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 5e48488b323e53e35698b2f64724b78da6abc599
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950797"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718746"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 

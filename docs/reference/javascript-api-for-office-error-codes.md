@@ -1,14 +1,14 @@
 ---
 title: Office JavaScript API のエラーコード
-description: ''
+description: この記事では、Office JavaScript API の使用中に発生する可能性のあるエラーメッセージについて説明します。
 ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 93852e7cfa7188cd30bba370ed6cfeb556af39b8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e85242e1cf83aef3b4173abf7ce52631cb6a8f80
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596810"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720982"
 ---
 # <a name="office-javascript-api-error-codes"></a>Office JavaScript API のエラーコード
 

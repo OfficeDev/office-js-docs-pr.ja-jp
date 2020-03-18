@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Permissions 要素
-description: ''
+description: Permissions 要素は、Office アドインの API アクセスレベルを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 95cb45f89e2a5b92edc29bf32d0b47fcb2dbf8ce
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 91e024a2f13ea7605941c8c17a642f325cbcd61d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165546"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718000"
 ---
 # <a name="permissions-element"></a>Permissions 要素
 

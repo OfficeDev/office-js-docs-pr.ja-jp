@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Excel でカスタム関数の JSON メタデータを定義し、関数 id と name プロパティを関連付けます。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: 79f23f83dfd4bff40880cb39edc6ebe9bf2e052e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 679087336fc7aea741c98d0104514ab96068ffbf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596782"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719463"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 
@@ -146,11 +146,11 @@ ms.locfileid: "42596782"
 | プロパティ      | データ型 | 必須 | 説明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
-| `helpUrl`     | 文字列    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
-| `id`          | 文字列    | 必要      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
-| `name`        | 文字列    | 必要      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
+| `helpUrl`     | string    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
+| `id`          | 文字列    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
+| `name`        | 文字列    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は XML マニフェスト ファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
 | `options`     | オブジェクト    | いいえ       | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。                                                          |
-| `parameters`  | 配列     | 必要      | 関数の入力パラメーターを定義する配列です。 詳細については、「 [parameters](#parameters) 」を参照してください。                                                                             |
+| `parameters`  | 配列     | はい      | 関数の入力パラメーターを定義する配列です。 詳細については、「 [parameters](#parameters) 」を参照してください。                                                                             |
 | `result`      | object    | はい      | 関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result](#result) に関する説明を参照してください。                                                                 |
 
 ### <a name="options"></a>options

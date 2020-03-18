@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
-description: ''
+description: サイドロードを使用して iPad および Mac で Office アドインをテストする
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c4af2c9ac6f209ab88f9f69efa56e58af0af50cd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325046"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719778"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -36,7 +36,7 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Excel または Word on iPad にアドインをサイドロードする
 
-1. 同期ケーブルを使用して、iPad をコンピューターに接続します。初めて iPad をコンピューターに接続している場合は、**このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。[**信頼**] を選択して続行します。
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 初めて iPad をコンピューターに接続している場合は、**このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。 **[信頼する]** を選択して続行します。
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
 
@@ -46,7 +46,7 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 5. [ **Excel** ] 列または [ **Word ドキュメント**] 列の下部で、[**ファイルの追加**] を選択し、サイドロードするアドインの manifest.xml ファイルを選択します。
 
-6. IPad で Excel または Word アプリを開きます。Excel または Word アプリが既に実行されている場合は、[**ホーム**] ボタンを選択し、アプリを閉じて再起動します。
+6. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[**ホーム**] ボタンを選択し、アプリを閉じて再起動します。
 
 7. ドキュメントを開きます。
 
@@ -59,13 +59,13 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 > [!NOTE]
 > Mac に Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
 
-1. **ターミナル**を開き、次のいずれかのフォルダーに移動して、アドインのマニフェストファイルを保存します。フォルダーが`wef`コンピューター上に存在しない場合は、フォルダーを作成します。
+1. **ターミナル**を開き、次のいずれかのフォルダーに移動して、アドインのマニフェストファイルを保存します。 `wef` フォルダーがコンピューター上に存在しない場合は、作成します。
 
     - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. コマンド`open .` (ピリオドまたはドットを含む) を使用して、 **Finder**でフォルダーを開きます。アドインのマニフェストファイルをこのフォルダーにコピーします。
+2. コマンド`open .` (ピリオドまたはドットを含む) を使用して、 **Finder**でフォルダーを開きます。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
 
     ![Office on Mac の Wef フォルダー](../images/all-my-files.png)
 

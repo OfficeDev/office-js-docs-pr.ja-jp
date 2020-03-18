@@ -3,12 +3,12 @@ title: 最新の Office JavaScript API ライブラリおよびバージョン1.
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: ccb6dade39850a656326482c3abc824ecfb6637e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 74d940c1dfd885e1f48935776481bd5ab3bbda16
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596586"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719337"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>最新の Office JavaScript API ライブラリおよびバージョン1.1 のアドインマニフェストスキーマへの更新
 

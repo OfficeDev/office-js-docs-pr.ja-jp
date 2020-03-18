@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの ExtendedPermission 要素
-description: ''
+description: アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c41684fc922f5845559250311edd8182788cfc5
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 7ff17312ae487d20f4d7af0ed4405cedd8820253
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605810"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720604"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission`項目
 
@@ -21,7 +21,7 @@ ms.locfileid: "42605810"
 
 使用可能な値は次のとおりです。
 
-|利用可能な値|説明|Hosts|
+|利用可能な値|説明|ホスト|
 |---|---|---|
 |`AppendOnSend`|アドインが[Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API を使用していることを宣言します。|Outlook|
 

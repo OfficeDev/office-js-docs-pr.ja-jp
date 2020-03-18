@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの SupportsSharedFolders 要素
-description: ''
+description: SupportsSharedFolders 要素は、Outlook アドインが代理人のシナリオで利用できるかどうかを定義します。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 81401b79f4c443305e376df7a66a07d916393d17
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 66a426b0c31bda61feb23cb83d63722898dfb503
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596754"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717888"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 要素
 

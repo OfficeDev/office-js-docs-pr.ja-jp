@@ -1,14 +1,14 @@
 ---
 title: Office アドインのアクセシビリティ ガイドライン
-description: ''
+description: すべてのユーザーが Office アドインにアクセスできるようにする方法について説明します。
 ms.date: 09/24/2018
 localization_priority: Normal
-ms.openlocfilehash: c40ca0c3c1fad238d605e5f3f67b58a0272ff83a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 61028c86e9ff79271b67d217e2dc93df300af006
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448134"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718623"
 ---
 # <a name="accessibility-guidelines"></a>アクセシビリティ ガイドライン
 
