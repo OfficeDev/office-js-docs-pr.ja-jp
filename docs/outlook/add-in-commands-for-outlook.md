@@ -3,12 +3,12 @@ title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
 ms.date: 12/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4b7249aaaad10f8ddef02540dcd6a3e08524c4db
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 130722d5d97df15c4e47561d7053c6101de24c35
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166528"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718476"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 

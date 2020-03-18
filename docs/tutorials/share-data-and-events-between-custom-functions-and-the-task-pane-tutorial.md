@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)'
-ms.prod: excel
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
+ms.date: 02/20/2020
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 13ef4c199f7cb1de84e58f0ada554c851aee0cad
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283892"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719729"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)
 
@@ -208,7 +208,7 @@ yo office
   npm run start
   ```
 
-Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。 カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。 または `=CONTOSO.STOREVALUE(“new value”)` を使用して、共有データを新しい値に変更します。
+Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。 カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。 または `=CONTOSO.STOREVALUE("new value")` を使用して、共有データを新しい値に変更します。
 
 > [!NOTE]
 > この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 プレビューでカスタム関数から Office API を呼び出すことはできません。

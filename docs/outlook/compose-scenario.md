@@ -3,12 +3,12 @@ title: 新規作成フォーム用の Outlook アドインを作成する
 description: 新規作成フォーム用の Outlook アドインのシナリオと機能について説明します。
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ea9a9bb245e8912111cad154a0cc66b0288d6eaa
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 1c1b4d84b8ab5b3b33c30582b245fd2e233ef2b7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166591"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720821"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>新規作成フォーム用の Outlook アドインを作成する
 

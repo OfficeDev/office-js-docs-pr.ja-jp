@@ -5,12 +5,12 @@ title: Visio アドイン ドキュメント
 description: Visio アドイン向けの学習用リソース。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: fa9e616fe0c00abc8abef2ec03b9dbaa840ebb9d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: aee3e5b326ede1e21f4ee2d39def30903ea9b12a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576964"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719715"
 ---
 # <a name="visio-add-ins-documentation"></a>Visio アドイン ドキュメント
 

@@ -5,12 +5,12 @@ title: Office JavaScript API リファレンス ドキュメント
 description: Office JavaScript Api について説明します。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: c10eeb5c89a74b28e9af44bf72b20a7ad610738b
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5622146d9663881eea0a97cafa5e793aa0381932
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851552"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720744"
 ---
 # <a name="api-reference-documentation"></a>API リファレンス ドキュメント
 

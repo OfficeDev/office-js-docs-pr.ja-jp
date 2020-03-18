@@ -4,12 +4,12 @@ title: ブラウザーのランタイムを共有するように Excel アドイ
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 7945bd8fdb29a9d6d44d7d29676410a54bacf83f
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284133"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719330"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>共有の JavaScript ランタイムを使用するように Excel アドインを構成する (プレビュー)
 

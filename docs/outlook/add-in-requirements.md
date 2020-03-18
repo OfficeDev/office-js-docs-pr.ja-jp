@@ -3,12 +3,12 @@ title: Outlook アドインの要件
 description: Outlook アドインが正しく読み込まれて機能するためには、サーバーとクライアントの両方に関していくつかの要件があります。
 ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 67aebd1fae19811797c07d33a5f6cac8907550f9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: be93ef69e60530947c18b5b5be294c6d12ed06f1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166608"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720877"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook アドインの要件
 
