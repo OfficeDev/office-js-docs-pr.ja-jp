@@ -1,30 +1,30 @@
 ---
 title: マニフェスト ファイルの Metadata 要素
-description: ''
+description: Metadata 要素は、Excel でカスタム関数によって使用されるメタデータ設定を定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a3aecb1983905658f3a55fdb8bf0629a8d5ef474
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8ea81818aa96b407ce386ec318495ec5ba773d05
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452047"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718070"
 ---
-# <a name="metadata-element"></a><span data-ttu-id="0c32b-102">MetaData 要素</span><span class="sxs-lookup"><span data-stu-id="0c32b-102">Metadata element</span></span>
+# <a name="metadata-element"></a><span data-ttu-id="73429-103">MetaData 要素</span><span class="sxs-lookup"><span data-stu-id="73429-103">Metadata element</span></span>
 
-<span data-ttu-id="0c32b-103">Excel でカスタム関数によって使用されるメタデータの設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="0c32b-103">Defines the metadata settings used by a custom function in Excel.</span></span>
+<span data-ttu-id="73429-104">Excel でカスタム関数によって使用されるメタデータの設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="73429-104">Defines the metadata settings used by a custom function in Excel.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="0c32b-104">属性</span><span class="sxs-lookup"><span data-stu-id="0c32b-104">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="73429-105">属性</span><span class="sxs-lookup"><span data-stu-id="73429-105">Attributes</span></span>
 
-<span data-ttu-id="0c32b-105">なし</span><span class="sxs-lookup"><span data-stu-id="0c32b-105">None</span></span>
+<span data-ttu-id="73429-106">なし</span><span class="sxs-lookup"><span data-stu-id="73429-106">None</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="0c32b-106">子要素</span><span class="sxs-lookup"><span data-stu-id="0c32b-106">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="73429-107">子要素</span><span class="sxs-lookup"><span data-stu-id="73429-107">Child elements</span></span>
 
-|  <span data-ttu-id="0c32b-107">要素</span><span class="sxs-lookup"><span data-stu-id="0c32b-107">Element</span></span>  |  <span data-ttu-id="0c32b-108">必須</span><span class="sxs-lookup"><span data-stu-id="0c32b-108">Required</span></span>  |  <span data-ttu-id="0c32b-109">説明</span><span class="sxs-lookup"><span data-stu-id="0c32b-109">Description</span></span>  |
+|  <span data-ttu-id="73429-108">要素</span><span class="sxs-lookup"><span data-stu-id="73429-108">Element</span></span>  |  <span data-ttu-id="73429-109">必須</span><span class="sxs-lookup"><span data-stu-id="73429-109">Required</span></span>  |  <span data-ttu-id="73429-110">説明</span><span class="sxs-lookup"><span data-stu-id="73429-110">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="0c32b-110">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="0c32b-110">SourceLocation</span></span>](customfunctionssourcelocation.md)  |  <span data-ttu-id="0c32b-111">はい</span><span class="sxs-lookup"><span data-stu-id="0c32b-111">Yes</span></span>  | <span data-ttu-id="0c32b-112">カスタム関数によって使用される JSON ファイルのリソース ID を持つ文字列。</span><span class="sxs-lookup"><span data-stu-id="0c32b-112">String with the resource id of the JSON file used by custom functions.</span></span> |
+|  [<span data-ttu-id="73429-111">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="73429-111">SourceLocation</span></span>](customfunctionssourcelocation.md)  |  <span data-ttu-id="73429-112">はい</span><span class="sxs-lookup"><span data-stu-id="73429-112">Yes</span></span>  | <span data-ttu-id="73429-113">カスタム関数によって使用される JSON ファイルのリソース ID を持つ文字列。</span><span class="sxs-lookup"><span data-stu-id="73429-113">String with the resource id of the JSON file used by custom functions.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="0c32b-113">例</span><span class="sxs-lookup"><span data-stu-id="0c32b-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="73429-114">例</span><span class="sxs-lookup"><span data-stu-id="73429-114">Example</span></span>
 
 ```xml
 <Metadata>

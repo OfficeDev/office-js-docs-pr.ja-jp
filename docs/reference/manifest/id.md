@@ -1,28 +1,28 @@
 ---
 title: マニフェスト ファイルの Id 要素
-description: ''
+description: Id 要素は、Office アドインの一意の ID を GUID として指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 1fbd5c7964602661d63d5c3448277e50ad301ba7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 137daee6346f3320697cfc52963d8e98d147e5d8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450577"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720562"
 ---
-# <a name="id-element"></a><span data-ttu-id="3b53d-102">Id 要素</span><span class="sxs-lookup"><span data-stu-id="3b53d-102">Id element</span></span>
+# <a name="id-element"></a><span data-ttu-id="70042-103">Id 要素</span><span class="sxs-lookup"><span data-stu-id="70042-103">Id element</span></span>
 
-<span data-ttu-id="3b53d-103">Office アドインの一意の ID を GUID の形で指定します。</span><span class="sxs-lookup"><span data-stu-id="3b53d-103">Specifies the unique ID of your Office Add-in as a GUID.</span></span>
+<span data-ttu-id="70042-104">Office アドインの一意の ID を GUID の形で指定します。</span><span class="sxs-lookup"><span data-stu-id="70042-104">Specifies the unique ID of your Office Add-in as a GUID.</span></span>
 
-<span data-ttu-id="3b53d-104">**アドインの種類:** コンテンツ、作業ウィンドウ、メール</span><span class="sxs-lookup"><span data-stu-id="3b53d-104">**Add-in type:** Content, Task pane, Mail</span></span>
+<span data-ttu-id="70042-105">**アドインの種類:** コンテンツ、作業ウィンドウ、メール</span><span class="sxs-lookup"><span data-stu-id="70042-105">**Add-in type:** Content, Task pane, Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="3b53d-105">構文</span><span class="sxs-lookup"><span data-stu-id="3b53d-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="70042-106">構文</span><span class="sxs-lookup"><span data-stu-id="70042-106">Syntax</span></span>
 
 ```XML
 <Id>string</Id>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="3b53d-106">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="3b53d-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="70042-107">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="70042-107">Contained in</span></span>
 
-[<span data-ttu-id="3b53d-107">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="3b53d-107">OfficeApp</span></span>](officeapp.md)
+[<span data-ttu-id="70042-108">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="70042-108">OfficeApp</span></span>](officeapp.md)
 

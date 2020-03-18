@@ -3,24 +3,24 @@ ms.date: 07/15/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 1b4097e1190c5d9dc284393d1321c8e2d6c1a8a4
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 66e873117b82ed7258b5965a6e964f4b9e01df21
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688813"
+ms.locfileid: "42719484"
 ---
-# <a name="custom-functions-parameter-options"></a><span data-ttu-id="7072f-103">カスタム関数のパラメータオプション</span><span class="sxs-lookup"><span data-stu-id="7072f-103">Custom functions parameter options</span></span>
+# <a name="custom-functions-parameter-options"></a><span data-ttu-id="2dad1-103">カスタム関数のパラメータオプション</span><span class="sxs-lookup"><span data-stu-id="2dad1-103">Custom functions parameter options</span></span>
 
-<span data-ttu-id="7072f-104">カスタム関数は、さまざまなパラメーターのオプションを使用して構成できます。</span><span class="sxs-lookup"><span data-stu-id="7072f-104">Custom functions are configurable with many different options for parameters.</span></span>
+<span data-ttu-id="2dad1-104">カスタム関数は、さまざまなパラメーターのオプションを使用して構成できます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-104">Custom functions are configurable with many different options for parameters.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="optional-parameters"></a><span data-ttu-id="7072f-105">オプションのパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-105">Optional parameters</span></span>
+## <a name="optional-parameters"></a><span data-ttu-id="2dad1-105">オプションのパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-105">Optional parameters</span></span>
 
-<span data-ttu-id="7072f-106">通常のパラメーターは必須ですが、省略可能なパラメーターは必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="7072f-106">Whereas regular parameters are required, optional parameters are not.</span></span> <span data-ttu-id="7072f-107">ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-107">When a user invokes a function in Excel, optional parameters appear in brackets.</span></span> <span data-ttu-id="7072f-108">次の例では、add 関数で3番目の番号を追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="7072f-108">In the following sample, the add function can optionally add a third number.</span></span> <span data-ttu-id="7072f-109">この関数は Excel `=CONTOSO.ADD(first, second, [third])`のように表示されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-109">This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.</span></span>
+<span data-ttu-id="2dad1-106">通常のパラメーターは必須ですが、省略可能なパラメーターは必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="2dad1-106">Whereas regular parameters are required, optional parameters are not.</span></span> <span data-ttu-id="2dad1-107">ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-107">When a user invokes a function in Excel, optional parameters appear in brackets.</span></span> <span data-ttu-id="2dad1-108">次の例では、add 関数で3番目の番号を追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-108">In the following sample, the add function can optionally add a third number.</span></span> <span data-ttu-id="2dad1-109">この関数は Excel `=CONTOSO.ADD(first, second, [third])`のように表示されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-109">This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.</span></span>
 
-#### <a name="javascript"></a>[<span data-ttu-id="7072f-110">JavaScript</span><span class="sxs-lookup"><span data-stu-id="7072f-110">JavaScript</span></span>](#tab/javascript)
+#### <a name="javascript"></a>[<span data-ttu-id="2dad1-110">JavaScript</span><span class="sxs-lookup"><span data-stu-id="2dad1-110">JavaScript</span></span>](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescript"></a>[<span data-ttu-id="7072f-111">TypeScript</span><span class="sxs-lookup"><span data-stu-id="7072f-111">TypeScript</span></span>](#tab/typescript)
+#### <a name="typescript"></a>[<span data-ttu-id="2dad1-111">TypeScript</span><span class="sxs-lookup"><span data-stu-id="2dad1-111">TypeScript</span></span>](#tab/typescript)
 
 ```typescript
 /**
@@ -61,11 +61,11 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> <span data-ttu-id="7072f-112">省略可能なパラメーターに値が指定されていない場合、 `null`Excel によって値が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="7072f-112">When no value is specified for an optional parameter, Excel assigns it the value `null`.</span></span> <span data-ttu-id="7072f-113">これは、TypeScript の既定の初期化されたパラメーターが期待どおりに動作しないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="7072f-113">This means default-initialized parameters in TypeScript will not work as expected.</span></span> <span data-ttu-id="7072f-114">そのため、この構文`function add(first:number, second:number, third=0):number`は0に初期化`third`されないため、使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="7072f-114">Therefore, don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0.</span></span> <span data-ttu-id="7072f-115">その代わりに、前の例のように TypeScript 構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="7072f-115">Instead use the TypeScript syntax as shown in the previous example.</span></span>
+> <span data-ttu-id="2dad1-112">省略可能なパラメーターに値が指定されていない場合、 `null`Excel によって値が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-112">When no value is specified for an optional parameter, Excel assigns it the value `null`.</span></span> <span data-ttu-id="2dad1-113">これは、TypeScript の既定の初期化されたパラメーターが期待どおりに動作しないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-113">This means default-initialized parameters in TypeScript will not work as expected.</span></span> <span data-ttu-id="2dad1-114">そのため、この構文`function add(first:number, second:number, third=0):number`は0に初期化`third`されないため、使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="2dad1-114">Therefore, don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0.</span></span> <span data-ttu-id="2dad1-115">その代わりに、前の例のように TypeScript 構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-115">Instead use the TypeScript syntax as shown in the previous example.</span></span>
 
-<span data-ttu-id="7072f-116">1つ以上のオプションパラメーターを含む関数を定義するときは、省略可能なパラメーターが null の場合の処理を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7072f-116">When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null.</span></span> <span data-ttu-id="7072f-117">次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="7072f-117">In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function.</span></span> <span data-ttu-id="7072f-118">`zipCode`パラメーターが null の場合、既定値はに`98052`設定されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-118">If the `zipCode` parameter is null, the default value is set to `98052`.</span></span> <span data-ttu-id="7072f-119">`dayOfWeek`パラメーターが null の場合は、水曜日に設定します。</span><span class="sxs-lookup"><span data-stu-id="7072f-119">If the `dayOfWeek` parameter is null, it is set to Wednesday.</span></span>
+<span data-ttu-id="2dad1-116">1つ以上のオプションパラメーターを含む関数を定義するときは、省略可能なパラメーターが null の場合の処理を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2dad1-116">When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are null.</span></span> <span data-ttu-id="2dad1-117">次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="2dad1-117">In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function.</span></span> <span data-ttu-id="2dad1-118">`zipCode`パラメーターが null の場合、既定値はに`98052`設定されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-118">If the `zipCode` parameter is null, the default value is set to `98052`.</span></span> <span data-ttu-id="2dad1-119">`dayOfWeek`パラメーターが null の場合は、水曜日に設定します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-119">If the `dayOfWeek` parameter is null, it is set to Wednesday.</span></span>
 
-#### <a name="javascript"></a>[<span data-ttu-id="7072f-120">JavaScript</span><span class="sxs-lookup"><span data-stu-id="7072f-120">JavaScript</span></span>](#tab/javascript)
+#### <a name="javascript"></a>[<span data-ttu-id="2dad1-120">JavaScript</span><span class="sxs-lookup"><span data-stu-id="2dad1-120">JavaScript</span></span>](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescript"></a>[<span data-ttu-id="7072f-121">TypeScript</span><span class="sxs-lookup"><span data-stu-id="7072f-121">TypeScript</span></span>](#tab/typescript)
+#### <a name="typescript"></a>[<span data-ttu-id="2dad1-121">TypeScript</span><span class="sxs-lookup"><span data-stu-id="2dad1-121">TypeScript</span></span>](#tab/typescript)
 
 ```typescript
 /**
@@ -115,11 +115,11 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ---
 
-## <a name="range-parameters"></a><span data-ttu-id="7072f-122">範囲パラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-122">Range parameters</span></span>
+## <a name="range-parameters"></a><span data-ttu-id="2dad1-122">範囲パラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-122">Range parameters</span></span>
 
-<span data-ttu-id="7072f-123">カスタム関数は、入力パラメーターとして範囲のセルデータを受け入れることができます。</span><span class="sxs-lookup"><span data-stu-id="7072f-123">Your custom function may accept a range of cell data as an input parameter.</span></span> <span data-ttu-id="7072f-124">関数は、データの範囲を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="7072f-124">A function can also return a range of data.</span></span> <span data-ttu-id="7072f-125">Excel は、セルデータの範囲を2次元配列として渡します。</span><span class="sxs-lookup"><span data-stu-id="7072f-125">Excel will pass a range of cell data as a two-dimensional array.</span></span>
+<span data-ttu-id="2dad1-123">カスタム関数は、入力パラメーターとして範囲のセルデータを受け入れることができます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-123">Your custom function may accept a range of cell data as an input parameter.</span></span> <span data-ttu-id="2dad1-124">関数は、データの範囲を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-124">A function can also return a range of data.</span></span> <span data-ttu-id="2dad1-125">Excel は、セルデータの範囲を2次元配列として渡します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-125">Excel will pass a range of cell data as a two-dimensional array.</span></span>
 
-<span data-ttu-id="7072f-126">例えば、関数が Excel に保存されている数値の範囲から 2 番目に大きい値を返すとします。</span><span class="sxs-lookup"><span data-stu-id="7072f-126">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="7072f-127">次の関数は、`Excel.CustomFunctionDimensionality.matrix` 型の `values` パラメーターを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="7072f-127">The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`.</span></span> <span data-ttu-id="7072f-128">この関数の JSON メタデータでは、パラメーターの`type`プロパティがに`matrix`設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7072f-128">Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.</span></span>
+<span data-ttu-id="2dad1-126">例えば、関数が Excel に保存されている数値の範囲から 2 番目に大きい値を返すとします。</span><span class="sxs-lookup"><span data-stu-id="2dad1-126">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="2dad1-127">次の関数は、`Excel.CustomFunctionDimensionality.matrix` 型の `values` パラメーターを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-127">The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`.</span></span> <span data-ttu-id="2dad1-128">この関数の JSON メタデータでは、パラメーターの`type`プロパティがに`matrix`設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="2dad1-128">Note that in the JSON metadata for this function, the parameter's `type` property is set to `matrix`.</span></span>
 
 ```js
 /**
@@ -144,11 +144,11 @@ function secondHighest(values) {
 }
 ```
 
-## <a name="repeating-parameters"></a><span data-ttu-id="7072f-129">繰り返しパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-129">Repeating parameters</span></span>
+## <a name="repeating-parameters"></a><span data-ttu-id="2dad1-129">繰り返しパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-129">Repeating parameters</span></span>
 
-<span data-ttu-id="7072f-130">繰り返しパラメーターを使用すると、ユーザーは関数に一連のオプションの引数を入力できます。</span><span class="sxs-lookup"><span data-stu-id="7072f-130">A repeating parameter allows a user to enter a series of optional of arguments to a function.</span></span> <span data-ttu-id="7072f-131">関数が呼び出されると、パラメーターの配列に値が提供されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-131">When the function is called, the values are provided in an array for the parameter.</span></span> <span data-ttu-id="7072f-132">パラメーター名が数値で終わる場合、各引数は、などの数値をインクリメントし`ADD(number1, [number2], [number3],…)`ます。</span><span class="sxs-lookup"><span data-stu-id="7072f-132">If the parameter name ends with a number, each argument will increment the number, such as `ADD(number1, [number2], [number3],…)`.</span></span> <span data-ttu-id="7072f-133">これは、Excel の組み込み関数で使用される規則に一致します。</span><span class="sxs-lookup"><span data-stu-id="7072f-133">This matches the convention used for built-in Excel functions.</span></span>
+<span data-ttu-id="2dad1-130">繰り返しパラメーターを使用すると、ユーザーは関数に一連のオプションの引数を入力できます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-130">A repeating parameter allows a user to enter a series of optional of arguments to a function.</span></span> <span data-ttu-id="2dad1-131">関数が呼び出されると、パラメーターの配列に値が提供されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-131">When the function is called, the values are provided in an array for the parameter.</span></span> <span data-ttu-id="2dad1-132">パラメーター名が数値で終わる場合、各引数は、などの数値をインクリメントし`ADD(number1, [number2], [number3],…)`ます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-132">If the parameter name ends with a number, each argument will increment the number, such as `ADD(number1, [number2], [number3],…)`.</span></span> <span data-ttu-id="2dad1-133">これは、Excel の組み込み関数で使用される規則に一致します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-133">This matches the convention used for built-in Excel functions.</span></span>
 
-<span data-ttu-id="7072f-134">次の関数は、合計数、セルの住所、および範囲 (入力した場合) を合計します。</span><span class="sxs-lookup"><span data-stu-id="7072f-134">The following function sums the total of numbers, cell addresses, as well as ranges, if entered.</span></span>
+<span data-ttu-id="2dad1-134">次の関数は、合計数、セルの住所、および範囲 (入力した場合) を合計します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-134">The following function sums the total of numbers, cell addresses, as well as ranges, if entered.</span></span>
 
 ```TS
 /**
@@ -172,13 +172,13 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-<span data-ttu-id="7072f-135">この関数は`=CONTOSO.ADD([operands], [operands]...)` 、Excel ブックに表示されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-135">This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.</span></span>
+<span data-ttu-id="2dad1-135">この関数は`=CONTOSO.ADD([operands], [operands]...)` 、Excel ブックに表示されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-135">This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.</span></span>
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
-### <a name="repeating-single-value-parameter"></a><span data-ttu-id="7072f-136">繰り返し単一値パラメータ</span><span class="sxs-lookup"><span data-stu-id="7072f-136">Repeating single value parameter</span></span>
+### <a name="repeating-single-value-parameter"></a><span data-ttu-id="2dad1-136">繰り返し単一値パラメータ</span><span class="sxs-lookup"><span data-stu-id="2dad1-136">Repeating single value parameter</span></span>
 
-<span data-ttu-id="7072f-137">繰り返し単一の値のパラメーターを使用すると、複数の単一の値を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="7072f-137">A repeating single value parameter allows multiple single values to be passed.</span></span> <span data-ttu-id="7072f-138">たとえば、ユーザーは、「ADD (1, B2, 3)」と入力することができます。</span><span class="sxs-lookup"><span data-stu-id="7072f-138">For example, the user could enter ADD(1,B2,3).</span></span> <span data-ttu-id="7072f-139">次の例は、単一の値のパラメーターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7072f-139">The following sample shows how to declare a single value parameter.</span></span>
+<span data-ttu-id="2dad1-137">繰り返し単一の値のパラメーターを使用すると、複数の単一の値を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-137">A repeating single value parameter allows multiple single values to be passed.</span></span> <span data-ttu-id="2dad1-138">たとえば、ユーザーは、「ADD (1, B2, 3)」と入力することができます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-138">For example, the user could enter ADD(1,B2,3).</span></span> <span data-ttu-id="2dad1-139">次の例は、単一の値のパラメーターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2dad1-139">The following sample shows how to declare a single value parameter.</span></span>
 
 ```JS
 /**
@@ -195,9 +195,9 @@ function addSingleValue(singleValue) {
 }
 ```
 
-### <a name="single-range-parameter"></a><span data-ttu-id="7072f-140">単一範囲のパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-140">Single range parameter</span></span>
+### <a name="single-range-parameter"></a><span data-ttu-id="2dad1-140">単一範囲のパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-140">Single range parameter</span></span>
 
-<span data-ttu-id="7072f-141">単精度浮動小数点型 (single) のパラメーターは、技術的には繰り返しパラメーターではありませんが、宣言は繰り返しパラメーターによく似ているので、ここに記載されています。</span><span class="sxs-lookup"><span data-stu-id="7072f-141">A single range parameter is not technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters.</span></span> <span data-ttu-id="7072f-142">ユーザーには、Excel から1つの範囲が渡される追加 (A2: B3) として表示されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-142">It would appear to the user as ADD(A2:B3) where a single range is passed from Excel.</span></span> <span data-ttu-id="7072f-143">次の例は、1つの range パラメーターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7072f-143">The following sample shows how to declare a single range parameter.</span></span>
+<span data-ttu-id="2dad1-141">単精度浮動小数点型 (single) のパラメーターは、技術的には繰り返しパラメーターではありませんが、宣言は繰り返しパラメーターによく似ているので、ここに記載されています。</span><span class="sxs-lookup"><span data-stu-id="2dad1-141">A single range parameter is not technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters.</span></span> <span data-ttu-id="2dad1-142">ユーザーには、Excel から1つの範囲が渡される追加 (A2: B3) として表示されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-142">It would appear to the user as ADD(A2:B3) where a single range is passed from Excel.</span></span> <span data-ttu-id="2dad1-143">次の例は、1つの range パラメーターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2dad1-143">The following sample shows how to declare a single range parameter.</span></span>
 
 ```JS
 /**
@@ -215,26 +215,26 @@ function addSingleRange(singleRange) {
 }
 ```
 
-### <a name="repeating-range-parameter"></a><span data-ttu-id="7072f-144">繰り返し範囲のパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-144">Repeating range parameter</span></span>
+### <a name="repeating-range-parameter"></a><span data-ttu-id="2dad1-144">繰り返し範囲のパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-144">Repeating range parameter</span></span>
 
-<span data-ttu-id="7072f-145">繰り返し範囲パラメーターを使用すると、複数の範囲または数値を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="7072f-145">A repeating range parameter allows multiple ranges or numbers to be passed.</span></span> <span data-ttu-id="7072f-146">たとえば、ユーザーは ADD (5、B2、C3、8、E5: E8) を入力することができます。</span><span class="sxs-lookup"><span data-stu-id="7072f-146">For example, the user could enter ADD(5,B2,C3,8,E5:E8).</span></span> <span data-ttu-id="7072f-147">通常、繰り返し範囲は3次元の`number[][][]`行列として型で指定されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-147">Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices.</span></span> <span data-ttu-id="7072f-148">サンプルについては、繰り返しパラメーター (#repeating パラメーター) の主なサンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="7072f-148">For a sample, see the main sample listed for repeating parameters(#repeating-parameters).</span></span>
+<span data-ttu-id="2dad1-145">繰り返し範囲パラメーターを使用すると、複数の範囲または数値を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-145">A repeating range parameter allows multiple ranges or numbers to be passed.</span></span> <span data-ttu-id="2dad1-146">たとえば、ユーザーは ADD (5、B2、C3、8、E5: E8) を入力することができます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-146">For example, the user could enter ADD(5,B2,C3,8,E5:E8).</span></span> <span data-ttu-id="2dad1-147">通常、繰り返し範囲は3次元の`number[][][]`行列として型で指定されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-147">Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices.</span></span> <span data-ttu-id="2dad1-148">サンプルについては、繰り返しパラメーター (#repeating パラメーター) の主なサンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="2dad1-148">For a sample, see the main sample listed for repeating parameters(#repeating-parameters).</span></span>
 
 
-### <a name="declaring-repeating-parameters"></a><span data-ttu-id="7072f-149">繰り返しパラメーターの宣言</span><span class="sxs-lookup"><span data-stu-id="7072f-149">Declaring repeating parameters</span></span>
-<span data-ttu-id="7072f-150">Typescript で、パラメーターが多次元であることを示します。</span><span class="sxs-lookup"><span data-stu-id="7072f-150">In Typescript, indicate that the parameter is multi-dimensional.</span></span> <span data-ttu-id="7072f-151">たとえば、 `ADD(values: number[])`は1次元配列`ADD(values:number[][])`を示し、2次元配列というように指定します。</span><span class="sxs-lookup"><span data-stu-id="7072f-151">For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.</span></span>
+### <a name="declaring-repeating-parameters"></a><span data-ttu-id="2dad1-149">繰り返しパラメーターの宣言</span><span class="sxs-lookup"><span data-stu-id="2dad1-149">Declaring repeating parameters</span></span>
+<span data-ttu-id="2dad1-150">Typescript で、パラメーターが多次元であることを示します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-150">In Typescript, indicate that the parameter is multi-dimensional.</span></span> <span data-ttu-id="2dad1-151">たとえば、 `ADD(values: number[])`は1次元配列`ADD(values:number[][])`を示し、2次元配列というように指定します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-151">For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.</span></span>
 
-<span data-ttu-id="7072f-152">JavaScript では、 `@param values {number[]}` 1 次元`@param <name> {number[][]}`配列、2次元配列、およびその他の次元で使用します。</span><span class="sxs-lookup"><span data-stu-id="7072f-152">In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.</span></span>
+<span data-ttu-id="2dad1-152">JavaScript では、 `@param values {number[]}` 1 次元`@param <name> {number[][]}`配列、2次元配列、およびその他の次元で使用します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-152">In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.</span></span>
 
-<span data-ttu-id="7072f-153">手動で作成した JSON では、パラメーターが JSON `"repeating": true`ファイルで指定されていること、およびパラメーターがにマークさ`"dimensionality": matrix`れていることを確認することを確認してください。</span><span class="sxs-lookup"><span data-stu-id="7072f-153">For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.</span></span>
+<span data-ttu-id="2dad1-153">手動で作成した JSON では、パラメーターが JSON `"repeating": true`ファイルで指定されていること、およびパラメーターがにマークさ`"dimensionality": matrix`れていることを確認することを確認してください。</span><span class="sxs-lookup"><span data-stu-id="2dad1-153">For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="7072f-154">繰り返しパラメーターを含む関数には、最後のパラメーターとして、呼び出しパラメーターが自動的に含まれています。</span><span class="sxs-lookup"><span data-stu-id="7072f-154">Functions containing repeating parameters automatically contain an invocation parameter as the last parameter.</span></span> <span data-ttu-id="7072f-155">呼び出しパラメーターの詳細については、以下のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="7072f-155">For more information on invocation parameters, see the following section.</span></span>
+><span data-ttu-id="2dad1-154">繰り返しパラメーターを含む関数には、最後のパラメーターとして、呼び出しパラメーターが自動的に含まれています。</span><span class="sxs-lookup"><span data-stu-id="2dad1-154">Functions containing repeating parameters automatically contain an invocation parameter as the last parameter.</span></span> <span data-ttu-id="2dad1-155">呼び出しパラメーターの詳細については、以下のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="2dad1-155">For more information on invocation parameters, see the following section.</span></span>
 
-## <a name="invocation-parameter"></a><span data-ttu-id="7072f-156">呼び出しパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-156">Invocation parameter</span></span>
+## <a name="invocation-parameter"></a><span data-ttu-id="2dad1-156">呼び出しパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-156">Invocation parameter</span></span>
 
-<span data-ttu-id="7072f-157">すべてのカスタム関数には、 `invocation`最後の引数として引数が自動的に渡されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-157">Every custom function is automatically passed an `invocation` argument as the last argument.</span></span> <span data-ttu-id="7072f-158">この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="7072f-158">This argument can be used to retrieve additional context, such as the address of the calling cell.</span></span> <span data-ttu-id="7072f-159">また、関数[をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="7072f-159">Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function).</span></span> <span data-ttu-id="7072f-160">パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="7072f-160">Even if you declare no parameters, your custom function has this parameter.</span></span> <span data-ttu-id="7072f-161">この引数は、Excel のユーザーには表示されません。</span><span class="sxs-lookup"><span data-stu-id="7072f-161">This argument doesn't appear for a user in Excel.</span></span> <span data-ttu-id="7072f-162">カスタム関数でを使用`invocation`する場合は、最後のパラメーターとして宣言します。</span><span class="sxs-lookup"><span data-stu-id="7072f-162">If you want to use `invocation` in your custom function, declare it as the last parameter.</span></span>
+<span data-ttu-id="2dad1-157">すべてのカスタム関数には、 `invocation`最後の引数として引数が自動的に渡されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-157">Every custom function is automatically passed an `invocation` argument as the last argument.</span></span> <span data-ttu-id="2dad1-158">この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-158">This argument can be used to retrieve additional context, such as the address of the calling cell.</span></span> <span data-ttu-id="2dad1-159">また、関数[をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-159">Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function).</span></span> <span data-ttu-id="2dad1-160">パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="2dad1-160">Even if you declare no parameters, your custom function has this parameter.</span></span> <span data-ttu-id="2dad1-161">この引数は、Excel のユーザーには表示されません。</span><span class="sxs-lookup"><span data-stu-id="2dad1-161">This argument doesn't appear for a user in Excel.</span></span> <span data-ttu-id="2dad1-162">カスタム関数でを使用`invocation`する場合は、最後のパラメーターとして宣言します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-162">If you want to use `invocation` in your custom function, declare it as the last parameter.</span></span>
 
-<span data-ttu-id="7072f-163">次のコードサンプルでは、 `invocation`コンテキストが参照に対して明示的に指定されています。</span><span class="sxs-lookup"><span data-stu-id="7072f-163">In the following code sample, the `invocation` context is explicitly stated for your reference.</span></span>
+<span data-ttu-id="2dad1-163">次のコードサンプルでは、 `invocation`コンテキストが参照に対して明示的に指定されています。</span><span class="sxs-lookup"><span data-stu-id="2dad1-163">In the following code sample, the `invocation` context is explicitly stated for your reference.</span></span>
 
 ```js
 /**
@@ -249,17 +249,17 @@ function add(first, second, invocation) {
 }
 ```
 
-<span data-ttu-id="7072f-164">このパラメーターを使用すると、呼び出し元のセルのコンテキストを取得できます。これは、[カスタム関数を呼び出すセルのアドレスを検索](#addressing-cells-context-parameter)するなどの一部のシナリオで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="7072f-164">The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).</span></span>
+<span data-ttu-id="2dad1-164">このパラメーターを使用すると、呼び出し元のセルのコンテキストを取得できます。これは、[カスタム関数を呼び出すセルのアドレスを検索](#addressing-cells-context-parameter)するなどの一部のシナリオで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-164">The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).</span></span>
 
-### <a name="addressing-cells-context-parameter"></a><span data-ttu-id="7072f-165">アドレス指定セルのコンテキストパラメーター</span><span class="sxs-lookup"><span data-stu-id="7072f-165">Addressing cell's context parameter</span></span>
+### <a name="addressing-cells-context-parameter"></a><span data-ttu-id="2dad1-165">アドレス指定セルのコンテキストパラメーター</span><span class="sxs-lookup"><span data-stu-id="2dad1-165">Addressing cell's context parameter</span></span>
 
-<span data-ttu-id="7072f-166">場合によっては、カスタム関数を呼び出したセルのアドレスを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7072f-166">In some cases you need to get the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="7072f-167">これは、次のシナリオで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="7072f-167">This is useful in the following scenarios:</span></span>
+<span data-ttu-id="2dad1-166">場合によっては、カスタム関数を呼び出したセルのアドレスを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2dad1-166">In some cases you need to get the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="2dad1-167">これは、次のシナリオで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-167">This is useful in the following scenarios:</span></span>
 
-- <span data-ttu-id="7072f-168">範囲の書式設定: セルのアドレスをキーとして使用し、データを保存します[。](../excel/custom-functions-runtime.md#storing-and-accessing-data)</span><span class="sxs-lookup"><span data-stu-id="7072f-168">Formatting ranges: Use the cell's address as the key to store information in [OfficeRuntime.storage](../excel/custom-functions-runtime.md#storing-and-accessing-data).</span></span> <span data-ttu-id="7072f-169">Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`OfficeRuntime.storage` からキーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="7072f-169">Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `OfficeRuntime.storage`.</span></span>
-- <span data-ttu-id="7072f-170">キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `OfficeRuntime.storage` に格納されているキャッシュされた値を表示します。</span><span class="sxs-lookup"><span data-stu-id="7072f-170">Displaying cached values: If your function is used offline, display stored cached values from `OfficeRuntime.storage` using `onCalculated`.</span></span>
-- <span data-ttu-id="7072f-171">調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。</span><span class="sxs-lookup"><span data-stu-id="7072f-171">Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.</span></span>
+- <span data-ttu-id="2dad1-168">範囲の書式設定: セルのアドレスをキーとして使用し、データを保存します[。](../excel/custom-functions-runtime.md#storing-and-accessing-data)</span><span class="sxs-lookup"><span data-stu-id="2dad1-168">Formatting ranges: Use the cell's address as the key to store information in [OfficeRuntime.storage](../excel/custom-functions-runtime.md#storing-and-accessing-data).</span></span> <span data-ttu-id="2dad1-169">Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`OfficeRuntime.storage` からキーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-169">Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `OfficeRuntime.storage`.</span></span>
+- <span data-ttu-id="2dad1-170">キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `OfficeRuntime.storage` に格納されているキャッシュされた値を表示します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-170">Displaying cached values: If your function is used offline, display stored cached values from `OfficeRuntime.storage` using `onCalculated`.</span></span>
+- <span data-ttu-id="2dad1-171">調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-171">Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.</span></span>
 
-<span data-ttu-id="7072f-172">関数内のアドレス指定セルのコンテキストを要求するには、次の例のように、関数を使用してセルのアドレスを検索する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7072f-172">To request an addressing cell's context in a function, you need to use a function to find the cell's address, such as the one in the following example.</span></span> <span data-ttu-id="7072f-173">セルのアドレスに関する情報は、関数のコメント`@requiresAddress`にタグ付けされている場合にのみ公開されます。</span><span class="sxs-lookup"><span data-stu-id="7072f-173">The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.</span></span>
+<span data-ttu-id="2dad1-172">関数内のアドレス指定セルのコンテキストを要求するには、次の例のように、関数を使用してセルのアドレスを検索する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2dad1-172">To request an addressing cell's context in a function, you need to use a function to find the cell's address, such as the one in the following example.</span></span> <span data-ttu-id="2dad1-173">セルのアドレスに関する情報は、関数のコメント`@requiresAddress`にタグ付けされている場合にのみ公開されます。</span><span class="sxs-lookup"><span data-stu-id="2dad1-173">The information about a cell's address is exposed only if `@requiresAddress` is tagged in the function's comments.</span></span>
 
 ```js
 /**
@@ -275,16 +275,16 @@ function getAddress(invocation) {
 }
 ```
 
-<span data-ttu-id="7072f-174">既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。</span><span class="sxs-lookup"><span data-stu-id="7072f-174">By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`.</span></span> <span data-ttu-id="7072f-175">たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。</span><span class="sxs-lookup"><span data-stu-id="7072f-175">For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.</span></span>
+<span data-ttu-id="2dad1-174">既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。</span><span class="sxs-lookup"><span data-stu-id="2dad1-174">By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`.</span></span> <span data-ttu-id="2dad1-175">たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。</span><span class="sxs-lookup"><span data-stu-id="2dad1-175">For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="7072f-176">次の手順</span><span class="sxs-lookup"><span data-stu-id="7072f-176">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="2dad1-176">次の手順</span><span class="sxs-lookup"><span data-stu-id="2dad1-176">Next steps</span></span>
 
-<span data-ttu-id="7072f-177">カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7072f-177">Learn how to [save state in your custom functions](custom-functions-save-state.md) or use [volatile values in your custom functions](custom-functions-volatile.md).</span></span>
+<span data-ttu-id="2dad1-177">カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2dad1-177">Learn how to [save state in your custom functions](custom-functions-save-state.md) or use [volatile values in your custom functions](custom-functions-volatile.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7072f-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="7072f-178">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2dad1-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="2dad1-178">See also</span></span>
 
-* [<span data-ttu-id="7072f-179">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="7072f-179">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
-* [<span data-ttu-id="7072f-180">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="7072f-180">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="7072f-181">カスタム関数用の JSON メタデータの自動生成</span><span class="sxs-lookup"><span data-stu-id="7072f-181">Autogenerate JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
-* [<span data-ttu-id="7072f-182">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="7072f-182">Create custom functions in Excel</span></span>](custom-functions-overview.md)
-* [<span data-ttu-id="7072f-183">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="7072f-183">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="2dad1-179">カスタム関数でデータを受信して​​処理する</span><span class="sxs-lookup"><span data-stu-id="2dad1-179">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
+* [<span data-ttu-id="2dad1-180">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="2dad1-180">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="2dad1-181">カスタム関数用の JSON メタデータの自動生成</span><span class="sxs-lookup"><span data-stu-id="2dad1-181">Autogenerate JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
+* [<span data-ttu-id="2dad1-182">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="2dad1-182">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="2dad1-183">Excel カスタム関数のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="2dad1-183">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)

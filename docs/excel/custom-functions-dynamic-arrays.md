@@ -3,24 +3,24 @@ ms.date: 12/18/2019
 description: Office Excel アドインで、カスタム関数から複数の結果を返します。
 title: カスタム関数から複数の結果を返す
 localization_priority: Normal
-ms.openlocfilehash: dcca2047cab7b47118da6031aafe7cf8c935ed10
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a2632c621071f0cbc55f545847d9e9392d884b90
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324674"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719295"
 ---
-# <a name="return-multiple-results-from-your-custom-function"></a><span data-ttu-id="aa692-103">カスタム関数から複数の結果を返す</span><span class="sxs-lookup"><span data-stu-id="aa692-103">Return multiple results from your custom function</span></span>
+# <a name="return-multiple-results-from-your-custom-function"></a><span data-ttu-id="e09e5-103">カスタム関数から複数の結果を返す</span><span class="sxs-lookup"><span data-stu-id="e09e5-103">Return multiple results from your custom function</span></span>
 
-<span data-ttu-id="aa692-104">隣接するセルに返される、カスタム関数から複数の結果を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="aa692-104">You can return multiple results from your custom function which will be returned to neighboring cells.</span></span> <span data-ttu-id="aa692-105">この動作は spilling と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="aa692-105">This behavior is called spilling.</span></span> <span data-ttu-id="aa692-106">カスタム関数が結果の配列を返す場合は、動的配列数式と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="aa692-106">When your custom function returns an array of results, it is known as a dynamic array formula.</span></span> <span data-ttu-id="aa692-107">Excel の動的配列数式の詳細については、「動的配列」[および「こぼれた配列の動作](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="aa692-107">For more information on dynamic array formulas in Excel, see [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).</span></span>
+<span data-ttu-id="e09e5-104">隣接するセルに返される、カスタム関数から複数の結果を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="e09e5-104">You can return multiple results from your custom function which will be returned to neighboring cells.</span></span> <span data-ttu-id="e09e5-105">この動作は spilling と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="e09e5-105">This behavior is called spilling.</span></span> <span data-ttu-id="e09e5-106">カスタム関数が結果の配列を返す場合は、動的配列数式と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="e09e5-106">When your custom function returns an array of results, it is known as a dynamic array formula.</span></span> <span data-ttu-id="e09e5-107">Excel の動的配列数式の詳細については、「動的配列」[および「こぼれた配列の動作](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e09e5-107">For more information on dynamic array formulas in Excel, see [Dynamic arrays and spilled array behavior](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).</span></span>
 
-<span data-ttu-id="aa692-108">次の図は、関数`SORT`が隣接するセルにどのように分解されるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="aa692-108">The following image shows how the `SORT` function spills down into neighboring cells.</span></span> <span data-ttu-id="aa692-109">カスタム関数は、次のような複数の結果を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="aa692-109">Your custom function can also return multiple results like this.</span></span>
+<span data-ttu-id="e09e5-108">次の図は、関数`SORT`が隣接するセルにどのように分解されるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="e09e5-108">The following image shows how the `SORT` function spills down into neighboring cells.</span></span> <span data-ttu-id="e09e5-109">カスタム関数は、次のような複数の結果を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="e09e5-109">Your custom function can also return multiple results like this.</span></span>
 
 ![複数のセルに複数の結果を表示する ' SORT ' 関数のスクリーンショット。](../images/dynamic-array-spill.png)
 
-<span data-ttu-id="aa692-111">動的配列数式であるカスタム関数を作成するには、値の2次元配列を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa692-111">To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values.</span></span> <span data-ttu-id="aa692-112">結果が、既に値を持つ隣接するセルにスピルされる場合、 `#SPILL!`数式はエラーを表示します。</span><span class="sxs-lookup"><span data-stu-id="aa692-112">If the results spill into neighboring cells that already have values, the formula will display a `#SPILL!` error.</span></span>
+<span data-ttu-id="e09e5-111">動的配列数式であるカスタム関数を作成するには、値の2次元配列を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="e09e5-111">To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values.</span></span> <span data-ttu-id="e09e5-112">結果が、既に値を持つ隣接するセルにスピルされる場合、 `#SPILL!`数式はエラーを表示します。</span><span class="sxs-lookup"><span data-stu-id="e09e5-112">If the results spill into neighboring cells that already have values, the formula will display a `#SPILL!` error.</span></span>
 
-<span data-ttu-id="aa692-113">次の例は、分解した動的配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="aa692-113">The following example shows how to return a dynamic array that spills down.</span></span>
+<span data-ttu-id="e09e5-113">次の例は、分解した動的配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e09e5-113">The following example shows how to return a dynamic array that spills down.</span></span>
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-<span data-ttu-id="aa692-114">次の例は、右に液体をこぼれた動的配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="aa692-114">The following example shows how to return a dynamic array that spills right.</span></span> 
+<span data-ttu-id="e09e5-114">次の例は、右に液体をこぼれた動的配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e09e5-114">The following example shows how to return a dynamic array that spills right.</span></span> 
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-<span data-ttu-id="aa692-115">次の例は、右下の配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="aa692-115">The following example shows how to return a dynamic array that spills both down and right.</span></span>
+<span data-ttu-id="e09e5-115">次の例は、右下の配列を返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e09e5-115">The following example shows how to return a dynamic array that spills both down and right.</span></span>
 
 ```javascript
 /**
@@ -63,7 +63,7 @@ function spillRectangle() {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aa692-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="aa692-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e09e5-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="e09e5-116">See also</span></span>
 
-- [<span data-ttu-id="aa692-117">動的配列とこぼれた配列の動作</span><span class="sxs-lookup"><span data-stu-id="aa692-117">Dynamic arrays and spilled array behavior</span></span>](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
-- [<span data-ttu-id="aa692-118">Excel カスタム関数のオプション</span><span class="sxs-lookup"><span data-stu-id="aa692-118">Options for Excel custom functions</span></span>](custom-functions-parameter-options.md)
+- [<span data-ttu-id="e09e5-117">動的配列とこぼれた配列の動作</span><span class="sxs-lookup"><span data-stu-id="e09e5-117">Dynamic arrays and spilled array behavior</span></span>](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [<span data-ttu-id="e09e5-118">Excel カスタム関数のオプション</span><span class="sxs-lookup"><span data-stu-id="e09e5-118">Options for Excel custom functions</span></span>](custom-functions-parameter-options.md)

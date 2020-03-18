@@ -1,22 +1,22 @@
 ---
 title: マニフェスト ファイルの TargetDialects 要素
-description: ''
+description: TargetDialects 要素は、この辞書でサポートされている地域の言語を定義します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ef418a36fdd2f922e2a9d7b60f0f3b5528e564c
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 77544b8dfe917d3bca8ab8fcc7bd4e055b94fe54
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596866"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720324"
 ---
-# <a name="targetdialects-element"></a><span data-ttu-id="c6114-102">TargetDialects 要素</span><span class="sxs-lookup"><span data-stu-id="c6114-102">TargetDialects element</span></span>
+# <a name="targetdialects-element"></a><span data-ttu-id="e7598-103">TargetDialects 要素</span><span class="sxs-lookup"><span data-stu-id="e7598-103">TargetDialects element</span></span>
 
-<span data-ttu-id="c6114-103">この辞書でサポートされる地域言語を定義します。</span><span class="sxs-lookup"><span data-stu-id="c6114-103">Defines the regional language or languages supported by this dictionary.</span></span>
+<span data-ttu-id="e7598-104">この辞書でサポートされる地域言語を定義します。</span><span class="sxs-lookup"><span data-stu-id="e7598-104">Defines the regional language or languages supported by this dictionary.</span></span>
 
-<span data-ttu-id="c6114-104">**アドインの種類:** 作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="c6114-104">**Add-in type:** Task pane</span></span>
+<span data-ttu-id="e7598-105">**アドインの種類:** 作業ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="e7598-105">**Add-in type:** Task pane</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="c6114-105">構文</span><span class="sxs-lookup"><span data-stu-id="c6114-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="e7598-106">構文</span><span class="sxs-lookup"><span data-stu-id="e7598-106">Syntax</span></span>
 
 ```XML
 <TargetDialects>
@@ -24,10 +24,10 @@ ms.locfileid: "42596866"
 </TargetDialects>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="c6114-106">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="c6114-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="e7598-107">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="e7598-107">Contained in</span></span>
 
-[<span data-ttu-id="c6114-107">Dictionary</span><span class="sxs-lookup"><span data-stu-id="c6114-107">Dictionary</span></span>](dictionary.md)
+[<span data-ttu-id="e7598-108">Dictionary</span><span class="sxs-lookup"><span data-stu-id="e7598-108">Dictionary</span></span>](dictionary.md)
 
-## <a name="see-also"></a><span data-ttu-id="c6114-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="c6114-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7598-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="e7598-109">See also</span></span>
 
-- [<span data-ttu-id="c6114-109">辞書の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="c6114-109">Create a dictionary task pane add-in</span></span>](../../word/dictionary-task-pane-add-ins.md)
+- [<span data-ttu-id="e7598-110">辞書の作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="e7598-110">Create a dictionary task pane add-in</span></span>](../../word/dictionary-task-pane-add-ins.md)
