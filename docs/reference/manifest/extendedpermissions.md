@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの ExtendedPermissions 要素
-description: ''
+description: アドインが関連する Api または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 966378b8bbed66960d7a99c4a82df75ace1c9161
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 86d898052af6ba0e6f6bc8b341fff9f0f8408967
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605815"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718224"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 要素
 

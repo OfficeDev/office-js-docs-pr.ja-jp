@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイルの Event 要素
-description: ''
+description: アドインでイベント ハンドラーを定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450591"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718231"
 ---
 # <a name="event-element"></a>Event 要素
 
@@ -21,8 +21,8 @@ ms.locfileid: "32450591"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [Type](#type-attribute)  |  はい  | 処理するイベントを指定します。 |
-|  [functionexecution](#functionexecution-attribute)  |  はい  | イベント ハンドラーの実行スタイル (非同期または同期) を指定します。現在サポートされているのは同期イベント ハンドラーのみです。 |
+|  [種類](#type-attribute)  |  はい  | 処理するイベントを指定します。 |
+|  [FunctionExecution](#functionexecution-attribute)  |  はい  | イベント ハンドラーの実行スタイル (非同期または同期) を指定します。現在サポートされているのは同期イベント ハンドラーのみです。 |
 |  [FunctionName](#functionname-attribute)  |  はい  | イベント ハンドラーの関数名を指定します。 |
 
 ### <a name="type-attribute"></a>Type 属性
