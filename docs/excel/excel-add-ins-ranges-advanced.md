@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
 ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327755"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688777"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -99,7 +99,7 @@ Excel.run(function (context) {
 対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードについては、以下の点に注意してください。
 
 - `getSpecialCellsOrNullObject` メソッドは常にプロキシ オブジェクトを返します。そのため、通常の JavaScript 使用環境では `null` となることはありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
-- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods)」を参照してください。
+- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)」を参照してください。
 - このコードをテストするには、最初に数式を含まないセルの範囲を選択してからコードを実行します。 次に、少なくとも 1 つのセルが数式を含む範囲を選択してからコードを再実行します。
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` では、ソースからコピー先にコピーされるデータを指定します。
 
-- `Excel.RangeCopyType.formulas` では、ソースのセルの数式が転送され、それらの数式の範囲の相対配置は保持されます。 任意の数式以外のエントリはそのままコピーされます。
+- `Excel.RangeCopyType.formulas`元のセルの数式を移動し、それらの数式の範囲の相対的な位置を保持します。 任意の数式以外のエントリはそのままコピーされます。
 - `Excel.RangeCopyType.values` では、データ値と、数式の場合は数式の結果をコピーします。
 - `Excel.RangeCopyType.formats` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。
-- `Excel.RangeCopyType.all` (既定のオプション) では、データと書式設定の両方がコピーされます。見つかった場合、セルの数式は保持されます。
+- `Excel.RangeCopyType.all`(既定のオプション) を選択すると、データと書式設定の両方がコピーされます。
 
 `skipBlanks` では、空白セルをコピー先にコピーするかどうかを設定します。 true の場合、`copyFrom` ではソースの範囲にある空白セルはスキップされます。
 スキップされたセルでは、コピー先の範囲内の対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
@@ -229,11 +229,11 @@ Excel.run(function (context) {
 
 *前の関数が実行される前。*
 
-![範囲のコピー メソッドが実行される前の Excel のデータ](../images/excel-range-copyfrom-skipblanks-before.png)
+![範囲のコピーメソッドが実行される前の Excel のデータ](../images/excel-range-copyfrom-skipblanks-before.png)
 
 *前の関数が実行された後。*
 
-![範囲のコピー メソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
+![範囲のコピーメソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ### <a name="cut-and-paste-move-cells-online-only"></a>セルの切り取りと貼り付け (移動) ([オンラインのみ](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 

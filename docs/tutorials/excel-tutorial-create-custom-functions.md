@@ -5,11 +5,11 @@ ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950503"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688805"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -61,7 +61,7 @@ ms.locfileid: "41950503"
 
 4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 Windows または Mac の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれたときに Excel が開きます。
 
@@ -69,7 +69,7 @@ Windows または Mac の Excel でアドインをテストするには、次の
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
 ブラウザーの Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 
@@ -145,7 +145,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 4. Excel のアドインを再登録するには、次の手順を完了します (Web、Windows または Mac 上の Excel の場合)。 新しい関数を使用するには、次の手順を完了する必要があります。
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
+### <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
@@ -155,7 +155,7 @@ Web からデータを統合することは、カスタム関数を使用して 
     ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボン](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
 1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel on the web の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 
@@ -213,7 +213,7 @@ function clock(invocation) {
 
 3. Excel のアドインを再登録するには、次の手順を完了します (Web、Windows または Mac 上の Excel の場合)。 新しい関数を使用するには、次の手順を完了する必要があります。 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
     ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボン](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel on the web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
 1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] アイコンが強調表示されている Excel on the web の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
 

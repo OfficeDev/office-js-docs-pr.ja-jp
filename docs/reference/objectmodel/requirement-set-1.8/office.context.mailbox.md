@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/06/2020
 localization_priority: Normal
 ms.openlocfilehash: 579ff10ec46646d2430537f8cb785af3fd9bb669
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562045"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688837"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -29,10 +29,10 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 | プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|---|:---:|
 | [ダン](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#diagnostics) | ReadItem | 作成<br>読み取り | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#ewsurl) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#ewsurl) | ReadItem | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [項目](/javascript/api/outlook/office.item?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories) | ReadWriteMailbox | 作成<br>読み取り | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#resturl) | ReadItem | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#resturl) | ReadItem | 作成<br>読み取り | 文字列 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#userprofile) | ReadItem | 作成<br>読み取り | [プロファイル](/javascript/api/outlook/office.userprofile?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>メソッド

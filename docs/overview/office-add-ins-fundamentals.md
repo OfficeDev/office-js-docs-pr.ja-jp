@@ -4,11 +4,11 @@ description: Office アドイン開発の概要を説明します。
 ms.date: 02/27/2020
 localization_priority: Priority
 ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325313"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42689173"
 ---
 # <a name="building-office-add-ins"></a>Office アドインの構築
 

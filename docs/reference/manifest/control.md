@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/10/2020
 localization_priority: Normal
 ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596474"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688940"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -31,16 +31,16 @@ ms.locfileid: "42596474"
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | 必要 |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
 |  **ToolTip**    |いいえ|ボタンのヒントです。 **Resid**属性は、 **String**要素の**id**属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
-|  [Supertip](supertip.md)  | 必要 |  このボタンのヒントです。    |
-|  [Icon](icon.md)      | 必要 |  ボタンの画像。         |
-|  [Action](action.md)    | 必要 |  実行するアクションを指定します。  |
+|  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
+|  [Icon](icon.md)      | はい |  ボタンの画像。         |
+|  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 |  [Enabled](enabled.md)    | いいえ |  アドインを起動するときにコントロールを有効にするかどうかを指定します。  |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
 
-次の例では、アドインが起動するとボタンが無効になります。 プログラムを使用して有効にすることができます。 詳細については、「[アドインコマンドを有効または無効](../../design/disable-add-in-commands.md)にする」を参照してください。
+次の例では、アドインが起動するとボタンが無効になります。 プログラムを使用して有効にすることができます。 詳細については、「[アドイン コマンドを有効または無効にする](../../design/disable-add-in-commands.md)」を参照してください。
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -149,10 +149,10 @@ ms.locfileid: "42596474"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | 必要 |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。      |
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。      |
 |  **ToolTip**    |いいえ|ボタンのヒントです。 **Resid**属性は、 **String**要素の**id**属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resources.md) 要素の子要素) の子要素です。|        
-|  [Supertip](supertip.md)  | 必要 |  このボタンのヒント。    |
-|  [Icon](icon.md)      | 必要 |  ボタンの画像です。         |
+|  [Supertip](supertip.md)  | はい |  このボタンのヒント。    |
+|  [Icon](icon.md)      | はい |  ボタンの画像です。         |
 |  **Items**     | はい |  メニュー内で表示するボタンのコレクションです。 各サブメニュー項目の **Item** 要素を含みます。 各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
 
 ### <a name="menu-control-examples"></a>メニュー コントロールの例
@@ -248,9 +248,9 @@ ms.locfileid: "42596474"
 ### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | 必要 |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
-|  [Icon](icon.md)      | 必要 |  ボタンの画像。         |
-|  [Action](action.md)    | 必要 |  実行するアクションを指定します。  |
+|  **Label**     | はい |  ボタンのテキストです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。        |
+|  [Icon](icon.md)      | はい |  ボタンの画像。         |
+|  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 
 ### <a name="executefunction-mobile-button-example"></a>ExecuteFunction モバイル ボタンの例
 

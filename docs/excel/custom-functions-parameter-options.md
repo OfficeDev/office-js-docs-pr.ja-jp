@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1b4097e1190c5d9dc284393d1321c8e2d6c1a8a4
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771424"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688813"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -20,7 +20,7 @@ ms.locfileid: "35771424"
 
 通常のパラメーターは必須ですが、省略可能なパラメーターは必須ではありません。 ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 次の例では、add 関数で3番目の番号を追加することもできます。 この関数は Excel `=CONTOSO.ADD(first, second, [third])`のように表示されます。
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -65,7 +65,7 @@ function add(first: number, second: number, third?: number): number {
 
 1つ以上のオプションパラメーターを含む関数を定義するときは、省略可能なパラメーターが null の場合の処理を指定する必要があります。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 `zipCode`パラメーターが null の場合、既定値はに`98052`設定されます。 `dayOfWeek`パラメーターが null の場合は、水曜日に設定します。
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -225,7 +225,7 @@ Typescript で、パラメーターが多次元であることを示します。
 
 JavaScript では、 `@param values {number[]}` 1 次元`@param <name> {number[][]}`配列、2次元配列、およびその他の次元で使用します。
 
-手動で作成した JSON では、パラメーターが JSON `"repeating": true`ファイルで指定されていること、およびパラメーターがにマークさ`"dimensionality”: matrix`れていることを確認することを確認してください。
+手動で作成した JSON では、パラメーターが JSON `"repeating": true`ファイルで指定されていること、およびパラメーターがにマークさ`"dimensionality": matrix`れていることを確認することを確認してください。
 
 >[!NOTE]
 >繰り返しパラメーターを含む関数には、最後のパラメーターとして、呼び出しパラメーターが自動的に含まれています。 呼び出しパラメーターの詳細については、以下のセクションを参照してください。
@@ -255,7 +255,7 @@ function add(first, second, invocation) {
 
 場合によっては、カスタム関数を呼び出したセルのアドレスを取得する必要があります。 これは、次のシナリオで役立ちます。
 
-- 範囲の書式設定: セルのアドレスをキーとして使用し、データを保存します[。](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`OfficeRuntime.storage` からキーを読み込みます。
+- 範囲の書式設定: セルのアドレスをキーとして使用し、データを保存します[。](../excel/custom-functions-runtime.md#storing-and-accessing-data) Excel で [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) を使用して`OfficeRuntime.storage` からキーを読み込みます。
 - キャッシュされた値を表示させる: 関数がオフラインで使用される場合、`onCalculated` を使用して `OfficeRuntime.storage` に格納されているキャッシュされた値を表示します。
 - 調整: セル アドレスを使用して元のセルを検出し、処理が発生している場所での調整を行えます。
 
@@ -277,7 +277,7 @@ function getAddress(invocation) {
 
 既定では、`getAddress` 関数が返す値は次の形式に従います: `SheetName!CellNumber`。 たとえば、ある関数が Expenses という名前のシートのセル B2 から呼び出される場合の戻り値は `Expenses!B2` になります。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 カスタム関数の[状態を保存](custom-functions-save-state.md)する方法、または[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
 
