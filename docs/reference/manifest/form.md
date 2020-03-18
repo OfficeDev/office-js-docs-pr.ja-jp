@@ -1,25 +1,25 @@
 ---
 title: マニフェスト ファイルの Form 要素
-description: ''
+description: メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: d545d471e007f0077a8310b0b847bbbf99a8f7ac
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 9b1696b2fecf6b07ee2a3c0a31611d4f2ad1f291
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120650"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718210"
 ---
-# <a name="form-element"></a><span data-ttu-id="cba68-102">Form 要素</span><span class="sxs-lookup"><span data-stu-id="cba68-102">Form element</span></span>
+# <a name="form-element"></a><span data-ttu-id="0bdc7-103">Form 要素</span><span class="sxs-lookup"><span data-stu-id="0bdc7-103">Form element</span></span>
 
-<span data-ttu-id="cba68-103">メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。</span><span class="sxs-lookup"><span data-stu-id="cba68-103">UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone).</span></span>
+<span data-ttu-id="0bdc7-104">メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。</span><span class="sxs-lookup"><span data-stu-id="0bdc7-104">UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="cba68-104">、、および`PhoneSettings`要素は、従来の web 上の outlook (通常は社内の Exchange server の古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 `DesktopSettings` `TabletSettings`</span><span class="sxs-lookup"><span data-stu-id="cba68-104">The `DesktopSettings`, `TabletSettings`, and `PhoneSettings` elements are available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span>
+> <span data-ttu-id="0bdc7-105">、、および`PhoneSettings`要素は、従来の web 上の outlook (通常は社内の Exchange server の古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 `DesktopSettings` `TabletSettings`</span><span class="sxs-lookup"><span data-stu-id="0bdc7-105">The `DesktopSettings`, `TabletSettings`, and `PhoneSettings` elements are available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span>
 
-<span data-ttu-id="cba68-105">**アドインの種類:** メール</span><span class="sxs-lookup"><span data-stu-id="cba68-105">**Add-in type:** Mail</span></span>
+<span data-ttu-id="0bdc7-106">**アドインの種類:** メール</span><span class="sxs-lookup"><span data-stu-id="0bdc7-106">**Add-in type:** Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="cba68-106">構文</span><span class="sxs-lookup"><span data-stu-id="cba68-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0bdc7-107">構文</span><span class="sxs-lookup"><span data-stu-id="0bdc7-107">Syntax</span></span>
 
 ```XML
 <Form xsi:type="ItemRead">
@@ -40,15 +40,15 @@ ms.locfileid: "41120650"
 </Form>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="cba68-107">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="cba68-107">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="0bdc7-108">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="0bdc7-108">Contained in</span></span>
 
-[<span data-ttu-id="cba68-108">FormSettings</span><span class="sxs-lookup"><span data-stu-id="cba68-108">FormSettings</span></span>](formsettings.md)
+[<span data-ttu-id="0bdc7-109">FormSettings</span><span class="sxs-lookup"><span data-stu-id="0bdc7-109">FormSettings</span></span>](formsettings.md)
 
 
-## <a name="can-contain"></a><span data-ttu-id="cba68-109">含めることができるもの</span><span class="sxs-lookup"><span data-stu-id="cba68-109">Can contain</span></span>
+## <a name="can-contain"></a><span data-ttu-id="0bdc7-110">含めることができるもの</span><span class="sxs-lookup"><span data-stu-id="0bdc7-110">Can contain</span></span>
 
-|<span data-ttu-id="cba68-110">**Element**</span><span class="sxs-lookup"><span data-stu-id="cba68-110">**Element**</span></span>|
+|<span data-ttu-id="0bdc7-111">**Element**</span><span class="sxs-lookup"><span data-stu-id="0bdc7-111">**Element**</span></span>|
 |:-----|
-|[<span data-ttu-id="cba68-111">DesktopSettings</span><span class="sxs-lookup"><span data-stu-id="cba68-111">DesktopSettings</span></span>](desktopsettings.md)|
-|[<span data-ttu-id="cba68-112">TabletSettings</span><span class="sxs-lookup"><span data-stu-id="cba68-112">TabletSettings</span></span>](tabletsettings.md)|
-|[<span data-ttu-id="cba68-113">PhoneSettings</span><span class="sxs-lookup"><span data-stu-id="cba68-113">PhoneSettings</span></span>](phonesettings.md)|
+|[<span data-ttu-id="0bdc7-112">DesktopSettings</span><span class="sxs-lookup"><span data-stu-id="0bdc7-112">DesktopSettings</span></span>](desktopsettings.md)|
+|[<span data-ttu-id="0bdc7-113">TabletSettings</span><span class="sxs-lookup"><span data-stu-id="0bdc7-113">TabletSettings</span></span>](tabletsettings.md)|
+|[<span data-ttu-id="0bdc7-114">PhoneSettings</span><span class="sxs-lookup"><span data-stu-id="0bdc7-114">PhoneSettings</span></span>](phonesettings.md)|
