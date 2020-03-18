@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して図形を操作する
-description: ''
+description: Excel の描画レイヤー上にある任意のオブジェクトとして、Excel によって図形が定義される方法について説明します。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7522bf440389e983efc3ec696375694e5539c442
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217231"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717118"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して図形を操作する
 
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-の`addTextBox` `ShapeCollection`メソッドは、白`GeometricShape`の背景`Rectangle`と黒のテキストを使用して、型を作成します。 これは、[挿入] タブの [Excel の**テキストボックス**によって**** 作成され`addTextBox`たものと同じです。文字列型 (string `TextRange`) の引数を指定して、のテキストを設定します。
+の`addTextBox` `ShapeCollection`メソッドは、白`GeometricShape`の背景`Rectangle`と黒のテキストを使用して、型を作成します。 これは、[挿入] タブの [Excel の**テキストボックス**によって**Insert**作成され`addTextBox`たものと同じです。文字列型 (string `TextRange`) の引数を指定して、のテキストを設定します。
 
 次のコードサンプルは、"Hello!" というテキストを含むテキストボックスを作成する方法を示しています。
 

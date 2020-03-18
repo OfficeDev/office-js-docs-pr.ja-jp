@@ -1,18 +1,18 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
-description: ''
+description: Excel JavaScript API を使用して、テーブルに関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 4bc1b86f84b2002ad199174ffb37c3c080d51add
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596579"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717139"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、テーブルに関する一般的なタスクを実行する方法を示すコードサンプルを提供します。およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Table オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.table) 」および「 [tablecollection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。 `TableCollection` `Table`
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Table オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.table) 」および「 [tablecollection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。 `TableCollection` `Table`
 
 ## <a name="create-a-table"></a>表を作成する
 
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 > [!NOTE]
-> TableRow `index`オブジェクトのプロパティ[TableRow](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。オブジェクト`TableRow`には、行を`id`識別するための一意のキーとして使用できるプロパティが含まれていません。
+> TableRow `index`オブジェクトのプロパティ[TableRow](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト`TableRow`には、行を`id`識別するための一意のキーとして使用できるプロパティが含まれていません。
 
 ```js
 Excel.run(function (context) {
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
-次のコードサンプルでは、指定されたテーブル内に現在表示されているセルに対してのみデータを含む範囲を取得し、その範囲の値をコンソールに書き込みます。次に示す`getVisibleView()`メソッドを使用すると、列フィルターが適用されている場合にテーブルの表示可能な内容を取得できます。
+次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示す`getVisibleView()`メソッドを使用すると、列フィルターが適用されている場合にテーブルの表示可能な内容を取得できます。
 
 ```js
 Excel.run(function (context) {

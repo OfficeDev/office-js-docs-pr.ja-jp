@@ -1,14 +1,14 @@
 ---
 title: Excel の範囲にデータの入力規則を追加する
-description: ''
+description: Excel JavaScript Api を使用して、ブック内のテーブル、列、行、およびその他の範囲に自動的なデータの入力規則を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e21c22468bab6df438f641e13ae95034a4b82c36
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 39962c5e6f13d4ef9a2f3458686e5e24b5a4ae45
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950853"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717181"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 

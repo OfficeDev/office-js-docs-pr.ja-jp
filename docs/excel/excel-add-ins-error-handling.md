@@ -1,14 +1,14 @@
 ---
 title: エラー処理
-description: ''
+description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e3732af26aeaa6129a4b98d6cbb8e3caf501141f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bee5824d8854a55d5ac4041be1335ce239b31a9e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325109"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717167"
 ---
 # <a name="error-handling"></a>エラー処理
 

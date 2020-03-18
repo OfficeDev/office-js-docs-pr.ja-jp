@@ -3,12 +3,12 @@ title: XLL ユーザー定義関数を使用してカスタム関数を拡張す
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 8c83ea8a5b97cd4f23a9e25fddabe3d178b1e482
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217219"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717041"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
@@ -60,11 +60,11 @@ ms.locfileid: "41217219"
 |---------|---------|---------|---------|
 | サポートされるプラットフォーム | Windows | Windows、macOS、web ブラウザー | Windows、macOS、web ブラウザー |
 | サポートされるファイル形式 | .XLSX、.XLSB、.XLSM、XLS | .XLSX、.XLSB、.XLSM | .XLSX、.XLSB、.XLSM |
-| 数式オートコンプリート | いいえ | あり | はい |
-| ストリーミング | XlfRTD および XLL コールバックを使用して可能。 | いいえ | あり |
-| 関数のローカライズ | いいえ | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | あり |
-| 揮発性関数 | あり | はい | はい |
-| マルチスレッドの再計算のサポート | あり | はい | はい |
+| 数式オートコンプリート | いいえ | はい | はい |
+| ストリーミング | XlfRTD および XLL コールバックを使用して可能。 | いいえ | はい |
+| 関数のローカライズ | いいえ | いいえ。 名前と ID は、既存の XLL 関数と一致している必要があります。 | はい |
+| 揮発性関数 | はい | はい | はい |
+| マルチスレッドの再計算のサポート | はい | はい | はい |
 | 計算動作 | UI がありません。 計算中に Excel が応答しなくなることがあります。 | ユーザーには #BUSY が表示されます。 を返します。 | ユーザーには #BUSY が表示されます。 を返します。 |
 | 要件セット | 該当なし | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
 

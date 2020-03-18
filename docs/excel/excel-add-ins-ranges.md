@@ -1,18 +1,18 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (基本)
-description: ''
+description: Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688764"
+ms.locfileid: "42717146"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
-この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すコードサンプルを提供します。オブジェクトが`Range`サポートするプロパティとメソッドの完全な一覧については、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
+この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 オブジェクトが`Range`サポートするプロパティとメソッドの完全な一覧については、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
 
 > [!NOTE]
 > 範囲を指定してより詳細なタスクを実行する方法のサンプル コードについては、「[Excel JavaScript API を使用して範囲を操作する (詳細)](excel-add-ins-ranges-advanced.md)」を参照してください。
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>使用範囲を取得する
 
-次のコードサンプルでは、 **sample**という名前のワークシートから使用`address`された範囲を取得し、そのプロパティを読み込み、コンソールにメッセージを書き込みます。使用されている範囲は、値または書式が割り当てられているワークシートのすべてのセルを含む最小の範囲です。ワークシート全体が空白の場合、 `getUsedRange()`このメソッドは、ワークシートの左上のセルのみで構成される範囲を返します。
+次のコードサンプルでは、 **sample**という名前のワークシートから使用`address`された範囲を取得し、そのプロパティを読み込み、コンソールにメッセージを書き込みます。 使用範囲とは、値または書式設定が割り当てられているワークシート内のセルを含む、最小の範囲です。 ワークシート全体が空白の場合、 `getUsedRange()`このメソッドは、ワークシートの左上のセルのみで構成される範囲を返します。
 
 ```js
 Excel.run(function (context) {
@@ -310,7 +310,7 @@ Excel.run(function (context) {
 
 ### <a name="get-values-from-a-range-of-cells"></a>セルの範囲から値を取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得`values`し、そのプロパティを読み込んで、その値をコンソールに書き込みます。範囲`values`のプロパティは、セルに含まれる生の値を指定します。範囲内の一部のセルに数式が含まれ`values`ている場合でも、範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。
+次のコードサンプルでは、範囲**B2: E6**を取得`values`し、そのプロパティを読み込んで、その値をコンソールに書き込みます。 範囲`values`のプロパティは、セルに含まれる生の値を指定します。 範囲内の一部のセルに数式が含まれ`values`ている場合でも、範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>セルの範囲からテキストを取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得`text`し、そのプロパティを読み込んでコンソールに書き込みます。範囲`text`のプロパティは、範囲内のセルの表示値を指定します。範囲内の一部のセルに数式が含まれ`text`ている場合でも、範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。
+次のコードサンプルでは、範囲**B2: E6**を取得`text`し、そのプロパティを読み込んでコンソールに書き込みます。 範囲`text`のプロパティは、範囲内のセルの表示値を指定します。 範囲内の一部のセルに数式が含まれ`text`ている場合でも、範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。
 
 ```js
 Excel.run(function (context) {
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>セルの範囲から数式を取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得`formulas`し、そのプロパティを読み込んでコンソールに書き込みます。範囲`formulas`のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。
+次のコードサンプルでは、範囲**B2: E6**を取得`formulas`し、そのプロパティを読み込んでコンソールに書き込みます。 範囲`formulas`のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。
 
 ```js
 Excel.run(function (context) {

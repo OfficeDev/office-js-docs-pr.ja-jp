@@ -1,25 +1,25 @@
 ---
-ms.date: 11/04/2019
+ms.date: 03/11/2020
 description: '#NULL! のようなエラーを処理して返す カスタム関数で'
 title: カスタム関数でエラーを処理して返す (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 19199a56d6699afd013c98c7b117b93528deb304
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 10bb7ca6ff612ef38b26b88fed5ce9ce81ed7edb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950825"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717048"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>カスタム関数でエラーを処理して返す (プレビュー)
 
 > [!NOTE]
-> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 プレビュー機能を試すには、[Office Insider](https://insider.office.com/join) である必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。
+> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 プレビュー機能を試すには、 [Office Insider](https://insider.office.com/join)プログラムに参加する必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。
 
 カスタム関数の実行中に問題が発生した場合、エラーを返してユーザーに通知する必要があります。 正数のみなど、特定のパラメーター要件がある場合は、パラメーターをテストし、正しくない場合はエラーをスローする必要があります。 `try` - `catch` ブロックを使用して、カスタム関数の実行中に発生したエラーを検出することもできます。
 
 ## <a name="detect-and-throw-an-error"></a>エラーを検出してスローする
 
-カスタム関数を動作させるために、郵便番号パラメーターが正しい形式であることを確認したい場合について説明します。 次のカスタム関数は、正規表現を使用して郵便番号を確認します。 正しい場合は、(別の関数で) 都市を検索し、その値を返します。 正しくない場合は、セルに `#VALUE!` エラーを返します。
+カスタム関数が動作するために zip コードパラメーターが正しい形式であることを確認する必要があるケースを見てみましょう。 次のカスタム関数は、正規表現を使用して郵便番号を確認します。 正しい場合は、(別の関数で) 都市を検索し、その値を返します。 正しくない場合は、セルに `#VALUE!` エラーを返します。
 
 ```typescript
 /**
@@ -60,7 +60,7 @@ throw error;
 
 ```typescript
 // You can only return a custom error message with the #VALUE! error
-let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 

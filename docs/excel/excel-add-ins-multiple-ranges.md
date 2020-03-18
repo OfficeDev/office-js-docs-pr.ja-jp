@@ -1,14 +1,14 @@
 ---
 title: Excel アドインで複数の範囲を同時に操作する
-description: ''
+description: Excel JavaScript ライブラリを使用して、複数の範囲に対して操作を実行したり、プロパティを設定したりする方法について説明します。
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: a327b6c379884107f5e00c0663ecfa6c71b8097f
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 97481b4b8ab76f7bbc5bd10378d4cc6512bc7b6a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33620046"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717069"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 

@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 揮発性およびオフラインのストリーミングカスタム関数を実装する方法について説明します。
 title: 関数の揮発性の値
 localization_priority: Normal
-ms.openlocfilehash: 57a41578f400b10806fc169fed09db7d7a66ce84
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 617599a2687696a96240c4f162f9b02788a215f4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217044"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717209"
 ---
 # <a name="volatile-values-in-functions"></a>関数の揮発性の値
 
@@ -16,7 +16,7 @@ Volatile 関数は、セルが計算されるたびに値が変更される関�
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel のすべての揮発性関数の一覧は、「[揮発性および非揮発性関数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」をご覧ください。
+Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいくつか含まれています。 Excel の揮発性関数の完全なリストは、「[揮発性および非揮発性関数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)」を参照してください。
 
 カスタム関数を使用すると、独自の揮発性関数を作成することができます。これは、日付、時刻、乱数、およびモデリングを処理するときに便利です。 たとえば、[モンテカルロモンテカルロシミュレーション](https://en.wikipedia.org/wiki/Monte_Carlo_method)では、最適なソリューションを決定するためにランダムな入力を生成する必要があります。
 
@@ -37,7 +37,7 @@ function roll6sided() {
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [カスタム関数に状態を保存](custom-functions-save-state.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
