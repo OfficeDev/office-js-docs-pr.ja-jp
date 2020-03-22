@@ -1,16 +1,16 @@
 ---
 title: Office. メールボックス-要件セット1.8
-description: Office のオブジェクトモデルです。アイテム (要件セット 1.8)
-ms.date: 03/06/2020
+description: Outlook メールボックス API 要件セット1.8 バージョンのアイテムオブジェクトモデル。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e6c47db0854fd76a69bb7d4e5387ec634662676
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: fd58a99e550ed595a722b85ebb73d47c69963867
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720030"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891258"
 ---
-# <a name="item"></a>item
+# <a name="item-mailbox-requirement-set-18"></a>アイテム (メールボックス要件セット 1.8)
 
 ### <a name="officecontextmailboxitem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
@@ -41,8 +41,8 @@ ms.locfileid: "42720030"
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | Cc | ReadItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#cc) | [受信者](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#cc) | <[Emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| conversationId | ReadItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#conversationid) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#conversationid) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| conversationId | ReadItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#conversationid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#conversationid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | dateTimeCreated | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#datetimecreated) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#datetimecreated) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | dateTimeModified | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#datetimemodified) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -55,20 +55,20 @@ ms.locfileid: "42720030"
 | from | ReadWriteItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#from) | [From](/javascript/api/outlook/office.from) | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#from) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | internetHeaders | ReadItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| internetMessageId | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#internetmessageid) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemClass | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#itemclass) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#itemclass) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemId | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#itemid) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#itemid) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| internetMessageId | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#internetmessageid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemClass | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemId | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemType | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#itemtype) | [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#itemtype) | [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#itemtype) | [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#itemtype) | [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | location | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#location) | [Location](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#location) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#location)<br>(会議出席依頼) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| normalizedSubject | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#normalizedsubject) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#normalizedsubject) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#location) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#location)<br>(会議出席依頼) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| normalizedSubject | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#normalizedsubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#normalizedsubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | notificationMessages | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#notificationmessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
@@ -83,17 +83,17 @@ ms.locfileid: "42720030"
 | requiredAttendees | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#requiredattendees) | [受信者](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#requiredattendees) | <[Emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | sender | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| 系列 Id | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#seriesid) | 文字列 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#seriesid) | 文字列 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#seriesid) | 文字列 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#seriesid) | 文字列 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| 系列 Id | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | 開始 | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#start) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#start)<br>(会議出席依頼) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | subject | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#subject) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#subject) | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | 宛先 | ReadItem | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#to) | [受信者](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#to) | <[Emailaddressdetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
@@ -113,10 +113,10 @@ ms.locfileid: "42720030"
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | close() | Restricted | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | | | [メッセージの作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#close--) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| displayReplyAllForm(formData, [callback]) | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#displayreplyallform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| displayReplyForm(formData, [callback]) | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#displayreplyform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#displayreplyform-formdata--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| displayReplyAllForm(formData) | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#displayreplyallform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#displayreplyallform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| displayReplyForm(formData) | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#displayreplyform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#displayreplyform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | getAllInternetHeadersAsync ([オプション], [callback]) | ReadItem | [メッセージの読み取り](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | getAttachmentContentAsync (attachmentId, [options], [callback]) | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8#getattachmentcontentasync-attachmentid--options--callback-) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |

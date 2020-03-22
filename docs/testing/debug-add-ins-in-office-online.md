@@ -3,12 +3,12 @@ title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c840d0a16e2a4cdf0bb9f4b213099cb74c2aa815
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3c69c6a7008e1496fd888357968714d7abbb05d6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719813"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891118"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
@@ -63,7 +63,6 @@ Word on the web を使用してアドインをデバッグするには:
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-- [AppSource の検証ポリシー](/office/dev/store/validation-policies)  
+- [AppSource の検証ポリシー](/legal/marketplace/certification-policies)  
 - [効率的な AppSource アプリおよびアドインを作成する](/office/dev/store/create-effective-office-store-listings)  
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
-    

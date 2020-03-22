@@ -1,16 +1,16 @@
 ---
 title: Office 名前空間-要件セット1.8
-description: Office 名前空間は、Outlook Office アドインの共有インターフェイスを提供します (要件セット 1.8)
-ms.date: 12/16/2019
+description: メールボックス API 要件セット1.8 を使用した Outlook アドインで使用可能な Office 名前空間メンバー。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0bbe212b0b8e5dc1348cb5cdc03509c44a716d1a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 773a12d2f2b6c2d164b94d0b6b6c2dd0def90a41
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717503"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891181"
 ---
-# <a name="office"></a>Office
+# <a name="office-mailbox-requirement-set-18"></a>Office (メールボックス要件セット 1.8)
 
 Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
 
@@ -31,10 +31,10 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 作成<br>読み取り | 文字列 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>名前空間
 
@@ -54,8 +54,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Succeeded`| 文字列|呼び出しが成功しました。|
-|`Failed`| 文字列|呼び出しが失敗しました。|
+|`Succeeded`| String|呼び出しが成功しました。|
+|`Failed`| String|呼び出しが失敗しました。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -81,7 +81,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Html`| 文字列|HTML 形式で返されるデータを要求します。|
+|`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
 ##### <a name="requirements"></a>Requirements
@@ -108,12 +108,12 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| 文字列 | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
-|`AttachmentsChanged`| 文字列 | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
-|`EnhancedLocationsChanged`| 文字列 | 選択した予定の場所が変更されました。 | 1.8 |
-|`ItemChanged`| 文字列 | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`RecipientsChanged`| 文字列 | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
-|`RecurrenceChanged`| 文字列 | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
+|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
+|`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
+|`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
+|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
+|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -139,8 +139,8 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Body`| 文字列|データのソースは、メッセージの本文です。|
-|`Subject`| 文字列|データのソースは、メッセージの件名です。|
+|`Body`| String|データのソースは、メッセージの本文です。|
+|`Subject`| String|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>Requirements
 

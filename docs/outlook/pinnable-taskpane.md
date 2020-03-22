@@ -3,12 +3,12 @@ title: Outlook アドインにピン留め可能な作業ウィンドウを実�
 description: アドイン コマンド用の作業ウィンドウ UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作に対応した UI を提供できようになります。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 09baf7f1faa7611baa85a53a3d5d92fad2d140a1
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413777"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890992"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 
@@ -34,7 +34,7 @@ ms.locfileid: "42413777"
 `SupportsPinning` 要素は、VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 のどちらの場合も [VersionOverrides](../reference/manifest/versionoverrides.md) 要素を含める必要があります。
 
 > [!NOTE]
-> Outlook アドインを [AppSource](https://appsource.microsoft.com) に[発行](../publish/publish.md)する予定であれば、**SupportsPinning** 要素を使う場合、[AppSource 検証](/office/dev/store/validation-policies)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
+> Outlook アドインを [AppSource](https://appsource.microsoft.com) に[発行](../publish/publish.md)する予定であれば、**SupportsPinning** 要素を使う場合、[AppSource 検証](/legal/marketplace/certification-policies)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
 
 ```xml
 <!-- Task pane button -->

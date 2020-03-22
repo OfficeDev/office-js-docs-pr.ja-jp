@@ -1,20 +1,20 @@
 ---
 title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
-ms.date: 02/11/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327783"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890571"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
 この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。 コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)を参照してください。
 
-Excel JavaScript API では、コメントは最初のメモと接続されたスレッドのディスカッションの両方です。 個別のセルに関連付けられています。 十分な権限があるブックを表示するユーザーは、コメントに返信できます。 Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。 コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。
+Excel JavaScript API では、コメントには単一の最初のコメントと接続されたスレッドのディスカッションの両方が含まれます。 個別のセルに関連付けられています。 十分な権限があるブックを表示するユーザーは、コメントに返信できます。 Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。 コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。
 
 ![「Comment」というラベルが付けられた、"comment" というラベルが付いた Excel コメント。「comment [0]」と「Comment [1]」。](../images/excel-comments.png)
 

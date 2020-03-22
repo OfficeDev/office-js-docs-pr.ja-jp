@@ -1,14 +1,14 @@
 ---
 title: iPad 用の Office アドインを開発する
 description: IPad で実行する Office アドインを作成するための概要とベストプラクティスについて説明します。
-ms.date: 06/20/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c71e935e92a4d88077c95b88334225ef08818dac
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca3e7e5521b44e13a26f3d6117128592b88efdc6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719029"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890498"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>iPad 用の Office アドインを開発する
 
@@ -22,8 +22,8 @@ ms.locfileid: "42719029"
 |UI デザインのベスト プラクティスを適用します。|アドイン UI を iOS エクスペリエンスとシームレスに統合します。|[iOS の設計](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |アドイン デザインのベスト プラクティスを適用します。|アドインが明確な価値を提供し、魅力的であり、一貫して機能することを確認します。|[Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)|
 |タッチ用にアドインを最適化します。|マウスとキーボードに加え、タッチ入力に対して、UI が素早く応答するようにします。|[UX 設計原則を適用する](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
-|アドインを無料にします。|iPad 上の Office は、ユーザー数を拡大して、サービスを促進できるチャネルです。これらの新しいユーザーは、お客様になる可能性があります。|[検証ポリシー 10.8](/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
-|アドインを商目的で使用しないようにします。|アドインは、アプリ内購入、試用版の提供、有料版へのアップセルを目的とする UI、またはユーザーが他のコンテンツやアプリやアドインを購入または取得できるすべてのオンライン ストアへのリンクと無縁である必要があります。またプライバシー ポリシーと使用条件のページにも、商用の UI または AppSource へのリンクがないことが必要です。|[検証ポリシー 3.4](/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
+|アドインを無料にします。|iPad 上の Office は、ユーザー数を拡大して、サービスを促進できるチャネルです。これらの新しいユーザーは、お客様になる可能性があります。|[証明ポリシー1120.2](/legal/marketplace/certification-policies#11202-acquisition-pricing-and-terms)|
+|アドインを商目的で使用しないようにします。|アドインは、アプリ内購入、試用版の提供、有料版へのアップセルを目的とする UI、またはユーザーが他のコンテンツやアプリやアドインを購入または取得できるすべてのオンライン ストアへのリンクと無縁である必要があります。またプライバシー ポリシーと使用条件のページにも、商用の UI または AppSource へのリンクがないことが必要です。|[証明ポリシー1100.3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
 |アドインを AppSource に再送信します。|[パートナーセンター] の [**製品のセットアップ**] ページで、[ **iOS および Android で製品を利用できるようにする (該当する場合)** ] チェックボックスをオンにして、[アカウント設定] に APPLE の開発者 ID を入力します。 [アプリケーションプロバイダアグリーメント](https://go.microsoft.com/fwlink/?linkid=715691)を確認して、用語を理解していることを確認してください。|[AppSource と Office 内でソリューションを使用できるようにする](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 他のプラットフォームで実行されている Office アプリケーション用にアドインをそのまま保持することができます。また、アドインが実行されているブラウザーとデバイスに基づく別の UI も提供できます。iPad 上でアドインが実行されているかどうかを検出するためには、次の API を使用できます。

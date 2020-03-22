@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドインおよび Office JavaScript Api で現在プレビューされている機能と Api。
-ms.date: 03/04/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: c87ce8472becc072702f58e7d8c21665904673d2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 437629687972e030a7b34f035db5d2a2f8a5eba1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717811"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890873"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -27,7 +27,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ### <a name="append-on-send"></a>送信時に追加
 
-#### <a name="officebodyappendonsendasync"></a>[Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office.......。](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
 新規作成モードで、アイテム`Body`の本文の最後にデータを追加する新しい関数をオブジェクトに追加しました。
 
@@ -59,6 +59,44 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ---
 
+### <a name="mail-signature"></a>メールの署名
+
+#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[SetSignatureAsync を示しています。](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
+
+新規作成モードで、アイテム`Body`の本文の署名を追加または置換する新しい関数をオブジェクトに追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync を示します。](office.context.mailbox.item.md#methods)
+
+新規作成モードの送信メールボックスのクライアント署名を無効にする新しい関数を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync を示します。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
+
+新規作成モードで、メッセージの作成の種類を取得する新しい関数を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[。アイテム. isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
+
+新規作成モードのアイテムでクライアント署名が有効になっているかどうかを確認する新しい関数を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officemailboxenumscomposetype"></a>[MailboxEnums Setype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
+
+新規作成モードで`ComposeType`使用可能な新しい列挙を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+<br>
+
+---
+
+---
+
 ### <a name="office-theme"></a>Office テーマ
 
 #### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
@@ -74,6 +112,8 @@ Office テーマを取得する機能が追加されました。
 **使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 <br>
+
+---
 
 ---
 

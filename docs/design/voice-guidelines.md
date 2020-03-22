@@ -3,12 +3,12 @@ title: Office アドインの音声ガイドライン
 description: Office アドインのユーザーヘルプやその他の文字列を記述するためのベストプラクティスについて説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6f39c17687b176ca015bfe7d3df0173266a7798c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3621a13a2ec24a9f2f761012f331e245f95df31e
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719225"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890512"
 ---
 # <a name="voice-guidelines"></a>音声のガイドライン
 
@@ -28,4 +28,4 @@ Office アドインを設計する際は、UI のテキストと要素に使用�
 - [すべての機能の文書作成](/style-guide/accessibility/writing-all-abilities)のためのガイドライン
 - [Microsoft のスタイルと音声のためのヒント トップ 10](/style-guide/top-10-tips-style-voice)
 - [言葉の選択](/style-guide/word-choice/)についてのガイドライン
-- Office アドインの[検証ポリシー](/office/dev/store/validation-policies)
+- Office アドインの[検証ポリシー](/legal/marketplace/certification-policies)

@@ -1,16 +1,16 @@
 ---
 title: Office. メールボックス要件セット1.1
-description: Outlook アドイン API の Outlook メールボックスオブジェクトのオブジェクトモデル (Mailbox API 1.1 バージョン)。
-ms.date: 03/06/2020
+description: Outlook Mailbox API 要件セット1.1 バージョンのメールボックスオブジェクトモデル。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: be948e8ff49141d591affd195b0d0fabfab0d7ff
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 776e6c6ffeb79cb8e2db2d2d73f8a844bf6fb825
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720212"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890838"
 ---
-# <a name="mailbox"></a>mailbox
+# <a name="mailbox-requirement-set-11"></a>メールボックス (要件セット 1.1)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -29,7 +29,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 | プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|---|:---:|
 | [ダン](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#diagnostics) | ReadItem | 作成<br>読み取り | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#ewsurl) | ReadItem | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#ewsurl) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [項目](/javascript/api/outlook/office.item?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#userprofile) | ReadItem | 作成<br>読み取り | [プロファイル](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 

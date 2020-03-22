@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
-description: Excel JavaScript API を使用してブックで一般的なタスクを実行する方法を示すコードサンプルです。
-ms.date: 10/21/2019
+description: Excel JavaScript API を使用して、ブックまたはアプリケーションレベルの機能を使用して一般的なタスクを実行する方法を示すコードサンプルです。
+ms.date: 03/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719624"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891027"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 `createWorkbook` メソッドは既存のブックのコピーの作成もできます。 このメソッドは、オプションのパラメーターとして .xlsx ファイルの base64 エンコード文字列表現を受け取ります。 文字列の引数は有効な .xlsx ファイルと見なされ、作成されるブックはそのファイルのコピーになります。
 
-[ファイルのスライス](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)を使用して、アドインの現在のブックを base64 エンコード文字列として取得できます。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
+[ファイルスライシング](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)を使用して、アドインの現在のブックを base64 でエンコードされた文字列として取得できます。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
 
 ```js
 var myFile = document.getElementById("file");
@@ -184,6 +184,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## <a name="access-application-culture-settings-preview"></a>Access アプリケーションのカルチャ設定 (プレビュー)
+
+ブックには、特定のデータの表示方法に影響する言語とカルチャの設定が含まれています。 これらの設定は、アドインのユーザーが異なる言語とカルチャでブックを共有している場合に、データをローカライズするのに役立ちます。 アドインでは、文字列の解析を使用して、各ユーザーが独自のカルチャの形式でデータを表示できるように、システムのカルチャ設定に基づいて数値、日付、時刻の形式をローカライズできます。
+
+`Application.cultureInfo`システムのカルチャ設定を[CultureInfo](/javascript/api/excel/excel.cultureinfo)オブジェクトとして定義します。 これには、数値の小数点の記号や日付の形式などの設定が含まれます。
+
+一部のカルチャ設定は[、EXCEL UI を使用して変更](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)できます。 システム設定は、 `CultureInfo`オブジェクトに保持されます。 ローカルの変更は、など、[アプリケーション](/javascript/api/excel/excel.application)レベルのプロパティとし`Application.decimalSeparator`て保持されます。
+
+次の例では、"," から、システム設定で使用される文字への数値文字列の小数点の区切り文字を変更します。
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## <a name="add-custom-xml-data-to-the-workbook"></a>カスタム XML データをブックに追加する

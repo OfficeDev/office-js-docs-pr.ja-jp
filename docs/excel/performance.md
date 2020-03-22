@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688768"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891013"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -211,5 +211,4 @@ Excel.run(async (context) => {
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)
 - [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)
-- [Excel JavaScript API オープン仕様](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [ワークシート関数のオブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

@@ -3,12 +3,12 @@ title: Office アドインのデータ可視化のスタイル ガイドライ�
 description: Office アドインでデータを表示する方法について、適切な方法を紹介します。
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: c22943959408d1df5febd8f5aad84ee791c40504
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 215bea269d14245e9ac55d74f12228565f60c2a3
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717223"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891020"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
@@ -41,7 +41,7 @@ ms.locfileid: "42717223"
 
 テキスト色と背景色のコントラスト比を適正に保ちつつ、軸ラベルをはっきり読める程度にまで濃くします。データ インクと張り合うほど濃くしません。
 
-軸のラベルには明るいグレーが最も効果的です。Fabric を使用している場合は、[中間色のパレット](https://developer.microsoft.com/fabric#/styles/colors)をご覧ください。
+軸のラベルには明るいグレーが最も効果的です。 Fabric を使用している場合は、[[ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
 
 ### <a name="data-ink"></a>データ インク
 
@@ -54,14 +54,14 @@ ms.locfileid: "42717223"
 データ可視化における色の使用のベスト プラクティスについては、次をご覧ください。
 
 - [なぜ虹色はデータの可視化に適していないか](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0:地図作成の色のアドバイス](http://colorbrewer2.org/)
+- [Color Brewer 2.0:地図作成の色のアドバイス](https://colorbrewer2.org/)
 - [色相が必要だ](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>枠線
 
 グラフを正確に読み取るために目盛線が必要な場合もありますが、データ インクを引き立てる (データ インクと競合しない) 2 次的なビジュアル要素でなければなりません。静的な目盛線は特にハイ コントラスト用にデザインされたものでなければ、細く明るい色にします。また、ユーザーがグラフを対話的に使用するときにコンテキストに沿って現れる、その場限りの動的な目盛線を対話的操作によって作成することもできます。
 
-目盛線には明るいグレーが最も効果的です。Fabric を使用している場合は、[中間色のパレット](https://developer.microsoft.com/fabric#/styles/colors)をご覧ください。
+目盛線には明るいグレーが最も効果的です。 Fabric を使用している場合は、[[ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
 
 次の図は、目盛線のあるデータ可視化を示しています。
 

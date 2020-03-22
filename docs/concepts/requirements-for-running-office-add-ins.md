@@ -1,21 +1,20 @@
 ---
 title: Office アドインを実行するための要件
 description: エンドユーザーが Office アドインを実行するために必要なクライアントおよびサーバーの要件について説明します。
-ms.date: 07/01/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 858a951322a34543277b1d7000ca01df12cca7bb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718637"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890505"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
 この記事では、Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。
 
-> [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。
 

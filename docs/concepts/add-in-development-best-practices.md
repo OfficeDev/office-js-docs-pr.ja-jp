@@ -1,21 +1,20 @@
 ---
 title: Office アドイン開発のベスト プラクティス
 description: Office アドインを作成するための開発時にベストプラクティスを適用します。
-ms.date: 03/19/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 03e9a55d2a438ef87f144c646f06a7e7c999900b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717286"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890540"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
 効果的なアドインは、目で見て分かる方法で Office アプリケーションを拡張する、ユニークで頼もしい機能を提供します。優れたアドインを作成するには、魅力的な初回エクスペリエンスをユーザーに提供して、最高の UI エクスペリエンスを設計し、アドインのパフォーマンスを最適化します。この記事で説明するベスト プラクティスを適用して、ユーザーが迅速かつ効率的に仕事を遂行するための助けになるアドインを作成してください。
 
-> [!NOTE]
-> AppSource にアドインを[公開](../publish/publish.md)し、Office エクスペリエンスで利用できるようにする予定がある場合は、[AppSource の検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、定義したメソッドをサポートするすべてのプラットフォームでアドインが動作する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)のページを参照してください)。 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="provide-clear-value"></a>価値を明確にする
 
