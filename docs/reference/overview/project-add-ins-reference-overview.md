@@ -1,15 +1,15 @@
 ---
 title: 'JavaScript API for Project '
-description: ''
+description: Project の JavaScript API の概要
 ms.date: 07/05/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 4185174a76f83706aee722b0ba547bd319362a49
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 7c00293a9cdbfae7a06b9f4fb43b0df96a8b6eea
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851293"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719897"
 ---
 # <a name="javascript-api-for-project"></a>JavaScript API for Project 
 

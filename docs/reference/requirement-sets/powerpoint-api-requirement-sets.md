@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API の要件セット
-description: ''
+description: PowerPoint JavaScript API の要件セットの詳細情報
 ms.date: 03/11/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: ef76077c3a2a975fae8a0dc101e8e1b42ef66094
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: 1f7020faa042da019cff04e8f0f3e901dad24c64
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600698"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719905"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API の要件セット
 

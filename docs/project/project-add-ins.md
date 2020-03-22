@@ -1,16 +1,16 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
-description: ''
+description: Project の作業ウィンドウ アドインについて説明します。
 ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 03f2eec24f4ae8d52f8e46021ff5ee25b8015f94
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 0ebcd1a6a20e8f5cbcc00ea294002899bce3a652
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324899"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720737"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
