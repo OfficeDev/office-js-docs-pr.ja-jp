@@ -289,7 +289,7 @@
         - name: アドインを AppSource に公開する
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource の検証ポリシー
-          href: /office/dev/store/validation-policies
+          href: /legal/marketplace/certification-policies
         - name: 一元展開でアドインを発行する
           href: publish/centralized-deployment.md
         - name: SharePoint アプリ カタログにアドインを発行する
@@ -477,8 +477,6 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
-        - name: API オープン仕様
-          href: reference/openspec/openspec.md
         - name: エラー コード
           href: reference/javascript-api-for-office-error-codes.md
     - name: リソース
@@ -1125,4 +1123,4 @@
     - name: カスタム関数で状態を保存して共有する
       href: excel/custom-functions-save-state-redirect.md
     - name: Office ソリューションで高 DPI と DPI スケーリングを処理します
-      href: develop/dynamic-dpi.md
+      href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution

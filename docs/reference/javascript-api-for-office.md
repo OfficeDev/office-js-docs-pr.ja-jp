@@ -5,12 +5,12 @@ title: Office JavaScript API リファレンス ドキュメント
 description: Office JavaScript Api について説明します。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 5622146d9663881eea0a97cafa5e793aa0381932
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 99c42103d8e6d7b18d6082bfdafe1da0dad8397d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720744"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890901"
 ---
 # <a name="api-reference-documentation"></a>API リファレンス ドキュメント
 
@@ -131,7 +131,3 @@ ms.locfileid: "42720744"
 </ul>
 
 <b>注</b>: 現在、Project 用のホスト固有 API はありません。Project アドインを構築する場合は、共通 API を使用してください。また、PowerPoint 用のホスト固有 API の範囲は非常に限定的であるため、PowerPoint アドインを構築する際は、主に共通 API を使用してください。
-
-<h2>Open API の仕様</h2>
-
-新しい Office アドイン用の API の設計と開発にあたり、[Open API の仕様](openspec/openspec.md) ページでこれらに対するフィードバックの提供が可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
