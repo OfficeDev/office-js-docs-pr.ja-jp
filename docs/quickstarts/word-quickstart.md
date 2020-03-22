@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 495fcc84ceb7705cf04be7a371c14b776eb0e560
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596824"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890940"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -306,6 +306,8 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 3. 作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1b.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>次の手順
 

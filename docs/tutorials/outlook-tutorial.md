@@ -4,12 +4,12 @@ description: このチュートリアルでは、GitHub Gist を新規メッセ�
 ms.date: 12/10/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8ea955cb26ead840171ba81e1290658474dbd6d5
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 49553a7194eceb4ec86fc39769ce369cff092bce
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166432"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719757"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 

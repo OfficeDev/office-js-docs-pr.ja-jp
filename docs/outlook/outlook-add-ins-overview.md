@@ -4,12 +4,12 @@ description: Outlook アドインとは、Microsoft の Web ベース プラッ�
 ms.date: 10/09/2019
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cb6e19788390a804b0bbacb97666a3ca8a9d5971
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: d8f536940cf83899cd5586006980d14342e297c7
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554698"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891062"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -23,8 +23,7 @@ Outlook アドインは、Windows 版 Outlook 固有の統合機能として以�
 
 アドインをサポートしている Outlook アイテムには、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消し、予定などがあります。 それぞれの Outlook アドインにより、アイテムの種類、ユーザーがアイテムの読み取りや作成を行うかどうかなど、使用できるコンテキストが定義されます。
 
-> [!NOTE]
-> アドインをビルドするとき、アドインを AppSource に[発行](../publish/publish.md)する予定であれば、[AppSource 検証ポリシー](/office/dev/store/validation-policies)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) と「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」のページを参照してください)。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>拡張点
 

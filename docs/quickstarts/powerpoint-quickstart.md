@@ -1,15 +1,15 @@
 ---
 title: 最初の PowerPoint 作業ウィンドウ アドインをビルドする
 description: Office JS API を使用して単純な PowerPoint 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 67af5529596f6659b331379dffcea838397a5bad
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1056dcfbeb49b4f0e2b8142de1a4e66ebb0dcca5
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265693"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891405"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -19,7 +19,7 @@ ms.locfileid: "41265693"
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -92,7 +92,7 @@ ms.locfileid: "41265693"
 
 これで完了です。PowerPoint 作業ウィンドウ アドインが正常に作成されました。 次に、PowerPoint アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[PowerPoint アドインのチュートリアル](../tutorials/powerpoint-tutorial.md)」をご覧ください。
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -250,6 +250,8 @@ ms.locfileid: "41265693"
 4. 作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。
 
     ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>次の手順
 

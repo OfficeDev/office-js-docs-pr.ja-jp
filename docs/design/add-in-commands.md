@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office Web アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 02/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566153"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890557"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
 
@@ -85,7 +85,7 @@ ms.locfileid: "42566153"
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
 
      > [!NOTE]
-     > 占有領域が大きすぎるアドインは [AppSource 検証](/office/dev/store/validation-policies)を通過しない場合があります。
+     > 占有領域が大きすぎるアドインは [AppSource 検証](/legal/marketplace/certification-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
 - コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。

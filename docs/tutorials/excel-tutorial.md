@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 70df5e7e78abf64bf36d33cade0b40ff8e3c18f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8d16369908f5885e20c145581c021ba69855e968
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950895"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719792"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -163,7 +163,7 @@ ms.locfileid: "41950895"
     - 最後に、列の幅と行の高さが、最も長い (または最も高い) データ項目の幅になるようにします。コードを書式設定するには `Range` オブジェクトを取得する必要があります。`TableColumn` と `TableRow` オブジェクトには、書式プロパティがありません。
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
@@ -402,7 +402,7 @@ ms.locfileid: "41950895"
    
    - `setPosition` 方法のパラメーターでは、グラフを挿入するワークシート領域の左上のセルを指定します。Excel では、指定した空間でグラフを見栄えよくするために、線の太さなどの調整ができます。
    
-   - "系列" は、テーブルの列からの一連のデータポイントです。テーブルには文字列以外の列が1つしかないので、Excel では、グラフのデータポイントの列は1列のみになります。他の列はグラフのラベルとして解釈されます。グラフには1つの系列が表示されます。インデックスは0です。このラベルには、"値" のラベルが付いています。
+   - "系列" とは、テーブルの 1 つの列にある一連のデータ ポイントのことです。このテーブルには文字列以外の列は 1 列しか含まれていないため、Excel は、グラフ化するデータ ポイントの列は、この列のみであると推測します。その他の列はグラフのラベルであると解釈されます。従って、グラフに含まれる系列は 1 つのみとなり、この系列のインデックスは 0 となります。を含みます。"&euro; での値" というラベルを付ける系列は、 この系列です。
 
     ```js
     chart.setPosition("A15", "F30");
@@ -411,7 +411,7 @@ ms.locfileid: "41950895"
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in €';
+    chart.series.getItemAt(0).name = 'Value in &euro;';
     ```
 
 9. プロジェクトに行ったすべての変更が保存されていることを確認します。
@@ -948,7 +948,7 @@ ms.locfileid: "41950895"
     }
     ```
 
-8. `TODO1`を以下のコードに置き換えます。 注:
+8. `TODO1` を次のコードに置き換えます。次の点に注意してください。
 
    - `displayDialogAsync` メソッドでは、画面の中央にダイアログを開きます。
 
