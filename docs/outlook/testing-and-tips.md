@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインを展開してインストールする
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
-ms.date: 11/06/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 521199a87282b58c3bf10553886174e8be26cacf
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166452"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890978"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 
@@ -76,11 +76,11 @@ New-App -URL:"http://<fully-qualified URL">
 
 - アドインを、個人用や組織のメンバー用に限って開発する場合は、自分の会社が使用している Outlook のバージョンをテストすることが重要です。一部のユーザーは Outlook on the web を使用する場合があるので、自分の会社で標準的に使用されているブラウザーのバージョンをテストすることも重要です。
 
-- [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[AppSource の検証ポリシー 4.12.1](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) で指定されている必要なバージョンをテストする必要があります。これには次が含まれます。
+- [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[Commercial marketplace の認定ポリシー 1120.3](/legal/marketplace/certification-policies#11203-functionality) で指定されている必要なバージョンをテストする必要があります。これには次が含まれます。
     - Windows 用 Outlook の最新バージョンと最新の直前のバージョン。
     - Mac 用 Outlook の最新バージョン。
     - iOS および Android 用の Outlook の最新バージョン (アドインが[モバイル フォーム ファクターをサポートしている](add-mobile-support.md)場合)。
-    - AppSource の検証ポリシー 4.12.1 で指定されたブラウザーのバージョン。
+    - Commercial marketplace の検証ポリシー 1120.3 で指定されたブラウザーのバージョン。
 
 > [!NOTE]
 > クライアントがサポートしていない [API 要件セットを要求しているために](apis.md)、アドインが上記のクライアントのいずれかをサポートしない場合は、そのクライアントが必要なクライアントのリストから削除されます。

@@ -1,19 +1,19 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 95491b8c346432b319c0731085c0ef763727493d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596621"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891398"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
-この記事では、Excel の作業ペインアドインを作成するプロセスについて説明します。 
+この記事では、Excel の作業ペインアドインを作成するプロセスについて説明します。
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
@@ -54,7 +54,7 @@ ms.locfileid: "42596621"
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
 3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
@@ -114,7 +114,7 @@ ms.locfileid: "42596621"
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 
+2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -145,7 +145,7 @@ ms.locfileid: "42596621"
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。 
+3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -155,7 +155,7 @@ ms.locfileid: "42596621"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -166,7 +166,7 @@ ms.locfileid: "42596621"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -198,7 +198,7 @@ ms.locfileid: "42596621"
 
 ### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか [**開始**] ボタンをクリックして、リボンに [**作業ウィンドウの表示**] アドイン ボタンが表示された Excel を起動します。 アドインは IIS 上でローカルにホストされます。 証明書を信頼するように求められた場合は、アドインがホストに接続できるように許可してください。
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
@@ -209,6 +209,8 @@ ms.locfileid: "42596621"
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
     ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>次の手順
 
