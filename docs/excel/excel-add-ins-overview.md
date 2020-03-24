@@ -1,16 +1,16 @@
 ---
 title: Excel アドインの概要
-description: ''
+description: Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーなどの複数のプラットフォームで Excel アプリケーションの機能を拡張できます。
 ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 645011e7600240e7f4947e8f4495e55383839a42
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 6cf50b332fe212921a73f9b24154b53831401354
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596544"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717090"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 

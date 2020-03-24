@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した高度なプログラミングの概念
-description: ''
+description: Excel アドインが Office JavaScript API オブジェクト モデルを使用して Excel 内のオブジェクトを操作する方法について説明します。
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 7c88f8e8b54c6777a18ae0a0807148383d14417d
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 32c46f1979b094110d32a6fcf77699eccb5d2606
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688772"
+ms.locfileid: "42719589"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した高度なプログラミングの概念
 

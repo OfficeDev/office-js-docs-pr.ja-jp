@@ -1,16 +1,16 @@
 ---
 ms.date: 12/28/2019
-description: JavaScript を使用して Excel でカスタム関数を作成する。
+description: Office アドインの Excel カスタム関数を作成する
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 331fe37bdeed55123cb1530f235fc31c00735548
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: f82e99f943b446e546e995f41d104252f8ee6295
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969553"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719491"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する 
 
