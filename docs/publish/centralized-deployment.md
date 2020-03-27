@@ -1,14 +1,14 @@
 ---
 title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
 description: 一元展開を使用して、内部アドインと Isv が提供するアドインを展開する方法について説明します。
-ms.date: 02/14/2020
+ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ac17113ee1e8d38d0b891a8decb3b48ca299c8fe
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720989"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978628"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -17,7 +17,7 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 現在、Office 365 管理センターは次のシナリオをサポートしています。
 
 - 新しいアドインおよび更新されたアドインの個人、グループ、組織への一元展開。
-- Windows、Mac、iOS/iPad、Android、web 上の複数のプラットフォームへの展開。
+- Windows、Mac、iOS、Android、web 上の複数のプラットフォームへの展開。
 - 英語および世界各国のテナントへの展開。
 - クラウド ホスト型アドインの展開。
 - ファイアウオール内でホストされているアドインの展開。
