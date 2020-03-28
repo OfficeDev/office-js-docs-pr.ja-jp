@@ -56,7 +56,7 @@
               href: develop/initialize-add-in.md
             - name: 一般的な問題に関するコーディング ガイド
               href: develop/common-coding-issues.md
-            - name: 共通 API (Office 2013 以降)
+            - name: 共通 API
               items:
                 - name: 共通 JavaScript API オブジェクト モデル
                   href: develop/office-javascript-api-object-model.md
