@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
-ms.date: 06/20/2019
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891013"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030832"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -75,7 +75,7 @@ _各部分の意味は次のとおりです。_
 * `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、 `load()` 「 [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)」のオブジェクトに対して定義されているメソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
-オブジェクトの [プロパティ] の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを回避するには、コードでオブジェクトツリーの "葉 nodes" のみを読み込む必要があります。 
+オブジェクトの [プロパティ] の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを回避するには、コードでオブジェクトツリーの "葉 nodes" のみを読み込む必要があります。
 
 ## <a name="suspend-excel-processes-temporarily"></a>Excel のプロセスを一時的に中断する
 
@@ -129,6 +129,9 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>画面の更新を停止する
 
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
+
+> [!NOTE]
+> 繰り返し呼び出し`suspendScreenUpdatingUntilNextSync`ない (ループの場合など)。 呼び出しが繰り返し行われると、Excel ウィンドウがちらつくようになります。
 
 ### <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
@@ -191,7 +194,7 @@ Excel.run(async (context) => {
     var largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
-    
+
     for (var i = 0; i < largeRange.rowCount; i++) {
         for (var j = 0; j < largeRange.columnCount; j++) {
             var cell = largeRange.getCell(i, j);

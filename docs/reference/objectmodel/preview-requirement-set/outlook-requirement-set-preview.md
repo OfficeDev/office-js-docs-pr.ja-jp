@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドインおよび Office JavaScript Api で現在プレビューされている機能と Api。
-ms.date: 03/26/2020
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978621"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030818"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -24,6 +24,44 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 ## <a name="features-in-preview"></a>プレビューの機能
 
 次の機能はプレビュー段階です。
+
+### <a name="additional-calendar-properties"></a>その他の予定表プロパティ
+
+#### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+
+新規作成モードで予定の終日イベントプロパティを表す新しいオブジェクトを追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+
+新規作成モードで予定の秘密度を表す新しいオブジェクトを追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemisalldayevent"></a>[Office...-Alldayevent](office.context.mailbox.item.md#properties)
+
+予定が終日イベントであるかどうかを表す新しいプロパティを追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemsensitivity"></a>[Office. メールボックスの秘密度](office.context.mailbox.item.md#properties)
+
+予定の秘密度を表す新しいプロパティを追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[MailboxEnums AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+
+予定で利用可能`AppointmentSensitivityType`な秘密度オプションを表す新しい列挙を追加しました。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+<br>
+
+---
+
+---
 
 ### <a name="append-on-send"></a>送信時に追加
 
