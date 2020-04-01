@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 03/24/2020
+ms.date: 03/30/2020
 localization_priority: Normal
-ms.openlocfilehash: de570e70a0562720d8ba069f98cff0693a6894bf
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 59d633169fa74687032691bef65fb7f0b114822a
+ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978677"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "43069310"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -18,7 +18,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 - 特定の受信者をメッセージの CC 行または会議の任意の受信者行に追加する。
 
 > [!NOTE]
-> 送信機能は、現在、Exchange Online (Office 365) の Outlook on the web、Exchange 2016 のオンプレミス (累積的な更新プログラム 6 以降)、および Exchange 2019 のオンプレミス (累積的な更新プログラム 1 以降) でサポートされています。 この機能は、Exchange Online (Office 365) に接続された Windows および Mac 上の最新の Outlook ビルドでも使用できます。 この機能は、要件セット 1.8 に導入されました。
+> 送信機能は、現在、Exchange Online (Office 365) の Outlook on the web、Exchange 2016 のオンプレミス (累積的な更新プログラム 6 以降)、および Exchange 2019 のオンプレミス (累積的な更新プログラム 1 以降) でサポートされています。 この機能は、Exchange Online (Office 365) に接続された Windows および Mac 上の最新の Outlook ビルドでも使用できます。 この機能は、要件セット 1.8 ([現在のサーバーとクライアントのサポート](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) で導入されました。
 
 > [!IMPORTANT]
 > 送信時機能を使用するアドインは、 [Appsource](https://appsource.microsoft.com)では許可されていません。
