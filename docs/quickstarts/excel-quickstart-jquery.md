@@ -1,30 +1,30 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 03/19/2020
+ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 95491b8c346432b319c0731085c0ef763727493d
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 01298244b11167b67a966dc6d8b66f9b3ba2a735
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891398"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185576"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
 この記事では、Excel の作業ペインアドインを作成するプロセスについて説明します。
 
-## <a name="create-the-add-in"></a>アドインを作成する
+## <a name="create-the-add-in"></a>アドインを作成する 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
-
 # <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
-### <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>前提条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成

@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e36aeaeb7313be2c5b797c7ce8f3b7d8a0dedc10
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b3971bea435f4c1767026568e2b3d64955be8ef9
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163886"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185625"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 

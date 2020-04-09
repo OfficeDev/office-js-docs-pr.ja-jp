@@ -4,12 +4,12 @@ description: Excel カスタム関数開発のためのクイック スタート
 title: カスタム関数クイック スタート
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 79c10a7ba032f478843ce94bf2eae39def051f40
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: abe4026da79f5348e9da559c8310b863ccf8abd9
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950727"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185597"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -17,6 +17,7 @@ ms.locfileid: "41950727"
 
 ## <a name="prerequisites"></a>前提条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Windows 版 Excel (Office 365 サブスクリプションに接続されている、バージョン 1904 以降) または Web 版 Excel
@@ -56,7 +57,7 @@ ms.locfileid: "41950727"
 
 4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは Web 版 Excel または Windows 版 Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 版 Excel](#tab/excel-windows)
+# <a name="excel-on-windows"></a>[Windows 版 Excel](#tab/excel-windows)
 
 アドインを Windows 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
 
@@ -64,7 +65,7 @@ ms.locfileid: "41950727"
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Web 版 Excel](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Web 版 Excel](#tab/excel-online)
 
 アドインを Web 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
 

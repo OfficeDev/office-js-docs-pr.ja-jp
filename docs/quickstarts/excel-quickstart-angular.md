@@ -4,12 +4,12 @@ description: Office JS API と Angular を使用して単純な Excel 作業ウ�
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: c6cacf7d513472f57947243fef42aa550e199580
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: fa1912f295aab7f2e5330c0d555757b34f151253
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596642"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185583"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -17,6 +17,7 @@ ms.locfileid: "42596642"
 
 ## <a name="prerequisites"></a>前提条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
