@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 59d633169fa74687032691bef65fb7f0b114822a
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 017759628cd9b3716c3992f7c6631911491ca246
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185639"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -18,7 +18,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 - 特定の受信者をメッセージの CC 行または会議の任意の受信者行に追加する。
 
 > [!NOTE]
-> 送信機能は、現在、Exchange Online (Office 365) の Outlook on the web、Exchange 2016 のオンプレミス (累積的な更新プログラム 6 以降)、および Exchange 2019 のオンプレミス (累積的な更新プログラム 1 以降) でサポートされています。 この機能は、Exchange Online (Office 365) に接続された Windows および Mac 上の最新の Outlook ビルドでも使用できます。 この機能は、要件セット 1.8 ([現在のサーバーとクライアントのサポート](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) で導入されました。
+> 送信機能は、現在、Exchange Online (Office 365) の Outlook on the web、Exchange 2016 のオンプレミス (累積的な更新プログラム 6 以降)、および Exchange 2019 のオンプレミス (累積的な更新プログラム 1 以降) でサポートされています。 この機能は、Exchange Online (Office 365) に接続された Windows および Mac 上の最新の Outlook ビルドでも使用できます。 この機能は、要件セット1.8 で導入されました (詳細については、「[現在のサーバーとクライアントのサポート](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)」を参照してください)。
 
 > [!IMPORTANT]
 > 送信時機能を使用するアドインは、 [Appsource](https://appsource.microsoft.com)では許可されていません。
@@ -340,9 +340,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |シナリオ|メールボックス 1 の送信時機能|メールボックス 2 の送信時機能|Outlook web のセッション (クラシック)|結果|サポートの有無|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1-d|Enabled|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|pbm-2|無効|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|1/3|Enabled|Enabled|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
+|1-d|有効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
+|pbm-2|無効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
+|1/3|有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
 |4 |有効|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web ブラウザー (モダン Outlook)、Windows、Mac

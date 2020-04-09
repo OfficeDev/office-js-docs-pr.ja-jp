@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: Office on the web で Office アドインをサイドロードしてテストをする
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 2b3082eeae35a36f320ad8d1477d99f24b3fce40
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554686"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185408"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -46,7 +46,7 @@ ms.locfileid: "42554686"
 >
 > - Windows コマンド プロンプトで、次のコマンドを実行します: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - Microsoft Edge の検索バーに "**about:flags**" と入力して開発者向け設定のオプションを表示します。  **[ローカルホスト ループバックを許可する]** オプションをオンにして、Microsoft Edge を再起動します。
+> - Microsoft Edge の検索バーに「**about: flags**」と入力すると、[開発者向けの設定] オプションが表示されます。  [**Localhost ループバックを許可する**] オプションをオンにして、Microsoft Edge を再起動します。
 
 >    ![[ローカルホスト ループバックを許可する] オプションがオンになった Microsoft Edge。](../images/allow-localhost-loopback.png)
 

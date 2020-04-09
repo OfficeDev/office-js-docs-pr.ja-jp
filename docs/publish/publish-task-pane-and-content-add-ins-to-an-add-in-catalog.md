@@ -3,12 +3,12 @@ title: 作業ウィンドウ アドインとコンテンツ アドインを Shar
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5557dd31e829fac2c2dbd421200da46a5c3b9b99
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325306"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185590"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -31,30 +31,7 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>Office 365 でアプリ カタログを作成する
 
-1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
-
-2. Microsoft 365 管理センターのページで [**管理センター**] のリストを展開し、[**SharePoint**] を選択します。
-
-    > [!NOTE]
-    > カタログを作成するには、従来の SharePoint 管理センターを使用する必要があります。 新しい SharePoint 管理センターにいる場合は、左側のウィンドウで「**従来の SharePoint 管理センター**」を選択します。
-
-3. 左側の作業ウィンドウで、[**アプリ**] を選択します。
-
-4. [**アプリ**] ページで、[**アプリ カタログ**] を選択します。
-    > [!NOTE]
-    > アプリ カタログが既に作成されてこのページに表示されている場合は、残りの手順をスキップしてこの記事の次のセクションに移動し、カタログにアドインを発行できます。
-
-5. [**アプリ カタログ サイト**] ページで、[**OK**] を選択して既定のオプションを受け入れ、新しいアプリ カタログ サイトを作成します。
-
-6. [**アプリ カタログ サイト コレクションを作成する**] ページで、アプリ カタログ サイトのタイトルを指定します。
-
-7. [**Web サイトのアドレス**]を指定します。
-
-8. [**管理者**]を指定します。
-
-9. [**サーバー リソース クォータ**] に 0 (ゼロ) を設定します。 (サーバー リソース クォータは、パフォーマンスが低いサンドボックス ソリューションのスロットルに関連していますが、このアプリ カタログ サイトにはサンドボックス ソリューションをインストールしません。)
-
-10. [**OK**] を選択します。
+SharePoint アプリカタログを作成するには、「[アプリカタログサイトコレクションを作成](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)する」の手順に従ってください。 アプリカタログを作成したら、次のセクションの手順に従って、Office アドインを発行します。
 
 ## <a name="publish-an-office-add-in"></a>Office アドインの発行
 
@@ -62,17 +39,21 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>Office アドインを Office 365 の SharePoint アプリ カタログに発行する
 
-1. Microsoft 365 管理センターに移動します。 管理センターの検索方法については、「[Microsoft 365 管理センターについて](/office365/admin/admin-overview/about-the-admin-center)」を参照してください。
-2. Microsoft 365 管理センターのページで [**管理センター**] のリストを展開し、[**SharePoint**] を選択します。
-    > [!NOTE]
-    > カタログを作成するには、従来の SharePoint 管理センターを使用する必要があります。 新しい SharePoint 管理センターにいる場合は、左側のウィンドウで「**従来の SharePoint 管理センター**」を選択します。
-3. 左側の作業ウィンドウで、[**アプリ**] を選択します。
-4. [**アプリ**] ページで、[**アプリ カタログ**] を選択します。
-5. [**Office 用アプリを配信する**] を選択します。
-6. [**Office 用アプリ**] ページで、[**新規**] を選択します。
-7. [**ドキュメントの追加**] ダイアログで、[**ファイルの選択**] ボタンをクリックします。
-8. アップロードする[マニフェスト](../develop/add-in-manifests.md) ファイルを見つけて指定し、[**開く**] を選択します。
-9. [**ドキュメントの追加**] ダイアログで、[**OK**] を選択します。
+1. [新しい SharePoint 管理センターの [アクティブなサイト] ページ](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true)に移動し、組織の[管理者権限](/sharepoint/sharepoint-admin-role)が付与されているアカウントでサインインします。
+
+>[!NOTE]
+>Office 365 Germany を使用している場合は、[Microsoft 365 管理センターにサインイン](https://go.microsoft.com/fwlink/p/?linkid=848041)し、SharePoint 管理センターを参照してから [その他の機能] ページを開きます。 <br>21Vianet (中国) によって運用されている Office 365 を使用している場合は、[Microsoft 365 管理センターにサインイン](https://go.microsoft.com/fwlink/p/?linkid=850627)し、次に SharePoint 管理センターに移動して [その他の機能] ページを開きます。
+ 
+2. [URL] 列で URL を選択して、アプリカタログサイトを開きます。 
+
+>[!NOTE]
+>前のセクションでアプリカタログサイトを作成したばかりの場合は、サイトのセットアップが完了するまでに数分かかることがあります。
+
+3. [**Office 用アプリを配信する**] を選択します。
+4. [**Office 用アプリ**] ページで、[**新規**] を選択します。
+5. [**ドキュメントの追加**] ダイアログで、[**ファイルの選択**] ボタンをクリックします。
+6. アップロードする[マニフェスト](../develop/add-in-manifests.md) ファイルを見つけて指定し、[**開く**] を選択します。
+7. [**ドキュメントの追加**] ダイアログで、[**OK**] を選択します。
 
 ### <a name="to-publish-an-add-in-to-an-app-catalog-with-on-premises-sharepoint-server"></a>オンプレミスの SharePoint サーバーでアプリ カタログにアドインを発行する
 

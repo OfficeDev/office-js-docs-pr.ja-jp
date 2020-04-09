@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドインおよび Office JavaScript Api で現在プレビューされている機能と Api。
-ms.date: 03/27/2020
+ms.date: 04/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030818"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185415"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -69,13 +69,13 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 新規作成モードで、アイテム`Body`の本文の最後にデータを追加する新しい関数をオブジェクトに追加しました。
 
-**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 拡張されたアクセス許可のコレクションに`AppendOnSend`拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
 
-**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
 
 <br>
 
@@ -103,13 +103,13 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 新規作成モードで、アイテム`Body`の本文の署名を追加または置換する新しい関数をオブジェクトに追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync を示します。](office.context.mailbox.item.md#methods)
 
 新規作成モードの送信メールボックスのクライアント署名を無効にする新しい関数を追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync を示します。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -121,13 +121,13 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 新規作成モードのアイテムでクライアント署名が有効になっているかどうかを確認する新しい関数を追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 #### <a name="officemailboxenumscomposetype"></a>[MailboxEnums Setype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 新規作成モードで`ComposeType`使用可能な新しい列挙を追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 <br>
 
@@ -148,6 +148,20 @@ Office テーマを取得する機能が追加されました。
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
 **使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+<br>
+
+---
+
+---
+
+### <a name="online-meeting-provider-integration"></a>オンライン会議プロバイダーの統合
+
+#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 拡張点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+マニフェスト`MobileOnlineMeetingCommandSurface`に拡張点を追加しました。 オンライン会議の統合を定義します。
+
+**利用可能な**対象: Android on Outlook (Office 365 サブスクリプションに接続)
 
 <br>
 

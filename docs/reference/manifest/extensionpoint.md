@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 09/05/2019
+ms.date: 04/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7cdcb96fbd0766b6751917ec84c5bea9a86b0ce1
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720569"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185429"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
- Office UI でアドインが機能を公開する場所を定義します。 **ExtensionPoint** 要素は、[AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md)、[MobileFormFactor](mobileformfactor.md) の子要素です。 
+ Office UI でアドインが機能を公開する場所を定義します。 **ExtensionPoint** 要素は、[AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md)、[MobileFormFactor](mobileformfactor.md) の子要素です。
 
 ## <a name="attributes"></a>属性
 
@@ -33,7 +33,7 @@ ms.locfileid: "42720569"
 
 次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。<CustomTab id="mycompanyname.mygroupname">
 
 ```XML
@@ -86,16 +86,18 @@ ms.locfileid: "42720569"
 
 ## <a name="extension-points-for-outlook"></a>Outlook のみの拡張点
 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface)
+- [MessageComposeCommandSurface](#messagecomposecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface)
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
+
 この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。
 
 #### <a name="child-elements"></a>子要素
@@ -106,6 +108,7 @@ ms.locfileid: "42720569"
 |  [CustomTab](customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
 #### <a name="officetab-example"></a>OfficeTab の例
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -115,6 +118,7 @@ ms.locfileid: "42720569"
 ```
 
 #### <a name="customtab-example"></a>CustomTab の例
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -124,6 +128,7 @@ ms.locfileid: "42720569"
 ```
 
 ### <a name="messagecomposecommandsurface"></a>MessageComposeCommandSurface
+
 この拡張点は、メールの新規作成フォームを使用してアドイン用のリボンにボタンを配置します。 
 
 #### <a name="child-elements"></a>子要素
@@ -134,6 +139,7 @@ ms.locfileid: "42720569"
 |  [CustomTab](customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
 #### <a name="officetab-example"></a>OfficeTab の例
+
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -164,6 +170,7 @@ ms.locfileid: "42720569"
 |  [CustomTab](customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
 #### <a name="officetab-example"></a>OfficeTab の例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -173,6 +180,7 @@ ms.locfileid: "42720569"
 ```
 
 #### <a name="customtab-example"></a>CustomTab の例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -193,6 +201,7 @@ ms.locfileid: "42720569"
 |  [CustomTab](customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
 #### <a name="officetab-example"></a>OfficeTab の例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -202,6 +211,7 @@ ms.locfileid: "42720569"
 ```
 
 #### <a name="customtab-example"></a>CustomTab の例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -212,7 +222,7 @@ ms.locfileid: "42720569"
 
 ### <a name="module"></a>Module
 
-この拡張点は、モジュール拡張機能用のリボンにボタンを配置します。 
+この拡張点は、モジュール拡張機能用のリボンにボタンを配置します。
 
 #### <a name="child-elements"></a>子要素
 
@@ -222,6 +232,7 @@ ms.locfileid: "42720569"
 |  [CustomTab](customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
 ### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+
 この拡張点により、モバイル フォーム ファクターのメールの閲覧ビューのコマンド領域にボタンが配置されます。
 
 #### <a name="child-elements"></a>子要素
@@ -235,6 +246,7 @@ ms.locfileid: "42720569"
 この拡張点に含まれる **Control** 要素の **xsi:type** 属性を `MobileButton` に設定する必要があります。
 
 #### <a name="example"></a>例
+
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -246,12 +258,50 @@ ms.locfileid: "42720569"
 </ExtensionPoint>
 ```
 
+### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface (プレビュー)
+
+> [!NOTE]
+> この拡張点は、Office 365 サブスクリプションを使用した Android の[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。
+
+この拡張点は、モバイルフォームファクターの予定に対して、適切なモードのトグルをコマンド画面に配置します。 会議の開催者は、オンライン会議を作成できます。 出席者は、後でオンライン会議に参加できます。
+
+#### <a name="child-elements"></a>子要素
+
+|  要素 |  説明  |
+|:-----|:-----|
+|  [Control](control.md) |  コマンド画面にボタンを追加します。  |
+
+この型の**Extensionpoint**要素には、1つの子要素のみを含めることができます: **Control**要素。
+
+この拡張点に含まれる**Control**要素の**xsi: type**属性をに`MobileButton`設定する必要があります。
+
+#### <a name="example"></a>例
+
+```xml
+<ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+    <Label resid="residUILessButton0Name" />
+    <Icon>
+      <bt:Image resid="UiLessIcon" size="25" scale="1" />
+      <bt:Image resid="UiLessIcon" size="25" scale="2" />
+      <bt:Image resid="UiLessIcon" size="25" scale="3" />
+      <bt:Image resid="UiLessIcon" size="32" scale="1" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="1" />
+      <bt:Image resid="UiLessIcon" size="48" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>Events
 
 この拡張点は、指定したイベントのイベント ハンドラーを追加します。
-
-> [!NOTE]
-> この要素の種類は、従来の Outlook on the web でサポートされており、Windows、Mac、および最新の Outlook on the web では[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)されています。 Office 365 サブスクリプションも必要です。
 
 | 要素 | 説明  |
 |:-----|:-----|
@@ -306,5 +356,5 @@ ms.locfileid: "42720569"
     <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
   </Rule>
-</ExtensionPoint> 
+</ExtensionPoint>
 ```
