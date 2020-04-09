@@ -1,75 +1,77 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 12/28/2019
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bdef3ba43d8bb016f5d79ed3cafc25a6d89c345d
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185450"
 ---
-# <a name="build-your-first-outlook-add-in"></a><span data-ttu-id="a3ba3-103">最初の Outlook アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="a3ba3-103">Build your first Outlook add-in</span></span>
+# <a name="build-your-first-outlook-add-in"></a><span data-ttu-id="3f5a1-103">最初の Outlook アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="3f5a1-103">Build your first Outlook add-in</span></span>
 
-<span data-ttu-id="a3ba3-104">この記事では、選択したメッセージのプロパティを、少なくとも 1 つ表示する Outlook 作業ウィンドウ アドインを作成するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-104">In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.</span></span>
+<span data-ttu-id="3f5a1-104">この記事では、選択したメッセージのプロパティを、少なくとも 1 つ表示する Outlook 作業ウィンドウ アドインを作成するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-104">In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="a3ba3-105">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="3f5a1-105">アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-105">Create the add-in</span></span>
 
-<span data-ttu-id="a3ba3-106">[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-106">You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio.</span></span> <span data-ttu-id="a3ba3-107">Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-107">The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.</span></span>  <span data-ttu-id="a3ba3-108">使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-108">Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.</span></span>
+<span data-ttu-id="3f5a1-106">[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-106">You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio.</span></span> <span data-ttu-id="3f5a1-107">Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-107">The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.</span></span>  <span data-ttu-id="3f5a1-108">使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-108">Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.</span></span>
 
-# <a name="yeoman-generator"></a>[<span data-ttu-id="a3ba3-109">Yeoman ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="a3ba3-109">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[<span data-ttu-id="3f5a1-109">Yeoman ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="3f5a1-109">Yeoman generator</span></span>](#tab/yeomangenerator)
 
-### <a name="prerequisites"></a><span data-ttu-id="a3ba3-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="a3ba3-110">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="3f5a1-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="3f5a1-110">Prerequisites</span></span>
 
-- <span data-ttu-id="a3ba3-111">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="a3ba3-111">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- <span data-ttu-id="a3ba3-112">最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-112">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+- <span data-ttu-id="3f5a1-111">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="3f5a1-111">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+
+- <span data-ttu-id="3f5a1-112">最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-112">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
 
     ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="a3ba3-113">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-113">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+    > <span data-ttu-id="3f5a1-113">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-113">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a3ba3-114">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="a3ba3-114">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="3f5a1-114">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="3f5a1-114">Create the add-in project</span></span>
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - <span data-ttu-id="a3ba3-115">**Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="a3ba3-115">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="3f5a1-115">**Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="3f5a1-115">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
 
-    - <span data-ttu-id="a3ba3-116">**Choose a script type: (スクリプトの種類を選択)** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="a3ba3-116">**Choose a script type** - `Javascript`</span></span>
+    - <span data-ttu-id="3f5a1-116">**Choose a script type: (スクリプトの種類を選択)** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="3f5a1-116">**Choose a script type** - `Javascript`</span></span>
 
-    - <span data-ttu-id="a3ba3-117">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="a3ba3-117">**What do you want to name your add-in?**</span></span> - `My Office Add-in`
+    - <span data-ttu-id="3f5a1-117">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="3f5a1-117">**What do you want to name your add-in?**</span></span> - `My Office Add-in`
 
-    - <span data-ttu-id="a3ba3-118">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="a3ba3-118">**Which Office client application would you like to support?**</span></span> - `Outlook`
+    - <span data-ttu-id="3f5a1-118">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="3f5a1-118">**Which Office client application would you like to support?**</span></span> - `Outlook`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-outlook.png)
     
-    <span data-ttu-id="a3ba3-120">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-120">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="3f5a1-120">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-120">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-1. <span data-ttu-id="a3ba3-121">Web アプリケーション プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-121">Navigate to the root folder of the web application project.</span></span>
+1. <span data-ttu-id="3f5a1-121">Web アプリケーション プロジェクトのルート フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-121">Navigate to the root folder of the web application project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### <a name="explore-the-project"></a><span data-ttu-id="a3ba3-122">プロジェクトを探究する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-122">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="3f5a1-122">プロジェクトを探究する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-122">Explore the project</span></span>
 
-<span data-ttu-id="a3ba3-123">Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-123">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
+<span data-ttu-id="3f5a1-123">Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-123">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-- <span data-ttu-id="a3ba3-124">プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-124">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="a3ba3-125">**./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-125">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
-- <span data-ttu-id="a3ba3-126">**./src/taskpane/taskpane.css**ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-126">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="a3ba3-127">**./src/taskpane/taskpane.js**ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-127">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.</span></span>
+- <span data-ttu-id="3f5a1-124">プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-124">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="3f5a1-125">**./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-125">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="3f5a1-126">**./src/taskpane/taskpane.css**ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-126">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="3f5a1-127">**./src/taskpane/taskpane.js**ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-127">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.</span></span>
 
-### <a name="update-the-code"></a><span data-ttu-id="a3ba3-128">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-128">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="3f5a1-128">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-128">Update the code</span></span>
 
-1. <span data-ttu-id="a3ba3-129">コードエディタで、**./src/taskpane/taskpane.html**ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-129">In your code editor, open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup.</span></span> <span data-ttu-id="a3ba3-130">この新しいマークアップは、**./src/taskpane/taskpane.js**のスクリプトがデータを書き込む場所にラベルを追加します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-130">This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.</span></span>
+1. <span data-ttu-id="3f5a1-129">コードエディタで、**./src/taskpane/taskpane.html**ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-129">In your code editor, open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup.</span></span> <span data-ttu-id="3f5a1-130">この新しいマークアップは、**./src/taskpane/taskpane.js**のスクリプトがデータを書き込む場所にラベルを追加します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-130">This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.</span></span>
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -81,7 +83,7 @@ ms.locfileid: "42325292"
     </main>
     ```
 
-1. <span data-ttu-id="a3ba3-131">コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-131">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function.</span></span> <span data-ttu-id="a3ba3-132">このコードはOffice JavaScript APIを使用して現在のメッセージへの参照を取得し、その`subject`プロパティ値を作業ペインに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-132">This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.</span></span>
+1. <span data-ttu-id="3f5a1-131">コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-131">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function.</span></span> <span data-ttu-id="3f5a1-132">このコードはOffice JavaScript APIを使用して現在のメッセージへの参照を取得し、その`subject`プロパティ値を作業ペインに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-132">This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.</span></span>
 
     ```js
     // Get a reference to the current message
@@ -91,71 +93,71 @@ ms.locfileid: "42325292"
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="a3ba3-133">試してみる</span><span class="sxs-lookup"><span data-stu-id="a3ba3-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="3f5a1-133">試してみる</span><span class="sxs-lookup"><span data-stu-id="3f5a1-133">Try it out</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a3ba3-134">開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="a3ba3-135">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-135">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+> <span data-ttu-id="3f5a1-134">開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="3f5a1-135">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-135">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-1. <span data-ttu-id="a3ba3-136">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-136">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="a3ba3-137">このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-137">When you run this command, the local web server will start (if it's not already running).</span></span>
+1. <span data-ttu-id="3f5a1-136">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-136">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="3f5a1-137">このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-137">When you run this command, the local web server will start (if it's not already running).</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="a3ba3-138">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-138">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.</span></span>
+1. <span data-ttu-id="3f5a1-138">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-138">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.</span></span>
 
-1. <span data-ttu-id="a3ba3-139">Outlook で、メッセージを選択または開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-139">In Outlook, select or open a message.</span></span>
+1. <span data-ttu-id="3f5a1-139">Outlook で、メッセージを選択または開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-139">In Outlook, select or open a message.</span></span>
 
-1. <span data-ttu-id="a3ba3-140">**ホーム**タブ（または新しいウィンドウでメッセージを開いた場合は**メッセージ**タブ）を選択し、リボンの**タスクパネルの表示**ボタンを選択、アドインの作業ペインを開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-140">Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+1. <span data-ttu-id="3f5a1-140">**ホーム**タブ（または新しいウィンドウでメッセージを開いた場合は**メッセージ**タブ）を選択し、リボンの**タスクパネルの表示**ボタンを選択、アドインの作業ペインを開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-140">Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![アドイン ボタンが強調表示された Outlook のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-1.png)
 
-1. <span data-ttu-id="a3ba3-142">作業ペインの下部までスクロールし、**実行**リンクを選択してメッセージを作業ペインに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-142">Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.</span></span>
+1. <span data-ttu-id="3f5a1-142">作業ペインの下部までスクロールし、**実行**リンクを選択してメッセージを作業ペインに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-142">Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.</span></span>
 
     ![実行リンクが強調表示されたアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-2.png)
 
     ![メッセージの件名を表示するアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-3.png)
 
-### <a name="next-steps"></a><span data-ttu-id="a3ba3-145">次のステップ</span><span class="sxs-lookup"><span data-stu-id="a3ba3-145">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="3f5a1-145">次のステップ</span><span class="sxs-lookup"><span data-stu-id="3f5a1-145">Next steps</span></span>
 
-<span data-ttu-id="a3ba3-146">おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-146">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="a3ba3-147">次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-147">Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).</span></span>
+<span data-ttu-id="3f5a1-146">おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-146">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="3f5a1-147">次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-147">Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).</span></span>
 
-# <a name="visual-studio"></a>[<span data-ttu-id="a3ba3-148">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a3ba3-148">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studio"></a>[<span data-ttu-id="3f5a1-148">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="3f5a1-148">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="a3ba3-149">前提条件</span><span class="sxs-lookup"><span data-stu-id="a3ba3-149">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="3f5a1-149">前提条件</span><span class="sxs-lookup"><span data-stu-id="3f5a1-149">Prerequisites</span></span>
 
-- <span data-ttu-id="a3ba3-150">**Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="a3ba3-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="a3ba3-151">既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-151">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span>
-
-- <span data-ttu-id="a3ba3-152">Office 365</span><span class="sxs-lookup"><span data-stu-id="a3ba3-152">Office 365</span></span>
+- <span data-ttu-id="3f5a1-150">**Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="3f5a1-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="a3ba3-153">Office 365 サブスクリプションをお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に新規登録すると、無料のサブスクリプションを取得できます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-153">If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).</span></span>
+    > <span data-ttu-id="3f5a1-151">既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-151">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span>
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a3ba3-154">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="a3ba3-154">Create the add-in project</span></span>
+- <span data-ttu-id="3f5a1-152">Office 365</span><span class="sxs-lookup"><span data-stu-id="3f5a1-152">Office 365</span></span>
 
-1. <span data-ttu-id="a3ba3-155">[Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-155">On the Visual Studio menu bar, choose **File** > **New** > **Project**.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="3f5a1-153">Office 365 サブスクリプションをお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に新規登録すると、無料のサブスクリプションを取得できます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-153">If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).</span></span>
 
-1. <span data-ttu-id="a3ba3-156">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開し、**[アドイン]** を選択し、プロジェクトの種類として **[Outlook Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-156">In the list of project types under **Visual C#** or **Visual Basic**, expand **Office/SharePoint**, choose **Add-ins**, and then choose **Outlook Web Add-in** as the project type.</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="3f5a1-154">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="3f5a1-154">Create the add-in project</span></span>
 
-1. <span data-ttu-id="a3ba3-157">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-157">Name the project, and then choose **OK**.</span></span>
+1. <span data-ttu-id="3f5a1-155">[Visual Studio] メニュー バーで、**[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-155">On the Visual Studio menu bar, choose **File** > **New** > **Project**.</span></span>
 
-1. <span data-ttu-id="a3ba3-158">ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-158">Visual Studio creates a solution and its two projects appear in **Solution Explorer**.</span></span> <span data-ttu-id="a3ba3-159">**MessageRead.html** ファイルが Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-159">The **MessageRead.html** file opens in Visual Studio.</span></span>
+1. <span data-ttu-id="3f5a1-156">**[Visual C#]** または **[Visual Basic]** の下にあるプロジェクトの種類の一覧で、**[Office/SharePoint]** を展開し、**[アドイン]** を選択し、プロジェクトの種類として **[Outlook Web アドイン]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-156">In the list of project types under **Visual C#** or **Visual Basic**, expand **Office/SharePoint**, choose **Add-ins**, and then choose **Outlook Web Add-in** as the project type.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="a3ba3-160">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-160">Explore the Visual Studio solution</span></span>
+1. <span data-ttu-id="3f5a1-157">プロジェクトに名前を付けて、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-157">Name the project, and then choose **OK**.</span></span>
 
-<span data-ttu-id="a3ba3-161">ウィザードの完了後、Visual Studio によって 2 つのプロジェクトを含むソリューションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-161">When you've completed the wizard, Visual Studio creates a solution that contains two projects.</span></span>
+1. <span data-ttu-id="3f5a1-158">ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-158">Visual Studio creates a solution and its two projects appear in **Solution Explorer**.</span></span> <span data-ttu-id="3f5a1-159">**MessageRead.html** ファイルが Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-159">The **MessageRead.html** file opens in Visual Studio.</span></span>
 
-|<span data-ttu-id="a3ba3-162">**プロジェクト**</span><span class="sxs-lookup"><span data-stu-id="a3ba3-162">**Project**</span></span>|<span data-ttu-id="a3ba3-163">**説明**</span><span class="sxs-lookup"><span data-stu-id="a3ba3-163">**Description**</span></span>|
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="3f5a1-160">Visual Studio ソリューションについて理解する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-160">Explore the Visual Studio solution</span></span>
+
+<span data-ttu-id="3f5a1-161">ウィザードの完了後、Visual Studio によって 2 つのプロジェクトを含むソリューションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-161">When you've completed the wizard, Visual Studio creates a solution that contains two projects.</span></span>
+
+|<span data-ttu-id="3f5a1-162">**プロジェクト**</span><span class="sxs-lookup"><span data-stu-id="3f5a1-162">**Project**</span></span>|<span data-ttu-id="3f5a1-163">**説明**</span><span class="sxs-lookup"><span data-stu-id="3f5a1-163">**Description**</span></span>|
 |:-----|:-----|
-|<span data-ttu-id="a3ba3-164">アドイン プロジェクト</span><span class="sxs-lookup"><span data-stu-id="a3ba3-164">Add-in project</span></span>|<span data-ttu-id="a3ba3-165">アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-165">Contains only an XML manifest file, which contains all the settings that describe your add-in.</span></span> <span data-ttu-id="a3ba3-166">これらの設定は、Office ホストがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-166">These settings help the Office host determine when your add-in should be activated and where the add-in should appear.</span></span> <span data-ttu-id="a3ba3-167">プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-167">Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately.</span></span> <span data-ttu-id="a3ba3-168">XML ファイルを変更することで、これらの設定をいつでも変更できます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-168">You can change these settings any time by modifying the XML file.</span></span>|
-|<span data-ttu-id="a3ba3-169">Web アプリケーション プロジェクト</span><span class="sxs-lookup"><span data-stu-id="a3ba3-169">Web application project</span></span>|<span data-ttu-id="a3ba3-p109">Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。アドインを発行する準備が整ったら、この Web アプリケーション プロジェクトを Web サーバーに展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-p109">Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.</span></span>|
+|<span data-ttu-id="3f5a1-164">アドイン プロジェクト</span><span class="sxs-lookup"><span data-stu-id="3f5a1-164">Add-in project</span></span>|<span data-ttu-id="3f5a1-165">アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-165">Contains only an XML manifest file, which contains all the settings that describe your add-in.</span></span> <span data-ttu-id="3f5a1-166">これらの設定は、Office ホストがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-166">These settings help the Office host determine when your add-in should be activated and where the add-in should appear.</span></span> <span data-ttu-id="3f5a1-167">プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-167">Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately.</span></span> <span data-ttu-id="3f5a1-168">XML ファイルを変更することで、これらの設定をいつでも変更できます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-168">You can change these settings any time by modifying the XML file.</span></span>|
+|<span data-ttu-id="3f5a1-169">Web アプリケーション プロジェクト</span><span class="sxs-lookup"><span data-stu-id="3f5a1-169">Web application project</span></span>|<span data-ttu-id="3f5a1-p109">Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。アドインを発行する準備が整ったら、この Web アプリケーション プロジェクトを Web サーバーに展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-p109">Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.</span></span>|
 
-### <a name="update-the-code"></a><span data-ttu-id="a3ba3-173">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-173">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="3f5a1-173">コードを更新する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-173">Update the code</span></span>
 
-1. <span data-ttu-id="a3ba3-174">**MessageRead.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-174">**MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="a3ba3-175">**MessageRead.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-175">In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="3f5a1-174">**MessageRead.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-174">**MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="3f5a1-175">**MessageRead.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-175">In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -191,7 +193,7 @@ ms.locfileid: "42325292"
     </body>
     ```
 
-1. <span data-ttu-id="a3ba3-176">Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.js** を開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-176">Open the file **MessageRead.js** in the root of the web application project.</span></span> <span data-ttu-id="a3ba3-177">このファイルは、アドイン用のスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-177">This file specifies the script for the add-in.</span></span> <span data-ttu-id="a3ba3-178">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-178">Replace the entire contents with the following code and save the file.</span></span>
+1. <span data-ttu-id="3f5a1-176">Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.js** を開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-176">Open the file **MessageRead.js** in the root of the web application project.</span></span> <span data-ttu-id="3f5a1-177">このファイルは、アドイン用のスクリプトを指定します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-177">This file specifies the script for the add-in.</span></span> <span data-ttu-id="3f5a1-178">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-178">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -216,7 +218,7 @@ ms.locfileid: "42325292"
     })();
     ```
 
-1. <span data-ttu-id="a3ba3-179">Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.css** を開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-179">Open the file **MessageRead.css** in the root of the web application project.</span></span> <span data-ttu-id="a3ba3-180">このファイルは、アドイン用のユーザー設定のスタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-180">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="a3ba3-181">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-181">Replace the entire contents with the following code and save the file.</span></span>
+1. <span data-ttu-id="3f5a1-179">Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.css** を開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-179">Open the file **MessageRead.css** in the root of the web application project.</span></span> <span data-ttu-id="3f5a1-180">このファイルは、アドイン用のユーザー設定のスタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-180">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="3f5a1-181">すべての内容を次のコードに置き換え、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-181">Replace the entire contents with the following code and save the file.</span></span>
 
     ```CSS
     html,
@@ -236,17 +238,17 @@ ms.locfileid: "42325292"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="a3ba3-182">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="a3ba3-182">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="3f5a1-182">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="3f5a1-182">Update the manifest</span></span>
 
-1. <span data-ttu-id="a3ba3-p113">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-p113">Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="3f5a1-p113">アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-p113">Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.</span></span>
 
-1. <span data-ttu-id="a3ba3-p114">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+1. <span data-ttu-id="3f5a1-p114">`ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-1. <span data-ttu-id="a3ba3-187">`DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-187">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="a3ba3-188">それを `My Office Add-in` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-188">Replace it with `My Office Add-in`.</span></span>
+1. <span data-ttu-id="3f5a1-187">`DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-187">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="3f5a1-188">それを `My Office Add-in` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-188">Replace it with `My Office Add-in`.</span></span>
 
-1. <span data-ttu-id="a3ba3-189">`Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-189">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="a3ba3-190">それを `My First Outlook add-in` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-190">Replace it with `My First Outlook add-in`.</span></span>
+1. <span data-ttu-id="3f5a1-189">`Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-189">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="3f5a1-190">それを `My First Outlook add-in` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-190">Replace it with `My First Outlook add-in`.</span></span>
 
-1. <span data-ttu-id="a3ba3-191">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-191">Save the file.</span></span>
+1. <span data-ttu-id="3f5a1-191">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-191">Save the file.</span></span>
 
     ```xml
     ...
@@ -258,34 +260,34 @@ ms.locfileid: "42325292"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="a3ba3-192">試してみる</span><span class="sxs-lookup"><span data-stu-id="a3ba3-192">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="3f5a1-192">試してみる</span><span class="sxs-lookup"><span data-stu-id="3f5a1-192">Try it out</span></span>
 
-1. <span data-ttu-id="a3ba3-193">Visual Studio を使用して、F5 キーを押すか **[スタート]** ボタンをクリックして、新しく作成された Outlook アドインをテストします。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-193">Using Visual Studio, test the newly created Outlook add-in by pressing F5 or choosing the **Start** button.</span></span> <span data-ttu-id="a3ba3-194">アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-194">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="3f5a1-193">Visual Studio を使用して、F5 キーを押すか **[スタート]** ボタンをクリックして、新しく作成された Outlook アドインをテストします。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-193">Using Visual Studio, test the newly created Outlook add-in by pressing F5 or choosing the **Start** button.</span></span> <span data-ttu-id="3f5a1-194">アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-194">The add-in will be hosted locally on IIS.</span></span>
 
-1. <span data-ttu-id="a3ba3-195">**[Exchange 電子メールアカウントに接続する]** ダイアログ ボックスで、[Microsoft アカウント](https://account.microsoft.com/account)の電子メール アドレスとパスワードを入力し、**[接続]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-195">In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**.</span></span> <span data-ttu-id="a3ba3-196">Outlook.com のログイン ページがブラウザに表示されたら、前回と同じ資格情報を使用して、メール アカウントにログインします。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-196">When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.</span></span>
+1. <span data-ttu-id="3f5a1-195">**[Exchange 電子メールアカウントに接続する]** ダイアログ ボックスで、[Microsoft アカウント](https://account.microsoft.com/account)の電子メール アドレスとパスワードを入力し、**[接続]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-195">In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**.</span></span> <span data-ttu-id="3f5a1-196">Outlook.com のログイン ページがブラウザに表示されたら、前回と同じ資格情報を使用して、メール アカウントにログインします。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-196">When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="a3ba3-197">**[Exchange メールアカウントに接続]** ダイアログ ボックスが、繰り返しログインを要求する場合、Office 365 テナントのアカウントの基本認証が無効になっている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-197">If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant.</span></span> <span data-ttu-id="a3ba3-198">その場合は、[Microsoft アカウント](https://account.microsoft.com/account) でログインし、アドインをテストしてください。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-198">To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.</span></span>
+    > <span data-ttu-id="3f5a1-197">**[Exchange メールアカウントに接続]** ダイアログ ボックスが、繰り返しログインを要求する場合、Office 365 テナントのアカウントの基本認証が無効になっている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-197">If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant.</span></span> <span data-ttu-id="3f5a1-198">その場合は、[Microsoft アカウント](https://account.microsoft.com/account) でログインし、アドインをテストしてください。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-198">To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.</span></span>
 
-1. <span data-ttu-id="a3ba3-199">Outlook on the web で、メッセージを選択または開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-199">In Outlook on the web, select or open a message.</span></span>
+1. <span data-ttu-id="3f5a1-199">Outlook on the web で、メッセージを選択または開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-199">In Outlook on the web, select or open a message.</span></span>
 
-1. <span data-ttu-id="a3ba3-200">メッセージ内で、アドインのボタンが表示されているオーバーフロー メニューの省略記号を探します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-200">Within the message, locate the ellipsis for the overflow menu containing the add-in's button.</span></span>
+1. <span data-ttu-id="3f5a1-200">メッセージ内で、アドインのボタンが表示されているオーバーフロー メニューの省略記号を探します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-200">Within the message, locate the ellipsis for the overflow menu containing the add-in's button.</span></span>
 
     ![省略記号が強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-owa-1.png)
 
-1. <span data-ttu-id="a3ba3-202">オーバーフロー メニュー内でアドインのボタンを探します。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-202">Within the overflow menu, locate the add-in's button.</span></span>
+1. <span data-ttu-id="3f5a1-202">オーバーフロー メニュー内でアドインのボタンを探します。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-202">Within the overflow menu, locate the add-in's button.</span></span>
 
     ![アドイン ボタンが強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-owa-2.png)
 
-1. <span data-ttu-id="a3ba3-204">ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-204">Click the button to open the add-in's task pane.</span></span>
+1. <span data-ttu-id="3f5a1-204">ボタンをクリックしてアドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-204">Click the button to open the add-in's task pane.</span></span>
 
     ![メッセージ プロパティを表示する Outlook on the web のアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
-    > <span data-ttu-id="a3ba3-206">作業ウィンドウが読み込まれない場合、同じコンピューター上のブラウザーで作業ウィンドウを開いて確認してください。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-206">If the task pane doesn't load, try to verify by opening it in a browser on the same machine.</span></span>
+    > <span data-ttu-id="3f5a1-206">作業ウィンドウが読み込まれない場合、同じコンピューター上のブラウザーで作業ウィンドウを開いて確認してください。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-206">If the task pane doesn't load, try to verify by opening it in a browser on the same machine.</span></span>
 
-### <a name="next-steps"></a><span data-ttu-id="a3ba3-207">次の手順</span><span class="sxs-lookup"><span data-stu-id="a3ba3-207">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="3f5a1-207">次の手順</span><span class="sxs-lookup"><span data-stu-id="3f5a1-207">Next steps</span></span>
 
-<span data-ttu-id="a3ba3-208">おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-208">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="a3ba3-209">次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a3ba3-209">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
+<span data-ttu-id="3f5a1-208">おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-208">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="3f5a1-209">次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3f5a1-209">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
 
 ---
