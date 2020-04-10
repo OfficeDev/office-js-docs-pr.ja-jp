@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 04/07/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cdcb96fbd0766b6751917ec84c5bea9a86b0ce1
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185429"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215090"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -350,6 +350,8 @@ ms.locfileid: "43185429"
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="residLabelName"/>
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="residDetectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />

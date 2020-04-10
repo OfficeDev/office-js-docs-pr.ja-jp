@@ -1,14 +1,14 @@
 ---
 title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
-ms.date: 10/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 84ea058e031fd2334706145bcdf8ca8e530c2c38
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b7fa034eaafb60fb3328cabfe8c39106b8f71c51
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720807"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215097"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
@@ -28,13 +28,15 @@ ms.locfileid: "42720807"
 
 ## <a name="how-to-make-a-contextual-add-in"></a>コンテキスト アドインの作成方法
 
-コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](../reference/manifest/extensionpoint.md) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
+コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
 
 そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例では、検出された電話番号のエンティティを含むメッセージに対してアドインをアクティブにする方法を示します。
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="contextLabel" />
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="detectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
