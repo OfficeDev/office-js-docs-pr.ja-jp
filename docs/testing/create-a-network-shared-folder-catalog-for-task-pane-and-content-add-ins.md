@@ -3,12 +3,12 @@ title: テスト用に Office アドインをサイドロードする
 description: テスト用に Office アドインをサイドロードする方法について説明します。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891125"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215062"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -67,7 +67,7 @@ ms.locfileid: "42891125"
 
     ![カタログが選択されている [セキュリティ センター] ダイアログ](../images/sideload-windows-trust-center-dialog.png)
 
-8. [**OK**] をクリックして [**Word のオプション**] ダイアログ ウィンドウを閉じます。
+8. **[OK** ] ボタンをクリックして [**オプション**] ダイアログウィンドウを閉じます。
 
 9. Office アプリケーションを閉じてからもう一度開くと変更内容が有効になります。
 

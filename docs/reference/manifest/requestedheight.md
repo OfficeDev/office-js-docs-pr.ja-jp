@@ -3,16 +3,16 @@ title: マニフェスト ファイルの RequestedHeight 要素
 description: RequestedHeight 要素は、コンテンツまたはメールアドインの初期の高さ (ピクセル単位) を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 853d12baf290167f3e6a635201e8b5d1d0e35a51
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5f4c3ca1ff39cc3150249fbc824b0db76f6b8a85
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720457"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215041"
 ---
 # <a name="requestedheight-element"></a>RequestedHeight 要素
 
-コンテンツ アドインまたはメール アドインの初期高さ (ピクセル単位) を指定します。 
+コンテンツ アドインまたはメール アドインの初期高さ (ピクセル単位) を指定します。
 
 **アドインの種類:** コンテンツ、メール
 
