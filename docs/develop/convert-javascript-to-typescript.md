@@ -1,14 +1,14 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: Visual Studio の Office アドインプロジェクトを TypeScript を使用するように変換する方法について説明します。
-ms.date: 10/29/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1dbb3503a521f1a7c3e71764a50f02708b667a11
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 4c26c6a04d2f6d3eb91701a1856e2c31c8d00ca0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719043"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225653"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
@@ -53,25 +53,12 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 4. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
 
-5. [**参照**] タブを選択した状態で、検索ボックスに **office-js.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、Office.js ライブラリの TypeScript タイプの定義がプロジェクトに追加されます。
-
-6. 同じ検索ボックスに **jquery.TypeScript.DefinitelyTyped** と入力します。 このパッケージが既にインストールされている場合は、インストールまたは更新します。 これにより、jQuery TypeScript 定義がプロジェクトに追加されます。 jQuery と Office.js の両方のパッケージは、**packages.config** と呼ばれる Visual Studio によって生成された新しいファイルに表示されます。
+5. [**参照**] タブが選択されている状態で、「jquery」と入力し**ます。TypeScript Itely型付き**。 このパッケージをインストールするか、既にインストールされている場合は更新します。 これにより、jQuery TypeScript の定義がプロジェクトに含まれるようになります。 JQuery のパッケージは、Visual Studio によって生成されるファイルに表示されます (**パッケージ .config**と呼ばれます)。
 
     > [!NOTE]
     > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。
 
-7. **Home.ts** で、行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` を見つけて、次のものに置き換えます。
-
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
-    ```
-
-    > [!NOTE]
-    > 現在、TypeScript に変換されたあとのプロジェクトの正常なコンパイルには、以前のコード スニペットに表示されているように数値として要件セット数を指定する必要があります。 これは、実行時に数値`1.10` が `1.1` と評価されるので、残念ながら、要件セット `1.10` サポートに対して `isSetSupported` を使用してテストすることができないためです。 
-    > 
-    > この問題は、**office-js.TypeScript.DefinitelyTyped** NuGet パッケージが現在は旧式であるためです。そしてそれは、プロジェクトでは Office.js に適した最新の TypeScript 定義にアクセスできないことを意味します。 この問題は現在対処中です。問題が解決された場合、この記事は更新されます。
-
-8. **Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。
+6. **Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -80,7 +67,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
         ...
     ```
 
-9. **Home.ts** で、`displaySelectedCells` 関数を見つけて、関数全体を次のコードに置換し、ファイルを保存します。
+7. **Home.ts** で、`displaySelectedCells` 関数を見つけて、関数全体を次のコードに置換し、ファイルを保存します。
 
     ```TypeScript
     function displaySelectedCells() {
@@ -97,7 +84,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
     }
     ```
 
-10. **./Scripts/MessageBanner.ts** で、行 `_onResize(null);` を見つけて、次のものに置き換えます。
+8. **./Scripts/MessageBanner.ts** で、行 `_onResize(null);` を見つけて、次のものに置き換えます。
 
     ```TypeScript
     _onResize();
@@ -132,9 +119,9 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
             var element = document.querySelector('.MessageBanner');
             messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-            
-            // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+
+            // If you're using Excel 2013, use fallback logic.
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -146,7 +133,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.

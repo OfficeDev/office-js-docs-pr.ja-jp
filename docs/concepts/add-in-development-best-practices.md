@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
 description: Office アドインを作成するための開発時にベストプラクティスを適用します。
-ms.date: 03/18/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890540"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225681"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -122,6 +122,7 @@ ms.locfileid: "42890540"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
+- アドインと Office ドキュメント間のデータ交換を最小限にします。 詳細については、「[ループでのコンテキストの同期方法の使用を避ける](correlated-objects-pattern.md)」を参照してください。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 

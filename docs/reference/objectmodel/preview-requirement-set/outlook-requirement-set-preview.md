@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドインおよび Office JavaScript Api で現在プレビューされている機能と Api。
-ms.date: 04/08/2020
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: f8ef7b8c37dbd7539c30457c4922c1c16262381c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185415"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225674"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -156,6 +156,8 @@ Office テーマを取得する機能が追加されました。
 ---
 
 ### <a name="online-meeting-provider-integration"></a>オンライン会議プロバイダーの統合
+
+Outlook mobile アドインでのオンライン会議統合のサポートが追加されました。詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](../../../outlook/online-meeting.md)する」を参照してください。
 
 #### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 拡張点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
 

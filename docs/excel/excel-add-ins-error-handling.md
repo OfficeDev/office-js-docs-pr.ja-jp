@@ -1,14 +1,14 @@
 ---
 title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
-ms.date: 03/19/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: bee5824d8854a55d5ac4041be1335ce239b31a9e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 85fcd580828a2db95cd8e021dec3611ca6591e1c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717167"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225729"
 ---
 # <a name="error-handling"></a>エラー処理
 
@@ -53,25 +53,25 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 
 |error.code | error.message |
 |:----------|:--------------|
-|InvalidArgument |引数が無効であるか、存在しません。または形式が正しくありません。|
-|InvalidRequest  |要求を処理できません。|
-|InvalidReference|この参照は、現在の操作に対して無効です。|
-|InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
-|InvalidSelection|現在の選択内容は、この操作では無効です。|
-|Unauthenticated |必要な認証情報が見つからないか、無効です。|
-|AccessDenied |要求された操作を実行できません。|
-|ItemNotFound |要求されたリソースは存在しません。|
-|ActivityLimitReached|アクティビティの制限に達しました。|
-|GeneralException|要求の処理中に内部エラーが発生しました。|
-|NotImplemented  |要求された機能は実装されていません。|
-|ServiceNotAvailable|サービスを利用できません。|
-|Conflict|競合のため、要求を処理できませんでした。|
-|ItemAlreadyExists|作成中のリソースはすでに存在しています。|
-|UnsupportedOperation|試行中の操作はサポートされていません。|
-|RequestAborted|実行時に要求が中止されました。|
-|ApiNotAvailable|要求された API は使用できません。|
-|InsertDeleteConflict|試行された挿入操作または削除操作で競合が発生しました。|
-|InvalidOperation|試行された操作は、このオブジェクトでは無効です。|
+|`AccessDenied` |要求された操作を実行できません。|
+|`ActivityLimitReached`|アクティビティの制限に達しました。|
+|`ApiNotAvailable`|要求された API は使用できません。|
+|`Conflict`|競合のため、要求を処理できませんでした。|
+|`GeneralException`|要求の処理中に内部エラーが発生しました。|
+|`InsertDeleteConflict`|試行された挿入操作または削除操作で競合が発生しました。|
+|`InvalidArgument` |引数が無効であるか、存在しません。または形式が正しくありません。|
+|`InvalidBinding`  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
+|`InvalidOperation`|試行された操作は、このオブジェクトでは無効です。|
+|`InvalidReference`|この参照は、現在の操作に対して無効です。|
+|`InvalidRequest`  |要求を処理できません。|
+|`InvalidSelection`|現在の選択内容は、この操作では無効です。|
+|`ItemAlreadyExists`|作成中のリソースはすでに存在しています。|
+|`ItemNotFound` |要求されたリソースは存在しません。|
+|`NotImplemented`  |要求された機能は実装されていません。|
+|`RequestAborted`|実行時に要求が中止されました。|
+|`ServiceNotAvailable`|サービスを利用できません。|
+|`Unauthenticated` |必要な認証情報が見つからないか、無効です。|
+|`UnsupportedOperation`|試行中の操作はサポートされていません。|
 
 ## <a name="see-also"></a>関連項目
 
