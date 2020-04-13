@@ -29,6 +29,9 @@
     - name: Script Lab を使用して Office JS API を探索する
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
+    - name: 開発環境をセットアップする
+      href: overview/set-up-your-dev-environment.md
+      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: 中心概念
   items:
     - name: 概要
