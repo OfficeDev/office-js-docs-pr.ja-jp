@@ -161,7 +161,11 @@
                 - name: Office ダイアログ ボックスを使用してビデオを再生する
                   href: develop/dialog-video.md
             - name: パフォーマンス
-              href: concepts/resource-limits-and-performance-optimization.md
+              items:
+                - name: ループで context.sync メソッドを使用しないでください
+                  href: concepts/correlated-objects-pattern.md
+                - name: Office アドインのリソースの制限とパフォーマンスの最適化
+                  href: concepts/resource-limits-and-performance-optimization.md
             - name: プライバシーとセキュリティ
               href: concepts/privacy-and-security.md
             - name: アドインでの API 使用についてアクセス許可を要求する
@@ -956,6 +960,8 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: 場所を取得および設定する
               href: outlook/get-or-set-the-location-of-an-appointment.md
+            - name: オンライン会議を構成する (プレビュー)
+              href: outlook/online-meeting.md
         - name: プライバシーとセキュリティ
           items:
             - name: 概要
