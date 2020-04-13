@@ -1,14 +1,14 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
-ms.date: 01/23/2020
+ms.date: 04/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: 823fd53e71c71f4a845f9a7b5c6177ad3f14745f
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41554021"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185618"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
@@ -330,6 +330,8 @@ ms.locfileid: "41554021"
     <td>Office on the web<br>(モダン)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -345,6 +347,8 @@ ms.locfileid: "41554021"
     <td>Office on the web<br>(クラシック)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -355,9 +359,11 @@ ms.locfileid: "41554021"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Windows での Office<br>(Office 365 サブスクリプションに接続済み)</td>
+    <td>Windows での Office<br>(Office 365 サブスクリプションに接続)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
       - モジュール</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -374,6 +380,8 @@ ms.locfileid: "41554021"
     <td>Windows 版 Office 2019<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
       - モジュール</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -389,6 +397,8 @@ ms.locfileid: "41554021"
     <td>Windows 版 Office 2016<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a><br>
       - モジュール</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -400,7 +410,9 @@ ms.locfileid: "41554021"
   <tr>
     <td>Windows 版 Office 2013<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
-      - メールの作成</td>
+      - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
@@ -408,7 +420,7 @@ ms.locfileid: "41554021"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>iOS 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
+    <td>iOS 上の Office<br>(Office 365 サブスクリプションに接続)</td>
     <td> - メールの読み取り<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -419,9 +431,11 @@ ms.locfileid: "41554021"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
+    <td>Mac 上の Office<br>(Office 365 サブスクリプションに接続)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -437,6 +451,8 @@ ms.locfileid: "41554021"
     <td>Mac 上の Office 2019<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -450,6 +466,8 @@ ms.locfileid: "41554021"
     <td>Mac 上の Office 2016<br>(1 回限りの購入)</td>
     <td> - メールの読み取り<br>
       - メールの作成<br>
+      - 予定の出席者 (読み取り)<br>
+      - 予定の開催者 (作成)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -460,7 +478,7 @@ ms.locfileid: "41554021"
     <td>使用不可</td>
   </tr>
   <tr>
-    <td>Android 上の Office<br>(Office 365 サブスクリプションに接続済み)</td>
+    <td>Android 上の Office<br>(Office 365 サブスクリプションに接続)</td>
     <td> - メールの読み取り<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">アドイン コマンド</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
