@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
-description: ''
-ms.date: 03/10/2020
+description: Office アドインのシングルサインオン (SSO) に関する問題のトラブルシューティング方法と、特別な条件やエラーを処理する方法について説明します。
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596803"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241078"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -29,8 +29,8 @@ ms.locfileid: "42596803"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>getAccessToken からのエラーの原因と処理
 
 このセクションで説明するエラー処理の例については、次を参照してください。
-- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/src/public/javascripts/ssoAuthES6.js)
+- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 

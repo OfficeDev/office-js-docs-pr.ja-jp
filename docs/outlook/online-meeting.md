@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 description: オンライン会議サービスプロバイダー用の Outlook mobile アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 841200d8db1dc4c7a89c953737f0bc5b74edf7ea
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43226030"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241092"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 
@@ -138,7 +138,7 @@ function updateBody(event, existingBody) {
 
 会議の開催者として、会議を作成するときに次の3つの画像のような画面が表示されます。
 
-[[android での会議の作成] 画面のスクリーンショット-contoso の [会議を作成する] 画面のスクリーンショットの作成-contoso-contoso での会議の作成画面のスクリーンショットを切り替える![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+android の[ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [[会議を作成する] 画面のスクリーンショット-contoso-contoso の [会議を作成する] 画面のスクリーンショットを非表示にする-contoso の会議![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![画面を作成する](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>ミーティング UI への参加
 
@@ -156,7 +156,6 @@ function updateBody(event, existingBody) {
   - (時刻)-[終了](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end)([時間](/javascript/api/outlook/office.time?view=outlook-js-preview))
   - [Office. メールボックス. アイテムの場所](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location)([場所](/javascript/api/outlook/office.location?view=outlook-js-preview))
   - [Office.](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) -任意の出席者 ([受信者](/javascript/api/outlook/office.recipients?view=outlook-js-preview))
-  - 「 [Office.](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#organizer) ..」 (開催[者](/javascript/api/outlook/office.organizer?view=outlook-js-preview))
   - [Office.](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) ....../の内容 ([受信者](/javascript/api/outlook/office.recipients?view=outlook-js-preview))
   - [GetAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-)(body, [Body, setasync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-)) (添付[コンテンツ](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body)の添付)
   - [CustomProperties (](/javascript/api/outlook/office.customproperties?view=outlook-js-preview)) のようにし[ます。](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-)

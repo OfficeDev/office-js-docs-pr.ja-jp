@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/13/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: e346392a5d2f643b1484de52a9bddb3e3be52f2f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719456"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241071"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -103,7 +103,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 カスタム関数の表示用の `name` を提供します。
 
 * name が指定されていない場合、id が名前としても使用されます。
-* 使用できる文字は、文字 [Unicode アルファベット](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。
+* 使用できる文字は、文字 [Unicode アルファベット](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。
 * 最初の文字は、アルファベット文字にする必要があります。
 * 最大文字数は 128 文字です。
 
@@ -139,7 +139,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 指定された _url_ が Excel で表示されます。
 
-次の例では、 `helpurl` は www.contoso.com/weatherhelp です。
+次の例で`helpurl`は、が`www.contoso.com/weatherhelp`になります。
 
 ```js
 /**

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 04/13/2020
 description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
 title: Excel カスタム関数のランタイム
 localization_priority: Normal
-ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dc049aa681ae4f7664d5bd92f925e7566c0d7103
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719498"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241043"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel カスタム関数のランタイム
 
@@ -81,7 +81,7 @@ ws.onerror = function (error) {
 
 カスタム関数 (またはアドインの他の部分) 内で、`OfficeRuntime.storage` オブジェクトを使用して、データの格納とデータへのアクセスを実行することができます。 `Storage` は、カスタム関数内では使用できない [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) の代わりとして使用できる、暗号化されていない永続的キー値ストレージ システムです。 `Storage`ドメインごとに 10 MB のデータを提供します。 ドメインは複数のアドインで共有できます。
 
-`Storage` は共有ストレージ ソリューションとして機能することを意図しています。つまり、アドインの複数の部分が同じデータにアクセスできるようになります。 たとえば、ユーザー認証用のトークンを `storage` に保存し、カスタム関数と、作業ウィンドウなどのアドイン UI 要素の両方が、そのトークンにアクセスできるようにすることができます。 同様に、2 つのアドインが同じドメインを共有している場合 (例: www.contoso.com/addin1、www.contoso.com/addin2)、アドイン間で `storage` を介して情報を共有できるようにすることができます。 サブドメインが異なるアドインについては (例: subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2)、`storage` インスタンスも別々となることに留意してください。
+`Storage` は共有ストレージ ソリューションとして機能することを意図しています。つまり、アドインの複数の部分が同じデータにアクセスできるようになります。 たとえば、ユーザー認証用のトークンを `storage` に保存し、カスタム関数と、作業ウィンドウなどのアドイン UI 要素の両方が、そのトークンにアクセスできるようにすることができます。 同様に、2つのアドインが同じドメイン (たとえば`www.contoso.com/addin1`、など`www.contoso.com/addin2`) を共有している場合は、情報を相互間`storage`で共有することもできます。 サブドメインが異なるアドインは、の`storage`インスタンスが異なることに注意してください ( `subdomain.contoso.com/addin1`例`differentsubdomain.contoso.com/addin2`:)。
 
 `storage` は共有の場所として機能することから、キー値の組み合わせが書き換えられる可能性があることにご注意ください。
 

@@ -1,14 +1,14 @@
 ---
 title: インターネットヘッダーを取得および設定する
 description: Outlook アドインでメッセージのインターネットヘッダーを取得および設定する方法について説明します。
-ms.date: 11/04/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d7f38b7564683ce51ed0bd840480b4a8b2040bf6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
+ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166565"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43238218"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Outlook アドインでメッセージのインターネットヘッダーを取得および設定する
 
@@ -33,6 +33,8 @@ EWS 要求を通じてインターネットヘッダーを設定する方法は�
 - すべてのクライアント間で Exchange を残した後に保持されるメールについての情報をスタンプします。
 - メールの読み取りシナリオにおいて、すべてのクライアント間で Exchange のメールが残された後に保持される電子メールの情報を読み取ります。
 - 電子メールの MIME ヘッダー全体にアクセスします。
+
+![インターネットヘッダーの図 テキスト: ユーザー1が電子メールを送信します。 アドインは、ユーザーが電子メールを作成しているときに、カスタムのインターネットヘッダーを管理します。 ユーザー2が電子メールを受信します。 アドインは受信した電子メールからインターネットヘッダーを取得し、カスタムヘッダーを解析して使用します。 ](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>メッセージの作成中にインターネットヘッダーを設定する
 

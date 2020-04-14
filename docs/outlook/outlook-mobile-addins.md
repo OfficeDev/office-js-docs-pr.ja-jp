@@ -1,14 +1,14 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
 description: Outlook Mobile アドインはすべての商用版 Office 365 アカウント、Outlook.com アカウントでサポートされ、近いうちに Gmail アカウントでもサポートされる予定です。
-ms.date: 02/28/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561803"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241085"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
@@ -35,7 +35,7 @@ Outlook Mobile アドインはすべての商用版 Office 365 アカウント�
     - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠**していなければなりません**。
     - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である**必要**があります。
 
-- 現時点では、メールの読み取りのみがサポートされています。つまり、`MobileMessageReadCommandSurface` は、マニフェストのモバイル セクションで宣言する必要がある唯一の [ExtensionPoint](../reference/manifest/extensionpoint.md) になります。
+- 一般的に、メッセージの読み取りモードのみがサポートされています。 これ`MobileMessageReadCommandSurface`は、マニフェストのモバイルセクションで宣言する必要がある唯一の[extensionpoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)です。 ただし、予定の開催者モードは、オンライン会議プロバイダー統合アドインでサポートされており、代わりに[MobileOnlineMeetingCommandSurface 拡張点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)を宣言します。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](online-meeting.md)する」の記事を参照してください。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 40b5ab8c2dcae01238854f5a3bfcc599f6b01a9b
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215090"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241036"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -263,7 +263,7 @@ ms.locfileid: "43215090"
 > [!NOTE]
 > この拡張点は、Office 365 サブスクリプションを使用した Android の[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。
 
-この拡張点は、モバイルフォームファクターの予定に対して、適切なモードのトグルをコマンド画面に配置します。 会議の開催者は、オンライン会議を作成できます。 出席者は、後でオンライン会議に参加できます。
+この拡張点は、モバイルフォームファクターの予定に対して、適切なモードのトグルをコマンド画面に配置します。 会議の開催者は、オンライン会議を作成できます。 出席者は、後でオンライン会議に参加できます。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](../../outlook/online-meeting.md)する」の記事を参照してください。
 
 #### <a name="child-elements"></a>子要素
 
@@ -271,9 +271,11 @@ ms.locfileid: "43215090"
 |:-----|:-----|
 |  [Control](control.md) |  コマンド画面にボタンを追加します。  |
 
-この型の**Extensionpoint**要素には、1つの子要素のみを含めることができます: **Control**要素。
+`ExtensionPoint`この型の要素には、 `Control` 1 つの子要素 (要素) のみを含めることができます。
 
-この拡張点に含まれる**Control**要素の**xsi: type**属性をに`MobileButton`設定する必要があります。
+この`Control`拡張点に含まれる要素の`xsi:type`属性をに`MobileButton`設定する必要があります。
+
+画像`Icon`は、16進コード`#919191`または[他のカラー形式](https://convertingcolors.com/hex-color-919191.html)の同等の画像を使用したグレースケールである必要があります。
 
 #### <a name="example"></a>例
 
@@ -293,7 +295,7 @@ ms.locfileid: "43215090"
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
     </Icon>
     <Action xsi:type="ExecuteFunction">
-      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+      <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>
