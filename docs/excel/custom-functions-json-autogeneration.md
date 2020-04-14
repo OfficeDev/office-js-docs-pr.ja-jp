@@ -1,32 +1,32 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/13/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: e346392a5d2f643b1484de52a9bddb3e3be52f2f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719456"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241071"
 ---
-# <a name="autogenerate-json-metadata-for-custom-functions"></a><span data-ttu-id="8d9ba-103">カスタム関数用の JSON メタデータの自動生成</span><span class="sxs-lookup"><span data-stu-id="8d9ba-103">Autogenerate JSON metadata for custom functions</span></span>
+# <a name="autogenerate-json-metadata-for-custom-functions"></a><span data-ttu-id="e88d7-103">カスタム関数用の JSON メタデータの自動生成</span><span class="sxs-lookup"><span data-stu-id="e88d7-103">Autogenerate JSON metadata for custom functions</span></span>
 
-<span data-ttu-id="8d9ba-104">Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-104">When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function.</span></span> <span data-ttu-id="8d9ba-105">JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-105">The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md).</span></span> <span data-ttu-id="8d9ba-106">JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-106">Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.</span></span>
+<span data-ttu-id="e88d7-104">Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-104">When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function.</span></span> <span data-ttu-id="e88d7-105">JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-105">The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md).</span></span> <span data-ttu-id="e88d7-106">JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-106">Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="8d9ba-107">JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-107">Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.</span></span>
+<span data-ttu-id="e88d7-107">JavaScript または TypeScript 関数のコード コメントに`@customfunction`タグを追加して、カスタム関数としてマークします。</span><span class="sxs-lookup"><span data-stu-id="e88d7-107">Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.</span></span>
 
-<span data-ttu-id="8d9ba-108">関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](https://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-108">The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript.</span></span> <span data-ttu-id="8d9ba-109">詳細については、「[@param](#param) タグ」セクションと「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-109">For more information, see the [@param](#param) tag and [Types](#types) sections.</span></span>
+<span data-ttu-id="e88d7-108">関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](https://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-108">The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript.</span></span> <span data-ttu-id="e88d7-109">詳細については、「[@param](#param) タグ」セクションと「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-109">For more information, see the [@param](#param) tag and [Types](#types) sections.</span></span>
 
-### <a name="adding-a-description-to-a-function"></a><span data-ttu-id="8d9ba-110">関数に説明を追加する</span><span class="sxs-lookup"><span data-stu-id="8d9ba-110">Adding a description to a function</span></span>
+### <a name="adding-a-description-to-a-function"></a><span data-ttu-id="e88d7-110">関数に説明を追加する</span><span class="sxs-lookup"><span data-stu-id="e88d7-110">Adding a description to a function</span></span>
 
-<span data-ttu-id="8d9ba-111">説明は、カスタム関数の機能を理解するためのヘルプが必要な場合に、ヘルプ テキストとしてユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-111">The description is displayed to the user as help text when they need help to understand what your custom function does.</span></span> <span data-ttu-id="8d9ba-112">説明に特定のタグは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-112">The description doesn't require any specific tag.</span></span> <span data-ttu-id="8d9ba-113">JSDoc コメントに簡単な説明を入力するだけです。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-113">Just enter a short text description in the JSDoc comment.</span></span> <span data-ttu-id="8d9ba-114">一般に、説明は JSDoc コメント セクションの先頭に配置されますが、配置場所に関係なく機能します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-114">In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.</span></span>
+<span data-ttu-id="e88d7-111">説明は、カスタム関数の機能を理解するためのヘルプが必要な場合に、ヘルプ テキストとしてユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-111">The description is displayed to the user as help text when they need help to understand what your custom function does.</span></span> <span data-ttu-id="e88d7-112">説明に特定のタグは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-112">The description doesn't require any specific tag.</span></span> <span data-ttu-id="e88d7-113">JSDoc コメントに簡単な説明を入力するだけです。</span><span class="sxs-lookup"><span data-stu-id="e88d7-113">Just enter a short text description in the JSDoc comment.</span></span> <span data-ttu-id="e88d7-114">一般に、説明は JSDoc コメント セクションの先頭に配置されますが、配置場所に関係なく機能します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-114">In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.</span></span>
 
-<span data-ttu-id="8d9ba-115">組み込み関数の説明の例を表示するには、Excel を開き、**[数式]** タブに移動し、**[関数の​​挿入]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-115">To see examples of the built-in function descriptions, open Excel, go to the **Formulas** tab, and choose **Insert function**.</span></span> <span data-ttu-id="8d9ba-116">すべての関数の説明を参照したり、独自のカスタム関数を一覧表示したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-116">You can then browse through all the function descriptions, and also see your own custom functions listed.</span></span>
+<span data-ttu-id="e88d7-115">組み込み関数の説明の例を表示するには、Excel を開き、**[数式]** タブに移動し、**[関数の​​挿入]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-115">To see examples of the built-in function descriptions, open Excel, go to the **Formulas** tab, and choose **Insert function**.</span></span> <span data-ttu-id="e88d7-116">すべての関数の説明を参照したり、独自のカスタム関数を一覧表示したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-116">You can then browse through all the function descriptions, and also see your own custom functions listed.</span></span>
 
-<span data-ttu-id="8d9ba-117">次の例では、「球の体積を計算します。」</span><span class="sxs-lookup"><span data-stu-id="8d9ba-117">In the following example, the phrase "Calculates the volume of a sphere."</span></span> <span data-ttu-id="8d9ba-118">が、カスタム関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-118">is the description for the custom function.</span></span>
+<span data-ttu-id="e88d7-117">次の例では、「球の体積を計算します。」</span><span class="sxs-lookup"><span data-stu-id="e88d7-117">In the following example, the phrase "Calculates the volume of a sphere."</span></span> <span data-ttu-id="e88d7-118">が、カスタム関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-118">is the description for the custom function.</span></span>
 
 ```js
 /**
@@ -37,40 +37,40 @@ ms.locfileid: "42719456"
 ```
 
 
-## <a name="jsdoc-tags"></a><span data-ttu-id="8d9ba-119">JSDoc タグ</span><span class="sxs-lookup"><span data-stu-id="8d9ba-119">JSDoc Tags</span></span>
-<span data-ttu-id="8d9ba-120">Excel カスタム関数では、次の JSDoc タグを利用できます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-120">The following JSDoc tags are supported in Excel custom functions:</span></span>
-* [<span data-ttu-id="8d9ba-121">@cancelable</span><span class="sxs-lookup"><span data-stu-id="8d9ba-121">@cancelable</span></span>](#cancelable)
-* <span data-ttu-id="8d9ba-122">[@customfunction](#customfunction) id 名</span><span class="sxs-lookup"><span data-stu-id="8d9ba-122">[@customfunction](#customfunction) id name</span></span>
-* <span data-ttu-id="8d9ba-123">[@helpurl](#helpurl) url</span><span class="sxs-lookup"><span data-stu-id="8d9ba-123">[@helpurl](#helpurl) url</span></span>
-* <span data-ttu-id="8d9ba-124">[@param](#param) _{type}_ 名前の説明</span><span class="sxs-lookup"><span data-stu-id="8d9ba-124">[@param](#param) _{type}_ name description</span></span>
-* [<span data-ttu-id="8d9ba-125">@requiresAddress</span><span class="sxs-lookup"><span data-stu-id="8d9ba-125">@requiresAddress</span></span>](#requiresAddress)
-* <span data-ttu-id="8d9ba-126">[@returns](#returns) _{type}_</span><span class="sxs-lookup"><span data-stu-id="8d9ba-126">[@returns](#returns) _{type}_</span></span>
-* [<span data-ttu-id="8d9ba-127">@streaming</span><span class="sxs-lookup"><span data-stu-id="8d9ba-127">@streaming</span></span>](#streaming)
-* [<span data-ttu-id="8d9ba-128">@volatile</span><span class="sxs-lookup"><span data-stu-id="8d9ba-128">@volatile</span></span>](#volatile)
+## <a name="jsdoc-tags"></a><span data-ttu-id="e88d7-119">JSDoc タグ</span><span class="sxs-lookup"><span data-stu-id="e88d7-119">JSDoc Tags</span></span>
+<span data-ttu-id="e88d7-120">Excel カスタム関数では、次の JSDoc タグを利用できます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-120">The following JSDoc tags are supported in Excel custom functions:</span></span>
+* [<span data-ttu-id="e88d7-121">@cancelable</span><span class="sxs-lookup"><span data-stu-id="e88d7-121">@cancelable</span></span>](#cancelable)
+* <span data-ttu-id="e88d7-122">[@customfunction](#customfunction) id 名</span><span class="sxs-lookup"><span data-stu-id="e88d7-122">[@customfunction](#customfunction) id name</span></span>
+* <span data-ttu-id="e88d7-123">[@helpurl](#helpurl) url</span><span class="sxs-lookup"><span data-stu-id="e88d7-123">[@helpurl](#helpurl) url</span></span>
+* <span data-ttu-id="e88d7-124">[@param](#param) _{type}_ 名前の説明</span><span class="sxs-lookup"><span data-stu-id="e88d7-124">[@param](#param) _{type}_ name description</span></span>
+* [<span data-ttu-id="e88d7-125">@requiresAddress</span><span class="sxs-lookup"><span data-stu-id="e88d7-125">@requiresAddress</span></span>](#requiresAddress)
+* <span data-ttu-id="e88d7-126">[@returns](#returns) _{type}_</span><span class="sxs-lookup"><span data-stu-id="e88d7-126">[@returns](#returns) _{type}_</span></span>
+* [<span data-ttu-id="e88d7-127">@streaming</span><span class="sxs-lookup"><span data-stu-id="e88d7-127">@streaming</span></span>](#streaming)
+* [<span data-ttu-id="e88d7-128">@volatile</span><span class="sxs-lookup"><span data-stu-id="e88d7-128">@volatile</span></span>](#volatile)
 
 ---
-### <a name="cancelable"></a><span data-ttu-id="8d9ba-129">@cancelable</span><span class="sxs-lookup"><span data-stu-id="8d9ba-129">@cancelable</span></span>
+### <a name="cancelable"></a><span data-ttu-id="e88d7-129">@cancelable</span><span class="sxs-lookup"><span data-stu-id="e88d7-129">@cancelable</span></span>
 <a id="cancelable"/>
 
-<span data-ttu-id="8d9ba-130">関数がキャンセルされた場合にカスタム関数がアクションを実行することを示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-130">Indicates that a custom function wants to perform an action when the function is canceled.</span></span>
+<span data-ttu-id="e88d7-130">関数がキャンセルされた場合にカスタム関数がアクションを実行することを示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-130">Indicates that a custom function wants to perform an action when the function is canceled.</span></span>
 
-<span data-ttu-id="8d9ba-131">最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-131">The last function parameter must be of type `CustomFunctions.CancelableInvocation`.</span></span> <span data-ttu-id="8d9ba-132">関数は `oncanceled` プロパティに関数を割り当て、関数がキャンセルされた場合に実行するアクションを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-132">The function can assign a function to the `oncanceled` property to denote the action to perform when the function is canceled.</span></span>
+<span data-ttu-id="e88d7-131">最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-131">The last function parameter must be of type `CustomFunctions.CancelableInvocation`.</span></span> <span data-ttu-id="e88d7-132">関数は `oncanceled` プロパティに関数を割り当て、関数がキャンセルされた場合に実行するアクションを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-132">The function can assign a function to the `oncanceled` property to denote the action to perform when the function is canceled.</span></span>
 
-<span data-ttu-id="8d9ba-133">最後の関数のパラメーターが `CustomFunctions.CancelableInvocation` 型の場合、タグは表示されませんが、`@cancelable` と見なされます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-133">If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.</span></span>
+<span data-ttu-id="e88d7-133">最後の関数のパラメーターが `CustomFunctions.CancelableInvocation` 型の場合、タグは表示されませんが、`@cancelable` と見なされます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-133">If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.</span></span>
 
-<span data-ttu-id="8d9ba-134">関数には `@cancelable` と `@streaming` の両方のタグを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-134">A function can't have both `@cancelable` and `@streaming` tags.</span></span>
+<span data-ttu-id="e88d7-134">関数には `@cancelable` と `@streaming` の両方のタグを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-134">A function can't have both `@cancelable` and `@streaming` tags.</span></span>
 
 ---
-### <a name="customfunction"></a><span data-ttu-id="8d9ba-135">@customfunction</span><span class="sxs-lookup"><span data-stu-id="8d9ba-135">@customfunction</span></span>
+### <a name="customfunction"></a><span data-ttu-id="e88d7-135">@customfunction</span><span class="sxs-lookup"><span data-stu-id="e88d7-135">@customfunction</span></span>
 <a id="customfunction"/>
 
-<span data-ttu-id="8d9ba-136">構文: @customfunction _id_ _名_</span><span class="sxs-lookup"><span data-stu-id="8d9ba-136">Syntax: @customfunction _id_ _name_</span></span>
+<span data-ttu-id="e88d7-136">構文: @customfunction _id_ _名_</span><span class="sxs-lookup"><span data-stu-id="e88d7-136">Syntax: @customfunction _id_ _name_</span></span>
 
-<span data-ttu-id="8d9ba-137">このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-137">Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.</span></span>
+<span data-ttu-id="e88d7-137">このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-137">Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.</span></span>
 
-<span data-ttu-id="8d9ba-138">このタグは、カスタム関数のメタデータを作成するために必要です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-138">This tag is required to create metadata for the custom function.</span></span>
+<span data-ttu-id="e88d7-138">このタグは、カスタム関数のメタデータを作成するために必要です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-138">This tag is required to create metadata for the custom function.</span></span>
 
-<span data-ttu-id="8d9ba-139">次の例は、カスタム関数を宣言する最も簡単な方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-139">The following example shows the simplest way to declare a custom function.</span></span>
+<span data-ttu-id="e88d7-139">次の例は、カスタム関数を宣言する最も簡単な方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e88d7-139">The following example shows the simplest way to declare a custom function.</span></span>
 
 ```js
 /**
@@ -80,15 +80,15 @@ ms.locfileid: "42719456"
  */
 ```
 
-#### <a name="id"></a><span data-ttu-id="8d9ba-140">ID</span><span class="sxs-lookup"><span data-stu-id="8d9ba-140">id</span></span>
+#### <a name="id"></a><span data-ttu-id="e88d7-140">ID</span><span class="sxs-lookup"><span data-stu-id="e88d7-140">id</span></span>
 
-<span data-ttu-id="8d9ba-141">`id` は、カスタム関数の不変識別子です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-141">The `id` is an invariant identifier for the custom function.</span></span>
+<span data-ttu-id="e88d7-141">`id` は、カスタム関数の不変識別子です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-141">The `id` is an invariant identifier for the custom function.</span></span>
 
-* <span data-ttu-id="8d9ba-142">`id` が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-142">If `id` isn't provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.</span></span>
-* <span data-ttu-id="8d9ba-143">`id` はすべてのカスタム関数で一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-143">The `id` must be unique for all custom functions.</span></span>
-* <span data-ttu-id="8d9ba-144">指定できる文字は、A から Z、a から z、0 から 9、アンダースコア (\_)、ピリオド (.) に制限されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-144">The allowed characters are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).</span></span>
+* <span data-ttu-id="e88d7-142">`id` が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-142">If `id` isn't provided, the JavaScript/TypeScript function name is converted to uppercase and disallowed characters are removed.</span></span>
+* <span data-ttu-id="e88d7-143">`id` はすべてのカスタム関数で一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-143">The `id` must be unique for all custom functions.</span></span>
+* <span data-ttu-id="e88d7-144">指定できる文字は、A から Z、a から z、0 から 9、アンダースコア (\_)、ピリオド (.) に制限されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-144">The allowed characters are limited to: A-Z, a-z, 0-9, underscores (\_), and period (.).</span></span>
 
-<span data-ttu-id="8d9ba-145">次の例では、インクリメントは関数の `id` と `name` です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-145">In the following example, increment is the `id` and the `name` of the function.</span></span>
+<span data-ttu-id="e88d7-145">次の例では、インクリメントは関数の `id` と `name` です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-145">In the following example, increment is the `id` and the `name` of the function.</span></span>
 
 ```js
 /**
@@ -98,16 +98,16 @@ ms.locfileid: "42719456"
  */
 ```
 
-#### <a name="name"></a><span data-ttu-id="8d9ba-146">name</span><span class="sxs-lookup"><span data-stu-id="8d9ba-146">name</span></span>
+#### <a name="name"></a><span data-ttu-id="e88d7-146">name</span><span class="sxs-lookup"><span data-stu-id="e88d7-146">name</span></span>
 
-<span data-ttu-id="8d9ba-147">カスタム関数の表示用の `name` を提供します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-147">Provides the display `name` for the custom function.</span></span>
+<span data-ttu-id="e88d7-147">カスタム関数の表示用の `name` を提供します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-147">Provides the display `name` for the custom function.</span></span>
 
-* <span data-ttu-id="8d9ba-148">name が指定されていない場合、id が名前としても使用されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-148">If name isn't provided, the id is also used as the name.</span></span>
-* <span data-ttu-id="8d9ba-149">使用できる文字は、文字 [Unicode アルファベット](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-149">Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).</span></span>
-* <span data-ttu-id="8d9ba-150">最初の文字は、アルファベット文字にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-150">Must start with a letter.</span></span>
-* <span data-ttu-id="8d9ba-151">最大文字数は 128 文字です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-151">Maximum length is 128 characters.</span></span>
+* <span data-ttu-id="e88d7-148">name が指定されていない場合、id が名前としても使用されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-148">If name isn't provided, the id is also used as the name.</span></span>
+* <span data-ttu-id="e88d7-149">使用できる文字は、文字 [Unicode アルファベット](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、ピリオド (.)、およびアンダースコア (\_)です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-149">Allowed characters: Letters [Unicode Alphabetic character](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).</span></span>
+* <span data-ttu-id="e88d7-150">最初の文字は、アルファベット文字にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-150">Must start with a letter.</span></span>
+* <span data-ttu-id="e88d7-151">最大文字数は 128 文字です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-151">Maximum length is 128 characters.</span></span>
 
-<span data-ttu-id="8d9ba-152">次の例では、INC は関数の`id` で、 `increment` は`name`です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-152">In the following example, INC is the `id` of the function and `increment` is the `name`.</span></span>
+<span data-ttu-id="e88d7-152">次の例では、INC は関数の`id` で、 `increment` は`name`です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-152">In the following example, INC is the `id` of the function and `increment` is the `name`.</span></span>
 
 ```js
 /**
@@ -117,11 +117,11 @@ ms.locfileid: "42719456"
  */
 ```
 
-### <a name="description"></a><span data-ttu-id="8d9ba-153">説明</span><span class="sxs-lookup"><span data-stu-id="8d9ba-153">description</span></span>
+### <a name="description"></a><span data-ttu-id="e88d7-153">説明</span><span class="sxs-lookup"><span data-stu-id="e88d7-153">description</span></span>
 
-<span data-ttu-id="8d9ba-154">説明に特定のタグは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-154">A description doesn't require any specific tag.</span></span> <span data-ttu-id="8d9ba-155">JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-155">Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment.</span></span> <span data-ttu-id="8d9ba-156">既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-156">By default, whatever text is untagged in the JSDoc comment section will be the description of the function.</span></span> <span data-ttu-id="8d9ba-157">Excel では、関数の入力時に、ユーザーにこの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-157">The description appears to users in Excel as they are entering the function.</span></span> <span data-ttu-id="8d9ba-158">次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-158">In the following example, the phrase "A function that adds two numbers" is the description for the custom function with the id property of `ADD`.</span></span>
+<span data-ttu-id="e88d7-154">説明に特定のタグは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-154">A description doesn't require any specific tag.</span></span> <span data-ttu-id="e88d7-155">JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-155">Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment.</span></span> <span data-ttu-id="e88d7-156">既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-156">By default, whatever text is untagged in the JSDoc comment section will be the description of the function.</span></span> <span data-ttu-id="e88d7-157">Excel では、関数の入力時に、ユーザーにこの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-157">The description appears to users in Excel as they are entering the function.</span></span> <span data-ttu-id="e88d7-158">次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-158">In the following example, the phrase "A function that adds two numbers" is the description for the custom function with the id property of `ADD`.</span></span>
 
-<span data-ttu-id="8d9ba-159">次の例では、ADD は関数の `id` と `name` で、 説明が加えられています。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-159">In the following example, ADD is the `id` and `name` of the function and a description is given.</span></span>
+<span data-ttu-id="e88d7-159">次の例では、ADD は関数の `id` と `name` で、 説明が加えられています。</span><span class="sxs-lookup"><span data-stu-id="e88d7-159">In the following example, ADD is the `id` and `name` of the function and a description is given.</span></span>
 
 ```js
 /**
@@ -132,14 +132,14 @@ ms.locfileid: "42719456"
 ```
 
 ---
-### <a name="helpurl"></a><span data-ttu-id="8d9ba-160">@helpurl</span><span class="sxs-lookup"><span data-stu-id="8d9ba-160">@helpurl</span></span>
+### <a name="helpurl"></a><span data-ttu-id="e88d7-160">@helpurl</span><span class="sxs-lookup"><span data-stu-id="e88d7-160">@helpurl</span></span>
 <a id="helpurl"/>
 
-<span data-ttu-id="8d9ba-161">構文: @helpurl _url_</span><span class="sxs-lookup"><span data-stu-id="8d9ba-161">Syntax: @helpurl _url_</span></span>
+<span data-ttu-id="e88d7-161">構文: @helpurl _url_</span><span class="sxs-lookup"><span data-stu-id="e88d7-161">Syntax: @helpurl _url_</span></span>
 
-<span data-ttu-id="8d9ba-162">指定された _url_ が Excel で表示されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-162">The provided _url_ is displayed in Excel.</span></span>
+<span data-ttu-id="e88d7-162">指定された _url_ が Excel で表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-162">The provided _url_ is displayed in Excel.</span></span>
 
-<span data-ttu-id="8d9ba-163">次の例では、 `helpurl` は www.contoso.com/weatherhelp です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-163">In the following example, the `helpurl` is www.contoso.com/weatherhelp.</span></span>
+<span data-ttu-id="e88d7-163">次の例で`helpurl`は、が`www.contoso.com/weatherhelp`になります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-163">In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.</span></span>
 
 ```js
 /**
@@ -151,24 +151,24 @@ ms.locfileid: "42719456"
 ```
 
 ---
-### <a name="param"></a><span data-ttu-id="8d9ba-164">@param</span><span class="sxs-lookup"><span data-stu-id="8d9ba-164">@param</span></span>
+### <a name="param"></a><span data-ttu-id="e88d7-164">@param</span><span class="sxs-lookup"><span data-stu-id="e88d7-164">@param</span></span>
 <a id="param"/>
 
-#### <a name="javascript"></a><span data-ttu-id="8d9ba-165">JavaScript</span><span class="sxs-lookup"><span data-stu-id="8d9ba-165">JavaScript</span></span>
+#### <a name="javascript"></a><span data-ttu-id="e88d7-165">JavaScript</span><span class="sxs-lookup"><span data-stu-id="e88d7-165">JavaScript</span></span>
 
-<span data-ttu-id="8d9ba-166">JavaScript 構文: @param {type} 名_の説明_</span><span class="sxs-lookup"><span data-stu-id="8d9ba-166">JavaScript Syntax: @param {type} name _description_</span></span>
+<span data-ttu-id="e88d7-166">JavaScript 構文: @param {type} 名_の説明_</span><span class="sxs-lookup"><span data-stu-id="e88d7-166">JavaScript Syntax: @param {type} name _description_</span></span>
 
-* <span data-ttu-id="8d9ba-167">`{type}` は、中かっこ内の型の情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-167">`{type}` should specify the type info within curly braces.</span></span> <span data-ttu-id="8d9ba-168">使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-168">See the [Types](#types) section for more information about the types which may be used.</span></span> <span data-ttu-id="8d9ba-169">省略可能: 指定しない場合、`any` 型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-169">Optional: if not specified, the type `any` will be used.</span></span>
-* <span data-ttu-id="8d9ba-170">`name` は、@param タグを適用するパラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-170">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="8d9ba-171">必須です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-171">Required.</span></span>
-* <span data-ttu-id="8d9ba-172">`description` は、Excel で表示される関数のパラメーターの説明を示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-172">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="8d9ba-173">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-173">Optional.</span></span>
+* <span data-ttu-id="e88d7-167">`{type}` は、中かっこ内の型の情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-167">`{type}` should specify the type info within curly braces.</span></span> <span data-ttu-id="e88d7-168">使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-168">See the [Types](#types) section for more information about the types which may be used.</span></span> <span data-ttu-id="e88d7-169">省略可能: 指定しない場合、`any` 型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-169">Optional: if not specified, the type `any` will be used.</span></span>
+* <span data-ttu-id="e88d7-170">`name` は、@param タグを適用するパラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-170">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="e88d7-171">必須です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-171">Required.</span></span>
+* <span data-ttu-id="e88d7-172">`description` は、Excel で表示される関数のパラメーターの説明を示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-172">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="e88d7-173">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-173">Optional.</span></span>
 
-<span data-ttu-id="8d9ba-174">カスタム関数内のパラメーターを省略可能と指定する方法:</span><span class="sxs-lookup"><span data-stu-id="8d9ba-174">To denote a custom function parameter as optional:</span></span>
-* <span data-ttu-id="8d9ba-175">パラメーター名を角かっこで囲みます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-175">Put square brackets around the parameter name.</span></span> <span data-ttu-id="8d9ba-176">例: `@param {string} [text] Optional text`。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-176">For example: `@param {string} [text] Optional text`.</span></span>
+<span data-ttu-id="e88d7-174">カスタム関数内のパラメーターを省略可能と指定する方法:</span><span class="sxs-lookup"><span data-stu-id="e88d7-174">To denote a custom function parameter as optional:</span></span>
+* <span data-ttu-id="e88d7-175">パラメーター名を角かっこで囲みます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-175">Put square brackets around the parameter name.</span></span> <span data-ttu-id="e88d7-176">例: `@param {string} [text] Optional text`。</span><span class="sxs-lookup"><span data-stu-id="e88d7-176">For example: `@param {string} [text] Optional text`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8d9ba-177">省略可能なパラメーターの既定値は `null` です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-177">The default value for optional parameters is `null`.</span></span>
+> <span data-ttu-id="e88d7-177">省略可能なパラメーターの既定値は `null` です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-177">The default value for optional parameters is `null`.</span></span>
 
-<span data-ttu-id="8d9ba-178">次の例では、ADD 関数を使用して 2 つまたは 3 つの数値を加算します。3 番目の数値を省略可能なパラメーターとして使用します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-178">The following example shows a ADD function which adds two or three numbers, with the third number as an optional parameter.</span></span>
+<span data-ttu-id="e88d7-178">次の例では、ADD 関数を使用して 2 つまたは 3 つの数値を加算します。3 番目の数値を省略可能なパラメーターとして使用します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-178">The following example shows a ADD function which adds two or three numbers, with the third number as an optional parameter.</span></span>
 
 ```js
 /**
@@ -181,25 +181,25 @@ ms.locfileid: "42719456"
  */
 ```
 
-#### <a name="typescript"></a><span data-ttu-id="8d9ba-179">TypeScript</span><span class="sxs-lookup"><span data-stu-id="8d9ba-179">TypeScript</span></span>
+#### <a name="typescript"></a><span data-ttu-id="e88d7-179">TypeScript</span><span class="sxs-lookup"><span data-stu-id="e88d7-179">TypeScript</span></span>
 
-<span data-ttu-id="8d9ba-180">TypeScript 構文: @param 名 _の説明_</span><span class="sxs-lookup"><span data-stu-id="8d9ba-180">TypeScript Syntax: @param name _description_</span></span>
+<span data-ttu-id="e88d7-180">TypeScript 構文: @param 名 _の説明_</span><span class="sxs-lookup"><span data-stu-id="e88d7-180">TypeScript Syntax: @param name _description_</span></span>
 
-* <span data-ttu-id="8d9ba-181">`name` は、@param タグを適用するパラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-181">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="8d9ba-182">必須です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-182">Required.</span></span>
-* <span data-ttu-id="8d9ba-183">`description` は、Excel で表示される関数のパラメーターの説明を示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-183">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="8d9ba-184">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-184">Optional.</span></span>
+* <span data-ttu-id="e88d7-181">`name` は、@param タグを適用するパラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-181">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="e88d7-182">必須です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-182">Required.</span></span>
+* <span data-ttu-id="e88d7-183">`description` は、Excel で表示される関数のパラメーターの説明を示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-183">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="e88d7-184">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-184">Optional.</span></span>
 
-<span data-ttu-id="8d9ba-185">使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-185">See the [Types](#types) section for more information about the function parameter types which may be used.</span></span>
+<span data-ttu-id="e88d7-185">使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-185">See the [Types](#types) section for more information about the function parameter types which may be used.</span></span>
 
-<span data-ttu-id="8d9ba-186">カスタム関数のパラメーターを省略可能として示すには、以下のいずれかを実行します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-186">To denote a custom function parameter as optional, do one of the following:</span></span>
-* <span data-ttu-id="8d9ba-187">省略可能なパラメーターを使用する。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-187">Use an optional parameter.</span></span> <span data-ttu-id="8d9ba-188">例: `function f(text?: string)`</span><span class="sxs-lookup"><span data-stu-id="8d9ba-188">For example: `function f(text?: string)`</span></span>
-* <span data-ttu-id="8d9ba-189">パラメーターに既定値を指定する。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-189">Give the parameter a default value.</span></span> <span data-ttu-id="8d9ba-190">例: `function f(text: string = "abc")`</span><span class="sxs-lookup"><span data-stu-id="8d9ba-190">For example: `function f(text: string = "abc")`</span></span>
+<span data-ttu-id="e88d7-186">カスタム関数のパラメーターを省略可能として示すには、以下のいずれかを実行します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-186">To denote a custom function parameter as optional, do one of the following:</span></span>
+* <span data-ttu-id="e88d7-187">省略可能なパラメーターを使用する。</span><span class="sxs-lookup"><span data-stu-id="e88d7-187">Use an optional parameter.</span></span> <span data-ttu-id="e88d7-188">例: `function f(text?: string)`</span><span class="sxs-lookup"><span data-stu-id="e88d7-188">For example: `function f(text?: string)`</span></span>
+* <span data-ttu-id="e88d7-189">パラメーターに既定値を指定する。</span><span class="sxs-lookup"><span data-stu-id="e88d7-189">Give the parameter a default value.</span></span> <span data-ttu-id="e88d7-190">例: `function f(text: string = "abc")`</span><span class="sxs-lookup"><span data-stu-id="e88d7-190">For example: `function f(text: string = "abc")`</span></span>
 
-<span data-ttu-id="8d9ba-191">@param の詳しい説明については、「[JSDoc](https://jsdoc.app/tags-param.html)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-191">For detailed description of the @param see: [JSDoc](https://jsdoc.app/tags-param.html)</span></span>
+<span data-ttu-id="e88d7-191">@param の詳しい説明については、「[JSDoc](https://jsdoc.app/tags-param.html)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-191">For detailed description of the @param see: [JSDoc](https://jsdoc.app/tags-param.html)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8d9ba-192">省略可能なパラメーターの既定値は `null` です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-192">The default value for optional parameters is `null`.</span></span>
+> <span data-ttu-id="e88d7-192">省略可能なパラメーターの既定値は `null` です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-192">The default value for optional parameters is `null`.</span></span>
 
-<span data-ttu-id="8d9ba-193">次の例は、2 つの数値を加算する `add` 関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-193">The following example shows the `add` function that adds two numbers.</span></span>
+<span data-ttu-id="e88d7-193">次の例は、2 つの数値を加算する `add` 関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="e88d7-193">The following example shows the `add` function that adds two numbers.</span></span>
 
 ```ts
 /**
@@ -215,24 +215,24 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="requiresaddress"></a><span data-ttu-id="8d9ba-194">@requiresAddress</span><span class="sxs-lookup"><span data-stu-id="8d9ba-194">@requiresAddress</span></span>
+### <a name="requiresaddress"></a><span data-ttu-id="e88d7-194">@requiresAddress</span><span class="sxs-lookup"><span data-stu-id="e88d7-194">@requiresAddress</span></span>
 <a id="requiresAddress"/>
 
-<span data-ttu-id="8d9ba-195">関数が評価されているセルのアドレスを指定する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-195">Indicates that the address of the cell where the function is being evaluated should be provided.</span></span>
+<span data-ttu-id="e88d7-195">関数が評価されているセルのアドレスを指定する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-195">Indicates that the address of the cell where the function is being evaluated should be provided.</span></span>
 
-<span data-ttu-id="8d9ba-196">最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-196">The last function parameter must be of type `CustomFunctions.Invocation` or a derived type.</span></span> <span data-ttu-id="8d9ba-197">関数が呼び出されると、`address` プロパティにアドレスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-197">When the function is called, the `address` property will contain the address.</span></span> <span data-ttu-id="8d9ba-198">`@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-198">For an example of a function that uses the `@requiresAddress` tag, see [Addressing cell's context parameter](custom-functions-parameter-options.md#addressing-cells-context-parameter).</span></span>
+<span data-ttu-id="e88d7-196">最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-196">The last function parameter must be of type `CustomFunctions.Invocation` or a derived type.</span></span> <span data-ttu-id="e88d7-197">関数が呼び出されると、`address` プロパティにアドレスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-197">When the function is called, the `address` property will contain the address.</span></span> <span data-ttu-id="e88d7-198">`@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-198">For an example of a function that uses the `@requiresAddress` tag, see [Addressing cell's context parameter](custom-functions-parameter-options.md#addressing-cells-context-parameter).</span></span>
 
 ---
-### <a name="returns"></a><span data-ttu-id="8d9ba-199">@returns</span><span class="sxs-lookup"><span data-stu-id="8d9ba-199">@returns</span></span>
+### <a name="returns"></a><span data-ttu-id="e88d7-199">@returns</span><span class="sxs-lookup"><span data-stu-id="e88d7-199">@returns</span></span>
 <a id="returns"/>
 
-<span data-ttu-id="8d9ba-200">構文: @returns {_type_}</span><span class="sxs-lookup"><span data-stu-id="8d9ba-200">Syntax: @returns {_type_}</span></span>
+<span data-ttu-id="e88d7-200">構文: @returns {_type_}</span><span class="sxs-lookup"><span data-stu-id="e88d7-200">Syntax: @returns {_type_}</span></span>
 
-<span data-ttu-id="8d9ba-201">戻り値の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-201">Provides the type for the return value.</span></span>
+<span data-ttu-id="e88d7-201">戻り値の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-201">Provides the type for the return value.</span></span>
 
-<span data-ttu-id="8d9ba-202">`{type}` を省略すると、TypeScript の型情報が使用されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-202">If `{type}` is omitted, the TypeScript type info will be used.</span></span> <span data-ttu-id="8d9ba-203">型情報がない場合、型は `any` になります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-203">If there is no type info, the type will be `any`.</span></span>
+<span data-ttu-id="e88d7-202">`{type}` を省略すると、TypeScript の型情報が使用されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-202">If `{type}` is omitted, the TypeScript type info will be used.</span></span> <span data-ttu-id="e88d7-203">型情報がない場合、型は `any` になります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-203">If there is no type info, the type will be `any`.</span></span>
 
-<span data-ttu-id="8d9ba-204">次の例は、 `@returns` タグを使用する `add` 関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-204">The following example shows the `add` function that uses the `@returns` tag.</span></span>
+<span data-ttu-id="e88d7-204">次の例は、 `@returns` タグを使用する `add` 関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="e88d7-204">The following example shows the `add` function that uses the `@returns` tag.</span></span>
 
 ```ts
 /**
@@ -248,29 +248,29 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="streaming"></a><span data-ttu-id="8d9ba-205">@streaming</span><span class="sxs-lookup"><span data-stu-id="8d9ba-205">@streaming</span></span>
+### <a name="streaming"></a><span data-ttu-id="e88d7-205">@streaming</span><span class="sxs-lookup"><span data-stu-id="e88d7-205">@streaming</span></span>
 <a id="streaming"/>
 
-<span data-ttu-id="8d9ba-206">カスタム関数がストリーミング関数であることを示すのに使用されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-206">Used to indicate that a custom function is a streaming function.</span></span> 
+<span data-ttu-id="e88d7-206">カスタム関数がストリーミング関数であることを示すのに使用されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-206">Used to indicate that a custom function is a streaming function.</span></span> 
 
-<span data-ttu-id="8d9ba-207">最後のパラメーターは、`CustomFunctions.StreamingInvocation<ResultType>` 型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-207">The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.</span></span>
-<span data-ttu-id="8d9ba-208">関数は `void` を返します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-208">The function should return `void`.</span></span>
+<span data-ttu-id="e88d7-207">最後のパラメーターは、`CustomFunctions.StreamingInvocation<ResultType>` 型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-207">The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.</span></span>
+<span data-ttu-id="e88d7-208">関数は `void` を返します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-208">The function should return `void`.</span></span>
 
-<span data-ttu-id="8d9ba-209">ストリーミング関数は値を直接返さず、代わりに、最後のパラメーターを使用して `setResult(result: ResultType)` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-209">Streaming functions don't return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.</span></span>
+<span data-ttu-id="e88d7-209">ストリーミング関数は値を直接返さず、代わりに、最後のパラメーターを使用して `setResult(result: ResultType)` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-209">Streaming functions don't return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.</span></span>
 
-<span data-ttu-id="8d9ba-210">ストリーム関数によってスローされる例外は無視されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-210">Exceptions thrown by a streaming function are ignored.</span></span> <span data-ttu-id="8d9ba-211">`setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-211">`setResult()` may be called with Error to indicate an error result.</span></span> <span data-ttu-id="8d9ba-212">ストリーミング関数と詳細については、「[ストリーミング関数を作成する](./custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-212">For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs.md#make-a-streaming-function).</span></span>
+<span data-ttu-id="e88d7-210">ストリーム関数によってスローされる例外は無視されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-210">Exceptions thrown by a streaming function are ignored.</span></span> <span data-ttu-id="e88d7-211">`setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-211">`setResult()` may be called with Error to indicate an error result.</span></span> <span data-ttu-id="e88d7-212">ストリーミング関数と詳細については、「[ストリーミング関数を作成する](./custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-212">For an example of a streaming function and more information, see [Make a streaming function](./custom-functions-web-reqs.md#make-a-streaming-function).</span></span>
 
-<span data-ttu-id="8d9ba-213">ストリーミング関数は、[@volatile](#volatile) としてマークできません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-213">Streaming functions can't be marked as [@volatile](#volatile).</span></span>
+<span data-ttu-id="e88d7-213">ストリーミング関数は、[@volatile](#volatile) としてマークできません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-213">Streaming functions can't be marked as [@volatile](#volatile).</span></span>
 
 ---
-### <a name="volatile"></a><span data-ttu-id="8d9ba-214">@volatile</span><span class="sxs-lookup"><span data-stu-id="8d9ba-214">@volatile</span></span>
+### <a name="volatile"></a><span data-ttu-id="e88d7-214">@volatile</span><span class="sxs-lookup"><span data-stu-id="e88d7-214">@volatile</span></span>
 <a id="volatile"/>
 
-<span data-ttu-id="8d9ba-215">揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-215">A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed.</span></span> <span data-ttu-id="8d9ba-216">Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-216">Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done.</span></span> <span data-ttu-id="8d9ba-217">このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-217">For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.</span></span>
+<span data-ttu-id="e88d7-215">揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。</span><span class="sxs-lookup"><span data-stu-id="e88d7-215">A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed.</span></span> <span data-ttu-id="e88d7-216">Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-216">Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done.</span></span> <span data-ttu-id="e88d7-217">このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。</span><span class="sxs-lookup"><span data-stu-id="e88d7-217">For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.</span></span>
 
-<span data-ttu-id="8d9ba-218">ストリーミング関数に揮発性関数は使用できません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-218">Streaming functions can't be volatile.</span></span>
+<span data-ttu-id="e88d7-218">ストリーミング関数に揮発性関数は使用できません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-218">Streaming functions can't be volatile.</span></span>
 
-<span data-ttu-id="8d9ba-219">次の関数は揮発性で、 `@volatile` タグを使用します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-219">The following function is volatile and uses the `@volatile` tag.</span></span>
+<span data-ttu-id="e88d7-219">次の関数は揮発性で、 `@volatile` タグを使用します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-219">The following function is volatile and uses the `@volatile` tag.</span></span>
 
 ```js
 /**
@@ -285,36 +285,36 @@ function roll6sided(): number {
 
 ---
 
-## <a name="types"></a><span data-ttu-id="8d9ba-220">型</span><span class="sxs-lookup"><span data-stu-id="8d9ba-220">Types</span></span>
+## <a name="types"></a><span data-ttu-id="e88d7-220">型</span><span class="sxs-lookup"><span data-stu-id="e88d7-220">Types</span></span>
 
-<span data-ttu-id="8d9ba-221">パラメーターの型を指定すると、Excel は値を指定した型に変換してから関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-221">By specifying a parameter type, Excel will convert values into that type before calling the function.</span></span> <span data-ttu-id="8d9ba-222">型が`any`の場合、変換は実行されません。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-222">If the type is `any`, no conversion will be performed.</span></span>
+<span data-ttu-id="e88d7-221">パラメーターの型を指定すると、Excel は値を指定した型に変換してから関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-221">By specifying a parameter type, Excel will convert values into that type before calling the function.</span></span> <span data-ttu-id="e88d7-222">型が`any`の場合、変換は実行されません。</span><span class="sxs-lookup"><span data-stu-id="e88d7-222">If the type is `any`, no conversion will be performed.</span></span>
 
-### <a name="value-types"></a><span data-ttu-id="8d9ba-223">値の型</span><span class="sxs-lookup"><span data-stu-id="8d9ba-223">Value types</span></span>
+### <a name="value-types"></a><span data-ttu-id="e88d7-223">値の型</span><span class="sxs-lookup"><span data-stu-id="e88d7-223">Value types</span></span>
 
-<span data-ttu-id="8d9ba-224">1 つの値は、`boolean`、 `number`、`string`の型のいずれかを使用して表現できます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-224">A single value may be represented using one of the following types: `boolean`, `number`, `string`.</span></span>
+<span data-ttu-id="e88d7-224">1 つの値は、`boolean`、 `number`、`string`の型のいずれかを使用して表現できます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-224">A single value may be represented using one of the following types: `boolean`, `number`, `string`.</span></span>
 
-### <a name="matrix-type"></a><span data-ttu-id="8d9ba-225">マトリックス型</span><span class="sxs-lookup"><span data-stu-id="8d9ba-225">Matrix type</span></span>
+### <a name="matrix-type"></a><span data-ttu-id="e88d7-225">マトリックス型</span><span class="sxs-lookup"><span data-stu-id="e88d7-225">Matrix type</span></span>
 
-<span data-ttu-id="8d9ba-226">2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-226">Use a two-dimensional array type to have the parameter or return value be a matrix of values.</span></span> <span data-ttu-id="8d9ba-227">たとえば、`number[][]`の型は数字のマトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-227">For example, the type `number[][]` indicates a matrix of numbers.</span></span> <span data-ttu-id="8d9ba-228">`string[][]` は、文字列のマトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-228">`string[][]` indicates a matrix of strings.</span></span>
+<span data-ttu-id="e88d7-226">2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。</span><span class="sxs-lookup"><span data-stu-id="e88d7-226">Use a two-dimensional array type to have the parameter or return value be a matrix of values.</span></span> <span data-ttu-id="e88d7-227">たとえば、`number[][]`の型は数字のマトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-227">For example, the type `number[][]` indicates a matrix of numbers.</span></span> <span data-ttu-id="e88d7-228">`string[][]` は、文字列のマトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-228">`string[][]` indicates a matrix of strings.</span></span>
 
-### <a name="error-type"></a><span data-ttu-id="8d9ba-229">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="8d9ba-229">Error type</span></span>
+### <a name="error-type"></a><span data-ttu-id="e88d7-229">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="e88d7-229">Error type</span></span>
 
-<span data-ttu-id="8d9ba-230">非ストリーミング関数は、エラーの種類を返すことによりエラーを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-230">A non-streaming function can indicate an error by returning an Error type.</span></span>
+<span data-ttu-id="e88d7-230">非ストリーミング関数は、エラーの種類を返すことによりエラーを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-230">A non-streaming function can indicate an error by returning an Error type.</span></span>
 
-<span data-ttu-id="8d9ba-231">ストリーミング関数は、エラーの種類で `setResult()` を返してエラーを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-231">A streaming function can indicate an error by calling `setResult()` with an Error type.</span></span>
+<span data-ttu-id="e88d7-231">ストリーミング関数は、エラーの種類で `setResult()` を返してエラーを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-231">A streaming function can indicate an error by calling `setResult()` with an Error type.</span></span>
 
-### <a name="promise"></a><span data-ttu-id="8d9ba-232">Promise</span><span class="sxs-lookup"><span data-stu-id="8d9ba-232">Promise</span></span>
+### <a name="promise"></a><span data-ttu-id="e88d7-232">Promise</span><span class="sxs-lookup"><span data-stu-id="e88d7-232">Promise</span></span>
 
-<span data-ttu-id="8d9ba-233">関数は Promise を返すことができ、Promise が解決されたときに値を提供します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-233">A function can return a Promise, which will provide the value when the promise is resolved.</span></span> <span data-ttu-id="8d9ba-234">Promise が拒否された場合は、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-234">If the promise is rejected, then it is an error.</span></span>
+<span data-ttu-id="e88d7-233">関数は Promise を返すことができ、Promise が解決されたときに値を提供します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-233">A function can return a Promise, which will provide the value when the promise is resolved.</span></span> <span data-ttu-id="e88d7-234">Promise が拒否された場合は、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="e88d7-234">If the promise is rejected, then it is an error.</span></span>
 
-### <a name="other-types"></a><span data-ttu-id="8d9ba-235">その他の型</span><span class="sxs-lookup"><span data-stu-id="8d9ba-235">Other types</span></span>
+### <a name="other-types"></a><span data-ttu-id="e88d7-235">その他の型</span><span class="sxs-lookup"><span data-stu-id="e88d7-235">Other types</span></span>
 
-<span data-ttu-id="8d9ba-236">その他の型は、エラーとして処理されます。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-236">Any other type will be treated as an error.</span></span>
+<span data-ttu-id="e88d7-236">その他の型は、エラーとして処理されます。</span><span class="sxs-lookup"><span data-stu-id="e88d7-236">Any other type will be treated as an error.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="8d9ba-237">次の手順</span><span class="sxs-lookup"><span data-stu-id="8d9ba-237">Next steps</span></span>
-<span data-ttu-id="8d9ba-238">[カスタム関数用の命名規則](custom-functions-naming.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-238">Learn about [naming conventions for custom functions](custom-functions-naming.md).</span></span> <span data-ttu-id="8d9ba-239">または、[JSON ファイルを手で書く](custom-functions-json.md)必要のある[機能をローカライズする](custom-functions-localize.md)方法を確認してください。</span><span class="sxs-lookup"><span data-stu-id="8d9ba-239">Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="e88d7-237">次の手順</span><span class="sxs-lookup"><span data-stu-id="e88d7-237">Next steps</span></span>
+<span data-ttu-id="e88d7-238">[カスタム関数用の命名規則](custom-functions-naming.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="e88d7-238">Learn about [naming conventions for custom functions](custom-functions-naming.md).</span></span> <span data-ttu-id="e88d7-239">または、[JSON ファイルを手で書く](custom-functions-json.md)必要のある[機能をローカライズする](custom-functions-localize.md)方法を確認してください。</span><span class="sxs-lookup"><span data-stu-id="e88d7-239">Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="8d9ba-240">関連項目</span><span class="sxs-lookup"><span data-stu-id="8d9ba-240">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e88d7-240">関連項目</span><span class="sxs-lookup"><span data-stu-id="e88d7-240">See also</span></span>
 
-* [<span data-ttu-id="8d9ba-241">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="8d9ba-241">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="8d9ba-242">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="8d9ba-242">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="e88d7-241">カスタム関数のメタデータ</span><span class="sxs-lookup"><span data-stu-id="e88d7-241">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="e88d7-242">Excel でカスタム関数を作成する</span><span class="sxs-lookup"><span data-stu-id="e88d7-242">Create custom functions in Excel</span></span>](custom-functions-overview.md)
