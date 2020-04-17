@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 description: オンライン会議サービスプロバイダー用の Outlook mobile アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 04/13/2020
+ms.date: 04/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241092"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529114"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 
@@ -144,7 +144,7 @@ android の[ ![](../images/outlook-android-create-online-meeting-load.png)](../i
 
 会議の出席者として、会議を表示するときに次のような画面が表示されます。
 
-[![Android に参加した会議画面のスクリーンショット](../images/outlook-android-join-online-meeting-view.png)](../images/outlook-android-join-online-meeting-view-expanded.png#lightbox)
+[![Android に参加した会議画面のスクリーンショット](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 ## <a name="available-apis"></a>利用可能な Api
 
