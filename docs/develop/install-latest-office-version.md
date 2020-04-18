@@ -1,14 +1,14 @@
 ---
 title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
-ms.date: 01/14/2020
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: ad956135bea0ffccc18fc07f455af5597d0e2341
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b9428cc67160e0680bab5a36438bc1a0dbb3ac17
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718924"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547065"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -18,7 +18,7 @@ ms.locfileid: "42718924"
 
 Office の最新ビルドを取得するためにオプトインするには、次の操作を行います。
 
-- Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://products.office.com/office-insider)」を参照してください。
+- Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://insider.office.com)」を参照してください。
 - 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
 - Mac で Office を実行している場合は、次の操作を行います。
   - Office アプリケーションを起動します。

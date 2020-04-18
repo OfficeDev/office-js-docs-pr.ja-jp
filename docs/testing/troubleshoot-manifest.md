@@ -1,14 +1,14 @@
 ---
 title: Office アドインのマニフェストを検証する
 description: XML スキーマおよびその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
-ms.date: 12/31/2019
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: bb24cdca34ac92fa1ca9f292bc1f52b5fbd01688
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719750"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547234"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -36,16 +36,18 @@ npm run validate
 
 1. [Node.js](https://nodejs.org/download/) をインストールします。
 
-2. プロジェクトのルート ディレクトリから次のコマンドを実行します。 `MANIFEST_FILE` をマニフェスト ファイルの名前に置き換えます。
+2. プロジェクトのルート ディレクトリから次のコマンドを実行します。 
 
     ```command&nbsp;line
-    npx office-addin-manifest validate MANIFEST_FILE
+    npm run validate
     ```
 
     > [!NOTE]
-    > このコマンドを実行すると、「コマンドの構文が無効です」というエラーメッセージが表示されます。 (`validate` コマンドが認識されないため)、次のコマンドを実行してマニフェストを検証します (`MANIFEST_FILE` をマニフェスト ファイル名で置き換えます)。 
+    > このコマンドが使用できない、または動作しない場合は、代わりに次のコマンドを実行して、最新バージョンの office アドインマニフェストツール (マニフェスト`MANIFEST_FILE`ファイルの名前に置き換えられます) を強制的に使用します。
     >
-    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > ```command&nbsp;line
+    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 

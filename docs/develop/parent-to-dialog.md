@@ -1,14 +1,14 @@
 ---
 title: ホストページからダイアログボックスにデータとメッセージを渡す
-description: MessageChild および DialogParentMessageReceived Api を使用してホストページからダイアログにデータを渡す方法について説明します。
-ms.date: 03/11/2020
+description: MessageChild および DialogParentMessageReceived Api を使用して、ホストページからダイアログにデータを渡す方法について説明します。
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 03d89a2e5ffb9060edb25dd8e0c3c71c0dd274eb
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561874"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547058"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>ホストページからダイアログボックスにデータとメッセージを渡す (プレビュー)
 
@@ -17,7 +17,7 @@ ms.locfileid: "42561874"
 > [!Important]
 >
 > - この記事で説明する Api はプレビュー段階です。 開発者は実験を行うことができます。ただし、運用アドインでは使用しないでください。 この API がリリースされるまでは、「次の操作を実行するには」で説明されている方法を使用して、運用アドインの[ダイアログボックスに情報を渡し](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)ます。
-> - この記事に記載されている Api には、Office 365 (サブスクリプション版の Office) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが生産半期チャネルに graduates されている場合、そのビルドではプレビュー機能のサポートがオフになっていることに注意してください。
+> - この記事に記載されている Api には、Office 365 (サブスクリプション版の Office) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが生産半期チャネルに graduates されている場合、そのビルドではプレビュー機能のサポートがオフになっていることに注意してください。
 > - プレビューの初期段階では、Excel、PowerPoint、Word で Api がサポートされています。ただし、Outlook には含まれません。
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
