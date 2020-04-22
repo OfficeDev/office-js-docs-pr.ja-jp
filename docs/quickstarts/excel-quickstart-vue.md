@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/16/2020
+ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff58bf3021be2efed0aef14a505dab8433d92a3
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185562"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529121"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -58,12 +58,12 @@ vue create my-add-in
     プロンプトが表示されたら、以下の情報を入力してアドイン プロジェクトを作成します。
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `my-office-add-in`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
 
-ウィザードを完了すると、`my-office-add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
+ウィザードを完了すると、`My Office Add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
 
 > [!TIP]
 > アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する*次の手順*ガイダンスは無視できます。 この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。
@@ -72,16 +72,29 @@ vue create my-add-in
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。
+1. アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。
 
-```js
-module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
-};
-```
+    ```js
+    var fs = require("fs");
+    var path = require("path");
+    var homedir = require('os').homedir()
+  
+    module.exports = {
+      devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
+      }
+    }
+    ```
+
+2. 端末から次のコマンドを実行して、アドインの証明書をインストールします。
+
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
 ## <a name="update-the-app"></a>アプリを更新する
 
@@ -183,9 +196,7 @@ module.exports = {
    npm run serve
    ```
 
-2. Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。 ブラウザーにサイトの証明書が信頼されていないことが示された場合は、その[証明書を信頼するようコンピューターを構成する](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie)必要があります。
-
-3. `https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。 Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。
+2. Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。 `https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。 Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。
 
 ## <a name="try-it-out"></a>試してみる
 
