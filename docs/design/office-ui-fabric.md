@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの Office UI Fabric 
 description: Office アドインで Office UI Fabric コンポーネントを使用する方法の概要について説明します。
-ms.date: 12/04/2017
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e65e123d6195fc435b12c477985a10a3a2b0399
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5c504de14ee97ff740a80dc7608ae636ff8080ca
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718707"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581912"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric 
 
@@ -66,4 +66,4 @@ Fabric には、次のタイプのコンポーネントを含む、さまざま�
 |**フレームワーク**|**例**|
 |:------------|:----------|
 |**React**|[Office アドインで Office UI Fabric React を使用する](using-office-ui-fabric-react.md )|
-|**Angular**| Angular 1.5 ディレクティブのコミュニティ プロジェクトである「[ngOfficeUIFabric](http://ngofficeuifabric.com/)」と、「[Fabric コンポーネントと Angular 2 コンポーネントとのラッピングについて検討する](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)」を参照してください。|
+|**Angular**| [Fabric コンポーネントを角度2のコンポーネントでラップすることを検討してください。](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

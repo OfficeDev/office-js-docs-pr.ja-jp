@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してピボットテーブルを操作する
 description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5899959b108ace2da35950655ff9313cd94243d3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717104"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581940"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
 
@@ -25,7 +25,8 @@ ms.locfileid: "42717104"
 [PivotTable](/javascript/api/excel/excel.pivottable)は、OFFICE JavaScript API のピボットテーブルの中心的なオブジェクトです。
 
 - `Workbook.pivotTables`および`Worksheet.pivotTables`は、ブックとワークシートの[ピボットテーブル](/javascript/api/excel/excel.pivottable)をそれぞれ含む[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection)です。
-- [ピボットテーブル](/javascript/api/excel/excel.pivottable)に、複数の[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)を持つ[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection)が含まれています。
+- [ピボットテーブル](/javascript/api/excel/excel.pivottable)に、複数の[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)を持つ[PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection)が含まれています。
+- これらの[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)は、[次のセクション](#hierarchies)で説明するように、PivotTable がデータをピボットする方法を定義するために、特定の階層コレクションに追加できます。
 - [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)には、1つだけの[PivotField](/javascript/api/excel/excel.pivotfield)を持つ[pivotfieldcollection](/javascript/api/excel/excel.pivotfieldcollection)が含まれています。 デザインを拡張して OLAP ピボットテーブルが含まれる場合は、これが変更されることがあります。
 - [PivotField](/javascript/api/excel/excel.pivotfield)には、複数の[PivotItems](/javascript/api/excel/excel.pivotitem)を持つ[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection)が含まれています。
 - [ピボットテーブル](/javascript/api/excel/excel.pivottable)には、ピボット[フィールド](/javascript/api/excel/excel.pivotfield)と[PivotItems](/javascript/api/excel/excel.pivotitem)をワークシートのどこに表示するかを定義する[PivotLayout](/javascript/api/excel/excel.pivotlayout)が含まれています。
@@ -166,6 +167,61 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>ピボットテーブルのレイアウトとピボットデータの取得
+
+[PivotLayout](/javascript/api/excel/excel.pivotlayout)は、階層とそのデータの配置を定義します。 レイアウトにアクセスして、データが格納される範囲を決定します。
+
+次の図は、ピボットテーブルの範囲に対応するどの layout 関数呼び出しを示しています。
+
+![レイアウトの範囲取得機能によって返されるピボットテーブルのセクションを示す図。](../images/excel-pivots-layout-breakdown.png)
+
+### <a name="get-data-from-the-pivottable"></a>ピボットテーブルからデータを取得する
+
+レイアウトは、ピボットテーブルをワークシートに表示する方法を定義します。 これは、 `PivotLayout`オブジェクトがピボットテーブル要素で使用される範囲を制御することを意味します。 レイアウトによって提供される範囲を使用して、ピボットテーブルによって収集および集計されるデータを取得します。 特に、を`PivotLayout.getDataBodyRange`使用して、ピボットテーブルによって生成されるものにアクセスします。
+
+次のコードでは、レイアウト (**ファームで販売される Crates の合計**と、前の例で**Crates に販売**された卸売列の**合計の両方**) によって、ピボットテーブルデータの最後の行を取得する方法を示します。 これらの値は、最終的な合計として集計され、セル**E30** (ピボットテーブルの外側) に表示されます。
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range, outside of the PivotTable.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("E30");
+        masterTotalRange.formulas = [["=SUM(" + grandTotalRange.address + ")"]];
+    });
+});
+```
+
+### <a name="layout-types"></a>レイアウトの種類
+
+ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。
+
+次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 このコードサンプルは、さまざまなレイアウト間で循環する方法を示しています。
+
+#### <a name="outline-layout"></a>アウトラインレイアウト
+
+![アウトラインレイアウトを使用したピボットテーブル。](../images/excel-pivots-outline-layout.png)
+
+#### <a name="tabular-layout"></a>表形式レイアウト
+
+![表形式レイアウトを使用したピボットテーブル。](../images/excel-pivots-tabular-layout.png)
+
+## <a name="delete-a-pivottable"></a>ピボットテーブルを削除する
+
+ピボットテーブルは、名前を使用して削除されます。
+
+```js
+Excel.run(function (context) {
+    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
     return context.sync();
 });
 ```
@@ -340,44 +396,6 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts"></a>ピボットテーブルのレイアウト
-
-[PivotLayout](/javascript/api/excel/excel.pivotlayout)は、階層とそのデータの配置を定義します。 レイアウトにアクセスして、データが格納される範囲を決定します。
-
-次の図は、ピボットテーブルの範囲に対応するどの layout 関数呼び出しを示しています。
-
-![レイアウトの範囲取得機能によって返されるピボットテーブルのセクションを示す図。](../images/excel-pivots-layout-breakdown.png)
-
-次のコードは、レイアウトを使用してピボットテーブルデータの最後の行を取得する方法を示しています。 これらの値は総計に対して合計されます。
-
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
-    grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
-});
-```
-
-ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。
-
-次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 このコードサンプルは、さまざまなレイアウト間で循環する方法を示しています。
-
-### <a name="outline-layout"></a>アウトラインレイアウト
-
-![アウトラインレイアウトを使用したピボットテーブル。](../images/excel-pivots-outline-layout.png)
-
-### <a name="tabular-layout"></a>表形式レイアウト
-
-![表形式レイアウトを使用したピボットテーブル。](../images/excel-pivots-tabular-layout.png)
-
 ## <a name="change-hierarchy-names"></a>階層名を変更する
 
 階層フィールドは編集できます。 次のコードは、2つのデータ階層の表示名を変更する方法を示しています。
@@ -392,17 +410,6 @@ Excel.run(function (context) {
         dataHierarchies.items[0].name = "Farm Sales";
         dataHierarchies.items[1].name = "Wholesale";
     });
-});
-```
-
-## <a name="delete-a-pivottable"></a>ピボットテーブルを削除する
-
-ピボットテーブルは、名前を使用して削除されます。
-
-```js
-Excel.run(function (context) {
-    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
 });
 ```
 
