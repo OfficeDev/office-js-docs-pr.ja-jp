@@ -1,4 +1,4 @@
-Outlook アドインは、主に[Mailbox](/javascript/api/outlook/Office.mailbox)オブジェクトを介して公開される api を使用します。 Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインは、主に[Mailbox](/javascript/api/outlook/office.mailbox)オブジェクトを介して公開される api を使用します。 Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
 
 ```js
 // Access the Item object.

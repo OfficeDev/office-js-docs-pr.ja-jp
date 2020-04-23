@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
-ms.date: 03/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030832"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785739"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -16,7 +16,7 @@ Excel JavaScript API を使用して一般的なタスクを実行するには�
 
 ## <a name="minimize-the-number-of-sync-calls"></a>sync() 呼び出しの数を最小限にする
 
-Excel JavaScript API では、```sync()``` は唯一の非同期操作で、状況によっては遅くなる可能性があり、Excel on the web の場合は特にその傾向があります。 パフォーマンスを最適化するには、```sync()``` を呼び出す前にできるだけ多くの変更をキューイングして、呼び出しの数を最小限にします。
+Excel JavaScript API では、`sync()` は唯一の非同期操作で、状況によっては遅くなる可能性があり、Excel on the web の場合は特にその傾向があります。 パフォーマンスを最適化するには、`sync()` を呼び出す前にできるだけ多くの変更をキューイングして、呼び出しの数を最小限にします。
 
 このプラクティスに従うコード サンプルについては 「[Core Concepts - sync()](excel-add-ins-core-concepts.md#sync)」を参照してください。
 
@@ -50,7 +50,7 @@ worksheet.getRange("A1").set({
 
 ## <a name="load-necessary-properties-only"></a>必要なプロパティのみをロードする
 
-Excel JavaScript API では、プロキシ オブジェクトのプロパティを明示的にロードする必要があります。  空の ```load()``` 呼び出しで、すべてのプロパティを一度にロードすることはできますが、そのアプローチは大きなパフォーマンス オーバーヘッドを持つ可能性があります。  代わりに、必要なプロパティだけをロードすることをお勧めします。特に、多数のプロパティを持つオブジェクトの場合はそうして下さい。
+Excel JavaScript API では、プロキシ オブジェクトのプロパティを明示的にロードする必要があります。  空の `load()` 呼び出しで、すべてのプロパティを一度にロードすることはできますが、そのアプローチは大きなパフォーマンス オーバーヘッドを持つ可能性があります。  代わりに、必要なプロパティだけをロードすることをお勧めします。特に、多数のプロパティを持つオブジェクトの場合はそうして下さい。
 
 たとえば、range オブジェクトの`address`プロパティのみを読み取る場合は、 `load()`メソッドを呼び出すときにそのプロパティのみを指定します。
 
@@ -125,6 +125,8 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+数式の計算のみが中断されることに注意してください。 変更された参照はまだ再構築されています。 たとえば、ワークシートの名前を変更しても、そのワークシートへの数式の参照は更新されます。
 
 ### <a name="suspend-screen-updating"></a>画面の更新を停止する
 

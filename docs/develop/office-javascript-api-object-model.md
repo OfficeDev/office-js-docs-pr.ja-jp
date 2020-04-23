@@ -1,14 +1,14 @@
 ---
 title: 共通 JavaScript API オブジェクト モデル
 description: Office JavaScript 共通 API オブジェクトモデルについて
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 0944ed36f2d8e4a4ed557dbd25e9f21be137cdaf
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 4f1f3e0de81e2422c43a9777b108783bb7810c3b
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719449"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785706"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
@@ -20,9 +20,9 @@ Office JavaScript アドインは、ホストの基礎となる機能へのア�
 
 **適用対象:** すべてのアドインの種類
 
-アドインが[初期化](initialize-add-in.md)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/Office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
+アドインが[初期化](initialize-add-in.md)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
 
-たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/outlook/Office.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
+たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/outlook/office.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
 **Context** オブジェクトからは、[contentLanguage](/javascript/api/office/office.context#contentlanguage) プロパティと [displayLanguage](/javascript/api/office/office.context#displaylanguage) プロパティにもアクセスできます。これらのプロパティによって、ドキュメント、アイテム、ホスト アプリケーションで使用されるロケール (言語) を決定できます。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingsettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
@@ -67,7 +67,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
  **適用対象:** コンテンツ アドインおよび作業ウィンドウ アドインの種類
 
-異なる Office ドキュメント間でシームレスに動作する拡張機能を作成するために、Office JavaScript API は共通のデータ型を使用して各 Office アプリケーションの特殊性を抽象化し、異なるドキュメントのコンテンツを3つに強制的に強制することができます。共通のデータ型。
+異なる Office ドキュメント間でシームレスに動作する拡張機能を作成するために、Office JavaScript API は、共通のデータ型と異なるドキュメントのコンテンツを3つの共通のデータ型に強制的に変換する機能を通じて、各 Office アプリケーションの特殊性を抽象化します。
 
 
 #### <a name="common-data-types"></a>共通のデータ型
@@ -154,7 +154,7 @@ API の [CustomXmlParts](/javascript/api/office/office.customxmlparts) オブジ
 
 **適用対象:** Outlook アドイン
 
-Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/Office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/Office.mailbox) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/outlook/Office.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/office.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/outlook/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
 
 ```js
 // Access the Item object.

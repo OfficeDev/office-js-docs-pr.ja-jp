@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの状態と設定を管理する
 description: Outlook アドインのアドインの状態と設定を保存する方法について説明します。
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 3cb4f7d6e31fd4d37e01939f743682f60f24f959
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596649"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785782"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Outlook アドインの状態と設定を管理する
 
@@ -65,7 +65,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-**saveAsync** メソッドは、ローミング設定を非同期で保存し、オプションのコールバック関数を受け取ります。 このコード例では、`saveMyAppSettingsCallback` という名前のコールバック関数を **saveAsync** メソッドに渡します。 非同期呼び出しが返されると、`saveMyAppSettingsCallback` 関数の _asyncResult_ パラメーターが [AsyncResult](/javascript/api/outlook) オブジェクトにアクセスします。このオブジェクトを使用すると、**AsyncResult.status** プロパティで操作の成功または失敗を判定することができます。
+**saveAsync** メソッドは、ローミング設定を非同期で保存し、オプションのコールバック関数を受け取ります。 このコード例では、`saveMyAppSettingsCallback` という名前のコールバック関数を **saveAsync** メソッドに渡します。 非同期呼び出しが返されると、`saveMyAppSettingsCallback` 関数の _asyncResult_ パラメーターが [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトにアクセスします。このオブジェクトを使用すると、**AsyncResult.status** プロパティで操作の成功または失敗を判定することができます。
 
 ### <a name="removing-a-roaming-setting"></a>ローミング設定の削除
 

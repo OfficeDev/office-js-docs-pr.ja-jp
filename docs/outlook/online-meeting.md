@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 description: オンライン会議サービスプロバイダー用の Outlook mobile アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529114"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744860"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
 
@@ -24,7 +24,10 @@ ms.locfileid: "43529114"
 
 ユーザーがアドインを使用してオンライン会議を作成できるようにするには`MobileOnlineMeetingCommandSurface` 、マニフェストで親要素`MobileFormFactor`の下に拡張点を構成する必要があります。 その他のフォームファクターはサポートされていません。
 
-次の例は、 `MobileFormFactor`要素と`MobileOnlineMeetingCommandSurface`拡張点を含むマニフェストのサンプルを示しています。
+次の例は、 `MobileFormFactor`要素と`MobileOnlineMeetingCommandSurface`拡張点を含むマニフェストからの抜粋を示しています。
+
+> [!TIP]
+> Outlook アドインのマニフェストの詳細については、「outlook[アドインのマニフェスト](manifests.md)」および「 [outlook Mobile のアドインコマンドのサポートを追加](add-mobile-support.md)する」を参照してください。
 
 ```xml
 ...
