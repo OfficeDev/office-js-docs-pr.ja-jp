@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 83568d7bb3ec1706fb9a2fb373be75b0774d9d94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717370"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547079"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -235,7 +235,7 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>新しい関数をお試しください。 セル <strong>C1</strong> にテキスト <strong>=CONTOSO.CLOCK())</strong> を入力し、Enter キーを押します。 現在の日付が表示されます。この日付は 1 秒ごとにアップデートされます。 このクロックはループ上の単なるタイマーですが、リアルタイム データの Web 要求を行うより複雑な関数にタイマーを設定するという同じ考え方を使用できます。</li>
+<li>新しい関数をお試しください。 セル <strong>C1</strong> にテキスト <strong>=CONTOSO.CLOCK()</strong> を入力し、Enter キーを押します。 現在の日付が表示されます。この日付は 1 秒ごとにアップデートされます。 このクロックはループ上の単なるタイマーですが、リアルタイム データの Web 要求を行うより複雑な関数にタイマーを設定するという同じ考え方を使用できます。</li>
 </ol>
 
 ## <a name="next-steps"></a>次の手順

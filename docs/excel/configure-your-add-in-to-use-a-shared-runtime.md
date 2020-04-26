@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
+ms.date: 04/16/2020
 title: ブラウザーのランタイムを共有するように Excel アドインを構成する (プレビュー)
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f84de010787921eeb13205935b733ec36b2c3d37
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719330"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547249"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>共有の JavaScript ランタイムを使用するように Excel アドインを構成する (プレビュー)
 
@@ -116,11 +116,10 @@ yo office
 
 共有ランタイムを使用する予定がある場合は、複数の作業ウィンドウを使用するようにアドインを設計しないでください。 共有ランタイムは、1 つの作業ウィンドウのみサポートします。 `<TaskpaneID>` のない作業ウィンドウは、別の作業ウィンドウとして扱われますのでご注意ください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-次の記事を参照して、共有ランタイムの機能をいくつかお試しください。
-
-- [カスタム関数から Excel API を呼び出す](call-excel-apis-from-custom-function.md)
+- Excel JavaScript Api の使用および共有ランタイムでの Excel のカスタム関数の使用方法の詳細については、「[カスタム関数から Excel API を呼び出す](call-excel-apis-from-custom-function.md)」の記事を参照してください。
+- [パターンアンドプラクティス]のサンプル [リボンと作業ウィンドウの UI を管理し、ドキュメント オープンのコードを実行](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)を探索して、共有されている JavaScript ランタイムの大規模な例をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 

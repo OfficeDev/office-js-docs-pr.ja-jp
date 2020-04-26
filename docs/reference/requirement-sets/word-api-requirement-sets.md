@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の要件セット
-description: Word ビルド用の Office アドイン要件セットの情報
-ms.date: 03/11/2020
+description: Word ビルド用の Office アドイン要件セットの情報。
+ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 41cb1189bba31c83958c1c1284f347b615a5a220
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: 69addff587b026ab717a438e204b1258b06266b6
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600712"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547221"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
@@ -26,7 +26,7 @@ Word アドインは、Windows での Office 2016 以降、Office on the web、i
 
 |  要件セット  |   Windows での Office\*<br>(Office 365 サブスクリプションに接続)  |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|
-| [プレビュー](word-preview-apis.md) | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://products.office.com/office-insider)に参加する必要があります) |
+| [プレビュー](word-preview-apis.md) | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://insider.office.com)に参加する必要があります) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | バージョン 1612 (ビルド 7668.1000) 以降| 2017 年 3 月、2.22 以降 | 2017 年 3 月、15.32 以降| 2017 年 3 月 |
 | [WordApi 1.2](word-api-1-2-requirement-set.md) | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 |
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 |
