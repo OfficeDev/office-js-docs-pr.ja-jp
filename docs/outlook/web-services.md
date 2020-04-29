@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインから Exchange Web サービス (EWS) を使用する
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
-ms.date: 10/31/2019
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 1f497452519111a82968affdf418f750945c53db
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d3f400b7f6c5cb65233dfaf66cd4c592bf975f65
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325320"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930310"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -83,24 +83,24 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
    ```
 
 - 次に示すよう`textContent`に、DOM プロパティを使用して、EWS 応答のタグの内容を取得します。
-    
+
    ```js
       content = $.parseJSON(value.textContent);
    ```
 
    Internet Explorer で`innerHTML`は、などの他のプロパティは EWS 応答のいくつかのタグに対して機能しない場合があります。
-    
+
 
 ## <a name="example"></a>例
 
 次の例は`makeEwsRequestAsync` 、 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作を使用してアイテムの件名を取得するために呼び出しを行います。この例には、次の3つの関数が含まれています。
 
 -  `getSubjectRequest`&ndash;入力としてアイテム ID を受け取り、指定されたアイテムに対して`GetItem`呼び出す SOAP 要求の XML を返します。
-    
+
 -  `sendRequest`&ndash; [ `getSubjectRequest`呼び出し] 選択したアイテムの soap 要求を取得し、soap 要求とコールバックメソッド`callback` `makeEwsRequestAsync`を渡して、指定されたアイテムの件名を取得します。
-    
+
 -  `callback` &ndash; 指定のアイテムの件名とその他の情報が含まれている SOAP 応答を処理します。
-    
+
 
 ```js
 function getSubjectRequest(id) {
@@ -148,20 +148,20 @@ function callback(asyncResult)  {
 
 ## <a name="ews-operations-that-add-ins-support"></a>アドインでサポートしている EWS 操作
 
-Outlook アドインは、メソッドによって`makeEwsRequestAsync` EWS で利用可能な操作のサブセットにアクセスできます。EWS 操作についてよく知らない場合、または`makeEwsRequestAsync`メソッドを使用して操作にアクセスする方法については、最初に SOAP 要求の例を使用して、_データ_引数をカスタマイズしてください。 
+Outlook アドインは、メソッドによって`makeEwsRequestAsync` EWS で利用可能な操作のサブセットにアクセスできます。EWS 操作についてよく知らない場合、または`makeEwsRequestAsync`メソッドを使用して操作にアクセスする方法については、最初に SOAP 要求の例を使用して、_データ_引数をカスタマイズしてください。
 
 次に、メソッドの`makeEwsRequestAsync`使用方法を説明します。
 
 1. XML 内のアイテム ID および関係する EWS 操作属性を適切な値に置き換えます。
-    
+
 2. SOAP 要求をの`makeEwsRequestAsync` _data_パラメーターの引数として含めます。
-    
+
 3. コールバックメソッドを指定し`makeEwsRequestAsync`て呼び出しを行います。
-    
+
 4. コールバック メソッド内で、SOAP 応答内の操作の結果を検証します。
-    
+
 5. 必要に応じて EWS 操作の結果を使用します。
-    
+
 次の表は、アドインがサポートしている EWS 操作を示しています。SOAP の要求と応答の例を表示するには、各操作のリンクを選択します。EWS 操作の詳細については、「 [Exchange での EWS の操作](/exchange/client-developer/web-service-reference/ews-operations-in-exchange)」を参照してください。
 
 **表 2サポートされている EWS 操作**
@@ -208,26 +208,20 @@ Outlook アドインは、メソッドによって`makeEwsRequestAsync` EWS で�
 `makeEwsRequestAsync`メソッドを使用する場合、要求は現在のユーザーの電子メールアカウントの資格情報を使用して認証されます。 この`makeEwsRequestAsync`メソッドは、ユーザーの資格情報を管理して、要求に対して認証の資格情報を提供する必要がないようにします。
 
 > [!NOTE]
-> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps)または[set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) cmldet を使用して、クライアントアクセスサーバーの Ews ディレクトリで_oauthauthentication_パラメーターを**TRUE**に設定し、 `makeEwsRequestAsync`メソッドで ews 要求を行うことができるようにする必要があります。
+> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps)または[set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps)コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで_oauthauthentication_パラメーターを**TRUE**に設定し、 `makeEwsRequestAsync`メソッドで ews 要求を行うことができるようにする必要があります。
 
 アドインは、アドインマニフェストで`ReadWriteMailbox` `makeEwsRequestAsync`メソッドを使用するためのアクセス許可を指定する必要があります。 アクセス許可の`ReadWriteMailbox`使用の詳細については、「 [ReadWriteMailbox permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) For [Outlook アドインのアクセス許可](understanding-outlook-add-in-permissions.md)について」を参照してください。
 
-> [!NOTE]
-> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps)または[set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) cmldet を使用して、クライアントアクセスサーバーの Ews ディレクトリで_oauthauthentication_パラメーターを**TRUE**に設定し、 `makeEwsRequestAsync`メソッドで ews 要求を行うことができるようにする必要があります。
-
-
-
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)   
+- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)
 - [Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)
 - 
-  [Exchange 用 EWS リファレンス](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)   
+  [Exchange 用 EWS リファレンス](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - 
   [Exchange での Outlook 用メール アプリと EWS](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
-   
+
 ASP.NET Web API を使用してアドイン用のバックエンド サービスを作成する場合は、以下の資料を参照してください。
 
-- [ASP.NET Web API を使用して Office アドイン用 Web サービスを作成する](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)    
+- [ASP.NET Web API を使用して Office アドイン用 Web サービスを作成する](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)
 - [ASP.NET Web API を使用した HTTP サービスの構築に関する基本](https://www.asp.net/web-api)
-    

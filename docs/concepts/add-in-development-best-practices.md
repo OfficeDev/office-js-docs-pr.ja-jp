@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
 description: Office アドインを作成するための開発時にベストプラクティスを適用します。
-ms.date: 04/09/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 422e0ae57480481590a15f695e5942f712961cc1
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225681"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930283"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -135,6 +135,10 @@ ms.locfileid: "43225681"
 - タイトルと説明でアドインの価値提案を行います。ブランドに依存しないでください。
 
 - ユーザーがアドインを見つけて使うことができる Web サイトを作成します。
+
+## <a name="use-javascript-that-supports-internet-explorer"></a>Internet Explorer をサポートする JavaScript の使用
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## <a name="see-also"></a>関連項目
 

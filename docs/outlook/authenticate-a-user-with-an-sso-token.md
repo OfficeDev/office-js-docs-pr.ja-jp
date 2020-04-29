@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
-ms.date: 11/19/2019
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ee3ece5929df602a35ddd9883c08e25164d8a22
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 588979159446b2ceb0b1bce834d72e6853cef5ee
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721031"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930303"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "42721031"
 Office アドインの SSO の概要については、[「Office アドインのシングル サインオンを有効化する」](../develop/sso-in-office-add-ins.md) および[「Office アドインの Microsoft Graph への承認」](../develop/authorize-to-microsoft-graph.md)を参照してください。
 
 > [!NOTE]
-> SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。
+> SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。 ただし、運用環境のアドインではベータ版の Api**を使用しないでください**。
 
 ## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>Office 365 テナントで先進認証を有効にする
 

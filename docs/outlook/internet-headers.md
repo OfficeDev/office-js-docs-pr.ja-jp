@@ -1,14 +1,14 @@
 ---
 title: インターネットヘッダーを取得および設定する
 description: Outlook アドインでメッセージのインターネットヘッダーを取得および設定する方法について説明します。
-ms.date: 04/10/2020
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238218"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930289"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Outlook アドインでメッセージのインターネットヘッダーを取得および設定する
 
@@ -28,13 +28,13 @@ EWS 要求を通じてインターネットヘッダーを設定する方法は�
 
 ## <a name="purpose-of-the-internet-headers-api"></a>インターネットヘッダー API の目的
 
-要件セット1.8 で導入されたインターネットヘッダー Api を使用すると、開発者は次のことを行うことができます。
+[要件セット 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)で導入されたインターネットヘッダー api を使用すると、開発者は次のことを行うことができます。
 
 - すべてのクライアント間で Exchange を残した後に保持されるメールについての情報をスタンプします。
 - メールの読み取りシナリオにおいて、すべてのクライアント間で Exchange のメールが残された後に保持される電子メールの情報を読み取ります。
 - 電子メールの MIME ヘッダー全体にアクセスします。
 
-![インターネットヘッダーの図 テキスト: ユーザー1が電子メールを送信します。 アドインは、ユーザーが電子メールを作成しているときに、カスタムのインターネットヘッダーを管理します。 ユーザー2が電子メールを受信します。 アドインは受信した電子メールからインターネットヘッダーを取得し、カスタムヘッダーを解析して使用します。 ](../images/outlook-internet-headers.png)
+![インターネットヘッダーの図 テキスト: ユーザー1が電子メールを送信します。 アドインは、ユーザーが電子メールを作成しているときに、カスタムのインターネットヘッダーを管理します。 ユーザー2が電子メールを受信します。 アドインは受信した電子メールからインターネットヘッダーを取得し、カスタムヘッダーを解析して使用します。](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>メッセージの作成中にインターネットヘッダーを設定する
 
@@ -132,7 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> このサンプルは、単純なケースで機能します。 複雑な情報取得 ( [RFC 2822](https://tools.ietf.org/html/rfc2822)で説明されているように、複数インスタンスのヘッダー、または折りたたまれた値など) については、適切な MIME 解析ライブラリを使用してみてください。
+> このサンプルは、単純なケースで機能します。 複雑な情報取得 ( [RFC 2822](https://tools.ietf.org/html/rfc2822)で説明されているように、複数インスタンスのヘッダー、または折りたたまれた値など) を取得するには、適切な MIME 解析ライブラリを使用してみてください。
+
+## <a name="recommended-practices"></a>推奨プラクティス
+
+現時点では、インターネットヘッダーはユーザーのメールボックス上の有限リソースです。 クォータが不足している場合は、そのメールボックスにより多くのインターネットヘッダーを作成することはできません。これにより、これに依存するクライアントから予期しない動作が発生する可能性があります。
+
+アドインでインターネットヘッダーを作成するときには、次のガイドラインを適用します。
+
+- 必要なヘッダーの最小数を作成します。
+- 後で再利用して値を更新できるように、名前のヘッダー。 そのため、ユーザーの入力やタイムスタンプなどに基づいて、変数の方法でヘッダーに名前を付けることは避けてください。
 
 ## <a name="see-also"></a>関連項目
 
