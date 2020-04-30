@@ -1,34 +1,36 @@
 ---
 title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
-ms.date: 11/05/2019
+ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: c7fc3f72dd04b2a64f6f5ce34732885a1a917001
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dacd4677161def3f1580d1cbc953f73a7158ac9d
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720842"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930296"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
 Outlook アドインは、アドインをホストするサーバー、内部ネットワーク、クラウド内の別の場所などに関わらず、インターネット上のあらゆる場所から情報にアクセスできます。 その情報が保護されている場合、アドインにはユーザーを認証する方法が必要になります。 Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 
-## <a name="single-sign-on-access-token"></a>シングル サインオン アクセス トークン
+## <a name="single-sign-on-access-token-preview"></a>シングル サインオン アクセス トークン (プレビュー)
 
 シングル サインオン アクセス トークンは、アドインがアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出すための、シームレスな方法を提供します。 ユーザーが資格情報を入力する必要がないため、この機能は摩擦を低減します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+> 現在、シングル サインオン API は、Word、Excel、Outlook、PowerPoint のプレビューでサポートされていますが、運用環境のアドインでは**使用してはいけません**。シングル サインオン API の現在のサポート対象に関する詳細については、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+>
 > SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。
+>
 > Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 アドインが次の場合は、SSO アクセス トークンの使用を検討してください。
 
 - 主に Office 365 ユーザーが使用する。
 - 次のものにアクセスする必要がある。
-    - Microsoft Graph の一部として公開されている Microsoft サービス
-    - ユーザーが制御する Microsoft 以外のサービス
+  - Microsoft Graph の一部として公開されている Microsoft サービス
+  - ユーザーが制御する Microsoft 以外のサービス
 
 SSO 認証方法は、Azure Active Directory が提供する [OAuth2 On-Behalf-Of フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を使用します。 それには、アドインを[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)に登録し、必要な Microsoft Graph スコープをマニフェストで指定する必要があります。
 
