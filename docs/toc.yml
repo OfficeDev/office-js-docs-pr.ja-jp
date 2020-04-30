@@ -3,8 +3,11 @@
 - name: Office アドインについて
   href: overview/office-add-ins.md
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 開始
+- name: 概要
   items:
+    - name: ここから開始! 初心者向けガイド
+      href: overview/learning-path-beginner.md
+      displayName: develop
     - name: Office アドインを構築する
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
@@ -754,7 +757,7 @@
           href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
         - name: API リファレンス
-          href: reference/outlook-api-reference-preview.md
+          href: reference/outlook-api-reference-1-8.md
           displayName: Outlook
         - name: API オブジェクト モデル
           items:
