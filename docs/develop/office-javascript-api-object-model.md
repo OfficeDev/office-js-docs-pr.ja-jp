@@ -1,14 +1,14 @@
 ---
 title: 共通 JavaScript API オブジェクト モデル
 description: Office JavaScript 共通 API オブジェクトモデルについて
-ms.date: 04/22/2020
+ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f1f3e0de81e2422c43a9777b108783bb7810c3b
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
+ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785706"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "43952256"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
@@ -22,9 +22,9 @@ Office JavaScript アドインは、ホストの基礎となる機能へのア�
 
 アドインが[初期化](initialize-add-in.md)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
 
-たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/outlook/office.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
+たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/office/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトからは、[contentLanguage](/javascript/api/office/office.context#contentlanguage) プロパティと [displayLanguage](/javascript/api/office/office.context#displaylanguage) プロパティにもアクセスできます。これらのプロパティによって、ドキュメント、アイテム、ホスト アプリケーションで使用されるロケール (言語) を決定できます。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingsettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトからは、[contentLanguage](/javascript/api/office/office.context#contentlanguage) プロパティと [displayLanguage](/javascript/api/office/office.context#displaylanguage) プロパティにもアクセスできます。これらのプロパティによって、ドキュメント、アイテム、ホスト アプリケーションで使用されるロケール (言語) を決定できます。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingsettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 
 ## <a name="document-object"></a>Document オブジェクト
@@ -154,7 +154,7 @@ API の [CustomXmlParts](/javascript/api/office/office.customxmlparts) オブジ
 
 **適用対象:** Outlook アドイン
 
-Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/office.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/outlook/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/office.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/office/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
 
 ```js
 // Access the Item object.
