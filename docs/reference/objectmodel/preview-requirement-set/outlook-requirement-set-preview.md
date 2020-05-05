@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 04/10/2020
+ms.date: 05/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 94104a9fcb239d991d585abcebdd07bcab6e315f
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
+ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744867"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "44022184"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -69,13 +69,13 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 新規作成モードで、アイテム`Body`の本文の最後にデータを追加する新しい関数をオブジェクトに追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 拡張されたアクセス許可のコレクションに`AppendOnSend`拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
 
-**利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、outlook on the web (モダン)
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 <br>
 
