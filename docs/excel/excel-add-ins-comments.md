@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890571"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170822"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
@@ -25,7 +25,7 @@ Excel JavaScript API では、コメントには単一の最初のコメント�
 メソッドを`CommentCollection.add`使用して、ブックにコメントを追加します。 このメソッドは、次の3つのパラメーターを取ります。
 
 - `cellAddress`: コメントが追加されるセルを指定します。 文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
-- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions-online-only)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。 
+- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
 - `contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。 既定値は `ContentType.plain` です。
 
 次のコード例は、コメントをセル **A2** に追加します。
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads-preview"></a>コメントスレッドを解決する ([プレビュー](../reference/requirement-sets/excel-preview-apis.md)) 
+## <a name="resolve-comment-threads"></a>コメントスレッドを解決する
 
 コメントスレッドには、解決可能かどう`resolved`かを示す、構成可能なブール値があります。 の`true`値は、コメントスレッドが解決されたことを意味します。 の`false`値は、コメントスレッドが新規または再オープンのいずれかであることを意味します。
 
@@ -169,13 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-online-only"></a>メンション ([オンラインのみ](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
-
-> [!NOTE]
-> コメントコメント Api は、現在、パブリックプレビューでのみ利用可能です。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-> [!IMPORTANT]
-> コメントメンションは、現在 web 上の Excel でのみサポートされています。
+## <a name="mentions"></a>メンション
 
 [メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)は、コメント内の仕事仲間にタグ付けするために使用されます。 これにより、それらの通知がコメントの内容と共に送信されます。 アドインは、ユーザーの代わりにこれらのメンションを作成できます。
 

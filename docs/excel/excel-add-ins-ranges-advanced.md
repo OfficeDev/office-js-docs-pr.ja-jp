@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
-ms.date: 02/11/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688777"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170815"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -172,11 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="cut-copy-and-paste"></a>切り取り、コピー、および貼り付け 
+## <a name="cut-copy-and-paste"></a>切り取り、コピー、および貼り付け
 
-### <a name="copy-and-paste"></a>Copy and paste 
+### <a name="copy-and-paste"></a>Copy and paste
 
-このメソッドは、Excel UI の**コピー**と**貼り付け**の操作をレプリケートします[。](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。 
+このメソッドは、Excel UI の**コピー**と**貼り付け**の操作をレプリケートします[。](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) `copyFrom` が呼び出される範囲オブジェクトがコピー先になります。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
 
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
@@ -235,22 +235,22 @@ Excel.run(function (context) {
 
 ![範囲のコピーメソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
 
-### <a name="cut-and-paste-move-cells-online-only"></a>セルの切り取りと貼り付け (移動) ([オンラインのみ](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+### <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、 `destinationRange`パラメーターとして指定された場所に移動します。 
+[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、 `destinationRange`パラメーターとして指定された場所に移動します。
 
-次のコードサンプルは、 `Range.moveTo`メソッドを使用して移動する範囲を示しています。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。 
+次のコードサンプルは、 `Range.moveTo`メソッドを使用して移動する範囲を示しています。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。
 
-```js 
-Excel.run(function (context) { 
-    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
-    sheet.getRange("F1").values = [["Moved Range"]]; 
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.getRange("F1").values = [["Moved Range"]];
 
-    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
-    sheet.getRange("A1:E1").moveTo("G1"); 
-    return context.sync(); 
-}); 
-``` 
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
+    sheet.getRange("A1:E1").moveTo("G1");
+    return context.sync();
+});
+```
 
 ## <a name="remove-duplicates"></a>重複の削除
 

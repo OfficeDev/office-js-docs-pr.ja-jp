@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: Excel JavaScript API を使用して、ブックまたはアプリケーションレベルの機能を使用して一般的なタスクを実行する方法を示すコードサンプルです。
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891027"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170766"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings-preview"></a>Access アプリケーションのカルチャ設定 (プレビュー)
+## <a name="access-application-culture-settings"></a>Access アプリケーションのカルチャ設定
 
 ブックには、特定のデータの表示方法に影響する言語とカルチャの設定が含まれています。 これらの設定は、アドインのユーザーが異なる言語とカルチャでブックを共有している場合に、データをローカライズするのに役立ちます。 アドインでは、文字列の解析を使用して、各ユーザーが独自のカルチャの形式でデータを表示できるように、システムのカルチャ設定に基づいて数値、日付、時刻の形式をローカライズできます。
 
@@ -297,10 +297,7 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook-preview"></a>ブックを保存する (プレビュー)
-
-> [!NOTE]
-> `Workbook.save` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="save-the-workbook"></a>ブックを保存する
 
 `Workbook.save` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションの `saveBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
 
@@ -314,10 +311,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook-preview"></a>ブックを閉じる (プレビュー)
-
-> [!NOTE]
-> `Workbook.close` メソッドは、現在パブリック プレビューでのみ利用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="close-the-workbook"></a>ブックを閉じる
 
 `Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションの `closeBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
 
