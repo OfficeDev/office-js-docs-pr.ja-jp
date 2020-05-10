@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
-ms.date: 11/07/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b412756a980d54a20a1c8deab43cd7634c0188cb
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166553"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180211"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
@@ -106,7 +106,10 @@ Exchange アカウントの一意の識別子を作成するには、認証メ�
 
 ## <a name="use-a-library-to-validate-the-token"></a>ライブラリを使用してトークンを検証する
 
-一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft では、Exchange のユーザー ID トークンの検証に使用できる 2 つのライブラリを提供しています。
+一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft では`System.IdentityModel.Tokens.Jwt` 、Exchange のユーザー id トークンの検証に使用できるライブラリを提供しています。
+
+> [!IMPORTANT]
+> Exchange Web サービスマネージ API の使用は推奨されていません。ただし、現在は使用できません。このため、サポートされていないライブラリに依存しています。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 
@@ -189,30 +192,6 @@ public class ExchangeAppContext
 ```
 
 このライブラリを使用して Exchange トークンを検証し、`GetSigningKeys` の実装を持つ例については、「[Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)」を参照してください。
-
-### <a name="microsoftexchangewebservices"></a>Microsoft.Exchange.WebServices
-
-[Exchange Web サービスの管理 API](https://www.nuget.org/packages/Microsoft.Exchange.WebServices/) は、Exchange のユーザー ID トークンを検証することもできます。 これは Exchange 固有のため、`appctx` クレームを解析してトークンのバージョンを確認するために必要なロジックをすべて実装しています。
-
-```cs
-using Microsoft.Exchange.WebServices.Auth.Validation;
-
-AppIdentityToken ValidateIdentityToken(string rawToken, string expectedAudience)
-{
-    try
-    {
-        AppIdentityToken appIdToken = AuthToken.Parse(rawToken) as AppIdentityToken;
-        appIdToken.Validate(new Uri(expectedAudience));
-
-        // No exception, validation succeeded
-        return appIdToken;
-    }
-    catch (TokenValidationException ex)
-    {
-        throw new Exception(string.Format("Token validation failed: {0}", ex.Message));
-    }
-}
-```
 
 ## <a name="see-also"></a>関連項目
 

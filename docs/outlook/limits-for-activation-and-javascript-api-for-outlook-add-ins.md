@@ -1,25 +1,25 @@
 ---
 title: Outlook アドインでのアクティブ化と API の使用の制限
 description: 特定のアクティブ化と API の使用方法のガイドラインを確認し、アドインをこれらの制限内で実装します。
-ms.date: 10/31/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: a86d2a350db61d843a67945348dfb8154951b53c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4fbdcea72585ff77457dfb6cd3039040b012031
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324948"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180218"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook アドインのアクティブ化と JavaScript API の制限
 
-Outlook アドインのユーザーに満足のいくエクスペリエンスを提供するには、特定のアクティブ化ルールと API の使用に関するガイドラインを理解し、制限の範囲内に収まるようにアドインを実装する必要があります。 これらのガイドラインは、個々のアドインが、Exchange Server または Office JavaScript API を処理するのに非常に長い時間を費やす必要があり、Outlook およびその他のユーザーの全体的な操作に影響を及ぼすことがないようにするために存在します。アドイン。これらの制限は、アドインマニフェストでのアクティブ化ルールの設計、およびカスタムプロパティ、ローミング設定、受信者、Exchange Web サービス (EWS) の要求と応答、および非同期呼び出しの使用に適用されます。
+Outlook アドインのユーザーに満足のいくエクスペリエンスを提供するには、特定のアクティブ化ルールと API の使用に関するガイドラインを理解し、制限の範囲内に収まるようにアドインを実装する必要があります。 これらのガイドラインは、個々のアドインが、Exchange Server または Outlook で、アクティブ化ルールを処理したり、Office JavaScript API を呼び出したりする必要があり、Outlook やその他のアドインの全体的なユーザーの操作に影響を与えることがないようにするために存在します。これらの制限は、アドインマニフェストでのアクティブ化ルールの設計、およびカスタムプロパティ、ローミング設定、受信者、Exchange Web サービス (EWS) の要求と応答、および非同期呼び出しの使用に適用されます。
 
 > [!NOTE]
 > アドインを Outlook リッチ クライアントで実行する場合は、そのアドインが一定のランタイム リソース使用制限の範囲内で実行されているかを確認する必要もあります。
 
 ## <a name="limits-on-where-add-ins-activate"></a>アドインのアクティブ化の制限
 
-アドインは、ユーザーのメイン メールボックスでのみ有効になるように設計されています。アドインは共有メールボックス、代理人アクセスで開いた他のユーザーのメールボックスのフォルダー、アーカイブ メールボックス、パブリック フォルダーではアクティブ化されません。
+既定では、アドインはユーザーのメインメールボックスでのみアクティブになるように設計されています。 そのため、通常、アドインは共有メールボックスではアクティブ化されず、代理アクセス、アーカイブメールボックス、またはパブリックフォルダーを使用して開かれた他のユーザーのメールボックスからのフォルダーはアクティブになりません。 ただし、[代理人アクセスまたは共有フォルダー](delegate-access.md)をサポートするアドインはアクティブ化する必要があります。
 
 ## <a name="limits-for-activation-rules"></a>アクティブ化ルールの制限
 
