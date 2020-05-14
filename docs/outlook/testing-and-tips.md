@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインを展開してインストールする
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
-ms.date: 03/18/2020
+ms.date: 05/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 9b539f2f70a6615cdcf87f0d8d01dd5f0e6c2241
+ms.sourcegitcommit: 9c73a6117d933f0fbe307256aa62e6c84db4e9e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890978"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44222195"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 
@@ -66,9 +66,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 さらに、次の PowerShell コマンドレットを使用すると、メールボックス用のアドインを管理できます。
 
--  `Get-App` - メールボックスに対して有効になっているアドインを一覧表示します。
--  `Set-App` - メールボックスに対してアドインを有効または無効にします。
--  `Remove-App` - 現在インストールされているアドインを Exchange サーバーから削除します。
+- `Get-App` - メールボックスに対して有効になっているアドインを一覧表示します。
+- `Set-App` - メールボックスに対してアドインを有効または無効にします。
+- `Remove-App` - 現在インストールされているアドインを Exchange サーバーから削除します。
 
 ## <a name="client-versions"></a>クライアント バージョン
 
@@ -77,10 +77,10 @@ New-App -URL:"http://<fully-qualified URL">
 - アドインを、個人用や組織のメンバー用に限って開発する場合は、自分の会社が使用している Outlook のバージョンをテストすることが重要です。一部のユーザーは Outlook on the web を使用する場合があるので、自分の会社で標準的に使用されているブラウザーのバージョンをテストすることも重要です。
 
 - [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[Commercial marketplace の認定ポリシー 1120.3](/legal/marketplace/certification-policies#11203-functionality) で指定されている必要なバージョンをテストする必要があります。これには次が含まれます。
-    - Windows 用 Outlook の最新バージョンと最新の直前のバージョン。
-    - Mac 用 Outlook の最新バージョン。
-    - iOS および Android 用の Outlook の最新バージョン (アドインが[モバイル フォーム ファクターをサポートしている](add-mobile-support.md)場合)。
-    - Commercial marketplace の検証ポリシー 1120.3 で指定されたブラウザーのバージョン。
+  - Windows 用 Outlook の最新バージョンと最新の直前のバージョン。
+  - Mac 用 Outlook の最新バージョン。
+  - iOS および Android 用の Outlook の最新バージョン (アドインが[モバイル フォーム ファクターをサポートしている](add-mobile-support.md)場合)。
+  - Commercial marketplace の検証ポリシー 1120.3 で指定されたブラウザーのバージョン。
 
 > [!NOTE]
 > クライアントがサポートしていない [API 要件セットを要求しているために](apis.md)、アドインが上記のクライアントのいずれかをサポートしない場合は、そのクライアントが必要なクライアントのリストから削除されます。
