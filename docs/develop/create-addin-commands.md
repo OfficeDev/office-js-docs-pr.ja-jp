@@ -1,27 +1,23 @@
 ---
-title: Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
-description: マニフェストに VersionOverrides を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 09/26/2019
+title: Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
+description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e3b85315d68368416df9d9bc09227ad06689026a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719183"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217887"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のマニフェストにアドイン コマンドを作成する
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
 
+マニフェストで**[Versionoverrides](../reference/manifest/versionoverrides.md)** を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。アドインコマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザーインターフェイス (UI) をカスタマイズする簡単な方法を提供します。アドインコマンドを使用して、次の操作を実行できます。
 
-マニフェストに **[VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、Excel、Word、PowerPoint のアドイン コマンドを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
-- アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。  
-  
+- アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
-  
 - それぞれがオプションのサブメニューを含む個々のメニュー項目を、特定のコンテキスト (ショートカット) メニューに追加します。
-  
 - アドイン コマンドが選択されると、操作を実行します。次の操作を実行できます。
-
   - ユーザーが操作する 1 つ以上の作業ウィンドウ アドインを表示します。作業ウィンドウ アドイン内部で、Office の UI ファブリックを使用してカスタム UI を作成する HTML を表示できます。
 
      *または*
@@ -154,7 +150,7 @@ ms.locfileid: "42719183"
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -168,7 +164,6 @@ ms.locfileid: "42719183"
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
 ```js
-
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -192,7 +187,7 @@ ms.locfileid: "42719183"
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -257,7 +252,6 @@ ms.locfileid: "42719183"
 |**Tooltip** <br/> |省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Control** <br/> |各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](../reference/manifest/control.md#button-control)」および「[メニュー コントロール](../reference/manifest/control.md#menu-dropdown-button-controls)」のセクションをご覧ください。<br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
 
-
 ### <a name="button-controls"></a>Button コントロール
 
 ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。JavaScript 関数を実行するか、作業ウィンドウを表示することができます。次の例は、2 つのボタンを定義する方法を示しています。最初のボタンは UI を表示せずに JavaScript 関数を実行し、2 つ目のボタンは作業ウィンドウを表示します。**Control** 要素では、次のようになります。
@@ -312,24 +306,21 @@ ms.locfileid: "42719183"
 |**Icon** <br/> | 必須。ボタンの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  ボタンに表示する画像を定義します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
 |**操作** <br/> | 必須。ユーザーがボタンを選択したときに実行する操作を指定します。**xsi:type** 属性の値は、次のいずれかを指定できます。 <br/> **ExecuteFunction**。**FunctionFile** によって参照されるファイルにある JavaScript 関数を実行します。**ExecuteFunction** は UI を表示しません。**FunctionName** 子要素は、実行する関数の名前を指定します。<br/> **ShowTaskPane**。作業ウィンドウ アドインを表示します。**SourceLocation** 子要素は、表示する作業ウィンドウ アドインのソース ファイルの位置を指定します。**resid** 属性は、**Url** 要素の **id** 属性の値に設定します。この要素は、**Resources** 要素の **Urls** 要素に含まれています。 <br/> |
 
-
 ### <a name="menu-controls"></a>Menu コントロール
+
 **Menu** コントロールは、**PrimaryCommandSurface** または **ContextMenu** のどちらかで使用できます。また、以下の項目を定義します。
   
 - ルートレベルのメニュー項目。
-
 - サブメニュー項目のリスト。
- 
+
 **PrimaryCommandSurface** と共に使用すると、ルートのメニュー項目がリボンのボタンとして表示されます。ボタンを選択すると、サブメニューがドロップダウン リストとして表示されます。**ContextMenu** と共に使用すると、サブメニューのあるメニュー項目がコンテキスト メニューに挿入されます。どちらの場合も、各サブメニュー項目は JavaScript 関数を実行するか、作業ウィンドウを表示することができます。現時点では、サブメニューの 1 つのレベルのみがサポートされます。
 
 次の例では、2 つのサブメニュー項目があるメニュー項目を定義する方法を示します。最初のサブメニュー項目は作業ウィンドウを表示し、2 つ目のサブメニュー項目は、JavaScript 関数を実行します。**Control** 要素では、次のようになります。
 
 - **xsi:type** 属性は必須であり、**Menu** に設定する必要があります。
-  
 - **id** 属性は、最大 125 文字の文字列です。
 
 ```xml
-
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -385,13 +376,12 @@ ms.locfileid: "42719183"
 |**SuperTip** <br/> | 必須。メニューのヒントであり、次のものによって定義されます。 <br/> **Title** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Icon** <br/> | 必須。メニューの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  メニューの画像。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズ (ピクセル単位) が必要です。16、32、および 80。次の 5 つのオプションのサイズ (ピクセル単位) もサポートされています。20、24、40、48、および 64。 <br/> |
 |**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](../reference/manifest/control.md#button-control)と同じ子要素を含みます。  <br/> |
-   
+
 ## <a name="step-7-add-the-resources-element"></a>手順 7: Resources 要素を追加する
 
 **Resources** 要素は、**VersionOverrides** 要素の異なる子要素で使用されるリソースを含みます。リソースには、アイコン、文字列、および URL が含まれます。マニフェスト内の要素は、リソースの **id** を参照することでリソースを使用できます。**id** を使用するマニフェストの編成に有用です。特に、異なるロケールのリソースの異なるバージョンがある場合に役立ちます。**id** は 最大 32 文字まで使用できます。
   
 次の表に、**Resources** 要素の使用法の例を示します。各リソースは、特定のロケールに異なるリソースを定義する 1 つ以上の **Override** 子要素を持つことができます。
-
 
 ```xml
 <Resources>
@@ -430,7 +420,8 @@ ms.locfileid: "42719183"
 |**Urls**/ **Url** <br/> |HTTPS URL の場所を指定します。URL には最大 2048 文字まで指定できます。  <br/> |
 |**ShortStrings**/ **String** <br/> |**Label** 要素と **Title** 要素のテキスト。各 **String** には、最大 125 文字を使用できます。 <br/> |
 |**LongStrings**/ **String** <br/> |**Tooltip** と **Description** 要素のテキスト。各 **String** は最大 250 文字です。<br/> |
-   > [!NOTE]
+
+> [!NOTE]
 > **Image** 要素と **Url** 要素のすべての URL で Secure Sockets Layer (SSL) を使用する必要があります。
 
 ### <a name="tab-values-for-default-office-ribbon-tabs"></a>既定の Office リボン タブの値
@@ -445,4 +436,4 @@ Excel および Word で、既定の Office UI タブを使用することで、
 
 ## <a name="see-also"></a>関連項目
 
--  [Excel、Word、PowerPoint のアドイン コマンド](../design/add-in-commands.md)
+- [Excel、PowerPoint、および Word のアドインコマンド](../design/add-in-commands.md)

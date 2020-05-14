@@ -1,18 +1,16 @@
 ---
 title: カスタム関数から Microsoft Excel Api を呼び出す
 description: カスタム関数から呼び出すことができる Microsoft Excel Api について説明します。
-ms.date: 02/06/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719344"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217880"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>カスタム関数から Microsoft Excel Api を呼び出す
-
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
 カスタム関数から Office .js Excel Api を呼び出して、範囲データを取得し、計算のためにより多くのコンテキストを取得します。
 
@@ -25,7 +23,7 @@ ms.locfileid: "42719344"
 
 ## <a name="code-sample"></a>コード サンプル
 
-Office .js Api を呼び出すには、まずコンテキストが必要です。 オブジェクトを`Excel.RequestContext`使用してコンテキストを取得します。 その後、コンテキストを使用して、ブックで必要な Api を呼び出します。
+Office .js Api を呼び出すには、まずコンテキストが必要です。 オブジェクトを使用して `Excel.RequestContext` コンテキストを取得します。 その後、コンテキストを使用して、ブックで必要な Api を呼び出します。
 
 次のコードサンプルは、ブックから値の範囲を取得する方法を示しています。
 

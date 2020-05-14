@@ -3,16 +3,16 @@ title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 442e31494911bd00c9def895549af3ec7fce8d76
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170815"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217845"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
-この記事は、「[Excel JavaScript API を使用して範囲を操作する (基本)](excel-add-ins-ranges.md)」の情報に基づいており、コード サンプルでは Excel JavaScript API を使って範囲のより高度なタスクを実行する方法を示します。 オブジェクトが`Range`サポートするプロパティとメソッドの完全な一覧については、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
+この記事は、「[Excel JavaScript API を使用して範囲を操作する (基本)](excel-add-ins-ranges.md)」の情報に基づいており、コード サンプルでは Excel JavaScript API を使って範囲のより高度なタスクを実行する方法を示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Range` ては、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Moment-MSDate プラグインを使用した日付の操作
 
@@ -60,7 +60,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
+アドインでは、わかりやすい形式で日付が表示されるように、範囲の書式を設定する必要があります。 たとえば、`"[$-409]m/d/yy h:mm AM/PM;@"` では時刻が "12/3/18 3:57 PM" のように表示されます。 日付と時刻の数値書式の詳細については、「[表示形式のカスタマイズに関するガイドラインを確認する](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)」の記事で「日付と時刻の表示に関するガイドライン」を参照してください。
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>複数の範囲を同時に操作する
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 `catch`ブロックがない場合、エラーによってメソッドは停止します。
+対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 ブロックがない場合、 `catch` エラーによってメソッドは停止します。
 
 対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードについては、以下の点に注意してください。
 
@@ -237,9 +237,9 @@ Excel.run(function (context) {
 
 ### <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、 `destinationRange`パラメーターとして指定された場所に移動します。
+[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動し `destinationRange` ます。
 
-次のコードサンプルは、 `Range.moveTo`メソッドを使用して移動する範囲を示しています。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。
+次のコードサンプルは、メソッドを使用して移動する範囲を示して `Range.moveTo` います。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。
 
 ```js
 Excel.run(function (context) {
@@ -256,9 +256,9 @@ Excel.run(function (context) {
 
 指定した列に重複するエントリがある行を削除するには、このメソッドを使用し[ます。](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) このメソッドは、値が最小のインデックスから、範囲内の最大値のインデックス (上から下) までの範囲にある各行を処理します。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
 
-`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 メソッドには、最初の行がヘッダーであるかどうかを指定するブール値のパラメーターもあります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 メソッド`removeDuplicates`は、削除`RemoveDuplicatesResult`された行数と、残っている一意の行の数を指定するオブジェクトを返します。
+`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 メソッドには、最初の行がヘッダーであるかどうかを指定するブール値のパラメーターもあります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 メソッドは、 `removeDuplicates` `RemoveDuplicatesResult` 削除された行数と、残っている一意の行の数を指定するオブジェクトを返します。
 
-範囲の`removeDuplicates`メソッドを使用する場合は、次の点に注意してください。
+範囲のメソッドを使用する場合は `removeDuplicates` 、次の点に注意してください。
 
 - `removeDuplicates` は、関数の結果ではなくセルの値を考慮します。 2 つの異なる関数が同じ結果として評価される場合、セルの値は重複と見なしません。
 - 空のセルは、`removeDuplicates` に無視されることはありません。 空のセルの値は、その他の値と同様に扱われます。 つまり、範囲に含まれる空の行は `RemoveDuplicatesResult` に含まれることになります。

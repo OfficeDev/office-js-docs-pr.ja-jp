@@ -1,20 +1,18 @@
 ---
-title: ドキュメントを開くときに Excel アドインでコードを実行する (プレビュー)
+title: ドキュメントが開いたときに Excel アドインでコードを実行する
 description: ドキュメントが開いたときに、Excel アドインでコードを実行します。
-ms.date: 02/20/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: fba43fdc508245632da911acecbfa52e00847b3b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717034"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217950"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens-preview"></a>ドキュメントを開くときに Excel アドインでコードを実行する (プレビュー)
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>ドキュメントが開いたときに Excel アドインでコードを実行する
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
-
-ドキュメントが開かれるとすぐに、コードを読み込んで実行するように Excel アドインを構成することができます。 これは、アドインが表示される前に、イベントハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、またはその他のタスクの実行を行う必要がある場合に便利です。
+ドキュメントが開かれるとすぐに、コードを読み込んで実行するように Excel アドインを構成することができます。 これは、アドインが表示される前に、イベントハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、またはその他のタスクの実行が必要な場合に便利です。
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -47,7 +45,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="how-to-run-code-when-the-document-opens"></a>ドキュメントが開いたときにコードを実行する方法
 
-アドインがドキュメントを開いたときに読み込むように構成すると、すぐに実行されます。 `Office.initialize`イベントハンドラーが呼び出されます。 スタートアップコードを`Office.initialize`イベントハンドラーに配置します。
+アドインがドキュメントを開いたときに読み込むように構成すると、すぐに実行されます。 `Office.initialize`イベントハンドラーが呼び出されます。 スタートアップコードを `Office.initialize` イベントハンドラーに配置します。
 
 次のコードは、作業中のワークシートから変更イベントのイベントハンドラーを登録する方法を示しています。 アドインをドキュメントを開いたときに読み込むように構成した場合、このコードは、ドキュメントが開かれたときにイベントハンドラーを登録します。 作業ウィンドウを開く前に、変更イベントを処理することができます。
 

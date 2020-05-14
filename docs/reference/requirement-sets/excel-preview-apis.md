@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細
-ms.date: 05/06/2020
+ms.date: 05/11/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 64c102e2d530d23789597d29edb97796d3f584fd
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a867a0c80158e9c1effa40ba5a0aa83608ba57de
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170829"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44218006"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -24,7 +24,7 @@ ms.locfileid: "44170829"
 | 日付と時刻の[カルチャ設定](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 日付と時刻の書式に関するその他のカルチャ設定へのアクセスを提供します。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo)、 [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [Application](/javascript/api/excel/excel.application) |
 | [ブックの挿入](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | あるブックを別のブックに挿入します。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 | ピボットフィルター | ピボットテーブルのフィールドに、値に基づくフィルターを適用します。 | [PivotField](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)、 [PivotFilters](/javascript/api/excel/excel.pivotFilters) |
-|範囲 spilling | アドインで[動的配列](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)の結果に関連付けられた範囲を検索できます。 | [Range](/javascript/api/excel/excel.range) |
+|範囲 spilling | アドインで[動的配列](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)の結果に関連付けられた範囲を検索できます。 | [Range](/javascript/api/excel/excel.range) |
 
 ## <a name="api-list"></a>API リスト
 
@@ -33,7 +33,7 @@ ms.locfileid: "44170829"
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[getDimensionValues (dimension: Excel. ChartSeriesDimension)](/javascript/api/excel/excel.chartseries#getdimensionvalues-dimension-)|グラフの系列の1つの次元から値を取得します。 指定できるのは、指定された次元と、グラフ系列に対するデータのマッピング方法によって異なります。|
-|[コメント](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|コメントのコンテンツタイプを取得します。|
+|[Comment](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|コメントのコンテンツタイプを取得します。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[contentType](/javascript/api/excel/excel.commentreply#contenttype)|返信のコンテンツの種類。|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[datetimeFormat](/javascript/api/excel/excel.cultureinfo#datetimeformat)|日付と時刻を表示するためのカルチャに適した形式を定義します。 これは、現在のシステムのカルチャ設定に基づいています。|
 |[DatetimeFormatInfo](/javascript/api/excel/excel.datetimeformatinfo)|[dateSeparator](/javascript/api/excel/excel.datetimeformatinfo#dateseparator)|日付の区切り文字として使用される文字列を取得します。 これは、現在のシステム設定に基づいています。|
@@ -44,9 +44,9 @@ ms.locfileid: "44170829"
 |[PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter)|[comparator](/javascript/api/excel/excel.pivotdatefilter#comparator)|比較演算子は、他の値を比較する静的な値です。 比較の種類は、条件によって定義されます。|
 ||[condition](/javascript/api/excel/excel.pivotdatefilter#condition)|必要なフィルター条件を定義するフィルターの条件を指定します。|
 ||[排他](/javascript/api/excel/excel.pivotdatefilter#exclusive)|True の場合、フィルターは条件に一致するアイテムを*除外*します。 既定では false (条件に一致するアイテムを含むフィルター)。|
-||[lowerBound](/javascript/api/excel/excel.pivotdatefilter#lowerbound)|`Between`フィルター条件の範囲の下限を指定します。|
-||[upperBound](/javascript/api/excel/excel.pivotdatefilter#upperbound)|`Between`フィルター条件の範囲の上限を指定します。|
-||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholedays)|、 `Equals` `Before`、 `After`、および`Between`フィルター条件の場合、比較を日単位で行う必要があるかどうかを示します。|
+||[lowerBound](/javascript/api/excel/excel.pivotdatefilter#lowerbound)|フィルター条件の範囲の下限を指定し `Between` ます。|
+||[upperBound](/javascript/api/excel/excel.pivotdatefilter#upperbound)|フィルター条件の範囲の上限を指定し `Between` ます。|
+||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholedays)|`Equals`、、 `Before` `After` 、および `Between` フィルター条件の場合、比較を日単位で行う必要があるかどうかを示します。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (filter: PivotFilters)](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)|フィールドの現在の PivotFilters を1つまたは複数設定し、フィールドに適用します。|
 ||[clearAllFilters ()](/javascript/api/excel/excel.pivotfield#clearallfilters--)|すべてのフィールドフィルターのすべての条件をクリアします。 これにより、そのフィールドのアクティブなフィルター処理がすべて削除されます。|
 ||[clearFilter (filterType: PivotFilterType)](/javascript/api/excel/excel.pivotfield#clearfilter-filtertype-)|指定した種類のフィールドのフィルターから、すべての既存の条件を削除します (現在適用されている場合)。|
@@ -60,7 +60,7 @@ ms.locfileid: "44170829"
 ||[condition](/javascript/api/excel/excel.pivotlabelfilter#condition)|必要なフィルター条件を定義するフィルターの条件を指定します。|
 ||[排他](/javascript/api/excel/excel.pivotlabelfilter#exclusive)|True の場合、フィルターは条件に一致するアイテムを*除外*します。 既定では false (条件に一致するアイテムを含むフィルター)。|
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|フィルター条件間の範囲の下限。|
-||[副](/javascript/api/excel/excel.pivotlabelfilter#substring)|`BeginsWith`、 `EndsWith`、および`Contains`フィルター条件で使用される部分文字列。|
+||[副](/javascript/api/excel/excel.pivotlabelfilter#substring)|`BeginsWith`、、 `EndsWith` およびフィルター条件で使用される部分文字列 `Contains` 。|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|フィルター条件の間の範囲の上限を指定します。|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。  返されるセルは、指定した階層のデータが含まれる、指定された行と列の交差部分です。  このメソッドは、特定のセルでの getPivotItems および getDataHierarchy の呼び出しを逆にしたものです。|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|ピボットテーブルに適用されるスタイルです。|
@@ -70,10 +70,10 @@ ms.locfileid: "44170829"
 |[PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter)|[comparator](/javascript/api/excel/excel.pivotvaluefilter#comparator)|比較演算子は、他の値を比較する静的な値です。 比較の種類は、条件によって定義されます。|
 ||[condition](/javascript/api/excel/excel.pivotvaluefilter#condition)|必要なフィルター条件を定義するフィルターの条件を指定します。|
 ||[排他](/javascript/api/excel/excel.pivotvaluefilter#exclusive)|True の場合、フィルターは条件に一致するアイテムを*除外*します。 既定では false (条件に一致するアイテムを含むフィルター)。|
-||[lowerBound](/javascript/api/excel/excel.pivotvaluefilter#lowerbound)|`Between`フィルター条件の範囲の下限を指定します。|
+||[lowerBound](/javascript/api/excel/excel.pivotvaluefilter#lowerbound)|フィルター条件の範囲の下限を指定し `Between` ます。|
 ||[selectionType](/javascript/api/excel/excel.pivotvaluefilter#selectiontype)|フィルターを上位/下位 N 個のアイテム、上位/下位 n%、上位/下位 N 個の合計にするかどうかを指定します。|
 ||[基準](/javascript/api/excel/excel.pivotvaluefilter#threshold)|上位/下位フィルター条件に対してフィルター処理するアイテム、パーセント、または合計の "N" 個のしきい値。|
-||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperbound)|`Between`フィルター条件の範囲の上限を指定します。|
+||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperbound)|フィルター条件の範囲の上限を指定し `Between` ます。|
 ||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|フィルター処理の対象となるフィールドで選択されている "value" の名前です。|
 |[Range](/javascript/api/excel/excel.range)|[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|スピルするセルのアンカー セルを含む範囲オブジェクトを取得します。 複数のセルを含む範囲に適用される場合は失敗します。|
 ||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getspillparentornullobject--)|スピルするセルのアンカー セルを含む範囲オブジェクトを取得します。|
@@ -94,7 +94,7 @@ ms.locfileid: "44170829"
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|フィルターが適用されているテーブルの id を取得します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルを含むワークシートの id を取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールドリストウィンドウをブックレベルで表示するかどうかを指定します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールドリストウィンドウをブックレベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customproperties)|ワークシートレベルのカスタムプロパティのコレクションを取得します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|フィルターが特定のワークシートに適用されたときに発生します。|

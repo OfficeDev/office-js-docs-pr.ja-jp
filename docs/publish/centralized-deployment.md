@@ -3,12 +3,12 @@ title: Office 365 管理センターからの一元展開を使用した Office 
 description: 一元展開を使用して、内部アドインと Isv が提供するアドインを展開する方法について説明します。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 4c19a272e448e38bb5e895cd0bc2a53707a172ad
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978628"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217775"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
 
@@ -44,14 +44,14 @@ Office 365 管理センターを使用すると、管理者は組織内のユー
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>一元展開による Office アドインの発行
 
-作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)」を参照してください。 
+作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)」を参照してください。 
 
 組織がすべての要件を満たしている場合は、次に示す手順を実行して、一元展開によって Office アドインを発行します。
 
 1. 職場または学校のアカウントを使用して、Office 365 にサインインします。
 2. 左上にあるアプリ起動ツールのアイコンを選択して、**[管理]** をクリックします。
 3. ナビゲーション メニューで、**[表示数を増やす]** を押し、**[設定]** > **[サービスとアドイン]** の順に選択します。
-4. ページの上部に新しい Office 365 管理センターについて通知するメッセージが表示されている場合は、そのメッセージを選択して管理センター プレビューに移動します (「[Office 365 管理センターについて](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)」を参照)。
+4. ページの上部に新しい Office 365 管理センターについて通知するメッセージが表示されている場合は、そのメッセージを選択して管理センター プレビューに移動します (「[Office 365 管理センターについて](/microsoft-365/admin/admin-overview/about-the-admin-center)」を参照)。
 5. ページの上部にある **[アドインの展開]** を選択します。
 6. 要件の確認後、**[次へ]** を選択します。
 7. **[一元展開]** ページで、次のいずれかのオプションを選択します。
