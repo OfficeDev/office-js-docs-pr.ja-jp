@@ -1,16 +1,16 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 04/11/2020
+ms.date: 05/11/2020
 localization_priority: Priority
-ms.openlocfilehash: b223949c5665f0e523a6003ccb4e3f29cc3f017c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581926"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217894"
 ---
-# <a name="enable-and-disable-add-in-commands-preview"></a>アドイン コマンドを有効または無効にする (プレビュー)
+# <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
 
@@ -20,13 +20,6 @@ ms.locfileid: "43581926"
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
 > [アドイン コマンドの基本概念](add-in-commands.md)
-
-## <a name="preview-status"></a>プレビューの状態
-
-この記事で説明されている API はプレビューのものであり、現在は Excel でしか使用できません。
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## <a name="rules-and-gotchas"></a>ルールと注意事項
 
