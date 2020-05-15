@@ -1,21 +1,21 @@
 ---
 title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
-ms.date: 04/10/2020
+ms.date: 05/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 85fcd580828a2db95cd8e021dec3611ca6591e1c
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: aaadcf41f03258bdf85d9796cc611a1c05478549
+ms.sourcegitcommit: 110a7f247ce83c7434ea32098497d2864e28e096
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225729"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "44227406"
 ---
 # <a name="error-handling"></a>エラー処理
 
 Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
 
 > [!NOTE]
-> `sync()`メソッドと EXCEL javascript api の非同期性の詳細については、「 [excel javascript api を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
+> `sync()`メソッドと Excel JAVASCRIPT api の非同期性の詳細については、「 [EXCEL javascript api を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -76,4 +76,4 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
