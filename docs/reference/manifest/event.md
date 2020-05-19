@@ -1,21 +1,21 @@
 ---
 title: マニフェストファイルの Event 要素
 description: アドインでイベント ハンドラーを定義します。
-ms.date: 10/09/2018
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 80f21d1819e3d7e335389070ccac0db583026045
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718231"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275708"
 ---
 # <a name="event-element"></a>Event 要素
 
 アドインでイベント ハンドラーを定義します。
 
-> [!NOTE] 
-> この`Event`要素は、現在 Office 365 の Outlook on the web でのみサポートされています。
+> [!NOTE]
+> サポートと使用法の詳細については、「 [Outlook アドインの送信時機能](../../outlook/outlook-on-send-addins.md)」を参照してください。
 
 ## <a name="attributes"></a>属性
 
@@ -42,5 +42,5 @@ ms.locfileid: "42718231"
 必須です。イベント ハンドラーの関数名を指定します。この値は、アドインの[関数ファイル](functionfile.md)内の関数名と一致する必要があります。
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
 ```

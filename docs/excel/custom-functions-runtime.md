@@ -1,87 +1,38 @@
 ---
-ms.date: 04/13/2020
-description: 新しい JavaScript ランタイムを使用する Excel カスタム関数を開発する場合の重要なシナリオについて、理解します。
-title: Excel カスタム関数のランタイム
+ms.date: 05/17/2020
+description: 作業ウィンドウおよび特定の JavaScript ランタイムを使用しない Excel カスタム関数について説明します。
+title: UI レス Excel カスタム関数のランタイム
 localization_priority: Normal
-ms.openlocfilehash: dc049aa681ae4f7664d5bd92f925e7566c0d7103
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 31044d4569d230e252c05a39785fc7d47b802e37
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241043"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278358"
 ---
-# <a name="runtime-for-excel-custom-functions"></a>Excel カスタム関数のランタイム
+# <a name="runtime-for-ui-less-excel-custom-functions"></a>UI レス Excel カスタム関数のランタイム
 
-カスタム関数は、作業ウィンドウやその他の UI 要素など、アドインの他の部分で使用されるランタイムとは異なる新しい JavaScript ランタイムを使用します。 この JavaScript ランタイムは、カスタム関数での計算のパフォーマンスを最適化するよう設計されており、外部データの要求やサーバーとの固定接続によるデータ交換など、カスタム関数内で一般的な Web ベース アクションを実行する際に使用可能な新しい API を公開します。
+作業ウィンドウを使用しないカスタム関数 (UI レスカスタム関数) は、計算のパフォーマンスを最適化するように設計された JavaScript ランタイムを使用します。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-JavaScript ランタイムは、カスタム関数内またはアドインの他の部分で使用してデータを格納、または、ダイアログボックスを表示するために使用できる、`OfficeRuntime` 名前空間内の新しい API へのアクセスも提供します。 この記事では、カスタム関数内でこれらの API を使用する方法について説明し、カスタム関数を開発する際に留意する事項についても説明します。
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
+
+この JavaScript ランタイムは、UI を使用しない `OfficeRuntime` カスタム関数と作業ウィンドウでデータを格納するために使用できる名前空間の api へのアクセスを提供します。
 
 ## <a name="requesting-external-data"></a>外部データの要求
 
-カスタム関数内では、[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます。
+UI を使用しないカスタム関数内では、サーバーと対話するために HTTP 要求を発行する標準の web API である[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)や、 [XmlHttpRequest (xhr)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)などの API を使用して外部データを要求できます。
 
-カスタム関数によって使用される JavaScript ランタイムでは、XHR は[同じ送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)と単純な[CORS](https://www.w3.org/TR/cors/)を要求することによって、追加のセキュリティ対策を実装します。
+UI を使用しない関数では、XmlHttpRequests を作成するときに追加のセキュリティ対策を使用する必要があることに注意してください。[元のポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)と単純な[CORS](https://www.w3.org/TR/cors/)が必要です。
 
-単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ`Content-Type`タイプが`application/x-www-form-urlencoded` `text/plain`、、またはの場合は`multipart/form-data`、単純な CORS のヘッダーを使用することもできます。
-
-### <a name="xhr-example"></a>XHR の使用例
-
-以下のコード サンプルでは、`getTemperature` 関数が `sendWebRequest` 関数を呼び出して、温度計 ID に基づく特定の領域の温度を取得します。 `sendWebRequest` 関数は、XHR を使用して、データを提供するエンドポイントを要求する `GET` リクエストを発行します。
-
-> [!NOTE] 
-> fetch または XHR を使用すると、新しい JavaScript `Promise` が返されます。 2018 年 9 月より前は、Office JavaScript API 内で Promise を使用するには `OfficeExtension.Promise` を指定する必要がありましたが、現在は JavaScript `Promise` を使用できます。
-
-```js
-function getTemperature(thermometerID) {
-  return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ 
-          storeLastTemperature(thermometerID, data.temperature);
-          setResult(data.temperature);
-      });
-  });
-}
-
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
-function sendWebRequest(thermometerID, data) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           data.temperature = JSON.parse(xhttp.responseText).temperature
-        };
-        
-        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
-        xhttp.setRequestHeader("Content-Type", "application/text");
-        xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
-        xhttp.send();  
-    }
-}
-```
-
-## <a name="receiving-data-via-websockets"></a>WebSocket を使用したデータ受信
-
-カスタム関数内で、[WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) を使用して、サーバーとの固定接続経由でデータを交換することができます。 WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信するので、サーバーに明示的にデータ用のポーリングを行う必要がありません。
-
-### <a name="websockets-example"></a>WebSocket の使用例
-
-以下のコード サンプルでは、`WebSocket` 接続を確立し、サーバーからの各受信メッセージを記録します。
-
-```js
-const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = function (message) {
-    console.log(`Received: ${message}`);
-}
-ws.onerror = function (error) {
-    console.err(`Failed: ${error}`);
-}
-```
+単純な CORS 実装は cookie を使用できず、simple メソッド (GET、HEAD、POST) のみをサポートしています。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 `Content-Type`コンテンツタイプが、、またはの場合は、単純な CORS のヘッダーを使用することもでき `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` ます。
 
 ## <a name="storing-and-accessing-data"></a>データの格納およびアクセス
 
-カスタム関数 (またはアドインの他の部分) 内で、`OfficeRuntime.storage` オブジェクトを使用して、データの格納とデータへのアクセスを実行することができます。 `Storage` は、カスタム関数内では使用できない [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) の代わりとして使用できる、暗号化されていない永続的キー値ストレージ システムです。 `Storage`ドメインごとに 10 MB のデータを提供します。 ドメインは複数のアドインで共有できます。
+UI を使用しないカスタム関数では、オブジェクトを使用してデータを格納したり、データにアクセスしたりでき `OfficeRuntime.storage` ます。 `Storage`は、暗号化されていない、暗号化されていないキー値を持つ、永続的なストレージシステムです。これ[は、UI には](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)ないカスタム関数では使用できません。 `Storage`ドメインごとに 10 MB のデータを提供します。 ドメインは複数のアドインで共有できます。
 
-`Storage` は共有ストレージ ソリューションとして機能することを意図しています。つまり、アドインの複数の部分が同じデータにアクセスできるようになります。 たとえば、ユーザー認証用のトークンを `storage` に保存し、カスタム関数と、作業ウィンドウなどのアドイン UI 要素の両方が、そのトークンにアクセスできるようにすることができます。 同様に、2つのアドインが同じドメイン (たとえば`www.contoso.com/addin1`、など`www.contoso.com/addin2`) を共有している場合は、情報を相互間`storage`で共有することもできます。 サブドメインが異なるアドインは、の`storage`インスタンスが異なることに注意してください ( `subdomain.contoso.com/addin1`例`differentsubdomain.contoso.com/addin2`:)。
+`Storage` は共有ストレージ ソリューションとして機能することを意図しています。つまり、アドインの複数の部分が同じデータにアクセスできるようになります。 たとえば、ユーザー認証のトークンは、 `storage` UI なしのカスタム関数と、作業ウィンドウなどのアドインの ui 要素の両方からアクセスできるため、に格納されます。 同様に、2つのアドインが同じドメイン (たとえば、など) を共有している場合は、 `www.contoso.com/addin1` `www.contoso.com/addin2` 情報を相互間で共有することもでき `storage` ます。 サブドメインが異なるアドインは、のインスタンスが異なることに注意 `storage` してください (例: `subdomain.contoso.com/addin1` `differentsubdomain.contoso.com/addin2` )。
 
 `storage` は共有の場所として機能することから、キー値の組み合わせが書き換えられる可能性があることにご注意ください。
 
@@ -96,11 +47,11 @@ ws.onerror = function (error) {
  - `getKeys`
 
 .[!NOTE]
-> すべての情報 (など`clear`) を消去する方法はありません。 代わりに、一度に複数のエントリを削除できる `removeItems` を使用してください。
+> すべての情報 (など) を消去する方法はありません `clear` 。 代わりに、一度に複数のエントリを削除できる `removeItems` を使用してください。
 
 ### <a name="officeruntimestorage-example"></a>一例
 
-次のコードサンプルでは`OfficeRuntime.storage.setItem` 、関数を呼び出してキーと値`storage`をに設定します。
+次のコードサンプルでは、関数を呼び出して `OfficeRuntime.storage.setItem` キーと値をに設定 `storage` します。
 
 ```js
 function StoreValue(key, value) {
@@ -115,14 +66,13 @@ function StoreValue(key, value) {
 
 ## <a name="additional-considerations"></a>その他の考慮事項
 
-複数のプラットフォーム (Office アドインのキー テナントの 1 つ) で実行するアドインを作成するには、カスタム関数でドキュメント オブジェクト モデル (DOM) にアクセスしたり、jQuery のような DOM に依存するライブラリを使用したりしないでください。 カスタム関数が JavaScript ランタイムを使用する Windows 上の Excel では、カスタム関数は DOM にアクセスできません。
+アドインで UI を使用しないカスタム関数のみが使用されている場合は、UI を使用しないカスタム関数を使用してドキュメントオブジェクトモデル (DOM) にアクセスしたり、DOM に依存している jQuery などのライブラリを使用したりすることができないことに注意してください。
 
 ## <a name="next-steps"></a>次の手順
-[カスタム関数を使用して web 要求を実行](custom-functions-web-reqs.md)する方法について説明します。
+[UI のないカスタム関数をデバッグ](custom-functions-debugging.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
+* [UI レスのカスタム関数を認証する](custom-functions-authentication.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
-* [カスタム関数のアーキテクチャ](custom-functions-architecture.md)
-* [カスタム関数にダイアログを表示する](custom-functions-dialog.md)
 * [カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,24 +1,24 @@
 ---
 title: 共有ランタイムで Office アドインを表示または非表示にする
-description: 連続して実行している間にプログラムによってアドインの UI を表示または非表示にする方法について説明します。
-ms.date: 05/11/2020
+description: 連続して実行している間にプログラムでアドインのユーザーインターフェイスを表示または非表示にする方法について説明します。
+ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 05d254bd4dd5ddb11fd124d75e62ce1a4d8125d2
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217908"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275715"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>共有ランタイムで Office アドインを表示または非表示にする
 
 Office アドインには、次のいずれかの部分を含めることができます。
 
 - 作業ウィンドウ
-- UI レス関数ファイル
+- UI レス関数ファイル (作業ウィンドウや他のユーザーインターフェイス要素を使用しないカスタム関数)
 - Excel カスタム関数
 
-既定では、各パーツは独自の独立した JavaScript ランタイムで実行され、独自のグローバルオブジェクトとグローバル変数を持ちます。 
+既定では、各パーツは独自の独立した JavaScript ランタイムで実行され、独自のグローバルオブジェクトとグローバル変数を持ちます。
 
 2つ以上のパーツを含むアドインは、共通の JavaScript ランタイムを共有できます。 この共有ランタイム機能を使用すると、アドインの実行中に作業ウィンドウを非表示にし、再び開くことができる新しい Api が有効になります。
 

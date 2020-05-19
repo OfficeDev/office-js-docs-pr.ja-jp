@@ -1,18 +1,18 @@
 ---
-ms.date: 12/18/2019
+ms.date: 05/11/2020
 description: Office Excel アドインで、カスタム関数から複数の結果を返します。
 title: カスタム関数から複数の結果を返す
 localization_priority: Normal
-ms.openlocfilehash: 753755b481ab3db0de711c80ef082aedc82177ae
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 23ca1b038d73a93e6f96167cbdc23d79ccbfe622
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217838"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275974"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>カスタム関数から複数の結果を返す
 
-隣接するセルに返される、カスタム関数から複数の結果を返すことができます。 この動作は spilling と呼ばれます。 カスタム関数が結果の配列を返す場合は、動的配列数式と呼ばれます。 Excel の動的配列数式の詳細については、「動的配列」[および「こぼれた配列の動作](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)」を参照してください。
+隣接するセルに返される、カスタム関数から複数の結果を返すことができます。 この動作は spilling と呼ばれます。 カスタム関数が結果の配列を返す場合は、動的配列数式と呼ばれます。 Excel の動的配列数式の詳細については、「動的配列」[および「こぼれた配列の動作](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)」を参照してください。
 
 次の図は、関数が隣接するセルにどのように分解されるかを示して `SORT` います。 カスタム関数は、次のような複数の結果を返すこともできます。
 

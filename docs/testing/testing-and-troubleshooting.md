@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: Office アドインでのユーザーエラーのトラブルシューティング方法について説明します。
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 1ef805f4a35431d3bd7611054963ff6adfa53de0
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241050"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275722"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -43,7 +43,7 @@ ms.locfileid: "43241050"
 Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
 
 
-- [ツール] > [**インターネットオプション** > の**詳細**] に移動します。
+- [ツール] > [**インターネットオプション**の詳細] に移動  >  **Advanced**します。
     
 - **[参照]** で、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオフにします。
     
@@ -96,7 +96,7 @@ URL を信頼済みサイトのリストに追加する方法:
 この問題は、ポップアップ モードでダイアログ API が使用されているときに発生します。この問題を防ぐには、[displayInFrame](/javascript/api/office/office.ui) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない

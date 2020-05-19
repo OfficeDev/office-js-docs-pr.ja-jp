@@ -1,20 +1,22 @@
 ---
-ms.date: 07/10/2019
-description: Excel でカスタム関数をデバッグします。
-title: カスタム関数のデバッグ
+ms.date: 05/17/2020
+description: 作業ウィンドウを使用しない Excel カスタム関数をデバッグする方法について説明します。
+title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6de7dda2e22195096f75cd2bd475ee0e49f4461d
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719309"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278386"
 ---
-# <a name="custom-functions-debugging"></a>カスタム関数のデバッグ
+# <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
-カスタム関数のデバッグは、使用しているプラットフォームによっては複数の方法で実行できます。
+作業ウィンドウやその他のユーザーインターフェイス要素を使用しないカスタム関数のデバッグ (UI レスカスタム関数) は、使用しているプラットフォームによっては、複数の方法で実行できます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 Windows の場合:
 - [Excel デスクトップと Visual Studio Code (VS コード) デバッガー](#use-the-vs-code-debugger-for-excel-desktop)
@@ -35,7 +37,7 @@ On Mac:
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Excel デスクトップ用の VS コードデバッガーを使用する
 
-VS コードを使用して、デスクトップ上の Office Excel でカスタム関数をデバッグできます。
+VS コードを使用して、デスクトップ上の Office Excel で UI を使用しないカスタム関数をデバッグできます。
 
 > [!NOTE]
 > Mac 用のデスクトップデバッグは使用できませんが、[ブラウザーツールおよびコマンドラインを使用して、web 上で Excel をデバッグすることによって](#use-the-command-line-tools-to-debug)実現できます。
@@ -62,7 +64,7 @@ VS コードを使用して、デスクトップ上の Office Excel でカスタ
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Microsoft Edge で Excel の VS コードデバッガーを使用する
 
-VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカスタム関数をデバッグできます。 Microsoft Edge で VS コードを使用するには、 [Microsoft edge 拡張機能用のデバッガー](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)をインストールする必要があります。
+VS コードを使用して、Microsoft Edge ブラウザー上の Excel で UI を使用しないカスタム関数をデバッグできます。 Microsoft Edge で VS コードを使用するには、 [Microsoft edge 拡張機能用のデバッガー](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)をインストールする必要があります。
 
 ### <a name="run-your-add-in-from-vs-code"></a>VS コードからアドインを実行する
 
@@ -98,7 +100,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカ�
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>ブラウザー開発者ツールを使用して、web 上の Excel でカスタム関数をデバッグする
 
-ブラウザー開発者ツールを使用して、web 上の Excel でカスタム関数をデバッグできます。 次の手順は、Windows と macOS の両方で動作します。
+ブラウザー開発者ツールを使用して、web 上の Excel で UI を使用しないカスタム関数をデバッグできます。 次の手順は、Windows と macOS の両方で動作します。
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Visual Studio Code からアドインを実行する
 
@@ -134,7 +136,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel でカ�
 
 VS コードを使用していない場合は、コマンドライン (bash、PowerShell など) を使用してアドインを実行できます。 Web 上の Excel でコードをデバッグするには、ブラウザー開発者ツールを使用する必要があります。 コマンドラインを使用して、デスクトップ版の Excel をデバッグすることはできません。
 
-1. コマンドラインからを実行`npm run watch`すると、コードの変更が発生したときにを監視し、再構築します。
+1. コマンドラインからを実行 `npm run watch` すると、コードの変更が発生したときにを監視し、再構築します。
 2. 2番目のコマンドラインウィンドウを開きます (最初のウィンドウは、ウォッチの実行中にブロックされます)。
 
 3. Excel のデスクトップバージョンでアドインを起動するには、次のコマンドを実行します。
@@ -167,11 +169,10 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
 - `npm run stop`: Excel およびデバッグを停止します。
 
 ## <a name="next-steps"></a>次の手順
-[カスタム関数の認証方法](custom-functions-authentication.md)について説明します。 または、[カスタム関数の一意のアーキテクチャ](custom-functions-architecture.md)を確認します。
+[UI を使用しないカスタム関数の認証方法](custom-functions-authentication.md)について説明します。
 
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のトラブルシューティング](custom-functions-troubleshooting.md)
 * [Excel のカスタム関数でのエラー処理 ](custom-functions-errors.md)
-* [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して Excel の組み込みワークシー
 description: Excel JavaScript API などの組み込みの Excel ワークシート関数を呼び出す方法について説明し `VLOOKUP` `SUM` ます。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9fbc9ed56de0c1657a964718ad0b5eb3ef0e6aea
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 1c988f2bc7ca6a8fc60953dad5ac070051b4c281
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217957"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278372"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
@@ -184,7 +184,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/DGET-function-455568bf-4eef-45f7-90f0-ec250d00892e" target="_blank">DGET 関数</a> | 指定された条件に一致する 1 つのレコードをデータベースから抽出します。 |
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 関数</a> | 証券に対する割引率を返します。 |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 関数</a> | 選択したデータベース レコードの最大値を返します。 |
-| <a href="https://support.microsoft.com/office/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 関数</a> | 選択したデータベース レコードの最小値を返します。 |
+| <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 関数</a> | 選択したデータベース レコードの最小値を返します。 |
 | <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">ドル関数、USDOLLAR 関数</a> | ドル ($) 通貨書式を使用して、数値を文字列に変換します。 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 関数</a> | 分数で表されたドル単位の価格を、小数表示のドル価格に変換します。 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 関数</a> | 小数で表されたドル単位の価格を、分数表示のドル価格に変換します。 |
@@ -317,7 +317,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.microsoft.com/office/7f1ae29b-6b92-435e-b950-ad8b190ddd2b" target="_blank">NOMINAL 関数</a> | 名目年利率を返します。 |
 | <a href="https://support.office.com/article/NORMDIST-function-edb1cc14-a21c-4e53-839d-8082074c9f8d" target="_blank">NORM.DIST 関数</a> | 正規分布の累積分布の値を返します。 |
 | <a href="https://support.microsoft.com/office/54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">NORM.INV 関数</a> | 正規分布の累積分布の逆関数値を返します。 |
-| <a href="https://support.microsoft.com/office/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">NORM.S.DIST 関数</a> | 標準正規分布の累積分布の値を返します。 |
+| <a href="https://support.microsoft.com/office/1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">NORM.S.DIST 関数</a> | 標準正規分布の累積分布の値を返します。 |
 | <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">NORM.S.INV 関数</a> | 標準正規分布の累積分布の逆関数値を返します。 |
 | <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">NOT 関数</a> | 引数の論理値を逆にして返します。 |
 | <a href="https://support.office.com/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46" target="_blank">NOW 関数</a> | 現在の日付と時刻に対応するシリアル値を返します。 |
@@ -434,7 +434,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/WORKDAY-function-f764a5b7-05fc-4494-9486-60d494efbf33" target="_blank">WORKDAY 関数</a> | 指定した稼動日数だけ前または後の日付に対応するシリアル値を返します。 |
 | <a href="https://support.microsoft.com/office/a378391c-9ba7-4678-8a39-39611a9bf81d" target="_blank">WORKDAY.INTL 関数</a> | 週末がどの曜日で何日間あるかを示すパラメーターを使用して、指定した稼働日数だけ前または後の日付に対応するシリアル値を返します。 |
 | <a href="https://support.office.com/article/XIRR-function-de1242ec-6477-445b-b11b-a303ad9adc9d" target="_blank">XIRR 関数</a> | 定期的でないキャッシュ フローの特定のスケジュールに対する内部利益率を返します。 |
-| <a href="https://support.microsoft.com/office/XNPV-function-1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">XNPV 関数</a> | 定期的でないキャッシュ フローの特定のスケジュールに対する正味現在価値を返します。 |
+| <a href="https://support.microsoft.com/office/1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">XNPV 関数</a> | 定期的でないキャッシュ フローの特定のスケジュールに対する正味現在価値を返します。 |
 | <a href="https://support.microsoft.com/office/1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">XOR 関数</a> | すべての引数の論理排他 OR を返します。 |
 | <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">YEAR 関数</a> | シリアル値を年に変換します。 |
 | <a href="https://support.office.com/article/YEARFRAC-function-3844141e-c76d-4143-82b6-208454ddc6a8" target="_blank">YEARFRAC 関数</a> | 開始日と終了日を指定して、その間の期間が 1 年間に対して占める割合を返します。 |

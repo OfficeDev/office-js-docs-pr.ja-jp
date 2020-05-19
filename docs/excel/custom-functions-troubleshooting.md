@@ -1,14 +1,14 @@
 ---
-ms.date: 12/31/2019
+ms.date: 04/29/2020
 description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: bc8a450b1436b487f2c2a77e191182c540f55923
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 33404426cf8c017b7c43f988dbc8aa3a4ddea892
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719610"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275820"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -53,7 +53,7 @@ Excelがカスタム関数の完了を待っている間、＃BUSY！と表示�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
 
-`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 しかし場合によっては、開発サーバーが実際に実行を停止するのに数分かかることがあります。
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーが実行を停止するまでに数分かかることがあります。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
@@ -91,11 +91,9 @@ Windows または Mac で Excel を使用している場合は、Excel から Of
 ドキュメント ページの下部にある "コンテンツ フィードバック" 機能を使用するか、[カスタム関数リポジトリに直接新しい問題を記入](https://github.com/OfficeDev/Excel-Custom-Functions/issues)して、発生した問題をお気軽に送信してください。
 
 ## <a name="next-steps"></a>次の手順
-[カスタム関数をデバッグする](custom-functions-debugging.md)手順をご参照ください。
+「[XLL ユーザー定義関数と互換性のある、カスタム関数を作成する](make-custom-functions-compatible-with-xll-udf.md)」で方法を確認してください。
 
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数メタデータ自動生成](custom-functions-json-autogeneration.md)
-* [Excel カスタム関数のランタイム](custom-functions-runtime.md)
-* [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

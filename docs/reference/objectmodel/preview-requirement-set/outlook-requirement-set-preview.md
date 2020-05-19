@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c2b4d31fdb545afdc695c5aef84856aeaebdbf28
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253629"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278344"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -22,7 +22,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 > [!TIP]
 > [Microsoft 365 テナントで対象指定リリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)することで、web 上の Outlook の機能をプレビューできる場合があります。 該当する機能については、このページにある「プレビューアクセスを構成する」を確認してください。
 >
-> その他の機能については、Microsoft 365 アカウントを使用して web 上の Outlook のプレビュービットへのアクセス権を要求することができます。[このフォーム](https://aka.ms/OWAPreview)を完成して送信します。 これらの機能については、「アクセス権の要求」に記載されています。
+> その他の機能については、Microsoft 365 アカウントを使用して web 上の Outlook のプレビュービットへのアクセス権を要求することができます。[このフォーム](https://aka.ms/OWAPreview)を完成して送信します。 これらの機能については、「要求プレビューアクセス」を確認してください。
 
 要件セットのプレビューには、[要件セット 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) のすべての機能が含まれています。
 
@@ -81,6 +81,34 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 拡張された `AppendOnSend` アクセス許可のコレクションに拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
 
 **利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、web 上の outlook (モダン、[構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>イベントベースのライセンス認証
+
+Outlook アドインでのイベントベースのアクティブ化機能のサポートが追加されました。詳細については[、「イベントベースのライセンス認証用の Outlook アドインを構成](../../../outlook/autolaunch.md)する」を参照してください。
+
+#### <a name="launchevent-extension-point"></a>[LaunchEvent 拡張点](../../manifest/extensionpoint.md#launchevent-preview)
+
+`LaunchEvent`マニフェストに拡張点サポートが追加されました。 イベントベースのライセンス認証機能を構成します。
+
+**利用可能な**機能: web 上の Outlook (モダン、[要求のプレビューアクセス](https://aka.ms/OWAPreview))
+
+#### <a name="launchevents-manifest-element"></a>[LaunchEvents マニフェスト要素](../../manifest/launchevents.md)
+
+`LaunchEvents`マニフェストに要素を追加しました。 イベントベースのアクティブ化機能の構成をサポートしています。
+
+**利用可能な**機能: web 上の Outlook (モダン、[要求のプレビューアクセス](https://aka.ms/OWAPreview))
+
+#### <a name="runtimes-manifest-element"></a>[ランタイムマニフェスト要素](../../manifest/runtimes.md)
+
+マニフェスト要素に Outlook サポートが追加されました `Runtimes` 。 イベントベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
+
+**利用可能な**機能: web 上の Outlook (モダン、[要求のプレビューアクセス](https://aka.ms/OWAPreview))
 
 <br>
 

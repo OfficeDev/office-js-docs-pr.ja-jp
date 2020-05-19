@@ -3,12 +3,12 @@ title: カスタム関数から Microsoft Excel Api を呼び出す
 description: カスタム関数から呼び出すことができる Microsoft Excel Api について説明します。
 ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 0cdae939b70211367bee6317b9d5234d5b153c95
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217880"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276023"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>カスタム関数から Microsoft Excel Api を呼び出す
 
@@ -18,8 +18,6 @@ ms.locfileid: "44217880"
 
 - カスタム関数は、計算の前に Excel から情報を取得する必要があります。 この情報には、ドキュメントのプロパティ、範囲の書式、カスタム XML パーツ、ブック名、その他の Excel 固有の情報が含まれることがあります。
 - ユーザー設定関数は、計算後の戻り値のセルの番号書式を設定します。
-
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## <a name="code-sample"></a>コード サンプル
 

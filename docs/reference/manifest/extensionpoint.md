@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 05/04/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ede99ad73beb1e4a46c9b08188ca79efb556acb0
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022177"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278421"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -76,7 +76,7 @@ ms.locfileid: "44022177"
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
 |**OfficeTab**|既定の Office リボン タブを拡張する場合は必須です (**PrimaryCommandSurface** を使用)。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
 |**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
-|**グループ**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
+|**Group**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
 |**Label**|必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
 |**Icon**|必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 |
 |**Tooltip**|省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
@@ -93,6 +93,7 @@ ms.locfileid: "44022177"
 - [Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -271,11 +272,11 @@ ms.locfileid: "44022177"
 |:-----|:-----|
 |  [Control](control.md) |  コマンド画面にボタンを追加します。  |
 
-`ExtensionPoint`この型の要素には、 `Control` 1 つの子要素 (要素) のみを含めることができます。
+`ExtensionPoint`この型の要素には、1つの子要素 (要素) のみを含めることができます `Control` 。
 
-この`Control`拡張点に含まれる要素の`xsi:type`属性をに`MobileButton`設定する必要があります。
+`Control`この拡張点に含まれる要素の `xsi:type` 属性をに設定する必要があり `MobileButton` ます。
 
-画像`Icon`は、16進コード`#919191`または[他のカラー形式](https://convertingcolors.com/hex-color-919191.html)の同等の画像を使用したグレースケールである必要があります。
+画像は、 `Icon` 16 進コード `#919191` または[他のカラー形式](https://convertingcolors.com/hex-color-919191.html)の同等の画像を使用したグレースケールである必要があります。
 
 #### <a name="example"></a>例
 
@@ -301,9 +302,36 @@ ms.locfileid: "44022177"
 </ExtensionPoint>
 ```
 
+### <a name="launchevent-preview"></a>LaunchEvent (プレビュー)
+
+> [!NOTE]
+> この拡張点は、Office 365 サブスクリプションを使用する web 上の Outlook の[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされます。
+
+この拡張点により、デスクトップフォームファクターでサポートされているイベントに基づいてアドインをアクティブにすることができます。 現時点でサポートされているイベントは、とだけです `OnNewMessageCompose` `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、「[イベントベースのライセンス認証用に Outlook アドインを構成](../../outlook/autolaunch.md)する」の記事を参照してください。
+
+#### <a name="child-elements"></a>子要素
+
+|  要素 |  説明  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  イベントベースのライセンス認証のための[Launchevent](launchevent.md)のリスト。  |
+| [SourceLocation](sourcelocation.md) |  ソース JavaScript ファイルの場所。  |
+
+#### <a name="example"></a>例
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>Events
 
-この拡張点は、指定したイベントのイベント ハンドラーを追加します。
+この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、「 [Outlook アドインの送信時機能](../../outlook/outlook-on-send-addins.md)」を参照してください。
 
 | 要素 | 説明  |
 |:-----|:-----|

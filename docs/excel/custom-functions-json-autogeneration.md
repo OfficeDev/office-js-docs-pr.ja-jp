@@ -1,14 +1,14 @@
 ---
-ms.date: 04/13/2020
+ms.date: 05/06/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241071"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275981"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -52,9 +52,9 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 ### <a name="cancelable"></a>@cancelable
 <a id="cancelable"/>
 
-関数がキャンセルされた場合にカスタム関数がアクションを実行することを示します。
+関数が取り消されたときにカスタム関数が処理を実行することを示します。
 
-最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数は `oncanceled` プロパティに関数を割り当て、関数がキャンセルされた場合に実行するアクションを示すことができます。
+最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数は、関数 `oncanceled` が取り消されたときの結果を示すために、関数をプロパティに割り当てることができます。
 
 最後の関数のパラメーターが `CustomFunctions.CancelableInvocation` 型の場合、タグは表示されませんが、`@cancelable` と見なされます。
 
@@ -66,11 +66,9 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 構文: @customfunction _id_ _名_
 
-このタグを指定すると、JavaScript または TypeScript の関数を、Excel のカスタム関数として処理できます。
+このタグは、JavaScript/TypeScript 関数が Excel カスタム関数であることを示します。 カスタム関数のメタデータを作成する必要があります。
 
-このタグは、カスタム関数のメタデータを作成するために必要です。
-
-次の例は、カスタム関数を宣言する最も簡単な方法を示しています。
+このタグの例を次に示します。
 
 ```js
 /**
@@ -80,9 +78,9 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
  */
 ```
 
-#### <a name="id"></a>ID
+#### <a name="id"></a>id
 
-`id` は、カスタム関数の不変識別子です。
+は、 `id` カスタム関数を識別します。
 
 * `id` が提供されていない場合、JavaScript または TypeScript の関数名は大文字に変換され、許可されない文字は削除されます。
 * `id` はすべてのカスタム関数で一意である必要があります。
@@ -119,9 +117,9 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 ### <a name="description"></a>説明
 
-説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。 Excel では、関数の入力時に、ユーザーにこの説明が表示されます。 次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
+Excel のユーザーには、関数の入力時に説明が表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
 
-次の例では、ADD は関数の `id` と `name` で、 説明が加えられています。
+次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
 
 ```js
 /**
@@ -139,7 +137,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 指定された _url_ が Excel で表示されます。
 
-次の例で`helpurl`は、が`www.contoso.com/weatherhelp`になります。
+次の例では、 `helpurl` がに `www.contoso.com/weatherhelp` なります。
 
 ```js
 /**
@@ -158,8 +156,8 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 JavaScript 構文: @param {type} 名_の説明_
 
-* `{type}` は、中かっこ内の型の情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 省略可能: 指定しない場合、`any` 型が使用されます。
-* `name` は、@param タグを適用するパラメーターを指定します。 必須です。
+* `{type}`中かっこで囲まれた型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 種類が指定されていない場合は、既定の種類が使用され `any` ます。
+* `name`@param タグを適用するパラメーターを指定します。 これは必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 カスタム関数内のパラメーターを省略可能と指定する方法:
@@ -168,7 +166,7 @@ JavaScript 構文: @param {type} 名_の説明_
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。
 
-次の例では、ADD 関数を使用して 2 つまたは 3 つの数値を加算します。3 番目の数値を省略可能なパラメーターとして使用します。
+次の例は、2つまたは3つの数字を省略可能なパラメーターとして追加する ADD 関数を示しています。
 
 ```js
 /**
@@ -185,7 +183,7 @@ JavaScript 構文: @param {type} 名_の説明_
 
 TypeScript 構文: @param 名 _の説明_
 
-* `name` は、@param タグを適用するパラメーターを指定します。 必須です。
+* `name`@param タグを適用するパラメーターを指定します。 これは必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。
@@ -220,7 +218,7 @@ function add(first: number, second: number): number {
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
-最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。 `@requiresAddress` タグを使用する関数の例については、 「[セルのコンテキストパラメーターを指定する](custom-functions-parameter-options.md#addressing-cells-context-parameter)」 を参照してください。
+最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
 
 ---
 ### <a name="returns"></a>@returns
@@ -253,10 +251,10 @@ function add(first: number, second: number): number {
 
 カスタム関数がストリーミング関数であることを示すのに使用されます。 
 
-最後のパラメーターは、`CustomFunctions.StreamingInvocation<ResultType>` 型にする必要があります。
-関数は `void` を返します。
+最後のパラメーターの型は `CustomFunctions.StreamingInvocation<ResultType>` です。
+関数が戻り `void` ます。
 
-ストリーミング関数は値を直接返さず、代わりに、最後のパラメーターを使用して `setResult(result: ResultType)` を呼び出します。
+ストリーミング関数は、値を直接返すのではなく、 `setResult(result: ResultType)` 最後のパラメーターを使用して呼び出します。
 
 ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。 ストリーミング関数と詳細については、「[ストリーミング関数を作成する](./custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。
 
@@ -305,7 +303,7 @@ function roll6sided(): number {
 
 ### <a name="promise"></a>Promise
 
-関数は Promise を返すことができ、Promise が解決されたときに値を提供します。 Promise が拒否された場合は、エラーになります。
+関数は Promise を返すことができます。これは、promise が解決されたときに値を提供します。 Promise が拒否されると、エラーがスローされます。
 
 ### <a name="other-types"></a>その他の型
 
