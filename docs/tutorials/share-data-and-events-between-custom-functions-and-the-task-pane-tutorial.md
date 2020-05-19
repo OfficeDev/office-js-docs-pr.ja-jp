@@ -1,21 +1,23 @@
 ---
-title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)'
+title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
-ms.date: 02/20/2020
+ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
-ms.translationtype: HT
+ms.openlocfilehash: 6d96b10d6cd6e9bb7909b9d6d64b9a65fcac5b3a
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719729"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275602"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する (プレビュー)
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+共有ランタイムを使用するように Excel アドインを構成できます。 これにより、共有されたグローバルデータを使用できるようになります。また、作業ウィンドウとカスタム関数の間でイベントを送信することもできます。
 
-共有ランタイムを使用するように Excel アドインを構成できます。 これにより、グローバル データを共有したり、作業ウィンドウとユーザー設定の関数の間でイベントを送信したりできます。
+ほとんどのカスタム関数のシナリオでは、非作業ウィンドウ (UI に含まれない) カスタム関数を使用する特別な理由がない限り、共有ランタイムを使用することをお勧めします。
+
+このチュートリアルでは、Yo Office ジェネレーターを使用してアドインプロジェクトを作成する方法に精通していることを前提としています。 [Excel カスタム関数のチュートリアル](./excel-tutorial-create-custom-functions.md)を完了することを検討してください (まだ作成していない場合)。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -211,4 +213,4 @@ yo office
 Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。 カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。 または `=CONTOSO.STOREVALUE("new value")` を使用して、共有データを新しい値に変更します。
 
 > [!NOTE]
-> この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 プレビューでカスタム関数から Office API を呼び出すことはできません。
+> この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 カスタム関数から一部の Office Api を呼び出すことができます。 詳細につい[ては、「カスタム関数からの Microsoft Excel api の呼び出し」を参照してください](../excel/call-excel-apis-from-custom-function.md)。

@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
-ms.translationtype: HT
+ms.openlocfilehash: 6ce3bbb4f36819599451f6f87db6c6a6f882f5a1
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547079"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275609"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます! 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、ストリーミング データであるカスタム関数を作成しました。 この関数のデバッグを試してみるには、「[カスタム関数のデバッグ手順](../excel/custom-functions-debugging.md)」を使用します。 Excel のカスタム関数に関する詳細については、次の記事にお進みください。
+おめでとうございます! 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、ストリーミング データであるカスタム関数を作成しました。 次に、共有ランタイムを使用するようにプロジェクトを変更することで、作業ウィンドウの操作が容易になります。 次の記事の手順を実行します。
 
 > [!div class="nextstepaction"]
-> [Excel でカスタム関数を作成する](../excel/custom-functions-overview.md)
+> [共有ランタイムを使用するようにアドインを構成する](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
