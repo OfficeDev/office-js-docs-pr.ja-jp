@@ -1,0 +1,2 @@
+>[!NOTE]
+> <span data-ttu-id="56868-101">UI を使用しない関数を使用する特別な理由がない限り、[共有ランタイム](../excel/configure-your-add-in-to-use-a-shared-runtime.md)でカスタム関数を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="56868-101">Unless you have a specific reason to use a UI-less function, we recommend using custom functions with a [shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).</span></span>
