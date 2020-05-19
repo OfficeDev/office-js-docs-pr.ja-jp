@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: aa3beb7177c2d6019dd85cdab5a0f4b7277506a4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 37456e32dc6111e2b4aa40f0c2240b17916c3778
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718896"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276030"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -35,7 +35,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 アドインは、そのアドインが動作している Office ホストのバージョンでサポートしている要件セットにある API のみを使用できます。 特定の Office ホストのバージョンで使用できる要件セットを正確に確認するには、ホスト固有の要件セットに関する次の記事を参照してください。
 
-- [Excel JavaScript API 要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
+- [Excel JavaScript API 要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要件セット](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API 要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
 - [PowerPoint JavaScript API 要件セット](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)

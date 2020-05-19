@@ -4,12 +4,12 @@ description: このチュートリアルでは、GitHub Gist を新規メッセ�
 ms.date: 12/10/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 49553a7194eceb4ec86fc39769ce369cff092bce
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 01bd595d7a962e22c3794900e3a72b9bff4103db
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719757"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275616"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -731,7 +731,7 @@ var btnEvent;
 Office.initialize = function (reason) {
 };
 
-// Add any ui-less function here.
+// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',
