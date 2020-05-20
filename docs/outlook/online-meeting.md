@@ -1,30 +1,30 @@
 ---
-title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
+title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 description: オンライン会議サービスプロバイダー用の Outlook mobile アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 04/23/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: 1d42ec82e12e9f34f0211ca9926f5ae8b92c7804
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930324"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292288"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する (プレビュー)
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 
 オンライン会議の設定は、Outlook ユーザーにとって中心的な操作であり、Outlook mobile[を使用して Teams 会議を](/microsoftteams/teams-add-in-for-outlook)簡単に作成できます。 ただし、Microsoft 以外のサービスを使用して Outlook でオンライン会議を作成するのは煩雑な場合があります。 この機能を実装することにより、サービスプロバイダーは、Outlook アドインユーザーに対してオンライン会議の作成環境を合理化することができます。
 
-> [!NOTE]
-> この機能は、Office 365 サブスクリプションを使用した Android の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。
+> [!IMPORTANT]
+> この機能は、Office 365 サブスクリプションを使用した Android でのみサポートされています。
 
 この記事では、ユーザーがオンライン会議サービスを使用して会議を整理し、会議に参加できるようにするために Outlook モバイルアドインをセットアップする方法について説明します。 この記事全体で、架空のオンライン会議サービスプロバイダーである "Contoso" を使用します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成できるようにするには`MobileOnlineMeetingCommandSurface` 、マニフェストで親要素`MobileFormFactor`の下に拡張点を構成する必要があります。 その他のフォームファクターはサポートされていません。
+ユーザーがアドインを使用してオンライン会議を作成できるようにするには、 `MobileOnlineMeetingCommandSurface` マニフェストで親要素の下に拡張点を構成する必要があり `MobileFormFactor` ます。 その他のフォームファクターはサポートされていません。
 
-次の例は、 `MobileFormFactor`要素と`MobileOnlineMeetingCommandSurface`拡張点を含むマニフェストからの抜粋を示しています。
+次の例は、要素と拡張点を含むマニフェストからの抜粋を示して `MobileFormFactor` `MobileOnlineMeetingCommandSurface` います。
 
 > [!TIP]
 > Outlook アドインのマニフェストの詳細については、「outlook[アドインのマニフェスト](manifests.md)」および「 [outlook Mobile のアドインコマンドのサポートを追加](add-mobile-support.md)する」を参照してください。
@@ -87,7 +87,7 @@ const newBody = '<br>' +
     '<br><br>';
 ```
 
-次の例は、マニフェストで`insertContosoMeeting`参照される UI を使用しない関数を定義して、オンライン会議の詳細で会議の本文を更新する方法を示しています。
+次の例は、マニフェストで参照される UI を使用しない関数を定義して、 `insertContosoMeeting` オンライン会議の詳細で会議の本文を更新する方法を示しています。
 
 ```js
 var mailboxItem;
@@ -114,7 +114,7 @@ function insertContosoMeeting(event) {
 }
 ```
 
-次の例は、前の例で使用`updateBody`した、会議の現在の本文にオンライン会議の詳細を追加する、サポート関数の実装を示しています。
+次の例は、 `updateBody` 前の例で使用した、会議の現在の本文にオンライン会議の詳細を追加する、サポート関数の実装を示しています。
 
 ```js
 function updateBody(event, existingBody) {
@@ -141,7 +141,7 @@ function updateBody(event, existingBody) {
 
 会議の開催者として、会議を作成するときに次の3つの画像のような画面が表示されます。
 
-android の[ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [[会議を作成する] 画面のスクリーンショット-contoso-contoso の [会議を作成する] 画面のスクリーンショットを非表示にする-contoso の会議![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![画面を作成する](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+android の[ ![ [会議を作成する] 画面](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)のスクリーンショット-contoso-contoso の[ ![ [](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox)会議を作成する] 画面のスクリーンショットを非表示にする-contoso の会議[ ![ 画面を作成する](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>ミーティング UI への参加
 
@@ -171,10 +171,9 @@ android の[ ![](../images/outlook-android-create-online-meeting-load.png)](../i
 いくつかの制限が適用されます。
 
 - オンライン会議サービスプロバイダーにのみ適用されます。
-- 現在プレビュー中であるため、この機能は運用アドインでは使用しないでください。
 - 現時点では、Android はサポートされている唯一のクライアントです。 IOS でのサポートは近日に予定されています。
 - 既定の Teams または Skype オプションを置き換えて、管理者によってインストールされたアドインのみが会議の作成画面に表示されます。 ユーザーがインストールしたアドインはアクティブ化されません。
-- アドインアイコンは、16進コード`#919191`または[その他の色の形式](https://convertingcolors.com/hex-color-919191.html)の同等機能を使用したグレースケールである必要があります。
+- アドインアイコンは、16進コード `#919191` または[その他の色の形式](https://convertingcolors.com/hex-color-919191.html)の同等機能を使用したグレースケールである必要があります。
 - 予定の開催者 (新規作成) モードでは、UI レスコマンドは1つだけサポートされています。
 
 ## <a name="see-also"></a>関連項目

@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 05/18/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278344"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292295"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -188,23 +188,7 @@ Office テーマを取得する機能が追加されました。
 
 ---
 
-### <a name="online-meeting-provider-integration"></a>オンライン会議プロバイダーの統合
-
-Outlook mobile アドインでのオンライン会議統合のサポートが追加されました。詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](../../../outlook/online-meeting.md)する」を参照してください。
-
-#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 拡張点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
-
-`MobileOnlineMeetingCommandSurface`マニフェストに拡張点を追加しました。 オンライン会議の統合を定義します。
-
-**利用可能な**対象: Android on Outlook (Office 365 サブスクリプションに接続)
-
-<br>
-
----
-
----
-
-### <a name="sso"></a>SSO
+### <a name="single-sign-on-sso"></a>シングル サインオン (SSO)
 
 #### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 
