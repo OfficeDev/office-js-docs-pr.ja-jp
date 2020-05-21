@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 04/16/2020
+ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6da9e34359521157e809764907c3a6c3a62ae76c
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: ee3363d324a42c3074093b252c822be635977f1d
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547230"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170794"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -28,16 +28,17 @@ Excel アドインは、Windows での Office 2016 以降、Office on the web、
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](excel-preview-apis.md)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://insider.office.com)に参加する必要があります) |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | 該当なし | 該当なし | 最新 ([要件セットのページ](./excel-api-online-requirement-set.md)を参照) |
-| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | バージョン 1907 (ビルド 11929.20306) 以降 | 2.30 以降 | 16.30 以降 | 2019 年 10 月 |
-| [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | バージョン 1903 (ビルド 11425.20204) 以降 | 2.24 以降 | 16.24 以降 | 2019 年 5 月 |
-| [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | バージョン 1808 (ビルド 10730.20102) 以降 | 2.17 以降 | 16.17 以降 | 2018 年 9 月 |
-| [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | バージョン 1801 (ビルド 9001.2171) 以降   | 2.9 以降  | 16.9 以降  | 2018 年 4 月 |
-| [ExcelApi 1.6](excel-api-1-6-requirement-set.md)  | バージョン 1704 (ビルド 8201.2001) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 4 月 |
-| [ExcelApi 1.5](excel-api-1-5-requirement-set.md)  | バージョン 1703 (ビルド 8067.2070) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 3 月 |
-| [ExcelApi 1.4](excel-api-1-4-requirement-set.md)  | バージョン 1701 (ビルド 7870.2024) 以降   | 2.2 以降  | 15.36 以降 | 2017 年 1 月 |
-| [ExcelApi 1.3](excel-api-1-3-requirement-set.md)  | バージョン 1608 (ビルド 7369.2055) 以降   | 1.27 以降 | 15.27 以降 | 2016 年 9 月 |
-| [ExcelApi 1.2](excel-api-1-2-requirement-set.md)  | バージョン 1601 (ビルド 6741.2088) 以降   | 1.21 以降 | 15.22 以降 | 2016 年 1 月 |
-| [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | バージョン 1509 (ビルド 4266.1001) 以降   | 1.19 以降 | 15.20 以降 | 2016 年 1 月 |
+| [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | バージョン 2002 (ビルド 12527.20470) 以降 | 16.35 以降 | 16.33 以降 | 2020 年 5 月 |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | バージョン 1907 (ビルド 11929.20306) 以降 | 16.0 以降 | 16.30 以降 | 2019 年 10 月 |
+| [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | バージョン 1903 (ビルド 11425.20204) 以降 | 16.0 以降 | 16.24 以降 | 2019 年 5 月 |
+| [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | バージョン 1808 (ビルド 10730.20102) 以降 | 16.0 以降 | 16.17 以降 | 2018 年 9 月 |
+| [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | バージョン 1801 (ビルド 9001.2171) 以降   | 16.0 以降  | 16.9 以降  | 2018 年 4 月 |
+| [ExcelApi 1.6](excel-api-1-6-requirement-set.md)  | バージョン 1704 (ビルド 8201.2001) 以降   | 15.0 以降  | 15.36 以降 | 2017 年 4 月 |
+| [ExcelApi 1.5](excel-api-1-5-requirement-set.md)  | バージョン 1703 (ビルド 8067.2070) 以降   | 15.0 以降  | 15.36 以降 | 2017 年 3 月 |
+| [ExcelApi 1.4](excel-api-1-4-requirement-set.md)  | バージョン 1701 (ビルド 7870.2024) 以降   | 15.0 以降  | 15.36 以降 | 2017 年 1 月 |
+| [ExcelApi 1.3](excel-api-1-3-requirement-set.md)  | バージョン 1608 (ビルド 7369.2055) 以降   | 15.0 以降 | 15.27 以降 | 2016 年 9 月 |
+| [ExcelApi 1.2](excel-api-1-2-requirement-set.md)  | バージョン 1601 (ビルド 6741.2088) 以降   | 15.0 以降 | 15.22 以降 | 2016 年 1 月 |
+| [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | バージョン 1509 (ビルド 4266.1001) 以降   | 15.0 以降 | 15.20 以降 | 2016 年 1 月 |
 
 > [!NOTE]
 > 永続ライセンス版 Office でサポートされる要件セットは次のとおりです。
