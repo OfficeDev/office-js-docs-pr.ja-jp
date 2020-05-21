@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セット 1.8
 description: Outlook アドイン API の要件セット1.8
-ms.date: 12/17/2019
+ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1e6a903a9e627f3344eee9283e051ac84b5abf10
+ms.sourcegitcommit: b6fd04b55cb1f39b316bcb0b3f3e1e33800b1d36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719995"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "44326877"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -20,11 +20,12 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 - 添付ファイル、カテゴリ、代理人アクセス、拡張された場所、インターネット ヘッダー、および送信ブロック機能用の新しい API が追加されました。
 - Event.completed にオプションの `options` パラメーターが追加されました。
-- AttachmentsChanged および EnhancedLocationsChanged イベントのサポートが追加されました。
+- およびイベントのサポートが追加されました `AttachmentsChanged` `EnhancedLocationsChanged` 。
 
 ### <a name="change-log"></a>変更ログ
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8) が追加されました: 添付ファイルのコンテンツを表す新しいオブジェクトを追加します。
+- [Attachmentdetails](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8)の追加: 新規作成モードの添付ファイルの詳細を表す新しいオブジェクトを追加します。
 - [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8) が追加されました: 項目カテゴリを表す新しいオブジェクトを追加します。
 - [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8) が追加されました: カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトを追加します。
 - [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8) が追加されました: 予定の場所のセットを表す新しいオブジェクトを追加します。
