@@ -1,23 +1,26 @@
 ---
 title: アドイン コマンドの基本概念
-description: Office Web アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 02/11/2020
+description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
+ms.date: 05/12/2020
 localization_priority: Priority
-ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbd25761dcf852905a766489cf4689856115cc39
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890557"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217901"
 ---
-# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
+# <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。ユーザーがアドイン コマンドを選択すると、JavaScript コードを実行したり、アドインのページを作業ウィンドウに表示するなどのアクションが開始されます。アドイン コマンドは、ユーザーがアドインを検索して使用ために役立ちます。これにより、アドインの導入と再利用を促進し、顧客維持率を向上させることができます。
 
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。 
+> SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](../publish/centralized-deployment.md)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、または[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使ってテストのためのアドイン コマンドを展開できます。
+
+> [!IMPORTANT]
+> アドイン コマンドは、Outlook でもサポートされています。 詳細については、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
 *図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
@@ -51,7 +54,7 @@ ms.locfileid: "42890557"
 
 ### <a name="default-enabled-or-disabled-status-preview"></a>既定で有効または無効になっている状態 (プレビュー)
 
-アドイン起動時にコマンドを有効にするか無効にするかを指定したり、プログラムによって設定を変更したりできます。 
+アドイン起動時にコマンドを有効にするか無効にするかを指定したり、プログラムによって設定を変更したりできます。
 
 > [!NOTE]
 > この機能はプレビュー段階にあり、すべてのホストまたはシナリオでサポートされるわけではありません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
@@ -60,12 +63,14 @@ ms.locfileid: "42890557"
 
 現在、アドイン コマンドは次のプラットフォームでサポートされています。
 
-- Windows 版 Outlook 2016 (ビルド 16.0.4678.1000 以降)
 - Windows 上の Office (ビルド 16.0.6769 以降、Office 365 サブスクリプションに接続済み)
 - Windows 版 Office 2019
 - Mac 上の Office (ビルド 15.33 以降、Office 365 サブスクリプションに接続済み)
 - Mac 上の Office 2019
 - Office on the web
+
+> [!NOTE]
+> Outlook でのサポートについては、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」をご覧ください。
 
 ## <a name="debugging"></a>デバッグ
 

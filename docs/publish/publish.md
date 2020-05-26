@@ -1,14 +1,14 @@
 ---
 title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
-ms.date: 03/18/2020
+ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: e7bcd3a1de0c81d0626cf0f59569acb0a8a1d09e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890985"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217999"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
@@ -17,7 +17,7 @@ ms.locfileid: "42890985"
 |**メソッド**|**Use...**|
 |:---------|:------------|
 |[サイドロード](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|開発プロセスの一環として、Windows、iPad、Mac、またはブラウザーで実行するアドインをテストします。|
-|[一元展開](centralized-deployment.md)|クラウド環境またはハイブリッド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
+|[一元展開](centralized-deployment.md)|クラウド環境で、Office 365 管理センターを使用して組織内のユーザーにアドインを配布します。|
 |[SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|オンプレミス環境で、組織内のユーザーにアドインを配布します。|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|ユーザーに配布する目的でアドインを公開します。|
 |[Exchange サーバー](#outlook-add-in-deployment)|オンプレミス環境またはオンライン環境で、ユーザーに Outlook アドインを配布します。|
@@ -50,9 +50,9 @@ ms.locfileid: "42890985"
 
 次からの各セクションでは、組織内のユーザーに Office アドインを配布する際に最も一般的に使用される展開方法についての追加情報を示します。
 
-エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)」を参照してください。
+エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862)」を参照してください。
 
-### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開 
+### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開
 
 Office 365 管理センターを使用すると、管理者は組織内のユーザーとグループに Office アドインを簡単に展開できるようになります。管理センターを介して展開されたアドインは、ユーザーがすぐに Office アプリケーションで利用できるようになります。クライアントの構成は必要ありません。一元展開は、内部アドインの展開に使用することも、ISV が提供するアドインの展開に使用することもできます。
 

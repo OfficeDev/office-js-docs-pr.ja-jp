@@ -4,16 +4,19 @@ description: Office アドインの学習リソースを使用する初心者向
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 026f90ea62960cbbf5ab4420d40a4a9165139cae
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 61a8e455c5fdb676166f05d03d3d360593c53445
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547622"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170780"
 ---
 # <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>ここから開始! 初心者向け Office アドイン開発ガイド
 
 独自のクロスプラットフォーム Office 拡張機能を構築する必要がありますか? 次の手順では、最初に読むべきこと、インストールするツール、完了すべき推奨チュートリアルを示します。
+
+> [!NOTE]
+> Office 用の VSTO アドインの作成経験がある場合には、この記事内にある情報のスーパーセットである「[切り替えはこちら! VSTO アドイン作成者のための Office Web アドイン作成ガイド](learning-path-transition.md)」を今すぐご覧になることをお勧めします。
 
 ## <a name="step-0-prerequisites"></a>手順 0: 前提条件
 
