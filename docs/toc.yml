@@ -906,12 +906,12 @@
           href: outlook/online-meeting.md
         - name: 送信時アドイン
           href: outlook/outlook-on-send-addins.md
+        - name: イベント ベースのライセンス認証 (プレビュー)
+          href: outlook/autolaunch.md
         - name: ピン留め可能な作業ウィンドウ
           href: outlook/pinnable-taskpane.md
         - name: 代理人アクセス
           href: outlook/delegate-access.md
-        - name: イベント ベースのライセンス認証を構成する (プレビュー)
-          href: outlook/autolaunch.md
         - name: マニフェスト
           items:
             - name: Outlook アドイン マニフェスト
