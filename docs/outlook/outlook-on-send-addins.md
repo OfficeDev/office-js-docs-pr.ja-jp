@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 05/19/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ee9e42c5be2fc25f4f310ae5c14cebe1c5b64af
-ms.sourcegitcommit: 66c73c64ad1b5708ffccdd80817f557292c706b8
+ms.openlocfilehash: 7dc35d71f78ec282ecedda9eba0ab4fc52811fee
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44321867"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413190"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -352,8 +352,8 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |シナリオ|メールボックス 1 の送信時機能|メールボックス 2 の送信時機能|Outlook web のセッション (クラシック)|結果|サポートの有無|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
 |1 |Enabled|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|2 |無効|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|3 |有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
+|pbm-2|無効|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
+|1/3|有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
 |4 |Enabled|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web ブラウザー (モダン Outlook)、Windows、Mac
@@ -367,7 +367,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |シナリオ|メールボックス 1 の送信時ポリシー|送信時アドインが有効かどうか|メールボックス 1 のアクション|結果|サポートの有無|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
 |1 |有効|はい|メールボックス 1 はグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインが実行されます。|はい|
-|2 |有効|はい|メールボックス 1 は、Outlook on the web のグループ 1 のグループ ウィンドウ内でグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインは実行されません。|現在サポートされていません。 回避策として、シナリオ 1 を使用します。|
+|pbm-2|有効|はい|メールボックス 1 は、Outlook on the web のグループ 1 のグループ ウィンドウ内でグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインは実行されません。|現在サポートされていません。 回避策として、シナリオ 1 を使用します。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>ユーザー メールボックスで送信時アドイン機能/ポリシーが有効になっており、送信時機能をサポートするアドインがインストールされ、有効であり、オフライン モードが有効になっている
 
@@ -454,7 +454,6 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 > [!NOTE]
 > 詳細については、以下を参照してください。
 > - [Outlook アドインのマニフェスト](manifests.md)
-> - [VersionOverrides](../develop/create-addin-commands.md#step-3-add-versionoverrides-element)
 > - [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
 
 

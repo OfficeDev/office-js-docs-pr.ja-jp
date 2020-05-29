@@ -1,14 +1,14 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
 description: Outlook Mobile アドインはすべての商用版 Office 365 アカウント、Outlook.com アカウントでサポートされ、近いうちに Gmail アカウントでもサポートされる予定です。
-ms.date: 04/13/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 6cc91bd021640988b2f216dda258b185748b2e40
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241085"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413211"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
@@ -35,7 +35,7 @@ Outlook Mobile アドインはすべての商用版 Office 365 アカウント�
     - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠**していなければなりません**。
     - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である**必要**があります。
 
-- 一般的に、メッセージの読み取りモードのみがサポートされています。 これ`MobileMessageReadCommandSurface`は、マニフェストのモバイルセクションで宣言する必要がある唯一の[extensionpoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)です。 ただし、予定の開催者モードは、オンライン会議プロバイダー統合アドインでサポートされており、代わりに[MobileOnlineMeetingCommandSurface 拡張点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)を宣言します。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](online-meeting.md)する」の記事を参照してください。
+- 一般的に、メッセージの読み取りモードのみがサポートされています。 これ `MobileMessageReadCommandSurface` は、マニフェストのモバイルセクションで宣言する必要がある唯一の[extensionpoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)です。 ただし、予定の開催者モードは、オンライン会議プロバイダー統合アドインでサポートされており、代わりに[MobileOnlineMeetingCommandSurface 拡張点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)を宣言します。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](online-meeting.md)する」の記事を参照してください。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 
@@ -69,7 +69,7 @@ Outlook Mobile でアドインをテストするために、O365 や Outlook.com
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
-モバイルにおけるトラブルシューティングは、使い慣れたツールがないことがあるため難しい場合があります。トラブルシューティングの 1 つのオプションは、[Vorlon.js を使用](../testing/debug-office-add-ins-on-ipad-and-mac.md)する方法です。または、Fiddler を以前に使用したことがある場合、[iOS デバイスでの使用についてはこのチュートリアル](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)をご確認ください。
+モバイルでのトラブルシューティングは、使用しているツールを持っていない可能性があるため、困難な場合があります。 ただし、iOS でトラブルシューティングを行う方法の1つとして、Fiddler を使用する方法があります ( [ios デバイスでの使用につい](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)ては、このチュートリアルをご覧ください)。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -1,14 +1,14 @@
 ---
 title: Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
 description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 02d61d90f500712b2970c4dfb5b439b3367f59d7
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217887"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413176"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
 
@@ -25,6 +25,9 @@ ms.locfileid: "44217887"
   - 通常はいずれの UI も表示しないで実行する JavaScript コードを実行します。
 
 この記事では、アドイン コマンドを定義するマニフェストの編集方法について説明します。次の図に、アドイン コマンドを定義するのに使用される要素の階層を示します。これらの要素は、この記事で詳細に説明します。
+
+> [!NOTE]
+> アドイン コマンドは、Outlook でもサポートされています。 詳細については、「 [Outlook のアドインコマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
 次の画像は、マニフェスト内のアドイン コマンド要素の概要です。 ![マニフェスト内のアドイン コマンド要素の概要](../images/version-overrides.png)
 
@@ -80,7 +83,7 @@ ms.locfileid: "44217887"
   
 |**要素**|**説明**|
 |:-----|:-----|
-|**説明** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
+|**Description** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
 |**Requirements** <br/> |省略可能。アドインに必要な最小の Office.js のセットおよびバージョンを指定します。この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。詳細については、「[Office のホストと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。  <br/> |
 |**Hosts** <br/> |必須。Office ホストのコレクションを指定します。子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。"Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
 |**Resources** <br/> |マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。たとえば、**Description** 要素の値は、**Resources** の子要素を参照します。**Resources** 要素については、この記事の「[手順 7: Resources 要素を追加する](#step-7-add-the-resources-element)」で説明します。 <br/> |
@@ -436,4 +439,4 @@ Excel および Word で、既定の Office UI タブを使用することで、
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel、PowerPoint、および Word のアドインコマンド](../design/add-in-commands.md)
+- [Excel、PowerPoint、Word のアドイン コマンド](../design/add-in-commands.md)

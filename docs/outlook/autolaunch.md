@@ -2,14 +2,14 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 05/18/2020
+ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: f059f6a96adeac38c632525ddc689a2b79892024
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 73cdd4949b870d9bc5a5ad2006ce2081575558df
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278534"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413197"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -107,8 +107,7 @@ Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=
             </OfficeTab>
           </ExtensionPoint>
 
-          <!-- Configure AppointmentOrganizerCommandSurface extension point to support
-          add-in activation on composing a new appointment. -->
+          <!-- Can configure other command surface extension points for add-in command support. -->
 
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">

@@ -4,12 +4,12 @@ description: Office 共通 API の要件セットの詳細情報
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 39358b26547a464b9bb1b96f571bac7741e1c32d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717468"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413239"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -162,7 +162,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
+| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
 
 ---
 

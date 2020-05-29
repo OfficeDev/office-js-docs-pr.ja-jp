@@ -1,14 +1,14 @@
 ---
 title: Outlook コンテキスト アドインのアクティブ化のトラブルシューティング
 description: アドインが期待どおりにアクティブにならない場合は、考えられる理由について、次の点を調査してください。
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: cfc5595257b6f8413aa3c1452fb5752e83ece631
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166449"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413183"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
@@ -81,10 +81,17 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 このシナリオは Windows での Outlook にのみ適用されます。通常、メールボックスに Outlook アドインをインストールすると、Exchange Server は、アドイン マニフェストを指定の場所からその Exchange Server 上のメールボックスにコピーします。Outlook は起動するたびに、そのメールボックスにインストールされたすべてのマニフェストを、次の場所にある一時的なキャッシュに読み込みます。
 
 ```text
-%LocalAppData%\Microsoft\Office\15.0\WEF
+%LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-たとえば、John というユーザーであれば、キャッシュは C:\Users\john\AppData\Local\Microsoft\Office\15.0\WEF にあります。
+たとえば、ユーザー John の場合、キャッシュは C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF. にある可能性があります。
+
+> [!IMPORTANT]
+> Windows の Outlook 2013 では、16.0 ではなく15.0 を使用して、場所を次のようにします。
+>
+> ```text
+> %LocalAppData%\Microsoft\Office\15.0\WEF
+> ```
 
 アドインがどのアイテムに対してもアクティブ化されない場合、マニフェストが Exchange Server 上に適切にインストールされなかったか、あるいは、Outlook が起動時に正しくマニフェストを読み取れなかった可能性があります。Exchange 管理センターを使用して、アドインがメールボックスにインストールされ、有効化されていることを確認し、必要に応じて Exchange Server を再起動します。
 
@@ -103,7 +110,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 1. アドインがアクティブ化されない場合は、アドインのマニフェストの適切なキャッシュ コピーが Outlook にあるかどうかを確認します。次のパスの下を探してください。
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF
+    %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
     次のサブフォルダーでマニフェストを見つけることができます。
@@ -116,7 +123,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
     > ユーザー John のメールボックスにインストールされたマニフェストへのパスの例は次のとおりです。
     >
     > ```text
-    > C:\Users\john\appdata\Local\Microsoft\Office\15.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
+    > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
     > ```
 
     テストしているアドインのマニフェストが、キャッシュされたマニフェストに含まれているかどうかを確認します。
@@ -140,7 +147,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 1. イベントの成功を確認できない場合は、Outlook を閉じて、次のパスにあるすべてのマニフェストを削除します。
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
     ```
 
     Outlook を起動し、Outlook でアドインがアクティブになっているかどうかをテストします。
