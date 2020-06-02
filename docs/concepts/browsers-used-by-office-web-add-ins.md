@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 04/21/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ef4b6d4c09140fc6d6bb04eca51d845b79b6dc7
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 0f553b0fe6a94577af438a2cb29dafc644f02960
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744853"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471332"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -34,10 +34,13 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 
 <sup>1</sup> [[更新履歴] ページ](/officeupdates/update-history-office365-proplus-by-date)を参照してください。詳細については、「 [Office クライアントのバージョンと更新プログラムのチャネルを見つける](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)方法」を参照してください。
 
-<sup>2</sup> Microsoft Edge を使用している場合、Windows 10 ナレーター ("スクリーンリーダー" と呼ばれることも`<title>`あります) は、作業ウィンドウに表示されるページのタグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
+<sup>2</sup> Microsoft Edge を使用している場合、Windows 10 ナレーター ("スクリーンリーダー" と呼ばれることもあります) は、 `<title>` 作業ウィンドウに表示されるページのタグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
 > [!IMPORTANT]
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
+
+>[!NOTE]
+> アドインにマニフェスト内の要素が含まれている場合は `Runtimes` 、既定で Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge の問題のトラブルシューティング
 
@@ -63,7 +66,7 @@ Office アドインでは、 [Microsoft Edge WebView](/microsoft-edge/hosting/we
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>PDF ファイルをダウンロードしようとしてエラーを取得する
 
-アドインで blob を PDF ファイルとして直接ダウンロードすることは、エッジがブラウザーの場合はサポートされていません。 回避策は、blob を PDF ファイルとしてダウンロードする簡単な web アプリケーションを作成することです。 アドインで`Office.context.ui.openBrowserWindow(url)`メソッドを呼び出し、web アプリケーションの URL を渡します。 これにより、Office の外部にあるブラウザーウィンドウで web アプリケーションが開きます。
+アドインで blob を PDF ファイルとして直接ダウンロードすることは、エッジがブラウザーの場合はサポートされていません。 回避策は、blob を PDF ファイルとしてダウンロードする簡単な web アプリケーションを作成することです。 アドインでメソッドを呼び出し、 `Office.context.ui.openBrowserWindow(url)` web アプリケーションの URL を渡します。 これにより、Office の外部にあるブラウザーウィンドウで web アプリケーションが開きます。
 
 ## <a name="see-also"></a>関連項目
 

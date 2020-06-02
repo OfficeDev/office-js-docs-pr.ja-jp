@@ -1,14 +1,14 @@
 ---
 title: マニフェストファイル内のランタイム
 description: Runtime 要素は、アドインが、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに対して共有 JavaScript ランタイムを使用するように構成します。
-ms.date: 05/18/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: a463b72f22b41f74e2fe98acca467762bb00cf39
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278414"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471339"
 ---
 # <a name="runtime-element-preview"></a>Runtime 要素 (プレビュー)
 
@@ -21,7 +21,7 @@ Outlook では、この要素はイベントベースのアドインのアクテ
 **アドインの種類:** 作業ウィンドウ、メール
 
 > [!IMPORTANT]
-> **Excel**: 共有ランタイムは現在プレビュー段階であり、Windows 上の Excel でのみ使用できます。 プレビュー機能を試すには、 [Office Insider](https://insider.office.com/)に参加する必要があります。
+> **Excel**: 共有ランタイムは、現在 Windows 上の Excel でのみ使用できます。
 >
 > **Outlook**: イベントベースのライセンス認証は現在[プレビュー段階で](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)あり、web 上の Outlook でのみ使用できます。 詳細については、「[イベントベースのライセンス認証機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
 

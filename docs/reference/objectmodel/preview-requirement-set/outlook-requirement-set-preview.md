@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: 600aad32c394d35e62f4024808b185e8a9abe5e8
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415878"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471346"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -111,6 +111,20 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 マニフェスト要素に Outlook サポートが追加されました `Runtimes` 。 イベントベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
 
 **利用可能な**機能: web 上の Outlook (モダン、[要求のプレビューアクセス](https://aka.ms/OWAPreview))
+
+<br>
+
+---
+
+---
+
+### <a name="get-all-custom-properties"></a>すべてのカスタムプロパティを取得する
+
+#### <a name="custompropertiesgetall"></a>[CustomProperties getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+
+すべてのカスタムプロパティを取得する新しい関数をオブジェクトに追加しまし `CustomProperties` た。
+
+**利用可能な**対象: Outlook on Windows (office 365 サブスクリプションに接続)、outlook on the web (モダン)、Outlook on Mac (office 365 サブスクリプションに接続)、outlook On the Android、Outlook on iOS
 
 <br>
 
