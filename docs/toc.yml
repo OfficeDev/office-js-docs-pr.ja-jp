@@ -907,7 +907,7 @@
         - name: 送信時アドイン
           href: outlook/outlook-on-send-addins.md
         - name: 送信時に追加 (プレビュー)
-          href: outlook/outlook-on-send-addins.md
+          href: outlook/append-on-send.md
         - name: イベント ベースのライセンス認証 (プレビュー)
           href: outlook/autolaunch.md
         - name: ピン留め可能な作業ウィンドウ
