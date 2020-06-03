@@ -1,14 +1,14 @@
 ---
-ms.date: 01/14/2020
+ms.date: 04/29/2020
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: 418c8124f8ed99b5ef1321c66f31ee0483da667b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1ae1baa912c914c3a508f1bbf6bd5d9fa6044f7b
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719596"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44275747"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -27,7 +27,7 @@ ms.locfileid: "42719596"
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-次のコードサンプルでは、 `webRequest`関数は、"スペースがあります" という名前の "API" に到達します。これは、現在、国際宇宙ステーションにいるユーザーの数を追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
+次のコードサンプルでは、関数は、" `webRequest` スペースがあります" という名前の "API" に到達します。これは、現在、国際宇宙ステーションにいるユーザーの数を追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
 
 独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](./custom-functions-batching.md)を検討してください。
 
@@ -56,11 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>XHR の使用例
 
-カスタム関数のランタイムは、[同送信元ポリシー](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)とシンプルな [CORS](https://www.w3.org/TR/cors/) を要求することにより、XHR が追加のセキュリティ対策を実装します。
-
-単純な CORS 実装は cookies を使用できず、簡単なメソッド(GET、 HEAD、 POST) のみをサポートすることに注意してください。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが、 `application/x-www-form-urlencoded`、 `text/plain`、または `multipart/form-data`の単純な CORS のコンテンツ タイプ ヘッダーを使う事もできます。
-
-次のコードサンプルでは、 `getStarCount`この関数は Github API を呼び出して、特定のユーザーのリポジトリに与えられた星の量を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
+次のコードサンプルでは、この `getStarCount` 関数は GITHUB API を呼び出して、特定のユーザーのリポジトリに与えられた星の量を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
 
 ```TS
 /**
@@ -103,7 +99,10 @@ async function getStarCount(userName: string, repoName: string) {
 
 ストリーム カスタム関数を使用すると、繰り返し更新されるセルにデータを出力でき、ユーザーが明示的に何かを更新する必要ありません。 これは、[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)の関数のように、サービス オンラインのライブ データを確認する際に便利です。
 
-ストリーミング関数を宣言するには、タグ`@streaming`を使用するか、`CustomFunctions.StreamingInvocation`呼び出しパラメーターを使用します。これは、関数がストリーミング中であることを示します。 新しい情報に基づいて関数が再評価する可能性があることをユーザーに警告するには、関数の名前または説明にこれを示すことができるストリームまたはその他の文言を使用することをお勧めします。
+ストリーミング関数を宣言するには、次のいずれかを使用できます。
+
+- `@streaming`タグ。
+- `CustomFunctions.StreamingInvocation`呼び出しパラメーター。
 
 以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
 
@@ -112,7 +111,7 @@ async function getStarCount(userName: string, repoName: string) {
 - `onCanceled` コールバックは、関数がキャンセルされた場合に実行される関数を定義します。
 - ストリーミングは必ずしもWeb 要求の実行に結び付けられているわけではありません。この場合、関数は Web 要求を行うのではなく、設定された間隔でデータを取得しているため、ストリーミング `invocation` パラメータを使用する必要があります。
 
-```js
+```JS
 /**
  * Increments a value once a second.
  * @customfunction INC increment
@@ -132,7 +131,9 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-`onCanceled`コールバックについて理解するだけでなく、Excel が次のような場合に関数の実行をキャンセルすることも理解しておく必要があります。
+## <a name="canceling-a-function"></a>関数をキャンセルする
+
+Excel では、次のような状況で関数の実行をキャンセルします。
 
 - ユーザーが、関数を参照するセルを編集または削除した場合。
 - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
@@ -140,18 +141,17 @@ function increment(incrementBy, invocation) {
 
 また、要求が発生したときに、オフラインの場合でも、ケースを処理する既定のストリーミング値を設定することもできます。
 
-> [!NOTE]
-> また、ストリーミング関数と関連の_ない_、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 以前のバージョンのカスタム関数は、手動で記述された JSON で `"cancelable": true` と `"streaming": true` を宣言する必要がありました。 自動生成されたメタデータの導入以来、1 つの値を返す非同期のカスタム関数のみがキャンセル可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
+また、ストリーミング関数と関連の_ない_、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1つの値を返す非同期のカスタム関数のみが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
 ### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
 
-`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 `invocation` パラメーターは、セルに関するコンテキスト (アドレスやコンテンツなど) を提供し、`setResult` メソッドや `onCanceled` メソッドを使用することもできます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
+`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 パラメーターには、 `invocation` セルに関するコンテキスト (アドレスやコンテンツなど) が指定され、メソッドを使用できるように `setResult` `onCanceled` なります。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
 
-TypeScript を使用している場合は、呼び出しハンドラーは `CustomFunctions.StreamingInvocation` 型または `CustomFunctions.CancelableInvocation` 型である必要があります。
+TypeScript を使用している場合は、呼び出しハンドラーの型がまたはである必要があり [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) ます。
 
-## <a name="receive-data-via-websockets"></a>WebSocket 経由のデータ受信
+## <a name="receiving-data-via-websockets"></a>WebSocket 経由のデータ受信
 
-カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。 WebSocket を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベント発生時にサーバーからメッセージを自動的に受信するので、サーバーに明示的にデータ用のポーリングを行う必要がありません。
+カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。 Websocket を使用すると、カスタム関数はサーバーとの接続を開いて、特定のイベントが発生したときに、データに対して明示的にサーバーをポーリングすることなく、サーバーからのメッセージを自動的に受信することができます。
 
 ### <a name="websockets-example"></a>WebSocket の使用例
 
@@ -179,6 +179,5 @@ ws.onerror(error){
 - [関数の揮発性の値](custom-functions-volatile.md)
 - [カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)
 - [カスタム関数のメタデータ](custom-functions-json.md)
-- [Excel カスタム関数のランタイム](custom-functions-runtime.md)
 - [Excel でカスタム関数を作成する](custom-functions-overview.md)
 - [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

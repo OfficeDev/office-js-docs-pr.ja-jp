@@ -1,18 +1,21 @@
 ---
 title: マニフェストファイル内のランタイム
 description: ランタイム要素は、アドインのランタイムを指定します。
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: a8598a8f926e6d6905c147f5c554f1d40a692ad9
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: 95549d88df24a7d7c54cf27c92c15693491bdf29
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471325"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44520340"
 ---
 # <a name="runtimes-element"></a>ランタイム要素
 
-アドインの実行時のランタイムを指定します。 要素の子 [`<Host>`](host.md) 。 `Runtimes`要素がマニフェスト内に存在する場合、アドインは既定で Internet Explorer 11 ブラウザーを使用します。
+アドインの実行時のランタイムを指定します。 要素の子 [`<Host>`](host.md) 。
+
+> [!NOTE]
+> Windows で Office を実行している場合、アドインは Internet Explorer 11 ブラウザーを使用します。
 
 Excel では、この要素を使用すると、リボン、作業ウィンドウ、およびカスタム関数が同じランタイムを使用できるようになります。 詳細については、「[共有 JavaScript ランタイムを使用するように Excel アドインを構成する](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 

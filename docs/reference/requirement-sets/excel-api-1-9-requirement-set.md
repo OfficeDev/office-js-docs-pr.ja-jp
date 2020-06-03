@@ -5,10 +5,10 @@ ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 06/03/2020
 ms.locfileid: "36268622"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Excel JavaScript API 1.9 の新機能
@@ -484,5 +484,5 @@ ms.locfileid: "36268622"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.9)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.9)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
