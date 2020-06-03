@@ -326,6 +326,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 共通 API の要件セット
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: リボン API の要件セット
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共有ランタイム要件のセット
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Office アドインのマニフェスト リファレンス
