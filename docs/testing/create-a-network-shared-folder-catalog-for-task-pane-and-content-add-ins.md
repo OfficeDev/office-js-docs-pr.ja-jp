@@ -1,23 +1,30 @@
 ---
-title: テスト用に Office アドインをサイドロードする
-description: テスト用に Office アドインをサイドロードする方法について説明します。
-ms.date: 03/18/2020
+title: ネットワーク共有からのテスト用に Office アドインをサイドロードする
+description: ネットワーク共有からテスト用に Office アドインをサイドロードする方法について説明します。
+ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 3b8752f1be07cbb8e15fb2a3fddb33415a930c8f
+ms.sourcegitcommit: bec0158860925832825a45a21f73cd5dd1e20b37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215062"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44543039"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>テスト用に Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有からのテスト用に Office アドインをサイドロードする
 
-共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。
+Windows 上の Office クライアントで Office アドインをテストするには、マニフェストをネットワークファイル共有に発行します (以下の手順を参照)。 この展開オプションは、localhost での開発とテストが完了し、ローカル以外のサーバーまたはクラウドアカウントからアドインをテストする場合に使用することを目的としています。
+
+> [!IMPORTANT]
+> ネットワーク共有による展開は、運用環境のアドインではサポートされていません。このメソッドには、次の制限があります。
+> 
+> - アドインは、Windows コンピューターにのみインストールできます。
+> - 新しいバージョンのアドインでリボンが変更された場合、各ユーザーはアドインを再インストールする必要があります。
+
 
 > [!NOTE]
 > アドイン プロジェクトが十分に新しい [Office 用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) バージョンで作成されている場合、アドインは `npm start` を実行すると自動的に Office デスクトップ クライアントにサイドロードします。
 
-この記事は、Windows での Word、Excel、PowerPoint、および Project アドインのテストにのみ適用されます。 異なるプラットフォームでのテストまたは Outlook アドインのテストをする場合は、以下の、アドインのサイドロードに関するいずれかのトピックを参照してください。
+この記事は、Word、Excel、PowerPoint、およびプロジェクトアドインのテストにのみ適用され、Windows 上でのみ適用されます。 異なるプラットフォームでのテストまたは Outlook アドインのテストをする場合は、以下の、アドインのサイドロードに関するいずれかのトピックを参照してください。
 
 - [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
