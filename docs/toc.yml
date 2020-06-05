@@ -258,7 +258,7 @@
           displayName: 'test, debug'
         - name: Windows
           items:
-            - name: Windows で Office アドインをサイドロードする
+            - name: Windows で Office アドインをネットワーク共有からサイドロードする
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
             - name: 作業ウィンドウからデバッガーをアタッチする
               href: testing/attach-debugger-from-task-pane.md
