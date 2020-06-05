@@ -1,20 +1,22 @@
 ---
 title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートが他の Outlook ホストと比較する方法について説明します。
-ms.date: 05/18/2020
+ms.date: 06/04/2020
 localization_priority: Normal
-ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 553d9bada0fb66a5319c998ff1c262f8815e2f7d
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280353"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561873"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Outlook on Mac での outlook アドインのサポートと他の Outlook ホストの比較
 
 Outlook on the web、Windows、iOS、Android などの他のホストと同じ方法で Outlook アドインを作成して実行すると、各ホストの JavaScript をカスタマイズする必要はありません。 通常、アドインから Office JavaScript API への同じ呼び出しは、次の表に示す領域を除き、同じように動作します。
 
 詳細については、「[Outlook 2013 プレビューでのテスト用メール アプリの展開とインストール](testing-and-tips.md)」を参照してください。
+
+Mac での新しい UI のサポートの詳細については、「 [New Outlook On mac](#new-outlook-on-mac-preview)」を参照してください。
 
 | 分野 | Web 上の Outlook、Windows、およびモバイルデバイス | Outlook on Mac |
 |:-----|:-----|:-----|
@@ -27,3 +29,26 @@ Outlook on the web、Windows、iOS、Android などの他のホストと同じ�
 | `dateTimeCreated` と `dateTimeModified` のプロパティでタイム ゾーンを表す文字列 |例: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | 例: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | `dateTimeCreated` と `dateTimeModified` の時間精度 | 次に示すコードをアドインで使用している場合、最大の精度はミリ秒単位になります:<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| 精度は最高で秒単位となります。 |
 
+## <a name="new-outlook-on-mac-preview"></a>新しい Outlook on Mac (プレビュー)
+
+これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.6 です。 ただし、次の要件セットと機能はまだサポートされて**いません**。
+
+1. API 要件は1.7 と1.8 を設定します。
+1. Pinnable 作業ウィンドウ、 `ItemChanged` イベント
+1. コンテキスト アドイン
+1. 送信時
+1. 共有フォルダーのサポート
+1. `saveAsync`会議を作成するとき
+1. シングル サインオン (SSO)
+
+新しい Outlook on the Mac をプレビューすることをお勧めします。これは、バージョン16.38.506 から入手できます。 試す方法の詳細については、「 [Insider Fast ビルドの Outlook For Mac リリースノート](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)」を参照してください。
+
+どの UI バージョンを使用しているかは、次のように判断できます。
+
+**現在の UI**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Mac での現在の UI](../images/outlook-on-mac-classic.png)
+
+**新しい UI (プレビュー)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Mac でのプレビューの新しい UI](../images/outlook-on-mac-new.png)

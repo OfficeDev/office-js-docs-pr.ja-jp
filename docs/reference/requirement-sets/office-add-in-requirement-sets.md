@@ -1,15 +1,15 @@
 ---
 title: Office 共通 API の要件セット
 description: Office 共通 API の要件セットの詳細情報
-ms.date: 07/17/2019
+ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413239"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561897"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -17,13 +17,14 @@ ms.locfileid: "44413239"
 
 Office ホストによってアドインがサポートされる場所に関する情報が必要ですか? 「[Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)」を参照してください。
 
-*ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
-
-- [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API 要件セット](onenote-api-requirement-sets.md) (OneNoteApi)
-- [PowerPoint JavaScript API 要件セット](powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [Outlook API 要件セットについて](outlook-api-requirement-sets.md) (Mailbox)
+> [!TIP]
+> *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
+>
+> - [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
+> - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
+> - [OneNote JavaScript API 要件セット](onenote-api-requirement-sets.md) (OneNoteApi)
+> - [PowerPoint JavaScript API 要件セット](powerpoint-api-requirement-sets.md) (PowerPointApi)
+> - [Outlook API 要件セットについて](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
 > SharePoint で Access Web アプリとデータベースを作成して使用することは推奨されなくなりました。 代わりに、[Microsoft PowerApps](https://powerapps.microsoft.com/) を使用して、コード作成が不要な Web とモバイル デバイス用ビジネス ソリューションをビルドすることをお勧めします。
