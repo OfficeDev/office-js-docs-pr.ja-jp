@@ -1063,7 +1063,7 @@
           displayName: Project
 - name: Visio
   items:
-    - name: Visio アドイン ドキュメント
+    - name: Visio ドキュメント
       href: visio/index.md
       displayName: Visio
     - name: 概要
