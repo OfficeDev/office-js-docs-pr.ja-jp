@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Excel 作業ウィンドウ 
 ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 01298244b11167b67a966dc6d8b66f9b3ba2a735
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 321fd85705df7673b48d548e88f5c3acae06655d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185576"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608933"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 

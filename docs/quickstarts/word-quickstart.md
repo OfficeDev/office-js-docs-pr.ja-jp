@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 04/03/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 3c3482747817e26ea6c85687cca54bc1133eb17a
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 2e7c819cbf2860ed742435f75240f795c52c73e8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185492"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608897"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 

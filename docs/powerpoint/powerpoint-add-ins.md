@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b9e2b9482a328eb81ab44b29afcdf2f210d1cbe9
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f5ec2375729574a48fcf61e766312a3c65c970ba
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721003"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611934"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 

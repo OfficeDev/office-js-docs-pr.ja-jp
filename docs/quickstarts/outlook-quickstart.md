@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bdef3ba43d8bb016f5d79ed3cafc25a6d89c345d
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ba2177e16a73ba626a201105f3f7a187a372a6b7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185450"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608909"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 

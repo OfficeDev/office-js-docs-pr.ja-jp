@@ -3,12 +3,12 @@ title: Outlook アドインに関するプライバシー、アクセス許可�
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Priority
-ms.openlocfilehash: e35b5d2328e7be8e32b3bd093c44eb6846bc759f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d233eb3ac6980af24e6ba9d951834532ea79dc06
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166469"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605333"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 

@@ -3,12 +3,12 @@ title: Word JavaScript API を使用した基本的なプログラミングの�
 description: Word JavaScript API を使用して、Word 用アドインを構築します。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: bbd9fa23ffd5e25555f2d0d5e0022ebc2e81a534
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 697f3068a039caa8ae60ed449bacb05f3999a1ee
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608566"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Word JavaScript API を使用した基本的なプログラミングの概念
 

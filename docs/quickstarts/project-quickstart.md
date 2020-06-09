@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Project 作業ウィンド�
 ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: f712dbfc10027ff6af0eaf618c667cd542bbf284
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: db30662c93c4de4d47f3986358fb2219b84f5470
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185439"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608848"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 

@@ -3,12 +3,12 @@ title: 閲覧フォーム用の Outlook アドインを作成する
 description: 閲覧アドインは、Outlook の閲覧ウィンドウか閲覧インスペクター内でアクティブ化される Outlook アドインです。
 ms.date: 04/12/2018
 localization_priority: Priority
-ms.openlocfilehash: a2a5448261fe6fcd150ed0cabda0184d941334e0
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 815234ed046b4c00b91f5acd6cd2c4dcd226dba2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166461"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605305"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>閲覧フォーム用の Outlook アドインを作成する
 
