@@ -3,32 +3,32 @@ title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170822"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609777"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api"></a><span data-ttu-id="d9ac1-103">Excel JavaScript API を使用してコメントを操作する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-103">Work with comments using the Excel JavaScript API</span></span>
+# <a name="work-with-comments-using-the-excel-javascript-api"></a><span data-ttu-id="1bfbd-103">Excel JavaScript API を使用してコメントを操作する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-103">Work with comments using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="d9ac1-104">この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-104">This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API.</span></span> <span data-ttu-id="d9ac1-105">コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-105">You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.</span></span>
+<span data-ttu-id="1bfbd-104">この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-104">This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API.</span></span> <span data-ttu-id="1bfbd-105">コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-105">You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.</span></span>
 
-<span data-ttu-id="d9ac1-106">Excel JavaScript API では、コメントには単一の最初のコメントと接続されたスレッドのディスカッションの両方が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-106">In the Excel JavaScript API, a comment includes both the single initial comment and the connected threaded discussion.</span></span> <span data-ttu-id="d9ac1-107">個別のセルに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-107">It is tied to an individual cell.</span></span> <span data-ttu-id="d9ac1-108">十分な権限があるブックを表示するユーザーは、コメントに返信できます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-108">Anyone viewing the workbook with sufficient permissions can reply to a comment.</span></span> <span data-ttu-id="d9ac1-109">Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-109">A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects.</span></span> <span data-ttu-id="d9ac1-110">コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-110">You should consider a comment to be a thread and that a thread must have a special entry as the starting point.</span></span>
+<span data-ttu-id="1bfbd-106">Excel JavaScript API では、コメントには単一の最初のコメントと接続されたスレッドのディスカッションの両方が含まれます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-106">In the Excel JavaScript API, a comment includes both the single initial comment and the connected threaded discussion.</span></span> <span data-ttu-id="1bfbd-107">個別のセルに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-107">It is tied to an individual cell.</span></span> <span data-ttu-id="1bfbd-108">十分な権限があるブックを表示するユーザーは、コメントに返信できます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-108">Anyone viewing the workbook with sufficient permissions can reply to a comment.</span></span> <span data-ttu-id="1bfbd-109">Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-109">A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects.</span></span> <span data-ttu-id="1bfbd-110">コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-110">You should consider a comment to be a thread and that a thread must have a special entry as the starting point.</span></span>
 
 ![「Comment」というラベルが付けられた、"comment" というラベルが付いた Excel コメント。「comment [0]」と「Comment [1]」。](../images/excel-comments.png)
 
-<span data-ttu-id="d9ac1-112">ブック内のコメントは`Workbook.comments`プロパティによって追跡されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-112">Comments within a workbook are tracked by the `Workbook.comments` property.</span></span> <span data-ttu-id="d9ac1-113">これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-113">This includes comments created by users and also comments created by your add-in.</span></span> <span data-ttu-id="d9ac1-114">`Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-114">The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects.</span></span> <span data-ttu-id="d9ac1-115">コメントには、[ワークシート](/javascript/api/excel/excel.worksheet)レベルでアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-115">Comments are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.</span></span> <span data-ttu-id="d9ac1-116">この記事のサンプルでは、ブックレベルでコメントを使用していますが、 `Worksheet.comments`プロパティを使用するために簡単に変更することができます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-116">The samples in this article work with comments at the workbook level, but they can be easily modified to use the `Worksheet.comments` property.</span></span>
+<span data-ttu-id="1bfbd-112">ブック内のコメントはプロパティによって追跡され `Workbook.comments` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-112">Comments within a workbook are tracked by the `Workbook.comments` property.</span></span> <span data-ttu-id="1bfbd-113">これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-113">This includes comments created by users and also comments created by your add-in.</span></span> <span data-ttu-id="1bfbd-114">`Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-114">The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects.</span></span> <span data-ttu-id="1bfbd-115">コメントには、[ワークシート](/javascript/api/excel/excel.worksheet)レベルでアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-115">Comments are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.</span></span> <span data-ttu-id="1bfbd-116">この記事のサンプルでは、ブックレベルでコメントを使用していますが、プロパティを使用するために簡単に変更することができ `Worksheet.comments` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-116">The samples in this article work with comments at the workbook level, but they can be easily modified to use the `Worksheet.comments` property.</span></span>
 
-## <a name="add-comments"></a><span data-ttu-id="d9ac1-117">コメントを追加する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-117">Add comments</span></span>
+## <a name="add-comments"></a><span data-ttu-id="1bfbd-117">コメントを追加する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-117">Add comments</span></span>
 
-<span data-ttu-id="d9ac1-118">メソッドを`CommentCollection.add`使用して、ブックにコメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-118">Use the `CommentCollection.add` method to add comments to a workbook.</span></span> <span data-ttu-id="d9ac1-119">このメソッドは、次の3つのパラメーターを取ります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-119">This method takes up to three parameters:</span></span>
+<span data-ttu-id="1bfbd-118">メソッドを使用して、 `CommentCollection.add` ブックにコメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-118">Use the `CommentCollection.add` method to add comments to a workbook.</span></span> <span data-ttu-id="1bfbd-119">このメソッドは、次の3つのパラメーターを取ります。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-119">This method takes up to three parameters:</span></span>
 
-- <span data-ttu-id="d9ac1-120">`cellAddress`: コメントが追加されるセルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-120">`cellAddress`: The cell where the comment is added.</span></span> <span data-ttu-id="d9ac1-121">文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-121">This can either be a string or [Range](/javascript/api/excel/excel.range) object.</span></span> <span data-ttu-id="d9ac1-122">範囲は1つのセルである必要があります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-122">The range must be a single cell.</span></span>
-- <span data-ttu-id="d9ac1-123">`content`: コメントの内容。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-123">`content`: The comment's content.</span></span> <span data-ttu-id="d9ac1-124">テキスト形式のコメントには文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-124">Use a string for plain text comments.</span></span> <span data-ttu-id="d9ac1-125">[メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-125">Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions).</span></span>
-- <span data-ttu-id="d9ac1-126">`contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-126">`contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content.</span></span> <span data-ttu-id="d9ac1-127">既定値は `ContentType.plain` です。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-127">The default value is `ContentType.plain`.</span></span>
+- <span data-ttu-id="1bfbd-120">`cellAddress`: コメントが追加されるセルを指定します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-120">`cellAddress`: The cell where the comment is added.</span></span> <span data-ttu-id="1bfbd-121">文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-121">This can either be a string or [Range](/javascript/api/excel/excel.range) object.</span></span> <span data-ttu-id="1bfbd-122">範囲は1つのセルである必要があります。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-122">The range must be a single cell.</span></span>
+- <span data-ttu-id="1bfbd-123">`content`: コメントの内容。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-123">`content`: The comment's content.</span></span> <span data-ttu-id="1bfbd-124">テキスト形式のコメントには文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-124">Use a string for plain text comments.</span></span> <span data-ttu-id="1bfbd-125">[メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-125">Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions).</span></span>
+- <span data-ttu-id="1bfbd-126">`contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-126">`contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content.</span></span> <span data-ttu-id="1bfbd-127">既定値は `ContentType.plain` です。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-127">The default value is `ContentType.plain`.</span></span>
 
-<span data-ttu-id="d9ac1-128">次のコード例は、コメントをセル **A2** に追加します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-128">The following code sample adds a comment to cell **A2**.</span></span>
+<span data-ttu-id="1bfbd-128">次のコード例は、コメントをセル **A2** に追加します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-128">The following code sample adds a comment to cell **A2**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -42,13 +42,13 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="d9ac1-129">アドインによって追加されたコメントは、そのアドインの現在のユーザーによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-129">Comments added by an add-in are attributed to the current user of that add-in.</span></span>
+> <span data-ttu-id="1bfbd-129">アドインによって追加されたコメントは、そのアドインの現在のユーザーによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-129">Comments added by an add-in are attributed to the current user of that add-in.</span></span>
 
-### <a name="add-comment-replies"></a><span data-ttu-id="d9ac1-130">コメントの返信を追加する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-130">Add comment replies</span></span>
+### <a name="add-comment-replies"></a><span data-ttu-id="1bfbd-130">コメントの返信を追加する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-130">Add comment replies</span></span>
 
-<span data-ttu-id="d9ac1-131">`Comment`オブジェクトは、0個以上の返信を含むコメントスレッドです。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-131">A `Comment` object is a comment thread that contains zero or more replies.</span></span> <span data-ttu-id="d9ac1-132">`Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-132">`Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects.</span></span> <span data-ttu-id="d9ac1-133">コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-133">To add a reply to a comment, use the `CommentReplyCollection.add` method, passing in the text of the reply.</span></span> <span data-ttu-id="d9ac1-134">返信は、追加された順に表示されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-134">Replies are displayed in the order they are added.</span></span> <span data-ttu-id="d9ac1-135">また、アドインの現在のユーザーにも属性があります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-135">They are also attributed to the current user of the add-in.</span></span>
+<span data-ttu-id="1bfbd-131">`Comment`オブジェクトは、0個以上の返信を含むコメントスレッドです。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-131">A `Comment` object is a comment thread that contains zero or more replies.</span></span> <span data-ttu-id="1bfbd-132">`Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-132">`Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects.</span></span> <span data-ttu-id="1bfbd-133">コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-133">To add a reply to a comment, use the `CommentReplyCollection.add` method, passing in the text of the reply.</span></span> <span data-ttu-id="1bfbd-134">返信は、追加された順に表示されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-134">Replies are displayed in the order they are added.</span></span> <span data-ttu-id="1bfbd-135">また、アドインの現在のユーザーにも属性があります。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-135">They are also attributed to the current user of the add-in.</span></span>
 
-<span data-ttu-id="d9ac1-136">次のコード サンプルは、ブックの最初のコメントに返信を追加します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-136">The following code sample adds a reply to the first comment in the workbook.</span></span>
+<span data-ttu-id="1bfbd-136">次のコード サンプルは、ブックの最初のコメントに返信を追加します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-136">The following code sample adds a reply to the first comment in the workbook.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -59,9 +59,9 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="edit-comments"></a><span data-ttu-id="d9ac1-137">コメントの編集</span><span class="sxs-lookup"><span data-stu-id="d9ac1-137">Edit comments</span></span>
+## <a name="edit-comments"></a><span data-ttu-id="1bfbd-137">コメントの編集</span><span class="sxs-lookup"><span data-stu-id="1bfbd-137">Edit comments</span></span>
 
-<span data-ttu-id="d9ac1-138">コメントまたはコメントの返信を編集するには、その `Comment.content` プロパティまたは `CommentReply.content` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-138">To edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property.</span></span>
+<span data-ttu-id="1bfbd-138">コメントまたはコメントの返信を編集するには、その `Comment.content` プロパティまたは `CommentReply.content` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-138">To edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -72,9 +72,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="edit-comment-replies"></a><span data-ttu-id="d9ac1-139">コメントの返信を編集する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-139">Edit comment replies</span></span>
+### <a name="edit-comment-replies"></a><span data-ttu-id="1bfbd-139">コメントの返信を編集する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-139">Edit comment replies</span></span>
 
-<span data-ttu-id="d9ac1-140">コメントの返信を編集するには`CommentReply.content` 、そのプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-140">To edit a comment reply, set its `CommentReply.content` property.</span></span>
+<span data-ttu-id="1bfbd-140">コメントの返信を編集するには、そのプロパティを設定 `CommentReply.content` します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-140">To edit a comment reply, set its `CommentReply.content` property.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -86,9 +86,9 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="delete-comments"></a><span data-ttu-id="d9ac1-141">コメントの削除</span><span class="sxs-lookup"><span data-stu-id="d9ac1-141">Delete comments</span></span>
+## <a name="delete-comments"></a><span data-ttu-id="1bfbd-141">コメントの削除</span><span class="sxs-lookup"><span data-stu-id="1bfbd-141">Delete comments</span></span>
 
-<span data-ttu-id="d9ac1-142">コメントを削除するには`Comment.delete` 、メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-142">To delete a comment use the `Comment.delete` method.</span></span> <span data-ttu-id="d9ac1-143">コメントを削除すると、そのコメントに関連付けられている返信も削除されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-143">Deleting a comment also deletes the replies associated with that comment.</span></span>
+<span data-ttu-id="1bfbd-142">コメントを削除するには、メソッドを使用し `Comment.delete` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-142">To delete a comment use the `Comment.delete` method.</span></span> <span data-ttu-id="1bfbd-143">コメントを削除すると、そのコメントに関連付けられている返信も削除されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-143">Deleting a comment also deletes the replies associated with that comment.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -98,9 +98,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="delete-comment-replies"></a><span data-ttu-id="d9ac1-144">コメントの返信を削除する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-144">Delete comment replies</span></span>
+### <a name="delete-comment-replies"></a><span data-ttu-id="1bfbd-144">コメントの返信を削除する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-144">Delete comment replies</span></span>
 
-<span data-ttu-id="d9ac1-145">コメントの返信を削除するには`CommentReply.delete` 、メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-145">To delete a comment reply, use the `CommentReply.delete` method.</span></span>
+<span data-ttu-id="1bfbd-145">コメントの返信を削除するには、メソッドを使用し `CommentReply.delete` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-145">To delete a comment reply, use the `CommentReply.delete` method.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -111,9 +111,9 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads"></a><span data-ttu-id="d9ac1-146">コメントスレッドを解決する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-146">Resolve comment threads</span></span>
+## <a name="resolve-comment-threads"></a><span data-ttu-id="1bfbd-146">コメントスレッドを解決する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-146">Resolve comment threads</span></span>
 
-<span data-ttu-id="d9ac1-147">コメントスレッドには、解決可能かどう`resolved`かを示す、構成可能なブール値があります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-147">A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved.</span></span> <span data-ttu-id="d9ac1-148">の`true`値は、コメントスレッドが解決されたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-148">A value of `true` means the comment thread is resolved.</span></span> <span data-ttu-id="d9ac1-149">の`false`値は、コメントスレッドが新規または再オープンのいずれかであることを意味します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-149">A value of `false` means the comment thread is either new or reopened.</span></span>
+<span data-ttu-id="1bfbd-147">コメントスレッドには、解決可能かどうかを示す、構成可能なブール値があり `resolved` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-147">A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved.</span></span> <span data-ttu-id="1bfbd-148">の値は、 `true` コメントスレッドが解決されたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-148">A value of `true` means the comment thread is resolved.</span></span> <span data-ttu-id="1bfbd-149">の値は、 `false` コメントスレッドが新規または再オープンのいずれかであることを意味します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-149">A value of `false` means the comment thread is either new or reopened.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -123,13 +123,13 @@ Excel.run(function (context) {
 });
 ```
 
-<span data-ttu-id="d9ac1-150">コメントの返信には`resolved` 、readonly プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-150">Comment replies have a readonly `resolved` property.</span></span> <span data-ttu-id="d9ac1-151">この値は、常にスレッドの残りの部分と同じです。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-151">Its value is always equal to that of the rest of the thread.</span></span>
+<span data-ttu-id="1bfbd-150">コメントの返信には、readonly プロパティがあり `resolved` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-150">Comment replies have a readonly `resolved` property.</span></span> <span data-ttu-id="1bfbd-151">この値は、常にスレッドの残りの部分と同じです。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-151">Its value is always equal to that of the rest of the thread.</span></span>
 
-## <a name="comment-metadata"></a><span data-ttu-id="d9ac1-152">コメントのメタデータ</span><span class="sxs-lookup"><span data-stu-id="d9ac1-152">Comment metadata</span></span>
+## <a name="comment-metadata"></a><span data-ttu-id="1bfbd-152">コメントのメタデータ</span><span class="sxs-lookup"><span data-stu-id="1bfbd-152">Comment metadata</span></span>
 
-<span data-ttu-id="d9ac1-153">各コメントには、作成者や作成日などの作成に関するメタデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-153">Each comment contains metadata about its creation, such as the author and creation date.</span></span> <span data-ttu-id="d9ac1-154">アドインによって作成されたコメントは、現在のユーザーによって作成されたものと見なされます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-154">Comments created by your add-in are considered to be authored by the current user.</span></span>
+<span data-ttu-id="1bfbd-153">各コメントには、作成者や作成日などの作成に関するメタデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-153">Each comment contains metadata about its creation, such as the author and creation date.</span></span> <span data-ttu-id="1bfbd-154">アドインによって作成されたコメントは、現在のユーザーによって作成されたものと見なされます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-154">Comments created by your add-in are considered to be authored by the current user.</span></span>
 
-<span data-ttu-id="d9ac1-155">次のサンプルは、**A2** に作成者のメール、作成者の名前、コメントの作成日を表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-155">The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.</span></span>
+<span data-ttu-id="1bfbd-155">次のサンプルは、**A2** に作成者のメール、作成者の名前、コメントの作成日を表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-155">The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -144,11 +144,11 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="comment-reply-metadata"></a><span data-ttu-id="d9ac1-156">コメントの返信メタデータ</span><span class="sxs-lookup"><span data-stu-id="d9ac1-156">Comment reply metadata</span></span>
+### <a name="comment-reply-metadata"></a><span data-ttu-id="1bfbd-156">コメントの返信メタデータ</span><span class="sxs-lookup"><span data-stu-id="1bfbd-156">Comment reply metadata</span></span>
 
-<span data-ttu-id="d9ac1-157">コメントの返信は、最初のコメントと同じ種類のメタデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-157">Comment replies store the same types of metadata as the initial comment.</span></span>
+<span data-ttu-id="1bfbd-157">コメントの返信は、最初のコメントと同じ種類のメタデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-157">Comment replies store the same types of metadata as the initial comment.</span></span>
 
-<span data-ttu-id="d9ac1-158">次の例は、作成者の電子メール、作成者の名前、および**A2**における最新のコメントの返信の作成日を表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-158">The following sample shows how to display the author's email, author's name, and creation date of the latest comment reply at **A2**.</span></span>
+<span data-ttu-id="1bfbd-158">次の例は、作成者の電子メール、作成者の名前、および**A2**における最新のコメントの返信の作成日を表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-158">The following sample shows how to display the author's email, author's name, and creation date of the latest comment reply at **A2**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -169,15 +169,15 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions"></a><span data-ttu-id="d9ac1-159">メンション</span><span class="sxs-lookup"><span data-stu-id="d9ac1-159">Mentions</span></span>
+## <a name="mentions"></a><span data-ttu-id="1bfbd-159">メンション</span><span class="sxs-lookup"><span data-stu-id="1bfbd-159">Mentions</span></span>
 
-<span data-ttu-id="d9ac1-160">[メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)は、コメント内の仕事仲間にタグ付けするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-160">[Mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment.</span></span> <span data-ttu-id="d9ac1-161">これにより、それらの通知がコメントの内容と共に送信されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-161">This sends them notifications with your comment's content.</span></span> <span data-ttu-id="d9ac1-162">アドインは、ユーザーの代わりにこれらのメンションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-162">Your add-in can create these mentions on your behalf.</span></span>
+<span data-ttu-id="1bfbd-160">[メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)は、コメント内の仕事仲間にタグ付けするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-160">[Mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment.</span></span> <span data-ttu-id="1bfbd-161">これにより、それらの通知がコメントの内容と共に送信されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-161">This sends them notifications with your comment's content.</span></span> <span data-ttu-id="1bfbd-162">アドインは、ユーザーの代わりにこれらのメンションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-162">Your add-in can create these mentions on your behalf.</span></span>
 
-<span data-ttu-id="d9ac1-163">[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用して、メンションを含むコメントを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-163">Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects.</span></span> <span data-ttu-id="d9ac1-164">1 `CommentCollection.add`つ以上`CommentRichContent`のメンションを含むを呼び出し`ContentType.mention` 、 `contentType`パラメーターとしてを指定します。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-164">Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter.</span></span> <span data-ttu-id="d9ac1-165">`content`文字列をテキストに挿入するには、文字列を書式設定する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-165">The `content` string also needs to be formatted to insert the mention into the text.</span></span> <span data-ttu-id="d9ac1-166">メンションの形式は、 `<at id="{replyIndex}">{mentionName}</at>`です。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-166">The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.</span></span>
+<span data-ttu-id="1bfbd-163">[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用して、メンションを含むコメントを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-163">Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects.</span></span> <span data-ttu-id="1bfbd-164">1つ以上のメンションを含むを呼び出し、 `CommentCollection.add` `CommentRichContent` `ContentType.mention` パラメーターとしてを指定し `contentType` ます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-164">Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter.</span></span> <span data-ttu-id="1bfbd-165">`content`文字列をテキストに挿入するには、文字列を書式設定する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-165">The `content` string also needs to be formatted to insert the mention into the text.</span></span> <span data-ttu-id="1bfbd-166">メンションの形式は、 `<at id="{replyIndex}">{mentionName}</at>` です。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-166">The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.</span></span>
 
-> <span data-ttu-id="d9ac1-167">こと現時点では、メンションリンクのテキストとして、メンションの正確な名前のみを使用できます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-167">[NOTE] Currently, only the mention's exact name can be used as the text of the mention link.</span></span> <span data-ttu-id="d9ac1-168">名前の短縮バージョンのサポートは、後で追加されます。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-168">Support for shortened versions of a name will be added later.</span></span>
+> <span data-ttu-id="1bfbd-167">こと現時点では、メンションリンクのテキストとして、メンションの正確な名前のみを使用できます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-167">[NOTE] Currently, only the mention's exact name can be used as the text of the mention link.</span></span> <span data-ttu-id="1bfbd-168">名前の短縮バージョンのサポートは、後で追加されます。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-168">Support for shortened versions of a name will be added later.</span></span>
 
-<span data-ttu-id="d9ac1-169">次の例は、1つのメンション付きのコメントを示しています。</span><span class="sxs-lookup"><span data-stu-id="d9ac1-169">The following example shows a comment with a single mention.</span></span>
+<span data-ttu-id="1bfbd-169">次の例は、1つのメンション付きのコメントを示しています。</span><span class="sxs-lookup"><span data-stu-id="1bfbd-169">The following example shows a comment with a single mention.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -201,8 +201,8 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d9ac1-170">関連項目</span><span class="sxs-lookup"><span data-stu-id="d9ac1-170">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1bfbd-170">関連項目</span><span class="sxs-lookup"><span data-stu-id="1bfbd-170">See also</span></span>
 
-- [<span data-ttu-id="d9ac1-171">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="d9ac1-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
-- [<span data-ttu-id="d9ac1-172">Excel JavaScript API を使用してブックを操作する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-172">Work with workbooks using the Excel JavaScript API</span></span>](excel-add-ins-workbooks.md)
-- [<span data-ttu-id="d9ac1-173">Excel でコメントやメモを挿入する</span><span class="sxs-lookup"><span data-stu-id="d9ac1-173">Insert comments and notes in Excel</span></span>](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [<span data-ttu-id="1bfbd-171">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="1bfbd-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="1bfbd-172">Excel JavaScript API を使用してブックを操作する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-172">Work with workbooks using the Excel JavaScript API</span></span>](excel-add-ins-workbooks.md)
+- [<span data-ttu-id="1bfbd-173">Excel でコメントやメモを挿入する</span><span class="sxs-lookup"><span data-stu-id="1bfbd-173">Insert comments and notes in Excel</span></span>](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

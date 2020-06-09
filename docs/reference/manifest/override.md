@@ -3,47 +3,47 @@ title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、追加のロケールの設定値を指定できます。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 39e706dc981d405fcfcc508626578f34931efbcb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: aa5d023169389670d15e36f8bee4445529d84711
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718028"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611506"
 ---
-# <a name="override-element"></a><span data-ttu-id="5815e-103">Override 要素</span><span class="sxs-lookup"><span data-stu-id="5815e-103">Override element</span></span>
+# <a name="override-element"></a><span data-ttu-id="72dee-103">Override 要素</span><span class="sxs-lookup"><span data-stu-id="72dee-103">Override element</span></span>
 
-<span data-ttu-id="5815e-104">追加ロケールの設定の値を指定する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="5815e-104">Provides a way to specify the value of a setting for an additional locale.</span></span>
+<span data-ttu-id="72dee-104">追加ロケールの設定の値を指定する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="72dee-104">Provides a way to specify the value of a setting for an additional locale.</span></span>
 
-<span data-ttu-id="5815e-105">**アドインの種類:** コンテンツ、作業ウィンドウ、メール</span><span class="sxs-lookup"><span data-stu-id="5815e-105">**Add-in type:** Content, Task pane, Mail</span></span>
+<span data-ttu-id="72dee-105">**アドインの種類:** コンテンツ、作業ウィンドウ、メール</span><span class="sxs-lookup"><span data-stu-id="72dee-105">**Add-in type:** Content, Task pane, Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="5815e-106">構文</span><span class="sxs-lookup"><span data-stu-id="5815e-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="72dee-106">構文</span><span class="sxs-lookup"><span data-stu-id="72dee-106">Syntax</span></span>
 
 ```XML
 <Override Locale="string" Value="string" />
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="5815e-107">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="5815e-107">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="72dee-107">含まれる場所</span><span class="sxs-lookup"><span data-stu-id="72dee-107">Contained in</span></span>
 
-|<span data-ttu-id="5815e-108">**要素**</span><span class="sxs-lookup"><span data-stu-id="5815e-108">**Element**</span></span>|
+|<span data-ttu-id="72dee-108">**要素**</span><span class="sxs-lookup"><span data-stu-id="72dee-108">**Element**</span></span>|
 |:-----|
-|[<span data-ttu-id="5815e-109">CitationText</span><span class="sxs-lookup"><span data-stu-id="5815e-109">CitationText</span></span>](citationtext.md)|
-|[<span data-ttu-id="5815e-110">説明</span><span class="sxs-lookup"><span data-stu-id="5815e-110">Description</span></span>](description.md)|
-|[<span data-ttu-id="5815e-111">DictionaryName</span><span class="sxs-lookup"><span data-stu-id="5815e-111">DictionaryName</span></span>](dictionaryname.md)|
-|[<span data-ttu-id="5815e-112">DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="5815e-112">DictionaryHomePage</span></span>](dictionaryhomepage.md)|
-|[<span data-ttu-id="5815e-113">DisplayName</span><span class="sxs-lookup"><span data-stu-id="5815e-113">DisplayName</span></span>](displayname.md)|
-|[<span data-ttu-id="5815e-114">HighResolutionIconUrl</span><span class="sxs-lookup"><span data-stu-id="5815e-114">HighResolutionIconUrl</span></span>](highresolutioniconurl.md)|
-|[<span data-ttu-id="5815e-115">IconUrl</span><span class="sxs-lookup"><span data-stu-id="5815e-115">IconUrl</span></span>](iconurl.md)|
-|[<span data-ttu-id="5815e-116">QueryUri</span><span class="sxs-lookup"><span data-stu-id="5815e-116">QueryUri</span></span>](queryuri.md)|
-|[<span data-ttu-id="5815e-117">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="5815e-117">SourceLocation</span></span>](sourcelocation.md)|
-|[<span data-ttu-id="5815e-118">SupportUrl</span><span class="sxs-lookup"><span data-stu-id="5815e-118">SupportUrl</span></span>](supporturl.md)|
+|[<span data-ttu-id="72dee-109">CitationText</span><span class="sxs-lookup"><span data-stu-id="72dee-109">CitationText</span></span>](citationtext.md)|
+|[<span data-ttu-id="72dee-110">説明</span><span class="sxs-lookup"><span data-stu-id="72dee-110">Description</span></span>](description.md)|
+|[<span data-ttu-id="72dee-111">DictionaryName</span><span class="sxs-lookup"><span data-stu-id="72dee-111">DictionaryName</span></span>](dictionaryname.md)|
+|[<span data-ttu-id="72dee-112">DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="72dee-112">DictionaryHomePage</span></span>](dictionaryhomepage.md)|
+|[<span data-ttu-id="72dee-113">DisplayName</span><span class="sxs-lookup"><span data-stu-id="72dee-113">DisplayName</span></span>](displayname.md)|
+|[<span data-ttu-id="72dee-114">HighResolutionIconUrl</span><span class="sxs-lookup"><span data-stu-id="72dee-114">HighResolutionIconUrl</span></span>](highresolutioniconurl.md)|
+|[<span data-ttu-id="72dee-115">IconUrl</span><span class="sxs-lookup"><span data-stu-id="72dee-115">IconUrl</span></span>](iconurl.md)|
+|[<span data-ttu-id="72dee-116">QueryUri</span><span class="sxs-lookup"><span data-stu-id="72dee-116">QueryUri</span></span>](queryuri.md)|
+|[<span data-ttu-id="72dee-117">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="72dee-117">SourceLocation</span></span>](sourcelocation.md)|
+|[<span data-ttu-id="72dee-118">SupportUrl</span><span class="sxs-lookup"><span data-stu-id="72dee-118">SupportUrl</span></span>](supporturl.md)|
 
-## <a name="attributes"></a><span data-ttu-id="5815e-119">属性</span><span class="sxs-lookup"><span data-stu-id="5815e-119">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="72dee-119">属性</span><span class="sxs-lookup"><span data-stu-id="72dee-119">Attributes</span></span>
 
-|<span data-ttu-id="5815e-120">**属性**</span><span class="sxs-lookup"><span data-stu-id="5815e-120">**Attribute**</span></span>|<span data-ttu-id="5815e-121">**型**</span><span class="sxs-lookup"><span data-stu-id="5815e-121">**Type**</span></span>|<span data-ttu-id="5815e-122">**必須**</span><span class="sxs-lookup"><span data-stu-id="5815e-122">**Required**</span></span>|<span data-ttu-id="5815e-123">**説明**</span><span class="sxs-lookup"><span data-stu-id="5815e-123">**Description**</span></span>|
+|<span data-ttu-id="72dee-120">**属性**</span><span class="sxs-lookup"><span data-stu-id="72dee-120">**Attribute**</span></span>|<span data-ttu-id="72dee-121">**型**</span><span class="sxs-lookup"><span data-stu-id="72dee-121">**Type**</span></span>|<span data-ttu-id="72dee-122">**必須**</span><span class="sxs-lookup"><span data-stu-id="72dee-122">**Required**</span></span>|<span data-ttu-id="72dee-123">**説明**</span><span class="sxs-lookup"><span data-stu-id="72dee-123">**Description**</span></span>|
 |:-----|:-----|:-----|:-----|
-|<span data-ttu-id="5815e-124">Locale</span><span class="sxs-lookup"><span data-stu-id="5815e-124">Locale</span></span>|<span data-ttu-id="5815e-125">string</span><span class="sxs-lookup"><span data-stu-id="5815e-125">string</span></span>|<span data-ttu-id="5815e-126">必須</span><span class="sxs-lookup"><span data-stu-id="5815e-126">required</span></span>|<span data-ttu-id="5815e-127">`"en-US"` などの BCP 47 言語タグの書式で、この上書きのロケールのカルチャ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="5815e-127">Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.</span></span>|
-|<span data-ttu-id="5815e-128">Value</span><span class="sxs-lookup"><span data-stu-id="5815e-128">Value</span></span>|<span data-ttu-id="5815e-129">string</span><span class="sxs-lookup"><span data-stu-id="5815e-129">string</span></span>|<span data-ttu-id="5815e-130">必須</span><span class="sxs-lookup"><span data-stu-id="5815e-130">required</span></span>|<span data-ttu-id="5815e-131">指定のロケールに対して表される設定の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="5815e-131">Specifies value of the setting expressed for the specified locale.</span></span>|
+|<span data-ttu-id="72dee-124">Locale</span><span class="sxs-lookup"><span data-stu-id="72dee-124">Locale</span></span>|<span data-ttu-id="72dee-125">string</span><span class="sxs-lookup"><span data-stu-id="72dee-125">string</span></span>|<span data-ttu-id="72dee-126">必須</span><span class="sxs-lookup"><span data-stu-id="72dee-126">required</span></span>|<span data-ttu-id="72dee-127">`"en-US"` などの BCP 47 言語タグの書式で、この上書きのロケールのカルチャ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="72dee-127">Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.</span></span>|
+|<span data-ttu-id="72dee-128">Value</span><span class="sxs-lookup"><span data-stu-id="72dee-128">Value</span></span>|<span data-ttu-id="72dee-129">string</span><span class="sxs-lookup"><span data-stu-id="72dee-129">string</span></span>|<span data-ttu-id="72dee-130">必須</span><span class="sxs-lookup"><span data-stu-id="72dee-130">required</span></span>|<span data-ttu-id="72dee-131">指定のロケールに対して表される設定の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="72dee-131">Specifies value of the setting expressed for the specified locale.</span></span>|
 
-## <a name="see-also"></a><span data-ttu-id="5815e-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="5815e-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="72dee-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="72dee-132">See also</span></span>
 
-- [<span data-ttu-id="5815e-133">Office アドインのローカライズ</span><span class="sxs-lookup"><span data-stu-id="5815e-133">Localization for Office Add-ins</span></span>](../../develop/localization.md)
+- [<span data-ttu-id="72dee-133">Office アドインのローカライズ</span><span class="sxs-lookup"><span data-stu-id="72dee-133">Localization for Office Add-ins</span></span>](../../develop/localization.md)

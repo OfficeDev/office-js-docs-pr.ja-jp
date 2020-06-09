@@ -3,51 +3,51 @@ title: ドキュメントが開いたときに Excel アドインでコードを
 description: ドキュメントが開いたときに、Excel アドインでコードを実行します。
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: f544140a08a81c69aeb2fbdbe53afc098a738ad1
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: c0e8493b5437a1a8b59d689bbbdd794fa98d89a2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "44275764"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610350"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a><span data-ttu-id="1b519-103">ドキュメントが開いたときに Excel アドインでコードを実行する</span><span class="sxs-lookup"><span data-stu-id="1b519-103">Run code in your Excel add-in when the document opens</span></span>
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a><span data-ttu-id="e9dff-103">ドキュメントが開いたときに Excel アドインでコードを実行する</span><span class="sxs-lookup"><span data-stu-id="e9dff-103">Run code in your Excel add-in when the document opens</span></span>
 
-<span data-ttu-id="1b519-104">ドキュメントが開かれるとすぐに、コードを読み込んで実行するように Excel アドインを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="1b519-104">You can configure your Excel add-in to load and run code as soon as the document is opened.</span></span> <span data-ttu-id="1b519-105">これは、アドインが表示される前に、イベントハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、またはその他のタスクの実行が必要な場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="1b519-105">This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.</span></span>
+<span data-ttu-id="e9dff-104">ドキュメントが開かれるとすぐに、コードを読み込んで実行するように Excel アドインを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="e9dff-104">You can configure your Excel add-in to load and run code as soon as the document is opened.</span></span> <span data-ttu-id="e9dff-105">これは、アドインが表示される前に、イベントハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、またはその他のタスクの実行が必要な場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="e9dff-105">This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.</span></span>
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
-## <a name="configure-your-add-in-to-load-when-the-document-opens"></a><span data-ttu-id="1b519-106">ドキュメントが開いたときに読み込まれるようにアドインを構成する</span><span class="sxs-lookup"><span data-stu-id="1b519-106">Configure your add-in to load when the document opens</span></span>
+## <a name="configure-your-add-in-to-load-when-the-document-opens"></a><span data-ttu-id="e9dff-106">ドキュメントが開いたときに読み込まれるようにアドインを構成する</span><span class="sxs-lookup"><span data-stu-id="e9dff-106">Configure your add-in to load when the document opens</span></span>
 
-<span data-ttu-id="1b519-107">次のコードは、ドキュメントが開かれたときに読み込み、実行を開始するようにアドインを構成します。</span><span class="sxs-lookup"><span data-stu-id="1b519-107">The following code configures your add-in to load and start running when the document is opened.</span></span>
+<span data-ttu-id="e9dff-107">次のコードは、ドキュメントが開かれたときに読み込み、実行を開始するようにアドインを構成します。</span><span class="sxs-lookup"><span data-stu-id="e9dff-107">The following code configures your add-in to load and start running when the document is opened.</span></span>
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
 
 > [!NOTE]
-> <span data-ttu-id="1b519-108">`setStartupBehavior`メソッドは非同期です。</span><span class="sxs-lookup"><span data-stu-id="1b519-108">The `setStartupBehavior` method is asynchronous.</span></span>
+> <span data-ttu-id="e9dff-108">`setStartupBehavior`メソッドは非同期です。</span><span class="sxs-lookup"><span data-stu-id="e9dff-108">The `setStartupBehavior` method is asynchronous.</span></span>
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a><span data-ttu-id="1b519-109">ドキュメントを開くときに読み込み動作を行わないようにアドインを構成する</span><span class="sxs-lookup"><span data-stu-id="1b519-109">Configure your add-in for no load behavior on document open</span></span>
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a><span data-ttu-id="e9dff-109">ドキュメントを開くときに読み込み動作を行わないようにアドインを構成する</span><span class="sxs-lookup"><span data-stu-id="e9dff-109">Configure your add-in for no load behavior on document open</span></span>
 
-<span data-ttu-id="1b519-110">次のコードは、ドキュメントが開かれたときに開始しないようにアドインを構成します。</span><span class="sxs-lookup"><span data-stu-id="1b519-110">The following code configures your add-in not to start when the document is opened.</span></span> <span data-ttu-id="1b519-111">代わりに、ユーザーが何らかの方法 (リボンボタンを選択したときや作業ウィンドウを開いたときなど) に実行されます。</span><span class="sxs-lookup"><span data-stu-id="1b519-111">Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)</span></span>
+<span data-ttu-id="e9dff-110">次のコードは、ドキュメントが開かれたときに開始しないようにアドインを構成します。</span><span class="sxs-lookup"><span data-stu-id="e9dff-110">The following code configures your add-in not to start when the document is opened.</span></span> <span data-ttu-id="e9dff-111">代わりに、ユーザーが何らかの方法 (リボンボタンを選択したときや作業ウィンドウを開いたときなど) に実行されます。</span><span class="sxs-lookup"><span data-stu-id="e9dff-111">Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)</span></span>
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 ```
 
-## <a name="get-the-current-load-behavior"></a><span data-ttu-id="1b519-112">現在の読み込み動作を取得する</span><span class="sxs-lookup"><span data-stu-id="1b519-112">Get the current load behavior</span></span>
+## <a name="get-the-current-load-behavior"></a><span data-ttu-id="e9dff-112">現在の読み込み動作を取得する</span><span class="sxs-lookup"><span data-stu-id="e9dff-112">Get the current load behavior</span></span>
 
-<span data-ttu-id="1b519-113">現在のスタートアップ動作を確認するには、次の関数を実行します。この関数は、Office の StartupBehavior オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="1b519-113">To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.</span></span>
+<span data-ttu-id="e9dff-113">現在のスタートアップ動作を確認するには、次の関数を実行します。この関数は、Office の StartupBehavior オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="e9dff-113">To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.</span></span>
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
 ```
 
-## <a name="how-to-run-code-when-the-document-opens"></a><span data-ttu-id="1b519-114">ドキュメントが開いたときにコードを実行する方法</span><span class="sxs-lookup"><span data-stu-id="1b519-114">How to run code when the document opens</span></span>
+## <a name="how-to-run-code-when-the-document-opens"></a><span data-ttu-id="e9dff-114">ドキュメントが開いたときにコードを実行する方法</span><span class="sxs-lookup"><span data-stu-id="e9dff-114">How to run code when the document opens</span></span>
 
-<span data-ttu-id="1b519-115">アドインがドキュメントを開いたときに読み込むように構成すると、すぐに実行されます。</span><span class="sxs-lookup"><span data-stu-id="1b519-115">When your add-in is configured to load on document open, it will run immediately.</span></span> <span data-ttu-id="1b519-116">`Office.initialize`イベントハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1b519-116">The `Office.initialize` event handler will be called.</span></span> <span data-ttu-id="1b519-117">スタートアップコードを `Office.initialize` イベントハンドラーに配置します。</span><span class="sxs-lookup"><span data-stu-id="1b519-117">Place your startup code in the `Office.initialize` event handler.</span></span>
+<span data-ttu-id="e9dff-115">アドインがドキュメントを開いたときに読み込むように構成すると、すぐに実行されます。</span><span class="sxs-lookup"><span data-stu-id="e9dff-115">When your add-in is configured to load on document open, it will run immediately.</span></span> <span data-ttu-id="e9dff-116">`Office.initialize`イベントハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="e9dff-116">The `Office.initialize` event handler will be called.</span></span> <span data-ttu-id="e9dff-117">スタートアップコードを `Office.initialize` イベントハンドラーに配置します。</span><span class="sxs-lookup"><span data-stu-id="e9dff-117">Place your startup code in the `Office.initialize` event handler.</span></span>
 
-<span data-ttu-id="1b519-118">次のコードは、作業中のワークシートから変更イベントのイベントハンドラーを登録する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1b519-118">The following code shows how to register an event handler for change events from the active worksheet.</span></span> <span data-ttu-id="1b519-119">アドインをドキュメントを開いたときに読み込むように構成した場合、このコードは、ドキュメントが開かれたときにイベントハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="1b519-119">If you configure your add-in to load on document open, this code will register the event handler when the document is opened.</span></span> <span data-ttu-id="1b519-120">作業ウィンドウを開く前に、変更イベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="1b519-120">You can handle change events before the task pane is opened.</span></span>
+<span data-ttu-id="e9dff-118">次のコードは、作業中のワークシートから変更イベントのイベントハンドラーを登録する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e9dff-118">The following code shows how to register an event handler for change events from the active worksheet.</span></span> <span data-ttu-id="e9dff-119">アドインをドキュメントを開いたときに読み込むように構成した場合、このコードは、ドキュメントが開かれたときにイベントハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="e9dff-119">If you configure your add-in to load on document open, this code will register the event handler when the document is opened.</span></span> <span data-ttu-id="e9dff-120">作業ウィンドウを開く前に、変更イベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="e9dff-120">You can handle change events before the task pane is opened.</span></span>
 
 
 ```JavaScript
@@ -81,6 +81,6 @@ async function onChange(event) {
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1b519-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="1b519-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e9dff-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="e9dff-121">See also</span></span>
 
-- [<span data-ttu-id="1b519-122">Excel カスタム関数と作業ウィンドウチュートリアルの間でデータとイベントを共有する</span><span class="sxs-lookup"><span data-stu-id="1b519-122">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [<span data-ttu-id="e9dff-122">Excel カスタム関数と作業ウィンドウチュートリアルの間でデータとイベントを共有する</span><span class="sxs-lookup"><span data-stu-id="e9dff-122">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

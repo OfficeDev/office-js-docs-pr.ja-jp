@@ -3,27 +3,27 @@ title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717146"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609595"
 ---
-# <a name="work-with-ranges-using-the-excel-javascript-api"></a><span data-ttu-id="4bee3-103">Excel JavaScript API を使用して範囲を操作する</span><span class="sxs-lookup"><span data-stu-id="4bee3-103">Work with ranges using the Excel JavaScript API</span></span>
+# <a name="work-with-ranges-using-the-excel-javascript-api"></a><span data-ttu-id="16f79-103">Excel JavaScript API を使用して範囲を操作する</span><span class="sxs-lookup"><span data-stu-id="16f79-103">Work with ranges using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="4bee3-104">この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-104">This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API.</span></span> <span data-ttu-id="4bee3-105">オブジェクトが`Range`サポートするプロパティとメソッドの完全な一覧については、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4bee3-105">For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).</span></span>
+<span data-ttu-id="16f79-104">この記事では、Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。</span><span class="sxs-lookup"><span data-stu-id="16f79-104">This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API.</span></span> <span data-ttu-id="16f79-105">オブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Range` ては、「 [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="16f79-105">For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4bee3-106">範囲を指定してより詳細なタスクを実行する方法のサンプル コードについては、「[Excel JavaScript API を使用して範囲を操作する (詳細)](excel-add-ins-ranges-advanced.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4bee3-106">For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).</span></span>
+> <span data-ttu-id="16f79-106">範囲を指定してより詳細なタスクを実行する方法のサンプル コードについては、「[Excel JavaScript API を使用して範囲を操作する (詳細)](excel-add-ins-ranges-advanced.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="16f79-106">For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).</span></span>
 
-## <a name="get-a-range"></a><span data-ttu-id="4bee3-107">範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-107">Get a range</span></span>
+## <a name="get-a-range"></a><span data-ttu-id="16f79-107">範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-107">Get a range</span></span>
 
-<span data-ttu-id="4bee3-108">次の例では、ワークシート内の範囲への参照を取得する、さまざまな方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4bee3-108">The following examples show different ways to get a reference to a range within a worksheet.</span></span>
+<span data-ttu-id="16f79-108">次の例では、ワークシート内の範囲への参照を取得する、さまざまな方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="16f79-108">The following examples show different ways to get a reference to a range within a worksheet.</span></span>
 
-### <a name="get-range-by-address"></a><span data-ttu-id="4bee3-109">アドレスによって範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-109">Get range by address</span></span>
+### <a name="get-range-by-address"></a><span data-ttu-id="16f79-109">アドレスによって範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-109">Get range by address</span></span>
 
-<span data-ttu-id="4bee3-110">次のコードサンプルでは、 **sample**という名前のワークシートからアドレス**B2: C5**の`address`範囲を取得し、そのプロパティを読み込んで、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-110">The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
+<span data-ttu-id="16f79-110">次のコードサンプルでは、 **sample**という名前のワークシートからアドレス**B2: C5**の範囲を取得し、そのプロパティを読み込んで、 `address` コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-110">The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -38,9 +38,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-range-by-name"></a><span data-ttu-id="4bee3-111">名前によって範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-111">Get range by name</span></span>
+### <a name="get-range-by-name"></a><span data-ttu-id="16f79-111">名前によって範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-111">Get range by name</span></span>
 
-<span data-ttu-id="4bee3-112">次のコードサンプルでは、 **sample**という名前のワークシートから指定`address` `MyRange`された範囲を取得し、そのプロパティを読み込んで、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-112">The following code sample gets the range named `MyRange` from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
+<span data-ttu-id="16f79-112">次のコードサンプルでは、Sample という名前のワークシートから指定された範囲を取得し、 `MyRange` そのプロパティを読み込んで、 **Sample** `address` コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-112">The following code sample gets the range named `MyRange` from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -55,9 +55,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-used-range"></a><span data-ttu-id="4bee3-113">使用範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-113">Get used range</span></span>
+### <a name="get-used-range"></a><span data-ttu-id="16f79-113">使用範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-113">Get used range</span></span>
 
-<span data-ttu-id="4bee3-114">次のコードサンプルでは、 **sample**という名前のワークシートから使用`address`された範囲を取得し、そのプロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-114">The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span> <span data-ttu-id="4bee3-115">使用範囲とは、値または書式設定が割り当てられているワークシート内のセルを含む、最小の範囲です。</span><span class="sxs-lookup"><span data-stu-id="4bee3-115">The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them.</span></span> <span data-ttu-id="4bee3-116">ワークシート全体が空白の場合、 `getUsedRange()`このメソッドは、ワークシートの左上のセルのみで構成される範囲を返します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-116">If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell in the worksheet.</span></span>
+<span data-ttu-id="16f79-114">次のコードサンプルでは、 **sample**という名前のワークシートから使用された範囲を取得し、その `address` プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-114">The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span> <span data-ttu-id="16f79-115">使用範囲とは、値または書式設定が割り当てられているワークシート内のセルを含む、最小の範囲です。</span><span class="sxs-lookup"><span data-stu-id="16f79-115">The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them.</span></span> <span data-ttu-id="16f79-116">ワークシート全体が空白の場合、このメソッドは、ワークシートの左上の `getUsedRange()` セルのみで構成される範囲を返します。</span><span class="sxs-lookup"><span data-stu-id="16f79-116">If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell in the worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -72,9 +72,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-entire-range"></a><span data-ttu-id="4bee3-117">範囲全体を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-117">Get entire range</span></span>
+### <a name="get-entire-range"></a><span data-ttu-id="16f79-117">範囲全体を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-117">Get entire range</span></span>
 
-<span data-ttu-id="4bee3-118">次のコードサンプルでは、 **sample**という名前のワークシートからワークシート`address`の範囲全体を取得し、そのプロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-118">The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
+<span data-ttu-id="16f79-118">次のコードサンプルでは、 **sample**という名前のワークシートからワークシートの範囲全体を取得し、その `address` プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-118">The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -89,9 +89,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="insert-a-range-of-cells"></a><span data-ttu-id="4bee3-119">セルの範囲を挿入する</span><span class="sxs-lookup"><span data-stu-id="4bee3-119">Insert a range of cells</span></span>
+## <a name="insert-a-range-of-cells"></a><span data-ttu-id="16f79-119">セルの範囲を挿入する</span><span class="sxs-lookup"><span data-stu-id="16f79-119">Insert a range of cells</span></span>
 
-<span data-ttu-id="4bee3-120">次のコードサンプルは、場所 **B4:E4** にセルの範囲を挿入し、他のセルを下にシフトして、新しいセルのためのスペースを提供します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-120">The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.</span></span>
+<span data-ttu-id="16f79-120">次のコードサンプルは、場所 **B4:E4** にセルの範囲を挿入し、他のセルを下にシフトして、新しいセルのためのスペースを提供します。</span><span class="sxs-lookup"><span data-stu-id="16f79-120">The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -104,17 +104,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-121">**範囲を挿入する前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-121">**Data before range is inserted**</span></span>
+<span data-ttu-id="16f79-121">**範囲を挿入する前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-121">**Data before range is inserted**</span></span>
 
 ![範囲を挿入する前の Excel のデータ](../images/excel-ranges-start.png)
 
-<span data-ttu-id="4bee3-123">**範囲を挿入した後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-123">**Data after range is inserted**</span></span>
+<span data-ttu-id="16f79-123">**範囲を挿入した後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-123">**Data after range is inserted**</span></span>
 
 ![範囲を挿入した後の Excel のデータ](../images/excel-ranges-after-insert.png)
 
-## <a name="clear-a-range-of-cells"></a><span data-ttu-id="4bee3-125">セルの範囲をクリアする</span><span class="sxs-lookup"><span data-stu-id="4bee3-125">Clear a range of cells</span></span>
+## <a name="clear-a-range-of-cells"></a><span data-ttu-id="16f79-125">セルの範囲をクリアする</span><span class="sxs-lookup"><span data-stu-id="16f79-125">Clear a range of cells</span></span>
 
-<span data-ttu-id="4bee3-126">次のコード サンプルは、範囲 **E2：E5** のセルの内容と書式をすべてクリアします。</span><span class="sxs-lookup"><span data-stu-id="4bee3-126">The following code sample clears all contents and formatting of cells in the range **E2:E5**.</span></span>  
+<span data-ttu-id="16f79-126">次のコード サンプルは、範囲 **E2：E5** のセルの内容と書式をすべてクリアします。</span><span class="sxs-lookup"><span data-stu-id="16f79-126">The following code sample clears all contents and formatting of cells in the range **E2:E5**.</span></span>  
 
 ```js
 Excel.run(function (context) {
@@ -127,17 +127,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-127">**範囲をクリアする前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-127">**Data before range is cleared**</span></span>
+<span data-ttu-id="16f79-127">**範囲をクリアする前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-127">**Data before range is cleared**</span></span>
 
 ![範囲をクリアする前の Excel のデータ](../images/excel-ranges-start.png)
 
-<span data-ttu-id="4bee3-129">**範囲をクリアした後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-129">**Data after range is cleared**</span></span>
+<span data-ttu-id="16f79-129">**範囲をクリアした後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-129">**Data after range is cleared**</span></span>
 
 ![範囲をクリアした後の Excel のデータ](../images/excel-ranges-after-clear.png)
 
-## <a name="delete-a-range-of-cells"></a><span data-ttu-id="4bee3-131">セルの範囲を削除する</span><span class="sxs-lookup"><span data-stu-id="4bee3-131">Delete a range of cells</span></span>
+## <a name="delete-a-range-of-cells"></a><span data-ttu-id="16f79-131">セルの範囲を削除する</span><span class="sxs-lookup"><span data-stu-id="16f79-131">Delete a range of cells</span></span>
 
-<span data-ttu-id="4bee3-132">次のコード サンプルは、範囲 **B4:E4** のセルを削除し、他のセルを上にシフトして、削除されたセルのために空いたスペースに入力します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-132">The following code sample deletes the cells in the range **B4:E4** and shift other cells up to fill the space that was vacated by the deleted cells.</span></span>
+<span data-ttu-id="16f79-132">次のコード サンプルは、範囲 **B4:E4** のセルを削除し、他のセルを上にシフトして、削除されたセルのために空いたスペースに入力します。</span><span class="sxs-lookup"><span data-stu-id="16f79-132">The following code sample deletes the cells in the range **B4:E4** and shift other cells up to fill the space that was vacated by the deleted cells.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -150,17 +150,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-133">**範囲を削除する前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-133">**Data before range is deleted**</span></span>
+<span data-ttu-id="16f79-133">**範囲を削除する前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-133">**Data before range is deleted**</span></span>
 
 ![範囲を削除する前の Excel のデータ](../images/excel-ranges-start.png)
 
-<span data-ttu-id="4bee3-135">**範囲を削除した後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-135">**Data after range is deleted**</span></span>
+<span data-ttu-id="16f79-135">**範囲を削除した後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-135">**Data after range is deleted**</span></span>
 
 ![範囲を削除した後の Excel のデータ](../images/excel-ranges-after-delete.png)
 
-## <a name="set-the-selected-range"></a><span data-ttu-id="4bee3-137">選択範囲を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-137">Set the selected range</span></span>
+## <a name="set-the-selected-range"></a><span data-ttu-id="16f79-137">選択範囲を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-137">Set the selected range</span></span>
 
-<span data-ttu-id="4bee3-138">次のコード サンプルは、作業中のワークシートの範囲 **B2:E6** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-138">The following code sample selects the range **B2:E6** in the active worksheet.</span></span>
+<span data-ttu-id="16f79-138">次のコード サンプルは、作業中のワークシートの範囲 **B2:E6** を選択します。</span><span class="sxs-lookup"><span data-stu-id="16f79-138">The following code sample selects the range **B2:E6** in the active worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -173,13 +173,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-139">**選択範囲 B2:E6**</span><span class="sxs-lookup"><span data-stu-id="4bee3-139">**Selected range B2:E6**</span></span>
+<span data-ttu-id="16f79-139">**選択範囲 B2:E6**</span><span class="sxs-lookup"><span data-stu-id="16f79-139">**Selected range B2:E6**</span></span>
 
 ![Excel の選択範囲](../images/excel-ranges-set-selection.png)
 
-## <a name="get-the-selected-range"></a><span data-ttu-id="4bee3-141">選択範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-141">Get the selected range</span></span>
+## <a name="get-the-selected-range"></a><span data-ttu-id="16f79-141">選択範囲を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-141">Get the selected range</span></span>
 
-<span data-ttu-id="4bee3-142">次のコードサンプルでは、選択されて`address`いる範囲を取得し、そのプロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-142">The following code sample gets the selected range, loads its `address` property, and writes a message to the console.</span></span> 
+<span data-ttu-id="16f79-142">次のコードサンプルでは、選択されている範囲を取得し、その `address` プロパティを読み込み、コンソールにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-142">The following code sample gets the selected range, loads its `address` property, and writes a message to the console.</span></span> 
 
 ```js
 Excel.run(function (context) {
@@ -193,13 +193,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="set-values-or-formulas"></a><span data-ttu-id="4bee3-143">値または数式を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-143">Set values or formulas</span></span>
+## <a name="set-values-or-formulas"></a><span data-ttu-id="16f79-143">値または数式を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-143">Set values or formulas</span></span>
 
-<span data-ttu-id="4bee3-144">次の例は、1 つのセルまたはセルの範囲の値と数式を設定する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4bee3-144">The following examples show how to set values and formulas for a single cell or a range of cells.</span></span>
+<span data-ttu-id="16f79-144">次の例は、1 つのセルまたはセルの範囲の値と数式を設定する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="16f79-144">The following examples show how to set values and formulas for a single cell or a range of cells.</span></span>
 
-### <a name="set-value-for-a-single-cell"></a><span data-ttu-id="4bee3-145">1 つのセルの値を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-145">Set value for a single cell</span></span>
+### <a name="set-value-for-a-single-cell"></a><span data-ttu-id="16f79-145">1 つのセルの値を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-145">Set value for a single cell</span></span>
 
-<span data-ttu-id="4bee3-146">次のコード サンプルでは、セル **C3** の値を "5" に設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-146">The following code sample sets the value of cell **C3** to "5" and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="16f79-146">次のコード サンプルでは、セル **C3** の値を "5" に設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-146">The following code sample sets the value of cell **C3** to "5" and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -213,17 +213,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-147">**セルの値が更新される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-147">**Data before cell value is updated**</span></span>
+<span data-ttu-id="16f79-147">**セルの値が更新される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-147">**Data before cell value is updated**</span></span>
 
 ![セルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
-<span data-ttu-id="4bee3-149">**セルの値が更新された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-149">**Data after cell value is updated**</span></span>
+<span data-ttu-id="16f79-149">**セルの値が更新された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-149">**Data after cell value is updated**</span></span>
 
 ![セルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-value.png)
 
-### <a name="set-values-for-a-range-of-cells"></a><span data-ttu-id="4bee3-151">複数のセルの範囲の値を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-151">Set values for a range of cells</span></span>
+### <a name="set-values-for-a-range-of-cells"></a><span data-ttu-id="16f79-151">複数のセルの範囲の値を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-151">Set values for a range of cells</span></span>
 
-<span data-ttu-id="4bee3-152">次のコード サンプルでは、範囲 **B5：D5** のセルの値を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-152">The following code sample sets values for the cells in the range **B5:D5** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="16f79-152">次のコード サンプルでは、範囲 **B5：D5** のセルの値を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-152">The following code sample sets values for the cells in the range **B5:D5** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -241,17 +241,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-153">**複数のセルの値が更新される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-153">**Data before cell values are updated**</span></span>
+<span data-ttu-id="16f79-153">**複数のセルの値が更新される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-153">**Data before cell values are updated**</span></span>
 
 ![複数のセルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
-<span data-ttu-id="4bee3-155">**複数のセルの値が更新された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-155">**Data after cell values are updated**</span></span>
+<span data-ttu-id="16f79-155">**複数のセルの値が更新された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-155">**Data after cell values are updated**</span></span>
 
 ![複数のセルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-values.png)
 
-### <a name="set-formula-for-a-single-cell"></a><span data-ttu-id="4bee3-157">1 つのセルの数式を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-157">Set formula for a single cell</span></span>
+### <a name="set-formula-for-a-single-cell"></a><span data-ttu-id="16f79-157">1 つのセルの数式を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-157">Set formula for a single cell</span></span>
 
-<span data-ttu-id="4bee3-158">次のコード サンプルでは、セル **E3** の数式を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-158">The following code sample sets a formula for cell **E3** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="16f79-158">次のコード サンプルでは、セル **E3** の数式を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-158">The following code sample sets a formula for cell **E3** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -265,17 +265,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-159">**セルの数式が設定される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-159">**Data before cell formula is set**</span></span>
+<span data-ttu-id="16f79-159">**セルの数式が設定される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-159">**Data before cell formula is set**</span></span>
 
 ![セルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
-<span data-ttu-id="4bee3-161">**セルの数式が設定された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-161">**Data after cell formula is set**</span></span>
+<span data-ttu-id="16f79-161">**セルの数式が設定された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-161">**Data after cell formula is set**</span></span>
 
 ![セルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formula.png)
 
-### <a name="set-formulas-for-a-range-of-cells"></a><span data-ttu-id="4bee3-163">セルの範囲の数式を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-163">Set formulas for a range of cells</span></span>
+### <a name="set-formulas-for-a-range-of-cells"></a><span data-ttu-id="16f79-163">セルの範囲の数式を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-163">Set formulas for a range of cells</span></span>
 
-<span data-ttu-id="4bee3-164">次のコード サンプルでは、範囲 **E2:E6** のセルの数式を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-164">The following code sample sets formulas for cells in the range **E2:E6** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="16f79-164">次のコード サンプルでは、範囲 **E2:E6** のセルの数式を設定し、データに最も適した列の幅を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-164">The following code sample sets formulas for cells in the range **E2:E6** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -296,21 +296,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-165">**複数のセルの数式が設定される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-165">**Data before cell formulas are set**</span></span>
+<span data-ttu-id="16f79-165">**複数のセルの数式が設定される前のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-165">**Data before cell formulas are set**</span></span>
 
 ![複数のセルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
-<span data-ttu-id="4bee3-167">**複数のセルの数式が設定された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-167">**Data after cell formulas are set**</span></span>
+<span data-ttu-id="16f79-167">**複数のセルの数式が設定された後のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-167">**Data after cell formulas are set**</span></span>
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-## <a name="get-values-text-or-formulas"></a><span data-ttu-id="4bee3-169">値、テキスト、または数式を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-169">Get values, text, or formulas</span></span>
+## <a name="get-values-text-or-formulas"></a><span data-ttu-id="16f79-169">値、テキスト、または数式を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-169">Get values, text, or formulas</span></span>
 
-<span data-ttu-id="4bee3-170">次の例は、セルの範囲から値、テキスト、および数式を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4bee3-170">These examples show how to get values, text, and formulas from a range of cells.</span></span>
+<span data-ttu-id="16f79-170">次の例は、セルの範囲から値、テキスト、および数式を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="16f79-170">These examples show how to get values, text, and formulas from a range of cells.</span></span>
 
-### <a name="get-values-from-a-range-of-cells"></a><span data-ttu-id="4bee3-171">セルの範囲から値を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-171">Get values from a range of cells</span></span>
+### <a name="get-values-from-a-range-of-cells"></a><span data-ttu-id="16f79-171">セルの範囲から値を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-171">Get values from a range of cells</span></span>
 
-<span data-ttu-id="4bee3-172">次のコードサンプルでは、範囲**B2: E6**を取得`values`し、そのプロパティを読み込んで、その値をコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-172">The following code sample gets the range **B2:E6**, loads its `values` property, and writes the values to the console.</span></span> <span data-ttu-id="4bee3-173">範囲`values`のプロパティは、セルに含まれる生の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-173">The `values` property of a range specifies the raw values that the cells contain.</span></span> <span data-ttu-id="4bee3-174">範囲内の一部のセルに数式が含まれ`values`ている場合でも、範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-174">Even if some cells in a range contain formulas, the `values` property of the range specifies the raw values for those cells, not any of the formulas.</span></span>
+<span data-ttu-id="16f79-172">次のコードサンプルでは、範囲**B2: E6**を取得し、その `values` プロパティを読み込んで、その値をコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-172">The following code sample gets the range **B2:E6**, loads its `values` property, and writes the values to the console.</span></span> <span data-ttu-id="16f79-173">`values`範囲のプロパティは、セルに含まれる生の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-173">The `values` property of a range specifies the raw values that the cells contain.</span></span> <span data-ttu-id="16f79-174">範囲内の一部のセルに数式が含まれている場合でも、 `values` 範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-174">Even if some cells in a range contain formulas, the `values` property of the range specifies the raw values for those cells, not any of the formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -325,11 +325,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-175">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-175">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="16f79-175">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="16f79-175">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="4bee3-177">**range.values (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-177">**range.values (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="16f79-177">**range.values (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="16f79-177">**range.values (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -366,9 +366,9 @@ Excel.run(function (context) {
 ]
 ```
 
-### <a name="get-text-from-a-range-of-cells"></a><span data-ttu-id="4bee3-178">セルの範囲からテキストを取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-178">Get text from a range of cells</span></span>
+### <a name="get-text-from-a-range-of-cells"></a><span data-ttu-id="16f79-178">セルの範囲からテキストを取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-178">Get text from a range of cells</span></span>
 
-<span data-ttu-id="4bee3-179">次のコードサンプルでは、範囲**B2: E6**を取得`text`し、そのプロパティを読み込んでコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-179">The following code sample gets the range **B2:E6**, loads its `text` property, and writes it to the console.</span></span> <span data-ttu-id="4bee3-180">範囲`text`のプロパティは、範囲内のセルの表示値を指定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-180">The `text` property of a range specifies the display values for cells in the range.</span></span> <span data-ttu-id="4bee3-181">範囲内の一部のセルに数式が含まれ`text`ている場合でも、範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。</span><span class="sxs-lookup"><span data-stu-id="4bee3-181">Even if some cells in a range contain formulas, the `text` property of the range specifies the display values for those cells, not any of the formulas.</span></span>
+<span data-ttu-id="16f79-179">次のコードサンプルでは、範囲**B2: E6**を取得し、その `text` プロパティを読み込んでコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-179">The following code sample gets the range **B2:E6**, loads its `text` property, and writes it to the console.</span></span> <span data-ttu-id="16f79-180">`text`範囲のプロパティは、範囲内のセルの表示値を指定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-180">The `text` property of a range specifies the display values for cells in the range.</span></span> <span data-ttu-id="16f79-181">範囲内の一部のセルに数式が含まれている場合でも、 `text` 範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。</span><span class="sxs-lookup"><span data-stu-id="16f79-181">Even if some cells in a range contain formulas, the `text` property of the range specifies the display values for those cells, not any of the formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -383,11 +383,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-182">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-182">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="16f79-182">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="16f79-182">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="4bee3-184">**range.text (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-184">**range.text (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="16f79-184">**range.text (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="16f79-184">**range.text (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -424,9 +424,9 @@ Excel.run(function (context) {
 ]
 ```
 
-### <a name="get-formulas-from-a-range-of-cells"></a><span data-ttu-id="4bee3-185">セルの範囲から数式を取得する</span><span class="sxs-lookup"><span data-stu-id="4bee3-185">Get formulas from a range of cells</span></span>
+### <a name="get-formulas-from-a-range-of-cells"></a><span data-ttu-id="16f79-185">セルの範囲から数式を取得する</span><span class="sxs-lookup"><span data-stu-id="16f79-185">Get formulas from a range of cells</span></span>
 
-<span data-ttu-id="4bee3-186">次のコードサンプルでは、範囲**B2: E6**を取得`formulas`し、そのプロパティを読み込んでコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-186">The following code sample gets the range **B2:E6**, loads its `formulas` property, and writes it to the console.</span></span> <span data-ttu-id="4bee3-187">範囲`formulas`のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-187">The `formulas` property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.</span></span>
+<span data-ttu-id="16f79-186">次のコードサンプルでは、範囲**B2: E6**を取得し、その `formulas` プロパティを読み込んでコンソールに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="16f79-186">The following code sample gets the range **B2:E6**, loads its `formulas` property, and writes it to the console.</span></span> <span data-ttu-id="16f79-187">`formulas`範囲のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-187">The `formulas` property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -441,11 +441,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-188">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-188">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="16f79-188">**範囲内のデータ (列 E の値は数式の結果)**</span><span class="sxs-lookup"><span data-stu-id="16f79-188">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="4bee3-190">**range.formulas (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="4bee3-190">**range.formulas (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="16f79-190">**range.formulas (上記のコード サンプルによりコンソールに記録される)**</span><span class="sxs-lookup"><span data-stu-id="16f79-190">**range.formulas (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -482,13 +482,13 @@ Excel.run(function (context) {
 ]
 ```
 
-## <a name="set-range-format"></a><span data-ttu-id="4bee3-191">範囲の書式を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-191">Set range format</span></span>
+## <a name="set-range-format"></a><span data-ttu-id="16f79-191">範囲の書式を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-191">Set range format</span></span>
 
-<span data-ttu-id="4bee3-192">次の例は、範囲内のセルのフォントの色、塗りつぶしの色、および数値の書式を設定する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4bee3-192">The following examples show how to set font color, fill color, and number format for cells in a range.</span></span>
+<span data-ttu-id="16f79-192">次の例は、範囲内のセルのフォントの色、塗りつぶしの色、および数値の書式を設定する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="16f79-192">The following examples show how to set font color, fill color, and number format for cells in a range.</span></span>
 
-### <a name="set-font-color-and-fill-color"></a><span data-ttu-id="4bee3-193">フォントの色と塗りつぶしの色を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-193">Set font color and fill color</span></span>
+### <a name="set-font-color-and-fill-color"></a><span data-ttu-id="16f79-193">フォントの色と塗りつぶしの色を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-193">Set font color and fill color</span></span>
 
-<span data-ttu-id="4bee3-194">次のコード サンプルは、範囲 **B2：E2** のセルのフォントの色と塗りつぶしの色を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-194">The following code sample sets the font color and fill color for cells in range **B2:E2**.</span></span>
+<span data-ttu-id="16f79-194">次のコード サンプルは、範囲 **B2：E2** のセルのフォントの色と塗りつぶしの色を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-194">The following code sample sets the font color and fill color for cells in range **B2:E2**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -502,17 +502,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-195">**フォントの色と塗りつぶしの色を設定する前の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-195">**Data in range before font color and fill color are set**</span></span>
+<span data-ttu-id="16f79-195">**フォントの色と塗りつぶしの色を設定する前の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-195">**Data in range before font color and fill color are set**</span></span>
 
 ![書式設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
 
-<span data-ttu-id="4bee3-197">**フォントの色と塗りつぶしの色を設定した後の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-197">**Data in range after font color and fill color are set**</span></span>
+<span data-ttu-id="16f79-197">**フォントの色と塗りつぶしの色を設定した後の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-197">**Data in range after font color and fill color are set**</span></span>
 
 ![書式設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
-### <a name="set-number-format"></a><span data-ttu-id="4bee3-199">数値の書式を設定する</span><span class="sxs-lookup"><span data-stu-id="4bee3-199">Set number format</span></span>
+### <a name="set-number-format"></a><span data-ttu-id="16f79-199">数値の書式を設定する</span><span class="sxs-lookup"><span data-stu-id="16f79-199">Set number format</span></span>
 
-<span data-ttu-id="4bee3-200">次のコード サンプルは、範囲 **D3：E5** のセルの数値を書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-200">The following code sample sets the number format for the cells in range **D3:E5**.</span></span>
+<span data-ttu-id="16f79-200">次のコード サンプルは、範囲 **D3：E5** のセルの数値を書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="16f79-200">The following code sample sets the number format for the cells in range **D3:E5**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -531,21 +531,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-201">**数値の書式を設定する前の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-201">**Data in range before number format is set**</span></span>
+<span data-ttu-id="16f79-201">**数値の書式を設定する前の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-201">**Data in range before number format is set**</span></span>
 
 ![書式設定する前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
-<span data-ttu-id="4bee3-203">**数値の書式を設定した後の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="4bee3-203">**Data in range after number format is set**</span></span>
+<span data-ttu-id="16f79-203">**数値の書式を設定した後の範囲内のデータ**</span><span class="sxs-lookup"><span data-stu-id="16f79-203">**Data in range after number format is set**</span></span>
 
 ![書式設定した後の Excel のデータ](../images/excel-ranges-format-numbers.png)
 
-### <a name="conditional-formatting-of-ranges"></a><span data-ttu-id="4bee3-205">範囲の条件付き書式</span><span class="sxs-lookup"><span data-stu-id="4bee3-205">Conditional formatting of ranges</span></span>
+### <a name="conditional-formatting-of-ranges"></a><span data-ttu-id="16f79-205">範囲の条件付き書式</span><span class="sxs-lookup"><span data-stu-id="16f79-205">Conditional formatting of ranges</span></span>
 
-<span data-ttu-id="4bee3-206">範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-206">Ranges can have formats applied to individual cells based on conditions.</span></span> <span data-ttu-id="4bee3-207">この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4bee3-207">For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).</span></span>
+<span data-ttu-id="16f79-206">範囲には、条件に基づいて個々のセルに適用する書式設定を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="16f79-206">Ranges can have formats applied to individual cells based on conditions.</span></span> <span data-ttu-id="16f79-207">この詳細については、「[Excel の範囲に条件付き書式を適用する](excel-add-ins-conditional-formatting.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="16f79-207">For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).</span></span>
 
-## <a name="find-a-cell-using-string-matching"></a><span data-ttu-id="4bee3-208">文字列のマッチングを使用してセルを検索する</span><span class="sxs-lookup"><span data-stu-id="4bee3-208">Find a cell using string matching</span></span>
+## <a name="find-a-cell-using-string-matching"></a><span data-ttu-id="16f79-208">文字列のマッチングを使用してセルを検索する</span><span class="sxs-lookup"><span data-stu-id="16f79-208">Find a cell using string matching</span></span>
 
-<span data-ttu-id="4bee3-209">`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="4bee3-209">The `Range` object has a `find` method to search for a specified string within the range.</span></span> <span data-ttu-id="4bee3-210">このメソッドは、一致するテキストがある最初のセルの範囲を返します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-210">It returns the range of the first cell with matching text.</span></span> <span data-ttu-id="4bee3-211">次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。</span><span class="sxs-lookup"><span data-stu-id="4bee3-211">The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console.</span></span> <span data-ttu-id="4bee3-212">指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-212">Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range.</span></span> <span data-ttu-id="4bee3-213">指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="4bee3-213">If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) method instead, so your code gracefully handles that scenario.</span></span>
+<span data-ttu-id="16f79-209">`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="16f79-209">The `Range` object has a `find` method to search for a specified string within the range.</span></span> <span data-ttu-id="16f79-210">このメソッドは、一致するテキストがある最初のセルの範囲を返します。</span><span class="sxs-lookup"><span data-stu-id="16f79-210">It returns the range of the first cell with matching text.</span></span> <span data-ttu-id="16f79-211">次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。</span><span class="sxs-lookup"><span data-stu-id="16f79-211">The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console.</span></span> <span data-ttu-id="16f79-212">指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。</span><span class="sxs-lookup"><span data-stu-id="16f79-212">Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range.</span></span> <span data-ttu-id="16f79-213">指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="16f79-213">If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) method instead, so your code gracefully handles that scenario.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -566,9 +566,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="4bee3-214">単一のセルを表す範囲に対して `find` メソッドが呼び出されると、ワークシート全体が検索されます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-214">When the `find` method is called on a range representing a single cell, the entire worksheet is searched.</span></span> <span data-ttu-id="4bee3-215">検索はその単一のセルから始まり、`SearchCriteria.searchDirection` によって指定された方向へ行われ、場合によってはワークシートの最終部分で折り返されます。</span><span class="sxs-lookup"><span data-stu-id="4bee3-215">The search begins at that cell and goes in the direction specified by `SearchCriteria.searchDirection`, wrapping around the ends of the worksheet if needed.</span></span>
+<span data-ttu-id="16f79-214">単一のセルを表す範囲に対して `find` メソッドが呼び出されると、ワークシート全体が検索されます。</span><span class="sxs-lookup"><span data-stu-id="16f79-214">When the `find` method is called on a range representing a single cell, the entire worksheet is searched.</span></span> <span data-ttu-id="16f79-215">検索はその単一のセルから始まり、`SearchCriteria.searchDirection` によって指定された方向へ行われ、場合によってはワークシートの最終部分で折り返されます。</span><span class="sxs-lookup"><span data-stu-id="16f79-215">The search begins at that cell and goes in the direction specified by `SearchCriteria.searchDirection`, wrapping around the ends of the worksheet if needed.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4bee3-216">関連項目</span><span class="sxs-lookup"><span data-stu-id="4bee3-216">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="16f79-216">関連項目</span><span class="sxs-lookup"><span data-stu-id="16f79-216">See also</span></span>
 
-- [<span data-ttu-id="4bee3-217">Excel JavaScript API を使用して範囲を操作する (高度)</span><span class="sxs-lookup"><span data-stu-id="4bee3-217">Work with ranges using the Excel JavaScript API (advanced)</span></span>](excel-add-ins-ranges-advanced.md)
-- [<span data-ttu-id="4bee3-218">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="4bee3-218">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="16f79-217">Excel JavaScript API を使用して範囲を操作する (高度)</span><span class="sxs-lookup"><span data-stu-id="16f79-217">Work with ranges using the Excel JavaScript API (advanced)</span></span>](excel-add-ins-ranges-advanced.md)
+- [<span data-ttu-id="16f79-218">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="16f79-218">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
