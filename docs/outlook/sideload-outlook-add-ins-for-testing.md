@@ -3,12 +3,12 @@ title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
 ms.date: 06/24/2019
 localization_priority: Normal
-ms.openlocfilehash: b177e6adbc4ac702b7bd9dcec38f2fe2d2f29cf1
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166454"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605326"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -91,4 +91,4 @@ Office 365 の Outlook のアドインをサイドロードするプロセスは
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
 
-サイドロードアドインを Outlook から削除するには、この記事で前述した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [**カスタムアドイン**] セクションでアドインを検索します。`...`アドインの省略記号 () を選択し、[**削除**] を選択して、その特定のアドインを削除します。
+サイドロードアドインを Outlook から削除するには、この記事で前述した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [**カスタムアドイン**] セクションでアドインを検索します。アドインの省略記号 () を選択 `...` し、[**削除**] を選択して、その特定のアドインを削除します。

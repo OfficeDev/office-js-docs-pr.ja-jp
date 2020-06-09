@@ -3,12 +3,12 @@ title: マニフェスト ファイルの VersionOverrides 要素
 description: Office アドインのマニフェスト (XML) ファイルの VersionOverrides 要素の参照ドキュメント。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 055a796d269ffb230293639a7f69b2dde4e36eee
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cb23a78c336be891cdfa30262713ee3c80b9160f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717853"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604501"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -18,21 +18,21 @@ ms.locfileid: "42717853"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  はい  |  VersionOverrides スキーマ名前空間。 指定できる値は、 `<VersionOverrides>`この要素の**xsi: type**値と親`<OfficeApp>`要素の**xsi: type**値によって異なります。 以下の[名前空間の値](#namespace-values)を参照してください。|
+|  **xmlns**       |  はい  |  VersionOverrides スキーマ名前空間。 指定できる値は、この `<VersionOverrides>` 要素の**xsi: type**値と親要素の**xsi: type**値によって異なり `<OfficeApp>` ます。 以下の[名前空間の値](#namespace-values)を参照してください。|
 |  **xsi:type**  |  はい  | スキーマのバージョン。現時点では、`VersionOverridesV1_0` および `VersionOverridesV1_1` のみが有効な値になります。 |
 
 ### <a name="namespace-values"></a>名前空間の値
 
-次に、親`<OfficeApp>`要素の**xsi: type**値に応じて、 **xmlns**値に必要な値を示します。
+次に、親要素の**xsi: type**値に応じて、 **xmlns**値に必要な値を示し `<OfficeApp>` ます。
 
-- **Task区画アプリ**は、バージョン1.0 の versionoverrides のみをサポート**xmlns**し、xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`はにする必要があります。
-- **Contentapp**はバージョン1.0 の versionoverrides のみをサポートし、 **xmlns**は`http://schemas.microsoft.com/office/contentappversionoverrides`である必要があります。
-- **Mailapp**はバージョン1.0 および1.1 の versionoverrides をサポートしているため、 **xmlns**の値`<VersionOverrides>`は次の要素の**xsi: type**値に応じて異なります。
-    - **Xsi: type**が`VersionOverridesV1_0`の場合、 **xmlns**は`http://schemas.microsoft.com/office/mailappversionoverrides`でなければなりません。
-    - **Xsi: type**が`VersionOverridesV1_1`の場合、 **xmlns**は`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`でなければなりません。
+- **Task区画アプリ**は、バージョン1.0 の versionoverrides のみをサポートし、 **xmlns**はにする必要があり `http://schemas.microsoft.com/office/taskpaneappversionoverrides` ます。
+- **Contentapp**はバージョン1.0 の versionoverrides のみをサポートし、 **xmlns**はである必要があり `http://schemas.microsoft.com/office/contentappversionoverrides` ます。
+- **Mailapp**はバージョン1.0 および1.1 の versionoverrides をサポートしているため、 **xmlns**の値は次の `<VersionOverrides>` 要素の**xsi: type**値に応じて異なります。
+    - **Xsi: type**がの場合 `VersionOverridesV1_0` 、 **xmlns**はでなければなりません `http://schemas.microsoft.com/office/mailappversionoverrides` 。
+    - **Xsi: type**がの場合 `VersionOverridesV1_1` 、 **xmlns**はでなければなりません `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` 。
 
 > [!NOTE]
-> 現在、Outlook 2016 以降では、VersionOverrides v1.1 スキーマと`VersionOverridesV1_1`種類をサポートしています。
+> 現在、Outlook 2016 以降では、VersionOverrides v1.1 スキーマと種類をサポートしてい `VersionOverridesV1_1` ます。
 
 ## <a name="child-elements"></a>子要素
 
@@ -45,11 +45,11 @@ ms.locfileid: "42717853"
 |  [EquivalentAddins](equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブアドインがインストールされている場合、web アドインはアクティブ化されません。|
 |  **VersionOverrides**    |  いいえ  | より新しいスキーマ バージョンでアドイン コマンドを定義します。詳細については、「[複数のバージョンを実装する](#implementing-multiple-versions)」を参照してください。 |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  いいえ  | Azure Active Directory v2.0 など、セキュリティで保護されたトークン発行者によるアドインの登録に関する詳細を指定します。 |
-|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。<br><br>**重要**: [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API は現在プレビュー段階のため、この`ExtendedPermissions`要素を使用するアドインは、appsource に発行することも、一元展開によって展開することもできません。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。<br><br>**重要**: [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API は現在プレビュー段階のため、この要素を使用するアドインは、 `ExtendedPermissions` appsource に発行することも、一元展開によって展開することもできません。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides の例
 
-通常、必須ではありません`<VersionOverrides>`が通常使用される子要素を含む一般的な要素の例を次に示します。
+通常、必須では `<VersionOverrides>` ありませんが通常使用される子要素を含む一般的な要素の例を次に示します。
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

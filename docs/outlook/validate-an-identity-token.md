@@ -3,12 +3,12 @@ title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180211"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604581"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
@@ -35,19 +35,19 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 トークンの内容を検証するには、以下を確認する必要があります。
 
 - ヘッダーを確認し、次の点を確認します。
-    - `typ`claim はに`JWT`設定されています。
-    - `alg`claim はに`RS256`設定されています。
+    - `typ`claim はに設定されて `JWT` います。
+    - `alg`claim はに設定されて `RS256` います。
     - `x5t`claim が存在します。
 
 - ペイロードを確認し、次の点を確認します。
-    - `amurl`内のクレーム`appctx`は、承認済みのトークン署名キーマニフェストファイルの場所に設定されます。 たとえば、Office 365 に`amurl`対して予想されるhttps://outlook.office365.com:443/autodiscover/metadata/json/1値はです。 次のセクションを参照してください。詳細については、「[ドメイン」を](#verify-the-domain)参照してください。
-    - 現在の時刻は、 `nbf`および`exp`クレームで指定された時間です。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
+    - `amurl`内のクレーム `appctx` は、承認済みのトークン署名キーマニフェストファイルの場所に設定されます。 たとえば、 `amurl` Office 365 に対して予想される値は https://outlook.office365.com:443/autodiscover/metadata/json/1 です。 次のセクションを参照してください。詳細については、「[ドメイン」を](#verify-the-domain)参照してください。
+    - 現在の時刻は、およびクレームで指定された時間です `nbf` `exp` 。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
     - `aud`claim は、アドインに必要な URL です。
-    - `version`クレーム内の`appctx`クレームはに`ExIdTok.V1`設定されています。
+    - `version`クレーム内のクレーム `appctx` はに設定されてい `ExIdTok.V1` ます。
 
 ### <a name="verify-the-domain"></a>ドメインを確認する
 
-このセクションで前述した検証ロジックを実装する場合は、 `amurl`要求のドメインがユーザーの自動検出ドメインと一致することも要求する必要があります。 これを行うには、自動検出を使用または実装する必要があります。 詳細については、「 [Exchange の自動検出](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)を開始する」を参照してください。
+このセクションで前述した検証ロジックを実装する場合は、要求のドメインが `amurl` ユーザーの自動検出ドメインと一致することも要求する必要があります。 これを行うには、自動検出を使用または実装する必要があります。 詳細については、「 [Exchange の自動検出](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)を開始する」を参照してください。
 
 ## <a name="validate-the-identity-token-signature"></a>ID トークンの署名を検証する
 
@@ -106,7 +106,7 @@ Exchange アカウントの一意の識別子を作成するには、認証メ�
 
 ## <a name="use-a-library-to-validate-the-token"></a>ライブラリを使用してトークンを検証する
 
-一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft では`System.IdentityModel.Tokens.Jwt` 、Exchange のユーザー id トークンの検証に使用できるライブラリを提供しています。
+一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft では、 `System.IdentityModel.Tokens.Jwt` Exchange のユーザー id トークンの検証に使用できるライブラリを提供しています。
 
 > [!IMPORTANT]
 > Exchange Web サービスマネージ API の使用は推奨されていません。ただし、現在は使用できません。このため、サポートされていないライブラリに依存しています。

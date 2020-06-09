@@ -3,12 +3,12 @@ title: Outlook アドインにピン留め可能な作業ウィンドウを実�
 description: アドイン コマンド用の作業ウィンドウ UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作に対応した UI を提供できようになります。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: ea9dc255bfb3b689a05d880007282da011edef3e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890992"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605319"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 

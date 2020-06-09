@@ -1,8 +1,8 @@
-# <a name="office-add-ins-documentation"></a>Office アドインのドキュメント
+# <a name="office-add-ins-documentation"></a>Office アドイン ドキュメント
 
 Office アドインドキュメントリポジトリへようこそ。 このリポジトリには、Office JavaScript API の概念、クイックスタート、チュートリアル、および使い方ガイドのドキュメントソースファイルがあります。 最適にご利用いただくには、このコンテンツを [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins) で表示することをお勧めします。
 
-> **注**: office JavaScript API リファレンスのドキュメントソースファイルは、 [office のドキュメント参照](https://github.com/OfficeDev/office-js-docs-reference)リポジトリで見つけることができます。
+> **注**: OFFICE JavaScript API リファレンスのドキュメントソースファイルは、 [office のドキュメント参照](https://github.com/OfficeDev/office-js-docs-reference)リポジトリで見つけることができます。
 
 ## <a name="give-us-your-feedback"></a>フィードバックをお寄せください
 
@@ -23,9 +23,9 @@ Office アドインドキュメントリポジトリへようこそ。 このリ
 
 問題が Office アドインドキュメントに関連していない場合は、代わりに次のいずれかのチャネルに投稿してください。
 
- - Office .js API の使用について質問するには、質問をスタックオーバーフローに対して投稿し、"Office-js" タグ (http://stackoverflow.com/questions/tagged/office-js)でタグを付けます。
- - Office .js API またはプラットフォームに関する問題を報告するには、officedev/Office-js リポジトリに問題を作成https://github.com/OfficeDev/office-js)します (これは、製品チームのメンバーが顧客から報告された問題を監視します。
- - Office .js API またはプラットフォームの機能の要求を送信するには、ユーザーの音声ページにアイデアをhttps://officespdev.uservoice.com/)投稿します (または、機能の要求が既に存在する場合は、投票を追加します。
+ - Office .js API の使用について質問するには、質問をスタックオーバーフローに対して投稿し、"Office-js" タグ (でタグを付け http://stackoverflow.com/questions/tagged/office-js) ます。
+ - Office .js API またはプラットフォームに関する問題を報告するには、OfficeDev/Office-js リポジトリに問題を作成し https://github.com/OfficeDev/office-js) ます (これは、製品チームのメンバーが顧客から報告された問題を監視します。
+ - Office .js API またはプラットフォームの機能の要求を送信するには、ユーザーの音声ページにアイデアを投稿し https://officespdev.uservoice.com/) ます (または、機能の要求が既に存在する場合は、投票を追加します。
 
 ## <a name="copyright"></a>著作権
 

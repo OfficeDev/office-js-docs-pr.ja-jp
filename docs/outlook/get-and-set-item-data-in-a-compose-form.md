@@ -3,12 +3,12 @@ title: Outlook で新規作成フォームのアイテム データを取得お�
 description: 新規作成のシナリオで、受信者、件名、本文、予定の場所と時刻を含む Outlook アドインのアイテムのさまざまなプロパティを取得または設定します。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 3b82f418ffa2820e5f8cf04805a62b0d85691420
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bf311458ef28422d7b9de3995288c05de97fca18
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325448"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606463"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Outlook で新規作成フォームのアイテム データを取得および設定する
 
