@@ -3,12 +3,12 @@ title: マニフェスト ファイルの AllowSnapshot 要素
 description: ホスト ドキュメントと共にコンテンツ アドインのスナップショット イメージを保存するかどうかを指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 8bb143d13a17b3e184af64f1bf18f2a32a55b60c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c46dcd882592c0b015dae4b9774533b96fe75cfe
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720961"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608790"
 ---
 # <a name="allowsnapshot-element"></a>AllowSnapshot 要素
 

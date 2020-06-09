@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Rule 要素
 description: Rule 要素は、このコンテキストメールアドインに対して評価する必要があるアクティブ化ルールを指定します。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c1f2be3371333bfd87e0693d02a9a5984c18317b
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253622"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608112"
 ---
 # <a name="rule-element"></a>Rule 要素
 

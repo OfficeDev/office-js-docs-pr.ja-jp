@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの AppDomains 要素
-description: Office アドインがページの読み込みに使用する`SourceLocation`要素に指定されているドメインに加えて、すべてのドメインを一覧表示します。
+description: Office アドインがページの読み込みに使用する要素に指定されているドメインに加えて、すべてのドメインを一覧表示 `SourceLocation` します。
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: f60579d773e81a7e8006bafcf1c151874af42aeb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9183f1815e97bd8d4ac1a7e2cf72d5547d153f7e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720702"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608769"
 ---
 # <a name="appdomains-element"></a>AppDomains 要素
 
-Office アドインがページの読み込みに使用する`SourceLocation`要素に指定されているドメインに加えて、すべてのドメインを一覧表示します。 また、アドイン内の Iframe から Office .js API 呼び出しを行うことができる信頼されたドメインも一覧表示されます。 追加の各ドメインに、AppDomain 要素を指定します。
+Office アドインがページの読み込みに使用する要素に指定されているドメインに加えて、すべてのドメインを一覧表示 `SourceLocation` します。 また、アドイン内の Iframe から Office .js API 呼び出しを行うことができる信頼されたドメインも一覧表示されます。 追加の各ドメインに、AppDomain 要素を指定します。
 
  **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 

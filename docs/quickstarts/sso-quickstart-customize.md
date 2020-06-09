@@ -4,12 +4,12 @@ description: '[ごみ箱] ジェネレーターを使用して作成した SSO �
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c02e0f74a8ea3f3f8f831b65aa403ce49655953b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284139"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608834"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -24,7 +24,7 @@ ms.locfileid: "42284139"
 
 * Office 365 サブスクリプションの OneDrive for Business に保存されている少なくともいくつかのファイルおよびフォルダー。
 
-* [Node.js](https://nodejs.org) (最新の[LTS](https://nodejs.org/about/releases)バージョン)。
+* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -65,7 +65,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 8. 表示されたプロンプトに対して [**はい、削除**] ボタンを選択します。
 
-9. [**アクセス許可の追加**] ボタンを選択します。
+9. **[アクセス許可の追加]** ボタンを選択します。
 
 10. 表示されたパネルで、[ **Microsoft Graph** ] を選択し、[**代理アクセス許可**] を選択します。
 
@@ -97,15 +97,15 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 1. **./.ENV**ファイル:
 
-    a. を`GRAPH_URL_SEGMENT=/me`次のように置き換えます。`GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a. `GRAPH_URL_SEGMENT=/me`を次のように置き換えます。`GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. を`QUERY_PARAM_SEGMENT=`次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b. `QUERY_PARAM_SEGMENT=`を次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. を`SCOPE=User.Read`次のように置き換えます。`SCOPE=Files.Read.All`
+    c. `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
 
-2. **./Manifest¥ xml**で、ファイルの末尾`<Scope>User.Read</Scope>`付近の行を検索し、行`<Scope>Files.Read.All</Scope>`に置き換えます。
+2. **./Manifest¥ xml**で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を検索し、行に置き換え `<Scope>Files.Read.All</Scope>` ます。
 
-3. **/Src/helpers/fallbackauthdialog.js** (または TypeScript プロジェクト**の/src/helpers/fallbackauthdialog.ts** ) で、 `https://graph.microsoft.com/User.Read`文字列を見つけて、次のように定義され`https://graph.microsoft.com/Files.Read.All`た`requestObj`文字列で置き換えます。
+3. **/Src/helpers/fallbackauthdialog.js** (または TypeScript プロジェクトの **/src/helpers/fallbackauthdialog.ts** ) で、文字列を見つけて、次のように定義され `https://graph.microsoft.com/User.Read` た文字列で置き換え `https://graph.microsoft.com/Files.Read.All` `requestObj` ます。
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     };
     ```
 
-4. **./Src/taskpane/taskpane.html**で、要素`<section class="ms-firstrun-instructionstep__header">`を検索し、その要素内のテキストを更新して、アドインの新しい機能を記述します。
+4. **./Src/taskpane/taskpane.html**で、要素を検索し、その要素内のテキストを更新して、 `<section class="ms-firstrun-instructionstep__header">` アドインの新しい機能を記述します。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </section>
     ```
 
-5. **./Src/taskpane/taskpane.html**で、文字列`Get My User Profile Information`と`Read my OneDrive for Business`文字列を検索し、その両方を置換します。
+5. **./Src/taskpane/taskpane.html**で、文字列と文字列を検索し、その両方を置換します。 `Get My User Profile Information` `Read my OneDrive for Business`
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </p>
     ```
 
-6. **./Src/taskpane/taskpane.html**で、文字列を検索して`Your user profile information will be displayed in the document.`置換し`The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`ます。
+6. **./Src/taskpane/taskpane.html**で、文字列を検索して置換し `Your user profile information will be displayed in the document.` `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` ます。
 
     ```html
     <li class="ms-ListItem">
@@ -170,7 +170,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 アドインが JavaScript を使用して作成された Excel アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
 
-1. `writeDataToOfficeDocument`関数を検索し、次の関数に置き換えます。
+1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +185,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     }
     ```
 
-2. `filterUserProfileInfo`関数を検索し、次の関数に置き換えます。
+2. 関数を検索 `filterUserProfileInfo` し、次の関数に置き換えます。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +198,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     }
     ```
 
-3. `writeDataToExcel`関数を検索し、次の関数に置き換えます。
+3. 関数を検索 `writeDataToExcel` し、次の関数に置き換えます。
 
     ```javascript
     function writeDataToExcel(result) {
@@ -225,17 +225,17 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     }
     ```
 
-4. 関数を`writeDataToOutlook`削除します。
+4. 関数を削除 `writeDataToOutlook` します。
 
-5. 関数を`writeDataToPowerPoint`削除します。
+5. 関数を削除 `writeDataToPowerPoint` します。
 
-6. 関数を`writeDataToWord`削除します。
+6. 関数を削除 `writeDataToWord` します。
 
 これらの変更を行った後で、この記事の「 [try a out](#try-it-out) 」セクションに進んで、更新されたアドインを試してみてください。
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>Excel アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Excel アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument`関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Excel アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -273,7 +273,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 アドインが JavaScript を使用して作成された Outlook アドインの場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
 
-1. `writeDataToOfficeDocument`関数を検索し、次の関数に置き換えます。
+1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +288,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-2. `filterUserProfileInfo`関数を検索し、次の関数に置き換えます。
+2. 関数を検索 `filterUserProfileInfo` し、次の関数に置き換えます。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +301,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-3. `writeDataToOutlook`関数を検索し、次の関数に置き換えます。
+3. 関数を検索 `writeDataToOutlook` し、次の関数に置き換えます。
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -323,17 +323,17 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-4. 関数を`writeDataToExcel`削除します。
+4. 関数を削除 `writeDataToExcel` します。
 
-5. 関数を`writeDataToPowerPoint`削除します。
+5. 関数を削除 `writeDataToPowerPoint` します。
 
-6. 関数を`writeDataToWord`削除します。
+6. 関数を削除 `writeDataToWord` します。
 
 これらの変更を行った後で、この記事の「 [try a out](#try-it-out) 」セクションに進んで、更新されたアドインを試してみてください。
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Outlook アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Outlook アドインの場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument`関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Outlook アドインの場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -366,7 +366,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 アドインが JavaScript を使用して作成された PowerPoint アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
 
-1. `writeDataToOfficeDocument`関数を検索し、次の関数に置き換えます。
+1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +381,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. `filterUserProfileInfo`関数を検索し、次の関数に置き換えます。
+2. 関数を検索 `filterUserProfileInfo` し、次の関数に置き換えます。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +394,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. `writeDataToPowerPoint`関数を検索し、次の関数に置き換えます。
+3. 関数を検索 `writeDataToPowerPoint` し、次の関数に置き換えます。
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -422,17 +422,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 関数を`writeDataToExcel`削除します。
+4. 関数を削除 `writeDataToExcel` します。
 
-5. 関数を`writeDataToOutlook`削除します。
+5. 関数を削除 `writeDataToOutlook` します。
 
-6. 関数を`writeDataToWord`削除します。
+6. 関数を削除 `writeDataToWord` します。
 
 これらの変更を行った後で、この記事の「 [try a out](#try-it-out) 」セクションに進んで、更新されたアドインを試してみてください。
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>PowerPoint アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された PowerPoint アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument`関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された PowerPoint アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -469,7 +469,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 アドインが JavaScript を使用して作成された Word アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
 
-1. `writeDataToOfficeDocument`関数を検索し、次の関数に置き換えます。
+1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +484,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. `filterUserProfileInfo`関数を検索し、次の関数に置き換えます。
+2. 関数を検索 `filterUserProfileInfo` し、次の関数に置き換えます。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +497,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. `writeDataToWord`関数を検索し、次の関数に置き換えます。
+3. 関数を検索 `writeDataToWord` し、次の関数に置き換えます。
 
     ```javascript
     function writeDataToWord(result) {
@@ -523,17 +523,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 関数を`writeDataToExcel`削除します。
+4. 関数を削除 `writeDataToExcel` します。
 
-5. 関数を`writeDataToOutlook`削除します。
+5. 関数を削除 `writeDataToOutlook` します。
 
-6. 関数を`writeDataToPowerPoint`削除します。
+6. 関数を削除 `writeDataToPowerPoint` します。
 
 これらの変更を行った後で、この記事の「 [try a out](#try-it-out) 」セクションに進んで、更新されたアドインを試してみてください。
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Word アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Word アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument`関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Word アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -635,7 +635,7 @@ Outlook アドインを試すには、次の手順を実行します。
 
     ![Outlook メッセージの OneDrive for Business 情報](../images/sso-onedrive-info-outlook.png)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 これで、 [sso クイックスタート](sso-quickstart.md)で、[ごみ箱] ジェネレーターを使用して作成した sso を有効にしたアドインの機能をカスタマイズすることができました。 Yeoman ジェネレーターが自動的に完了した SSO の構成手順、および SSO プロセスを容易にするコードの詳細については、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」を参照してください。
 

@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: 82b847ba5d944efed16aa2567eee2c3d257a6a75
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: ac0d824f49d359e574a0dc5caae8ef2f903dd4a1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275988"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609290"
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 

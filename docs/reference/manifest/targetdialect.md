@@ -3,12 +3,12 @@ title: マニフェスト ファイルの TargetDialect 要素
 description: TargetDialect 要素は、この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表されます。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ba5c43b6471f11d7599da8542c30618ea1de78e0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d0f60989ee5375f356343a8b3495f9c84120d467
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720331"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609014"
 ---
 # <a name="targetdialect-element"></a>TargetDialect 要素
 

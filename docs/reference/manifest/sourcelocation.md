@@ -3,12 +3,12 @@ title: マニフェスト ファイルの SourceLocation 要素
 description: SourceLocation 要素は、Office アドインのソースファイルの場所を指定します。
 ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 642780c3231523ea579ca548b3f3f984b2856666
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 9af2337263314bec5ce04eb0d22626ab368c19ef
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278400"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608727"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 要素
 

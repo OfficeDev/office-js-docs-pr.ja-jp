@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 作業ウィンドウを使用しない Excel カスタム関数をデバッグする方法について説明します。
 title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 6de7dda2e22195096f75cd2bd475ee0e49f4461d
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: c984c5a46f8418006fa64f167b0f5882b0cb8a17
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278386"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609334"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 

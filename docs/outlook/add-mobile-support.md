@@ -3,12 +3,12 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225667"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607618"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
@@ -20,7 +20,7 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 この要素には、モバイル クライアントにアドインを読み込むためのすべての情報が含まれています。これにより、モバイル エクスペリエンスに対して完全に異なる UI 要素と JavaScript ファイルを定義することができます。
 
-次の例は、 `MobileFormFactor`要素内の1つの作業ウィンドウボタンを示しています。
+次の例は、要素内の1つの作業ウィンドウボタンを示して `MobileFormFactor` います。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">

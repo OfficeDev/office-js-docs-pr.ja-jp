@@ -3,12 +3,12 @@ title: Outlook アドインで代理人アクセスのシナリオを有効に�
 description: 代理人アクセスについて簡単に説明し、アドインサポートを構成する方法について説明します。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721017"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608951"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Outlook アドインで代理人アクセスのシナリオを有効にする
 
@@ -23,9 +23,9 @@ ms.locfileid: "42721017"
 
 次の表では、Office JavaScript API でサポートされている代理人アクセス許可について説明します。
 
-|アクセス許可|値|説明|
+|Permission|値|説明|
 |---|---:|---|
-|読み取り|1 (000001)|アイテムを読み取ることができます。|
+|Read|1 (000001)|アイテムを読み取ることができます。|
 |書き込み|2 (000010)|アイテムを作成できます。|
 |DeleteOwn|4 (000100)|は、自分で作成したアイテムのみを削除できます。|
 |DeleteAll|8 (001000)|任意のアイテムを削除できます。|
@@ -35,7 +35,7 @@ ms.locfileid: "42721017"
 > [!NOTE]
 > 現在、API は既存の代理人アクセス許可の取得をサポートしていますが、代理人アクセス許可は設定しません。
 
-[DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)オブジェクトは、デリゲートのアクセス許可を示すために、ビットマスクを使用して実装されます。 ビットマスク内の各位置は特定のアクセス許可を表し、それ`1`が設定されている場合は代理人にそれぞれのアクセス許可が付与されます。 たとえば、右側の2番目のビットが`1`の場合、デリゲートには**書き込み**アクセス許可があります。 この記事で後述する「[代理人として操作を実行](#perform-an-operation-as-delegate)する」の特定のアクセス許可を確認する方法の例を確認できます。
+[DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)オブジェクトは、デリゲートのアクセス許可を示すために、ビットマスクを使用して実装されます。 ビットマスク内の各位置は特定のアクセス許可を表し、それが設定されている場合は `1` 代理人にそれぞれのアクセス許可が付与されます。 たとえば、右側の2番目のビットがの場合、 `1` デリゲートには**書き込み**アクセス許可があります。 この記事で後述する「[代理人として操作を実行](#perform-an-operation-as-delegate)する」の特定のアクセス許可を確認する方法の例を確認できます。
 
 ## <a name="sync-across-mailbox-clients"></a>メールボックスクライアント間での同期
 
@@ -45,9 +45,9 @@ ms.locfileid: "42721017"
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインで代理人アクセスのシナリオを有効にするには、親要素`DesktopFormFactor`のマニフェスト内の`true` [supportssharedfolders](../reference/manifest/supportssharedfolders.md)要素をに設定する必要があります。 現在、他のフォームファクターはサポートされていません。
+アドインで代理人アクセスのシナリオを有効にするには、親要素のマニフェスト内の[Supportssharedfolders](../reference/manifest/supportssharedfolders.md)要素をに設定する必要があり `true` `DesktopFormFactor` ます。 現在、他のフォームファクターはサポートされていません。
 
-次の例は、 `SupportsSharedFolders`マニフェストのセクション`true`内に設定された要素を示しています。
+次の例は、 `SupportsSharedFolders` マニフェストのセクション内に設定された要素を示して `true` います。
 
 ```XML
 ...

@@ -3,12 +3,12 @@ title: Office アドインのデータ可視化のスタイル ガイドライ�
 description: Office アドインでデータを表示する方法について、適切な方法を紹介します。
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 215bea269d14245e9ac55d74f12228565f60c2a3
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: d03bbb471c3e538aade2f5308bbfa9220c93615b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891020"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608552"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 

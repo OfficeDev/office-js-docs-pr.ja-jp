@@ -3,12 +3,12 @@ title: Outlook アドインでアイテム データを取得または設定す�
 description: アドインが閲覧フォームまたは新規作成フォームのどちらでアクティブ化されるかによって、アイテムでアドインが使用できるプロパティも異なります。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 6ef0b868ba83a6003c401e15b7d6dd9ee0f4f94b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325355"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609077"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>閲覧または新規作成フォームの Outlook アイテム データを取得および設定する
 

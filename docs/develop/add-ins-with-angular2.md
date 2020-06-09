@@ -3,12 +3,12 @@ title: Angular で Office アドインを開発する
 description: 角度を使用して、単一ページアプリケーションとして Office アドインを作成するためのガイダンスを取得します。
 ms.date: 01/27/2020
 localization_priority: Normal
-ms.openlocfilehash: b3796b16c8e5ddc74a172ab427866bfe8e842cae
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2cd90a51f49adfd03c0096d55399012e88da1da0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719211"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608986"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>ブートス トラップは必ず Office.initialize 内に
 
-Office、Word、または Excel の JavaScript Api を呼び出すページでは、まず、コードで`Office.initialize`プロパティにメソッドを割り当てる必要があります。 (初期化コードがない場合、メソッドの本体は空の "`{}`" 記号になることができますが、この`Office.initialize`プロパティは未定義のままにしないでください。 詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。Office は、Office JavaScript ライブラリを初期化した直後に、このメソッドを呼び出します。
+Office、Word、または Excel の JavaScript Api を呼び出すページでは、まず、コードでプロパティにメソッドを割り当てる必要があり `Office.initialize` ます。 (初期化コードがない場合、メソッドの本体は空の "" 記号になることができ `{}` ますが、このプロパティは未定義のままにしないでください `Office.initialize` 。 詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。Office は、Office JavaScript ライブラリを初期化した直後に、このメソッドを呼び出します。
 
 **Angular のブートストラップ コードは `Office.initialize` に割り当てられたメソッドの中で呼び出すことで**、Office の JavaScript ライブラリが最初に初期化されるようにする必要があります。以下は、これを行う方法を示した簡単な例です。このコードは、プロジェクトの main.ts ファイルの中にある必要があります。
 

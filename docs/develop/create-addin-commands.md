@@ -3,12 +3,12 @@ title: Excel、PowerPoint、および Word のマニフェストにアドイン�
 description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 02d61d90f500712b2970c4dfb5b439b3367f59d7
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: 1bf8d850da4ea15bb46f65b1d4459c5220828f9c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413176"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608370"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
 

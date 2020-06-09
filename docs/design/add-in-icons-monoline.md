@@ -3,12 +3,12 @@ title: Office アドインの Monoline スタイルのアイコンガイドラ�
 description: Office アドインで Monoline スタイルアイコンアイコンを使用するためのガイドラインを取得します。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d1ac2dff76b852cd69b38bd2c138d1ba43f203c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718602"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607695"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Office アドインの Monoline スタイルのアイコンガイドライン
 
@@ -172,7 +172,7 @@ Monoline カラーパレットでは、すべての色に、スタンドアロ�
 
 #### <a name="when-to-use-color"></a>色を使用する場合
 
-装飾記号ではなく、アイコンの意味を伝えるために色を使用する必要があります。 ユーザーに対する**アクションを強調表示**する必要があります。 色が設定された基本要素に修飾子を追加すると、通常、基本要素は濃い灰色と背景の塗りつぶしに変更されます。この場合、次の例のように、左端のピクチャベースに "X" 修飾子を追加して、この修飾子を色の要素にすることができます。次のセットのアイコン。
+装飾記号ではなく、アイコンの意味を伝えるために色を使用する必要があります。 ユーザーに対する**アクションを強調表示**する必要があります。 色が設定された基本要素に修飾子を追加すると、通常は、次のセットの左端のアイコンにある "X" 修飾子が picture base に追加されている場合など、基本要素が暗い灰色および背景の塗りつぶしに変更されます。
 
 ![色を使用する5つのアイコン](../images/monolineicon29.png)
 

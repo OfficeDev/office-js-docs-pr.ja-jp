@@ -3,12 +3,12 @@ title: Office アドインで外部サービスを承認する
 description: OAuth 2.0 認証コード フローおよび暗黙的フローを使用して、Google、Facebook、LinkedIn、SalesForce、および GitHub などの Microsoft 以外のデータソースに対する承認を取得します。
 ms.date: 08/07/2019
 localization_priority: Normal
-ms.openlocfilehash: c856724e9f9b1c3d18cc9a0ec0d4b0d53026698f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 55f46a4cb381bc3f87434893d065f9ebf8147814
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950433"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608433"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 

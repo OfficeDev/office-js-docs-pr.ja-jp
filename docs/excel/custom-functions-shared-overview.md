@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: カスタム関数、リボン ボタン、作業ウィンドウのコードを同じ JavaScript ランタイムで実行して、さまざまなアドインでシナリオを調整する方法について説明します。
 title: 共有 JavaScript ランタイムでアドインコードを実行する
 localization_priority: Priority
-ms.openlocfilehash: afb07c5223e26ba1e1adbf40c7a4b2e4f7c06349
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: e179d8cdff06b397c9998a6a18a506a0a6df1b42
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275932"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609235"
 ---
 # <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概要: 共有 JavaScript ランタイムでアドインコードを実行する
 

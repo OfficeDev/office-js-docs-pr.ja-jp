@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニューコントロールを選択したときに実行するアクションを指定します。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720968"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608804"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -132,7 +132,7 @@ ms.locfileid: "42720968"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
 
 > [!IMPORTANT]
-> この要素`SupportsPinning`は[要件セット 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現時点では、次のものを使用した Office 365 サブスクライバーでのみサポートされています。
+> `SupportsPinning`この要素は[要件セット 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現時点では、次のものを使用した Office 365 サブスクライバーでのみサポートされています。
 > - Outlook 2016 以降 (ビルド7628.1000 以降)
 > - Outlook 2016 以降 Mac (ビルド16.13.503 以降)
 > - モダン Outlook on the web

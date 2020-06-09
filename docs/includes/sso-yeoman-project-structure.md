@@ -14,13 +14,13 @@
 
 - **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
 
-- JavaScript プロジェクトでは、 **/src/taskpane/taskpane.js**ファイルにアドインを初期化するコードが含まれています。 TypeScript プロジェクトでは、/src/taskpane/taskpane.ts ファイルにアドインを初期化するコードと、Office JavaScript ライブラリを使用して Microsoft Graph から Office ドキュメントにデータを追加するコードも記述されてい**ます**。
+- JavaScript プロジェクトでは、 **/src/taskpane/taskpane.js**ファイルにアドインを初期化するコードが含まれています。 TypeScript プロジェクトでは、/src/taskpane/taskpane.ts ファイルにアドインを初期化するコードと、Office JavaScript API ライブラリを使用して Microsoft Graph から Office ドキュメントにデータを追加するコードも記述されてい**ます**。
 
 ### <a name="authentication"></a>認証
 
 次のファイルにより、SSO プロセスが容易になり、Office ドキュメントにデータが書き込まれます。
 
-- JavaScript プロジェクトの/Src/helpers/documentHelper.js ファイルには、Office JavaScript ライブラリを使用して Microsoft Graph のデータを Office ドキュメントに追加するコードが含まれてい**ます**。 このようなファイルは TypeScript プロジェクトには含まれていません。Office JavaScript ライブラリを使用して Microsoft Graph から Office ドキュメントにデータを追加するコードは、代わりに **/src/taskpane/taskpane.ts**にあります。
+- JavaScript プロジェクトの/Src/helpers/documentHelper.js ファイルには、Office JavaScript API ライブラリを使用して Microsoft Graph のデータを Office ドキュメントに追加するコードが含まれてい**ます**。 このようなファイルは TypeScript プロジェクトには含まれていません。Office JavaScript API ライブラリを使用して Microsoft Graph から Office ドキュメントにデータを追加するコードは、代わりに **/src/taskpane/taskpane.ts**にあります。
 
 - **./Src/helpers/fallbackauthdialog.html**ファイルは、フォールバック認証戦略の JavaScript を読み込む UI レスページです。
 

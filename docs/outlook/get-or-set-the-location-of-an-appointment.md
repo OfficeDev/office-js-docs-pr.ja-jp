@@ -3,19 +3,19 @@ title: アドインで予定の場所を取得または設定する
 description: Outlook アドインで予定の場所を取得または設定する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 79cf5ebe029d2b95b1501b6f9066a2c8f9013ef3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324969"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609184"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
 Office JavaScript API には、ユーザーが作成している予定の場所を管理するためのプロパティとメソッドが用意されています。 現時点では、予定の場所を提供するプロパティは2つあります。
 
 - [アイテムの場所](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所の取得と設定を可能にする基本 API。
-- [enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる拡張 API。また、[場所の種類](/javascript/api/outlook/office.mailboxenums.locationtype)を指定することもできます。 この型は`LocationType.Custom` 、を使用して場所`item.location`を設定する場合に使用します。
+- [enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる拡張 API。また、[場所の種類](/javascript/api/outlook/office.mailboxenums.locationtype)を指定することもできます。 この型は `LocationType.Custom` 、を使用して場所を設定する場合に使用し `item.location` ます。
 
 次の表に、使用可能な場所の Api とモード (つまり、作成または読み取り) を示します。
 
@@ -30,9 +30,9 @@ Office JavaScript API には、ユーザーが作成している予定の場所�
 
 アドインの作成にのみ使用できるメソッドを使用するには、アドインマニフェストを構成して、オーガナイザー/新規作成モードでアドインをアクティブにします。 詳細については、「[新規フォーム用の Outlook アドインを作成](compose-scenario.md)する」を参照してください。
 
-## <a name="use-the-enhancedlocation-api"></a>`enhancedLocation` API を使用する
+## <a name="use-the-enhancedlocation-api"></a>API を使用する `enhancedLocation`
 
-`enhancedLocation` API を使用して、予定の場所を取得および設定できます。 Location フィールドには複数の場所がサポートされており、それぞれの場所について、表示名、種類、および会議室の電子メールアドレスを設定できます (該当する場合)。 サポートされる場所の種類については、 [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)を参照してください。
+API を使用し `enhancedLocation` て、予定の場所を取得および設定できます。 Location フィールドには複数の場所がサポートされており、それぞれの場所について、表示名、種類、および会議室の電子メールアドレスを設定できます (該当する場合)。 サポートされる場所の種類については、 [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)を参照してください。
 
 ### <a name="add-location"></a>場所の追加
 
@@ -111,15 +111,15 @@ function callbackFunction(asyncResult) {
 }
 ```
 
-## <a name="use-the-location-api"></a>`location` API を使用する
+## <a name="use-the-location-api"></a>API を使用する `location`
 
-`location` API を使用して、予定の場所を取得および設定できます。
+API を使用し `location` て、予定の場所を取得および設定できます。
 
 ### <a name="get-the-location"></a>場所を取得する
 
 ここでは、ユーザーが新規作成している予定の配置場所を取得し、それを表示するコード サンプルを示します。
 
-`item.location.getAsync` を使用するためには、非同期呼び出しの状態と結果を確認するコールバック メソッドを提供します。 オプション パラメーターである `asyncContext` を通して、コールバック メソッドに必要な引数を提供できます。 コールバックの出力パラメーター `asyncResult`を使用して、状態、結果、およびエラーを取得できます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティを使用して、配置場所を文字列として取得することができます。
+`item.location.getAsync` を使用するためには、非同期呼び出しの状態と結果を確認するコールバック メソッドを提供します。 オプション パラメーターである `asyncContext` を通して、コールバック メソッドに必要な引数を提供できます。 コールバックの出力パラメーターを使用して、状態、結果、およびエラーを取得でき `asyncResult` ます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティを使用して、配置場所を文字列として取得することができます。
 
 ```js
 var item;
@@ -158,7 +158,7 @@ function write(message){
 
 ここでは、ユーザーが新規作成している予定の配置場所を設定するコード サンプルを示します。
 
-`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 オプションとして、`asyncContext` パラメーターで、コールバック メソッドとそれに必要な引数を提供することができます。 コールバックの`asyncResult`出力パラメーターで、状態、結果、およびエラーメッセージを確認する必要があります。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
+`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 オプションとして、`asyncContext` パラメーターで、コールバック メソッドとそれに必要な引数を提供することができます。 コールバックの出力パラメーターで、状態、結果、およびエラーメッセージを確認する必要があり `asyncResult` ます。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
 
 > [!NOTE]
 > 区切り文字としてセミコロンを使用して、複数の場所を設定できます (たとえば、「会議室 A;」など)。会議室 B ')。

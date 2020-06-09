@@ -3,12 +3,12 @@ title: 一般的な問題と予期しないプラットフォームの動作に�
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
 ms.date: 05/21/2020
 localization_priority: Normal
-ms.openlocfilehash: fee5504d1db95d59b7667e402ff246b16b07b57c
-ms.sourcegitcommit: d88b3dcfe13ba06f821b55db2de46aed152a378d
+ms.openlocfilehash: d67a069cd2b752be3fca8ce094eaacfd0db08c18
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "44347659"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608384"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>一般的な問題と予期しないプラットフォームの動作に関するコーディングガイダンス
 

@@ -3,19 +3,19 @@ title: マニフェスト ファイルの TabletSettings 要素
 description: TabletSettings 要素は、メールアドインがタブレットで使用されるときに適用する制御の設定を指定します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71b7aed6b2906a8695ac1c13e93ba60da1aa56ec
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: b5a74db4f9fb43df10a08ab43b59507f6e0d7952
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215083"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608699"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings 要素
 
 メール アドインがタブレットで使用されるときに適用される制御の設定を指定します。
 
 > [!IMPORTANT]
-> この`TabletSettings`要素は、web 上の従来の Outlook (社内 Exchange サーバーの古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 Android および iOS で Outlook をサポートするには、「 [Outlook Mobile 用のアドイン](../../outlook/outlook-mobile-addins.md)」を参照してください。
+> この `TabletSettings` 要素は、web 上の従来の Outlook (社内 Exchange サーバーの古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 Android および iOS で Outlook をサポートするには、「 [Outlook Mobile 用のアドイン](../../outlook/outlook-mobile-addins.md)」を参照してください。
 
 **アドインの種類:** メール
 

@@ -4,12 +4,12 @@ description: Outlook アドインでの追加-送信機能を実装する方法�
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: ecbc1e043b6af2a0e0a6cd89de8cf4bfcec03943
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415897"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607597"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインで送信時に追加を実装する (プレビュー)
 

@@ -3,12 +3,12 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325455"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608944"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
@@ -205,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この`getEntities`メソッドは、サポートさ`_MyEntities`れているエンティティのインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
+[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、 `_MyEntities` サポートされているエンティティのインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -373,7 +373,7 @@ function myGetEmailAddresses() {
 
 
  > [!NOTE]
- > エンティティの種類をサポートして`MeetingSuggestion`いるのは、予定ではなくメッセージのみです。
+ > エンティティの種類をサポートしているのは、予定ではなくメッセージのみ `MeetingSuggestion` です。
 
 抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
 

@@ -3,19 +3,19 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインのダイアログボックス作成の基本について説明します。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561759"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608279"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
 [Office ダイアログ API](/javascript/api/office/office.ui) を使用して、Office アドインでダイアログ ボックスを開くことができます。 この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
 
 > [!NOTE]
-> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
+> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
 
 ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ*後*で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
@@ -48,7 +48,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL には HTTP**S** プロトコルを使用します。 これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
-> - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](/office/dev/add-ins/reference/manifest/functionfile)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
+> - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](../reference/manifest/functionfile.md)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
 > [!IMPORTANT]
 > ダイアログ ボックスで開くホスト ページとリソースのフル ドメインは、同じである必要があります。 `displayDialogAsync` にアドインのドメインのサブドメインを渡そうとすると、正常に動作しません。 サブドメインを含む、フル ドメインが一致している必要があります。
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。
 
 - ダイアログ ボックスの現在のページがホスト ページと同じドメインにある。
-- Office JavaScript API ライブラリがページにロードされます。(Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはメソッドを`Office.initialize`プロパティに割り当てる必要がありますが、空のメソッドにすることもできます。詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。
+- Office JavaScript API ライブラリがページにロードされます。(Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはメソッドをプロパティに割り当てる必要がありますが、空のメソッドにする `Office.initialize` こともできます。詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。
 
 ダイアログ ボックスのコードは、[messageParent](/javascript/api/office/office.ui#messageparent-message-) 関数を使用して、ブール値または文字列メッセージのいずれかをホスト ページに送信します。 文字列には、単語、文、XML BLOB、文字列に変換された JSON、文字列にシリアル化できるすべてのものを指定できます。 例を次に示します。
 
@@ -251,7 +251,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 > Office は、`displayDialogAsync` に渡される URL に `_host_info` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません)。Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
 
 > [!NOTE]
-> これで、上記の api `messageChild`が`messageParent`ダイアログからメッセージを送信するのと同じように、親ページがダイアログにメッセージを送信するために使用できる api がプレビューされました。 詳細については、「[ホストページからダイアログボックスにデータとメッセージを渡す](parent-to-dialog.md)」を参照してください。 試してみることをお勧めしますが、運用アドインでは、このセクションで説明する手法を使用することをお勧めします。
+> これで、 `messageChild` `messageParent` 上記の api がダイアログからメッセージを送信するのと同じように、親ページがダイアログにメッセージを送信するために使用できる api がプレビューされました。 詳細については、「[ホストページからダイアログボックスにデータとメッセージを渡す](parent-to-dialog.md)」を参照してください。 試してみることをお勧めしますが、運用アドインでは、このセクションで説明する手法を使用することをお勧めします。
 
 ## <a name="closing-the-dialog-box"></a>ダイアログ ボックスを閉じる
 

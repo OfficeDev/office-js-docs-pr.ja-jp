@@ -3,12 +3,12 @@ title: Office アドインのローカライズ
 description: Office JavaScript API を使用して、ロケールを決定し、ホストアプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりすることができます。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 2b7cc7e414e8d8b3da50afdb1d44b3f693834b62
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 72f6e7ad9c2095bffddb85be60c410963357f74c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718910"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608119"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -395,7 +395,7 @@ Home.js ファイルのコードを次のコードで置き換えます。この
 
 3. **[OK]** をクリックして選択内容を確認し、Word を閉じます。
 
-4. Visual Studio で**F5**キーを押すとサンプルアドインが実行されます。それ以外の場合は、メニューバーからデバッグ > **開始デバッグ****を選択し**ます。
+4. Visual Studio で**F5**キーを押すとサンプルアドインが実行されます。それ以外の場合は、メニューバーからデバッグ開始デバッグ**を選択し**  >  **Start Debugging**ます。
 
 5. Word で **[ホーム]**、**[作業ウィンドウを表示]** の順に選択します。
 

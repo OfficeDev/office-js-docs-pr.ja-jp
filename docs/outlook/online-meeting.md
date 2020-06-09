@@ -4,12 +4,12 @@ description: オンライン会議サービスプロバイダー用の Outlook m
 ms.topic: article
 ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d42ec82e12e9f34f0211ca9926f5ae8b92c7804
-ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
+ms.openlocfilehash: d35aa1ecd2b03b51314b5e88ae08c7fcb8382817
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44292288"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609035"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 

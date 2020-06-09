@@ -3,23 +3,23 @@ title: Excel JavaScript API を使用して表を操作する
 description: Excel JavaScript API を使用して、テーブルに関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6d76edb5e13623a479a74cf69b5b87e2bbe86e3f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717139"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609212"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Table オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.table) 」および「 [tablecollection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。 `TableCollection` `Table`
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 およびオブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Table` `TableCollection` ては、「 [Table オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.table) 」および「 [tablecollection オブジェクト (javascript api for excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
 次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 > [!NOTE]
-> テーブルの名前を指定するには、次の例に示すように、最初`name`にテーブルを作成し、そのプロパティを設定する必要があります。
+> テーブルの名前を指定するには、 `name` 次の例に示すように、最初にテーブルを作成し、そのプロパティを設定する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
 
 > [!NOTE]
-> TableRow `index`オブジェクトのプロパティ[TableRow](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト`TableRow`には、行を`id`識別するための一意のキーとして使用できるプロパティが含まれていません。
+> `index` [TableRow](/javascript/api/excel/excel.tablerow)オブジェクトのプロパティは、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクトには、 `TableRow` 行を `id` 識別するための一意のキーとして使用できるプロパティが含まれていません。
 
 ```js
 Excel.run(function (context) {
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
-次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示す`getVisibleView()`メソッドを使用すると、列フィルターが適用されている場合にテーブルの表示可能な内容を取得できます。
+次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すメソッドを使用する `getVisibleView()` と、列フィルターが適用されている場合にテーブルの表示可能な内容を取得できます。
 
 ```js
 Excel.run(function (context) {

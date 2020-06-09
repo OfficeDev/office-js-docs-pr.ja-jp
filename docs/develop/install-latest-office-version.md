@@ -3,12 +3,12 @@ title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: b9428cc67160e0680bab5a36438bc1a0dbb3ac17
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: bd76a0a36f12f2aa6add1d63c20a466b2036f805
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547065"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608133"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 

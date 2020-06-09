@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: Excel でカスタム関数の JSON メタデータを定義し、関数 id と name プロパティを関連付けます。
 title: Excel のカスタム関数のメタデータ
 localization_priority: Normal
-ms.openlocfilehash: 848a65a0eda7b8cfd6a28df16b44dbbfc207c7b9
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 2f044db54d795e221d4b69eb054e639a7d220c10
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275995"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609304"
 ---
 # <a name="custom-functions-metadata"></a>カスタム関数のメタデータ
 

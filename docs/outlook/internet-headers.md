@@ -3,12 +3,12 @@ title: インターネットヘッダーを取得および設定する
 description: Outlook アドインでメッセージのインターネットヘッダーを取得および設定する方法について説明します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930289"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609084"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Outlook アドインでメッセージのインターネットヘッダーを取得および設定する
 
@@ -21,7 +21,7 @@ Outlook アドインの開発での一般的な要件は、アドインに関連
 
 アイテムが Exchange サーバーから離脱した後、両方の種類のプロパティは保持されないため、電子メールの受信者は、アイテムに設定されているプロパティを取得できません。 そのため、開発者はこれらの設定やその他の MIME プロパティにアクセスして、読み取りシナリオを改善することはできません。
 
-EWS 要求を通じてインターネットヘッダーを設定する方法はありますが、一部のシナリオでは EWS 要求が機能しない場合があります。 たとえば、Outlook デスクトップの新規作成モードでは、アイテム id はキャッシュモード `saveAsync` で同期されません。
+EWS 要求を通じてインターネットヘッダーを設定する方法はありますが、一部のシナリオでは EWS 要求が機能しない場合があります。 たとえば、Outlook デスクトップの新規作成モードでは、アイテム id は  `saveAsync` キャッシュモードで同期されません   。
 
 > [!TIP]
 > これらのオプションの使用の詳細については[、「Outlook アドインのアドインメタデータを取得および設定](metadata-for-an-outlook-add-in.md)する」を参照してください。

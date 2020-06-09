@@ -3,12 +3,12 @@ title: Office アドインを初期化する
 description: Office アドインを初期化する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8310c5efb803391f7f0d4b01fda70dc0df537b21
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718938"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608140"
 ---
 # <a name="initialize-your-office-add-in"></a>Office アドインを初期化する
 
@@ -26,11 +26,11 @@ Office アドインには、次のような処理を行うスタートアップ 
 
 ただし、Office アドインは、ライブラリが読み込まれるまでは、Office JavaScript Api を正常に呼び出せません。 この記事では、ライブラリが読み込まれていることをコードが確認する2つの方法について説明します。
 
-- を使用`Office.onReady()`して初期化します。
-- を使用`Office.initialize`して初期化します。
+- を使用して初期化 `Office.onReady()` します。
+- を使用して初期化 `Office.initialize` します。
 
 > [!TIP]
-> `Office.initialize` の代わりに `Office.onReady()` を使用することをお勧めします。 `Office.initialize`はまだサポートされ`Office.onReady()`ていますが、より柔軟な機能を提供します。 割り当てることができるハンドラーは 1 `Office.initialize`つだけで、Office のインフラストラクチャによって一度だけ呼び出されます。 コード内の`Office.onReady()`別の場所で呼び出し、さまざまなコールバックを使用できます。
+> `Office.initialize` の代わりに `Office.onReady()` を使用することをお勧めします。 `Office.initialize`はまだサポートされていますが、 `Office.onReady()` より柔軟な機能を提供します。 割り当てることができるハンドラーは1つだけ `Office.initialize` で、Office のインフラストラクチャによって一度だけ呼び出されます。 `Office.onReady()`コード内の別の場所で呼び出し、さまざまなコールバックを使用できます。
 > 
 > これらの手法の違いの詳細については、「[Office.initialize と Office.onReady の間の主な相違点](#major-differences-between-officeinitialize-and-officeonready)」を参照してください。
 
@@ -90,7 +90,7 @@ Office.onReady(function() {
 
 ただし、この実習には例外があります。 たとえば、ブラウザーのツールを使用してご使用の UI をデバッグするため、(Office ホスト内にサイドロードする代わりに) ブラウザーでご利用のアドインを開く必要があるとします。 Office.js がブラウザーに読み込まれないため、`onReady` は実行できず、Office `onReady` 内に呼び出される場合は、`$(document).ready` は実行されません。 
 
-アドインの読み込み中に作業ウィンドウに進行状況のインジケーターが表示されるようにする場合は、別の例外があります。 このシナリオでは、コードで jQuery `ready`を呼び出し、コールバックを使用して進行状況インジケーターをレンダリングする必要があります。 その後、Office `onReady` のコールバックで、進行状況のインジケーターを最終的な UI に置き換えることができます。 
+アドインの読み込み中に作業ウィンドウに進行状況のインジケーターが表示されるようにする場合は、別の例外があります。 このシナリオでは、コードで jQuery を呼び出し、コールバックを使用して進行状況インジケーターをレンダリングする必要があり `ready` ます。 その後、Office `onReady` のコールバックで、進行状況のインジケーターを最終的な UI に置き換えることができます。 
 
 ## <a name="initialize-with-officeinitialize"></a>Office.initialize を使用した初期化
 
@@ -104,7 +104,7 @@ Office.initialize = function () {
 };
 ```
 
-独自の初期化ハンドラーやテストを含む追加の JavaScript フレームワークを使用している場合は、*通常*、これら`Office.initialize`はイベント内に配置する必要があります (前の手順では、「 **Office. onready ()** セクションでの初期化」で説明されている例外)。 たとえば、[JQuery](https://jquery.com) の `$(document).ready()` 関数は次のように参照します。
+独自の初期化ハンドラーやテストを含む追加の JavaScript フレームワークを使用している場合は、*通常*、これらはイベント内に配置する必要があり `Office.initialize` ます (前の手順では、「 **Office. onready ()** セクションでの初期化」で説明されている例外)。 たとえば、[JQuery](https://jquery.com) の `$(document).ready()` 関数は次のように参照します。
 
 ```js
 Office.initialize = function () {

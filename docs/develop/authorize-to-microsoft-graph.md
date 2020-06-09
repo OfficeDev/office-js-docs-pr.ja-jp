@@ -3,12 +3,12 @@ title: SSO を使用した Microsoft Graph への承認
 description: Office アドインのユーザーがシングルサインオン (SSO) を使用して Microsoft Graph からデータを取得する方法について説明します。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 58b27e4549b4d31889e0e03ff8591fb3bdd7a7c0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c04026324c71bcfbef978106aecf607d46d55fc3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719085"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608405"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>SSO を使用した Microsoft Graph への承認 (プレビュー)
 

@@ -3,12 +3,12 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: 辞書作業ウィンドウアドインを作成する方法について
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719694"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608650"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -94,7 +94,7 @@ XML Web サービスでは、クエリを OfficeDefinitions XML スキーマに�
 </xs:schema>
 ```
 
-OfficeDefinitions スキーマに準拠する返された XML は、0 `Result` ~ 3 個`Definition`の`Definitions`子要素から成る要素を含むルート要素で構成されています。各要素には、長さが400文字を超えない定義が含まれています。 さらに、辞書サイトの完全なページの URL を`SeeMoreURL`要素で指定する必要があります。 次の例は、OfficeDefinitions スキーマに準拠した、返された XML の構造を示しています。
+OfficeDefinitions スキーマに準拠する返された XML は、0 ~ 3 個の子要素から成る要素を含むルート要素で構成されてい `Result` `Definitions` ます。各要素には `Definition` 、長さが400文字を超えない定義が含まれています。 さらに、辞書サイトの完全なページの URL を要素で指定する必要があり `SeeMoreURL` ます。 次の例は、OfficeDefinitions スキーマに準拠した、返された XML の構造を示しています。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -258,7 +258,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-次`Dictionary`のセクションでは、辞書アドインのマニフェストファイルの作成に固有の要素とその子要素について説明します。 マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
+`Dictionary`次のセクションでは、辞書アドインのマニフェストファイルの作成に固有の要素とその子要素について説明します。 マニフェスト ファイルのその他の要素の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 
 
 ### <a name="dictionary-element"></a>Dictionary 要素
@@ -276,7 +276,7 @@ public class WebService : System.Web.Services.WebService {
 
  **注釈**
 
-要素`Dictionary`とその子要素は、辞書アドインを作成するときに作業ウィンドウアドインのマニフェストに追加されます。
+`Dictionary`要素とその子要素は、辞書アドインを作成するときに作業ウィンドウアドインのマニフェストに追加されます。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 要素
@@ -294,7 +294,7 @@ public class WebService : System.Web.Services.WebService {
 
  **注釈**
 
-要素`TargetDialects`とその子要素は、辞書に含まれている地域の言語のセットを指定します。 たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。 このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。 異なる言語は、別の辞書として発行してください。
+`TargetDialects`要素とその子要素は、辞書に含まれている地域の言語のセットを指定します。 たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。 このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。 異なる言語は、別の辞書として発行してください。
 
  **例**
 
@@ -377,7 +377,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 この要素では、Web サービスから返されたコンテンツの下の行に表示される引用テキストの冒頭部分を指定します (たとえば "Results by: "、"Powered by: " など)。
 
-この要素では、 `Override`要素を使用して追加のロケールの値を指定できます。 たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。 別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
+この要素では、要素を使用して追加のロケールの値を指定でき `Override` ます。 たとえば、スペイン語版の SKU の Office を利用しているユーザーが英語の辞書を使用している場合に、引用行を "Results by: Bing" ではなく "Resultados por: Bing" と表示できます。 別のロケールに対応する値を指定する方法の詳細については、「[Office アドイン XML マニフェスト](../develop/add-in-manifests.md)」の「別のロケールに対応する設定値の指定」を参照してください。
 
  **例**
 
@@ -529,13 +529,13 @@ a:hover, a:active
 この実装から呼び出される Office JavaScript API (Office .js) のプライマリメンバーは次のとおりです。
 
 
-- オブジェクトの initialize イベント。アドインコンテキストが初期化されたときに発生し、アドインが対話するドキュメントを表す[ドキュメント](/javascript/api/office/office.document)オブジェクトインスタンスへのアクセスを提供します。 [initialize](/javascript/api/office) `Office`
+- オブジェクトの[initialize](/javascript/api/office)イベント `Office` 。アドインコンテキストが初期化されたときに発生し、アドインが対話するドキュメントを表す[ドキュメント](/javascript/api/office/office.document)オブジェクトインスタンスへのアクセスを提供します。
     
-- オブジェクトの[Addhandler async](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) `initialize`メソッド。これは、関数で呼び出されて、ドキュメントの[selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加し、ユーザーの選択範囲の変更をリッスンします。 `Document`
+- オブジェクトの[Addhandler async](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)メソッド `Document` 。これは、関数で呼び出されて、 `initialize` ドキュメントの[selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs)イベントのイベントハンドラーを追加し、ユーザーの選択範囲の変更をリッスンします。
     
-- `Document`オブジェクトの[Getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッド。これは、 `SelectionChanged`イベントハンドラーが呼び出さ`tryUpdatingSelectedWord()`れたときに、ユーザーが選択した単語または語句を取得し、それをプレーンテキストに変換し、 `selectedTextCallback`非同期コールバック関数を実行するために関数で呼び出されます。
+- オブジェクトの[Getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッド `Document` 。これは、 `tryUpdatingSelectedWord()` イベントハンドラーが呼び出されたときに、ユーザーが `SelectionChanged` 選択した単語または語句を取得し、それをプレーンテキストに変換し、 `selectedTextCallback` 非同期コールバック関数を実行するために関数で呼び出されます。
     
-- メソッドの`selectTextCallback` callback 引数として渡される非同期コールバック関数が実行されると、コールバックが戻るときに、選択したテキストの値を取得します。 _callback_ `getSelectedDataAsync` このメソッド`AsyncResult`は、返されたオブジェクトの[value](/javascript/api/office/office.asyncresult#status)プロパティを使用して、コールバックの_selectedtext_引数 ( [AsyncResult](/javascript/api/office/office.asyncresult)型) から値を取得します。
+- `selectTextCallback`メソッドの_callback_引数として渡される非同期コールバック関数が `getSelectedDataAsync` 実行されると、コールバックが戻るときに、選択したテキストの値を取得します。 このメソッドは、返されたオブジェクトの[value](/javascript/api/office/office.asyncresult#status)プロパティを使用して、コールバックの_selectedtext_引数 ( [AsyncResult](/javascript/api/office/office.asyncresult)型) から値を取得し `AsyncResult` ます。
     
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
     

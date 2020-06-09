@@ -3,12 +3,12 @@ title: Office アドインの色のガイドライン
 description: Office アドインの UI で色を使用する方法について説明します。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d017a2c8a62168e25f214683029d8b5671b72569
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a57057d8d99040cf6c4b11bb1a6c12e870e9be0f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718616"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607986"
 ---
 # <a name="color"></a>色
 

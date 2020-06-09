@@ -3,12 +3,12 @@ title: Outlook アドインの状態と設定を管理する
 description: Outlook アドインのアドインの状態と設定を保存する方法について説明します。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 3cb4f7d6e31fd4d37e01939f743682f60f24f959
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 796c7b38f8c85a5680c9b7de43297c754a0ebc1b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785782"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609063"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Outlook アドインの状態と設定を管理する
 
