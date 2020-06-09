@@ -5,12 +5,12 @@ title: Word アドイン ドキュメント
 description: Word アドイン向けの学習用リソース。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 28cb42194e3de42634cd3b026e5924c03cd51b43
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0267f85530e99a2b541bb1740da48ba6b769e480
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719659"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608604"
 ---
 # <a name="word-add-ins-documentation"></a>Word アドイン ドキュメント
 

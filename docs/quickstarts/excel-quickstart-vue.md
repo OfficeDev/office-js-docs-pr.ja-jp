@@ -4,75 +4,75 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 49c38a8b9055692f40fed9dc110528694e3fbf55
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529121"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608923"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-vue"></a><span data-ttu-id="3852e-103">Vue を使用して Excel 作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="3852e-103">Build an Excel task pane add-in using Vue</span></span>
+# <a name="build-an-excel-task-pane-add-in-using-vue"></a><span data-ttu-id="14729-103">Vue を使用して Excel 作業ウィンドウ アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="14729-103">Build an Excel task pane add-in using Vue</span></span>
 
-<span data-ttu-id="3852e-104">この記事では、Vue と Excel JavaScript API を使用して Excel 作業ウィンドウ アドインを構築するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="3852e-104">In this article, you'll walk through the process of building an Excel task pane add-in using Vue and the Excel JavaScript API.</span></span>
+<span data-ttu-id="14729-104">この記事では、Vue と Excel JavaScript API を使用して Excel 作業ウィンドウ アドインを構築するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="14729-104">In this article, you'll walk through the process of building an Excel task pane add-in using Vue and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="3852e-105">前提条件</span><span class="sxs-lookup"><span data-stu-id="3852e-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="14729-105">前提条件</span><span class="sxs-lookup"><span data-stu-id="14729-105">Prerequisites</span></span>
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="3852e-106">[Vue CLI](https://cli.vuejs.org/) をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="3852e-106">Install the [Vue CLI](https://cli.vuejs.org/) globally.</span></span>
+- <span data-ttu-id="14729-106">[Vue CLI](https://cli.vuejs.org/) をグローバルにインストールします。</span><span class="sxs-lookup"><span data-stu-id="14729-106">Install the [Vue CLI](https://cli.vuejs.org/) globally.</span></span>
 
   ```command&nbsp;line
   npm install -g @vue/cli
   ```
 
-## <a name="generate-a-new-vue-app"></a><span data-ttu-id="3852e-107">新しい Vue アプリの生成</span><span class="sxs-lookup"><span data-stu-id="3852e-107">Generate a new Vue app</span></span>
+## <a name="generate-a-new-vue-app"></a><span data-ttu-id="14729-107">新しい Vue アプリの生成</span><span class="sxs-lookup"><span data-stu-id="14729-107">Generate a new Vue app</span></span>
 
-<span data-ttu-id="3852e-p101">Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3852e-p101">Use the Vue CLI to generate a new Vue app. From the terminal, run the following command.</span></span>
+<span data-ttu-id="14729-p101">Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="14729-p101">Use the Vue CLI to generate a new Vue app. From the terminal, run the following command.</span></span>
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-<span data-ttu-id="3852e-110">次に、`default` プリセットを選択します。</span><span class="sxs-lookup"><span data-stu-id="3852e-110">Then select the `default` preset.</span></span> <span data-ttu-id="3852e-111">Yarn または NPM のいずれかをパッケージとして使用するように求められたら、どちらかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="3852e-111">If you are prompted to use either Yarn or NPM as a package you can choose either one.</span></span>
+<span data-ttu-id="14729-110">次に、`default` プリセットを選択します。</span><span class="sxs-lookup"><span data-stu-id="14729-110">Then select the `default` preset.</span></span> <span data-ttu-id="14729-111">Yarn または NPM のいずれかをパッケージとして使用するように求められたら、どちらかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="14729-111">If you are prompted to use either Yarn or NPM as a package you can choose either one.</span></span>
 
-## <a name="generate-the-manifest-file"></a><span data-ttu-id="3852e-112">マニフェスト ファイルを生成する</span><span class="sxs-lookup"><span data-stu-id="3852e-112">Generate the manifest file</span></span>
+## <a name="generate-the-manifest-file"></a><span data-ttu-id="14729-112">マニフェスト ファイルを生成する</span><span class="sxs-lookup"><span data-stu-id="14729-112">Generate the manifest file</span></span>
 
-<span data-ttu-id="3852e-113">各アドインには、設定と機能を定義するマニフェスト ファイルが必要です。</span><span class="sxs-lookup"><span data-stu-id="3852e-113">Each add-in requires a manifest file to define its settings and capabilities.</span></span>
+<span data-ttu-id="14729-113">各アドインには、設定と機能を定義するマニフェスト ファイルが必要です。</span><span class="sxs-lookup"><span data-stu-id="14729-113">Each add-in requires a manifest file to define its settings and capabilities.</span></span>
 
-1. <span data-ttu-id="3852e-114">アプリ フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="3852e-114">Navigate to your app folder.</span></span>
+1. <span data-ttu-id="14729-114">アプリ フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="14729-114">Navigate to your app folder.</span></span>
 
     ```command&nbsp;line
     cd my-add-in
     ```
 
-2. <span data-ttu-id="3852e-115">以下のコマンドを実行し、Yeoman ジェネレーター使用してアドインのマニフェスト ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="3852e-115">Use the Yeoman generator to generate the manifest file for your add-in by running the following command:</span></span>
+2. <span data-ttu-id="14729-115">以下のコマンドを実行し、Yeoman ジェネレーター使用してアドインのマニフェスト ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="14729-115">Use the Yeoman generator to generate the manifest file for your add-in by running the following command:</span></span>
 
     ```command&nbsp;line
     yo office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="3852e-116">`yo office`コマンドを実行すると、Yeoman のデータ収集ポリシーと Office アドイン CLI ツールに関するプロンプトが表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="3852e-116">When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools.</span></span> <span data-ttu-id="3852e-117">提供された情報を使用して、必要に応じてプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="3852e-117">Use the information that's provided to respond to the prompts as you see fit.</span></span> <span data-ttu-id="3852e-118">2 番目のプロンプトに対して [**終了**] を選択した場合、アドイン プロジェクトを作成する準備ができたら`yo office`コマンドを再度実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3852e-118">If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.</span></span>
+    > <span data-ttu-id="14729-116">`yo office`コマンドを実行すると、Yeoman のデータ収集ポリシーと Office アドイン CLI ツールに関するプロンプトが表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="14729-116">When you run the `yo office` command, you may receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools.</span></span> <span data-ttu-id="14729-117">提供された情報を使用して、必要に応じてプロンプトに応答します。</span><span class="sxs-lookup"><span data-stu-id="14729-117">Use the information that's provided to respond to the prompts as you see fit.</span></span> <span data-ttu-id="14729-118">2 番目のプロンプトに対して [**終了**] を選択した場合、アドイン プロジェクトを作成する準備ができたら`yo office`コマンドを再度実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="14729-118">If you choose **Exit** in response to the second prompt, you'll need to run the `yo office` command again when you're ready to create your add-in project.</span></span>
 
-    <span data-ttu-id="3852e-119">プロンプトが表示されたら、以下の情報を入力してアドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="3852e-119">When prompted, provide the following information to create your add-in project:</span></span>
+    <span data-ttu-id="14729-119">プロンプトが表示されたら、以下の情報を入力してアドイン プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="14729-119">When prompted, provide the following information to create your add-in project:</span></span>
 
-    - <span data-ttu-id="3852e-120">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`</span><span class="sxs-lookup"><span data-stu-id="3852e-120">**Choose a project type:** `Office Add-in project containing the manifest only`</span></span>
-    - <span data-ttu-id="3852e-121">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="3852e-121">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-    - <span data-ttu-id="3852e-122">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="3852e-122">**Which Office client application would you like to support?**</span></span> `Excel`
+    - <span data-ttu-id="14729-120">**Choose a project type: (プロジェクトの種類を選択)** `Office Add-in project containing the manifest only`</span><span class="sxs-lookup"><span data-stu-id="14729-120">**Choose a project type:** `Office Add-in project containing the manifest only`</span></span>
+    - <span data-ttu-id="14729-121">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="14729-121">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+    - <span data-ttu-id="14729-122">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="14729-122">**Which Office client application would you like to support?**</span></span> `Excel`
 
     ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
 
-<span data-ttu-id="3852e-124">ウィザードを完了すると、`My Office Add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。</span><span class="sxs-lookup"><span data-stu-id="3852e-124">After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file.</span></span> <span data-ttu-id="3852e-125">マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。</span><span class="sxs-lookup"><span data-stu-id="3852e-125">You will use the manifest to sideload and test your add-in at the end of the quick start.</span></span>
+<span data-ttu-id="14729-124">ウィザードを完了すると、`My Office Add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。</span><span class="sxs-lookup"><span data-stu-id="14729-124">After you complete the wizard, it creates a `My Office Add-in` folder, which contains a `manifest.xml` file.</span></span> <span data-ttu-id="14729-125">マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。</span><span class="sxs-lookup"><span data-stu-id="14729-125">You will use the manifest to sideload and test your add-in at the end of the quick start.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="3852e-126">アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する*次の手順*ガイダンスは無視できます。</span><span class="sxs-lookup"><span data-stu-id="3852e-126">You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created.</span></span> <span data-ttu-id="3852e-127">この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="3852e-127">The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.</span></span>
+> <span data-ttu-id="14729-126">アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する*次の手順*ガイダンスは無視できます。</span><span class="sxs-lookup"><span data-stu-id="14729-126">You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created.</span></span> <span data-ttu-id="14729-127">この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="14729-127">The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.</span></span>
 
-## <a name="secure-the-app"></a><span data-ttu-id="3852e-128">アプリをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="3852e-128">Secure the app</span></span>
+## <a name="secure-the-app"></a><span data-ttu-id="14729-128">アプリをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="14729-128">Secure the app</span></span>
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. <span data-ttu-id="3852e-129">アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="3852e-129">To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:</span></span>
+1. <span data-ttu-id="14729-129">アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="14729-129">To enable HTTPS for your app, create a `vue.config.js` file in the root folder of the Vue project with the following contents:</span></span>
 
     ```js
     var fs = require("fs");
@@ -90,21 +90,21 @@ vue create my-add-in
     }
     ```
 
-2. <span data-ttu-id="3852e-130">端末から次のコマンドを実行して、アドインの証明書をインストールします。</span><span class="sxs-lookup"><span data-stu-id="3852e-130">From the terminal, run the following command to install the add-in's certificates.</span></span>
+2. <span data-ttu-id="14729-130">端末から次のコマンドを実行して、アドインの証明書をインストールします。</span><span class="sxs-lookup"><span data-stu-id="14729-130">From the terminal, run the following command to install the add-in's certificates.</span></span>
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
    ```
 
-## <a name="update-the-app"></a><span data-ttu-id="3852e-131">アプリを更新する</span><span class="sxs-lookup"><span data-stu-id="3852e-131">Update the app</span></span>
+## <a name="update-the-app"></a><span data-ttu-id="14729-131">アプリを更新する</span><span class="sxs-lookup"><span data-stu-id="14729-131">Update the app</span></span>
 
-1. <span data-ttu-id="3852e-132">`public/index.html` ファイルを開き、`</head>` タグの直前に次の `<script>` タグを追加します。</span><span class="sxs-lookup"><span data-stu-id="3852e-132">Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag:</span></span>
+1. <span data-ttu-id="14729-132">`public/index.html` ファイルを開き、`</head>` タグの直前に次の `<script>` タグを追加します。</span><span class="sxs-lookup"><span data-stu-id="14729-132">Open the `public/index.html` file and add the following `<script>` tag immediately before the `</head>` tag:</span></span>
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. <span data-ttu-id="3852e-133">`src/main.js` を開き、内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3852e-133">Open `src/main.js` and replace the contents with the following code:</span></span>
+2. <span data-ttu-id="14729-133">`src/main.js` を開き、内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="14729-133">Open `src/main.js` and replace the contents with the following code:</span></span>
 
    ```js
    import Vue from 'vue';
@@ -119,7 +119,7 @@ vue create my-add-in
    };
    ```
 
-3. <span data-ttu-id="3852e-134">`src/App.vue` を開き、ファイル内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3852e-134">Open `src/App.vue` and replace the file contents with the following code:</span></span>
+3. <span data-ttu-id="14729-134">`src/App.vue` を開き、ファイル内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="14729-134">Open `src/App.vue` and replace the file contents with the following code:</span></span>
 
    ```html
    <template>
@@ -188,46 +188,46 @@ vue create my-add-in
    </style>
    ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="3852e-135">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="3852e-135">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="14729-135">開発用サーバーの起動</span><span class="sxs-lookup"><span data-stu-id="14729-135">Start the dev server</span></span>
 
-1. <span data-ttu-id="3852e-136">ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。</span><span class="sxs-lookup"><span data-stu-id="3852e-136">From the terminal, run the following command to start the dev server.</span></span>
+1. <span data-ttu-id="14729-136">ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。</span><span class="sxs-lookup"><span data-stu-id="14729-136">From the terminal, run the following command to start the dev server.</span></span>
 
    ```command&nbsp;line
    npm run serve
    ```
 
-2. <span data-ttu-id="3852e-137">Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。</span><span class="sxs-lookup"><span data-stu-id="3852e-137">In a web browser, navigate to `https://localhost:3000` (notice the `https`).</span></span> <span data-ttu-id="3852e-138">`https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。</span><span class="sxs-lookup"><span data-stu-id="3852e-138">If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working.</span></span> <span data-ttu-id="3852e-139">Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。</span><span class="sxs-lookup"><span data-stu-id="3852e-139">The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.</span></span>
+2. <span data-ttu-id="14729-137">Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。</span><span class="sxs-lookup"><span data-stu-id="14729-137">In a web browser, navigate to `https://localhost:3000` (notice the `https`).</span></span> <span data-ttu-id="14729-138">`https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。</span><span class="sxs-lookup"><span data-stu-id="14729-138">If the page on `https://localhost:3000` is blank and without any certificate errors, it means that it is working.</span></span> <span data-ttu-id="14729-139">Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。</span><span class="sxs-lookup"><span data-stu-id="14729-139">The Vue App is mounted after Office is initialized, so it only shows things inside of an Excel environment.</span></span>
 
-## <a name="try-it-out"></a><span data-ttu-id="3852e-140">試してみる</span><span class="sxs-lookup"><span data-stu-id="3852e-140">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="14729-140">試してみる</span><span class="sxs-lookup"><span data-stu-id="14729-140">Try it out</span></span>
 
-1. <span data-ttu-id="3852e-141">アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="3852e-141">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
+1. <span data-ttu-id="14729-141">アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。</span><span class="sxs-lookup"><span data-stu-id="14729-141">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
 
-   - <span data-ttu-id="3852e-142">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="3852e-142">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-   - <span data-ttu-id="3852e-143">Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span><span class="sxs-lookup"><span data-stu-id="3852e-143">Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span></span>
-   - <span data-ttu-id="3852e-144">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="3852e-144">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+   - <span data-ttu-id="14729-142">Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="14729-142">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+   - <span data-ttu-id="14729-143">Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span><span class="sxs-lookup"><span data-stu-id="14729-143">Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span></span>
+   - <span data-ttu-id="14729-144">iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="14729-144">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="3852e-145">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="3852e-145">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="14729-145">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="14729-145">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="3852e-147">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="3852e-147">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="14729-147">ワークシート内で任意のセルの範囲を選択します。</span><span class="sxs-lookup"><span data-stu-id="14729-147">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="3852e-148">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="3852e-148">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="14729-148">作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。</span><span class="sxs-lookup"><span data-stu-id="14729-148">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
    ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="3852e-150">次の手順</span><span class="sxs-lookup"><span data-stu-id="3852e-150">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="14729-150">次の手順</span><span class="sxs-lookup"><span data-stu-id="14729-150">Next steps</span></span>
 
-<span data-ttu-id="3852e-151">おめでとうございます! これで Vue を使用して Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="3852e-151">Congratulations, you've successfully created an Excel task pane add-in using Vue!</span></span> <span data-ttu-id="3852e-152">次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="3852e-152">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="14729-151">おめでとうございます! これで Vue を使用して Excel 作業ウィンドウ アドインを作成できました。</span><span class="sxs-lookup"><span data-stu-id="14729-151">Congratulations, you've successfully created an Excel task pane add-in using Vue!</span></span> <span data-ttu-id="14729-152">次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。</span><span class="sxs-lookup"><span data-stu-id="14729-152">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="3852e-153">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="3852e-153">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="14729-153">Excel アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="14729-153">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="3852e-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="3852e-154">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="14729-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="14729-154">See also</span></span>
 
-* [<span data-ttu-id="3852e-155">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="3852e-155">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
-* [<span data-ttu-id="3852e-156">Office アドインを構築する</span><span class="sxs-lookup"><span data-stu-id="3852e-156">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
-* [<span data-ttu-id="3852e-157">Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="3852e-157">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
-* [<span data-ttu-id="3852e-158">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="3852e-158">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="3852e-159">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="3852e-159">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="3852e-160">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="3852e-160">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
+* [<span data-ttu-id="14729-155">Office アドイン プラットフォームの概要</span><span class="sxs-lookup"><span data-stu-id="14729-155">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+* [<span data-ttu-id="14729-156">Office アドインを構築する</span><span class="sxs-lookup"><span data-stu-id="14729-156">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
+* [<span data-ttu-id="14729-157">Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="14729-157">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
+* [<span data-ttu-id="14729-158">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="14729-158">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="14729-159">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="14729-159">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="14729-160">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="14729-160">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)

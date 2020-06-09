@@ -5,12 +5,12 @@ title: PowerPoint アドイン ドキュメント
 description: PowerPoint アドイン向けの学習用リソース。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: b57f39da04f4e45feaa0c6ccf0dc1ed004b9aded
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 61f03453310d56077f17719c86217059015e9c22
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576920"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611941"
 ---
 # <a name="powerpoint-add-ins-documentation"></a>PowerPoint アドイン ドキュメント
 
