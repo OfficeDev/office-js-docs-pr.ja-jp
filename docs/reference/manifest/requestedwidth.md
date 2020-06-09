@@ -3,12 +3,12 @@ title: マニフェスト ファイルの RequestedWidth 要素
 description: RequestedWidth 要素は、コンテンツアドインの初期幅 (ピクセル単位) を指定します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 2272d998a30ee1ac4ca2763b1b640551d2e0c69b
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 517b09492aede111d6359dc8e127c6029df89341
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215055"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611723"
 ---
 # <a name="requestedwidth-element"></a>RequestedWidth 要素
 

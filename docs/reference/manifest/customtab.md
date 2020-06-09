@@ -3,12 +3,12 @@ title: マニフェスト ファイルの CustomTab 要素
 description: リボン上で、アドイン コマンドに使用するタブとグループを指定します。
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a81b64a17eeeb463d55024e189b09048b2eb96ac
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718427"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612305"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
@@ -19,7 +19,7 @@ ms.locfileid: "42718427"
 **Id**属性はマニフェスト内で一意である必要があります。
 
 > [!IMPORTANT]
-> Mac 上の Outlook では`CustomTab` 、要素を使用できないため、代わりに[[officetab タブ](officetab.md)を使用する必要があります。
+> Mac 上の Outlook では、要素を使用でき `CustomTab` ないため、代わりに[[officetab タブ](officetab.md)を使用する必要があります。
 
 ## <a name="child-elements"></a>子要素
 

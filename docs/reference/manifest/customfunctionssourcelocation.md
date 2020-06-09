@@ -3,12 +3,12 @@ title: マニフェスト ファイルの SourceLocation 要素
 description: Excel でカスタム関数によって使用される Script または Page 要素が必要とするリソースの場所を定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 56ebe122853c98a14c52d450bea31fecaefb15d3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 88ae0558577167074a870170833617c4f60730f1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720688"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612313"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 要素
 

@@ -3,12 +3,12 @@ title: 社内の Project Server OData サービスで REST を使用する Proje
 description: 作業中のプロジェクトのコストと作業時間データと、現在の Project Web App インスタンス内のすべてのプロジェクトの平均値を比較する、Project Professional 2013 用の作業ウィンドウアドインをビルドする方法について説明します。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e53796f586e5ffa375f10cd877fc950b47203b4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca5c33815b4f47ba8aa88625725b3b235853c7fb
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720996"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611898"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -37,7 +37,7 @@ Project Server 2013 の社内インストールにおける Project Web App イ�
 
 1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](/previous-versions/office/project-odata/jj163048(v=office.15))」の手順 1. のステップ 4. を参照してください。
 
-2. ブラウザーで次の URL を使用して**projectdata**サービスに対してクエリを実行します。 ** http://ServerName /projectdata/_api/projectdata**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
+2. ブラウザーで次の URL を使用して**projectdata**サービスに対してクエリを実行します。/ ** http://ServerName projectdata/_api/projectdata**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -125,7 +125,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
     ![HelloProjectOData アプリのアイコン](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. HelloProjectOData マニフェストで、アイコンの URL の値が32x32 のアイコンファイルへの相対パスである**Description**要素の下に**iconurl**要素を追加します。 たとえば、次の行**<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />** を追加します。 現在、HelloProjectOData マニフェストファイルには次のものが含まれています ( **Id**の値は異なります)。
+3. HelloProjectOData マニフェストで、アイコンの URL の値が32x32 のアイコンファイルへの相対パスである**Description**要素の下に**iconurl**要素を追加します。 たとえば、次の行を追加し **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />** ます。 現在、HelloProjectOData マニフェストファイルには次のものが含まれています ( **Id**の値は異なります)。
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -158,13 +158,13 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 - サブタイトルは、**ODATA REST QUERY** など、操作の一般的な機能または種類を表します。
 
-- [ **Projectdata エンドポイントの取得**] `setOdataUrl`ボタンをクリックすると、関数が呼び出されて**projectdata**サービスのエンドポイントが取得され、テキストボックスに表示されます。 Project が Project Web App と接続されていない場合、アドインはエラー ハンドラーを呼び出して、ポップアップ エラー メッセージを表示します。
+- [ **Projectdata エンドポイントの取得**] ボタンをクリックすると、関数が呼び出されて `setOdataUrl` **projectdata**サービスのエンドポイントが取得され、テキストボックスに表示されます。 Project が Project Web App と接続されていない場合、アドインはエラー ハンドラーを呼び出して、ポップアップ エラー メッセージを表示します。
 
-- アドインが有効な OData エンドポイントを取得するまで、[**すべてのプロジェクトを比較**] ボタンは無効になります。 ボタンを選択すると、関数が呼び出さ`retrieveOData`れます。この関数は、REST クエリを使用して**projectdata**サービスからプロジェクトのコストと作業データを取得します。
+- アドインが有効な OData エンドポイントを取得するまで、[**すべてのプロジェクトを比較**] ボタンは無効になります。 ボタンを選択すると、関数が呼び出され `retrieveOData` ます。この関数は、REST クエリを使用して**projectdata**サービスからプロジェクトのコストと作業データを取得します。
 
 - テーブルには、プロジェクト コスト、実績コスト、作業、および達成率の平均値が表示されます。このテーブルでは、現在アクティブなプロジェクトの値と平均値との比較も行われます。現在の値が全プロジェクトの平均値より大きい場合は、その値が赤で表示されます。現在の値が平均値より小さい場合は、その値が緑で表示されます。現在の値がない場合は、青の **NA** が表示されます。
 
-    関数`retrieveOData`は、テーブル`parseODataResult`の値を計算して表示する関数を呼び出します。
+    関数は、 `retrieveOData` `parseODataResult` テーブルの値を計算して表示する関数を呼び出します。
 
     > [!NOTE]
     > この例では、アクティブなプロジェクトのコストと作業のデータは発行された値から導出されます。 Project で値を変更すると、プロジェクトが発行されるまで**Projectdata**サービスは変更されません。
@@ -218,7 +218,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 3. **Body**要素で、テンプレートから既存のコードを削除し、ユーザーインターフェイス用のコードを追加します。 要素にデータを入れるか、要素を jQuery ステートメントで操作する場合、その要素に一意の **id** 属性が含まれている必要があります。 次のコードでは、jQuery 関数が使用する**ボタン**、 **span**、および**td** (table セル定義) 要素の**id**属性は、太字のフォントで表示されます。
 
-   次の HTML は、グラフィックス イメージ (会社のロゴなど) を追加します。 任意のロゴを使用するか、プロジェクト 2013 SDK のダウンロードから NewLogo .png ファイルをコピーしてから、**ソリューションエクスプローラー**を使用してそのファイルを`HelloProjectODataWeb\Images`フォルダーに追加できます。
+   次の HTML は、グラフィックス イメージ (会社のロゴなど) を追加します。 任意のロゴを使用するか、プロジェクト 2013 SDK のダウンロードから NewLogo .png ファイルをコピーしてから、**ソリューションエクスプローラー**を使用してそのファイルをフォルダーに追加でき `HelloProjectODataWeb\Images` ます。
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>このアドインの JavaScript コードを作成する
 
-Project の作業ウィンドウアドインのテンプレートには、一般的な Office 2013 アドインのドキュメント内のデータに対する基本的な get および set アクションをデモンストレーションするために設計された既定の初期化コードが含まれています。 Project 2013 では、作業中のプロジェクトに書き込む操作がサポートされておらず、 **HelloProjectOData**アドインはこの`getSelectedDataAsync`メソッドを使用していないため、 `Office.initialize`関数内のスクリプトを`setData`削除し`getData`て、既定の HelloProjectOData ファイル内の関数と関数を削除することができます。
+Project の作業ウィンドウアドインのテンプレートには、一般的な Office 2013 アドインのドキュメント内のデータに対する基本的な get および set アクションをデモンストレーションするために設計された既定の初期化コードが含まれています。 Project 2013 では、作業中のプロジェクトに書き込む操作がサポートされておらず、 **HelloProjectOData**アドインはこのメソッドを使用していないため、 `getSelectedDataAsync` 関数内のスクリプトを削除 `Office.initialize` して、 `setData` 既定の HelloProjectOData ファイル内の関数と関数を削除することができ `getData` ます。
 
-JavaScript には、REST クエリ用のグローバル定数と、いくつかの関数で使用されるグローバル変数が含まれています。 [ **ProjectData エンドポイントの取得**] `setOdataUrl`ボタンを呼び出して、グローバル変数を初期化し、Project が project Web App で接続されているかどうかを判断します。
+JavaScript には、REST クエリ用のグローバル定数と、いくつかの関数で使用されるグローバル変数が含まれています。 [ **ProjectData エンドポイントの取得**] ボタンを呼び出して、 `setOdataUrl` グローバル変数を初期化し、Project が project Web App で接続されているかどうかを判断します。
 
-HelloProjectOData ファイルの残りの部分には、次の2つ`retrieveOData`の関数が含まれています。この関数は、ユーザーが [**すべてのプロジェクトを比較**するを選択すると呼び出されます。関数は`parseODataResult`平均を計算し、次に、比較表に色と単位を書式設定した値を設定します。
+HelloProjectOData ファイルの残りの部分には、次の2つの関数が含まれています。この `retrieveOData` 関数は、ユーザーが [**すべてのプロジェクトを比較**] を選択し、関数が `parseODataResult` 平均を計算し、比較表に色と単位を書式設定した値を設定した場合に呼び出されます。
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>手順 5. JavaScript コードを作成するには
 
-1. 既定の HelloProjectOData ファイル内のすべてのコードを削除してから、グローバル変数と`**`Office initialize ' 関数を追加します。 すべて大文字の変数名は、それらが定数であることを示しており、それらは後で **_pwa** 変数と共に使用されて、この例の REST クエリが作成されます。
+1. 既定の HelloProjectOData ファイル内のすべてのコードを削除してから、グローバル変数と `**` Office initialize ' 関数を追加します。 すべて大文字の変数名は、それらが定数であることを示しており、それらは後で **_pwa** 変数と共に使用されて、この例の REST クエリが作成されます。
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ HelloProjectOData ファイルの残りの部分には、次の2つ`retrieveODat
     }
     ```
 
-2. 追加`setOdataUrl`および関連する関数。 関数`setOdataUrl`は、 `getProjectGuid`グローバル`getDocumentUrl`変数を呼び出し、初期化します。 [Getprojectfieldasync メソッド](/javascript/api/office/office.document)の場合、 _callback_ライブラリ`removeAttr`のメソッドを使用して [**すべてのプロジェクトを比較**] ボタンを有効にし、 **projectdata**サービスの URL を表示します。 Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。 Surfaceerrors.js ファイルには、 `throwError`メソッドが含まれています。
+2. 追加 `setOdataUrl` および関連する関数。 関数は、 `setOdataUrl` グローバル変数を呼び出し、 `getProjectGuid` `getDocumentUrl` 初期化します。 [Getprojectfieldasync メソッド](/javascript/api/office/office.document)の場合、 _callback_ライブラリのメソッドを使用して [**すべてのプロジェクトを比較**] ボタンを有効にし、 `removeAttr` **projectdata**サービスの URL を表示します。 Project が Project Web App と接続されていない場合、この関数はエラーをスローし、それによってポップアップ エラー メッセージが表示されます。 Surfaceerrors.js ファイルには、メソッドが含まれてい `throwError` ます。
 
    > [!NOTE]
-   > Visual Studio を Project Server コンピューター上で実行する場合、**F5** デバッグを使用するには、**_pwa** グローバル変数を初期化する行の後にあるコードのコメントを解除します。 Project Server コンピュータでデバッグ`ajax`するときに jQuery メソッドを使用できるようにするには`localhost` 、PWA URL の値を設定する必要があります。Visual Studio をリモートコンピューターで実行する場合、 `localhost` URL は必須ではありません。 Before you deploy the add-in, comment out that code.
+   > Visual Studio を Project Server コンピューター上で実行する場合、**F5** デバッグを使用するには、**_pwa** グローバル変数を初期化する行の後にあるコードのコメントを解除します。 Project Server コンピュータでデバッグするときに jQuery メソッドを使用できるようにするには、 `ajax` PWA URL の値を設定する必要があり `localhost` ます。Visual Studio をリモートコンピューターで実行する場合、 `localhost` URL は必須ではありません。 Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -367,12 +367,12 @@ HelloProjectOData ファイルの残りの部分には、次の2つ`retrieveODat
     }
     ```
 
-3. `retrieveOData`関数を追加します。この関数は、REST クエリの値を`ajax`連結し、jQuery の関数を呼び出して、 **projectdata**サービスから要求されたデータを取得します。 サポートされている**cors**変数は、 `ajax`関数との間でのクロスオリジンリソース共有 (cors) を有効にします。 サポートされている**cors**ステートメントが存在しない場合、または`ajax` **false**に設定されている場合、この関数は**No transport**エラーを返します。
+3. 関数を追加します `retrieveOData` 。この関数は、REST クエリの値を連結し、jQuery の関数を呼び出して、 `ajax` **projectdata**サービスから要求されたデータを取得します。 サポートされている**cors**変数は、関数との間でのクロスオリジンリソース共有 (cors) を有効にします。 `ajax` **サポート**されている cors ステートメントが存在しない場合、または**false**に設定されている場合、この `ajax` 関数は**No transport**エラーを返します。
 
    > [!NOTE]
    > 次に示すコードは、Project Server 2013 のオンプレミスのインストールで動作します。Project on the web の場合は、トークン ベースの認証に OAuth を使用できます。詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)」を参照してください。
 
-   `ajax`呼び出しでは、 _headers_パラメーターまたは_beforesend_パラメーターのいずれかを使用できます。 _Complete_パラメーターは、の`retrieveOData`変数と同じスコープにある匿名関数です。 _Complete_パラメーターの関数は、 `odataText`コントロールに結果を表示し、JSON 応答`parseODataResult`を解析して表示するメソッドも呼び出します。 _Error_パラメーターは、指定さ`getProjectDataErrorHandler`れた関数を指定します。この`odataText`関数は、エラーメッセージ`throwError`をコントロールに書き込み、また、このメソッドを使用してポップアップメッセージを表示します。
+   呼び出しでは `ajax` 、 _headers_パラメーターまたは_beforesend_パラメーターのいずれかを使用できます。 _Complete_パラメーターは、の変数と同じスコープにある匿名関数です `retrieveOData` 。 _Complete_パラメーターの関数は、コントロールに結果を表示 `odataText` し、 `parseODataResult` JSON 応答を解析して表示するメソッドも呼び出します。 _Error_パラメーターは、指定された関数を指定します。この関数は、 `getProjectDataErrorHandler` エラーメッセージをコントロールに書き込み、 `odataText` また、このメソッドを使用して `throwError` ポップアップメッセージを表示します。
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -428,9 +428,9 @@ HelloProjectOData ファイルの残りの部分には、次の2つ`retrieveODat
     }
     ```
 
-4. このメソッド`parseODataResult`を追加します。このメソッドは、OData サービスから JSON 応答を逆シリアル化し、処理します。 この`parseODataResult`メソッドは、コストと作業時間データの平均値を1桁または2桁の小数点以下の桁数で計算し、値を正しい**$** 色で書式設定**%** し、単位 (、**時間**、または) を追加して、指定された表のセルの値を表示します。
+4. この `parseODataResult` メソッドを追加します。このメソッドは、OData サービスから JSON 応答を逆シリアル化し、処理します。 この `parseODataResult` メソッドは、コストと作業時間データの平均値を1桁または2桁の小数点以下の桁数で計算し、値を正しい色で書式設定し、単位 ( **$** 、**時間**、または) を追加し **%** て、指定された表のセルの値を表示します。
 
-   アクティブなプロジェクトの GUID が`ProjectId`値と一致する場合、 `myProjectIndex`変数はプロジェクトインデックスに設定されます。 作業`myProjectIndex`中のプロジェクトが project Server で発行された`parseODataResult`場合、このメソッドはそのプロジェクトのコストと作業時間データを書式設定して表示します。 アクティブなプロジェクトが発行されていない場合は、アクティブなプロジェクトの値は青い **NA** と表示されます。
+   アクティブなプロジェクトの GUID が値と一致 `ProjectId` する場合、 `myProjectIndex` 変数はプロジェクトインデックスに設定されます。 `myProjectIndex`作業中のプロジェクトが Project Server で発行された場合、この `parseODataResult` メソッドはそのプロジェクトのコストと作業時間データを書式設定して表示します。 アクティブなプロジェクトが発行されていない場合は、アクティブなプロジェクトの値は青い **NA** と表示されます。
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -579,7 +579,7 @@ Visual Studio 2015 を使用して**HelloProjectOData**アドインをテスト�
 
     ![REST クエリの結果の表示](../images/pj15-hello-project-data-rest-results.png)
 
-6. テキスト ボックス内の出力を調べます。 これは、 **ajax**および**parseodataresult**への呼び出しからのドキュメントパス、REST クエリ、ステータス情報、および JSON 結果を表示する必要があります。 出力は、などの`parseODataResult`メソッドでコードを理解、作成、デバッグするの`projCost += Number(res.d.results[i].ProjectCost);`に便利です。
+6. テキスト ボックス内の出力を調べます。 これは、 **ajax**および**parseodataresult**への呼び出しからのドキュメントパス、REST クエリ、ステータス情報、および JSON 結果を表示する必要があります。 出力は、などのメソッドでコードを理解、作成、デバッグするのに便利 `parseODataResult` `projCost += Number(res.d.results[i].ProjectCost);` です。
 
     次に示すのは、Project Web App インスタンスの 3 つのプロジェクトの出力例です。わかりやすくするためにテキストに改行と空白を追加してあります。
 
@@ -652,7 +652,7 @@ Visual Studio 2015 を使用して**HelloProjectOData**アドインをテスト�
 - アドインに変更を加えて発行した場合は、発行したアドインで再び同様のテストを実行する必要があります。その他の考慮事項については、「[次のステップ](#next-steps)」を参照してください。
 
 > [!NOTE]
-> **Projectdata**サービスの1つのクエリで返されるデータの量には制限があります。データの量は、エンティティによって異なります。 たとえば、 `Projects`エンティティセットの既定の制限は、クエリごとに100プロジェクトですが、 `Risks`エンティティセットの既定の制限は200です。 For a production installation, the code in the **HelloProjectOData** example should be modified to enable queries of more than 100 projects. For more information, see [Next steps](#next-steps) and [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
+> **Projectdata**サービスの1つのクエリで返されるデータの量には制限があります。データの量は、エンティティによって異なります。 たとえば、 `Projects` エンティティセットの既定の制限は、クエリごとに100プロジェクトですが、 `Risks` エンティティセットの既定の制限は200です。 For a production installation, the code in the **HelloProjectOData** example should be modified to enable queries of more than 100 projects. For more information, see [Next steps](#next-steps) and [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>HelloProjectOData アドインのコード例
 
@@ -1107,7 +1107,7 @@ SurfaceErrors.js ファイルのコードは、「[テキスト エディター�
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- 100を`retrieveOData`超えるプロジェクトのクエリを有効にするように関数を書き直します。 たとえば、`~/ProjectData/Projects()/$count` クエリでプロジェクトの数を取得し、プロジェクト データの REST クエリで _$skip_ 操作と _$top_ 操作を使います。 ループの中で複数のクエリを実行し、各クエリからのデータを平均化します。 プロジェクトデータの各クエリは次の形式になります。 
+- `retrieveOData`100 を超えるプロジェクトのクエリを有効にするように関数を書き直します。 たとえば、`~/ProjectData/Projects()/$count` クエリでプロジェクトの数を取得し、プロジェクト データの REST クエリで _$skip_ 操作と _$top_ 操作を使います。 ループの中で複数のクエリを実行し、各クエリからのデータを平均化します。 プロジェクトデータの各クエリは次の形式になります。 
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

@@ -4,12 +4,12 @@ description: ExcelApi 1.5 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4860ef7153abea059d04cda5e8709c7bdbd88855
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: a722498f264ac8a681e91231d737451274b01c48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064761"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611422"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 の新機能
 
@@ -62,5 +62,5 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.5)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.5)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

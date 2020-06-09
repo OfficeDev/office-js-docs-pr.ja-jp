@@ -3,12 +3,12 @@ title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 9296c4ec52cb5a0069053efd418e964467a7d7a8
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1c9f6323e4bc904fd254f776e1f9c132b0050e91
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718889"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611990"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -21,10 +21,10 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 > [!NOTE]
 > 要素が間違った親の下にある場合とは異なり、 [office アドインマニフェスト内のバリデーター](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest)は、要素の順序が間違っている場合に同じエラーメッセージを使用します。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子*である*と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
 
-次のセクションでは、マニフェスト要素を表示する順序で示します。 `<OfficeApp>`要素の`type`属性が`TaskPaneApp`、 `ContentApp`、、のいずれであるかによって`MailApp`、相違点があります。 これらのセクションの扱いが大きくなりすぎないように`<VersionOverrides>`するため、非常に複雑な要素が別々のセクションに分割されます。
+次のセクションでは、マニフェスト要素を表示する順序で示します。 `type`要素の属性が、、、のいずれであるかによって、相違点があり `<OfficeApp>` `TaskPaneApp` `ContentApp` `MailApp` ます。 これらのセクションの扱いが大きくなりすぎないようにするため、非常に複雑な `<VersionOverrides>` 要素が別々のセクションに分割されます。
 
 > [!Note]
-> 表示されている要素の一部は必須ではありません。 スキーマで`minOccurs`要素の値が**0**の場合、 [schema](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)この要素は省略可能です。
+> 表示されている要素の一部は必須ではありません。 `minOccurs`[スキーマ](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)で要素の値が**0**の場合、この要素は省略可能です。
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウアドイン要素の順序付け
 
@@ -388,7 +388,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <VersionOverrides>*
 ```
 
-\*の`VersionOverridesV1_0`代わりに、 `type`値`VersionOverridesV1_1`を指定した VersionOverrides は、外部 versionoverrides の末尾にネストすることができます。 の要素`VersionOverridesV1_1`の順序については、「 [versionoverrides Overrides でのメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)」を参照してください。
+\*の代わりに、値を指定した VersionOverrides は `type` `VersionOverridesV1_1` `VersionOverridesV1_0` 、外部 versionoverrides の末尾にネストすることができます。 の要素の順序については、「 [VersionOverrides overrides でのメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)」を参照してください。 `VersionOverridesV1_1`
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.1
 

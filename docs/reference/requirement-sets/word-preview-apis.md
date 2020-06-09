@@ -4,12 +4,12 @@ description: 今後の Word JavaScript Api の詳細
 ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 1bc6cf2f4b8d8bf876d0b28ead9643f14c81fde1
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: bde7ff45c8352277b9aec38ecccb41333544172a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477902"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611275"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー Api
 
@@ -57,12 +57,12 @@ ms.locfileid: "36477902"
 ||[getBookmarkRangeOrNullObject (name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、null オブジェクトを返します。|
 ||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|ドキュメント内のカスタム XML パーツを取得します。 読み取り専用です。|
 ||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|コンテンツコントロールが追加されると発生します。 ハンドラーでコンテキスト sync () を実行して、新しいコンテンツコントロールのプロパティを取得します。|
-||[設定](/javascript/api/word/word.document#settings)|文書内のアドインの設定を取得します。 読み取り専用です。|
+||[settings](/javascript/api/word/word.document#settings)|文書内のアドインの設定を取得します。 読み取り専用です。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark (name: string)](/javascript/api/word/word.documentcreated#deletebookmark-name-)|ブックマークが存在する場合は、ドキュメントから削除します。|
 ||[getBookmarkRange (name: string)](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合にスローされます。|
 ||[getBookmarkRangeOrNullObject (name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|ブックマークの範囲を取得します。 ブックマークが存在しない場合は、null オブジェクトを返します。|
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|ドキュメント内のカスタム XML パーツを取得します。 読み取り専用です。|
-||[設定](/javascript/api/word/word.documentcreated#settings)|文書内のアドインの設定を取得します。 読み取り専用です。|
+||[settings](/javascript/api/word/word.documentcreated#settings)|文書内のアドインの設定を取得します。 読み取り専用です。|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|インライン画像の形式を取得します。 読み取り専用です。|
 |[List](/javascript/api/word/word.list)|[getLevelFont (level: number)](/javascript/api/word/word.list#getlevelfont-level-)|リスト内の指定されたレベルの行頭文字、番号、または図のフォントを取得します。|
 ||[getLevelPicture (level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|リスト内の指定されたレベルにある画像の base64 エンコード文字列表現を取得します。|
@@ -86,5 +86,5 @@ ms.locfileid: "36477902"
 
 ## <a name="see-also"></a>関連項目
 
-- [Word JavaScript API リファレンスドキュメント](/javascript/api/word)
+- [Word JavaScript API リファレンス ドキュメント](/javascript/api/word)
 - [Word JavaScript API の要件セット](word-api-requirement-sets.md)

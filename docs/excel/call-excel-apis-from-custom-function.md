@@ -3,12 +3,12 @@ title: カスタム関数から Microsoft Excel Api を呼び出す
 description: カスタム関数から呼び出すことができる Microsoft Excel Api について説明します。
 ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cdae939b70211367bee6317b9d5234d5b153c95
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: a25d3f151f648560ee24a3da3f689cb9767bd52a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44276023"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609805"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>カスタム関数から Microsoft Excel Api を呼び出す
 

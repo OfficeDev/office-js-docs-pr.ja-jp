@@ -4,12 +4,12 @@ description: ExcelApi 1.3 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d0ab1e0a1c41d6da0104c03355f64f5f5abbb3b2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 482d04a951acc48d34838a758834adfba273bd19
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064733"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611436"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
@@ -22,7 +22,7 @@ ExcelApi 1.3 には、データバインドと基本的なピボットテーブ�
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[delete()](/javascript/api/excel/excel.binding#delete--)|バインドを削除します。|
-|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[add (range: Range \| String, bindingtype: Excel. bindingtype, id: string)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|特定の範囲に新しいバインドを追加します。|
+|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[add (range: Range \| string, bindingtype: Excel. bindingtype, id: string)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|特定の範囲に新しいバインドを追加します。|
 ||[addFromNamedItem (name: string, bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|ブック内の名前付きアイテムに基づいて新しいバインドを追加します。|
 ||[addFromSelection (bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|現在の選択範囲に基づいて新しいバインドを追加します。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|ピボットテーブルの名前。|
@@ -57,5 +57,5 @@ ExcelApi 1.3 には、データバインドと基本的なピボットテーブ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.3)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.3)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

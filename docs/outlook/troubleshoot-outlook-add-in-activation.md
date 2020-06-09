@@ -3,12 +3,12 @@ title: Outlook コンテキスト アドインのアクティブ化のトラブ�
 description: アドインが期待どおりにアクティブにならない場合は、考えられる理由について、次の点を調査してください。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413183"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611632"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 

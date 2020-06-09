@@ -4,12 +4,12 @@ description: WordApi 1.1 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 30a4378a74b0d2848a5a913cbafd4f6eb780f519
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 9f7efdd0ce8f67a05d8197ec3005b2d6e9049409
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268573"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611310"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 の新機能
 
@@ -22,7 +22,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|本文オブジェクトの内容を消去します。ユーザーは、消去された内容を元に戻す操作を実行できます。|
-||[getHtml()](/javascript/api/word/word.body#gethtml--)|Body オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Body.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
+||[getHtml()](/javascript/api/word/word.body#gethtml--)|Body オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間での一貫性が必要な場合は、を使用 `Body.getOoxml()` して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|本文オブジェクトの OOXML (Office オープン XML) 表記を取得します。|
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 insertLocation の値には、'Start' または 'End' を指定できます。|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|リッチ テキスト コンテンツ コントロールで本文オブジェクトをラップします。|
@@ -46,7 +46,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[clear()](/javascript/api/word/word.contentcontrol#clear--)|コンテンツ コントロールの内容をクリアします。 ユーザーは、消去された内容を元に戻す操作を実行できます。|
 ||[color](/javascript/api/word/word.contentcontrol#color)|コンテンツ コントロールの色を取得または設定します。 色は、' #RRGGBB ' 形式で指定するか、色名を使用して指定します。|
 ||[削除 (keepContent: boolean)](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|コンテンツ コントロールとそのコンテンツを削除します。keepContent が true の場合、コンテンツは削除されません。|
-||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|コンテンツコントロールオブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`ContentControl.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
+||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|コンテンツコントロールオブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間での一貫性が必要な場合は、を使用 `ContentControl.getOoxml()` して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|コンテンツ コントロール オブジェクトの Office Open XML (OOXML) 表記を取得します。|
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 InsertLocation の値には、' Start '、' End '、' Before '、または ' After ' を指定できます。 このメソッドは、' RichTextTable '、' RichTextTableRow '、および ' RichTextTableCell ' のコンテンツコントロールと共に使用することはできません。|
 ||[insertFileFromBase64 (base64File: string, insertLocation: Word InsertLocation)](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|指定した位置にコンテンツコントロールにドキュメントを挿入します。 insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
@@ -75,7 +75,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[getItem(index: number)](/javascript/api/word/word.contentcontrolcollection#getitem-index-)|コレクション内のインデックスによってコンテンツコントロールを取得します。|
 ||[items](/javascript/api/word/word.contentcontrolcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[Document](/javascript/api/word/word.document)|[getSelection ()](/javascript/api/word/word.document#getselection--)|ドキュメントの現在の選択範囲を取得します。 複数選択はサポートされていません。|
-||[本文](/javascript/api/word/word.document#body)|文書の本文オブジェクトを取得します。 本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。 読み取り専用です。|
+||[body](/javascript/api/word/word.document#body)|文書の本文オブジェクトを取得します。 本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。 読み取り専用です。|
 ||[contentControls](/javascript/api/word/word.document#contentcontrols)|文書内のコンテンツコントロールオブジェクトのコレクションを取得します。 これには、文書、ヘッダー、フッター、テキストボックスなどの本文にコンテンツコントロールが含まれます。 読み取り専用です。|
 ||[更新](/javascript/api/word/word.document#saved)|ドキュメント内の変更が保存されているかどうかを示します。値 true は、ドキュメントが保存されてから変更されていないことを示します。読み取り専用です。|
 ||[sections](/javascript/api/word/word.document#sections)|ドキュメント内の section オブジェクトのコレクションを取得します。 読み取り専用です。|
@@ -105,7 +105,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[clear()](/javascript/api/word/word.paragraph#clear--)|段落オブジェクトの内容をクリアします。ユーザーは、消去された内容を元に戻す操作を実行できます。|
 ||[delete()](/javascript/api/word/word.paragraph#delete--)|文書から段落と、その段落の内容を削除します。|
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstlineindent)|最初の行のインデントまたはぶら下げインデントの値をポイント数単位で取得または設定します。最初の行のインデントを設定するには、正の値を使用します。また、ぶら下げインデントを設定するには、負の値を使用します。|
-||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Paragraph オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Paragraph.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
+||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Paragraph オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間での一貫性が必要な場合は、を使用 `Paragraph.getOoxml()` して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|Paragraph オブジェクトの Office Open XML (OOXML) 表記を取得します。|
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|段落オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。|
@@ -134,7 +134,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear--)|範囲オブジェクトの内容をクリアします。ユーザーは、クリアしたコンテンツを元に戻す操作を実行できます。|
 ||[delete()](/javascript/api/word/word.range#delete--)|文書から範囲と、その範囲の内容を削除します。|
-||[getHtml()](/javascript/api/word/word.range#gethtml--)|Range オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間で`Range.getOoxml()`の一貫性が必要な場合は、を使用して、返された XML を HTML に変換します。|
+||[getHtml()](/javascript/api/word/word.range#gethtml--)|Range オブジェクトの HTML 表記を取得します。 Web ページまたは HTML ビューアーでレンダリングされる場合、書式設定は、ドキュメントの書式設定と完全に一致しますが、完全に一致するとは限りません。 このメソッドは、異なるプラットフォーム (Windows、Mac など) の同じドキュメントに対して、まったく同じ HTML を返しません。 厳密な忠実性、または複数のプラットフォーム間での一貫性が必要な場合は、を使用 `Range.getOoxml()` して、返された XML を HTML に変換します。|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|Range オブジェクトの OOXML 表記を取得します。|
 ||[insertBreak (breakType: BreakType, Insertbreak: Word Insertbreak)](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|メイン文書の指定した位置に、区切りを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|範囲オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。|
@@ -162,10 +162,10 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[matchWildcards](/javascript/api/word/word.searchoptions#matchwildcards)|特殊な検索演算子を使用して検索を実行するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [ワイルドカードを使用する] チェック ボックスに相当します。|
 |[Section](/javascript/api/word/word.section)|[getFooter (type: Word Headerfooter Type)](/javascript/api/word/word.section#getfooter-type-)|セクションのフッターの 1 つを取得します。|
 ||[getHeader (type: Word Headerフッターの種類)](/javascript/api/word/word.section#getheader-type-)|セクションのヘッダーの 1 つを取得します。|
-||[本文](/javascript/api/word/word.section#body)|セクションの本文オブジェクトを取得します。 これには、ヘッダー/フッターおよびその他のセクションメタデータは含まれません。 読み取り専用です。|
+||[body](/javascript/api/word/word.section#body)|セクションの本文オブジェクトを取得します。 これには、ヘッダー/フッターおよびその他のセクションメタデータは含まれません。 読み取り専用です。|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[items](/javascript/api/word/word.sectioncollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 
 ## <a name="see-also"></a>関連項目
 
-- [Word JavaScript API リファレンスドキュメント](/javascript/api/word)
+- [Word JavaScript API リファレンス ドキュメント](/javascript/api/word)
 - [Word JavaScript API の要件セット](word-api-requirement-sets.md)

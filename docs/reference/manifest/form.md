@@ -3,19 +3,19 @@ title: マニフェスト ファイルの Form 要素
 description: メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e8d60c13a72a50090075d7cd16a0719498c4982
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: c9cd1d9104fc51edc84149ef677c4308dfb1a9f5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215069"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611856"
 ---
 # <a name="form-element"></a>Form 要素
 
 メール アドインが特定のデバイス (デスクトップ、タブレット、または電話) で実行されているときに使用するフォームの UX の設定。
 
 > [!IMPORTANT]
-> 、、および`PhoneSettings`要素は、従来の web 上の outlook (通常は社内の Exchange server の古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 `DesktopSettings` `TabletSettings`
+> 、 `DesktopSettings` 、 `TabletSettings` および要素は、 `PhoneSettings` 従来の Web 上の outlook (通常は社内の Exchange server の古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。
 
 **アドインの種類:** メール
 

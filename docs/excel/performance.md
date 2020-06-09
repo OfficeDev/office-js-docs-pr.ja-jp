@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785739"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610355"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -52,13 +52,13 @@ worksheet.getRange("A1").set({
 
 Excel JavaScript API では、プロキシ オブジェクトのプロパティを明示的にロードする必要があります。  空の `load()` 呼び出しで、すべてのプロパティを一度にロードすることはできますが、そのアプローチは大きなパフォーマンス オーバーヘッドを持つ可能性があります。  代わりに、必要なプロパティだけをロードすることをお勧めします。特に、多数のプロパティを持つオブジェクトの場合はそうして下さい。
 
-たとえば、range オブジェクトの`address`プロパティのみを読み取る場合は、 `load()`メソッドを呼び出すときにそのプロパティのみを指定します。
+たとえば、range オブジェクトのプロパティのみを読み取る場合は、 `address` メソッドを呼び出すときにそのプロパティのみを指定し `load()` ます。
 
 ```js
 range.load('address');
 ```
 
-メソッドは、 `load()`次のいずれかの方法で呼び出すことができます。
+`load()`メソッドは、次のいずれかの方法で呼び出すことができます。
 
 _構文:_
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _各部分の意味は次のとおりです。_
 
-* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、 `load()` 「 [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)」のオブジェクトに対して定義されているメソッドを参照してください。
+* `properties` は、ロードするプロパティの一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、「 `load()` [EXCEL JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)」のオブジェクトに対して定義されているメソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
 オブジェクトの [プロパティ] の中には、別のオブジェクトと同じ名前を持つものがあることに注意してください。 例えば、`format` は範囲オブジェクトの下のプロパティですが、`format` それ自体もオブジェクトです。 そのため、`range.load("format")` のような呼び出しをすると、これは以前に概説したように、パフォーマンスの問題を引き起こす可能性のある空の load() 呼び出しである `range.format.load()` に相当します。 これを回避するには、コードでオブジェクトツリーの "葉 nodes" のみを読み込む必要があります。
@@ -133,7 +133,7 @@ Excel.run(async function(ctx) {
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
 
 > [!NOTE]
-> 繰り返し呼び出し`suspendScreenUpdatingUntilNextSync`ない (ループの場合など)。 呼び出しが繰り返し行われると、Excel ウィンドウがちらつくようになります。
+> 繰り返し呼び出しない `suspendScreenUpdatingUntilNextSync` (ループの場合など)。 呼び出しが繰り返し行われると、Excel ウィンドウがちらつくようになります。
 
 ### <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 

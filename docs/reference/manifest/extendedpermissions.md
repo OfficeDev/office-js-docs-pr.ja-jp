@@ -3,12 +3,12 @@ title: マニフェストファイルの ExtendedPermissions 要素
 description: アドインが関連する Api または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 86d898052af6ba0e6f6bc8b341fff9f0f8408967
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718224"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611534"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 要素
 
@@ -25,7 +25,7 @@ ms.locfileid: "42718224"
 
 ## <a name="extendedpermissions-example"></a>`ExtendedPermissions`例
 
-`ExtendedPermissions`要素の例を次に示します。
+要素の例を次に示し `ExtendedPermissions` ます。
 
 ```XML
 ...

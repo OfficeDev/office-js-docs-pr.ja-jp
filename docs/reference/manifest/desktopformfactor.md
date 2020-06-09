@@ -3,12 +3,12 @@ title: マニフェスト ファイルの DesktopFormFactor 要素
 description: デスクトップフォームファクター用のアドインの設定を指定します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bfea6900e6b07d8dc7ad5b5256703d873242d88c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 46de234f2d97a9e6c7645c17a0f0a61d0c3e1a80
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718364"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612284"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Icon 要素
 description: ボタン または メニュー コントロールの Image 要素を定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a17f43352b306850c853c230f6a3617eb165ca14
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dcf6de189477ad7dbe52b0f1122177441cd262d8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718091"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611800"
 ---
 # <a name="icon-element"></a>Icon 要素
 

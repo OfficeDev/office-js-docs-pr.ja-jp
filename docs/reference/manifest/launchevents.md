@@ -3,12 +3,12 @@ title: マニフェストファイル内の LaunchEvents (プレビュー)
 description: LaunchEvents 要素は、サポートされているイベントに基づいてアクティブになるようにアドインを構成します。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2e1ad56d405fca0f85fad500a113fba7d0448caf
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 92416f8c646326410a8cd9ee7831e17a5c5f1ffc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278556"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611772"
 ---
 # <a name="launchevents-element-preview"></a>LaunchEvents 要素 (プレビュー)
 

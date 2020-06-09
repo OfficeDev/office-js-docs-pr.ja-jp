@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 作業ウィンドウおよび特定の JavaScript ランタイムを使用しない Excel カスタム関数について説明します。
 title: UI レス Excel カスタム関数のランタイム
 localization_priority: Normal
-ms.openlocfilehash: 31044d4569d230e252c05a39785fc7d47b802e37
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 5cb9aa480d6923d31434d58a9683e9a9f5d48458
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278358"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609644"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>UI レス Excel カスタム関数のランタイム
 

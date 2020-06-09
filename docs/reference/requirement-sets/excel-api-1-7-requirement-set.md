@@ -4,12 +4,12 @@ description: ExcelApi 1.7 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596992"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611408"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -206,7 +206,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[items](/javascript/api/excel/excel.custompropertycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[DataConnectionCollection](/javascript/api/excel/excel.dataconnectioncollection)|[refreshAll ()](/javascript/api/excel/excel.dataconnectioncollection#refreshall--)|コレクションに含まれるすべてのデータ接続を更新します。|
 |[DocumentProperties](/javascript/api/excel/excel.documentproperties)|[判別](/javascript/api/excel/excel.documentproperties#author)|ブックの作成者を取得または設定します。|
-||[項目](/javascript/api/excel/excel.documentproperties#category)|ブックのカテゴリを取得または設定します。|
+||[category](/javascript/api/excel/excel.documentproperties#category)|ブックのカテゴリを取得または設定します。|
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|ブックのコメントを取得または設定します。|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|ブックの会社を取得または設定します。|
 ||[キーワード](/javascript/api/excel/excel.documentproperties#keywords)|ブックのキーワードを取得または設定します。|
@@ -230,7 +230,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[isEntireRow](/javascript/api/excel/excel.range#isentirerow)|現在の範囲が行全体であるかどうかを表します。 読み取り専用です。|
 ||[showCard ()](/javascript/api/excel/excel.range#showcard--)|アクティブ セルに多数の値が含まれる場合、そのセルのカードを表示します。|
 ||[style](/javascript/api/excel/excel.range#style)|現在の範囲のスタイルを表します。|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[textOrientation](/javascript/api/excel/excel.rangeformat#textorientation)|該当する範囲内のすべてのセルのテキストの向きを設定します。|
+|[範囲の形式](/javascript/api/excel/excel.rangeformat)|[textOrientation](/javascript/api/excel/excel.rangeformat#textorientation)|該当する範囲内のすべてのセルのテキストの向きを設定します。|
 ||[useStandardHeight](/javascript/api/excel/excel.rangeformat#usestandardheight)|Range オブジェクトの行の高さを、シートの標準の高さと等しくするかどうかを指定します。|
 ||[useStandardWidth](/javascript/api/excel/excel.rangeformat#usestandardwidth)|Range オブジェクトの列の幅が、シートの標準の幅と等しいかどうかを示します。|
 |[RangeHyperlink](/javascript/api/excel/excel.rangehyperlink)|[address](/javascript/api/excel/excel.rangehyperlink#address)|ハイパーリンクの URL ターゲットを表します。|
@@ -320,7 +320,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|イベントのソースを取得します。 詳細については、Excel.EventSource をご覧ください。|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetid)|ブックから削除されたワークシートの ID を取得します。|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange: Range \|文字列)](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|アクティブなワークシート ビューに固定セルを設定します。|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange: Range \| 文字列)](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|アクティブなワークシート ビューに固定セルを設定します。|
 ||[freezeColumns (count?: number)](/javascript/api/excel/excel.worksheetfreezepanes#freezecolumns-count-)|ワークシートの最初の列 (複数可) を所定の場所に固定します。|
 ||[Freeゼロ Ws (count?: number)](/javascript/api/excel/excel.worksheetfreezepanes#freezerows-count-)|ワークシートの最初の行 (複数可) を所定の場所に固定します。|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getlocation--)|アクティブなワークシート ビュー内の固定セルを記述する範囲を取得します。|

@@ -4,12 +4,12 @@ description: ExcelApi 1.8 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4a512b10dd23b2165d72226d9df27d5f9454c24e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42597006"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611401"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 の新機能
 
@@ -241,7 +241,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[階層](/javascript/api/excel/excel.pivottable#hierarchies)|ピボットテーブルのピボット階層。|
 ||[配列](/javascript/api/excel/excel.pivottable#layout)|ピボットテーブルのレイアウトとビジュアル構造を記述する PivotLayout。|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#rowhierarchies)|ピボットテーブルの行ピボット階層。|
-|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add (name: string, source: Range \| string \| Table, destination: range \| string)](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|指定したソース データに基づくピボットテーブルを追加し、コピー先範囲の左上のセルに挿入します。|
+|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add (name: string, source: Range \| string \| Table, Destination: range \| string)](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|指定したソース データに基づくピボットテーブルを追加し、コピー先範囲の左上のセルに挿入します。|
 |[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|dataValidation オブジェクトを返します。|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|RowColumnPivotHierarchy の名前。|
 ||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|RowColumnPivotHierarchy の位置。|

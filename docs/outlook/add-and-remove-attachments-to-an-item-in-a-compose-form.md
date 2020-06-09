@@ -3,12 +3,12 @@ title: Outlook アドインで添付ファイルを追加および削除する
 description: さまざまな添付ファイル Api を使用して、ユーザーが作成しているアイテムに添付されたファイルまたは Outlook アイテムを管理できます。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bb966ff80bae37fbaa781b5a428f6e26391aa9f4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720884"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611674"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Outlook で新規作成フォーム内のアイテムの添付ファイルを管理する
 
@@ -41,7 +41,7 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 
 ### <a name="attach-a-file"></a>ファイルを添付する
 
-`addFileAttachmentAsync`メソッドを使用してファイルの URI を指定することによって、新規作成フォーム内のメッセージまたは予定にファイルを添付することができます。 `addFileAttachmentFromBase64Async`メソッドを使用することもできますが、入力として base64 文字列を指定することもできます。 If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
+メソッドを使用してファイルの URI を指定することによって、新規作成フォーム内のメッセージまたは予定にファイルを添付することができ `addFileAttachmentAsync` ます。 メソッドを使用することもでき `addFileAttachmentFromBase64Async` ますが、入力として base64 文字列を指定することもできます。 If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
 
 次の JavaScript 例は、picture.png ファイルを web サーバーから取得して新規作成中のメッセージあるいは予定に添付する新規作成アドインです。コールバック メソッドはパラメーターとして `asyncResult` を使用し、結果の状態を確認し、メソッドが成功した場合に添付ファイル ID を取得します。
 
@@ -84,7 +84,7 @@ function write(message){
 
 新規作成フォームで、メッセージまたは予定に Outlook アイテム (メール、予定表、連絡先のアイテムなど) を添付するには、そのアイテムの Exchange Web Service (EWS) の ID を指定して `addItemAttachmentAsync` メソッドを使用します。[mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用し、EWS 操作である [FindItem](/exchange/client-developer/web-service-reference/finditem-operation) にアクセスすることにより、ユーザーのメールボックス内の電子メール、予定表、連絡先、タスク アイテムの EWS ID を取得することができます。[item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティはまた、閲覧フォーム内の既存アイテムの EWS ID も提供します。
 
-次の JavaScript 関数`addItemAttachment`は、上の最初の例を拡張し、作成中の電子メールまたは予定の添付ファイルとしてアイテムを追加します。 この関数は、添付するアイテムの EWS ID を引数として受け取ります。 接続が成功した場合は、同じセッションでその添付ファイルを削除するなど、追加の処理のための添付ファイル ID を取得します。
+次の JavaScript 関数は、 `addItemAttachment` 上の最初の例を拡張し、作成中の電子メールまたは予定の添付ファイルとしてアイテムを追加します。 この関数は、添付するアイテムの EWS ID を引数として受け取ります。 接続が成功した場合は、同じセッションでその添付ファイルを削除するなど、追加の処理のための添付ファイル ID を取得します。
 
 ```js
 // Adds the specified item as an attachment to the composed item.
@@ -122,7 +122,7 @@ function addItemAttachment(itemId) {
 
 添付ファイルのコンテンツを取得するには、 [Getattachmentcontentasync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)メソッドを使用します。 サポートされている形式は、 [Attachmentcontentformat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)列挙体に一覧表示されています。
 
-`AsyncResult`出力パラメータオブジェクトを使用して、ステータスとエラーを確認するコールバックメソッドを提供する必要があります。 オプション`asyncContext`のパラメーターを使用して、コールバックメソッドに追加のパラメーターを渡すこともできます。
+出力パラメータオブジェクトを使用して、ステータスとエラーを確認するコールバックメソッドを提供する必要があり `AsyncResult` ます。 オプションのパラメーターを使用して、コールバックメソッドに追加のパラメーターを渡すこともでき `asyncContext` ます。
 
 次の JavaScript の例では、添付ファイルを取得し、サポートされている添付ファイルの形式ごとに個別の処理をセットアップできるようにします。
 
@@ -162,9 +162,9 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>添付ファイルを削除する
 
-新規作成フォームのメッセージまたは予定アイテムからファイルまたはアイテムの添付ファイルを削除するには、対応する添付ファイル ID を指定し、 [Removeattachmentasync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)メソッドを使用します。 同じアドインが同じセッションで追加した添付ファイルのみを削除する必要があります。 `addFileAttachmentAsync`およびメソッドと`addItemAttachmentAsync`同様に、 `removeAttachmentAsync`は非同期メソッドです。 `AsyncResult`出力パラメータオブジェクトを使用して、ステータスとエラーを確認するコールバックメソッドを提供する必要があります。 オプション`asyncContext`のパラメーターを使用して、コールバックメソッドに追加のパラメーターを渡すこともできます。
+新規作成フォームのメッセージまたは予定アイテムからファイルまたはアイテムの添付ファイルを削除するには、対応する添付ファイル ID を指定し、 [Removeattachmentasync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)メソッドを使用します。 同じアドインが同じセッションで追加した添付ファイルのみを削除する必要があります。 `addFileAttachmentAsync`およびメソッドと同様に `addItemAttachmentAsync` 、 `removeAttachmentAsync` は非同期メソッドです。 出力パラメータオブジェクトを使用して、ステータスとエラーを確認するコールバックメソッドを提供する必要があり `AsyncResult` ます。 オプションのパラメーターを使用して、コールバックメソッドに追加のパラメーターを渡すこともでき `asyncContext` ます。
 
-次の JavaScript 関数`removeAttachment`は、上記の例を引き続き拡張し、作成されている電子メールまたは予定から指定された添付ファイルを削除します。 この関数は、削除する添付ファイルの ID を引数として受け取ります。 添付ファイルの ID を取得するには、成功`addFileAttachmentAsync` `addFileAttachmentFromBase64Async`した、 `addItemAttachmentAsync`またはメソッドが呼び出された後に`removeAttachmentAsync` 、以降のメソッド呼び出しに対して保存します。
+次の JavaScript 関数は、上記の例を引き続き拡張し、作成されている `removeAttachment` 電子メールまたは予定から指定された添付ファイルを削除します。 この関数は、削除する添付ファイルの ID を引数として受け取ります。 添付ファイルの ID を取得するには、成功した、 `addFileAttachmentAsync` `addFileAttachmentFromBase64Async` またはメソッドが呼び出された後に、以降の `addItemAttachmentAsync` メソッド呼び出しに対して保存し `removeAttachmentAsync` ます。
 
 ```js
 // Removes the specified attachment from the composed item.

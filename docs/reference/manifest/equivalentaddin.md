@@ -3,12 +3,12 @@ title: マニフェストファイルの EquivalentAddin 要素
 description: 同等の COM アドインまたは XLL の下位互換性を指定します。
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 425b926901b7325665eeede04263f74e4b854d50
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718287"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611562"
 ---
 # <a name="equivalentaddin-element"></a>EquivalentAddin 要素
 
@@ -30,16 +30,16 @@ ms.locfileid: "42718287"
 
 ## <a name="must-contain"></a>含める必要があるもの
 
-[型](type.md)
+[種類](type.md)
 
 ## <a name="can-contain"></a>含めることができるもの
 
-[ProgId](progid.md)
+[ProgId](progid.md) 
 [ファイル名](filename.md)
 
 ## <a name="remarks"></a>注釈
 
-COM アドインを同等のアドインとして指定するには、と`ProgId` `Type`の両方の要素を指定します。 XLL を同等のアドインとして指定するには、と`FileName` `Type`の両方の要素を指定します。
+COM アドインを同等のアドインとして指定するには、との両方の要素を指定し `ProgId` `Type` ます。 XLL を同等のアドインとして指定するには、との両方の要素を指定し `FileName` `Type` ます。
 
 ## <a name="see-also"></a>関連項目
 

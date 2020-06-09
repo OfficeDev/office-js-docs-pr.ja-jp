@@ -4,12 +4,12 @@ description: WordApi 1.2 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: f6fce3994daa77cb556ebcea6cad7d38a48c2da5
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 6fd2672462037d445c854bbc0c533c4dc5404b86
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064887"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611303"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 の新機能
 
@@ -38,5 +38,5 @@ WordApi 1.2 インライン画像のサポートが追加されました。
 
 ## <a name="see-also"></a>関連項目
 
-- [Word JavaScript API リファレンスドキュメント](/javascript/api/word)
+- [Word JavaScript API リファレンス ドキュメント](/javascript/api/word)
 - [Word JavaScript API の要件セット](word-api-requirement-sets.md)

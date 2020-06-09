@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Host 要素
 description: アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: b9f03e6d6b028ca6f4616ae81b8fd76601256793
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5db9df97c4ba558d54756b983a26cb7b71e049d5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718133"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611814"
 ---
 # <a name="host-element"></a>Host 要素
 

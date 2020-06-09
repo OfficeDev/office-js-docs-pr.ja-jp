@@ -4,12 +4,12 @@ description: 動的リボン Api をサポートしている Office プラット
 ms.date: 05/28/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3f7498dbb495df71126623205bf42a19b6c51442
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: 6625dbb0612b3ee79c5b97c0fd3aa28f214258a3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "44520392"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611324"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -21,7 +21,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 |  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降 (Windows)<br>(1 回限りの購入)   | Windows での Office\*<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続済み)  |  Office on Mac\*<br>(Office 365 サブスクリプションに接続済み)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | 該当なし | 該当なし | バージョン 2002 (ビルド 12527.20264) 以降 | 16.38 以降 | 該当なし | 2020 年 2 月 | 該当なし|
+| RibbonApi 1.1  | N/A | N/A | バージョン 2002 (ビルド 12527.20264) 以降 | 16.38 以降 | N/A | 2020 年 2 月 | N/A|
 
 > **&#42;** プレビューフェーズでは、リボン API は Excel でのみサポートされており、Office 365 (Office のサブスクリプション版) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが graduates の半期チャネルに対して実行されている場合、リボン API を含むプレビュー機能のサポートは、そのビルドに対して無効になっていることに注意してください。
 

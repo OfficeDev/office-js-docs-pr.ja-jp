@@ -3,12 +3,12 @@ title: ドキュメントが開いたときに Excel アドインでコードを
 description: ドキュメントが開いたときに、Excel アドインでコードを実行します。
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: f544140a08a81c69aeb2fbdbe53afc098a738ad1
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: c0e8493b5437a1a8b59d689bbbdd794fa98d89a2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "44275764"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610350"
 ---
 # <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>ドキュメントが開いたときに Excel アドインでコードを実行する
 

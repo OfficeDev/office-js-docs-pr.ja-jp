@@ -3,12 +3,12 @@ title: テスト用に iPad と Mac で Office アドインをサイドロード
 description: サイドロードを使用して iPad および Mac で Office アドインをテストする
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719778"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611141"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -65,13 +65,13 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
     - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. コマンド`open .` (ピリオドまたはドットを含む) を使用して、 **Finder**でフォルダーを開きます。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
+2. コマンド**Finder** `open .` (ピリオドまたはドットを含む) を使用して、Finder でフォルダーを開きます。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
 
     ![Office on Mac の Wef フォルダー](../images/all-my-files.png)
 
 3. Word を起動し、ドキュメントを開きます。既に起動している場合は、Word を再起動します。
 
-4. Word で、**[アドインの** > **挿入** > ] (ドロップダウンメニュー) を選択し **、アドインを**選択します。
+4. Word で、[アドインの**挿入**  >  **Add-ins**  >  **My Add-ins** ] (ドロップダウンメニュー) を選択し、アドインを選択します。
 
     ![Office on Mac の個人用アドイン](../images/my-add-ins-wikipedia.png)
 

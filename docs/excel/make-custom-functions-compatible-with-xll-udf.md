@@ -3,12 +3,12 @@ title: XLL ユーザー定義関数を使用してカスタム関数を拡張す
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 82f4dba3bd82743efd84a2fe88c893042c061461
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 06a776678c60a4b66494097385f304ddac9a4ce0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275771"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610362"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
@@ -66,7 +66,7 @@ ms.locfileid: "44275771"
 | 揮発性関数 | はい | はい | はい |
 | マルチスレッドの再計算のサポート | はい | はい | はい |
 | 計算動作 | UI がありません。 計算中に Excel が応答しなくなることがあります。 | ユーザーには #BUSY が表示されます。 を返します。 | ユーザーには #BUSY が表示されます。 を返します。 |
-| 要件セット | 該当なし | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
+| 要件セット | N/A | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
 
 ## <a name="see-also"></a>関連項目
 

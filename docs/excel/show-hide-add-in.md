@@ -3,12 +3,12 @@ title: 共有ランタイムで Office アドインを表示または非表示�
 description: 連続して実行している間にプログラムでアドインのユーザーインターフェイスを表示または非表示にする方法について説明します。
 ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 9b6c3384fda32854e26cc4852d5bd27d77fae544
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275715"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610334"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>共有ランタイムで Office アドインを表示または非表示にする
 

@@ -3,12 +3,12 @@ title: PowerPoint アドインでドキュメントのテーマを使用する
 description: プレゼンテーション、ドキュメント、ワークシート、および電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217789"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611927"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 

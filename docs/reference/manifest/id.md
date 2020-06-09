@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Id 要素
 description: Id 要素は、Office アドインの一意の ID を GUID として指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 137daee6346f3320697cfc52963d8e98d147e5d8
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3df4277b19878a5fe358d1458ec69a694e5d87d0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720562"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611786"
 ---
 # <a name="id-element"></a>Id 要素
 

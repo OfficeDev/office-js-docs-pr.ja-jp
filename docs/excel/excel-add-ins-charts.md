@@ -3,17 +3,17 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: Excel JavaScript API を使用したグラフタスクをデモンストレーションするコードサンプルです。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 5dd6c2752c0ab6470c58049aa80ff4f6ebcff76a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9763657fc245a509d21267511d8d1c706e1d389e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719582"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609637"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。
-およびオブジェクトがサポートするプロパティとメソッドの完全な一覧については、「 [Chart オブジェクト (JAVASCRIPT api For excel)](/javascript/api/excel/excel.chart) 」および「 [chart Collection オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。 `ChartCollection` `Chart`
+およびオブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Chart` `ChartCollection` ては、「 [Chart オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chart) 」および「 [CHART Collection オブジェクト (javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。
 
 ## <a name="create-a-chart"></a>グラフの作成
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 グラフの数値軸の目盛線を表示するには、をに`chart.axes.valueAxis.majorGridlines.visible` `true`設定します。
+次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 グラフの数値軸の目盛線を表示するには、 `chart.axes.valueAxis.majorGridlines.visible` をに設定し `true` ます。
 
 ```js
 Excel.run(function (context) {
@@ -169,7 +169,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
-次のコードサンプルでは、 **sample**と`Linear`いう名前のワークシートの最初のグラフの最初のデータ系列の近似曲線の種類を設定します。
+次のコードサンプルでは、 `Linear` **sample**という名前のワークシートの最初のグラフの最初のデータ系列の近似曲線の種類を設定します。
 
 ```js
 Excel.run(function (context) {

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの OfficeApp 要素
 description: OfficeApp 要素は、Office アドインマニフェストのルート要素です。
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 038933f2d06ee5f485dbdb7dd7abdbd95fb97c7d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b6f3102a97794a19366b06734789e01fc4bc4f9d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720597"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611527"
 ---
 # <a name="officeapp-element"></a>OfficeApp 要素
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの ProviderName 要素
 description: ProviderName 要素は、この Office アドインを開発した個人または会社の名前を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 51a9b8febd6f9a08d93722e9aab8026d5ef7b130
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f97acfa32b742edf55dd50a2dc00fd113cb02411
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720464"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611744"
 ---
 # <a name="providername-element"></a>ProviderName 要素
 

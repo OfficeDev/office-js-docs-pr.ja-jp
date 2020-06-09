@@ -3,12 +3,12 @@ title: マニフェスト ファイルの OfficeMenu 要素
 description: Office のコンテキストメニューに追加するコントロールのコレクションを定義するのは、OfficeMenu 要素です。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 89503533f7310898a420eb805d5fd66f096ad5f2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f5aac4e3454e1aa18021c10bfb2f06df90805980
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718049"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611520"
 ---
 # <a name="officemenu-element"></a>OfficeMenu 要素
 

@@ -4,12 +4,12 @@ description: イベントベースのライセンス認証用に Outlook アド�
 ms.topic: article
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 73cdd4949b870d9bc5a5ad2006ce2081575558df
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: 43c1f50f7758efed6472b4d54841c6ed662a20bc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413197"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611653"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 

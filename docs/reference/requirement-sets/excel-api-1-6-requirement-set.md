@@ -4,12 +4,12 @@ description: ExcelApi 1.6 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: f86a470d39bacfe4940a6c225b9ce7d8903e2092
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064908"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611415"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -26,7 +26,7 @@ ms.locfileid: "36064908"
 
 * 条件付き書式が適用された範囲を返す。
 * 条件付き書式を削除する。
-* 優先度と`stopifTrue`機能を提供します。
+* 優先度と `stopifTrue` 機能を提供します。
 * 指定した範囲のすべての条件付き書式のコレクションを取得する。
 * 現在指定している範囲でアクティブなすべての条件付き書式をクリアする。
 
@@ -149,5 +149,5 @@ ms.locfileid: "36064908"
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.6)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.6)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

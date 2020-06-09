@@ -3,12 +3,12 @@ title: Office アドインのマニフェストを検証する
 description: XML スキーマおよびその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: fee4fd048092734eb479f1993c69fcf99c153c79
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547234"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611100"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -43,7 +43,7 @@ npm run validate
     ```
 
     > [!NOTE]
-    > このコマンドが使用できない、または動作しない場合は、代わりに次のコマンドを実行して、最新バージョンの office アドインマニフェストツール (マニフェスト`MANIFEST_FILE`ファイルの名前に置き換えられます) を強制的に使用します。
+    > このコマンドが使用できない、または動作しない場合は、代わりに次のコマンドを実行して、最新バージョンの office アドインマニフェストツール ( `MANIFEST_FILE` マニフェストファイルの名前に置き換えられます) を強制的に使用します。
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE

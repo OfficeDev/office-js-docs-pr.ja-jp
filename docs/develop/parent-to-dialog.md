@@ -3,12 +3,12 @@ title: ホストページからダイアログボックスにデータとメッ�
 description: MessageChild および DialogParentMessageReceived Api を使用して、ホストページからダイアログにデータを渡す方法について説明します。
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 3bef98294b15c2787b707cee4861cc9932f98166
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547058"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609409"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>ホストページからダイアログボックスにデータとメッセージを渡す (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "43547058"
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-## <a name="use-messagechild-from-the-host-page"></a>ホスト`messageChild()`ページからの使用
+## <a name="use-messagechild-from-the-host-page"></a>`messageChild()`ホストページからの使用
 
 Office ダイアログ API を呼び出してダイアログボックスを開くと、 [dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるため、通常は[Displaydialogasync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)メソッドよりも広いスコープがある変数に割り当てる必要があります。 例を次に示します。
 
@@ -43,9 +43,9 @@ function processMessage(arg) {
 }
 ```
 
-この`Dialog`オブジェクトには、すべての文字列または文字列データをダイアログボックスに送信する[messageChild](/javascript/api/office/office.dialog#messagechild-message-)メソッドがあります。 これにより`DialogParentMessageReceived` 、ダイアログボックスでイベントが発生します。 コードでは、次のセクションに示すように、このイベントを処理する必要があります。
+このオブジェクトには、 `Dialog` すべての文字列または文字列データをダイアログボックスに送信する[messageChild](/javascript/api/office/office.dialog#messagechild-message-)メソッドがあります。 これにより `DialogParentMessageReceived` 、ダイアログボックスでイベントが発生します。 コードでは、次のセクションに示すように、このイベントを処理する必要があります。
 
-ダイアログの UI が現在アクティブなワークシートと関連付けられ、他のワークシートを基準としたワークシートの相対位置になるシナリオを考えてみます。 次の例では`sheetPropertiesChanged` 、Excel ワークシートのプロパティをダイアログボックスに送信します。 この例では、現在のワークシートの名前は "My Sheet" で、ブックの2番目のシートです。 データは、文字列のオブジェクトにカプセル化されるので、に`messageChild`渡すことができます。
+ダイアログの UI が現在アクティブなワークシートと関連付けられ、他のワークシートを基準としたワークシートの相対位置になるシナリオを考えてみます。 次の例では、 `sheetPropertiesChanged` Excel ワークシートのプロパティをダイアログボックスに送信します。 この例では、現在のワークシートの名前は "My Sheet" で、ブックの2番目のシートです。 データは、文字列のオブジェクトにカプセル化されるので、に渡すことができ `messageChild` ます。
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -60,7 +60,7 @@ function sheetPropertiesChanged() {
 
 ## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログボックスで DialogParentMessageReceived を処理する
 
-ダイアログボックスの JavaScript で、 `DialogParentMessageReceived`イベントのハンドラーを[UI. addhandler async](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)メソッドに登録します。 これは、通常、 [office. onReady または office の initialize メソッド](initialize-add-in.md)で行われます。 例を次に示します。
+ダイアログボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI. Addhandler async](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)メソッドに登録します。 これは、通常、 [office. onReady または office の initialize メソッド](initialize-add-in.md)で行われます。 例を次に示します。
 
 ```javascript
 Office.onReady()
@@ -71,7 +71,7 @@ Office.onReady()
     });
 ```
 
-その後、 `onMessageFromParent`ハンドラーを定義します。 次のコードでは、前のセクションの例を続行します。 Office によってハンドラーに引数が渡され、引数`message`オブジェクトのプロパティにホストページの文字列が含まれていることに注意してください。 この例では、メッセージはオブジェクトに再変換、jQuery を使用して、新しいワークシート名に一致するダイアログのトップの見出しを設定しています。
+その後、ハンドラーを定義し `onMessageFromParent` ます。 次のコードでは、前のセクションの例を続行します。 Office によってハンドラーに引数が渡され、 `message` 引数オブジェクトのプロパティにホストページの文字列が含まれていることに注意してください。 この例では、メッセージはオブジェクトに再変換、jQuery を使用して、新しいワークシート名に一致するダイアログのトップの見出しを設定しています。
 
 ```javascript
 function onMessageFromParent(event) {
@@ -80,7 +80,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-ハンドラーが適切に登録されていることを確認することをお勧めします。 これを行うには、ハンドラーの登録が`addHandlerAsync`完了したときに実行されるメソッドにコールバックを渡します。 ハンドラーが正常に登録されなかった場合は、ハンドラーを使用して、エラーを記録または表示します。 次に例を示します。 ここで`reportError`は、エラーを記録または表示する関数であることに注意してください。
+ハンドラーが適切に登録されていることを確認することをお勧めします。 これを行うには、 `addHandlerAsync` ハンドラーの登録が完了したときに実行されるメソッドにコールバックを渡します。 ハンドラーが正常に登録されなかった場合は、ハンドラーを使用して、エラーを記録または表示します。 次に例を示します。 ここで `reportError` は、エラーを記録または表示する関数であることに注意してください。
 
 ```javascript
 Office.onReady()
@@ -100,4 +100,4 @@ function onRegisterMessageComplete(asyncResult) {
 
 ## <a name="conditional-messaging"></a>条件付きのメッセージング
 
-ホストページから複数`messageChild`の呼び出しを行うことはできますが、 `DialogParentMessageReceived`イベントのダイアログボックスにはハンドラーが1つしかないため、ハンドラーは異なるメッセージを区別するために条件付きロジックを使用する必要があります。 [条件付き](dialog-api-in-office-add-ins.md#conditional-messaging)メッセージの説明に従って、ダイアログボックスがホストページにメッセージを送信しているときに、条件付きメッセージを構造化する方法で、これを正確に行うことができます。
+ホストページから複数の呼び出しを行うことはできます `messageChild` が、イベントのダイアログボックスにはハンドラーが1つしかないため、 `DialogParentMessageReceived` ハンドラーは異なるメッセージを区別するために条件付きロジックを使用する必要があります。 [条件付き](dialog-api-in-office-add-ins.md#conditional-messaging)メッセージの説明に従って、ダイアログボックスがホストページにメッセージを送信しているときに、条件付きメッセージを構造化する方法で、これを正確に行うことができます。

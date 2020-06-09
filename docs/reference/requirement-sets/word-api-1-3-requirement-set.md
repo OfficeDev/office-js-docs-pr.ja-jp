@@ -4,12 +4,12 @@ description: WordApi 1.3 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 15ec2129f53d0b408191ceb595f1fe115feb0d1a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268560"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611296"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
@@ -24,7 +24,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 |[Application](/javascript/api/word/word.application)|[createDocument (base64File?: string)](/javascript/api/word/word.application#createdocument-base64file-)|オプションの base64 でエンコードされた .docx ファイルを使用して、新しいドキュメントを作成します。|
 |[Body](/javascript/api/word/word.body)|[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.body#getrange-rangelocation-)|範囲として、本文全体、あるいは本文の開始点または終了点を取得します。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.body#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 insertLocation の値には、'Start' または 'End' を指定できます。|
-||[サイト](/javascript/api/word/word.body#lists)|本文に含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
+||[lists](/javascript/api/word/word.body#lists)|本文に含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentBody](/javascript/api/word/word.body#parentbody)|本文の親の本文を取得します。たとえば、テーブル セル本文の親本文にはヘッダーを指定できます。親本文がない場合は、スローします。読み取り専用。|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#parentbodyornullobject)|本文の親の本文を取得します。たとえば、テーブル セル本文の親本文にはヘッダーを指定できます。親本文がない場合は、null オブジェクトを返します。読み取り専用。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#parentcontentcontrolornullobject)|本文を含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
@@ -36,7 +36,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.contentcontrol#getrange-rangelocation-)|範囲として、コンテンツ コントロール全体、あるいはコンテンツ コントロールの開始点または終了点を取得します。|
 ||[getTextRanges (endingMarks: string [], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#gettextranges-endingmarks--trimspacing-)|句読点やその他の終了マークを使用して、コンテンツコントロール内のテキスト範囲を取得します。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.contentcontrol#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを、コンテンツ コントロール内またはコンテンツ コントロールの横に挿入します。 InsertLocation の値には、' Start '、' End '、' Before '、または ' After ' を指定できます。|
-||[サイト](/javascript/api/word/word.contentcontrol#lists)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
+||[lists](/javascript/api/word/word.contentcontrol#lists)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentBody](/javascript/api/word/word.contentcontrol#parentbody)|コンテンツ コントロールの親の本文を取得します。 読み取り専用です。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#parentcontentcontrolornullobject)|コンテンツ コントロールを含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.contentcontrol#parenttable)|コンテンツ コントロールを含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
@@ -63,19 +63,19 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[items](/javascript/api/word/word.custompropertycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[Document](/javascript/api/word/word.document)|[プロパティ](/javascript/api/word/word.document#properties)|ドキュメントのプロパティを取得します。 読み取り専用です。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[open ()](/javascript/api/word/word.documentcreated#open--)|図面を開きます。|
-||[本文](/javascript/api/word/word.documentcreated#body)|文書の本文オブジェクトを取得します。 本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。 読み取り専用です。|
+||[body](/javascript/api/word/word.documentcreated#body)|文書の本文オブジェクトを取得します。 本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。 読み取り専用です。|
 ||[contentControls](/javascript/api/word/word.documentcreated#contentcontrols)|文書内のコンテンツコントロールオブジェクトのコレクションを取得します。 これには、文書、ヘッダー、フッター、テキストボックスなどの本文にコンテンツコントロールが含まれます。 読み取り専用です。|
 ||[プロパティ](/javascript/api/word/word.documentcreated#properties)|ドキュメントのプロパティを取得します。 読み取り専用です。|
 ||[更新](/javascript/api/word/word.documentcreated#saved)|ドキュメント内の変更が保存されているかどうかを示します。値 true は、ドキュメントが保存されてから変更されていないことを示します。読み取り専用です。|
 ||[sections](/javascript/api/word/word.documentcreated#sections)|ドキュメント内の section オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[save()](/javascript/api/word/word.documentcreated#save--)|ドキュメントを保存します。 ここでは、ドキュメントが保存されたことがない場合は、Word の既定のファイルの名前付け規則を使用します。|
 |[DocumentProperties](/javascript/api/word/word.documentproperties)|[判別](/javascript/api/word/word.documentproperties#author)|ドキュメントの作成者を取得または設定します。|
-||[項目](/javascript/api/word/word.documentproperties#category)|ドキュメントのカテゴリを取得または設定します。|
+||[category](/javascript/api/word/word.documentproperties#category)|ドキュメントのカテゴリを取得または設定します。|
 ||[comments](/javascript/api/word/word.documentproperties#comments)|ドキュメントのコメントを取得または設定します。|
 ||[company](/javascript/api/word/word.documentproperties#company)|ドキュメントの会社を取得または設定します。|
 ||[format](/javascript/api/word/word.documentproperties#format)|ドキュメントの書式設定を取得または設定します。|
 ||[キーワード](/javascript/api/word/word.documentproperties#keywords)|ドキュメントのキーワードを取得または設定します。|
-||[manager](/javascript/api/word/word.documentproperties#manager)|ドキュメントのマネージャーを取得または設定します。|
+||[上司](/javascript/api/word/word.documentproperties#manager)|ドキュメントのマネージャーを取得または設定します。|
 ||[applicationName](/javascript/api/word/word.documentproperties#applicationname)|ドキュメントのアプリケーション名を取得します。 読み取り専用です。|
 ||[creationDate](/javascript/api/word/word.documentproperties#creationdate)|ドキュメントの作成日を取得します。 読み取り専用です。|
 ||[customProperties](/javascript/api/word/word.documentproperties#customproperties)|ドキュメントのカスタム プロパティのコレクションを取得します。 読み取り専用です。|
@@ -163,7 +163,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[intersectWith (範囲: Word)](/javascript/api/word/word.range#intersectwith-range-)|別の範囲とこの範囲の交点として、新しい範囲を返します。 この範囲は変更されません。 2つの範囲が重なっていない場合、または隣接していない場合にスローされます。|
 ||[intersectWithOrNullObject (範囲: Word)](/javascript/api/word/word.range#intersectwithornullobject-range-)|別の範囲とこの範囲の交点として、新しい範囲を返します。 この範囲は変更されません。 2つの範囲が重なっていないか隣接していない場合は、null オブジェクトを返します。|
 ||[isEmpty](/javascript/api/word/word.range#isempty)|範囲の長さが 0 であるかどうかを確認します。 読み取り専用です。|
-||[サイト](/javascript/api/word/word.range#lists)|範囲内のリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
+||[lists](/javascript/api/word/word.range#lists)|範囲内のリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentBody](/javascript/api/word/word.range#parentbody)|範囲の親の本文を取得します。 読み取り専用です。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#parentcontentcontrolornullobject)|範囲を格納するコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.range#parenttable)|範囲を含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
@@ -244,7 +244,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[horizontalAlignment](/javascript/api/word/word.tablecell#horizontalalignment)|セルの水平方向の配置を取得および設定します。 値は、' Left '、' センタリング '、' Right '、または ' ジャスティファイ ' にすることができます。|
 ||[insertColumns (Insertcolumns: Word Insertcolumns, columnCount: number, values?: string [] [])](/javascript/api/word/word.tablecell#insertcolumns-insertlocation--columncount--values-)|セルの列をテンプレートとして使用して、列をセルの左または右に追加します。これは、統一されたテーブルに適用可能です。指定すると、文字列値は新しく挿入された行に設定されます。|
 ||[insertRows (Insertrows: Word Insertrows, rowCount: number, values?: string [] [])](/javascript/api/word/word.tablecell#insertrows-insertlocation--rowcount--values-)|セルの行をテンプレートとして使用して、行をセルの上または下に挿入します。指定すると、文字列値は新しく挿入された行に設定されます。|
-||[本文](/javascript/api/word/word.tablecell#body)|セルの本文オブジェクトを取得します。 読み取り専用です。|
+||[body](/javascript/api/word/word.tablecell#body)|セルの本文オブジェクトを取得します。 読み取り専用です。|
 ||[cellIndex](/javascript/api/word/word.tablecell#cellindex)|その行のセルのインデックスを取得します。 読み取り専用です。|
 ||[parentRow](/javascript/api/word/word.tablecell#parentrow)|セルの親行を取得します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.tablecell#parenttable)|セルの親テーブルを取得します。 読み取り専用。|
@@ -287,5 +287,5 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 
 ## <a name="see-also"></a>関連項目
 
-- [Word JavaScript API リファレンスドキュメント](/javascript/api/word)
+- [Word JavaScript API リファレンス ドキュメント](/javascript/api/word)
 - [Word JavaScript API の要件セット](word-api-requirement-sets.md)

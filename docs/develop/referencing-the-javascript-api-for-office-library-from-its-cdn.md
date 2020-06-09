@@ -3,16 +3,16 @@ title: Office JavaScript API ライブラリの参照
 description: アドインで Office JavaScript API ライブラリおよび型定義を参照する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b468ae9286eb53ffd5d3c0199c14045131105f3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8bd011c140ce61581ad4b1d06a43b04ad437f5c7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719351"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609388"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリの参照
 
-[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)ライブラリには、アドインが office ホストと対話するために使用できる api が用意されています。 ライブラリを参照する最も簡単な方法は、HTML ページの`<script>` `<head>`セクション内に次のタグを追加することによって、コンテンツ配信ネットワーク (CDN) を使用する方法です。  
+[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)ライブラリには、アドインが office ホストと対話するために使用できる api が用意されています。 ライブラリを参照する最も簡単な方法は、 `<script>` `<head>` HTML ページのセクション内に次のタグを追加することによって、コンテンツ配信ネットワーク (CDN) を使用する方法です。  
 
 ```html
 <head>
@@ -24,11 +24,11 @@ ms.locfileid: "42719351"
 これにより、アドインが最初に読み込まれたときに Office JavaScript API ファイルがダウンロードされてキャッシュされるため、指定されたバージョンの Office .js および関連付けられたファイルの最新の実装を使用していることを確認できます。
 
 > [!IMPORTANT]
-> ページのセクションの`<head>`内側から OFFICE JavaScript api を参照して、API が body 要素の前に完全に初期化されていることを確認する必要があります。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。
+> ページのセクションの内側から Office JavaScript API を参照して、 `<head>` API が body 要素の前に完全に初期化されていることを確認する必要があります。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。
 
 ## <a name="api-versioning-and-backward-compatibility"></a>API のバージョン管理と下位互換性
 
-前の HTML スニペットで、CDN `/1/` URL の先頭`office.js`にある、バージョン1の Office .js で最新の増分リリースを指定します。 Office JavaScript API は下位互換性を維持しているため、最新のリリースでは、以前のバージョン1で導入された API メンバーを引き続きサポートしています。 既存のプロジェクトをアップグレードする必要がある場合は、「 [Office JAVASCRIPT API およびマニフェストスキーマファイルのバージョンを更新](update-your-javascript-api-for-office-and-manifest-schema-version.md)する」を参照してください。 
+前の HTML スニペットで、 `/1/` CDN URL の先頭にある、 `office.js` バージョン1の Office .js で最新の増分リリースを指定します。 Office JavaScript API は下位互換性を維持しているため、最新のリリースでは、以前のバージョン1で導入された API メンバーを引き続きサポートしています。 既存のプロジェクトをアップグレードする必要がある場合は、「 [Office JAVASCRIPT API およびマニフェストスキーマファイルのバージョンを更新](update-your-javascript-api-for-office-and-manifest-schema-version.md)する」を参照してください。 
 
 AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。
 

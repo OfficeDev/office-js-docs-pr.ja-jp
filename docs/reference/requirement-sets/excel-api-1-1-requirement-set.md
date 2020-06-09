@@ -4,12 +4,12 @@ description: ExcelApi 1.1 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4668cebd545cdefeb033f5c397afb1ad796e2d04
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064488"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612109"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Excel JavaScript API 要件セット1.1
 
@@ -22,7 +22,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Application](/javascript/api/excel/excel.application)|[計算 (電卓 Ationtype: Excel. 電卓 Ationtype)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Excel で現在開いているすべてのブックを再計算します。|
-||[calculationMode](/javascript/api/excel/excel.application#calculationmode)|CalculationMode の定数によって定義されている、ブックで使用されている計算モードを返します。 使用可能な値`Automatic`は次のとおりです。 Excel では、再計算が制御されます。`AutomaticExceptTables`、Excel は再計算を制御しますが、テーブル内の変更は無視します。`Manual`、ユーザーが要求すると、計算が行われます。|
+||[calculationMode](/javascript/api/excel/excel.application#calculationmode)|CalculationMode の定数によって定義されている、ブックで使用されている計算モードを返します。 使用可能な値は次のとおりです。 Excel は再計算を制御します。 excel では、再計算が制御され、 `Automatic` `AutomaticExceptTables` テーブルの変更は無視されます。 `Manual` ユーザーが要求すると、計算が行われます。|
 |[Binding](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getrange--)|バインディングによって表される範囲を返します。バインドが正しい型ではない場合、エラーがスローされます。|
 ||[getTable()](/javascript/api/excel/excel.binding#gettable--)|バインドによって表されるテーブルを返します。バインドが正しい型ではない場合、エラーがスローされます。|
 ||[getText()](/javascript/api/excel/excel.binding#gettext--)|バインドによって表されるテキストを返します。 バインドが正しい型ではない場合、エラーがスローされます。|
@@ -43,7 +43,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[series](/javascript/api/excel/excel.chart#series)|グラフの 1 つのデータ系列またはデータ系列のコレクションを表します。 読み取り専用です。|
 ||[title](/javascript/api/excel/excel.chart#title)|指定したグラフのタイトル (タイトルのテキスト、表示/非表示、位置、書式設定など) を表します。 読み取り専用です。|
 ||[setData (sourceData: Range、系列 By?: Excel. Chart系列 By)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|グラフの元データをリセットします。|
-||[setPosition (startCell: Range \| String, endcell?: 範囲\|文字列)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|ワークシート上のセルを基準にしてグラフを配置します。|
+||[setPosition (startCell: Range \| string, endcell?: 範囲 \| 文字列)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|ワークシート上のセルを基準にしてグラフを配置します。|
 ||[top](/javascript/api/excel/excel.chart#top)|オブジェクトの上端から (ワークシートの) 1 行目の上部または (グラフの) グラフ領域の上部までの距離をポイント単位で表します。|
 ||[width](/javascript/api/excel/excel.chart#width)|グラフ オブジェクトの幅をポイント単位で表します。|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 読み取り専用です。|
@@ -131,12 +131,12 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[delete (shift: DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|範囲に関連付けられているセルを削除します。|
 ||[formulas](/javascript/api/excel/excel.range#formulas)|A1 スタイル表記の数式を表します。|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。たとえば、英語の数式 "=SUM(A1, 1.5)" は、ドイツ語では "=SUMME(A1; 1,5)" になります。|
-||[getBoundingRect (anotherRange: Range \|文字列)](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|指定した範囲を包含する、最小の Range オブジェクトを取得します。 たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E15" になります。|
+||[getBoundingRect (anotherRange: Range \| 文字列)](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|指定した範囲を包含する、最小の Range オブジェクトを取得します。 たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E15" になります。|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.range#getcell-row--column-)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。 ワークシートのグリッド内に収まるセルは、親の範囲の境界の外側にある場合があります。 返されるセルは、範囲の左上のセルを基準に配置されます。|
 ||[getColumn(column: number)](/javascript/api/excel/excel.range#getcolumn-column-)|範囲に含まれる列を 1 つ取得します。|
-||[getEntireColumn()](/javascript/api/excel/excel.range#getentirecolumn--)|範囲の列全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4: E11" を表している`getEntireColumn`場合は、"B: E" という列を表す範囲)。|
-||[getEntireRow()](/javascript/api/excel/excel.range#getentirerow--)|範囲の行全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4: E11" を表している`GetEntireRow`場合は、行 "4:11" を表す範囲になります)。|
-||[getIntersection セクション (anotherRange: \| Range string)](/javascript/api/excel/excel.range#getintersection-anotherrange-)|指定した範囲の長方形の交差を表す Range オブジェクトを取得します。|
+||[getEntireColumn()](/javascript/api/excel/excel.range#getentirecolumn--)|範囲の列全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4: E11" を表している場合 `getEntireColumn` は、"B: E" という列を表す範囲)。|
+||[getEntireRow()](/javascript/api/excel/excel.range#getentirerow--)|範囲の行全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4: E11" を表している場合 `GetEntireRow` は、行 "4:11" を表す範囲になります)。|
+||[getIntersection セクション (anotherRange: Range \| string)](/javascript/api/excel/excel.range#getintersection-anotherrange-)|指定した範囲の長方形の交差を表す Range オブジェクトを取得します。|
 ||[getLastCell ()](/javascript/api/excel/excel.range#getlastcell--)|範囲内の最後のセルを取得します。たとえば、"B2:D5" の最後のセルは "D5" になります。|
 ||[getLastColumn ()](/javascript/api/excel/excel.range#getlastcolumn--)|範囲内の最後の列を取得します。たとえば、"B2:D5" の最後の列は "D2:D5" になります。|
 ||[getLastRow ()](/javascript/api/excel/excel.range#getlastrow--)|範囲内の最後の行を取得します。たとえば、"B2:D5" の最後の行は "B5:D5" になります。|
@@ -173,7 +173,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[name](/javascript/api/excel/excel.rangefont#name)|フォント名 (例: "Calibri")|
 ||[size](/javascript/api/excel/excel.rangefont#size)|フォント サイズ。|
 ||[underline](/javascript/api/excel/excel.rangefont#underline)|フォントに適用する下線の種類。 詳細については、「Excel の Range過小な Linestyle」を参照してください。|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[horizontalAlignment](/javascript/api/excel/excel.rangeformat#horizontalalignment)|指定したオブジェクトの水平方向の配置を表します。 詳細については、「Excel の配置」を参照してください。|
+|[範囲の形式](/javascript/api/excel/excel.rangeformat)|[horizontalAlignment](/javascript/api/excel/excel.rangeformat#horizontalalignment)|指定したオブジェクトの水平方向の配置を表します。 詳細については、「Excel の配置」を参照してください。|
 ||[borders](/javascript/api/excel/excel.rangeformat#borders)|選択した範囲全体に適用する境界線オブジェクトのコレクション。 読み取り専用です。|
 ||[fill](/javascript/api/excel/excel.rangeformat#fill)|範囲全体に定義された塗りつぶしオブジェクトを返します。 読み取り専用です。|
 ||[font](/javascript/api/excel/excel.rangeformat#font)|範囲全体に定義されたフォント オブジェクトを返します。 読み取り専用です。|
@@ -191,7 +191,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[showHeaders](/javascript/api/excel/excel.table#showheaders)|ヘッダー行を表示するかどうかを示します。 この値によって、ヘッダー行の表示または削除を設定できます。|
 ||[showTotals](/javascript/api/excel/excel.table#showtotals)|集計行を表示するかどうかを示します。 この値によって、集計行の表示または削除を設定できます。|
 ||[style](/javascript/api/excel/excel.table#style)|テーブル スタイルを表す定数値。使用可能な値は次のとおりです。TableStyleLight1 から TableStyleLight21、TableStyleMedium1 から TableStyleMedium28、TableStyleStyleDark1 から TableStyleStyleDark11。ブックに存在するカスタムのユーザー定義スタイルも指定できます。|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[add (address: Range \| String, hasheaders: boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|新しいテーブルを作成します。範囲オブジェクトまたはソース アドレスにより、テーブルが追加されるワークシートが判断されます。テーブルが追加できない場合 (たとえば、アドレスが無効な場合や、テーブルが別のテーブルと重複している場合) は、エラーがスローされます。|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[add (address: Range \| string, hasHeaders: boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|新しいテーブルを作成します。範囲オブジェクトまたはソース アドレスにより、テーブルが追加されるワークシートが判断されます。テーブルが追加できない場合 (たとえば、アドレスが無効な場合や、テーブルが別のテーブルと重複している場合) は、エラーがスローされます。|
 ||[getItem(key: string)](/javascript/api/excel/excel.tablecollection#getitem-key-)|名前または ID を使用してテーブルを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecollection#getitemat-index-)|コレクション内の位置に基づいてテーブルを取得します。|
 ||[count](/javascript/api/excel/excel.tablecollection#count)|ブックに含まれるテーブルの数を返します。 読み取り専用です。|
@@ -205,8 +205,8 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[id](/javascript/api/excel/excel.tablecolumn#id)|テーブル内の列を識別する一意のキーを返します。 読み取り専用です。|
 ||[index](/javascript/api/excel/excel.tablecolumn#index)|テーブルの列コレクション内の列のインデックス番号を返します。 0 を起点とする番号になります。 読み取り専用です。|
 ||[values](/javascript/api/excel/excel.tablecolumn#values)|指定した範囲の Raw 値を表します。 返されるデータの型は、文字列、数値、ブール値のいずれかになります。 エラーが含まれているセルは、エラー文字列を返します。|
-|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[add (index?: number, values?: Array<Array<boolean \| \|文字列番号>> \| boolean \|文字列\| number, name?: string)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|テーブルに新しい列を追加します。|
-||[getItem (key: number \|文字列)](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|名前または ID を使用して列オブジェクトを取得します。|
+|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[add (index?: number, values?: Array<Array<boolean 文字列番号 \| \|>> \| boolean \| 文字列 \| number, name?: string)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|テーブルに新しい列を追加します。|
+||[getItem (key: number \| 文字列)](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|名前または ID を使用して列オブジェクトを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecolumncollection#getitemat-index-)|コレクション内の位置に基づいて列を取得します。|
 ||[count](/javascript/api/excel/excel.tablecolumncollection#count)|テーブルの列数を返します。 読み取り専用です。|
 ||[items](/javascript/api/excel/excel.tablecolumncollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
@@ -214,7 +214,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[getRange()](/javascript/api/excel/excel.tablerow#getrange--)|行全体に関連付けられた範囲オブジェクトを返します。|
 ||[index](/javascript/api/excel/excel.tablerow#index)|テーブルの行コレクション内の行のインデックス番号を返します。 0 を起点とする番号になります。 読み取り専用です。|
 ||[values](/javascript/api/excel/excel.tablerow#values)|指定した範囲の Raw 値を表します。 返されるデータの型は、文字列、数値、ブール値のいずれかになります。 エラーが含まれているセルは、エラー文字列を返します。|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[add (index?: number, values?: Array<Array<boolean \|文字列\|番号>> \| boolean \|文字列\|番号)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|テーブルに 1 つ以上の行を追加します。 戻りオブジェクトは新しく追加された行の先頭になります。|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[add (index?: number, values?: Array<Array<boolean \| 文字列 \| 番号>> \| boolean \| 文字列 \| 番号)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|テーブルに 1 つ以上の行を追加します。 戻りオブジェクトは新しく追加された行の先頭になります。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|コレクション内の位置を基に行を取得します。|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|テーブルの行数を返します。 読み取り専用です。|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
@@ -241,5 +241,5 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンスドキュメント](/javascript/api/excel?view=excel-js-1.1)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.1)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの GetStarted 要素
 description: アドインが、Word、Excel、PowerPoint、OneNote のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718189"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611835"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 

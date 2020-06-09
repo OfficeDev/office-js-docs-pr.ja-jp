@@ -3,12 +3,12 @@ title: Excel アドインで複数の範囲を同時に操作する
 description: Excel JavaScript ライブラリを使用して、複数の範囲に対して操作を実行したり、プロパティを設定したりする方法について説明します。
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 97481b4b8ab76f7bbc5bd10378d4cc6512bc7b6a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717069"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609770"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 
@@ -49,7 +49,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>メソッド
+##### <a name="methods"></a>Methods
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()`( `RangeAreas`オブジェクト`getOffsetRangeAreas`での名前)
+- `getOffsetRange()`( `getOffsetRangeAreas` オブジェクトでの名前 `RangeAreas` )
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()`( `RangeAreas`オブジェクト`getUsedRangeAreas`での名前)
-- `getUsedRangeOrNullObject()`( `RangeAreas`オブジェクト`getUsedRangeAreasOrNullObject`での名前)
+- `getUsedRange()`( `getUsedRangeAreas` オブジェクトでの名前 `RangeAreas` )
+- `getUsedRangeOrNullObject()`( `getUsedRangeAreasOrNullObject` オブジェクトでの名前 `RangeAreas` )
 - `load()`
 - `set()`
 - `setDirty()`

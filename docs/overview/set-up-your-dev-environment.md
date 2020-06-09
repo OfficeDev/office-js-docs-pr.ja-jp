@@ -1,16 +1,16 @@
 ---
-title: 開発環境のセットアップ
+title: 開発環境をセットアップする
 description: Office アドインをビルドするための開発環境をセットアップする
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 03cf525408123df9e8356555f2ab7732ed2ca263
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185604"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611955"
 ---
-# <a name="set-up-your-development-environment"></a>開発環境のセットアップ
+# <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
 このガイドでは、クイックスタートまたはチュートリアルに従って Office アドインを作成するためのツールのセットアップを支援します。 次の一覧からツールをインストールする必要があります。 これらが既にインストールされている場合は、クイックスタートを開始する準備ができています。たとえば、この[Excel はクイックスタートを反応](../quickstarts/excel-quickstart-react.md)します。
 
@@ -21,7 +21,7 @@ ms.locfileid: "43185604"
 
 このガイドでは、コマンドラインツールの使用方法について理解していることを前提としています。 
 
-## <a name="install-nodejs"></a>Node.js のインストール
+## <a name="install-nodejs"></a>Node.js. のインストール
 
 Node.js は JavaScript ランタイムです。モダンな Office アドインを開発する必要があります。
 
@@ -76,4 +76,4 @@ Office JavaScript API でどのような機能が提供されているかを把�
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインを発行する](../publish/publish.md)
+- [Office アドインの公開](../publish/publish.md)

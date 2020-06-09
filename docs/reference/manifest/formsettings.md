@@ -3,12 +3,12 @@ title: マニフェスト ファイルの FormSettings 要素
 description: メール アドインのソースの場所と制御の設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f0118e120396a8a340a78b0c2f8f185765de9311
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 64a2caa67ceea02eda60bebaec5a9df450f68dc7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718203"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611849"
 ---
 # <a name="formsettings-element"></a>FormSettings 要素
 

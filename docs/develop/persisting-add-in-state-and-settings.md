@@ -3,12 +3,12 @@ title: アドインの状態および設定を保持する
 description: ブラウザーコントロールのステートレス環境で実行されている Office アドイン web アプリケーションでデータを永続化する方法について説明します。
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 0162bc17897cba99f4ce2457cea08d0da70f4341
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 81f149bdff540b236252a02a0c368799a11fed10
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180225"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609402"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -40,7 +40,7 @@ Office JavaScript API には、次の表に示すように、セッション間�
 > [!NOTE]
 > この後の 2 つのセクションでは、Office 共通 JavaScript API のコンテキストでの設定について説明します。 ホスト固有の Excel JavaScript API でも、カスタム設定にアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の SettingCollection](/javascript/api/excel/excel.settingcollection) を参照してください。
 
-内部的に、、、または`Settings` `CustomProperties` `RoamingSettings`オブジェクトでアクセスされるプロパティバッグ内のデータは、名前と値のペアを含むシリアル化された JavaScript object Notation (JSON) オブジェクトとして格納されます。 各`string`値の名前 (キー) は、である必要があります。また、格納さ`string`れ`number`た`date`値は`object`、**関数**ではなく、JavaScript、、、またはです。
+内部的に、、、またはオブジェクトでアクセスされるプロパティバッグ内のデータ `Settings` `CustomProperties` は、 `RoamingSettings` 名前と値のペアを含むシリアル化された JavaScript OBJECT Notation (JSON) オブジェクトとして格納されます。 各値の名前 (キー) は、である必要があり `string` ます。また、格納された値は、関数ではなく、JavaScript `string` 、 `number` 、 `date` 、または `object` です。 **function**
 
 この例はプロパティ バッグの構造を示し、3 つの定義された **string** 値 (`firstName`、`location`、`defaultView` という名前) が含まれます。
 
@@ -52,19 +52,19 @@ Office JavaScript API には、次の表に示すように、セッション間�
 }
 ```
 
-設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッション中は、作成する設定の種類 (**settings**、 **CustomProperties**、 `get`また`set`は**RoamingSettings**) に対応したオブジェクトの、、および`remove`メソッドを使用して、すべての設定がメモリ内で管理されます。
+設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッション中は、 `get` `set` `remove` 作成する設定の種類 (**settings**、 **CustomProperties**、または**RoamingSettings**) に対応したオブジェクトの、、およびメソッドを使用して、すべての設定がメモリ内で管理されます。
 
 
 > [!IMPORTANT]
-> アドインの現在のセッション中に行った追加、更新、または削除を保存場所に保持するには、その種類`saveAsync`の設定を操作するために使用される対応するオブジェクトのメソッドを呼び出す必要があります。 `set`、、および`remove`メソッドは`get`、設定プロパティバッグのメモリ内コピーに対してのみ動作します。 アドインを呼び出し`saveAsync`ずに閉じた場合、そのセッション中に設定に加えられた変更はすべて失われます。
+> アドインの現在のセッション中に行った追加、更新、または削除を保存場所に保持するには、 `saveAsync` その種類の設定を操作するために使用される対応するオブジェクトのメソッドを呼び出す必要があります。 、 `get` 、 `set` およびメソッドは、 `remove` 設定プロパティバッグのメモリ内コピーに対してのみ動作します。 アドインを呼び出しずに閉じた場合 `saveAsync` 、そのセッション中に設定に加えられた変更はすべて失われます。
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法
 
 
-Word、Excel、または PowerPoint 用のコンテンツ アドインまたは作業ウィンドウ アドインの状態またはカスタム設定を保持するには、 [Settings](/javascript/api/office/office.settings) オブジェクトとそのメソッドを使用します。 `Settings`オブジェクトのメソッドを使用して作成されたプロパティバッグは、そのオブジェクトを作成したコンテンツまたは作業ウィンドウアドインのインスタンスのみが利用でき、保存されているドキュメントからのみ使用できます。
+Word、Excel、または PowerPoint 用のコンテンツ アドインまたは作業ウィンドウ アドインの状態またはカスタム設定を保持するには、 [Settings](/javascript/api/office/office.settings) オブジェクトとそのメソッドを使用します。 オブジェクトのメソッドを使用して作成されたプロパティバッグは、 `Settings` そのオブジェクトを作成したコンテンツまたは作業ウィンドウアドインのインスタンスのみが利用でき、保存されているドキュメントからのみ使用できます。
 
-`Settings`オブジェクトは[Document](/javascript/api/office/office.document)オブジェクトの一部として自動的に読み込まれ、作業ウィンドウアドインまたはコンテンツアドインがアクティブ化されたときに使用できます。 `Document`オブジェクトをインスタンス化した後、オブジェクトの`Settings` `Document` [settings](/javascript/api/office/office.document#settings)プロパティを使用して、そのオブジェクトにアクセスできます。 セッションの有効期間中は`Settings.get`、 `Settings.set`プロパティバッグのメモリ内コピーにある`Settings.remove`永続化設定とアドイン状態を読み取り、書き込み、または削除するために、、、およびメソッドを使用するだけで済みます。
+`Settings`オブジェクトは[Document](/javascript/api/office/office.document)オブジェクトの一部として自動的に読み込まれ、作業ウィンドウアドインまたはコンテンツアドインがアクティブ化されたときに使用できます。 オブジェクトを `Document` インスタンス化した後、オブジェクト `Settings` の[settings](/javascript/api/office/office.document#settings)プロパティを使用して、そのオブジェクトにアクセスでき `Document` ます。 セッションの有効期間中は `Settings.get` 、 `Settings.set` `Settings.remove` プロパティバッグのメモリ内コピーにある永続化設定とアドイン状態を読み取り、書き込み、または削除するために、、、およびメソッドを使用するだけで済みます。
 
 set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出す必要があります。
 
@@ -78,12 +78,12 @@ set メソッドと remove メソッドは設定プロパティ バッグのメ�
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- 指定した名前を持つ設定は、それがまだ存在していない場合には作成され、すでに存在している場合はその値が更新されます。 `Settings.saveAsync`メソッドを使用して、新しい設定または更新された設定をドキュメントに保持します。
+ 指定した名前を持つ設定は、それがまだ存在していない場合には作成され、すでに存在している場合はその値が更新されます。 メソッドを使用して、 `Settings.saveAsync` 新しい設定または更新された設定をドキュメントに保持します。
 
 
 ### <a name="getting-the-value-of-a-setting"></a>設定値の取得
 
-次の例では、 [Settings.get](/javascript/api/office/office.settings#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。 この`get`メソッドの唯一のパラメーターは、大文字と小文字が区別される設定の_名前_です。
+次の例では、 [Settings.get](/javascript/api/office/office.settings#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。 このメソッドの唯一のパラメーター `get` は、大文字と小文字が区別される設定の_名前_です。
 
 
 ```js
@@ -95,24 +95,24 @@ function write(message){
 }
 ```
 
- メソッド`get`は、渡された設定_名_に対して以前に保存された値を返します。 設定が存在しない場合、メソッドは **null** を返します。
+ メソッドは、 `get` 渡された設定_名_に対して以前に保存された値を返します。 設定が存在しない場合、メソッドは **null** を返します。
 
 
 ### <a name="removing-a-setting"></a>設定の削除
 
-次の例では、 [Settings.remove](/javascript/api/office/office.settings#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。 この`remove`メソッドの唯一のパラメーターは、大文字と小文字が区別される設定の_名前_です。
+次の例では、 [Settings.remove](/javascript/api/office/office.settings#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。 このメソッドの唯一のパラメーター `remove` は、大文字と小文字が区別される設定の_名前_です。
 
 
 ```js
 Office.context.document.settings.remove('themeColor');
 ```
 
-該当する設定が存在しない場合は何も起きません。 `Settings.saveAsync`メソッドを使用して、ドキュメントから設定の削除を保持します。
+該当する設定が存在しない場合は何も起きません。 メソッドを使用して、 `Settings.saveAsync` ドキュメントから設定の削除を保持します。
 
 
 ### <a name="saving-your-settings"></a>設定の保存
 
-現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 `saveAsync`メソッドの唯一のパラメーターは_callback_で、これは1つのパラメーターを持つコールバック関数です。 
+現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 メソッドの唯一のパラメーター `saveAsync` は_callback_で、これは1つのパラメーターを持つコールバック関数です。 
 
 
 ```js
@@ -129,7 +129,7 @@ function write(message){
 }
 ```
 
-`saveAsync`メソッドに_コールバック_パラメーターとして渡される匿名関数は、操作が完了したときに実行されます。 コールバックの_asyncResult_パラメーターは、操作の状態`AsyncResult`を含むオブジェクトへのアクセスを提供します。 この例では、関数は`AsyncResult.status`プロパティをチェックして、保存操作が成功したか失敗したかを確認し、アドインのページに結果を表示します。
+`saveAsync`メソッドに_コールバック_パラメーターとして渡される匿名関数は、操作が完了したときに実行されます。 コールバックの_asyncResult_パラメーターは、操作の状態を含むオブジェクトへのアクセスを提供し `AsyncResult` ます。 この例では、関数はプロパティをチェックして、 `AsyncResult.status` 保存操作が成功したか失敗したかを確認し、アドインのページに結果を表示します。
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>ドキュメントにカスタム XML を保存する方法
 
