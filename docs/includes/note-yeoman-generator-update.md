@@ -1,2 +1,2 @@
 > [!NOTE]
-> <span data-ttu-id="046c1-101">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="046c1-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+> <span data-ttu-id="d4005-101">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="d4005-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>

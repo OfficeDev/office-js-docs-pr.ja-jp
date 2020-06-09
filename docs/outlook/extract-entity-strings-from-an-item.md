@@ -3,42 +3,42 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325455"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608944"
 ---
-# <a name="extract-entity-strings-from-an-outlook-item"></a><span data-ttu-id="d5d96-103">Outlook アイテムからエンティティ文字列を抽出する</span><span class="sxs-lookup"><span data-stu-id="d5d96-103">Extract entity strings from an Outlook item</span></span>
+# <a name="extract-entity-strings-from-an-outlook-item"></a><span data-ttu-id="15ee9-103">Outlook アイテムからエンティティ文字列を抽出する</span><span class="sxs-lookup"><span data-stu-id="15ee9-103">Extract entity strings from an Outlook item</span></span>
 
-<span data-ttu-id="d5d96-p101">この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p101">This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.</span></span>
+<span data-ttu-id="15ee9-p101">この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p101">This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.</span></span>
 
-<span data-ttu-id="d5d96-106">サポートされるエンティティには次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="d5d96-106">The supported entities include:</span></span>
+<span data-ttu-id="15ee9-106">サポートされるエンティティには次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="15ee9-106">The supported entities include:</span></span>
 
-- <span data-ttu-id="d5d96-107">**住所**: 米国の郵送先住所で、少なくとも番地、住所、都市名、州名、郵便番号の各要素の一部を含むもの。</span><span class="sxs-lookup"><span data-stu-id="d5d96-107">**Address**: A United States postal address, that has at least a subset of the elements of a street number, street name, city, state, and zip code.</span></span>
+- <span data-ttu-id="15ee9-107">**住所**: 米国の郵送先住所で、少なくとも番地、住所、都市名、州名、郵便番号の各要素の一部を含むもの。</span><span class="sxs-lookup"><span data-stu-id="15ee9-107">**Address**: A United States postal address, that has at least a subset of the elements of a street number, street name, city, state, and zip code.</span></span>
     
-- <span data-ttu-id="d5d96-108">**連絡先**: 住所、勤務先名など、他のエンティティのコンテキストにおける、個人の連絡先情報。</span><span class="sxs-lookup"><span data-stu-id="d5d96-108">**Contact**: A person's contact information, in the context of other entities such as an address or business name.</span></span>
+- <span data-ttu-id="15ee9-108">**連絡先**: 住所、勤務先名など、他のエンティティのコンテキストにおける、個人の連絡先情報。</span><span class="sxs-lookup"><span data-stu-id="15ee9-108">**Contact**: A person's contact information, in the context of other entities such as an address or business name.</span></span>
     
-- <span data-ttu-id="d5d96-109">**電子メール アドレス**: SMTP 電子メール アドレス。</span><span class="sxs-lookup"><span data-stu-id="d5d96-109">**Email address**: An SMTP email address.</span></span>
+- <span data-ttu-id="15ee9-109">**電子メール アドレス**: SMTP 電子メール アドレス。</span><span class="sxs-lookup"><span data-stu-id="15ee9-109">**Email address**: An SMTP email address.</span></span>
     
-- <span data-ttu-id="d5d96-p102">**会議提案**: イベントへの言及などの会議提案。予定ではなくメッセージのみが会議提案の抽出をサポートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p102">**Meeting suggestion**: A meeting suggestion, such as a reference to an event. Note that only messages but not appointments support extracting meeting suggestions.</span></span>
+- <span data-ttu-id="15ee9-p102">**会議提案**: イベントへの言及などの会議提案。予定ではなくメッセージのみが会議提案の抽出をサポートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p102">**Meeting suggestion**: A meeting suggestion, such as a reference to an event. Note that only messages but not appointments support extracting meeting suggestions.</span></span>
     
-- <span data-ttu-id="d5d96-112">**電話番号**: 北米の電話番号。</span><span class="sxs-lookup"><span data-stu-id="d5d96-112">**Phone number**: A North American phone number.</span></span>
+- <span data-ttu-id="15ee9-112">**電話番号**: 北米の電話番号。</span><span class="sxs-lookup"><span data-stu-id="15ee9-112">**Phone number**: A North American phone number.</span></span>
     
-- <span data-ttu-id="d5d96-113">**タスクの提案**: 通常、実行可能な語句で表現される、タスクの提案。</span><span class="sxs-lookup"><span data-stu-id="d5d96-113">**Task suggestion**: A task suggestion, typically expressed in an actionable phrase.</span></span>
+- <span data-ttu-id="15ee9-113">**タスクの提案**: 通常、実行可能な語句で表現される、タスクの提案。</span><span class="sxs-lookup"><span data-stu-id="15ee9-113">**Task suggestion**: A task suggestion, typically expressed in an actionable phrase.</span></span>
     
-- <span data-ttu-id="d5d96-114">**URL**</span><span class="sxs-lookup"><span data-stu-id="d5d96-114">**URL**</span></span>
+- <span data-ttu-id="15ee9-114">**URL**</span><span class="sxs-lookup"><span data-stu-id="15ee9-114">**URL**</span></span>
     
-<span data-ttu-id="d5d96-p103">これらのエンティティの大部分は、大量のデータの機械学習に基づいた自然言語認識を利用しています。このため、認識は非確定的で、結果が Outlook アイテムの特定のコンテキストに左右されることがあります。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p103">Most of these entities rely on natural language recognition, which is based on machine learning of large amounts of data. This recognition is nondeterministic and sometimes depends on the context in the Outlook item.</span></span>
+<span data-ttu-id="15ee9-p103">これらのエンティティの大部分は、大量のデータの機械学習に基づいた自然言語認識を利用しています。このため、認識は非確定的で、結果が Outlook アイテムの特定のコンテキストに左右されることがあります。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p103">Most of these entities rely on natural language recognition, which is based on machine learning of large amounts of data. This recognition is nondeterministic and sometimes depends on the context in the Outlook item.</span></span>
 
-<span data-ttu-id="d5d96-p104">ユーザーが予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消しの表示を選択するたびに、Outlook によってエンティティ アドインがアクティブ化されます。初期化時に、このサンプルのエンティティ アドインは、現在のアイテムからサポートされているエンティティのすべてのインスタンスを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p104">Outlook activates the entities add-in whenever the user selects an appointment, email message, or meeting request, response, or cancellation for viewing. During initialization, the sample entities add-in reads all instances of the supported entities from the current item.</span></span> 
+<span data-ttu-id="15ee9-p104">ユーザーが予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消しの表示を選択するたびに、Outlook によってエンティティ アドインがアクティブ化されます。初期化時に、このサンプルのエンティティ アドインは、現在のアイテムからサポートされているエンティティのすべてのインスタンスを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p104">Outlook activates the entities add-in whenever the user selects an appointment, email message, or meeting request, response, or cancellation for viewing. During initialization, the sample entities add-in reads all instances of the supported entities from the current item.</span></span> 
 
-<span data-ttu-id="d5d96-p105">このアドインにはユーザーがエンティティの種類を選択するためのボタンがあります。ユーザーがエンティティを選択すると、アドインは選択されたエンティティのインスタンスをアドイン ウィンドウに表示します。後続の各セクションでは、エンティティ アドインの XML マニフェスト、HTML ファイル、および JavaScript ファイルの内容を示し、それぞれのエンティティの抽出をサポートするコードについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p105">The add-in provides buttons for the user to choose a type of entity. When the user selects an entity, the add-in displays instances of the selected entity in the add-in pane. The following sections list the XML manifest, and HTML and JavaScript files of the entities add-in, and highlight the code that supports the respective entity extraction.</span></span>
+<span data-ttu-id="15ee9-p105">このアドインにはユーザーがエンティティの種類を選択するためのボタンがあります。ユーザーがエンティティを選択すると、アドインは選択されたエンティティのインスタンスをアドイン ウィンドウに表示します。後続の各セクションでは、エンティティ アドインの XML マニフェスト、HTML ファイル、および JavaScript ファイルの内容を示し、それぞれのエンティティの抽出をサポートするコードについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p105">The add-in provides buttons for the user to choose a type of entity. When the user selects an entity, the add-in displays instances of the selected entity in the add-in pane. The following sections list the XML manifest, and HTML and JavaScript files of the entities add-in, and highlight the code that supports the respective entity extraction.</span></span>
 
-## <a name="xml-manifest"></a><span data-ttu-id="d5d96-122">XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="d5d96-122">XML manifest</span></span>
+## <a name="xml-manifest"></a><span data-ttu-id="15ee9-122">XML マニフェスト</span><span class="sxs-lookup"><span data-stu-id="15ee9-122">XML manifest</span></span>
 
-<span data-ttu-id="d5d96-123">エンティティ アドインには、論理 OR 演算で結合された 2 つのアクティブ化ルールがあります。</span><span class="sxs-lookup"><span data-stu-id="d5d96-123">The entities add-in has two activation rules joined by a logical OR operation.</span></span> 
+<span data-ttu-id="15ee9-123">エンティティ アドインには、論理 OR 演算で結合された 2 つのアクティブ化ルールがあります。</span><span class="sxs-lookup"><span data-stu-id="15ee9-123">The entities add-in has two activation rules joined by a logical OR operation.</span></span> 
 
 ```xml
 <!-- Activate the add-in if the current item in Outlook is an email or appointment item. -->
@@ -48,9 +48,9 @@ ms.locfileid: "42325455"
 </Rule>
 ```
 
-<span data-ttu-id="d5d96-124">これらのルールでは、閲覧ウィンドウまたは閲覧インスペクターの現在選択されているアイテムが予定またはメッセージ (電子メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しなど) であるときに、Outlook でこのアドインをアクティブ化することを指定しています。</span><span class="sxs-lookup"><span data-stu-id="d5d96-124">These rules specify that Outlook should activate this add-in when the currently selected item in the Reading Pane or read inspector is an appointment or message (including an email message, or meeting request, response, or cancellation).</span></span>
+<span data-ttu-id="15ee9-124">これらのルールでは、閲覧ウィンドウまたは閲覧インスペクターの現在選択されているアイテムが予定またはメッセージ (電子メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しなど) であるときに、Outlook でこのアドインをアクティブ化することを指定しています。</span><span class="sxs-lookup"><span data-stu-id="15ee9-124">These rules specify that Outlook should activate this add-in when the currently selected item in the Reading Pane or read inspector is an appointment or message (including an email message, or meeting request, response, or cancellation).</span></span>
 
-<span data-ttu-id="d5d96-p106">エンティティ アドインのマニフェストを次に示します。このマニフェストは、Office アドイン マニフェストのスキーマ バージョン 1.1 を使用します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p106">The following is the manifest of the entities add-in. It uses version 1.1 of the schema for Office Add-ins manifests.</span></span>
+<span data-ttu-id="15ee9-p106">エンティティ アドインのマニフェストを次に示します。このマニフェストは、Office アドイン マニフェストのスキーマ バージョン 1.1 を使用します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p106">The following is the manifest of the entities add-in. It uses version 1.1 of the schema for Office Add-ins manifests.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,11 +95,11 @@ xsi:type="MailApp">
 ```
 
 
-## <a name="html-implementation"></a><span data-ttu-id="d5d96-127">HTML の実装</span><span class="sxs-lookup"><span data-stu-id="d5d96-127">HTML implementation</span></span>
+## <a name="html-implementation"></a><span data-ttu-id="15ee9-127">HTML の実装</span><span class="sxs-lookup"><span data-stu-id="15ee9-127">HTML implementation</span></span>
 
-<span data-ttu-id="d5d96-p107">エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p107">The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.</span></span>
+<span data-ttu-id="15ee9-p107">エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p107">The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.</span></span>
 
-<span data-ttu-id="d5d96-p108">すべての Outlook アドインに office.js を含める必要があります。以下の HTML ファイルには、CDN に office.js のバージョン 1.1 が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p108">Note that all Outlook add-ins must include office.js. The HTML file that follows includes version 1.1 of office.js on the CDN.</span></span> 
+<span data-ttu-id="15ee9-p108">すべての Outlook アドインに office.js を含める必要があります。以下の HTML ファイルには、CDN に office.js のバージョン 1.1 が含まれます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p108">Note that all Outlook add-ins must include office.js. The HTML file that follows includes version 1.1 of office.js on the CDN.</span></span> 
 
 ```html
 <!DOCTYPE html>
@@ -141,10 +141,10 @@ xsi:type="MailApp">
 ```
 
 
-## <a name="style-sheet"></a><span data-ttu-id="d5d96-133">スタイル シート</span><span class="sxs-lookup"><span data-stu-id="d5d96-133">Style sheet</span></span>
+## <a name="style-sheet"></a><span data-ttu-id="15ee9-133">スタイル シート</span><span class="sxs-lookup"><span data-stu-id="15ee9-133">Style sheet</span></span>
 
 
-<span data-ttu-id="d5d96-p109">エンティティ アドインでは、default_entities.css というオプションの CSS ファイルを使用して出力のレイアウトを指定しています。次に、この CSS ファイルの内容を示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p109">The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.</span></span>
+<span data-ttu-id="15ee9-p109">エンティティ アドインでは、default_entities.css というオプションの CSS ファイルを使用して出力のレイアウトを指定しています。次に、この CSS ファイルの内容を示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p109">The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.</span></span>
 
 
 ```CSS
@@ -199,13 +199,13 @@ div#meeting_suggestions
 ```
 
 
-## <a name="javascript-implementation"></a><span data-ttu-id="d5d96-136">JavaScript の実装</span><span class="sxs-lookup"><span data-stu-id="d5d96-136">JavaScript implementation</span></span>
+## <a name="javascript-implementation"></a><span data-ttu-id="15ee9-136">JavaScript の実装</span><span class="sxs-lookup"><span data-stu-id="15ee9-136">JavaScript implementation</span></span>
 
-<span data-ttu-id="d5d96-137">残りのセクションでは、このサンプル (default_entities.js ファイル) を使用して、ユーザーが表示中のメッセージまたは予定の件名と本文から一般的なエンティティを抽出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-137">The remaining sections describe how this sample (default_entities.js file) extracts well-known entities from the subject and body of the message or appointment that the user is viewing.</span></span>
+<span data-ttu-id="15ee9-137">残りのセクションでは、このサンプル (default_entities.js ファイル) を使用して、ユーザーが表示中のメッセージまたは予定の件名と本文から一般的なエンティティを抽出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-137">The remaining sections describe how this sample (default_entities.js file) extracts well-known entities from the subject and body of the message or appointment that the user is viewing.</span></span>
 
-## <a name="extracting-entities-upon-initialization"></a><span data-ttu-id="d5d96-138">初期化時のエンティティの抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-138">Extracting entities upon initialization</span></span>
+## <a name="extracting-entities-upon-initialization"></a><span data-ttu-id="15ee9-138">初期化時のエンティティの抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-138">Extracting entities upon initialization</span></span>
 
-<span data-ttu-id="d5d96-139">[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-139">Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method of the current item.</span></span> <span data-ttu-id="d5d96-140">この`getEntities`メソッドは、サポートさ`_MyEntities`れているエンティティのインスタンスの配列をグローバル変数に返します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-140">The `getEntities` method returns the global variable `_MyEntities` an array of instances of supported entities.</span></span> <span data-ttu-id="d5d96-141">関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-141">The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-139">[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-139">Upon the [Office.initialize](/javascript/api/office#office-initialize-reason-) event, the entities add-in calls the [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) method of the current item.</span></span> <span data-ttu-id="15ee9-140">この `getEntities` メソッドは、 `_MyEntities` サポートされているエンティティのインスタンスの配列をグローバル変数に返します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-140">The `getEntities` method returns the global variable `_MyEntities` an array of instances of supported entities.</span></span> <span data-ttu-id="15ee9-141">関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-141">The following is the related JavaScript code.</span></span>
 
 
 ```js
@@ -231,10 +231,10 @@ Office.initialize = function () {
 ```
 
 
-## <a name="extracting-addresses"></a><span data-ttu-id="d5d96-142">住所の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-142">Extracting addresses</span></span>
+## <a name="extracting-addresses"></a><span data-ttu-id="15ee9-142">住所の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-142">Extracting addresses</span></span>
 
 
-<span data-ttu-id="d5d96-143">ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](/javascript/api/outlook/office.entities#addresses) プロパティから住所の配列を取得します (住所が抽出されていた場合)。</span><span class="sxs-lookup"><span data-stu-id="d5d96-143">When the user clicks the **Get Addresses** button, the `myGetAddresses` event handler obtains an array of addresses from the [addresses](/javascript/api/outlook/office.entities#addresses) property of the `_MyEntities` object, if any address was extracted.</span></span> <span data-ttu-id="d5d96-144">抽出された各住所は、配列内の文字列として保存されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-144">Each extracted address is stored as a string in the array.</span></span> <span data-ttu-id="d5d96-145">`myGetAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された住所のリストを表示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-145">`myGetAddresses` forms a local HTML string in `htmlText` to display the list of extracted addresses.</span></span> <span data-ttu-id="d5d96-146">関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-146">The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-143">ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](/javascript/api/outlook/office.entities#addresses) プロパティから住所の配列を取得します (住所が抽出されていた場合)。</span><span class="sxs-lookup"><span data-stu-id="15ee9-143">When the user clicks the **Get Addresses** button, the `myGetAddresses` event handler obtains an array of addresses from the [addresses](/javascript/api/outlook/office.entities#addresses) property of the `_MyEntities` object, if any address was extracted.</span></span> <span data-ttu-id="15ee9-144">抽出された各住所は、配列内の文字列として保存されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-144">Each extracted address is stored as a string in the array.</span></span> <span data-ttu-id="15ee9-145">`myGetAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された住所のリストを表示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-145">`myGetAddresses` forms a local HTML string in `htmlText` to display the list of extracted addresses.</span></span> <span data-ttu-id="15ee9-146">関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-146">The following is the related JavaScript code.</span></span>
 
 
 ```js
@@ -255,27 +255,27 @@ function myGetAddresses()
 ```
 
 
-## <a name="extracting-contact-information"></a><span data-ttu-id="d5d96-147">連絡先情報の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-147">Extracting contact information</span></span>
+## <a name="extracting-contact-information"></a><span data-ttu-id="15ee9-147">連絡先情報の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-147">Extracting contact information</span></span>
 
 
-<span data-ttu-id="d5d96-p112">ユーザーが **[Get Contact Information]** ボタンをクリックすると、`myGetContacts` イベント ハンドラーが `_MyEntities` オブジェクトの [contacts](/javascript/api/outlook/office.entities#contacts) プロパティから連絡先の配列をそれぞれの情報と共に取得します (連絡先が抽出されていた場合)。抽出された各連絡先は、[Contact](/javascript/api/outlook/office.contact) オブジェクトとして配列に格納されます。`myGetContacts` は、各連絡先に関する詳細なデータを取得します。Outlook がアイテムから連絡先を抽出できるかどうかはコンテキスト次第であることに注意してください。電子メール メッセージの末尾の署名、または少なくとも次のいくつかの情報が連絡先の周辺に存在している必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p112">When the user clicks the **Get Contact Information** button, the `myGetContacts` event handler obtains an array of contacts together with their information from the [contacts](/javascript/api/outlook/office.entities#contacts) property of the `_MyEntities` object, if any was extracted. Each extracted contact is stored as a [Contact](/javascript/api/outlook/office.contact) object in the array. `myGetContacts` obtains further data about each contact. Note that the context determines whether Outlook can extract a contact from an item&mdash;a signature at the end of an email message, or at least some of the following information would have to exist in the vicinity of the contact:</span></span>
+<span data-ttu-id="15ee9-p112">ユーザーが **[Get Contact Information]** ボタンをクリックすると、`myGetContacts` イベント ハンドラーが `_MyEntities` オブジェクトの [contacts](/javascript/api/outlook/office.entities#contacts) プロパティから連絡先の配列をそれぞれの情報と共に取得します (連絡先が抽出されていた場合)。抽出された各連絡先は、[Contact](/javascript/api/outlook/office.contact) オブジェクトとして配列に格納されます。`myGetContacts` は、各連絡先に関する詳細なデータを取得します。Outlook がアイテムから連絡先を抽出できるかどうかはコンテキスト次第であることに注意してください。電子メール メッセージの末尾の署名、または少なくとも次のいくつかの情報が連絡先の周辺に存在している必要があります。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p112">When the user clicks the **Get Contact Information** button, the `myGetContacts` event handler obtains an array of contacts together with their information from the [contacts](/javascript/api/outlook/office.entities#contacts) property of the `_MyEntities` object, if any was extracted. Each extracted contact is stored as a [Contact](/javascript/api/outlook/office.contact) object in the array. `myGetContacts` obtains further data about each contact. Note that the context determines whether Outlook can extract a contact from an item&mdash;a signature at the end of an email message, or at least some of the following information would have to exist in the vicinity of the contact:</span></span>
 
 
-- <span data-ttu-id="d5d96-152">[Contact.personName](/javascript/api/outlook/office.contact#personname) プロパティから取得される連絡先の名前を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-152">The string representing the contact's name from the [Contact.personName](/javascript/api/outlook/office.contact#personname) property.</span></span>
+- <span data-ttu-id="15ee9-152">[Contact.personName](/javascript/api/outlook/office.contact#personname) プロパティから取得される連絡先の名前を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-152">The string representing the contact's name from the [Contact.personName](/javascript/api/outlook/office.contact#personname) property.</span></span>
 
-- <span data-ttu-id="d5d96-153">[Contact.businessName](/javascript/api/outlook/office.contact#businessname) プロパティから取得される連絡先に関連付けられた会社名を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-153">The string representing the company name associated with the contact from the [Contact.businessName](/javascript/api/outlook/office.contact#businessname) property.</span></span>
+- <span data-ttu-id="15ee9-153">[Contact.businessName](/javascript/api/outlook/office.contact#businessname) プロパティから取得される連絡先に関連付けられた会社名を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-153">The string representing the company name associated with the contact from the [Contact.businessName](/javascript/api/outlook/office.contact#businessname) property.</span></span>
 
-- <span data-ttu-id="d5d96-p113">[Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers) プロパティから取得される、連絡先に関連付けられた電話番号の配列。各電話番号は [PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p113">The array of telephone numbers associated with the contact from the [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers) property. Each telephone number is represented by a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object.</span></span>
+- <span data-ttu-id="15ee9-p113">[Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers) プロパティから取得される、連絡先に関連付けられた電話番号の配列。各電話番号は [PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p113">The array of telephone numbers associated with the contact from the [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers) property. Each telephone number is represented by a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object.</span></span>
 
-- <span data-ttu-id="d5d96-156">電話番号配列内の **PhoneNumber** メンバーごとの、[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) プロパティから取得される電話番号を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-156">For each **PhoneNumber** member in the telephone numbers array, the string representing the telephone number from the [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) property.</span></span>
+- <span data-ttu-id="15ee9-156">電話番号配列内の **PhoneNumber** メンバーごとの、[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) プロパティから取得される電話番号を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-156">For each **PhoneNumber** member in the telephone numbers array, the string representing the telephone number from the [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) property.</span></span>
 
-- <span data-ttu-id="d5d96-p114">[Contact.urls](/javascript/api/outlook/office.contact#urls) プロパティから取得される連絡先に関連付けられた URL の配列。各 URL は配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p114">The array of URLs associated with the contact from the [Contact.urls](/javascript/api/outlook/office.contact#urls) property. Each URL is represented as a string in an array member.</span></span>
+- <span data-ttu-id="15ee9-p114">[Contact.urls](/javascript/api/outlook/office.contact#urls) プロパティから取得される連絡先に関連付けられた URL の配列。各 URL は配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p114">The array of URLs associated with the contact from the [Contact.urls](/javascript/api/outlook/office.contact#urls) property. Each URL is represented as a string in an array member.</span></span>
 
-- <span data-ttu-id="d5d96-p115">[Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses) プロパティから取得される、連絡先に関連付けられた電子メール アドレスの配列。各電子メール アドレスは配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p115">The array of email addresses associated with the contact from the [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses) property. Each email address is represented as a string in an array member.</span></span>
+- <span data-ttu-id="15ee9-p115">[Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses) プロパティから取得される、連絡先に関連付けられた電子メール アドレスの配列。各電子メール アドレスは配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p115">The array of email addresses associated with the contact from the [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses) property. Each email address is represented as a string in an array member.</span></span>
 
-- <span data-ttu-id="d5d96-p116">[Contact.addresses](/javascript/api/outlook/office.contact#addresses) プロパティから取得される、連絡先に関連付けられた郵送先住所の配列。各郵送先住所は配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p116">The array of postal addresses associated with the contact from the [Contact.addresses](/javascript/api/outlook/office.contact#addresses) property. Each postal address is represented as a string in an array member.</span></span>
+- <span data-ttu-id="15ee9-p116">[Contact.addresses](/javascript/api/outlook/office.contact#addresses) プロパティから取得される、連絡先に関連付けられた郵送先住所の配列。各郵送先住所は配列メンバーの文字列として表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p116">The array of postal addresses associated with the contact from the [Contact.addresses](/javascript/api/outlook/office.contact#addresses) property. Each postal address is represented as a string in an array member.</span></span>
 
-<span data-ttu-id="d5d96-p117">`myGetContacts` はローカル HTML 文字列を `htmlText` で生成し、各連絡先のデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p117">`myGetContacts` forms a local HTML string in `htmlText` to display the data for each contact. The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-p117">`myGetContacts` はローカル HTML 文字列を `htmlText` で生成し、各連絡先のデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p117">`myGetContacts` forms a local HTML string in `htmlText` to display the data for each contact. The following is the related JavaScript code.</span></span>
 
 
 
@@ -343,10 +343,10 @@ function myGetContacts()
 ```
 
 
-## <a name="extracting-email-addresses"></a><span data-ttu-id="d5d96-165">電子メール アドレスの抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-165">Extracting email addresses</span></span>
+## <a name="extracting-email-addresses"></a><span data-ttu-id="15ee9-165">電子メール アドレスの抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-165">Extracting email addresses</span></span>
 
 
-<span data-ttu-id="d5d96-p118">ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p118">When the user clicks the **Get Email Addresses** button, the `myGetEmailAddresses` event handler obtains an array of SMTP email addresses from the [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) property of the `_MyEntities` object, if any was extracted. Each extracted email address is stored as a string in the array. `myGetEmailAddresses` forms a local HTML string in `htmlText` to display the list of extracted email addresses. The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-p118">ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p118">When the user clicks the **Get Email Addresses** button, the `myGetEmailAddresses` event handler obtains an array of SMTP email addresses from the [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) property of the `_MyEntities` object, if any was extracted. Each extracted email address is stored as a string in the array. `myGetEmailAddresses` forms a local HTML string in `htmlText` to display the list of extracted email addresses. The following is the related JavaScript code.</span></span>
 
 
 ```js
@@ -366,35 +366,35 @@ function myGetEmailAddresses() {
 ```
 
 
-## <a name="extracting-meeting-suggestions"></a><span data-ttu-id="d5d96-170">会議提案の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-170">Extracting meeting suggestions</span></span>
+## <a name="extracting-meeting-suggestions"></a><span data-ttu-id="15ee9-170">会議提案の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-170">Extracting meeting suggestions</span></span>
 
 
-<span data-ttu-id="d5d96-171">ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。</span><span class="sxs-lookup"><span data-stu-id="d5d96-171">When the user clicks the **Get Meeting Suggestions** button, the `myGetMeetingSuggestions` event handler obtains an array of meeting suggestions from the [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) property of the `_MyEntities` object, if any was extracted.</span></span>
+<span data-ttu-id="15ee9-171">ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。</span><span class="sxs-lookup"><span data-stu-id="15ee9-171">When the user clicks the **Get Meeting Suggestions** button, the `myGetMeetingSuggestions` event handler obtains an array of meeting suggestions from the [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) property of the `_MyEntities` object, if any was extracted.</span></span>
 
 
  > [!NOTE]
- > <span data-ttu-id="d5d96-172">エンティティの種類をサポートして`MeetingSuggestion`いるのは、予定ではなくメッセージのみです。</span><span class="sxs-lookup"><span data-stu-id="d5d96-172">Only messages but not appointments support the `MeetingSuggestion` entity type.</span></span>
+ > <span data-ttu-id="15ee9-172">エンティティの種類をサポートしているのは、予定ではなくメッセージのみ `MeetingSuggestion` です。</span><span class="sxs-lookup"><span data-stu-id="15ee9-172">Only messages but not appointments support the `MeetingSuggestion` entity type.</span></span>
 
-<span data-ttu-id="d5d96-p119">抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p119">Each extracted meeting suggestion is stored as a [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) object in the array. `myGetMeetingSuggestions` obtains further data about each meeting suggestion:</span></span>
+<span data-ttu-id="15ee9-p119">抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p119">Each extracted meeting suggestion is stored as a [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) object in the array. `myGetMeetingSuggestions` obtains further data about each meeting suggestion:</span></span>
 
 
-- <span data-ttu-id="d5d96-175">[MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) プロパティから取得される会議提案として識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-175">The string that was identified as a meeting suggestion from the [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) property.</span></span>
+- <span data-ttu-id="15ee9-175">[MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) プロパティから取得される会議提案として識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-175">The string that was identified as a meeting suggestion from the [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) property.</span></span>
 
-- <span data-ttu-id="d5d96-p120">[MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) プロパティから取得される、会議の出席者の配列。各出席者は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p120">The array of meeting attendees from the [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) property. Each attendee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.</span></span>
+- <span data-ttu-id="15ee9-p120">[MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) プロパティから取得される、会議の出席者の配列。各出席者は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p120">The array of meeting attendees from the [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) property. Each attendee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.</span></span>
 
-- <span data-ttu-id="d5d96-178">出席者ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) プロパティから取得される名前。</span><span class="sxs-lookup"><span data-stu-id="d5d96-178">For each attendee, the name from the [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) property.</span></span>
+- <span data-ttu-id="15ee9-178">出席者ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) プロパティから取得される名前。</span><span class="sxs-lookup"><span data-stu-id="15ee9-178">For each attendee, the name from the [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) property.</span></span>
 
-- <span data-ttu-id="d5d96-179">出席者ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) プロパティから取得される SMTP アドレス。</span><span class="sxs-lookup"><span data-stu-id="d5d96-179">For each attendee, the SMTP address from the [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) property.</span></span>
+- <span data-ttu-id="15ee9-179">出席者ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) プロパティから取得される SMTP アドレス。</span><span class="sxs-lookup"><span data-stu-id="15ee9-179">For each attendee, the SMTP address from the [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) property.</span></span>
 
-- <span data-ttu-id="d5d96-180">[MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) プロパティから取得される、会議提案の場所を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-180">The string representing the location of the meeting suggestion from the [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) property.</span></span>
+- <span data-ttu-id="15ee9-180">[MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) プロパティから取得される、会議提案の場所を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-180">The string representing the location of the meeting suggestion from the [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) property.</span></span>
 
-- <span data-ttu-id="d5d96-181">[MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject) プロパティから取得される、会議提案の議題を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-181">The string representing the subject of the meeting suggestion from the [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject) property.</span></span>
+- <span data-ttu-id="15ee9-181">[MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject) プロパティから取得される、会議提案の議題を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-181">The string representing the subject of the meeting suggestion from the [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject) property.</span></span>
 
-- <span data-ttu-id="d5d96-182">[MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start) プロパティから取得される、会議提案の開始時刻を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-182">The string representing the start time of the meeting suggestion from the [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start) property.</span></span>
+- <span data-ttu-id="15ee9-182">[MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start) プロパティから取得される、会議提案の開始時刻を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-182">The string representing the start time of the meeting suggestion from the [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start) property.</span></span>
 
-- <span data-ttu-id="d5d96-183">[MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end) プロパティから取得される会議提案の終了時刻を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-183">The string representing the end time of the meeting suggestion from the [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end) property.</span></span>
+- <span data-ttu-id="15ee9-183">[MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end) プロパティから取得される会議提案の終了時刻を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-183">The string representing the end time of the meeting suggestion from the [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end) property.</span></span>
 
-<span data-ttu-id="d5d96-p121">`myGetMeetingSuggestions` はローカル HTML 文字列を `htmlText` で生成し、会議提案ごとのデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p121">`myGetMeetingSuggestions` forms a local HTML string in `htmlText` to display the data for each of the meeting suggestions. The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-p121">`myGetMeetingSuggestions` はローカル HTML 文字列を `htmlText` で生成し、会議提案ごとのデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p121">`myGetMeetingSuggestions` forms a local HTML string in `htmlText` to display the data for each of the meeting suggestions. The following is the related JavaScript code.</span></span>
 
 
 
@@ -452,19 +452,19 @@ function myGetMeetingSuggestions() {
 ```
 
 
-## <a name="extracting-phone-numbers"></a><span data-ttu-id="d5d96-186">電話番号の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-186">Extracting phone numbers</span></span>
+## <a name="extracting-phone-numbers"></a><span data-ttu-id="15ee9-186">電話番号の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-186">Extracting phone numbers</span></span>
 
 
-<span data-ttu-id="d5d96-p122">ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p122">When the user clicks the **Get Phone Numbers** button, the `myGetPhoneNumbers` event handler obtains an array of phone numbers from the [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) property of the `_MyEntities` object, if any was extracted. Each extracted phone number is stored as a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object in the array. `myGetPhoneNumbers` obtains further data about each phone number:</span></span>
+<span data-ttu-id="15ee9-p122">ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p122">When the user clicks the **Get Phone Numbers** button, the `myGetPhoneNumbers` event handler obtains an array of phone numbers from the [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) property of the `_MyEntities` object, if any was extracted. Each extracted phone number is stored as a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object in the array. `myGetPhoneNumbers` obtains further data about each phone number:</span></span>
 
 
-- <span data-ttu-id="d5d96-190">[PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-190">The string representing the kind of phone number, for example, home phone number, from the [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) property.</span></span>
+- <span data-ttu-id="15ee9-190">[PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-190">The string representing the kind of phone number, for example, home phone number, from the [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) property.</span></span>
 
-- <span data-ttu-id="d5d96-191">[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) プロパティから取得される、実際の電話番号を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-191">The string representing the actual phone number from the [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) property.</span></span>
+- <span data-ttu-id="15ee9-191">[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) プロパティから取得される、実際の電話番号を表す文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-191">The string representing the actual phone number from the [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) property.</span></span>
 
-- <span data-ttu-id="d5d96-192">[PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring) プロパティから取得される電話番号として最初に識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-192">The string that was originally identified as the phone number from the [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring) property.</span></span>
+- <span data-ttu-id="15ee9-192">[PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring) プロパティから取得される電話番号として最初に識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-192">The string that was originally identified as the phone number from the [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring) property.</span></span>
 
-<span data-ttu-id="d5d96-p123">`myGetPhoneNumbers` はローカル HTML 文字列を `htmlText` で生成し、各電話番号のデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p123">`myGetPhoneNumbers` forms a local HTML string in `htmlText` to display the data for each of the phone numbers. The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-p123">`myGetPhoneNumbers` はローカル HTML 文字列を `htmlText` で生成し、各電話番号のデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p123">`myGetPhoneNumbers` forms a local HTML string in `htmlText` to display the data for each of the phone numbers. The following is the related JavaScript code.</span></span>
 
 
 
@@ -503,21 +503,21 @@ function myGetPhoneNumbers()
 ```
 
 
-## <a name="extracting-task-suggestions"></a><span data-ttu-id="d5d96-195">タスクの提案の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-195">Extracting task suggestions</span></span>
+## <a name="extracting-task-suggestions"></a><span data-ttu-id="15ee9-195">タスクの提案の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-195">Extracting task suggestions</span></span>
 
 
-<span data-ttu-id="d5d96-p124">ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p124">When the user clicks the **Get Task Suggestions** button, the `myGetTaskSuggestions` event handler obtains an array of task suggestions from the [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) property of the `_MyEntities` object, if any was extracted. Each extracted task suggestion is stored as a [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object in the array. `myGetTaskSuggestions` obtains further data about each task suggestion:</span></span>
+<span data-ttu-id="15ee9-p124">ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p124">When the user clicks the **Get Task Suggestions** button, the `myGetTaskSuggestions` event handler obtains an array of task suggestions from the [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) property of the `_MyEntities` object, if any was extracted. Each extracted task suggestion is stored as a [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object in the array. `myGetTaskSuggestions` obtains further data about each task suggestion:</span></span>
 
 
-- <span data-ttu-id="d5d96-199">[TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring) プロパティから取得されるタスクの提案として最初に識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="d5d96-199">The string that was originally identified a task suggestion from the [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring) property.</span></span>
+- <span data-ttu-id="15ee9-199">[TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring) プロパティから取得されるタスクの提案として最初に識別された文字列。</span><span class="sxs-lookup"><span data-stu-id="15ee9-199">The string that was originally identified a task suggestion from the [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring) property.</span></span>
 
-- <span data-ttu-id="d5d96-p125">[TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) プロパティから取得される、タスクの割り当て先の配列。各割り当て先は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p125">The array of task assignees from the [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) property. Each assignee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.</span></span>
+- <span data-ttu-id="15ee9-p125">[TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) プロパティから取得される、タスクの割り当て先の配列。各割り当て先は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p125">The array of task assignees from the [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) property. Each assignee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.</span></span>
 
-- <span data-ttu-id="d5d96-202">割り当て先ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) プロパティから取得される名前。</span><span class="sxs-lookup"><span data-stu-id="d5d96-202">For each assignee, the name from the [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) property.</span></span>
+- <span data-ttu-id="15ee9-202">割り当て先ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) プロパティから取得される名前。</span><span class="sxs-lookup"><span data-stu-id="15ee9-202">For each assignee, the name from the [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) property.</span></span>
 
-- <span data-ttu-id="d5d96-203">割り当て先ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) プロパティから取得される SMTP アドレス。</span><span class="sxs-lookup"><span data-stu-id="d5d96-203">For each assignee, the SMTP address from the [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) property.</span></span>
+- <span data-ttu-id="15ee9-203">割り当て先ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) プロパティから取得される SMTP アドレス。</span><span class="sxs-lookup"><span data-stu-id="15ee9-203">For each assignee, the SMTP address from the [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) property.</span></span>
 
-<span data-ttu-id="d5d96-p126">`myGetTaskSuggestions` はローカル HTML 文字列を `htmlText` で生成し、タスクの提案ごとのデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p126">`myGetTaskSuggestions` forms a local HTML string in `htmlText` to display the data for each task suggestion. The following is the related JavaScript code.</span></span>
+<span data-ttu-id="15ee9-p126">`myGetTaskSuggestions` はローカル HTML 文字列を `htmlText` で生成し、タスクの提案ごとのデータを表示します。関連する JavaScript コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p126">`myGetTaskSuggestions` forms a local HTML string in `htmlText` to display the data for each task suggestion. The following is the related JavaScript code.</span></span>
 
 
 
@@ -568,10 +568,10 @@ function myGetTaskSuggestions()
 ```
 
 
-## <a name="extracting-urls"></a><span data-ttu-id="d5d96-206">URL の抽出</span><span class="sxs-lookup"><span data-stu-id="d5d96-206">Extracting URLs</span></span>
+## <a name="extracting-urls"></a><span data-ttu-id="15ee9-206">URL の抽出</span><span class="sxs-lookup"><span data-stu-id="15ee9-206">Extracting URLs</span></span>
 
 
-<span data-ttu-id="d5d96-p127">ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#urls) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p127">When the user clicks the **Get URLs** button, the `myGetUrls` event handler obtains an array of URLs from the [urls](/javascript/api/outlook/office.entities#urls) property of the `_MyEntities` object, if any was extracted. Each extracted URL is stored as a string in the array. `myGetUrls` forms a local HTML string in `htmlText` to display the list of extracted URLs.</span></span>
+<span data-ttu-id="15ee9-p127">ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#urls) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p127">When the user clicks the **Get URLs** button, the `myGetUrls` event handler obtains an array of URLs from the [urls](/javascript/api/outlook/office.entities#urls) property of the `_MyEntities` object, if any was extracted. Each extracted URL is stored as a string in the array. `myGetUrls` forms a local HTML string in `htmlText` to display the list of extracted URLs.</span></span>
 
 
 ```js
@@ -593,10 +593,10 @@ function myGetUrls()
 ```
 
 
-## <a name="clearing-displayed-entity-strings"></a><span data-ttu-id="d5d96-210">表示されたエンティティ文字列の消去</span><span class="sxs-lookup"><span data-stu-id="d5d96-210">Clearing displayed entity strings</span></span>
+## <a name="clearing-displayed-entity-strings"></a><span data-ttu-id="15ee9-210">表示されたエンティティ文字列の消去</span><span class="sxs-lookup"><span data-stu-id="15ee9-210">Clearing displayed entity strings</span></span>
 
 
-<span data-ttu-id="d5d96-p128">最後に、エンティティ アドインでは表示された文字列を消去する `myClearEntitiesBox` イベント ハンドラーを指定しています。関連するコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-p128">Lastly, the entities add-in specifies a  `myClearEntitiesBox` event handler which clears any displayed strings. The following is the related code.</span></span>
+<span data-ttu-id="15ee9-p128">最後に、エンティティ アドインでは表示された文字列を消去する `myClearEntitiesBox` イベント ハンドラーを指定しています。関連するコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-p128">Lastly, the entities add-in specifies a  `myClearEntitiesBox` event handler which clears any displayed strings. The following is the related code.</span></span>
 
 
 ```js
@@ -608,10 +608,10 @@ function myClearEntitiesBox()
 ```
 
 
-## <a name="javascript-listing"></a><span data-ttu-id="d5d96-213">JavaScript の内容</span><span class="sxs-lookup"><span data-stu-id="d5d96-213">JavaScript listing</span></span>
+## <a name="javascript-listing"></a><span data-ttu-id="15ee9-213">JavaScript の内容</span><span class="sxs-lookup"><span data-stu-id="15ee9-213">JavaScript listing</span></span>
 
 
-<span data-ttu-id="d5d96-214">次に、JavaScript の実装の内容全体を示します。</span><span class="sxs-lookup"><span data-stu-id="d5d96-214">The following is the complete listing of the JavaScript implementation.</span></span>
+<span data-ttu-id="15ee9-214">次に、JavaScript の実装の内容全体を示します。</span><span class="sxs-lookup"><span data-stu-id="15ee9-214">The following is the complete listing of the JavaScript implementation.</span></span>
 
 
 ```js
@@ -826,8 +826,8 @@ function myGetUrls()
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="d5d96-215">関連項目</span><span class="sxs-lookup"><span data-stu-id="d5d96-215">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="15ee9-215">関連項目</span><span class="sxs-lookup"><span data-stu-id="15ee9-215">See also</span></span>
 
-- [<span data-ttu-id="d5d96-216">閲覧フォーム用の Outlook アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="d5d96-216">Create Outlook add-ins for read forms</span></span>](read-scenario.md)
-- [<span data-ttu-id="d5d96-217">Outlook アイテム内の文字列を既知のエンティティとして照合する</span><span class="sxs-lookup"><span data-stu-id="d5d96-217">Match strings in an Outlook item as well-known entities</span></span>](match-strings-in-an-item-as-well-known-entities.md)
-- <span data-ttu-id="d5d96-218">[item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッド</span><span class="sxs-lookup"><span data-stu-id="d5d96-218">[item.getEntities method](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)</span></span>
+- [<span data-ttu-id="15ee9-216">閲覧フォーム用の Outlook アドインを作成する</span><span class="sxs-lookup"><span data-stu-id="15ee9-216">Create Outlook add-ins for read forms</span></span>](read-scenario.md)
+- [<span data-ttu-id="15ee9-217">Outlook アイテム内の文字列を既知のエンティティとして照合する</span><span class="sxs-lookup"><span data-stu-id="15ee9-217">Match strings in an Outlook item as well-known entities</span></span>](match-strings-in-an-item-as-well-known-entities.md)
+- <span data-ttu-id="15ee9-218">[item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッド</span><span class="sxs-lookup"><span data-stu-id="15ee9-218">[item.getEntities method](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)</span></span>
