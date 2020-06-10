@@ -3,12 +3,12 @@ title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 198a277d56d499b2b2cfef84667ceefccec81a72
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608328"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679257"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
@@ -35,7 +35,7 @@ Visual Studio では、機能が制限された基本的なアドインが作成
 > [!TIP]
 > Office アドインは Web アプリケーションであるため、アドインをカスタマイズするには、少なくとも Web 開発の基本的なスキルが必要です。 JavaScript を使い慣れていない場合は、「[Mozilla JavaScript チュートリアル](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction)」を確認することをお勧めします。
 
-アドインをカスタマイズするには、このドキュメントの[「中心概念」 > 「開発」](develop-overview.md)項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、ホスト固有の項目 (例: [Excel](../excel/index.md)) で説明する概念を理解する必要があります。 
+アドインをカスタマイズするには、このドキュメントの[「中心概念」 > 「開発」](develop-overview.md)項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、ホスト固有の項目 (例: [Excel](../excel/index.yml)) で説明する概念を理解する必要があります。 
 
 ## <a name="test-and-debug-the-add-in"></a>アドインのテストとデバッグ
 

@@ -4,12 +4,12 @@ description: Excel JavaScript API の詳細情報
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7ce3e0f01d53bba7a962878d4434d04258571b52
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 218f328468994065acda91c11b38659d7a20fe15
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612165"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679347"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API の概要
 
@@ -43,7 +43,7 @@ Excel JavaScript API オブジェクト モデルに関する詳細情報につ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドイン ドキュメント](../../excel/index.md)
+- [Excel アドイン ドキュメント](../../excel/index.yml)
 - [Excel アドインの概要](../../excel/excel-add-ins-overview.md)
 - [Excel JavaScript API リファレンス](/javascript/api/excel)
 - [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)

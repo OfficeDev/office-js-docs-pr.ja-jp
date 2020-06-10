@@ -3,12 +3,12 @@ title: Office アドインの構築
 description: Office アドイン開発の概要を説明します。
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 85f743756d552234e4ff18fd250b18904a9f63c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611978"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679396"
 ---
 # <a name="building-office-add-ins"></a>Office アドインの構築
 
@@ -119,7 +119,7 @@ Office アドインでは、Office JavaScript API を使用することで、ア
 
 ### <a name="create-an-office-add-in"></a>Office アドインを作成する
 
-[5 分間のクイック スタート](../index.md)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](../index.md)を試してみてください。
+[5 分間のクイック スタート](/office/dev/add-ins/)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](/office/dev/add-ins/)を試してみてください。
 
 ### <a name="explore-the-apis-with-script-lab"></a>Script Lab を使用して API を調べる
 
@@ -130,7 +130,7 @@ Office JavaScript API でどのような機能が提供されているかを把�
 Office アドインの開発、テスト、公開の詳細については、このドキュメントを参照してください。
 
 > [!TIP]
-> どのようなアドインを構築する場合でも、このドキュメントの 「[中心概念](core-concepts-office-add-ins.md)」セクションに記載する情報に加え、構築するアドインの種類に対応するホスト固有のセクション (たとえば、[Excel](../excel/index.md)) に記載する情報を使用してください。
+> どのようなアドインを構築する場合でも、このドキュメントの 「[中心概念](core-concepts-office-add-ins.md)」セクションに記載する情報に加え、構築するアドインの種類に対応するホスト固有のセクション (たとえば、[Excel](../excel/index.yml)) に記載する情報を使用してください。
 >
 > ![目次を表示する画像](../images/top-level-toc.png)
 

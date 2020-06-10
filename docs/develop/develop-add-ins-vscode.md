@@ -3,12 +3,12 @@ title: Visual Studio Code を使用して Office アドインを開発する
 description: Visual Studio Code を使用して Office アドインを開発する方法
 ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 0aef01c5b892a0cf08254ca8ffd9dd751b993139
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4e4d979e8a3174a4e772534255d2f9719338a4f3
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608307"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679270"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Visual Studio Code を使用して Office アドインを開発する
 
@@ -27,7 +27,7 @@ ms.locfileid: "44608307"
 
 統合開発環境 (IDE) として VS Code を使用している場合、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)で Office アドイン プロジェクトを作成する必要があります。Yeoman ジェネレーターは、VS Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。 
 
-Yeoman ジェネレーターを使用して Office アドインを作成するには、作成するアドインの種類に対応する [5 分間のクイック スタート](../index.md)の指示に従います。
+Yeoman ジェネレーターを使用して Office アドインを作成するには、作成するアドインの種類に対応する [5 分間のクイック スタート](/office/dev/add-ins/)の指示に従います。
 
 ## <a name="develop-the-add-in-using-vs-code"></a>VS Code を使用してアドインを開発する
 
@@ -36,7 +36,7 @@ Yeoman ジェネレーターがアドイン プロジェクトの作成を完了
 > [!TIP]
 > Windows では、コマンド ラインからプロジェクトのルート ディレクトリに移動し、`code .` を入力して VS Code でそのフォルダーを開くことができます。 Mac では、VS Code でプロジェクト フォルダーを開くためにそのコマンドを使用する前に、[`code` コマンドをパスに追加する](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)必要があります。
 
-Yeoman ジェネレーターは、機能が制限された基本的なアドインを作成します。 VS Code で[マニフェスト](add-in-manifests.md)、HTML、JavaScript または TypeScript、および CSS ファイルを編集することにより、アドインをカスタマイズできます。 Yeoman ジェネレーターが作成するアドイン プロジェクトのプロジェクト構造とファイルの概要については、作成したアドインの種類に対応する [5 分間のクイック スタート](../index.md)内の Yeoman ジェネレーターのガイダンスを参照してください。
+Yeoman ジェネレーターは、機能が制限された基本的なアドインを作成します。 VS Code で[マニフェスト](add-in-manifests.md)、HTML、JavaScript または TypeScript、および CSS ファイルを編集することにより、アドインをカスタマイズできます。 Yeoman ジェネレーターが作成するアドイン プロジェクトのプロジェクト構造とファイルの概要については、作成したアドインの種類に対応する [5 分間のクイック スタート](/office/dev/add-ins/)内の Yeoman ジェネレーターのガイダンスを参照してください。
 
 ## <a name="test-and-debug-the-add-in"></a>アドインのテストとデバッグ
 
