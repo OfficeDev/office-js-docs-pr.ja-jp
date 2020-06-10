@@ -3,12 +3,12 @@ title: 開発環境をセットアップする
 description: Office アドインをビルドするための開発環境をセットアップする
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611955"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679354"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -63,7 +63,7 @@ Office 365 アカウントをまだお持ちでない場合は、[Office 365 開
 
 ### <a name="create-an-office-add-in"></a>Office アドインを作成する
 
-[5 分間のクイック スタート](../index.md)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](../index.md)を試してみてください。
+[5 分間のクイック スタート](/office/dev/add-ins/)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](/office/dev/add-ins/)を試してみてください。
 
 ### <a name="explore-the-apis-with-script-lab"></a>Script Lab を使用して API を調べる
 
@@ -76,4 +76,4 @@ Office JavaScript API でどのような機能が提供されているかを把�
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインの公開](../publish/publish.md)
+- [Office アドインを発行する](../publish/publish.md)
