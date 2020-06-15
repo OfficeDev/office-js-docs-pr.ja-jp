@@ -1,15 +1,15 @@
 ---
 title: ダイアログ API の要件セット
-description: ダイアログ API の要件セットの詳細情報
-ms.date: 03/11/2020
+description: ダイアログ API の要件セットの詳細については、「」を参照してください。
+ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7987a1617125f218ba883e834cb892fa9d5e2d9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: aa591a1b37c94a4db621d19786857303bb6ac473
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612116"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719064"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "44612116"
 
 Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows での Office<br>(Office 365 サブスクリプションに接続済み) |  Office on iPad<br>(Office 365 サブスクリプションに接続済み)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
+|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows での Office<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降| 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 
@@ -40,6 +40,7 @@ Office アドインは Office の複数のバージョンで機能します。�
 
 ## <a name="see-also"></a>関連項目
 
+- [Office アドインで Office ダイアログ API を使用する](../../develop/dialog-api-in-office-add-ins.md)
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
 - [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

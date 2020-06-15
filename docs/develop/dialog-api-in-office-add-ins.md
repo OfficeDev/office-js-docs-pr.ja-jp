@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
-description: Office アドインのダイアログボックス作成の基本について説明します。
-ms.date: 01/29/2020
+description: Office アドインでダイアログボックスを作成する方法の基本事項について説明します。
+ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608279"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719071"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -96,9 +96,10 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
-> - `messageParent` 関数は、ダイアログ ボックスで呼び出すことができる、*ただ* 2 つの Office API のうちの 1 つです。もう 1 つは `Office.context.requirements.isSetSupported` です。詳細は、「[Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)」を参照してださい。
+> [!IMPORTANT]
 > - `messageParent` 関数を呼び出せるのは、ホスト ページと同じドメイン (プロトコルとポートを含む) を持つページ上のみです。
+> - この `messageParent` 関数は、ダイアログ*only*ボックスで呼び出すことができる2つの Office JS api のうちの1つです。 
+> - ダイアログボックスで呼び出すことができるその他の JS API は、 `Office.context.requirements.isSetSupported` です。 詳細は、「[Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)」を参照してださい。 ただし、ダイアログボックスでは、この API は Outlook 2016 1 での購入時 (つまり、MSI バージョン) ではサポートされていません。
 
 次の例では、`googleProfile` は文字列に変換されたバージョンのユーザーの Google プロファイルです。
 
