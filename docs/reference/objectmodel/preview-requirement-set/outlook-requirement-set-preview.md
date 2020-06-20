@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 05/29/2020
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a8026448f32d29de36684eb6a6d9fa0826de5f5b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d165d6ff82edf66034bb90ea40d522a23f919191
+ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608086"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "44778663"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -83,6 +83,50 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 拡張された `AppendOnSend` アクセス許可のコレクションに拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
 
 **利用可能な**対象: Outlook on Windows (Office 365 サブスクリプションに接続)、web 上の outlook (モダン、[構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="async-versions-of-display-apis"></a>非同期バージョンの `display` api
+
+#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[DisplayAppointmentFormAsync の内容](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentformasync-itemid--options--callback-)
+
+既存の予定を表示するオブジェクトに新しい関数を追加 `Mailbox` しました。 これは、メソッドの非同期バージョンです `displayAppointmentForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
+
+既存のメッセージを表示するオブジェクトに新しい関数を追加しまし `Mailbox` た。 これは、メソッドの非同期バージョンです `displayMessageForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[DisplayNewAppointmentFormAsync の内容](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
+
+`Mailbox`新しい予定のフォームを表示する新しい関数をオブジェクトに追加しました。 これは、メソッドの非同期バージョンです `displayNewAppointmentForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office。 displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
+
+`Mailbox`新しいメッセージフォームを表示する新しい関数をオブジェクトに追加しました。 これは、メソッドの非同期バージョンです `displayNewMessageForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[DisplayReplyAllFormAsync を示します。](office.context.mailbox.item.md#methods)
+
+`Item`読み取りモードで "全員に返信" フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョンです `displayReplyAllForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
+
+#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[DisplayReplyFormAsync を示します。](office.context.mailbox.item.md#methods)
+
+`Item`読み取りモードで "返信" フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョンです `displayReplyForm` 。
+
+**使用できる場所**: Outlook on Windows (Office 365 サブスクリプションに接続している場合)
 
 <br>
 
