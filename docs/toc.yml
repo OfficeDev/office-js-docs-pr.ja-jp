@@ -283,6 +283,8 @@
           displayName: 'uninstall, sideload'
         - name: ランタイム ログを使用してデバッグする
           href: testing/runtime-logging.md
+        - name: Visual Studio Code 用 デバッガー 拡張機能
+          href: testing/debug-with-vs-extension.md
         - name: ユーザーのエラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
         - name: ユーザビリティ テスト
