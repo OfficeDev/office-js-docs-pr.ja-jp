@@ -1,18 +1,18 @@
 ---
 title: Office アドインを使用できるホストおよびプラットフォーム
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
-ms.date: 05/11/2020
+ms.date: 06/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 979c873b1c5f2d1d7847414f037d5c75737aa33d
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611983"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888160"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
 
-期待どおりの動作をするうえで、Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API が含まれています。
+To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platforms, extension points, API requirement sets, and Common APIs that are currently supported for each Office application.
 
 > [!NOTE]
 > MSI からインストールされる最初の Office 2016 リリースには、ExcelApi 1.1、WordApi 1.1、共通 API の要件セットのみが含まれています。 さまざまなバージョンの Office の更新履歴の詳細については、「[関連項目](#see-also)」セクションをご確認ください。
@@ -154,7 +154,6 @@ ms.locfileid: "44611983"
           - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - MatrixBindings<br>
@@ -311,7 +310,7 @@ ms.locfileid: "44611983"
     </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>(Office 365 に接続された)</td>
+    <td>Office on Mac<br>(Office 365 に接続された)</td>
     <td>
         - カスタム関数</td>
     <td>
