@@ -1,19 +1,19 @@
 ---
 title: Office 共通 API の要件セット
 description: Office 共通 API の要件セットの詳細情報
-ms.date: 06/03/2020
+ms.date: 06/23/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: dfb0f1c7daa281851063eb325cd14dccab8060fa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611352"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888146"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 Office ホストによってアドインがサポートされる場所に関する情報が必要ですか? 「[Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)」を参照してください。
 
@@ -59,7 +59,7 @@ Office ホストによってアドインがサポートされる場所に関す�
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
+| Excel 2016 以降<br>Excel on the web<br>Excel 2016 以降 (Mac)<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
 
 ---
 
