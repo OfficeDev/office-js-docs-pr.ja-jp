@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細
-ms.date: 05/11/2020
+ms.date: 06/29/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e3652e60f6ecea9c8269d0ed6b348848c026fe5c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2c547524fcb630ecb1b02fede829cf0a9a4e173f
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611373"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006466"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -34,6 +34,24 @@ ms.locfileid: "44611373"
 |:---|:---|:---|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[getDimensionValues (dimension: Excel. ChartSeriesDimension)](/javascript/api/excel/excel.chartseries#getdimensionvalues-dimension-)|グラフの系列の1つの次元から値を取得します。 指定できるのは、指定された次元と、グラフ系列に対するデータのマッピング方法によって異なります。|
 |[Comment](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|コメントのコンテンツタイプを取得します。|
+|[CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)|[コメントの詳細](/javascript/api/excel/excel.commentaddedeventargs#commentdetails)|`CommentDetail`関連付けられている返信のコメント id と id を含む配列を取得します。|
+||[source](/javascript/api/excel/excel.commentaddedeventargs#source)|イベントのソースを指定します。 詳細は「`Excel.EventSource`」をご覧ください。|
+||[type](/javascript/api/excel/excel.commentaddedeventargs#type)|イベントの種類を取得します。 詳細は「`Excel.EventType`」をご覧ください。|
+||[worksheetId](/javascript/api/excel/excel.commentaddedeventargs#worksheetid)|イベントが発生したワークシートの ID を取得します。|
+|[CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)|[changeType](/javascript/api/excel/excel.commentchangedeventargs#changetype)|変更されたイベントの発生方法を表す変更の種類を取得します。|
+||[コメントの詳細](/javascript/api/excel/excel.commentchangedeventargs#commentdetails)|`CommentDetail`関連する返信のコメント id と id を含む配列を取得します。|
+||[source](/javascript/api/excel/excel.commentchangedeventargs#source)|イベントのソースを指定します。 詳細は「`Excel.EventSource`」をご覧ください。|
+||[type](/javascript/api/excel/excel.commentchangedeventargs#type)|イベントの種類を取得します。 詳細は「`Excel.EventType`」をご覧ください。|
+||[worksheetId](/javascript/api/excel/excel.commentchangedeventargs#worksheetid)|イベントが発生したワークシートの ID を取得します。|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[onAdded](/javascript/api/excel/excel.commentcollection#onadded)|コメントが追加されるときに発生します。|
+||[onChanged](/javascript/api/excel/excel.commentcollection#onchanged)|返信が削除されたときを含め、コメントのコレクション内のコメントまたは返信が変更されたときに発生します。|
+||[onDeleted](/javascript/api/excel/excel.commentcollection#ondeleted)|コメントのコレクションでコメントが削除されると発生します。|
+|[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)|[コメントの詳細](/javascript/api/excel/excel.commentdeletedeventargs#commentdetails)|`CommentDetail`関連付けられている返信のコメント id と id を含む配列を取得します。|
+||[source](/javascript/api/excel/excel.commentdeletedeventargs#source)|イベントのソースを指定します。 詳細は「`Excel.EventSource`」をご覧ください。|
+||[type](/javascript/api/excel/excel.commentdeletedeventargs#type)|イベントの種類を取得します。 詳細は「`Excel.EventType`」をご覧ください。|
+||[worksheetId](/javascript/api/excel/excel.commentdeletedeventargs#worksheetid)|イベントが発生したワークシートの ID を取得します。|
+|[コメントの詳細](/javascript/api/excel/excel.commentdetail)|[commentId](/javascript/api/excel/excel.commentdetail#commentid)|コメントの ID を表します。|
+||[replyIds](/javascript/api/excel/excel.commentdetail#replyids)|コメントに関連付けられている返信の Id を表します。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[contentType](/javascript/api/excel/excel.commentreply#contenttype)|返信のコンテンツの種類。|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[datetimeFormat](/javascript/api/excel/excel.cultureinfo#datetimeformat)|日付と時刻を表示するためのカルチャに適した形式を定義します。 これは、現在のシステムのカルチャ設定に基づいています。|
 |[DatetimeFormatInfo](/javascript/api/excel/excel.datetimeformatinfo)|[dateSeparator](/javascript/api/excel/excel.datetimeformatinfo#dateseparator)|日付の区切り文字として使用される文字列を取得します。 これは、現在のシステム設定に基づいています。|
@@ -41,13 +59,25 @@ ms.locfileid: "44611373"
 ||[longTimePattern](/javascript/api/excel/excel.datetimeformatinfo#longtimepattern)|長い時間の値の書式指定文字列を取得します。 これは、現在のシステム設定に基づいています。|
 ||[短い日付パターン](/javascript/api/excel/excel.datetimeformatinfo#shortdatepattern)|短い日付の値の書式文字列を取得します。 これは、現在のシステム設定に基づいています。|
 ||[timeSeparator](/javascript/api/excel/excel.datetimeformatinfo#timeseparator)|時刻の区切り記号として使用される文字列を取得します。 これは、現在のシステム設定に基づいています。|
+|[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate--)|このシートビューをアクティブにします。 これは、Excel UI の [切り替え先] を使用するのと同じです。|
+||[delete()](/javascript/api/excel/excel.namedsheetview#delete--)|ワークシートからシートビューを削除します。|
+||[重複 (名前?: string)](/javascript/api/excel/excel.namedsheetview#duplicate-name-)|このシートビューのコピーを作成します。|
+||[name](/javascript/api/excel/excel.namedsheetview#name)|シートビューの名前を取得または設定します。|
+|[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[add(name: string)](/javascript/api/excel/excel.namedsheetviewcollection#add-name-)|指定した名前の新しいシートビューを作成します。|
+||[enterTemporary ()](/javascript/api/excel/excel.namedsheetviewcollection#entertemporary--)|新しい一時シートビューを作成してアクティブにします。|
+||[exit ()](/javascript/api/excel/excel.namedsheetviewcollection#exit--)|現在アクティブなシートビューを終了します。|
+||[getActive ()](/javascript/api/excel/excel.namedsheetviewcollection#getactive--)|ワークシートの現在アクティブなシートビューを取得します。|
+||[getCount()](/javascript/api/excel/excel.namedsheetviewcollection#getcount--)|このワークシートのシートビューの数を取得します。|
+||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitem-key-)|名前を使用してシートビューを取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getitemat-index-)|コレクション内のインデックスによってシートビューを取得します。|
+||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter)|[comparator](/javascript/api/excel/excel.pivotdatefilter#comparator)|比較演算子は、他の値を比較する静的な値です。 比較の種類は、条件によって定義されます。|
 ||[condition](/javascript/api/excel/excel.pivotdatefilter#condition)|必要なフィルター条件を定義するフィルターの条件を指定します。|
 ||[排他](/javascript/api/excel/excel.pivotdatefilter#exclusive)|True の場合、フィルターは条件に一致するアイテムを*除外*します。 既定では false (条件に一致するアイテムを含むフィルター)。|
 ||[lowerBound](/javascript/api/excel/excel.pivotdatefilter#lowerbound)|フィルター条件の範囲の下限を指定し `Between` ます。|
 ||[upperBound](/javascript/api/excel/excel.pivotdatefilter#upperbound)|フィルター条件の範囲の上限を指定し `Between` ます。|
 ||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholedays)|`Equals`、、 `Before` `After` 、および `Between` フィルター条件の場合、比較を日単位で行う必要があるかどうかを示します。|
-|[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (filter: PivotFilters)](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)|フィールドの現在の PivotFilters を1つまたは複数設定し、フィールドに適用します。|
+|[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (filter: PivotFilters)](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)|1つまたは複数のフィールドの現在の PivotFilters を設定し、フィールドに適用します。|
 ||[clearAllFilters ()](/javascript/api/excel/excel.pivotfield#clearallfilters--)|すべてのフィールドフィルターのすべての条件をクリアします。 これにより、そのフィールドのアクティブなフィルター処理がすべて削除されます。|
 ||[clearFilter (filterType: PivotFilterType)](/javascript/api/excel/excel.pivotfield#clearfilter-filtertype-)|指定した種類のフィールドのフィルターから、すべての既存の条件を削除します (現在適用されている場合)。|
 ||[getFilters ()](/javascript/api/excel/excel.pivotfield#getfilters--)|フィールドに現在適用されているすべてのフィルターを取得します。|
@@ -75,13 +105,19 @@ ms.locfileid: "44611373"
 ||[基準](/javascript/api/excel/excel.pivotvaluefilter#threshold)|上位/下位フィルター条件に対してフィルター処理するアイテム、パーセント、または合計の "N" 個のしきい値。|
 ||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperbound)|フィルター条件の範囲の上限を指定し `Between` ます。|
 ||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|フィルター処理の対象となるフィールドで選択されている "value" の名前です。|
-|[Range](/javascript/api/excel/excel.range)|[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|スピルするセルのアンカー セルを含む範囲オブジェクトを取得します。 複数のセルを含む範囲に適用される場合は失敗します。|
+|[Range](/javascript/api/excel/excel.range)|[getDirectPrecedents 元 ()](/javascript/api/excel/excel.range#getdirectprecedents--)|`WorkbookRangeAreas`同じワークシートまたは複数のワークシート内のセルのすべての直接の参照元を含む範囲を表すオブジェクト型 (object) の値を取得します。|
+||[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|この範囲内の結合領域を表す RangeAreas オブジェクトを返します。 この範囲内のマージされた領域の数が512を超える場合、API は結果を返すことに失敗します。|
+||[getPrecedents 元 ()](/javascript/api/excel/excel.range#getprecedents--)|`WorkbookRangeAreas`同じワークシートまたは複数のワークシート内のセルのすべての参照元を含む範囲を表すオブジェクト型 (object) の値を取得します。|
+||[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|スピルするセルのアンカー セルを含む範囲オブジェクトを取得します。 複数のセルを含む範囲に適用される場合は失敗します。|
 ||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getspillparentornullobject--)|スピルするセルのアンカー セルを含む範囲オブジェクトを取得します。|
 ||[getSpillingToRange()](/javascript/api/excel/excel.range#getspillingtorange--)|アンカー セルで呼び出されたとき、スピル範囲を含む範囲オブジェクトを取得します。 複数のセルを含む範囲に適用される場合は失敗します。|
 ||[getSpillingToRangeOrNullObject()](/javascript/api/excel/excel.range#getspillingtorangeornullobject--)|アンカー セルで呼び出されたとき、スピル範囲を含む範囲オブジェクトを取得します。|
 ||[hasSpill](/javascript/api/excel/excel.range#hasspill)|すべてのセルにスピル ボーダーがあるかどうかを表します。|
 ||[番号 Formatcategories](/javascript/api/excel/excel.range#numberformatcategories)|各セルの数値形式のカテゴリを表します。|
 ||[savedAsArray](/javascript/api/excel/excel.range#savedasarray)|すべてのセルが配列数式として保存されるかどうかを表します。|
+|[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|このコレクション内の RangeAreas オブジェクトの数を取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|コレクション内の位置に基づいて RangeAreas オブジェクトを返します。|
+||[items](/javascript/api/excel/excel.rangeareascollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|XML 文字列からスケーラブルなベクター グラフィックス (SVG) を作成し、それをワークシートに追加します。 新しい画像を表す Shape オブジェクトを返します。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|数式で使用するスライサーの名前を表します。|
 ||[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|スライサーに適用されるスタイルです。|
@@ -96,12 +132,18 @@ ms.locfileid: "44611373"
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルを含むワークシートの id を取得します。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールドリストウィンドウをブックレベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
+|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|`RangeAreas`ワークシート id またはコレクション内の名前に基づいてオブジェクトを返します。|
+||[getRangeAreasOrNullObjectBySheet (key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|`RangeAreas`ワークシートの名前またはコレクション内の id に基づいてオブジェクトを返します。 ワークシートが存在しない場合は null オブジェクトを返します。|
+||[解決](/javascript/api/excel/excel.workbookrangeareas#addresses)|A1 形式のアドレスの配列を返します。 Address 値には、セルの各長方形ブロックのワークシート名が格納されます (例: "Sheet1!A1: B4、Sheet1!D1: D4 ")。 読み取り専用です。|
+||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|RangeAreasCollection オブジェクトを取得します。コレクション内の各 RangeAreas は、1つのワークシート内の1つまたは複数の四角形の範囲を表します。|
+||[域](/javascript/api/excel/excel.workbookrangeareas#ranges)|このオブジェクトを構成する範囲のコレクションを返します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customproperties)|ワークシートレベルのカスタムプロパティのコレクションを取得します。|
+||[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|ワークシートにあるシートビューのコレクションを返します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|フィルターが特定のワークシートに適用されたときに発生します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|あるブックの指定されたワークシートを現在のブックに挿入します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
 |[ワークシート Customproperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete--)|カスタム プロパティを削除します。|
-||[key](/javascript/api/excel/excel.worksheetcustomproperty#key)|カスタム プロパティのキーを取得します。 カスタムプロパティのキーは大文字と小文字を区別しません。|
+||[key](/javascript/api/excel/excel.worksheetcustomproperty#key)|カスタム プロパティのキーを取得します。 カスタムプロパティのキーは大文字と小文字を区別しません。 キーは255文字に制限されています (大きい値を指定すると、"InvalidArgument" エラーがスローされます)。|
 ||[value](/javascript/api/excel/excel.worksheetcustomproperty#value)|カスタム プロパティの値を取得または設定します。|
 |[WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|[add (key: string, value: string)](/javascript/api/excel/excel.worksheetcustompropertycollection#add-key--value-)|指定したキーに対応する新しいカスタムプロパティを追加します。 これにより、既存のカスタムプロパティがそのキーで上書きされます。|
 ||[getCount()](/javascript/api/excel/excel.worksheetcustompropertycollection#getcount--)|このワークシートのカスタムプロパティの数を取得します。|

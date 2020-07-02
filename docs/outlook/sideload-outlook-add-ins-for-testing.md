@@ -1,23 +1,22 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 06/24/2019
+ms.date: 06/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605326"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006480"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
 サイドロードを使用すると、最初にアドイン カタログに置かなくても、テスト用に Outlook アドインをインストールすることができます。
 
+## <a name="sideload-an-add-in-in-outlook-on-the-web"></a>Outlook on the web のアドインをサイドロードする
 
-## <a name="sideload-an-add-in-in-outlook-in-office-365"></a>Office 365 の Outlook のアドインをサイドロードする
-
-Office 365 の Outlook のアドインをサイドロードするプロセスは、新しい Outlook on the web を使用している場合と従来の Outlook on the web を使用している場合とで異なります。
+Web 上の Outlook でアドインをサイドロードするためのプロセスは、新しいバージョンとクラシックバージョンのどちらを使用しているかによって異なります。
 
 - メールボックスのツールバーが次の図のような場合、「[新しい Outlook on the web のアドインをサイドロードする](#sideload-an-add-in-in-the-new-outlook-on-the-web)」を参照してください。
 
@@ -34,7 +33,7 @@ Office 365 の Outlook のアドインをサイドロードするプロセスは
 
 1. [Office 365 の Outlook](https://outlook.office.com) に移動します。
 
-1. Outlook on the web で新しいメッセージを作成します。   
+1. Outlook on the web で新しいメッセージを作成します。
 
 1. 新しいメッセージの下部で [**...**] を選択し、表示されるメニューから [**アドインを取得**] を選択します。
 
@@ -48,7 +47,7 @@ Office 365 の Outlook のアドインをサイドロードするプロセスは
 
     ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>従来の Outlook on the web のアドインをサイドロードする
 
@@ -66,11 +65,13 @@ Office 365 の Outlook のアドインをサイドロードするプロセスは
 
     ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Outlook on the desktop のアドインをサイドロードする
 
-1. Windows 用 Outlook 2013 以降、または Mac 用 Outlook 2016 以降を開きます。
+### <a name="outlook-2016-or-later"></a>Outlook 2016 以降
+
+1. Windows または Mac で Outlook 2016 以降を開きます。
 
 1. リボンで [**アドインを取得**] ボタンを選択します。
 
@@ -87,7 +88,15 @@ Office 365 の Outlook のアドインをサイドロードするプロセスは
 
     ![[ファイルから追加] オプションを示す [ストア] のスクリーンショット](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+#### <a name="outlook-2013"></a>Outlook 2013
+
+1. Windows で Outlook 2013 を開きます。
+
+1. [**ファイル**] メニューを選択し、[**情報**] タブの [アドインの**管理**] をクリックします。 Outlook はブラウザーを開きます。
+
+1. Web 上の Outlook のバージョンに応じて、「 [web 上の outlook でアドインをサイドロード](#sideload-an-add-in-in-outlook-on-the-web)する」セクションの手順を実行します。
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
 

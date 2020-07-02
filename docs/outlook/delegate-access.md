@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで代理人アクセスのシナリオを有効にする
 description: 代理人アクセスについて簡単に説明し、アドインサポートを構成する方法について説明します。
-ms.date: 01/14/2020
+ms.date: 06/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608951"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006417"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Outlook アドインで代理人アクセスのシナリオを有効にする
 
@@ -41,11 +41,16 @@ ms.locfileid: "44608951"
 
 通常、所有者のメールボックスに対する代理人の更新は、メールボックス間で即時に同期されます。
 
-ただし、アドインが REST または EWS 操作を使用してアイテムの拡張プロパティを設定する場合、そのような変更は同期に数時間かかることがあります。このような遅延を避けるには、 [CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトと関連する api を使用することをお勧めします。 詳細については、記事「Outlook アドインでメタデータを取得および設定する」の「[カスタムプロパティ」セクション](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)を参照してください。
+ただし、REST または Exchange Web サービス (EWS) の操作を使用してアイテムの拡張プロパティを設定した場合は、そのような変更を同期するのに数時間かかることがあります。このような遅延を避けるには、 [CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトと関連する api を使用することをお勧めします。 詳細については、記事「Outlook アドインでメタデータを取得および設定する」の「[カスタムプロパティ」セクション](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)を参照してください。
+
+> [!IMPORTANT]
+> 代理人のシナリオでは、office.js API によって現在提供されているトークンと共に EWS を使用することはできません。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 アドインで代理人アクセスのシナリオを有効にするには、親要素のマニフェスト内の[Supportssharedfolders](../reference/manifest/supportssharedfolders.md)要素をに設定する必要があり `true` `DesktopFormFactor` ます。 現在、他のフォームファクターはサポートされていません。
+
+代理人からの REST 呼び出しをサポートするには、マニフェストの [[アクセス許可](../reference/manifest/permissions.md)] ノードをに設定 `ReadWriteMailbox` します。
 
 次の例は、 `SupportsSharedFolders` マニフェストのセクション内に設定された要素を示して `true` います。
 
@@ -77,6 +82,9 @@ ms.locfileid: "44608951"
 ## <a name="perform-an-operation-as-delegate"></a>代理人として操作を実行する
 
 アイテムの共有プロパティは、新規作成または閲覧モードで取得できます。そのためには、 [getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)メソッドを呼び出します。 これにより、現在、代理人のアクセス許可、所有者の電子メールアドレス、REST API のベース URL、ターゲットメールボックスを提供する[Sharedproperties](/javascript/api/outlook/office.sharedproperties)オブジェクトが返されます。
+
+> [!IMPORTANT]
+> 代理人のシナリオでは、アドインでは、EWS ではなく REST を使用でき、アドインのアクセス許可をに設定して、 `ReadWriteMailbox` 所有者のメールボックスへの rest アクセスを有効にする必要があります。
 
 次の例は、メッセージまたは予定の共有プロパティを取得する方法、代理人が**書き込み**アクセス許可を持っているかどうかを確認する方法、および REST 呼び出しを行う方法を示しています。
 
@@ -128,6 +136,9 @@ function performOperation() {
   );
 }
 ```
+
+> [!TIP]
+> 代理人は、REST を使用して、 [outlook アイテムまたはグループ投稿に添付されている outlook メッセージのコンテンツを取得](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)できます。
 
 ## <a name="see-also"></a>関連項目
 

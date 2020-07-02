@@ -1,25 +1,25 @@
 ---
 title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: ff6336e4d76e84ddc708d65eda70f5f2e172fde7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609609"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006445"
 ---
 # <a name="error-handling"></a>エラー処理
 
-Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
+When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
 > `sync()`メソッドと Excel JAVASCRIPT api の非同期性の詳細については、「 [EXCEL javascript api を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-このドキュメントのコード サンプルでは、`Excel.run` へのすべての呼び出しに、`catch` 内で発生したエラーを検出するための `Excel.run` ステートメントが付いていることがわかります。 Excel JavaScript Api を使用してアドインを構築するときには、同じパターンを使用することをお勧めします。
+Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
 
 ```js
 Excel.run(function (context) {
@@ -38,7 +38,7 @@ Excel.run(function (context) {
 
 Excel JavaScript API 要求が正常に実行されない場合、API は次のプロパティを含むエラー オブジェクトを返します。
 
-- **code**:エラー メッセージの `code` プロパティには、`OfficeExtension.ErrorCodes` または `Excel.ErrorCodes` リストの一部である文字列が含まれます。 たとえば、エラー コード "InvalidReference" は、参照が指定された操作に対して有効でないことを示します。 エラー コードはローカライズされません。
+- **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
 - **message**: エラー メッセージの `message` プロパティには、ローカライズされた文字列のエラーの概要が含まれています。 このエラー メッセージは、エンド ユーザーが使用するためのものではありません。アドインによってエンド ユーザーに表示されるエラー メッセージは、エラー コードと適切なビジネス ロジックを使用して、判断する必要があります。
 
@@ -72,6 +72,7 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 |`ServiceNotAvailable`|サービスを利用できません。|
 |`Unauthenticated` |必要な認証情報が見つからないか、無効です。|
 |`UnsupportedOperation`|試行中の操作はサポートされていません。|
+|`UnsupportedSheet`|このシートの種類は、マクロまたはグラフシートであるため、この操作をサポートしていません。|
 
 ## <a name="see-also"></a>関連項目
 

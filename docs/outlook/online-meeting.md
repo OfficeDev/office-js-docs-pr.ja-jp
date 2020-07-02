@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 description: オンライン会議サービスプロバイダー用の Outlook mobile アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 05/19/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: d35aa1ecd2b03b51314b5e88ae08c7fcb8382817
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609035"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006426"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 
@@ -20,38 +20,75 @@ ms.locfileid: "44609035"
 
 この記事では、ユーザーがオンライン会議サービスを使用して会議を整理し、会議に参加できるようにするために Outlook モバイルアドインをセットアップする方法について説明します。 この記事全体で、架空のオンライン会議サービスプロバイダーである "Contoso" を使用します。
 
+## <a name="set-up-your-environment"></a>環境を設定する
+
+Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
+
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 ユーザーがアドインを使用してオンライン会議を作成できるようにするには、 `MobileOnlineMeetingCommandSurface` マニフェストで親要素の下に拡張点を構成する必要があり `MobileFormFactor` ます。 その他のフォームファクターはサポートされていません。
 
-次の例は、要素と拡張点を含むマニフェストからの抜粋を示して `MobileFormFactor` `MobileOnlineMeetingCommandSurface` います。
+1. コードエディターで、[クイックスタート] プロジェクトを開きます。
 
-> [!TIP]
-> Outlook アドインのマニフェストの詳細については、「outlook[アドインのマニフェスト](manifests.md)」および「 [outlook Mobile のアドインコマンドのサポートを追加](add-mobile-support.md)する」を参照してください。
+1. プロジェクトのルートにある**manifest.xml**ファイルを開きます。
+
+1. `<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。
 
 ```xml
-...
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    ...
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
         <MobileFormFactor>
-          <FunctionFile resid="residMobileFuncUrl" />
+          <FunctionFile resid="residFunctionFile"/>
           <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-            <!-- Configure selected extension point. -->
-            <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
-              <Label resid="residUILessButton0Name" />
+            <Control xsi:type="MobileButton" id="insertMeetingButton">
+              <Label resid="residLabel"/>
               <Icon>
-                <bt:Image resid="UiLessIcon" size="25" scale="1" />
-                <bt:Image resid="UiLessIcon" size="25" scale="2" />
-                <bt:Image resid="UiLessIcon" size="25" scale="3" />
-                <bt:Image resid="UiLessIcon" size="32" scale="1" />
-                <bt:Image resid="UiLessIcon" size="32" scale="2" />
-                <bt:Image resid="UiLessIcon" size="32" scale="3" />
-                <bt:Image resid="UiLessIcon" size="48" scale="1" />
-                <bt:Image resid="UiLessIcon" size="48" scale="2" />
-                <bt:Image resid="UiLessIcon" size="48" scale="3" />
+                <bt:Image size="25" scale="1" resid="icon-16"/>
+                <bt:Image size="25" scale="2" resid="icon-16"/>
+                <bt:Image size="25" scale="3" resid="icon-16"/>
+
+                <bt:Image size="32" scale="1" resid="icon-32"/>
+                <bt:Image size="32" scale="2" resid="icon-32"/>
+                <bt:Image size="32" scale="3" resid="icon-32"/>
+
+                <bt:Image size="48" scale="1" resid="icon-48"/>
+                <bt:Image size="48" scale="2" resid="icon-48"/>
+                <bt:Image size="48" scale="3" resid="icon-48"/>
               </Icon>
               <Action xsi:type="ExecuteFunction">
                 <FunctionName>insertContosoMeeting</FunctionName>
@@ -61,81 +98,116 @@ ms.locfileid: "44609035"
         </MobileFormFactor>
       </Host>
     </Hosts>
-    ...
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
   </VersionOverrides>
 </VersionOverrides>
-...
 ```
+
+> [!TIP]
+> Outlook アドインのマニフェストの詳細については、「outlook[アドインのマニフェスト](manifests.md)」および「 [outlook Mobile のアドインコマンドのサポートを追加](add-mobile-support.md)する」を参照してください。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
 このセクションでは、アドインスクリプトでユーザーの会議を更新してオンライン会議の詳細を含める方法について説明します。
 
-次の例は、オンライン会議の詳細を作成する方法を示しています。 ここでは、サービスから会議開催者の ID とその他の詳細を取得する方法については説明しません。
+1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js**を開きます。
 
-```js
-const newBody = '<br>' +
-    '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
-    '<br><br>' +
-    'Phone Dial-in: +1(123)456-7890' +
-    '<br><br>' +
-    'Meeting ID: 123 456 789' +
-    '<br><br>' +
-    'Want to test your video connection?' +
-    '<br><br>' +
-    '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
-    '<br><br>';
-```
+1. **commands.js**ファイルの内容全体を次の JavaScript に置き換えます。
 
-次の例は、マニフェストで参照される UI を使用しない関数を定義して、 `insertContosoMeeting` オンライン会議の詳細で会議の本文を更新する方法を示しています。
+    ```js
+    // 1. How to construct online meeting details.
+    // Not shown: How to get the meeting organizer's ID and other details from your service.
+    const newBody = '<br>' +
+        '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
+        '<br><br>' +
+        'Phone Dial-in: +1(123)456-7890' +
+        '<br><br>' +
+        'Meeting ID: 123 456 789' +
+        '<br><br>' +
+        'Want to test your video connection?' +
+        '<br><br>' +
+        '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
+        '<br><br>';
 
-```js
-var mailboxItem;
+    var mailboxItem;
 
-// Office is ready.
-Office.onReady(function () {
-        mailboxItem = Office.context.mailbox.item;
+    // Office is ready.
+    Office.onReady(function () {
+            mailboxItem = Office.context.mailbox.item;
+        }
+    );
+
+    // 2. How to define a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    //    to update the meeting body with the online meeting details.
+    function insertContosoMeeting(event) {
+        // Get HTML body from the client.
+        mailboxItem.body.getAsync("html",
+            { asyncContext: event },
+            function (getBodyResult) {
+                if (getBodyResult.status === Office.AsyncResultStatus.Succeeded) {
+                    updateBody(getBodyResult.asyncContext, getBodyResult.value);
+                } else {
+                    console.error("Failed to get HTML body.");
+                    getBodyResult.asyncContext.completed({ allowEvent: false });
+                }
+            }
+        );
     }
-);
 
-function insertContosoMeeting(event) {
-    // Get HTML body from the client.
-    mailboxItem.body.getAsync("html",
-        { asyncContext: event },
-        function (getBodyResult) {
-            if (getBodyResult.status === Office.AsyncResultStatus.Succeeded) {
-                updateBody(getBodyResult.asyncContext, getBodyResult.value);
-            } else {
-                console.error("Failed to get HTML body.");
-                getBodyResult.asyncContext.completed({ allowEvent: false });
+    // 3. How to implement a supporting function `updateBody`
+    //    that appends the online meeting details to the current body of the meeting.
+    function updateBody(event, existingBody) {
+        // Append new body to the existing body.
+        mailboxItem.body.setAsync(existingBody + newBody,
+            { asyncContext: event, coercionType: "html" },
+            function (setBodyResult) {
+                if (setBodyResult.status === Office.AsyncResultStatus.Succeeded) {
+                    setBodyResult.asyncContext.completed({ allowEvent: true });
+                } else {
+                    console.error("Failed to set HTML body.");
+                    setBodyResult.asyncContext.completed({ allowEvent: false });
+                }
             }
-        }
-    );
-}
-```
+        );
+    }
 
-次の例は、 `updateBody` 前の例で使用した、会議の現在の本文にオンライン会議の詳細を追加する、サポート関数の実装を示しています。
+    function getGlobal() {
+      return typeof self !== "undefined"
+        ? self
+        : typeof window !== "undefined"
+        ? window
+        : typeof global !== "undefined"
+        ? global
+        : undefined;
+    }
 
-```js
-function updateBody(event, existingBody) {
-    // Append new body to the existing body.
-    mailboxItem.body.setAsync(existingBody + newBody,
-        { asyncContext: event, coercionType: "html" },
-        function (setBodyResult) {
-            if (setBodyResult.status === Office.AsyncResultStatus.Succeeded) {
-                setBodyResult.asyncContext.completed({ allowEvent: true });
-            } else {
-                console.error("Failed to set HTML body.");
-                setBodyResult.asyncContext.completed({ allowEvent: false });
-            }
-        }
-    );
-}
-```
+    const g = getGlobal();
+
+    // The add-in command functions need to be available in global scope.
+    g.insertContosoMeeting = insertContosoMeeting;
+    ```
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-通常のガイダンスに従って、[アドインをテストし、検証](testing-and-tips.md)します。 Outlook on the web、Windows、または Mac で[サイド](sideload-outlook-add-ins-for-testing.md)ロード後に、android モバイルデバイスで outlook を再起動します (現時点でサポートされている唯一のクライアントは android です)。 次に、新しい会議画面で、Microsoft Teams または Skype のトグルが自分のものに置き換えられていることを確認します。
+通常のガイダンスに従って、[アドインをテストし、検証](testing-and-tips.md)します。 Outlook on the web、Windows、または Mac で[サイド](sideload-outlook-add-ins-for-testing.md)ロード後に、Android モバイルデバイスで outlook を再起動します。 (現時点でサポートされているクライアントは Android のみです)。次に、新しい会議画面で、Microsoft Teams または Skype のトグルが自分のものに置き換えられていることを確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI を作成する
 
@@ -148,6 +220,21 @@ android の[ ![ [会議を作成する] 画面](../images/outlook-android-create
 会議の出席者として、会議を表示するときに次のような画面が表示されます。
 
 [![Android に参加した会議画面のスクリーンショット](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+
+> [!IMPORTANT]
+> [**参加**] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については、「[オンライン会議テンプレートを登録](#register-your-online-meeting-template)する」セクションを参照してください。
+
+## <a name="register-your-online-meeting-template"></a>オンライン会議テンプレートを登録する
+
+サービスのオンライン会議テンプレートを登録する場合は、詳細情報を含む GitHub の問題を作成できます。 その後、登録タイムラインを調整するためにお客様にご連絡します。
+
+1. この記事の最後にある「**フィードバック**」セクションに移動します。
+1. [**このページ]** リンクを押します。
+1. 新しい問題の**タイトル**を [サービス名] に置き換えて、"my service のオンライン会議テンプレートを登録してください" に設定し `my-service` ます。
+1. `newBody`この記事で前述した「[オンライン会議の詳細を実装](#implement-adding-online-meeting-details)する」セクションに記載されている、または同様の変数に設定した文字列で、問題の本文に "[フィードバックをここに入力]" という文字列を置き換えます。
+1. [**新しい懸案事項の提出**] をクリックします。
+
+![Contoso 社のサンプルコンテンツを含む新しい GitHub の問題画面のスクリーンショット](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>利用可能な Api
 
