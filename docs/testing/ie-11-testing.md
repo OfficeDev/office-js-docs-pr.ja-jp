@@ -3,54 +3,54 @@ ms.date: 05/16/2020
 description: Internet Explorer 11 を使用して Office アドインをテストします。
 title: Internet Explorer 11 のテスト
 localization_priority: Normal
-ms.openlocfilehash: 4ea2b4da153e2908f928086cd4997502c194e578
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611205"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006438"
 ---
-# <a name="test-your-office-add-in-using-internet-explorer-11"></a><span data-ttu-id="565f3-103">Internet Explorer 11 を使用して Office アドインをテストする</span><span class="sxs-lookup"><span data-stu-id="565f3-103">Test your Office Add-in using Internet Explorer 11</span></span>
+# <a name="test-your-office-add-in-using-internet-explorer-11"></a><span data-ttu-id="e8a34-103">Internet Explorer 11 を使用して Office アドインをテストする</span><span class="sxs-lookup"><span data-stu-id="e8a34-103">Test your Office Add-in using Internet Explorer 11</span></span>
 
-<span data-ttu-id="565f3-104">アドインの仕様によっては、以前のバージョンの Windows および Office をサポートすることを計画している場合があります。これには、Internet Explorer 11 でのテストが必要になります。</span><span class="sxs-lookup"><span data-stu-id="565f3-104">Depending on the specifications of your add-in, you may plan to support older versions of Windows and Office, which require testing on Internet Explorer 11.</span></span> <span data-ttu-id="565f3-105">これは、多くの場合、アドインを AppSource に提出する際に必要になります。</span><span class="sxs-lookup"><span data-stu-id="565f3-105">This is often necessary as part of submitting your add-in to AppSource.</span></span> <span data-ttu-id="565f3-106">このテストでは、次のコマンドラインツールを使用して、アドインで使用されるより新しいランタイムを Internet Explorer 11 ランタイムに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="565f3-106">You can use the following command line tooling to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing.</span></span>
+<span data-ttu-id="e8a34-104">アドインの仕様によっては、以前のバージョンの Windows および Office をサポートすることを計画している場合があります。これには、Internet Explorer 11 でのテストが必要になります。</span><span class="sxs-lookup"><span data-stu-id="e8a34-104">Depending on the specifications of your add-in, you may plan to support older versions of Windows and Office, which require testing on Internet Explorer 11.</span></span> <span data-ttu-id="e8a34-105">これは、多くの場合、アドインを AppSource に提出する際に必要になります。</span><span class="sxs-lookup"><span data-stu-id="e8a34-105">This is often necessary as part of submitting your add-in to AppSource.</span></span> <span data-ttu-id="e8a34-106">このテストでは、次のコマンドラインツールを使用して、アドインで使用されるより新しいランタイムを Internet Explorer 11 ランタイムに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="e8a34-106">You can use the following command line tooling to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing.</span></span>
 
-## <a name="pre-requisites"></a><span data-ttu-id="565f3-107">前提条件</span><span class="sxs-lookup"><span data-stu-id="565f3-107">Pre-requisites</span></span>
+## <a name="pre-requisites"></a><span data-ttu-id="e8a34-107">前提条件</span><span class="sxs-lookup"><span data-stu-id="e8a34-107">Pre-requisites</span></span>
 
-- <span data-ttu-id="565f3-108">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="565f3-108">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
-- <span data-ttu-id="565f3-109">コード エディター。</span><span class="sxs-lookup"><span data-stu-id="565f3-109">A code editor.</span></span> <span data-ttu-id="565f3-110">[Visual Studio コード](https://code.visualstudio.com/)をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="565f3-110">We recommend [Visual Studio Code](https://code.visualstudio.com/)</span></span>
-- [<span data-ttu-id="565f3-111">Office Insider program の一部である</span><span class="sxs-lookup"><span data-stu-id="565f3-111">Be part of the Office Insider program</span></span>](https://insider.office.com)
+- <span data-ttu-id="e8a34-108">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="e8a34-108">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+- <span data-ttu-id="e8a34-109">コード エディター。</span><span class="sxs-lookup"><span data-stu-id="e8a34-109">A code editor.</span></span> <span data-ttu-id="e8a34-110">[Visual Studio コード](https://code.visualstudio.com/)をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e8a34-110">We recommend [Visual Studio Code](https://code.visualstudio.com/)</span></span>
+- [<span data-ttu-id="e8a34-111">Office Insider program の一部である</span><span class="sxs-lookup"><span data-stu-id="e8a34-111">Be part of the Office Insider program</span></span>](https://insider.office.com)
 
-<span data-ttu-id="565f3-112">これらの手順では、その前に Yo Office ジェネレータープロジェクトを設定していることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="565f3-112">These instructions assume you have set up a Yo Office generator project before.</span></span> <span data-ttu-id="565f3-113">これを実行していない場合は、「 [Excel アドインの](../quickstarts/excel-quickstart-jquery.md)場合」などのクイックスタートを読むことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="565f3-113">If you haven't done this before, consider reading a quick start, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).</span></span>
+<span data-ttu-id="e8a34-112">これらの手順では、その前に Yo Office ジェネレータープロジェクトを設定していることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="e8a34-112">These instructions assume you have set up a Yo Office generator project before.</span></span> <span data-ttu-id="e8a34-113">これを実行していない場合は、「 [Excel アドインの](../quickstarts/excel-quickstart-jquery.md)場合」などのクイックスタートを読むことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="e8a34-113">If you haven't done this before, consider reading a quick start, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).</span></span>
 
-## <a name="using-ie11-tooling"></a><span data-ttu-id="565f3-114">IE11 ツールを使用する</span><span class="sxs-lookup"><span data-stu-id="565f3-114">Using IE11 tooling</span></span>
+## <a name="using-ie11-tooling"></a><span data-ttu-id="e8a34-114">IE11 ツールを使用する</span><span class="sxs-lookup"><span data-stu-id="e8a34-114">Using IE11 tooling</span></span>
 
-1. <span data-ttu-id="565f3-115">Yo Office ジェネレータープロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="565f3-115">Create a Yo Office generator project.</span></span> <span data-ttu-id="565f3-116">選択するプロジェクトの種類に関係なく、このツールはすべてのプロジェクトの種類で機能します。</span><span class="sxs-lookup"><span data-stu-id="565f3-116">It doesn't matter what kind of project you select, this tooling will work with all project types.</span></span>
+1. <span data-ttu-id="e8a34-115">Yo Office ジェネレータープロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="e8a34-115">Create a Yo Office generator project.</span></span> <span data-ttu-id="e8a34-116">選択するプロジェクトの種類に関係なく、このツールはすべてのプロジェクトの種類で機能します。</span><span class="sxs-lookup"><span data-stu-id="e8a34-116">It doesn't matter what kind of project you select, this tooling will work with all project types.</span></span>
 
-> <span data-ttu-id="565f3-117">!こと既存のプロジェクトがあり、新しいプロジェクトを作成せずにこのツールを追加する場合は、この手順をスキップして次の手順に進みます。</span><span class="sxs-lookup"><span data-stu-id="565f3-117">![NOTE] If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step.</span></span> 
+> <span data-ttu-id="e8a34-117">!こと既存のプロジェクトがあり、新しいプロジェクトを作成せずにこのツールを追加する場合は、この手順をスキップして次の手順に進みます。</span><span class="sxs-lookup"><span data-stu-id="e8a34-117">![NOTE] If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step.</span></span> 
 
-2. <span data-ttu-id="565f3-118">新しいプロジェクトのルートフォルダーで、コマンドラインで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="565f3-118">In the root folder of your new project, run the following in the command line:</span></span>
+2. <span data-ttu-id="e8a34-118">新しいプロジェクトのルートフォルダーで、コマンドラインで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="e8a34-118">In the root folder of your new project, run the following in the command line:</span></span>
 
 ```command&nbsp;line
-office-add-dev-settings webview manifest.xml ie
+npx office-addin-dev-settings webview manifest.xml ie
 ```
-<span data-ttu-id="565f3-119">Web ビューの種類が IE に設定されていることを示すメモがコマンドラインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="565f3-119">You should see a note in the command line that the web view type is now set to IE.</span></span>
+<span data-ttu-id="e8a34-119">Web ビューの種類が IE に設定されていることを示すメモがコマンドラインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e8a34-119">You should see a note in the command line that the web view type is now set to IE.</span></span>
 
-> <span data-ttu-id="565f3-120">!部このツールを使用する必要はありませんが、Internet Explorer 11 ランタイムに関連する問題の大部分をデバッグするのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="565f3-120">![TIP] It isn't necessary to use this tooling, but it should help debug the majority of issues related to the Internet Explorer 11 runtime.</span></span> <span data-ttu-id="565f3-121">堅牢性を完全にするには、Windows 7 および Office 2013 のコピーがインストールされたコンピューターを使用してテストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="565f3-121">For complete robustness, you should test using a computer with a copy of Windows 7 and Office 2013 installed.</span></span>
+> <span data-ttu-id="e8a34-120">!部このツールを使用する必要はありませんが、Internet Explorer 11 ランタイムに関連する問題の大部分をデバッグするのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="e8a34-120">![TIP] It isn't necessary to use this tooling, but it should help debug the majority of issues related to the Internet Explorer 11 runtime.</span></span> <span data-ttu-id="e8a34-121">堅牢性を完全にするには、Windows 7 および Office 2013 のコピーがインストールされたコンピューターを使用してテストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8a34-121">For complete robustness, you should test using a computer with a copy of Windows 7 and Office 2013 installed.</span></span>
 
-## <a name="command-settings"></a><span data-ttu-id="565f3-122">コマンドの設定</span><span class="sxs-lookup"><span data-stu-id="565f3-122">Command settings</span></span>
+## <a name="command-settings"></a><span data-ttu-id="e8a34-122">コマンドの設定</span><span class="sxs-lookup"><span data-stu-id="e8a34-122">Command settings</span></span>
 
-<span data-ttu-id="565f3-123">マニフェストパスが異なる場合は、次のようにコマンドでこれを指定します。</span><span class="sxs-lookup"><span data-stu-id="565f3-123">Should you have a different manifest path, specify this in the command, as shown in the following:</span></span>
+<span data-ttu-id="e8a34-123">マニフェストパスが異なる場合は、次のようにコマンドでこれを指定します。</span><span class="sxs-lookup"><span data-stu-id="e8a34-123">Should you have a different manifest path, specify this in the command, as shown in the following:</span></span>
 
-`office-add-dev-settings webview [path to your manifest] ie`
+`npx office-addin-dev-settings webview [path to your manifest] ie`
 
-<span data-ttu-id="565f3-124">また、このコマンドは、 `office-addin-dev-settings webview` 引数としていくつかのランタイムを取ることができます。</span><span class="sxs-lookup"><span data-stu-id="565f3-124">The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments:</span></span>
+<span data-ttu-id="e8a34-124">また、このコマンドは、 `office-addin-dev-settings webview` 引数としていくつかのランタイムを取ることができます。</span><span class="sxs-lookup"><span data-stu-id="e8a34-124">The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments:</span></span>
 
-- <span data-ttu-id="565f3-125">internet</span><span class="sxs-lookup"><span data-stu-id="565f3-125">ie</span></span>
-- <span data-ttu-id="565f3-126">下辺</span><span class="sxs-lookup"><span data-stu-id="565f3-126">edge</span></span>
-- <span data-ttu-id="565f3-127">既定値です。</span><span class="sxs-lookup"><span data-stu-id="565f3-127">default</span></span>
+- <span data-ttu-id="e8a34-125">internet</span><span class="sxs-lookup"><span data-stu-id="e8a34-125">ie</span></span>
+- <span data-ttu-id="e8a34-126">下辺</span><span class="sxs-lookup"><span data-stu-id="e8a34-126">edge</span></span>
+- <span data-ttu-id="e8a34-127">既定値です。</span><span class="sxs-lookup"><span data-stu-id="e8a34-127">default</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="565f3-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="565f3-128">See also</span></span>
-* [<span data-ttu-id="565f3-129">Office アドインのテストとデバッグ</span><span class="sxs-lookup"><span data-stu-id="565f3-129">Test and debug Office Add-ins</span></span>](test-debug-office-add-ins.md)
-* [<span data-ttu-id="565f3-130">テスト用に Office アドインをサイドロードする</span><span class="sxs-lookup"><span data-stu-id="565f3-130">Sideload Office Add-ins for testing</span></span>](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [<span data-ttu-id="565f3-131">Windows 10 で開発者ツールを使用してアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="565f3-131">Debug add-ins using developer tools on Windows 10</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
-* [<span data-ttu-id="565f3-132">作業ウィンドウからデバッガーをアタッチする</span><span class="sxs-lookup"><span data-stu-id="565f3-132">Attach a debugger from the task pane</span></span>](attach-debugger-from-task-pane.md)
+## <a name="see-also"></a><span data-ttu-id="e8a34-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="e8a34-128">See also</span></span>
+* [<span data-ttu-id="e8a34-129">Office アドインのテストとデバッグ</span><span class="sxs-lookup"><span data-stu-id="e8a34-129">Test and debug Office Add-ins</span></span>](test-debug-office-add-ins.md)
+* [<span data-ttu-id="e8a34-130">テスト用に Office アドインをサイドロードする</span><span class="sxs-lookup"><span data-stu-id="e8a34-130">Sideload Office Add-ins for testing</span></span>](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+* [<span data-ttu-id="e8a34-131">Windows 10 で開発者ツールを使用してアドインをデバッグする</span><span class="sxs-lookup"><span data-stu-id="e8a34-131">Debug add-ins using developer tools on Windows 10</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [<span data-ttu-id="e8a34-132">作業ウィンドウからデバッガーをアタッチする</span><span class="sxs-lookup"><span data-stu-id="e8a34-132">Attach a debugger from the task pane</span></span>](attach-debugger-from-task-pane.md)
