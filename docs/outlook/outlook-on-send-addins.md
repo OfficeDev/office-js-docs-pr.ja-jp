@@ -1,18 +1,18 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 05/27/2020
+ms.date: 07/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 148c5751e82184dbc5cb112bac097b862cc1d1f4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b30c3b155a118c8142256e31b3cb34cd842cf543
+ms.sourcegitcommit: 4f2f1c0a8ee777a43bb28efa226684261f4c4b9f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605340"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "45081404"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
-Outlook アドインの送信時機能は、メッセージまたは会議アイテムを処理する方法、またはユーザーが特定のアクションを実行できないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。たとえば、送信時機能を使用すると次のことが可能です。
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
 
 - ユーザーが機密情報を送信したり、件名を空白にしたままにしないようにする。  
 - 特定の受信者をメッセージの CC 行または会議の任意の受信者行に追加する。
@@ -70,7 +70,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 - **AppSource** &ndash; 送信時機能を使用する Outlook アドインは AppSource の検証で失敗するため、[AppSource](https://appsource.microsoft.com) に発行することはできません。 送信時機能を使用するアドインは、管理者が展開する必要があります。
 - **マニフェスト** &ndash; 1 つのアドインに対して 1 つの `ItemSend` イベントのみがサポートされています。 マニフェストに 2 つ以上の `ItemSend` イベントがある場合、マニフェストの検証は失敗します。
-- **パフォーマンス** &ndash; アドインをホストする Web サーバーへの複数回のラウンドトリップは、アドインのパフォーマンスに影響する可能性があります。複数のメッセージ ベースまたは会議ベースの操作が必要なアドインを作成する場合は、パフォーマンスへの影響を考慮してください。
+- **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **後で送信** (Mac のみ) &ndash; 送信時アドインがある場合、**後で送信**機能は使用できません。
 
 ### <a name="mailbox-typemode-limitations"></a>メールボックスの種類とモードの制限事項
@@ -351,9 +351,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |シナリオ|メールボックス 1 の送信時機能|メールボックス 2 の送信時機能|Outlook web のセッション (クラシック)|結果|サポートの有無|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |Enabled|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|pbm-2|無効|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|1/3|有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
+|1 |Enabled|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|Not currently supported. As a workaround, use scenario 3.|
+|2 |無効|Enabled|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|Not currently supported. As a workaround, use scenario 3.|
+|3 |有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
 |4 |Enabled|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web ブラウザー (モダン Outlook)、Windows、Mac
@@ -367,7 +367,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |シナリオ|メールボックス 1 の送信時ポリシー|送信時アドインが有効かどうか|メールボックス 1 のアクション|結果|サポートの有無|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
 |1 |有効|はい|メールボックス 1 はグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインが実行されます。|はい|
-|pbm-2|有効|はい|メールボックス 1 は、Outlook on the web のグループ 1 のグループ ウィンドウ内でグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインは実行されません。|現在サポートされていません。 回避策として、シナリオ 1 を使用します。|
+|2 |有効|はい|メールボックス 1 は、Outlook on the web のグループ 1 のグループ ウィンドウ内でグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインは実行されません。|現在サポートされていません。 回避策として、シナリオ 1 を使用します。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>ユーザー メールボックスで送信時アドイン機能/ポリシーが有効になっており、送信時機能をサポートするアドインがインストールされ、有効であり、オフライン モードが有効になっている
 
@@ -392,6 +392,9 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 ## <a name="code-examples"></a>コード例
 
 次のコード例は、単純な送信時アドインを作成する方法を示しています。 これらの例を基にしたコード サンプルをダウンロードするには、「[Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send)」を参照してください。
+
+> [!TIP]
+> 送信イベントでダイアログを使用する場合は、イベントを完了する前に必ずダイアログを閉じてください。
 
 ### <a name="manifest-version-override-and-event"></a>マニフェスト、バージョンのオーバーライド、イベント
 
@@ -596,7 +599,7 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-CC 行に受信者を追加して、送信時にメッセージに件名が含まれていることを確認する方法、および使用可能な API を表示する方法の詳細については、「[Outlook-Add-in-On-Send サンプル](https://github.com/OfficeDev/Outlook-Add-in-On-Send)」を参照してください。コードには詳細なコメントが付けられています。
+To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## <a name="see-also"></a>関連項目
 
