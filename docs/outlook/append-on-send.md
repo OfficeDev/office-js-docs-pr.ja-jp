@@ -4,47 +4,47 @@ description: Outlook アドインでの追加-送信機能を実装する方法�
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607597"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093988"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a><span data-ttu-id="851c0-103">Outlook アドインで送信時に追加を実装する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="851c0-103">Implement append on send in your Outlook add-in (preview)</span></span>
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a><span data-ttu-id="0acb6-103">Outlook アドインで送信時に追加を実装する (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="0acb6-103">Implement append on send in your Outlook add-in (preview)</span></span>
 
-<span data-ttu-id="851c0-104">このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。</span><span class="sxs-lookup"><span data-stu-id="851c0-104">By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.</span></span>
+<span data-ttu-id="0acb6-104">このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-104">By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="851c0-105">この機能は、現在、web 上の Outlook および Office 365 サブスクリプションを使用した Windows の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="851c0-105">This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription.</span></span> <span data-ttu-id="851c0-106">詳細については、この記事の「[投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature)参照してください。</span><span class="sxs-lookup"><span data-stu-id="851c0-106">See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.</span></span>
+> <span data-ttu-id="0acb6-105">この機能は、現在、web 上の Outlook および Microsoft 365 サブスクリプションを使用した Windows の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="0acb6-105">This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription.</span></span> <span data-ttu-id="0acb6-106">詳細については、この記事の「[投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature)参照してください。</span><span class="sxs-lookup"><span data-stu-id="0acb6-106">See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.</span></span>
 >
-> <span data-ttu-id="851c0-107">プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="851c0-107">Because preview features are subject to change without notice, they shouldn't be used in production add-ins.</span></span>
+> <span data-ttu-id="0acb6-107">プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="0acb6-107">Because preview features are subject to change without notice, they shouldn't be used in production add-ins.</span></span>
 
-## <a name="how-to-preview-the-append-on-send-feature"></a><span data-ttu-id="851c0-108">投稿の追加機能をプレビューする方法</span><span class="sxs-lookup"><span data-stu-id="851c0-108">How to preview the append-on-send feature</span></span>
+## <a name="how-to-preview-the-append-on-send-feature"></a><span data-ttu-id="0acb6-108">投稿の追加機能をプレビューする方法</span><span class="sxs-lookup"><span data-stu-id="0acb6-108">How to preview the append-on-send feature</span></span>
 
-<span data-ttu-id="851c0-109">投稿の追加機能をお試しください。</span><span class="sxs-lookup"><span data-stu-id="851c0-109">We invite you to try out the append-on-send feature!</span></span> <span data-ttu-id="851c0-110">GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある**フィードバック**セクションを参照してください)。</span><span class="sxs-lookup"><span data-stu-id="851c0-110">Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).</span></span>
+<span data-ttu-id="0acb6-109">投稿の追加機能をお試しください。</span><span class="sxs-lookup"><span data-stu-id="0acb6-109">We invite you to try out the append-on-send feature!</span></span> <span data-ttu-id="0acb6-110">GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある**フィードバック**セクションを参照してください)。</span><span class="sxs-lookup"><span data-stu-id="0acb6-110">Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).</span></span>
 
-<span data-ttu-id="851c0-111">この機能をプレビューするには:</span><span class="sxs-lookup"><span data-stu-id="851c0-111">To preview this feature:</span></span>
+<span data-ttu-id="0acb6-111">この機能をプレビューするには:</span><span class="sxs-lookup"><span data-stu-id="0acb6-111">To preview this feature:</span></span>
 
-- <span data-ttu-id="851c0-112">CDN の**ベータ版**ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。</span><span class="sxs-lookup"><span data-stu-id="851c0-112">Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).</span></span> <span data-ttu-id="851c0-113">TypeScript のコンパイルおよび IntelliSense 用の[型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は、CDN と、定義[された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。</span><span class="sxs-lookup"><span data-stu-id="851c0-113">The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span></span> <span data-ttu-id="851c0-114">これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。</span><span class="sxs-lookup"><span data-stu-id="851c0-114">You can install these types with `npm install --save-dev @types/office-js-preview`.</span></span>
-- <span data-ttu-id="851c0-115">Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com)に参加する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="851c0-115">For Windows, you may need to join the [Office Insider program](https://insider.office.com) to access more recent Office builds.</span></span>
-- <span data-ttu-id="851c0-116">Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)します。</span><span class="sxs-lookup"><span data-stu-id="851c0-116">For Outlook on the web, [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span></span>
+- <span data-ttu-id="0acb6-112">CDN の**ベータ版**ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。</span><span class="sxs-lookup"><span data-stu-id="0acb6-112">Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).</span></span> <span data-ttu-id="0acb6-113">TypeScript のコンパイルおよび IntelliSense 用の[型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は、CDN と、定義[された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。</span><span class="sxs-lookup"><span data-stu-id="0acb6-113">The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span></span> <span data-ttu-id="0acb6-114">これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-114">You can install these types with `npm install --save-dev @types/office-js-preview`.</span></span>
+- <span data-ttu-id="0acb6-115">Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com)に参加する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="0acb6-115">For Windows, you may need to join the [Office Insider program](https://insider.office.com) to access more recent Office builds.</span></span>
+- <span data-ttu-id="0acb6-116">Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-116">For Outlook on the web, [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span></span>
 
-## <a name="set-up-your-environment"></a><span data-ttu-id="851c0-117">環境を設定する</span><span class="sxs-lookup"><span data-stu-id="851c0-117">Set up your environment</span></span>
+## <a name="set-up-your-environment"></a><span data-ttu-id="0acb6-117">環境を設定する</span><span class="sxs-lookup"><span data-stu-id="0acb6-117">Set up your environment</span></span>
 
-<span data-ttu-id="851c0-118">Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="851c0-118">Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.</span></span>
+<span data-ttu-id="0acb6-118">Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-118">Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.</span></span>
 
-## <a name="configure-the-manifest"></a><span data-ttu-id="851c0-119">マニフェストを構成する</span><span class="sxs-lookup"><span data-stu-id="851c0-119">Configure the manifest</span></span>
+## <a name="configure-the-manifest"></a><span data-ttu-id="0acb6-119">マニフェストを構成する</span><span class="sxs-lookup"><span data-stu-id="0acb6-119">Configure the manifest</span></span>
 
-<span data-ttu-id="851c0-120">アドインでの追加/送信機能を有効にするには、 `AppendOnSend` [extendedpermissions](../reference/manifest/extendedpermissions.md)のコレクションにアクセス許可を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="851c0-120">To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span></span>
+<span data-ttu-id="0acb6-120">アドインでの追加/送信機能を有効にするには、 `AppendOnSend` [extendedpermissions](../reference/manifest/extendedpermissions.md)のコレクションにアクセス許可を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="0acb6-120">To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span></span>
 
-<span data-ttu-id="851c0-121">このシナリオでは、[操作の `action` **実行**] ボタンを選択するときに関数を実行する代わりに、関数を実行し `appendOnSend` ます。</span><span class="sxs-lookup"><span data-stu-id="851c0-121">For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.</span></span>
+<span data-ttu-id="0acb6-121">このシナリオでは、[操作の `action` **実行**] ボタンを選択するときに関数を実行する代わりに、関数を実行し `appendOnSend` ます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-121">For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.</span></span>
 
-1. <span data-ttu-id="851c0-122">コードエディターで、[クイックスタート] プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="851c0-122">In your code editor, open the quick start project.</span></span>
+1. <span data-ttu-id="0acb6-122">コードエディターで、[クイックスタート] プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-122">In your code editor, open the quick start project.</span></span>
 
-1. <span data-ttu-id="851c0-123">プロジェクトのルートにある**manifest.xml**ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="851c0-123">Open the **manifest.xml** file located at the root of your project.</span></span>
+1. <span data-ttu-id="0acb6-123">プロジェクトのルートにある**manifest.xml**ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-123">Open the **manifest.xml** file located at the root of your project.</span></span>
 
-1. <span data-ttu-id="851c0-124">`<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="851c0-124">Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.</span></span>
+1. <span data-ttu-id="0acb6-124">`<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-124">Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.</span></span>
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -132,17 +132,17 @@ ms.locfileid: "44607597"
     ```
 
 > [!TIP]
-> <span data-ttu-id="851c0-125">Outlook アドインのマニフェストの詳細については、「 [outlook アドインのマニフェスト](manifests.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="851c0-125">To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).</span></span>
+> <span data-ttu-id="0acb6-125">Outlook アドインのマニフェストの詳細については、「 [outlook アドインのマニフェスト](manifests.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0acb6-125">To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).</span></span>
 
-## <a name="implement-append-on-send-handling"></a><span data-ttu-id="851c0-126">追加オン送信処理を実装する</span><span class="sxs-lookup"><span data-stu-id="851c0-126">Implement append-on-send handling</span></span>
+## <a name="implement-append-on-send-handling"></a><span data-ttu-id="0acb6-126">追加オン送信処理を実装する</span><span class="sxs-lookup"><span data-stu-id="0acb6-126">Implement append-on-send handling</span></span>
 
-<span data-ttu-id="851c0-127">次に、送信イベントに追加を実装します。</span><span class="sxs-lookup"><span data-stu-id="851c0-127">Next, implement appending on the send event.</span></span>
+<span data-ttu-id="0acb6-127">次に、送信イベントに追加を実装します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-127">Next, implement appending on the send event.</span></span>
 
-<span data-ttu-id="851c0-128">このシナリオでは、ユーザーが送信するときに、免責事項をアイテムに追加することを実装します。</span><span class="sxs-lookup"><span data-stu-id="851c0-128">For this scenario, you'll implement appending a disclaimer to the item when the user sends.</span></span>
+<span data-ttu-id="0acb6-128">このシナリオでは、ユーザーが送信するときに、免責事項をアイテムに追加することを実装します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-128">For this scenario, you'll implement appending a disclaimer to the item when the user sends.</span></span>
 
-1. <span data-ttu-id="851c0-129">同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js**を開きます。</span><span class="sxs-lookup"><span data-stu-id="851c0-129">From the same quick start project, open the file **./src/commands/commands.js** in your code editor.</span></span>
+1. <span data-ttu-id="0acb6-129">同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js**を開きます。</span><span class="sxs-lookup"><span data-stu-id="0acb6-129">From the same quick start project, open the file **./src/commands/commands.js** in your code editor.</span></span>
 
-1. <span data-ttu-id="851c0-130">関数の後 `action` に、次の JavaScript 関数を挿入します。</span><span class="sxs-lookup"><span data-stu-id="851c0-130">After the `action` function, insert the following JavaScript function.</span></span>
+1. <span data-ttu-id="0acb6-130">関数の後 `action` に、次の JavaScript 関数を挿入します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-130">After the `action` function, insert the following JavaScript function.</span></span>
 
     ```js
     function appendDisclaimerOnSend(event) {
@@ -168,30 +168,30 @@ ms.locfileid: "44607597"
     }
     ```
 
-1. <span data-ttu-id="851c0-131">ファイルの末尾に、次のステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="851c0-131">At the end of the file, add the following statement.</span></span>
+1. <span data-ttu-id="0acb6-131">ファイルの末尾に、次のステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-131">At the end of the file, add the following statement.</span></span>
 
     ```js
     g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
-## <a name="try-it-out"></a><span data-ttu-id="851c0-132">試してみる</span><span class="sxs-lookup"><span data-stu-id="851c0-132">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="0acb6-132">試してみる</span><span class="sxs-lookup"><span data-stu-id="0acb6-132">Try it out</span></span>
 
-1. <span data-ttu-id="851c0-133">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="851c0-133">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="851c0-134">このコマンドを実行すると、ローカル web サーバーがまだ実行されていない場合は起動します。</span><span class="sxs-lookup"><span data-stu-id="851c0-134">When you run this command, the local web server will start if it's not already running.</span></span>
+1. <span data-ttu-id="0acb6-133">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-133">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="0acb6-134">このコマンドを実行すると、ローカル web サーバーがまだ実行されていない場合は起動します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-134">When you run this command, the local web server will start if it's not already running.</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="851c0-135">「[テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="851c0-135">Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).</span></span>
+1. <span data-ttu-id="0acb6-135">「[テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="0acb6-135">Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).</span></span>
 
-1. <span data-ttu-id="851c0-136">新しいメッセージを作成し、[**宛先**] 行に自分を追加します。</span><span class="sxs-lookup"><span data-stu-id="851c0-136">Create a new message, and add yourself to the **To** line.</span></span>
+1. <span data-ttu-id="0acb6-136">新しいメッセージを作成し、[**宛先**] 行に自分を追加します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-136">Create a new message, and add yourself to the **To** line.</span></span>
 
-1. <span data-ttu-id="851c0-137">リボンまたはオーバーフローメニューから、[**アクションを実行する**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="851c0-137">From the ribbon or overflow menu, choose **Perform an action**.</span></span>
+1. <span data-ttu-id="0acb6-137">リボンまたはオーバーフローメニューから、[**アクションを実行する**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-137">From the ribbon or overflow menu, choose **Perform an action**.</span></span>
 
-1. <span data-ttu-id="851c0-138">メッセージを送信し、**受信トレイ**または**送信済みアイテム**フォルダーから開いて、追加の免責事項を表示します。</span><span class="sxs-lookup"><span data-stu-id="851c0-138">Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.</span></span>
+1. <span data-ttu-id="0acb6-138">メッセージを送信し、**受信トレイ**または**送信済みアイテム**フォルダーから開いて、追加の免責事項を表示します。</span><span class="sxs-lookup"><span data-stu-id="0acb6-138">Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.</span></span>
 
     ![Web 上の Outlook で送信に追加された免責事項を含むメッセージ例のスクリーンショット。](../images/outlook-web-append-disclaimer.png)
 
-## <a name="see-also"></a><span data-ttu-id="851c0-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="851c0-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0acb6-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="0acb6-140">See also</span></span>
 
-[<span data-ttu-id="851c0-141">Outlook アドインのマニフェスト</span><span class="sxs-lookup"><span data-stu-id="851c0-141">Outlook add-in manifests</span></span>](manifests.md)
+[<span data-ttu-id="0acb6-141">Outlook アドインのマニフェスト</span><span class="sxs-lookup"><span data-stu-id="0acb6-141">Outlook add-in manifests</span></span>](manifests.md)
