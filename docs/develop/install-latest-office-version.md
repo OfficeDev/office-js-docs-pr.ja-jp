@@ -1,14 +1,14 @@
 ---
 title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
-ms.date: 04/16/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: bd76a0a36f12f2aa6add1d63c20a466b2036f805
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: df10d64d69b64283321bbad79aca7f7f6d482dd1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608133"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093617"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -18,8 +18,8 @@ ms.locfileid: "44608133"
 
 Office の最新ビルドを取得するためにオプトインするには、次の操作を行います。
 
-- Office 365 Solo のサブスクライバーは、「[Office Insider になる](https://insider.office.com)」を参照してください。
-- 一般法人向け Office 365 をご利用の場合は、「[一般法人向け Office 365 の先行リリース ビルドをインストールする](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)」を参照してください。
+- Microsoft 365 ファミリ、Personal、または大学のサブスクライバーの場合は、「 [Office Insider](https://insider.office.com)」を参照してください。
+- お客様が Microsoft 365 アプリをご利用のお客様の場合は、「 [microsoft 365 アプリの最初のリリースビルドをお客様向けにインストール](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)する」を参照してください。
 - Mac で Office を実行している場合は、次の操作を行います。
   - Office アプリケーションを起動します。
   - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。
@@ -30,7 +30,7 @@ Office の最新ビルドを取得するためにオプトインするには、�
 Office の最新ビルドを取得するには、次の操作を行います。
 
 1. [Office 展開ツール](https://www.microsoft.com/download/details.aspx?id=49117)をダウンロードします。
-2. ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。
+2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
 3. configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。
 4. 次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml`
 

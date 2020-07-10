@@ -3,12 +3,12 @@ title: Office アドインの認証設計ガイドライン
 description: Office アドインでサインオンまたはサインアップページを視覚的に設計する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5378404054d88e7d7bc4680630c0c0c3de63929d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 67d072b629f16ea9c5c467b8f59bc4b9211dc225
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607653"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093855"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -49,9 +49,9 @@ ms.locfileid: "44607653"
 ## <a name="single-sign-on-authentication-flow-preview"></a>シングル サインオン認証フロー (プレビュー)
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証を有効にしてください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
-実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの ID (Microsoft アカウントまたは Office 365 ID) がアドインのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
+実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの id (Microsoft アカウントまたは Microsoft 365 identity) は、アドインへのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 
 1. アドインがインストールされると、以下のような同意を求めるウィンドウが表示されます。![アドインのインストール時の Office アプリケーションの同意ウィンドウのスクリーンショット](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]

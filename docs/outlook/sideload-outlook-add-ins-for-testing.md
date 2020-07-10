@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 06/29/2020
+ms.date: 07/09/2020
 localization_priority: Normal
-ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006480"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093883"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -90,7 +90,7 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-#### <a name="outlook-2013"></a>Outlook 2013
+### <a name="outlook-2013"></a>Outlook 2013
 
 1. Windows で Outlook 2013 を開きます。
 

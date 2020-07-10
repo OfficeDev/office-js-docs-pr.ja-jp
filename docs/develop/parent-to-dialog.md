@@ -1,14 +1,14 @@
 ---
 title: ホストページからダイアログボックスにデータとメッセージを渡す
 description: MessageChild および DialogParentMessageReceived Api を使用して、ホストページからダイアログにデータを渡す方法について説明します。
-ms.date: 04/16/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bef98294b15c2787b707cee4861cc9932f98166
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609409"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093575"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>ホストページからダイアログボックスにデータとメッセージを渡す (プレビュー)
 
@@ -17,7 +17,7 @@ ms.locfileid: "44609409"
 > [!Important]
 >
 > - この記事で説明する Api はプレビュー段階です。 開発者は実験を行うことができます。ただし、運用アドインでは使用しないでください。 この API がリリースされるまでは、「次の操作を実行するには」で説明されている方法を使用して、運用アドインの[ダイアログボックスに情報を渡し](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)ます。
-> - この記事に記載されている Api には、Office 365 (サブスクリプション版の Office) が必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが生産半期チャネルに graduates されている場合、そのビルドではプレビュー機能のサポートがオフになっていることに注意してください。
+> - この記事に記載されている Api には、Microsoft 365 のサブスクリプションが必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが生産半期チャネルに graduates されている場合、そのビルドではプレビュー機能のサポートがオフになっていることに注意してください。
 > - プレビューの初期段階では、Excel、PowerPoint、Word で Api がサポートされています。ただし、Outlook には含まれません。
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -60,7 +60,7 @@ function sheetPropertiesChanged() {
 
 ## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログボックスで DialogParentMessageReceived を処理する
 
-ダイアログボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI. Addhandler async](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)メソッドに登録します。 これは、通常、 [office. onReady または office の initialize メソッド](initialize-add-in.md)で行われます。 例を次に示します。
+ダイアログボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI. Addhandler async](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)メソッドに登録します。 これは、通常、 [tialize メソッドまたは Office.iniメソッド](initialize-add-in.md)で行われます。 例を次に示します。
 
 ```javascript
 Office.onReady()

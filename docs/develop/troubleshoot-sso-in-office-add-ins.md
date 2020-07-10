@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: Office アドインのシングルサインオン (SSO) に関する問題のトラブルシューティング方法と、特別な条件やエラーを処理する方法について説明します。
-ms.date: 04/13/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 49e967aa0d500df64828c66d9dee8574eb948cec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609700"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093561"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング (プレビュー)
 
@@ -17,11 +17,11 @@ ms.locfileid: "44609700"
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証を有効にしてください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
 
-開発時は、アドインの Web サービスからの HTTP 要求および応答を傍受して表示することができるツールを使用することを強くお勧めします。最も一般的なものは、次の 2 つです。
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
 - [Fiddler](https://www.telerik.com/fiddler): 無料 ([ドキュメント](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com): 30 日間無料  ([ドキュメント](https://www.charlesproxy.com/documentation/))。
@@ -36,7 +36,7 @@ ms.locfileid: "44609700"
 
 [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API は、このアドインまたは Office バージョンではサポートされていません。
 
-- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、すべての月次チャネルの Office 365 (Office のサブスクリプション バージョン) です。
+- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、毎月のチャネルの Microsoft 365 サブスクリプションです。
 - アドインのマニフェストに適切な [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) セクションがありません。
 
 アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
@@ -60,7 +60,7 @@ ms.locfileid: "44609700"
 
 ### <a name="13003"></a>13003
 
-ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウントまたは Office 365 ("職場または学校") アカウントで Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
+ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウントまたは Microsoft 365 の教育機関または職場のアカウントを使用して Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
 ### <a name="13004"></a>13004
 
@@ -82,8 +82,8 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 - 開発中にこのエラーが発生する場合は、アドインの登録とアドイン マニフェストで `profile` のアクセス許可および (MSAL.NET を使用している場合は) `openid` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 - 運用環境では、このエラーの原因として考えられることがいくつかあります。 その一部を次に示します。
-    - ユーザーが Microsoft アカウント (MSA) ID を使用している。
-    - 職場または学校のアカウントを使用した際に他のいずれかの 13xxx エラーが発生する状況の場合、MSA を使用すると 13007 が発生します。
+    - ユーザーが Microsoft アカウント (MSA) id を持っている。
+    - Microsoft 365 の教育機関または職場のアカウントで、他の13xxx エラーのうちの1つが MSA を使用した場合、13007が発生する状況もあります。
 
   これらのすべてのケースでは、コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
 
@@ -93,7 +93,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13010"></a>13010
 
-ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。 ユーザーの Office 365 ドメインおよびドメインは、 `login.microsoftonline.com` ブラウザーの設定で異なるセキュリティゾーンに含まれています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。 ユーザーの Microsoft 365 ドメインおよびドメインは、 `login.microsoftonline.com` ブラウザー設定で異なるセキュリティゾーンに含まれています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +108,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13013"></a>13013
 
-は `getAccessToken` 短時間で何度も呼び出されていたため、Office は最新の通話を調整しました。 これは通常、このメソッドへの呼び出しの無限ループが原因で発生します。 メソッドを取り消すことが推奨されるシナリオがあります。 ただし、コードでカウンターまたはフラグ変数を使用して、メソッドが繰り返し呼び戻されないようにする必要があります。 同じ "再試行" コードパスが再度実行されている場合は、コードは、ユーザー認証の代替システムにフォールバックする必要があります。 コード例については、 `retryGetAccessToken` [HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)または[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)で変数がどのように使用されているかを参照してください。
+は `getAccessToken` 短時間で何度も呼び出されていたため、Office は最新の通話を調整しました。 これは通常、このメソッドへの呼び出しの無限ループが原因で発生します。 メソッドを取り消すことが推奨されるシナリオがあります。 ただし、コードでカウンターまたはフラグ変数を使用して、メソッドが繰り返し呼び戻されないようにする必要があります。 同じ "再試行" コードパスが再度実行されている場合は、コードは、ユーザー認証の代替システムにフォールバックする必要があります。 コード例については、 `retryGetAccessToken` [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)または[ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)で変数がどのように使用されているかを参照してください。
 
 ### <a name="50001"></a>50001
 
@@ -124,7 +124,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件付きアクセスおよび多要素認証のエラー
 
-AAD および Office 365 の特定の ID 構成では、Microsoft Graph でアクセス可能な一部のリソースで、ユーザーの Office 365 のテナントでは必要ない場合でも、多要素認証 (MFA) が必要な場合があります。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
+AAD および Microsoft 365 の id の特定の構成では、ユーザーの Microsoft 365 テナントがない場合でも、多要素認証 (MFA) を必要とするように Microsoft Graph でアクセスできる一部のリソースがあります。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
 
 コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 
 

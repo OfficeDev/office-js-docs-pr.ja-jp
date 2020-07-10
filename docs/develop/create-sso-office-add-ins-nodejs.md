@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 34356f1870c612990194358dbd2a0b97ab9495da
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810836"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093692"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
@@ -31,7 +31,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 * コード エディター。 Visual Studio Code をお勧めします。
 
-* Office 365 サブスクリプションの OneDrive for Business に保存されている少なくともいくつかのファイルおよびフォルダー。
+* 少なくとも、Microsoft 365 サブスクリプションの OneDrive for Business に格納されているファイルとフォルダーがいくつかあります。
 
 * Microsoft Azure サブスクリプション。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
 
@@ -55,7 +55,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. [Azure ポータル - アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908)ページに移動してアプリを登録します。
 
-1. ***管理者***の資格情報を使用して Office 365 テナントにサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
+1. Microsoft 365 テナントに対して***管理者***の資格情報を使用してサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
 
 1. **[新規登録]** を選択します。 **[アプリケーションを登録]** ページで、次のように値を設定します。
 
@@ -210,7 +210,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. `TODO 3`を以下のように置き換えます。 このコードについては、以下の点に注意してください。 
 
-    - Office 365 テナントが多要素認証を要求するように構成されている場合、`exchangeResponse`には追加で必要となる要素についての情報を含む`claims`プロパティが含まれます。 その場合は`OfficeRuntime.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
+    - Microsoft 365 テナントが多要素認証を要求するように構成されている場合、には、 `exchangeResponse` `claims` 追加の必要な要素に関する情報を含むプロパティが含まれます。 その場合は`OfficeRuntime.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -292,8 +292,8 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showMessage("Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
+        // Only seen in Office on the web.
+        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
@@ -481,7 +481,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. `TODO 14`を`else`ブロックを完成させる以下のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - const `tenant`は 'common' に設定されます。これは、アドインを Azure AD に登録したときにアドインをマルチテナントとして構成したためです。 特に**サポートされているアカウントの種類**を**任意の組織のディレクトリ内のアカウントと個人用の Microsoft アカウント (例: Skype、Xbox、Outlook.com)** に設定したときです。 代わりに、アドインが登録されている同じ Office 365 テナントのアカウントのみをサポートすることを選択した場合、このコードでは`tenant`がテナントの GUID に設定されます。 
+    - const `tenant`は 'common' に設定されます。これは、アドインを Azure AD に登録したときにアドインをマルチテナントとして構成したためです。 特に**サポートされているアカウントの種類**を**任意の組織のディレクトリ内のアカウントと個人用の Microsoft アカウント (例: Skype、Xbox、Outlook.com)** に設定したときです。 代わりに、アドインが登録されている同じ Microsoft 365 テナントのアカウントのみをサポートすることを選択した場合、このコードでは `tenant` テナントの GUID に設定します。 
     - POST 要求がエラーにならない場合、Azure AD からの応答は JSON に変換され、クライアントに送信されます。 この JSON オブジェクトには、Azure AD が Microsoft Graph へのアクセス トークンを割り当てた`access_token`プロパティがあります。
 
     ```javascript
@@ -571,7 +571,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. Office アプリケーションの **[ホーム]** リボンで **[アドインの表示]** ボタン (**SSO Node.js** グループ内) を選択して、作業ウィンドウ アドインを開きます。
 
-1. **[OneDrive ファイル名の取得]** ボタンをクリックします。 職場または学校の (Office 365) アカウントまたは Microsoft アカウントで Office にログインし、SSO が期待どおりに機能している場合、OneDrive for Business の最初の 10 個のファイル名およびフォルダー名がドキュメントに挿入されます。 (最初に 15 秒程度の時間がかかる場合があります。) ログインしていない、または SSO をサポートしていないシナリオにいる場合、もしくは何らかの理由で SSO が機能していない場合には、ログインするように求められます。 ログインすると、ファイル名およびフォルダー名が表示されます。
+1. **[OneDrive ファイル名の取得]** ボタンをクリックします。 Microsoft 365 の教育機関または職場のアカウントまたは Microsoft アカウントのいずれかを使用して Office にログインしており、SSO が正常に機能している場合は、OneDrive for Business の最初の10個のファイルとフォルダーの名前が文書に挿入されます。 (最初に 15 秒程度の時間がかかる場合があります。) ログインしていない、または SSO をサポートしていないシナリオにいる場合、もしくは何らかの理由で SSO が機能していない場合には、ログインするように求められます。 ログインすると、ファイル名およびフォルダー名が表示されます。
 
 > [!NOTE]
 > 以前に別の ID で Office にサインインしており、その時点で開いていた一部の Office アプリケーションがまだ開いている場合、Office が ID を変更したかのように見えても、確実に ID を変更できていない場合があります。 これが発生すると、Microsoft Graph の呼び出しが失敗するか、以前の ID のデータが返される場合があります。 これを防ぐには、必ず*他のすべての Office アプリケーションを閉じて*から、**[OneDrive ファイル名の取得]** を押してください。

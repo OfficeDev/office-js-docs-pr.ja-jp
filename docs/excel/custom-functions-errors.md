@@ -3,17 +3,17 @@ ms.date: 05/06/2020
 description: '#NULL! のようなエラーを処理して返す カスタム関数で'
 title: カスタム関数でエラーを処理して返す (プレビュー)
 localization_priority: Normal
-ms.openlocfilehash: 6ded6a03151777c30fe5037b373272c04fc64620
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609318"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093470"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>カスタム関数でエラーを処理して返す (プレビュー)
 
 > [!NOTE]
-> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 プレビュー機能を試すには、 [Office Insider](https://insider.office.com/join)プログラムに参加する必要があります。  プレビュー機能を試す良い方法は、Office 365 サブスクリプションを使用することです。 Office 365 サブスクリプションをまだお持ちでない場合は、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Office 365 サブスクリプションを入手できます。
+> この記事で説明する機能は現在プレビュー中であり、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 プレビュー機能を試すには、 [Office Insider](https://insider.office.com/join)プログラムに参加する必要があります。  プレビュー機能を試すには、Microsoft 365 サブスクリプションを使用する方法が適しています。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、 [microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することによって、更新可能な90日間の microsoft 365 サブスクリプションを無料で入手できます。
 
 カスタム関数の実行中に何らかの問題が発生した場合は、ユーザーに通知するエラーを返します。 正の数だけなど、特定のパラメーター要件がある場合は、パラメーターをテストし、正しくない場合はエラーをスローします。 `try` - `catch` ブロックを使用して、カスタム関数の実行中に発生したエラーを検出することもできます。
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 06/01/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 2dc66439ff4ab7f9bee148168df4d9d9b30a11a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608042"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093442"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -17,7 +17,7 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 どのブラウザが使用されているかは、以下によります。
 
 - コンピューターのオペレーティングシステム。
-- アドインが Office on the web、Office 365、または登録のない Office 2013 以降で実行されているかどうか。
+- アドインが Office on the web、Microsoft 365、またはサブスクリプション外の Office 2013 以降で実行されているかどうか。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
@@ -36,7 +36,7 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 
 <sup>2</sup> Microsoft Edge を使用している場合、Windows 10 ナレーター ("スクリーンリーダー" と呼ばれることもあります) は、 `<title>` 作業ウィンドウに表示されるページのタグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
-<sup>3</sup>アドインにマニフェスト内の要素が含まれている場合 `Runtimes` 、Windows または Office 365 のバージョンとは関係なく、Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
+<sup>3</sup>アドインにマニフェスト内の要素が含まれている場合は `Runtimes` 、Windows または Microsoft 365 のバージョンに関係なく Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 > [!IMPORTANT]
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
@@ -49,7 +49,7 @@ Office アドインでは、 [Microsoft Edge WebView](/microsoft-edge/hosting/we
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Chromium ベースのエッジは開発用のコンピューターにインストールされていますが、アドインでは使用されません
 
-[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)のベースブラウザーが Chromium に変更されました。 Chromium ベースのエッジがインストールされている場合、EdgeHTML と呼ばれる以前のベースは削除されません。 Office は、Chromium をサポートする Office 365 のビルドがコンピューターにインストールされるまで、アドインの EdgeHTML ベースを引き続き使用します。 これらのビルドは2020で出荷されることが予想されます。 そのようなメッセージは、年の前半に、内部の Insider チャネルに表示される可能性があります。
+[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)のベースブラウザーが Chromium に変更されました。 Chromium ベースのエッジがインストールされている場合、EdgeHTML と呼ばれる以前のベースは削除されません。 Office は、Chromium をサポートする Microsoft 365 のビルドがコンピューターにインストールされるまで、アドインの EdgeHTML ベースを引き続き使用します。 これらのビルドは2020で出荷されることが予想されます。 そのようなメッセージは、年の前半に、内部の Insider チャネルに表示される可能性があります。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>作業ウィンドウにスクロール バーが表示されない
 

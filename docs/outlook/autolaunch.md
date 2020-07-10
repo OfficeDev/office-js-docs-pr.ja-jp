@@ -4,12 +4,12 @@ description: イベントベースのライセンス認証用に Outlook アド�
 ms.topic: article
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 43c1f50f7758efed6472b4d54841c6ed662a20bc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611653"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093428"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -21,7 +21,7 @@ ms.locfileid: "44611653"
 このチュートリアルを終了すると、新しいメッセージが作成されるたびに実行されるアドインができます。
 
 > [!IMPORTANT]
-> この機能は、Office 365 サブスクリプションを使用する web 上の Outlook の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。 詳細については、この記事の「[イベントに基づくライセンス認証機能をプレビューする方法](#how-to-preview-the-event-based-activation-feature)」を参照してください。
+> この機能は、Microsoft 365 サブスクリプションを使用する web 上の Outlook の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。 詳細については、この記事の「[イベントに基づくライセンス認証機能をプレビューする方法](#how-to-preview-the-event-based-activation-feature)」を参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
 
@@ -205,7 +205,7 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 
 ユーザーは、アドインの実行が開始された現在のメールアイテムから切り替えることができます。 起動されたアドインは、バックグラウンドで操作を終了します。
 
-UI を変更または変更する一部の Office .js Api は、イベントベースのアドインからは許可されません。ブロックされる Api を次に示します。
+UI を変更または変更する一部の Office.js Api は、イベントベースのアドインからは許可されていません。ブロックされる Api を次に示します。
 
 - `Office.context.mailbox`以下:
   - `displayAppointmentForm`

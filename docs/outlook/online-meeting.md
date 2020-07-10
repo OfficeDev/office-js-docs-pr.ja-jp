@@ -4,19 +4,19 @@ description: オンライン会議サービスプロバイダー用の Outlook m
 ms.topic: article
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9f0b50602ab4941b16c15abe97c3f099a54f5b42
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006426"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094002"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー用の Outlook モバイルアドインを作成する
 
 オンライン会議の設定は、Outlook ユーザーにとって中心的な操作であり、Outlook mobile[を使用して Teams 会議を](/microsoftteams/teams-add-in-for-outlook)簡単に作成できます。 ただし、Microsoft 以外のサービスを使用して Outlook でオンライン会議を作成するのは煩雑な場合があります。 この機能を実装することにより、サービスプロバイダーは、Outlook アドインユーザーに対してオンライン会議の作成環境を合理化することができます。
 
 > [!IMPORTANT]
-> この機能は、Office 365 サブスクリプションを使用した Android でのみサポートされています。
+> この機能は、Microsoft 365 サブスクリプションを使用した Android でのみサポートされています。
 
 この記事では、ユーザーがオンライン会議サービスを使用して会議を整理し、会議に参加できるようにするために Outlook モバイルアドインをセットアップする方法について説明します。 この記事全体で、架空のオンライン会議サービスプロバイダーである "Contoso" を使用します。
 

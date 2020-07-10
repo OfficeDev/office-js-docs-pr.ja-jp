@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニューコントロールを選択したときに実行するアクションを指定します。
-ms.date: 02/28/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 92c783a15d104aba0adb722ab887391b4511ebed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608804"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094450"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -33,14 +33,14 @@ ms.locfileid: "44608804"
 
 ## <a name="xsitype"></a>xsi:type
 
-この属性は、ユーザーがボタンをクリックしたときに実行される操作の種類を指定します。次のいずれかを指定できます。
+This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
+Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ ms.locfileid: "44608804"
 </Action>
 ```  
 
-次の例では、異なる **TaskpaneId** を使用する 2 つの操作を示します。これらの例を全体的な流れで確認する場合は、「[Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)」を参照してください。
+The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,7 +132,7 @@ ms.locfileid: "44608804"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
 
 > [!IMPORTANT]
-> `SupportsPinning`この要素は[要件セット 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現時点では、次のものを使用した Office 365 サブスクライバーでのみサポートされています。
+> `SupportsPinning`この要素は[要件セット 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現時点では、次のものを使用した Microsoft 365 サブスクライバーでのみサポートされています。
 > - Outlook 2016 以降 (ビルド7628.1000 以降)
 > - Outlook 2016 以降 Mac (ビルド16.13.503 以降)
 > - モダン Outlook on the web

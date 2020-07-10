@@ -1,21 +1,19 @@
 ---
 title: Office 共通 API の要件セット
-description: Office 共通 API の要件セットの詳細情報
-ms.date: 06/23/2020
+description: Office 共通 API の要件セットの詳細について説明します。
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888146"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094358"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
-
-Office ホストによってアドインがサポートされる場所に関する情報が必要ですか? 「[Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)」を参照してください。
 
 > [!TIP]
 > *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
@@ -32,6 +30,9 @@ Office ホストによってアドインがサポートされる場所に関す�
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
 次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
+
+> [!TIP]
+> Office ホストおよびバージョンでは、アドインと要件セットがサポートされる場所に関する情報が必要ですか。 「[Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)」を参照してください。
 
 ### <a name="activeview"></a>ActiveView
 

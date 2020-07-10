@@ -1,18 +1,18 @@
 ---
 title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-ms.date: 01/14/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 429042db7e30f5fefe48c9648e6ad5410f6594c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608496"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093757"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
-作業ウィンドウは、通常 Word、PowerPoint、Excel、Outlook 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。機能を直接ドキュメントに埋め込む必要がない場合は、作業ウィンドウを使用します。
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 *図 1. 一般的な作業ウィンドウのレイアウト*
 
@@ -30,7 +30,7 @@ ms.locfileid: "44608496"
 
 ## <a name="variants"></a>バリアント
 
-以下の図は、Office リボンの解像度が 1366x768 のさまざまな作業ウィンドウのサイズを示しています。Excel では、数式バーを収容するための縦のスペースが必要です。  
+The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
 *図 2. Office 2016 デスクトップ作業ウィンドウのサイズ*
 
@@ -43,7 +43,7 @@ ms.locfileid: "44608496"
 
 <br/>
 
-*図 3. Office 365 の作業ウィンドウのサイズ*
+*図3Office の作業ウィンドウのサイズ*
 
 ![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/office-365-taskpane-sizes.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "44608496"
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
-パーソナル メニューは、アドインの右上付近にあるナビゲーション要素やコマンド要素の妨げになる可能性があります。Windows と Mac でのパーソナル メニューの現在のサイズを次に示します。
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 

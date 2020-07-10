@@ -3,12 +3,12 @@ title: シングル サインオン トークンを使用してユーザーを�
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 306867c3b71bb139c5c8ab4859618dcea282fd69
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606505"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093981"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する (プレビュー)
 
@@ -24,9 +24,9 @@ Office アドインの SSO の概要については、[「Office アドインの
 > [!NOTE]
 > SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。 ただし、運用環境のアドインではベータ版の Api**を使用しないでください**。
 
-## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>Office 365 テナントで先進認証を有効にする
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Microsoft 365 テナントで先進認証を有効にする
 
-Outlook アドインで SSO を使用するには、Office 365 テナントの先進認証を有効にする必要があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+Outlook アドインで SSO を使用するには、Microsoft 365 テナントの先進認証を有効にする必要があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="register-your-add-in"></a>アドインを登録する
 

@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4e2ad0276690d0b427a6788adc89ba09a274e203
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611086"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094268"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -26,7 +26,7 @@ ms.locfileid: "44611086"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows または Web 上での Excel (Office 365 サブスクリプションに接続されているバージョン 1904 以降)
+* Windows 上の Excel (バージョン1904以降、Microsoft 365 サブスクリプションに接続されている) または web
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 

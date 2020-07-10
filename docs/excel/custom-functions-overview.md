@@ -5,12 +5,12 @@ title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 4f8416b9058def9dcb4998fb2f31684b59276ac4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609283"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093463"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-ユーザー設定の XML マニフェストファイルは、Yo Office ジェネレーターによって作成されたプロジェクト内のカスタム関数 (**./manifest¥ .xml** ) を定義します。
+Office ジェネレーターによって作成されるプロジェクト内のカスタム関数 (**./manifest.xml**を定義するアドインの XML マニフェストファイル) は、次のようないくつかの作業を行います。
 
 - カスタム関数の名前空間を定義します。 ユーザーが自分の関数をアドインの一部として識別できるようにするために、名前空間がカスタム関数に追加されています。
 - `<ExtensionPoint>` `<Resources>` カスタム関数マニフェストに固有のおよび要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
@@ -84,7 +84,7 @@ Yo Office ジェネレーターを使用してファイルを作成する場合�
 
 ## <a name="coauthoring"></a>共同編集
 
-Excel on the web および Office 365 サブスクリプションに接続された Windows では、Excel での coauthor が可能です。 ブックでユーザー設定の関数を使用している場合、共同編集の仕事仲間に対して、カスタム関数のアドインを読み込むように求めるメッセージが表示されます。 両方のアドインを読み込んだ後、カスタム関数は共同編集によって結果を共有します。
+Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows では、Excel での coauthor が可能です。 ブックでユーザー設定の関数を使用している場合、共同編集の仕事仲間に対して、カスタム関数のアドインを読み込むように求めるメッセージが表示されます。 両方のアドインを読み込んだ後、カスタム関数は共同編集によって結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 

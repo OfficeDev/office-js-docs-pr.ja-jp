@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 52c303b1f353871fe3de7878b692204e6ec65054
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608344"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093659"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -96,7 +96,7 @@ Excel、PowerPoint、または Word アドインのデバッグ時に使用す�
 メニュー バーから [**デバッグ**]、[**デバッグの開始 **] の順に選択し、プロジェクトを開始します。 Visual Studio では、自動的にソリューションがビルドされ、Office が起動されてアドインがホストされます。
 
 > [!NOTE]
-> Outlook アドイン プロジェクトを開始すると、ログインの資格情報を求めるメッセージが表示されます。 繰り返しログインを要求された場合、または権限がないというエラーが表示された場合は、Office 365 テナントのアカウントに対して基本認証が無効になっている可能性があります。 この場合、代わりに Microsoft アカウントを使用してみます。 Outlook Web アドイン プロジェクトのプロパティ ダイアログで、[多要素認証を使用する] プロパティを True に設定する必要がある場合もあります。
+> Outlook アドイン プロジェクトを開始すると、ログインの資格情報を求めるメッセージが表示されます。 繰り返しログインするように求められた場合、または承認されていないというエラーが表示された場合は、Microsoft 365 テナントのアカウントに対して基本認証を無効にすることができます。 この場合、代わりに Microsoft アカウントを使用してみます。 Outlook Web アドイン プロジェクトのプロパティ ダイアログで、[多要素認証を使用する] プロパティを True に設定する必要がある場合もあります。
 
 Visual Studio によってプロジェクトがビルドされると、次のタスクが実行されます。
 
@@ -145,7 +145,7 @@ Visual Studio では、プロジェクトのビルド時の検証エラーは [*
 
 [プロジェクトを開始](#start-the-project)して、Visual Studio で Outlook を起動してご利用のアドインをホストした後、メール メッセージまたは予定アイテムを開きます。 
 
-Outlook は、アクティブ化の基準を満たしていれば、アイテムの アドイン をアクティブ化します。アドイン バーが [インスペクタ] ウィンドウまたは閲覧ウィンドウの上部に表示され、Outlook アドインがアドイン バーにボタンとして表示されます。アドインにアドイン コマンドがある場合は、リボンの既定のタブまたは指定されたカスタム タブのいずれかにボタンが表示され、アドイン バーにはアドインは表示されません。
+Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
 
 Outlook アドインを表示するには、Outlook アドインのボタンを選択します。 ご利用のアドインが Outlook に表示された後、以下の操作を行うことでコードをデバッグできます。
 

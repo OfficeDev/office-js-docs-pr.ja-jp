@@ -4,20 +4,20 @@ description: ダイアログ API の要件セットの詳細については、�
 ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: aa591a1b37c94a4db621d19786857303bb6ac473
-ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
+ms.openlocfilehash: d50c30fd769777c8dd3c168a9289dfb60012bbbd
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "44719064"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094429"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
+Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows での Office<br>(Office 365 サブスクリプションに接続) |  Office on iPad<br>(Office 365 サブスクリプションに接続)  |  Office on Mac<br>(Office 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
+|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  iPad 上の Office<br>(Microsoft 365 サブスクリプションに接続)  |  Mac 上の Office<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降| 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 

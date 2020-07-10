@@ -1,15 +1,15 @@
 ---
 title: Node.js SSO が有効なアドインをカスタマイズする
 description: '[ごみ箱] ジェネレーターを使用して作成した SSO が有効なアドインのカスタマイズについて説明します。'
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608834"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094485"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -22,7 +22,7 @@ ms.locfileid: "44608834"
 
 * [SSO クイックスタート](sso-quickstart.md)の手順に従って作成した Office アドイン。
 
-* Office 365 サブスクリプションの OneDrive for Business に保存されている少なくともいくつかのファイルおよびフォルダー。
+* 少なくとも、Microsoft 365 サブスクリプションの OneDrive for Business に格納されているファイルとフォルダーがいくつかあります。
 
 * [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "44608834"
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## <a name="add-new-functionality"></a>新しい機能を追加する 
+## <a name="add-new-functionality"></a>新しい機能を追加する
 
 SSO クイックスタートを使用して作成したアドインは、Microsoft Graph を使用してサインインしているユーザーのプロファイル情報を取得し、その情報をドキュメントまたはメッセージに書き込みます。 サインインしているユーザーの OneDrive for Business から上位10個のファイルとフォルダーの名前を取得し、その情報をドキュメントまたはメッセージに書き込むようにアドインの機能を変更しましょう。 この新しい機能を有効にするには、Azure でアプリのアクセス許可を更新する必要があります。また、アドインプロジェクト内のコードを更新する必要があります。
 
@@ -45,9 +45,9 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 アドインがユーザーの OneDrive for Business のコンテンツを正常に読み取る前に、Azure のアプリ登録情報を適切なアクセス許可で更新する必要があります。 次の手順を実行して、アプリに**ファイルの読み取り**アクセス許可を付与し、ユーザーを取り消し**ます。読み取り**アクセス許可は不要になりました。
 
-1. [Azure portal](https://ms.portal.azure.com/#home)に移動し、 **Office 365 管理者の資格情報を使用してサインイン**します。 
+1. [Azure portal](https://ms.portal.azure.com/#home)に移動し、 **Microsoft 365 管理者の資格情報を使用してサインイン**します。
 
-2. [アプリの**登録**] ページに移動します。 
+2. [アプリの**登録**] ページに移動します。
     > [!TIP]
     > これを行うには、Azure ホームページで**アプリ登録**タイルを選択するか、ホームページの検索ボックスを使用して**アプリの登録**を見つけて選択します。
 
@@ -71,9 +71,9 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 11. [ **API アクセス許可の要求**] パネルで、次のようにします。
 
-    a. [**ファイル**] の下で、[ファイル] を選択します **。**
+    a.  [**ファイル**] の下で、[ファイル] を選択します **。**
 
-    b. パネルの下部にある [**アクセス許可の追加**] ボタンを選択して、これらのアクセス許可の変更を保存します。
+    b.  パネルの下部にある [**アクセス許可の追加**] ボタンを選択して、これらのアクセス許可の変更を保存します。
 
 12. **[[テナント名] に対する管理者の同意を許可**する] ボタンを選択します。
 
@@ -97,13 +97,13 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 1. **./.ENV**ファイル:
 
-    a. `GRAPH_URL_SEGMENT=/me`を次のように置き換えます。`GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a.  `GRAPH_URL_SEGMENT=/me`を次のように置き換えます。`GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. `QUERY_PARAM_SEGMENT=`を次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b.  `QUERY_PARAM_SEGMENT=`を次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
     c. `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
 
-2. **./Manifest¥ xml**で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を検索し、行に置き換え `<Scope>Files.Read.All</Scope>` ます。
+2. **./manifest.xml**で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を見つけて行に置き換え `<Scope>Files.Read.All</Scope>` ます。
 
 3. **/Src/helpers/fallbackauthdialog.js** (または TypeScript プロジェクトの **/src/helpers/fallbackauthdialog.ts** ) で、文字列を見つけて、次のように定義され `https://graph.microsoft.com/User.Read` た文字列で置き換え `https://graph.microsoft.com/Files.Read.All` `requestObj` ます。
 
@@ -119,7 +119,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     };
     ```
 
-4. **./Src/taskpane/taskpane.html**で、要素を検索し、その要素内のテキストを更新して、 `<section class="ms-firstrun-instructionstep__header">` アドインの新しい機能を記述します。
+4. **/Src/taskpane/taskpane.html**で、要素を検索し、その要素内のテキストを更新して、 `<section class="ms-firstrun-instructionstep__header">` アドインの新しい機能を記述します。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </section>
     ```
 
-5. **./Src/taskpane/taskpane.html**で、文字列と文字列を検索し、その両方を置換します。 `Get My User Profile Information` `Read my OneDrive for Business`
+5. **./Src/taskpane/taskpane.html**で、文字列を検索し、文字列に置き換え `Get My User Profile Information` `Read my OneDrive for Business` ます。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </p>
     ```
 
-6. **./Src/taskpane/taskpane.html**で、文字列を検索して置換し `Your user profile information will be displayed in the document.` `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` ます。
+6. **/Src/taskpane/taskpane.html**で、文字列を検索して置換し `Your user profile information will be displayed in the document.` ます。 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`
 
     ```html
     <li class="ms-ListItem">
@@ -168,7 +168,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>Excel アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Excel アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
+アドインが JavaScript を使用して作成された Excel アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -271,7 +271,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Outlook アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Outlook アドインの場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
+アドインが JavaScript を使用して作成された Outlook アドインの場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -364,7 +364,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>PowerPoint アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された PowerPoint アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
+アドインが JavaScript を使用して作成された PowerPoint アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -467,7 +467,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Word アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Word アドインである場合は、/Src/helpers/documentHelper.js で次のように変更します **。**
+アドインが JavaScript を使用して作成された Word アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -576,13 +576,13 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 1. プロジェクトのルートフォルダーで、次のコマンドを実行してプロジェクトをビルドし、ローカル web サーバーを起動して、以前に選択した Office クライアントアプリケーションでアドインをサイドロードします。
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 前のコマンド (つまり、Excel、Word、PowerPoint) を実行したときに開く Office クライアントアプリケーションで、アプリの[SSO の構成](sso-quickstart.md#configure-sso)時に Azure への接続に使用した 365 office 365 管理者アカウントと同じ office 組織のメンバーであるユーザーを使用してサインインしていることを確認します。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
+2. 前のコマンド (つまり、Excel、Word、PowerPoint) を実行したときに開く Office クライアントアプリケーションで、アプリの[SSO の構成](sso-quickstart.md#configure-sso)時に Azure への接続に使用した microsoft 365 管理者アカウントと同じ microsoft 365 組織のメンバーであるユーザーを使用してサインインしていることを確認します。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
 
 3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 次の画像は、Excel のこのボタンを示しています。
 
@@ -590,7 +590,7 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 4. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り**] ボタンをクリックして、SSO プロセスを開始します。 
 
-5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、テナント管理者がアドインが Microsoft Graph にアクセスするための同意を与えていない場合、または有効な Microsoft アカウントまたは Office 365 (「職場または学校」) アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
+5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、テナント管理者が Microsoft Graph へのアクセスのためにアドインに同意を与えていない場合や、ユーザーが有効な Microsoft アカウントまたは Microsoft 365 の教育機関または勤務先のアカウントを使用して Office にサインインしていない場合に発生する可能性があります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
     ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
 
@@ -608,13 +608,13 @@ Outlook アドインを試すには、次の手順を実行します。
 1. プロジェクトのルートフォルダーで、次のコマンドを実行してプロジェクトをビルドし、ローカル web サーバーを開始します。
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 アプリの[SSO を構成](sso-quickstart.md#configure-sso)する際に Azure への接続に使用した 365 office 365 管理者アカウントと同じ office 組織のメンバーであるユーザーを使用して、Outlook にサインインしていることを確認してください。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
+2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 アプリの[SSO を構成](sso-quickstart.md#configure-sso)する際に Azure への接続に使用した microsoft 365 管理者アカウントと同じ microsoft 365 組織のメンバーであるユーザーを使用して、Outlook にサインインしていることを確認してください。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
 
 3. Outlook で新しいメッセージを作成します。
 
@@ -624,7 +624,7 @@ Outlook アドインを試すには、次の手順を実行します。
 
 5. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り**] ボタンをクリックして、SSO プロセスを開始します。 
 
-6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、テナント管理者がアドインが Microsoft Graph にアクセスするための同意を与えていない場合、または有効な Microsoft アカウントまたは Office 365 (「職場または学校」) アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
+6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、テナント管理者が Microsoft Graph へのアクセスのためにアドインに同意を与えていない場合や、ユーザーが有効な Microsoft アカウントまたは Microsoft 365 の教育機関または勤務先のアカウントを使用して Office にサインインしていない場合に発生する可能性があります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
     ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
 

@@ -1,20 +1,20 @@
 ---
-title: Office 365 管理センターからの一元展開を使用した Office アドインの発行
+title: Microsoft 365 管理センターを介した一元展開を使用した Office アドインの発行
 description: 一元展開を使用して、内部アドインと Isv が提供するアドインを展開する方法について説明します。
-ms.date: 06/15/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 1410409fbd86be13da4551b2f140bd41fdaebbbf
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: 0e99742be87b477b7c78295d08539de924f02466
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778677"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094254"
 ---
-# <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Office 365 管理センターからの一元展開を使用した Office アドインの発行
+# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Microsoft 365 管理センターを介した一元展開を使用した Office アドインの発行
 
-The Office 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
+Microsoft 365 管理センターを使用すると、管理者は組織内のユーザーやグループに Office アドインを簡単に展開できます。 管理センターを介して展開されたアドインは、Office アプリケーション内のユーザーがすぐに使用できるようになります。クライアント構成は必要ありません。 一元展開を使用して、Isv によって提供されるアドインと共に内部アドインを展開できます。
 
-現在、Office 365 管理センターは次のシナリオをサポートしています。
+現在、Microsoft 365 管理センターは次のシナリオをサポートしています。
 
 - 新しいアドインおよび更新されたアドインの個人、グループ、組織への一元展開。
 - Windows、Mac、web を含む複数のクライアントプラットフォームへの展開。 Outlook では、iOS および Android への展開もサポートされています。 (ただし、iPad の Excel、Outlook、Word、PowerPoint のアドインのユーザーインストールはサポートされていますが、iPad への集中展開はサポートされて**いません**)。
@@ -25,10 +25,10 @@ The Office 365 admin center makes it easy for an administrator to deploy Office 
 - ユーザーのアドインの自動インストール (Office アプリケーション起動時)。
 - ユーザーのアドインの自動削除 (管理者がアドインをオフにした場合や削除した場合。または、ユーザーが Azure Active Directory から削除された場合やアドインが展開されているグループから削除された場合)。
 
-一元展開は、一元展開を使用するためのすべての要件を組織が満たしているときに、Office 365 管理者が組織内で Office アドインを展開する場合に推奨される方法です。 組織で一元展開を使用できるかどうかを判断する方法の詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/office365/admin/manage/centralized-deployment-of-add-ins)」を参照してください。
+一元展開は、一元展開を使用するためのすべての要件を組織が満たしている場合に、Microsoft 365 管理者が組織内で Office アドインを展開するために推奨される方法です。 組織で集中型の展開を使用できるかどうかを判断する方法については、「 [Microsoft 365 組織でアドインの一元展開が機能](/office365/admin/manage/centralized-deployment-of-add-ins)するかどうかを判断する」を参照してください。
 
 > [!NOTE]
-> In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint app catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](/visualstudio/vsto/deploying-an-office-solution).
+> Microsoft 365 に接続されていないオンプレミス環境の場合、または Office 2013 を対象とした SharePoint アドインまたは Office アドインを展開する場合は、 [sharepoint アプリカタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用します。 COM/VSTO アドインを展開する場合は、ClickOnce または Windows インストーラーを使用してください。詳細については、「[Office ソリューションの配置](/visualstudio/vsto/deploying-an-office-solution)」を参照してください。
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Office アドインの展開に推奨されるアプローチ
 
@@ -44,14 +44,14 @@ Consider deploying Office Add-ins in a phased approach to help ensure that the d
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>一元展開による Office アドインの発行
 
-作業を開始する前に、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。詳細については、「[アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)」を参照してください。 
+開始する前に、「 [Microsoft 365 組織でのアドインの一元展開が機能するかどうかを判断](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)する」の説明に従って、組織が一元展開を使用するためのすべての要件を満たしていることを確認してください。
 
 組織がすべての要件を満たしている場合は、次に示す手順を実行して、一元展開によって Office アドインを発行します。
 
-1. 職場または学校のアカウントを使用して、Office 365 にサインインします。
+1. 勤務先または教育機関のアカウントを使用して、Microsoft 365 にサインインします。
 2. 左上にあるアプリ起動ツールのアイコンを選択して、**[管理]** をクリックします。
 3. ナビゲーション メニューで、**[表示数を増やす]** を押し、**[設定]** > **[サービスとアドイン]** の順に選択します。
-4. ページの上部に新しい Office 365 管理センターについて通知するメッセージが表示されている場合は、そのメッセージを選択して管理センター プレビューに移動します (「[Office 365 管理センターについて](/microsoft-365/admin/admin-overview/about-the-admin-center)」を参照)。
+4. 新しい Microsoft 365 管理センターを発表するメッセージがページの上部に表示される場合は、メッセージを選択して管理センターのプレビューに移動します (「 [Microsoft 365 管理センターについ](/microsoft-365/admin/admin-overview/about-the-admin-center)て」を参照してください)。
 5. ページの上部にある **[アドインの展開]** を選択します。
 6. 要件の確認後、**[次へ]** を選択します。
 7. **[一元展開]** ページで、次のいずれかのオプションを選択します。
@@ -60,22 +60,22 @@ Consider deploying Office Add-ins in a phased approach to help ensure that the d
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
-    ![Office 365 管理センターの [新しいアドイン] ダイアログ](../images/new-add-in.png)
+    ![Microsoft 365 管理センターの [新しいアドイン] ダイアログ](../images/new-add-in.png)
 
 8. Office ストアからアドインを追加するオプションを選択した場合は、アドインを選択します。 選択可能なアドインは、**[あなたへのおすすめ]**、**[評価]**、**[名前]** のカテゴリから表示できます。 Office ストアからは無料のアドインのみを追加できます。 有料のアドインの追加は、現在はサポートされていません。
 
     > [!NOTE]
     > Office ストアのオプションでは、管理者の操作なしで、ユーザーが自動的にアドインの更新と機能強化を利用できます。
 
-    ![Office 365 管理センターでアドインダイアログを選択する](../images/select-an-add-in.png)
+    ![Microsoft 365 管理センターでアドインダイアログを選択する](../images/select-an-add-in.png)
 
 9. アドインの詳細、プライバシーポリシー、ライセンス条項を確認した後、[**続行**] を選択します。
 
-    ![Office 365 管理センターで選択されているアドインページ](../images/selected-add-in-admin-center.png)
+    ![Microsoft 365 管理センターで選択されているアドインページ](../images/selected-add-in-admin-center.png)
 
 10. [**ユーザーの割り当て**] ページで、[**すべて**のユーザー]、[**特定のユーザー/グループ**]、または [**自分のみ**] を選択します。 検索ボックスを使用して、アドインを展開するユーザーやグループを検索します。 Outlook アドインの場合は、展開方法として**Fixed**、 **Available**、または**Optional**を選択することもできます。
 
-    ![Office 365 管理センターでアクセスと展開の方法を管理する](../images/manage-users-deployment-admin-center.png)
+    ![Microsoft 365 管理センターでアクセスと展開の方法を管理する](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > アドイン用の[シングル サインオン (SSO)](../develop/sso-in-office-add-ins.md) システムは現在プレビューなので、運用環境のアドインとして使用してはいけません。SSO を使用するアドインが展開されている場合、割り当てられているユーザーとグループは、同じ Azure アプリ ID を共有するアドインによっても共有されます。 ユーザーの割り当ての変更は、これらのアドインにも適用されます。関連するアドインは、このページに表示されます。 SSO アドインに限り、アドインで必要な Microsoft Graph アクセス許可のリストがこのページに表示されます。
@@ -85,7 +85,7 @@ Consider deploying Office Add-ins in a phased approach to help ensure that the d
     > [!NOTE]
     > 管理者が [**展開**] を選択すると、すべてのユーザーに同意が与えられます。
 
-    ![Office 365 管理センターのアプリのリスト](../images/citations.png)
+    ![Microsoft 365 管理センターのアプリの一覧](../images/citations.png)
 
 > [!TIP]
 > 組織内のユーザーやグループに新しいアドインを展開するときには、いつどのようにアドインを使用するかについての説明と、サポート資料 (関連するヘルプ コンテンツやよくある質問など) へのリンクを含む電子メールの送信を検討してください。
@@ -98,7 +98,7 @@ Admins can assign an add-in to everyone in the organization or to specific users
 
 - **Users**: If you assign an add-in to individual users, you'll need to update the Central Deployment settings for the add-in each time you want to assign it additional users. Likewise, you'll need to update the Central Deployment settings for the add-in each time you want to remove a user's access to the add-in.
 
-- **Groups**: If you assign an add-in to a group, users who are added to the group will automatically be assigned the add-in. Likewise, when a user is removed from a group, the user automatically loses access to the add-in. In either case, no additional action is required from the Office 365 admin.
+- **グループ**: グループにアドインを割り当てると、グループに追加されたユーザーにアドインが自動的に割り当てられます。 同様に、ユーザーがグループから削除されると、そのユーザーはアドインへのアクセス権を自動的に失います。 どちらの場合も、Microsoft 365 admin から追加の操作を行う必要はありません。
 
 In general, for ease of maintenance, we recommend assigning add-ins by using groups whenever possible. However, in situations where you want to restrict add-in access to a very small number of users, it may be more practical to assign the add-in to specific users.
 
@@ -116,14 +116,14 @@ In general, for ease of maintenance, we recommend assigning add-ins by using gro
 
 After an Office Add-in has been published via Centralized Deployment, any changes made to the add-in's web application will automatically be available to all users as soon as those changes are implemented in the web application. Changes made to an add-in's [XML manifest file](../develop/add-in-manifests.md), for example, to update the add-in's icon, text, or add-in commands, happen as follows:
 
-- **Line-of-business add-in**: If an admin explicitly uploaded a manifest file when implementing Centralized Deployment via the Office 365 admin center, the admin must upload a new manifest file that contains the desired changes. After the updated manifest file has been uploaded, the next time the relevant Office applications start, the add-in will update.
+- **基幹業務アドイン**: 管理者が、Microsoft 365 管理センターを使用した集中型展開の実装時にマニフェストファイルを明示的にアップロードした場合、管理者は必要な変更を含む新しいマニフェストファイルをアップロードする必要があります。 更新したマニフェスト ファイルがアップロードされると、関連する Office アプリケーションの次回起動時にアドインが更新されます。
 
   > [!NOTE]
   > 管理者は、更新を行うために LOB アドインを削除する必要はありません。 [アドイン] セクションでは、管理者は LOB アドインを選択し、右下隅にある [**更新アドイン**] ボタンを押してこの機能を起動することができます。
   > 
-  > ![Office 365 管理センターの [アドインの更新] ダイアログを示すスクリーンショット](../images/update-add-in-admin-center.png)
+  > ![Microsoft 365 管理センターの [アドインの更新] ダイアログを示すスクリーンショット](../images/update-add-in-admin-center.png)
 
-- **Office ストア アドイン**: 管理者が Office 365 管理センターからの一元展開を実施するときに、Office ストアのアドインを選択した場合、アドインが Office ストアで更新されると、その後の一元展開によってアドインが更新されます。 関連する Office アプリケーションの次回起動時に、アドインが更新されます。
+- **Office ストアアドイン**: 管理者が Microsoft 365 管理センターを使用して一元展開を実装するときに office ストアからアドインを選択し、office ストアでアドインを更新すると、そのアドインは後で一元展開によって更新されます。 関連する Office アプリケーションの次回起動時に、アドインが更新されます。
 
 ## <a name="end-user-experience-with-add-ins"></a>アドインのエンド ユーザー エクスペリエンス
 
@@ -131,7 +131,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in.
 
-![[引用文献] アドインの [引用文献の検索] コマンドが強調表示された Office リボンの部分を示すスクリーンショット](../images/search-citation.png)
+![[引用] アドインの [引用文献の検索] コマンドが強調表示されている Office アプリリボンのセクションを示すスクリーンショット](../images/search-citation.png)
 
 アドインがアドイン コマンドをサポートしていない場合、ユーザーは次の手順を実行することで、Office アプリケーションにアドインを追加できます。
 
@@ -151,4 +151,4 @@ If the add-in supports add-in commands, the commands will appear on the Office a
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインの一元展開が Office 365 組織で動作するかどうかを判断する](/office365/admin/manage/centralized-deployment-of-add-ins)
+- [アドインの一元展開が Microsoft 365 組織で動作するかどうかを判断する](/office365/admin/manage/centralized-deployment-of-add-ins)

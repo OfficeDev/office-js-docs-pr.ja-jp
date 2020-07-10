@@ -3,24 +3,24 @@ title: XLL ユーザー定義関数を使用してカスタム関数を拡張す
 description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 06a776678c60a4b66494097385f304ddac9a4ce0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 23fd1e78d3a570a0f13b85559ae34b887d92e2ea
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610362"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093435"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
 既存の Excel XLLs を使用している場合は、Excel アドインで同等のカスタム関数を構築して、ソリューション機能をオンラインまたは Mac などの他のプラットフォームに拡張できます。 ただし、Excel アドインには、xll で利用可能なすべての機能が含まれているわけではありません。 ソリューションで使用されている機能によっては、XLL の方が excel の excel アドインカスタム関数よりも優れた操作を提供することがあります。
 
 > [!NOTE]
-> COM アドインと XLL の UDF の互換性は、Office 365 サブスクリプションに接続している場合、次のプラットフォームでサポートされています。
+> COM アドインと XLL の UDF の互換性は、Microsoft 365 サブスクリプションに接続する際に、次のプラットフォームでサポートされています。
 > - Excel on the web
 > - Windows 版 Excel (バージョン1904以降)
 > - Excel on Mac (バージョン13.329 以降)
 > 
-> Web 上の Excel で COM アドインと XLL UDF との互換性を使用するには、Office 365 サブスクリプションまたは[Microsoft アカウント](https://account.microsoft.com/account)のいずれかを使用してログインします。 Office 365 サブスクリプションをまだお持ちでない場合は、 [office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することによって、無料の90日に更新可能な office 365 サブスクリプションを使用できます。
+> Web 上の Excel で COM アドインと XLL UDF との互換性を使用するには、Microsoft 365 サブスクリプションまたは[microsoft アカウント](https://account.microsoft.com/account)のいずれかを使用してログインします。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、 [microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加して、無料の90日更新プログラムの microsoft 365 サブスクリプションをご利用になることができます。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>マニフェストで同等の XLL を指定する
 

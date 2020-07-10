@@ -3,12 +3,12 @@ title: Office アドインを既存の COM アドインと互換できるよう�
 description: Office アドインと同等の COM アドインの互換性を有効にする
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ff47b75e8e560bc891c84dc839b7eceffb2400be
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ded60366c36edb876b8b2dd0a4ea9e6a39521b0
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609423"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093596"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインを既存の COM アドインと互換できるようにする
 
@@ -17,7 +17,7 @@ ms.locfileid: "44609423"
 同等の COM アドインがユーザーのコンピューターに既にインストールされている場合に office アドインを構成すると、office アドインではなく、Windows が COM アドインを実行するようになります。 COM アドインは、Office がユーザーのコンピューターにインストールされているものに応じて、COM アドインと Office アドインをシームレスに移行するため、"同等" と呼ばれます。
 
 > [!NOTE]
-> この機能は、Office 365 サブスクリプションに接続されている場合、次のプラットフォームでサポートされています。
+> この機能は、Microsoft 365 サブスクリプションに接続する際に、次のプラットフォームでサポートされています。
 > - Excel、Word、および PowerPoint on the web
 > - Excel、Word、および PowerPoint on Windows (バージョン1904以降)
 > - Excel、Word、および PowerPoint on Mac (バージョン13.329 以降)

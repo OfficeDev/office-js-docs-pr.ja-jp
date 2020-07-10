@@ -1,23 +1,23 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: Office on the web で Office アドインをサイドロードしてテストをする
-ms.date: 02/18/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e6352f63959dce54b3a67c79c522446913e0c38
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611134"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094121"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
-サイドロードを使用することで、最初にアドイン カタログに置かなくても、テスト用に Office アドインをインストールすることができます。 サイドロードは、Office 365 または Office on the web で実行できます。 2 つのプラットフォームで手順が少し異なります。
+サイドロードを使用することで、最初にアドイン カタログに置かなくても、テスト用に Office アドインをインストールすることができます。 サイドローディングは、Microsoft 365 または web 上の Office のどちらかで実行できます。 2 つのプラットフォームで手順が少し異なります。
 
 アドインをサイドロードするとき、アドイン マニフェストはブラウザーのローカル ストレージに格納されます。そのため、ブラウザーのキャッシュを消去したり、別のブラウザーに切り替えたりする場合、アドインを再びサイドロードする必要があります。
 
 > [!NOTE]
-> この記事で説明したようにサイドロードは、Word、Excel、および PowerPoint でサポートされています。Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
+> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 次のビデオでは、Office on the web またはデスクトップでアドインをサイドロードする手順について説明しています。
 
@@ -39,7 +39,7 @@ ms.locfileid: "44611134"
 
     ![[参照]、[アップロード]、[キャンセル] のボタンがある [アドインのアップロード] ダイアログ。](../images/upload-add-in.png)
 
-6. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
+6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
 >Microsoft Edge で Office アドインをテストするには、次の 2 つの構成手順が必要です。 
@@ -52,7 +52,7 @@ ms.locfileid: "44611134"
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
 
-1. Office 365 アカウントにサインインします。
+1. Microsoft 365 アカウントにサインインします。
 
 2. ツールバーの左端にあるアプリ起動ツールを開き、 **Excel**、 **Word**、または**PowerPoint**を選択して、新しいドキュメントを作成します。
 

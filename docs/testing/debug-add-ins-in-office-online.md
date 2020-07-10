@@ -1,17 +1,16 @@
 ---
 title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
-ms.date: 06/20/2019
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f2aa498e5d9f49fcdf306ac2c4c80ea6fbd496c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f7ef3fa3d6389629e28b428b9bdbe3b128896b1f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611240"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094492"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
-
 
 Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。 この記事では、Office on the web を使用してアドインをテストおよびデバッグする方法について説明します。 
 
@@ -19,12 +18,12 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 
 開始するには
 
-- Office 365 の開発者アカウントをまだお持ちでない場合はこれを取得します。または SharePoint サイトにアクセスできるようにします。
+- Microsoft 365 開発者アカウントを持っていない場合、または SharePoint サイトにアクセスできない場合は、Microsoft 開発者アカウントを取得します。
 
   > [!NOTE]
-  > 90 日間の更新可能な無料の Office 365 開発者サブスクリプションを取得するには、[Office 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。Office 365 開発者プログラムに参加し、サブスクリプションを構成する方法についての詳しい手順については、[Office 365 開発者プログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
+  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
 
-- Office 365 (SharePoint Online) 上でアプリ カタログをセットアップします。アプリ カタログとは、Office アドイン用のドキュメント ライブラリをホストする SharePoint Online の専用サイト コレクションです。独自の SharePoint サイトを所有している場合は、アプリ カタログのドキュメント ライブラリをセットアップできます。詳細については、「[作業ウィンドウ アドインとコンテンツ アドインを SharePoint のアプリ カタログに発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
+- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Excel または Word on the web からアドインをデバッグする
@@ -36,7 +35,7 @@ Word on the web を使用してアドインをデバッグするには:
     > [!NOTE]
     > [Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。
 
-2. [アドイン マニフェスト ファイル](../develop/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。
+2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
@@ -44,7 +43,7 @@ Word on the web を使用してアドインをデバッグするには:
 
 3. SharePoint のアプリ カタログにある Office アドイン ライブラリにマニフェストをアップロードします。
 
-4. Office 365 のアプリ起動ツールから Excel または Word on the web を起動して、新しいドキュメントを開きます。
+4. Microsoft 365 のアプリ起動ツールから web 上で Excel または Word を起動し、新しいドキュメントを開きます。
 
 5. [挿入] タブで、**[個人用アドイン]** または **[Office アドイン]** をクリックし、アプリにアドインを挿入してテストします。
 

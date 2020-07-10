@@ -6,7 +6,7 @@
 
 1. [ [Azure ポータル-アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908)] ページに移動して、アプリの登録を表示します。
 
-1. ***管理者***の資格情報を使用して Office 365 テナントにサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
+1. Microsoft 365 テナントに対して***管理者***の資格情報を使用してサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
 
 1. 表示名が **$ADD**のアプリを選択します。
 

@@ -4,19 +4,19 @@ description: Outlook アドインでの追加-送信機能を実装する方法�
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607597"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093988"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインで送信時に追加を実装する (プレビュー)
 
 このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、現在、web 上の Outlook および Office 365 サブスクリプションを使用した Windows の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でサポートされています。 詳細については、この記事の「[投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature)参照してください。
+> この機能は、現在、web 上の Outlook および Microsoft 365 サブスクリプションを使用した Windows の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でサポートされています。 詳細については、この記事の「[投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature)参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
 

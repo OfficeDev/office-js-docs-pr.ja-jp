@@ -3,12 +3,12 @@ title: 'シナリオ: サービスにシングル サインオンを実装する
 description: Outlook アドインが提供するシングル サインオン トークンと Exchange ID トークンを使用して、サービスに SSO を実装する方法について説明します。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 22d18397b0a643e9f70599f4d1f904ce5a8b17b6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f1f8d4e844223e698d3db4ee0a16cf29b2355e1b
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609119"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093974"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>シナリオ: Outlook アドインでサービスにシングル サインオンを実装する
 
@@ -18,7 +18,7 @@ ms.locfileid: "44609119"
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
 > SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。
-> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証を有効にしてください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 
 ## <a name="why-use-the-sso-access-token"></a>SSO アクセス トークンを使用する理由
