@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2e7c819cbf2860ed742435f75240f795c52c73e8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab8926eae6ddc41f82ab055d727b6279f357c316
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608897"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094476"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -110,7 +110,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
-4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -118,7 +118,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -144,7 +144,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -245,7 +245,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -278,11 +278,11 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. ファイルを保存します。
 
@@ -298,9 +298,9 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Office 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
+2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Microsoft 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
 
