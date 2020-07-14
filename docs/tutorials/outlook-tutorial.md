@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 12/10/2019
+ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 66ce5aa01cc8ef82d8a4bd0030c9e94a9433daad
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611058"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093505"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -37,7 +37,7 @@ ms.locfileid: "44611058"
     > [!NOTE]
     > Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。
 
-- Windows 上の Outlook 2016 以降 (Office 365 アカウントに接続されたもの) または Outlook on the web
+- Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web
 
 - [GitHub](https://www.github.com) アカウント
 

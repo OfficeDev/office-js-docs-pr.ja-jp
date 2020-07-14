@@ -6,4 +6,4 @@
 - Office 2016 以降
 
     > [!NOTE]
-    > まだ Office を所有していない場合は、 [office 365 開発者プログラムに参加して](https://developer.microsoft.com/office/dev-program)、開発中に使用する無料の90日間の更新可能な office 365 サブスクリプションを入手できます。
+    > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。

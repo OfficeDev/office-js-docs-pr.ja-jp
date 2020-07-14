@@ -8,9 +8,12 @@ Office JavaScript API には、2 つの異なるモデルがあります。
 
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 
-    この API モデルでは [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が使用され、Office ホストに送信する各要求で複数の操作を指定することが可能です。 この方法によるバッチ操作を行うと、Office on the web アプリケーションのパフォーマンスが大幅に向上します。 ホスト固有の API は Office 2016 で導入されました。Office 2013 の操作には使用できません。
+    この API モデルでは [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が使用され、Office ホストに送信する各要求で複数の操作を指定することが可能です。 この方法によるバッチ操作を行うと、Web 上の Office アプリケーションのパフォーマンスが大幅に向上します。 ホスト固有の API は Office 2016 で導入されました。Office 2013 の操作には使用できません。
 
-- **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは [Callback](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office ホストに送信する各要求で指定できる操作は、1 つのみです。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook と PowerPoint を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
+    > [!NOTE]
+    > [Visio](../reference/overview/visio-javascript-reference-overview.md) にはホスト固有の API もありますが、それを SharePoint Online ページでのみ使用して、ページに埋め込まれている Visio 図面を操作できます。 Visio では Office Web アドインはサポートされていません。
+
+- **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは[コールバック](https://developer.mozilla.org/docs/Glossary/Callback_function)が使用され、Office ホストに送信する各要求で 1 つの操作のみを指定できます。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook、PowerPoint、Project を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 > [!NOTE]
-> Excel のカスタム関数の場合は、計算の実行を優先する独自のランタイム内で実行されるため、少し異なるプログラミング モデルが使用されます。 詳細については、「[カスタム関数のアーキテクチャ](../excel/custom-functions-architecture.md)」を参照してください。
+> 一部の Excel カスタム関数は、計算の実行を優先する独自のランタイム内で実行され、作業ウィンドウはありません。 これらの関数はわずかに異なるプログラミング モデルを使用し、UI なしの関数と呼ばれます。

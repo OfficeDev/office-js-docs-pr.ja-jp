@@ -1,15 +1,15 @@
 ---
-ms.date: 01/21/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 localization_priority: Priority
-ms.openlocfilehash: f4306e4a23483b58d1503c1ee257194b430b31ef
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42903b607bd9bb6f6d81454106b8de03cc47f1e4
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611065"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094261"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -50,7 +50,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 次のものも必要です:
 
-- Office 365 アカウント。 [Office 365 Developer プログラム](https://aka.ms/devprogramsignup)に参加することで、Office 365 の 1 年間無料サブスクリプションが得られます。
+- Microsoft 365 アカウント。 [Microsoft 365 Developer プログラム](https://aka.ms/devprogramsignup)に参加することで、Office 365 の 1 年間無料サブスクリプションが得られます。
 - Microsoft Azure テナント。 [Microsoft Azure](https://account.windowsazure.com/SignUp) では、試用版のサブスクリプションを入手できます。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>セル アナライザー VSTO アドイン

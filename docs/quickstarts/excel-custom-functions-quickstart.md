@@ -4,12 +4,12 @@ description: Excel カスタム関数開発のためのクイック スタート
 title: カスタム関数クイック スタート
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7695a8c4cb3229d2fc215e2f7111414d4227ea8f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 126349f316cc923349f3f42e719c0017bbd7d7c0
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611597"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094149"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -20,8 +20,8 @@ ms.locfileid: "44611597"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel (Office 365 サブスクリプションに接続されている、バージョン 1904 以降) または Web 版 Excel
-* Excel カスタム関数は (Office 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
+* Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Web 版 Excel
+* Excel カスタム関数は (Microsoft 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
 
 >[!NOTE]
 >Excel カスタム関数は Office 2019 (1 回限りの購入) ではサポートされていません。

@@ -1,21 +1,21 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 82778f7118166f7ed566fc175599efd7049b9d3a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1275f7cae6211d6f6c006b7230b316ffd288a4ec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609028"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093904"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
 Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。 Outlook アドインには次の 3 つの主な側面があります。
 
-- Windows と Mac 用のデスクトップ Outlook、Web 版 (Office 365 と Outlook.com)、モバイル版すべてで機能する同じアドインとビジネス ロジック。 
+- Windows と Mac 用のデスクトップ Outlook、Web 版 (Microsoft 365 と Outlook.com)、モバイル版すべてで機能する同じアドインとビジネス ロジック。
 - Outlook アドインは、マニフェスト (アドインが Outlook に統合する方法 (ボタンや作業ウィンドウなど) を説明する)、および JavaScript/HTML のコード (アドインの UI とビジネス ロジックを構成する) で構成される。
 - Outlook アドインは、[AppSource](https://appsource.microsoft.com) から入手するか、エンドユーザーまたは管理者が[サイドロード](sideload-outlook-add-ins-for-testing.md)することができます。
 
@@ -27,29 +27,28 @@ Outlook アドインは、Windows 版 Outlook 固有の統合機能として以�
 
 ## <a name="extension-points"></a>拡張点
 
-拡張点は、アドインが Outlook と統合する方法です。これを行う方法は以下のとおりです。
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
 
-- アドインは、メッセージと予定のコマンド サーフェスに表示されるボタンを宣言できます。詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **リボン上の [コマンド] ボタンがあるアドイン**
 
     ![アドイン コマンドの UI なし図形](../images/uiless-command-shape.png)
 
-- アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。 詳細は、「 [コンテキスト Outlook アドイン](contextual-outlook-add-ins.md)」をご覧ください。
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
     ![カード内のコンテキスト アプリを示しています](../images/outlook-detected-entity-card.png)
-
 
 > [!NOTE]
 > [カスタム ウィンドウは廃止された](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)ため、サポートされている拡張点を使用していることを確認してください。
 
 ## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
 
-Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
+Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
 
-- Information Rights Management (IRM) によって保護されているか、または保護のためにその他の方法で暗号化されている場合。デジタル署名はこれらいずれかのメカニズムに依存しているため、デジタル署名されたメッセージはその一例です。
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
 - メッセージ クラスが IPM.Report.* である配信レポートまたは通知 (配信レポート、配信不能レポート (NDR)、開封通知、未開封通知、遅延通知など)。
 
@@ -67,7 +66,7 @@ Outlook アドインは、作成中や読み取り中にメッセージや予定
 
 ## <a name="supported-hosts"></a>サポートされるホスト
 
-Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Office 365 と Outlook.com の Outlook on the web でサポートされています。 最新の機能すべてが、すべての[クライアント](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各ホストでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
+Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Outlook on the web と Outlook.com でサポートされています。 最新の機能すべてが、すべての[クライアント](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各ホストでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
 
 
 ## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する

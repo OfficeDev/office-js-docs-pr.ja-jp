@@ -1,24 +1,24 @@
 ---
 title: Script Lab を使用して Office JavaScript API を探索する
 description: Script Lab を使用して、Office JS API およびプロトタイプの機能を調べます。
-ms.date: 04/16/2020
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 88c57e163e8fc59e31fec80f5faa0bfbfd96402b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604553"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094135"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
-AppSource から無料で入手できる [Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)を使用すると、Excel や Word などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、アドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
+AppSource から無料で入手できる [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) および [Outlook 用 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) アドインを使用すると、Excel や Outlook などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、独自のアドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
 
 ## <a name="what-is-script-lab"></a>Script Lab とは
 
-Script Lab は、Excel、Word、または PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法を学習したい人のためのツールです。 IntelliSense を提供しているので、何が利用できるのかを見ることができ、Visual Studio Code で使用されているのと同じフレームワークである Monaco フレームワークの上に構築されています。 Script Lab では、サンプルのライブラリにアクセスして、簡単に機能を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。 Script Lab を使用して、プレビュー API を試すこともできます。
+Script Lab は、Excel、Outlook、Word、PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法を学習したい人のためのツールです。 IntelliSense を提供しているので、何が利用できるのかを見ることができ、Visual Studio Code で使用されているのと同じフレームワークである Monaco フレームワークの上に構築されています。 Script Lab では、サンプルのライブラリにアクセスして、簡単に機能を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。 Script Lab を使用して、プレビュー API を試すこともできます。
 
 今のところいいですか? この 1 分間のビデオを見て、Script Lab の動作を確認します。
 
@@ -61,9 +61,19 @@ Script Lab は、次のクライアント上の Excel、Word、PowerPoint でサ
 - Mac での Office 2016 以降
 - Office on the web
 
+Outlook 用 Script Lab は、次のクライアントで使用できます。
+
+- Windows 用 Outlook 2013 以降
+- Mac 用 Outlook 2016 以降
+- Chrome、Microsoft Edge、または Safari ブラウザーを使用している場合の Outlook on the web
+
+Outlook 用 Script Lab の詳細については、関連する[ブログの投稿](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)を参照してください。
+
 ## <a name="next-steps"></a>次の手順
 
 Excel、Word、または PowerPoint で Script Lab を使用するには、AppSource から [Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)をインストールします。 
+
+Outlook 用 Script Lab を使用するには、AppSource から [Outlook 用 Script Lab のアドイン](https://appsource.microsoft.com/product/office/wa200001603)をインストールします。
 
 新しいスニペットを [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub リポジトリに投稿し、Script Lab のサンプル ライブラリを拡張してください。
 
@@ -71,7 +81,8 @@ Excel、Word、または PowerPoint で Script Lab を使用するには、AppSo
 
 ## <a name="see-also"></a>関連項目
 
-- [Script Lab を取得する](https://appsource.microsoft.com/product/office/WA104380862)
+- [Excel、Word、または Powerpoint 用 Script Lab を取得する](https://appsource.microsoft.com/product/office/WA104380862)
+- [Outlook 用 Script Lab を取得する](https://appsource.microsoft.com/product/office/wa200001603)
 - [Script Lab の詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [Office 365 Developer Program に参加する](https://developer.microsoft.com/office/dev-program)
+- [Microsoft 365 開発者プログラムに参加する](https://developer.microsoft.com/office/dev-program)
 - [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)

@@ -1,18 +1,18 @@
 ---
 title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
-ms.date: 01/25/2020
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: e7dd0778e840c2cbfd415534d04f5b014f58fafc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b119d27c0b4ca7bc91004ce8c1df7ac8f4830122
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608426"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093736"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
-Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログイン ページが iframe で開かれないようになっています。 これらには、Google、Facebook、および Microsoft アカウントや Office 365 (職場または学校のアカウント) などの Microsoft ID プラットフォーム (以前の Azure AD V 2.0) に保護されているサービスが含まれます。 アドインが **Office on the web** で実行される場合は、作業ウィンドウは iframe になるため、Office アドインに問題が発生します。 完全に異なるブラウザー インスタンスを開くことがアドインで可能な場合は、アドインのユーザーがログインできるのはこれらのサービスのうち 1 つのみです。 Office で[Office ダイアログ API](dialog-api-in-office-add-ins.md)、特に [displayDialogAsync](/javascript/api/office/office.ui) メソッドが提供されているのはこの理由からです。
+Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログイン ページが iframe で開かれないようになっています。 これらには、Google、Facebook、および Microsoft アカウント、Microsoft 365 Education または職場アカウント、その他の一般的なアカウントなど、Microsoft ID プラットフォーム (以前の Azure AD V 2.0) で保護されたサービスが含まれます。 アドインが **Office on the web** で実行される場合は、作業ウィンドウは iframe になるため、Office アドインに問題が発生します。 完全に異なるブラウザー インスタンスを開くことがアドインで可能な場合は、アドインのユーザーがログインできるのはこれらのサービスのうち 1 つのみです。 Office で[Office ダイアログ API](dialog-api-in-office-add-ins.md)、特に [displayDialogAsync](/javascript/api/office/office.ui) メソッドが提供されているのはこの理由からです。
 
 > [!NOTE]
 > この記事は、[Office アドインでの Office ダイアログ API の使用](dialog-api-in-office-add-ins.md)に精通していることを前提としています。
@@ -46,16 +46,16 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 
 #### <a name="support-multiple-identity-providers"></a>複数の ID プロバイダーのサポート
 
-アドインによってユーザーが Microsoft アカウント、Google、Facebook などのプロバイダーを選択できる場合は、ユーザーがプロバイダーを選択するための UI を提供するローカルの最初のページ (前述のセクションを参照) が必要です。選択すると、サインイン URL とその URL へのリダイレクトの構築がトリガーされます。
+If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>外部リソースへのアドインの承認
 
-最新の Web において、ユーザーと Web アプリケーションはセキュリティ プリンシパルです。 アプリケーションには、Office 365、Google+、Facebook、LinkedIn などのオンライン リソースに対する独自の ID とアクセス許可があります。 アプリケーションは、展開前にリソース プロバイダーに登録されます。 登録には以下が含まれています。
+最新の Web において、ユーザーと Web アプリケーションはセキュリティ プリンシパルです。 アプリケーションには、Microsoft 365、Google+、Facebook、LinkedIn などのオンライン リソースに対する独自の ID とアクセス許可があります。 アプリケーションは、展開前にリソース プロバイダーに登録されます。 登録には以下が含まれています。
 
 - アプリケーションが必要とするアクセス許可の一覧。
 - アプリケーションがサービスにアクセスするときに、リソース サービスがアクセス トークンを返す宛先の URL。  
 
-リソース サービスのユーザーのデータにアクセスするアプリケーションでユーザーが関数を呼び出すと、ユーザーはサービスにサインインするように求められ、アプリケーションが必要とするユーザーのリソースへのアクセス許可をアプリケーションに付与するように求められます。次に、サービスはサインイン ウィンドウを既に登録済みの URL にリダイレクトし、アクセス トークンを渡します。アプリケーションはアクセス トークンを使用して、ユーザーのリソースにアクセスします。
+When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
 
 このプロセスは Office ダイアログ API を使用して管理でき、これを行うにはユーザーのサインインについての説明でのフローと似たフローを使用します。 次の点のみが違います。
 
