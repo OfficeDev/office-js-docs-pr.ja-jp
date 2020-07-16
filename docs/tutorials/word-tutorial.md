@@ -87,11 +87,11 @@ ms.locfileid: "45093512"
 
 8. 次の関数をファイルの最後に追加します。 注:
 
-   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
+   - Word .js のビジネスロジックは、`Word.run`に渡される関数に追加されます。このロジックは直ちには実行されません。代わりに、保留中のコマンドのキューに追加されます。
 
    - `context.sync` メソッドは、キューに登録されたすべてのコマンドを、実行するために Word に送信します。
 
-   - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow. 
+   - `Word.run` の後に `catch` ブロックが表示されます。この方法は、常に理解しておくことをお勧めします。 
 
     ```js
     function insertParagraph() {
@@ -114,7 +114,7 @@ ms.locfileid: "45093512"
 
    - `insertParagraph` メソッドの最初のパラメーターは、新しい段落のテキストです。
 
-   - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".
+   - 2番目のパラメーターは、本文内で段落を挿入する場所です。親オブジェクトが本文の場合、[段落の挿入] のその他のオプションは、"End" または "Replace" です。
 
     ```js
     var docBody = context.document.body;
@@ -318,11 +318,11 @@ ms.locfileid: "45093512"
 
 4. Word で、MyCustomStyle という名前の[カスタム スタイル](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。 このスタイルには、必要に応じて任意の書式を設定できます。
 
-5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
+5. 最初の段落は、組み込みのスタイルである **Intense Reference** でスタイル設定されます。
 
-6. Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)
+6. [**ユーザー設定のスタイルの適用**] ボタンを選択します。最後の段落には、ユーザー設定のスタイルが表示されます。(何も起こらない場合は、空白の段落がある可能性があります。その場合は、テキストを追加します)。
 
-7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
+7. **フォントの変更** ボタンを選択します。2番目の段落のフォントは、18 pt、太字、Courier New に変わります。
 
     ![Word のチュートリアル - スタイルとフォントの適用](../images/word-tutorial-apply-styles-and-font-2.png)
 
@@ -374,15 +374,15 @@ ms.locfileid: "45093512"
 
 6. `insertTextIntoRange()` 関数で、`TODO1` を次のコードに置き換えます。 注:
 
-   - The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
+   - このメソッドは、文字列が "クイック実行" の範囲の末尾に省略形 ["(C2R)"] を挿入します。文字列が存在し、ユーザーがそれを選択していることを想定しています。
 
    - `Range.insertText` メソッドの最初のパラメーターは、`Range` オブジェクトに挿入する文字列です。
 
-   - The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace". 
+   - 2番目のパラメーターは、追加するテキストを挿入する範囲内の場所を指定します。[末尾] 以外の選択肢としては、"Start"、"Before"、"After"、および "Replace" があります。 
 
-   - The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.
+   - "終了" と "後" の違いは、"End" は既存の範囲の末尾に新しいテキストを挿入することですが、"After" の場合は、文字列を使用して新しい範囲を作成し、既存の範囲の後に新しい範囲を挿入します。同様に、"Start" は既存の範囲の先頭にテキストを挿入し、"前" は新しい範囲を挿入します。"置換" は、既存の範囲のテキストを最初のパラメーターの文字列で置き換えます。
 
-   - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
+   - チュートリアルの以前のステージでは、"body" オブジェクトの "insert * メソッド" の "Before" と "After" のオプションはありません。これは、文書の本文以外のコンテンツを入力できないためです。
 
     ```js
     var doc = context.document;
@@ -421,11 +421,11 @@ ms.locfileid: "45093512"
         //        been queued.
     ```
 
-2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
+2. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Word.run` の最後にある最終行の `return context.sync();` を削除します。新しい最後の `context.sync` は、このチュートリアルの後の方で追加します。
 
 3. `doc.body.insertParagraph` 行を切り取り、`TODO4` の代わりに貼り付けます。
 
-4. Replace `TODO5` with the following code. Note:
+4. `TODO5` を次のコードに置き換えます。次の点に注意してください。
 
    - `sync` メソッドを `then` 関数に渡すことで、`insertParagraph` ロジックがキューに登録されるまで、そのメソッドが実行されないようにします。
 
@@ -503,11 +503,11 @@ function insertTextIntoRange() {
 
 6. `insertTextBeforeRange()` 関数で、`TODO1` を次のコードに置き換えます。 注:
 
-   - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
+   - このメソッドは、"office 2019" というテキストの範囲の前に、テキストを365含む範囲を追加することを目的としています。文字列が存在し、ユーザーがそれを選択していることを想定しています。
 
    - `Range.insertText` メソッドの最初のパラメーターは、追加する文字列です。
 
-   - The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.
+   - 2番目のパラメーターは、追加するテキストを挿入する範囲内の場所を指定します。[場所] オプションの詳細については、前の `insertTextIntoRange` 関数の説明を参照してください。
 
     ```js
     var doc = context.document;
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
+8. `TODO3` は次のコードで置き換えます。この新しい段落には、新しいテキストが、元の選択範囲に含まれていない ****** ます。元の範囲には、選択された時点のテキストのみが残ります。
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -598,15 +598,15 @@ function insertTextIntoRange() {
 
 4. ドキュメント内で、「クイック実行」という語句を選択します。 *選択に先行スペースまたは後続のカンマを含めないように注意してください。*
 
-5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
+5. また、この新しい文字列は既存の範囲に追加されるため、文書の下部に新しい段落が追加され、拡張されたテキスト全体が含まれていることに注意してください。
 
 6. ドキュメント内で、「Office 365」という語句を選択します。 *選択範囲の前後にあるスペースは含めないように注意してください。*
 
-7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
+7. [**追加バージョン情報**] ボタンを選択します。"Office 2019" は "office 2016" と "Office 365" の間に挿入されます。また、ドキュメントの下部にある新しい段落が追加されますが、新しい文字列が元の範囲に追加されていないため、新しい段落のみが含まれていることにご注意ください。
 
 8. ドキュメント内で、「複数」という語句を選択します。 *選択範囲の前後にあるスペースは含めないように注意してください。*
 
-9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
+9. **数量の単位を変更** ボタンを選択します。選択したテキストは "多" で置き換えられます。
 
     ![Word のチュートリアル - テキストの追加と置換](../images/word-tutorial-text-replace-2.png)
 
@@ -716,7 +716,7 @@ function insertTextIntoRange() {
 
    - 最初の行は、ドキュメントの末尾に空白の段落を追加します。 
 
-   - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
+   - 2 行目は、その段落の末尾に HTML の文字列を挿入します。具体的には、Verdana フォントで書式設定された段落と、Word 文書の既定のスタイルが設定された段落の 2 つの段落が挿入されます。
 
     ```js
     var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
@@ -813,7 +813,7 @@ function insertTextIntoRange() {
 > [!NOTE]
 > UI から Word 文書に追加できるコンテンツ コントロールにはいくつかの種類がありますが、Word.js では現在のところリッチ テキスト コンテンツ コントロールのみがサポートされています。
 >
-> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> チュートリアルのこの手順を開始する前に、Word UI からリッチ テキスト コンテンツ コントロールを作成して操作し、コントロールとそのプロパティを理解しておくことをお勧めします。
 
 ### <a name="create-a-content-control"></a>コンテンツ コントロールを作成する
 
@@ -853,13 +853,13 @@ function insertTextIntoRange() {
 
 6. `createContentControl()` 関数で、`TODO1` を次のコードに置き換えます。 注:
 
-   - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
+   - このコードは、コンテンツコントロールで "Office 365" という語句をラップするためのものです。文字列が存在し、ユーザーがそれを選択していることを想定しています。
 
    - `ContentControl.title` プロパティは、コンテンツ コントロールの表示タイトルを指定します。
 
    - `ContentControl.tag` プロパティは、`ContentControlCollection.getByTag` メソッドを使用してコンテンツ コントロールへの参照を取得するために使用できるタグを指定します。これを後述する関数で使用します。
 
-   - The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".
+   - `ContentControl.appearance` プロパティは、コントロールの視覚的な外観を示します。値 "タグ" を使用すると、コントロールが開いているタグと閉じているタグで囲まれて表示され、開始タグにコンテンツコントロールのタイトルが表示されます。その他の値には、"BoundingBox" と "None" があります。
 
    - `ContentControl.color` プロパティは、タグまたは境界ボックスの境界線の色を指定します。
 
