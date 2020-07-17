@@ -13,11 +13,11 @@ ms.locfileid: "45094415"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. For more information, see [Add-in commands for Excel, Word, and PowerPoint](../../design/add-in-commands.md) and [Add-in commands for Outlook](../../outlook/add-in-commands-for-outlook.md).
+アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。詳細については、「[Excel、Word および PowerPoint のアドイン コマンド](../../design/add-in-commands.md)」と「[Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
-The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddinCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
+アドイン コマンドの最初のリリースには、対応する要件セットがありません (つまり、AddinCommands 1.0 要件セットはありません)。次の表に、初期リリースのバージョンをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド バージョンまたはビルド番号を示します。  
 
 | リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  iPad 上の Office<br>(Microsoft 365 サブスクリプションに接続)  |  Mac 上の Office<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|

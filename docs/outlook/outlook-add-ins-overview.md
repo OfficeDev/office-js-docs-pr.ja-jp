@@ -27,15 +27,15 @@ Outlook アドインは、Windows 版 Outlook 固有の統合機能として以�
 
 ## <a name="extension-points"></a>拡張点
 
-Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
+拡張点は、アドインが Outlook と統合する方法です。これを行う方法は以下のとおりです。
 
-- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+- アドインは、メッセージと予定のコマンド サーフェスに表示されるボタンを宣言できます。詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
 
     **リボン上の [コマンド] ボタンがあるアドイン**
 
     ![アドイン コマンドの UI なし図形](../images/uiless-command-shape.png)
 
-- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
+- アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。 詳細は、「 [コンテキスト Outlook アドイン](contextual-outlook-add-ins.md)」をご覧ください。
 
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
@@ -46,9 +46,9 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 ## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
 
-Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
+Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- Information Rights Management (IRM) によって保護されているか、または保護のためにその他の方法で暗号化されている場合。デジタル署名はこれらいずれかのメカニズムに依存しているため、デジタル署名されたメッセージはその一例です。
 
 - メッセージ クラスが IPM.Report.* である配信レポートまたは通知 (配信レポート、配信不能レポート (NDR)、開封通知、未開封通知、遅延通知など)。
 

@@ -145,7 +145,7 @@ Visual Studio では、プロジェクトのビルド時の検証エラーは [*
 
 [プロジェクトを開始](#start-the-project)して、Visual Studio で Outlook を起動してご利用のアドインをホストした後、メール メッセージまたは予定アイテムを開きます。 
 
-Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
+Outlook は、アクティブ化の基準を満たしていれば、アイテムの アドイン をアクティブ化します。アドイン バーが [インスペクタ] ウィンドウまたは閲覧ウィンドウの上部に表示され、Outlook アドインがアドイン バーにボタンとして表示されます。アドインにアドイン コマンドがある場合は、リボンの既定のタブまたは指定されたカスタム タブのいずれかにボタンが表示され、アドイン バーにはアドインは表示されません。
 
 Outlook アドインを表示するには、Outlook アドインのボタンを選択します。 ご利用のアドインが Outlook に表示された後、以下の操作を行うことでコードをデバッグできます。
 

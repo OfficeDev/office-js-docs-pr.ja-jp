@@ -47,7 +47,7 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
     ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>従来の Outlook on the web のアドインをサイドロードする
 
@@ -65,7 +65,7 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
     ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Outlook on the desktop のアドインをサイドロードする
 
@@ -88,7 +88,7 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
     ![[ファイルから追加] オプションを示す [ストア] のスクリーンショット](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
 ### <a name="outlook-2013"></a>Outlook 2013
 

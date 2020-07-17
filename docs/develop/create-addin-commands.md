@@ -1,6 +1,6 @@
 ---
 title: Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
-description: Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
+description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
 ms.date: 05/27/2020
 localization_priority: Normal
 ms.openlocfilehash: 3bcd3c6e07cdb9899601403e68e80e8d609d2e6e
@@ -12,35 +12,34 @@ ms.locfileid: "45093715"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
 
-Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** in your manifest to define add-in commands for Excel, PowerPoint, and Word. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
+マニフェストで**[Versionoverrides](../reference/manifest/versionoverrides.md)** を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。アドインコマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザーインターフェイス (UI) をカスタマイズする簡単な方法を提供します。アドインコマンドを使用して、次の操作を実行できます。
 
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
 - それぞれがオプションのサブメニューを含む個々のメニュー項目を、特定のコンテキスト (ショートカット) メニューに追加します。
-- Perform actions when your add-in command is chosen. You can:
-  - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Office UI Fabric to create a custom UI.
+- アドイン コマンドが選択されると、操作を実行します。次の操作を実行できます。
+  - ユーザーが操作する 1 つ以上の作業ウィンドウ アドインを表示します。作業ウィンドウ アドイン内部で、Office の UI ファブリックを使用してカスタム UI を作成する HTML を表示できます。
 
      *または*
 
   - 通常はいずれの UI も表示しないで実行する JavaScript コードを実行します。
 
-This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
+この記事では、アドイン コマンドを定義するマニフェストの編集方法について説明します。次の図に、アドイン コマンドを定義するのに使用される要素の階層を示します。これらの要素は、この記事で詳細に説明します。
 
 > [!NOTE]
 > アドイン コマンドは、Outlook でもサポートされています。 詳細については、「 [Outlook のアドインコマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
-The following image is an overview of add-in commands elements in the manifest.
-![Overview of add-in commands elements in the manifest](../images/version-overrides.png)
+次の画像は、マニフェスト内のアドイン コマンド要素の概要です。 ![マニフェスト内のアドイン コマンド要素の概要](../images/version-overrides.png)
 
 ## <a name="step-1-start-from-a-sample"></a>手順 1: サンプルから始める
 
-We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md) before using add-in commands.
+「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample)」にあるサンプルのいずれかから始めることを強くお勧めします。必要に応じて、このガイドの手順に従って独自のマニフェストを作成できます。「Office-Add-in-Commands-Samples」サイト内で XSD ファイルを使用してご使用のマニフェストを検証できます。アドイン コマンドを使用する前に、「[Excel、Word、および PowerPoint のアドイン コマンド](../design/add-in-commands.md)」をお読みください。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>手順 2: 作業ウィンドウ アドインを作成する
 
-To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you must add the appropiate **XML namespaces** as well as add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](#step-3-add-versionoverrides-element).
+アドイン コマンドの使用を開始するには、まず作業ウィンドウ アドインを作成し、次にアドインのマニフェストをこの記事で説明するように変更する必要があります。コンテンツ アドインではアドイン コマンドを使用できません。既存のマニフェストを更新している場合は、「[手順 3: VersionOverrides 要素を追加する](#step-3-add-versionoverrides-element)」で説明するように、**VersionOverrides** 要素をマニフェストに追加するだけでなく、適切な **XML 名前空間**も追加する必要があります。
 
-The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **VersionOverrides** element. Office 2013 doesn't support add-in commands, but by adding **VersionOverrides** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **SourceLocation** to run your add-in as a single task pane add-in. In Office 2016, if no **VersionOverrides** element is included, **SourceLocation** is used to run your add-in. If you include **VersionOverrides**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
+次の例は、Office 2013 アドインのマニフェストを示します。**VersionOverrides** 要素がないため、このマニフェストにはアドイン コマンドがありません。Office 2013 は、アドイン コマンドをサポートしていませんが、このマニフェストに **VersionOverrides** を追加することで、アドインは Office 2013 と Office 2016 の両方で動作します。Office 2013 では、アドインはアドイン コマンドを表示しません。また、**SourceLocation** の値を使用して、アドインを単一の作業ウィンドウ アドインとして実行します。Office 2016 では、**VersionOverrides** 要素が含まれない場合、アドインを実行するために **SourceLocation** が使用されます。ただし、**VersionOverrides** を含める場合は、アドインにアドイン コマンドのみが表示され、アドインは単一の作業ウィンドウ アドインとして表示されません。
   
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
@@ -73,21 +72,21 @@ The following example shows an Office 2013 add-in's manifest. There are no add-i
 
 ## <a name="step-3-add-versionoverrides-element"></a>手順 3: VersionOverrides 要素を追加する
 
-The **VersionOverrides** element is the root element that contains the definition of your add-in command. **VersionOverrides** is a child element of the **OfficeApp** element in the manifest. The following table lists the attributes of the **VersionOverrides** element.
+**VersionOverrides** 要素は、アドイン コマンドの定義を含むルート要素です。**VersionOverrides** はマニフェスト内の **OfficeApp** 要素の子要素です。次の表に、**VersionOverrides** 要素の属性の一覧を示します。
 
 |**属性**|**説明**|
 |:-----|:-----|
 |**xmlns** <br/> | 必須です。 スキーマの場所。`http://schemas.microsoft.com/office/taskpaneappversionoverrides` にする必要があります。 <br/> |
-|**xsi:type** <br/> |Required. The schema version. The version described in this article is "VersionOverridesV1_0".  <br/> |
+|**xsi:type** <br/> |必須。スキーマのバージョン。この記事で説明されているスキーマのバージョンは "VersionOverridesV1_0" です。  <br/> |
 
 次の表は、**VersionOverrides** の子要素です。
   
 |**要素**|**説明**|
 |:-----|:-----|
-|**Description** <br/> |Optional. Describes the add-in. This child **Description** element overrides a previous **Description** element in the parent portion of the manifest. The **resid** attribute for this **Description** element is set to the **id** of a **String** element. The **String** element contains the text for **Description**. <br/> |
-|**Requirements** <br/> |Optional. Specifies the minimum requirement set and version of Office.js that the add-in requires. This child **Requirements** element overrides the **Requirements** element in the parent portion of the manifest. For more information, see [Specify Office hosts and API requirements](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
-|**Hosts** <br/> |Required. Specifies a collection of Office hosts. The child **Hosts** element overrides the **Hosts** element in the parent portion of the manifest. You must include a **xsi:type** attribute set to "Workbook" or "Document". <br/> |
-|**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](#step-7-add-the-resources-element) later in this article. <br/> |
+|**Description** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
+|**Requirements** <br/> |省略可能。アドインに必要な最小の Office.js のセットおよびバージョンを指定します。この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。詳細については、「[Office のホストと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。  <br/> |
+|**Hosts** <br/> |必須。Office ホストのコレクションを指定します。子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。"Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
+|**Resources** <br/> |マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。たとえば、**Description** 要素の値は、**Resources** の子要素を参照します。**Resources** 要素については、この記事の「[手順 7: Resources 要素を追加する](#step-7-add-the-resources-element)」で説明します。 <br/> |
 
 次の例に、**VersionOverrides** 要素と子要素を使用する方法を示します。
 
@@ -117,7 +116,7 @@ The **VersionOverrides** element is the root element that contains the definitio
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>手順 4: Hosts、Host、DesktopFormFactor 要素を追加する
 
-The **Hosts** element contains one or more **Host** elements. A **Host** element specifies a particular Office host. The **Host** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office host. To show the same add-in commands in two or more different Office hosts, you must duplicate the child elements in each **Host**.
+**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。**Host** 要素は、特定の Office ホストを指定します。**Host** 要素には、アドインが Office ホストにインストールされた後で表示するアドイン コマンドを指定する子要素が含まれます。同じアドイン コマンドを複数の異なる Office ホストで表示する場合は、各 **Host** で子要素を重複させる必要があります。
 
 **DesktopFormFactor** 要素では、Office on the web (ブラウザーを使用) と Windows で実行するアドインの設定を指定します。
 
@@ -145,7 +144,7 @@ The **Hosts** element contains one or more **Host** elements. A **Host** element
 
 ## <a name="step-5-add-the-functionfile-element"></a>手順 5: FunctionFile 要素を追加する
 
-The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](../reference/manifest/control.md#button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
+**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](../reference/manifest/control.md#button-control)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
 
 **FunctionFile** 要素の例を次に示します。
   
@@ -163,7 +162,7 @@ The **FunctionFile** element specifies a file that contains JavaScript code to r
 > [!IMPORTANT]
 > JavaScript コードが `Office.initialize` を呼び出していることを確認します。
 
-The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](../reference/manifest/control.md#button-control) for a description) uses the functions in **FunctionFile**.
+**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](../reference/manifest/control.md#button-control)」の説明を参照) は、**FunctionFile** の関数を使用します。
 
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
@@ -198,11 +197,11 @@ The JavaScript in the HTML file referenced by the **FunctionFile** element must 
 ```
 
 > [!IMPORTANT]
-> The call to **event.completed** signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement **event.completed**, otherwise your function will not run.
+> **event.completed** に対する呼び出しにより、イベントが正常に処理されたことが通知されます。同一のアドイン コマンドを複数回クリックするなど、関数を複数回呼び出すと、すべてのイベントが自動的にキューに入れられます。最初のイベントが自動的に実行され、その他のイベントはキューに残ります。関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。**event.completed** を実装する必要があります。実装しない場合、関数は実行されません。
 
 ## <a name="step-6-add-extensionpoint-elements"></a>手順 6: ExtensionPoint 要素を追加する
 
-The **ExtensionPoint** element defines where add-in commands should appear in the Office UI. You can define **ExtensionPoint** elements with these **xsi:type** values:
+**ExtensionPoint** 要素は、Office UI のどこにアドイン コマンドを表示するかを定義します。以下の **xsi:type** 値を使用して、**ExtensionPoint** 要素を定義できます。
 
 - **PrimaryCommandSurface**。Office のリボンを参照します。
 
@@ -211,7 +210,7 @@ The **ExtensionPoint** element defines where add-in commands should appear in th
 次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
 > [!IMPORTANT]
-> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`. 
+> ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。`<CustomTab id="mycompanyname.mygroupname">` 
   
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -247,18 +246,18 @@ The **ExtensionPoint** element defines where add-in commands should appear in th
 
 |**要素**|**説明**|
 |:-----|:-----|
-|**CustomTab** <br/> |Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required. <br/> |
+|**CustomTab** <br/> |カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 <br/> |
 |**OfficeTab** <br/> |既定の Office アプリリボンタブ ( **Primarycommandsurface**を使用) を拡張する場合に必要です。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 <br/> **Id**属性と共に使用するその他のタブ値については、「[既定の Office アプリリボンタブのタブ値](../reference/manifest/officetab.md)」を参照してください。  <br/> |
-|**OfficeMenu** <br/> | Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> **ContextMenuCell** for Excel. Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. <br/> |
-|**グループ** <br/> |A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters. <br/> |
-|**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Icon** <br/> |Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**Tooltip** <br/> |Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the  [Button controls](../reference/manifest/control.md#button-control) and [Menu controls](../reference/manifest/control.md#menu-dropdown-button-controls) sections for more information. <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
+|**OfficeMenu** <br/> | 既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は **ContextMenuText**。ユーザーがテキストを選択し、選択したテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。<br/> Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。 <br/> |
+|**グループ** <br/> |タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 <br/> |
+|**Label** <br/> |必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Icon** <br/> |必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
+|**Tooltip** <br/> |省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Control** <br/> |各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](../reference/manifest/control.md#button-control)」および「[メニュー コントロール](../reference/manifest/control.md#menu-dropdown-button-controls)」のセクションをご覧ください。<br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
 
 ### <a name="button-controls"></a>Button コントロール
 
-A button performs a single action when the user selects it. It can either execute a JavaScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the **Control** element:
+ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。JavaScript 関数を実行するか、作業ウィンドウを表示することができます。次の例は、2 つのボタンを定義する方法を示しています。最初のボタンは UI を表示せずに JavaScript 関数を実行し、2 つ目のボタンは作業ウィンドウを表示します。**Control** 要素では、次のようになります。
 
 - **type** 属性は必須であり、**Button** に設定する必要があります。
 
@@ -304,11 +303,11 @@ A button performs a single action when the user selects it. It can either execut
 
 |**要素**|**Description**|
 |:-----|:-----|
-|**Label** <br/> |Required. The text for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Tooltip** <br/> |Optional. The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Supertip** <br/> | Required. The supertip for this button, which is defined by the following: <br/> **Title** <br/>  Required. The text for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> **説明** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Icon** <br/> | Required. Contains the **Image** elements for the button. Image files must be .png format. <br/> **Image** <br/>  Defines an image to display on the button. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**操作** <br/> | Required. Specifies the action to perform when the user selects the button. You can specify one of the following values for the **xsi:type** attribute: <br/> **ExecuteFunction**, which runs a JavaScript function located in the file referenced by **FunctionFile**. **ExecuteFunction** does not display a UI. The **FunctionName** child element specifies the name of the function to execute. <br/> **ShowTaskPane**, which shows a task pane add-in. The **SourceLocation** child element specifies the source file location of the task pane add-in to display. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the **Resources** element. <br/> |
+|**Label** <br/> |必須。ボタンのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Tooltip** <br/> |省略可能。ボタンのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Supertip** <br/> | 必須。このボタンのヒントであり、次のものによって定義されます。 <br/> **Title** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Icon** <br/> | 必須。ボタンの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  ボタンに表示する画像を定義します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
+|**操作** <br/> | 必須。ユーザーがボタンを選択したときに実行する操作を指定します。**xsi:type** 属性の値は、次のいずれかを指定できます。 <br/> **ExecuteFunction**。**FunctionFile** によって参照されるファイルにある JavaScript 関数を実行します。**ExecuteFunction** は UI を表示しません。**FunctionName** 子要素は、実行する関数の名前を指定します。<br/> **ShowTaskPane**。作業ウィンドウ アドインを表示します。**SourceLocation** 子要素は、表示する作業ウィンドウ アドインのソース ファイルの位置を指定します。**resid** 属性は、**Url** 要素の **id** 属性の値に設定します。この要素は、**Resources** 要素の **Urls** 要素に含まれています。 <br/> |
 
 ### <a name="menu-controls"></a>Menu コントロール
 
@@ -317,9 +316,9 @@ A button performs a single action when the user selects it. It can either execut
 - ルートレベルのメニュー項目。
 - サブメニュー項目のリスト。
 
-When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
+**PrimaryCommandSurface** と共に使用すると、ルートのメニュー項目がリボンのボタンとして表示されます。ボタンを選択すると、サブメニューがドロップダウン リストとして表示されます。**ContextMenu** と共に使用すると、サブメニューのあるメニュー項目がコンテキスト メニューに挿入されます。どちらの場合も、各サブメニュー項目は JavaScript 関数を実行するか、作業ウィンドウを表示することができます。現時点では、サブメニューの 1 つのレベルのみがサポートされます。
 
-The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **Control** element:
+次の例では、2 つのサブメニュー項目があるメニュー項目を定義する方法を示します。最初のサブメニュー項目は作業ウィンドウを表示し、2 つ目のサブメニュー項目は、JavaScript 関数を実行します。**Control** 要素では、次のようになります。
 
 - **xsi:type** 属性は必須であり、**Menu** に設定する必要があります。
 - **id** 属性は、最大 125 文字の文字列です。
@@ -375,17 +374,17 @@ The following example shows how to define a menu item with two submenu items. Th
 
 |**要素**|**Description**|
 |:-----|:-----|
-|**Label** <br/> |Required. The text of the root menu item. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Tooltip** <br/> |Optional. The tooltip for the menu. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**SuperTip** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **Title** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> **説明** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Icon** <br/> | Required. Contains the **Image** elements for the menu. Image files must be .png format. <br/> **Image** <br/>  An image for the menu. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. Five optional sizes, in pixels, are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](../reference/manifest/control.md#button-control).  <br/> |
+|**Label** <br/> |必須。ルートのメニュー項目のテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Tooltip** <br/> |省略可能。メニューのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**SuperTip** <br/> | 必須。メニューのヒントであり、次のものによって定義されます。 <br/> **Title** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
+|**Icon** <br/> | 必須。メニューの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  メニューの画像。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズ (ピクセル単位) が必要です。16、32、および 80。次の 5 つのオプションのサイズ (ピクセル単位) もサポートされています。20、24、40、48、および 64。 <br/> |
+|**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](../reference/manifest/control.md#button-control)と同じ子要素を含みます。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>手順 7: Resources 要素を追加する
 
-The **Resources** element contains resources used by the different child elements of the **VersionOverrides** element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
+**Resources** 要素は、**VersionOverrides** 要素の異なる子要素で使用されるリソースを含みます。リソースには、アイコン、文字列、および URL が含まれます。マニフェスト内の要素は、リソースの **id** を参照することでリソースを使用できます。**id** を使用するマニフェストの編成に有用です。特に、異なるロケールのリソースの異なるバージョンがある場合に役立ちます。**id** は 最大 32 文字まで使用できます。
   
-The following shows an example of how to use the **Resources** element. Each resource can have one or more **Override** child elements to define a different resource for a specific locale.
+次の表に、**Resources** 要素の使用法の例を示します。各リソースは、特定のロケールに異なるリソースを定義する 1 つ以上の **Override** 子要素を持つことができます。
 
 ```xml
 <Resources>
@@ -420,17 +419,17 @@ The following shows an example of how to use the **Resources** element. Each res
 
 |**Resource**|**説明**|
 |:-----|:-----|
-|**Images**/ **Image** <br/> | Provides the HTTPS URL to an image file. Each image must define the three required image sizes: <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  次のイメージ サイズもサポートされますが、必須ではありません。 <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
-|**Urls**/ **Url** <br/> |Provides an HTTPS URL location. A URL can be a maximum of 2048 characters.  <br/> |
-|**ShortStrings**/ **String** <br/> |The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters. <br/> |
-|**LongStrings**/ **String** <br/> |The text for **Tooltip** and **Description** elements. Each **String** contains a maximum of 250 characters. <br/> |
+|**Images**/ **Image** <br/> | イメージ ファイルへの HTTPS URL を指定します。各イメージは、次の 3 つの必須のイメージ サイズを定義する必要があります。 <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  次のイメージ サイズもサポートされますが、必須ではありません。 <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
+|**Urls**/ **Url** <br/> |HTTPS URL の場所を指定します。URL には最大 2048 文字まで指定できます。  <br/> |
+|**ShortStrings**/ **String** <br/> |**Label** 要素と **Title** 要素のテキスト。各 **String** には、最大 125 文字を使用できます。 <br/> |
+|**LongStrings**/ **String** <br/> |**Tooltip** と **Description** 要素のテキスト。各 **String** は最大 250 文字です。<br/> |
 
 > [!NOTE]
 > **Image** 要素と **Url** 要素のすべての URL で Secure Sockets Layer (SSL) を使用する必要があります。
 
 ### <a name="tab-values-for-default-office-app-ribbon-tabs"></a>既定の Office アプリリボンタブのタブ値
 
-In Excel and Word, you can add your add-in commands to the ribbon by using the default Office UI tabs. The following table lists the values that you can use for the **id** attribute of the **OfficeTab** element. The tab values are case sensitive.
+Excel および Word で、既定の Office UI タブを使用することで、リボンにアドイン コマンドを追加できます。次の表に、**OfficeTab** 要素の **id** 属性で使用できる値を示します。タブの値は大文字と小文字を区別します。
 
 |**Office ホスト アプリケーション**|**タブの値**|
 |:-----|:-----|

@@ -30,7 +30,7 @@ Office の最新ビルドを取得するためにオプトインするには、�
 Office の最新ビルドを取得するには、次の操作を行います。
 
 1. [Office 展開ツール](https://www.microsoft.com/download/details.aspx?id=49117)をダウンロードします。
-2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
+2. ツールを実行します。これにより、Setup.exe および configuration.xml という 2 つのファイルが抽出されます。
 3. configuration.xml を[先行リリース構成ファイル](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)に置き換えます。
 4. 次のコマンドを管理者として実行します: `setup.exe /configure configuration.xml`
 

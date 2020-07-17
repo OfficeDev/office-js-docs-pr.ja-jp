@@ -6,7 +6,7 @@ description: Excel アドインを構成して、ブラウザーのランタイ�
 localization_priority: Priority
 ms.openlocfilehash: 8c16642f5a945e6156fcfd93c8b4cc088b616102
 ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2020
 ms.locfileid: "44609346"

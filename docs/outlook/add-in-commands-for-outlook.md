@@ -12,7 +12,7 @@ ms.locfileid: "45094030"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
-Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus. This lets users access add-ins in a simple, intuitive, and unobtrusive way. Because they offer increased functionality in a seamless manner, you can use add-in commands to create more engaging solutions.
+Outlook アドイン コマンドを作成して、ボタンまたはドロップダウン メニューとしてリボンに追加すると、リボンから特定のアドイン操作を開始できるようになり、ユーザーが簡単、直観的、かつ自然にアドインにアクセスできるようになります。アドイン コマンドを採用すれば、シームレスに機能性が向上するので、より魅力的なソリューションを作成することができます。
 
 > [!NOTE]
 > アドイン コマンドは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、iOS 用 Outlook、Android 用 Outlook、Exchange 2016 以降の Outlook on the web、Microsoft 365 の Outlook on the web および Outlook.com でのみ使用できます。
@@ -24,21 +24,21 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 >
 > Exchange 2016 のアドイン コマンドのサポートでは、[累積的な更新プログラム 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016) が必要です。
 
-Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+アドイン コマンドは、アクティブ化するアイテムの種類を制限する [ItemHasAttachment、ItemHasKnownEntity、ItemHasRegularExpressionMatch ルール](activation-rules.md) を使用しないアドインに対してのみ使用できます。ただし、[コンテキスト アドイン](contextual-outlook-add-ins.md) は、現在選択されているアイテムがメッセージか予定かに応じて異なるコマンドを表示でき、閲覧シナリオまたは作成シナリオのどちらで表示するかを選択できます。可能な場合はアドイン コマンドを使用するのが [ベスト プラクティス](../concepts/add-in-development-best-practices.md) です。
 
 ## <a name="creating-the-add-in-command"></a>アドイン コマンドの作成
 
-Add-in commands are declared in the add-in manifest in the [VersionOverrides element](../reference/manifest/versionoverrides.md). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
+アドイン コマンドは、[VersionOverrides](../reference/manifest/versionoverrides.md) 要素のアドイン マニフェストで宣言されます。この要素はマニフェスト スキーマ v1.1 に追加されたもので、下位互換性が保証されています。`VersionOverrides` をサポートしていないクライアントでも、既存のアドインは引き続きアドイン コマンドのないときと変わらずに機能します。
 
 `VersionOverrides` マニフェスト エントリは、アドインについての多くの事柄 (ホスト、リボンに追加するコントロールの種類、テキスト、アイコン、関連する機能など) を指定します。
 
-When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
+アドインが、進行状況のインジケーターやエラー メッセージなど、状態更新を提供しなければならない場合、それは[通知 API](/javascript/api/outlook/office.notificationmessages) を通して行う必要があります。通知の処理を、マニフェストの `FunctionFile` ノードで指定されている別の HTML ファイルに定義する必要もあります。
 
-Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
+アドイン コマンドがリボンに合わせて適正に配置されるように、開発者は必要なサイズのアイコンをすべて定義する必要があります。必要とされるアイコンのサイズは、デスクトップの場合には 80 x 80 ピクセル、32 x 32 ピクセル、16 x 16 ピクセルで、モバイルの場合には 48 × 48 ピクセル、32 x 32 ピクセル、25 x 25 ピクセルです。
 
 ## <a name="how-do-add-in-commands-appear"></a>アドイン コマンドの表示方法
 
-An add-in command appears on the ribbon as a button. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. For messages, the default is either the **Home** or **Message** tab. For the calendar, the default is the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tab. For module extensions, the default is a custom tab. On the default tab, each add-in can have one ribbon group with up to 6 commands. On custom tabs, the add-in can have up to 10 groups, each with 6 commands. Add-ins are limited to only one custom tab.
+アドイン コマンドは、リボン上にボタンとして表示されます。ユーザーがアドインをインストールすると、アドインのコマンドはボタン グループとして UI に表示されます。これは、リボンの既定のタブまたはカスタム タブのいずれかに表示されます。メッセージの場合、既定のタブは **[ホーム]** タブまたは **[メッセージ]** タブのいずれかです。予定表の場合、既定のタブは **[会議]** タブ、**[個別の会議]** タブ、**[定期的な会議]** タブ、または **[予定]** タブです。モジュール拡張機能の場合、既定のタブはカスタム タブです。既定タブでは、それぞれのアドインは 1 つのリボン グループを持つことができ、1 つのリボン グループに含まれるコマンドの数は 6 個までです。カスタム タブには、アドインのグループを 10 個まで含めることができ、1 つのグループにコマンドが 6 個まで表示されます。アドインに使用できるカスタム タブは 1 つに制限されています。
 
 リボンがいっぱいになると、アドイン コマンドがオーバーフロー メニューに表示されます。 通常、アドインのアドイン コマンドはグループ化されています。
 
@@ -46,7 +46,7 @@ An add-in command appears on the ribbon as a button. When a user installs an add
 
 ![リボンとオーバーフロー メニューのアドイン コマンド ボタン](../images/commands-collapsed.png)
 
-When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
+アドインにアドイン コマンドが追加されると、アドイン名は、アプリ バーから削除されます。リボン上のアドイン コマンド ボタンだけが残ります。
 
 ### <a name="modern-outlook-on-the-web"></a>モダン Outlook on the web
 
@@ -58,7 +58,7 @@ Outlook on the web では、アドイン名はオーバーフロー メニュー
 
 ## <a name="what-ux-shapes-exist-for-add-in-commands"></a>アドイン コマンドの UX シェイプの目的
 
-The UX shape for an add-in command consists of a ribbon tab in the host application that contains buttons that can perform various functions. Currently, three UI shapes are supported:
+アドイン コマンドの UX シェイプは、さまざまな機能を実行できるボタンを含むホスト アプリケーションのリボン タブで構成されています。現時点では、次の 3 つの UI シェイプがサポートされています。
 
 - JavaScript 関数を実行するボタン
 - 作業ウィンドウを起動するボタン
@@ -66,7 +66,7 @@ The UX shape for an add-in command consists of a ribbon tab in the host applicat
 
 ### <a name="executing-a-javascript-function"></a>JavaScript 関数の実行
 
-Use an add-in command button that executes a JavaScript function for scenarios where the user doesn't need to make any additional selections to initiate the action. This can be for actions such as track, remind me, or print, or scenarios when the user wants more in-depth information from a service.
+JavaScript 関数を実行するアドイン コマンド ボタンは、操作を開始するためにユーザーが追加の選択をする必要のないシナリオで使用します。追跡や通知、印刷などの操作が該当します。また、ユーザーがサービスからより詳細な情報を取得するシナリオでも使用します。
 
 モジュール拡張機能では、メイン ユーザー インターフェイスのコンテンツを操作する JavaScript 関数をアドイン コマンド ボタンで実行できます。
 
@@ -74,21 +74,21 @@ Use an add-in command button that executes a JavaScript function for scenarios w
 
 ### <a name="launching-a-task-pane"></a>作業ウィンドウの起動
 
-Use an add-in command button to launch a task pane for scenarios where a user needs to interact with an add-in for a longer period of time. For example, the add-in requires changes to settings or the completion of many fields.
+作業ウィンドウを起動するアドイン コマンド ボタンは、ユーザーが長時間アドインとの対話式操作を行う必要があるシナリオで使用します。たとえば、アドインでは設定の変更や多数のフィールドへの入力が必要になることがあります。
 
-The default width of the vertical task pane is 320 px. The vertical task pane can be resized in both the Outlook Explorer and inspector. The pane can be resized in the same way the to-do pane and list view resize.
+垂直作業ウィンドウの既定の幅は 320 px です。垂直作業ウィンドウのサイズは、Outlook エクスプローラーとインスペクターの両方で変更できます。このウィンドウのサイズは、To Do ウィンドウやリスト ビューのサイズを変更するときと同じ方法で変更することができます。
 
 ![Outlook リボンの作業ウィンドウを開くボタン。](../images/commands-task-pane-button-1.png)
 
 <br/>
 
-This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. By default, this pane will not persist across messages. Add-ins can [support pinning](pinnable-taskpane.md) for the task pane and receive events when a new message is selected. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
+このスクリーンショットは、垂直作業ウィンドウの例を示しています。左上隅にアドイン コマンドの名前が付いたウィンドウが開いています。ユーザーは、このウィンドウの使用後に、右上隅の **[X]** ボタンを使用してウィンドウを閉じることができます。既定では、このウィンドウはメッセージを越えて存続しません。アドインは、作業ウィンドウの[ピン留めをサポートする](pinnable-taskpane.md)ことができます。また、新しいメッセージが選択されたときには、イベントを受信できます。作業ウィンドウに表示されるすべての UI 要素は、アドインによって提示されます (アドイン名と閉じるボタンを除く)。
 
-If a user chooses another add-in command that opens a task pane, the task pane is replaced with the recently used command. If a user chooses an add-in command button that executes a function, or drop-down menu while the task pane is open, the action will be completed and the task pane will remain open.
+ユーザーが作業ウィンドウを開く別のアドイン コマンドを選択すると、作業ウィンドウは直近に使用されたコマンドに置き換えられます。作業ウィンドウが開いているときにユーザーが、関数を実行するアドイン コマンド ボタンまたはドロップダウン メニューをクリックすると、操作が完了して、作業ウィンドウは開いたままになります。
 
 ### <a name="drop-down-menu"></a>ドロップダウン メニュー
 
-A drop-down menu add-in command defines a static list of buttons. The buttons within the menu can be any mix of buttons that execute a function or buttons that open a task pane. Submenus are not supported.
+ドロップダウン メニュー アドイン コマンドでは、ボタンの静的リストを定義します。メニューには、機能を実行するボタンや作業ウィンドウを開くボタンを自由に組み合わせて含めることができます。サブメニューはサポートされません。
 
 ![Outlook リボンのドロップダウン メニューを表示するボタン。](../images/commands-menu-button-1.png)
 
@@ -106,11 +106,11 @@ A drop-down menu add-in command defines a static list of buttons. The buttons wi
 
 ### <a name="creating-or-viewing-an-appointment-or-meeting-as-the-organizer"></a>開催者として予定または会議を作成または表示する
 
-When creating or viewing an appointment or meeting as the organizer, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tabs on pop-out forms. However, if the user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon.
+開催者として予定または会議を作成または表示する場合、既定のタブに追加されたアドイン コマンドは、ポップアウト フォームの **[会議]**、**[個別の会議]**、**[定期的な会議]**、または **[予定]** のタブに表示されます。ただし、ユーザーが予定表のアイテムを選択してもポップ アウトを開かなければ、そのアドインのリボン グループはリボンに表示されません。
 
 ### <a name="viewing-a-meeting-as-an-attendee"></a>出席者として会議を表示する
 
-When viewing a meeting as an attendee, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, or **Meeting Series** tabs on pop-out forms. However, if a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon
+出席者として会議を表示する場合、既定のタブに追加されたアドイン コマンドは、ポップアウト フォームの **[会議]**、**[個別の会議]**、または **[定期的な会議]** のタブに表示されます。ただし、ユーザーが予定表のアイテムを選択してもポップ アウトを開かなければ、そのアドインのリボン グループはリボンに表示されません。
 
 ### <a name="using-a-module-extension"></a>モジュール拡張機能の使用
 

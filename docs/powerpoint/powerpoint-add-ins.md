@@ -16,7 +16,7 @@ ms.locfileid: "45006452"
 
 PowerPoint アドインを使用して Windows、iPad、Mac、およびブラウザー上など、複数のプラットフォームでのユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。 次の 2 種類の PowerPoint アドインを作成できます。
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/wa104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
 - **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pexels - 無料ストックフォト](https://appsource.microsoft.com/product/office/wa104379997) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
 

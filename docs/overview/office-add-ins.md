@@ -14,35 +14,35 @@ ms.locfileid: "45094072"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
-You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
+Office アドイン プラットフォームを使用すると、Office アプリケーションを拡張して、Office ドキュメント内のコンテンツを対話方式で操作するソリューションを構築できます。Office アドインでは、HTML、CSS、および JavaScript などの一般的な Web テクノロジを使用することで、Word、Excel、PowerPoint、OneNote、Project、および Outlook を拡張して対話できるようになります。Windows、Mac、iPad、およびブラウザーを含む複数のプラットフォームにわたって Office ソリューションを実行できます。
 
 ![Office アドインの拡張性の画像](../images/addins-overview.png)
 
-Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
+Office アドインでは、ブラウザー内で Web ページが実行できる操作のほとんどすべてを実行できます。Office アドイン プラットフォームを使用して、次のことができます。
 
--  **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose third-party functionality in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
+-  **Office クライアントに新しい機能を追加する** - Office に外部データを取り込む、Office ドキュメントを自動化する、サード パーティの機能を Office クライアントで公開する、などがあります。たとえば、Microsoft Graph API を使用して、生産性の向上につながるデータに接続します。
 
 -  **Office ドキュメントに埋め込み可能な充実した対話型のオブジェクトを新しく作成する** - マップやグラフ、ユーザーが自分の Excel スプレッドシートや PowerPoint プレゼンテーションに追加できる対話型の視覚化などを埋め込みます。
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office アドインが COM アドインおよび VSTO アドインと異なる点
 
-COM or VSTO add-ins are earlier Office integration solutions that run only on Office on Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
+COM または VSTO アドインは、Office for Windows 上でのみ実行する以前の Office 統合ソリューションです。COM アドインとは異なり、Office アドインにはユーザーのデバイスまたは Office クライアントで実行されるコードは含まれません。Office アドインの場合、ホスト アプリケーション (たとえば Excel) がアドインのマニフェストを読み取り、アドインのカスタム リボン ボタンと UI のメニュー コマンドをフックします。これは必要に応じて、サンド ボックスのブラウザーのコンテキストで実行されるアドインの JavaScript と HTML を読み込みます。
 
 ![Office アドインを使用する理由の画像](../images/why.png)
 
 Office アドインは、VBA、COM、または VSTO を使用して作成されたアドインと比較して、次のような利点があります。
 
-- Cross-platform support. Office Add-ins run in Office on the web, Windows, Mac, and iPad.
+- クロスプラットフォーム サポート。Office アドインは、Office on the web、Windows、Mac、および iPad で実行できます。
 
-- Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.
+- 一元展開と配布。管理者は、組織全体に Office アドインを一元的に展開できます。
 
-- Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource.
+- AppSource を経由した簡単なアクセス。AppSource に提出することで、広範な対象ユーザーにソリューションを公開できます。
 
-- Based on standard web technology. You can use any library you like to build Office Add-ins.
+- 標準の Web テクノロジに基づいている。任意のライブラリを使用して、Office アドインを構築することができます。
 
 ## <a name="components-of-an-office-add-in"></a>Office アドインのコンポーネント
 
-An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
+Office アドインには、2 つの基本的なコンポーネントが含まれています。XML マニフェスト ファイルと独自の Web アプリケーションです。マニフェストは、アドインを Office クライアントと統合する方法など、さまざまな設定を定義します。Web アプリケーションは Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされる必要があります。
 
 ### <a name="manifest"></a>マニフェスト
 
@@ -56,7 +56,7 @@ An Office Add-in includes two basic components: an XML manifest file, and your o
 
 ### <a name="web-app"></a>Web アプリケーション
 
-The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but that doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office host application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs.
+最も基本的な Office アドインは、Office アプリケーション内に表示される静的な HTML ページで構成されますが、Office ドキュメントやその他のどんなインターネット リソースとも対話を行いません。ただし、Office ドキュメントと対話するエクスペリエンスを作成する、または、ユーザーが Office ホスト アプリケーションからオンライン リソースと対話できるようにするには、ホスティング プロバイダーがサポートする任意のクライアント側とサーバー側のテクノロジ (ASP.NET、PHP、または Node.js など) を使用できます。Office クライアントとドキュメントとの対話を行うには、Office.js JavaScript API を使用します。
 
 *図 2. Hello World Office アドインのコンポーネント*
 
@@ -82,7 +82,7 @@ Office アドインは、Office ホスト アプリケーション内で次を�
 
 #### <a name="custom-buttons-and-menu-commands"></a>カスタム ボタンとメニュー コマンド  
 
-You can add custom ribbon buttons and menu items to the ribbon in Office on the web and Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+カスタムのリボン ボタンとメニュー項目は、Office on the web および Windows のリボンに追加できます。これにより、ユーザーは、Office アプリケーションからアドインに簡単に直接アクセスできます。コマンド ボタンでは、カスタム HTML による作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
 
 *図 3. リボンにあるアドイン コマンド*
 
@@ -90,7 +90,7 @@ You can add custom ribbon buttons and menu items to the ribbon in Office on the 
 
 #### <a name="task-panes"></a>作業ウィンドウ  
 
-You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office on iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.
+ユーザーはアドイン コマンドに加えて、作業ウィンドウを使用してソリューションの対話式操作を実行できます。アドイン コマンド (Office 2013 および Office on iPad) をサポートしていないクライアントは、アドインを作業ウィンドウとして実行します。ユーザーは **[挿入]** タブの **[アドイン]** ボタンを使用して、作業ウィンドウのアドインを起動します。
 
 *図 4. 作業ウィンドウ*
 
@@ -98,15 +98,15 @@ You can use task panes in addition to add-in commands to enable users to interac
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する
 
-Outlook add-ins can extend the Office app ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item. 
+Outlook アプリ アドインは Office のリボンを拡張したり、コンテキストに応じて表示または作成時に Outlook アイテムの隣に表示したりすることもできます。ユーザーが受信した項目を表示するか、返信または新しい項目を作成している場合には、電子メールメッセージ、会議出席依頼、会議の返信、会議の取り消し、または予定を操作できます。 
 
-Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification in the Outlook host application to provide a seamless experience on the desktop, web, and tablet and mobile devices.
+Outlook アドインでは、アイテムのコンテキスト情報 (アドレスや追跡 ID など) にアクセスし、そのデータを使用してサーバー上または Web サービスの追加情報にアクセスして、魅力的なユーザー エクスペリエンスを作成できます。ほとんどの場合、Outlook アドインはデスクトップ、Web、タブレットおよびモバイル デバイスに変更なしでシームレスなエクスペリエンスを提供する Outlook ホスト アプリケーションで実行できます。
 
 Outlook アドインの概要については、「[Outlook アドインの概要](../outlook/outlook-add-ins-overview.md)」を参照してください。
 
 ### <a name="create-new-objects-in-office-documents"></a>Office ドキュメント内に新しいオブジェクトを作成する
 
-You can embed web-based objects called content add-ins within Excel and PowerPoint documents. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
+Excel および PowerPoint のドキュメント内に、コンテンツ アドインと呼ばれる Web ベースのオブジェクトを埋め込むことができます。コンテンツ アドインにより、ユーザーは充実した Web ベースのデータの可視化、埋め込まれたメディア (YouTube ビデオ プレーヤーや画像ギャラリーなど)、およびその他の外部コンテンツを統合できます。
 
 *図 5. コンテンツ アドイン*
 
@@ -114,7 +114,7 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API
 
-The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
+Office JavaScript API には、アドインを構築したり、Office のコンテンツおよび Web サービスと対話したりするためのオブジェクトとメンバーが含まれています。Excel、Outlook、Word、PowerPoint、OneNote、Project には、共通のオブジェクト モデルがあり、共有されています。Excel および Word には、さらに多くのホスト固有のオブジェクト モデルが用意されています。これらの API では、特定のホストのアドイン作成を容易にする段落やブックなど、既知のオブジェクトへのアクセスを提供します。  
 
 ## <a name="next-steps"></a>次のステップ
 

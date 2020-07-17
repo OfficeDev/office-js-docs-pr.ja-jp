@@ -13,7 +13,7 @@ ms.locfileid: "45094282"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](/office/dev/add-ins/develop/office-versions-and-requirement-sets)」をご覧ください。
 
 リボン API セットは、カスタムアドインコマンド (つまり、カスタムリボンボタンとメニュー項目) を有効または無効にするときのプログラムによる制御をサポートします。
 

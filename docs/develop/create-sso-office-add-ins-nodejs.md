@@ -12,7 +12,7 @@ ms.locfileid: "45093692"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
 
-Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
+ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
 
 この記事では、Node.js と Express を使用して作成したアドインで、シングル サインオン (SSO) を有効化するプロセスについて手順を追って説明します。 ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)」を参照してください。
 
@@ -41,7 +41,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
     > [!NOTE]
     > このサンプルには、次の 3 つのバージョンがあります。  
-    > * The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
+    > * **開始**フォルダーはスタートプロジェクトです。SSO または承認に直接接続されていないアドインの UI とその他の側面は、既に実行されています。この記事の後のセクションでは、これを完了するプロセスについて順を追って説明します。
     > * このサンプルの **[Complete]** バージョンは、この記事の手順を完了したときに得られるアドインと同様のものですが、完成済みのプロジェクトには、この記事のテキストと重複するコード コメントが含まれています。 完成したバージョンを使用するには、この記事に記載されている手順に従いますが、"Begin" を "Completed" に置き換え、**クライアント側のコードを記述**してサーバー側を**コーディング**するセクションをスキップします。
     > * **SSOAutoSetup** バージョンは、アドインを Azure AD に登録して構成する手順の大部分を自動化する完成されたサンプルです。 SSO で動作するアドインをすばやく表示する場合には、このバージョンを使用します。 フォルダーの Readme の手順に従ってください。 Azure AD とアドインの関係をよりよく理解するために、この記事にある手動での登録およびセットアップのステップを行うことをお勧めします。 
 

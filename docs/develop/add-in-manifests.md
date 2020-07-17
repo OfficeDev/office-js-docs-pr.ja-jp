@@ -114,7 +114,7 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
-Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
+アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。
 
 AppSource に提出するアドインには、[SupportUrl](../reference/manifest/supporturl.md) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/legal/marketplace/certification-policies)」をご覧ください。
 

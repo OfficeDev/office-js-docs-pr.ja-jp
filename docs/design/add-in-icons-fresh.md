@@ -28,7 +28,7 @@ Office 2013 + (サブスクリプション以外の) バージョンの Office �
 |Office アイコンの言語を使用して、動作や概念を示します。|Office アプリのリボンまたはコンテキストメニューでは、アドインコマンドの Office UI Fabric グリフを転用しないようにしてください。 Fabric のアイコンはスタイルが異なるので、適合しません。|
 |書式設定用のペイントブラシや検索用の虫眼鏡など、一般的な Office の視覚的メタファーを再利用します。|異なるコマンドで、同じ視覚的メタファーを再利用しないようにします。 異なる動作や概念に同じアイコンを使用すると、混乱が生じる可能性があります。 |
 |アイコンを小さくしたり大きくしたりするために、アイコンを再描画します。 カットアウト、角、および丸角のエッジの線をできる限り明瞭にするために、再描画を行う手間を省かないでください。 |縮小または拡大してアイコンのサイズを変更しないでください。 これにより、視覚的品質が低くなり、動作が不明瞭になることがあります。 再描画せずにサイズを小さくすると、より大きなサイズで作成された複雑なアイコンから明瞭さが失われることがあります。 |
-|Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |アドイン コマンドで何をするかを伝えるために、ロゴやブランドに頼らないようにします。 ブランド マークは、サイズの小さいアイコンにしたり、修飾子を適用したりすると、しばしば認識不可能になります。 ブランドマークは、多くの場合、Office アプリのリボンアイコンのスタイルと競合し、飽和環境ではユーザーの注意を引くことができます。 |
+|アクセスしやすくするために、白の塗りつぶしを使います。アイコンのオブジェクトは、Office UI のテーマのハイ コントラスト モードで読みやすさを保つために、たいていは背景を白にする必要があります。  |アドイン コマンドで何をするかを伝えるために、ロゴやブランドに頼らないようにします。 ブランド マークは、サイズの小さいアイコンにしたり、修飾子を適用したりすると、しばしば認識不可能になります。 ブランドマークは、多くの場合、Office アプリのリボンアイコンのスタイルと競合し、飽和環境ではユーザーの注意を引くことができます。 |
 |透明背景の PNG 形式を使用します。 ||
 |アイコンに、表記文字、段落のラグ、および疑問符などの、ローカライズ可能なコンテンツを含めないようにします。 ||
 
@@ -78,9 +78,9 @@ The following table lists the locations for certain icon sizes.
 
 ## <a name="icon-anatomy-and-layout"></a>アイコンの構造とレイアウト
 
-Office icons are typically comprised of a base element with action and conceptual modifiers overlayed. Action modifiers represent concepts such as add, open, new, or close. Conceptual modifiers represent status, alteration, or a description of the icon.
+Office のアイコンは、基本要素に、アクション修飾子と概念的修飾子を重ね合わせた構成になっています。 アクション修飾子は、追加、開く、新規、閉じるなどの概念を表します。概念的修飾子は、ステータス、変更、またはアイコンの説明を表します。
 
-To create commands that align with the Office UI, follow layout guidelines for the base element and modifiers. This ensures that your commands look professional and that your customers will trust your add-in. If you make exceptions to these guidelines, do so intentionally.
+Office UI と協調するコマンドを作成するために、基本要素と修飾子のレイアウト ガイドラインに従ってください。これにより、コマンドがプロフェッショナルな仕上がりになり、アドインに対する顧客の信頼度もあがります。場合によっては、意図的にこれらのガイドラインに対して例外を設けることもできます。
 
 以下の図は、Office のアイコンの基本要素と修飾子のレイアウトを表しています。
 
@@ -89,7 +89,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 - 基本要素をピクセル フレームの中央に配置し、周囲に余白をとります。
 - アクション修飾子は、左上に配置します。
 - 概念的修飾子は、右下に配置します。
-- Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
+- アイコン内の要素の数を制限します。32px では、修飾子の数を最大 2 つまでに制限します。16px では、修飾子の数を 1 つに制限します。
 
 ### <a name="base-element-padding"></a>基本要素のパディング
 
@@ -97,7 +97,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 
 ### <a name="modifiers"></a>修飾子
 
-All modifiers should have a 1px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
+すべての修飾子には、背景を含め、各要素の間に 1px の透明なカットアウトが必要です。要素が直接重ならないようにします。ルールとエッジの間に余白を作ります。修飾子はサイズが少しずつ異なっている場合がありますが、開始点としてこれらのサイズを使用します。
 
 |**アイコンのサイズ**|**基本要素の周囲のパディング**|**修飾子のサイズ**|
 |:---|:---|:---|
@@ -115,11 +115,11 @@ All modifiers should have a 1px transparent cutout between each element, includi
 > [!NOTE]
 > これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは Microsoft UI Fabric では表示されず、色のパレットは「[Microsoft UI Fabric | 色 | 共有](https://fluentfabric.azurewebsites.net/#/color/shared)」に記載されているパレットとは異なります。
 
-Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color:
+Office のアイコンには、限定されたカラー パレットがあります。Office UI とのシームレスな統合を保証するために、以下の表に記載されている色を使用してください。色の使用について、以下のガイドラインに従ってください。
 
-- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark. 
-- If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
-- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
+- 色は、装飾のためというよりも、意味を伝える目的のために使用します。アクション、ステータス、または明示的にマークを区別する要素を、色によってハイライトまたは強調します。 
+- 可能であれば、グレー以外の 1 色のみを追加で使用します。追加する色は最大 2 色までに制限します。
+- すべてのサイズのアイコンで、色を統一する必要があります。Office のアイコンのカラー パレットは、アイコンのサイズによってわずかな違いがあります。16px 以下のアイコンでは少し濃く、32px 以上のアイコンではより鮮やかな色になっています。これらの微妙な調整をしないと、サイズによって色の見え方が変わってしまいます。
 
 |**色の名前**|**RGB**|**16 進数**|**色**|**分類**|
 |:---|:---|:---|:---|:---|
@@ -146,7 +146,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 
 ## <a name="icons-in-high-contrast-modes"></a>ハイコントラスト モードのアイコン
 
-Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize legibility and enable recoloring. In high contrast modes, Office will recolor any pixel of your icon with a red, green, or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high-contrast themes recolor using the same 190 value threshold but with different rules. For example, the high-contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high-contrast settings:
+Office のアイコンは、ハイコントラスト モードで適切に表示されるように設計されています。前景の要素は背景と区別され、読みやすさを最大限に高め、色の変更を可能にします。ハイコントラスト モードでは、Office は赤、緑、または青の値が 190 未満のアイコンのすべてのピクセルを、完全な黒に変更します。それ以外のピクセルは、すべて白になります。つまり、各 RGB チャンネルは 0 から 189 の値が黒、190 から 255 の値が白と評価されます。その他のハイコントラスト テーマも同じ 190 値のしきい値を使用して色の変更が行われますが、ルールは異なります。たとえば、白のハイコントラスト テーマでは、190 よりも大きい不透明のピクセルすべての色を変更しますが、その他のピクセルはすべて透明になります。次のガイドラインを適用して、ハイコントラスト設定で読みやすさを最大限にします。
 
 - 190 値のしきい値に沿って、前景と背景の要素を区別するようにします。
 - Office アイコンの表示スタイルに従います。

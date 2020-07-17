@@ -21,7 +21,7 @@ ms.locfileid: "45093561"
 
 ## <a name="debugging-tools"></a>デバッグ ツール
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+開発時は、アドインの Web サービスからの HTTP 要求および応答を傍受して表示することができるツールを使用することを強くお勧めします。最も一般的なものは、次の 2 つです。
 
 - [Fiddler](https://www.telerik.com/fiddler): 無料 ([ドキュメント](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com): 30 日間無料  ([ドキュメント](https://www.charlesproxy.com/documentation/))。

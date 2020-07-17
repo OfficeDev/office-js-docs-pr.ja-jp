@@ -13,7 +13,7 @@ ms.locfileid: "45094294"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 ## <a name="requirement-set-availability"></a>要件セットの可用性
 

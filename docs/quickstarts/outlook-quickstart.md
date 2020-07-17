@@ -153,7 +153,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 |**プロジェクト**|**説明**|
 |:-----|:-----|
 |アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。 これらの設定は、Office ホストがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。 プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。 XML ファイルを変更することで、これらの設定をいつでも変更できます。|
-|Web アプリケーション プロジェクト|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
+|Web アプリケーション プロジェクト|Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。アドインを発行する準備が整ったら、この Web アプリケーション プロジェクトを Web サーバーに展開する必要があります。|
 
 ### <a name="update-the-code"></a>コードを更新する
 
@@ -240,9 +240,9 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-1. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
 1. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 それを `My Office Add-in` に置き換えます。
 

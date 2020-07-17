@@ -29,7 +29,7 @@ Office デスクトップと Microsoft 365 の Excel および PowerPoint のコ
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+パーソナル メニューは、アドインの右上付近にあるナビゲーション要素やコマンド要素の妨げになる可能性があります。Windows と Mac でのパーソナル メニューの現在のサイズを次に示します。
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 
@@ -52,7 +52,7 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 - 使用している Office アドインが[特定の Office ホスト プラットフォーム](../overview/office-add-in-availability.md)で動作するかどうかを確認します。
 - コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)を宣言することができます。  
-- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
+- コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
 ## <a name="see-also"></a>関連項目
 

@@ -24,11 +24,11 @@ Outlook アドインを開発するプロセスの一環として、テスト用
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>アドイン用のマニフェスト ファイルを作成する
 
-Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you are testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
+各アドインは XML のマニフェストで記述されます。マニフェストは、アドインに関する情報をサーバーに提供し、ユーザーに向けたアドインについての説明的な情報を提供し、アドイン UI の HTML ファイルの場所を識別するドキュメントです。このマニフェストはローカル フォルダーにもサーバーにも保存できますが、その場所は、テストに使用するメールボックスの Exchange サーバーからアクセス可能な場所である必要があります。ここでの説明では、マニフェストがローカル フォルダーに保存されていることを想定しています。マニフェスト ファイルの作成方法については、「 [Outlook アドインのマニフェスト](manifests.md)」を参照してください。
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Web サーバーへのアドインを展開する
 
-You can use HTML and JavaScript to create the add-in. The resulting source files are stored on a web server that can be accessed by the Exchange server that hosts the add-in. After initially deploying the source files for the add-in, you can update the add-in UI and behavior by replacing the HTML files or JavaScript files stored on the web server with a new version of the HTML file.
+HTML と JavaScript を使用してアドインを作成できます。作成されるソース ファイルは、アドインをホストする Exchange サーバーからアクセスできる Web サーバーに格納されます。アドインのソース ファイルを初期展開した後は、Web サーバー上に保存されている HTML ファイルまたは JavaScript ファイルを、新しいバージョンの HTML ファイルに置き換えることで、アドインの UI と動作を更新できます。
 
 ## <a name="install-the-add-in"></a>アドインをインストールする
 
@@ -36,9 +36,9 @@ You can use HTML and JavaScript to create the add-in. The resulting source files
 
 ### <a name="sideload-the-add-in"></a>アドインをサイドロードする
 
-You can install an add-in if your mailbox is on Exchange Online, Exchange 2013 or a later release. Sideloading add-ins requires at minimum the **My Custom Apps** role for your Exchange Server. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
+メールボックスが Exchange Online、Exchange 2013 またはそれ以降のリリースのものである場合は、アドインをインストールできます。アドインをサイドロードするには、少なくとも Exchange Server の**自分のカスタム アプリ**の役割が必要です。アドイン マニフェストの URL またはファイル名を指定してアドインをテストしたり、一般的なアドインをインストールしたりする場合は、Exchange 管理者に連絡して、必要なアクセス許可を得る必要があります。
 
-The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, `wendyri` is the user's email alias.
+Exchange 管理者は、次のような PowerShell コマンドレットを実行して、必要なアクセス許可を単一ユーザーに割り当てることができます。この例では、`wendyri` は、ユーザーの電子メール エイリアスです。
 
 ```powershell
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
@@ -74,9 +74,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 どのバージョンの Outlook クライアントをテストするかは、開発要件によって決まります。
 
-- If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
+- アドインを、個人用や組織のメンバー用に限って開発する場合は、自分の会社が使用している Outlook のバージョンをテストすることが重要です。一部のユーザーは Outlook on the web を使用する場合があるので、自分の会社で標準的に使用されているブラウザーのバージョンをテストすることも重要です。
 
-- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
+- [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[Commercial marketplace の認定ポリシー 1120.3](/legal/marketplace/certification-policies#11203-functionality) で指定されている必要なバージョンをテストする必要があります。これには次が含まれます。
   - Windows 用 Outlook の最新バージョンと最新の直前のバージョン。
   - Mac 用 Outlook の最新バージョン。
   - iOS および Android 用の Outlook の最新バージョン (アドインが[モバイル フォーム ファクターをサポートしている](add-mobile-support.md)場合)。

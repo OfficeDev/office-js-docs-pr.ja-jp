@@ -12,7 +12,7 @@ ms.locfileid: "45093757"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
-Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+作業ウィンドウは、通常 Word、PowerPoint、Excel、Outlook 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。機能を直接ドキュメントに埋め込む必要がない場合は、作業ウィンドウを使用します。
 
 *図 1. 一般的な作業ウィンドウのレイアウト*
 
@@ -30,7 +30,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## <a name="variants"></a>バリアント
 
-The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
+次の画像は、1366x768 の解像度で Office アプリのリボンを使用して、さまざまな作業ウィンドウのサイズを示しています。Excel では、数式バーに対応するために、さらに広い領域が必要になります。  
 
 *図 2. Office 2016 デスクトップ作業ウィンドウのサイズ*
 
@@ -54,7 +54,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+パーソナル メニューは、アドインの右上付近にあるナビゲーション要素やコマンド要素の妨げになる可能性があります。Windows と Mac でのパーソナル メニューの現在のサイズを次に示します。
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 

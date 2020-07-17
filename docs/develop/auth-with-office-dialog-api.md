@@ -46,7 +46,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 
 #### <a name="support-multiple-identity-providers"></a>複数の ID プロバイダーのサポート
 
-If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
+アドインによってユーザーが Microsoft アカウント、Google、Facebook などのプロバイダーを選択できる場合は、ユーザーがプロバイダーを選択するための UI を提供するローカルの最初のページ (前述のセクションを参照) が必要です。選択すると、サインイン URL とその URL へのリダイレクトの構築がトリガーされます。
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>外部リソースへのアドインの承認
 
@@ -55,7 +55,7 @@ If your add-in gives the user a choice of providers, such as Microsoft Account, 
 - アプリケーションが必要とするアクセス許可の一覧。
 - アプリケーションがサービスにアクセスするときに、リソース サービスがアクセス トークンを返す宛先の URL。  
 
-When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
+リソース サービスのユーザーのデータにアクセスするアプリケーションでユーザーが関数を呼び出すと、ユーザーはサービスにサインインするように求められ、アプリケーションが必要とするユーザーのリソースへのアクセス許可をアプリケーションに付与するように求められます。次に、サービスはサインイン ウィンドウを既に登録済みの URL にリダイレクトし、アクセス トークンを渡します。アプリケーションはアクセス トークンを使用して、ユーザーのリソースにアクセスします。
 
 このプロセスは Office ダイアログ API を使用して管理でき、これを行うにはユーザーのサインインについての説明でのフローと似たフローを使用します。 次の点のみが違います。
 

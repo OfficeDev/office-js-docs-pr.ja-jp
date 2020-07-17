@@ -21,9 +21,9 @@ Windows、Office 2013、または Office 2016 デスクトップ クライアン
 - Microsoft 365 開発者アカウントを持っていない場合、または SharePoint サイトにアクセスできない場合は、Microsoft 開発者アカウントを取得します。
 
   > [!NOTE]
-  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
+  > 90日更新プログラムの Microsoft 365 開発者向けサブスクリプションを無料で入手するには、 [microsoft 365 developer プログラム](https://developer.microsoft.com/office/dev-program)にご参加ください。Microsoft 365 開発者プログラムに参加し、サブスクリプションを構成する方法の詳細な手順については、 [microsoft 365 開発者向けプログラムのドキュメント](/office/developer-program/office-365-developer-program)を参照してください。
 
-- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- SharePoint Online でアプリカタログを設定します。アプリカタログは、Office アドインのドキュメントライブラリをホストする SharePoint Online の専用サイトコレクションです。独自の SharePoint サイトがある場合は、アプリカタログドキュメントライブラリをセットアップすることができます。詳細については、「 [SharePoint のアプリカタログに作業ウィンドウアドインとコンテンツアドインを発行する](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Excel または Word on the web からアドインをデバッグする
@@ -35,7 +35,7 @@ Word on the web を使用してアドインをデバッグするには:
     > [!NOTE]
     > [Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。
 
-2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+2. [アドイン マニフェスト ファイル](../develop/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

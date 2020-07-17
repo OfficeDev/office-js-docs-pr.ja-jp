@@ -12,9 +12,9 @@ ms.locfileid: "45093869"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 
-The [task pane](add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
+アドイン コマンド用の[作業ウィンドウ](add-in-commands-for-outlook.md#launching-a-task-pane) UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作 (複数フィールドの入力など) に対応した UI を提供できようになります。この作業ウィンドウは、メッセージの一覧を表示しているときに、閲覧ウィンドウに表示できます。これにより、メッセージのすばやい処理が可能になります。
 
-However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
+ただし、既定では、ユーザーが新しいメッセージを選択すると、閲覧ウィンドウ内で開いていたメッセージのアドイン作業ウィンドウは自動的に閉じられます。頻繁に使用されるアドインの場合、ユーザーはそのウィンドウを開いたままにして、メッセージごとにアドインを有効化する手間がなくなることを望むでしょう。ピン留め可能な作業ウィンドウでは、これに該当するオプションをユーザーに提供できます。
 
 > [!NOTE]
 > Pinnable 作業ウィンドウ機能は[要件セット 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されていますが、現時点では、次のものを使用して Microsoft 365 サブスクライバーのみが利用できます。
@@ -29,7 +29,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 ## <a name="support-task-pane-pinning"></a>作業ウィンドウのピン留めをサポートする
 
-The first step is to add pinning support, which is done in the add-in [manifest](manifests.md). This is done by adding the [SupportsPinning](../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the task pane button.
+ピン留めのサポートを追加する際の最初の手順は、アドインの[マニフェスト](manifests.md)で実行します。この手順は、作業ウィンドウのボタンについて記述する [SupportsPinning](../reference/manifest/action.md#supportspinning) 要素を `Action` 要素に追加することで実行します。
 
 `SupportsPinning` 要素は、VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 のどちらの場合も [VersionOverrides](../reference/manifest/versionoverrides.md) 要素を含める必要があります。
 
@@ -64,7 +64,7 @@ The first step is to add pinning support, which is done in the add-in [manifest]
 
 ### <a name="implement-the-event-handler"></a>イベント ハンドラを実装する
 
-The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
+イベント ハンドラは、オブジェクト リテラルの単一パラメーターを受け入れる必要があります。このオブジェクトの `type` プロパティは、`Office.EventType.ItemChanged` に設定されます。イベントが呼び出されたときには、既に、`Office.context.mailbox.item` オブジェクトは現在選択されているアイテムを反映するように更新されています。
 
 ```js
 function itemChanged(eventArgs) {
@@ -87,7 +87,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>イベント ハンドラーを登録する
 
-Use the [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
+[Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して、`Office.EventType.ItemChanged` イベント用のイベント ハンドラを登録します。これは、作業ウィンドウの `Office.initialize` 関数で実行する必要があります。
 
 ```js
 Office.initialize = function (reason) {

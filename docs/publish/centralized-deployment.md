@@ -32,11 +32,11 @@ Microsoft 365 管理センターを使用すると、管理者は組織内のユ
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Office アドインの展開に推奨されるアプローチ
 
-Consider deploying Office Add-ins in a phased approach to help ensure that the deployment goes smoothly. We recommend the following plan:
+展開がスムーズに進行するように、段階的なアプローチで Office アドインを展開することを検討してください。以下のプランをお勧めします。
 
-1. Deploy the add-in to a small set of business stakeholders and members of the IT department. If the deployment is successful, move on to step 2.
+1. ビジネス関係者の少人数のグループと IT 部門のメンバーにアドインを展開します。 展開が成功した場合は、第 2 段階に進みます。
 
-2. Deploy the add-in to a larger set of individuals within the business who will be using the add-in. If the deployment is successful, move on to step 3.
+2. アドインを使用することになるビジネス ユーザーの人数を増やしたグループにアドインを展開します。 展開が成功した場合は、第 3 段階に進みます。
 
 3. アドインを使用することになるすべてのユーザーのグループにアドインを展開します。
 
@@ -57,8 +57,8 @@ Consider deploying Office Add-ins in a phased approach to help ensure that the d
 7. **[一元展開]** ページで、次のいずれかのオプションを選択します。
 
     - **Office ストアからアドインを追加します。**
-    - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
-    - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
+    - **このデバイスにマニフェスト ファイル (.xml) があります。** このオプションの場合は、**[参照]** を選択して、使用するマニフェスト ファイル (.xml) の場所を指定します。
+    - **マニフェスト ファイルの URL がわかります。** このオプションの場合は、所定のフィールドにマニフェストの URL を入力します。
 
     ![Microsoft 365 管理センターの [新しいアドイン] ダイアログ](../images/new-add-in.png)
 
@@ -92,15 +92,15 @@ Consider deploying Office Add-ins in a phased approach to help ensure that the d
 
 ## <a name="considerations-when-granting-access-to-an-add-in"></a>アドインへのアクセスを許可するときの考慮事項
 
-Admins can assign an add-in to everyone in the organization or to specific users and/or groups within the organization. The following list describes the implications of each option:
+管理者は、組織内のすべてのユーザーにアドインを割り当てることも、組織内の特定のユーザーやグループにアドインを割り当てることもできます。 次のリストに、それぞれのオプションの影響を示します。
 
-- **Everyone**: As the name implies, this option assigns the add-in to every user in the tenant. Use this option sparingly and only for add-ins that are truly universal to your organization.
+- **すべてのユーザー**: 名前が示すように、このオプションでは、テナント内のすべてのユーザーにアドインが割り当てられます。対象のアドインが組織全体で汎用な場合にのみ、このオプションを慎重に使用します。
 
-- **Users**: If you assign an add-in to individual users, you'll need to update the Central Deployment settings for the add-in each time you want to assign it additional users. Likewise, you'll need to update the Central Deployment settings for the add-in each time you want to remove a user's access to the add-in.
+- **ユーザー**: 個別のユーザーにアドインを割り当てる場合は、追加のユーザーにアドインを割り当てるたびに、アドインの一元展開の設定を更新する必要があります。 同様に、ユーザーのアドインへのアクセス権を削除するたびに、アドインの一元展開の設定を更新する必要があります。
 
 - **グループ**: グループにアドインを割り当てると、グループに追加されたユーザーにアドインが自動的に割り当てられます。 同様に、ユーザーがグループから削除されると、そのユーザーはアドインへのアクセス権を自動的に失います。 どちらの場合も、Microsoft 365 admin から追加の操作を行う必要はありません。
 
-In general, for ease of maintenance, we recommend assigning add-ins by using groups whenever possible. However, in situations where you want to restrict add-in access to a very small number of users, it may be more practical to assign the add-in to specific users.
+一般に、保守が簡単になるように、可能な場合は常にグループを使用してアドインを割り当てるようにしてください。 ただし、アドインのアクセスをユーザーの非常に少数のメンバーに制限する場合は、具体的なユーザーにアドインを割り当てるほうが実用的です。
 
 ## <a name="add-in-states"></a>アドインの状態
 
@@ -109,12 +109,12 @@ In general, for ease of maintenance, we recommend assigning add-ins by using gro
 |状態|状態が発生する原因|影響|
 |-----|--------------------|------|
 |**アクティブ**|管理者がアドインをアップロードして、ユーザーやグループに割り当てた。|アドインが割り当てられたユーザーやグループは、関連する Office クライアントでアドインを表示できます。|
-|**オフ**|管理者がアドインをオフにした。|Users and/or groups assigned to the add-in no longer have access to it. If the add-in state is changed from **Turned off** to **Active**, the users and groups will regain access to it.|
+|**オフ**|管理者がアドインをオフにした。|アドインに割り当てられたユーザーやグループは、アドインにアクセスできなくなります。 アドインの状態が **[オフ]** から **[アクティブ]** に変更されると、ユーザーやグループはアドインに再度アクセスできるようになります。|
 |**Deleted**|管理者がアドインを削除した。|アドインが割り当てられたユーザーやグループは、そのアドインにアクセスできなくなります。|
 
 ## <a name="updating-office-add-ins-that-are-published-via-centralized-deployment"></a>一元展開によって発行された Office アドインの更新
 
-After an Office Add-in has been published via Centralized Deployment, any changes made to the add-in's web application will automatically be available to all users as soon as those changes are implemented in the web application. Changes made to an add-in's [XML manifest file](../develop/add-in-manifests.md), for example, to update the add-in's icon, text, or add-in commands, happen as follows:
+一元管理によってアドインが発行されると、アドインの Web アプリケーションに加えられた変更は、Web アプリケーションに変更が実装された直後に自動的にすべてのユーザーが使用できるようになります。 たとえば、アドインの [XML マニフェスト ファイル](../develop/add-in-manifests.md)に変更を加えると、アドインのアイコン、テキストまたはアドイン コマンドが次のように更新されます。
 
 - **基幹業務アドイン**: 管理者が、Microsoft 365 管理センターを使用した集中型展開の実装時にマニフェストファイルを明示的にアップロードした場合、管理者は必要な変更を含む新しいマニフェストファイルをアップロードする必要があります。 更新したマニフェスト ファイルがアップロードされると、関連する Office アプリケーションの次回起動時にアドインが更新されます。
 
@@ -129,7 +129,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
 一元展開によるアドインの発行が完了すると、エンド ユーザーはアドインがサポートする任意のプラットフォームでアドインの使用を開始できます。
 
-If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in.
+アドインでアドイン コマンドがサポートされている場合、アドインが展開されているすべてのユーザーに対して、コマンドが Office アプリケーション リボンに表示されます。 次の例では、**[引用文献]** アドインのリボンに **[引用文献の検索]** コマンドが表示されています。
 
 ![[引用] アドインの [引用文献の検索] コマンドが強調表示されている Office アプリリボンのセクションを示すスクリーンショット](../images/search-citation.png)
 
@@ -139,7 +139,7 @@ If the add-in supports add-in commands, the commands will appear on the Office a
 2. アドイン ウィンドウで **[管理者が管理]** タブを選択します。
 3. アドインを選択して、**[追加]** を選択します。
 
-    ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
+    ![Office アプリケーションの [Office アドイン] ページにある [管理者が管理] タブを示すスクリーンショット。 [引用文献] アドインがタブに表示されます。](../images/office-add-ins-admin-managed.png)
 
 ただし、Outlook 2016 以降では、ユーザーは次の操作を実行できます。
 

@@ -33,14 +33,14 @@ ms.locfileid: "45094450"
 
 ## <a name="xsitype"></a>xsi:type
 
-This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
+この属性は、ユーザーがボタンをクリックしたときに実行される操作の種類を指定します。次のいずれかを指定できます。
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
+**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 </Action>
 ```  
 
-The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+次の例では、異なる **TaskpaneId** を使用する 2 つの操作を示します。これらの例を全体的な流れで確認する場合は、「[Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)」を参照してください。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

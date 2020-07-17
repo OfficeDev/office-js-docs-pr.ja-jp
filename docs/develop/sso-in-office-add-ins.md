@@ -60,7 +60,7 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 
 ### <a name="create-the-service-application"></a>サービス アプリケーションを作成する
 
-Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks:
+Azure v2.0 エンドポイントの登録ポータルでアドインを登録します。このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
 
 * アドインのクライアント ID とシークレットを取得します。
 * アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" のアクセス許可は常に必要です。
@@ -79,7 +79,7 @@ Register the add-in at the registration portal for the Azure v2.0 endpoint. This
 * **Scopes** - 1 つ以上の **Scope** 要素の親。
 * **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` のアクセス許可は常に必要です。ご使用のアドインが Microsoft Graph にアクセスしない場合、これは必要な唯一のアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
-For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
+Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
 マークアップの例を次に示します。
 

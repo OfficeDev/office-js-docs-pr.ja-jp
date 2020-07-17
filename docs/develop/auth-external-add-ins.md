@@ -12,12 +12,12 @@ ms.locfileid: "45093743"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
 
-Popular online services, including Microsoft 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
+Microsoft 365、Google、Facebook、LinkedIn、SalesForce、GitHub などの一般的なオンラインサービスでは、開発者が他のアプリケーションのアカウントにアクセスできるようにすることができます。これにより、Office アドインにこれらのサービスを含めることができます。
 
 > [!NOTE]
 > この記事の残りの部分では、Microsoft 以外のサービスへのアクセスについて説明します。 Microsoft Graph (Microsoft 365 を含む) へのアクセスに関する詳細については、「 [sso を使用した Microsoft graph へのアクセス](overview-authn-authz.md#access-to-microsoft-graph-with-sso)」および「sso を使用し[ない microsoft Graph](overview-authn-authz.md#access-to-microsoft-graph-without-sso)へのアクセス」を参照してください。
 
-The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
+Web アプリケーションからオンライン サービスへのアクセスを可能にするための業界標準のフレームワークは **OAuth 2.0** です。ほとんどの場合、このフレームワークをアドインで使用するために、その動作のしくみを詳しく知る必要はありません。開発者は、この詳細を簡略化している多数のライブラリを使用できます。
 
 OAuth の基本的な考え方は、ユーザーやグループと同様に、アプリケーションは専用の ID とアクセス許可のセットによって、それ自体が[セキュリティ プリンシパル](/windows/security/identity-protection/access-control/security-principals)になり得るということです。 通常のシナリオでは、ユーザーがオンライン サービスを必要とする Office アドインのアクションを実行すると、アドインは、ユーザーのアカウントへ特定のセットのアクセス許可を付与するよう求める要求をサービスに送信します。 サービスは、該当するアクセス許可をアドインに付与するように求めるプロンプトをユーザーに表示します。 アクセス許可が付与されると、サービスは小さなエンコードされた*アクセス トークン*をアドインに送信します。 アドインは、サービスの API へのすべての要求にトークンを含めることで、サービスを使用できるようになります。 ただし、そのアドインが実行できるアクションは、ユーザーが付与したアクセス許可の範囲内に限定されます。 また、トークンは特定の時間が経過すると期限切れになります。
 
@@ -31,7 +31,7 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 暗黙的フローと認証コード フローのメリットとデメリットについて理解しておく必要があります。 これら 2 つのフローの詳細については、「[認証コード フロー](https://tools.ietf.org/html/rfc6749#section-1.3.1)」と「[暗黙的フロー](https://tools.ietf.org/html/rfc6749#section-1.3.2)」を参照してください。
 
 > [!NOTE]
-> You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
+> 仲介者サービスを使用するというオプションもあります。このサービスは、自動的に承認を行い、アドインにアクセス トークンを渡します。 このシナリオの詳細については、後述の「**仲介者サービス**」セクションを参照してください。
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Office アドインに暗黙的フローを使用する
 
@@ -41,24 +41,24 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Office アドインに認証コード フローを使用する
 
-Many libraries are available for implementing the Authorization Code flow in various languages and frameworks. For more information about some of these libraries, see the **Libraries** section later in this article.
+各種の言語とフレームワークで認証コード フローを実装するために利用できるライブラリは多数あります。これらのライブラリの詳細については、後述の「**ライブラリ**」セクションを参照してください。
 
 ## <a name="libraries"></a>ライブラリ
 
-Libraries are available for many languages and platforms, for both the Implicit flow and the Authorization Code flow. Some libraries are general purpose, while others are for specific online services.
+各種の言語とプラットフォームで暗黙的フローと認証コード フローを実装するために利用できるライブラリが多数あります。 ライブラリには汎用のものや、特定のオンライン サービス向けのものがあります。
 
-**Google**: Search [GitHub.com/Google](https://github.com/google) for "auth" or the name of your language. Most of the relevant repos are named `google-auth-library-[name of language]`.
+**Google**:[GitHub.com/Google](https://github.com/google) で "auth" または目的の言語の名前を検索します。最も関連のあるリポジトリには、`google-auth-library-[name of language]` という名前が付いています。
 
 **Facebook**:[Facebook for Developers](https://developers.facebook.com) で "library" または "sdk" を検索します。
 
-**General OAuth 2.0**: A page of links to libraries for over a dozen languages is maintained by the IETF OAuth Working Group at: [OAuth Code](https://oauth.net/code/). Note that some of these libraries are for implementing an OAuth compliant service. The libraries of interest to you as a an add-in developer are called *client* libraries on this page because your web server is a client of the OAuth compliant service.
+**汎用の OAuth 2.0**:数十の言語に対応したライブラリへのリンクが、「[OAuth Code](https://oauth.net/code/)」のページに掲載されています。このページは、IETF OAuth 作業部会によって維持されています。これらのライブラリの一部は、OAuth 準拠のサービスを実装するためのものです。アドイン開発者にとって重要なライブラリは、このページに記載された*クライアント*と呼ばれるライブラリです。これは、目的の Web サーバーが OAuth 準拠のサービスのクライアントになるためです。
 
 ## <a name="middleman-services"></a>仲介者サービス
 
-Your add-in can use a middleman service such as [OAuth.io](https://oauth.io) or [Auth0](https://auth0.com) to perform authorization. A middleman service may either provide access tokens for popular online services or simplify the process of enabling social login for your add-in, or both. With very little code, your add-in can use either client-side script or server-side code to connect to the middleman service and it will send your add-in any required tokens for the online service. All of the authorization implementation code is in the middleman service. 
+アドインでは、[OAuth.io](https://oauth.io) や [Auth0](https://auth0.com) などの仲介者サービスを使用して、承認を実行できます。このサービスは、大手オンライン サービスに対応したアクセス トークンを提供するものか、アドインでソーシャル ログインできるようにするプロセスを簡単にするもの (またはその両方) です。短いコードを使用することで、仲介者サービスに接続するクライアント側スクリプトやサーバー側コードをアドインで使用できるようになり、仲介者サービスがオンライン サービスに必要なトークンをアドインに送信します。すべての承認の実装コードは、仲介者サービスに含まれています。 
 
 アドインの認証/承認用 UI では、ダイアログ API を使用してログイン ページを開くようにしてください。 詳細については、「[認証フローでダイアログ API を使用する](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow)」を参照してください。 この方法で Office ダイアログを開くと、そのダイアログは、親ページのインスタンス (アドインの作業ウィンドウや FunctionFile など) とはまったく別の新しいブラウザーと JavaScript エンジンのインスタンスを持ちます。 文字列に変換できるトークンなどの情報は、`messageParent` という API を使用して親に戻されます。 そうすることで、親ページはトークンを使用してリソースへの権限のある呼び出しを実行できます。 こうしたアーキテクチャのため、仲介者サービスによって提供される API の使用方法には注意が必要になります。 多くの場合、このサービスはコードでトークンを取得し、そのトークンを使用して後続のリソースへの呼び出しを実行する、ある種のコンテキスト オブジェクトを作成する API セットを提供します。 通常、このサービスには、そのコンテキスト オブジェクトの最初の呼び出し*および*作成を実行する単一の API メソッドがあります。 このようなオブジェクトは、完全に文字列化することができないため、Office ダイアログから親ページに渡せません。 一般に、仲介者サービスは抽象度の低い第 2 の API セット (REST API など) を提供しています。 この第 2 のセットには、トークンを使用してリソースへの権限のあるアクセスを実行するために、サービスからトークンを取得する API と、そのトークンをサービスに渡す別の API があります。 この抽象度の低い API は、Office ダイアログでトークンを取得し、そのトークンを親ページに `messageParent` を使用して渡すために操作する必要があります。 
 
 ## <a name="what-is-cors"></a>CORS とは
 
-CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
+CORS は [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS) の略です。アドイン内で CORS を使用する方法の詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](addressing-same-origin-policy-limitations.md)」を参照してください。

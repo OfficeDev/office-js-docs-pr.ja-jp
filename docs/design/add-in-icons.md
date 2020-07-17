@@ -16,7 +16,7 @@ ms.locfileid: "45093841"
 
 Office アプリのリボンインターフェイスには、標準の視覚スタイルがあります。 これにより、Office アプリとの間で一貫性と親和性を保つことができます。 このガイドラインは、ソリューションの PNG アセットのセットを Office の自然な一部のように設計するのに役立ちます。
 
-Many HTML containers contain controls with iconography. Use Office UI Fabric’s custom font to render Office styled icons in your add-in. Fabric’s icon font contains many glyphs for common Office metaphors that you can scale, color, and style to suit your needs. If you have an existing visual language with your own set of icons, feel free to use it in your HTML canvases. Building continuity with your own brand with a standard set of icons is an important part of any design language. Be careful to avoid creating confusion for customers by conflicting with Office metaphors.
+多くの HTML コンテナーには、コントロールとアイコン画像が含まれています。Office UI Fabric のカスタム フォントを使用して、Office スタイルのアイコンをアドインで表示します。Fabric のアイコンのフォントには、ニーズに合わせて拡大縮小、色付け、スタイリングできる一般的な Office メタファーのグリフが多数含まれています。独自のアイコンのセットで既存のビジュアル言語を使用している場合、HTML キャンバスでも自由に使用できます。アイコンの標準セットを使用して独自のブランドの継続性を築くことは、すべてのデザイン言語の重要な一部をなしています。Office メタファーとの競合により、お客様が混乱することのないように注意してください。
 
 ## <a name="design-icons-for-add-in-commands"></a>アドイン コマンドのアイコンをデザインする
 

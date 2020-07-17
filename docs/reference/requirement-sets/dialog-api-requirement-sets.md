@@ -13,9 +13,9 @@ ms.locfileid: "45094429"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-Office Add-ins run across multiple versions of Office. The following table lists the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
+Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
 |  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降 (Windows)\*<br>(1 回限りの購入)   | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  iPad 上の Office<br>(Microsoft 365 サブスクリプションに接続)  |  Mac 上の Office<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|

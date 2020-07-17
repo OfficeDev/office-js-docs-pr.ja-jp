@@ -12,7 +12,7 @@ ms.locfileid: "45093477"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
-With [coauthoring](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), multiple people can work together and edit the same Excel workbook simultaneously. All coauthors of a workbook can see another coauthor's changes as soon as that coauthor saves the workbook. To coauthor an Excel workbook, the workbook must be stored in OneDrive, OneDrive for Business, or SharePoint Online.
+[共同編集機能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
 
 > [!IMPORTANT]
 > Microsoft 365 の Excel では、左上隅に [自動保存] があることがわかります。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
@@ -26,24 +26,24 @@ range.values = [['Contoso']];
 ```
 すべての共同編集者間で 'Contoso' が同期されると、同じブックで作業するユーザーまたは実行中のアドインは、新しい範囲の値を認識するようになります。
 
-Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all coauthors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable.
+共同編集機能では、共有ブック内の内容のみが同期されます。 ブックから Excel アドイン内の JavaScript 変数にコピーした値は同期されません。 たとえば、アドインが JavaScript 変数にセルの値 (たとえば 'Contoso') を保存しているときに、そのセルの値を共同編集者が 'Example' に変更すると、同期後に、そのセルの値はすべての共同編集者に対して 'Example' と表示されます。 ただし、JavaScript 変数の値は 'Contoso' に設定されたままです。 さらに、複数の共同編集者が同じアドインを使用しているときに、それぞれの共同編集者が独自に変数をコピーしている場合、その変数のコピーは同期されません。 ブックの内容を使用する変数を使用するときには、その変数を使用する前に、ブック内で更新された値について必ずチェックしてください。
 
 ## <a name="use-events-to-manage-the-in-memory-state-of-your-add-in"></a>イベントを使用したアドインのメモリ内の状態の管理
 
-Excel add-ins can read workbook content (from hidden worksheets and a setting object), and then store it in data structures such as variables. After the original values are copied into any of these data structures, coauthors can update the original workbook content. This means that the copied values in the data structures are now out of sync with the workbook content. When you build your add-ins, be sure to account for this separation of workbook content and values stored in data structures.
+Excel アドインはブックの内容を読み込んで (非表示のワークシートおよび設定オブジェクトからの読み込み)、その内容を変数などのデータ構造に保存できます。 そのようなデータ構造に元の値がコピーされた後でも、共同編集者は元のブックの内容を更新できます。 つまり、データ構造にコピーした値は、ブックの内容と同期されなくなっているということです。 独自のアドインを構築するときには、ブックの内容とデータ構造に保存された値に関して、このような分離があることを必ず考慮に入れてください。
 
-For example, you might build a content add-in that displays custom visualizations. The state of your custom visualizations might be saved in a hidden worksheet. When coauthors use the same workbook, the following scenario can occur:
+たとえば、カスタム視覚エフェクトを表示するコンテンツ アドインを作成するとします。 カスタム視覚エフェクトの状態は非表示のワークシートに保存することにします。 共同編集者が同じブックを使用するときに、次のシナリオが考えられます。
 
-- User A opens the document and the custom visualizations are shown in the workbook. The custom visualizations read data from a hidden worksheet (for example, the color of the visualizations is set to blue).
-- User B opens the same document, and starts modifying the custom visualizations. User B sets the color of the custom visualizations to orange. Orange is saved to the hidden worksheet.
+- ユーザー A がドキュメント開くと、カスタム視覚エフェクトがブックに表示されます。 カスタム視覚エフェクトは、非表示のワークシートからデータを読み込みます (たとえば、視覚エフェクトの色が青色に設定されているとします)。
+- ユーザー B が同じドキュメントを開いて、カスタム視覚エフェクトの変更を始めます。 ユーザー B は、カスタム視覚エフェクトの色を橙色に設定します。 橙色の設定が非表示のワークシートに保存されます。
 - ユーザー A の非表示のワークシートが新しい値の橙色で更新されます。
 - ユーザー A のカスタム視覚エフェクトは青色のままです。
 
-If you want User A's custom visualizations to respond to changes made by coauthors on the hidden worksheet, use the [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event. This ensures that changes to workbook content made by coauthors is reflected in the state of your add-in.
+ユーザー A のカスタム視覚エフェクトが、共同編集者によって非表示のワークシートに加えられた変更に呼応するようにするには、[BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントを使用します。 これにより、共同編集者がブックの内容に加えた変更が、アドインの状態に反映されるようになります。
 
 ## <a name="caveats-to-using-events-with-coauthoring"></a>共同編集機能にイベントを使用する際の注意事項
 
-As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
+前述したように、シナリオによっては、すべての共同編集者に向けてイベントをトリガーすることで、ユーザー エクスペリエンスが向上します。 ただし、この動作がユーザー エクスペリエンスの低下を招くシナリオも存在することに注意してください。 
 
 たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 イベントのイベントハンドラーに `BindingDataChanged` ui が表示されている場合、ユーザーには、ブック内で作業していた変更に関連しない ui が表示されるので、ユーザーの操作が低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
 

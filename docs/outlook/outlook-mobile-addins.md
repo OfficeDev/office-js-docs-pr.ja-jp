@@ -12,7 +12,7 @@ ms.locfileid: "45093897"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
-Add-ins now work on Outlook Mobile, using the same APIs available for other Outlook endpoints. If you've built an add-in for Outlook already, it's easy to get it working on Outlook Mobile.
+現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
 Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカウントでサポートされており、Outlook.com accounts および support は近日中に Gmail アカウントに提供されます。
 
@@ -31,13 +31,13 @@ Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカ�
 
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 
-- The small size and quick interactions make designing for mobile a challenge. To ensure quality experiences for our customers, we are setting strict validation criteria that must be met by an add-in declaring mobile support, in order to be approved in AppSource.
+- モバイル用の設計において、小さいサイズと迅速な操作性が課題となります。お客様に高品質のエクスペリエンスを提供するため、モバイル サポートを宣言するアドインに対して厳格な検証条件を定めています。AppSource で承認を得るには、この条件を満たす必要があります。
     - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠**していなければなりません**。
     - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である**必要**があります。
 
 - 一般的に、メッセージの読み取りモードのみがサポートされています。 これ `MobileMessageReadCommandSurface` は、マニフェストのモバイルセクションで宣言する必要がある唯一の[extensionpoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)です。 ただし、予定の開催者モードは、オンライン会議プロバイダー統合アドインでサポートされており、代わりに[MobileOnlineMeetingCommandSurface 拡張点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)を宣言します。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](online-meeting.md)する」の記事を参照してください。
 
-- The [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API is not supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
+- [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 
 - マニフェストで [MobileFormFactor](../reference/manifest/mobileformfactor.md) を使用してストアにアドインを送信する場合、iOS のアドインに関する当社の開発者補遺に同意し、確認のため Apple の開発者 ID を送信しなければなりません。
 
@@ -45,13 +45,13 @@ Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカ�
 
 ## <a name="what-makes-a-good-scenario-for-mobile-add-ins"></a>モバイル アドインに対して優れたシナリオにするには
 
-Remember that the average Outlook session length on a phone is much shorter than on a PC. That means your add-in must be fast, and the scenario must allow the user to get in, get out, and get on with their email workflow.
+電話での Outlook セッションの平均の長さは PC よりも短いことを忘れないでください。つまり、アドインを高速にする必要があります。さらに、シナリオでは、ユーザーの電子メール フローに出入りし、中断せずに続行できるようにする必要もあります。
 
 Outlook Mobile に対して適切なシナリオの例を次に示します。
 
-- The add-in brings valuable information into Outlook, helping users triage their email and respond appropriately. Example: a CRM add-in that lets the user see customer information and share appropriate information.
+- アドインを使用すると、貴重な情報を Outlook に伝えることができるため、ユーザーは電子メールをトリアージし、適切に対応できます。例: ユーザーが顧客情報を確認し、適切な情報を共有するための CRM アドイン。
 
-- The add-in adds value to the user's email content by saving the information to a tracking, collaboration, or similar system. Example: an add-in that lets users turn emails into task items for project tracking, or help tickets for a support team.
+- アドインが、追跡システム、共同作業システム、または類似するシステムに情報を保存して、ユーザーの電子メール コンテンツに価値を追加します。例: ユーザーが電子メールを、プロジェクト進捗管理用にタスク項目に変換したり、サポート チーム用にヘルプ チケットに変換したりするアドイン。
 
 **iOS で電子メール メッセージから Trello カードを作成するユーザーの操作の例**
 
@@ -65,9 +65,9 @@ Outlook Mobile に対して適切なシナリオの例を次に示します。
 
 ## <a name="testing-your-add-ins-on-mobile"></a>モバイル上でのアドインのテスト
 
-To test an add-in on Outlook Mobile, you can sideload an add-in to an O365 or Outlook.com account. In Outlook on the web, go to the settings gear, and choose **Manage Integrations** or **Manage Add-ins**. Near the top, click where it says **Click here to add a custom add-in** and upload your manifest. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load.
+Outlook Mobile でアドインをテストするために、O365 や Outlook.com アカウントにアドインをサイドローディングできます。Outlook on the web で、設定ギアに移動し、[**統合の管理**] または [**アドインの管理**] を選択します。上部付近で、[**カスタム アドインを追加するには、ここをクリックします**] をクリックし、マニフェストをアップロードします。マニフェストの形式に `MobileFormFactor` が含まれていることを確認します。含まれていないと、読み込むことができません。
 
-After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
+アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
 モバイルでのトラブルシューティングは、使用しているツールを持っていない可能性があるため、困難な場合があります。 ただし、iOS でトラブルシューティングを行う方法の1つとして、Fiddler を使用する方法があります ( [ios デバイスでの使用につい](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)ては、このチュートリアルをご覧ください)。
 
