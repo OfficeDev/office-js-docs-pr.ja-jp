@@ -11,49 +11,49 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/10/2020
 ms.locfileid: "45093505"
 ---
-# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="8097d-103">チュートリアル: メッセージ作成 Outlook アドインのビルド</span><span class="sxs-lookup"><span data-stu-id="8097d-103">Tutorial: Build a message compose Outlook add-in</span></span>
+# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="9fdbf-103">チュートリアル: メッセージ作成 Outlook アドインのビルド</span><span class="sxs-lookup"><span data-stu-id="9fdbf-103">Tutorial: Build a message compose Outlook add-in</span></span>
 
-<span data-ttu-id="8097d-104">このチュートリアルでは、コンテンツをメッセージの本文に挿入するためにメッセージ作成モードで使用可能な Outlook アドインをビルドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8097d-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
+<span data-ttu-id="9fdbf-104">このチュートリアルでは、コンテンツをメッセージの本文に挿入するためにメッセージ作成モードで使用可能な Outlook アドインをビルドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
 
-<span data-ttu-id="8097d-105">このチュートリアルの内容:</span><span class="sxs-lookup"><span data-stu-id="8097d-105">In this tutorial, you will:</span></span>
+<span data-ttu-id="9fdbf-105">このチュートリアルの内容:</span><span class="sxs-lookup"><span data-stu-id="9fdbf-105">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="8097d-106">Outlook アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="8097d-106">Create an Outlook add-in project</span></span>
-> * <span data-ttu-id="8097d-107">メッセージ作成ウィンドウで表示するボタンを定義する</span><span class="sxs-lookup"><span data-stu-id="8097d-107">Define buttons that will render in the compose message window</span></span>
-> * <span data-ttu-id="8097d-108">ユーザーから情報を収集し、外部サービスからデータを取得する最初の実行エクスペリエンスを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
-> * <span data-ttu-id="8097d-109">関数を呼び出す、UI のないボタンを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-109">Implement a UI-less button that invokes a function</span></span>
-> * <span data-ttu-id="8097d-110">メッセージの本文にコンテンツを挿入する作業ウィンドウを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-110">Implement a task pane that inserts content into the body of a message</span></span>
+> * <span data-ttu-id="9fdbf-106">Outlook アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-106">Create an Outlook add-in project</span></span>
+> * <span data-ttu-id="9fdbf-107">メッセージ作成ウィンドウで表示するボタンを定義する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-107">Define buttons that will render in the compose message window</span></span>
+> * <span data-ttu-id="9fdbf-108">ユーザーから情報を収集し、外部サービスからデータを取得する最初の実行エクスペリエンスを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
+> * <span data-ttu-id="9fdbf-109">関数を呼び出す、UI のないボタンを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-109">Implement a UI-less button that invokes a function</span></span>
+> * <span data-ttu-id="9fdbf-110">メッセージの本文にコンテンツを挿入する作業ウィンドウを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-110">Implement a task pane that inserts content into the body of a message</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="8097d-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="8097d-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="9fdbf-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="9fdbf-111">Prerequisites</span></span>
 
-- <span data-ttu-id="8097d-112">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="8097d-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+- <span data-ttu-id="9fdbf-112">[Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)</span><span class="sxs-lookup"><span data-stu-id="9fdbf-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
 
-- <span data-ttu-id="8097d-113">最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+- <span data-ttu-id="9fdbf-113">最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
 
     ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="8097d-114">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8097d-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+    > <span data-ttu-id="9fdbf-114">Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
 
-- <span data-ttu-id="8097d-115">Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web</span><span class="sxs-lookup"><span data-stu-id="8097d-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
+- <span data-ttu-id="9fdbf-115">Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web</span><span class="sxs-lookup"><span data-stu-id="9fdbf-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
 
-- <span data-ttu-id="8097d-116">[GitHub](https://www.github.com) アカウント</span><span class="sxs-lookup"><span data-stu-id="8097d-116">A [GitHub](https://www.github.com) account</span></span>
+- <span data-ttu-id="9fdbf-116">[GitHub](https://www.github.com) アカウント</span><span class="sxs-lookup"><span data-stu-id="9fdbf-116">A [GitHub](https://www.github.com) account</span></span>
 
-## <a name="setup"></a><span data-ttu-id="8097d-117">セットアップ</span><span class="sxs-lookup"><span data-stu-id="8097d-117">Setup</span></span>
+## <a name="setup"></a><span data-ttu-id="9fdbf-117">セットアップ</span><span class="sxs-lookup"><span data-stu-id="9fdbf-117">Setup</span></span>
 
-<span data-ttu-id="8097d-118">このチュートリアルで作成するアドインは、ユーザーの GitHub アカウントから [Gist](https://gist.github.com) を読み込み、選択した Gist をメッセージの本文に追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-118">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message.</span></span> <span data-ttu-id="8097d-119">ビルドするアドインのテストに使用可能な 2 つの新しい Gist を作成するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-119">Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
+<span data-ttu-id="9fdbf-118">このチュートリアルで作成するアドインは、ユーザーの GitHub アカウントから [Gist](https://gist.github.com) を読み込み、選択した Gist をメッセージの本文に追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-118">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message.</span></span> <span data-ttu-id="9fdbf-119">ビルドするアドインのテストに使用可能な 2 つの新しい Gist を作成するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-119">Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
 
-1. <span data-ttu-id="8097d-120">[GitHub にログイン](https://github.com/login)します。</span><span class="sxs-lookup"><span data-stu-id="8097d-120">[Login to GitHub](https://github.com/login).</span></span>
+1. <span data-ttu-id="9fdbf-120">[GitHub にログイン](https://github.com/login)します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-120">[Login to GitHub](https://github.com/login).</span></span>
 
-1. <span data-ttu-id="8097d-121">[新しい Gist を作成](https://gist.github.com)します。</span><span class="sxs-lookup"><span data-stu-id="8097d-121">[Create a new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="9fdbf-121">[新しい Gist を作成](https://gist.github.com)します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-121">[Create a new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="8097d-122">**[Gist description...]** フィールドに、「**Hello World Markdown**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="8097d-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
+    - <span data-ttu-id="9fdbf-122">**[Gist description...]** フィールドに、「**Hello World Markdown**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
 
-    - <span data-ttu-id="8097d-123">**[Filename including extension...]** フィールドに、「**test.md**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="8097d-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
+    - <span data-ttu-id="9fdbf-123">**[Filename including extension...]** フィールドに、「**test.md**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
 
-    - <span data-ttu-id="8097d-124">複数行テキストボックスに、次のマークダウンを追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-124">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="9fdbf-124">複数行テキストボックスに、次のマークダウンを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-124">Add the following markdown to the multiline textbox:</span></span>
 
         ```markdown
         # Hello World
@@ -69,15 +69,15 @@ ms.locfileid: "45093505"
           ```
         ```
 
-    - <span data-ttu-id="8097d-125">**[Create Public Gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-125">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="9fdbf-125">**[Create Public Gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-125">Select the **Create public gist** button.</span></span>
 
-1. <span data-ttu-id="8097d-126">[もう 1 つの新しい Gist を作成](https://gist.github.com)します。</span><span class="sxs-lookup"><span data-stu-id="8097d-126">[Create another new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="9fdbf-126">[もう 1 つの新しい Gist を作成](https://gist.github.com)します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-126">[Create another new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="8097d-127">**[Gist description...]** フィールドに、「**Hello World Html**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="8097d-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
+    - <span data-ttu-id="9fdbf-127">**[Gist description...]** フィールドに、「**Hello World Html**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
 
-    - <span data-ttu-id="8097d-128">**[Filename including extension...]** フィールドに、「**test.html**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="8097d-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
+    - <span data-ttu-id="9fdbf-128">**[Filename including extension...]** フィールドに、「**test.html**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
 
-    - <span data-ttu-id="8097d-129">複数行テキストボックスに、次のマークダウンを追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-129">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="9fdbf-129">複数行テキストボックスに、次のマークダウンを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-129">Add the following markdown to the multiline textbox:</span></span>
 
         ```HTML
         <html>
@@ -95,107 +95,107 @@ ms.locfileid: "45093505"
         </html>
         ```
 
-    - <span data-ttu-id="8097d-130">**[Create Public Gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-130">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="9fdbf-130">**[Create Public Gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-130">Select the **Create public gist** button.</span></span>
 
-## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="8097d-131">Outlook アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="8097d-131">Create an Outlook add-in project</span></span>
+## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="9fdbf-131">Outlook アドイン プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-131">Create an Outlook add-in project</span></span>
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - <span data-ttu-id="8097d-132">**Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="8097d-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="9fdbf-132">**Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="9fdbf-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
 
-    - <span data-ttu-id="8097d-133">**Choose a script type: (スクリプトの種類を選択)** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="8097d-133">**Choose a script type** - `Javascript`</span></span>
+    - <span data-ttu-id="9fdbf-133">**Choose a script type: (スクリプトの種類を選択)** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="9fdbf-133">**Choose a script type** - `Javascript`</span></span>
 
-    - <span data-ttu-id="8097d-134">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="8097d-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
+    - <span data-ttu-id="9fdbf-134">**What would you want to name your add-in?: (アドインの名前を何にしますか)**</span><span class="sxs-lookup"><span data-stu-id="9fdbf-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
 
-    - <span data-ttu-id="8097d-135">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="8097d-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
+    - <span data-ttu-id="9fdbf-135">**Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)**</span><span class="sxs-lookup"><span data-stu-id="9fdbf-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
 
     ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yeoman-prompts-2.png)
     
-    <span data-ttu-id="8097d-137">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="8097d-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="9fdbf-137">ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-1. <span data-ttu-id="8097d-138">プロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="8097d-138">Navigate to the root directory of the project.</span></span>
+1. <span data-ttu-id="9fdbf-138">プロジェクトのルート ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-138">Navigate to the root directory of the project.</span></span>
 
     ```command&nbsp;line
     cd "Git the gist"
     ```
 
-1. <span data-ttu-id="8097d-139">このアドインは以下のライブラリを使用します。</span><span class="sxs-lookup"><span data-stu-id="8097d-139">This add-in will use the following libraries:</span></span>
+1. <span data-ttu-id="9fdbf-139">このアドインは以下のライブラリを使用します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-139">This add-in will use the following libraries:</span></span>
 
-    - <span data-ttu-id="8097d-140">MarkdownをHTMLに変換する[Showdown](https://github.com/showdownjs/showdown)ライブラリ</span><span class="sxs-lookup"><span data-stu-id="8097d-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
-    - <span data-ttu-id="8097d-141">相対URLを構築するための[URI.js](https://github.com/medialize/URI.js)ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="8097d-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
-    - <span data-ttu-id="8097d-142">DOMとの相互操作を単純化するための[jquery](https://jquery.com/)ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="8097d-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
+    - <span data-ttu-id="9fdbf-140">MarkdownをHTMLに変換する[Showdown](https://github.com/showdownjs/showdown)ライブラリ</span><span class="sxs-lookup"><span data-stu-id="9fdbf-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
+    - <span data-ttu-id="9fdbf-141">相対URLを構築するための[URI.js](https://github.com/medialize/URI.js)ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
+    - <span data-ttu-id="9fdbf-142">DOMとの相互操作を単純化するための[jquery](https://jquery.com/)ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
 
-     <span data-ttu-id="8097d-143">これらのツールをプロジェクトにインストールするには、プロジェクトのルート ディレクトリで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-143">To install these tools for your project, run the following command in the root directory of the project:</span></span>
+     <span data-ttu-id="9fdbf-143">これらのツールをプロジェクトにインストールするには、プロジェクトのルート ディレクトリで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-143">To install these tools for your project, run the following command in the root directory of the project:</span></span>
 
     ```command&nbsp;line
     npm install showdown urijs jquery --save
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="8097d-144">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="8097d-144">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="9fdbf-144">マニフェストを更新する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-144">Update the manifest</span></span>
 
-<span data-ttu-id="8097d-145">アドインのマニフェストは、Outlook での表示方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="8097d-145">The manifest for an add-in controls how it appears in Outlook.</span></span> <span data-ttu-id="8097d-146">またマニフェストは、アドインをアドイン一覧に表示する方法とリボンに表示するボタンを定義し、アドインによって使用される HTML ファイルと JavaScript ファイルの URL を設定します。</span><span class="sxs-lookup"><span data-stu-id="8097d-146">It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
+<span data-ttu-id="9fdbf-145">アドインのマニフェストは、Outlook での表示方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-145">The manifest for an add-in controls how it appears in Outlook.</span></span> <span data-ttu-id="9fdbf-146">またマニフェストは、アドインをアドイン一覧に表示する方法とリボンに表示するボタンを定義し、アドインによって使用される HTML ファイルと JavaScript ファイルの URL を設定します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-146">It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
 
-#### <a name="specify-basic-information"></a><span data-ttu-id="8097d-147">基本的な情報を指定する</span><span class="sxs-lookup"><span data-stu-id="8097d-147">Specify basic information</span></span>
+#### <a name="specify-basic-information"></a><span data-ttu-id="9fdbf-147">基本的な情報を指定する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-147">Specify basic information</span></span>
 
-<span data-ttu-id="8097d-148">**manifest.xml** ファイルを更新してアドインに関する基本的な情報をいくつか指定します。</span><span class="sxs-lookup"><span data-stu-id="8097d-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:</span></span>
+<span data-ttu-id="9fdbf-148">**manifest.xml** ファイルを更新してアドインに関する基本的な情報をいくつか指定します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:</span></span>
 
-1. <span data-ttu-id="8097d-149">`ProviderName` 要素を探し、既定値を会社名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
+1. <span data-ttu-id="9fdbf-149">`ProviderName` 要素を探し、既定値を会社名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
-1. <span data-ttu-id="8097d-150">`Description` 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="8097d-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
+1. <span data-ttu-id="9fdbf-150">`Description` 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
     ```
 
-#### <a name="test-the-generated-add-in"></a><span data-ttu-id="8097d-151">生成されたアドインをテストする</span><span class="sxs-lookup"><span data-stu-id="8097d-151">Test the generated add-in</span></span>
+#### <a name="test-the-generated-add-in"></a><span data-ttu-id="9fdbf-151">生成されたアドインをテストする</span><span class="sxs-lookup"><span data-stu-id="9fdbf-151">Test the generated add-in</span></span>
 
-<span data-ttu-id="8097d-152">この先に進める前に、ジェネレーターによって生成されたアドインをテストして、プロジェクトが正しく設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8097d-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
+<span data-ttu-id="9fdbf-152">この先に進める前に、ジェネレーターによって生成されたアドインをテストして、プロジェクトが正しく設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8097d-153">開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-153">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="8097d-154">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="8097d-154">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+> <span data-ttu-id="9fdbf-153">開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-153">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="9fdbf-154">次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-154">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-1. <span data-ttu-id="8097d-155">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-155">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="8097d-156">このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="8097d-156">When you run this command, the local web server will start (if it's not already running).</span></span>
+1. <span data-ttu-id="9fdbf-155">プロジェクトのルート ディレクトリから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-155">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="9fdbf-156">このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-156">When you run this command, the local web server will start (if it's not already running).</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="8097d-157">プロジェクトのルートディレクトリにある**manifest.xml**ファイルをサイドロードするには、[テスト用Outlookアドインのサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)にある指示に従います。</span><span class="sxs-lookup"><span data-stu-id="8097d-157">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
+1. <span data-ttu-id="9fdbf-157">プロジェクトのルートディレクトリにある**manifest.xml**ファイルをサイドロードするには、[テスト用Outlookアドインのサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)にある指示に従います。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-157">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
 
-1. <span data-ttu-id="8097d-158">Outlookで既存のメッセージを開き、**タスクパネルを表示**ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-158">In Outlook, open an existing message and select the **Show Taskpane** button.</span></span> <span data-ttu-id="8097d-159">すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-159">If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
+1. <span data-ttu-id="9fdbf-158">Outlookで既存のメッセージを開き、**タスクパネルを表示**ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-158">In Outlook, open an existing message and select the **Show Taskpane** button.</span></span> <span data-ttu-id="9fdbf-159">すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-159">If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
 
     ![サンプルによって追加されたボタンと作業ウィンドウのスクリーンショット](../images/button-and-pane.png)
 
-## <a name="define-buttons"></a><span data-ttu-id="8097d-161">ボタンを定義する</span><span class="sxs-lookup"><span data-stu-id="8097d-161">Define buttons</span></span>
+## <a name="define-buttons"></a><span data-ttu-id="9fdbf-161">ボタンを定義する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-161">Define buttons</span></span>
 
-<span data-ttu-id="8097d-162">基本のアドインの動作を確認したので、カスタマイズしてより多くの機能を追加できます。</span><span class="sxs-lookup"><span data-stu-id="8097d-162">Now that you've verified the base add-in works, you can customize it to add more functionality.</span></span> <span data-ttu-id="8097d-163">既定のマニフェストでは、メッセージ閲覧ウィンドウ用のボタンのみ定義されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-163">By default, the manifest only defines buttons for the read message window.</span></span> <span data-ttu-id="8097d-164">マニフェストを更新してメッセージ閲覧ウィンドウからボタンを削除し、メッセージ作成ウィンドウ用の 2 つの新しいボタンを定義してみましょう。</span><span class="sxs-lookup"><span data-stu-id="8097d-164">Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
+<span data-ttu-id="9fdbf-162">基本のアドインの動作を確認したので、カスタマイズしてより多くの機能を追加できます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-162">Now that you've verified the base add-in works, you can customize it to add more functionality.</span></span> <span data-ttu-id="9fdbf-163">既定のマニフェストでは、メッセージ閲覧ウィンドウ用のボタンのみ定義されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-163">By default, the manifest only defines buttons for the read message window.</span></span> <span data-ttu-id="9fdbf-164">マニフェストを更新してメッセージ閲覧ウィンドウからボタンを削除し、メッセージ作成ウィンドウ用の 2 つの新しいボタンを定義してみましょう。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-164">Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
 
-- <span data-ttu-id="8097d-165">**Insert gist** (Gist の挿入): 作業ウィンドウを開くボタン</span><span class="sxs-lookup"><span data-stu-id="8097d-165">**Insert gist**: a button that opens a task pane</span></span>
+- <span data-ttu-id="9fdbf-165">**Insert gist** (Gist の挿入): 作業ウィンドウを開くボタン</span><span class="sxs-lookup"><span data-stu-id="9fdbf-165">**Insert gist**: a button that opens a task pane</span></span>
 
-- <span data-ttu-id="8097d-166">**Insert default gist** (既定の Gist の挿入): 関数を呼び出すボタン</span><span class="sxs-lookup"><span data-stu-id="8097d-166">**Insert default gist**: a button that invokes a function</span></span>
+- <span data-ttu-id="9fdbf-166">**Insert default gist** (既定の Gist の挿入): 関数を呼び出すボタン</span><span class="sxs-lookup"><span data-stu-id="9fdbf-166">**Insert default gist**: a button that invokes a function</span></span>
 
-### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="8097d-167">MessageReadCommandSurface 拡張点を削除する</span><span class="sxs-lookup"><span data-stu-id="8097d-167">Remove the MessageReadCommandSurface extension point</span></span>
+### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="9fdbf-167">MessageReadCommandSurface 拡張点を削除する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-167">Remove the MessageReadCommandSurface extension point</span></span>
 
-<span data-ttu-id="8097d-168">**manifest.xml** ファイルを開き、`MessageReadCommandSurface` 型の `ExtensionPoint` 要素を探します。</span><span class="sxs-lookup"><span data-stu-id="8097d-168">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`.</span></span> <span data-ttu-id="8097d-169">この `ExtensionPoint` 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。</span><span class="sxs-lookup"><span data-stu-id="8097d-169">Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
+<span data-ttu-id="9fdbf-168">**manifest.xml** ファイルを開き、`MessageReadCommandSurface` 型の `ExtensionPoint` 要素を探します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-168">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`.</span></span> <span data-ttu-id="9fdbf-169">この `ExtensionPoint` 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-169">Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
 
-### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="8097d-170">MessageComposeCommandSurface 拡張点を追加する</span><span class="sxs-lookup"><span data-stu-id="8097d-170">Add the MessageComposeCommandSurface extension point</span></span>
+### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="9fdbf-170">MessageComposeCommandSurface 拡張点を追加する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-170">Add the MessageComposeCommandSurface extension point</span></span>
 
-<span data-ttu-id="8097d-171">マニフェスト内で `</DesktopFormFactor>` という行を探します。</span><span class="sxs-lookup"><span data-stu-id="8097d-171">Locate the line in the manifest that reads `</DesktopFormFactor>`.</span></span> <span data-ttu-id="8097d-172">この行の直前に、次の XML マークアップを挿入します。</span><span class="sxs-lookup"><span data-stu-id="8097d-172">Immediately before this line, insert the following XML markup.</span></span> <span data-ttu-id="8097d-173">このマークアップについて、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="8097d-173">Note the following about this markup:</span></span>
+<span data-ttu-id="9fdbf-171">マニフェスト内で `</DesktopFormFactor>` という行を探します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-171">Locate the line in the manifest that reads `</DesktopFormFactor>`.</span></span> <span data-ttu-id="9fdbf-172">この行の直前に、次の XML マークアップを挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-172">Immediately before this line, insert the following XML markup.</span></span> <span data-ttu-id="9fdbf-173">このマークアップについて、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-173">Note the following about this markup:</span></span>
 
-- <span data-ttu-id="8097d-174">`xsi:type="MessageComposeCommandSurface"`とともに`ExtensionPoint`は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。</span><span class="sxs-lookup"><span data-stu-id="8097d-174">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
+- <span data-ttu-id="9fdbf-174">`xsi:type="MessageComposeCommandSurface"`とともに`ExtensionPoint`は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-174">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
 
-- <span data-ttu-id="8097d-175">`id="TabDefault"` の `OfficeTab` 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。</span><span class="sxs-lookup"><span data-stu-id="8097d-175">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
+- <span data-ttu-id="9fdbf-175">`id="TabDefault"` の `OfficeTab` 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-175">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
 
-- <span data-ttu-id="8097d-176">`Group` 要素は、`groupLabel` リソースによってラベルが設定された新しいボタンのグループ化を定義します。</span><span class="sxs-lookup"><span data-stu-id="8097d-176">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
+- <span data-ttu-id="9fdbf-176">`Group` 要素は、`groupLabel` リソースによってラベルが設定された新しいボタンのグループ化を定義します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-176">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
 
-- <span data-ttu-id="8097d-177">最初の `Control` 要素には、`xsi:type="ShowTaskPane"` の `Action` 要素が含まれているので、このボタンは作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="8097d-177">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
+- <span data-ttu-id="9fdbf-177">最初の `Control` 要素には、`xsi:type="ShowTaskPane"` の `Action` 要素が含まれているので、このボタンは作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-177">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
 
-- <span data-ttu-id="8097d-178">2 番目の `Control` 要素には `xsi:type="ExecuteFunction"` の `Action` 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8097d-178">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
+- <span data-ttu-id="9fdbf-178">2 番目の `Control` 要素には `xsi:type="ExecuteFunction"` の `Action` 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-178">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
 
 ```xml
 <!-- Message Compose -->
@@ -238,13 +238,13 @@ ms.locfileid: "45093505"
 </ExtensionPoint>
 ```
 
-### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="8097d-179">マニフェスト内のリソースを更新する</span><span class="sxs-lookup"><span data-stu-id="8097d-179">Update resources in the manifest</span></span>
+### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="9fdbf-179">マニフェスト内のリソースを更新する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-179">Update resources in the manifest</span></span>
 
-<span data-ttu-id="8097d-180">前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-180">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid.</span></span> <span data-ttu-id="8097d-181">この情報を、マニフェストの`Resources`部分で指定します。</span><span class="sxs-lookup"><span data-stu-id="8097d-181">You'll specify this information in the `Resources` section of the manifest.</span></span>
+<span data-ttu-id="9fdbf-180">前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-180">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid.</span></span> <span data-ttu-id="9fdbf-181">この情報を、マニフェストの`Resources`部分で指定します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-181">You'll specify this information in the `Resources` section of the manifest.</span></span>
 
-1. <span data-ttu-id="8097d-182">マニフェストファイル内の`Resources`要素を見つけて、要素全体（その終了タグを含む）を削除します。</span><span class="sxs-lookup"><span data-stu-id="8097d-182">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
+1. <span data-ttu-id="9fdbf-182">マニフェストファイル内の`Resources`要素を見つけて、要素全体（その終了タグを含む）を削除します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-182">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
 
-1. <span data-ttu-id="8097d-183">同じ場所に、次のマークアップを追加して、削除した`Resources`要素を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-183">In that same location, add the following markup to replace the `Resources` element you just removed:</span></span>
+1. <span data-ttu-id="9fdbf-183">同じ場所に、次のマークアップを追加して、削除した`Resources`要素を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-183">In that same location, add the following markup to replace the `Resources` element you just removed:</span></span>
 
     ```xml
     <Resources>
@@ -271,39 +271,39 @@ ms.locfileid: "45093505"
     </Resources>
     ```
 
-1. <span data-ttu-id="8097d-184">マニフェストへの変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="8097d-184">Save your changes to the manifest.</span></span>
+1. <span data-ttu-id="9fdbf-184">マニフェストへの変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-184">Save your changes to the manifest.</span></span>
 
-### <a name="reinstall-the-add-in"></a><span data-ttu-id="8097d-185">アドインを再インストールする</span><span class="sxs-lookup"><span data-stu-id="8097d-185">Reinstall the add-in</span></span>
+### <a name="reinstall-the-add-in"></a><span data-ttu-id="9fdbf-185">アドインを再インストールする</span><span class="sxs-lookup"><span data-stu-id="9fdbf-185">Reinstall the add-in</span></span>
 
-<span data-ttu-id="8097d-186">以前にはファイルからアドインをインストールしたため、マニフェストに対して行った変更を有効にするにはそのアドインを再インストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-186">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
+<span data-ttu-id="9fdbf-186">以前にはファイルからアドインをインストールしたため、マニフェストに対して行った変更を有効にするにはそのアドインを再インストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-186">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
 
-1. <span data-ttu-id="8097d-187">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、**[個人用アドイン]** ダイアログ ボックスの下部にある **[カスタム アドイン]** セクションを探します。</span><span class="sxs-lookup"><span data-stu-id="8097d-187">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to locate the **Custom add-ins** section at the bottom of the **My add-ins** dialog box.</span></span>
+1. <span data-ttu-id="9fdbf-187">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、**[個人用アドイン]** ダイアログ ボックスの下部にある **[カスタム アドイン]** セクションを探します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-187">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to locate the **Custom add-ins** section at the bottom of the **My add-ins** dialog box.</span></span>
 
-1. <span data-ttu-id="8097d-188">**[Git the Gist]** エントリの横にある **[...]** ボタンを選択し、**[削除]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-188">Select the **...** button next to the **Git the gist** entry and then choose **Remove**.</span></span>
+1. <span data-ttu-id="9fdbf-188">**[Git the Gist]** エントリの横にある **[...]** ボタンを選択し、**[削除]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-188">Select the **...** button next to the **Git the gist** entry and then choose **Remove**.</span></span>
 
-1. <span data-ttu-id="8097d-189">**[個人用アドイン]** ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="8097d-189">Close the **My add-ins** window.</span></span>
+1. <span data-ttu-id="9fdbf-189">**[個人用アドイン]** ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-189">Close the **My add-ins** window.</span></span>
 
-1. <span data-ttu-id="8097d-190">カスタム ボタンは一時的にリボンに表示されなくなります。</span><span class="sxs-lookup"><span data-stu-id="8097d-190">The custom button should disappear from the ribbon momentarily.</span></span>
+1. <span data-ttu-id="9fdbf-190">カスタム ボタンは一時的にリボンに表示されなくなります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-190">The custom button should disappear from the ribbon momentarily.</span></span>
 
-1. <span data-ttu-id="8097d-191">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、更新した **manifest.xml** ファイルを使用してアドインを再インストールします。</span><span class="sxs-lookup"><span data-stu-id="8097d-191">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
+1. <span data-ttu-id="9fdbf-191">「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、更新した **manifest.xml** ファイルを使用してアドインを再インストールします。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-191">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
 
-<span data-ttu-id="8097d-192">アドインを再インストールした後、メッセージ作成ウィンドウで**Insert gist**と**Insert default gist**のコマンドを確認して、アドインが正常にインストールされたことを確認できます。</span><span class="sxs-lookup"><span data-stu-id="8097d-192">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window.</span></span> <span data-ttu-id="8097d-193">このアドインのビルドはまだ完了していないため、どちらを選択しても何も起こりません。</span><span class="sxs-lookup"><span data-stu-id="8097d-193">Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
+<span data-ttu-id="9fdbf-192">アドインを再インストールした後、メッセージ作成ウィンドウで**Insert gist**と**Insert default gist**のコマンドを確認して、アドインが正常にインストールされたことを確認できます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-192">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window.</span></span> <span data-ttu-id="9fdbf-193">このアドインのビルドはまだ完了していないため、どちらを選択しても何も起こりません。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-193">Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
 
-- <span data-ttu-id="8097d-194">このアドインを WWindows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Insert gist]** と **[Insert default gist]**] という 2 つの新しいボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-194">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
+- <span data-ttu-id="9fdbf-194">このアドインを WWindows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Insert gist]** と **[Insert default gist]**] という 2 つの新しいボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-194">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
 
     ![アドインのボタンが強調表示された Windows 上の Outlook のリボンのスクリーンショット](../images/add-in-buttons-in-windows.png)
 
-- <span data-ttu-id="8097d-196">Outlook on the webでこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-196">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window.</span></span> <span data-ttu-id="8097d-197">このボタンを選択すると、**[Insert gist]** と **[Insert default gist]** のオプションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-197">Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
+- <span data-ttu-id="9fdbf-196">Outlook on the webでこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-196">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window.</span></span> <span data-ttu-id="9fdbf-197">このボタンを選択すると、**[Insert gist]** と **[Insert default gist]** のオプションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-197">Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
 
     ![Outlook on the web のメッセージ作成フォームに追加されたアドイン ボタンとポップアップ メニューが強調表示されたスクリーンショット](../images/add-in-buttons-in-owa.png)
 
-## <a name="implement-a-first-run-experience"></a><span data-ttu-id="8097d-199">最初の実行エクスペリエンスを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-199">Implement a first-run experience</span></span>
+## <a name="implement-a-first-run-experience"></a><span data-ttu-id="9fdbf-199">最初の実行エクスペリエンスを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-199">Implement a first-run experience</span></span>
 
-<span data-ttu-id="8097d-200">このアドインでは、ユーザーの GitHub アカウントから Gist を読み込み、ユーザーが既定として選択した Gist を特定できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-200">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist.</span></span> <span data-ttu-id="8097d-201">この目的を達成するため、アドインはユーザーに対して、GitHub のユーザー名を入力し、既存の Gist のコレクションから既定の Gist を選択するためのダイアログを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-201">In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists.</span></span> <span data-ttu-id="8097d-202">ユーザーからこの情報を収集するためのダイアログを表示する最初の実行エクスペリエンスを実装するには、このセクションの手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-202">Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
+<span data-ttu-id="9fdbf-200">このアドインでは、ユーザーの GitHub アカウントから Gist を読み込み、ユーザーが既定として選択した Gist を特定できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-200">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist.</span></span> <span data-ttu-id="9fdbf-201">この目的を達成するため、アドインはユーザーに対して、GitHub のユーザー名を入力し、既存の Gist のコレクションから既定の Gist を選択するためのダイアログを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-201">In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists.</span></span> <span data-ttu-id="9fdbf-202">ユーザーからこの情報を収集するためのダイアログを表示する最初の実行エクスペリエンスを実装するには、このセクションの手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-202">Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
 
-### <a name="collect-data-from-the-user"></a><span data-ttu-id="8097d-203">ユーザーからデータを収集する</span><span class="sxs-lookup"><span data-stu-id="8097d-203">Collect data from the user</span></span>
+### <a name="collect-data-from-the-user"></a><span data-ttu-id="9fdbf-203">ユーザーからデータを収集する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-203">Collect data from the user</span></span>
 
-<span data-ttu-id="8097d-204">ダイアログ自体の UI を作成することから始めましょう。</span><span class="sxs-lookup"><span data-stu-id="8097d-204">Let's start by creating the UI for the dialog itself.</span></span> <span data-ttu-id="8097d-205">**./src**フォルダー内に、**settings**という名前の新しいサブフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="8097d-205">Within the **./src** folder, create a new subfolder named **settings**.</span></span> <span data-ttu-id="8097d-206">**./src/settings**フォルダーに**dialog.html**という名前のファイルを作成し、次のマークアップを追加して、GitHubユーザー名、およびJavaScriptを介して生成される空の概要リストのテキストを入力できるごく基本的なフォームを定義します。</span><span class="sxs-lookup"><span data-stu-id="8097d-206">In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
+<span data-ttu-id="9fdbf-204">ダイアログ自体の UI を作成することから始めましょう。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-204">Let's start by creating the UI for the dialog itself.</span></span> <span data-ttu-id="9fdbf-205">**./src**フォルダー内に、**settings**という名前の新しいサブフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-205">Within the **./src** folder, create a new subfolder named **settings**.</span></span> <span data-ttu-id="9fdbf-206">**./src/settings**フォルダーに**dialog.html**という名前のファイルを作成し、次のマークアップを追加して、GitHubユーザー名、およびJavaScriptを介して生成される空の概要リストのテキストを入力できるごく基本的なフォームを定義します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-206">In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -377,7 +377,7 @@ ms.locfileid: "45093505"
 </html>
 ```
 
-<span data-ttu-id="8097d-207">次に、**./src/settings**フォルダーに**dialog.css**という名前のファイルを作成し、次のコードを追加して**dialog.html**で使用されるスタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="8097d-207">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
+<span data-ttu-id="9fdbf-207">次に、**./src/settings**フォルダーに**dialog.css**という名前のファイルを作成し、次のコードを追加して**dialog.html**で使用されるスタイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-207">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
 
 ```CSS
 section {
@@ -412,7 +412,7 @@ ul {
 }
 ```
 
-<span data-ttu-id="8097d-208">これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="8097d-208">Now that you've defined the dialog UI, you can write the code that makes it actually do something.</span></span> <span data-ttu-id="8097d-209">**./src/settings**フォルダーに**dialog.js**という名前のファイルを作成し、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-209">Create a file in the **./src/settings** folder named **dialog.js** and add the following code.</span></span> <span data-ttu-id="8097d-210">このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために `messageParent` 関数を使用しています。</span><span class="sxs-lookup"><span data-stu-id="8097d-210">Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
+<span data-ttu-id="9fdbf-208">これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-208">Now that you've defined the dialog UI, you can write the code that makes it actually do something.</span></span> <span data-ttu-id="9fdbf-209">**./src/settings**フォルダーに**dialog.js**という名前のファイルを作成し、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-209">Create a file in the **./src/settings** folder named **dialog.js** and add the following code.</span></span> <span data-ttu-id="9fdbf-210">このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために `messageParent` 関数を使用しています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-210">Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
 
 ```js
 (function(){
@@ -516,17 +516,17 @@ ul {
 })();
 ```
 
-#### <a name="update-webpack-config-settings"></a><span data-ttu-id="8097d-211">Webpackの機能設定を更新する</span><span class="sxs-lookup"><span data-stu-id="8097d-211">Update webpack config settings</span></span>
+#### <a name="update-webpack-config-settings"></a><span data-ttu-id="9fdbf-211">Webpackの機能設定を更新する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-211">Update webpack config settings</span></span>
 
-<span data-ttu-id="8097d-212">最後に、プロジェクトのルートディレクトリにあるファイル**webpack.config.js**ファイルを開き、以下の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="8097d-212">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
+<span data-ttu-id="9fdbf-212">最後に、プロジェクトのルートディレクトリにあるファイル**webpack.config.js**ファイルを開き、以下の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-212">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
 
-1. <span data-ttu-id="8097d-213">`config`オブジェクト内で`entry`オブジェクトを探し、`dialog`の新しいエントリーを追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-213">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
+1. <span data-ttu-id="9fdbf-213">`config`オブジェクト内で`entry`オブジェクトを探し、`dialog`の新しいエントリーを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-213">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
 
     ```js
     dialog: "./src/settings/dialog.js"
     ```
 
-    <span data-ttu-id="8097d-214">これを実行すると、新しい`entry`オブジェクトは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="8097d-214">After you've done this, the new `entry` object will look like this:</span></span>
+    <span data-ttu-id="9fdbf-214">これを実行すると、新しい`entry`オブジェクトは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-214">After you've done this, the new `entry` object will look like this:</span></span>
 
     ```js
     entry: {
@@ -537,7 +537,7 @@ ul {
     },
     ```
   
-2. <span data-ttu-id="8097d-215">`config`オブジェクト内で`plugins`配列を探し、これら2つの新しいオブジェクトをその配列の末尾に追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-215">Locate the `plugins` array within the `config` object and add these two new objects to the end of that array.</span></span>
+2. <span data-ttu-id="9fdbf-215">`config`オブジェクト内で`plugins`配列を探し、これら2つの新しいオブジェクトをその配列の末尾に追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-215">Locate the `plugins` array within the `config` object and add these two new objects to the end of that array.</span></span>
 
     ```js
     new HtmlWebpackPlugin({
@@ -553,7 +553,7 @@ ul {
     ])
     ```
 
-    <span data-ttu-id="8097d-216">これを実行すると、新しい`plugins`配列は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="8097d-216">After you've done this, the new `plugins` array will look like this:</span></span>
+    <span data-ttu-id="9fdbf-216">これを実行すると、新しい`plugins`配列は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-216">After you've done this, the new `plugins` array will look like this:</span></span>
 
     ```js
     plugins: [
@@ -588,25 +588,25 @@ ul {
     ],
     ```
 
-3. <span data-ttu-id="8097d-217">Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="8097d-217">If the web server is running, close the node command window.</span></span>
+3. <span data-ttu-id="9fdbf-217">Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-217">If the web server is running, close the node command window.</span></span>
 
-4. <span data-ttu-id="8097d-218">次のコマンドを実行してプロジェクトを再構築します。</span><span class="sxs-lookup"><span data-stu-id="8097d-218">Run the following command to rebuild the project.</span></span>
+4. <span data-ttu-id="9fdbf-218">次のコマンドを実行してプロジェクトを再構築します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-218">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. <span data-ttu-id="8097d-219">次のコマンドを実行してWebサーバーを起動します。</span><span class="sxs-lookup"><span data-stu-id="8097d-219">Run the following command to start the web server.</span></span>
+5. <span data-ttu-id="9fdbf-219">次のコマンドを実行してWebサーバーを起動します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-219">Run the following command to start the web server.</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-### <a name="fetch-data-from-github"></a><span data-ttu-id="8097d-220">GitHub からデータを取得する</span><span class="sxs-lookup"><span data-stu-id="8097d-220">Fetch data from GitHub</span></span>
+### <a name="fetch-data-from-github"></a><span data-ttu-id="9fdbf-220">GitHub からデータを取得する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-220">Fetch data from GitHub</span></span>
 
-<span data-ttu-id="8097d-221">上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドについて `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-221">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field.</span></span> <span data-ttu-id="8097d-222">GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。</span><span class="sxs-lookup"><span data-stu-id="8097d-222">To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
+<span data-ttu-id="9fdbf-221">上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドについて `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-221">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field.</span></span> <span data-ttu-id="9fdbf-222">GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-222">To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
 
-<span data-ttu-id="8097d-223">**./src**フォルダー内に、**helpers**という名前の新しいサブフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="8097d-223">Within the **./src** folder, create a new subfolder named **helpers**.</span></span> <span data-ttu-id="8097d-224">**./src/helpers**フォルダーに**gist-api.js**という名前のファイルを作成し、以下のコードを追加してGitHubからユーザーの概要を取得し、概要のリストを作成します。</span><span class="sxs-lookup"><span data-stu-id="8097d-224">In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
+<span data-ttu-id="9fdbf-223">**./src**フォルダー内に、**helpers**という名前の新しいサブフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-223">Within the **./src** folder, create a new subfolder named **helpers**.</span></span> <span data-ttu-id="9fdbf-224">**./src/helpers**フォルダーに**gist-api.js**という名前のファイルを作成し、以下のコードを追加してGitHubからユーザーの概要を取得し、概要のリストを作成します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-224">In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
 
 ```js
 function getUserGists(user, callback) {
@@ -677,21 +677,21 @@ function buildFileList(files) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="8097d-225">設定ダイアログを呼び出すためのボタンがないことに気づかれたかもしれません。</span><span class="sxs-lookup"><span data-stu-id="8097d-225">You may have noticed that there's no button to invoke the settings dialog.</span></span> <span data-ttu-id="8097d-226">代わりに、アドインは構成済みであるかどうかを、ユーザーが **[Insert default gist]** ボタンまたは **[Insert gist]** ボタンのいずれかを選択したときに確認します。</span><span class="sxs-lookup"><span data-stu-id="8097d-226">Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button.</span></span> <span data-ttu-id="8097d-227">アドインがまだ構成されていない場合、設定ダイアログが表示され、処理を進める前に構成するようにユーザーに促します。</span><span class="sxs-lookup"><span data-stu-id="8097d-227">If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
+> <span data-ttu-id="9fdbf-225">設定ダイアログを呼び出すためのボタンがないことに気づかれたかもしれません。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-225">You may have noticed that there's no button to invoke the settings dialog.</span></span> <span data-ttu-id="9fdbf-226">代わりに、アドインは構成済みであるかどうかを、ユーザーが **[Insert default gist]** ボタンまたは **[Insert gist]** ボタンのいずれかを選択したときに確認します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-226">Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button.</span></span> <span data-ttu-id="9fdbf-227">アドインがまだ構成されていない場合、設定ダイアログが表示され、処理を進める前に構成するようにユーザーに促します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-227">If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
 
-## <a name="implement-a-ui-less-button"></a><span data-ttu-id="8097d-228">UI のないボタンを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-228">Implement a UI-less button</span></span>
+## <a name="implement-a-ui-less-button"></a><span data-ttu-id="9fdbf-228">UI のないボタンを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-228">Implement a UI-less button</span></span>
 
-<span data-ttu-id="8097d-229">このアドインの **[Insert default gist]** ボタンは UI のないボタンであり、他のアドイン ボタンのように作業ウィンドウを開くのではなく、JavaScript 関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8097d-229">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do.</span></span> <span data-ttu-id="8097d-230">ユーザーが **[Insert default gist]** ボタンを選択すると、対応する JavaScript 関数によって、アドインが構成済みであるかどうかが確認されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-230">When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
+<span data-ttu-id="9fdbf-229">このアドインの **[Insert default gist]** ボタンは UI のないボタンであり、他のアドイン ボタンのように作業ウィンドウを開くのではなく、JavaScript 関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-229">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do.</span></span> <span data-ttu-id="9fdbf-230">ユーザーが **[Insert default gist]** ボタンを選択すると、対応する JavaScript 関数によって、アドインが構成済みであるかどうかが確認されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-230">When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
 
-- <span data-ttu-id="8097d-231">アドインが既に構成済みの場合、ユーザーが既定として選択した Gist のコンテンツが関数によって読み込まれ、メッセージの本文に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-231">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
+- <span data-ttu-id="9fdbf-231">アドインが既に構成済みの場合、ユーザーが既定として選択した Gist のコンテンツが関数によって読み込まれ、メッセージの本文に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-231">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
 
-- <span data-ttu-id="8097d-232">アドインがまだ構成されていない場合、設定ダイアログが表示され、必要な情報を入力するようにユーザーに促します。</span><span class="sxs-lookup"><span data-stu-id="8097d-232">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
+- <span data-ttu-id="9fdbf-232">アドインがまだ構成されていない場合、設定ダイアログが表示され、必要な情報を入力するようにユーザーに促します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-232">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
 
-### <a name="update-the-function-file-html"></a><span data-ttu-id="8097d-233">関数ファイルを更新する (HTML)</span><span class="sxs-lookup"><span data-stu-id="8097d-233">Update the function file (HTML)</span></span>
+### <a name="update-the-function-file-html"></a><span data-ttu-id="9fdbf-233">関数ファイルを更新する (HTML)</span><span class="sxs-lookup"><span data-stu-id="9fdbf-233">Update the function file (HTML)</span></span>
 
-<span data-ttu-id="8097d-234">UI のないボタンによって呼び出される関数は、対応するフォーム ファクターのマニフェスト内の `FunctionFile` 要素で指定されたファイルで定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-234">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor.</span></span> <span data-ttu-id="8097d-235">このアドインのマニフェストでは、`https://localhost:3000/commands.html` が関数ファイルとして指定されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-235">This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
+<span data-ttu-id="9fdbf-234">UI のないボタンによって呼び出される関数は、対応するフォーム ファクターのマニフェスト内の `FunctionFile` 要素で指定されたファイルで定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-234">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor.</span></span> <span data-ttu-id="9fdbf-235">このアドインのマニフェストでは、`https://localhost:3000/commands.html` が関数ファイルとして指定されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-235">This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
 
-<span data-ttu-id="8097d-236">ファイル **./src/commands/commands.html**を開き、内容全体を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-236">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="9fdbf-236">ファイル **./src/commands/commands.html**を開き、内容全体を次のマークアップに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-236">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -719,9 +719,9 @@ function buildFileList(files) {
 </html>
 ```
 
-### <a name="update-the-function-file-javascript"></a><span data-ttu-id="8097d-237">関数ファイルを更新する (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="8097d-237">Update the function file (JavaScript)</span></span>
+### <a name="update-the-function-file-javascript"></a><span data-ttu-id="9fdbf-237">関数ファイルを更新する (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="9fdbf-237">Update the function file (JavaScript)</span></span>
 
-<span data-ttu-id="8097d-238">ファイル **./src/commands/commands.js**を開き、内容全体を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-238">Open the file **./src/commands/commands.js** and replace the entire contents with the following code.</span></span> <span data-ttu-id="8097d-239">アドインがまだ構成されていないことが `insertDefaultGist` 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-239">Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL.</span></span> <span data-ttu-id="8097d-240">これにより、**./settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。</span><span class="sxs-lookup"><span data-stu-id="8097d-240">Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
+<span data-ttu-id="9fdbf-238">ファイル **./src/commands/commands.js**を開き、内容全体を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-238">Open the file **./src/commands/commands.js** and replace the entire contents with the following code.</span></span> <span data-ttu-id="9fdbf-239">アドインがまだ構成されていないことが `insertDefaultGist` 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-239">Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL.</span></span> <span data-ttu-id="9fdbf-240">これにより、**./settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-240">Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
 
 ```js
 var config;
@@ -818,9 +818,9 @@ var g = getGlobal();
 g.insertDefaultGist = insertDefaultGist;
 ```
 
-### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="8097d-241">構成設定を管理するファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="8097d-241">Create a file to manage configuration settings</span></span>
+### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="9fdbf-241">構成設定を管理するファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-241">Create a file to manage configuration settings</span></span>
 
-<span data-ttu-id="8097d-242">HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。</span><span class="sxs-lookup"><span data-stu-id="8097d-242">The HTML function file references a file named **addin-config.js**, which doesn't yet exist.</span></span> <span data-ttu-id="8097d-243">**./src/helpers **フォルダーに**addin-config.js**という名前のファイルを作成し、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-243">Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code.</span></span> <span data-ttu-id="8097d-244">このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.RoamingSettings)を使用して、構成値を取得または設定するものです。</span><span class="sxs-lookup"><span data-stu-id="8097d-244">This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
+<span data-ttu-id="9fdbf-242">HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-242">The HTML function file references a file named **addin-config.js**, which doesn't yet exist.</span></span> <span data-ttu-id="9fdbf-243">**./src/helpers **フォルダーに**addin-config.js**という名前のファイルを作成し、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-243">Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code.</span></span> <span data-ttu-id="9fdbf-244">このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.RoamingSettings)を使用して、構成値を取得または設定するものです。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-244">This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
 
 ```js
 function getConfig() {
@@ -840,15 +840,15 @@ function setConfig(config, callback) {
 }
 ```
 
-### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="8097d-245">Gist を処理する新しい関数を作成する</span><span class="sxs-lookup"><span data-stu-id="8097d-245">Create new functions to process gists</span></span>
+### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="9fdbf-245">Gist を処理する新しい関数を作成する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-245">Create new functions to process gists</span></span>
 
-<span data-ttu-id="8097d-246">次に、**./src/helpers/gist-api.js**ファイルを開き、以下の機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="8097d-246">Next, open the **./src/helpers/gist-api.js** file and add the following functions.</span></span> <span data-ttu-id="8097d-247">次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="8097d-247">Note the following:</span></span>
+<span data-ttu-id="9fdbf-246">次に、**./src/helpers/gist-api.js**ファイルを開き、以下の機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-246">Next, open the **./src/helpers/gist-api.js** file and add the following functions.</span></span> <span data-ttu-id="9fdbf-247">次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-247">Note the following:</span></span>
 
-- <span data-ttu-id="8097d-248">Gist に HTML が含まれている場合、アドインは HTML をそのままメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="8097d-248">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
+- <span data-ttu-id="9fdbf-248">Gist に HTML が含まれている場合、アドインは HTML をそのままメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-248">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
 
-- <span data-ttu-id="8097d-249">Gist にマークダウンが含まれている場合、アドインは [Showdown](https://github.com/showdownjs/showdown) ライブラリを使用してマークダウンを HTML に変換し、その HTML をメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="8097d-249">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
+- <span data-ttu-id="9fdbf-249">Gist にマークダウンが含まれている場合、アドインは [Showdown](https://github.com/showdownjs/showdown) ライブラリを使用してマークダウンを HTML に変換し、その HTML をメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-249">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
 
-- <span data-ttu-id="8097d-250">Gist に HTML またはマークダウン以外のものが含まれている場合、アドインはそのコンテンツをコード スニペットとしてメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="8097d-250">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
+- <span data-ttu-id="9fdbf-250">Gist に HTML またはマークダウン以外のものが含まれている場合、アドインはそのコンテンツをコード スニペットとしてメッセージの本文に挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-250">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
 
 ```js
 function getGist(gistId, callback) {
@@ -898,32 +898,32 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="8097d-251">ボタンをテストする</span><span class="sxs-lookup"><span data-stu-id="8097d-251">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="9fdbf-251">ボタンをテストする</span><span class="sxs-lookup"><span data-stu-id="9fdbf-251">Test the button</span></span>
 
-<span data-ttu-id="8097d-252">すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="8097d-252">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="8097d-253">その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。</span><span class="sxs-lookup"><span data-stu-id="8097d-253">Then complete the following steps to test the **Insert default gist** button.</span></span>
+<span data-ttu-id="9fdbf-252">すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-252">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="9fdbf-253">その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-253">Then complete the following steps to test the **Insert default gist** button.</span></span>
 
-1. <span data-ttu-id="8097d-254">Outlook を開き、新しいメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="8097d-254">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="9fdbf-254">Outlook を開き、新しいメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-254">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="8097d-255">メッセージの作成ウィンドウで、**[Insert default gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-255">In the compose message window, select the **Insert default gist** button.</span></span> <span data-ttu-id="8097d-256">アドインの構成を求めるダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-256">You should be prompted to configure the add-in.</span></span>
+1. <span data-ttu-id="9fdbf-255">メッセージの作成ウィンドウで、**[Insert default gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-255">In the compose message window, select the **Insert default gist** button.</span></span> <span data-ttu-id="9fdbf-256">アドインの構成を求めるダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-256">You should be prompted to configure the add-in.</span></span>
 
     ![アドインの構成を求めるダイアログのスクリーンショット](../images/addin-prompt-configure.png)
 
-1. <span data-ttu-id="8097d-258">設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を**選択**するかクリックします。すると、`change` イベントが呼び出され、Gist のリストが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="8097d-258">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of gists.</span></span> <span data-ttu-id="8097d-259">既定とする Gist を選択し、**[Done]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-259">Select a gist to be the default, and select **Done**.</span></span>
+1. <span data-ttu-id="9fdbf-258">設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を**選択**するかクリックします。すると、`change` イベントが呼び出され、Gist のリストが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-258">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of gists.</span></span> <span data-ttu-id="9fdbf-259">既定とする Gist を選択し、**[Done]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-259">Select a gist to be the default, and select **Done**.</span></span>
 
     ![アドインの設定ダイアログのスクリーンショット](../images/addin-settings.png)
 
-1. <span data-ttu-id="8097d-261">もう一度 **[Insert default gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-261">Select the **Insert default gist** button again.</span></span> <span data-ttu-id="8097d-262">今度は、Gist のコンテンツが電子メールの本文に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-262">This time, you should see the contents of the gist inserted into the body of the email.</span></span>
+1. <span data-ttu-id="9fdbf-261">もう一度 **[Insert default gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-261">Select the **Insert default gist** button again.</span></span> <span data-ttu-id="9fdbf-262">今度は、Gist のコンテンツが電子メールの本文に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-262">This time, you should see the contents of the gist inserted into the body of the email.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="8097d-263">Windows 上の Outlook: 最新の設定を選択するには、[メッセージの作成] ウィンドウを閉じて、もう一度開く必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="8097d-263">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
+   > <span data-ttu-id="9fdbf-263">Windows 上の Outlook: 最新の設定を選択するには、[メッセージの作成] ウィンドウを閉じて、もう一度開く必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-263">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
 
-## <a name="implement-a-task-pane"></a><span data-ttu-id="8097d-264">作業ウィンドウを実装する</span><span class="sxs-lookup"><span data-stu-id="8097d-264">Implement a task pane</span></span>
+## <a name="implement-a-task-pane"></a><span data-ttu-id="9fdbf-264">作業ウィンドウを実装する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-264">Implement a task pane</span></span>
 
-<span data-ttu-id="8097d-265">このアドインの **[Insert gist]** ボタンにより、作業ウィンドウを開いてユーザーの Gist を表示します。</span><span class="sxs-lookup"><span data-stu-id="8097d-265">This add-in's **Insert gist** button will open a task pane and display the user's gists.</span></span> <span data-ttu-id="8097d-266">ここでユーザーはメッセージの本文に挿入する Gist を選択することができます。</span><span class="sxs-lookup"><span data-stu-id="8097d-266">The user can then select one of the gists to insert into the body of the message.</span></span> <span data-ttu-id="8097d-267">ユーザーがまだアドインを構成していない場合、ダイアログが表示されて構成するように求められます。</span><span class="sxs-lookup"><span data-stu-id="8097d-267">If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
+<span data-ttu-id="9fdbf-265">このアドインの **[Insert gist]** ボタンにより、作業ウィンドウを開いてユーザーの Gist を表示します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-265">This add-in's **Insert gist** button will open a task pane and display the user's gists.</span></span> <span data-ttu-id="9fdbf-266">ここでユーザーはメッセージの本文に挿入する Gist を選択することができます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-266">The user can then select one of the gists to insert into the body of the message.</span></span> <span data-ttu-id="9fdbf-267">ユーザーがまだアドインを構成していない場合、ダイアログが表示されて構成するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-267">If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
 
-### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="8097d-268">作業ペインのHTMLを指定する</span><span class="sxs-lookup"><span data-stu-id="8097d-268">Specify the HTML for the task pane</span></span>
+### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="9fdbf-268">作業ペインのHTMLを指定する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-268">Specify the HTML for the task pane</span></span>
 
-<span data-ttu-id="8097d-269">作成したプロジェクトでは、作業ペインのHTMLはファイル **./src/taskpane/taskpane.html**で指定されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-269">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="8097d-270">該当ファイルを開き、内容全体を次のマークアップで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-270">Open that file and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="9fdbf-269">作成したプロジェクトでは、作業ペインのHTMLはファイル **./src/taskpane/taskpane.html**で指定されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-269">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="9fdbf-270">該当ファイルを開き、内容全体を次のマークアップで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-270">Open that file and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -985,9 +985,9 @@ function buildBodyContent(gist, callback) {
 </html>
 ```
 
-### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="8097d-271">作業ペインのCSSを指定する</span><span class="sxs-lookup"><span data-stu-id="8097d-271">Specify the CSS for the task pane</span></span>
+### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="9fdbf-271">作業ペインのCSSを指定する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-271">Specify the CSS for the task pane</span></span>
 
-<span data-ttu-id="8097d-272">作成したプロジェクトでは、作業ウィンドウのCSSは **./src/taskpane/taskpane.css**ファイルで指定されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-272">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**.</span></span> <span data-ttu-id="8097d-273">該当ファイルを開き、内容全体を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-273">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="9fdbf-272">作成したプロジェクトでは、作業ウィンドウのCSSは **./src/taskpane/taskpane.css**ファイルで指定されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-272">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**.</span></span> <span data-ttu-id="9fdbf-273">該当ファイルを開き、内容全体を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-273">Open that file and replace the entire contents with the following code.</span></span>
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1145,9 +1145,9 @@ ul {
           background: transparent; }
 ```
 
-### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="8097d-274">作業ペインのJavaScriptを指定する</span><span class="sxs-lookup"><span data-stu-id="8097d-274">Specify the JavaScript for the task pane</span></span>
+### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="9fdbf-274">作業ペインのJavaScriptを指定する</span><span class="sxs-lookup"><span data-stu-id="9fdbf-274">Specify the JavaScript for the task pane</span></span>
 
-<span data-ttu-id="8097d-275">作成したプロジェクトでは、作業ペインのJavaScriptはファイル **./src/taskpane/taskpane.js**で指定されています。</span><span class="sxs-lookup"><span data-stu-id="8097d-275">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="8097d-276">該当ファイルを開き、内容全体を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8097d-276">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="9fdbf-275">作成したプロジェクトでは、作業ペインのJavaScriptはファイル **./src/taskpane/taskpane.js**で指定されています。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-275">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="9fdbf-276">該当ファイルを開き、内容全体を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-276">Open that file and replace the entire contents with the following code.</span></span>
 
 ```js
 (function(){
@@ -1259,21 +1259,21 @@ ul {
 })();
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="8097d-277">ボタンをテストする</span><span class="sxs-lookup"><span data-stu-id="8097d-277">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="9fdbf-277">ボタンをテストする</span><span class="sxs-lookup"><span data-stu-id="9fdbf-277">Test the button</span></span>
 
-<span data-ttu-id="8097d-278">すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="8097d-278">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="8097d-279">その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。</span><span class="sxs-lookup"><span data-stu-id="8097d-279">Then complete the following steps to test the **Insert gist** button.</span></span>
+<span data-ttu-id="9fdbf-278">すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-278">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="9fdbf-279">その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-279">Then complete the following steps to test the **Insert gist** button.</span></span>
 
-1. <span data-ttu-id="8097d-280">Outlook を開き、新しいメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="8097d-280">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="9fdbf-280">Outlook を開き、新しいメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-280">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="8097d-281">メッセージの作成ウィンドウで、**[Insert gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="8097d-281">In the compose message window, select the **Insert gist** button.</span></span> <span data-ttu-id="8097d-282">作成フォームの右側に作業ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8097d-282">You should see a task pane open to the right of the compose form.</span></span>
+1. <span data-ttu-id="9fdbf-281">メッセージの作成ウィンドウで、**[Insert gist]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-281">In the compose message window, select the **Insert gist** button.</span></span> <span data-ttu-id="9fdbf-282">作成フォームの右側に作業ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-282">You should see a task pane open to the right of the compose form.</span></span>
 
-1. <span data-ttu-id="8097d-283">作業ウィンドウで、**[Hello World Html]** を選択し、**[Insert]** を選択してメッセージの本文にその Gist を挿入します。</span><span class="sxs-lookup"><span data-stu-id="8097d-283">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
+1. <span data-ttu-id="9fdbf-283">作業ウィンドウで、**[Hello World Html]** を選択し、**[Insert]** を選択してメッセージの本文にその Gist を挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-283">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
 
 ![アドインの作業ウィンドウのスクリーンショット](../images/addin-taskpane.png)
 
-## <a name="next-steps"></a><span data-ttu-id="8097d-285">次のステップ</span><span class="sxs-lookup"><span data-stu-id="8097d-285">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="9fdbf-285">次のステップ</span><span class="sxs-lookup"><span data-stu-id="9fdbf-285">Next steps</span></span>
 
-<span data-ttu-id="8097d-286">このチュートリアルでは、コンテンツをメッセージの本文に挿入するためにメッセージ作成モードで使用可能な Outlook アドインを作成しました。</span><span class="sxs-lookup"><span data-stu-id="8097d-286">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span> <span data-ttu-id="8097d-287">Outlook アドインの開発に関する詳細については、次の記事にお進みください。</span><span class="sxs-lookup"><span data-stu-id="8097d-287">To learn more about developing Outlook add-ins, continue to the following article:</span></span>
+<span data-ttu-id="9fdbf-286">このチュートリアルでは、コンテンツをメッセージの本文に挿入するためにメッセージ作成モードで使用可能な Outlook アドインを作成しました。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-286">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span> <span data-ttu-id="9fdbf-287">Outlook アドインの開発に関する詳細については、次の記事にお進みください。</span><span class="sxs-lookup"><span data-stu-id="9fdbf-287">To learn more about developing Outlook add-ins, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="8097d-288">Outlook アドインの API</span><span class="sxs-lookup"><span data-stu-id="8097d-288">Outlook add-in APIs</span></span>](../outlook/apis.md)
+> [<span data-ttu-id="9fdbf-288">Outlook アドインの API</span><span class="sxs-lookup"><span data-stu-id="9fdbf-288">Outlook add-in APIs</span></span>](../outlook/apis.md)
