@@ -3,12 +3,12 @@ title: マニフェストファイル内のランタイム
 description: Runtime 要素は、アドインが、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに対して共有 JavaScript ランタイムを使用するように構成します。
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e81bd7222585bfa7d5f0f34fe5d9b32e4d45a71e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e6e13f83db363fb5485c8d8defbc381c80e32d6
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608105"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159368"
 ---
 # <a name="runtime-element-preview"></a>Runtime 要素 (プレビュー)
 
@@ -21,8 +21,6 @@ Outlook では、この要素はイベントベースのアドインのアクテ
 **アドインの種類:** 作業ウィンドウ、メール
 
 > [!IMPORTANT]
-> **Excel**: 共有ランタイムは、現在 Windows 上の Excel でのみ使用できます。
->
 > **Outlook**: イベントベースのライセンス認証は現在[プレビュー段階で](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)あり、web 上の Outlook でのみ使用できます。 詳細については、「[イベントベースのライセンス認証機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
 
 ## <a name="syntax"></a>構文
@@ -42,7 +40,7 @@ Outlook では、この要素はイベントベースのアドインのアクテ
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **resid**  |  はい  | アドインの HTML ページの URL の場所を指定します。 は、 `resid` `id` 要素内の要素の属性と一致している必要があり `Url` `Resources` ます。 |
-|  **時間**  |  いいえ  | の既定値は、を `lifetime` `short` 指定する必要はありません。 Outlook アドインは、値のみを使用し `short` ます。 Excel アドインで共有ランタイムを使用する場合は、の値をに明示的に設定し `long` ます。 |
+|  **時間**  |  不要  | の既定値は、を `lifetime` `short` 指定する必要はありません。 Outlook アドインは、値のみを使用し `short` ます。 Excel アドインで共有ランタイムを使用する場合は、の値をに明示的に設定し `long` ます。 |
 
 ## <a name="see-also"></a>関連項目
 

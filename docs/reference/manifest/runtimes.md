@@ -3,12 +3,12 @@ title: マニフェストファイル内のランタイム
 description: ランタイム要素は、アドインのランタイムを指定します。
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: ef00bea317ae479d912b3a02f269ef97045b015d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608098"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159361"
 ---
 # <a name="runtimes-element"></a>ランタイム要素
 
@@ -24,8 +24,6 @@ Outlook では、この要素はイベントベースのアドインのアクテ
 **アドインの種類:** 作業ウィンドウ、メール
 
 > [!IMPORTANT]
-> **Excel**: 共有ランタイムは、現在 Windows 上の Excel でのみ使用できます。
->
 > **Outlook**: イベントベースのライセンス認証機能は現在[プレビュー段階で](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)あり、web 上の Outlook でのみ使用できます。 詳細については、「[イベントベースのライセンス認証機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
 
 ## <a name="syntax"></a>構文

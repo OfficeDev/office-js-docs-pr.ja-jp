@@ -1,20 +1,20 @@
 ---
 title: Office Open XML を使用してより良い Word 用アドインを作成する
-description: Office Open XML を使用して Word アドインを改善する方法の概要
-ms.date: 10/10/2019
+description: Office Open XML を使用して Word アドインを改善する方法の概要について説明します。
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609588"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159305"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
 **提供元:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-Office アドインを Word で実行するように構築している場合、Office JavaScript API (Office .js) には、ドキュメントのコンテンツの読み取りと書き込みのための複数の形式が用意されていることがわかっている場合があります。 そのような書式は強制タイプと呼ばれ、プレーン テキスト、表、HTML、Office Open XML が含まれています。
+Office アドインを Word で実行するように構築している場合は、Office JavaScript API (Office.js) によって、ドキュメントのコンテンツの読み取りと書き込みのための複数の形式が提供されていることがわかっている場合があります。 そのような書式は強制タイプと呼ばれ、プレーン テキスト、表、HTML、Office Open XML が含まれています。
 
 それでは、イメージ、書式設定された表、グラフ、あるいは書式設定だけされたテキストをドキュメントに追加する必要があるとき、何を選択しますか。画像などの一部のリッチ コンテンツを挿入するために、HTML を使用できます。シナリオによっては、コンテンツで使用できる書式設定および配置に関する制限など、HTML 強制型変換にとって不利な点が存在する場合があります。Office Open XML は、Word 文書 (.docx、.dotx など) が記述される言語であるため、Word 文書にユーザーが追加できるコンテンツであれば、ユーザーにとって適用可能なほぼすべてのタイプの書式設定で、事実上あらゆるタイプのコンテンツを挿入できます。処理する Office Open XML マークアップを判別するのは、想像しているよりも簡単です。
 
@@ -73,7 +73,7 @@ Word では、テキスト ボックス (図参照) 内のテキストに、ま�
 *図 7. 図形*
 
 
-![Word 内の Microsoft Office の描画オブジェクト。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Word の図形を描画します。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 テキストと書式設定効果ありで (なしで)、組み込みまたはカスタムの描画図形を挿入できます。
 
@@ -96,7 +96,7 @@ Word では、テキスト ボックス (図参照) 内のテキストに、ま�
 
 ![Word 内の動的な SmartArt 図。](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Microsoft Office は幅広い種類の SmartArt 図レイアウトを提供します (Office Open XML を使用して独自の SmartArt 図を作成することもできます)。
+Office には、さまざまな SmartArt 図レイアウトが用意されています (Office Open XML を使用して独自に作成することもできます)。
 
 *図 11. グラフ*
 
@@ -317,7 +317,7 @@ document.xml はコンテンツを置く主要なドキュメント パーツで
 
 - 冒頭の **w:document** タグには、いくつかの名前空間 (**xmlns**) のリストが含まれます。これらの名前空間の多くは特定のタイプのコンテンツを参照するため、お使いのコンテンツに関連する場合にのみ必要です。
 
-    ドキュメント パーツ全体のタグのプレフィックスが名前空間を参照していることに注意してください。 この例では、文書内のタグで使用されている唯一のプレフィックスは**w:** です。したがって、 **w:document**タグを開く必要のある名前空間は**xmlns: w**のみです。
+    ドキュメント パーツ全体のタグのプレフィックスが名前空間を参照していることに注意してください。 この例では、document.xml パーツ全体のタグで使用されるプレフィックスは**w:** です。そのため、 **w:document**タグを開く必要のある名前空間は**xmlns: w**のみです。
 
 
 > [!TIP]
@@ -563,7 +563,7 @@ function addAndBindControl() {
 > [!NOTE]
 > 前のコードで説明したように、コンテンツ コントロールの名前を使用し、バインドを作成する場所が決まります。ただし、Office Open XML マークアップでは、コードにより、コンテンツ コントロールの名前と ID 属性の両方を使用し、ドキュメントにバインドが追加されます。
 
-コードの実行後、アドインがバインドを作成したドキュメントのマークアップを調べると、各バインドに 2 つのパーツが表示されます。 バインドが追加されたコンテンツコントロールのマークアップ (nm-server-w15-long) には、属性 **: webExtensionLinked/** が表示されます。
+コードの実行後、アドインがバインドを作成したドキュメントのマークアップを調べると、各バインドに 2 つのパーツが表示されます。 バインドが追加されたコンテンツコントロールのマークアップ (document.xml) に、属性**nm-server-w15-long: webExtensionLinked/** が表示されます。
 
 webExtensions1.xml という名前のドキュメント パーツに、作成したバインドの一覧が表示されます。各バインドは、該当するコントロールのバインド ID と ID 属性を使用して次のように識別されます。ここでは、**appref** 属性はコンテンツ コントロール ID: ** **we:binding id="myBinding" type="text" appref="1382295294"/** です。
 
@@ -742,7 +742,7 @@ function populateBinding(filename) {
 
 
 > [!NOTE]
-> マークアップを確認するときは、a:blip タグで使用されている追加の名前空間に注目してください。 Xml には、 **xlmns:** 名前空間 (メインのバリエーションの名前空間) が、文書の最初の部分ではなく、図面 ml の参照の使用開始時に動的に配置されることが示されています。 However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
+> マークアップを確認するときは、a:blip タグで使用されている追加の名前空間に注目してください。 **Xlmns**を使用していることが document.xml に表示されます。名前空間 (主要なバリエーションの名前空間) は、document.xml パーツの先頭ではなく、バリエーション ml 参照の使用の開始時に動的に配置されます。 However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
 
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>追加の画像パーツと書式設定について理解する
@@ -782,7 +782,7 @@ SmartArt 図には 4 つの関連パーツがありますが、常に必要な�
 > [!TIP]
 > SmartArt layout1.xml ファイルは、マークアップをさらに削除できるが、そのための余計な時間を費やす価値がないファイルの良い例です (削除されるマークアップの量がパッケージ全体に対して非常に少ないためです)。マークアップで削除できる最後の行まで削除する場合、**dgm:sampData** タグとそのコンテンツを削除します。このサンプル データにより、SmartArt スタイル ギャラリーにおける図のサムネイル プレビューの表示が定義されます。ただし、それを省略した場合、既定のサンプル データが使用されます。
 
-Document .xml の SmartArt 図のマークアップには、レイアウト、データ、色、クイックスタイルパーツへのリレーションシップ ID 参照が含まれていることに注意してください。 これらのパーツおよびそれらのリレーションシップの定義を削除すると、その部分とそのリレーションシップの定義を削除する際には、ドキュメントの xml 内の参照を色とスタイルパーツに削除できますが、そのようなリレーションシップを削除した場合は、図をドキュメントに挿入するために必要ではないため、エラーが表示されません。 **Dgm: relIds**タグの文書内のこれらの参照を検索します。 この手順を実行するかどうかに関係なく、必要なレイアウトおよびデータパーツのリレーションシップ ID 参照を保持します。
+document.xml の SmartArt 図のマークアップには、レイアウト、データ、色、クイックスタイルパーツへのリレーションシップ ID 参照が含まれていることに注意してください。 これらのパーツおよびそれらのリレーションシップの定義を削除すると、document.xml 内の参照を色とスタイルパーツに削除することができますが、そのようなリレーションシップを削除する場合には、それらの部分を削除しても、そのリレーションシップを削除するのではなく、図をドキュメントに挿入する必要がないため、エラーが発生します。 これらの参照は、 **dgm: relIds**タグの document.xml で検索します。 この手順を実行するかどうかに関係なく、必要なレイアウトおよびデータパーツのリレーションシップ ID 参照を保持します。
 
 
 ### <a name="working-with-charts"></a>グラフを使用する

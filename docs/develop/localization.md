@@ -1,14 +1,14 @@
 ---
 title: Office アドインのローカライズ
 description: Office JavaScript API を使用して、ロケールを決定し、ホストアプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりすることができます。
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 72f6e7ad9c2095bffddb85be60c410963357f74c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608119"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159585"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -176,7 +176,7 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>表示または編集用の追加言語を使用できるように Office を構成する
 
-提供されているサンプル コードを実行するには、コンピューターで追加言語を使用するように Microsoft Office を構成し、メニューとコマンドの表示に使用される言語、編集と文章校正に使用される言語、またはその両方を切り替えることによって、アドインをテストできるようにする必要があります。
+提供されているサンプルコードを実行するには、追加の言語を使用するように Office を構成し、メニューやコマンドの表示に使用される言語を切り替えて、編集と校正、またはその両方を行い、アドインをテストできるようにします。
 
 Office Language Pack を使用して、追加言語をインストールできます。 言語パックの詳細と入手先については、「[Office 2013 の言語オプション](https://office.microsoft.com/language-packs/)」を参照してください。
 
@@ -195,7 +195,7 @@ Visual Studio 2019 Office アドインプロジェクトを作成する必要が
 
 3. プロジェクトに**WorldReadyAddIn**という名前を指定し、[**作成**] を選択します。
 
-4. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 Visual Studio で **.html**ファイルが開きます。
+4. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 Visual Studio で**Home.html**ファイルが開きます。
 
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>アドインに使用されるテキストのローカライズ

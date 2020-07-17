@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
 description: Excel JavaScript API を使用してパフォーマンスを最適化する
-ms.date: 04/22/2020
+ms.date: 07/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 193cbe8c8cd1a432c6567401ed645990cb93e5e9
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610355"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159095"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -138,17 +138,6 @@ Excel では、コード内で発生したのとほぼ同時に、アドイン�
 ### <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
 イベントを無効にすると、アドインのパフォーマンスが向上する可能性があります。 イベントを有効化および無効化する方法を示すコード サンプルは、「[イベントの操作](excel-add-ins-events.md#enable-and-disable-events)」の記事に記載されています。
-
-## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
-
-範囲内のすべてのセルを同じ値またはプロパティで更新する必要がある場合は、同じ値を繰り返し指定する 2 次元配列で行うと、更新が遅くなる可能性があります。このアプローチだと、範囲内のすべてのセルを Excel が反復しなければ、それぞれ個別に設定できないからです。 Excel には、範囲内のすべてのセルを同じ値またはプロパティで更新するより効率的な方法が備わっています。
-
-セルの範囲に同じ値、同じ形式または同次数式を適用する必要がある場合は、配列の値の代わりに 1 つの値を指定する方が効率的です。 そうすることで、パフォーマンスが大幅に向上します。 このアプローチが実際に動作していることを示すコード サンプルについては、「[コアの概念 - 範囲内のすべてのセルを更新](excel-add-ins-core-concepts.md#update-all-cells-in-a-range)」を参照してください。
-
-このアプローチが使える一般的なシナリオは、ワークシートの異なる列に異なる数値書式を設定する場合です。  この場合、列を通って反復し、各列の数値書式を単一の値で設定するだけです。 「[範囲内のすべてのセルを更新する](excel-add-ins-core-concepts.md#update-all-cells-in-a-range)」のコード サンプルにあるように、各列を範囲として扱います。
-
-> [!NOTE]
-> TypeScript を使用している場合は、2 次元配列に 1 つの値を設定できないことを示すコンパイル エラーが表示されます。  その値*は*プロパティを取得しているときは 2 次元配列なので、エラーは避けられません。TypeScript では、異なるセッター対ゲッターの型は許可されません。  しかし、簡単な回避策として、`as any` 接尾辞 (例: `range.values = "hello world" as any`) で値を設定する方法があります。
 
 ## <a name="importing-data-into-tables"></a>テーブルへのデータのインポート
 

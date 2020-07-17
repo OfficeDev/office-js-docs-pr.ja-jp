@@ -1,15 +1,15 @@
 ---
 title: Identity API の要件セット
 description: Id API の要件 Office アドインの情報を設定します。
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5bface00e0ffe89e7a403b251129867b334f7f69
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094380"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159298"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "45094380"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表は、Identity API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  iPad 上の Office<br>(Microsoft 365 サブスクリプションに接続)  |  Mac 上の Office<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
+|  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Identity Api プレビュー  | N/A | プレビュー<b>*</b> | 近日対応予定 | プレビュー<b>*</b> | Preview<b>* &#8224;</b> | Preview<b>* &#8224;</b>| 近日公開 | 近日公開 |
 

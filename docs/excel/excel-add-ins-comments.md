@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609777"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159431"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
@@ -175,7 +175,8 @@ Excel.run(function (context) {
 
 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用して、メンションを含むコメントを作成する必要があります。 1つ以上のメンションを含むを呼び出し、 `CommentCollection.add` `CommentRichContent` `ContentType.mention` パラメーターとしてを指定し `contentType` ます。 `content`文字列をテキストに挿入するには、文字列を書式設定する必要もあります。 メンションの形式は、 `<at id="{replyIndex}">{mentionName}</at>` です。
 
-> こと現時点では、メンションリンクのテキストとして、メンションの正確な名前のみを使用できます。 名前の短縮バージョンのサポートは、後で追加されます。
+> [!NOTE]
+> 現時点では、メンションリンクのテキストとして、メンションの正確な名前のみを使用できます。 名前の短縮バージョンのサポートは、後で追加されます。
 
 次の例は、1つのメンション付きのコメントを示しています。
 

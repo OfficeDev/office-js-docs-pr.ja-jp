@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: シングルサインオン (SSO) を使用するために、ASP.NET バックエンドで Office アドインを作成 (または変換) する方法に関するステップバイステップガイドです。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 71c5b6a90aa17ab08c1fe172be2181c9ec8650ef
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093722"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159613"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
@@ -428,7 +428,7 @@ ms.locfileid: "45093722"
 1. `TODO 1` を以下のように置き換えます。 このコードの注意点は次のとおりです。
 
     * このコードでは、Office ホストから得られるブートストラップ トークンで指定された対象ユーザーが web.config で指定された値と一致する必要があることを OWIN に指示します。
-    * Microsoft アカウントには、組織のテナント GUID とは異なる発行者 GUID があります。そのため、両方の種類のアカウントをサポートするために、発行者は検証されません。
+    * Microsoft アカウントは、組織のテナント GUID とは異なる発行者 GUID を持っているため、両方の種類のアカウントをサポートするために、発行者を検証しません。
     * `SaveSigninToken` を `true` に設定することで、OWIN は Office ホストからの生のブートストラップ トークンを保存するようになります。 これは、アドインが代理フローで Microsoft Graph へのアクセス トークンを取得するために必要になります。
     * OWIN ミドルウェアでは、スコープは検証されません。 `access_as_user` が含まれている必要があるブートストラップ トークンのスコープは、コントローラーで検証されます。
 
@@ -608,4 +608,4 @@ ms.locfileid: "45093722"
 
 1. F5 キーを押します。
 1. Office アプリケーションの [**ホーム**] リボンで、[**SSO ASP.NET**] グループの [**アドインの表示**] を選択して、タスク ウィンドウ アドインを開きます。
-1. [**OneDrive ファイル名の取得**] ボタンをクリックします。 Microsoft 365 の教育機関または職場のアカウントまたは Microsoft アカウントのいずれかを使用して Office にログインしており、SSO が正常に機能している場合は、OneDrive for Business の最初の10個のファイルとフォルダーの名前が作業ウィンドウに表示されます。 ログインしていない、または SSO をサポートしていないシナリオにいる場合、もしくは何らかの理由で SSO が機能していない場合には、ログインするように求められます。 ログインすると、ファイル名およびフォルダー名が表示されます。
+1. [**OneDrive ファイル名の取得**] ボタンをクリックします。 Microsoft 365 の教育機関または職場のアカウント、あるいは Microsoft アカウントを使用して Office にログインしている場合、SSO が正常に機能していると、OneDrive for Business の最初の10個のファイルとフォルダーの名前が作業ウィンドウに表示されます。 ログインしていない、または SSO をサポートしていないシナリオにいる場合、もしくは何らかの理由で SSO が機能していない場合には、ログインするように求められます。 ログインすると、ファイル名およびフォルダー名が表示されます。

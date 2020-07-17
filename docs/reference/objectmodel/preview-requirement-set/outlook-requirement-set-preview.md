@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 06/17/2020
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d91d1e16382a9ada71210657d6111f548c85ccfd
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094422"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159221"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -168,7 +168,7 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 
 すべてのカスタムプロパティを取得する新しい関数をオブジェクトに追加しまし `CustomProperties` た。
 
-**利用可能な**対象: Outlook on Windows (microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)、Outlook on Mac (microsoft 365 サブスクリプションに接続)、outlook on the Outlook on IOS、Outlook on iOS
+**利用可能な**対象: Outlook on Windows (microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)、Outlook on Mac (microsoft 365 サブスクリプションに接続)、outlook on the Outlook on iOS
 
 <br>
 

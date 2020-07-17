@@ -3,16 +3,16 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: a30f1a8219501a68e6f46f013ef46640a59fe4e9
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: c9d33823850925d5c05d72422262bf62f78b051e
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094233"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159424"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
-最も簡単な Office アドインは、XML マニフェストファイルと HTML ページで構成されています。XML マニフェストファイルには、アドインの名前、実行できる Office デスクトップアプリケーション、およびアドインの HTML ページの URL など、アドインの特性が記述されています。HTML ページは、ユーザーが Office クライアントアプリケーション内でアドインをインストールして実行するときに操作する web アプリに含まれています。Azure を含む任意の web ホスティングプラットフォームで Office アドインの web アプリをホストすることができます。
+最も簡単な Office アドインは、XML マニフェストファイルと HTML ページで構成されています。XML マニフェストファイルには、アドインの名前、実行できる Office デスクトップクライアント、アドインの HTML ページの URL など、アドインの特性が記述されています。HTML ページは、ユーザーが Office クライアントアプリケーション内でアドインをインストールして実行するときに操作する web アプリに含まれています。Azure を含む任意の web ホスティングプラットフォームで Office アドインの web アプリをホストすることができます。
 
 この記事では、アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのために[アドインをサイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)する方法について説明します。
 

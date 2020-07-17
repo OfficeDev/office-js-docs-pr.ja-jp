@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
-description: Office on the web で Office アドインをサイドロードしてテストをする
-ms.date: 07/07/2020
+description: サイドロードを使用して、office で office アドインをテストします。
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094121"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159291"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -25,7 +25,7 @@ ms.locfileid: "45094121"
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Office on the web で Office アドインをサイドロードする
 
-1. [Microsoft Office on the web](https://office.live.com/) を開きます。
+1. [Web 上の Office を](https://office.live.com/)開きます。
 
 2. [**オンラインアプリを今すぐ開始する**] で、 **Excel**、 **Word**、または**PowerPoint**を選択します。新しいドキュメントを開きます。
 

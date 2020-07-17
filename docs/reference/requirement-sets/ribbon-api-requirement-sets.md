@@ -1,15 +1,15 @@
 ---
 title: リボン API の要件セット
 description: 動的リボン Api をサポートしている Office プラットフォームとビルドを指定します。
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6a0e6af3a74b0b0402710fd66bac6c915aa4c18a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1d8f17d56b779fb1590daa82e3c391423c3bfc9a
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094282"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159193"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -19,9 +19,9 @@ ms.locfileid: "45094282"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、リボン API 要件セット、その要件セットをサポートする Office ホストアプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧を示します。
 
-|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降 (Windows)<br>(1 回限りの購入)   | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  iPad 上の Office<br>(Microsoft 365 サブスクリプションに接続)  |  Mac 上の Office\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
+|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降 (Windows)<br>(1 回限りの購入)   | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | バージョン 2002 (ビルド 12527.20264) 以降 | 16.38 以降 | N/A | 2020 年 2 月 | N/A|
+| RibbonApi 1.1  | 該当なし | 該当なし | バージョン 2002 (ビルド 12527.20264) 以降 | 16.38 以降 | 該当なし | 2020 年 2 月 | 該当なし|
 
 > **&#42;** プレビューフェーズでは、リボン API は Excel でのみサポートされており、Microsoft 365 サブスクリプションを必要とします。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://products.office.com/office-insider?tab=tab-1)」を参照してください。 ビルドが graduates の半期チャネルに対して実行されている場合、リボン API を含むプレビュー機能のサポートは、そのビルドに対して無効になっていることに注意してください。
 

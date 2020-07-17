@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 07/10/2020
 description: 作業ウィンドウを使用しない Excel カスタム関数をデバッグする方法について説明します。
 title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: c984c5a46f8418006fa64f167b0f5882b0cb8a17
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609334"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159515"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -31,7 +31,7 @@ On Mac:
 > [!NOTE]
 > 簡単にするために、この記事では、Visual Studio Code を使用した編集、タスクの実行、および場合によってはデバッグビューを使用するためのデバッグについて説明します。 別のエディターまたはコマンドラインツールを使用している場合は、この記事の最後にある[コマンドラインの手順](#commands-for-building-and-running-your-add-in)を参照してください。
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>要件
 
 デバッグを開始する前に、 [Office アドイン用の [ごみ箱] ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、カスタム関数プロジェクトを作成する必要があります。 カスタム関数プロジェクトを作成する方法のガイダンスについては、「[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)」を参照してください。
 
@@ -56,7 +56,7 @@ VS コードを使用して、デスクトップ上の Office Excel で UI を�
 
 ### <a name="start-debugging"></a>デバッグを開始する
 
-1. VS Code で、ソースコードスクリプトファイル (**node.js**または**関数 ts**) を開きます。
+1. VS Code で、ソースコードスクリプトファイル (**functions.js**または**関数 ts**) を開きます。
 2. カスタム関数のソースコードに[ブレークポイントを設定](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)します。
 3. Excel ブックで、カスタム関数を使用する数式を入力します。
 
@@ -94,7 +94,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel で UI 
 
 
 ### <a name="set-breakpoints"></a>ブレークポイントを設定する
-1. VS Code で、ソースコードスクリプトファイル (**node.js**または**関数 ts**) を開きます。
+1. VS Code で、ソースコードスクリプトファイル (**functions.js**または**関数 ts**) を開きます。
 2. カスタム関数のソースコードに[ブレークポイントを設定](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)します。
 3. Excel ブックで、カスタム関数を使用する数式を入力します。
 
@@ -110,7 +110,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel で UI 
 
 ### <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. [Microsoft Office on the web](https://office.live.com/) を開きます。
+1. [Web 上の Office を](https://office.live.com/)開きます。
 2. 新しい Excel ブックを開きます。
 3. リボンの [**挿入**] タブを開き、 **[アドイン] セクションで**、[ **Office アドイン**] を選択します。
 4. [ **Office アドイン**] ダイアログボックスで、[**個人用アドイン**] タブ、[**個人用アドインの管理**]、[**個人用アドインのアップロード**] の順に選択します。
@@ -127,7 +127,7 @@ VS コードを使用して、Microsoft Edge ブラウザー上の Excel で UI 
 ### <a name="start-debugging"></a>デバッグを開始する
 
 1. 開発者ツールをブラウザーで開きます。 Chrome およびほとんどのブラウザー F12 では、開発者ツールが開きます。
-2. 開発者ツールで、 **Cmd + p**または**Ctrl + p** (**node.js**または**functions**) を使用してソースコードスクリプトファイルを開きます。
+2. 開発者ツールで、 **Cmd + p**または**Ctrl + p** (**functions.js**または**functions**) を使用してソースコードスクリプトファイルを開きます。
 3. カスタム関数のソースコードに[ブレークポイントを設定](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)します。 
 
 コードを変更する必要がある場合は、VS コードで編集を行って変更を保存することができます。 ブラウザーを更新して、変更が読み込まれたことを確認します。
@@ -150,7 +150,7 @@ VS コードを使用していない場合は、コマンドライン (bash、Po
     Excel on the web では、アドインをサイドロードする必要もあります。 「[サイドロード](#sideload-your-add-in)を使用してアドインをサイドロードする」の手順に従います。 その後、次のセクションに進み、デバッグを開始します。
     
 4. 開発者ツールをブラウザーで開きます。 Chrome およびほとんどのブラウザー F12 では、開発者ツールが開きます。
-5. [開発者ツール] で、ソースコードスクリプトファイル (**node.js**または**関数 ts**) を開きます。 カスタム関数のコードは、ファイルの末尾付近に配置されている場合があります。
+5. [開発者ツール] で、ソースコードスクリプトファイル (**functions.js**または**関数 ts**) を開きます。 カスタム関数のコードは、ファイルの末尾付近に配置されている場合があります。
 6. カスタム関数のソースコードで、コードの行を選択してブレークポイントを適用します。
 
 コードを変更する必要がある場合は、Visual Studio で編集を行って変更を保存することができます。 ブラウザーを更新して、変更が読み込まれたことを確認します。
