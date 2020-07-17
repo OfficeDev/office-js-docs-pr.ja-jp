@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
-ms.date: 06/20/2019
+ms.date: 07/13/2020
 localization_priority: Priority
-ms.openlocfilehash: c9e72f7408af6b25b2db49939d02b5c96bd21ce7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609721"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159417"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API を使用した基本的なプログラミングの概念
 
@@ -211,35 +211,6 @@ range.values = 'Due Date';
 範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。
 
 システムの制限の詳細については、「[Excel のデータ転送の制限](../develop/common-coding-issues.md#excel-data-transfer-limits)」を参照してください。
-
-## <a name="update-all-cells-in-a-range"></a>範囲内のすべてのセルの更新
-
-範囲内のすべてのセルに同じ更新 (すべてのセルに同じ値を入力する、同じ数値書式を設定する、同じ数式ですべてのセルにデータを入力するなど) を適用するには、`range` オブジェクトの該当するプロパティを必要な 1 つの値に設定します。
-
-次の例では、20 個のセルを含む範囲を取得し、数値書式を設定してその範囲のすべてのセルに **3/11/2015** という値を設定します。
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:A20';
-    var worksheet = context.workbook.worksheets.getItem(sheetName);
-
-    var range = worksheet.getRange(rangeAddress);
-    range.numberFormat = 'm/d/yyyy';
-    range.values = '3/11/2015';
-    range.load('text');
-
-    return context.sync()
-      .then(function () {
-        console.log(range.text);
-    });
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ## <a name="handle-errors"></a>エラーを処理する
 
