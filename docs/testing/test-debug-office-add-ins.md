@@ -1,14 +1,14 @@
 ---
 title: Office アドインのテストとデバッグ
 description: Office アドインのテストとデバッグを行う方法について説明します。
-ms.date: 06/20/2019
+ms.date: 06/17/2020
 localization_priority: Priority
-ms.openlocfilehash: 5eed657382f90a6248a464b90835e01eabfbfc85
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611127"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159249"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
@@ -37,6 +37,8 @@ Office アドインをデバッグする手順も、プラットフォームに�
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
 
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
+
+- [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 
 ## <a name="validate-an-office-add-in-manifest"></a>Office アドイン マニフェストの検証
 
