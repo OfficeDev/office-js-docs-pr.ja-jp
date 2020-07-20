@@ -502,6 +502,8 @@
                   href: reference/manifest/webapplicationinfo.md
         - name: エラー コード
           href: reference/javascript-api-for-office-error-codes.md
+        - name: サポートされていないウィンドウ オブジェクト
+          href: reference/window-objects-unsupported-in-add-ins.md
     - name: リソース
       href: resources/resources-links-help.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
