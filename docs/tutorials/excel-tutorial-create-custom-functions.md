@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094268"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159144"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -26,7 +26,7 @@ ms.locfileid: "45094268"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上の Excel (バージョン1904以降、Microsoft 365 サブスクリプションに接続されている) または web
+* Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます! 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、ストリーミング データであるカスタム関数を作成しました。 次に、共有ランタイムを使用するようにプロジェクトを変更することで、作業ウィンドウの操作が容易になります。 次の記事の手順を実行します。
+おめでとうございます! 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、ストリーミング データであるカスタム関数を作成しました。 次に、共有ランタイムを使用するようにプロジェクトを変更することで、関数が作業ウィンドウを操作しやすくなります。 以下の記事の手順に従ってください。
 
 > [!div class="nextstepaction"]
 > [共有ランタイムを使用するようにアドインを構成する](../excel/configure-your-add-in-to-use-a-shared-runtime.md)

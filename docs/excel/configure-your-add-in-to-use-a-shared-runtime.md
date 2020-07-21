@@ -1,21 +1,21 @@
 ---
 ms.date: 05/17/2020
-title: ブラウザーランタイムを共有するように Excel アドインを構成する
+title: ブラウザーのランタイムを共有するように Excel アドインを構成する
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 8c16642f5a945e6156fcfd93c8b4cc088b616102
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609346"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159536"
 ---
-# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有された JavaScript ランタイムを使用するように Excel アドインを構成する
+# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Excel アドインを構成する
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Windows または Mac で Excel を実行する場合、アドインは、リボン ボタン、カスタム関数、作業ウィンドウのコードを別の JavaScript ランタイム環境で実行します。 これにより、グローバルデータを簡単に共有することができず、カスタム関数からすべての CORS 機能にアクセスできないなどの制限が生じます。
+Windows または Mac で Excel を実行する場合、アドインは、リボン ボタン、カスタム関数、作業ウィンドウのコードを別の JavaScript ランタイム環境で実行します。 これにより、グローバル データを簡単に共有できない、カスタム関数からすべての CORS 機能にアクセスできないなどの制限が発生します。
 
 ただし、Excel アドインを構成すれば、共有の JavaScript ランタイムでコードを共有できるようになります。 これにより、アドイン間での調整が容易になり、アドインのすべての部分から DOM や CORS にアクセスできます。 また、ドキュメントを開いているときにコードを実行したり、作業ウィンドウが閉じた状態でコードを実行したりできます。 共有ランタイムが使用できるようにアドインを構成するには、この記事の手順に従います。
 
@@ -90,7 +90,7 @@ yo office
    <bt:Urls>
    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
    ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/dist/taskpane.html"/>
    ...
    ```
 
@@ -104,7 +104,7 @@ yo office
 
 `Runtime` 要素を追加するときに、有効期間も `long` または `short` の値で指定します。 この値を `long` に設定すると、ドキュメントを開くとアドインを起動したり、作業ウィンドウを閉じた後にコードを継続して実行したり、カスタム関数から CORS および DOM を使用したりできます。
 
->!こと既定の有効期間値はです `short` が、Excel アドインで使用することをお勧め `long` します。この例でランタイムをに設定した場合 `short` 、Excel アドインは、いずれかのリボンボタンが押されたときに開始しますが、リボンハンドラーの実行が終了すると、シャットダウンする可能性があります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
+>![注意] 既定の有効期間の値は `short` ですが、Excel アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときに Excel アドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
 
 ```xml
 <Runtimes>
@@ -114,7 +114,7 @@ yo office
 
 ## <a name="multiple-task-panes"></a>複数の作業ウィンドウ
 
-共有ランタイムを使用することを計画している場合は、複数の作業ウィンドウを使用するようにアドインをデザインしないでください。 共有ランタイムは、1つの作業ウィンドウの使用のみをサポートしています。 `<TaskpaneID>` のない作業ウィンドウは、別の作業ウィンドウとして扱われますのでご注意ください。
+共有ランタイムを使用する予定がある場合は、複数の作業ウィンドウを使用するようにアドインを設計しないでください。 共有ランタイムは、1 つの作業ウィンドウのみサポートします。 `<TaskpaneID>` のない作業ウィンドウは、別の作業ウィンドウとして扱われますのでご注意ください。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -123,4 +123,4 @@ yo office
 
 ## <a name="see-also"></a>関連項目
 
-- [概要: 共有 JavaScript ランタイムでアドインコードを実行する](custom-functions-shared-overview.md)
+- [概要: 共有 JavaScript ランタイムでアドイン コードを実行する](custom-functions-shared-overview.md)
