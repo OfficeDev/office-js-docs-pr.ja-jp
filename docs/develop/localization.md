@@ -1,14 +1,14 @@
 ---
 title: Office アドインのローカライズ
 description: Office JavaScript API を使用して、ロケールを決定し、ホストアプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりすることができます。
-ms.date: 07/10/2020
+ms.date: 07/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: a879f61f2257c54a4870e03740b7409a20d4772b
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159585"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228347"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -178,7 +178,7 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 
 提供されているサンプルコードを実行するには、追加の言語を使用するように Office を構成し、メニューやコマンドの表示に使用される言語を切り替えて、編集と校正、またはその両方を行い、アドインをテストできるようにします。
 
-Office Language Pack を使用して、追加言語をインストールできます。 言語パックの詳細と入手先については、「[Office 2013 の言語オプション](https://office.microsoft.com/language-packs/)」を参照してください。
+Office Language Pack を使用して、追加言語をインストールできます。 言語パックの詳細と入手先については、「[Office 2013 の言語オプション](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f)」を参照してください。
 
 Language Accessory Pack をインストールしたら、UI の表示、ドキュメント コンテンツの編集、またはその両方にインストールされた言語を使用するように Office を構成できます。 この記事の例では、言語パック (スペイン語) が適用されている Office のインストールを使用します。
 

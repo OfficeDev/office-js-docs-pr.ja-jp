@@ -3,20 +3,20 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: シングルサインオン (SSO) を使用するために、ASP.NET バックエンドで Office アドインを作成 (または変換) する方法に関するステップバイステップガイドです。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159613"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228361"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
 
 ユーザーが Office にサインインしたとき、アドインは同じ資格情報を使用し、再度のサインインを要求することなく、複数のアプリケーションへのアクセスを許可することができます。 概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
-この記事では、Node.js と Express を使用して作成したアドインで、シングル サインオン (SSO) を有効化するプロセスについて手順を追って説明します。
+この記事では、ASP.NET を使用して構築されたアドインでシングルサインオン (SSO) を有効にするプロセスについて説明します。
 
 > [!NOTE]
-> ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)」を参照してください。
+> Node.js ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -54,7 +54,7 @@ ms.locfileid: "45159613"
     * [**リダイレクト URI**] セクションで、ドロップダウンで [**Web**] が選択されていることを確認し、URI を [` https://localhost:44355/AzureADAuth/Authorize`] に設定します。
     * **[登録]** を選択します。
 
-1. **Office-Add-in-NodeJS-SSO** ページで、**アプリケーション (クライアント) ID** と**ディレクトリ (テナント) ID** の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
+1. [ **Office アドイン-SSO** ] ページで、**アプリケーション (クライアント) id**と**ディレクトリ (テナント) id**の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
 
     > [!NOTE]
     > この ID は、Office ホスト アプリケーション (たとえば、PowerPoint、Word、Excel) などの別のアプリケーションが、このアプリケーションへの承認されたアクセスを求めるときの「対象ユーザー」値になります。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
@@ -300,7 +300,7 @@ ms.locfileid: "45159613"
         break;
     ```
 
-1. `TODO 3`を以下のコードに置き換えます。 その他のエラーが発生した場合、アドインはフォールバック認証システムに分岐します。 これらのエラーの詳細については、「[Office アドインの SSO のトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)」を参照してください。このアドインでは、フォールバック システムはユーザーが既にログインしている場合でもユーザーのサインインを要求するダイアログを開き、msal.js および暗黙的フローを使用して Microsoft Graph へのアクセス トークンを取得します。
+1. `TODO 3`を以下のコードに置き換えます。 その他のエラーが発生した場合、アドインはフォールバック認証システムに分岐します。 これらのエラーの詳細については、「 [Office アドインでの SSO のトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)」を参照してください。このアドインでは、ユーザーが既にサインインしている場合でも、ユーザーにサインインを求めるダイアログがフォールバックシステムによって開かれます。
 
     ```javascript
     default:
