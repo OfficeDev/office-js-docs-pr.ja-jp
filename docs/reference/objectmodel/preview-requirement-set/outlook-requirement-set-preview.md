@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 07/10/2020
+ms.date: 07/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159221"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530479"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -221,6 +221,40 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 新規 `ComposeType` 作成モードで使用可能な新しい列挙を追加しました。
 
 **利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、[構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="notification-messages-with-actions"></a>アクションを含む通知メッセージ
+
+この機能を使用すると、既定の**アラーム**処理に加えて、カスタムアクションを含む通知メッセージをアドインに含めることができます。
+
+#### <a name="officenotificationmessagedetailsactions"></a>[Office の NotificationMessageDetails。アクション](/javascript/api/outlook/office.notificationmessagedetails#actions)
+
+`InsightMessage`カスタムアクションを使用して通知を追加できるようにする新しいプロパティを追加しました。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+
+#### <a name="officenotificationmessageaction"></a>[Office NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
+
+通知のカスタムアクションを定義する新しいオブジェクトを追加しました `InsightMessage` 。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+
+#### <a name="officemailboxenumsactiontype"></a>[MailboxEnums](/javascript/api/outlook/office.mailboxenums.actiontype)
+
+新しい列挙を追加 `ActionType` しました。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+
+#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[InsightMessage を MailboxEnums します。](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+
+Enum に新しい型を追加しました `InsightMessage` `ItemNotificationMessageType` 。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
 
 <br>
 

@@ -1,16 +1,16 @@
 ---
-title: Visual Studio Code の Microsoft Office アドインデバッガーの拡張機能
+title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 description: Office アドインをデバッグするには、Visual Studio Code extension Microsoft Office アドインデバッガーを使用します。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611212"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530472"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code の Microsoft Office アドインデバッガーの拡張機能
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
 Visual Studio コード用の Microsoft Office アドインデバッガー拡張機能を使用すると、エッジランタイムに対して Office アドインをデバッグできます。
 
@@ -31,7 +31,8 @@ Visual Studio コード用の Microsoft Office アドインデバッガー拡張
 
 1. アドインプロジェクトを作成する必要がある場合は、 [Yo Office ジェネレーターを使用して](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator)プロジェクトを作成します。 コマンドライン内のプロンプトに従って、プロジェクトを設定します。 必要に応じて、任意の言語やプロジェクトの種類を選択できます。
 
-> !ことプロジェクトが既に存在する場合は、手順1をスキップし、手順2に進みます。
+> [!NOTE]
+> プロジェクトが既に存在する場合は、手順1をスキップし、手順2に進みます。
 
 2. 管理者としてコマンドプロンプトを開きます。
    ![Windows 10 の "管理者として実行" を含むコマンドプロンプトオプション](../images/run-as-administrator-vs-code.jpg)
@@ -51,7 +52,7 @@ Visual Studio コードが開いたら、プロジェクトフォルダーに手
 
 5. VS コード内で、 **CTRL + SHIFT + X**を選択して [拡張バー] を開きます。 「Microsoft Office アドインデバッガー」拡張機能を検索してインストールします。
 
-6. プロジェクトの vscode フォルダーで、**起動. json**ファイルを開きます。 次のコードをセクションに追加し `configurations` ます。
+6. プロジェクトの vscode フォルダーで、ファイルの**launch.js**を開きます。 次のコードをセクションに追加し `configurations` ます。
 
 ```JSON
 {

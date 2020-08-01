@@ -3,12 +3,12 @@ title: シングル サインオン トークンを使用してユーザーを�
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093981"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530465"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する (プレビュー)
 
@@ -21,8 +21,6 @@ ms.locfileid: "45093981"
 
 Office アドインの SSO の概要については、[「Office アドインのシングル サインオンを有効化する」](../develop/sso-in-office-add-ins.md) および[「Office アドインの Microsoft Graph への承認」](../develop/authorize-to-microsoft-graph.md)を参照してください。
 
-> [!NOTE]
-> SSO を使用するには、アドインのスタートアップ HTML ページの https://appsforoffice.microsoft.com/lib/beta/hosted/office.js から Office JavaScript ライブラリのベータ版を読み込む必要があります。 ただし、運用環境のアドインではベータ版の Api**を使用しないでください**。
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Microsoft 365 テナントで先進認証を有効にする
 
@@ -34,7 +32,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>アドインのサイドロード時に同意する
 
-SSO を使用するアドインを AppSource から取得するときに、ストア UI のダイアログが表示され、ユーザーに対して要求される Graph のアクセス許可の同意を求めます。 ただし、アドインを開発する際には事前に同意を提示する必要があります。 詳細については、「[アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
+SSO を使用するアドインが AppSource から取得される場合、Microsoft Graph のスコープが含まれている場合は、同意を得るためのバックアップの認証方法が必要です。 アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「[アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
 
 ## <a name="update-the-add-in-manifest"></a>アドイン マニフェストを更新する
 

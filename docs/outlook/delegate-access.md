@@ -1,21 +1,21 @@
 ---
 title: Outlook アドインで代理人アクセスのシナリオを有効にする
 description: 代理人アクセスについて簡単に説明し、アドインサポートを構成する方法について説明します。
-ms.date: 06/30/2020
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9cf4d15e81e4018d819f8f47a0729a25944c0fb5
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006417"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530451"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Outlook アドインで代理人アクセスのシナリオを有効にする
 
 メールボックスの所有者は代理人アクセス機能を使用して、[他のユーザーが自分のメールと予定表を管理できるよう](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)にすることができます。 この記事では、Office JavaScript API でサポートされている代理人アクセス許可を指定し、Outlook アドインで代理人アクセスのシナリオを有効にする方法について説明します。
 
 > [!IMPORTANT]
-> 現在、Outlook on Mac、Android、iOS では、代理人アクセスは利用できません。 この機能は、今後利用可能になる可能性があります。
+> 現在、Outlook on Mac、Android、iOS では、代理人アクセスは利用できません。 また、この機能は、web 上の Outlook の[グループ共有メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes)では現在使用できません。 この機能は、今後利用可能になる可能性があります。
 >
 > この機能のサポートは、要件セット1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
@@ -23,7 +23,7 @@ ms.locfileid: "45006417"
 
 次の表では、Office JavaScript API でサポートされている代理人アクセス許可について説明します。
 
-|Permission|値|説明|
+|アクセス許可|値|説明|
 |---|---:|---|
 |Read|1 (000001)|アイテムを読み取ることができます。|
 |書き込み|2 (000010)|アイテムを作成できます。|

@@ -3,12 +3,12 @@ title: Office アドインでのユーザー エラーのトラブルシュー�
 description: Office アドインでのユーザーエラーのトラブルシューティング方法について説明します。
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159186"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530486"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -104,7 +104,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 リボン ボタンのアイコンのファイル名やメニュー アイテムのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
 
 #### <a name="for-windows"></a>Windows の場合:
-フォルダー `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` の内容を削除する
+
+フォルダーの内容を削除 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` し、フォルダーの内容を削除し `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` ます (存在する場合)。
 
 #### <a name="for-mac"></a>Mac の場合: 
 
@@ -143,6 +144,6 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
 - [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Visual Studio Code の Microsoft Office アドインデバッガーの拡張機能](debug-with-vs-extension.md)
+- [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 - [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)

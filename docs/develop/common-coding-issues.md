@@ -1,14 +1,14 @@
 ---
 title: 一般的な問題と予期しないプラットフォームの動作に関するコーディングガイダンス
 description: 開発者がよく遭遇する Office JavaScript API プラットフォームの問題の一覧です。
-ms.date: 05/21/2020
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d67a069cd2b752be3fca8ce094eaacfd0db08c18
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8f604acaee308c3bd04e181719b091eb948d63ee
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608384"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530458"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>一般的な問題と予期しないプラットフォームの動作に関するコーディングガイダンス
 
@@ -142,6 +142,10 @@ Excel 用のアドインは、一度に1つのブックを操作することを�
 
 > [!NOTE]
 > これは、Windows または Mac で開いている複数の Excel ブックにのみ適用されます。
+
+### <a name="coauthoring"></a>共同編集
+
+共同編集環境でイベントと共に使用するパターンについては、「 [Excel アドインの共同編集](../excel/co-authoring-in-excel-add-ins.md)」を参照してください。 この記事では、など、特定の Api を使用する場合のマージの競合の可能性についても説明し [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) ます。
 
 ## <a name="see-also"></a>関連項目
 
