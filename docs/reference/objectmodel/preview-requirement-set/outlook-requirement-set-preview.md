@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 07/22/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530479"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547529"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -29,6 +29,18 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 ## <a name="features-in-preview"></a>プレビューの機能
 
 次の機能はプレビュー段階です。
+
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Information Rights Management (IRM) で保護されたアイテムでのアドインのアクティブ化
+
+これで、IRM で保護されたアイテムでアドインをアクティブ化できるようになります。 この機能を有効にするには、テナント管理者が `OBJMODEL` Office の [プログラムに**よるアクセスを許可**する] オプションを設定して使用権限を有効にする必要があります。 詳細については[、「使用権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions)」を参照してください。
+
+**利用可能**: Windows on Windows、build 13120.1000 (Microsoft 365 サブスクリプションに接続)
+
+<br>
+
+---
+
+---
 
 ### <a name="additional-calendar-properties"></a>その他の予定表プロパティ
 

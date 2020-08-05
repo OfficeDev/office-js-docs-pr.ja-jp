@@ -1,18 +1,18 @@
 ---
 title: 正規表現アクティブ化ルールを使用してアドインを表示する
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
-ms.date: 10/31/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b697f1b0a4d20254986a7aa10a5cc7f25dbdd887
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605242"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547522"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
-メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは閲覧モードでのみアクティブになります。Outlook ではユーザーがアイテムを作成しているときにはコンテキスト アドインはアクティブになりません。 Outlook がアドインをアクティブにしない他のシナリオもあります。たとえば、アイテムが Information Rights Management (IRM) で保護されている場合です。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
+メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは閲覧モードでのみアクティブになります。Outlook ではユーザーがアイテムを作成しているときにはコンテキスト アドインはアクティブになりません。 Outlook が、デジタル署名されたアイテムなどのアドインをアクティブにしないシナリオもあります。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
 
 アドイン XML マニフェストでは、[ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ルールまたは [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールの一部として正規表現を指定することができます。 ルールは [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) 拡張点で指定されます。
 

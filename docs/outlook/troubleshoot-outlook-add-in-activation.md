@@ -1,14 +1,14 @@
 ---
 title: Outlook コンテキスト アドインのアクティブ化のトラブルシューティング
 description: アドインが期待どおりにアクティブにならない場合は、考えられる理由について、次の点を調査してください。
-ms.date: 05/27/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e9eba8abd1207c0c521fc87e310325529c9f24ac
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611632"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547543"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
@@ -74,7 +74,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 メール アイテムが上記の種類のいずれかでなくても、アイテムが Exchange 2013 以降のバージョンの Exchange Server で配信されたものでない場合、そのアイテムでは、送信者の SMTP アドレスなどの既知のエンティティおよびプロパティが識別できません。これらのエンティティやプロパティに依存するアクティブ化ルールはどれも条件が満たされず、そのアドインはアクティブ化されません。
 
-アドインが新規作成アドインであり、ユーザーがメッセージや会議出席依頼を作成するときにアクティブ化されるものである場合、そのアイテムが IRM によって保護されていないことを確認してください。
+アドインが新規作成アドインであり、ユーザーがメッセージや会議出席依頼を作成するときにアクティブ化されるものである場合、そのアイテムが IRM によって保護されていないことを確認してください。 ただし、Windows の Outlook ビルド13120.1000 以降では、IRM で保護されたアイテムでアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、「 [Information Rights Management (IRM) で保護されたアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>アドイン マニフェストが適切にインストールされているか? また Outlook にキャッシュ コピーがあるか?
 
