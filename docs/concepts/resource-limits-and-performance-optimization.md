@@ -1,14 +1,14 @@
 ---
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: CPU とメモリを含む、Office アドインプラットフォームのリソースの制限について説明します。
-ms.date: 04/09/2020
+ms.date: 07/13/2020
 localization_priority: Normal
-ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a689f52e7f92b31cc8d6e912f73e19137233ae12
+ms.sourcegitcommit: 0b95e458f76cdfbd99dbcdbe16a0508af2cd9cd7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608007"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46563812"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -80,8 +80,8 @@ Office には、Office アドインでのリソースの使用に関する問題
 |7 |アドインのマニフェストが正常にダウンロードされました||Office アドインのマニフェストがホスト アプリケーションによって正常に読み込まれ、読み取られました。|
 |8 |アドインのマニフェストがダウンロードされませんでした|重大|ホスト アプリケーションは Office アドインのマニフェスト ファイルを、SharePoint カタログ、コーポレート カタログ、AppSource のいずれからも読み込めませんでした。|
 |9 |アドインのマークアップを解析できませんでした|重大|ホスト アプリケーションは Office アドインのマニフェストを読み込みましたが、アプリの HTML マークアップを読み取れませんでした。|
-|10  |アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
-|約|アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
+|10 |アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
+|15 |アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
 |18 |アドインは正常に終了しました||ホスト アプリケーションによって Office アドインが正常に閉じられました。|
 |年|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
 |1280|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
@@ -93,11 +93,9 @@ Office には、Office アドインでのリソースの使用に関する問題
 
 CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性に対するリソース制限は、リッチ クライアント上で実行される Office アドインにのみ適用されますが、サポートするすべてのクライアントおよびデバイス上でアドインが十分なパフォーマンスを発揮するためには、これらのリソース使用量およびバッテリーの使用量を最適化することが重要になります。アドインで長時間実行される処理があったり、大規模なデータ セットを処理したりする場合は、最適化が特に重要です。ここでは、CPU 使用率の高い操作やデータを大量に処理する操作を小さなチャンクに分割して、アドインで過度にリソースが消費されることを回避し、ホスト アプリケーションの応答性が保たれるようにするためのテクニックをいくつか紹介します。
 
-- 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 
+- 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 この操作を行うには、グローバルオブジェクトの[setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)メソッドを使用して、入力と出力の時間を制限します。 It also handles the data in defined chunks instead of randomly unbounded data. 別の方法として、 [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)を使用して約束を処理する方法があります。 
 
-   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-
-- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「[ウェブ ワーカーの基本](https://www.html5rocks.com/en/tutorials/workers/basics/)」を参照してください。Web Workers API の詳細については、「[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
+- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「[ウェブ ワーカーの基本](https://www.html5rocks.com/tutorials/workers/basics/)」を参照してください。Web Workers API の詳細については、「[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
 
 - アドインで CPU 使用率の高いアルゴリズムを使用しているが、データの入出力を小さなセットに分割できる場合は、Web サービスの作成を検討します。データを Web サービスに渡して CPU の負荷をオフロードし、非同期コールバックを待機します。
 
