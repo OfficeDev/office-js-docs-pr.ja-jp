@@ -1,21 +1,22 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: シングルサインオン (SSO) を使用するために、ASP.NET バックエンドで Office アドインを作成 (または変換) する方法に関するステップバイステップガイドです。
-ms.date: 12/04/2019
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
-ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
+ms.openlocfilehash: 8627c2a3d54d1c45672f3af1336e3c2b891ac055
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "45228361"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573183"
 ---
-# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する (プレビュー)
+# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
 ユーザーが Office にサインインしたとき、アドインは同じ資格情報を使用し、再度のサインインを要求することなく、複数のアプリケーションへのアクセスを許可することができます。 概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
 この記事では、ASP.NET を使用して構築されたアドインでシングルサインオン (SSO) を有効にするプロセスについて説明します。
 
 > [!NOTE]
+
 > Node.js ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
@@ -88,6 +89,7 @@ ms.locfileid: "45228361"
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     ID ごとに、次の手順を実行します。
@@ -192,7 +194,7 @@ ms.locfileid: "45228361"
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -211,7 +213,7 @@ ms.locfileid: "45228361"
 
     * `getAccessToken` は、Azure AD からブートストラップ トークンを取得し、アドインに戻るように Office に指示します。
     * `allowSignInPrompt` は、ユーザーがまだ Office にサインインしていない場合、ユーザーにサインインするように求めるように Office に指示します。
-    * `forMSGraphAccess` は、アドインが (ブートストラップ トークンをユーザー ID トークンとして使用するだけでなく) Microsoft Graph へのアクセス トークンのブートストラップ トークンを交換することを Office に通知します。 このオプションを設定すると、ユーザーのテナント管理者がアドインの同意を与えていない場合、Office はブートストラップ トークンの取得プロセスをキャンセルすることができます (そしてエラー コード 13012 が返されます)。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。 `forMSGraphAccess` が使用されず、管理者が同意を与えていない場合は、ブートストラップ トークンが返されますが、on-behalf-of フローと交換しようとするとエラーになります。 したがって、`forMSGraphAccess` オプションを使用すると、アドインがフォールバック システムにすばやく分岐できます。
+    * `forMSGraphAccess` は、アドインが (ブートストラップ トークンをユーザー ID トークンとして使用するだけでなく) Microsoft Graph へのアクセス トークンのブートストラップ トークンを交換することを Office に通知します。 このオプションを設定すると、ユーザーのテナント管理者がアドインの同意を与えていない場合、Office はブートストラップ トークンの取得プロセスをキャンセルすることができます (そしてエラー コード 13012 が返されます)。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。 が使用されておらず、管理者が同意を付与していない場合は、 `forMSGraphAccess` ブートストラップトークンが返されますが、このトークンを送信しようとすると、エラーが発生します。 したがって、`forMSGraphAccess` オプションを使用すると、アドインがフォールバック システムにすばやく分岐できます。
     * 後の手順で `getData` 関数を作成します。
     * `/api/values` パラメーターは、トークンを交換したり、Microsoft Graph を呼び出すためにアクセス トークンを使用したりする、サーバー側コントローラーの URL です。
 
@@ -256,7 +258,7 @@ ms.locfileid: "45228361"
 
 ### <a name="handle-client-side-errors"></a>クライアント側のエラーを処理する
 
-1. `getData`関数の下に、次の関数を追加します。 `error.code`は数値であり、通常は 13xxx の範囲にあることを注意してください。
+1. `getData` 関数の下に、次の関数を追加します。 `error.code`は数値であり、通常は 13xxx の範囲にあることを注意してください。
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -325,14 +327,14 @@ ms.locfileid: "45228361"
     }
     ```
 
-1. `TODO 4`を以下のように置き換えます。 このコードについては、MFA などが存在する前に ASP.NET エラー クラスが作成されたことに注意してください。 第 2 認証要素に対する要求をサーバー側の論理が処理する方法の副作用として、クライアントに送信されるサーバー側のエラーは **Message** プロパティがありますが、**ExceptionMessage** プロパティはありません。 ただし、他のすべてのエラーには **ExceptionMessage** プロパティがあるため、クライアント側のコードは両方の応答を解析する必要があります。 どちらか一方の変数が未定義になります。
+1. `TODO 4` を以下のように置き換えます。 このコードについては、MFA などが存在する前に ASP.NET エラー クラスが作成されたことに注意してください。 第 2 認証要素に対する要求をサーバー側の論理が処理する方法の副作用として、クライアントに送信されるサーバー側のエラーは **Message** プロパティがありますが、**ExceptionMessage** プロパティはありません。 ただし、他のすべてのエラーには **ExceptionMessage** プロパティがあるため、クライアント側のコードは両方の応答を解析する必要があります。 どちらか一方の変数が未定義になります。
 
     ```javascript
     var message = JSON.parse(result.responseText).Message;
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
-1. `TODO 5`を以下のように置き換えます。 Microsoft Graph が認証の追加形式を必要とする場合、エラー AADSTS50076 が送信されます。 これには、**Message.Claims** プロパティの追加要件に関する情報が含まれます。 これを処理するために、コードはブートストラップ トークンの取得を 2 回試行しますが、今回は `authChallenge` オプションの値として追加要素の要求が含まれます。これにより、Azure AD は、必要なすべての形式の認証をユーザーに要求します。
+1. `TODO 5` を以下のように置き換えます。 Microsoft Graph が認証の追加形式を必要とする場合、エラー AADSTS50076 が送信されます。 これには、**Message.Claims** プロパティの追加要件に関する情報が含まれます。 これを処理するために、コードはブートストラップ トークンの取得を 2 回試行しますが、今回は `authChallenge` オプションの値として追加要素の要求が含まれます。これにより、Azure AD は、必要なすべての形式の認証をユーザーに要求します。
 
     ```javascript
     if (message) {
@@ -345,7 +347,7 @@ ms.locfileid: "45228361"
     }
     ```
 
-1. `TODO 6`を以下のように置き換えます。
+1. `TODO 6` を以下のように置き換えます。
 
     ```javascript
     if (exceptionMessage) {
@@ -356,7 +358,7 @@ ms.locfileid: "45228361"
     }
     ```
 
-1. `TODO 7`を以下のように置き換えます。 まれにブートストラップ トークンが Office の検証時に期限切れにならず、交換のために Azure AD に送信されるまでの間に期限切れになることがあることに注意してください。 Azure AD はエラー AADSTS500133 で応答します。 この場合、コードは SSO API を呼び戻します (ただし、1 回のみ)。 今回は、Office が期限切れになっていない新しいブートストラップ トークンを返します。
+1. `TODO 7` を以下のように置き換えます。 まれにブートストラップ トークンが Office の検証時に期限切れにならず、交換のために Azure AD に送信されるまでの間に期限切れになることがあることに注意してください。 Azure AD はエラー AADSTS500133 で応答します。 この場合、コードは SSO API を呼び戻します (ただし、1 回のみ)。 今回は、Office が期限切れになっていない新しいブートストラップ トークンを返します。
 
     ```javascript
     if ((exceptionMessage.indexOf("AADSTS500133") !== -1)

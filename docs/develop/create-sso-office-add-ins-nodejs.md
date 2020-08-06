@@ -1,16 +1,16 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
-ms.date: 06/18/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fcd77f9cdf9ac817679b020fff887c975450e05d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159592"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573163"
 ---
-# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
+# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
 ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
 
@@ -102,6 +102,7 @@ ms.locfileid: "45159592"
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     ID ごとに、次の手順を実行します。

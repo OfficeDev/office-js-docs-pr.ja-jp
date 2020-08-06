@@ -1,15 +1,15 @@
 ---
 title: Identity API の要件セット
 description: Id API の要件 Office アドインの情報を設定します。
-ms.date: 07/10/2020
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 05805451f17cc70597a61e55d1ecacbb81c383c5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159298"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573218"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API の要件セット
 
@@ -17,13 +17,11 @@ ms.locfileid: "45159298"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表は、Identity API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | SharePoint Online | OneDrive.com |Outlook.com および Exchange Online|
+|  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Identity Api プレビュー  | N/A | プレビュー<b>*</b> | 近日対応予定 | プレビュー<b>*</b> | Preview<b>* &#8224;</b> | Preview<b>* &#8224;</b>| 近日公開 | 近日公開 |
+| Identity Api 1.3  | 該当なし | 2008 (ビルド 13127.20000) 以降 | 近日対応予定 | 16.40 以降 | 8月、2020 * |
 
-> **&#42;** プレビューフェーズでは、Id API には Microsoft 365 のサブスクリプションが必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
->
-> **&#8224;** これらのプラットフォームで SSO Api を使用するアドインは、ユーザーのテナント管理者がアドインへの同意を付与されている場合にのみ機能します。 ユーザーが自分の Azure AD プロファイルに対しても同意を付与することはできません。
+> \*最初は、web 上の Office で要件セットがサポートされているのは、SharePoint Online および OneDrive.com から開かれたドキュメントのみです。 他のドキュメントのサポートは、2020の後の方に web 上の Office に送られます。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 

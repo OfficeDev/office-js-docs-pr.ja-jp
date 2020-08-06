@@ -1,22 +1,23 @@
 ---
 title: SSO を使用した Microsoft Graph への承認
 description: Office アドインのユーザーがシングルサインオン (SSO) を使用して Microsoft Graph からデータを取得する方法について説明します。
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 809dc4f07c6d2afba4ea47cdee0eb7466dfb9635
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 81e8a87c21682a76c73e5e7389e85cd4f20c6a1d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093729"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573176"
 ---
-# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>SSO を使用した Microsoft Graph への承認 (プレビュー)
+# <a name="authorize-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph への承認
 
-ユーザーは、個人用の Microsoft アカウントまたは Microsoft 365 の教育機関または職場のアカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトッププラットフォーム) にサインインします。 Office アドインの [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスの承認には、ユーザーの Office サインオン資格証明を使用するのが最良の方法です。 これにより、2 回目はサインインする必要なく Microsoft Graph データにアクセスできます。
+ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 Office アドインの [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスの承認には、ユーザーの Office サインオン資格証明を使用するのが最良の方法です。 これにより、2 回目はサインインする必要なく Microsoft Graph データにアクセスできます。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
-> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証を有効にしてください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> 現在、シングルサインオン API は Word、Excel、Outlook、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。
+> Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>SSO と Microsoft Graph のアドイン アーキテクチャ
 
@@ -64,3 +65,16 @@ Microsoft Graph にアクセスするアドインは、SSO を使用する他の
 * [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 * [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
 * [シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](../outlook/implement-sso-in-outlook-add-in.md)
+
+## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Microsoft AppSource で SSO が有効なアドインを配布する
+
+Microsoft 365 管理者が[Appsource](https://appsource.microsoft.com)からアドインを取得すると、管理者は[一元展開](../publish/centralized-deployment.md)によってアドインを再配布し、microsoft Graph スコープにアクセスするためにアドインに管理者の同意を与えることができます。 ただし、エンドユーザーがアドインを AppSource から直接取得することもできます。この場合、ユーザーはアドインに同意を与える必要があります。 これにより、ソリューションを提供したパフォーマンスの問題が発生する可能性があります。
+
+`allowConsentPrompt`のように、の呼び出しでオプションを渡した場合 `getAccessToken` 、office は、 `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` 同意がまだアドインに付与されていない場合に、ユーザーに同意を求めるメッセージを表示します。 ただし、セキュリティ上の理由から、Office はユーザーに対して Azure AD スコープへの同意を求めることしかでき `profile` ません。 *Office では、Microsoft Graph のスコープに対する同意を求めるダイアログを表示することはできません* `User.Read` 。 これは、ユーザーがプロンプトに同意を与えると、Office はブートストラップトークンを返します。 しかし、Microsoft graph へのアクセストークンのブートストラップトークンの交換は、エラー AADSTS65001 で失敗します。つまり、同意 (Microsoft Graph のスコープへのアクセス許可) が付与されていません。
+
+コードでは、別の認証システムにフォールバックすることによって、このエラーを処理することができます。これにより、Microsoft Graph スコープへの同意を求めるメッセージが表示されます。 コード例については、「[シングルサインオンを使用する Office アドインを Node.js 作成](create-sso-office-add-ins-nodejs.md)し、[シングルサインオンを使用する ASP.NET Office アドインを作成](create-sso-office-add-ins-aspnet.md)する」と、リンク先のサンプルを参照してください。ただし、プロセス全体では、Azure AD への複数のラウンドトリップが必要です。 の呼び出しにオプションを含めることによって、このパフォーマンスペナルティを避けることができ `forMSGraphAccess` `getAccessToken` ます (例:) `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` 。  これにより、アドインに Microsoft Graph のスコープが必要であることが Office に通知されます。 Office は、Microsoft Graph スコープへの同意がアドインに既に付与されているかどうかを確認するために、Azure AD に要求します。 その場合は、ブートストラップトークンが返されます。 存在しない場合は、の呼び出しで `getAccessToken` エラー13012が返されます。 コードでこのエラーを処理するには、Azure AD を使用してトークンを交換することなく、すぐに認証の代替システムにフォールバックします。
+
+ベストプラクティスとして、 `forMSGraphAccess` `getAccessToken` アドインが appsource で配布され、Microsoft Graph のスコープが必要になる場合は、常にを渡します。
+
+> [!TIP]
+> SSO を使用する Outlook アドインを開発し、テスト用にサイドロードすると、 *always* `forMSGraphAccess` `getAccessToken` 管理者の同意が与えられている場合でも、Office は常にエラー13012を返します。 このため、 `forMSGraphAccess` Outlook アドインを**開発する際に**は、オプションをコメントにする必要があります。 運用のために展開するときは、オプションのコメントを解除してください。 Bogus 13012 は、Outlook のサイドロード時にのみ発生します。

@@ -1,16 +1,16 @@
 ---
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
-ms.date: 04/28/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530465"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573141"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Outlook アドインでシングル サインオン トークンを使用してユーザーを認証する (プレビュー)
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Outlook アドインでシングルサインオントークンを使用してユーザーを認証する
 
 シングル サインオン (SSO) は、アドインがユーザーを認証する (またオプションでアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出す) ための、シームレスな方法を提供します。
 
@@ -20,7 +20,6 @@ ms.locfileid: "46530465"
 - トークン内の ID 情報を使用して、独自のバックエンド サービスに対するユーザーの識別と認証を確立する
 
 Office アドインの SSO の概要については、[「Office アドインのシングル サインオンを有効化する」](../develop/sso-in-office-add-ins.md) および[「Office アドインの Microsoft Graph への承認」](../develop/authorize-to-microsoft-graph.md)を参照してください。
-
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Microsoft 365 テナントで先進認証を有効にする
 
@@ -32,7 +31,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>アドインのサイドロード時に同意する
 
-SSO を使用するアドインが AppSource から取得される場合、Microsoft Graph のスコープが含まれている場合は、同意を得るためのバックアップの認証方法が必要です。 アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「[アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
+アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「[アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
 
 ## <a name="update-the-add-in-manifest"></a>アドイン マニフェストを更新する
 

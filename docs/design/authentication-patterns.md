@@ -1,14 +1,14 @@
 ---
 title: Office アドインの認証設計ガイドライン
+ms.date: 07/30/2020
 description: Office アドインでサインオンまたはサインアップページを視覚的に設計する方法について説明します。
-ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 36465fbf156820cfc8980758cec0ed19c545588d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ed80f6b785c582ee3fa0e3f22e6a75b778bcdf3d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159620"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573169"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -27,8 +27,6 @@ ms.locfileid: "45159620"
 
 ## <a name="authentication-flow"></a>認証フロー
 
-シングル サインオンのプレビューが終わるまで、実稼働アドインでは、サービスや ID プロバイダー (Microsoft など) で直接サインインする選択肢をユーザーに与えてください。
-
 1. 初回実行プレースマット - アドインの最初の実行エクスペリエンス内にわかりやすい行動喚起としてサインイン ボタンを配置します。
 ![Office アプリケーションのアドイン作業ウィンドウのスクリーンショット](../images/add-in-fre-value-placemat.png)
 
@@ -46,12 +44,13 @@ ms.locfileid: "45159620"
 > [!NOTE] 
 > Microsoft の ID サービスを使用すると、商標付きのサインイン ボタンを使用できます。このボタンは淡色テーマまたは濃色テーマにカスタマイズできます。詳細情報。
 
-## <a name="single-sign-on-authentication-flow-preview"></a>シングル サインオン認証フロー (プレビュー)
+## <a name="single-sign-on-authentication-flow"></a>シングルサインオン認証フロー
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
+> 現在、シングルサインオン API は Word、Excel、Outlook、および PowerPoint でサポートされています。 シングル サインオン サポートの詳細については、「 [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」 (Exchange Online: テナントの先進認証を有効にする方法) を参照してください。
 
-実稼働アドインでシングル サインオンが一般に使用できるようになったら、それを使用してエンドユーザーに快適な操作性を提供します。 Office 内のユーザーの id (Microsoft アカウントまたは Microsoft 365 identity) は、アドインへのサインインに使用されます。 結果的にユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
+エンドユーザーの利便性を向上させるためにシングルサインオンを使用します。 Office 内のユーザーの id (Microsoft アカウントまたは Microsoft 365 identity) は、アドインにサインインするために使用されます。 その結果、ユーザーは一度だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
+
 
 1. アドインがインストールされると、以下のような同意を求めるウィンドウが表示されます。![アドインのインストール時の Office アプリケーションの同意ウィンドウのスクリーンショット](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
@@ -62,4 +61,4 @@ ms.locfileid: "45159620"
 
 ## <a name="see-also"></a>関連項目
 
-- 詳細については、[SSO アドイン (プレビュー) の開発](../develop/sso-in-office-add-ins.md)に関するページを参照してください。
+- [SSO アドインの開発](../develop/sso-in-office-add-ins.md)に関する詳細情報

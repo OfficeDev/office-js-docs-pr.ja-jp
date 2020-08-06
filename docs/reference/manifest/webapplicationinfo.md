@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの WebApplicationInfo 要素
 description: Office アドインのマニフェスト (XML) ファイルの VersionOverrides 要素の参照ドキュメント。
-ms.date: 08/12/2019
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 5be75c6e202e40d60961a1b930ef43e583dee240
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b64739f388720abb872fe2407f7e7d3031b5ec70
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094408"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573120"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
@@ -18,7 +18,7 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 - Microsoft Graph に対するアクセス許可を必要とする可能性のある OAuth 2.0 *クライアント*。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint のプレビューでサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](../requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証を有効にしてください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> 現在、シングルサインオン API は Word、Excel、Outlook、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[Identity API の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 **WebApplicationInfo** は、マニフェスト内の [VersionOverrides](versionoverrides.md) 要素の子要素です。  
 
