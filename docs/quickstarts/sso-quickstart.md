@@ -1,17 +1,17 @@
 ---
-title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する (プレビュー)
-description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する (プレビュー)
-ms.date: 02/20/2020
+title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する
+description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する。
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 7b6c6121a7a0f943a8c86276bad31f06de555b79
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abc3c0ca7fb5068bf2964e4809970fb2ea86d5bf
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159380"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573232"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する (プレビュー)
+# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する
 
 この記事では、可能な場合シングル サインオン (SSO) を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する Excel、Outlook、Word、または PowerPoint 用の Office アドインを作成するプロセスを説明します。
 
@@ -31,8 +31,6 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Mac を使用していて Azure CLI がコンピューターにインストールされていない場合は、[Homebrew](https://brew.sh/) をインストールする必要があります。 このクイック スタート中に実行する SSO 構成スクリプトは、Homebrew を使用して Azure CLI をインストールした後、Azure CLI を使用して Azure の SSO を構成します。
 

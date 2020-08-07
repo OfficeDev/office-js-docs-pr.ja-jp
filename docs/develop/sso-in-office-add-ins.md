@@ -1,33 +1,23 @@
 ---
 title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 6e8c93388f758514e8b6366bef7062f41fc79174
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159578"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573225"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Office アドインのシングル サインオンを有効化する (プレビュー)
+# <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
+
 
 ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 これとシングル サインオン (SSO) を使用すれば、ユーザーに 2 度目のサインインを求めずに、ご自分のアドインをユーザーに許可できます。
 
 ![アドインのサインイン プロセスを示す画像](../images/sso-for-office-addins.png)
 
-## <a name="preview-status"></a>プレビューの状態
-
-現在、シングル サインオン API はプレビューのみでサポートされています。 これは、試験目的のみで開発者に提供されており、運用環境のアドインには使用してはいけません。 また、SSO を使用するアドインは [AppSource](https://appsource.microsoft.com) では許可されていません。
-
-SSO には、Microsoft 365 サブスクリプションが必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが半期チャネルの運用に移行すると、そのビルドで SSO を含むプレビュー機能のサポートはオフになりますので、ご注意ください。
-
-SSO のプレビューは、すべての Office アプリケーションではサポートされていません。 これは、Word、Excel、Outlook、および PowerPoint で利用できます。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
-
 ## <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 **Outlook** アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
@@ -112,9 +102,9 @@ Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="Vers
 ```js
 async function getGraphData() {
     try {
-        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken();
 
-        // The /api/values controller will make the token exchange and use the
+        // The /api/DoSomething controller will make the token exchange and use the
         // access token it gets back to make the call to MS Graph.
         getData("/api/DoSomething", bootstrapToken);
     }
@@ -151,7 +141,7 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>メソッドを呼び出すタイミング
 
-Office にログインしているユーザーがいないときにアドインを使用できない場合、*アドインを起動するときに* `getAccessToken` を呼び出し、`getAccessToken` の `options` パラメーターで `allowSignInPrompt: true` を渡す必要があります。
+Office にログインしているユーザーがいないときにアドインを使用できない場合、 *アドインを起動するときに* `getAccessToken` を呼び出し、`getAccessToken` の `options` パラメーターで `allowSignInPrompt: true` を渡す必要があります。 たとえば、 `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
 アドインに、ログイン ユーザーを必要としない機能がある場合、*ユーザーがログイン ユーザーを必要とするアクションを実行するときに* `getAccessToken` を呼び出します。 `getAccessToken` の重複呼び出しによってパフォーマンスが大幅に低下することはありません。これは、Office ではブートストラップ トークンがキャッシュされ、それが期限切れになるまで、 `getAccessToken` が呼び出されても AAD V.2.0 エンドポイントが再度呼び出されずに再利用されるためです。 このため、`getAccessToken` の呼び出しを、このトークンが必要とされる場所でアクションを開始するすべての関数とハンドラーに追加できます。
 
