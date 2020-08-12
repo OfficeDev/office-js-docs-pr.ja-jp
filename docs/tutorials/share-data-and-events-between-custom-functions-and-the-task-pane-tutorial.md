@@ -1,23 +1,23 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
-description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有します。
+description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
 ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a3eb6d874b0a5a38a5fa8d05d094ed1439a7c433
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611044"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641152"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
-共有ランタイムを使用するように Excel アドインを構成できます。 これにより、共有されたグローバルデータを使用できるようになります。また、作業ウィンドウとカスタム関数の間でイベントを送信することもできます。
+共有ランタイムを使用するように Excel アドインを構成できます。 これにより、グローバル データを共有したり、作業ウィンドウとユーザー設定の関数の間でイベントを送信したりできます。
 
-ほとんどのカスタム関数のシナリオでは、非作業ウィンドウ (UI に含まれない) カスタム関数を使用する特別な理由がない限り、共有ランタイムを使用することをお勧めします。
+ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。
 
-このチュートリアルでは、Yo Office ジェネレーターを使用してアドインプロジェクトを作成する方法に精通していることを前提としています。 [Excel カスタム関数のチュートリアル](./excel-tutorial-create-custom-functions.md)を完了することを検討してください (まだ作成していない場合)。
+このチュートリアルでは、Yo Office ジェネレーターを使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](./excel-tutorial-create-custom-functions.md)を完了することを検討してください。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -213,4 +213,4 @@ yo office
 Excel が起動したら、作業ウィンドウのボタンを使用して共有データを保存または取得できます。 カスタム関数のセルに `=CONTOSO.GETVALUE()` を入力して、同じ共有データを取得します。 または `=CONTOSO.STOREVALUE("new value")` を使用して、共有データを新しい値に変更します。
 
 > [!NOTE]
-> この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 カスタム関数から一部の Office Api を呼び出すことができます。 詳細につい[ては、「カスタム関数からの Microsoft Excel api の呼び出し」を参照してください](../excel/call-excel-apis-from-custom-function.md)。
+> この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 カスタム関数から一部の Office API を呼び出すことができます。 詳細については、「[カスタム関数からの Microsoft Excel API の呼び出しについて](../excel/call-excel-apis-from-custom-function.md)」を参照してください。
