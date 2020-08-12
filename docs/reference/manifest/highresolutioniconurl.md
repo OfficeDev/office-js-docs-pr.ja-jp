@@ -3,12 +3,12 @@ title: マニフェスト ファイルの HighResolutionIconUrl 要素
 description: 高 DPI 画面での挿入 UX と Office ストアで Office アドインを表すために使用されるイメージの URL を指定します。
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 1ebe69a7576c82ec121094ed84c0d49acde1098a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77675e768895a568bdfee97fc4d5006e1e890937
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611821"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641355"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl 要素
 
@@ -28,7 +28,7 @@ ms.locfileid: "44611821"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**型**|**必須**|**説明**|
+|属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|文字列 (URL)|必須|この設定の既定値を指定します。この値は、[DefaultLocale](defaultlocale.md) 要素に指定されるロケールを対象としています。|
 

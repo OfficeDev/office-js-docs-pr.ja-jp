@@ -3,12 +3,12 @@ title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 44824e0c74b35105833f1f05cdda87bc873a4427
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094457"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641390"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -71,7 +71,7 @@ ms.locfileid: "45094457"
 
 #### <a name="child-elements"></a>子要素
  
-|**Element**|**説明**|
+|要素|説明|
 |:-----|:-----|
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
 |**OfficeTab**|既定の Office アプリリボンタブ ( **Primarycommandsurface**を使用) を拡張する場合に必要です。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|

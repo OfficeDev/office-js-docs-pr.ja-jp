@@ -1,17 +1,17 @@
 ---
-title: Outlook アドインで送信時に追加を実装する (プレビュー)
+title: Outlook アドインでの追加-送信を実装する (プレビュー)
 description: Outlook アドインでの追加-送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093988"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641502"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインで送信時に追加を実装する (プレビュー)
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインでの追加-送信を実装する (プレビュー)
 
 このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。
 
@@ -137,6 +137,9 @@ Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=
 ## <a name="implement-append-on-send-handling"></a>追加オン送信処理を実装する
 
 次に、送信イベントに追加を実装します。
+
+> [!IMPORTANT]
+> アドインが[を使用し `ItemSend` て送信イベント処理](outlook-on-send-addins.md)を実装する場合、 `AppendOnSendAsync` オンプレ送信ハンドラーで呼び出しを行うと、このシナリオがサポートされていないため、エラーが返されます。
 
 このシナリオでは、ユーザーが送信するときに、免責事項をアイテムに追加することを実装します。
 

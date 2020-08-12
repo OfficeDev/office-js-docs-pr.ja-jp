@@ -3,12 +3,12 @@ title: マニフェスト ファイルの DefaultSettings 要素
 description: コンテンツまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: ace4f971d342f98d0aca5c21a7a48ceaf2563a2f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a9711fb44390bcbda8979b8018eed1318c5579bc
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611583"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641467"
 ---
 # <a name="defaultsettings-element"></a>DefaultSettings 要素
 
@@ -30,7 +30,7 @@ ms.locfileid: "44611583"
 
 ## <a name="can-contain"></a>含めることができるもの
 
-|**Element**|**コンテンツ**|**メール**|**TaskPane**|
+|要素|コンテンツ|メール|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[SourceLocation](sourcelocation.md)|x||x|
 |[RequestedWidth](requestedwidth.md)|x|||
@@ -39,4 +39,3 @@ ms.locfileid: "44611583"
 ## <a name="remarks"></a>注釈
 
 **DefaultSettings**要素のソースの場所とその他の設定は、コンテンツアドインと作業ウィンドウアドインにのみ適用されます。メールアドインの場合は、 [formsettings](formsettings.md)要素に、ソースファイルとその他の既定の設定の既定の場所を指定します。
-

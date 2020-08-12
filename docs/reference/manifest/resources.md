@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Resources 要素
 description: Resources 要素には、VersionOverrides ノードのアイコン、文字列、URL が含まれます。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 717e3cecd32fbf2bdb806f7484cc954a86b82e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608748"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641271"
 ---
 # <a name="resources-element"></a>リソース要素
 
@@ -18,7 +18,7 @@ ms.locfileid: "44608748"
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  種類  |  説明  |
+|  要素 |  型  |  説明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
 |  **Urls**                |  url     |  HTTPS URL の場所を指定します。 URL の長さは最大で 2048 文字です。 |
@@ -43,10 +43,10 @@ ms.locfileid: "44608748"
 - 48x48
 - 64x64
 
-> [!IMPORTANT] 
-> Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。    
+> [!IMPORTANT]
+> Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。
 
-## <a name="resources-examples"></a>リソースの例 
+## <a name="resources-examples"></a>リソースの例
 
 ```XML
 <Resources>

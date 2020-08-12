@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Sets 要素
 description: Sets 要素は、office アドインをアクティブにするために必要な最低限の Office JavaScript API のセットを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c1c97bfc2934ecf3cc20b472b29a03805603729
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: bd8f8311bb06a8e9e98fc408aece6395ab5643b1
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608734"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641425"
 ---
 # <a name="sets-element"></a>Sets 要素
 
@@ -34,7 +34,7 @@ Office アドインをアクティブにするために必要な最低限の Off
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**型**|**必須**|**説明**|
+|属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|文字列|省略可能|すべての子[セット](set.md)要素の既定の**MinVersion**属性値を指定します。 既定値は "1.1" です。|
 

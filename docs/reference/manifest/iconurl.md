@@ -3,12 +3,12 @@ title: マニフェスト ファイルの IconUrl 要素
 description: IconUrl 要素は、挿入 UX と Office ストアで Office アドインを表すイメージの URL を指定します。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ccfc2fc1d0a07f6d549f388bbb58e40e79a17d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b2c117f69259911bf4643eaddbbbcdf5fb502197
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611793"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641362"
 ---
 # <a name="iconurl-element"></a>IconUrl 要素
 
@@ -28,7 +28,7 @@ ms.locfileid: "44611793"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**型**|**必須**|**説明**|
+|属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|文字列|必須|この設定の既定値を指定します。この値は、[DefaultLocale](defaultlocale.md) 要素に指定されるロケールを対象としています。|
 

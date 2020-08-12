@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Rule 要素
 description: Rule 要素は、このコンテキストメールアドインに対して評価する必要があるアクティブ化ルールを指定します。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608112"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641432"
 ---
 # <a name="rule-element"></a>Rule 要素
 
@@ -128,5 +128,5 @@ ms.locfileid: "44608112"
 ## <a name="see-also"></a>関連項目
 
 - [Outlook アドインのアクティブ化ルール](../../outlook/activation-rules.md)
-- [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

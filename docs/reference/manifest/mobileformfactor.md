@@ -3,12 +3,12 @@ title: マニフェスト ファイルの MobileFormFactor 要素
 description: MobileFormFactor 要素は、アドインのモバイルフォームファクターの設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 64a7681ca23becf42af1ba435aae4d509e6ad1ba
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612228"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641474"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 要素
 
@@ -20,8 +20,8 @@ ms.locfileid: "44612228"
 
 ## <a name="child-elements"></a>子要素
 
-| 要素                               | 必須 | 説明  |
-|:--------------------------------------|:--------:|:-------------|
+| 要素                             | 必須 | 説明  |
+|:------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md) | はい      | アドインが機能を公開する場所を定義します。 |
 | [FunctionFile](functionfile.md)     | はい      | JavaScript 関数を含むファイルの URL。|
 
@@ -36,7 +36,7 @@ ms.locfileid: "44612228"
       <FunctionFile resid="residUILessFunctionFileUrl" />
       <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
         <!-- information on this extension point -->
-      </ExtensionPoint> 
+      </ExtensionPoint>
       <!-- possibly more ExtensionPoint elements -->
     </MobileFormFactor>
   </Host>

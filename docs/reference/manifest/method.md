@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Method 要素
 description: Method 要素は、office アドインをアクティブにするために必要な、Office JavaScript API からの個別のメソッドを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c3531475a920fd24ce8390170b5f4728d4dcd0e0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611758"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641326"
 ---
 # <a name="method-element"></a>Method 要素
 
@@ -28,7 +28,7 @@ Office JavaScript API から、Office アドインをアクティブにするた
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**型**|**必須**|**説明**|
+|属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
 |名前|string|必須|必要なメソッドの名前をその親オブジェクトで修飾して指定します。 たとえば、メソッドを指定するには、を `getSelectedDataAsync` 指定する必要があり `"Document.getSelectedDataAsync"` ます。|
 

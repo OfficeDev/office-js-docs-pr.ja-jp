@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 08/03/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 99f2a47c366508be17b34dbf3e373ac078843056
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547529"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641278"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -285,6 +285,26 @@ Office テーマを取得する機能が追加されました。
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+
+<br>
+
+---
+
+---
+
+### <a name="session-data"></a>セッション データ
+
+#### <a name="officesessiondata"></a>[Office セッションデータ](/javascript/api/outlook/office.sessiondata)
+
+アイテムのセッションデータを表す新しいオブジェクトを追加しました。
+
+**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+
+#### <a name="officecontextmailboxitemsessiondata"></a>[Office. メールボックス (セッション)](office.context.mailbox.item.md#properties)
+
+新規作成モードのアイテムのセッションデータを管理するための新しいプロパティを追加しました。
 
 **利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
 

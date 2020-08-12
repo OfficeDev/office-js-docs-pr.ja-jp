@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Requirements 要素
 description: 要件要素は、Office アドインをアクティブにするために必要な最小要件セットとメソッドを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 586f05ec68257462cb64a96abf2a34eb31861a5c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c6a9a7b5923401fc2551f239b2c6cbc0d1e90755
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611716"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641320"
 ---
 # <a name="requirements-element"></a>Requirements 要素
 
@@ -30,7 +30,7 @@ Office アドインをアクティブにするために必要な Office JavaScri
 
 ## <a name="can-contain"></a>含めることができるもの
 
-|**Element**|**コンテンツ**|**メール**|**TaskPane**|
+|要素|コンテンツ|メール|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Sets](sets.md)|x|x|x|
 |[メソッド](methods.md)|x||x|

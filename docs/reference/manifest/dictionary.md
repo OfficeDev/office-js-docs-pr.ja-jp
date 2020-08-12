@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Dictionary 要素
 description: 追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 768745b06bb22896e7b2907509f77957ee5580fa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 89f9327fa640c4248e733a602c44be76d87bd841
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612270"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641481"
 ---
 # <a name="dictionary-element"></a>Dictionary 要素
 
@@ -30,7 +30,7 @@ ms.locfileid: "44612270"
 
 ## <a name="can-contain"></a>含めることができるもの
 
-|**Element**|
+|要素|
 |:-----|
 |[TargetDialects](targetdialects.md)|
 |[QueryUri](queryuri.md)|
