@@ -2,14 +2,14 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 05/22/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093428"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672723"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -21,30 +21,30 @@ ms.locfileid: "45093428"
 このチュートリアルを終了すると、新しいメッセージが作成されるたびに実行されるアドインができます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを使用する web 上の Outlook の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。 詳細については、この記事の「[イベントに基づくライセンス認証機能をプレビューする方法](#how-to-preview-the-event-based-activation-feature)」を参照してください。
+> この機能は、Microsoft 365 サブスクリプションを使用する web 上の Outlook の [プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) でのみサポートされています。 詳細については、この記事の「 [イベントに基づくライセンス認証機能をプレビューする方法](#how-to-preview-the-event-based-activation-feature) 」を参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>イベントベースのライセンス認証機能をプレビューする方法
 
-イベントに基づくライセンス認証機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある**フィードバック**セクションを参照してください)。
+イベントに基づくライセンス認証機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある **フィードバック** セクションを参照してください)。
 
 この機能をプレビューするには:
 
-- CDN の**ベータ版**ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の[型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は、CDN と、定義[された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
+- CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
 - [この要求フォーム](https://aka.ms/OWAPreview)を完了して送信することにより、Microsoft 365 アカウントを使用して、web 上の Outlook のプレビュービットへのアクセスを要求します。 テナントの準備が整ったことをお知らせします。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
+Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインのイベントベースのアクティブ化を有効にするには、マニフェストで、[ランタイム](../reference/manifest/runtimes.md)要素と[launchevent](../reference/manifest/extensionpoint.md#launchevent-preview)拡張点を構成する必要があります。 ここで `DesktopFormFactor` は、サポートされているフォームファクターのみを示します。
+アドインのイベントベースのアクティブ化を有効にするには、マニフェストで、 [ランタイム](../reference/manifest/runtimes.md) 要素と [launchevent](../reference/manifest/extensionpoint.md#launchevent-preview) 拡張点を構成する必要があります。 ここで `DesktopFormFactor` は、サポートされているフォームファクターのみを示します。
 
 1. コードエディターで、[クイックスタート] プロジェクトを開きます。
 
-1. プロジェクトのルートにある**manifest.xml**ファイルを開きます。
+1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
 1. `<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。
 
@@ -158,7 +158,7 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 
 このシナリオでは、新しいアイテムを作成するための処理を追加します。
 
-1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js**を開きます。
+1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js** を開きます。
 
 1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
 
@@ -188,7 +188,7 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. 「[テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。

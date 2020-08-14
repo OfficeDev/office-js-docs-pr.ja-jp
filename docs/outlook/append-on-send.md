@@ -2,47 +2,47 @@
 title: Outlook アドインでの追加-送信を実装する (プレビュー)
 description: Outlook アドインでの追加-送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 08/07/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641502"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672730"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインでの追加-送信を実装する (プレビュー)
 
 このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、現在、web 上の Outlook および Microsoft 365 サブスクリプションを使用した Windows の[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でサポートされています。 詳細については、この記事の「[投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature)参照してください。
+> この機能は、現在、web 上の Outlook および Microsoft 365 サブスクリプションを使用した Windows の [プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) でサポートされています。 詳細については、この記事の「 [投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature) 参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
 
 ## <a name="how-to-preview-the-append-on-send-feature"></a>投稿の追加機能をプレビューする方法
 
-投稿の追加機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある**フィードバック**セクションを参照してください)。
+投稿の追加機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある **フィードバック** セクションを参照してください)。
 
 この機能をプレビューするには:
 
-- CDN の**ベータ版**ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の[型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は、CDN と、定義[された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
-- Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com)に参加する必要がある場合があります。
+- CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
+- Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com) に参加する必要がある場合があります。
 - Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
+Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 アドインでの追加/送信機能を有効にするには、 `AppendOnSend` [extendedpermissions](../reference/manifest/extendedpermissions.md)のコレクションにアクセス許可を含める必要があります。
 
-このシナリオでは、[操作の `action` **実行**] ボタンを選択するときに関数を実行する代わりに、関数を実行し `appendOnSend` ます。
+このシナリオでは、[操作の `action` **実行** ] ボタンを選択するときに関数を実行する代わりに、関数を実行し `appendOnSend` ます。
 
 1. コードエディターで、[クイックスタート] プロジェクトを開きます。
 
-1. プロジェクトのルートにある**manifest.xml**ファイルを開きます。
+1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
 1. `<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。
 
@@ -143,7 +143,7 @@ Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=
 
 このシナリオでは、ユーザーが送信するときに、免責事項をアイテムに追加することを実装します。
 
-1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js**を開きます。
+1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js** を開きます。
 
 1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
 
@@ -182,16 +182,16 @@ Outlook の[クイックスタート](../quickstarts/outlook-quickstart.md?tabs=
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーがまだ実行されていない場合は起動します。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
-1. 「[テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。
+1. 「 [テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。
 
-1. 新しいメッセージを作成し、[**宛先**] 行に自分を追加します。
+1. 新しいメッセージを作成し、[ **宛先** ] 行に自分を追加します。
 
-1. リボンまたはオーバーフローメニューから、[**アクションを実行する**] を選択します。
+1. リボンまたはオーバーフローメニューから、[ **アクションを実行する**] を選択します。
 
-1. メッセージを送信し、**受信トレイ**または**送信済みアイテム**フォルダーから開いて、追加の免責事項を表示します。
+1. メッセージを送信し、 **受信トレイ** または **送信済みアイテム** フォルダーから開いて、追加の免責事項を表示します。
 
     ![Web 上の Outlook で送信に追加された免責事項を含むメッセージ例のスクリーンショット。](../images/outlook-web-append-disclaimer.png)
 

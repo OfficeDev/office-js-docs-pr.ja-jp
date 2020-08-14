@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 07/27/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ba1b3ace97c6fcf380f013b3b394eabe8b9db8b8
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 6ed50b52e0f4d5667e835c875851ed14c68bfe49
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530500"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672716"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -101,7 +101,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。

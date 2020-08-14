@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641509"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672737"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -599,7 +599,7 @@ ul {
 5. 次のコマンドを実行してWebサーバーを起動します。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 ### <a name="fetch-data-from-github"></a>GitHub からデータを取得する
@@ -900,7 +900,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
+すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
@@ -1261,7 +1261,7 @@ ul {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
+すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 

@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: シングルサインオン (SSO) を使用するために、ASP.NET バックエンドで Office アドインを作成 (または変換) する方法に関するステップバイステップガイドです。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 5556f8486529129e5f73649722ed919899e5d87e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 69269f1dbffc17ef1d45e86635d4de7c4a3a0890
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641292"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672709"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
@@ -45,7 +45,7 @@ ms.locfileid: "46641292"
 
 1. [Azure ポータル - アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908)ページに移動してアプリを登録します。
 
-1. Microsoft 365 テナントに対して***管理者***の資格情報を使用してサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
+1. Microsoft 365 テナントに対して ***管理者*** の資格情報を使用してサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
 
 1. **[新規登録]** を選択します。 **[アプリケーションを登録]** ページで、次のように値を設定します。
 
@@ -54,7 +54,7 @@ ms.locfileid: "46641292"
     * [**リダイレクト URI**] セクションで、ドロップダウンで [**Web**] が選択されていることを確認し、URI を [` https://localhost:44355/AzureADAuth/Authorize`] に設定します。
     * **[登録]** を選択します。
 
-1. [ **Office アドイン-SSO** ] ページで、**アプリケーション (クライアント) id**と**ディレクトリ (テナント) id**の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
+1. [ **Office アドイン-SSO** ] ページで、 **アプリケーション (クライアント) id** と **ディレクトリ (テナント) id**の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
 
     > [!NOTE]
     > この ID は、Office ホスト アプリケーション (たとえば、PowerPoint、Word、Excel) などの別のアプリケーションが、このアプリケーションへの承認されたアクセスを求めるときの「対象ユーザー」値になります。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
@@ -182,7 +182,7 @@ ms.locfileid: "46641292"
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
@@ -212,6 +212,7 @@ ms.locfileid: "46641292"
 
     * `getAccessToken` は、Azure AD からブートストラップ トークンを取得し、アドインに戻るように Office に指示します。
     * `allowSignInPrompt` は、ユーザーがまだ Office にサインインしていない場合、ユーザーにサインインするように求めるように Office に指示します。
+    * `allowConsentPrompt` 同意がまだ付与されていない場合に、アドインにユーザーの AAD プロファイルへのアクセスを許可するかどうかをユーザーに確認するよう Office に指示します。 (結果として表示されるプロンプトでは、ユーザーは Microsoft Graph の範囲に同意することはでき *ません* )。
     * `forMSGraphAccess` は、アドインが (ブートストラップ トークンをユーザー ID トークンとして使用するだけでなく) Microsoft Graph へのアクセス トークンのブートストラップ トークンを交換することを Office に通知します。 このオプションを設定すると、ユーザーのテナント管理者がアドインの同意を与えていない場合、Office はブートストラップ トークンの取得プロセスをキャンセルすることができます (そしてエラー コード 13012 が返されます)。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。 が使用されておらず、管理者が同意を付与していない場合は、 `forMSGraphAccess` ブートストラップトークンが返されますが、このトークンを送信しようとすると、エラーが発生します。 したがって、`forMSGraphAccess` オプションを使用すると、アドインがフォールバック システムにすばやく分岐できます。
     * 後の手順で `getData` 関数を作成します。
     * `/api/values` パラメーターは、トークンを交換したり、Microsoft Graph を呼び出すためにアクセス トークンを使用したりする、サーバー側コントローラーの URL です。
@@ -219,6 +220,7 @@ ms.locfileid: "46641292"
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
         allowSignInPrompt: true,
+        allowConsentPrompt: true,
         forMSGraphAccess: true });
 
     getData("/api/values", bootstrapToken);
