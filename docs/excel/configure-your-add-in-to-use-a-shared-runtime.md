@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 title: ブラウザーのランタイムを共有するように Excel アドインを構成する
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159536"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757367"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Excel アドインを構成する
 
@@ -104,13 +104,17 @@ yo office
 
 `Runtime` 要素を追加するときに、有効期間も `long` または `short` の値で指定します。 この値を `long` に設定すると、ドキュメントを開くとアドインを起動したり、作業ウィンドウを閉じた後にコードを継続して実行したり、カスタム関数から CORS および DOM を使用したりできます。
 
->![注意] 既定の有効期間の値は `short` ですが、Excel アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときに Excel アドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
+>[!NOTE]
+> 既定の有効期間の値は `short` ですが、Excel アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときに Excel アドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
 
 ```xml
 <Runtimes>
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+>[!NOTE]
+> アドインにマニフェストの `Runtimes` 要素が含まれている場合 (共有ランタイムに必要)、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 ## <a name="multiple-task-panes"></a>複数の作業ウィンドウ
 

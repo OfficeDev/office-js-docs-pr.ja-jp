@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641152"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757381"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -51,6 +51,9 @@ yo office
          </Runtimes>
        <AllFormFactors>
    ```
+
+> [!NOTE]
+> アドインにマニフェストの `Runtimes` 要素が含まれている場合、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 4. `<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **ContosoAddin.Url** に変更します。
 
