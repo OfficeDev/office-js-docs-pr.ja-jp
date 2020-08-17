@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
-description: Office アドインの Excel カスタム関数を作成する
+ms.date: 08/13/2020
+description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
-ms.translationtype: MT
+ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093463"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757374"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -40,19 +40,19 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>コードでカスタム関数を定義する方法
 
-[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して Excel カスタム関数アドインプロジェクトを作成する場合は、関数と作業ウィンドウを制御するファイルを作成します。 このため、カスタム関数に重要なファイルに注意を集中できます。
+[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して Excel のカスタム関数アドイン プロジェクトを作成する場合、使用する関数および作業ウィンドウを制御するファイルが作成されます。 このため、カスタム関数に重要なファイルに注意を集中できます。
 
 | ファイル | ファイル形式 | 説明 |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>または<br/>**./src/functions/functions.ts** | JavaScript<br/>または<br/>TypeScript | カスタム関数を定義するコードが含みます。 |
 | **./src/functions/functions.html** | HTML | カスタム関数を定義する JavaScript ファイルに &lt;script&gt; 参照を提供します。 |
-| **./manifest.xml** | XML | カスタム関数で使用する複数のファイルの場所を指定します。これには、カスタム関数 JavaScript、JSON、HTML ファイルなどがあります。 また、作業ウィンドウファイルやコマンドファイルの場所の一覧を示し、カスタム関数が使用する必要があるランタイムを指定します。 |
+| **./manifest.xml** | XML | カスタム関数 JavaScript、JSON、HTML ファイルなど、カスタム関数が使用する複数のファイルの場所を指定します。 また、作業ウィンドウ ファイルおよびコマンド ファイルの場所を表示すると共に、カスタム関数が使用するランタイムも指定します。 |
 
 ### <a name="script-file"></a>スクリプト ファイル
 
 スクリプト ファイル (**./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
 
-`add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 次に、2つのパラメーターが宣言され、その `first` `second` 後にプロパティが続き `description` ます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)」を参照してください。
+`add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 次に、`description` プロパティに続いて、`first` および `second` の 2 つのパラメーターが宣言されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)」を参照してください。
 
 ```js
 /**
@@ -70,21 +70,21 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-Office ジェネレーターによって作成されるプロジェクト内のカスタム関数 (**./manifest.xml**を定義するアドインの XML マニフェストファイル) は、次のようないくつかの作業を行います。
+カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
 
-- カスタム関数の名前空間を定義します。 ユーザーが自分の関数をアドインの一部として識別できるようにするために、名前空間がカスタム関数に追加されています。
-- `<ExtensionPoint>` `<Resources>` カスタム関数マニフェストに固有のおよび要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
-- カスタム関数に対して使用するランタイムを指定します。 共有ランタイムでは、関数と作業ウィンドウとの間でデータを共有できるため、別のランタイムに特に必要性がある場合を除き、常に共有ランタイムを使用することをお勧めします。
+- カスタム関数の名前空間を定義します。 ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
+- カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
+- カスタム関数に使用するランタイムを指定します。 別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。 共有ランタイムを使うことは、アドインが Microsoft Edge ではなく Internet Explorer 11 の使用を意味することに注意してください。
 
-Yo Office ジェネレーターを使用してファイルを作成する場合は、共有ランタイムを使用するようにマニフェストを調整することをお勧めします。これは、これらのファイルの既定値ではないためです。 マニフェストを変更するには、「 [Excel アドインを構成する](./configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従って、共有されている JavaScript ランタイムを使用します。
+Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](./configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
 
-サンプルアドインから完全な動作マニフェストを表示するには、[この Github リポジトリ](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)を参照してください。
+サンプル アドインからフル機能マニフェストを確認する方法については、「[この Github リポジトリ](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)」を参照してください。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>共同編集
 
-Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows では、Excel での coauthor が可能です。 ブックでユーザー設定の関数を使用している場合、共同編集の仕事仲間に対して、カスタム関数のアドインを読み込むように求めるメッセージが表示されます。 両方のアドインを読み込んだ後、カスタム関数は共同編集によって結果を共有します。
+Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows では、Excel で共同編集することができます。 ブックでカスタム関数を使用している場合、共同編集中の仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
