@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで定期的なアイテムを取得して設定する
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
-ms.date: 01/14/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a50ba5eab39145d8e50a5a888a6ed0900200bc4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606456"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803745"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
@@ -25,11 +25,11 @@ ms.locfileid: "44606456"
 
 |定期的なパターン|有効な定期的なアイテムのプロパティ|使用方法|
 |---|---|---|
-|`daily`|- [`interval`][interval link]|*interval* 日に一度、予定が発生する。 例: 予定が **_2 日_** おきに発生する。|
+|`daily`|-&nbsp;[`interval`][interval link]|*interval* 日に一度、予定が発生する。 例: 予定が **_2 日_** おきに発生する。|
 |`weekday`|なし。|予定が平日に毎日発生する。|
-|`monthly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_ **か月に一度、**_5_ **日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
-|`weekly`|- [`interval`][interval link]<br/>- [`days`][days link]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が** _2_ **週間に一度、**_火曜日_と_木曜日_** に発生する。|
-|`yearly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]<br/>- [`month`][month link]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の**_最初_** の**_木曜日_** に発生する。|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_ **か月に一度、**_5_ **日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が** _2_ **週間に一度、**_火曜日_と_木曜日_** に発生する。|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の**_最初_** の**_木曜日_** に発生する。|
 
 > [!NOTE]
 >  の定期的なパターンで [`firstDayOfWeek`][firstDayOfWeek link]`weekly` プロパティを使用することもできます。 指定された日は定期的なアイテムのダイアログに表示された日にちのリストを開始させます。
@@ -73,6 +73,27 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, callback);
 function callback(asyncResult)
 {
     console.log(JSON.stringify(asyncResult));
+}
+```
+
+## <a name="change-recurrence-as-the-organizer"></a>開催者として定期的なアイテムを変更する
+
+次の例では、作成モードでは、予定の開催者が一連の定期的な予定またはその系列のインスタンスを指定して、定期的な予定のオブジェクトを取得し、新しい定期的なアイテムの期間を設定します。
+
+```js
+Office.context.mailbox.item.recurrence.getAsync(callback);
+
+function callback(asyncResult) {
+  var recurrencePattern = asyncResult.value;
+  recurrencePattern.seriesTime.setDuration(60);
+  Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+      console.log("failed");
+      return;
+    }
+
+    console.log("success");
+  });
 }
 ```
 

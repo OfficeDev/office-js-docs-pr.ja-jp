@@ -2,21 +2,24 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672723"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803752"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
-イベントベースのアクティブ化機能がない場合、ユーザーは、自分のタスクを完了するためにアドインを明示的に起動する必要があります。 この機能により、特定のイベント (特に、すべてのアイテムに適用される操作) に基づいてアドインでタスクを実行できます。 作業ウィンドウと UI 非表示機能に統合することもできます。 現時点では、サポートされているイベントは次のとおりです。
+イベントベースのアクティブ化機能がない場合、ユーザーは、自分のタスクを完了するためにアドインを明示的に起動する必要があります。 この機能により、特定のイベント (特に、すべてのアイテムに適用される操作) に基づいてアドインでタスクを実行できます。 作業ウィンドウと UI 非表示機能に統合することもできます。 現在、次のイベントがサポートされています。
 
 - `OnNewMessageCompose`: 新しいメッセージを作成するときに (返信、全員に返信、および転送を含む)
 - `OnNewAppointmentOrganizer`: 新しい予定を作成するとき
+
+  > [!IMPORTANT]
+  > この機能は、アイテムを編集するときにアクティブ化 **されません** 。たとえば、下書きまたは既存の予定です。
 
 このチュートリアルを終了すると、新しいメッセージが作成されるたびに実行されるアドインができます。
 
