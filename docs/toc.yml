@@ -763,13 +763,11 @@
           href: outlook/apis.md
           displayName: Outlook
         - name: API 要件セット
-          href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
-        - name: API リファレンス
-          href: reference/outlook-api-reference-1-8.md
-          displayName: Outlook
-        - name: API オブジェクト モデル
           items:
+            - name: 概要
+              href: reference/requirement-sets/outlook-api-requirement-sets.md
+              displayName: Outlook
             - name: 要件セットのプレビュー
               items:
                 - name: 概要
@@ -896,6 +894,9 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                 - name: Outlook 1.1 API リファレンス
                   href: reference/outlook-api-reference-1-1.md
+        - name: API リファレンス - 最新リリース
+          href: reference/outlook-api-reference-1-8.md
+          displayName: Outlook
     - name: 概念
       items:
         - name: Outlook アドインの設計ガイドライン
@@ -912,9 +913,9 @@
           href: outlook/online-meeting.md
         - name: 送信時アドイン
           href: outlook/outlook-on-send-addins.md
-        - name: 送信時に追加 (プレビュー)
+        - name: 送信時に追加
           href: outlook/append-on-send.md
-        - name: イベント ベースのライセンス認証 (プレビュー)
+        - name: イベントベースのライセンス認証
           href: outlook/autolaunch.md
         - name: ピン留め可能な作業ウィンドウ
           href: outlook/pinnable-taskpane.md
