@@ -1,27 +1,27 @@
 ---
 title: Office アドインの文字体裁ガイドライン
-description: Office アドインで使用する書体とフォントサイズについて説明します。
-ms.date: 06/27/2018
+description: アドインで使用する書体とフォント サイズOffice説明します。
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f9398137c9e8a00a2743e99d94e405ff80d85dd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f4f53414bd05fe73dd118e20774420df1b7b8e78
+ms.sourcegitcommit: 7faa0932b953a4983a80af70f49d116c3236d81a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607660"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "46845530"
 ---
 # <a name="typography"></a>文字体裁
 
 Segoe は、Office の標準的な書体です。Office の作業ウィンドウ、ダイアログ ボックス、コンテンツ オブジェクトと調和するように、アドインで使用します。Office UI Fabric では、Segoe にアクセスできます。フォントの太さからサイズまで数多くのバリエーションで Segoe の完全な文字体裁を、便利な CSS クラスで提供します。すべての Office UI Fabric のサイズと太さが Office アドインで適切に表示されるわけではありません。調和よく収めるため、または競合を回避するために、Fabric 文字体裁のサブセットを使うことを検討してください。Office アドインでの使用をお勧めする Fabric の基底クラスの一覧を次に示します。
 
+> [!NOTE]
+> これらの基底クラスには、テキストの色が含まれていません。 背景が白の場合、ほとんどのテキストには Fabric の "中間色" を使用します。
+
 |サンプル |クラス |サイズ |太さ |お勧めの用法 |
 |------ |----- |---- |------ |----------------- |
 |![ヒーロー テキスト イメージ](../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>これは、Office の他のすべての文字体裁の要素よりも大きいクラスです。視覚的な階層から外れないように、慎重に使用します。</li><li>制約のある領域内で長い文字列に対して使用しないでください。</li><li>このクラスを使用して、テキストの周りに十分な余白を確保してください。</li><li>通常、最初の実行メッセージ、ヒーロー要素、その他の行動喚起に使用します。</li></ul> |
-|![ヒーロー テキスト イメージ](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>このクラスは、Office アプリケーションの作業ウィンドウ タイトルと一致します。</li><li>文字体裁の階層が平板にならないように、慎重に使用します。</li><li>通常、ダイアログ ボックス、ページ、コンテンツ タイトルなどの最上位の要素として使用します。</li></ul> |
-|![ヒーロー テキスト イメージ](../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>このクラスは、タイトルの 1 つ下です。</li><li>通常、サブタイトル、ナビゲーション要素、グループ ヘッダーとして使用します。</li><ul> |
-|![ヒーロー テキスト イメージ](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |<ul><li>通常、アドイン内の本文として使用します。</li><ul>|
-|![ヒーロー テキスト イメージ](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |<ul><li>通常、タイムスタンプなどの 2 番目や 3 番目のテキストとして、行、キャプション、フィールド ラベルごとに使用します。</li><ul>|
-|![ヒーロー テキスト イメージ](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>文字体裁の最小の階層は、稀にしか使用しないでください。読みやすさが求められない状況で使用できます。</li><ul>|
-
-> [!NOTE]
-> これらの基底クラスには、テキストの色が含まれていません。背景が白の場合、ほとんどのテキストには Fabric の "中間色" を使用します。
+|![タイトル テキスト画像](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>このクラスは、Office アプリケーションの作業ウィンドウ タイトルと一致します。</li><li>文字体裁の階層が平板にならないように、慎重に使用します。</li><li>通常、ダイアログ ボックス、ページ、コンテンツ タイトルなどの最上位の要素として使用します。</li></ul> |
+|!["Subtitle Text Image/サブタイトル" テキスト イメージ](../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>このクラスは、タイトルの 1 つ下です。</li><li>通常、サブタイトル、ナビゲーション要素、グループ ヘッダーとして使用します。</li><ul> |
+|![本文テキストイメージ](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |<ul><li>通常、アドイン内の本文として使用します。</li><ul>|
+|![キャプション テキストのイメージ](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |<ul><li>通常、タイムスタンプなどの 2 番目や 3 番目のテキストとして、行、キャプション、フィールド ラベルごとに使用します。</li><ul>|
+|![Annotation Text Image](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>文字体裁の最小の階層は、稀にしか使用しないでください。読みやすさが求められない状況で使用できます。</li><ul>|
