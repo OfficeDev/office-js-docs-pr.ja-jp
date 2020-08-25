@@ -1,27 +1,58 @@
 ---
-title: Visual Studio Code で開発されたアドインを発行する
-description: Visual Studio Code で開発されたアドインを発行する方法
-ms.date: 12/02/2019
+title: Visual Studio Code と Azure を使用してアドインを発行する
+description: Visual Studio Code と Azure Active Directory を使用してアドインを発行する方法
+ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: a42db9215652f15b5c4bf9f1ad025898afc8fca4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3552e4eebacc84fc2b8e37782c97b4e03e96e508
+ms.sourcegitcommit: 7faa0932b953a4983a80af70f49d116c3236d81a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611912"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "46845513"
 ---
-# <a name="publish-an-add-in-developed-with-visual-studio-code"></a><span data-ttu-id="5ef07-103">Visual Studio Code で開発されたアドインを発行する</span><span class="sxs-lookup"><span data-stu-id="5ef07-103">Publish an add-in developed with Visual Studio Code</span></span>
+# <a name="publish-an-add-in-developed-with-visual-studio-code"></a><span data-ttu-id="67873-103">Visual Studio Code で開発されたアドインを発行する</span><span class="sxs-lookup"><span data-stu-id="67873-103">Publish an add-in developed with Visual Studio Code</span></span>
 
-<span data-ttu-id="5ef07-104">この記事では、Yeoman ジェネレーターを使用して作成し、[Visual Studio Code (VS Code)](https://code.visualstudio.com) またはその他のエディターで開発した Office アドインを発行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5ef07-104">This article describes how to publish an Office Add-in that you created using the Yeoman generator and developed with [Visual Studio Code (VS Code)](https://code.visualstudio.com) or any other editor.</span></span>
+<span data-ttu-id="67873-104">この記事では、Yeoman ジェネレーターを使用して作成し、[Visual Studio Code (VS Code)](https://code.visualstudio.com) またはその他のエディターで開発した Office アドインを発行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="67873-104">This article describes how to publish an Office Add-in that you created using the Yeoman generator and developed with [Visual Studio Code (VS Code)](https://code.visualstudio.com) or any other editor.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5ef07-105">Visual Studio を使用して作成した Office アドインの発行の詳細については、「[Visual Studio を使用してアドインを発行する](package-your-add-in-using-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5ef07-105">For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).</span></span>
+> <span data-ttu-id="67873-105">Visual Studio を使用して作成した Office アドインの発行の詳細については、「[Visual Studio を使用してアドインを発行する](package-your-add-in-using-visual-studio.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="67873-105">For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).</span></span>
 
-## <a name="publishing-an-add-in-for-other-users-to-access"></a><span data-ttu-id="5ef07-106">他のユーザーがアクセスできるようにアドインを発行する</span><span class="sxs-lookup"><span data-stu-id="5ef07-106">Publishing an add-in for other users to access</span></span>
+## <a name="publishing-an-add-in-for-other-users-to-access"></a><span data-ttu-id="67873-106">他のユーザーがアクセスできるようにアドインを発行する</span><span class="sxs-lookup"><span data-stu-id="67873-106">Publishing an add-in for other users to access</span></span>
 
-[!include[instructions for publishing an Office Add-in](../includes/publish-add-in.md)]
+<span data-ttu-id="67873-107">Office アドインは、Web アプリケーションとマニフェスト ファイルで構成されています。</span><span class="sxs-lookup"><span data-stu-id="67873-107">An Office Add-in consists of a web application and a manifest file.</span></span> <span data-ttu-id="67873-108">Web アプリケーションはアドインのユーザー インターフェイスと機能を定義し、マニフェストは Web アプリケーションの場所を指定し、アドインの設定と機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="67873-108">The web application defines the add-in's user interface and functionality, while the manifest specifies the location of the web application and defines settings and capabilities of the add-in.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5ef07-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ef07-107">See also</span></span>
+<span data-ttu-id="67873-109">を開発しているときに、ローカル web サーバーでアドインを実行できます ( `localhost` )。</span><span class="sxs-lookup"><span data-stu-id="67873-109">While you're developing, you can run the add-in on your local web server (`localhost`).</span></span> <span data-ttu-id="67873-110">他のユーザーがアクセスできるように公開する準備ができたら、web アプリケーションを展開し、マニフェストを更新して、展開されたアプリケーションの URL を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67873-110">When you're ready to publish it for other users to access, you'll need to deploy the web application and update the manifest to specify the URL of the deployed application.</span></span>
 
-- [<span data-ttu-id="5ef07-108">Visual Studio Code を使用して Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="5ef07-108">Develop Office Add-ins with Visual Studio Code</span></span>](../develop/develop-add-ins-vscode.md)
-- [<span data-ttu-id="5ef07-109">Office アドインを展開し、発行する</span><span class="sxs-lookup"><span data-stu-id="5ef07-109">Deploy and publish your Office Add-in</span></span>](../publish/publish.md)
+<span data-ttu-id="67873-111">アドインが目的どおりに動作している場合は、Azure ストレージ拡張機能を使用して、Visual Studio Code を使用して直接発行できます。</span><span class="sxs-lookup"><span data-stu-id="67873-111">When your add-in is working as desired, you can publish it directly through Visual Studio Code using the Azure Storage extension.</span></span>
+
+## <a name="using-visual-studio-code-to-publish"></a><span data-ttu-id="67873-112">Visual Studio Code を使用して発行する</span><span class="sxs-lookup"><span data-stu-id="67873-112">Using Visual Studio Code to publish</span></span>
+
+>[!NOTE]
+> <span data-ttu-id="67873-113">これらの手順は、[ごみ箱のジェネレーターを使用して作成されたプロジェクトに対してのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="67873-113">These steps only work for projects created with the Yeoman generator.</span></span>
+
+1. <span data-ttu-id="67873-114">Visual Studio Code (VS コード) で、ルートフォルダーからプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="67873-114">Open your project from its root folder in Visual Studio Code (VS Code).</span></span>
+2. <span data-ttu-id="67873-115">VS Code の [Extensions] ビューで、Azure ストレージ拡張機能を検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="67873-115">From the Extensions view in VS Code, search for the Azure Storage extension and install it.</span></span>
+3. <span data-ttu-id="67873-116">インストールされると、Azure アイコンがアクティビティバーに追加されます。</span><span class="sxs-lookup"><span data-stu-id="67873-116">Once installed, an Azure icon is added to the Activity Bar.</span></span> <span data-ttu-id="67873-117">この拡張機能にアクセスするには、このチェックボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="67873-117">Select it to access the extension.</span></span> <span data-ttu-id="67873-118">アクティビティバーが非表示の場合、拡張機能にアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="67873-118">If your Activity Bar is hidden, you won't be able to access the extension.</span></span> <span data-ttu-id="67873-119">[> の表示 > 表示 **]** を選択してアクティビティバーを表示します。</span><span class="sxs-lookup"><span data-stu-id="67873-119">Show the Activity Bar by selecting **View > Appearance > Show Activity Bar**.</span></span>
+4. <span data-ttu-id="67873-120">拡張機能を使用している場合は、[ **azure にサインイン**] を選択して azure アカウントにサインインします。</span><span class="sxs-lookup"><span data-stu-id="67873-120">When in the extension, sign in to your Azure account by selecting **Sign in to Azure**.</span></span> <span data-ttu-id="67873-121">Azure アカウントをまだ持っていない場合は、[azure アカウント **を作成**する] を選択して、azure アカウントを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="67873-121">You can also create an Azure account if you don't already have one by selecting **Create a free Azure account**.</span></span> <span data-ttu-id="67873-122">提供される手順に従って、アカウントをセットアップします。</span><span class="sxs-lookup"><span data-stu-id="67873-122">Follow the provided steps to set up your account.</span></span>
+5. <span data-ttu-id="67873-123">Azure アカウントにサインインすると、拡張機能に Azure storage アカウントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="67873-123">Once you have signed in to your Azure account, you'll see your Azure storage accounts appear in the extension.</span></span> <span data-ttu-id="67873-124">ストレージアカウントをまだ持っていない場合は、[ **新しいストレージアカウントの作成** ] オプションを使用して作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67873-124">If you don't already have a storage account, you'll need to create one using the **Create new storage account** option.</span></span> <span data-ttu-id="67873-125">ストレージアカウントに、「a-z」と「0-9」のみを使用して、グローバルに一意の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="67873-125">Name your storage account a globally unique name, using only 'a-z' and '0-9'.</span></span> <span data-ttu-id="67873-126">既定では、これによってストレージアカウントとリソースグループが同じ名前で作成されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="67873-126">Note that by default, this creates a storage account and a resource group with the same name.</span></span> <span data-ttu-id="67873-127">これにより、自動的にストレージアカウントが West 米に配置されます。</span><span class="sxs-lookup"><span data-stu-id="67873-127">It automatically puts the storage account in West US.</span></span> <span data-ttu-id="67873-128">これは [、Azure アカウント](https://portal.azure.com/)を使用してオンラインで調整できます。</span><span class="sxs-lookup"><span data-stu-id="67873-128">This can be adjusted online through [your Azure account](https://portal.azure.com/).</span></span>
+6. <span data-ttu-id="67873-129">ストレージアカウントを選択して保持 (右クリック) し、[ **静的 web サイトの構成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="67873-129">Select and hold (right-click) your storage account, choosing **Configure static website**.</span></span> <span data-ttu-id="67873-130">インデックスドキュメント名と404ドキュメント名を入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="67873-130">You'll be asked to enter the index document name and the 404 document name.</span></span> <span data-ttu-id="67873-131">Index ドキュメント名を既定のからから `index.html` に変更し **`taskpane.html`** ます。</span><span class="sxs-lookup"><span data-stu-id="67873-131">Change the index document name from the default `index.html` to **`taskpane.html`**.</span></span> <span data-ttu-id="67873-132">404のドキュメント名も変更する必要がありますが、にする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="67873-132">You may decide to also change the 404 document name but are not required to.</span></span>
+7. <span data-ttu-id="67873-133">ストレージを選択して保持 (右クリック) し、今度は [ **静的 web サイトの参照**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="67873-133">Select and hold (right-click) your storage again, this time choosing **Browse static website**.</span></span> <span data-ttu-id="67873-134">開いたブラウザーウィンドウで、web サイトの URL をコピーします。</span><span class="sxs-lookup"><span data-stu-id="67873-134">From the browser window that opens, copy the website URL.</span></span>
+8. <span data-ttu-id="67873-135">VS Code で、プロジェクトのマニフェストファイル () を開き、 `manifest.xml` localhost の url (など) への参照を `https://localhost:3000` コピーした url に変更します。</span><span class="sxs-lookup"><span data-stu-id="67873-135">In VS Code, open your project's manifest file (`manifest.xml`) and change any reference to your localhost URL (such as `https://localhost:3000`) to the URL you've copied.</span></span> <span data-ttu-id="67873-136">このエンドポイントは、新しく作成されたストレージアカウントの静的な web サイトの URL です。</span><span class="sxs-lookup"><span data-stu-id="67873-136">This endpoint is the static website URL for your newly created storage account.</span></span> <span data-ttu-id="67873-137">マニフェストファイルへの変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="67873-137">Save the changes to your manifest file.</span></span>
+9. <span data-ttu-id="67873-138">コマンドラインプロンプトを開き、アドインプロジェクトのルートディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="67873-138">Open a command line prompt and navigate to the root directory of your add-in project.</span></span> <span data-ttu-id="67873-139">その後、次のコマンドを実行して、運用展開用のすべてのファイルを準備します。</span><span class="sxs-lookup"><span data-stu-id="67873-139">Then run the following command to prepare all files for production deployment.</span></span>
+
+    ```command&nbsp;line
+    npm run build
+    ```
+
+    <span data-ttu-id="67873-140">ビルドが完了すると、アドイン プロジェクトのルート ディレクトリにある **dist** フォルダーに、以降の手順で展開するファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="67873-140">When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy in subsequent steps.</span></span>
+
+10. <span data-ttu-id="67873-141">を展開するには、[ファイルエクスプローラー] を選択し、[ **dist** ] フォルダーを右クリックして、[ **静的 Web サイトに展開**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="67873-141">To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website**.</span></span> <span data-ttu-id="67873-142">メッセージが表示されたら、前に作成したストレージアカウントを選択します。</span><span class="sxs-lookup"><span data-stu-id="67873-142">When prompted, select the storage account you created previously.</span></span>
+
+![静的 web サイトへの展開](../images/deploy-to-static-website.png)
+
+11. <span data-ttu-id="67873-144">展開が完了すると、 **web サイトを参照** するメッセージが表示され、展開されたアプリコードのプライマリエンドポイントを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="67873-144">When deployment is complete, a **Browse to website** message appears which you can select to open the primary endpoint of the deployed app code.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="67873-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="67873-145">See also</span></span>
+
+- [<span data-ttu-id="67873-146">Visual Studio Code を使用して Office アドインを開発する</span><span class="sxs-lookup"><span data-stu-id="67873-146">Develop Office Add-ins with Visual Studio Code</span></span>](../develop/develop-add-ins-vscode.md)
+- [<span data-ttu-id="67873-147">Office アドインを展開し、発行する</span><span class="sxs-lookup"><span data-stu-id="67873-147">Deploy and publish your Office Add-in</span></span>](../publish/publish.md)
