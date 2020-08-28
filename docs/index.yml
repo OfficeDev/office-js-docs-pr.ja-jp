@@ -8,20 +8,26 @@ metadata:
   ms.topic: landing-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 07/13/2020
-  ms.openlocfilehash: 5a22c2faf5402416439f5bb6100297232127ffa4
-  ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
+  ms.date: 07/31/2020
+  ms.openlocfilehash: 7477d00b20edfc64c29f2bff39aa90da6376320c
+  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "45228354"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "47294116"
 landingContent:
 - title: Office アドインについて
   linkLists:
   - linkListType: concept
     links:
-    - text: 中心概念
+    - text: Office アドイン プラットフォームの概要
       url: overview/office-add-ins.md
+  - linkListType: learn
+    links:
+    - text: アドインを使用した Office クライアントのカスタマイズの概要
+      url: /learn/modules/intro-office-add-ins/
+    - text: Office アドインを使用して Office クライアントを拡張する
+      url: /learn/paths/m365-office-add-in-associate/
   - linkListType: overview
     links:
     - text: Excel アドイン ドキュメント
@@ -36,7 +42,7 @@ landingContent:
       url: project/index.yml
     - text: Word アドイン ドキュメント
       url: word/index.yml
-- title: 概要
+- title: 作業の開始
   linkLists:
   - linkListType: get-started
     links:
