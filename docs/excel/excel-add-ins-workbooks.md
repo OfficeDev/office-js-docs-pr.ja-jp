@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: Excel JavaScript API を使用して、ブックまたはアプリケーションレベルの機能を使用して一般的なタスクを実行する方法を示すコードサンプルです。
-ms.date: 05/06/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a7a35e2627863c648f8c3e31ab05b2714ca0aebe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609207"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294130"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -146,6 +146,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+### <a name="custom-properties"></a>カスタム プロパティ
+
 カスタム プロパティを定義することもできます。 DocumentProperties オブジェクトには `custom` プロパティが含まれていて、ユーザー定義プロパティのキー値のペアのコレクションを表します。 次の例では、"Hello" という値を持つ **Introduction** という名前のカスタム プロパティを作成し、それを取得する方法を示します。
 
 ```js
@@ -160,11 +162,46 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var customDocProperties = context.workbook.properties.custom;
     var customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load("key, value");
+    customProperty.load(["key, value"]);
 
     return context.sync().then(function() {
         console.log("Custom key  : " + customProperty.key); // "Introduction"
         console.log("Custom value : " + customProperty.value); // "Hello"
+    });
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="worksheet-level-custom-properties-preview"></a>ワークシートレベルのカスタムプロパティ (プレビュー)
+
+> [!NOTE]
+> ワークシートレベルのカスタムプロパティは現在プレビュー段階です。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+カスタムプロパティは、ワークシートレベルで設定することもできます。 これらはドキュメントレベルのカスタムプロパティに似ていますが、異なるワークシート間で同じキーを繰り返すことができる点が異なります。 次の例は、現在のワークシートで "α" という値を持つ、"worksheet **group** " という名前のカスタムプロパティを作成し、それを取得する方法を示しています。
+
+```js
+Excel.run(function (context) {
+    // Add the custom property.
+    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    customWorksheetProperties.add("WorksheetGroup", "Alpha");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+[...]
+
+Excel.run(function (context) {
+    // Load the keys and values of all custom properties in the current worksheet.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load("name");
+
+    var customWorksheetProperties = worksheet.customProperties;
+    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    customWorksheetProperty.load(["key", "value"]);
+
+    return context.sync().then(function() {
+        // Log the WorksheetGroup custom property to the console.
+        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
     });
 }).catch(errorHandlerFunction);
 ```
@@ -190,9 +227,9 @@ Excel.run(function (context) {
 
 ブックには、特定のデータの表示方法に影響する言語とカルチャの設定が含まれています。 これらの設定は、アドインのユーザーが異なる言語とカルチャでブックを共有している場合に、データをローカライズするのに役立ちます。 アドインでは、文字列の解析を使用して、各ユーザーが独自のカルチャの形式でデータを表示できるように、システムのカルチャ設定に基づいて数値、日付、時刻の形式をローカライズできます。
 
-`Application.cultureInfo`システムのカルチャ設定を[CultureInfo](/javascript/api/excel/excel.cultureinfo)オブジェクトとして定義します。 これには、数値の小数点の記号や日付の形式などの設定が含まれます。
+`Application.cultureInfo` システムのカルチャ設定を [CultureInfo](/javascript/api/excel/excel.cultureinfo) オブジェクトとして定義します。 これには、数値の小数点の記号や日付の形式などの設定が含まれます。
 
-一部のカルチャ設定は[、EXCEL UI を使用して変更](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)できます。 システム設定は、オブジェクトに保持され `CultureInfo` ます。 ローカルの変更は、など、[アプリケーション](/javascript/api/excel/excel.application)レベルのプロパティとして保持され `Application.decimalSeparator` ます。
+一部のカルチャ設定は [、EXCEL UI を使用して変更](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)できます。 システム設定は、オブジェクトに保持され `CultureInfo` ます。 ローカルの変更は、など、 [アプリケーション](/javascript/api/excel/excel.application)レベルのプロパティとして保持され `Application.decimalSeparator` ます。
 
 次の例では、"," から、システム設定で使用される文字への数値文字列の小数点の区切り文字を変更します。
 

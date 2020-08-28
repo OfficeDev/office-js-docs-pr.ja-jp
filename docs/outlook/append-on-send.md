@@ -2,14 +2,14 @@
 title: Outlook アドインでの追加-送信を実装する (プレビュー)
 description: Outlook アドインでの追加-送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672730"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293990"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインでの追加-送信を実装する (プレビュー)
 
@@ -184,6 +184,9 @@ Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > "サイドロードがサポートされていません" というエラーが表示された場合は、無視して続行できます。
 
 1. 「 [テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。
 

@@ -3,12 +3,12 @@ title: 正規表現アクティブ化ルールを使用してアドインを表�
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547522"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292476"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
@@ -53,7 +53,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 
 - アイテムの HTML 形式の本文は、Outlook リッチ クライアントと、Outlook on the web または Outlook モバイルとでは若干異なります。 正規表現を正確に定義する必要があります。
 
-- ホスト アプリケーション、デバイスの種類、または正規表現を適用するプロパティに応じて、ホストごとに、アクティブ化ルールとして正規表現を設計するときに認識しておく必要がある、ベスト プラクティスと制限事項が他にもあります。詳細については、「 [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」を参照してください。
+- Outlook クライアント、デバイスの種類、または正規表現が適用されているプロパティによっては、正規表現をアクティブ化ルールとして設計する際に注意する必要がある、各クライアントに対して他のベストプラクティスと制限があります。詳細については [、「アクティブ化の制限」および「Outlook アドインの JAVASCRIPT API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 」を参照してください。
 
 ### <a name="examples"></a>例
 

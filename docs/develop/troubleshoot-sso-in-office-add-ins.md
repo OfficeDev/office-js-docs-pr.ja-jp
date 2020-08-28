@@ -3,19 +3,19 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: Office アドインのシングルサインオン (SSO) に関する問題のトラブルシューティング方法と、特別な条件やエラーを処理する方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4809ccf964467567503cdbaa0cf99e90b81fd19b
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: b8578f103c0b4e31523a3c4f99f4eac6ec544b2b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573211"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293136"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
 
 > [!NOTE]
-> 現在、シングルサインオン API は Word、Excel、Outlook、および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
 > Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
@@ -77,7 +77,7 @@ ms.locfileid: "46573211"
 
 ### <a name="13007"></a>13007
 
-Office ホストは、アドインの Web サービスへのアクセス トークンを取得できませんでした。
+Office アプリケーションは、アドインの web サービスへのアクセストークンを取得できませんでした。
 
 - 開発中にこのエラーが発生する場合は、アドインの登録とアドイン マニフェストで `profile` のアクセス許可および (MSAL.NET を使用している場合は) `openid` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 - 運用環境では、このエラーの原因として考えられることがいくつかあります。 その一部を次に示します。
@@ -107,7 +107,7 @@ Office ホストは、アドインの Web サービスへのアクセス トー�
 
 ### <a name="13013"></a>13013
 
-は `getAccessToken` 短時間で何度も呼び出されていたため、Office は最新の通話を調整しました。 これは通常、このメソッドへの呼び出しの無限ループが原因で発生します。 メソッドを取り消すことが推奨されるシナリオがあります。 ただし、コードでカウンターまたはフラグ変数を使用して、メソッドが繰り返し呼び戻されないようにする必要があります。 同じ "再試行" コードパスが再度実行されている場合は、コードは、ユーザー認証の代替システムにフォールバックする必要があります。 コード例については、 `retryGetAccessToken` [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)または[ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)で変数がどのように使用されているかを参照してください。
+は `getAccessToken` 短時間で何度も呼び出されていたため、Office は最新の通話を調整しました。 これは通常、このメソッドへの呼び出しの無限ループが原因で発生します。 メソッドを取り消すことが推奨されるシナリオがあります。 ただし、コードでカウンターまたはフラグ変数を使用して、メソッドが繰り返し呼び戻されないようにする必要があります。 同じ "再試行" コードパスが再度実行されている場合は、コードは、ユーザー認証の代替システムにフォールバックする必要があります。 コード例については、 `retryGetAccessToken` [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) または [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)で変数がどのように使用されているかを参照してください。
 
 ### <a name="50001"></a>50001
 

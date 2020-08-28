@@ -3,12 +3,12 @@ title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d566c0f330ff4473fc9c71a7dff26048093707db
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b0b481edc77170bb395d86f77688bc976f8e6e4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611625"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292518"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 
@@ -31,7 +31,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ### <a name="cant-do"></a>できないこと
 
-- 連絡先、電子メールアドレス、会議提案、またはタスク提案エンティティで[Itemhasknownentity](../reference/manifest/rule.md#itemhasknownentity-rule)ルールを使用します。
+- 連絡先、電子メールアドレス、会議提案、またはタスク提案エンティティで [Itemhasknownentity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用します。
 
 - [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) ルールまたは [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ルールを使用。
 
@@ -178,5 +178,5 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../develop/privacy-and-security.md)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../concepts/privacy-and-security.md)
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)

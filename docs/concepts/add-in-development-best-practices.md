@@ -3,12 +3,12 @@ title: Office アドイン開発のベスト プラクティス
 description: Office アドインを作成するための開発時にベストプラクティスを適用します。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: d94d0ff4f3ff5bed4ab9eaaae134db40f21b972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72bcf8c7bd994c499c1e85154a383c3a91464a79
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608059"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293066"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -21,7 +21,7 @@ ms.locfileid: "44608059"
 - ユーザーがタスクをすばやく効率的に完了するのに役立つアドインを作成します。Office アプリケーションに当てはまるシナリオに絞ります。次に例を示します。
  - コア オーサリング タスクをよりスピーディかつ簡単にし、中断を減らします。
  - Office 内で新しいシナリオを有効にします。
- - Office ホストに補助サービスを埋め込みます。
+ - Office アプリケーション内に補完的サービスを埋め込む。
  - Office エクスペリエンスを向上させて生産性を高めます。
 - [魅力的な初回実行時エクスペリエンス](#create-an-engaging-first-run-experience)を作成して、ユーザーがアドインの価値をすぐに感じられるようにしてください。
 - [効果的な AppSource リスト](/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
@@ -78,7 +78,7 @@ ms.locfileid: "44608059"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- アドインを実行するホスト アプリケーションがタッチに対応しているかどうかを検出するには、[Context.touchEnabled](/javascript/api/office/office.context) プロパティを使用します。
+- [Context.touchenabled](/javascript/api/office/office.context#touchenabled)プロパティを使用して、アドインが実行されている Office アプリケーションがタッチに対応しているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -122,7 +122,7 @@ ms.locfileid: "44608059"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
-- アドインと Office ドキュメント間のデータ交換を最小限にします。 詳細については、「[ループでのコンテキストの同期方法の使用を避ける](correlated-objects-pattern.md)」を参照してください。
+- アドインと Office ドキュメント間のデータ交換を最小限にします。 詳細については、「 [ループでのコンテキストの同期方法の使用を避ける](correlated-objects-pattern.md)」を参照してください。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 

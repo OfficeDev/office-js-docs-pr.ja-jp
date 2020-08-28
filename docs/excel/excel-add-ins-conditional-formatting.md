@@ -1,18 +1,18 @@
 ---
 title: Excel JavaScript API を使用して範囲に条件付き書式を適用する
 description: この記事では、Excel JavaScript アドインのコンテキストでの条件付き書式について説明します。
-ms.date: 04/15/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8b3b833f2c2e4d8d9b43a6d9cde7d619fc488e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609630"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292661"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
-Excel の JavaScript ライブラリは、ワークシートのデータ範囲に条件付き書式を適用するための API を提供します。 この機能により、大量のデータ セットの視覚的な解析を簡単に行うことができます。 範囲内で行われた変更に応じて、書式も動的に更新されます。 
+Excel の JavaScript ライブラリは、ワークシートのデータ範囲に条件付き書式を適用するための API を提供します。 この機能により、大量のデータ セットの視覚的な解析を簡単に行うことができます。 範囲内で行われた変更に応じて、書式も動的に更新されます。
 
 > [!NOTE]
 > この記事では、Excel の JavaScript のアドインのコンテキストにおける条件付き書式について説明します。次の記事では、Excel の完全な条件付き書式機能に関する詳細情報を提供しています。
@@ -21,7 +21,7 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件付き書式のプログラムによる制御
 
-`Range.conditionalFormats` プロパティは、範囲に適用される [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) オブジェクトのコレクションです。  `ConditionalFormat` オブジェクトには、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) に基づいて適用される書式を定義するためのプロパティがいくつか含まれています。 
+`Range.conditionalFormats` プロパティは、範囲に適用される [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) オブジェクトのコレクションです。  `ConditionalFormat` オブジェクトには、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) に基づいて適用される書式を定義するためのプロパティがいくつか含まれています。
 
 -    `cellValue`
 -    `colorScale`
@@ -33,9 +33,9 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 -    `topBottom`
 
 > [!NOTE]
-> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「[*OrNullObject メソッド](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)」セクションを参照してください。
+> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「 [ \* OrNullObject メソッド](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)」セクションを参照してください。
 
-ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。 
+ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。
 
 ## <a name="creating-conditional-formatting-rules"></a>条件付き書式のルールの作成
 
@@ -110,7 +110,7 @@ await context.sync();
 ユーザー設定の条件付き書式では、任意の複雑な数式に基づいて、ユーザー定義の書式をセルに適用することができます。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) オブジェクトでは、さまざまな表記で数式を定義することができます。
 
 -    `formula` - 標準の表記法。
--    `formulaLocal`-ユーザーの言語に基づいてローカライズされます。
+-    `formulaLocal` -ユーザーの言語に基づいてローカライズされます。
 -    `formulaR1C1` - R1C1 スタイルの表記法。
 
 次に、左側にあるセルより高い数値を含むセルのフォント色を、緑にする例を示します。

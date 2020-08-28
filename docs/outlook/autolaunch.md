@@ -2,14 +2,14 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 08/18/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 0131cafa8315315d63b6319ecad4fd41b1168073
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803752"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293927"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -193,6 +193,9 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > "サイドロードがサポートされていません" というエラーが表示された場合は、無視して続行できます。
 
 1. 「[テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。
 

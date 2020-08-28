@@ -4,20 +4,20 @@ description: Office アドインコマンドの要件セットの概要。
 ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 14952f97e3f03b83c15d0a4d51183fac3ec80af3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 25c8a08983d617e4592dd5602d06eb1d780165d0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159088"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293591"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。詳細については、「[Excel、Word および PowerPoint のアドイン コマンド](../../design/add-in-commands.md)」と「[Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
-アドイン コマンドの最初のリリースには、対応する要件セットがありません (つまり、AddinCommands 1.0 要件セットはありません)。次の表に、初期リリースのバージョンをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド バージョンまたはビルド番号を示します。  
+アドインコマンドの最初のリリースには、対応する要件セットがありません (つまり、AddinCommands 1.0 の要件セットはありません)。 次の表に、最初のリリースバージョンをサポートする Office クライアントアプリケーションと、それらのアプリケーションのビルドバージョンまたはバージョン番号を示します。  
 
 | リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -25,7 +25,7 @@ ms.locfileid: "45159088"
 
 アドイン コマンド 1.1 の要件セットでは、「[ドキュメントで作業ウィンドウを自動的に開く](../../develop/automatically-open-a-task-pane-with-a-document.md)」機能が導入されています。
 
-次の表に、アドイン コマンド 1.1 の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号を示します。
+次の表に、アドインコマンド1.1 の要件セット、その要件セットをサポートする Office クライアントアプリケーション、Office アプリケーションのビルド番号またはバージョン番号を示します。
 
 |  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -47,5 +47,5 @@ ms.locfileid: "45159088"
 ## <a name="see-also"></a>関連項目
 
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

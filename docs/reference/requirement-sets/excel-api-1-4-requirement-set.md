@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.4
 description: ExcelApi 1.4 の要件セットの詳細
-ms.date: 07/26/2019
+ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1bd6d913bf069e4b8774b8eb65ea147992f98b9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611429"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294270"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -20,13 +20,13 @@ ms.locfileid: "44611429"
 新しいプロパティ:
 
 * `comment`
-* `scope`-ワークシートまたはブックを対象範囲とするアイテム。
-* `worksheet`-名前付きアイテムのスコープが設定されているワークシートを返します。
+* `scope` -ワークシートまたはブックを対象範囲とするアイテム。
+* `worksheet` -名前付きアイテムのスコープが設定されているワークシートを返します。
 
 新しいメソッド:
 
-* `add(name: string, reference: Range or string, comment: string)`-指定したスコープのコレクションに新しい名前を追加します。
-* `addFormulaLocal(name: string, formula: string, comment: string)`-式のユーザーのロケールを使用して、指定したスコープのコレクションに新しい名前を追加します。
+* `add(name: string, reference: Range or string, comment: string)` -指定したスコープのコレクションに新しい名前を追加します。
+* `addFormulaLocal(name: string, formula: string, comment: string)` -式のユーザーのロケールを使用して、指定したスコープのコレクションに新しい名前を追加します。
 
 ## <a name="settings-api-in-the-excel-namespace"></a>Excel 名前空間内の Setting API
 
@@ -40,7 +40,7 @@ Api は `getItem()` 、キーを使用して設定エントリを取得し、 `a
 * 表の列を表の末尾に追加します。
 * 一度に複数の行をテーブルに追加します。
 * `range.getColumnsAfter(count: number)` および `range.getColumnsBefore(count: number)` を使用して、現在の Range オブジェクトの左右にある特定の数の列を取得します。
-* [Get item または null オブジェクト関数](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): この機能は、キーを使用してオブジェクトを取得することを可能にします。 オブジェクトが存在しない場合、返されるオブジェクトの `isNullObject` プロパティは true になります。 これにより、開発者は、オブジェクトが存在するかどうかを確認することができます。ただし、例外処理によって処理する必要はありません。 この `*OrNullObject` メソッドは、ほとんどのコレクションオブジェクトで使用できます。
+* [ \* OrNullObject のメソッドとプロパティ](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): この機能は、キーを使用してオブジェクトを取得することを可能にします。 オブジェクトが存在しない場合、返されるオブジェクトの `isNullObject` プロパティは true になります。 これにより、開発者は、オブジェクトが存在するかどうかを、例外処理を通じて処理することなく確認できます。 `*OrNullObject`メソッドは、ほとんどのコレクションオブジェクトで使用できます。
 
 ```js
 worksheet.getItemOrNullObject("itemName")
@@ -48,7 +48,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.4 の Api を示します。 Excel JavaScript API 要件セット1.4 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.4 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.4)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.4 の Api を示します。 Excel JavaScript API 要件セット1.4 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.4 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.4)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -88,9 +88,9 @@ worksheet.getItemOrNullObject("itemName")
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|表の列数を取得します。|
 ||[getItemOrNullObject (key: number \| 文字列)](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|名前または ID によって、列オブジェクトを取得します。 列が存在しない場合は null オブジェクトを返します。|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|表の行数を取得します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[settings](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている Setting のコレクションを表します。 読み取り専用です。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシート全体が空白の場合、この関数は null オブジェクトを返します。|
-||[姓名](/javascript/api/excel/excel.worksheet#names)|現在のワークシートにスコープされている名前のコレクション。 読み取り専用です。|
+|[ブック](/javascript/api/excel/excel.workbook)|[settings](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている Setting のコレクションを表します。 読み取り専用です。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシート全体が空白の場合、この関数は null オブジェクトを返します。|
+||[names](/javascript/api/excel/excel.worksheet#names)|現在のワークシートにスコープされている名前のコレクション。 読み取り専用です。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|コレクションに含まれるワークシートの数を取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|名前または ID を使用して、ワークシート オブジェクトを取得します。 ワークシートが存在しない場合は null オブジェクトを返します。|
 

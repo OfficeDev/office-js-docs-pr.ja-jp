@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
-ms.date: 05/06/2020
+ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a185551bf0ddd6b5d4d5a90e4faac7ce78e2cc9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609749"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294158"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -78,7 +78,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-次の例では、`getSpecialCells` メソッドを使用して、数式を含むすべてのセルを検索します。 このコードについては、以下の点に注意してください。
+次の例では、`getSpecialCells` メソッドを使用して、数式を含むすべてのセルを検索します。 このコードの注意点は次のとおりです。
 
 - 検索が必要なシートの部分を制限するために、まず `Worksheet.getUsedRange` を呼び出し、その範囲に関してのみ `getSpecialCells` を呼び出します。
 - `getSpecialCells` メソッドは `RangeAreas` オブジェクトを返すため、数式を含むセルはすべて、連続していないセルであっても、ピンク色になります。
@@ -96,10 +96,10 @@ Excel.run(function (context) {
 
 対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 ブロックがない場合、 `catch` エラーによってメソッドは停止します。
 
-対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードについては、以下の点に注意してください。
+対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のサンプルでは、このパターンを使用しています。 このコードの注意点は次のとおりです。
 
 - `getSpecialCellsOrNullObject` メソッドは常にプロキシ オブジェクトを返します。そのため、通常の JavaScript 使用環境では `null` となることはありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
-- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「[\*OrNullObject メソッド](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)」を参照してください。
+- `isNullObject` プロパティをテストする*前*に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、*明示的*に `isNullObject` プロパティをロードする必要はありません。 `load` がオブジェクトに対して呼び出されていない場合であっても、プロパティは `context.sync` によって自動的にロードされます。 詳細については、「 [ \* OrNullObject メソッドとプロパティ](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)」を参照してください。
 - このコードをテストするには、最初に数式を含まないセルの範囲を選択してからコードを実行します。 次に、少なくとも 1 つのセルが数式を含む範囲を選択してからコードを再実行します。
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` では、ソースからコピー先にコピーされるデータを指定します。
 
-- `Excel.RangeCopyType.formulas`元のセルの数式を移動し、それらの数式の範囲の相対的な位置を保持します。 任意の数式以外のエントリはそのままコピーされます。
+- `Excel.RangeCopyType.formulas` 元のセルの数式を移動し、それらの数式の範囲の相対的な位置を保持します。 任意の数式以外のエントリはそのままコピーされます。
 - `Excel.RangeCopyType.values` では、データ値と、数式の場合は数式の結果をコピーします。
 - `Excel.RangeCopyType.formats` では、フォント、色、およびその他の書式設定を含む、範囲の書式設定をコピーしますが、値はコピーしません。
-- `Excel.RangeCopyType.all`(既定のオプション) を選択すると、データと書式設定の両方がコピーされます。
+- `Excel.RangeCopyType.all` (既定のオプション) を選択すると、データと書式設定の両方がコピーされます。
 
 `skipBlanks` では、空白セルをコピー先にコピーするかどうかを設定します。 true の場合、`copyFrom` ではソースの範囲にある空白セルはスキップされます。
 スキップされたセルでは、コピー先の範囲内の対応するセルにある既存のデータを上書きすることはありません。 既定値は false です。
@@ -237,7 +237,7 @@ Excel.run(function (context) {
 
 ### <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル[範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)してセルを移動した場合や、**切り取り**と**貼り付け**の操作を行った場合と同じです。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動し `destinationRange` ます。
+[指定範囲の moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)メソッドは、セルをブック内の新しい位置に移動します。 このセルの移動動作は、セル [範囲をドラッグ](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) してセルを移動した場合や、 **切り取り** と **貼り付け** の操作を行った場合と同じです。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動し `destinationRange` ます。
 
 次のコードサンプルは、メソッドを使用して移動する範囲を示して `Range.moveTo` います。 コピー先の範囲がソースよりも小さい場合は、ソースコンテンツを含むように展開されます。
 
@@ -290,9 +290,9 @@ Excel.run(function (context) {
 
 ## <a name="group-data-for-an-outline"></a>アウトラインのデータをグループ化する
 
-行またはセル範囲の列は、[アウトライン](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)を作成するためにまとめてグループ化することができます。 これらのグループを折りたたんで展開し、対応するセルを非表示にして表示することができます。 これにより、トップ行のデータの簡単な分析が容易になります。 これらのアウトライングループを作成するには、[範囲グループ](/javascript/api/excel/excel.range#group-groupoption-)を使用します。
+行またはセル範囲の列は、 [アウトライン](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)を作成するためにまとめてグループ化することができます。 これらのグループを折りたたんで展開し、対応するセルを非表示にして表示することができます。 これにより、トップ行のデータの簡単な分析が容易になります。 これらのアウトライングループを作成するには、 [範囲グループ](/javascript/api/excel/excel.range#group-groupoption-) を使用します。
 
-アウトラインには階層を設定できます。小さなグループは、より大きいグループの下にネストされています。 これにより、アウトラインを異なるレベルで表示できるようになります。 表示されるアウトラインレベルを変更するには、 [showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)メソッドを使用してプログラムで実行できます。 Excel では8レベルのアウトライングループのみがサポートされることに注意してください。
+アウトラインには階層を設定できます。小さなグループは、より大きいグループの下にネストされています。 これにより、アウトラインを異なるレベルで表示できるようになります。 表示されるアウトラインレベルを変更するには、 [showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) メソッドを使用してプログラムで実行できます。 Excel では8レベルのアウトライングループのみがサポートされることに注意してください。
 
 次のコードサンプルでは、行と列の両方に対して2つのレベルのグループを持つアウトラインを作成する方法を示します。 次の図は、そのアウトラインのグループを示しています。 コードサンプルでは、グループ化されている範囲に、アウトラインコントロールの行または列が含まれていないことに注意してください (この例の場合は "集計")。 グループは、コントロールのある行または列ではなく、折りたたまれる内容を定義します。
 
@@ -326,6 +326,37 @@ Excel.run(function (context) {
 ![2レベルの2次元のアウトラインがある範囲](../images/excel-outline.png)
 
 行または列グループのグループを解除するには、グループ化を解除するメソッドを使用します[。](/javascript/api/excel/excel.range#ungroup-groupoption-) これにより、アウトラインから最上位レベルが削除されます。 同じ行または列の種類の複数のグループが指定された範囲内の同じレベルにある場合、それらすべてのグループはグループ解除されます。
+
+## <a name="handle-dynamic-arrays-and-spilling-preview"></a>動的配列と spilling を処理する (プレビュー)
+
+> [!NOTE]
+> 動的配列および範囲 spilling Api は現在プレビュー段階です。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+一部の Excel 数式は、 [動的な配列](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)を返します。 これらは、数式の元のセルの外側にある複数のセルの値を塗りつぶします。 この値のオーバーフローは、"スピル" と呼ばれます。 アドインは、 [getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) メソッドを使用して、スピルに使用される範囲を検索できます。 [* OrNullObject バージョン](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties)もあり `Range.getSpillingToRangeOrNullObject` ます。
+
+次の例は、セル範囲の内容をセルにコピーする基本的な数式を示しています。これは、隣接するセルに収まらます。 次に、書き込みを含む範囲をログに記録します。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Set G4 to a formula that returns a dynamic array.
+    var targetCell = sheet.getRange("G4");
+    targetCell.formulas = [["=A4:D4"]];
+
+    // Get the address of the cells that the dynamic array spilled into.
+    var spillRange = targetCell.getSpillingToRange();
+    spillRange.load("address");
+
+    // Sync and log the spilled-to range.
+    return context.sync().then(function () {
+        // This will log the range as "G4:J4".
+        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+[GetSpillParent](/javascript/api/excel/excel.range#getspillparent--)メソッドを使用して、spilling を担当するセルを特定のセルに検索することもできます。 `getSpillParent`Range オブジェクトが1つのセルの場合にのみ機能することに注意してください。 `getSpillParent`複数のセルが含まれる範囲で呼び出しを行うと、エラーがスローされます (または、null 範囲が返され `Range.getSpillParentOrNullObject` ます)。
 
 ## <a name="see-also"></a>関連項目
 

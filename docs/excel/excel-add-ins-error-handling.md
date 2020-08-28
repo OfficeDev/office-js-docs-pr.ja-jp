@@ -3,12 +3,12 @@ title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006445"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292554"
 ---
 # <a name="error-handling"></a>エラー処理
 
@@ -45,7 +45,7 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 - **debugInfo**:存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。
 
 > [!NOTE]
-> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 これらのエラー メッセージが、アドインの作業ウィンドウやホスト アプリケーション内のいずれかの場所で、エンド ユーザーに対して表示されることはありません。
+> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 このエラーメッセージは、エンドユーザーがアドイン作業ウィンドウで、または Office アプリケーション内の任意の場所に表示されません。
 
 ## <a name="error-messages"></a>エラー メッセージ
 

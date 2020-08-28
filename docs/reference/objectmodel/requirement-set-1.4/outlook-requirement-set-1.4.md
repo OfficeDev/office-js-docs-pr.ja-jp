@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.4
 description: Outlook アドインおよび Office JavaScript Api for the Mailbox API 1.4 の一部として導入された機能と Api。
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6154acc357dd0e0e663d658c8de2d54b641e080a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4460315412e1a82473a1c33319fb960b73a5a61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609819"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293759"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Outlook アドイン API 要件セット 1.4
 
@@ -23,7 +23,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ### <a name="change-log"></a>変更ログ
 
-- [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) が追加されました。Office ホストでダイアログ ボックスを表示します。
+- 追加 [されまし](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)た。 office アプリケーションにダイアログボックスを表示します。
 - [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-) が追加されました。メッセージをダイアログ ボックスからその親/オープナー ページに配信します。
 - [Dialog](/javascript/api/office/office.dialog) オブジェクトが追加されました。このオブジェクトは、[`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) メソッドが呼び出されたときに返されます。
 

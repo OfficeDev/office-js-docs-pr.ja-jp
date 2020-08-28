@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093659"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292842"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -27,7 +27,7 @@ Visual Studio が Windows 上の Office をデバッグする場合、アドイ�
 
 ## <a name="review-the-build-and-debug-properties"></a>ビルドとデバッグのプロパティの確認
 
-デバッグを開始する前に、各プロジェクトのプロパティを確認し、Visual Studio で目的のホスト アプリケーションが開くことと、他のビルドとデバッグのプロパティが適切に設定されていることを確認します。
+デバッグを開始する前に、各プロジェクトのプロパティを確認して、Visual Studio が必要な Office アプリケーションを開き、その他のビルドおよびデバッグのプロパティが適切に設定されていることを確認してください。
 
 ### <a name="add-in-project-properties"></a>アドイン プロジェクトのプロパティ
 
@@ -100,16 +100,16 @@ Excel、PowerPoint、または Word アドインのデバッグ時に使用す�
 
 Visual Studio によってプロジェクトがビルドされると、次のタスクが実行されます。
 
-1. XML マニフェスト ファイルのコピーを作成し、`_ProjectName_\bin\Debug\OfficeAppManifests` ディレクトリに追加します。 Visual Studio を起動してアドインをデバッグするときに、ホスト アプリケーションでこのコピーが使用されます。
+1. XML マニフェスト ファイルのコピーを作成し、`_ProjectName_\bin\Debug\OfficeAppManifests` ディレクトリに追加します。 アドインをホストする Office アプリケーションは、Visual Studio を起動してアドインをデバッグするときに、このコピーを使用します。
 
-2. アドインをホスト アプリケーションに表示するための一連のレジストリ エントリをお使いのコンピューターに作成します。
+2. Office アプリケーションにアドインが表示されるようにするためのレジストリエントリのセットをコンピューター上に作成します。
 
 3. Web アプリケーション プロジェクトをビルドし、ローカルの IIS Web サーバー (https://localhost)) に展開します。
 
 4. これがローカル IIS Web サーバーに最初に展開したアドイン プロジェクトである場合は、現在のユーザーの信頼されたルート証明書ストアに自己署名証明書をインストールするように求められることがあります。 これは、IIS Express がアドインの内容を正しく表示するために必要です。
 
 > [!NOTE]
-> Windows 10 上で実行している場合、最新バージョンの Office では、新しい Web コントロールを使用してアドインの内容を表示することがあります。 この場合、Visual Studio はローカル ネットワークのループバック除外を追加するように促します。 これは、Office ホスト アプリケーションの Web コントロールがローカル IIS Web サーバーに展開された Web サイトにアクセスできるようにするために必要です。 この設定は、Visual Studio の **[ツール]** > **[オプション]** > **[Office ツール (Web)]** > **[Web アドインのデバッグ]** の順に選択して変更することもできます。
+> Windows 10 上で実行している場合、最新バージョンの Office では、新しい Web コントロールを使用してアドインの内容を表示することがあります。 この場合、Visual Studio はローカル ネットワークのループバック除外を追加するように促します。 これは、Office クライアントアプリケーションの web コントロールで、ローカルの IIS web サーバーに展開された web サイトにアクセスできるようにするために必要です。 この設定は、Visual Studio の **[ツール]** > **[オプション]** > **[Office ツール (Web)]** > **[Web アドインのデバッグ]** の順に選択して変更することもできます。
 
 次に、Visual Studio で次の操作が行われます。
 
@@ -117,7 +117,7 @@ Visual Studio によってプロジェクトがビルドされると、次のタ
 
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
 
-3. ホスト アプリケーションを開きます。
+3. Office アプリケーションを開きます。
 
 Visual Studio では、プロジェクトのビルド時の検証エラーは [**出力**] ウィンドウには表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)」を参照してください。
 
@@ -125,7 +125,7 @@ Visual Studio では、プロジェクトのビルド時の検証エラーは [*
 
 ## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Excel、PowerPoint、または Word アドイン用のコードのデバッグ
 
-[プロジェクトを開始](#start-the-project)した後に、ホスト アプリケーション (Excel、PowerPoint、または Word) に表示されたドキュメント内にご利用のアドインが表示されない場合、ホスト アプリケーションでアドインを手動で起動します。 たとえば、[**ホーム**] タブのリボンで [**作業ウィンドウの表示**] ボタンを選択して作業ウィンドウを起動します。ご利用のアドインが Excel、PowerPoint、または Word 内に表示されたら、次の操作を行うことでご自身のコードをデバッグできます。
+[プロジェクトを開始](#start-the-project)した後に、office アプリケーション (Excel、PowerPoint、または Word) に表示されているドキュメント内にアドインが表示されていない場合は、手動で office アプリケーションでアドインを起動します。 たとえば、[**ホーム**] タブのリボンで [**作業ウィンドウの表示**] ボタンを選択して作業ウィンドウを起動します。ご利用のアドインが Excel、PowerPoint、または Word 内に表示されたら、次の操作を行うことでご自身のコードをデバッグできます。
 
 1. Excel、PowerPoint、または Word で、[**挿入**] タブを選択し、[**個人用アドイン**] の右側に配置された下向き矢印を選択します。
 
@@ -139,11 +139,11 @@ Visual Studio では、プロジェクトのビルド時の検証エラーは [*
 
 5. Visual Studio でブレークポイントに達したときは、必要に応じて、コードのステップ実行を行います。
 
-コードを変更し、ご利用のアドインでこれらの変更の影響を確認できます。ホスト アプリケーションを閉じて、プロジェクトを再起動する必要はありません。 コードに対する変更を保存した後に、ホスト アプリケーションでアドインを再読み込みするだけです。 たとえば、[パーソナリティ メニュー](../design/task-pane-add-ins.md#personality-menu)をアクティブにして、[**再読み込み**] を選択するには、作業ウィンドウの右上隅を選択して、作業ウィンドウ アドインを再読み込みします。
+Office アプリケーションを閉じてプロジェクトを再起動しなくても、コードを変更し、その変更によるアドインへの影響を確認できます。 コードに加えた変更を保存した後、Office アプリケーションにアドインを再読み込みするだけです。 たとえば、[パーソナリティ メニュー](../design/task-pane-add-ins.md#personality-menu)をアクティブにして、[**再読み込み**] を選択するには、作業ウィンドウの右上隅を選択して、作業ウィンドウ アドインを再読み込みします。
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Outlook アドイン用のコードのデバッグ
 
-[プロジェクトを開始](#start-the-project)して、Visual Studio で Outlook を起動してご利用のアドインをホストした後、メール メッセージまたは予定アイテムを開きます。 
+[プロジェクトを開始](#start-the-project)して、Visual Studio で Outlook を起動してご利用のアドインをホストした後、メール メッセージまたは予定アイテムを開きます。
 
 Outlook は、アクティブ化の基準を満たしていれば、アイテムの アドイン をアクティブ化します。アドイン バーが [インスペクタ] ウィンドウまたは閲覧ウィンドウの上部に表示され、Outlook アドインがアドイン バーにボタンとして表示されます。アドインにアドイン コマンドがある場合は、リボンの既定のタブまたは指定されたカスタム タブのいずれかにボタンが表示され、アドイン バーにはアドインは表示されません。
 

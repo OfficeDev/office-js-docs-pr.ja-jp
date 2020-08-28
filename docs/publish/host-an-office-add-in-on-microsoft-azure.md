@@ -3,12 +3,12 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c9d33823850925d5c05d72422262bf62f78b051e
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159424"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292385"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -113,7 +113,7 @@ Azure ポータルを使用して Web アプリケーションを作成するに
 
 4. プロジェクト タイプとして **Word Web アドイン**を選択し、[**次へ**] を選択して規定の設定を使用します。
 
-Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel などの異なる Office ホスト タイプのアドインを作成するには、この手順を繰り返して、目的の Office ホストのプロジェクト タイプを選択します。
+Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel などの別の Office アプリケーションのアドインを作成するには、手順を繰り返して、目的の Office アプリケーションでプロジェクトの種類を選択します。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>手順 5: Azure に Office アドイン Web アプリを発行する
 

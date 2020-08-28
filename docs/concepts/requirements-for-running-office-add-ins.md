@@ -3,12 +3,12 @@ title: Office アドインを実行するための要件
 description: エンドユーザーが Office アドインを実行するために必要なクライアントおよびサーバーの要件について説明します。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 49e1799961a0367d9eaf00415375c98a42534ba9
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3c4ed1116fa83de694f390cfc26fde9a01858460
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641229"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293010"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -16,7 +16,7 @@ ms.locfileid: "46641229"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)」を参照してください。
+現在、Office アドインが現在サポートされている場所の概要については、「office [クライアントアプリケーションおよび Office アドインのプラットフォームの可用性](../overview/office-add-in-availability.md)」を参照してください。
 
 ## <a name="server-requirements"></a>サーバーの要件
 
@@ -29,7 +29,7 @@ Office アドインをインストールおよび実行できるようにする�
 > [!TIP]
 > Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
-コンテンツアドインと作業ウィンドウアドインについては、サポートされている Office ホストアプリケーション (Excel、PowerPoint、Project、または Word) で、SharePoint の[アプリカタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用してアドインの XML マニフェストファイルをアップロードするか、[一元展開](../publish/centralized-deployment.md)を使用してアドインを展開する必要があります。
+コンテンツアドインと作業ウィンドウアドインについては、サポートされている Office クライアントアプリケーション (Excel、PowerPoint、Project、または Word) で、SharePoint の [アプリカタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) を使用してアドインの XML マニフェストファイルをアップロードするか、 [一元展開](../publish/centralized-deployment.md)を使用してアドインを展開する必要があります。
 
 Outlook アドインをテストして実行するには、ユーザーの Outlook メールアカウントが、Microsoft 365、Exchange Online、またはオンプレミスのインストールによって利用可能な Exchange 2013 以降に存在する必要があります。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
 
@@ -45,7 +45,7 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
     - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
     - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
 
-  有効な Microsoft 365 サブスクリプションがあり、Office クライアントにアクセスできない場合は、[最新バージョンの office をダウンロードしてインストール](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)することができます。
+  有効な Microsoft 365 サブスクリプションがあり、Office クライアントにアクセスできない場合は、 [最新バージョンの office をダウンロードしてインストール](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)することができます。
 
 - Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
 
@@ -75,7 +75,7 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する Outlook の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
 
 
-| ホスト アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
+| Office アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
 |Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|Microsoft 365 Apps for business または Exchange Online の最新の更新プログラム|Android 用のネイティブ アプリ、ブラウザーは適用外|
 |iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|Microsoft 365 Apps for business または Exchange Online の最新の更新プログラム|iOS 用のネイティブ アプリ、ブラウザーは適用外|
@@ -88,5 +88,5 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインを使用できるホストおよびプラットフォーム](../overview/office-add-in-availability.md)
+- [Office アドインの office クライアントアプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
 - [Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)

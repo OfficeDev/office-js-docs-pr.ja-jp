@@ -1,27 +1,27 @@
 ---
 title: 共有ランタイム要件セット
-description: SharedRuntime Api をサポートするプラットフォームと Office ホストを指定します。
+description: SharedRuntime Api をサポートするプラットフォームと Office アプリケーションを指定します。
 ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 37ab904242a07a5ae7f1f580332f709ac409c6be
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 872277488dd8d26241d9b445200f429aa102e26e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159270"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293465"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
 JavaScript コードを実行する Office アドインの部分 (作業ウィンドウ、アドインコマンドから起動される関数ファイル、Excel カスタム関数) は、1つの JavaScript ランタイムを共有できます。 これにより、すべてのパーツが一連のグローバル変数を共有し、読み込まれたライブラリセットを共有して、永続的なストレージを介してメッセージを渡さずに相互に通信できるようになります。
 
-次の表に、SharedRuntime 1.1 の要件セット、その要件セットをサポートする Office ホストアプリケーション、Office アプリケーションのビルド番号またはバージョン番号を示します。
+次の表に、SharedRuntime 1.1 の要件セット、その要件セットをサポートする Office クライアントアプリケーション、Office アプリケーションのビルド番号またはバージョン番号を示します。
 
 |  要件セット  |  Windows での Office 2013 (またはそれ以降のバージョン)<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | 該当なし | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
+| SharedRuntime 1.1  | N/A | バージョン 2002 (ビルド 12527.20092) 以降 | N/A | 16.35 以降 | 2020 年 2 月 | N/A |
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 
@@ -37,5 +37,5 @@ JavaScript コードを実行する Office アドインの部分 (作業ウィ�
 ## <a name="see-also"></a>関連項目
 
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

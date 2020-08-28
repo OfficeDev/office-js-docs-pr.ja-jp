@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの GetStarted 要素
-description: アドインが、Word、Excel、PowerPoint、OneNote のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。
+description: アドインが Word、Excel、PowerPoint、および OneNote にインストールされるときに表示される吹き出しで使用される情報を提供します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01b10b8316c87b046cf816d6f86551bf1a349267
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611835"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292294"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
-アドインが、Word、Excel、PowerPoint、OneNote のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。**GetStarted** 要素は、[DesktopFormFactor](desktopformfactor.md) の子要素です。
+アドインが Word、Excel、PowerPoint、および OneNote にインストールされるときに表示される吹き出しで使用される情報を提供します。 **Getstarted**要素は[desktopformfactor](desktopformfactor.md)の子要素です。
 
 ## <a name="child-elements"></a>子要素
 

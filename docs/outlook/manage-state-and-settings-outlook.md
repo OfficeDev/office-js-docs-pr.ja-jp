@@ -3,23 +3,23 @@ title: Outlook アドインの状態と設定を管理する
 description: Outlook アドインのアドインの状態と設定を保存する方法について説明します。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 796c7b38f8c85a5680c9b7de43297c754a0ebc1b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609063"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293843"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Outlook アドインの状態と設定を管理する
 
 > [!NOTE]
 > この記事を読む前に、このドキュメントの「**コア概念**」セクションの「[アドインの状態と設定を保持](../develop/persisting-add-in-state-and-settings.md)する」を参照してください。
 
-Outlook アドインの場合、Office JavaScript API は、次の表に示すように、セッション間でアドインの状態を保存するための[RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクトと[CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
+Outlook アドインの場合、Office JavaScript API は、次の表に示すように、セッション間でアドインの状態を保存するための [RoamingSettings](/javascript/api/outlook/office.roamingsettings) オブジェクトと [CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
 
 |**オブジェクト**|**ストレージの場所**|
 |:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。 これらの設定はユーザーのサーバー メールボックスに保存されるので、ユーザーと共に "ローミング" でき、そのユーザーのメールボックスにアクセスしている、サポートされているクライアント ホスト アプリケーションまたはブラウザーのコンテキストでアドインが実行されている場合、そのアドインでこれらの設定を利用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。 これらの設定はユーザーのサーバーメールボックスに格納されるため、ユーザーとの "ローミング" が可能であり、そのユーザーのメールボックスにアクセスするサポートされているクライアントのコンテキストで実行されている場合は、アドインで使用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|アドインが連携するメッセージ、予定、または会議出席依頼アイテム。 Outlook アドイン アイテムのカスタム プロパティは、そのプロパティを作成したアドインのみが利用でき、また、プロパティが保存されているアイテムからのみ利用できます。|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Outlook アドインでユーザーのメールボックスに設定をローミング設定として保存する方法

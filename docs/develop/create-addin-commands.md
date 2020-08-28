@@ -1,18 +1,18 @@
 ---
-title: Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
+title: Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bcd3c6e07cdb9899601403e68e80e8d609d2e6e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093715"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292898"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、および Word のマニフェストにアドインコマンドを作成する
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
-マニフェストで**[Versionoverrides](../reference/manifest/versionoverrides.md)** を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。アドインコマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザーインターフェイス (UI) をカスタマイズする簡単な方法を提供します。アドインコマンドを使用して、次の操作を実行できます。
+マニフェストで **[Versionoverrides](../reference/manifest/versionoverrides.md)** を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。アドインコマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザーインターフェイス (UI) をカスタマイズする簡単な方法を提供します。アドインコマンドを使用して、次の操作を実行できます。
 
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
@@ -83,9 +83,9 @@ ms.locfileid: "45093715"
   
 |**要素**|**説明**|
 |:-----|:-----|
-|**Description** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
-|**Requirements** <br/> |省略可能。アドインに必要な最小の Office.js のセットおよびバージョンを指定します。この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。詳細については、「[Office のホストと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。  <br/> |
-|**Hosts** <br/> |必須。Office ホストのコレクションを指定します。子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。"Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
+|**説明** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
+|**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「 [Office アプリケーションと API 要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。  <br/> |
+|**Hosts** <br/> |必須。 Office アプリケーションのコレクションを指定します。 子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。 "Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
 |**Resources** <br/> |マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。たとえば、**Description** 要素の値は、**Resources** の子要素を参照します。**Resources** 要素については、この記事の「[手順 7: Resources 要素を追加する](#step-7-add-the-resources-element)」で説明します。 <br/> |
 
 次の例に、**VersionOverrides** 要素と子要素を使用する方法を示します。
@@ -116,7 +116,7 @@ ms.locfileid: "45093715"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>手順 4: Hosts、Host、DesktopFormFactor 要素を追加する
 
-**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。**Host** 要素は、特定の Office ホストを指定します。**Host** 要素には、アドインが Office ホストにインストールされた後で表示するアドイン コマンドを指定する子要素が含まれます。同じアドイン コマンドを複数の異なる Office ホストで表示する場合は、各 **Host** で子要素を重複させる必要があります。
+**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host**要素は、特定の Office アプリケーションを指定します。 **Host**要素には、アドインがその Office アプリケーションにインストールされた後に表示するアドインコマンドを指定する子要素が含まれています。 2つ以上の異なる Office アプリケーションで同じアドインコマンドを表示するには、各 **ホスト**で子要素を複製する必要があります。
 
 **DesktopFormFactor** 要素では、Office on the web (ブラウザーを使用) と Windows で実行するアドインの設定を指定します。
 
@@ -431,7 +431,7 @@ ms.locfileid: "45093715"
 
 Excel および Word で、既定の Office UI タブを使用することで、リボンにアドイン コマンドを追加できます。次の表に、**OfficeTab** 要素の **id** 属性で使用できる値を示します。タブの値は大文字と小文字を区別します。
 
-|**Office ホスト アプリケーション**|**タブの値**|
+|**Office クライアントアプリケーション**|**タブの値**|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Host 要素
 description: アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5db9df97c4ba558d54756b983a26cb7b71e049d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611814"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292287"
 ---
 # <a name="host-element"></a>Host 要素
 
@@ -25,7 +25,7 @@ ms.locfileid: "44611814"
 
 | 属性     | 型   | 必須 | 説明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [名前](#name) | string | 必須 | Office ホスト アプリケーションの種類の名前。 |
+| [名前](#name) | string | 必須 | Office クライアントアプリケーションの種類の名前。 |
 
 ### <a name="name"></a>名前
 
@@ -59,7 +59,7 @@ ms.locfileid: "44611814"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  はい  | これらの設定を適用する Office ホストについて説明します。|
+|  [xsi:type](#xsitype)  |  はい  | これらの設定を適用する Office アプリケーションについて説明します。|
 
 ### <a name="child-elements"></a>子要素
 
@@ -71,7 +71,7 @@ ms.locfileid: "44611814"
 
 ### <a name="xsitype"></a>xsi:type
 
-含まれている設定を適用する Office ホスト (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。 この値は、次のいずれかである必要があります。
+含まれている設定が適用される Office アプリケーション (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。 この値は、次のいずれかである必要があります。
 
 - `Document` (Word)
 - `MailHost` (Outlook)

@@ -3,12 +3,12 @@ title: テスト用に iPad と Mac で Office アドインをサイドロード
 description: サイドロードを使用して iPad および Mac で Office アドインをテストする
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611141"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292203"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -36,7 +36,7 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Excel または Word on iPad にアドインをサイドロードする
 
-1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 初めて iPad をコンピューターに接続している場合は、**このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。 **[信頼する]** を選択して続行します。
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 初めて iPad をコンピューターに接続している場合は、 **このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。 **[信頼する]** を選択して続行します。
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
 
@@ -44,9 +44,9 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 4. iTunes の右側で、**[ファイル共有]** までスクロールしてから、**[アドイン]** 列で **[Excel]** または **[Word]** をクリックします。
 
-5. [ **Excel** ] 列または [ **Word ドキュメント**] 列の下部で、[**ファイルの追加**] を選択し、サイドロードするアドインの manifest.xml ファイルを選択します。
+5. [ **Excel** ] 列または [ **Word ドキュメント** ] 列の下部で、[ **ファイルの追加**] を選択し、サイドロードするアドインの manifest.xml ファイルを選択します。
 
-6. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[**ホーム**] ボタンを選択し、アプリを閉じて再起動します。
+6. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[ **ホーム** ] ボタンを選択し、アプリを閉じて再起動します。
 
 7. ドキュメントを開きます。
 
@@ -84,7 +84,7 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
 
-コンピューター上の Office キャッシュをクリアすることによって、以前のサイドロードアドインを削除することができます。 各プラットフォームおよびホストのキャッシュをクリアする方法については、記事「 [Office キャッシュをクリア](clear-cache.md)する」を参照してください。
+コンピューター上の Office キャッシュをクリアすることによって、以前のサイドロードアドインを削除することができます。 各プラットフォームとアプリケーションのキャッシュをクリアする方法については、記事「 [Office キャッシュをクリア](clear-cache.md)する」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

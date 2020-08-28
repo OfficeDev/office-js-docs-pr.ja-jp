@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573141"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293983"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Outlook アドインでシングルサインオントークンを使用してユーザーを認証する
 
@@ -31,7 +31,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>アドインのサイドロード時に同意する
 
-アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「[アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
+アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「 [アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
 
 ## <a name="update-the-add-in-manifest"></a>アドイン マニフェストを更新する
 
@@ -50,6 +50,6 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ## <a name="see-also"></a>関連項目
 
-- Microsoft Graph API へのアクセスに SSO トークンを使用するサンプル Outlook アドインについては、[「AttachmentsDemo サンプル アドイン」](https://github.com/OfficeDev/outlook-add-in-attachments-demo)を参照してください。
+- SSO トークンを使用して Microsoft Graph API にアクセスする Outlook アドインのサンプルについては、「 [Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)」を参照してください。
 - [SSO API リファレンス](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)

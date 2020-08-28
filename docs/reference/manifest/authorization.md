@@ -3,18 +3,18 @@ title: マニフェストファイルの Authorization 要素
 description: アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b8c6249706b8eef11f579378fe5c9dc83016d17c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608762"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294263"
 ---
 # <a name="authorization-element"></a>Authorization 要素
 
 アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
 
-**承認**は、マニフェスト内の[承認](authorizations.md)要素の子要素です。
+**承認** は、マニフェスト内の [承認](authorizations.md) 要素の子要素です。
 
 ## <a name="child-elements"></a>子要素
 

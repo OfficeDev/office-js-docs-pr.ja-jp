@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: DOM と Office アドインのランタイム環境を読み込む
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 557297fc9e13ebab5b4eebd7917d0e0d9e444e88
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 02f950ca23d52b333f704c7d8aed431cb426a6f0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608126"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293276"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -24,15 +24,15 @@ ms.locfileid: "44608126"
 
 1. ユーザーは、既にアドインが含まれているドキュメントを開くか、ドキュメントにアドインを挿入します。
 
-2. Office ホスト アプリケーションが、アドインの XML マニフェストを AppSource、SharePoint のアプリ カタログ、またはアドインの発生元である共有フォルダー カタログから読み取ります。
+2. Office クライアントアプリケーションは、アドインの XML マニフェストを AppSource、SharePoint のアプリカタログ、またはその作成元である共有フォルダーカタログから読み取ります。
 
-3. Office ホスト アプリケーションが、ブラウザー コントロールにアドインの HTML ページを開きます。
+3. Office クライアントアプリケーションは、ブラウザーコントロールでアドインの HTML ページを開きます。
 
     次の手順 4. と 5. は、同時に実行されることも、同時に実行されないこともあります。したがって、次の処理に進む前に、DOM とアドイン ランタイム環境の両方の読み込みが完了したことをアドインのコードで確認する必要があります。
 
 4. ブラウザーコントロールが DOM と HTML 本文を読み込み、イベントのイベントハンドラーを呼び出し `window.onload` ます。
 
-5. Office ホスト アプリケーションがランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、[Office](/javascript/api/office#office-initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するアドインのイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との違いの詳細については `Office.initialize` `Office.onReady` 、「[アドインを初期化する](initialize-add-in.md)」を参照してください。
+5. Office クライアントアプリケーションは、ランタイム環境を読み込みます。これは、コンテンツ配布ネットワーク (CDN) サーバーから Office JavaScript API ライブラリファイルをダウンロードしてキャッシュし、 [office](/javascript/api/office)オブジェクトの[initialize](/javascript/api/office#office-initialize-reason-)イベントに対して、ハンドラーが割り当てられている場合は、アドインのイベントハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との違いの詳細については `Office.initialize` `Office.onReady` 、「 [アドインを初期化する](initialize-add-in.md)」を参照してください。
 
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
 
@@ -55,14 +55,14 @@ Outlook アドインが起動すると、次のイベントが発生します。
 
 5. ブラウザーコントロールが DOM と HTML 本文を読み込み、イベントのイベントハンドラーを呼び出し `onload` ます。
 
-6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#office-initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との違いの詳細については `Office.initialize` `Office.onReady` 、「[アドインを初期化する](initialize-add-in.md)」を参照してください。
+6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#office-initialize-reason-) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との違いの詳細については `Office.initialize` `Office.onReady` 、「 [アドインを初期化する](initialize-add-in.md)」を参照してください。
 
 7. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
 
 
 ## <a name="checking-the-load-status"></a>読み込み状態のチェック
 
-DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](https://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次の `onReady` イベントハンドラーは、アドインの初期化に固有のコードが実行される前に、DOM が最初に読み込まれることを確認します。 その後、 `onReady` ハンドラーは[メールボックス. item](/javascript/api/outlook/office.mailbox#item)プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アドインの main 関数を呼び出し `initDialer` ます。
+DOM とランタイム環境の両方で読み込みが完了したことを確認する方法の 1 つは、jQuery [.ready()](https://api.jquery.com/ready/) 関数を使用することです: `$(document).ready()`。 たとえば、次の `onReady` イベントハンドラーは、アドインの初期化に固有のコードが実行される前に、DOM が最初に読み込まれることを確認します。 その後、 `onReady` ハンドラーは [メールボックス. item](/javascript/api/outlook/office.mailbox#item) プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アドインの main 関数を呼び出し `initDialer` ます。
 
 ```js
 Office.onReady()

@@ -3,12 +3,12 @@ title: Excel の範囲にデータの入力規則を追加する
 description: Excel JavaScript Api を使用して、ブック内のテーブル、列、行、およびその他の範囲に自動的なデータの入力規則を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 54ac86def46a130b8b95876a3c42ef8704f9549c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609616"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292559"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 ユーザーがセルに無効なデータを入力しようとした際に表示される、カスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては、次の点に注意してください。
 
 - `style` プロパティは、ユーザーが情報アラート、警告、または "停止" アラートを取得するかどうかを決定します。 ユーザーによる無効なデータの追加を実際に防止するのは `Stop` のみです。 いずれにせよ、`Warning` と `Information` のポップアップには、ユーザーが無効なデータを入力できるオプションがあります。
-- `showAlert` プロパティの既定値は `true` です。 つまり、`showAlert` を `false` に設定するか、カスタムのメッセージ、タイトル、スタイルを設定するカスタム アラートを作成しない限り、Excel ホストは (`Stop` タイプの) 汎用アラートをポップアップ表示します。 このコードでは、カスタムのメッセージとタイトルを設定します。
+- `showAlert` プロパティの既定値は `true` です。 これは、カスタムの `Stop` `showAlert` `false` メッセージ、タイトル、およびスタイルを設定または設定するカスタム通知を作成しない限り、Excel は汎用的な通知 (種類の) をポップアップ表示することを意味します。 このコードでは、カスタムのメッセージとタイトルを設定します。
 
 ```js
 Excel.run(function (context) {

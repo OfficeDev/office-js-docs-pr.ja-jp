@@ -4,19 +4,19 @@ description: Office 共通 API の要件セットの詳細について説明し�
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f9929cb2f3de6499145540e12d1d96c55b24b1aa
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094358"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293521"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
 > [!TIP]
-> *ホスト固有*の API 要件セットをお探しですか? 次の API 要件セットを参照してください。
+> *アプリケーション固有*の API 要件セットを探している場合 次の API 要件セットを参照してください。
 >
 > - [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
@@ -29,14 +29,14 @@ ms.locfileid: "45094358"
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
-次のセクションは、共通 API の要件セット、各セットのメソッド、その要件セットをサポートする Office ホスト アプリケーションの一覧です。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
+次のセクションでは、共通 API の要件セット、各セットのメソッド、およびその要件セットをサポートする Office クライアントアプリケーションの一覧を示します。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
 
 > [!TIP]
-> Office ホストおよびバージョンでは、アドインと要件セットがサポートされる場所に関する情報が必要ですか。 「[Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)」を参照してください。
+> Office アプリケーションおよびバージョンでは、アドインと要件セットがサポートされる場所に関する情報が必要ですか? Office [アドインについては、「office クライアントアプリケーションとプラットフォームの可用性」を](../../overview/office-add-in-availability.md)参照してください。
 
 ### <a name="activeview"></a>ActiveView
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac|Document.getActiveViewAsync|
 
@@ -50,7 +50,7 @@ ms.locfileid: "45094358"
 
 ### <a name="bindingevents"></a>BindingEvents
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
 
@@ -58,7 +58,7 @@ ms.locfileid: "45094358"
 
 ### <a name="compressedfile"></a>CompressedFile
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel 2016 以降<br>Excel on the web<br>Excel 2016 以降 (Mac)<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
 
@@ -66,7 +66,7 @@ ms.locfileid: "45094358"
 
 ### <a name="customxmlparts"></a>CustomXmlParts
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
@@ -74,7 +74,7 @@ ms.locfileid: "45094358"
 
 ### <a name="dialogapi"></a>DialogApi
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[ダイアログ API の要件セット](dialog-api-requirement-sets.md)」を参照してください。 | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 
@@ -82,7 +82,7 @@ ms.locfileid: "45094358"
 
 ### <a name="documentevents"></a>DocumentEvents
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>OneNote on the web<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
@@ -90,7 +90,7 @@ ms.locfileid: "45094358"
 
 ### <a name="file"></a>File
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
@@ -98,7 +98,7 @@ ms.locfileid: "45094358"
 
 ### <a name="htmlcoercion"></a>HtmlCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | OneNote on the web<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、HTML への強制型変換 (Office.CoercionType.Html) をサポートします。|
 
@@ -106,7 +106,7 @@ ms.locfileid: "45094358"
 
 ### <a name="identityapi"></a>IdentityAPI
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[Identity API の要件セット](identity-api-requirement-sets.md)」を参照してください。 | Auth.getAccessToken |
 
@@ -114,7 +114,7 @@ ms.locfileid: "45094358"
 
 ### <a name="imagecoercion"></a>ImageCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[画像強制型変換要件セット](image-coercion-requirement-sets.md)」を参照してください。 | Document.setSelectedDataAsync メソッド|
 
@@ -122,7 +122,7 @@ ms.locfileid: "45094358"
 
 ### <a name="mailbox"></a>Mailbox
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 |Windows での Outlook<br>Outlook on the web<br>Outlook on Android<br>Outlook on Mac<br>Outlook on iOS|「[Outlook API 要件セットについて](outlook-api-requirement-sets.md)」をご覧ください。|
 
@@ -130,7 +130,7 @@ ms.locfileid: "45094358"
 
 ### <a name="matrixbindings"></a>MatrixBindings
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word on Windows<br>Word on the web<br>Word on iPad<br>Word on Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -138,7 +138,7 @@ ms.locfileid: "45094358"
 
 ### <a name="matrixcoercion"></a>MatrixCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、"matrix" (配列の配列) データ構造への強制型変換 (Office.CoercionType.Matrix) をサポートします。|
 
@@ -146,7 +146,7 @@ ms.locfileid: "45094358"
 
 ### <a name="ooxmlcoercion"></a>OoxmlCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、Open Office XML (OOXML) 形式への強制型変換 (Office.CoercionType.Ooxml) をサポートします。|
 
@@ -154,7 +154,7 @@ ms.locfileid: "45094358"
 
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App||
 
@@ -162,7 +162,7 @@ ms.locfileid: "45094358"
 
 ### <a name="pdffile"></a>PdfFile
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
 
@@ -170,15 +170,15 @@ ms.locfileid: "45094358"
 
 ### <a name="ribbonapi"></a>RibbonApi
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| 「[リボン API 要件セット](ribbon-api-requirement-sets.md)」を参照してください。 | Office リボンの更新 |
+| 「 [リボン API 要件セット](ribbon-api-requirement-sets.md)」を参照してください。 | Office リボンの更新 |
 
 ---
 
 ### <a name="selection"></a>Selection
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Project on Windows<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
@@ -186,7 +186,7 @@ ms.locfileid: "45094358"
 
 ### <a name="settings"></a>Settings
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>OneNote on the web<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
@@ -194,15 +194,15 @@ ms.locfileid: "45094358"
 
 ### <a name="sharedruntime"></a>SharedRuntime
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| 「[共有ランタイム要件セット](shared-runtime-requirement-sets.md)」を参照してください。 | Office の getStartupBehavior<br>Office の非表示<br>OnVisibilityModeChanged<br>Office の setStartupBehavior<br>ShowAsTaskpane<br> |
+| 「 [共有ランタイム要件セット](shared-runtime-requirement-sets.md)」を参照してください。 | Office の getStartupBehavior<br>Office の非表示<br>OnVisibilityModeChanged<br>Office の setStartupBehavior<br>ShowAsTaskpane<br> |
 
 ---
 
 ### <a name="tablebindings"></a>TableBindings
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -210,7 +210,7 @@ ms.locfileid: "45094358"
 
 ### <a name="tablecoercion"></a>TableCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Access Web App<br>Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、"table" データ構造への強制型変換 (Office.CoercionType.Table) をサポートします。|
 
@@ -218,7 +218,7 @@ ms.locfileid: "45094358"
 
 ### <a name="textbindings"></a>TextBindings
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>Excel on Mac<br>Word 2013 以降および Windows<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -226,7 +226,7 @@ ms.locfileid: "45094358"
 
 ### <a name="textcoercion"></a>TextCoercion
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Excel on Windows<br>Excel on the web<br>Excel on iPad<br>OneNote on the web<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Project on Windows<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、テキスト形式への強制型変換 (Office.CoercionType.Text) をサポートします。|
 
@@ -234,7 +234,7 @@ ms.locfileid: "45094358"
 
 ### <a name="textfile"></a>TextFile
 
-|**Office のホスト**|**セット内のメソッド**|
+|**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するとき、テキスト形式 (Office.FileType.Text) への出力をサポートします。|
 
@@ -242,9 +242,9 @@ ms.locfileid: "45094358"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
-Office JavaScript API の次のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「[Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。
+Office JavaScript API の次のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「 [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。
 
-|**メソッド名**|**サポートされる Office のホスト**|
+|**メソッド名**|**Office アプリケーションのサポート**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Access Web アプリ、Excel on Windows、Excel on the web、Excel on iPad、および Excel on Mac|
 |Document.getFilePropertiesAsync|Excel on Windows、Excel on the web、Excel on iPad、Excel on Mac、PowerPoint on Windows、PowerPoint on the web、PowerPoint on iPad、PowerPoint on Mac、Word on Windows、Word on the web、Word on iPad、および Word on Mac|
@@ -266,5 +266,5 @@ Office JavaScript API の次のメソッドは、要件セットの一部では�
 ## <a name="see-also"></a>関連項目
 
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

@@ -1,103 +1,53 @@
 ---
-title: ホストページからダイアログボックスにデータとメッセージを渡す
-description: MessageChild および DialogParentMessageReceived Api を使用して、ホストページからダイアログにデータを渡す方法について説明します。
-ms.date: 07/07/2020
+title: ホストページからダイアログボックスにメッセージを渡す代替方法
+description: MessageChild メソッドがサポートされていない場合に使用する回避策について説明します。
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b516896d28979f439f3065f9ff036ff21c2c0997
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093575"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293178"
 ---
-# <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>ホストページからダイアログボックスにデータとメッセージを渡す (プレビュー)
+# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>ホストページからダイアログボックスにメッセージを渡す代替方法
 
-アドインでは、 [dialog](/javascript/api/office/office.dialog)オブジェクトの[messageChild](/javascript/api/office/office.dialog#messagechild-message-)メソッドを使用して、[ホストページ](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)からダイアログボックスにメッセージを送信できます。
+親ページから子ダイアログボックスにデータおよびメッセージを渡す方法としては、 `messageChild` 「 [office アドインで OFFICE ダイアログ API を使用](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)する」で説明されている方法を使用することをお勧めします。Add-in [api 1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)をサポートしていないプラットフォームまたはホストでアドインが実行されている場合は、次の2つの方法で情報をダイアログボックスに渡すことができます。
 
-> [!Important]
->
-> - この記事で説明する Api はプレビュー段階です。 開発者は実験を行うことができます。ただし、運用アドインでは使用しないでください。 この API がリリースされるまでは、「次の操作を実行するには」で説明されている方法を使用して、運用アドインの[ダイアログボックスに情報を渡し](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)ます。
-> - この記事に記載されている Api には、Microsoft 365 のサブスクリプションが必要です。 Insider チャネルからの最新の月次バージョンとビルドを使ってください。 このバージョンを入手するには、Office Insider への参加が必要です。 詳細については、「[Office Insider になる](https://insider.office.com)」を参照してください。 ビルドが生産半期チャネルに graduates されている場合、そのビルドではプレビュー機能のサポートがオフになっていることに注意してください。
-> - プレビューの初期段階では、Excel、PowerPoint、Word で Api がサポートされています。ただし、Outlook には含まれません。
->
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+- `displayDialogAsync` に渡される URL にクエリ パラメーターを追加します。
+- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。\*
 
-## <a name="use-messagechild-from-the-host-page"></a>`messageChild()`ホストページからの使用
 
-Office ダイアログ API を呼び出してダイアログボックスを開くと、 [dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるため、通常は[Displaydialogasync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)メソッドよりも広いスコープがある変数に割り当てる必要があります。 例を次に示します。
+> [!NOTE]
+> \* トークン処理の戦略に影響を与えるバグがあります。 Safari または Microsoft Edge ブラウザーの **Office on the web** でアドインを実行している場合、ダイアログ ボックスとタスク ウィンドウは同じローカル ストレージを共有しないため、これらの間の通信に使用できません。
 
-```javascript
-var dialog;
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
-);
+## <a name="use-local-storage"></a>ローカル ストレージの使用
 
-function processMessage(arg) {
-    dialog.close();
+ローカルストレージを使用するには、 `setItem` 次の `window.localStorage` `displayDialogAsync` 例に示すように、呼び出しの前に、ホストページでオブジェクトのメソッドを呼び出します。
 
-  // message processing code goes here;
-
-}
+```js
+localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-このオブジェクトには、 `Dialog` すべての文字列または文字列データをダイアログボックスに送信する[messageChild](/javascript/api/office/office.dialog#messagechild-message-)メソッドがあります。 これにより `DialogParentMessageReceived` 、ダイアログボックスでイベントが発生します。 コードでは、次のセクションに示すように、このイベントを処理する必要があります。
+ダイアログ ボックス内のコードは、次の例に示すように、必要に応じて項目を読み取ります。
 
-ダイアログの UI が現在アクティブなワークシートと関連付けられ、他のワークシートを基準としたワークシートの相対位置になるシナリオを考えてみます。 次の例では、 `sheetPropertiesChanged` Excel ワークシートのプロパティをダイアログボックスに送信します。 この例では、現在のワークシートの名前は "My Sheet" で、ブックの2番目のシートです。 データは、文字列のオブジェクトにカプセル化されるので、に渡すことができ `messageChild` ます。
-
-```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
-                           });
-
-    dialog.messageChild(messageToDialog);
-}
+```js
+var clientID = localStorage.getItem("clientID");
+// You can also use property syntax:
+// var clientID = localStorage.clientID;
 ```
 
-## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログボックスで DialogParentMessageReceived を処理する
+## <a name="use-query-parameters"></a>クエリ パラメーターの使用
 
-ダイアログボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI. Addhandler async](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)メソッドに登録します。 これは、通常、 [tialize メソッドまたは Office.iniメソッド](initialize-add-in.md)で行われます。 例を次に示します。
+次の例では、クエリ パラメーターを使用してデータを渡す方法を示します。
 
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent);
-    });
+```js
+Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
 ```
 
-その後、ハンドラーを定義し `onMessageFromParent` ます。 次のコードでは、前のセクションの例を続行します。 Office によってハンドラーに引数が渡され、 `message` 引数オブジェクトのプロパティにホストページの文字列が含まれていることに注意してください。 この例では、メッセージはオブジェクトに再変換、jQuery を使用して、新しいワークシート名に一致するダイアログのトップの見出しを設定しています。
+この手法を使用するサンプルについては、「[PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)」を参照してください。
 
-```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
-}
-```
+ダイアログ ボックス内のコードは、URL を解析し、パラメーター値を読み取ることができます。
 
-ハンドラーが適切に登録されていることを確認することをお勧めします。 これを行うには、 `addHandlerAsync` ハンドラーの登録が完了したときに実行されるメソッドにコールバックを渡します。 ハンドラーが正常に登録されなかった場合は、ハンドラーを使用して、エラーを記録または表示します。 次に例を示します。 ここで `reportError` は、エラーを記録または表示する関数であることに注意してください。
-
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
-            onRegisterMessageComplete);
-    });
-
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
-}
-```
-
-## <a name="conditional-messaging"></a>条件付きのメッセージング
-
-ホストページから複数の呼び出しを行うことはできます `messageChild` が、イベントのダイアログボックスにはハンドラーが1つしかないため、 `DialogParentMessageReceived` ハンドラーは異なるメッセージを区別するために条件付きロジックを使用する必要があります。 [条件付き](dialog-api-in-office-add-ins.md#conditional-messaging)メッセージの説明に従って、ダイアログボックスがホストページにメッセージを送信しているときに、条件付きメッセージを構造化する方法で、これを正確に行うことができます。
+> [!IMPORTANT]
+> Office は、`displayDialogAsync` に渡される URL に `_host_info` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません)。Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。

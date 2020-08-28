@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/09/2020
   localization_priority: Priority
-  ms.openlocfilehash: c2bbe9e007111beed49d33eaaeff3dd6c7a38aae
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: 58ae686b475fb2a4cd67709ea2c3c7f654d77a1f
+  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679504"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "47294109"
 landingContent:
 - title: Excel アドインについて
   linkLists:
@@ -45,7 +45,7 @@ landingContent:
       url: ../overview/office-add-ins.md
   - linkListType: concept
     links:
-    - text: Office アドインの構築
+    - text: Office アドインを構築する
       url: ../overview/office-add-ins-fundamentals.md
     - text: Office アドインの中心概念
       url: ../overview/core-concepts-office-add-ins.md

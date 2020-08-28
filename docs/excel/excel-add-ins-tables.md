@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して表を操作する
 description: Excel JavaScript API を使用して、テーブルに関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 6d76edb5e13623a479a74cf69b5b87e2bbe86e3f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8d47a747fe876e01522099f99b8c9fef2ab88a33
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609212"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294137"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -16,7 +16,7 @@ ms.locfileid: "44609212"
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 > [!NOTE]
 > テーブルの名前を指定するには、 `name` 次の例に示すように、最初にテーブルを作成し、そのプロパティを設定する必要があります。
@@ -56,7 +56,7 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 > [!NOTE]
 > `index` [TableRow](/javascript/api/excel/excel.tablerow)オブジェクトのプロパティは、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクトには、 `TableRow` 行を `id` 識別するための一意のキーとして使用できるプロパティが含まれていません。
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -131,7 +131,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -164,7 +164,7 @@ Excel.run(function (context) {
 
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。コードが実行されている Excel ホスト アプリケーションが [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -283,7 +283,7 @@ Excel.run(function (context) {
 
 **金額 (降順) で並べ替えた表データ**
 
-![Excel の表データ](../images/excel-tables-sort.png)
+![Excel での並べ替えられたテーブルデータ](../images/excel-tables-sort.png)
 
 ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する](excel-add-ins-worksheets.md#handle-sorting-events)」を参照してください。
 
@@ -451,7 +451,7 @@ Excel.run(function (context) {
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel ホスト アプリケーションが[要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは表内の現在のデータに最適になるよう設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションで、 [要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)の **excelapi 1.2**がサポートされている場合は、列の幅と行の高さがテーブルの現在のデータに最適になるように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -494,7 +494,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../images/excel-tables-create-from-json.png)
+![Excel でインポートされた JSON データの新しいテーブル](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,12 +3,12 @@ title: Outlook アドインのアクティブ化ルール
 description: Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 5fdf8499b802291539f855cce6e0a810573c8798
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611681"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294053"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Outlook コンテキスト アドインのアクティブ化ルール
 
@@ -33,7 +33,7 @@ Outlook で特定の条件に応じてアドインをアクティブ化するに
  > 
  > たとえば、次のルールは [ItemIs](../reference/manifest/rule.md#itemis-rule) ルールを定義します。`<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > この属性は、マニフェスト v1.1 の `FormType` アクティブ化ルールに適用されますが、v2.0 では定義されていません `VersionOverrides` 。 そのため、ノードで[Itemis](../reference/manifest/rule.md#itemis-rule)が使用されている場合は使用できません `VersionOverrides` 。
+ > この属性は、マニフェスト v1.1 の `FormType` アクティブ化ルールに適用されますが、v2.0 では定義されていません `VersionOverrides` 。 そのため、ノードで [Itemis](../reference/manifest/rule.md#itemis-rule) が使用されている場合は使用できません `VersionOverrides` 。
 
 次の表は、使用できるルールの種類を示しています。詳細については、この表の後の説明と、「[閲覧フォーム用の Outlook アドインを作成する](read-scenario.md)」の該当記事を参照してください。
 
@@ -68,7 +68,7 @@ Outlook で特定の条件に応じてアドインをアクティブ化するに
 
 アドインがアクティブ化された後は、 [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) プロパティを使用して Outlook で現在選択されているアイテムを取得し、 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティを使用して現在のアイテムの種類を取得できます。
 
-必要に応じて、属性を使用して `ItemClass` アイテムのメッセージクラスを指定し、その `IncludeSubClasses` アイテムが指定したクラスのサブクラスである場合にルールを**true**にする必要があるかどうかを指定する属性を指定できます。
+必要に応じて、属性を使用して `ItemClass` アイテムのメッセージクラスを指定し、その `IncludeSubClasses` アイテムが指定したクラスのサブクラスである場合にルールを **true** にする必要があるかどうかを指定する属性を指定できます。
 
 メッセージ クラスの詳細については、「[Item Types and Message Classes](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes)」をご覧ください。
 
@@ -144,7 +144,7 @@ Outlook で特定の条件に応じてアドインをアクティブ化するに
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
-ルールの使用の詳細について `ItemHasRegularExpressionMatch` は、「[正規表現アクティブ化ルールを使用して Outlook アドインを表示する](use-regular-expressions-to-show-an-outlook-add-in.md)」を参照してください。
+ルールの使用の詳細について `ItemHasRegularExpressionMatch` は、「 [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](use-regular-expressions-to-show-an-outlook-add-in.md)」を参照してください。
 
 
 ## <a name="rulecollection-rule"></a>RuleCollection ルール
@@ -182,7 +182,7 @@ Outlook で特定の条件に応じてアドインをアクティブ化するに
 ## <a name="limits-for-rules-and-regular-expressions"></a>ルールと正規表現の制約事項
 
 
-Outlook アドインで満足のゆくエクスペリエンスを提供するには、アクティベーションと API の使用に関するガイドラインに従う必要があります。以下の表に、正規表現とルールに関する一般的な制約事項を示します。ただし、ホストごとの特有のルールも存在します。詳しくは、「 [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」および「 [Outlook アドインのアクティブ化のトラブルシューティング](troubleshoot-outlook-add-in-activation.md)」をご覧ください。
+Outlook アドインでの満足感を得るには、アクティブ化と API の使用に関するガイドラインに従う必要があります。次の表に、正規表現とルールの一般的な制限を示しますが、アプリケーションごとに固有のルールがあります。詳細については、「 [outlook アドインのアクティブ化と JAVASCRIPT API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 」および「 [outlook アドインのアクティブ化のトラブルシューティング](troubleshoot-outlook-add-in-activation.md)」を参照してください。
 
 <br/>
 
@@ -191,7 +191,7 @@ Outlook アドインで満足のゆくエクスペリエンスを提供するに
 |マニフェストのサイズ|256 KB 未満。|
 |ルール|15 ルール未満。|
 |ItemHasKnownEntity|Outlook リッチ クライアントでは、本文の最初の 1 MB にルールを適用し、残りの部分には適用しません。|
-|正規表現|すべての Outlook ホストに対する ItemHasKnownEntity または ItemHasRegularExpressionMatch ルールの場合:<br><ul><li>Outlook アドインのアクティブ化ルールで指定する正規表現は 5 個までにしてください。その制約数を超えるアドインをインストールすることはできません。</li><li>予期される結果が <b>getRegExMatches</b> メソッド呼び出しによって返されて、それらが最初の 50 件以内に収まるように、正規表現を指定します。 </li><li>正規表現で先読みアサーションは指定しますが、後読み `(?<=text)` および否定の後読み `(?<!text)` アサーションは指定しません。</li><li>一致数が次の表の制限を超えない正規表現を指定します。<br/><br/><table><tr><th>正規表現の長さ制限</th><th>Outlook リッチ クライアント</th><th>iOS および Android 用の Outlook</th></tr><tr><td>アイテムの本文がテキスト形式の場合</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>アイテムの本文が HTML の場合</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|正規表現|すべての Outlook アプリケーションの ItemHasKnownEntity または ItemHasRegularExpressionMatch ルールの場合:<br><ul><li>Outlook アドインのアクティブ化ルールで指定する正規表現は 5 個までにしてください。その制約数を超えるアドインをインストールすることはできません。</li><li>予期される結果が <b>getRegExMatches</b> メソッド呼び出しによって返されて、それらが最初の 50 件以内に収まるように、正規表現を指定します。 </li><li>正規表現で先読みアサーションは指定しますが、後読み `(?<=text)` および否定の後読み `(?<!text)` アサーションは指定しません。</li><li>一致数が次の表の制限を超えない正規表現を指定します。<br/><br/><table><tr><th>正規表現の長さ制限</th><th>Outlook リッチ クライアント</th><th>iOS および Android 用の Outlook</th></tr><tr><td>アイテムの本文がテキスト形式の場合</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>アイテムの本文が HTML の場合</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## <a name="see-also"></a>関連項目
 

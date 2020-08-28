@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a1141570c14b6905584f9398b629a75b477d3870
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604511"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292483"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -25,7 +25,7 @@ Web サービスを呼び出す方法は、Web サービスは配置された場
 |:-----|:-----|
 |クライアント メールボックスをホストする Exchange サーバー|[mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して、アドインがサポートしている EWS 操作を呼び出します。また、メールボックスをホストしている Exchange サーバーも EWS を公開します。|
 |アドインの UI のソースの場所を提供する Web サーバー|標準の JavaScript の手法を使用して Web サービスを呼び出します。UI フレーム内の JavaScript コードは、UI を提供する Web サーバーのコンテキストで実行されます。そのため、クロスサイト スクリプト エラーを発生させることなく、そのサーバーで Web サービスを呼び出すことができます。|
-|上記以外の場所|UI のソースの場所を提供する Web サーバー上で、Web サービスのプロキシを作成します。プロキシを作成しないと、クロスサイト スクリプト エラーによってアドインを実行できなくなります。プロキシを作成する方法の 1 つは JSON/P を使用することです。詳細については、「 [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)」を参照してください。|
+|上記以外の場所|UI のソースの場所を提供する Web サーバー上で、Web サービスのプロキシを作成します。プロキシを作成しないと、クロスサイト スクリプト エラーによってアドインを実行できなくなります。プロキシを作成する方法の 1 つは JSON/P を使用することです。詳細については、「 [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)」を参照してください。|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>makeEwsRequestAsync メソッドを使用して EWS 操作にアクセスする
 
@@ -41,7 +41,7 @@ EWS は、Exchange サーバーでの種々の操作をサポートしていま�
 
 - そのコールバック メソッドに対するオプションの入力データ ( _userContext_ 引数)
 
-EWS SOAP 要求が完了すると、Outlook はコールバックメソッドを1つの引数 ( [AsyncResult](/javascript/api/office/office.asyncresult)オブジェクト) で呼び出します。コールバックメソッドは、オブジェクトの2つのプロパティにアクセスでき `AsyncResult` ます。この `value` プロパティには、EWS 操作の XML SOAP 応答と、必要に応じて、 `asyncContext` パラメーターとして渡されるデータが格納されているプロパティが含まれます。 `userContext`通常、コールバックメソッドは SOAP 応答内の XML を解析して、関連する情報を取得し、その情報を適切に処理します。
+EWS SOAP 要求が完了すると、Outlook はコールバックメソッドを1つの引数 ( [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクト) で呼び出します。コールバックメソッドは、オブジェクトの2つのプロパティにアクセスでき `AsyncResult` ます。この `value` プロパティには、EWS 操作の XML SOAP 応答と、必要に応じて、 `asyncContext` パラメーターとして渡されるデータが格納されているプロパティが含まれます。 `userContext` 通常、コールバックメソッドは SOAP 応答内の XML を解析して、関連する情報を取得し、その情報を適切に処理します。
 
 
 ## <a name="tips-for-parsing-ews-responses"></a>EWS 応答を解析するためのヒント
@@ -51,7 +51,7 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
 
 - DOM メソッドを使用する場合は、タグ名に接頭辞を指定して、 `getElementsByTagName` Internet Explorer のサポートを組み込むことができます。
 
-  `getElementsByTagName`ブラウザーの種類によって動作が異なります。たとえば、EWS 応答には次の XML を含めることができます (表示のために書式指定され、省略されています)。
+  `getElementsByTagName` ブラウザーの種類によって動作が異なります。たとえば、EWS 応答には次の XML を含めることができます (表示のために書式指定され、省略されています)。
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -93,7 +93,7 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
 
 ## <a name="example"></a>例
 
-次の例は、 `makeEwsRequestAsync` [GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作を使用してアイテムの件名を取得するために呼び出しを行います。この例には、次の3つの関数が含まれています。
+次の例は、 `makeEwsRequestAsync` [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を使用してアイテムの件名を取得するために呼び出しを行います。この例には、次の3つの関数が含まれています。
 
 -  `getSubjectRequest`&ndash;入力としてアイテム ID を受け取り、 `GetItem` 指定されたアイテムに対して呼び出す SOAP 要求の XML を返します。
 
@@ -148,13 +148,13 @@ function callback(asyncResult)  {
 
 ## <a name="ews-operations-that-add-ins-support"></a>アドインでサポートしている EWS 操作
 
-Outlook アドインは、メソッドによって EWS で利用可能な操作のサブセットにアクセスでき `makeEwsRequestAsync` ます。EWS 操作についてよく知らない場合、またはメソッドを使用して操作にアクセスする方法については、最初に SOAP 要求の例を使用して、 `makeEwsRequestAsync` _データ_引数をカスタマイズしてください。
+Outlook アドインは、メソッドによって EWS で利用可能な操作のサブセットにアクセスでき `makeEwsRequestAsync` ます。EWS 操作についてよく知らない場合、またはメソッドを使用して操作にアクセスする方法については、最初に SOAP 要求の例を使用して、 `makeEwsRequestAsync` _データ_ 引数をカスタマイズしてください。
 
 次に、メソッドの使用方法を説明し `makeEwsRequestAsync` ます。
 
 1. XML 内のアイテム ID および関係する EWS 操作属性を適切な値に置き換えます。
 
-2. SOAP 要求をの_data_パラメーターの引数として含め `makeEwsRequestAsync` ます。
+2. SOAP 要求をの  _data_ パラメーターの引数として含め `makeEwsRequestAsync` ます。
 
 3. コールバックメソッドを指定して呼び出しを `makeEwsRequestAsync` 行います。
 
@@ -208,13 +208,13 @@ Outlook アドインは、メソッドによって EWS で利用可能な操作�
 メソッドを使用する場合 `makeEwsRequestAsync` 、要求は現在のユーザーの電子メールアカウントの資格情報を使用して認証されます。 この `makeEwsRequestAsync` メソッドは、ユーザーの資格情報を管理して、要求に対して認証の資格情報を提供する必要がないようにします。
 
 > [!NOTE]
-> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps)または[set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps)コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで_oauthauthentication_パラメーターを**TRUE**に設定し、 `makeEwsRequestAsync` メソッドで ews 要求を行うことができるようにする必要があります。
+> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps) または [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで _oauthauthentication_ パラメーターを **TRUE** に設定し、 `makeEwsRequestAsync` メソッドで ews 要求を行うことができるようにする必要があります。
 
 アドインは、 `ReadWriteMailbox` アドインマニフェストでメソッドを使用するためのアクセス許可を指定する必要があり `makeEwsRequestAsync` ます。 アクセス許可の使用の詳細については `ReadWriteMailbox` 、「 [ReadWriteMailbox Permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) For [Outlook アドインのアクセス許可](understanding-outlook-add-in-permissions.md)について」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのプライバシーとセキュリティ](../develop/privacy-and-security.md)
+- [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
 - [Office アドインにおける同一生成元ポリシーの制限への対処](../develop/addressing-same-origin-policy-limitations.md)
 - 
   [Exchange 用 EWS リファレンス](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)

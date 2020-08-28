@@ -3,12 +3,12 @@ title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f228ae8e7cca0426b0b43e31e38454029e4c7614
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6dca7e295bbc2efe0469fa4c69c14238d977c3ed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093848"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292989"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -50,13 +50,13 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 ## <a name="support-considerations"></a>サポートに関する考慮事項
 
-- 使用している Office アドインが[特定の Office ホスト プラットフォーム](../overview/office-add-in-availability.md)で動作するかどうかを確認します。
+- Office アドインが [特定の office アプリケーションまたはプラットフォーム](../overview/office-add-in-availability.md)で機能するかどうかを確認します。
 - コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)を宣言することができます。  
 - コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインのホストとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインの office クライアントアプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
 - [Office アドインの Office UI Fabric](../design/office-ui-fabric.md)
 - [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
 - [アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

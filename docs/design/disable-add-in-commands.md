@@ -1,33 +1,40 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 05/11/2020
-localization_priority: Priority
-ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
-ms.translationtype: HT
+ms.date: 08/26/2020
+localization_priority: Normal
+ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217894"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292975"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
 
-また、Office のホスト アプリケーションを開いたときにコマンドを有効にするか無効にするかを指定することもできます。
+また、Office クライアントアプリケーションを開いたときにコマンドを有効にするか無効にするかを指定することもできます。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
-> [アドイン コマンドの基本概念](add-in-commands.md)
+> - [アドイン コマンドの基本概念](add-in-commands.md)
 
-## <a name="rules-and-gotchas"></a>ルールと注意事項
+## <a name="office-application-and-platform-support-only"></a>Office アプリケーションとプラットフォームのサポートのみ
 
-### <a name="single-line-ribbon-in-office-on-the-web"></a>Office on the web の単一行のリボン
+この記事に記載されている Api は、Excel でのみ使用できます。また、Windows および Office on Mac 上の Office でのみ利用できます。
 
-この記事で説明されている API と、マニフェストのマークアップは、Office on the web では単一行のリボンにのみ影響します。 複数行のリボンには影響しません。 デスクトップ Office では両方のリボンに影響します。 2 つのリボンの詳細については、「[シンプル リボンを使用する](https://support.office.com/article/Use-the-Simplified-Ribbon-44bef9c3-295d-4092-b7f0-f471fa629a98)」を参照してください。
+### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-### <a name="shared-runtime-required"></a>共有ランタイムが必要
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」を参照してください。
+
+Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要件セットに属しています。
+
+> [!NOTE]
+> **Ribbonapi 1.1**要件セットはマニフェストでまだサポートされていないため、マニフェストのセクションで指定することはできません `<Requirements>` 。 サポートをテストするには、コードがを呼び出す必要があり `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` ます。 呼び出しが戻る *場合に限り*、コードで `true` Enable/disable api を呼び出すことができます。 を呼び出した場合 `isSetSupported` は `false` 、すべてのカスタムアドインコマンドが常に有効になります。 **Ribbonapi 1.1**要件セットがサポートされていない場合にどのように動作するかを考慮するには、運用アドインとアプリ内の手順を設計する必要があります。 の使用法の詳細と例については `isSetSupported` 、「 [Office アプリケーションと API 要件を指定](../develop/specify-office-hosts-and-api-requirements.md)する」を参照してください。特に、 [JavaScript コードでランタイムチェックを使用](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)します。 (この記事の [マニフェストの要件要素を設定](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) するセクションは、リボン1.1 には適用されません。)
+
+## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
 この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順を実行します。
 
@@ -124,7 +131,7 @@ Office.onReady(async () => {
 });
 ```
 
-そして、`enableChartFormat` ハンドラーを定義します。 以下は簡単な例ですが、より信頼性の高い方法でコントロールの状態を変更する場合については、後述の「**ベスト プラクティス: コントロールの状態エラーのテスト**」を参照してください。
+そして、`enableChartFormat` ハンドラーを定義します。 以下は簡単な例ですが、より信頼性の高い方法でコントロールの状態を変更する場合については、後述の「[ベスト プラクティス: コントロールの状態エラーのテスト](#best-practice-test-for-control-status-errors)」を参照してください。
 
 ```javascript
 function enableChartFormat() {
@@ -197,8 +204,9 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
 API を有効化/無効化するには、次の要件セットをサポートしている必要があります。
 
-- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+

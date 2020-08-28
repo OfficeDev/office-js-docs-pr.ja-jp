@@ -1,20 +1,20 @@
 ---
 title: マニフェスト ファイルの WebApplicationInfo 要素
-description: Office アドインのマニフェスト (XML) ファイルの VersionOverrides 要素の参照ドキュメント。
+description: Office アドインのマニフェスト (XML) ファイル用の WebApplicationInfo 要素の参照ドキュメント。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: b64739f388720abb872fe2407f7e7d3031b5ec70
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 8644529d82204cb9fbc07c6fe9f8a35b60a512c8
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573120"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293808"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
 Office アドインでシングル サインオン (SSO) をサポートします。この要素には、次の両方としてのアドインに関する情報が含まれます。
 
-- Office ホスト アプリケーションでアクセス許可を必要とする可能性のある対象の OAuth 2.0 *リソース*。
+- Office クライアントアプリケーションがアクセス許可を必要とする可能性のある OAuth 2.0 *リソース* 。
 - Microsoft Graph に対するアクセス許可を必要とする可能性のある OAuth 2.0 *クライアント*。
 
 > [!NOTE]

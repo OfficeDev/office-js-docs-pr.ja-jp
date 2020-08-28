@@ -3,16 +3,16 @@ title: マニフェスト ファイルの OfficeTab 要素
 description: OfficeTab 要素は、アドインコマンドが表示されるリボンタブを定義します。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9b07ce1e57329e796545610e0c61a2c11d1ed55d
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641442"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292301"
 ---
 # <a name="officetab-element"></a>OfficeTab 要素
 
-アドイン コマンドを表示するリボン タブを定義します。 これは、既定のタブ ([**ホーム**]、[**メッセージ**]、または [**会議**]) にするか、アドインで定義されたカスタムタブにすることができます。 この要素は必須です。
+アドイン コマンドを表示するリボン タブを定義します。 これは、既定のタブ ([ **ホーム**]、[ **メッセージ**]、または [ **会議**]) にするか、アドインで定義されたカスタムタブにすることができます。 この要素は必須です。
 
 ## <a name="child-elements"></a>子要素
 
@@ -20,7 +20,7 @@ ms.locfileid: "46641442"
 |:-----|:-----|:-----|
 |  グループ      | はい |  コマンドのグループを定義します。 既定のタブには、アドインごとに 1 つのグループのみを追加できます。  |
 
-ホストごとの有効なタブ `id` 値は次のとおりです。 **太字**の値は、デスクトップとオンラインの両方でサポートされています (たとえば、word 2016 以降の Windows および web 上の word)。
+アプリケーション別の有効なタブ値を次に示し `id` ます。 **太字**の値は、デスクトップとオンラインの両方でサポートされています (たとえば、word 2016 以降の Windows および web 上の word)。
 
 ### <a name="outlook"></a>Outlook
 

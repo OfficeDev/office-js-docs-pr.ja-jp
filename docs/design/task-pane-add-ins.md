@@ -3,12 +3,12 @@ title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d1641c2262b1d1c7b0e4570c357d36d265c80de
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093757"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292961"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
  
@@ -45,7 +45,7 @@ ms.locfileid: "45093757"
 
 *図3Office の作業ウィンドウのサイズ*
 
-![1366x768 のデスクトップ作業ウィンドウのサイズを示す図](../images/office-365-taskpane-sizes.png)
+![1366x768 で作業ウィンドウのサイズを表示する画像](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391

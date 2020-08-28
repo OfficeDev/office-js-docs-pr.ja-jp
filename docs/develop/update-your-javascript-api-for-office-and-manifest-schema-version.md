@@ -3,12 +3,12 @@ title: 最新の Office JavaScript API ライブラリおよびバージョン1.
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 34127b3920af1309d4e4c2e1c265c676640a1c24
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b0536b4b55accd99e002e26c467572330ba72ae2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093554"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293129"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>最新の Office JavaScript API ライブラリおよびバージョン1.1 のアドインマニフェストスキーマへの更新
 
@@ -19,7 +19,7 @@ ms.locfileid: "45093554"
 
 ## <a name="use-the-most-up-to-date-project-files"></a>最新のプロジェクト ファイルを使用する
 
-Visual Studio を使用してアドインを開発する場合は、Office JavaScript API の最新の API メンバーと[アドインマニフェストの v2.0 機能](../develop/add-in-manifests.md)(offappmanifest-に対して検証されます) を使用するには、visual studio 2019 をダウンロードする必要があります。 Visual Studio 2019 をダウンロードするには、 [Visual STUDIO IDE ページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
+Visual Studio を使用してアドインを開発する場合は、Office JavaScript API の最新の API メンバーと [アドインマニフェストの v2.0 機能](../develop/add-in-manifests.md) (offappmanifest-に対して検証されます) を使用するには、visual studio 2019 をダウンロードする必要があります。 Visual Studio 2019 をダウンロードするには、 [Visual STUDIO IDE ページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
 
 テキスト エディター、または Visual Studio 以外の IDE を使用してアドインを開発する場合は、Office.js に対する CDN への参照と、アドインのマニフェストで参照するスキーマのバージョンを更新する必要があります。
 
@@ -43,13 +43,13 @@ Office JavaScript API およびアドインマニフェストスキーマのリ�
 ### <a name="update-the-office-javascript-api-library-files-in-your-project-to-the-newest-release"></a>プロジェクト内の Office JavaScript API ライブラリファイルを最新のリリースに更新する
 次の手順では、Office.js ライブラリファイルを最新バージョンに更新します。 手順では Visual Studio 2019 を使用していますが、以前のバージョンの Visual Studio に似ています。
 
-1. Visual Studio 2019 で、 **Office アドイン**プロジェクトを開くか新規作成します。
+1. Visual Studio 2019 で、 **Office アドイン** プロジェクトを開くか新規作成します。
 2. **ツール**  >  の選択**nuget パッケージマネージャー**  >  **ソリューションの nuget パッケージを管理**します。
 3. **[更新]** タブを選択します。
-4. Microsoft.Office.js を選択します。 パッケージソースが**nuget.org**からのものであることを確認します。
-5. 左側のウィンドウで、[**インストール**] を選択し、パッケージの更新プロセスを完了します。
+4. Microsoft.Office.js を選択します。 パッケージソースが **nuget.org**からのものであることを確認します。
+5. 左側のウィンドウで、[ **インストール** ] を選択し、パッケージの更新プロセスを完了します。
 
-更新を完了するには、さらにいくつか手順を実行する必要があります。 アドインの HTML ページの**head**タグで、既存の office.js スクリプト参照をコメントアウトまたは削除し、更新された OFFICE JavaScript API ライブラリを次のように参照します。
+更新を完了するには、さらにいくつか手順を実行する必要があります。 アドインの HTML ページの **head** タグで、既存の office.js スクリプト参照をコメントアウトまたは削除し、更新された OFFICE JavaScript API ライブラリを次のように参照します。
 
   ```html
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -75,7 +75,7 @@ Office JavaScript API およびアドインマニフェストスキーマのリ�
 ```
 
 > [!NOTE]
-> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](../reference/manifest/hosts.md)要素と[Host](../reference/manifest/host.md)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
+> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、 **機能** 要素と **機能** 要素を削除し、それらを [Hosts](../reference/manifest/hosts.md) 要素と [Host](../reference/manifest/host.md) 要素、または [要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -83,7 +83,7 @@ Office JavaScript API およびアドインマニフェストスキーマのリ�
 
 この更新プロセスは_プロジェクトごと_に適用します。そのため、v1.1 の Office.js とアドイン マニフェスト スキーマを使用するアドイン プロジェクトごとに、この更新プロセスを繰り返す必要があります。
 
-Office の JavaScript API ファイル (Office.js およびアプリ固有の .js ファイル) のローカルコピーは、Office アドインを開発する必要はありません (Office.js の CDN を参照すると、必要なファイルが実行時にダウンロードされます) が、ライブラリファイルのローカルコピーが必要な場合は、 [NuGet コマンドラインユーティリティ](https://docs.nuget.org/consume/installing-nuget)とコマンドを使用して `Install-Package Microsoft.Office.js` ダウンロードできます。
+Office の JavaScript API ファイル (Office.js およびアプリ固有の .js ファイル) のローカルコピーは、Office アドインを開発する必要はありません (Office.js の CDN を参照すると、必要なファイルが実行時にダウンロードされます) が、ライブラリファイルのローカルコピーが必要な場合は、 [NuGet コマンドラインユーティリティ](https://docs.nuget.org/consume/installing-nuget) とコマンドを使用して `Install-Package Microsoft.Office.js` ダウンロードできます。
 
 > [!NOTE]
 > v1.1 アドイン マニフェストの XSD (XML スキーマ定義) のコピーの取得については、「[Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)」を参照してください。
@@ -93,7 +93,7 @@ Office の JavaScript API ファイル (Office.js およびアプリ固有の .j
 
 1. テキスト エディターまたは IDE でアドインの HTML ページを開きます。
 
-2. アドインの HTML ページの**head**タグで、既存の office.js スクリプト参照をコメントアウトまたは削除し、更新された OFFICE JavaScript API ライブラリを次のように参照します。
+2. アドインの HTML ページの **head** タグで、既存の office.js スクリプト参照をコメントアウトまたは削除し、更新された OFFICE JavaScript API ライブラリを次のように参照します。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -118,11 +118,11 @@ Office の JavaScript API ファイル (Office.js およびアプリ固有の .j
 ```
 
 > [!NOTE]
-> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、**機能**要素と**機能**要素を削除し、それらを[Hosts](../reference/manifest/hosts.md)要素と[Host](../reference/manifest/host.md)要素、または[要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
+> アドインマニフェストスキーマのバージョンを1.1 に更新した後で、 **機能** 要素と **機能** 要素を削除し、それらを [Hosts](../reference/manifest/hosts.md) 要素と [Host](../reference/manifest/host.md) 要素、または [要件と要件要素](specify-office-hosts-and-api-requirements.md)のいずれかに置き換える必要があります。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)]
+- [Office アプリケーションと API の要件を指定する](specify-office-hosts-and-api-requirements.md) ]
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
 - [Office の JavaScript API](../reference/javascript-api-for-office.md)
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)

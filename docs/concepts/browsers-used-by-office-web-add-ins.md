@@ -3,16 +3,16 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757360"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293059"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
-Office アドインは、Office on the web での実行時に iFrame を使用して表示され、デスクトップおよびモバイル クライアント用に Office に埋め込まれたブラウザー コントロールを使用して表示される Web アプリケーションです。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込みブラウザーとエンジンの両方が、ユーザーのコンピューターにインストールされているブラウザーから提供されます。
+Office アドインは、web 上で Office を実行しているときに iFrames を使用して表示される web アプリケーションで、デスクトップおよびモバイルクライアントで Office の組み込みブラウザーコントロールを使用します。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込みブラウザーとエンジンの両方が、ユーザーのコンピューターにインストールされているブラウザーから提供されます。
 
 どのブラウザが使用されているかは、以下によります。
 
@@ -40,7 +40,7 @@ Office アドインは、Office on the web での実行時に iFrame を使用�
 
 <sup>2</sup> Microsoft Edge を使用している場合、Windows 10 ナレーター ("スクリーンリーダー" と呼ばれることもあります) は、 `<title>` 作業ウィンドウに表示されるページのタグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
-<sup>3</sup> アドインにマニフェスト内の要素が含まれている場合は `Runtimes` 、Windows または Microsoft 365 のバージョンに関係なく Internet Explorer 11 を使用します。 詳細については、「 [ランタイム](../reference/manifest/runtimes.md)」を参照してください。
+<sup>3</sup> アドインにマニフェスト内の要素が含まれている場合は `Runtimes` 、Windows または Microsoft 365 のバージョンに関係なく Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 <sup>4</sup> このバージョンの組み合わせに使用されるブラウザーは、Microsoft 365 サブスクリプションの更新プログラムチャネルによって異なります。 ユーザーが [ベータチャネル](https://insider.office.com/join/windows) (旧称 insider Fast channel) 上にある場合、Office は WebView2 (Chromium ベース) で Microsoft Edge を使用します。 その他のチャネルについては、Office は Microsoft Edge と元の WebView (EdgeHTML) を使用します。 2021の初期段階では、他のチャネルでの WebView2 のサポートが期待されています。
 > [!IMPORTANT]

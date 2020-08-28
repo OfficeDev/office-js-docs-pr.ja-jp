@@ -3,12 +3,12 @@ title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d09713da401c0298a6ebd756d6dfb3fd8dce5f0b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d7458eebf16a3d9373e59aa0455234437f25289b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607607"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293997"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -26,7 +26,7 @@ Outlook アドイン API と対話操作するには、Office.js の JavaScript 
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
 > [!IMPORTANT]
-> 任意の Office ホストアプリケーションのアドインを開発する場合は、ページのセクションの内側から Office JavaScript API を参照し `<head>` ます。 これにより、あらゆる body 要素の前に API が完全に初期化されます。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。
+> Office クライアントアプリケーション用のアドインを開発する場合は、ページのセクションの内側から Office JavaScript API を参照し `<head>` ます。 これにより、あらゆる body 要素の前に API が完全に初期化されます。 Office アプリケーションでは、アクティブ化から5秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。
 
 ## <a name="requirement-sets"></a>要件セット
 

@@ -3,12 +3,12 @@ title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートと他の Outlook クライアントとの比較について説明します。
 ms.date: 06/04/2020
 localization_priority: Normal
-ms.openlocfilehash: a1eb51ed5b8fa51283b738bc7522b1cf4eb16169
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f6aa9914e1320de05a67b3ec227e373bac5c2402
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608972"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293920"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Outlook on Mac での outlook アドインのサポートを他の Outlook クライアントと比較する
 
@@ -23,7 +23,7 @@ Mac での新しい UI のサポートの詳細については、「 [New Outloo
 | サポート対象バージョンの office.js および Office アドインのマニフェスト スキーマ | Office.js および スキーマ v1.1 のすべての API。 | Office.js および スキーマ v1.1 のすべての API。<br><br>**注**: Outlook on Mac では、16.35.308 以降のビルドのみが会議の保存をサポートしています。 それ以外の場合は、 `saveAsync` 作成モードで会議から呼び出されたときにメソッドが失敗します。 回避策については、「[Office JS API を使用して Outlook for Mac で会議を下書きとして保存できない](https://support.microsoft.com/help/4505745)」を参照してください。 |
 | 定期的な予定系列のインスタンス | <ul><li>定期的な系列のマスター予定または予定インスタンスのアイテム ID および他のプロパティを取得できます。</li><li>[mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) を使用して、定期的な系列のインスタンスまたはマスターを表示できます。</li></ul> | <ul><li>マスター予定のアイテム ID と他のプロパティを取得できますが、定期的な系列のインスタンスのアイテム ID とプロパティは取得できません。</li><li>定期的な系列のマスター予定を表示できます。アイテム ID がない場合、定期的な系列のインスタンスは表示できません。</li></ul> |
 | 予定出席者の受信者の種類 | [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) を使用して、出席者の受信者の種類を特定できます。 | `EmailAddressDetails.recipientType` は予定出席者には `undefined` を返します。 |
-| ホストクライアントのバージョン文字列 | [HostVersion](/javascript/api/outlook/office.diagnostics#hostversion)によって返されるバージョン文字列の形式は、クライアントの実際の種類によって異なります。 例:<ul><li>Windows 上の Outlook:`15.0.4454.1002`</li><li>Web 上の Outlook:`15.0.918.2`</li></ul> |Outlook on the Mac で返されるバージョン文字列の例を `Diagnostics.hostVersion` 次に示します。`15.0 (140325)` |
+| クライアントアプリケーションのバージョン文字列 | [HostVersion](/javascript/api/outlook/office.diagnostics#hostversion)によって返されるバージョン文字列の形式は、クライアントの実際の種類によって異なります。 例:<ul><li>Windows 上の Outlook: `15.0.4454.1002`</li><li>Web 上の Outlook: `15.0.918.2`</li></ul> |Outlook on the Mac で返されるバージョン文字列の例を `Diagnostics.hostVersion` 次に示します。 `15.0 (140325)` |
 | アイテムのカスタム プロパティ | ネットワークが使用できなくなっても、アドインはキャッシュに入っているカスタム プロパティに引き続きアクセスできます。 | Outlook on Mac はカスタムプロパティをキャッシュに入れないので、ネットワークがダウンした場合、アドインはアクセスできなくなります。 |
 | 添付ファイルの詳細 | [Attachmentdetails](/javascript/api/outlook/office.attachmentdetails)オブジェクト内のコンテンツタイプと添付ファイルの名前は、クライアントの種類によって異なります。<ul><li>`AttachmentDetails.contentType` の JSON 例: `"contentType": "image/x-png"`。 </li><li>`AttachmentDetails.name` にはファイル名拡張子は含まれません。たとえば、添付ファイルが「RE: Summer activity」という件名のメッセージの場合、添付ファイル名を表す JSON オブジェクトは `"name": "RE: Summer activity"` になります。</li></ul> | <ul><li>`AttachmentDetails.contentType` の JSON 例: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` には、ファイル名拡張子が必ず含まれます。メール アイテムの添付ファイルの拡張子は .eml で、予定の拡張子は .ics です。添付ファイルが「RE: Summer activity」という件名の電子メールである場合、その添付ファイル名を表す JSON オブジェクトは `"name": "RE: Summer activity.eml"` になります。<p>**注**: アドインを介するなど、ファイルがプログラムによって拡張子なしで添付される場合、`AttachmentDetails.name` にはファイル名の一部として拡張子は含まれません。</p></li></ul> |
 | `dateTimeCreated` と `dateTimeModified` のプロパティでタイム ゾーンを表す文字列 |例: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | 例: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
@@ -31,14 +31,14 @@ Mac での新しい UI のサポートの詳細については、「 [New Outloo
 
 ## <a name="new-outlook-on-mac-preview"></a>新しい Outlook on Mac (プレビュー)
 
-これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.6 です。 ただし、次の要件セットと機能はまだサポートされて**いません**。
+これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.6 です。 ただし、次の要件セットと機能はまだサポートされて **いません** 。
 
 1. API 要件は1.7 と1.8 を設定します。
 1. Pinnable 作業ウィンドウ、 `ItemChanged` イベント
 1. コンテキスト アドイン
 1. 送信時
 1. 共有フォルダーのサポート
-1. `saveAsync`会議を作成するとき
+1. `saveAsync` 会議を作成するとき
 1. シングル サインオン (SSO)
 
 新しい Outlook on the Mac をプレビューすることをお勧めします。これは、バージョン16.38.506 から入手できます。 試す方法の詳細については、「 [Insider Fast ビルドの Outlook For Mac リリースノート](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)」を参照してください。

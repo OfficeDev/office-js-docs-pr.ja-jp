@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すコードサンプルです。
-ms.date: 04/30/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609595"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294165"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -99,16 +99,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**範囲を挿入する前のデータ**
+### <a name="data-before-range-is-inserted"></a>範囲を挿入する前のデータ
 
 ![範囲を挿入する前の Excel のデータ](../images/excel-ranges-start.png)
 
-**範囲を挿入した後のデータ**
+### <a name="data-after-range-is-inserted"></a>範囲を挿入した後のデータ
 
 ![範囲を挿入した後の Excel のデータ](../images/excel-ranges-after-insert.png)
 
@@ -127,11 +127,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**範囲をクリアする前のデータ**
+### <a name="data-before-range-is-cleared"></a>範囲をクリアする前のデータ
 
 ![範囲をクリアする前の Excel のデータ](../images/excel-ranges-start.png)
 
-**範囲をクリアした後のデータ**
+### <a name="data-after-range-is-cleared"></a>範囲をクリアした後のデータ
 
 ![範囲をクリアした後の Excel のデータ](../images/excel-ranges-after-clear.png)
 
@@ -150,11 +150,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**範囲を削除する前のデータ**
+### <a name="data-before-range-is-deleted"></a>範囲を削除する前のデータ
 
 ![範囲を削除する前の Excel のデータ](../images/excel-ranges-start.png)
 
-**範囲を削除した後のデータ**
+### <a name="data-after-range-is-deleted"></a>範囲を削除した後のデータ
 
 ![範囲を削除した後の Excel のデータ](../images/excel-ranges-after-delete.png)
 
@@ -173,13 +173,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**選択範囲 B2:E6**
+### <a name="selected-range-b2e6"></a>選択範囲 B2:E6
 
 ![Excel の選択範囲](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>選択範囲を取得する
 
-次のコードサンプルでは、選択されている範囲を取得し、その `address` プロパティを読み込み、コンソールにメッセージを書き込みます。 
+次のコードサンプルでは、選択されている範囲を取得し、その `address` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
 Excel.run(function (context) {
@@ -213,11 +213,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**セルの値が更新される前のデータ**
+#### <a name="data-before-cell-value-is-updated"></a>セルの値が更新される前のデータ
 
 ![セルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
-**セルの値が更新された後のデータ**
+#### <a name="data-after-cell-value-is-updated"></a>セルの値が更新された後のデータ
 
 ![セルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-value.png)
 
@@ -232,7 +232,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -241,11 +241,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**複数のセルの値が更新される前のデータ**
+#### <a name="data-before-cell-values-are-updated"></a>複数のセルの値が更新される前のデータ
 
 ![複数のセルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
 
-**複数のセルの値が更新された後のデータ**
+#### <a name="data-after-cell-values-are-updated"></a>複数のセルの値が更新された後のデータ
 
 ![複数のセルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-values.png)
 
@@ -265,11 +265,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**セルの数式が設定される前のデータ**
+#### <a name="data-before-cell-formula-is-set"></a>セルの数式が設定される前のデータ
 
 ![セルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
-**セルの数式が設定された後のデータ**
+#### <a name="data-after-cell-formula-is-set"></a>セルの数式が設定された後のデータ
 
 ![セルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formula.png)
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -296,11 +296,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**複数のセルの数式が設定される前のデータ**
+#### <a name="data-before-cell-formulas-are-set"></a>複数のセルの数式が設定される前のデータ
 
 ![複数のセルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
 
-**複数のセルの数式が設定された後のデータ**
+#### <a name="data-after-cell-formulas-are-set"></a>複数のセルの数式が設定された後のデータ
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
@@ -310,7 +310,7 @@ Excel.run(function (context) {
 
 ### <a name="get-values-from-a-range-of-cells"></a>セルの範囲から値を取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得し、その `values` プロパティを読み込んで、その値をコンソールに書き込みます。 `values`範囲のプロパティは、セルに含まれる生の値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、 `values` 範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。
+次のコードサンプルでは、範囲 **B2: E6**を取得し、その `values` プロパティを読み込んで、その値をコンソールに書き込みます。 `values`範囲のプロパティは、セルに含まれる生の値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、 `values` 範囲のプロパティは、それらのセルの生の値 (数式ではなく) を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -325,11 +325,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**範囲内のデータ (列 E の値は数式の結果)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.values (上記のコード サンプルによりコンソールに記録される)**
+#### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (上記のコード サンプルによりコンソールに記録される)
 
 ```json
 [
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>セルの範囲からテキストを取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得し、その `text` プロパティを読み込んでコンソールに書き込みます。 `text`範囲のプロパティは、範囲内のセルの表示値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、 `text` 範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。
+次のコードサンプルでは、範囲 **B2: E6**を取得し、その `text` プロパティを読み込んでコンソールに書き込みます。 `text`範囲のプロパティは、範囲内のセルの表示値を指定します。 範囲内の一部のセルに数式が含まれている場合でも、 `text` 範囲のプロパティは、それらのセルの表示値を指定します。数式は使用できません。
 
 ```js
 Excel.run(function (context) {
@@ -383,11 +383,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**範囲内のデータ (列 E の値は数式の結果)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.text (上記のコード サンプルによりコンソールに記録される)**
+#### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (上記のコード サンプルによりコンソールに記録される)
 
 ```json
 [
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>セルの範囲から数式を取得する
 
-次のコードサンプルでは、範囲**B2: E6**を取得し、その `formulas` プロパティを読み込んでコンソールに書き込みます。 `formulas`範囲のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。
+次のコードサンプルでは、範囲 **B2: E6**を取得し、その `formulas` プロパティを読み込んでコンソールに書き込みます。 `formulas`範囲のプロパティは、数式を含む範囲内のセルの数式と、数式を含まない範囲のセルの生の値を指定します。
 
 ```js
 Excel.run(function (context) {
@@ -441,11 +441,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**範囲内のデータ (列 E の値は数式の結果)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
 ![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (上記のコード サンプルによりコンソールに記録される)**
+#### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (上記のコード サンプルによりコンソールに記録される)
 
 ```json
 [
@@ -502,11 +502,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**フォントの色と塗りつぶしの色を設定する前の範囲内のデータ**
+#### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>フォントの色と塗りつぶしの色を設定する前の範囲内のデータ
 
 ![書式設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
 
-**フォントの色と塗りつぶしの色を設定した後の範囲内のデータ**
+#### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>フォントの色と塗りつぶしの色を設定した後の範囲内のデータ
 
 ![書式設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
@@ -531,13 +531,39 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**数値の書式を設定する前の範囲内のデータ**
+#### <a name="data-in-range-before-number-format-is-set"></a>数値の書式を設定する前の範囲内のデータ
 
-![書式設定する前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
+![数値形式が設定される前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
 
-**数値の書式を設定した後の範囲内のデータ**
+#### <a name="data-in-range-after-number-format-is-set"></a>数値の書式を設定した後の範囲内のデータ
 
-![書式設定した後の Excel のデータ](../images/excel-ranges-format-numbers.png)
+![数値形式が設定された後の Excel のデータ](../images/excel-ranges-format-numbers.png)
+
+## <a name="read-or-write-to-an-unbounded-range"></a>無制限の範囲への読み取りまたは書き込み
+
+### <a name="read-an-unbounded-range"></a>無制限の範囲の読み取り
+
+非制限範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 例:
+
+- 範囲のアドレスは列全体で構成されます。<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- 行全体から成る範囲アドレス:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`null`、`values`、`text`、または `numberFormat` などのセル レベルのプロパティに `formula` 値が含まれます。 `address` または `cellCount` など、範囲のその他のプロパティには、無制限の範囲に有効な値が含まれます。
+
+### <a name="write-to-an-unbounded-range"></a>無制限の範囲への書き込み
+
+`values` `numberFormat` `formula` 入力要求が大きすぎるため、、、などのセルレベルのプロパティを無制限の範囲に設定することはできません。 たとえば、次のコード スニペットは、無制限の範囲に対して `values` を指定しようとしているため無効です。 無制限の範囲のセルレベルのプロパティを設定しようとすると、API はエラーを返します。
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## <a name="read-or-write-to-a-large-range"></a>広い範囲に対する読み取りまたは書き込み
+
+範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。
+
+システム制限の詳細については、「 [リソースの制限」と「Office アドインのパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)」の「Excel アドイン」を参照してください。
 
 ### <a name="conditional-formatting-of-ranges"></a>範囲の条件付き書式
 
@@ -545,7 +571,7 @@ Excel.run(function (context) {
 
 ## <a name="find-a-cell-using-string-matching"></a>文字列のマッチングを使用してセルを検索する
 
-`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) メソッドを使用するようにしてください。
+`Range` オブジェクトには、範囲内で指定された文字列を検索するための `find` メソッドがあります。 このメソッドは、一致するテキストがある最初のセルの範囲を返します。 次のコード サンプルは、文字列 **Food** と等しい値を持つ最初のセルを検索して、そのアドレスをコンソールに記録します。 指定した文字列が範囲に存在しない場合、`ItemNotFound` エラーが `find` によってスローされます。 指定した文字列が範囲に存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) メソッドを使用するようにしてください。
 
 ```js
 Excel.run(function (context) {

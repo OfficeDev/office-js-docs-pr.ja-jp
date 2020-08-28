@@ -3,12 +3,12 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: e97f989ff4791da678fbecbf8bceed3670749e01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e7ac3c3895830ae2fc5e26bd578d34a8d6203e7b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611148"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292329"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
@@ -84,7 +84,7 @@ ms.locfileid: "44611148"
 
     `<bundle id>`は、ランタイム ログを有効にするホストを識別します。 `<file_name>`は、ログが書き込まれるテキスト ファイルの名前です。
 
-    `<bundle id>`を次の値のいずれかに設定して、対応するホストのランタイム ログを有効にします。
+    `<bundle id>`次のいずれかの値に設定して、対応するアプリケーションのランタイムログを有効にします。
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
