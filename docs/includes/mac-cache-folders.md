@@ -1,17 +1,17 @@
-多くの場合、アドインは Office for Mac でキャッシュされるため、パフォーマンス上の理由があります。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメントに複数のアドインが存在する場合、リロード時にキャッシュを自動的に消去するプロセスは、信頼できない場合があります。
+Office for Mac では、パフォーマンス上の理由からアドインがよくキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない可能性があります。
 
-作業ウィンドウアドインの [個性] メニューを使用して、キャッシュをクリアできます。
-- [パーソナリティ] メニューを選択します。 [ **Web キャッシュのクリア**] を選択します。
+作業ウィンドウ アドインの [パーソナリティ] メニューを使用してキャッシュをクリアすることができます。
+- [パーソナリティ] メニューを選択します。 次に、**[Web キャッシュのクリア]** を選択します。
     > [!NOTE]
-    > パーソナリティメニューを表示するには、macOS バージョン10.13.6 以降を実行する必要があります。
+    > [パーソナリティ] メニューを表示するには、macOS のバージョン 10.13.6 以降を実行する必要があります。
     
-    ![パーソナリティメニューの [web キャッシュのクリア] オプションのスクリーンショット。](../images/mac-clear-cache-menu.png)
+    ![[パーソナリティ] メニューの [Web キャッシュのクリア] のスクリーン ショット。](../images/mac-clear-cache-menu.png)
 
-フォルダーの内容を削除して、手動でキャッシュを消去することもでき `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` ます。
+`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアすることもできます。
 
 > [!NOTE]
-> そのフォルダーが存在しない場合は、次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
->    - `{host}` が Office ホスト (例: `Excel`) の `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
->    - `{host}` が Office ホスト (例: `Excel`) の `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
+> そのフォルダーが存在しない場合には次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
+>    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
+>    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
 >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
