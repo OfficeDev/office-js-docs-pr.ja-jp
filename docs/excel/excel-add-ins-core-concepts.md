@@ -1,182 +1,202 @@
 ---
 title: Excel JavaScript API を使用した基本的なプログラミングの概念
 description: Excel JavaScript API を使用して、Excel 用アドインをビルドします。
-ms.date: 07/13/2020
+ms.date: 07/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: dde7dc66e0746fc4d9cf91ed3df824fab05c109d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159417"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292600"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a><span data-ttu-id="5c99a-103">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="5c99a-103">Fundamental programming concepts with the Excel JavaScript API</span></span>
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a><span data-ttu-id="9a6a4-103">Excel JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="9a6a4-103">Fundamental programming concepts with the Excel JavaScript API</span></span>
 
-<span data-ttu-id="5c99a-104">この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-104">This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later.</span></span> <span data-ttu-id="5c99a-105">ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-105">It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.</span></span>
+<span data-ttu-id="9a6a4-104">この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して Excel 2016 以降のアドインをビルドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-104">This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later.</span></span> <span data-ttu-id="9a6a4-105">ここでは API の使用の基本となる中心概念について説明し、広い範囲に対する読み取り、書き込み、一定範囲内すべてのセルの更新など、特定のタスクを実行するためのガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-105">It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.</span></span>
 
-## <a name="asynchronous-nature-of-excel-apis"></a><span data-ttu-id="5c99a-106">Excel API の非同期性</span><span class="sxs-lookup"><span data-stu-id="5c99a-106">Asynchronous nature of Excel APIs</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="9a6a4-106">Excel API の非同期性とブックでの動作方法については、「[Using the application-specific API model (アプリケーション固有の API モデルの使用)](../develop/application-specific-api-model.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-106">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.</span></span>  
 
-<span data-ttu-id="5c99a-p102">Web ベースの Excel アドインは、Windows 上の Office など、デスクトップ ベースのプラットフォーム上にある Office アプリケーションに組み込まれ、Office on the web の HTML iFrame 内で実行されるブラウザー コンテナー内で実行されます。サポートされているすべてのプラットフォームで Office.js API が Excel ホストと同期的に対話することは、パフォーマンスの観点からうまくいきません。このため、Office.js 内の `sync()` API の呼び出しにより [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が返され、それは Excel アプリケーションが要求された読み取りまたは書き込み操作を完了したときに解決されます。また、操作ごとに別個の要求として送信する代わりに、プロパティの設定やメソッドの呼び出しなど、複数の操作をキューに登録し、`sync()` の 1 回の呼び出しでコマンドのバッチとしてそれらを実行することもできます。次のセクションでは、`Excel.run()` と `sync()` API を使用してこれを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p102">The web-based Excel add-ins run inside a browser container that is embedded within the Office application on desktop-based platforms such as Office on Windows and runs inside an HTML iFrame in Office on the web. Enabling the Office.js API to interact synchronously with the Excel host across all supported platforms is not feasible due to performance considerations. Therefore, the `sync()` API call in Office.js returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Excel application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `Excel.run()` and `sync()` APIs.</span></span>
+## <a name="officejs-apis-for-excel"></a><span data-ttu-id="9a6a4-107">Excel 用の Office.js API</span><span class="sxs-lookup"><span data-stu-id="9a6a4-107">Office.js APIs for Excel</span></span>
 
-## <a name="excelrun"></a><span data-ttu-id="5c99a-112">Excel.run</span><span class="sxs-lookup"><span data-stu-id="5c99a-112">Excel.run</span></span>
+<span data-ttu-id="9a6a4-108">Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して、Excel のオブジェクトを操作します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-108">An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:</span></span>
 
-<span data-ttu-id="5c99a-p103">`Excel.run` は Excel オブジェクト モデルに対して実行する操作を指定した関数を実行します。 `Excel.run` は Excel オブジェクトと対話するために使用できる要求コンテキストを自動的に作成します。 `Excel.run`が完了すると、Promose が解決され、実行時に割り当てられたすべてのオブジェクトが自動的に解放されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p103">`Excel.run` executes a function where you specify the actions to perform against the Excel object model. `Excel.run` automatically creates a request context that you can use to interact with Excel objects. When `Excel.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.</span></span>
+* <span data-ttu-id="9a6a4-109">**Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-109">**Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.</span></span>
 
-<span data-ttu-id="5c99a-p104">次の例は、`Excel.run` の使用方法を示しています。Catch ステートメントは `Excel.run` 内で発生するエラーをキャッチし、ログに記録します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p104">The following example shows how to use `Excel.run`. The catch statement catches and logs errors that occur within the `Excel.run`.</span></span>
+* <span data-ttu-id="9a6a4-110">**共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-110">**Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
+
+<span data-ttu-id="9a6a4-111">Excel 2016 以降を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-111">While you'll likely use the Excel JavaScript API to develop the majority of functionality in add-ins that target Excel 2016 or later, you'll also use objects in the Common API.</span></span> <span data-ttu-id="9a6a4-112">例:</span><span class="sxs-lookup"><span data-stu-id="9a6a4-112">For example:</span></span>
+
+* <span data-ttu-id="9a6a4-p103">[Context](/javascript/api/office/office.context): `Context`Context`contentLanguage` オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `officeTheme` や `host` などのブック構成の詳細で構成され、`platform` や `requirements.isSetSupported()` などのアドインのランタイム環境に関する情報も提供します。 さらに、 メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p103">[Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running.</span></span>
+* <span data-ttu-id="9a6a4-116">[Document](/javascript/api/office/office.document): `Document` オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-116">[Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running.</span></span>
+
+<span data-ttu-id="9a6a4-117">次の図は、Excel JavaScript API または共通 API を使用するタイミングを示しています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-117">The following image illustrates when you might use the Excel JavaScript API or the Common APIs.</span></span>
+
+![Excel JS API と共通 API の違いを示す画像](../images/excel-js-api-common-api.png)
+
+## <a name="object-model"></a><span data-ttu-id="9a6a4-119">オブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="9a6a4-119">Object model</span></span>
+
+<span data-ttu-id="9a6a4-120">Excel API について理解するには、ブックの構成要素が互いにどのように関連しているかを理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-120">To understand the Excel APIs, you must understand how the components of a workbook are related to one another.</span></span>
+
+* <span data-ttu-id="9a6a4-121">**ブック** には、1 つ以上の **ワークシート** が含まれます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-121">A **Workbook** contains one or more **Worksheets**.</span></span>
+* <span data-ttu-id="9a6a4-122">**ワークシート** では、**Range** オブジェクトを介してセルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-122">A **Worksheet** gives access to cells through **Range** objects.</span></span>
+* <span data-ttu-id="9a6a4-123">**Range** は、連続したセルのグループを表します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-123">A **Range** represents a group of contiguous cells.</span></span>
+* <span data-ttu-id="9a6a4-124">**Range** は、**表**、**グラフ**、**図形**、およびその他のデータ可視化や組織オブジェクトを作成して配置するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-124">**Ranges** are used to create and place **Tables**, **Charts**, **Shapes**, and other data visualization or organization objects.</span></span>
+* <span data-ttu-id="9a6a4-125">**ワークシート** には、個々のシートに存在するデータ オブジェクトのコレクションが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-125">A **Worksheet** contains collections of those data objects that are present in the individual sheet.</span></span>
+* <span data-ttu-id="9a6a4-126">**ブック** には、**ブック** 全体のデータ オブジェクト (**表** など) の一部のコレクションが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-126">**Workbooks** contain collections of some of those data objects (such as **Tables**) for the entire **Workbook**.</span></span>
+
+### <a name="ranges"></a><span data-ttu-id="9a6a4-127">範囲</span><span class="sxs-lookup"><span data-stu-id="9a6a4-127">Ranges</span></span>
+
+<span data-ttu-id="9a6a4-128">範囲とは、ブック内の連続したセルのグループのことです。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-128">A range is a group of contiguous cells in the workbook.</span></span> <span data-ttu-id="9a6a4-129">アドインでは、範囲を定義するのに通常 A1 形式の表記が使用されます (例: **B3** は、列 **B**、行 **3** の単一のセルで、**C2:F4** は、列 **C** から **F**、行 **2** から **4** までのセル)。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-129">Add-ins typically use A1-style notation (e.g. **B3** for the single cell in column **B** and row **3** or **C2:F4** for the cells from columns **C** through **F** and rows **2** through **4**) to define ranges.</span></span>
+
+<span data-ttu-id="9a6a4-130">範囲には `values`、`formulas`、`format` の 3 つの主要なプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-130">Ranges have three core properties: `values`, `formulas`, and `format`.</span></span> <span data-ttu-id="9a6a4-131">これらのプロパティで、セルの値、評価する数式、およびセルの視覚的な書式設定を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-131">These properties get or set the cell values, formulas to be evaluated, and the visual formatting of the cells.</span></span>
+
+#### <a name="range-sample"></a><span data-ttu-id="9a6a4-132">サンプル範囲</span><span class="sxs-lookup"><span data-stu-id="9a6a4-132">Range sample</span></span>
+
+<span data-ttu-id="9a6a4-133">次のサンプルで、売上記録の作成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-133">The following sample shows how to create sales records.</span></span> <span data-ttu-id="9a6a4-134">この関数は、`Range` オブジェクトを使用して、値、数式、書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-134">This function uses `Range` objects to set the values, formulas, and formats.</span></span>
 
 ```js
 Excel.run(function (context) {
-    // You can use the Excel JavaScript API here in the batch function
-    // to execute actions on the Excel object model.
-    console.log('Your code goes here.');
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Create the headers and format them to stand out.
+    var headers = [
+      ["Product", "Quantity", "Unit Price", "Totals"]
+    ];
+    var headerRange = sheet.getRange("B2:E2");
+    headerRange.values = headers;
+    headerRange.format.fill.color = "#4472C4";
+    headerRange.format.font.color = "white";
+
+    // Create the product data rows.
+    var productData = [
+      ["Almonds", 6, 7.5],
+      ["Coffee", 20, 34.5],
+      ["Chocolate", 10, 9.56],
+    ];
+    var dataRange = sheet.getRange("B3:D5");
+    dataRange.values = productData;
+
+    // Create the formulas to total the amounts sold.
+    var totalFormulas = [
+      ["=C3 * D3"],
+      ["=C4 * D4"],
+      ["=C5 * D5"],
+      ["=SUM(E3:E5)"]
+    ];
+    var totalRange = sheet.getRange("E3:E6");
+    totalRange.formulas = totalFormulas;
+    totalRange.format.font.bold = true;
+
+    // Display the totals as US dollar amounts.
+    totalRange.numberFormat = [["$0.00"]];
+
+    return context.sync();
 });
 ```
 
-### <a name="run-options"></a><span data-ttu-id="5c99a-118">実行オプション</span><span class="sxs-lookup"><span data-stu-id="5c99a-118">Run options</span></span>
+<span data-ttu-id="9a6a4-135">このサンプルは、現在のワークシートに次のデータを作成します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-135">This sample creates the following data in the current worksheet:</span></span>
 
-<span data-ttu-id="5c99a-119">`Excel.run` には、[RunOptions](/javascript/api/excel/excel.runoptions) オブジェクトを使用するオーバーロードがあります。</span><span class="sxs-lookup"><span data-stu-id="5c99a-119">`Excel.run` has an overload that takes in a [RunOptions](/javascript/api/excel/excel.runoptions) object.</span></span> <span data-ttu-id="5c99a-120">これには、関数の実行時にプラットフォームの動作に影響を与えるプロパティのセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c99a-120">This contains a set of properties that affect platform behavior when the function runs.</span></span> <span data-ttu-id="5c99a-121">次のプロパティが現在サポートされています。</span><span class="sxs-lookup"><span data-stu-id="5c99a-121">The following property is currently supported:</span></span>
+![値の行、数式の列、書式設定されたヘッダーを示す売上記録。](../images/excel-overview-range-sample.png)
 
-- <span data-ttu-id="5c99a-122">`delayForCellEdit`: ユーザーがセル編集モードを終了するまでバッチ要求を延期するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-122">`delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode.</span></span> <span data-ttu-id="5c99a-123">**true** の場合、バッチ要求は延期され、ユーザーがセル編集モードを終了した時点で実行されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-123">When **true**, the batch request is delayed and runs when the user exits cell edit mode.</span></span> <span data-ttu-id="5c99a-124">**false** の場合、バッチ要求は、ユーザーがセル編集モードにある場合、自動的に失敗します (ユーザーにエラーが表示されます)。</span><span class="sxs-lookup"><span data-stu-id="5c99a-124">When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user).</span></span> <span data-ttu-id="5c99a-125">`delayForCellEdit` プロパティが指定されていない場合の既定の動作は、このプロパティが **false** の場合と同じ動作となります。</span><span class="sxs-lookup"><span data-stu-id="5c99a-125">The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.</span></span>
+### <a name="charts-tables-and-other-data-objects"></a><span data-ttu-id="9a6a4-137">グラフ、表、およびその他のデータ オブジェクト</span><span class="sxs-lookup"><span data-stu-id="9a6a4-137">Charts, tables, and other data objects</span></span>
+
+<span data-ttu-id="9a6a4-138">Excel JavaScript API を使用することにより、Excel 内でデータ構造やビジュアル化を作成および操作できます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-138">The Excel JavaScript APIs can create and manipulate the data structures and visualizations within Excel.</span></span> <span data-ttu-id="9a6a4-139">表とグラフの 2 つのオブジェクトが頻繁に使用されますが、API はピボットテーブル、図形、画像などもサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-139">Tables and charts are two of the more commonly used objects, but the APIs support PivotTables, shapes, images, and more.</span></span>
+
+#### <a name="creating-a-table"></a><span data-ttu-id="9a6a4-140">表の作成</span><span class="sxs-lookup"><span data-stu-id="9a6a4-140">Creating a table</span></span>
+
+<span data-ttu-id="9a6a4-141">データが入力された範囲を使用することにより、表を作成します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-141">Create tables by using data-filled ranges.</span></span> <span data-ttu-id="9a6a4-142">書式設定とテーブル コントロール (フィルターなど) が自動的に範囲に適用されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-142">Formatting and table controls (such as filters) are automatically applied to the range.</span></span>
+
+<span data-ttu-id="9a6a4-143">次のサンプルでは、前のサンプルの範囲を使用して表を作成します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-143">The following sample creates a table using the ranges from the previous sample.</span></span>
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.tables.add("B2:E5", true);
+    return context.sync();
+});
+```
+
+<span data-ttu-id="9a6a4-144">前のデータを含むワークシート上でこのサンプル コードを使用すると、次のテーブルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-144">Using this sample code on the worksheet with the previous data creates the following table:</span></span>
+
+![前の売上記録から作成された表。](../images/excel-overview-table-sample.png)
+
+#### <a name="creating-a-chart"></a><span data-ttu-id="9a6a4-146">グラフの作成</span><span class="sxs-lookup"><span data-stu-id="9a6a4-146">Creating a chart</span></span>
+
+<span data-ttu-id="9a6a4-147">グラフを作成すると、範囲内のデータを視覚化できます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-147">Create charts to visualize the data in a range.</span></span> <span data-ttu-id="9a6a4-148">この API は、さまざまな種類のグラフをサポートしています。いずれのグラフも、必要に応じてカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-148">The APIs support dozens of chart varieties, each of which can be customized to suit your needs.</span></span>
+
+<span data-ttu-id="9a6a4-149">次のサンプルでは 3 つの品目の簡単な縦棒グラフが作成され、ワークシートの上端から 100 ピクセル下に配置されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-149">The following sample creates a simple column chart for three items and places it 100 pixels below the top of the worksheet.</span></span>
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+    chart.top = 100;
+    return context.sync();
+});
+```
+
+<span data-ttu-id="9a6a4-150">前の表を含むワークシート上でこのサンプルを実行すると、次のグラフが作成されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-150">Running this sample on the worksheet with the previous table creates the following chart:</span></span>
+
+![前の売上記録の 3 つの品目の数量が表示されている縦棒グラフ。](../images/excel-overview-chart-sample.png)
+
+## <a name="run-options"></a><span data-ttu-id="9a6a4-152">実行オプション</span><span class="sxs-lookup"><span data-stu-id="9a6a4-152">Run options</span></span>
+
+<span data-ttu-id="9a6a4-153">`Excel.run` には、[RunOptions](/javascript/api/excel/excel.runoptions) オブジェクトを使用するオーバーロードがあります。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-153">`Excel.run` has an overload that takes in a [RunOptions](/javascript/api/excel/excel.runoptions) object.</span></span> <span data-ttu-id="9a6a4-154">これには、関数の実行時にプラットフォームの動作に影響を与えるプロパティのセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-154">This contains a set of properties that affect platform behavior when the function runs.</span></span> <span data-ttu-id="9a6a4-155">次のプロパティが現在サポートされています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-155">The following property is currently supported:</span></span>
+
+* <span data-ttu-id="9a6a4-156">`delayForCellEdit`: ユーザーがセル編集モードを終了するまでバッチ要求を延期するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-156">`delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode.</span></span> <span data-ttu-id="9a6a4-157">**true** の場合、バッチ要求は延期され、ユーザーがセル編集モードを終了した時点で実行されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-157">When **true**, the batch request is delayed and runs when the user exits cell edit mode.</span></span> <span data-ttu-id="9a6a4-158">**false** の場合、バッチ要求は、ユーザーがセル編集モードにある場合、自動的に失敗します (ユーザーにエラーが表示されます)。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-158">When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user).</span></span> <span data-ttu-id="9a6a4-159">`delayForCellEdit` プロパティが指定されていない場合の既定の動作は、このプロパティが **false** の場合と同じ動作となります。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-159">The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.</span></span>
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
 ```
 
-## <a name="request-context"></a><span data-ttu-id="5c99a-126">要求コンテキスト</span><span class="sxs-lookup"><span data-stu-id="5c99a-126">Request context</span></span>
+## <a name="null-or-blank-property-values"></a><span data-ttu-id="9a6a4-160">null または空白のプロパティ値</span><span class="sxs-lookup"><span data-stu-id="9a6a4-160">null or blank property values</span></span>
 
-<span data-ttu-id="5c99a-p107">Excel とユーザーのアドインは、2 つの異なるプロセスで実行されます。それらは異なるランタイム環境を使用するため、Excel アドインでは、ワークシート、範囲、グラフ、表など、Excel のオブジェクトにユーザーのアドインを接続するために `RequestContext` オブジェクトが必要です。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p107">Excel and your add-in run in two different processes. Since they use different runtime environments, Excel add-ins require a `RequestContext` object in order to connect your add-in to objects in Excel such as worksheets, ranges, charts, and tables.</span></span>
+<span data-ttu-id="9a6a4-161">`null` と空の文字列は、Excel JavaScript API では特別な意味を持ちます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-161">`null` and empty strings have special implications in the Excel JavaScript APIs.</span></span> <span data-ttu-id="9a6a4-162">これらは、空のセル、書式設定なし、既定値を表すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-162">They're used to represent empty cells, no formatting, or default values.</span></span> <span data-ttu-id="9a6a4-163">このセクションでは、プロパティの取得や設定を行うときに `null` や空の文字列を使用する方法について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-163">This section details the use of `null` and empty string when getting and setting properties.</span></span>
 
-## <a name="proxy-objects"></a><span data-ttu-id="5c99a-129">プロキシ オブジェクト</span><span class="sxs-lookup"><span data-stu-id="5c99a-129">Proxy objects</span></span>
+### <a name="null-input-in-2-d-array"></a><span data-ttu-id="9a6a4-164">2 次元配列での null の入力</span><span class="sxs-lookup"><span data-stu-id="9a6a4-164">null input in 2-D Array</span></span>
 
-<span data-ttu-id="5c99a-p108">アドインで宣言し、使用する Excel JavaScript オブジェクトはプロキシ オブジェクトです。 起動するメソッドや、プロキシ オブジェクトに設定または読み込まれるプロパティは、保留中のコマンドのキューに単純に追加されます。 `sync()` など、要求コンテキスト上で `context.sync()` メソッドを呼び出すと、キューに入れられたコマンドは Excel にディスパッチされて実行されます。 Excel の JavaScript API では、基本的にバッチを中心としています。 要求コンテキストに必要なだけ変更内容をキューに登録し、`sync()` メソッドを呼び出して、キューに入れられたコマンドをバッチで実行することができます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p108">The Excel JavaScript objects that you declare and use in an add-in are proxy objects. Any methods that you invoke or properties that you set or load on proxy objects are simply added to a queue of pending commands. When you call the `sync()` method on the request context (for example, `context.sync()`), the queued commands are dispatched to Excel and run. The Excel JavaScript API is fundamentally batch-centric. You can queue up as many changes as you wish on the request context, and then call the `sync()` method to run the batch of queued commands.</span></span>
+<span data-ttu-id="9a6a4-p113">Excel では、範囲は 2 次元配列で表され、最初のディメンションは行、2 番目のディメンションは列を示します。 範囲内の特定のセルだけに値、数値書式、または数式を設定するには、2 次元配列内のそのセルに値、数値書式、または数式を指定し、2 次元配列内のその他のすべてのセルに `null` を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p113">In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.</span></span>
 
-<span data-ttu-id="5c99a-p109">たとえば、次のコード スニペットでは、ローカル JavaScript オブジェクト `selectedRange` が Excel ドキュメント内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 `selectedRange` オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが `context.sync()` を呼び出すまで Excel ドキュメントには反映されません。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p109">For example, the following code snippet declares the local JavaScript object `selectedRange` to reference a selected range in the Excel document, and then sets some properties on that object. The `selectedRange` object is a proxy object, so the properties that are set and method that is invoked on that object will not be reflected in the Excel document until your add-in calls `context.sync()`.</span></span>
-
-```js
-var selectedRange = context.workbook.getSelectedRange();
-selectedRange.format.fill.color = "#4472C4";
-selectedRange.format.font.color = "white";
-selectedRange.format.autofitColumns();
-```
-
-### <a name="sync"></a><span data-ttu-id="5c99a-137">sync()</span><span class="sxs-lookup"><span data-stu-id="5c99a-137">sync()</span></span>
-
-<span data-ttu-id="5c99a-p110">要求コンテキストで `sync()` メソッドを呼び出すと、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態が同期されます。 `sync()` メソッドは、要求コンテキストのキューに登録されたすべてのコマンドを実行し、プロキシ オブジェクトに読み込まれるプロパティの値を取得します。 `sync()` メソッドは非同期で実行されて [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。これは、`sync()` メソッドが完了すると解決されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p110">Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Excel document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.</span></span>
-
-<span data-ttu-id="5c99a-141">次の例は、ローカル JavaScript proxy オブジェクト (`selectedRange`) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して `context.sync()` を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。</span><span class="sxs-lookup"><span data-stu-id="5c99a-141">The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript Promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.</span></span>
-
-```js
-Excel.run(function (context) {
-    var selectedRange = context.workbook.getSelectedRange();
-    selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-<span data-ttu-id="5c99a-142">前の例では、`selectedRange` が設定されており、`context.sync()` が呼び出されると `address` プロパティが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-142">In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.</span></span>
-
-<span data-ttu-id="5c99a-143">`sync()` は Promise を返す非同期の操作であるため、常に Promise を (JavaScript で) `return` する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5c99a-143">Because `sync()` is an asynchronous operation that returns a promise, you should always `return` the promise (in JavaScript).</span></span> <span data-ttu-id="5c99a-144">このようにして、スクリプトの実行を継続する前に、`sync()` 操作を完了します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-144">Doing so ensures that the `sync()` operation completes before the script continues to run.</span></span> <span data-ttu-id="5c99a-145">`sync()` を用いたパフォーマンスの最適化の詳細については、「[Excel の JavaScript API を使用した、パフォーマンスの最適化](../excel/performance.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5c99a-145">For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).</span></span>
-
-### <a name="load"></a><span data-ttu-id="5c99a-146">load()</span><span class="sxs-lookup"><span data-stu-id="5c99a-146">load()</span></span>
-
-<span data-ttu-id="5c99a-p112">プロキシ オブジェクトのプロパティを読み取るには、まず Excel ドキュメントからプロキシ オブジェクトとデータを入力するプロパティを明示的に読み込み、それから `context.sync()` を呼び出す必要があります。 たとえば、選択範囲を参照するプロキシ オブジェクトを作成した後、選択範囲の `address` プロパティを読み取る必要がある場合、読み取る前に `address` プロパティを読み込む必要があります。 プロキシ オブジェクトのプロパティを読み込むよう要求するには、オブジェクトに対して `load()` メソッドを呼び出し、読み込むプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p112">Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Excel document, and then call `context.sync()`. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's `address` property, you need to load the `address` property before you can read it. To request properties of a proxy object be loaded, call the `load()` method on the object and specify the properties to load.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="5c99a-p113">プロキシ オブジェクト上でメソッドを呼び出す、またはプロパティを設定するだけの場合は、`load()` メソッドを呼び出す必要はありません。 `load()` メソッドは、プロキシ オブジェクト上でプロパティを読み取る場合のみ必要です。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p113">If you are only calling methods or setting properties on a proxy object, you do not need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.</span></span>
-
-<span data-ttu-id="5c99a-p114">プロキシ オブジェクトに対してプロパティを設定、またはメソッドを呼び出す要求と同じように、プロキシ オブジェクトに対してプロパティを読み込む要求も、要求コンテキストで保留中のコマンドのキューに追加され、次回 `sync()` メソッドを呼び出すときに実行されます。`load()` の呼び出しは、必要なだけ要求コンテキストのキューに入れることができます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p114">Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.</span></span>
-
-<span data-ttu-id="5c99a-154">次の例では、範囲の特定のプロパティのみが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-154">In the following example, only specific properties of the range are loaded.</span></span>
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-
-    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
-
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);              // ok
-        console.log (myRange.format.wrapText);      // ok
-        console.log (myRange.format.fill.color);    // ok
-        //console.log (myRange.format.font.color);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-<span data-ttu-id="5c99a-155">前の例では、`format/font` が `myRange.load()` の呼び出しで指定されていないため、`format.font.color` プロパティは読み取れませんでした。</span><span class="sxs-lookup"><span data-stu-id="5c99a-155">In the previous example, because `format/font` is not specified in the call to `myRange.load()`, the `format.font.color` property cannot be read.</span></span>
-
-<span data-ttu-id="5c99a-156">「[Excel の JavaScript API を使用した、パフォーマンスの最適化](performance.md)」の説明にあるとおり、パフォーマンスを最適化するため、オブジェクトに対して `load()` メソッドを使用するときに読み込むプロパティを明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5c99a-156">To optimize performance, you should explicitly specify the properties to load when using the `load()` method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md).</span></span> <span data-ttu-id="5c99a-157">`load()` メソッドの詳細については、「[Excel JavaScript API を使用した高度なプログラミングの概念](excel-add-ins-advanced-concepts.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5c99a-157">For more information about the `load()` method, see [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md).</span></span>
-
-## <a name="null-or-blank-property-values"></a><span data-ttu-id="5c99a-158">null または空白のプロパティ値</span><span class="sxs-lookup"><span data-stu-id="5c99a-158">null or blank property values</span></span>
-
-### <a name="null-input-in-2-d-array"></a><span data-ttu-id="5c99a-159">2 次元配列での null の入力</span><span class="sxs-lookup"><span data-stu-id="5c99a-159">null input in 2-D Array</span></span>
-
-<span data-ttu-id="5c99a-p116">Excel では、範囲は 2 次元配列で表され、最初のディメンションは行、2 番目のディメンションは列を示します。 範囲内の特定のセルだけに値、数値書式、または数式を設定するには、2 次元配列内のそのセルに値、数値書式、または数式を指定し、2 次元配列内のその他のすべてのセルに `null` を指定します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p116">In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.</span></span>
-
-<span data-ttu-id="5c99a-p117">たとえば、範囲内の 1 つのセルの数値書式を更新し、範囲内の他のセルすべての既存の数値書式を保持する場合、更新するセルに新しい数値書式を指定し、他のセルすべてに `null` を指定します。 次のコード スニペットでは、範囲内の 4 番目のセルに新しい数値書式を設定し、その前の 3 つのセルについては数値書式を変更せずに保持します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p117">For example, to update the number format for only one cell within a range, and retain the existing number format for all other cells in the range, specify the new number format for the cell to update, and specify `null` for all other cells. The following code snippet sets a new number format for the fourth cell in the range, and leaves the number format unchanged for the first three cells in the range.</span></span>
+<span data-ttu-id="9a6a4-p114">たとえば、範囲内の 1 つのセルの数値書式を更新し、範囲内の他のセルすべての既存の数値書式を保持する場合、更新するセルに新しい数値書式を指定し、他のセルすべてに `null` を指定します。 次のコード スニペットでは、範囲内の 4 番目のセルに新しい数値書式を設定し、その前の 3 つのセルについては数値書式を変更せずに保持します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p114">For example, to update the number format for only one cell within a range, and retain the existing number format for all other cells in the range, specify the new number format for the cell to update, and specify `null` for all other cells. The following code snippet sets a new number format for the fourth cell in the range, and leaves the number format unchanged for the first three cells in the range.</span></span>
 
 ```js
 range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
 range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
 
-### <a name="null-input-for-a-property"></a><span data-ttu-id="5c99a-164">プロパティに対する null の入力</span><span class="sxs-lookup"><span data-stu-id="5c99a-164">null input for a property</span></span>
+### <a name="null-input-for-a-property"></a><span data-ttu-id="9a6a4-169">プロパティに対する null の入力</span><span class="sxs-lookup"><span data-stu-id="9a6a4-169">null input for a property</span></span>
 
-<span data-ttu-id="5c99a-p118">`null` は単一プロパティに有効な入力ではありません。たとえば、次のコード スニペットは、範囲の `values` プロパティを `null` に設定できないため無効です。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p118">`null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.</span></span>
+<span data-ttu-id="9a6a4-p115">`null` は単一プロパティに有効な入力ではありません。たとえば、次のコード スニペットは、範囲の `values` プロパティを `null` に設定できないため無効です。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p115">`null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.</span></span>
 
 ```js
 range.values = null;
 ```
 
-<span data-ttu-id="5c99a-167">同様に、次のコード スニペットは、`null` が `color` プロパティで有効な値ではないため無効です。</span><span class="sxs-lookup"><span data-stu-id="5c99a-167">Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.</span></span>
+<span data-ttu-id="9a6a4-172">同様に、次のコード スニペットは、`null` が `color` プロパティで有効な値ではないため無効です。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-172">Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.</span></span>
 
 ```js
 range.format.fill.color =  null;
 ```
 
-### <a name="null-property-values-in-the-response"></a><span data-ttu-id="5c99a-168">応答内の null プロパティ値</span><span class="sxs-lookup"><span data-stu-id="5c99a-168">null property values in the response</span></span>
+### <a name="null-property-values-in-the-response"></a><span data-ttu-id="9a6a4-173">応答内の null プロパティ値</span><span class="sxs-lookup"><span data-stu-id="9a6a4-173">null property values in the response</span></span>
 
-<span data-ttu-id="5c99a-p119">指定の範囲に複数の値がある場合、`size` および `color` などの書式設定プロパティでは、応答に `null` 値が含まれます。 たとえば、範囲を取得してその `format.font.color` プロパティを読み込む場合:</span><span class="sxs-lookup"><span data-stu-id="5c99a-p119">Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:</span></span>
+<span data-ttu-id="9a6a4-p116">指定の範囲に複数の値がある場合、`size` および `color` などの書式設定プロパティでは、応答に `null` 値が含まれます。 たとえば、範囲を取得してその `format.font.color` プロパティを読み込む場合:</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p116">Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:</span></span>
 
-- <span data-ttu-id="5c99a-171">範囲内のすべてのセルのフォントの色が同じ場合、`range.format.font.color` がその色を指定します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-171">If all cells in the range have the same font color, `range.format.font.color` specifies that color.</span></span>
-- <span data-ttu-id="5c99a-172">範囲内に複数のフォントの色がある場合、`range.format.font.color` は `null` です。</span><span class="sxs-lookup"><span data-stu-id="5c99a-172">If multiple font colors are present within the range, `range.format.font.color` is `null`.</span></span>
+* <span data-ttu-id="9a6a4-176">範囲内のすべてのセルのフォントの色が同じ場合、`range.format.font.color` がその色を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-176">If all cells in the range have the same font color, `range.format.font.color` specifies that color.</span></span>
+* <span data-ttu-id="9a6a4-177">範囲内に複数のフォントの色がある場合、`range.format.font.color` は `null` です。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-177">If multiple font colors are present within the range, `range.format.font.color` is `null`.</span></span>
 
-### <a name="blank-input-for-a-property"></a><span data-ttu-id="5c99a-173">プロパティに対する空白の入力</span><span class="sxs-lookup"><span data-stu-id="5c99a-173">Blank input for a property</span></span>
+### <a name="blank-input-for-a-property"></a><span data-ttu-id="9a6a4-178">プロパティに対する空白の入力</span><span class="sxs-lookup"><span data-stu-id="9a6a4-178">Blank input for a property</span></span>
 
-<span data-ttu-id="5c99a-p120">プロパティに空白の値 (`''` の間にスペースのない 2 つの引用符) を指定すると、プロパティをクリアまたはリセットする指示として解釈されます。例:</span><span class="sxs-lookup"><span data-stu-id="5c99a-p120">When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:</span></span>
+<span data-ttu-id="9a6a4-p117">プロパティに空白の値 (`''` の間にスペースのない 2 つの引用符) を指定すると、プロパティをクリアまたはリセットする指示として解釈されます。例:</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p117">When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:</span></span>
 
-- <span data-ttu-id="5c99a-176">範囲の `values` プロパティに空白の値を指定すると、範囲のコンテンツはクリアされます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-176">If you specify a blank value for the `values` property of a range, the content of the range is cleared.</span></span>
+* <span data-ttu-id="9a6a4-181">範囲の `values` プロパティに空白の値を指定すると、範囲のコンテンツはクリアされます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-181">If you specify a blank value for the `values` property of a range, the content of the range is cleared.</span></span>
+* <span data-ttu-id="9a6a4-182">`numberFormat` プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-182">If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.</span></span>
+* <span data-ttu-id="9a6a4-183">`formula` プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-183">If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.</span></span>
 
-- <span data-ttu-id="5c99a-177">`numberFormat` プロパティに空白の値を指定すると、数値書式は `General` にリセットされます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-177">If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.</span></span>
+### <a name="blank-property-values-in-the-response"></a><span data-ttu-id="9a6a4-184">応答内の空白のプロパティ値</span><span class="sxs-lookup"><span data-stu-id="9a6a4-184">Blank property values in the response</span></span>
 
-- <span data-ttu-id="5c99a-178">`formula` プロパティと `formulaLocale` プロパティに空白の値を指定すると、数式の値はクリアされます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-178">If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.</span></span>
-
-### <a name="blank-property-values-in-the-response"></a><span data-ttu-id="5c99a-179">応答内の空白のプロパティ値</span><span class="sxs-lookup"><span data-stu-id="5c99a-179">Blank property values in the response</span></span>
-
-<span data-ttu-id="5c99a-p121">読み取り操作では、応答内の空白のプロパティ値 (`''` の間にスペースのない、2 つの引用符) は、セルにデータまたは値がないことを示します。 次の 1 番目の例では、範囲内の最初と最後のセルにデータがありません。 2 番目の例では、範囲内の最初の 2 つのセルに数式がありません。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p121">For read operations, a blank property value in the response (i.e., two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.</span></span>
+<span data-ttu-id="9a6a4-p118">読み取り操作では、応答内の空白のプロパティ値 (`''` の間にスペースのない、2 つの引用符) は、セルにデータまたは値がないことを示します。 次の 1 番目の例では、範囲内の最初と最後のセルにデータがありません。 2 番目の例では、範囲内の最初の 2 つのセルに数式がありません。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-p118">For read operations, a blank property value in the response (i.e., two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.</span></span>
 
 ```js
 range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
@@ -186,41 +206,52 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 range.formula = [['', '', '=Rand()']];
 ```
 
-## <a name="read-or-write-to-an-unbounded-range"></a><span data-ttu-id="5c99a-183">無制限の範囲への読み取りまたは書き込み</span><span class="sxs-lookup"><span data-stu-id="5c99a-183">Read or write to an unbounded range</span></span>
+## <a name="requirement-sets"></a><span data-ttu-id="9a6a4-188">要件セット</span><span class="sxs-lookup"><span data-stu-id="9a6a4-188">Requirement sets</span></span>
 
-### <a name="read-an-unbounded-range"></a><span data-ttu-id="5c99a-184">無制限の範囲の読み取り</span><span class="sxs-lookup"><span data-stu-id="5c99a-184">Read an unbounded range</span></span>
+<span data-ttu-id="9a6a4-189">要件セットは、API メンバーの名前付きグループです。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-189">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="9a6a4-190">Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-190">An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office application supports the APIs that the add-in needs.</span></span> <span data-ttu-id="9a6a4-191">サポートされている各プラットフォームで使用できる特定の要件セットを確認するには、「[Excel JavaScript API の要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-191">To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md).</span></span>
 
-<span data-ttu-id="5c99a-p122">無制限の範囲のアドレスとは、列全体または行全体を指定する範囲のアドレスです。例:</span><span class="sxs-lookup"><span data-stu-id="5c99a-p122">An unbounded range address is a range address that specifies either entire column(s) or entire row(s). For example:</span></span>
+### <a name="checking-for-requirement-set-support-at-runtime"></a><span data-ttu-id="9a6a4-192">実行時に要件セットのサポートを確認する</span><span class="sxs-lookup"><span data-stu-id="9a6a4-192">Checking for requirement set support at runtime</span></span>
 
-- <span data-ttu-id="5c99a-187">範囲のアドレスは、列全体で構成されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-187">Range addresses comprised of entire column(s):</span></span><ul><li>`C:C`</li><li>`A:F`</li></ul>
-- <span data-ttu-id="5c99a-188">範囲のアドレスは、行全体で構成されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-188">Range addresses comprised of entire row(s):</span></span><ul><li>`2:2`</li><li>`1:4`</li></ul>
-
-<span data-ttu-id="5c99a-p123">API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`null`、`values`、`text`、または `numberFormat` などのセル レベルのプロパティに `formula` 値が含まれます。 `address` または `cellCount` など、範囲のその他のプロパティには、無制限の範囲に有効な値が含まれます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p123">When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.</span></span>
-
-### <a name="write-to-an-unbounded-range"></a><span data-ttu-id="5c99a-191">無制限の範囲への書き込み</span><span class="sxs-lookup"><span data-stu-id="5c99a-191">Write to an unbounded range</span></span>
-
-<span data-ttu-id="5c99a-p124">無制限の範囲では、入力要求が大きすぎるため、`values`、`numberFormat`、`formula` などのセル レベルのプロパティは設定できません。 たとえば、次のコード スニペットは、無制限の範囲に対して `values` を指定しようとしているため無効です。 無制限の範囲にセル レベルのプロパティを設定しようとすると、API からエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p124">You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API will return an error if you attempt to set cell-level properties for an unbounded range.</span></span>
+<span data-ttu-id="9a6a4-193">次のコード サンプルは、アドインが実行されている Office アプリケーションが指定された API の要件セットをサポートしているかどうかを確認する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-193">The following code sample shows how to determine whether the Office application where the add-in is running supports the specified API requirement set.</span></span>
 
 ```js
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
-range.values = 'Due Date';
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
 ```
 
-## <a name="read-or-write-to-a-large-range"></a><span data-ttu-id="5c99a-195">広い範囲に対する読み取りまたは書き込み</span><span class="sxs-lookup"><span data-stu-id="5c99a-195">Read or write to a large range</span></span>
+### <a name="defining-requirement-set-support-in-the-manifest"></a><span data-ttu-id="9a6a4-194">マニフェストで要件セットのサポートを定義する</span><span class="sxs-lookup"><span data-stu-id="9a6a4-194">Defining requirement set support in the manifest</span></span>
 
-<span data-ttu-id="5c99a-p125">範囲に多数のセル、値、数値書式、数式などが含まれる場合、その範囲では API 操作を実行できない場合があります。 API は常に範囲に要求された操作 (特定のデータを取得または書き込む) を実行しようとしますが、広い範囲に対する読み取りや書き込みの操作は、過剰なリソース使用によるエラーになる場合があります。 このようなエラーを避けるため、広い範囲に対して読み取りや書き取り操作を 1 回で実行するのではなく、その範囲の小さいサブセットに対して個別に読み取りまたは書き込み操作を実行することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5c99a-p125">If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.</span></span>
+<span data-ttu-id="9a6a4-195">アドインのマニフェストで [Requirements 要素](../reference/manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-195">You can use the [Requirements element](../reference/manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate.</span></span> <span data-ttu-id="9a6a4-196">Office アプリケーションやプラットフォームが、マニフェストの `Requirements` 要素で指定した要件セットまたは API メソッドをサポートしない場合、アドインはそのアプリケーションまたはプラットフォームでは実行されず、**[個人用アドイン]** に表示されるアドインの一覧にも表示されません。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-196">If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**.</span></span>
 
-<span data-ttu-id="5c99a-199">システムの制限の詳細については、「[Excel のデータ転送の制限](../develop/common-coding-issues.md#excel-data-transfer-limits)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5c99a-199">For details on the system limitations, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).</span></span>
+<span data-ttu-id="9a6a4-197">次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office クライアント アプリケーションのすべてで読み込まれる必要があることを指定する、アドインのマニフェストの `Requirements` 要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-197">The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office client applications that support ExcelApi requirement set version 1.3 or greater.</span></span>
 
-## <a name="handle-errors"></a><span data-ttu-id="5c99a-200">エラーを処理する</span><span class="sxs-lookup"><span data-stu-id="5c99a-200">Handle errors</span></span>
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
 
-<span data-ttu-id="5c99a-201">API エラーが発生すると、API はコードとメッセージを含む `error` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="5c99a-201">When an API error occurs, the API returns an `error` object that contains a code and a message.</span></span> <span data-ttu-id="5c99a-202">エラーの処理に関する詳細と、API エラーの一覧については、「[エラー処理](excel-add-ins-error-handling.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5c99a-202">For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).</span></span>
+> [!NOTE]
+> <span data-ttu-id="9a6a4-198">Excel on the web、Windows、iPad などの Office アプリケーションのプラットフォームすべてでアドインを使用できるようにするには、マニフェストで要件セットのサポートを定義するのではなく、実行時に要件のサポートを確認することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-198">To make your add-in available on all platforms of an Office application, such as Excel on the web, Windows, and iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5c99a-203">関連項目</span><span class="sxs-lookup"><span data-stu-id="5c99a-203">See also</span></span>
+### <a name="requirement-sets-for-the-officejs-common-api"></a><span data-ttu-id="9a6a4-199">Office.js 共通 API の要件セット</span><span class="sxs-lookup"><span data-stu-id="9a6a4-199">Requirement sets for the Office.js Common API</span></span>
 
-- [<span data-ttu-id="5c99a-204">最初の Excel アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="5c99a-204">Build your first Excel add-in</span></span>](../quickstarts/excel-quickstart-jquery.md)
-- [<span data-ttu-id="5c99a-205">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="5c99a-205">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-- [<span data-ttu-id="5c99a-206">Excel JavaScript API を使用した高度なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="5c99a-206">Advanced programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-advanced-concepts.md)
-- [<span data-ttu-id="5c99a-207">Excel の JavaScript API を使用した、パフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="5c99a-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
-- [<span data-ttu-id="5c99a-208">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="5c99a-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
-- <span data-ttu-id="5c99a-209">[一般的なコーディングの問題と、予期しないプラットフォームの動作](../develop/common-coding-issues.md)。</span><span class="sxs-lookup"><span data-stu-id="5c99a-209">[Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).</span></span>
+<span data-ttu-id="9a6a4-200">共通 API の要件セットの詳細については、「[Office 共通 API の要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-200">For information about Common API requirement sets, see [Office Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md).</span></span>
+
+## <a name="handle-errors"></a><span data-ttu-id="9a6a4-201">エラーを処理する</span><span class="sxs-lookup"><span data-stu-id="9a6a4-201">Handle errors</span></span>
+
+<span data-ttu-id="9a6a4-202">API エラーが発生すると、API はコードとメッセージを含む `error` オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-202">When an API error occurs, the API returns an `error` object that contains a code and a message.</span></span> <span data-ttu-id="9a6a4-203">エラーの処理に関する詳細と、API エラーの一覧については、「[エラー処理](excel-add-ins-error-handling.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9a6a4-203">For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="9a6a4-204">関連項目</span><span class="sxs-lookup"><span data-stu-id="9a6a4-204">See also</span></span>
+
+* [<span data-ttu-id="9a6a4-205">最初の Excel アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="9a6a4-205">Build your first Excel add-in</span></span>](../quickstarts/excel-quickstart-jquery.md)
+* [<span data-ttu-id="9a6a4-206">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="9a6a4-206">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="9a6a4-207">Excel の JavaScript API を使用した、パフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="9a6a4-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
+* [<span data-ttu-id="9a6a4-208">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="9a6a4-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
+* [<span data-ttu-id="9a6a4-209">一般的なコーディングの問題と、予期しないプラットフォームの動作</span><span class="sxs-lookup"><span data-stu-id="9a6a4-209">Common coding issues and unexpected platform behaviors</span></span>](../develop/common-coding-issues.md)
