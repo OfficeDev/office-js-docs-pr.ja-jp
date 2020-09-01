@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: d98576ba0f0a0bfec9ed78cbf7438b1f31a7ee26
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159606"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293346"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -83,7 +83,7 @@ Office ダイアログ ボックスと作業ウィンドウが異なるブラウ
 
 多くの場合、認証関連のライブラリには、トークンの対話的な取得と、メソッドが返す "認証コンテキスト" オブジェクトの作成の両方を行うメソッドがあります。 トークンはオブジェクトのプロパティです (プライベートで、コードから直接アクセスできない可能性があります)。 そのオブジェクトには、リソースからデータを取得するメソッドが備わっています。 これらのメソッドには、(Google、Microsoft Graph、Facebook などの) リソースプロバイダーに対して行う HTTP 要求内のトークンが含まれます。
 
-これらの認証コンテキストオブジェクトおよびこれらのオブジェクトを作成するメソッドは、Office アドインでは使用できません。ログインは Office ダイアログ ボックスのブラウザー インスタンスで発生するため、オブジェクトはそのインスタンスで作成する必要があります。 ただし、リソースへのデータの呼び出しは作業ウィンドウのブラウザー インスタンスにあり、あるインスタンスから別のインスタンスにオブジェクトを移動する方法はありません。 たとえば、`messageParent` は文字列またはブール値のみを渡すことができるため、`messageParent` を使用してオブジェクトを渡すことはできません。 メソッドを持つ JavaScript オブジェクトは、確実には文字化できません。
+これらの認証コンテキスト オブジェクトおよびこれらのオブジェクトを作成するメソッドは、Office アドインでは使用できません。ログインは Office ダイアログ ボックスのブラウザー インスタンスで発生するため、オブジェクトはそのインスタンスで作成する必要があります。 ただし、リソースへのデータの呼び出しは作業ウィンドウのブラウザー インスタンスにあり、あるインスタンスから別のインスタンスにオブジェクトを移動する方法はありません。 たとえば、`messageParent` は文字列またはブール値のみを渡すことができるため、`messageParent` を使用してオブジェクトを渡すことはできません。 メソッドを持つ JavaScript オブジェクトは、確実には文字化できません。
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Office ダイアログ API でライブラリを使用する方法
 

@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Excel 作業ウィンドウ 
 ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 321fd85705df7673b48d548e88f5c3acae06655d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4043fa56d844ca1160c61dd94d229172682c3af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608933"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292346"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -64,7 +64,7 @@ ms.locfileid: "44608933"
 
 5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
+    ![[実行] ボタンがある Excel アドイン](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>次の手順
 
@@ -198,11 +198,11 @@ ms.locfileid: "44608933"
 
 ### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか [**開始**] ボタンをクリックして、リボンに [**作業ウィンドウの表示**] アドイン ボタンが表示された Excel を起動します。 アドインは IIS 上でローカルにホストされます。 証明書を信頼するように求められた場合は、アドインがホストに接続できるように許可してください。
+1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか [**開始**] ボタンをクリックして、リボンに [**作業ウィンドウの表示**] アドイン ボタンが表示された Excel を起動します。 アドインは IIS 上でローカルにホストされます。 証明書を信頼するように求められた場合は、アドインが Office アプリケーションに接続できるように許可してください。
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
+    ![Excel アドインの [作業ウィンドウの表示] ボタン](../images/excel-quickstart-addin-2a.png)
 
 3. ワークシート内で任意のセルの範囲を選択します。
 

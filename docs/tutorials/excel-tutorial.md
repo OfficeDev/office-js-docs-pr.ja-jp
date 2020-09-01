@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530507"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293423"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -63,7 +63,7 @@ ms.locfileid: "46530507"
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. ファイル **./src/taskpane/taskpane.js** を開きます。 このファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
+5. ファイル **./src/taskpane/taskpane.js** を開きます。 このファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
 
 6. 次の操作を行って、[`run`] ボタンと [`run()`] 関数へのすべての参照を削除します。
 
@@ -602,7 +602,7 @@ ms.locfileid: "46530507"
 
 1. **.\commands\commands.js** ファイルを開きます。
 
-2. `action` 関数の直後に次の関数を追加します。 関数に `args` パラメーターを指定していることと、関数の最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office ホスト アプリケーションに通知します。
+2. `action` 関数の直後に次の関数を追加します。 関数に `args` パラメーターを指定していることと、関数の最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office クライアント アプリケーションに通知します。
 
     ```js
     function toggleProtection(args) {
@@ -721,18 +721,18 @@ ms.locfileid: "46530507"
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. Excel も含めて、すべての Office アプリケーションを閉じます。 
+1. Excel も含めて、すべての Office アプリケーションを閉じます。
 
-2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。 これは、ホストから古いバージョンのアドインを完全に削除するために必要です。
+2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。 これは、次から以前のバージョンのアドインを完全に削除するために必要です
 
     - Windows の場合: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
-    - Mac の場合: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。 
+    - Mac の場合: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
     
         > [!NOTE]
         > そのフォルダーが存在しない場合は、次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
-        >    - `{host}` が Office ホスト (例: `Excel`) の `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
-        >    - `{host}` が Office ホスト (例: `Excel`) の `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
+        >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
+        >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
@@ -764,7 +764,7 @@ ms.locfileid: "46530507"
 
 ## <a name="open-a-dialog"></a>ダイアログを開く
 
-チュートリアルの最後の手順では、アドインのダイアログを開いて、ダイアログプロセスのメッセージを作業ウィンドウのプロセスに渡し、ダイアログボックスを閉じます。Office アドインのダイアログには *非モーダル*があります。ユーザーは、ホスト Office アプリケーションでも、作業ウィンドウのホストページでも、ドキュメントの操作を続行できます。
+チュートリアルの最後の手順では、アドインのダイアログを開いて、ダイアログ プロセスのメッセージを作業ウィンドウのプロセスに渡し、ダイアログボックスを閉じます。Office アドインのダイアログには *非モーダル* があります。ユーザーは、Office アプリケーションでも、作業ウィンドウのホスト ページでも、ドキュメントの操作を続行できます。
 
 ### <a name="create-the-dialog-page"></a>ダイアログ ページを作成する
 
@@ -941,7 +941,7 @@ ms.locfileid: "46530507"
     var dialog = null;
     ```
 
-7. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在*しない*ことです。 これは、ダイアログを開く API はすべての Office ホストで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
+7. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在*しない*ことです。 これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
 
     ```js
     function openDialog() {

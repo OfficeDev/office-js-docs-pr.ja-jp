@@ -1,39 +1,49 @@
 ---
 title: Excel JavaScript API の概要
 description: Excel JavaScript API の詳細情報
-ms.date: 02/19/2020
+ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 218f328468994065acda91c11b38659d7a20fe15
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: e589bd7ce814211759cc731d828e9c180339ea1f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679347"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293661"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API の概要
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](/javascript/api/excel) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。 
+* **Excel JavaScript API**: これは、Excel 用の [アプリケーション固有 API](../../develop/application-specific-api-model.md) です。 Office 2016 で導入された [Excel JavaScript API](/javascript/api/excel) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。
 
 * **共通 API**: Office 2013 で導入された[共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-ドキュメントのこのセクションでは、Excel JavaScript API に焦点を当てて、そしてそれを Excel on the web または Excel 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[共通 JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。 
+ドキュメントのこのセクションでは、Excel JavaScript API に焦点を当てて、そしてそれを Excel on the web または Excel 2016 以降を対象としたアドインの大部分の機能開発に使用します。 共通 API の詳細については、「[共通 JavaScript API オブジェクト モデル](../../develop/office-javascript-api-object-model.md)」を参照してください。
 
 ## <a name="learn-programming-concepts"></a>プログラミングの概念を学ぶ
 
-重要なプログラミングの概念に関する詳細情報については、次の記事を参照してください。
- 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](../../excel/excel-add-ins-core-concepts.md)
+重要なプログラミング概念の詳細については、「[Excel JavaScript API を使用した基本的なプログラミングの概念](../../excel/excel-add-ins-core-concepts.md)」を参照してください。
 
-- [Excel JavaScript API を使用した高度なプログラミングの概念](../../excel/excel-add-ins-advanced-concepts.md)
+Excel JavaScript API を使用して Excel のオブジェクトにアクセスするための実践的なエクスペリエンスに関しては、「[Excel アドインのチュートリアル](../../tutorials/excel-tutorial.md)」を完了してください。
 
-## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
+## <a name="learn-api-capabilities"></a>API 機能について
 
-ドキュメントのこのセクションにあるその他の記事を使用して、[イベント](../../excel/excel-add-ins-events.md)、[グラフ](../../excel/excel-add-ins-charts.md)、[範囲](../../excel/excel-add-ins-ranges.md)、[テーブル](../../excel/excel-add-ins-tables.md)、[ワークシート](../../excel/excel-add-ins-worksheets.md)などの操作について学びます。 また、このセクションでは[Excel アドインの共同編集](../../excel/co-authoring-in-excel-add-ins.md)、[データ検証](../../excel/excel-add-ins-data-validation.md)、[エラー処理](../../excel/excel-add-ins-error-handling.md)、[パフォーマンスの最適化](../../excel/performance.md)などの Excel JavaScript API の概念についてのガイダンスを確認できます。 すべての提供可能な記事の一覧については、目次でご確認ください。
+主要な Excel API 機能にはそれぞれ、その機能が実行できることと関連するオブジェクト モデルについての記事があります。
 
-Excel JavaScript API を使用して Excel のオブジェクトにアクセスするための実践的なエクスペリエンスに関しては、「[Excel アドインのチュートリアル](../../tutorials/excel-tutorial.md)」を完了してください。 
+* [グラフ](../../excel/excel-add-ins-charts.md)
+* [コメント](../../excel/excel-add-ins-comments.md)
+* [条件付き書式](../../excel/excel-add-ins-conditional-formatting.md)
+* [カスタム関数](../../excel/custom-functions-overview.md)
+* [データ検証](../../excel/excel-add-ins-data-validation.md)
+* [イベント](../../excel/excel-add-ins-events.md)
+* [複数の範囲 (範囲領域)](../../excel/excel-add-ins-multiple-ranges.md)
+* [ピボットテーブル](../../excel/excel-add-ins-pivottables.md)
+* [範囲](../../excel/excel-add-ins-ranges.md) および [高度な範囲 API](../../excel/excel-add-ins-ranges-advanced.md)
+* [図形](../../excel/excel-add-ins-shapes.md)
+* [表](../../excel/excel-add-ins-tables.md)
+* [ブックとアプリケーションレベルの API](../../excel/excel-add-ins-workbooks.md)
+* [ワークシート](../../excel/excel-add-ins-worksheets.md)
 
 Excel JavaScript API オブジェクト モデルに関する詳細情報については、[Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel)に関するページを参照してください。
 
@@ -43,7 +53,8 @@ Excel JavaScript API オブジェクト モデルに関する詳細情報につ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドイン ドキュメント](../../excel/index.yml)
-- [Excel アドインの概要](../../excel/excel-add-ins-overview.md)
-- [Excel JavaScript API リファレンス](/javascript/api/excel)
-- [Office アドインのホストとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+* [Excel アドイン ドキュメント](../../excel/index.yml)
+* [Excel アドインの概要](../../excel/excel-add-ins-overview.md)
+* [Excel JavaScript API リファレンス](/javascript/api/excel)
+* [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+* [アプリケーション固有の API モデルの使用](../../develop/application-specific-api-model.md)

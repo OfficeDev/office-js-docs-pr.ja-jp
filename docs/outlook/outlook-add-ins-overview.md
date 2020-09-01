@@ -4,12 +4,12 @@ description: Outlook アドインとは、Microsoft の Web ベース プラッ�
 ms.date: 08/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 83644823f4ca906f52cae430fa3a7f350dbf076c
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 006b19af1f7c9186e9247a3b45a3c8ac109c446a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803780"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294319"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -69,9 +69,9 @@ Outlook アドインは、作成中や読み取り中にメッセージや予定
 
 既知のエンティティの文字列照合に基づいてアクティブ化されるアドインを除いて、通常、Outlook は [送信済みアイテム] フォルダーのアイテムに対して閲覧フォーム内でアドインをアクティブ化できます。 この理由の詳細は、[Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)の「既知のエンティティに対するサポート」をご覧ください。
 
-## <a name="supported-hosts"></a>サポートされるホスト
+## <a name="supported-clients"></a>サポートされるクライアント
 
-Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Outlook on the web と Outlook.com でサポートされています。 最新の機能すべてが、すべての[クライアント](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各ホストでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
+Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Outlook on the web と Outlook.com でサポートされています。 最新の機能すべてが、すべての[クライアント](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各アプリケーションでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
 
 
 ## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する

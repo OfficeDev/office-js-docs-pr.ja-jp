@@ -4,20 +4,20 @@ description: Excel ビルド用の Office アドイン要件セットの情報�
 ms.date: 07/10/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4ed1b25732900357265ad9bb79228bf7a00ba888
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: aa2eb78063d3ae63efa725e13892e24596ebfceb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159277"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294249"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 ## <a name="requirement-set-availability"></a>要件セットの可用性
 
-Excel アドインは、Windows での Office 2016 以降、Office on the web、Mac、および iPad など、複数のバージョンの Office で機能します。 次の表に、Excel の要件セット、各要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号を記載します。
+Excel アドインは、Windows での Office 2016 以降、Office on the web、Mac、および iPad など、複数のバージョンの Office で機能します。 次の表に、Excel の要件セット、各要件セットをサポートする Office クライアント アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号を記載します。
 
 > [!NOTE]
 > 番号付きの要件セットまたは `ExcelApiOnline` で API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で**実稼働**ライブラリを参照してください。
@@ -56,6 +56,6 @@ Office のバージョンとビルド番号の詳細については、次を参�
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel)
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)
 - [Office Online Server 概要](/officeonlineserver/office-online-server-overview)

@@ -3,12 +3,12 @@ title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679257"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292828"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
@@ -26,16 +26,16 @@ Visual Studio は、Excel、Outlook、Word、および PowerPoint 用の Office 
 - [Word クイック スタート](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint クイック スタート](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていません。 これらのいずれかのホスト用の Office アドインを作成するには、[OneNote クイック スタート](../quickstarts/onenote-quickstart.md)または [Project クイック スタート](../quickstarts/project-quickstart.md)で説明するように、Office アドイン用の Yeoman ジェネレーターを使用する必要があります。
+Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていません。 これらのいずれかのアプリケーション用の Office アドインを作成するには、[OneNote クイック スタート](../quickstarts/onenote-quickstart.md) または [Project クイック スタート](../quickstarts/project-quickstart.md) で説明するように、Office アドイン用の Yeoman ジェネレーターを使用する必要があります。
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを開発する
 
 Visual Studio では、機能が制限された基本的なアドインが作成されます。 [マニフェスト](add-in-manifests.md)、HTML、JavaScript、および CSS の各ファイルを Visual Studio で編集することで、アドインをカスタマイズできます。 Visual Studio により作成されるアドイン プロジェクトのプロジェクト構造とファイルの概要については、アドインを作成するために実行したクイック スタート内の Visual Studio ガイダンスを参照してください。 
 
 > [!TIP]
-> Office アドインは Web アプリケーションであるため、アドインをカスタマイズするには、少なくとも Web 開発の基本的なスキルが必要です。 JavaScript を使い慣れていない場合は、「[Mozilla JavaScript チュートリアル](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction)」を確認することをお勧めします。
+> Office アドインは Web アプリケーションであるため、アドインをカスタマイズするには、少なくとも Web 開発の基本的なスキルが必要です。 JavaScript を使い慣れていない場合は、[Mozilla の JavaScript チュートリアル](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction)をご覧になることをお勧めします。
 
-アドインをカスタマイズするには、このドキュメントの[「中心概念」 > 「開発」](develop-overview.md)項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、ホスト固有の項目 (例: [Excel](../excel/index.yml)) で説明する概念を理解する必要があります。 
+アドインをカスタマイズするには、このドキュメントの [「中心概念」 > 「開発」](develop-overview.md) 項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、アプリケーション固有の項目 (例: [Excel](../excel/index.yml)) で説明する概念を理解する必要があります。 
 
 ## <a name="test-and-debug-the-add-in"></a>アドインのテストとデバッグ
 

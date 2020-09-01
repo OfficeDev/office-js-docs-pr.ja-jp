@@ -4,12 +4,12 @@ description: Outlook JavaScript API の要件セットの詳細。
 ms.date: 07/10/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 231b59818c1273b426a17656e67c9bb1153fb65c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 64d906fdfbc50926ac864b1106e7cd1cb6017c77
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159284"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293500"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -38,7 +38,7 @@ Outlook アドインは、[マニフェスト](../manifest/requirements.md)で[�
 
 要件セットを設定しても、アドインで使用できる API は制限されません。 たとえば、アドインでは要件セット「Mailbox 1.1」が指定されていて、「Mailbox 1.3」をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット「Mailbox 1.3」の API を使用できます。
 
-より新しい API を使用するために、開発者は次の操作を行うことによって、特定のホストが要件セットをサポートしているかどうかをチェックできます。
+より新しい API を使用するために、開発者は次の操作を行うことによって、特定のアプリケーションが要件セットをサポートしているかどうかをチェックできます。
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

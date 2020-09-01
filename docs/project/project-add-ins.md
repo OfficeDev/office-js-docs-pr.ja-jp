@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 635fd01dd9aa5ea398b2679e925b5c58dd757782
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611919"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292406"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -104,8 +104,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
   - **Version** 要素は、アドインのバージョンです。**ProviderName** 要素は、アドインを提供する企業または開発者の名前です。**DefaultLocale** 要素は、マニフェストで指定する文字列の既定のロケールです。
   - **DisplayName** 要素は、Project 2013 のリボンの **[ビュー]** タブで **[作業ウィンドウ アドイン]** ドロップダウン リストに表示される名前です。値は最大 32 文字です。
   - **Description** 要素は、既定のロケールでのアドインの説明です。値は最大 2000 文字です。
-  - 
-            **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中でホスト アプリケーションを指定します。
+  - **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中で Office アプリケーションを指定します。
   - 
             **DefaultSettings** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **SourceLocation** 要素が含まれています。作業ウィンドウ アドインでは、**RequestedHeight** 要素と **RequestedWidth** 要素は無視されます。
   - 

@@ -5,23 +5,23 @@ title: Office JavaScript API リファレンス ドキュメント
 description: Office JavaScript Api について説明します。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 78e222c7cdc618d707678dc73dd4a0e5dab123de
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608818"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294284"
 ---
 # <a name="api-reference-documentation"></a>API リファレンス ドキュメント
 
-アドインは Office JavaScript API を使用することで、Office ホスト アプリケーション内のオブジェクトを操作できます。 
+アドインは Office JavaScript API を使用することで、Office クライアント アプリケーション内のオブジェクトを操作できます。 
 
 <ul>
-    <li><b>ホスト固有</b> API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。</li>
+    <li><b>アプリケーション固有</b> API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。</li>
     <li><b>共通 API</b> を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。</li>
 </ul>
 
-可能な場合は常にホスト固有 API を使用するようにし、ホスト固有 API でサポートされていないシナリオに対してのみ共通 API を使用するようにします。 これらの 2 つの API モデルの詳細については、「<a href="../overview/office-add-ins-fundamentals.md#api-models">Office アドインの構築</a>」を参照してください。
+可能な場合は常にアプリケーション固有 API を使用するようにし、アプリケーション固有 API でサポートされていないシナリオに対してのみ共通 API を使用するようにします。 これらの 2 つの API モデルの詳細については、「<a href="../overview/office-add-ins-fundamentals.md#api-models">Office アドインの構築</a>」を参照してください。
 
 <h2>API リファレンス</h2>
 
@@ -130,4 +130,4 @@ ms.locfileid: "44608818"
     </li>
 </ul>
 
-<b>注</b>: 現在、Project 用のホスト固有 API はありません。Project アドインを構築する場合は、共通 API を使用してください。また、PowerPoint 用のホスト固有 API の範囲は非常に限定的であるため、PowerPoint アドインを構築する際は、主に共通 API を使用してください。
+<b>注</b>: 現在、Project 用のアプリケーション固有 JavaScript API はありません。Project アドインを構築する場合は、共通 API を使用してください。また、PowerPoint 用のアプリケーション固有 API の範囲は非常に限定的であるため、PowerPoint アドインを構築する際は、主に共通 API を使用してください。

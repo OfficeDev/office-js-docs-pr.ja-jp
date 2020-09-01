@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f97ed75d6415e449970b09f5183d470e9cb4448
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573134"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293969"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
@@ -40,7 +40,7 @@ SSO 認証方法は、Azure Active Directory が提供する [OAuth2 On-Behalf-O
 
 Outlook アドインでの SSO トークンの使用の詳細については、「[Outlook アドインでシングルサインオン トークンを使用してユーザーを認証する](authenticate-a-user-with-an-sso-token.md)」を参照してください。
 
-SSO トークンを使用するアドインのサンプルについては、「[AttachmentsDemo サンプル アドイン](https://github.com/OfficeDev/outlook-add-in-attachments-demo)」を参照してください。
+SSO トークンを使用するアドインのサンプルについては、「[Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)」を参照してください。
 
 ## <a name="exchange-user-identity-token"></a>Exchange のユーザー ID トークン
 

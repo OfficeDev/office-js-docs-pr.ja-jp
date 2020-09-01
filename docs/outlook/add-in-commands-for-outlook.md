@@ -3,12 +3,12 @@ title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 7705c168077d2a704ff16b05bfb82416cd7f4154
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 598d6e055b72d517d4a6bcfb90e3968b466e3aa0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094030"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294011"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
@@ -30,7 +30,7 @@ Outlook アドイン コマンドを作成して、ボタンまたはドロッ�
 
 アドイン コマンドは、[VersionOverrides](../reference/manifest/versionoverrides.md) 要素のアドイン マニフェストで宣言されます。この要素はマニフェスト スキーマ v1.1 に追加されたもので、下位互換性が保証されています。`VersionOverrides` をサポートしていないクライアントでも、既存のアドインは引き続きアドイン コマンドのないときと変わらずに機能します。
 
-`VersionOverrides` マニフェスト エントリは、アドインについての多くの事柄 (ホスト、リボンに追加するコントロールの種類、テキスト、アイコン、関連する機能など) を指定します。
+`VersionOverrides` マニフェスト エントリは、アドインについての多くの事柄 (アプリケーション、リボンに追加するコントロールの種類、テキスト、アイコン、関連する機能など) を指定します。
 
 アドインが、進行状況のインジケーターやエラー メッセージなど、状態更新を提供しなければならない場合、それは[通知 API](/javascript/api/outlook/office.notificationmessages) を通して行う必要があります。通知の処理を、マニフェストの `FunctionFile` ノードで指定されている別の HTML ファイルに定義する必要もあります。
 
@@ -58,7 +58,7 @@ Outlook on the web では、アドイン名はオーバーフロー メニュー
 
 ## <a name="what-ux-shapes-exist-for-add-in-commands"></a>アドイン コマンドの UX シェイプの目的
 
-アドイン コマンドの UX シェイプは、さまざまな機能を実行できるボタンを含むホスト アプリケーションのリボン タブで構成されています。現時点では、次の 3 つの UI シェイプがサポートされています。
+アドイン コマンドの UX シェイプは、さまざまな機能を実行できるボタンを含む Office アプリケーションのリボン タブで構成されています。現時点では、次の 3 つの UI シェイプがサポートされています:
 
 - JavaScript 関数を実行するボタン
 - 作業ウィンドウを起動するボタン

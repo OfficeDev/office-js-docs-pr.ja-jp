@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 04/03/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 31bfc87559550d865367f6430b980620e813bed8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9bab9c0c05ace89a1d5dc89b62108f34b49cf679
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608902"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294340"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -242,7 +242,7 @@ ms.locfileid: "44608902"
 
 2. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1.png)
+    ![[作業ウィンドウの表示] リボン ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1.png)
 
 3. 作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。
 
@@ -250,7 +250,7 @@ ms.locfileid: "44608902"
 
 4. 作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。
 
-    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
+    ![スライドに犬の画像とテキスト「Hello World」が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

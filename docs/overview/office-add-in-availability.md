@@ -1,18 +1,18 @@
 ---
-title: Office アドインを使用できるホストおよびプラットフォーム
+title: Office アドインの Office クライアント アプリケーションとプラットフォームの可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
 ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 655009edc42a9daff84f20a6e0d0febf505f1601
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 4b78b320e36f14c774c03fff56ddef7d369fb13c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159137"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292427"
 ---
-# <a name="office-add-in-host-and-platform-availability"></a>Office アドインを使用できるホストおよびプラットフォーム
+# <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office アドインの Office クライアント アプリケーションとプラットフォームの可用性
 
-期待どおりの動作をするうえで、Office アドインは特定の Office ホスト、要件セット、API メンバー、または API のバージョンに依存することがあります。次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API が含まれています。
+期待どおりの動作をするうえで、Office アドインは特定の Office アプリケーション、要件セット、API メンバー、または API のバージョンに依存することがあります。次の表には、使用可能なプラットフォーム、拡張点、API 要件セット、および各 Office アプリケーションで現在サポートされている共通 API が含まれています。
 
 > [!NOTE]
 > MSI からインストールされる最初の Office 2016 リリースには、ExcelApi 1.1、WordApi 1.1、共通 API の要件セットのみが含まれています。 さまざまなバージョンの Office の更新履歴の詳細については、「[関連項目](#see-also)」セクションをご確認ください。
@@ -679,7 +679,7 @@ ms.locfileid: "45159137"
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#ooxmlcoercion">OoxmlCoercion</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#pdffile">PdfFile</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#selection">Selection</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#settings">Settings</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#settings">設定</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#tablebindings">TableBindings</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#tablecoercion">TableCoercion</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#textbindings">TextBindings</a><br>

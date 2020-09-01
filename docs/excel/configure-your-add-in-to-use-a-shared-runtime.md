@@ -1,15 +1,15 @@
 ---
-ms.date: 08/13/2020
+ms.date: 08/25/2020
 title: ブラウザーのランタイムを共有するように Excel アドインを構成する
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757367"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292637"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Excel アドインを構成する
 
@@ -94,7 +94,24 @@ yo office
    ...
    ```
 
-8. 変更を保存してプロジェクトを再ビルドします。
+8. taskpane.html に、dist/functions.js ファイルを参照する `<script>` タグがあることを確認します。 次に例を示します。
+
+   ```html
+   <script type="text/javascript" src="/dist/functions.js" ></script>
+   ```
+
+   > [!NOTE]
+   > Yeoman ジェネレーターによって作成されたアドインと同様に、アドインが Webpack と HtmlWebpackPlugin を使用してスクリプト タグを挿入する場合 （上記の [アドイン プロジェクトの作成](#create-the-add-in-project) を参照）、次の例のように、functions.js モジュールが `chunks` 配列に含まれていることを確認する必要があります。
+   >
+   > ```javascript
+   > new HtmlWebpackPlugin({
+   >     filename: "taskpane.html",
+   >     template: "./src/taskpane/taskpane.html",
+   >     chunks: ["polyfill", "taskpane", “functions”]
+   > }),
+   >```
+
+9. 変更を保存してプロジェクトを再ビルドします。
 
    ```command line
    npm run build

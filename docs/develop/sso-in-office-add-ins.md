@@ -3,12 +3,12 @@ title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: ec4fc9f91f3cbc9f8882ed491c7c5bc68be346ed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573225"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293199"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
 
@@ -29,12 +29,12 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 
 ![SSO プロセスを示す図](../images/sso-overview-diagram.png)
 
-1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office ホスト アプリケーションはアドインへのアクセス トークンを取得するように指示されます  「[アクセス トークンの例](#example-access-token)」を参照してください。
-2. ユーザーがサインインしていない場合、Office ホスト アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 「[アクセス トークンの例](#example-access-token)」を参照してください。
+2. ユーザーがサインインしていない場合、Office クライアント アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
-4. Office ホスト アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの**アドイン トークン**を要求します。
-5. Azure AD は、Office ホスト アプリケーションにアドイン トークンを送信します。
-6. Office ホスト アプリケーションが、`getAccessToken` 呼び出しによって返される結果オブジェクトの一部として、アドインに**アドイン トークン**を送信します。
+4. Office クライアント アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの **アドイン トークン** を要求します。
+5. Azure AD は、Office クライアント アプリケーションにアドイン トークンを送信します。
+6. Office クライアント アプリケーションが、`getAccessToken` 呼び出しによって返される結果オブジェクトの一部として、アドインに **アドイン トークン** を送信します。
 7. アドイン内の JavaScript が、トークンを解析し、ユーザーのメール アドレスなど必要な情報を抽出します。
 8. オプションで、アドインで HTTP 要求を送信して、ユーザー設定などユーザーに関する情報をさらにサーバー側から求めることができます。 または、アクセス トークン自体が解析および検証されるようにサーバー側に送信することができます。
 
@@ -54,8 +54,8 @@ Azure v2.0 エンドポイントの登録ポータルでアドインを登録し
 
 * アドインのクライアント ID とシークレットを取得します。
 * アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" のアクセス許可は常に必要です。
-* Office ホスト アプリケーションにアドインへの信頼を付与します。
-* 既定のアクセス許可 *access_as_user* を使用して、Office ホスト アプリケーションのアドインへのアクセスを事前認証します。
+* Office クライアント アプリケーションにアドインへの信頼を付与します。
+* 既定のアクセス許可 *access_as_user* を使用して、Office クライアント アプリケーションのアドインへのアクセスを事前認証します。
 
 この手順の詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
 
@@ -69,7 +69,7 @@ Azure v2.0 エンドポイントの登録ポータルでアドインを登録し
 * **Scopes** - 1 つ以上の **Scope** 要素の親。
 * **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` のアクセス許可は常に必要です。ご使用のアドインが Microsoft Graph にアクセスしない場合、これは必要な唯一のアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
-Outlook 以外の Office ホストでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
+Outlook 以外の Office アプリケーションでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
 マークアップの例を次に示します。
 
@@ -220,7 +220,7 @@ Excel、PowerPoint、または Word のアドインで SSO を使用する場合
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) 名前空間 (`OfficeRuntime.Auth`) には、Office ホストがアドインの Web アプリケーションへのアクセス トークンを取得することを可能にする `getAccessToken` というメソッドがあります。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
+OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) 名前空間 (`OfficeRuntime.Auth`) には、Office アプリケーションがアドインの Web アプリケーションへのアクセス トークンを取得することを可能にする `getAccessToken` というメソッドがあります。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
 
 ```typescript
 getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;

@@ -3,15 +3,12 @@
 - name: Office アドインについて
   href: overview/office-add-ins.md
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 概要
+- name: 作業の開始
   items:
-    - name: ここから開始! 初心者向けガイド
+    - name: 初心者ガイド
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: ここに切り替え! VSTO アドイン開発者向けガイド
-      href: overview/learning-path-transition.md
-      displayName: develop
-    - name: Office アドインを構築する
+    - name: 開発プロセスの概要
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
     - name: クイック スタート
@@ -38,47 +35,73 @@
     - name: 開発環境をセットアップする
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 中心概念
+- name: 開発プロセス
   items:
     - name: 概要
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+    - name: 計画
+      items:
+        - name: アドイン開発のベスト プラクティス
+          href: concepts/add-in-development-best-practices.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Office のバージョンと要件セット
+          href: develop/office-versions-and-requirement-sets.md
+        - name: Office アプリケーションとプラットフォームの可用性
+          href: overview/office-add-in-availability.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: アドインを実行するための要件
+          href: concepts/requirements-for-running-office-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Office の最新バージョンをインストールする
+          href: develop/install-latest-office-version.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 開発
       items:
         - name: Office アドインを開発する
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: ホストとプラットフォームの使用可能性
-          href: overview/office-add-in-availability.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Office の JavaScript API
+        - name: Office JavaScript API について
+          href: develop/understanding-the-javascript-api-for-office.md
+        - name: アプリケーション固有の API モデルの使用
+          href: develop/application-specific-api-model.md
+        - name: 共通 API モデルの使用
           items:
-            - name: Office JavaScript API について
-              href: develop/understanding-the-javascript-api-for-office.md
-            - name: Office のバージョンと要件セット
-              href: develop/office-versions-and-requirement-sets.md
+            - name: 共通 JavaScript API オブジェクト モデル
+              href: develop/office-javascript-api-object-model.md
+            - name: Office アドインにおける非同期プログラミング
+              href: develop/asynchronous-programming-in-office-add-ins.md
+            - name: コンテンツ アドインおよび作業ウィンドウ アドインのサポート
+              href: develop/support-for-task-pane-and-content-add-ins.md
+            - name: 状態と設定を保持する
+              href: develop/persisting-add-in-state-and-settings.md
+        - name: アドインをセットアップして実行する
+          items:
             - name: Office.js を参照する
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+            - name: Office アプリケーションと API 要件を指定する
+              href: develop/specify-office-hosts-and-api-requirements.md
             - name: Office アドインのシーケンスを読み込む
               href: develop/loading-the-dom-and-runtime-environment.md
             - name: アドインを開始する
               href: develop/initialize-add-in.md
-            - name: 一般的な問題に関するコーディング ガイド
-              href: develop/common-coding-issues.md
-            - name: 共通 API
-              items:
-                - name: 共通 JavaScript API オブジェクト モデル
-                  href: develop/office-javascript-api-object-model.md
-                - name: Office アドインにおける非同期プログラミング
-                  href: develop/asynchronous-programming-in-office-add-ins.md
-                - name: コンテンツ アドインおよび作業ウィンドウ アドインのサポート
-                  href: develop/support-for-task-pane-and-content-add-ins.md
-                - name: 状態と設定を保持する
-                  href: develop/persisting-add-in-state-and-settings.md
+              displayName: manifest
+            - name: ドキュメントで作業ウィンドウを自動的に開く
+              href: develop/automatically-open-a-task-pane-with-a-document.md
+              displayName: manifest
         - name: マニフェスト
-          href: develop/add-in-manifests.md
-        - name: 認証と承認
           items:
+            - name: 概要
+              href: develop/add-in-manifests.md
+            - name: マニフェスト要素の正しい順序を確認する
+              href: develop/manifest-element-ordering.md
+            - name: API とマニフェストのバージョンを更新する
+              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+              displayName: manifest
+        - name: プライバシー、セキュリティ、認証
+          items:
+            - name: アドインのプライバシーとセキュリティの概要
+              href: concepts/privacy-and-security.md
             - name: 認証と権限の付与の概要
               href: develop/overview-authn-authz.md
             - name: Office ダイアログ API を使用して認証および承認する
@@ -107,29 +130,94 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-        - name: 概念
+            - name: アドインでの API 使用についてアクセス許可を要求する
+              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        - name: UI と UX
           items:
-            - name: アドイン開発のベスト プラクティス
-              href: concepts/add-in-development-best-practices.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: アドインを実行するための要件
-              href: concepts/requirements-for-running-office-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Office アドインによって使用されるブラウザー
-              href: concepts/browsers-used-by-office-web-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Office の最新バージョンをインストールする
-              href: develop/install-latest-office-version.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 操作方法
+            - name: 概要
+              href: design/add-in-design.md
+            - name: ガイドライン
+              items:
+                - name: アクセシビリティ
+                  href: design/accessibility-guidelines.md
+                - name: データ可視化
+                  href: design/data-visualization-guidelines.md
+                - name: 音声
+                  href: design/voice-guidelines.md
+            - name: デザイン言語
+              items:
+                - name: 概要
+                  href: design/add-in-design-language.md
+                - name: 色
+                  href: design/add-in-color.md
+                - name: アイコン
+                  items:
+                    - name: アイコンのガイドライン
+                      href: design/add-in-icons.md
+                    - name: 新しいスタイル
+                      href: design/add-in-icons-fresh.md
+                    - name: モノライン スタイル
+                      href: design/add-in-icons-monoline.md
+                - name: レイアウト
+                  href: design/add-in-layout.md
+                - name: モーション
+                  href: design/using-motion-office-addins.md
+                - name: 文字体裁
+                  href: design/add-in-typography.md
+            - name: インターフェイス要素
+              items:
+                - name: 概要
+                  href: design/interface-elements.md
+                - name: アドイン コマンド
+                  items:
+                    - name: アドイン コマンドの基本概念
+                      href: design/add-in-commands.md
+                    - name: アドイン コマンドを作成する
+                      href: develop/create-addin-commands.md
+                    - name: アドイン コマンドを有効または無効にする
+                      href: design/disable-add-in-commands.md
+                - name: コンテンツ アドイン
+                  href: design/content-add-ins.md
+                - name: ダイアログ ボックス
+                  items:
+                    - name: 概要
+                      href: design/dialog-boxes.md
+                    - name: Office アドインで Office ダイアログ API を使用する
+                      href: develop/dialog-api-in-office-add-ins.md
+                    - name: Office ダイアログ API のベスト プラクティスとルール
+                      href: develop/dialog-best-practices.md
+                    - name: ホスト ページからダイアログ ボックスにデータを送信する
+                      href: develop/parent-to-dialog.md
+                    - name: Office ダイアログ ボックスでのエラーとイベントの処理
+                      href: develop/dialog-handle-errors-events.md
+                    - name: Office ダイアログ ボックスを使用してビデオを再生する
+                      href: develop/dialog-video.md
+                - name: 作業ウィンドウ
+                  href: design/task-pane-add-ins.md
+            - name: ローカライズ
+              href: develop/localization.md
+            - name: UX 設計パターン
+              items:
+                - name: 概要
+                  href: design/ux-design-pattern-templates.md
+                - name: 認証
+                  href: design/authentication-patterns.md
+                - name: ブランド化
+                  href: design/branding-patterns.md
+                - name: 最初の実行エクスペリエンス
+                  href: design/first-run-experience-patterns.md
+                - name: ナビゲーション
+                  href: design/navigation-patterns.md
+            - name: リソース
+              items:
+                - name: デザインのツールキット
+                  href: design/design-toolkits.md
+                - name: Fabric React の使用の開始
+                  href: design/using-office-ui-fabric-react.md
+                - name: Office UI Fabric
+                  href: design/office-ui-fabric.md
+        - name: フレームワークと IDE
           items:
-            - name: 同一生成元ポリシー制限への対処
-              href: develop/addressing-same-origin-policy-limitations.md
-            - name: ドキュメントで作業ウィンドウを自動的に開く
-              href: develop/automatically-open-a-task-pane-with-a-document.md
-            - name: アドイン コマンドを作成する
-              href: develop/create-addin-commands.md
-              displayName: manifest
             - name: iPad 用のアドインを開発する
               href: develop/develop-office-add-ins-for-the-ipad.md
             - name: Angular でアドインを開発する
@@ -147,110 +235,6 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: JavaScript を TypeScript に変換する
                   href: develop/convert-javascript-to-typescript.md
-            - name: マニフェスト要素の正しい順序を確認する
-              href: develop/manifest-element-ordering.md
-            - name: 同等な COM アドインを特定する
-              href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-              displayName: manifest
-            - name: ローカリゼーション
-              href: develop/localization.md
-            - name: ダイアログ ボックス
-              items:
-                - name: Office アドインで Office ダイアログ API を使用する
-                  href: develop/dialog-api-in-office-add-ins.md
-                - name: Office ダイアログ API のベスト プラクティスとルール
-                  href: develop/dialog-best-practices.md
-                - name: ホスト ページからダイアログ ボックスにデータを送信する
-                  href: develop/parent-to-dialog.md
-                - name: Office ダイアログ ボックスでのエラーとイベントの処理
-                  href: develop/dialog-handle-errors-events.md
-                - name: Office ダイアログ ボックスを使用してビデオを再生する
-                  href: develop/dialog-video.md
-            - name: パフォーマンス
-              items:
-                - name: ループで context.sync メソッドを使用しないでください
-                  href: concepts/correlated-objects-pattern.md
-                - name: Office アドインのリソースの制限とパフォーマンスの最適化
-                  href: concepts/resource-limits-and-performance-optimization.md
-            - name: プライバシーとセキュリティ
-              href: concepts/privacy-and-security.md
-            - name: アドインでの API 使用についてアクセス許可を要求する
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              displayName: manifest
-            - name: Office のホストと API の要件を指定する
-              href: develop/specify-office-hosts-and-api-requirements.md
-              displayName: manifest
-            - name: API とマニフェストのバージョンを更新する
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-              displayName: manifest
-    - name: UI と UX
-      items:
-        - name: 概要
-          href: design/add-in-design.md
-        - name: ガイドライン
-          items:
-            - name: アクセシビリティ
-              href: design/accessibility-guidelines.md
-            - name: データ可視化
-              href: design/data-visualization-guidelines.md
-            - name: 音声
-              href: design/voice-guidelines.md
-        - name: デザイン言語
-          items:
-            - name: 概要
-              href: design/add-in-design-language.md
-            - name: 色
-              href: design/add-in-color.md
-            - name: アイコン
-              items:
-                - name: アイコンのガイドライン
-                  href: design/add-in-icons.md
-                - name: 新しいスタイル
-                  href: design/add-in-icons-fresh.md
-                - name: モノライン スタイル
-                  href: design/add-in-icons-monoline.md
-            - name: レイアウト
-              href: design/add-in-layout.md
-            - name: モーション
-              href: design/using-motion-office-addins.md
-            - name: 文字体裁
-              href: design/add-in-typography.md
-        - name: インターフェイス要素
-          items:
-            - name: 概要
-              href: design/interface-elements.md
-            - name: アドイン コマンド
-              items:
-                - name: アドイン コマンドの基本概念
-                  href: design/add-in-commands.md
-                - name: アドイン コマンドを有効または無効にする
-                  href: design/disable-add-in-commands.md
-            - name: ダイアログ ボックス
-              href: design/dialog-boxes.md
-            - name: コンテンツ アドイン
-              href: design/content-add-ins.md
-            - name: 作業ウィンドウ
-              href: design/task-pane-add-ins.md
-        - name: UX 設計パターン
-          items:
-            - name: 概要
-              href: design/ux-design-pattern-templates.md
-            - name: 認証
-              href: design/authentication-patterns.md
-            - name: ブランド化
-              href: design/branding-patterns.md
-            - name: 最初の実行エクスペリエンス
-              href: design/first-run-experience-patterns.md
-            - name: ナビゲーション
-              href: design/navigation-patterns.md
-        - name: リソース
-          items:
-            - name: デザインのツールキット
-              href: design/design-toolkits.md
-            - name: Fabric React の使用の開始
-              href: design/using-office-ui-fabric-react.md
-            - name: Office UI Fabric
-              href: design/office-ui-fabric.md
     - name: テストとデバッグ
       items:
         - name: Office アドインのテストとデバッグ
@@ -281,10 +265,18 @@
         - name: Office のキャッシュをクリアする
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
+        - name: 一般的な問題に関するコーディング ガイド
+          href: develop/common-coding-issues.md
         - name: ランタイム ログを使用してデバッグする
           href: testing/runtime-logging.md
         - name: Visual Studio Code 用 デバッガー 拡張機能
           href: testing/debug-with-vs-extension.md
+        - name: パフォーマンス
+          items:
+            - name: ループで context.sync メソッドを使用しないでください
+              href: concepts/correlated-objects-pattern.md
+            - name: Office アドインのリソースの制限とパフォーマンスの最適化
+              href: concepts/resource-limits-and-performance-optimization.md
         - name: ユーザーのエラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
         - name: ユーザビリティ テスト
@@ -500,6 +492,11 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
+        - name: 同一生成元ポリシー制限への対処
+          href: develop/addressing-same-origin-policy-limitations.md
+        - name: Office アドインによって使用されるブラウザー
+          href: concepts/browsers-used-by-office-web-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: エラー コード
           href: reference/javascript-api-for-office-error-codes.md
         - name: サポートされていないウィンドウ オブジェクト
@@ -586,9 +583,6 @@
           displayName: Excel
         - name: 基本プログラミングの概念
           href: excel/excel-add-ins-core-concepts.md
-          displayName: Excel
-        - name: 高度なプログラミング概念
-          href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
         - name: 組み込み関数の呼び出し
           href: excel/excel-add-ins-worksheet-functions.md
@@ -1139,8 +1133,6 @@
           displayName: Word
 - name: パターンとプラクティス
   items:
-    - name: VSTO アドインから Office アドインにコードを共有する
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
     - name: カスタム関数のリモート呼び出しのバッチ処理
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
@@ -1148,3 +1140,12 @@
       href: develop/authentication-pnp.md
     - name: Office ソリューションで高 DPI と DPI スケーリングを処理します
       href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+- name: VSTO および COM 移行リソース
+  items:
+    - name: VSTO アドイン開発者向けガイド
+      href: overview/learning-path-transition.md
+    - name: VSTO アドインから Office アドインにコードを共有する
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: 同等な COM アドインを特定する
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest

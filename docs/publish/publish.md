@@ -3,12 +3,12 @@ title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 797abbde43e6172ba26f3dd4b128fb06f1e70bec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094184"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292397"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
@@ -25,9 +25,9 @@ ms.locfileid: "45094184"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## <a name="deployment-options-by-office-host-and-add-in-type"></a>Office ホストとアドインの種類による展開オプション
+## <a name="deployment-options-by-office-application-and-add-in-type"></a>Office アプリケーションとアドインの種類による展開オプション
 
-選択可能な展開オプションは、対象の Office ホストや作成するアドインの種類によって異なります。
+選択可能な展開オプションは、対象の Office アプリケーションや作成するアドインの種類によって異なります。
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel、PowerPoint のアドインの展開オプション
 
@@ -87,4 +87,3 @@ Outlook アドインの展開には以下が必要です。
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability

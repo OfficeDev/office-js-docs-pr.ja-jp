@@ -3,12 +3,12 @@ title: Outlook アドインの要件
 description: Outlook アドインが正しく読み込まれて機能するためには、サーバーとクライアントの両方に関していくつかの要件があります。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 700e0efd2ab2655de61d37d42038fa2c15a99cb4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 353c03fc0cdfe83c5f775df09dfb7c6b23cca191
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093995"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294004"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook アドインの要件
 
@@ -16,7 +16,7 @@ Outlook アドインが正しく読み込まれて機能するためには、サ
 
 ## <a name="client-requirements"></a>クライアント要件
 
-- クライアントは、Outlook アドインをサポートするホストのいずれかでなければなりません。以下のクライアントがアドインをサポートしています。
+- クライアントは、Outlook アドインをサポートするアプリケーションのいずれかでなければなりません。以下のクライアントがアドインをサポートしています:
 
    - Windows 用 Outlook 2013 以降
    - Mac 用 Outlook 2016 以降
@@ -44,5 +44,5 @@ Outlook アドインが正しく読み込まれて機能するためには、サ
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md)
-- [Office アドインのホストとプラットフォームの可用性 (Outlook セクション)](../overview/office-add-in-availability.md#outlook)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性 (Outlook セクション)](../overview/office-add-in-availability.md#outlook)
 - [Outlook JavaScript API の要件セットのサポート](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

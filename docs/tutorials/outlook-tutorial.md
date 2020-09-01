@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672737"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293395"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -164,6 +164,9 @@ ms.locfileid: "46672737"
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 1. プロジェクトのルートディレクトリにある**manifest.xml**ファイルをサイドロードするには、[テスト用Outlookアドインのサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)にある指示に従います。
 
@@ -602,6 +605,9 @@ ul {
     npm start
     ```
 
+    > [!IMPORTANT]
+    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
+
 ### <a name="fetch-data-from-github"></a>GitHub からデータを取得する
 
 上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドについて `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。 GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。
@@ -901,6 +907,9 @@ function buildBodyContent(gist, callback) {
 ### <a name="test-the-button"></a>ボタンをテストする
 
 すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
+
+> [!IMPORTANT]
+> 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
@@ -1262,6 +1271,9 @@ ul {
 ### <a name="test-the-button"></a>ボタンをテストする
 
 すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
+
+> [!IMPORTANT]
+> 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 1. Outlook を開き、新しいメッセージを作成します。
 

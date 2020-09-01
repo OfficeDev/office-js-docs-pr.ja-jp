@@ -4,18 +4,18 @@ description: PowerPoint JavaScript API の要件セットの詳細情報。
 ms.date: 07/10/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: eebcc78e69cd35732853daaee32f36df2b37252e
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: b2b5d4b7b5a0677812f227b6a32683c35bbf1662
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159263"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293507"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-次の表は、PowerPoint の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日の一覧です。
+次の表は、PowerPoint の要件セット、それらの要件セットをサポートする Office クライアント アプリケーション、ビルド バージョンまたは一般提供開始日の一覧です。
 
 |  要件セット  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -33,7 +33,7 @@ PowerPoint JavaScript API 1.1 には、新しいプレゼンテーションを�
 
 ## <a name="runtime-requirement-support-check"></a>ランタイム要件のサポートのチェック
 
-実行時に、アドインは次を行うことによって、特定のホストが API 要件をサポートしているかどうかをチェックできます。
+実行時に、アドインは次を行うことによって、特定のアプリケーションが API 要件をサポートしているかどうかをチェックできます。
 
 ```js
 if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
@@ -46,9 +46,9 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>マニフェストに基づく要件のサポートのチェック
 
-アドインで必須の、重要な要件セットまたは API メンバーを指定するには、アドインのマニフェストで `Requirements` 要素を使用します。 Office ホストまたはプラットフォームが、`Requirements` 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、[個人用アドイン] にも表示されません。
+アドインで必須の、重要な要件セットまたは API メンバーを指定するには、アドインのマニフェストで `Requirements` 要素を使用します。 Office アプリケーションまたはプラットフォームが、`Requirements` 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのアプリケーションまたはプラットフォームでは実行されず、[個人用アドイン] にも表示されません。
 
-OneNoteApi 要件セット、バージョン 1.1 をサポートするすべての Office ホスト アプリケーションで読み込まれるアドインのコード例を以下に示します。
+OneNoteApi 要件セット、バージョン 1.1 をサポートするすべての Office クライアント アプリケーションで読み込まれるアドインのコード例を以下に示します。
 
 ```xml
 <Requirements>
@@ -66,5 +66,5 @@ PowerPoint のほとんどのアドイン機能は、共通の API セットか�
 
 - [PowerPoint JavaScript API リファレンス ドキュメント](/javascript/api/powerpoint)
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office のホストと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

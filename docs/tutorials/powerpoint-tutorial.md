@@ -4,12 +4,12 @@ description: このチュートリアルでは、画像の挿入、テキスト�
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4693b8a5a2f4bd7c63f76532585113db5b0805bb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611051"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293381"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -268,7 +268,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 3. このとき、作業ウィンドウにはヘッダー セクションとタイトルが含まれ、フッター セクションが含まれないことがわかります。
 
-    ![[画像の挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![[イメージの挿入] ボタンがある PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
@@ -320,7 +320,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 3. 作業ウィンドウで **[イメージの挿入]** ボタンをクリックしてその日の Bing 写真を現在のスライドに追加し、そのタイトルにテキスト ボックスが含まれるデザインをそのスライドに選択します。
 
-    ![[イメージの挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![現在のスライドが強調表示されている PowerPoint と [イメージの挿入] ボタンが強調表示されているアドインのスクリーンショット](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. タイトル スライドのテキスト ボックスにカーソルを置き、作業ウィンドウで **[テキストの挿入]** ボタンをクリックしてテキストをスライドに追加します。
 

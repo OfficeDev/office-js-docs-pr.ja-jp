@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6ed50b52e0f4d5667e835c875851ed14c68bfe49
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6ce09b3b2f60cd4c77e966f6b920aa63caab299c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672716"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294333"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -104,6 +104,9 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     npm start
     ```
 
+    > [!IMPORTANT]
+    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
+
 1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。
 
 1. Outlook で、メッセージを選択または開きます。
@@ -155,7 +158,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 |**プロジェクト**|**説明**|
 |:-----|:-----|
-|アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。 これらの設定は、Office ホストがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。 プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。 XML ファイルを変更することで、これらの設定をいつでも変更できます。|
+|アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。 これらの設定は、Office アプリケーションがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。 プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。 XML ファイルを変更することで、これらの設定をいつでも変更できます。|
 |Web アプリケーション プロジェクト|Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。アドインを発行する準備が整ったら、この Web アプリケーション プロジェクトを Web サーバーに展開する必要があります。|
 
 ### <a name="update-the-code"></a>コードを更新する

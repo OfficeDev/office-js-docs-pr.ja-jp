@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093750"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293355"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -122,7 +122,7 @@ AppSource に提出するアドインには、[SupportUrl](../reference/manifest
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
+Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。 ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
 
 このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](../reference/manifest/appdomains.md) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
@@ -504,7 +504,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 * [マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)
 * [マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]
-* [Office のホストと API の要件を指定する](specify-office-hosts-and-api-requirements.md)
+* [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)
 * [Office アドインのローカライズ](localization.md)
 * [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [API とマニフェストのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)

@@ -1,17 +1,17 @@
 ---
-title: 切り替えはこちら! VSTO アドイン作成者のための Office Web アドイン作成ガイド
-description: 熟練した VSTO アドイン開発者にお勧めする Office Web アドイン学習リソースへの道。
+title: VSTO アドイン開発者向けガイド
+description: 熟練した VSTO アドイン開発者に向けた Office Web アドイン学習リソースへの推奨パス。
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604574"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292441"
 ---
-# <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>切り替えはこちら! VSTO アドイン作成者のための Office Web アドイン作成ガイド
+# <a name="vsto-add-in-developers-guide"></a>VSTO アドイン開発者向けガイド
 
 Windows で動作する Office アプリケーション用の VSTO アドインを作成しました。そしてここからは、Office を Windows、Mac、オンライン バージョンの Office スイートで動作するように拡張するための新しい方法である Office Web アドインについて説明します。
 
@@ -21,7 +21,7 @@ Office Web アドインのオブジェクト モデルは Excel、Word、その�
 - Office Web アドインは、VSTO アドインとは別に展開されます。
 - Office Web アドインは、Office アプリケーションに組み込まれた簡易ブラウザー ウィンドウで動作する Web アプリケーションなので、Web アプリケーションの基本的な理解と、それらがどのように Web サーバーやクラウド アカウントでホストされるかについてを理解しておく必要があります。 
 
-このような理由から、この記事の多くは、Office 拡張機能の全くの初心者のための学習パス「[ここから開始! 初心者向け Office アドイン開発ガイド](learning-path-beginner.md)」と重複しています。この記事では、VSTO アドインの開発者が経験を活かし、既存のコードも再利用できるように、いくつかの学習リソースを追加しました。
+これらの理由により、この記事の多くは、Office 拡張機能の完全な初心者向けの学習パスである、[初心者向けガイド](learning-path-beginner.md) と重複しています。 VSTO アドイン開発者が経験を活用し、既存のコードを再利用できるようにするための追加の学習リソースを追加しました。
 
 ## <a name="step-0-prerequisites"></a>手順 0: 前提条件
 

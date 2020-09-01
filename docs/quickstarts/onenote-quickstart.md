@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な OneNote 作業ウィンド�
 ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6f057d650451d12e834d8f875f40d9d6d71ee4d7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094156"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292322"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -41,8 +41,8 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 - プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。
 - **./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。
-- **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
-- **./src/taskpane/taskpane.js**ファイルには、作業ウィンドウと Office のホスト アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
+- **./src/taskpane/taskpane.css**ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
+- **./src/taskpane/taskpane.js** ファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
 
 ## <a name="update-the-code"></a>コードを更新する
 

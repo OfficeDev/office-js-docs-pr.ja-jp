@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2c4731b773a20c666ed78eba7e10f59bf9404bfe
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159627"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293360"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -57,7 +57,7 @@ ms.locfileid: "45159627"
 アドイン起動時にコマンドを有効にするか無効にするかを指定したり、プログラムによって設定を変更したりできます。
 
 > [!NOTE]
-> この機能はプレビュー段階にあり、すべてのホストまたはシナリオでサポートされるわけではありません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
+> この機能はプレビュー段階にあり、すべての Office アプリケーションまたはシナリオでサポートされるわけではありません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
@@ -93,7 +93,7 @@ ms.locfileid: "45159627"
      > 占有領域が大きすぎるアドインは [AppSource 検証](/legal/marketplace/certification-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
-- コマンドをサポートしていないホストでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) ホストとコマンド非対応 (作業ウィンドウとして) ホストの両方で動作します。
+- コマンドをサポートしていない Office アプリケーションでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) アプリケーションとコマンド非対応 (作業ウィンドウとして) アプリケーションの両方で動作します。
 
    *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
 
