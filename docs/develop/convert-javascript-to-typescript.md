@@ -1,64 +1,67 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: Visual Studio の Office アドインプロジェクトを TypeScript を使用するように変換する方法について説明します。
-ms.date: 04/09/2020
+ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 64e0b27b584ca0ddbfb366a89e4363703c92704d
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 716222998666b014ab014298a4165678cf747165
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679259"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326297"
 ---
-# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="a5d3d-103">Visual Studio の Office アドイン プロジェクトを TypeScript に変換する</span><span class="sxs-lookup"><span data-stu-id="a5d3d-103">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
+# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="f6e45-103">Visual Studio の Office アドイン プロジェクトを TypeScript に変換する</span><span class="sxs-lookup"><span data-stu-id="f6e45-103">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
 
-<span data-ttu-id="a5d3d-104">Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-104">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="a5d3d-105">この記事では、Excel アドイン用のこの変換プロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-105">This article describes this conversion process for an Excel add-in.</span></span> <span data-ttu-id="a5d3d-106">同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-106">You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.</span></span>
+<span data-ttu-id="f6e45-104">Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-104">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="f6e45-105">この記事では、Excel アドイン用のこの変換プロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-105">This article describes this conversion process for an Excel add-in.</span></span> <span data-ttu-id="f6e45-106">同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-106">You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="f6e45-107">この記事では、F5 キーを押すと、コードが JavaScript に transpiled され、Office に自動的にサイドロードされることを確認するために必要な *最小限* の手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-107">This article describes the *minimal* steps necessary to ensure that, when you press F5, the code will be transpiled to JavaScript which is then sideloaded automatically into Office.</span></span> <span data-ttu-id="f6e45-108">ただし、このコードは、"入力されていません" ということはありません。</span><span class="sxs-lookup"><span data-stu-id="f6e45-108">However, the code is not very "TypeScripty".</span></span> <span data-ttu-id="f6e45-109">たとえば、変数は、ではなく、キーワードで宣言され `var` `let` ており、指定された型で宣言されていません。</span><span class="sxs-lookup"><span data-stu-id="f6e45-109">For example, variables are declared with the `var` keyword instead of `let` and they are not declared with a specified type.</span></span> <span data-ttu-id="f6e45-110">TypeScript の厳密な型指定を十分に活用するには、コードにさらに変更を加えることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="f6e45-110">To take full advantage of the strong typing of TypeScript, consider making further changes to the code.</span></span> 
 
 > [!NOTE]
-> <span data-ttu-id="a5d3d-107">Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](/office/dev/add-ins/)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-107">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](/office/dev/add-ins/) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).</span></span>
+> <span data-ttu-id="f6e45-111">Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](/office/dev/add-ins/)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-111">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](/office/dev/add-ins/) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="a5d3d-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="a5d3d-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="f6e45-112">前提条件</span><span class="sxs-lookup"><span data-stu-id="f6e45-112">Prerequisites</span></span>
 
-- <span data-ttu-id="a5d3d-109">**Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="a5d3d-109">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
-
-    > [!TIP]
-    > <span data-ttu-id="a5d3d-110">既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-110">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> <span data-ttu-id="a5d3d-111">このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)してください。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-111">If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).</span></span>
-
-- <span data-ttu-id="a5d3d-112">TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)</span><span class="sxs-lookup"><span data-stu-id="a5d3d-112">TypeScript SDK version 2.3 or later (for Visual Studio 2019)</span></span>
+- <span data-ttu-id="f6e45-113">**Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="f6e45-113">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
 
     > [!TIP]
-    > <span data-ttu-id="a5d3d-113">[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-113">In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section.</span></span> <span data-ttu-id="a5d3d-114">そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-114">Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected.</span></span> <span data-ttu-id="a5d3d-115">**TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-115">If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components).</span></span> 
+    > <span data-ttu-id="f6e45-114">既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="f6e45-114">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> <span data-ttu-id="f6e45-115">このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)してください。</span><span class="sxs-lookup"><span data-stu-id="f6e45-115">If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).</span></span>
 
-- <span data-ttu-id="a5d3d-116">Excel 2016 以降</span><span class="sxs-lookup"><span data-stu-id="a5d3d-116">Excel 2016 or later</span></span>
+- <span data-ttu-id="f6e45-116">TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)</span><span class="sxs-lookup"><span data-stu-id="f6e45-116">TypeScript SDK version 2.3 or later (for Visual Studio 2019)</span></span>
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="a5d3d-117">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="a5d3d-117">Create the add-in project</span></span>
+    > [!TIP]
+    > <span data-ttu-id="f6e45-117">[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。</span><span class="sxs-lookup"><span data-stu-id="f6e45-117">In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section.</span></span> <span data-ttu-id="f6e45-118">そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-118">Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected.</span></span> <span data-ttu-id="f6e45-119">**TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-119">If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components).</span></span> 
 
-1. <span data-ttu-id="a5d3d-118">Visual Studio で、[**新しいプロジェクトの作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-118">In Visual Studio, choose **Create a new project**.</span></span>
+- <span data-ttu-id="f6e45-120">Excel 2016 以降</span><span class="sxs-lookup"><span data-stu-id="f6e45-120">Excel 2016 or later</span></span>
 
-2. <span data-ttu-id="a5d3d-119">検索ボックスを使用して、**アドイン**と入力します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-119">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="a5d3d-120">[**Excel Web アドイン**] を選択し、[**次へ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-120">Choose **Excel Web Add-in**, then select **Next**.</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="f6e45-121">アドイン プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="f6e45-121">Create the add-in project</span></span>
 
-3. <span data-ttu-id="a5d3d-121">プロジェクトに名前を付けて、[**作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-121">Name your project and select **Create**.</span></span>
+1. <span data-ttu-id="f6e45-122">Visual Studio で、[**新しいプロジェクトの作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-122">In Visual Studio, choose **Create a new project**.</span></span>
 
-4. <span data-ttu-id="a5d3d-122">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-122">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+2. <span data-ttu-id="f6e45-123">検索ボックスを使用して、**アドイン**と入力します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-123">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="f6e45-124">[**Excel Web アドイン**] を選択し、[**次へ**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-124">Choose **Excel Web Add-in**, then select **Next**.</span></span>
 
-5. <span data-ttu-id="a5d3d-p105">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-p105">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+3. <span data-ttu-id="f6e45-125">プロジェクトに名前を付けて、[**作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-125">Name your project and select **Create**.</span></span>
 
-## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="a5d3d-125">アドイン プロジェクトを TypeScript に変換する</span><span class="sxs-lookup"><span data-stu-id="a5d3d-125">Convert the add-in project to TypeScript</span></span>
+4. <span data-ttu-id="f6e45-126">**[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-126">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-1. <span data-ttu-id="a5d3d-126">**Home.js** ファイルを見つけて、名前を **Home.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-126">Find the **Home.js** file and rename it to **Home.ts**.</span></span>
+5. <span data-ttu-id="f6e45-p106">Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-p106">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-2. <span data-ttu-id="a5d3d-127">**./Functions/FunctionFile.js** ファイルを見つけて、名前を**FunctionFile.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-127">Find the **./Functions/FunctionFile.js** file and rename it to **FunctionFile.ts**.</span></span>
+## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="f6e45-129">アドイン プロジェクトを TypeScript に変換する</span><span class="sxs-lookup"><span data-stu-id="f6e45-129">Convert the add-in project to TypeScript</span></span>
 
-3. <span data-ttu-id="a5d3d-128">**./Scripts/MessageBanner.js** ファイルを見つけて、名前を **MessageBanner.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-128">Find the **./Scripts/MessageBanner.js** file and rename it to **MessageBanner.ts**.</span></span>
+1. <span data-ttu-id="f6e45-130">**Home.js** ファイルを見つけて、名前を **Home.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-130">Find the **Home.js** file and rename it to **Home.ts**.</span></span>
 
-4. <span data-ttu-id="a5d3d-129">[**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-129">From the **Tools** tab, choose **NuGet Package Manager** and then select **Manage NuGet Packages for Solution...**.</span></span>
+2. <span data-ttu-id="f6e45-131">**./Functions/FunctionFile.js** ファイルを見つけて、名前を**FunctionFile.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-131">Find the **./Functions/FunctionFile.js** file and rename it to **FunctionFile.ts**.</span></span>
 
-5. <span data-ttu-id="a5d3d-130">[**参照**] タブが選択されている状態で、「jquery」と入力し**ます。TypeScript Itely型付き**。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-130">With the **Browse** tab selected, enter **jquery.TypeScript.DefinitelyTyped**.</span></span> <span data-ttu-id="a5d3d-131">このパッケージをインストールするか、既にインストールされている場合は更新します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-131">Install this package, or update it if it's already installed.</span></span> <span data-ttu-id="a5d3d-132">これにより、jQuery TypeScript の定義がプロジェクトに含まれるようになります。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-132">This will ensure the jQuery TypeScript definitions are included in your project.</span></span> <span data-ttu-id="a5d3d-133">JQuery のパッケージは、Visual Studio によって生成されるファイルに表示されます (**パッケージ .config**と呼ばれます)。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-133">The packages for jQuery appear in a file generated by Visual Studio, called **packages.config**.</span></span>
+3. <span data-ttu-id="f6e45-132">**./Scripts/MessageBanner.js** ファイルを見つけて、名前を **MessageBanner.ts** に変更します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-132">Find the **./Scripts/MessageBanner.js** file and rename it to **MessageBanner.ts**.</span></span>
+
+4. <span data-ttu-id="f6e45-133">[**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-133">From the **Tools** tab, choose **NuGet Package Manager** and then select **Manage NuGet Packages for Solution...**.</span></span>
+
+5. <span data-ttu-id="f6e45-134">[ **参照** ] タブが選択されている状態で、「jquery」と入力し **ます。TypeScript Itely型付き**。</span><span class="sxs-lookup"><span data-stu-id="f6e45-134">With the **Browse** tab selected, enter **jquery.TypeScript.DefinitelyTyped**.</span></span> <span data-ttu-id="f6e45-135">このパッケージをインストールするか、既にインストールされている場合は更新します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-135">Install this package, or update it if it's already installed.</span></span> <span data-ttu-id="f6e45-136">これにより、jQuery TypeScript の定義がプロジェクトに含まれるようになります。</span><span class="sxs-lookup"><span data-stu-id="f6e45-136">This will ensure the jQuery TypeScript definitions are included in your project.</span></span> <span data-ttu-id="f6e45-137">JQuery のパッケージは、Visual Studio によって生成されたファイル ( **packages.config**と呼ばれる) に表示されます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-137">The packages for jQuery appear in a file generated by Visual Studio, called **packages.config**.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="a5d3d-p107">TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-p107">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span>
+    > <span data-ttu-id="f6e45-p108">TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。</span><span class="sxs-lookup"><span data-stu-id="f6e45-p108">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span>
 
-6. <span data-ttu-id="a5d3d-136">**Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-136">In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:</span></span>
+6. <span data-ttu-id="f6e45-140">**Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。</span><span class="sxs-lookup"><span data-stu-id="f6e45-140">In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:</span></span>
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -67,7 +70,7 @@ ms.locfileid: "44679259"
         ...
     ```
 
-7. <span data-ttu-id="a5d3d-137">**Home.ts** で、`displaySelectedCells` 関数を見つけて、関数全体を次のコードに置換し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-137">In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:</span></span>
+7. <span data-ttu-id="f6e45-141">**Home.ts** で、`displaySelectedCells` 関数を見つけて、関数全体を次のコードに置換し、ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-141">In **Home.ts**, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:</span></span>
 
     ```TypeScript
     function displaySelectedCells() {
@@ -84,25 +87,25 @@ ms.locfileid: "44679259"
     }
     ```
 
-8. <span data-ttu-id="a5d3d-138">**./Scripts/MessageBanner.ts** で、行 `_onResize(null);` を見つけて、次のものに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-138">In **./Scripts/MessageBanner.ts**, find the line `_onResize(null);` and replace it with the following:</span></span>
+8. <span data-ttu-id="f6e45-142">**./Scripts/MessageBanner.ts** で、行 `_onResize(null);` を見つけて、次のものに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-142">In **./Scripts/MessageBanner.ts**, find the line `_onResize(null);` and replace it with the following:</span></span>
 
     ```TypeScript
     _onResize();
     ```
 
-## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="a5d3d-139">変換後のアドイン プロジェクトを実行する</span><span class="sxs-lookup"><span data-stu-id="a5d3d-139">Run the converted add-in project</span></span>
+## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="f6e45-143">変換後のアドイン プロジェクトを実行する</span><span class="sxs-lookup"><span data-stu-id="f6e45-143">Run the converted add-in project</span></span>
 
-1. <span data-ttu-id="a5d3d-140">Visual Studio で、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-140">In Visual Studio, press **F5** or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="a5d3d-141">アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-141">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="f6e45-144">Visual Studio で、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Excel を起動します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-144">In Visual Studio, press **F5** or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="f6e45-145">アドインは IIS 上でローカルにホストされます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-145">The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="a5d3d-142">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-142">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="f6e45-146">Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="f6e45-146">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-3. <span data-ttu-id="a5d3d-143">ワークシートで、数値を格納している 9 つのセルを選択します。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-143">In the worksheet, select the nine cells that contain numbers.</span></span>
+3. <span data-ttu-id="f6e45-147">ワークシートで、数値を格納している 9 つのセルを選択します。</span><span class="sxs-lookup"><span data-stu-id="f6e45-147">In the worksheet, select the nine cells that contain numbers.</span></span>
 
-4. <span data-ttu-id="a5d3d-144">作業ウィンドウの **[強調表示]** ボタンをクリックして、選択した範囲内で最大の値を格納しているセルを強調表示にします。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-144">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
+4. <span data-ttu-id="f6e45-148">作業ウィンドウの **[強調表示]** ボタンをクリックして、選択した範囲内で最大の値を格納しているセルを強調表示にします。</span><span class="sxs-lookup"><span data-stu-id="f6e45-148">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
 
-## <a name="homets-code-file"></a><span data-ttu-id="a5d3d-145">Home.ts コード ファイル</span><span class="sxs-lookup"><span data-stu-id="a5d3d-145">Home.ts code file</span></span>
+## <a name="homets-code-file"></a><span data-ttu-id="f6e45-149">Home.ts コード ファイル</span><span class="sxs-lookup"><span data-stu-id="f6e45-149">Home.ts code file</span></span>
 
-<span data-ttu-id="a5d3d-p109">参考のために、次のコード スニペットで、これまでに説明した変更点を適用した後の **Home.ts** ファイルの内容を示します。 このコードには、アドインを実行するために必要な最小限の変更点が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a5d3d-p109">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
+<span data-ttu-id="f6e45-p110">参考のために、次のコード スニペットで、これまでに説明した変更点を適用した後の **Home.ts** ファイルの内容を示します。 このコードには、アドインを実行するために必要な最小限の変更点が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f6e45-p110">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
 
 ```typescript
 (function () {
@@ -231,7 +234,7 @@ ms.locfileid: "44679259"
 })();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a5d3d-148">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5d3d-148">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f6e45-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="f6e45-152">See also</span></span>
 
-- [<span data-ttu-id="a5d3d-149">StackOverflow における Promise 実装に関するディスカッション</span><span class="sxs-lookup"><span data-stu-id="a5d3d-149">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-- [<span data-ttu-id="a5d3d-150">GitHub における Office アドインのサンプル</span><span class="sxs-lookup"><span data-stu-id="a5d3d-150">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
+- [<span data-ttu-id="f6e45-153">StackOverflow における Promise 実装に関するディスカッション</span><span class="sxs-lookup"><span data-stu-id="f6e45-153">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [<span data-ttu-id="f6e45-154">GitHub における Office アドインのサンプル</span><span class="sxs-lookup"><span data-stu-id="f6e45-154">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
