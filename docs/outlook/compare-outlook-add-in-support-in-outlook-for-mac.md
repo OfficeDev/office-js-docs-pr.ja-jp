@@ -1,14 +1,14 @@
 ---
 title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートと他の Outlook クライアントとの比較について説明します。
-ms.date: 06/04/2020
+ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: f6aa9914e1320de05a67b3ec227e373bac5c2402
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d25d0b25ee6d3ba7d6f5d78b55764de8caeba3a0
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293920"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326318"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Outlook on Mac での outlook アドインのサポートを他の Outlook クライアントと比較する
 
@@ -31,9 +31,9 @@ Mac での新しい UI のサポートの詳細については、「 [New Outloo
 
 ## <a name="new-outlook-on-mac-preview"></a>新しい Outlook on Mac (プレビュー)
 
-これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.6 です。 ただし、次の要件セットと機能はまだサポートされて **いません** 。
+これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.7 です。 ただし、次の要件セットと機能はまだサポートされて **いません** 。
 
-1. API 要件は1.7 と1.8 を設定します。
+1. API 要件セット1.8
 1. Pinnable 作業ウィンドウ、 `ItemChanged` イベント
 1. コンテキスト アドイン
 1. 送信時

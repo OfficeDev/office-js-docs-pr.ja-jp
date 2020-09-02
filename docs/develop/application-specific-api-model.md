@@ -3,12 +3,12 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word のアドインの promise ベースの API モデルについて説明します。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a5068312b8b17f7ceeafcffd5dcea4203314ebf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294036"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326283"
 ---
 # <a name="using-the-application-specific-api-model"></a>アプリケーション固有の API モデルの使用
 
@@ -225,18 +225,20 @@ Excel.run(function (ctx) {
 
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;OrNullObject メソッドとプロパティ
 
-必要なオブジェクトが存在しない場合、いくつかのアクセサーメソッドとプロパティは例外をスローします。 たとえば、ブックにないワークシート名を指定して Excel ワークシートを取得しようとすると、 `getItem()` メソッドは例外をスロー `ItemNotFound` します。
+必要なオブジェクトが存在しない場合、いくつかのアクセサーメソッドとプロパティは例外をスローします。 たとえば、ブックにないワークシート名を指定して Excel ワークシートを取得しようとすると、 `getItem()` メソッドは例外をスロー `ItemNotFound` します。 アプリケーション固有のライブラリは、コードが、例外処理コードを必要とせずにドキュメントエンティティの存在をテストするための方法を提供します。 これは、 `*OrNullObject` メソッドとプロパティのバリエーションを使用して実現されます。 これらのバリエーション `isNullObject` は、指定したアイテムが `true` 存在しない場合、例外をスローするのではなく、プロパティがに設定されているオブジェクトを返します。
 
-任意 `*OrNullObject` の variant を使用すると、例外をスローせずにオブジェクトを確認できます。 これらのメソッドとプロパティは、指定されたアイテムが存在しない場合に例外をスローするのではなく、null オブジェクト (JavaScript ではありません) を返し `null` ます。 たとえば、 `getItemOrNullObject()` **ワークシート** などのコレクションに対してメソッドを呼び出して、コレクションからアイテムを取得することができます。 `getItemOrNullObject()` メソッドは、指定された項目が存在する場合はその項目を返し、それ以外の場合は null オブジェクトを返します。 返される null オブジェクトには、ブール型プロパティ `isNullObject` が含まれています。これを評価して、オブジェクトが存在するかどうかを判断できます。
+たとえば、 `getItemOrNullObject()` **ワークシート** などのコレクションに対してメソッドを呼び出して、コレクションからアイテムを取得することができます。 このメソッドは、指定されたアイテムが存在する場合はそれを返します。 `getItemOrNullObject()` それ以外の場合は、 `isNullObject` プロパティがに設定されているオブジェクトを返し `true` ます。 コードでは、このプロパティを評価して、オブジェクトが存在するかどうかを判断できます。
 
-次のコードサンプルでは、メソッドを使用して、"Data" という名前の Excel ワークシートを取得しようとして `getItemOrNullObject()` います。 メソッドが null オブジェクトを返す場合は、ワークシートでアクションが実行される前に、新しいシートが作成されます。
+> [!NOTE]
+> バリエーションは、 `*OrNullObject` JavaScript 値を返すことはありません `null` 。 通常の Office プロキシオブジェクトを返します。 オブジェクトが表すエンティティが存在しない場合、 `isNullObject` オブジェクトのプロパティはに設定され `true` ます。 全くまたは falsity に対して返されるオブジェクトはテストしません。 決して `null` 、 `false` 、、または `undefined` です。
+
+次のコードサンプルでは、メソッドを使用して、"Data" という名前の Excel ワークシートを取得しようとして `getItemOrNullObject()` います。 その名前のワークシートが存在しない場合は、新しいシートが作成されます。 コードによってプロパティが読み込まれないことに注意して `isNullObject` ください。 Office は、が呼び出されたときに、このプロパティを自動的に読み込み `context.sync` ます。したがって、などのように明示的に読み込む必要はありません `datasheet.load('isNullObject')` 。
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
     .then(function () {
-        // If `dataSheet` is a null object, create the worksheet.
         if (dataSheet.isNullObject) {
             dataSheet = context.workbook.worksheets.add("Data");
         }
@@ -249,5 +251,5 @@ return context.sync()
 ## <a name="see-also"></a>関連項目
 
 * [共通 JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)
-* [一般的なコーディングの問題と、予期しないプラットフォームの動作](/common-coding-issues.md)。
+* [一般的なコーディングの問題と、予期しないプラットフォームの動作](common-coding-issues.md)。
 * [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)
