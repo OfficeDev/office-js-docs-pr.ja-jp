@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
-description: サイドロードを使用して iPad および Mac で Office アドインをテストする
-ms.date: 02/18/2020
+description: サイドロードを使用して、iPad と Mac で Office アドインをテストします。
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7c5e9542c6e6f9abc96defde389b9543421b8529
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292203"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47364058"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -17,8 +17,10 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 ## <a name="prerequisites-for-office-on-ios"></a>Office on iOS の前提条件
 
 - [iTunes](https://www.apple.com/itunes/download/) がインストールされた Windows または Mac コンピューター。
+  > [!IMPORTANT]
+  > MacOS Catalina を実行している場合 [は、iTunes を使用でき](https://support.apple.com/HT210200) なくなりました。この記事の後半の「 [macos Catalina を使用して、Excel または Word でのアドインのサイドロード](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) 」の手順に従ってください。
 
-- [Excel on iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) がインストールされた iOS 8.2 以降の iPad と同期ケーブル。
+- [Excel](https://apps.apple.com/app/microsoft-excel/id586683407)または[Word](https://apps.apple.com/app/microsoft-word/id586447913)がインストールされた iOS 8.2 以降を実行している iPad と、同期ケーブル。
 
 - テスト対象アドインのマニフェスト .xml ファイル。
 
@@ -34,7 +36,7 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 - テスト対象アドインのマニフェスト .xml ファイル。
 
-## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Excel または Word on iPad にアドインをサイドロードする
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>サイドロードを iTunes を使用して Excel または Word で iPad に追加する
 
 1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 初めて iPad をコンピューターに接続している場合は、 **このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。 **[信頼する]** を選択して続行します。
 
@@ -50,18 +52,39 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 7. ドキュメントを開きます。
 
-8. [**挿入**] タブで [**アドイン**] を選択します。サイドロードアドインは **、アドインの UI の**[**開発者**] 見出しの下に挿入できます。
+8. [**挿入**] タブで [**アドイン**] を選択します。 ([**挿入**] タブで、[**アドイン**] ボタンが表示されるまで、横にスクロールする必要がある場合があります)。サイドロードアドインは **、アドインの UI の**[**開発者**] 見出しの下に挿入できます。
+
+    ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
+
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>MacOS Catalina を使用して、Excel または Word でアドインをサイドロードします。
+
+> [!IMPORTANT]
+> MacOS Catalina の導入により、 [Apple で廃止](https://support.apple.com/HT210200) された ITunes を Mac に、サイドロードアプリを **Finder**にするために必要な統合機能を使用しています。
+
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 初めて iPad をコンピューターに接続している場合は、 **このコンピューターを信頼するかどうか**を確認するメッセージが表示されます。 **[信頼する]** を選択して続行します。 また、これが新しい iPad であるかどうか、または1つを復元しているかどうかを尋ねられる場合もあります。
+
+2. [Finder] の [ **場所**] で、メニューバーの下にある [ **iPad** ] アイコンを選択します。
+
+3. ファインダーウィンドウの上部で、[ **ファイル**] をクリックし、[ **Excel** ] または [ **Word**] を見つけます。
+
+4. 別のファインダーウィンドウから、最初のファインダーウィンドウで、サイドロードするアドインの manifest.xml ファイルを **Excel** または **Word** ファイルにドラッグアンドドロップします。
+
+5. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[ **ホーム** ] ボタンを選択し、アプリを閉じて再起動します。
+
+6. ドキュメントを開きます。
+
+7. [**挿入**] タブで [**アドイン**] を選択します。 ([**挿入**] タブで、[**アドイン**] ボタンが表示されるまで、横にスクロールする必要がある場合があります)。サイドロードアドインは **、アドインの UI の**[**開発者**] 見出しの下に挿入できます。
 
     ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>Office on Mac にアドインをサイドロードする
 
 > [!NOTE]
-> Mac に Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
+> Mac に Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-in-outlook-on-the-desktop)」をご参照ください。
 
 1. **ターミナル**を開き、次のいずれかのフォルダーに移動して、アドインのマニフェストファイルを保存します。 `wef` フォルダーがコンピューター上に存在しない場合は、作成します。
 
-    - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
+    - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
     - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 

@@ -3,12 +3,12 @@ title: Office アドインのマニフェストを検証する
 description: XML スキーマおよびその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: fee4fd048092734eb479f1993c69fcf99c153c79
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 13ffafbb88003bbe0ba29ebbdf867f1138429e2f
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611100"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363836"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -36,7 +36,13 @@ npm run validate
 
 1. [Node.js](https://nodejs.org/download/) をインストールします。
 
-2. プロジェクトのルート ディレクトリから次のコマンドを実行します。 
+2. コマンドプロンプトを開き、次のコマンドを使用してバリデーターをインストールします。
+
+    ```command&nbsp;line
+    npm -g office-addin-manifest
+    ```
+
+3. *プロジェクトのルートディレクトリで*次のコマンドを実行します。
 
     ```command&nbsp;line
     npm run validate

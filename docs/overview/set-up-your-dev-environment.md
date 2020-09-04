@@ -3,16 +3,16 @@ title: 開発環境をセットアップする
 description: Office アドインをビルドするための開発環境をセットアップする
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 1948cd83a252ea713c9b9a41941ceaef09d4a524
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 5e7d91d81ef3d124e9582e74151626b9fd65991a
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159410"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363696"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
-このガイドでは、クイックスタートまたはチュートリアルに従って Office アドインを作成するためのツールのセットアップを支援します。 次の一覧からツールをインストールする必要があります。 これらが既にインストールされている場合は、クイックスタートを開始する準備ができています。たとえば、この[Excel はクイックスタートを反応](../quickstarts/excel-quickstart-react.md)します。
+このガイドでは、クイックスタートまたはチュートリアルに従って Office アドインを作成するためのツールのセットアップを支援します。 次の一覧からツールをインストールする必要があります。 これらが既にインストールされている場合は、クイックスタートを開始する準備ができています。たとえば、この [Excel はクイックスタートを反応](../quickstarts/excel-quickstart-react.md)します。
 
 - Node.js
 - npm
@@ -47,7 +47,7 @@ npm -v
 
 ## <a name="get-office-365"></a>Office 365 を取得する
 
-Microsoft 365 アカウントをまだお持ちでない場合は、 [microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することによって、更新可能な90日間の microsoft 365 サブスクリプションを無料で入手できます。
+Microsoft 365 アカウントをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Microsoft 365 サブスクリプションを入手できます。
 
 ## <a name="install-a-code-editor"></a>コード エディターのインストール
 
@@ -71,9 +71,9 @@ Office JavaScript API でどのような機能が提供されているかを把�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインの開発](../develop/develop-overview.md)
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインを設計する](../design/add-in-design.md)
+- [Office アドインの設計](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインを発行する](../publish/publish.md)

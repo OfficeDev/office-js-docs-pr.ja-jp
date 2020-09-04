@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 09/01/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e4dae76846c2174d8eb1115dcb1098f8374b1ba
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: 0223a8b62f60b45092866ee5f2362723912c189f
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326304"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363731"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -34,7 +34,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 これで、IRM で保護されたアイテムでアドインをアクティブ化できるようになります。 この機能を有効にするには、テナント管理者が `OBJMODEL` Office の [プログラムに **よるアクセスを許可** する] オプションを設定して使用権限を有効にする必要があります。 詳細については [、「使用権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
 
-**利用可能**: Windows on Windows、build 13120.1000 (Microsoft 365 サブスクリプションに接続)
+**利用可能**: Windows on Windows、build 13229.10000 (Microsoft 365 サブスクリプションに接続)
 
 <br>
 

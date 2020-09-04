@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/08/2020
   localization_priority: Priority
-  ms.openlocfilehash: 77a49026234bf1c2e8487a7b56af0940ead6813f
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: 06234275e8344b2de01a65d5821a7420d6c7aba8
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679474"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47364039"
 landingContent:
 - title: プロジェクトアドインについて
   linkLists:
@@ -41,8 +41,6 @@ landingContent:
       url: ../overview/office-add-ins.md
   - linkListType: get-started
     links:
-    - text: Office アドインの構築
-      url: ../overview/office-add-ins-fundamentals.md
     - text: Office アドインの中心概念
       url: ../overview/core-concepts-office-add-ins.md
     - text: Office アドインを設計する
@@ -53,7 +51,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: 質問する
+    - text: ご質問
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 機能のリクエスト
       url: https://officespdev.uservoice.com/
