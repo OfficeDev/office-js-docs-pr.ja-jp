@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Office アドイン ドキュメント
-summary: Office アドインのプラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメント内のコンテンツと対話するソリューションを構築します。 Office アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、web、Windows、Mac、iPad で Office で実行できるソリューションを構築できます。
+summary: Office アドインプラットフォームを使用して、office アプリケーションを拡張し、Office ドキュメントや Outlook メールメッセージ、予定表アイテムのコンテンツを操作するソリューションを構築します。 Office アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、web、Windows、Mac、Android、および iOS で Office で実行できるソリューションを構築できます。
 metadata:
   title: Office アドイン ドキュメント
   description: Office アドインを構築する方法について説明します。
@@ -9,12 +9,12 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 07/31/2020
-  ms.openlocfilehash: 7477d00b20edfc64c29f2bff39aa90da6376320c
-  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/28/2020
-  ms.locfileid: "47294116"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363717"
 landingContent:
 - title: Office アドインについて
   linkLists:
