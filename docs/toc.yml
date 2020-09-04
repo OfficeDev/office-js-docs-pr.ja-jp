@@ -144,26 +144,40 @@
                   href: design/data-visualization-guidelines.md
                 - name: 音声
                   href: design/voice-guidelines.md
-            - name: デザイン言語
+            - name: UX のデザイン言語とパターン
               items:
-                - name: 概要
-                  href: design/add-in-design-language.md
-                - name: 色
-                  href: design/add-in-color.md
-                - name: アイコン
+                - name: デザイン言語
                   items:
-                    - name: アイコンのガイドライン
-                      href: design/add-in-icons.md
-                    - name: 新しいスタイル
-                      href: design/add-in-icons-fresh.md
-                    - name: モノライン スタイル
-                      href: design/add-in-icons-monoline.md
-                - name: レイアウト
-                  href: design/add-in-layout.md
-                - name: モーション
-                  href: design/using-motion-office-addins.md
-                - name: 文字体裁
-                  href: design/add-in-typography.md
+                    - name: 概要
+                      href: design/add-in-design-language.md
+                    - name: 色
+                      href: design/add-in-color.md
+                    - name: アイコン
+                      items:
+                        - name: アイコンのガイドライン
+                          href: design/add-in-icons.md
+                        - name: 新しいスタイル
+                          href: design/add-in-icons-fresh.md
+                        - name: モノライン スタイル
+                          href: design/add-in-icons-monoline.md
+                    - name: レイアウト
+                      href: design/add-in-layout.md
+                    - name: モーション
+                      href: design/using-motion-office-addins.md
+                    - name: 文字体裁
+                      href: design/add-in-typography.md
+                - name: 共通のシナリオの UX 設計パターン
+                  items:
+                    - name: 概要
+                      href: design/ux-design-pattern-templates.md
+                    - name: 認証
+                      href: design/authentication-patterns.md
+                    - name: ブランド化
+                      href: design/branding-patterns.md
+                    - name: 最初の実行エクスペリエンス
+                      href: design/first-run-experience-patterns.md
+                    - name: ナビゲーション
+                      href: design/navigation-patterns.md
             - name: インターフェイス要素
               items:
                 - name: 概要
@@ -196,18 +210,6 @@
                   href: design/task-pane-add-ins.md
             - name: ローカライズ
               href: develop/localization.md
-            - name: UX 設計パターン
-              items:
-                - name: 概要
-                  href: design/ux-design-pattern-templates.md
-                - name: 認証
-                  href: design/authentication-patterns.md
-                - name: ブランド化
-                  href: design/branding-patterns.md
-                - name: 最初の実行エクスペリエンス
-                  href: design/first-run-experience-patterns.md
-                - name: ナビゲーション
-                  href: design/navigation-patterns.md
             - name: リソース
               items:
                 - name: デザインのツールキット
@@ -233,7 +235,7 @@
                   href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: Visual Studio で JavaScript IntelliSense を利用できるようにする
                   href: develop/get-javascript-intellisense-in-visual-studio.md
-                - name: JavaScript を TypeScript に変換する
+                - name: JavaScript プロジェクトを TypeScript に変換する
                   href: develop/convert-javascript-to-typescript.md
     - name: テストとデバッグ
       items:
