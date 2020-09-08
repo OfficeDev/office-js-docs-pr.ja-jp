@@ -8,9 +8,6 @@
     - name: 初心者ガイド
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: 開発プロセスの概要
-      href: overview/office-add-ins-fundamentals.md
-      displayName: develop
     - name: クイック スタート
       items:
         - name: Excel アドイン
@@ -35,9 +32,9 @@
     - name: 開発環境をセットアップする
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 開発プロセス
+- name: 開発のライフ サイクル
   items:
-    - name: 概要
+    - name: ライフサイクルの概要
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 計画
@@ -58,7 +55,7 @@
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 開発
       items:
-        - name: Office アドインを開発する
+        - name: 概要
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Office JavaScript API について
@@ -1148,6 +1145,6 @@
       href: overview/learning-path-transition.md
     - name: VSTO アドインから Office アドインにコードを共有する
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: 同等な COM アドインを特定する
+    - name: Office アドインに既存の COM アドインとの互換性をもたせる
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       displayName: manifest
