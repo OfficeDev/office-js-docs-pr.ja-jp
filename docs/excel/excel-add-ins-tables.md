@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して表を操作する
 description: Excel JavaScript API を使用して、テーブルに関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d47a747fe876e01522099f99b8c9fef2ab88a33
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: b358ff33aa3681043f86d650ae2dd9b01a95f962
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294137"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408475"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -496,6 +496,6 @@ Excel.run(function (context) {
 
 ![Excel でインポートされた JSON データの新しいテーブル](../images/excel-tables-create-from-json.png)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)

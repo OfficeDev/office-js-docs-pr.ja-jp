@@ -3,30 +3,30 @@ title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159431"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408573"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
-この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。 コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)を参照してください。
+この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。 コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) を参照してください。
 
 Excel JavaScript API では、コメントには単一の最初のコメントと接続されたスレッドのディスカッションの両方が含まれます。 個別のセルに関連付けられています。 十分な権限があるブックを表示するユーザーは、コメントに返信できます。 Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。 コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。
 
 ![「Comment」というラベルが付けられた、"comment" というラベルが付いた Excel コメント。「comment [0]」と「Comment [1]」。](../images/excel-comments.png)
 
-ブック内のコメントはプロパティによって追跡され `Workbook.comments` ます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。 コメントには、[ワークシート](/javascript/api/excel/excel.worksheet)レベルでアクセスすることもできます。 この記事のサンプルでは、ブックレベルでコメントを使用していますが、プロパティを使用するために簡単に変更することができ `Worksheet.comments` ます。
+ブック内のコメントはプロパティによって追跡され `Workbook.comments` ます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。 コメントには、 [ワークシート](/javascript/api/excel/excel.worksheet) レベルでアクセスすることもできます。 この記事のサンプルでは、ブックレベルでコメントを使用していますが、プロパティを使用するために簡単に変更することができ `Worksheet.comments` ます。
 
 ## <a name="add-comments"></a>コメントを追加する
 
 メソッドを使用して、 `CommentCollection.add` ブックにコメントを追加します。 このメソッドは、次の3つのパラメーターを取ります。
 
-- `cellAddress`: コメントが追加されるセルを指定します。 文字列または[Range](/javascript/api/excel/excel.range)オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
+- `cellAddress`: コメントが追加されるセルを指定します。 文字列または [Range](/javascript/api/excel/excel.range) オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
 - `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
-- `contentType`: コンテンツの種類を指定する[ContentType](/javascript/api/excel/excel.contenttype)列挙。 既定値は `ContentType.plain` です。
+- `contentType`: コンテンツの種類を指定する [ContentType](/javascript/api/excel/excel.contenttype) 列挙。 既定値は `ContentType.plain` です。
 
 次のコード例は、コメントをセル **A2** に追加します。
 
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 コメントの返信は、最初のコメントと同じ種類のメタデータを格納します。
 
-次の例は、作成者の電子メール、作成者の名前、および**A2**における最新のコメントの返信の作成日を表示する方法を示しています。
+次の例は、作成者の電子メール、作成者の名前、および **A2**における最新のコメントの返信の作成日を表示する方法を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -171,7 +171,7 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>メンション
 
-[メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)は、コメント内の仕事仲間にタグ付けするために使用されます。 これにより、それらの通知がコメントの内容と共に送信されます。 アドインは、ユーザーの代わりにこれらのメンションを作成できます。
+[メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) は、コメント内の仕事仲間にタグ付けするために使用されます。 これにより、それらの通知がコメントの内容と共に送信されます。 アドインは、ユーザーの代わりにこれらのメンションを作成できます。
 
 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用して、メンションを含むコメントを作成する必要があります。 1つ以上のメンションを含むを呼び出し、 `CommentCollection.add` `CommentRichContent` `ContentType.mention` パラメーターとしてを指定し `contentType` ます。 `content`文字列をテキストに挿入するには、文字列を書式設定する必要もあります。 メンションの形式は、 `<at id="{replyIndex}">{mentionName}</at>` です。
 
@@ -202,8 +202,8 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してブックを操作する](excel-add-ins-workbooks.md)
 - [Excel でコメントやメモを挿入する](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

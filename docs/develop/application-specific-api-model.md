@@ -1,14 +1,14 @@
 ---
 title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word のアドインの promise ベースの API モデルについて説明します。
-ms.date: 07/29/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326283"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408601"
 ---
 # <a name="using-the-application-specific-api-model"></a>アプリケーション固有の API モデルの使用
 
@@ -223,6 +223,31 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="some-properties-cannot-be-set-directly"></a>一部のプロパティは直接設定できません
+
+書き込み可能であっても、一部のプロパティを設定することはできません。 これらのプロパティは、1つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理的な関係を持つサブプロパティに依存しているためです。 このような親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクトリテラル表記を使用して設定し、オブジェクト全体を設定する必要があります。 この例の1つは、 [PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 このプロパティは、次 `zoom` に示すように、1つの [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
+
+```js
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
+sheet.pageLayout.zoom = { scale: 200 };
+```
+
+前の例では、値を直接割り当てることはでき***ません***。 `zoom` `sheet.pageLayout.zoom.scale = 200;` が読み込まれていないため、このステートメントはエラーをスロー `zoom` します。 `zoom`ロードされた場合でも、スケールのセットは有効になりません。 すべてのコンテキスト操作が行われ `zoom` 、アドイン内のプロキシオブジェクトが更新され、ローカルに設定された値が上書きされます。
+
+この動作は、[範囲形式](/javascript/api/excel/excel.range#format)などの[ナビゲーションプロパティ](application-specific-api-model.md#scalar-and-navigation-properties)とは異なります。 のプロパティは `format` 、次に示すように、object ナビゲーションを使用して設定できます。
+
+```js
+// This will set the font size on the range during the next `content.sync()`.
+range.format.font.size = 10;
+```
+
+読み取り専用修飾子をチェックすることによって、そのサブプロパティを直接設定できないプロパティを識別できます。 読み取り専用のプロパティは、読み取り専用でないサブプロパティを直接設定することができます。 書き込み可能なプロパティ `PageLayout.zoom` は、そのレベルのオブジェクトで設定する必要があります。 概要:
+
+- 読み取り専用プロパティ: サブプロパティは、ナビゲーションを使用して設定できます。
+- 書き込み可能なプロパティ: ナビゲーションを使用してサブプロパティを設定することはできません (最初の親オブジェクトの割り当ての一部として設定する必要があります)。
+
+
+
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;OrNullObject メソッドとプロパティ
 
 必要なオブジェクトが存在しない場合、いくつかのアクセサーメソッドとプロパティは例外をスローします。 たとえば、ブックにないワークシート名を指定して Excel ワークシートを取得しようとすると、 `getItem()` メソッドは例外をスロー `ItemNotFound` します。 アプリケーション固有のライブラリは、コードが、例外処理コードを必要とせずにドキュメントエンティティの存在をテストするための方法を提供します。 これは、 `*OrNullObject` メソッドとプロパティのバリエーションを使用して実現されます。 これらのバリエーション `isNullObject` は、指定したアイテムが `true` 存在しない場合、例外をスローするのではなく、プロパティがに設定されているオブジェクトを返します。
@@ -248,8 +273,7 @@ return context.sync()
     });
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 * [共通 JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)
-* [一般的なコーディングの問題と、予期しないプラットフォームの動作](common-coding-issues.md)。
 * [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)

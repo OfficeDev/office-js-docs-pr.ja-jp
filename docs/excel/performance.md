@@ -3,12 +3,12 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: JavaScript API を使用して Excel アドインのパフォーマンスを最適化します。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: fdaccdca4779aaca64420794e382330994488606
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 42ab5f28717f0f7dcd06461840de692a5daf60ce
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294102"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408615"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
@@ -109,8 +109,8 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) メソッドを使用すると、Table オブジェクトを Range オブジェクトに簡単に変換できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-* [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+* [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 * [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)
 * [ワークシート関数のオブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

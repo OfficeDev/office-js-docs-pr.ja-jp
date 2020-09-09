@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける非同期プログラミング
 description: Office JavaScript ライブラリが Office アドインで非同期プログラミングを使用する方法について説明します。
-ms.date: 02/27/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: affe493cdf1633b3a8749b694da479a732271195
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 96805ee0f78caedd718642a97828db26f0de7900
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292945"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408580"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -121,11 +121,13 @@ Office JavaScript API は、次の2種類の非同期プログラミングパタ
     
 コールバック関数のある非同期プログラミングでは、多くの場合、2 つ以上のコールバック内に 1 つのコールバックで返された結果を入れ子にすることが必要となります。その場合、API のすべての "Async" メソッドからの入れ子のコールバックを使用できます。
 
-入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。 Office JavaScript API は、ネストされたコールバックの代わりに、約束パターンの実装もサポートしています。 ただし、現在のバージョンの Office JavaScript API では、約束パターンは、 [Excel スプレッドシートと Word 文書内のバインディング](bind-to-regions-in-a-document-or-spreadsheet.md)のコードでのみ機能します。
+入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。 Office JavaScript API は、ネストされたコールバックの代わりに、約束パターンの実装もサポートしています。 
 
-<a name="AsyncProgramming_NestedCallbacks" />
+> [!NOTE]
+> Office JavaScript API の現在のバージョンでは、約束パターンの *組み込み* サポートは、 [Excel スプレッドシートと Word 文書内のバインディング](bind-to-regions-in-a-document-or-spreadsheet.md)のコードに対してのみ機能します。 ただし、コールバックを持つ他の関数を、独自のカスタムの約束を返す関数の内側にラップすることができます。 詳細については、「 [約束を返す関数」の「Common api をラップ](#wrap-common-apis-in-promise-returning-functions)する」を参照してください。
+
+
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>入れ子のコールバック関数を使用する非同期プログラミング
-
 
 多くの場合、タスクを完了するには、2 つ以上の非同期操作を実行する必要があります。これを実現するために、1 つの "Async" 呼び出し内で別の呼び出しを入れ子にできます。
 
@@ -240,7 +242,7 @@ function write(message){
 }
 ```
 
-_BindingObjectAsyncMethod_ placeholder を `Binding` 、promise オブジェクトでサポートされている4つのオブジェクトのいずれかのメソッド (、、、 `getDataAsync` `setDataAsync` `addHandlerAsync` または `removeHandlerAsync` ) を呼び出して置き換えます。 これらのメソッドの呼び出しでは追加の promise がサポートされません。 これらは[入れ子のコールバック関数パターン](#AsyncProgramming_NestedCallbacks)を使用して呼び出す必要があります。
+_BindingObjectAsyncMethod_ placeholder を `Binding` 、promise オブジェクトでサポートされている4つのオブジェクトのいずれかのメソッド (、、、 `getDataAsync` `setDataAsync` `addHandlerAsync` または `removeHandlerAsync` ) を呼び出して置き換えます。 これらのメソッドの呼び出しでは追加の promise がサポートされません。 これらは[入れ子のコールバック関数パターン](#asynchronous-programming-using-nested-callback-functions)を使用して呼び出す必要があります。
 
 オブジェクトの `Binding` promise が履行された後は、バインドされている場合と同様に、連鎖メソッドの呼び出しで再利用できます (アドインランタイムは、promise を実行しても非同期に再試行することはありません)。 オブジェクトの `Binding` 約束を履行できない場合、アドインランタイムは、次にその非同期メソッドが呼び出されたときに binding オブジェクトへのアクセスを再試行します。
 
@@ -395,8 +397,59 @@ function write(message){
 
 どちらのオプションのパラメーター例でも、_callback_ パラメーターが最後のパラメーターとして (インラインのオプションのパラメーターまたは _options_ 引数オブジェクトに続けて) 指定されています。 _callback_ パラメーターは、インライン JSON オブジェクトの中で、または `options` オブジェクト内で指定することもできます。 ただし、 _callback_ パラメーターを渡せるのは _options_ オブジェクト (インラインまたは外部で作成) または最後のパラメーターのどちらか一方であり、両方に渡すことはできません。
 
+## <a name="wrap-common-apis-in-promise-returning-functions"></a>Promise 関数を返す関数の共通 Api をラップする
 
-## <a name="see-also"></a>関連項目
+Common API (および Outlook API) メソッドは、 [約束](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)を返しません。 そのため、 [待機](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) を使用して、非同期操作が完了するまで実行を一時停止することはできません。 振る舞いが必要な場合は `await` 、明示的に作成した約束でメソッドの呼び出しをラップすることができます。 
+
+基本的なパターンは、Promise オブジェクトをすぐに返す非同期メソッドを作成し、内部メソッドが完了したときにその Promise オブジェクトを *解決* するか、またはメソッドが失敗した場合はオブジェクトを *拒否* することです。 簡単な例を次に示します。
+
+```javascript
+function getDocumentFilePath() {
+    return new OfficeExtension.Promise(function (resolve, reject) {
+        try {
+            Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                resolve(asyncResult.value.url);
+            });
+        }
+        catch (error) {
+            reject(WordMarkdownConversion.errorHandler(error));
+        }
+    })
+}
+```
+
+このメソッドを待機する必要がある場合は、キーワードを使用するか、 `await` 関数に渡される関数として呼び出すことができ `then` ます。
+
+> [!NOTE]
+> この手法は、 `run` アプリケーション固有のオブジェクトモデルのいずれかで、メソッドの呼び出しの内部で共通 api のいずれかを呼び出す必要がある場合に特に便利です。 上記の方法で使用されている関数の例については、 [ サンプルの Word アドインの「JavaScript-MDConversion」](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)の「ファイルHome.js を参照してください。
+
+次に、TypeScript を使用した例を示します。
+
+```typescript
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
+
+## <a name="see-also"></a>こちらもご覧ください
 
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
 - [Office の JavaScript API](../reference/javascript-api-for-office.md)

@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: Excel JavaScript API を使用したグラフタスクをデモンストレーションするコードサンプルです。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 9763657fc245a509d21267511d8d1c706e1d389e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609637"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408587"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
@@ -217,4 +217,4 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)

@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して Excel の組み込みワークシー
 description: Excel JavaScript API などの組み込みの Excel ワークシート関数を呼び出す方法について説明し `VLOOKUP` `SUM` ます。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d75dc56210425d3708b03fb0132aff5ff534da7a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609191"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408685"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
@@ -443,8 +443,8 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/YIELDMAT-function-ba7d1809-0d33-4bcb-96c7-6c56ec62ef6f" target="_blank">YIELDMAT 関数</a> | 満期日に利息が支払われる証券の利回りを返します。 |
 | <a href="https://support.office.com/article/ZTEST-function-d633d5a3-2031-4614-a016-92180ad82bee" target="_blank">Z.TEST 関数</a> | Z 検定の片側確率の値を返します。 |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [関数クラス (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
 - [Workbook 関数オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)

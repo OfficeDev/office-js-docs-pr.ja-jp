@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: Office アドインでのユーザーエラーのトラブルシューティング方法について説明します。
-ms.date: 06/17/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 878295a4a6237860c349efb04a6684ab527b7e4f
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530486"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408832"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -63,12 +63,6 @@ Windows で実行され、[Internet Explorer を使用している](../concepts/
     
 Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム](https://support.microsoft.com/kb/2986156/)をダウンロードしてください。
 
-
-## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
-
-アドインのマニフェストでの問題をデバッグするには、「[Office アドインのマニフェストを検証する](troubleshoot-manifest.md)」および「[ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)」を参照してください。
-
-
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>アドイン ダイアログ ボックスを表示できない
 
 Office アドインを使用するとき、ユーザーは、ダイアログ ボックスの表示を許可するよう求められます。ユーザーが **[許可]** を選択すると、次のエラー メッセージが発生します。
@@ -99,51 +93,7 @@ URL を信頼済みサイトのリストに追加する方法:
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
-## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない
+## <a name="see-also"></a>こちらもご覧ください
 
-リボン ボタンのアイコンのファイル名やメニュー アイテムのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
+- [Office アドインでの開発エラーのトラブルシューティング](troubleshoot-development-errors.md)
 
-#### <a name="for-windows"></a>Windows の場合:
-
-フォルダーの内容を削除 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` し、フォルダーの内容を削除し `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` ます (存在する場合)。
-
-#### <a name="for-mac"></a>Mac の場合: 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>iOS の場合: 
-アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
-
-## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>JavaScript、HTML、CSS などの静的ファイルへの変更は有効になりません
-
-ブラウザーがこれらのファイルをキャッシュしている可能性があります。 これを防ぐには、開発時にクライアント側のキャッシュをオフにします。 詳細は、使用しているサーバーの種類によって異なります。 ほとんどの場合、HTTP 応答に特定のヘッダーを追加する必要があります。 次の設定をお勧めします。
-
-- Cache Control: 「プライベート、キャッシュなし、ストアなし」
-- Pragma: 「no-cache」
-- 有効期限: 「-1」
-
-Node.JS Express サーバーでこれを行う例については、「[この app.js ファイル](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js)について」を参照してください。 ASP.NET プロジェクトの例については、「[この cshtml ファイル](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)について」を参照してください。
-
-アドインがインターネット インフォメーション サービス (IIS) にホストされている場合は、次を web.config に追加することもできます。
-
-```xml
-<system.webServer>
-  <staticContent>
-    <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="0.00:00:00" cacheControlCustom="must-revalidate" />
-  </staticContent>
-```
-
-これらの手順が最初に動作しない場合は、ブラウザーのキャッシュをクリアする必要がある場合があります。 これは、ブラウザーの UI を使用して行います。 画面の端の UI でエッジ キャッシュをクリアしようとすると、正常にクリアされないことがあります。 その場合は、Windows コマンド プロンプトで次のコマンドを実行します。
-
-```bash
-del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
-```
-
-## <a name="see-also"></a>関連項目
-
-- [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
-- [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
-- [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
-- [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)

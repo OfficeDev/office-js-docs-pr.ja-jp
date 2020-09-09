@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: b73d99b7c78649f1d99729ba7e644816db0f2ade
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0720715a38ff81196433d207148c63ffcd475003
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294123"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408650"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -495,4 +495,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)

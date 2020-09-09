@@ -3,12 +3,12 @@ title: Excel の範囲にデータの入力規則を追加する
 description: Excel JavaScript Api を使用して、ブック内のテーブル、列、行、およびその他の範囲に自動的なデータの入力規則を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ce792e36f9ad24eb4b26e2034c59063d65940be4
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292559"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408552"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
@@ -223,6 +223,6 @@ myrange.dataValidation.clear()
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [DataValidation Object (JavaScript API for Excel)](/javascript/api/excel/excel.datavalidation)
 - [Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)

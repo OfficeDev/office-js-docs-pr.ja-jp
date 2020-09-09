@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294158"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408447"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -361,5 +361,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

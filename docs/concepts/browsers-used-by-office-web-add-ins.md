@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 544388014bfef0dd647a79d655a173d09f5a4ff7
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293059"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408440"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -34,7 +34,7 @@ Office アドインは、web 上で Office を実行しているときに iFrame
 |Windows 10 のバージョン。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver。 &nbsp; < &nbsp;16.0.11629<sup>1</sup>| かまいません|Internet Explorer 11|
 |Windows 10 のバージョン。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver。 &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13127.20082<sup>1</sup>| かまいません|Microsoft Edge<sup>2、3</sup> (元の WebView を使用) (EdgeHTML)|
 |Windows 10 のバージョン。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver。 &nbsp; >= &nbsp;16.0.13127.20082<sup>1</sup>| いいえ |Microsoft Edge<sup>2、3</sup> (元の WebView を使用) (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver。 &nbsp; >= &nbsp;16.0.13127.20082<sup>1</sup>| はい|  下のメモ4を参照してください。 |
+|Windows 8.1<br>Windows 10| Microsoft 365 ver。 &nbsp; >= &nbsp;16.0.13127.20082<sup>1</sup>| 必要|  下のメモ4を参照してください。 |
 
 <sup>1</sup> [ [更新履歴] ページ](/officeupdates/update-history-office365-proplus-by-date) を参照してください。詳細については、「 [Office クライアントのバージョンと更新プログラムのチャネルを見つける](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) 方法」を参照してください。
 
@@ -43,8 +43,14 @@ Office アドインは、web 上で Office を実行しているときに iFrame
 <sup>3</sup> アドインにマニフェスト内の要素が含まれている場合は `Runtimes` 、Windows または Microsoft 365 のバージョンに関係なく Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 <sup>4</sup> このバージョンの組み合わせに使用されるブラウザーは、Microsoft 365 サブスクリプションの更新プログラムチャネルによって異なります。 ユーザーが [ベータチャネル](https://insider.office.com/join/windows) (旧称 insider Fast channel) 上にある場合、Office は WebView2 (Chromium ベース) で Microsoft Edge を使用します。 その他のチャネルについては、Office は Microsoft Edge と元の WebView (EdgeHTML) を使用します。 2021の初期段階では、他のチャネルでの WebView2 のサポートが期待されています。
+
 > [!IMPORTANT]
-> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーが Internet Explorer 11 を使用するプラットフォームを使用している場合、ECMAScript 2015 以降の構文と機能を使用するには、JavaScript を ES 5 にトランスパイルするか、ポリフィルを使用する必要があります。 また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
+> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーのいずれかが Internet Explorer 11 を使用するプラットフォームを持っている場合、ECMAScript 2015 以降の構文と機能を使用するには、次の2つのオプションがあります。
+>
+> - コードを ECMAScript 2015 (ES6 とも呼ばれます) またはそれより後の JavaScript または TypeScript に記述し、 [babel](https://babeljs.io/) または [tsc](https://www.typescriptlang.org/index.html)などのコンパイラを使用して、コードを ES5 JavaScript にコンパイルします。
+> - ECMAScript 2015 またはそれ以降の JavaScript で記述します。また、 [core-js](https://github.com/zloirock/core-js)などの[polyfill](https://wikipedia.org/wiki/Polyfill_(programming))ライブラリを読み込んで、IE でコードを実行できるようにします。
+>
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge の問題のトラブルシューティング
 

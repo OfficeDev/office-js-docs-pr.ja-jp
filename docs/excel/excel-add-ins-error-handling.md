@@ -3,19 +3,19 @@ title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292554"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408454"
 ---
 # <a name="error-handling"></a>エラー処理
 
 Excel JavaScript API を使用してアドインを作成する場合は、実行時エラーを考慮するために、エラー処理ロジックを含めます。 これは、API の非同期性のために重要になります。
 
 > [!NOTE]
-> `sync()`メソッドと Excel JAVASCRIPT api の非同期性の詳細については、「 [EXCEL javascript api を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)」を参照してください。
+> この `sync()` メソッドと Excel JAVASCRIPT API の非同期の性質の詳細については、「 [Office アドインの excel javascript オブジェクトモデル](excel-add-ins-core-concepts.md)」を参照してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -74,7 +74,7 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 |`UnsupportedOperation`|試行中の操作はサポートされていません。|
 |`UnsupportedSheet`|このシートの種類は、マクロまたはグラフシートであるため、この操作をサポートしていません。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)

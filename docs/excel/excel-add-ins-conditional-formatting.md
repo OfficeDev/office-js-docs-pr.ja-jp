@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲に条件付き書式を適用�
 description: この記事では、Excel JavaScript アドインのコンテキストでの条件付き書式について説明します。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292661"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408594"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
@@ -336,7 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](../excel/excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用して範囲を操作する](../excel/excel-add-ins-ranges.md)
 - [ConditionalFormat オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
 - [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)

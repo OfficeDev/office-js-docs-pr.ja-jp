@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (基本)
 description: Excel JavaScript API を使用して、範囲に関する一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2cb5640fa9c647c0e6d1f8083986455f2b5a59a3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294165"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408482"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を操作する
 
@@ -543,7 +543,7 @@ Excel.run(function (context) {
 
 ### <a name="read-an-unbounded-range"></a>無制限の範囲の読み取り
 
-非制限範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 例:
+非制限範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 次に例を示します。
 
 - 範囲のアドレスは列全体で構成されます。<ul><li>`C:C`</li><li>`A:F`</li></ul>
 - 行全体から成る範囲アドレス:<ul><li>`2:2`</li><li>`1:4`</li></ul>
@@ -597,4 +597,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用して範囲を操作する (高度)](excel-add-ins-ranges-advanced.md)
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
