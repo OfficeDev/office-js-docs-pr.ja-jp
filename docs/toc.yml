@@ -217,8 +217,6 @@
                   href: design/office-ui-fabric.md
         - name: フレームワークと IDE
           items:
-            - name: iPad 用のアドインを開発する
-              href: develop/develop-office-add-ins-for-the-ipad.md
             - name: Angular でアドインを開発する
               href: develop/add-ins-with-angular2.md
             - name: Visual Studio Code でアドインを開発する
@@ -234,6 +232,8 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: JavaScript プロジェクトを TypeScript に変換する
                   href: develop/convert-javascript-to-typescript.md
+        - name: iPad アドインの特別な要件
+          href: develop/develop-office-add-ins-for-the-ipad.md
     - name: テストとデバッグ
       items:
         - name: Office アドインのテストとデバッグ
