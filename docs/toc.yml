@@ -264,8 +264,6 @@
         - name: Office のキャッシュをクリアする
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
-        - name: 一般的な問題に関するコーディング ガイド
-          href: develop/common-coding-issues.md
         - name: ランタイム ログを使用してデバッグする
           href: testing/runtime-logging.md
         - name: Visual Studio Code 用 デバッガー 拡張機能
@@ -278,6 +276,8 @@
               href: concepts/resource-limits-and-performance-optimization.md
         - name: ユーザーのエラーのトラブルシューティング
           href: testing/testing-and-troubleshooting.md
+        - name: 開発エラーのトラブルシューティング
+          href: testing/troubleshoot-development-errors.md
         - name: ユーザビリティ テスト
           href: develop/usability-testing.md
         - name: アドインのマニフェストを検証する
@@ -580,8 +580,11 @@
         - name: API リファレンス
           href: reference/excel-api-reference.md
           displayName: Excel
-        - name: 基本プログラミングの概念
+        - name: Excel オブジェクトモデル
           href: excel/excel-add-ins-core-concepts.md
+          displayName: Excel
+        - name: Excel アドインの空白値と null 値
+          href: excel/excel-add-ins-blank-null-values.md
           displayName: Excel
         - name: 組み込み関数の呼び出し
           href: excel/excel-add-ins-worksheet-functions.md
@@ -603,6 +606,9 @@
           displayName: Excel
         - name: データの入力規則
           href: excel/excel-add-ins-data-validation.md
+          displayName: Excel
+        - name: セルの編集中に実行を遅らせる
+          href: excel/excel-add-ins-delay-in-cell-edit.md
           displayName: Excel
         - name: エラー処理
           href: excel/excel-add-ins-error-handling.md
@@ -642,6 +648,9 @@
           displayName: Excel
         - name: ワークシート
           href: excel/excel-add-ins-worksheets.md
+          displayName: Excel
+        - name: Excel アドインのトラブルシューティング
+          href: excel/excel-add-ins-troubleshooting.md
           displayName: Excel
     - name: カスタム関数
       items:
@@ -1109,7 +1118,7 @@
         - name: API リファレンス
           href: reference/word-api-reference.md
           displayName: Word
-        - name: 基本プログラミングの概念
+        - name: ワードオブジェクト モデル
           href: word/word-add-ins-core-concepts.md
           displayName: Word
         - name: ドキュメント内の領域へのバインド
