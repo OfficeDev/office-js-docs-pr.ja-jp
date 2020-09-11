@@ -4,12 +4,12 @@ description: WordApi 1.1 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 9f7efdd0ce8f67a05d8197ec3005b2d6e9049409
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad1ec8b226bc958ed1be6e233a070108612661ad
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611310"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431508"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 の新機能
 
@@ -17,7 +17,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Word JavaScript API 要件セット1.1 の Api を示します。 Word JavaScript API 要件セット1.1 でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.1 の Word api](/javascript/api/word?view=word-js-1.1)」を参照してください。
+次の表に、Word JavaScript API 要件セット1.1 の Api を示します。 Word JavaScript API 要件セット1.1 でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.1 の Word api](/javascript/api/word?view=word-js-1.1&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -80,7 +80,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[更新](/javascript/api/word/word.document#saved)|ドキュメント内の変更が保存されているかどうかを示します。値 true は、ドキュメントが保存されてから変更されていないことを示します。読み取り専用です。|
 ||[sections](/javascript/api/word/word.document#sections)|ドキュメント内の section オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[save()](/javascript/api/word/word.document#save--)|ドキュメントを保存します。 ここでは、ドキュメントが保存されたことがない場合は、Word の既定のファイルの名前付け規則を使用します。|
-|[Font](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|フォントが太字かどうかを示す値を取得または設定します。 フォントの書式設定が太字の場合は true、それ以外の場合は false です。|
+|[フォント](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|フォントが太字かどうかを示す値を取得または設定します。 フォントの書式設定が太字の場合は true、それ以外の場合は false です。|
 ||[color](/javascript/api/word/word.font#color)|指定されたフォントの色を取得または設定します。 値は、"#RRGGBB" の形式または色の名前で指定できます。|
 ||[[Doublestrikethrough]](/javascript/api/word/word.font#doublestrikethrough)|フォントに二重取り消し線があるかどうかを示す値を取得または設定します。 フォントの書式が二重取り消し線付きのテキストである場合は true、それ以外の場合は false です。|
 ||[highlightColor](/javascript/api/word/word.font#highlightcolor)|強調表示の色を取得または設定します。 このプロパティを設定するには、' #RRGGBB ' 形式または色名のいずれかの値を使用します。 蛍光ペンの色を削除するには、その色を null に設定します。 強調表示色は、"#RRGGBB" 形式で指定できます。強調表示色が混在している場合は空の文字列、または強調表示色なしの場合は null になります。|
@@ -121,7 +121,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[lineUnitBefore](/javascript/api/word/word.paragraph#lineunitbefore)|段落前の間隔の幅をグリッド線数単位で取得または設定します。|
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlinelevel)|段落のアウトライン レベルを取得または設定します。|
 ||[contentControls](/javascript/api/word/word.paragraph#contentcontrols)|段落内のコンテンツコントロールオブジェクトのコレクションを取得します。 読み取り専用です。|
-||[font](/javascript/api/word/word.paragraph#font)|段落のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用。|
+||[font](/javascript/api/word/word.paragraph#font)|段落のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
 ||[inlinePictures](/javascript/api/word/word.paragraph#inlinepictures)|段落内の InlinePicture オブジェクトのコレクションを取得します。 コレクションに浮動イメージは含まれません。 読み取り専用です。|
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentcontentcontrol)|段落を格納しているコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[text](/javascript/api/word/word.paragraph#text)|段落のテキストを取得します。 読み取り専用です。|
@@ -144,7 +144,7 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 Word 
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
 ||[insertText (text: string, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#inserttext-text--insertlocation-)|指定した位置にテキストを挿入します。 InsertLocation の値には、' Replace '、' Start '、' End '、' Before '、または ' After ' を指定できます。|
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|範囲内のコンテンツコントロールオブジェクトのコレクションを取得します。 読み取り専用です。|
-||[font](/javascript/api/word/word.range#font)|範囲のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用。|
+||[font](/javascript/api/word/word.range#font)|範囲のテキスト形式を取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|範囲内の paragraph オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[parentContentControl](/javascript/api/word/word.range#parentcontentcontrol)|範囲を格納するコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[text](/javascript/api/word/word.range#text)|範囲のテキストを取得します。 読み取り専用です。|

@@ -4,12 +4,12 @@ description: ExcelApi 1.4 の要件セットの詳細
 ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a0a7be48e8a17ebcd650185519b7330ddb6041e0
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294270"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430752"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -48,7 +48,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.4 の Api を示します。 Excel JavaScript API 要件セット1.4 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.4 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.4)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.4 の Api を示します。 Excel JavaScript API 要件セット1.4 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.4 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -96,5 +96,5 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.4)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

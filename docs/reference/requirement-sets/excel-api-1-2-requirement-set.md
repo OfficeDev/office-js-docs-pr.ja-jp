@@ -4,12 +4,12 @@ description: ExcelApi 1.2 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7404437569ba69851376fc7d5df76a6465468e1e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e55c9dbee09228130b86c76535bb5bf8ef6666c1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611443"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430913"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -17,7 +17,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.2 の Api を示します。 Excel JavaScript API 要件セット1.2 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.2 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.2)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.2 の Api を示します。 Excel JavaScript API 要件セット1.2 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.2 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.2&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -29,9 +29,9 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|選択されている行の数を取得します。|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|選択範囲の先頭列のインデックス (0 から始まる) を取得します。|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|選択範囲の先頭行のインデックス (0 から始まる) を取得します。|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage (width?: number, height?: number, fittingMode?: Excel-Imageftingmode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
+|[グラフ](/javascript/api/excel/excel.chart)|[getImage (width?: number, height?: number, fittingMode?: Excel-Imageftingmode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|現在のグラフを含んでいるワークシート。 読み取り専用です。|
-|[Filter](/javascript/api/excel/excel.filter)|[適用 (条件: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|指定の列に、指定したフィルター条件を適用します。|
+|[フィルター](/javascript/api/excel/excel.filter)|[適用 (条件: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|指定の列に、指定したフィルター条件を適用します。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|指定した数の要素の列に [下位アイテム] フィルターを適用します。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|指定したパーセンテージの要素の列に [下位パーセント] フィルターを適用します。|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|指定した色の列に "セルの色" フィルターを適用します。|
@@ -50,7 +50,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[dynamicCriteria](/javascript/api/excel/excel.filtercriteria#dynamiccriteria)|この列に適用するために設定された、Excel の DynamicFilterCriteria の動的な抽出条件。 "動的" フィルターで使用されます。|
 ||[/](/javascript/api/excel/excel.filtercriteria#filteron)|フィルターで値を表示するかどうかを決定するために使用されるプロパティ。|
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|セルをフィルター処理するために使用するアイコン。 「アイコン」フィルター処理で使用します。|
-||[演算子](/javascript/api/excel/excel.filtercriteria#operator)|「カスタム」フィルター処理を使用するときに、条件 1 と条件 2 を結合するために使用する演算子。|
+||[operator](/javascript/api/excel/excel.filtercriteria#operator)|「カスタム」フィルター処理を使用するときに、条件 1 と条件 2 を結合するために使用する演算子。|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|"値" フィルター処理の一部として使用する値のセット。|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|データのフィルター処理に使用する ISO8601 形式の日付です。|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|データを保持するのに、日付をどの程度詳細に使用するか。 たとえば、date が 2005-04-02 で "month" に設定した場合、フィルター操作では 2005 年 4 月の日付データを含むすべての行が保持されます。|
@@ -506,7 +506,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 |[範囲の形式](/javascript/api/excel/excel.rangeformat)|[autofitColumns ()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|現在の列のデータに基づいて、現在の範囲の列の幅を最適な幅に変更します。|
 ||[autofitRows ()](/javascript/api/excel/excel.rangeformat#autofitrows--)|現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|範囲内のすべての列の幅を取得または設定します。 列の幅が均一でない場合は、null が返されます。|
-||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用。|
+||[protection](/javascript/api/excel/excel.rangeformat#protection)|範囲に対する書式保護オブジェクトを返します。 読み取り専用です。|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|範囲内のすべての行の高さを取得または設定します。 行の高さが均一ではない場合は、null が返されます。|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|範囲のアドレスを取得または設定します。たとえば、' SheetName!A1: B5 '。|
 |[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase?: boolean, hasHeaders?: boolean, orientation?: Excel. SortOrientation, method?: Excel. Sortorientation)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|並べ替え操作を実行します。|
@@ -517,7 +517,7 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 ||[icon](/javascript/api/excel/excel.sortfield#icon)|並べ替えがセルのアイコンで行われる場合に、条件の対象となるアイコンを表します。|
 ||[key](/javascript/api/excel/excel.sortfield#key)|条件の対象とする列 (または行。並べ替えの方向によって異なります) を表します。最初の列 (または行) からのオフセットとして表します。|
 ||[sortOn](/javascript/api/excel/excel.sortfield#sorton)|この条件の並べ替えの種類を表します。|
-|[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearfilters--)|現在テーブルに適用されているすべてのフィルターをクリアします。|
+|[表](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearfilters--)|現在テーブルに適用されているすべてのフィルターをクリアします。|
 ||[convertToRange すべて ()](/javascript/api/excel/excel.table#converttorange--)|テーブルを通常の範囲のセルに変換します。 すべてのデータが保持されます。|
 ||[並べ替え](/javascript/api/excel/excel.table#sort)|テーブル内の並べ替えを表します。 読み取り専用です。|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|現在のテーブルを含んでいるワークシート。 読み取り専用です。|
@@ -559,10 +559,10 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 |[ThreeTrianglesSet](/javascript/api/excel/excel.threetrianglesset)|[greenUpTriangle](/javascript/api/excel/excel.threetrianglesset#greenuptriangle)||
 ||[redDownTriangle](/javascript/api/excel/excel.threetrianglesset#reddowntriangle)||
 ||[yellowDash](/javascript/api/excel/excel.threetrianglesset#yellowdash)||
-|[Workbook](/javascript/api/excel/excel.workbook)|[職務](/javascript/api/excel/excel.workbook#functions)|計算に使用できるワークシート関数のコレクションを表します。 読み取り専用です。|
+|[ブック](/javascript/api/excel/excel.workbook)|[職務](/javascript/api/excel/excel.workbook#functions)|計算に使用できるワークシート関数のコレクションを表します。 読み取り専用です。|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|ドキュメント内で選択が変更されるときに発生します。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。 ワークシート全体が空白の場合、この関数は左上のセルを返します (つまり、エラーはスローされ*ません*)。|
-||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[getUsedRange (パラメーターの設定のみ?: boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。 ワークシート全体が空白の場合、この関数は左上のセルを返します (つまり、エラーはスローされ *ません* )。|
+||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。 読み取り専用です。|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect (options?: Excel. ワークシートのオプション, パスワード?: string)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|ワークシートを保護します。 ワークシートが既に保護されている場合は、失敗します。|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|シートの保護のオプション。 読み取り専用です。|
 ||[protected](/javascript/api/excel/excel.worksheetprotection#protected)|ワークシートが保護されているかどうかを示します。 読み取り専用です。|
@@ -580,5 +580,5 @@ ExcelApi 1.2 には、テーブルのフィルター処理と組み込みの Exc
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.2)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.2&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

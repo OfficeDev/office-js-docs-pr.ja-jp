@@ -4,16 +4,16 @@ description: ExcelApi 1.5 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a722498f264ac8a681e91231d737451274b01c48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 346b5192d6d68046b9365d3159df9c3964a59271
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611422"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430850"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 の新機能
 
-ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、workbook オブジェクトの[カスタム XML パーツコレクション](/javascript/api/excel/excel.workbook#customxmlparts)を通じてアクセスできます。
+ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、workbook オブジェクトの [カスタム XML パーツコレクション](/javascript/api/excel/excel.workbook#customxmlparts) を通じてアクセスできます。
 
 ## <a name="custom-xml-part"></a>カスタム XML パーツ
 
@@ -30,7 +30,7 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.5 の Api を示します。 Excel JavaScript API 要件セット1.5 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.5 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.5)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.5 の Api を示します。 Excel JavaScript API 要件セット1.5 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.5 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -52,8 +52,8 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 ||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitemornullobject--)|コレクションに含まれる項目が 1 つだけの場合、このメソッドはその項目を返します。|
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ピボットテーブルの ID。 読み取り専用です。|
-|[ランタイム](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|このブックに格納されているカスタム XML パーツのコレクションを表します。 読み取り専用です。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|これに続くワークシートを取得します。 このメソッドに続くワークシートがない場合、このメソッドはエラーをスローします。|
+|[ランタイム](/javascript/api/excel/excel.runtime)||[ブック](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|このブックに格納されているカスタム XML パーツのコレクションを表します。 読み取り専用です。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|これに続くワークシートを取得します。 このメソッドに続くワークシートがない場合、このメソッドはエラーをスローします。|
 ||[getNextOrNullObject (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|これに続くワークシートを取得します。 このメソッドに続くワークシートがない場合、このメソッドは null オブジェクトを返します。|
 ||[getPrevious (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|これより前のワークシートを取得します。 前のワークシートがない場合、このメソッドはエラーをスローします。|
 ||[getPreviousOrNullObject (visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|これより前のワークシートを取得します。 前のワークシートがない場合、このメソッドは null の objet を返します。|
@@ -62,5 +62,5 @@ ExcelApi 1.5 カスタム XML パーツを追加します。 これらには、w
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.5)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

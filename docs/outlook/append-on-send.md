@@ -2,14 +2,14 @@
 title: Outlook アドインでの追加-送信を実装する (プレビュー)
 description: Outlook アドインでの追加-送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293990"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430934"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインでの追加-送信を実装する (プレビュー)
 
@@ -28,7 +28,7 @@ ms.locfileid: "47293990"
 
 - CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
 - Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com) に参加する必要がある場合があります。
-- Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)します。
+- Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -182,11 +182,8 @@ Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル web サーバーがまだ実行されていない場合は起動します。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > "サイドロードがサポートされていません" というエラーが表示された場合は、無視して続行できます。
 
 1. 「 [テスト用に Outlook アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)する」の手順に従います。
 

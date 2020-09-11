@@ -4,12 +4,12 @@ description: ExcelApi 1.8 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad8c67fddffeec7937b66d43fb58a8608d662be1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611401"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430836"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 の新機能
 
@@ -33,14 +33,14 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.8 の Api を示します。 Excel JavaScript API 要件セット1.8 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.8 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.8)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.8 の Api を示します。 Excel JavaScript API 要件セット1.8 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.8 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Operator プロパティが GreaterThan などのバイナリ演算子に設定されている場合、右のオペランドを指定します (左のオペランドは、ユーザーがセルに入力しようとした値です)。 三項演算子と NotBetween の間の and notbetween で、下限オペランドを指定します。|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|三項演算子を and NotBetween で指定すると、上限オペランドが指定されます。 は、GreaterThan などの二項演算子では使用されません。|
-||[演算子](/javascript/api/excel/excel.basicdatavalidation#operator)|データの検証に使用する演算子。|
-|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|を参照する Chartsets Labellevel 列挙定数を設定または返します。|
+||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|データの検証に使用する演算子。|
+|[グラフ](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|を参照する Chartsets Labellevel 列挙定数を設定または返します。|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayblanksas)|空白のセルがグラフでプロットされる方法を返すか設定します。 読み取り/書き込み可能。|
 ||[plotBy](/javascript/api/excel/excel.chart#plotby)|グラフ上で列または行がデータ系列として使用される方法を返すか設定します。 読み取り/書き込み可能。|
 ||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotvisibleonly)|true の場合、可視セルだけがプロットされます。false の場合、可視セルと非表示セルの両方がプロットされます。 読み取り/書き込み可能。|
@@ -129,7 +129,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[varyByCategories](/javascript/api/excel/excel.chartseries#varybycategories)|true の場合、Microsoft Excel により、データ マーカーごとに異なる色またはパターンが割り当てられます。 グラフに含まれるデータ系列は 1 つだけでなければなりません。 読み取り/書き込み可能。|
 |[ChartTrendline 曲線](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|近似曲線を後方へ拡張するときの区間数を表します。|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|近似曲線を前方へ拡張するときの区間数を表します。|
-||[付け](/javascript/api/excel/excel.charttrendline#label)|グラフの近似曲線のラベルを表します。|
+||[ラベル](/javascript/api/excel/excel.charttrendline#label)|グラフの近似曲線のラベルを表します。|
 ||[showequ](/javascript/api/excel/excel.charttrendline#showequation)|true の場合、グラフに近似曲線の数式が表示されます。|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|true の場合、グラフに近似曲線の R-2 乗値が表示されます。|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[スパイク](/javascript/api/excel/excel.charttrendlinelabel#autotext)|近似曲線ラベルでコンテキストに基づく適切なテキストを自動的に生成するかどうかを表すブール値。|
@@ -179,13 +179,13 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[配色](/javascript/api/excel/excel.datavalidationrule#custom)|データ検証条件のカスタム数式。|
 ||[date](/javascript/api/excel/excel.datavalidationrule#date)|日付のデータ検証条件。|
 ||[十進](/javascript/api/excel/excel.datavalidationrule#decimal)|10 進数のデータ検証条件。|
-||[list](/javascript/api/excel/excel.datavalidationrule#list)|リストのデータ検証条件。|
+||[リスト](/javascript/api/excel/excel.datavalidationrule#list)|リストのデータ検証条件。|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textlength)|テキスト長のデータ検証条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|時刻のデータ検証条件。|
 ||[整数](/javascript/api/excel/excel.datavalidationrule#wholenumber)|整数のデータ検証条件。|
 |[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|Operator プロパティが GreaterThan などのバイナリ演算子に設定されている場合、右のオペランドを指定します (左のオペランドは、ユーザーがセルに入力しようとした値です)。 三項演算子と NotBetween の間の and notbetween で、下限オペランドを指定します。|
 ||[formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|三項演算子を and NotBetween で指定すると、上限オペランドが指定されます。 は、GreaterThan などの二項演算子では使用されません。|
-||[演算子](/javascript/api/excel/excel.datetimedatavalidation#operator)|データの検証に使用する演算子。|
+||[operator](/javascript/api/excel/excel.datetimedatavalidation#operator)|データの検証に使用する演算子。|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enablemultiplefilteritems)|複数のフィルター項目を許可するかどうかを指定します。|
 ||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|FilterPivotHierarchy の名前。|
 ||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|FilterPivotHierarchy の位置。|
@@ -272,11 +272,11 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[総和](/javascript/api/excel/excel.subtotals#sum)||
 ||[var](/javascript/api/excel/excel.subtotals#variance)||
 ||[varianceP](/javascript/api/excel/excel.subtotals#variancep)||
-|[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyid)|数値 id を返します。|
+|[表](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyid)|数値 id を返します。|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrange-ctx-)|特定のワークシート上のテーブルの変更された領域を表す範囲を取得します。|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrangeornullobject-ctx-)|特定のワークシート上のテーブルの変更された領域を表す範囲を取得します。 null オブジェクトを返すこともあります。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|true の場合、ブックが読み取り専用モードで開かれます。 読み取り専用です。|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|ワークシートが計算されるときに発生します。|
+|[ブック](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|true の場合、ブックが読み取り専用モードで開かれます。 読み取り専用です。|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[ワークシート](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|ワークシートが計算されるときに発生します。|
 ||[ショーの目盛線](/javascript/api/excel/excel.worksheet#showgridlines)|ワークシートの gridlines フラグを取得または設定します。|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showheadings)|ワークシートの headings フラグを取得または設定します。|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
@@ -287,5 +287,5 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.8)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

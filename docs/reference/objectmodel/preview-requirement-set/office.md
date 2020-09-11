@@ -3,12 +3,12 @@ title: Office 名前空間-プレビュー要件セット
 description: メールボックス API プレビュー要件セットを使用した Outlook アドインで使用可能な Office 名前空間メンバー。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 634b8593e1d1a58b61c4a330ed96611903e4a27e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e0f932106df462c7cd172327082992f6e4d9a58
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611611"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431123"
 ---
 # <a name="office-mailbox-preview-requirement-set"></a>Office (メールボックスプレビュー要件セット)
 
@@ -21,24 +21,24 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](../../../outlook/outlook-add-ins-overview.md#extension-points)| 新規作成または閲覧|
 
-##### <a name="properties"></a>Properties
+##### <a name="properties"></a>プロパティ
 
 | プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [context](office.context.md) | 作成<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 作成<br>読み取り | [Context](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ##### <a name="enumerations"></a>列挙型
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 作成<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 作成<br>読み取り | 文字列 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>名前空間
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview):、、、、、など、多数の Outlook 固有の列挙を含み `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` ます。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview&preserve-view=true):、、、、、など、多数の Outlook 固有の列挙を含み `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` ます。
 
 ## <a name="enumeration-details"></a>列挙の詳細
 
@@ -54,7 +54,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Succeeded`| String|呼び出しが成功しました。|
+|`Succeeded`| 文字列|呼び出しが成功しました。|
 |`Failed`| String|呼び出しが失敗しました。|
 
 ##### <a name="requirements"></a>Requirements
@@ -81,7 +81,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Html`| String|HTML 形式で返されるデータを要求します。|
+|`Html`| 文字列|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
 
 ##### <a name="requirements"></a>Requirements
@@ -108,13 +108,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 名前 | 種類 | 説明 | 最小要件セット |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
-|`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
-|`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
-|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`OfficeThemeChanged`| String | メールボックスの Office テーマが変更されました。 | Preview |
-|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
+|`AppointmentTimeChanged`| 文字列 | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
+|`AttachmentsChanged`| 文字列 | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
+|`EnhancedLocationsChanged`| 文字列 | 選択した予定の場所が変更されました。 | 1.8 |
+|`ItemChanged`| 文字列 | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
+|`OfficeThemeChanged`| 文字列 | メールボックスの Office テーマが変更されました。 | Preview |
+|`RecipientsChanged`| 文字列 | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
+|`RecurrenceChanged`| 文字列 | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -140,7 +140,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 種類| 説明|
 |---|---|---|
-|`Body`| String|データのソースは、メッセージの本文です。|
+|`Body`| 文字列|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>Requirements

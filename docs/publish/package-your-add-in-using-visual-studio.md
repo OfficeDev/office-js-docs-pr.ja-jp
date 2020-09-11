@@ -3,12 +3,12 @@ title: Visual Studio を使用してアドインを発行する
 description: Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法。
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 49b8b53b665b887e4f8dba20e085c3350e7711f8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612053"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431186"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを発行する
 
@@ -28,7 +28,7 @@ Visual Studio 2019 を使用して Web プロジェクトを展開するには�
     > [!NOTE]
     > 公開ターゲットを選択すると、展開先のサーバー、サーバーへのログオンに必要な資格情報、展開するデータベース、およびその他の展開オプションが指定されます。
 
-3. 各発行ターゲット オプションの展開手順の詳細については、「[First look at deployment in Visual Studio (Visual Studioでの展開の最初の画面)](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019)」を参照してください。
+3. 各発行ターゲット オプションの展開手順の詳細については、「[First look at deployment in Visual Studio (Visual Studioでの展開の最初の画面)](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true)」を参照してください。
 
 ## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>IIS、FTP、または Visual Studio 2019 を使用したWeb 配置を使用してアドインをパッケージ化して公開するには
 

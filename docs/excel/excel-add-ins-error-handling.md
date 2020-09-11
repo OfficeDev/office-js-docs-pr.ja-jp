@@ -3,12 +3,12 @@ title: エラー処理
 description: ランタイムエラーを考慮した Excel JavaScript API のエラー処理ロジックについて説明します。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: cb06ab890fc10afd327bde0eb708ff97fabbcdca
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408454"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430556"
 ---
 # <a name="error-handling"></a>エラー処理
 
@@ -77,4 +77,4 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 ## <a name="see-also"></a>こちらもご覧ください
 
 - [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
+- [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)

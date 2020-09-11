@@ -4,12 +4,12 @@ description: ExcelApi 1.11 の要件セットの詳細
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ab9fde262640aa243aaf2b88767225505e08b3b7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72353b61925c05e6a9f1c3ff8a2c413f38d5693b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612095"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431557"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Excel JavaScript API 1.11 の新機能
 
@@ -17,8 +17,8 @@ ExcelApi 1.11 は、コメントおよびブックレベルのコントロール
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
-| コメント[メンション](../../excel/excel-add-ins-comments.md#mentions) |コメントを使用して、他のブックユーザーにタグ付けして通知します。 | [Comment](/javascript/api/excel/excel.comment)、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
-| コメント[解決](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | コメントスレッドを解決し、解決状態を取得します。 | [Comment](/javascript/api/excel/excel.comment) |
+| コメント [メンション](../../excel/excel-add-ins-comments.md#mentions) |コメントを使用して、他のブックユーザーにタグ付けして通知します。 | [Comment](/javascript/api/excel/excel.comment)、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
+| コメント [解決](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | コメントスレッドを解決し、解決状態を取得します。 | [コメント](/javascript/api/excel/excel.comment) |
 | [カルチャ設定](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | ブックのカルチャシステム設定 (数値の書式設定など) を取得します。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo)、 [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [Application](/javascript/api/excel/excel.application) |
 | [切り取りと貼り付け (moveTo)](../../excel/excel-add-ins-ranges-advanced.md#cut-copy-and-paste) | Excel の範囲のカットアンドペースト機能をレプリケートします。 | [Range](/javascript/api/excel/excel.range) |
 | ブックを[保存](../../excel/excel-add-ins-workbooks.md#save-the-workbook)して[閉じる](../../excel/excel-add-ins-workbooks.md#close-the-workbook) | ブックを保存して閉じます。 | [Workbook](/javascript/api/excel/excel.workbook) |
@@ -26,7 +26,7 @@ ExcelApi 1.11 は、コメントおよびブックレベルのコントロール
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.11 の Api を示します。 Excel JavaScript API 要件セット1.11 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.11 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.11)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.11 の Api を示します。 Excel JavaScript API 要件セット1.11 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.11 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -34,7 +34,7 @@ ExcelApi 1.11 は、コメントおよびブックレベルのコントロール
 ||[decimalSeparator](/javascript/api/excel/excel.application#decimalseparator)|数値の小数点の記号として使用される文字列を取得します。 これは、Excel のローカル設定に基づいています。|
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsseparator)|数値の小数点の左側にある数字のグループを区切るために使用される文字列を取得します。 これは、Excel のローカル設定に基づいています。|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#usesystemseparators)|Excel のシステム区切り記号を有効にするかどうかを指定します。|
-|[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|コメントに記載されているエンティティ (ユーザーなど) を取得します。|
+|[コメント](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|コメントに記載されているエンティティ (ユーザーなど) を取得します。|
 ||[richContent](/javascript/api/excel/excel.comment#richcontent)|リッチコメントの内容 (コメント内のメンションなど) を取得します。 この文字列は、エンドユーザーに表示されることを意図したものではありません。 アドインでは、リッチコメントコンテンツを解析するためにのみ使用する必要があります。|
 ||[解析](/javascript/api/excel/excel.comment#resolved)|コメントスレッドの状態。 値 "true" は、コメントスレッドが解決されることを意味します。|
 ||[updateMentions (contentWithMentions ション: CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|特別に書式設定された文字列とメンションの一覧を使用して、コメントの内容を更新します。|
@@ -55,9 +55,9 @@ ExcelApi 1.11 は、コメントおよびブックレベルのコントロール
 ||[番号 Groupseparator](/javascript/api/excel/excel.numberformatinfo#numbergroupseparator)|数値の小数点の左側にある数字のグループを区切るために使用される文字列を取得します。 これは、現在のシステム設定に基づいています。|
 |[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange: Range \| string)](/javascript/api/excel/excel.range#moveto-destinationrange-)|セルの値、書式設定、および数式を現在の範囲から移動先の範囲に移動し、そのセルの古い情報を置き換えます。|
 |[範囲の形式](/javascript/api/excel/excel.rangeformat)|[adjustIndent (金額: 数値)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|範囲の書式のインデントを調整します。 [インデント] の値の範囲は 0 ~ 250 で、文字単位です。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|現在のブックを閉じます。|
+|[ブック](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|現在のブックを閉じます。|
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|現在のブックを保存します。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[address](/javascript/api/excel/excel.worksheetcalculatedeventargs#address)|計算を完了した範囲のアドレス。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|特定のワークシートで、1つまたは複数の行の非表示の状態が変更されたときに発生します。|
 |[WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs)|[address](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#address)|特定のワークシートで変更されたエリアを表す範囲のアドレスを取得します。|
@@ -68,5 +68,5 @@ ExcelApi 1.11 は、コメントおよびブックレベルのコントロール
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.11)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)
 - [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

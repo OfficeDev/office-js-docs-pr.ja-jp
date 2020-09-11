@@ -4,12 +4,12 @@ description: WordApi 1.3 要件セットの詳細
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 15ec2129f53d0b408191ceb595f1fe115feb0d1a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6402543ddfb2feaa116de40982dcb61c30c8597b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611296"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430500"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
@@ -17,33 +17,33 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Word JavaScript API 要件セット1.3 の Api を示します。 Word JavaScript API 要件セット1.3 またはそれ以前のバージョンでサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.3 またはそれ以前の Word api](/javascript/api/word?view=word-js-1.3)」を参照してください。
+次の表に、Word JavaScript API 要件セット1.3 の Api を示します。 Word JavaScript API 要件セット1.3 またはそれ以前のバージョンでサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.3 またはそれ以前の Word api](/javascript/api/word?view=word-js-1.3&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[Application](/javascript/api/word/word.application)|[createDocument (base64File?: string)](/javascript/api/word/word.application#createdocument-base64file-)|オプションの base64 でエンコードされた .docx ファイルを使用して、新しいドキュメントを作成します。|
 |[Body](/javascript/api/word/word.body)|[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.body#getrange-rangelocation-)|範囲として、本文全体、あるいは本文の開始点または終了点を取得します。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.body#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 insertLocation の値には、'Start' または 'End' を指定できます。|
-||[lists](/javascript/api/word/word.body#lists)|本文に含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
+||[lists](/javascript/api/word/word.body#lists)|本文に含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用。|
 ||[parentBody](/javascript/api/word/word.body#parentbody)|本文の親の本文を取得します。たとえば、テーブル セル本文の親本文にはヘッダーを指定できます。親本文がない場合は、スローします。読み取り専用。|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#parentbodyornullobject)|本文の親の本文を取得します。たとえば、テーブル セル本文の親本文にはヘッダーを指定できます。親本文がない場合は、null オブジェクトを返します。読み取り専用。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#parentcontentcontrolornullobject)|本文を含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentSection](/javascript/api/word/word.body#parentsection)|本文の親セクションを取得します。 親セクションが存在しない場合にスローされます。 読み取り専用です。|
 ||[parentSectionOrNullObject](/javascript/api/word/word.body#parentsectionornullobject)|本文の親セクションを取得します。 親セクションが存在しない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[テーブル](/javascript/api/word/word.body#tables)|本文に含まれるテーブル オブジェクトのコレクションを取得します。 読み取り専用です。|
-||[type](/javascript/api/word/word.body#type)|本文の種類を取得します。 種類は、'MainDoc'、'Section'、'Header'、'Footer'、または 'TableCell' にできます。 読み取り専用です。|
+||[テーブル](/javascript/api/word/word.body#tables)|本文に含まれるテーブル オブジェクトのコレクションを取得します。 読み取り専用。|
+||[type](/javascript/api/word/word.body#type)|本文の種類を取得します。 種類は、'MainDoc'、'Section'、'Header'、'Footer'、または 'TableCell' にできます。 読み取り専用。|
 ||[styleBuiltIn](/javascript/api/word/word.body#stylebuiltin)|本文の組み込みスタイル名を取得または設定します。ロケール間で移植可能な組み込みスタイルの場合は、このプロパティを使用します。カスタム スタイルまたはローカライズされたスタイルの名前を使用するには、"style" プロパティを参照してください。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.contentcontrol#getrange-rangelocation-)|範囲として、コンテンツ コントロール全体、あるいはコンテンツ コントロールの開始点または終了点を取得します。|
 ||[getTextRanges (endingMarks: string [], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#gettextranges-endingmarks--trimspacing-)|句読点やその他の終了マークを使用して、コンテンツコントロール内のテキスト範囲を取得します。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.contentcontrol#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを、コンテンツ コントロール内またはコンテンツ コントロールの横に挿入します。 InsertLocation の値には、' Start '、' End '、' Before '、または ' After ' を指定できます。|
-||[lists](/javascript/api/word/word.contentcontrol#lists)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
-||[parentBody](/javascript/api/word/word.contentcontrol#parentbody)|コンテンツ コントロールの親の本文を取得します。 読み取り専用です。|
+||[lists](/javascript/api/word/word.contentcontrol#lists)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。 読み取り専用。|
+||[parentBody](/javascript/api/word/word.contentcontrol#parentbody)|コンテンツ コントロールの親の本文を取得します。 読み取り専用。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#parentcontentcontrolornullobject)|コンテンツ コントロールを含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.contentcontrol#parenttable)|コンテンツ コントロールを含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[parentTableCell](/javascript/api/word/word.contentcontrol#parenttablecell)|コンテンツ コントロールを含むテーブル セルを取得します。 テーブルのセルに含まれていない場合は、例外をスローします。 読み取り専用です。|
-||[parentTableCellOrNullObject](/javascript/api/word/word.contentcontrol#parenttablecellornullobject)|コンテンツ コントロールを含むテーブル セルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[parentTableOrNullObject](/javascript/api/word/word.contentcontrol#parenttableornullobject)|コンテンツ コントロールを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[サブ](/javascript/api/word/word.contentcontrol#subtype)|コンテンツ コントロールのサブタイプを取得します。 リッチ テキスト コンテンツ コントロールの場合、サブタイプは、'RichTextInline'、'RichTextParagraphs'、'RichTextTableCell'、'RichTextTableRow' および 'RichTextTable' にできます。 読み取り専用です。|
+||[parentTableCellOrNullObject](/javascript/api/word/word.contentcontrol#parenttablecellornullobject)|コンテンツ コントロールを含むテーブル セルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[parentTableOrNullObject](/javascript/api/word/word.contentcontrol#parenttableornullobject)|コンテンツ コントロールを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[サブ](/javascript/api/word/word.contentcontrol#subtype)|コンテンツ コントロールのサブタイプを取得します。 リッチ テキスト コンテンツ コントロールの場合、サブタイプは、'RichTextInline'、'RichTextParagraphs'、'RichTextTableCell'、'RichTextTableRow' および 'RichTextTable' にできます。 読み取り専用。|
 ||[テーブル](/javascript/api/word/word.contentcontrol#tables)|コンテンツ コントロールに含まれるテーブル オブジェクトのコレクションを取得します。 読み取り専用。|
 ||[split (区切り文字: string [], multiParagraphs?: boolean, trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#split-delimiters--multiparagraphs--trimdelimiters--trimspacing-)|区切り記号を使用して、コンテンツ コントロールを子の範囲に分割します。|
 ||[styleBuiltIn](/javascript/api/word/word.contentcontrol#stylebuiltin)|コンテンツ コントロールの組み込みスタイル名を取得または設定します。ロケール間で移植可能な組み込みスタイルの場合は、このプロパティを使用します。カスタム スタイルまたはローカライズされたスタイルの名前を使用するには、"style" プロパティを参照してください。|
@@ -70,21 +70,21 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[sections](/javascript/api/word/word.documentcreated#sections)|ドキュメント内の section オブジェクトのコレクションを取得します。 読み取り専用です。|
 ||[save()](/javascript/api/word/word.documentcreated#save--)|ドキュメントを保存します。 ここでは、ドキュメントが保存されたことがない場合は、Word の既定のファイルの名前付け規則を使用します。|
 |[DocumentProperties](/javascript/api/word/word.documentproperties)|[判別](/javascript/api/word/word.documentproperties#author)|ドキュメントの作成者を取得または設定します。|
-||[category](/javascript/api/word/word.documentproperties#category)|ドキュメントのカテゴリを取得または設定します。|
+||[項目](/javascript/api/word/word.documentproperties#category)|ドキュメントのカテゴリを取得または設定します。|
 ||[comments](/javascript/api/word/word.documentproperties#comments)|ドキュメントのコメントを取得または設定します。|
 ||[company](/javascript/api/word/word.documentproperties#company)|ドキュメントの会社を取得または設定します。|
 ||[format](/javascript/api/word/word.documentproperties#format)|ドキュメントの書式設定を取得または設定します。|
 ||[キーワード](/javascript/api/word/word.documentproperties#keywords)|ドキュメントのキーワードを取得または設定します。|
 ||[上司](/javascript/api/word/word.documentproperties#manager)|ドキュメントのマネージャーを取得または設定します。|
 ||[applicationName](/javascript/api/word/word.documentproperties#applicationname)|ドキュメントのアプリケーション名を取得します。 読み取り専用です。|
-||[creationDate](/javascript/api/word/word.documentproperties#creationdate)|ドキュメントの作成日を取得します。 読み取り専用です。|
-||[customProperties](/javascript/api/word/word.documentproperties#customproperties)|ドキュメントのカスタム プロパティのコレクションを取得します。 読み取り専用です。|
+||[creationDate](/javascript/api/word/word.documentproperties#creationdate)|ドキュメントの作成日を取得します。 読み取り専用。|
+||[customProperties](/javascript/api/word/word.documentproperties#customproperties)|ドキュメントのカスタム プロパティのコレクションを取得します。 読み取り専用。|
 ||[lastAuthor](/javascript/api/word/word.documentproperties#lastauthor)|ドキュメントの最後の作成者を取得します。 読み取り専用です。|
 ||[lastPrintDate](/javascript/api/word/word.documentproperties#lastprintdate)|ドキュメントを最後に印刷した日を取得します。 読み取り専用。|
 ||[lastSaveTime](/javascript/api/word/word.documentproperties#lastsavetime)|ドキュメントを最後に保存した時刻を取得します。 読み取り専用です。|
-||[revisionNumber](/javascript/api/word/word.documentproperties#revisionnumber)|ドキュメントのリビジョン番号を取得します。 読み取り専用です。|
-||[security](/javascript/api/word/word.documentproperties#security)|ドキュメントのセキュリティを取得します。 読み取り専用です。|
-||[template](/javascript/api/word/word.documentproperties#template)|ドキュメントのテンプレートを取得します。 読み取り専用です。|
+||[revisionNumber](/javascript/api/word/word.documentproperties#revisionnumber)|ドキュメントのリビジョン番号を取得します。 読み取り専用。|
+||[security](/javascript/api/word/word.documentproperties#security)|ドキュメントのセキュリティを取得します。 読み取り専用。|
+||[template](/javascript/api/word/word.documentproperties#template)|ドキュメントのテンプレートを取得します。 読み取り専用。|
 ||[subject](/javascript/api/word/word.documentproperties#subject)|ドキュメントの件名を取得または設定します。|
 ||[title](/javascript/api/word/word.documentproperties#title)|ドキュメントのタイトルを取得または設定します。|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[getNext ()](/javascript/api/word/word.inlinepicture#getnext--)|次のインライン画像を取得します。 このインライン画像が最後にある場合は、例外をスローします。|
@@ -93,8 +93,8 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[parentContentControlOrNullObject](/javascript/api/word/word.inlinepicture#parentcontentcontrolornullobject)|インライン画像を含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.inlinepicture#parenttable)|インライン イメージを含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[parentTableCell](/javascript/api/word/word.inlinepicture#parenttablecell)|インライン イメージを含むテーブルのセルを取得します。 テーブルのセルに含まれていない場合は、例外をスローします。 読み取り専用です。|
-||[parentTableCellOrNullObject](/javascript/api/word/word.inlinepicture#parenttablecellornullobject)|インライン イメージを含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[parentTableOrNullObject](/javascript/api/word/word.inlinepicture#parenttableornullobject)|インライン イメージを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
+||[parentTableCellOrNullObject](/javascript/api/word/word.inlinepicture#parenttablecellornullobject)|インライン イメージを含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[parentTableOrNullObject](/javascript/api/word/word.inlinepicture#parenttableornullobject)|インライン イメージを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
 |[InlinePictureCollection](/javascript/api/word/word.inlinepicturecollection)|[getFirst()](/javascript/api/word/word.inlinepicturecollection#getfirst--)|このコレクション内の最初のインライン イメージを取得します。 このコレクションが空の場合にスローされます。|
 ||[getFirstOrNullObject()](/javascript/api/word/word.inlinepicturecollection#getfirstornullobject--)|このコレクション内の最初のインライン イメージを取得します。 このコレクションが空の場合は、null オブジェクトを返します。|
 |[List](/javascript/api/word/word.list)|[getLevelParagraphs (level: number)](/javascript/api/word/word.list#getlevelparagraphs-level-)|リスト内の指定したレベルで発生する段落を取得します。|
@@ -103,7 +103,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[id](/javascript/api/word/word.list#id)|リストの id を取得します。|
 ||[levelExistences](/javascript/api/word/word.list#levelexistences)|リスト内に 9 つの各レベルが存在するかどうかを確認します。値が true の場合は、レベルが存在することを示します。つまり、そのレベルに少なくとも 1 つのリスト アイテムがあることを意味します。読み取り専用。|
 ||[levelTypes](/javascript/api/word/word.list#leveltypes)|リスト内の 9 レベルのすべての種類を取得します。 各種類は、' Bullet '、' Number '、または ' Picture ' にすることができます。 読み取り専用です。|
-||[paragraphs](/javascript/api/word/word.list#paragraphs)|リスト内の段落を取得します。 読み取り専用です。|
+||[paragraphs](/javascript/api/word/word.list#paragraphs)|リスト内の段落を取得します。 読み取り専用。|
 ||[setLevelAlignment (level: number, alignment: Word. 配置)](/javascript/api/word/word.list#setlevelalignment-level--alignment-)|リスト内の指定したレベルで行頭文字の配置、番号、画像のいずれかを設定します。|
 ||[setLevelBullet (level: number, listBullet: Word. ListBullet, charCode?: number, fontName?: string)](/javascript/api/word/word.list#setlevelbullet-level--listbullet--charcode--fontname-)|リスト内の指定したレベルで行頭文字の書式を設定します。 行頭文字が 'Custom' の場合は、charCode が必要です。|
 ||[setLevelIndents (level: number, textIndent: number, bulletNumberPictureIndent: number)](/javascript/api/word/word.list#setlevelindents-level--textindent--bulletnumberpictureindent-)|リスト内の指定したレベルの 2 つのインデントを設定します。|
@@ -130,19 +130,19 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[getRange (rangeLocation?: Word RangeLocation)](/javascript/api/word/word.paragraph#getrange-rangelocation-)|段落全体、あるいは段落の開始点または終了点を範囲として取得します。|
 ||[getTextRanges (endingMarks: string [], trimSpacing?: boolean)](/javascript/api/word/word.paragraph#gettextranges-endingmarks--trimspacing-)|句読点やその他の終了記号を使用して、段落内のテキスト範囲を取得します。|
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.paragraph#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 insertLocation の値には、'Before' または 'After' を指定できます。|
-||[isLastParagraph](/javascript/api/word/word.paragraph#islastparagraph)|段落がその親の本文内の最後の段落であることを示します。 読み取り専用です。|
-||[isListItem](/javascript/api/word/word.paragraph#islistitem)|段落がリスト アイテムであるかどうかを確認します。 読み取り専用です。|
-||[list](/javascript/api/word/word.paragraph#list)|この段落が属するリストを取得します。 段落がリストに含まれていない場合は、例外をスローします。 読み取り専用です。|
+||[isLastParagraph](/javascript/api/word/word.paragraph#islastparagraph)|段落がその親の本文内の最後の段落であることを示します。 読み取り専用。|
+||[isListItem](/javascript/api/word/word.paragraph#islistitem)|段落がリスト アイテムであるかどうかを確認します。 読み取り専用。|
+||[リスト](/javascript/api/word/word.paragraph#list)|この段落が属するリストを取得します。 段落がリストに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[listItem](/javascript/api/word/word.paragraph#listitem)|段落の ListItem を取得します。 段落がリストに含まれていない場合にスローされます。 読み取り専用です。|
-||[listItemOrNullObject](/javascript/api/word/word.paragraph#listitemornullobject)|段落の ListItem を取得します。 段落がリストの一部でない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[listOrNullObject](/javascript/api/word/word.paragraph#listornullobject)|この段落が属するリストを取得します。 段落がリスト内にない場合は、null オブジェクトを返します。 読み取り専用です。|
+||[listItemOrNullObject](/javascript/api/word/word.paragraph#listitemornullobject)|段落の ListItem を取得します。 段落がリストの一部でない場合は、null オブジェクトを返します。 読み取り専用。|
+||[listOrNullObject](/javascript/api/word/word.paragraph#listornullobject)|この段落が属するリストを取得します。 段落がリスト内にない場合は、null オブジェクトを返します。 読み取り専用。|
 ||[parentBody](/javascript/api/word/word.paragraph#parentbody)|段落の親の本文を取得します。 読み取り専用。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.paragraph#parentcontentcontrolornullobject)|段落を格納しているコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.paragraph#parenttable)|段落を含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[parentTableCell](/javascript/api/word/word.paragraph#parenttablecell)|段落を含むテーブルのセルを取得します。 テーブルのセルに含まれていない場合は、例外をスローします。 読み取り専用です。|
-||[parentTableCellOrNullObject](/javascript/api/word/word.paragraph#parenttablecellornullobject)|段落を含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[parentTableOrNullObject](/javascript/api/word/word.paragraph#parenttableornullobject)|段落を含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[tableNestingLevel](/javascript/api/word/word.paragraph#tablenestinglevel)|段落のテーブルのレベルを取得します。 段落がテーブル内にない場合は、0 を返します。 読み取り専用です。|
+||[parentTableCellOrNullObject](/javascript/api/word/word.paragraph#parenttablecellornullobject)|段落を含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[parentTableOrNullObject](/javascript/api/word/word.paragraph#parenttableornullobject)|段落を含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[tableNestingLevel](/javascript/api/word/word.paragraph#tablenestinglevel)|段落のテーブルのレベルを取得します。 段落がテーブル内にない場合は、0 を返します。 読み取り専用。|
 ||[split (区切り文字: string [], trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.paragraph#split-delimiters--trimdelimiters--trimspacing-)|区切り記号を使用して、段落を子の範囲に分割します。|
 ||[startNewList ()](/javascript/api/word/word.paragraph#startnewlist--)|この段落を含む新しいリストを開始します。 段落が既にリスト アイテムである場合は失敗します。|
 ||[styleBuiltIn](/javascript/api/word/word.paragraph#stylebuiltin)|段落の組み込みスタイル名を取得または設定します。ロケール間で移植可能な組み込みスタイルの場合は、このプロパティを使用します。カスタム スタイルまたはローカライズされたスタイルの名前を使用するには、"style" プロパティを参照してください。|
@@ -162,14 +162,14 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.range#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 insertLocation の値には、'Before' または 'After' を指定できます。|
 ||[intersectWith (範囲: Word)](/javascript/api/word/word.range#intersectwith-range-)|別の範囲とこの範囲の交点として、新しい範囲を返します。 この範囲は変更されません。 2つの範囲が重なっていない場合、または隣接していない場合にスローされます。|
 ||[intersectWithOrNullObject (範囲: Word)](/javascript/api/word/word.range#intersectwithornullobject-range-)|別の範囲とこの範囲の交点として、新しい範囲を返します。 この範囲は変更されません。 2つの範囲が重なっていないか隣接していない場合は、null オブジェクトを返します。|
-||[isEmpty](/javascript/api/word/word.range#isempty)|範囲の長さが 0 であるかどうかを確認します。 読み取り専用です。|
-||[lists](/javascript/api/word/word.range#lists)|範囲内のリスト オブジェクトのコレクションを取得します。 読み取り専用です。|
-||[parentBody](/javascript/api/word/word.range#parentbody)|範囲の親の本文を取得します。 読み取り専用です。|
+||[isEmpty](/javascript/api/word/word.range#isempty)|範囲の長さが 0 であるかどうかを確認します。 読み取り専用。|
+||[lists](/javascript/api/word/word.range#lists)|範囲内のリスト オブジェクトのコレクションを取得します。 読み取り専用。|
+||[parentBody](/javascript/api/word/word.range#parentbody)|範囲の親の本文を取得します。 読み取り専用。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#parentcontentcontrolornullobject)|範囲を格納するコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.range#parenttable)|範囲を含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[parentTableCell](/javascript/api/word/word.range#parenttablecell)|範囲を含むテーブルのセルを取得します。 テーブルのセルに含まれていない場合は、例外をスローします。 読み取り専用です。|
-||[parentTableCellOrNullObject](/javascript/api/word/word.range#parenttablecellornullobject)|範囲を含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[parentTableOrNullObject](/javascript/api/word/word.range#parenttableornullobject)|範囲を含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
+||[parentTableCellOrNullObject](/javascript/api/word/word.range#parenttablecellornullobject)|範囲を含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[parentTableOrNullObject](/javascript/api/word/word.range#parenttableornullobject)|範囲を含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
 ||[テーブル](/javascript/api/word/word.range#tables)|範囲内のテーブル オブジェクトのコレクションを取得します。 読み取り専用。|
 ||[split (区切り文字: string [], multiParagraphs?: boolean, trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.range#split-delimiters--multiparagraphs--trimdelimiters--trimspacing-)|区切り記号を使用して、範囲を子の範囲に分割します。|
 ||[styleBuiltIn](/javascript/api/word/word.range#stylebuiltin)|範囲の組み込みスタイル名を取得または設定します。ロケール間で移植可能な組み込みスタイルの場合は、このプロパティを使用します。カスタム スタイルまたはローカライズされたスタイルの名前を使用するには、"style" プロパティを参照してください。|
@@ -179,7 +179,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[getNextOrNullObject()](/javascript/api/word/word.section#getnextornullobject--)|次のセクションを取得します。 このセクションが最後のセクションの場合は、null オブジェクトを返します。|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[getFirst()](/javascript/api/word/word.sectioncollection#getfirst--)|このコレクション内の最初のセクションを取得します。 このコレクションが空の場合にスローされます。|
 ||[getFirstOrNullObject()](/javascript/api/word/word.sectioncollection#getfirstornullobject--)|このコレクション内の最初のセクションを取得します。 このコレクションが空の場合は、null オブジェクトを返します。|
-|[Table](/javascript/api/word/word.table)|[addColumns (insertLocation: Word InsertLocation, columnCount: number, values?: string [] [])](/javascript/api/word/word.table#addcolumns-insertlocation--columncount--values-)|最初または最後の既存の列をテンプレートとして使用して、テーブルの最初または最後に列を追加します。これは、統一されたテーブルに適用可能です。指定すると、文字列値は新しく挿入された行に設定されます。|
+|[表](/javascript/api/word/word.table)|[addColumns (insertLocation: Word InsertLocation, columnCount: number, values?: string [] [])](/javascript/api/word/word.table#addcolumns-insertlocation--columncount--values-)|最初または最後の既存の列をテンプレートとして使用して、テーブルの最初または最後に列を追加します。これは、統一されたテーブルに適用可能です。指定すると、文字列値は新しく挿入された行に設定されます。|
 ||[addRows (insertLocation: Word. InsertLocation, rowCount: number, values?: string [] [])](/javascript/api/word/word.table#addrows-insertlocation--rowcount--values-)|最初または最後の既存の行をテンプレートとして使用して、テーブルの最初または最後に行を追加します。指定すると、文字列値は新しく挿入された行に設定されます。|
 ||[策定](/javascript/api/word/word.table#alignment)|ページの列に対するテーブルの配置を取得または設定します。 値には、' Left '、' センタリング '、または ' Right ' を指定できます。|
 ||[autoFitWindow ()](/javascript/api/word/word.table#autofitwindow--)|テーブルの列をウィンドウの幅に合わせて自動調整します。|
@@ -203,17 +203,17 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|テーブル内のすべてのセルの水平方向の配置を取得および設定します。 値は、' Left '、' センタリング '、' Right '、または ' ジャスティファイ ' にすることができます。|
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|テーブルにコンテンツ コントロールを挿入します。|
 ||[insertParagraph (paragraphText: string, Insertparagraph: Word. Insertparagraph)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|指定した位置に、段落を挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
-||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 有効な insertLocation の値は、'Before' または 'After' です。|
+||[insertTable (rowCount: number, columnCount: number, Inserttable: Word Inserttable, values?: string [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|指定した数の行と列を含むテーブルを挿入します。 insertLocation の値には、'Before' または 'After' を指定できます。|
 ||[font](/javascript/api/word/word.table#font)|フォントを取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
-||[isUniform](/javascript/api/word/word.table#isuniform)|すべてのテーブル行が均一かどうかを示します。 読み取り専用です。|
-||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|テーブルの入れ子のレベルを取得します。 最上位のテーブルのレベルは、レベル 1 です。 読み取り専用です。|
-||[parentBody](/javascript/api/word/word.table#parentbody)|テーブルの親の本文を取得します。 読み取り専用です。|
+||[isUniform](/javascript/api/word/word.table#isuniform)|すべてのテーブル行が均一かどうかを示します。 読み取り専用。|
+||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|テーブルの入れ子のレベルを取得します。 最上位のテーブルのレベルは、レベル 1 です。 読み取り専用。|
+||[parentBody](/javascript/api/word/word.table#parentbody)|テーブルの親の本文を取得します。 読み取り専用。|
 ||[parentContentControl](/javascript/api/word/word.table#parentcontentcontrol)|テーブルを含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合にスローされます。 読み取り専用です。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.table#parentcontentcontrolornullobject)|テーブルを含むコンテンツ コントロールを取得します。 親コンテンツコントロールがない場合は、null オブジェクトを返します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.table#parenttable)|このテーブルを含むテーブルを取得します。 テーブルに含まれていない場合は、例外をスローします。 読み取り専用です。|
 ||[parentTableCell](/javascript/api/word/word.table#parenttablecell)|このテーブルを含むテーブルのセルを取得します。 テーブルのセルに含まれていない場合は、例外をスローします。 読み取り専用です。|
-||[parentTableCellOrNullObject](/javascript/api/word/word.table#parenttablecellornullobject)|このテーブルを含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
-||[parentTableOrNullObject](/javascript/api/word/word.table#parenttableornullobject)|このテーブルを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用です。|
+||[parentTableCellOrNullObject](/javascript/api/word/word.table#parenttablecellornullobject)|このテーブルを含むテーブルのセルを取得します。 テーブル セルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
+||[parentTableOrNullObject](/javascript/api/word/word.table#parenttableornullobject)|このテーブルを含むテーブルを取得します。 テーブルに含まれていない場合は、null オブジェクトを返します。 読み取り専用。|
 ||[rowCount](/javascript/api/word/word.table#rowcount)|表の行数を取得します。 読み取り専用です。|
 ||[rows](/javascript/api/word/word.table#rows)|すべてのテーブルの行を取得します。 読み取り専用です。|
 ||[テーブル](/javascript/api/word/word.table#tables)|1 レベル深く入れ子にされた子テーブルを取得します。 読み取り専用。|
@@ -244,12 +244,12 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[horizontalAlignment](/javascript/api/word/word.tablecell#horizontalalignment)|セルの水平方向の配置を取得および設定します。 値は、' Left '、' センタリング '、' Right '、または ' ジャスティファイ ' にすることができます。|
 ||[insertColumns (Insertcolumns: Word Insertcolumns, columnCount: number, values?: string [] [])](/javascript/api/word/word.tablecell#insertcolumns-insertlocation--columncount--values-)|セルの列をテンプレートとして使用して、列をセルの左または右に追加します。これは、統一されたテーブルに適用可能です。指定すると、文字列値は新しく挿入された行に設定されます。|
 ||[insertRows (Insertrows: Word Insertrows, rowCount: number, values?: string [] [])](/javascript/api/word/word.tablecell#insertrows-insertlocation--rowcount--values-)|セルの行をテンプレートとして使用して、行をセルの上または下に挿入します。指定すると、文字列値は新しく挿入された行に設定されます。|
-||[body](/javascript/api/word/word.tablecell#body)|セルの本文オブジェクトを取得します。 読み取り専用です。|
+||[body](/javascript/api/word/word.tablecell#body)|セルの本文オブジェクトを取得します。 読み取り専用。|
 ||[cellIndex](/javascript/api/word/word.tablecell#cellindex)|その行のセルのインデックスを取得します。 読み取り専用です。|
 ||[parentRow](/javascript/api/word/word.tablecell#parentrow)|セルの親行を取得します。 読み取り専用です。|
 ||[parentTable](/javascript/api/word/word.tablecell#parenttable)|セルの親テーブルを取得します。 読み取り専用。|
 ||[rowIndex](/javascript/api/word/word.tablecell#rowindex)|テーブルのセル行のインデックスを取得します。 読み取り専用です。|
-||[width](/javascript/api/word/word.tablecell#width)|セルの幅をポイント単位で取得します。 読み取り専用です。|
+||[width](/javascript/api/word/word.tablecell#width)|セルの幅をポイント単位で取得します。 読み取り専用。|
 ||[setCellPadding (cellPaddingLocation: CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.tablecell#setcellpadding-cellpaddinglocation--cellpadding-)|セル内のスペースをポイント単位で設定します。|
 ||[shadingColor](/javascript/api/word/word.tablecell#shadingcolor)|セルの網かけの色を取得または設定します。 色は、"#RRGGBB" 形式で指定するか、色の名前を使用して指定します。|
 ||[value](/javascript/api/word/word.tablecell#value)|セルのテキストを取得および設定します。|
@@ -270,7 +270,7 @@ WordApi 1.3 コンテンツコントロール、カスタム XML、およびド�
 ||[insertRows (Insertrows: Word Insertrows, rowCount: number, values?: string [] [])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|この行をテンプレートとして使用して、行を挿入します。 値を指定すると、新しい行に値を挿入します。|
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|適切な行の高さをポイント単位で取得および設定します。|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|行のセルの数を取得します。 読み取り専用です。|
-||[cells](/javascript/api/word/word.tablerow#cells)|セルを取得します。 読み取り専用です。|
+||[cells](/javascript/api/word/word.tablerow#cells)|セルを取得します。 読み取り専用。|
 ||[font](/javascript/api/word/word.tablerow#font)|フォントを取得します。 これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。 読み取り専用です。|
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|行がヘッダー行であるかどうかを確認します。 読み取り専用。 ヘッダー行の数を設定するには、テーブル オブジェクトの HeaderRowCount を使用します。|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|親テーブルを取得します。 読み取り専用。|

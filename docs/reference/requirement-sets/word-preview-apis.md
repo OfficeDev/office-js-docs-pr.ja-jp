@@ -4,12 +4,12 @@ description: 今後の Word JavaScript Api の詳細
 ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: bde7ff45c8352277b9aec38ecccb41333544172a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 90d60e1a6ef24907af7b0bff14fa43ee5c312beb
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611275"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430521"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー Api
 
@@ -19,7 +19,7 @@ ms.locfileid: "44611275"
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、現在プレビュー中の Word JavaScript Api を示します。 すべての Word JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストを表示するには、「[すべての Word Javascript api](/javascript/api/word?view=word-js-preview)」を参照してください。
+次の表に、現在プレビュー中の Word JavaScript Api を示します。 すべての Word JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストを表示するには、「 [すべての Word Javascript api](/javascript/api/word?view=word-js-preview&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -79,7 +79,7 @@ ms.locfileid: "44611275"
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|キーによって設定オブジェクトを取得します。大文字と小文字が区別されます。 設定が存在しない場合にスローされます。|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|キーによって設定オブジェクトを取得します。大文字と小文字が区別されます。 設定が存在しない場合は、null オブジェクトを返します。|
 ||[items](/javascript/api/word/word.settingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Table](/javascript/api/word/word.table)|[mergeCells (topRow: number, firstCell: number, 下端行: 数値, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|最初と最後のセルによって制限されたセルを結合します。|
+|[表](/javascript/api/word/word.table)|[mergeCells (topRow: number, firstCell: number, 下端行: 数値, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|最初と最後のセルによって制限されたセルを結合します。|
 |[TableCell](/javascript/api/word/word.tablecell)|[split (rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|指定された行数と列数にセルを分割します。|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|行にコンテンツコントロールを挿入します。|
 ||[merge ()](/javascript/api/word/word.tablerow#merge--)|1つのセルに行を結合します。|

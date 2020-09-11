@@ -4,12 +4,12 @@ description: ExcelApi 1.6 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f86a470d39bacfe4940a6c225b9ce7d8903e2092
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ea54b825c3d5eff71a3355c3d313feb355d3c892
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611415"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430843"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -32,7 +32,7 @@ ms.locfileid: "44611415"
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.6 の Api を示します。 Excel JavaScript API 要件セット1.6 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.6 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.6)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.6 の Api を示します。 Excel JavaScript API 要件セット1.6 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.6 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -43,7 +43,7 @@ ms.locfileid: "44611415"
 ||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threecolorscale)|True の場合、カラースケールには3つのポイント (最小、中点、最大) が設定されます。それ以外の場合は、2つ (最小、最大) が設定されます。|
 |[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)|[formula1](/javascript/api/excel/excel.conditionalcellvaluerule#formula1)|条件付き書式ルールを評価するために必要な場合、数式。|
 ||[formula2](/javascript/api/excel/excel.conditionalcellvaluerule#formula2)|条件付き書式ルールを評価するために必要な場合、数式。|
-||[演算子](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|テキスト条件付き書式の演算子を指定します。|
+||[operator](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|テキスト条件付き書式の演算子を指定します。|
 |[ConditionalColorScaleCriteria](/javascript/api/excel/excel.conditionalcolorscalecriteria)|[maximum](/javascript/api/excel/excel.conditionalcolorscalecriteria#maximum)|最大ポイントのカラー スケール条件。|
 ||[地点](/javascript/api/excel/excel.conditionalcolorscalecriteria#midpoint)|カラー スケールが 3 色スケールの場合のカラー スケール条件の中間値。|
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#minimum)|最小ポイントのカラー スケール条件。|
@@ -93,7 +93,7 @@ ms.locfileid: "44611415"
 ||[formulaR1C1](/javascript/api/excel/excel.conditionalformatrule#formular1c1)|R1C1 形式の表記法で条件付き書式ルールを評価するために必要な場合、数式。|
 |[ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion)|[customIcon](/javascript/api/excel/excel.conditionaliconcriterion#customicon)|既定の IconSet と異なる場合は現在の条件のカスタム アイコン、そうでない場合は null が返されます。|
 ||[formula](/javascript/api/excel/excel.conditionaliconcriterion#formula)|種類によっては数値または数式。|
-||[演算子](/javascript/api/excel/excel.conditionaliconcriterion#operator)|アイコンの条件付き書式のルールの種類ごとに、GreaterThan または GreaterThanOrEqual。|
+||[operator](/javascript/api/excel/excel.conditionaliconcriterion#operator)|アイコンの条件付き書式のルールの種類ごとに、GreaterThan または GreaterThanOrEqual。|
 ||[type](/javascript/api/excel/excel.conditionaliconcriterion#type)|アイコンの条件式は次のものに基づいています。|
 |[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule)|[条件](/javascript/api/excel/excel.conditionalpresetcriteriarule#criterion)|条件付き書式の条件を指定します。|
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|枠線の色を表す HTML カラー コード。形式は #RRGGBB (例: "FFA500")、または名前付きの HTML 色 (例: "オレンジ") です。|
@@ -119,7 +119,7 @@ ms.locfileid: "44611415"
 ||[borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|条件付き書式の範囲全体に適用される border オブジェクトのコレクションです。 読み取り専用です。|
 ||[fill](/javascript/api/excel/excel.conditionalrangeformat#fill)|条件付き書式の範囲全体で定義される fill オブジェクトを返します。 読み取り専用です。|
 ||[font](/javascript/api/excel/excel.conditionalrangeformat#font)|条件付き書式の範囲全体で定義される font オブジェクトを返します。 読み取り専用です。|
-|[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[演算子](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|テキスト条件付き書式の演算子を指定します。|
+|[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[operator](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|テキスト条件付き書式の演算子を指定します。|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|条件付き書式のテキスト値。|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[Rank](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|数値のランクに対する 1 から 1000、またはパーセントのランクに対する 1 から 100 のランク。|
 ||[type](/javascript/api/excel/excel.conditionaltopbottomrule#type)|上位または下位のランクに基づいて値を書式設定します。|
@@ -145,9 +145,9 @@ ms.locfileid: "44611415"
 ||[除外](/javascript/api/excel/excel.textconditionalformat#rule)|条件付き書式のルール。|
 |[TopBottomConditionalFormat](/javascript/api/excel/excel.topbottomconditionalformat)|[format](/javascript/api/excel/excel.topbottomconditionalformat#format)|書式設定オブジェクトを返し、条件付き書式のフォント、塗りつぶし、罫線などのプロパティをカプセル化します。 読み取り専用です。|
 ||[除外](/javascript/api/excel/excel.topbottomconditionalformat#rule)|上位/下位条件付き書式の条件を指定します。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[calculate (markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|ワークシート上のすべてのセルを計算します。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[calculate (markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|ワークシート上のすべてのセルを計算します。|
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.6)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

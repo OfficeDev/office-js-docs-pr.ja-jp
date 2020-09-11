@@ -4,12 +4,12 @@ description: ExcelApi 1.7 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6fc4164f233c0b1603f4b5231ed860442920c538
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611408"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430864"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -65,11 +65,11 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.7 の Api を示します。 Excel JavaScript API 要件セット1.7 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.7 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.7)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.7 の Api を示します。 Excel JavaScript API 要件セット1.7 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.7 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
-|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|グラフの種類を表します。 詳細については、「ChartType」を参照してください。|
+|[グラフ](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|グラフの種類を表します。 詳細については、「ChartType」を参照してください。|
 ||[id](/javascript/api/excel/excel.chart#id)|グラフの一意の ID。 読み取り専用です。|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showallfieldbuttons)|ピボットグラフにすべてのフィールド ボタンを表示するかどうかを示します。|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[罫線](/javascript/api/excel/excel.chartareaformat#border)|グラフエリアの罫線の書式を表します。これには、色、linestyle、およびウエイトが含まれます。 読み取り専用です。|
@@ -185,7 +185,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[name](/javascript/api/excel/excel.charttrendline#name)|近似曲線の名前を表します。 文字列値または null 値 (値を自動的に設定する場合) に設定できます。 戻り値は常に文字列です。|
 ||[polynomialOrder](/javascript/api/excel/excel.charttrendline#polynomialorder)|グラフの近似曲線の順序を表します。 多項式型の近似曲線にのみ適用されます。|
 ||[format](/javascript/api/excel/excel.charttrendline#format)|グラフの近似曲線の書式設定を表します。|
-||[付け](/javascript/api/excel/excel.charttrendline#label)|グラフの近似曲線のラベルを表します。|
+||[ラベル](/javascript/api/excel/excel.charttrendline#label)|グラフの近似曲線のラベルを表します。|
 ||[showequ](/javascript/api/excel/excel.charttrendline#showequation)|true の場合、グラフに近似曲線の数式が表示されます。|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|true の場合、グラフに近似曲線の R-2 乗値が表示されます。|
 ||[type](/javascript/api/excel/excel.charttrendline#type)|グラフの近似曲線の種類を表します。|
@@ -206,7 +206,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[items](/javascript/api/excel/excel.custompropertycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[DataConnectionCollection](/javascript/api/excel/excel.dataconnectioncollection)|[refreshAll ()](/javascript/api/excel/excel.dataconnectioncollection#refreshall--)|コレクションに含まれるすべてのデータ接続を更新します。|
 |[DocumentProperties](/javascript/api/excel/excel.documentproperties)|[判別](/javascript/api/excel/excel.documentproperties#author)|ブックの作成者を取得または設定します。|
-||[category](/javascript/api/excel/excel.documentproperties#category)|ブックのカテゴリを取得または設定します。|
+||[項目](/javascript/api/excel/excel.documentproperties#category)|ブックのカテゴリを取得または設定します。|
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|ブックのコメントを取得または設定します。|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|ブックの会社を取得または設定します。|
 ||[キーワード](/javascript/api/excel/excel.documentproperties#keywords)|ブックのキーワードを取得または設定します。|
@@ -264,7 +264,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[add(name: string)](/javascript/api/excel/excel.stylecollection#add-name-)|コレクションに新しいスタイルを追加します。|
 ||[getItem(name: string)](/javascript/api/excel/excel.stylecollection#getitem-name-)|名前に基づいてスタイルを取得します。|
 ||[items](/javascript/api/excel/excel.stylecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Table](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onchanged)|特定の表で、セル内のデータが変更されたときに発生します。|
+|[表](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onchanged)|特定の表で、セル内のデータが変更されたときに発生します。|
 ||[onSelectionChanged](/javascript/api/excel/excel.table#onselectionchanged)|特定の表で選択範囲が変更されたときに発生します。|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[address](/javascript/api/excel/excel.tablechangedeventargs#address)|特定のワークシート上のテーブル内で変更されたエリアを表すアドレスを取得します。|
 ||[changeType](/javascript/api/excel/excel.tablechangedeventargs#changetype)|Changed イベントがトリガーされる方法を表す変更の種類を取得します。 詳細については、「DataChangeType」を参照してください。|
@@ -280,7 +280,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableid)|選択範囲が変更されたテーブルの ID を取得します。|
 ||[type](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。 読み取り専用です。|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetid)|選択範囲が変更されたワークシートの ID を取得します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|ブックで現在アクティブなセルを取得します。|
+|[ブック](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|ブックで現在アクティブなセルを取得します。|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataconnections)|ブック内のすべてのデータ接続を表します。 読み取り専用です。|
 ||[name](/javascript/api/excel/excel.workbook#name)|ブックの名前を取得します。 読み取り専用です。|
 ||[プロパティ](/javascript/api/excel/excel.workbook#properties)|ブックのプロパティを取得します。 読み取り専用です。|
@@ -289,7 +289,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect (password?: string)](/javascript/api/excel/excel.workbookprotection#protect-password-)|ブックを保護します。 ブックが保護されている場合は失敗します。|
 ||[protected](/javascript/api/excel/excel.workbookprotection#protected)|ブックが保護されているかどうかを示します。 読み取り専用です。|
 ||[保護の解除 (password?: string)](/javascript/api/excel/excel.workbookprotection#unprotect-password-)|ブックの保護を解除します。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy (positionType?: Excel. ワークシートの種類, relativeTo?: Excel)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|ワークシートをコピーして、指定した位置に配置します。 コピーしたワークシートを返します。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[copy (positionType?: Excel. ワークシートの種類, relativeTo?: Excel)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|ワークシートをコピーして、指定した位置に配置します。 コピーしたワークシートを返します。|
 ||[getRangeByIndexes (startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getrangebyindexes-startrow--startcolumn--rowcount--columncount-)|特定の行インデックスと列インデックスから開始し、一定数の行と列にわたる、Range オブジェクトを取得します。|
 ||[Freezepanes プロパティが](/javascript/api/excel/excel.worksheet#freezepanes)|ワークシート上の固定されたウィンドウを操作するために使用できるオブジェクトを取得します。 読み取り専用です。|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onactivated)|ワークシートがアクティブになるときに発生します。|
@@ -336,5 +336,5 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.7)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

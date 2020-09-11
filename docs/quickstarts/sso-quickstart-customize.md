@@ -1,15 +1,15 @@
 ---
 title: Node.js SSO が有効なアドインをカスタマイズする
 description: '[ごみ箱] ジェネレーターを使用して作成した SSO が有効なアドインのカスタマイズについて説明します。'
-ms.date: 07/07/2020
+ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 41644ce28040f96ff2e4a22cac33ef2d45f1dc81
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294305"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430997"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -101,7 +101,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
     b. `QUERY_PARAM_SEGMENT=`を次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
+    c.  `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
 
 2. **./manifest.xml**で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を見つけて行に置き換え `<Scope>Files.Read.All</Scope>` ます。
 
@@ -608,10 +608,10 @@ Outlook アドインを試すには、次の手順を実行します。
 1. プロジェクトのルートフォルダーで、次のコマンドを実行してプロジェクトをビルドし、ローカル web サーバーを開始します。
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンドプロンプトまたはターミナルを実行する必要がある場合もあります。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
 
 2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 アプリの [SSO を構成](sso-quickstart.md#configure-sso) する際に Azure への接続に使用した microsoft 365 管理者アカウントと同じ microsoft 365 組織のメンバーであるユーザーを使用して、Outlook にサインインしていることを確認してください。 これにより、SSO を正常に実行するための適切な条件が確立されます。 

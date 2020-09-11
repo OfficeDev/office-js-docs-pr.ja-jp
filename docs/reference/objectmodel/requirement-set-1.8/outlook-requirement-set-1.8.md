@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.8
 description: Outlook アドイン API の要件セット1.8
 ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: b0ccf50d93c94787d9e8349324c7cc3705d9223d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6da1de2529f48fa15d93846d4afcca0718b81165
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612172"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431536"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -24,16 +24,16 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ### <a name="change-log"></a>変更ログ
 
-- [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8) が追加されました: 添付ファイルのコンテンツを表す新しいオブジェクトを追加します。
-- [Attachmentdetails](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8)の追加: 新規作成モードの添付ファイルの詳細を表す新しいオブジェクトを追加します。
-- [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8) が追加されました: 項目カテゴリを表す新しいオブジェクトを追加します。
-- [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8) が追加されました: カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトを追加します。
-- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8) が追加されました: 予定の場所のセットを表す新しいオブジェクトを追加します。
-- [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトを追加します。 新規作成モードのみです。
-- [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8) が追加されました: 場所を表す新しいオブジェクトを追加します。 読み取り専用です。
-- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8) が追加されました: 場所の ID を表す新しいオブジェクトを追加します。
-- [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいオブジェクトを追加します。
-- [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8) が追加されました: 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。
+- [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true) が追加されました: 添付ファイルのコンテンツを表す新しいオブジェクトを追加します。
+- [Attachmentdetails](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)の追加: 新規作成モードの添付ファイルの詳細を表す新しいオブジェクトを追加します。
+- [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true) が追加されました: 項目カテゴリを表す新しいオブジェクトを追加します。
+- [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true) が追加されました: カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトを追加します。
+- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true) が追加されました: 予定の場所のセットを表す新しいオブジェクトを追加します。
+- [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8&preserve-view=true) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトを追加します。 新規作成モードのみです。
+- [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所を表す新しいオブジェクトを追加します。 読み取り専用です。
+- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所の ID を表す新しいオブジェクトを追加します。
+- [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいオブジェクトを追加します。
+- [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true) が追加されました: 共有フォルダー、予定表、メールボックスの中の予定やメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。
 - [SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md) が追加されました: [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素を追加します。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 - [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいプロパティを追加します。
 - [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties) が追加されました: アイテムのカテゴリのセットを表す新しいプロパティを追加します。
@@ -46,11 +46,11 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 - [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods) が追加されました: 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法を追加します。
 - [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティを追加します。 新規作成モードのみです。
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) が変更されました: 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション `options` パラメーターを追加します 。 この値は、イベントの実行をキャンセルするために使用されます。
-- [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8) が追加されました: 添付ファイルのコンテンツに適用される書式を特定する新しい列挙型を追加します。
-- [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8) が追加されました: アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型を追加します。
-- [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8) が追加されました: カテゴリに関連付ける使用可能な色を指定する新しい列挙を追加します。
-- [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions?view=outlook-js-1.8) が追加されました: 代理人のアクセス権を指定する新しいビット フラグ列挙型を追加します。
-- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype?view=outlook-js-1.8) が追加されました: 予定の場所の種類を指定する新しい列挙型を追加します。
+- [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true) が追加されました: 添付ファイルのコンテンツに適用される書式を特定する新しい列挙型を追加します。
+- [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true) が追加されました: アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型を追加します。
+- [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true) が追加されました: カテゴリに関連付ける使用可能な色を指定する新しい列挙を追加します。
+- [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions?view=outlook-js-1.8&preserve-view=true) が追加されました: 代理人のアクセス権を指定する新しいビット フラグ列挙型を追加します。
+- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype?view=outlook-js-1.8&preserve-view=true) が追加されました: 予定の場所の種類を指定する新しい列挙型を追加します。
 - [Office.EventType](/javascript/api/office/office.eventtype) が変更されました: `AttachmentsChanged` と `EnhancedLocationsChanged` のイベントにサポートを追加します。
 
 ## <a name="see-also"></a>関連項目

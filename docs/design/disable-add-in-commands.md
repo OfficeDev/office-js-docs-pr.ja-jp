@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: fac62b20dc67db591ba2de73f96526b8a3dfdf9e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292975"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430416"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -23,7 +23,7 @@ ms.locfileid: "47292975"
 
 ## <a name="office-application-and-platform-support-only"></a>Office アプリケーションとプラットフォームのサポートのみ
 
-この記事に記載されている Api は、Excel でのみ使用できます。また、Windows および Office on Mac 上の Office でのみ利用できます。
+この記事に記載されている Api は、Excel でのみ使用でき、Windows および Mac 上の Office でのみ使用できます。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
@@ -77,7 +77,7 @@ Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-a
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
 1. マニフェストで指定された ID でコマンドとその親タブを指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成し、コマンドの状態を有効か無効かに指定します。
-2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-) メソッドに渡します。
+2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) メソッドに渡します。
 
 次に簡単な例を示します。 "MyButton" と "OfficeAddinTab1" はマニフェストからコピーされます。
 
@@ -204,7 +204,7 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 API を有効化/無効化するには、次の要件セットをサポートしている必要があります。
 

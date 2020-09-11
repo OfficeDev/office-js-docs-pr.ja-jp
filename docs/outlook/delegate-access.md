@@ -3,19 +3,19 @@ title: Outlook アドインで代理人アクセスのシナリオを有効に�
 description: 代理人アクセスについて簡単に説明し、アドインサポートを構成する方法について説明します。
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 965798995638c9ec518d1e69ed23763d845fb7ec
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363829"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430983"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Outlook アドインで代理人アクセスのシナリオを有効にする
 
 メールボックスの所有者は代理人アクセス機能を使用して、 [他のユーザーが自分のメールと予定表を管理できるよう](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)にすることができます。 この記事では、Office JavaScript API でサポートされている代理人アクセス許可を指定し、Outlook アドインで代理人アクセスのシナリオを有効にする方法について説明します。
 
 > [!IMPORTANT]
-> 代理人アクセスは、Android および iOS の Outlook では現在使用できません。 また、この機能は、web 上の Outlook の [グループ共有メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) では現在使用できません。 この機能は、今後利用可能になる可能性があります。
+> 代理人アクセスは、Android および iOS の Outlook では現在使用できません。 また、この機能は、web 上の Outlook の [グループ共有メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) では現在使用できません。 この機能は、今後利用可能になる可能性があります。
 >
 > この機能のサポートは、要件セット1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
@@ -140,7 +140,7 @@ function performOperation() {
 > [!TIP]
 > 代理人は、REST を使用して、 [outlook アイテムまたはグループ投稿に添付されている outlook メッセージのコンテンツを取得](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 - [自分のメールと予定表の管理を他のユーザーに許可する](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Office365 での予定表の共有](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)

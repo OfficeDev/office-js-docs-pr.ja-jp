@@ -4,12 +4,12 @@ description: ExcelApi 1.1 の要件セットの詳細
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 815b90b18135be22632c39a9824f862149852a84
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612109"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430920"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Excel JavaScript API 要件セット1.1
 
@@ -17,7 +17,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.1 の Api を示します。 Excel JavaScript API 要件セット1.1 でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.1 の Excel api](/javascript/api/excel?view=excel-js-1.1)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.1 の Api を示します。 Excel JavaScript API 要件セット1.1 でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.1 の Excel api](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -26,54 +26,54 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 |[Binding](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getrange--)|バインディングによって表される範囲を返します。バインドが正しい型ではない場合、エラーがスローされます。|
 ||[getTable()](/javascript/api/excel/excel.binding#gettable--)|バインドによって表されるテーブルを返します。バインドが正しい型ではない場合、エラーがスローされます。|
 ||[getText()](/javascript/api/excel/excel.binding#gettext--)|バインドによって表されるテキストを返します。 バインドが正しい型ではない場合、エラーがスローされます。|
-||[id](/javascript/api/excel/excel.binding#id)|バインド識別子を表します。 読み取り専用。|
+||[id](/javascript/api/excel/excel.binding#id)|バインド識別子を表します。 読み取り専用です。|
 ||[type](/javascript/api/excel/excel.binding#type)|バインドの種類を返します。 詳細については、「Excel. BindingType」を参照してください。 読み取り専用です。|
 |[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[getItem(id: string)](/javascript/api/excel/excel.bindingcollection#getitem-id-)|ID によってバインド オブジェクトを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getitemat-index-)|項目の配列内の位置に基づいて、バインド オブジェクトを取得します。|
-||[count](/javascript/api/excel/excel.bindingcollection#count)|コレクション内にあるバインドの数を取得します。 読み取り専用です。|
+||[count](/javascript/api/excel/excel.bindingcollection#count)|コレクション内にあるバインドの数を取得します。 値の取得のみ可能です。|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|グラフ オブジェクトを削除します。|
+|[グラフ](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|グラフ オブジェクトを削除します。|
 ||[height](/javascript/api/excel/excel.chart#height)|グラフ オブジェクトの高さをポイント単位で表します。|
 ||[left](/javascript/api/excel/excel.chart#left)|グラフの左側からワークシートの原点までの距離 (ポイント単位)。|
 ||[name](/javascript/api/excel/excel.chart#name)|グラフ オブジェクトの名前を表します。|
-||[直交](/javascript/api/excel/excel.chart#axes)|グラフの軸を表します。 読み取り専用です。|
-||[dataLabels](/javascript/api/excel/excel.chart#datalabels)|グラフのデータラベルを表します。 読み取り専用です。|
-||[format](/javascript/api/excel/excel.chart#format)|グラフ領域の書式設定プロパティをカプセル化します。 読み取り専用です。|
-||[まつわる](/javascript/api/excel/excel.chart#legend)|グラフの凡例を表します。 読み取り専用です。|
-||[series](/javascript/api/excel/excel.chart#series)|グラフの 1 つのデータ系列またはデータ系列のコレクションを表します。 読み取り専用です。|
+||[axes](/javascript/api/excel/excel.chart#axes)|グラフの軸を表します。 値の取得のみ可能です。|
+||[dataLabels](/javascript/api/excel/excel.chart#datalabels)|グラフのデータラベルを表します。 値の取得のみ可能です。|
+||[format](/javascript/api/excel/excel.chart#format)|グラフ領域の書式設定プロパティをカプセル化します。 値の取得のみ可能です。|
+||[legend](/javascript/api/excel/excel.chart#legend)|グラフの凡例を表します。 値の取得のみ可能です。|
+||[series](/javascript/api/excel/excel.chart#series)|グラフの 1 つのデータ系列またはデータ系列のコレクションを表します。 値の取得のみ可能です。|
 ||[title](/javascript/api/excel/excel.chart#title)|指定したグラフのタイトル (タイトルのテキスト、表示/非表示、位置、書式設定など) を表します。 読み取り専用です。|
 ||[setData (sourceData: Range、系列 By?: Excel. Chart系列 By)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|グラフの元データをリセットします。|
 ||[setPosition (startCell: Range \| string, endcell?: 範囲 \| 文字列)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|ワークシート上のセルを基準にしてグラフを配置します。|
 ||[top](/javascript/api/excel/excel.chart#top)|オブジェクトの上端から (ワークシートの) 1 行目の上部または (グラフの) グラフ領域の上部までの距離をポイント単位で表します。|
 ||[width](/javascript/api/excel/excel.chart#width)|グラフ オブジェクトの幅をポイント単位で表します。|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 読み取り専用です。|
-||[font](/javascript/api/excel/excel.chartareaformat#font)|現在のオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。 読み取り専用です。|
-|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[categoryAxis](/javascript/api/excel/excel.chartaxes#categoryaxis)|グラフの項目軸を表します。 読み取り専用です。|
-||[系列軸](/javascript/api/excel/excel.chartaxes#seriesaxis)|3 次元グラフの系列軸を表します。 読み取り専用です。|
-||[数値軸](/javascript/api/excel/excel.chartaxes#valueaxis)|軸の数値軸を表します。 読み取り専用です。|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 値の取得のみ可能です。|
+||[font](/javascript/api/excel/excel.chartareaformat#font)|現在のオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
+|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[categoryAxis](/javascript/api/excel/excel.chartaxes#categoryaxis)|グラフの項目軸を表します。 値の取得のみ可能です。|
+||[系列軸](/javascript/api/excel/excel.chartaxes#seriesaxis)|3 次元グラフの系列軸を表します。 値の取得のみ可能です。|
+||[数値軸](/javascript/api/excel/excel.chartaxes#valueaxis)|軸の数値軸を表します。 値の取得のみ可能です。|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[majorUnit](/javascript/api/excel/excel.chartaxis#majorunit)|2 つの大きい目盛の間隔を表します。数値の値または空の文字列を設定できます。戻り値は常に数値です。|
 ||[maximum](/javascript/api/excel/excel.chartaxis#maximum)|数値軸の最大値を表します。数値の値または空の文字列を設定できます (軸の値が自動の場合)。戻り値は常に数値です。|
 ||[minimum](/javascript/api/excel/excel.chartaxis#minimum)|数値軸の最小値を表します。数値の値または空の文字列を設定できます (軸の値が自動の場合)。戻り値は常に数値です。|
 ||[minorUnit](/javascript/api/excel/excel.chartaxis#minorunit)|2 つの小さい目盛の間隔を表します。 数値の値または空の文字列を設定できます (軸の値が自動の場合)。 戻り値は常に数値です。|
 ||[format](/javascript/api/excel/excel.chartaxis#format)|グラフオブジェクトの書式を表します。これには、行とフォントの書式設定が含まれます。 読み取り専用です。|
 ||[majorGridlines](/javascript/api/excel/excel.chartaxis#majorgridlines)|指定された軸の大きい目盛線を表す Gridlines オブジェクトを返します。 値の取得のみ可能です。|
-||[minorGridlines](/javascript/api/excel/excel.chartaxis#minorgridlines)|指定された軸の小さい目盛線を表す gridlines オブジェクトを返します。 読み取り専用です。|
-||[title](/javascript/api/excel/excel.chartaxis#title)|軸タイトルを表します。 読み取り専用です。|
-|[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[font](/javascript/api/excel/excel.chartaxisformat#font)|グラフ軸要素のフォント属性 (フォント名、フォント サイズ、色など) を表します。 読み取り専用です。|
-||[line](/javascript/api/excel/excel.chartaxisformat#line)|グラフの線の書式設定を表します。 読み取り専用です。|
+||[minorGridlines](/javascript/api/excel/excel.chartaxis#minorgridlines)|指定された軸の小さい目盛線を表す gridlines オブジェクトを返します。 値の取得のみ可能です。|
+||[title](/javascript/api/excel/excel.chartaxis#title)|軸タイトルを表します。 値の取得のみ可能です。|
+|[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[font](/javascript/api/excel/excel.chartaxisformat#font)|グラフ軸要素のフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
+||[line](/javascript/api/excel/excel.chartaxisformat#line)|グラフの線の書式設定を表します。 値の取得のみ可能です。|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[format](/javascript/api/excel/excel.chartaxistitle#format)|グラフ軸のタイトルの書式設定を表します。 読み取り専用です。|
 ||[text](/javascript/api/excel/excel.chartaxistitle#text)|軸タイトルを表します。|
 ||[visible](/javascript/api/excel/excel.chartaxistitle#visible)|軸のタイトルの表示/非表示を指定するブール型の値です。|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[font](/javascript/api/excel/excel.chartaxistitleformat#font)|グラフの軸タイトルのオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。 読み取り専用です。|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[font](/javascript/api/excel/excel.chartaxistitleformat#font)|グラフの軸タイトルのオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[add (type: ChartType, sourceData: Range, 系列 By?: Excel. Chart系列 By)](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|新しいグラフを作成します。|
 ||[getItem(name: string)](/javascript/api/excel/excel.chartcollection#getitem-name-)|グラフ名を使用してグラフを取得します。 同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.chartcollection#getitemat-index-)|コレクション内での位置を基にグラフを取得します。|
 ||[count](/javascript/api/excel/excel.chartcollection#count)|ワークシート上のグラフの数を返します。 値の取得のみ可能です。|
 ||[items](/javascript/api/excel/excel.chartcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[fill](/javascript/api/excel/excel.chartdatalabelformat#fill)|現在のグラフのデータ ラベルの塗りつぶしの書式を表します。 読み取り専用です。|
-||[font](/javascript/api/excel/excel.chartdatalabelformat#font)|グラフのデータ ラベルのフォント属性 (フォント名、フォント サイズ、色など) を表します。 読み取り専用です。|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[fill](/javascript/api/excel/excel.chartdatalabelformat#fill)|現在のグラフのデータ ラベルの塗りつぶしの書式を表します。 値の取得のみ可能です。|
+||[font](/javascript/api/excel/excel.chartdatalabelformat#font)|グラフのデータ ラベルのフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[position](/javascript/api/excel/excel.chartdatalabels#position)|データ ラベルの位置を表す DataLabelPosition 値。 詳細については、「ChartDataLabelPosition」を参照してください。|
-||[format](/javascript/api/excel/excel.chartdatalabels#format)|グラフのデータ ラベルの書式 (塗りつぶしとフォントの書式設定を含む) を表します。 読み取り専用です。|
+||[format](/javascript/api/excel/excel.chartdatalabels#format)|グラフのデータ ラベルの書式 (塗りつぶしとフォントの書式設定を含む) を表します。 値の取得のみ可能です。|
 ||[記号](/javascript/api/excel/excel.chartdatalabels#separator)|グラフのデータ ラベルに使用される区切り文字を表す文字列を設定します。|
 ||[showBubbleSize](/javascript/api/excel/excel.chartdatalabels#showbubblesize)|データ ラベルのバブルのサイズを表示または非表示にするかを表すブール値。|
 ||[showCategoryName](/javascript/api/excel/excel.chartdatalabels#showcategoryname)|データ ラベルのカテゴリ名を表示するか非表示にするかを表すブール値。|
@@ -89,39 +89,39 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[name](/javascript/api/excel/excel.chartfont#name)|フォント名 (例: "Calibri")|
 ||[size](/javascript/api/excel/excel.chartfont#size)|フォント サイズ (例: 11)|
 ||[underline](/javascript/api/excel/excel.chartfont#underline)|フォントに適用する下線の種類。 詳細については、「Excel のグラフ」を参照してください。|
-|[ChartGridlines](/javascript/api/excel/excel.chartgridlines)|[format](/javascript/api/excel/excel.chartgridlines#format)|グラフの目盛線の書式設定を表します。 読み取り専用です。|
+|[ChartGridlines](/javascript/api/excel/excel.chartgridlines)|[format](/javascript/api/excel/excel.chartgridlines#format)|グラフの目盛線の書式設定を表します。 値の取得のみ可能です。|
 ||[visible](/javascript/api/excel/excel.chartgridlines#visible)|軸の目盛線を表示するか非表示にするかを表すブール型の値。|
-|[ChartGridlinesFormat](/javascript/api/excel/excel.chartgridlinesformat)|[line](/javascript/api/excel/excel.chartgridlinesformat#line)|グラフの線の書式設定を表します。 読み取り専用です。|
+|[ChartGridlinesFormat](/javascript/api/excel/excel.chartgridlinesformat)|[line](/javascript/api/excel/excel.chartgridlinesformat#line)|グラフの線の書式設定を表します。 値の取得のみ可能です。|
 |[ChartLegend](/javascript/api/excel/excel.chartlegend)|[overlay](/javascript/api/excel/excel.chartlegend#overlay)|グラフの凡例をグラフの本体に重ねるかどうかを指定するブール型の値です。|
 ||[position](/javascript/api/excel/excel.chartlegend#position)|グラフの凡例の位置を表します。 詳細については、「ChartLegendPosition」を参照してください。|
 ||[format](/javascript/api/excel/excel.chartlegend#format)|塗りつぶしとフォントの書式設定を含む、グラフの凡例の書式設定を表します。 読み取り専用です。|
 ||[visible](/javascript/api/excel/excel.chartlegend#visible)|ChartLegend オブジェクトを表示または非表示にするかを表すブール型の値。|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[fill](/javascript/api/excel/excel.chartlegendformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 読み取り専用です。|
-||[font](/javascript/api/excel/excel.chartlegendformat#font)|グラフの凡例のフォント属性 (フォント名、フォント サイズ、色など) を表します。 読み取り専用です。|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[fill](/javascript/api/excel/excel.chartlegendformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 値の取得のみ可能です。|
+||[font](/javascript/api/excel/excel.chartlegendformat#font)|グラフの凡例のフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
 |[ChartLineFormat](/javascript/api/excel/excel.chartlineformat)|[clear()](/javascript/api/excel/excel.chartlineformat#clear--)|グラフ要素の線の書式をクリアします。|
 ||[color](/javascript/api/excel/excel.chartlineformat#color)|グラフの線の色を表す HTML カラー コード。|
-|[ChartPoint](/javascript/api/excel/excel.chartpoint)|[format](/javascript/api/excel/excel.chartpoint#format)|グラフのポイントの書式設定プロパティをカプセル化します。 読み取り専用です。|
-||[value](/javascript/api/excel/excel.chartpoint#value)|グラフのポイントの値を返します。 読み取り専用です。|
+|[ChartPoint](/javascript/api/excel/excel.chartpoint)|[format](/javascript/api/excel/excel.chartpoint#format)|グラフのポイントの書式設定プロパティをカプセル化します。 値の取得のみ可能です。|
+||[value](/javascript/api/excel/excel.chartpoint#value)|グラフのポイントの値を返します。 値の取得のみ可能です。|
 |[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[fill](/javascript/api/excel/excel.chartpointformat#fill)|背景の書式設定情報を含むグラフの塗りつぶしの書式を表します。 読み取り専用です。|
 |[ChartPointsCollection](/javascript/api/excel/excel.chartpointscollection)|[getItemAt(index: number)](/javascript/api/excel/excel.chartpointscollection#getitemat-index-)|データ系列内の位置に基づくポイントを取得します。|
 ||[count](/javascript/api/excel/excel.chartpointscollection#count)|系列内にあるグラフのポイントの数を取得します。 読み取り専用です。|
 ||[items](/javascript/api/excel/excel.chartpointscollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[name](/javascript/api/excel/excel.chartseries#name)|グラフのデータ系列の名前を表します。|
 ||[format](/javascript/api/excel/excel.chartseries#format)|グラフの系列の書式設定を表します。これには、塗りつぶしと線の書式設定が含まれます。 読み取り専用です。|
-||[数](/javascript/api/excel/excel.chartseries#points)|データ系列にあるすべてのポイントのコレクションを返します。 読み取り専用です。|
+||[数](/javascript/api/excel/excel.chartseries#points)|データ系列にあるすべてのポイントのコレクションを返します。 値の取得のみ可能です。|
 |[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[getItemAt(index: number)](/javascript/api/excel/excel.chartseriescollection#getitemat-index-)|コレクション内の位置に基づいてデータ系列を取得します。|
-||[count](/javascript/api/excel/excel.chartseriescollection#count)|コレクション内にあるデータ系列の数を取得します。 読み取り専用です。|
+||[count](/javascript/api/excel/excel.chartseriescollection#count)|コレクション内にあるデータ系列の数を取得します。 値の取得のみ可能です。|
 ||[items](/javascript/api/excel/excel.chartseriescollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[ChartSeriesFormat](/javascript/api/excel/excel.chartseriesformat)|[fill](/javascript/api/excel/excel.chartseriesformat#fill)|背景の書式設定情報を含むグラフ系列の塗りつぶしの書式を表します。 読み取り専用です。|
-||[line](/javascript/api/excel/excel.chartseriesformat#line)|線の書式設定を表します。 読み取り専用です。|
+||[line](/javascript/api/excel/excel.chartseriesformat#line)|線の書式設定を表します。 値の取得のみ可能です。|
 |[ChartTitle](/javascript/api/excel/excel.charttitle)|[overlay](/javascript/api/excel/excel.charttitle#overlay)|グラフのタイトルをグラフに重ねるかどうかを表すブール型の値。|
 ||[format](/javascript/api/excel/excel.charttitle#format)|塗りつぶしとフォントの書式設定を含む、グラフタイトルの書式設定を表します。 読み取り専用です。|
 ||[text](/javascript/api/excel/excel.charttitle#text)|グラフのタイトルのテキストを表します。|
 ||[visible](/javascript/api/excel/excel.charttitle#visible)|ChartTitle オブジェクトを表示または非表示にするかを表すブール型の値。|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[fill](/javascript/api/excel/excel.charttitleformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 読み取り専用です。|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[fill](/javascript/api/excel/excel.charttitleformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。 値の取得のみ可能です。|
 ||[font](/javascript/api/excel/excel.charttitleformat#font)|オブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。 値の取得のみ可能です。|
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[getRange()](/javascript/api/excel/excel.nameditem#getrange--)|名前に関連付けられている範囲オブジェクトを返します。 名前付きアイテムの型が範囲でない場合、エラーをスローします。|
-||[name](/javascript/api/excel/excel.nameditem#name)|オブジェクトの名前。 読み取り専用です。|
+||[name](/javascript/api/excel/excel.nameditem#name)|オブジェクトの名前。 値の取得のみ可能です。|
 ||[type](/javascript/api/excel/excel.nameditem#type)|名前の数式によって返される値の型を示します。 詳細については、「Excel. NamedItemType」を参照してください。 読み取り専用です。|
 ||[value](/javascript/api/excel/excel.nameditem#value)|名前の数式で計算された値を表します。 名前付き範囲の場合は範囲のアドレスを返します。 読み取り専用です。|
 ||[visible](/javascript/api/excel/excel.nameditem#visible)|オブジェクトを表示するかどうかを指定します。|
@@ -129,7 +129,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[items](/javascript/api/excel/excel.nameditemcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[Range](/javascript/api/excel/excel.range)|[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|範囲の値、書式、塗りつぶし、罫線などをクリアします。|
 ||[delete (shift: DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|範囲に関連付けられているセルを削除します。|
-||[formulas](/javascript/api/excel/excel.range#formulas)|A1 スタイル表記の数式を表します。|
+||[数式](/javascript/api/excel/excel.range#formulas)|A1 スタイル表記の数式を表します。|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。たとえば、英語の数式 "=SUM(A1, 1.5)" は、ドイツ語では "=SUMME(A1; 1,5)" になります。|
 ||[getBoundingRect (anotherRange: Range \| 文字列)](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|指定した範囲を包含する、最小の Range オブジェクトを取得します。 たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E15" になります。|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.range#getcell-row--column-)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。 ワークシートのグリッド内に収まるセルは、親の範囲の境界の外側にある場合があります。 返されるセルは、範囲の左上のセルを基準に配置されます。|
@@ -148,7 +148,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[addressLocal](/javascript/api/excel/excel.range#addresslocal)|ユーザーの言語で指定された範囲の範囲参照を表します。 読み取り専用です。|
 ||[cellCount](/javascript/api/excel/excel.range#cellcount)|範囲に含まれるセルの数。 セルの数が 2^31-1 (2,147,483,647) を超えると、この API は -1 を返します。 読み取り専用です。|
 ||[columnCount](/javascript/api/excel/excel.range#columncount)|範囲に含まれる列の合計数を表します。 読み取り専用です。|
-||[columnIndex](/javascript/api/excel/excel.range#columnindex)|範囲に含まれる最初のセルの列番号を表します。 0 を起点とする番号になります。 読み取り専用。|
+||[columnIndex](/javascript/api/excel/excel.range#columnindex)|範囲に含まれる最初のセルの列番号を表します。 0 を起点とする番号になります。 読み取り専用です。|
 ||[format](/javascript/api/excel/excel.range#format)|Format オブジェクト (範囲のフォント、塗りつぶし、罫線、配置などのプロパティをカプセル化するオブジェクト) を返します。 読み取り専用です。|
 ||[rowCount](/javascript/api/excel/excel.range#rowcount)|範囲に含まれる行の合計数を返します。 読み取り専用です。|
 ||[rowIndex](/javascript/api/excel/excel.range#rowindex)|範囲に含まれる最初のセルの行番号を返します。 0 を起点とする番号になります。 読み取り専用です。|
@@ -179,7 +179,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[font](/javascript/api/excel/excel.rangeformat#font)|範囲全体に定義されたフォント オブジェクトを返します。 読み取り専用です。|
 ||[verticalAlignment](/javascript/api/excel/excel.rangeformat#verticalalignment)|指定したオブジェクトの垂直方向の配置を表します。 詳細については、「Excel の配置」を参照してください。|
 ||[wrapText](/javascript/api/excel/excel.rangeformat#wraptext)|オブジェクト内のテキストを Excel でラップするかどうかを表します。 null 値は、範囲全体に一様なラップ設定がないことを表します。|
-|[Table](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete--)|テーブルを削除します。|
+|[表](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete--)|テーブルを削除します。|
 ||[Getの Odyrange ()](/javascript/api/excel/excel.table#getdatabodyrange--)|テーブルのデータ本体に関連付けられた範囲オブジェクトを取得します。|
 ||[getHeaderRowRange()](/javascript/api/excel/excel.table#getheaderrowrange--)|テーブルのヘッダー行に関連付けられた範囲オブジェクトを取得します。|
 ||[getRange()](/javascript/api/excel/excel.table#getrange--)|テーブル全体に関連付けられた範囲オブジェクトを取得します。|
@@ -218,13 +218,13 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|コレクション内の位置を基に行を取得します。|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|テーブルの行数を返します。 読み取り専用です。|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange ()](/javascript/api/excel/excel.workbook#getselectedrange--)|ブックから現在選択されている1つのセル範囲を取得します。 複数の範囲が選択されている場合、このメソッドはエラーをスローします。|
+|[ブック](/javascript/api/excel/excel.workbook)|[getSelectedRange ()](/javascript/api/excel/excel.workbook#getselectedrange--)|ブックから現在選択されている1つのセル範囲を取得します。 複数の範囲が選択されている場合、このメソッドはエラーをスローします。|
 ||[application](/javascript/api/excel/excel.workbook#application)|このブックを含む Excel アプリケーションインスタンスを表します。 読み取り専用です。|
-||[bindings](/javascript/api/excel/excel.workbook#bindings)|ブックの一部であるバインドのコレクションを表します。 読み取り専用。|
+||[bindings](/javascript/api/excel/excel.workbook#bindings)|ブックの一部であるバインドのコレクションを表します。 読み取り専用です。|
 ||[names](/javascript/api/excel/excel.workbook#names)|ブック スコープの名前付き項目 (名前付き範囲と名前付き定数) のコレクションを表します。 読み取り専用です。|
 ||[テーブル](/javascript/api/excel/excel.workbook#tables)|ブックに関連付けられているテーブルのコレクションを表します。 読み取り専用です。|
 ||[what-if](/javascript/api/excel/excel.workbook#worksheets)|ブックに関連付けられているワークシートのコレクションを表します。 読み取り専用です。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Excel UI でワークシートをアクティブにします。|
+|[ワークシート](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Excel UI でワークシートをアクティブにします。|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete--)|ブックからワークシートを削除します。 ワークシートの可視性が "非常に非表示" に設定されている場合は、削除操作が一般の例外によって失敗することに注意してください。|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getcell-row--column-)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。 ワークシートのグリッド内に収まるセルは、親の範囲の境界の外側にある場合があります。|
 ||[getRange (address?: string)](/javascript/api/excel/excel.worksheet#getrange-address-)|アドレスまたは名前で指定された、セルの単一の四角形のブロックを表す range オブジェクトを取得します。|
@@ -241,5 +241,5 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 Excel 20
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.1)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)

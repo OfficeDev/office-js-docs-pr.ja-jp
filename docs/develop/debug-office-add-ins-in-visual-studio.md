@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7c49e3019c22af0b5d44a382b33187e5d2de4ceb
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292842"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430479"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -119,7 +119,7 @@ Visual Studio によってプロジェクトがビルドされると、次のタ
 
 3. Office アプリケーションを開きます。
 
-Visual Studio では、プロジェクトのビルド時の検証エラーは [**出力**] ウィンドウには表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)」を参照してください。
+Visual Studio では、プロジェクトのビルド時の検証エラーは [**出力**] ウィンドウには表示されません。 Visual Studio では、エラーと警告が発生すると **ERRORLIST** ウィンドウ内で報告されます。 また、Visual Studio では、検証エラーは、コードおよびテキスト エディター内で別の色の波形の下線 (波線と呼ばれる) で報告されます。 このようなマークにより、Visual Studio によってご自身のコード内で検出された問題が通知されます。 検証を有効または無効にする方法の詳細については、「[[オプション]、[テキスト エディター]、[JavaScript]、[IntelliSense]](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true)」を参照してください。
 
 プロジェクト内の XML マニフェスト ファイルの検証ルールを確認するには、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 

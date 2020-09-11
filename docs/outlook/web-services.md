@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f9cf2a41ce5da325ae17812e89d9d8ecd315e573
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292483"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430990"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -208,7 +208,7 @@ Outlook アドインは、メソッドによって EWS で利用可能な操作�
 メソッドを使用する場合 `makeEwsRequestAsync` 、要求は現在のユーザーの電子メールアカウントの資格情報を使用して認証されます。 この `makeEwsRequestAsync` メソッドは、ユーザーの資格情報を管理して、要求に対して認証の資格情報を提供する必要がないようにします。
 
 > [!NOTE]
-> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps) または [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで _oauthauthentication_ パラメーターを **TRUE** に設定し、 `makeEwsRequestAsync` メソッドで ews 要求を行うことができるようにする必要があります。
+> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) または [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで _oauthauthentication_ パラメーターを **TRUE** に設定し、 `makeEwsRequestAsync` メソッドで ews 要求を行うことができるようにする必要があります。
 
 アドインは、 `ReadWriteMailbox` アドインマニフェストでメソッドを使用するためのアクセス許可を指定する必要があり `makeEwsRequestAsync` ます。 アクセス許可の使用の詳細については `ReadWriteMailbox` 、「 [ReadWriteMailbox Permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) For [Outlook アドインのアクセス許可](understanding-outlook-add-in-permissions.md)について」を参照してください。
 

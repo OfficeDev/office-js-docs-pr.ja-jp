@@ -3,12 +3,12 @@ title: マニフェスト ファイルの VersionOverrides 要素
 description: Office アドインのマニフェスト (XML) ファイルの VersionOverrides 要素の参照ドキュメント。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 588f0074941b41a617dd912d78ed2ef2c59f0886
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 979a75c3ea8b4d600a2c43fc4edfcb0d4e96930e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293836"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431543"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -45,7 +45,7 @@ ms.locfileid: "47293836"
 |  [EquivalentAddins](equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブアドインがインストールされている場合、web アドインはアクティブ化されません。|
 |  **VersionOverrides**    |  いいえ  | より新しいスキーマ バージョンでアドイン コマンドを定義します。詳細については、「[複数のバージョンを実装する](#implementing-multiple-versions)」を参照してください。 |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  いいえ  | Azure Active Directory v2.0 など、セキュリティで保護されたトークン発行者によるアドインの登録に関する詳細を指定します。 |
-|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。<br><br>**重要**: [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API は現在プレビュー段階のため、この要素を使用するアドインは、 `ExtendedPermissions` appsource に発行することも、一元展開によって展開することもできません。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。<br><br>**重要**: [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API は現在プレビュー段階のため、この要素を使用するアドインは、 `ExtendedPermissions` appsource に発行することも、一元展開によって展開することもできません。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides の例
 

@@ -4,12 +4,12 @@ description: ExcelApi 1.10 の要件セットの詳細
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 890d198f238e29d39744d87d754381543ebcaf6a
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612102"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431235"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 の新機能
 
@@ -18,13 +18,13 @@ ExcelApi 1.10 には、コメント、アウトライン、スライサーなど
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
 | [コメント](../../excel/excel-add-ins-comments.md) | コメントを追加、編集、削除します。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| [アウトライン](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 行と列をグループ化して、折りたたみ可能なアウトラインを作成します。 | [範囲](/javascript/api/excel/excel.range)、[ワークシート](/javascript/api/excel/excel.worksheet) |
+| [アウトライン](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 行と列をグループ化して、折りたたみ可能なアウトラインを作成します。 | [範囲](/javascript/api/excel/excel.range)、 [ワークシート](/javascript/api/excel/excel.worksheet) |
 | [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | テーブルやピボットテーブルにスライサーを挿入し、構成します。 | [Slicer](/javascript/api/excel/excel.slicer) |
 | [その他のワークシートイベント](../../excel/excel-add-ins-events.md) | ワークシートでクリックして並べ替えイベントを待機します。 | [ワークシート (イベント)](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、Excel JavaScript API 要件セット1.10 の Api を示します。 Excel JavaScript API 要件セット1.10 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「[要件セット1.10 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.10)」を参照してください。
+次の表に、Excel JavaScript API 要件セット1.10 の Api を示します。 Excel JavaScript API 要件セット1.10 またはそれ以前でサポートされているすべての Api の API リファレンスドキュメントを表示するには、「 [要件セット1.10 またはそれ以前の Excel api](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -175,5 +175,5 @@ ExcelApi 1.10 には、コメント、アウトライン、スライサーなど
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.10)
+- [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)
 - [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
