@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a587f6a1ad596f4006734e0d850e009c3fc145b0
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292877"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651938"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -67,7 +67,7 @@ ms.locfileid: "47292877"
 1. **Office-Add-in-NodeJS-SSO** ページで、**アプリケーション (クライアント) ID** と**ディレクトリ (テナント) ID** の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
 
     > [!NOTE]
-    > この ID は、Office クライアントアプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスをシークするときの、"対象ユーザー" の値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
+    > この **アプリケーション (クライアント) ID** は、Office クライアントアプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスをシークするときの "audience" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
 
 1. **[管理]** の下の **[認証]** を選択します。 [ **暗黙的な付与** ] セクションで、 **アクセストークン** と **ID トークン**の両方のチェックボックスをオンにします。 サンプルには、SSO が利用できないときに呼び出されるフォールバック認証システムがあります。 このシステムは、暗黙的フローを使用します。
 
