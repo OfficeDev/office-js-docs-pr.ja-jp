@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.3
-description: ExcelApi 1.3 の要件セットの詳細
+description: ExcelApi 1.3 の要件セットに関する詳細。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 71bad9fae630a11688458e4cb76ded2fa523a563
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: ee72e8bde7b768b2edb3dcff5217325e2336e3ab
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430871"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819820"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
@@ -58,4 +58,4 @@ ExcelApi 1.3 には、データバインドと基本的なピボットテーブ�
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.3&preserve-view=true)
-- [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
+- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.7
-description: ExcelApi 1.7 の要件セットの詳細
+description: ExcelApi 1.7 の要件セットに関する詳細。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6fc4164f233c0b1603f4b5231ed860442920c538
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: ad0b1a205191ae5fd2b68b933cdf3bb757ecbd2b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430864"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819652"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -337,4 +337,4 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)
-- [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
+- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してブックを操作する
 description: Excel JavaScript API を使用して、ブックまたはアプリケーションレベルの機能を使用して一般的なタスクを実行する方法を示すコードサンプルです。
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408699"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819505"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -171,10 +171,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties-preview"></a>ワークシートレベルのカスタムプロパティ (プレビュー)
-
-> [!NOTE]
-> ワークシートレベルのカスタムプロパティは現在プレビュー段階です。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+#### <a name="worksheet-level-custom-properties"></a>ワークシートレベルのカスタムプロパティ
 
 カスタムプロパティは、ワークシートレベルで設定することもできます。 これらはドキュメントレベルのカスタムプロパティに似ていますが、異なるワークシート間で同じキーを繰り返すことができる点が異なります。 次の例は、現在のワークシートで "α" という値を持つ、"worksheet **group** " という名前のカスタムプロパティを作成し、それを取得する方法を示しています。
 

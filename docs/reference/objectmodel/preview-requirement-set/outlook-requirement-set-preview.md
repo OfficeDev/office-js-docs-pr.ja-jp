@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 09/02/2020
+ms.date: 09/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 24cad394f0f3ffb95a05a81ccb38ee4aa72a3797
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431067"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819834"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -307,20 +307,6 @@ Office テーマを取得する機能が追加されました。
 新規作成モードのアイテムのセッションデータを管理するための新しいプロパティを追加しました。
 
 **利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
-
-<br>
-
----
-
----
-
-### <a name="single-sign-on-sso"></a>シングル サインオン (SSO)
-
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
-
-Microsoft Graph API の[アクセス トークンの取得](../../../outlook/authenticate-a-user-with-an-sso-token.md)をアドインに対して許可する、`getAccessToken` へのアクセスが追加されました。
-
-**利用可能な**対象: Outlook on Windows (microsoft 365 サブスクリプションに接続)、Outlook on Mac (microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)、outlook on the web (クラシック)
 
 ## <a name="see-also"></a>関連項目
 

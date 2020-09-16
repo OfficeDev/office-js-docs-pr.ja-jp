@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API のオンラインのみの要件セット
-description: ExcelApiOnline の要件セットの詳細
-ms.date: 05/06/2020
+description: ExcelApiOnline の要件セットに関する詳細。
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430815"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819806"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API のオンラインのみの要件セット
 
@@ -40,20 +40,10 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API リスト
 
-次の Api は、現在、要件セットの一部として web 上の Excel で使用でき `ExcelApiOnline 1.1` ます。
-
-| クラス | フィールド | 説明 |
-|:---|:---|:---|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|グラフ軸のタイトルに対して、テキストの方向を指定する角度を指定します。 この値は、-90 ~ 90 の整数、または垂直方向のテキストの整数の180のいずれかである必要があります。|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|コレクション内のピボットテーブルの数を取得します。|
-||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|コレクション内の最初のピボットテーブルを取得します。 コレクション内のピボットテーブルは、上から下、左から右に並べ替えられます。この場合、左上のテーブルはコレクションの最初のピボットテーブルになります。|
-||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|名前に基づいてピボットテーブルを取得します。|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|名前を使用してピボットテーブルを取得します。 PivotTable が存在しない場合は null オブジェクトを返します。|
-||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Range](/javascript/api/excel/excel.range)|[getPivotTables テーブル (fullyContained?: boolean)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|範囲に重なっているピボットテーブルのスコープ設定されたコレクションを取得します。|
+現在、要件セットには Api がありません `ExcelApiOnline` 。 このセットの一部であったすべての Api は、すべてのプラットフォームで使用可能な番号付き要件セットになります。
 
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [Excel JavaScript プレビュー API](./excel-preview-apis.md)
-- [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
+- [Excel JavaScript プレビュー API](excel-preview-apis.md)
+- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

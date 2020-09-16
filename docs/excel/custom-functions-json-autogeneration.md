@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: f09fbbfcd028d773b9e9e25eb5eb43eb1d5a93cd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609311"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819519"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -156,8 +156,8 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 
 JavaScript 構文: @param {type} 名_の説明_
 
-* `{type}`中かっこで囲まれた型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 種類が指定されていない場合は、既定の種類が使用され `any` ます。
-* `name`@param タグを適用するパラメーターを指定します。 これは必須です。
+* `{type}` 中かっこで囲まれた型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 種類が指定されていない場合は、既定の種類が使用され `any` ます。
+* `name` @param タグを適用するパラメーターを指定します。 これは必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 カスタム関数内のパラメーターを省略可能と指定する方法:
@@ -183,7 +183,7 @@ JavaScript 構文: @param {type} 名_の説明_
 
 TypeScript 構文: @param 名 _の説明_
 
-* `name`@param タグを適用するパラメーターを指定します。 これは必須です。
+* `name` @param タグを適用するパラメーターを指定します。 これは必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。
@@ -256,7 +256,7 @@ function add(first: number, second: number): number {
 
 ストリーミング関数は、値を直接返すのではなく、 `setResult(result: ResultType)` 最後のパラメーターを使用して呼び出します。
 
-ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。 ストリーミング関数と詳細については、「[ストリーミング関数を作成する](./custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。
+ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。 ストリーミング関数と詳細については、「[ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。
 
 ストリーミング関数は、[@volatile](#volatile) としてマークできません。
 

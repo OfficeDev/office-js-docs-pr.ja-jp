@@ -5,12 +5,12 @@ title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 731e8d99a36cfef7d125838c67efcdd7a77b4bb1
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757374"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819561"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -76,7 +76,7 @@ function add(first, second){
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
 - カスタム関数に使用するランタイムを指定します。 別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。 共有ランタイムを使うことは、アドインが Microsoft Edge ではなく Internet Explorer 11 の使用を意味することに注意してください。
 
-Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](./configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
+Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
 
 サンプル アドインからフル機能マニフェストを確認する方法については、「[この Github リポジトリ](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)」を参照してください。
 

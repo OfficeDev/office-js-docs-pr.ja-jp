@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.6
-description: ExcelApi 1.6 の要件セットの詳細
+description: ExcelApi 1.6 の要件セットに関する詳細。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ea54b825c3d5eff71a3355c3d313feb355d3c892
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 88127336ad35bd498fb2a2102f8ca84928c3bdaf
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430843"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819813"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -150,4 +150,4 @@ ms.locfileid: "47430843"
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)
-- [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
+- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

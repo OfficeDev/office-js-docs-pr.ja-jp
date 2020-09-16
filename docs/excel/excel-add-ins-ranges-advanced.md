@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408447"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819575"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -327,10 +327,7 @@ Excel.run(function (context) {
 
 行または列グループのグループを解除するには、グループ化を解除するメソッドを使用します[。](/javascript/api/excel/excel.range#ungroup-groupoption-) これにより、アウトラインから最上位レベルが削除されます。 同じ行または列の種類の複数のグループが指定された範囲内の同じレベルにある場合、それらすべてのグループはグループ解除されます。
 
-## <a name="handle-dynamic-arrays-and-spilling-preview"></a>動的配列と spilling を処理する (プレビュー)
-
-> [!NOTE]
-> 動的配列および範囲 spilling Api は現在プレビュー段階です。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-dynamic-arrays-and-spilling"></a>動的配列と spilling を処理する
 
 一部の Excel 数式は、 [動的な配列](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)を返します。 これらは、数式の元のセルの外側にある複数のセルの値を塗りつぶします。 この値のオーバーフローは、"スピル" と呼ばれます。 アドインは、 [getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) メソッドを使用して、スピルに使用される範囲を検索できます。 [* OrNullObject バージョン](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties)もあり `Range.getSpillingToRangeOrNullObject` ます。
 

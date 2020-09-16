@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.10
-description: ExcelApi 1.10 の要件セットの詳細
+description: ExcelApi 1.10 の要件セットに関する詳細。
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 890d198f238e29d39744d87d754381543ebcaf6a
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 8c6ecf04312e37e710111757b82240d3b4cfa751
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431235"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819785"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 の新機能
 
@@ -176,4 +176,4 @@ ExcelApi 1.10 には、コメント、アウトライン、スライサーなど
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)
-- [Excel JavaScript API の要件セット](./excel-api-requirement-sets.md)
+- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)

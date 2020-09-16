@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: c53ad94c798f787447ab353201a245cd4f20d463
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610462"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819512"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -29,7 +29,7 @@ ms.locfileid: "44610462"
 
 次のコードサンプルでは、関数は、" `webRequest` スペースがあります" という名前の "API" に到達します。これは、現在、国際宇宙ステーションにいるユーザーの数を追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
 
-独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](./custom-functions-batching.md)を検討してください。
+独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](custom-functions-batching.md)を検討してください。
 
 ```JS
 /**
