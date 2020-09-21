@@ -1,72 +1,50 @@
 ---
-title: Word JavaScript API を使用した基本的なプログラミングの概念
-description: Word JavaScript API を使用して、Word 用アドインを構築します。
-ms.date: 07/28/2020
+title: Office アドインの Word JavaScript オブジェクト モデル
+description: Word 固有の JavaScript オブジェクト モデルの最も重要なクラスについて説明します。
+ms.date: 09/04/2020
 localization_priority: Priority
-ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293094"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963840"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a><span data-ttu-id="a6e69-103">Word JavaScript API を使用した基本的なプログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="a6e69-103">Fundamental programming concepts with the Word JavaScript API</span></span>
+# <a name="word-javascript-object-model-in-office-add-ins"></a><span data-ttu-id="31707-103">Office アドインの Word JavaScript オブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="31707-103">Word JavaScript object model in Office Add-ins</span></span>
 
-<span data-ttu-id="a6e69-104">この記事では、[Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) を使用して Word 2016 以降のアドインを構築する場合の基本的な概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.</span></span>
+<span data-ttu-id="31707-104">この記事では、[Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) を使用してアドインを構築するための基本的な概念について説明します。API を使用するための基本的なコア コンセプトを紹介します。</span><span class="sxs-lookup"><span data-stu-id="31707-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins. It introduces core concepts that are fundamental to using the API.</span></span>
 
-## <a name="referencing-officejs"></a><span data-ttu-id="a6e69-105">Office.js を参照する</span><span class="sxs-lookup"><span data-stu-id="a6e69-105">Referencing Office.js</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="31707-105">Word API の非同期性と、ドキュメントでの動作方法については、「[アプリケーション固有の API モデルの使用](../develop/application-specific-api-model.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="31707-105">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Word APIs and how they work with the document.</span></span>
 
-<span data-ttu-id="a6e69-106">Office.js は、次の場所から参照できます。</span><span class="sxs-lookup"><span data-stu-id="a6e69-106">You can reference Office.js from the following locations:</span></span>
+## <a name="officejs-apis-for-word"></a><span data-ttu-id="31707-106">Word 用の Office.js API</span><span class="sxs-lookup"><span data-stu-id="31707-106">Office.js APIs for Word</span></span>
 
-- <span data-ttu-id="a6e69-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - 運用環境のアドインには、このリソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - use this resource for production add-ins.</span></span>
+<span data-ttu-id="31707-107">Word アドインは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して、Excel のオブジェクトを操作します:</span><span class="sxs-lookup"><span data-stu-id="31707-107">A Word add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:</span></span>
 
-- <span data-ttu-id="a6e69-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - このリソースを使用してプレビュー機能を試します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use this resource to try out preview features.</span></span>
+* <span data-ttu-id="31707-108">**Word JavaScript API**: [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) には、ドキュメント、範囲、テーブル、リスト、フォーマットなどにアクセスするために使用できる厳密に型指定されたオブジェクトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="31707-108">**Word JavaScript API**: The [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access the document, ranges, tables, lists, formatting, and more.</span></span>
 
-## <a name="word-javascript-api-requirement-sets"></a><span data-ttu-id="a6e69-109">Word JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="a6e69-109">Word JavaScript API requirement sets</span></span>
+* <span data-ttu-id="31707-109">**共通 API**: [共通 API](/javascript/api/office) を使用して、UI、ダイアログ、クライアント設定など、複数のタイプの Office アプリケーションに共通の機能にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="31707-109">**Common APIs**: The [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
 
-<span data-ttu-id="a6e69-110">要件セットは、API メンバーの名前付きグループです。</span><span class="sxs-lookup"><span data-stu-id="a6e69-110">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="a6e69-111">Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-111">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs.</span></span> <span data-ttu-id="a6e69-112">Word JavaScript API 要件セットの詳細については、「[Word JavaScript API の要件セット](../reference/requirement-sets/word-api-requirement-sets.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6e69-112">For detailed information about Word JavaScript API requirement sets, see [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).</span></span>
+<span data-ttu-id="31707-110">Word を対象にしたアドインでは、機能の大部分を Word JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。</span><span class="sxs-lookup"><span data-stu-id="31707-110">While you'll likely use the Word JavaScript API to develop the majority of functionality in add-ins that target Word, you'll also use objects in the Common API.</span></span> <span data-ttu-id="31707-111">例:</span><span class="sxs-lookup"><span data-stu-id="31707-111">For example:</span></span>
 
-## <a name="running-word-add-ins"></a><span data-ttu-id="a6e69-113">Word アドインを実行する</span><span class="sxs-lookup"><span data-stu-id="a6e69-113">Running Word add-ins</span></span>
+* <span data-ttu-id="31707-112">[コンテキスト](/javascript/api/office/office.context): `Context` オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="31707-112">[Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API.</span></span> <span data-ttu-id="31707-113">これは `contentLanguage` や `officeTheme` などのドキュメント構成の詳細で構成され、`host` や `platform` などのアドインのランタイム環境に関する情報も提供します。</span><span class="sxs-lookup"><span data-stu-id="31707-113">It consists of document configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`.</span></span> <span data-ttu-id="31707-114">さらに、`requirements.isSetSupported()` メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="31707-114">Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the Excel application where the add-in is running.</span></span>
+* <span data-ttu-id="31707-115">[ドキュメント](/javascript/api/office/office.document): `Document` オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Word ファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="31707-115">[Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Word file where the add-in is running.</span></span>
 
-<span data-ttu-id="a6e69-114">アドインを実行するには、`Office.initialize` イベント ハンドラーを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-114">To run your add-in, use an `Office.initialize` event handler.</span></span> <span data-ttu-id="a6e69-115">アドインの初期化の詳細については、「[API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6e69-115">For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).</span></span>
+![Word JS API と共通 API の違いを示す画像](../images/word-js-api-common-api.png)
 
-<span data-ttu-id="a6e69-116">Word 2016 以降を対象とするアドインは、Word 固有の API を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="a6e69-116">Add-ins that target Word 2016 or later can use the Word-specific APIs.</span></span> <span data-ttu-id="a6e69-117">これらは、Word の相互作用ロジックを関数として `Word.run()` メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-117">They pass the Word-interaction logic as a function into the `Word.run()` method.</span></span> <span data-ttu-id="a6e69-118">このプログラミング モデルの Word 文書を操作する方法については、「[アプリケーション固有の API モデルの使用](../develop/application-specific-api-model.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6e69-118">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about how to interact with the Word document in this programming model.</span></span>
+## <a name="word-specific-object-model"></a><span data-ttu-id="31707-117">Word 固有のオブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="31707-117">Word-specific object model</span></span>
 
-<span data-ttu-id="a6e69-119">次の例では、`Word.run()` メソッドを使用して、Word アドインを初期化および実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a6e69-119">The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.</span></span>
+<span data-ttu-id="31707-118">Word API について理解するには、ドキュメントの構成要素が互いにどのように関連しているかを理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="31707-118">To understand the Word APIs, you must understand how the components of a document are related to one another.</span></span>
 
-```js
-(function () {
-    "use strict";
+* <span data-ttu-id="31707-119">**ドキュメント** には **セクション** と、設定やカスタム XML パーツなどのドキュメントレベルのエンティティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="31707-119">The **Document** contains the **Section**s, and document-level entities such as settings and custom XML parts.</span></span>
+* <span data-ttu-id="31707-120">**セクション** には **本文** が含まれます。</span><span class="sxs-lookup"><span data-stu-id="31707-120">A **Section** contains a **Body**.</span></span>
+* <span data-ttu-id="31707-121">**本文** は、特に **パラグラフ**、**ContentControl**、および **範囲** オブジェクトへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="31707-121">A **Body** gives access to **Paragraph**s, **ContentControl**s, and **Range** objects, among others.</span></span>
+* <span data-ttu-id="31707-122">**範囲** は、テキスト、空白、**テーブル**、画像など、コンテンツの連続した領域を表します。</span><span class="sxs-lookup"><span data-stu-id="31707-122">A **Range** represents a contiguous area of content, including text, white space, **Table**s, and images.</span></span> <span data-ttu-id="31707-123">また、テキストの操作方法のほとんどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="31707-123">It also contains most of the text manipulation methods.</span></span>
+* <span data-ttu-id="31707-124">**リスト** は、番号付きまたは箇条書きのリスト内のテキストを表します。</span><span class="sxs-lookup"><span data-stu-id="31707-124">A **List** represents text in a numbered or bulleted list.</span></span>
 
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
+## <a name="see-also"></a><span data-ttu-id="31707-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="31707-125">See also</span></span>
 
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
-
-## <a name="see-also"></a><span data-ttu-id="a6e69-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="a6e69-120">See also</span></span>
-
-- [<span data-ttu-id="a6e69-121">Word JavaScript API の概要</span><span class="sxs-lookup"><span data-stu-id="a6e69-121">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
-- [<span data-ttu-id="a6e69-122">最初の Word アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="a6e69-122">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
-- [<span data-ttu-id="a6e69-123">Word アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a6e69-123">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
-- [<span data-ttu-id="a6e69-124">Word JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="a6e69-124">Word JavaScript API reference</span></span>](/javascript/api/word)
+- [<span data-ttu-id="31707-126">Word JavaScript API の概要</span><span class="sxs-lookup"><span data-stu-id="31707-126">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
+- [<span data-ttu-id="31707-127">最初の Word アドインをビルドする</span><span class="sxs-lookup"><span data-stu-id="31707-127">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
+- [<span data-ttu-id="31707-128">Word アドインのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="31707-128">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+- [<span data-ttu-id="31707-129">Word JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="31707-129">Word JavaScript API reference</span></span>](/javascript/api/word)
