@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.12
 description: ExcelApi 1.12 の要件セットに関する詳細。
-ms.date: 09/15/2020
+ms.date: 09/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a88c511e90fe48e1a9997d19cb4a2851cb718f6b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 2f2fb04c914e26aacbd8815a1d173c8af9c09342
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819844"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963823"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Excel JavaScript API 1.12 の新機能
 
@@ -79,7 +79,6 @@ ExcelApi 1.12 は、動的配列を追跡するための Api を追加し、式�
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|フィルター条件間の範囲の下限。|
 ||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|`BeginsWith`、、 `EndsWith` およびフィルター条件で使用される部分文字列 `Contains` 。|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|フィルター条件の間の範囲の上限を指定します。|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|ピボットテーブルに適用されるスタイルです。|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selecteditems)|手動でフィルター処理するために選択されたアイテムのリスト。 これらは、選択されたフィールドの既存のアイテムおよび有効なアイテムである必要があります。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[Allow多重 Filtersperfield](/javascript/api/excel/excel.pivottable#allowmultiplefiltersperfield)|ピボットテーブルで、テーブル内の特定の PivotField に対して複数の PivotFilters を適用できるかどうかを指定します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|コレクション内のピボットテーブルの数を取得します。|
@@ -107,7 +106,6 @@ ExcelApi 1.12 は、動的配列を追跡するための Api を追加し、式�
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|このコレクション内の RangeAreas オブジェクトの数を取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|コレクション内の位置に基づいて RangeAreas オブジェクトを返します。|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Slicer](/javascript/api/excel/excel.slicer)|[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|スライサーに適用されるスタイルです。|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|`RangeAreas`ワークシート id またはコレクション内の名前に基づいてオブジェクトを返します。|
 ||[getRangeAreasOrNullObjectBySheet (key: string)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|`RangeAreas`ワークシートの名前またはコレクション内の id に基づいてオブジェクトを返します。 ワークシートが存在しない場合は null オブジェクトを返します。|
 ||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|A1 形式のアドレスの配列を返します。 Address 値には、セルの各長方形ブロックのワークシート名が格納されます (例: "Sheet1!A1: B4、Sheet1!D1: D4 ")。 読み取り専用です。|

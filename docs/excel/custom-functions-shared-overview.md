@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 description: カスタム関数、リボン ボタン、作業ウィンドウのコードを同じ JavaScript ランタイムで実行して、さまざまなアドインでシナリオを調整する方法について説明します。
-title: 共有 JavaScript ランタイムでアドインコードを実行する
+title: 共有の JavaScript ランタイムでアドイン コードを実行する
 localization_priority: Priority
-ms.openlocfilehash: e179d8cdff06b397c9998a6a18a506a0a6df1b42
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609235"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819547"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概要: 共有 JavaScript ランタイムでアドインコードを実行する
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概要: 共有の JavaScript ランタイムでアドイン コードを実行する
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -26,23 +26,23 @@ Windows または Mac で Excel を実行する場合、アドインは、リボ
 - ドキュメントを開いてすぐに、アドインでコードを実行できます。
 - 作業ウィンドウが閉じられた後でも、アドインでコードの実行を続けられます。
 
-共有ランタイムを使用して作業ウィンドウでカスタム関数を実行すると、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、別のプラットフォームのブラウザー インスタンスで実行されます。また、Excel アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内で実行される様子を示しています。
+共有ランタイムを使用して作業ウィンドウでカスタム関数を実行すると、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、アドインが Microsoft Internet Explorer 11 のブラウザー インスタンスで実行されます。また、Excel アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内で実行される様子を示しています。
 
-![Excel のリボンボタンと作業ウィンドウを使用して共有ランタイムで実行されているカスタム関数](../images/custom-functions-in-browser-runtime.png)
+![Excel のリボン ボタンと作業ウィンドウを備えた共有ランタイムで実行されるカスタム関数](../images/custom-functions-in-browser-runtime.png)
 
-## <a name="set-up-a-shared-runtime"></a>共有ランタイムをセットアップする
+## <a name="set-up-a-shared-runtime"></a>共有ランタイムを設定する
 
-共有ランタイムを使用するようにカスタム関数を設定する方法については、「[共有ランタイムの構成](./configure-your-add-in-to-use-a-shared-runtime.md)」の記事を参照してください。
+共有ランタイムを使用するようにカスタム関数を設定する方法については、[共有ランタイムの設定に関する記事](configure-your-add-in-to-use-a-shared-runtime.md) をご覧ください。
 
 ### <a name="debugging"></a>デバッグ
 
-共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに、開発者ツールを使用する必要があります。 さらに詳しい情報については、「[Windows 10 で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)」を参照してください。
+共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに開発者ツールを使用する必要があります。 さらに詳しい情報については、「[Windows 10 で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)」を参照してください。
 
-## <a name="give-us-feedback"></a>ご意見をお寄せください
+## <a name="give-us-feedback"></a>ご意見ご感想をお寄せください
 
 この機能について、ご意見をお待ちしております。 バグや問題が発生したり、この機能について要求がございましたら、[office-js repo](https://github.com/OfficeDev/office-js) で GitHub に関する問題を作成してお知らせください。
 
 ## <a name="see-also"></a>関連項目
 
 - [チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [カスタム関数から Excel Api を呼び出す](call-excel-apis-from-custom-function.md)
+- [カスタム関数から Excel API を呼び出す](call-excel-apis-from-custom-function.md)

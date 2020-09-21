@@ -1,19 +1,19 @@
 ---
 title: Office 共通 API の要件セット
 description: Office 共通 API の要件セットの詳細について説明します。
-ms.date: 07/07/2020
+ms.date: 09/17/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f9929cb2f3de6499145540e12d1d96c55b24b1aa
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293521"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135222"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 > [!TIP]
 > *アプリケーション固有*の API 要件セットを探している場合 次の API 要件セットを参照してください。
@@ -152,6 +152,14 @@ ms.locfileid: "47293521"
 
 ---
 
+### <a name="openbrowserwindowapi"></a>OpenBrowserWindowApi
+
+|**Office のホスト**|**セット内のメソッド**|
+|:-----|:-----|
+| 「 [Open Browser WINDOW API 要件セット](open-browser-window-api-requirement-sets.md)」を参照してください。 | 「Office のコンテキスト ui」ウィンドウ |
+
+---
+
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
 |**Office アプリケーション**|**セット内のメソッド**|
@@ -266,5 +274,5 @@ Office JavaScript API の次のメソッドは、要件セットの一部では�
 ## <a name="see-also"></a>関連項目
 
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office アプリケーションと API の要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)

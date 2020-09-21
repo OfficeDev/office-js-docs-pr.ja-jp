@@ -1,15 +1,15 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 006b19af1f7c9186e9247a3b45a3c8ac109c446a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294319"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819568"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -39,12 +39,9 @@ Outlook アドインは、Windows 版 Outlook 固有の統合機能として以�
 
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
-    ![カード内のコンテキスト アプリを示しています](../images/outlook-detected-entity-card.png)
+    ![カード内のコンテキスト アプリを示す](../images/outlook-detected-entity-card.png)
 
-> [!NOTE]
-> [カスタム ウィンドウは廃止された](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)ため、サポートされている拡張点を使用していることを確認してください。
-
-## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
+## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックス アイテム
 
 Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
 
@@ -53,7 +50,7 @@ Outlook アドインは、作成中や読み取り中にメッセージや予定
   > [!IMPORTANT]
   > - アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
   >
-  > - Windows の Outlook ビルド13120.1000 から、アドインは IRM で保護されたアイテムに対して有効になるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
+  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
 
 - メッセージ クラスが IPM.Report.* である配信レポートまたは通知 (配信レポート、配信不能レポート (NDR)、開封通知、未開封通知、遅延通知など)。
 

@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してイベントを操作する
 description: Excel JavaScript オブジェクトのイベントのリスト。 これには、イベントハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a1b0a3a33dc5f1830710eeec7e8dbdaac842a2f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 12e4f0a7ebb9c50bf6874106ef711ca3207cae46
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819540"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135215"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -21,7 +21,7 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
 | `onActivated` | オブジェクトがアクティブ化されたときに発生します。 | [**Chart**](/javascript/api/excel/excel.chart#onactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated)、[**Shape**](/javascript/api/excel/excel.shape#onactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
-| `onAdded` | オブジェクトがコレクションに追加されたときに発生します。 | [**Chartcollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**コメントコレクション**](/javascript/api/excel/excel.commentcollection#onadded)[**tablecollection**](/javascript/api/excel/excel.tablecollection#onadded)、 [**ワークシートコレクション**](/javascript/api/excel/excel.worksheetcollection#onadded) |
+| `onAdded` | オブジェクトがコレクションに追加されたときに発生します。 | [**Chartcollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**コメントのコレクション**](/javascript/api/excel/excel.commentcollection#onadded)、 [**tablecollection**](/javascript/api/excel/excel.tablecollection#onadded)、および [**ワークシートコレクション**](/javascript/api/excel/excel.worksheetcollection#onadded) |
 | `onAutoSaveSettingChanged` | ブックで `autoSave` の設定が変更されると発生します。 | [**Workbook**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
 | `onCalculated` | ワークシートの計算が完了したとき (あるいはコレクションのすべてのワークシートが完了したとき) に発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
 | `onChanged` | 個別のセルまたはコメントのデータが変更されたときに発生します。 | [**コメントコレクション**](/javascript/api/excel/excel.commentcollection#onchanged)、 [**Table**](/javascript/api/excel/excel.table#onchanged)、 [**tablecollection**](/javascript/api/excel/excel.tablecollection#onchanged)、 [**Worksheet、Worksheet**](/javascript/api/excel/excel.worksheet#onchanged)[**コレクション**](/javascript/api/excel/excel.worksheetcollection#onchanged) |

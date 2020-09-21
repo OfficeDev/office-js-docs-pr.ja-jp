@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 07/10/2020
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa2eb78063d3ae63efa725e13892e24596ebfceb
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3c3057dd27b571e9c4faa09cfc7415667d1c612b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294249"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819799"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -27,7 +27,8 @@ Excel アドインは、Windows での Office 2016 以降、Office on the web、
 |  要件セット  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](excel-preview-apis.md)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://insider.office.com)に参加する必要があります) |
-| [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | 該当なし | 該当なし | 最新 ([要件セットのページ](./excel-api-online-requirement-set.md)を参照) |
+| [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | 該当なし | 該当なし | 最新 ([要件セットのページ](excel-api-online-requirement-set.md)を参照) |
+| [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | バージョン 2008 (ビルド 13127.20408) 以降 | 16.40 以降 | 16.40 以降 | 2020 年 9 月 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | バージョン 2002 (ビルド 12527.20470) 以降 | 16.35 以降 | 16.33 以降 | 2020 年 5 月 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | バージョン 1907 (ビルド 11929.20306) 以降 | 16.0 以降 | 16.30 以降 | 2019 年 10 月 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | バージョン 1903 (ビルド 11425.20204) 以降 | 16.0 以降 | 16.24 以降 | 2019 年 5 月 |
@@ -52,10 +53,41 @@ Office のバージョンとビルド番号の詳細については、次を参�
 
 [!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
+## <a name="how-to-use-excel-requirement-sets-at-runtime-and-in-the-manifest"></a>実行時およびマニフェストで Excel 要件セットを使用する方法
+
+> [!NOTE]
+> このセクションでは、[Office バージョンと要件セット](../../develop/office-versions-and-requirement-sets.md) の概要、および [Office アプリケーションと API 要件の指定](../../develop/specify-office-hosts-and-api-requirements.md) について理解していることを前提としています。
+
+要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを確認できます。
+
+### <a name="checking-for-requirement-set-support-at-runtime"></a>実行時に要件セットのサポートを確認する
+
+次のコード サンプルは、アドインが実行されている Office アプリケーションが指定された API の要件セットをサポートしているかどうかを確認する方法を示しています。
+
+```js
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
+```
+
+### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
+
+アドインのマニフェストで [Requirements 要素](../manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、**[マイ アドイン]** に表示されるアドインのリストに表示されません。アドインが完全な機能のために特定の要件セットを必要とするが、要件セットをサポートしていないプラットフォームのユーザーにも価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
+
+次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office クライアント アプリケーションのすべてで読み込まれる必要があることを指定する、アドインのマニフェストの `Requirements` 要素を示しています。
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API リファレンス ドキュメント](/javascript/api/excel)
-- [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../develop/add-in-manifests.md)
-- [Office Online Server 概要](/officeonlineserver/office-online-server-overview)

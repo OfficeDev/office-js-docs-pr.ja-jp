@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8a95330059de39506a8f9ece6bdd10246b6c212d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294298"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651945"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -53,22 +53,32 @@ ms.locfileid: "47294298"
 
 - アドインのホスト サーバーは必ず Secure Socket Layer (SSL) を使用して通信する必要があります。
 
-- 開発者はアドインを提出する際に、ID の証明、契約上の合意、および法規制に準拠したプライバシー ポリシーを提供する必要があります。 
+- 開発者はアドインを提出する際に、ID の証明、契約上の合意、および法規制に準拠したプライバシー ポリシーを提供する必要があります。
 
 - アドインを読み取り専用モードでアーカイブします。
 
 - 使用可能なアドインに対するユーザーレビュー システムをサポートしてコミュニティの自己管理を促します。
 
+## <a name="optional-connected-experiences"></a>オプションの接続エクスペリエンス
+
+エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 Outlook アドインの場合、**オプションの接続エクスペリエンス** 設定を無効にした場合の影響はクライアントによって異なりますが、通常、ユーザーがインストールしたアドインと Office ストアへのアクセスは許可されません。 必須またはビジネスクリティカルと見なされている特定の Microsoft アドイン、および [一元展開](../publish/centralized-deployment.md) を通じて組織の IT 管理者が展開したアドインは引き続き使用できます。
+
+- Windows、Mac: **[アドインの取得]** ボタンは表示されないため、ユーザーはアドインの管理や Office ストアへのアクセスができなくなります。
+- Android、iOS: **[アドインの取得]** ダイアログには、管理者が展開したアドインのみが表示されます。
+- ブラウザー: アドインの可用性とストアへのアクセスは影響を受けないため、ユーザーは [アドイン （管理者が展開したものを含む） を引き続き管理](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) できます。
+
+アドインの全般的な動作については、「[Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md#optional-connected-experiences)」を参照してください。
+
 ## <a name="end-users-privacy-and-performance-concerns"></a>エンド ユーザー: プライバシーとパフォーマンスの問題
 
-セキュリティ モデルによって、エンド ユーザーのセキュリティ、プライバシー、およびパフォーマンスの問題に次のような方法で対処できます。
+セキュリティ モデルによって、エンド ユーザーのセキュリティ、プライバシー、およびパフォーマンスの問題に次のような方法で対処します。
 
 - Outlook の IRM (Information Rights Management) で保護されているエンド ユーザーのメッセージは、Outlook アドインとやり取りしません。
 
   > [!IMPORTANT]
   > - アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
   >
-  > - Windows の Outlook ビルド13120.1000 から、アドインは IRM で保護されたアイテムに対して有効になるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
+  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
 
 - AppSource からアドインをインストールする前に、エンド ユーザーは、そのアドインが自分のデータに対して実行可能なアクセスとアクションを確認して、先に進むことを明示的に確認する必要があります。 Outlook アドインは、ユーザーまたは管理者による手動検証なしでクライアント コンピューター上に自動的にインストールされることはありません。
 
@@ -150,7 +160,7 @@ ms.locfileid: "47294298"
 
 開発者は、以下の点についても意識し、計画する必要があります。
 
-- ActiveX コントロールはサポートされていないため、アドインで ActiveX コントロールを使用することはできません。
+- ActiveX コントロールはサポートされていないため、開発者はアドインで ActiveX コントロールを使用することはできません。
 
 - 開発者は AppSource に Outlook アドインを提出する際に、次の作業を実行する必要があります。
 
@@ -175,5 +185,6 @@ ms.locfileid: "47294298"
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)
+- [Microsoft 365 アプリのプライバシー コントロール](/deployoffice/privacy/overview-privacy-controls)
 - [Outlook アドインの API](apis.md)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
