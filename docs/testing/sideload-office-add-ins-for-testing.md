@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: サイドロードを使用して、office で office アドインをテストします。
-ms.date: 07/10/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159291"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175536"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -27,11 +27,11 @@ ms.locfileid: "45159291"
 
 1. [Web 上の Office を](https://office.live.com/)開きます。
 
-2. [**オンラインアプリを今すぐ開始する**] で、 **Excel**、 **Word**、または**PowerPoint**を選択します。新しいドキュメントを開きます。
+2. [ **オンラインアプリを今すぐ開始する**] で、 **Excel**、 **Word**、または **PowerPoint**を選択します。新しいドキュメントを開きます。
 
-3. リボンの [**挿入**] タブを開き、 **[アドイン] セクションで**、[ **Office アドイン**] を選択します。
+3. リボンの [ **挿入** ] タブを開き、 **[アドイン] セクションで** 、[ **Office アドイン**] を選択します。
 
-4. [ **Office アドイン**] ダイアログボックスで、[**個人用アドイン**] タブ、[**個人用アドインの管理**]、[**個人用アドインのアップロード**] の順に選択します。
+4. [ **Office アドイン** ] ダイアログボックスで、[ **個人用アドイン** ] タブ、[ **個人用アドインの管理**]、[ **個人用アドインのアップロード**] の順に選択します。
 
     ![右上に [個人用アドインの管理] というドロップダウンがあり、その下に [マイ アドインのアップロード] オプションのドロップダウンがある [Office アドイン] ダイアログ](../images/office-add-ins-my-account.png)
 
@@ -42,19 +42,13 @@ ms.locfileid: "45159291"
 6. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
 
 > [!NOTE]
->Microsoft Edge で Office アドインをテストするには、次の 2 つの構成手順が必要です。 
->
-> - Windows コマンド プロンプトで、次のコマンドを実行します: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
->
-> - Microsoft Edge の検索バーに「**about: flags**」と入力すると、[開発者向けの設定] オプションが表示されます。  [**Localhost ループバックを許可する**] オプションをオンにして、Microsoft Edge を再起動します。
-
->    ![[ローカルホスト ループバックを許可する] オプションがオンになった Microsoft Edge。](../images/allow-localhost-loopback.png)
+> Microsoft Edge で Office アドインをテストするには、追加の構成手順が必要です。 Windows コマンド プロンプトで、次のコマンドを実行します: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Office 365 で Office アドインをサイドロードする
 
 1. Microsoft 365 アカウントにサインインします。
 
-2. ツールバーの左端にあるアプリ起動ツールを開き、 **Excel**、 **Word**、または**PowerPoint**を選択して、新しいドキュメントを作成します。
+2. ツールバーの左端にあるアプリ起動ツールを開き、 **Excel**、 **Word**、または **PowerPoint**を選択して、新しいドキュメントを作成します。
 
 3. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 

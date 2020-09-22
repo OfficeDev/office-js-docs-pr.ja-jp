@@ -4,12 +4,12 @@ description: OpenBrowserWindow API をサポートする Office プラットフ�
 ms.date: 09/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8f6966f5bdcecd9c55a20f2d640d066906c1b6a3
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8bc26525bf64ed87d46d85cd1248f79696d67f2b
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135239"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175508"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザーウィンドウ API の要件セットを開く
 
@@ -36,7 +36,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1.1
 
-OpenBrowserWindowApi 1.1 は、API の最初のバージョンです。 API の詳細については、「 [Office. ui](/javascript/api/office/office.context.ui) リファレンス」のトピックを参照してください。
+OpenBrowserWindowApi 1.1 は、API の最初のバージョンです。 API の詳細については、「 [Office. ui](/javascript/api/office/office.context#ui) リファレンス」のトピックを参照してください。
 
 ## <a name="see-also"></a>関連項目
 

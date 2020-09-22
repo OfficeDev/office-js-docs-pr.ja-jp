@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 09/14/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819834"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175543"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -154,19 +154,19 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 
 `LaunchEvent`マニフェストに拡張点サポートが追加されました。 イベントベースのライセンス認証機能を構成します。
 
-**利用可能な**機能: web 上の Outlook (モダン、 [要求のプレビューアクセス](https://aka.ms/OWAPreview))
+**利用可能な**機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="launchevents-manifest-element"></a>[LaunchEvents マニフェスト要素](../../manifest/launchevents.md)
 
 `LaunchEvents`マニフェストに要素を追加しました。 イベントベースのアクティブ化機能の構成をサポートしています。
 
-**利用可能な**機能: web 上の Outlook (モダン、 [要求のプレビューアクセス](https://aka.ms/OWAPreview))
+**利用可能な**機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="runtimes-manifest-element"></a>[ランタイムマニフェスト要素](../../manifest/runtimes.md)
 
 マニフェスト要素に Outlook サポートが追加されました `Runtimes` 。 イベントベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
 
-**利用可能な**機能: web 上の Outlook (モダン、 [要求のプレビューアクセス](https://aka.ms/OWAPreview))
+**利用可能な**機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 

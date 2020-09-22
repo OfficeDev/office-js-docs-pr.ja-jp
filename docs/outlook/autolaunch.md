@@ -2,14 +2,14 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 69f14748a898c2c963c9d049b2c40c28f3aec725
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431249"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175550"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -35,7 +35,7 @@ ms.locfileid: "47431249"
 この機能をプレビューするには:
 
 - CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
-- [この要求フォーム](https://aka.ms/OWAPreview)を完了して送信することにより、Microsoft 365 アカウントを使用して、web 上の Outlook のプレビュービットへのアクセスを要求します。 テナントの準備が整ったことをお知らせします。
+- [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
