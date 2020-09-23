@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインのアクティブ化ルール
 description: Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。
-ms.date: 12/10/2019
+ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cdcdfbf3961ad9f627ba00f7366f49c77bba435d
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294053"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214597"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Outlook コンテキスト アドインのアクティブ化ルール
 
@@ -141,7 +141,7 @@ Outlook で特定の条件に応じてアドインをアクティブ化するに
 次の例は、 `ItemHasRegularExpressionMatch` 選択したアイテムの本文に "apple"、"banana"、または "coconut" が含まれている場合にアドインをアクティブにする方法を示しています。大文字小文字は無視されます。
 
 ```xml
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
 ルールの使用の詳細について `ItemHasRegularExpressionMatch` は、「 [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](use-regular-expressions-to-show-an-outlook-add-in.md)」を参照してください。
