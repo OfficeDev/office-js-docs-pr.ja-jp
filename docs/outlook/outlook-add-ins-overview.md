@@ -1,15 +1,15 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 09/14/2020
+ms.date: 09/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819568"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135229"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -41,9 +41,9 @@ Outlook アドインは、Windows 版 Outlook 固有の統合機能として以�
 
     ![カード内のコンテキスト アプリを示す](../images/outlook-detected-entity-card.png)
 
-## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックス アイテム
+## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
 
-Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
+Outlook アドインは、ユーザーがメッセージまたは予定を作成または読んでいるときにアクティブになりますが、他の種類のアイテムではアクティブになりません。 ただし、現在のメッセージ アイテムが作成または読み取りフォームで次のいずれかである場合、アドインはアクティブ化*されません*。
 
 - Information Rights Management (IRM) によって保護されているか、または保護のためにその他の方法で暗号化されている場合。デジタル署名はこれらいずれかのメカニズムに依存しているため、デジタル署名されたメッセージはその一例です。
 
