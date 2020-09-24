@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 08/24/2020
+ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6ce09b3b2f60cd4c77e966f6b920aa63caab299c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294333"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214611"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -96,20 +96,17 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 ### <a name="try-it-out"></a>試してみる
 
 > [!NOTE]
-> 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+> 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。
 
-1. Outlook で、メッセージを選択または開きます。
+1. Outlook で、[閲覧ウィンドウ](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0)でメッセージを表示するか、独自のウィンドウでメッセージを開きます。
 
 1. **ホーム**タブ（または新しいウィンドウでメッセージを開いた場合は**メッセージ**タブ）を選択し、リボンの**タスクパネルの表示**ボタンを選択、アドインの作業ペインを開きます。
 
