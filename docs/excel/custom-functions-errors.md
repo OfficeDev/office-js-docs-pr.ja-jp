@@ -1,14 +1,14 @@
 ---
-ms.date: 09/21/2020
+ms.date: 09/23/2020
 description: '#NULL! のようなエラーを処理して返す カスタム関数から。'
 title: カスタム関数を処理し、エラーを返します。
 localization_priority: Normal
-ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: b3d3b325649a0775d3375c9f5285bba7cde0aa16
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175529"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268545"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>カスタム関数を処理し、エラーを返します。
 
@@ -38,9 +38,9 @@ function getCity(zipCode: string): string {
 Error オブジェクトは、セルにエラーを返すために使用されます[。](/javascript/api/custom-functions-runtime/customfunctions.error) オブジェクトを作成するときに、次の列挙値のいずれかを選択して、使用するエラーを指定し `ErrorCode` ます。
 
 
-|ErrorCode enum value  |Excel のセル値  |意味  |
+|ErrorCode enum value  |Excel のセル値  |Description  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | JavaScript ではゼロ除算が許可されるため、この状態を検出するには、慎重にエラーハンドラをに記述する必要があります。 |
+|`divisionByZero` | `#DIV/0`  | 関数が0による除算を試行しています。 |
 |`invalidName`    | `#NAME?`  | 関数名に入力ミスがあります。 このエラーは、カスタム関数の入力エラーとしてサポートされますが、カスタム関数の出力エラーとしてはサポートされていないことに注意してください。 | 
 |`invalidNumber`  | `#NUM!`   | 数式の数値に問題があります。 |
 |`invalidReference` | `#REF!` | 関数が無効なセルを参照しています。 このエラーは、カスタム関数の入力エラーとしてサポートされますが、カスタム関数の出力エラーとしてはサポートされていないことに注意してください。|

@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
-ms.date: 10/31/2019
+ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cd26c26e277d7d5fe93664494eb84b4e94bcc47
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611618"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268552"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
@@ -82,6 +82,9 @@ var restHost = Office.context.mailbox.restUrl;
 ## <a name="call-the-api"></a>API を呼び出す
 
 アドインがアクセス トークン、アイテム ID、および REST API URL を取得すると、REST API を呼び出すバックエンド サービスにその情報を渡すか、AJAX を使用して直接呼び出すことができるようになります。 次の例は、Outlook Mail REST API を呼び出して現在のメッセージを取得します。
+
+> [!IMPORTANT]
+> オンプレミスの Exchange の展開では、サーバーのセットアップで CORS がサポートされていないため、AJAX または類似のライブラリを使用したクライアント側の要求は失敗します。
 
 ```js
 function getCurrentItem(accessToken) {
