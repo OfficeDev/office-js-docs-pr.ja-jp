@@ -321,6 +321,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 共通 API の要件セット
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: ブラウザー ウィンドウの要件セットを開く
+              href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
             - name: リボン API の要件セット
               href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共有ランタイム要件のセット
@@ -1143,6 +1145,11 @@
           displayName: Word
 - name: パターンとプラクティス
   items:
+    - name: 概要
+      href: overview/patterns-and-practices-overview.md
+    - name: Excel で開く
+      href: excel/pnp-open-in-excel.md
+      displayName: Excel
     - name: カスタム関数のリモート呼び出しのバッチ処理
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
