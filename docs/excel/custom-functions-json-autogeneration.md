@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2020
+ms.date: 09/25/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819519"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279498"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -38,7 +38,9 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 
 ## <a name="jsdoc-tags"></a>JSDoc タグ
-Excel カスタム関数では、次の JSDoc タグを利用できます。
+
+Excel カスタム関数では、次の JSDoc タグがサポートされています。
+
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id 名
 * [@helpurl](#helpurl) url
@@ -50,7 +52,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 ---
 ### <a name="cancelable"></a>@cancelable
-<a id="cancelable"/>
+<a id="cancelable"></a>
 
 関数が取り消されたときにカスタム関数が処理を実行することを示します。
 
@@ -62,7 +64,7 @@ Excel カスタム関数では、次の JSDoc タグを利用できます。
 
 ---
 ### <a name="customfunction"></a>@customfunction
-<a id="customfunction"/>
+<a id="customfunction"></a>
 
 構文: @customfunction _id_ _名_
 
@@ -131,7 +133,7 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 
 ---
 ### <a name="helpurl"></a>@helpurl
-<a id="helpurl"/>
+<a id="helpurl"></a>
 
 構文: @helpurl _url_
 
@@ -150,7 +152,7 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 
 ---
 ### <a name="param"></a>@param
-<a id="param"/>
+<a id="param"></a>
 
 #### <a name="javascript"></a>JavaScript
 
@@ -161,6 +163,7 @@ JavaScript 構文: @param {type} 名_の説明_
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
 
 カスタム関数内のパラメーターを省略可能と指定する方法:
+
 * パラメーター名を角かっこで囲みます。 例: `@param {string} [text] Optional text`。
 
 > [!NOTE]
@@ -189,6 +192,7 @@ TypeScript 構文: @param 名 _の説明_
 使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。
 
 カスタム関数のパラメーターを省略可能として示すには、以下のいずれかを実行します。
+
 * 省略可能なパラメーターを使用する。 例: `function f(text?: string)`
 * パラメーターに既定値を指定する。 例: `function f(text: string = "abc")`
 
@@ -214,7 +218,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
-<a id="requiresAddress"/>
+<a id="requiresAddress"></a>
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
@@ -222,7 +226,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="returns"></a>@returns
-<a id="returns"/>
+<a id="returns"></a>
 
 構文: @returns {_type_}
 
@@ -247,7 +251,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="streaming"></a>@streaming
-<a id="streaming"/>
+<a id="streaming"></a>
 
 カスタム関数がストリーミング関数であることを示すのに使用されます。 
 
@@ -262,7 +266,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="volatile"></a>@volatile
-<a id="volatile"/>
+<a id="volatile"></a>
 
 揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
 
@@ -272,7 +276,7 @@ function add(first: number, second: number): number {
 
 ```js
 /**
- * Simulates rolling a 6-sided dice.
+ * Simulates rolling a 6-sided die.
  * @customfunction
  * @volatile
  */
@@ -310,6 +314,7 @@ function roll6sided(): number {
 その他の型は、エラーとして処理されます。
 
 ## <a name="next-steps"></a>次の手順
+
 [カスタム関数用の命名規則](custom-functions-naming.md)について説明します。 または、[JSON ファイルを手で書く](custom-functions-json.md)必要のある[機能をローカライズする](custom-functions-localize.md)方法を確認してください。
 
 ## <a name="see-also"></a>関連項目

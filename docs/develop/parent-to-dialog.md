@@ -1,21 +1,21 @@
 ---
 title: ホストページからダイアログボックスにメッセージを渡す代替方法
 description: MessageChild メソッドがサポートされていない場合に使用する回避策について説明します。
-ms.date: 08/20/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: b516896d28979f439f3065f9ff036ff21c2c0997
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 8f44f7f5c145b58d13e7387d01e28fd349a512fc
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293178"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279483"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>ホストページからダイアログボックスにメッセージを渡す代替方法
 
 親ページから子ダイアログボックスにデータおよびメッセージを渡す方法としては、 `messageChild` 「 [office アドインで OFFICE ダイアログ API を使用](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)する」で説明されている方法を使用することをお勧めします。Add-in [api 1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)をサポートしていないプラットフォームまたはホストでアドインが実行されている場合は、次の2つの方法で情報をダイアログボックスに渡すことができます。
 
 - `displayDialogAsync` に渡される URL にクエリ パラメーターを追加します。
-- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2 つのウィンドウは共通のセッション ストレージを共有しませんが、ポート番号 (存在する場合) を含む*ドメインが同じである場合*は、共通の[ローカル ストレージ](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。\*
+- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2つのウィンドウは、共通のセッション記憶域 ( [Window. sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しませんが、 *同じドメイン* (ポート番号を含む) がある場合は、共通の [ローカル記憶域](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。\*
 
 
 > [!NOTE]
@@ -50,4 +50,4 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 ダイアログ ボックス内のコードは、URL を解析し、パラメーター値を読み取ることができます。
 
 > [!IMPORTANT]
-> Office は、`displayDialogAsync` に渡される URL に `_host_info` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません)。Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+> Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 ダイアログ ボックスが移動する先の後続の URL には追加されません)。 Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。 ダイアログボックスのセッションストレージ ( [sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) に同じ値が追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。

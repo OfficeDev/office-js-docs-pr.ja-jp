@@ -1,14 +1,14 @@
 ---
 title: Angular で Office アドインを開発する
 description: 角度を使用して、単一ページアプリケーションとして Office アドインを作成するためのガイダンスを取得します。
-ms.date: 01/27/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 2cd90a51f49adfd03c0096d55399012e88da1da0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c0f1050154339a5732b4f61bb8961ebecaffc342
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608986"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279473"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -94,7 +94,7 @@ Office のアドインの Dialog API を使えば、アドインでは、メイ�
 
 [DisplayDialogAsync](/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。 
 
-重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。同様に、ダイアログ ボックスには、それ自体にセッション ストレージがあり、作業ウィンドウからコードでそこにアクセスすることはできません。  
+重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。 ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。 この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。 ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。 同様に、ダイアログボックスには独自のセッションストレージ (session [storage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) があります。これには、作業ウィンドウのコードからアクセスすることはできません。  
 
 
 ## <a name="trigger-the-ui-update"></a>UI の更新をトリガーする

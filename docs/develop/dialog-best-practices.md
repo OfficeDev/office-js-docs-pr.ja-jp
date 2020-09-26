@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページアプリケーション (SPA) のベストプラクティスなど、Office ダイアログ API のルールとベストプラクティスを提供します。
-ms.date: 01/29/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292758"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279501"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -51,7 +51,7 @@ Web 上で Office を使用しているときにダイアログボックスを�
 
 ### <a name="do-not-use-the-_host_info-value"></a>[ \_ ホスト情報] の値を使用しないでください。 \_
 
-Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 これはカスタムクエリパラメーターの後に追加されます (存在する場合)。 これは、ダイアログボックスが移動する以降の Url には追加されません。 Microsoft では、この値の内容を変更したり、完全に削除したりすることがあります。この場合、コードでこの値を読み取ることはできません。 ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 これはカスタムクエリパラメーターの後に追加されます (存在する場合)。 これは、ダイアログボックスが移動する以降の Url には追加されません。 Microsoft では、この値の内容を変更したり、完全に削除したりすることがあります。この場合、コードでこの値を読み取ることはできません。 同じ値がダイアログボックスのセッションストレージ (つまり、 [ウィンドウの sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) に追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>SPA で Office ダイアログ API を使用するためのベストプラクティス
 
@@ -62,7 +62,7 @@ Office は、`_host_info` に渡される URL に `displayDialogAsync` という
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>SPAs と Office ダイアログ API の問題
 
-[Office] ダイアログボックスは、JavaScript エンジンの独自のインスタンスを備えた新しいウィンドウに表示されるので、完全な実行コンテキストです。 ルートを渡すと、基本ページとすべての初期化コードとブートストラップコードがこの新しいコンテキストで再び実行され、すべての変数がダイアログボックスの初期値に設定されます。 そのため、この手法では、アプリケーションの2番目のインスタンスをボックスウィンドウにダウンロードして起動します。これにより、SPA の目的が部分的には損なわれます。 また、ダイアログボックスウィンドウで変数を変更するコードでは、同じ変数の作業ウィンドウバージョンは変更されません。 同様に、ダイアログボックスウィンドウには独自のセッションストレージがあります。これには、作業ウィンドウのコードからアクセスすることはできません。 ダイアログボックスと呼び出し先のホストページが、 `displayDialogAsync` サーバーに対して2つの異なるクライアントのように表示されています。 (ホストページについての通知については、「 [ホストページからダイアログボックスを開く](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)」を参照してください)。
+[Office] ダイアログボックスは、JavaScript エンジンの独自のインスタンスを備えた新しいウィンドウに表示されるので、完全な実行コンテキストです。 ルートを渡すと、基本ページとすべての初期化コードとブートストラップコードがこの新しいコンテキストで再び実行され、すべての変数がダイアログボックスの初期値に設定されます。 そのため、この手法では、アプリケーションの2番目のインスタンスをボックスウィンドウにダウンロードして起動します。これにより、SPA の目的が部分的には損なわれます。 また、ダイアログボックスウィンドウで変数を変更するコードでは、同じ変数の作業ウィンドウバージョンは変更されません。 同様に、ダイアログボックスウィンドウには独自のセッションストレージ ( [sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) があります。これには、作業ウィンドウのコードからアクセスすることはできません。 ダイアログボックスと呼び出し先のホストページが、 `displayDialogAsync` サーバーに対して2つの異なるクライアントのように表示されています。 (ホストページについての通知については、「 [ホストページからダイアログボックスを開く](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)」を参照してください)。
 
 そのため、メソッドにルートを渡すと、実際には `displayDialogAsync` spa を持っていません。 *同じ spa のインスタンスが2つ*あります。 さらに、作業ウィンドウインスタンス内のコードの多くは、そのインスタンスでは使用されず、ダイアログボックスインスタンス内のコードの多くは、そのインスタンスでは使用されません。 同じバンドルに 2 つの SPA があるようなものです。
 
