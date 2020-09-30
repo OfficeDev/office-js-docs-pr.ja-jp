@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
-ms.date: 07/07/2020
+ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: bc0d092dad105cbdff09a5826632baa6fd4f7021
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293346"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279491"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -23,7 +23,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 - これは作業ウィンドウとは完全に異なるブラウザー インスタンスで、次のことを意味します。
   - 独自の JavaScript ランタイム環境ならびにウィンドウ オブジェクトおよびグローバル変数を持ちます。
   - 作業ウィンドウと共有される実行環境はありません。
-  - 同じセッション ストレージは作業ウィンドウとは共有されません。
+  - 作業ウィンドウと同じセッション ストレージ ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しません。
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
 - ダイアログ ボックスは [messageparent](/javascript/api/office/office.ui#messageparent-message-) メソッドを使用して作業ウィンドウに情報を返すことができますが、このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことができます。
 

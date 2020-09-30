@@ -3,12 +3,12 @@ ms.date: 09/25/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279498"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308538"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -51,8 +51,9 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 * [@volatile](#volatile)
 
 ---
-### <a name="cancelable"></a>@cancelable
 <a id="cancelable"></a>
+
+### <a name="cancelable"></a>@cancelable
 
 関数が取り消されたときにカスタム関数が処理を実行することを示します。
 
@@ -63,8 +64,9 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 関数には `@cancelable` と `@streaming` の両方のタグを含めることはできません。
 
 ---
-### <a name="customfunction"></a>@customfunction
 <a id="customfunction"></a>
+
+### <a name="customfunction"></a>@customfunction
 
 構文: @customfunction _id_ _名_
 
@@ -132,8 +134,9 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 ```
 
 ---
-### <a name="helpurl"></a>@helpurl
 <a id="helpurl"></a>
+
+### <a name="helpurl"></a>@helpurl
 
 構文: @helpurl _url_
 
@@ -151,8 +154,9 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 ```
 
 ---
-### <a name="param"></a>@param
 <a id="param"></a>
+
+### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
@@ -217,16 +221,18 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"></a>
+
+### <a name="requiresaddress"></a>@requiresAddress
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
 最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
 
 ---
-### <a name="returns"></a>@returns
 <a id="returns"></a>
+
+### <a name="returns"></a>@returns
 
 構文: @returns {_type_}
 
@@ -250,8 +256,9 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="streaming"></a>@streaming
 <a id="streaming"></a>
+
+### <a name="streaming"></a>@streaming
 
 カスタム関数がストリーミング関数であることを示すのに使用されます。 
 
@@ -265,8 +272,9 @@ function add(first: number, second: number): number {
 ストリーミング関数は、[@volatile](#volatile) としてマークできません。
 
 ---
-### <a name="volatile"></a>@volatile
 <a id="volatile"></a>
+
+### <a name="volatile"></a>@volatile
 
 揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
 

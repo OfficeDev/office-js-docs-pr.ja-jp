@@ -3,12 +3,12 @@ title: Web ページから Excel を開き、Office アドインを埋め込む
 description: Web ページから Excel を開き、Office アドインを埋め込みます。
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 49df253c714f3ad84d2523b87e7df894b9027355
-ms.sourcegitcommit: ea03e4ea2e8537d5f6d52477816209f6c1a6579c
+ms.openlocfilehash: 00846ca5ca05e65fd75629f5aad0e4fb3d947ab1
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "48166930"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308545"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Web ページから Excel を開き、Office アドインを埋め込む
 
@@ -27,7 +27,7 @@ Excel ドキュメントを生成して開く、web ページ上の1回のボタ
 1. サンプルコードを  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip コンピューターのフォルダーに抽出します。
 2. サンプルをビルドして実行するには、に記載されている手順に従って、readme の「プロジェクト」セクション **を使用** します。
 3. サンプルを実行すると、次のスクリーンショットに似た web ページが表示されます。 Web ページを使用して、スクリプトラボが含まれる新しい Excel ドキュメントを作成します。
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="埋め込みスクリプトラボサンプルが表示する web ページのスクリーンショットには、Excel ファイルを選択して、スクリプトラボアドインを埋め込むことができます。":::
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Web ページ上の [Excel] ボタンのイメージアドインが埋め込まれた新しい Excel ドキュメントを開き、自動的に開きます。":::
 
 ### <a name="how-the-sample-works"></a>サンプルの動作方法
 
@@ -72,7 +72,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 
 ## <a name="use-the-fluent-ui"></a>Fluent UI を使用する
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Word、Excel、および PowerPoint の Fluent UI アイコン。":::
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Web ページ上の [Excel] ボタンのイメージアドインが埋め込まれた新しい Excel ドキュメントを開き、自動的に開きます。":::
 
 ベストプラクティスとして、Fluent UI を使用して、ユーザーが Microsoft 製品間を移行できるようにします。 Web ページから起動する Office アプリケーションを指定するには、常に Office アイコンを使用する必要があります。 Excel のアイコンを使用して Excel アプリケーションを起動することを示すように、サンプルコードを変更してみましょう。
 
@@ -186,16 +186,9 @@ Javascript 版の OOXML SDK は、 [javascript 用の OPEN XML sdk](https://arch
 
 OOXML コードを Azure 関数に配置して、.NET コードを web アプリケーションの他の部分と区別することができます。 その後、Web アプリケーションから Azure 関数 (Excel ドキュメントを生成するため) を呼び出します。 Azure 関数の詳細については、「 [Azure 関数の概要](https://docs.microsoft.com/azure/azure-functions/functions-overview)」を参照してください。
 
-### <a name="simplify-authentication"></a>認証を簡略化する
+### <a name="use-single-sign-on"></a>シングルサインオンを使用する
 
-通常、お客様は web アプリケーションでの作業時に認証され、サインインします。 ベストプラクティスとして、Office アドインを使用するために再度サインインする必要がないように、ドキュメントを開くときにサインインを続けることができます。 このことを適切に処理するには、短時間の認証トークンをアドインに渡します。
-
-1. OOXML SDK を使用して、認証トークンをドキュメント内のカスタムプロパティとして保存します。
-1. アドインの開始時に、ドキュメントからトークンを読み取ります。
-1. これで、アドインは顧客から追加の認証手順を必要とせずに、サービスに接続できます。
-
-> [!WARNING]
-> 認証トークンをドキュメントに埋め込むと、承認されていないユーザーがトークンを入手できるセキュリティ上のリスクが生じます。 短時間の認証トークンを使用することをお勧めします。 アドインが短時間トークンを使用している場合は、ドキュメントに保存されていない新しい認証トークンをすぐに要求する必要があります。
+認証を簡単にするために、アドインにシングルサインオンを実装することをお勧めします。 詳細については、「 [Office アドインのシングルサインオンを有効にする](../develop/sso-in-office-add-ins.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
