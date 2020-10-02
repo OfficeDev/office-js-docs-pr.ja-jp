@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで代理人アクセスのシナリオを有効にする
 description: 代理人アクセスについて簡単に説明し、アドインサポートを構成する方法について説明します。
-ms.date: 09/03/2020
+ms.date: 09/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 68e9c8003f8d223a591283fd1a73f0a38bd3c8a4
+ms.sourcegitcommit: 6c3a04acde57832feeaaa599148f93af7e3e36ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430983"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "48336420"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Outlook アドインで代理人アクセスのシナリオを有効にする
 
@@ -25,7 +25,7 @@ ms.locfileid: "47430983"
 
 |アクセス許可|値|説明|
 |---|---:|---|
-|読み取り|1 (000001)|アイテムを読み取ることができます。|
+|Read|1 (000001)|アイテムを読み取ることができます。|
 |書き込み|2 (000010)|アイテムを作成できます。|
 |DeleteOwn|4 (000100)|は、自分で作成したアイテムのみを削除できます。|
 |DeleteAll|8 (001000)|任意のアイテムを削除できます。|
@@ -83,9 +83,6 @@ ms.locfileid: "47430983"
 
 アイテムの共有プロパティは、新規作成または閲覧モードで取得できます。そのためには、 [getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 これにより、現在、代理人のアクセス許可、所有者の電子メールアドレス、REST API のベース URL、ターゲットメールボックスを提供する [Sharedproperties](/javascript/api/outlook/office.sharedproperties) オブジェクトが返されます。
 
-> [!IMPORTANT]
-> 代理人のシナリオでは、アドインでは、EWS ではなく REST を使用でき、アドインのアクセス許可をに設定して、 `ReadWriteMailbox` 所有者のメールボックスへの rest アクセスを有効にする必要があります。
-
 次の例は、メッセージまたは予定の共有プロパティを取得する方法、代理人が **書き込み** アクセス許可を持っているかどうかを確認する方法、および REST 呼び出しを行う方法を示しています。
 
 ```js
@@ -140,7 +137,47 @@ function performOperation() {
 > [!TIP]
 > 代理人は、REST を使用して、 [outlook アイテムまたはグループ投稿に添付されている outlook メッセージのコンテンツを取得](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)できます。
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>共有アイテムと共有されていないアイテムの通話を処理する
+
+アイテムが共有されているかどうかにかかわらず、アイテムに対して REST 操作を呼び出す場合は、API を使用して、 `getSharedPropertiesAsync` アイテムが共有されているかどうかを判断できます。 その後、適切なオブジェクトを使用して、操作の REST URL を作成できます。
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
+
+## <a name="limitations"></a>制限事項
+
+アドインのシナリオに応じて、代理人の状況を処理する際に考慮すべきいくつかの制限があります。
+
+### <a name="rest-and-ews"></a>REST と EWS
+
+アドインでは、EWS ではなく REST を使用でき、アドインのアクセス許可をに設定して、 `ReadWriteMailbox` 所有者のメールボックスへの rest アクセスを有効にする必要があります。
+
+### <a name="message-compose-mode"></a>メッセージ作成モード
+
+メッセージ作成モードでは、次の条件が満たされない限り、 [Getsharedpropertiesasync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) は web 上の Outlook ではサポートされません。
+
+1. 所有者は、代理人と共に少なくとも1つのメールボックスフォルダーを共有します。
+1. 代理人は、共有フォルダー内のメッセージを下書きします。
+
+    例:
+
+    - 代理人が共有フォルダー内の電子メールに返信または転送します。
+    - 代理人は下書きメッセージを保存し、自分の **下書き** フォルダーから共有フォルダーに移動します。 代理人が共有フォルダーから下書きを開き、作成を続行します。
+
+送信されたメッセージは、通常は代理人の [ **送信済みアイテム** ] フォルダーにあります。
+
+## <a name="see-also"></a>関連項目
 
 - [自分のメールと予定表の管理を他のユーザーに許可する](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Office365 での予定表の共有](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
