@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 07/10/2020
+ms.date: 10/03/2020
 localization_priority: Priority
-ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293360"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370508"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -52,12 +52,12 @@ ms.locfileid: "47293360"
 - ShowTaskpane: カスタムの HTML ページをロードする 1 つまたは複数のウィンドウを表示します。
 - ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](/javascript/api/office/office.ui) API を使用できます。  
 
-### <a name="default-enabled-or-disabled-status-preview"></a>既定で有効または無効になっている状態 (プレビュー)
+### <a name="default-enabled-or-disabled-status"></a>既定で有効または無効になっている状態 
 
 アドイン起動時にコマンドを有効にするか無効にするかを指定したり、プログラムによって設定を変更したりできます。
 
 > [!NOTE]
-> この機能はプレビュー段階にあり、すべての Office アプリケーションまたはシナリオでサポートされるわけではありません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
+> この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 

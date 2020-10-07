@@ -4,12 +4,12 @@ description: Outlook JavaScript API の要件セットの詳細。
 ms.date: 09/01/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: c7491492236817548277ad4fc82c504b77a9046d
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: 8424d9f657c3fc43ed8577edecc32296382181e2
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326311"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370501"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -103,7 +103,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 接続時の従来の Outlook UI<br>オンプレミスの Exchange | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> <sup>1</sup> Microsoft 365 サブスクリプションまたは製品版の 1 回限りの購入による Outlook on Windows での 1.8 のサポートは、バージョン 1910 (ビルド 12130.20272) から利用できます。 バージョンに応じた詳細については、[Office 2019](/officeupdates/update-history-office-2019) または [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) の更新履歴ページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.office.com/article/about-office-what-version-of-office-am-i-using-932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
+> <sup>1</sup> Microsoft 365 サブスクリプションまたは製品版の 1 回限りの購入による Outlook on Windows での 1.8 のサポートは、バージョン 1910 (ビルド 12130.20272) から利用できます。 バージョンに応じた詳細については、[Office 2019](/officeupdates/update-history-office-2019) または [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) の更新履歴ページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
 >
 > <sup>2</sup> Outlook 2013 での 1.3 のサポートは、[2015 年 12 月 8 日付、Outlook 2013 用更新プログラム (KB3114349)](https://support.microsoft.com/kb/3114349)の一部として追加されました。 Outlook 2013 での 1.4 のサポートは、「[MS16-107: Outlook 2013 セキュリティ更新プログラムについて 2016 年 9 月 13 日](https://support.microsoft.com/help/3118280)」の一部として追加されました。 Outlook 2016 (1 回限りの購入) での 1.4 のサポートは、「[2018 年 7 月 3 日更新プログラム Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223)」の一部として追加されました。
 >

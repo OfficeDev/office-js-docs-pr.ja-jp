@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
-ms.date: 09/14/2020
+ms.date: 10/05/2020
 localization_priority: Priority
-ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651945"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370515"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -63,9 +63,12 @@ ms.locfileid: "47651945"
 
 エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 Outlook アドインの場合、**オプションの接続エクスペリエンス** 設定を無効にした場合の影響はクライアントによって異なりますが、通常、ユーザーがインストールしたアドインと Office ストアへのアクセスは許可されません。 必須またはビジネスクリティカルと見なされている特定の Microsoft アドイン、および [一元展開](../publish/centralized-deployment.md) を通じて組織の IT 管理者が展開したアドインは引き続き使用できます。
 
-- Windows、Mac: **[アドインの取得]** ボタンは表示されないため、ユーザーはアドインの管理や Office ストアへのアクセスができなくなります。
+- Windows\*、Mac: [**アドインの取得**] ボタンは表示されないため、ユーザーはアドインの管理や Office ストアへのアクセスができなくなります。
 - Android、iOS: **[アドインの取得]** ダイアログには、管理者が展開したアドインのみが表示されます。
 - ブラウザー: アドインの可用性とストアへのアクセスは影響を受けないため、ユーザーは [アドイン （管理者が展開したものを含む） を引き続き管理](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) できます。
+
+  > [!NOTE]
+  > \* Windows の場合、この操作/動作のサポートはバージョン 2009 (ビルド 13127.20296) から利用できます。 バージョンに応じた詳細については、[Microsoft 365](/officeupdates/update-history-office365-proplus-by-date)更新履歴ペーのページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
 
 アドインの全般的な動作については、「[Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md#optional-connected-experiences)」を参照してください。
 
