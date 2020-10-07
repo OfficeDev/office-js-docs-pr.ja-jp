@@ -1,14 +1,14 @@
 ---
 title: Office アドインのプライバシーとセキュリティ
 description: Office アドインプラットフォームのプライバシーとセキュリティの側面について説明します。
-ms.date: 09/14/2020
+ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e17463ee7293c74d905238904baef1344a6e6b3
-ms.sourcegitcommit: 7f25a4a15c91e173c11c2cea03bfb605d4d5a98d
+ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47652581"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370522"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -69,13 +69,11 @@ Office アドインは、AppSource で公開することで利用可能にでき
 
 - 開発者はアドインを提出する際に、ID の証明、契約上の合意、および法規制に準拠したプライバシー ポリシーを提供する必要があります。
 
-- アドインのソースに読み取り専用モードでアクセスできるようにします。
-
 - 使用可能なアドインに対するユーザーレビュー システムをサポートしてコミュニティの自己管理を促します。
 
 ## <a name="optional-connected-experiences"></a>オプションの接続エクスペリエンス
 
-エンドユーザーと IT 管理者は、Office デスクトップおよびモバイルクライアント [でオプションで接続されたエクスペリエンス](/deployoffice/privacy/optional-connected-experiences) をオフにすることができます。 Office アドインの場合、[ **オプションの接続エクスペリエンス** ] 設定を無効にすることによる影響は、ユーザーがこれらのクライアントを使用してアドインまたは Office ストアにアクセスできなくなったことです。 ただし、重要な Microsoft アドインやビジネス上非常に重要なアドイン、および組織の IT 管理者が [一元展開](../publish/centralized-deployment.md) によって展開したアドインは引き続き利用できます。 また、アドインとストアは、設定の状態に関係なく、web 上の Outlook で使用できます。
+エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 Office アドインの場合、[ **オプションの接続エクスペリエンス** ] 設定を無効にすることによる影響は、ユーザーがこれらのクライアントを使用してアドインまたは Office ストアにアクセスできなくなったことです。 ただし、重要な Microsoft アドインやビジネス上非常に重要なアドイン、および組織の IT 管理者が [一元展開](../publish/centralized-deployment.md) によって展開したアドインは引き続き利用できます。 また、アドインとストアは、設定の状態に関係なく、web 上の Outlook で使用できます。
 
 Outlook 固有の動作の詳細については、「 [プライバシー、アクセス許可、outlook アドインのセキュリティ](../outlook/privacy-and-security.md#optional-connected-experiences)」を参照してください。
 
@@ -277,4 +275,4 @@ Office 設定の管理と適用はグループ ポリシー設定で行われま
 - [同一生成元ポリシー パート 1:ピーク禁止](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [JavaScript の同一生成元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保護モード](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
-- [Microsoft 365 アプリのプライバシー制御](/deployoffice/privacy/overview-privacy-controls)
+- [Microsoft 365 アプリのプライバシー コントロール](/deployoffice/privacy/overview-privacy-controls)
