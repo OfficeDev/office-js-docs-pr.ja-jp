@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 08/24/2020
+ms.date: 10/02/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293395"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370536"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -103,7 +103,7 @@ ms.locfileid: "47293395"
 
     - **Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`
 
-    - **Choose a script type: (スクリプトの種類を選択)** - `Javascript`
+    - **Choose a script type: (スクリプトの種類を選択)** - `JavaScript`
 
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** - `Git the gist`
 
@@ -157,16 +157,13 @@ ms.locfileid: "47293395"
 この先に進める前に、ジェネレーターによって生成されたアドインをテストして、プロジェクトが正しく設定されていることを確認します。
 
 > [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 1. プロジェクトのルートディレクトリにある**manifest.xml**ファイルをサイドロードするには、[テスト用Outlookアドインのサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)にある指示に従います。
 
@@ -539,24 +536,54 @@ ul {
       dialog: "./src/settings/dialog.js"
     },
     ```
-  
-2. `config`オブジェクト内で`plugins`配列を探し、これら2つの新しいオブジェクトをその配列の末尾に追加します。
+
+1. `config` オブジェクト内で `plugins` 配列を探します。 `new CopyWebpackPlugin` オブジェクトの`patterns` 配列で、`taskpane.css` エントリーの後に新しいエントリーを追加します。
+
+    ```js
+    {
+      to: "dialog.css",
+      from: "./src/settings/dialog.css"
+    },
+    ```
+
+    これを実行すると、`new CopyWebpackPlugin`オブジェクトは次のようになります。
+
+    ```js
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
+    ```
+
+1. `config`オブジェクト内で`plugins` 配列を探し、この新しいオブジェクトをその配列の末尾に追加します。
 
     ```js
     new HtmlWebpackPlugin({
       filename: "dialog.html",
       template: "./src/settings/dialog.html",
       chunks: ["polyfill", "dialog"]
-    }),
-    new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-    ])
+    })
     ```
 
-    これを実行すると、新しい`plugins`配列は次のようになります。
+    これを実行すると、新しい`plugins` 配列は次のようになります。
 
     ```js
     plugins: [
@@ -564,14 +591,30 @@ ul {
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ['polyfill', 'taskpane']
+        chunks: ["polyfill", "taskpane"]
       }),
-      new CopyWebpackPlugin([
-      {
-        to: "taskpane.css",
-        from: "./src/taskpane/taskpane.css"
-      }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
@@ -580,33 +623,24 @@ ul {
       new HtmlWebpackPlugin({
         filename: "dialog.html",
         template: "./src/settings/dialog.html",
-        chunks: ['polyfill', 'dialog']
-      }),
-      new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-      ])
+        chunks: ["polyfill", "dialog"]
+      })
     ],
     ```
 
-3. Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。
+1. Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。
 
-4. 次のコマンドを実行してプロジェクトを再構築します。
+1. 次のコマンドを実行してプロジェクトを再構築します。
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. 次のコマンドを実行してWebサーバーを起動します。
+1. 次のコマンドを実行してWebサーバーを起動します。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
 
 ### <a name="fetch-data-from-github"></a>GitHub からデータを取得する
 
@@ -906,10 +940,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
-
-> [!IMPORTANT]
-> 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
+すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
@@ -1270,10 +1301,7 @@ ul {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
-
-> [!IMPORTANT]
-> 「サイドロードはサポートされていません」というエラーが表示された場合は、無視して続行できます。
+すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
