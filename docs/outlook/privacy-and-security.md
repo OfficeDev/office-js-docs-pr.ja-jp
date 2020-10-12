@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
-ms.date: 10/05/2020
+ms.date: 10/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
+ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370515"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "48398417"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -68,7 +68,7 @@ ms.locfileid: "48370515"
 - ブラウザー: アドインの可用性とストアへのアクセスは影響を受けないため、ユーザーは [アドイン （管理者が展開したものを含む） を引き続き管理](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) できます。
 
   > [!NOTE]
-  > \* Windows の場合、この操作/動作のサポートはバージョン 2009 (ビルド 13127.20296) から利用できます。 バージョンに応じた詳細については、[Microsoft 365](/officeupdates/update-history-office365-proplus-by-date)更新履歴ペーのページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
+  > \* Windows の場合、この操作/動作のサポートはバージョン 2008 (ビルド 13127.20296) から利用できます。 バージョンに応じた詳細については、[Microsoft 365](/officeupdates/update-history-office365-proplus-by-date)更新履歴ペーのページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
 
 アドインの全般的な動作については、「[Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md#optional-connected-experiences)」を参照してください。
 
