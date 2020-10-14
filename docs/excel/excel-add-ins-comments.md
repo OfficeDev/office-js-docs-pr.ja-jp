@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
-ms.date: 03/17/2020
+ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
+ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408573"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "48456553"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
@@ -202,8 +202,123 @@ Excel.run(function (context) {
 });
 ```
 
+## <a name="comment-events"></a>コメントイベント
+
+アドインは、コメントの追加、変更、および削除を聞くことができます。 [Comment イベント](/javascript/api/excel/excel.commentcollection#event-details) は、オブジェクトに対して発生 `CommentCollection` します。 Comment イベントをリッスンするには、、、 `onAdded` `onChanged` またはの `onDeleted` コメントイベントハンドラーを登録します。 コメントイベントが検出されたときに、追加、変更、または削除されたコメントに関するデータを取得するには、このイベントハンドラーを使用します。 この `onChanged` イベントは、コメントの返信の追加、変更、および削除も処理します。 
+
+各 comment イベントは、同時に複数の追加、変更、または削除が実行された場合にのみトリガーされます。 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)、および[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)のすべてのオブジェクトには、イベントアクションをコメントのコレクションにマップするためのコメント id の配列が含まれています。
+
+イベントハンドラーの登録、イベントの処理、イベントハンドラーの削除に関する追加情報については、「 [Excel JAVASCRIPT API を使用してイベント](excel-add-ins-events.md) を処理する」の記事を参照してください。 
+
+### <a name="comment-addition-events"></a>コメントの追加イベント 
+この `onAdded` イベントは、コメントのコレクションに1つまたは複数の新しいコメントが追加されると発生します。 このイベントは、コメントスレッドに返信が追加されたときには発生し *ません* (コメントの返信イベントについては、「 [コメント変更イベント](#comment-change-events) 」を参照してください)。
+
+次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して追加されたコメントの配列を取得する方法を示して `onAdded` `CommentAddedEventArgs` `commentDetails` います。
+
+> [!NOTE]
+> このサンプルは、1つのコメントが追加された場合にのみ機能します。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onAdded comment event handler.
+    comments.onAdded.add(commentAdded);
+
+    return context.sync();
+});
+
+function commentAdded() {
+    Excel.run(function (context) {
+        // Retrieve the added comment using the comment ID.
+        // Note: This method assumes only a single comment is added at a time. 
+        var addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the added comment's data.
+        addedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the added comment's data.
+            console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
+            return context.sync();
+        });            
+    });
+}
+```
+
+### <a name="comment-change-events"></a>コメント変更イベント 
+`onChanged`Comment イベントは、次のシナリオでトリガーされます。
+
+- コメントの内容が更新されます。
+- コメントスレッドが解決されます。
+- コメントスレッドが再度開かれています。
+- コメントスレッドに返信が追加されます。
+- コメントスレッド内の返信が更新されます。
+- コメントスレッド内の返信が削除されます。
+
+次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して、変更されたコメントの配列を取得する方法を示して `onChanged` `CommentChangedEventArgs` `commentDetails` います。
+
+> [!NOTE]
+> このサンプルは、1つのコメントが変更された場合にのみ機能します。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onChanged comment event handler.
+    comments.onChanged.add(commentChanged);
+
+    return context.sync();
+});    
+
+function commentChanged() {
+    Excel.run(function (context) {
+        // Retrieve the changed comment using the comment ID.
+        // Note: This method assumes only a single comment is changed at a time. 
+        var changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the changed comment's data.
+        changedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the changed comment's data.
+            console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}`. Updated comment content: ${changedComment.content}`. Comment author: ${changedComment.authorName}`);
+            return context.sync();
+        });
+    });
+}
+```
+
+### <a name="comment-deletion-events"></a>コメント削除イベント
+コメントの `onDeleted` コレクションからコメントが削除されると、イベントがトリガーされます。 コメントが削除されると、そのメタデータは使用できなくなります。 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)オブジェクトは、アドインが個々のコメントを管理している場合に、コメント id を提供します。
+
+次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して、削除されたコメントの配列を取得する方法を示して `onDeleted` `CommentDeletedEventArgs` `commentDetails` います。
+
+> [!NOTE]
+> このサンプルは、1つのコメントが削除された場合にのみ機能します。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onDeleted comment event handler.
+    comments.onDeleted.add(commentDeleted);
+
+    return context.sync();
+});
+
+function commentDeleted() {
+    Excel.run(function (context) {
+        // Print out the deleted comment's ID.
+        // Note: This method assumes only a single comment is deleted at a time. 
+        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
+    });
+}
+```
+
 ## <a name="see-also"></a>こちらもご覧ください
 
 - [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してブックを操作する](excel-add-ins-workbooks.md)
+- [Excel JavaScript API を使用してイベントを操作する](excel-add-ins-events.md)
 - [Excel でコメントやメモを挿入する](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
