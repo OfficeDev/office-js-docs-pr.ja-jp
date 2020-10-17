@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲を操作する (高度)
 description: 特殊なセル、重複の削除、日付の操作など、高度な範囲のオブジェクトの関数とシナリオ。
-ms.date: 08/26/2020
+ms.date: 10/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 144012177e0e070149f6cef825c63392a468773d
+ms.sourcegitcommit: 6fa29989dfaec4dfa0f8df3fe5fb038d7afbae30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819575"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "48487888"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Excel JavaScript API を使用して範囲を操作する (高度)
 
@@ -354,6 +354,45 @@ Excel.run(function (context) {
 ```
 
 [GetSpillParent](/javascript/api/excel/excel.range#getspillparent--)メソッドを使用して、spilling を担当するセルを特定のセルに検索することもできます。 `getSpillParent`Range オブジェクトが1つのセルの場合にのみ機能することに注意してください。 `getSpillParent`複数のセルが含まれる範囲で呼び出しを行うと、エラーがスローされます (または、null 範囲が返され `Range.getSpillParentOrNullObject` ます)。
+
+## <a name="get-formula-precedents"></a>数式の参照元を取得する
+
+Excel の数式は、多くの場合、他のセルを参照します。 セルが数式にデータを提供する場合、数式の "参照先" と呼ばれます。 セル間のリレーションシップに関連する Excel の機能の詳細については、「 [数式とセルの間のリレーションシップを表示](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) する」を参照してください。 
+
+[範囲が getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--)場合、アドインは数式の直接の参照元セルを見つけることができます。 `Range.getDirectPrecedents` オブジェクトを返し `WorkbookRangeAreas` ます。 このオブジェクトには、ブック内のすべての参照元のアドレスが含まれています。 このオブジェクトには、少なくとも `RangeAreas` 1 つの数式が含まれているワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「 [Excel アドインで複数の範囲を同時に操作](excel-add-ins-multiple-ranges.md) する」を参照してください `RangeAreas` 。
+
+Excel UI で、[ **参照元のトレース** ] ボタンをクリックすると、選択されているセルから選択した数式に矢印が描画されます。 Excel UI ボタンとは異なり、この `getDirectPrecedents` メソッドは矢印を描画しません。 
+
+> [!IMPORTANT]
+> このメソッドは、ブック内の参照元 `getDirectPrecedents` セルを取得できません。 
+
+次の例では、アクティブな範囲の直接の参照元を取得し、それらの参照元セルの背景色を黄色に変更します。 
+
+> [!NOTE]
+> アクティブセル範囲には、同じブック内の他のセルを参照する数式が含まれている必要があります。 
+
+```js
+Excel.run(function (context) {
+    // Precedents are cells that provide data to the selected formula.
+    var range = context.workbook.getActiveCell();
+    var directPrecedents = range.getDirectPrecedents();
+    range.load("address");
+    directPrecedents.areas.load("address");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Direct precedent cells of ${range.address}:`);
+
+            // Use the direct precedents API to loop through precedents of the active cell.
+            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+              // Highlight and print out the address of each precedent cell.
+              directPrecedents.areas.items[i].format.fill.color = "Yellow";
+              console.log(`  ${directPrecedents.areas.items[i].address}`);
+            }
+        })
+        .then(context.sync);
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>関連項目
 
