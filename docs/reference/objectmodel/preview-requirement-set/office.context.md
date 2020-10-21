@@ -1,14 +1,14 @@
 ---
 title: Office コンテキスト-プレビュー要件セット
 description: メールボックス API プレビュー要件セットを使用して Outlook アドインで使用可能な Office コンテキストオブジェクトメンバー。
-ms.date: 03/18/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 64a96336ec181747fecf06c8cd2441b600ac8a10
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 8286434d2cbfc11cf0d16f8bd014b4760f0337ff
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431116"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626408"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>コンテキスト (メールボックスプレビュー要件セット)
 
@@ -16,7 +16,7 @@ ms.locfileid: "47431116"
 
 Office のコンテキストは、すべての Office アプリでアドインによって使用される共有インターフェイスを提供します。 この一覧には、Outlook アドインで使用されるインターフェイスのみが記載されています。Office コンテキスト名前空間の完全な一覧については、 [COMMON API の「office コンテキスト](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)」を参照してください。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -27,14 +27,14 @@ Office のコンテキストは、すべての Office アプリでアドイン�
 
 | プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [authoritative](#auth-auth) | 作成<br>読み取り | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [プレビュー](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [authoritative](#auth-auth) | 作成<br>読み取り | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [Identity Api 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
+| [contentLanguage](#contentlanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ダン](#diagnostics-contextinformation) | 作成<br>読み取り | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [主催](#host-hosttype) | 作成<br>読み取り | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | 作成<br>読み取り | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [officeTheme](#officetheme-officetheme) | 作成<br>読み取り | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true) | [プレビュー](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [プラットフォーム](#platform-platformtype) | 作成<br>読み取り | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [platform](#platform-platformtype) | 作成<br>読み取り | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [要件](#requirements-requirementsetsupport) | 作成<br>読み取り | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | 作成<br>読み取り | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [UI](#ui-ui) | 作成<br>読み取り | [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -49,7 +49,7 @@ Office のコンテキストは、すべての Office アプリでアドイン�
 
 *   [Auth](/javascript/api/office/office.auth)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -125,7 +125,7 @@ function write(message){
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -194,7 +194,7 @@ function write(message){
 
 *   [HostType](/javascript/api/office/office.hosttype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -229,12 +229,12 @@ Office テーマの色を使用すると、アドインの配色を、[ **ファ
 
 |名前| 種類| 説明|
 |---|---|---|
-|`bodyBackgroundColor`| 文字列|Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。|
+|`bodyBackgroundColor`| String|Office テーマの本文の背景色を 16 進数の組み合わせとして取得します。|
 |`bodyForegroundColor`| String|Office テーマの本文の前景色を 16 進数の組み合わせとして取得します。|
 |`controlBackgroundColor`| String|Office テーマのコントロールの背景色を 16 進数の組み合わせとして取得します。|
 |`controlForegroundColor`| String|Office テーマの本文のコントロール色を 16 進数の組み合わせとして取得します。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -269,7 +269,7 @@ function applyOfficeTheme(){
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -295,7 +295,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -323,7 +323,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -344,7 +344,7 @@ Office アドインで、ダイアログボックスなどの UI コンポーネ
 
 *   [UI](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|

@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 09/21/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175543"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626597"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
@@ -24,7 +24,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 >
 > その他の機能については、Microsoft 365 アカウントを使用して web 上の Outlook のプレビュービットへのアクセス権を要求することができます。 [このフォーム](https://aka.ms/OWAPreview)を完成して送信します。 これらの機能については、「要求プレビューアクセス」を確認してください。
 
-要件セットのプレビューには、[要件セット 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) のすべての機能が含まれています。
+要件セットのプレビューには、 [要件セット 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md)のすべての機能が含まれています。
 
 ## <a name="features-in-preview"></a>プレビューの機能
 
@@ -80,72 +80,6 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ---
 
-### <a name="append-on-send"></a>送信時に追加
-
-追加-送信機能の使用方法については、「 [Outlook アドインで送信時に追加を実装](../../../outlook/append-on-send.md)する」を参照してください。
-
-#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office.......。](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
-
-新規 `Body` 作成モードで、アイテムの本文の最後にデータを追加する新しい関数をオブジェクトに追加しました。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
-
-拡張された `AppendOnSend` アクセス許可のコレクションに拡張アクセス許可が含まれている必要があるマニフェストに、新しい要素を追加しました。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-<br>
-
----
-
----
-
-### <a name="async-versions-of-display-apis"></a>非同期バージョンの `display` api
-
-#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[DisplayAppointmentFormAsync の内容](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
-
-既存の予定を表示するオブジェクトに新しい関数を追加 `Mailbox` しました。 これは、メソッドの非同期バージョンです `displayAppointmentForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-#### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
-
-既存のメッセージを表示するオブジェクトに新しい関数を追加しまし `Mailbox` た。 これは、メソッドの非同期バージョンです `displayMessageForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[DisplayNewAppointmentFormAsync の内容](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
-
-`Mailbox`新しい予定のフォームを表示する新しい関数をオブジェクトに追加しました。 これは、メソッドの非同期バージョンです `displayNewAppointmentForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office。 displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
-
-`Mailbox`新しいメッセージフォームを表示する新しい関数をオブジェクトに追加しました。 これは、メソッドの非同期バージョンです `displayNewMessageForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[DisplayReplyAllFormAsync を示します。](office.context.mailbox.item.md#methods)
-
-`Item`読み取りモードで "全員に返信" フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョンです `displayReplyAllForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[DisplayReplyFormAsync を示します。](office.context.mailbox.item.md#methods)
-
-`Item`読み取りモードで "返信" フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョンです `displayReplyForm` 。
-
-**利用可能な**対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
-
-<br>
-
----
-
----
-
 ### <a name="event-based-activation"></a>イベントベースのライセンス認証
 
 Outlook アドインでのイベントベースのアクティブ化機能のサポートが追加されました。詳細については [、「イベントベースのライセンス認証用の Outlook アドインを構成](../../../outlook/autolaunch.md) する」を参照してください。
@@ -167,20 +101,6 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 マニフェスト要素に Outlook サポートが追加されました `Runtimes` 。 イベントベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
 
 **利用可能な**機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-<br>
-
----
-
----
-
-### <a name="get-all-custom-properties"></a>すべてのカスタムプロパティを取得する
-
-#### <a name="custompropertiesgetall"></a>[CustomProperties getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
-
-すべてのカスタムプロパティを取得する新しい関数をオブジェクトに追加しまし `CustomProperties` た。
-
-**利用可能な**対象: Outlook on Windows (microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)、Outlook on Mac (microsoft 365 サブスクリプションに接続)、outlook on the Outlook on iOS
 
 <br>
 

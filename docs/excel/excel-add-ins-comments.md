@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してコメントを操作する
 description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
-ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
+ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "48456553"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626422"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
 
@@ -206,7 +206,7 @@ Excel.run(function (context) {
 
 アドインは、コメントの追加、変更、および削除を聞くことができます。 [Comment イベント](/javascript/api/excel/excel.commentcollection#event-details) は、オブジェクトに対して発生 `CommentCollection` します。 Comment イベントをリッスンするには、、、 `onAdded` `onChanged` またはの `onDeleted` コメントイベントハンドラーを登録します。 コメントイベントが検出されたときに、追加、変更、または削除されたコメントに関するデータを取得するには、このイベントハンドラーを使用します。 この `onChanged` イベントは、コメントの返信の追加、変更、および削除も処理します。 
 
-各 comment イベントは、同時に複数の追加、変更、または削除が実行された場合にのみトリガーされます。 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)、および[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)のすべてのオブジェクトには、イベントアクションをコメントのコレクションにマップするためのコメント id の配列が含まれています。
+各 comment イベントは、同時に複数の追加、変更、または削除が実行された場合にのみトリガーされます。 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)、および[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)のすべてのオブジェクトには、イベントアクションをコメントのコレクションにマップするためのコメント id の配列が含まれています。
 
 イベントハンドラーの登録、イベントの処理、イベントハンドラーの削除に関する追加情報については、「 [Excel JAVASCRIPT API を使用してイベント](excel-add-ins-events.md) を処理する」の記事を参照してください。 
 
@@ -316,7 +316,7 @@ function commentDeleted() {
 }
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
 - [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してブックを操作する](excel-add-ins-workbooks.md)

@@ -1,14 +1,14 @@
 ---
 title: Outlook on Mac での Outlook アドインサポートの比較
 description: Outlook on Mac でのアドインのサポートと他の Outlook クライアントとの比較について説明します。
-ms.date: 09/08/2020
+ms.date: 10/20/2020
 localization_priority: Normal
-ms.openlocfilehash: d251d5c0f60e133d0d60d32a658b8f55a24ecc18
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f63c27611115e7bc262b43118ec749b0cbbe8416
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408727"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626436"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Outlook on Mac での outlook アドインのサポートを他の Outlook クライアントと比較する
 
@@ -33,9 +33,10 @@ Mac での新しい UI のサポートの詳細については、「 [New Outloo
 
 これで、Outlook アドインは新しい Mac UI でサポートされるようになりました。要件セットは1.7 です。 ただし、次の要件セットと機能はまだサポートされて **いません** 。
 
-1. API 要件セット1.8
+1. API 要件は1.8 と1.9 を設定します。
 1. コンテキスト アドイン
 1. 送信時
+1. 新規作成ウィンドウのポップアップ
 1. 共有フォルダーのサポート
 1. `saveAsync` 会議を作成するとき
 

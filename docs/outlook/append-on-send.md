@@ -1,34 +1,22 @@
 ---
-title: Outlook アドインでの追加-送信を実装する (プレビュー)
+title: Outlook アドインでの追加の送信を実装する
 description: Outlook アドインでの追加-送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 62234f580f6ff6be418f1c252510f234e297b0c6
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430934"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626457"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Outlook アドインでの追加-送信を実装する (プレビュー)
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインでの追加の送信を実装する
 
 このチュートリアルを終了すると、メッセージが送信されたときに免責事項を挿入できる Outlook アドインが作成されます。
 
-> [!IMPORTANT]
-> この機能は、現在、web 上の Outlook および Microsoft 365 サブスクリプションを使用した Windows の [プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) でサポートされています。 詳細については、この記事の「 [投稿の追加機能をプレビューする方法」を](#how-to-preview-the-append-on-send-feature) 参照してください。
->
-> プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
-
-## <a name="how-to-preview-the-append-on-send-feature"></a>投稿の追加機能をプレビューする方法
-
-投稿の追加機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある **フィードバック** セクションを参照してください)。
-
-この機能をプレビューするには:
-
-- CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
-- Windows の場合、より新しい Office ビルドにアクセスするには、 [Office Insider プログラム](https://insider.office.com) に参加する必要がある場合があります。
-- Outlook on the web の場合は、 [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)します。
+> [!NOTE]
+> この機能のサポートは、要件セット1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 

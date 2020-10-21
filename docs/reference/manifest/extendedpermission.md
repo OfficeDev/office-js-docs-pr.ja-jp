@@ -1,21 +1,21 @@
 ---
 title: マニフェストファイルの ExtendedPermission 要素
 description: アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 138acafb359e2b6e386b34fde7201b1b2c4b3177
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430927"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626401"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 項目
 
 アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。 `ExtendedPermission`要素は、 [extendedpermissions](extendedpermissions.md)の子要素です。
 
 > [!IMPORTANT]
-> この要素は、Exchange Online に対して [Outlook アドインのプレビュー要件が設定](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) されている場合にのみ使用できます。 この要素を使用するアドインは、AppSource に発行したり、一元展開によって展開したりすることはできません。
+> この要素のサポートは、要件セット1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="available-extended-permissions"></a>利用可能な拡張アクセス許可
 
