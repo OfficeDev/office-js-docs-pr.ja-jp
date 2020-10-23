@@ -1,15 +1,15 @@
 ---
 title: Word アドインのチュートリアル
 description: このチュートリアルでは、テキスト範囲、段落、画像、HTML、テーブル、コンテンツ コントロールを挿入 (および置換) する Word アドインを作成します。 テキストに書式を設定する方法と、コンテンツ コントロールにコンテンツを挿入 (および置換) する方法についても説明します。
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294221"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741135"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. `TODO3` は次のコードで置き換えます。この新しい段落には、新しいテキストが、元の選択範囲に含まれていない ****** ます。元の範囲には、選択された時点のテキストのみが残ります。
+8. `TODO3`を次のコードで置き換えます。この新しい段は、新しいテキストが、元の選択範囲に含まれて  **_いない_* ことを示しています。元の範囲には、選択された時点のテキストのみが残ります。
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -543,7 +543,7 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>範囲のテキストを置き換える
 
-1. ファイル **./src/taskpane/taskpane.html** を開きます。
+1. ファイル_*./src/taskpane/taskpane.html** を開きます。
 
 2. `insert-text-outside-range` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
 
@@ -945,5 +945,5 @@ function insertTextIntoRange() {
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドインを開発する](../develop/develop-overview.md)
+

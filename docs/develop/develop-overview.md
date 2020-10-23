@@ -1,34 +1,129 @@
 ---
 title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
-ms.date: 12/24/2019
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 419880e8872df20be5a3de40f480f70be2b18859
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 4f65284730e1211b0628139b7f22c55deb7a6fec
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292779"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741093"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
 > [!TIP]
-> この記事を読む前に、「[Building Office Add-ins (Office アドインの構築)](../overview/office-add-ins-fundamentals.md)」をご覧ください。
+> この記事を読む前に、「[Office Add-ins platform overview (Office アドイン プラットフォームの概要)](../overview/office-add-ins.md)」をご覧ください。
 
-すべての Office アドインは、Office アドイン プラットフォーム上で構築します。 すべての Office アドインでは共通のフレームワークが共有され、これにより特定の機能の実装が可能になります。 どのようなアドインを構築する場合でも、アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイル上で指定する方法など、重要な概念を理解する必要があります。 開発に関するこれらの中心概念については、ドキュメントの「**Core concepts (中心概念)**」 > 「**Develop (開発)**」セクションを参照してください。 構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、 [Excel](../excel/index.yml)) を詳しく見る前に、ここに記載される情報を確認してください。
+すべての Office アドインは、Office アドイン プラットフォーム上で構築します。 どのようなアドインを構築する場合でも、アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイル上で指定する方法、マニフェストファイルのcapabilities、UIとユーザーエクスペリエンスをデザインする方法など、重要な概念を理解する必要があります。 開発に関するこれらの中心概念については、ドキュメントの**開発ライフサイクル** > **開発**セクションを参照してください。 構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、 [Excel](../excel/index.yml)) を詳しく見る前に、ここに記載される情報を確認してください。
 
-> [!NOTE]
-> 「**Core concepts (中心概念)**」 > 「**Develop (開発)**」 > 「**How to (方法)**」セクションには、開発に関する具体的な概念やタスクについての記事があります。 同セクションでは、[Visual Studio Code を使用したアドイン開発](develop-add-ins-vscode.md)、[タスク ウィンドウをドキュメントと共に自動的に開く](automatically-open-a-task-pane-with-a-document.md)、[アドイン コマンドの作成](create-addin-commands.md)、[ダイアログ ボックスを開く](dialog-api-in-office-add-ins.md)などに関する情報が提供されています。
+## <a name="creating-an-office-add-in"></a>Office アドインの作成
+
+Office アドイン用の Yeoman ジェネレーターまたは Visual Studio を使用して Office アドインを作成することができます。
+
+### <a name="yeoman-generator-for-office-add-ins"></a>Office アドイン用の Yeoman ジェネレーター
+
+[Office アドイン用の Yeoman ジェネレーター](https://github.com/officedev/generator-office)を使用することで、Visual Studio Code やその他のエディターで管理することができる、Node.js Office アドイン プロジェクトを作成できます。 ジェネレーターでは、次のいずれのホスト用の Office アドインも作成できます。
+
+- Excel
+- OneNote
+- Outlook
+- PowerPoint
+- Project
+- Word
+- Excel のカスタム関数
+
+プロジェクトを作成するのに、HTML、CSS、および JavaScript を使用するのか、Angular または React を使用するのかを選択できます。 いずれのフレームワークを選択した場合も、JavaScript と Typescript の間から選択することができます。 Yeoman ジェネレーターを使用してアドインを作成する方法については、「[Visual Studio Code を使用して Office アドインを開発する](../develop/develop-add-ins-vscode.md)」を参照してください。
+
+### <a name="visual-studio"></a>Visual Studio
+
+Visual Studio は、Excel、Outlook、Word、および PowerPoint 用の Office アドインの作成に使用できます。 Office アドイン プロジェクトは Visual Studio ソリューションの一部として作成され、HTML、CSS、および JavaScript が使用されます。 Visual Studio を使用してアドインを作成する方法については、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
+
+[!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
+
+## <a name="understanding-the-two-parts-of-an-office-add-in"></a>Office アドインの2つの部分について
+
+Office アドインは、2 つの部分から構成されます。
+
+- アドインの設定と機能を定義るアドイン マニフェスト (XML ファイル)。
+
+- 作業ウィンドウ、コンテンツ アドイン、ダイアログ ボックスなど、アドインの UI と機能を定義する Web アプリケーション。
+
+Web アプリケーションでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作します。 アドインは、外部 Web サービスの呼び出しやユーザー認証の要求など、Web ページが一般的に行うその他の機能も実行することができます。
+
+### <a name="defining-an-add-ins-settings-and-capabilities"></a>アドインの設定と機能を定義する
+
+Office アドインのマニフェスト (XML ファイル) は、アドインの設定と機能を定義します。 次のような要素を定義するには、マニフェストを構成します。
+
+- アドインを説明するメタデータ (ID、バージョン、説明、表示名、既定のロケールなど)。
+- アドインが実行される Office アプリケーション。
+- アドインに必要なアクセス許可。
+- アドインによって作成されるカスタム UI (カスタム タブ、リボンのボタンなど) などの統合も含めた、アドインの Office との統合方法。
+- ブランドおよびコマンドの図像としてアドインで使用される画像の場所。
+- アドインの寸法 (例: コンテンツ アドインの寸法、Outlook アドインに対して要求される高さなど)。
+- メッセージや予定のコンテキストでアドインをアクティブにさせるタイミングを指定するルール (Outlook アドインのみ)。
+
+マニフェストの詳細については、「[Office アドインの XML マニフェスト](add-in-manifests.md)」を参照してください。
+
+### <a name="interacting-with-content-in-an-office-document"></a>Office ドキュメント内のコンテンツを操作する
+
+Office アドインでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作できます。
+
+#### <a name="accessing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリへのアクセス
+
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
+
+#### <a name="api-models"></a>API モデル
+
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
+
+#### <a name="api-requirement-sets"></a>API 要件セット
+
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
+
+#### <a name="exploring-apis-with-script-lab"></a>Script Lab を使用して API を調べる
+
+Script Lab は、Excel や Word などの Office プログラムでの作業中に Office JavaScript API を調査し、コード スニペットを実行できるようにするアドインです。 これは、[AppSource](https://appsource.microsoft.com/product/office/WA104380862) から無料で利用でき、アドインで必要な機能のプロトタイプを作成したり検証したりする場合に、開発ツールキットに含めておくと便利なツールです。 Script Lab では、組み込みのサンプルのライブラリにアクセスして、簡単に API を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。
+
+次の 1 分間のビデオで、Script Lab の実際の動作をご覧ください。
+
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
+
+Script Lab の詳細については、「[Script Lab を使用して Office JavaScript API を調べる](../overview/explore-with-script-lab.md)」を参照してください。
+
+## <a name="extending-the-office-ui"></a>Office UI の拡張
+
+Office アドインは、作業ウィンドウ、コンテンツ アドイン、ダイアログ ボックスなど、アドイン コマンドや HTML コンテナーを使用 Office UI を拡張することができます。
+
+- [アドイン コマンド](../design/add-in-commands.md) を使用すると、Office の既定のリボンにカスタム タブ、ボタン、メニューを追加したり、ユーザーが Office ドキュメント内のテキストまたは Excel 内のオブジェクトを右クリックした際に表示される既定のコンテキスト メニューを拡張したりすることができます。 ユーザーがアドイン コマンドを選択すると、アドイン コマンドで指定されているタスク (JavaScript コードの実行、作業ウィンドウを開く、ダイアログ ボックスの起動など) が実行されます。
+
+- [作業ウィンドウ](../design/task-pane-add-ins.md)、[コンテンツ アドイン](../design/content-add-ins.md)、[ダイアログ ボックス](../design/dialog-boxes.md)などの HTML コンテナーを使用すると、カスタム UI を表示させたり Office アプリケーション内で追加機能を表示させたりすることができます。 各作業ウィンドウ、コンテンツ アドイン、またはダイアログ ボックスのコンテンツと機能は、指定した Web ページに由来します。 これらの Web ページでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメントのコンテンツを操作できます。また、外部 Web サービスの呼び出しやユーザー認証の要求など、Web ページが一般的に行うその他の機能も実行できます。
+
+次の図では、リボン上に表示されるアドイン コマンド、ドキュメント右側に表示される作業ウィンドウ、およびドキュメント上に表示されるダイアログ ボックスまたはコンテンツ アドインを示しています。
+
+![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../images/add-in-ui-elements.png)
+
+Office UI の拡張とアドインのUXのデザインに関する詳細については、「[Office アドイン用の Office UI 要素](../design/interface-elements.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 
-ここで説明する中心概念について理解したら、構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、[Excel](../excel/index.yml)) を確認します。 ドキュメントの各アプリケーション固有のセクションには、特定の Office アプリケーション用のアドインの構築に関する具体的な情報が記載されています。
+この記事では、Office アドインの異なる作成方法を説明し、 アドインがOffice UIを拡張する方法やAPIセットの説明、Office JavaScript APIの探索をするための有益なツールとしてScript Labを紹介し、アドイン機能のプロトタイプ作成の説明を行いました。 初歩的な情報の説明は以上になります。Office アドインの行程を先に進むには、 次の手順を実行してください。
+
+### <a name="create-an-office-add-in"></a>Office アドインを作成する
+
+[5 分間のクイック スタート](/office/dev/add-ins/)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](/office/dev/add-ins/)を試してみてください。
+
+### <a name="learn-more"></a>詳細情報
+
+Office アドインの開発、テスト、公開の詳細については、このドキュメントを参照してください。
+
+> [!TIP]
+> どのようなアドインを構築する場合でも、このドキュメントの 「[開発ライフサイクル](../overview/core-concepts-office-add-ins.md)」セクションに記載する情報に加え、構築するアドインの種類に対応するアプリケーション固有のセクション (たとえば、[Excel](../excel/index.yml)) に記載する情報を使用してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインの構築](../overview/office-add-ins-fundamentals.md)
-- [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Microsoft 365 開発者プログラムについてご説明します](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインを発行する](../publish/publish.md)
+- [Office アドインの公開](../publish/publish.md)

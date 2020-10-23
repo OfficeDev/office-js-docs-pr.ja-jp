@@ -1,16 +1,16 @@
 ---
 title: Excel アドインの概要
 description: Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーなどの複数のプラットフォームで Excel アプリケーションの機能を拡張できます。
-ms.date: 07/05/2019
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9c6f86bd5e50d97e395517d8a4887fac3554f867
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609763"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740855"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -122,6 +122,7 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
-- [Excel JavaScript API を使用した基本的なプログラミングの概念](excel-add-ins-core-concepts.md)
+- [Microsoft 365 開発者プログラムについてご説明します](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
