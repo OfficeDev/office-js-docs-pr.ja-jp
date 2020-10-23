@@ -1,21 +1,21 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
-description: Office アドインのダイアログボックス作成の基本について説明します。
-ms.date: 10/14/2020
+description: Office アドインでダイアログボックスを作成する方法の基本事項について説明します。
+ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 5220d4876d0a8de9c731d2879f0bcb5e669066cd
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626464"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741086"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
 [Office ダイアログ API](/javascript/api/office/office.ui) を使用して、Office アドインでダイアログ ボックスを開くことができます。 この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
 
 > [!NOTE]
-> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。現在、ダイアログ API は Word、Excel、PowerPoint、および Outlook でサポートされています。
+> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。 現在、ダイアログ API は Excel、PowerPoint、および Word でサポートされています。 Outlook サポートはさまざまなメールボックス要件セット &mdash; に含まれています。詳細については、「API リファレンス」を参照してください。
 
 ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ*後*で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。
 
 - ダイアログ ボックスの現在のページがホスト ページと同じドメインにある。
-- Office JavaScript API ライブラリがページにロードされます。(Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはメソッドをプロパティに割り当てる必要がありますが、空のメソッドにする `Office.initialize` こともできます。詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。
+- Office JavaScript API ライブラリがページにロードされます。 (Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはメソッドをプロパティに割り当てる必要がありますが、空のメソッドにする `Office.initialize` こともできます。 詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください)。
 
 ダイアログ ボックスのコードは、[messageParent](/javascript/api/office/office.ui#messageparent-message-) 関数を使用して、ブール値または文字列メッセージのいずれかをホスト ページに送信します。 文字列には、単語、文、XML BLOB、文字列に変換された JSON、文字列にシリアル化できるすべてのものを指定できます。 例を次に示します。
 
@@ -220,18 +220,18 @@ function processMessage(arg) {
 Office ダイアログ API を呼び出してダイアログボックスを開くと、 [dialog](/javascript/api/office/office.dialog) オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるため、 [Displaydialogasync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープが大きい変数に割り当てる必要があります。 例を次に示します。
 
 ```javascript
-var dialog;
+var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
 );
 
-function processMessage(arg) {
+function processMessage(arg) {
     dialog.close();
 
-  // message processing code goes here;
+  // message processing code goes here;
 
 }
 ```
@@ -241,13 +241,13 @@ function processMessage(arg) {
 ダイアログの UI が現在アクティブなワークシートに関連付けられていて、他のワークシートを基準としたワークシートの位置を示すシナリオを考えてみます。 次の例では、 `sheetPropertiesChanged` Excel ワークシートのプロパティをダイアログボックスに送信します。 この例では、現在のワークシートに "My Sheet" という名前が付けられ、ブックの2番目のシートになります。 データは、オブジェクトと文字列にカプセル化され、に渡すことができ `messageChild` ます。
 
 ```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
                            });
 
-    dialog.messageChild(messageToDialog);
+    dialog.messageChild(messageToDialog);
 }
 ```
 
@@ -257,19 +257,19 @@ function sheetPropertiesChanged() {
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
             Office.EventType.DialogParentMessageReceived,
             onMessageFromParent);
-    });
+    });
 ```
 
 その後、ハンドラーを定義し `onMessageFromParent` ます。 次のコードでは、前のセクションの例を続行します。 Office によってハンドラーに引数が渡さ `message` れ、引数オブジェクトのプロパティにホストページの文字列が含まれていることに注意してください。 この例では、メッセージはオブジェクトに再変換、jQuery を使用して、新しいワークシート名に一致するダイアログのトップの見出しを設定しています。
 
 ```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
 }
 ```
 
@@ -277,17 +277,17 @@ function onMessageFromParent(event) {
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
             onRegisterMessageComplete);
-    });
+    });
 
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
 }
 ```
 
