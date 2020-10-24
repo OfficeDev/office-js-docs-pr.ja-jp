@@ -3,14 +3,14 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office JavaScript API リファレンス ドキュメント
 description: Office JavaScript Api について説明します。
-ms.date: 12/24/2019
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 128f4fa146ace079c8999083b49fe83b68120b07
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294284"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741128"
 ---
 # <a name="api-reference-documentation"></a>API リファレンス ドキュメント
 
@@ -21,7 +21,7 @@ ms.locfileid: "47294284"
     <li><b>共通 API</b> を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。</li>
 </ul>
 
-可能な場合は常にアプリケーション固有 API を使用するようにし、アプリケーション固有 API でサポートされていないシナリオに対してのみ共通 API を使用するようにします。 これらの 2 つの API モデルの詳細については、「<a href="../overview/office-add-ins-fundamentals.md#api-models">Office アドインの構築</a>」を参照してください。
+可能な場合は常にアプリケーション固有 API を使用するようにし、アプリケーション固有 API でサポートされていないシナリオに対してのみ共通 API を使用するようにします。 これらの 2 つの API モデルの詳細については、「<a href="../develop/develop-overview.md#api-models">Office アドインを開発する</a>」を参照してください。
 
 <h2>API リファレンス</h2>
 
