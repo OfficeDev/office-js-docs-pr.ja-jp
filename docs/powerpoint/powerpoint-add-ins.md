@@ -1,16 +1,16 @@
 ---
 title: PowerPoint アドイン
 description: PowerPoint アドインを使用して Windows、iPad、Mac、ブラウザー上など、複数のプラットフォームでプレゼンテーション用の魅力的なソリューションを構築する方法を説明します。
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 314b441f3d4b6d2188ed630fe2b254aec42a86bc
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006452"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740841"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -193,7 +193,8 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
 - [PowerPoint のコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

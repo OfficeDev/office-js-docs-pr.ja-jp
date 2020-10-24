@@ -1,16 +1,16 @@
 ---
 title: OneNote の JavaScript API のプログラミングの概要
 description: Web 上の OneNote アドイン用の OneNote JavaScript API について詳しく説明します。
-ms.date: 07/28/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86a388c2e8a89b97d82083964e0fcf120f310e66
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294060"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741121"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -137,7 +137,8 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
 - [最初の OneNote アドインをビルドする](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API リファレンス](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

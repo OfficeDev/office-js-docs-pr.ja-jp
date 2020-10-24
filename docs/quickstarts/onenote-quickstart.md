@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な OneNote 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0e4022b9f2b91b03cb260f2d56fc3bac2a0ddaae
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292322"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741163"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -81,7 +81,7 @@ try {
 2. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
     > [!TIP]
     > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
@@ -126,7 +126,6 @@ try {
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドインを開発する](../develop/develop-overview.md)
 - [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API リファレンス](../reference/overview/onenote-add-ins-javascript-reference.md)

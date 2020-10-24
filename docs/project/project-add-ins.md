@@ -1,16 +1,16 @@
 ---
 title: Project 用の作業ウィンドウ アドイン
 description: Project の作業ウィンドウ アドインについて説明します。
-ms.date: 09/26/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1925e83f3c740172a22da3f2f03bf589785b9b46
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292406"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740827"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -197,7 +197,8 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Office アドインを開発する](../develop/develop-overview.md)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)

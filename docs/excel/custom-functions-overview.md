@@ -1,16 +1,16 @@
 ---
-ms.date: 08/13/2020
+ms.date: 10/14/2020
 description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 731e8d99a36cfef7d125838c67efcdd7a77b4bb1
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819561"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741114"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -99,6 +99,7 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 独自のカスタム関数を試すもう 1 つの簡単な方法は[スクリプト ラボ](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)を使用し、アドインで Excel のカスタム関数を試してみることができます。 独自のカスタム関数を作成したり、提供されたサンプルを再生してみることができます。
 
 ## <a name="see-also"></a>関連項目 
+* [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
 * [カスタム関数の要件](custom-functions-requirement-sets.md)
 * [名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)

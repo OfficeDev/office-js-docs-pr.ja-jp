@@ -1,16 +1,16 @@
 ---
 title: Script Lab を使用して Office JavaScript API を探索する
 description: Script Lab を使用して、Office JS API およびプロトタイプの機能を調べます。
-ms.date: 06/10/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8fef3d0df73ab84cc17b2e6ff3c8fe436bf6e789
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094135"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741079"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -85,4 +85,6 @@ Outlook 用 Script Lab を使用するには、AppSource から [Outlook 用 Scr
 - [Outlook 用 Script Lab を取得する](https://appsource.microsoft.com/product/office/wa200001603)
 - [Script Lab の詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Microsoft 365 開発者プログラムに参加する](https://developer.microsoft.com/office/dev-program)
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+

@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 06/05/2020
+ms.date: 10/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 51bec98cd0de1d00b4bfbcda372e450ce040d8b9
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293423"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741156"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -1020,6 +1020,5 @@ ms.locfileid: "47293423"
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドインを開発する](../develop/develop-overview.md)
-* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)

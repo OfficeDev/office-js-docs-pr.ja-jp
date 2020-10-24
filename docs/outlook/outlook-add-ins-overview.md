@@ -1,15 +1,15 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 09/18/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135229"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741142"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -80,7 +80,7 @@ Outlook アドインの作成を開始するには、次の操作を行います
 
 
 ## <a name="see-also"></a>関連項目
-
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [Office および SharePoint アドインのライセンスを付与する](/office/dev/store/license-your-add-ins)

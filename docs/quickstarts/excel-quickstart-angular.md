@@ -1,15 +1,15 @@
 ---
 title: Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 description: Office JS API と Angular を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/16/2020
+ms.date: 10/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 43b5ff9c78bbd39d09bcbcefa47bfc1b44d1d8ee
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 602b17dae29dfc43ab6b37648c3ad2f7fcfe86af
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611590"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741184"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -74,8 +74,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 ## <a name="see-also"></a>関連項目
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 * [Office アドインを開発する](../develop/develop-overview.md)
-* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

@@ -1,16 +1,16 @@
 ---
 title: Office アドイン プラットフォームの概要 | Microsoft Docs
 description: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、Outlook を拡張および対話操作できます。
-ms.date: 02/13/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9a504a81bb15e36f937328e2f7cbb674f416842d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292413"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741051"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -50,7 +50,7 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 - アドインの表示名、説明、ID、バージョン、および既定のロケール。
 
-- Office とアドインを統合する方法。  
+- Office とアドインを統合する方法。  
 
 - アドインのアクセス許可レベルとデータ アクセスの要件。
 
@@ -69,26 +69,26 @@ Office アドインは、Office クライアント アプリケーション内�
 -  機能の拡張 (任意の Office アプリケーション)
 
 -  新しいオブジェクトの作成 (Excel または PowerPoint)
- 
+ 
 ### <a name="extend-office-functionality"></a>Office 機能の拡張
 
-次の方法で、Office アプリケーションに新しい機能を追加できます。  
+次の方法で、Office アプリケーションに新しい機能を追加できます。  
 
 -  カスタム リボン ボタンとメニュー コマンド ("アドイン コマンド" と総称されます)
 
 -  挿入可能な作業ウィンドウ
 
-カスタムの UI と作業ウィンドウは、アドイン マニフェストで指定されます。  
+カスタムの UI と作業ウィンドウは、アドイン マニフェストで指定されます。  
 
-#### <a name="custom-buttons-and-menu-commands"></a>カスタム ボタンとメニュー コマンド  
+#### <a name="custom-buttons-and-menu-commands"></a>カスタム ボタンとメニュー コマンド  
 
-カスタムのリボン ボタンとメニュー項目は、Office on the web および Windows のリボンに追加できます。これにより、ユーザーは、Office アプリケーションからアドインに簡単に直接アクセスできます。コマンド ボタンでは、カスタム HTML による作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
+カスタムのリボン ボタンとメニュー項目は、Office on the web および Windows のリボンに追加できます。これにより、ユーザーは、Office アプリケーションからアドインに簡単に直接アクセスできます。コマンド ボタンでは、カスタム HTML による作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
 
 *図 3. リボンにあるアドイン コマンド*
 
 ![カスタム ボタンとメニュー コマンド](../images/about-addins-addincommands.png)
 
-#### <a name="task-panes"></a>作業ウィンドウ  
+#### <a name="task-panes"></a>作業ウィンドウ  
 
 ユーザーはアドイン コマンドに加えて、作業ウィンドウを使用してソリューションの対話式操作を実行できます。アドイン コマンド (Office 2013 および Office on iPad) をサポートしていないクライアントは、アドインを作業ウィンドウとして実行します。ユーザーは **[挿入]** タブの **[アドイン]** ボタンを使用して、作業ウィンドウのアドインを起動します。
 
@@ -98,7 +98,7 @@ Office アドインは、Office クライアント アプリケーション内�
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する
 
-Outlook アプリ アドインは Office のリボンを拡張したり、コンテキストに応じて表示または作成時に Outlook アイテムの隣に表示したりすることもできます。ユーザーが受信した項目を表示するか、返信または新しい項目を作成している場合には、電子メールメッセージ、会議出席依頼、会議の返信、会議の取り消し、または予定を操作できます。 
+Outlook アプリ アドインは Office のリボンを拡張したり、コンテキストに応じて表示または作成時に Outlook アイテムの隣に表示したりすることもできます。ユーザーが受信した項目を表示するか、返信または新しい項目を作成している場合には、電子メールメッセージ、会議出席依頼、会議の返信、会議の取り消し、または予定を操作できます。 
 
 Outlook アドインでは、アイテムのコンテキスト情報 (アドレスや追跡 ID など) にアクセスし、そのデータを使用してサーバー上または Web サービスの追加情報にアクセスして、魅力的なユーザー エクスペリエンスを作成できます。ほとんどの場合、Outlook アドインはデスクトップ、Web、タブレットおよびモバイル デバイスに変更なしでシームレスなエクスペリエンスを提供する Outlook アプリケーションで実行できます。
 
@@ -118,13 +118,13 @@ Office JavaScript API には、アドインを構築したり、Office のコン
 
 ## <a name="next-steps"></a>次の手順
 
-Office アドインの開発の詳細については、「[Office アドインを構築する](../overview/office-add-ins-fundamentals.md)」を参照してください。
+Office アドインの開発の詳細については、「[Office アドインを開発する](../develop/develop-overview.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構築する](../overview/office-add-ins-fundamentals.md)
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインを発行する](../publish/publish.md)
+- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
