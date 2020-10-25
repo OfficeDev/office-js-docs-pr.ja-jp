@@ -84,6 +84,6 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 ## <a name="see-also"></a>関連項目
 
 * [Office アドインを開発する](../develop/develop-overview.md)
-* [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 * [Word JavaScript API リファレンス](../reference/overview/word-add-ins-reference-overview.md)

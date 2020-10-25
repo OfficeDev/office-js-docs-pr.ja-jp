@@ -86,5 +86,5 @@ Outlook 用 Script Lab を使用するには、AppSource から [Outlook 用 Scr
 - [Script Lab の詳細情報](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Microsoft 365 開発者プログラムに参加する](https://developer.microsoft.com/office/dev-program)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
 

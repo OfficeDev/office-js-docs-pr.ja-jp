@@ -33,7 +33,7 @@ Office Web アドインのオブジェクト モデルは Excel、Word、その�
 今にもコーディングを始めたいと考えておられるかもしれませんが、IDE やコード エディターを開く前に、Office アドインについて、以下をお読みください。
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md): Office Web アドインとは何であるか、VSTO アドインなどの Office を拡張する以前の方法との違いを説明します。
-- [Office アドインの開発](../develop/develop-overview.md): ツール、アドイン UI の作成、JavaScript API を使用する Office ドキュメントの操作を含む、Office アドインの開発とライフサイクルの概要を説明します。
+- [Office アドインを開発する](../develop/develop-overview.md): ツール、アドイン UI の作成、JavaScript API を使用する Office ドキュメントの操作を含む、Office アドインの開発とライフサイクルの概要を説明します。
 
 これらの記事には多くのリンクが含まれていますが、Office アドインに移行している場合は、これらを読み、次のセクションに進むときに、ここに戻ることをお勧めします。
 
@@ -86,4 +86,4 @@ VSTO アドインのコードをサーバー上の Web アプリケーション�
   - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
   - [Office アドインを展開し、発行する](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
-  - [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+  - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

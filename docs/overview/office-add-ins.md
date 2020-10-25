@@ -127,4 +127,4 @@ Office アドインの開発の詳細については、「[Office アドイン�
 - [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインを発行する](../publish/publish.md)
-- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

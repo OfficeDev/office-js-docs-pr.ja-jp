@@ -197,7 +197,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)

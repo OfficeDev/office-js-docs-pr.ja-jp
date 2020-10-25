@@ -194,7 +194,7 @@ reader.readAsDataURL(myFile.files[0]);
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
 - [PowerPoint のコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
