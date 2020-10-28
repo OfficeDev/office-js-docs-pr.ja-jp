@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細。
-ms.date: 09/15/2020
+ms.date: 10/26/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9ddc1405d4bc13087780e8950b36d9b3b4b04069
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a1cb3afb28f69ff5b0c0bd03bfae9877dda91906
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819792"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774741"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -26,7 +26,7 @@ ms.locfileid: "47819792"
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、現在プレビュー中の Excel JavaScript Api を示します。 すべての Excel JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストを表示するには、「 [すべての Excel Javascript api](/javascript/api/excel?view=excel-js-preview&preserve-view=true)」を参照してください。
+次の表に、現在プレビュー中の Excel JavaScript Api を示します。 すべての Excel JavaScript Api (プレビュー Api および以前リリースされた Api を含む) の完全なリストについては、「 [すべての Excel Javascript api](/javascript/api/excel?view=excel-js-preview&preserve-view=true)」を参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -92,7 +92,7 @@ ms.locfileid: "47819792"
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|フィルターが適用されているテーブルの id を取得します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。 詳細については、Excel.EventType をご覧ください。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルを含むワークシートの id を取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[linkedDataTypes 型](/javascript/api/excel/excel.workbook#linkeddatatypes)|ブックの一部である、リンクされたデータ型のコレクションを返します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes 型](/javascript/api/excel/excel.workbook#linkeddatatypes)|ブックの一部である、リンクされたデータ型のコレクションを返します。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールドリストウィンドウをブックレベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|ワークシートにあるシートビューのコレクションを返します。|
