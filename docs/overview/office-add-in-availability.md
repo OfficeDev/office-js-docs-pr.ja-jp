@@ -3,12 +3,12 @@ title: Office アドインの Office クライアント アプリケーション
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: a179eebcb39107633e6ca265bbc89be822ffb63b
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 587a89f948aff37e6c8c1bf699fc10a915867788
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741058"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774713"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office アドインの Office クライアント アプリケーションとプラットフォームの可用性
 
@@ -380,7 +380,7 @@ ms.locfileid: "48741058"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.9">Mailbox 1.9</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>使用不可</td>
   </tr>
