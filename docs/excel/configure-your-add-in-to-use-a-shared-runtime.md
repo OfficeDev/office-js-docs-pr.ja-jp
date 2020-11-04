@@ -4,12 +4,12 @@ title: ブラウザーのランタイムを共有するように Excel アドイ
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292637"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906023"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Excel アドインを構成する
 
@@ -23,7 +23,7 @@ Windows または Mac で Excel を実行する場合、アドインは、リボ
 
 新しいプロジェクトを開始する場合は、次の手順に従って、Yeoman ジェネレーターを使って Excel アドインを作成します。 次のコマンドを実行し、プロンプトに次の回答を入力します。
 
-```command line
+```command line
 yo office
 ```
 
@@ -39,10 +39,10 @@ yo office
 
 新規または既存のプロジェクトで共有ランタイムが使用できるように構成するには、次の手順を実行します。
 
-1. Visual Studio Code を開始して [**個人用 Office アドイン**] プロジェクトを開きます。
+1. Visual Studio Code を開始して [ **個人用 Office アドイン** ] プロジェクトを開きます。
 2. 
             **manifest.xml** ファイルを開きます。
-3. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。 resid は `ContosoAddin.Url` で、後述のリソースのセクションの文字列を参照します。 resid には任意の値を使用できますが、アドイン要素のその他の要素の resid と一致している必要があります。
+3. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は **長く** する必要があります。 resid は `ContosoAddin.Url` で、後述のリソースのセクションの文字列を参照します。 resid には任意の値を使用できますが、アドイン要素のその他の要素の resid と一致している必要があります。
 
    ```xml
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -54,7 +54,7 @@ yo office
        <AllFormFactors>
    ```
 
-4. `<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **ContosoAddin.Url** に変更します。 この resid は、`<Runtime>` resid の要素と一致しています。 カスタム関数がない場合は、**Page** エントリがないため、この手順は省略できます。
+4. `<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **ContosoAddin.Url** に変更します。 この resid は、`<Runtime>` resid の要素と一致しています。 カスタム関数がない場合は、 **Page** エントリがないため、この手順は省略できます。
 
    ```xml
    <AllFormFactors>
@@ -65,7 +65,7 @@ yo office
    ...
    ```
 
-5. `<DesktopFormFactor>` セクションで、**FunctionFile** を **Commands.Url** から **ContosoAddin.Url** を使用するように変更します。 アクション コマンドがない場合は、**FunctionFile** エントリがないため、この手順は省略できます。
+5. `<DesktopFormFactor>` セクションで、 **FunctionFile** を **Commands.Url** から **ContosoAddin.Url** を使用するように変更します。 アクション コマンドがない場合は、 **FunctionFile** エントリがないため、この手順は省略できます。
 
    ```xml
    <DesktopFormFactor>
@@ -75,7 +75,7 @@ yo office
    <FunctionFile resid="ContosoAddin.Url"/>
    ```
 
-6. `<Action>` セクションで、ソースの場所を **Taskpane.Url** から **ContosoAddin.Url** に変更します。 作業ウィンドウがない場合は、**ShowTaskpane** アクションがないため、この手順は省略できます。
+6. `<Action>` セクションで、ソースの場所を **Taskpane.Url** から **ContosoAddin.Url** に変更します。 作業ウィンドウがない場合は、 **ShowTaskpane** アクションがないため、この手順は省略できます。
 
    ```xml
    <Action xsi:type="ShowTaskpane">
@@ -107,13 +107,13 @@ yo office
    > new HtmlWebpackPlugin({
    >     filename: "taskpane.html",
    >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", “functions”]
+   >     chunks: ["polyfill", "taskpane", "functions"]
    > }),
    >```
 
 9. 変更を保存してプロジェクトを再ビルドします。
 
-   ```command line
+   ```command line
    npm run build
    ```
 
