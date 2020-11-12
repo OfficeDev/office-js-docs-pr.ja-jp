@@ -4,12 +4,12 @@ title: ブラウザーのランタイムを共有するように Excel アドイ
 ms.prod: excel
 description: Excel アドインを構成して、ブラウザーのランタイムを共有し、同じランタイムでリボン、作業ウィンドウ、カスタム関数のコードを実行できるようにします。
 localization_priority: Priority
-ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
-ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
+ms.openlocfilehash: be4e79ae54376a9574ffb0669681c2fba7cd158c
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "48906023"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996278"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Excel アドインを構成する
 
@@ -140,7 +140,8 @@ yo office
 ## <a name="next-steps"></a>次のステップ
 
 - Excel JavaScript Api の使用および共有ランタイムでの Excel のカスタム関数の使用方法の詳細については、「[カスタム関数から Excel API を呼び出す](call-excel-apis-from-custom-function.md)」の記事を参照してください。
-- [パターンアンドプラクティス]のサンプル [リボンと作業ウィンドウの UI を管理し、ドキュメント オープンのコードを実行](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)を探索して、共有されている JavaScript ランタイムの大規模な例をご覧ください。
+- パターンとプラクティスのサンプルである「[リボンと作業ウィンドウの UI を管理し、ドキュメント オープンのコードを実行する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)」を探索して、共有されている JavaScript ランタイムの大規模な例をご覧ください。
+- プロジェクトにカスタム キーボード ショートカットを追加する方法の詳細については、「[Office アドインのカスタム キーボード ショートカット](../design/keyboard-shortcuts.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
