@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript プレビュー Api
 description: 今後の PowerPoint JavaScript Api についての詳細。
-ms.date: 10/26/2020
+ms.date: 11/09/2020
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 27a51054f930b560d2d2f9a00fc172394b26830d
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: b53b6638b16b2028342003b9a77aa59e7406d5f3
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774812"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996523"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint JavaScript プレビュー Api
 
@@ -30,16 +30,16 @@ ms.locfileid: "48774812"
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[書式](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|スライドの挿入時に使用する書式を指定します。|
-||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|現在のプレゼンテーションに挿入される、元のプレゼンテーションのスライドを指定します。 これらのスライドは、オブジェクトから取得できる Id で表され `Slide` ます。|
+||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|現在のプレゼンテーションに挿入される、元のプレゼンテーションのスライドを指定します。|
 ||[targetSlideId](/javascript/api/powerpoint/powerpoint.insertslideoptions#targetslideid)|プレゼンテーションのどこに新しいスライドを挿入するかを指定します。|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[insertSlidesFromBase64 (base64File: string, options?: InsertSlideOptions)](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|プレゼンテーションの指定したスライドを現在のプレゼンテーションに挿入します。|
 ||[スライド](/javascript/api/powerpoint/powerpoint.presentation#slides)|プレゼンテーション内のスライドの順序付けられたコレクションを返します。|
-|[Slide](/javascript/api/powerpoint/powerpoint.slide)|[delete()](/javascript/api/powerpoint/powerpoint.slide#delete--)|スライドをプレゼンテーションから削除します。 スライドが存在しない場合は何も実行しません。|
+|[Slide](/javascript/api/powerpoint/powerpoint.slide)|[delete()](/javascript/api/powerpoint/powerpoint.slide#delete--)|スライドをプレゼンテーションから削除します。|
 ||[id](/javascript/api/powerpoint/powerpoint.slide#id)|スライドの一意の ID を取得します。|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.slidecollection#getcount--)|コレクション内のスライド数を取得します。|
-||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitem-key-)|一意の ID を使用してスライドを取得します。 スライドが存在しない場合は、例外がスローされます。|
+||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitem-key-)|一意の ID を使用してスライドを取得します。|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemat-index-)|コレクション内の0から始まるインデックスを使用してスライドを取得します。|
-||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemornullobject-id-)|一意の ID を使用してスライドを取得します。 スライドが存在しない場合は、 `isNullObject` プロパティが設定されているオブジェクトを返し `true` ます。|
+||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemornullobject-id-)|一意の ID を使用してスライドを取得します。|
 ||[items](/javascript/api/powerpoint/powerpoint.slidecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 
 ## <a name="see-also"></a>関連項目

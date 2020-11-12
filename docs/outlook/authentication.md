@@ -1,20 +1,20 @@
 ---
 title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
-ms.date: 08/20/2020
+ms.date: 11/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 54584483b7d4fd75e3f2d6c3188465333e9f58d5
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293969"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996397"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
 Outlook アドインは、アドインをホストするサーバー、内部ネットワーク、クラウド内の別の場所などに関わらず、インターネット上のあらゆる場所から情報にアクセスできます。 その情報が保護されている場合、アドインにはユーザーを認証する方法が必要になります。 Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 
-## <a name="single-sign-on-access-token-preview"></a>シングル サインオン アクセス トークン (プレビュー)
+## <a name="single-sign-on-access-token"></a>シングル サインオン アクセス トークン
 
 シングル サインオン アクセス トークンは、アドインがアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出すための、シームレスな方法を提供します。 ユーザーが資格情報を入力する必要がないため、この機能は摩擦を低減します。
 

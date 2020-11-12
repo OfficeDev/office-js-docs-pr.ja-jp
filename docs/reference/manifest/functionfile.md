@@ -1,18 +1,23 @@
 ---
 title: マニフェスト ファイルの FunctionFile 要素
 description: UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。
-ms.date: 10/09/2018
+ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: db447a904c04d07d51119f1eac2556af536a647c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4c47c3e4b824f2b93aaea17cef88e01f748d6f95
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611842"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996446"
 ---
 # <a name="functionfile-element"></a>FunctionFile 要素
 
-UI を表示するのではなく、JavaScript 関数を実行するアドインコマンドを使用して、アドインが公開する操作のソースコードファイルを指定します。 `FunctionFile`要素は[Desktopformfactor](desktopformfactor.md)または[MobileFormFactor](mobileformfactor.md)の子要素です。 要素 `resid` の属性は、要素内の要素 `FunctionFile` の属性の値に設定されています。この要素には、 `id` `Url` `Resources` [Control 要素](control.md)で定義されているように、UI に含まれないアドインコマンドボタンによって使用されるすべての JavaScript 関数を含む HTML ファイルへの URL が含まれています。
+次のいずれかの方法でアドインが公開する操作のソースコードファイルを指定します。
+
+* UI を表示するのではなく、JavaScript 関数を実行するアドインコマンド。
+* JavaScript 関数を実行するキーボードショートカット。
+
+`FunctionFile`要素は[Desktopformfactor](desktopformfactor.md)または[MobileFormFactor](mobileformfactor.md)の子要素です。 要素 `resid` の属性は、要素内の要素 `FunctionFile` の属性の値に設定されています。この要素には、 `id` `Url` `Resources` [Control 要素](control.md)で定義されているように、UI に含まれないアドインコマンドボタンによって使用されるすべての JavaScript 関数を含む HTML ファイルへの URL が含まれています。
 
 要素の例を次に示し `FunctionFile` ます。
 

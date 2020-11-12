@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API のオンラインのみの要件セット
 description: ExcelApiOnline の要件セットに関する詳細。
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 16c96f413424d5fc85a21419fb72cf6580c1ac18
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819806"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996530"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API のオンラインのみの要件セット
 
@@ -40,7 +40,9 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API リスト
 
-現在、要件セットには Api がありません `ExcelApiOnline` 。 このセットの一部であったすべての Api は、すべてのプラットフォームで使用可能な番号付き要件セットになります。
+| クラス | フィールド | 説明 |
+|:---|:---|:---|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|この範囲内の結合領域を表す RangeAreas オブジェクトを返します。|
 
 ## <a name="see-also"></a>関連項目
 

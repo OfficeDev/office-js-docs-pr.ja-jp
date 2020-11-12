@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.3
 description: ExcelApi 1.3 の要件セットに関する詳細。
-ms.date: 07/26/2019
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ee72e8bde7b768b2edb3dcff5217325e2336e3ab
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 520755fe4b77008da866098d851f47ae3833bf13
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819820"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996474"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
@@ -32,28 +32,28 @@ ExcelApi 1.3 には、データバインドと基本的なピボットテーブ�
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[refreshAll ()](/javascript/api/excel/excel.pivottablecollection#refreshall--)|コレクション内のすべてのピボットテーブルを更新します。|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView ()](/javascript/api/excel/excel.range#getvisibleview--)|現在の範囲の表示されている行を表します。|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[数式](/javascript/api/excel/excel.rangeview#formulas)|A1 スタイル表記の数式を表します。|
-||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。たとえば、英語の数式 "=SUM(A1, 1.5)" は、ドイツ語では "=SUMME(A1; 1,5)" になります。|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|A1 スタイル表記の数式を表します。|
+||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasr1c1)|R1C1 スタイル表記の数式を表します。|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getrange--)|現在の RangeView に関連付けられている親の範囲を取得します。|
 ||[numberFormat](/javascript/api/excel/excel.rangeview#numberformat)|指定したセルの Excel の数値書式コードを表します。|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|RangeView のセル アドレスを表します。 読み取り専用です。|
-||[columnCount](/javascript/api/excel/excel.rangeview#columncount)|表示されている列の数を返します。 読み取り専用です。|
-||[index](/javascript/api/excel/excel.rangeview#index)|RangeView のインデックスを表す値を返します。 読み取り専用です。|
-||[rowCount](/javascript/api/excel/excel.rangeview#rowcount)|表示されている行の数を返します。 読み取り専用です。|
-||[rows](/javascript/api/excel/excel.rangeview#rows)|範囲に関連付けられている範囲ビューのコレクションを表します。 読み取り専用です。|
-||[text](/javascript/api/excel/excel.rangeview#text)|指定した範囲のテキスト値。テキスト値は、セルの幅には依存しません。Excel UI で発生する # 記号による置換は、この API から返されるテキスト値には影響しません。読み取り専用です。|
-||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|各セルのデータの種類を表します。 読み取り専用です。|
-||[values](/javascript/api/excel/excel.rangeview#values)|指定した範囲ビューの Raw 値を表します。 返されるデータの型は、文字列、数値、ブール値のいずれかになります。 エラーが含まれているセルは、エラー文字列を返します。|
-|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|インデックスを使用して、RangeView 行を取得します。 0 を起点とする番号になります。|
+||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|RangeView のセル アドレスを表します。|
+||[columnCount](/javascript/api/excel/excel.rangeview#columncount)|表示される列の数を指定します。|
+||[index](/javascript/api/excel/excel.rangeview#index)|RangeView のインデックスを表す値を返します。|
+||[rowCount](/javascript/api/excel/excel.rangeview#rowcount)|表示される行の数を指定します。|
+||[rows](/javascript/api/excel/excel.rangeview#rows)|範囲に関連付けられている範囲ビューのコレクションを表します。|
+||[text](/javascript/api/excel/excel.rangeview#text)|指定した範囲のテキスト値。|
+||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|各セルのデータの種類を表します。|
+||[values](/javascript/api/excel/excel.rangeview#values)|指定した範囲ビューの Raw 値を表します。|
+|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|インデックスを使用して、RangeView 行を取得します。|
 ||[items](/javascript/api/excel/excel.rangeviewcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[表](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|最初の列に特別な書式設定が含まれているかどうかを示します。|
-||[highlightLastColumn](/javascript/api/excel/excel.table#highlightlastcolumn)|最後の列に特別な書式設定が含まれているかどうかを示します。|
-||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|テーブルを見やすくするため、奇数列を偶数列とは異なる方法で強調表示する書式設定にして、列を縞模様で表示するかどうかを示します。|
-||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|テーブルを見やすくするため、奇数行を偶数行とは異なる方法で強調表示する書式設定にして、行を縞模様で表示するかどうかを示します。|
-||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|フィルター ボタンを各列のヘッダーの上部に表示するかどうかを示します。これは、テーブルにヘッダー行が含まれている場合のみ設定できます。|
-|[ブック](/javascript/api/excel/excel.workbook)|[テーブル](/javascript/api/excel/excel.workbook#pivottables)|ブックに関連付けられているピボットテーブルのコレクションを表します。 読み取り専用です。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[テーブル](/javascript/api/excel/excel.worksheet#pivottables)|ワークシートの一部になっているピボットテーブルのコレクション。 読み取り専用です。|
+|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|最初の列に特別な書式設定が含まれているかどうかを指定します。|
+||[highlightLastColumn](/javascript/api/excel/excel.table#highlightlastcolumn)|最後の列に特別な書式設定が含まれているかどうかを指定します。|
+||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|列が、表を見やすくするために、奇数列の強調表示と異なる方法で表示される縞模様の書式を表示するかどうかを指定します。|
+||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|表を見やすくするために、奇数行の強調表示に使用する縞模様の書式を行に表示するかどうかを指定します。|
+||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|フィルターボタンを各列ヘッダーの上部に表示するかどうかを指定します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[テーブル](/javascript/api/excel/excel.workbook#pivottables)|ブックに関連付けられているピボットテーブルのコレクションを表します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[テーブル](/javascript/api/excel/excel.worksheet#pivottables)|ワークシートの一部になっているピボットテーブルのコレクション。|
 
 ## <a name="see-also"></a>関連項目
 
