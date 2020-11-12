@@ -1,31 +1,31 @@
 ---
 title: Excel JavaScript API のオンラインのみの要件セット
 description: ExcelApiOnline の要件セットに関する詳細。
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 16c96f413424d5fc85a21419fb72cf6580c1ac18
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819806"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996530"
 ---
-# <a name="excel-javascript-api-online-only-requirement-set"></a><span data-ttu-id="12e30-103">Excel JavaScript API のオンラインのみの要件セット</span><span class="sxs-lookup"><span data-stu-id="12e30-103">Excel JavaScript API online-only requirement set</span></span>
+# <a name="excel-javascript-api-online-only-requirement-set"></a><span data-ttu-id="57434-103">Excel JavaScript API のオンラインのみの要件セット</span><span class="sxs-lookup"><span data-stu-id="57434-103">Excel JavaScript API online-only requirement set</span></span>
 
-<span data-ttu-id="12e30-104">`ExcelApiOnline`要件セットは、web 上の Excel でのみ使用可能な機能を含む特別な要件セットです。</span><span class="sxs-lookup"><span data-stu-id="12e30-104">The `ExcelApiOnline` requirement set is a special requirement set that includes features that are only available for Excel on the web.</span></span> <span data-ttu-id="12e30-105">この要件セットの Api は、web アプリケーション上の Excel の運用 Api (未提出の行動または構造上の変更による影響を受けない) と見なされます。</span><span class="sxs-lookup"><span data-stu-id="12e30-105">APIs in this requirement set are considered to be production APIs (not subject to undocumented behavioral or structural changes) for the Excel on the web application.</span></span> <span data-ttu-id="12e30-106">`ExcelApiOnline` 他のプラットフォーム (Windows、Mac、iOS) の場合は "preview" Api と見なされますが、これらのプラットフォームではサポートされていない場合があります。</span><span class="sxs-lookup"><span data-stu-id="12e30-106">`ExcelApiOnline` are considered to be "preview" APIs for other platforms (Windows, Mac, iOS) and may not be supported by any of those platforms.</span></span>
+<span data-ttu-id="57434-104">`ExcelApiOnline`要件セットは、web 上の Excel でのみ使用可能な機能を含む特別な要件セットです。</span><span class="sxs-lookup"><span data-stu-id="57434-104">The `ExcelApiOnline` requirement set is a special requirement set that includes features that are only available for Excel on the web.</span></span> <span data-ttu-id="57434-105">この要件セットの Api は、web アプリケーション上の Excel の運用 Api (未提出の行動または構造上の変更による影響を受けない) と見なされます。</span><span class="sxs-lookup"><span data-stu-id="57434-105">APIs in this requirement set are considered to be production APIs (not subject to undocumented behavioral or structural changes) for the Excel on the web application.</span></span> <span data-ttu-id="57434-106">`ExcelApiOnline` 他のプラットフォーム (Windows、Mac、iOS) の場合は "preview" Api と見なされますが、これらのプラットフォームではサポートされていない場合があります。</span><span class="sxs-lookup"><span data-stu-id="57434-106">`ExcelApiOnline` are considered to be "preview" APIs for other platforms (Windows, Mac, iOS) and may not be supported by any of those platforms.</span></span>
 
-<span data-ttu-id="12e30-107">要件セットの Api `ExcelApiOnline` がすべてのプラットフォームでサポートされている場合は、次にリリースされる要件セット () に追加され `ExcelApi 1.[NEXT]` ます。</span><span class="sxs-lookup"><span data-stu-id="12e30-107">When APIs in the `ExcelApiOnline` requirement set are supported across all platforms, they will added to the next released requirement set (`ExcelApi 1.[NEXT]`).</span></span> <span data-ttu-id="12e30-108">新しい要件が公開されると、これらの Api はから削除され `ExcelApiOnline` ます。</span><span class="sxs-lookup"><span data-stu-id="12e30-108">Once that new requirement is public, those APIs will be removed from `ExcelApiOnline`.</span></span> <span data-ttu-id="12e30-109">この点は、プレビューからリリースに移行する API と同様に、昇格プロセスと考えることができます。</span><span class="sxs-lookup"><span data-stu-id="12e30-109">Think of this as a similar promotion process as an API moving from preview to release.</span></span>
-
-> [!IMPORTANT]
-> <span data-ttu-id="12e30-110">`ExcelApiOnline` は、最新の番号付き要件セットのスーパーセットです。</span><span class="sxs-lookup"><span data-stu-id="12e30-110">`ExcelApiOnline` is superset of the latest numbered requirement set.</span></span>
+<span data-ttu-id="57434-107">要件セットの Api `ExcelApiOnline` がすべてのプラットフォームでサポートされている場合は、次にリリースされる要件セット () に追加され `ExcelApi 1.[NEXT]` ます。</span><span class="sxs-lookup"><span data-stu-id="57434-107">When APIs in the `ExcelApiOnline` requirement set are supported across all platforms, they will added to the next released requirement set (`ExcelApi 1.[NEXT]`).</span></span> <span data-ttu-id="57434-108">新しい要件が公開されると、これらの Api はから削除され `ExcelApiOnline` ます。</span><span class="sxs-lookup"><span data-stu-id="57434-108">Once that new requirement is public, those APIs will be removed from `ExcelApiOnline`.</span></span> <span data-ttu-id="57434-109">この点は、プレビューからリリースに移行する API と同様に、昇格プロセスと考えることができます。</span><span class="sxs-lookup"><span data-stu-id="57434-109">Think of this as a similar promotion process as an API moving from preview to release.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="12e30-111">`ExcelApiOnline 1.1` は、オンライン専用 Api の唯一のバージョンです。</span><span class="sxs-lookup"><span data-stu-id="12e30-111">`ExcelApiOnline 1.1` is the only version of the online-only APIs.</span></span> <span data-ttu-id="12e30-112">これは、web 上の Excel では、最新バージョンのユーザーが常に1つのバージョンを使用できるためです。</span><span class="sxs-lookup"><span data-stu-id="12e30-112">This is because Excel on the web will always have a single version available to users that is the latest version.</span></span>
+> <span data-ttu-id="57434-110">`ExcelApiOnline` は、最新の番号付き要件セットのスーパーセットです。</span><span class="sxs-lookup"><span data-stu-id="57434-110">`ExcelApiOnline` is superset of the latest numbered requirement set.</span></span>
 
-## <a name="recommended-usage"></a><span data-ttu-id="12e30-113">推奨される使用法</span><span class="sxs-lookup"><span data-stu-id="12e30-113">Recommended usage</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="57434-111">`ExcelApiOnline 1.1` は、オンライン専用 Api の唯一のバージョンです。</span><span class="sxs-lookup"><span data-stu-id="57434-111">`ExcelApiOnline 1.1` is the only version of the online-only APIs.</span></span> <span data-ttu-id="57434-112">これは、web 上の Excel では、最新バージョンのユーザーが常に1つのバージョンを使用できるためです。</span><span class="sxs-lookup"><span data-stu-id="57434-112">This is because Excel on the web will always have a single version available to users that is the latest version.</span></span>
 
-<span data-ttu-id="12e30-114">`ExcelApiOnline`Api は web 上の Excel でのみサポートされているため、アドインでは、これらの api を呼び出す前に要件セットがサポートされているかどうかを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="12e30-114">Because `ExcelApiOnline` APIs are only supported by Excel on the web, your add-in should check if the requirement set is supported before calling these APIs.</span></span> <span data-ttu-id="12e30-115">これにより、別のプラットフォームでオンラインのみの API を呼び出すことを回避できます。</span><span class="sxs-lookup"><span data-stu-id="12e30-115">This avoids calling an online-only API on a different platform.</span></span>
+## <a name="recommended-usage"></a><span data-ttu-id="57434-113">推奨される使用法</span><span class="sxs-lookup"><span data-stu-id="57434-113">Recommended usage</span></span>
+
+<span data-ttu-id="57434-114">`ExcelApiOnline`Api は web 上の Excel でのみサポートされているため、アドインでは、これらの api を呼び出す前に要件セットがサポートされているかどうかを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="57434-114">Because `ExcelApiOnline` APIs are only supported by Excel on the web, your add-in should check if the requirement set is supported before calling these APIs.</span></span> <span data-ttu-id="57434-115">これにより、別のプラットフォームでオンラインのみの API を呼び出すことを回避できます。</span><span class="sxs-lookup"><span data-stu-id="57434-115">This avoids calling an online-only API on a different platform.</span></span>
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -33,17 +33,19 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 }
 ```
 
-<span data-ttu-id="12e30-116">クロスプラットフォームの要件セットに含まれる API は、チェックを削除または編集する必要があり `isSetSupported` ます。</span><span class="sxs-lookup"><span data-stu-id="12e30-116">Once the API is in a cross-platform requirement set, you should remove or edit the `isSetSupported` check.</span></span> <span data-ttu-id="12e30-117">これにより、他のプラットフォームでアドインの機能が有効になります。</span><span class="sxs-lookup"><span data-stu-id="12e30-117">This will enable your add-in's feature on other platforms.</span></span> <span data-ttu-id="12e30-118">この変更を行うときは、これらのプラットフォームで機能をテストしてください。</span><span class="sxs-lookup"><span data-stu-id="12e30-118">Be sure to test the feature on those platforms when making this change.</span></span>
+<span data-ttu-id="57434-116">クロスプラットフォームの要件セットに含まれる API は、チェックを削除または編集する必要があり `isSetSupported` ます。</span><span class="sxs-lookup"><span data-stu-id="57434-116">Once the API is in a cross-platform requirement set, you should remove or edit the `isSetSupported` check.</span></span> <span data-ttu-id="57434-117">これにより、他のプラットフォームでアドインの機能が有効になります。</span><span class="sxs-lookup"><span data-stu-id="57434-117">This will enable your add-in's feature on other platforms.</span></span> <span data-ttu-id="57434-118">この変更を行うときは、これらのプラットフォームで機能をテストしてください。</span><span class="sxs-lookup"><span data-stu-id="57434-118">Be sure to test the feature on those platforms when making this change.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="12e30-119">マニフェスト `ExcelApiOnline 1.1` でライセンス認証の要件として指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="12e30-119">Your manifest cannot specify `ExcelApiOnline 1.1` as an activation requirement.</span></span> <span data-ttu-id="12e30-120">[Set 要素](../manifest/set.md)で使用する有効な値ではありません。</span><span class="sxs-lookup"><span data-stu-id="12e30-120">It is not a valid value to use in the [Set element](../manifest/set.md).</span></span>
+> <span data-ttu-id="57434-119">マニフェスト `ExcelApiOnline 1.1` でライセンス認証の要件として指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="57434-119">Your manifest cannot specify `ExcelApiOnline 1.1` as an activation requirement.</span></span> <span data-ttu-id="57434-120">[Set 要素](../manifest/set.md)で使用する有効な値ではありません。</span><span class="sxs-lookup"><span data-stu-id="57434-120">It is not a valid value to use in the [Set element](../manifest/set.md).</span></span>
 
-## <a name="api-list"></a><span data-ttu-id="12e30-121">API リスト</span><span class="sxs-lookup"><span data-stu-id="12e30-121">API list</span></span>
+## <a name="api-list"></a><span data-ttu-id="57434-121">API リスト</span><span class="sxs-lookup"><span data-stu-id="57434-121">API list</span></span>
 
-<span data-ttu-id="12e30-122">現在、要件セットには Api がありません `ExcelApiOnline` 。</span><span class="sxs-lookup"><span data-stu-id="12e30-122">There are currently no APIs in the `ExcelApiOnline` requirement set.</span></span> <span data-ttu-id="12e30-123">このセットの一部であったすべての Api は、すべてのプラットフォームで使用可能な番号付き要件セットになります。</span><span class="sxs-lookup"><span data-stu-id="12e30-123">All the APIs that were previously a part of this set have graduated to a numbered requirement set and are available across all platforms.</span></span>
+| <span data-ttu-id="57434-122">クラス</span><span class="sxs-lookup"><span data-stu-id="57434-122">Class</span></span> | <span data-ttu-id="57434-123">フィールド</span><span class="sxs-lookup"><span data-stu-id="57434-123">Fields</span></span> | <span data-ttu-id="57434-124">説明</span><span class="sxs-lookup"><span data-stu-id="57434-124">Description</span></span> |
+|:---|:---|:---|
+|[<span data-ttu-id="57434-125">Range</span><span class="sxs-lookup"><span data-stu-id="57434-125">Range</span></span>](/javascript/api/excel/excel.range)|[<span data-ttu-id="57434-126">getMergedAreas()</span><span class="sxs-lookup"><span data-stu-id="57434-126">getMergedAreas()</span></span>](/javascript/api/excel/excel.range#getmergedareas--)|<span data-ttu-id="57434-127">この範囲内の結合領域を表す RangeAreas オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="57434-127">Returns a RangeAreas object that represents the merged areas in this range.</span></span>|
 
-## <a name="see-also"></a><span data-ttu-id="12e30-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="12e30-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="57434-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="57434-128">See also</span></span>
 
-- [<span data-ttu-id="12e30-125">Excel JavaScript API リファレンス ドキュメント</span><span class="sxs-lookup"><span data-stu-id="12e30-125">Excel JavaScript API Reference Documentation</span></span>](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [<span data-ttu-id="12e30-126">Excel JavaScript プレビュー API</span><span class="sxs-lookup"><span data-stu-id="12e30-126">Excel JavaScript preview APIs</span></span>](excel-preview-apis.md)
-- [<span data-ttu-id="12e30-127">Excel JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="12e30-127">Excel JavaScript API requirement sets</span></span>](excel-api-requirement-sets.md)
+- [<span data-ttu-id="57434-129">Excel JavaScript API リファレンス ドキュメント</span><span class="sxs-lookup"><span data-stu-id="57434-129">Excel JavaScript API Reference Documentation</span></span>](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+- [<span data-ttu-id="57434-130">Excel JavaScript プレビュー API</span><span class="sxs-lookup"><span data-stu-id="57434-130">Excel JavaScript preview APIs</span></span>](excel-preview-apis.md)
+- [<span data-ttu-id="57434-131">Excel JavaScript API の要件セット</span><span class="sxs-lookup"><span data-stu-id="57434-131">Excel JavaScript API requirement sets</span></span>](excel-api-requirement-sets.md)
