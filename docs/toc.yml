@@ -672,20 +672,34 @@
         - name: 概要
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
-        - name: Excel カスタム関数の使用を開始する
-          href: quickstarts/excel-custom-functions-quickstart-redirect.md
+        - name: CustomFunctionsRuntime API の要件セット
+          href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
-        - name: カスタム関数のチュートリアル
-          href: tutorials/excel-tutorial-create-custom-functions.md
+        - name: チュートリアル
+          items:
+            - name: 最初のカスタム関数アドインをビルドする
+              href: quickstarts/excel-custom-functions-quickstart-redirect.md
+              displayName: 'Excel, Custom Functions'
+            - name: カスタム関数のチュートリアル
+              href: tutorials/excel-tutorial-create-custom-functions.md
+              displayName: 'Excel, Custom Functions'
+            - name: カスタム関数データと作業ウィンドウのチュートリアルを共有する
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+        - name: 名前付けのガイドライン
+          href: excel/custom-functions-naming.md
           displayName: 'Excel, Custom Functions'
-        - name: 作業ウィンドウのチュートリアルとカスタム関数データの共有
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-          displayName: 'Excel, Custom Functions'
-        - name: カスタム関数から Excel JS API を呼び出す
-          href: excel/call-excel-apis-from-custom-function.md
+        - name: パラメーター オプション
+          href: excel/custom-functions-parameter-options.md
           displayName: 'Excel, Custom Functions'
         - name: エラー処理
           href: excel/custom-functions-errors.md
+          displayName: 'Excel, Custom Functions'
+        - name: JSON メタデータの自動生成
+          href: excel/custom-functions-json-autogeneration.md
+          displayName: 'Excel, Custom Functions'
+        - name: Excel JS API を呼び出す
+          href: excel/call-excel-apis-from-custom-function.md
           displayName: 'Excel, Custom Functions'
         - name: 同等な XLL を特定する
           href: excel/make-custom-functions-compatible-with-xll-udf.md
@@ -693,29 +707,14 @@
         - name: ローカリゼーション
           href: excel/custom-functions-localize.md
           displayName: 'Excel, Custom Functions'
-        - name: のメタデータ
+        - name: JSON メタデータを手動で作成する
           href: excel/custom-functions-json.md
           displayName: 'Excel, Custom Functions'
-        - name: メタデータの生成
-          href: excel/custom-functions-json-autogeneration.md
-          displayName: 'Excel, Custom Functions'
-        - name: 名前付けのガイドライン
-          href: excel/custom-functions-naming.md
-          displayName: 'Excel, Custom Functions'
-        - name: パラメーター オプション
-          href: excel/custom-functions-parameter-options.md
-          displayName: 'Excel, Custom Functions'
-        - name: 要件セット
-          href: excel/custom-functions-requirement-sets.md
-          displayName: 'Excel, Custom Functions'
-        - name: 動的配列を返す
+        - name: 動的な配列を返す
           href: excel/custom-functions-dynamic-arrays.md
           displayName: 'Excel, Custom Functions'
         - name: 共有ランタイム
           href: excel/custom-functions-shared-overview.md
-          displayName: 'Excel, Custom Functions'
-        - name: トラブルシューティング
-          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
         - name: UI のないカスタム関数
           items:
@@ -731,8 +730,11 @@
         - name: 揮発性関数
           href: excel/custom-functions-volatile.md
           displayName: 'Excel, Custom Functions'
-        - name: Web リクエスト
+        - name: Web 要求
           href: excel/custom-functions-web-reqs.md
+          displayName: 'Excel, Custom Functions'
+        - name: トラブルシューティング
+          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
 - name: OneNote
   items:
