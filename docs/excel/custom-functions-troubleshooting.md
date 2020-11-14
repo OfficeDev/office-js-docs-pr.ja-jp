@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: 3ee18eabd19be56eece465da880fae7af1c12f3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609798"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071663"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -45,7 +45,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
-localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の*オプション 2* を参照してください。
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、 [このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の *オプション 2* を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「[関数名を JSON メタデータに関連付ける](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)」をご覧ください。
+このプロセスの詳細については、「 [関数名と JSON メタデータの関連付け](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)」を参照してください。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 
@@ -84,7 +84,7 @@ CustomFunctions.associate("ADD", add);
 
 ### <a name="in-excel-on-windows-or-mac"></a>Windows または Mac の Excel で
 
-Windows または Mac で Excel を使用している場合は、Excel から Office の機能拡張チームにフィードバックを直接報告できます。 これを行うには、**[ファイル]、[フィードバック]、[問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
+Windows または Mac で Excel を使用している場合は、Excel から Office の機能拡張チームにフィードバックを直接報告できます。 これを行うには、 **[ファイル]、[フィードバック]、[問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
 
 ### <a name="in-github"></a>GitHub で
 
@@ -95,5 +95,5 @@ Windows または Mac で Excel を使用している場合は、Excel から Of
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数メタデータ自動生成](custom-functions-json-autogeneration.md)
+* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

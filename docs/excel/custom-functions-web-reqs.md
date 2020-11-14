@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a5faa4fd8af2b41a3d79ac1c978a4c550592b27e
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819512"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071670"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -141,7 +141,7 @@ Excel では、次のような状況で関数の実行をキャンセルしま�
 
 また、要求が発生したときに、オフラインの場合でも、ケースを処理する既定のストリーミング値を設定することもできます。
 
-また、ストリーミング関数と関連の_ない_、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1つの値を返す非同期のカスタム関数のみが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
+また、ストリーミング関数と関連の _ない_ 、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1つの値を返す非同期のカスタム関数のみが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
 ### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
 
@@ -178,6 +178,6 @@ ws.onerror(error){
 
 - [関数の揮発性の値](custom-functions-volatile.md)
 - [カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)
-- [カスタム関数のメタデータ](custom-functions-json.md)
+- [カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)
 - [Excel でカスタム関数を作成する](custom-functions-overview.md)
 - [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

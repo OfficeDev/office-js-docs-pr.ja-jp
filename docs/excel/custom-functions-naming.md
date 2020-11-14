@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
+ms.date: 11/06/2020
 description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
 title: Excel のカスタム関数の名前付けガイドライン
 localization_priority: Normal
-ms.openlocfilehash: ac0d824f49d359e574a0dc5caae8ef2f903dd4a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: eefd703c63311934435657bf9e6159662f908a95
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609290"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071614"
 ---
-# <a name="naming-guidelines"></a>名前付けのガイドライン
+# <a name="custom-functions-naming-guidelines"></a>カスタム関数の名前付けガイドライン
 
 カスタム関数は、 `id` `name` JSON メタデータファイルのおよびプロパティによって識別されます。
 
@@ -64,5 +64,5 @@ Excel は、組み込み関数名 (など) に大文字を使用 `SUM` します
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

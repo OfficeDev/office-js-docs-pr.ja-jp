@@ -1,18 +1,18 @@
 ---
-ms.date: 09/25/2020
+ms.date: 11/06/2020
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308538"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071649"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
-Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。 JSDoc タグはビルド時に使用して、[JSON メタデータ ファイル](custom-functions-json.md)を作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集する手間が省けます。
+Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。 JSDoc タグはビルド時に使用して、JSON メタデータ ファイルを作成します。 JSDoc タグを使用すると、 [JSON メタデータファイルを手動で編集](custom-functions-json.md)する手間を省けます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -24,7 +24,7 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 説明は、カスタム関数の機能を理解するためのヘルプが必要な場合に、ヘルプ テキストとしてユーザーに表示されます。 説明に特定のタグは必要ありません。 JSDoc コメントに簡単な説明を入力するだけです。 一般に、説明は JSDoc コメント セクションの先頭に配置されますが、配置場所に関係なく機能します。
 
-組み込み関数の説明の例を表示するには、Excel を開き、**[数式]** タブに移動し、**[関数の​​挿入]** を選択します。 すべての関数の説明を参照したり、独自のカスタム関数を一覧表示したりすることができます。
+組み込み関数の説明の例を表示するには、Excel を開き、 **[数式]** タブに移動し、 **[関数の​​挿入]** を選択します。 すべての関数の説明を参照したり、独自のカスタム関数を一覧表示したりすることができます。
 
 次の例では、「球の体積を計算します。」 が、カスタム関数の説明です。
 
@@ -160,7 +160,7 @@ Excel のユーザーには、関数の入力時に説明が表示され、関�
 
 #### <a name="javascript"></a>JavaScript
 
-JavaScript 構文: @param {type} 名_の説明_
+JavaScript 構文: @param {type} 名 _の説明_
 
 * `{type}` 中かっこで囲まれた型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 種類が指定されていない場合は、既定の種類が使用され `any` ます。
 * `name` @param タグを適用するパラメーターを指定します。 これは必須です。
@@ -234,7 +234,7 @@ function add(first: number, second: number): number {
 
 ### <a name="returns"></a>@returns
 
-構文: @returns {_type_}
+構文: @returns { _type_ }
 
 戻り値の型を指定します。
 
@@ -327,5 +327,5 @@ function roll6sided(): number {
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数のメタデータ](custom-functions-json.md)
+* [カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

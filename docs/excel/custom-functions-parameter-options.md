@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: ee193ed68ef59bfd9068bc43cd30721d6bb7b86a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609276"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071621"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
 
@@ -221,7 +221,7 @@ function addSingleRange(singleRange) {
 
 
 ### <a name="declaring-repeating-parameters"></a>繰り返しパラメーターの宣言
-Typescript で、パラメーターが多次元であることを示します。 たとえば、は `ADD(values: number[])` 1 次元配列を示し、 `ADD(values:number[][])` 2 次元配列というように指定します。
+Typescript で、パラメーターが多次元であることを示します。 たとえば、は  `ADD(values: number[])` 1 次元配列を示し、 `ADD(values:number[][])` 2 次元配列というように指定します。
 
 JavaScript では、 `@param values {number[]}` 1 次元配列、 `@param <name> {number[][]}` 2 次元配列、およびその他の次元で使用します。
 
@@ -229,7 +229,7 @@ JavaScript では、 `@param values {number[]}` 1 次元配列、 `@param <name>
 
 ## <a name="invocation-parameter"></a>呼び出しパラメーター
 
-すべてのカスタム関数には `invocation` 、最後の引数として引数が自動的に渡されます。 この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。 また、関数[をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。 パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数でを使用する場合は `invocation` 、最後のパラメーターとして宣言します。
+すべてのカスタム関数には `invocation` 、最後の引数として引数が自動的に渡されます。 この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。 また、関数 [をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。 パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数でを使用する場合は `invocation` 、最後のパラメーターとして宣言します。
 
 次のコードサンプルでは、 `invocation` コンテキストが参照に対して明示的に指定されています。
 
@@ -253,7 +253,7 @@ function add(first, second, invocation) {
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数でデータを受信して​​処理する](custom-functions-web-reqs.md)
-* [カスタム関数のメタデータ](custom-functions-json.md)
 * [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
+* [カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

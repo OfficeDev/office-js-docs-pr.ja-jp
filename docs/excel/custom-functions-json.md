@@ -1,16 +1,16 @@
 ---
-ms.date: 10/22/2020
+ms.date: 11/06/2020
 description: Excel でカスタム関数の JSON メタデータを定義し、関数 ID と name プロパティを関連付けます。
-title: Excel でカスタム関数の JSON メタデータを作成する
+title: Excel でカスタム関数の JSON メタデータを手動で作成する
 localization_priority: Normal
-ms.openlocfilehash: c676abc3115082fa861a4650b11869009f168e7f
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774748"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071642"
 ---
-# <a name="create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを作成する
+# <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
 カスタム関数の [概要](custom-functions-overview.md) の記事で説明されているように、カスタム関数プロジェクトには、JSON メタデータファイルとスクリプト (JavaScript または TypeScript) の両方を含める必要があります。関数を登録するには、このファイルを使用できるようにします。 ユーザーが初めてアドインを実行したときに、すべてのブックの同じユーザーがそのアドインを使用できるようになると、カスタム関数が登録されます。
 
@@ -18,7 +18,7 @@ ms.locfileid: "48774748"
 
 Json ファイルを作成する代わりに、可能な場合は json 自動生成を使用することをお勧めします。 Autogeneration は、ユーザーエラーが発生しにくく、 `yo office` スキャフォールディングファイルに既に含まれています。 JSDoc タグと JSON 自動生成プロセスの詳細については、「 [カスタム関数の json メタデータの](custom-functions-json-autogeneration.md)自動生成」を参照してください。
 
-ただし、カスタム関数プロジェクトを最初から作成することはできますが、次の操作を実行する必要があります。
+ただし、カスタム関数プロジェクトを最初から作成することができます。 このプロセスでは、次のことを行う必要があります。
 
 - JSON ファイルを作成します。
 - マニフェストファイルが JSON ファイルに接続されていることを確認します。
