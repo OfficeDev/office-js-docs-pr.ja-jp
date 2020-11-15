@@ -1,16 +1,16 @@
 ---
-ms.date: 10/14/2020
+ms.date: 11/06/2020
 description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741114"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071677"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -50,9 +50,9 @@ function sphereVolume(radius) {
 
 ### <a name="script-file"></a>スクリプト ファイル
 
-スクリプト ファイル (**./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
+スクリプト ファイル ( **./src/customfunctions.js** または **/src/customfunctions.ts** ) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
 
-`add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 次に、`description` プロパティに続いて、`first` および `second` の 2 つのパラメーターが宣言されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを作成する](custom-functions-json-autogeneration.md)」を参照してください。
+`add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 次に、`description` プロパティに続いて、`first` および `second` の 2 つのパラメーターが宣言されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを自動作成する](custom-functions-json-autogeneration.md)」を参照してください。
 
 ```js
 /**
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
+カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml** ) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
 
 - カスタム関数の名前空間を定義します。 ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
@@ -99,7 +99,7 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 独自のカスタム関数を試すもう 1 つの簡単な方法は[スクリプト ラボ](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)を使用し、アドインで Excel のカスタム関数を試してみることができます。 独自のカスタム関数を作成したり、提供されたサンプルを再生してみることができます。
 
 ## <a name="see-also"></a>関連項目 
-* [Microsoft 365 開発者プログラムについて学ぶ](https://developer.microsoft.com/microsoft-365/dev-program)
-* [カスタム関数の要件](custom-functions-requirement-sets.md)
-* [名前付けのガイドライン](custom-functions-naming.md)
+* [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
+* [カスタム関数の要件セット](custom-functions-requirement-sets.md)
+* [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
