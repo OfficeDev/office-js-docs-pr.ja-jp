@@ -1,14 +1,14 @@
 ---
 title: アドインの状態および設定を保持する
 description: ブラウザーコントロールのステートレス環境で実行されている Office アドイン web アプリケーションでデータを永続化する方法について説明します。
-ms.date: 05/08/2020
+ms.date: 11/13/2020
 localization_priority: Normal
-ms.openlocfilehash: b885c94ed544474f101f290ab321fa12cc45de4c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 90e072d638a3a598610c4bcbb2e6af07f1196467
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293192"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087953"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -17,8 +17,8 @@ ms.locfileid: "47293192"
 Office アドインは、基本的にブラウザー コントロールのステートレス環境で動作する Web アプリケーションです。したがって、アドインでは、そのアドインを使用するセッション間で特定の操作または機能を継続して維持するためのデータを保持することが必要な場合があります。たとえば、アドインには、ユーザーの優先ビューや既定の場所など、アドインで保存しておき、アドインが次回初期化されたときにリロードする必要があるカスタム設定または他の値が含まれる場合があります。その場合は、次のようにします。
 
 - 次のいずれかの方法でデータを格納する Office JavaScript API のメンバーを使用します。
-    -  アドインの種類応じた場所に保存されるプロパティ バッグ内の名前と値の組。
-    -  ドキュメント内に保存されるカスタム XML。
+  - アドインの種類応じた場所に保存されるプロパティ バッグ内の名前と値の組。
+  - ドキュメント内に保存されるカスタム XML。
 
 - 基になるブラウザー コントロールによって提供される技術である、ブラウザーの Cookie、または HTML5 Web ストレージ ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) または [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) を使用します。
 
@@ -54,13 +54,10 @@ Office JavaScript API には、次の表に示すように、セッション間�
 
 設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッション中は、 `get` `set` `remove` 作成する設定の種類 (**settings**、 **CustomProperties**、または **RoamingSettings**) に対応したオブジェクトの、、およびメソッドを使用して、すべての設定がメモリ内で管理されます。
 
-
 > [!IMPORTANT]
 > アドインの現在のセッション中に行った追加、更新、または削除を保存場所に保持するには、 `saveAsync` その種類の設定を操作するために使用される対応するオブジェクトのメソッドを呼び出す必要があります。 、 `get` 、 `set` およびメソッドは、 `remove` 設定プロパティバッグのメモリ内コピーに対してのみ動作します。 アドインを呼び出しずに閉じた場合 `saveAsync` 、そのセッション中に設定に加えられた変更はすべて失われます。
 
-
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法
-
 
 Word、Excel、または PowerPoint 用のコンテンツ アドインまたは作業ウィンドウ アドインの状態またはカスタム設定を保持するには、 [Settings](/javascript/api/office/office.settings) オブジェクトとそのメソッドを使用します。 オブジェクトのメソッドを使用して作成されたプロパティバッグは、 `Settings` そのオブジェクトを作成したコンテンツまたは作業ウィンドウアドインのインスタンスのみが利用でき、保存されているドキュメントからのみ使用できます。
 
@@ -68,11 +65,9 @@ Word、Excel、または PowerPoint 用のコンテンツ アドインまたは�
 
 set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出す必要があります。
 
-
 ### <a name="creating-or-updating-a-setting-value"></a>設定値の作成または更新
 
 次のコード例では、[Settings.set](/javascript/api/office/office.settings#set-name--value-) メソッドを使用して `'themeColor'` という名前の設定を作成し、値 `'green'` を指定する方法を説明します。set メソッドの最初のパラメーターは、設定するか作成する設定の _name_ (Id) であり、これは大文字と小文字が区別されます。2 番目のパラメーターは、設定の _value_ です。
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -80,28 +75,24 @@ Office.context.document.settings.set('themeColor', 'green');
 
  指定した名前を持つ設定は、それがまだ存在していない場合には作成され、すでに存在している場合はその値が更新されます。 メソッドを使用して、 `Settings.saveAsync` 新しい設定または更新された設定をドキュメントに保持します。
 
-
 ### <a name="getting-the-value-of-a-setting"></a>設定値の取得
 
 次の例では、 [Settings.get](/javascript/api/office/office.settings#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。 このメソッドの唯一のパラメーター `get` は、大文字と小文字が区別される設定の _名前_ です。
-
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
  メソッドは、 `get` 渡された設定 _名_ に対して以前に保存された値を返します。 設定が存在しない場合、メソッドは **null** を返します。
 
-
 ### <a name="removing-a-setting"></a>設定の削除
 
 次の例では、 [Settings.remove](/javascript/api/office/office.settings#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。 このメソッドの唯一のパラメーター `remove` は、大文字と小文字が区別される設定の _名前_ です。
-
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -109,11 +100,9 @@ Office.context.document.settings.remove('themeColor');
 
 該当する設定が存在しない場合は何も起きません。 メソッドを使用して、 `Settings.saveAsync` ドキュメントから設定の削除を保持します。
 
-
 ### <a name="saving-your-settings"></a>設定の保存
 
-現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 メソッドの唯一のパラメーター `saveAsync` は _callback_で、これは1つのパラメーターを持つコールバック関数です。 
-
+現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 メソッドの唯一のパラメーター `saveAsync` は _callback_ で、これは1つのパラメーターを持つコールバック関数です。
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -125,18 +114,18 @@ Office.context.document.settings.saveAsync(function (asyncResult) {
 });
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
-`saveAsync`メソッドに_コールバック_パラメーターとして渡される匿名関数は、操作が完了したときに実行されます。 コールバックの _asyncResult_ パラメーターは、操作の状態を含むオブジェクトへのアクセスを提供し `AsyncResult` ます。 この例では、関数はプロパティをチェックして、 `AsyncResult.status` 保存操作が成功したか失敗したかを確認し、アドインのページに結果を表示します。
+`saveAsync`メソッドに _コールバック_ パラメーターとして渡される匿名関数は、操作が完了したときに実行されます。 コールバックの _asyncResult_ パラメーターは、操作の状態を含むオブジェクトへのアクセスを提供し `AsyncResult` ます。 この例では、関数はプロパティをチェックして、 `AsyncResult.status` 保存操作が成功したか失敗したかを確認し、アドインのページに結果を表示します。
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>ドキュメントにカスタム XML を保存する方法
 
 > [!NOTE]
 > このセクションでは、Word でサポートされている Office 共通 JavaScript API のコンテキストでのカスタム XML 部分について説明します。 アプリケーション固有の Excel JavaScript API も、カスタム XML パーツへのアクセスを提供します。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の CustomXmlPart](/javascript/api/excel/excel.customxmlpart) を参照してください。
 
-ドキュメントの Settings のサイズ制限を超過する情報や構造化された特徴を持つ情報を保存する必要がある場合には、追加のストレージ オプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](/javascript/api/office/office.customxmlpart) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードでは、カスタム XML パーツを作成して、その ID とコンテンツをページの div に表示します。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
+ドキュメントの設定のサイズ制限を超える情報や、構造化された文字を含む情報を格納する必要がある場合は、追加のストレージオプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](/javascript/api/office/office.customxmlpart) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードでは、カスタム XML パーツを作成して、その ID とコンテンツをページの div に表示します。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
 
 ```js
 function createCustomXmlPart() {
@@ -188,7 +177,6 @@ function getReviewers() {
 ## <a name="how-to-save-settings-in-an-outlook-add-in"></a>Outlook アドインに設定を保存する方法
 
 Outlook アドインに設定を保存する方法については、「 [outlook アドインの状態と設定を管理](../outlook/manage-state-and-settings-outlook.md)する」を参照してください。
-
 
 ## <a name="see-also"></a>関連項目
 

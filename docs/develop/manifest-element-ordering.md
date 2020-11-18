@@ -1,18 +1,18 @@
 ---
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
-ms.date: 01/10/2020
+ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 8798031410e6d71fd6d9f3f08f89a4c6f78f4692
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 35ed1b87162b84ff13cafc2084ce9ca1b1666235
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996383"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087925"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
-Office アドインのマニフェストの XML 要素は適切な親要素の下に配置する必要があり、 *また* 、親要素の下で子要素同士が特定の順序に配置する必要があります。
+Office アドインのマニフェストの XML 要素は適切な親要素の下に配置する必要があり、*また*、親要素の下で子要素同士が特定の順序に配置する必要があります。
 
 必要な順序は、[[スキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)] フォルダー内の XSD ファイルで指定されています。 XSD ファイルは、作業ウィンドウ、コンテンツ、およびメール アドインのサブフォルダーに分類されます。
 
@@ -209,7 +209,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group>
+                        <Group> (can be below <ControlGroup>)
                             <Label>
                             <Icon>
                                 <Image>
@@ -237,7 +237,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                                         <SourceLocation>
                                         <Title>
                                         <FunctionName>
+                        <ControlGroup> (can be above <Group>)
                         <Label>
+                        <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
                         <Control>
                             <Label>
