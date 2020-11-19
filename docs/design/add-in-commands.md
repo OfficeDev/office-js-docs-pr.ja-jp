@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 10/03/2020
+ms.date: 11/01/2020
 localization_priority: Priority
-ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 3d7d99f05e9b02712a4f416b891d3be38875525b
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370508"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087967"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -59,9 +59,24 @@ ms.locfileid: "48370508"
 > [!NOTE]
 > この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[アドイン コマンドを有効または無効にする](disable-add-in-commands.md)」を参照してください。
 
+### <a name="position-on-the-ribbon-preview"></a>リボンの位置 (プレビュー)
+
+「ホームタブのすぐ右側」など、Office アプリケーションのリボンのどこにカスタム タブを表示するかを指定できます。
+
+> [!NOTE]
+> この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[リボンにカスタムタブを配置する](custom-tab-placement.md)」を参照してください。
+
+### <a name="integration-of-built-in-office-buttons-preview"></a>組み込みの Office ボタンの統合 (プレビュー)
+
+組み込みの Office リボン ボタンをカスタム コマンド グループとカスタム リボン タブに挿入できます。
+
+> [!NOTE]
+> この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[組み込みの Office ボタンをカスタム タブに統合する](built-in-button-integration.md)」を参照してください。
+
+
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
-現在、アドイン コマンドは次のプラットフォームでサポートされています。
+現在アドイン コマンドは、以前に[コマンドの機能](#command-capabilities)のサブ セクションで指定された制限を除いて、次のプラットフォームでサポートされています。
 
 - Windows 上の Office (ビルド 16.0.6769 以降、Microsoft 365 サブスクリプションに接続済み)
 - Windows 版 Office 2019
@@ -88,6 +103,8 @@ ms.locfileid: "48370508"
     - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。
     - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
     - アドインの使用スペースを増やす余分なボタンを追加しないでください。
+    - ユーザーがドキュメントを操作する主な方法がアドインである場合を除き、カスタムタブを [ホーム] タブの左側に配置したり、ドキュメントを開いたときに既定でフォーカスを設定したりしないでください。 アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。
+    - アドインがユーザーがドキュメントを操作する主な方法であり、カスタム リボン タブがある場合は、ユーザーが頻繁に必要とする Office 機能のボタンをタブに統合することを検討してください。
 
      > [!NOTE]
      > 占有領域が大きすぎるアドインは [AppSource 検証](/legal/marketplace/certification-policies)を通過しない場合があります。
