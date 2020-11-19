@@ -3,18 +3,18 @@ title: Office アドインでの Office UI Fabric React の使用
 description: Office アドインで Office UI Fabric React を使用する方法について説明します。
 ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d1e89d51c4e5efa0ead1b1716e0f1014a63e85f
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430584"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131984"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
 Office UI Fabric は、Office と Office 365 のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。React を使ってアドインをビルドする場合は、ユーザー エクスペリエンスを作成するために Fabric React の使用を検討してください。Fabric は、アドインで使用できるボタンやチェックボックスなど、複数の React ベースの UX コンポーネントを提供しています。
 
-この記事では、React で構築され Fabric React コンポーネントを使用するアドインを作成する方法について説明します。 
+この記事では、React で構築され Fabric React コンポーネントを使用するアドインを作成する方法について説明します。
 
 > [!NOTE]
 > [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) は Fabric React に含まれています。つまり、この記事の手順を完了すると、アドインで Fabric Core にアクセスできるようになります。
@@ -36,7 +36,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![Yeoman ジェネレーター](../images/yo-office-word-react.png)
+![コマンドラインインターフェイスでの、[ごみ箱] ジェネレーターのプロンプトと応答を示すスクリーンショット](../images/yo-office-word-react.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -53,7 +53,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンドプロンプトまたはターミナルを実行する必要がある場合もあります。
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
     > [!TIP]
     > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
@@ -78,8 +78,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 3. Word で [**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、Fabric React の UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンを再定義します。
 
-    ![[作業ウィンドウの表示] リボンのボタンが強調表示され、[実行] ボタンおよびその前のテキストが作業ウィンドウで強調表示された Word アプリケーションのスクリーンショット](../images/word-task-pane-yo-default.png)
-
+    ![作業ウィンドウで強調表示された [作業ウィンドウの表示] リボンボタンが強調表示された Word アプリケーションと、[実行] ボタンと [直前のテキスト] が強調表示されているスクリーンショット](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>Fabric React を使用する React コンポーネントの作成
 
@@ -165,15 +164,15 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     }
     ```
 
-  4. **App.tsx** に加えた変更を保存します。
+4. **App.tsx** に加えた変更を保存します。
 
 ## <a name="see-the-result"></a>結果を表示する
 
 Word で、**App.tsx** に変更を保存すると、アドイン作業ウィンドウが自動的に更新されます。 作業ウィンドウ下部の既定のテキストとボタンに、`ButtonPrimaryExample` コンポーネントによって定義された UI が表示されるようになりました。 [**テキストの挿入**] ボタンを選択してドキュメントにテキストを挿入します。
 
-![[テキストの挿入] ボタンとその前のテキストが強調表示された Word アプリケーションのスクリーンショット](../images/word-task-pane-with-react-component.png)
+!["テキストの挿入" という単語が含まれる Word アプリケーションを示すスクリーンショットボタンと直前のテキストの強調表示](../images/word-task-pane-with-react-component.png)
 
-おめでとうございます! これで React および Office UI Fabric React を使用して作業ウィンドウ アドインを作成できました。 
+おめでとうございます! これで React および Office UI Fabric React を使用して作業ウィンドウ アドインを作成できました。
 
 ## <a name="see-also"></a>関連項目
 

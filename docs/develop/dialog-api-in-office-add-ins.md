@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインでダイアログボックスを作成する方法の基本事項について説明します。
 ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741086"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131760"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -17,7 +17,7 @@ ms.locfileid: "48741086"
 > [!NOTE]
 > ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。 現在、ダイアログ API は Excel、PowerPoint、および Word でサポートされています。 Outlook サポートはさまざまなメールボックス要件セット &mdash; に含まれています。詳細については、「API リファレンス」を参照してください。
 
-ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ*後*で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
+ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ *後* で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
 作業ウィンドウ アドイン、コンテンツ アドイン、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開いて、次の操作を実行することを検討してください。
 
@@ -30,9 +30,9 @@ ms.locfileid: "48741086"
 
 次の画像は、ダイアログ ボックスの例を示します。
 
-![アドイン コマンド](../images/auth-o-dialog-open.png)
+![Word の前面に表示される3つのサインインオプションを含むダイアログを示すスクリーンショット](../images/auth-o-dialog-open.png)
 
-ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウが非 *モーダル*である--ユーザーは、Office アプリケーション内のドキュメントと、作業ウィンドウのページがある場合は、そのページを引き続き操作できます。
+ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウが非 *モーダル* である--ユーザーは、Office アプリケーション内のドキュメントと、作業ウィンドウのページがある場合は、そのページを引き続き操作できます。
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>ホスト ページからダイアログ ボックスを開く
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> - URL には HTTP**S** プロトコルを使用します。 これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
+> - URL には HTTP **S** プロトコルを使用します。 これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
 > - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](../reference/manifest/functionfile.md)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
 > [!IMPORTANT]
@@ -79,7 +79,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。 アドインが Office on the web で実行されていない場合、`displayInIframe` は無視されます。
 
 > [!NOTE]
-> どの時点であれ、iframe で開けないページにダイアログ ボックスがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは**ありません**。 たとえば、Google や Microsoft アカウントなど、多くの一般的な web サービスのサインインページを iframe で開くことはできません。
+> どの時点であれ、iframe で開けないページにダイアログ ボックスがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは **ありません**。 たとえば、Google や Microsoft アカウントなど、多くの一般的な web サービスのサインインページを iframe で開くことはできません。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>ダイアログ ボックスからホスト ページに情報を送信する
 
@@ -98,9 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - `messageParent` 関数を呼び出せるのは、ホスト ページと同じドメイン (プロトコルとポートを含む) を持つページ上のみです。
-> - この `messageParent` 関数は、ダイアログ*only*ボックスで呼び出すことができる2つの Office JS api のうちの1つです。 
+> - この `messageParent` 関数は、ダイアログ *only* ボックスで呼び出すことができる2つの Office JS api のうちの1つです。
 > - ダイアログボックスで呼び出すことができるその他の JS API は、 `Office.context.requirements.isSetSupported` です。 詳細については、「 [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)」を参照してください。 ただし、ダイアログボックスでは、この API は Outlook 2016 1 での購入時 (つまり、MSI バージョン) ではサポートされていません。
-
 
 次の例では、`googleProfile` は文字列に変換されたバージョンのユーザーの Google プロファイルです。
 

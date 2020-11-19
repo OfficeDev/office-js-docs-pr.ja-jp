@@ -3,12 +3,12 @@ title: Visual Studio 2019 で JavaScript IntelliSense を利用できるよう�
 description: JSDoc を使用して、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を作成する方法について説明します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 963945c3ac627ab48fe8b491cd778e9cab973e16
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 495e43994d78b1e01374e348e6d21d41d9611212
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608161"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131809"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 
@@ -48,7 +48,8 @@ Visual Studio に Office.js の型の定義を提供する必要があります�
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![変数の IntelliSense](../images/intellisense-vs17-var.png)
+
+![' SubsetRange ' 変数の IntelliSense の抜粋を示すスクリーンショット](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>パラメーター
 
@@ -58,7 +59,8 @@ function myFunc(paragraphs){
 
 }
 ```
-![パラメーターの IntelliSense](../images/intellisense-vs17-param.png)
+
+![' Paras ' パラメーターの IntelliSense の抜粋を示したスクリーンショット (JavaScript の例では ' 段落 ' パラメーター)](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -68,7 +70,8 @@ function myFunc() {
 
 }
 ```
-![戻り値の IntelliSense](../images/intellisense-vs17-return.png)
+
+![' MyFunc () ' の戻り値に対する IntelliSense の抜粋を示すスクリーンショット](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>複合型
 
@@ -80,7 +83,8 @@ function myFunc() {
 
 }
 ```
-![複合型の IntelliSense](../images/intellisense-vs17-complex-type.png)
+
+![' Var myVar; ' の複合型宣言の IntelliSense が表示されているスクリーンショット (例:)](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>関連項目
 

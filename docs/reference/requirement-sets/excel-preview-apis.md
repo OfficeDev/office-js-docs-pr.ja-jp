@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: 今後の Excel JavaScript Api についての詳細。
-ms.date: 11/09/2020
+ms.date: 11/17/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7617ef03d7ef6b0ef6dcd1dbe12e88b58e1228fe
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 083741d35d3e881c2e46b186c4e93591bf7f4834
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996544"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131767"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -23,6 +23,7 @@ ms.locfileid: "48996544"
 |:--- |:--- |:--- |
 | リンクされたデータ型 | 外部ソースから Excel に接続されたデータ型のサポートを追加します。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | 指定したシートビュー | ユーザー単位のワークシートビューをプログラムによって制御します。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+| タスク | コメントをユーザーに割り当てられたタスクに変換します。 | [タスク](/javascript/api/excel/excel.task) |
 
 ## <a name="api-list"></a>API リスト
 
@@ -30,6 +31,12 @@ ms.locfileid: "48996544"
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[割り当てタスク (電子メール: 文字列)](/javascript/api/excel/excel.comment#assigntask-email-)|コメントに関連付けられているタスクを、指定されたユーザーに割り当てられた唯一の担当者として割り当てます。|
+||[getTask ()](/javascript/api/excel/excel.comment#gettask--)|このコメントに関連付けられているタスクを取得します。|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|このコメントに関連付けられているタスクを取得します。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[割り当てタスク (電子メール: 文字列)](/javascript/api/excel/excel.commentreply#assigntask-email-)|コメントに関連付けられているタスクを、指定されたユーザーに割り当てられた唯一の担当者として割り当てます。|
+||[getTask ()](/javascript/api/excel/excel.commentreply#gettask--)|このコメントに関連付けられているタスクを取得します。|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|このコメントに関連付けられているタスクを取得します。|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[プロバイダー](/javascript/api/excel/excel.linkeddatatype#dataprovider)|リンクされたデータ型のデータプロバイダーの名前を指定します。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|リンクされたデータ型が最後に更新されたときに、ブックが開かれてからのローカルタイムゾーンの日付と時刻。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|リンクされたデータ型の名前を指定します。|
@@ -93,11 +100,61 @@ ms.locfileid: "48996544"
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|フィルターが適用されているテーブルの id を取得します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルを含むワークシートの id を取得します。|
+|[タスク](/javascript/api/excel/excel.task)|[addAssignee (email: string)](/javascript/api/excel/excel.task#addassignee-email-)|タスクに実施者を追加します。|
+||[applyChanges (taskChanges: Excel の変更)](/javascript/api/excel/excel.task#applychanges-taskchanges-)|指定した変更をタスクに適用します。|
+||[実施](/javascript/api/excel/excel.task#assignees)|タスクが割り当てられているユーザーを取得します。|
+||[comment](/javascript/api/excel/excel.task#comment)|タスクに関連付けられているコメントを取得します。|
+||[dueDate](/javascript/api/excel/excel.task#duedate)|タスクの期限の日付と時刻を取得します。|
+||[履歴レコード](/javascript/api/excel/excel.task#historyrecords)|タスクの履歴レコードを取得します。|
+||[id](/javascript/api/excel/excel.task#id)|タスクの id を取得します。|
+||[達成](/javascript/api/excel/excel.task#percentcomplete)|タスクの達成率を取得します。|
+||[priority](/javascript/api/excel/excel.task#priority)|タスクの優先度を取得します。|
+||[startDate](/javascript/api/excel/excel.task#startdate)|タスクが開始する日付と時刻を取得します。|
+||[title](/javascript/api/excel/excel.task#title)|タスクのタイトルを取得します。|
+||[removeAllAssignees()](/javascript/api/excel/excel.task#removeallassignees--)|タスクからすべてのタスク実施者を削除します。|
+||[removeAssignee (email: string)](/javascript/api/excel/excel.task#removeassignee-email-)|タスクから担当者を削除します。|
+||[setPercentComplete 率 (達成率: 数値)](/javascript/api/excel/excel.task#setpercentcomplete-percentcomplete-)|タスクの完了を変更します。|
+||[setPriority (priority: number)](/javascript/api/excel/excel.task#setpriority-priority-)|タスクの優先度を変更します。|
+||[setStartDateAndDueDate (startDate: Date、dueDate: Date)](/javascript/api/excel/excel.task#setstartdateandduedate-startdate--duedate-)|タスクの開始日と期限を変更します。|
+||[setTitle (title: string)](/javascript/api/excel/excel.task#settitle-title-)|タスクのタイトルを変更します。|
+|[TaskChanges](/javascript/api/excel/excel.taskchanges)|[dueDate](/javascript/api/excel/excel.taskchanges#duedate)|タスクの新しい期限を UTC タイムゾーンで設定します。|
+||[emailsToAssign](/javascript/api/excel/excel.taskchanges#emailstoassign)|タスクに割り当てるユーザーの電子メールアドレスを設定します。|
+||[emailsToUnassign](/javascript/api/excel/excel.taskchanges#emailstounassign)|タスクの割り当てを解除するユーザーの電子メールアドレスを設定します。|
+||[達成](/javascript/api/excel/excel.taskchanges#percentcomplete)|タスクの新しい達成率を設定します。|
+||[priority](/javascript/api/excel/excel.taskchanges#priority)|タスクの新しい優先度を設定します。|
+||[removeAllPreviousAssignees](/javascript/api/excel/excel.taskchanges#removeallpreviousassignees)|変更によって、タスクから以前のすべての担当者を削除する必要があるかどうかを設定します。|
+||[startDate](/javascript/api/excel/excel.taskchanges#startdate)|タスクの新しい開始日を UTC タイムゾーンで設定します。|
+||[title](/javascript/api/excel/excel.taskchanges#title)|タスクの新しいタイトルを設定します。|
+|[TaskCollection](/javascript/api/excel/excel.taskcollection)|[getCount()](/javascript/api/excel/excel.taskcollection#getcount--)|コレクション内のタスクの数を取得します。|
+||[getItem(key: string)](/javascript/api/excel/excel.taskcollection#getitem-key-)|Id を使用してタスクを取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskcollection#getitemat-index-)|コレクション内のインデックスによってタスクを取得します。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.taskcollection#getitemornullobject-key-)|Id を使用してタスクを取得します。|
+||[items](/javascript/api/excel/excel.taskcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[Taskhistory レコード](/javascript/api/excel/excel.taskhistoryrecord)|[anchorId](/javascript/api/excel/excel.taskhistoryrecord#anchorid)|タスクが固定されているオブジェクトの ID を表します (たとえば、コメントに添付されたタスクの commentId)。|
+||[担当者](/javascript/api/excel/excel.taskhistoryrecord#assignee)|[割り当て] 履歴レコードの種類に対してタスクに割り当てられているユーザー、またはタスクの割り当てを解除するユーザーを表します。履歴レコードの種類を "割り当て解除" します。|
+||[attributionUser](/javascript/api/excel/excel.taskhistoryrecord#attributionuser)|タスクを作成または変更したユーザーを表します。|
+||[dueDate](/javascript/api/excel/excel.taskhistoryrecord#duedate)|タスクの締め切り日を表します。|
+||[履歴レコードの指定日](/javascript/api/excel/excel.taskhistoryrecord#historyrecordcreateddate)|タスク履歴レコードの作成日を表します。|
+||[id](/javascript/api/excel/excel.taskhistoryrecord#id)|履歴レコードの ID。|
+||[達成](/javascript/api/excel/excel.taskhistoryrecord#percentcomplete)|タスクの達成率を表します。|
+||[priority](/javascript/api/excel/excel.taskhistoryrecord#priority)|タスクの優先度を表します。|
+||[startDate](/javascript/api/excel/excel.taskhistoryrecord#startdate)|タスクの開始日を表します。|
+||[title](/javascript/api/excel/excel.taskhistoryrecord#title)|タスクのタイトルを表します。|
+||[type](/javascript/api/excel/excel.taskhistoryrecord#type)|タスク履歴レコードの種類を表します。|
+||[undoHistoryId](/javascript/api/excel/excel.taskhistoryrecord#undohistoryid)|"元に戻す" 履歴レコードの種類では、元に戻された TaskHistoryRecord.id プロパティを表します。|
+|[Taskhistory Recordcollection](/javascript/api/excel/excel.taskhistoryrecordcollection)|[getCount()](/javascript/api/excel/excel.taskhistoryrecordcollection#getcount--)|タスクのコレクション内の履歴レコードの数を取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskhistoryrecordcollection#getitemat-index-)|コレクション内のインデックスを使用して、タスク履歴レコードを取得します。|
+||[items](/javascript/api/excel/excel.taskhistoryrecordcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[ユーザー](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|ユーザーの表示名を表します。|
+||[email](/javascript/api/excel/excel.user#email)|ユーザーの電子メール アドレスを表します。|
+||[uid](/javascript/api/excel/excel.user#uid)|ユーザーの一意の ID を表します。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes 型](/javascript/api/excel/excel.workbook#linkeddatatypes)|ブックの一部である、リンクされたデータ型のコレクションを返します。|
+||[タスク](/javascript/api/excel/excel.workbook#tasks)|ブック内に存在するタスクのコレクションを返します。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールドリストウィンドウをブックレベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|ワークシートにあるシートビューのコレクションを返します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|フィルターが特定のワークシートに適用されたときに発生します。|
+||[タスク](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|あるブックの指定されたワークシートを現在のブックに挿入します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|イベントの種類を取得します。|

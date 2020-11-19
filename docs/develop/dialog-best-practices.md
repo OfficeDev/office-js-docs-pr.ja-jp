@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページアプリケーション (SPA) のベストプラクティスなど、Office ダイアログ API のルールとベストプラクティスを提供します。
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: ffd609175276dc648805469847288fd2ff4f825c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279501"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131788"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -43,7 +43,7 @@ UI 要素を重ねて表示することはお勧めできないため、シナ�
 
 Web 上で Office を使用しているときにダイアログボックスを表示しようとすると、ブラウザーのポップアップブロックによってダイアログボックスがブロックされることがあります。 Web 上の Office には、ブラウザーのポップアップブロックに対してアドインのダイアログボックスを例外として使用できる機能があります。 コードによってメソッドが呼び出されると `displayDialogAsync` 、web 上の Office は次のようなプロンプトを開きます。
 
-![ブラウザーでポップアップブロックを発生させないようにするために、アドインが生成できるプロンプト。](../images/dialog-prompt-before-open.png)
+![ブラウザーのポップアップブロックを回避するために、アドインによって生成される簡単な説明と [許可] ボタンおよび [無視] ボタンを表示するスクリーンショット](../images/dialog-prompt-before-open.png)
 
 ユーザーが [ **許可**] を選択すると、[Office] ダイアログボックスが開きます。 ユーザーが [ **無視**] を選択すると、プロンプトは閉じられ、[Office] ダイアログボックスは開きません。 代わりに、この `displayDialogAsync` メソッドはエラー12009を返します。 コードでは、このエラーをキャッチして、ダイアログを必要としない別の方法を提供するか、アドインでダイアログを許可する必要があることをユーザーに通知するメッセージを表示する必要があります。 (12009 の詳細については、「 [displayDialogAsync からのエラー](dialog-handle-errors-events.md#errors-from-displaydialogasync)」を参照してください)。
 
@@ -64,7 +64,7 @@ Office は、`_host_info` に渡される URL に `displayDialogAsync` という
 
 [Office] ダイアログボックスは、JavaScript エンジンの独自のインスタンスを備えた新しいウィンドウに表示されるので、完全な実行コンテキストです。 ルートを渡すと、基本ページとすべての初期化コードとブートストラップコードがこの新しいコンテキストで再び実行され、すべての変数がダイアログボックスの初期値に設定されます。 そのため、この手法では、アプリケーションの2番目のインスタンスをボックスウィンドウにダウンロードして起動します。これにより、SPA の目的が部分的には損なわれます。 また、ダイアログボックスウィンドウで変数を変更するコードでは、同じ変数の作業ウィンドウバージョンは変更されません。 同様に、ダイアログボックスウィンドウには独自のセッションストレージ ( [sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) があります。これには、作業ウィンドウのコードからアクセスすることはできません。 ダイアログボックスと呼び出し先のホストページが、 `displayDialogAsync` サーバーに対して2つの異なるクライアントのように表示されています。 (ホストページについての通知については、「 [ホストページからダイアログボックスを開く](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)」を参照してください)。
 
-そのため、メソッドにルートを渡すと、実際には `displayDialogAsync` spa を持っていません。 *同じ spa のインスタンスが2つ*あります。 さらに、作業ウィンドウインスタンス内のコードの多くは、そのインスタンスでは使用されず、ダイアログボックスインスタンス内のコードの多くは、そのインスタンスでは使用されません。 同じバンドルに 2 つの SPA があるようなものです。
+そのため、メソッドにルートを渡すと、実際には `displayDialogAsync` spa を持っていません。 *同じ spa のインスタンスが2つ* あります。 さらに、作業ウィンドウインスタンス内のコードの多くは、そのインスタンスでは使用されず、ダイアログボックスインスタンス内のコードの多くは、そのインスタンスでは使用されません。 同じバンドルに 2 つの SPA があるようなものです。
 
 #### <a name="microsoft-recommendations"></a>Microsoft の推奨事項
 

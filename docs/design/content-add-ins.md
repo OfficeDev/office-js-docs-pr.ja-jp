@@ -3,12 +3,12 @@ title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6dca7e295bbc2efe0469fa4c69c14238d977c3ed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf4ea46b4b924683756063bb36c3f2ea2b8c6764
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292989"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132082"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -16,7 +16,7 @@ ms.locfileid: "47292989"
 
 *図 1. コンテンツ アドインの一般的なレイアウト*
 
-![コンテンツ アドインの一般的なレイアウトを表示する画像の例](../images/overview-with-app-content.png)
+![Office アプリケーションにおけるコンテンツアドインの一般的なレイアウト](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -33,16 +33,15 @@ Office デスクトップと Microsoft 365 の Excel および PowerPoint のコ
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 
-*図 2. Windows のパーソナル メニュー* 
+*図 2. Windows のパーソナル メニュー*
 
-![Windows デスクトップのパーソナル メニューを示す図](../images/personality-menu-win.png)
-
+![Windows デスクトップ上の12x32 のパーソナルメニュー](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、占有スペースは 34x32 ピクセルに増加します (図を参照)。
 
 *図 3. Mac のパーソナル メニュー*
 
-![Mac デスクトップのパーソナル メニューを示す図](../images/personality-menu-mac.png)
+![Mac デスクトップの34x32 ピクセルのパーソナリティメニュー](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>実装
 
@@ -56,7 +55,7 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインの office クライアントアプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
 - [Office アドインの Office UI Fabric](../design/office-ui-fabric.md)
 - [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
 - [アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

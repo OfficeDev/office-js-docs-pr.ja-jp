@@ -3,12 +3,12 @@ title: Office アドインでのユーザー設定のキーボードショート
 description: Office アドインにキーの組み合わせとも呼ばれるユーザー設定のキーボードショートカットを追加する方法について説明します。
 ms.date: 11/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f95c26067203a4ec2659aa6a632403c96ed81674
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 40009dd92787b7c220bb8cfc741cffb2e4b68a9e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996710"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132040"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>カスタムキーボードショートカットを Office アドインに追加する (プレビュー)
 
@@ -81,7 +81,7 @@ ms.locfileid: "48996710"
     }
     ```
 
-    JSON オブジェクトの詳細については、「 [action オブジェクトを構築](#constructing-the-action-objects) する」と「 [ショートカットオブジェクトを構築](#constructing-the-shortcut-objects)する」を参照してください。 JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)あります。
+    JSON オブジェクトの詳細については、「 [action オブジェクトを構築](#constructing-the-action-objects) する」と「 [ショートカットオブジェクトを構築](#constructing-the-shortcut-objects)する」を参照してください。 JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
 
     > [!NOTE]
     > この記事では、"CTRL" の代わりに "CONTROL" を使用できます。
@@ -103,7 +103,7 @@ ms.locfileid: "48996710"
     ```
 
 1. 例を続行するには、 `'SHOWTASKPANE'` 最初のパラメーターとしてを使用します。
-1. 関数の本文については、 [Office](/javascript/api/office/office.addin.md#showastaskpane--) を使用してアドインの作業ウィンドウを開きます。 完了すると、コードは次のようになります。
+1. 関数の本文については、 [Office](/javascript/api/office/office.addin#showastaskpane--) を使用してアドインの作業ウィンドウを開きます。 完了すると、コードは次のようになります。
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ ms.locfileid: "48996710"
     });
     ```
 
-1. 関数の2番目の呼び出しを追加し `Office.actions.associate` `HIDETASKPANE` て、アクションを呼び出す[Office.addin.hide](/javascript/api/office/office.addin.md#hide--)関数にアクションをマップします。 例を次に示します。
+1. 関数の2番目の呼び出しを追加し `Office.actions.associate` `HIDETASKPANE` て、アクションを呼び出す[Office.addin.hide](/javascript/api/office/office.addin#hide--)関数にアクションをマップします。 例を次に示します。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -161,7 +161,7 @@ shortcuts.jsの配列内のオブジェクトを指定するときは、次の�
     ]
 ```
 
-JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)あります。
+JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
 
 ### <a name="constructing-the-shortcut-objects"></a>ショートカットオブジェクトを構築する
 
@@ -195,7 +195,7 @@ shortcuts.jsの配列内のオブジェクトを指定するときは、次の�
     ]
 ```
 
-JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)あります。
+JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
 
 > [!NOTE]
 > キーヒント (連続したキーショートカットとも呼ばれます)。これは、Office アドインでは、塗りつぶしの色として **Alt + h** を選択するための Excel ショートカットです。
@@ -210,7 +210,7 @@ JSON の完全なスキーマは [extended-manifest.schema.jsに](https://develo
 
 現時点では、2つ以上のアドインによって同じキーボードショートカットが登録されていても、次のような正しい方法で Excel との競合を最小限に抑えることができます。
 
-- アドインでは次のパターンのキーボードショートカットのみを使用します: * *Ctrl + Shift + Alt +* x * * *。 *x* は他のキーです。
+- アドインでは次のパターンのキーボードショートカットのみを使用します: **Ctrl + Shift + Alt +* x * * *。 *x* は他のキーです。
 - さらに多くのキーボードショートカットが必要な場合は、 [Excel キーボードショートカットの一覧](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)をチェックして、アドインでそのショートカットを使用しないようにします。
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>上書きできないブラウザーショートカット

@@ -3,12 +3,12 @@ title: Excel、PowerPoint、Word のマニフェストにアドイン コマン�
 description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、および Word のアドインコマンドを定義します。UI 要素を作成し、ボタンまたはリストを追加し、アクションを実行するために、アドインコマンドを使用します。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 9257e7ba840db31149ae606c7f2c072c433140ad
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292898"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131920"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
@@ -29,7 +29,9 @@ ms.locfileid: "47292898"
 > [!NOTE]
 > アドイン コマンドは、Outlook でもサポートされています。 詳細については、「 [Outlook のアドインコマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
-次の画像は、マニフェスト内のアドイン コマンド要素の概要です。 ![マニフェスト内のアドイン コマンド要素の概要](../images/version-overrides.png)
+次の画像は、マニフェスト内のアドイン コマンド要素の概要です。
+
+![マニフェスト内のアドインコマンド要素の概要。 ここでの最上位ノードは、子ホストとリソースを使用した VersionOverrides です。 [ホストはホスト] の下にある [DesktopFormFactor] になります。 DesktopFormFactor は FunctionFile および ExtensionPoint です。 [ExtensionPoint] の下にある [CustomTab] または [OfficeTab タブおよび Office メニューです。 [カスタム] タブまたは [Office] タブが [グループ] の下で、[アクション] を制御します。 [Office] メニューの [操作] をクリックします。 Resources (VersionOverrides の子) は、画像、Url、短い文字列、および LongStrings です。](../images/version-overrides.png)
 
 ## <a name="step-1-start-from-a-sample"></a>手順 1: サンプルから始める
 
@@ -37,7 +39,7 @@ ms.locfileid: "47292898"
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>手順 2: 作業ウィンドウ アドインを作成する
 
-アドイン コマンドの使用を開始するには、まず作業ウィンドウ アドインを作成し、次にアドインのマニフェストをこの記事で説明するように変更する必要があります。コンテンツ アドインではアドイン コマンドを使用できません。既存のマニフェストを更新している場合は、「[手順 3: VersionOverrides 要素を追加する](#step-3-add-versionoverrides-element)」で説明するように、**VersionOverrides** 要素をマニフェストに追加するだけでなく、適切な **XML 名前空間**も追加する必要があります。
+アドインコマンドの使用を開始するには、最初に作業ウィンドウアドインを作成し、この記事で説明されているようにアドインのマニフェストを変更する必要があります。 コンテンツアドインでアドインコマンドを使用することはできません。既存のマニフェストを更新する場合は、「[手順 3: VersionOverrides 要素を追加](#step-3-add-versionoverrides-element)する」で説明されているように、適切な **XML 名前空間** を追加し、さらに **versionoverrides** 要素をマニフェストに追加する必要があります。
 
 次の例は、Office 2013 アドインのマニフェストを示します。**VersionOverrides** 要素がないため、このマニフェストにはアドイン コマンドがありません。Office 2013 は、アドイン コマンドをサポートしていませんが、このマニフェストに **VersionOverrides** を追加することで、アドインは Office 2013 と Office 2016 の両方で動作します。Office 2013 では、アドインはアドイン コマンドを表示しません。また、**SourceLocation** の値を使用して、アドインを単一の作業ウィンドウ アドインとして実行します。Office 2016 では、**VersionOverrides** 要素が含まれない場合、アドインを実行するために **SourceLocation** が使用されます。ただし、**VersionOverrides** を含める場合は、アドインにアドイン コマンドのみが表示され、アドインは単一の作業ウィンドウ アドインとして表示されません。
   
@@ -74,14 +76,14 @@ ms.locfileid: "47292898"
 
 **VersionOverrides** 要素は、アドイン コマンドの定義を含むルート要素です。**VersionOverrides** はマニフェスト内の **OfficeApp** 要素の子要素です。次の表に、**VersionOverrides** 要素の属性の一覧を示します。
 
-|**属性**|**説明**|
+|属性|説明|
 |:-----|:-----|
 |**xmlns** <br/> | 必須です。 スキーマの場所。`http://schemas.microsoft.com/office/taskpaneappversionoverrides` にする必要があります。 <br/> |
 |**xsi:type** <br/> |必須。スキーマのバージョン。この記事で説明されているスキーマのバージョンは "VersionOverridesV1_0" です。  <br/> |
 
 次の表は、**VersionOverrides** の子要素です。
   
-|**要素**|**説明**|
+|要素|説明|
 |:-----|:-----|
 |**説明** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
 |**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「 [Office アプリケーションと API 要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。  <br/> |
@@ -116,7 +118,7 @@ ms.locfileid: "47292898"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>手順 4: Hosts、Host、DesktopFormFactor 要素を追加する
 
-**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host**要素は、特定の Office アプリケーションを指定します。 **Host**要素には、アドインがその Office アプリケーションにインストールされた後に表示するアドインコマンドを指定する子要素が含まれています。 2つ以上の異なる Office アプリケーションで同じアドインコマンドを表示するには、各 **ホスト**で子要素を複製する必要があります。
+**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host** 要素は、特定の Office アプリケーションを指定します。 **Host** 要素には、アドインがその Office アプリケーションにインストールされた後に表示するアドインコマンドを指定する子要素が含まれています。 2つ以上の異なる Office アプリケーションで同じアドインコマンドを表示するには、各 **ホスト** で子要素を複製する必要があります。
 
 **DesktopFormFactor** 要素では、Office on the web (ブラウザーを使用) と Windows で実行するアドインの設定を指定します。
 
@@ -210,7 +212,7 @@ ms.locfileid: "47292898"
 次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
 > [!IMPORTANT]
-> ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。`<CustomTab id="mycompanyname.mygroupname">` 
+> ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。`<CustomTab id="mycompanyname.mygroupname">`
   
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -244,10 +246,10 @@ ms.locfileid: "47292898"
 </ExtensionPoint>
 ```
 
-|**要素**|**説明**|
+|要素|説明|
 |:-----|:-----|
 |**CustomTab** <br/> |カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 <br/> |
-|**OfficeTab** <br/> |既定の Office アプリリボンタブ ( **Primarycommandsurface**を使用) を拡張する場合に必要です。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 <br/> **Id**属性と共に使用するその他のタブ値については、「[既定の Office アプリリボンタブのタブ値](../reference/manifest/officetab.md)」を参照してください。  <br/> |
+|**OfficeTab** <br/> |既定の Office アプリリボンタブ ( **Primarycommandsurface** を使用) を拡張する場合に必要です。 **Officetab** 要素を使用する場合、 **customtab** 要素は使用できません。 <br/> **Id** 属性と共に使用するその他のタブ値については、「[既定の Office アプリリボンタブのタブ値](../reference/manifest/officetab.md)」を参照してください。  <br/> |
 |**OfficeMenu** <br/> | 既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は **ContextMenuText**。ユーザーがテキストを選択し、選択したテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。<br/> Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。 <br/> |
 |**グループ** <br/> |タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 <br/> |
 |**Label** <br/> |必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
@@ -301,7 +303,7 @@ ms.locfileid: "47292898"
 </Control>
 ```
 
-|**要素**|**Description**|
+|要素|説明|
 |:-----|:-----|
 |**Label** <br/> |必須。ボタンのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Tooltip** <br/> |省略可能。ボタンのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
@@ -372,7 +374,7 @@ ms.locfileid: "47292898"
 </Control>
 ```
 
-|**要素**|**Description**|
+|要素|説明|
 |:-----|:-----|
 |**Label** <br/> |必須。ルートのメニュー項目のテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Tooltip** <br/> |省略可能。メニューのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
@@ -417,7 +419,7 @@ ms.locfileid: "47292898"
 </Resources>
 ```
 
-|**Resource**|**説明**|
+|関連情報|説明|
 |:-----|:-----|
 |**Images**/ **Image** <br/> | イメージ ファイルへの HTTPS URL を指定します。各イメージは、次の 3 つの必須のイメージ サイズを定義する必要があります。 <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  次のイメージ サイズもサポートされますが、必須ではありません。 <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
 |**Urls**/ **Url** <br/> |HTTPS URL の場所を指定します。URL には最大 2048 文字まで指定できます。  <br/> |
@@ -431,7 +433,7 @@ ms.locfileid: "47292898"
 
 Excel および Word で、既定の Office UI タブを使用することで、リボンにアドイン コマンドを追加できます。次の表に、**OfficeTab** 要素の **id** 属性で使用できる値を示します。タブの値は大文字と小文字を区別します。
 
-|**Office クライアントアプリケーション**|**タブの値**|
+|Office クライアントアプリケーション|タブの値|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

@@ -4,12 +4,12 @@ description: '[ごみ箱] ジェネレーターを使用して作成した SSO �
 ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cc13d813e6d46296f5557d4e3374fa67aa51bc65
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430997"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132334"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -20,11 +20,11 @@ ms.locfileid: "47430997"
 
 ## <a name="prerequisites"></a>前提条件
 
-* [SSO クイックスタート](sso-quickstart.md)の手順に従って作成した Office アドイン。
+- [SSO クイックスタート](sso-quickstart.md)の手順に従って作成した Office アドイン。
 
-* 少なくとも、Microsoft 365 サブスクリプションの OneDrive for Business に格納されているファイルとフォルダーがいくつかあります。
+- 少なくとも、Microsoft 365 サブスクリプションの OneDrive for Business に格納されているファイルとフォルダーがいくつかあります。
 
-* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
+- [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -45,13 +45,13 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 アドインがユーザーの OneDrive for Business のコンテンツを正常に読み取る前に、Azure のアプリ登録情報を適切なアクセス許可で更新する必要があります。 次の手順を実行して、アプリに **ファイルの読み取り** アクセス許可を付与し、ユーザーを取り消し **ます。読み取り** アクセス許可は不要になりました。
 
-1. [Azure portal](https://ms.portal.azure.com/#home)に移動し、 **Microsoft 365 管理者の資格情報を使用してサインイン**します。
+1. [Azure portal](https://ms.portal.azure.com/#home)に移動し、 **Microsoft 365 管理者の資格情報を使用してサインイン** します。
 
 2. [アプリの **登録** ] ページに移動します。
     > [!TIP]
-    > これを行うには、Azure ホームページで **アプリ登録** タイルを選択するか、ホームページの検索ボックスを使用して **アプリの登録**を見つけて選択します。
+    > これを行うには、Azure ホームページで **アプリ登録** タイルを選択するか、ホームページの検索ボックスを使用して **アプリの登録** を見つけて選択します。
 
-3. [ **アプリの登録** ] ページで、クイックスタート時に作成したアプリを選択します。 
+3. [ **アプリの登録** ] ページで、クイックスタート時に作成したアプリを選択します。
     > [!TIP]
     > アプリの **表示名** は、そのプロジェクトの作成時に指定したアドイン名と一致します。
 
@@ -75,7 +75,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
     b. パネルの下部にある [ **アクセス許可の追加** ] ボタンを選択して、これらのアクセス許可の変更を保存します。
 
-12. **[[テナント名] に対する管理者の同意を許可**する] ボタンを選択します。
+12. **[[テナント名] に対する管理者の同意を許可** する] ボタンを選択します。
 
 13. 表示されるプロンプトに対して [ **はい** ] ボタンを選択します。
 
@@ -85,7 +85,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 - Microsoft Graph の URL、パラメーター、および必要なアクセススコープを参照するコードを更新します。
 
-- 作業ウィンドウの UI を定義するコードを更新して、新しい機能を正確に記述できるようにします。 
+- 作業ウィンドウの UI を定義するコードを更新して、新しい機能を正確に記述できるようにします。
 
 - Microsoft Graph から応答を解析するコードを更新し、ドキュメントまたはメッセージに書き込みます。
 
@@ -95,15 +95,15 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 アドインに対して次の手順を実行して、Microsoft Graph の URL、パラメーター、およびアクセススコープを変更し、作業ウィンドウの UI を更新します。 これらの手順は、アドインの対象となる Office アプリケーションに関係なく同じです。
 
-1. **./.ENV**ファイル:
+1. **./.ENV** ファイル:
 
     a. `GRAPH_URL_SEGMENT=/me`を次のように置き換えます。`GRAPH_URL_SEGMENT=/me/drive/root/children`
 
     b. `QUERY_PARAM_SEGMENT=`を次のように置き換えます。`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c.  `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
+    c. `SCOPE=User.Read`を次のように置き換えます。`SCOPE=Files.Read.All`
 
-2. **./manifest.xml**で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を見つけて行に置き換え `<Scope>Files.Read.All</Scope>` ます。
+2. **./manifest.xml** で、 `<Scope>User.Read</Scope>` ファイルの末尾付近の行を見つけて行に置き換え `<Scope>Files.Read.All</Scope>` ます。
 
 3. **/Src/helpers/fallbackauthdialog.js** (または TypeScript プロジェクトの **/src/helpers/fallbackauthdialog.ts** ) で、文字列を見つけて、次のように定義され `https://graph.microsoft.com/User.Read` た文字列で置き換え `https://graph.microsoft.com/Files.Read.All` `requestObj` ます。
 
@@ -119,7 +119,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     };
     ```
 
-4. **/Src/taskpane/taskpane.html**で、要素を検索し、その要素内のテキストを更新して、 `<section class="ms-firstrun-instructionstep__header">` アドインの新しい機能を記述します。
+4. **/Src/taskpane/taskpane.html** で、要素を検索し、その要素内のテキストを更新して、 `<section class="ms-firstrun-instructionstep__header">` アドインの新しい機能を記述します。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </section>
     ```
 
-5. **./Src/taskpane/taskpane.html**で、文字列を検索し、文字列に置き換え `Get My User Profile Information` `Read my OneDrive for Business` ます。
+5. **./Src/taskpane/taskpane.html** で、文字列を検索し、文字列に置き換え `Get My User Profile Information` `Read my OneDrive for Business` ます。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
     </p>
     ```
 
-6. **/Src/taskpane/taskpane.html**で、文字列を検索して置換し `Your user profile information will be displayed in the document.` ます。 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`
+6. **/Src/taskpane/taskpane.html** で、文字列を検索して置換し `Your user profile information will be displayed in the document.` ます。 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`
 
     ```html
     <li class="ms-ListItem">
@@ -168,7 +168,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>Excel アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Excel アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
+アドインが JavaScript を使用して作成された Excel アドインである場合は、 **/src/helpers/documentHelper.js** で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -235,7 +235,7 @@ SSO クイックスタートを使用して作成したアドインは、Microso
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>Excel アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Excel アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Excel アドインである場合は、 **/src/taskpane/taskpane.ts** を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -256,7 +256,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
         data.push(innerArray);
       }
     }
-    
+
     const rangeAddress = `B5:B${5 + (data.length - 1)}`;
     const range = sheet.getRange(rangeAddress);
     range.values = data;
@@ -271,7 +271,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Outlook アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Outlook アドインの場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
+アドインが JavaScript を使用して作成された Outlook アドインの場合は、 **/src/helpers/documentHelper.js** で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -333,7 +333,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Outlook アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Outlook アドインの場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Outlook アドインの場合は、 **/src/taskpane/taskpane.ts** を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -355,7 +355,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     for (let i = 0; i < data.length; i++) {
         objectNames += data[i] + "<br/>";
     }
-    
+
     Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
 }
 ```
@@ -364,7 +364,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>PowerPoint アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された PowerPoint アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
+アドインが JavaScript を使用して作成された PowerPoint アドインである場合は、 **/src/helpers/documentHelper.js** で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -432,7 +432,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>PowerPoint アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された PowerPoint アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された PowerPoint アドインである場合は、 **/src/taskpane/taskpane.ts** を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -467,7 +467,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Word アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript を使用して作成された Word アドインである場合は、 **/src/helpers/documentHelper.js**で次のように変更します。
+アドインが JavaScript を使用して作成された Word アドインである場合は、 **/src/helpers/documentHelper.js** で次のように変更します。
 
 1. 関数を検索 `writeDataToOfficeDocument` し、次の関数に置き換えます。
 
@@ -533,7 +533,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Word アドイン (TypeScript) に必要な変更
 
-アドインが TypeScript を使用して作成された Word アドインである場合は、 **/src/taskpane/taskpane.ts**を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
+アドインが TypeScript を使用して作成された Word アドインである場合は、 **/src/taskpane/taskpane.ts** を開き、 `writeDataToOfficeDocument` 関数を見つけて、次の関数で置き換えます。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -586,20 +586,20 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 次の画像は、Excel のこのボタンを示しています。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
+    ![Excel のリボンで強調表示されたアドインボタンを示すスクリーンショット](../images/excel-quickstart-addin-3b.png)
 
-4. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り** ] ボタンをクリックして、SSO プロセスを開始します。 
+4. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り** ] ボタンをクリックして、SSO プロセスを開始します。
 
 5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
+    ![[承諾] ボタンが強調表示されている要求されたアクセス許可を示すスクリーンショット](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。
 
 6. アドインは、サインインしているユーザーの OneDrive for Business からデータを読み取り、上位10個のファイルとフォルダーの名前をドキュメントに書き込みます。 次の図は、Excel ワークシートに書き込まれるファイル名とフォルダー名の例を示しています。
 
-    ![Excel ワークシートの OneDrive for Business 情報](../images/sso-onedrive-info-excel.png)
+    ![Excel ワークシートに OneDrive for Business 情報が表示されているスクリーンショット](../images/sso-onedrive-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -608,32 +608,32 @@ Outlook アドインを試すには、次の手順を実行します。
 1. プロジェクトのルートフォルダーで、次のコマンドを実行してプロジェクトをビルドし、ローカル web サーバーを開始します。
 
     > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンドプロンプトまたはターミナルを実行する必要がある場合もあります。
+    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 アプリの [SSO を構成](sso-quickstart.md#configure-sso) する際に Azure への接続に使用した microsoft 365 管理者アカウントと同じ microsoft 365 組織のメンバーであるユーザーを使用して、Outlook にサインインしていることを確認してください。 これにより、SSO を正常に実行するための適切な条件が確立されます。 
+2. 「[テスト用に Outlook アドインをサイドロードする](/outlook/add-ins/sideload-outlook-add-ins-for-testing)」の手順に従って Outlook アドインをサイドロードします。 アプリの [SSO を構成](sso-quickstart.md#configure-sso) する際に Azure への接続に使用した microsoft 365 管理者アカウントと同じ microsoft 365 組織のメンバーであるユーザーを使用して、Outlook にサインインしていることを確認してください。 これにより、SSO を正常に実行するための適切な条件が確立されます。
 
 3. Outlook で新しいメッセージを作成します。
 
 4. [メッセージ作成] ウィンドウで、リボンの [**作業ウィンドウの表示**] ボタンを選択して、アドインの作業ウィンドウを開きます。
 
-    ![Outlook アドイン ボタン](../images/outlook-sso-ribbon-button.png)
+    ![Outlook の [メッセージの作成] ウィンドウの強調表示されたアドインリボンボタンを示すスクリーンショット](../images/outlook-sso-ribbon-button.png)
 
-5. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り** ] ボタンをクリックして、SSO プロセスを開始します。 
+5. 作業ウィンドウの下部にある [ **OneDrive For business の読み取り** ] ボタンをクリックして、SSO プロセスを開始します。
 
 6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
+    ![[承諾] ボタンが強調表示された、要求したアクセス許可のスクリーンショット](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。
 
 7. アドインは、サインインしているユーザーの OneDrive for Business からデータを読み取り、上位10個のファイルとフォルダーの名前を電子メールメッセージの本文に書き込みます。
 
-    ![Outlook メッセージの OneDrive for Business 情報](../images/sso-onedrive-info-outlook.png)
+    ![Outlook の [メッセージの作成] ウィンドウの OneDrive for Business 情報を示すスクリーンショット](../images/sso-onedrive-info-outlook.png)
 
 ## <a name="next-steps"></a>次の手順
 

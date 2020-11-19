@@ -3,12 +3,12 @@ title: SSO を使用した Microsoft Graph への承認
 description: Office アドインのユーザーがシングルサインオン (SSO) を使用して Microsoft Graph からデータを取得する方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e87c86b5302bde8122485b837759fa327251c656
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292905"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131915"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph への承認
 
@@ -17,7 +17,6 @@ ms.locfileid: "47292905"
 > [!NOTE]
 > 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)」を参照してください。
 > Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
-
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>SSO と Microsoft Graph のアドイン アーキテクチャ
 
@@ -31,14 +30,14 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ![SSO プロセスを示す図](../images/sso-access-to-microsoft-graph.png)
 
-1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office クライアントアプリケーションにアドインへのアクセストークンを取得するように指示します。 (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では**ブートストラップ アクセス トークン**と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
-2. ユーザーがサインインしていない場合、Office クライアントアプリケーションはユーザーにサインインを求めるポップアップウィンドウを開きます。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では **ブートストラップ アクセス トークン** と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
+2. ユーザーがサインインしていない場合、Office クライアント アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 4. Office クライアントアプリケーションは、現在のユーザーの Azure AD v2.0 エンドポイントから **ブートストラップアクセストークン** を要求します。
 5. Azure AD は、Office クライアントアプリケーションにブートストラップトークンを送信します。
 6. Office クライアントアプリケーションは、呼び出しによって返される result オブジェクトの一部として、アドインに **ブートストラップアクセストークン** を送信し `getAccessToken` ます。
-7. アドインの JavaScript は、アドインと同じ完全修飾ドメイン名でホストされている Web API に HTTP 要求を送信して、その要求に承認の証拠として**ブートストラップ アクセス トークン**を含めます。
-8. 受け取った**ブートストラップ アクセス トークン**はサーバー側のコードで検証されます。
+7. アドインの JavaScript は、アドインと同じ完全修飾ドメイン名でホストされている Web API に HTTP 要求を送信して、その要求に承認の証拠として **ブートストラップ アクセス トークン** を含めます。
+8. 受け取った **ブートストラップ アクセス トークン** はサーバー側のコードで検証されます。
 9. サーバー側のコードでは、"代理として定義される" フロー ( [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) 、 [デーモンまたはサーバーアプリケーションから web API Azure シナリオ](/azure/active-directory/develop/active-directory-authentication-scenarios)) を使用して、ブートストラップアクセストークンの Exchange で Microsoft Graph のアクセストークンを取得します。
 10. Azure AD は、アドインに Microsoft Graph へのアクセス トークンを返します (アドインが *offline_access* アクセス許可を要求した場合は、更新トークンも返します)。
 11. サーバー側のコードが Microsoft Graph へのアクセス トークンをキャッシュします。

@@ -3,19 +3,18 @@ title: Office アドインのデータ可視化のスタイル ガイドライ�
 description: Office アドインでデータを表示する方法について、適切な方法を紹介します。
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: d03bbb471c3e538aade2f5308bbfa9220c93615b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608552"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132075"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
 データ可視化が良好なら、ユーザーはデータから洞察が得やすくなります。ユーザーは、これらの洞察を使って通知や説得の話ができます。この記事では、Excel やその他の Office アプリ用のアドインで効果的なデータ可視化を設計するためのガイドラインを示します。
 
-データ可視化のクロムを作成するには、[Office UI Fabric](https://developer.microsoft.com/fabric) を使用することをお勧めします。Office UI Fabric には、Office の外観とシームレスに統合するスタイルとコンポーネントが含まれています。 
-
+データ可視化のクロムを作成するには、[Office UI Fabric](https://developer.microsoft.com/fabric) を使用することをお勧めします。Office UI Fabric には、Office の外観とシームレスに統合するスタイルとコンポーネントが含まれています。
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
 ![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
@@ -26,7 +25,7 @@ ms.locfileid: "44608552"
 
 データビジュアライゼーションは、次の図に示すように、一般的なフレームワークと、タイトル、ラベル、データプロットなどの一般的なビジュアル要素と対話要素を共有します。
 
-![タイトル、軸、凡例、ラベル付きプロットエリアが付いた折れ線グラフのイメージ](../images/excel-charts-visualization.png)
+![タイトル、軸、凡例、ラベル付きプロットエリアが付いた折れ線グラフ](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>グラフのタイトル
 
@@ -41,7 +40,7 @@ ms.locfileid: "44608552"
 
 テキスト色と背景色のコントラスト比を適正に保ちつつ、軸ラベルをはっきり読める程度にまで濃くします。データ インクと張り合うほど濃くしません。
 
-軸のラベルには明るいグレーが最も効果的です。 Fabric を使用している場合は、[[ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
+軸のラベルには明るいグレーが最も効果的です。 Fabric を使用している場合は、[ [ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
 
 ### <a name="data-ink"></a>データ インク
 
@@ -61,11 +60,11 @@ ms.locfileid: "44608552"
 
 グラフを正確に読み取るために目盛線が必要な場合もありますが、データ インクを引き立てる (データ インクと競合しない) 2 次的なビジュアル要素でなければなりません。静的な目盛線は特にハイ コントラスト用にデザインされたものでなければ、細く明るい色にします。また、ユーザーがグラフを対話的に使用するときにコンテキストに沿って現れる、その場限りの動的な目盛線を対話的操作によって作成することもできます。
 
-目盛線には明るいグレーが最も効果的です。 Fabric を使用している場合は、[[ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
+目盛線には明るいグレーが最も効果的です。 Fabric を使用している場合は、[ [ニュートラルカラー] パレット](https://developer.microsoft.com/fabric#/styles/colors)を参照してください。
 
 次の図は、目盛線のあるデータ可視化を示しています。
 
-![目盛線のあるデータ可視化のイメージ](../images/data-visualization.png)
+![グリッド線付き折れ線グラフのデータビジュアライゼーション](../images/data-visualization.png)
 
 ### <a name="legends"></a>凡例
 
@@ -118,7 +117,7 @@ ms.locfileid: "44608552"
 
 因果関係を知覚できるようにします。アニメーションをステージングする場合には、次のようにします。
 
-- 一度に 1 つだけステージングします。 
+- 一度に 1 つだけステージングします。
 - データ インクの変更より前に、軸の変更をステージングします。
 - 複数のオブジェクトが同じ速度で同じ方向に向かって移動している場合は、グループとしてステージングおよびアニメーション処理します。
 - データ要素をステージングするグループのオブジェクト数はせいぜい 4 から 5 個とします。4 から 5 個を超えると、見る人がオブジェクトを個別に追跡しにくくなります。
@@ -127,7 +126,7 @@ ms.locfileid: "44608552"
 
 - アニメーションは、ユーザーがデータの変化をより良く理解できるようにしたり、コンテキストを示したり、言語によらない注釈層として機能したりします。
 - モーションは、意味のある可視化の座標空間で行わなければなりません。
-- アニメーションはビジュアルに合わせます。 
+- アニメーションはビジュアルに合わせます。
 - 余計なアニメーションは避けてください。
 
 モーションはデータに従います。
@@ -141,7 +140,7 @@ ms.locfileid: "44608552"
 - プッシュ ボタンやピック リストなど、すべての対話型要素をキーボードからアクセスできるようにします。
 - フォーカスの変更、ヒントなどを通知するため、アクセシビリティ イベントをスクリーン リーダーに送信します。
 
-## <a name="see-also"></a>関連項目 
+## <a name="see-also"></a>関連項目
 
 - [データ可視化を構築するための 5 つの最適なライブラリ](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [定量的情報のビジュアル表示](https://www.edwardtufte.com/tufte/books_vdqi)
