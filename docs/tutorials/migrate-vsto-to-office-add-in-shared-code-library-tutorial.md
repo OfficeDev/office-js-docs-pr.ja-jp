@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 localization_priority: Priority
-ms.openlocfilehash: 5be0b3c1064da43c8d5225c372ab65b4839f09fb
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159109"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131746"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -44,7 +44,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
     - ASP.NET と Web 開発
     - .NET Core クロスプラットフォーム開発。
     - Office/SharePoint 開発
-    - 次の**個別**コンポーネント。
+    - 次の **個別** コンポーネント。
         - Visual Studio Tools for Office (VSTO)。
         - .NET Core 3.0 ランタイム。
 
@@ -61,16 +61,16 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 > この例では C# を使用していますが、このチュートリアルに示す手法は、あらゆる .NET 言語で記述した VSTO アドインに適用できます。
 
 1. [Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP ソリューションを自分のコンピューターの作業フォルダーにダウンロードします。
-2. Visual Studio 2019 を起動して、**/start/Cell-Analyzer.sln** ソリューションを開きます。
-3. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。
-3. **ソリューション エクスプローラー**で、**[Cell-Analyzer]** プロジェクトを右クリックして **[プロパティ]** を選択します。
-4. プロパティの **[署名]** カテゴリを選択します。
-5. **[ClickOnce マニフェストに署名する]** を選択してから、**[テスト証明書の作成]** を選択します。
-6. **[テスト証明書の作成]** ダイアログで、パスワードを入力して、確認します。 **[OK]** を選択します。
+1. Visual Studio 2019 を起動して、**/start/Cell-Analyzer.sln** ソリューションを開きます。
+1. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。
+1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** プロジェクトを右クリックして **[プロパティ]** を選択します。
+1. プロパティの **[署名]** カテゴリを選択します。
+1. **[ClickOnce マニフェストに署名する]** を選択してから、**[テスト証明書の作成]** を選択します。
+1. **[テスト証明書の作成]** ダイアログで、パスワードを入力して、確認します。 **[OK]** を選択します。
 
-このアドインは、Excel のカスタム作業ウィンドウです。 テキストが含まれる任意のセルを選択してから、**[Show Unicode]** ボタンをクリックしてください。 このアドインにより、テキスト内の各文字とその文字に対応する Unicode 番号のリストが表示されます。
+このアドインは、Excel のカスタム作業ウィンドウです。 テキストが含まれる任意のセルを選択してから、**[Show unicode]** ボタンをクリックしてください。 このアドインにより、**[結果]** セクションでテキスト内の各文字とその文字に対応する Unicode 番号のリストが表示されます。
 
-![Excel で実行中のセル アナライザー VSTO アドインのスナップショット](../images/pnp-cell-analyzer-vsto-add-in.png)
+![[Unicodeを表示] ボタンと空の [結果] セクションを使用して Excel で実行されている Cell Analyzer VSTO アドインのスクリーンショット](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>VSTO アドインのコードの種類を分析する
 
@@ -91,10 +91,10 @@ VSTO では、コードは `Microsoft.Office.Interop.Excel.Range` などの .NET
 それでは、この VSTO アドインについて調べてみましょう。 次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
 
 ```csharp
-// *** UI CODE ***
+// **_ UI CODE _*_
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // *** DOCUMENT CODE ***
+    // _*_ DOCUMENT CODE _*_
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // *** ALGORITHM CODE ***
+    // _*_ ALGORITHM CODE _*_
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -114,8 +114,8 @@ private void btnUnicode_Click(object sender, EventArgs e)
 
         result += $"{c}: {unicode}\r\n";
     }
-    
-    // *** UI CODE ***
+
+    // _*_ UI CODE _*_
     //Output the result
     txtResult.Text = result;
 }
@@ -124,7 +124,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
 このアプローチを使用すると、Office アドインとの共有が可能な 1 つのセクションがわかります。 次のコードは、個別のクラス ライブラリ用にリファクタリングする必要があります。
 
 ```csharp
-// *** ALGORITHM CODE ***
+// _*_ ALGORITHM CODE _*_
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,9 +139,9 @@ foreach (char c in cellValue)
 
 VSTO アドインは .NET プロジェクトとして Visual Studio で作成されているため、できるだけ簡単になるように .NET を再利用します。 次に使用する手法は、クラス ライブラリを作成して、そのクラス ライブラリ用に共有コードをリファクタリングすることです。
 
-1. Visual Studio 2019 を起動して、**\start\Cell-Analyzer.sln** ソリューションを開きます (まだ、そうしていない場合)。
-2. **ソリューション エクスプローラー**でソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
-3. **[新しいプロジェクトの追加] ダイアログ**で、**[クラス ライブラリ (.NET Framework)]** を選択してから **[次へ]** を選択します。
+1. Visual Studio 2019 を起動して、*\start\Cell-Analyzer.sln* ソリューションを開きます (まだ、そうしていない場合)。
+2. **ソリューション エクスプローラー** でソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
+3. **[新しいプロジェクトの追加] ダイアログ** で、**[クラス ライブラリ (.NET Framework)]** を選択してから **[次へ]** を選択します。
     > [!NOTE]
     > .NET Core クラス ライブラリは、VSTO プロジェクトでは動作しないので使用しないでください。
 4. **[新しいプロジェクトの構成]** ダイアログで、次のフィールドを設定します。
@@ -173,11 +173,11 @@ public class CellOperations
 
 この時点で、共有クラス ライブラリを使用するように VSTO アドインを更新する必要があります。 これは、同じ共有クラス ライブラリを使用する VSTO アドインと Office アドインの両方にとって、将来のバグ修正や機能を 1 つの場所で実施するために重要なことです。
 
-1. **ソリューション エクスプローラー**で **[Cell-Analyzer]** プロジェクトを右クリックして、**[参照の追加]** を選択します。
+1. **ソリューション エクスプローラー** で **[Cell-Analyzer]** プロジェクトを右クリックして、**[参照の追加]** を選択します。
 2. **[CellAnalyzerSharedLibrary]** を選択してから、**[OK]** を選択します。
-3. **ソリューション エクスプローラー**で **[Cell-Analyzer]** プロジェクトを展開し、**[CellAnalyzerPane.cs]** ファイルを右クリックして **[コードの表示]** を選択します。
+3. **ソリューション エクスプローラー** で **[Cell-Analyzer]** プロジェクトを展開し、**[CellAnalyzerPane.cs]** ファイルを右クリックして **[コードの表示]** を選択します。
 4. `btnUnicode_Click` メソッドで、次のコード行を削除します。
-    
+
     ```csharp
     //Convert to Unicode listing
     string result = "";
@@ -187,36 +187,36 @@ public class CellOperations
       result += $"{c}: {unicode}\r\n";
     }
     ```
-    
+
 5. `//Output the result` コメントの下側のコード行を次のように更新します。
-    
+
     ```csharp
     //Output the result
     txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cellValue);
     ```
-    
+
 6. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。 カスタム作業ウィンドウは、期待どおりに動作します。 セルにテキストを入力して、そのテキストがアドインで Unicode のリストに変換できることをテストします。
 
 ## <a name="create-a-rest-api-wrapper"></a>REST API ラッパーを作成する
 
 VSTO アドインでは、共有クラス ライブラリを直接使用できます。そのどちらもが .NET プロジェクトであるためです。 ただし、Office アドインでは JavaScript を使用するため、.NET は使用できません。 次に必要になることは、REST API ラッパーの作成です。 これにより、Office アドインからの REST API 呼び出しを可能にして、その呼び出しを共有クラス ライブラリに渡します。
 
-1. **ソリューション エクスプローラー**で **[Cell-Analyzer]** プロジェクトを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
-2. **[新しいプロジェクトの追加] ダイアログ**で、**[ASP.NET Core Web アプリケーション]** を選択してから **[次へ]** を選択します。
+1. **ソリューション エクスプローラー** で **[Cell-Analyzer]** プロジェクトを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
+2. **[新しいプロジェクトの追加] ダイアログ** で、**[ASP.NET Core Web アプリケーション]** を選択してから **[次へ]** を選択します。
 3. **[新しいプロジェクトの構成]** ダイアログで、次のフィールドを設定します。
     - **[プロジェクト名]** を「**CellAnalyzerRESTAPI**」に設定します。
     - **[場所]** は、既定値のままにしておきます。
 4. **[作成]** を選択します。
 5. **[新しい ASP.NET Core Web アプリケーションの作成]** ダイアログで、バージョンに **[ASP.NET Core 3.1]** を選択して、プロジェクトのリストから **[API]** を選択します。
 6. その他のすべてのフィールドは既定値のままにしておき、**[作成]** ボタンを選択します。
-7. プロジェクトが作成されたら、**ソリューション エクスプローラー**で **[CellAnalyzerRESTAPI]** プロジェクトを展開します。
+7. プロジェクトが作成されたら、**ソリューション エクスプローラー** で **[CellAnalyzerRESTAPI]** プロジェクトを展開します。
 8. **[依存関係]** を右クリックして、**[参照の追加]** を選択します。
 9. **[CellAnalyzerSharedLibrary]** を選択してから、**[OK]** を選択します。
 10. **[コントローラー]** フォルダーを右クリックして、**[追加] > [コントローラー]** を選択します。
 11. **[新規スキャフォールディング アイテムの追加]** ダイアログで、**[API コントローラー - 空]** を選択してから **[追加]** を選択します。
 12. **[空の API コントローラーの追加]** ダイアログで、コントローラーに「**AnalyzeUnicodeController**」という名前を付けて、**[追加]** を選択します。
 13. **AnalyzeUnicodeController.cs** ファイルを開いて、次のコードをメソッドとして `AnalyzeUnicodeController` クラスに追加します。
-    
+
     ```csharp
     [HttpGet]
     public ActionResult<string> AnalyzeUnicode(string value)
@@ -228,7 +228,7 @@ VSTO アドインでは、共有クラス ライブラリを直接使用でき�
       return CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(value);
     }
     ```
-    
+
 14. **[CellAnalyzerRESTAPI]** プロジェクトを右クリックして、**[スタートアップ プロジェクトに設定]** を選択します。
 15. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。
 16. ブラウザーが起動されます。 REST API が動作していることをテストするために、URL `https://localhost:<ssl port number>/api/analyzeunicode?value=test` を入力します。 ポート番号は、Visual Studio によって起動されたブラウザーの URL からのものを再使用できます。 文字列が各文字の Unicode 値と共に表示されます。
@@ -247,8 +247,8 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
 
 作業が簡単になるように、すべてのコードを 1 つのソリューションに納めます。 この Office アドイン プロジェクトは、既存の Visual Studio ソリューションに追加します。 ただし、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)と Visual Studio Code の扱いに慣れている場合は、`yo office` を実行してプロジェクトを作成することもできます。 その手順は、ほとんど同じです。
 
-1. **ソリューション エクスプローラー**で、**[Cell-Analyzer]** ソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
-2. **[新しいプロジェクトの追加] ダイアログ**で、**[Excel Web アドイン]** を選択してから **[次へ]** を選択します。
+1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** ソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
+2. **[新しいプロジェクトの追加] ダイアログ** で、**[Excel Web アドイン]** を選択してから **[次へ]** を選択します。
 3. **[新しいプロジェクトの構成]** ダイアログで、次のフィールドを設定します。
     - **[プロジェクト名]** を「**CellAnalyzerOfficeAddin**」に設定します。
     - **[場所]** は、その既定値のままにしておきます。
@@ -257,22 +257,23 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
 5. **[アドインの種類の選択]** ダイアログで、**[新機能を Excel に追加する]** を選択してから **[完了]** を選択します。
 
 次の 2 つのプロジェクトが作成されます。
+
 - **CellAnalyzerOfficeAddin**: このプロジェクトでは、アドインについて記述するマニフェスト XML ファイルを構成します。これにより、Office はアドインを正しくロードできるようになります。 これには、アドインについて ID や名前などの情報が格納されています。
 - **CellAnalyzerOfficeAddinWeb**: このプロジェクトには、アドインの Web リソース (HTML、CSS、スクリプトなど) を格納します。 さらに、Web アプリケーションとしてアドインをホストするように IIS Express インスタンスを構成します。
 
 ### <a name="add-ui-and-functionality-to-the-office-add-in"></a>Office アドインに UI と機能を追加する
 
-1. **ソリューション エクスプローラー**で、**CellAnalyzerOfficeAddinWeb** プロジェクトを展開します。
+1. **ソリューション エクスプローラー** で、**CellAnalyzerOfficeAddinWeb** プロジェクトを展開します。
 2. **Home.html** ファイルを開いて、`<body>` の内容を次の HTML に置き換えます。
-    
+
     ```html
     <button id="btnShowUnicode" onclick="showUnicode()">Show Unicode</button>
     <p>Result:</p>
     <div id="txtResult"></div>
     ```
-    
-3. **Home.js** ファイルを開いて、すべての内容を次のコードに置き換えます。 
-    
+
+3. **Home.js** ファイルを開いて、すべての内容を次のコードに置き換えます。
+
     ```js
     (function () {
       "use strict";
@@ -282,7 +283,7 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
         });
       };
     })();
-    
+
     function showUnicode() {
       Excel.run(function (ctx) {
         const range = ctx.workbook.getSelectedRange();
@@ -304,7 +305,7 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
       });
     }
     ```
-    
+
 4. 上記のコードでは、前の手順で **launchSettings.json** ファイルから保存した **sslPort** 番号を入力します。
 
 上記のコードでは、返された文字列を処理することで、復帰改行を `<br>` HTML タグに置換します。 期待どおりの動作を実現するために、VSTO アドインの .NET では完全に動作する戻り値を Office アドイン側で調整しないとならない状況が発生することがあります。 この場合の REST API と共有クラス ライブラリは、文字列を返すこと以外の処理には関与しません。 `showUnicode()` メソッドは、戻り値が正しく表現されるように書式設定する役割を果たします。
@@ -313,12 +314,12 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
 
 Office.js ライブラリは、外部呼び出し (REST API サーバーへの `ajax` 呼び出しによるものなど) で CORS が必要になります。 次の手順を使用して、Office アドインから REST API への呼び出しを許可します。
 
-1. **ソリューション エクスプローラー**で、**CellAnalyzerOfficeAddinWeb** プロジェクトを選択します。
+1. **ソリューション エクスプローラー** で、**CellAnalyzerOfficeAddinWeb** プロジェクトを選択します。
 2. **[表示]** メニューから、**[プロパティ ウィンドウ]** を選択します (このウィンドウが表示されていない場合)。
 3. [プロパティ] ウィンドウで、**[SSL URL]** の値をコピーして別の場所に保存します。 これは、CORS を通じて許可する必要のある URL です。
 4. **CellAnalyzerRESTAPI** プロジェクトで、**Startup.cs** ファイルを開きます。
 5. 次のコードを `ConfigureServices` メソッドの先頭に追加します。 `builder.WithOrigins` の URL SSL は、前の手順でコピーしたものに置き換えてください。
-    
+
     ```csharp
     services.AddCors(options =>
     {
@@ -331,18 +332,18 @@ Office.js ライブラリは、外部呼び出し (REST API サーバーへの `
       });
     });
     ```
-    
+
     > [!NOTE]
     > `builder.WithOrigins` メソッドで使用する URL の末尾の `/` は取り除いてください。 たとえば、`https://localhost:44000` のようにします。 そのようにしていないと、実行時に CORS エラーが発生します。
-    
+
 6. 次のフィールドを `Startup` クラスに追加します。
-    
+
     ```csharp
     readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
     ```
-    
+
 7. 次のコードを `configure` メソッドのコード行 `app.UseEndpoints` の直前に追加します。
-    
+
     ```csharp
     app.UseCors(MyAllowSpecificOrigins);
     ```
@@ -386,7 +387,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
         }
-            
+
         app.UseHttpsRedirection();
 
         app.UseRouting();
@@ -405,14 +406,14 @@ public class Startup
 
 ### <a name="run-the-add-in"></a>アドインを実行する
 
-1. **ソリューション エクスプローラー**で、最上位ノードの **[ソリューション 'Cell-Analyzer']** を右クリックして、**[スタートアップ プロジェクトの設定]** を選択します。
+1. **ソリューション エクスプローラー** で、最上位ノードの **[ソリューション 'Cell-Analyzer']** を右クリックして、**[スタートアップ プロジェクトの設定]** を選択します。
 2. **[ソリューション 'Cell-Analyzer' プロパティ ページ]** ダイアログで、**[マルチ スタートアップ プロジェクト]** を選択します。
 3. 次のプロジェクトごとに、**[アクション]** プロパティを **[開始]** に設定します。
-    
+
     - CellAnalyzerRESTAPI
     - CellAnalyzerOfficeAddin
     - CellAnalyzerOfficeAddinWeb
-    
+
 4. その後で、**[OK]** を選択します。
 5. **[デバッグ]** メニューから、**[デバッグの開始]** を選択します。
 
@@ -422,7 +423,7 @@ Excel が開始され、Office アドインが再度ロードされます。 ロ
 
 最終的には、この REST API プロジェクトをクラウドに発行することになります。 次の手順は、**CellAnalyzerRESTAPI** プロジェクトを Microsoft Azure App Service に発行する方法を示しています。 Azure アカウントの取得方法に関する詳細については、「[前提条件](#prerequisites)」を参照してください。
 
-1. **ソリューション エクスプローラー**で、**[CellAnalyzerRESTAPI]** プロジェクトを右クリックして **[発行]** をクリックします。
+1. **ソリューション エクスプローラー** で、**[CellAnalyzerRESTAPI]** プロジェクトを右クリックして **[発行]** をクリックします。
 2. **[発行先を選択]** ダイアログで、**[新規作成]** を選択してから **[プロファイルの作成]** を選択します。
 3. **[App Service]** ダイアログで、適切なアカウントを選択します (まだ選択されていなかった場合)。
 4. **[App Service]** ダイアログのフィールドには、アカウントに応じた既定値が設定されます。 一般に、既定値で問題なく動作しますが、別の設定を優先する場合は変更することもできます。
@@ -435,18 +436,20 @@ Excel が開始され、Office アドインが再度ロードされます。 ロ
 
 最後の手順では、ローカルホストの代わりに Azure App Service を使用するように Office アドインのコードを更新します。
 
-1. **ソリューション エクスプローラー**で、**[CellAnalyzerOfficeAddinWeb]** プロジェクトを展開して **Home.js** ファイルを開きます。
-2. 次のコード行に示すように、`url` 定数を変更して目的の Azure App Service を使用するようにします。 `<myappservice>` は新しい App Service 用に作成した一意の名前に置き換えます。
+1. **ソリューション エクスプローラー** で、**[CellAnalyzerOfficeAddinWeb]** プロジェクトを展開して **Home.js** ファイルを開きます。
+1. 次のコード行に示すように、`url` 定数を変更して目的の Azure App Service を使用するようにします。 `<myappservice>` は新しい App Service 用に作成した一意の名前に置き換えます。
+
     ```JavaScript
     const url = "https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=" + range.values[0][0];
     ```
-3. **ソリューション エクスプローラー**で、最上位ノードの **[ソリューション 'Cell-Analyzer']** を右クリックして、**[スタートアップ プロジェクトの設定]** を選択します。
-4. **[ソリューション 'Cell-Analyzer' プロパティ ページ]** ダイアログで、**[マルチ スタートアップ プロジェクト]** を選択します。
-5. 次のプロジェクトごとに **[開始]** アクションを有効にします。
+
+1. **ソリューション エクスプローラー** で、最上位ノードの **[ソリューション 'Cell-Analyzer']** を右クリックして、**[スタートアップ プロジェクトの設定]** を選択します。
+1. **[ソリューション 'Cell-Analyzer' プロパティ ページ]** ダイアログで、**[マルチ スタートアップ プロジェクト]** を選択します。
+1. 次のプロジェクトごとに **[開始]** アクションを有効にします。
     - CellAnalyzerOfficeAddinWeb
     - CellAnalyzerOfficeAddin
-6. その後で、**[OK]** を選択します。
-7. **[デバッグ]** メニューから、**[デバッグの開始]** を選択します。
+1. その後で、**[OK]** を選択します。
+1. **[デバッグ]** メニューから、**[デバッグの開始]** を選択します。
 
 Excel が開始され、Office アドインが再度ロードされます。 App Service が正常に動作していることをテストするには、セルにテキスト値を入力して、Office アドインの **[Show Unicode]** を選択します。 サービスが呼び出され、そのテキストの文字に対応する Unicode 値が表示されます。
 
