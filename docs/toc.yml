@@ -189,6 +189,10 @@
                       href: develop/create-addin-commands.md
                     - name: アドイン コマンドを有効または無効にする
                       href: design/disable-add-in-commands.md
+                    - name: 組み込みの Office ボタンをカスタム タブに統合する
+                      href: design/built-in-button-integration.md
+                    - name: カスタム タブをリボンに配置する
+                      href: design/custom-tab-placement.md
                 - name: コンテンツ アドイン
                   href: design/content-add-ins.md
                 - name: ダイアログ ボックス
