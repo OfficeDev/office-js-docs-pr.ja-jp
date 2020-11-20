@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 85f617ffa24f77faa5e9d810f2b9eda50ddd83ab
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741149"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132327"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -39,7 +39,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -85,7 +85,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 3. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションを示すスクリーンショット](../images/word-quickstart-addin-2b.png)
 
 4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" とテキストをドキュメントに追加します。
 
@@ -103,14 +103,13 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-
 1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン**と入力します。 [**Word Web アドイン**] を選択し、[**次へ**] を選択します。
+2. 検索ボックスを使用して、**アドイン** と入力します。 [**Word Web アドイン**] を選択し、[**次へ**] を選択します。
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
-4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -255,7 +254,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -318,9 +317,9 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
-* [Word アドインの概要](../word/word-add-ins-programming-overview.md)
-* 
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Word アドインの概要](../word/word-add-ins-programming-overview.md)
+- 
   [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API リファレンス](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API リファレンス](../reference/overview/word-add-ins-reference-overview.md)

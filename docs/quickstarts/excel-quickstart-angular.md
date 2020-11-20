@@ -1,15 +1,15 @@
 ---
 title: Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 description: Office JS API と Angular を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 602b17dae29dfc43ab6b37648c3ad2f7fcfe86af
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5898d9bd3072e829c35afac90348cb844f96011c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741184"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132320"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -29,7 +29,7 @@ ms.locfileid: "48741184"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman ジェネレーター](../images/yo-office-excel-angular-2.png)
+![Angular フレームワークに設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/yo-office-excel-angular-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -56,13 +56,13 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-3b.png)
 
 4. ワークシート内で任意のセルの範囲を選択します。
 
 5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
+    ![アドイン作業ウィンドウが開いており、アドイン作業ウィンドウで [実行] ボタンが強調表示されている Excel のスクリーンショット](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>次の手順
 

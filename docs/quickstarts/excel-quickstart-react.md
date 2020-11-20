@@ -1,15 +1,15 @@
 ---
 title: React を使用して Excel 作業ウィンドウ アドインを構築する
 description: Office JS API と React を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 04/03/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a893ea78943f7a2687d005e6e1e24a9528c730ce
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 143c5254a2a6bb00fba44373878baf5626443777
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612334"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132299"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>React を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -29,7 +29,7 @@ ms.locfileid: "44612334"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman ジェネレーター](../images/yo-office-excel-react-2.png)
+![React フレームワークに設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/yo-office-excel-react-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -41,7 +41,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 - プロジェクトのルート ディレクトリにある **manifest.xml** ファイルで、アドインの機能と設定を定義します。
 - **./src/taskpane/taskpane.html** ファイルは作業ウィンドウの HTML フレームワークを定義し、**./src/taskpane/components** フォルダー内のファイルは作業ウィンドウ UI のさまざまな部分を定義します。
-- **./src/taskpane/taskpane.css**ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
+- **./src/taskpane/taskpane.css** ファイルには、作業ウィンドウ内のコンテンツに適用される CSS が含まれています。
 - **./src/taskpane/components/App.tsx** ファイルには、作業ウィンドウと Excel の間のやり取りを容易にする Office JavaScript API コードが含まれています。
 
 ## <a name="try-it-out"></a>試してみる
@@ -56,13 +56,13 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-3b.png)
 
 4. ワークシート内で任意のセルの範囲を選択します。
 
 5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![Excel アドイン](../images/excel-quickstart-addin-3c.png)
+    ![アドイン作業ウィンドウが開いており、アドイン作業ウィンドウで [実行] ボタンが強調表示されている Excel のスクリーンショット](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>次の手順
 
@@ -74,6 +74,6 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 ## <a name="see-also"></a>関連項目
 
 * [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API を使用した基本的なプログラミングの概念](../excel/excel-add-ins-core-concepts.md)
+* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

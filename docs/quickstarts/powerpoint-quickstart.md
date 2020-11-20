@@ -4,18 +4,18 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e2720ce1c894f2692e797c5c1ae76c09fb3d5d72
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 47ca14b4dd8ab67ffc20551b1e13ca62cc75ee34
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741198"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132362"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
 この記事では、PowerPoint 作業ウィンドウ アドインをビルドするプロセスについて説明します。
 
-## <a name="create-the-add-in"></a>アドインを作成する 
+## <a name="create-the-add-in"></a>アドインを作成する
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "48741198"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
 
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-powerpoint.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-powerpoint.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -103,14 +103,14 @@ ms.locfileid: "48741198"
 
 1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン**と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+2. 検索ボックスを使用して、**アドイン** と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
-    
+5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -118,7 +118,7 @@ ms.locfileid: "48741198"
 ### <a name="update-the-code"></a>コードを更新する
 
 1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -262,5 +262,5 @@ ms.locfileid: "48741198"
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)

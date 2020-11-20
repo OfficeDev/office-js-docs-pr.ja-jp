@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214611"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132271"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -48,8 +48,8 @@ ms.locfileid: "48214611"
 
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** - `Outlook`
 
-    ![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-outlook.png)
-    
+    ![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-outlook.png)
+
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -62,16 +62,16 @@ ms.locfileid: "48214611"
 
 ### <a name="explore-the-project"></a>プロジェクトを探究する
 
-Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。 
+Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。
 
-- プロジェクトのルートディレクトリにある **./ manifest.xml**ファイルは、アドインの設定と機能性を定義します。
-- **./src/taskpane/taskpane.html**ファイルには、作業ペイン用のHTMLマークアップが含まれています。
-- **./src/taskpane/taskpane.css**ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
-- **./src/taskpane/taskpane.js**ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。
+- プロジェクトのルートディレクトリにある **./ manifest.xml** ファイルは、アドインの設定と機能性を定義します。
+- **./src/taskpane/taskpane.html** ファイルには、作業ペイン用のHTMLマークアップが含まれています。
+- **./src/taskpane/taskpane.css** ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
+- **./src/taskpane/taskpane.js** ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コードエディタで、**./src/taskpane/taskpane.html**ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js**のスクリプトがデータを書き込む場所にラベルを追加します。
+1. コードエディタで、**./src/taskpane/taskpane.html** ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js** のスクリプトがデータを書き込む場所にラベルを追加します。
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -108,20 +108,20 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. Outlook で、[閲覧ウィンドウ](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0)でメッセージを表示するか、独自のウィンドウでメッセージを開きます。
 
-1. **ホーム**タブ（または新しいウィンドウでメッセージを開いた場合は**メッセージ**タブ）を選択し、リボンの**タスクパネルの表示**ボタンを選択、アドインの作業ペインを開きます。
+1. **ホーム** タブ（または新しいウィンドウでメッセージを開いた場合は **メッセージ** タブ）を選択し、リボンの **タスクパネルの表示** ボタンを選択、アドインの作業ペインを開きます。
 
-    ![アドイン ボタンが強調表示された Outlook のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-1.png)
+    ![アドイン リボン ボタンが強調表示された Outlook のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > 作業ウィンドウで、「このアドインを localhost から開くことはできません」 というエラーが表示される場合は、[「トラブルシューティングの記事」](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost) に記載されている手順に従ってください。
 
-1. 作業ペインの下部までスクロールし、**実行**リンクを選択してメッセージを作業ペインに書き込みます。
+1. 作業ペインの下部までスクロールし、**実行** リンクを選択してメッセージを作業ペインに書き込みます。
 
-    ![実行リンクが強調表示されたアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-2.png)
+    ![実行リンクが強調表示されたアドインの作業ウィンドウを示すスクリーンショット](../images/quick-start-task-pane-2.png)
 
     ![メッセージの件名を表示するアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-3.png)
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
 おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。 次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。
 
@@ -129,10 +129,10 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="prerequisites"></a>前提条件
 
-- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- **Office/SharePoint 開発** ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!NOTE]
-    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。
+    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発** ワークロードがインストールされていることを確認してください。
 
 - Office 365
 
@@ -147,7 +147,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. プロジェクトに名前を付けて、**[OK]** を選択します。
 
-1. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが**ソリューション エクスプローラー**に表示されます。 **MessageRead.html** ファイルが Visual Studio で開きます。
+1. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが **ソリューション エクスプローラー** に表示されます。 **MessageRead.html** ファイルが Visual Studio で開きます。
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 

@@ -4,27 +4,27 @@ description: Yeoman ジェネレーターを使用して、シングル サイ�
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3524b149b10a37e8143b20e704e1f58e2ad10074
-ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
+ms.openlocfilehash: c611d41e56b2a5d1320ee1f25ca732ac80077172
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "48906037"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132229"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する
 
 この記事では、可能な場合シングル サインオン (SSO) を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する Excel、Outlook、Word、または PowerPoint 用の Office アドインを作成するプロセスを説明します。
 
 > [!TIP]
-> このクイック スタートを完了する前に、「[Office アドインのシングル サインオンを有効化する](../develop/sso-in-office-add-ins.md)」を参照して、Office アドインの SSO に関する基本的な概念を確認してください。 
- 
+> このクイック スタートを完了する前に、「[Office アドインのシングル サインオンを有効化する](../develop/sso-in-office-add-ins.md)」を参照して、Office アドインの SSO に関する基本的な概念を確認してください。
+
 Yeoman ジェネレーターは、Azure 内で SSO を構成するために必要な手順を自動化し、SSO を使用するために必要なコードを生成することで、SSO アドインの作成プロセスを簡素化します。 Yeoman ジェネレーターが自動化する手順を手動で完了する方法についての詳細は、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」チュートリアルを参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
+- [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
-* 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
+- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,7 +32,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-* Mac を使用していて Azure CLI がコンピューターにインストールされていない場合は、[Homebrew](https://brew.sh/) をインストールする必要があります。 このクイック スタート中に実行する SSO 構成スクリプトは、Homebrew を使用して Azure CLI をインストールした後、Azure CLI を使用して Azure の SSO を構成します。
+- Mac を使用していて Azure CLI がコンピューターにインストールされていない場合は、[Homebrew](https://brew.sh/) をインストールする必要があります。 このクイック スタート中に実行する SSO 構成スクリプトは、Homebrew を使用して Azure CLI をインストールした後、Azure CLI を使用して Azure の SSO を構成します。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -46,7 +46,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My SSO Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-sso-excel.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-sso-excel.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -103,22 +103,22 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 2. 前のコマンド (Excel、Word、PowerPoint など) を実行したときに開く Office クライアント アプリケーションで、[前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Microsoft 365 管理者アカウントと同じ Microsoft 365 組織のメンバーであるユーザーでサインインしていることを確認します。 これにより、SSO を正常に実行するための適切な条件が確立されます。
 
-3. Office クライアント アプリケーションで、[ **ホーム** ] タブを選択し、リボンの [ **作業ウィンドウの表示** ] ボタンをクリックして、アドインの作業ウィンドウを開きます。 次の画像は、Excel のこのボタンを示しています。
+3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 次の画像は、Excel のこのボタンを示しています。
 
     ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
 
-4. 作業ウィンドウの下部にある [ **マイ ユーザー プロファイルの情報を取得する** ] ボタンを選択して、SSO プロセスを開始します。
+4. 作業ウィンドウの下部にある [**マイ ユーザー プロファイルの情報を取得する**] ボタンを選択して、SSO プロセスを開始します。
 
-5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [ **同意する** ] ボタンを選択して続行します。
+5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
+    ![[承認] ボタンが強調表示された [アクセス許可] 要求ダイアログを示すスクリーンショット](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。
 
 6. アドインは、サインインしたユーザーのプロファイル情報を取得し、ドキュメントに書き込みます。 次の画像は、Excel ワークシートに書き込まれたプロファイル情報の例を示します。
 
-    ![Excel ワークシートのユーザー プロファイル情報](../images/sso-user-profile-info-excel.png)
+    ![Excel ワークシートのユーザー プロファイル情報を示すスクリーンショット](../images/sso-user-profile-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -137,22 +137,22 @@ Outlook アドインを試すには、次の手順を実行します。
 
 3. Outlook で新しいメッセージを作成します。
 
-4. [メッセージ作成] ウィンドウで、リボンの [ **作業ウィンドウの表示** ] ボタンを選択して、アドインの作業ウィンドウを開きます。
+4. [メッセージ作成] ウィンドウで、リボンの [**作業ウィンドウの表示**] ボタンを選択して、アドインの作業ウィンドウを開きます。
 
-    ![Outlook アドイン ボタン](../images/outlook-sso-ribbon-button.png)
+    ![Outlook の [メッセージの作成] ウィンドウの [強調表示されたアドイン] リボンボタンを示すスクリーン ショット](../images/outlook-sso-ribbon-button.png)
 
-5. 作業ウィンドウの下部にある [ **マイ ユーザー プロファイルの情報を取得する** ] ボタンを選択して、SSO プロセスを開始します。
+5. 作業ウィンドウの下部にある [**マイ ユーザー プロファイルの情報を取得する**] ボタンを選択して、SSO プロセスを開始します。
 
-6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [ **同意する** ] ボタンを選択して続行します。
+6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![アクセス許可を要求するダイアログ](../images/sso-permissions-request.png)
+    ![[承認] ボタンが強調表示された [アクセス許可] 要求ダイアログをのスクリーンショット](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。
 
 7. アドインは、サインインしたユーザーのプロファイル情報を取得し、メール メッセージの本文に書き込みます。
 
-    ![Outlook メッセージのユーザー プロファイル情報](../images/sso-user-profile-info-outlook.png)
+    ![Outlook の [メッセージの作成] ウィンドウのユーザー プロファイル情報を示すスクリーンショット](../images/sso-user-profile-info-outlook.png)
 
 ## <a name="next-steps"></a>次の手順
 

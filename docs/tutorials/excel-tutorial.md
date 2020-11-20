@@ -1,27 +1,28 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 51bec98cd0de1d00b4bfbcda372e450ce040d8b9
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: f3cc1881520c4e84b6f325917e9c862e5e7ddbc5
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741156"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131823"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
 このチュートリアルでは、以下を実行する Excel 作業ウィンドウ アドインを作成します。
 
 > [!div class="checklist"]
-> * テーブルの作成
-> * テーブルのフィルター処理と並べ替え
-> * グラフの作成
-> * テーブルのヘッダーの固定
-> * ワークシートの保護
-> * ダイアログを開く
+>
+> - テーブルの作成
+> - テーブルのフィルター処理と並べ替え
+> - グラフの作成
+> - テーブルのヘッダーの固定
+> - ワークシートの保護
+> - ダイアログを開く
 
 > [!TIP]
 > 既に Yeoman ジェネレーターを使用した [[Excel タスク ウィンドウ アドインのビルド](../quickstarts/excel-quickstart-jquery.md)] の クイックスタートを完​​了しており、このチュートリアルの出発点としてそのプロジェクトを使用する場合は、[[テーブルの作成](#create-a-table)] セクションに直接移動します。
@@ -39,7 +40,7 @@ ms.locfileid: "48741156"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman ジェネレーター](../images/yo-office-excel.png)
+![Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット](../images/yo-office-excel.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -158,7 +159,7 @@ ms.locfileid: "48741156"
         > [!NOTE]
         > Excel.js のコレクション オブジェクト (`TableCollection`、`WorksheetCollection`、`TableColumnCollection` など) には、`items` プロパティがあります。このプロパティは、子オブジェクト タイプ (`Table`、`Worksheet`、`TableColumn` など) の配列ですが、`*Collection` オブジェクト自体は配列ではありません。
 
-    - その次に、コードでは、**Amount** 列の範囲を小数点以下 2 桁までのユーロとして書式設定します。 
+    - その次に、コードでは、**Amount** 列の範囲を小数点以下 2 桁までのユーロとして書式設定します。
 
     - 最後に、列の幅と行の高さが、最も長い (または最も高い) データ項目の幅になるようにします。コードを書式設定するには `Range` オブジェクトを取得する必要があります。`TableColumn` と `TableRow` オブジェクトには、書式プロパティがありません。
 
@@ -200,11 +201,11 @@ ms.locfileid: "48741156"
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Excel アドイン ボタン](../images/excel-quickstart-addin-3b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-3b.png)
 
 3. 作業ウィンドウで、[**テーブルの作成**] ボタンを選択します。
 
-    ![Excel チュートリアル - テーブルの作成](../images/excel-tutorial-create-table-2.png)
+    ![Excelのスクリーンショット。[テーブルの作成] ボタンが付いたアドイン作業ウィンドウと、日付、販売者、カテゴリ、および金額のデータが入力されたワーク シートのテーブルが表示されます](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table"></a>テーブルのフィルター処理と並べ替え
 
@@ -259,13 +260,13 @@ ms.locfileid: "48741156"
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
-    ``` 
+    ```
 
 ### <a name="sort-the-table"></a>表の並べ替え
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `filter-table` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `filter-table` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
@@ -331,7 +332,7 @@ ms.locfileid: "48741156"
 
 4. [**テーブルのフィルター**] ボタンと [**テーブルの並べ替え**] ボタンを任意の順序で選択します。
 
-    ![Excel のチュートリアル - テーブルのフィルター処理と並べ替え](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Excel のスクリーンショット。アドインの作業ウィンドウに [フィルター テーブル] ボタンと [テーブルの並べ替え] ボタンが表示されています。](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart"></a>グラフの作成
 
@@ -399,9 +400,9 @@ ms.locfileid: "48741156"
     ```
 
 8. `createChart()` 関数で、`TODO3` を次のコードに置き換えます。 このコードのほとんどの部分は、わかりやすく説明不要なものです。 注:
-   
+
    - `setPosition` 方法のパラメーターでは、グラフを挿入するワークシート領域の左上のセルを指定します。Excel では、指定した空間でグラフを見栄えよくするために、線の太さなどの調整ができます。
-   
+
    - "系列" とは、テーブルの 1 つの列にある一連のデータ ポイントのことです。このテーブルには文字列以外の列は 1 列しか含まれていないため、Excel は、グラフ化するデータ ポイントの列は、この列のみであると推測します。その他の列はグラフのラベルであると解釈されます。従って、グラフに含まれる系列は 1 つのみとなり、この系列のインデックスは 0 となります。を含みます。"&euro; での値" というラベルを付ける系列は、 この系列です。
 
     ```js
@@ -424,9 +425,9 @@ ms.locfileid: "48741156"
 
 3. このチュートリアルで以前に追加したテーブルが、開いているワークシートにない場合は、タスク ウィンドウの [**テーブルの作成**] ボタンを選択します。次に、[**テーブルのフィルター処理**] ボタン、および [**テーブルの並べ替え**] ボタンのいずれかを選択します。
 
-4. [グラフの作成 ****] ボタンを選択します。グラフが作成され、フィルター処理された行のデータのみが含まれます。一番下にあるデータポイントのラベルは、グラフの並べ替え順序になります。つまり、名前の逆アルファベット順での商社の名前です。
+4. **[グラフの作成]** ボタンを選択します。グラフが作成され、フィルター処理された行のデータのみが含まれます。一番下にあるデータポイントのラベルは、グラフの並べ替え順序になります。つまり、名前の逆アルファベット順での商社の名前です。
 
-    ![Excel チュートリアル - グラフの作成](../images/excel-tutorial-create-chart-2.png)
+    ![Excelのスクリーンショット。アドインの作業ウィンドウに [グラフの作成] ボタンが表示され、ワークシートに食料品と教育費のデータを表示するグラフが表示されます。](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header"></a>テーブルのヘッダーの固定
 
@@ -436,7 +437,7 @@ ms.locfileid: "48741156"
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `create-chart` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `create-chart` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
@@ -496,7 +497,7 @@ ms.locfileid: "48741156"
 
 6. ヘッダー以降の行が画面の外に出て見えなくなるまでワークシートを十分下にスクロールしても、表のヘッダーが最上部に表示されていることを確認します。
 
-    ![Excel のチュートリアル - ヘッダーの固定](../images/excel-tutorial-freeze-header-2.png)
+    ![固定テーブル ヘッダーがある Excel ワーク シートを表示するスクリーンショット](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>ワークシートの保護
 
@@ -511,7 +512,7 @@ ms.locfileid: "48741156"
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
         <Label resid="<!--TODO2: Button label -->" />
-        <Supertip>            
+        <Supertip>
             <Title resid="<!-- TODO3: Button tool tip title -->" />
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
@@ -538,26 +539,26 @@ ms.locfileid: "48741156"
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 要素では、このボタンのツール ヒントを定義します。 ツール ヒントのタイトルはボタンのラベルと同じにする必要があるため、リソース ID にはまったく同じ "ProtectionButtonLabel" を使用することにします。 ツール ヒントの説明は、"Click to turn protection of the worksheet on and off" にする予定です。 ただし、`resid` は "ProtectionButtonToolTip" にします。 したがって、完了すると、`SuperTip` 要素は次のようになります。 
+5. `SuperTip` 要素では、このボタンのツール ヒントを定義します。 ツール ヒントのタイトルはボタンのラベルと同じにする必要があるため、リソース ID にはまったく同じ "ProtectionButtonLabel" を使用することにします。 ツール ヒントの説明は、"Click to turn protection of the worksheet on and off" にする予定です。 ただし、`resid` は "ProtectionButtonToolTip" にします。 したがって、完了すると、`SuperTip` 要素は次のようになります。
 
     ```xml
-    <Supertip>            
+    <Supertip>
         <Title resid="ProtectionButtonLabel" />
         <Description resid="ProtectionButtonToolTip" />
     </Supertip>
     ```
 
-   > [!NOTE] 
-   > 運用アドインでは、2つの異なるボタンに同じアイコンを使用することはできません。ただし、このチュートリアルを簡素化するには、このチュートリアルを行います。新しい `Control` の `Icon` マークアップは、既存の `Control`の `Icon` 要素のコピーにすぎません。 
+   > [!NOTE]
+   > 運用アドインでは、2つの異なるボタンに同じアイコンを使用することはできません。ただし、このチュートリアルを簡素化するには、このチュートリアルを行います。新しい `Control` の `Icon` マークアップは、既存の `Control`の `Icon` 要素のコピーにすぎません。
 
 6. 既にマニフェストに存在している元の `Control` 要素の内側にある `Action` 要素では、その要素のタイプが `ShowTaskpane` に設定されていますが、新しいボタンで作業ウィンドウを開く予定はありません。このボタンでは、この後の手順で作成するカスタム関数を実行する予定です。 そのため、`TODO5` は、カスタム関数をトリガーするボタンのアクションの種類である `ExecuteFunction` に置き換えます。 `Action` 要素の開始タグは次のようになります。
- 
+
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
 7. 元の `Action` 要素には、作業ウィンドウの ID と、作業ウィンドウで開くページの URL を指定する子要素があります。ただし、`ExecuteFunction` の種類の `Action` の要素には、そのコントロールが実行している関数に名前を付けた単一の子要素があります。この関数は、後の手順で作成し、`toggleProtection`と呼ばれます。`TODO6` は次のマークアップに置き換えます。
- 
+
     ```xml
     <FunctionName>toggleProtection</FunctionName>
     ```
@@ -567,7 +568,7 @@ ms.locfileid: "48741156"
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
         <Label resid="ProtectionButtonLabel" />
-        <Supertip>            
+        <Supertip>
             <Title resid="ProtectionButtonLabel" />
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
@@ -607,7 +608,7 @@ ms.locfileid: "48741156"
     ```js
     function toggleProtection(args) {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
             return context.sync();
@@ -641,11 +642,11 @@ ms.locfileid: "48741156"
     } else {
         sheet.protection.protect();
     }
-    ``` 
+    ```
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>ドキュメントのプロパティを作業ウィンドウのスクリプト オブジェクトにフェッチするコードを追加する
 
-これまでこのチュートリアルで作成した各関数で、Office ドキュメントに*書き込む*コマンドをキューに入れました。 各関数は、キューに登録されたコマンドを実行対象の文書に送信する `context.sync()` メソッドの呼び出しで終了します。 ただし、最後の手順で追加したコードは `sheet.protection.protected property`を呼び出します。 `sheet` オブジェクトは、この作業ウィンドウのスクリプトに存在する単なるプロキシ オブジェクトであるため、これまでに作成した関数とは大きく異なります。 プロキシ オブジェクトではドキュメントの実際の保護の状態を認識できません。そのため、その `protection.protected` プロパティでは実際の値が保持できません。 例外エラーを回避するには、まずドキュメントから保護の状態をフェッチする必要があり、その状態を使用して `sheet.protection.protected` の値を設定します。 このフェッチ処理には、3 つの手順があります。
+これまでこのチュートリアルで作成した各関数で、Office ドキュメントに *書き込む* コマンドをキューに入れました。 各関数は、キューに登録されたコマンドを実行対象の文書に送信する `context.sync()` メソッドの呼び出しで終了します。 ただし、最後の手順で追加したコードは `sheet.protection.protected property`を呼び出します。 `sheet` オブジェクトは、この作業ウィンドウのスクリプトに存在する単なるプロキシ オブジェクトであるため、これまでに作成した関数とは大きく異なります。 プロキシ オブジェクトではドキュメントの実際の保護の状態を認識できません。そのため、その `protection.protected` プロパティでは実際の値が保持できません。 例外エラーを回避するには、まずドキュメントから保護の状態をフェッチする必要があり、その状態を使用して `sheet.protection.protected` の値を設定します。 このフェッチ処理には、3 つの手順があります。
 
    1. コードで読み取る必要があるプロパティをロードする (つまりフェッチする) コマンドをキューに登録します。
 
@@ -653,13 +654,13 @@ ms.locfileid: "48741156"
 
    3. `sync` メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。
 
-こうした手順は、コードで Office ドキュメントから情報を*読み取る*必要がある場合には必ず完了する必要があります。
+こうした手順は、コードで Office ドキュメントから情報を *読み取る* 必要がある場合には必ず完了する必要があります。
 
 1. `toggleProtection` 関数で、`TODO2` を次のコードに置き換えます。 注:
-   
+
    - すべての Excel オブジェクトに `load` の方法があります。パラメーターで読み取るオブジェクトのプロパティをコンマ区切り名前の文字列として指定します。この場合、必要なプロパティは、`protection` プロパティのサブプロパティです。サブプロパティは、コード内の他の場所とほぼ同じ方法で参照します。ただし、"." 文字の代わりにスラッシュ ('/') を使用します。
 
-   - `sync` が完了してドキュメントからフェッチされた適切な値が `sheet.protection.protected` に割り当てられるまで、`sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするために、そのロジックを `sync` が完了するまで実行されない `then` 関数に (この後の手順で) 移動します。 
+   - `sync` が完了してドキュメントからフェッチされた適切な値が `sheet.protection.protected` に割り当てられるまで、`sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするために、そのロジックを `sync` が完了するまで実行されない `then` 関数に (この後の手順で) 移動します。
 
     ```js
     sheet.load('protection/protected');
@@ -671,7 +672,7 @@ ms.locfileid: "48741156"
         )
         // TODO4: Move the final call of `context.sync` here and ensure that it
         //        does not run until the toggle logic has been queued.
-    ``` 
+    ```
 
 2. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Excel.run` の最後にある最終行の `return context.sync();` を削除します。新しい最後の `context.sync` は、このチュートリアルの後の方で追加します。
 
@@ -691,8 +692,8 @@ ms.locfileid: "48741156"
 
     ```js
     function toggleProtection(args) {
-        Excel.run(function (context) {            
-          var sheet = context.workbook.worksheets.getActiveWorksheet();          
+        Excel.run(function (context) {
+          var sheet = context.workbook.worksheets.getActiveWorksheet();
           sheet.load('protection/protected');
 
           return context.sync()
@@ -723,22 +724,22 @@ ms.locfileid: "48741156"
 
 1. Excel も含めて、すべての Office アプリケーションを閉じます。
 
-2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。 これは、次から以前のバージョンのアドインを完全に削除するために必要です
+2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。 これは、クライアント アプリケーションから以前のバージョンのアドインを完全に削除するために必要です。
 
     - Windows の場合: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
     - Mac の場合: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
-    
-        > [!NOTE]
-        > そのフォルダーが存在しない場合は、次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
-        >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
-        >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
-        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
-        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+
+      > [!NOTE]
+      > そのフォルダーが存在しない場合は、次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
+      >  - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
+      >  - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. ローカル Web サーバーが既に実行中の場合は、ノード コマンド ウィンドウを閉じて終了します。
 
-4. マニフェスト ファイルが更新されているため、更新されたマニフェスト ファイルを使用してアドインを再度サイドロードする必要があります。 ローカル Web サーバーを起動し、アドインのサイドロードを行います。 
+4. マニフェスト ファイルが更新されているため、更新されたマニフェスト ファイルを使用してアドインを再度サイドロードする必要があります。 ローカル Web サーバーを起動し、アドインのサイドロードを行います。
 
     - Excel でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた Excel が開きます。
 
@@ -754,9 +755,9 @@ ms.locfileid: "48741156"
 
         アドインを使用するには、Excel on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
-5. Excel の [**ホーム**] タブで、[**ワークシート保護を切り換える**] ボタンを選択します。 次のスクリーンショットに示すように、リボンのほとんどのコントロールは、無効化 (淡色表示) されます。 
+5. Excel の [**ホーム**] タブで、[**ワークシート保護を切り換える**] ボタンを選択します。 次のスクリーンショットに示すように、リボンのほとんどのコントロールは、無効化 (淡色表示) されます。
 
-    ![Excel チュートリアル - 保護がオンになっているリボン](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    ![[ワークシート保護の切り替え] ボタンが強調表示され、有効になっている Excel リボンのスクリーンショット。 他のほとんどのボタンは灰色表示され、無効になります。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
 6. セルの内容を変更する場合は、そのセルを選択します。 Excel にワークシートが保護されていることを示すエラー メッセージが表示されます。
 
@@ -768,7 +769,7 @@ ms.locfileid: "48741156"
 
 ### <a name="create-the-dialog-page"></a>ダイアログ ページを作成する
 
-1. プロジェクトのルートにある **./src** フォルダーで、**ダイアログ**という名前の新しいフォルダーを作成します。
+1. プロジェクトのルートにある **./src** フォルダーで、**ダイアログ** という名前の新しいフォルダーを作成します。
 
 2. **./src/dialogs** フォルダー に **popup.html** という名前の新しいファイルを作成します。
 
@@ -941,7 +942,7 @@ ms.locfileid: "48741156"
     var dialog = null;
     ```
 
-7. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在*しない*ことです。 これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
+7. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在 *しない* ことです。 これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
 
     ```js
     function openDialog() {
@@ -1008,7 +1009,7 @@ ms.locfileid: "48741156"
 
 6. 必要に応じて、`processMessage` 関数の行 `dialog.close();` をコメントにします。このセクションの手順を繰り返します。ダイアログは開いたままで、名前を変更できます。右上隅の **X** ボタンを押して、手動で閉じることができます。
 
-    ![Excel チュートリアル - ダイアログ](../images/excel-tutorial-dialog-open-2.png)
+    ![Excelのスクリーンショット。アドインの作業ウィンドウに [ダイアログを開く] ボタンが表示され、ワークシートの上にダイアログ ボックスが表示されます。](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>次の手順
 
@@ -1019,6 +1020,6 @@ ms.locfileid: "48741156"
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
-* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)

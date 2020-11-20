@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: adf420618ff744a409c6fc61af9b854f786055c0
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159445"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132355"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -36,7 +36,7 @@ ms.locfileid: "45159445"
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
-    ![カスタム関数の Office アドイン用の Yeoman ジェネレーターのプロンプト](../images/starcountPrompt.png)
+    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/starcountPrompt.png)
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -77,7 +77,7 @@ npm run start:web
 
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] のアイコンが強調表示された Web 上の Excel の [挿入] リボン](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] のボタンが強調表示された Web 上の Excel の [挿入] リボンのスクリーンショット](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

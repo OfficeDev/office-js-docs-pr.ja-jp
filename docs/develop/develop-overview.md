@@ -3,19 +3,19 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 4f65284730e1211b0628139b7f22c55deb7a6fec
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741093"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131893"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
 > [!TIP]
 > この記事を読む前に、「[Office Add-ins platform overview (Office アドイン プラットフォームの概要)](../overview/office-add-ins.md)」をご覧ください。
 
-すべての Office アドインは、Office アドイン プラットフォーム上で構築します。 どのようなアドインを構築する場合でも、アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイル上で指定する方法、マニフェストファイルのcapabilities、UIとユーザーエクスペリエンスをデザインする方法など、重要な概念を理解する必要があります。 開発に関するこれらの中心概念については、ドキュメントの**開発ライフサイクル** > **開発**セクションを参照してください。 構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、 [Excel](../excel/index.yml)) を詳しく見る前に、ここに記載される情報を確認してください。
+すべての Office アドインは、Office アドイン プラットフォーム上で構築します。 どのようなアドインを構築する場合でも、アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイル上で指定する方法、マニフェストファイルのcapabilities、UIとユーザーエクスペリエンスをデザインする方法など、重要な概念を理解する必要があります。 開発に関するこれらの中心概念については、ドキュメントの **開発ライフサイクル** > **開発** セクションを参照してください。 構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、 [Excel](../excel/index.yml)) を詳しく見る前に、ここに記載される情報を確認してください。
 
 ## <a name="creating-an-office-add-in"></a>Office アドインの作成
 
@@ -87,7 +87,7 @@ Script Lab は、Excel や Word などの Office プログラムでの作業中�
 
 次の 1 分間のビデオで、Script Lab の実際の動作をご覧ください。
 
-[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するショート ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
 
 Script Lab の詳細については、「[Script Lab を使用して Office JavaScript API を調べる](../overview/explore-with-script-lab.md)」を参照してください。
 
@@ -101,7 +101,7 @@ Office アドインは、作業ウィンドウ、コンテンツ アドイン、
 
 次の図では、リボン上に表示されるアドイン コマンド、ドキュメント右側に表示される作業ウィンドウ、およびドキュメント上に表示されるダイアログ ボックスまたはコンテンツ アドインを示しています。
 
-![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス上のアドイン コマンドを示す図](../images/add-in-ui-elements.png)
+![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス / コンテンツ アドイン上のアドイン コマンドを示す図](../images/add-in-ui-elements.png)
 
 Office UI の拡張とアドインのUXのデザインに関する詳細については、「[Office アドイン用の Office UI 要素](../design/interface-elements.md)」を参照してください。
 

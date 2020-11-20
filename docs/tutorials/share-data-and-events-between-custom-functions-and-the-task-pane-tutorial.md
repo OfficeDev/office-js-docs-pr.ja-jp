@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819631"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131781"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -23,7 +23,7 @@ ms.locfileid: "47819631"
 
 Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、プロンプトに次の回答を入力します。
 
-```command line
+```command line
 yo office
 ```
 
@@ -31,16 +31,16 @@ yo office
 - スクリプトの種類を選択する:  **JavaScript**
 - アドインの名前を何にしますか?  **個人用 Office アドイン**
 
-![アドイン プロジェクトを作成するための Office からのプロンプトへ応答するスクリーンショット。](../images/yo-office-excel-project.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-excel-project.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 1. Visual Studio Code を開始して [**個人用 Office アドイン**] プロジェクトを開きます。
 2. 
             **manifest.xml** ファイルを開きます。
-3. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は**長く**する必要があります。
+3. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は **長く** する必要があります。
 
    ```xml
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -97,7 +97,7 @@ yo office
 
 8. 変更を保存してプロジェクトを再ビルドします。
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -201,7 +201,7 @@ yo office
 5. ファイルを保存します。
 6. プロジェクトをビルドする
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -209,7 +209,7 @@ yo office
 
 - 次のコマンドを使用してプロジェクトを開始します。
 
-  ```command line
+  ```command line
   npm run start
   ```
 

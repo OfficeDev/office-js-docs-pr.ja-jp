@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff6271fa4d602141807b33ff96637957818c466
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741170"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132348"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -61,12 +61,12 @@ vue create my-add-in
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ![Yeoman ジェネレーター](../images/yo-office-manifest-only-vue.png)
+    ![マニフェスト専用に設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/yo-office-manifest-only-vue.png)
 
 ウィザードを完了すると、`My Office Add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
 
 > [!TIP]
-> アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する*次の手順*ガイダンスは無視できます。 この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。
+> アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する *次の手順* ガイダンスは無視できます。 この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。
 
 ## <a name="secure-the-app"></a>アプリをセキュリティ保護する
 
@@ -208,13 +208,13 @@ vue create my-add-in
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-   ![Excel アドイン ボタン](../images/excel-quickstart-addin-2a.png)
+   ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-2a.png)
 
 3. ワークシート内で任意のセルの範囲を選択します。
 
 4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
-   ![Excel アドイン](../images/excel-quickstart-addin-2c.png)
+   ![アドイン作業ウィンドウを開いた状態の Excel のスクリーンショット](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>次の手順
 

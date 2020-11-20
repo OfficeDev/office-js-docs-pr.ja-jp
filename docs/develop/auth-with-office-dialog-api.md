@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: bc0d092dad105cbdff09a5826632baa6fd4f7021
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 195b17d81a7a6c6de1930d3fc8710f0fce153e9f
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279491"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131931"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -30,13 +30,13 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 ダイアログ ボックスが iframe (既定) ではない場合、ID プロバイダーのログイン ページを開くことができます。 次に示すように、Office ダイアログ ボックスの特性は、MSAL や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
 
 > [!NOTE]
-> 浮動 iframe で開くようにダイアログ ボックスを構成する方法があります。呼び出しの `displayInIframe: true` オプションを `displayDialogAsync` に渡すだけです。 ログインに Office ダイアログ API を使用している場合は、この方法を使用*しない*でください。
+> 浮動 iframe で開くようにダイアログ ボックスを構成する方法があります。呼び出しの `displayInIframe: true` オプションを `displayDialogAsync` に渡すだけです。 ログインに Office ダイアログ API を使用している場合は、この方法を使用 *しない* でください。
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>Office ダイアログ ボックスの認証フロー
 
 シンプルで標準的な認証フローを下に示します。 図の下に詳細の説明があります。
 
-![作業ウィンドウとダイアログ ボックス ブラウザーのプロセスの関係を示す画像。](../images/taskpane-dialog-processes.gif)
+![作業ウィンドウとダイアログ ボックス ブラウザーのプロセス間の関係を示す図。](../images/taskpane-dialog-processes.gif)
 
 1. ダイアログ ボックスで開かれる最初のページは、アドインのドメイン (つまり作業ウィンドウと同じドメイン) でホストされているページ (または他のリソース) です。 このページには、"*プロバイダー名* にサインインできるページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。 このページのコードは、ダイアログ ボックスに渡される情報 (「[情報をダイアログ ボックスに渡す](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)」で説明されています) またはアドインの構成ファイル (web.config ファイルなど) にハードコーディングされている情報を使用して ID プロバイダーのサインイン ページの URL を構築します。
 2. 次に、ダイアログ ボックス ウィンドウはサインイン ページにリダイレクトします。 URL には、ユーザーがサインインしたらダイアログ ボックス ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。 この記事では、このページを **redirectPage.html** と呼びます。 *このページはホスト ウィンドウと同じドメインにある必要があります*。これは、`messageParent` の呼び出しを使用してサインインの試みの結果を作業ウィンドウに渡せるようにするためです。
@@ -66,7 +66,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 
 ## <a name="using-authentication-libraries-with-the-dialog-box"></a>ダイアログ ボックスでの認証ライブラリの使用
 
-Office ダイアログ ボックスと作業ウィンドウが異なるブラウザー、JavaScript ランタイム、およびインスタンスで実行されるということは、認証と承認が同じウィンドウで行われる場合の使用方法とは異なる方法で、多くの認証ライブラリまたは承認ライブラリを使用する必要があることを意味します。 次のセクションでは、通常はこれらのライブラリを使用できない主な方法と、これらのライブラリを使用*できる*方法について説明します。
+Office ダイアログ ボックスと作業ウィンドウが異なるブラウザー、JavaScript ランタイム、およびインスタンスで実行されるということは、認証と承認が同じウィンドウで行われる場合の使用方法とは異なる方法で、多くの認証ライブラリまたは承認ライブラリを使用する必要があることを意味します。 次のセクションでは、通常はこれらのライブラリを使用できない主な方法と、これらのライブラリを使用 *できる* 方法について説明します。
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>多くの場合、トークンを格納するのにライブラリの内部キャッシュは使用できません。
 

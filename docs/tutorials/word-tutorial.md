@@ -4,23 +4,24 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741135"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131833"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
 このチュートリアルでは、以下の Word 作業ウィンドウ アドインを作成します。
 
 > [!div class="checklist"]
-> * テキスト範囲の挿入
-> * テキストの書式設定
-> * テキストの置換とさまざまな位置へのテキストの挿入
-> * 画像、HTML、テーブルの挿入
-> * コンテンツ コントロールの作成と更新 
+>
+> - テキスト範囲の挿入
+> - テキストの書式設定
+> - テキストの置換とさまざまな位置へのテキストの挿入
+> - 画像、HTML、テーブルの挿入
+> - コンテンツ コントロールの作成と更新
 
 > [!TIP]
 > 既に [[最初の Word タスク ウィンドウ アドインのビルド](../quickstarts/word-quickstart.md)] の クイックスタートを完​​了しており、このチュートリアルの出発点としてそのプロジェクトを使用する場合は、[[テキストの範囲を挿入する](#insert-a-range-of-text)] セクションに直接移動します。
@@ -38,7 +39,7 @@ ms.locfileid: "48741135"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![Yeoman ジェネレーターのプロンプトと応答のスクリーンショット](../images/yo-office-word.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -91,7 +92,7 @@ ms.locfileid: "48741135"
 
    - `context.sync` メソッドは、キューに登録されたすべてのコマンドを、実行するために Word に送信します。
 
-   - `Word.run` の後に `catch` ブロックが表示されます。この方法は、常に理解しておくことをお勧めします。 
+   - `Word.run` の後に `catch` ブロックが表示されます。この方法は、常に理解しておくことをお勧めします。
 
     ```js
     function insertParagraph() {
@@ -154,7 +155,7 @@ ms.locfileid: "48741135"
 
 2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-2b.png)
+    ![Wordで強調表示された [作業ウィンドウの表示] ボタンを表示するスクリーンショット](../images/word-quickstart-addin-2b.png)
 
 3. 作業ウィンドウで、[**段落の挿入**] ボタンを選択します。
 
@@ -162,7 +163,7 @@ ms.locfileid: "48741135"
 
 5. [**段落の挿入**] ボタンをもう一度選択します。 `insertParagraph` メソッドはドキュメントの本文の開始位置に挿入を行うため、新しい段落は前の段落より上に表示されます。
 
-    ![Word のチュートリアル - 段落の挿入](../images/word-tutorial-insert-paragraph-2.png)
+    ![アドインの [段落の挿入] ボタンが表示されているスクリーンショット](../images/word-tutorial-insert-paragraph-2.png)
 
 ## <a name="format-text"></a>テキストの書式設定
 
@@ -191,7 +192,7 @@ ms.locfileid: "48741135"
     ```js
     function applyStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to style text.
 
             return context.sync();
@@ -203,20 +204,20 @@ ms.locfileid: "48741135"
             }
         });
     }
-    ``` 
+    ```
 
 6. `applyStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードではスタイルを段落に適用していますが、スタイルはテキストの範囲にも適用できます。
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
-    ``` 
+    ```
 
 ### <a name="apply-a-custom-style-to-text"></a>カスタム スタイルをテキストに適用する
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `apply-style` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `apply-style` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -235,7 +236,7 @@ ms.locfileid: "48741135"
     ```js
     function applyCustomStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply the custom style.
 
             return context.sync();
@@ -247,14 +248,14 @@ ms.locfileid: "48741135"
             }
         });
     }
-    ``` 
+    ```
 
 6. `applyCustomStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、まだ存在していないカスタム スタイルを適用しています。 「[アドインをテストする](#test-the-add-in-1)」の手順で **MyCustomStyle** という名前のスタイルを作成します。
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
-    ``` 
+    ```
 
 7. プロジェクトに行ったすべての変更が保存されていることを確認します。
 
@@ -262,7 +263,7 @@ ms.locfileid: "48741135"
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `apply-custom-style` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `apply-custom-style` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -281,7 +282,7 @@ ms.locfileid: "48741135"
     ```js
     function changeFont() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply a different font.
 
             return context.sync();
@@ -293,7 +294,7 @@ ms.locfileid: "48741135"
             }
         });
     }
-    ``` 
+    ```
 
 6. `changeFont()` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、`Paragraph.getNext` メソッドにチェーンされた `ParagraphCollection.getFirst` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
 
@@ -304,7 +305,7 @@ ms.locfileid: "48741135"
             bold: true,
             size: 18
         });
-    ``` 
+    ```
 
 7. プロジェクトに行ったすべての変更が保存されていることを確認します。
 
@@ -324,7 +325,7 @@ ms.locfileid: "48741135"
 
 7. **フォントの変更** ボタンを選択します。2番目の段落のフォントは、18 pt、太字、Courier New に変わります。
 
-    ![Word のチュートリアル - スタイルとフォントの適用](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![アドインボタン [スタイルの適用]、[カスタムスタイルの適用]、および [フォントの変更] に定義されたスタイルとフォントを適用した結果を表示するスクリーンショット](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## <a name="replace-text-and-insert-text"></a>テキストの置換と挿入
 
@@ -334,7 +335,7 @@ ms.locfileid: "48741135"
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `change-font` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `change-font` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
@@ -347,6 +348,7 @@ ms.locfileid: "48741135"
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
+
 5. 次の関数をファイルの最後に追加します。
 
     ```js
@@ -370,7 +372,7 @@ ms.locfileid: "48741135"
             }
         });
     }
-    ``` 
+    ```
 
 6. `insertTextIntoRange()` 関数で、`TODO1` を次のコードに置き換えます。 注:
 
@@ -378,7 +380,7 @@ ms.locfileid: "48741135"
 
    - `Range.insertText` メソッドの最初のパラメーターは、`Range` オブジェクトに挿入する文字列です。
 
-   - 2番目のパラメーターは、追加するテキストを挿入する範囲内の場所を指定します。[末尾] 以外の選択肢としては、"Start"、"Before"、"After"、および "Replace" があります。 
+   - 2番目のパラメーターは、追加するテキストを挿入する範囲内の場所を指定します。[末尾] 以外の選択肢としては、"Start"、"Before"、"After"、および "Replace" があります。
 
    - "終了" と "後" の違いは、"End" は既存の範囲の末尾に新しいテキストを挿入することですが、"After" の場合は、文字列を使用して新しい範囲を作成し、既存の範囲の後に新しい範囲を挿入します。同様に、"Start" は既存の範囲の先頭にテキストを挿入し、"前" は新しい範囲を挿入します。"置換" は、既存の範囲のテキストを最初のパラメーターの文字列で置き換えます。
 
@@ -398,7 +400,7 @@ ms.locfileid: "48741135"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>ドキュメントのプロパティを作業ウィンドウのスクリプト オブジェクトにフェッチするコードを追加する
 
-このチュートリアルのシリーズで前述したすべての関数では、Office ドキュメントへの*書き込み*コマンドをキューに登録していました。 各関数は、キューに登録されたコマンドを実行対象のドキュメントに送信する `context.sync()` メソッドを呼び出すことで終了しています。 ただし、最後の手順で追加したコードでは、`originalRange.text` プロパティを呼び出しています。このことが、これまでに作成した関数とは大きく異なります。`originalRange` オブジェクトは、この作業ウィンドウのスクリプトに存在する単なるプロキシ オブジェクトなので、 ドキュメントの指定された範囲にある実際のテキストを認識できません。そのため、その `text` プロパティでは実際の値が保持できません。 まず、ドキュメントからその範囲のテキスト値をフェッチする必要があり、その値を使用して `originalRange.text` の値を設定します。 そのようにした場合にのみ、例外がスローされることなく `originalRange.text` を呼び出せるようになります。 このフェッチ処理には、3 つの手順があります。
+このチュートリアルのシリーズで前述したすべての関数では、Office ドキュメントへの *書き込み* コマンドをキューに登録していました。 各関数は、キューに登録されたコマンドを実行対象のドキュメントに送信する `context.sync()` メソッドを呼び出すことで終了しています。 ただし、最後の手順で追加したコードでは、`originalRange.text` プロパティを呼び出しています。このことが、これまでに作成した関数とは大きく異なります。`originalRange` オブジェクトは、この作業ウィンドウのスクリプトに存在する単なるプロキシ オブジェクトなので、 ドキュメントの指定された範囲にある実際のテキストを認識できません。そのため、その `text` プロパティでは実際の値が保持できません。 まず、ドキュメントからその範囲のテキスト値をフェッチする必要があり、その値を使用して `originalRange.text` の値を設定します。 そのようにした場合にのみ、例外がスローされることなく `originalRange.text` を呼び出せるようになります。 このフェッチ処理には、3 つの手順があります。
 
    1. コードで読み取る必要があるプロパティをロードする (つまりフェッチする) コマンドをキューに登録します。
 
@@ -406,7 +408,7 @@ ms.locfileid: "48741135"
 
    3. `sync` メソッドは非同期であるため、フェッチされたプロパティをコードで呼び出す前に、そのメソッドが完了していることを確認します。
 
-こうした手順は、コードで Office ドキュメントから情報を*読み取る*必要がある場合には必ず完了する必要があります。
+こうした手順は、コードで Office ドキュメントから情報を *読み取る* 必要がある場合には必ず完了する必要があります。
 
 1. `insertTextIntoRange()` 関数で、`TODO2` を次のコードに置き換えます。
   
@@ -465,7 +467,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `insert-text-into-range` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `insert-text-into-range` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -545,7 +547,7 @@ function insertTextIntoRange() {
 
 1. ファイル_*./src/taskpane/taskpane.html** を開きます。
 
-2. `insert-text-outside-range` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `insert-text-outside-range` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -608,7 +610,7 @@ function insertTextIntoRange() {
 
 9. **数量の単位を変更** ボタンを選択します。選択したテキストは "多" で置き換えられます。
 
-    ![Word のチュートリアル - テキストの追加と置換](../images/word-tutorial-text-replace-2.png)
+    ![アドインボタン [略語の挿入]、[バージョン情報の追加]、および [数量期間の変更] を選択した結果を示すスクリーンショット](../images/word-tutorial-text-replace-2.png)
 
 ## <a name="insert-images-html-and-tables"></a>画像、HTML、テーブルの挿入
 
@@ -616,7 +618,7 @@ function insertTextIntoRange() {
 
 ### <a name="define-an-image"></a>画像の定義
 
-次の手順に従って、このチュートリアルの次の部分でドキュメントに挿入する画像を定義します。 
+次の手順に従って、このチュートリアルの次の部分でドキュメントに挿入する画像を定義します。
 
 1. プロジェクトのルートで、**base64Image.js** という新しいファイルを作成します。
 
@@ -631,7 +633,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `replace-text` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `replace-text` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
@@ -680,7 +682,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `insert-image` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `insert-image` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
@@ -693,6 +695,7 @@ function insertTextIntoRange() {
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
+
 5. 次の関数をファイルの最後に追加します。
 
     ```js
@@ -727,7 +730,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `insert-html` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `insert-html` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
@@ -804,7 +807,7 @@ function insertTextIntoRange() {
 
 6. **[テーブルの挿入]** ボタンをクリックし、2 番目の段落の後にテーブルが挿入されることに注意してください。
 
-    ![Word のチュートリアル - 画像、HTML、テーブルの挿入](../images/word-tutorial-insert-image-html-table-2.png)
+    ![アドインボタン [画像の挿入]、[HTMLの挿入]、および [テーブルの挿入] を選択した結果を示すスクリーンショット](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## <a name="create-and-update-content-controls"></a>コンテンツ コントロールの作成と更新
 
@@ -819,7 +822,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `insert-table` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `insert-table` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
@@ -832,6 +835,7 @@ function insertTextIntoRange() {
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
+
 5. 次の関数をファイルの最後に追加します。
 
     ```js
@@ -876,7 +880,7 @@ function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.html** を開きます。
 
-2. `create-content-control` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。 
+2. `create-content-control` ボタンの `<button>` 要素を見つけ、その行の後に次のマークアップを追加します。
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
@@ -929,11 +933,11 @@ function insertTextIntoRange() {
 
 3. 作業ウィンドウで [**段落の挿入**] ボタンを選択し、文書の先頭が Office 365 となっている段落があることを確認します。
 
-4. ドキュメントで、「Office 365」というテキストを選択し、[**コンテンツコントロールの作成 **] ボタンを選択します。 Service Name というラベルが付いたタグで語句がラップされていることに注意してください。
+4. ドキュメントで、「Office 365」というテキストを選択し、[**コンテンツコントロールの作成**] ボタンを選択します。 Service Name というラベルが付いたタグで語句がラップされていることに注意してください。
 
-7. **[サービス名の変更]** ボタンを選択し、コンテンツ コントロールのテキストが Fabrikam Online Productivity Suite に変わることに注意してください。
+5. **[サービス名の変更]** ボタンを選択し、コンテンツ コントロールのテキストが Fabrikam Online Productivity Suite に変わることに注意してください。
 
-    ![Word のチュートリアル - コンテンツ コントロールの作成とテキストの変更](../images/word-tutorial-content-control-2.png)
+    ![アドインボタン [コンテンツコントロールの作成] と [サービスの名前変更] を選択した結果を示すスクリーンショット](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>次の手順
 
@@ -944,6 +948,5 @@ function insertTextIntoRange() {
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
-
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
