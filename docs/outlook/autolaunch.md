@@ -2,14 +2,14 @@
 title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 11/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175550"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408842"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
 
@@ -188,7 +188,7 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
     npm run dev-server
@@ -219,6 +219,7 @@ UI を変更または変更する一部の Office.js Api は、イベントベ�
   - `displayDialogAsync`
   - `messageParent`
 - `Office.context.auth`以下:
+  - `getAccessToken`
   - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>関連項目
