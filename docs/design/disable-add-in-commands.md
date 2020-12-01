@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 11/07/2020
+ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a9994ae25285c876236879e65861ee3cc59f7e5
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
+ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996390"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "49505465"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -32,7 +32,7 @@ ms.locfileid: "48996390"
 Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要件セットに属しています。
 
 > [!NOTE]
-> **Ribbonapi 1.1** 要件セットはマニフェストでまだサポートされていないため、マニフェストのセクションで指定することはできません `<Requirements>` 。 サポートをテストするには、コードがを呼び出す必要があり `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` ます。 呼び出しが戻る *場合に限り* 、コードで `true` Enable/disable api を呼び出すことができます。 を呼び出した場合 `isSetSupported` は `false` 、すべてのカスタムアドインコマンドが常に有効になります。 **Ribbonapi 1.1** 要件セットがサポートされていない場合にどのように動作するかを考慮するには、運用アドインとアプリ内の手順を設計する必要があります。 の使用法の詳細と例については `isSetSupported` 、「 [Office アプリケーションと API 要件を指定](../develop/specify-office-hosts-and-api-requirements.md)する」を参照してください。特に、 [JavaScript コードでランタイムチェックを使用](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)します。 (この記事の [マニフェストの要件要素を設定](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) するセクションは、リボン1.1 には適用されません。)
+> **Ribbonapi 1.1** 要件セットはマニフェストでまだサポートされていないため、マニフェストのセクションで指定することはできません `<Requirements>` 。 サポートをテストするには、コードがを呼び出す必要があり `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` ます。 呼び出しが戻る *場合に限り*、コードで `true` Enable/disable api を呼び出すことができます。 を呼び出した場合 `isSetSupported` は `false` 、すべてのカスタムアドインコマンドが常に有効になります。 **Ribbonapi 1.1** 要件セットがサポートされていない場合にどのように動作するかを考慮するには、運用アドインとアプリ内の手順を設計する必要があります。 の使用法の詳細と例については `isSetSupported` 、「 [Office アプリケーションと API 要件を指定](../develop/specify-office-hosts-and-api-requirements.md)する」を参照してください。特に、 [JavaScript コードでランタイムチェックを使用](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)します。 (この記事の [マニフェストの要件要素を設定](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) するセクションは、リボン1.1 には適用されません。)
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
@@ -48,7 +48,7 @@ Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-a
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
 
-既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](../reference/manifest/action.md) 要素の *直下* (内部ではない) に、 [Enabled](../reference/manifest/enabled.md) 要素 (値は `false`) を追加するだけで無効にすることができます。 基本的な構造を次に示します。
+既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](../reference/manifest/action.md) 要素の *直下* (内部ではない) に、[Enabled](../reference/manifest/enabled.md) 要素 (値は `false`) を追加するだけで無効にすることができます。 基本的な構造を次に示します。
 
 ```xml
 <OfficeApp ...>
@@ -97,7 +97,7 @@ function enableButton() {
 }
 ```
 
-また、 **RibbonUpdateData** オブジェクトを簡単に構築できるように、いくつかのインターフェイスも (何種類か) 用意しています。 以下は、TypeScript の同じ例であり、インターフェイスを使用したものです。
+また、**RibbonUpdateData** オブジェクトを簡単に構築できるように、いくつかのインターフェイスも (何種類か) 用意しています。 以下は、TypeScript の同じ例であり、インターフェイスを使用したものです。
 
 ```typescript
 const enableButton = async () => {
@@ -116,7 +116,7 @@ Office では、リボンの状態を更新するタイミングが制御され�
 
 グラフがアクティブになったときにのみボタンを有効にするシナリオを考えます。 まず、マニフェストのボタンの [Enabled](../reference/manifest/enabled.md) 要素を `false` に設定します。 例については上記を参照してください。
 
-次に、ハンドラーを割り当てます。 これは通常、ハンドラー (後の手順で作成) をワークシート内のすべてのグラフの **onActivated** および **onDeactivated** イベントに割り当てる以下の例のように、 **Office.onReady** メソッドで行います。
+次に、ハンドラーを割り当てます。 これは通常、ハンドラー (後の手順で作成) をワークシート内のすべてのグラフの **onActivated** および **onDeactivated** イベントに割り当てる以下の例のように、**Office.onReady** メソッドで行います。
 
 ```javascript
 Office.onReady(async () => {
@@ -143,6 +143,10 @@ function enableChartFormat() {
 ```
 
 最後に、`disableChartFormat` ハンドラーを定義します。 `enableChartFormat` と同じですが、ボタン オブジェクトの **enabled** プロパティを `false` に設定する必要があります。
+
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>ボタンの表示/非表示の状態を同時に切り替えます。
+
+**Requestupdate** メソッドは、カスタムのコンテキストタブの表示を切り替えるためにも使用されます。このコード例の詳細については、「[アドインコマンドを有効または無効](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)にする」を参照してください。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 
