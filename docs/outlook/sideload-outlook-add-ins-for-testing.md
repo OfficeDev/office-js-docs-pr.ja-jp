@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 07/09/2020
+ms.date: 12/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: dea2125ccd64eba2e3f1695c8ca1111a710321a4
+ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093883"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "49530928"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -57,7 +57,7 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
     ![[アドインの管理] オプションを示す Outlook on the web のスクリーンショット](../images/outlook-sideload-web-manage-integrations.png)
 
-1. **アドインの管理**ページで、**[アドイン]** を選択してから、**[個人用アドイン]** を選択します。
+1. **アドインの管理** ページで、**[アドイン]** を選択してから、**[個人用アドイン]** を選択します。
 
     ![Outlook on the web の [ストア] ダイアログ ボックスで [個人用アドイン] を選択しているところ](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -75,12 +75,18 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
 1. リボンで [**アドインを取得**] ボタンを選択します。
 
-    ![[ストア] ボタンを示す Outlook 2016 リボン](../images/outlook-sideload-desktop-store.png)
+    ![[アドインの取得] ボタンをポイントする Outlook 2016 リボン](../images/outlook-sideload-desktop-store.png)
 
-    > [!NOTE]
-    > お使いのバージョンの Outlook で [**アドインを取得**] ボタンが表示されない場合、代わりに、リボンで [**ストア**] ボタンを選択します。
+    > [!IMPORTANT]
+    > 使用している Outlook のバージョンで [アドインの **取得** ] ボタンが表示されない場合は、次のように選択します。
+    >
+    > - リボン上の [**ストア**] ボタン (使用可能な場合)。
+    >
+    >   OR
+    >
+    > - [**ファイル**] メニューの [**情報**] タブで [アドインの **管理**] をクリックして、Outlook on the web の **[アドイン] ダイアログを** 開きます。<br>Web の詳細については、「 [Outlook on the web in a サイドロード](#sideload-an-add-in-in-outlook-on-the-web)in the web」を参照してください。
 
-1. [**アドイン**] を選択し、[**個人用アドイン**] を選択します。
+1. ダイアログボックスの上部付近にタブがある場合は、[ **アドイン** ] タブが選択されていることを確認します。 [ **個人用アドイン**] を選びます。
 
     ![Outlook 2016 の [ストア] ダイアログ ボックスで [個人用アドイン] を選択しているところ](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -94,10 +100,10 @@ Web 上の Outlook でアドインをサイドロードするためのプロセ�
 
 1. Windows で Outlook 2013 を開きます。
 
-1. [**ファイル**] メニューを選択し、[**情報**] タブの [アドインの**管理**] をクリックします。 Outlook はブラウザーを開きます。
+1. [**ファイル**] メニューを選択し、[**情報**] タブの [アドインの **管理**] をクリックします。Outlook は、ブラウザーで web バージョンを開きます。
 
-1. Web 上の Outlook のバージョンに応じて、「 [web 上の outlook でアドインをサイドロード](#sideload-an-add-in-in-outlook-on-the-web)する」セクションの手順を実行します。
+1. Web 上の Outlook のバージョンに応じて、「 [web 上の outlook でアドインをサイドロード](#sideload-an-add-in-in-outlook-on-the-web) する」セクションの手順を実行します。
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードアドインを削除する
 
-サイドロードアドインを Outlook から削除するには、この記事で前述した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [**カスタムアドイン**] セクションでアドインを検索します。アドインの省略記号 () を選択 `...` し、[**削除**] を選択して、その特定のアドインを削除します。
+Outlook からサイドロードアドインを削除するには、この記事で前述した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [ **カスタムアドイン** ] セクションでアドインを見つけます。アドインの省略記号 () を選択 `...` し、[ **削除** ] を選択して、その特定のアドインを削除します。

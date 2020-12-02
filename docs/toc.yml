@@ -188,6 +188,8 @@ items:
                         href: design/add-in-commands.md
                       - name: アドイン コマンドを作成する
                         href: develop/create-addin-commands.md
+                      - name: カスタム コンテキスト タブを作成する
+                        href: design/contextual-tabs.md
                       - name: アドイン コマンドを有効または無効にする
                         href: design/disable-add-in-commands.md
                       - name: 組み込みの Office ボタンをカスタム タブに統合する
