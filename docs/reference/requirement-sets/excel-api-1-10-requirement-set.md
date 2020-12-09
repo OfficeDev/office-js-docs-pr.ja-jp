@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要件セット1.10
 description: ExcelApi 1.10 の要件セットに関する詳細。
-ms.date: 11/09/2020
+ms.date: 11/19/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b7bfd8038883dc527721d648b2b75d7187886f49
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 951835a040b767bc9cf802be4d3bb0790b49fc06
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996244"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603786"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 の新機能
 
@@ -19,7 +19,7 @@ ExcelApi 1.10 には、コメント、アウトライン、スライサーなど
 |:--- |:--- |:--- |
 | [コメント](../../excel/excel-add-ins-comments.md) | コメントを追加、編集、削除します。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | [アウトライン](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 行と列をグループ化して、折りたたみ可能なアウトラインを作成します。 | [範囲](/javascript/api/excel/excel.range)、 [ワークシート](/javascript/api/excel/excel.worksheet) |
-| [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | テーブルやピボットテーブルにスライサーを挿入し、構成します。 | [Slicer](/javascript/api/excel/excel.slicer) |
+| [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | テーブルやピボットテーブルにスライサーを挿入し、構成します。 | [Slicer](/javascript/api/excel/excel.slicer) |
 | [その他のワークシートイベント](../../excel/excel-add-ins-events.md) | ワークシートでクリックして並べ替えイベントを待機します。 | [ワークシート (イベント)](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>API リスト
