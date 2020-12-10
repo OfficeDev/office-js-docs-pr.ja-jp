@@ -3,12 +3,12 @@ title: Office アドインでカスタムコンテキストタブを作成する
 description: カスタムコンテキストタブを Office アドインに追加する方法について説明します。
 ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 49a773aca0651b88c972c24a4cde0aa1e300d5e7
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: d8617c7dd8748d15393c0e38c527062e5894e791
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505557"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612737"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Office アドインでカスタムコンテキストタブを作成する (プレビュー)
 
@@ -117,7 +117,7 @@ ms.locfileid: "49505557"
     - この `id` プロパティは、タブ内のすべてのグループ間で一意である必要があります。簡潔でわかりやすい ID を使用してください。
     - `label`は、グループのラベルとして機能する、ユーザーフレンドリな文字列です。
     - `icon`プロパティの値は、リボンと Office アプリケーションウィンドウのサイズに応じて、グループがリボン上に持つアイコンを指定するオブジェクトの配列です。
-    - `controls`プロパティの値は、グループ内のボタンやその他のコントロールを指定するオブジェクトの配列です。 *グループに* は、少なくとも1つの値が必要です。
+    - `controls`プロパティの値は、グループ内のボタンとメニューを指定するオブジェクトの配列です。 *グループに* は、少なくとも1つの値が必要です。
 
     > [!IMPORTANT]
     > *タブ全体のコントロールの合計数は20以下でなければなりません。* たとえば、6つのグループと2つのコントロールを持つ4つのグループを持つことができますが、それぞれ6つのコントロールを持つ4つのグループを持つことはできません。  
@@ -135,7 +135,7 @@ ms.locfileid: "49505557"
     }
     ```
 
-1. すべてのグループには、少なくとも2つのサイズのアイコン、32x32 px、80x80 px が必要です。 必要に応じて、サイズが16x16、20x20、24x24、40x40、48x48、64x64 のアイコンを設定することもできます。 Office は、リボンおよび Office アプリケーションウィンドウのサイズに基づいて、どのアイコンを使用するかを決定します。 アイコン配列に次のオブジェクトを追加します。 (ウィンドウ上の少なくとも1つの *コントロール* が表示されるようにウィンドウとリボンのサイズが大きい場合、[グループ] アイコンはまったく表示されません。 例については、word のウィンドウを縮小して展開するときに、Word のリボンの [ **スタイル** ] グループを見てください。このマークアップについて、次の点に注意してください。
+1. すべてのグループには、少なくとも2つのサイズのアイコン、32x32 px、80x80 px が必要です。 必要に応じて、サイズが 16x16 px、20x20 px、24x24 px、40x40 px、48x48 px、および 64x64 px のアイコンを使用することもできます。 Office は、リボンおよび Office アプリケーションウィンドウのサイズに基づいて、どのアイコンを使用するかを決定します。 アイコン配列に次のオブジェクトを追加します。 (ウィンドウ上の少なくとも1つの *コントロール* が表示されるようにウィンドウとリボンのサイズが大きい場合、[グループ] アイコンはまったく表示されません。 例については、word のウィンドウを縮小して展開するときに、Word のリボンの [ **スタイル** ] グループを見てください。このマークアップについて、次の点に注意してください。
 
     - 両方のプロパティが必要です。
     - `size`プロパティの測定単位はピクセルです。 アイコンは常に正方形なので、数字は高さと幅の両方です。
@@ -193,7 +193,7 @@ ms.locfileid: "49505557"
 JSON blob の完全な例を次に示します。
 
 ```json
-'{
+`{
   "actions": [
     {
       "id": "executeWriteData",
@@ -246,7 +246,7 @@ JSON blob の完全な例を次に示します。
       ]
     }
   ]
-}'
+}`
 ```
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>RequestCreateControls を使用して Office にコンテキストタブを登録する
@@ -260,7 +260,7 @@ JSON blob の完全な例を次に示します。
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ` ... `; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -289,7 +289,7 @@ Office.onReady(async () => {
 });
 ```
 
-次に、ハンドラーを定義します。 の簡単な例を次に示し `showDataTab` ますが、より堅牢なバージョンの関数については、この記事で後述する「 [エラー処理](#error-handling) 」を参照してください。 このコードについては、以下の点に注意してください。
+次に、ハンドラーを定義します。 の簡単な例を次に示します `showDataTab` が、より堅牢なバージョンの関数については、この記事で後述する「 [HostRestartNeeded なエラーを処理](#handling-the-hostrestartneeded-error) する」を参照してください。 このコードについては、以下の点に注意してください。
 
 - Office では、リボンの状態を更新するタイミングが制御されます。 [Office の更新](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-)要求をキューに入れます。 このメソッドは、 `Promise` リボンが実際に更新されるときではなく、要求がキューに入った直後にオブジェクトを解決します。
 - メソッドのパラメーター `requestUpdate` は、 *JSON で指定され* た ID を使用してタブを指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata)オブジェクトであり、(2) はタブの表示を指定します。
@@ -363,7 +363,59 @@ function myContextChanges() {
 }
 ```
 
-## <a name="error-handling"></a>エラー処理
+## <a name="localizing-the-json-blob"></a>JSON blob のローカライズ
+
+に渡される JSON blob はローカライズされて `requestCreateControls` いません (「 [マニフェストからのローカライズの制御](../develop/localization.md#control-localization-from-the-manifest)」で説明しています)。 代わりに、ローカライズはロケールごとに個別の JSON blob を使用して実行時に実行する必要があります。 `switch` [Displaylanguage](/javascript/api/office/office.context#displayLanguage)プロパティをテストするステートメントを使用することをお勧めします。 例を次に示します。
+
+```javascript
+function GetContextualTabsJsonSupportedLocale () {
+    var displayLanguage = Office.context.displayLanguage;
+
+        switch (displayLanguage) {
+            case 'en-US':
+                return `{
+                    "actions": [
+                        // actions omitted
+                     ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Data",
+                          "groups": [
+                              // groups omitted
+                          ]
+                        }
+                    ]
+                }`;
+
+            case 'fr-FR':
+                return `{
+                    "actions": [
+                        // actions omitted 
+                    ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Données",
+                          "groups": [
+                              // groups omitted
+                          ]
+                       }
+                    ]
+               }`;
+
+            // Other cases omitted
+       }
+}
+```
+
+次の例のように、コードで関数を呼び出して、に渡されるローカライズされた blob を取得し `requestCreateControls` ます。
+
+```javascript
+var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+```
+
+## <a name="handling-the-hostrestartneeded-error"></a>HostRestartNeeded なエラーの処理
 
 一部のシナリオでは、Office はリボンを更新できず、エラーを返します。 たとえば、アドインがアップグレードされ、アップグレードされたアドインに異なるカスタム アドイン コマンドのセットがある場合は、Office アプリケーションを閉じてから、もう一度開く必要があります。 それまでの間、`requestUpdate` メソッドは `HostRestartNeeded` エラーを返します。 このエラーの処理方法の例を次に示します。 この場合、`reportError` メソッドがユーザーにエラーを表示します。
 
