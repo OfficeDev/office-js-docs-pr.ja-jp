@@ -717,7 +717,7 @@ items:
           - name: JSON メタデータを手動で作成する
             href: excel/custom-functions-json.md
             displayName: 'Excel, Custom Functions'
-          - name: 動的な配列を返す
+          - name: 動的配列を返す
             href: excel/custom-functions-dynamic-arrays.md
             displayName: 'Excel, Custom Functions'
           - name: 共有ランタイム
@@ -737,7 +737,7 @@ items:
           - name: 揮発性関数
             href: excel/custom-functions-volatile.md
             displayName: 'Excel, Custom Functions'
-          - name: Web 要求
+          - name: Web リクエスト
             href: excel/custom-functions-web-reqs.md
             displayName: 'Excel, Custom Functions'
           - name: トラブルシューティング
@@ -1082,6 +1082,9 @@ items:
                 displayName: PowerPoint
           - name: API リファレンス
             href: reference/powerpoint-api-reference.md
+            displayName: PowerPoint
+          - name: プレゼンテーションのスライドを挿入および削除する
+            href: powerpoint/insert-slides-into-presentation.md
             displayName: PowerPoint
           - name: アドインからドキュメント全体を取得する
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
