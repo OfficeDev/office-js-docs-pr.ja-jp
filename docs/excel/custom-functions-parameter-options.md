@@ -1,24 +1,24 @@
 ---
-ms.date: 11/06/2020
-description: Excel 範囲、省略可能なパラメーター、呼び出しコンテキストなど、カスタム関数内でさまざまなパラメーターを使用する方法について説明します。
+ms.date: 12/09/2020
+description: Excel の範囲、オプションのパラメーター、呼び出しコンテキストなど、カスタム関数内で異なるパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
+ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071621"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49624667"
 ---
-# <a name="custom-functions-parameter-options"></a>カスタム関数のパラメータオプション
+# <a name="custom-functions-parameter-options"></a>カスタム関数のパラメーター オプション
 
-カスタム関数は、さまざまなパラメーターオプションを使用して構成できます。
+カスタム関数は、さまざまなパラメーター オプションを使用して構成できます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="optional-parameters"></a>オプションのパラメーター
 
-ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 次の例では、add 関数で3番目の番号を追加することもできます。 この関数 `=CONTOSO.ADD(first, second, [third])` は Excel のように表示されます。
+ユーザーが Excel で関数を呼び出すと、角かっこで囲まれた省略可能なパラメーターが表示されます。 次のサンプルでは、add 関数は必要に応じて 3 番目の数値を追加できます。 この関数は Excel と `=CONTOSO.ADD(first, second, [third])` 同様に表示されます。
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -61,9 +61,9 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> 省略可能なパラメーターに値が指定されていない場合、Excel によって値が割り当てられ `null` ます。 これは、TypeScript の既定の初期化されたパラメーターが期待どおりに動作しないことを意味します。 この構文は `function add(first:number, second:number, third=0):number` 0 に初期化されないため、使用しないで `third` ください。 その代わりに、前の例のように TypeScript 構文を使用します。
+> 省略可能なパラメーターに値を指定しない場合、Excel によって値が割り当てらされます `null` 。 つまり、TypeScript の既定で初期化されたパラメーターは期待通り動作しません。 この構文は 0 に初期化 `function add(first:number, second:number, third=0):number` されないので使用 `third` してください。 代わりに、前の例で示した TypeScript 構文を使用します。
 
-オプションのパラメーターが1つ以上含まれる関数を定義するときは、オプションのパラメーターが null の場合に何が起こるかを指定します。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 `zipCode`パラメーターが null の場合、既定値はに設定され `98052` ます。 `dayOfWeek`パラメーターが null の場合は、水曜日に設定します。
+1 つ以上のオプション パラメーターを含む関数を定義する場合は、オプションパラメーターが null の場合の処理を指定します。 次の例の `zipCode` と `dayOfWeek` は、どちらも `getWeatherReport` 関数の省略可能なパラメーターです。 パラメーターが `zipCode` null の場合、既定値はに設定されます `98052` 。 パラメーターが `dayOfWeek` null の場合は、水曜日に設定されます。
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -117,9 +117,9 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ## <a name="range-parameters"></a>範囲パラメーター
 
-カスタム関数は、入力パラメーターとして範囲のセルデータを受け入れることができます。 関数は、データの範囲を返すこともできます。 Excel は、セルデータの範囲を2次元配列として渡します。
+カスタム関数は、入力パラメーターとしてセル データの範囲を受け入れる場合があります。 関数は、データの範囲を返す場合があります。 Excel はセル データの範囲を 2 次元配列として渡します。
 
-例えば、関数が Excel に保存されている数値の範囲から 2 番目に大きい値を返すとします。 次の関数は、`Excel.CustomFunctionDimensionality.matrix` 型の `values` パラメーターを受け入れます。 この関数の JSON メタデータでは、パラメーターの `type` プロパティがに設定されていることに注意して `matrix` ください。
+例えば、関数が Excel に保存されている数値の範囲から 2 番目に大きい値を返すとします。 次の関数はパラメーターを受け入れ、JSDOC 構文はパラメーターのプロパティをこの関数の JSON メタデータ `values` `number[][]` `dimensionality` `matrix` に設定します。 
 
 ```js
 /**
@@ -146,9 +146,9 @@ function secondHighest(values) {
 
 ## <a name="repeating-parameters"></a>繰り返しパラメーター
 
-繰り返しパラメーターを使用すると、ユーザーは関数に一連のオプションの引数を入力できます。 関数が呼び出されると、パラメーターの配列に値が提供されます。 パラメーター名が数値で終わる場合、各引数の値は、などの増分で増加し `ADD(number1, [number2], [number3],…)` ます。 これは、Excel の組み込み関数で使用される規則に一致します。
+繰り返しパラメーターを使用すると、ユーザーは関数に一連のオプションの引数を入力できます。 関数が呼び出される場合、値はパラメーターの配列で提供されます。 パラメーター名の最後が数値の場合、各引数の数値は徐々に増加します。次に例を示します `ADD(number1, [number2], [number3],…)` 。 これは、組み込みの Excel 関数で使用される規則に一致します。
 
-次の関数は、合計数、セルの住所、および範囲 (入力した場合) を合計します。
+次の関数は、入力されている場合、数値、セル アドレス、および範囲の合計を合計します。
 
 ```TS
 /**
@@ -172,13 +172,13 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-この関数は `=CONTOSO.ADD([operands], [operands]...)` 、Excel ブックに表示されます。
+この関数は Excel `=CONTOSO.ADD([operands], [operands]...)` ブックに表示されます。
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
-### <a name="repeating-single-value-parameter"></a>繰り返し単一値パラメータ
+### <a name="repeating-single-value-parameter"></a>繰り返し単一値パラメーター
 
-繰り返し単一の値のパラメーターを使用すると、複数の単一の値を渡すことができます。 たとえば、ユーザーは、「ADD (1, B2, 3)」と入力することができます。 次の例は、単一の値のパラメーターを宣言する方法を示しています。
+繰り返し単一値パラメーターを使用すると、複数の単一の値を渡す可能性があります。 たとえば、ユーザーは ADD(1,B2,3) と入力できます。 次のサンプルは、1 つの値パラメーターを宣言する方法を示しています。
 
 ```JS
 /**
@@ -195,9 +195,9 @@ function addSingleValue(singleValue) {
 }
 ```
 
-### <a name="single-range-parameter"></a>単一範囲のパラメーター
+### <a name="single-range-parameter"></a>単一の範囲パラメーター
 
-単精度浮動小数点型 (single) のパラメーターは厳密には繰り返しパラメーターではありませんが、宣言は繰り返しパラメーターによく似ているので、ここに含まれています。 ユーザーには、Excel から1つの範囲が渡される追加 (A2: B3) として表示されます。 次の例は、1つの range パラメーターを宣言する方法を示しています。
+1 つの範囲パラメーターは技術的には繰り返しパラメーターではなく、宣言が繰り返しパラメーターと非常に似ているため、ここに含まれています。 ユーザーには ADD(A2:B3) と表示され、Excel から 1 つの範囲が渡されます。 次のサンプルは、1 つの範囲パラメーターを宣言する方法を示しています。
 
 ```JS
 /**
@@ -215,23 +215,23 @@ function addSingleRange(singleRange) {
 }
 ```
 
-### <a name="repeating-range-parameter"></a>繰り返し範囲のパラメーター
+### <a name="repeating-range-parameter"></a>繰り返し範囲パラメーター
 
-繰り返し範囲パラメーターを使用すると、複数の範囲または数値を渡すことができます。 たとえば、ユーザーは ADD (5、B2、C3、8、E5: E8) を入力することができます。 通常、繰り返し範囲は `number[][][]` 3 次元の行列として型で指定されます。 サンプルについては、繰り返しパラメーター (#repeating パラメーター) の主なサンプルを参照してください。
+繰り返し範囲パラメーターを使用すると、複数の範囲または数値を渡できます。 たとえば、ユーザーは ADD(5,B2,C3,8,E5:E8) と入力できます。 繰り返し範囲は、通常、3 次元マトリックス `number[][][]` である型で指定されます。 サンプルについては、繰り返しパラメーター (#repeating-parameters) の一覧にあるメイン サンプルを参照してください。
 
 
 ### <a name="declaring-repeating-parameters"></a>繰り返しパラメーターの宣言
-Typescript で、パラメーターが多次元であることを示します。 たとえば、は  `ADD(values: number[])` 1 次元配列を示し、 `ADD(values:number[][])` 2 次元配列というように指定します。
+Typescript で、パラメーターが多次元パラメーターかどうかを示します。 たとえば  `ADD(values: number[])` 、1 次元配列を示し `ADD(values:number[][])` 、2 次元配列を示す場合などです。
 
-JavaScript では、 `@param values {number[]}` 1 次元配列、 `@param <name> {number[][]}` 2 次元配列、およびその他の次元で使用します。
+JavaScript では、1 次元配列、2 次元配列、およびより多くの次元 `@param values {number[]}` `@param <name> {number[][]}` に使用します。
 
-手動で作成した JSON では、パラメーターが JSON ファイルで指定されていること `"repeating": true` 、およびパラメーターがにマークされていることを確認することを確認してください `"dimensionality": matrix` 。
+手書き JSON の場合は、JSON ファイルでパラメーターが指定されているのを確認し、パラメーターにマーク `"repeating": true` が付けられているか確認します `"dimensionality": matrix` 。
 
 ## <a name="invocation-parameter"></a>呼び出しパラメーター
 
-すべてのカスタム関数には `invocation` 、最後の引数として引数が自動的に渡されます。 この引数は、呼び出し元のセルのアドレスなど、追加のコンテキストを取得するために使用できます。 また、関数 [をキャンセル](custom-functions-web-reqs.md#make-a-streaming-function)する関数ハンドラーなど、Excel に情報を送信するために使用することもできます。 パラメーターを宣言しない場合でも、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数でを使用する場合は `invocation` 、最後のパラメーターとして宣言します。
+すべてのカスタム関数には、最後の引数 `invocation` として引数が自動的に渡されます。 この引数は、呼び出し元セルのアドレスなど、追加のコンテキストを取得するために使用できます。 または、関数をキャンセルする関数ハンドラーなどの情報を Excel [に送信するために使用できます](custom-functions-web-reqs.md#make-a-streaming-function)。 パラメーターを宣言していなくても、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数で使用 `invocation` する場合は、最後のパラメーターとして宣言します。
 
-次のコードサンプルでは、 `invocation` コンテキストが参照に対して明示的に指定されています。
+次のコード サンプルでは、コンテキスト `invocation` が参照用に明示的に示されています。
 
 ```js
 /**
@@ -248,7 +248,7 @@ function add(first, second, invocation) {
 
 ## <a name="next-steps"></a>次の手順
 
-[カスタム関数で揮発性の値](custom-functions-volatile.md)を使用する方法について説明します。
+カスタム関数で揮発性値 [を使用する方法について説明します](custom-functions-volatile.md)。
 
 ## <a name="see-also"></a>関連項目
 
