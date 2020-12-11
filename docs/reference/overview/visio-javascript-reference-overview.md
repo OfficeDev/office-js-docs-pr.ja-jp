@@ -1,24 +1,25 @@
 ---
 title: Visio JavaScript API の概要
 description: Visio JavaScript API の概要
-ms.date: 06/20/2019
+ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 5a544d93c1a41f6c913381ee8d67d375646b2883
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717531"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603793"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
-Visio JavaScript API を使うと、SharePoint Online で Visio 図面を埋め込むことができます。 埋め込んだ Visio 図面は、SharePoint ドキュメント ライブラリに保存され、SharePoint ページに表示されます。 Visio 図面を埋め込むには、その図面を HTML の`<iframe>` 要素に表示します。 そうすると、Visio JavaScript API を使用して、プログラムで埋め込み済みの図面を使った作業ができるようになります。
+Visio JavaScript API を使うと、*従来* のSharePoint Online で Visio 図面を埋め込むことができます。 (この拡張機能は、オンプレミスの SharePoint または SharePoint Framework ページではサポートされていません)。
+
+埋め込んだ Visio 図面は、SharePoint ドキュメント ライブラリに保存され、SharePoint ページに表示されます。 Visio 図面を埋め込むには、その図面を HTML の`<iframe>` 要素に表示します。 そうすると、Visio JavaScript API を使用して、プログラムで埋め込み済みの図面を使った作業ができるようになります。
 
 ![SharePoint ページの iframe 上にある Visio の図とスクリプト エディター Web パーツ](../images/visio-api-block-diagram.png)
-
 
 Visio JavaScript API を使用して、次のことを行えます。
 
@@ -67,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
 
-アドインで宣言され使用される Visio の JavaScript オブジェクトは、Visio 図面の実際のオブジェクトのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、`context.sync()` の実行時に同期されます。
+埋め込みセッションで宣言され使用されている Visio の JavaScript オブジェクトは、Visio ドキュメントの実際のオブジェクトのプロキシ オブジェクトになります。 プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。 ドキュメントの状態は、`context.sync()` の実行時に同期されます。
 
 たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 `sync()` メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
 
@@ -77,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-`sync()`sync() メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。 
+`sync()`sync() メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。
 
 ## <a name="load"></a>load()
 
-`load()`load()`load()` メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に `sync()`load()`sync()` メソッドと sync() メソッドを呼び出す必要があります。load() メソッドは、sync() メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
+`load()` メソッドは、JavaScript レイヤーで作成されたプロキシ オブジェクトに取り込むために使用されます。 ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。 このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 しかし、オブジェクトのプロパティや関係を読み取るためには、最初に `load()` メソッドと `sync()` メソッドを呼び出す必要があります。 load() メソッドは、`sync()` メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
 以下に示すのは `load()` メソッドの構文です。
 
@@ -91,7 +92,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 
 1. **properties** は、読み込まれるプロパティ名の一覧で、コンマ区切りの文字列または名前の配列として指定されます。 詳細については、各オブジェクトの下の `.load()` メソッドを参照してください。
 
-2. **loadOption** は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
+2. **loadOption** は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの [オプション](/javascript/api/office/officeextension.loadoption)を参照してください。
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>例: アクティブ ページですべての図形テキストを印刷する
 
