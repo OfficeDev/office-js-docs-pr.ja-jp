@@ -1,41 +1,41 @@
 ---
-title: Office アドインでのユーザー設定のキーボードショートカット
-description: Office アドインにキーの組み合わせとも呼ばれるユーザー設定のキーボードショートカットを追加する方法について説明します。
-ms.date: 11/09/2020
+title: Office アドインのカスタム キーボード ショートカット
+description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加Office説明します。
+ms.date: 12/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 40009dd92787b7c220bb8cfc741cffb2e4b68a9e
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: dc99674b92ebb415b1d49fb28821d8c2e34c8077
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132040"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789150"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>カスタムキーボードショートカットを Office アドインに追加する (プレビュー)
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>カスタム キーボード ショートカットを Office アドインに追加する (プレビュー)
 
-キーの組み合わせとも呼ばれるキーボードショートカットを使用すると、アドインのユーザーの作業効率を高めることができます。また、障害が発生したユーザーのためにアドインのアクセシビリティを向上させるために、マウスに代わる手段を提供します。
+キーボード ショートカット (キーの組み合わせとも呼ばれる) を使用すると、アドインのユーザーの作業効率が向上し、マウスに代わる方法が提供され、障がいのあるユーザーのアドインのアクセシビリティが向上します。
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> ショートカットキーが有効になっているアドインの作業バージョンから始めるには、サンプルの [Excel キーボードショートカット](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を複製して実行します。 独自のアドインにキーボードショートカットを追加する準備ができたら、この記事に進みます。
+> キーボード ショートカットが既に有効になっているアドインの作業バージョンから開始するには、 [サンプルの Excel](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)キーボード ショートカットを複製して実行します。 独自のアドインにキーボード ショートカットを追加する準備ができたら、この記事に進む必要があります。
 
-アドインにキーボードショートカットを追加するには、次の3つの手順を実行します。
+アドインにキーボード ショートカットを追加するには、次の 3 つの手順があります。
 
-1. [アドインのマニフェストを構成](#configure-the-manifest)します。
-1. [[ショートカット] JSON ファイルを作成または編集](#create-or-edit-the-shortcuts-json-file)して、アクションとそのキーボードショートカットを定義します。
-1. 各アクションに関数を[割り当てる API の](/javascript/api/office/office.actions#associate)1 つ以上の[ランタイム呼び出しを追加](#create-a-mapping-of-actions-to-their-functions)します。
+1. [アドインのマニフェストを構成します](#configure-the-manifest)。
+1. [ショートカットの JSON ファイルを作成または編集して](#create-or-edit-the-shortcuts-json-file) 、アクションとそのキーボード ショートカットを定義します。
+1. [](#create-a-mapping-of-actions-to-their-functions) [Office.actions.associate API の 1 つ以上](/javascript/api/office/office.actions#associate)のランタイム呼び出しを追加して、各アクションに関数をマップします。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-マニフェストに対して2つの小さな変更が行われます。 1つは、アドインで共有ランタイムを使用できるようにし、もう1つは、キーボードショートカットを定義した JSON 形式のファイルを参照することです。
+マニフェストには 2 つの小さな変更があります。 1 つは、アドインで共有ランタイムを使用し、もう 1 つは、キーボード ショートカットを定義した JSON 形式のファイルを指し示す方法です。
 
-### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
+### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>共有ランタイムを使用するアドインを構成する
 
-カスタムキーボードショートカットを追加するには、アドインで共有ランタイムを使用する必要があります。 詳細については、「 [共有ランタイムを使用するようにアドインを構成する](../excel/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+カスタム キーボード ショートカットを追加するには、アドインで共有ランタイムを使用する必要があります。 詳細については、共有 [ランタイムを使用するアドインを構成します](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
-### <a name="link-the-mapping-file-to-the-manifest"></a>マッピングファイルをマニフェストにリンクする
+### <a name="link-the-mapping-file-to-the-manifest"></a>マッピング ファイルをマニフェストにリンクする
 
-マニフェスト内の要素のすぐ *下* に `<VersionOverrides>` 、 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 要素を追加します (内部は含まれていません)。 この属性を、 `Url` 後の手順で作成するプロジェクト内の JSON ファイルの完全な URL に設定します。
+マニフェスト *内* の (内部ではなく) 要素の直下に `<VersionOverrides>` [ExtendedOverrides 要素を追加](../reference/manifest/extendedoverrides.md) します。 この属性は、後の手順で作成するプロジェクトの JSON ファイルの `Url` 完全な URL に設定します。
 
 ```xml
     ...
@@ -44,11 +44,11 @@ ms.locfileid: "49132040"
 </OfficeApp>
 ```
 
-## <a name="create-or-edit-the-shortcuts-json-file"></a>ショートカット JSON ファイルを作成または編集する
+## <a name="create-or-edit-the-shortcuts-json-file"></a>ショートカットの JSON ファイルを作成または編集する
 
-プロジェクトに JSON ファイルを作成します。 ファイルのパスが、 `Url` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 要素の属性に指定した場所と一致していることを確認してください。 このファイルは、キーボードショートカットと、それが呼び出すアクションについて説明します。
+プロジェクトに JSON ファイルを作成します。 ファイルのパスが ExtendedOverrides 要素の属性に指定した場所と一致 `Url` [する必要](../reference/manifest/extendedoverrides.md) があります。 このファイルには、キーボード ショートカットと、キーボード ショートカットが呼び出す操作が記述されます。
 
-1. JSON ファイルの内部には、2つの配列があります。 Actions 配列には、呼び出されるアクションを定義するオブジェクトが格納されます。ショートカット配列には、アクションに対するキーの組み合わせをマップするオブジェクトが格納されます。 次に例を示します：
+1. JSON ファイル内には 2 つの配列があります。 アクション配列には、呼び出されるアクションを定義するオブジェクトが含まれます。また、ショートカット配列には、キーの組み合わせをアクションにマップするオブジェクトが含まれます。 次に例を示します：
 
     ```json
     {
@@ -81,20 +81,20 @@ ms.locfileid: "49132040"
     }
     ```
 
-    JSON オブジェクトの詳細については、「 [action オブジェクトを構築](#constructing-the-action-objects) する」と「 [ショートカットオブジェクトを構築](#constructing-the-shortcut-objects)する」を参照してください。 JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
+    JSON オブジェクトの詳細については、「アクション[](#constructing-the-action-objects)オブジェクトの構築」および「ショートカット オブジェクトの作成」[を参照してください](#constructing-the-shortcut-objects)。 ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
     > [!NOTE]
-    > この記事では、"CTRL" の代わりに "CONTROL" を使用できます。
+    > この記事では、"CTRL" の代えに "CONTROL" を使用できます。
 
-    後の手順では、操作は自分で記述した関数にマップされます。 この例では、メソッドを呼び出す関数に対して、SHOWTASKPANE をこのメソッドを呼び出す関数に対して後でマップし `Office.addin.showAsTaskpane` `Office.addin.hide` ます。
+    後の手順では、アクション自体が、作成する関数にマップされます。 この例では、後で SHOWTASKPANE をメソッドを呼び出す関数にマップし、HIDETASKPANE をメソッドを呼び出す `Office.addin.showAsTaskpane` 関数にマップ `Office.addin.hide` します。
 
-## <a name="create-a-mapping-of-actions-to-their-functions"></a>各機能にアクションのマッピングを作成する
+## <a name="create-a-mapping-of-actions-to-their-functions"></a>アクションの関数へのマッピングを作成する
 
-1. プロジェクトで、HTML ページに読み込まれた JavaScript ファイルを要素に開き `<FunctionFile>` ます。
-1. JavaScript ファイルで、JSON ファイルで指定した各アクションを JavaScript 関数にマップするのには、「 [Office. actions.](/javascript/api/office/office.actions#associate) 」という関連付け API を使用します。 次の JavaScript をファイルに追加します。 コードについては、次の点に注意してください。
+1. プロジェクトで、HTML ページによって読み込まれた JavaScript ファイルを要素で開 `<FunctionFile>` きます。
+1. JavaScript ファイルで [、Office.actions.associate](/javascript/api/office/office.actions#associate) API を使用して、JSON ファイルで指定した各アクションを JavaScript 関数にマップします。 次の JavaScript をファイルに追加します。 コードについては、次の点に注意してください。
 
-    - 最初のパラメーターは、JSON ファイルからのアクションの1つです。
-    - 2番目のパラメーターは、ユーザーが JSON ファイルのアクションにマップされたキーの組み合わせを押したときに実行される関数です。
+    - 最初のパラメーターは、JSON ファイルからのアクションの 1 つです。
+    - 2 番目のパラメーターは、JSON ファイル内のアクションにマップされているキーの組み合わせをユーザーが押すと実行される関数です。
 
     ```javascript
     Office.actions.associate('-- action ID goes here--', function () {
@@ -102,8 +102,8 @@ ms.locfileid: "49132040"
     });
     ```
 
-1. 例を続行するには、 `'SHOWTASKPANE'` 最初のパラメーターとしてを使用します。
-1. 関数の本文については、 [Office](/javascript/api/office/office.addin#showastaskpane--) を使用してアドインの作業ウィンドウを開きます。 完了すると、コードは次のようになります。
+1. この例を続行するには、最初 `'SHOWTASKPANE'` のパラメーターとして使用します。
+1. 関数の本文の場合は [、Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--) メソッドを使用してアドインの作業ウィンドウを開きます。 完了すると、コードは次のようになります。
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ ms.locfileid: "49132040"
     });
     ```
 
-1. 関数の2番目の呼び出しを追加し `Office.actions.associate` `HIDETASKPANE` て、アクションを呼び出す[Office.addin.hide](/javascript/api/office/office.addin#hide--)関数にアクションをマップします。 例を次に示します。
+1. 2 番目の関数呼び出しを追加して、アクションを `Office.actions.associate` `HIDETASKPANE` [Office.addin.hide を呼び出す関数にマップします](/javascript/api/office/office.addin#hide--)。 例を次に示します。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -131,18 +131,18 @@ ms.locfileid: "49132040"
     });
     ```
 
-前の手順に従って、 **ctrl + shift + 上方向キー** と **ctrl + shift + ↓キー** を押して、アドインで作業ウィンドウの表示を切り替えることができます。 これは、「 [excel キーボードショートカットアドインのサンプル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)」に記載されているのと同じ動作になります。
+前の手順に従って、アドインでは **、Ctrl + Shift +** 上方向キーと Ctrl + Shift + 下方向キーを押して、作業ウィンドウの表示/非表示 **を切り替えます**。 これは、サンプルの Excel キーボード ショートカット アドインと [同じ動作です](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。
 
-## <a name="details-and-restrictions"></a>詳細と制限事項
+## <a name="details-and-restrictions"></a>詳細と制限
 
-### <a name="constructing-the-action-objects"></a>Action オブジェクトを構築する
+### <a name="constructing-the-action-objects"></a>アクション オブジェクトの作成
 
-shortcuts.jsの配列内のオブジェクトを指定するときは、次のガイドラインを使用し `action` ます。
+次のガイドラインに従って、オブジェクトの配列内のオブジェクトを指定shortcuts.js`action` します。
 
-- プロパティ名は `id` `name` 必須です。
-- この `id` プロパティは、キーボードショートカットを使用して呼び出すアクションを一意に識別するために使用されます。
-- この `name` プロパティは、アクションを説明するユーザーフレンドリ文字列である必要があります。 この文字列は、A ~ Z、a ~ z、0-9、および句読点 "-"、"_"、および "+" の文字の組み合わせである必要があります。
-- プロパティは省略可能です。 現在 `ExecuteFunction` 、型のみがサポートされています。
+- プロパティ名 `id` は `name` 必須です。
+- この `id` プロパティは、キーボード ショートカットを使用して呼び出すアクションを一意に識別するために使用されます。
+- この `name` プロパティは、アクションを説明するユーザー フレンドリーな文字列である必要があります。 文字 A ~ Z、a ~ z、0 ~ 9、および区切り記号 "-"、"_"、および "+" を組み合わせて指定する必要があります。
+- プロパティは省略可能です。 現在サポート `ExecuteFunction` されているのは型のみです。
 
 例を次に示します。
 
@@ -161,20 +161,20 @@ shortcuts.jsの配列内のオブジェクトを指定するときは、次の�
     ]
 ```
 
-JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
+ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
-### <a name="constructing-the-shortcut-objects"></a>ショートカットオブジェクトを構築する
+### <a name="constructing-the-shortcut-objects"></a>ショートカット オブジェクトの作成
 
-shortcuts.jsの配列内のオブジェクトを指定するときは、次のガイドラインを使用し `shortcuts` ます。
+次のガイドラインに従って、オブジェクトの配列内のオブジェクトを指定shortcuts.js`shortcuts` します。
 
-- プロパティ名、 `action` `key` 、および `default` が必要です。
-- プロパティの値 `action` は文字列で、action オブジェクトのプロパティのいずれかに一致している必要があり `id` ます。
-- このプロパティには、 `default` a ~ z、a ~ z、0-9、および句読点 "-"、"_"、および "+" の文字を任意に組み合わせて使用できます。 (慣例では、これらのプロパティに小文字は使用されません)。
-- このプロパティには、 `default` 少なくとも1つの修飾子キー (ALT、CTRL、SHIFT) の名前と、その他の1つのキーのみを含める必要があります。
-- Mac では、コマンド修飾子キーもサポートしています。
-- Mac の場合、ALT はオプションキーにマップされます。 Windows の場合、COMMAND は CTRL キーにマップされます。
-- 標準キーボードで2つの文字が同じ物理キーにリンクされている場合は、プロパティの類義語です `default` 。たとえば、alt + a と alt + a は同じショートカットです。たとえば、ctrl +-と ctrl + + は同じ \_ 物理キーです。
-- "+" 文字は、その両側のキーが同時に押されたことを示します。
+- プロパティ名 `action` 、 `key` および `default` 必須です。
+- プロパティの値 `action` は文字列であり、アクション オブジェクトのプロパティの 1 `id` つと一致する必要があります。
+- この `default` プロパティには、文字 A ~ Z、-z、0 ~ 9、句読点 "-"、"_"、および "+" を任意に組み合わせて指定できます。 (規則により、これらのプロパティでは小文字は使用されません)。
+- この `default` プロパティには、少なくとも 1 つの修飾キー (Alt、Ctrl、Shift) の名前と、他の 1 つのキーのみを含む必要があります。
+- Mac では、COMMAND 修飾子キーもサポートされています。
+- Mac の場合、ALT キーは OPTION キーにマップされます。 Windows では、COMMAND は Ctrl キーにマップされます。
+- 標準キーボードで 2 文字が同じ物理キーにリンクされている場合、それらはプロパティの同義語になります。たとえば、Alt + a と Alt + A は同じショートカットであり、"-" と `default` "_" は同じ物理キーなので、Ctrl + + と Ctrl+ も同じです。 \_
+- "+" 文字は、いずれかの側のキーが同時に押された状態を示します。
 
 例を次に示します。
 
@@ -195,27 +195,27 @@ shortcuts.jsの配列内のオブジェクトを指定するときは、次の�
     ]
 ```
 
-JSON の完全なスキーマは [extended-manifest.schema.jsに](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)あります。 (メモ: スキーマへのリンクは、プレビュー期間の初期段階では機能しない可能性があります。)
+ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
-> キーヒント (連続したキーショートカットとも呼ばれます)。これは、Office アドインでは、塗りつぶしの色として **Alt + h** を選択するための Excel ショートカットです。
+> キーヒント (塗りつぶしの色を Alt **+ H、H)** を選択する Excel ショートカットなど、シーケンシャル キー ショートカットとも呼ばれる) は、Office アドインではサポートされていません。
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>作業ウィンドウにフォーカスがあるときにショートカットを使用する
 
-現時点では、Office アドインのキーボードショートカットは、ユーザーのフォーカスがワークシートにある場合にのみ呼び出すことができます。 ユーザーのフォーカスが Office UI (作業ウィンドウなど) 内にある場合、アドインのショートカットは無視されません。 回避策として、アドインでは、ユーザーのフォーカスがアドインの UI 内にあるときに特定のアクションを呼び出すことができるキーボードハンドラーを定義できます。
+現在、アドインのキーボード ショートカットOffice、ユーザーのフォーカスがワークシートにある場合にのみ呼び出すことができます。 ユーザーのフォーカスが Office UI (作業ウィンドウなど) 内にある場合、アドインのショートカットは無視されません。 回避策として、アドインは、ユーザーのフォーカスがアドイン UI 内にあるときに特定のアクションを呼び出すキーボード ハンドラーを定義できます。
 
-## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>Office または他のアドインで既に使用されているキーの組み合わせの使用
+## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>他のアドインで既に使用されているOffice組み合わせを使用する
 
-プレビュー期間中は、アドインによって登録されたキーの組み合わせと、Office または別のアドインによって登録されたキーの組み合わせをユーザーが押したときに発生する処理を判断するためのシステムはありません。 動作は未定義です。
+プレビュー期間中に、ユーザーがアドインによって登録されたキーの組み合わせ、および Office または別のアドインによって押された場合の処理を判断するシステムはありません。 動作は未定義です。
 
-現時点では、2つ以上のアドインによって同じキーボードショートカットが登録されていても、次のような正しい方法で Excel との競合を最小限に抑えることができます。
+現在、2 つ以上のアドインが同じキーボード ショートカットを登録している場合は回避策はありません。ただし、次の優れたプラクティスを使用して Excel との競合を最小限に抑える可能性があります。
 
-- アドインでは次のパターンのキーボードショートカットのみを使用します: **Ctrl + Shift + Alt +* x * * *。 *x* は他のキーです。
-- さらに多くのキーボードショートカットが必要な場合は、 [Excel キーボードショートカットの一覧](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)をチェックして、アドインでそのショートカットを使用しないようにします。
+- アドインでは、次のパターンのキーボード ショートカットのみを使用します。**Ctrl + Shift + Alt +* x*** *(x* は他のキーです)。
+- 追加のキーボード ショートカットが必要な場合は [、Excel](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)のキーボード ショートカットの一覧を確認し、アドインで使用しないようにします。
 
-## <a name="browser-shortcuts-that-cannot-be-overridden"></a>上書きできないブラウザーショートカット
+## <a name="browser-shortcuts-that-cannot-be-overridden"></a>上書きできないブラウザー ショートカット
 
-次のキーの組み合わせは使用できません。 これらはブラウザーで使用され、上書きすることはできません。 このリストは、進行中の作業を示しています。 上書きできない他の組み合わせが見つかった場合は、このページの下部にあるフィードバックツールを使用してお知らせください。
+次のキーボードの組み合わせは使用できません。 ブラウザーで使用され、上書きできません。 この一覧は、進行中の作業です。 上書きできない他の組み合わせが見つかった場合は、このページの下部にあるフィードバック ツールを使用してお知らせください。
 
 - Ctrl + N
 - Ctrl + Shift + N
@@ -226,4 +226,4 @@ JSON の完全なスキーマは [extended-manifest.schema.jsに](https://develo
 
 ## <a name="next-steps"></a>次の手順
 
-- サンプルアドインの [excel ショートカットキー](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を参照してください。
+- サンプル アドインの [excel-keyboard-shortcuts を参照してください](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。

@@ -1,2 +1,2 @@
 >[!NOTE]
-> UI を使用しない関数を使用する特別な理由がない限り、 [共有ランタイム](../excel/configure-your-add-in-to-use-a-shared-runtime.md)でカスタム関数を使用することをお勧めします。 また、共有ランタイムを使用するということは、Windows または Microsoft 365 のバージョンに関係なく、アドインが Internet Explorer 11 を使用することにも注意してください。 詳細については、「 [ランタイム](../reference/manifest/runtimes.md)」を参照してください。
+> UI のない関数を使用する特定の理由がない限り、共有ランタイムでカスタム関数を使用することをお [勧めします](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。 また、共有ランタイムを使用すると、Windows または Microsoft 365 バージョンに関係なく、アドインは Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。

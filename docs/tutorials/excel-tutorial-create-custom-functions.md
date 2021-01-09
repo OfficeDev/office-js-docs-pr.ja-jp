@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131795"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789206"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -243,4 +243,4 @@ function clock(invocation) {
 おめでとうございます! 新しいカスタム関数プロジェクトを作成し、あらかじめ用意されている関数を試し、Web にデータを要求するカスタム関数を作成し、ストリーミング データであるカスタム関数を作成しました。 次に、共有ランタイムを使用するようにプロジェクトを変更することで、関数が作業ウィンドウを操作しやすくなります。 以下の記事の手順に従ってください。
 
 > [!div class="nextstepaction"]
-> [共有ランタイムを使用するようにアドインを構成する](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
+> [共有ランタイムを使用するようにアドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -5,12 +5,12 @@ title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071677"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789129"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -50,7 +50,7 @@ function sphereVolume(radius) {
 
 ### <a name="script-file"></a>スクリプト ファイル
 
-スクリプト ファイル ( **./src/customfunctions.js** または **/src/customfunctions.ts** ) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
+スクリプト ファイル (**./src/customfunctions.js** または **/src/customfunctions.ts**) には、カスタム関数を定義するコードと関数を定義するコメントが含まれています。
 
 `add` カスタム関数は次のコードにより定義されます。 コード コメントは、Excel にカスタム関数を記述する JSON メタデータ ファイルを生成するために使用されます。 必須の `@customfunction` コメントが最初に宣言されて、これがカスタム関数であることを示します。 次に、`description` プロパティに続いて、`first` および `second` の 2 つのパラメーターが宣言されます。 最後に `returns` の説明が記述されます。 カスタム関数で必要になるコメントに関する詳細については、「[カスタム関数の JSON メタデータを自動作成する](custom-functions-json-autogeneration.md)」を参照してください。
 
@@ -70,13 +70,13 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml** ) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
+カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
 
 - カスタム関数の名前空間を定義します。 ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
 - カスタム関数に使用するランタイムを指定します。 別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。 共有ランタイムを使うことは、アドインが Microsoft Edge ではなく Internet Explorer 11 の使用を意味することに注意してください。
 
-Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
+Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
 
 サンプル アドインからフル機能マニフェストを確認する方法については、「[この Github リポジトリ](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)」を参照してください。
 

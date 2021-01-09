@@ -1,30 +1,30 @@
 ---
-title: マニフェストファイル内のランタイム
-description: ランタイム要素は、アドインのランタイムを指定します。
+title: マニフェスト ファイル内のランタイム
+description: Runtimes 要素は、アドインのランタイムを指定します。
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: afbcc6a909c51d2ed56292ef1541193f7f698d28
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159361"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789164"
 ---
-# <a name="runtimes-element"></a>ランタイム要素
+# <a name="runtimes-element"></a>Runtimes 要素
 
-アドインの実行時のランタイムを指定します。 要素の子 [`<Host>`](host.md) 。
+アドインのランタイムを指定します。 要素の [`<Host>`](host.md) 子。
 
 > [!NOTE]
-> Windows で Office を実行している場合、アドインは Internet Explorer 11 ブラウザーを使用します。
+> Windows Officeで実行する場合、アドインは Internet Explorer 11 ブラウザーを使用します。
 
-Excel では、この要素を使用すると、リボン、作業ウィンドウ、およびカスタム関数が同じランタイムを使用できるようになります。 詳細については、「[共有 JavaScript ランタイムを使用するように Excel アドインを構成する](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+Excel では、この要素により、リボン、作業ウィンドウ、およびカスタム関数で同じランタイムを使用できます。 詳細については、「共有 [JavaScript ランタイムを使用するために Excel](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)アドインを構成する」を参照してください。
 
-Outlook では、この要素はイベントベースのアドインのアクティブ化を有効にします。 詳細については、「[イベントベースのライセンス認証用に Outlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
+Outlook では、この要素によってイベント ベースのアドインのアクティブ化が有効になります。 詳細については、「イベント ベースのアクティブ [化用に Outlook アドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** 作業ウィンドウ、メール
 
 > [!IMPORTANT]
-> **Outlook**: イベントベースのライセンス認証機能は現在[プレビュー段階で](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)あり、web 上の Outlook でのみ使用できます。 詳細については、「[イベントベースのライセンス認証機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
+> **Outlook**: イベント ベースのアクティブ化 [](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)機能は現在プレビュー中で、Outlook on the web でのみ使用できます。 詳細については、イベント ベースの [アクティブ化機能をプレビューする方法を参照してください](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>構文
 
