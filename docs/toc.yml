@@ -89,6 +89,10 @@ items:
               - name: ドキュメントで作業ウィンドウを自動的に開く
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: 共有ランタイムを使用するようにアドインを構成する
+                href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+              - name: 開いているドキュメントにコードを実行する
+                href: develop/run-code-on-document-open.md
           - name: マニフェスト
             items:
               - name: 概要
@@ -216,6 +220,8 @@ items:
                     href: design/task-pane-add-ins.md
               - name: キーボード ショートカット
                 href: design/keyboard-shortcuts.md
+              - name: Office アドイン作業ウィンドウを表示または非表示にする
+                href: develop/show-hide-add-in.md
               - name: ローカリゼーション
                 href: develop/localization.md
               - name: リソース
@@ -623,9 +629,6 @@ items:
           - name: 範囲の条件付き書式
             href: excel/excel-add-ins-conditional-formatting.md
             displayName: Excel
-          - name: 共有ランタイムを使用するようにアドインを構成する
-            href: excel/configure-your-add-in-to-use-a-shared-runtime.md
-            displayName: Excel
           - name: データの入力規則
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -653,14 +656,8 @@ items:
           - name: Ranges (高度)
             href: excel/excel-add-ins-ranges-advanced.md
             displayName: Excel
-          - name: 開いているドキュメントにコードを実行する
-            href: excel/run-code-on-document-open.md
-            displayName: Excel
           - name: 図形
             href: excel/excel-add-ins-shapes.md
-            displayName: Excel
-          - name: 共有ランタイムで Office アドインを表示または非表示にする
-            href: excel/show-hide-add-in.md
             displayName: Excel
           - name: テーブル
             href: excel/excel-add-ins-tables.md
@@ -719,9 +716,6 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: 動的配列を返す
             href: excel/custom-functions-dynamic-arrays.md
-            displayName: 'Excel, Custom Functions'
-          - name: 共有ランタイム
-            href: excel/custom-functions-shared-overview.md
             displayName: 'Excel, Custom Functions'
           - name: UI のないカスタム関数
             items:
