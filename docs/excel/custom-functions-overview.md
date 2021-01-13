@@ -1,16 +1,16 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 97037f201a237cdc6dae551552a0a1609a58b34c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789129"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839874"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -35,8 +35,8 @@ function sphereVolume(radius) {
 }
 ```
 
-> [!NOTE]
-> この記事で後述する「[既知の問題](#known-issues)」セクションで、カスタム関数の現状の制限事項を記載します。
+> [!TIP]
+> カスタム関数アドインがカスタム関数のコードの実行に加えて作業ウィンドウまたはリボン ボタンを使用する場合、共有 JavaScript ランタイムを設定する必要があります。 詳細については、「[共有 JavaScript ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>コードでカスタム関数を定義する方法
 
@@ -88,10 +88,6 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
-## <a name="known-issues"></a>既知の問題
-
-既知の問題については、[Excel カスタム関数についての GitHub のレポート](https://github.com/OfficeDev/Excel-Custom-Functions/issues)を参照してください。
-
 ## <a name="next-steps"></a>次の手順
 
 カスタム関数を試してみましょう。 もしまだであれば、簡単な[カスタム関数クイックスタート](../quickstarts/excel-custom-functions-quickstart.md)または、詳細な[カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)をご覧ください。
@@ -103,3 +99,4 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 * [カスタム関数の要件セット](custom-functions-requirement-sets.md)
 * [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
+* [共有 JavaScript ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

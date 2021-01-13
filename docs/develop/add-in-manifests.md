@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293355"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840000"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -110,7 +110,7 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 [アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
 
-[SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている**べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+[SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている** べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
@@ -130,7 +130,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 > この動作に対する例外は 2 つあります。
 >
 > - これは、アドインのルート ウィンドウに対してのみ適用されます。 アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
-> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
+> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
 
 次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。 また、この例では、**AppDomains** 要素リスト内の [AppDomain](../reference/manifest/appdomain.md) 要素の `https://www.northwindtraders.com` ドメインも指定しています。 アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップの場合でも、そのページはアドイン ウィンドウで開きます。
 
@@ -335,7 +335,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
         <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
-        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
+        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://myCDN/Images/ButtonFunction.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.FunctionFile.Url" DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html" />
