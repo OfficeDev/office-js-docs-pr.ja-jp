@@ -4,12 +4,12 @@ description: Office アドインの学習リソースを使用する初心者向
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: a51ffc437c9d1946b886d1e665836dd6d76f52d2
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 9d4d3a6b7211474e3278273b94f1cb3a12535404
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741072"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839692"
 ---
 # <a name="beginners-guide"></a>初心者ガイド
 
@@ -45,7 +45,7 @@ ms.locfileid: "48741072"
 
 ## <a name="step-4-understand-the-javascript-library"></a>手順 4: JavaScript ライブラリを理解する
 
-最初に、Microsoft Learn「[Office JavaScript API について理解する](https://docs.microsoft.com/learn/modules/understand-office-javascript-apis/index)」のこのチュートリアルで、Microsoft Learn ライブラリの全体像を把握します。
+最初に、Microsoft Learn「[Office JavaScript API について理解する](/learn/modules/understand-office-javascript-apis/index)」のこのチュートリアルで、Microsoft Learn ライブラリの全体像を把握します。
 
 次に、API を実行して調査するサンドボックスである [Script Lab ツール](explore-with-script-lab.md)を使用して、Office JavaScript API を学習します。
 
@@ -72,5 +72,5 @@ ms.locfileid: "48741072"
   - [Office アドインを設計する](../design/add-in-design.md)
   - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
   - [Office アドインを展開し、発行する](../publish/publish.md)
-  - [Resources](../resources/resources-links-help.md)
+  - [リソース](../resources/resources-links-help.md)
   - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

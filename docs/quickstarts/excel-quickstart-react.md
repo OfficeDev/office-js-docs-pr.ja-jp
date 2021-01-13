@@ -4,12 +4,12 @@ description: Office JS API と React を使用して単純な Excel 作業ウィ
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 143c5254a2a6bb00fba44373878baf5626443777
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 460f6a6d58e6405a0ede909eec755d454744461b
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132299"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839727"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>React を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -73,7 +73,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel アドインのチュートリアル](../tutorials/excel-tutorial-create-table.md)
+* [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)
 * [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
 * [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

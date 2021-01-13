@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 01/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c10774287aa34cdc193d72c22487a40fabb9479e
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 8fc0f0d9f0664c3a4ba1c343306d779106b27862
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789199"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839741"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -27,10 +27,10 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 | クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
-|Mac:<br>ビルド 16.30 以降|はい|いいえ|いいえ|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|必要|
+|Mac:<br>ビルド 16.30 以降|必要|いいえ|いいえ|
 |Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|
-|Web ブラウザー:<br>従来の Outlook UI|該当なし|はい|はい|
+|Web ブラウザー:<br>従来の Outlook UI|該当なし|はい|必要|
 
 > [!NOTE]
 > 送信時機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在の [サーバーとクライアントのサポートを](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
@@ -46,7 +46,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 - メッセージに件名が含まれていることの確認
 - あらかじめ定義された受信者の設定
 
-検証は、送信イベントがトリガーされると Outlook のクライアント側で実行され、アドインがタイム アウトする前に最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションを実行するように求めるエラー メッセージが情報バーに表示されます。
+検証は送信イベントがトリガーされると Outlook のクライアント側で行われ、アドインがタイム アウトする前に最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションを実行するように求めるエラー メッセージが情報バーに表示されます。
 
 > [!NOTE]
 > Outlook on the web では、Outlook ブラウザー タブ内で作成中のメッセージで送信時機能がトリガーされると、検証とその他の処理を完了するために、アイテムが独自のブラウザー ウィンドウまたはタブに表示されます。
@@ -88,7 +88,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 送信時機能がこれらのメールボックスのシナリオに対して有効になっている場合、Outlook は送信を許可しません。 ただし、ユーザーがグループ メールボックス内のメールに返信すると、送信時アドインは実行されず、メッセージが送信されます。
 
 > [!IMPORTANT]
-> \* 送信時機能は、アドインが代理人アクセスシナリオのサポートも実装している場合は、共有メールボックスまたはフォルダー [で機能する必要があります](delegate-access.md)。
+> \* アドインが代理人アクセスシナリオのサポートも実装している場合、送信時機能は共有メールボックスまたはフォルダー [で機能する必要があります](delegate-access.md)。
 
 ## <a name="multiple-on-send-add-ins"></a>複数の送信時アドイン
 
@@ -199,7 +199,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="web-browser---modern-outlook"></a>[Web ブラウザー - モダン Outlook](#tab/modern)
 
-送信時機能を使用する Outlook on the web (モダン) のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス標準を満たすために送信時アドインを実行する必要がある場合は、メールボックス ポリシーに *OnSendAddinsEnabled* フラグを設定し、アドインが送信時に処理されている間にアイテムの編集が許可されない必要があります。 `true`
+送信時機能を使用する Outlook on the web (モダン) のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス標準を満たすために送信時アドインを実行する必要がある場合は、メールボックス ポリシーで *OnSendAddinsEnabled* フラグを設定し、アドインが送信時に処理されている間にアイテムの編集が許可されない必要があります。 `true`
 
 新しいアドインをインストールするには、次の Exchange Online PowerShell コマンドレットを実行します。
 
@@ -216,7 +216,7 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 #### <a name="enable-the-on-send-flag"></a>送信時フラグを有効にする
 
-管理者は、Exchange Online PowerShell コマンドレットを実行して送信時コンプライアンスを適用できます。
+管理者は、Exchange Online PowerShell コマンドレットを実行して、送信時コンプライアンスを適用できます。
 
 すべてのユーザーについて、送信時アドインの処理中に編集を禁止するには、次の操作を行います。
 
@@ -300,7 +300,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |ポリシーの状態|結果|
 |---|---|
 |無効|送信時アドインの現在ダウンロードされているマニフェスト (必ずしも最新バージョンではない) は、送信されるメッセージまたは会議アイテムに対して実行されます。 これは既定の状態/動作です。|
-|有効|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
+|Enabled|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信中のメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
 
 #### <a name="manage-the-on-send-policy"></a>送信時ポリシーを管理する
 
@@ -333,7 +333,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |キーの状態|結果|
 |---|---|
 |false|送信時アドインの現在ダウンロードされているマニフェスト (必ずしも最新バージョンではない) は、送信されるメッセージまたは会議アイテムに対して実行されます。 これは既定の状態/動作です。|
-|true|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合は、送信がブロックされ、[送信 **] ボタン** が無効になります。|
+|true|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信中のメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合は、送信がブロックされ、[送信 **] ボタン** が無効になります。|
 
 ---
 
@@ -404,7 +404,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 1. [displayDialogAsync を](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-)呼び出してダイアログを開き、マウス クリックとキーストロークが無効になります。
 
     > [!IMPORTANT]
-    > 従来の Outlook on the web でこの動作を取得するには、呼び出しのパラメーターで [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) プロパティ `true` を `options` 設定する必要 `displayDialogAsync` があります。
+    > 従来の Outlook on the web でこの動作を取得するには、呼び出しのパラメーターで [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) プロパティを `true` `options` 設定する必要 `displayDialogAsync` があります。
 
 1. アイテムの処理を実装します。
 1. ダイアログを閉じます。 また、ユーザーがダイアログを閉じるとどうなるかを処理します。
@@ -477,7 +477,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 > [!NOTE]
 > 詳細については、以下を参照してください。
 > - [Outlook アドインのマニフェスト](manifests.md)
-> - [Office アドインの XML マニフェスト](../overview/add-in-manifests.md)
+> - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)
 
 
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>`Event` オブジェクト、`item` オブジェクトと、`body.getAsync` メソッド、`body.setAsync` メソッドを理解する
@@ -533,7 +533,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 `addAsync` メソッドのパラメーターは、次のとおりです。
 
-- `NoSend` &ndash; 通知メッセージを参照するための開発者が指定したキーである文字列。 これを使用して後でこのメッセージを変更できます。 キーは 32 文字以内にすることはできません。
+- `NoSend` &ndash; 通知メッセージを参照するための開発者が指定したキーである文字列。 これを使用して後でこのメッセージを変更できます。 キーは 32 文字以下でなければなりません。
 - `type` &ndash; JSON オブジェクト パラメーターのプロパティの 1 つ。 メッセージの種類を表します。種類は [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) 列挙型の値に対応しています。 使用可能な値は、進行状況のインジケーター、情報メッセージ、エラー メッセージです。 この例では、`type` はエラー メッセージです。  
 - `message` &ndash; JSON オブジェクト パラメーターのプロパティの 1 つ。 この例では、`message` は通知メッセージのテキストです。
 

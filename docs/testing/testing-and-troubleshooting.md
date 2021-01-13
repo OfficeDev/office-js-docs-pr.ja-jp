@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
-description: Office アドインでのユーザーエラーのトラブルシューティング方法について説明します。
+description: アドインのユーザー エラーをトラブルシューティングするOffice説明します。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 878295a4a6237860c349efb04a6684ab527b7e4f
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408832"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840098"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -26,7 +26,7 @@ ms.locfileid: "47408832"
 |:-----|:-----|
 |アプリのエラー: カタログに到達できませんでした|ファイアウォールの設定を確認します。「カタログ」は、AppSource を指します。このメッセージは、ユーザーが AppSource にアクセスできないことを示しています。|
 |アプリのエラー: このアプリを起動できませんでした。このダイアログを閉じて問題を無視するか、[再起動] をクリックしてもう一度お試しください。|Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム ](https://support.microsoft.com/kb/2986156/)をダウンロードします。|
-|エラー: オブジェクトがプロパティまたはメソッド 'defineProperty' をサポートしていません|Internet Explorerが互換モードで実行されていないことを確認します。 [ツール] > **[互換表示設定] ** に移動します。|
+|エラー: オブジェクトがプロパティまたはメソッド 'defineProperty' をサポートしていません|Internet Explorerが互換モードで実行されていないことを確認します。 [ツール] > **[互換表示設定]** に移動します。|
 |ブラウザーのバージョンがサポートされていないため、アプリを読み込めませんでした。サポートされているブラウザーのバージョンの一覧についてはここをクリックしてください。|ブラウザーが HTML5 のローカル ストレージをサポートしていることを確認するか、Internet Explorer の設定をリセットします。サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md)」を参照してください。|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>アドインをインストールすると、ステータス バーに "アドイン読み込み中のエラー" と表示される
@@ -43,7 +43,7 @@ ms.locfileid: "47408832"
 Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
 
 
-- [ツール] > [**インターネットオプション**の詳細] に移動  >  **Advanced**します。
+- Go to Tools > **Internet Options**  >  **Advanced**.
     
 - **[参照]** で、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオフにします。
     
@@ -69,7 +69,7 @@ Office アドインを使用するとき、ユーザーは、ダイアログ ボ
 
 "ブラウザーのセキュリティ設定により、ダイアログ ボックスを作成できませんでした。別のブラウザーを試すか、アドレス バーに表示される [URL] とドメインが同じセキュリティ ゾーンに存在するようにブラウザーを構成してください。"
 
-![ダイアログ ボックスのエラー メッセージのスクリーン ショット](http://i.imgur.com/3mqmlgE.png)
+![ダイアログ ボックスのエラー メッセージのスクリーンショット](../images/dialog-prevented.png)
 
 |**影響を受けるブラウザー**|**影響を受けるプラットフォーム**|
 |:--------------------|:---------------------|
@@ -93,7 +93,6 @@ URL を信頼済みサイトのリストに追加する方法:
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
-- [Office アドインでの開発エラーのトラブルシューティング](troubleshoot-development-errors.md)
-
+- [アドインを使用したOfficeエラーのトラブルシューティング](troubleshoot-development-errors.md)

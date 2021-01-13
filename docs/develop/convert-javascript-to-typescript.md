@@ -1,31 +1,31 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
-description: Visual Studio の Office アドインプロジェクトを TypeScript を使用するように変換する方法について説明します。
+description: TypeScript を使用するためにOfficeアドイン プロジェクトを変換Visual Studio方法について説明します。
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430486"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839965"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 この記事では、Excel アドイン用のこの変換プロセスについて説明します。 同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。
 
 > [!IMPORTANT]
-> この記事では、F5 キーを押すと、コードが JavaScript に transpiled され、Office に自動的にサイドロードされることを確認するために必要な *最小限* の手順について説明します。 ただし、このコードは、"入力されていません" ということはありません。 たとえば、変数は、ではなく、キーワードで宣言され `var` `let` ており、指定された型で宣言されていません。 TypeScript の厳密な型指定を十分に活用するには、コードにさらに変更を加えることを検討してください。 
+> この記事では、F5 キーを押すとコードが JavaScript にトランスpiledされ、自動的にコードが Office にサイドロードされるのを確認するために必要な最小限の手順について説明します。  ただし、コードは "TypeScripty" ではありません。 たとえば、変数は指定された型ではなくキーワードで宣言され、指定 `var` `let` された型で宣言されません。 TypeScript の強力な型指定を活用するには、コードをさらに変更してください。 
 
 > [!NOTE]
-> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](/office/dev/add-ins/)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
+> Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.yml)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- **Office/SharePoint 開発**ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- **Office/SharePoint 開発** ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発**ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)してください。
+    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発** ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)してください。
 
 - TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)
 
@@ -38,25 +38,25 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン**と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
+2. 検索ボックスを使用して、**アドイン** と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>アドイン プロジェクトを TypeScript に変換する
 
 1. **Home.js** ファイルを見つけて、名前を **Home.ts** に変更します。
 
-2. **./Functions/FunctionFile.js** ファイルを見つけて、名前を**FunctionFile.ts** に変更します。
+2. **./Functions/FunctionFile.js** ファイルを見つけて、名前を **FunctionFile.ts** に変更します。
 
 3. **./Scripts/MessageBanner.js** ファイルを見つけて、名前を **MessageBanner.ts** に変更します。
 
 4. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
 
-5. [ **参照** ] タブが選択されている状態で、「jquery」と入力し **ます。TypeScript Itely型付き**。 このパッケージをインストールするか、既にインストールされている場合は更新します。 これにより、jQuery TypeScript の定義がプロジェクトに含まれるようになります。 JQuery のパッケージは、Visual Studio によって生成されたファイル ( **packages.config**と呼ばれる) に表示されます。
+5. [参照 **] タブ** を選択して **、「jquery」と入力します。TypeScript.DefinitelyTyped**. このパッケージをインストールするか、既にインストールされている場合は更新します。 これにより、jQuery TypeScript 定義がプロジェクトに確実に含まれます。 jQuery のパッケージは、次のファイルと呼ばれるVisual Studioファイルに **packages.config。**
 
     > [!NOTE]
     > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。

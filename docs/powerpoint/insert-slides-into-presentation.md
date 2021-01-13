@@ -1,33 +1,31 @@
 ---
-title: PowerPoint プレゼンテーションでスライドを挿入および削除する
-description: プレゼンテーションのスライドを別のプレゼンテーションに挿入する方法と、スライドを削除する方法について説明します。
-ms.date: 12/04/2020
+title: PowerPoint プレゼンテーションのスライドの挿入と削除
+description: プレゼンテーション間でスライドを挿入する方法と、スライドを削除する方法について説明します。
+ms.date: 01/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ceb78054a95ac4b26bd71f79a086a00e3dce5278
-ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
+ms.openlocfilehash: a9a4b2efd1e970d9c45885f9a17046bec4de7e72
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49613705"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839720"
 ---
-# <a name="insert-and-delete-slides-in-a-powerpoint-presentation-preview"></a>PowerPoint プレゼンテーションでスライドを挿入および削除する (プレビュー)
+# <a name="insert-and-delete-slides-in-a-powerpoint-presentation"></a>PowerPoint プレゼンテーションのスライドの挿入と削除
 
-PowerPoint アドインでは、PowerPoint のアプリケーション固有の JavaScript ライブラリを使用して、プレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入したスライドに、元のプレゼンテーションの書式設定を保持するか、または対象となるプレゼンテーションの書式設定を保持するかを制御できます。 プレゼンテーションからスライドを削除することもできます。
+PowerPoint アドインは、PowerPoint のアプリケーション固有の JavaScript ライブラリを使用して、1 つのプレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入したスライドで、元のプレゼンテーションの書式を維持するか、またはターゲット プレゼンテーションの書式設定を維持するかは制御できます。 プレゼンテーションからスライドを削除できます。
 
-[!include[General preview API prerequisites](../includes/using-preview-apis-host.md)]
+スライド挿入 API は、主にプレゼンテーション テンプレートのシナリオで使用されます。アドインによって挿入できるスライドのプールとして機能する、いくつかの既知のプレゼンテーションがあります。 このようなシナリオでは、自分または顧客のどちらかが、選択条件 (スライド タイトルや画像など) とスライドの ID を関連付けるデータ ソースを作成および維持する必要があります。 この API は、ユーザーが任意のプレゼンテーションからスライドを挿入できるシナリオでも使用できますが、そのシナリオでは、ユーザーは実質的にソース プレゼンテーションからすべてのスライドを挿入する方法に制限されます。 詳細 [については、「挿入するスライドの選択](#selecting-which-slides-to-insert) 」を参照してください。
 
-スライド挿入 Api は、主にプレゼンテーションテンプレートのシナリオで使用されます。これは、アドインによって挿入できるスライドのプールとして機能する既知のプレゼンテーションの数が少ないことです。 このようなシナリオでは、ユーザーまたは顧客は、選択基準 (スライドタイトル、画像など) とスライド Id を関連付けたデータソースを作成して維持する必要があります。 この Api は、ユーザーが任意のプレゼンテーションからスライドを挿入できる場合にも使用できますが、このシナリオでは、ユーザーは、元のプレゼンテーションの *すべて* のスライドを挿入することに効果的に制限されます。 詳細については、「 [挿入するスライドを選択](#selecting-which-slides-to-insert) する」を参照してください。
+1 つのプレゼンテーションから別のプレゼンテーションにスライドを挿入するには、2 つの手順があります。
 
-プレゼンテーションのスライドを別のプレゼンテーションに挿入するには、2つの手順を実行します。
+1. ソース プレゼンテーション ファイル (.pptx) を base64 形式の文字列に変換します。
+1. Base64 ファイルから現在のプレゼンテーションに 1 つ以上のスライドを挿入するには、この `insertSlidesFromBase64` メソッドを使用します。
 
-1. ソースプレゼンテーションファイル (.pptx) を base64 形式の文字列に変換します。
-1. メソッドを使用して、 `insertSlidesFromBase64` base64 ファイルから現在のプレゼンテーションに1つまたは複数のスライドを挿入します。
+## <a name="convert-the-source-presentation-to-base64"></a>ソース プレゼンテーションを base64 に変換する
 
-## <a name="convert-the-source-presentation-to-base64"></a>ソースプレゼンテーションを base64 に変換する
+ファイルを base64 に変換する方法は多数あります。 使用するプログラミング言語とライブラリ、およびアドインのサーバー側とクライアント側のどちらで変換するかは、シナリオによって決まります。 ほとんどの場合 [、FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) オブジェクトを使用して、クライアント側で JavaScript で変換を行います。 次の例は、この方法を示しています。
 
-ファイルを base64 に変換するには、さまざまな方法があります。 使用するプログラミング言語とライブラリ、およびアドインまたはクライアント側のサーバー側で変換するかどうかは、シナリオによって決まります。 通常、 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) オブジェクトを使用して、クライアント側の JavaScript で変換を行います。 次の例は、この方法を示しています。
-
-1. 最初に、ソースの PowerPoint ファイルへの参照を取得します。 この例では、 `<input>` 種類のコントロールを使用し `file` て、ユーザーにファイルの選択を求めるメッセージを表示します。 次のマークアップをアドインページに追加します。
+1. まず、ソース PowerPoint ファイルへの参照を取得します。 この例では、種類のコントロールを `<input>` 使用して、ユーザーにファイルの選択を求 `file` めるメッセージを表示します。 次のマークアップをアドイン ページに追加します。
 
     ```html
     <section>
@@ -40,12 +38,12 @@ PowerPoint アドインでは、PowerPoint のアプリケーション固有の 
 
     このマークアップは、次のスクリーンショットの UI をページに追加します。
 
-    ![HTML ファイルの種類の入力コントロールの前に説明文を表示するスクリーンショット。「スライドを挿入する PowerPoint プレゼンテーションを選択する」を参照してください。 このコントロールは、"Choose file" というラベルの付いたボタンで構成され、その後に "ファイルが選択されていません" という文が続きます。](../images/powerpoint-html-file-input-control.png)
+    ![HTML ファイルの種類の入力コントロールの前に、「スライドを挿入する PowerPoint プレゼンテーションを選択する」という説明文が表示されているスクリーンショット コントロールは、"ファイルの選択" というラベルの付いたボタンと、その後に "No file chosen" という文で構成されます。](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > PowerPoint ファイルを取得する方法は他にもたくさんあります。 たとえば、ファイルが OneDrive または SharePoint に保存されている場合は、Microsoft Graph を使用してダウンロードできます。 詳細については、「 [Microsoft graph でファイルを処理](/graph/api/resources/onedrive) する」および「 [Microsoft graph でファイルにアクセス](/learn/modules/msgraph-access-file-data/)する」を参照してください。
+    > PowerPoint ファイルを取得する方法は他に多数あります。 たとえば、ファイルが OneDrive または SharePoint に保存されている場合は、Microsoft Graph を使用してダウンロードできます。 詳細については [、「Microsoft Graph でのファイルの操作」および「Microsoft Graph](/graph/api/resources/onedrive) を使用した [ファイルへのアクセス」を参照してください](/learn/modules/msgraph-access-file-data/)。
 
-2. 次のコードをアドインの JavaScript に追加して、入力コントロールのイベントに関数を割り当て `change` ます。 (この関数は、 `storeFileAsBase64` 次の手順で作成します)。
+2. 次のコードをアドインの JavaScript に追加して、入力コントロールのイベントに関数を割り当 `change` てる。 (次の手順 `storeFileAsBase64` で関数を作成します。
 
     ```javascript
     $("#file").change(storeFileAsBase64);
@@ -53,9 +51,9 @@ PowerPoint アドインでは、PowerPoint のアプリケーション固有の 
 
 3. 次のコードを追加します。 このコードについては、次の点に注意してください。
 
-    - `reader.readAsDataURL`このメソッドは、ファイルを base64 に変換して、プロパティに格納し `reader.result` ます。 メソッドが完了すると、イベントハンドラーがトリガーされ `onload` ます。
-    - イベントハンドラーは、エンコードされた `onload` ファイルからメタデータをトリミングし、エンコードされた文字列をグローバル変数に格納します。
-    - Base64 でエンコードされた文字列は、後の手順で作成した別の関数によって読み取られるため、グローバルに格納されます。
+    - この `reader.readAsDataURL` メソッドは、ファイルを base64 に変換し、プロパティに格納 `reader.result` します。 メソッドが完了すると、イベント ハンドラーが `onload` トリガーされます。
+    - イベント ハンドラーは、エンコードされたファイルからメタデータをトリミングし、エンコードされた文字列をグローバル `onload` 変数に格納します。
+    - base64 でエンコードされた文字列は、後の手順で作成する別の関数によって読み取りが行なうので、グローバルに格納されます。
 
     ```javascript
     let chosenFileBase64;
@@ -75,9 +73,9 @@ PowerPoint アドインでは、PowerPoint のアプリケーション固有の 
     }
     ```
 
-## <a name="insert-slides-with-insertslidesfrombase64"></a>InsertSlidesFromBase64 を使用してスライドを挿入する
+## <a name="insert-slides-with-insertslidesfrombase64"></a>insertSlidesFromBase64 を使用してスライドを挿入する
 
-アドインは、 [insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) メソッドを使用して、別の PowerPoint プレゼンテーションのスライドを現在のプレゼンテーションに挿入します。 次の簡単な例は、元のプレゼンテーションのすべてのスライドを現在のプレゼンテーションの先頭に挿入し、挿入したスライドにソースファイルの書式を保持します。 これ `chosenFileBase64` は、PowerPoint プレゼンテーションファイルの base64 でエンコードされたバージョンを保持するグローバル変数であることに注意してください。
+アドインは [、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) メソッドを使用して、別の PowerPoint プレゼンテーションのスライドを現在のプレゼンテーションに挿入します。 次に、ソース プレゼンテーションのすべてのスライドを現在のプレゼンテーションの先頭に挿入し、挿入したスライドにソース ファイルの書式を保持する簡単な例を示します。 これは、PowerPoint プレゼンテーション ファイルの base64 エンコード バージョンを保持するグローバル変数 `chosenFileBase64` です。
 
 ```javascript
 async function insertAllSlides() {
@@ -88,10 +86,10 @@ async function insertAllSlides() {
 }
 ```
 
-[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)オブジェクトを2番目のパラメーターとして渡すことによって、挿入結果のいくつかの側面を制御できます。これには、スライドが挿入される場所や、ソースまたはターゲットの書式設定を取得するかどうかなどがあり `insertSlidesFromBase64` ます。 次に例を示します。 このコードについては、以下の点に注意してください。
+[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)オブジェクトを 2 番目のパラメーターとして渡して、挿入結果の一部の側面 (スライドを挿入する場所、ソースまたはターゲットの書式設定を取得するかどうかを含む) を制御できます `insertSlidesFromBase64` 。 次に例を示します。 このコードについては、以下の点に注意してください。
 
-- プロパティには、 `formatting` "UseDestinationTheme" と "KeepSourceFormatting" という2つの値があります。 必要に応じて、 `InsertSlideFormatting` enum (など) を使用でき `PowerPoint.InsertSlideFormatting.useDestinationTheme` ます。
-- 関数は、プロパティで指定されたスライドの直後に、元のプレゼンテーションのスライドを挿入し `targetSlideId` ます。 このプロパティの値は、次の3つの形式のうちの1つです。 ***nnn * #**、* *#* mmmmmmmmm * * *、または **_nnn_ #* mmmmmmmmm * * *、 *nnn* はスライドの id (通常は3桁)、 *mmmmmmmmm* はスライドの作成 ID (通常は9桁) です。 例として、、、などがあり `267#763315295` `267#` `#763315295` ます。
+- プロパティには `formatting` 、"UseDestinationTheme" と "KeepSourceFormatting" の 2 つの値を指定できます。 必要に応じて、列挙型 `InsertSlideFormatting` (例: ) を使用できます `PowerPoint.InsertSlideFormatting.useDestinationTheme` 。
+- この関数は、プロパティで指定されたスライドの直後に、ソース プレゼンテーションのスライドを挿入 `targetSlideId` します。 このプロパティの値は **、*nnn*#**、* *#* mmm***、または **_nnn_ #* mmm***の 3 つの形式のいずれかの文字列です。ここで *、nnn* はスライドの ID (通常は 3 桁) で *、mmmmm は* スライドの作成 ID (通常は 9 桁) です。 たとえば、, `267#763315295` `267#` , and `#763315295` .
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
@@ -108,9 +106,9 @@ async function insertSlidesDestinationFormatting() {
 }
 ```
 
-当然のことですが、通常は、ターゲットスライドの ID または作成 ID のコーディング時にはわかりません。 一般的に、アドインは、ターゲットスライドを選択するようにユーザーに要求します。 次の手順は、現在選択されているスライドの ***nnn * #** ID を取得し、それをターゲットスライドとして使用する方法を示しています。
+もちろん、通常、ターゲット スライドの ID または作成 ID はコーディング時にはわかりません。 多くの場合、アドインはユーザーにターゲット スライドの選択を求める場合があります。 次の手順は、現在選択されているスライドの ***nnn*#** ID を取得し、ターゲット スライドとして使用する方法を示しています。
 
-1. 共通 JavaScript Api の [Office.context.document](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) を使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 の呼び出し `getSelectedDataAsync` は、Promise を返す関数に埋め込まれていることに注意してください。 その理由と方法の詳細については、「 [関数を返す関数のラップ Common-APIs](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)」を参照してください。
+1. 共通 JavaScript API の [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 呼び出しは `getSelectedDataAsync` Promise を返す関数に埋め込まれている点に注意してください。 これを行う理由と方法の詳細については、「Promise を返す関数で Common-APIs [をラップする」を参照してください](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
 
  
     ```javascript
@@ -132,7 +130,7 @@ async function insertSlidesDestinationFormatting() {
     }
     ```
 
-1. Main 関数の [PowerPoint. run ()](/javascript/api/powerpoint#PowerPoint_run_batch_) 内で新しい関数を呼び出し、返される ID ("#" 記号で連結される) を `targetSlideId` パラメーターのプロパティの値として渡します `InsertSlideOptions` 。 次に例を示します。
+1. メイン関数の[PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_)内で新しい関数を呼び出し、パラメーターのプロパティの値として返される ID ("#" 記号と連結) を渡します。 `targetSlideId` `InsertSlideOptions` 次に例を示します。
 
     ```javascript
     async function insertAfterSelectedSlide() {
@@ -152,7 +150,7 @@ async function insertSlidesDestinationFormatting() {
 
 ### <a name="selecting-which-slides-to-insert"></a>挿入するスライドの選択
 
-[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)パラメーターを使用して、ソースプレゼンテーションから挿入するスライドを制御することもできます。 これを行うには、移動元のプレゼンテーションのスライド Id の配列を `sourceSlideIds` プロパティに割り当てます。 次に、4つのスライドを挿入する例を示します。 配列内の各文字列は、プロパティに使用されている1つまたは複数のパターンに従う必要があることに注意してください `targetSlideId` 。
+[InsertSlideOptions パラメーター](/javascript/api/powerpoint/powerpoint.insertslideoptions)を使用して、ソース プレゼンテーションから挿入するスライドを制御することもできます。 これを行うには、元のプレゼンテーションのスライドのスライドの配列をプロパティに割り当 `sourceSlideIds` てる必要があります。 4 つのスライドを挿入する例を次に示します。 配列内の各文字列は、プロパティに使用されるパターンの 1 つ以上に従う必要 `targetSlideId` があります。
 
 ```javascript
 async function insertAfterSelectedSlide() {
@@ -170,15 +168,15 @@ async function insertAfterSelectedSlide() {
 ```
 
 > [!NOTE]
-> スライドは、配列に表示される順序に関係なく、ソースプレゼンテーションに表示される相対的な順序で挿入されます。
+> スライドは、配列に表示される順序に関係なく、元のプレゼンテーションに表示されるのと同じ相対順序で挿入されます。
 
-ユーザーがソースプレゼンテーションのスライドの ID または作成 ID を検出するための実用的な方法はありません。 このため、このプロパティは、 `sourceSlideIds` コーディング時にソース id がわかっている場合、またはデータソースから実行時にアドインで取得できる場合にのみ使用できます。 ユーザーがスライド Id を記憶することは予想できないため、ユーザーがスライドを選択できるようにするには、タイトルや画像によるスライドの選択が可能になり、各タイトルまたは画像をスライドの ID と関連付けることが必要になります。
+ユーザーがソース プレゼンテーションのスライドの ID または作成 ID を検出できる実用的な方法はありません。 このため、コーディング時にソースの ID を知っている場合、またはアドインが実行時に一部のデータ ソースからそれらを取得できる場合にのみ、このプロパティを使用 `sourceSlideIds` できます。 ユーザーはスライド ID を記憶できないので、ユーザーがスライドを選択する方法 (タイトルやイメージなど) を有効にし、各タイトルまたはイメージをスライドの ID に関連付ける方法も必要です。
 
-そのため、この `sourceSlideIds` プロパティは、主にプレゼンテーションテンプレートのシナリオで使用されます。アドインは、挿入可能なスライドのプールとして機能する特定のプレゼンテーションセットで機能するように設計されています。 このようなシナリオでは、お客様またはお客様は、選択基準 (タイトル、画像など) を含むデータソースを作成して、使用可能なソースプレゼンテーションセットから構成されているスライド作成 Id を関連付けて保持する必要があります。
+したがって、このプロパティは主にプレゼンテーション テンプレートのシナリオで使用されます。アドインは、挿入可能なスライドのプールとして機能する特定のプレゼンテーションのセットを操作するように `sourceSlideIds` 設計されています。 このようなシナリオでは、自分または顧客は、選択条件 (タイトルや画像など) と、考えられる一連のソース プレゼンテーションから構築されたスライドの ID またはスライド作成の ID を関連付けるデータ ソースを作成および維持する必要があります。
 
-## <a name="delete-slides"></a>スライドの削除
+## <a name="delete-slides"></a>スライドを削除する
 
-スライドを表す [slide オブジェクトへの参照](/javascript/api/powerpoint/powerpoint.slide) を取得して、メソッドを呼び出すことで、スライドを削除でき `Slide.delete` ます。 次に、4番目のスライドを削除する例を示します。
+スライドを削除するには、スライドを表す [Slide](/javascript/api/powerpoint/powerpoint.slide) オブジェクトへの参照を取得し、メソッドを呼び出 `Slide.delete` します。 次に、4 番目のスライドを削除する例を示します。
 
 ```javascript
 async function deleteSlide() {

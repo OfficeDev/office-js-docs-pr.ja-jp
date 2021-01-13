@@ -3,19 +3,19 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ba3c4cf4d94007cd0dc96480a7805f507d358c2
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308531"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840072"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
 ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。
 
 > [!NOTE]
-> ランタイムログ機能は、現在、Office 2016 以降のデスクトップで利用できます。
+> ランタイム ログ機能は現在、デスクトップの Office 2016 以降で使用できます。
 
 > [!IMPORTANT]
 > ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
@@ -61,7 +61,7 @@ ms.locfileid: "48308531"
 2. `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。
 
     > [!NOTE]
-    > `Developer`キー (フォルダー) がにまだ存在していない場合は `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` 、次の手順を実行して作成します。
+    > キー (フォルダー) が存在しない場合は、次の手順を `Developer` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` 実行して作成します。
     >
     > 1. **[WEF]** キー (フォルダー) を右クリックし、**[新規]**、**[キー]** の順に選択します。
     > 1. 新しいキーに **Developer** という名前を付けます。
@@ -73,13 +73,13 @@ ms.locfileid: "48308531"
 
 レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。
 
-![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](http://i.imgur.com/Sa9TyI6.png)
+![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac でのランタイム ログ
 
 1. Office 2016 デスクトップのビルド **16.27** (19071500) 以降を実行していることを確認します。
 
-2. **ターミナル**を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。
+2. **ターミナル** を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。
 
     ```command&nbsp;line
     defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
@@ -87,7 +87,7 @@ ms.locfileid: "48308531"
 
     `<bundle id>`は、ランタイム ログを有効にするホストを識別します。 `<file_name>`は、ログが書き込まれるテキスト ファイルの名前です。
 
-    `<bundle id>`次のいずれかの値に設定して、対応するアプリケーションのランタイムログを有効にします。
+    対応 `<bundle id>` するアプリケーションのランタイム ログを有効にするには、次のいずれかの値に設定します。
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -128,10 +128,6 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 2. 何も起こらず、アドインが表示されない (アドイン ダイアログ ボックスにも表示されない) 場合は、ログ ファイルを開きます。
 
 3. ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイルでは、この ID には `SolutionId` というラベルが付いています。
-
-次の例のログ ファイルでは、存在しないリソース ファイルを参照しているコントロールが示されています。この例の問題を修正するには、マニフェストの入力ミスを訂正するか、足りないリソースを追加します。
-
-![見つからないリソース ID を指定するエントリが含まれるログ ファイルのスクリーンショット](http://i.imgur.com/f8bouLA.png)
 
 ## <a name="known-issues-with-runtime-logging"></a>ランタイムのログに関する既知の問題
 

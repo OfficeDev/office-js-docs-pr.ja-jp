@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071663"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839839"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -37,7 +37,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 カスタム関数に関する情報はOfficeによってキャッシュされます。 開発中、またカスタム関数を使用して繰り返しリロードしている間は、変更が反映されないことがあります。 Officeのキャッシュをクリアすることでこれを修正できます。 詳細については、「[Office のキャッシュをクリアする](../testing/clear-cache.md)」を参照してください。
 
-## <a name="common-issues"></a>一般的な問題
+## <a name="common-problems-and-solutions"></a>一般的な問題と解決策
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
 
@@ -45,7 +45,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
-localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、 [このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の *オプション 2* を参照してください。
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の *オプション 2* を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
@@ -53,7 +53,7 @@ Excelがカスタム関数の完了を待っている間、＃BUSY！と表示�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
 
-`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーが実行を停止するまでに数分かかることがあります。
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーの実行が停止するために数分かかる場合があります。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
@@ -76,7 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「 [関数名と JSON メタデータの関連付け](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)」を参照してください。
+このプロセスの詳細については、「関数名と JSON メタデータの関連付け」を [参照してください](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+
+## <a name="known-issues"></a>既知の問題
+
+既知の問題は、Excel カスタム関数 [GitHub リポジトリで追跡および報告されます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 
@@ -84,7 +88,7 @@ CustomFunctions.associate("ADD", add);
 
 ### <a name="in-excel-on-windows-or-mac"></a>Windows または Mac の Excel で
 
-Windows または Mac で Excel を使用している場合は、Excel から Office の機能拡張チームにフィードバックを直接報告できます。 これを行うには、 **[ファイル]、[フィードバック]、[問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
+Windows または Mac で Excel を使用している場合は、Excel から Office の機能拡張チームにフィードバックを直接報告できます。 これを行うには、**[ファイル]、[フィードバック]、[問題点、改善点の報告]** の順に選択します。 問題点や改善点の報告では、発生した問題を理解するために必要なログが提供されます。
 
 ### <a name="in-github"></a>GitHub で
 

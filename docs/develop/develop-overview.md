@@ -3,12 +3,12 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 02ef856d17a82f9e63a555bae09d53d91e6ccc9c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131893"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839944"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -111,7 +111,7 @@ Office UI の拡張とアドインのUXのデザインに関する詳細につ�
 
 ### <a name="create-an-office-add-in"></a>Office アドインを作成する
 
-[5 分間のクイック スタート](/office/dev/add-ins/)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](/office/dev/add-ins/)を試してみてください。
+[5 分間のクイック スタート](../index.yml)を完了することで、Excel、OneNote、Outlook、PowerPoint、Project、または Word 用の基本的なアドインを簡単に作成することができます。 以前にクイック スタートを完了している場合で、より複雑なアドインを作成したい場合は、[チュートリアル](../index.yml)を試してみてください。
 
 ### <a name="learn-more"></a>詳細情報
 
@@ -124,6 +124,6 @@ Office アドインの開発、テスト、公開の詳細については、こ�
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 - [Microsoft 365 開発者プログラムについてご説明します](https://developer.microsoft.com/microsoft-365/dev-program)
-- [Office アドインを設計する](../design/add-in-design.md)
+- [Office アドインの設計](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)

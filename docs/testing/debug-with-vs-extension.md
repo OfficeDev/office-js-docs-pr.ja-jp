@@ -1,58 +1,58 @@
 ---
 title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
-description: Office アドインをデバッグするには、Visual Studio Code extension Microsoft Office アドインデバッガーを使用します。
+description: アドイン デバッガー Visual Studioコード拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1343014fa875509fd6f0c615c3504cc9ae50dc0d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 83791d5d60238288e3059809b8b8c02b1f4f768f
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293444"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840112"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
-Visual Studio コード用の Microsoft Office アドインデバッガー拡張機能を使用すると、エッジランタイムに対して Office アドインをデバッグできます。
+コードMicrosoft Officeアドイン デバッガー拡張機能Visual Studioでは、Edge ランタイムに対して Office アドインをデバッグできます。
 
-このデバッグモードは動的なので、コードの実行中にブレークポイントを設定できます。 デバッグセッションを失わずに、デバッガーがアタッチされている間は、コード内の変更をすぐに表示できます。 コードの変更も引き続き行われるため、コードに対する複数の変更の結果を確認できます。 次の図は、この拡張機能の動作を示しています。
+このデバッグ モードは動的で、コードの実行中にブレークポイントを設定できます。 デバッガーがアタッチされている間は、デバッグ セッションを失わずに、コードの変更をすぐに確認できます。 コードの変更も保持されます。そのため、コードに対する複数の変更の結果を確認できます。 次の図は、この拡張機能の動作を示しています。
 
-![Office Addin デバッガー拡張機能 Excel アドインのセクションをデバッグする](../images/vs-debugger-extension-for-office-addins.jpg)
+![Officeアドインのセクションをデバッグするアドイン デバッガー拡張機能](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Visual Studio Code](https://code.visualstudio.com/) (管理者として実行する必要があります)
-- [Node.js (バージョン10以降)](https://nodejs.org/)
+- [Visual Studioコード](https://code.visualstudio.com/) (管理者として実行する必要があります)
+- [Node.js (バージョン 10 以上)](https://nodejs.org/)
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
-これらの手順では、コマンドラインを使用して基本的な JavaScript を理解し、Yo Office ジェネレーターを使用する前に Office アドインプロジェクトを作成していることを前提としています。 これを実行していない場合は、この [Excel Office アドインのチュートリアル](../tutorials/excel-tutorial.md)のように、チュートリアルの1つにアクセスすることを検討してください。
+これらの手順は、コマンド ラインの使用経験、基本的な JavaScript の理解、Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成した経験を前提にしています。 まだこれを行っていない場合は、次の [Excel](../tutorials/excel-tutorial.md)やアドインのチュートリアルOfficeチュートリアルのいずれかを参照してください。
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する
 
-1. アドインプロジェクトを作成する必要がある場合は、 [Yo Office ジェネレーターを使用して](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator)プロジェクトを作成します。 コマンドライン内のプロンプトに従って、プロジェクトを設定します。 必要に応じて、任意の言語やプロジェクトの種類を選択できます。
+1. アドイン プロジェクトを作成する必要がある場合は、Yo Office ジェネレーターを使用 [して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトを設定します。 必要に応じて、任意の言語または種類のプロジェクトを選択できます。
 
 > [!NOTE]
-> プロジェクトが既に存在する場合は、手順1をスキップし、手順2に進みます。
+> プロジェクトが既に存在する場合は、手順 1 をスキップして手順 2 に進みます。
 
-2. 管理者としてコマンドプロンプトを開きます。
-   ![Windows 10 の "管理者として実行" を含むコマンドプロンプトオプション](../images/run-as-administrator-vs-code.jpg)
+2. 管理者としてコマンド プロンプトを開きます。
+   ![Windows 10 のコマンド プロンプト オプション ("管理者として実行" を含む)](../images/run-as-administrator-vs-code.jpg)
 
-3. プロジェクトディレクトリに移動します。
+3. プロジェクト ディレクトリに移動します。
 
-4. 次のコマンドを実行して、Visual Studio Code で管理者としてプロジェクトを開きます。
+4. 次のコマンドを実行して、管理者として Visual Studioコードでプロジェクトを開きます。
 
 ```command&nbsp;line
 code .
 ```
 
-Visual Studio コードが開いたら、プロジェクトフォルダーに手動で移動します。
+コードVisual Studio開いた後、手動でプロジェクト フォルダーに移動します。
 
 > [!TIP]
-> Visual Studio Code を管理者として開くには、Visual Studio Code を Windows で検索した後、そのコードを開くときに [ **管理者として実行** ] オプションを選択します。
+> 管理者として Visual Studio コードを開く場合は、Windowsでコードを検索した後、Visual Studio コードを開く際に管理者として実行オプションを選択します。
 
-5. VS コード内で、 **CTRL + SHIFT + X** を選択して [拡張バー] を開きます。 「Microsoft Office アドインデバッガー」拡張機能を検索してインストールします。
+5. VS Code 内で **Ctrl + Shift + X** キーを押して拡張機能バーを開きます。 "Microsoft Office アドイン デバッガー" 拡張機能を検索してインストールします。
 
-6. プロジェクトの vscode フォルダーで、ファイルの **launch.js** を開きます。 次のコードをセクションに追加し `configurations` ます。
+6. プロジェクトの .vscode フォルダーで、ファイルlaunch.js **開** きます。 セクションに次のコードを追加 `configurations` します。
 
 ```JSON
 {
@@ -67,19 +67,19 @@ Visual Studio コードが開いたら、プロジェクトフォルダーに手
 }
 ```
 
-7. 先ほどコピーした JSON のセクションで、[url] セクションを見つけます。 この URL では、大文字のホストテキストを Office アドインをホストしているアプリケーションに置き換える必要があります。 たとえば、Office アドインが excel 用の場合、URL の値は " https://localhost:3000/taskpane.html?_host_Info= <strong>excel</strong>$Win 32 $ 16.01 $ en-us $ \$ \$ \$ 0" になります。
+7. コピーした JSON のセクションで、"url" セクションを探します。 この URL では、大文字の HOST テキストを、アドインをホストしているアプリケーションに置Officeがあります。 たとえば、Office アドインが Excel 用の場合、URL 値は https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0" になります。
 
-8. コマンドプロンプトを開き、自分がプロジェクトのルートフォルダーにあることを確認します。 コマンドを実行し `npm start` て、開発サーバーを起動します。 アドインが Office クライアントに読み込まれたら、作業ウィンドウを開きます。
+8. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがクライアントに読み込Office作業ウィンドウを開きます。
 
-9. Visual Studio Code に戻り、[ **表示] > [デバッグ** ] を選択するか、 **CTRL + SHIFT + D キー** を押してデバッグビューに切り替えます。
+9. コードにVisual Studioし、[デバッグ] の[>] を選択するか **、Ctrl + Shift + D** キーを押してデバッグ ビューに切り替えます。
 
-10. デバッグオプションで、[ **Office アドインにアタッチ**] を選択します。 **F5 キーを押す** か、メニューからデバッグを **開始し >** デバッグを開始してデバッグを開始します。
+10. [デバッグ] オプションで、[アドイン **にアタッチOffice選択します**。F5 **キーを押** するか、[デバッグ] **->メニュー** から [デバッグの開始] を選択してデバッグを開始します。
 
-11. プロジェクトの作業ウィンドウファイルにブレークポイントを設定します。 VS コードでブレークポイントを設定するには、コード行の横にあるカーソルを使用して、表示される赤い円を選択します。
+11. プロジェクトの作業ウィンドウ ファイルにブレークポイントを設定します。 VS Code でブレークポイントを設定するには、コード行の横にカーソルを合わせると、表示される赤い円を選択します。
 
 ![VS Code のコード行に赤い円が表示される](../images/set-breakpoint.jpg)
 
-12. アドインを実行します。 ブレークポイントにヒットしたことが表示され、ローカル変数を調べることができます。
+12. アドインを実行します。 ブレークポイントにヒットしたと表示され、ローカル変数を検査できます。
 
 ## <a name="see-also"></a>関連項目
 

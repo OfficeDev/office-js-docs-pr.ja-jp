@@ -1,55 +1,55 @@
 ---
-title: イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
-description: イベントベースのライセンス認証用に Outlook アドインを構成する方法について説明します。
+title: イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
+description: イベント ベースのアクティブ化用に Outlook アドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 11/24/2020
+ms.date: 01/06/2021
 localization_priority: Normal
-ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
-ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
+ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "49408842"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839832"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベントベースのライセンス認証用に Outlook アドインを構成する (プレビュー)
+# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 
-イベントベースのアクティブ化機能がない場合、ユーザーは、自分のタスクを完了するためにアドインを明示的に起動する必要があります。 この機能により、特定のイベント (特に、すべてのアイテムに適用される操作) に基づいてアドインでタスクを実行できます。 作業ウィンドウと UI 非表示機能に統合することもできます。 現在、次のイベントがサポートされています。
+イベント ベースのアクティブ化機能がない場合、ユーザーは自分のタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、特にすべてのアイテムに適用される操作に関して、特定のイベントに基づいてタスクを実行できます。 作業ウィンドウと UI を使用する機能を統合することもできます。 現時点では、次のイベントがサポートされています。
 
-- `OnNewMessageCompose`: 新しいメッセージを作成するときに (返信、全員に返信、および転送を含む)
-- `OnNewAppointmentOrganizer`: 新しい予定を作成するとき
+- `OnNewMessageCompose`: 新しいメッセージの作成時 (返信、全員に返信、転送を含む)
+- `OnNewAppointmentOrganizer`: 新しい予定の作成時
 
   > [!IMPORTANT]
-  > この機能は、アイテムを編集するときにアクティブ化 **されません** 。たとえば、下書きまたは既存の予定です。
+  > この機能は **、下** 書きや既存の予定など、アイテムの編集時にはアクティブ化されない。
 
-このチュートリアルを終了すると、新しいメッセージが作成されるたびに実行されるアドインができます。
+このチュートリアルの終わりまでに、新しいメッセージが作成されるたびに実行されるアドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを使用する web 上の Outlook の [プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) でのみサポートされています。 詳細については、この記事の「 [イベントに基づくライセンス認証機能をプレビューする方法](#how-to-preview-the-event-based-activation-feature) 」を参照してください。
+> この機能は、Microsoft 365 サブスクリプションを使用した Outlook on the web でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベース](#how-to-preview-the-event-based-activation-feature) のアクティブ化機能をプレビューする方法を参照してください。
 >
-> プレビュー機能は予告なしに変更される可能性があるため、運用アドインでは使用しないでください。
+> プレビュー機能は予告なしに変更されることがありますので、実稼働アドインでは使用できません。
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>イベントベースのライセンス認証機能をプレビューする方法
+## <a name="how-to-preview-the-event-based-activation-feature"></a>イベント ベースのアクティブ化機能をプレビューする方法
 
-イベントに基づくライセンス認証機能をお試しください。 GitHub を通じてフィードバックを提供することによって、自分のシナリオと改善方法をお知らせください (このページの最後にある **フィードバック** セクションを参照してください)。
+イベント ベースのアクティブ化機能をお試しください。 GitHub を通じてフィードバックを提供することで、お客様のシナリオと改善方法をお知らせします (このページの最後にあるフィードバックセクションをご覧ください)。
 
-この機能をプレビューするには:
+この機能をプレビューするには、次の方法を使用します。
 
-- CDN の **ベータ版** ライブラリを参照し https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ます (。 TypeScript のコンパイルおよび IntelliSense 用の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) は、CDN と、定義 [された](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)定義ファイルにあります。 これらの種類は、でインストールでき `npm install --save-dev @types/office-js-preview` ます。
-- [Microsoft 365 テナントで対象となるリリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)します。
+- CDN で **ベータ** ライブラリを参照します ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . TypeScript [のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 読み取りIntelliSense定義ファイルは CDN と [DefinitelyTyped で見つかりました](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 次の種類を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
+- [Microsoft 365 テナントで対象指定リリースを構成します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) に記入します。このアドインプロジェクトは、Office アドイン用の [アプリ] ジェネレーターを使用して作成されます。
+Outlook クイック [スタートを完了](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) します。このクイック スタートでは、アドイン用の Yeoman ジェネレーターを使用してアドイン Office作成します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインのイベントベースのアクティブ化を有効にするには、マニフェストで、 [ランタイム](../reference/manifest/runtimes.md) 要素と [launchevent](../reference/manifest/extensionpoint.md#launchevent-preview) 拡張点を構成する必要があります。 ここで `DesktopFormFactor` は、サポートされているフォームファクターのみを示します。
+アドインのイベント ベースのアクティブ化を有効にするには、マニフェストで [Runtimes](../reference/manifest/runtimes.md) 要素と [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) 拡張ポイントを構成する必要があります。 今のところ、 `DesktopFormFactor` サポートされているフォーム ファクターは 1 つのみです。
 
-1. コードエディターで、[クイックスタート] プロジェクトを開きます。
+1. コード エディターで、クイック スタート プロジェクトを開きます。
 
-1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
+1. プロジェクトの **manifest.xml** にある新しいファイルを開きます。
 
-1. `<VersionOverrides>`ノード全体 (open タグと close タグを含む) を選択し、次の XML に置き換えます。
+1. ノード全体 `<VersionOverrides>` (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -150,36 +150,47 @@ Outlook の [クイックスタート](../quickstarts/outlook-quickstart.md?tabs
 </VersionOverrides>
 ```
 
-Outlook on the Windows は JavaScript ファイルを使用しますが、web 上の Outlook は同じ JavaScript ファイルを参照する HTML ファイルを使用します。 Outlook プラットフォームは、outlook クライアントに基づいて HTML と JavaScript のどちらを使用するかを決定するために、これらのファイルへの参照をマニフェストに提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、 `Runtime` その `Override` 子要素で、JavaScript ファイルの場所を指定するか、html で参照します。
+Outlook on Windows では JavaScript ファイルを使用し、Outlook on the web は同じ JavaScript ファイルを参照する HTML ファイルを使用します。 Outlook プラットフォームは最終的に Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定しますので、マニフェストでこれらの両方のファイルへの参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で、HTML によってインライン化または参照される JavaScript ファイルの場所を提供します `Runtime` `Override` 。
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「 [outlook アドインのマニフェスト](manifests.md)」を参照してください。
+> Outlook アドインのマニフェストの詳細については、Outlook アドインの [マニフェストを参照してください](manifests.md)。
 
 ## <a name="implement-event-handling"></a>イベント処理を実装する
 
 選択したイベントの処理を実装する必要があります。
 
-このシナリオでは、新しいアイテムを作成するための処理を追加します。
+このシナリオでは、新しいアイテムを作成する処理を追加します。
 
-1. 同じクイックスタートプロジェクトから、コードエディターで **/src/commands/commands.js** を開きます。
+1. 同じクイック スタート プロジェクトから、コード エディターで **ファイル ./src/commands/commands.js** を開きます。
 
-1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
+1. 関数の `action` 後に、次の JavaScript 関数を挿入します。
 
     ```js
     function onMessageComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
     function onAppointmentComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
-    function setSubject() {
-      Office.context.mailbox.item.subject.setAsync("Set by an event-based add-in!");
+    function setSubject(event) {
+      Office.context.mailbox.item.subject.setAsync(
+        "Set by an event-based add-in!",
+        {
+          "asyncContext" : event
+        },
+        function (asyncResult) {
+          // Handle success or error.
+          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
+          }
+    
+          // Call event.completed() after all work is done.
+          asyncResult.asyncContext.completed();
+        });
     }
     ```
 
-1. ファイルの末尾に、次のステートメントを追加します。
+1. ファイルの最後に、次のステートメントを追加します。
 
     ```js
     g.onMessageComposeHandler = onMessageComposeHandler;
@@ -188,7 +199,7 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
 
     ```command&nbsp;line
     npm run dev-server
@@ -198,27 +209,27 @@ Outlook on the Windows は JavaScript ファイルを使用しますが、web �
 
 1. Outlook on the web で新しいメッセージを作成します。
 
-    ![Web 上の Outlook で、作成時に件名が設定されたメッセージウィンドウのスクリーンショット。](../images/outlook-web-autolaunch.png)
+    ![Outlook on the web のメッセージ ウィンドウのスクリーンショット。件名が新規作成に設定されています。](../images/outlook-web-autolaunch.png)
 
-## <a name="event-based-activation-behavior-and-limitations"></a>イベントに基づくアクティブ化の動作と制限事項
+## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 
-イベントに基づいてアクティブ化するアドインは、短時間で最大330秒のみが実行されるように設計されています。 アドインで、 `event.completed` 起動イベントの処理が完了したことを通知するメソッドを呼び出すことをお勧めします。 ユーザーが [新規作成] ウィンドウを閉じたときにもアドインは終了します。
+イベントに基づいてアクティブ化するアドインは、最大 330 秒の短い実行に設計されています。 起動イベントの処理が完了したというシグナルをアドインで呼び出す方法 `event.completed` をお勧めします。 ユーザーが作成ウィンドウを閉じると、アドインも終了します。
 
-ユーザーが同じイベントにサブスクライブした複数のアドインを持っている場合、Outlook プラットフォームは特定の順序でアドインを起動しません。 現在、5つのイベントベースのアドインのみをアクティブに実行できます。 追加のアドインは、キューにプッシュされ、以前のアクティブなアドインが完了または非アクティブになったときとして実行されます。
+ユーザーが同じイベントにサブスクライブした複数のアドインを持っている場合、Outlook プラットフォームは特定の順序でアドインを起動します。 現在、アクティブに実行できるイベント ベースのアドインは 5 つのみです。 追加のアドインはキューにプッシュされ、以前にアクティブだったアドインが完了または非アクティブ化されると実行されます。
 
-ユーザーは、アドインの実行が開始された現在のメールアイテムから切り替えることができます。 起動されたアドインは、バックグラウンドで操作を終了します。
+ユーザーは、アドインの実行を開始した現在のメール アイテムから切り替えまたは移動できます。 起動されたアドインは、バックグラウンドで操作を完了します。
 
-UI を変更または変更する一部の Office.js Api は、イベントベースのアドインからは許可されていません。ブロックされる Api を次に示します。
+UI Office.js変更する API の一部は、イベント ベースのアドインでは許可されません。ブロックされる API を次に示します。
 
-- `Office.context.mailbox`以下:
+- Under `Office.context.mailbox` :
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
-- `Office.context.ui`以下:
+- Under `Office.context.ui` :
   - `displayDialogAsync`
   - `messageParent`
-- `Office.context.auth`以下:
+- Under `Office.context.auth` :
   - `getAccessToken`
   - `getAccessTokenAsync`
 

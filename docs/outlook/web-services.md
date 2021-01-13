@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: f9cf2a41ce5da325ae17812e89d9d8ecd315e573
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: b86040f513f4bd368e964270ba3e94184022938f
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430990"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839699"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -33,7 +33,7 @@ Web サービスを呼び出す方法は、Web サービスは配置された場
 
 EWS は、Exchange サーバーでの種々の操作をサポートしています。たとえば、アイテム レベルの操作としては、アイテムのコピー、検索、更新、または送信などがあり、フォルダー レベルの操作としては、フォルダーの作成、取得、または更新などがあります。EWS 操作を実行するには、その操作の XML SOAP 要求を作成します。操作が終了すると、その操作に関係するデータが含まれた XML SOAP 応答を受信します。EWS SOAP の要求と応答は、Messages.xsd ファイルで定義されているスキーマに従います。Messages.xsd ファイルは、他の EWS スキーマ ファイルと同様、EWS をホストしている IIS 仮想ディレクトリに配置されています。
 
-メソッドを使用して EWS 操作を開始するには、 `makeEwsRequestAsync` 次の情報を指定します。
+このメソッドを `makeEwsRequestAsync` 使用して EWS 操作を開始するには、以下を指定します。
 
 - その EWS 操作の SOAP 要求に対する XML ( _data_ パラメーターへの引数)
 
@@ -41,7 +41,7 @@ EWS は、Exchange サーバーでの種々の操作をサポートしていま�
 
 - そのコールバック メソッドに対するオプションの入力データ ( _userContext_ 引数)
 
-EWS SOAP 要求が完了すると、Outlook はコールバックメソッドを1つの引数 ( [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクト) で呼び出します。コールバックメソッドは、オブジェクトの2つのプロパティにアクセスでき `AsyncResult` ます。この `value` プロパティには、EWS 操作の XML SOAP 応答と、必要に応じて、 `asyncContext` パラメーターとして渡されるデータが格納されているプロパティが含まれます。 `userContext` 通常、コールバックメソッドは SOAP 応答内の XML を解析して、関連する情報を取得し、その情報を適切に処理します。
+EWS SOAP 要求が完了すると、Outlook は 1 つの引数 (AsyncResult オブジェクト) を使用してコールバック [メソッドを呼び出](/javascript/api/office/office.asyncresult) します。コールバック メソッドは、オブジェクトの 2 つのプロパティ `AsyncResult` `value` (EWS 操作の XML SOAP 応答を含むプロパティ)、およびオプションでパラメーターとして渡されるデータを含むプロパティにアクセス `asyncContext` `userContext` できます。通常、コールバック メソッドは SOAP 応答で XML を解析して関連情報を取得し、その情報を適切に処理します。
 
 
 ## <a name="tips-for-parsing-ews-responses"></a>EWS 応答を解析するためのヒント
@@ -49,9 +49,9 @@ EWS SOAP 要求が完了すると、Outlook はコールバックメソッドを
 SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存する以下の問題に注意してください。
 
 
-- DOM メソッドを使用する場合は、タグ名に接頭辞を指定して、 `getElementsByTagName` Internet Explorer のサポートを組み込むことができます。
+- DOM メソッドを使用するときにタグ名のプレフィックスを指定し、タグ名のサポート `getElementsByTagName` を含Internet Explorer。
 
-  `getElementsByTagName` ブラウザーの種類によって動作が異なります。たとえば、EWS 応答には次の XML を含めることができます (表示のために書式指定され、省略されています)。
+  `getElementsByTagName` ブラウザーの種類によって動作が異なります。たとえば、EWS 応答には次の XML を含めることもできます (表示の目的で書式設定および省略)。
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -62,7 +62,7 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
         }</t:Value></t:ExtendedProperty>
    ```
 
-   次のようにコードを使用すると、Chrome などのブラウザーでタグで囲まれた XML を取得でき `ExtendedProperty` ます。
+   次に示すコードは、Chrome などのブラウザーで機能し、タグで囲まれた XML を取得 `ExtendedProperty` します。
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -82,22 +82,22 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
             });
    ```
 
-- 次に示すように、DOM プロパティを使用し `textContent` て、EWS 応答のタグの内容を取得します。
+- 以下に示すように、DOM プロパティを使用して EWS 応答のタグ `textContent` の内容を取得します。
 
    ```js
       content = $.parseJSON(value.textContent);
    ```
 
-   `innerHTML`Internet Explorer では、などの他のプロパティは EWS 応答のいくつかのタグに対して機能しない場合があります。
+   EWS 応答 `innerHTML` の一部のタグのInternet Explorer、その他のプロパティは機能しない可能性があります。
 
 
 ## <a name="example"></a>例
 
-次の例は、 `makeEwsRequestAsync` [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を使用してアイテムの件名を取得するために呼び出しを行います。この例には、次の3つの関数が含まれています。
+次の例では `makeEwsRequestAsync` [、GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を使用してアイテムの件名を取得する呼び出しを行います。この例には、次の 3 つの関数が含まれています。
 
--  `getSubjectRequest`&ndash;入力としてアイテム ID を受け取り、 `GetItem` 指定されたアイテムに対して呼び出す SOAP 要求の XML を返します。
+-  `getSubjectRequest`アイテム ID を入力として受け取り、指定されたアイテムを呼び出す SOAP 要求の &ndash; XML `GetItem` を返します。
 
--  `sendRequest`&ndash; `getSubjectRequest` [呼び出し] 選択したアイテムの soap 要求を取得し、soap 要求とコールバックメソッドを渡して、 `callback` `makeEwsRequestAsync` 指定されたアイテムの件名を取得します。
+-  `sendRequest`選択したアイテムの SOAP 要求を取得する呼び出しを行い、SOAP 要求とコールバック メソッドを渡して、指定されたアイテムの件名 &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` を取得します。
 
 -  `callback` &ndash; 指定のアイテムの件名とその他の情報が含まれている SOAP 応答を処理します。
 
@@ -148,15 +148,15 @@ function callback(asyncResult)  {
 
 ## <a name="ews-operations-that-add-ins-support"></a>アドインでサポートしている EWS 操作
 
-Outlook アドインは、メソッドによって EWS で利用可能な操作のサブセットにアクセスでき `makeEwsRequestAsync` ます。EWS 操作についてよく知らない場合、またはメソッドを使用して操作にアクセスする方法については、最初に SOAP 要求の例を使用して、 `makeEwsRequestAsync` _データ_ 引数をカスタマイズしてください。
+Outlook アドインは、メソッドを介して EWS で使用可能な操作のサブセットにアクセス `makeEwsRequestAsync` できます。EWS 操作と、メソッドを使用して操作にアクセスする方法に慣れていない場合は、まず SOAP 要求の例から始め、データ引数を `makeEwsRequestAsync` _カスタマイズ_ します。
 
-次に、メソッドの使用方法を説明し `makeEwsRequestAsync` ます。
+以下では、このメソッドの使い方について説明 `makeEwsRequestAsync` します。
 
 1. XML 内のアイテム ID および関係する EWS 操作属性を適切な値に置き換えます。
 
-2. SOAP 要求をの  _data_ パラメーターの引数として含め `makeEwsRequestAsync` ます。
+2. のデータ パラメーターの引数として SOAP  _要求を_ 含める `makeEwsRequestAsync` 。
 
-3. コールバックメソッドを指定して呼び出しを `makeEwsRequestAsync` 行います。
+3. コールバック メソッドと呼び出しを指定します `makeEwsRequestAsync` 。
 
 4. コールバック メソッド内で、SOAP 応答内の操作の結果を検証します。
 
@@ -205,12 +205,12 @@ Outlook アドインは、メソッドによって EWS で利用可能な操作�
 
 ## <a name="authentication-and-permission-considerations-for-makeewsrequestasync"></a>makeEwsRequestAsync の認証とアクセス許可について
 
-メソッドを使用する場合 `makeEwsRequestAsync` 、要求は現在のユーザーの電子メールアカウントの資格情報を使用して認証されます。 この `makeEwsRequestAsync` メソッドは、ユーザーの資格情報を管理して、要求に対して認証の資格情報を提供する必要がないようにします。
+このメソッドを使用すると、現在のユーザーの電子メール アカウント資格情報を使用して要求 `makeEwsRequestAsync` が認証されます。 このメソッドはユーザーの資格情報を管理し、要求に認証資格情報を提供 `makeEwsRequestAsync` する必要がなされます。
 
 > [!NOTE]
-> サーバー管理者は、 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) または [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) コマンドレットを使用して、クライアントアクセスサーバーの Ews ディレクトリで _oauthauthentication_ パラメーターを **TRUE** に設定し、 `makeEwsRequestAsync` メソッドで ews 要求を行うことができるようにする必要があります。
+> サーバー管理者は [、New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true)または [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true)コマンドレットを使用して、EWS 要求を行うメソッドを有効にするために、クライアント アクセス サーバーの EWS ディレクトリで _OAuthAuthentication_ パラメーターを **true** に設定する必要があります。 `makeEwsRequestAsync`
 
-アドインは、 `ReadWriteMailbox` アドインマニフェストでメソッドを使用するためのアクセス許可を指定する必要があり `makeEwsRequestAsync` ます。 アクセス許可の使用の詳細については `ReadWriteMailbox` 、「 [ReadWriteMailbox Permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) For [Outlook アドインのアクセス許可](understanding-outlook-add-in-permissions.md)について」を参照してください。
+アドインは、アドイン マニフェストでメソッドを使用するアクセス許可 `ReadWriteMailbox` を指定する必要 `makeEwsRequestAsync` があります。 アクセス許可の使用の詳細については、「Outlook アドインのアクセス許可について」の `ReadWriteMailbox` [「ReadWriteMailbox](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) アクセス許可 [」セクションを参照してください](understanding-outlook-add-in-permissions.md)。
 
 ## <a name="see-also"></a>関連項目
 
@@ -223,5 +223,5 @@ Outlook アドインは、メソッドによって EWS で利用可能な操作�
 
 ASP.NET Web API を使用してアドイン用のバックエンド サービスを作成する場合は、以下の資料を参照してください。
 
-- [ASP.NET Web API を使用して Office アドイン用 Web サービスを作成する](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)
+- [ASP.NET Web API を使用して Office アドイン用 Web サービスを作成する](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [ASP.NET Web API を使用した HTTP サービスの構築に関する基本](https://www.asp.net/web-api)

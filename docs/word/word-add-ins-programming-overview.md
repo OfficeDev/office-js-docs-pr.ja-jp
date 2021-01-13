@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d0dae515df3d8fb3ec1bcb12f553b21b341552ad
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 2dba67cabaf11d6e10560ba3dbe5babde3ed0c92
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740848"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840007"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -75,7 +75,7 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 ## <a name="next-steps"></a>次の手順
 
-最初の Word アドインを作成する準備ができたら「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。[アドインのマニフェスト](../develop/add-in-manifests.md) を使用して、アドインがホストされている場所や表示方法の説明、アクセス許可およびその他の情報の定義を行います。
+最初の Word アドインを作成する準備ができたら「[最初の Word アドインをビルドする](../quickstarts/word-quickstart.md)」を参照してください。[アドインのマニフェスト](../develop/add-in-manifests.md) を使用して、アドインがホストされている場所や表示方法の説明、アクセス許可およびその他の情報の定義を行います。
 
 ユーザーにとって魅力的なエクスペリエンスを提供する世界クラスの Word アドインを設計する方法の詳細については、「[設計のガイドライン](../design/add-in-design.md)」と「[ベスト プラクティス](../concepts/add-in-development-best-practices.md)」を参照してください。
 
