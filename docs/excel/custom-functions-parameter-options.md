@@ -1,14 +1,14 @@
 ---
-ms.date: 12/09/2020
+ms.date: 12/21/2020
 description: Excel の範囲、オプションのパラメーター、呼び出しコンテキストなど、カスタム関数内で異なるパラメーターを使用する方法について説明します。
 title: Excel カスタム関数のオプション
 localization_priority: Normal
-ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
-ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
+ms.openlocfilehash: 312046551236e96e67de6f63f3e3511aba6f50ce
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "49624667"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735530"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数のパラメーター オプション
 
@@ -229,22 +229,64 @@ JavaScript では、1 次元配列、2 次元配列、およびより多くの�
 
 ## <a name="invocation-parameter"></a>呼び出しパラメーター
 
-すべてのカスタム関数には、最後の引数 `invocation` として引数が自動的に渡されます。 この引数は、呼び出し元セルのアドレスなど、追加のコンテキストを取得するために使用できます。 または、関数をキャンセルする関数ハンドラーなどの情報を Excel [に送信するために使用できます](custom-functions-web-reqs.md#make-a-streaming-function)。 パラメーターを宣言していなくても、カスタム関数にはこのパラメーターがあります。 この引数は、Excel のユーザーには表示されません。 カスタム関数で使用 `invocation` する場合は、最後のパラメーターとして宣言します。
+すべてのカスタム関数は、引数が明示的に宣言されていない場合でも、最後の入力パラメーターとして自動的 `invocation` に渡されます。 この `invocation` パラメーターは、呼び出しオブジェクト [に対応](/javascript/api/custom-functions-runtime/customfunctions.invocation) します。 オブジェクトを使用して、カスタム関数を呼び出したセルのアドレスなど、追加 `Invocation` のコンテキストを取得できます。 オブジェクトにアクセス `Invocation` するには、カスタム関数の `invocation` 最後のパラメーターとして宣言する必要があります。 
 
-次のコード サンプルでは、コンテキスト `invocation` が参照用に明示的に示されています。
+> [!NOTE]
+> この `invocation` パラメーターは、Excel のユーザーのカスタム関数引数として表示されません。
+
+次のサンプルは、パラメーターを使用して、カスタム関数を呼び出したセルのアドレス `invocation` を返す方法を示しています。 このサンプルでは、 [オブジェクトの address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) プロパティを使用 `Invocation` します。 オブジェクトにアクセス `Invocation` するには、まず `CustomFunctions.Invocation` JSDoc でパラメーターとして宣言します。 次に、 `@requiresAddress` オブジェクトのプロパティにアクセスするために JSDoc `address` で宣言 `Invocation` します。 最後に、関数内でプロパティを取得して返 `address` します。 
 
 ```js
 /**
- * Add two numbers.
+ * Return the address of the cell that invoked the custom function. 
  * @customfunction
- * @param {number} first First number.
- * @param {number} second Second number.
- * @returns {number} The sum of the two (or optionally three) numbers.
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
  */
-function add(first, second, invocation) {
-  return first + second;
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
 }
 ```
+
+Excel では、オブジェクトのプロパティを呼び出すカスタム関数は、関数を呼び出したセルの形式に従って絶対アドレス `address` `Invocation` `SheetName!RelativeCellAddress` を返します。 たとえば、入力パラメーターがセル F6 の **[価格** ] というシートにある場合、返されるパラメーターのアドレス値は次のようになります `Prices!F6` 。 
+
+この `invocation` パラメーターは、Excel に情報を送信するためにも使用できます。 詳 [しくは、「ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function) 」をご覧ください。
+
+## <a name="detect-the-address-of-a-parameter"></a>パラメーターのアドレスを検出する
+
+呼び出しパラメーター [と組](#invocation-parameter)み合わせて、 [呼](/javascript/api/custom-functions-runtime/customfunctions.invocation) び出しオブジェクトを使用して、カスタム関数入力パラメーターのアドレスを取得できます。 呼び出されると、 [オブジェクトの parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) プロパティを使用すると、関数は、すべての入力パラメーター `Invocation` のアドレスを返すことができます。 
+
+これは、入力データ型が異なる可能性があるシナリオで役立ちます。 入力パラメーターのアドレスを使用して、入力値の数値形式を確認できます。 必要に応じて、数値の書式を入力前に調整できます。 入力パラメーターのアドレスを使用して、入力値に後続の計算に関連する可能性のある関連プロパティが含されているかどうかを検出することもできます。 
+
+>[!IMPORTANT]
+> この `parameterAddresses` プロパティは現在、手動で作成 [された JSON メタデータでのみ動作します](custom-functions-json.md)。 パラメーター アドレスを取得するには、オブジェクトにプロパティが設定され、オブジェクトにプロパティが設定 `options` `requiresParameterAddresses` `true` `result` `dimensionality` されている必要があります `matrix` 。
+
+次のカスタム関数は、3 つの入力パラメーターを受け取り、各パラメーターのオブジェクトのプロパティを取得し、アドレス `parameterAddresses` `Invocation` を返します。 
+
+```js
+/**
+ * Return the address of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+プロパティを呼び出すカスタム関数が実行されると、関数を呼び出したセルの形式に従ってパラメーター アドレス `parameterAddresses` `SheetName!RelativeCellAddress` が返されます。 たとえば、入力パラメーターがセル D8 の **Costs** というシートにある場合、返されるパラメーター のアドレス値は次のようになります `Costs!D8` 。 カスタム関数に複数のパラメーターが含まれていますが、複数のパラメーター アドレスが返された場合、返されるアドレスは複数のセルにこぼれ、関数を呼び出したセルから垂直方向に降順になります。 
 
 ## <a name="next-steps"></a>次の手順
 
