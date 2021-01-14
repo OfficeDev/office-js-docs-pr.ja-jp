@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324941"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839825"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
@@ -274,9 +274,11 @@ Outlook アドイン マニフェストのルート要素は **OfficeApp** で�
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-**VersionOverrides** 要素は、アドイン コマンドの情報の場所です。この要素の詳細については、「[マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)」を参照してください。
+**VersionOverrides** 要素は、[アドイン コマンド](add-in-commands-for-outlook.md)の情報の場所です。
 
 この要素は、アドインによって[モバイル アドイン](add-mobile-support.md)のサポートが定義される場所でもあります。
+
+この要素の説明については、「[Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する](../develop/create-addin-commands.md)」を参照してください。
 
 ## <a name="localization"></a>ローカライズ
 
@@ -324,7 +326,7 @@ Outlook アドインでは、次のように **Hosts** 要素を指定します�
 </OfficeApp>
 ```
 
-これは、**VersionOverrides** 要素内の **Hosts** 要素とは別個のものになります。この点については、「[マニフェストでアドイン コマンドを定義する](../develop/define-add-in-commands.md)」で説明されています。
+これは、「[Excel、PowerPoint、および Word のマニフェストでのアドイン コマンドの作成](../develop/create-addin-commands.md)」で説明されている **VersionOverrides** 要素内の **Hosts** 要素とは別のものです。
 
 ## <a name="requirements"></a>要件
 
@@ -420,7 +422,7 @@ Outlook アドインでは、次のように **Hosts** 要素を指定します�
 
 ## <a name="next-steps-add-in-commands"></a>次の手順: アドイン コマンド
 
-基本のマニフェストを定義したら、 [アドインのアドイン コマンドを定義](../develop/define-add-in-commands.md)します。アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
+基本的なマニフェストを定義した後、アドインのアドイン コマンドを定義します。 アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。 詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
 
 アドイン コマンドを定義するアドインの例については、[command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo) をご覧ください。
 
