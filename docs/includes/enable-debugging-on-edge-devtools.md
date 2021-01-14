@@ -1,5 +1,5 @@
 Microsoft Edge でアドインを実行している場合、UI のないコードは既定でデバッガーにアタッチできません。
-UI のないコードは、アドイン コマンドなどの作業ウィンドウが表示されていないときに実行されます。 デバッグを有効にするには、[Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell) の次のコマンドを実行する必要があります。
+UI のないコードは、アドイン コマンドなどの作業ウィンドウが表示されていないときに実行されます。 デバッグを有効にするには、[Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) の次のコマンドを実行する必要があります。
 
 1. 次のコマンドを実行して、**Microsoft.Win32WebViewHost** アプリ パッケージの情報を取得します。
     
