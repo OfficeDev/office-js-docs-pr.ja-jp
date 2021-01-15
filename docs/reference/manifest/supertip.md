@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Supertip 要素
-description: ヒント要素は、リッチツールヒント (タイトルと説明の両方) を定義します。
+description: Supertip 要素は、豊富なヒント (タイトルと説明の両方) を定義します。
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 8061c9dcd7903db0f1265084498d6c86654e1dfa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e8b3850d99f6791726b1b2f0545c5fb4b52c554
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608720"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771299"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -19,18 +19,18 @@ ms.locfileid: "44608720"
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 | [Title](#title) | はい | ヒントのテキストです。 |
-| [説明](#description) | はい | ヒントの説明です。<br>**注**: (Outlook) は、Windows および Mac クライアントのみがサポートされています。 |
+| [説明](#description) | はい | ヒントの説明です。<br>**注**: (Outlook) Windows および Mac クライアントだけがサポートされています。 |
 
-### <a name="title"></a>Title
+### <a name="title"></a>タイトル
 
-必須です。 ヒントのテキスト。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
+必ず指定します。 ヒントのテキストです。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
 
 ### <a name="description"></a>説明
 
-必ず指定します。 ヒントの記述です。 **Resid**属性は、 [Resources](resources.md)要素の**longstrings**要素の**String**要素の**id**属性の値に設定する必要があります。
+必ず指定します。 ヒントの記述です。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **LongStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
 
 > [!NOTE]
-> Outlook の場合、Windows と Mac のクライアントのみが**Description**要素をサポートしています。
+> Outlook では、Description 要素をサポートしているのは Windows クライアントと Mac **クライアント** のみです。
 
 ## <a name="example"></a>例
 

@@ -1,18 +1,18 @@
 ---
-title: マニフェストファイルの Group 要素
+title: マニフェスト ファイルの Group 要素
 description: タブ内の UI コントロールのグループを定義します。
 ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ee8d499767eccb95b4fdf9ceb91dd2cd12bce95
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 3872ece926cc399ed2b30d4dabaacfb741e060ab
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087946"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771404"
 ---
 # <a name="group-element"></a>Group 要素
 
-タブ内の UI コントロールのグループを定義します。カスタムタブでは、アドインは複数のグループを作成できます。 アドインは、カスタム タブ 1 つに制限されています。
+タブ内の UI コントロールのグループを定義します。カスタム タブでは、アドインは複数のグループを作成できます。 アドインは、カスタム タブ 1 つに制限されています。
 
 ## <a name="attributes"></a>属性
 
@@ -30,20 +30,20 @@ ms.locfileid: "49087946"
 |:-----|:-----|:-----|
 |  [Label](#label)      | はい |  CustomTab またはグループのラベル。  |
 |  [Icon](icon.md)      | はい |  グループのイメージ。  |
-|  [Control](#control)    | いいえ |  Control オブジェクトを表します。 0個以上の値を指定できます。  |
-|  [Officeecontrol](#officecontrol)  | いいえ | 組み込みの Office コントロールの1つを表します。 0個以上の値を指定できます。 |
+|  [Control](#control)    | いいえ |  Control オブジェクトを表します。 0 以上を指定できます。  |
+|  [OfficeControl](#officecontrol)  | いいえ | 組み込みのコントロールコントロールの 1 つOfficeします。 0 以上を指定できます。 |
 
 ### <a name="label"></a>Label
 
-必ず指定します。 グループのラベルです。 **Resid** 属性は、 [Resources](resources.md)要素の Short **strings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
+必ず指定します。 グループのラベルです。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
 
 ### <a name="icon"></a>Icon
 
-必ず指定します。 タブに多数のグループが含まれ、プログラムウィンドウのサイズが変更されると、代わりに、指定したイメージが表示されることがあります。
+必ず指定します。 タブに多くのグループが含まれている場合、プログラム ウィンドウのサイズが変更された場合、指定した画像が代わりに表示される可能性があります。
 
 ### <a name="control"></a>コントロール
 
-省略可能。ただし、存在しない場合は、少なくとも1つの **Officeecontrol** が必要です。 サポートされているコントロールの種類の詳細については、 [Control](control.md) 要素を参照してください。 マニフェストでは、 **Control** と are **econtrol** の順序は相互に置き換え可能で、複数の要素がある場合は混在させることができますが、すべてが **Icon** 要素の下になければなりません。
+省略可能ですが、存在しない場合は、少なくとも 1 つの **OfficeControl が必要です**。 サポートされるコントロールの種類の詳細については [、Control](control.md) 要素を参照してください。 マニフェスト内 **のコントロール** と **OfficeControl** の順序は同じであり、複数の要素がある場合は、これらの順序が異なる可能性がありますが、すべてが **Icon** 要素の下にある必要があります。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">
@@ -60,9 +60,9 @@ ms.locfileid: "49087946"
 </Group>
 ```
 
-### <a name="officecontrol"></a>Officeecontrol
+### <a name="officecontrol"></a>OfficeControl
 
-省略可能。ただし、存在しない場合は、少なくとも1つの **コントロール** が必要です。 1つ以上の組み込みの Office コントロールを要素を含むグループに含め `<OfficeControl>` ます。 属性は、 `id` 組み込みの Office コントロールの ID を指定します。 コントロールの ID を検索するには、「 [コントロールおよびコントロールグループの id を検索](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)する」を参照してください。 マニフェストでは、 **Control** と are **econtrol** の順序は相互に置き換え可能で、複数の要素がある場合は混在させることができますが、すべてが **Icon** 要素の下になければなりません。
+省略可能ですが、存在しない場合は、少なくとも 1 つのコントロールが必要 **です**。 1 つ以上の組み込みのOffice要素を含むグループ内のコントロールを含 `<OfficeControl>` める。 この `id` 属性は、組み込みのコントロールコントロールの ID Officeします。 コントロールの ID を検索するには、「コントロールとコントロール グループの [ID を検索する」を参照してください](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)。 マニフェスト内 **のコントロール** と **OfficeControl** の順序は同じであり、複数の要素がある場合は、これらの順序が異なる可能性がありますが、すべてが **Icon** 要素の下にある必要があります。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

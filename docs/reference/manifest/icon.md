@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Icon 要素
 description: ボタン または メニュー コントロールの Image 要素を定義します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: dcf6de189477ad7dbe52b0f1122177441cd262d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ff16e6c0fbbf6d1c54508b4460ed3e02e899db03
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611800"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771334"
 ---
 # <a name="icon-element"></a>Icon 要素
 
@@ -18,7 +18,7 @@ ms.locfileid: "44611800"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  いいえ  | 定義されているアイコンの型。これは、モバイル フォーム ファクターのアイコンにのみ適用されます[MobileFormFactor](mobileformfactor.md) 要素に含まれる **Icon** 要素は、この属性を `bt:MobileIconList` に設定する必要があります。 |
+|  **xsi:type**  |  いいえ  | 定義されているアイコンの型。これは、モバイル フォーム ファクターのアイコンにのみ適用されます [MobileFormFactor](mobileformfactor.md) 要素に含まれる **Icon** 要素は、この属性を `bt:MobileIconList` に設定する必要があります。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -28,7 +28,7 @@ ms.locfileid: "44611800"
 
 ### <a name="image"></a>Image
 
-ボタンの画像です。 **resid** 属性には、[Resources](resources.md) 要素の **Images** 要素にある **Image** 要素の **id** 属性の値を設定する必要があります。 **size** 属性は、画像のサイズをピクセル単位で示します。 他の5つのサイズ (20、24、40、48、および64ピクセル) をサポートしている場合は、3つの画像サイズ (16、32、80ピクセル) を指定する必要があります。 |
+ボタンの画像です。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の Images 要素の **Image** 要素の **id** 属性の値に設定する必要があります。 **size** 属性は、画像のサイズをピクセル単位で示します。 3 つの画像サイズ (16、32、80 ピクセル) が必要ですが、他の 5 つのサイズ (20、24、40、48、64 ピクセル) がサポートされています。|
 
 ```xml
 <Icon>

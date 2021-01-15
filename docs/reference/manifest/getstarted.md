@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの GetStarted 要素
-description: アドインが Word、Excel、PowerPoint、および OneNote にインストールされるときに表示される吹き出しで使用される情報を提供します。
+description: Word、Excel、PowerPoint、OneNote にアドインがインストールされている場合に表示される吹き出しで使用される情報を提供します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 01b10b8316c87b046cf816d6f86551bf1a349267
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0ad6196dc45e4ea06c2b43ac5da66a560ab0b899
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292294"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771418"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
-アドインが Word、Excel、PowerPoint、および OneNote にインストールされるときに表示される吹き出しで使用される情報を提供します。 **Getstarted**要素は[desktopformfactor](desktopformfactor.md)の子要素です。
+Word、Excel、PowerPoint、OneNote にアドインがインストールされている場合に表示される吹き出しで使用される情報を提供します。 **GetStarted 要素は** [DesktopFormFactor の子要素です](desktopformfactor.md)。
 
 ## <a name="child-elements"></a>子要素
 
@@ -24,15 +24,15 @@ ms.locfileid: "47292294"
 
 ### <a name="title"></a>タイトル 
 
-必須。 吹き出しの一番上に使用するタイトル。 **resid** 属性は **Resources** セクションの [ShortStrings](resources.md) 要素にある有効な ID を参照します。
+必須。 吹き出しの一番上に使用するタイトル。 **resid 属性** は [、Resources](resources.md)セクションの **ShortStrings** 要素内の有効な ID を参照し、32 文字以内で指定できます。
 
 ### <a name="description"></a>説明
 
-必須。 吹き出しの説明/本文の内容。 **resid** 属性は **Resources** セクションの [LongStrings](resources.md) 要素にある有効な ID を参照します。
+必須。 吹き出しの説明/本文の内容。 **resid 属性** は [、Resources](resources.md)セクションの **LongStrings** 要素内の有効な ID を参照し、32 文字以内で指定できます。
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 
-必須。ユーザーがアドインの詳細を参照できるページの URL。**resid** 属性は [Resources](resources.md) セクションの **Urls** 要素にある有効な ID を参照します。
+必須。 ユーザーがアドインの詳細を参照できるページの URL。 **resid 属性** は [、Resources](resources.md)セクションの **Urls** 要素内の有効な ID を参照し、32 文字以内で指定できます。
 
 > [!NOTE]
 > **LearnMoreUrl** は現在、Word、Excel、または PowerPoint のクライアントではレンダリングされません。 これが利用可能になったときに URL がレンダリングされるよう、すべてのクライアントにこの URL を追加することをお勧めします。 

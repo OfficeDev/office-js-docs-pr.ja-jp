@@ -3,12 +3,12 @@ title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: d4d3a7cbb34f3fc5ed03a8e084e516b5e5803ad8
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641390"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771320"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -29,7 +29,7 @@ ms.locfileid: "46641390"
 ## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
 
 - **PrimaryCommandSurface** - Office のリボン。
-- **ContextMenu**Office UI で右クリックしたときに表示されるショートカット メニュー。
+- **ContextMenu** Office UI で右クリックしたときに表示されるショートカット メニュー。
 
 次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
 
@@ -74,13 +74,13 @@ ms.locfileid: "46641390"
 |要素|説明|
 |:-----|:-----|
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
-|**OfficeTab**|既定の Office アプリリボンタブ ( **Primarycommandsurface**を使用) を拡張する場合に必要です。 **Officetab**要素を使用する場合、 **customtab**要素は使用できません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
+|**OfficeTab**|**(PrimaryCommandSurface** を使用して) アプリリボン タブOfficeを拡張する場合は必須です。 OfficeTab 要素 **を使用** する場合 **、CustomTab 要素は使用** することはできません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
 |**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
 |**グループ**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
-|**Label**|必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
-|**Icon**|必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 |
-|**Tooltip**|省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 |
-|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 **Control**要素には、**ボタン**または**メニュー**のいずれかを指定できます。 **メニュー**を使用して、ボタンコントロールのドロップダウンリストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:** トラブルシューティングを簡単にするために、 **Control**要素と関連する**Resources**子要素を一度に1つずつ追加することをお勧めします。|
+|**Label**|必須。 グループのラベルです。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
+|**Icon**|必須。 小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid 属性** は 32 文字以内で **、Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。 3 つのイメージのサイズ (16、32、80) が必要です。 5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
+|**Tooltip**|省略可能。 グループのツールヒント。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
+|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 コントロール **要素** には、ボタンまたは **メニュー** のいずれかを指定 **できます**。 メニュー **を** 使用して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:**  トラブルシューティングを容易にするために **、Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。|
 |**スクリプト**|カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。 Developer Preview では、この要素は使用しません。 代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。|
 |**Page**|カスタム関数についての HTML ページにリンクします。|
 
@@ -262,21 +262,21 @@ ms.locfileid: "46641390"
 ### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface (プレビュー)
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用した Android の[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。
+> この拡張点は、Microsoft 365 サブスクリプションを使用する Android のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 
-この拡張点は、モバイルフォームファクターの予定に対して、適切なモードのトグルをコマンド画面に配置します。 会議の開催者は、オンライン会議を作成できます。 出席者は、後でオンライン会議に参加できます。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](../../outlook/online-meeting.md)する」の記事を参照してください。
+この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。 会議の開催者はオンライン会議を作成できます。 その後、出席者はオンライン会議に参加できます。 このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。
 
 #### <a name="child-elements"></a>子要素
 
 |  要素 |  説明  |
 |:-----|:-----|
-|  [Control](control.md) |  コマンド画面にボタンを追加します。  |
+|  [Control](control.md) |  コマンド サーフェスにボタンを追加します。  |
 
-`ExtensionPoint`この型の要素には、1つの子要素 (要素) のみを含めることができます `Control` 。
+`ExtensionPoint` この型の要素は、1 つの子要素 (要素) のみを持 `Control` つ場合があります。
 
-`Control`この拡張点に含まれる要素の `xsi:type` 属性をに設定する必要があり `MobileButton` ます。
+この `Control` 拡張点に含まれる要素には、属性が設定 `xsi:type` されている必要があります `MobileButton` 。
 
-画像は、 `Icon` 16 進コード `#919191` または[他のカラー形式](https://convertingcolors.com/hex-color-919191.html)の同等の画像を使用したグレースケールである必要があります。
+イメージ `Icon` は、16 進数コードを使用してグレースケールで表示するか、他の色形式 `#919191` で同等 [の色を使用する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 
 #### <a name="example"></a>例
 
@@ -305,15 +305,15 @@ ms.locfileid: "46641390"
 ### <a name="launchevent-preview"></a>LaunchEvent (プレビュー)
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用する web 上の Outlook の[プレビュー](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)でのみサポートされています。
+> この拡張点は、Microsoft 365 サブスクリプションを使用した Outlook on the web のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 
-この拡張点により、デスクトップフォームファクターでサポートされているイベントに基づいてアドインをアクティブにすることができます。 現時点でサポートされているイベントは、とだけです `OnNewMessageCompose` `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、「[イベントベースのライセンス認証用に Outlook アドインを構成](../../outlook/autolaunch.md)する」の記事を参照してください。
+この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。
 
 #### <a name="child-elements"></a>子要素
 
 |  要素 |  説明  |
 |:-----|:-----|
-| [LaunchEvents](launchevents.md) |  イベントベースのライセンス認証のための[Launchevent](launchevent.md)のリスト。  |
+| [LaunchEvents](launchevents.md) |  イベント ベース [のアクティブ化の LaunchEvent](launchevent.md) のリスト。  |
 | [SourceLocation](sourcelocation.md) |  ソース JavaScript ファイルの場所。  |
 
 #### <a name="example"></a>例
@@ -331,7 +331,7 @@ ms.locfileid: "46641390"
 
 ### <a name="events"></a>Events
 
-この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、「 [Outlook アドインの送信時機能](../../outlook/outlook-on-send-addins.md)」を参照してください。
+この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、Outlook アドインの送信時機能 [を参照してください](../../outlook/outlook-on-send-addins.md)。
 
 | 要素 | 説明  |
 |:-----|:-----|
@@ -362,7 +362,7 @@ ms.locfileid: "46641390"
 
 #### <a name="label"></a>Label
 
-必ず指定します。 グループのラベルです。 **Resid**属性は、 [Resources](resources.md)要素の Short **strings**要素の**String**要素の**id**属性の値に設定する必要があります。
+必ず指定します。 グループのラベルです。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
 
 #### <a name="highlight-requirements"></a>強調表示の要件
 

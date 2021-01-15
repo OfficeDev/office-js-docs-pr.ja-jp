@@ -1,16 +1,16 @@
 ---
-title: Office アドインでの開発エラーのトラブルシューティング
-description: Office アドインの開発エラーをトラブルシューティングする方法について説明します。
-ms.date: 09/08/2020
+title: アドインを使用したOfficeエラーのトラブルシューティング
+description: アドインの開発エラーをトラブルシューティングするOffice説明します。
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 5801146165446352ec806f6f832e9976f96467ac
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409410"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771425"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>アドインを使用したOfficeエラーのトラブルシューティング
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
@@ -22,7 +22,7 @@ ms.locfileid: "47409410"
 
 #### <a name="for-windows"></a>Windows の場合:
 
-フォルダーの内容を削除 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` し、フォルダーの内容を削除し `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` ます (存在する場合)。
+フォルダーの内容を削除し `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 、フォルダーの内容が存在する場合は削除 `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` します。
 
 #### <a name="for-mac"></a>Mac の場合: 
 
@@ -56,22 +56,33 @@ Node.JS Express サーバーでこれを行う例については、「[この ap
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>プロパティ値に対する変更は行われず、エラーメッセージもありません。
+## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>プロパティ値に加えた変更は行われたので、エラー メッセージはありません
 
-プロパティの参照ドキュメントが読み取り専用かどうかを確認します。 また、Office JS の [TypeScript 定義](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) は、読み取り専用のオブジェクトプロパティを指定します。 読み取り専用プロパティを設定しようとすると、エラーがスローされずに書き込み操作が失敗します。 次の例では、誤って読み取り専用プロパティ [Chart.id](/javascript/api/excel/excel.chart#id)を設定しようとしています。一部の [プロパティを直接設定することはできません](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+プロパティが読み取り専用である場合は、そのプロパティのリファレンス ドキュメントを確認してください。 また、読み取り専用のOffice JS の [TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) 定義も指定します。 読み取り専用プロパティを設定しようとすると、書き込み操作はサイレント モードで失敗し、エラーはスローされます。 次の例では、誤って読み取り専用プロパティの設定を試 [Chart.id。](/javascript/api/excel/excel.chart#id)「一部 [のプロパティを直接設定できない」も参照してください](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
 
-## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>アドインはエッジでは動作しませんが、他のブラウザーで動作します。
+## <a name="getting-error-this-add-in-is-no-longer-available"></a>エラーが表示される: "このアドインは使用できなくなりました"
 
-[Microsoft Edge の問題のトラブルシューティング](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)を参照してください。
+このエラーの原因の一部を次に示します。 その他の原因が見つかった場合は、ページの下部にあるフィードバック ツールを使用してご連絡ください。
 
-## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel アドインはエラーをスローしますが、一貫していません
+- アプリを使用しているVisual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉Visual Studio。 再起動Visual Studio、もう一度 F5 キーを押してみてください。
+- アドインのマニフェストは、一元展開、SharePoint カタログ、ネットワーク共有など、展開場所から削除されました。
+- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更されたマニフェストに置き換える必要があります。 多くの場合、元のOfficeトレースを削除するには、キャッシュをクリアする必要があります。 「リボン ボタンや [メニュー項目を](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) 含むアドイン コマンドに対する変更は、この記事の前の方では有効ではありません。」セクションを参照してください。
+- アドインのマニフェストには、マニフェストの Resources セクションのどこにも定義されていないものがあります。または、アドインが使用される場所とセクションで定義されている場所のスペルが一致しません。 `resid` [](../reference/manifest/resources.md) `resid` `<Resources>`
+- マニフェストのどこかに 32 文字を超える `resid` 属性があります。 属性 `resid` と、セクション内の対応するリソースの属性は `id` `<Resources>` 、32 文字を超えることはできません。
+- アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォーム上で実行しようとしている。 詳細については、アドイン コマンド [の要件セットを参照してください](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
 
-考えられる原因については、「 [Excel アドインのトラブルシューティング](../excel/excel-add-ins-troubleshooting.md) 」を参照してください。
+## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>アドインは Edge では動作しませんが、他のブラウザーで動作します
+
+「Microsoft [Edge の問題のトラブルシューティング」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+
+## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel アドインはエラーをスローしますが、一貫してスローしません
+
+考 [えられる原因については、「Excel アドインの](../excel/excel-add-ins-troubleshooting.md) トラブルシューティング」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,20 +1,22 @@
 ---
-title: マニフェストファイルの Enabled 要素
-description: アドインの起動時にアドインコマンドを無効にするように指定する方法について説明します。
-ms.date: 01/10/2020
+title: マニフェスト ファイルの Enabled 要素
+description: アドインの起動時にアドイン コマンドを無効に指定する方法について説明します。
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 2849689fec99190c3a9b039c6c04069bc8194ee1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: be18767638af6f2be6352cea46739f6a01b7dd45
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611569"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771398"
 ---
 # <a name="enabled-element"></a>Enabled 要素
 
-アドインを起動するときに、[ボタン](control.md#button-control)または[メニュー](control.md#menu-dropdown-button-controls)コントロールを有効にするかどうかを指定します。 **Enabled**要素は、 [Control](control.md)の子要素です。 省略すると、既定値はに `true` なります。
+アドインの起動時 [にボタン](control.md#button-control) コントロールまたは [メニュー](control.md#menu-dropdown-button-controls) コントロールを有効にするかどうかを指定します。 **Enabled 要素** は [、Control](control.md)の子要素です。 省略すると、既定値は `true` .
 
-親コントロールは、プログラムを使用して有効または無効にすることもできます。 詳細については、「[アドイン コマンドを有効または無効にする](../../design/disable-add-in-commands.md)」を参照してください。
+この要素は Excel でのみ有効です。つまり `Name` [、Host](host.md) 要素の属性が "Workbook" の場合です。
+
+親コントロールは、プログラムで有効または無効にすることもできます。 詳細については、「[アドイン コマンドを有効または無効にする](../../design/disable-add-in-commands.md)」を参照してください。
 
 ## <a name="example"></a>例
 

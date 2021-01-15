@@ -1,41 +1,41 @@
 ---
-ms.date: 11/06/2020
-description: Excel でカスタム関数の JSON メタデータを定義し、関数 ID と name プロパティを関連付けます。
+ms.date: 12/22/2020
+description: Excel のカスタム関数の JSON メタデータを定義し、関数 ID と名前プロパティを関連付ける。
 title: Excel でカスタム関数の JSON メタデータを手動で作成する
 localization_priority: Normal
-ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 80a71c640caacbd865b0dd253f03258a64c9b1bf
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071642"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735551"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
-カスタム関数の [概要](custom-functions-overview.md) の記事で説明されているように、カスタム関数プロジェクトには、JSON メタデータファイルとスクリプト (JavaScript または TypeScript) の両方を含める必要があります。関数を登録するには、このファイルを使用できるようにします。 ユーザーが初めてアドインを実行したときに、すべてのブックの同じユーザーがそのアドインを使用できるようになると、カスタム関数が登録されます。
+カスタム関数の概要[](custom-functions-overview.md)の記事で説明したように、カスタム関数プロジェクトには JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) ファイルの両方を含め、関数を登録して使用できる必要があります。 カスタム関数は、ユーザーがアドインを初めて実行するときに登録され、その後、すべてのブックで同じユーザーが使用できます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Json ファイルを作成する代わりに、可能な場合は json 自動生成を使用することをお勧めします。 Autogeneration は、ユーザーエラーが発生しにくく、 `yo office` スキャフォールディングファイルに既に含まれています。 JSDoc タグと JSON 自動生成プロセスの詳細については、「 [カスタム関数の json メタデータの](custom-functions-json-autogeneration.md)自動生成」を参照してください。
+独自の JSON ファイルを作成する代わりに、可能な場合は JSON 自動生成を使用することをお勧めします。 自動生成はユーザー エラーの発生が少なく、スキャフォールディングされた `yo office` ファイルには既にこのエラーが含まれます。 JSDoc タグと JSON 自動生成プロセスの詳細については、「カスタム関数の JSON メタデータを自動生成する」を [参照してください](custom-functions-json-autogeneration.md)。
 
-ただし、カスタム関数プロジェクトを最初から作成することができます。 このプロセスでは、次のことを行う必要があります。
+ただし、カスタム関数プロジェクトは最初から作成できます。 このプロセスでは、次の作業が必要です。
 
-- JSON ファイルを作成します。
-- マニフェストファイルが JSON ファイルに接続されていることを確認します。
-- 関数を `id` `name` 登録するために、スクリプトファイルの関数とプロパティを関連付けます。
+- JSON ファイルを記述します。
+- マニフェスト ファイルが JSON ファイルに接続されていることを確認します。
+- 関数を登録するために `id` 、スクリプト `name` ファイル内の関数とプロパティを関連付ける。
 
-次の図は、スキャフォールディングファイルを使用すること `yo office` と、JSON を一から作成することの違いについて説明しています。
+次の図は、スキャフォールディング ファイルを使用する場合と JSON を最初から書き `yo office` 込む場合の違いを示しています。
 
-![Yo Office を使用して独自の JSON を作成することとの違いの画像](../images/custom-functions-json.png)
+![Yo Office を使用する場合と独自の JSON を記述する場合の相違点の画像](../images/custom-functions-json.png)
 
 > [!NOTE]
-> ジェネレーターを使用しない `<Resources>` 場合は、XML マニフェストファイルのセクションを使用して、作成した JSON ファイルにマニフェストを必ず接続してください `yo office` 。
+> ジェネレーターを使用しない場合は、XML マニフェスト ファイルのセクションを使用して、作成する JSON ファイルにマニフェストを `<Resources>` 接続 `yo office` してください。
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>メタデータの作成とマニフェストへの接続
 
-プロジェクトで JSON ファイルを作成し、関数のパラメーターなど、関数に関するすべての詳細情報を提供します。 関数プロパティの完全なリストについては、 [次のメタデータの例](#json-metadata-example) と [メタデータリファレンス](#metadata-reference) を参照してください。
+プロジェクトに JSON ファイルを作成し、その中の関数に関する詳細 (関数のパラメーターなど) を提供します。 関数プロパティ [の完全なリストについては、次](#json-metadata-example) の [メタデータ例と](#metadata-reference) メタデータ リファレンスを参照してください。
 
-次の例に示すように、XML マニフェストファイルで、セクション内の JSON ファイルを参照するようにし `<Resources>` ます。
+次の例に示すのと同様に、XML マニフェスト ファイルがセクション内の JSON `<Resources>` ファイルを参照している必要があります。
 
 ```json
 <Resources>
@@ -134,9 +134,9 @@ Json ファイルを作成する代わりに、可能な場合は json 自動生
 ```
 
 > [!NOTE]
-> 完全なサンプル JSON ファイルは、 [Officedev/Excel-カスタム機能](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub リポジトリのコミット履歴で入手できます。 JSON を自動的に生成するようにプロジェクトが調整されているため、手書きの JSON の完全なサンプルは、プロジェクトの以前のバージョンでのみ使用できます。
+> 完全なサンプル JSON ファイルは [、OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub リポジトリのコミット履歴にあります。 プロジェクトが JSON を自動的に生成するために調整されたので、手書き JSON の完全なサンプルは以前のバージョンのプロジェクトでのみ利用できます。
 
-## <a name="metadata-reference"></a>メタデータリファレンス
+## <a name="metadata-reference"></a>メタデータ リファレンス
 
 ### <a name="functions"></a>functions
 
@@ -144,12 +144,12 @@ Json ファイルを作成する代わりに、可能な場合は json 自動生
 
 | プロパティ      | データ型 | 必須 | 説明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「 **華氏の値を摂氏に変換する** 」です。                                                            |
+| `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
 | `helpUrl`     | 文字列    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
 | `id`          | 文字列    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
-| `name`        | 文字列    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名は、XML マニフェストファイルで指定されているカスタム関数の名前空間でプレフィックスされます。 |
+| `name`        | 文字列    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名の先頭には、XML マニフェスト ファイルで指定されたカスタム関数の名前空間が付けられている必要があります。 |
 | `options`     | オブジェクト    | いいえ       | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。                                                          |
-| `parameters`  | 配列     | はい      | 関数の入力パラメーターを定義する配列です。 詳細については、「 [parameters](#parameters) 」を参照してください。                                                                             |
+| `parameters`  | 配列     | はい      | 関数の入力パラメーターを定義する配列です。 詳細については [、パラメーター](#parameters) を参照してください。                                                                             |
 | `result`      | object    | はい      | 関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result](#result) に関する説明を参照してください。                                                                 |
 
 ### <a name="options"></a>options
@@ -158,10 +158,11 @@ Json ファイルを作成する代わりに、可能な場合は json 自動生
 
 | プロパティ          | データ型 | 必須                               | 説明 |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 通常、取り消し可能な関数は、1つの結果を返す非同期関数で、データの要求のキャンセルを処理する必要がある場合にのみ使用されます。 関数は、ストリーミングと取り消しの両方にすることはできません。 詳細については、「 [ストリーミング機能を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」の最後の方にあるメモを参照してください。 |
-| `requiresAddress` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | の場合は、カスタム関数を `true` 呼び出したセルのアドレスにカスタム関数からアクセスできます。 カスタム関数を呼び出したセルのアドレスを取得するには、カスタム関数で context を使用します。 カスタム関数は、streaming と requiresAddress の両方として設定することはできません。 このオプションを使用する場合、' 呼び ' パラメーターは、オプションで渡された最後のパラメーターである必要があります。 |
-| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳細については、「[ストリーミング関数](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。 |
-| `volatile`        | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合は、 `true` 数式の依存値が変更されたときだけでなく、Excel が再計算するたびに関数が再計算されます。 関数は、ストリーミングと揮発性の両方にすることはできません。 `stream` と `volatile` の両方のプロパティが `true` に設定されている場合は、揮発性のオプションが無視されます。 |
+| `cancelable`      | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 キャンセル可能な関数は、通常、単一の結果を返し、データ要求の取り消しを処理する必要がある非同期関数にのみ使用されます。 関数は、プロパティと両方を `stream` 使用 `cancelable` することはできません。 |
+| `requiresAddress` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true` は、カスタム関数は、それを呼び出したセルのアドレスにアクセスできます。 呼 `address` び出しパラメーター [のプロパティには](custom-functions-parameter-options.md#invocation-parameter) 、カスタム関数を呼び出したセルのアドレスが含まれます。 関数は、プロパティと両方を `stream` 使用 `requiresAddress` することはできません。 |
+| `requiresParameterAddresses` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true` は、カスタム関数は、関数の入力パラメーターのアドレスにアクセスできます。 このプロパティは、結果オブジェクトのプロパティと組み合わせて使用する必要があります。設定 `dimensionality` [](#result) `dimensionality` する必要があります `matrix` 。 詳細 [については、「パラメーターのアドレスを検出する」](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) を参照してください。 |
+| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳しくは、「ストリーミング関数 [を作成する」をご覧ください](custom-functions-web-reqs.md#make-a-streaming-function)。 |
+| `volatile`        | ブール   | いいえ <br/><br/>既定値は、`false` です。 | If `true` , the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. 関数は、プロパティと両方を `stream` 使用 `volatile` することはできません。 プロパティが `stream` 両方 `volatile` とも設定されている場合 `true` 、揮発性プロパティは無視されます。 |
 
 ### <a name="parameters"></a>parameters
 
@@ -169,12 +170,12 @@ Json ファイルを作成する代わりに、可能な場合は json 自動生
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは、Excel の IntelliSense に表示されます。  |
-|  `dimensionality`  |  文字列  |  いいえ  |  **スカラー** (配列以外の値) または **マトリックス** (2 次元配列) のいずれかである必要があります。  |
-|  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、Excel の IntelliSense に表示されます。  |
-|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 **boolean** 、 **number** 、 **string** 、または **any** が可能です。ここでは、前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定は **any** です。 |
+|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは Excel のビューに表示IntelliSense。  |
+|  `dimensionality`  |  文字列  |  いいえ  |  配列以外の `scalar` 値または (2 次元配列) `matrix` を指定する必要があります。  |
+|  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は Excel のビューに表示IntelliSense。  |
+|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 、、以前の 3 つの種類の任意の `boolean` `number` `string` `any` を使用することができます。 このプロパティを指定しない場合、データ型の既定値は `any` . |
 |  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |
-|`repeating`| ブール | いいえ | If は `true` 、指定された配列からパラメーターを設定します。 すべての繰り返しパラメーターは、定義によって省略可能なパラメーターとして扱われることに注意してください。  |
+|`repeating`| ブール | いいえ | If `true` パラメーターは、指定された配列からデータを設定します。 関数のすべての繰り返しパラメーターは、定義上オプションのパラメーターと見なされます。  |
 
 ### <a name="result"></a>result
 
@@ -182,11 +183,12 @@ Json ファイルを作成する代わりに、可能な場合は json 自動生
 
 | プロパティ         | データ型 | 必須 | 説明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | いいえ       | **スカラー** (配列以外の値) または **マトリックス** (2 次元配列) のいずれかである必要があります。 |
+| `dimensionality` | string    | いいえ       | 配列以外の `scalar` 値または (2 次元配列) `matrix` を指定する必要があります。 |
+| `type` | 文字列    | いいえ       | 結果のデータ型。 、、または (前の 3 つの種類の任意の種類 `boolean` `number` `string` `any` を使用できます) を指定できます。 このプロパティを指定しない場合、データ型の既定値は `any` . |
 
 ## <a name="associating-function-names-with-json-metadata"></a>関数名を JSON メタデータに関連付ける
 
-関数が正しく動作するには、関数のプロパティを JavaScript 実装に関連付ける必要があり `id` ます。 関連付けがあることを確認してください。そうしないと、関数は登録されず、Excel で使用できません。 次のコードサンプルは、メソッドを使用して関連付けを行う方法を示して `CustomFunctions.associate()` います。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
+関数が正しく動作するには、関数のプロパティを JavaScript 実装に関連 `id` 付ける必要があります。 関連付けがある場合は、関数が登録されないので、Excel で使用できません。 次のコード サンプルは、メソッドを使用して関連付けを作成する方法を示 `CustomFunctions.associate()` しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
 
 ```js
 /**
@@ -203,7 +205,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-次の JSON は、以前のカスタム関数 JavaScript コードに関連付けられている JSON メタデータを示しています。
+次の JSON は、前のカスタム関数 JavaScript コードに関連付けられている JSON メタデータを示しています。
 
 ```json
 {
@@ -240,9 +242,9 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 - 対応する JavaScript 関数の名前に関連付けられた後では、JSON のメタデータ ファイル内の `id` プロパティの値を変更しないでください。 JSON のメタデータ ファイル内の `name` プロパティを更新することによって Excel でエンド ユーザーに表示される関数の名前を変更することができます。しかし、確立された後は、 `id` プロパティの値を決して変更しないでください。
 
-- JavaScript ファイルで、各関数の後に、カスタム関数の関連付けを指定し `CustomFunctions.associate` ます。
+- JavaScript ファイルで、各関数の後にカスタム関数の関連 `CustomFunctions.associate` 付けを指定します。
 
-次の例は、前の JavaScript コードサンプルで定義されている関数に対応する JSON メタデータを示しています。 `id`プロパティと `name` プロパティの値は、大文字で記述します。これは、カスタム関数を記述するときのベストプラクティスです。 この JSON を追加する必要があるのは、自動生成を使用せずに、手動で独自の JSON ファイルを準備する場合だけです。 Autogeneration の詳細については、「 [カスタム関数の JSON メタデータの](custom-functions-json-autogeneration.md)自動生成」を参照してください。
+次のサンプルは、前の JavaScript コード サンプルで定義された関数に対応する JSON メタデータを示しています。 The `id` and property values are in `name` uppercase, which is a best practice when describing your custom functions. この JSON を追加する必要があるのは、独自の JSON ファイルを手動で準備し、自動生成を使用しない場合のみです。 自動生成の詳細については、「カスタム関数の JSON メタデータの自動生成」 [を参照してください](custom-functions-json-autogeneration.md)。
 
 ```json
 {
@@ -264,10 +266,10 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 ## <a name="next-steps"></a>次の手順
 
-[関数に名前を付けるためのベストプラクティス](custom-functions-naming.md)、または前述の手書き JSON メソッドを使用して[関数をローカライズ](custom-functions-localize.md)する方法について説明します。
+関数に[名前を付ける](custom-functions-naming.md)場合のベスト プラクティスについて[](custom-functions-localize.md)説明するか、前に説明した手書きの JSON メソッドを使用して関数をローカライズする方法を確認します。
 
 ## <a name="see-also"></a>関連項目
 
 - [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
-- [カスタム関数のパラメータオプション](custom-functions-parameter-options.md)
+- [カスタム関数のパラメーター オプション](custom-functions-parameter-options.md)
 - [Excel でカスタム関数を作成する](custom-functions-overview.md)
