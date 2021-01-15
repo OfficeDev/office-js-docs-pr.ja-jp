@@ -36,7 +36,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> カスタム関数アドインがカスタム関数のコードの実行に加えて作業ウィンドウまたはリボン ボタンを使用する場合、共有 JavaScript ランタイムを設定する必要があります。 詳細については、「[共有 JavaScript ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+> カスタム関数アドインがカスタム関数のコードの実行に加えて作業ウィンドウまたはリボン ボタンを使用する場合、共有 JavaScript ランタイムを設定する必要があります。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>コードでカスタム関数を定義する方法
 
@@ -99,4 +99,4 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 * [カスタム関数の要件セット](custom-functions-requirement-sets.md)
 * [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
-* [共有 JavaScript ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+* [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
