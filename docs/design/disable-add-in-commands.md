@@ -1,38 +1,38 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 11/20/2020
+ms.date: 01/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: 798dd723e0388becdd3419c5af87ceb360d32a41
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505465"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870631"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
 
-また、Office クライアントアプリケーションを開いたときにコマンドを有効にするか無効にするかを指定することもできます。
+また、クライアント アプリケーションでコマンドを開く際にコマンドを有効Office指定することもできます。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
 > - [アドイン コマンドの基本概念](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Office アプリケーションとプラットフォームのサポートのみ
+## <a name="office-application-and-platform-support-only"></a>Officeとプラットフォームのサポートのみ
 
-この記事に記載されている Api は、Excel でのみ使用でき、Windows、office on Mac、および web 上の office でのみ使用できます。
+この記事で説明する API は Excel でのみ使用できます。また、Windows 上の Office、Mac Office、および web 上Officeでのみ使用できます。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイムチェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な Api をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、バージョン [と要件Officeを参照してください](../develop/office-versions-and-requirement-sets.md)。
 
-Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要件セットに属しています。
+有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属しています。
 
 > [!NOTE]
-> **Ribbonapi 1.1** 要件セットはマニフェストでまだサポートされていないため、マニフェストのセクションで指定することはできません `<Requirements>` 。 サポートをテストするには、コードがを呼び出す必要があり `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` ます。 呼び出しが戻る *場合に限り*、コードで `true` Enable/disable api を呼び出すことができます。 を呼び出した場合 `isSetSupported` は `false` 、すべてのカスタムアドインコマンドが常に有効になります。 **Ribbonapi 1.1** 要件セットがサポートされていない場合にどのように動作するかを考慮するには、運用アドインとアプリ内の手順を設計する必要があります。 の使用法の詳細と例については `isSetSupported` 、「 [Office アプリケーションと API 要件を指定](../develop/specify-office-hosts-and-api-requirements.md)する」を参照してください。特に、 [JavaScript コードでランタイムチェックを使用](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)します。 (この記事の [マニフェストの要件要素を設定](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) するセクションは、リボン1.1 には適用されません。)
+> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストのセクションで指定 `<Requirements>` することはできません。 サポートをテストするには、コードで呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが* 返された場合にのみ、コードは有効化/無効化 API を呼び `true` 出します。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム `false` アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮して、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例については、「Office アプリケーションと API の要件を指定する(特に JavaScript コードでランタイム チェックを使用する)」を `isSetSupported` [参照してください](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md) (この記事 [のマニフェストの Requirements](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) 要素を設定するセクションは、リボン 1.1 には適用されません。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
@@ -76,10 +76,10 @@ Enable/disable Api は、 [ribbonapi 1.1](../reference/requirement-sets/ribbon-a
 
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
-1. マニフェストで指定された ID でコマンドとその親タブを指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成し、コマンドの状態を有効か無効かに指定します。
+1. (1) マニフェストで宣言されているコマンドとその親グループとタブを、その ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。(2) は、コマンドの有効または無効の状態を指定します。
 2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) メソッドに渡します。
 
-次に簡単な例を示します。 "MyButton" と "OfficeAddinTab1" はマニフェストからコピーされます。
+次に簡単な例を示します。 "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" はマニフェストからコピーされます。
 
 ```javascript
 function enableButton() {
@@ -87,13 +87,20 @@ function enableButton() {
         tabs: [
             {
                 id: "OfficeAppTab1", 
-                controls: [
-                {
-                    id: "MyButton", 
-                    enabled: true
-                }
-            ]}
-        ]});
+                groups: [
+                    {
+                      id: "CustomGroup111",
+                      controls: [
+                        {
+                            id: "MyButton", 
+                            enabled: true
+                        }
+                      ]
+                    }
+                ]
+            }
+        ]
+    });
 }
 ```
 
@@ -102,7 +109,8 @@ function enableButton() {
 ```typescript
 const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
+    const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -135,8 +143,18 @@ Office.onReady(async () => {
 
 ```javascript
 function enableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: true};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: true
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -144,9 +162,9 @@ function enableChartFormat() {
 
 最後に、`disableChartFormat` ハンドラーを定義します。 `enableChartFormat` と同じですが、ボタン オブジェクトの **enabled** プロパティを `false` に設定する必要があります。
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>ボタンの表示/非表示の状態を同時に切り替えます。
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
 
-**Requestupdate** メソッドは、カスタムのコンテキストタブの表示を切り替えるためにも使用されます。このコード例の詳細については、「[アドインコマンドを有効または無効](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)にする」を参照してください。
+requestUpdate **メソッドは** 、ユーザー設定の操作別タブの表示/非表示を切り替える場合にも使用します。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeします](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 
@@ -159,8 +177,18 @@ function enableChartFormat() {
 
 ```javascript
 function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: false
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 
@@ -191,8 +219,18 @@ function chartFormatButtonHandler() {
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var button = {
+                      id: "ChartFormatButton", 
+                      enabled: false
+                     };
+        var parentGroup = {
+                           id: "MyGroup",
+                           controls: [button]
+                          };
+        var parentTab = {
+                         id: "CustomChartTab", 
+                         groups: [parentGroup]
+                        };
         var ribbonUpdater = {tabs: [parentTab]};
         await Office.ribbon.requestUpdate(ribbonUpdater);
 

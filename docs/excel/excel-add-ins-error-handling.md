@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API でのエラー処理
 description: ランタイム エラーを考慮する Excel JavaScript API エラー処理ロジックについて説明します。
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
-ms.openlocfilehash: fd863e9783336ba9121312ba06aae03330d57562
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789122"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870645"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Excel JavaScript API でのエラー処理
 
@@ -45,7 +45,7 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 - **debugInfo**:存在する場合、エラー メッセージの `debugInfo` プロパティは、エラーの根本原因を理解するために使用できる追加情報を提供します。
 
 > [!NOTE]
-> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 エンド ユーザーには、アドインの作業ウィンドウやアプリケーション内の任意の場所にこれらのエラー メッセージOfficeされません。
+> `console.log()` を使用してエラー メッセージをコンソールに出力すると、それらのメッセージはサーバー上でのみ表示されます。 エンド ユーザーには、アドインの作業ウィンドウやアプリケーションの任意の場所にこれらのエラー メッセージOfficeされません。
 
 ## <a name="error-messages"></a>エラー メッセージ
 
@@ -73,16 +73,20 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 |`ItemNotFound` |要求されたリソースは存在しません。|
 |`NonBlankCellOffSheet`|空でないセルをワークシートの末尾から押し出すので、新しいセルの挿入要求を完了することはできません。 空白でないセルは空に見え、空白の値、書式設定、または数式を持つ場合があります。 挿入する項目を十分に入れるのに十分な行または列を削除してから、もう一度やり直してください。|
 |`NotImplemented`|要求された機能は実装されていません。|
-|`RangeExceedsLimit`|範囲内のセル数が、サポートされる最大数を超えました。 詳細については [、アドインのリソース](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) の制限とOfficeの最適化に関する記事を参照してください。|
+|`RangeExceedsLimit`|範囲内のセル数がサポートされる最大数を超えました。 詳細については [、アドインのリソースの制限とOfficeの](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 最適化に関する記事を参照してください。|
 |`RequestAborted`|実行時に要求が中止されました。|
-|`RequestPayloadSizeLimitExceeded`|要求ペイロードのサイズが制限を超えています。 詳細については [、アドインのリソース](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) の制限とOfficeの最適化に関する記事を参照してください。 <br><br>このエラーは、Excel on the web でのみ発生します。|
-|`ResponsePayloadSizeLimitExceeded`|応答ペイロードのサイズが制限を超えています。 詳細については [、アドインのリソース](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) の制限とOfficeの最適化に関する記事を参照してください。  <br><br>このエラーは、Excel on the web でのみ発生します。|
+|`RequestPayloadSizeLimitExceeded`|要求ペイロードのサイズが制限を超えています。 詳細については [、アドインのリソースの制限とOfficeの](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 最適化に関する記事を参照してください。 <br><br>このエラーは、Excel on the web でのみ発生します。|
+|`ResponsePayloadSizeLimitExceeded`|応答ペイロードのサイズが制限を超えています。 詳細については [、アドインのリソースの制限とOfficeの](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 最適化に関する記事を参照してください。  <br><br>このエラーは、Excel on the web でのみ発生します。|
 |`ServiceNotAvailable`|サービスを利用できません。|
 |`Unauthenticated` |必要な認証情報が見つからないか、無効です。|
 |`UnsupportedOperation`|試行中の操作はサポートされていません。|
-|`UnsupportedSheet`|この種類のシートはマクロ シートまたはグラフ シートで、この操作はサポートされていません。|
+|`UnsupportedSheet`|このシートの種類はマクロシートまたはグラフ シートで、この操作はサポートされていません。|
+
+> [!NOTE]
+> 上の表に、Excel JavaScript API の使用中に発生する可能性があるエラー メッセージを示します。 アプリケーション固有の Excel JavaScript API の代わりに共通 API を使用している場合は、「Office [共通 API](../reference/javascript-api-for-office-error-codes.md) エラー コード」を参照して、関連するエラー メッセージについて確認してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
+- [Office API の一般的なエラー コード](../reference/javascript-api-for-office-error-codes.md)

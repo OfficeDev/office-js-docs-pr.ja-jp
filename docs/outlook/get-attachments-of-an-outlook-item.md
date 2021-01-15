@@ -1,20 +1,28 @@
 ---
 title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
-ms.date: 08/20/2020
+ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 57191820e27bc78431d0a7c97ffd6b8f23e75f4b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293913"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870652"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
-Outlook アドインは、サーバーで実行されているリモート サービスに選択したアイテムの添付ファイルを直接渡すことができません。その代わりに、添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
+Outlook アイテムの添付ファイルは、いくつかの方法で取得できますが、使用するオプションはシナリオによって異なります。
 
-添付ファイルの情報をリモート サービスに送信するには、次のプロパティと関数を使用します。
+1. リモート サービスに添付ファイル情報を送信します。
+
+    アドインは添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。 そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
+
+1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
+
+    この API は、EWS/REST が使用できない場合 (Exchange サーバーの管理者の構成など)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、この API は、添付ファイルがまだ Exchange と同期していない可能性がある作成シナリオで利用できます。詳細については `getAttachmentContentAsync` [、「Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) の新規作成フォームでアイテムの添付ファイルを管理する」を参照してください。
+
+この記事では、最初のオプションについて詳しく説明します。 リモート サービスに添付ファイル情報を送信するには、次のプロパティと関数を使用します。
 
 - [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) プロパティ &ndash; メールボックスをホストしている Exchange サーバー上の Exchange Web サービス (EWS) の URL を指定します。サービスはこの URL を使用して、[ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) メソッドまたは [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS 操作を呼び出します。
 
