@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API でのエラー処理
 description: ランタイム エラーを考慮する Excel JavaScript API エラー処理ロジックについて説明します。
-ms.date: 01/13/2021
+ms.date: 01/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: 00aa1ae1c8ed39b21146d86090df912a8804c8b3
+ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870645"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "49908907"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Excel JavaScript API でのエラー処理
 
@@ -71,7 +71,7 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 |`InvalidSelection`|現在の選択内容は、この操作では無効です。|
 |`ItemAlreadyExists`|作成中のリソースはすでに存在しています。|
 |`ItemNotFound` |要求されたリソースは存在しません。|
-|`NonBlankCellOffSheet`|空でないセルをワークシートの末尾から押し出すので、新しいセルの挿入要求を完了することはできません。 空白でないセルは空に見え、空白の値、書式設定、または数式を持つ場合があります。 挿入する項目を十分に入れるのに十分な行または列を削除してから、もう一度やり直してください。|
+|`NonBlankCellOffSheet`|空でないセルをワークシートの末尾から押し出すので、新しいセルを挿入することはできません。 空白でないセルは空に見え、空白の値、書式設定、または数式を持つ場合があります。 挿入する項目を十分に入れるのに十分な行または列を削除してから、もう一度やり直してください。|
 |`NotImplemented`|要求された機能は実装されていません。|
 |`RangeExceedsLimit`|範囲内のセル数がサポートされる最大数を超えました。 詳細については [、アドインのリソースの制限とOfficeの](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 最適化に関する記事を参照してください。|
 |`RequestAborted`|実行時に要求が中止されました。|
@@ -89,4 +89,4 @@ Excel JavaScript API 要求が正常に実行されない場合、API は次の�
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error オブジェクト (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
-- [Office API の一般的なエラー コード](../reference/javascript-api-for-office-error-codes.md)
+- [Office の一般的な API エラー コード](../reference/javascript-api-for-office-error-codes.md)
