@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 01/04/2021
+ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0bd231cc870322dd6f756defd14e4d67a69478b4
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: c540eece3b74bb043cc8f4921c7c774511b5a60a
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771250"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916462"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -17,7 +17,7 @@ Officeは、web 上の Office で実行し、デスクトップおよびモバ�
 どのブラウザが使用されているかは、以下によります。
 
 - コンピューターのオペレーティング システム。
-- アドインが web 上の Office、Microsoft 365、またはサブスクリプション以外のアドインで実行Office 2013かどうか。
+- アドインが web、Microsoft 365、Officeサブスクリプション以外のアドインで実行Office 2013かどうか。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
@@ -32,9 +32,9 @@ Officeは、web 上の Office で実行し、デスクトップおよびモバ�
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
 |Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| かまいません|Internet Explorer 11|
-|Windows 10 バージョン &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20316 <sup>1</sup>| かまいません|Microsoft Edge<sup>2、3</sup> と元の WebView (EdgeHTML)|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20316<sup>1</sup>| いいえ |Microsoft Edge<sup>2、3</sup> と元の WebView (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20316<sup>1</sup>| は<sup>い 4</sup>|  Microsoft Edge<sup>2、3</sup> と WebView2 (Chromium ベース) |
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| かまいません|Microsoft Edge<sup>2、3</sup> と元の WebView (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| いいえ |Microsoft Edge<sup>2、3</sup> と元の WebView (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| は<sup>い 4</sup>|  Microsoft Edge<sup>2、3</sup> と WebView2 (Chromium ベース) |
 
 <sup>1 詳細</sup> については、 [更新履歴ページ](/officeupdates/update-history-office365-proplus-by-date) と、クライアント バージョンとOfficeチャネルを検索 [する方法を](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) 参照してください。
 
@@ -73,7 +73,7 @@ Office Microsoft [Edge WebView](/microsoft-edge/hosting/webview) を使用する
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>PDF ファイルをダウンロードしようとしてエラーを取得する
 
-Edge がブラウザーの場合、アドインで BLOB を PDF ファイルとして直接ダウンロードすることはできません。 回避策として、BLOB を PDF ファイルとしてダウンロードする簡単な Web アプリケーションを作成します。 アドインで、メソッドを呼び `Office.context.ui.openBrowserWindow(url)` 出し、Web アプリケーションの URL を渡します。 これにより、ブラウザー ウィンドウの外部にある Web アプリケーションが開Office。
+Edge がブラウザーの場合、アドインで BLOB を PDF ファイルとして直接ダウンロードすることはできません。 回避策として、BLOB を PDF ファイルとしてダウンロードする簡単な Web アプリケーションを作成します。 アドインで、メソッドを呼び `Office.context.ui.openBrowserWindow(url)` 出し、Web アプリケーションの URL を渡します。 これにより、Web アプリケーションがブラウザー ウィンドウの外部で開Office。
 
 ## <a name="see-also"></a>関連項目
 
