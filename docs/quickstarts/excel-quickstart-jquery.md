@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 11/09/2020
+ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 627c8ce235a69e6da4a15c7064a2937b1fed5d05
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132369"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916469"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -82,7 +82,7 @@ ms.locfileid: "49132369"
 
 2. 検索ボックスを使用して、**アドイン** と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに名前を付けて、[**作成**] を選択します。
+3. プロジェクトに **ExcelWebAddIn1** という名前を付け、**[作成]** を選択します。
 
 4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
@@ -176,7 +176,7 @@ ms.locfileid: "49132369"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. **ソリューション エクスプローラー** で、**ExcelWebAddIn1** アドイン プロジェクトに移動し、**ExcelWebAddIn1Manifest** ディレクトリを開きます。 このディレクトリには、マニフェスト ファイル **ExcelWebAddIn1.xml** が含まれています。 XML マニフェスト ファイルは、アドインの設定と機能を定義します。 Visual Studio ソリューションによって作成された 2 つのプロジェクトの詳細については、前のセクション「[Visual Studioソリューションの探索](#explore-the-visual-studio-solution)」を参照してください。 
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
