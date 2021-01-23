@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/22/2020
+ms.date: 01/22/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ae14416cd7fbcfeca10e4ace25997395fc9b44c1
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132271"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944342"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -42,13 +42,13 @@ ms.locfileid: "49132271"
 
     - **Choose a project type: (プロジェクトの種類を選択)** - `Office Add-in Task Pane project`
 
-    - **Choose a script type: (スクリプトの種類を選択)** - `Javascript`
+    - **Choose a script type: (スクリプトの種類を選択)** - `JavaScript`
 
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** - `My Office Add-in`
 
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** - `Outlook`
 
-    ![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-outlook.png)
+    ![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-outlook-1.png)
 
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -121,7 +121,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
     ![メッセージの件名を表示するアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-3.png)
 
-### <a name="next-steps"></a>次の手順
+### <a name="next-steps"></a>次のステップ
 
 おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。 次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。
 
