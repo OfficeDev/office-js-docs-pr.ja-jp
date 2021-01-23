@@ -1,20 +1,20 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
-description: Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカウントでサポートされており、Outlook.com accounts および support は近日中に gmail アカウントに提供されます。
+description: Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントで提供される予定です。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 34fbb01d596c4da38fe81438088cd71d8c7e152a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 24d396f67a3d73f7c3c357be7861164f586a50da
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093897"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944320"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
-Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカウントでサポートされており、Outlook.com accounts および support は近日中に Gmail アカウントに提供されます。
+Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントに公開される予定です。
 
 **Outlook on iOS の作業ウィンドウの例**
 
@@ -27,15 +27,15 @@ Outlook mobile アドインは、すべての Microsoft 365 ビジネスアカ�
 ![Outlook on Android の作業ウィンドウのスクリーンショット](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> アドインは、モバイルブラウザーのモダンバージョンの Outlook では動作しません。 詳細については、「 [Outlook on your mobile browser がアップグレードさ](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)れています。」を参照してください。
+> アドインは、モバイル ブラウザーの最新バージョンの Outlook では機能しません。 詳細については、モバイル [ブラウザー上の Outlook がアップグレード中を参照してください](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)。
 
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 
 - モバイル用の設計において、小さいサイズと迅速な操作性が課題となります。お客様に高品質のエクスペリエンスを提供するため、モバイル サポートを宣言するアドインに対して厳格な検証条件を定めています。AppSource で承認を得るには、この条件を満たす必要があります。
-    - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠**していなければなりません**。
-    - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である**必要**があります。
+    - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠 **していなければなりません**。
+    - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である **必要** があります。
 
-- 一般的に、メッセージの読み取りモードのみがサポートされています。 これ `MobileMessageReadCommandSurface` は、マニフェストのモバイルセクションで宣言する必要がある唯一の[extensionpoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)です。 ただし、予定の開催者モードは、オンライン会議プロバイダー統合アドインでサポートされており、代わりに[MobileOnlineMeetingCommandSurface 拡張点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)を宣言します。 このシナリオの詳細については、「[オンライン会議プロバイダー用の Outlook モバイルアドインを作成](online-meeting.md)する」の記事を参照してください。
+- 一般に、現時点ではメッセージ読み取りモードだけがサポートされています。 つまり、 `MobileMessageReadCommandSurface` マニフェストのモバイル [セクションで](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 宣言する必要がある ExtensionPoint は 1 つのみです。 ただし、オンライン会議プロバイダー統合アドインでは、代わりに [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)拡張点を宣言する予定オーガナイザー モードがサポートされています。 このシナリオ [の詳細については、オンライン](online-meeting.md) 会議プロバイダー向け Outlook モバイル アドインの作成に関する記事を参照してください。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 
@@ -69,7 +69,7 @@ Outlook Mobile でアドインをテストするために、O365 や Outlook.com
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
-モバイルでのトラブルシューティングは、使用しているツールを持っていない可能性があるため、困難な場合があります。 ただし、iOS でトラブルシューティングを行う方法の1つとして、Fiddler を使用する方法があります ( [ios デバイスでの使用につい](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)ては、このチュートリアルをご覧ください)。
+モバイルでのトラブルシューティングは、使い慣したツールがインストールされていない可能性があります。 ただし、iOS でのトラブルシューティングの 1 つのオプションは、Fiddler を使用する方法 [です (iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)デバイスでの使用に関するこのチュートリアルを参照してください)。
 
 ## <a name="next-steps"></a>次の手順
 

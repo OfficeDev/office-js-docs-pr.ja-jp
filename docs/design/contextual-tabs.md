@@ -3,12 +3,12 @@ title: カスタム コンテキスト タブをアドインOffice作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c9593c98bf7cc7f4e270037768be1e2de06aeb3
-ms.sourcegitcommit: 1d33ea6dd3a55fd3bc9af48737ad6d7369d30cd8
+ms.openlocfilehash: d9258b962c2cfa6aa7e3686087ed8a2e31a7d651
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "49934346"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944313"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Office アドインでカスタム コンテキスト タブを作成する (プレビュー)
 
@@ -61,7 +61,7 @@ ms.locfileid: "49934346"
 > [!NOTE]
 > JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は [、CustomTab](../reference/manifest/customtab.md) 要素とそのマニフェスト XML 内の子孫要素の構造と大まかに平行です。
 
-コンテキスト タブ JSON BLOB のステップ バイ ステップで例を作成します。 (コンテキスト タブ JSON の完全なスキーマは、dynamic-ribbon.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このリンクは、コンテキスト タブのプレビュー期間の早い段階では機能しない可能性があります。 リンクが機能しない場合は、下書きページでスキーマの最新の下書 [きdynamic-ribbon.schema.jsを見つける必要があります](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json)。コードで作業している場合Visual Studioこのファイルを使用して、JSON IntelliSenseを取得し、検証できます。 詳細については、「コード - JSON スキーマと [設定を使用Visual Studio JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)の編集」を参照してください。
+コンテキスト タブ JSON BLOB のステップ バイ ステップで例を作成します。 (コンテキスト タブ JSON の完全なスキーマは、dynamic-ribbon.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このリンクは、コンテキスト タブのプレビュー期間中に機能しない可能性があります。 リンクが機能しない場合は、下書きページでスキーマの最新の下書 [きdynamic-ribbon.schema.jsを見つける必要があります](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon/1.0/dynamic-ribbon.schema.json)。コードで作業している場合Visual Studioこのファイルを使用して、JSON IntelliSenseを取得し、検証できます。 詳細については、「コード - JSON スキーマと [設定を使用Visual Studio JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)の編集」を参照してください。
 
 
 1. まず、次の 2 つの配列プロパティを持つ JSON 文字列を作成 `actions` します `tabs` 。 配列 `actions` は、操作別タブのコントロールで実行できるすべての関数の仕様です。配列 `tabs` は、最大 *20* までの 1 つ以上のコンテキスト タブを定義します。

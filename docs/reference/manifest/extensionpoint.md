@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 05/18/2020
+ms.date: 01/22/2021
 localization_priority: Normal
-ms.openlocfilehash: d4d3a7cbb34f3fc5ed03a8e084e516b5e5803ad8
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771320"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944306"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -76,7 +76,7 @@ ms.locfileid: "49771320"
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
 |**OfficeTab**|**(PrimaryCommandSurface** を使用して) アプリリボン タブOfficeを拡張する場合は必須です。 OfficeTab 要素 **を使用** する場合 **、CustomTab 要素は使用** することはできません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
 |**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
-|**グループ**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
+|**Group**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
 |**Label**|必須。 グループのラベルです。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
 |**Icon**|必須。 小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid 属性** は 32 文字以内で **、Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。 3 つのイメージのサイズ (16、32、80) が必要です。 5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
 |**Tooltip**|省略可能。 グループのツールヒント。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
@@ -92,7 +92,7 @@ ms.locfileid: "49771320"
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
 - [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
@@ -259,12 +259,12 @@ ms.locfileid: "49771320"
 </ExtensionPoint>
 ```
 
-### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface (プレビュー)
-
-> [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用する Android のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
+### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
 この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。 会議の開催者はオンライン会議を作成できます。 その後、出席者はオンライン会議に参加できます。 このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。
+
+> [!NOTE]
+> この拡張点は、Microsoft 365 サブスクリプションを使用する Android でのみサポートされます。
 
 #### <a name="child-elements"></a>子要素
 
@@ -305,7 +305,7 @@ ms.locfileid: "49771320"
 ### <a name="launchevent-preview"></a>LaunchEvent (プレビュー)
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用した Outlook on the web のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
+> この拡張点は、Microsoft 365 サブスクリプションを使用する Outlook on the web のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 
 この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。
 
@@ -331,7 +331,7 @@ ms.locfileid: "49771320"
 
 ### <a name="events"></a>Events
 
-この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、Outlook アドインの送信時機能 [を参照してください](../../outlook/outlook-on-send-addins.md)。
+この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、Outlook アドインの送信時 [機能を参照してください](../../outlook/outlook-on-send-addins.md)。
 
 | 要素 | 説明  |
 |:-----|:-----|
