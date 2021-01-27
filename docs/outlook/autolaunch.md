@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 description: イベント ベースのアクティブ化用に Outlook アドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 01/25/2021
 localization_priority: Normal
-ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 4790de491b84cfba3b64bfb6c176e7bf1ff42ec7
+ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839832"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "49990506"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 
@@ -24,7 +24,7 @@ ms.locfileid: "49839832"
 このチュートリアルの終わりまでに、新しいメッセージが作成されるたびに実行されるアドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを使用した Outlook on the web でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベース](#how-to-preview-the-event-based-activation-feature) のアクティブ化機能をプレビューする方法を参照してください。
+> この機能は、Microsoft 365 サブスクリプションを使用した Outlook on the web でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベースのアクティブ化](#how-to-preview-the-event-based-activation-feature) 機能をプレビューする方法を参照してください。
 >
 > プレビュー機能は予告なしに変更されることがありますので、実稼働アドインでは使用できません。
 
@@ -34,7 +34,7 @@ ms.locfileid: "49839832"
 
 この機能をプレビューするには、次の方法を使用します。
 
-- CDN で **ベータ** ライブラリを参照します ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . TypeScript [のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 読み取りIntelliSense定義ファイルは CDN と [DefinitelyTyped で見つかりました](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 次の種類を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
+- CDN で **ベータ** ライブラリを参照する ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . TypeScript [のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 読み取りIntelliSense定義ファイルは CDN と [DefinitelyTyped で見つかりました](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 次の種類を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
 - [Microsoft 365 テナントで対象指定リリースを構成します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
@@ -213,7 +213,7 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 
-イベントに基づいてアクティブ化するアドインは、最大 330 秒の短い実行に設計されています。 起動イベントの処理が完了したというシグナルをアドインで呼び出す方法 `event.completed` をお勧めします。 ユーザーが作成ウィンドウを閉じると、アドインも終了します。
+イベントに基づいてアクティブ化するアドインは、最大で約 300 秒、実行時間が短いアドインとして設計されています。 起動イベントの処理が完了したメソッドを呼び出す `event.completed` アドインをお勧めします。 ユーザーが作成ウィンドウを閉じると、アドインも終了します。
 
 ユーザーが同じイベントにサブスクライブした複数のアドインを持っている場合、Outlook プラットフォームは特定の順序でアドインを起動します。 現在、アクティブに実行できるイベント ベースのアドインは 5 つのみです。 追加のアドインはキューにプッシュされ、以前にアクティブだったアドインが完了または非アクティブ化されると実行されます。
 
