@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API 要件セット 1.2
 description: PowerPointApi 1.2 要件セットの詳細。
-ms.date: 01/08/2021
+ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0f6d1e766de81fef5d071152f6116ab56613ec9d
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 0aa82b8edc6aab65ebcce7c6bfcb50471c9e38e9
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49841541"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043877"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2 の新機能
 
@@ -19,7 +19,7 @@ PowerPointApi 1.2 では、別のプレゼンテーションから現在のプ�
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
-| スライドの挿入と削除 | 別のプレゼンテーションから現在のプレゼンテーションに既存のスライドを挿入し、スライドを削除できます。 | [](/javascript/api/powerpoint/powerpoint.slide#delete--) [Slide.delete、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| [スライドの挿入と削除](../../powerpoint/insert-slides-into-presentation.md) | 別のプレゼンテーションから現在のプレゼンテーションに既存のスライドを挿入し、スライドを削除できます。 | [](/javascript/api/powerpoint/powerpoint.slide#delete--) [Slide.delete、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## <a name="api-list"></a>API リスト
 

@@ -1,67 +1,67 @@
 ---
-title: Excel JavaScript API を使用してピボットテーブルを操作する
-description: Excel JavaScript API を使用して、ピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 12/07/2020
+title: Excel JavaScript API を使用してピボットテーブルを使用する
+description: Excel JavaScript API を使用してピボットテーブルを作成し、それらのコンポーネントを操作します。
+ms.date: 01/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a1fefa6a855ab9ee1ccd71fd0dc60f282d2944b
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 9832322d40bbeb247685ff2498bdce42975c0377
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603800"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043912"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを操作する
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してピボットテーブルを使用する
 
-ピボットテーブルは、より大きなデータセットを合理化します。 グループ化されたデータのクイック操作を可能にします。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。 この記事では、Office JavaScript API によってピボットテーブルがどのように表現されるかについて説明し、主要なシナリオのコードサンプルを示します。
+ピボットテーブルは、より大きなデータ セットを合理化します。 グループ化されたデータを迅速に操作できます。 Excel JavaScript API を使用すると、アドインでピボットテーブルを作成し、それらのコンポーネントを操作できます。 この記事では、Office JavaScript API によってピボットテーブルがどのように表現されるのかについて説明し、主要なシナリオのコード サンプルを提供します。
 
-ピボットテーブルの機能についてよく知らない場合は、エンドユーザーとしての調査を検討してください。
-これらのツールの詳細については、「 [ワークシートデータを分析するためのピボットテーブルを作成する](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) 」を参照してください。
+ピボットテーブルの機能に慣れていない場合は、エンド ユーザーとして探索を検討してください。
+これらの [ツールの優れた入門情報については、「](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) ピボットテーブルを作成してワークシート データを分析する」を参照してください。
 
 > [!IMPORTANT]
-> OLAP を使用して作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
+> OLAP で作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
 
 ## <a name="object-model"></a>オブジェクト モデル
 
-[PivotTable](/javascript/api/excel/excel.pivottable)は、OFFICE JavaScript API のピボットテーブルの中心的なオブジェクトです。
+ピボット [テーブルは](/javascript/api/excel/excel.pivottable) 、JavaScript API のピボットテーブルOfficeオブジェクトです。
 
-- `Workbook.pivotTables`および `Worksheet.pivotTables` は、ブックとワークシートの[ピボットテーブル](/javascript/api/excel/excel.pivottable)をそれぞれ含む[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection)です。
-- [ピボットテーブル](/javascript/api/excel/excel.pivottable)に、複数の[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)を持つ[PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection)が含まれています。
-- これらの [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) は、 [次のセクション](#hierarchies)で説明するように、PivotTable がデータをピボットする方法を定義するために、特定の階層コレクションに追加できます。
-- [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)には、1つだけの[PivotField](/javascript/api/excel/excel.pivotfield)を持つ[pivotfieldcollection](/javascript/api/excel/excel.pivotfieldcollection)が含まれています。 デザインを拡張して OLAP ピボットテーブルが含まれる場合は、これが変更されることがあります。
-- [PivotField](/javascript/api/excel/excel.pivotfield)には、フィールドの[PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)が階層カテゴリに割り当てられている限り、1つまたは複数の[PivotFilters](/javascript/api/excel/excel.pivotfilters)を適用できます。 
-- [PivotField](/javascript/api/excel/excel.pivotfield)には、複数の[PivotItems](/javascript/api/excel/excel.pivotitem)を持つ[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection)が含まれています。
-- [ピボットテーブル](/javascript/api/excel/excel.pivottable)には、ピボット[フィールド](/javascript/api/excel/excel.pivotfield)と[PivotItems](/javascript/api/excel/excel.pivotitem)をワークシートのどこに表示するかを定義する[PivotLayout](/javascript/api/excel/excel.pivotlayout)が含まれています。
+- `Workbook.pivotTables`は、ブックとワークシートのピボットテーブルをそれぞれ含む `Worksheet.pivotTables` [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)です。 [](/javascript/api/excel/excel.pivottable)
+- ピボット[テーブルには、](/javascript/api/excel/excel.pivottable)複数の PivotHierarchies を持つ[PivotHierarchyCollection が含まれる](/javascript/api/excel/excel.pivothierarchy)。 [](/javascript/api/excel/excel.pivothierarchycollection)
+- これらの [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) を特定の階層コレクションに追加して、ピボットテーブルのピボットデータの方法を定義できます (以下のセクション [で説明します](#hierarchies))。
+- [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)には、PivotField が 1 つ正確に含まれる[PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) [が含まれる](/javascript/api/excel/excel.pivotfield)。 OLAP ピボットテーブルを含むデザインが拡張された場合、これは変更される可能性があります。
+- [](/javascript/api/excel/excel.pivotfilters)ピボット[フィールドの](/javascript/api/excel/excel.pivotfield) [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)が階層カテゴリに割り当てられている限り、ピボットフィールドには 1 つ以上のピボットフィルターを適用できます。 
+- ピボット [フィールドには](/javascript/api/excel/excel.pivotfield) 、複数の [PivotItem を持つ PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) [が含まれる](/javascript/api/excel/excel.pivotitem)。
+- ピボット[テーブルには](/javascript/api/excel/excel.pivottable)、ピボットフィールドとピボットアイテムがワークシート内で表示[](/javascript/api/excel/excel.pivotfield)される場所を定義する[PivotLayout](/javascript/api/excel/excel.pivotlayout)が含まれる。 [](/javascript/api/excel/excel.pivotitem)
 
-これらの関係がいくつかの例のデータにどのように適用されるかを見てみましょう。 次のデータは、さまざまなファームからの果物販売を示しています。 この記事全体の例を示します。
+これらの関係がいくつかのサンプル データに適用される方法を見てみしましょう。 次のデータは、さまざまなファームからの青果売上を示しています。 この記事全体の例を示します。
 
-![さまざまなファームからのさまざまな種類の果物販売のコレクション。](../images/excel-pivots-raw-data.png)
+![さまざまな種類のファームからのさまざまな種類の青果売上のコレクション。](../images/excel-pivots-raw-data.png)
 
-この果物 farm sales データは、ピボットテーブルを作成するために使用されます。 **Types** などの各列は、 `PivotHierarchy` です。 **種類** の階層には、[**種類**] フィールドが含まれています。 [ **種類** ] フィールドには、 **Apple**、 **Kiwi**、 **レモン**、 **黄**、 **オレンジ色** の項目が含まれています。
+このファームの売上データは、ピボットテーブルの作成に使用されます。 型などの **各列は**、 `PivotHierarchy` . Types **階層には** 、Types フィールド **が含** まれます。 Types **フィールドには**、Apple、Kiwi、Orange、**および Orange** の各項目 **が含****まれます**。 
 
 ### <a name="hierarchies"></a>Hierarchies
 
-ピボットテーブルは、 [行](/javascript/api/excel/excel.rowcolumnpivothierarchy)、 [列](/javascript/api/excel/excel.rowcolumnpivothierarchy)、 [データ](/javascript/api/excel/excel.datapivothierarchy)、および [フィルター](/javascript/api/excel/excel.filterpivothierarchy)の4つの階層カテゴリに基づいて編成されます。
+ピボットテーブルは、行、列、データ、およびフィルター[](/javascript/api/excel/excel.rowcolumnpivothierarchy)の[](/javascript/api/excel/excel.rowcolumnpivothierarchy)4 つの階層[カテゴリに基](/javascript/api/excel/excel.datapivothierarchy)づいて編成[されます](/javascript/api/excel/excel.filterpivothierarchy)。
 
-前に示したファームデータには、ファーム、**種類**、**分類**、 **Crates で販売** されたファーム、 **Crates 販売** された卸売の5つの階層が **あります。** 各階層は、4つのカテゴリのいずれかにのみ存在できます。 **型** が列階層に追加されている場合は、行、データ、またはフィルター階層に配置することもできません。 その後、 **型** が行階層に追加されると、列階層から削除されます。 この動作は、階層の割り当てが Excel UI または Excel JavaScript Api のどちらで行われた場合でも同じです。
+前に示したファーム データには 5 つの階層があります。**ファーム**、種類、**分類**、ファームで販売されたクレート、および販売された区分 **。**  各階層は、4 つのカテゴリの 1 つにのみ存在できます。 Type **が** 列階層に追加された場合は、行、データ、またはフィルター階層にも追加できません。 その **後** 、Type が行階層に追加されると、列階層から削除されます。 この動作は、階層の割り当てが Excel UI または Excel JavaScript API を使用して行われる場合でも同じです。
 
-行と列の階層は、データをグループ化する方法を定義します。 たとえば、 **ファーム** の行階層は、同じファームのすべてのデータセットをグループ化します。 行と列の階層を選択すると、ピボットテーブルの向きが定義されます。
+行と列の階層は、データをグループ化する方法を定義します。 たとえば、ファームの行階層 **は** 、同じファームのすべてのデータ セットをグループ化します。 行と列の階層を選択すると、ピボットテーブルの向きが定義されます。
 
-データ階層は、行と列の階層に基づいて集計される値です。 **ファームの行** 階層があり、 **Crates** のデータ階層があるピボットテーブルには、各ファームのすべての異なる fruits の合計 (既定では) が表示されます。
+データ階層は、行と列の階層に基づいて集計される値です。 ファームの行階層と **Crates Sold Sold の** データ階層を持つピボットテーブルには、ファームごとに異なるすべての青果の合計 (既定) が表示されます。
 
-フィルター階層では、フィルター処理された種類の値に基づいて、ピボットのデータが含まれるか、除外されます。 **有機** 的に選択された種類の **分類** のフィルター階層は、有機フルーツのデータのみを表示します。
+フィルター階層は、フィルター処理された型内の値に基づいてピボットからデータを含めるか除外します。 分類のフィルター階層で、種類が **[****組織**] で選択されている場合は、青い青果のデータだけが表示されます。
 
-次に、ファームデータをピボットテーブルと共に示します。 ピボットテーブルは、**ファーム** と **タイプ** を行階層として使用し、**ファームで販売** された Crates と **Crates** がデータ階層として (既定の集計関数を使用して)、データ階層として (**有機** が選択された状態で)**分類** しています。
+ここでは、ピボットテーブルと共にファーム データを再び示します。 ピボットテーブルでは、行階層として **Farm** と **Type** を使用し、データ階層として (合計の既定の集計関数を使用して) ファームで販売された **Crates** **と Crates Sold Hierarchie** を使用し、分類をフィルター階層として ([組織的] を選択した場合) 使用します。 
 
-![行、データ、およびフィルター階層を使用したピボットテーブルの横の、果物 sales データの選択。](../images/excel-pivot-table-and-data.png)
+![行、データ、およびフィルター階層を持つピボットテーブルの横にある、青果売上データの選択。](../images/excel-pivot-table-and-data.png)
 
-このピボットテーブルは、JavaScript API または Excel UI を使用して生成できます。 両方のオプションを使用すると、アドインをさらに操作できます。
+このピボットテーブルは、JavaScript API または Excel UI を使用して生成できます。 どちらのオプションでも、アドインを介してさらに操作できます。
 
 ## <a name="create-a-pivottable"></a>ピボットテーブルを作成する
 
-ピボットテーブルには、名前、ソース、および出力先が必要です。 ソースは、範囲内のアドレスまたはテーブル名 (、、、または型として渡さ `Range` `string` `Table` れます) を指定できます。 宛先は、またはのいずれかとして指定された範囲のアドレスです `Range` `string` 。
-次のサンプルは、さまざまなピボットテーブル作成手法を示しています。
+ピボットテーブルには、名前、ソース、および変換先が必要です。 ソースには、範囲のアドレスまたはテーブル名を指定できます (型 `Range` として `string` 渡 `Table` されます)。 宛先は、範囲アドレス (a または ) `Range` です `string` 。
+次のサンプルは、さまざまなピボットテーブル作成の手法を示しています。
 
-### <a name="create-a-pivottable-with-range-addresses"></a>範囲のアドレスを使用してピボットテーブルを作成する
+### <a name="create-a-pivottable-with-range-addresses"></a>範囲アドレスを含むピボットテーブルを作成する
 
 ```js
 Excel.run(function (context) {
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="create-a-pivottable-at-the-workbook-level"></a>ブックレベルでピボットテーブルを作成する
+### <a name="create-a-pivottable-at-the-workbook-level"></a>ブック レベルでピボットテーブルを作成する
 
 ```js
 Excel.run(function (context) {
@@ -104,7 +104,7 @@ Excel.run(function (context) {
 
 ## <a name="use-an-existing-pivottable"></a>既存のピボットテーブルを使用する
 
-手動で作成したピボットテーブルは、ブックまたは個々のワークシートの PivotTable コレクションからアクセスすることもできます。 次のコードは、ブックから **My Pivot** という名前のピボットテーブルを取得します。
+手動で作成されたピボットテーブルには、ブックのピボットテーブル コレクションまたは個々のワークシートからアクセスすることもできます。 次のコードは、ブックから **My Pivot という名前のピボット** テーブルを取得します。
 
 ```js
 Excel.run(function (context) {
@@ -115,11 +115,11 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-and-columns-to-a-pivottable"></a>ピボットテーブルに行と列を追加する
 
-行と列は、それらのフィールド値を中心にデータをピボットします。
+行と列は、これらのフィールドの値を中心にデータをピボットします。
 
-[ **ファーム** ] 列を追加すると、各ファームのすべての売上が回転します。 **種類** と **分類** 行を追加すると、果物が販売されたものと、それが有機であったかどうかに基づいてデータがさらに分解されます。
+ファーム列 **を追加** すると、各ファームのすべての売上がピボットされます。 [種類 **] 行と** **[分類** ] 行を追加すると、販売された青の種類と、その商品の種類や種類に基づいてデータがさらに分類されます。
 
-![ファーム列と種類と分類行を含む PivotTable。](../images/excel-pivots-table-rows-and-columns.png)
+![[ファーム] 列と [種類] 行と [分類] 行があるピボットテーブル。](../images/excel-pivots-table-rows-and-columns.png)
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 });
 ```
 
-行または列だけのピボットテーブルを作成することもできます。
+行または列のみを含むピボットテーブルを作成することもできます。
 
 ```js
 Excel.run(function (context) {
@@ -147,13 +147,13 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="add-data-hierarchies-to-the-pivottable"></a>データ階層をピボットテーブルに追加する
+## <a name="add-data-hierarchies-to-the-pivottable"></a>ピボットテーブルにデータ階層を追加する
 
-データ階層は、行と列に基づいて結合する情報で、ピボットテーブルに格納されます。 **ファームで販売** された Crates のデータ階層を追加し、 **Crates に販売** されたものは、行と列ごとにこれらの数値を合計します。
+データ階層は、行と列に基づいて結合する情報でピボットテーブルを埋め込む。 ファームで販売されたクレートと販売された製品版のクレートのデータ階層を追加すると、各行と列のこれらの数値の合計が提供されます。
 
-この例では、 **ファーム** と **種類** の両方が行で、箱 sales がデータとして含まれています。
+この例では **、Farm** と Type の **両方** が行であり、クレート売上がデータです。
 
-![元のファームに基づいたさまざまな果物の総売上高を示すピボットテーブル。](../images/excel-pivots-data-hierarchy.png)
+![出所ファームに基づくさまざまな青果の総売上高を示すピボットテーブル。](../images/excel-pivots-data-hierarchy.png)
 
 ```js
 Excel.run(function (context) {
@@ -172,19 +172,19 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts-and-getting-pivoted-data"></a>ピボットテーブルのレイアウトとピボットデータの取得
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>ピボットテーブルレイアウトとピボットデータの取得
 
-[PivotLayout](/javascript/api/excel/excel.pivotlayout)は、階層とそのデータの配置を定義します。 レイアウトにアクセスして、データが格納される範囲を決定します。
+[PivotLayout は、](/javascript/api/excel/excel.pivotlayout)階層とそのデータの配置を定義します。 レイアウトにアクセスして、データが格納される範囲を決定します。
 
-次の図は、ピボットテーブルの範囲に対応するどの layout 関数呼び出しを示しています。
+次の図は、ピボットテーブルの範囲に対応するレイアウト関数の呼び出しを示しています。
 
-![レイアウトの範囲取得機能によって返されるピボットテーブルのセクションを示す図。](../images/excel-pivots-layout-breakdown.png)
+![レイアウトの範囲取得関数によって返されるピボットテーブルのセクションを示す図。](../images/excel-pivots-layout-breakdown.png)
 
 ### <a name="get-data-from-the-pivottable"></a>ピボットテーブルからデータを取得する
 
-レイアウトは、ピボットテーブルをワークシートに表示する方法を定義します。 これは、 `PivotLayout` オブジェクトがピボットテーブル要素で使用される範囲を制御することを意味します。 レイアウトによって提供される範囲を使用して、ピボットテーブルによって収集および集計されるデータを取得します。 特に、を使用し `PivotLayout.getDataBodyRange` て、ピボットテーブルによって生成されるものにアクセスします。
+レイアウトは、ワークシートでのピボットテーブルの表示方法を定義します。 つまり、オブジェクト `PivotLayout` はピボットテーブル要素に使用される範囲を制御します。 ピボットテーブルによって収集および集計されるデータを取得するには、レイアウトによって提供される範囲を使用します。 特に、ピボット `PivotLayout.getDataBodyRange` テーブルが生成するデータにアクセスするために使用します。
 
-次のコードでは、レイアウト (**ファームで販売される Crates の合計** と、前の例で **Crates に販売** された卸売列の **合計の両方**) によって、ピボットテーブルデータの最後の行を取得する方法を示します。 これらの値は、最終的な合計として集計され、セル **E30** (ピボットテーブルの外側) に表示されます。
+次のコードは、レイアウト (前の例では[ファームで販売されたクレートの合計] 列と [販売されたクレートの合計] 列の両方の総計) を使用して、ピボットテーブル データの最後の行を取得する方法を示しています。  これらの値は、セル **E30** (ピボットテーブルの外側) に表示される最終的な合計に合わせて合計されます。
 
 ```js
 Excel.run(function (context) {
@@ -204,17 +204,17 @@ Excel.run(function (context) {
 
 ### <a name="layout-types"></a>レイアウトの種類
 
-ピボットテーブルには、コンパクト、アウトライン、表形式という3つのレイアウトスタイルがあります。 前の例ではコンパクトなスタイルを見てきました。
+ピボットテーブルには、コンパクト、アウトライン、表形式の 3 つのレイアウト スタイルがあります。 前の例では、コンパクトなスタイルを確認しました。
 
-次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 このコードサンプルは、さまざまなレイアウト間で循環する方法を示しています。
+次の例では、アウトラインスタイルと表形式スタイルをそれぞれ使用します。 コード サンプルは、さまざまなレイアウト間を切り替える方法を示しています。
 
-#### <a name="outline-layout"></a>アウトラインレイアウト
+#### <a name="outline-layout"></a>アウトライン レイアウト
 
-![アウトラインレイアウトを使用したピボットテーブル。](../images/excel-pivots-outline-layout.png)
+![アウトライン レイアウトを使用するピボットテーブル。](../images/excel-pivots-outline-layout.png)
 
 #### <a name="tabular-layout"></a>表形式レイアウト
 
-![表形式レイアウトを使用したピボットテーブル。](../images/excel-pivots-tabular-layout.png)
+![表形式レイアウトを使用するピボットテーブル。](../images/excel-pivots-tabular-layout.png)
 
 ## <a name="delete-a-pivottable"></a>ピボットテーブルを削除する
 
@@ -227,37 +227,37 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="filter-a-pivottable"></a>ピボットテーブルのフィルター処理
+## <a name="filter-a-pivottable"></a>ピボットテーブルをフィルター処理する
 
-ピボットテーブルのデータをフィルター処理するための主な方法は、PivotFilters を使用する方法です。 スライサーは、柔軟な代替のフィルター方法を提供します。 
+ピボットテーブル データをフィルター処理する主な方法は、PivotFilters です。 スライサーは、代替の柔軟性の低いフィルタリング方法を提供します。 
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) は、ピボットテーブルの4つの [階層カテゴリ](#hierarchies) (フィルター、列、行、および値) に基づいてデータをフィルター処理します。 PivotFilters には4つの種類があり、カレンダーの日付に基づくフィルター処理、文字列解析、数字比較、およびカスタム入力に基づくフィルター処理を行うことができます。 
+[ピボットフィルターは、](/javascript/api/excel/excel.pivotfilters) ピボットテーブルの 4 つの階層カテゴリ [(フィルター](#hierarchies) 、列、行、値) に基づいてデータをフィルター処理します。 PivotFilter には、カレンダーの日付ベースのフィルター処理、文字列解析、数値比較、カスタム入力に基づくフィルター処理の 4 種類があります。 
 
-[スライサー](/javascript/api/excel/excel.slicer) は、ピボットテーブルと通常の Excel テーブルの両方に適用できます。 ピボットテーブル (PivotTable) に適用すると、 [PivotManualFilter](#pivotmanualfilter) のように機能し、カスタム入力に基づいてフィルターを適用することができます。 PivotFilters とは異なり、スライサーには [EXCEL UI コンポーネント](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)があります。 クラスを使用して、 `Slicer` この UI コンポーネントを作成し、フィルター処理を管理して、視覚的な外観を制御します。 
+[スライサー](/javascript/api/excel/excel.slicer) は、ピボットテーブルと通常の Excel テーブルの両方に適用できます。 ピボットテーブルに適用すると、スライサーは [PivotManualFilter](#pivotmanualfilter) のように機能し、カスタム入力に基づいてフィルター処理を実行できます。 PivotFilters とは異なり、スライサーには [Excel UI コンポーネントがあります](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)。 クラスを `Slicer` 使って、この UI コンポーネントを作成し、フィルター処理を管理し、その外観を制御します。 
 
-### <a name="filter-with-pivotfilters"></a>PivotFilters を使用してフィルターを適用する
+### <a name="filter-with-pivotfilters"></a>PivotFilters でフィルター処理する
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) では、4つの [階層カテゴリ](#hierarchies) (フィルター、列、行、および値) に基づいてピボットテーブルデータをフィルターできます。 PivotTable オブジェクトモデルでは、 `PivotFilters` [PivotField](/javascript/api/excel/excel.pivotfield)に適用され、それぞれに `PivotField` 1 つ以上の割り当てることができ `PivotFilters` ます。 PivotFilters を PivotField に適用するには、フィールドに対応する [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) を階層カテゴリに割り当てる必要があります。 
+[ピボットフィルターを使用](/javascript/api/excel/excel.pivotfilters) すると、4 つの階層カテゴリ [(フィルター](#hierarchies) 、列、行、値) に基づいてピボットテーブル データをフィルター処理できます。 ピボットテーブル オブジェクト モデルでは、ピボットフィールドに適用され、それぞれが 1 つ以上を割り `PivotFilters` [](/javascript/api/excel/excel.pivotfield) `PivotField` 当てることができます `PivotFilters` 。 ピボットフィールドにピボットフィルターを適用するには、フィールドに対応する [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) を階層カテゴリに割り当てる必要があります。 
 
 #### <a name="types-of-pivotfilters"></a>PivotFilters の種類
 
 | フィルターの種類 | フィルターの目的 | Excel JavaScript API リファレンス |
 |:--- |:--- |:--- |
-| DateFilter | カレンダーの日付ベースのフィルター処理。 | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
-| LabelFilter | テキスト比較フィルター処理。 | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
+| DateFilter | カレンダーの日付ベースのフィルター。 | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| LabelFilter | テキスト比較フィルター。 | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
 | ManualFilter | カスタム入力フィルター。 | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
-| ValueFilter | 数値比較フィルター処理。 | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+| ValueFilter | 数値比較フィルター。 | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
 
 #### <a name="create-a-pivotfilter"></a>PivotFilter を作成する
 
-ピボットテーブルの * フィルター (PivotDateFilter など) を使用してピボットテーブルデータをフィルター処理するには、ピボット [フィールド](/javascript/api/excel/excel.pivotfield)にフィルターを適用します。 次の4つのコードサンプルは、4種類の PivotFilters を使用する方法を示しています。 
+ピボットテーブル データをフィルター処理する (a など) には、ピボット `Pivot*Filter` `PivotDateFilter` フィールドにフィルター [を適用します](/javascript/api/excel/excel.pivotfield)。 次の 4 つのコード サンプルは、4 種類の PivotFilter のそれぞれを使用する方法を示しています。 
 
 ##### <a name="pivotdatefilter"></a>PivotDateFilter
 
-最初のコード例では、**更新さ** れた PivotField 日付に [pivotdatefilter](/javascript/api/excel/excel.pivotdatefilter)を適用し、 **2020-08-01** より前のデータを非表示にします。 
+最初のコード サンプルでは [、PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) を Date **Updated** PivotField に適用し **、2020-08-01** より前のデータを非表示にしています。 
 
 > [!IMPORTANT] 
-> ピボット * フィルターは、そのフィールドの PivotHierarchy が階層カテゴリに割り当てられていない限り、PivotField に適用できません。 次のコードサンプルでは、を `dateHierarchy` ピボットテーブルのカテゴリに追加してから、 `rowHierarchies` フィルター処理に使用できるようにする必要があります。
+> A は、そのフィールドの PivotHierarchy が階層カテゴリに割り当てられていない限り、 `Pivot*Filter` ピボットフィールドに適用できません。 次のコード サンプルでは、フィルター処理に使用する前にピボットテーブルのカテゴリに追加 `dateHierarchy` `rowHierarchies` する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -289,11 +289,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> 次の3つのコードスニペットでは、完全な呼び出しではなく、フィルター固有の抜粋のみが表示され `Excel.run` ます。
+> 次の 3 つのコード スニペットは、完全な呼び出しではなく、フィルター固有の抜粋のみを表示 `Excel.run` します。
 
 ##### <a name="pivotlabelfilter"></a>PivotLabelFilter
 
-2番目のコードスニペットでは、プロパティを使用して **Type** 、文字 L で始まるラベルを除外することにより、 [Pivotlabelfilter](/javascript/api/excel/excel.pivotlabelfilter)を型の PivotField に適用する方法を示します `LabelFilterCondition.beginsWith` **L**。 
+2 番目のコード スニペットは、プロパティを使用して文字 L で始まるラベルを除外して [、PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) を **タイプ** ピボットフィールドに適用する方法 `LabelFilterCondition.beginsWith` を **示しています**。 
 
 ```js
     // Get the "Type" field.
@@ -312,7 +312,7 @@ Excel.run(function (context) {
 
 ##### <a name="pivotmanualfilter"></a>PivotManualFilter
 
-3番目のコードスニペットは、 [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) を使用した手動フィルターを **分類** フィールドに適用し、その分類の **有機** を含まないデータをフィルターで除外します。 
+3 番目のコード スニペットでは [、PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) を含む手動フィルターを **Classification** フィールドに適用し、分類の [グループ化] を含むデータをフィルター **処理します**。 
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
@@ -323,7 +323,7 @@ Excel.run(function (context) {
 
 ##### <a name="pivotvaluefilter"></a>PivotValueFilter
 
-数値を比較するには、最後のコードスニペットに示されているように、 [Pivotvaluefilter](/javascript/api/excel/excel.pivotvaluefilter)で値フィルターを使用します。 は、 `PivotValueFilter` **ファーム** のピボットテーブル内のデータと **Crates 販売** された卸売のピボットフィールドのデータを比較します。これには、Crates の合計が **500** を超えるファームのみが含まれます。 
+数値を比較するには、最終的なコード スニペットに示すように、値フィルターと [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter)を使用します。 The `PivotValueFilter` compares the data in the **Farm** PivotField to the data in the **Crates Sold PivotField,** including only farms whose sum of crates sold exceeds the value **500**. 
 
 ```js
     // Get the "Farm" field.
@@ -340,9 +340,9 @@ Excel.run(function (context) {
     filterField.applyFilter({ valueFilter: filter });
 ```
 
-#### <a name="remove-pivotfilters"></a>PivotFilters の削除
+#### <a name="remove-pivotfilters"></a>PivotFilters を削除する
 
-すべての PivotFilters を削除するには、 `clearAllFilters` 次のコードサンプルに示すように、各 PivotField にメソッドを適用します。 
+すべての PivotFilter を削除するには、次のコード サンプルに示すように、各 PivotField にメソッド `clearAllFilters` を適用します。 
 
 ```js
 Excel.run(function (context) {
@@ -360,24 +360,24 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="filter-with-slicers"></a>スライサーを使用してフィルターを適用する
+### <a name="filter-with-slicers"></a>スライサーでフィルター処理する
 
-[スライサー](/javascript/api/excel/excel.slicer) を使用すると、Excel のピボットテーブルまたはテーブルからデータをフィルターできます。 スライサーは、指定された列またはピボットテーブルの値を使用して、対応する行にフィルターを適用します。 これらの値は、 [SlicerItem](/javascript/api/excel/excel.sliceritem) オブジェクトとしてに格納され `Slicer` ます。 アドインでは、ユーザーと同様に ([EXCEL UI を介し](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)て) これらのフィルターを調整できます。 スライサーは、次のスクリーンショットに示されているように、描画層のワークシートの一番上にあります。
+[スライサー](/javascript/api/excel/excel.slicer) を使用すると、Excel ピボットテーブルまたはテーブルからデータをフィルター処理できます。 スライサーは、指定された列またはピボットフィールドの値を使用して、対応する行をフィルター処理します。 これらの値は [、SlicerItem オブジェクトとして](/javascript/api/excel/excel.sliceritem) 格納されます `Slicer` 。 アドインは、(Excel UI を使用して) ユーザーと同様に[、これらのフィルターを調整できます](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)。 スライサーは、次のスクリーンショットに示すように、描画レイヤーのワークシートの上に配置されます。
 
-![ピボットテーブルのスライサーフィルターデータ。](../images/excel-slicer.png)
+![ピボットテーブルのデータをフィルター処理するスライサー。](../images/excel-slicer.png)
 
 > [!NOTE]
-> このセクションで説明する手法は、ピボットテーブルに接続されたスライサーの使用方法に重点を置いています。 テーブルに接続されたスライサーを使用する場合にも同じ方法が適用されます。
+> このセクションで説明する手法では、ピボットテーブルに接続されたスライサーの使い方に重点を置いて説明します。 テーブルに接続されたスライサーの使用にも同じ手法が適用されます。
 
 #### <a name="create-a-slicer"></a>スライサーを作成する
 
-メソッドまたはメソッドを使用して、ブックまたはワークシートにスライサーを作成でき `Workbook.slicers.add` `Worksheet.slicers.add` ます。 これにより、指定したオブジェクトまたはオブジェクトの [SlicerCollection](/javascript/api/excel/excel.slicercollection) にスライサーが追加され `Workbook` `Worksheet` ます。 `SlicerCollection.add`メソッドには、次の3つのパラメーターがあります。
+このメソッドまたはメソッドを使用して、ブックまたはワークシートにスライサー `Workbook.slicers.add` を作成 `Worksheet.slicers.add` できます。 これにより、指定したオブジェクトの [SlicerCollection](/javascript/api/excel/excel.slicercollection) にスライサーが `Workbook` 追加 `Worksheet` されます。 この `SlicerCollection.add` メソッドには、次の 3 つのパラメーターがあります。
 
-- `slicerSource`: 新しいスライサーの基になるデータソース。 、、または `PivotTable` `Table` の名前または ID を表す文字列を指定でき `PivotTable` `Table` ます。
-- `sourceField`: フィルター処理の対象となるデータソース内のフィールド。 、、または `PivotField` `TableColumn` の名前または ID を表す文字列を指定でき `PivotField` `TableColumn` ます。
-- `slicerDestination`: 新しいスライサーを作成するワークシートを指定します。 オブジェクト、または `Worksheet` の名前または ID を指定でき `Worksheet` ます。 を経由してアクセスする場合、このパラメーターは必要あり `SlicerCollection` `Worksheet.slicers` ません。 この例では、コレクションのワークシートがコピー先として使用されます。
+- `slicerSource`: 新しいスライサーが基づくデータ ソース。 名前または ID を表す 、または文字列 `PivotTable` `Table` を指定 `PivotTable` できます `Table` 。
+- `sourceField`: フィルター処理に使用するデータ ソースのフィールドです。 名前または ID を表す 、または文字列 `PivotField` `TableColumn` を指定 `PivotField` できます `TableColumn` 。
+- `slicerDestination`: 新しいスライサーが作成されるワークシートです。 オブジェクト、 `Worksheet` またはオブジェクトの名前または ID を指定できます `Worksheet` 。 このパラメーターは、アクセスするときに `SlicerCollection` 不要です `Worksheet.slicers` 。 この場合、コレクションのワークシートが移動先として使用されます。
 
-次のコードサンプルでは、新しいスライサーを **ピボット** ワークシートに追加します。 スライサーのソースは、 **ファームの売上** ピボットテーブルで、 **型** データを使用してフィルター処理されます。 スライサーは、後で参照するために **フルーツスライサー** という名前も付けられています。
+次のコード サンプルでは、ピボット ワークシートに新しいスライサー **を追加** します。 スライサーのソースは **Farm Sales ピボット** テーブルで、種類データを使用して **フィルター処理** します。 スライサーは、今後の参照用 **に"Slicer"** という名前も付けます。
 
 ```js
 Excel.run(function (context) {
@@ -391,14 +391,14 @@ Excel.run(function (context) {
 });
 ```
 
-#### <a name="filter-items-with-a-slicer"></a>スライサーを使用してアイテムをフィルターにかける
+#### <a name="filter-items-with-a-slicer"></a>スライサーでアイテムをフィルター処理する
 
-スライサーは、からのアイテムを使用して、ピボットテーブルをフィルターし `sourceField` ます。 この `Slicer.selectItems` メソッドは、スライサーに残っているアイテムを設定します。 これらのアイテムは、アイテムのキーを表すとしてメソッドに渡され `string[]` ます。 これらのアイテムを含む行は、ピボットテーブルの集計に残ります。 以降の呼び出し `selectItems` では、これらの呼び出しで指定されたキーにリストを設定します。
+スライサーは、 `sourceField` . この `Slicer.selectItems` メソッドは、スライサーに残っているアイテムを設定します。 これらの項目は、項目のキーを表すメソッドとして `string[]` 渡されます。 これらのアイテムを含む行は、ピボットテーブルの集計に残ります。 後続の呼 `selectItems` び出しで、それらの呼び出しで指定されたキーにリストを設定します。
 
 > [!NOTE]
-> `Slicer.selectItems`データソースに含まれていないアイテムが渡されると、 `InvalidArgument` エラーがスローされます。 このプロパティを使用して、 `Slicer.slicerItems` [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)の内容を確認できます。
+> データ `Slicer.selectItems` ソースに含めされていないアイテムが渡された場合は、 `InvalidArgument` エラーがスローされます。 内容は、プロパティ `Slicer.slicerItems` [(SlicerItemCollection)](/javascript/api/excel/excel.sliceritemcollection)を通じて確認できます。
 
-次のコードサンプルでは、スライサーに対して選択されている3つのアイテム ( **レモン**、 **黄**、 **オレンジ色**) を示します。
+次のコード サンプルは、スライサーに対して選択されている 3 つの項目を示 **しています。** 
 
 ```js
 Excel.run(function (context) {
@@ -409,7 +409,7 @@ Excel.run(function (context) {
 });
 ```
 
-スライサーからすべてのフィルターを削除するには、 `Slicer.clearFilters` 次の例に示すようにメソッドを使用します。
+スライサーからすべてのフィルターを削除するには、次のサンプルに示 `Slicer.clearFilters` すようにメソッドを使用します。
 
 ```js
 Excel.run(function (context) {
@@ -421,7 +421,7 @@ Excel.run(function (context) {
 
 #### <a name="style-and-format-a-slicer"></a>スライサーのスタイルと書式設定
 
-アドインでは、プロパティを使用してスライサーの表示設定を調整でき `Slicer` ます。 次のコードサンプルでは、スタイルを **SlicerStyleLight6** に設定し、スライサーの上部のテキストを **果物の種類** に設定し、スライサーを描画レイヤーの位置 **(395, 15)** に配置し、スライサーのサイズを **135x150** ピクセルに設定します。
+アドインでは、プロパティを使用してスライサーの表示設定を調整 `Slicer` できます。 次のコード サンプルでは、スタイルを **SlicerStyleLight6** に設定し、スライサーの上部にあるテキストを **[種類**] に設定し、スライサーを描画レイヤー上の位置 **(395、15)** に配置し、スライサーのサイズを **135x150** ピクセルに設定します。
 
 ```js
 Excel.run(function (context) {
@@ -438,7 +438,7 @@ Excel.run(function (context) {
 
 #### <a name="delete-a-slicer"></a>スライサーを削除する
 
-スライサーを削除するには、 `Slicer.delete` メソッドを呼び出します。 次のコードサンプルでは、現在のワークシートから最初のスライサーを削除します。
+スライサーを削除するには、メソッドを呼び出 `Slicer.delete` します。 次のコード サンプルでは、現在のワークシートから最初のスライサーを削除します。
 
 ```js
 Excel.run(function (context) {
@@ -448,13 +448,13 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="change-aggregation-function"></a>集計関数を変更する
+## <a name="change-aggregation-function"></a>変更集計関数
 
-データ階層の値が集計されます。 数値のデータセットの場合は、既定でこれが合計になります。 `summarizeBy`このプロパティは、この動作を[集約 ationfunction](/javascript/api/excel/excel.aggregationfunction)型に基づいて定義します。
+データ階層の値は集計されます。 数値のデータセットの場合、これは既定で合計です。 この `summarizeBy` プロパティは [、AggregationFunction](/javascript/api/excel/excel.aggregationfunction) 型に基づいてこの動作を定義します。
 
-現在サポートされている集計関数の種類は、、、、、、、、、、、、 `Sum` `Count` `Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` および `Automatic` (既定値) です。
+現在サポートされている集計関数の種類は、,, `Sum` `Count` `Average` `Max` and `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` (既定値) です。
 
-次のコードサンプルでは、集計をデータの平均値に変更します。
+次のコード サンプルでは、集計をデータの平均に変更します。
 
 ```js
 Excel.run(function (context) {
@@ -472,19 +472,19 @@ Excel.run(function (context) {
 
 ## <a name="change-calculations-with-a-showasrule"></a>ShowAsRule を使用して計算を変更する
 
-既定では、ピボットテーブルでは、行と列の階層のデータが個別に集計されます。 [Showasrule](/javascript/api/excel/excel.showasrule)は、データ階層を、ピボットテーブル内の他のアイテムに基づいて出力値に変更します。
+ピボットテーブルは、既定では、行階層と列階層のデータを個別に集計します。 [ShowAsRule は](/javascript/api/excel/excel.showasrule)、ピボットテーブル内の他のアイテムに基づいて、データ階層を出力値に変更します。
 
-`ShowAsRule`オブジェクトには、次の3つのプロパティがあります。
+オブジェクト `ShowAsRule` には次の 3 つのプロパティがあります。
 
-- `calculation`: データ階層に適用する相対的な計算の種類 (既定値は `none` )。
-- `baseField`: 計算を適用する前に、基本データを含む階層の [PivotField](/javascript/api/excel/excel.pivotfield) 。 Excel ピボットテーブルには、階層とフィールドの間に一対一のマッピングがあるため、階層とフィールドの両方にアクセスするには同じ名前を使用します。
-- `baseItem`: 計算の種類に基づいて、基準フィールドの値と比較した個々の [ピボット](/javascript/api/excel/excel.pivotitem) テーブル。 すべての計算にこのフィールドが必要なわけではありません。
+- `calculation`: データ階層に適用する相対的な計算の種類を指定します (既定値は次の値です `none` )。
+- `baseField`: 計算 [を適用](/javascript/api/excel/excel.pivotfield) する前の基本データを含む階層内のピボットフィールド。 Excel のピボットテーブルには、階層とフィールドの 1 対 1 のマッピングが含まれます。この名前を使用して、階層とフィールドの両方にアクセスします。
+- `baseItem`: 計算の種類に基づいて、各 [PivotItem](/javascript/api/excel/excel.pivotitem) が基本フィールドの値と比較されます。 すべての計算でこのフィールドが必要な場合があります。
 
-次の例では、ファームデータ階層で販売された **Crates の合計** の計算を列の合計のパーセンテージに設定します。
-さらに、粒度をフルーツの種類レベルにまで拡張する必要があるので、 **type** 行階層とその基になるフィールドを使用します。
-この例は、最初の行階層としても **ファーム** を持っているので、farm total エントリには各ファームがそれぞれを生成する割合が表示されます。
+次の使用例は、ファームデータ階層で販売された商品の合計の計算を、列の合計に対する割合に設定します。
+この場合も、粒度を青の種類のレベルまで拡張する必要があります。したがって **、Type** 行階層とその基になるフィールドを使用します。
+この例では **、1** 行目の階層として Farm も含まれています。したがって、ファームの合計エントリ数には、各ファームが生成する割合も表示されます。
 
-![各ファーム内の個々のファームと個々の果物の種類の総計を基準とした果物 sales の割合を示すピボットテーブル。](../images/excel-pivots-showas-percentage.png)
+![個々のファームおよび各ファーム内の個々の種類の青果の総計に対する、青果売上の割合を示すピボットテーブル。](../images/excel-pivots-showas-percentage.png)
 
 ```js
 Excel.run(function (context) {
@@ -504,12 +504,12 @@ Excel.run(function (context) {
 });
 ```
 
-前の例では、列に対して、個々の行階層のフィールドを基準にして計算を行います。 計算が個々のアイテムに関連している場合は、プロパティを使用し `baseItem` ます。
+前の例では、個々の行階層のフィールドを基準に計算を列に設定します。 計算が個々のアイテムに関連する場合は、プロパティを使用 `baseItem` します。
 
-次の例は、計算を示して `differenceFrom` います。 ファームの箱売上データ階層エントリの違いが **、ファームの** ものと比較して表示されます。
-`baseField`は **ファーム** ですので、他のファームの違いと、果物などの種類ごとの内訳 (この例では、**type** が行階層になっています) を確認しています。
+次の例は、計算を示 `differenceFrom` しています。 ファームの売上データ階層エントリの違いを、A ファームのエントリに対して **表示します**。
+The `baseField` is **Farm,** so we see the differences between the other farms, as well as breakdowns for each type of like farm **(Type** is also a row hierarchy in this example).
 
-!["畑" とその他の果物の売上の違いを示すピボットテーブル。 これは、畑の総売上合計と果物の種類の売上の違いを示しています。 "畑" が特定の種類の果物を販売していない場合は、"#N/A" が表示されます。](../images/excel-pivots-showas-differencefrom.png)
+!["A Farms" と他のファームとの間の青果売上の違いを示すピボットテーブル。 これは、ファームの総青果売上の違いと、青果の種類の売り上げの両方を示しています。 "A Farms" が特定の種類のファームを販売しなかった場合は、"#N/A" が表示されます。](../images/excel-pivots-showas-differencefrom.png)
 
 ```js
 Excel.run(function (context) {
@@ -532,7 +532,7 @@ Excel.run(function (context) {
 
 ## <a name="change-hierarchy-names"></a>階層名を変更する
 
-階層フィールドは編集できます。 次のコードは、2つのデータ階層の表示名を変更する方法を示しています。
+階層フィールドは編集可能です。 次のコードは、2 つのデータ階層の表示名を変更する方法を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -549,5 +549,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API リファレンス](/javascript/api/excel)
