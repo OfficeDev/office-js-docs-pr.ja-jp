@@ -2,13 +2,13 @@
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
 ms.date: 05/22/2020
-localization_priority: Normal
-ms.openlocfilehash: fe8184a5bd084450c3be6d3d13707bf92f5c508f
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530493"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043905"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -18,24 +18,24 @@ ms.locfileid: "46530493"
 
 ## <a name="clear-the-office-cache-on-windows"></a>Windows で Office のキャッシュをクリアする
 
-Excel、Word、および PowerPoint からすべてのサイドロードアドインを削除するには、フォルダーの内容を削除します。
+Excel、Word、および PowerPoint からサイドロードされたすべてのアドインを削除するには、次のフォルダーのコンテンツを削除します。
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-次のフォルダーが存在する場合は、そのコンテンツも削除します。
+次のフォルダーが存在する場合は、そのコンテンツも削除してください。
 
 ```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-サイドロードアドインを Outlook から削除するには、「[テスト用に outlook アドインをサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)する」に記載されている手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [**カスタムアドイン**] セクションで、アドインを検索します。アドインの省略記号 () を選択 `...` し、[**削除**] を選択してその特定のアドインを このアドインの削除が機能しない場合は、 `Wef` 前に説明したように、「Excel、Word、および PowerPoint」で説明したように、フォルダーの内容を削除します。
+サイドロードされたアドインを Outlook から削除するには、「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順を使用して、インストールされているアドインが一覧表示されたダイアログ ボックスの **カスタム アドイン** セクションでアドインを検索します。アドインの省略記号 (`...`) を選択し、[**削除**] を選択して、そのアドインを削除します。 このアドインの削除が機能しない場合は、Excel、Word、PowerPoint について前に説明した `Wef` フォルダーのコンテンツを削除します。
 
 また、アドインが Microsoft Edge で実行されているときに Windows 10 で Office のキャッシュをクリアするには、Microsoft Edge DevTools を使用します。
 
 > [!TIP]
-> サイドロードアドインで、HTML または JavaScript ソースファイルへの最新の変更を反映させる場合は、キャッシュをクリアする必要はありません。 代わりに、アドインの作業ウィンドウにフォーカスを置き (タスク ウィンドウ内の任意の場所をクリック)、**F5** キーを押してアドインをリロードします。
+> サイドロードされたアドインに HTML や JavaScript のソース ファイルへの最近の変更を反映させたいだけの場合は、キャッシュをクリアする必要はありません。 代わりに、アドインの作業ウィンドウにフォーカスを置き (タスク ウィンドウ内の任意の場所をクリック)、**F5** キーを押してアドインをリロードします。
 
 > [!NOTE]
 > 次の手順を使用して Office のキャッシュをクリアするには、アドインに作業ウィンドウが必要です。 アドインが UI を使用しない場合 (たとえば、[送信時](../outlook/outlook-on-send-addins.md)機能を使用するアドインの場合)、次の手順でキャッシュをクリアする前に、同じドメインを [SourceLocation](../reference/manifest/sourcelocation.md) に使用するアドインに作業ウィンドウを追加する必要があります。
