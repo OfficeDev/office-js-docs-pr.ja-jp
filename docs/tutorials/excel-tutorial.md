@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 11/09/2020
+ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: c11b253d8cc55ce4bac8a44bde1ddf7baa91f89e
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771369"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104869"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -396,7 +396,7 @@ ms.locfileid: "49771369"
    - 3 番目のパラメーターでは、テーブルからの一連のデータ ポイントを行方向と列方向のどちらでグラフ化する必要があるかを決定します。 オプション `auto` は、最適な方法を判断するように Excel に指示します。
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
+    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 8. `createChart()` 関数で、`TODO3` を次のコードに置き換えます。 このコードのほとんどの部分は、わかりやすく説明不要なものです。 注:
@@ -408,11 +408,11 @@ ms.locfileid: "49771369"
     ```js
     chart.setPosition("A15", "F30");
     chart.title.text = "Expenses";
-    chart.legend.position = "right"
+    chart.legend.position = "Right";
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in &euro;';
+    chart.series.getItemAt(0).name = 'Value in \u20AC';
     ```
 
 9. プロジェクトに行ったすべての変更が保存されていることを確認します。
