@@ -1,18 +1,18 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
-description: Outlook アドイン用に現在プレビューされている機能と Api。
-ms.date: 10/14/2020
+description: Outlook アドインのプレビュー中の機能と API。
+ms.date: 02/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 2f83f81dcf7aa7ab0e3a48fff4279c1e08ba6286
-ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
+ms.openlocfilehash: 39dd1221f4dea9674c89cdaad20024ce408f8db3
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49612751"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104841"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれています。
 
 > [!IMPORTANT]
 > このドキュメントは、[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)の **プレビュー** 用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。
@@ -20,21 +20,21 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> [Microsoft 365 テナントで対象指定リリースを構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)することで、web 上の Outlook の機能をプレビューできる場合があります。 該当する機能については、このページにある「プレビューアクセスを構成する」を確認してください。
+> Microsoft 365 テナントで対象指定リリースを構成することで、Outlook on the web の機能 [をプレビューできる場合があります](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 該当する機能については、このページに「プレビュー アクセスを構成する」と示されています。
 >
-> その他の機能については、Microsoft 365 アカウントを使用して web 上の Outlook のプレビュービットへのアクセス権を要求することができます。 [このフォーム](https://aka.ms/OWAPreview)を完成して送信します。 これらの機能については、「要求プレビューアクセス」を確認してください。
+> その他の機能については、このフォームを入力して送信することにより、Microsoft 365 アカウントを使用して Web 上の Outlook のプレビュー ビットへのアクセスを [要求できる場合があります](https://aka.ms/OWAPreview)。 "プレビュー アクセスの要求" は、これらの機能に示されています。
 
-要件セットのプレビューには、 [要件セット 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md)のすべての機能が含まれています。
+要件セットのプレビューには、要件セット [1.9 のすべての機能が含まれます](../requirement-set-1.9/outlook-requirement-set-1.9.md)。
 
 ## <a name="features-in-preview"></a>プレビューの機能
 
 次の機能はプレビュー段階です。
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Information Rights Management (IRM) で保護されたアイテムでのアドインのアクティブ化
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Information Rights Management (IRM) で保護されたアイテムに対するアドインのアクティブ化
 
-これで、IRM で保護されたアイテムでアドインをアクティブ化できるようになります。 この機能を有効にするには、テナント管理者が `OBJMODEL` Office の [プログラムに **よるアクセスを許可** する] オプションを設定して使用権限を有効にする必要があります。 詳細については [、「使用権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
+アドインは、IRM で保護されたアイテムに対してアクティブ化できます。 この機能を有効にするには、テナント管理者は、テナント管理者が管理サイトで [プログラムによるアクセスを許可する] カスタム ポリシー オプションを設定して、使用権限を有効 `OBJMODEL` にするOffice。  詳細 [については、「使用権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
 
-**利用可能**: Windows on Windows、build 13229.10000 (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook、ビルド 13229.10000 (Microsoft 365 サブスクリプションに接続)
 
 <br>
 
@@ -46,33 +46,33 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 #### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
 
-新規作成モードで予定の終日イベントプロパティを表す新しいオブジェクトを追加しました。
+新規作成モードの予定の全日イベント プロパティを表す新しいオブジェクトが追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
 #### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)
 
-新規作成モードで予定の秘密度を表す新しいオブジェクトを追加しました。
+新規作成モードの予定の感度を表す新しいオブジェクトが追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
-#### <a name="officecontextmailboxitemisalldayevent"></a>[Office...-Alldayevent](office.context.mailbox.item.md#properties)
+#### <a name="officecontextmailboxitemisalldayevent"></a>[Office.context.mailbox.item.isAllDayEvent](office.context.mailbox.item.md#properties)
 
-予定が終日イベントであるかどうかを表す新しいプロパティを追加しました。
+予定が 1 日のイベントの場合を表す新しいプロパティが追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
-#### <a name="officecontextmailboxitemsensitivity"></a>[Office. メールボックスの秘密度](office.context.mailbox.item.md#properties)
+#### <a name="officecontextmailboxitemsensitivity"></a>[Office.context.mailbox.item.sensitivity](office.context.mailbox.item.md#properties)
 
-予定の秘密度を表す新しいプロパティを追加しました。
+予定の感度を表す新しいプロパティを追加しました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
-#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[MailboxEnums AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office.MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
-`AppointmentSensitivityType`予定で利用可能な秘密度オプションを表す新しい列挙を追加しました。
+予定で使用可能な `AppointmentSensitivityType` 感度オプションを表す新しい列挙型が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
 <br>
 
@@ -82,25 +82,25 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ### <a name="event-based-activation"></a>イベントベースのライセンス認証
 
-Outlook アドインでのイベントベースのアクティブ化機能のサポートが追加されました。詳細については [、「イベントベースのライセンス認証用の Outlook アドインを構成](../../../outlook/autolaunch.md) する」を参照してください。
+Outlook アドインのイベント ベースのアクティブ化機能のサポートが追加されました。詳細 [については、「イベント ベースのアクティブ化のために Outlook アドインを構成する](../../../outlook/autolaunch.md) 」を参照してください。
 
 #### <a name="launchevent-extension-point"></a>[LaunchEvent 拡張点](../../manifest/extensionpoint.md#launchevent-preview)
 
-`LaunchEvent`マニフェストに拡張点サポートが追加されました。 イベントベースのライセンス認証機能を構成します。
+マニフェストに `LaunchEvent` 拡張ポイントのサポートを追加しました。 イベント ベースのアクティブ化機能を構成します。
 
-**利用可能な** 機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="launchevents-manifest-element"></a>[LaunchEvents マニフェスト要素](../../manifest/launchevents.md)
 
-`LaunchEvents`マニフェストに要素を追加しました。 イベントベースのアクティブ化機能の構成をサポートしています。
+マニフェストに `LaunchEvents` 要素を追加しました。 イベント ベースのアクティブ化機能の構成をサポートしています。
 
-**利用可能な** 機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### <a name="runtimes-manifest-element"></a>[ランタイムマニフェスト要素](../../manifest/runtimes.md)
+#### <a name="runtimes-manifest-element"></a>[ランタイム マニフェスト要素](../../manifest/runtimes.md)
 
-マニフェスト要素に Outlook サポートが追加されました `Runtimes` 。 イベントベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
+マニフェスト要素に Outlook サポートを `Runtimes` 追加しました。 イベント ベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
 
-**利用可能な** 機能: web 上の Outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -114,7 +114,7 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
 <br>
 
@@ -122,37 +122,37 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 
 ---
 
-### <a name="mail-signature"></a>メールの署名
+### <a name="mail-signature"></a>メール署名
 
-#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[SetSignatureAsync を示しています。](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setsignatureasync-data--options--callback-)
+#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setsignatureasync-data--options--callback-)
 
-新規 `Body` 作成モードで、アイテムの本文の署名を追加または置換する新しい関数をオブジェクトに追加しました。
+新規作成モードでアイテム本文の署名を追加または置換する新しい関数 `Body` をオブジェクトに追加しました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync を示します。](office.context.mailbox.item.md#methods)
+#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
-新規作成モードの送信メールボックスのクライアント署名を無効にする新しい関数を追加しました。
+新規作成モードで送信側メールボックスのクライアント署名を無効にする新しい関数を追加しました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync を示します。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
+#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
 
-新規作成モードで、メッセージの作成の種類を取得する新しい関数を追加しました。
+新規作成モードでメッセージの作成の種類を取得する新しい関数が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[。アイテム. isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
+#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
-新規作成モードのアイテムでクライアント署名が有効になっているかどうかを確認する新しい関数を追加しました。
+新規作成モードのアイテムでクライアント署名が有効になっているか確認する新しい関数が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
-#### <a name="officemailboxenumscomposetype"></a>[MailboxEnums Setype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
+#### <a name="officemailboxenumscomposetype"></a>[Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
 
-新規 `ComposeType` 作成モードで使用可能な新しい列挙を追加しました。
+新規作成モードで使用可能な `ComposeType` 新しい列挙型が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、web 上の outlook (モダン、 [構成プレビューアクセス](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**利用できる** 場所: Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン、プレビュー アクセス [の構成](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -162,31 +162,31 @@ Outlook アドインでのイベントベースのアクティブ化機能のサ
 
 ### <a name="notification-messages-with-actions"></a>アクションを含む通知メッセージ
 
-この機能を使用すると、既定の **アラーム** 処理に加えて、カスタムアクションを含む通知メッセージをアドインに含めることができます。 モダン Outlook on the web では、この機能は新規作成モードでのみ利用できます。
+この機能を使用すると、既定の [閉じ] アクション以外のカスタム アクションを含む通知メッセージをアドインに **含** めできます。 最新の Outlook on the web では、この機能は新規作成モードでのみ使用できます。
 
-#### <a name="officenotificationmessagedetailsactions"></a>[Office の NotificationMessageDetails。アクション](/javascript/api/outlook/office.notificationmessagedetails#actions)
+#### <a name="officenotificationmessagedetailsactions"></a>[Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
 
-`InsightMessage`カスタムアクションを使用して通知を追加できるようにする新しいプロパティを追加しました。
+カスタム アクションで通知を追加できる新しい `InsightMessage` プロパティが追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
-#### <a name="officenotificationmessageaction"></a>[Office NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
+#### <a name="officenotificationmessageaction"></a>[Office.NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
 
-通知のカスタムアクションを定義する新しいオブジェクトを追加しました `InsightMessage` 。
+通知のカスタム アクションを定義する新しいオブジェクトが追加 `InsightMessage` されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
-#### <a name="officemailboxenumsactiontype"></a>[MailboxEnums](/javascript/api/outlook/office.mailboxenums.actiontype)
+#### <a name="officemailboxenumsactiontype"></a>[Office.MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype)
 
-新しい列挙を追加 `ActionType` しました。
+新しい列挙型を追加しました `ActionType` 。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
-#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[InsightMessage を MailboxEnums します。](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[Office.MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
 
-Enum に新しい型を追加しました `InsightMessage` `ItemNotificationMessageType` 。
+列挙型に新しい `InsightMessage` 型を追加 `ItemNotificationMessageType` しました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)、outlook on the web (モダン)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
 <br>
 
@@ -200,13 +200,13 @@ Enum に新しい型を追加しました `InsightMessage` `ItemNotificationMess
 
 Office テーマを取得する機能が追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
 <br>
 
@@ -216,17 +216,17 @@ Office テーマを取得する機能が追加されました。
 
 ### <a name="session-data"></a>セッション データ
 
-#### <a name="officesessiondata"></a>[Office セッションデータ](/javascript/api/outlook/office.sessiondata)
+#### <a name="officesessiondata"></a>[Office.SessionData](/javascript/api/outlook/office.sessiondata)
 
-アイテムのセッションデータを表す新しいオブジェクトを追加しました。
+アイテムのセッション データを表す新しいオブジェクトを追加しました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
-#### <a name="officecontextmailboxitemsessiondata"></a>[Office. メールボックス (セッション)](office.context.mailbox.item.md#properties)
+#### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
-新規作成モードのアイテムのセッションデータを管理するための新しいプロパティを追加しました。
+新規作成モードでアイテムのセッション データを管理するための新しいプロパティが追加されました。
 
-**利用可能な** 対象: Outlook on Windows (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944306"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104820"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -305,7 +305,7 @@ ms.locfileid: "49944306"
 ### <a name="launchevent-preview"></a>LaunchEvent (プレビュー)
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用する Outlook on the web のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
+> この拡張点は、Microsoft 365 サブスクリプションを使用する Outlook on the web および Windows のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 
 この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。
 
