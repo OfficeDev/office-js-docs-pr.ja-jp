@@ -1,14 +1,14 @@
 ---
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 35ed1b87162b84ff13cafc2084ce9ca1b1666235
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 2ee80167a76861209e814dc6c272720feb3a9cf1
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087925"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173914"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -19,14 +19,14 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
 例えば、`<OfficeApp>` 要素では、`<Id>`、`<Version>`、`<ProviderName>` はこの順序で表示する必要があります。 `<AlternateId>` 要素が追加された場合、この要素は `<Id>` 要素と `<Version>` 要素の間に配置する必要があります。 順序が間違っている要素が 1 つでもあると、マニフェストは有効にならず、アドインも読み込まれません。
 
 > [!NOTE]
-> 要素が間違った親の下にある場合とは異なり、 [office アドインマニフェスト内のバリデーター](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) は、要素の順序が間違っている場合に同じエラーメッセージを使用します。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子 *である* と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
+> [office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest)内の検証機能は、要素が正しい親の下にある場合と同じエラー メッセージを使用します。 エラーには、子要素が親要素の有効な子ではないと表示されます。 そのようなエラーが表示されるものの、子要素のレファレンス ドキュメントがこの子要素は親要素の有効な子 *である* と示す場合は、おそらく、子要素が間違った順序で配置されていることが原因です。
 
-次のセクションでは、マニフェスト要素を表示する順序で示します。 `type`要素の属性が、、、のいずれであるかによって、相違点があり `<OfficeApp>` `TaskPaneApp` `ContentApp` `MailApp` ます。 これらのセクションの扱いが大きくなりすぎないようにするため、非常に複雑な `<VersionOverrides>` 要素が別々のセクションに分割されます。
+次のセクションでは、マニフェスト要素を表示する順序で示します。 要素の属性が 、 `type` `<OfficeApp>` `TaskPaneApp` `ContentApp` `MailApp` . これらのセクションが扱いすぎずになじむのを強くするために、非常に複雑な要素は別の `<VersionOverrides>` セクションに分かれています。
 
 > [!Note]
-> 表示されている要素の一部は必須ではありません。 `minOccurs`[スキーマ](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)で要素の値が **0** の場合、この要素は省略可能です。
+> 表示される要素の一部が必須ではありません。 スキーマ内 `minOccurs` の要素の値が **0** [](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)の場合、要素は省略可能です。
 
-## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウアドイン要素の順序付け
+## <a name="basic-task-pane-add-in-element-ordering"></a>基本的な作業ウィンドウ アドイン要素の順序付け
 
 ```xml
 <OfficeApp xsi:type="TaskPaneApp">
@@ -67,9 +67,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <ExtendedOverrides>
 ```
 
-\*VersionOverrides の子要素の順序については、 [versionoverrides 内の作業ウィンドウアドイン要素の順序](#task-pane-add-in-element-ordering-within-versionoverrides) を参照してください。
+\*VersionOverrides の子要素の順序については [、VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) 内での作業ウィンドウ アドイン要素の順序を参照してください。
 
-## <a name="basic-mail-add-in-element-ordering"></a>基本的なメールアドイン要素の順序付け
+## <a name="basic-mail-add-in-element-ordering"></a>基本的なメール アドイン要素の順序付け
 
 ```xml
 <OfficeApp xsi:type="MailApp">
@@ -110,9 +110,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <VersionOverrides>*
 ```
 
-\*Versionoverrides の子要素の順序については、「 [versionoverrides のメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-10) 」と「1.0」および「 [メールアドイン1.1 要素](#mail-add-in-element-ordering-within-versionoverrides-ver-11) の順序」を参照してください。
+\*VersionOverrides の子要素の順序については [、VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) 内でのメール アドイン要素の順序付けと [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 内でのメール アドイン要素の順序付けをご覧ください。
 
-## <a name="basic-content-add-in-element-ordering"></a>基本的なコンテンツアドイン要素の順序付け
+## <a name="basic-content-add-in-element-ordering"></a>基本的なコンテンツ アドイン要素の順序付け
 
 ```xml
 <OfficeApp xsi:type="ContentApp">
@@ -149,9 +149,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <VersionOverrides>*
 ```
 
-\*VersionOverrides の子要素の順序については、 [versionoverrides 内のコンテンツアドイン要素の順序](#content-add-in-element-ordering-within-versionoverrides) を参照してください。
+\*VersionOverrides [の子要素の順序については、VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) 内でのコンテンツ アドイン要素の順序を参照してください。
 
-## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内の作業ウィンドウアドイン要素の順序付け
+## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内での作業ウィンドウ アドイン要素の順序付け
 
 ```xml
 <VersionOverrides>
@@ -209,34 +209,38 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
+                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
+                            <OverriddenByRibbonApi>
                             <Label>
                             <Icon>
                                 <Image>
                             <Control>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Icon>
-                                <Image>  
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                            <Enabled>
-                            <Items>
-                                <Item>
-                                    <Label>
-                                    <Supertip>
-                                        <Title>
-                                        <Description>
-                                    <Action>
-                                        <TaskpaneId>
-                                        <SourceLocation>
-                                        <Title>
-                                        <FunctionName>
+                                <OverriddenByRibbonApi>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Enabled>
+                                <Items>
+                                    <Item>
+                                        <OverriddenByRibbonApi>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
                         <ControlGroup> (can be above <Group>)
                         <Label>
                         <InsertAfter> (or <InsertBefore>)
@@ -297,7 +301,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                 <Type>
 ```
 
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.0
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>VersionOverrides Ver 内でのメール アドイン要素の順序付け 1.0
 
 ```xml
 <VersionOverrides>
@@ -391,9 +395,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
     <VersionOverrides>*
 ```
 
-\* の代わりに、値を指定した VersionOverrides は `type` `VersionOverridesV1_1` `VersionOverridesV1_0` 、外部 versionoverrides の末尾にネストすることができます。 の要素の順序については、「 [VersionOverrides overrides でのメールアドイン要素の順序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)」を参照してください。 `VersionOverridesV1_1`
+\* 値を持つ VersionOverrides は、外側の `type` `VersionOverridesV1_1` VersionOverride の末尾に入れ子にすることができます `VersionOverridesV1_0` 。 要素 [の順序については、VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 内でのメール アドイン要素の順序を参照してください `VersionOverridesV1_1` 。
 
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides 内のメールアドイン要素の順序は Ver です。 1.1
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 内でのメール アドイン要素の順序付け 1.1
 
 ```xml
 <VersionOverrides>
@@ -495,7 +499,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
             <Scope>
 ```
 
-## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内でのコンテンツアドイン要素の順序付け
+## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 内でのコンテンツ アドイン要素の順序付け
 
 ```xml
 <VersionOverrides>
@@ -506,6 +510,7 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
             <Scope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)
+- [アドイン Officeのリファレンス (v1.1)](../develop/add-in-manifests.md)
+- [公式スキーマの定義](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

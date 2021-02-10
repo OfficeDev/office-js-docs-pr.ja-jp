@@ -1,18 +1,18 @@
 ---
 title: Outlook アドイン API 要件セットのプレビュー
 description: Outlook アドインのプレビュー中の機能と API。
-ms.date: 02/02/2021
+ms.date: 02/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 39dd1221f4dea9674c89cdaad20024ce408f8db3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 92ba3510af0c8b9ebdf9ca4368c889b821a9cb3b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104841"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173956"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook アドイン API 要件セットのプレビュー
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれています。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
 
 > [!IMPORTANT]
 > このドキュメントは、[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)の **プレビュー** 用です。 この要件セットはまだ完全には実装されていないため、このサポートはクライアントによって正確に報告されません。 アドイン マニフェストでこの要件を指定しないでください。
@@ -32,7 +32,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Information Rights Management (IRM) で保護されたアイテムに対するアドインのアクティブ化
 
-アドインは、IRM で保護されたアイテムに対してアクティブ化できます。 この機能を有効にするには、テナント管理者は、テナント管理者が管理サイトで [プログラムによるアクセスを許可する] カスタム ポリシー オプションを設定して、使用権限を有効 `OBJMODEL` にするOffice。  詳細 [については、「使用権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
+アドインは、IRM で保護されたアイテムに対してアクティブ化できます。 この機能を有効にするには、テナント管理者は、テナント管理者に対して [プログラムによるアクセスを許可する] カスタム ポリシー オプションを設定して、使用権限を有効にする `OBJMODEL` Office。  詳細 [については、「使用権と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
 
 **利用できる** 場所 : Windows 上の Outlook、ビルド 13229.10000 (Microsoft 365 サブスクリプションに接続)
 
@@ -42,7 +42,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 
 ---
 
-### <a name="additional-calendar-properties"></a>その他の予定表プロパティ
+### <a name="additional-calendar-properties"></a>その他の予定表のプロパティ
 
 #### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
 
@@ -220,13 +220,13 @@ Office テーマを取得する機能が追加されました。
 
 アイテムのセッション データを表す新しいオブジェクトを追加しました。
 
-**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 新規作成モードでアイテムのセッション データを管理するための新しいプロパティが追加されました。
 
-**利用できる** 場所 : Windows 上の Outlook (Microsoft 365 サブスクリプションに接続)
+**利用できる** 場所 : Outlook on Windows (Microsoft 365 サブスクリプションに接続)、Outlook on the web (モダン)
 
 ## <a name="see-also"></a>関連項目
 

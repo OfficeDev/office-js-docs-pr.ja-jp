@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Group 要素
 description: タブ内の UI コントロールのグループを定義します。
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 3872ece926cc399ed2b30d4dabaacfb741e060ab
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 1bb3a4d65e954a54acb6e93f7c4d52e6b0845315
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771404"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173963"
 ---
 # <a name="group-element"></a>Group 要素
 
@@ -32,6 +32,7 @@ ms.locfileid: "49771404"
 |  [Icon](icon.md)      | はい |  グループのイメージ。  |
 |  [Control](#control)    | いいえ |  Control オブジェクトを表します。 0 以上を指定できます。  |
 |  [OfficeControl](#officecontrol)  | いいえ | 組み込みのコントロールコントロールの 1 つOfficeします。 0 以上を指定できます。 |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにグループを表示するかどうかを指定します。  |
 
 ### <a name="label"></a>Label
 
@@ -46,8 +47,8 @@ ms.locfileid: "49771404"
 省略可能ですが、存在しない場合は、少なくとも 1 つの **OfficeControl が必要です**。 サポートされるコントロールの種類の詳細については [、Control](control.md) 要素を参照してください。 マニフェスト内 **のコントロール** と **OfficeControl** の順序は同じであり、複数の要素がある場合は、これらの順序が異なる可能性がありますが、すべてが **Icon** 要素の下にある必要があります。
 
 ```xml
-<Group id="msgreadCustomTab.grp1">
-    <Label resid="residCustomTabGroupLabel"/>
+<Group id="contosoCustomTab.grp1">
+    <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
@@ -65,8 +66,8 @@ ms.locfileid: "49771404"
 省略可能ですが、存在しない場合は、少なくとも 1 つのコントロールが必要 **です**。 1 つ以上の組み込みのOffice要素を含むグループ内のコントロールを含 `<OfficeControl>` める。 この `id` 属性は、組み込みのコントロールコントロールの ID Officeします。 コントロールの ID を検索するには、「コントロールとコントロール グループの [ID を検索する」を参照してください](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)。 マニフェスト内 **のコントロール** と **OfficeControl** の順序は同じであり、複数の要素がある場合は、これらの順序が異なる可能性がありますが、すべてが **Icon** 要素の下にある必要があります。
 
 ```xml
-<Group id="msgreadCustomTab.grp1">
-    <Label resid="residCustomTabGroupLabel"/>
+<Group id="contosoCustomTab.grp1">
+    <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
@@ -78,4 +79,20 @@ ms.locfileid: "49771404"
     <OfficeControl id="Superscript" />
     <!-- other controls, as needed -->
 </Group>
+```
+
+### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
+
+省略可能 (ブール値)。 実行時にリボンにカスタムコンテキスト タブをインストールする API をサポートするアプリケーションとプラットフォームの組み合わせでグループを非表示にするかどうかを指定します。 既定値 (存在しない場合) は次の値です `false` 。 使用する場合 **、OverriddenByRibbonApi は** Group の最初 *の* 子である必要 **があります**。 詳細については [、「OverriddenByRibbonApi」を参照してください](overriddenbyribbonapi.md)。
+
+```xml
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
+  <CustomTab id="TabCustom1">
+    <Group id="ContosoCustomTab.grp1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
+      <!-- other child elements of the group -->
+    </Group>
+    <Label resid="customTabLabel1"/>
+  </CustomTab>
+</ExtensionPoint>
 ```

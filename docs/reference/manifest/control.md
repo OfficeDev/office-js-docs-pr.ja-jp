@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Control 要素
 description: アクションを実行するか、作業ウィンドウを起動する JavaScript 関数を定義します。
-ms.date: 01/10/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 820ef39ba2b4ac296e5f5d598d5f45cc2ded701d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771376"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173984"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -37,6 +37,7 @@ ms.locfileid: "49771376"
 |  [Icon](icon.md)      | はい |  ボタンの画像です。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
 |  [Enabled](enabled.md)    | いいえ |  アドインの起動時にコントロールを有効にするかどうかを指定します。  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにボタンを表示するかどうかを指定します。 使用する場合は、最初の子 *要素である* 必要があります。 |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
 
@@ -44,6 +45,7 @@ ms.locfileid: "49771376"
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="funcReadButtonLabel" />
   <Supertip>
     <Title resid="funcReadSuperTipTitle" />
@@ -154,11 +156,13 @@ ms.locfileid: "49771376"
 |  [Supertip](supertip.md)  | はい |  このボタンのヒント。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像です。         |
 |  **Items**     | はい |  メニュー内で表示するボタンのコレクションです。 各サブメニュー項目の **Item** 要素を含みます。 各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにメニューを表示するかどうかを指定します。 使用する場合は、最初の子 *要素である* 必要があります。 |
 
 ### <a name="menu-control-examples"></a>メニュー コントロールの例
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
   <Supertip>
@@ -221,6 +225,7 @@ ms.locfileid: "49771376"
   </Icon>
   <Items>
     <Item id="msgReadMenuItem1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Label resid="menuItem1ReadLabel" />
       <Supertip>
         <Title resid="menuItem1ReadLabel" />
