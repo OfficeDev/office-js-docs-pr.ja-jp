@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 description: イベント ベースのアクティブ化用に Outlook アドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d9108b4debea5e59503f3c935a537e5fafde00c8
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234276"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238044"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 
@@ -24,7 +24,7 @@ ms.locfileid: "50234276"
 このチュートリアルの終わりまでに、新しいメッセージが作成されるたびに実行されるアドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを使用する Outlook on the web および Windows でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベースのアクティブ化](#how-to-preview-the-event-based-activation-feature) 機能をプレビューする方法を参照してください。
+> この機能は、Outlook on the [web](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) および Microsoft 365 サブスクリプションを使用した Windows でのプレビューでのみサポートされます。 詳細 [については、この記事のイベント ベースのアクティブ化](#how-to-preview-the-event-based-activation-feature) 機能をプレビューする方法を参照してください。
 >
 > プレビュー機能は予告なしに変更されることがありますので、実稼働アドインでは使用できません。
 
@@ -238,17 +238,19 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
 一Office.js UI を変更または変更する API の一部は、イベント ベースのアドインでは許可されません。ブロックされる API を次に示します。
 
+- Under `Office.context.auth` :
+  - `getAccessToken`
+  - `getAccessTokenAsync`
 - Under `Office.context.mailbox` :
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
+- Under `Office.context.mailbox.item` :
+  - `close`
 - Under `Office.context.ui` :
   - `displayDialogAsync`
   - `messageParent`
-- Under `Office.context.auth` :
-  - `getAccessToken`
-  - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>関連項目
 
