@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: Outlook JavaScript API の要件セットの詳細。
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8838a1fb08b37218bf02a8dc0760a317c2e90e86
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: d3a9255ccba922ecaef5aafe8407e98d4ab2fc33
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990513"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234143"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -112,7 +112,7 @@ if (item.somePropertyOrFunction !== undefined) {
 >
 > <sup>3</sup> Outlook 2013 での 1.3 のサポートは、「[2015 年 12 月 8 日付、Outlook 2013 用更新プログラム (KB3114349)](https://support.microsoft.com/kb/3114349)」の一部として追加されました。 Outlook 2013 での 1.4 のサポートは、「[MS16-107: Outlook 2013 セキュリティ更新プログラムについて 2016 年 9 月 13 日](https://support.microsoft.com/help/3118280)」の一部として追加されました。 Outlook 2016 (1 回限りの購入) での 1.4 のサポートは、「[2018 年 7 月 3 日更新プログラム Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223)」の一部として追加されました。
 >
-> <sup>4</sup> 新しい Mac 版 Outlook のプレビュー サポートは、バージョン 16.38.506 から利用できます。 詳細については、「[新しい Mac 版 Outlook](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#new-outlook-on-mac-preview)」のセクションを参照してください。
+> <sup>4</sup> 新しい Mac 版 Outlook のプレビュー サポートは、バージョン 16.38.506 から利用できます。 詳細については、「[新しい Mac UI での Outlook のアドインのサポート](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview)」セクションを参照してください。
 >
 > <sup>5</sup> 現在、モバイル クライアント用のアドインを設計および実装する際には、さらに考慮事項があります。 たとえば、サポートされるモードは、メールの読み取りのみです。 詳細については、[Outlook Mobile にアドイン コマンドのサポートを追加するときのコードの考慮事項](../../outlook/add-mobile-support.md#code-considerations)を参照してください。
 

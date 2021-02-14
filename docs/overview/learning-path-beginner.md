@@ -4,12 +4,12 @@ description: Office アドインの学習リソースを使用する初心者向
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d4d3a6b7211474e3278273b94f1cb3a12535404
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 154d7b5e1a9e135ea583ae6b1afa4ac9e95e9c69
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839692"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234227"
 ---
 # <a name="beginners-guide"></a>初心者ガイド
 

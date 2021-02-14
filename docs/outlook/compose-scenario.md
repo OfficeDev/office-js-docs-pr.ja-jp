@@ -1,14 +1,14 @@
 ---
 title: 新規作成フォーム用の Outlook アドインを作成する
 description: 新規作成フォーム用の Outlook アドインのシナリオと機能について説明します。
-ms.date: 04/15/2019
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: e8c12c6705bf466f12a8f16eb7f6024678a0d468
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608965"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234255"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>新規作成フォーム用の Outlook アドインを作成する
 
@@ -29,7 +29,7 @@ Office アドイン マニフェスト用スキーマのバージョン 1.1 と 
 
 - 会議出席依頼や会議アイテムを転送するか、それらに返信している。
 
-これらの各新規作成シナリオでは、アドインで定義されているコマンド ボタンが表示されます。 アドイン コマンドを実装していない古いアドインでは、ユーザーはリボンにある **Office アドイン**を選択してアドイン選択ウィンドウを開き、新規作成アドインを選択して開始することができます。 次の図は、新規作成フォームにおけるアドイン コマンドを示しています。
+これらの各新規作成シナリオでは、アドインで定義されているコマンド ボタンが表示されます。 アドイン コマンドを実装していない古いアドインでは、ユーザーはリボンにある **Office アドイン** を選択してアドイン選択ウィンドウを開き、新規作成アドインを選択して開始することができます。 次の図は、新規作成フォームにおけるアドイン コマンドを示しています。
 
 ![アドイン コマンドが含まれた Outlook 作成フォームが表示されています。](../images/compose-form-commands.png)
 
@@ -56,4 +56,4 @@ Office アドイン マニフェスト用スキーマのバージョン 1.1 と 
 
 ## <a name="see-also"></a>関連項目
 
-- [Office 365 の Outlook アドインの概要](../quickstarts/outlook-quickstart.md)
+- [Office の Outlook アドインの概要](../quickstarts/outlook-quickstart.md)
