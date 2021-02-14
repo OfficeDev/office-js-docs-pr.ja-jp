@@ -3,38 +3,38 @@ title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104820"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237708"
 ---
-# <a name="extensionpoint-element"></a><span data-ttu-id="c2166-103">ExtensionPoint 要素</span><span class="sxs-lookup"><span data-stu-id="c2166-103">ExtensionPoint element</span></span>
+# <a name="extensionpoint-element"></a><span data-ttu-id="68d17-103">ExtensionPoint 要素</span><span class="sxs-lookup"><span data-stu-id="68d17-103">ExtensionPoint element</span></span>
 
- <span data-ttu-id="c2166-104">Office UI でアドインが機能を公開する場所を定義します。</span><span class="sxs-lookup"><span data-stu-id="c2166-104">Defines where an add-in exposes functionality in the Office UI.</span></span> <span data-ttu-id="c2166-105">**ExtensionPoint** 要素は、[AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md)、[MobileFormFactor](mobileformfactor.md) の子要素です。</span><span class="sxs-lookup"><span data-stu-id="c2166-105">The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).</span></span>
+ <span data-ttu-id="68d17-104">Office UI でアドインが機能を公開する場所を定義します。</span><span class="sxs-lookup"><span data-stu-id="68d17-104">Defines where an add-in exposes functionality in the Office UI.</span></span> <span data-ttu-id="68d17-105">**ExtensionPoint** 要素は、[AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md)、[MobileFormFactor](mobileformfactor.md) の子要素です。</span><span class="sxs-lookup"><span data-stu-id="68d17-105">The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="c2166-106">属性</span><span class="sxs-lookup"><span data-stu-id="c2166-106">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="68d17-106">属性</span><span class="sxs-lookup"><span data-stu-id="68d17-106">Attributes</span></span>
 
-|  <span data-ttu-id="c2166-107">属性</span><span class="sxs-lookup"><span data-stu-id="c2166-107">Attribute</span></span>  |  <span data-ttu-id="c2166-108">必須</span><span class="sxs-lookup"><span data-stu-id="c2166-108">Required</span></span>  |  <span data-ttu-id="c2166-109">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-109">Description</span></span>  |
+|  <span data-ttu-id="68d17-107">属性</span><span class="sxs-lookup"><span data-stu-id="68d17-107">Attribute</span></span>  |  <span data-ttu-id="68d17-108">必須</span><span class="sxs-lookup"><span data-stu-id="68d17-108">Required</span></span>  |  <span data-ttu-id="68d17-109">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-109">Description</span></span>  |
 |:-----|:-----|:-----|
-|  <span data-ttu-id="c2166-110">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="c2166-110">**xsi:type**</span></span>  |  <span data-ttu-id="c2166-111">はい</span><span class="sxs-lookup"><span data-stu-id="c2166-111">Yes</span></span>  | <span data-ttu-id="c2166-112">定義される拡張点の種類。</span><span class="sxs-lookup"><span data-stu-id="c2166-112">The type of extension point being defined.</span></span>|
+|  <span data-ttu-id="68d17-110">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="68d17-110">**xsi:type**</span></span>  |  <span data-ttu-id="68d17-111">はい</span><span class="sxs-lookup"><span data-stu-id="68d17-111">Yes</span></span>  | <span data-ttu-id="68d17-112">定義される拡張点の種類。</span><span class="sxs-lookup"><span data-stu-id="68d17-112">The type of extension point being defined.</span></span>|
 
-## <a name="extension-points-for-excel-only"></a><span data-ttu-id="c2166-113">Excel のみの拡張点</span><span class="sxs-lookup"><span data-stu-id="c2166-113">Extension points for Excel only</span></span>
+## <a name="extension-points-for-excel-only"></a><span data-ttu-id="68d17-113">Excel のみの拡張点</span><span class="sxs-lookup"><span data-stu-id="68d17-113">Extension points for Excel only</span></span>
 
-- <span data-ttu-id="c2166-114">**CustomFunctions** - Excel 向けの JavaScript で記述されたカスタム関数。</span><span class="sxs-lookup"><span data-stu-id="c2166-114">**CustomFunctions** - A custom function written in JavaScript for Excel.</span></span>
+- <span data-ttu-id="68d17-114">**CustomFunctions** - Excel 向けの JavaScript で記述されたカスタム関数。</span><span class="sxs-lookup"><span data-stu-id="68d17-114">**CustomFunctions** - A custom function written in JavaScript for Excel.</span></span>
 
-<span data-ttu-id="c2166-115">[この XML コード サンプル](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)は、**CustomFunctions** 属性の値を持つ **ExtensionPoint** 要素を使用する方法と、使用する子要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="c2166-115">[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.</span></span>
+<span data-ttu-id="68d17-115">[この XML コード サンプル](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)は、**CustomFunctions** 属性の値を持つ **ExtensionPoint** 要素を使用する方法と、使用する子要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="68d17-115">[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.</span></span>
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a><span data-ttu-id="c2166-116">Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点</span><span class="sxs-lookup"><span data-stu-id="c2166-116">Extension points for Word, Excel, PowerPoint, and OneNote add-in commands</span></span>
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a><span data-ttu-id="68d17-116">Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点</span><span class="sxs-lookup"><span data-stu-id="68d17-116">Extension points for Word, Excel, PowerPoint, and OneNote add-in commands</span></span>
 
-- <span data-ttu-id="c2166-117">**PrimaryCommandSurface** - Office のリボン。</span><span class="sxs-lookup"><span data-stu-id="c2166-117">**PrimaryCommandSurface** - The ribbon in Office.</span></span>
-- <span data-ttu-id="c2166-118">**ContextMenu** Office UI で右クリックしたときに表示されるショートカット メニュー。</span><span class="sxs-lookup"><span data-stu-id="c2166-118">**ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.</span></span>
+- <span data-ttu-id="68d17-117">**PrimaryCommandSurface** - Office のリボン。</span><span class="sxs-lookup"><span data-stu-id="68d17-117">**PrimaryCommandSurface** - The ribbon in Office.</span></span>
+- <span data-ttu-id="68d17-118">**ContextMenu** Office UI で右クリックしたときに表示されるショートカット メニュー。</span><span class="sxs-lookup"><span data-stu-id="68d17-118">**ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.</span></span>
 
-<span data-ttu-id="c2166-119">次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="c2166-119">The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.</span></span>
+<span data-ttu-id="68d17-119">次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="68d17-119">The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="c2166-p102">ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。<CustomTab id="mycompanyname.mygroupname"></span><span class="sxs-lookup"><span data-stu-id="c2166-p102">For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname"></span></span>
+> <span data-ttu-id="68d17-p102">ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。<CustomTab id="mycompanyname.mygroupname"></span><span class="sxs-lookup"><span data-stu-id="68d17-p102">For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname"></span></span>
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -69,46 +69,46 @@ ms.locfileid: "50104820"
         </ExtensionPoint>
 ```
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-123">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-123">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-123">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-123">Child elements</span></span>
  
-|<span data-ttu-id="c2166-124">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-124">Element</span></span>|<span data-ttu-id="c2166-125">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-125">Description</span></span>|
+|<span data-ttu-id="68d17-124">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-124">Element</span></span>|<span data-ttu-id="68d17-125">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-125">Description</span></span>|
 |:-----|:-----|
-|<span data-ttu-id="c2166-126">**CustomTab**</span><span class="sxs-lookup"><span data-stu-id="c2166-126">**CustomTab**</span></span>|<span data-ttu-id="c2166-p103">カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 </span><span class="sxs-lookup"><span data-stu-id="c2166-p103">Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.</span></span>|
-|<span data-ttu-id="c2166-130">**OfficeTab**</span><span class="sxs-lookup"><span data-stu-id="c2166-130">**OfficeTab**</span></span>|<span data-ttu-id="c2166-131">**(PrimaryCommandSurface** を使用して) アプリリボン タブOfficeを拡張する場合は必須です。</span><span class="sxs-lookup"><span data-stu-id="c2166-131">Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**).</span></span> <span data-ttu-id="c2166-132">OfficeTab 要素 **を使用** する場合 **、CustomTab 要素は使用** することはできません。</span><span class="sxs-lookup"><span data-stu-id="c2166-132">If you use the **OfficeTab** element, you can't use the **CustomTab** element.</span></span> <span data-ttu-id="c2166-133">詳細については、「[OfficeTab](officetab.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c2166-133">For details, see [OfficeTab](officetab.md).</span></span>|
-|<span data-ttu-id="c2166-134">**OfficeMenu**</span><span class="sxs-lookup"><span data-stu-id="c2166-134">**OfficeMenu**</span></span>|<span data-ttu-id="c2166-p105">既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 </span><span class="sxs-lookup"><span data-stu-id="c2166-p105">Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: </span></span><br/> <span data-ttu-id="c2166-p106">Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 </span><span class="sxs-lookup"><span data-stu-id="c2166-p106">- **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. </span></span><br/> <span data-ttu-id="c2166-p107">Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c2166-p107">- **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.</span></span>|
-|<span data-ttu-id="c2166-141">**Group**</span><span class="sxs-lookup"><span data-stu-id="c2166-141">**Group**</span></span>|<span data-ttu-id="c2166-p108">タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 </span><span class="sxs-lookup"><span data-stu-id="c2166-p108">A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters.</span></span>|
-|<span data-ttu-id="c2166-145">**Label**</span><span class="sxs-lookup"><span data-stu-id="c2166-145">**Label**</span></span>|<span data-ttu-id="c2166-146">必須。</span><span class="sxs-lookup"><span data-stu-id="c2166-146">Required.</span></span> <span data-ttu-id="c2166-147">グループのラベルです。</span><span class="sxs-lookup"><span data-stu-id="c2166-147">The label of the group.</span></span> <span data-ttu-id="c2166-148">**resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-148">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element.</span></span> <span data-ttu-id="c2166-149">**String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="c2166-149">The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.</span></span>|
-|<span data-ttu-id="c2166-150">**Icon**</span><span class="sxs-lookup"><span data-stu-id="c2166-150">**Icon**</span></span>|<span data-ttu-id="c2166-151">必須。</span><span class="sxs-lookup"><span data-stu-id="c2166-151">Required.</span></span> <span data-ttu-id="c2166-152">小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-152">Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed.</span></span> <span data-ttu-id="c2166-153">**resid 属性** は 32 文字以内で **、Image** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-153">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of an **Image** element.</span></span> <span data-ttu-id="c2166-154">**Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="c2166-154">The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element.</span></span> <span data-ttu-id="c2166-155">**size** 属性は、イメージのサイズをピクセル単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-155">The **size** attribute gives the size, in pixels, of the image.</span></span> <span data-ttu-id="c2166-156">3 つのイメージのサイズ (16、32、80) が必要です。</span><span class="sxs-lookup"><span data-stu-id="c2166-156">Three image sizes are required: 16, 32, and 80.</span></span> <span data-ttu-id="c2166-157">5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c2166-157">Five optional sizes are also supported: 20, 24, 40, 48, and 64.</span></span>|
-|<span data-ttu-id="c2166-158">**Tooltip**</span><span class="sxs-lookup"><span data-stu-id="c2166-158">**Tooltip**</span></span>|<span data-ttu-id="c2166-159">省略可能。</span><span class="sxs-lookup"><span data-stu-id="c2166-159">Optional.</span></span> <span data-ttu-id="c2166-160">グループのツールヒント。</span><span class="sxs-lookup"><span data-stu-id="c2166-160">The tooltip of the group.</span></span> <span data-ttu-id="c2166-161">**resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-161">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element.</span></span> <span data-ttu-id="c2166-162">**String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="c2166-162">The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.</span></span>|
-|<span data-ttu-id="c2166-163">**Control**</span><span class="sxs-lookup"><span data-stu-id="c2166-163">**Control**</span></span>|<span data-ttu-id="c2166-164">各グループには、少なくとも 1 つのコントロールが必要です。</span><span class="sxs-lookup"><span data-stu-id="c2166-164">Each group requires at least one control.</span></span> <span data-ttu-id="c2166-165">コントロール **要素** には、ボタンまたは **メニュー** のいずれかを指定 **できます**。</span><span class="sxs-lookup"><span data-stu-id="c2166-165">A **Control** element can be either a **Button** or a **Menu**.</span></span> <span data-ttu-id="c2166-166">メニュー **を** 使用して、ボタン コントロールのドロップダウン リストを指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-166">Use **Menu** to specify a drop-down list of button controls.</span></span> <span data-ttu-id="c2166-167">現在は、ボタンとメニューのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c2166-167">Currently, only buttons and menus are supported.</span></span> <span data-ttu-id="c2166-168">詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="c2166-168">See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.</span></span><br/><span data-ttu-id="c2166-169">**注:**  トラブルシューティングを容易にするために **、Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c2166-169">**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.</span></span>|
-|<span data-ttu-id="c2166-170">**スクリプト**</span><span class="sxs-lookup"><span data-stu-id="c2166-170">**Script**</span></span>|<span data-ttu-id="c2166-171">カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。</span><span class="sxs-lookup"><span data-stu-id="c2166-171">Links to the JavaScript file with the custom function definition and registration code.</span></span> <span data-ttu-id="c2166-172">Developer Preview では、この要素は使用しません。</span><span class="sxs-lookup"><span data-stu-id="c2166-172">This element is not used in the Developer Preview.</span></span> <span data-ttu-id="c2166-173">代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="c2166-173">Instead, the HTML page is responsible for loading all JavaScript files.</span></span>|
-|<span data-ttu-id="c2166-174">**Page**</span><span class="sxs-lookup"><span data-stu-id="c2166-174">**Page**</span></span>|<span data-ttu-id="c2166-175">カスタム関数についての HTML ページにリンクします。</span><span class="sxs-lookup"><span data-stu-id="c2166-175">Links to the HTML page for your custom functions.</span></span>|
+|<span data-ttu-id="68d17-126">**CustomTab**</span><span class="sxs-lookup"><span data-stu-id="68d17-126">**CustomTab**</span></span>|<span data-ttu-id="68d17-p103">カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 </span><span class="sxs-lookup"><span data-stu-id="68d17-p103">Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.</span></span>|
+|<span data-ttu-id="68d17-130">**OfficeTab**</span><span class="sxs-lookup"><span data-stu-id="68d17-130">**OfficeTab**</span></span>|<span data-ttu-id="68d17-131">**(PrimaryCommandSurface** を使用して) アプリリボン タブOfficeを拡張する場合は必須です。</span><span class="sxs-lookup"><span data-stu-id="68d17-131">Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**).</span></span> <span data-ttu-id="68d17-132">OfficeTab 要素 **を使用** する場合 **、CustomTab 要素は使用** することはできません。</span><span class="sxs-lookup"><span data-stu-id="68d17-132">If you use the **OfficeTab** element, you can't use the **CustomTab** element.</span></span> <span data-ttu-id="68d17-133">詳細については、「[OfficeTab](officetab.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="68d17-133">For details, see [OfficeTab](officetab.md).</span></span>|
+|<span data-ttu-id="68d17-134">**OfficeMenu**</span><span class="sxs-lookup"><span data-stu-id="68d17-134">**OfficeMenu**</span></span>|<span data-ttu-id="68d17-p105">既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 </span><span class="sxs-lookup"><span data-stu-id="68d17-p105">Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: </span></span><br/> <span data-ttu-id="68d17-p106">Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 </span><span class="sxs-lookup"><span data-stu-id="68d17-p106">- **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. </span></span><br/> <span data-ttu-id="68d17-p107">Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。</span><span class="sxs-lookup"><span data-stu-id="68d17-p107">- **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.</span></span>|
+|<span data-ttu-id="68d17-141">**Group**</span><span class="sxs-lookup"><span data-stu-id="68d17-141">**Group**</span></span>|<span data-ttu-id="68d17-p108">タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 </span><span class="sxs-lookup"><span data-stu-id="68d17-p108">A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters.</span></span>|
+|<span data-ttu-id="68d17-145">**Label**</span><span class="sxs-lookup"><span data-stu-id="68d17-145">**Label**</span></span>|<span data-ttu-id="68d17-146">必須。</span><span class="sxs-lookup"><span data-stu-id="68d17-146">Required.</span></span> <span data-ttu-id="68d17-147">グループのラベルです。</span><span class="sxs-lookup"><span data-stu-id="68d17-147">The label of the group.</span></span> <span data-ttu-id="68d17-148">**resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-148">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element.</span></span> <span data-ttu-id="68d17-149">**String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="68d17-149">The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.</span></span>|
+|<span data-ttu-id="68d17-150">**Icon**</span><span class="sxs-lookup"><span data-stu-id="68d17-150">**Icon**</span></span>|<span data-ttu-id="68d17-151">必須。</span><span class="sxs-lookup"><span data-stu-id="68d17-151">Required.</span></span> <span data-ttu-id="68d17-152">小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-152">Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed.</span></span> <span data-ttu-id="68d17-153">**resid 属性** は 32 文字以内で **、Image** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-153">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of an **Image** element.</span></span> <span data-ttu-id="68d17-154">**Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="68d17-154">The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element.</span></span> <span data-ttu-id="68d17-155">**size** 属性は、イメージのサイズをピクセル単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-155">The **size** attribute gives the size, in pixels, of the image.</span></span> <span data-ttu-id="68d17-156">3 つのイメージのサイズ (16、32、80) が必要です。</span><span class="sxs-lookup"><span data-stu-id="68d17-156">Three image sizes are required: 16, 32, and 80.</span></span> <span data-ttu-id="68d17-157">5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。</span><span class="sxs-lookup"><span data-stu-id="68d17-157">Five optional sizes are also supported: 20, 24, 40, 48, and 64.</span></span>|
+|<span data-ttu-id="68d17-158">**Tooltip**</span><span class="sxs-lookup"><span data-stu-id="68d17-158">**Tooltip**</span></span>|<span data-ttu-id="68d17-159">省略可能。</span><span class="sxs-lookup"><span data-stu-id="68d17-159">Optional.</span></span> <span data-ttu-id="68d17-160">グループのツールヒント。</span><span class="sxs-lookup"><span data-stu-id="68d17-160">The tooltip of the group.</span></span> <span data-ttu-id="68d17-161">**resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-161">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element.</span></span> <span data-ttu-id="68d17-162">**String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。</span><span class="sxs-lookup"><span data-stu-id="68d17-162">The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.</span></span>|
+|<span data-ttu-id="68d17-163">**Control**</span><span class="sxs-lookup"><span data-stu-id="68d17-163">**Control**</span></span>|<span data-ttu-id="68d17-164">各グループには、少なくとも 1 つのコントロールが必要です。</span><span class="sxs-lookup"><span data-stu-id="68d17-164">Each group requires at least one control.</span></span> <span data-ttu-id="68d17-165">コントロール **要素** には、ボタンまたは **メニュー** のいずれかを指定 **できます**。</span><span class="sxs-lookup"><span data-stu-id="68d17-165">A **Control** element can be either a **Button** or a **Menu**.</span></span> <span data-ttu-id="68d17-166">メニュー **を** 使用して、ボタン コントロールのドロップダウン リストを指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-166">Use **Menu** to specify a drop-down list of button controls.</span></span> <span data-ttu-id="68d17-167">現在は、ボタンとメニューのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="68d17-167">Currently, only buttons and menus are supported.</span></span> <span data-ttu-id="68d17-168">詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="68d17-168">See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.</span></span><br/><span data-ttu-id="68d17-169">**注:**  トラブルシューティングを容易にするために **、Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="68d17-169">**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.</span></span>|
+|<span data-ttu-id="68d17-170">**スクリプト**</span><span class="sxs-lookup"><span data-stu-id="68d17-170">**Script**</span></span>|<span data-ttu-id="68d17-171">カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。</span><span class="sxs-lookup"><span data-stu-id="68d17-171">Links to the JavaScript file with the custom function definition and registration code.</span></span> <span data-ttu-id="68d17-172">Developer Preview では、この要素は使用しません。</span><span class="sxs-lookup"><span data-stu-id="68d17-172">This element is not used in the Developer Preview.</span></span> <span data-ttu-id="68d17-173">代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="68d17-173">Instead, the HTML page is responsible for loading all JavaScript files.</span></span>|
+|<span data-ttu-id="68d17-174">**Page**</span><span class="sxs-lookup"><span data-stu-id="68d17-174">**Page**</span></span>|<span data-ttu-id="68d17-175">カスタム関数についての HTML ページにリンクします。</span><span class="sxs-lookup"><span data-stu-id="68d17-175">Links to the HTML page for your custom functions.</span></span>|
 
-## <a name="extension-points-for-outlook"></a><span data-ttu-id="c2166-176">Outlook のみの拡張点</span><span class="sxs-lookup"><span data-stu-id="c2166-176">Extension points for Outlook</span></span>
+## <a name="extension-points-for-outlook"></a><span data-ttu-id="68d17-176">Outlook のみの拡張点</span><span class="sxs-lookup"><span data-stu-id="68d17-176">Extension points for Outlook</span></span>
 
-- [<span data-ttu-id="c2166-177">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-177">MessageReadCommandSurface</span></span>](#messagereadcommandsurface)
-- [<span data-ttu-id="c2166-178">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-178">MessageComposeCommandSurface</span></span>](#messagecomposecommandsurface)
-- [<span data-ttu-id="c2166-179">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-179">AppointmentOrganizerCommandSurface</span></span>](#appointmentorganizercommandsurface)
-- [<span data-ttu-id="c2166-180">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-180">AppointmentAttendeeCommandSurface</span></span>](#appointmentattendeecommandsurface)
-- <span data-ttu-id="c2166-181">[Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)</span><span class="sxs-lookup"><span data-stu-id="c2166-181">[Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)</span></span>
-- [<span data-ttu-id="c2166-182">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-182">MobileMessageReadCommandSurface</span></span>](#mobilemessagereadcommandsurface)
-- [<span data-ttu-id="c2166-183">MobileOnlineMeetingCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-183">MobileOnlineMeetingCommandSurface</span></span>](#mobileonlinemeetingcommandsurface)
-- [<span data-ttu-id="c2166-184">LaunchEvent</span><span class="sxs-lookup"><span data-stu-id="c2166-184">LaunchEvent</span></span>](#launchevent-preview)
-- [<span data-ttu-id="c2166-185">Events</span><span class="sxs-lookup"><span data-stu-id="c2166-185">Events</span></span>](#events)
-- [<span data-ttu-id="c2166-186">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="c2166-186">DetectedEntity</span></span>](#detectedentity)
+- [<span data-ttu-id="68d17-177">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-177">MessageReadCommandSurface</span></span>](#messagereadcommandsurface)
+- [<span data-ttu-id="68d17-178">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-178">MessageComposeCommandSurface</span></span>](#messagecomposecommandsurface)
+- [<span data-ttu-id="68d17-179">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-179">AppointmentOrganizerCommandSurface</span></span>](#appointmentorganizercommandsurface)
+- [<span data-ttu-id="68d17-180">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-180">AppointmentAttendeeCommandSurface</span></span>](#appointmentattendeecommandsurface)
+- <span data-ttu-id="68d17-181">[Module](#module) ([DesktopFormFactor](desktopformfactor.md) でのみ使用できます。)</span><span class="sxs-lookup"><span data-stu-id="68d17-181">[Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)</span></span>
+- [<span data-ttu-id="68d17-182">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-182">MobileMessageReadCommandSurface</span></span>](#mobilemessagereadcommandsurface)
+- [<span data-ttu-id="68d17-183">MobileOnlineMeetingCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-183">MobileOnlineMeetingCommandSurface</span></span>](#mobileonlinemeetingcommandsurface)
+- [<span data-ttu-id="68d17-184">LaunchEvent</span><span class="sxs-lookup"><span data-stu-id="68d17-184">LaunchEvent</span></span>](#launchevent-preview)
+- [<span data-ttu-id="68d17-185">Events</span><span class="sxs-lookup"><span data-stu-id="68d17-185">Events</span></span>](#events)
+- [<span data-ttu-id="68d17-186">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="68d17-186">DetectedEntity</span></span>](#detectedentity)
 
-### <a name="messagereadcommandsurface"></a><span data-ttu-id="c2166-187">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-187">MessageReadCommandSurface</span></span>
+### <a name="messagereadcommandsurface"></a><span data-ttu-id="68d17-187">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-187">MessageReadCommandSurface</span></span>
 
-<span data-ttu-id="c2166-p114">この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c2166-p114">This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.</span></span>
+<span data-ttu-id="68d17-p114">この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。</span><span class="sxs-lookup"><span data-stu-id="68d17-p114">This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-190">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-190">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-190">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-190">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-191">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-191">Element</span></span> |  <span data-ttu-id="c2166-192">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-192">Description</span></span>  |
+|  <span data-ttu-id="68d17-191">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-191">Element</span></span> |  <span data-ttu-id="68d17-192">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-192">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-193">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="c2166-193">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="c2166-194">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-194">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="c2166-195">CustomTab</span><span class="sxs-lookup"><span data-stu-id="c2166-195">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="c2166-196">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-196">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-193">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="68d17-193">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="68d17-194">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-194">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-195">CustomTab</span><span class="sxs-lookup"><span data-stu-id="68d17-195">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="68d17-196">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-196">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="c2166-197">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-197">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="68d17-197">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-197">OfficeTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -118,7 +118,7 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="c2166-198">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-198">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="68d17-198">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-198">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -128,18 +128,18 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="messagecomposecommandsurface"></a><span data-ttu-id="c2166-199">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-199">MessageComposeCommandSurface</span></span>
+### <a name="messagecomposecommandsurface"></a><span data-ttu-id="68d17-199">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-199">MessageComposeCommandSurface</span></span>
 
-<span data-ttu-id="c2166-200">この拡張点は、メールの新規作成フォームを使用してアドイン用のリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="c2166-200">This extension point puts buttons on the ribbon for add-ins using mail compose form.</span></span> 
+<span data-ttu-id="68d17-200">この拡張点は、メールの新規作成フォームを使用してアドイン用のリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="68d17-200">This extension point puts buttons on the ribbon for add-ins using mail compose form.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-201">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-201">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-201">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-201">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-202">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-202">Element</span></span> |  <span data-ttu-id="c2166-203">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-203">Description</span></span>  |
+|  <span data-ttu-id="68d17-202">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-202">Element</span></span> |  <span data-ttu-id="68d17-203">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-203">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-204">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="c2166-204">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="c2166-205">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-205">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="c2166-206">CustomTab</span><span class="sxs-lookup"><span data-stu-id="c2166-206">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="c2166-207">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-207">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-204">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="68d17-204">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="68d17-205">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-205">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-206">CustomTab</span><span class="sxs-lookup"><span data-stu-id="68d17-206">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="68d17-207">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-207">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="c2166-208">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-208">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="68d17-208">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-208">OfficeTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -149,7 +149,7 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="c2166-209">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-209">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="68d17-209">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-209">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -159,18 +159,18 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="appointmentorganizercommandsurface"></a><span data-ttu-id="c2166-210">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-210">AppointmentOrganizerCommandSurface</span></span>
+### <a name="appointmentorganizercommandsurface"></a><span data-ttu-id="68d17-210">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-210">AppointmentOrganizerCommandSurface</span></span>
 
-<span data-ttu-id="c2166-211">この拡張点は、会議の開催者に表示されるフォームのリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="c2166-211">This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting.</span></span> 
+<span data-ttu-id="68d17-211">この拡張点は、会議の開催者に表示されるフォームのリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="68d17-211">This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-212">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-212">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-212">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-212">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-213">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-213">Element</span></span> |  <span data-ttu-id="c2166-214">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-214">Description</span></span>  |
+|  <span data-ttu-id="68d17-213">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-213">Element</span></span> |  <span data-ttu-id="68d17-214">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-214">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-215">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="c2166-215">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="c2166-216">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-216">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="c2166-217">CustomTab</span><span class="sxs-lookup"><span data-stu-id="c2166-217">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="c2166-218">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-218">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-215">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="68d17-215">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="68d17-216">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-216">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-217">CustomTab</span><span class="sxs-lookup"><span data-stu-id="68d17-217">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="68d17-218">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-218">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="c2166-219">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-219">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="68d17-219">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-219">OfficeTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
@@ -180,7 +180,7 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="c2166-220">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-220">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="68d17-220">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-220">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
@@ -190,18 +190,18 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="appointmentattendeecommandsurface"></a><span data-ttu-id="c2166-221">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-221">AppointmentAttendeeCommandSurface</span></span>
+### <a name="appointmentattendeecommandsurface"></a><span data-ttu-id="68d17-221">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-221">AppointmentAttendeeCommandSurface</span></span>
 
-<span data-ttu-id="c2166-222">この拡張点は、会議の出席者に表示されるフォームのリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="c2166-222">This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting.</span></span> 
+<span data-ttu-id="68d17-222">この拡張点は、会議の出席者に表示されるフォームのリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="68d17-222">This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-223">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-223">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-223">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-223">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-224">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-224">Element</span></span> |  <span data-ttu-id="c2166-225">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-225">Description</span></span>  |
+|  <span data-ttu-id="68d17-224">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-224">Element</span></span> |  <span data-ttu-id="68d17-225">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-225">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-226">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="c2166-226">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="c2166-227">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-227">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="c2166-228">CustomTab</span><span class="sxs-lookup"><span data-stu-id="c2166-228">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="c2166-229">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-229">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-226">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="68d17-226">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="68d17-227">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-227">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-228">CustomTab</span><span class="sxs-lookup"><span data-stu-id="68d17-228">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="68d17-229">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-229">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="c2166-230">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-230">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="68d17-230">OfficeTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-230">OfficeTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
@@ -211,7 +211,7 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="c2166-231">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="c2166-231">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="68d17-231">CustomTab の例</span><span class="sxs-lookup"><span data-stu-id="68d17-231">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
@@ -221,32 +221,32 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="module"></a><span data-ttu-id="c2166-232">Module</span><span class="sxs-lookup"><span data-stu-id="c2166-232">Module</span></span>
+### <a name="module"></a><span data-ttu-id="68d17-232">Module</span><span class="sxs-lookup"><span data-stu-id="68d17-232">Module</span></span>
 
-<span data-ttu-id="c2166-233">この拡張点は、モジュール拡張機能用のリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="c2166-233">This extension point puts buttons on the ribbon for the module extension.</span></span>
+<span data-ttu-id="68d17-233">この拡張点は、モジュール拡張機能用のリボンにボタンを配置します。</span><span class="sxs-lookup"><span data-stu-id="68d17-233">This extension point puts buttons on the ribbon for the module extension.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-234">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-234">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-234">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-234">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-235">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-235">Element</span></span> |  <span data-ttu-id="c2166-236">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-236">Description</span></span>  |
+|  <span data-ttu-id="68d17-235">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-235">Element</span></span> |  <span data-ttu-id="68d17-236">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-236">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-237">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="c2166-237">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="c2166-238">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-238">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="c2166-239">CustomTab</span><span class="sxs-lookup"><span data-stu-id="c2166-239">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="c2166-240">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-240">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-237">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="68d17-237">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="68d17-238">コマンドを既定のリボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-238">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="68d17-239">CustomTab</span><span class="sxs-lookup"><span data-stu-id="68d17-239">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="68d17-240">コマンドをカスタム リボン タブに追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-240">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-### <a name="mobilemessagereadcommandsurface"></a><span data-ttu-id="c2166-241">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-241">MobileMessageReadCommandSurface</span></span>
+### <a name="mobilemessagereadcommandsurface"></a><span data-ttu-id="68d17-241">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-241">MobileMessageReadCommandSurface</span></span>
 
-<span data-ttu-id="c2166-242">この拡張点により、モバイル フォーム ファクターのメールの閲覧ビューのコマンド領域にボタンが配置されます。</span><span class="sxs-lookup"><span data-stu-id="c2166-242">This extension point puts buttons in the command surface for the mail read view in the mobile form factor.</span></span>
+<span data-ttu-id="68d17-242">この拡張点により、モバイル フォーム ファクターのメールの閲覧ビューのコマンド領域にボタンが配置されます。</span><span class="sxs-lookup"><span data-stu-id="68d17-242">This extension point puts buttons in the command surface for the mail read view in the mobile form factor.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-243">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-243">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-243">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-243">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-244">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-244">Element</span></span> |  <span data-ttu-id="c2166-245">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-245">Description</span></span>  |
+|  <span data-ttu-id="68d17-244">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-244">Element</span></span> |  <span data-ttu-id="68d17-245">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-245">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-246">Group</span><span class="sxs-lookup"><span data-stu-id="c2166-246">Group</span></span>](group.md) |  <span data-ttu-id="c2166-247">コマンド領域にボタンのグループを追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-247">Adds a group of buttons to the command surface.</span></span>  |
+|  [<span data-ttu-id="68d17-246">Group</span><span class="sxs-lookup"><span data-stu-id="68d17-246">Group</span></span>](group.md) |  <span data-ttu-id="68d17-247">コマンド領域にボタンのグループを追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-247">Adds a group of buttons to the command surface.</span></span>  |
 
-<span data-ttu-id="c2166-248">この種類の **ExtensionPoint** 要素には子要素を 1 つだけ含めることができます (**Group** 要素)。</span><span class="sxs-lookup"><span data-stu-id="c2166-248">**ExtensionPoint** elements of this type can only have one child element: a **Group** element.</span></span>
+<span data-ttu-id="68d17-248">この種類の **ExtensionPoint** 要素には子要素を 1 つだけ含めることができます (**Group** 要素)。</span><span class="sxs-lookup"><span data-stu-id="68d17-248">**ExtensionPoint** elements of this type can only have one child element: a **Group** element.</span></span>
 
-<span data-ttu-id="c2166-249">この拡張点に含まれる **Control** 要素の **xsi:type** 属性を `MobileButton` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-249">**Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.</span></span>
+<span data-ttu-id="68d17-249">この拡張点に含まれる **Control** 要素の **xsi:type** 属性を `MobileButton` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-249">**Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.</span></span>
 
-#### <a name="example"></a><span data-ttu-id="c2166-250">例</span><span class="sxs-lookup"><span data-stu-id="c2166-250">Example</span></span>
+#### <a name="example"></a><span data-ttu-id="68d17-250">例</span><span class="sxs-lookup"><span data-stu-id="68d17-250">Example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
@@ -259,26 +259,26 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="mobileonlinemeetingcommandsurface"></a><span data-ttu-id="c2166-251">MobileOnlineMeetingCommandSurface</span><span class="sxs-lookup"><span data-stu-id="c2166-251">MobileOnlineMeetingCommandSurface</span></span>
+### <a name="mobileonlinemeetingcommandsurface"></a><span data-ttu-id="68d17-251">MobileOnlineMeetingCommandSurface</span><span class="sxs-lookup"><span data-stu-id="68d17-251">MobileOnlineMeetingCommandSurface</span></span>
 
-<span data-ttu-id="c2166-252">この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-252">This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor.</span></span> <span data-ttu-id="c2166-253">会議の開催者はオンライン会議を作成できます。</span><span class="sxs-lookup"><span data-stu-id="c2166-253">A meeting organizer can create an online meeting.</span></span> <span data-ttu-id="c2166-254">その後、出席者はオンライン会議に参加できます。</span><span class="sxs-lookup"><span data-stu-id="c2166-254">An attendee can subsequently join the online meeting.</span></span> <span data-ttu-id="c2166-255">このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。</span><span class="sxs-lookup"><span data-stu-id="c2166-255">To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.</span></span>
+<span data-ttu-id="68d17-252">この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-252">This extension point puts a mode-appropriate toggle in the command surface for an appointment in the mobile form factor.</span></span> <span data-ttu-id="68d17-253">会議の開催者はオンライン会議を作成できます。</span><span class="sxs-lookup"><span data-stu-id="68d17-253">A meeting organizer can create an online meeting.</span></span> <span data-ttu-id="68d17-254">その後、出席者はオンライン会議に参加できます。</span><span class="sxs-lookup"><span data-stu-id="68d17-254">An attendee can subsequently join the online meeting.</span></span> <span data-ttu-id="68d17-255">このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。</span><span class="sxs-lookup"><span data-stu-id="68d17-255">To learn more about this scenario, see the [Create an Outlook mobile add-in for an online-meeting provider](../../outlook/online-meeting.md) article.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c2166-256">この拡張点は、Microsoft 365 サブスクリプションを使用する Android でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c2166-256">This extension point is only supported on Android with a Microsoft 365 subscription.</span></span>
+> <span data-ttu-id="68d17-256">この拡張点は、Microsoft 365 サブスクリプションを使用する Android でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="68d17-256">This extension point is only supported on Android with a Microsoft 365 subscription.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-257">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-257">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-257">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-257">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-258">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-258">Element</span></span> |  <span data-ttu-id="c2166-259">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-259">Description</span></span>  |
+|  <span data-ttu-id="68d17-258">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-258">Element</span></span> |  <span data-ttu-id="68d17-259">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-259">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-260">Control</span><span class="sxs-lookup"><span data-stu-id="c2166-260">Control</span></span>](control.md) |  <span data-ttu-id="c2166-261">コマンド サーフェスにボタンを追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-261">Adds a button to the command surface.</span></span>  |
+|  [<span data-ttu-id="68d17-260">Control</span><span class="sxs-lookup"><span data-stu-id="68d17-260">Control</span></span>](control.md) |  <span data-ttu-id="68d17-261">コマンド サーフェスにボタンを追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-261">Adds a button to the command surface.</span></span>  |
 
-<span data-ttu-id="c2166-262">`ExtensionPoint` この型の要素は、1 つの子要素 (要素) のみを持 `Control` つ場合があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-262">`ExtensionPoint` elements of this type can only have one child element: a `Control` element.</span></span>
+<span data-ttu-id="68d17-262">`ExtensionPoint` この型の要素は、1 つの子要素 (要素) のみを持 `Control` つ場合があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-262">`ExtensionPoint` elements of this type can only have one child element: a `Control` element.</span></span>
 
-<span data-ttu-id="c2166-263">この `Control` 拡張点に含まれる要素には、属性が設定 `xsi:type` されている必要があります `MobileButton` 。</span><span class="sxs-lookup"><span data-stu-id="c2166-263">The `Control` element contained in this extension point must have the `xsi:type` attribute set to `MobileButton`.</span></span>
+<span data-ttu-id="68d17-263">この `Control` 拡張点に含まれる要素には、属性が設定 `xsi:type` されている必要があります `MobileButton` 。</span><span class="sxs-lookup"><span data-stu-id="68d17-263">The `Control` element contained in this extension point must have the `xsi:type` attribute set to `MobileButton`.</span></span>
 
-<span data-ttu-id="c2166-264">イメージ `Icon` は、16 進数コードを使用してグレースケールで表示するか、他の色形式 `#919191` で同等 [の色を使用する必要があります](https://convertingcolors.com/hex-color-919191.html)。</span><span class="sxs-lookup"><span data-stu-id="c2166-264">The `Icon` images should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).</span></span>
+<span data-ttu-id="68d17-264">イメージ `Icon` は、16 進数コードを使用してグレースケールで表示するか、他の色形式 `#919191` で同等 [の色を使用する必要があります](https://convertingcolors.com/hex-color-919191.html)。</span><span class="sxs-lookup"><span data-stu-id="68d17-264">The `Icon` images should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).</span></span>
 
-#### <a name="example"></a><span data-ttu-id="c2166-265">例</span><span class="sxs-lookup"><span data-stu-id="c2166-265">Example</span></span>
+#### <a name="example"></a><span data-ttu-id="68d17-265">例</span><span class="sxs-lookup"><span data-stu-id="68d17-265">Example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
@@ -302,21 +302,21 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="launchevent-preview"></a><span data-ttu-id="c2166-266">LaunchEvent (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="c2166-266">LaunchEvent (preview)</span></span>
+### <a name="launchevent-preview"></a><span data-ttu-id="68d17-266">LaunchEvent (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="68d17-266">LaunchEvent (preview)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c2166-267">この拡張点は、Microsoft 365 サブスクリプションを使用する Outlook on the web および Windows のプレビューでのみサポートされます。 [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)</span><span class="sxs-lookup"><span data-stu-id="c2166-267">This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription.</span></span>
+> <span data-ttu-id="68d17-267">この拡張点は、Outlook on [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) the web および Microsoft 365 サブスクリプションを使用する Windows のプレビューでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="68d17-267">This extension point is only supported in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and on Windows with a Microsoft 365 subscription.</span></span>
 
-<span data-ttu-id="c2166-268">この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。</span><span class="sxs-lookup"><span data-stu-id="c2166-268">This extension point enables an add-in to activate based on supported events in the desktop form factor.</span></span> <span data-ttu-id="c2166-269">現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。</span><span class="sxs-lookup"><span data-stu-id="c2166-269">Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`.</span></span> <span data-ttu-id="c2166-270">このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。</span><span class="sxs-lookup"><span data-stu-id="c2166-270">To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.</span></span>
+<span data-ttu-id="68d17-268">この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。</span><span class="sxs-lookup"><span data-stu-id="68d17-268">This extension point enables an add-in to activate based on supported events in the desktop form factor.</span></span> <span data-ttu-id="68d17-269">現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。</span><span class="sxs-lookup"><span data-stu-id="68d17-269">Currently, the only supported events are `OnNewMessageCompose` and `OnNewAppointmentOrganizer`.</span></span> <span data-ttu-id="68d17-270">このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。</span><span class="sxs-lookup"><span data-stu-id="68d17-270">To learn more about this scenario, see the [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md) article.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="c2166-271">子要素</span><span class="sxs-lookup"><span data-stu-id="c2166-271">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="68d17-271">子要素</span><span class="sxs-lookup"><span data-stu-id="68d17-271">Child elements</span></span>
 
-|  <span data-ttu-id="c2166-272">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-272">Element</span></span> |  <span data-ttu-id="c2166-273">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-273">Description</span></span>  |
+|  <span data-ttu-id="68d17-272">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-272">Element</span></span> |  <span data-ttu-id="68d17-273">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-273">Description</span></span>  |
 |:-----|:-----|
-| [<span data-ttu-id="c2166-274">LaunchEvents</span><span class="sxs-lookup"><span data-stu-id="c2166-274">LaunchEvents</span></span>](launchevents.md) |  <span data-ttu-id="c2166-275">イベント ベース [のアクティブ化の LaunchEvent](launchevent.md) のリスト。</span><span class="sxs-lookup"><span data-stu-id="c2166-275">List of [LaunchEvent](launchevent.md) for event-based activation.</span></span>  |
-| [<span data-ttu-id="c2166-276">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="c2166-276">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="c2166-277">ソース JavaScript ファイルの場所。</span><span class="sxs-lookup"><span data-stu-id="c2166-277">The location of the source JavaScript file.</span></span>  |
+| [<span data-ttu-id="68d17-274">LaunchEvents</span><span class="sxs-lookup"><span data-stu-id="68d17-274">LaunchEvents</span></span>](launchevents.md) |  <span data-ttu-id="68d17-275">イベント ベース [のアクティブ化の LaunchEvent](launchevent.md) のリスト。</span><span class="sxs-lookup"><span data-stu-id="68d17-275">List of [LaunchEvent](launchevent.md) for event-based activation.</span></span>  |
+| [<span data-ttu-id="68d17-276">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="68d17-276">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="68d17-277">ソース JavaScript ファイルの場所。</span><span class="sxs-lookup"><span data-stu-id="68d17-277">The location of the source JavaScript file.</span></span>  |
 
-#### <a name="example"></a><span data-ttu-id="c2166-278">例</span><span class="sxs-lookup"><span data-stu-id="c2166-278">Example</span></span>
+#### <a name="example"></a><span data-ttu-id="68d17-278">例</span><span class="sxs-lookup"><span data-stu-id="68d17-278">Example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="LaunchEvent">
@@ -329,15 +329,15 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="events"></a><span data-ttu-id="c2166-279">Events</span><span class="sxs-lookup"><span data-stu-id="c2166-279">Events</span></span>
+### <a name="events"></a><span data-ttu-id="68d17-279">Events</span><span class="sxs-lookup"><span data-stu-id="68d17-279">Events</span></span>
 
-<span data-ttu-id="c2166-280">この拡張点は、指定したイベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-280">This extension point adds an event handler for a specified event.</span></span> <span data-ttu-id="c2166-281">この拡張点の使用の詳細については、Outlook アドインの送信時 [機能を参照してください](../../outlook/outlook-on-send-addins.md)。</span><span class="sxs-lookup"><span data-stu-id="c2166-281">For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).</span></span>
+<span data-ttu-id="68d17-280">この拡張点は、指定したイベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-280">This extension point adds an event handler for a specified event.</span></span> <span data-ttu-id="68d17-281">この拡張点の使用の詳細については、Outlook アドインの送信時 [機能を参照してください](../../outlook/outlook-on-send-addins.md)。</span><span class="sxs-lookup"><span data-stu-id="68d17-281">For more information about using this extension point, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).</span></span>
 
-| <span data-ttu-id="c2166-282">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-282">Element</span></span> | <span data-ttu-id="c2166-283">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-283">Description</span></span>  |
+| <span data-ttu-id="68d17-282">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-282">Element</span></span> | <span data-ttu-id="68d17-283">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-283">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-284">Event</span><span class="sxs-lookup"><span data-stu-id="c2166-284">Event</span></span>](event.md) |  <span data-ttu-id="c2166-285">イベントとイベント ハンドラーの関数を指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-285">Specifies the event and event handler function.</span></span>  |
+|  [<span data-ttu-id="68d17-284">Event</span><span class="sxs-lookup"><span data-stu-id="68d17-284">Event</span></span>](event.md) |  <span data-ttu-id="68d17-285">イベントとイベント ハンドラーの関数を指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-285">Specifies the event and event handler function.</span></span>  |
 
-#### <a name="itemsend-event-example"></a><span data-ttu-id="c2166-286">ItemSend イベントの例</span><span class="sxs-lookup"><span data-stu-id="c2166-286">ItemSend event example</span></span>
+#### <a name="itemsend-event-example"></a><span data-ttu-id="68d17-286">ItemSend イベントの例</span><span class="sxs-lookup"><span data-stu-id="68d17-286">ItemSend event example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="Events">
@@ -345,37 +345,37 @@ ms.locfileid: "50104820"
 </ExtensionPoint>
 ```
 
-### <a name="detectedentity"></a><span data-ttu-id="c2166-287">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="c2166-287">DetectedEntity</span></span>
+### <a name="detectedentity"></a><span data-ttu-id="68d17-287">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="68d17-287">DetectedEntity</span></span>
 
-<span data-ttu-id="c2166-288">この拡張点は、指定したエンティティの種類に対するコンテキスト アドインのアクティブ化を追加します。</span><span class="sxs-lookup"><span data-stu-id="c2166-288">This extension point adds a contextual add-in activation on a specified entity type.</span></span>
+<span data-ttu-id="68d17-288">この拡張点は、指定したエンティティの種類に対するコンテキスト アドインのアクティブ化を追加します。</span><span class="sxs-lookup"><span data-stu-id="68d17-288">This extension point adds a contextual add-in activation on a specified entity type.</span></span>
 
-<span data-ttu-id="c2166-289">これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-289">The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span>
+<span data-ttu-id="68d17-289">これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-289">The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c2166-290">この要素の種類は、[要件セット 1.6 以降をサポートする Outlook クライアント ](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)が利用できます。</span><span class="sxs-lookup"><span data-stu-id="c2166-290">This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).</span></span>
+> <span data-ttu-id="68d17-290">この要素の種類は、[要件セット 1.6 以降をサポートする Outlook クライアント ](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)が利用できます。</span><span class="sxs-lookup"><span data-stu-id="68d17-290">This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).</span></span>
 
-|  <span data-ttu-id="c2166-291">要素</span><span class="sxs-lookup"><span data-stu-id="c2166-291">Element</span></span> |  <span data-ttu-id="c2166-292">説明</span><span class="sxs-lookup"><span data-stu-id="c2166-292">Description</span></span>  |
+|  <span data-ttu-id="68d17-291">要素</span><span class="sxs-lookup"><span data-stu-id="68d17-291">Element</span></span> |  <span data-ttu-id="68d17-292">説明</span><span class="sxs-lookup"><span data-stu-id="68d17-292">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="c2166-293">Label</span><span class="sxs-lookup"><span data-stu-id="c2166-293">Label</span></span>](#label) |  <span data-ttu-id="c2166-294">アドインのコンテキスト ウィンドウのラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-294">Specifies the label for the add-in in the contextual window.</span></span>  |
-|  [<span data-ttu-id="c2166-295">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="c2166-295">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="c2166-296">コンテキスト ウィンドウの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-296">Specifies the URL for the contextual window.</span></span>  |
-|  [<span data-ttu-id="c2166-297">Rule</span><span class="sxs-lookup"><span data-stu-id="c2166-297">Rule</span></span>](rule.md) |  <span data-ttu-id="c2166-298">アドインをアクティブ化するタイミングを決定する 1 つ以上のルールを指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-298">Specifies the rule or rules that determine when an add-in activates.</span></span>  |
+|  [<span data-ttu-id="68d17-293">Label</span><span class="sxs-lookup"><span data-stu-id="68d17-293">Label</span></span>](#label) |  <span data-ttu-id="68d17-294">アドインのコンテキスト ウィンドウのラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-294">Specifies the label for the add-in in the contextual window.</span></span>  |
+|  [<span data-ttu-id="68d17-295">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="68d17-295">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="68d17-296">コンテキスト ウィンドウの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-296">Specifies the URL for the contextual window.</span></span>  |
+|  [<span data-ttu-id="68d17-297">Rule</span><span class="sxs-lookup"><span data-stu-id="68d17-297">Rule</span></span>](rule.md) |  <span data-ttu-id="68d17-298">アドインをアクティブ化するタイミングを決定する 1 つ以上のルールを指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-298">Specifies the rule or rules that determine when an add-in activates.</span></span>  |
 
-#### <a name="label"></a><span data-ttu-id="c2166-299">Label</span><span class="sxs-lookup"><span data-stu-id="c2166-299">Label</span></span>
+#### <a name="label"></a><span data-ttu-id="68d17-299">Label</span><span class="sxs-lookup"><span data-stu-id="68d17-299">Label</span></span>
 
-<span data-ttu-id="c2166-300">必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="c2166-300">Required.</span></span> <span data-ttu-id="c2166-301">グループのラベルです。</span><span class="sxs-lookup"><span data-stu-id="c2166-301">The label of the group.</span></span> <span data-ttu-id="c2166-302">**resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-302">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="68d17-300">必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="68d17-300">Required.</span></span> <span data-ttu-id="68d17-301">グループのラベルです。</span><span class="sxs-lookup"><span data-stu-id="68d17-301">The label of the group.</span></span> <span data-ttu-id="68d17-302">**resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-302">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
 
-#### <a name="highlight-requirements"></a><span data-ttu-id="c2166-303">強調表示の要件</span><span class="sxs-lookup"><span data-stu-id="c2166-303">Highlight requirements</span></span>
+#### <a name="highlight-requirements"></a><span data-ttu-id="68d17-303">強調表示の要件</span><span class="sxs-lookup"><span data-stu-id="68d17-303">Highlight requirements</span></span>
 
-<span data-ttu-id="c2166-p119">ユーザーは、強調表示されたエンティティに対話型の操作を実行する方法でのみコンテキスト アドインを有効化できます。開発者は、`ItemHasKnownEntity` および `ItemHasRegularExpressionMatch` のルールの種類に対応する `Rule` 要素の `Highlight` 属性を使用して、強調表示にするエンティティを制御します。</span><span class="sxs-lookup"><span data-stu-id="c2166-p119">The only way a user can activate a contextual add-in is to interact with a highlighted entity. Developers can control which entities are highlighted by using the `Highlight` attribute of the `Rule` element for `ItemHasKnownEntity` and `ItemHasRegularExpressionMatch` rule types.</span></span>
+<span data-ttu-id="68d17-p119">ユーザーは、強調表示されたエンティティに対話型の操作を実行する方法でのみコンテキスト アドインを有効化できます。開発者は、`ItemHasKnownEntity` および `ItemHasRegularExpressionMatch` のルールの種類に対応する `Rule` 要素の `Highlight` 属性を使用して、強調表示にするエンティティを制御します。</span><span class="sxs-lookup"><span data-stu-id="68d17-p119">The only way a user can activate a contextual add-in is to interact with a highlighted entity. Developers can control which entities are highlighted by using the `Highlight` attribute of the `Rule` element for `ItemHasKnownEntity` and `ItemHasRegularExpressionMatch` rule types.</span></span>
 
-<span data-ttu-id="c2166-p120">ただし、注意する必要のある制限があります。これらの制限は、ユーザーにアドインをアクティブ化する方法を提供するために、適用可能なメッセージや予定で強調表示されたエンティティが常に存在するようにするために実施されます。</span><span class="sxs-lookup"><span data-stu-id="c2166-p120">However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.</span></span>
+<span data-ttu-id="68d17-p120">ただし、注意する必要のある制限があります。これらの制限は、ユーザーにアドインをアクティブ化する方法を提供するために、適用可能なメッセージや予定で強調表示されたエンティティが常に存在するようにするために実施されます。</span><span class="sxs-lookup"><span data-stu-id="68d17-p120">However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.</span></span>
 
-- <span data-ttu-id="c2166-308">`EmailAddress` および `Url` のエンティティの種類は、強調表示できません。そのため、アドインをアクティブ化するためには使用できません。</span><span class="sxs-lookup"><span data-stu-id="c2166-308">The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.</span></span>
-- <span data-ttu-id="c2166-309">単一のルールを使用する場合、`Highlight` は `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-309">If using a single rule, `Highlight` MUST be set to `all`.</span></span>
-- <span data-ttu-id="c2166-310">複数のルールを組み合わせるために `Mode="AND"` で `RuleCollection` のルールの種類を使用する場合は、少なくとも 1 つのルールの `Highlight` が `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-310">If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.</span></span>
-- <span data-ttu-id="c2166-311">複数のルールを組み合わせるために `Mode="OR"` で `RuleCollection` のルールの種類を使用する場合は、すべてのルールの `Highlight` が `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2166-311">If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.</span></span>
+- <span data-ttu-id="68d17-308">`EmailAddress` および `Url` のエンティティの種類は、強調表示できません。そのため、アドインをアクティブ化するためには使用できません。</span><span class="sxs-lookup"><span data-stu-id="68d17-308">The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.</span></span>
+- <span data-ttu-id="68d17-309">単一のルールを使用する場合、`Highlight` は `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-309">If using a single rule, `Highlight` MUST be set to `all`.</span></span>
+- <span data-ttu-id="68d17-310">複数のルールを組み合わせるために `Mode="AND"` で `RuleCollection` のルールの種類を使用する場合は、少なくとも 1 つのルールの `Highlight` が `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-310">If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.</span></span>
+- <span data-ttu-id="68d17-311">複数のルールを組み合わせるために `Mode="OR"` で `RuleCollection` のルールの種類を使用する場合は、すべてのルールの `Highlight` が `all` に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="68d17-311">If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.</span></span>
 
-#### <a name="detectedentity-event-example"></a><span data-ttu-id="c2166-312">DetectedEntity イベントの例</span><span class="sxs-lookup"><span data-stu-id="c2166-312">DetectedEntity event example</span></span>
+#### <a name="detectedentity-event-example"></a><span data-ttu-id="68d17-312">DetectedEntity イベントの例</span><span class="sxs-lookup"><span data-stu-id="68d17-312">DetectedEntity event example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
