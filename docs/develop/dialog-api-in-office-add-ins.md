@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: 新しいアドインでダイアログ ボックスを作成するOfficeについて説明します。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: bece18d6b861db97c1f4b455e8ab4ff9ce83a5a8
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: 9061b4c048a133572e615152d61df611e5f15068
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043884"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237866"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -292,7 +292,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>親ページからダイアログ ボックスへの条件付きメッセージング
 
-ホスト ページから複数の呼び出しを実行できますが、イベントのダイアログ ボックスにはハンドラーが 1 つしか存在しないので、ハンドラーは条件ロジックを使用して異なるメッセージを区別する `messageChild` `DialogParentMessageReceived` 必要があります。 これは、ダイアログ ボックスが条件付きメッセージングの説明に従ってホスト ページにメッセージを送信するときに、条件付きメッセージングを構成する方法と正確に同じ方法で行 [います](#conditional-messaging)。
+ホスト ページから複数の呼び出しを実行できますが、イベントのダイアログ ボックスにはハンドラーが 1 つしか存在しないので、ハンドラーは条件ロジックを使用して異なるメッセージを区別 `messageChild` `DialogParentMessageReceived` する必要があります。 これは、ダイアログ ボックスが条件付きメッセージングの説明に従ってホスト ページにメッセージを送信するときに、条件付きメッセージングを構成する方法と正確に同じ方法で行 [います](#conditional-messaging)。
 
 > [!NOTE]
 > 場合によっては `messageChild` [、DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットの一部である API がサポートされていない場合があります。 親からダイアログ ボックスへのメッセージングの別の方法については、ホスト ページからダイアログ ボックスにメッセージを渡す別の方法 [で説明されています](parent-to-dialog.md)。
@@ -361,7 +361,7 @@ Office ダイアログ API に関するヒントとヘスと プラクティス�
 - [Office アドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office ASPNET SSO を使用する](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
 - [Office SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook アドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)

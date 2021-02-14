@@ -3,12 +3,12 @@ title: Office アドインのカスタム キーボード ショートカット
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加Office説明します。
 ms.date: 12/17/2020
 localization_priority: Normal
-ms.openlocfilehash: dc99674b92ebb415b1d49fb28821d8c2e34c8077
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 7374c23bacad031024edc7b84da951a8e91fc175
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789150"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237687"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>カスタム キーボード ショートカットを Office アドインに追加する (プレビュー)
 
@@ -202,7 +202,7 @@ ms.locfileid: "49789150"
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>作業ウィンドウにフォーカスがあるときにショートカットを使用する
 
-現在、アドインのキーボード ショートカットOffice、ユーザーのフォーカスがワークシートにある場合にのみ呼び出すことができます。 ユーザーのフォーカスが Office UI (作業ウィンドウなど) 内にある場合、アドインのショートカットは無視されません。 回避策として、アドインは、ユーザーのフォーカスがアドイン UI 内にあるときに特定のアクションを呼び出すキーボード ハンドラーを定義できます。
+現時点では、Officeアドインのキーボード ショートカットは、ユーザーのフォーカスがワークシート内にある場合にのみ呼び出すことができます。 ユーザーのフォーカスが Office UI (作業ウィンドウなど) 内にある場合、アドインのショートカットは無視されません。 回避策として、アドインは、ユーザーのフォーカスがアドイン UI 内にあるときに特定のアクションを呼び出すキーボード ハンドラーを定義できます。
 
 ## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>他のアドインで既に使用されているOffice組み合わせを使用する
 

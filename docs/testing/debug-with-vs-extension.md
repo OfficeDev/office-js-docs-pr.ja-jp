@@ -1,18 +1,18 @@
 ---
 title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
-description: アドイン デバッガー Visual Studioコード拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
-ms.date: 05/14/2020
+description: アドイン デバッガー Visual Studioコード拡張機能Microsoft Office使用して、アドインをデバッグOfficeします。
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 83791d5d60238288e3059809b8b8c02b1f4f768f
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 60f7e6646cc0bfa2740e3bac0cab5f603b32dd84
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840112"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237932"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
-コードMicrosoft Officeアドイン デバッガー拡張機能Visual Studioでは、Edge ランタイムに対して Office アドインをデバッグできます。
+Microsoft Office Visual Studio コード用のアドイン デバッガー拡張機能を使用すると、元の webView (EdgeHTML) ランタイムを使用して Microsoft Edge に対して Office アドインをデバッグできます。 Microsoft Edge WebView2 (Chromium ベース) に対するデバッグの手順については、この [記事を参照してください。](./debug-desktop-using-edge-chromium.md)
 
 このデバッグ モードは動的で、コードの実行中にブレークポイントを設定できます。 デバッガーがアタッチされている間は、デバッグ セッションを失わずに、コードの変更をすぐに確認できます。 コードの変更も保持されます。そのため、コードに対する複数の変更の結果を確認できます。 次の図は、この拡張機能の動作を示しています。
 
@@ -25,11 +25,11 @@ ms.locfileid: "49840112"
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
-これらの手順は、コマンド ラインの使用経験、基本的な JavaScript の理解、Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成した経験を前提にしています。 まだこれを行っていない場合は、次の [Excel](../tutorials/excel-tutorial.md)やアドインのチュートリアルOfficeチュートリアルのいずれかを参照してください。
+これらの手順は、コマンド ラインの使用経験、基本的な JavaScript の理解、Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成した経験を前提にしています。 この方法をまだ行っていない場合は、次の Excel やアドインのチュートリアルOffice、チュートリアル [のいずれかを](../tutorials/excel-tutorial.md)参照してください。
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する
 
-1. アドイン プロジェクトを作成する必要がある場合は、Yo Office ジェネレーターを使用 [して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトを設定します。 必要に応じて、任意の言語または種類のプロジェクトを選択できます。
+1. アドイン プロジェクトを作成する必要がある場合は [、Yo Office ジェネレーターを使用して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトを設定します。 必要に応じて、任意の言語または種類のプロジェクトを選択できます。
 
 > [!NOTE]
 > プロジェクトが既に存在する場合は、手順 1 をスキップして手順 2 に進みます。
@@ -52,7 +52,7 @@ code .
 
 5. VS Code 内で **Ctrl + Shift + X** キーを押して拡張機能バーを開きます。 "Microsoft Office アドイン デバッガー" 拡張機能を検索してインストールします。
 
-6. プロジェクトの .vscode フォルダーで、ファイルlaunch.js **開** きます。 セクションに次のコードを追加 `configurations` します。
+6. プロジェクトの .vscode フォルダーで、ファイルのlaunch.js **開** きます。 セクションに次のコードを追加 `configurations` します。
 
 ```JSON
 {
@@ -71,7 +71,7 @@ code .
 
 8. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがクライアントに読み込Office作業ウィンドウを開きます。
 
-9. コードにVisual Studioし、[デバッグ] の[>] を選択するか **、Ctrl + Shift + D** キーを押してデバッグ ビューに切り替えます。
+9. コードにVisual Studioし、[デバッグ] で[>] を選択するか **、Ctrl + Shift + D** キーを押してデバッグ ビューに切り替えます。
 
 10. [デバッグ] オプションで、[アドイン **にアタッチOffice選択します**。F5 **キーを押** するか、[デバッグ] **->メニュー** から [デバッグの開始] を選択してデバッグを開始します。
 
@@ -87,4 +87,4 @@ code .
 
 * [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)
+* [Microsoft Edge WebView2 (Chromium ベース) を使用して Windows でアドインをデバッグする](debug-desktop-using-edge-chromium.md)

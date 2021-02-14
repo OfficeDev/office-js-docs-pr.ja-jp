@@ -1,18 +1,18 @@
 ---
 title: Office アドインでの Office UI Fabric React の使用
 description: Office アドインで Office UI Fabric React を使用する方法について説明します。
-ms.date: 09/09/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131984"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237729"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
 
-Office UI Fabric は、Office と Office 365 のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。React を使ってアドインをビルドする場合は、ユーザー エクスペリエンスを作成するために Fabric React の使用を検討してください。Fabric は、アドインで使用できるボタンやチェックボックスなど、複数の React ベースの UX コンポーネントを提供しています。
+Office UI Fabric は、ユーザー エクスペリエンスを構築するための JavaScript フロントエンド フレームワークOffice。React を使用してアドインをビルドする場合は、Fabric React を使用してユーザー エクスペリエンスを作成します。Fabric には、アドインで使用できるボタンやチェック ボックスなど、React ベースの UX コンポーネントがいくつか備備されています。
 
 この記事では、React で構築され Fabric React コンポーネントを使用するアドインを作成する方法について説明します。
 
@@ -36,7 +36,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![コマンドラインインターフェイスでの、[ごみ箱] ジェネレーターのプロンプトと応答を示すスクリーンショット](../images/yo-office-word-react.png)
+![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-word-react.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -78,7 +78,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 3. Word で [**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、Fabric React の UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンを再定義します。
 
-    ![作業ウィンドウで強調表示された [作業ウィンドウの表示] リボンボタンが強調表示された Word アプリケーションと、[実行] ボタンと [直前のテキスト] が強調表示されているスクリーンショット](../images/word-task-pane-yo-default.png)
+    ![作業ウィンドウの [作業ウィンドウの表示] リボン ボタンが強調表示され、[実行] ボタンと直前のテキストが作業ウィンドウで強調表示されている Word アプリケーションを示すスクリーンショット](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>Fabric React を使用する React コンポーネントの作成
 
@@ -170,7 +170,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 Word で、**App.tsx** に変更を保存すると、アドイン作業ウィンドウが自動的に更新されます。 作業ウィンドウ下部の既定のテキストとボタンに、`ButtonPrimaryExample` コンポーネントによって定義された UI が表示されるようになりました。 [**テキストの挿入**] ボタンを選択してドキュメントにテキストを挿入します。
 
-!["テキストの挿入" という単語が含まれる Word アプリケーションを示すスクリーンショットボタンと直前のテキストの強調表示](../images/word-task-pane-with-react-component.png)
+![[テキストの挿入...] が表示された Word アプリケーションを示すスクリーンショットボタンと直前のテキストが強調表示されている](../images/word-task-pane-with-react-component.png)
 
 おめでとうございます! これで React および Office UI Fabric React を使用して作業ウィンドウ アドインを作成できました。
 

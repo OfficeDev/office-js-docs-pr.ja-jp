@@ -3,23 +3,23 @@ title: マニフェスト ファイル内のランタイム
 description: Runtimes 要素は、アドインのランタイムを指定します。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 74bb2b432f46d5876601052003e20ff843e13b06
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: fd672e2592b2e9bfdf7abb0d293b93202d4ad210
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104827"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237967"
 ---
 # <a name="runtimes-element"></a>Runtimes 要素
 
 アドインのランタイムを指定します。 要素の [`<Host>`](host.md) 子。
 
 > [!NOTE]
-> Windows 上の Officeで実行する場合、アドインは Internet Explorer 11 ブラウザーを使用します。
+> Windows Officeで実行する場合、アドインは Internet Explorer 11 ブラウザーを使用します。
 
 Excel では、この要素により、リボン、作業ウィンドウ、およびカスタム関数で同じランタイムを使用できます。 詳細については、「共有 [JavaScript ランタイムを使用するために Excel](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)アドインを構成する」を参照してください。
 
-Outlook では、この要素により、イベント ベースのアドインのアクティブ化が有効になります。 詳細については、「イベント ベースのアクティブ [化用に Outlook アドインを構成する」を参照してください](../../outlook/autolaunch.md)。
+Outlook では、この要素によってイベント ベースのアドインのアクティブ化が有効になります。 詳細については、「イベント ベースのアクティブ [化用に Outlook アドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** 作業ウィンドウ、メール
 
@@ -42,8 +42,8 @@ Outlook では、この要素により、イベント ベースのアドイン�
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-| [Runtime](runtime.md) | はい |  アドインのランタイム。 |
+| [ランタイム](runtime.md) | はい |  アドインのランタイム。 |
 
 ## <a name="see-also"></a>関連項目
 
-- [Runtime](runtime.md)
+- [ランタイム](runtime.md)

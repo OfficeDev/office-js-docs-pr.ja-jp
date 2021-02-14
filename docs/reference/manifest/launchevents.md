@@ -3,12 +3,12 @@ title: マニフェスト ファイル内の LaunchEvents (プレビュー)
 description: LaunchEvents 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 9df059879018d79a61f1c900888c8d197e0b9880
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 59c52aa3f60e69e2bdda84718c6123f02942fedc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104813"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237981"
 ---
 # <a name="launchevents-element-preview"></a>LaunchEvents 要素 (プレビュー)
 
@@ -17,7 +17,7 @@ ms.locfileid: "50104813"
 **アドインの種類:** メール
 
 > [!IMPORTANT]
-> イベント ベースのアクティブ化は現在 [プレビュー中であり](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 、Outlook on the web および Windows でのみ使用できます。 詳細については、イベント ベースの [アクティブ化機能をプレビューする方法を参照してください](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
+> イベント ベースのアクティブ化は現在 [プレビュー中](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) で、Outlook on the web および Windows でのみ使用できます。 詳細については、イベント ベースの [アクティブ化機能をプレビューする方法を参照してください](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>構文
 

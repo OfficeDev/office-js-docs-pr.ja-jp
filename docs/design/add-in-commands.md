@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: b2f63e3a7d0e112b698b4913590d81c2015970d2
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: c9d69b21be5cca0c37feb14f43649b55df532466
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132159"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173949"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -73,6 +73,12 @@ ms.locfileid: "49132159"
 > [!NOTE]
 > この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[組み込みの Office ボタンをカスタム タブに統合する](built-in-button-integration.md)」を参照してください。
 
+### <a name="contextual-tabs-preview"></a>コンテキスト タブ (プレビュー)
+
+Excel でグラフが選択されている場合など、特定のコンテキストでのみタブがリボンに表示されるように指定できます。
+
+> [!NOTE]
+> この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[Office アドインでカスタム コンテキスト タブを作成する (プレビュー)](contextual-tabs.md)」を参照してください。
 
 ## <a name="supported-platforms"></a>サポートされるプラットフォーム
 
@@ -105,6 +111,7 @@ ms.locfileid: "49132159"
   - アドインの使用スペースを増やす余分なボタンを追加しないでください。
   - ユーザーがドキュメントを操作する主な方法がアドインである場合を除き、カスタムタブを [ホーム] タブの左側に配置したり、ドキュメントを開いたときに既定でフォーカスを設定したりしないでください。 アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。
   - アドインがユーザーがドキュメントを操作する主な方法であり、カスタム リボン タブがある場合は、ユーザーが頻繁に必要とする Office 機能のボタンをタブに統合することを検討してください。
+  - カスタム タブで提供される機能を特定のコンテキストでのみ使用できるようにする必要がある場合は、[カスタム コンテキスト タブ](contextual-tabs.md)を使用します。 カスタム コンテキスト タブを使用する場合は、[カスタム コンテキスト タブをサポートしていないプラットフォームでアドインを実行する場合のフォールバック エクスペリエンス](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)を実装します。
 
   > [!NOTE]
   > 占有領域が大きすぎるアドインは [AppSource 検証](/legal/marketplace/certification-policies)を通過しない場合があります。

@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化用に Outlook アドイ
 ms.topic: article
 ms.date: 02/03/2021
 localization_priority: Normal
-ms.openlocfilehash: a4fce335738d1bcff2be43e4e609998be89fca20
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: d9108b4debea5e59503f3c935a537e5fafde00c8
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104855"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234276"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 
@@ -24,7 +24,7 @@ ms.locfileid: "50104855"
 このチュートリアルの終わりまでに、新しいメッセージが作成されるたびに実行されるアドインが作成されます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを使用する Outlook on the web および Windows でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベース](#how-to-preview-the-event-based-activation-feature) のアクティブ化機能をプレビューする方法を参照してください。
+> この機能は、Microsoft 365 サブスクリプションを使用する Outlook on the web および Windows でのプレビューでのみサポートされます。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 詳細 [については、この記事のイベント ベースのアクティブ化](#how-to-preview-the-event-based-activation-feature) 機能をプレビューする方法を参照してください。
 >
 > プレビュー機能は予告なしに変更されることがありますので、実稼働アドインでは使用できません。
 
@@ -36,7 +36,7 @@ ms.locfileid: "50104855"
 
 - Outlook on the web の場合:
   - [Microsoft 365 テナントで対象指定リリースを構成します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - CDN で **ベータ** ライブラリを参照します ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . TypeScript [のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 読み取りIntelliSense定義ファイルは CDN と [DefinitelyTyped で見つかりました](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 次の種類を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
+  - CDN で **ベータ** ライブラリを参照する ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . TypeScript [のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 読み取りIntelliSense定義ファイルは CDN と [DefinitelyTyped で見つかりました](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 次の種類を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
 - Windows 上の Outlook の場合: 最低限必要なビルドは 16.0.13729.20000 です。 ベータ ビルド [Officeアクセス](https://insider.office.com) するには、Insider Program にOffice参加します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
@@ -214,13 +214,11 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (まだ実行されていない場合)、アドインがサイドロードされます。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
-
-1. 「[テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。
 
 1. Outlook on the web で新しいメッセージを作成します。
 
@@ -232,13 +230,13 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 
-イベントに基づいてアクティブ化されるアドインは、実行時間が短く、軽量であり、可能な限り非非アクティブである必要があります。 アドインが起動イベントの処理を完了したと示す場合は、アドインでメソッドを呼び出す方法をお勧 `event.completed` めします。 この呼び出しが行われた場合、アドインは約 300 秒 (イベント ベースのアドインの実行に許容される最大時間) 内にタイム アウトします。ユーザーが作成ウィンドウを閉じると、アドインも終了します。
+イベントに基づいてアクティブ化されるアドインは、実行時間が短く、軽量であり、可能な限り非非アクティブである必要があります。 アドインが起動イベントの処理を完了したと示す場合は、アドインでメソッドを呼び出す方法をお勧 `event.completed` めします。 その呼び出しが行われた場合、アドインは約 300 秒 (イベント ベースのアドインの実行に許容される最大時間) 内にタイム アウトします。ユーザーが作成ウィンドウを閉じると、アドインも終了します。
 
 ユーザーが同じイベントにサブスクライブした複数のアドインを持っている場合、Outlook プラットフォームは特定の順序でアドインを起動します。 現在、アクティブに実行できるイベント ベースのアドインは 5 つのみです。 追加のアドインはキューにプッシュされ、以前にアクティブだったアドインが完了または非アクティブ化されると実行されます。
 
 ユーザーは、アドインの実行を開始した現在のメール アイテムから切り替えまたは移動できます。 起動されたアドインは、バックグラウンドで操作を完了します。
 
-UI Office.js変更する API の一部は、イベント ベースのアドインでは許可されません。ブロックされる API を次に示します。
+一Office.js UI を変更または変更する API の一部は、イベント ベースのアドインでは許可されません。ブロックされる API を次に示します。
 
 - Under `Office.context.mailbox` :
   - `displayAppointmentForm`

@@ -1,14 +1,14 @@
 ---
 title: Office アドインの認証設計ガイドライン
-ms.date: 07/30/2020
-description: Office アドインでサインオンまたはサインアップページを視覚的に設計する方法について説明します。
+ms.date: 02/09/2021
+description: アドインのサインオンまたはサインアップ ページを視覚的に設計する方法Office説明します。
 localization_priority: Normal
-ms.openlocfilehash: e75ab26f820e53ca0379467fba559ebcb727ee3a
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 755399c619094941957fef4496f98f5f526ebd70
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132145"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237736"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -29,41 +29,41 @@ ms.locfileid: "49132145"
 
 1. 初回実行プレースマット - アドインの最初の実行エクスペリエンス内にわかりやすい行動喚起としてサインイン ボタンを配置します。
 
-    ![Office アプリケーションのアドイン作業ウィンドウを示すスクリーンショット](../images/add-in-fre-value-placemat.png)
+    ![アドイン アプリケーションのアドイン作業ウィンドウをOfficeスクリーンショット](../images/add-in-fre-value-placemat.png)
 
 1. ID プロバイダーの選択肢ダイアログ - ID プロバイダーのわかりやすい一覧を表示します。該当する場合、ユーザー名やパスワードのフォームも含めます。 認証ダイアログが開いているとき、アドイン UI はブロックされることがあります。
 
-    ![Office アプリケーションの Id プロバイダーの選択肢ダイアログボックスを示すスクリーンショット](../images/add-in-auth-choices-dialog.png)
+    ![アプリケーションの [ID プロバイダーの選択肢] ダイアログをOfficeスクリーンショット](../images/add-in-auth-choices-dialog.png)
 
-1. ID プロバイダーのサインイン - ID プロバイダーによって独自の UI が提供されます。 Microsoft Azure Active Directory を使用すると、サインインページとアクセスパネルページをカスタマイズして、サービスに一貫性のあるルックアンドフィールを持たせることができます。 [詳細を参照](/azure/active-directory/fundamentals/customize-branding)してください。
+1. ID プロバイダーのサインイン - ID プロバイダーによって独自の UI が提供されます。 Microsoft Azure Active Directory を使用すると、サインイン ページとアクセス パネル ページをカスタマイズして、サービスと一貫性のある外観を維持できます。 [詳細を参照してください](/azure/active-directory/fundamentals/customize-branding)。
 
-    ![Office アプリケーションの Id プロバイダーのサインインダイアログを示すスクリーンショット](../images/add-in-auth-identity-sign-in.png)
+    ![アプリケーションの ID プロバイダーのサインイン ダイアログを示Officeスクリーンショット](../images/add-in-auth-identity-sign-in.png)
 
 1. 進捗状況 - 設定や UI の読み込みの進行状況を示します。
 
-    ![Office アプリケーションで進行状況インジケーターが表示されているダイアログを示すスクリーンショット](../images/add-in-auth-modal-interstitial.png)
+    ![アプリケーションの進行状況インジケーターを含むダイアログをOfficeスクリーンショット](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE]
 > Microsoft の ID サービスを使用すると、商標付きのサインイン ボタンを使用できます。このボタンは淡色テーマまたは濃色テーマにカスタマイズできます。 詳細情報。
 
-## <a name="single-sign-on-authentication-flow"></a>単一の Sign-On 認証フロー
+## <a name="single-sign-on-authentication-flow"></a>単一Sign-On認証フロー
 
 > [!NOTE]
-> 現在、シングルサインオン API は Word、Excel、Outlook、および PowerPoint でサポートされています。 シングルサインオンのサポートの詳細については、「identity [api の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。 Outlook アドインで作業している場合は、Office 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> シングル サインオン API は現在、Word、Excel、Outlook、PowerPoint でサポートされています。 シングル サインオンのサポートの詳細については [、「IdentityAPI 要件セット」を参照してください](../reference/requirement-sets/identity-api-requirement-sets.md)。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
-エンドユーザーの利便性を向上させるためにシングルサインオンを使用します。 Office 内のユーザーの id (Microsoft アカウントまたは Microsoft 365 identity) は、アドインにサインインするために使用されます。 その結果、ユーザーは一度だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
+シングル サインオンを使用すると、エンドユーザーのエクスペリエンスを円滑に実現できます。 アドインへのサインインには、Office内のユーザーの ID (Microsoft アカウントまたは Microsoft 365 ID) が使用されます。 その結果、ユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 
-1. アドインがインストールされると、ユーザーには次のような同意ウィンドウが表示されます。
+1. アドインがインストールされている間、ユーザーには次のような同意ウィンドウが表示されます。
 
-    ![アドインのインストール時に Office アプリケーションの同意ウィンドウを示すスクリーンショット](../images/add-in-auth-SSO-consent-dialog.png)
+    ![アドインがインストールされているOfficeアプリケーションの同意ウィンドウを示すスクリーンショット](../images/add-in-auth-SSO-consent-dialog.png)
 
     > [!NOTE]
     > この同意ウィンドウに含まれるロゴ、文字列、アクセス許可の範囲については、アドインの発行元が制御します。 UI は Microsoft が事前に構成したものです。
 
 1. アドインはユーザーが同意した後で読み込まれます。 ユーザーがカスタマイズした情報が必要であれば、それを抽出し、表示できます。
 
-    ![リボンにアドインボタンが表示されている Office アプリケーションを示すスクリーンショット](../images/add-in-ribbon.png)
+    ![リボンにOfficeボタンが表示されたアドイン アプリケーションを示すスクリーンショット](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>関連項目
 
-- [SSO アドインの開発](../develop/sso-in-office-add-ins.md)に関する詳細情報
+- SSO アドイン [の開発の詳細](../develop/sso-in-office-add-ins.md)

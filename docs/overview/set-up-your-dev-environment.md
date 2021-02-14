@@ -1,14 +1,14 @@
 ---
 title: 開発環境をセットアップする
-description: カスタム アドインを構築するためのOfficeを設定します。
-ms.date: 10/14/2020
+description: 新しいアドインを構築するためのOfficeをセットアップします。
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: eddf8bdf7b20a54667e6f8eb38bdace801ea1813
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 1dd0cc6bb035a0274e36fe9916dcd2481bdf0b39
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839713"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234129"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -16,7 +16,7 @@ ms.locfileid: "49839713"
 
 - Node.js
 - npm
-- Microsoft 365 アカウント。サブスクリプション バージョンのアカウントが含Office
+- サブスクリプション バージョンを含む Microsoft 365 Office
 - 選択したコード エディター
 
 このガイドでは、コマンド ライン ツールの使い方を知っている必要があります。 
@@ -45,9 +45,9 @@ npm -v
 
 ノード バージョン マネージャーを使用して、複数のバージョンの Node.js と npm を切り替える場合がありますが、これは厳密には必要ありません。 これを行う方法の詳細については [、npm の手順を参照してください](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
-## <a name="get-office-365"></a>Get Office 365
+## <a name="get-microsoft-365"></a>Microsoft 365 を取得する
 
-Microsoft 365 アカウントをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで 90 日間の更新可能な無料の Microsoft 365 サブスクリプションを入手できます。
+まだ Microsoft 365 アカウントをお持ちでない場合は、Microsoft 365 開発者プログラムに参加することで、すべての Office アプリを含む 90 日間の更新可能な [無料の Microsoft 365](https://developer.microsoft.com/office/dev-program)サブスクリプションを取得できます。
 
 ## <a name="install-a-code-editor"></a>コード エディターのインストール
 
@@ -72,7 +72,7 @@ Office JavaScript API でどのような機能が提供されているかを把�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
-- [アドインOffice開発する](../develop/develop-overview.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
 - [Office アドインの設計](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)

@@ -1,102 +1,118 @@
-### YamlMime:Landing
+### YamlMime:Hub
 title: Office アドイン ドキュメント
-summary: Office アドインプラットフォームを使用して、office アプリケーションを拡張し、Office ドキュメントや Outlook メールメッセージ、予定表アイテムのコンテンツを操作するソリューションを構築します。 Office アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、web、Windows、Mac、Android、および iOS で Office で実行できるソリューションを構築できます。
+summary: Office アドイン プラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメントや Outlook のメール メッセージや予定表アイテムのコンテンツを操作するソリューションを構築します。 Officeアドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Office on the web、Windows、Mac、モバイルで実行できるソリューションを構築できます。
+brand: office
 metadata:
   title: Office アドイン ドキュメント
   description: Office アドインを構築する方法について説明します。
-  ms.prod: non-product-specific
-  ms.topic: landing-page
+  services: service
+  ms.service: service
+  ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 07/31/2020
-  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.date: 02/12/2021
+  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
+  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363717"
-landingContent:
-- title: Office アドインについて
-  linkLists:
-  - linkListType: concept
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "50238058"
+highlightedContent:
+  items:
+  - itemType: overview
+    title: Office アドイン プラットフォームの概要
+    url: overview/office-add-ins.md
+  - itemType: quickstart
+    title: 5 分で Excel アドインをセットアップする
+    url: quickstarts/excel-quickstart-jquery.md
+  - itemType: learn
+    title: 'Microsoft Learn: アドインによるOfficeカスタマイズの概要'
+    url: /learn/modules/intro-office-add-ins
+  - itemType: learn
+    title: 'Microsoft Learn: Office アドインを使用してOfficeクライアントを拡張する'
+    url: /learn/paths/m365-office-add-in-associate
+  - itemType: whats-new
+    title: Microsoft 365 開発者ブログ
+    url: https://developer.microsoft.com/office/blogs/technology/add-ins
+  - itemType: how-to-guide
+    title: Office アドインビギナーズ ガイド
+    url: overview/learning-path-beginner.md
+  - itemType: reference
+    title: Office JavaScript API リファレンス ドキュメント
+    url: /javascript/api/overview
+  - itemType: sample
+    title: 'GitHub: アドインのOfficeとプラクティス'
+    url: https://github.com/OfficeDev/PnP-OfficeAddins
+conceptualContent:
+  title: 開発者の取り得
+  summary: ''
+  items:
+  - title: 参照
     links:
-    - text: Office アドイン プラットフォームの概要
-      url: overview/office-add-ins.md
-  - linkListType: learn
+    - url: overview/learning-path-beginner.md
+      itemType: get-started
+      text: Office アドインを使用を開始
+    - url: overview/explore-with-script-lab.md
+      itemType: sample
+      text: Script Lab のテストと実験
+    - url: quickstarts/outlook-quickstart.md
+      itemType: quickstart
+      text: 5 分で Outlook アドインをセットアップする
+    - url: quickstarts/powerpoint-quickstart.md
+      itemType: quickstart
+      text: 5 分で PowerPoint アドインをセットアップする
+  - title: ビルド
     links:
-    - text: アドインを使用した Office クライアントのカスタマイズの概要
-      url: /learn/modules/intro-office-add-ins/
-    - text: Office アドインを使用して Office クライアントを拡張する
-      url: /learn/paths/m365-office-add-in-associate/
-  - linkListType: overview
+    - url: tutorials/excel-tutorial.md
+      itemType: tutorial
+      text: 完全な Excel アドインを開発する
+    - url: tutorials/outlook-tutorial.md
+      itemType: tutorial
+      text: Outlook アドインのチュートリアルを見つける
+    - url: overview/patterns-and-practices-overview.md
+      itemType: sample
+      text: 一般的なパターンとプラクティスの使用
+    - url: /javascript/api/overview
+      itemType: reference
+      text: API リファレンス ドキュメントの読み取り
+  - title: テストとデバッグ
     links:
-    - text: Excel アドイン ドキュメント
-      url: excel/index.yml
-    - text: OneNote アドイン ドキュメント
-      url: onenote/index.yml
-    - text: Outlook アドイン ドキュメント
-      url: outlook/index.yml
-    - text: PowerPoint アドイン ドキュメント
-      url: powerpoint/index.yml
-    - text: Project アドイン ドキュメント
-      url: project/index.yml
-    - text: Word アドイン ドキュメント
-      url: word/index.yml
-- title: 作業の開始
-  linkLists:
-  - linkListType: get-started
+    - url: testing/test-debug-office-add-ins.md
+      itemType: overview
+      text: デバッグの概要を確認する
+    - url: testing/testing-and-troubleshooting.md
+      itemType: concept
+      text: ユーザーのエラーのトラブルシューティング
+    - url: testing/troubleshoot-manifest.md
+      itemType: architecture
+      text: アドインのマニフェストを確認する
+  - title: 展開
     links:
-    - text: Office アドインを使用を開始
-      url: overview/learning-path-beginner.md
-    - text: Script Lab を使用して Office JavaScript API を探索する
-      url: overview/explore-with-script-lab.md
-  - linkListType: quickstart
+    - url: publish/publish.md
+      itemType: deploy
+      text: 展開オプションを確認する
+    - url: publish/centralized-deployment.md
+      itemType: deploy
+      text: 一元展開の詳細
+  - title: 公開
     links:
-    - text: Excel アドインのクイック スタート
-      url: quickstarts/excel-quickstart-jquery.md
-    - text: Excel カスタム関数のクイック スタート
-      url: quickstarts/excel-custom-functions-quickstart.md
-    - text: OneNote アドインのクイック スタート
-      url: quickstarts/onenote-quickstart.md
-    - text: Outlook アドインのクイック スタート
-      url: quickstarts/outlook-quickstart.md
-    - text: PowerPoint アドインのクイック スタート
-      url: quickstarts/powerpoint-quickstart.md
-    - text: Project アドインのクイック スタート
-      url: quickstarts/project-quickstart.md
-    - text: Word アドインのクイック スタート
-      url: quickstarts/word-quickstart.md
-    - text: シングル サインオン (SSO) のクイック スタート
-      url: quickstarts/sso-quickstart.md
-- title: チュートリアル
-  linkLists:
-  - linkListType: tutorial
+    - url: /office/dev/store
+      itemType: overview
+      text: アドインOffice検証する
+    - url: /office/dev/store/add-in-submission-guide
+      itemType: how-to-guide
+      text: Microsoft 365 App Store 申請ガイドを確認する
+  - title: Engage
     links:
-    - text: Excel アドインのチュートリアル
-      url: tutorials/excel-tutorial.md
-    - text: Excel カスタム関数のチュートリアル
-      url: tutorials/excel-tutorial-create-custom-functions.md
-    - text: Outlook アドインのチュートリアル
-      url: tutorials/outlook-tutorial.md
-    - text: PowerPoint アドインのチュートリアル
-      url: tutorials/powerpoint-tutorial.md
-    - text: Word アドインのチュートリアル
-      url: tutorials/word-tutorial.md
-- title: リソース
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: 質問する
-      url: https://stackoverflow.com/questions/tagged/office-js
-    - text: 問題の報告
-      url: https://github.com/officedev/office-js/issues
-    - text: 機能のリクエスト
-      url: https://officespdev.uservoice.com/
-    - text: COM または VSTO アドインのドキュメント
-      url: /office/client-developer/office-client-development
-    - text: Office アドインの PnP サンプルリポジトリ
-      url: https://github.com/OfficeDev/PnP-OfficeAddins
-    - text: Office アドインのブログ
-      url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
-    - text: その他の技術情報
-      url: resources/resources-links-help.md
+    - url: https://developer.microsoft.com/office
+      itemType: whats-new
+      text: 開発者プログラムに参加する
+    - url: https://officespdev.uservoice.com
+      itemType: architecture
+      text: 機能のリクエスト
+    - url: https://stackoverflow.com/questions/tagged/office-js
+      itemType: reference
+      text: Stack Overflow に関するOffice.js質問
+    - url: https://github.com/OfficeDev/office-js/issues
+      itemType: reference
+      text: バグまたは問題を報告する
