@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 11/20/2020
+ms.date: 02/01/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: af42c13905fa793818c5dfb833fa9e7827c8a4c6
-ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
+ms.openlocfilehash: 56def561fee6525c6daa73fe1153f220bae503c3
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "49408856"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238100"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -36,7 +36,7 @@ ms.locfileid: "49408856"
     ```
 
     > [!NOTE]
-    > 以前に Yeoman ジェネレーターをインストールしている場合でも、npm からパッケージを最新バージョンに更新することをお勧めします。
+    > Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。
 
 - Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web
 
@@ -44,7 +44,7 @@ ms.locfileid: "49408856"
 
 ## <a name="setup"></a>セットアップ
 
-このチュートリアルで作成するアドインは、ユーザーの GitHub アカウントから [Gist](https://gist.github.com) を読み込み、選択した Gist をメッセージの本文に追加します。ビルドするアドインのテストに使用可能な 2 つの新しい Gist を作成するには、次の手順を実行します。
+このチュートリアルで作成するアドインは、ユーザーの GitHub アカウントから [Gist](https://gist.github.com) を読み込み、選択した Gist をメッセージの本文に追加します。 ビルドするアドインのテストに使用可能な 2 つの新しい Gist を作成するには、次の手順を実行します。
 
 1. [GitHub にログイン](https://github.com/login)します。
 
@@ -70,7 +70,7 @@ ms.locfileid: "49408856"
           ```
         ```
 
-    - **[公開 Gist の作成]** ボタンを選択します。
+    - **[Create Public Gist]** ボタンを選択します。
 
 1. [もう 1 つの新しい Gist を作成](https://gist.github.com)します。
 
@@ -96,7 +96,7 @@ ms.locfileid: "49408856"
         </html>
         ```
 
-    - **[公開 Gist の作成]** ボタンを選択します。
+    - **[Create Public Gist]** ボタンを選択します。
 
 ## <a name="create-an-outlook-add-in-project"></a>Outlook アドイン プロジェクトを作成する
 
@@ -124,9 +124,9 @@ ms.locfileid: "49408856"
 
 1. このアドインは以下のライブラリを使用します。
 
-    - Markdown を HTML に変換する [Showdown](https://github.com/showdownjs/showdown) ライブラリ
+    - MarkdownをHTMLに変換する[Showdown](https://github.com/showdownjs/showdown)ライブラリ
     - 相対URLを構築するための[URI.js](https://github.com/medialize/URI.js)ライブラリ。
-    - DOM との相互作用を単純化する [jquery](https://jquery.com/) ライブラリ。
+    - DOMとの相互操作を単純化するための[jquery](https://jquery.com/)ライブラリ。
 
      これらのツールをプロジェクトにインストールするには、プロジェクトのルート ディレクトリで次のコマンドを実行します。
 
@@ -136,7 +136,7 @@ ms.locfileid: "49408856"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-アドインのマニフェストは、Outlook での表示方法を制御します。またマニフェストは、アドインがアドイン一覧に表示される方法と、リボンに表示されるボタンを定義し、アドインによって使用される HTML ファイルと JavaScript ファイルの URL を設定します。
+アドインのマニフェストは、Outlook での表示方法を制御します。 またマニフェストは、アドインをアドイン一覧に表示する方法とリボンに表示するボタンを定義し、アドインによって使用される HTML ファイルと JavaScript ファイルの URL を設定します。
 
 #### <a name="specify-basic-information"></a>基本的な情報を指定する
 
@@ -159,23 +159,21 @@ ms.locfileid: "49408856"
 この先に進める前に、ジェネレーターによって生成されたアドインをテストして、プロジェクトが正しく設定されていることを確認します。
 
 > [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
-1. プロジェクトのルートディレクトリにある **manifest.xml** ファイルをサイドロードするには、[テスト用Outlookアドインのサイドロード](../outlook/sideload-outlook-add-ins-for-testing.md)にある指示に従います。
-
-1. Outlookで既存のメッセージを開き、**タスクパネルを表示** ボタンを選択します。すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
+1. Outlookで既存のメッセージを開き、**タスクパネルを表示** ボタンを選択します。 すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
 
     ![[作業ウィンドウを表示] ボタンのスクリーンショットとサンプルによって追加されたタスクペインの Git the gist](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>ボタンを定義する
 
-基本のアドインの動作を確認したので、カスタマイズしてより多くの機能を追加できます。既定のマニフェストでは、メッセージ閲覧ウィンドウ用のボタンのみ定義されています。マニフェストを更新してメッセージ閲覧ウィンドウからボタンを削除し、メッセージ作成ウィンドウ用の 2 つの新しいボタンを定義してみましょう。
+基本のアドインの動作を確認したので、カスタマイズしてより多くの機能を追加できます。 既定のマニフェストでは、メッセージ閲覧ウィンドウ用のボタンのみ定義されています。 マニフェストを更新してメッセージ閲覧ウィンドウからボタンを削除し、メッセージ作成ウィンドウ用の 2 つの新しいボタンを定義してみましょう。
 
 - **Insert gist** (Gist の挿入): 作業ウィンドウを開くボタン
 
@@ -183,13 +181,13 @@ ms.locfileid: "49408856"
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>MessageReadCommandSurface 拡張点を削除する
 
-**manifest.xml** ファイルを開き、タイプ`MessageReadCommandSurface`の`ExtensionPoint`要素を見つけます。この`ExtensionPoint`要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
+**manifest.xml** ファイルを開き、`MessageReadCommandSurface` 型の `ExtensionPoint` 要素を探します。 この `ExtensionPoint` 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>MessageComposeCommandSurface 拡張点を追加する
 
-マニフェストで `</DesktopFormFactor>` と書かれている行を探します。この行の直前に、次の XML マークアップを挿入します。このマークアップについては、次の点に注意してください。
+マニフェスト内で `</DesktopFormFactor>` という行を探します。 この行の直前に、次の XML マークアップを挿入します。 このマークアップについて、次の情報にご注意ください。
 
-- `xsi:type="MessageComposeCommandSurface"` とともに `ExtensionPoint` は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
+- `xsi:type="MessageComposeCommandSurface"`とともに`ExtensionPoint`は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
 
 - `id="TabDefault"` の `OfficeTab` 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。
 
@@ -242,9 +240,9 @@ ms.locfileid: "49408856"
 
 ### <a name="update-resources-in-the-manifest"></a>マニフェスト内のリソースを更新する
 
-前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。この情報は、マニフェストの`Resources`セクションで指定します。
+前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。 この情報を、マニフェストの`Resources`部分で指定します。
 
-1. マニフェスト ファイル内の `Resources` 要素を探し、要素全体 (その終了タグを含む) を削除します。
+1. マニフェストファイル内の`Resources`要素を見つけて、要素全体（その終了タグを含む）を削除します。
 
 1. 同じ場所に、次のマークアップを追加して、削除した `Resources` 要素を置き換えます。
 
@@ -287,23 +285,23 @@ ms.locfileid: "49408856"
 
 1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、更新した **manifest.xml** ファイルを使用してアドインを再インストールします。
 
-アドインを再インストールした後、メッセージ作成ウィンドウで **Insert Gist** と **Insert default Gist** のコマンドを確認して、アドインが正常にインストールされたことを確認できます。このアドインのビルドはまだ完了していないため、どちらを選択しても何も起こらないことに注意してください。
+アドインを再インストールした後、メッセージ作成ウィンドウで **Insert gist** と **Insert default gist** のコマンドを確認して、アドインが正常にインストールされたことを確認できます。 このアドインのビルドはまだ完了していないため、どちらを選択しても何も起こりません。
 
-- このアドインを Windows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Gist の挿入]** と **[既定の Gist の挿入]** という 2 つの新しいボタンが表示されます。
+- このアドインを WWindows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Insert gist]** と **[Insert default gist]**] という 2 つの新しいボタンが表示されます。
 
     ![アドインのボタンが強調表示された Windows 上の Outlook のリボン オーバーフロー メニューのスクリーンショット](../images/add-in-buttons-in-windows.png)
 
-- Outlook on the web でこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。このボタンを選択すると、**[Gist の挿入]** と **[既定の Gist の挿入]** のオプションが表示されます。
+- Outlook on the webでこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。 このボタンを選択すると、**[Insert gist]** と **[Insert default gist]** のオプションが表示されます。
 
     ![Outlook on the web のメッセージ作成フォームに追加されたアドイン ボタンとポップアップ メニューが強調表示されたスクリーンショット](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>最初の実行エクスペリエンスを実装する
 
-このアドインでは、ユーザーの GitHub アカウントから Gist を読み込み、ユーザーが既定として選択した Gist を特定できる必要があります。この目的を達成するため、アドインはユーザーに対して、GitHub のユーザー名を入力し、既存の Gist のコレクションから既定の Gist を選択するためのダイアログを表示する必要があります。ユーザーからこの情報を収集するためのダイアログを表示する最初の実行エクスペリエンスを実装するには、このセクションの手順を実行します。
+このアドインでは、ユーザーの GitHub アカウントから Gist を読み込み、ユーザーが既定として選択した Gist を特定できる必要があります。 この目的を達成するため、アドインはユーザーに対して、GitHub のユーザー名を入力し、既存の Gist のコレクションから既定の Gist を選択するためのダイアログを表示する必要があります。 ユーザーからこの情報を収集するためのダイアログを表示する最初の実行エクスペリエンスを実装するには、このセクションの手順を実行します。
 
 ### <a name="collect-data-from-the-user"></a>ユーザーからデータを収集する
 
-ダイアログ自体の UI を作成することから始めましょう。**./src** フォルダー内に、**settings** という名前の新しいサブフォルダーを作成します。**./src/settings** フォルダーに **dialog.html** という名前のファイルを作成し、次のマークアップを追加して、GitHub ユーザー名、および JavaScript を介して生成される Gist の空のリストのテキストを入力できるごく基本的なフォームを定義します。
+ダイアログ自体の UI を作成することから始めましょう。 **./src** フォルダー内に、**settings** という名前の新しいサブフォルダーを作成します。 **./src/settings** フォルダーに **dialog.html** という名前のファイルを作成し、次のマークアップを追加して、GitHubユーザー名、およびJavaScriptを介して生成される空の概要リストのテキストを入力できるごく基本的なフォームを定義します。
 
 ```html
 <!DOCTYPE html>
@@ -412,7 +410,7 @@ ul {
 }
 ```
 
-これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。**./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。このコードは jQuery を使用してイベントを登録し、`messageParent` 関数を使用してユーザーの選択を呼び出し元に送り返すことに注意してください。
+これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。 **./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。 このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために `messageParent` 関数を使用しています。
 
 ```js
 (function(){
@@ -516,7 +514,7 @@ ul {
 })();
 ```
 
-#### <a name="update-webpack-config-settings"></a>Webpack の構成設定を更新する
+#### <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
 
 最後に、プロジェクトのルートディレクトリにあるファイル **webpack.config.js** ファイルを開き、以下の手順を実行します。
 
@@ -526,7 +524,7 @@ ul {
     dialog: "./src/settings/dialog.js"
     ```
 
-    これを実行すると、新しい `entry` オブジェクトは次のようになります。
+    これを実行すると、新しい`entry`オブジェクトは次のようになります。
 
     ```js
     entry: {
@@ -537,7 +535,7 @@ ul {
     },
     ```
 
-1. `config` オブジェクト内で `plugins` 配列を探します。`new CopyWebpackPlugin` オブジェクトの `patterns` 配列で、`taskpane.css` エントリーの後に新しいエントリーを追加します。
+1. `config` オブジェクト内で `plugins` 配列を探します。 `new CopyWebpackPlugin` オブジェクトの`patterns` 配列で、`taskpane.css` エントリーの後に新しいエントリーを追加します。
 
     ```js
     {
@@ -546,7 +544,7 @@ ul {
     },
     ```
 
-    これを実行すると、`new CopyWebpackPlugin` オブジェクトは次のようになります。
+    これを実行すると、`new CopyWebpackPlugin`オブジェクトは次のようになります。
 
     ```js
       new CopyWebpackPlugin({
@@ -583,7 +581,7 @@ ul {
     })
     ```
 
-    これを実行すると、新しい`plugins` 配列は次のようになります。
+    これを実行すると、新しい`plugins`配列は次のようになります。
 
     ```js
     plugins: [
@@ -636,17 +634,17 @@ ul {
     npm run build
     ```
 
-1. 次のコマンドを実行してWebサーバーを起動します。
+1. 次のコマンドを実行し、Web サーバーを起動してアドインのサイドロードを行います。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 ### <a name="fetch-data-from-github"></a>GitHub からデータを取得する
 
-上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドで `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。GitHub からユーザーの Gist を取得するには、[GitHub Gists API](https://developer.github.com/v3/gists/) を使用します。
+上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドについて `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。 GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。
 
-**./src** フォルダー内に、**helpers** という名前の新しいサブフォルダーを作成します。**./src/helpers** フォルダーに **Gist-api.js** という名前のファイルを作成し、以下のコードを追加して GitHub からユーザーの Gist を取得し、Gist のリストを作成します。
+**./src** フォルダー内に、**helpers** という名前の新しいサブフォルダーを作成します。 **./src/helpers** フォルダーに **gist-api.js** という名前のファイルを作成し、以下のコードを追加してGitHubからユーザーの概要を取得し、概要のリストを作成します。
 
 ```js
 function getUserGists(user, callback) {
@@ -717,11 +715,11 @@ function buildFileList(files) {
 ```
 
 > [!NOTE]
-> 設定ダイアログを呼び出すためのボタンがないことに気づかれたかもしれません。代わりに、アドインは構成済みであるかどうかを、ユーザーが **[既定の Gist の挿入]** ボタンまたは **[Gist の挿入]** ボタンのいずれかを選択したときに確認します。アドインがまだ構成されていない場合、設定ダイアログが表示され、処理を進める前に構成するようにユーザーに促します。
+> 設定ダイアログを呼び出すためのボタンがないことに気づかれたかもしれません。 代わりに、アドインは構成済みであるかどうかを、ユーザーが **[Insert default gist]** ボタンまたは **[Insert gist]** ボタンのいずれかを選択したときに確認します。 アドインがまだ構成されていない場合、設定ダイアログが表示され、処理を進める前に構成するようにユーザーに促します。
 
 ## <a name="implement-a-ui-less-button"></a>UI のないボタンを実装する
 
-このアドインの **[既定の Gist の挿入]** ボタンは UI のないボタンであり、他のアドイン ボタンのように作業ウィンドウを開くのではなく、JavaScript 関数を呼び出します。ユーザーが **[既定の Gist の挿入]** ボタンを選択すると、対応する JavaScript 関数がアドインが構成されているかどうかを確認します。
+このアドインの **[Insert default gist]** ボタンは UI のないボタンであり、他のアドイン ボタンのように作業ウィンドウを開くのではなく、JavaScript 関数を呼び出します。 ユーザーが **[Insert default gist]** ボタンを選択すると、対応する JavaScript 関数によって、アドインが構成済みであるかどうかが確認されます。
 
 - アドインが既に構成済みの場合、ユーザーが既定として選択した Gist のコンテンツが関数によって読み込まれ、メッセージの本文に挿入されます。
 
@@ -729,7 +727,7 @@ function buildFileList(files) {
 
 ### <a name="update-the-function-file-html"></a>関数ファイルを更新する (HTML)
 
-UI のないボタンによって呼び出される関数は、対応するフォーム係数のマニフェスト内の `FunctionFile` 要素で指定されたファイルで定義する必要があります。このアドインのマニフェストは、関数ファイルとして `https://localhost:3000/commands.html` を指定します。
+UI のないボタンによって呼び出される関数は、対応するフォーム ファクターのマニフェスト内の `FunctionFile` 要素で指定されたファイルで定義する必要があります。 このアドインのマニフェストでは、`https://localhost:3000/commands.html` が関数ファイルとして指定されています。
 
 ファイル **./src/commands/commands.html** を開き、内容全体を次のマークアップに置き換えます。
 
@@ -761,7 +759,7 @@ UI のないボタンによって呼び出される関数は、対応するフ�
 
 ### <a name="update-the-function-file-javascript"></a>関数ファイルを更新する (JavaScript)
 
-ファイル **./src/commands/commands.js** を開き、内容全体を次のコードに置き換えます。`insertDefaultGist` 関数が、アドインがまだ構成されていないと判断した場合、ダイアログ URL に `?warn=1` パラメーターを追加することに注意してください。そうすることで、設定ダイアログに **./settings/dialog.html** で定義されているメッセージ バーが表示され、ダイアログが表示される理由がユーザーに通知されます。
+ファイル **./src/commands/commands.js** を開き、内容全体を次のコードに置き換えます。 アドインがまだ構成されていないことが `insertDefaultGist` 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。 これにより、**./settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。
 
 ```js
 var config;
@@ -860,7 +858,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>構成設定を管理するファイルを作成する
 
-HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。**./src/helpers** フォルダーに **addin-config.js** という名前のファイルを作成し、次のコードを追加します。このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.RoamingSettings)を使用して構成値を取得および設定します。
+HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。 **./src/helpers** フォルダーに **addin-config.js** という名前のファイルを作成し、次のコードを追加します。 このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.RoamingSettings)を使用して、構成値を取得または設定するものです。
 
 ```js
 function getConfig() {
@@ -882,7 +880,7 @@ function setConfig(config, callback) {
 
 ### <a name="create-new-functions-to-process-gists"></a>Gist を処理する新しい関数を作成する
 
-次に、**./src/helpers/Gist-api.js** ファイルを開き、以下の機能を追加します。次の点に注意してください。
+次に、**./src/helpers/gist-api.js** ファイルを開き、以下の機能を追加します。 次の点に注意してください。
 
 - Gist に HTML が含まれている場合、アドインは HTML をそのままメッセージの本文に挿入します。
 
@@ -940,30 +938,30 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。次に、次の手順を実行して、**[既定の Gist の挿入]** ボタンをテストします。
+すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
-1. メッセージ作成ウィンドウで、**[既定の Gist の挿入]** ボタンを選択します。GitHub ユーザー名を設定するためのプロンプトから始めて、アドインを構成できるダイアログが表示されます。
+1. メッセージの作成ウィンドウで、**[Insert default gist]** ボタンを選択します。 GitHub ユーザー名を設定するためのプロンプトから始めて、アドインを構成できるダイアログが表示されます。
 
     ![アドインを構成するためのダイアログ プロンプトのスクリーンショット](../images/addin-prompt-configure.png)
 
-1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **[タブ]** するかクリックします。すると、`change` イベントが呼び出され、公開 Gist のリストが読み込まれます。既定にする Gist を選択し、**[完了]** を選択します。
+1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **選択** するかクリックします。すると、`change` イベントが呼び出され、公開 Gist のリストが読み込まれます。 既定とする Gist を選択し、**[Done]** を選択します。
 
     ![アドインの設定ダイアログのスクリーンショット](../images/addin-settings.png)
 
-1. ここでもう一度、**[既定の Gist の挿入]** ボタンを選択します。今度は、電子メールの本文に挿入された形で Gist の内容が表示されます。
+1. もう一度 **[Insert default gist]** ボタンを選択します。 今度は、Gist のコンテンツが電子メールの本文に挿入されます。
 
    > [!NOTE]
-   > Windows 上の Outlook: 最新の設定を選択するには、メッセージ作成ウィンドウを閉じて、もう一度開く必要がある場合があります。
+   > Windows 上の Outlook: 最新の設定を選択するには、[メッセージの作成] ウィンドウを閉じて、もう一度開く必要がある場合があります。
 
 ## <a name="implement-a-task-pane"></a>作業ウィンドウを実装する
 
-このアドインの **[Gist の挿入]** ボタンにより、作業ウィンドウを開いてユーザーの Gist を表示します。ここでユーザーはメッセージの本文に挿入する Gist を選択することができます。ユーザーがまだアドインを構成していない場合、ダイアログが表示されて構成するように求められます。
+このアドインの **[Insert gist]** ボタンにより、作業ウィンドウを開いてユーザーの Gist を表示します。 ここでユーザーはメッセージの本文に挿入する Gist を選択することができます。 ユーザーがまだアドインを構成していない場合、ダイアログが表示されて構成するように求められます。
 
-### <a name="specify-the-html-for-the-task-pane"></a>作業ウィンドウの HTML を指定する
+### <a name="specify-the-html-for-the-task-pane"></a>作業ペインのHTMLを指定する
 
-作成したプロジェクトでは、作業ウィンドウの HTML はファイル **./src/taskpane/taskpane.html** で指定されています。該当ファイルを開き、内容全体を次のマークアップで置き換えます。
+作成したプロジェクトでは、作業ペインのHTMLはファイル **./src/taskpane/taskpane.html** で指定されています。 該当ファイルを開き、内容全体を次のマークアップで置き換えます。
 
 ```html
 <!DOCTYPE html>
@@ -1025,9 +1023,9 @@ function buildBodyContent(gist, callback) {
 </html>
 ```
 
-### <a name="specify-the-css-for-the-task-pane"></a>作業ウィンドウの CSS を指定する
+### <a name="specify-the-css-for-the-task-pane"></a>作業ペインのCSSを指定する
 
-作成したプロジェクトでは、作業ウィンドウの CSS はファイル **./src/taskpane/taskpane.css** で指定されています。該当ファイルを開き、内容全体を次のコードで置き換えます。
+作成したプロジェクトでは、作業ウィンドウのCSSは **./src/taskpane/taskpane.css** ファイルで指定されています。 該当ファイルを開き、内容全体を次のコードで置き換えます。
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1185,9 +1183,9 @@ ul {
           background: transparent; }
 ```
 
-### <a name="specify-the-javascript-for-the-task-pane"></a>作業ウィンドウの JavaScript を指定する
+### <a name="specify-the-javascript-for-the-task-pane"></a>作業ペインのJavaScriptを指定する
 
-作成したプロジェクトでは、作業ウィンドウの JavaScript はファイル **./src/taskpane/taskpane.js** で指定されています。該当ファイルを開き、内容全体を次のコードで置き換えます。
+作成したプロジェクトでは、作業ペインのJavaScriptはファイル **./src/taskpane/taskpane.js** で指定されています。 該当ファイルを開き、内容全体を次のコードで置き換えます。
 
 ```js
 (function(){
@@ -1301,19 +1299,19 @@ ul {
 
 ### <a name="test-the-button"></a>ボタンをテストする
 
-すべての変更を保存したら、コマンド プロンプトから `npm run dev-server` を実行します (サーバーがまだ実行されていない場合)。次に、次の手順を実行して、**[Gist の挿入]** ボタンをテストします。
+すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
 
 1. Outlook を開き、新しいメッセージを作成します。
 
-1. メッセージ作成ウィンドウで、**[Gist の挿入]** ボタンを選択します。作成フォームの右側に作業ウィンドウが表示されます。
+1. メッセージの作成ウィンドウで、**[Insert gist]** ボタンを選択します。 作成フォームの右側に作業ウィンドウが表示されます。
 
-1. 作業ウィンドウで、**[Hello World Html]** を選択し、**[挿入]** を選択してメッセージの本文にその Gist の挿入します。
+1. 作業ウィンドウで、**[Hello World Html]** を選択し、**[Insert]** を選択してメッセージの本文にその Gist を挿入します。
 
 ![アドイン作業ウィンドウのスクリーンショットとメッセージ本文に表示される選択した gist コンテンツ](../images/addin-taskpane.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-このチュートリアルでは、メッセージ作成モードで使用してメッセージの本文にコンテンツを挿入できる Outlook アドインを作成しました。Outlook アドインの開発の詳細については、次の記事に進んでください。
+このチュートリアルでは、コンテンツをメッセージの本文に挿入するためにメッセージ作成モードで使用可能な Outlook アドインを作成しました。 Outlook アドインの開発に関する詳細については、次の記事に進んでください。
 
 > [!div class="nextstepaction"]
 > [Outlook アドインの API](../outlook/apis.md)

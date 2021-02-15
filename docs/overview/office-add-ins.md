@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7460ca65313480cc4518bdfb30447dc83288debe
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741051"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237764"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -82,7 +82,7 @@ Office アドインは、Office クライアント アプリケーション内�
 
 #### <a name="custom-buttons-and-menu-commands"></a>カスタム ボタンとメニュー コマンド  
 
-カスタムのリボン ボタンとメニュー項目は、Office on the web および Windows のリボンに追加できます。これにより、ユーザーは、Office アプリケーションからアドインに簡単に直接アクセスできます。コマンド ボタンでは、カスタム HTML による作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
+カスタムのリボン ボタンとメニュー項目は、Office on the web や Windows 版の Office のリボンに追加できます。これにより、ユーザーは Office アプリケーションからアドインに簡単に直接アクセスできます。コマンド ボタンでは、カスタム HTML による作業ウィンドウを表示したり、JavaScript 関数を実行したりするなど、さまざまなアクションを起動できます。  
 
 *図 3. リボンにあるアドイン コマンド*
 
@@ -124,7 +124,7 @@ Office アドインの開発の詳細については、「[Office アドイン�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインを設計する](../design/add-in-design.md)
+- [Office アドインの設計](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインを発行する](../publish/publish.md)
+- [Office アドインの公開](../publish/publish.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

@@ -5,12 +5,12 @@ title: Excel でカスタム関数を作成する
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 97037f201a237cdc6dae551552a0a1609a58b34c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 804895f3e10cac849dc20b67625e4f30164eb41d
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839874"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237673"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -84,7 +84,7 @@ Yo Office ジェネレーターを使用してファイルを作成する場合�
 
 ## <a name="coauthoring"></a>共同編集
 
-Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows では、Excel で共同編集することができます。 ブックでカスタム関数を使用している場合、共同編集中の仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
+Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows 版の Excel では、Excel で共同編集を行うことができます。 ブックでカスタム関数を使用している場合、共同編集中の仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 

@@ -4,12 +4,12 @@ description: 熟練した VSTO アドイン開発者に向けた Office Web ア�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1dca15a4d286e3bfa5b7ba4a502bb9161bf3257f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741065"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238016"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO アドイン開発者向けガイド
 
@@ -33,7 +33,7 @@ Office Web アドインのオブジェクト モデルは Excel、Word、その�
 今にもコーディングを始めたいと考えておられるかもしれませんが、IDE やコード エディターを開く前に、Office アドインについて、以下をお読みください。
 
 - [Office アドイン プラットフォームの概要](office-add-ins.md): Office Web アドインとは何であるか、VSTO アドインなどの Office を拡張する以前の方法との違いを説明します。
-- [Office アドインを開発する](../develop/develop-overview.md): ツール、アドイン UI の作成、JavaScript API を使用する Office ドキュメントの操作を含む、Office アドインの開発とライフサイクルの概要を説明します。
+- [Office アドインを開発する](../develop/develop-overview.md): ツール、アドイン UI の作成、JavaScript API を使用した Office ドキュメントの操作を含む、Office アドインの開発とライフサイクルの概要について説明します。
 
 これらの記事には多くのリンクが含まれていますが、Office アドインに移行している場合は、これらを読み、次のセクションに進むときに、ここに戻ることをお勧めします。
 
@@ -85,5 +85,5 @@ VSTO アドインのコードをサーバー上の Web アプリケーション�
   - [Office アドインを設計する](../design/add-in-design.md)
   - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
   - [Office アドインを展開し、発行する](../publish/publish.md)
-  - [Resources](../resources/resources-links-help.md)
+  - [リソース](../resources/resources-links-help.md)
   - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

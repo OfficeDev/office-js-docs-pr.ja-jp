@@ -1,14 +1,14 @@
 ---
 title: Office のバージョンと要件セット
-description: JavaScript API を使用してサポートされる Office.js プラットフォーム
-ms.date: 07/07/2020
+description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 14b88402b1ee563d992b6f37f95be4fa7f337388
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293213"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237666"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -62,4 +62,4 @@ Office JavaScript API ライブラリ (Office.js) には、現在利用可能な
 - [Office アプリケーションと API の要件を指定する](../develop/specify-office-hosts-and-api-requirements.md)
 - [Office の最新バージョンをインストールする](../develop/install-latest-office-version.md)
 - [Microsoft 365 Apps 用更新プログラム チャネルの概要](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Office 365 で Office を最大限に活用する](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [Microsoft 365 と Microsoft Teams による生産性の再構築](https://products.office.com/compare-all-microsoft-office-products?tab=2)
