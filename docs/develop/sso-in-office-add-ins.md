@@ -3,12 +3,12 @@ title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: ec4fc9f91f3cbc9f8882ed491c7c5bc68be346ed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 104a64fa5a761e06711e9c5f850bba0267830809
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293199"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237820"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
 
@@ -21,7 +21,9 @@ ms.locfileid: "47293199"
 
 **Outlook** アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
-SSO をアドインの唯一の認証方法と*しない*ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](auth-external-add-ins.md)」を参照してください。 *Outlook* には推奨される代替システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](../outlook/implement-sso-in-outlook-add-in.md)」を参照してください。 代替システムとして Azure Active Directory を使用するサンプルについては、「[Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)」と「[Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)」を参照してください。
+SSO をアドインの唯一の認証方法と *しない* ようにする必要があります。 特定のエラー状況でアドインが切り替えることができる、別の認証システムを実装する必要があります。 ユーザー テーブルと認証のシステムを使用するか、ソーシャル ログイン プロバイダーの 1 つを活用できます。 Office アドインでこれを実行する方法の詳細については、「[Office アドインで外部サービスを承認する](auth-external-add-ins.md)」を参照してください。 *Outlook* には推奨される代替システムがあります。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](../outlook/implement-sso-in-outlook-add-in.md)」を参照してください。 代替システムとして Azure Active Directory を使用するサンプルについては、「[Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)」と「[Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)」を参照してください。
+
+
 
 ## <a name="how-sso-works-at-runtime"></a>実行時の SSO の動作のしくみ
 
@@ -53,7 +55,7 @@ SSO をアドインの唯一の認証方法と*しない*ようにする必要�
 Azure v2.0 エンドポイントの登録ポータルでアドインを登録します。このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
 
 * アドインのクライアント ID とシークレットを取得します。
-* アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" のアクセス許可は常に必要です。
+* アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" と "openid" のアクセス許可は常に必要です。
 * Office クライアント アプリケーションにアドインへの信頼を付与します。
 * 既定のアクセス許可 *access_as_user* を使用して、Office クライアント アプリケーションのアドインへのアクセスを事前認証します。
 
@@ -65,9 +67,9 @@ Azure v2.0 エンドポイントの登録ポータルでアドインを登録し
 
 * **WebApplicationInfo** - 次の要素の親。
 * **Id** -このアドインのクライアント ID。これはアドインを登録する一貫として取得するアプリケーション ID です。 詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
-* **Resource** - アドインの URL。 これは、AAD にアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` のセクションの URL で使用されている、すべてのサブドメインを含むドメインと一致している必要があります。
+* **Resource** - アドインの URL。 これは、AAD にアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` のセクションの URL で使用されている任意のサブドメインを含むドメインと一致し、URI の末尾が `<Id>` 内のクライアント ID で終了している必要があります。
 * **Scopes** - 1 つ以上の **Scope** 要素の親。
-* **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` のアクセス許可は常に必要です。ご使用のアドインが Microsoft Graph にアクセスしない場合、これは必要な唯一のアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
+* **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` と `openID` のアクセス許可は常に必要です。ご利用のアドインが Microsoft Graph にアクセスしない場合、これは唯一必要なアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
 Outlook 以外の Office アプリケーションでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
@@ -78,12 +80,15 @@ Outlook 以外の Office アプリケーションでは、`<VersionOverrides ...
     <Id>5661fed9-f33d-4e95-b6cf-624a34a2f51d</Id>
     <Resource>api://addin.contoso.com/5661fed9-f33d-4e95-b6cf-624a34a2f51d</Resource>
     <Scopes>
+        <Scope>openid</Scope>
         <Scope>user.read</Scope>
         <Scope>files.read</Scope>
         <Scope>profile</Scope>
     </Scopes>
 </WebApplicationInfo>
 ```
+> [!NOTE]
+> SSO 用マニフェストのフォーマット要件に従わない場合、アドインはフォーマット要件を満たすまで AppSource から拒否されます。
 
 ### <a name="add-client-side-code"></a>クライアント側のコードを追加する
 
