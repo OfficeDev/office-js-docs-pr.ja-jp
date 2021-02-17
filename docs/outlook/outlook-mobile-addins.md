@@ -3,18 +3,18 @@ title: Outlook Mobile の Outlook のアドイン
 description: Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントで提供される予定です。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 24d396f67a3d73f7c3c357be7861164f586a50da
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 586a473e1036e8480f395da49011f540d87e1b5f
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944320"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270708"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
-Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントに公開される予定です。
+Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントで提供される予定です。
 
 **Outlook on iOS の作業ウィンドウの例**
 
@@ -32,8 +32,8 @@ Outlook モバイル アドインは、すべての Microsoft 365 ビジネス �
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 
 - モバイル用の設計において、小さいサイズと迅速な操作性が課題となります。お客様に高品質のエクスペリエンスを提供するため、モバイル サポートを宣言するアドインに対して厳格な検証条件を定めています。AppSource で承認を得るには、この条件を満たす必要があります。
-    - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠 **していなければなりません**。
-    - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である **必要** があります。
+  - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠 **していなければなりません**。
+  - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である **必要** があります。
 
 - 一般に、現時点ではメッセージ読み取りモードだけがサポートされています。 つまり、 `MobileMessageReadCommandSurface` マニフェストのモバイル [セクションで](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 宣言する必要がある ExtensionPoint は 1 つのみです。 ただし、オンライン会議プロバイダー統合アドインでは、代わりに [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)拡張点を宣言する予定オーガナイザー モードがサポートされています。 このシナリオ [の詳細については、オンライン](online-meeting.md) 会議プロバイダー向け Outlook モバイル アドインの作成に関する記事を参照してください。
 
@@ -69,7 +69,7 @@ Outlook Mobile でアドインをテストするために、O365 や Outlook.com
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
-モバイルでのトラブルシューティングは、使い慣したツールがインストールされていない可能性があります。 ただし、iOS でのトラブルシューティングの 1 つのオプションは、Fiddler を使用する方法 [です (iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)デバイスでの使用に関するこのチュートリアルを参照してください)。
+モバイルでのトラブルシューティングは、以前のツールを使用していない可能性があります。 ただし、iOS でのトラブルシューティングの 1 つのオプションは、Fiddler を使用する方法 [です (iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)デバイスでの使用に関するこのチュートリアルを参照してください)。
 
 ## <a name="next-steps"></a>次の手順
 

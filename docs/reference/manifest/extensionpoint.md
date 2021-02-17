@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237708"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270722"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -264,7 +264,7 @@ ms.locfileid: "50237708"
 この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。 会議の開催者はオンライン会議を作成できます。 その後、出席者はオンライン会議に参加できます。 このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用する Android でのみサポートされます。
+> この拡張点は、Microsoft 365 サブスクリプションを使用する Android および iOS でのみサポートされます。
 
 #### <a name="child-elements"></a>子要素
 
@@ -307,7 +307,7 @@ ms.locfileid: "50237708"
 > [!NOTE]
 > この拡張点は、Outlook on [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) the web および Microsoft 365 サブスクリプションを使用する Windows のプレビューでのみサポートされます。
 
-この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、イベント ベースのアクティブ化に関する Outlook アドインの構成 [に関する記事を参照](../../outlook/autolaunch.md) してください。
+この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、「Outlook アドインをイベント ベースのアクティブ化用に構成する」 [の記事を参照](../../outlook/autolaunch.md) してください。
 
 #### <a name="child-elements"></a>子要素
 

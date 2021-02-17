@@ -1,15 +1,15 @@
 ---
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 localization_priority: Priority
-ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131746"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238093"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -50,7 +50,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 次のものも必要です:
 
-- Microsoft 365 アカウント。 [Microsoft 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加することで、Office 365 の 1 年間無料サブスクリプションを取得できます。
+- Microsoft 365 アカウント。 Office アプリを含む、90 日間の更新可能な Microsoft 365 サブスクリプションが提供される [Microsoft 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加できます。
 - Microsoft Azure テナント。 [Microsoft Azure](https://account.windowsazure.com/SignUp) では、試用版のサブスクリプションを入手できます。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>セル アナライザー VSTO アドイン
@@ -91,10 +91,10 @@ VSTO では、コードは `Microsoft.Office.Interop.Excel.Range` などの .NET
 それでは、この VSTO アドインについて調べてみましょう。 次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
 
 ```csharp
-// **_ UI CODE _*_
+// *** UI CODE ***
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // _*_ DOCUMENT CODE _*_
+    // *** DOCUMENT CODE ***
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // _*_ ALGORITHM CODE _*_
+    // *** ALGORITHM CODE ***
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -115,16 +115,16 @@ private void btnUnicode_Click(object sender, EventArgs e)
         result += $"{c}: {unicode}\r\n";
     }
 
-    // _*_ UI CODE _*_
+    // *** UI CODE ***
     //Output the result
     txtResult.Text = result;
 }
 ```
 
-このアプローチを使用すると、Office アドインとの共有が可能な 1 つのセクションがわかります。 次のコードは、個別のクラス ライブラリ用にリファクタリングする必要があります。
+このアプローチを使用すると、Office アドインとの共有が可能なコードの 1 つのセクションがわかります。 次のコードは、個別のクラス ライブラリ用にリファクタリングする必要があります。
 
 ```csharp
-// _*_ ALGORITHM CODE _*_
+// *** ALGORITHM CODE ***
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,7 +139,7 @@ foreach (char c in cellValue)
 
 VSTO アドインは .NET プロジェクトとして Visual Studio で作成されているため、できるだけ簡単になるように .NET を再利用します。 次に使用する手法は、クラス ライブラリを作成して、そのクラス ライブラリ用に共有コードをリファクタリングすることです。
 
-1. Visual Studio 2019 を起動して、*\start\Cell-Analyzer.sln* ソリューションを開きます (まだ、そうしていない場合)。
+1. Visual Studio 2019 を起動して、**\start\Cell-Analyzer.sln** ソリューションを開きます (まだ、そうしていない場合)。
 2. **ソリューション エクスプローラー** でソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
 3. **[新しいプロジェクトの追加] ダイアログ** で、**[クラス ライブラリ (.NET Framework)]** を選択してから **[次へ]** を選択します。
     > [!NOTE]
@@ -417,7 +417,7 @@ public class Startup
 4. その後で、**[OK]** を選択します。
 5. **[デバッグ]** メニューから、**[デバッグの開始]** を選択します。
 
-Excel が開始され、Office アドインが再度ロードされます。 ローカルホスト REST API サービスが正常に動作しているかどうかは、セルにテキスト値を入力して、Office アドインの **[Show Unicode]** ボタンを選択することでテストできます。 そのテキストの文字に対応する Unicode 値は REST API を呼び出すことで表示されます。
+Excel が開始され、Office アドインがサイドロードされます。 localhost REST API サービスが正常に動作しているかどうかは、セルにテキスト値を入力して、Office アドインの **[Unicode の表示]** ボタンを選択することでテストできます。 そのテキストの文字に対応する Unicode 値は REST API を呼び出すことで表示されます。
 
 ## <a name="publish-to-an-azure-app-service"></a>Azure App Service に発行する
 
@@ -434,7 +434,7 @@ Excel が開始され、Office アドインが再度ロードされます。 ロ
 
 ### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Office アドインから Azure App Service を使用する
 
-最後の手順では、ローカルホストの代わりに Azure App Service を使用するように Office アドインのコードを更新します。
+最後の手順では、localhost の代わりに Azure App Service を使用するように Office アドインのコードを更新します。
 
 1. **ソリューション エクスプローラー** で、**[CellAnalyzerOfficeAddinWeb]** プロジェクトを展開して **Home.js** ファイルを開きます。
 1. 次のコード行に示すように、`url` 定数を変更して目的の Azure App Service を使用するようにします。 `<myappservice>` は新しい App Service 用に作成した一意の名前に置き換えます。
@@ -451,7 +451,7 @@ Excel が開始され、Office アドインが再度ロードされます。 ロ
 1. その後で、**[OK]** を選択します。
 1. **[デバッグ]** メニューから、**[デバッグの開始]** を選択します。
 
-Excel が開始され、Office アドインが再度ロードされます。 App Service が正常に動作していることをテストするには、セルにテキスト値を入力して、Office アドインの **[Show Unicode]** を選択します。 サービスが呼び出され、そのテキストの文字に対応する Unicode 値が表示されます。
+Excel が開始され、Office アドインがサイドロードされます。 App Service が正常に動作していることをテストするには、セルにテキスト値を入力して、Office アドインの **[Unicode の表示]** を選択します。 サービスが呼び出され、そのテキストの文字に対応する Unicode 値が表示されます。
 
 ## <a name="conclusion"></a>まとめ
 
