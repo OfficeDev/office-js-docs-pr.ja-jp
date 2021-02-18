@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化用に Outlook アドイ
 ms.topic: article
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: a3e2167adec824934d1bc20d0e6613f9057e5c70
+ms.sourcegitcommit: 7cd501d0fdbbd4636bd08647b638dd5ca4c7c630
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238044"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50282997"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースのアクティブ化用に Outlook アドインを構成する (プレビュー)
 
@@ -51,7 +51,7 @@ Outlook クイック [スタートを完了](../quickstarts/outlook-quickstart.m
 
 1. プロジェクトの **manifest.xml** にある新しいファイルを開きます。
 
-1. ノード全体 (開いているタグと閉じるタグを含む) を選択し `<VersionOverrides>` 、次の XML に置き換えてください。
+1. ノード全体 (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換え、 `<VersionOverrides>` 変更を保存します。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -212,9 +212,11 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
     **注**: Outlook on the `Office.actions` web がこれらのステートメントを無視することを確認します。
 
+1. 変更内容を保存します。
+
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し (まだ実行されていない場合)、アドインがサイドロードされます。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
 
     ```command&nbsp;line
     npm start
@@ -227,6 +229,10 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 1. Windows 上の Outlook で、新しいメッセージを作成します。
 
     ![Outlook on Windows のメッセージ ウィンドウと新規作成時に件名が設定されているスクリーンショット](../images/outlook-win-autolaunch.png)
+
+## <a name="debug"></a>Debug
+
+独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「イベント ベースの Outlook アドインをデバッグする」を [参照してください](debug-autolaunch.md)。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 
@@ -254,4 +260,5 @@ Outlook on Windows では JavaScript ファイルを使用し、Outlook on the w
 
 ## <a name="see-also"></a>関連項目
 
-[Outlook アドインのマニフェスト](manifests.md)
+[Outlook アドイン マニフェスト](manifests.md) 
+[イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
