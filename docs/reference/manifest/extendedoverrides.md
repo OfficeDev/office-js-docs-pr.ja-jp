@@ -1,18 +1,18 @@
 ---
-title: マニフェストファイルの ExtendedOverrides 要素
-description: マニフェストの JSON 形式の拡張機能の Url を指定します。
-ms.date: 11/06/2020
+title: マニフェスト ファイルの ExtendedOverrides 要素
+description: マニフェストの JSON 形式の拡張子の URL を指定します。
+ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 76491af34d1caf0ec266826df97a5363e336b85d
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996709"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505473"
 ---
 # <a name="extendedoverrides-element"></a>ExtendedOverrides 要素
 
-マニフェストを拡張する JSON 形式のファイルの完全な Url を指定します。
+マニフェストを拡張する JSON 形式のファイルの完全な URL を指定します。 この要素とその子孫要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」 [を参照してください](../../develop/extended-overrides.md)。
 
 **アドインの種類:** 作業ウィンドウ
 
@@ -36,10 +36,21 @@ ms.locfileid: "48996709"
 
 |属性|説明|
 |:-----|:-----|
-|Url (必須)| 拡張オーバーライド JSON ファイルの完全な URL。 これは、 [token](tokens.md) 要素によって定義されたトークンを使用する URL テンプレートである場合があります。|
-|ResourcesUrl (省略可能) | 属性で指定されているファイルについて、ローカライズされた文字列などの補足情報を提供するファイルの完全な URL `Url` 。 これは、 [token](tokens.md) 要素によって定義されたトークンを使用する URL テンプレートである場合があります。|
+|URL (必須)| 拡張の完全な URL は JSON ファイルを上書きします。 将来、この値は、Tokens 要素で定義されたトークンを使用する URL テンプレート [である可能性](tokens.md) があります。 「 [例」を参照してください](#examples)。|
+|ResourcesUrl (オプション) | 属性で指定されたファイルの、ローカライズされた文字列などの補足リソースを提供するファイルの完全な `Url` URL。 これは、Tokens 要素で定義されたトークンを使用する URL テンプレート [である可能性](tokens.md) があります。|
 
-## <a name="example"></a>例
+## <a name="examples"></a>例
+
+```XML
+<OfficeApp ...>
+  <!-- other elements omitted -->
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json"
+                     ResourceUrl="https://contoso.com/addin/my-resources.json">
+  </ExtendedOverrides>
+</OfficeApp>
+```
+
+将来、この値は、Tokens 要素で定義されたトークンを使用する URL テンプレート [である可能性](tokens.md) があります。 次に例を示します。
 
 ```XML
 <OfficeApp ...>

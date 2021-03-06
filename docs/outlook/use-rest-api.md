@@ -1,18 +1,21 @@
 ---
 title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
-ms.date: 09/18/2020
+ms.date: 02/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
-ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
+ms.openlocfilehash: c0df1df4fdbda22768562892874e09bbeb760473
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48268552"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505487"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
-[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest/index) を使用して情報を取得する方法が推奨されています。
+[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
+
+> [!NOTE]
+> [Microsoft Graph から Outlook REST API](/outlook/rest#outlook-rest-api-via-microsoft-graph) にアクセスすることもできますが、いくつかの重要な違いがあります。 詳細については、「[Microsoft Graph と Outlook の比較](/outlook/rest/compare-graph)」をご覧ください。
 
 ## <a name="get-an-access-token"></a>アクセス トークンを取得する
 
@@ -84,7 +87,7 @@ var restHost = Office.context.mailbox.restUrl;
 アドインがアクセス トークン、アイテム ID、および REST API URL を取得すると、REST API を呼び出すバックエンド サービスにその情報を渡すか、AJAX を使用して直接呼び出すことができるようになります。 次の例は、Outlook Mail REST API を呼び出して現在のメッセージを取得します。
 
 > [!IMPORTANT]
-> オンプレミスの Exchange の展開では、サーバーのセットアップで CORS がサポートされていないため、AJAX または類似のライブラリを使用したクライアント側の要求は失敗します。
+> オンプレミスの Exchange 展開では、AJAX または類似のライブラリを使用するクライアント側の要求は、そのサーバーセットアップで CORS がサポートされていないので失敗します。
 
 ```js
 function getCurrentItem(accessToken) {

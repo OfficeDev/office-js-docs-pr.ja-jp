@@ -3,25 +3,25 @@ title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、指定した条件に応じて設定の値を指定できます。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c66503f9f95155a096b1b6fb23332eed8422da6
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996313"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505340"
 ---
 # <a name="override-element"></a>Override 要素
 
-指定した条件に応じて、マニフェストの設定値を上書きする方法を提供します。 条件には、次の2種類があります。
+指定した条件に応じてマニフェスト設定の値を上書きする方法を提供します。 条件には次の 2 種類があります。
 
-- 既定とは異なる Office ロケール。
-- 既定のパターンとは異なる、要件セットサポートのパターン。
+- 既定Office異なるロケールを指定します。
+- 既定のパターンとは異なる要件セットのサポートのパターン。
 
-要素には2つの種類があり `<Override>` ます。1つは **LocaleTokenOverride** と呼ばれるロケールの上書き用で、もう1つは要件セットのオーバーライド ( **RequirementTokenOverride** と呼ばれる) です。 ただし `type` 、要素のパラメーターはありません `<Override>` 。 相違点は、親要素と親要素の型によって決まります。 がである要素 `<Override>` の内部にある要素は `<Token>` `xsi:type` `RequirementToken` 、 **RequirementTokenOverride** 型である必要があります。 `<Override>`他の親要素の中、または型の要素内の要素は `<Override>` `LocaleToken` 、 **LocaleTokenOverride** 型でなければなりません。 それぞれの種類について、以下の個別のセクションで説明します。
+要素には、LocaleTokenOverride と呼ばれるロケールオーバーライド用の要素と `<Override>` **、RequirementTokenOverride** と呼ばれる要件セットのオーバーライド用の 2 種類があります。 ただし、要素 `type` のパラメーター `<Override>` はありません。 違いは、親要素と親要素の型によって決まります。 要素 `<Override>` の内部にある要素は `<Token>` `xsi:type` `RequirementToken` **、RequirementTokenOverride 型である必要があります**。 他 `<Override>` の親要素内の要素、または型の要素内の要素は `<Override>` `LocaleToken` **、LocaleTokenOverride 型である必要があります**。 各種類については、以下の各セクションで説明します。 要素の子である場合のこの要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」 `<Token>` [を参照してください](../../develop/extended-overrides.md)。
 
-## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 型の Override 要素
+## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 型のオーバーライド要素
 
-`<Override>`要素は条件を表し、"If...[...]if. 要素の `<Override>` 型が **LocaleTokenOverride** の場合は、 `Locale` 属性は条件です。属性はその後のものです `Value` 。 たとえば、"Office ロケール設定が fr-fr で、表示名が ' Lecteur vidéo ' の場合は、次の値が読み取られます。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **LocaleTokenOverride** 型の場合、属性は条件であり、その `Locale` `Value` 結果属性になります。 たとえば、次の例は、「Officeロケール設定が fr-fr の場合、表示名は 'Lecteur vidéo'です。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -94,7 +94,7 @@ ms.locfileid: "48996313"
 
 ## <a name="override-element-of-type-requirementtokenoverride"></a>RequirementTokenOverride 型の Override 要素
 
-`<Override>`要素は条件を表し、"If...[...]if. 要素の `<Override>` 型が **RequirementTokenOverride** の場合、子要素は `<Requirements>` 条件を表し、属性はその後の `Value` ものです。 たとえば、 `<Override>` 現在のプラットフォームが FeatureOne version 1.7 をサポートしている場合は、次のように "oldAddinVersion" を使用します。これは、 `${token.requirements}` 既定の文字列 ' upgrade ' ではなく、祖父母の URL に含まれるトークンの代わりに使用され `<ExtendedOverrides>` ます。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **RequirementTokenOverride** 型の場合、子要素は条件を表し、属性 `<Requirements>` `Value` はその結果です。 たとえば、次の 1 つ目は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は、(既定の文字列 'upgrade' ではなく) 祖父母の URL のトークンの代わりに文字列 `<Override>` 'oldAddinVersion' を使用します。 `${token.requirements}` `<ExtendedOverrides>`
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">

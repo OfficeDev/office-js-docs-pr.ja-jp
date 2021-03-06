@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要件セット 1.5
-description: Outlook Mailbox API 要件セット1.5 バージョンのメールボックスオブジェクトモデル。
-ms.date: 03/18/2020
+description: Outlook メールボックス API 要件セット 1.5 バージョンのメールボックス オブジェクト モデル。
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d3bd21ef2ff5056260b5a15acfbe81d68d2c645
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: fdb4d61725daae162c1eb41a95e0b886d5f83807
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430661"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505445"
 ---
 # <a name="mailbox-requirement-set-15"></a>メールボックス (要件セット 1.5)
 
@@ -28,21 +28,21 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 | プロパティ | 最小値<br>アクセス許可レベル | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|---|:---:|
-| [ダン](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#diagnostics) | ReadItem | 作成<br>読み取り | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#ewsurl) | ReadItem | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [アイテム](/javascript/api/outlook/office.item?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#resturl) | ReadItem | 作成<br>読み取り | 文字列 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#userprofile) | ReadItem | 作成<br>読み取り | [プロファイル](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [診断](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#diagnostics) | ReadItem | 作成<br>読み取り | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#ewsurl) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [項目](/javascript/api/outlook/office.item?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#resturl) | ReadItem | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#userprofile) | ReadItem | 作成<br>読み取り | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>メソッド
 
-| Method | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
+| メソッド | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
 |---|---|---|:---:|
 | [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) | ReadItem | 作成<br>読み取り | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [convertToEwsId (itemId、Office.mailboxenums.restversion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttoewsid-itemid--restversion-) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| [convertToLocalClientTime (timeValue)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttolocalclienttime-timevalue-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [convertToRestId (itemId、Office.mailboxenums.restversion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttorestid-itemid--restversion-) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| [convertToUtcClientTime (input)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttoutcclienttime-input-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [convertToEwsId(itemId, restVersion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttoewsid-itemid--restversion-) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToLocalClientTime(timeValue)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttolocalclienttime-timevalue-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [convertToRestId(itemId, restVersion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttorestid-itemid--restversion-) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToUtcClientTime(input)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#converttoutcclienttime-input-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayAppointmentForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#displayappointmentform-itemid-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayMessageForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#displaymessageform-itemid-) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayNewAppointmentForm(parameters)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#displaynewappointmentform-parameters-) | ReadItem | 読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -54,8 +54,11 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 ## <a name="events"></a>イベント
 
-[Addハンドラ async](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-)と[removeハンドラ async](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#removehandlerasync-eventtype--options--callback-)を使用して、次のイベントにサブスクライブし、サブスクライブを解除することができます。
+[addHandlerAsync と removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-)をそれぞれ使用して、次のイベントをサブスクライブおよび[サブスクライブ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#removehandlerasync-eventtype--options--callback-)解除できます。
+
+> [!IMPORTANT]
+> イベントは作業ウィンドウでのみ使用できます。
 
 | イベント | 説明 | 最小値<br>要件セット |
 |---|---|:---:|
-|`ItemChanged`| 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+|`ItemChanged`| 作業ウィンドウがピン留めされている間は、別の Outlook アイテムが表示用に選択されます。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

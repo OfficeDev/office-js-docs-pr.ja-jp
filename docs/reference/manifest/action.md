@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニュー コントロールを選択するときに実行するアクションを指定します。
-ms.date: 07/07/2020
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e345d0a1682e0125373a309e1e56eb2d6298ac7d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771415"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505410"
 ---
 # <a name="action-element"></a>Action 要素
 
-ユーザーがボタン コントロールまたはメニュー コントロールを選択するときに実行  [するアクション](control.md#button-control) を [指定](control.md#menu-dropdown-button-controls) します。
+ユーザーが Button コントロールまたは Menu コントロールを選択するときに実行[するアクションを](control.md#button-control)[指定](control.md#menu-dropdown-button-controls)します。
 
 ## <a name="attributes"></a>属性
 
@@ -29,7 +29,6 @@ ms.locfileid: "49771415"
 |  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。|
 |  [Title](#title) | 作業ウィンドウのカスタム タイトルを指定します。|
 |  [SupportsPinning](#supportspinning) | 作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。|
-  
 
 ## <a name="xsitype"></a>xsi:type
 
@@ -37,6 +36,9 @@ ms.locfileid: "49771415"
 
 - `ExecuteFunction`
 - `ShowTaskpane`
+
+> [!IMPORTANT]
+> **xsi:type**[が](../objectmodel/preview-requirement-set/office.context.mailbox.md#events)[.](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) `ExecuteFunction`
 
 ## <a name="functionname"></a>FunctionName
 
@@ -50,7 +52,7 @@ ms.locfileid: "49771415"
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi:type が**"ShowTaskpane" の場合は必須要素です。 この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定する必要があります。
+**xsi:type が**"ShowTaskpane" の場合は必須の要素です。 この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で、Resources 要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -104,7 +106,7 @@ ms.locfileid: "49771415"
 
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
 
-次の例は、Title 要素を使用するアクション **を示** しています。 タイトルを文字列に **直接割り** 当てない点に注意してください。 代わりに、マニフェストの [リソース] セクションで定義されているリソース ID  (resid) を割り当て、32 文字以下にできます。
+次の例は、Title 要素を使用するアクション **を示** しています。 Title を文字列に **直接割り** 当てない点に注意してください。 代わりに、マニフェストの [リソース] セクションで定義されているリソース ID  (常駐) を割り当て、32 文字以内にできます。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,7 +134,8 @@ ms.locfileid: "49771415"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
 
 > [!IMPORTANT]
-> この要素 `SupportsPinning` は要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在サポートされているのは、次を使用する Microsoft 365 サブスクライバーのみです。
+> 要素は `SupportsPinning` 要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在サポートされているのは、以下を使用する Microsoft 365 サブスクライバーのみです。
+>
 > - Windows 上の Outlook 2016 以降 (ビルド 7628.1000 以降)
 > - Mac 上の Outlook 2016 以降 (ビルド 16.13.503 以降)
 > - モダン Outlook on the web

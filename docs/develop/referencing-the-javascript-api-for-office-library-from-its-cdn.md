@@ -1,18 +1,18 @@
 ---
 title: Office JavaScript API ライブラリの参照
-description: アドインで Office JavaScript API ライブラリおよび型定義を参照する方法について説明します。
-ms.date: 06/23/2020
+description: アドインで JavaScript API ライブラリOfficeタイプ定義を参照する方法について説明します。
+ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 64dd08329b7bbc8c249bd270a431b6cbe93ec52c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 346a34c0cbc31b5e569a5106dcd2bc01593b114a
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293185"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505193"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリの参照
 
-[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)ライブラリには、アドインが office アプリケーションの操作に使用できる api が用意されています。 ライブラリを参照する最も簡単な方法は、 `<script>` `<head>` HTML ページのセクション内に次のタグを追加することによって、コンテンツ配信ネットワーク (CDN) を使用する方法です。  
+[JavaScript API Officeには](../reference/javascript-api-for-office.md)、アドインがアプリケーションと対話するために使用できる API がOfficeされます。 ライブラリを参照する最も簡単な方法は、HTML ページのセクション内に次のタグを追加してコンテンツ配信ネットワーク (CDN) `<script>` `<head>` を使用する方法です。  
 
 ```html
 <head>
@@ -21,31 +21,31 @@ ms.locfileid: "47293185"
 </head>
 ```
 
-これにより、アドインが最初に読み込まれたときに Office JavaScript API ファイルがダウンロードされてキャッシュされるので、指定されたバージョンの Office.js と関連付けられたファイルの最新の実装が使用されていることを確認してください。
+これにより、Office JavaScript API ファイルが初めて読み込まれると、Office.js の最新の実装と、指定したバージョンの関連ファイルが使用されます。
 
 > [!IMPORTANT]
-> ページのセクションの内側から Office JavaScript API を参照して、 `<head>` API が body 要素の前に完全に初期化されていることを確認する必要があります。 Office アプリケーションでは、アクティブ化から5秒以内にアドインを初期化する必要があります。 このしきい値内にアドインがアクティブにならない場合は、応答なしが宣言され、エラー メッセージがユーザーに表示されます。
+> ページのセクション内Office JavaScript API を参照して、本文要素の前に API が完全に初期化 `<head>` される必要があります。
 
 ## <a name="api-versioning-and-backward-compatibility"></a>API のバージョン管理と下位互換性
 
-前の HTML スニペットで、 `/1/` CDN URL の前の部分には `office.js` Office.js のバージョン1で最新の増分リリースが指定されています。 Office JavaScript API は下位互換性を維持しているため、最新のリリースでは、以前のバージョン1で導入された API メンバーを引き続きサポートしています。 既存のプロジェクトをアップグレードする必要がある場合は、「 [Office JAVASCRIPT API およびマニフェストスキーマファイルのバージョンを更新](update-your-javascript-api-for-office-and-manifest-schema-version.md)する」を参照してください。 
+前の HTML スニペットでは、CDN URL の前面で、バージョン 1 のバージョン内の最新の増分 `/1/` `office.js` リリースをOffice.js。 JavaScript API Office互換性が維持されるので、最新のリリースでは、バージョン 1 で以前に導入された API メンバーを引き続きサポートします。 既存のプロジェクトをアップグレードする必要がある場合は、「JavaScript API とマニフェスト スキーマ ファイルのバージョンOffice [更新する」を参照してください](update-your-javascript-api-for-office-and-manifest-schema-version.md)。 
 
 AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。
 
 > [!NOTE]
 > プレビュー API を使用するには、CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) にある Office JavaScript API ライブラリのプレビュー バージョンを参照します。
 
-## <a name="enabling-intellisense-for-a-typescript-project"></a>TypeScript プロジェクトに対して IntelliSense を有効にする
+## <a name="enabling-intellisense-for-a-typescript-project"></a>TypeScript プロジェクトIntelliSenseを有効にする
 
-前述したように Office JavaScript API を参照するだけでなく、 [指定](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js)した型定義を使用して TypeScript アドインプロジェクトの IntelliSense を有効にすることもできます。 これを行うには、プロジェクトフォルダーのルートから、ノードが有効なシステムプロンプト (または git bash ウィンドウ) で次のコマンドを実行します。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
+前述のように Office JavaScript API を参照する以外に [、DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js)の型定義を使用して TypeScript アドイン プロジェクトの IntelliSense を有効にすることもできます。 これを行うには、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行します。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
-## <a name="preview-apis"></a>プレビュー Api
+## <a name="preview-apis"></a>プレビュー API
 
-新しい JavaScript Api が最初に "プレビュー" で導入され、さらにテストが行われ、ユーザーフィードバックが必要になった後、特定の番号付き要件セットの一部となります。
+新しい JavaScript API は、最初に "プレビュー" で導入され、後で十分なテストが行われるとユーザーフィードバックが必要になった後、特定の番号付き要件セットの一部になります。
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 

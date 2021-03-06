@@ -3,12 +3,12 @@ title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e5b638969730be47c30c98d4fc231e58d492ac36
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270722"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505466"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -74,13 +74,13 @@ ms.locfileid: "50270722"
 |要素|説明|
 |:-----|:-----|
 |**CustomTab**|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
-|**OfficeTab**|**(PrimaryCommandSurface** を使用して) アプリリボン タブOfficeを拡張する場合は必須です。 OfficeTab 要素 **を使用** する場合 **、CustomTab 要素は使用** することはできません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
+|**OfficeTab**|既定のアプリ リボン タブ **(PrimaryCommandSurface** をOfficeを拡張する場合は必須です。 OfficeTab 要素 **を使用する** 場合は **、CustomTab 要素を使用** することはできません。 詳細については、「[OfficeTab](officetab.md)」を参照してください。|
 |**OfficeMenu**|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
 |**Group**|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
 |**Label**|必須。 グループのラベルです。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
 |**Icon**|必須。 小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid 属性** は 32 文字以内で **、Image** 要素の **id** 属性の値に設定する必要があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。 3 つのイメージのサイズ (16、32、80) が必要です。 5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
 |**Tooltip**|省略可能。 グループのツールヒント。 **resid 属性** は 32 文字以内で **、String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
-|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 コントロール **要素** には、ボタンまたは **メニュー** のいずれかを指定 **できます**。 メニュー **を** 使用して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:**  トラブルシューティングを容易にするために **、Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。|
+|**Control**|各グループには、少なくとも 1 つのコントロールが必要です。 **コントロール要素** には、Button または **Menu** を **指定できます**。 メニュー **を使用** して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細については、「[Button コントロール](control.md#button-control)」および「[Menu コントロール](control.md#menu-dropdown-button-controls)」のセクションを参照してください。<br/>**注:**  トラブルシューティングを容易にするために **、Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。|
 |**スクリプト**|カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。 Developer Preview では、この要素は使用しません。 代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。|
 |**Page**|カスタム関数についての HTML ページにリンクします。|
 
@@ -225,6 +225,9 @@ ms.locfileid: "50270722"
 
 この拡張点は、モジュール拡張機能用のリボンにボタンを配置します。
 
+> [!IMPORTANT]
+> メールボックスイベント [とアイテム](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) イベント [の](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 登録は、この拡張ポイントでは使用できません。
+
 #### <a name="child-elements"></a>子要素
 
 |  要素 |  説明  |
@@ -261,22 +264,24 @@ ms.locfileid: "50270722"
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-この拡張点は、モバイル フォーム ファクターの予定のコマンド サーフェスにモードに適したトグルを設定します。 会議の開催者はオンライン会議を作成できます。 その後、出席者はオンライン会議に参加できます。 このシナリオの詳細については、オンライン会議プロバイダー向け Outlook モバイル アドインの作成に関する記事 [を参照](../../outlook/online-meeting.md) してください。
+この拡張ポイントは、モバイル フォーム ファクターの予定のコマンド 画面にモードに適したトグルを設定します。 会議の開催者は、オンライン会議を作成できます。 その後、出席者はオンライン会議に参加できます。 このシナリオの詳細については、「オンライン会議プロバイダーの Outlook モバイル アドインを作成する」 [の記事を参照](../../outlook/online-meeting.md) してください。
 
 > [!NOTE]
-> この拡張点は、Microsoft 365 サブスクリプションを使用する Android および iOS でのみサポートされます。
+> この拡張ポイントは、Microsoft 365 サブスクリプションを持つ Android および iOS でのみサポートされます。
+>
+> メールボックスイベント [とアイテム](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) イベント [の](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 登録は、この拡張ポイントでは使用できません。
 
 #### <a name="child-elements"></a>子要素
 
 |  要素 |  説明  |
 |:-----|:-----|
-|  [Control](control.md) |  コマンド サーフェスにボタンを追加します。  |
+|  [Control](control.md) |  コマンド 画面にボタンを追加します。  |
 
-`ExtensionPoint` この型の要素は、1 つの子要素 (要素) のみを持 `Control` つ場合があります。
+`ExtensionPoint` この型の要素は、要素という 1 つの子要素のみを持 `Control` つ場合があります。
 
-この `Control` 拡張点に含まれる要素には、属性が設定 `xsi:type` されている必要があります `MobileButton` 。
+この `Control` 拡張ポイントに含まれる要素には、属性がに `xsi:type` 設定されている必要があります `MobileButton` 。
 
-イメージ `Icon` は、16 進数コードを使用してグレースケールで表示するか、他の色形式 `#919191` で同等 [の色を使用する必要があります](https://convertingcolors.com/hex-color-919191.html)。
+画像 `Icon` は、16 進数コードまたは他の色形式で同等の値を使用 `#919191` して [グレースケールに設定する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 
 #### <a name="example"></a>例
 
@@ -305,15 +310,18 @@ ms.locfileid: "50270722"
 ### <a name="launchevent-preview"></a>LaunchEvent (プレビュー)
 
 > [!NOTE]
-> この拡張点は、Outlook on [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) the web および Microsoft 365 サブスクリプションを使用する Windows のプレビューでのみサポートされます。
+> この拡張ポイントは、Outlook on [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) the web および Microsoft 365 サブスクリプションを使用した Windows でのプレビューでのみサポートされます。
 
-この拡張点により、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 次のとおりです `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、「Outlook アドインをイベント ベースのアクティブ化用に構成する」 [の記事を参照](../../outlook/autolaunch.md) してください。
+この拡張ポイントを使用すると、デスクトップ フォーム ファクターでサポートされているイベントに基づいてアドインをアクティブ化できます。 現在、サポートされている唯一のイベントは `OnNewMessageCompose` 、 と です `OnNewAppointmentOrganizer` 。 このシナリオの詳細については、「イベント ベースのライセンス認証用に Outlook アドインを構成 [する」を参照](../../outlook/autolaunch.md) してください。
+
+> [!IMPORTANT]
+> メールボックスイベント [とアイテム](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) イベント [の](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 登録は、この拡張ポイントでは使用できません。
 
 #### <a name="child-elements"></a>子要素
 
 |  要素 |  説明  |
 |:-----|:-----|
-| [LaunchEvents](launchevents.md) |  イベント ベース [のアクティブ化の LaunchEvent](launchevent.md) のリスト。  |
+| [LaunchEvents](launchevents.md) |  イベント ベース [のアクティブ化の LaunchEvent](launchevent.md) の一覧。  |
 | [SourceLocation](sourcelocation.md) |  ソース JavaScript ファイルの場所。  |
 
 #### <a name="example"></a>例
@@ -331,7 +339,10 @@ ms.locfileid: "50270722"
 
 ### <a name="events"></a>Events
 
-この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張点の使用の詳細については、Outlook アドインの送信時 [機能を参照してください](../../outlook/outlook-on-send-addins.md)。
+この拡張点は、指定したイベントのイベント ハンドラーを追加します。 この拡張ポイントの使用の詳細については、「Outlook アドインの送信時機能 [」を参照してください](../../outlook/outlook-on-send-addins.md)。
+
+> [!IMPORTANT]
+> メールボックスイベント [とアイテム](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) イベント [の](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 登録は、この拡張ポイントでは使用できません。
 
 | 要素 | 説明  |
 |:-----|:-----|
@@ -349,6 +360,9 @@ ms.locfileid: "50270722"
 
 この拡張点は、指定したエンティティの種類に対するコンテキスト アドインのアクティブ化を追加します。
 
+> [!IMPORTANT]
+> メールボックスイベント [とアイテム](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) イベント [の](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 登録は、この拡張ポイントでは使用できません。
+
 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
 
 > [!NOTE]
@@ -362,7 +376,7 @@ ms.locfileid: "50270722"
 
 #### <a name="label"></a>Label
 
-必ず指定します。 グループのラベルです。 **resid 属性** は 32 文字以内で [、Resources](resources.md)要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定する必要があります。
+必ず指定します。 グループのラベルです。 **resid 属性** は 32 文字以内で、Resources 要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 #### <a name="highlight-requirements"></a>強調表示の要件
 

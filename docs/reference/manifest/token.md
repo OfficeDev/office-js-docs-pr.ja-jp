@@ -1,18 +1,18 @@
 ---
-title: マニフェストファイルの Token 要素
-description: マニフェスト内の URL テンプレートで使用できるトークンまたはワイルドカードを指定します。
+title: マニフェスト ファイル内の Token 要素
+description: マニフェストの URL テンプレートで使用できるトークンまたはワイルドカードを指定します。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e26af44c566ab09ac81c8194e1ae7d85aaac327
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996703"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505368"
 ---
 # <a name="token-element"></a>Token 要素
 
-個別の URL トークンを定義します。
+個々の URL トークンを定義します。 この要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する [」を参照してください](../../develop/extended-overrides.md)。
 
 **アドインの種類:** 作業ウィンドウ
 
@@ -36,9 +36,9 @@ ms.locfileid: "48996703"
 
 |属性|説明|
 |:-----|:-----|
-|DefaultValue|いずれかの子要素に一致する条件がない場合は、このトークンの既定値 `<Override>` 。|
-|名前|トークン名。 この名前は、ユーザー定義です。 トークンの種類は、type 属性によって決まります。|
-|xsi:type|トークンの種類を定義します。 この属性は  `"RequirementsToken"` 、、またはのいずれかに設定する必要があり  `"LocaleToken"` ます。|
+|DefaultValue|子要素に条件が一致する場合、このトークン `<Override>` の既定値。|
+|名前|トークン名。 この名前はユーザー定義です。 トークンの種類は type 属性によって決まります。|
+|xsi:type|トークンの種類を定義します。 この属性は、次のいずれかの値に  `"RequirementsToken"` 設定する必要があります  `"LocaleToken"` 。|
 
 ## <a name="example"></a>例
 
