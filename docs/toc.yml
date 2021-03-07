@@ -97,6 +97,8 @@ items:
             items:
               - name: 概要
                 href: develop/add-in-manifests.md
+              - name: 拡張オーバーライド
+                href: develop/extended-overrides.md
               - name: マニフェスト要素の正しい順序を確認する
                 href: develop/manifest-element-ordering.md
               - name: API とマニフェストのバージョンを更新する
