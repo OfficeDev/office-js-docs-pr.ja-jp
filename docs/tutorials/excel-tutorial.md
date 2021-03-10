@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104869"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613935"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -36,7 +36,7 @@ ms.locfileid: "50104869"
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type: (プロジェクトの種類を選択)** `Office Add-in Task Pane project`
-- **Choose a script type: (スクリプトの種類を選択)** `Javascript`
+- **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
