@@ -706,7 +706,7 @@ items:
           - name: JSON メタデータの自動生成
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: Excel JS API を呼び出す
+          - name: Excel JavaScript API を呼び出す
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
           - name: 同等な XLL を特定する
@@ -1089,7 +1089,10 @@ items:
           - name: API リファレンス
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
-          - name: プレゼンテーションのスライドを挿入および削除する
+          - name: スライドを追加および削除する
+            href: powerpoint/add-slides.md
+            displayName: PowerPoint
+          - name: スライドを挿入する
             href: powerpoint/insert-slides-into-presentation.md
             displayName: PowerPoint
           - name: アドインからドキュメント全体を取得する
