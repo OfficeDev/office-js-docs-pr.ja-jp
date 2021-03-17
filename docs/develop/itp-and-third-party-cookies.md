@@ -1,0 +1,66 @@
+---
+title: サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する
+description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
+ms.date: 03/12/2021
+localization_priority: Normal
+ms.openlocfilehash: 48db782a8a8a179183fdd1bdfdfd55ee1c5698d4
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836911"
+---
+# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a><span data-ttu-id="40409-103">サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する</span><span class="sxs-lookup"><span data-stu-id="40409-103">Develop your Office Add-in to work with ITP when using third-party cookies</span></span>
+
+<span data-ttu-id="40409-104">カスタム アドインOfficeサード パーティ Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント 追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。</span><span class="sxs-lookup"><span data-stu-id="40409-104">If your Office Add-in requires third-party cookies, those cookies are blocked if Intelligent Tracking Prevention (ITP) is used by the browser runtime that loaded your add-in.</span></span> <span data-ttu-id="40409-105">サードパーティの Cookie を使用してユーザーを認証したり、設定の保存などの他のシナリオで使用している場合があります。</span><span class="sxs-lookup"><span data-stu-id="40409-105">You may be using third-party cookies to authenticate users, or for other scenarios, such as storing settings.</span></span>
+
+<span data-ttu-id="40409-106">アドインとOfficeがサードパーティの Cookie に依存している必要のある場合は、次の手順を使用して ITP を使用します。</span><span class="sxs-lookup"><span data-stu-id="40409-106">If your Office Add-in and website must rely on third-party cookies, use the following steps to work with ITP:</span></span>
+
+1. <span data-ttu-id="40409-107">OAuth [2.0 Authorization](https://tools.ietf.org/html/rfc6749)を設定して、認証ドメイン (Cookie を要求するサード パーティ) が承認トークンを Web サイト   に転送します。</span><span class="sxs-lookup"><span data-stu-id="40409-107">Set up [OAuth 2.0 Authorization](https://tools.ietf.org/html/rfc6749) so that the authenticating domain (in your case, the third-party that expects cookies) forwards an authorization token to your website.</span></span> <span data-ttu-id="40409-108">トークンを使用して、サーバーセットの Secure Cookie と HttpOnly Cookie を使用してファースト パーティのログイン [セッションを確立します](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。</span><span class="sxs-lookup"><span data-stu-id="40409-108">Use the token to establish a first-party login session with a server-set Secure and [HttpOnly cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies).</span></span>
+2. <span data-ttu-id="40409-109">サードパーティが[ファースト パーティ](https://webkit.org/blog/8124/introducing-storage-access-api/)の Cookie へのアクセスを取得するためのアクセス許可を要求できるよう、ストレージ アクセス   API を使用します。</span><span class="sxs-lookup"><span data-stu-id="40409-109">Use the [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) so that the third-party can request permission to get access to its first-party cookies.</span></span> <span data-ttu-id="40409-110">Mac 上の現在Officeバージョンと web 上Office両方ともこの API をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="40409-110">Current versions of Office on Mac and Office on the web both support this API.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="40409-111">認証以外の目的で Cookie を使用している場合は、シナリオでの使用 `localStorage` を検討してください。</span><span class="sxs-lookup"><span data-stu-id="40409-111">If you're using cookies for purposes other than authentication, then consider using `localStorage` for your scenario.</span></span>
+
+<span data-ttu-id="40409-112">次のコード サンプルは、記憶域アクセス API を使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="40409-112">The following code sample shows how to use the Storage Access API:</span></span>
+
+```javascript
+function displayLoginButton() {
+  var button = createLoginButton();
+  button.addEventListener("click", function(ev) {
+    document.requestStorageAccess().then(function() {
+      authenticateWithCookies(); 
+    }).catch(function() {
+      // User must have previously interacted with this domain loaded in a top frame
+      // Also you should have previously written a cookie when domain was loaded in the top frame
+      console.error("User cancelled or requirements were not met.");
+    });
+  });
+}
+
+if (document.hasStorageAccess) { 
+  document.hasStorageAccess().then(function(hasStorageAccess) { 
+    if (!hasStorageAccess) { 
+      displayLoginButton(); 
+    } else { 
+      authenticateWithCookies(); 
+    } 
+  }); 
+} else { 
+    authenticateWithCookies(); 
+} 
+```
+
+## <a name="about-itp-and-third-party-cookies"></a><span data-ttu-id="40409-113">ITP およびサード パーティの Cookie について</span><span class="sxs-lookup"><span data-stu-id="40409-113">About ITP and third-party cookies</span></span>
+
+<span data-ttu-id="40409-114">サード パーティ Cookie は、ドメインがトップ レベル のフレームとは異なる iframe に読み込まれる Cookie です。</span><span class="sxs-lookup"><span data-stu-id="40409-114">Third-party cookies are cookies that are loaded in an iframe, where the domain is different from the top level frame.</span></span> <span data-ttu-id="40409-115">ITP は複雑な認証シナリオに影響を与える可能性があります。ポップアップ ダイアログを使用して資格情報を入力し、認証フローを完了するためにアドイン iframe によって Cookie アクセスが必要になります。</span><span class="sxs-lookup"><span data-stu-id="40409-115">ITP could affect complex authentication scenarios, where a popup dialog is used to enter credentials and then the cookie access is needed by an add-in iframe to complete the authentication flow.</span></span> <span data-ttu-id="40409-116">ITP は、以前にポップアップ ダイアログを使用して認証を行ったサイレント認証シナリオにも影響を与える可能性がありますが、その後アドインを使用して非表示の iframe を介して認証を試みる場合があります。</span><span class="sxs-lookup"><span data-stu-id="40409-116">ITP could also affect silent authentication scenarios, where you have previously used a popup dialog to authenticate, but subsequent use of the add-in tries to authenticate through a hidden iframe.</span></span>
+
+<span data-ttu-id="40409-117">Mac でOfficeを開発する場合、サードパーティの Cookie へのアクセスは MacOS Big Sur SDK によってブロックされます。</span><span class="sxs-lookup"><span data-stu-id="40409-117">When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK.</span></span> <span data-ttu-id="40409-118">これは、WebKit ITP が Safari ブラウザーで既定で有効にされ、WKWebview によってすべてのサードパーティ Cookie がブロックされるためです。</span><span class="sxs-lookup"><span data-stu-id="40409-118">This is because WebKit ITP is enabled by default on the Safari browser, and WKWebview blocks all third-party cookies.</span></span> <span data-ttu-id="40409-119">Officeバージョン 16.44 以降のバージョンは、MacOS Big Sur SDK と統合されています。</span><span class="sxs-lookup"><span data-stu-id="40409-119">Office on Mac version 16.44 or later is integrated with the MacOS Big Sur SDK.</span></span>
+
+<span data-ttu-id="40409-120">Safari ブラウザーで、エンド ユーザーは、[基本設定のプライバシー] の[クロスサイト追跡を防止する] チェック ボックスをオンに切り替え  >  、ITP をオフにできます。</span><span class="sxs-lookup"><span data-stu-id="40409-120">In the Safari browser, end users can toggle the **Prevent cross-site tracking** checkbox under **Preference** > **Privacy** to turn off ITP.</span></span> <span data-ttu-id="40409-121">ただし、埋め込み WebKit2 コントロールの ITP をオフにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="40409-121">However, ITP cannot be turned off for the embedded WebKit2 control.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="40409-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="40409-122">See also</span></span>
+
+- [<span data-ttu-id="40409-123">サードパーティの Cookie がブロックされている Safari や他のブラウザーで ITP を処理する</span><span class="sxs-lookup"><span data-stu-id="40409-123">Handle ITP in Safari and other browsers where third-party cookies are blocked</span></span>](https://docs.microsoft.com/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [<span data-ttu-id="40409-124">WebKit での追跡防止</span><span class="sxs-lookup"><span data-stu-id="40409-124">Tracking Prevention in WebKit</span></span>](https://webkit.org/tracking-prevention/)
+- [<span data-ttu-id="40409-125">Chrome の "Privacy Sandbox"</span><span class="sxs-lookup"><span data-stu-id="40409-125">Chrome’s “Privacy Sandbox”</span></span>](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
+- [<span data-ttu-id="40409-126">ストレージ アクセス API の導入</span><span class="sxs-lookup"><span data-stu-id="40409-126">Introducing the Storage Access API</span></span>](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)
