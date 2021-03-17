@@ -1,18 +1,18 @@
 ---
-title: マニフェストファイルの FileName 要素
-description: Web アドインのカスタム関数に対応する XLL のファイル名を指定します。
-ms.date: 05/03/2019
+title: マニフェスト ファイルの FileName 要素
+description: Web アドインのカスタム関数に相当する XLL のファイル名を指定します。
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: cc6f17b122ccbd3695edcf854664aa343728ae9f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4909767a51355f21cd180d35f693ffce86224ec
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611863"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836845"
 ---
 # <a name="filename-element"></a>FileName 要素
 
-Web アドインのカスタム関数に対応する XLL のファイル名を指定します。
+Web アドインのカスタム関数に相当する XLL のファイル名を指定します。
 
 **アドインの種類:** カスタム関数
 
@@ -24,10 +24,10 @@ Web アドインのカスタム関数に対応する XLL のファイル名を�
 
 ## <a name="contained-in"></a>含まれる場所
 
-[EquivalentAdd](equivalentaddin.md)
+[EquivalentAddin](equivalentaddin.md)
 
 
 ## <a name="see-also"></a>関連項目
 
 - [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [既存の COM アドインと互換性のある Excel アドインを作成する](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Office アドインを既存の COM アドインと互換できるようにする](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

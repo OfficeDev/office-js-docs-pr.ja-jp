@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 03/15/2021
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: a5faa4fd8af2b41a3d79ac1c978a4c550592b27e
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 4d960d642c3efd2f6f9745587b6cb0ef42ce0a86
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071670"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836824"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -27,7 +27,7 @@ ms.locfileid: "49071670"
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-次のコードサンプルでは、関数は、" `webRequest` スペースがあります" という名前の "API" に到達します。これは、現在、国際宇宙ステーションにいるユーザーの数を追跡します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
+次のコード サンプルでは、この関数は、国際宇宙ステーションの現在の人数を追跡する架空の Contoso "スペース内のユーザー数" API に `webRequest` 到達します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
 
 独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](custom-functions-batching.md)を検討してください。
 
@@ -56,7 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>XHR の使用例
 
-次のコードサンプルでは、この `getStarCount` 関数は GITHUB API を呼び出して、特定のユーザーのリポジトリに与えられた星の量を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
+次のコード サンプルでは、この関数は Github API を呼び出して、特定のユーザーのリポジトリに与えられた星の量 `getStarCount` を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
 
 ```TS
 /**
@@ -101,8 +101,8 @@ async function getStarCount(userName: string, repoName: string) {
 
 ストリーミング関数を宣言するには、次のいずれかを使用できます。
 
-- `@streaming`タグ。
-- `CustomFunctions.StreamingInvocation`呼び出しパラメーター。
+- タグ `@streaming` 。
+- 呼 `CustomFunctions.StreamingInvocation` び出しパラメーター。
 
 以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
 
@@ -141,17 +141,17 @@ Excel では、次のような状況で関数の実行をキャンセルしま�
 
 また、要求が発生したときに、オフラインの場合でも、ケースを処理する既定のストリーミング値を設定することもできます。
 
-また、ストリーミング関数と関連の _ない_ 、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1つの値を返す非同期のカスタム関数のみが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
+また、ストリーミング関数と関連の _ない_、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1 つの値を返す非同期のカスタム関数だけが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
 ### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
 
-`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 パラメーターには、 `invocation` セルに関するコンテキスト (アドレスやコンテンツなど) が指定され、メソッドを使用できるように `setResult` `onCanceled` なります。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
+`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 この `invocation` パラメーターは、セルに関するコンテキスト (アドレスやコンテンツなど) を提供し、使用およびメソッド `setResult` を `onCanceled` 使用できます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
 
-TypeScript を使用している場合は、呼び出しハンドラーの型がまたはである必要があり [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) ます。
+TypeScript を使用している場合、呼び出しハンドラーは型または [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) .
 
 ## <a name="receiving-data-via-websockets"></a>WebSocket 経由のデータ受信
 
-カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。 Websocket を使用すると、カスタム関数はサーバーとの接続を開いて、特定のイベントが発生したときに、データに対して明示的にサーバーをポーリングすることなく、サーバーからのメッセージを自動的に受信することができます。
+カスタム関数内で、WebSocket を使用してサーバーとの固定接続でデータを交換することができます。 WebSockets を使用すると、カスタム関数はサーバーとの接続を開き、特定のイベントが発生した場合にサーバーからメッセージを自動的に受信できます。データをサーバーに明示的にポーリングする必要はありません。
 
 ### <a name="websockets-example"></a>WebSocket の使用例
 

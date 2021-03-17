@@ -1,32 +1,39 @@
 ---
-title: Office アドインを既存の COM アドインと互換できるようにする
-description: Office アドインと同等の COM アドインの互換性を有効にする
-ms.date: 07/10/2020
+title: Office アドインに既存の COM アドインとの互換性をもたせる
+description: アドインと同等の COM アドインOffice互換性を有効にする。
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: a29fcda8eb83b8fdbc3f7d170932838ffe44d233
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: b5235255987cc6a644491bc548b92701b350a179
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159550"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836855"
 ---
-# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインを既存の COM アドインと互換できるようにする
+# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインに既存の COM アドインとの互換性をもたせる
 
-既存の COM アドインがある場合は、Office アドインで同等の機能を構築することにより、web または Mac 上の Office など、他のプラットフォームでソリューションを実行できます。 場合によっては、Office アドインが、対応する COM アドインで使用可能なすべての機能を提供できないことがあります。 このような状況では、対応する Office アドインが提供するよりも、COM アドインによって Windows のユーザーの利便性が向上することがあります。
+既存の COM アドインがある場合は、Office アドインで同等の機能を構築して、web や Mac 上の Office などの他のプラットフォームでソリューションを実行できます。 場合によっては、Office COM アドインで使用可能なすべての機能を提供できない場合があります。 このような状況では、COM アドインは、アドインが提供できる対応する機能よりも、Windows でのユーザー エクスペリエンスOffice向上することがあります。
 
-同等の COM アドインがユーザーのコンピューターに既にインストールされている場合に office アドインを構成すると、office アドインではなく、Windows が COM アドインを実行するようになります。 COM アドインは、Office がユーザーのコンピューターにインストールされているものに応じて、COM アドインと Office アドインをシームレスに移行するため、"同等" と呼ばれます。
+Office アドインを構成して、同等の COM アドインが既にユーザーのコンピューターにインストールされている場合、Windows 上の Office が Office アドインではなく COM アドインを実行します。 COM アドインは、Office がユーザーのコンピューターにインストールされている COM アドインと Office アドインの間でシームレスに切り替わるため、「同等」と呼ばれる。
 
 > [!NOTE]
-> この機能は、Microsoft 365 サブスクリプションに接続する際に、次のプラットフォームでサポートされています。
-> - Excel、Word、および PowerPoint on the web
-> - Excel、Word、および PowerPoint on Windows (バージョン1904以降)
-> - Excel、Word、および PowerPoint on Mac (バージョン13.329 以降)
+> この機能は、Microsoft 365 サブスクリプションに接続されている場合、次のプラットフォームでサポートされます。
+>
+> - Web 上の Excel、Word、および PowerPoint
+> - Windows 上の Excel、Word、および PowerPoint (バージョン 1904 以降)
+> - Mac 上の Excel、Word、および PowerPoint (バージョン 13.329 以降)
+> - Outlook on Windows (バージョン 2102 以降)
 
-## <a name="specify-an-equivalent-com-add-in-in-the-manifest"></a>マニフェストで同等の COM アドインを指定する
+## <a name="specify-an-equivalent-com-add-in"></a>同等の COM アドインを指定する
 
-Office アドインと COM アドインの互換性を有効にするには、Office アドインの[マニフェスト](add-in-manifests.md)で同等の COM アドインを特定します。 その後、office アドインの両方がインストールされている場合は、Windows で office アドインではなく COM アドインが使用されます。
+### <a name="manifest"></a>マニフェスト
 
-次の例は、COM アドインを同等のアドインとして指定するマニフェストの一部を示しています。 要素の値は `ProgId` COM アドインを識別し、 `EquivalentAddins` 要素は終了タグの直前に配置する必要があり `VersionOverrides` ます。
+> [!IMPORTANT]
+> Excel、PowerPoint、および Word に適用されます。 Outlook のサポートは近日公開予定です。
+
+Office アドインと COM アドイン間の互換性を有効にするには、Office アドインのマニフェストで同等の COM アドインを[](add-in-manifests.md)識別します。 次Office Windows では、両方がインストールされている場合は、Officeアドインの代わりに COM アドインが使用されます。
+
+次の例は、COM アドインを同等のアドインとして指定するマニフェストの部分を示しています。 要素の値は COM アドインを識別し `ProgId` [、EquivalentAddins](../reference/manifest/equivalentaddins.md) 要素は終了タグの直前に配置する必要 `VersionOverrides` があります。
 
 ```xml
 <VersionOverrides>
@@ -41,50 +48,76 @@ Office アドインと COM アドインの互換性を有効にするには、Of
 ```
 
 > [!TIP]
-> COM アドインと XLL UDF の互換性の詳細については、「 [xll ユーザー定義関数と互換性のあるカスタム関数を作成する](../excel/make-custom-functions-compatible-with-xll-udf.md)」を参照してください。
+> COM アドインと XLL UDF の互換性については、「カスタム関数を XLL ユーザー定義関数と互換性のあるものにする [」を参照してください](../excel/make-custom-functions-compatible-with-xll-udf.md)。
 
-## <a name="equivalent-behavior-for-users"></a>ユーザーの同等の動作
+### <a name="group-policy"></a>グループ ポリシー
 
-Office アドインマニフェストで同等の COM アドインが指定されている場合、Windows 上の Office では、対応する COM アドインがインストールされている場合、Office アドインのユーザーインターフェイス (UI) は表示されません。 Office は、Office アドインのリボンボタンを非表示にし、インストールを妨げることはありません。 そのため、Office アドインは引き続き UI 内の次の場所に表示されます。
+> [!IMPORTANT]
+> Outlook にのみ適用されます。
 
-- [**個人用アドイン] の**下
-- リボンマネージャーのエントリとして
+Outlook Web アドインと COM/VSTO アドインの互換性を宣言するには、グループ ポリシーで同等の COM アドインを識別し、ユーザーのコンピューターで構成することにより、同等の COM または **VSTO** アドインがインストールされている Outlook Web アドインを非アクティブ化します。 次に、Outlook on Windows では、両方がインストールされている場合は、Web アドインの代わりに COM アドインを使用します。
+
+1. ツールの [インストール手順に](https://www.microsoft.com/download/details.aspx?id=49030)注意を払って、最新の管理用テンプレート ツール **をダウンロードします**。
+1. ローカル グループ ポリシー エディター **(gpedit.msc) を開きます**。
+1. [ユーザー **構成]**  >  **[管理用テンプレート**]   >  **[Microsoft Outlook 2016**  >  **その他] に移動します**。
+1. 同等の **COM または VSTO** アドインがインストールされている Outlook Web アドインを非アクティブ化する設定を選択します。
+1. リンクを開き、ポリシー設定を編集します。
+1. ダイアログの **Outlook Web アドインで非アクティブ化するには、次の操作を行います**。
+    1. [ **値の名前]** を `Id` Web アドインのマニフェストで見つかった名前に設定します。 **重要**: *中かっこ* をエントリの周囲 `{}` に追加しない。
+    1. Value **を** 同等 `ProgId` の COM/VSTO アドインの値に設定します。
+    1. **[OK] を** 選択して更新プログラムを有効にします。
+    ![ダイアログ "非アクティブ化する Outlook Web アドイン" を示すスクリーンショット](../images/outlook-deactivate-gpo-dialog.png)
+
+## <a name="equivalent-behavior-for-users"></a>ユーザーと同等の動作
+
+同等の [COM](#specify-an-equivalent-com-add-in)アドインを指定すると、windows 上の Office は、同等の COM アドインがインストールされている場合、Office アドインのユーザー インターフェイス (UI) は表示されません。 Officeアドインのリボン ボタンのみを非表示Officeし、インストールを妨げる必要があります。 したがって、Officeアドインは UI 内の次の場所に表示されます。
+
+- [ **自分のアドイン] の下**
+- リボン マネージャーのエントリとして (Excel、Word、および PowerPoint のみ)
 
 > [!NOTE]
-> マニフェストで同等の COM アドインを指定しても、web または Mac の Office などの他のプラットフォームには影響しません。
+> マニフェストで同等の COM アドインを指定すると、web 上や Mac 上の Officeなどの他のプラットフォームには影響しません。
 
-次のシナリオでは、ユーザーが Office アドインを取得する方法によって実行される処理について説明します。
+次のシナリオでは、ユーザーがアドインを取得する方法に応Office説明します。
 
-### <a name="appsource-acquisition-of-an-office-add-in"></a>Office アドインの AppSource 取得
+### <a name="appsource-acquisition-of-an-office-add-in"></a>AppSource によるアドインOffice取得
 
-ユーザーが AppSource から Office アドインを取得し、対応する COM アドインが既にインストールされている場合、Office は次のようになります。
+ユーザーが AppSource から Officeアドインを取得し、同等の COM アドインが既にインストールされている場合は、次Officeします。
 
-1. Office アドインをインストールします。
-2. リボンで Office アドイン UI を非表示にします。
-3. [COM アドイン] リボンボタンをポイントするユーザーの呼び出しを表示します。
+1. アドインOfficeインストールします。
+2. リボンでOfficeアドイン UI を非表示にします。
+3. COM アドイン リボン ボタンをポイントするユーザーの呼び出しを表示します。
 
-### <a name="centralized-deployment-of-office-add-in"></a>Office アドインの一元展開
+### <a name="centralized-deployment-of-office-add-in"></a>アドインのOffice展開
 
-管理者が一元展開を使用して Office アドインをテナントに展開しており、対応する COM アドインが既にインストールされている場合、ユーザーは Office を再起動して変更を表示する必要があります。 Office を再起動すると、次のようになります。
+管理者が集中展開を使用して Office アドインをテナントに展開し、同等の COM アドインが既にインストールされている場合、ユーザーは変更を表示する前に Office を再起動する必要があります。 再起動Office、次のコマンドが実行されます。
 
-1. Office アドインをインストールします。
-2. リボンで Office アドイン UI を非表示にします。
-3. [COM アドイン] リボンボタンをポイントするユーザーの呼び出しを表示します。
+1. アドインOfficeインストールします。
+2. リボンでOfficeアドイン UI を非表示にします。
+3. COM アドイン リボン ボタンをポイントするユーザーの呼び出しを表示します。
 
-### <a name="document-shared-with-embedded-office-add-in"></a>埋め込まれた Office アドインと共有されたドキュメント
+### <a name="document-shared-with-embedded-office-add-in"></a>埋め込みアドインと共有Officeドキュメント
 
-ユーザーが COM アドインをインストールしていて、Office アドインが埋め込まれた共有ドキュメントを取得した場合、Office は次のようになります。
+ユーザーが COM アドインをインストールし、埋め込み Office アドインを含む共有ドキュメントを取得した場合、そのユーザーがドキュメントを開いた場合、次のOfficeされます。
 
-1. Office アドインを信頼するかどうかをユーザーに確認します。
-2. 信頼できる場合は、Office アドインがインストールされます。
-3. リボンで Office アドイン UI を非表示にします。
+1. ユーザーにアドインを信頼Office求めるメッセージを表示します。
+2. 信頼できる場合は、Officeアドインがインストールされます。
+3. リボンでOfficeアドイン UI を非表示にします。
 
 ## <a name="other-com-add-in-behavior"></a>その他の COM アドインの動作
 
-ユーザーが同等の COM アドインをアンインストールした場合は、Windows の Office によって Office アドインの UI が復元されます。
+### <a name="excel-powerpoint-word"></a>Excel、PowerPoint、Word
 
-Office アドインに対応する COM アドインを指定した後、office アドインの更新プログラムの処理を停止します。 Office アドインの最新の更新プログラムを入手するには、まず COM アドインをアンインストールする必要があります。
+ユーザーが同等の COM アドインをアンインストールした場合は、Windows Officeアドイン UI Office復元します。
+
+カスタム アドインに同等の COM アドインを指定したOffice、Officeの更新プログラムの処理Office停止します。 アドインの最新の更新プログラムOffice、ユーザーはまず COM アドインをアンインストールする必要があります。
+
+### <a name="outlook"></a>Outlook
+
+対応する Web アドインを無効にするには、Outlook の起動時に COM/VSTO アドインを接続する必要があります。
+
+その後の Outlook セッション中に COM/VSTO アドインが切断された場合、Outlook が再起動されるまで、Web アドインは無効なままである可能性があります。
 
 ## <a name="see-also"></a>関連項目
 
-- [カスタム関数を XLL ユーザー定義関数と互換性を持つようにする](../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [カスタム関数を XLL ユーザー定義関数と互換性のあるものにする](../excel/make-custom-functions-compatible-with-xll-udf.md)

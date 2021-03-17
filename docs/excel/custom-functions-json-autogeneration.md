@@ -1,18 +1,18 @@
 ---
-ms.date: 12/22/2020
+ms.date: 03/15/2021
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
-ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
+ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "49735558"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836866"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
-Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。 JSDoc タグはビルド時に使用して、JSON メタデータ ファイルを作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で編集 [する手間を省きます](custom-functions-json.md)。
+Excel カスタム関数が JavaScript または TypeScript で記述されている場合、カスタム関数に関する追加の情報を提供するために、[JSDoc タグ](https://jsdoc.app/)が使用されます。 JSDoc タグはビルド時に使用して、JSON メタデータ ファイルを作成します。 JSDoc タグを使用すると、JSON メタデータ ファイルを手動で [編集する手間が省きます](custom-functions-json.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -46,18 +46,18 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ 名前の説明
 * [@requiresAddress](#requiresAddress)
+* [@requiresParameterAddresses](#requiresParameterAddresses)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
 * [@volatile](#volatile)
 
 ---
 <a id="cancelable"></a>
-
 ### <a name="cancelable"></a>@cancelable
 
 関数が取り消された場合に、カスタム関数がアクションを実行します。
 
-最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数は、関数が取り消された場合の結果を示す関数をプロパティ `oncanceled` に割り当てできます。
+最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数はプロパティに関数を割り当て、関数が取り消された場合の結果 `oncanceled` を示します。
 
 最後の関数のパラメーターが `CustomFunctions.CancelableInvocation` 型の場合、タグは表示されませんが、`@cancelable` と見なされます。
 
@@ -69,9 +69,9 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 
 構文: @customfunction _id_ _名_
 
-このタグは、JavaScript/TypeScript 関数が Excel カスタム関数かどうかを示します。 カスタム関数のメタデータを作成する必要があります。
+このタグは、JavaScript/TypeScript 関数が Excel カスタム関数を表します。 カスタム関数のメタデータを作成する必要があります。
 
-このタグの例を次に示します。
+次に、このタグの例を示します。
 
 ```js
 /**
@@ -120,7 +120,7 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 
 ### <a name="description"></a>説明
 
-Excel のユーザーが関数を入力すると説明が表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
+関数を入力すると、Excel のユーザーに説明が表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
 
 次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
 
@@ -133,14 +133,13 @@ Excel のユーザーが関数を入力すると説明が表示され、関数�
 ```
 
 <a id="helpurl"></a>
-
 ### <a name="helpurl"></a>@helpurl
 
 構文: @helpurl _url_
 
 指定された _url_ が Excel で表示されます。
 
-次の例では、 `helpurl` `www.contoso.com/weatherhelp` .
+次の例では、 `helpurl` です `www.contoso.com/weatherhelp` 。
 
 ```js
 /**
@@ -152,16 +151,15 @@ Excel のユーザーが関数を入力すると説明が表示され、関数�
 ```
 
 <a id="param"></a>
-
 ### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
 JavaScript 構文: @param {type} 名 _の説明_
 
-* `{type}` は、中かっこ内の型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 型を指定しない場合は、既定の型 `any` が使用されます。
-* `name` タグが適用される@paramを指定します。 必須です。
-* `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
+* `{type}` 中かっこ内の型情報を指定します。 使用できる型に関する詳細については、「[型](#types)」セクションを参照してください。 型が指定されていない場合は、既定の型 `any` が使用されます。
+* `name` タグが適用されるパラメーター@param指定します。 必須です。
+* `description` は、Excel で表示される関数のパラメーターの説明を示します。 オプションです。
 
 カスタム関数内のパラメーターを省略可能と指定する方法:
 
@@ -170,7 +168,7 @@ JavaScript 構文: @param {type} 名 _の説明_
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。
 
-次の例は、2 ~ 3 つの数値を加算する ADD 関数を示しています。3 番目の数値は省略可能なパラメーターです。
+次の例は、2 つまたは 3 つの数値を追加する ADD 関数を示しています。3 番目の数値は省略可能なパラメーターです。
 
 ```js
 /**
@@ -187,8 +185,8 @@ JavaScript 構文: @param {type} 名 _の説明_
 
 TypeScript 構文: @param 名 _の説明_
 
-* `name` タグが適用される@paramを指定します。 必須です。
-* `description` は、Excel で表示される関数のパラメーターの説明を示します。 省略可能です。
+* `name` タグが適用されるパラメーター@param指定します。 必須です。
+* `description` は、Excel で表示される関数のパラメーターの説明を示します。 オプションです。
 
 使用できる関数のパラメーターの型に関する詳細については、「[型](#types)」セクションを参照してください。
 
@@ -223,9 +221,9 @@ function add(first: number, second: number): number {
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
-最後の関数のパラメーターは、`CustomFunctions.Invocation` 型または派生型にする必要があります。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
+最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります `@requiresAddress` 。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
 
-次のサンプルは、パラメーターを組み合わせて使用して、カスタム関数を呼び出したセルのアドレス `invocation` `@requiresAddress` を返す方法を示しています。 詳細 [については、呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter) を参照してください。
+次のサンプルは、パラメーターを組み合わせて使用して、カスタム関数を呼び出したセルのアドレス `invocation` `@requiresAddress` を返す方法を示しています。 詳細については [、「呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter) 」を参照してください。
 
 ```js
 /**
@@ -242,8 +240,39 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-<a id="returns"></a>
+<a id="requiresParameterAddresses"></a>
+### <a name="requiresparameteraddresses"></a>@requiresParameterAddresses
 
+関数が入力パラメーターのアドレスを返す必要があります。 
+
+最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります  `@requiresParameterAddresses` 。 JSDoc コメントには、戻り値を行列として指定するタグも含 `@returns` める `@returns {string[][]}` 必要があります `@returns {number[][]}` 。 詳細については [、「Matrix 型](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) 」を参照してください。 
+
+関数が呼び出された場合、 `parameterAddresses` プロパティには入力パラメーターのアドレスが含まれます。
+
+次のサンプルは、3 つの入力パラメーターのアドレスを返す場合と組み合わせてパラメーターを使用 `invocation` `@requiresParameterAddresses` する方法を示しています。 詳細 [については、「パラメーターのアドレスを検出する](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) 」を参照してください。 
+
+```js
+/**
+ * Return the addresses of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+<a id="returns"></a>
 ### <a name="returns"></a>@returns
 
 構文: @returns {_type_}
@@ -268,22 +297,20 @@ function add(first: number, second: number): number {
 ```
 
 <a id="streaming"></a>
-
 ### <a name="streaming"></a>@streaming
 
 カスタム関数がストリーミング関数であることを示すのに使用されます。 
 
 最後のパラメーターは型です `CustomFunctions.StreamingInvocation<ResultType>` 。
-この関数は、次の値を返します `void` 。
+この関数は、 を返します `void` 。
 
-ストリーミング関数は、値を直接返すのではなく、最後のパラメーターを使用 `setResult(result: ResultType)` して呼び出します。
+ストリーミング関数は値を直接返すのではなく、最後のパラメーターを使用 `setResult(result: ResultType)` して呼び出します。
 
 ストリーム関数によってスローされる例外は無視されます。 `setResult()` が、エラー結果を示すために、Error により呼び出されることがあります。 ストリーミング関数と詳細については、「[ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。
 
 ストリーミング関数は、[@volatile](#volatile) としてマークできません。
 
 <a id="volatile"></a>
-
 ### <a name="volatile"></a>@volatile
 
 揮発性関数とは、引数を取らない場合や引数が変更されていない場合でも、ある瞬間と次の瞬間では結果が異なる関数です。 Excel では、再計算が実行される度に、揮発性関数を含むセルはすべての参照先と共に、再評価されます。 このため、揮発性関数を多用し過ぎると再計算にかかる時間が長くなる可能性があるため、多用しないようにします。
@@ -315,7 +342,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>マトリックス型
 
-2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、`number[][]`の型は数字のマトリックスを示します。 `string[][]` は、文字列のマトリックスを示します。
+2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、型は `number[][]` 数値の行列を示し、 `string[][]` 文字列の行列を示します。
 
 ### <a name="error-type"></a>エラーの種類
 
@@ -325,7 +352,7 @@ function roll6sided(): number {
 
 ### <a name="promise"></a>Promise
 
-関数は Promise を返し、promise が解決された場合に値を提供します。 Promise が拒否された場合、エラーがスローされます。
+カスタム関数は、約束が解決された場合に値を提供する約束を返します。 約束が拒否された場合、カスタム関数はエラーをスローします。
 
 ### <a name="other-types"></a>その他の型
 
