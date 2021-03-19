@@ -138,6 +138,8 @@ items:
                     href: develop/troubleshoot-sso-in-office-add-ins.md
               - name: アドインでの API 使用についてアクセス許可を要求する
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: ITP とサード パーティの Cookie
+                href: develop/itp-and-third-party-cookies.md
           - name: UI と UX
             items:
               - name: 概要
