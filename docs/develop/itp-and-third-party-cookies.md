@@ -3,12 +3,12 @@ title: サードパーティ cookie をOffice ITP で動作する新しいアド
 description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 48db782a8a8a179183fdd1bdfdfd55ee1c5698d4
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836911"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178042"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する
 
@@ -60,7 +60,7 @@ Safari ブラウザーで、エンド ユーザーは、[基本設定のプラ�
 
 ## <a name="see-also"></a>関連項目
 
-- [サードパーティの Cookie がブロックされている Safari や他のブラウザーで ITP を処理する](https://docs.microsoft.com/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [サードパーティの Cookie がブロックされている Safari や他のブラウザーで ITP を処理する](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [WebKit での追跡防止](https://webkit.org/tracking-prevention/)
 - [Chrome の "Privacy Sandbox"](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
 - [ストレージ アクセス API の導入](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

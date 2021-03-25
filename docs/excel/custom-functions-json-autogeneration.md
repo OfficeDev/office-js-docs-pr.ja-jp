@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836866"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178049"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -245,11 +245,11 @@ function getAddress(first, second, invocation) {
 
 関数が入力パラメーターのアドレスを返す必要があります。 
 
-最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります  `@requiresParameterAddresses` 。 JSDoc コメントには、戻り値を行列として指定するタグも含 `@returns` める `@returns {string[][]}` 必要があります `@returns {number[][]}` 。 詳細については [、「Matrix 型](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) 」を参照してください。 
+最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります  `@requiresParameterAddresses` 。 JSDoc コメントには、戻り値を行列として指定するタグも含 `@returns` める `@returns {string[][]}` 必要があります `@returns {number[][]}` 。 詳細については [、「Matrix 型](#matrix-type) 」を参照してください。 
 
 関数が呼び出された場合、 `parameterAddresses` プロパティには入力パラメーターのアドレスが含まれます。
 
-次のサンプルは、3 つの入力パラメーターのアドレスを返す場合と組み合わせてパラメーターを使用 `invocation` `@requiresParameterAddresses` する方法を示しています。 詳細 [については、「パラメーターのアドレスを検出する](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) 」を参照してください。 
+次のサンプルは、3 つの入力パラメーターのアドレスを返す場合と組み合わせてパラメーターを使用 `invocation` `@requiresParameterAddresses` する方法を示しています。 詳細 [については、「パラメーターのアドレスを検出する](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 」を参照してください。 
 
 ```js
 /**
