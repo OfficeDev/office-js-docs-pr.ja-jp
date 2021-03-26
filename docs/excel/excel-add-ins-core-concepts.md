@@ -254,4 +254,3 @@ else {
 * [<span data-ttu-id="9a6a4-206">Excel アドインのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="9a6a4-206">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [<span data-ttu-id="9a6a4-207">Excel の JavaScript API を使用した、パフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="9a6a4-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
 * [<span data-ttu-id="9a6a4-208">Excel JavaScript API リファレンス</span><span class="sxs-lookup"><span data-stu-id="9a6a4-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
-* [<span data-ttu-id="9a6a4-209">一般的なコーディングの問題と、予期しないプラットフォームの動作</span><span class="sxs-lookup"><span data-stu-id="9a6a4-209">Common coding issues and unexpected platform behaviors</span></span>](../develop/common-coding-issues.md)
