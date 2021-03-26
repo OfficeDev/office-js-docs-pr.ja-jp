@@ -45,10 +45,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 | 要素                                                                                      | コンテンツ | 作業ウィンドウ | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| 
-  [Id][]                                                                                       |    X    |     X     |    X    |
-| 
-  [Version][]                                                                                  |    X    |     X     |    X    |
+| [Id][]                                                                                       |    X    |     X     |    X    |
+| [Version][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
@@ -59,13 +57,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| 
-  [Permissions (ContentApp)][]<br/>
-  [Permissions (TaskPaneApp)][]<br/>
-  [Permissions (MailApp)][] |    X    |     X     |    X    |
-| 
-  [Rule (RuleCollection)][]<br/>
-  [Rule (MailApp)][]                                             |         |           |    X    |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
 | [Requirements (MailApp)*][]                                                                  |         |           |    X    |
 | [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
 | [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
