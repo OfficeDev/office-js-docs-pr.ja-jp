@@ -590,7 +590,7 @@ function insertTextIntoRange() {
 
 7. <span data-ttu-id="128ff-288">プロジェクトに行ったすべての変更が保存されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="128ff-288">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="128ff-289">アドインをテストする</span><span class="sxs-lookup"><span data-stu-id="128ff-289">Test the add-in</span></span>
+### <a name="test-the-add-in-1"></a><span data-ttu-id="128ff-289">アドインをテストする</span><span class="sxs-lookup"><span data-stu-id="128ff-289">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
