@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Office アドイン ドキュメント
-summary: Office アドイン プラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメントや Outlook のメール メッセージや予定表アイテムのコンテンツを操作するソリューションを構築します。 Officeアドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Office on the web、Windows、Mac、モバイルで実行できるソリューションを構築できます。
+summary: Office アドイン プラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメントや Outlook のメール メッセージと予定表アイテムのコンテンツを操作するソリューションを構築します。 Office アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Office で web、Windows、Mac、モバイルで実行できるソリューションを構築できます。
 brand: office
 metadata:
   title: Office アドイン ドキュメント
@@ -10,13 +10,13 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 02/12/2021
-  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
-  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+  ms.date: 03/29/2021
+  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "50238058"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435250"
 highlightedContent:
   items:
   - itemType: overview
@@ -26,25 +26,25 @@ highlightedContent:
     title: 5 分で Excel アドインをセットアップする
     url: quickstarts/excel-quickstart-jquery.md
   - itemType: learn
-    title: 'Microsoft Learn: アドインによるOfficeカスタマイズの概要'
+    title: 'Microsoft Learn: アドインを使用Officeカスタマイズの概要'
     url: /learn/modules/intro-office-add-ins
   - itemType: learn
-    title: 'Microsoft Learn: Office アドインを使用してOfficeクライアントを拡張する'
+    title: 'Microsoft Learn: Officeアドインを使用Officeクライアントを拡張する'
     url: /learn/paths/m365-office-add-in-associate
   - itemType: whats-new
-    title: Microsoft 365 開発者ブログ
+    title: Microsoft 365 開発者向けブログ
     url: https://developer.microsoft.com/office/blogs/technology/add-ins
   - itemType: how-to-guide
-    title: Office アドインビギナーズ ガイド
+    title: Office アドインの初心者向けガイド
     url: overview/learning-path-beginner.md
   - itemType: reference
     title: Office JavaScript API リファレンス ドキュメント
     url: /javascript/api/overview
   - itemType: sample
-    title: 'GitHub: アドインのOfficeとプラクティス'
+    title: 'GitHub: アドインのパターンOfficeプラクティス'
     url: https://github.com/OfficeDev/PnP-OfficeAddins
 conceptualContent:
-  title: 開発者の取り得
+  title: 開発者向けジャーニー
   summary: ''
   items:
   - title: 参照
@@ -54,10 +54,10 @@ conceptualContent:
       text: Office アドインを使用を開始
     - url: overview/explore-with-script-lab.md
       itemType: sample
-      text: Script Lab のテストと実験
+      text: スクリプト ラボのテストと実験
     - url: quickstarts/outlook-quickstart.md
       itemType: quickstart
-      text: 5 分で Outlook アドインをセットアップする
+      text: Outlook アドインを 5 分でセットアップする
     - url: quickstarts/powerpoint-quickstart.md
       itemType: quickstart
       text: 5 分で PowerPoint アドインをセットアップする
@@ -68,7 +68,7 @@ conceptualContent:
       text: 完全な Excel アドインを開発する
     - url: tutorials/outlook-tutorial.md
       itemType: tutorial
-      text: Outlook アドインのチュートリアルを見つける
+      text: Outlook アドインのチュートリアルを見る
     - url: overview/patterns-and-practices-overview.md
       itemType: sample
       text: 一般的なパターンとプラクティスの使用
@@ -90,10 +90,10 @@ conceptualContent:
     links:
     - url: publish/publish.md
       itemType: deploy
-      text: 展開オプションを確認する
+      text: 展開オプションの詳細
     - url: publish/centralized-deployment.md
       itemType: deploy
-      text: 一元展開の詳細
+      text: 集中展開の詳細
   - title: 公開
     links:
     - url: /office/dev/store
@@ -102,17 +102,17 @@ conceptualContent:
     - url: /office/dev/store/add-in-submission-guide
       itemType: how-to-guide
       text: Microsoft 365 App Store 申請ガイドを確認する
-  - title: Engage
+  - title: 参加
     links:
     - url: https://developer.microsoft.com/office
       itemType: whats-new
       text: 開発者プログラムに参加する
-    - url: https://officespdev.uservoice.com
+    - url: /answers/products/m365
       itemType: architecture
       text: 機能のリクエスト
     - url: https://stackoverflow.com/questions/tagged/office-js
       itemType: reference
-      text: Stack Overflow に関するOffice.js質問
+      text: スタック オーバーフローのOffice.js質問をする
     - url: https://github.com/OfficeDev/office-js/issues
       itemType: reference
-      text: バグまたは問題を報告する
+      text: バグや問題を報告する

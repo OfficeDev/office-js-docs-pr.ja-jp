@@ -1,19 +1,19 @@
 ### YamlMime:Landing
 title: PowerPoint アドイン ドキュメント
-summary: PowerPoint アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、web、Windows、Mac、iPad などの複数のプラットフォームで PowerPoint で実行できるソリューションを構築できます。 PowerPoint アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: PowerPoint アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iPad などの複数のプラットフォームにわたって PowerPoint で実行できるソリューションを構築できます。 PowerPoint アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: PowerPoint アドイン ドキュメント
   description: PowerPoint アドイン向けの学習用リソース。
   ms.prod: powerpoint
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 4d74bb0150d21cc1fe31a5e5a311c2ddd2150879
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 047b49ece238efac495da5a74e1699e2ccdcfea5
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363689"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435299"
 landingContent:
 - title: PowerPoint アドインについて
   linkLists:
@@ -33,9 +33,9 @@ landingContent:
     links:
     - text: PowerPoint アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: PowerPoint アドインを展開および発行する
+    - text: PowerPoint アドインの展開と発行
       url: ../publish/publish.md
-- title: Office の主なアドインの概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
@@ -56,7 +56,7 @@ landingContent:
     - text: ご質問
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 機能のリクエスト
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース
