@@ -6,14 +6,14 @@ metadata:
   description: OneNote アドイン向けの学習用リソース。
   ms.prod: onenote
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: f997d6c83c063b16fefca41b84f0688acca09939
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 3f5e65b4309bf150e425fac789a1807301d5130e
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363549"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435306"
 landingContent:
 - title: OneNote アドインについて
   linkLists:
@@ -27,13 +27,13 @@ landingContent:
       url: ../quickstarts/onenote-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: OneNote JavaScript API を使用してオブジェクトとノートブックのコンテンツを操作する
+    - text: OneNote JavaScript API を使用してオブジェクトとノートブック コンテンツを操作する
       url: ../reference/overview/onenote-add-ins-javascript-reference.md
     - text: OneNote アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: OneNote アドインを展開および発行する
+    - text: OneNote アドインの展開と発行
       url: ../publish/publish.md
-- title: Office の主なアドインの概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,7 +54,7 @@ landingContent:
     - text: ご質問
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 機能のリクエスト
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース

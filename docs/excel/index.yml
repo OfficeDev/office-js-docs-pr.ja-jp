@@ -6,14 +6,14 @@ metadata:
   description: Excel アドイン向けの学習用リソース。
   ms.prod: excel
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0d860e532431f090ad152ff3b33d8aba2ad88e24
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363563"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435313"
 landingContent:
 - title: Excel アドインについて
   linkLists:
@@ -25,19 +25,19 @@ landingContent:
     links:
     - text: 最初の Excel アドインをビルドする
       url: ../quickstarts/excel-quickstart-jquery.md
-    - text: スクリプトラボを使用した Api の探索
+    - text: スクリプト ラボで API を探索する
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
     - text: Excel JavaScript API を使用してオブジェクトとブックのコンテンツを操作する
       url: ../reference/overview/excel-add-ins-reference-overview.md
-    - text: カスタム関数を Excel に追加する
+    - text: Excel へのカスタム関数の追加
       url: custom-functions-overview.md
-    - text: Excel アドインをテストおよびデバッグする
+    - text: Excel アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: Excel アドインを展開および発行する
+    - text: Excel アドインの展開と発行
       url: ../publish/publish.md
-- title: Office の主なアドインの概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
@@ -58,7 +58,7 @@ landingContent:
     - text: ご質問
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 機能のリクエスト
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース

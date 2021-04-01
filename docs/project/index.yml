@@ -6,20 +6,20 @@ metadata:
   description: Project アドイン向けの学習用リソース。
   ms.prod: project
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 06234275e8344b2de01a65d5821a7420d6c7aba8
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 0803558dbf4e8e9edbd2d43f273bbbe40216849e
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47364039"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435292"
 landingContent:
-- title: プロジェクトアドインについて
+- title: プロジェクト アドインについて
   linkLists:
   - linkListType: overview
     links:
-    - text: プロジェクトアドインとは
+    - text: Project アドインとは
       url: project-add-ins.md
     - text: 'JavaScript API for Project '
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: プロジェクトアドインをテストおよびデバッグする
+    - text: Project アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: プロジェクトアドインを展開および発行する
+    - text: Project アドインの展開と発行
       url: ../publish/publish.md
-- title: Office の主なアドインの概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,7 +54,7 @@ landingContent:
     - text: ご質問
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 機能のリクエスト
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース
