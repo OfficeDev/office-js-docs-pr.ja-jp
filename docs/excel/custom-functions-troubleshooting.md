@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2020
+ms.date: 03/30/2021
 description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839839"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506141"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -39,9 +39,9 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ## <a name="common-problems-and-solutions"></a>一般的な問題と解決策
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>localhostからアドインを開くことができません：ローカルループバック例外を使用してください
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>localhost からアドインを開くことができません: ローカル ループバックの除外を使用する
 
-"We can't open this add-in from localhost"というエラーが表示された場合は、ローカルループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)を参照してください。
+"localhost からこのアドインを開くことができません" というエラーが表示される場合は、ローカル ループバックの除外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)を参照してください。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
@@ -53,7 +53,7 @@ Excelがカスタム関数の完了を待っている間、＃BUSY！と表示�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
 
-`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーの実行が停止するために数分かかる場合があります。
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーの実行が停止するには数分かかる場合があります。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「関数名と JSON メタデータの関連付け」を [参照してください](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+このプロセスの詳細については、「関数名と [JSON メタデータの関連付け」を参照してください](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="known-issues"></a>既知の問題
 
