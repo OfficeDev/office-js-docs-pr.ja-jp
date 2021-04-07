@@ -1,18 +1,18 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
-description: Excel JavaScript API を使用して、ブックまたはアプリケーションレベルの機能を使用して一般的なタスクを実行する方法を示すコードサンプルです。
-ms.date: 08/24/2020
+description: Excel JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行する方法を示すコード サンプル。
+ms.date: 04/05/2021
 localization_priority: Normal
-ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819505"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604653"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
-この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Workbook` ては、「 [Workbook オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook)」を参照してください。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
+この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Workbook` [、「Workbook オブジェクト (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.workbook)。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
 
 Workbook オブジェクトは、Excel を操作するアドインのエントリ ポイントです。 このオブジェクトは、Excel データのアクセスや変更に使用するワークシート、テーブル、ピボットテーブル、その他のコレクションを保持します。 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) オブジェクトは、個々のワークシートを使用して、ブックのすべてのデータにアドインからアクセスできるようにします。 具体的には、アドインからワークシートの追加、ワークシート間の移動、ワークシート イベントへのハンドラーの割り当てができます。 ワークシートへのアクセスと編集の方法については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md)」を参照してください。
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 `createWorkbook` メソッドは既存のブックのコピーの作成もできます。 このメソッドは、オプションのパラメーターとして .xlsx ファイルの base64 エンコード文字列表現を受け取ります。 文字列の引数は有効な .xlsx ファイルと見なされ、作成されるブックはそのファイルのコピーになります。
 
-[ファイルスライシング](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)を使用して、アドインの現在のブックを base64 でエンコードされた文字列として取得できます。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
+ファイルスライスを使用すると、アドインの現在のブックを base64 エンコード文字列 [として取得できます](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
 
 ```js
 var myFile = document.getElementById("file");
@@ -75,15 +75,19 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>既存のブックのコピーを現在のブックに挿入する (プレビュー)
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` メソッドは現在、パブリック プレビューでのみ使用でき、Windows および Mac 上の Office でのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> この `Workbook.insertWorksheetsFromBase64` メソッドは現在、パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
-前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブックの [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) にある `addFromBase64` メソッドは、対象のブックのワークシートのコピーを現在のブックに挿入します。 他のブックのファイルは、`Excel.createWorkbook` 呼び出しの場合と同様に、base64 エンコード文字列として渡されます。
+前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット ブックのワークシートのコピーを自体に `insertWorksheetsFromBase64` 挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。 
 
 ```TypeScript
-addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-次の例では、ブックのワークシートが現在のブックのアクティブ ワークシートの直後に挿入されています。 `null` が `sheetNamesToInsert?: string[]` パラメーターに渡されている点に注意してください。 つまり、すべてのワークシートが挿入されます。
+次の使用例は、別のブックを現在のブックに挿入します。 新しいワークシートは、アクティブなワークシートの後に挿入されます。 `[]` [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)プロパティのパラメーターとして渡されます `sheetNamesToInsert` 。 つまり、既存のブックのすべてのワークシートが現在のブックに挿入されます。
+
+> [!IMPORTANT]
+> この `insertWorksheetsFromBase64` メソッドは、Windows、Mac、および Web 上の Excel でサポートされています。 iOS ではサポートされていません。 さらに、Web 上の Excel では、ピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされません。 これらのオブジェクトが存在する場合、メソッドは Web 上の `insertWorksheetsFromBase64` `UnsupportedFeature` Excel でエラーを返します。 
 
 ```js
 var myFile = document.getElementById("file");
@@ -91,22 +95,26 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // strip off the metadata before the base64-encoded string
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
-
-        var sheets = context.workbook.worksheets;
-        sheets.addFromBase64(
-            workbookContents,
-            null, // get all the worksheets
-            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
-            sheets.getActiveWorksheet() // insert them after the active worksheet
-        );
-        return context.sync();
+        // Remove the metadata before the base64-encoded string.
+        const startIndex = reader.result.toString().indexOf("base64,");
+        const workbookContents = reader.result.toString().substr(startIndex + 7);
+            
+        // Retrieve the workbook.
+        const workbook = context.workbook;
+            
+        // Set up the insert options. 
+        var options = { 
+            sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
+            positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
+            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            
+         // Insert the workbook. 
+         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         return context.sync();
     });
 };
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read in the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -129,14 +137,14 @@ Excel.run(function (context) {
 
 `protect` メソッドは、オプションの文字列パラメーターを受け取ります。 この文字列は、ユーザーが保護をバイパスしてブックのシート構成を変更するために必要なパスワードを表します。
 
-保護は、不必要なデータ編集をできないようにするため、ワークシート レベルで設定することもできます。 詳細については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md#data-protection)」の**データの保護**のセクションを参照してください。
+保護は、不必要なデータ編集をできないようにするため、ワークシート レベルで設定することもできます。 詳細については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md#data-protection)」の **データの保護** のセクションを参照してください。
 
 > [!NOTE]
 > Excel のブックの保護の詳細については、「[ブックを保護する](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)」を参照してください。
 
 ## <a name="access-document-properties"></a>ドキュメント プロパティへのアクセス
 
-Workbook オブジェクトは、[ドキュメント プロパティ](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)と呼ばれる Office ファイルのメタデータにアクセスできます。 Workbook オブジェクトの `properties` プロパティは、これらのメタデータ値を含む [DocumentProperties](/javascript/api/excel/excel.documentproperties) オブジェクトです。 次の例は、プロパティを設定する方法を示して `author` います。
+Workbook オブジェクトは、[ドキュメント プロパティ](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)と呼ばれる Office ファイルのメタデータにアクセスできます。 Workbook オブジェクトの `properties` プロパティは、これらのメタデータ値を含む [DocumentProperties](/javascript/api/excel/excel.documentproperties) オブジェクトです。 次の例は、プロパティを設定する方法を示 `author` しています。
 
 ```js
 Excel.run(function (context) {
@@ -171,9 +179,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties"></a>ワークシートレベルのカスタムプロパティ
+#### <a name="worksheet-level-custom-properties"></a>ワークシート レベルのカスタム プロパティ
 
-カスタムプロパティは、ワークシートレベルで設定することもできます。 これらはドキュメントレベルのカスタムプロパティに似ていますが、異なるワークシート間で同じキーを繰り返すことができる点が異なります。 次の例は、現在のワークシートで "α" という値を持つ、"worksheet **group** " という名前のカスタムプロパティを作成し、それを取得する方法を示しています。
+カスタム プロパティは、ワークシート レベルで設定することもできます。 これらはドキュメント レベルのカスタム プロパティに似ていますが、異なるワークシートで同じキーを繰り返す場合があります。 次の例は、現在のワークシートに値 **"Alpha"** を指定して WorksheetGroup という名前のカスタム プロパティを作成し、それを取得する方法を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -220,15 +228,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings"></a>Access アプリケーションのカルチャ設定
+## <a name="access-application-culture-settings"></a>アプリケーション カルチャの設定にアクセスする
 
-ブックには、特定のデータの表示方法に影響する言語とカルチャの設定が含まれています。 これらの設定は、アドインのユーザーが異なる言語とカルチャでブックを共有している場合に、データをローカライズするのに役立ちます。 アドインでは、文字列の解析を使用して、各ユーザーが独自のカルチャの形式でデータを表示できるように、システムのカルチャ設定に基づいて数値、日付、時刻の形式をローカライズできます。
+ブックには、特定のデータの表示方法に影響する言語とカルチャの設定があります。 これらの設定は、アドインのユーザーが異なる言語やカルチャ間でブックを共有している場合にデータをローカライズするのに役立ちます。 アドインでは、文字列解析を使用して、システム カルチャ設定に基づいて数値、日付、時刻の形式をローカライズし、各ユーザーが独自のカルチャの形式でデータを表示できます。
 
-`Application.cultureInfo` システムのカルチャ設定を [CultureInfo](/javascript/api/excel/excel.cultureinfo) オブジェクトとして定義します。 これには、数値の小数点の記号や日付の形式などの設定が含まれます。
+`Application.cultureInfo` システム カルチャ設定を [CultureInfo オブジェクトとして定義](/javascript/api/excel/excel.cultureinfo) します。 これには、数値の小数点記号や日付形式のような設定が含まれる。
 
-一部のカルチャ設定は [、EXCEL UI を使用して変更](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)できます。 システム設定は、オブジェクトに保持され `CultureInfo` ます。 ローカルの変更は、など、 [アプリケーション](/javascript/api/excel/excel.application)レベルのプロパティとして保持され `Application.decimalSeparator` ます。
+一部のカルチャ設定は [、Excel UI を使用して変更できます](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
 
-次の例では、"," から、システム設定で使用される文字への数値文字列の小数点の区切り文字を変更します。
+次のサンプルでは、数値文字列の小数点記号を ',' からシステム設定で使用される文字に変更します。
 
 ```js
 // This will convert a number like "14,37" to "14.37"
@@ -358,6 +366,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md)
 - [Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)

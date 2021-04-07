@@ -1,14 +1,14 @@
 ---
 title: アドインの新しいスタイル アイコンOfficeガイドライン
-description: アドインで新しいスタイル アイコンアイコンを使用Officeガイドラインを取得します。
-ms.date: 03/24/2021
+description: 新しいスタイル アイコンをアドインで使用Officeガイドライン。
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b26146ed86be221a829f32ef2062df5c1ae0b2b2
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221418"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604667"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>アドインの新しいスタイル アイコンOfficeガイドライン
 
@@ -44,6 +44,9 @@ Office のデスクトップ アイコンは、ビットマップ画像です。
 - 48 px
 - 64 ピクセル (推奨、Mac に最適)
 - 80 px (必須)
+
+> [!IMPORTANT]
+> アドインの代表的なアイコンである画像については、「サイズなどの要件については [、AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) および Office 内で効果的なリストを作成する」を参照してください。
 
 それぞれのアイコンを、サイズに合わせて縮小するのではなく再描画します。
 

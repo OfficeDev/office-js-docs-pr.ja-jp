@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Icon 要素
 description: ボタン または メニュー コントロールの Image 要素を定義します。
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d2986d6d0325f425d5a66d010fff003c67356862
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221361"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604625"
 ---
 # <a name="icon-element"></a>Icon 要素
 
@@ -37,6 +37,9 @@ ms.locfileid: "51221361"
   <bt:Image size="80" resid="blue-icon-80" />
 </Icon>
 ```
+
+> [!IMPORTANT]
+> この画像がアドインの代表的なアイコンである場合は、「Create effective listings in [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office サイズと他の要件」を参照してください。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>モバイル フォーム ファクターの追加要件
 

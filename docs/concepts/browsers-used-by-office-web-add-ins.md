@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: b9f4d07122779a893bd10e8d28b4f1b329125630
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506134"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604632"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -51,7 +51,7 @@ Officeアドインは、web 上の Office で実行するときに iFrame を使
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーに Internet Explorer 11 を使用するプラットフォームがある場合は、ECMAScript 2015 以降の構文と機能を使用するには、次の 2 つのオプションがあります。
 >
 > - ECMAScript 2015 (ES6 とも呼ばれる) 以降の JavaScript または TypeScript でコードを記述し、バベルや[tsc](https://www.typescriptlang.org/index.html)などの[](https://babeljs.io/)コンパイラを使用してコードを ES5 JavaScript にコンパイルします。
-> - ECMAScript 2015 以降の JavaScript で記述します[](https://wikipedia.org/wiki/Polyfill_(programming))が、IE でコードを実行できる[core-js](https://github.com/zloirock/core-js)などのポリフィル ライブラリも読み込む必要があります。
+> - ECMAScript 2015 以降の JavaScript で記述します[](https://en.wikipedia.org/wiki/Polyfill_(programming))が、IE でコードを実行できる[core-js](https://github.com/zloirock/core-js)などのポリフィル ライブラリも読み込む必要があります。
 >
 > また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
@@ -59,7 +59,7 @@ Officeアドインは、web 上の Office で実行するときに iFrame を使
 
 ### <a name="service-workers-are-not-working"></a>サービス ワーカーが動作していない
 
-Office Microsoft [Edge WebView](/microsoft-edge/hosting/webview) を使用する場合、サービス ワーカーはサポートされません。 これらは、クロムベースの [エッジ WebView2 でサポートされています](/microsoft-edge/hosting/webview2)。
+Office Microsoft Edge WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)を使用する場合、サービス ワーカーはサポートされません。 これらは、クロムベースの [エッジ WebView2 でサポートされています](/microsoft-edge/hosting/webview2)。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>作業ウィンドウにスクロール バーが表示されない
 

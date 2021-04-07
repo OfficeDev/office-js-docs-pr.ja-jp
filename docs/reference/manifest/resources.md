@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Resources 要素
 description: Resources 要素には、VersionOverrides ノードのアイコン、文字列、URL が含まれます。
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641271"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604618"
 ---
 # <a name="resources-element"></a>リソース要素
 
@@ -29,7 +29,8 @@ ms.locfileid: "46641271"
 > **Image** 要素と **Url** 要素のすべての URL で Secure Sockets Layer (SSL) を使用する必要があります。
 
 ### <a name="images"></a>画像
-各アイコンには3つの**Images**要素があり、それぞれに3つの必須サイズがあります。
+
+各アイコンには、3 つの必須サイズごとに 1 つの **3** つの Images 要素が必要です。
 
 - 16x16
 - 32x32
@@ -44,7 +45,9 @@ ms.locfileid: "46641271"
 - 64x64
 
 > [!IMPORTANT]
-> Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。
+>
+> - この画像がアドインの代表的なアイコンである場合は、「Create effective listings in [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office サイズと他の要件」を参照してください。
+> - Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。
 
 ## <a name="resources-examples"></a>リソースの例
 
