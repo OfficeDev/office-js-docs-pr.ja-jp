@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して範囲に条件付き書式を適用する
-description: この記事では、Excel JavaScript アドインのコンテキストでの条件付き書式について説明します。
-ms.date: 07/28/2020
+description: Excel JavaScript アドインのコンテキストでの条件付き書式について説明します。
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5736923ac3c4623342d9a77bd58d5682a551a2a6
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408594"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650913"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
@@ -33,7 +33,7 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 -    `topBottom`
 
 > [!NOTE]
-> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 そのパターンの詳細については、「 [ \* OrNullObject メソッド](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)」セクションを参照してください。
+> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 このパターンの詳細については[ \* 、「OrNullObject メソッド」セクションを参照](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)してください。
 
 ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。
 
@@ -110,7 +110,7 @@ await context.sync();
 ユーザー設定の条件付き書式では、任意の複雑な数式に基づいて、ユーザー定義の書式をセルに適用することができます。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) オブジェクトでは、さまざまな表記で数式を定義することができます。
 
 -    `formula` - 標準の表記法。
--    `formulaLocal` -ユーザーの言語に基づいてローカライズされます。
+-    `formulaLocal` - ユーザーの言語に基づいてローカライズされます。
 -    `formulaR1C1` - R1C1 スタイルの表記法。
 
 次に、左側にあるセルより高い数値を含むセルのフォント色を、緑にする例を示します。
@@ -133,7 +133,7 @@ await context.sync();
 ```
 ### <a name="data-bar"></a>[データ バー](/javascript/api/excel/excel.databarconditionalformat)
 
-データ バーの条件付き書式では、セルにデータ バーを追加することができます。 既定では、範囲内の最小値と最大値を基準にデータ バーのサイズ比が決まります。 `DataBarConditionalFormat`オブジェクトには、バーの外観を制御するプロパティがいくつかあります。 
+データ バーの条件付き書式では、セルにデータ バーを追加することができます。 既定では、範囲内の最小値と最大値を基準にデータ バーのサイズ比が決まります。 オブジェクト `DataBarConditionalFormat` には、バーの外観を制御する複数のプロパティがあります。 
 
 次に、範囲内でデータ バーを左から右にグラデーション表示する例を示します。
 
@@ -157,7 +157,7 @@ await context.sync();
 
 次に、3 つの三角形のアイコン セットを範囲に適用する例を示します。
 
-![1000を超える値に対して緑の上向き三角形が付いた範囲、700から1000までの値の黄色の線、および小さい値の赤の下三角形。](../images/excel-conditional-format-iconset.png)
+![1000 を超える値の場合は緑の上向き三角形、700 ~ 1000 の値の場合は黄色の線、低い値の場合は赤の下向きの三角形を含む範囲。](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -198,7 +198,7 @@ await context.sync();
 
 事前設定の条件付き書式では、選択した標準ルールに基づいて、ユーザー定義の書式を範囲に適用することができます。 これらのルールは、[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 内の [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) で定義します。 
 
-次の使用例は、セルの値が範囲の平均の1つ以上の標準偏差にある場合、その白に白の白のフォントを色を指定します。
+次の使用例は、セルの値が範囲の平均より少なくとも 1 つの標準偏差である場合は、フォントを白に色付けします。
 
 ![セル値が範囲の平均値を超える少なくとも 1 つの標準偏差である場合、フォント色が白に設定されている範囲。](../images/excel-conditional-format-preset.png)
 
@@ -222,7 +222,7 @@ await context.sync();
 
 テキストの比較の条件付き書式では、条件として文字列比較を使用します。 `rule` プロパティは、セルと比較する文字列と、比較の種類を指定する演算子を定義する、[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) です。 
 
-次の使用例は、セルのテキストに "遅延" が含まれている場合に、フォントの色を赤に設定します。
+次の使用例は、セルのテキストに "Delayed" が含まれている場合に、フォントの色を赤に書式設定します。
 
 !["Delayed" を含むセルのフォント色を赤で表示します。](../images/excel-conditional-format-text.png)
 
@@ -336,8 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](../excel/excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用して範囲を操作する](../excel/excel-add-ins-ranges.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
 - [ConditionalFormat オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
 - [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
 - [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

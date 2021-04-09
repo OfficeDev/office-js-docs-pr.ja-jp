@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
-description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコードサンプルです。
+description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコード サンプル。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 0720715a38ff81196433d207148c63ffcd475003
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408650"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652203"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -386,7 +386,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
-> - `Range` オブジェクトを使用して、ワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)」を参照してください。
+> - オブジェクトを使用してワークシート内の範囲を取得する方法を示す例については、「Excel JavaScript API を使用して範囲を取得する」 `Range` [を参照してください](excel-add-ins-ranges-get.md)。
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
@@ -495,4 +495,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)

@@ -1,14 +1,15 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
-description: Excel JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行する方法を示すコード サンプル。
+description: Excel JavaScript API を使用して、ブックまたはアプリケーション レベルの機能で一般的なタスクを実行する方法について説明します。
 ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 2fe11aaba45dae1f0cd1375e28226ecd959950fe
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604653"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650829"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -368,4 +369,3 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md)
-- [Excel JavaScript API を使用して範囲を操作する](excel-add-ins-ranges.md)

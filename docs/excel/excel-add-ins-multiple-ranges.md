@@ -1,14 +1,14 @@
 ---
 title: Excel アドインで複数の範囲を同時に操作する
-description: Excel JavaScript ライブラリを使用して、複数の範囲に対して操作を実行したり、プロパティを設定したりする方法について説明します。
-ms.date: 04/30/2019
+description: Excel JavaScript ライブラリを使用して、アドインが複数の範囲で同時に操作を実行し、プロパティを設定する方法について説明します。
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609770"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650892"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 
@@ -16,7 +16,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 ## <a name="rangeareas"></a>RangeAreas
 
-範囲の集合 (連続している可能性もあります) は、 [Rangeareas](/javascript/api/excel/excel.rangeareas)オブジェクトによって表されます。 `Range` 型と同様のプロパティとメソッドを持ちますが (多くの場合は同じまたは類似した名前)、以下に対しては調整が行われています。
+一連の (不一視の可能性がある) 範囲は [、RangeAreas オブジェクトによって表](/javascript/api/excel/excel.rangeareas) されます。 `Range` 型と同様のプロパティとメソッドを持ちますが (多くの場合は同じまたは類似した名前)、以下に対しては調整が行われています。
 
 - プロパティのデータ型と、セッターとゲッターの動作。
 - メソッド パラメーターのデータ型と、メソッドの動作。
@@ -49,7 +49,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Methods
+##### <a name="methods"></a>メソッド
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()`( `getOffsetRangeAreas` オブジェクトでの名前 `RangeAreas` )
+- `getOffsetRange()` (オブジェクト `getOffsetRangeAreas` の名前 `RangeAreas` )
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()`( `getUsedRangeAreas` オブジェクトでの名前 `RangeAreas` )
-- `getUsedRangeOrNullObject()`( `getUsedRangeAreasOrNullObject` オブジェクトでの名前 `RangeAreas` )
+- `getUsedRange()` (オブジェクト `getUsedRangeAreas` の名前 `RangeAreas` )
+- `getUsedRangeOrNullObject()` (オブジェクト `getUsedRangeAreasOrNullObject` の名前 `RangeAreas` )
 - `load()`
 - `set()`
 - `setDirty()`
@@ -94,7 +94,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 > `RangeAreas` オブジェクトに新たな範囲を直接追加することはできません。 たとえば、`RangeAreas.areas` 内のコレクションには `add` メソッドが存在しません。
 
 > [!WARNING]
-> `RangeAreas.areas.items` 配列のメンバーの追加または削除を直接試行してはいけません。 これにより、後でコード内で望ましくない動作が発生します。 たとえば、追加の `Range` オブジェクトを配列にプッシュすることは可能ですが、エラーが発生します。`RangeAreas` のプロパティとメソッドは、その新しいアイテムがその場所に存在していないかのように動作するためです。 たとえば、`areaCount` プロパティにはこの方法でプッシュされた範囲は含まれません。また、`RangeAreas.getItemAt(index)` は、`index` が `areasCount-1`より大きい場合、エラーをスローします。 同様に、`RangeAreas.areas.items` 配列内の `Range` オブジェクトを、参照を取得してその `Range.delete` メソッドを呼び出すという方法で削除すると、バグとなります。`Range` オブジェクトは*削除されます*が、親 `RangeAreas` オブジェクトのプロパティとメソッドは、そのオブジェクトがまだ存在するものとして動作するためです。 たとえば、コードで `RangeAreas.calculate` を呼び出すと、Office は範囲を計算しようとしますが、範囲オブジェクトが既に存在しないためにエラーとなります。
+> `RangeAreas.areas.items` 配列のメンバーの追加または削除を直接試行してはいけません。 これにより、後でコード内で望ましくない動作が発生します。 たとえば、追加の `Range` オブジェクトを配列にプッシュすることは可能ですが、エラーが発生します。`RangeAreas` のプロパティとメソッドは、その新しいアイテムがその場所に存在していないかのように動作するためです。 たとえば、`areaCount` プロパティにはこの方法でプッシュされた範囲は含まれません。また、`RangeAreas.getItemAt(index)` は、`index` が `areasCount-1`より大きい場合、エラーをスローします。 同様に、`RangeAreas.areas.items` 配列内の `Range` オブジェクトを、参照を取得してその `Range.delete` メソッドを呼び出すという方法で削除すると、バグとなります。`Range` オブジェクトは *削除されます* が、親 `RangeAreas` オブジェクトのプロパティとメソッドは、そのオブジェクトがまだ存在するものとして動作するためです。 たとえば、コードで `RangeAreas.calculate` を呼び出すと、Office は範囲を計算しようとしますが、範囲オブジェクトが既に存在しないためにエラーとなります。
 
 ## <a name="set-properties-on-multiple-ranges"></a>複数の範囲でのプロパティの設定
 
@@ -119,7 +119,7 @@ Excel.run(function (context) {
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>複数の範囲からの特定のセルの取得
 
-`RangeAreas` オブジェクトの `getSpecialCells` メソッドと `getSpecialCellsOrNullObject` メソッドは、`Range` オブジェクトの同じ名前のメソッドと同じように機能します。 これらのメソッドでは、`RangeAreas.areas` コレクション内のすべての範囲から、指定された特性を持つセルが返されます。 特殊なセルの詳細については、「[範囲内の特殊なセルの検索](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range)」のセクションを参照してください。
+`RangeAreas` オブジェクトの `getSpecialCells` メソッドと `getSpecialCellsOrNullObject` メソッドは、`Range` オブジェクトの同じ名前のメソッドと同じように機能します。 これらのメソッドでは、`RangeAreas.areas` コレクション内のすべての範囲から、指定された特性を持つセルが返されます。 特殊セルの詳細については、「範囲内の特殊な [セルを検索する」を参照してください](excel-add-ins-ranges-special-cells.md)。
 
 `RangeAreas` オブジェクトで `getSpecialCells` メソッドまたは `getSpecialCellsOrNullObject` メソッドを呼び出す場合:
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>RangeAreas のプロパティの読み取り
 
-`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが*できる*場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンクの RGB コード (`#FFC0CB`) と `true` がコンソールに記録されます。`RangeAreas`オブジェクト内の範囲のどちらも、塗りつぶし色がピンクであり、列全体であるためです。
+`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが *できる* 場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンクの RGB コード (`#FFC0CB`) と `true` がコンソールに記録されます。`RangeAreas`オブジェクト内の範囲のどちらも、塗りつぶし色がピンクであり、列全体であるためです。
 
 ```js
 Excel.run(function (context) {
@@ -180,5 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](../reference/overview/excel-add-ins-reference-overview.md)
-- [Excel JavaScript API を使用して範囲を操作する (基本)](excel-add-ins-ranges.md)
-- [Excel JavaScript API を使用して範囲を操作する (高度)](excel-add-ins-ranges-advanced.md)
+- [Excel JavaScript API を使用して大きな範囲に対する読み取りまたは書き込み](excel-add-ins-ranges-large.md)
