@@ -1,0 +1,2 @@
+> [!NOTE]
+> Excel JavaScript API には、"Cell" オブジェクトまたはクラスがありません。 代わりに、Excel JavaScript API はすべての Excel セルを `Range` オブジェクトとして定義します。 Excel UI の個々のセルは、Excel JavaScript API の 1 つのセルを持つ `Range` オブジェクトに変換されます。 1 つの `Range` オブジェクトに複数の連続したセルを含めることもできます。 詳しくは、「[Excel JavaScript API を使用したセルの操作](/office/dev/add-ins/excel/excel-add-ins-cells)」を参照してください。

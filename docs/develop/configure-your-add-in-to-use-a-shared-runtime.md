@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2020
+ms.date: 04/08/2021
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 localization_priority: Priority
-ms.openlocfilehash: e1248ce28a45ad63ac9b02093a39810ee042bb80
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789267"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652194"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -23,11 +23,11 @@ ms.locfileid: "49789267"
 
 次のいずれかの操作を行います。
 
-- カスタム関数を使用して Excel アドインを生成するには、コマンド `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js` を実行します。
-    
+- カスタム関数を使用して Excel アドインを生成するには、コマンド `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true` を実行します。
+
     または
-    
-- PowerPoint アドインを生成するには、コマンド `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js` を実行します。
+
+- PowerPoint アドインを生成するには、コマンド `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true` を実行します。
 
 ジェネレーターはプロジェクトを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -36,9 +36,9 @@ ms.locfileid: "49789267"
 新規または既存のプロジェクトで共有ランタイムが使用できるように構成するには、次の手順を実行します。 これらの手順は、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してプロジェクトを生成したことを前提としています。
 
 1. Visual Studio Code を起動し、生成した Excel または PowerPoint アドイン プロジェクトを開きます。
-2. **manifest.xml** ファイルを開きます。
-3. Excel アドインを生成した場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに共有ランタイムを使用します。 XML は、次のようになります。
-    
+1. **manifest.xml** ファイルを開きます。
+1. Excel アドインを生成した場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](../reference/requirement-sets/shared-runtime-requirement-sets.md)を使用します。 XML は、次のようになります。
+
     ```xml
     <Requirements>
     <Sets DefaultMinVersion="1.1">
@@ -46,8 +46,8 @@ ms.locfileid: "49789267"
     </Sets>
     </Requirements>
     ```
-        
-4. `<VersionOverrides>` セクションを見つけて、`<Host ...>` タグのすぐ内側に次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の ` <bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+
+1. `<VersionOverrides>` セクションを見つけて、`<Host ...>` タグのすぐ内側に次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の ` <bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
 
    ```xml
    <VersionOverrides ...>
@@ -60,7 +60,7 @@ ms.locfileid: "49789267"
        ...
    ```
 
-5. カスタム関数を使用して Excel アドインを生成した場合は、`<Page>` 要素を見つけます。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
+1. カスタム関数を使用して Excel アドインを生成した場合は、`<Page>` 要素を見つけます。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 
    ```xml
    <AllFormFactors>
@@ -71,7 +71,7 @@ ms.locfileid: "49789267"
    ...
    ```
 
-6. `<FunctionFile ...>` タグを見つけて、`resid` を **Commands.Url** から **Taskpane.Url** に変更します。 アクション コマンドがない場合は、**FunctionFile** エントリがないため、この手順は省略できます。
+1. `<FunctionFile ...>` タグを見つけて、`resid` を **Commands.Url** から **Taskpane.Url** に変更します。 アクション コマンドがない場合は、**FunctionFile** エントリがないため、この手順は省略できます。
 
     ```xml
     </GetStarted>
@@ -80,15 +80,15 @@ ms.locfileid: "49789267"
     ...
     ```
 
-7. **manifest.xml** ファイルを保存します。
+1. **manifest.xml** ファイルを保存します。
 
 ## <a name="configure-the-webpackconfigjs-file"></a>webpack.config.js ファイルを構成する
 
 **webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを介して共有 JavaScript ランタイムのみを読み込むように変更する必要があります。
 
 1. Visual Studio Code を起動し、生成した Excel または PowerPoint アドイン プロジェクトを開きます。
-2. **webpack.config.js** ファイルを開きます。
-3. **webpack.config.js** ファイルに次の **functions.html** プラグイン コードが含まれている場合は、それを削除します。
+1. **webpack.config.js** ファイルを開きます。
+1. **webpack.config.js** ファイルに次の **functions.html** プラグイン コードが含まれている場合は、それを削除します。
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -98,7 +98,7 @@ ms.locfileid: "49789267"
       })
     ```
 
-4. **webpack.config.js** ファイルに次の **commands.html** プラグイン コードが含まれている場合は、それを削除します。
+1. **webpack.config.js** ファイルに次の **commands.html** プラグイン コードが含まれている場合は、それを削除します。
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -108,7 +108,7 @@ ms.locfileid: "49789267"
       })
     ```
 
-5. プロジェクトで **関数** チャンクまたは **コマンド** チャンクのいずれかを使用した場合は、次に示すようにそれらをチャンク リストに追加します (次のコードは、プロジェクトで両方のチャンクを使用した場合のものです)。
+1. プロジェクトで **関数** チャンクまたは **コマンド** チャンクのいずれかを使用した場合は、次に示すようにそれらをチャンク リストに追加します (次のコードは、プロジェクトで両方のチャンクを使用した場合のものです)。
 
     ```javascript
       new HtmlWebpackPlugin({
@@ -118,7 +118,7 @@ ms.locfileid: "49789267"
       })
     ```
 
-6. 変更を保存してプロジェクトを再ビルドします。
+1. 変更を保存してプロジェクトを再ビルドします。
 
    ```command line
    npm run build
@@ -132,27 +132,28 @@ ms.locfileid: "49789267"
 共有 JavaScript ランタイムが正しく使用されていることを確認するには、次の手順を実行します。
 
 1. **manifest.xml** ファイルを開きます。
-2. `<Control xsi:type="Button" id="TaskpaneButton">` セクションを探し、次の `<Action ...>` XML を変更します。
-    
+1. `<Control xsi:type="Button" id="TaskpaneButton">` セクションを探し、次の `<Action ...>` XML を変更します。
+
     送信元:
-    
+
     ```xml
     <Action xsi:type="ShowTaskpane">
       <TaskpaneId>ButtonId1</TaskpaneId>
       <SourceLocation resid="Taskpane.Url"/>
     </Action>
     ```
-    
+
     変更後:
-    
+
     ```xml
     <Action xsi:type="ExecuteFunction">
       <FunctionName>action</FunctionName>
     </Action>
     ```
-3. **./src/commands/commands.js** ファイルを開きます。
-4. **アクション** 関数を以下のコードに置き換えます。 これにより、関数が更新され、作業ウィンドウ ボタンが開いて変更され、カウンターが増加されます。 コマンドから作業ウィンドウ DOM を開いてアクセスすることは、共有 JavaScript ランタイムでのみ機能します。
-    
+
+1. **./src/commands/commands.js** ファイルを開きます。
+1. **アクション** 関数を以下のコードに置き換えます。 これにより、関数が更新され、作業ウィンドウ ボタンが開いて変更され、カウンターが増加されます。 コマンドから作業ウィンドウ DOM を開いてアクセスすることは、共有 JavaScript ランタイムでのみ機能します。
+
     ```javascript
     var _count=0;
     
@@ -167,7 +168,7 @@ ms.locfileid: "49789267"
     }
     ```
 
-5. 変更を保存してプロジェクトを実行します。
+1. 変更を保存してプロジェクトを実行します。
 
    ```command line
    npm start
@@ -179,7 +180,7 @@ ms.locfileid: "49789267"
 
 `Runtime` 要素を追加するときに、有効期間も `long` または `short` の値で指定します。 この値を `long` に設定すると、ドキュメントを開くとアドインを起動したり、作業ウィンドウを閉じた後にコードを継続して実行したり、カスタム関数から CORS および DOM を使用したりできます。
 
->[!NOTE]
+> [!NOTE]
 > 既定の有効期間の値は `short` ですが、Excel アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときに Excel アドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
 
 ```xml
@@ -188,7 +189,7 @@ ms.locfileid: "49789267"
 </Runtimes>
 ```
 
->[!NOTE]
+> [!NOTE]
 > アドインにマニフェストの `Runtimes` 要素が含まれている場合 (共有ランタイムに必要)、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
 ## <a name="about-the-shared-javascript-runtime"></a>共有 JavaScript ランタイムについて
@@ -200,14 +201,14 @@ Windows または Mac で、アドインは、リボン ボタン、カスタム
 共有ランタイムを構成すると、次のシナリオが可能になります。
 
 - Office アドインは、追加の UI 機能を使用できます。
-    - [Office アドインにカスタム キーボード ショートカットを追加する (プレビュー)](../design/keyboard-shortcuts.md)
-    - [Office アドインでカスタム コンテキスト タブを作成する (プレビュー)](../design/contextual-tabs.md)
-    - [アドイン コマンドを有効または無効にする](../design/disable-add-in-commands.md)
-    - [ドキュメントが開いたら、Office アドインでコードを実行する](run-code-on-document-open.md)
-    - [Office アドインの作業ウィンドウを表示または非表示にする](show-hide-add-in.md)
+  - [Office アドインにカスタム キーボード ショートカットを追加する (プレビュー)](../design/keyboard-shortcuts.md)
+  - [Office アドインでカスタム コンテキスト タブを作成する (プレビュー)](../design/contextual-tabs.md)
+  - [アドイン コマンドを有効または無効にする](../design/disable-add-in-commands.md)
+  - [ドキュメントが開いたら、Office アドインでコードを実行する](run-code-on-document-open.md)
+  - [Office アドインの作業ウィンドウを表示または非表示にする](show-hide-add-in.md)
 - Excel アドインの場合:
-    - カスタム関数で CORS がすべてサポートされます。
-    - カスタム関数で、Office.js API を呼び出して、スプレッドシート ドキュメントのデータを読み取ることができます。
+  - カスタム関数で CORS がすべてサポートされます。
+  - カスタム関数で、Office.js API を呼び出して、スプレッドシート ドキュメントのデータを読み取ることができます。
 
 Windows 版 Office の場合、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、共有ランタイムには Microsoft Internet Explorer 11 ブラウザー インスタンスが必要です。また、アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。Office アドインで使用されるブラウザーで説明されているように、 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内で実行される様子を示しています。
 

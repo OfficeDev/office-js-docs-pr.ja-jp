@@ -623,6 +623,9 @@ items:
           - name: 組み込み関数の呼び出し
             href: excel/excel-add-ins-worksheet-functions.md
             displayName: Excel
+          - name: セル
+            href: excel/excel-add-ins-cells.md
+            displayName: Excel
           - name: グラフ
             href: excel/excel-add-ins-charts.md
             displayName: Excel
@@ -632,14 +635,8 @@ items:
           - name: コメント
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: 範囲の条件付き書式
-            href: excel/excel-add-ins-conditional-formatting.md
-            displayName: Excel
           - name: データの入力規則
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: セルの編集中に実行を遅らせる
-            href: excel/excel-add-ins-delay-in-cell-edit.md
             displayName: Excel
           - name: エラー処理
             href: excel/excel-add-ins-error-handling.md
@@ -647,21 +644,71 @@ items:
           - name: イベント
             href: excel/excel-add-ins-events.md
             displayName: Excel
-          - name: 複数の範囲
-            href: excel/excel-add-ins-multiple-ranges.md
-            displayName: Excel
           - name: パフォーマンスの最適化
             href: excel/performance.md
             displayName: Excel
           - name: PivotTables
             href: excel/excel-add-ins-pivottables.md
             displayName: Excel
-          - name: Ranges (基本)
-            href: excel/excel-add-ins-ranges.md
-            displayName: Excel
-          - name: Ranges (高度)
-            href: excel/excel-add-ins-ranges-advanced.md
-            displayName: Excel
+          - name: Range および Cells
+            items:
+              - name: 範囲を取得する
+                href: excel/excel-add-ins-ranges-get.md
+                displayName: Excel
+              - name: セルの範囲を挿入する
+                href: excel/excel-add-ins-ranges-insert.md
+                displayName: Excel
+              - name: セルの範囲をクリアまたは削除する
+                href: excel/excel-add-ins-ranges-clear-delete.md
+                displayName: Excel
+              - name: 選択範囲を設定または取得する
+                href: excel/excel-add-ins-ranges-set-get.md
+                displayName: Excel
+              - name: 値、テキスト、または数式を設定または取得する
+                href: excel/excel-add-ins-ranges-set-get-values.md
+                displayName: Excel
+              - name: 範囲の書式を設定する
+                href: excel/excel-add-ins-ranges-set-format.md
+                displayName: Excel
+              - name: 範囲の条件付き書式
+                href: excel/excel-add-ins-conditional-formatting.md
+                displayName: Excel
+              - name: 無制限の範囲への読み取りまたは書き込み
+                href: excel/excel-add-ins-ranges-unbounded.md
+                displayName: Excel
+              - name: 広い範囲に対する読み取りまたは書き込み
+                href: excel/excel-add-ins-ranges-large.md
+                displayName: Excel
+              - name: 文字列のマッチングを使用してセルを検索する
+                href: excel/excel-add-ins-ranges-string-match.md
+                displayName: Excel
+              - name: Moment-MSDate プラグインを使用した日付の操作
+                href: excel/excel-add-ins-ranges-dates.md
+                displayName: Excel
+              - name: 範囲内の特殊なセルの検索
+                href: excel/excel-add-ins-ranges-special-cells.md
+                displayName: Excel
+              - name: 切り取り、コピー、および貼り付け
+                href: excel/excel-add-ins-ranges-cut-copy-paste.md
+                displayName: Excel
+              - name: 重複を削除
+                href: excel/excel-add-ins-ranges-remove-duplicates.md
+                displayName: Excel
+              - name: アウトラインのグループ データ
+                href: excel/excel-add-ins-ranges-group.md
+                displayName: Excel
+              - name: 動的配列とスピルを処理する
+                href: excel/excel-add-ins-ranges-dynamic-arrays.md
+                displayName: Excel
+              - name: 数式の先例を取得する
+                href: excel/excel-add-ins-ranges-precedents.md
+                displayName: Excel
+              - name: セルの編集中に実行を遅らせる
+                href: excel/excel-add-ins-delay-in-cell-edit.md
+                displayName: Excel
+              - name: 複数の範囲を操作する
+                href: excel/excel-add-ins-multiple-ranges.md
+                displayName: Excel
           - name: 図形
             href: excel/excel-add-ins-shapes.md
             displayName: Excel
