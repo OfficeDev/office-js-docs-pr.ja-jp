@@ -1,18 +1,18 @@
 ---
-ms.date: 07/10/2020
+ms.date: 04/09/2021
 description: 作業ウィンドウを使用しない Excel カスタム関数をデバッグする方法について説明します。
 title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 00065a465a22f83891dfb207943102b079e96a0f
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178077"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862338"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
-作業ウィンドウまたは他のユーザー インターフェイス要素 (UI レスのカスタム関数) を使用しないカスタム関数のデバッグは、使用しているプラットフォームに応じて複数の方法で実行できます。
+この記事では、作業ウィンドウまたは他のユーザー インターフェイス要素 (UI レスのカスタム関数) を使用しないカスタム関数のデバッグのみについて説明します。 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -33,7 +33,9 @@ Mac の場合:
 
 ## <a name="requirements"></a>要件
 
-デバッグを開始する前に [、Yeoman](https://github.com/OfficeDev/generator-office) ジェネレーターを使用Officeカスタム関数プロジェクトを作成する必要があります。 カスタム関数プロジェクトを作成する方法のガイダンスについては、カスタム関数の [チュートリアルを参照してください](../tutorials/excel-tutorial-create-custom-functions.md)。
+このデバッグ プロセスは、作業 **ウィンドウ** や他の UI 要素を使用しない UI レスのカスタム関数でのみ機能します。 UI レスのカスタム関数を作成するには [、「Excel](../tutorials/excel-tutorial-create-custom-functions.md) でカスタム関数を作成する」チュートリアルの手順に従い、Office アドイン用の [Yeoman](https://www.npmjs.com/package/generator-office)ジェネレーターによってインストールされている作業ウィンドウと UI 要素をすべて削除します。
+
+このデバッグ プロセスは、共有ランタイムを使用するカスタム関数プロジェクトと [互換性がない点に注意してください](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Excel Desktop で VS Code デバッガーを使用する
 

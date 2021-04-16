@@ -25,7 +25,7 @@
 
 - Office.js API の使用に関する質問をするには、質問を Stack Overflow に投稿し、"office-js" タグ http://stackoverflow.com/questions/tagged/office-js) ( .
 - Office.js API またはプラットフォームで問題を報告するには、製品チームのメンバーが顧客から報告された問題を監視する OfficeDev/office-js リポジトリに問題を https://github.com/OfficeDev/office-js) 作成します。
-- Office.js API またはプラットフォームの機能要求を送信するには、Q&A の [Microsoft 365](https://docs.microsoft.com/answers/products/m365)の下にアイデアを投稿するか、機能要求が既に存在する場合は、そのアイデアに対する投票を追加します。
+- Office.js API またはプラットフォームの機能要求を送信するには、アイデアを [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)に投稿するか、機能要求が既に存在する場合は、そのアプリに投票を追加します。
 
 ## <a name="join-the-microsoft-365-developer-program"></a>Microsoft 365 開発者プログラムに参加する
 
