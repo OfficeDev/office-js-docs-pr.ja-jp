@@ -1,0 +1,1 @@
+<b>注</b>: あらゆるタイプの Office アドインに適用される記事一式については、この記事の「<a href="../overview/core-concepts-office-add-ins.md">中心概念</a>」セクションを参照してください。

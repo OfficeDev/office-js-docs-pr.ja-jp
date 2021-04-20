@@ -1,0 +1,2 @@
+>[!NOTE]
+> UI のない関数を使用する特定の理由がない限り、共有ランタイムでカスタム関数を使用することをお [勧めします](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。 また、共有ランタイムを使用すると、Windows または Microsoft 365 バージョンに関係なく、アドインは Internet Explorer 11 を使用します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。

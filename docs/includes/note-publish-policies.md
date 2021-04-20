@@ -1,0 +1,2 @@
+> [!NOTE]
+> アドインを AppSource に [公開](../publish/publish.md) し、Office エクスペリエンス内で利用できるようにする場合は、[商用マーケットプレイスの認定ポリシー](/legal/marketplace/certification-policies) に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 1120.3](/legal/marketplace/certification-policies#11203-functionality) と「[Office アドイン アプリケーションと可用性](../overview/office-add-in-availability.md)」のページを参照してください)。

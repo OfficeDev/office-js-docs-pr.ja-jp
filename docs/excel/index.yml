@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Excel アドイン ドキュメント
+summary: Excel アドインを使用すると、Windows、Mac、iPad、on the web を含む、Excel の複数のプラットフォーム間で実行できるソリューションを構築するために、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用できます。 Excel アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+metadata:
+  title: Excel アドイン ドキュメント
+  description: Excel アドイン向けの学習用リソース。
+  ms.prod: excel
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 0d860e532431f090ad152ff3b33d8aba2ad88e24
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363563"
+landingContent:
+- title: Excel アドインについて
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Excel アドインとは
+      url: excel-add-ins-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 最初の Excel アドインをビルドする
+      url: ../quickstarts/excel-quickstart-jquery.md
+    - text: スクリプトラボを使用した Api の探索
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Excel JavaScript API を使用してオブジェクトとブックのコンテンツを操作する
+      url: ../reference/overview/excel-add-ins-reference-overview.md
+    - text: カスタム関数を Excel に追加する
+      url: custom-functions-overview.md
+    - text: Excel アドインをテストおよびデバッグする
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Excel アドインを展開および発行する
+      url: ../publish/publish.md
+- title: Office の主なアドインの概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office アドイン プラットフォームの概要
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Office アドインの中心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Office アドインを設計する
+      url: ../design/add-in-design.md
+    - text: Office アドインを開発する
+      url: ../develop/develop-overview.md
+- title: リソース
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: ご質問
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 機能のリクエスト
+      url: https://officespdev.uservoice.com/
+    - text: 問題の報告
+      url: https://github.com/officedev/office-js/issues
+    - text: Office アドインのその他のリソース
+      url: ../resources/resources-links-help.md

@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: Visio ドキュメント
+summary: Visio JavaScript API を使うと、SharePoint Online で Visio 図面を埋め込むことができます。 SharePoint Online のソリューションを構築するために、Visio on the web での Visio JavaScript API の使用方法を学びます。
+metadata:
+  title: Visio ドキュメント
+  description: SharePoint に Visio 図面を埋め込む方法について学習するためのリソースです。
+  ms.prod: visio
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: a58aedff61bd2edf52b6b2b3a748c7206c8af9c3
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: Auto
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679468"
+landingContent:
+- title: Visio JavaScript API について
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visio JavaScript API とは
+      url: ../reference/overview/visio-javascript-reference-overview.md
+  - linkListType: get-started
+    links:
+    - text: 選択した図形の図形のテキストを表示するスクリプトを作成する
+      url: ../reference/overview/visio-javascript-reference-overview.md#get-started
+  - linkListType: reference
+    links:
+    - text: Visio JavaScript API を調べる
+      url: /javascript/api/visio
+- title: リソース
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 質問する
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 機能のリクエスト
+      url: https://officespdev.uservoice.com/
+    - text: 問題の報告
+      url: https://github.com/officedev/office-js/issues
+    - text: Office アドインのその他のリソース
+      url: ../resources/resources-links-help.md

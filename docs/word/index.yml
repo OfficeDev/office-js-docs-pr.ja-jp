@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Word アドイン ドキュメント
+summary: Word アドインでは、HTML、CSS、JavaScript などの一般的な web テクノロジを使用して、web、Windows、Mac、iPad など、複数のプラットフォーム間で Word で実行できるソリューションを構築できます。 Word アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+metadata:
+  title: Word アドイン ドキュメント
+  description: Word アドイン向けの学習用リソース。
+  ms.prod: word
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: b9b464711f87211f4f10014c145acb2d66f327ef
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363745"
+landingContent:
+- title: Word アドインについて
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Word アドインとは
+      url: word-add-ins-programming-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 最初の Word アドインをビルドする
+      url: ../quickstarts/word-quickstart.md
+    - text: スクリプトラボを使用した Api の探索
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Word JavaScript API を使用してドキュメントのコンテンツとメタデータを操作する
+      url: ../reference/overview/word-add-ins-reference-overview.md
+    - text: Word アドインのテストとデバッグ
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Word アドインを展開および発行する
+      url: ../publish/publish.md
+- title: Office の主なアドインの概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office アドイン プラットフォームの概要
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Office アドインの中心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Office アドインを設計する
+      url: ../design/add-in-design.md
+    - text: Office アドインを開発する
+      url: ../develop/develop-overview.md
+- title: リソース
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: ご質問
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 機能のリクエスト
+      url: https://officespdev.uservoice.com/
+    - text: 問題の報告
+      url: https://github.com/officedev/office-js/issues
+    - text: Office アドインのその他のリソース
+      url: ../resources/resources-links-help.md
