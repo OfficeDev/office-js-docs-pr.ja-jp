@@ -1147,6 +1147,9 @@ items:
           - name: アドインからドキュメント全体を取得する
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
             displayName: PowerPoint
+          - name: プレゼンテーション、スライド、図形にカスタム タグを使用する
+            href: powerpoint/tagging-presentations-slides-shapes.md
+            displayName: PowerPoint
           - name: PowerPoint アドインでドキュメント テーマを使用する
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
             displayName: PowerPoint
