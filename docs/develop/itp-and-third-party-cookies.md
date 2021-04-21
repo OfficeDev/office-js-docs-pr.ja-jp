@@ -3,12 +3,12 @@ title: サードパーティ cookie をOffice ITP で動作する新しいアド
 description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 468147e923bb27638e45879104db75b99d014986
+ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178042"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "51917094"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する
 
@@ -54,9 +54,9 @@ if (document.hasStorageAccess) {
 
 サード パーティ Cookie は、ドメインがトップ レベル のフレームとは異なる iframe に読み込まれる Cookie です。 ITP は複雑な認証シナリオに影響を与える可能性があります。ポップアップ ダイアログを使用して資格情報を入力し、認証フローを完了するためにアドイン iframe によって Cookie アクセスが必要になります。 ITP は、以前にポップアップ ダイアログを使用して認証を行ったサイレント認証シナリオにも影響を与える可能性がありますが、その後アドインを使用して非表示の iframe を介して認証を試みる場合があります。
 
-Mac でOfficeを開発する場合、サードパーティの Cookie へのアクセスは MacOS Big Sur SDK によってブロックされます。 これは、WebKit ITP が Safari ブラウザーで既定で有効にされ、WKWebview によってすべてのサードパーティ Cookie がブロックされるためです。 Officeバージョン 16.44 以降のバージョンは、MacOS Big Sur SDK と統合されています。
+Mac でOfficeを開発する場合、サードパーティの Cookie へのアクセスは MacOS Big Sur SDK によってブロックされます。 これは、WKWebView ITP が Safari ブラウザーで既定で有効にされ、WKWebView によってすべてのサードパーティ Cookie がブロックされるためです。 Officeバージョン 16.44 以降のバージョンは、MacOS Big Sur SDK と統合されています。
 
-Safari ブラウザーで、エンド ユーザーは、[基本設定のプライバシー] の[クロスサイト追跡を防止する] チェック ボックスをオンに切り替え  >  、ITP をオフにできます。 ただし、埋め込み WebKit2 コントロールの ITP をオフにすることはできません。
+Safari ブラウザーで、エンド ユーザーは、[基本設定のプライバシー] の[クロスサイト追跡を防止する] チェック ボックスをオンに切り替え  >  、ITP をオフにできます。 ただし、埋め込み WKWebView コントロールの ITP をオフにすることはできません。
 
 ## <a name="see-also"></a>関連項目
 
