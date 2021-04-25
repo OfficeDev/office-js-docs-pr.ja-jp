@@ -1257,6 +1257,8 @@ items:
         href: develop/authentication-pnp.md
       - name: Office ソリューションで高 DPI と DPI スケーリングを処理します
         href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+      - name: Office アドイン コミュニティ コール
+        href: overview/office-add-ins-community-call.md
   - name: VSTO および COM 移行リソース
     items:
       - name: VSTO アドイン開発者向けガイド
