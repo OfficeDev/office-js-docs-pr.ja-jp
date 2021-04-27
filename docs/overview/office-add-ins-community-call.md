@@ -3,12 +3,12 @@ title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 月次Microsoft Officeアドインのコミュニティ通話のスケジュールとリソース
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: bad2ad176d0a843f5d03ec58b3db365a02ecbbe1
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: fbd2acdd7b6153829473dd0ea29290d02e6f8c84
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959297"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024319"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -23,11 +23,11 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 - [Officeアドインのコミュニティ呼び出し - 2020 年 11 月 11 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
 - [Officeアドインのコミュニティ呼び出し - 2020 年 10 月 14 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
 - [Officeアドインのコミュニティ呼び出し - 2020 年 9 月 9 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Officeアドインのコミュニティ呼び出し - 2020 年 8 月 12 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%e2%80%af)
+- [Officeアドインのコミュニティ呼び出し - 2020 年 8 月 12 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
 - [Officeアドインのコミュニティ呼び出し - 2020 年 7 月 8 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Officeアドインコミュニティ呼び出し - 2020 年 6 月 10 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
 - [定期的な毎月のコミュニティ通話カレンダーの招待](https://aka.ms/officeaddinscommunitycall)
 - [すべての Microsoft 365 開発者コミュニティ呼び出し](https://aka.ms/M365DevCalls)

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
-description: Excel JavaScript オブジェクトのイベントのリスト。 これには、イベントハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
-ms.date: 09/15/2020
+description: Excel JavaScript オブジェクトのイベントの一覧。 これには、イベント ハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
+ms.date: 04/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 12e4f0a7ebb9c50bf6874106ef711ca3207cae46
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135215"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024312"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -21,17 +21,17 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
 | `onActivated` | オブジェクトがアクティブ化されたときに発生します。 | [**Chart**](/javascript/api/excel/excel.chart#onactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated)、[**Shape**](/javascript/api/excel/excel.shape#onactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
-| `onAdded` | オブジェクトがコレクションに追加されたときに発生します。 | [**Chartcollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**コメントのコレクション**](/javascript/api/excel/excel.commentcollection#onadded)、 [**tablecollection**](/javascript/api/excel/excel.tablecollection#onadded)、および [**ワークシートコレクション**](/javascript/api/excel/excel.worksheetcollection#onadded) |
+| `onAdded` | オブジェクトがコレクションに追加されたときに発生します。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onadded), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onadded), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onadded), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onadded) |
 | `onAutoSaveSettingChanged` | ブックで `autoSave` の設定が変更されると発生します。 | [**Workbook**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
 | `onCalculated` | ワークシートの計算が完了したとき (あるいはコレクションのすべてのワークシートが完了したとき) に発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
-| `onChanged` | 個別のセルまたはコメントのデータが変更されたときに発生します。 | [**コメントコレクション**](/javascript/api/excel/excel.commentcollection#onchanged)、 [**Table**](/javascript/api/excel/excel.table#onchanged)、 [**tablecollection**](/javascript/api/excel/excel.tablecollection#onchanged)、 [**Worksheet、Worksheet**](/javascript/api/excel/excel.worksheet#onchanged)[**コレクション**](/javascript/api/excel/excel.worksheetcollection#onchanged) |
+| `onChanged` | 個々のセルまたはコメントのデータが変更された場合に発生します。 | [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onchanged), [**Table**](/javascript/api/excel/excel.table#onchanged), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onchanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onchanged) |
 | `onColumnSorted` | 1 つ以上の列を並べ替えたときに発生します。 これは、左から右に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncolumnsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted) |
 | `onDataChanged` | バインド内でデータまたは書式設定が変更されるときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding#ondatachanged) |
 | `onDeactivated` | オブジェクトが非アクティブ化されたときに発生します。 | [**Chart**](/javascript/api/excel/excel.chart#ondeactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeactivated)、[**Shape**](/javascript/api/excel/excel.shape#ondeactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#ondeactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeactivated) |
-| `onDeleted` | オブジェクトがコレクションから削除されたときに発生します。 | [**Chartcollection**](/javascript/api/excel/excel.chartcollection#ondeleted)、 [**コメントのコレクション**](/javascript/api/excel/excel.commentcollection#ondeleted)、 [**tablecollection**](/javascript/api/excel/excel.tablecollection#ondeleted)、および [**ワークシートコレクション**](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
+| `onDeleted` | オブジェクトがコレクションから削除されたときに発生します。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeleted), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#ondeleted), [**TableCollection**](/javascript/api/excel/excel.tablecollection#ondeleted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
 | `onFormatChanged` | ワークシートで書式設定が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onformatchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onformatchanged) |
 | `onRowSorted` | 1 つ以上の行を並べ替えたときに発生します。 これは、上から下に並べ替えを実行したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowsorted) |
-| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding#onselectionchanged)、 [**Table**](/javascript/api/excel/excel.table#onselectionchanged)、 [**Workbook**](/javascript/api/excel/excel.workbook#onselectionchanged)、 [**Worksheet、Worksheet**](/javascript/api/excel/excel.worksheet#onselectionchanged)[**コレクション**](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
+| `onSelectionChanged` | アクティブなセルまたは選択範囲が変更されたときに発生します。 | [**Binding**](/javascript/api/excel/excel.binding#onselectionchanged), [**Table**](/javascript/api/excel/excel.table#onselectionchanged), [**Workbook**](/javascript/api/excel/excel.workbook#onselectionchanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onselectionchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
 | `onRowHiddenChanged` | 特定のワークシート上の行非表示状態が変更されたときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 | `onSettingsChanged` | ドキュメント内の設定が変更されるときに発生します。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
 | `onSingleClicked` | ワークシートで左クリック / タップされたアクションが発生したときに発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
@@ -68,7 +68,7 @@ Excel の既定の動作に準拠する変更により、それに対応する�
 
 ## <a name="register-an-event-handler"></a>イベント ハンドラーの登録
 
-次のコード例では、ワークシートの `onChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録します。 このコードでは、そのワークシートでデータが変更されたときに、`handleDataChange` 関数を実行するように指定しています。
+次のコード例では、ワークシートの `onChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録します。 このコードでは、そのワークシートでデータが変更されたときに、`handleChange` 関数を実行するように指定しています。
 
 ```js
 Excel.run(function (context) {
@@ -102,7 +102,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>イベント ハンドラーを削除する
 
-次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。 `RequestContext`イベントハンドラーの作成に使用されたを削除するには、を使用する必要があることに注意してください。 
+次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。 イベント ハンドラーを `RequestContext` 削除するには、イベント ハンドラーの作成に使用する必要があります。 
 
 ```js
 var eventResult;
@@ -168,4 +168,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)

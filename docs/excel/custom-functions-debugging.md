@@ -1,14 +1,14 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: 作業ウィンドウを使用しない Excel カスタム関数をデバッグする方法について説明します。
 title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
-ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
+ms.openlocfilehash: c6954af4638ae416c789af339d35187467e37b7f
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51862338"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024326"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -53,7 +53,7 @@ VS Code を使用すると、デスクトップ上の Excel で UI レスのOffi
 ### <a name="start-the-vs-code-debugger"></a>VS Code デバッガーを起動する
 
 4. [ **ファイルの表示>実行] を** 選択するか **、Ctrl + Shift + D** と入力してデバッグ ビューに切り替えます。
-5. [実行] ドロップダウン メニューから **、[Excel デスクトップ ] (エッジ クロム) を選択します**。
+5. [実行] ドロップダウン メニューから **、[Excel Desktop (カスタム関数) ] を選択します**。
 6. デバッグ **を開始するには、[F5]** を選択します ( **または>から** [デバッグの開始] を選択します。 アドインが既にサイドロードされ、すぐに使用できる状態で、新しい Excel ブックが開きます。
 
 ### <a name="start-debugging"></a>デバッグを開始する
