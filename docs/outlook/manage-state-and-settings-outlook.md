@@ -1,25 +1,25 @@
 ---
-title: Outlook アドインの状態と設定を管理する
-description: Outlook アドインのアドインの状態と設定を保存する方法について説明します。
-ms.date: 04/22/2020
+title: アドインの状態と設定Outlook管理する
+description: アドインの状態と設定を保持する方法について、Outlookします。
+ms.date: 04/29/2021
 localization_priority: Normal
-ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 6652034ffa6844d22fd725adc5adcc4a4063c1cb
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293843"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100286"
 ---
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Outlook アドインの状態と設定を管理する
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>アドインの状態と設定Outlook管理する
 
 > [!NOTE]
-> この記事を読む前に、このドキュメントの「**コア概念**」セクションの「[アドインの状態と設定を保持](../develop/persisting-add-in-state-and-settings.md)する」を参照してください。
+> この記事 [を読む](../develop/persisting-add-in-state-and-settings.md) 前に、このドキュメントの **「Core concepts」** セクションの「永続化アドインの状態と設定」を参照してください。
 
-Outlook アドインの場合、Office JavaScript API は、次の表に示すように、セッション間でアドインの状態を保存するための [RoamingSettings](/javascript/api/outlook/office.roamingsettings) オブジェクトと [CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
+Outlookアドインの場合、Office JavaScript API は、次の表に示すとおり、セッション間でアドインの状態を保存する[RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクトと[CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
 
 |**オブジェクト**|**ストレージの場所**|
-|:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。 これらの設定はユーザーのサーバーメールボックスに格納されるため、ユーザーとの "ローミング" が可能であり、そのユーザーのメールボックスにアクセスするサポートされているクライアントのコンテキストで実行されている場合は、アドインで使用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|
+|:-----|:-----|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。 これらの設定はユーザーのサーバー メールボックスに格納されますので、ユーザーと一緒に "ローミング" し、サポートされているクライアントがユーザーのメールボックスにアクセスするコンテキストでアドインを実行するときに使用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|アドインが連携するメッセージ、予定、または会議出席依頼アイテム。 Outlook アドイン アイテムのカスタム プロパティは、そのプロパティを作成したアドインのみが利用でき、また、プロパティが保存されているアイテムからのみ利用できます。|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Outlook アドインでユーザーのメールボックスに設定をローミング設定として保存する方法
@@ -28,22 +28,10 @@ Outlook アドインは、[RoamingSettings](/javascript/api/outlook/office.roami
 
 ### <a name="loading-roaming-settings"></a>ローミング設定の読み込み
 
-通常、Outlook アドインでは、 [Office.initialize](/javascript/api/office) イベント ハンドラーでローミング設定を読み込みます。次の JavaScript のコード例は、既存のローミング設定を読み込む方法を示しています。
+次の JavaScript のコード例は、既存のローミング設定を読み込む方法を示しています。
 
 ```js
-var _mailbox;
-var _settings;
-
-// The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
-    $(document).ready(function () {
-    // After the DOM is loaded, add-in-specific code can run.
-   // Initialize instance variables to access API objects.
-    _mailbox = Office.context.mailbox;
-    _settings = Office.context.roamingSettings;
-    });
-}
+var _settings = Office.context.roamingSettings;
 ```
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>ローミング設定の作成または割り当て
@@ -88,7 +76,7 @@ function removeAppSetting()
 
 ### <a name="custom-properties-example"></a>カスタム プロパティの例
 
-以下の例では、カスタム プロパティを使用する Outlook アドインの一連の関数を、簡略化して示しています。この例を出発点として、カスタム プロパティを使用する Outlook アドインを作成できます。 
+以下の例では、カスタム プロパティを使用する Outlook アドインの一連の関数を、簡略化して示しています。この例を出発点として、カスタム プロパティを使用する Outlook アドインを作成できます。
 
 これらの関数を使用する Outlook アドインは、次の例に示すように、`_customProps` 変数で **get** メソッドを呼び出すことによって、任意のカスタム プロパティを取得します。
 
@@ -146,6 +134,25 @@ function saveCallback(asyncResult) {
     }
 }
 ```
+
+### <a name="platform-behavior-in-emails"></a>電子メールでのプラットフォームの動作
+
+次の表に、さまざまなクライアントのメールに保存されたカスタム プロパティの動作Outlook示します。
+
+|シナリオ|Windows|Web|Mac|
+|---|---|---|---|
+|新規作成|null|null|null|
+|返信、すべて返信|null|null|null|
+|転送|親のプロパティを読み込む|null|null|
+|新しい作成から送信されたアイテム|null|null|null|
+|返信または返信から送信されたアイテムすべて|null|null|null|
+|転送から送信されたアイテム|保存されていない場合、親のプロパティを削除します|null|null|
+
+次の操作で状況を処理Windows。
+
+1. アドインの初期化時に既存のプロパティを確認し、それらを保持するか、必要に応じてオフにしてください。
+1. カスタム プロパティを設定する場合は、メッセージの読み取り中またはアドインの読み取りモードでカスタム プロパティが追加されたかどうかを示す追加のプロパティを含める必要があります。 これは、プロパティが作成中に作成されたのか、親から継承されたのかを区別するのに役立ちます。
+1. [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (現在プレビュー中) を使用して、ユーザーが電子メールまたは返信を転送している場合も確認できます。
 
 ## <a name="see-also"></a>関連項目
 
