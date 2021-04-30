@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: Outlook JavaScript API の要件セットの詳細。
-ms.date: 02/08/2021
+ms.date: 04/29/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: d3a9255ccba922ecaef5aafe8407e98d4ab2fc33
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 691c0ad3ba97d79103e06bc7c0832eb8327b817a
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234143"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100293"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -36,7 +36,7 @@ Outlook アドインは、[マニフェスト](../manifest/requirements.md)で[�
 
 ## <a name="using-apis-from-later-requirement-sets"></a>後続の要件セットからの API の使用
 
-要件セットを設定しても、アドインで使用できる API は制限されません。 たとえば、アドインでは要件セット「Mailbox 1.1」が指定されていて、「Mailbox 1.3」をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット「Mailbox 1.3」の API を使用できます。
+要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット "メールボックス 1.1"が指定されていて、"メールボックス 1.3" をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット "メールボックス 1.3" の API を使用できます。
 
 より新しい API を使用するために、開発者は次の操作を行うことによって、特定のアプリケーションが要件セットをサポートしているかどうかをチェックできます。
 
@@ -97,7 +97,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 2016 の 1 回限りの購入 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<sup>3</sup> |
 || 2013 年の 1 回限りの購入 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)<sup>3</sup>、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<sup>3</sup> |
 | Mac | 現在の UI<br>(Microsoft 365 サブスクリプションに接続) | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md)、 [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)<br>[IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)<sup>2</sup> |
-|| 新しい UI (プレビュー)<sup>4</sup><br>(Microsoft 365 サブスクリプションに接続) | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md) |
+|| 新しい UI (プレビュー)<sup>4</sup><br>(Microsoft 365 サブスクリプションに接続) | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md)、 [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) |
 || 2019 の 1 回限りの購入 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 || 2016 の 1 回限りの購入 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 | iOS | Microsoft 365 サブスクリプション | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>5</sup> |
