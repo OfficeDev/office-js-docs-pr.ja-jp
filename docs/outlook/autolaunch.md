@@ -2,37 +2,41 @@
 title: イベント ベースOutlook用にアドインを構成する (プレビュー)
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 04/29/2021
+ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 45f9ff16b3aca0a1fb8f3a8ee3d9ffa8e0f33ea2
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 0052f08e9c6a3903f4adb48efca3ff29a6d21467
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100300"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253324"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>イベント ベースOutlook用にアドインを構成する (プレビュー)
 
-イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、特定のイベントに基づいて、特にすべてのアイテムに適用される操作に基づいてタスクを実行できます。 作業ウィンドウや UI レス機能と統合することもできます。 現時点では、次のイベントがサポートされています。
-
-|イベント|説明|
-|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|
+イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、特定のイベントに基づいて、特にすべてのアイテムに適用される操作に基づいてタスクを実行できます。 作業ウィンドウや UI レス機能と統合することもできます。
 
 このチュートリアルの最後には、新しいアイテムが作成され、件名が設定されるたびに実行されるアドインがあります。
 
 > [!IMPORTANT]
-> この機能は、Web 上[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)および Outlookサブスクリプションでのプレビュー WindowsでのみMicrosoft 365されます。 詳細 [については、この記事の「イベント](#how-to-preview-the-event-based-activation-feature) ベースのライセンス認証機能をプレビューする方法」を参照してください。
+> この機能は、Web 上[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)および Outlookサブスクリプションでのプレビュー WindowsでのみMicrosoft 365されます。 詳細については、この記事の [「イベント ベースのアクティブ化機能](#how-to-preview-the-event-based-activation-feature) をプレビューする方法」を参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、実稼働アドインでは使用できません。
+
+## <a name="supported-events"></a>サポートされるイベント
+
+現時点では、次のイベントがサポートされています。
+
+|イベント|説明|クライアント|
+|---|---|---|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|Windows Web|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|Windows Web|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|Windows|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|Windows|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|Windows|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|Windows|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|Windows|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|Windows|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|Windows|
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>イベント ベースのアクティブ化機能をプレビューする方法
 
@@ -43,7 +47,11 @@ ms.locfileid: "52100300"
 - Web Outlookの詳細については、次の情報を参照してください。
   - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript[のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定義の種類定義ファイルは、IntelliSenseと[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)にあるCDNです。 これらの種類は、 を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
-- [OutlookのWindows: 必要な最小ビルドは 16.0.13729.20000 です。 ベータ版[ビルドOfficeアクセスするには、Insider](https://insider.office.com)プログラムOffice参加します。
+- [OutlookのWindows:
+  - 必要な最小ビルドは 16.0.14026.20000 です。 ベータ版[ビルドOfficeアクセスするには、Insider](https://insider.office.com)プログラムOffice参加します。
+  - レジストリを構成します。
+    1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
+    1. という名前のエントリを `EnableBetaAPIsInJavaScript` 追加し、値をに設定します `1` 。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -279,5 +287,5 @@ UI Office.js変更する API の一部は、イベント ベースのアドイ�
 
 ## <a name="see-also"></a>関連項目
 
-[Outlook アドイン マニフェスト](manifests.md) 
-[イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
+- [Outlook アドインのマニフェスト](manifests.md)
+- [イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)

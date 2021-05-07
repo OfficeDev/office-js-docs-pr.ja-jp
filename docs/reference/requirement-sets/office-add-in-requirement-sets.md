@@ -1,22 +1,22 @@
 ---
 title: Office 共通 API の要件セット
-description: Office 共通 API の要件セットの詳細について説明します。
-ms.date: 09/17/2020
+description: 共通 API 要件セットOffice詳細を確認します。
+ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135222"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253348"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 > [!TIP]
-> *アプリケーション固有*の API 要件セットを探している場合 次の API 要件セットを参照してください。
+> アプリケーション固有の API *要件* セットをお探しの場合 次の API 要件セットを参照してください。
 >
 > - [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
@@ -29,10 +29,10 @@ ms.locfileid: "48135222"
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
-次のセクションでは、共通 API の要件セット、各セットのメソッド、およびその要件セットをサポートする Office クライアントアプリケーションの一覧を示します。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
+以下のセクションでは、共通 API 要件セット、各セット内のメソッド、および要件セットをサポートするクライアント アプリケーションOffice一覧を示します。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
 
 > [!TIP]
-> Office アプリケーションおよびバージョンでは、アドインと要件セットがサポートされる場所に関する情報が必要ですか? Office [アドインについては、「office クライアントアプリケーションとプラットフォームの可用性」を](../../overview/office-add-in-availability.md)参照してください。
+> アドインと要件セットがアプリケーションとバージョンでサポートされている場所Office必要ですか? [「Officeアドインのクライアント アプリケーションとプラットフォームの可用性Officeを参照してください](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -60,7 +60,7 @@ ms.locfileid: "48135222"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel 2016 以降<br>Excel on the web<br>Excel 2016 以降 (Mac)<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
+| Excel 2016以降のWindows<br>Excel on the web<br>Excel 2016以降の Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
 
 ---
 
@@ -156,7 +156,7 @@ ms.locfileid: "48135222"
 
 |**Office のホスト**|**セット内のメソッド**|
 |:-----|:-----|
-| 「 [Open Browser WINDOW API 要件セット](open-browser-window-api-requirement-sets.md)」を参照してください。 | 「Office のコンテキスト ui」ウィンドウ |
+| 「 [ブラウザー ウィンドウ API の要件セットを開く」を参照してください](open-browser-window-api-requirement-sets.md)。 | Office.context.ui.openBrowserWindow |
 
 ---
 
@@ -172,7 +172,7 @@ ms.locfileid: "48135222"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web<br>Word on iPad|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
+| Excel on Windows<br>Excel on the web<br>Excel on Mac<br>PowerPoint on Windows<br>PowerPoint on the web<br>PowerPoint on iPad<br>PowerPoint on Mac<br>Word on Windows (Word 2013 以降)<br>Word on Mac (Word 2016 以降)<br>Word on the web|Document.getFileAsync メソッドを使用するときの、<br>PDF 形式 (Office.FileType.Pdf) への出力をサポートします。|
 
 ---
 
@@ -180,7 +180,7 @@ ms.locfileid: "48135222"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| 「 [リボン API 要件セット](ribbon-api-requirement-sets.md)」を参照してください。 | Office リボンの更新 |
+| リボン [API 要件セットを参照してください](ribbon-api-requirement-sets.md)。 | Office.ribbon.requestUpdate |
 
 ---
 
@@ -204,7 +204,7 @@ ms.locfileid: "48135222"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| 「 [共有ランタイム要件セット](shared-runtime-requirement-sets.md)」を参照してください。 | Office の getStartupBehavior<br>Office の非表示<br>OnVisibilityModeChanged<br>Office の setStartupBehavior<br>ShowAsTaskpane<br> |
+| 「共有 [ランタイム要件セット」を参照してください](shared-runtime-requirement-sets.md)。 | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 
@@ -250,9 +250,9 @@ ms.locfileid: "48135222"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
-Office JavaScript API の次のメソッドは、要件セットの一部ではありません。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「 [Office アプリケーションと API 要件を指定する](../../develop/specify-office-hosts-and-api-requirements.md)」を参照してください。
+JavaScript API の次Officeメソッドは、要件セットの一部ではない。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「アプリケーションと[API の要件Office指定する」を参照してください](../../develop/specify-office-hosts-and-api-requirements.md)。
 
-|**メソッド名**|**Office アプリケーションのサポート**|
+|**メソッド名**|**Officeサポート**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Access Web アプリ、Excel on Windows、Excel on the web、Excel on iPad、および Excel on Mac|
 |Document.getFilePropertiesAsync|Excel on Windows、Excel on the web、Excel on iPad、Excel on Mac、PowerPoint on Windows、PowerPoint on the web、PowerPoint on iPad、PowerPoint on Mac、Word on Windows、Word on the web、Word on iPad、および Word on Mac|

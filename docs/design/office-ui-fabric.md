@@ -1,18 +1,18 @@
 ---
 title: Office アドインでの Office UI Fabric
-description: アドインで UI Fabric コンポーネントをOfficeする方法の概要Office説明します。
-ms.date: 2/09/2021
+description: アドイン内のコンポーネントをOffice UI Fabricする方法Office説明します。
+ms.date: 05/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 9799d98d795486203e4bcc23bffc043c2ead6e28
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 20f926913335197a65ac24e4ec30ed0106b81bae
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237680"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253369"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric
 
-Office UI Fabric は、ユーザー エクスペリエンスを構築するための JavaScript フロントエンド フレームワークOffice。 Fabric は、拡張や改訂が可能な視覚効果に焦点を合わせたコンポーネントであり、Office アドインで使用できます。 Fabric は Office デザイン言語を使用するため、Fabric の UX コンポーネントは Office に元々組み込まれているかのように自然に使うことができます。
+Office UI Fabricは、ユーザー エクスペリエンスを構築する JavaScript フロントエンド フレームワークOffice。 Fabric は、拡張や改訂が可能な視覚効果に焦点を合わせたコンポーネントであり、Office アドインで使用できます。 Fabric は Office デザイン言語を使用するため、Fabric の UX コンポーネントは Office に元々組み込まれているかのように自然に使うことができます。
 
 アドインを作成する場合は、Office UI Fabric を使用してユーザー エクスペリエンスを作成することをお勧めします。Office UI Fabric の使用は省略可能です。
 
@@ -44,9 +44,9 @@ Fabric Core の使用を開始するには:
 
 ## <a name="use-fabric-components"></a>Fabric コンポーネントを使用する
 
-Fabric は、アドインの構築に使用できるさまざまな UX コンポーネントを提供します。 すべてのファブリック コンポーネントが 1 つのアドインで使用されるとは予想されません。 シナリオとユーザー エクスペリエンスに最適なコンポーネントを決定します (たとえば、作業ウィンドウに [階層](https://developer.microsoft.com/fabric#/components/breadcrumb) リンクを適切に表示するのは難しい場合があります)。
+Fabric には、アドインのビルドに使用できるさまざまな UX コンポーネントがあります。 すべてのファブリック コンポーネントが 1 つのアドインで使用されるとは思ってはいけない。 シナリオとユーザー エクスペリエンスに最適なコンポーネントを決定します (たとえば、作業ウィンドウに [Breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb) を適切に表示するのは難しい場合があります)。
 
-アドインでの使用をお勧めする [一](https://developer.microsoft.com/fluentui#/controls/web) 般的な Fabric React UX コンポーネントの一覧を次に示します。
+アドインで使用することをお勧React一般的な[Fabric](https://developer.microsoft.com/fluentui#/controls/web)コンポーネントの一覧を次に示します。
 
 - [Button](https://developer.microsoft.com/fabric#/components/button)
 - [Checkbox](https://developer.microsoft.com/fabric#/components/checkbox)
@@ -63,4 +63,3 @@ Fabric は、アドインの構築に使用できるさまざまな UX コンポ
 |**フレームワーク**|**例**|
 |:------------|:----------|
 |**React**|[Office アドインで Office UI Fabric React を使用する](using-office-ui-fabric-react.md )|
-|**Angular**| [Fabric コンポーネントと Angular 2 コンポーネントの折り返しを検討する](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

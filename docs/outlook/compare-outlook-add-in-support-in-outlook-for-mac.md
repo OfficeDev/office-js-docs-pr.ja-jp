@@ -3,12 +3,12 @@ title: Mac Outlookでアドインのサポートを比較Outlook比較する
 description: Mac でのアドイン サポートと他Outlookクライアントとの比較Outlookします。
 ms.date: 04/29/2021
 localization_priority: Normal
-ms.openlocfilehash: fa643a423d058324618061f20c2028b6dd484bc9
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 33134b3997730a14ea85608368d097e7b9d287ad
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100307"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253325"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Mac Outlookのアドイン サポートをOutlook他のクライアントとOutlookする
 
@@ -41,12 +41,12 @@ Outlookは、要件セット 1.7 まで、新しい Mac UI (プレビュー) で
 
 バージョン 16.38.506 からOutlook Mac UI のプレビューを行って下さい。 試し方の詳細については、「Outlook for Mac - Insider Fast ビルドのリリース ノート」[を参照してください](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)。
 
-次のように、どの UI バージョンをオンにしているのか判断できます。
+次のように、どの UI バージョンをオンにしているのか確認できます。
 
 **現在の UI**
 
-&nbsp;&nbsp;&nbsp;&nbsp;![Mac の現在の UI](../images/outlook-on-mac-classic.png)
+![Mac の現在の UI](../images/outlook-on-mac-classic.png)
 
 **新しい UI (プレビュー)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;![Mac のプレビューの新しい UI](../images/outlook-on-mac-new.png)
+![Mac のプレビューの新しい UI](../images/outlook-on-mac-new.png)

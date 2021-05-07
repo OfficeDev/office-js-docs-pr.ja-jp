@@ -1,20 +1,20 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 01/12/2021
+ms.date: 04/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 798dd723e0388becdd3419c5af87ceb360d32a41
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: 2ba0470c33237fa4627cf98cc5d106f6b7d8a57c
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870631"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253334"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
 
-また、クライアント アプリケーションでコマンドを開く際にコマンドを有効Office指定することもできます。
+また、クライアント アプリケーションを開く際にコマンドを有効または無効Office指定することもできます。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
@@ -23,16 +23,16 @@ ms.locfileid: "49870631"
 
 ## <a name="office-application-and-platform-support-only"></a>Officeとプラットフォームのサポートのみ
 
-この記事で説明する API は Excel でのみ使用できます。また、Windows 上の Office、Mac Office、および web 上Officeでのみ使用できます。
+この記事で説明する API は Excel でのみ使用できます。Office Windows、mac、Office、および Office on the web でのみ使用できます。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、バージョン [と要件Officeを参照してください](../develop/office-versions-and-requirement-sets.md)。
+要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「バージョンと要件[Officeを参照してください](../develop/office-versions-and-requirement-sets.md)。
 
-有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属しています。
+有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属します。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストのセクションで指定 `<Requirements>` することはできません。 サポートをテストするには、コードで呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが* 返された場合にのみ、コードは有効化/無効化 API を呼び `true` 出します。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム `false` アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮して、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例については、「Office アプリケーションと API の要件を指定する(特に JavaScript コードでランタイム チェックを使用する)」を `isSetSupported` [参照してください](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md) (この記事 [のマニフェストの Requirements](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) 要素を設定するセクションは、リボン 1.1 には適用されません。
+> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストのセクションで指定 `<Requirements>` することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが返* された場合にのみ、 `true` コードは有効/無効 API を呼び出す可能性があります。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム アドイン `false` コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮に入れて、実稼働アドインとアプリ内命令を設計する必要があります。 使用の詳細と例については、「アプリケーションと API Officeを指定する、特に JavaScript コードでランタイム チェックを使用する」 `isSetSupported` [を参照してください](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md) (この記事 [のマニフェストで Requirements 要素](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) を設定するセクションは、リボン 1.1 には適用されません)。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
@@ -76,10 +76,10 @@ ms.locfileid: "49870631"
 
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
-1. (1) マニフェストで宣言されているコマンドとその親グループとタブを、その ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。(2) は、コマンドの有効または無効の状態を指定します。
+1. (1) コマンドとその親グループとタブをマニフェストで宣言された名前の ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。および (2) は、コマンドの有効または無効の状態を指定します。
 2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) メソッドに渡します。
 
-次に簡単な例を示します。 "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" はマニフェストからコピーされます。
+次に簡単な例を示します。 マニフェストから "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" がコピーされます。
 
 ```javascript
 function enableButton() {
@@ -112,11 +112,11 @@ const enableButton = async () => {
     const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
     const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
-Office では、リボンの状態を更新するタイミングが制御されます。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドによる Promise オブジェクトの解決は、リボンが実際に更新されたときではなく、要求がキューに登録された直後に行われます。
+親関数 `await` が非同期である **場合は requestUpdate()** の呼び出しを実行できますが、リボンの状態を更新するときに、Office アプリケーションが制御する点に注意してください。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドは、リボンが実際に更新された場合ではなく、要求をキューに入れ次第、promise オブジェクトを解決します。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>イベントに応じて状態を変更する
 
@@ -156,7 +156,7 @@ function enableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -164,7 +164,7 @@ function enableChartFormat() {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
 
-requestUpdate **メソッドは** 、ユーザー設定の操作別タブの表示/非表示を切り替える場合にも使用します。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeします](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+requestUpdate **メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeアドインを参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 
@@ -190,7 +190,7 @@ function disableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
 }
@@ -232,7 +232,7 @@ function disableChartFormat() {
                          groups: [parentGroup]
                         };
         var ribbonUpdater = {tabs: [parentTab]};
-        await Office.ribbon.requestUpdate(ribbonUpdater);
+        Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;
     }
