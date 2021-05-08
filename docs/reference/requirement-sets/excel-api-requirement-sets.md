@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 10/26/2020
+ms.date: 05/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f99e9033d4b5acbcba6c4f799bcc73b263cfaf6c
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774733"
+ms.lasthandoff: 05/07/2021
+ms.locfileid: "52266090"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "48774733"
 
 ## <a name="requirement-set-availability"></a>要件セットの可用性
 
-Excel アドインは、Windows での Office 2016 以降、Office on the web、Mac、および iPad など、複数のバージョンの Office で機能します。 次の表に、Excel の要件セット、各要件セットをサポートする Office クライアント アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号を記載します。
+Excel アドインは、Windows 上の Office 2016 以降の Office や Micrsoft Offie on the web など複数のバージョンの Office で機能します。次の表は、Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号の一覧です。
 
 > [!NOTE]
 > 番号付きの要件セットまたは `ExcelApiOnline` で API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で **実稼働** ライブラリを参照してください。
@@ -42,7 +42,7 @@ Excel アドインは、Windows での Office 2016 以降、Office on the web、
 | [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | バージョン 1509 (ビルド 4266.1001) 以降   | 15.0 以降 | 15.20 以降 | 2016 年 1 月 |
 
 > [!NOTE]
-> 永続ライセンス版 Office でサポートされる要件セットは次のとおりです。
+> サブスクリプション版以外の Office でサポートされる要件セットは次のとおりです。
 >
 > - Office 2019 では ExcelApi 1.8 以前がサポートされています。
 > - Office 2016 では ExcelApi 1.1 要求セットのみがサポートされています。
@@ -58,7 +58,7 @@ Office のバージョンとビルド番号の詳細については、次を参�
 > [!NOTE]
 > このセクションでは、[Office バージョンと要件セット](../../develop/office-versions-and-requirement-sets.md) の概要、および [Office アプリケーションと API 要件の指定](../../develop/specify-office-hosts-and-api-requirements.md) について理解していることを前提としています。
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを確認できます。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、Office アプリケーションがアドインの必要とする API をサポートしているかどうかを判断するために、ランタイム チェックを実施したり、マニフェストで指定されている要件セットを使用したりすることができます。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>実行時に要件セットのサポートを確認する
 
@@ -75,7 +75,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](../manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、 **[マイ アドイン]** に表示されるアドインのリストに表示されません。アドインが完全な機能のために特定の要件セットを必要とするが、要件セットをサポートしていないプラットフォームのユーザーにも価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
+アドインのマニフェストで [Requirements 要素](../manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、**[マイ アドイン]** に表示されるアドインのリストに表示されません。アドインが完全な機能のために特定の要件セットを必要とするが、要件セットをサポートしていないプラットフォームのユーザーにも価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
 
 次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office クライアント アプリケーションのすべてで読み込まれる必要があることを指定する、アドインのマニフェストの `Requirements` 要素を示しています。
 
