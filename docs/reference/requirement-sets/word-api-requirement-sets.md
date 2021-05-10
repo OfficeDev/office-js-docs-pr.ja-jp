@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の要件セット
 description: Word ビルド用の Office アドイン要件セットの情報。
-ms.date: 07/10/2020
+ms.date: 05/05/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 23db807df0c47aaab4c579d17e4fbd28bb809fed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293437"
+ms.lasthandoff: 05/07/2021
+ms.locfileid: "52266097"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
@@ -17,12 +17,12 @@ ms.locfileid: "47293437"
 
 ## <a name="requirement-set-availability"></a>要件セットの可用性
 
-Word アドインは、Windows での Office 2016 以降、Office on the web、iPad、および Mac など、複数のバージョンの Office で機能します。 次の表は、Word の要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
+Word アドインは、Windows の Office 2016 以降、Office on the web、iPad、および Mac など、複数のバージョンの Office で機能します。次の表は、Word の要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
 > [!NOTE]
-> 番号付きの要件セットで API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で**実稼働**ライブラリを参照してください。
+> 番号付きの要件セットで API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で **実稼働** ライブラリを参照してください。
 >
-> プレビューの API の使用に関する詳細については、記事「[Excel JavaScript プレビュー API](word-preview-apis.md)」を参照してください。
+> プレビューの API の使用に関する詳細については、記事「[Word JavaScript プレビュー API](word-preview-apis.md)」を参照してください。
 
 |  要件セット  |   Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|
@@ -32,7 +32,7 @@ Word アドインは、Windows での Office 2016 以降、Office on the web、i
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 |
 
 > [!NOTE]
-> 永続ライセンス版 Office でサポートされる要件セットは次のとおりです。
+> サブスクリプション版以外の Office でサポートされる要件セットは次のとおりです。
 >
 > - Office 2019 では WordApi 1.3 以前がサポートされています。
 > - Office 2016 では WordApi 1.1 要求セットのみがサポートされています。
