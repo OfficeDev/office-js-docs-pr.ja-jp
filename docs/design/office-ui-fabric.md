@@ -4,11 +4,11 @@ description: アドイン内のコンポーネントをOffice UI Fabricする方
 ms.date: 05/03/2021
 localization_priority: Normal
 ms.openlocfilehash: 20f926913335197a65ac24e4ec30ed0106b81bae
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253369"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330536"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office アドインでの Office UI Fabric
 

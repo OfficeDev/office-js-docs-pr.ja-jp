@@ -1,20 +1,20 @@
 ---
 title: アドインの新しいスタイル アイコンOfficeガイドライン
 description: 新しいスタイル アイコンをアドインで使用Officeガイドライン。
-ms.date: 03/30/2021
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604667"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330046"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>アドインの新しいスタイル アイコンOfficeガイドライン
 
-Microsoft Office 2013(サブスクリプション以外) バージョンの Officeは、Microsoft の Fresh スタイルの図版を使用します。 アイコンが Microsoft 365 のモノライン スタイルと一致することを希望する場合は、「Monoline style icon guidelines for the Office アドイン」を [参照してください](add-in-icons-monoline.md)。
+2013 Officeバージョンの 2013+ (サブスクリプション以外) Office、Microsoft の Fresh スタイルの図版を使用します。 アイコンがモノライン スタイルの Microsoft 365 に一致することを希望する場合は、「モノ[Office」を参照してください](add-in-icons-monoline.md)。
 
-## <a name="office-fresh-visual-style"></a>Officeフレッシュな表示スタイル
+## <a name="office-fresh-visual-style"></a>Office新鮮な表示スタイル
 
 新しいアイコンには、不可欠なコミュニケーション要素だけが含まれます。 遠近法、グラデーション、および光源など、重要でない要素が削除されています。 アイコンが簡略化されたことで、コマンドやコントロールの解析をより高速に行うことができるようになっています。 サブスクリプション以外のクライアントに最適なOfficeこのスタイルに従います。
 
@@ -25,10 +25,10 @@ Microsoft Office 2013(サブスクリプション以外) バージョンの Offi
 |するべきこと|してはいけないこと|
 |:---|:---|
 |コミュニケーションの重要な要素に焦点を当て、ビジュアルをシンプルかつ明確に保つ。| アイコンが乱雑に見える成果物は使用しないでください。|
-|Office アイコンの言語を使用して、動作や概念を示します。|アプリリボンまたはコンテキスト メニュー Officeアドイン コマンドの UI Fabric グリフOffice転用しない。 Fabric のアイコンはスタイルが異なるので、適合しません。|
+|Office アイコンの言語を使用して、動作や概念を示します。|リボンまたはコンテキスト メニューでアドイン コマンドの Fabric Core グリフを再利用Office アプリ使用します。 Fabric Core アイコンは、スタイリスト的に異なるので、一致しません。|
 |書式設定用のペイントブラシや検索用の虫眼鏡など、一般的な Office の視覚的メタファーを再利用します。|異なるコマンドで、同じ視覚的メタファーを再利用しないようにします。 異なる動作や概念に同じアイコンを使用すると、混乱が生じる可能性があります。 |
 |アイコンを小さくしたり大きくしたりするために、アイコンを再描画します。 カットアウト、角、および丸角のエッジの線をできる限り明瞭にするために、再描画を行う手間を省かないでください。 |縮小または拡大してアイコンのサイズを変更しないでください。 これにより、視覚的品質が低くなり、動作が不明瞭になることがあります。 再描画せずにサイズを小さくすると、より大きなサイズで作成された複雑なアイコンから明瞭さが失われることがあります。 |
-|アクセスしやすくするために、白の塗りつぶしを使います。アイコンのオブジェクトは、Office UI のテーマのハイ コントラスト モードで読みやすさを保つために、たいていは背景を白にする必要があります。  |アドイン コマンドで何をするかを伝えるために、ロゴやブランドに頼らないようにします。 ブランド マークは、サイズの小さいアイコンにしたり、修飾子を適用したりすると、しばしば認識不可能になります。 ブランド マークは、アプリのリボン Officeスタイルと競合する場合が多く、飽和環境でユーザーの注意を引く可能性があります。 |
+|アクセスしやすくするために、白の塗りつぶしを使います。アイコンのオブジェクトは、Office UI のテーマのハイ コントラスト モードで読みやすさを保つために、たいていは背景を白にする必要があります。  |アドイン コマンドで何をするかを伝えるために、ロゴやブランドに頼らないようにします。 ブランド マークは、サイズの小さいアイコンにしたり、修飾子を適用したりすると、しばしば認識不可能になります。 ブランド マークは、多くのOffice アプリリボン アイコン スタイルと競合し、飽和環境でユーザーの注意を競う可能性があります。 |
 |透明背景の PNG 形式を使用します。 ||
 |アイコンに、表記文字、段落のラグ、および疑問符などの、ローカライズ可能なコンテンツを含めないようにします。 ||
 
@@ -46,7 +46,7 @@ Office のデスクトップ アイコンは、ビットマップ画像です。
 - 80 px (必須)
 
 > [!IMPORTANT]
-> アドインの代表的なアイコンである画像については、「サイズなどの要件については [、AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) および Office 内で効果的なリストを作成する」を参照してください。
+> アドインの代表的なアイコンである画像については、「サイズなどの要件については[、「AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)および Office 内で効果的なリストを作成する」を参照してください。
 
 それぞれのアイコンを、サイズに合わせて縮小するのではなく再描画します。
 
@@ -89,7 +89,7 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 ## <a name="icon-colors"></a>アイコンの色
 
 > [!NOTE]
-> これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは Microsoft UI Fabric では表示されず、色のパレットは「[Microsoft UI Fabric | 色 | 共有](https://fluentfabric.azurewebsites.net/#/color/shared)」に記載されているパレットとは異なります。
+> これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは Fluent UI ではレンダリングされないので、カラー パレットは Microsoft UI Fabric | で説明されている[パレットとは異UI Fabric |色|共有 .](https://fluentfabric.azurewebsites.net/#/color/shared)
 
 Office のアイコンには、限定されたカラー パレットがあります。Office UI とのシームレスな統合を保証するために、以下の表に記載されている色を使用してください。色の使用について、以下のガイドラインに従ってください。
 

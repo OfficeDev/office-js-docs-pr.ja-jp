@@ -1,14 +1,14 @@
 ---
 title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cf4ea46b4b924683756063bb36c3f2ea2b8c6764
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132082"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52329997"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -16,7 +16,7 @@ ms.locfileid: "49132082"
 
 *図 1. コンテンツ アドインの一般的なレイアウト*
 
-![Office アプリケーションにおけるコンテンツアドインの一般的なレイアウト](../images/overview-with-app-content.png)
+![アプリケーション内のコンテンツ アドインの一般的Officeレイアウト](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -25,7 +25,7 @@ ms.locfileid: "49132082"
 
 ## <a name="variants"></a>バリエーション
 
-Office デスクトップと Microsoft 365 の Excel および PowerPoint のコンテンツアドインのサイズはユーザーが指定します。
+デスクトップとデスクトップのExcelおよびPowerPointのOfficeのMicrosoft 365サイズは、ユーザーが指定します。
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
@@ -35,13 +35,13 @@ Windows の場合、パーソナル メニューは 12x32 ピクセルを測定�
 
 *図 2. Windows のパーソナル メニュー*
 
-![Windows デスクトップ上の12x32 のパーソナルメニュー](../images/personality-menu-win.png)
+![デスクトップ上の 12x32 ピクセルのWindowsメニュー](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、占有スペースは 34x32 ピクセルに増加します (図を参照)。
 
 *図 3. Mac のパーソナル メニュー*
 
-![Mac デスクトップの34x32 ピクセルのパーソナリティメニュー](../images/personality-menu-mac.png)
+![Mac デスクトップの 34x32 ピクセルのパーソナリティ メニュー](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>実装
 
@@ -49,13 +49,13 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 ## <a name="support-considerations"></a>サポートに関する考慮事項
 
-- Office アドインが [特定の office アプリケーションまたはプラットフォーム](../overview/office-add-in-availability.md)で機能するかどうかを確認します。
+- 特定のアプリケーションまたはプラットフォームでOfficeアドインが動作Office[確認します](../overview/office-add-in-availability.md)。
 - コンテンツ アドインによっては、Excel または PowerPoint の読み取りと書き込みのためにユーザーがアドインを「信頼」する必要があります。 アドインのマニフェストには、ユーザーに必要とされる[アクセス許可のレベル](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)を宣言することができます。  
 - コンテンツ アドインは Office 2013 以降のバージョンの Excel および PowerPoint でサポートされています。 Office Web アドインをサポートしていない Office のバージョンでアドインを開くと、アドインはイメージとして表示されます。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
-- [Office アドインの Office UI Fabric](../design/office-ui-fabric.md)
+- [ファブリック コア (Office アドイン)](fabric-core.md)
 - [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
 - [アドインでの API 使用についてアクセス許可を要求する](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
