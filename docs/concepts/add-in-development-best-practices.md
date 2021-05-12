@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
-description: Office アドインを作成するための開発時にベストプラクティスを適用します。
-ms.date: 10/14/2020
+description: 開発時にベスト プラクティスを適用して、Officeを作成します。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132180"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330081"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -21,7 +21,7 @@ ms.locfileid: "49132180"
 - ユーザーがタスクをすばやく効率的に完了するのに役立つアドインを作成します。Office アプリケーションに当てはまるシナリオに絞ります。次に例を示します。
   - コア オーサリング タスクをよりスピーディかつ簡単にし、中断を減らします。
   - Office 内で新しいシナリオを有効にします。
-  - Office アプリケーション内に補完的サービスを埋め込む。
+  - アプリケーション内に補完的なOffice埋め込む。
   - Office エクスペリエンスを向上させて生産性を高めます。
 - [魅力的な初回実行時エクスペリエンス](#create-an-engaging-first-run-experience)を作成して、ユーザーがアドインの価値をすぐに感じられるようにしてください。
 - [効果的な AppSource リスト](/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
@@ -36,11 +36,11 @@ ms.locfileid: "49132180"
 
 - 使い方や UI を個人用に設定する方法を説明する UI を提供します。
 
-  !["Do" と "いいえ" の比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックして作業を開始できるボタンを含むアドインを示しています。 "No" の例は、導入手順やボタンを持たないアドインを示しています。](../images/contoso-part-catalog-do-dont.png)
+  !["Do" vs. "Don't" 比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックして開始できるボタンを含むアドインを示しています。 "Don't" の例は、導入手順やボタンを含むアドインを示しています。](../images/contoso-part-catalog-do-dont.png)
 
 - コンテンツ アドインがユーザーのドキュメント内のデータにバインドされている場合は、サンプル データまたはテンプレートを含めて、使用するデータ形式をユーザーに表示します。
 
-  !["Do" と "いいえ" の比較を示すスクリーンショット。 "Do" の例は、ユーザーがサンプルデータを挿入するためにクリックできるボタンを含むアドインを示しています。 "No" の例は、サンプルのデータまたはボタンのないアドインを示しています。](../images/add-in-title.png)
+  !["Do" vs. "Don't" 比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックしてサンプル データを挿入できるボタンを含むアドインを示しています。 "Don't" の例は、サンプル データやボタンのないアドインを示しています。](../images/add-in-title.png)
 
 - [無料の試用版](/office/dev/store/decide-on-a-pricing-model)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
 
@@ -56,7 +56,7 @@ ms.locfileid: "49132180"
 
 ## <a name="apply-ux-design-principles"></a>UX 設計原則を適用する
 
-- アドインの外観と機能が、Office のエクスペリエンスと合っていることを確認します。[Office UI Fabric](https://developer.microsoft.com/fabric) を使用します。
+- アドインの機能とルック アンド フィールと機能が、Office のエクスペリエンスと合っていることを確認します。 「[アドインの UI をOfficeする」を参照してください](../design/add-in-design.md)。
 
 - クロムよりもコンテンツを優先します。ユーザー エクスペリエンスの価値を高めない余分な UI 要素を追加しないようにします。
 
@@ -77,7 +77,7 @@ ms.locfileid: "49132180"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- [Context.touchenabled](/javascript/api/office/office.context#touchenabled)プロパティを使用して、アドインが実行されている Office アプリケーションがタッチに対応しているかどうかを検出します。
+- [Context.touchEnabled](/javascript/api/office/office.context#touchenabled)プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -91,7 +91,7 @@ ms.locfileid: "49132180"
 - [サイドロード](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)を使用して、アドインを実際のデバイスでテストしてください。
 
 > [!NOTE]
-> [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) をデザイン要素に使用している場合は、これらの要素の多くが適切に設定されます。
+> デザイン要素に[Fluent UI](../design/using-office-ui-fabric-react.md) Reactを使用している場合、これらの要素の多くはデザイン システムに組み込まれています。
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>アドインのパフォーマンスを最適化して監視する
@@ -121,7 +121,7 @@ ms.locfileid: "49132180"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
-- アドインと Office ドキュメント間のデータ交換を最小限にします。 詳細については、「 [ループでのコンテキストの同期方法の使用を避ける](correlated-objects-pattern.md)」を参照してください。
+- アドインとドキュメント間のデータ交換を最小限Officeします。 詳細については [、「context.sync メソッドをループで使用しないようにする」を参照してください](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 
@@ -135,7 +135,7 @@ ms.locfileid: "49132180"
 
 - ユーザーがアドインを見つけて使うことができる Web サイトを作成します。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>Internet Explorer をサポートする JavaScript の使用
+## <a name="use-javascript-that-supports-internet-explorer"></a>JavaScript をサポートする JavaScript をInternet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

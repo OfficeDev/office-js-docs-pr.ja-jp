@@ -1,23 +1,23 @@
 ---
-title: Office アドインでの Office UI Fabric React の使用
-description: Office アドインで Office UI Fabric React を使用する方法について説明します。
-ms.date: 02/09/2021
+title: Fluent UI ReactアドインOfficeに含む
+description: このアドインで Fluent UI ReactをOfficeする方法について学習します。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: cb7f04c21a52a2e4a3f271abc56aa325dd2b02fd
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237729"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330146"
 ---
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Office アドインでの Office UI Fabric React の使用
+# <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインで Fluent UI ReactをOfficeする
 
-Office UI Fabric は、ユーザー エクスペリエンスを構築するための JavaScript フロントエンド フレームワークOffice。React を使用してアドインをビルドする場合は、Fabric React を使用してユーザー エクスペリエンスを作成します。Fabric には、アドインで使用できるボタンやチェック ボックスなど、React ベースの UX コンポーネントがいくつか備備されています。
-
-この記事では、React で構築され Fabric React コンポーネントを使用するアドインを作成する方法について説明します。
+Fluent UI Reactは、Office を含む幅広い Microsoft 製品にシームレスに適合するエクスペリエンスを構築するように設計された、公式のオープン ソース JavaScript フロントエンド フレームワークです。 CSS-in-JS を使用して高度にカスタマイズ可能React、堅牢で最新のアクセス可能なコンポーネントを提供します。
 
 > [!NOTE]
-> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) は Fabric React に含まれています。つまり、この記事の手順を完了すると、アドインで Fabric Core にアクセスできるようになります。
+> この記事では、アドインのコンテキストでの Fluent UI Reactの使用Office説明します。ただし、さまざまなアプリや拡張機能でもMicrosoft 365使用されます。 詳細については[、「Fluent UI React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)およびオープンソースの repo Fluent [UI Web」を参照してください](https://github.com/microsoft/fluentui)。
+
+この記事では、このコンポーネントを使用して構築されたアドインを作成し、Fluent UI ReactコンポーネントをReactします。
 
 ## <a name="create-an-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -76,13 +76,13 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
         アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
-3. Word で [**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、Fabric React の UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンを再定義します。
+3. アドイン作業ウィンドウを開く場合は、[ホーム] **タブで** [タスクウィンドウの表示] **ボタンを選択** します。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、Fluent UI から UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンを再定義React。
 
-    ![作業ウィンドウの [作業ウィンドウの表示] リボン ボタンが強調表示され、[実行] ボタンと直前のテキストが作業ウィンドウで強調表示されている Word アプリケーションを示すスクリーンショット](../images/word-task-pane-yo-default.png)
+    ![[タスクウィンドウの表示] リボン ボタンが強調表示された Word アプリケーションと作業ウィンドウで強調表示された [実行] ボタンと直前のテキストを示すスクリーンショット](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fabric-react"></a>Fabric React を使用する React コンポーネントの作成
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>Fluent UI Reactを使用するカスタム コンポーネントを作成React
 
-この時点で、React を使用して構築された非常に基本的な作業ウィンドウ アドインが作成されました。 次の手順に従って、アドイン プロジェクト内で新しい React コンポーネント (`ButtonPrimaryExample`) を作成します。 このコンポーネントは、 Fabric React の `Label` と `PrimaryButton` コンポーネントを使用します。
+この時点で、React を使用して構築された非常に基本的な作業ウィンドウ アドインが作成されました。 次の手順に従って、アドイン プロジェクト内で新しい React コンポーネント (`ButtonPrimaryExample`) を作成します。 コンポーネントは Fluent `Label` UI のコンポーネントと `PrimaryButton` コンポーネントを使用React。
 
 1. Yeoman ジェネレーターで作成したプロジェクト フォルダーを開き、**src\taskpane\components** に移動します。
 2. そのフォルダーで、**button.tsx** という名前の新しいファイルを作成します。
@@ -102,7 +102,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     // In the click event, write text to the document.
     await Word.run(async (context) => {
       let body = context.document.body;
-      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
       await context.sync();
     });
   }
@@ -126,10 +126,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 このコードは、次の処理を実行します。
 
 - `import * as React from 'react';` を使用して、React ライブラリを参照します。
-- `ButtonPrimaryExample` の作成に使用される Fabric コンポーネント (`PrimaryButton`、`IButtonProps`、`Label`) を参照します。
+- 作成に使用Reactコンポーネント ( 、 ) `PrimaryButton` `IButtonProps` を参照 `Label` します `ButtonPrimaryExample` 。
 - `export class ButtonPrimaryExample extends React.Component` を使用して、新しい `ButtonPrimaryExample` コンポーネントを宣言します。
 - ボタンの `onClick` イベントを処理する `insertText` 関数を宣言します。
-- `render` 関数で React コンポーネントの UI を定義します。 HTML マークアップは、Fabric React `Label` と `PrimaryButton` コンポーネントを使用し、`onClick` イベントが発生したときに `insertText` 関数が実行されるように指定します。
+- `render` 関数で React コンポーネントの UI を定義します。 HTML マークアップでは、Fluent UI コントロールのコンポーネントとコンポーネントReactを使用し、イベントが発生すると関数 `Label` `PrimaryButton` `onClick` が `insertText` 実行されます。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>React コンポーネントをアドインに追加
 
@@ -170,13 +170,12 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 Word で、**App.tsx** に変更を保存すると、アドイン作業ウィンドウが自動的に更新されます。 作業ウィンドウ下部の既定のテキストとボタンに、`ButtonPrimaryExample` コンポーネントによって定義された UI が表示されるようになりました。 [**テキストの挿入**] ボタンを選択してドキュメントにテキストを挿入します。
 
-![[テキストの挿入...] が表示された Word アプリケーションを示すスクリーンショットボタンと直前のテキストが強調表示されている](../images/word-task-pane-with-react-component.png)
+!["Insert text..." を含む Word アプリケーションを示すスクリーンショット。ボタンと直前のテキストが強調表示されている](../images/word-task-pane-with-react-component.png)
 
-おめでとうございます! これで React および Office UI Fabric React を使用して作業ウィンドウ アドインを作成できました。
+おめでとうございます、作業ウィンドウ アドインの作成に成功しました。React Fluent UI React!
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Office UI Fabric](office-ui-fabric.md)
-- [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Word アドイン GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [ファブリック コア (Office アドイン)](fabric-core.md)
 - [Office アドインの UX 設計パターン](ux-design-pattern-templates.md)
-- [Fabric React のコード サンプルの使用にあたって](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)

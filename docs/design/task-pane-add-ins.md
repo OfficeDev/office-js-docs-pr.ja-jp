@@ -1,14 +1,14 @@
 ---
 title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: ed3f3b8fdf7cf62b6016fe8b03393de0d56dfb33
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d235d6c437ee124441389e68b54fc6ab8cde8dae
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132019"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330151"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
 
@@ -16,40 +16,40 @@ ms.locfileid: "49132019"
 
 *図 1. 一般的な作業ウィンドウのレイアウト*
 
-![上部にセクションタブ、左側には会社のロゴと会社名、右下に設定アイコンが表示される一般的な作業ウィンドウレイアウトの図](../images/overview-with-app-task-pane.png)
+![上部にセクション タブ、左下に会社のロゴと会社名、右下に設定アイコンを含む一般的な作業ウィンドウ レイアウトを表示する図](../images/overview-with-app-task-pane.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
 |するべきこと|してはいけないこと|
 |:-----|:--------|
 |<ul><li>タイトルにアドインの名前を含めます。</li></ul>|<ul><li>タイトルには会社名を追加しません。</li></ul>|
-|<ul><li>タイトルには短くわかりやすい名前を使用します。</li></ul>|<ul><li>アドインのタイトルには、「アドイン」、「Word」、「Office」などの文字列を追加しないでください。</li></ul>|
+|<ul><li>タイトルには短くわかりやすい名前を使用します。</li></ul>|<ul><li>アドインのタイトルには、"アドイン"、"for Word"、"for Office" などの文字列を追加しません。</li></ul>|
 |<ul><li>アドインの上部に CommandBar や Pivot などのナビゲーション要素やコマンド要素を含めます。</li></ul>||
 |<ul><li>アドインを Outlook 内で使用する場合を除き、アドインの下部に BrandBar などのブランド化の要素を含めます。</li></ul>||
 
 ## <a name="variants"></a>バリアント
 
-次の画像は、1366x768 の解像度で Office アプリのリボンを使用して、さまざまな作業ウィンドウのサイズを示しています。Excel では、数式バーに対応するために、さらに広い領域が必要になります。  
+次の図は、1366x768 解像度のリボンOffice アプリ作業ウィンドウのサイズを示しています。 Excel では、数式バーを収容するための縦のスペースが必要です。  
 
 *図 2. Office 2016 デスクトップ作業ウィンドウのサイズ*
 
-![1366x768 の解像度でデスクトップ作業ウィンドウのサイズを表示する図](../images/office-2016-taskpane-sizes.png)
+![デスクトップ作業ウィンドウのサイズを 1366x768 解像度で表示する図](../images/office-2016-taskpane-sizes.png)
 
-- Excel-320x455 ピクセル
-- PowerPoint-320x531 ピクセル
-- Word-320x531 ピクセル
-- Outlook-348x535 ピクセル
+- Excel - 320x455 ピクセル
+- PowerPoint - 320x531 ピクセル
+- Word - 320x531 ピクセル
+- Outlook - 348x535 ピクセル
 
 <br/>
 
-*図3Office の作業ウィンドウのサイズ*
+*図 3.Office作業ウィンドウのサイズ*
 
-![1366x768 の解像度で作業ウィンドウのサイズを表示する図](../images/office-365-taskpane-sizes.png)
+![作業ウィンドウのサイズを 1366x768 解像度で表示する図](../images/office-365-taskpane-sizes.png)
 
-- Excel-350x378 ピクセル
-- PowerPoint-348x391 ピクセル
-- ワード329x445 ピクセル
-- Outlook (web 上)-320x570 ピクセル
+- Excel - 350x378 ピクセル
+- PowerPoint - 348x391 ピクセル
+- Word - 329x445 ピクセル
+- Outlook (web 上) - 320x570 ピクセル
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
@@ -59,13 +59,13 @@ Windows の場合、パーソナル メニューは 12x32 ピクセルを測定�
 
 *図 4. Windows のパーソナル メニュー*
 
-![Windows デスクトップのパーソナルメニューを示す図](../images/personality-menu-win.png)
+![デスクトップ上のパーソナリティ メニューをWindows図](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、スペースは 34x32 ピクセルに増加します (図を参照)。
 
 *図 5. Mac のパーソナル メニュー*
 
-![Mac デスクトップのパーソナルメニューを示す図](../images/personality-menu-mac.png)
+![Mac デスクトップのパーソナリティ メニューを示す図](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>実装
 
@@ -73,5 +73,5 @@ Mac の場合、パーソナル メニューは 26x26 ピクセルを測定し�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Office UI Fabric](office-ui-fabric.md)
+- [ファブリック コア (Office アドイン)](fabric-core.md)
 - [Office アドインの UX 設計パターン](../design/ux-design-pattern-templates.md)
