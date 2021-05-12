@@ -1,15 +1,15 @@
 ---
 title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-ms.date: 02/09/2021
+ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 35359f58831ebd4b8874247378a09e9da97e4d69
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238079"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330039"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -243,7 +243,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. **Home.html** ファイルで `TODO2` を次のマークアップと置き換え、ヘッダー セクションとタイトルを作業ウィンドウに追加します。 注意:
 
-    - `ms-` で始まるスタイルは、[Office UI Fabric](../design/office-ui-fabric.md) で定義されています。これは、Office のユーザー エクスペリエンスを構築するための JavaScript フロント エンド フレームワークです。 **Home.html** ファイルには、Fabric スタイルシートへの参照が含まれています。
+    - `ms-` で始まるスタイルは、[Office アドインの Fabric Core](../design/fabric-core.md) で定義されています。これは、Office のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。 **Home.html** ファイルには、Fabric Core スタイル シートへの参照が含まれています。
 
     ```html
     <div id="content-header">
