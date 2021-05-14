@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: このチュートリアルでは、Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 02/03/2021
+ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613935"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330018"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -74,9 +74,9 @@ ms.locfileid: "50613935"
 
 7. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Excel) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
 
-    - このコードの最初の部分では、ユーザーの Excel のバージョンが、このチュートリアルのシリーズで使用する API をすべて含んでいるバージョンの Excel.js をサポートしているかどうかを調べます。 運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。 これにより、ユーザーは、そのユーザーの Excel のバージョンでサポートされているアドインの部分を使用できるようになります。
+    - このコードの最初の部分では、ユーザーの Excel のバージョンが、このチュートリアルのシリーズで使用する API をすべて含んでいるバージョンの Excel.js をサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分の Excel のバージョンでサポートされているアドインの部分を使用できるようになります。
 
-    - 2 番目の部分では、[`create-table`] ボタンのイベント ハンドラーを追加します。
+    - このコードの 2 番目の部分では、[`create-table`] ボタンのイベント ハンドラーを追加します。
 
     ```js
     // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
@@ -88,7 +88,7 @@ ms.locfileid: "50613935"
     document.getElementById("create-table").onclick = createTable;
     ```
 
-8. 次の関数をファイルの最後に追加します。 注:
+8. 次の関数をファイルの最後に追加します。次の点に注意してください。
 
     - Excel .js のビジネスロジックが `Excel.run`に渡される関数に追加されます。このロジックは直ちには実行されません。代わりに、保留中のコマンドのキューに追加されます。
 
@@ -393,7 +393,7 @@ ms.locfileid: "50613935"
 
    - 2 番目のパラメーターでは、グラフに含めるデータの範囲を指定します。
 
-   - 3 番目のパラメーターでは、テーブルからの一連のデータ ポイントを行方向と列方向のどちらでグラフ化する必要があるかを決定します。 オプション `auto` は、最適な方法を判断するように Excel に指示します。
+   - 3 番目のパラメーターでは、テーブルからの一連のデータ ポイントを行方向と列方向のどちらでグラフ化する必要があるかを決定します。オプション `auto` は、最適な方法を判断するように Excel に指示します。
 
     ```js
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
@@ -474,7 +474,7 @@ ms.locfileid: "50613935"
 
    - `Worksheet.freezePanes` コレクションは、ワークシートのスクロール操作時に、ワークシート上でピン留めつまり固定される一式のペインのことです。
 
-   - `freezeRows` メソッドでは、上から数えた行数を、ピン留めする位置のパラメーターとして使用します。 最初の行をピン留めするには、`1` を渡します。
+   - `freezeRows` メソッドでは、上から数えた行数を、ピン留めする位置のパラメーターとして使用します。`1` を渡して最初の行を適所にピン留めします。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -724,7 +724,7 @@ ms.locfileid: "50613935"
 
 1. Excel も含めて、すべての Office アプリケーションを閉じます。
 
-2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。 これは、クライアント アプリケーションから以前のバージョンのアドインを完全に削除するために必要です。
+2. キャッシュ フォルダーの内容 (すべてのファイルとサブフォルダー) を削除して、Office キャッシュを削除します。これは、クライアント アプリケーションから以前のバージョンのアドインを完全に削除するために必要です。
 
     - Windows の場合: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
@@ -759,7 +759,7 @@ ms.locfileid: "50613935"
 
     ![[ワークシート保護の切り替え] ボタンが強調表示され、有効になっている Excel リボンのスクリーンショット。 他のほとんどのボタンは灰色表示され、無効になります。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. セルの内容を変更する場合は、そのセルを選択します。 Excel にワークシートが保護されていることを示すエラー メッセージが表示されます。
+6. 内容を変更するときのようにセルを選択します。ワークシートが保護されていることを示すエラー メッセージが Excel に表示されます。
 
 7. もう一度 [**ワークシート保護を切り換える**] ボタンを選択すると、コントロールが再有効化され、再びセルの値を変更できるようになります。
 
@@ -773,7 +773,7 @@ ms.locfileid: "50613935"
 
 2. **./src/dialogs** フォルダー に **popup.html** という名前の新しいファイルを作成します。
 
-3. **popup.html** に、次のコードを追加します。 注:
+3. **popup.html** に、次のマークアップを追加します。次の点に注意してください。
 
    - このページには、ユーザーが自分の名前を入力する `<input>` フィールドと、その名前が表示される作業ウィンドウ内のページに送信するボタンが含まれています。
 
@@ -789,7 +789,7 @@ ms.locfileid: "50613935"
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -936,7 +936,7 @@ ms.locfileid: "50613935"
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. ファイルの最後に次の宣言を追加します。 この変数は、親ページの実行コンテキスト内のオブジェクトを保持するために使用され、ダイアログ ページの実行コンテキストへの仲介者として機能します。
+6. ファイルの最後に次の宣言を追加します。この変数は、親ページの実行コンテキスト内のオブジェクトを保持するために使用され、ダイアログ ページの実行コンテキストへの仲介者として機能します。
 
     ```js
     var dialog = null;
@@ -1003,7 +1003,7 @@ ms.locfileid: "50613935"
 
 3. 作業ウィンドウで、**[Open Dialog]** ボタンをクリックします。
 
-4. ダイアログが開いたら、ドラッグしたりサイズ変更したりします。 ワークシートを操作して、作業ウィンドウの他のボタンを押すことはできますが、同じ作業ウィンドウのページから 2 番目のダイアログを起動することはできないことに注意してください。
+4. ダイアログが開いたら、ドラッグしたりサイズ変更したりします。ワークシートを操作して、作業ウィンドウの他のボタンを押すことはできますが、同じ作業ウィンドウのページから 2 番目のダイアログを起動することはできないことに注意してください。
 
 5. ダイアログで、名前を入力して [**OK**] ボタンを選択します。 作業ウィンドウに名前が表示され、ダイアログが閉じられます。
 
