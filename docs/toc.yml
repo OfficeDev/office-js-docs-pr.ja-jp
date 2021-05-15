@@ -144,6 +144,10 @@ items:
             items:
               - name: 概要
                 href: design/add-in-design.md
+              - name: Office アドインの Fluent UI React
+                href: design/using-office-ui-fabric-react.md
+              - name: Office アドインの Fabric Core
+                href: design/fabric-core.md
               - name: ガイドライン
                 items:
                   - name: アクセシビリティ
@@ -186,6 +190,8 @@ items:
                         href: design/first-run-experience-patterns.md
                       - name: ナビゲーション
                         href: design/navigation-patterns.md
+              - name: デザインのツール キット
+                href: design/design-toolkits.md
               - name: インターフェイス要素
                 items:
                   - name: 概要
@@ -228,14 +234,6 @@ items:
                 href: develop/show-hide-add-in.md
               - name: ローカリゼーション
                 href: develop/localization.md
-              - name: リソース
-                items:
-                  - name: デザインのツールキット
-                    href: design/design-toolkits.md
-                  - name: Fabric React の使用の開始
-                    href: design/using-office-ui-fabric-react.md
-                  - name: Office UI Fabric
-                    href: design/office-ui-fabric.md
           - name: フレームワークと IDE
             items:
               - name: Angular でアドインを開発する
