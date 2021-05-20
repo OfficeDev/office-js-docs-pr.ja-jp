@@ -1,23 +1,23 @@
 ---
-title: マニフェストファイルの LaunchEvent (プレビュー)
-description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブになるようにアドインを構成します。
-ms.date: 05/15/2020
+title: マニフェスト ファイル内の起動イベント (プレビュー)
+description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するようにアドインを構成します。
+ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 4874b9f4c14e3a999f41ec3fa20a15393b031ea6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7283e9aba9ca57793019ffe027a7f4d6e3243aa8
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611779"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555312"
 ---
-# <a name="launchevent-element-preview"></a>LaunchEvent 要素 (プレビュー)
+# <a name="launchevent-element-preview"></a>起動イベント要素 (プレビュー)
 
-サポートされているイベントに基づいて、アドインをアクティブにするように構成します。 要素の子 [`<LaunchEvents>`](launchevents.md) 。 詳細については、「[イベントベースのライセンス認証用に Outlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
+サポートされているイベントに基づいてアクティブ化するようにアドインを構成します。 要素の子 [`<LaunchEvents>`](launchevents.md) 。 詳細については、「イベント[ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
 
 **アドインの種類:** メール
 
 > [!IMPORTANT]
-> イベントベースのライセンス認証は現在[プレビュー段階で](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)あり、web 上の Outlook でのみ使用できます。 詳細については、「[イベントベースのライセンス認証機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
+> イベントベースのアクティブ化は現在[プレビュー段階にあり](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)、web 上およびWindowsでOutlookでのみ使用できます。 詳細については、「 [イベント ベースのアクティブ化機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -40,8 +40,8 @@ ms.locfileid: "44611779"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **種類**  |  はい  | サポートされているイベントの種類を指定します。 使用できる型は `OnNewMessageCompose` 、および `OnNewAppointmentOrganizer` です。 |
-|  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定し `Type` ます。 |
+|  **Type**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている種類のセットについては、「 [イベントベースのアクティブ化機能をプレビューする方法](../../outlook/autolaunch.md#supported-events)」を参照してください。 |
+|  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定します `Type` 。 |
 
 ## <a name="see-also"></a>関連項目
 

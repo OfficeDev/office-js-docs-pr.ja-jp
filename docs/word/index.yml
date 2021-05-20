@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Word アドイン ドキュメント
-summary: Word アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iPad などの複数のプラットフォームで Word で実行できるソリューションを構築できます。 Word アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: Word アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iPadなど、複数のプラットフォームで Word で実行できるソリューションを構築できます。 Word アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: Word アドイン ドキュメント
   description: Word アドイン向けの学習用リソース。
@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: cea0e108bcefef31c71b6499b3fa8918e7f5bae6
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: e238371002b8ff92e7d57a06c3a9fd9f6bf19f3a
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435243"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555319"
 landingContent:
 - title: Word アドインについて
   linkLists:
@@ -25,7 +25,7 @@ landingContent:
     links:
     - text: 最初の Word アドインをビルドする
       url: ../quickstarts/word-quickstart.md
-    - text: スクリプト ラボで API を探索する
+    - text: Script Labを使用した API の探索
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
@@ -33,9 +33,9 @@ landingContent:
       url: ../reference/overview/word-add-ins-reference-overview.md
     - text: Word アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: Word アドインの展開と発行
+    - text: Word アドインを展開して発行する
       url: ../publish/publish.md
-- title: 主要Officeアドインの概念
+- title: アドインの主要なOffice概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: ご質問
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 機能のリクエスト
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース

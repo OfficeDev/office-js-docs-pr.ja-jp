@@ -1,27 +1,32 @@
 ---
 title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、指定した条件に応じて設定の値を指定できます。
-ms.date: 11/06/2020
+ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 131d72883d050038e2df5b7d8bbca033af9e6ee4
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505340"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555158"
 ---
 # <a name="override-element"></a>Override 要素
 
-指定した条件に応じてマニフェスト設定の値を上書きする方法を提供します。 条件には次の 2 種類があります。
+指定した条件に応じて、マニフェスト設定の値をオーバーライドする方法を提供します。 条件には、次の 3 種類があります。
 
-- 既定Office異なるロケールを指定します。
-- 既定のパターンとは異なる要件セットのサポートのパターン。
+- 既定のロケールとは異なるOffice ロケールです `LocaleToken` 。 
+- 要件セットのサポートのパターンは、既定のパターンとは異なり `RequirementToken` 、 **要件TokenOverride** と呼ばれます。
+- ソースは `Runtime` **、RuntimeOverride** (現在プレビュー中) と呼ばれる既定のとは異なります。
 
-要素には、LocaleTokenOverride と呼ばれるロケールオーバーライド用の要素と `<Override>` **、RequirementTokenOverride** と呼ばれる要件セットのオーバーライド用の 2 種類があります。 ただし、要素 `type` のパラメーター `<Override>` はありません。 違いは、親要素と親要素の型によって決まります。 要素 `<Override>` の内部にある要素は `<Token>` `xsi:type` `RequirementToken` **、RequirementTokenOverride 型である必要があります**。 他 `<Override>` の親要素内の要素、または型の要素内の要素は `<Override>` `LocaleToken` **、LocaleTokenOverride 型である必要があります**。 各種類については、以下の各セクションで説明します。 要素の子である場合のこの要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」 `<Token>` [を参照してください](../../develop/extended-overrides.md)。
+`<Override>`要素の内部にある要素は、 `<Runtime>` 型が **RuntimeOverride** である必要があります。
 
-## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 型のオーバーライド要素
+`overrideType`要素の属性がありません `<Override>` 。 違いは、親要素と親要素の型によって決まります。 である `<Override>` 要素の内部にある `<Token>` 要素 `xsi:type` は `RequirementToken` 、型 **が "要件TokenOverride"** である必要があります。 `<Override>`他の親要素の中、または `<Override>` 型の要素内の要素 `LocaleToken` は **、型が LocaleTokenOverride** である必要があります。 要素の子である場合にこの要素を使用する方法の詳細については `<Token>` 、「 マニフェストの [拡張オーバーライドを処理する](../../develop/extended-overrides.md)」を参照してください。
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **LocaleTokenOverride** 型の場合、属性は条件であり、その `Locale` `Value` 結果属性になります。 たとえば、次の例は、「Officeロケール設定が fr-fr の場合、表示名は 'Lecteur vidéo'です。
+各型については、この記事の後半で説明します。
+
+## <a name="override-element-for-localetoken"></a>要素をオーバーライドする `LocaleToken`
+
+`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **LocaleTokenOverride** の場合、 `Locale` 属性は条件であり、 `Value` 属性は結果です。 たとえば、次の例は、「Officeロケール設定が fr-fr の場合、表示名は 'レクトゥール vidéo' です。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -92,9 +97,9 @@ ms.locfileid: "50505340"
 - [Office アドインのローカライズ](../../develop/localization.md)
 - [SharePoint のキーボード ショートカット](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a>RequirementTokenOverride 型の Override 要素
+## <a name="override-element-for-requirementtoken"></a>要素をオーバーライドする `RequirementToken`
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **RequirementTokenOverride** 型の場合、子要素は条件を表し、属性 `<Requirements>` `Value` はその結果です。 たとえば、次の 1 つ目は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は、(既定の文字列 'upgrade' ではなく) 祖父母の URL のトークンの代わりに文字列 `<Override>` 'oldAddinVersion' を使用します。 `${token.requirements}` `<ExtendedOverrides>`
+`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **"要件TokenOverride"** の場合、子 `<Requirements>` 要素は条件を表し、 `Value` 属性は結果です。 たとえば、 `<Override>` 次の最初の例は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は `${token.requirements}` 、( `<ExtendedOverrides>` 既定の文字列 'upgrade'の代わりに) (既定の文字列 'upgrade') の代わりに、トークンの代わりに文字列 'oldAddinVersion' を使用します。
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -146,7 +151,7 @@ ms.locfileid: "50505340"
 
 |属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
-|値|string|必須|条件が満たされた場合の祖父母トークンの値。|
+|値|string|必須|条件が満たされた場合の、祖父母トークンの値。|
 
 ### <a name="example"></a>例
 
@@ -189,3 +194,56 @@ ms.locfileid: "50505340"
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
 - [マニフェストで Requirements 要素を設定する](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [SharePoint のキーボード ショートカット](../../design/keyboard-shortcuts.md)
+
+## <a name="override-element-for-runtime-preview"></a>要素を上書き `Runtime` (プレビュー)
+
+> [!IMPORTANT]
+> この機能は、web 上のOutlookで[プレビュー](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)し、Microsoft 365サブスクリプションでWindowsにのみサポートされます。 詳細については、「[イベントベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
+>
+> プレビュー機能は予告なく変更される場合があるため、運用アドインで使用しないでください。
+
+`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **RuntimeOverride** の場合、 `type` 属性は条件であり、 `resid` 属性は結果です。 たとえば、次の例は"型が 'javascript' の場合は `resid` 'JSRuntime.Url' です。Outlookデスクトップには[、LaunchEvent 拡張機能ポイント](../../reference/manifest/extensionpoint.md#launchevent-preview)ハンドラーにこの要素が必要です。
+
+```xml
+<Runtime resid="WebViewRuntime.Url">
+  <Override type="javascript" resid="JSRuntime.Url"/>
+</Runtime>
+```
+
+**アドインの種類:** メール
+
+### <a name="syntax"></a>構文
+
+```XML
+<Override type="javascript" resid="JSRuntime.Url"/>
+```
+
+### <a name="contained-in"></a>含まれる場所
+
+- [ランタイム](runtime.md)
+
+### <a name="attributes"></a>属性
+
+|属性|型|必須|説明|
+|:-----|:-----|:-----|:-----|
+|**type**|string|はい|このオーバーライドの言語を指定します。 現在、 `"javascript"` サポートされているオプションは唯一です。|
+|**resid**|文字列|はい|親 [Runtime](runtime.md) 要素で定義された既定の HTML の URL の場所をオーバーライドする JavaScript ファイルの URL の場所を指定 `resid` します。 は `resid` 32 文字以内 `id` で、要素の属性と一致する必要があります `Url` `Resources` 。|
+
+### <a name="examples"></a>例
+
+```xml
+<!-- Event-based activation happens in a lightweight runtime.-->
+<Runtimes>
+  <!-- HTML file including reference to or inline JavaScript event handlers.
+  This is used by Outlook on the web. -->
+  <Runtime resid="WebViewRuntime.Url">
+    <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+    <Override type="javascript" resid="JSRuntime.Url"/>
+  </Runtime>
+</Runtimes>
+```
+
+### <a name="see-also"></a>関連項目
+
+- [ランタイム](runtime.md)
+- [イベント ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)

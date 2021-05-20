@@ -1,20 +1,20 @@
 ---
-title: マニフェスト ファイル内のランタイム
-description: Runtime 要素は、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに共有 JavaScript ランタイムを使用するアドインを構成します。
-ms.date: 04/08/2021
+title: マニフェスト ファイルのランタイム
+description: Runtime 要素は、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに共有 JavaScript ランタイムを使用するようにアドインを構成します。
+ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: fa95608d7eff57d68b96ef5b04ec9d33ee63f173
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: c59e5a23e53940aea46c758d710b4a455cb5c0cc
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652245"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555305"
 ---
-# <a name="runtime-element"></a>Runtime 要素
+# <a name="runtime-element"></a>ランタイム要素
 
-共有 JavaScript ランタイムを使用して、さまざまなコンポーネントすべてが同じランタイムで実行されるアドインを構成します。 要素の [`<Runtimes>`](runtimes.md) 子。
+共有 JavaScript ランタイムを使用して、さまざまなコンポーネントがすべて同じランタイムで実行されるようにアドインを構成します。 要素の子 [`<Runtimes>`](runtimes.md) 。
 
-**アドインの種類:** 作業ウィンドウ, メール
+**アドインの種類:** 作業ウィンドウ,メール
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -30,15 +30,21 @@ ms.locfileid: "51652245"
 
 - [ランタイム](runtimes.md)
 
+## <a name="child-elements"></a>子要素
+
+|  要素 |  必須  |  説明  |
+|:-----|:-----|:-----|
+| [上書き](override.md) (プレビュー) | いいえ | **Outlook**:[デスクトップで起動イベント拡張ポイント](../../reference/manifest/extensionpoint.md#launchevent-preview)ハンドラーに必要な JavaScript ファイルの URL の場所 Outlookを指定します。 **重要**: 現在、定義できる要素は 1 つのみ `<Override>` で、型が必要です `javascript` 。|
+
 ## <a name="attributes"></a>属性
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **resid**  |  はい  | アドインの HTML ページの URL の場所を指定します。 32 文字以内で、要素内の要素の属性と一致 `resid` `id` `Url` する必要 `Resources` があります。 |
-|  **有効期間**  |  いいえ  | 既定値は `lifetime` is `short` であり、指定する必要はない。 Outlook アドインは値のみを使用 `short` します。 Excel アドインで共有ランタイムを使用する場合は、値を明示的にに設定します `long` 。 |
+|  **resid**  |  はい  | アドインの HTML ページの URL の場所を指定します。 は `resid` 32 文字以内 `id` で、要素の属性と一致する必要があります `Url` `Resources` 。 |
+|  **一生**  |  いいえ  | デフォルト値 `lifetime` は `short` 、指定する必要はありません。 Outlookアドインでは、値のみを使用します `short` 。 Excel アドインで共有ランタイムを使用する場合は、値を明示的に に 設定 `long` します。 |
 
 ## <a name="see-also"></a>関連項目
 
 - [ランタイム](runtimes.md)
 - [Office アドインを構成して共有 JavaScript ランタイムを使用する](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [イベント ベースのライセンス認証用に Outlook アドインを構成する](../../outlook/autolaunch.md)
+- [イベント ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)
