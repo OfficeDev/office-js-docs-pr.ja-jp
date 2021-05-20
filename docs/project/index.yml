@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0803558dbf4e8e9edbd2d43f273bbbe40216849e
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 59c6d64a68960860616ead9ce7aef50cc46a766a
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435292"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555214"
 landingContent:
-- title: プロジェクト アドインについて
+- title: Project アドインについて
   linkLists:
   - linkListType: overview
     links:
-    - text: Project アドインとは
+    - text: アドインProjectとは何ですか?
       url: project-add-ins.md
     - text: 'JavaScript API for Project '
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -31,9 +31,9 @@ landingContent:
     links:
     - text: Project アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: Project アドインの展開と発行
+    - text: Project アドインを展開および公開する
       url: ../publish/publish.md
-- title: 主要Officeアドインの概念
+- title: アドインの主要なOffice概念
   linkLists:
   - linkListType: overview
     links:
@@ -52,9 +52,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: ご質問
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 機能のリクエスト
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース

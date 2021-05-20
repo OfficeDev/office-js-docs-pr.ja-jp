@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Outlook アドイン ドキュメント
-summary: Outlook アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iOS などの複数のプラットフォームにわたって Outlook で実行できるソリューションを構築できます。 Outlook アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: Outlookアドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iOS など、複数のプラットフォームでOutlookで実行できるソリューションを構築できます。 Outlook アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: Outlook アドイン ドキュメント
   description: Outlook アドイン向けの学習用リソース。
@@ -8,14 +8,14 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0270157672cc3756485af1daf2cc088fc5f3cb4f
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435236"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555291"
 landingContent:
-- title: Outlook アドインについて
+- title: アドインOutlookについて
   linkLists:
   - linkListType: overview
     links:
@@ -33,9 +33,9 @@ landingContent:
       url: apis.md
     - text: Outlook アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: Outlook アドインの展開と発行
+    - text: Outlook アドインを展開および公開する
       url: ../publish/publish.md
-- title: 主要Officeアドインの概念
+- title: アドインの主要なOffice概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: ご質問
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 機能のリクエスト
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース
