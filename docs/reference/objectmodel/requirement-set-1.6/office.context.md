@@ -1,62 +1,62 @@
 ---
-title: Office コンテキスト要件セット1.6
-description: メールボックス API 要件セット1.6 を使用した Outlook アドインで使用可能な Office コンテキストオブジェクトメンバー。
+title: Office.context - 要件セット 1.6
+description: Office。メールボックス API 要件セット 1.6 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 55e3761aea94d902903c53a9b3be687d94b42e12
-ms.sourcegitcommit: 1737026df569b62957d38b62c0b16caee4f0cdfe
+ms.openlocfilehash: d4c65cea9b581665e0dc7b38a8e0bf10d6b544f9
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "49570759"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591003"
 ---
-# <a name="context-mailbox-requirement-set-16"></a><span data-ttu-id="ff369-103">コンテキスト (メールボックス要件セット 1.6)</span><span class="sxs-lookup"><span data-stu-id="ff369-103">context (Mailbox requirement set 1.6)</span></span>
+# <a name="context-mailbox-requirement-set-16"></a><span data-ttu-id="7b068-103">context (メールボックス要件セット 1.6)</span><span class="sxs-lookup"><span data-stu-id="7b068-103">context (Mailbox requirement set 1.6)</span></span>
 
-### <a name="officecontext"></a><span data-ttu-id="ff369-104">[Office](office.md).context</span><span class="sxs-lookup"><span data-stu-id="ff369-104">[Office](office.md).context</span></span>
+### <a name="officecontext"></a><span data-ttu-id="7b068-104">[Office](office.md).context</span><span class="sxs-lookup"><span data-stu-id="7b068-104">[Office](office.md).context</span></span>
 
-<span data-ttu-id="ff369-105">Office のコンテキストは、すべての Office アプリでアドインによって使用される共有インターフェイスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ff369-105">Office.context provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="ff369-106">この一覧には、Outlook アドインで使用されるインターフェイスのみが記載されています。Office コンテキスト名前空間の完全な一覧については、 [COMMON API の「office コンテキスト](/javascript/api/office/office.context?view=outlook-js-1.6&preserve-view=true)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ff369-106">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.6&preserve-view=true).</span></span>
+<span data-ttu-id="7b068-105">Office.context は、すべてのアプリでアドインによって使用される共有インターフェイスをOfficeします。</span><span class="sxs-lookup"><span data-stu-id="7b068-105">Office.context provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="7b068-106">この一覧には、アドインで使用されるインターフェイスOutlook記載されています。Office.context 名前空間の完全な一覧については、common API の[Office.context リファレンスを参照してください](/javascript/api/office/office.context?view=outlook-js-1.6&preserve-view=true)。</span><span class="sxs-lookup"><span data-stu-id="7b068-106">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.6&preserve-view=true).</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-107">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-107">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-107">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-107">Requirements</span></span>
 
-|<span data-ttu-id="ff369-108">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-108">Requirement</span></span>| <span data-ttu-id="ff369-109">値</span><span class="sxs-lookup"><span data-stu-id="ff369-109">Value</span></span>|
+|<span data-ttu-id="7b068-108">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-108">Requirement</span></span>| <span data-ttu-id="7b068-109">値</span><span class="sxs-lookup"><span data-stu-id="7b068-109">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-110">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-110">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-111">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-111">1.1</span></span>|
-|[<span data-ttu-id="ff369-112">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-112">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-113">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-113">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-110">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-110">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-111">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-111">1.1</span></span>|
+|[<span data-ttu-id="7b068-112">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-112">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-113">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-113">Compose or Read</span></span>|
 
-##### <a name="properties"></a><span data-ttu-id="ff369-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="ff369-114">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="7b068-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="7b068-114">Properties</span></span>
 
-| <span data-ttu-id="ff369-115">プロパティ</span><span class="sxs-lookup"><span data-stu-id="ff369-115">Property</span></span> | <span data-ttu-id="ff369-116">モード</span><span class="sxs-lookup"><span data-stu-id="ff369-116">Modes</span></span> | <span data-ttu-id="ff369-117">戻り値の種類</span><span class="sxs-lookup"><span data-stu-id="ff369-117">Return type</span></span> | <span data-ttu-id="ff369-118">最小値</span><span class="sxs-lookup"><span data-stu-id="ff369-118">Minimum</span></span><br><span data-ttu-id="ff369-119">要件セット</span><span class="sxs-lookup"><span data-stu-id="ff369-119">requirement set</span></span> |
+| <span data-ttu-id="7b068-115">プロパティ</span><span class="sxs-lookup"><span data-stu-id="7b068-115">Property</span></span> | <span data-ttu-id="7b068-116">モード</span><span class="sxs-lookup"><span data-stu-id="7b068-116">Modes</span></span> | <span data-ttu-id="7b068-117">戻り値の種類</span><span class="sxs-lookup"><span data-stu-id="7b068-117">Return type</span></span> | <span data-ttu-id="7b068-118">最小値</span><span class="sxs-lookup"><span data-stu-id="7b068-118">Minimum</span></span><br><span data-ttu-id="7b068-119">要件セット</span><span class="sxs-lookup"><span data-stu-id="7b068-119">requirement set</span></span> |
 |---|---|---|:---:|
-| [<span data-ttu-id="ff369-120">contentLanguage</span><span class="sxs-lookup"><span data-stu-id="ff369-120">contentLanguage</span></span>](#contentlanguage-string) | <span data-ttu-id="ff369-121">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-121">Compose</span></span><br><span data-ttu-id="ff369-122">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-122">Read</span></span> | <span data-ttu-id="ff369-123">文字列</span><span class="sxs-lookup"><span data-stu-id="ff369-123">String</span></span> | [<span data-ttu-id="ff369-124">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-124">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-125">ダン</span><span class="sxs-lookup"><span data-stu-id="ff369-125">diagnostics</span></span>](#diagnostics-contextinformation) | <span data-ttu-id="ff369-126">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-126">Compose</span></span><br><span data-ttu-id="ff369-127">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-127">Read</span></span> | [<span data-ttu-id="ff369-128">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="ff369-128">ContextInformation</span></span>](/javascript/api/office/office.contextinformation?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-129">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-129">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-130">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="ff369-130">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="ff369-131">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-131">Compose</span></span><br><span data-ttu-id="ff369-132">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-132">Read</span></span> | <span data-ttu-id="ff369-133">文字列</span><span class="sxs-lookup"><span data-stu-id="ff369-133">String</span></span> | [<span data-ttu-id="ff369-134">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-134">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-135">主催</span><span class="sxs-lookup"><span data-stu-id="ff369-135">host</span></span>](#host-hosttype) | <span data-ttu-id="ff369-136">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-136">Compose</span></span><br><span data-ttu-id="ff369-137">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-137">Read</span></span> | [<span data-ttu-id="ff369-138">HostType</span><span class="sxs-lookup"><span data-stu-id="ff369-138">HostType</span></span>](/javascript/api/office/office.hosttype?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-139">1.5</span><span class="sxs-lookup"><span data-stu-id="ff369-139">1.5</span></span>](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [<span data-ttu-id="ff369-140">mailbox</span><span class="sxs-lookup"><span data-stu-id="ff369-140">mailbox</span></span>](office.context.mailbox.md) | <span data-ttu-id="ff369-141">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-141">Compose</span></span><br><span data-ttu-id="ff369-142">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-142">Read</span></span> | [<span data-ttu-id="ff369-143">メールボックス</span><span class="sxs-lookup"><span data-stu-id="ff369-143">Mailbox</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-144">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-144">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-145">platform</span><span class="sxs-lookup"><span data-stu-id="ff369-145">platform</span></span>](#platform-platformtype) | <span data-ttu-id="ff369-146">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-146">Compose</span></span><br><span data-ttu-id="ff369-147">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-147">Read</span></span> | [<span data-ttu-id="ff369-148">PlatformType</span><span class="sxs-lookup"><span data-stu-id="ff369-148">PlatformType</span></span>](/javascript/api/office/office.platformtype?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-149">1.5</span><span class="sxs-lookup"><span data-stu-id="ff369-149">1.5</span></span>](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [<span data-ttu-id="ff369-150">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-150">requirements</span></span>](#requirements-requirementsetsupport) | <span data-ttu-id="ff369-151">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-151">Compose</span></span><br><span data-ttu-id="ff369-152">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-152">Read</span></span> | [<span data-ttu-id="ff369-153">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="ff369-153">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-154">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-154">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-155">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="ff369-155">roamingSettings</span></span>](#roamingsettings-roamingsettings) | <span data-ttu-id="ff369-156">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-156">Compose</span></span><br><span data-ttu-id="ff369-157">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-157">Read</span></span> | [<span data-ttu-id="ff369-158">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="ff369-158">RoamingSettings</span></span>](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-159">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-159">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="ff369-160">UI</span><span class="sxs-lookup"><span data-stu-id="ff369-160">ui</span></span>](#ui-ui) | <span data-ttu-id="ff369-161">作成</span><span class="sxs-lookup"><span data-stu-id="ff369-161">Compose</span></span><br><span data-ttu-id="ff369-162">読み取り</span><span class="sxs-lookup"><span data-stu-id="ff369-162">Read</span></span> | [<span data-ttu-id="ff369-163">UI</span><span class="sxs-lookup"><span data-stu-id="ff369-163">UI</span></span>](/javascript/api/office/office.ui?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="ff369-164">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-164">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-120">contentLanguage</span><span class="sxs-lookup"><span data-stu-id="7b068-120">contentLanguage</span></span>](#contentlanguage-string) | <span data-ttu-id="7b068-121">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-121">Compose</span></span><br><span data-ttu-id="7b068-122">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-122">Read</span></span> | <span data-ttu-id="7b068-123">String</span><span class="sxs-lookup"><span data-stu-id="7b068-123">String</span></span> | [<span data-ttu-id="7b068-124">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-124">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-125">診断</span><span class="sxs-lookup"><span data-stu-id="7b068-125">diagnostics</span></span>](#diagnostics-contextinformation) | <span data-ttu-id="7b068-126">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-126">Compose</span></span><br><span data-ttu-id="7b068-127">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-127">Read</span></span> | [<span data-ttu-id="7b068-128">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="7b068-128">ContextInformation</span></span>](/javascript/api/office/office.contextinformation?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-129">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-129">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-130">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="7b068-130">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="7b068-131">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-131">Compose</span></span><br><span data-ttu-id="7b068-132">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-132">Read</span></span> | <span data-ttu-id="7b068-133">String</span><span class="sxs-lookup"><span data-stu-id="7b068-133">String</span></span> | [<span data-ttu-id="7b068-134">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-134">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-135">host</span><span class="sxs-lookup"><span data-stu-id="7b068-135">host</span></span>](#host-hosttype) | <span data-ttu-id="7b068-136">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-136">Compose</span></span><br><span data-ttu-id="7b068-137">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-137">Read</span></span> | [<span data-ttu-id="7b068-138">HostType</span><span class="sxs-lookup"><span data-stu-id="7b068-138">HostType</span></span>](/javascript/api/office/office.hosttype?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-139">1.5</span><span class="sxs-lookup"><span data-stu-id="7b068-139">1.5</span></span>](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [<span data-ttu-id="7b068-140">mailbox</span><span class="sxs-lookup"><span data-stu-id="7b068-140">mailbox</span></span>](office.context.mailbox.md) | <span data-ttu-id="7b068-141">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-141">Compose</span></span><br><span data-ttu-id="7b068-142">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-142">Read</span></span> | [<span data-ttu-id="7b068-143">メールボックス</span><span class="sxs-lookup"><span data-stu-id="7b068-143">Mailbox</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-144">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-144">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-145">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="7b068-145">platform</span></span>](#platform-platformtype) | <span data-ttu-id="7b068-146">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-146">Compose</span></span><br><span data-ttu-id="7b068-147">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-147">Read</span></span> | [<span data-ttu-id="7b068-148">PlatformType</span><span class="sxs-lookup"><span data-stu-id="7b068-148">PlatformType</span></span>](/javascript/api/office/office.platformtype?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-149">1.5</span><span class="sxs-lookup"><span data-stu-id="7b068-149">1.5</span></span>](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [<span data-ttu-id="7b068-150">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-150">requirements</span></span>](#requirements-requirementsetsupport) | <span data-ttu-id="7b068-151">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-151">Compose</span></span><br><span data-ttu-id="7b068-152">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-152">Read</span></span> | [<span data-ttu-id="7b068-153">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="7b068-153">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-154">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-154">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-155">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="7b068-155">roamingSettings</span></span>](#roamingsettings-roamingsettings) | <span data-ttu-id="7b068-156">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-156">Compose</span></span><br><span data-ttu-id="7b068-157">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-157">Read</span></span> | [<span data-ttu-id="7b068-158">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="7b068-158">RoamingSettings</span></span>](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-159">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-159">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="7b068-160">UI</span><span class="sxs-lookup"><span data-stu-id="7b068-160">ui</span></span>](#ui-ui) | <span data-ttu-id="7b068-161">作成</span><span class="sxs-lookup"><span data-stu-id="7b068-161">Compose</span></span><br><span data-ttu-id="7b068-162">Read</span><span class="sxs-lookup"><span data-stu-id="7b068-162">Read</span></span> | [<span data-ttu-id="7b068-163">UI</span><span class="sxs-lookup"><span data-stu-id="7b068-163">UI</span></span>](/javascript/api/office/office.ui?view=outlook-js-1.6&preserve-view=true) | [<span data-ttu-id="7b068-164">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-164">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="property-details"></a><span data-ttu-id="ff369-165">プロパティの詳細</span><span class="sxs-lookup"><span data-stu-id="ff369-165">Property details</span></span>
+## <a name="property-details"></a><span data-ttu-id="7b068-165">プロパティの詳細</span><span class="sxs-lookup"><span data-stu-id="7b068-165">Property details</span></span>
 
-#### <a name="contentlanguage-string"></a><span data-ttu-id="ff369-166">contentLanguage: String</span><span class="sxs-lookup"><span data-stu-id="ff369-166">contentLanguage: String</span></span>
+#### <a name="contentlanguage-string"></a><span data-ttu-id="7b068-166">contentLanguage: String</span><span class="sxs-lookup"><span data-stu-id="7b068-166">contentLanguage: String</span></span>
 
-<span data-ttu-id="ff369-167">アイテムを編集するためにユーザーによって指定されたロケール (言語) を取得します。</span><span class="sxs-lookup"><span data-stu-id="ff369-167">Gets the locale (language) specified by the user for editing the item.</span></span>
+<span data-ttu-id="7b068-167">アイテムを編集するユーザーによって指定されたロケール (言語) を取得します。</span><span class="sxs-lookup"><span data-stu-id="7b068-167">Gets the locale (language) specified by the user for editing the item.</span></span>
 
-<span data-ttu-id="ff369-168">この `contentLanguage` 値は、Office クライアントアプリケーションの [**ファイル > オプション > 言語** で指定されている現在の **編集言語** 設定を反映します。</span><span class="sxs-lookup"><span data-stu-id="ff369-168">The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
+<span data-ttu-id="7b068-168">この値は、クライアント アプリケーション内の [ファイル] > オプション > `contentLanguage` **言語** でOffice設定を反映します。 </span><span class="sxs-lookup"><span data-stu-id="7b068-168">The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-169">型</span><span class="sxs-lookup"><span data-stu-id="ff369-169">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-169">型</span><span class="sxs-lookup"><span data-stu-id="7b068-169">Type</span></span>
 
-*   <span data-ttu-id="ff369-170">String</span><span class="sxs-lookup"><span data-stu-id="ff369-170">String</span></span>
+*   <span data-ttu-id="7b068-170">String</span><span class="sxs-lookup"><span data-stu-id="7b068-170">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-171">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-171">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-171">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-171">Requirements</span></span>
 
-|<span data-ttu-id="ff369-172">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-172">Requirement</span></span>| <span data-ttu-id="ff369-173">値</span><span class="sxs-lookup"><span data-stu-id="ff369-173">Value</span></span>|
+|<span data-ttu-id="7b068-172">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-172">Requirement</span></span>| <span data-ttu-id="7b068-173">値</span><span class="sxs-lookup"><span data-stu-id="7b068-173">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-174">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-174">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-175">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-175">1.1</span></span>|
-|[<span data-ttu-id="ff369-176">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-176">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-177">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-177">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-174">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-174">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-175">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-175">1.1</span></span>|
+|[<span data-ttu-id="7b068-176">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-176">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-177">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-177">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-178">例</span><span class="sxs-lookup"><span data-stu-id="ff369-178">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-178">例</span><span class="sxs-lookup"><span data-stu-id="7b068-178">Example</span></span>
 
 ```js
 function sayHelloWithContentLanguage() {
@@ -82,22 +82,22 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a><span data-ttu-id="ff369-179">診断: [Contextinformation](/javascript/api/office/office.contextinformation)</span><span class="sxs-lookup"><span data-stu-id="ff369-179">diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)</span></span>
+#### <a name="diagnostics-contextinformation"></a><span data-ttu-id="7b068-179">診断: [ContextInformation](/javascript/api/office/office.contextinformation)</span><span class="sxs-lookup"><span data-stu-id="7b068-179">diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)</span></span>
 
-<span data-ttu-id="ff369-180">アドインが実行されている環境に関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="ff369-180">Gets information about the environment in which the add-in is running.</span></span>
+<span data-ttu-id="7b068-180">アドインが実行されている環境に関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="7b068-180">Gets information about the environment in which the add-in is running.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-181">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-181">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-181">型</span><span class="sxs-lookup"><span data-stu-id="7b068-181">Type</span></span>
 
-*   [<span data-ttu-id="ff369-182">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="ff369-182">ContextInformation</span></span>](/javascript/api/office/office.contextinformation)
+*   [<span data-ttu-id="7b068-182">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="7b068-182">ContextInformation</span></span>](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-183">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-183">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-183">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-183">Requirements</span></span>
 
-|<span data-ttu-id="ff369-184">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-184">Requirement</span></span>| <span data-ttu-id="ff369-185">値</span><span class="sxs-lookup"><span data-stu-id="ff369-185">Value</span></span>|
+|<span data-ttu-id="7b068-184">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-184">Requirement</span></span>| <span data-ttu-id="7b068-185">値</span><span class="sxs-lookup"><span data-stu-id="7b068-185">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-186">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-186">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-187">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-187">1.1</span></span>|
-|[<span data-ttu-id="ff369-188">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-188">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-189">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-189">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-186">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-186">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-187">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-187">1.1</span></span>|
+|[<span data-ttu-id="7b068-188">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-188">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-189">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-189">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-190">例</span><span class="sxs-lookup"><span data-stu-id="ff369-190">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-190">例</span><span class="sxs-lookup"><span data-stu-id="7b068-190">Example</span></span>
 
 ```js
 var contextInfo = Office.context.diagnostics;
@@ -111,24 +111,24 @@ console.log("Platform: " + contextInfo.platform);
 ---
 ---
 
-#### <a name="displaylanguage-string"></a><span data-ttu-id="ff369-191">displayLanguage: String</span><span class="sxs-lookup"><span data-stu-id="ff369-191">displayLanguage: String</span></span>
+#### <a name="displaylanguage-string"></a><span data-ttu-id="7b068-191">displayLanguage: String</span><span class="sxs-lookup"><span data-stu-id="7b068-191">displayLanguage: String</span></span>
 
-<span data-ttu-id="ff369-192">Office クライアントアプリケーションの UI 用にユーザーによって指定された RFC 1766 言語タグ形式のロケール (言語) を取得します。</span><span class="sxs-lookup"><span data-stu-id="ff369-192">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office client application.</span></span>
+<span data-ttu-id="7b068-192">ユーザーがクライアント アプリケーションの UI 用に指定した RFC 1766 Language タグ形式のロケール (言語) をOfficeします。</span><span class="sxs-lookup"><span data-stu-id="7b068-192">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office client application.</span></span>
 
-<span data-ttu-id="ff369-193">この `displayLanguage` 値は、Office クライアントアプリケーションの [**ファイル > オプション > 言語** で指定されている現在の **表示言語** 設定を反映します。</span><span class="sxs-lookup"><span data-stu-id="ff369-193">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
+<span data-ttu-id="7b068-193">この `displayLanguage` 値は、クライアントアプリケーションの [File >**オプション**] >言語でOffice反映されます。</span><span class="sxs-lookup"><span data-stu-id="7b068-193">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-194">型</span><span class="sxs-lookup"><span data-stu-id="ff369-194">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-194">型</span><span class="sxs-lookup"><span data-stu-id="7b068-194">Type</span></span>
 
-*   <span data-ttu-id="ff369-195">String</span><span class="sxs-lookup"><span data-stu-id="ff369-195">String</span></span>
+*   <span data-ttu-id="7b068-195">String</span><span class="sxs-lookup"><span data-stu-id="7b068-195">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-196">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-196">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-196">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-196">Requirements</span></span>
 
-|<span data-ttu-id="ff369-197">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-197">Requirement</span></span>| <span data-ttu-id="ff369-198">値</span><span class="sxs-lookup"><span data-stu-id="ff369-198">Value</span></span>|
+|<span data-ttu-id="7b068-197">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-197">Requirement</span></span>| <span data-ttu-id="7b068-198">値</span><span class="sxs-lookup"><span data-stu-id="7b068-198">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-199">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-199">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-200">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-200">1.1</span></span>|
-|[<span data-ttu-id="ff369-201">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-201">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-202">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-202">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-199">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-199">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-200">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-200">1.1</span></span>|
+|[<span data-ttu-id="7b068-201">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-201">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-202">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-202">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-203">例</span><span class="sxs-lookup"><span data-stu-id="ff369-203">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-203">例</span><span class="sxs-lookup"><span data-stu-id="7b068-203">Example</span></span>
 
 ```js
 function sayHelloWithDisplayLanguage() {
@@ -154,25 +154,25 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a><span data-ttu-id="ff369-204">ホスト: [Hosttype](/javascript/api/office/office.hosttype)</span><span class="sxs-lookup"><span data-stu-id="ff369-204">host: [HostType](/javascript/api/office/office.hosttype)</span></span>
+#### <a name="host-hosttype"></a><span data-ttu-id="7b068-204">host: [HostType](/javascript/api/office/office.hosttype)</span><span class="sxs-lookup"><span data-stu-id="7b068-204">host: [HostType](/javascript/api/office/office.hosttype)</span></span>
 
-<span data-ttu-id="ff369-205">アドインをホストしている Office アプリケーションを取得します。</span><span class="sxs-lookup"><span data-stu-id="ff369-205">Gets the Office application that is hosting the add-in.</span></span>
+<span data-ttu-id="7b068-205">アドインをOfficeしているアプリケーションを取得します。</span><span class="sxs-lookup"><span data-stu-id="7b068-205">Gets the Office application that is hosting the add-in.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ff369-206">別の方法として、 [Office](#diagnostics-contextinformation) のプロパティを使用してホストを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="ff369-206">Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the host.</span></span>
+> <span data-ttu-id="7b068-206">または[、Office.context.diagnostics](#diagnostics-contextinformation)プロパティを使用してホストを取得できます。</span><span class="sxs-lookup"><span data-stu-id="7b068-206">Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the host.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-207">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-207">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-207">型</span><span class="sxs-lookup"><span data-stu-id="7b068-207">Type</span></span>
 
-*   [<span data-ttu-id="ff369-208">HostType</span><span class="sxs-lookup"><span data-stu-id="ff369-208">HostType</span></span>](/javascript/api/office/office.hosttype)
+*   [<span data-ttu-id="7b068-208">HostType</span><span class="sxs-lookup"><span data-stu-id="7b068-208">HostType</span></span>](/javascript/api/office/office.hosttype)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-209">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-209">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-209">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-209">Requirements</span></span>
 
-|<span data-ttu-id="ff369-210">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-210">Requirement</span></span>| <span data-ttu-id="ff369-211">値</span><span class="sxs-lookup"><span data-stu-id="ff369-211">Value</span></span>|
+|<span data-ttu-id="7b068-210">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-210">Requirement</span></span>| <span data-ttu-id="7b068-211">値</span><span class="sxs-lookup"><span data-stu-id="7b068-211">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-212">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-212">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-213">1.5</span><span class="sxs-lookup"><span data-stu-id="ff369-213">1.5</span></span>|
-|[<span data-ttu-id="ff369-214">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-214">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-215">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-215">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-212">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-212">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-213">1.5</span><span class="sxs-lookup"><span data-stu-id="7b068-213">1.5</span></span>|
+|[<span data-ttu-id="7b068-214">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-214">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-215">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-215">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-216">例</span><span class="sxs-lookup"><span data-stu-id="ff369-216">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-216">例</span><span class="sxs-lookup"><span data-stu-id="7b068-216">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.host));
@@ -183,25 +183,25 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtype"></a><span data-ttu-id="ff369-217">プラットフォーム: [PlatformType](/javascript/api/office/office.platformtype)</span><span class="sxs-lookup"><span data-stu-id="ff369-217">platform: [PlatformType](/javascript/api/office/office.platformtype)</span></span>
+#### <a name="platform-platformtype"></a><span data-ttu-id="7b068-217">プラットフォーム: [PlatformType](/javascript/api/office/office.platformtype)</span><span class="sxs-lookup"><span data-stu-id="7b068-217">platform: [PlatformType](/javascript/api/office/office.platformtype)</span></span>
 
-<span data-ttu-id="ff369-218">アドインが実行されているプラットフォームを提供します。</span><span class="sxs-lookup"><span data-stu-id="ff369-218">Provides the platform on which the add-in is running.</span></span>
+<span data-ttu-id="7b068-218">アドインが実行されているプラットフォームを提供します。</span><span class="sxs-lookup"><span data-stu-id="7b068-218">Provides the platform on which the add-in is running.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ff369-219">別の方法として、 [Office](#diagnostics-contextinformation) のプロパティを使用してプラットフォームを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="ff369-219">Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the platform.</span></span>
+> <span data-ttu-id="7b068-219">または[、Office.context.diagnostics](#diagnostics-contextinformation)プロパティを使用してプラットフォームを取得できます。</span><span class="sxs-lookup"><span data-stu-id="7b068-219">Alternatively, you can use the [Office.context.diagnostics](#diagnostics-contextinformation) property to get the platform.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-220">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-220">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-220">型</span><span class="sxs-lookup"><span data-stu-id="7b068-220">Type</span></span>
 
-*   [<span data-ttu-id="ff369-221">PlatformType</span><span class="sxs-lookup"><span data-stu-id="ff369-221">PlatformType</span></span>](/javascript/api/office/office.platformtype)
+*   [<span data-ttu-id="7b068-221">PlatformType</span><span class="sxs-lookup"><span data-stu-id="7b068-221">PlatformType</span></span>](/javascript/api/office/office.platformtype)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-222">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-222">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-222">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-222">Requirements</span></span>
 
-|<span data-ttu-id="ff369-223">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-223">Requirement</span></span>| <span data-ttu-id="ff369-224">値</span><span class="sxs-lookup"><span data-stu-id="ff369-224">Value</span></span>|
+|<span data-ttu-id="7b068-223">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-223">Requirement</span></span>| <span data-ttu-id="7b068-224">値</span><span class="sxs-lookup"><span data-stu-id="7b068-224">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-225">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-225">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-226">1.5</span><span class="sxs-lookup"><span data-stu-id="ff369-226">1.5</span></span>|
-|[<span data-ttu-id="ff369-227">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-227">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-228">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-228">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-225">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-225">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-226">1.5</span><span class="sxs-lookup"><span data-stu-id="7b068-226">1.5</span></span>|
+|[<span data-ttu-id="7b068-227">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-227">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-228">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-228">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-229">例</span><span class="sxs-lookup"><span data-stu-id="ff369-229">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-229">例</span><span class="sxs-lookup"><span data-stu-id="7b068-229">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.platform));
@@ -212,22 +212,22 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a><span data-ttu-id="ff369-230">要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span><span class="sxs-lookup"><span data-stu-id="ff369-230">requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span></span>
+#### <a name="requirements-requirementsetsupport"></a><span data-ttu-id="7b068-230">要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span><span class="sxs-lookup"><span data-stu-id="7b068-230">requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span></span>
 
-<span data-ttu-id="ff369-231">現在のアプリケーションとプラットフォームでサポートされている要件セットを判断するためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="ff369-231">Provides a method for determining what requirement sets are supported on the current application and platform.</span></span>
+<span data-ttu-id="7b068-231">現在のアプリケーションとプラットフォームでサポートされている要件セットを決定するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="7b068-231">Provides a method for determining what requirement sets are supported on the current application and platform.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-232">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-232">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-232">型</span><span class="sxs-lookup"><span data-stu-id="7b068-232">Type</span></span>
 
-*   [<span data-ttu-id="ff369-233">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="ff369-233">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport)
+*   [<span data-ttu-id="7b068-233">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="7b068-233">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-234">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-234">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-234">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-234">Requirements</span></span>
 
-|<span data-ttu-id="ff369-235">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-235">Requirement</span></span>| <span data-ttu-id="ff369-236">値</span><span class="sxs-lookup"><span data-stu-id="ff369-236">Value</span></span>|
+|<span data-ttu-id="7b068-235">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-235">Requirement</span></span>| <span data-ttu-id="7b068-236">値</span><span class="sxs-lookup"><span data-stu-id="7b068-236">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-237">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-237">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-238">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-238">1.1</span></span>|
-|[<span data-ttu-id="ff369-239">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-239">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-240">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-240">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-237">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-237">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-238">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-238">1.1</span></span>|
+|[<span data-ttu-id="7b068-239">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-239">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-240">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-240">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="ff369-241">例</span><span class="sxs-lookup"><span data-stu-id="ff369-241">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="7b068-241">例</span><span class="sxs-lookup"><span data-stu-id="7b068-241">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
@@ -238,40 +238,40 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a><span data-ttu-id="ff369-242">roamingSettings: [roamingSettings](/javascript/api/outlook/office.roamingsettings)</span><span class="sxs-lookup"><span data-stu-id="ff369-242">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)</span></span>
+#### <a name="roamingsettings-roamingsettings"></a><span data-ttu-id="7b068-242">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)</span><span class="sxs-lookup"><span data-stu-id="7b068-242">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)</span></span>
 
-<span data-ttu-id="ff369-243">ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="ff369-243">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
+<span data-ttu-id="7b068-243">ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="7b068-243">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
 
-<span data-ttu-id="ff369-244">このオブジェクトを使用する `RoamingSettings` と、ユーザーのメールボックスに格納されているメールアドインのデータを格納してアクセスできます。そのため、そのメールボックスにアクセスするときに使用する Outlook クライアントから実行しているときに、そのアドインが使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="ff369-244">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.</span></span>
+<span data-ttu-id="7b068-244">このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインが使用できます。 `RoamingSettings`</span><span class="sxs-lookup"><span data-stu-id="7b068-244">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-245">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-245">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-245">型</span><span class="sxs-lookup"><span data-stu-id="7b068-245">Type</span></span>
 
-*   [<span data-ttu-id="ff369-246">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="ff369-246">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
+*   [<span data-ttu-id="7b068-246">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="7b068-246">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-247">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-247">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-247">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-247">Requirements</span></span>
 
-|<span data-ttu-id="ff369-248">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-248">Requirement</span></span>| <span data-ttu-id="ff369-249">値</span><span class="sxs-lookup"><span data-stu-id="ff369-249">Value</span></span>|
+|<span data-ttu-id="7b068-248">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-248">Requirement</span></span>| <span data-ttu-id="7b068-249">値</span><span class="sxs-lookup"><span data-stu-id="7b068-249">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-250">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-250">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-251">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-251">1.1</span></span>|
-|[<span data-ttu-id="ff369-252">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="ff369-252">Minimum permission level</span></span>](../../../outlook/understanding-outlook-add-in-permissions.md)| <span data-ttu-id="ff369-253">制限あり</span><span class="sxs-lookup"><span data-stu-id="ff369-253">Restricted</span></span>|
-|[<span data-ttu-id="ff369-254">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-254">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-255">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-255">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-250">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-250">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-251">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-251">1.1</span></span>|
+|[<span data-ttu-id="7b068-252">最小限のアクセス許可レベル</span><span class="sxs-lookup"><span data-stu-id="7b068-252">Minimum permission level</span></span>](../../../outlook/understanding-outlook-add-in-permissions.md)| <span data-ttu-id="7b068-253">制限あり</span><span class="sxs-lookup"><span data-stu-id="7b068-253">Restricted</span></span>|
+|[<span data-ttu-id="7b068-254">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-254">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-255">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-255">Compose or Read</span></span>|
 
 <br>
 
 ---
 ---
 
-#### <a name="ui-ui"></a><span data-ttu-id="ff369-256">ui: [ui](/javascript/api/office/office.ui)</span><span class="sxs-lookup"><span data-stu-id="ff369-256">ui: [UI](/javascript/api/office/office.ui)</span></span>
+#### <a name="ui-ui"></a><span data-ttu-id="7b068-256">ui: [UI](/javascript/api/office/office.ui)</span><span class="sxs-lookup"><span data-stu-id="7b068-256">ui: [UI](/javascript/api/office/office.ui)</span></span>
 
-<span data-ttu-id="ff369-257">Office アドインで、ダイアログボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="ff369-257">Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.</span></span>
+<span data-ttu-id="7b068-257">ダイアログ ボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを、Office提供します。</span><span class="sxs-lookup"><span data-stu-id="7b068-257">Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="ff369-258">種類</span><span class="sxs-lookup"><span data-stu-id="ff369-258">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="7b068-258">型</span><span class="sxs-lookup"><span data-stu-id="7b068-258">Type</span></span>
 
-*   [<span data-ttu-id="ff369-259">UI</span><span class="sxs-lookup"><span data-stu-id="ff369-259">UI</span></span>](/javascript/api/office/office.ui)
+*   [<span data-ttu-id="7b068-259">UI</span><span class="sxs-lookup"><span data-stu-id="7b068-259">UI</span></span>](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a><span data-ttu-id="ff369-260">Requirements</span><span class="sxs-lookup"><span data-stu-id="ff369-260">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="7b068-260">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-260">Requirements</span></span>
 
-|<span data-ttu-id="ff369-261">要件</span><span class="sxs-lookup"><span data-stu-id="ff369-261">Requirement</span></span>| <span data-ttu-id="ff369-262">値</span><span class="sxs-lookup"><span data-stu-id="ff369-262">Value</span></span>|
+|<span data-ttu-id="7b068-261">要件</span><span class="sxs-lookup"><span data-stu-id="7b068-261">Requirement</span></span>| <span data-ttu-id="7b068-262">値</span><span class="sxs-lookup"><span data-stu-id="7b068-262">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="ff369-263">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="ff369-263">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="ff369-264">1.1</span><span class="sxs-lookup"><span data-stu-id="ff369-264">1.1</span></span>|
-|[<span data-ttu-id="ff369-265">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="ff369-265">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="ff369-266">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="ff369-266">Compose or Read</span></span>|
+|[<span data-ttu-id="7b068-263">メールボックスの最小要件セットのバージョン</span><span class="sxs-lookup"><span data-stu-id="7b068-263">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="7b068-264">1.1</span><span class="sxs-lookup"><span data-stu-id="7b068-264">1.1</span></span>|
+|[<span data-ttu-id="7b068-265">適用可能な Outlook のモード</span><span class="sxs-lookup"><span data-stu-id="7b068-265">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="7b068-266">新規作成または閲覧</span><span class="sxs-lookup"><span data-stu-id="7b068-266">Compose or Read</span></span>|

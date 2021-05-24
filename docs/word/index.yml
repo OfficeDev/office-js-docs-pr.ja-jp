@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Word アドイン ドキュメント
-summary: Word アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iPadなど、複数のプラットフォームで Word で実行できるソリューションを構築できます。 Word アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: Word アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、および iPad を含む複数のプラットフォームで Word で実行できるソリューションを構築できます。 Word アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: Word アドイン ドキュメント
   description: Word アドイン向けの学習用リソース。
@@ -25,7 +25,7 @@ landingContent:
     links:
     - text: 最初の Word アドインをビルドする
       url: ../quickstarts/word-quickstart.md
-    - text: Script Labを使用した API の探索
+    - text: API を使ってScript Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
@@ -33,9 +33,9 @@ landingContent:
       url: ../reference/overview/word-add-ins-reference-overview.md
     - text: Word アドインのテストとデバッグ
       url: ../testing/test-debug-office-add-ins.md
-    - text: Word アドインを展開して発行する
+    - text: Word アドインの展開と発行
       url: ../publish/publish.md
-- title: アドインの主要なOffice概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:

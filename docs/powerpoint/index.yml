@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: PowerPoint アドイン ドキュメント
-summary: PowerPointアドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iPadなど、複数のプラットフォームでPowerPointで実行できるソリューションを構築できます。 PowerPoint アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: PowerPoint アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、web、Windows、Mac、および iPad を含む複数のプラットフォームで PowerPoint で実行できるソリューションを構築できます。 PowerPoint アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: PowerPoint アドイン ドキュメント
   description: PowerPoint アドイン向けの学習用リソース。
@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555172"
 landingContent:
-- title: PowerPoint アドインについて
+- title: アドインPowerPointについて
   linkLists:
   - linkListType: overview
     links:
-    - text: アドインPowerPoint何ですか?
+    - text: アドインPowerPointは何ですか?
       url: powerpoint-add-ins.md
     - text: JavaScript API for PowerPoint
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: PowerPoint アドインのテストとデバッグ
+    - text: アドインをテストPowerPointデバッグする
       url: ../testing/test-debug-office-add-ins.md
-    - text: PowerPoint アドインを展開および公開する
+    - text: アドインを展開PowerPoint発行する
       url: ../publish/publish.md
-- title: アドインの主要なOffice概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
