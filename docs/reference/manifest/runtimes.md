@@ -1,6 +1,6 @@
 ---
-title: マニフェスト ファイルのランタイム
-description: ランタイム要素は、アドインのランタイムを指定します。
+title: マニフェスト ファイル内のランタイム
+description: Runtimes 要素は、アドインのランタイムを指定します。
 ms.date: 05/14/2021
 localization_priority: Normal
 ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
@@ -10,14 +10,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/19/2021
 ms.locfileid: "52555298"
 ---
-# <a name="runtimes-element"></a>ランタイム要素
+# <a name="runtimes-element"></a>Runtimes 要素
 
-アドインのランタイムを指定します。 要素の子 [`<Host>`](host.md) 。
+アドインのランタイムを指定します。 要素の [`<Host>`](host.md) 子。
 
 > [!NOTE]
-> WindowsでOfficeで実行する場合、マニフェストに要素を持つアドイン `<Runtimes>` は、必ずしも他の方法と同じ WebView コントロールで実行されるとは限りません。 WindowsとOfficeのバージョンが通常使用される webview コントロールを決定する方法の詳細については、「Office[アドインで使用されるブラウザー](../../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。WebView2 (Chromium ベース) でMicrosoft Edgeを使用する場合、アドインは要素を持つかどうかにかかわらず、そのブラウザーを使用します `<Runtimes>` 。 ただし、これらの条件が満たされない場合、要素を含むアドインでは `<Runtimes>` 、WindowsやMicrosoft 365のバージョンに関係なく、常に Internet Explorer 11 が使用されます。
+> Windows で Office で実行する場合、マニフェスト内に要素を持つアドインは、それ以外の場合と同じ Webview コントロールで必ずしも `<Runtimes>` 実行されるとは限りません。 Windows および Office のバージョンでどの webview コントロールが通常使用されるのかを決定する方法の詳細については、「Office アドインで使用されるブラウザー」を[参照](../../concepts/browsers-used-by-office-web-add-ins.md)してください。webView2 (Chromium ベース) で Microsoft Edge を使用する場合に説明されている条件が満たされている場合、アドインは要素を持っているかどうかに応じ、そのブラウザーを使用します `<Runtimes>` 。 ただし、これらの条件が満たされない場合、要素を持つアドインは、Windows またはバージョンに関係なく、常に Internet Explorer 11 Windows を `<Runtimes>` Microsoft 365します。
 
-**アドインの種類:** 作業ウィンドウ,メール
+**アドインの種類:** 作業ウィンドウ, メール
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -37,10 +37,10 @@ ms.locfileid: "52555298"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-| [ランタイム](runtime.md) | はい |  アドインのランタイム。 **重要**: 現在、定義できる要素は 1 つだけです `<Runtime>` 。 |
+| [ランタイム](runtime.md) | 必要 |  アドインのランタイム。 **重要**: 現時点では、1 つの要素のみを定義 `<Runtime>` できます。 |
 
 ## <a name="see-also"></a>関連項目
 
 - [ランタイム](runtime.md)
 - [Office アドインを構成して共有 JavaScript ランタイムを使用する](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [イベント ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)
+- [イベント ベースのOutlook用にアドインを構成する](../../outlook/autolaunch.md)

@@ -8,30 +8,32 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 3f5e65b4309bf150e425fac789a1807301d5130e
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: d8466a48c3fd35532989ecb707f8f77b0b1a47bb
+  ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435306"
+  ms.lasthandoff: 05/21/2021
+  ms.locfileid: "52592018"
 landingContent:
-- title: OneNote アドインについて
+- title: アドインOneNoteについて
   linkLists:
   - linkListType: overview
     links:
-    - text: OneNote アドインとは
+    - text: アドインOneNoteは何ですか?
       url: onenote-add-ins-programming-overview.md
+    - text: OneNoteAPI の概要
+      url: /graph/integrate-with-onenote
   - linkListType: quickstart
     links:
     - text: 最初の OneNote アドインをビルドする
       url: ../quickstarts/onenote-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: OneNote JavaScript API を使用してオブジェクトとノートブック コンテンツを操作する
+    - text: JavaScript API OneNoteを使用して、オブジェクトとノートブック コンテンツを操作する
       url: ../reference/overview/onenote-add-ins-javascript-reference.md
-    - text: OneNote アドインのテストとデバッグ
+    - text: アドインをテストOneNoteデバッグする
       url: ../testing/test-debug-office-add-ins.md
-    - text: OneNote アドインの展開と発行
+    - text: アドインを展開OneNote発行する
       url: ../publish/publish.md
 - title: 主要Officeアドインの概念
   linkLists:
@@ -52,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: ご質問
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 機能のリクエスト
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 問題の報告
       url: https://github.com/officedev/office-js/issues
     - text: Office アドインのその他のリソース

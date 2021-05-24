@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.8
-description: Outlook アドイン API の要件セット 1.8。
-ms.date: 03/10/2021
+description: アドイン API の要件セット 1.8 Outlook 1.8。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
-ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
+ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "50830966"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590961"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
-JavaScript API の Outlook アドイン API Officeには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-18"></a>1.8 の新機能
 
-要件セット 1.8 には、[要件セット 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) のすべての機能が含まれています。 次の機能が追加されました。
+要件セット 1.8 には、要件セット [1.7 のすべての機能が含まれています](../requirement-set-1.7/outlook-requirement-set-1.7.md)。 次の機能が追加されました。
 
 - 添付ファイル、カテゴリ、代理人アクセス、拡張された場所、インターネット ヘッダー、および送信ブロック機能用の新しい API が追加されました。
 - Event.completed にオプションの `options` パラメーターが追加されました。

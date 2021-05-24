@@ -1,14 +1,14 @@
 ---
 title: アドインの状態と設定Outlook管理する
 description: アドインの状態と設定を保持する方法について、Outlookします。
-ms.date: 04/29/2021
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 6652034ffa6844d22fd725adc5adcc4a4063c1cb
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100286"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52592011"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>アドインの状態と設定Outlook管理する
 
@@ -152,7 +152,7 @@ function saveCallback(asyncResult) {
 
 1. アドインの初期化時に既存のプロパティを確認し、それらを保持するか、必要に応じてオフにしてください。
 1. カスタム プロパティを設定する場合は、メッセージの読み取り中またはアドインの読み取りモードでカスタム プロパティが追加されたかどうかを示す追加のプロパティを含める必要があります。 これは、プロパティが作成中に作成されたのか、親から継承されたのかを区別するのに役立ちます。
-1. [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (現在プレビュー中) を使用して、ユーザーが電子メールまたは返信を転送している場合も確認できます。
+1. ユーザーが電子メールまたは返信を転送していることを確認するには [、item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (要件セット 1.10 から利用できます) を使用できます。
 
 ## <a name="see-also"></a>関連項目
 

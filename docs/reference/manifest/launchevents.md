@@ -1,23 +1,20 @@
 ---
-title: マニフェスト ファイル内の LaunchEvents (プレビュー)
+title: マニフェスト ファイルの LaunchEvents
 description: LaunchEvents 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
-ms.date: 02/01/2021
+ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 59c52aa3f60e69e2bdda84718c6123f02942fedc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 16d721ca6d9402d2bd5d19787707e146358044f0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237981"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590918"
 ---
-# <a name="launchevents-element-preview"></a>LaunchEvents 要素 (プレビュー)
+# <a name="launchevents-element"></a>LaunchEvents 要素
 
-サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の [`<ExtensionPoint>`](extensionpoint.md) 子。 詳細については、「イベント ベースのアクティブ [化用に Outlook アドインを構成する」を参照してください](../../outlook/autolaunch.md)。
+サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の [`<ExtensionPoint>`](extensionpoint.md) 子。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** メール
-
-> [!IMPORTANT]
-> イベント ベースのアクティブ化は現在 [プレビュー中](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) で、Outlook on the web および Windows でのみ使用できます。 詳細については、イベント ベースの [アクティブ化機能をプレビューする方法を参照してください](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>構文
 
@@ -40,7 +37,7 @@ ms.locfileid: "50237981"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-| [LaunchEvent](launchevent.md) | はい |  アドインのアクティブ化のために、サポートされているイベントを JavaScript ファイル内の関数にマップします。 |
+| [LaunchEvent](launchevent.md) | 必要 |  サポートされているイベントを JavaScript ファイル内の関数にマップして、アドインのアクティブ化を行います。 |
 
 ## <a name="see-also"></a>関連項目
 

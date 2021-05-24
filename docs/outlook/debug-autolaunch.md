@@ -1,6 +1,6 @@
 ---
-title: イベント ベースのOutlook アドインのデバッグ (プレビュー)
-description: イベント ベースのアクティブ化を実装するOutlook アドインをデバッグする方法について説明します。
+title: イベント ベースのアドインOutlookデバッグする (プレビュー)
+description: イベント ベースのアクティブ化を実装Outlookアドインをデバッグする方法について説明します。
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
@@ -11,31 +11,31 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/19/2021
 ms.locfileid: "52555286"
 ---
-# <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのOutlook アドインのデバッグ (プレビュー)
+# <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのアドインOutlookデバッグする (プレビュー)
 
-この記事では、アドインにイベント [ベースのアクティブ化](autolaunch.md) を実装する際のデバッグ ガイダンスを提供します。 イベントベースのアクティブ化機能は現在プレビュー段階です。
+この記事では、アドインでイベント ベースの [ライセンス認証を](autolaunch.md) 実装する場合のデバッグ ガイダンスを提供します。 イベント ベースのアクティブ化機能は現在プレビュー中です。
 
 > [!IMPORTANT]
-> このデバッグ機能は、Microsoft 365 サブスクリプションを使用するWindowsでOutlookでプレビューする場合にのみサポートされます。 詳細については、この記事の「 [イベントベースのアクティブ化機能のプレビュー デバッグ](#preview-debugging-for-the-event-based-activation-feature) 」セクションを参照してください。
+> このデバッグ機能は、サブスクリプションを使用したOutlookのWindowsプレビューでのみMicrosoft 365されます。 詳細については、この記事の「イベント ベースのアクティブ [化機能の](#preview-debugging-for-the-event-based-activation-feature) プレビュー デバッグ」セクションを参照してください。
 
-この記事では、デバッグを有効にする主要なステージについて説明します。
+この記事では、デバッグを有効にする重要な段階について説明します。
 
-- [アドインにデバッグ用のマークを付けます](#mark-your-add-in-for-debugging)
-- [Visual Studio Codeの構成](#configure-visual-studio-code)
-- [Visual Studio Codeを添付する](#attach-visual-studio-code)
+- [デバッグ用にアドインをマークする](#mark-your-add-in-for-debugging)
+- [構成Visual Studio Code](#configure-visual-studio-code)
+- [添付Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-アドイン プロジェクトを作成するには、いくつかのオプションがあります。 使用するオプションによって、手順が異なる場合があります。 この場合、アドインの Office に Yeoman ジェネレーターを使用してアドイン プロジェクトを作成した場合 ([たとえば、イベント ベースのアクティブ化のチュートリアル](autolaunch.md)を実行する場合)、**ヨーオフィス** の手順に従って、それ以外の場合は「**その他** の手順」に従います。 Visual Studio Codeは、少なくともバージョン 1.56.1 である必要があります。
+アドイン プロジェクトを作成するには、いくつかのオプションがあります。 使用しているオプションによっては、手順が異なる場合があります。 このような場合は、Office アドインに Yeoman ジェネレーターを使用してアドイン プロジェクトを作成した場合 (たとえば、イベント ベースのライセンス認証のチュートリアルを実行します)、office のヨーヨー 手順に従い、それ以外の場合は、その他の手順に従います。 [](autolaunch.md) Visual Studio Codeバージョン 1.56.1 以上である必要があります。
 
-## <a name="preview-debugging-for-the-event-based-activation-feature"></a>イベント ベースのアクティブ化機能のプレビュー デバッグ
+## <a name="preview-debugging-for-the-event-based-activation-feature"></a>イベント ベースのアクティブ化機能のデバッグをプレビューする
 
-イベントベースのアクティブ化機能のデバッグ機能を試してみるようお勧めします。 GitHubを通じてフィードバックを提供することで、お客様のシナリオと改善方法をお知らせください(このページの最後にある **フィードバック** セクションを参照)。
+イベント ベースのアクティブ化機能のデバッグ機能を試してみてください。 このページの最後にある「フィードバック」セクションをGitHubフィードバックを提供することで、お客様のシナリオと改善方法をお知らせします。
 
-WindowsでOutlookに対してこの機能をプレビューするには、最小必要なビルドは 16.0.13729.2000 です。 ベータ版ビルドOfficeアクセスするには[、Office Insider プログラム](https://insider.office.com)に参加してください。
+この機能を Outlook Windowsでプレビューするには、必要な最小ビルドは 16.0.13729.20000 です。 ベータビルドへのアクセスOffice、Insider プログラムOffice[参加してください](https://insider.office.com)。
 
-## <a name="mark-your-add-in-for-debugging"></a>アドインにデバッグ用のマークを付けます
+## <a name="mark-your-add-in-for-debugging"></a>デバッグ用にアドインをマークする
 
-1. レジストリ キーを設定 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` する: `[Add-in ID]` はアドイン マニフェストの **ID** です。
+1. レジストリ キーを設定します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` 。 `[Add-in ID]` は **、アドイン** マニフェストの ID です。
 
     **yo office**: コマンド ライン ウィンドウで、アドイン フォルダーのルートに移動し、次のコマンドを実行します。
 
@@ -43,28 +43,28 @@ WindowsでOutlookに対してこの機能をプレビューするには、最小
     npm start
     ```
 
-    このコマンドでは、コードのビルドとローカル サーバーの起動に加えて、 `UseDirectDebugger` このアドインのレジストリ キーを に設定する必要があります `1` 。
+    コードを構築し、ローカル サーバーを起動する以外に、このコマンドは、このアドインのレジストリ キーを `UseDirectDebugger` に設定する必要があります `1` 。
 
-    **その他**: レジストリ キーを `UseDirectDebugger` に追加 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\` します。 `[Add-in ID]`アドイン マニフェストの **ID** で置き換えます。 レジストリ キーを `1` に設定します。
+    **その他**: の下 `UseDirectDebugger` にレジストリ キーを追加 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\` します。 アドイン `[Add-in ID]` マニフェスト **の Id** に置き換える。 レジストリ キーをに設定します `1` 。
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. デスクトップOutlook起動します (または、既に開いている場合はOutlookを再起動します)。
-1. 新しいメッセージまたは予定を作成します。 次のダイアログが表示されます。 ダイアログをまだ操作 *しないでください* 。
+1. デスクトップOutlook起動します (またはOutlook開いている場合は再起動します)。
+1. 新しいメッセージまたは予定を作成します。 次のダイアログが表示されます。 ダイアログ *を* まだ操作しないでください。
 
-    ![デバッグ イベント ベースのハンドラー ダイアログのスクリーンショット](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![イベント ベースのハンドラー のデバッグ ダイアログのスクリーンショット](../images/outlook-win-autolaunch-debug-dialog.png)
 
-## <a name="configure-visual-studio-code"></a>Visual Studio Codeの構成
+## <a name="configure-visual-studio-code"></a>構成Visual Studio Code
 
-### <a name="yo-office"></a>ヨーオフィス
+### <a name="yo-office"></a>yo office
 
-1. コマンド ライン ウィンドウに戻り、Visual Studio Code開きます。
+1. コマンド ライン ウィンドウに戻り、コマンド ライン ウィンドウVisual Studio Code。
 
     ```command&nbsp;line
     code .
     ```
 
-1. Visual Studio Codeで **、./.vscode/launch.jsのファイルを** 開き、次の抜粋を構成のリストに追加します。 変更内容を保存します。
+1. このVisual Studio Code **./.vscode/launch.js** を開き、構成の一覧に次の抜粋を追加します。 変更内容を保存します。
 
     ```json
     {
@@ -80,18 +80,18 @@ WindowsでOutlookに対してこの機能をプレビューするには、最小
 
 ### <a name="other"></a>その他
 
-1. **デバッグ** という名前の新しいフォルダーを作成します (**デスクトップ** フォルダーの場合があります)。
+1. デバッグという名前の新しい **フォルダーを作成** します (おそらくデスクトップ フォルダー **に)。**
 1. Visual Studio Code を開きます。
-1. [**ファイル**  >  **を開くフォルダ]** に移動し、作成したフォルダに移動して、[**フォルダの選択**] を選択します。
-1. アクティビティ バーで、[ **デバッグ** ] 項目 (Ctrl + Shift + D) を選択します。
+1. [ファイルを **開**  >  **くフォルダー]** に移動し、作成したフォルダーに移動し、[フォルダーの選択]**を選択します**。
+1. [アクティビティ バー] で、[デバッグ] **アイテム** (Ctrl + Shift + D) を選択します。
 
-    ![アクティビティ バーのデバッグ アイコンのスクリーンショット](../images/vs-code-debug.png)
+    ![アクティビティ バーの [デバッグ] アイコンのスクリーンショット](../images/vs-code-debug.png)
 
-1. [ **ファイルにlaunch.jsを作成]リンクを選択します** 。
+1. [ファイルに **対してlaunch.jsを作成する] リンクを選択** します。
 
-    ![Visual Studio Codeでファイルにlaunch.jsを作成するためのリンクのスクリーンショット](../images/vs-code-create-launch.json.png)
+    ![ページ内のファイルにlaunch.jsを作成するリンクVisual Studio Code](../images/vs-code-create-launch.json.png)
 
-1. [ **環境の選択** ] ドロップダウンで、[ **エッジ: 起動** ] を選択してファイルにlaunch.jsを作成します。
+1. [環境 **の選択] ドロップダウン** で、[ **エッジ:** 起動] を選択して、launch.jsを作成します。
 1. 構成の一覧に次の抜粋を追加します。 変更内容を保存します。
 
     ```json
@@ -106,36 +106,36 @@ WindowsでOutlookに対してこの機能をプレビューするには、最小
     }
     ```
 
-## <a name="attach-visual-studio-code"></a>Visual Studio Codeを添付する
+## <a name="attach-visual-studio-code"></a>添付Visual Studio Code
 
-1. アドインの **bundle.js** を検索するには、Windows エクスプローラーで次のフォルダーを開き、アドインの **ID** (マニフェスト内にあります) を検索します。
+1. アドインのbundle.jsを見 **つける** には、Windows エクスプローラーで次のフォルダーを開き、アドインの **ID** (マニフェストにある) を検索します。
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
     ```
 
-    この ID のプレフィックスが付いたフォルダーを開き、その完全なパスをコピーします。 Visual Studio Codeで、そのフォルダから **bundle.js** 開きます。 ファイル パスのパターンは次のようになります。
+    この ID のプレフィックスが付いたフォルダーを開き、完全なパスをコピーします。 このVisual Studio Code、その **フォルダーbundle.js** を開きます。 ファイル パスのパターンは次のとおりです。
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
-1. デバッガーを停止する位置bundle.jsにブレークポイントを配置します。
-1. **[DEBUG]** ドロップダウンで、[**直接デバッグ**] という名前を選択し、[**実行**] を選択します。
+1. デバッガーを停止bundle.js場所にブレークポイントを配置します。
+1. [ **デバッグ] ドロップダウンで** 、[直接デバッグ] という **名前を選択し**、[実行] を **選択します**。
 
-    ![[Visual Studio Codeデバッグ] ドロップダウンの構成オプションから直接デバッグを選択するスクリーンショット](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![[デバッグ] ドロップダウンの構成オプションから [直接デバッグ] を選択Visual Studio Codeスクリーンショット](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Debug
 
-1. デバッガーがアタッチされていることを確認したら、Outlookに戻り、イベント ベースの **デバッグ ハンドラー** ダイアログで **[OK] を** クリックします。
+1. デバッガーが接続されているのを確認した後、Outlook に戻り、[イベント ベースのハンドラーのデバッグ] ダイアログで **[OK] を選択します**。
 
-1. Visual Studio Codeでブレークポイントにヒットして、イベントベースのアクティブ化コードをデバッグできるようになりました。
+1. これで、イベント ベースのアクティブ化コードVisual Studio Codeデバッグを有効にすることで、ブレークポイントをヒットできます。
 
 ## <a name="stop-debugging"></a>デバッグを停止する
 
-現在のOutlookデスクトップ セッションの残りの部分のデバッグを停止するには、[**イベント ベースのデバッグ ハンドラー** ] ダイアログ ボックスで [**キャンセル**] をクリックします。 デバッグを再度有効にするには、デスクトップOutlook再起動します。
+現在のデスクトップ セッションの残りのOutlook停止するには、[イベント ベースのハンドラーのデバッグ] ダイアログで、[キャンセル] を **選択します**。 デバッグを再び有効にするには、デスクトップOutlookします。
 
-**イベントに基づくデバッグ ハンドラ** ダイアログがポップアップして、後続のOutlook セッションのデバッグを停止しないようにするには、関連付けられたレジストリ キーを削除するか、その値を : に設定 `0` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` します。
+イベント ベースの **ハンドラー の** デバッグ ダイアログがポップアップし、後続の Outlook セッションのデバッグを停止するには、関連付けられたレジストリ キーを削除するか、その値を : に設定します `0` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` 。
 
 ## <a name="see-also"></a>関連項目
 
-- [イベント ベースのアクティブ化用にOutlook アドインを構成する](autolaunch.md)
+- [イベント ベースのOutlook用にアドインを構成する](autolaunch.md)
 - [ランタイム ログを使用してアドインをデバッグする](../testing/runtime-logging.md#runtime-logging-on-windows)

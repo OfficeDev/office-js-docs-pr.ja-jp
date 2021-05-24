@@ -1,23 +1,20 @@
 ---
-title: マニフェスト ファイル内の起動イベント (プレビュー)
-description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するようにアドインを構成します。
-ms.date: 05/11/2021
+title: マニフェスト ファイルの LaunchEvent
+description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 7283e9aba9ca57793019ffe027a7f4d6e3243aa8
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555312"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591080"
 ---
-# <a name="launchevent-element-preview"></a>起動イベント要素 (プレビュー)
+# <a name="launchevent-element"></a>LaunchEvent 要素
 
-サポートされているイベントに基づいてアクティブ化するようにアドインを構成します。 要素の子 [`<LaunchEvents>`](launchevents.md) 。 詳細については、「イベント[ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
+サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の [`<LaunchEvents>`](launchevents.md) 子。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** メール
-
-> [!IMPORTANT]
-> イベントベースのアクティブ化は現在[プレビュー段階にあり](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)、web 上およびWindowsでOutlookでのみ使用できます。 詳細については、「 [イベント ベースのアクティブ化機能をプレビューする方法](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -40,8 +37,8 @@ ms.locfileid: "52555312"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Type**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている種類のセットについては、「 [イベントベースのアクティブ化機能をプレビューする方法](../../outlook/autolaunch.md#supported-events)」を参照してください。 |
-|  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定します `Type` 。 |
+|  **Type**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている一連の種類については、「イベント ベースのライセンス認証Outlookアドインを構成する[」を参照してください](../../outlook/autolaunch.md#supported-events)。 |
+|  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定 `Type` します。 |
 
 ## <a name="see-also"></a>関連項目
 

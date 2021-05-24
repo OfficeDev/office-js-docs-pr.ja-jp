@@ -1,29 +1,29 @@
 ---
 title: Outlook アドイン API 要件セット 1.3
-description: Outlook アドインおよび Office JavaScript Api for the Mailbox API 1.3 の一部として導入された機能と Api。
-ms.date: 12/17/2019
+description: メールボックス API 1.3 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bf7dc9e3977df626241cdafdebd8d4b4e473d494
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430969"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591038"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook アドイン API 要件セット 1.3
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-13"></a>1.3 の新機能
 
-要件セット 1.3 には、[要件セット 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) のすべての機能が含まれています。次の機能が追加されました。
+要件セット 1.3 には、要件セット [1.2 のすべての機能が含まれています](../requirement-set-1.2/outlook-requirement-set-1.2.md)。 次の機能が追加されました。
 
 - [アドイン コマンド](../../../outlook/add-in-commands-for-outlook.md)のサポートが追加されました。
 - 作成中のアイテムを保存または閉じる機能が追加されました。
-- アドインが本文全体を取得または設定できるようにする、拡張された [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) オブジェクト。
+- アドイン [が](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) 本文全体を取得または設定できる拡張 Body オブジェクト。
 - EWS 形式と REST 形式間で ID を変換する変換メソッドが追加されました。
 - アイテム上にある情報バーに通知メッセージを追加する機能が追加されました。
 

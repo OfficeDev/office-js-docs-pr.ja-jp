@@ -1,14 +1,14 @@
 ---
-title: Office 名前空間-要件セット1.9
-description: メールボックス API 要件セット1.9 を使用した Outlook アドインで使用可能な Office 名前空間メンバー。
-ms.date: 10/14/2020
+title: Office名前空間 - 要件セット 1.9
+description: Office API 要件セット 1.9 を使用Outlookアドインで使用できる名前空間メンバーを指定します。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: e6a932c528dea692ff5fd7ea8d3e1454bb9a7e03
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 203b901c619e19a8e5b9255e36274e2f6e1d1658
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48628065"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590947"
 ---
 # <a name="office-mailbox-requirement-set-19"></a>Office (メールボックス要件セット 1.9)
 
@@ -21,24 +21,24 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[適用可能な Outlook のモード](../../../outlook/outlook-add-ins-overview.md#extension-points)| 新規作成または閲覧|
 
-##### <a name="properties"></a>プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [context](office.context.md) | 作成<br>読み取り | [Context](/javascript/api/office/office.context?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 作成<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-##### <a name="enumerations"></a>列挙型
+## <a name="enumerations"></a>列挙型
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 作成<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### <a name="namespaces"></a>名前空間
+## <a name="namespaces"></a>名前空間
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.9&preserve-view=true):、、、、、など、多数の Outlook 固有の列挙を含み `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` ます。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.9&preserve-view=true): 、 など、Outlook固有の列挙の `ItemType` `EntityType` `AttachmentType` 数 `RecipientType` が `ResponseType` 含まれています `ItemNotificationMessageType` 。
 
 ## <a name="enumeration-details"></a>列挙の詳細
 
@@ -50,9 +50,9 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 *   String
 
-##### <a name="properties"></a>プロパティ:
+##### <a name="properties"></a>プロパティ
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`Succeeded`| String|呼び出しが成功しました。|
 |`Failed`| String|呼び出しが失敗しました。|
@@ -77,9 +77,9 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 *   String
 
-##### <a name="properties"></a>プロパティ:
+##### <a name="properties"></a>プロパティ
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`Html`| String|HTML 形式で返されるデータを要求します。|
 |`Text`| String|テキスト形式で返されるデータを要求します。|
@@ -104,16 +104,16 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 *   String
 
-##### <a name="properties"></a>プロパティ:
+##### <a name="properties"></a>プロパティ
 
-| 名前 | 種類 | 説明 | 最小要件セット |
+| 名前 | 型 | 説明 | 最小要件セット |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| String | 選択した予定またはデータ系列の日付または時刻が変更されました。 | 1.7 |
-|`AttachmentsChanged`| String | 添付ファイルがアイテムに追加またはアイテムから削除されています。 | 1.8 |
+|`AppointmentTimeChanged`| String | 選択した予定または系列の日付または時刻が変更されました。 | 1.7 |
+|`AttachmentsChanged`| String | アイテムに添付ファイルが追加または削除されました。 | 1.8 |
 |`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
-|`ItemChanged`| String | 作業ウィンドウが固定されている間、別の Outlook アイテムが選択され、表示することができます。 | 1.5 |
-|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者の一覧が変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択したアイテムの定期的なパターンが変更されました。 | 1.7 |
+|`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
+|`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
+|`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 
@@ -135,9 +135,9 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 *   String
 
-##### <a name="properties"></a>プロパティ:
+##### <a name="properties"></a>プロパティ
 
-|名前| 種類| 説明|
+|名前| 型| 説明|
 |---|---|---|
 |`Body`| String|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|

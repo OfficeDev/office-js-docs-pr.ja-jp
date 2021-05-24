@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.5
-description: Outlook アドインおよび Office JavaScript Api for the Mailbox API 1.5 の一部として導入された機能と Api。
-ms.date: 12/17/2019
+description: メールボックス API 1.5 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bc91ea93a6c3653dd326306139ee460132412a81
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7d780538a77f54db6f1234a6d29a3bcdea9533b0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612039"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590842"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook アドイン API 要件セット 1.5
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-15"></a>1.5 の新機能
 
-要件セット 1.5 には、[要件セット 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) のすべての機能が含まれています。次の機能が追加されました。
+要件セット 1.5 には、要件セット [1.4 のすべての機能が含まれています](../requirement-set-1.4/outlook-requirement-set-1.4.md)。 次の機能が追加されました。
 
 - [ピン留め可能な作業ウィンドウ](../../../outlook/pinnable-taskpane.md)のサポートが追加されました。
 - [REST API](../../../outlook/use-rest-api.md) の呼び出しのサポートが追加されました。
@@ -29,7 +29,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 ### <a name="change-log"></a>変更ログ
 
 - [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#methods) が追加されました。サポートされているイベントのイベント ハンドラーを追加します。
-- 追加された、サポートされているイベントの種類のイベントハンドラを削除[し](office.context.mailbox.md#methods)ました。
+- [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#methods): サポートされているイベントの種類のイベント ハンドラーを削除します。
 - [Office.EventType](office.md#eventtype-string) が追加されました。イベント ハンドラーに関連付けられているイベントを指定し、ItemChanged イベントのサポートが含まれるようになります。
 - [Office.context.mailbox.restUrl](office.context.mailbox.md#properties) が追加されました。この電子メール アカウントの REST エンドポイントの URL を取得します。
 - [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#methods) が変更されました。このメソッドの新しい署名付きの新しいバージョン (`getCallbackTokenAsync([options], callback)`) が追加されました。元のバージョンは引き続き使用でき、変更されていません。

@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.7
-description: Outlook アドイン API の概要 (要件セット 1.7)
-ms.date: 12/17/2019
+description: アドイン API Outlook概要 (要件セット 1.7)
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431389"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590814"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook アドイン API 要件セット 1.7
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-17"></a>1.7 の新機能
 
-要件セット 1.7 には、[要件セット 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) のすべての機能が含まれています。 次の機能が追加されました。
+要件セット 1.7 には、要件セット [1.6 のすべての機能が含まれています](../requirement-set-1.6/outlook-requirement-set-1.6.md)。 次の機能が追加されました。
 
 - 予定とメッセージの定期的なパターン (会議出席依頼) に関する新しい API が追加されました。
 - 新規作成モードでも使用できるように、item.from プロパティを変更しました。

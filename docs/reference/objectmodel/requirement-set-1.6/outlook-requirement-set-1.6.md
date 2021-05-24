@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.6
-description: Outlook アドインおよび Office JavaScript Api for the Mailbox API 1.6 の一部として導入された機能と Api。
-ms.date: 02/19/2020
+description: メールボックス API 1.6 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: adcfcb49a76fd3f0df2c2c3acfc6e1861a02f3b1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cdb39eae387035f386a59b4640448b0bef25031e
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431452"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590996"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook アドイン API 要件セット 1.6
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-16"></a>1.6 の新機能
 
-要件セット 1.6 には、[要件セット 1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) のすべての機能が含まれています。 次の機能が追加されました。
+要件セット 1.6 には、要件セット [1.5 のすべての機能が含まれています](../requirement-set-1.5/outlook-requirement-set-1.5.md)。 次の機能が追加されました。
 
 - ユーザーがアドインを有効にするために選択したエンティティまたは RegEx 一致を取得する、文脈アドインのための新しい API が追加されました。
 - 新しいメッセージ フォームを開く新しい API が追加されました。

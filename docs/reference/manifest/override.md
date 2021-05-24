@@ -1,32 +1,32 @@
 ---
 title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、指定した条件に応じて設定の値を指定できます。
-ms.date: 05/14/2021
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 131d72883d050038e2df5b7d8bbca033af9e6ee4
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555158"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590905"
 ---
 # <a name="override-element"></a>Override 要素
 
-指定した条件に応じて、マニフェスト設定の値をオーバーライドする方法を提供します。 条件には、次の 3 種類があります。
+指定した条件に応じてマニフェスト設定の値を上書きする方法を提供します。 条件には次の 3 種類があります。
 
-- 既定のロケールとは異なるOffice ロケールです `LocaleToken` 。 
-- 要件セットのサポートのパターンは、既定のパターンとは異なり `RequirementToken` 、 **要件TokenOverride** と呼ばれます。
-- ソースは `Runtime` **、RuntimeOverride** (現在プレビュー中) と呼ばれる既定のとは異なります。
+- LocaleTokenOverride と呼ばれる既定のロケールとは異なるOfficeロケールです `LocaleToken` 。 
+- RequirementTokenOverride と呼ばれる既定のパターンとは異なる、要件セット `RequirementToken` **のサポートのパターン** です。
+- ソースは `Runtime` 、RuntimeOverride と呼ばれる既定 **のソースとは異なります**。
 
-`<Override>`要素の内部にある要素は、 `<Runtime>` 型が **RuntimeOverride** である必要があります。
+要素 `<Override>` の内部にある要素は `<Runtime>` **、RuntimeOverride 型である必要があります**。
 
-`overrideType`要素の属性がありません `<Override>` 。 違いは、親要素と親要素の型によって決まります。 である `<Override>` 要素の内部にある `<Token>` 要素 `xsi:type` は `RequirementToken` 、型 **が "要件TokenOverride"** である必要があります。 `<Override>`他の親要素の中、または `<Override>` 型の要素内の要素 `LocaleToken` は **、型が LocaleTokenOverride** である必要があります。 要素の子である場合にこの要素を使用する方法の詳細については `<Token>` 、「 マニフェストの [拡張オーバーライドを処理する](../../develop/extended-overrides.md)」を参照してください。
+要素の `overrideType` 属性 `<Override>` はありません。 違いは、親要素と親要素の型によって決まります。 要素 `<Override>` の内部にある要素は `<Token>` `xsi:type` `RequirementToken` **、RequirementTokenOverride 型である必要があります**。 他 `<Override>` の親要素内の要素、または型の要素内の要素は `<Override>` `LocaleToken` **、LocaleTokenOverride 型である必要があります**。 要素の子である場合のこの要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」 `<Token>` [を参照してください](../../develop/extended-overrides.md)。
 
-各型については、この記事の後半で説明します。
+各種類については、この記事で後述する個別のセクションで説明します。
 
-## <a name="override-element-for-localetoken"></a>要素をオーバーライドする `LocaleToken`
+## <a name="override-element-for-localetoken"></a>Override 要素 `LocaleToken`
 
-`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **LocaleTokenOverride** の場合、 `Locale` 属性は条件であり、 `Value` 属性は結果です。 たとえば、次の例は、「Officeロケール設定が fr-fr の場合、表示名は 'レクトゥール vidéo' です。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **LocaleTokenOverride** 型の場合、属性は条件であり、その `Locale` `Value` 結果属性になります。 たとえば、次の例では、「ロケールOffice fr-fr の場合、表示名は 'Lecteur vidéo'です。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -97,9 +97,9 @@ ms.locfileid: "52555158"
 - [Office アドインのローカライズ](../../develop/localization.md)
 - [SharePoint のキーボード ショートカット](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-for-requirementtoken"></a>要素をオーバーライドする `RequirementToken`
+## <a name="override-element-for-requirementtoken"></a>Override 要素 `RequirementToken`
 
-`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **"要件TokenOverride"** の場合、子 `<Requirements>` 要素は条件を表し、 `Value` 属性は結果です。 たとえば、 `<Override>` 次の最初の例は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は `${token.requirements}` 、( `<ExtendedOverrides>` 既定の文字列 'upgrade'の代わりに) (既定の文字列 'upgrade') の代わりに、トークンの代わりに文字列 'oldAddinVersion' を使用します。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **RequirementTokenOverride** 型の場合、子要素は条件を表し、属性 `<Requirements>` `Value` はその結果です。 たとえば、次の 1 つ目は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は、(既定の文字列 'upgrade' ではなく) 祖父母の URL のトークンの代わりに文字列 `<Override>` 'oldAddinVersion' を使用します。 `${token.requirements}` `<ExtendedOverrides>`
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -151,7 +151,7 @@ ms.locfileid: "52555158"
 
 |属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
-|値|string|必須|条件が満たされた場合の、祖父母トークンの値。|
+|値|string|必須|条件が満たされた場合の祖父母トークンの値。|
 
 ### <a name="example"></a>例
 
@@ -195,14 +195,12 @@ ms.locfileid: "52555158"
 - [マニフェストで Requirements 要素を設定する](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [SharePoint のキーボード ショートカット](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-for-runtime-preview"></a>要素を上書き `Runtime` (プレビュー)
+## <a name="override-element-for-runtime"></a>Override 要素 `Runtime`
 
 > [!IMPORTANT]
-> この機能は、web 上のOutlookで[プレビュー](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)し、Microsoft 365サブスクリプションでWindowsにのみサポートされます。 詳細については、「[イベントベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)」を参照してください。
->
-> プレビュー機能は予告なく変更される場合があるため、運用アドインで使用しないでください。
+> この要素のサポートは、イベント ベースのアクティブ化機能を備えたメールボックス要件 [セット 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) [で導入されました](../../outlook/autolaunch.md)。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
-`<Override>`要素は条件付きを表し、"If..その後..陳述。 要素の `<Override>` 型が **RuntimeOverride** の場合、 `type` 属性は条件であり、 `resid` 属性は結果です。 たとえば、次の例は"型が 'javascript' の場合は `resid` 'JSRuntime.Url' です。Outlookデスクトップには[、LaunchEvent 拡張機能ポイント](../../reference/manifest/extensionpoint.md#launchevent-preview)ハンドラーにこの要素が必要です。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が RuntimeOverride 型の場合、属性は条件であり、属性 `<Override>`  `type` `resid` は結果です。 たとえば、「型が 'javascript'の場合は `resid` 、'JSRuntime.Url'です」と読み取ります。Outlookデスクトップでは、LaunchEvent 拡張ポイント[ハンドラーに対してこの要素が](../../reference/manifest/extensionpoint.md#launchevent)必要です。
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
@@ -226,8 +224,8 @@ ms.locfileid: "52555158"
 
 |属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
-|**type**|string|はい|このオーバーライドの言語を指定します。 現在、 `"javascript"` サポートされているオプションは唯一です。|
-|**resid**|文字列|はい|親 [Runtime](runtime.md) 要素で定義された既定の HTML の URL の場所をオーバーライドする JavaScript ファイルの URL の場所を指定 `resid` します。 は `resid` 32 文字以内 `id` で、要素の属性と一致する必要があります `Url` `Resources` 。|
+|**type**|string|はい|このオーバーライドの言語を指定します。 現時点では、 `"javascript"` サポートされている唯一のオプションです。|
+|**resid**|文字列|はい|親 [ランタイム](runtime.md) 要素で定義されている既定の HTML の URL の場所を上書きする JavaScript ファイルの URL の場所を指定します `resid` 。 32 文字以内で、要素内の要素の属性と一致 `resid` `id` `Url` する必要 `Resources` があります。|
 
 ### <a name="examples"></a>例
 
@@ -246,4 +244,4 @@ ms.locfileid: "52555158"
 ### <a name="see-also"></a>関連項目
 
 - [ランタイム](runtime.md)
-- [イベント ベースのアクティブ化用にOutlook アドインを構成する](../../outlook/autolaunch.md)
+- [イベント ベースのOutlook用にアドインを構成する](../../outlook/autolaunch.md)

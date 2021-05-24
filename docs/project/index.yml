@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555214"
 landingContent:
-- title: Project アドインについて
+- title: アドインProjectについて
   linkLists:
   - linkListType: overview
     links:
-    - text: アドインProjectとは何ですか?
+    - text: アドインProjectは何ですか?
       url: project-add-ins.md
     - text: 'JavaScript API for Project '
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Project アドインのテストとデバッグ
+    - text: アドインをテストProjectデバッグする
       url: ../testing/test-debug-office-add-ins.md
-    - text: Project アドインを展開および公開する
+    - text: アドインを展開Project発行する
       url: ../publish/publish.md
-- title: アドインの主要なOffice概念
+- title: 主要Officeアドインの概念
   linkLists:
   - linkListType: overview
     links:
