@@ -3,24 +3,24 @@ title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
 ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: db59ce44d2ed6f120503701479b705f13727130b
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870652"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639964"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
-Outlook アイテムの添付ファイルは、いくつかの方法で取得できますが、使用するオプションはシナリオによって異なります。
+2 つの方法でOutlookアイテムの添付ファイルを取得できますが、使用するオプションはシナリオによって異なります。
 
 1. リモート サービスに添付ファイル情報を送信します。
 
     アドインは添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。 そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
 
-1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
+1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    この API は、EWS/REST が使用できない場合 (Exchange サーバーの管理者の構成など)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、この API は、添付ファイルがまだ Exchange と同期していない可能性がある作成シナリオで利用できます。詳細については `getAttachmentContentAsync` [、「Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) の新規作成フォームでアイテムの添付ファイルを管理する」を参照してください。
+    この API は、EWS/REST が使用できない場合 (たとえば、Exchange サーバーの管理構成のため)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、この API は、添付ファイルがまだ Exchange に同期されていない可能性がある作成シナリオで使用できます。詳細については `getAttachmentContentAsync` [、「Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)の作成フォームでアイテムの添付ファイルを管理する」を参照してください。
 
 この記事では、最初のオプションについて詳しく説明します。 リモート サービスに添付ファイル情報を送信するには、次のプロパティと関数を使用します。
 
@@ -32,7 +32,7 @@ Outlook アイテムの添付ファイルは、いくつかの方法で取得で
 
 ## <a name="using-the-attachments-api"></a>添付ファイル API を使用する
 
-添付ファイル API を使用して Exchange メールボックスから添付ファイルを取得するには、次の手順を実行します。
+添付ファイル API を使用してメールボックスから添付ファイルExchangeするには、次の手順を実行します。
 
 1. 添付ファイルを含むメッセージまたは予定が表示されているときは、アドインを表示します。
 
@@ -152,7 +152,7 @@ namespace AttachmentsSample
 
 ### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>EWS Managed API を使用して添付ファイルを取得する
 
-リモート サービスで [EWS Managed API](https://go.microsoft.com/fwlink/?LinkID=255472) を使用する場合は、 [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) メソッドを使用できます。このメソッドは、添付ファイルを取得するための EWS SOAP 要求を作成、送信、および受信します。EWS Managed API を使用すると、必要なコード行が少なく、EWS の呼び出しを行うための直感的なインターフェイスが提供されるため、この API の使用をお勧めします。次のコードは、1 回の要求ですべての添付ファイルを取得し、処理された添付ファイルの数と名前を返します。
+リモート サービスで [EWS Managed API](/exchange/client-developer/web-service-reference/ews-managed-api-reference-for-exchange) を使用する場合は、 [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) メソッドを使用できます。このメソッドは、添付ファイルを取得するための EWS SOAP 要求を作成、送信、および受信します。EWS Managed API を使用すると、必要なコード行が少なく、EWS の呼び出しを行うための直感的なインターフェイスが提供されるため、この API の使用をお勧めします。次のコードは、1 回の要求ですべての添付ファイルを取得し、処理された添付ファイルの数と名前を返します。
 
 ```cs
 private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEWSManagedApi(AttachmentSampleServiceRequest request)
@@ -421,4 +421,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - 
   [Exchange の EWS Managed API、EWS、および Web サービスについて学ぶ](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [EWS マネージ API クライアント アプリケーションの概要](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlookアドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)

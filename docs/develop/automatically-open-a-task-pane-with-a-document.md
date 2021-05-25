@@ -1,25 +1,25 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
-description: ドキュメントが開Office自動的に開くアドインを構成する方法について学習します。
-ms.date: 07/07/2020
+description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
+ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 9c9d64594f98cc45c56b3251bf6750457bd5a37c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839958"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639957"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
-Office アドインでアドイン コマンドを使用して、Office アプリ リボンにボタンを追加することで、Office UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
+アドインのアドイン コマンドを使用して、Officeリボンにボタンを追加Office UI を拡張Office アプリできます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
 いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 AddInCommands 1.1 要件セットに導入されている、作業ウィンドウの Autoopen 機能は、作業ウィンドウを自動的に開く必要があるシナリオで使用できます。
 
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
-ユーザーがアドイン コマンドを使用しないアドイン (Office 2013 で実行するアドインなど) を起動すると、それらはドキュメントに挿入され、そのドキュメントに永続化されます。 その結果として、別のユーザーがドキュメントを開くと、そのユーザーにアドインのインストールを求めるダイアログが表示され、作業ウィンドウが開きます。 このモデルの課題は、多くの場合、ユーザーがアドインをドキュメントに保持したくないという課題です。 たとえば、Word ドキュメントで辞書アドインを使用する学生は、そのドキュメントを同級生や教師が開いたときに、アドインのインストールを求めるダイアログが表示されることを望まない場合もあります。
+ユーザーがアドイン コマンドを使用しないアドイン (Office 2013 で実行するアドインなど) を起動すると、それらはドキュメントに挿入され、そのドキュメントに永続化されます。 その結果として、別のユーザーがドキュメントを開くと、そのユーザーにアドインのインストールを求めるダイアログが表示され、作業ウィンドウが開きます。 このモデルの課題は、多くの場合、ユーザーがアドインをドキュメント内に保持したくないという問題です。 たとえば、Word ドキュメントで辞書アドインを使用する学生は、そのドキュメントを同級生や教師が開いたときに、アドインのインストールを求めるダイアログが表示されることを望まない場合もあります。
 
 Autoopen 機能では、特定のドキュメントに特定の作業ウィンドウ アドインを永続化させるかどうかをユーザーが明示的に定義できます。
 
@@ -40,8 +40,8 @@ Autoopen 機能を使用するときには、次に示すベスト プラクテ�
   - 適切に機能するには、ドキュメントにアドインが必要になる場合。たとえば、アドインで最新の情報に定期的に更新される在庫の値が含まれているスプレッドシート。最新の値が維持されるように、アドインはスプレッドシートが開かれたときに自動的に開かれる必要があります。
   - 特定のドキュメントでユーザーが常にアドインを使用する可能性が高い場合。たとえば、バックエンド システムから情報を取得して、ドキュメントのデータを設定または変更することでユーザーを支援するアドイン。
 - Autoopen 機能はユーザーがオン/オフできるようにします。アドインの作業ウィンドウが自動的に起動されないようにするオプションをユーザーの UI に含めます。  
-- 要件セットの検出を使用して autoopen 機能が利用可能かどうかを判断し、利用可能ではない場合はフォールバック動作を提供します。
-- アドインの使用率を人為的に増やすために、Autoopen 機能を使用しないでください。 特定のドキュメントを使用してアドインを自動的に開くことを意味がない場合は、この機能によってユーザーに問題が生じます。
+- 要件セットの検出を使用して、自動開く機能が使用可能かどうかを判断し、使用しない場合はフォールバック動作を提供します。
+- アドインの使用率を人為的に増やすために、Autoopen 機能を使用しないでください。 特定のドキュメントでアドインが自動的に開くのが意味がない場合、この機能はユーザーを嫌う可能性があります。
 
     > [!NOTE]
     > Microsoft では、Autoopen 機能の乱用を見つけた場合は、そのアドインを AppSource から排除することがあります。
@@ -118,7 +118,7 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
-|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Microsoft 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。
+|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、管理センターで集中展開を使用するアドインで使用Microsoft 365行です。|アドイン マニフェストでのバージョン。
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
 > [!NOTE]
@@ -143,11 +143,11 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 > [!NOTE]
 > ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
 
-この XML を簡単に記述する 1 つの方法として、最初にアドインを実行し、値を書き込むために[クライアント側でドキュメントにタグを設定](#tag-the-document-on-the-client-side)して、ドキュメントを保存してから生成された XML を調べます。Office により、適切な属性値が検出されて設定されます。また、[Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) ツールを使用して生成した C# コードにより、生成する XML 基づいてプログラムでマークアップを追加することもできます。
+XML を記述する簡単な方法は、最初にアドインを実行し[](#tag-the-document-on-the-client-side)、クライアント側でドキュメントにタグを付けて値を書き込み、次にドキュメントを保存して生成された XML を調べてください。Office、適切な属性値を検出して提供します。 Open [XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) を使用して、生成C#にマークアップをプログラムで追加するコードを生成することもできます。
 
 ## <a name="test-and-verify-opening-task-panes"></a>作業ウィンドウ表示のテストと検証
 
-Microsoft 365 管理センターから一元展開を使用して、作業ウィンドウを自動的に開くアドインのテスト バージョンを展開できます。 次の例では、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示します。
+管理センターから集中展開を使用して作業ウィンドウを自動的に開くアドインのテスト バージョンMicrosoft 365できます。 次の例では、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示します。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -159,9 +159,9 @@ Microsoft 365 管理センターから一元展開を使用して、作業ウィ
 </we:webextension>
 ```
 
-前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待通り動作する必要があります。 まだ Microsoft 365 サブスクリプションをお持ちでない場合は [、Microsoft 365](https://developer.microsoft.com/office/dev-program)開発者プログラムに参加することで、90 日間の更新可能な Microsoft 365 サブスクリプションを無料で取得できます。
+前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待通り動作します。 Microsoft 365 サブスクリプションをまだ持ってない場合は、Microsoft 365 開発者プログラムに参加することで、90 日間の無料のMicrosoft 365 サブスクリプション[を取得できます](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="see-also"></a>関連項目
 
 Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
-[Microsoft 365 開発者プログラムに参加します](/office/developer-program/office-365-developer-program)。
+[開発者プログラムMicrosoft 365参加します](/office/developer-program/office-365-developer-program)。
