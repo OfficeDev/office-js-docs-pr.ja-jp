@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 05/20/2021
+ms.date: 05/26/2021
 localization_priority: Normal
-ms.openlocfilehash: a0d0b27c9b49132024c78577a4432d85542cf76f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590506"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697198"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -22,22 +22,22 @@ ms.locfileid: "52590506"
 
 ## <a name="supported-events"></a>サポートされるイベント
 
-現時点では、次のイベントがサポートされています。
+現時点では、次のイベントは Web および web サイトWindows。
 
-|イベント|説明|クライアント|
-|---|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|Windows Web|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|Windows Web|
-|`OnMessageAttachmentsChanged`\*|メッセージの作成中に添付ファイルを追加または削除する場合。|Windows|
-|`OnAppointmentAttachmentsChanged`\*|予定の作成中に添付ファイルを追加または削除する場合。|Windows|
-|`OnMessageRecipientsChanged`\*|メッセージの作成中に受信者を追加または削除する場合。|Windows|
-|`OnAppointmentAttendeesChanged`\*|予定の作成中に出席者を追加または削除する場合。|Windows|
-|`OnAppointmentTimeChanged`\*|予定の作成中に日付/時刻を変更する場合。|Windows|
-|`OnAppointmentRecurrenceChanged`\*|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|Windows|
-|`OnInfoBarDismissClicked`\*|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|Windows|
+|イベント|説明|
+|---|---|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|
+|`OnMessageAttachmentsChanged`\*|メッセージの作成中に添付ファイルを追加または削除する場合。|
+|`OnAppointmentAttachmentsChanged`\*|予定の作成中に添付ファイルを追加または削除する場合。|
+|`OnMessageRecipientsChanged`\*|メッセージの作成中に受信者を追加または削除する場合。|
+|`OnAppointmentAttendeesChanged`\*|予定の作成中に出席者を追加または削除する場合。|
+|`OnAppointmentTimeChanged`\*|予定の作成中に日付/時刻を変更する場合。|
+|`OnAppointmentRecurrenceChanged`\*|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|
+|`OnInfoBarDismissClicked`\*|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|
 
 > [!IMPORTANT]
-> \*このイベントは、[サブスクリプションを使用](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)したOutlookのWindowsプレビューでのみMicrosoft 365されます。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。
+> \*このイベントは、Web 上[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)のOutlookサブスクリプションのWindowsプレビューでのみMicrosoft 365されます。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。
 >
 > プレビュー機能は予告なしに変更される可能性があるため、実稼働アドインでは使用できません。
 
@@ -136,10 +136,8 @@ ms.locfileid: "52590506"
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <!-- Events supported on the web and on Windows. -->
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
-              <!-- Events supported only on Windows. -->
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -320,3 +318,4 @@ UI Office.js変更する API の一部は、イベント ベースのアドイ�
 
 - [Outlook アドインのマニフェスト](manifests.md)
 - [イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
+- PnP サンプル:[イベント Outlookアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
