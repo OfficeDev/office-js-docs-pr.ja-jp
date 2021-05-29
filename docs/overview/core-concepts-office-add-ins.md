@@ -1,22 +1,22 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Office アドインの中心概念
-description: Office アドイン プラットフォームについて説明します。
-ms.date: 07/30/2020
+title: 開発ライフサイクルの概要
+description: ライフサイクル イベントの計画、開発、テスト、公開についての詳細情報。
+ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: f17171886133a7241838d089051b23394c38f8ee
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292498"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697191"
 ---
-# <a name="core-concepts"></a>中心概念
+# <a name="development-lifecycle-overview"></a>開発ライフサイクルの概要
 
 すべての Office アドインは、Office アドイン プラットフォーム上で構築します。 すべての Office アドインでは共通のフレームワークが共有され、これにより特定の機能の実装が可能になります。 このことは、Excel、Outlook、またはその他の Office アプリケーションのいずれのアドインを構築するのかにかかわらず、ダイアログ ボックス、アドイン コマンド、作業ウィンドウ、シングル サインオン (SSO) などの機能を実装できることを意味します。
 
-どのようなアドインを構築する場合でも、Office アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイル上で指定する方法、アドインをテスト、デバッグ、公開する方法など、重要な概念を理解する必要があります。 これらの情報については、ドキュメントの「**Core concepts (中心概念)**」セクションを参照してください。 構築するアドインに対応するアプリケーション固有のドキュメント (たとえば、 [Excel](../excel/index.yml)) を詳しく見る前に、このドキュメントを確認してください。
+どのようなアドインを構築する場合でも、Office アプリケーションやプラットフォームの可用性、Office JavaScript API のプログラミング パターン、アドインの設定と機能をマニフェスト ファイルで指定する方法、アドインをテスト、デバッグ、公開する方法など、重要な概念を理解する必要があります。 次のテーブルの一覧にあるドキュメントを確認します。 確認することで、構築するアドインに対応するアプリケーション固有のドキュメント ([Excel](../excel/index.yml) など) のためのしっかりした基盤を作ることができます。
 
 |               |               |
 | ------------- | ------------- |
