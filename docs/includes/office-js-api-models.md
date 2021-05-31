@@ -3,10 +3,9 @@ Office JavaScript API には、2 つの異なるモデルがあります。
 - **アプリケーション固有** API では、特定の Office アプリケーションにネイティブなオブジェクトを操作するために使用できる、厳密に型指定されたオブジェクトが提供されます。 たとえば、Excel JavaScript API を使用して、ワークシート、範囲、テーブル、グラフなどにアクセスすることができます。 アプリケーション固有 API は現在、次の Office アプリケーション用に使用できます。
 
     - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
-
-    - [Word](../reference/overview/word-add-ins-reference-overview.md)
-
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
+    - [PowerPoint](../reference/overview/powerpoint-add-ins-reference-overview.md)
+    - [Word](../reference/overview/word-add-ins-reference-overview.md)
 
     この API モデルでは [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) が使用され、Office アプリケーションに送信する各要求で複数の操作を指定することが可能です。 この方法によるバッチ操作を行うと、Web 上の Office アプリケーションのパフォーマンスが大幅に向上します。 アプリケーション固有の API は Office 2016 で導入されました。Office 2013 の操作には使用できません。
 
