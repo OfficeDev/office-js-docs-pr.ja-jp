@@ -1,55 +1,64 @@
 ---
-ms.date: 05/16/2020
-description: Internet Explorer 11 を使用して Office アドインをテストします。
-title: Internet Explorer 11 のテスト
+title: Internet Explorer 11 テスト
+description: 11 でOfficeアドインをテストInternet Explorerします。
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: de256ee8b0633f18d3188c5bbfae52cb24ff2c35
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006438"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727935"
 ---
-# <a name="test-your-office-add-in-using-internet-explorer-11"></a>Internet Explorer 11 を使用して Office アドインをテストする
+# <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
-アドインの仕様によっては、以前のバージョンの Windows および Office をサポートすることを計画している場合があります。これには、Internet Explorer 11 でのテストが必要になります。 これは、多くの場合、アドインを AppSource に提出する際に必要になります。 このテストでは、次のコマンドラインツールを使用して、アドインで使用されるより新しいランタイムを Internet Explorer 11 ランタイムに切り替えることができます。
+AppSource を使用してアドインを販売する予定がある場合、または以前のバージョンの Windows および Office をサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 コマンド ラインを使用して、アドインで使用される最新のランタイムから、このテスト用の Internet Explorer 11 ランタイムに切り替えます。 Windows および Office のバージョンで Internet Explorer 11 Web ビュー コントロールを使用する方法については、「Office アドインで使用されるブラウザー」を[参照](../concepts/browsers-used-by-office-web-add-ins.md)してください。
 
-## <a name="pre-requisites"></a>前提条件
+> [!IMPORTANT]
+> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 ECMAScript 2015 以降の構文と機能を使用する場合は、次の 2 つのオプションがあります。
+>
+> - ECMAScript 2015 (ES6 とも呼ばれる) 以降の JavaScript または TypeScript でコードを記述し、バベルや[tsc](https://www.typescriptlang.org/index.html)などの[](https://babeljs.io/)コンパイラを使用してコードを ES5 JavaScript にコンパイルします。
+> - ECMAScript 2015 以降の JavaScript で記述します[](https://en.wikipedia.org/wiki/Polyfill_(programming))が、IE でコードを実行できる[core-js](https://github.com/zloirock/core-js)などのポリフィル ライブラリも読み込む必要があります。
+>
+> これらのオプションの詳細については [、「Support Internet Explorer 11」を参照してください](../develop/support-ie-11.md)。
+>
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
+
+> [!NOTE]
+> Internet Explorer 11 ブラウザーでアドインをテストするには、Office on the webでInternet Explorerを開き、アドインを[サイドロードします](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
+
+## <a name="prerequisites"></a>前提条件
 
 - [Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
-- コード エディター。 [Visual Studio コード](https://code.visualstudio.com/)をお勧めします。
-- [Office Insider program の一部である](https://insider.office.com)
 
-これらの手順では、その前に Yo Office ジェネレータープロジェクトを設定していることを前提としています。 これを実行していない場合は、「 [Excel アドインの](../quickstarts/excel-quickstart-jquery.md)場合」などのクイックスタートを読むことを検討してください。
+これらの手順では、以前に Yo ジェネレーター プロジェクトをOffice前提とします。 前にこれを行ったことがない場合は、クイック スタート (アドイン用など) を読[Excel検討してください](../quickstarts/excel-quickstart-jquery.md)。
 
-## <a name="using-ie11-tooling"></a>IE11 ツールを使用する
+## <a name="switching-to-the-internet-explorer-11-webview"></a>11 webview Internet Explorer切り替える
 
-1. Yo Office ジェネレータープロジェクトを作成します。 選択するプロジェクトの種類に関係なく、このツールはすべてのプロジェクトの種類で機能します。
+1. Yo ジェネレーター プロジェクトOffice作成します。 選択するプロジェクトの種類は関係ありませんが、このツールは、すべてのプロジェクトの種類で動作します。
 
-> !こと既存のプロジェクトがあり、新しいプロジェクトを作成せずにこのツールを追加する場合は、この手順をスキップして次の手順に進みます。 
+    > [!NOTE]
+    > 既存のプロジェクトを持ち、新しいプロジェクトを作成せずにこのツールを追加する場合は、この手順をスキップして次の手順に進みます。 
 
-2. 新しいプロジェクトのルートフォルダーで、コマンドラインで次のコマンドを実行します。
+1. プロジェクトのルート フォルダーで、コマンド ラインで次のコマンドを実行します。 この例では、プロジェクトのマニフェスト ファイルがルートにあると仮定します。 指定されていない場合は、マニフェスト ファイルへの相対パスを指定します。 コマンド ラインに、Web ビューの種類が IE に設定されているというメッセージが表示されます。
 
-```command&nbsp;line
-npx office-addin-dev-settings webview manifest.xml ie
-```
-Web ビューの種類が IE に設定されていることを示すメモがコマンドラインに表示されます。
+    ```command&nbsp;line
+    npx office-addin-dev-settings webview manifest.xml ie
+    ```
 
-> !部このツールを使用する必要はありませんが、Internet Explorer 11 ランタイムに関連する問題の大部分をデバッグするのに役立ちます。 堅牢性を完全にするには、Windows 7 および Office 2013 のコピーがインストールされたコンピューターを使用してテストする必要があります。
+> [!TIP]
+> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、および 10 とさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841)。
 
-## <a name="command-settings"></a>コマンドの設定
+### <a name="command-options"></a>コマンド オプション
 
-マニフェストパスが異なる場合は、次のようにコマンドでこれを指定します。
+この `office-addin-dev-settings webview` コマンドは、引数として多数のランタイムを受け取る場合があります。
 
-`npx office-addin-dev-settings webview [path to your manifest] ie`
-
-また、このコマンドは、 `office-addin-dev-settings webview` 引数としていくつかのランタイムを取ることができます。
-
-- internet
-- 下辺
-- 既定値です。
+- すなわち
+- エッジ
+- default
 
 ## <a name="see-also"></a>関連項目
+
 * [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 * [テスト用に Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 * [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

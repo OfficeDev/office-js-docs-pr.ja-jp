@@ -1,21 +1,21 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
-description: 新しいアドインでダイアログ ボックスを作成するOfficeについて説明します。
+description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 9061b4c048a133572e615152d61df611e5f15068
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: acb26255778a57d89b6654e7bf6e3fdc71b67d8d
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237866"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727914"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
 [Office ダイアログ API](/javascript/api/office/office.ui) を使用して、Office アドインでダイアログ ボックスを開くことができます。 この記事では、Office アドインでダイアログ API を使用するためのガイダンスを提供します。
 
 > [!NOTE]
-> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。 ダイアログ API は現在、Excel、PowerPoint、および Word でサポートされています。 Outlook のサポートは、さまざまなメールボックス要件セット全体に含まれています。詳細については &mdash; 、API リファレンスを参照してください。
+> ダイアログ API の現在のサポート状態に関する詳細は、「[ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)」を参照してください。 ダイアログ API は、現在、ユーザー、Excel、PowerPoint、および Word でサポートされています。 Outlookサポートは、さまざまなメールボックス要件セットに含まれています。詳細については &mdash; 、API リファレンスを参照してください。
 
 ダイアログ API の主要なシナリオは、Google や Facebook、Microsoft Graph などのリソースで認証を有効にすることです。 詳細については、この記事をよく読んだ *後* で「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
@@ -26,13 +26,13 @@ ms.locfileid: "50237866"
 - ビデオが作業ウィンドウに限定されている場合に、小さすぎるビデオをホストする。
 
 > [!NOTE]
-> UI 要素を重ねて表示することはお勧めできないため、シナリオで必要な場合を除き、作業ウィンドウでダイアログ ボックスを開かないようにします。 作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることに注意してください。 タブ付き作業ウィンドウの例については [、Excel アドインの JavaScript SalesTracker サンプルを参照](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) してください。
+> UI 要素を重ねて表示することはお勧めできないため、シナリオで必要な場合を除き、作業ウィンドウでダイアログ ボックスを開かないようにします。 作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることに注意してください。 タブ付き作業ウィンドウの例については、「Excel [JavaScript SalesTracker サンプル」を参照](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)してください。
 
 次の画像は、ダイアログ ボックスの例を示します。
 
 ![Word の前に 3 つのサインイン オプションが表示されたダイアログを示すスクリーンショット](../images/auth-o-dialog-open.png)
 
-ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウはモーダルではありません。ユーザーは、Office アプリケーション内のドキュメントと作業ウィンドウ内のページ (ある場合) の両方を引き続き操作できます。
+ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウは *非* モーダルです。ユーザーは、Office アプリケーション内のドキュメントと作業ウィンドウ内のページの両方 (ある場合) の操作を続行できます。
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>ホスト ページからダイアログ ボックスを開く
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> - URL には HTTP **S** プロトコルを使用します。 これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
+> - この URL には HTTP **S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページで必須です。
 > - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](../reference/manifest/functionfile.md)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
 > [!IMPORTANT]
@@ -61,7 +61,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
 ```
 
-これを実行するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。 使用するその他のサンプルについては、「 `displayDialogAsync` サンプル」を [参照してください](#samples)。
+これを実行するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。 使用するその他のサンプルについては `displayDialogAsync` [、「Samples」を参照してください](#samples)。
 
 全画面表示で効率的に操作するには、両方の値を 100% に設定します。(最大有効値は 99.5% であり、最大有効値にしても、ウィンドウは移動とサイズ変更が可能です。)
 
@@ -79,27 +79,27 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。 アドインが Office on the web で実行されていない場合、`displayInIframe` は無視されます。
 
 > [!NOTE]
-> どの時点であれ、iframe で開けないページにダイアログ ボックスがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは **ありません**。 たとえば、Google や Microsoft アカウントなど、多くの一般的な Web サービスのサインイン ページは iframe で開くことができません。
+> どの時点であれ、iframe で開けないページにダイアログ ボックスがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは **ありません**。 たとえば、Google や Microsoft アカウントなど、多くの一般的な Web サービスのサインイン ページを iframe で開くことができません。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>ダイアログ ボックスからホスト ページに情報を送信する
 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。
 
 - ダイアログ ボックスの現在のページがホスト ページと同じドメインにある。
-- ページOffice JavaScript API ライブラリが読み込まれます。 (Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトは、空のメソッドにすることもできますが、プロパティにメソッドを割り `Office.initialize` 当てる必要があります。 詳細については、「 [アドインの初期化Office」を参照してください](initialize-add-in.md))。
+- JavaScript API Officeがページに読み込まれます。 (JavaScript API ライブラリの Officeを使用するページと同様に、ページのスクリプトはプロパティにメソッドを割り当てる必要があります。ただし、空のメソッドを `Office.initialize` 指定できます。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。
 
-ダイアログ ボックスのコードは、[messageParent](/javascript/api/office/office.ui#messageparent-message-) 関数を使用して、ブール値または文字列メッセージのいずれかをホスト ページに送信します。 文字列には、単語、文、XML BLOB、文字列に変換された JSON、文字列にシリアル化できるすべてのものを指定できます。 例を次に示します。
+ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageparent-message-) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 例を次に示します。
 
 ```js
 if (loginSuccess) {
-    Office.context.ui.messageParent(true);
+    Office.context.ui.messageParent(true.toString());
 }
 ```
 
 > [!IMPORTANT]
 > - `messageParent` 関数を呼び出せるのは、ホスト ページと同じドメイン (プロトコルとポートを含む) を持つページ上のみです。
-> - この `messageParent` 関数は、ダイアログボックスOffice呼び出し可能な 2 つの JS API の 1 つのみです。
-> - ダイアログ ボックスで呼び出し可能な他の JS API は次の機能です `Office.context.requirements.isSetSupported` 。 詳細については、「アプリケーションと [API の要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。 ただし、ダイアログ ボックスでは、この API は Outlook 2016 の 1 回購入 (つまり MSI バージョン) ではサポートされていません。
+> - この `messageParent` 関数は、ダイアログボックスでOfficeできる 2 つの JS API の 1 つのみです。
+> - ダイアログ ボックスで呼び出す他の JS API はです `Office.context.requirements.isSetSupported` 。 詳細については、「アプリケーションと[API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。 ただし、ダイアログ ボックスでは、この API は 1 回Outlook 2016 (MSI バージョン) ではサポートされていません。
 
 次の例では、`googleProfile` は文字列に変換されたバージョンのユーザーの Google プロファイルです。
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office は `arg` オブジェクトをハンドラーに渡します。 その `message` プロパティは、ダイアログ ボックスの `messageParent` の呼び出しで送信されるブール値または文字列です。 この例では、Microsoft アカウントや Google などのサービスからのユーザーのプロファイルを文字列で表すので、オブジェクトに逆シリアル化されます `JSON.parse` 。
+> - Office は `arg` オブジェクトをハンドラーに渡します。 プロパティ `message` は、ダイアログ ボックスの呼び出しによって送信 `messageParent` される文字列です。 この例では、Microsoft アカウントや Google などのサービスからユーザーのプロファイルを文字列で表すので、オブジェクトに逆シリアル化されます `JSON.parse` 。
 > - `showUserName` 実装は表示されません。作業ウィンドウ上に個人用のウェルカム メッセージが表示される場合があります。
 
 ダイアログ ボックスのユーザー操作が完了すると、次の例に示すようにメッセージ ハンドラーはダイアログ ボックスを閉じます。
@@ -170,7 +170,7 @@ function processMessage(arg) {
 
 ### <a name="conditional-messaging"></a>条件付きのメッセージング
 
-ダイアログ ボックスから複数の `messageParent` 呼び出しを送信できますが、`DialogMessageReceived` イベントのホスト ページにあるハンドラーは 1 つのみのため、ハンドラーは条件ロジックを使用してさまざまなメッセージを区別する必要があります。 たとえば、Microsoft アカウントや Google などの ID プロバイダーにサインインするように求めるダイアログ ボックスが表示された場合、ユーザーのプロファイルがメッセージとして送信されます。 認証が失敗した場合、次の例のように、ダイアログ ボックスはホスト ページにエラー情報を送信します。
+ダイアログ ボックスから複数の `messageParent` 呼び出しを送信できますが、`DialogMessageReceived` イベントのホスト ページにあるハンドラーは 1 つのみのため、ハンドラーは条件ロジックを使用してさまざまなメッセージを区別する必要があります。 たとえば、ダイアログ ボックスでユーザーに Microsoft アカウントや Google などの ID プロバイダーへのサインインを求めるメッセージが表示された場合、ユーザーのプロファイルがメッセージとして送信されます。 認証が失敗した場合、次の例のように、ダイアログ ボックスはホスト ページにエラー情報を送信します。
 
 ```js
 if (loginSuccess) {
@@ -212,11 +212,11 @@ function processMessage(arg) {
 
 ## <a name="pass-information-to-the-dialog-box"></a>情報をダイアログ ボックスに渡す
 
-アドインは[、Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-)[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)を使用してホスト ページからダイアログ ボックスにメッセージを送信できます。
+アドインは、Dialog.messageChild[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)を使用して、ホスト ページからダイアログ ボックスに[メッセージを送信できます](/javascript/api/office/office.dialog#messagechild-message-)。
 
 ### <a name="use-messagechild-from-the-host-page"></a>ホスト `messageChild()` ページから使用する
 
-ダイアログ ボックスを開Officeダイアログ API を呼び出す場合 [、Dialog](/javascript/api/office/office.dialog) オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープが大きい変数に割り当てる必要があります。 例を次に示します。
+ダイアログ ボックスを開Officeダイアログ API を呼び出す場合[、Dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープの大きい変数に割り当てる必要があります。 例を次に示します。
 
 ```javascript
 var dialog;
@@ -235,9 +235,9 @@ function processMessage(arg) {
 }
 ```
 
-このオブジェクトには、文字列に変換されたデータを含む任意の文字列をダイアログ ボックス `Dialog` に送信する [messageChild](/javascript/api/office/office.dialog#messagechild-message-) メソッドがあります。 これにより、ダイアログ `DialogParentMessageReceived` ボックスでイベントが発生します。 次のセクションに示すように、コードでこのイベントを処理する必要があります。
+この `Dialog` オブジェクトには [messageChild メソッドが](/javascript/api/office/office.dialog#messagechild-message-) 含まれており、文字列化されたデータを含む任意の文字列をダイアログ ボックスに送信します。 これにより、ダイアログ ボックス `DialogParentMessageReceived` でイベントが発生します。 次のセクションに示すように、コードでこのイベントを処理する必要があります。
 
-ダイアログの UI が現在アクティブなワークシートに関連し、そのワークシートの位置が他のワークシートを基準にしているシナリオについて考えます。 次の例では `sheetPropertiesChanged` 、Excel ワークシートのプロパティをダイアログ ボックスに送信します。 この場合、現在のワークシートの名前は "My Sheet" で、ブックの 2 番目のシートです。 データはオブジェクトにカプセル化され、文字列化され、渡しが可能になります `messageChild` 。
+ダイアログの UI が現在アクティブなワークシートに関連付け、他のワークシートを基準にしたワークシートの位置を示すシナリオを考えます。 次の例では、 `sheetPropertiesChanged` ワークシートExcelダイアログ ボックスに送信します。 この場合、現在のワークシートの名前は "My Sheet" で、ブックの 2 番目のシートです。 データはオブジェクトにカプセル化され、文字列化され、渡されます `messageChild` 。
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -252,7 +252,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログ ボックスで DialogParentMessageReceived を処理する
 
-ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) します。 これは通常、次に示すように [、Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドで行われます。 (より堅牢な例を以下に示します。
+ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) します。 これは通常[、Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドで行われます。次に示すようにします。 (より堅牢な例を以下に示します。
 
 ```javascript
 Office.onReady()
@@ -263,7 +263,7 @@ Office.onReady()
     });
 ```
 
-次に、ハンドラーを定義 `onMessageFromParent` します。 次のコードは、前のセクションの例を続けて示しています。 ただし、Officeハンドラーに引数を渡し、引数オブジェクトのプロパティにホスト ページの文字列 `message` が含まれる点に注意してください。 この例では、メッセージがオブジェクトに再変換され、jQuery を使用して、新しいワークシート名と一致するダイアログの上部見出しを設定します。
+次に、ハンドラーを定義 `onMessageFromParent` します。 次のコードは、前のセクションからこの例を続行します。 引数がOfficeハンドラーに渡され、引数オブジェクトのプロパティにホスト ページの文字列 `message` が含まれる点に注意してください。 この例では、メッセージがオブジェクトに再変換され、jQuery を使用して、新しいワークシート名と一致するダイアログの上部見出しを設定します。
 
 ```javascript
 function onMessageFromParent(event) {
@@ -272,7 +272,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-ハンドラーが正しく登録されていることを確認するベスト プラクティスです。 これを行うには、メソッドにコールバックを渡 `addHandlerAsync` します。 これは、ハンドラーの登録が完了すると実行されます。 ハンドラーが正常に登録されていない場合は、ハンドラーを使用してログを記録するか、エラーを表示します。 次に例を示します。 ここで定義 `reportError` されていない関数で、エラーをログに記録または表示します。
+ハンドラーが正しく登録されていることを確認するベスト プラクティスです。 これを行うには、メソッドにコールバックを渡 `addHandlerAsync` します。 これは、ハンドラーの登録が完了すると実行されます。 ハンドラーが正常に登録されていない場合は、ハンドラーを使用してエラーを記録または表示します。 次に例を示します。 ここで定義 `reportError` されていない関数で、エラーをログに記録または表示する点に注意してください。
 
 ```javascript
 Office.onReady()
@@ -292,13 +292,13 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>親ページからダイアログ ボックスへの条件付きメッセージング
 
-ホスト ページから複数の呼び出しを実行できますが、イベントのダイアログ ボックスにはハンドラーが 1 つしか存在しないので、ハンドラーは条件ロジックを使用して異なるメッセージを区別 `messageChild` `DialogParentMessageReceived` する必要があります。 これは、ダイアログ ボックスが条件付きメッセージングの説明に従ってホスト ページにメッセージを送信するときに、条件付きメッセージングを構成する方法と正確に同じ方法で行 [います](#conditional-messaging)。
+ホスト ページから複数の呼び出しを実行できますが、イベントのダイアログ ボックスにはハンドラーが 1 つしか存在しないので、ハンドラーは、さまざまなメッセージを区別するために条件付きロジックを使用 `messageChild` `DialogParentMessageReceived` する必要があります。 これは、「条件付きメッセージング」の説明に従って、ダイアログ ボックスがホスト ページにメッセージを送信するときに条件付きメッセージングを構成する方法と正確に並行して実行 [できます](#conditional-messaging)。
 
 > [!NOTE]
-> 場合によっては `messageChild` [、DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットの一部である API がサポートされていない場合があります。 親からダイアログ ボックスへのメッセージングの別の方法については、ホスト ページからダイアログ ボックスにメッセージを渡す別の方法 [で説明されています](parent-to-dialog.md)。
+> 場合によっては `messageChild` [、DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットの一部である API がサポートされない場合があります。 親からダイアログ ボックスへのメッセージングの代替方法については、「ホスト ページからダイアログ ボックスにメッセージを渡す別の方法 [」を参照してください](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> DialogApi [1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) 要件セットは、アドイン マニフェストの `<Requirements>` セクションでは指定できません。 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)メソッドを使用して、実行時に DialogApi 1.2 のサポートを確認する必要があります。 マニフェスト要件のサポートは開発中です。
+> DialogApi [1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md) は、アドイン マニフェストのセクション `<Requirements>` では指定できません。 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)メソッドを使用して、実行時に DialogApi 1.2 のサポートを確認する必要があります。 マニフェスト要件のサポートは開発中です。
 
 ## <a name="closing-the-dialog-box"></a>ダイアログ ボックスを閉じる
 
@@ -349,31 +349,31 @@ Office ダイアログ API に関するヒントとヘスと プラクティス�
 
 ## <a name="samples"></a>サンプル
 
-次のサンプルはすべて使用します `displayDialogAsync` 。 NodeJS ベースのサーバーを持つサーバーと ASP.NET/IIS-based サーバーを持つサーバーがありますが、このメソッドを使用するロジックは、アドインのサーバー側の実装方法に関係なく同じです。
+次のサンプルはすべてを使用します `displayDialogAsync` 。 ノードJS ベースのサーバーを持つサーバーや、ASP.NET/IIS ベースのサーバーを持つサーバーがありますが、アドインのサーバー側の実装方法に関係なく、メソッドを使用するロジックは同じです。
 
 **基本:**
 
 - [Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)
-- [トレーニング コンテンツ/ アドインの作成 (いくつかのサンプル)](https://github.com/OfficeDev/TrainingContent/tree/2db14a16774e1539a3eebae7dada4798142b8493/OfficeAddin)
+- [トレーニング コンテンツ / アドインの構築 (複数のサンプル)](https://github.com/OfficeDev/TrainingContent/tree/2db14a16774e1539a3eebae7dada4798142b8493/OfficeAddin)
 
 **より複雑なサンプル:**
 
-- [Office アドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Officeアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
-- [Outlook アドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
-- [Outlook アドイン トークン ビューアー](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlook アドインの操作可能なメッセージ](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
-- [OneDrive への Outlook アドインの共有](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
-- [PowerPoint アドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Excel 共有ランタイム シナリオ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
-- [Excel アドイン ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Officeアドイン ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Officeアドイン SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlookアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlookアドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlookアドイン トークン ビューアー](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
+- [Outlookアドインのアクション可能なメッセージ](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlookアドインの共有OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [PowerPointアドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Excel共有ランタイム シナリオ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
+- [Excelアドイン ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 - [Word アドイン JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
 - [Word アドイン JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
 - [Word アドイン AngularJS クライアント OAuth](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
 - [Office アドイン Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Office アドイン のOAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-- [Office UX 設計パターン コードの追加](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Officeアドイン の OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Officeアドイン UX デザイン パターン コード](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
