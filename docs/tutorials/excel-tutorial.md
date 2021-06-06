@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330018"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727942"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -832,7 +832,7 @@ ms.locfileid: "52330018"
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. `TODO2` は次のコードで置き換えます。`messageParent` メソッドは、パラメーターを親ページ (この場合は作業ウィンドウのページ) に渡します。パラメーターには、ブール値または文字列を指定できます。これには、XML や JSON など、文字列としてシリアル化できるものが含まれます。
+7. `TODO2` を次のコードに置き換えます。 `messageParent` メソッドは、パラメーターを親ページ (この例では、作業ウィンドウ内のページ) に渡します。 パラメーターは文字列である必要があります。これには、XML や JSON などの文字列としてシリアル化できるもの、または文字列にキャストできる任意の型が含まれます。
 
     ```js
     function sendStringToParentPage() {

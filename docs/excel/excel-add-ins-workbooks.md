@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
-description: Excel JavaScript API を使用して、ブックまたはアプリケーション レベルの機能で一般的なタスクを実行する方法について説明します。
-ms.date: 04/05/2021
+description: JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行するExcel説明します。
+ms.date: 06/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2fe11aaba45dae1f0cd1375e28226ecd959950fe
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650829"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779349"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -55,21 +55,22 @@ Excel.createWorkbook();
 ファイルスライスを使用すると、アドインの現在のブックを base64 エンコード文字列 [として取得できます](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
 
 ```js
+// Retrieve the external workbook file and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
-        // strip off the metadata before the base64-encoded string
+        // Remove the metadata before the base64-encoded string.
         var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
+        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
-        Excel.createWorkbook(workbookContents);
+        Excel.createWorkbook(externalWorkbook);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -85,37 +86,39 @@ reader.readAsDataURL(myFile.files[0]);
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-次の使用例は、別のブックを現在のブックに挿入します。 新しいワークシートは、アクティブなワークシートの後に挿入されます。 `[]` [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)プロパティのパラメーターとして渡されます `sheetNamesToInsert` 。 つまり、既存のブックのすべてのワークシートが現在のブックに挿入されます。
-
 > [!IMPORTANT]
-> この `insertWorksheetsFromBase64` メソッドは、Windows、Mac、および Web 上の Excel でサポートされています。 iOS ではサポートされていません。 さらに、Web 上の Excel では、ピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされません。 これらのオブジェクトが存在する場合、メソッドは Web 上の `insertWorksheetsFromBase64` `UnsupportedFeature` Excel でエラーを返します。 
+> この `insertWorksheetsFromBase64` メソッドは、Excel Mac、Windows Web 上でサポートされています。 iOS ではサポートされていません。 さらに、このExcel on the webピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされていません。 これらのオブジェクトが存在する場合、 `insertWorksheetsFromBase64` メソッドはエラーを返 `UnsupportedFeature` Excel on the web。 
+
+次のコード サンプルは、別のブックから現在のブックにワークシートを挿入する方法を示しています。 このコード サンプルでは、まずオブジェクトを使用してブック ファイルを処理し、base64 エンコードされた文字列を抽出し、次にこの base64 エンコードされた文字列を現在のブック [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) に挿入します。 新しいワークシートは、Sheet1 という名前のワークシートの後 **に挿入されます**。 `[]` [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert)プロパティのパラメーターとして渡されます。 つまり、ターゲット ブックのすべてのワークシートが現在のブックに挿入されます。
 
 ```js
+// Retrieve the external workbook file and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        const startIndex = reader.result.toString().indexOf("base64,");
-        const workbookContents = reader.result.toString().substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
-        // Retrieve the workbook.
-        const workbook = context.workbook;
+        // Retrieve the current workbook.
+        var workbook = context.workbook;
             
         // Set up the insert options. 
         var options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
-            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+        }; 
             
-         // Insert the workbook. 
-         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         // Insert the new worksheets into the current workbook.
+         workbook.insertWorksheetsFromBase64(externalWorkbook, options);
          return context.sync();
     });
 };
 
-// Read in the file as a data URL so we can parse the base64-encoded string.
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -235,7 +238,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo` システム カルチャ設定を [CultureInfo オブジェクトとして定義](/javascript/api/excel/excel.cultureinfo) します。 これには、数値の小数点記号や日付形式のような設定が含まれる。
 
-一部のカルチャ設定は [、Excel UI を使用して変更できます](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
+一部のカルチャ設定は[、UI を使用Excelできます](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
 
 次のサンプルでは、数値文字列の小数点記号を ',' からシステム設定で使用される文字に変更します。
 

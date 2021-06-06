@@ -54,6 +54,9 @@ items:
           - name: Office の最新バージョンをインストールする
             href: develop/install-latest-office-version.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Internet Explorer 11 をサポート
+            href: develop/support-ie-11.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
       - name: 開発
         items:
           - name: 概要

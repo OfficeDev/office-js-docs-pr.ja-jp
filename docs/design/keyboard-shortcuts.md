@@ -1,14 +1,14 @@
 ---
 title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
-ms.date: 05/05/2021
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 42c0b5190d0fc71f137284950bcb983f16845fca
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266116"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779342"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -170,7 +170,8 @@ ms.locfileid: "52266116"
 - プロパティ名 `action` 、 `key` および `default` 必須です。
 - プロパティの値は `action` 文字列であり、action オブジェクトのプロパティの 1 `id` つと一致する必要があります。
 - プロパティ `default` には、文字 A ~ Z、-z、0 ~ 9、句読点 "-"、"_"、"+" の任意の組み合わせを指定できます。 (慣例では、これらのプロパティでは小文字は使用されません)。
-- プロパティ `default` には、少なくとも 1 つの修飾子キー (Alt、Ctrl、Shift) の名前と、他の 1 つのキーのみを含む必要があります。
+- プロパティ `default` には、少なくとも 1 つの修飾子キー (Alt、Ctrl、Shift) の名前と、他の 1 つのキーのみを含む必要があります。 
+- Shift を唯一の修飾子キーとして使用することはできません。 Shift キーと Alt キーまたは Ctrl キーを組み合わせます。
 - Mac では、Command 修飾子キーもサポートしています。
 - Mac の場合、Alt は Option キーにマップされます。 このWindows、Command は Ctrl キーにマップされます。
 - 標準キーボードで 2 つの文字が同じ物理キーにリンクされている場合は、プロパティ内の類義語になります。たとえば、Alt+a と Alt+A は同じショートカットなので `default` 、"-" と "_" は同じ物理キーなので、Ctrl + + と Ctrl+ も同じです。 \_

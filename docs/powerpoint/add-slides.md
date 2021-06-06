@@ -1,25 +1,27 @@
 ---
-title: PowerPoint でスライドを追加および削除する
+title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
-ms.date: 03/07/2021
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 5c1b9750acb905fd8e92484bb960c70ba39a7ca9
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613946"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779335"
 ---
-# <a name="add-and-delete-slides-in-powerpoint-preview"></a>PowerPoint でスライドを追加および削除する (プレビュー)
+# <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 
-PowerPoint アドインは、プレゼンテーションにスライドを追加し、必要に応じて、どのスライド マスター、およびマスター マスターのレイアウトを新しいスライドに使用して指定できます。 アドインはスライドも削除できます。
+新PowerPointアドインは、プレゼンテーションにスライドを追加し、必要に応じて、どのスライド マスター、およびマスター マスターのレイアウトを新しいスライドに使用するを指定できます。 アドインはスライドも削除できます。
 
 > [!IMPORTANT]
-> スライドを追加する API はプレビュー中です。 開発環境またはテスト環境で実験してくださいが、実稼働アドインには追加しません。 スライドを *削除するための* API がリリースされました。
+> スライドを追加する API は [プレビュー中であり](../reference/requirement-sets/powerpoint-preview-apis.md) 、実稼働アドインでは使用できません。スライドを *削除するための* API がリリースされました。
 
 スライドを追加する API は、主に、プレゼンテーション内のスライド マスターとレイアウトの ID がコーディング時に知られているか、実行時にデータ ソースで見つかるシナリオで使用されます。 このようなシナリオでは、選択基準 (スライド マスターやレイアウトの名前やイメージなど) とスライド マスターおよびレイアウトの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが既定のスライド マスターとマスター の既定のレイアウトを使用するスライドを挿入できるシナリオや、ユーザーが既存のスライドを選択して、同じスライド マスターとレイアウト (ただし、同じコンテンツではない) を持つ新しいスライドを作成できるシナリオでも使用できます。 詳細 [については、「使用するスライド マスターとレイアウトの選択](#selecting-which-slide-master-and-layout-to-use) 」を参照してください。
 
-## <a name="add-a-slide-with-slidecollectionadd"></a>SlideCollection.add を使用してスライドを追加する
+## <a name="add-a-slide-with-slidecollectionadd-preview"></a>SlideCollection.add を使用してスライドを追加する (プレビュー)
+
+[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
 [SlideCollection.add メソッドを使用してスライドを追加](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)します。 次に、プレゼンテーションの既定のスライド マスターを使用するスライドと、そのマスター の最初のレイアウトを追加する簡単な例を示します。 メソッドは、プレゼンテーションの最後に常に新しいスライドを追加します。 例を次に示します。
 
@@ -91,7 +93,7 @@ async function addSlide() {
     }
     ```
 
-2. スライドを追加するメイン関数 [の PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) 内で新しい関数を呼び出します。 例を次に示します。
+2. スライドを追加するメイン関数[の PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_)内で新しい関数を呼び出します。 例を次に示します。
 
     ```javascript
     async function addSlideWithMatchingLayout() {
