@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
-description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコード サンプル。
-ms.date: 03/24/2020
+description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
+ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652203"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783513"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -318,6 +318,53 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
+## <a name="detect-formula-changes-preview"></a>数式の変更を検出する (プレビュー)
+
+> [!NOTE]
+> 現在 `Worksheet.onFormulaChanged` 、イベントはパブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+アドインは、ワークシート内の数式の変更を追跡できます。 これは、ワークシートが外部データベースに接続されている場合に便利です。 ワークシート内の数式が変更されると、このシナリオのイベントによって外部データベースの対応する更新プログラムがトリガーされます。
+
+数式の変更を検出するには、 [ワークシート](excel-add-ins-events.md#register-an-event-handler) の [onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) イベントのイベント ハンドラーを登録します。 イベントのイベント ハンドラーは、イベントが発生すると `onFormulaChanged` [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) オブジェクトを受け取る。
+
+> [!IMPORTANT]
+> このイベントは、数式自体が変更された場合を検出します。数式の計算に起因する `onFormulaChanged` データ値は検出しません。
+
+次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用して変更された数式の `onFormulaChanged` `WorksheetFormulaChangedEventArgs` [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails) 配列を取得し [、FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) プロパティを使用して変更された数式の詳細を出力する方法を示しています。
+
+> [!NOTE]
+> このコード サンプルは、1 つの数式が変更された場合にのみ機能します。
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the formula changed event handler for this worksheet.
+    sheet.onFormulaChanged.add(formulaChangeHandler);
+
+    return context.sync();
+});
+
+function formulaChangeHandler(event) {
+    Excel.run(function (context) {
+        // Retrieve details about the formula change event.
+        // Note: This method assumes only a single formula is changed at a time. 
+        var cellAddress = event.formulaDetails[0].cellAddress;
+        var previousFormula = event.formulaDetails[0].previousFormula;
+        var source = event.source;
+    
+        // Print out the change event details.
+        console.log(
+          `The formula in cell ${cellAddress} changed. 
+          The previous formula was: ${previousFormula}. 
+          The source of the change was: ${source}.`
+        );         
+    });
+}
+```
+
 ## <a name="handle-sorting-events"></a>並べ替えイベントを処理する
 
 `onColumnSorted` および `onRowSorted` イベントは、ワークシート データがいつ並べ替えられるかを示します。 これらのイベントは、個々の `Worksheet` オブジェクトおよびブックの `WorkbookCollection` に接続されています。 これらは、並べ替えがプログラムで実行されるか、Excel ユーザー インターフェイスを介して手動で実行されるかに関係なく起動します。
@@ -386,7 +433,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
-> - オブジェクトを使用してワークシート内の範囲を取得する方法を示す例については、「Excel JavaScript API を使用して範囲を取得する」 `Range` [を参照してください](excel-add-ins-ranges-get.md)。
+> - オブジェクトを使用してワークシート内の範囲を取得する方法を示す例については、「JavaScript API を使用して範囲を取得するExcel `Range` [参照してください](excel-add-ins-ranges-get.md)。
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 

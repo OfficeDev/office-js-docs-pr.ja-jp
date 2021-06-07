@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
-description: Excel JavaScript オブジェクトのイベントの一覧。 これには、イベント ハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
-ms.date: 04/23/2021
+description: JavaScript オブジェクトのイベントExcel一覧です。 これには、イベント ハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: 50d9c4c2a15a955f0a96c70464fa0165625ea6f8
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024312"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783506"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
@@ -44,6 +44,7 @@ Excel ブックで特定の種類の変更が発生するたびに、イベン�
 | イベント | 説明 | サポートされているオブジェクト |
 |:---------------|:-------------|:-----------|
 | `onFiltered` | フィルターがオブジェクトに適用されたときに発生します。 | [**Table**](/javascript/api/excel/excel.table#onfiltered)、[**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onfiltered)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFormulaChanged` | 数式が変更された場合に発生します。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormulaChanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
 
 ### <a name="event-triggers"></a>イベント トリガー
 
