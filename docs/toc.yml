@@ -701,8 +701,8 @@ items:
               - name: 動的配列とスピルを処理する
                 href: excel/excel-add-ins-ranges-dynamic-arrays.md
                 displayName: Excel
-              - name: 数式の先例を取得する
-                href: excel/excel-add-ins-ranges-precedents.md
+              - name: 数式の参照元と参照先
+                href: excel/excel-add-ins-ranges-precedents-dependents.md
                 displayName: Excel
               - name: セルの編集中に実行を遅らせる
                 href: excel/excel-add-ins-delay-in-cell-edit.md
