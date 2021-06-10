@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 05/26/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697198"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853956"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -24,28 +24,26 @@ ms.locfileid: "52697198"
 
 現時点では、次のイベントは Web および web サイトWindows。
 
-|イベント|説明|
-|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|
-|`OnMessageAttachmentsChanged`\*|メッセージの作成中に添付ファイルを追加または削除する場合。|
-|`OnAppointmentAttachmentsChanged`\*|予定の作成中に添付ファイルを追加または削除する場合。|
-|`OnMessageRecipientsChanged`\*|メッセージの作成中に受信者を追加または削除する場合。|
-|`OnAppointmentAttendeesChanged`\*|予定の作成中に出席者を追加または削除する場合。|
-|`OnAppointmentTimeChanged`\*|予定の作成中に日付/時刻を変更する場合。|
-|`OnAppointmentRecurrenceChanged`\*|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|
-|`OnInfoBarDismissClicked`\*|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|
+|イベント|説明|最小値<br>要件セット|
+|---|---|---|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|1.10|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|1.10|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|プレビュー|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|プレビュー|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|プレビュー|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|プレビュー|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|プレビュー|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|プレビュー|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|プレビュー|
 
 > [!IMPORTANT]
-> \*このイベントは、Web 上[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)のOutlookサブスクリプションのWindowsプレビューでのみMicrosoft 365されます。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。
->
-> プレビュー機能は予告なしに変更される可能性があるため、実稼働アドインでは使用できません。
+> プレビュー中のイベントは、web 上およびMicrosoft 365のOutlookサブスクリプションでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
 
-## <a name="how-to-preview"></a>プレビューする方法
+### <a name="how-to-preview"></a>プレビューする方法
 
-新しいイベントを試してみてください。 このページの最後にある「フィードバック」セクションをGitHubフィードバックを提供することで、お客様のシナリオと改善方法をお知らせします。
+プレビューで今すぐイベントを試してみてください。 このページの最後にある「フィードバック」セクションをGitHubフィードバックを提供することで、お客様のシナリオと改善方法をお知らせします。
 
-この機能をプレビューするには、次の方法を使用します。
+これらのイベントをプレビューするには、次の手順を実行します。
 
 - Web Outlookの詳細については、次の情報を参照してください。
   - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。

@@ -1,25 +1,25 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
-description: Excel JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示すコード サンプル。
-ms.date: 01/11/2021
+description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
+ms.date: 06/07/2021
 localization_priority: Normal
-ms.openlocfilehash: bd060f4a1382e68a7135227f5662a9e4fe1cb7aa
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: a44a99e0ddc612342b292fd6e9d203799cde7b53
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839902"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52854002"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Table` `TableCollection` [、Table オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.table) および [TableCollection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection)を参照してください。
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 and オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Table` `TableCollection` [、「Table Object (JavaScript API for Excel)」](/javascript/api/excel/excel.table)および[「TableCollection オブジェクト (JavaScript API for](/javascript/api/excel/excel.tablecollection)Excel)」を参照してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 > [!NOTE]
-> テーブルの名前を指定するには、次の例に示すように、最初にテーブルを作成し、そのテーブルのプロパティ `name` を設定する必要があります。
+> テーブルの名前を指定するには、次の例に示すように、最初にテーブルを作成し、そのプロパティ `name` を設定する必要があります。
 
 ```js
 Excel.run(function (context) {
@@ -56,13 +56,13 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 > [!NOTE]
-> `index`TableRow オブジェクト[のプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの行コレクション内の行のインデックス番号を示します。 オブジェクトには、行を識別するための一意のキーとして使用できる `TableRow` `id` プロパティが含まれている必要があります。
+> `index`TableRow オブジェクト[のプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト `TableRow` には、行を識別するための一意のキーとして使用できる `id` プロパティが含まれている必要があります。
 
 > [!WARNING]
-> コンテンツ アドインからテーブルに行を追加すると、メモリ リークが発生します。 現在 [の状態と追加情報#1415 GitHub](https://github.com/OfficeDev/office-js/issues/1415) の問題に関するページをご覧ください。 
+> コンテンツ アドインからテーブルに行を追加すると、メモリ リークが発生します。 現在[のGitHubおよび#1415](https://github.com/OfficeDev/office-js/issues/1415)については、「Issue issue #1415」を参照してください。 
 
 ```js
 Excel.run(function (context) {
@@ -101,7 +101,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -165,9 +165,36 @@ Excel.run(function (context) {
 
 ![Excel の新しい集計列を含む表](../images/excel-tables-add-calculated-column.png)
 
+## <a name="resize-a-table-online-only"></a>テーブルのサイズを変更する (オンラインのみ)
+
+> [!NOTE]
+> この `Table.resize` メソッドは現在、ExcelApiOnline 1.1 でのみ使用できます。 詳細については[、「JavaScript API Excelの要件セット」を参照してください](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+
+アドインは、テーブルにデータを追加したり、セル値を変更したりすることなく、テーブルのサイズを変更できます。 テーブルのサイズを変更するには [、Table.resize メソッドを使用](/javascript/api/excel/excel.table#resize_newRange_) します。 次のコード サンプルは、テーブルのサイズを変更する方法を示しています。 このコード サンプルでは、この記事の「[](#create-a-table)テーブルの作成」セクションの **ExpensesTable** を使用し、テーブルの新しい範囲を **A1:D20 に設定します**。
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet and a table on that worksheet.
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    // Resize the table.
+    expensesTable.resize("A1:D20");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+> [!IMPORTANT]
+> テーブルの新しい範囲は元の範囲と重なり、ヘッダー (またはテーブルの上部) は同じ行に含む必要があります。
+
+**サイズ変更後のテーブル** 
+
+![複数の空の行が含Excel](../images/excel-tables-resize.png)
+
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -286,7 +313,7 @@ Excel.run(function (context) {
 
 **金額 (降順) で並べ替えた表データ**
 
-![Excel でのテーブル データの並べ替え](../images/excel-tables-sort.png)
+![テーブル内の並べ替えExcel](../images/excel-tables-sort.png)
 
 ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する](excel-add-ins-worksheets.md#handle-sorting-events)」を参照してください。
 
@@ -454,7 +481,7 @@ Excel.run(function (context) {
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションが要件 [](../reference/requirement-sets/excel-api-requirement-sets.md)セット **ExcelApi 1.2** をサポートしている場合、列の幅と行の高さはテーブル内の現在のデータに最適に設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションが要件セット [](../reference/requirement-sets/excel-api-requirement-sets.md)**ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
 Excel.run(function (context) {
@@ -497,7 +524,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel でインポートされた JSON データからの新しいテーブル](../images/excel-tables-create-from-json.png)
+![インポートされた JSON データから新しいテーブルが作成Excel](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>関連項目
 

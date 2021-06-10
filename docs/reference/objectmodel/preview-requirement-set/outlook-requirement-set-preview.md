@@ -1,14 +1,14 @@
 ---
 title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
-ms.date: 05/17/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 98bf56c169967ad7c994d1793afa8678d31f6892
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591059"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52854012"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -73,6 +73,18 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 予定で使用できる `AppointmentSensitivityType` 感度オプションを表す新しい列挙型を追加しました。
 
 **で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>イベントベースのライセンス認証
+
+この機能は、要件セット [1.10 でリリースされました](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 ただし、追加のイベントはプレビューで利用できます。 詳細については、「サポートされているイベント [」を参照してください](../../../outlook/autolaunch.md#supported-events)。
+
+**で利用** できる: Outlook (Windows サブスクリプションに接続されている) Microsoft 365、Outlook (モダン)
 
 <br>
 

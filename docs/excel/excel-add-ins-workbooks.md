@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行するExcel説明します。
-ms.date: 06/01/2021
+ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779349"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853984"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -341,6 +341,46 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="detect-workbook-activation-preview"></a>ブックのアクティブ化を検出する (プレビュー)
+
+> [!NOTE]
+> 現在 `Workbook.onActivated` 、イベントはパブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+アドインは、ブックがアクティブ化された場合に検出できます。 ユーザーが別 *のブック、* 別のアプリケーション、または (Excel on the web) Web ブラウザーの別のタブにフォーカスを切り替え、ブックが非アクティブになります。 ブックは、 *ユーザーが* ブックにフォーカスを返すときにアクティブ化されます。 ブックのアクティブ化によって、ブック データの更新など、アドイン内のコールバック関数をトリガーできます。
+
+ブックがアクティブ化された場合を検出[](excel-add-ins-events.md#register-an-event-handler)するには、ブックの[onActivated イベントのイベント ハンドラー](/javascript/api/excel/excel.workbook#onActivated)を登録します。 イベントのイベント ハンドラーは `onActivated` 、イベントが発生すると [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) オブジェクトを受け取る。
+
+> [!IMPORTANT]
+> ブック `onActivated` を開いた場合、イベントは検出されません。 このイベントは、ユーザーがフォーカスを既に開いているブックに戻す場合にのみ検出されます。
+
+次のコード サンプルは、イベント ハンドラーを登録し、 `onActivated` コールバック関数を設定する方法を示しています。
+
+```js
+Excel.run(function (context) {
+    // Retrieve the workbook.
+    var workbook = context.workbook;
+
+    // Register the workbook activated event handler.
+    workbook.onActivated.add(workbookActivated);
+
+    return context.sync();
+});
+
+function workbookActivated(event) {
+    Excel.run(function (context) {
+        // Retrieve the workbook and load the name.
+        var workbook = context.workbook;
+        workbook.load("name");
+        
+        return context.sync().then(function () {
+            // Callback function for when the workbook is activated.
+            console.log(`The workbook ${workbook.name} was activated.`);
+        });
+    });
+}
 ```
 
 ## <a name="save-the-workbook"></a>ブックを保存する
