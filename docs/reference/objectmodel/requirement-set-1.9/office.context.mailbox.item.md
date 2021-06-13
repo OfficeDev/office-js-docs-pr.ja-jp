@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - 要件セット 1.9
 description: Outlookメールボックス API 要件セット 1.9 バージョンの Item オブジェクト モデル。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 062a23bcade7822fe08dfd40924f52ad761e653f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c93e446e0728ccacf825cff9ff2f9d6ee671c27a
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590513"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893604"
 ---
 # <a name="item-mailbox-requirement-set-19"></a>item (メールボックス要件セット 1.9)
 
@@ -64,7 +64,7 @@ ms.locfileid: "52590513"
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.9&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージ作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.9&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [既読メッセージ](/javascript/api/outlook/office.messageread?view=outlook-js-1.9&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| 場所 | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.9&preserve-view=true#location) | [Location](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| 場所 | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.9&preserve-view=true#location) | [場所](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.9&preserve-view=true#location) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [既読メッセージ](/javascript/api/outlook/office.messageread?view=outlook-js-1.9&preserve-view=true#location)<br>(会議出席依頼) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | normalizedSubject | ReadItem | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.9&preserve-view=true#normalizedsubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -172,7 +172,7 @@ ms.locfileid: "52590513"
 > [!IMPORTANT]
 > イベントは、作業ウィンドウの実装でのみ使用できます。
 
-| イベント | 説明 | 最小値<br>要件セット |
+| [Event](/javascript/api/office/office.eventtype) | 説明 | 最小値<br>要件セット |
 |---|---|:---:|
 |`AppointmentTimeChanged`| 選択した予定または系列の日付または時刻が変更されました。 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 |`AttachmentsChanged`| アイテムに添付ファイルが追加または削除されました。 | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
