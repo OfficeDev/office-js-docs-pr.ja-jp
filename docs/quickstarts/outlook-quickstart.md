@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 02/09/2021
+ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 2ba89f400feaf0664ad98f47d8c933431341466e
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234192"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893660"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -17,7 +17,7 @@ ms.locfileid: "50234192"
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
-[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。  使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。
+[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。 使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。
 
 # <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
@@ -57,10 +57,10 @@ ms.locfileid: "50234192"
 1. Web アプリケーション プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "My Office Add-in&quot;
     ```
 
-### <a name="explore-the-project"></a>プロジェクトを探究する
+### <a name=&quot;explore-the-project&quot;></a>プロジェクトを探究する
 
 Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。
 
@@ -69,16 +69,16 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 - **./src/taskpane/taskpane.css** ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
 - **./src/taskpane/taskpane.js** ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。
 
-### <a name="update-the-code"></a>コードを更新する
+### <a name=&quot;update-the-code&quot;></a>コードを更新する
 
 1. コードエディタで、**./src/taskpane/taskpane.html** ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js** のスクリプトがデータを書き込む場所にラベルを追加します。
 
     ```html
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
-        <p><label id="item-subject"></label></p>
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+    <main id=&quot;app-body&quot; class=&quot;ms-welcome__main&quot; style=&quot;display: none;&quot;>
+        <h2 class=&quot;ms-font-xl&quot;> Discover what Office Add-ins can do for you today! </h2>
+        <p><label id=&quot;item-subject&quot;></label></p>
+        <div role=&quot;button&quot; id=&quot;run&quot; class=&quot;ms-welcome__action ms-Button ms-Button--hero ms-font-xl&quot;>
+            <span class=&quot;ms-Button-label&quot;>Run</span>
         </div>
     </main>
     ```
@@ -90,13 +90,13 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     var item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
-    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    document.getElementById(&quot;item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
 ### <a name="try-it-out"></a>試してみる
 
 > [!NOTE]
-> 開発の最中でも、Office アドインは HTTP ではなく HTTPS を使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
 
 1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
 
@@ -155,7 +155,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 |**プロジェクト**|**説明**|
 |:-----|:-----|
-|アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。 これらの設定は、Office アプリケーションがアドインのアクティブ化の時期とアドインの表示場所を特定するのに役立ちます。 プロジェクトを実行してすぐにアドインを使用できるように、Visual Studio は、このファイルの内容を生成します。 XML ファイルを変更することで、これらの設定をいつでも変更できます。|
+|アドイン プロジェクト|アドインを記述するすべての設定を含む XML マニフェスト ファイルのみが含まれます。これらの設定は、Office アプリケーションがアドインをアクティブ化するタイミングと、アドインの表示場所を決定するのに役立ちます。すぐにプロジェクトを実行し、アドインを使用できるように、Visual Studio によってこのファイルのコンテンツが生成されます。これらの設定は、XML ファイルを変更することによっていつでも変更できます。|
 |Web アプリケーション プロジェクト|Office 対応の HTML および JavaScript ページを開発するために必要なすべてのファイルとファイル参照を含むアドインのコンテンツ ページが含まれます。アドインを開発している間、Visual Studio は Web アプリケーションをローカル IIS サーバー上でホストします。アドインを発行する準備が整ったら、この Web アプリケーション プロジェクトを Web サーバーに展開する必要があります。|
 
 ### <a name="update-the-code"></a>コードを更新する
@@ -270,7 +270,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 1. **[Exchange 電子メールアカウントに接続する]** ダイアログ ボックスで、[Microsoft アカウント](https://account.microsoft.com/account)の電子メール アドレスとパスワードを入力し、**[接続]** を選択します。 Outlook.com のログイン ページがブラウザに表示されたら、前回と同じ資格情報を使用して、メール アカウントにログインします。
 
     > [!NOTE]
-    > **[Exchange 電子メールアカウントに接続]** ダイアログ ボックスが、繰り返しログインを要求する場合、Microsoft 365 テナントのアカウントの基本認証が無効になっている可能性があります。 その場合は、[Microsoft アカウント](https://account.microsoft.com/account) でログインし、アドインをテストしてください。
+    > **[Exchange 電子メールアカウントに接続]** ダイアログ ボックスで繰り返しサインインが求められる場合、または承認されていないというエラーが表示される場合は、Microsoft 365 テナントのアカウントの基本認証が無効になっている可能性があります。 このアドインをテストするには、Web アドイン プロジェクトのプロパティ ダイアログで **[多要素認証を使用する]** プロパティを True に設定した後でもう一度サインインするか、代わりに [Microsoft アカウント](https://account.microsoft.com/account) を使用してサインインしてください。
 
 1. Outlook on the web で、メッセージを選択または開きます。
 
