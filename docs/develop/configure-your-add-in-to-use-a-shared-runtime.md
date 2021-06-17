@@ -1,15 +1,15 @@
 ---
-ms.date: 04/08/2021
+ms.date: 06/14/2021
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 localization_priority: Priority
-ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652194"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961259"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -31,6 +31,9 @@ ms.locfileid: "51652194"
 
 ジェネレーターはプロジェクトを作成し、サポートしているノード コンポーネントをインストールします。
 
+> [!NOTE]
+> この記事の手順を使用して、共有ランタイムを使用するように既存の Visual Studio プロジェクトを更新することもできます。 ただし、マニフェストの XML スキーマの更新が必要になる場合があります。 詳細については、「[Office アドインでの開発エラーのトラブルシューティング](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)」を参照してください。
+
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 新規または既存のプロジェクトで共有ランタイムが使用できるように構成するには、次の手順を実行します。 これらの手順は、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してプロジェクトを生成したことを前提としています。
@@ -40,11 +43,15 @@ ms.locfileid: "51652194"
 1. Excel アドインを生成した場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](../reference/requirement-sets/shared-runtime-requirement-sets.md)を使用します。 XML は、次のようになります。
 
     ```xml
+    <Hosts>
+      <Host Name="Workbook"/>
+    </Hosts>
     <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
     </Requirements>
+    <DefaultSettings>
     ```
 
 1. `<VersionOverrides>` セクションを見つけて、`<Host ...>` タグのすぐ内側に次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の ` <bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
@@ -53,7 +60,6 @@ ms.locfileid: "51652194"
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       ...
        <Runtimes>
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>

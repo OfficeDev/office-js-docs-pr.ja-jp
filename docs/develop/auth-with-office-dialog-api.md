@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 4fa0c6aaf93792da03ac5957ed3ed904728d7529
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: fbec924eb6f8d1941be6882dc5e1a563bd011105
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727921"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961252"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -93,9 +93,9 @@ Office ダイアログ ボックスと作業ウィンドウが異なるブラウ
 
 ## <a name="samples"></a>サンプル
 
-- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): ログインおよび Microsoft Graph データのアクセス トークンの取得を MSAL.NET ライブラリと承認コード フローを使用して行う、ASP.NET ベースのアドイン (Excel、Word、PowerPoint)。
+- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): MSAL.NET ライブラリと認証コード フローを使用してサインインし、Microsoft Graph データのアクセス トークンを取得する、ASP.NET ベースのアドイン (Excel、Word、または PowerPoint) です。
 - [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): 上記のアドインと同様ですが、Office アプリケーションは Outlook です。
-- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): ログインおよび Microsoft Graph データのアクセス トークンの取得を msal.js ライブラリと暗黙的フローを使用して行う、NodeJS ベースのアドイン (Excel、Word、PowerPoint)。
+- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): サインインおよび Microsoft Graph データのアクセス トークンの取得に msal.js ライブラリと暗黙的フローを使用する、NodeJS ベースのアドイン (Excel、Word、PowerPoint) です。
 
 
 詳細については、以下を参照してください。

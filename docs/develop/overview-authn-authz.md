@@ -3,12 +3,12 @@ title: Office アドインにおける認証と承認の概要
 description: Web アプリケーションおよび Office アドインでログインによる認証をユーザーに要求します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: fb4771daacd2e666d57c238b950803a70a3b0fc0
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: e9450408a1cdead8593cc901796c7156a4b415cd
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237694"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961224"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -19,9 +19,9 @@ ms.locfileid: "50237694"
 2 つのうちいずれかの方法を選択して、認証および承認を実行できます。
 
 - **Office シングル サインオン (SSO)**: ユーザーが Office にログインすると、それがアドインへのログインとしても機能することを可能にするシステムです。 アドインでは、必要に応じて、Microsoft Graph へのアドインの承認を行うために、ユーザーの Office の資格情報を使用できます。 (Microsoft 以外のソースは、このシステムからはアクセスできません。)
-- **Azure Active Directory での Web アプリケーションの認証と承認**: これは、新しい機能または特別な機能ではありません。 これは、Office SSO システムの導入以前に Office アドイン (およびその他の Web アプリ) でユーザーの認証とアプリの承認を行うために使用されていた方法で、Office SSO を使用できないシナリオでは現在でも使用されています。 また、SSO が利用可能でも、ユーザーに別の方法でアドインにログインしてもらうというシナリオもあります。たとえば、ユーザーが現在 Office にログインしているものとは別の ID を使用してアドインにログインするというオプションを用意する場合などです。
+- **Azure Active Directory での Web アプリケーションの認証と承認**: これは、新しい機能または特別な機能ではありません。 これは、Office SSO システムの導入以前に Office アドイン (およびその他の Web アプリ) でユーザーの認証とアプリの承認を行うために使用されていた方法で、Office SSO を使用できないシナリオでは現在でも使用されています。 また、SSO が使用可能な場合でも、ユーザーをアドインに個別にサインインさせるシナリオもあります。たとえば、現在 Office にサインインしている ID とは異なる ID でアドインにサインインするオプションをユーザーに与える場合などです。
 
-次のフローチャートは、アドイン開発者が判断する必要がある項目を示しています。 詳細については、この記事で後述します。
+次のフローチャートは、アドイン開発者として取るべき判断を示しています。詳細については、この記事の後半で説明します。
 
 ![Office アドインで認証および承認を可能にするための判断フローチャートを示す画像](../images/authflowchart.png)
 
