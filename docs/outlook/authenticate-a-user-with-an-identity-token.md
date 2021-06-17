@@ -3,16 +3,16 @@ title: アドインで ID トークンを使用してユーザーを認証する
 description: サービスで SSO を実装するために、Outlook アドインが提供する ID トークンの使用方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7936ec72bca0962eda999e8b0dc3a2b1c60ad7ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606533"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961273"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Exchange の ID トークンを使用してユーザーを認証する
 
-Exchange のユーザー ID トークンは、アドインがアドイン ユーザーを一意に識別する方法を提供します。 ユーザーの ID を確立することで、Outlook アドインを使用しているユーザーがログインしなくてもサービスに接続できるようにする、バックエンド サービスのシングル サインオン (SSO) 認証方式を実装できます。 このトークンの種類を使用する場合の詳細については、「[Exchange のユーザー ID トークン](authentication.md#exchange-user-identity-token)」を参照してください。 この記事では、Exchange の ID トークンを使用してバックエンドにユーザーを認証する簡単な方法について説明します。
+Exchange のユーザー ID トークンは、アドインがアドイン ユーザーを一意に識別する方法を提供します。 ユーザーの ID を確立することで、Outlook アドインを使用している顧客がサインインせずにサービスに接続できる、シングル サインオン (SSO) 認証スキームをバック エンド サービスに実装できます。 このトークンの種類を使用する場合の詳細については、「[Exchange のユーザー ID トークン](authentication.md#exchange-user-identity-token)」を参照してください。 この記事では、Exchange の ID トークンを使用してバックエンドにユーザーを認証する簡単な方法について説明します。
 
 > [!IMPORTANT]
 > これは、単なる SSO の簡単な実装例です。 従来どおり、ID と認証を処理するときは、コードが組織のセキュリティ要件を満たしていることを確認する必要があります。
