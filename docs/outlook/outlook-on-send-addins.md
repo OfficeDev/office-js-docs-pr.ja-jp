@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 04/20/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 126323527d74553aa7fd7e0c8cf1e5e5d89471ff
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959181"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007805"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -31,7 +31,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 |Mac:<br>ビルド 16.30 ~ 16.46|はい|いいえ|いいえ|
 |Mac:<br>ビルド 16.47 以降|はい|はい|はい|
 |Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|
-|Web ブラウザー:<br>従来の Outlook UI|該当なし|はい|はい|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
 
 > [!NOTE]
 > オン送信機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在のサーバーと [クライアントのサポートを](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
@@ -47,10 +47,10 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 - メッセージに件名が含まれていることの確認
 - あらかじめ定義された受信者の設定
 
-送信イベントがトリガーされると、Outlook のクライアント側で検証が行われ、アドインがタイム アウトする前に最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションを実行するように求めるエラー メッセージが情報バーに表示されます。
+検証は、送信イベントがOutlookのクライアント側で行われ、アドインがタイム アウトする前に最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションを実行するように求めるエラー メッセージが情報バーに表示されます。
 
 > [!NOTE]
-> Outlook on the web では、Outlook ブラウザー タブ内で構成されているメッセージで送信時の機能がトリガーされると、検証などの処理を完了するために、アイテムが独自のブラウザー ウィンドウまたはタブにポップアウトされます。
+> Outlook on the web では、Outlook ブラウザー タブ内で構成されているメッセージで送信時の機能がトリガーされると、検証や他の処理を完了するために、アイテムが独自のブラウザー ウィンドウまたはタブにポップアウトされます。
 
 次のスクリーンショットは、送信者に件名を追加するように通知する情報バーを示しています。
 
@@ -82,16 +82,9 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 ### <a name="mailbox-typemode-limitations"></a>メールボックスの種類とモードの制限事項
 
-送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 この機能は、次のメールボックスの種類およびモードでは現在サポートされていません。
+送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 Outlook アドインの概要ページの [アドインで使用できるメールボックス アイテム][](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)セクションで、アドインがアクティブ化されない状況に加えて、機能は現在オフライン モードではサポートされていません。
 
-- 共有メールボックス\*
-- グループ メールボックス
-- オフライン モード
-
-送信時機能がこれらのメールボックスのシナリオに対して有効になっている場合、Outlook は送信を許可しません。 ただし、ユーザーがグループ メールボックス内のメールに返信すると、送信時アドインは実行されず、メッセージが送信されます。
-
-> [!IMPORTANT]
-> \* アドインが代理人アクセス シナリオのサポートも実装している場合は、共有メールボックスまたはフォルダーで送信時 [の機能が機能する必要があります](delegate-access.md)。
+Outlookがサポートされていないメールボックス シナリオでオン送信機能が有効になっている場合、送信は許可されません。 ただし、Outlookアドインがアクティブ化しない場合、送信時アドインは実行されません。メッセージが送信されます。
 
 ## <a name="multiple-on-send-add-ins"></a>複数の送信時アドイン
 
@@ -219,7 +212,7 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 #### <a name="enable-the-on-send-flag"></a>送信時フラグを有効にする
 
-管理者は、Exchange Online PowerShell コマンドレットを実行することで、送信時のコンプライアンスを強制できます。
+管理者は、PowerShell コマンドレットを実行して、Exchange Onlineコンプライアンスを適用できます。
 
 すべてのユーザーに対して、オン送信アドインの処理中に編集を禁止するには、次の操作を行います。
 
@@ -275,7 +268,7 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 #### <a name="turn-off-the-on-send-flag"></a>送信時フラグをオフにする
 
-ユーザーの送信時コンプライアンスの適用を無効にするには、次のコマンドレットを実行してフラグを有効にしていない Outlook on the Web メールボックス ポリシーを割り当てる必要があります。 この例では、メールボックス ポリシーは *ContosoCorpOWAPolicy* です。
+ユーザーの送信時コンプライアンスの適用を無効にするには、次のコマンドレットを実行してフラグを有効にしていない Outlook on the web メールボックス ポリシーを割り当てる必要があります。 この例では、メールボックス ポリシーは *ContosoCorpOWAPolicy* です。
 
 ```powershell
 Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
@@ -284,7 +277,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 > [!NOTE]
 > **Set-OwaMailboxPolicy** コマンドレットを使用して、既存の Outlook on the web メールボックス ポリシーを構成する方法の詳細については、「[Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)」を参照してください。
 
-特定の Outlook on the Web メールボックス ポリシーが割り当てられているすべてのユーザーに対する送信時のコンプライアンス適用を無効にするには、次のコマンドレットを実行します。
+特定のメールボックス ポリシーが割り当てられているすべてのユーザーに対するオンOutlook on the web適用を無効にするには、次のコマンドレットを実行します。
 
 ```powershell
 Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
@@ -365,16 +358,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web ブラウザー (モダン Outlook)、Windows、Mac
 
-強制的に送信するには、管理者は両方のメールボックスでポリシーが有効になっていることを確認する必要があります。 アドインで代理人アクセスをサポートする方法については、「[Outlook アドインでの代理人アクセスのシナリオを有効にする](delegate-access.md)」を参照してください。
-
-### <a name="group-1-is-a-modern-group-mailbox-and-user-mailbox-1-is-a-member-of-group-1"></a>グループ 1 がモダン グループ メールボックスであり、ユーザー メールボックス 1 がグループ 1 のメンバーである
-
-<br/>
-
-|シナリオ|メールボックス 1 の送信時ポリシー|送信時アドインが有効かどうか|メールボックス 1 のアクション|結果|サポートの有無|
-|:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|有効|はい|メールボックス 1 はグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインが実行されます。|はい|
-|2|有効|はい|メールボックス 1 は、Outlook on the web のグループ 1 のグループ ウィンドウ内でグループ 1 への新しいメッセージまたは会議を作成します。|送信中に送信時アドインは実行されません。|現在サポートされていません。 回避策として、シナリオ 1 を使用します。|
+強制的に送信するには、管理者は両方のメールボックスでポリシーが有効になっていることを確認する必要があります。 アドインで代理人アクセスをサポートする方法については、「共有フォルダーと共有メールボックスのシナリオを有効にする [」を参照してください](delegate-access.md)。
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>ユーザー メールボックスで送信時アドイン機能/ポリシーが有効になっており、送信時機能をサポートするアドインがインストールされ、有効であり、オフライン モードが有効になっている
 
@@ -397,17 +381,17 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 
 ### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>ユーザーは、オン送信アドインが作業している間にアイテムを編集できます
 
-送信時アドインがアイテムを処理している間、ユーザーは不適切なテキストや添付ファイルを追加してアイテムを編集できます。 アドインが送信時に処理されている間にユーザーがアイテムを編集するのを防ぐ場合は、ダイアログを使用して回避策を実装できます。 この回避策は、Outlook on the web (クラシック)、Windows、および Mac で使用できます。
+送信時アドインがアイテムを処理している間、ユーザーは不適切なテキストや添付ファイルを追加してアイテムを編集できます。 アドインが送信時に処理されている間にユーザーがアイテムを編集するのを防ぐ場合は、ダイアログを使用して回避策を実装できます。 この回避策は、Outlook on the web (クラシック)、Windows Mac で使用できます。
 
 > [!IMPORTANT]
-> 最新の Outlook on the web: アドインの送信時の処理中にユーザーがアイテムを編集できない場合は、この記事の「送信時に使用する Outlook アドインのインストール」の説明に従って *OnSendAddinsEnabled* フラグを設定する必要があります。 `true` [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
+> モダン Outlook on the web: アドインの送信時の処理中にユーザーがアイテムを編集できない場合は、この記事の「送信時に使用する Outlook アドインのインストール」の説明に従って *OnSendAddinsEnabled* フラグを設定する必要があります。 `true` [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
 
 送信時ハンドラーで、次の処理を行います。
 
 1. [displayDialogAsync を](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-)呼び出してダイアログを開き、マウスのクリックとキーストロークが無効になります。
 
     > [!IMPORTANT]
-    > 従来の Outlook on the web でこの動作を取得するには [、displayInIframe プロパティ](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) を呼び出しのパラメーター `true` `options` に設定する必要 `displayDialogAsync` があります。
+    > クラシック モードでこの動作を[Outlook on the web、displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe)プロパティを呼び出しの `true` `options` パラメーターに設定する必要 `displayDialogAsync` があります。
 
 1. アイテムの処理を実装します。
 1. ダイアログを閉じます。 また、ユーザーがダイアログを閉じるとどうなるかを処理します。
@@ -445,7 +429,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 ```
 
 > [!IMPORTANT]
-> Visual Studio 2019 を使用してオン送信アドインを開発している場合、次のような検証警告が表示される場合があります。"これは無効な xsi:type http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events ' 'です。これを回避するには、この警告に関するブログで GitHub の gist として提供されている MailAppVersionOverridesV1_1.xsd の新しいバージョン [が必要です](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)。
+> Visual Studio 2019 を使用して送信時アドインを開発している場合は、次のような検証警告が表示される場合があります。"これは無効な xsi:type http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events ' 'です。この問題を回避するには、この警告に関するブログの GitHub gist として提供されている MailAppVersionOverridesV1_1.xsd の新しいバージョン[が必要です](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)。
 
 `Contoso Subject and CC Checker.xml` マニフェスト ファイルの場合、次の例では、メッセージ送信イベントで呼び出す関数ファイルと関数名を示します。
 

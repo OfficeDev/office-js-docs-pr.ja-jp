@@ -6,11 +6,11 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
 
 - 共有ネットワーク フォルダーまたは Web サーバー上に次のファイルが必要です。
 
-    - ユーザー インターフェイスと JavaScript ファイル (office.js およびアプリケーション固有の .js ファイルを含む) およびカスケード スタイル シート (CSS) ファイルへのリンクを含む HTML ファイル (GetDoc_App.html)。
+  - ユーザー インターフェイスと JavaScript ファイル (office.js およびアプリケーション固有の .js ファイルを含む) およびカスケード スタイル シート (CSS) ファイルへのリンクを含む HTML ファイル (GetDoc_App.html)。
 
-    - JavaScript ファイル (GetDoc_App.js)。このファイルにはアドインのプログラミング ロジックが格納されます。
+  - JavaScript ファイル (GetDoc_App.js)。このファイルにはアドインのプログラミング ロジックが格納されます。
 
-    - CSS ファイル (Program.css)。アドインのスタイルと書式を入れるファイルです。
+  - CSS ファイル (Program.css)。アドインのスタイルと書式を入れるファイルです。
 
 - アドインの XML マニフェスト ファイル (GetDoc_App.xml)。共有ネットワーク フォルダーまたはアドイン カタログで使用できます。このマニフェスト ファイルでは、上述の HTML ファイルの場所を指していることが必要です。
 
@@ -18,7 +18,7 @@ Visual Studio または[yeoman](../quickstarts/powerpoint-quickstart.md?tabs=vis
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>作業ウィンドウ アドインを作成するために知っておくべき主要な概念
 
-この PowerPoint または Word 用アドインの作成を開始する前に、Office アドインの作成と HTTP 要求の操作についてよく理解しておくことが必要です。この記事では、Web サーバー上の HTTP 要求から Base64 エンコード テキストをデコードする方法については説明しません。 
+この PowerPoint または Word 用アドインの作成を開始する前に、Office アドインの作成と HTTP 要求の操作についてよく理解しておくことが必要です。この記事では、Web サーバー上の HTTP 要求から Base64 エンコード テキストをデコードする方法については説明しません。
 
 ## <a name="create-the-manifest-for-the-add-in"></a>アドインのマニフェストを作成する
 
@@ -89,7 +89,7 @@ PowerPoint 用アドインの XML マニフェスト ファイルは、アドイ
 2. このファイルを、UTF-8 エンコードを使用して GetDoc_App.html としてネットワークの場所または Web サーバーに保存します。
 
     > [!NOTE]
-    > 必ずアドインの **head** タグに **script** タグと office.js ファイルへの有効なリンクを入れてください。 
+    > 必ずアドインの **head** タグに **script** タグと office.js ファイルへの有効なリンクを入れてください。
 
     CSS を使用して、アドインに単純ながら最新の本格的な外観を与えます。次の CSS を使用して、アドインのスタイルを定義します。
 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 // Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
-    statusInfo.innerHTML += message + "<br/>";
+    statusInfo[0].innerHTML += message + "<br/>";
 }
 ```
 

@@ -1,20 +1,20 @@
 ---
 title: マニフェスト ファイルの DesktopFormFactor 要素
-description: デスクトップフォームファクター用のアドインの設定を指定します。
-ms.date: 10/31/2019
+description: デスクトップ フォーム ファクターのアドインの設定を指定します。
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 18828e6b61a45ae2dc1528b3f7a54e664af09519
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 66673d83fd8608a1ec10492d7a944b0515de61c0
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292315"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007790"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
-デスクトップフォームファクター用のアドインの設定を指定します。 デスクトップフォームファクターには、web、Windows、Mac に Office が含まれています。 このファイルには、[ **リソース** ] ノードを除くデスクトップフォームファクターのすべてのアドイン情報が含まれています。
+デスクトップ フォーム ファクターのアドインの設定を指定します。 デスクトップ フォーム ファクターには、Office on the web、Windows Mac が含まれます。 Resources ノードを除く、デスクトップ フォーム ファクターのすべてのアドイン情報が **含** まれる。
 
-各 DesktopFormFactor 定義には、 **Functionfile** 要素と1つ以上の **extensionpoint** 要素が含まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
+各 DesktopFormFactor 定義には **、FunctionFile** 要素と 1 つ以上の **ExtensionPoint 要素が含** まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
 
 ## <a name="child-elements"></a>子要素
 
@@ -22,8 +22,8 @@ ms.locfileid: "47292315"
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | はい      | アドインが機能を公開する場所を定義します。 |
 | [FunctionFile](functionfile.md)       | はい      | JavaScript 関数を含むファイルの URL。|
-| [GetStarted](getstarted.md)           | いいえ       | Word、Excel、または PowerPoint でアドインをインストールするときに表示される吹き出しを定義します。 |
-| [SupportsSharedFolders](supportssharedfolders.md) | いいえ | 代理人のシナリオで Outlook アドインが使用できるかどうかを定義します。 既定では *false* に設定されています。 |
+| [GetStarted](getstarted.md)           | いいえ       | Word、Excel、またはアドインにアドインをインストールするときに表示される吹き出しをPowerPoint。 |
+| [SupportsSharedFolders](supportssharedfolders.md) | いいえ | 共有メールボックス (プレビュー Outlook共有フォルダー (つまり、代理アクセス) のシナリオで、アドインを使用できるかどうかを定義します。 既定では *false に* 設定されます。 |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor の例
 

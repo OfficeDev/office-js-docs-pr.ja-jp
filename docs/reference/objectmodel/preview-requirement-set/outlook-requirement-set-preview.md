@@ -1,14 +1,14 @@
 ---
 title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
-ms.date: 06/08/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52854012"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007763"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -20,9 +20,9 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> Web 上の機能をプレビューするには、Outlookテナントでターゲット リリース[を構成Microsoft 365があります](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 該当する機能については、このページに「プレビュー アクセスを構成する」と表示されます。
+> ターゲット リリースを構成することで、Outlook on the webの機能をプレビューできる場合[Microsoft 365があります](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 該当する機能については、このページに「プレビュー アクセスを構成する」と表示されます。
 >
-> その他の機能については、このフォームを入力して送信することで、Microsoft 365 アカウントを使用して web 上の Outlook のプレビュー ビットへのアクセスを[要求できる場合があります](https://aka.ms/OWAPreview)。 "要求プレビュー アクセス" は、これらの機能に関して示されています。
+> その他の機能については、このフォームを入力して送信することで、Outlook on the web アカウントを使用Microsoft 365プレビュー ビットへのアクセスを[要求できる場合があります](https://aka.ms/OWAPreview)。 "要求プレビュー アクセス" は、これらの機能に関して示されています。
 
 プレビュー要件セットには、要件セット [1.10 のすべての機能が含まれています](../requirement-set-1.10/outlook-requirement-set-1.10.md)。
 
@@ -84,7 +84,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 この機能は、要件セット [1.10 でリリースされました](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 ただし、追加のイベントはプレビューで利用できます。 詳細については、「サポートされているイベント [」を参照してください](../../../outlook/autolaunch.md#supported-events)。
 
-**で利用** できる: Outlook (Windows サブスクリプションに接続されている) Microsoft 365、Outlook (モダン)
+**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 
 <br>
 
@@ -98,7 +98,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**で利用** できる: Outlook (Windows サブスクリプションに接続されている) Microsoft 365、Outlook (モダン)
+**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 
 <br>
 
@@ -132,13 +132,25 @@ Office テーマを取得する機能が追加されました。
 
 アイテムのセッション データを表す新しいオブジェクトを追加しました。
 
-**で利用** できる: Outlook (Windows サブスクリプションに接続されている) Microsoft 365、Outlook (モダン)
+**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 新規作成モードでアイテムのセッション データを管理するための新しいプロパティを追加しました。
 
-**で利用** できる: Outlook (Windows サブスクリプションに接続されている) Microsoft 365、Outlook (モダン)
+**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
+
+<br>
+
+---
+
+---
+
+### <a name="shared-mailboxes"></a>共有メールボックス
+
+要件セット [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md)で、共有フォルダー (代理人アクセス) の機能サポートがリリースされました。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「共有フォルダーと共有 [メールボックスのシナリオを有効にする」を参照してください](../../../outlook/delegate-access.md)。
+
+**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 
 ## <a name="see-also"></a>関連項目
 
