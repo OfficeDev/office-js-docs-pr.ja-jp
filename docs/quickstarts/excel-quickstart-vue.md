@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
 description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 11/09/2020
+ms.date: 06/16/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cd709910c9e69478c953c03b5e17d5512e875d91
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132348"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007819"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
 
@@ -34,7 +34,7 @@ Vue CLI を使用して新しい Vue アプリを生成します。 端末から
 vue create my-add-in
 ```
 
-次に、`default` プリセットを選択します。 Yarn または NPM のいずれかをパッケージとして使用するように求められたら、どちらかを選択できます。
+次に、「Vue 3」の `Default` プリセットを選択します (お好みで「Vue 2」を選択している場合があります)。
 
 ## <a name="generate-the-manifest-file"></a>マニフェスト ファイルを生成する
 
@@ -107,16 +107,12 @@ vue create my-add-in
 2. `src/main.js` を開き、内容を次のコードで置き換えます。
 
    ```js
-   import Vue from 'vue';
-   import App from './App.vue';
+   import { createApp } from 'vue'
+   import App from './App.vue'
 
-   Vue.config.productionTip = false;
-
-   window.Office.initialize = () => {
-     new Vue({
-       render: h => h(App)
-     }).$mount('#app');
-   };
+   window.Office.onReady(() => {
+       createApp(App).mount('#app');
+   });
    ```
 
 3. `src/App.vue` を開き、ファイル内容を次のコードで置き換えます。
@@ -218,7 +214,7 @@ vue create my-add-in
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます! これで Vue を使用して Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+これで完了です。Vue を使用して Excel タスク ウィンドウ アドインが正常に作成されました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)
