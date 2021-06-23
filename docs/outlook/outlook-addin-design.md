@@ -3,12 +3,12 @@ title: Outlook アドインの設計
 description: Windows、Web、iOS、Mac、Android 上の Outlook にアプリを最適な方法で取り込むための魅力的なアドインを設計、作成するのに役立つガイドラインです。
 ms.date: 06/24/2019
 localization_priority: Priority
-ms.openlocfilehash: ed2ffe1b46ba4673dea531450a0452afa8de11c5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606526"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077135"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook アドインの設計ガイドライン
 
@@ -40,7 +40,7 @@ ms.locfileid: "44606526"
 
 4. **賢明な方法でブランド化する**
 
-   ブランド化には大きな価値があり、ユーザーに固有のエクスペリエンスを提供することは重要だと感じています。 とはいえ、優れたアドインを設計するために最適なのは、さり気ない方法でブランド要素を取り入れて直感的なエクスぺリンスを作り上げる方法です。対照的に、執拗に押しつけがましい方法でブランド要素を表示すると、邪魔されずにシステム内を移動しようとするユーザーの気を散らすことになるだけです。 
+   ブランド化には大きな価値があり、ユーザーに固有のエクスペリエンスを提供することは重要だと感じています。とはいえ、優れたアドインを設計するために最適なのは、さり気ない方法でブランド要素を取り入れて直感的なエクスぺリンスを作り上げる方法です。対照的に、執拗に押しつけがましい方法でブランド要素を表示すると、邪魔されずにシステム内を移動しようとするユーザーの気を散らすことになるだけです。 
     
    ブランドを取り込むための有意義で優れた方法は、ブランドの色、アイコン、音声を使用するというものです (ただし、推奨されるプラットフォーム パターンやユーザー補助機能の要件と競合しないことが前提です)。 ブランドに注意を向けるよりも、コンテンツやタスクを完了することに重点を置いてください。 
     
@@ -58,9 +58,9 @@ ms.locfileid: "44606526"
 
 標準的なアドインは、次のコンポーネントで構成されます。
 
-![iOS での作業ウィンドウの基本 UX パターンのダイアグラム](../images/outlook-mobile-design-overview.png)
+![iOS での作業ウィンドウの基本 UX パターンのダイアグラム。](../images/outlook-mobile-design-overview.png)
 
-![Android での作業ウィンドウの基本 UX パターンのダイアグラム](../images/outlook-mobile-design-overview-android.jpg)
+![Android での作業ウィンドウの基本 UX パターンのダイアグラム。](../images/outlook-mobile-design-overview-android.jpg)
 
 ### <a name="loading"></a>読み込み中
 
@@ -68,11 +68,11 @@ ms.locfileid: "44606526"
 
 **iOS でのページの読み込みの例**
 
-![iOS の進行状況バーとアクティビティ インジケータの例](../images/outlook-mobile-design-loading.png)
+![iOS の進行状況バーとアクティビティ インジケータの例。](../images/outlook-mobile-design-loading.png)
 
 **Android でのページの読み込みの例**
 
-![Android の進行状況バーとアクティビティ インジケータの例](../images/outlook-mobile-design-loading-android.jpg)
+![Android の進行状況バーとアクティビティ インジケータの例。](../images/outlook-mobile-design-loading-android.jpg)
 
 
 ### <a name="sign-insign-up"></a>サインイン/サインアップ
@@ -81,11 +81,11 @@ ms.locfileid: "44606526"
 
 **iOS のサインイン ページとサインアップ ページの例**
 
-![iOS のサインイン ページとサインアップ ページの例](../images/outlook-mobile-design-signin.png)
+![iOS のサインイン ページとサインアップ ページの例。](../images/outlook-mobile-design-signin.png)
 
 **Android のサインイン ページの例**
 
-![Android のサインイン ページの例](../images/outlook-mobile-design-signin-android.png)
+![Android のサインイン ページの例。](../images/outlook-mobile-design-signin-android.png)
 
 ### <a name="brand-bar"></a>ブランド バー
 
@@ -93,17 +93,17 @@ ms.locfileid: "44606526"
 
 **iOS でのブランド化の例**
 
-![iOS でのブランド バーの例](../images/outlook-mobile-design-branding.png)
+![iOS でのブランド バーの例。](../images/outlook-mobile-design-branding.png)
 
 **Android でのブランド化の例**
 
-![Android でのブランド バーの例](../images/outlook-mobile-design-branding-android.png)
+![Android でのブランド バーの例。](../images/outlook-mobile-design-branding-android.png)
 
 ### <a name="margins"></a>余白
 
 Outlook iOS に合わせるため、モバイルの余白を両側でそれぞれ 15 ピクセル (画面の 8%) に設定します。Outlook Android の場合は、モバイルの余白を両側でそれぞれ 16 ピクセルに設定します。
 
-![iOS の余白の例](../images/outlook-mobile-design-margins.png)
+![iOS の余白の例。](../images/outlook-mobile-design-margins.png)
 
 ### <a name="typography"></a>文字体裁
 
@@ -111,17 +111,17 @@ Outlook iOS に合わせるため、モバイルの余白を両側でそれぞ�
 
 **iOS の文字体裁**
 
-![iOS の文字体裁のサンプル](../images/outlook-mobile-design-typography.png)
+![iOS の文字体裁のサンプル。](../images/outlook-mobile-design-typography.png)
 
 **Android の文字体裁**
 
-![Android の文字体裁のサンプル](../images/outlook-mobile-design-typography-android.png)
+![Android の文字体裁のサンプル。](../images/outlook-mobile-design-typography-android.png)
 
 ### <a name="color-palette"></a>カラー パレット
 
 Outlook iOS における色の使用法は明確ではありません。合わせるには、ブランド バーでのみ固有の色を使用して、その他の色の使用に関しては操作とエラーの状態に応じてローカライズするようお願いいたします。
 
-![iOS のカラー パレット](../images/outlook-mobile-design-color-palette.png)
+![iOS のカラー パレット。](../images/outlook-mobile-design-color-palette.png)
 
 ### <a name="cells"></a>セル
 
@@ -129,25 +129,25 @@ Outlook iOS における色の使用法は明確ではありません。合わ�
 
 **iOS のセルの例**
 
-![iOS のセルの種類](../images/outlook-mobile-design-cell-types.png)
+![iOS のセルの種類。](../images/outlook-mobile-design-cell-types.png)
 * * *
-![iOS で「使用可能」なセル](../images/outlook-mobile-design-cell-dos.png)
+![iOS で「使用可能」なセル。](../images/outlook-mobile-design-cell-dos.png)
 * * *
-![iOS で「使用不可」のセル](../images/outlook-mobile-design-cell-donts.png)
+![iOS で「使用不可」のセル。](../images/outlook-mobile-design-cell-donts.png)
 * * *
-![iOS のセルと入力](../images/outlook-mobile-design-cell-input.png)
+![iOS のセルと入力。](../images/outlook-mobile-design-cell-input.png)
 
 **Android のセルの例**
 
-![Android のセルの種類](../images/outlook-mobile-design-cell-type-android.png)
+![Android のセルの種類。](../images/outlook-mobile-design-cell-type-android.png)
 * * *
-![Android で「使用可能」なセル](../images/outlook-mobile-design-cell-dos-android.png)
+![Android で「使用可能」なセル。](../images/outlook-mobile-design-cell-dos-android.png)
 * * *
-![Android で「使用不可」なセル](../images/outlook-mobile-design-cell-donts-android.png)
+![Android で「使用不可」なセル。](../images/outlook-mobile-design-cell-donts-android.png)
 * * *
-![Android のセルと入力パート 1](../images/outlook-mobile-design-cell-input-1-android.png)
+![Android のセルと入力パート 1。](../images/outlook-mobile-design-cell-input-1-android.png)
 
-![Android のセルと入力パート 2](../images/outlook-mobile-design-cell-input-2-android.png)
+![Android のセルと入力パート 2。](../images/outlook-mobile-design-cell-input-2-android.png)
 
 ### <a name="actions"></a>アクション
 
@@ -155,15 +155,15 @@ Outlook iOS における色の使用法は明確ではありません。合わ�
 
 **iOS でのアクションの例**
 
-![iOS でのアクションとセル](../images/outlook-mobile-design-action-cells.png)
+![iOS でのアクションとセル。](../images/outlook-mobile-design-action-cells.png)
 * * *
-![iOS で「使用可能」なアクション](../images/outlook-mobile-design-action-dos.png)
+![iOS で「使用可能」なアクション。](../images/outlook-mobile-design-action-dos.png)
 
 **Android でのアクションの例**
 
-![Android でのアクションとセル](../images/outlook-mobile-design-action-cells-android.png)
+![Android でのアクションとセル。](../images/outlook-mobile-design-action-cells-android.png)
 * * *
-![Android で「使用可能」なアクション](../images/outlook-mobile-design-action-dos-android.png)
+![Android で「使用可能」なアクション。](../images/outlook-mobile-design-action-dos-android.png)
 
 ### <a name="buttons"></a>ボタン
 
@@ -171,11 +171,11 @@ Outlook iOS における色の使用法は明確ではありません。合わ�
 
 **iOS のボタンの例**
 
-![iOS のボタンの例](../images/outlook-mobile-design-buttons.png)
+![iOS のボタンの例。](../images/outlook-mobile-design-buttons.png)
 
 **Android のボタンの例**
 
-![Android のボタンの例](../images/outlook-mobile-design-buttons-android.png)
+![Android のボタンの例。](../images/outlook-mobile-design-buttons-android.png)
 
 ### <a name="tabs"></a>タブ
 
@@ -183,11 +183,11 @@ Outlook iOS における色の使用法は明確ではありません。合わ�
 
 **iOS のタブの例**
 
-![iOS のタブの例](../images/outlook-mobile-design-tabs.png)
+![iOS のタブの例。](../images/outlook-mobile-design-tabs.png)
 
 **Android のタブの例**
 
-![Android のタブの例](../images/outlook-mobile-design-tabs-android.png)
+![Android のタブの例。](../images/outlook-mobile-design-tabs-android.png)
 
 ### <a name="icons"></a>アイコン
 
@@ -195,11 +195,11 @@ Outlook iOS における色の使用法は明確ではありません。合わ�
 
 **iOS のアイコンの例**
 
-![iOS のアイコンの例](../images/outlook-mobile-design-icons.png)
+![iOS のアイコンの例。](../images/outlook-mobile-design-icons.png)
 
 **Android のアイコンの例**
 
-![Android のアイコンの例](../images/outlook-mobile-design-icons-android.jpg)
+![Android のアイコンの例。](../images/outlook-mobile-design-icons-android.jpg)
 
 ## <a name="end-to-end-examples"></a>エンド ツー エンドの例
 
@@ -212,44 +212,44 @@ v1 Outlook Mobile アドインを発表して以降、アドインを作成し�
 
 **iOS での GIPHY の例**
 
-![iOS の GIPHY アドインのエンド ツー エンド設計](../images/outlook-mobile-design-giphy.png)
+![iOS の GIPHY アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-giphy.png)
 
 **Android での GIPHY の例**
 
-![Android の GIPHY アドインのエンド ツー エンド設計](../images/outlook-mobile-design-giphy-android.png)
+![Android の GIPHY アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-giphy-android.png)
 
 ### <a name="nimble"></a>Nimble
 
 **iOS での Nimble の例**
 
-![iOS の Nimble アドインのエンド ツー エンド設計](../images/outlook-mobile-design-nimble.png)
+![iOS の Nimble アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-nimble.png)
 
 **Android での Nimble の例**
 
-![Android の Nimble アドインのエンド ツー エンド設計](../images/outlook-mobile-design-nimble-android.png)
+![Android の Nimble アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-nimble-android.png)
 
 ### <a name="trello"></a>Trello
 
 **iOS での Trello の例**
 
-![iOS の Trello アドインのエンド ツー エンド設計パート 1](../images/outlook-mobile-design-trello-1.png)
+![iOS の Trello アドインのエンド ツー エンド設計パート 1。](../images/outlook-mobile-design-trello-1.png)
 * * *
-![iOS の Trello アドインのエンド ツー エンド設計パート 2](../images/outlook-mobile-design-trello-2.png)
+![iOS の Trello アドインのエンド ツー エンド設計パート 2。](../images/outlook-mobile-design-trello-2.png)
 * * *
-![iOS の Trello アドインのエンド ツー エンド設計パート 3](../images/outlook-mobile-design-trello-3.png)
+![iOS の Trello アドインのエンド ツー エンド設計パート 3。](../images/outlook-mobile-design-trello-3.png)
 
 **Android での Trello の例**
 
-![Android の Trello アドインのエンド ツー エンド設計パート 1](../images/outlook-mobile-design-trello-1-android.png)
+![Android の Trello アドインのエンド ツー エンド設計パート 1。](../images/outlook-mobile-design-trello-1-android.png)
 * * *
-![Android の Trello アドインのエンド ツー エンド設計パート 2](../images/outlook-mobile-design-trello-2-android.png)
+![Android の Trello アドインのエンド ツー エンド設計パート 2。](../images/outlook-mobile-design-trello-2-android.png)
 
 ### <a name="dynamics-crm"></a>Dynamics CRM
 
 **iOS での Dynamics CRM の例**
 
-![iOS の Dynamics CRM アドインのエンド ツー エンド設計](../images/outlook-mobile-design-crm.png)
+![iOS の Dynamics CRM アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-crm.png)
 
 **Android での Dynamics CRM の例**
 
-![Android の Dynamics CRM アドインのエンド ツー エンド設計](../images/outlook-mobile-design-crm-android.png)
+![Android の Dynamics CRM アドインのエンド ツー エンド設計。](../images/outlook-mobile-design-crm-android.png)

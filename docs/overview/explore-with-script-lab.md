@@ -1,16 +1,16 @@
 ---
 title: Script Lab を使用して Office JavaScript API を探索する
 description: Script Lab を使用して、Office JS API およびプロトタイプの機能を調べます。
-ms.date: 10/14/2020
+ms.date: 06/18/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8fef3d0df73ab84cc17b2e6ff3c8fe436bf6e789
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7f4b67dd2369181e5d7b2b92496c8259ffd5c120
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741079"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077009"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -20,9 +20,9 @@ AppSource から無料で入手できる [Script Lab](https://appsource.microsof
 
 Script Lab は、Excel、Outlook、Word、PowerPoint で Office JavaScript API を使用して Office アドインを開発する方法を学習したい人のためのツールです。 IntelliSense を提供しているので、何が利用できるのかを見ることができ、Visual Studio Code で使用されているのと同じフレームワークである Monaco フレームワークの上に構築されています。 Script Lab では、サンプルのライブラリにアクセスして、簡単に機能を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。 Script Lab を使用して、プレビュー API を試すこともできます。
 
-今のところいいですか? この 1 分間のビデオを見て、Script Lab の動作を確認します。
+いかがでしたか? この 1 分間のビデオを見て、Script Lab の動作を確認します。
 
-[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ。')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>主な機能
 
@@ -32,7 +32,7 @@ Script Lab には、Office JavaScript API およびプロトタイプ アドイ�
 
 API を使用してタスクを完了する方法を示す組み込みのサンプル スニペットのコレクションを使用してすぐに開始できます。 サンプルを実行すると、作業ウィンドウまたはドキュメントですばやく結果を表示したり、API のしくみをサンプルで確認して学んだり、独自のアドインのプロトタイプにサンプルを使用したりもできます。
 
-![サンプル](../images/script-lab-samples.jpg)
+![サンプル。](../images/script-lab-samples.jpg)
 
 ### <a name="code-and-style"></a>コードとスタイル
 
@@ -45,29 +45,32 @@ Office JS API を呼び出す JavaScript または TypeScript コードに加え
 
 既定では、Script Lab で開いたスニペットはブラウザーのキャッシュに保存されます。 スニペットを完全に保存するには、そのスニペットを [GitHub の Gist](https://gist.github.com) にエクスポートします。 自分専用にスニペットを保存するには、秘密の Gist を作成するか、他のユーザーと共有する予定がある場合はパブリックの Gist を作成します。
 
-![共有オプション](../images/script-lab-share.jpg)
+![共有オプション。](../images/script-lab-share.jpg)
 
 ### <a name="import-snippets"></a>スニペットのインポート
 
 スニペット YAML が保存されているパブリック [ GitHub の Gist ](https://gist.github.com) に URL を指定するか、スニペットの完全な YAML を貼り付けて、スニペットを Script Lab にインポートできます。 この機能は、GitHub の Gist にスニペットを公開するか、スニペットの YAML を提供すると、他のユーザーがスニペットを自分と共有しているシナリオで役立ちます。
 
-![スニペットのインポート オプション](../images/script-lab-import-snippet.jpg)
+![スニペットのインポート オプション。](../images/script-lab-import-snippet.jpg)
 
 ## <a name="supported-clients"></a>サポートされるクライアント
 
 Script Lab は、次のクライアント上の Excel、Word、PowerPoint でサポートされています。
 
-- Windows での Office 2013 以降
+- Microsoft 365 Office サブスクリプション
 - Mac での Office 2016 以降
 - Office on the web
 
 Outlook 用 Script Lab は、次のクライアントで使用できます。
 
-- Windows 用 Outlook 2013 以降
+- Microsoft 365 Office サブスクリプション
 - Mac 用 Outlook 2016 以降
 - Chrome、Microsoft Edge、または Safari ブラウザーを使用している場合の Outlook on the web
 
 Outlook 用 Script Lab の詳細については、関連する[ブログの投稿](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)を参照してください。
+
+> [!IMPORTANT]
+> Script Lab は、2021 年のある時点で、Internet Explorer を使ってアドインをホストするプラットフォームと Office バージョンの組み合わせでの動作を停止します。これには、Office 2019 までの 1 回限りの購入の Office と、Microsoft 365 (サブスクリプション) Office の一部の旧バージョンが含まれます。 (詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。) Script Lab で Office JavaScript Library API の調査およびテストを行うには、他のプラットフォームとバージョンの組み合わせが必要です。 ただし、これらの API の動作は Internet Explorer でも変わらないので、これは実際には Script Lab の短所とは言えません。 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) に送信する Office アドイン は、Internet Explorer を使用してアドインをホストするプラットフォームとバージョンの組み合わせに対応している必要があります。
 
 ## <a name="next-steps"></a>次の手順
 
@@ -87,4 +90,3 @@ Outlook 用 Script Lab を使用するには、AppSource から [Outlook 用 Scr
 - [Microsoft 365 開発者プログラムに参加する](https://developer.microsoft.com/office/dev-program)
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
-
