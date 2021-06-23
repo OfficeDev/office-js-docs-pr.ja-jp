@@ -5,12 +5,12 @@ title: 開発ライフサイクルの概要
 description: ライフサイクル イベントの計画、開発、テスト、公開についての詳細情報。
 ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697191"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076673"
 ---
 # <a name="development-lifecycle-overview"></a>開発ライフサイクルの概要
 
@@ -20,8 +20,8 @@ ms.locfileid: "52697191"
 
 |               |               |
 | ------------- | ------------- |
-| ![ベストプラクティス](../images/i_best-practices_small.svg) | **計画**<br>[Office アドインのベストプラクティスとシステム要件について説明します。](../concepts/add-in-development-best-practices.md) |
-| ![コードブロック](../images/i_code-blocks_small.svg) | **開発**<br>[Office アドインを開発するための API やパターンについて説明します。](../develop/develop-overview.md) |
-| ![推奨テスト](../images/i_recommended-testing_small.svg) | **テストとデバッグ**<br>[Office アドインのテストとデバッグを行う方法について説明します。](../testing/test-debug-office-add-ins.md) |
-| ![展開](../images/i_deploy_small.svg) | **公開する**<br>[Office アドインの展開方法と公開方法について説明します。](../publish/publish.md) |
-| ![リファレンス](../images/i_reference_small.svg) | **リファレンス**<br>[Office JavaScript API、アドイン マニフェスト、エラー コード リストなどのリファレンス ドキュメントを参照してください。](../reference/javascript-api-for-office.md) |
+| :::image type="icon" source="../images/i_best-practices_small.svg"::: | **計画**<br>[Office アドインのベストプラクティスとシステム要件について説明します。](../concepts/add-in-development-best-practices.md) |
+| :::image type="icon" source="../images/i_code-blocks_small.svg"::: | **開発**<br>[Office アドインを開発するための API やパターンについて説明します。](../develop/develop-overview.md) |
+| :::image type="icon" source="../images/i_recommended-testing_small.svg"::: | **テストとデバッグ**<br>[Office アドインのテストとデバッグを行う方法について説明します。](../testing/test-debug-office-add-ins.md) |
+| :::image type="icon" source="../images/i_deploy_small.svg"::: | **公開する**<br>[Office アドインの展開方法と公開方法について説明します。](../publish/publish.md) |
+| :::image type="icon" source="../images/i_reference_small.svg"::: | **リファレンス**<br>[Office JavaScript API、アドイン マニフェスト、エラー コード リストなどのリファレンス ドキュメントを参照してください。](../reference/javascript-api-for-office.md) |
