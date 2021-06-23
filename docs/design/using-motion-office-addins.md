@@ -3,12 +3,12 @@ title: Office アドインでモーションを使用する
 description: 移行、モーション、またはアニメーションをアドインで使用するためのベスト プラクティスOffice取得します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 134a2cf0651d0063f19bad767fd5fbc021b6584e
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 94b421a04d4dc91aa7ab97abd8569e0b590786ae
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330116"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076295"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 
@@ -29,11 +29,11 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 |アドインの中でモーションを設定する必要のある主要な要素を特定します。 アドインの要素では、パネル、オーバーレイ、モーダル、ツール ヒント、メニュー、ティーチング コールアウトに、よくアニメーションが付けられます。| すべての要素をアニメーション化して、ユーザーを圧倒することは避けてください。 一度に多くの要素に注意を引こうとして、複数のモーションを適用することがないようにします。 |
 |ユーザーが予想できる動作をする、わかりやすく自然なモーションを使用します。要素のトリガー元を検討します。モーションを使用して、操作と結果の UI がつながるようにします。 | モーションのための待機時間ができないようにします。 タスクの完了を妨げるモーションは、アドインで使用しないでください。|
 
-![多くの移動要素を持つパネルの開きを示す GIF の横に、最小限の移動要素を含むパネルの開きを示す GIF](../images/add-in-motion-purpose.gif)
+![GIF の横に最小限の移動要素を持つパネルの開きを示す GIF。多くの移動要素を持つパネルの開きを示します。](../images/add-in-motion-purpose.gif)
 
 ## <a name="use-expected-motions"></a>予想される動作を使用する
 
-Fluent [UI](https://developer.microsoft.com/fluentui#/)を使用して Office プラットフォームとの視覚的な接続を作成することをお勧めします。また、Fluent [UI Animations](https://developer.microsoft.com/fluentui#/styles/web/motion)を使用して Fabric モーション言語に合ったモーションを作成することをお勧めします。
+Fluent [UI を](https://developer.microsoft.com/fluentui#/)使用して Office プラットフォームとの視覚的な接続を作成することをお勧めします。また[、Fluent UI アニメーション](https://developer.microsoft.com/fluentui#/styles/web/motion)を使用して Fabric モーション言語に合ったモーションを作成することをお勧めします。
 
 これを、Office とシームレスに適合するように使用します。こうすることにより、直感的なエクスペリエンスを実現できます。アニメーション CSS クラスには、Office のメンタル モデルを明確にするのに役立つ、方向性、開始/終了、期間に関する詳細な設定が用意されており、アドインの操作方法も学べるようになっています。
 
@@ -41,11 +41,11 @@ Fluent [UI](https://developer.microsoft.com/fluentui#/)を使用して Office �
 
 |するべきこと|してはいけないこと|
 |:-----|:-----|
-|Fluent UI の動作に合わせてモーションを使用します。| Office の一般的なモーション パターンに干渉または競合するモーションは作成しないでください。
+|UI の動作に合わせてモーションをFluentします。| Office の一般的なモーション パターンに干渉または競合するモーションは作成しないでください。
 |同様の要素間で一貫したモーション の適用が行なえるのを確認します。| 同じコンポーネントやオブジェクトのアニメーションに、異なるモーションを使用しないでください。|
 |アニメーションの方向にも一貫性があるようにします。 たとえば、右側から開くパネルは、右側に閉じるようにします。|要素をアニメーション化する際に、複数の方向を使用しないでください。
 
-![モーダルの開きを予期しない方法で表示する GIF の横に、モーダルの開き方を予期しない方法で表示する GIF](../images/add-in-motion-expected.gif)
+![モーダルの開きを予期しない方法で表示する GIF の横に、モーダルの開き方を示す GIF。](../images/add-in-motion-expected.gif)
 
 ## <a name="avoid-out-of-character-motion-for-an-element"></a>要素に合わないモーションを避ける
 
@@ -58,9 +58,9 @@ Fluent [UI](https://developer.microsoft.com/fluentui#/)を使用して Office �
 | [推奨モーション期間](https://developer.microsoft.com/fluentui#/styles/web/motion)を使用することをお勧めします。 | 大げさなアニメーションを使用しないでください。 ユーザーの注意をそらす装飾目的のエクスペリエンスは作成しないでください。
 | [推奨イージング曲線](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)に従ってください。  |ぎくしゃくした動きやばらばらな動きは使用しないでください。 期待、バウンス、輪ゴムなどの自然界の物理特性を模倣するだけの効果は使用しないでください。|
 
-![バウンスで読み込むタイルを示す GIF の横に、穏やかなフェードインを使用してタイルの読み込みを表示する GIF](../images/add-in-motion-character.gif)
+![タイルの読み込みがバウンスで読み込みを示す GIF の横に、穏やかなフェードインを使用してタイルの読み込みを示す GIF。](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>関連項目
 
-* [Fluent UI アニメーションのガイドライン](https://developer.microsoft.com/fluentui#/styles/web/motion)
+* [FluentUI アニメーションのガイドライン](https://developer.microsoft.com/fluentui#/styles/web/motion)
 * [ユニバーサル Windows プラットフォーム アプリ用のモーション](/windows/uwp/design/motion)

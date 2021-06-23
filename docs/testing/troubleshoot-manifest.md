@@ -1,14 +1,14 @@
 ---
 title: Office アドインのマニフェストを検証する
-description: XML スキーマおよびその他のツールを使用して Office アドインのマニフェストを検証する方法について説明します。
+description: XML スキーマおよび他のツールを使用して、Officeアドインのマニフェストを検証する方法について説明します。
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b2ad6f89635a76828524e928c8a766840a708d5
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8ac543719011339b3f22a6fb77f01c0e9ed6d930
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135208"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075538"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -25,7 +25,7 @@ ms.locfileid: "48135208"
 npm run validate
 ```
 
-![コマンドラインから Yo Office 検証コントロールが実行され、検証の成功結果が生成されたアニメーション gif](../images/yo-office-validator.gif)
+![コマンド ラインで実行され、検証Office渡された結果を生成する、Yo の値を示すアニメーション GIF。](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。
@@ -36,20 +36,20 @@ npm run validate
 
 1. [Node.js](https://nodejs.org/download/) をインストールします。
 
-2. コマンドプロンプトを開き、次のコマンドを使用してバリデーターをインストールします。
+2. コマンド プロンプトを開き、次のコマンドで検証ツールをインストールします。
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. *プロジェクトのルートディレクトリで*次のコマンドを実行します。
+3. プロジェクトのルート ディレクトリ *で次のコマンドを実行します*。
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > このコマンドが使用できない、または動作しない場合は、代わりに次のコマンドを実行して、最新バージョンの office アドインマニフェストツール ( `MANIFEST_FILE` マニフェストファイルの名前に置き換えられます) を強制的に使用します。
+    > このコマンドが使用できない場合や機能していない場合は、代わりに次のコマンドを実行して、office-addin-manifest ツールの最新バージョンを強制的に使用します (マニフェスト ファイルの名前に置き `MANIFEST_FILE` 換えてください)。
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -57,7 +57,7 @@ npm run validate
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 
-マニフェストは、[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) ファイルと比較して検証することができます。 マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている**ことも再確認します。 XML スキーマの検証ツールを使用して、この検証を実行できます。
+マニフェストは、[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) ファイルと比較して検証することができます。 マニフェスト ファイルが、使用している要素のすべての名前空間を含む、正しいスキーマに従っていることを確認します。 他のマニフェストのサンプルから要素をコピーした場合は、**適切な名前空間が含まれている** ことも再確認します。 XML スキーマの検証ツールを使用して、この検証を実行できます。
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには
 

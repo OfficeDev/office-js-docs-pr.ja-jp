@@ -1,18 +1,18 @@
 ---
 title: Office アドインのブランド パターン設計ガイドライン
-description: Office のビジュアルデザインとの互換性を維持しながら Office アドインをブランド化する方法について説明します。
+description: ビジュアル デザインと互換性をOfficeしながら、アドインをブランド化する方法Office。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 9571b2771767a60f715ac7f3bc83a501907039d9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132089"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076372"
 ---
 # <a name="branding-patterns"></a>ブランド パターン
 
-これらのパターンは、アドインユーザーにブランドの可視性とコンテキストを提供します。
+これらのパターンは、アドイン ユーザーにブランドの可視性とコンテキストを提供します。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -30,10 +30,10 @@ ms.locfileid: "49132089"
 
 ブランド バーは、ブランド名とロゴを含むフッター内のスペースです。 また、あなたのブランドの Web サイトや、オプションのアクセス ロケーションへのリンクとして機能します。
 
-![Office デスクトップアプリケーションのアドイン作業ウィンドウに表示されるブランドバー](../images/add-in-brand-bar.png)
+![デスクトップ アプリケーションのアドイン作業ウィンドウに表示されるブランド バー Office表示されます。](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>スプラッシュ スクリーン
 
 アドインの読み込み中や UI の状態が切り替えられる間、この画面を使用してブランドを表示します。
 
-![Office デスクトップアプリケーションのアドイン作業ウィンドウに表示されるブランドスプラッシュ画面](../images/add-in-splash-screen.png)
+![デスクトップ アプリケーションのアドイン作業ウィンドウに表示されるブランドスプラッシュOffice表示されます。](../images/add-in-splash-screen.png)

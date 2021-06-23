@@ -1,20 +1,20 @@
 ---
 title: OneNote ページ コンテンツを使用する
-description: JavaScript API を使用して OneNote ページコンテンツを操作する方法について説明します。
+description: JavaScript API を使用してページ OneNoteを使用する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 319ec8a6a92bf6bf58fac9c3c2d22987bc027414
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720940"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076820"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
 
-  ![OneNote ページのオブジェクト モデル図](../images/one-note-om-page.png)
+  ![OneNote オブジェクト モデル図を参照します。](../images/one-note-om-page.png)
 
 - ページ オブジェクトには、PageContent オブジェクトのコレクションが含まれています。
 - PageContent オブジェクトには、アウトライン、イメージ、その他のコンテンツ タイプが含まれています。
@@ -54,7 +54,7 @@ OneNote では、ユーザーのセキュリティを確保しながら、HTML �
 
 ## <a name="accessing-page-contents"></a>ページ コンテンツへのアクセス
 
-現在アクティブなページの `Page#load` による*ページ コンテンツ*へのアクセスだけが可能です。アクティブなページを変更するには、`navigateToPage($page)` を呼び出します。
+現在アクティブなページの `Page#load` による *ページ コンテンツ* へのアクセスだけが可能です。アクティブなページを変更するには、`navigateToPage($page)` を呼び出します。
 
 タイトルなどのメタデータは、どのページでも照会できます。
 

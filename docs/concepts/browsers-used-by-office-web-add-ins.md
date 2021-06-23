@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 05/19/2021
+ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 07788c655d5c30527ac815ba2f3235cf504641f3
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727907"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076183"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -18,6 +18,14 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 
 - コンピューターのオペレーティング システム。
 - アドインが 2013 以降の Office on the web、Microsoft 365、またはサブスクリプション以外で実行Officeかどうか。
+
+> [!IMPORTANT]
+> **Internet ExplorerアドインOffice引き続き使用する**
+>
+> Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。プラットフォームと Office バージョンの組み合わせ (Office 2019 までのすべての 1 回限り購入バージョンを含む) は、この記事で説明したように、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
+>
+> - AppSource は、ブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
+> - 2021 [Script Lab](../overview/explore-with-script-lab.md)ツールは、2021 Internet Explorerで作業を停止します。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
@@ -38,7 +46,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 
 <sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
 
-<sup>2</sup> Microsoft Edgeを使用すると、作業ウィンドウでWindows 10 ナレーターが開くページのタグを読み取ります ("スクリーン リーダー" と呼ばれる場合 `<title>` があります)。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
+<sup>2</sup> Microsoft Edgeされている場合、Windows 10 ナレーター ("スクリーン リーダー" とも呼ばれる) は、作業ウィンドウで開くページ内のタグ `<title>` を読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
 <sup>3</sup>アドインにマニフェストに要素が含まれる場合、元の `<Runtimes>` WebView (EdgeHTML) Microsoft Edgeを使用しない。 WebView2 を使用するMicrosoft Edge (Chromiumベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、Internet Explorerバージョンに関係なく、Windows 11 Microsoft 365します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 

@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 9c56160fdfeb2df2e78ee8a9db8750841d043d87
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007805"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077037"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -56,7 +56,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 <br/>
 
-![ユーザーに不足している件名を入力するように求めるエラー メッセージを示すスクリーンショット](../images/block-on-send-subject-cc-inforbar.png)
+![不足している件名行を入力するようにユーザーに求めるエラー メッセージを示すスクリーンショット。](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -66,7 +66,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 <br/>
 
-![送信者に禁止された単語が見つかったことを通知するエラー メッセージを示すスクリーンショット](../images/block-on-send-body.png)
+![ブロックされた単語が見つかったことをユーザーに伝えるエラー メッセージを示すスクリーンショット。](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>制限事項
 
@@ -296,7 +296,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |ポリシーの状態|結果|
 |---|---|
 |無効|送信時アドインの現在ダウンロードされているマニフェスト (必ずしも最新バージョンではない) は、送信されるメッセージまたは会議アイテムで実行されます。 これは既定の状態/動作です。|
-|有効|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
+|Enabled|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
 
 #### <a name="manage-the-on-send-policy"></a>送信時ポリシーを管理する
 

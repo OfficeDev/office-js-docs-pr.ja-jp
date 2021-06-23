@@ -1,25 +1,25 @@
 ---
-title: Excel JavaScript API を使用して範囲を切り取り、コピー、貼り付ける
-description: Excel JavaScript API を使用して範囲を切り取り、コピー、貼り付ける方法について説明します。
+title: JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
+description: JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8cf92ef148c24613674930140cec762c9cd8c4a4
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652968"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075825"
 ---
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を切り取り、コピー、貼り付ける
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 
-この記事では、Excel JavaScript API を使用して範囲を切り取り、コピー、貼り付けるコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-[Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)メソッドは、Excel UI の **[コピー** と **貼り付** け] アクションをレプリケートします。 宛先は、 `Range` 呼び出 `copyFrom` されるオブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+[Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)メソッドは、ユーザー UI の **コピー** と **貼** り付Excelします。 宛先は、 `Range` 呼び出 `copyFrom` されるオブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
 
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
@@ -72,11 +72,11 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>範囲がコピーおよび貼り付けされる前のデータ
 
-![範囲のコピー メソッドが実行される前の Excel のデータ](../images/excel-range-copyfrom-skipblanks-before.png)
+![範囲のコピー Excel実行する前のデータ。](../images/excel-range-copyfrom-skipblanks-before.png)
 
 ### <a name="data-after-range-is-copied-and-pasted"></a>範囲がコピーおよび貼り付けされた後のデータ
 
-![範囲のコピー メソッドが実行された後の Excel のデータ](../images/excel-range-copyfrom-skipblanks-after.png)
+![範囲のコピー Excelが実行された後のデータ。](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
@@ -98,6 +98,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して重複を削除する](excel-add-ins-ranges-remove-duplicates.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して重複Excel削除する](excel-add-ins-ranges-remove-duplicates.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

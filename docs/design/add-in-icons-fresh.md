@@ -3,12 +3,12 @@ title: アドインの新しいスタイル アイコンOfficeガイドライン
 description: 新しいスタイル アイコンをアドインで使用Officeガイドライン。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330046"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076512"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>アドインの新しいスタイル アイコンOfficeガイドライン
 
@@ -60,7 +60,7 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 
 以下の図は、Office のアイコンの基本要素と修飾子のレイアウトを表しています。
 
-![右下に修飾子、左上にアクション修飾子を持つ中央のアイコン基本要素を示す図](../images/icon-layouts.png)
+![右下に修飾子を、左上にアクション修飾子を持つ中央のアイコン基本要素を示す図。](../images/icon-layouts.png)
 
 - 基本要素をピクセル フレームの中央に配置し、周囲に余白をとります。
 - アクション修飾子は、左上に配置します。
@@ -89,7 +89,7 @@ Office UI と協調するコマンドを作成するために、基本要素と�
 ## <a name="icon-colors"></a>アイコンの色
 
 > [!NOTE]
-> これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは Fluent UI ではレンダリングされないので、カラー パレットは Microsoft UI Fabric | で説明されている[パレットとは異UI Fabric |色|共有 .](https://fluentfabric.azurewebsites.net/#/color/shared)
+> これらの色のガイドラインは、[アドイン コマンド](add-in-commands.md)で使用されるリボン アイコン用です。 これらのアイコンは UI ではレンダリングFluent、カラー パレットは Microsoft のページで説明されているパレットとは[異UI Fabric |色|共有 .](https://fluentfabric.azurewebsites.net/#/color/shared)
 
 Office のアイコンには、限定されたカラー パレットがあります。Office UI とのシームレスな統合を保証するために、以下の表に記載されている色を使用してください。色の使用について、以下のガイドラインに従ってください。
 
@@ -99,26 +99,26 @@ Office のアイコンには、限定されたカラー パレットがありま
 
 |色の名前|RGB|16 進数|色|カテゴリ|
 |:---|:---|:---|:---|:---|
-|テキスト グレー (80)|80、80、80|#505050| ![テキストの灰色 80 色](../images/color-text-gray-80.png) |テキスト|
-|テキスト グレー (95)|95、95、95|#5F5F5F| ![テキストの灰色 95 色](../images/color-text-gray-95.png) |テキスト|
-|テキスト グレー (105)|105, 105, 105|#696969| ![テキストの灰色 105 色](../images/color-text-gray-105.png) |テキスト|
-|ダーク グレー 32|128、128、128|#808080| ![32 px 以上の濃い灰色](../images/color-dark-gray-32.png) |32 px 以上|
-|ミディアム グレー 32|158、158、158|#9E9E9E| ![32 px 以上の場合は中程度の灰色](../images/color-medium-gray-32.png) |32 px 以上|
-|ライト グレー オール|179、179、179|#B3B3B3| ![すべての画像サイズの淡い灰色](../images/color-light-gray-all.png) |すべてのサイズ|
-|ダーク グレー 16|114、114、114|#727272| ![16 px 以上の濃い灰色](../images/color-dark-gray-16.png) |16 px 以下|
-|ミディアム グレー 16|144、144、144|#909090| ![16 px 以上の場合は灰色の中色](../images/color-medium-gray-16.png) |16 以下|
-|ブルー 32|77、130、184|#4d82B8| ![32 px 以上の青の色](../images/color-blue-32.png) |32 px 以上|
-|ブルー 16|74、125、177|#4A7DB1| ![16 px 以上の青の色](../images/color-blue-16.png) |16 px 以下|
-|イエロー オール|234、194、130|#EAC282| ![すべての画像サイズの黄色](../images/color-yellow-all.png) |すべてのサイズ|
-|オレンジ 32|231、142、70|#E78E46| ![32 px 以上のオレンジ色](../images/color-orange-32.png) |32 px 以上|
-|オレンジ 16|227、142、70|#E3751C| ![16 px 以上のオレンジ色](../images/color-orange-16.png) |16 px 以下|
-|ピンク オール|230、132、151|#E68497| ![すべての画像サイズのピンク色](../images/color-pink-all.png) |すべてのサイズ|
-|グリーン 32|118、167、151|#76A797| ![32 px 以上の緑色](../images/color-green-32.png) |32 px 以上|
-|グリーン 16|104、164、144|#68A490| ![16 px 以上の緑色](../images/color-green-16.png) |16 px 以下|
-|レッド 32|216、99、68|#D86344| ![32 px 以上の赤色](../images/color-red-32.png) |32 px 以上|
-|レッド 16|214、85、50|#D65532| ![16 px 以上の赤色](../images/color-red-16.png) |16 px 以下|
-|パープル 32|152、104、185|#9868B9| ![32 px 以上の紫色](../images/color-purple-32.png) |32 px 以上|
-|パープル 16|137、89、171|#8959AB| ![16 px 以上の紫色](../images/color-purple-16.png) |16 px 以下|
+|テキスト グレー (80)|80、80、80|#505050| ![テキストの灰色 80 色。](../images/color-text-gray-80.png) |テキスト|
+|テキスト グレー (95)|95、95、95|#5F5F5F| ![テキストの灰色 95 色。](../images/color-text-gray-95.png) |テキスト|
+|テキスト グレー (105)|105, 105, 105|#696969| ![テキストの灰色 105 色。](../images/color-text-gray-105.png) |テキスト|
+|ダーク グレー 32|128、128、128|#808080| ![32 px 以上の濃い灰色。](../images/color-dark-gray-32.png) |32 px 以上|
+|ミディアム グレー 32|158、158、158|#9E9E9E| ![32 px 以上の場合は灰色の中色。](../images/color-medium-gray-32.png) |32 px 以上|
+|ライト グレー オール|179、179、179|#B3B3B3| ![すべての画像サイズの淡い灰色。](../images/color-light-gray-all.png) |すべてのサイズ|
+|ダーク グレー 16|114、114、114|#727272| ![16 px 以上の濃い灰色。](../images/color-dark-gray-16.png) |16 px 以下|
+|ミディアム グレー 16|144、144、144|#909090| ![16 px 以上の場合は灰色の中色。](../images/color-medium-gray-16.png) |16 以下|
+|ブルー 32|77、130、184|#4d82B8| ![32 px 以上の青の色。](../images/color-blue-32.png) |32 px 以上|
+|ブルー 16|74、125、177|#4A7DB1| ![16 px 以上の青の色。](../images/color-blue-16.png) |16 px 以下|
+|イエロー オール|234、194、130|#EAC282| ![すべての画像サイズの黄色。](../images/color-yellow-all.png) |すべてのサイズ|
+|オレンジ 32|231、142、70|#E78E46| ![32 px 以上のオレンジ色。](../images/color-orange-32.png) |32 px 以上|
+|オレンジ 16|227、142、70|#E3751C| ![16 px 以上のオレンジ色。](../images/color-orange-16.png) |16 px 以下|
+|ピンク オール|230、132、151|#E68497| ![すべての画像サイズのピンク色。](../images/color-pink-all.png) |すべてのサイズ|
+|グリーン 32|118、167、151|#76A797| ![32 px 以上の緑色。](../images/color-green-32.png) |32 px 以上|
+|グリーン 16|104、164、144|#68A490| ![16 px 以上の緑色。](../images/color-green-16.png) |16 px 以下|
+|レッド 32|216、99、68|#D86344| ![32 px 以上の場合は赤色。](../images/color-red-32.png) |32 px 以上|
+|レッド 16|214、85、50|#D65532| ![16 px 以上の赤色。](../images/color-red-16.png) |16 px 以下|
+|パープル 32|152、104、185|#9868B9| ![32 px 以上の紫色。](../images/color-purple-32.png) |32 px 以上|
+|パープル 16|137、89、171|#8959AB| ![16 px 以上の紫色。](../images/color-purple-16.png) |16 px 以下|
 
 ## <a name="icons-in-high-contrast-modes"></a>ハイコントラスト モードのアイコン
 

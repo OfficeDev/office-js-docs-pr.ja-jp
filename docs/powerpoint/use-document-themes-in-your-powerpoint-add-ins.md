@@ -1,18 +1,18 @@
 ---
 title: PowerPoint アドインでドキュメントのテーマを使用する
-description: プレゼンテーション、ドキュメント、ワークシート、および電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
+description: プレゼンテーション、ドキュメント、ワークシート、電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 337e3e235b49944e36dc6e9cdabaa3f036d8c7e1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611927"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076988"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
-[Office テーマ](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)の一部は表示が調整されたフォントと色のセットで構成されており、このセットをプレゼンテーション、文書、ワークシート、電子メールに適用できます。PowerPoint でプレゼンテーションのテーマを適用したりカスタマイズしたりするには、リボンの **[デザイン]** タブの **[テーマ]** グループと **[バリエーション]** グループを使います。PowerPoint は既定の **Office テーマ**の新しい空白のプレゼンテーションを割り当てますが、**[デザイン]** タブ上の使用できる他のテーマを選択したり、Office.com から追加のテーマをダウンロードしたり、独自のテーマを作成してカスタマイズしたりできます。
+[Office テーマ](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)の一部は表示が調整されたフォントと色のセットで構成されており、このセットをプレゼンテーション、文書、ワークシート、電子メールに適用できます。PowerPoint でプレゼンテーションのテーマを適用したりカスタマイズしたりするには、リボンの **[デザイン]** タブの **[テーマ]** グループと **[バリエーション]** グループを使います。PowerPoint は既定の **Office テーマ** の新しい空白のプレゼンテーションを割り当てますが、**[デザイン]** タブ上の使用できる他のテーマを選択したり、Office.com から追加のテーマをダウンロードしたり、独自のテーマを作成してカスタマイズしたりできます。
 
 OfficeThemes.css を使用すると、次の 2 つの方法でアドインを PowerPoint に合わせて設計できます。
 
@@ -24,29 +24,29 @@ OfficeThemes.css を使用すると、次の 2 つの方法でアドインを Po
 
 すべての Office 文書のテーマには 12 色が定義されています。これらのうち 10 色は、色選択を使ってプレゼンテーション内のフォントや背景などの色を設定するときに利用できます。
 
-![カラー パレット](../images/office15-app-color-palette.png)
+![カラー パレット。](../images/office15-app-color-palette.png)
 
-PowerPoint の12色のテーマのフルセットを表示またはカスタマイズするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他**] ドロップダウンをクリックし、[色のカスタマイズ]**を選択し**  >  **Customize Colors**て、[**新しいテーマの色の作成**] ダイアログボックスを表示します。
+PowerPoint で 12 種類のテーマの色の完全なセットを表示またはカスタマイズするには、[デザイン]タブの [バリアント] グループで、[その他] ドロップダウンをクリックし、[色のカスタマイズ] を選択して [新しいテーマの色の作成] ダイアログ ボックスを表示します。   >   
 
-![新しいテーマの色のダイアログ ボックスの作成](../images/office15-app-create-new-theme-colors.png)
+![[新しいテーマの色を作成する] ダイアログ ボックス。](../images/office15-app-create-new-theme-colors.png)
 
 最初の 4 色はテキストと背景用です。テキストを明るい色で作成すると常に暗い色より読みやすくなり、テキストを暗い色で作成すると常に明るい色より読みやすくなります。続く 6 色は、4 つの背景になる色の上に常に表示されるアクセントです。最後の 2 色は、ハイパーリンクと表示済みハイパーリンクの色です。
 
 ### <a name="document-theme-fonts"></a>文書のテーマのフォント
 
-すべての Office 文書のテーマには 2 つのフォント (見出し用と本文テキスト用) も定義されています。 PowerPoint はこれらのフォントを使用して自動的にテキスト スタイルを構成します。 また、テキストと**ワードアート**の**クイック スタイル** ギャラリーでも同じフォントが使用されます。 これらの 2 つのフォントは、フォント ピッカーを使用してフォントを選択するときに、最初の 2 つの選択項目として利用できます。
+すべての Office 文書のテーマには 2 つのフォント (見出し用と本文テキスト用) も定義されています。 PowerPoint はこれらのフォントを使用して自動的にテキスト スタイルを構成します。 また、テキストと **ワードアート** の **クイック スタイル** ギャラリーでも同じフォントが使用されます。 これらの 2 つのフォントは、フォント ピッカーを使用してフォントを選択するときに、最初の 2 つの選択項目として利用できます。
 
-![フォント ピッカー](../images/office15-app-font-picker.png)
+![フォントピッカー。](../images/office15-app-font-picker.png)
 
-PowerPoint でテーマのフォントを表示またはカスタマイズするには、[**デザイン**] タブの [**バリエーション**] グループで、[**その他**] をクリックし、[フォントのカスタマイズ]**を選択し**  >  **Customize Fonts**て [**新しいテーマのフォントの作成**] ダイアログボックスを表示します。
+PowerPoint でテーマ フォントを表示またはカスタマイズするには、[デザイン]タブの [バリアント] グループで、[その他] ドロップダウンをクリックし、[フォントのカスタマイズ] を選択して [新しいテーマ フォントの作成] ダイアログ ボックスを表示します。   >   
 
-![新しいテーマのフォントのダイアログ ボックスの作成](../images/office15-app-create-new-theme-fonts.png)
+![[新しいテーマ フォントの作成] ダイアログ ボックス。](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office の UI のテーマのフォントと色
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. これを行うには、**ファイル**  >  **アカウント**の  >  **office テーマ**ドロップダウンを使用します (任意の office アプリケーションから)。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. これを行うには、[ファイル アカウント]**ドロップダウンOffice**(任意のアプリケーションから)  >    >   Officeします。
 
-![Office テーマ ドロップ ダウン](../images/office15-app-office-theme-picker.png)
+![Officeのドロップダウン。](../images/office15-app-office-theme-picker.png)
 
 OfficeThemes.css には PowerPoint 用の作業ウィンドウ アドインで使用できるクラスが含まれており、両者が使用するフォントと色は同じになります。したがって、組み込み作業ウィンドウの外観と一致する作業ウィンドウ アドインを設計できます。
 
@@ -61,9 +61,9 @@ OfficeThemes.css ファイルを アドイン プロジェクトに追加して�
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>OfficeThemes.css を Visual Studio プロジェクトに追加するには
 
 > [!NOTE]
-> この手順は、Visual Studio 2015 にのみ適用されます。 Visual Studio 2019 を使用している場合は、作成した新しい PowerPoint アドインプロジェクトに対して OfficeThemes ファイルが自動的に作成されます。
+> この手順は、Visual Studio 2015 にのみ適用されます。 2019 Visual Studioを使用している場合、OfficeThemes.css ファイルは、作成する新しい PowerPoint アドイン プロジェクトに対して自動的に作成されます。
 
-1. **ソリューション エクスプローラー**で、_**project_name**_**Web** プロジェクト内の [**コンテンツ**] フォルダーを右クリックし、[**追加**] を選択してから、[**スタイル シート**] を選択します。
+1. **ソリューション エクスプローラー** で、_**project_name**_**Web** プロジェクト内の [**コンテンツ**] フォルダーを右クリックし、[**追加**] を選択してから、[**スタイル シート**] を選択します。
     
 2. 新しいスタイル シートに **OfficeThemes** という名前を付けます。
     
@@ -145,13 +145,13 @@ Visual Studio でこの作業を行うには、次の手順に従ってくださ
 
 1. [**新規プロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン**と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+2. 検索ボックスを使用して、**アドイン** と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
 3. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー**に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
 5. アドインの UI を実装する HTML ページ (既定のテンプレート内の Home.html など) で、OfficeThemes.css ファイルを参照する次の `<link>` タグを `<head>` タグに追加します。
     
@@ -180,13 +180,13 @@ OfficeTheme.css 文書テーマ クラスを使用するコンテンツ アド�
 </body>
 ```
 
-実行時に、既定の**Office テーマ**を使用するプレゼンテーションにコンテンツアドインを挿入すると、次のように表示されます。
+実行時に、既定のテーマテーマを使用するプレゼンテーションに挿入 **Office** コンテンツ アドインは次のようにレンダリングされます。
 
-![Office のテーマを使用して実行しているコンテンツ アプリ](../images/office15-app-content-app-office-theme.png)
+![テーマを使用して実行Officeアプリ。](../images/office15-app-content-app-office-theme.png)
 
-別のテーマを使用するようにプレゼンテーションを変更するか、プレゼンテーションのテーマをカスタマイズすると、OfficeThemes.css クラスで指定されたフォントと色は、プレゼンテーションのテーマのフォントと色に対応するように動的に更新されます。前述の例と同じ HTML を使用すると、アドインの挿入先のプレゼンテーションで**ファセット**のテーマが使用され、アドインは次のように表示されます。
+別のテーマを使用するようにプレゼンテーションを変更するか、プレゼンテーションのテーマをカスタマイズすると、OfficeThemes.css クラスで指定されたフォントと色は、プレゼンテーションのテーマのフォントと色に対応するように動的に更新されます。前述の例と同じ HTML を使用すると、アドインの挿入先のプレゼンテーションで **ファセット** のテーマが使用され、アドインは次のように表示されます。
 
-![ファセットのテーマを使用して実行しているコンテンツ アプリ](../images/office15-app-content-app-facet-theme.png)
+![ファセット テーマで実行されているコンテンツ アプリ。](../images/office15-app-content-app-facet-theme.png)
 
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>作業ウィンドウ アドインの HTML ページで OfficeThemes.css Office UI テーマ クラスを使用する
@@ -217,13 +217,13 @@ OfficeTheme.css クラスを使用してフォントの色と背景色を指定�
 
 PowerPoint で [**ファイル**]  >  [**アカウント**]  >  [**Office テーマ**] を [**白**] に設定して実行すると、作業ウィンドウ アドインは次のように表示されます。
 
-![白の Office の作業ウィンドウ](../images/office15-app-task-pane-theme-white.png)
+![[ホワイト] テーマOffice作業ウィンドウ。](../images/office15-app-task-pane-theme-white.png)
 
 <br/>
 
 **[Office テーマ]** を **[濃い灰色]** に変更すると、OfficeThemes.css クラスで指定されたフォントと色は動的に更新されて次のように表示されます。
 
-![濃い灰色の Office の作業ウィンドウ](../images/office15-app-task-pane-theme-dark-gray.png)
+![濃い灰色のテーマOffice作業ウィンドウ。](../images/office15-app-task-pane-theme-dark-gray.png)
 
 <br/>
 
@@ -283,7 +283,7 @@ OfficeThemes.css ファイルには、文書テーマで使用される 2 つの
 
 次のスクリーンショットは、既定の Office テーマの使用時に アドイン テキストに割り当てられるテーマの色のクラスすべて (2 つのハイパーリンクの色を除く) の例を示しています。
 
-![既定の Office テーマの色の例](../images/office15-app-default-office-theme-colors.png)
+![既定のOfficeテーマの色の例です。](../images/office15-app-default-office-theme-colors.png)
 
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>作業ウィンドウ アドインのテーマ クラス

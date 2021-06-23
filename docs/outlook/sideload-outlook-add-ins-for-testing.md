@@ -3,12 +3,12 @@ title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
 ms.date: 05/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 9d0fb246f6522c745658a09fce6934ee44d5079a
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555193"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077030"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -25,7 +25,7 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
     > [!IMPORTANT]
     > マニフェストにエラーが含まれているか、マニフェストへのパスが無効な場合は、エラー メッセージが表示されます。
 
-1. マニフェストにエラーが含まれるが、パスが有効な場合、アドインはサイドロードされ、デスクトップと web 上の Outlookで使用できます。 また、サポートされているすべてのデバイスにインストールされます。
+1. マニフェストにエラーが含まれるが、パスが有効な場合、アドインはサイドロードされ、デスクトップと Outlook on the web の両方で使用できます。 また、サポートされているすべてのデバイスにインストールされます。
 
 ## <a name="sideload-manually"></a>サイドロードを手動で実行する
 
@@ -33,20 +33,20 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 ### <a name="outlook-on-the-web"></a>Outlook on the web
 
-Web 上でアドインをサイドローディングOutlookプロセスは、新しいバージョンとクラシック バージョンの使用によって異なります。
+新しいバージョンまたはクラシック バージョンを使用Outlook on the webアドインをサイドローディングするプロセスは異なります。
 
 - メールボックスのツールバーが次の図のような場合、「[新しい Outlook on the web のアドインをサイドロードする](#new-outlook-on-the-web)」を参照してください。
 
-    ![新しい Outlook on the web の部分的なスクリーンショット](../images/outlook-on-the-web-new-toolbar.png)
+    ![新しいツール バーの部分的なOutlook on the webです。](../images/outlook-on-the-web-new-toolbar.png)
 
 - メールボックスのツールバーが次の図のような場合、「[従来の Outlook on the web のアドインをサイドロードする](#classic-outlook-on-the-web)」を参照してください。
 
-    ![従来の Outlook on the web の部分的なスクリーンショット](../images/outlook-on-the-web-classic-toolbar.png)
+    ![従来のツール バーの一部Outlook on the webスクリーンショット。](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > 組織のメールボックスのツールバーにロゴが含まれている場合、上の図に示されるものと表示が少し異なる場合があります。
 
-### <a name="new-outlook-on-the-web"></a>Web Outlookの新しい情報
+### <a name="new-outlook-on-the-web"></a>新しいOutlook on the web
 
 1. [[Outlook on the web]](https://outlook.office.com) に進みます。
 
@@ -54,33 +54,33 @@ Web 上でアドインをサイドローディングOutlookプロセスは、新
 
 1. 新しいメッセージの下部で [**...**] を選択し、表示されるメニューから [**アドインを取得**] を選択します。
 
-    ![[アドインを取得] オプションが強調表示された Outlook on the web のメッセージ作成ウィンドウ](../images/outlook-on-the-web-new-get-add-ins.png)
+    ![[アドインの取得] オプションが強調表示Outlook on the web新しいウィンドウのメッセージ作成ウィンドウ。](../images/outlook-on-the-web-new-get-add-ins.png)
 
 1. [**Outlook のアドイン**] ダイアログ ボックスで、[**個人用アドイン**] を選択します。
 
-    ![[個人用アドイン] が選択された 新しい Outlook on the web の [Outlook のアドイン] ダイアログ ボックス](../images/outlook-on-the-web-new-my-add-ins.png)
+    ![[自分のOutlook] を選択した新しいOutlook on the webダイアログ ボックスのアドイン。](../images/outlook-on-the-web-new-my-add-ins.png)
 
 1. ダイアログ ボックスの下部にある [**カスタム アドイン**] セクションに移動します。 [**カスタム アドインを追加**] リンクを選択し、[**ファイルから追加**] を選択します。
 
-    ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
+    ![[ファイルから追加] オプションをポイントするアドインのスクリーンショットを管理します。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
-### <a name="classic-outlook-on-the-web"></a>Web Outlookクラシック コンテンツ
+### <a name="classic-outlook-on-the-web"></a>クラシック Outlook on the web
 
 1. [[Outlook on the web]](https://outlook.office.com) に進みます。
 
 1. ツールバー右上のセクションにあるギア アイコンを選択し、[**アドインの管理**] を選択します。
 
-    ![[アドインの管理] オプションを示す Outlook on the web のスクリーンショット](../images/outlook-sideload-web-manage-integrations.png)
+    ![Outlook on the webアドインの管理オプションをポイントするスクリーンショットを作成します。](../images/outlook-sideload-web-manage-integrations.png)
 
 1. **アドインの管理** ページで、**[アドイン]** を選択してから、**[個人用アドイン]** を選択します。
 
-    ![Outlook on the web の [ストア] ダイアログ ボックスで [個人用アドイン] を選択しているところ](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook on the web[マイ アドイン] が選択されている場合は、[ストア] ダイアログボックスを開きます。](../images/outlook-sideload-store-select-add-ins.png)
 
 1. ダイアログ ボックスの下部にある [**カスタム アドイン**] セクションに移動します。 [**カスタム アドインを追加**] リンクを選択し、[**ファイルから追加**] を選択します。
 
-    ![ファイル オプションからの追加を示すアドイン スクリーンショットの管理](../images/outlook-sideload-desktop-add-from-file.png)
+    ![[ファイルから追加] オプションをポイントするアドインのスクリーンショットを管理します。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
@@ -92,24 +92,24 @@ Web 上でアドインをサイドローディングOutlookプロセスは、新
 
 1. リボンで [**アドインを取得**] ボタンを選択します。
 
-    ![Outlook 2016アドインの取得] ボタンをポイントするリボン](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016アドインの取得] ボタンをポイントするリボンを選択します。](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
     > バージョンの [アドインの取得] ボタンが表示されていない場合は、次Outlook選択します。
     >
     > - **リボン** の [ストア] ボタン (使用可能な場合)。
     >
-    >   OR
+    >   または
     >
-    > - **[** ファイル] メニューの [情報] タブの[アドインの管理]ボタンを選択して、Web 上の [アドイン] ダイアログ Outlook開きます。 <br>Web エクスペリエンスの詳細については、前のセクション「Web 上でアドインをサイドロードOutlook[参照してください](#outlook-on-the-web)。
+    > - **[** ファイル] メニューの [情報] タブの[アドインの管理]ボタンを選択して、[アドイン] ダイアログボックスを開Outlook on the web。 <br>Web エクスペリエンスの詳細については、前のセクションの「アドインをサイドロードする」を参照[Outlook on the web。](#outlook-on-the-web)
 
 1. ダイアログの上部にタブがある場合は、[アドイン] タブが **選択** されている必要があります。 [ **個人用アドイン**] を選びます。
 
-    ![Outlook 2016 の [ストア] ダイアログ ボックスで [個人用アドイン] を選択しているところ](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016[マイ アドイン] が選択されている場合は、[ストア] ダイアログボックスを開きます。](../images/outlook-sideload-store-select-add-ins.png)
 
 1. ダイアログ ボックスの下部にある **[カスタム アドイン]** セクションに移動します。 **[カスタム アドインを追加]** リンクを選択し、**[ファイルから追加]** を選択します。
 
-    ![[ファイルから追加] オプションを示す [ストア] のスクリーンショット](../images/outlook-sideload-desktop-add-from-file.png)
+    ![[ファイルから追加] オプションをポイントするスクリーンショットを保存します。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
@@ -119,7 +119,7 @@ Web 上でアドインをサイドローディングOutlookプロセスは、新
 
 1. [ファイル **] メニューを** 選択し、[情報] タブの [アドインの管理] ボタンを選択しますOutlookブラウザーで Web バージョンが開きます。
 
-1. [Web 上の[](#outlook-on-the-web)アドインをサイドロードする] セクションOutlookに従って、Web 上のアドインのバージョンOutlook実行します。
+1. [アドインのサイドロード][セクションの](#outlook-on-the-web)手順に従って、Outlook on the webのバージョンに従Outlook on the web。
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 

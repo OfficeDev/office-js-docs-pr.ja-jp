@@ -1,44 +1,44 @@
 ---
 title: Office アドインにおける非同期プログラミング
-description: Office JavaScript ライブラリが Office アドインで非同期プログラミングを使用する方法について説明します。
+description: JavaScript ライブラリがOfficeアドインで非同期プログラミングを使用する方法Office説明します。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 0ffeb6a0745c59df5130cb742ee9e51752396d42
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 42cf2d8e1b0d5185866a55152517683031da3b3d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131942"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076267"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office アドイン API が非同期プログラミングを使用するのはなぜですか? JavaScript はシングルスレッドの言語であるため、スクリプトで実行時間の長い同期プロセスが呼び出されると、そのプロセスが完了するまで後続のすべてのスクリプト実行がブロックされます。 Office web クライアントに対する特定の操作 (ただし、リッチクライアントでも) が同期的に実行されると、実行がブロックされる可能性があるため、ほとんどの Office JavaScript Api は非同期で実行するように設計されています。 これにより、Office アドインが迅速に応答できるようになります。 このような非同期メソッドを利用するときは、多くの場合、コールバック関数の記述も必要です。
+アドイン API Office非同期プログラミングを使用する理由 JavaScript はシングルスレッドの言語であるため、スクリプトで実行時間の長い同期プロセスが呼び出されると、そのプロセスが完了するまで後続のすべてのスクリプト実行がブロックされます。 Office Web クライアント (ただしリッチ クライアントも含む) に対する特定の操作は、同期的に実行される場合に実行をブロックする可能性があるため、Office JavaScript API の大部分は非同期的に実行するように設計されています。 これにより、アドインOffice応答性と速度が向上します。 このような非同期メソッドを利用するときは、多くの場合、コールバック関数の記述も必要です。
 
-API の最後にあるすべての非同期メソッドの名前。 "Async" (、、 `Document.getSelectedDataAsync` 、 `Binding.getDataAsync` または `Item.loadCustomPropertiesAsync` メソッドなど)。 "Async" メソッドは呼び出されるとすぐに実行され、後続のスクリプトも続けて実行することができます。 "Async" メソッドに渡す任意のコールバック関数は、データまたは要求された操作の準備が整い次第、すぐに実行されます。 コールバック関数の実行は通常、直ちに行われますが、戻るまでに若干の遅延が生じることがあります。
+API 内のすべての非同期メソッドの名前は、"Async" (、 、メソッドなど) `Document.getSelectedDataAsync` `Binding.getDataAsync` で `Item.loadCustomPropertiesAsync` 終わる。 "Async" メソッドは呼び出されるとすぐに実行され、後続のスクリプトも続けて実行することができます。 "Async" メソッドに渡す任意のコールバック関数は、データまたは要求された操作の準備が整い次第、すぐに実行されます。 コールバック関数の実行は通常、直ちに行われますが、戻るまでに若干の遅延が生じることがあります。
 
-次の図は、サーバーベースの Word または Excel で開いているドキュメントでユーザーが選択したデータを読み取る、"Async" メソッドへの呼び出しの実行フローを示しています。 "Async" 呼び出しが行われる時点で、JavaScript 実行スレッドは、追加のクライアント側の処理を自由に実行できます (ただし、図には何も表示されません)。 "Async" メソッドが戻ると、コールバックはスレッドの実行を再開し、アドインはアクセスデータを操作して、その結果を表示することができます。 Word 2013 または Excel 2013 などの Office リッチクライアントアプリケーションを使用する場合、同じ非同期実行パターンが保持されます。
+次の図は、サーバー ベースの Word または Excel で開いているドキュメントでユーザーが選択したデータを読み取る "Async" メソッドへの呼び出しの実行フローを示しています。 "Async" 呼び出しが行われた時点で、JavaScript 実行スレッドは追加のクライアント側処理を自由に実行できます (ただし、図には何も表示されません)。 "Async" メソッドが返されると、コールバックはスレッドでの実行を再開し、アドインはデータにアクセスし、データにアクセスして何かを行い、結果を表示できます。 同じ非同期実行パターンは、Word 2013 や 2013 Officeなど、リッチ クライアント アプリケーションを操作するときに保持Excelします。
 
 *図 1. 非同期プログラミング実行フロー*
 
-![ユーザー、アドインページ、およびアドインをホストしている web アプリケーションサーバーとの間でのコマンド実行の相互作用を示す図](../images/office-addins-asynchronous-programming-flow.png)
+![ユーザー、アドイン ページ、およびアドインをホストする Web アプリ サーバーとの時間の間のコマンド実行の相互作用を示す図。](../images/office-addins-asynchronous-programming-flow.png)
 
 リッチ クライアントと Web クライアントの両方でこの非同期設計をサポートすることは、Office アドイン開発モデルの "write once-run cross-platform (一度書けばどんなプラットフォームも実行できる)" 設計目的の一部です。たとえば、Excel 2013 と Excel Online の両方で実行されるシングル コード ベースのコンテンツ アドインまたは作業ウィンドウ アドインを作成できます。
 
 ## <a name="writing-the-callback-function-for-an-async-method"></a>"Async" メソッドのコールバック関数を記述する
 
-"Async" メソッドにコール _バック_ 引数として渡すコールバック関数は、コールバック関数の実行時にアドインランタイムが [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトへのアクセスを提供するために使用する1つのパラメーターを宣言する必要があります。 次のように記述することができます。
+コールバック引数として "Async" メソッドに渡すコールバック関数は、コールバック関数の実行時にアドイン ランタイムが[AsyncResult](/javascript/api/office/office.asyncresult)オブジェクトへのアクセスを提供するために使用する 1 つのパラメーターを宣言する必要があります。  次のように記述することができます。
 
-- "Async" メソッドの _callback_ パラメーターとして "async" メソッドを呼び出すことで、行内で直接記述して渡す必要がある匿名関数。
+- "Async" メソッドのコールバック パラメーターとして"Async" メソッドへの呼び出しに沿って直接書き込み、渡す必要がある匿名関数。
 
-- "Async" メソッドの _callback_ パラメーターとしてその関数の名前を渡す、名前付き関数。
+- "Async" メソッドのコールバック パラメーターとしてその関数の名前を渡す名前付き関数。
 
 匿名関数は、そのコードを一度だけ使用する場合に便利です。関数には名前がないため、コードの別の部分で参照できないためです。名前付き関数は、複数の "Async" メソッドにコールバック関数を再利用する場合に便利です。
 
 ### <a name="writing-an-anonymous-callback-function"></a>匿名コールバック関数を記述する
 
-次の匿名のコールバック関数は、 `result` コールバックが戻るときに、 [AsyncResult](/javascript/api/office/office.asyncresult#value) プロパティからデータを取得するという名前の単一のパラメーターを宣言します。
+次の匿名コールバック関数は、コールバックが返されたときに `result` [AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティからデータを取得するという名前の単一のパラメーターを宣言します。
 
 ```js
 function (result) {
@@ -46,11 +46,11 @@ function (result) {
 }
 ```
 
-次の例は、メソッドへの完全な "Async" メソッド呼び出しのコンテキストで、この匿名のコールバック関数をインラインで渡す方法を示して `Document.getSelectedDataAsync` います。
+次の例は、完全な "Async" メソッド呼び出しのコンテキストで、この匿名コールバック関数を行に渡す方法を示 `Document.getSelectedDataAsync` しています。
 
-- 最初の _coercionType_ 引数は、 `Office.CoercionType.Text` 選択されているデータをテキストの文字列として返すように指定します。
+- 最初の _coercionType_ 引数 , は、選択したデータを文字列として `Office.CoercionType.Text` 返す値を指定します。
 
-- 2番目の _callback_ 引数は、メソッドにインラインで渡される匿名関数です。 関数が実行されると、 _result_ パラメーターを使用して `value` オブジェクトのプロパティにアクセスし、 `AsyncResult` ドキュメント内のユーザーが選択したデータを表示します。
+- 2 _番目のコールバック_ 引数は、メソッドに行で渡される匿名関数です。 関数を実行すると _、result_ パラメーターを使用してオブジェクトのプロパティにアクセスし、ユーザーが選択したデータをドキュメント `value` `AsyncResult` に表示します。
 
 ```js
 Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, 
@@ -65,13 +65,13 @@ function write(message){
 }
 ```
 
-また、コールバック関数のパラメーターを使用して、オブジェクトの他のプロパティにアクセスすることもでき `AsyncResult` ます。 呼び出しの成功または失敗を判断する場合は [AsyncResult.status](/javascript/api/office/office.asyncresult#status) プロパティを使用します。 呼び出しが失敗した場合は [AsyncResult.error](/javascript/api/office/office.asyncresult#error) プロパティを使用して [Error](/javascript/api/office/office.error) オブジェクトにアクセスし、エラーの詳細を確認できます。
+コールバック関数のパラメーターを使用して、オブジェクトの他のプロパティにアクセス `AsyncResult` することもできます。 呼び出しの成功または失敗を判断する場合は [AsyncResult.status](/javascript/api/office/office.asyncresult#status) プロパティを使用します。 呼び出しが失敗した場合は [AsyncResult.error](/javascript/api/office/office.asyncresult#error) プロパティを使用して [Error](/javascript/api/office/office.error) オブジェクトにアクセスし、エラーの詳細を確認できます。
 
-メソッドの使用法の詳細については `getSelectedDataAsync` 、「 [文書またはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。 
+メソッドの使用の詳細については、「ドキュメントまたはスプレッドシート内のアクティブな選択範囲に対するデータの読み取りおよび書き `getSelectedDataAsync` [込み」を参照してください](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
 ### <a name="writing-a-named-callback-function"></a>名前付き関数を記述する
 
-別の方法として、名前付き関数を記述して、その名前を "Async" メソッドの _callback_ パラメーターに渡すこともできます。 たとえば、前の例は次のように `writeDataCallback` という名前の関数を _callback_ パラメーターとして渡すように書き換えることができます。
+または、名前付き関数を記述し、その名前を "Async" メソッドの _コールバック_ パラメーターに渡します。 たとえば、前の例は次のように `writeDataCallback` という名前の関数を _callback_ パラメーターとして渡すように書き換えることができます。
 
 ```js
 Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, 
@@ -91,27 +91,27 @@ function write(message){
 
 ## <a name="differences-in-whats-returned-to-the-asyncresultvalue-property"></a>AsyncResult.value プロパティに返される内容の違い
 
-`asyncContext` `status` オブジェクトの、、およびプロパティは、 `error` `AsyncResult` すべての "Async" メソッドに渡されたコールバック関数に対して同じ種類の情報を返します。 ただし、プロパティに返される内容は、 `AsyncResult.value` "Async" メソッドの機能によって異なります。
+オブジェクトの 、 、 プロパティは、すべての "Async" メソッドに渡されるコールバック関数に同じ種類の情報 `asyncContext` `status` `error` `AsyncResult` を返します。 ただし、プロパティに返される内容は `AsyncResult.value` 、"Async" メソッドの機能によって異なります。
 
-たとえば、 `addHandlerAsync` メソッド ( [Binding](/javascript/api/office/office.binding)、 [CustomXmlPart](/javascript/api/office/office.customxmlpart)、 [Document](/javascript/api/office/office.document)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)、および [Settings](/javascript/api/office/office.settings) オブジェクトの) を使用して、これらのオブジェクトによって表されるアイテムにイベントハンドラー関数を追加します。 `AsyncResult.value`メソッドに渡すコールバック関数からプロパティにアクセスできます `addHandlerAsync` が、イベントハンドラーを追加するときにデータまたはオブジェクトにアクセスされていないため、 `value` このプロパティにアクセスしようとすると、常に **undefined** が返されます。
+たとえば、これらのオブジェクトで表されるアイテムにイベント ハンドラー関数を追加するには、メソッド `addHandlerAsync` (Binding、CustomXmlPart、Document、RoamingSettings、および[設定](/javascript/api/office/office.settings)オブジェクト) を使用[](/javascript/api/outlook/office.roamingsettings)[](/javascript/api/office/office.document)[](/javascript/api/office/office.binding)[](/javascript/api/office/office.customxmlpart)します。 任意のメソッドに渡すコールバック関数からプロパティにアクセスできますが、イベント ハンドラーを追加するときにデータやオブジェクトがアクセスされていないので、アクセスしようとすると、プロパティは常に未定義を返します。 `AsyncResult.value` `addHandlerAsync` `value` 
 
-一方、メソッドを呼び出すと `Document.getSelectedDataAsync` 、コールバックのプロパティにドキュメントでユーザーが選択したデータが返され `AsyncResult.value` ます。 または、getAllAsync メソッドを呼び出すと、ドキュメント内のすべてのオブジェクトの配列が返されます[。](/javascript/api/office/office.bindings#getallasync-options--callback-) `Binding` また、バインディングを呼び出した場合は、1つのオブジェクトを返し[ます。](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) `Binding`
+一方、メソッドを呼び出した場合は、ドキュメントで選択したユーザーのデータをコールバック `Document.getSelectedDataAsync` `AsyncResult.value` 内のプロパティに返します。 または [、Bindings.getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) メソッドを呼び出した場合は、ドキュメント内のすべてのオブジェクトの配列 `Binding` を返します。 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-)メソッドを呼び出した場合は、1 つのオブジェクトを返 `Binding` します。
 
-メソッドのプロパティに返される内容の詳細につい `AsyncResult.value` `Async` ては、そのメソッドのリファレンストピックの「コールバック値」セクションを参照してください。 メソッドを提供するすべてのオブジェクトの概要については、「 `Async` [AsyncResult](/javascript/api/office/office.asyncresult) object」の下にある表を参照してください。
+メソッドのプロパティに返される内容の説明については、そのメソッドのリファレンス トピックの `AsyncResult.value` `Async` 「Callback value」セクションを参照してください。 メソッドを提供するオブジェクトの概要については `Async` [、AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトのトピックの下部にある表を参照してください。
 
 ## <a name="asynchronous-programming-patterns"></a>非同期プログラミング パターン
 
-Office JavaScript API は、次の2種類の非同期プログラミングパターンをサポートしています。
+JavaScript API Officeは、次の 2 種類の非同期プログラミング パターンをサポートしています。
 
 - 入れ子のコールバックの使用
 - promise パターンの使用
 
 コールバック関数のある非同期プログラミングでは、多くの場合、2 つ以上のコールバック内に 1 つのコールバックで返された結果を入れ子にすることが必要となります。その場合、API のすべての "Async" メソッドからの入れ子のコールバックを使用できます。
 
-入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。 Office JavaScript API は、ネストされたコールバックの代わりに、約束パターンの実装もサポートしています。
+入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。 入れ子になったコールバックの代わりに、javaScript API Office約束パターンの実装もサポートしています。
 
 > [!NOTE]
-> Office JavaScript API の現在のバージョンでは、約束パターンの *組み込み* サポートは、 [Excel スプレッドシートと Word 文書内のバインディング](bind-to-regions-in-a-document-or-spreadsheet.md)のコードに対してのみ機能します。 ただし、コールバックを持つ他の関数を、独自のカスタムの約束を返す関数の内側にラップすることができます。 詳細については、「 [約束を返す関数」の「Common api をラップ](#wrap-common-apis-in-promise-returning-functions)する」を参照してください。
+> Office JavaScript API の現在のバージョンでは、promises パターンの組み込みサポートは、Excel スプレッドシートと Word ドキュメントのバインド[のコードでのみ機能します](bind-to-regions-in-a-document-or-spreadsheet.md)。  ただし、独自のカスタム Promise-returning 関数内にコールバックを持つ他の関数をラップできます。 詳細については [、「Promise-returning 関数で一般的な API をラップする」を参照してください](#wrap-common-apis-in-promise-returning-functions)。
 
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>入れ子のコールバック関数を使用する非同期プログラミング
 
@@ -119,9 +119,9 @@ Office JavaScript API は、次の2種類の非同期プログラミングパタ
 
 次のコード例では、2 つの非同期呼び出しを入れ子にしています。
 
-- 最初に、[Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) メソッドが呼び出され、"MyBinding" という名前のドキュメントのバインドにアクセスします。 `AsyncResult`そのコールバックのパラメーターに返されるオブジェクトは、 `result` 指定された binding オブジェクトへのアクセスをプロパティから提供し `AsyncResult.value` ます。
-- 次に、最初のパラメーターからアクセスされる binding オブジェクトを使用して、 `result` [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) メソッドを呼び出します。
-- 最後に、 `result2` メソッドに渡されたコールバックのパラメーターを使用して、 `Binding.getDataAsync` バインド内のデータを表示します。
+- 最初に、[Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) メソッドが呼び出され、"MyBinding" という名前のドキュメントのバインドにアクセスします。 その `AsyncResult` コールバックのパラメーターに返 `result` されるオブジェクトは、プロパティから指定されたバインド オブジェクトへのアクセスを提供 `AsyncResult.value` します。
+- 次に、最初のパラメーターからアクセスするバインド オブジェクトを使用して `result` [Binding.getDataAsync メソッドを呼び出](/javascript/api/office/office.binding#getdataasync-options--callback-) します。
+- 最後に、メソッド `result2` に渡されるコールバックのパラメーターを使用して、バインド `Binding.getDataAsync` 内のデータを表示します。
 
 ```js
 function readData() {
@@ -138,13 +138,13 @@ function write(message){
 }
 ```
 
-この基本的な入れ子のコールバックパターンは、Office JavaScript API のすべての非同期メソッドに使用できます。
+この基本的な入れ子になったコールバック パターンは、JavaScript API 内のすべての非同期メソッドOffice使用できます。
 
 次のセクションでは、非同期メソッドの入れ子のコールバックで匿名関数または名前付き関数を使用する方法を示します。
 
 #### <a name="using-anonymous-functions-for-nested-callbacks"></a>入れ子のコールバックとして匿名関数を使用する
 
-次の例では、2つの匿名関数をインラインで宣言し、入れ子にされた `getByIdAsync` `getDataAsync` コールバックとしてメソッドに渡します。 関数は単純でインラインのため、実装の意図は明白です。
+次の例では、2 つの匿名関数がインラインで宣言され、and メソッドに入れ子になった `getByIdAsync` `getDataAsync` コールバックとして渡されます。 関数は単純でインラインのため、実装の意図は明白です。
 
 ```js
 Office.context.document.bindings.getByIdAsync('myBinding', function (bindingResult) {
@@ -165,7 +165,7 @@ function write(message){
 
 #### <a name="using-named-functions-for-nested-callbacks"></a>入れ子のコールバックとして名前付き関数を使用する
 
-複雑な実装の場合、名前付き関数を使用すると、読みやすく、保守管理がしやすく、再利用しやすくなります。 次の例では、前のセクションの例にある2つの匿名関数がという名前の関数として書き換えられてい `deleteAllData` `showResult` ます。 これらの名前付き関数は、 `getByIdAsync` `deleteAllDataValuesAsync` 名前によってコールバックとしてメソッドに渡されます。
+複雑な実装の場合、名前付き関数を使用すると、読みやすく、保守管理がしやすく、再利用しやすくなります。 次の例では、前のセクションの例の 2 つの匿名関数が、という名前の関数として書き換 `deleteAllData` えされています `showResult` 。 これらの名前付き関数は、名前によって `getByIdAsync` コールバックとして and `deleteAllDataValuesAsync` メソッドに渡されます。
 
 ```js
 Office.context.document.bindings.getByIdAsync('myBinding', deleteAllData);
@@ -192,15 +192,15 @@ function write(message){
 
 コールバック関数を渡し、その関数が戻るのを待ってから実行を続行する代わりに、promise プログラミング パターンを使用すれば、その意図した結果を表す promise オブジェクトがすぐに返されます。ただし、本物の同期プログラミングとは異なり、実際には Office アドインのランタイム環境が要求を完了できるまでは、約束された結果の履行は実際には延期されます。要求が履行されない状況に対処するために _onError_ ハンドラーが用意されています。
 
-Office JavaScript API は、既存の binding オブジェクトを使用するための約束パターンをサポートするために、 [office の select](/javascript/api/office#office-select-expression--callback-) メソッドを提供します。 メソッドに返される promise オブジェクトは、 `Office.select` [Binding](/javascript/api/office/office.binding) オブジェクトから直接アクセスできる、 [getdataasync](/javascript/api/office/office.binding#getdataasync-options--callback-)、 [setdataasync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)、 [addハンドラ async](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-)、および [removeハンドラ async](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)の4つのメソッドのみをサポートしています。
+JavaScript API Officeは[、Office.select](/javascript/api/office#office-select-expression--callback-)メソッドを使用して、既存のバインド オブジェクトを操作する約束パターンをサポートします。 メソッドに返される promise オブジェクトは、Binding オブジェクトから直接アクセスできる 4 つのメソッド `Office.select` [(getDataAsync、setDataAsync、addHandlerAsync、removeHandlerAsync)](/javascript/api/office/office.binding#getdataasync-options--callback-)のみを[サポート](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)[](/javascript/api/office/office.binding)[](/javascript/api/office/office.binding#setdataasync-data--options--callback-)[](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-)します。
 
 バインドと連携する promise パターンは次のような形式になります。
 
-**Office。 [(**_selectorExpression_、 _onError_**)** ] を選択します。_BindingObjectAsyncMethod_
+**Office.select(**_selectorExpression_, _onError_**).**_BindingObjectAsyncMethod_
 
-_SelectorExpression_ パラメーターは、フォームを取得します。 `"bindings#bindingId"` ここで、 _bindingid_ は、 `id` ドキュメントまたはスプレッドシートで以前に作成したバインドの名前 () です (このコレクションの "addfrom" メソッドのいずれかを使用します `Bindings` `addFromNamedItemAsync` `addFromPromptAsync` `addFromSelectionAsync` )。 たとえば、selector 式は、 `bindings#cities` **id** が ' 都市 ' であるバインドにアクセスすることを指定します。
+_selectorExpression_ パラメーターはフォームを受け取ります。bindingId は、ドキュメントまたはスプレッドシートで以前に作成したバインドの名前 ( ) です (コレクションの `"bindings#bindingId"`  `id` "addFrom" メソッドの 1 つを使用します `Bindings` 。 `addFromNamedItemAsync` `addFromPromptAsync` `addFromSelectionAsync` たとえば、セレクター式は、'cities' の ID を持つバインドにアクセス `bindings#cities` する場合に指定します。 
 
-_OnError_ パラメーターは、 `AsyncResult` 指定された `Error` `select` バインドへのアクセスに失敗した場合に、オブジェクトへのアクセスに使用できる1つのパラメーター型のパラメーターを受け取るエラー処理関数です。 次の例は、_onError_ パラメーターに渡すことができる基本的なエラー処理関数を示しています。
+_onError パラメーターは_、メソッドが指定されたバインドにアクセスできない場合に、オブジェクトにアクセスするために使用できる型の 1 つのパラメーターを受け取るエラー処理 `AsyncResult` `Error` `select` 関数です。 次の例は、_onError_ パラメーターに渡すことができる基本的なエラー処理関数を示しています。
 
 ```js
 function onError(result){
@@ -213,11 +213,11 @@ function write(message){
 }
 ```
 
-_BindingObjectAsyncMethod_ placeholder を `Binding` 、promise オブジェクトでサポートされている4つのオブジェクトのいずれかのメソッド (、、、 `getDataAsync` `setDataAsync` `addHandlerAsync` または `removeHandlerAsync` ) を呼び出して置き換えます。 これらのメソッドの呼び出しでは追加の promise がサポートされません。 これらは[入れ子のコールバック関数パターン](#asynchronous-programming-using-nested-callback-functions)を使用して呼び出す必要があります。
+_BindingObjectAsyncMethod_ プレースホルダーを promise オブジェクトでサポートされている 4 つのオブジェクト メソッドの呼び出しに置き換 `Binding` える: `getDataAsync` `setDataAsync` 、、、 `addHandlerAsync` または `removeHandlerAsync` 。 これらのメソッドの呼び出しでは追加の promise がサポートされません。 これらは[入れ子のコールバック関数パターン](#asynchronous-programming-using-nested-callback-functions)を使用して呼び出す必要があります。
 
-オブジェクトの `Binding` promise が履行された後は、バインドされている場合と同様に、連鎖メソッドの呼び出しで再利用できます (アドインランタイムは、promise を実行しても非同期に再試行することはありません)。 オブジェクトの `Binding` 約束を履行できない場合、アドインランタイムは、次にその非同期メソッドが呼び出されたときに binding オブジェクトへのアクセスを再試行します。
+オブジェクトの約束が満たされた後、チェーンメソッド呼び出しで、バインドである場合と同様に再利用できます (アドイン ランタイムは、約束を満たすのを非同期的に再試行する必要はありません `Binding` )。 オブジェクトの約束を満たすことができない場合、次に非同期メソッドの 1 つが呼び出されると、アドイン ランタイムはバインド オブジェクトへのアクセスを再試行 `Binding` します。
 
-次のコード例では、メソッドを使用して、 `select` "" というバインドを `id` `cities` コレクションから取得 `Bindings` した後、 [addhandler async](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出して、バインドの [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントのイベントハンドラーを追加します。
+次のコード例では、メソッドを使用してコレクションから " とバインドを取得し `select` `id` `cities` `Bindings` [、addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出して、バインドの [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントのイベント ハンドラーを追加します。
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> `Binding`メソッドによって返されるオブジェクトの promise は、 `Office.select` オブジェクトの4つのメソッドへのアクセスのみを提供し `Binding` ます。 オブジェクトの他のメンバーにアクセスする必要がある場合は `Binding` 、その `Document.bindings` オブジェクトを取得するのにプロパティとメソッドのどちらか一方または両方を使用する必要があり `Bindings.getByIdAsync` `Bindings.getAllAsync` `Binding` ます。 たとえば、オブジェクトのプロパティ (、、またはプロパティ) にアクセスする必要がある場合や、MatrixBinding または Tablebinding オブジェクトのプロパティにアクセスする必要がある場合は、 `Binding` `document` `id` `type` またはメソッドを使用して[MatrixBinding](/javascript/api/office/office.matrixbinding) [TableBinding](/javascript/api/office/office.tablebinding) `getByIdAsync` オブジェクトを取得する必要があり `getAllAsync` `Binding` ます。
+> メソッド `Binding` によって返されるオブジェクトの約束 `Office.select` は、オブジェクトの 4 つのメソッドにのみアクセス `Binding` できます。 オブジェクトの他のメンバーにアクセスする必要がある場合は、代わりにプロパティまたはメソッドを使用してオブジェクト `Binding` `Document.bindings` `Bindings.getByIdAsync` `Bindings.getAllAsync` を取得する必要 `Binding` があります。 たとえば、オブジェクトのプロパティ (、 、またはプロパティ) にアクセスする必要がある場合、 `Binding` `document` または `id` MatrixBinding オブジェクトまたは `type` [TableBinding](/javascript/api/office/office.matrixbinding)[](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` `Binding` オブジェクトのプロパティにアクセスする必要がある場合は、or メソッドを使用してオブジェクトを取得する必要があります。
 
 ## <a name="passing-optional-parameters-to-asynchronous-methods"></a>オプションのパラメーターを非同期メソッドに渡す
 
@@ -240,7 +240,7 @@ function addBindingDataChangedEventHandler() {
 
 すべての非同期メソッドは、オプションのパラメーターをサポートします。これらは、1 つまたは複数のオプションのパラメーターが格納された JavaScript Object Notation (JSON) オブジェクトとして渡されます。オプションのパラメーターを格納している JSON オブジェクトは、キーと値のペアの順不同のコレクションで、キーと値は ":" 文字で区切られています。オブジェクト内の各ペアはコンマで区切られ、ペアのセット全体はかっこで囲まれます。キーはパラメーター名で、値はそのパラメーターに渡す値です。
 
-省略可能なパラメーターを含む JSON オブジェクトはインラインで作成するか、オブジェクトを作成 `options` し、それを _options_ パラメーターとして渡すことによって作成できます。
+オプションのパラメーターをインラインで含む JSON オブジェクトを作成するか、オブジェクトを作成して options パラメーター `options` として渡します。 
 
 ### <a name="passing-optional-parameters-inline"></a>オプションのパラメーターをインラインで渡す
 
@@ -251,9 +251,9 @@ function addBindingDataChangedEventHandler() {
 
 ```
 
-この呼び出し構文では、 _coercionType_ および _asynccontext_ という2つのオプションのパラメーターが、かっこで囲まれてインラインで JSON オブジェクトとして定義されています。
+呼び出し元の構文のこの形式では _、coercionType_ と _asyncContext_ という 2 つの省略可能なパラメーターは、中かっこでインラインで囲まれた JSON オブジェクトとして定義されます。
 
-次の例は、 `Document.setSelectedDataAsync` 省略可能なパラメーターをインラインで指定することによってメソッドを呼び出す方法を示しています。
+次の例は、オプションのパラメーターをインラインで `Document.setSelectedDataAsync` 指定してメソッドを呼び出す方法を示しています。
 
 ```js
 Office.context.document.setSelectedDataAsync(
@@ -275,9 +275,9 @@ function write(message){
 
 ### <a name="passing-optional-parameters-in-an-options-object"></a>オプションのパラメーターを options オブジェクトで渡す
 
-または、メソッド呼び出しとは別に、オプションのパラメーターを指定するという名前のオブジェクトを作成し、その `options` `options` オブジェクトを _options_ 引数として渡すことができます。
+または、省略可能なパラメーターをメソッド呼び出しとは別に指定するオブジェクトを作成し、options 引数としてオブジェクト `options` `options` を _渡_ します。
 
-次の例は、オブジェクトを作成する1つの方法を示してい `options` ます。ここで、 `parameter1` `value1` 、、などは、実際のパラメーター名と値のプレースホルダーです。
+次の例は、オブジェクトを作成する方法の 1 つを示しています。ここで、実際のパラメーター名と値のプレースホルダー `options` `parameter1` `value1` です。
 
 ```js
 var options = {
@@ -298,7 +298,7 @@ var options = {
 };
 ```
 
-オブジェクトを作成する別の方法を次に示し `options` ます。
+オブジェクトを作成する別の方法を次に示 `options` します。
 
 ```js
 var options = {};
@@ -308,7 +308,7 @@ options[parameter2] = value2;
 options[parameterN] = valueN;
 ```
 
-パラメーターとパラメーターの指定に使用する場合は、次の例のように `ValueFormat` `FilterType` なります。
+and パラメーターの指定に使用する場合、次の例のようになります `ValueFormat` `FilterType` 。
 
 ```js
 var options = {};
@@ -317,9 +317,9 @@ options["FilterType"] = "all";
 ```
 
 > [!NOTE]
-> いずれかの方法でオブジェクトを作成する場合は `options` 、名前が正しく指定されていれば、任意の順序でオプションのパラメーターを指定できます。
+> オブジェクトを作成する方法を使用する場合は、名前が正しく指定されている限り、任意の順序でオプションのパラメーター `options` を指定できます。
 
-次の例は、 `Document.setSelectedDataAsync` オブジェクトで省略可能なパラメーターを指定してメソッドを呼び出す方法を示して `options` います。
+次の例は、オブジェクトでオプションのパラメーター `Document.setSelectedDataAsync` を指定してメソッドを呼び出す方法を示 `options` しています。
 
 ```js
 var options = {
@@ -343,11 +343,11 @@ function write(message){
 
 どちらのオプションのパラメーター例でも、_callback_ パラメーターが最後のパラメーターとして (インラインのオプションのパラメーターまたは _options_ 引数オブジェクトに続けて) 指定されています。 _callback_ パラメーターは、インライン JSON オブジェクトの中で、または `options` オブジェクト内で指定することもできます。 ただし、 _callback_ パラメーターを渡せるのは _options_ オブジェクト (インラインまたは外部で作成) または最後のパラメーターのどちらか一方であり、両方に渡すことはできません。
 
-## <a name="wrap-common-apis-in-promise-returning-functions"></a>Promise 関数を返す関数の共通 Api をラップする
+## <a name="wrap-common-apis-in-promise-returning-functions"></a>Promise-returning 関数で一般的な API をラップする
 
-Common API (および Outlook API) メソッドは、 [約束](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)を返しません。 そのため、 [待機](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) を使用して、非同期操作が完了するまで実行を一時停止することはできません。 振る舞いが必要な場合は `await` 、明示的に作成した約束でメソッドの呼び出しをラップすることができます。 
+Common API (および Outlook API) メソッドは Promises を[返します](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 したがって、非同期操作が完了するまで [、await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) を使用して実行を一時停止することはできません。 動作が必要 `await` な場合は、明示的に作成された Promise でメソッド呼び出しをラップできます。 
 
-基本的なパターンは、Promise オブジェクトをすぐに返す非同期メソッドを作成し、内部メソッドが完了したときにその Promise オブジェクトを *解決* するか、またはメソッドが失敗した場合はオブジェクトを *拒否* することです。 簡単な例を次に示します。
+基本的なパターンは、Promise オブジェクトをすぐに返す非同期メソッドを作成し、内部メソッドの完了時に Promise オブジェクトを解決するか、メソッドが失敗した場合にオブジェクトを拒否します。 次に簡単な例を示します。
 
 ```javascript
 function getDocumentFilePath() {
@@ -364,12 +364,12 @@ function getDocumentFilePath() {
 }
 ```
 
-このメソッドを待機する必要がある場合は、キーワードを使用するか、 `await` 関数に渡される関数として呼び出すことができ `then` ます。
+このメソッドを待つ必要がある場合は、キーワードを使用するか、関数に渡 `await` す関数として呼び出 `then` すことができます。
 
 > [!NOTE]
-> この手法は、 `run` アプリケーション固有のオブジェクトモデルのいずれかで、メソッドの呼び出しの内部で共通 api のいずれかを呼び出す必要がある場合に特に便利です。 上記の方法で使用されている関数の例については、 [ サンプルの Word アドインの「JavaScript-MDConversion」](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)の「ファイルHome.js を参照してください。
+> この手法は、アプリケーション固有のオブジェクト モデルの 1 つでメソッドの呼び出し内で共通 API の 1 つを呼び出す必要がある場合に特に `run` 便利です。 この方法で使用されている上記の関数の例については、 [ サンプル Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)のファイルHome.jsを参照してください。
 
-次に、TypeScript を使用した例を示します。
+TypeScript を使用する例を次に示します。
 
 ```typescript
 readDocumentFileAsync(): Promise<any> {

@@ -1,25 +1,25 @@
 ---
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
-description: Excel JavaScript API などの組み込みの Excel ワークシート関数を呼び出す方法について説明し `VLOOKUP` `SUM` ます。
+description: JavaScript API などの組み込Excelワークシート関数を呼び出して使用するExcel `VLOOKUP` `SUM` 説明します。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: a72fe01341295fccfee168132d8a252cd22a8332
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408685"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075713"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
 この記事では、Excel JavaScript API を使用して、Excel の組み込みワークシート関数 (`VLOOKUP` や `SUM` など) を呼び出す方法について説明します。 また、Excel JavaScript API を使用して呼び出し可能な Excel の組み込みワークシート関数の完全な一覧も示します。
 
 > [!NOTE]
-> Excel JavaScript API を使用して Excel の*カスタム関数*を作成する方法については、「[Excel でのカスタム関数の作成](custom-functions-overview.md)」を参照してください。
+> Excel JavaScript API を使用して Excel の *カスタム関数* を作成する方法については、「[Excel でのカスタム関数の作成](custom-functions-overview.md)」を参照してください。
 
 ## <a name="calling-a-worksheet-function"></a>ワークシート関数の呼び出し
 
-次のコードスニペットは、ワークシート関数を呼び出す方法を示して `sampleFunction()` います。ここで、は、呼び出す関数の名前および関数に必要な入力パラメーターで置き換える必要があるプレースホルダーです。 `value` `FunctionResult` Worksheet 関数によって返されるオブジェクトのプロパティには、指定された関数の結果が含まれています。 この例に示すように、 `load` `value` オブジェクトを読み取る前にプロパティを指定する必要があり `FunctionResult` ます。 この例では、関数の結果は単にコンソールに書き込まれています。
+次のコード スニペットは、ワークシート関数を呼び出す方法を示しています。ここで、呼び出す関数の名前と、関数に必要な入力パラメーターに置き換える必要がある `sampleFunction()` プレースホルダーを示します。 ワークシート関数によって返されるオブジェクトのプロパティには、指定した `value` `FunctionResult` 関数の結果が含まれる。 この例に示すように、オブジェクトを読み取る前に、オブジェクトの `load` `value` `FunctionResult` プロパティを使用する必要があります。 この例では、関数の結果は単にコンソールに書き込まれます。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +37,7 @@ return context.sync()
 
 次の画像は、各種工具の 3 か月間の販売データを格納する Excel ワークシートのテーブルを示しています。 テーブル内のそれぞれの数値は、特定の期間に特定のツールが販売された単位数を表しています。 この後の各例では、このデータに組み込みワークシート関数を適用する方法を示します。
 
-![11 月、12 月、および 1 月のハンマー、レンチ、およびノコギリの販売データに関する Excel のスクリーンショット](../images/worksheet-functions-chaining-results.jpg)
+![11 月、12 月、Excel月のハンマー、レンチ、およびソーの売上データのスクリーンショット。](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>例 1: 単一の関数
 
@@ -126,7 +126,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 関数</a> | 2 つの数値のビット演算 OR を返します。 |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT 関数</a> | 右に移動数ビット (shift_amount) 移動する数値を返します。 |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR 関数</a> | 2 つの数値のビット演算 "排他的 OR" を返します。 |
-| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">限度.MATH、ECMA_CEILING 関数</a> | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。 |
+| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING。MATH、ECMA_CEILING関数</a> | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。 |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE 関数</a> | 数値を最も近い整数、または基準値に最も近い倍数に切り上げます。数値の符号に関係なく、切り上げます。 |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR 関数</a> | コード番号で指定された文字を返します。 |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST 関数</a> | 累積 β 確率密度関数の値を返します。 |
@@ -185,7 +185,7 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 関数</a> | 証券に対する割引率を返します。 |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 関数</a> | 選択したデータベース レコードの最大値を返します。 |
 | <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 関数</a> | 選択したデータベース レコードの最小値を返します。 |
-| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">ドル関数、USDOLLAR 関数</a> | ドル ($) 通貨書式を使用して、数値を文字列に変換します。 |
+| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">ドル、USDOLLAR 関数</a> | ドル ($) 通貨書式を使用して、数値を文字列に変換します。 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 関数</a> | 分数で表されたドル単位の価格を、小数表示のドル価格に変換します。 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 関数</a> | 小数で表されたドル単位の価格を、分数表示のドル価格に変換します。 |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT 関数</a> | データベース内の、条件に一致するレコードの特定のフィールド値を乗算します。 |
@@ -443,8 +443,8 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 | <a href="https://support.office.com/article/YIELDMAT-function-ba7d1809-0d33-4bcb-96c7-6c56ec62ef6f" target="_blank">YIELDMAT 関数</a> | 満期日に利息が支払われる証券の利回りを返します。 |
 | <a href="https://support.office.com/article/ZTEST-function-d633d5a3-2031-4614-a016-92180ad82bee" target="_blank">Z.TEST 関数</a> | Z 検定の片側確率の値を返します。 |
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
-- [関数クラス (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
-- [Workbook 関数オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
+- [Functions クラス (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
+- [Workbook Functions オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)

@@ -3,12 +3,12 @@ title: Office のホストと API の要件を指定する
 description: アドインが期待Office動作するアプリケーションと API 要件を指定する方法について説明します。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 07f2505dcfb16bf7000dca01a6d600aac9a63fa0
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253355"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075965"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -58,7 +58,7 @@ ms.locfileid: "52253355"
 
 アプリケーションまたは API Officeを指定する場合、考慮すべきいくつかの要因があります。 次の図に、アドインで使用すべき手法の判別方法を示します。
 
-![アプリケーションまたは API の要件を指定するときに、アドインに最適なOfficeを選択する](../images/options-for-office-hosts.png)
+![アプリケーションまたは API の要件を指定する場合は、アドインに最適Officeを選択します。](../images/options-for-office-hosts.png)
 
 - アドインが 1 つのアプリケーションでOffice場合は、マニフェスト `Hosts` で要素を設定します。 詳しくは、「[Hosts 要素を設定する](#set-the-hosts-element)」を参照してください。
 
@@ -84,14 +84,14 @@ ms.locfileid: "52253355"
 |:--------------|:-----------------------------------------------|:-----------------------|
 | データベース      | Access Web アプリ                                | 作業ウィンドウ              |
 | Document      | Word on the web、Windows、Mac、iPad            | 作業ウィンドウ              |
-| Mailbox       | Outlook、Windows、Mac、Android、iOS | メール                   |
+| Mailbox       | Outlook on the web、Windows、Mac、Android、iOS | メール                   |
 | Notebook      | OneNote on the web                             | 作業ウィンドウ、コンテンツ     |
 | Presentation  | PowerPoint on the web、Windows、Mac、iPad      | 作業ウィンドウ、コンテンツ     |
 | Project       | Windows での Project                             | 作業ウィンドウ              |
 | Workbook      | Excel on the web、Windows、Mac、iPad           | 作業ウィンドウ、コンテンツ     |
 
 > [!NOTE]
-> この `Name` 属性は、アドインOffice実行できるクライアント アプリケーションの名前を指定します。 Officeアプリケーションは、さまざまなプラットフォームでサポートされ、デスクトップ、Web ブラウザー、タブレット、およびモバイル デバイスで実行されます。 アドインを実行するために使用するプラットフォームを指定することはできません。 たとえば、指定した場合は、web OutlookとWindowsの両方をアドインの実行 `Mailbox` に使用できます。
+> この `Name` 属性は、アドインOffice実行できるクライアント アプリケーションの名前を指定します。 Officeアプリケーションは、さまざまなプラットフォームでサポートされ、デスクトップ、Web ブラウザー、タブレット、およびモバイル デバイスで実行されます。 アドインを実行するために使用するプラットフォームを指定することはできません。 たとえば、指定した場合 `Mailbox` は、Outlook on the webとWindowsアドインの実行に使用できます。
 
 > [!IMPORTANT]
 > SharePoint で Access Web アプリとデータベースを作成して使用することは推奨されなくなりました。 代わりに、[Microsoft PowerApps](https://powerapps.microsoft.com/) を使用して、コード作成が不要な Web とモバイル デバイス用ビジネス ソリューションをビルドすることをお勧めします。

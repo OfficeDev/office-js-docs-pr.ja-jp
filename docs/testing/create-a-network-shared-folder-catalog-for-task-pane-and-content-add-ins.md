@@ -3,12 +3,12 @@ title: ネットワーク共有Officeテスト用にアドインをサイドロ�
 description: ネットワーク共有からテストするためにOfficeアドインをサイドロードする方法について学習する
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 79ab14ca34530c870d3be4cc962a7e3df358e9bc
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: ec3780146135a4a8a04c6518971605c65ddb0c6d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100279"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077149"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有Officeテスト用にアドインをサイドロードする
 
@@ -42,13 +42,13 @@ ms.locfileid: "52100279"
 
 3. [**プロパティ**] ダイアログ ボックス内で [**共有**] タブを選択し、[**共有**] ボタンを選択します。
 
-    ![[共有] タブと [共有] ボタンが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog.png)
+    ![[共有] タブと [共有] ボタンが強調表示された [フォルダーのプロパティ] ダイアログ。](../images/sideload-windows-properties-dialog.png)
 
 4. [**ネットワーク アクセス**] ダイアログ ウィンドウで自分自身とアドインを共有する相手のユーザーまたはグループを追加します。 最低でも、フォルダーへの **読み取り/書き込み** アクセス許可が必要です。 共有する相手の選択が完了したら、[**共有**] ボタンを選択します。
 
 5. 「**ユーザーのフォルダーは共有されています**」という確認メッセージが表示されたら、フォルダー名のすぐ後に表示される完全なネットワーク パスを書き留めます。 (この記事の次のセクションで説明する通り、[共有フォルダーを信頼できるカタログとして指定する](#specify-the-shared-folder-as-a-trusted-catalog)際に、このネットワーク パスを [**カタログの URL**] として入力する必要があります。) [**完了**] を選択して [**ネットワーク アクセス**] ダイアログ ウィンドウを閉じます。
 
-   ![共有パスが強調表示された [ネットワーク アクセス] ダイアログ](../images/sideload-windows-network-access-dialog.png)
+   ![共有パスが強調表示されたネットワーク アクセス ダイアログ。](../images/sideload-windows-network-access-dialog.png)
 
 6. [**閉じる**] を選択して、[**プロパティ**] ダイアログ ウィンドウを閉じます。
 
@@ -66,13 +66,13 @@ ms.locfileid: "52100279"
 
 5. [**カタログの URL**] ボックスで、先ほど [共有](#share-a-folder)したフォルダーの完全なネットワーク パスを入力します。 フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。
 
-    ![[共有] タブとネットワーク パスが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog-2.png)
+    ![[共有] タブとネットワーク パスが強調表示された [フォルダーのプロパティ] ダイアログ。](../images/sideload-windows-properties-dialog-2.png)
 
 6. [**カタロ URL**] ボックスにフォルダーの完全なネットワーク パスを入力したら、[**カタログの追加**] を選択します。
 
 7. 新しく追加されたアイテムの [**メニューに表示する**] チェック ボックスをオンにし、[**OK**] を選択して [**セキュリティ センター** ] ダイアログ ウィンドウを閉じます。 
 
-    ![カタログが選択されている [セキュリティ センター] ダイアログ](../images/sideload-windows-trust-center-dialog.png)
+    ![カタログが選択された [信頼センター] ダイアログ。](../images/sideload-windows-trust-center-dialog.png)
 
 8. **[OK] ボタンを** 選択して、[オプション]**ダイアログ ウィンドウ** を閉じます。
 
@@ -96,7 +96,7 @@ ms.locfileid: "52100279"
 
 4. `Url` 値を、以前[共有](#share-a-folder)したフォルダーへの完全なネットワーク パスに置き換えます。 (URL の `\` 文字は 2 倍にする必要があります。) フォルダーを共有した際に完全なネットワーク パスを書き留めておかなかった場合は、次のスクリーン ショットに示されるように、フォルダーの [**プロパティ**] ダイアログ ウィンドウから取得できます。
 
-    ![[共有] タブとネットワーク パスが強調表示されているフォルダーの [プロパティ] ダイアログ](../images/sideload-windows-properties-dialog-2.png)
+    ![[共有] タブとネットワーク パスが強調表示された [フォルダーのプロパティ] ダイアログ。](../images/sideload-windows-properties-dialog-2.png)
 
 5. ファイルは、次のようになります。 ファイルを保存します。
 

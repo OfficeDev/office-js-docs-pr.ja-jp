@@ -1,23 +1,23 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
-description: Excel JavaScript API を使用したグラフタスクをデモンストレーションするコードサンプルです。
+description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408587"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075895"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。
-およびオブジェクトがサポートするプロパティとメソッドの完全な一覧につい `Chart` `ChartCollection` ては、「 [Chart オブジェクト (Javascript api for excel)](/javascript/api/excel/excel.chart) 」および「 [CHART Collection オブジェクト (javascript api for excel)](/javascript/api/excel/excel.chartcollection)」を参照してください。
+and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「Chart `Chart` `ChartCollection` Object [(JavaScript API for Excel)」](/javascript/api/excel/excel.chart)および「Chart [Collection Object (JavaScript API for](/javascript/api/excel/excel.chartcollection)Excel)」を参照してください。
 
 ## <a name="create-a-chart"></a>グラフの作成
 
-次のコード サンプルでは、**Sample** というワークシートにグラフを作成します。 グラフは、範囲 **A1:B13** のデータに基づいた**折れ線**グラフです。
+次のコード サンプルでは、**Sample** というワークシートにグラフを作成します。 グラフは、範囲 **A1:B13** のデータに基づいた **折れ線** グラフです。
 
 ```js
 Excel.run(function (context) {
@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 **新しい折れ線グラフ**
 
-![Excel での新しい折れ線グラフ](../images/excel-charts-create-line.png)
+![グラフの新しいExcel。](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>データ系列をグラフに追加する
@@ -59,11 +59,11 @@ Excel.run(function (context) {
 
 **2016 データ系列が追加される前のグラフ**
 
-![2016 データ系列が追加される前の Excel のグラフ](../images/excel-charts-data-series-before.png)
+![2016 Excel前のグラフを追加しました。](../images/excel-charts-data-series-before.png)
 
 **2016 データ系列が追加された後のグラフ**
 
-![2016 データ系列が追加された後の Excel のグラフ](../images/excel-charts-data-series-after.png)
+![2016 Excelデータ系列が追加された後のグラフ。](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>グラフ タイトルを設定する
 
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 **タイトル設定後のグラフ**
 
-![タイトルが付いた Excel のグラフ](../images/excel-charts-title-set.png)
+![グラフにタイトルが含Excel。](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>グラフの軸のプロパティを設定する
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 
 **項目軸のタイトルが設定された後のグラフ**
 
-![軸のタイトルが付いた Excel のグラフ](../images/excel-charts-axis-title-set.png)
+![グラフに軸のタイトルが含Excel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>軸の表示単位を設定する
 
@@ -124,11 +124,11 @@ Excel.run(function (context) {
 
 **数値軸の表示単位が設定された後のグラフ**
 
-![軸の表示単位が付いた Excel のグラフ](../images/excel-charts-axis-display-unit-set.png)
+![グラフに軸表示単位をExcel。](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 グラフの数値軸の目盛線を表示するには、 `chart.axes.valueAxis.majorGridlines.visible` をに設定し `true` ます。
+次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 に設定すると、グラフの値軸の大きなグリッド線を表示 `chart.axes.valueAxis.majorGridlines.visible` できます `true` 。
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +143,7 @@ Excel.run(function (context) {
 
 **枠線が非表示にされたグラフ**
 
-![枠線が非表示にされた Excel のグラフ](../images/excel-charts-gridlines-removed.png)
+![グリッド線が非表示のグラフは、Excel。](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>グラフの近似曲線
 
@@ -165,11 +165,11 @@ Excel.run(function (context) {
 
 **移動平均の近似曲線が記入されたグラフ**
 
-![移動平均の近似曲線が記入された Excel のグラフ](../images/excel-charts-create-trendline.png)
+![グラフ内の移動平均の傾向線Excel。](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
-次のコードサンプルでは、 `Linear` **sample**という名前のワークシートの最初のグラフの最初のデータ系列の近似曲線の種類を設定します。
+次のコード サンプルでは、Sample という名前のワークシートの最初のグラフの最初の系列に対して、傾向線 `Linear` を入力します。 
 
 ```js
 Excel.run(function (context) {
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 
 **線形の近似曲線が記入されたグラフ**
 
-![線形の近似曲線が記入された Excel のグラフ](../images/excel-charts-trendline-linear.png)
+![グラフに線形の傾向線Excel。](../images/excel-charts-trendline-linear.png)
 
 ## <a name="export-a-chart-as-an-image"></a>グラフを画像としてエクスポートする
 
@@ -211,10 +211,10 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 これらのパラメーターにより、画像のサイズが決まります。 画像は常に同じ縦横比でスケーリングされます。 幅と高さのパラメーターにより、スケーリングされた画像の上端または下端が設定されます。 `ImageFittingMode` には 3 つの値があり、次のように動作します。
 
-- `Fill`: 画像の最小の高さまたは幅は、指定された高さまたは幅 (イメージをスケーリングするときに最初に到達した方) です。 これは、自動調整モードが指定されていない場合の既定の動作です。
-- `Fit`: 画像の最大の高さまたは幅は、指定された高さまたは幅 (画像を拡大または縮小するときに最初に到達した方) です。
-- `FitAndCenter`: 画像の最大の高さまたは幅は、指定された高さまたは幅 (画像を拡大または縮小するときに最初に到達した方) です。 結果の画像は、他の寸法について中央に配置されます。
+- `Fill`: イメージの最小の高さまたは幅は、指定された高さまたは幅です (イメージのスケーリング時に最初に到達した方)。 これは、自動調整モードが指定されていない場合の既定の動作です。
+- `Fit`: イメージの最大の高さまたは幅は、指定された高さまたは幅です (イメージのスケーリング時に最初に到達した方)。
+- `FitAndCenter`: イメージの最大の高さまたは幅は、指定された高さまたは幅です (イメージのスケーリング時に最初に到達した方)。 結果の画像は、他の寸法について中央に配置されます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)

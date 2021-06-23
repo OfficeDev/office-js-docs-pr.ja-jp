@@ -3,12 +3,12 @@ title: Windows 10 で開発者ツールを使用してアドインをデバッ�
 description: Windows 10 で Microsoft Edge 開発者ツールを使用してアドインをデバッグする
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 4888ef07f214611666b1c8d8de8dc5a467ca2db1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611233"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076533"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Windows 10 で開発者ツールを使用してアドインをデバッグする
 
@@ -66,7 +66,7 @@ Internet Explorer でアドインを実行している場合は、Windows 10 の
     
    たとえば、**home.html** を選択します。 
     
-   ![バブルのアドインをポイントする IEChooser 画面](../images/choose-target-to-debug.png)
+   ![[IEChooser] 画面で、バブル アドインをポイントします。](../images/choose-target-to-debug.png)
 
 4. F12 ウィンドウで、デバッグするファイルを選択します。
     
@@ -76,13 +76,13 @@ Internet Explorer でアドインを実行している場合は、Windows 10 の
     
    **Home.js** にブレークポイントを設定するために、`textChanged` 関数内の行 144 を選択します。 その行の左側と **[呼び出し履歴] と [ブレークポイント]** (右下) ウィンドウの対応する行に赤い点が表示されます。 ブレークポイントを設定するその他の方法については、「[デバッガーを使用して実行中の JavaScript を検査する](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))」を参照してください。 
     
-   ![home.js ファイルのブレーキポイントを含むデバッガー](../images/debugger-home-js-02.png)
+   ![ファイル内のブレークポイントを持つデバッガーhome.jsします。](../images/debugger-home-js-02.png)
 
 6. アドインを実行して、ブレークポイントをトリガーします。
     
    Word で、[**QR4Office**] ウィンドウの上部にある [URL] テキスト ボックスを選択して、テキストを入力してみます。 デバッガー内の **[呼び出し履歴] と [ブレークポイント]** ウィンドウで、ブレークポイントがトリガーされ、さまざまな情報が表示されることがわかります。 結果を確認するには、デバッガーの更新が必要な場合があります。
     
-   ![トリガーされたブレークポイントの結果を含むデバッガー](../images/debugger-home-js-01.png)
+   ![トリガーされたブレークポイントからの結果を含むデバッガー。](../images/debugger-home-js-01.png)
 
 
 ## <a name="see-also"></a>関連項目

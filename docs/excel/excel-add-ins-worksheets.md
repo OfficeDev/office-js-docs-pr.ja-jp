@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
 ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783513"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075552"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -376,7 +376,7 @@ function formulaChangeHandler(event) {
 
 以下の画像は、並べ替えイベントの `address` プロパティによって返される範囲を示しています。 まず、並べ替えの前のサンプル データを次に示します。
 
-![並べ替えられる前の Excel のテーブル データ](../images/excel-sort-event-before.png)
+![並べ替え前Excelテーブル データ。](../images/excel-sort-event-before.png)
 
 「**Q1**」(「**B**」の値) で上から下への並べ替えが実行される場合、次の強調表示された行が `WorksheetRowSortedEventArgs.address` によって返されます。
 

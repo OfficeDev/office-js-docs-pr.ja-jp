@@ -1,20 +1,20 @@
 ---
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
-description: Project Standard 2013、Project Professional 2013、またはそれ以降のバージョン用の作業ウィンドウアドインを作成するには、Office アドイン用の新しいアプリジェネレーターを使用します。
+description: Project Standard アドイン用の Yeo Office man ジェネレーターを使用して、Project Professional 2013 以降のバージョンの作業ウィンドウ アドインを作成します。
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 4397ad2bd8e44d0962512c2a0905aa1f99a1d411
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: d7a627cceff18d908ab9905efc6c5c08c0cee7c1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159438"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076967"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
-Project Standard 2013、Project Professional 2013、またはそれ以降のバージョン用の作業ウィンドウアドインを作成するには、Office アドイン用のごみ箱のジェネレーターを使用します。この記事では、ファイル共有の HTML ファイルをポイントする XML マニフェストを使用する単純なアドインを作成する方法について説明します。 プロジェクト OM Test サンプルアドインは、アドインのオブジェクトモデルを使用するいくつかの JavaScript 関数をテストします。Project の**セキュリティセンター**を使用して、マニフェストファイルが含まれているファイル共有を登録した後、リボンの [**プロジェクト**] タブから作業ウィンドウアドインを開くことができます。 Project 2013の セキュリティ センターを使用して、マニフェスト ファイルを含むファイル共有を登録した後は、作業ウィンドウ アドインをリボンの [ プロジェクト] タブから開くことができます (この記事のサンプル コードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づくものです)。
+Office アドインの Yeoman ジェネレーターを使用して、Project Standard 2013、Project Professional 2013、または以降のバージョンの作業ウィンドウ アドインを作成できます。この記事では、ファイル共有上の HTML ファイルをポイントする XML マニフェストを使用する単純なアドインを作成する方法について説明します。 OM Test Projectサンプル アドインは、アドインにオブジェクト モデルを使用する JavaScript 関数をテストします。Project の信頼センターを使用してマニフェスト ファイルを含むファイル共有を登録した後、リボンの [Project] タブから作業ウィンドウ **アドインを** 開きます。 Project 2013の セキュリティ センターを使用して、マニフェスト ファイルを含むファイル共有を登録した後は、作業ウィンドウ アドインをリボンの [ プロジェクト] タブから開くことができます (この記事のサンプル コードは、Microsoft Corporation の Arvind Iyer によるテスト アプリケーションに基づくものです)。
 
-プロジェクトでは、他の Office クライアントが使用するものと同じアドインマニフェストスキーマが使用されていますが、同じ JavaScript API の多くが使用されています。 この記事に記載されているアドインの完全なコードは、Project 2013 SDK ダウンロードのサブディレクトリ `Samples\Apps` で提供されています。
+Projectは、他のクライアントが使用するのと同じアドイン マニフェスト スキーマOffice JavaScript API の多くを使用します。 この記事に記載されているアドインの完全なコードは、Project 2013 SDK ダウンロードのサブディレクトリ `Samples\Apps` で提供されています。
 
 Project OM Test サンプル アドインは、タスクの GUID と、アプリケーションおよびアクティブなプロジェクトのプロパティを取得できます。 Project Professional 2013 で SharePoint ライブラリ内にあるプロジェクトを開くと、このアドインでは、そのプロジェクトの URL を表示できます。 
 
@@ -22,11 +22,11 @@ Project OM Test サンプル アドインは、タスクの GUID と、アプリ
 
 サンプルの JSOMCall.html では、インクルードされる office.js ファイルと project-15.js ファイル内の JavaScript 関数を使用しています。 対応するデバッグ ファイル (office.debug.js および project-15.debug.js) を使用すると、これらの関数を検証できます。
 
-Office アドインでの JavaScript の使用の概要については、「 [Office JAVASCRIPT API につい](../develop/understanding-the-javascript-api-for-office.md)て」を参照してください。
+アドインでの JavaScript の使用の概要Office JavaScript API の概要[Office参照してください](../develop/understanding-the-javascript-api-for-office.md)。
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>手順 1. アドイン マニフェスト ファイルを作成するには
 
-ローカルディレクトリに XML ファイルを作成します。 XML ファイルには、 `OfficeApp` [Office アドインの xml マニフェスト](../develop/add-in-manifests.md)で説明されている要素と子の要素が含まれています。 たとえば、次の XML を含む JSOM_SimpleOMCalls.xml という名前のファイルを作成します (要素の GUID 値を変更し `Id` ます)。
+ローカル ディレクトリに XML ファイルを作成します。 XML ファイルには、要素要素と子要素が含まれます。これは、アドイン XML マニフェストのOffice `OfficeApp` [で説明されています](../develop/add-in-manifests.md)。 たとえば、次の XML を含む JSOM_SimpleOMCalls.xmlという名前のファイルを作成します (要素の GUID 値を変更 `Id` します)。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -63,17 +63,17 @@ Office アドインでの JavaScript の使用の概要については、「 [Of
    </OfficeApp>
 ```
 
-Project の場合、 `OfficeApp` 要素には属性値を含める必要があり `xsi:type="TaskPaneApp"` ます。 `Id`要素は GUID です。 この `SourceLocation` 値は、アドインの HTML ソースファイルまたは作業ウィンドウで実行される web アプリケーションのファイル共有パスまたは SHAREPOINT URL である必要があります。 For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
+このProject要素 `OfficeApp` に属性値を含める `xsi:type="TaskPaneApp"` 必要があります。 要素 `Id` は GUID です。 この値は、アドイン HTML ソース ファイルSharePoint作業ウィンドウで実行される Web アプリケーションのファイル共有パスまたは URL である `SourceLocation` 必要があります。 For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
 
 手順 2. では、JSOM_SimpleOMCalls.xml マニフェストが Project テスト アドインのために指定する HTML ファイルの作成方法を示します。この HTML 内で指定されているボタンは、関連する JavaScript 関数を呼び出します。JavaScript 関数は、この HTML ファイル内に追加したり、別の .js ファイル内に配置したりできます。
 
 ## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>手順 2. Project OM Test アドインのソース ファイルを作成するには
 
-1. JSOM_SimpleOMCalls.xml マニフェスト内の要素によって指定された名前で HTML ファイルを作成 `SourceLocation` します。 
+1. マニフェスト内の要素で指定された名前の HTML `SourceLocation` ファイルをJSOM_SimpleOMCalls.xmlします。 
 
-   たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 簡単なテキストエディターを使用してソースファイルを作成することもできますが、Visual Studio Code などのツールを使用すると、特定のドキュメントの種類 (HTML や JavaScript など) で機能し、他の編集支援を持っているため、簡単に使用できます。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
+   たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 単純なテキスト エディターを使用してソース ファイルを作成することもできますが、特定の種類のドキュメント (HTML や JavaScript など) で動作し、その他の編集補助機能を備え、Visual Studio Code などのツールを使用する方が簡単です。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
 
-   JSOMCall.html ファイルでは、AJAX 機能用の共通 MicrosoftAjax.js ファイルと、Office 2013 アプリケーションのアドイン機能の Office.js ファイルが使用されます。
+   JSOMCall.html ファイルは、AJAX 機能に共通の MicrosoftAjax.js ファイルを使用し、Office.js ファイルを 2013 アプリケーションのアドイン機能に使用Officeします。
 
     ```HTML
     <!DOCTYPE html>
@@ -98,7 +98,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     </html>
     ```
 
-   要素は、 `textarea` JavaScript 関数の結果を表示するテキストボックスを指定します。
+   要素 `textarea` は、JavaScript 関数の結果を示すテキスト ボックスを指定します。
 
    > [!NOTE]
    > Project OM Test サンプルを実行するには、Project 2013 SDK ダウンロードに含まれるファイル (Office.js、Project-15.js、および MicrosoftAjax.js) を JSOMCall.html ファイルと同じディレクトリにコピーします。
@@ -107,9 +107,9 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
 
 2. JSOM_Sample.js という名前の JavaScript ファイルを、JSOMCall.html ファイルと同じディレクトリ内に作成します。 
 
-   次のコードは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。 `text`オブジェクトは、 `textarea` HTML ファイル内のコントロールの ID です。
+   次のコードは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。 オブジェクト `text` は、HTML ファイル `textarea` 内のコントロールの ID です。
 
-   ** \_ Projdoc**変数は、オブジェクトを使用して初期化され `ProjectDocument` ます。 コードには、いくつかの簡単なエラー処理関数と、 `getContextValues` アプリケーションコンテキストおよびプロジェクトドキュメントコンテキストのプロパティを取得する関数が含まれています。 Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
+   **\_ projDoc 変数** はオブジェクトで初期化 `ProjectDocument` されます。 このコードには、いくつかの単純なエラー処理関数と、アプリケーション コンテキストとプロジェクト ドキュメント コンテキスト プロパティを取得 `getContextValues` する関数が含まれています。 Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
 
 
     ```js
@@ -172,27 +172,27 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     }
     ```
 
-   Office.debug.js ファイルの関数の詳細については、「 [Office JAVASCRIPT API](../reference/javascript-api-for-office.md)」を参照してください。 たとえば、関数は、開いている `getDocumentUrl` プロジェクトの URL またはファイルパスを取得します。
+   ファイル内の関数の詳細については、「Office.debug.js [JavaScript API Office参照してください](../reference/javascript-api-for-office.md)。 たとえば、関数は `getDocumentUrl` 開いているプロジェクトの URL またはファイル パスを取得します。
 
 3. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
 
-   - たとえば、 `getSelectedDataAsync` は、選択されているデータの書式なしテキストを取得する Office.js の一般的な関数です。 詳細については、[「AsyncResult オブジェクト」](/javascript/api/office/office.asyncresult)を参照してください。
+   - たとえば、選択したデータの書式設定されていないOffice.jsを取得する関数の一 `getSelectedDataAsync` 般的な関数です。 詳細については、[「AsyncResult オブジェクト」](/javascript/api/office/office.asyncresult)を参照してください。
 
-   - `getSelectedTaskAsync`Project-15.js の関数は、選択したタスクの GUID を取得します。 同様に、関数は、選択されている `getSelectedResourceAsync` リソースの GUID を取得します。 タスクまたはリソースが選択されていない状態でこれらの関数を呼び出すと、未定義のエラーが発生します。
+   - この `getSelectedTaskAsync` 関数はProject-15.jsタスクの GUID を取得します。 同様に、 `getSelectedResourceAsync` 関数は選択したリソースの GUID を取得します。 タスクまたはリソースが選択されていない状態でこれらの関数を呼び出すと、未定義のエラーが発生します。
 
-   - 関数は、 `getTaskAsync` タスク名と割り当てられているリソースの名前を取得します。 タスクが同期された SharePoint タスクリスト内にある場合は、 `getTaskAsync` sharepoint リスト内のタスク id を取得します。それ以外の場合、sharepoint タスク id は0になります。
+   - 関数 `getTaskAsync` は、タスク名と割り当てられたリソースの名前を取得します。 タスクが同期されたタスク リストにあるSharePoint、SharePoint リスト内のタスク ID を取得します。それ以外の場合、タスク ID は 0 になりますSharePoint `getTaskAsync` します。
 
      > [!NOTE]
-     > サンプル コードには、デモ用にバグが含まれています。 `taskGuid`が定義されていない場合、 `getTaskAsync` 関数はエラーを返します。 有効なタスク GUID を取得して、別のタスクを選択すると、関数は、 `getTaskAsync` 関数が操作した最新のタスクのデータを取得し `getSelectedTaskAsync` ます。
+     > サンプル コードには、デモ用にバグが含まれています。 未定義 `taskGuid` の場合は、 `getTaskAsync` 関数エラーが発生します。 有効なタスク GUID を取得し、別のタスクを選択すると、関数によって操作された最新のタスクのデータ `getTaskAsync` が取得 `getSelectedTaskAsync` されます。
   
-   - `getTaskFields`、、 `getResourceFields` および `getProjectFields` は、 `getTaskFieldAsync` `getResourceFieldAsync` `getProjectFieldAsync` タスクまたはリソースの指定されたフィールドを取得するために、、、または複数回呼び出すローカル関数です。 project-15.debug.js ファイルでは、 `ProjectTaskFields` 列挙および列挙は、 `ProjectResourceFields` サポートされているフィールドを示します。
+   - `getTaskFields`、、およびタスクまたはリソースの指定されたフィールドを取得する、または複数回呼び出す `getResourceFields` `getProjectFields` `getTaskFieldAsync` `getResourceFieldAsync` `getProjectFieldAsync` ローカル関数です。 このファイルproject-15.debug.js、列挙 `ProjectTaskFields` 体と列挙には、サポートされている `ProjectResourceFields` フィールドが表示されます。
 
-   - 関数は、 `getSelectedViewAsync` ビューの種類 (project-15.debug.js の列挙で定義されて `ProjectViewTypes` います) とビューの名前を取得します。
+   - この `getSelectedViewAsync` 関数は、ビューの種類 (project-15.debug.js の列挙で定義 `ProjectViewTypes` ) とビューの名前を取得します。
 
-   - プロジェクトが SharePoint タスクリストと同期されている場合、関数は、 `getWSSUrlAsync` タスクリストの URL と名前を取得します。 プロジェクトが SharePoint タスクリストと同期されていない場合、 `getWSSUrlAsync` 関数はエラーを返します。
+   - プロジェクトがタスク リストと同期SharePoint、関数は URL とタスク リスト `getWSSUrlAsync` の名前を取得します。 プロジェクトがタスク リストと同期されていない場合、SharePointエラー `getWSSUrlAsync` が発生します。
 
      > [!NOTE]
-     > タスクリストの SharePoint URL と名前を取得するには、 `getProjectFieldAsync` 関数を `WSSUrl` `WSSList` [projectprojectfields](/javascript/api/office/office.projectprojectfields)列挙の and 定数と共に使用することをお勧めします。
+     > タスクリストのSharePoint URL と名前を取得するには `getProjectFieldAsync` `WSSUrl` `WSSList` [、ProjectProjectFields](/javascript/api/office/office.projectprojectfields)列挙の and 定数と一緒に関数を使用することをお勧めします。
 
    次のコードの各関数には、`function (asyncResult)` によって指定されている匿名関数が含まれます。これは、非同期の結果を取得するコールバックです。匿名関数の代わりに、複雑なアドインの保守に役立つ名前付き関数を使用できます。
 
@@ -549,9 +549,9 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     }
     ```
 
-4. JavaScript イベント ハンドラー コールバックおよび関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。 この `manageEventHandlerAsync` 関数は、 _operation_パラメーターに応じて、指定したイベントハンドラーを追加または削除します。 この操作には、またはのいずれかを指定でき `addHandlerAsync` `removeHandlerAsync` ます。
+4. JavaScript イベント ハンドラー コールバックおよび関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。 この `manageEventHandlerAsync` 関数は、operation パラメーターに応じて、指定したイベント ハンドラーを追加または _削除_ します。 操作は、 または `addHandlerAsync` `removeHandlerAsync` です。
 
-   、 `manageTaskEventHandler` 、 `manageResourceEventHandler` および関数は、 `manageViewEventHandler` _docmethod_パラメーターで指定されているように、イベントハンドラーを追加または削除できます。
+   、 `manageTaskEventHandler` `manageResourceEventHandler` 、および `manageViewEventHandler` 関数は _、docMethod_ パラメーターで指定されたイベント ハンドラーを追加または削除できます。
 
     ```js
     // Task selection changed event handler.
@@ -625,7 +625,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     }
     ```
 
-5. この HTML ドキュメントの本文に、テストのために JavaScript 関数を呼び出すボタンを追加します。 たとえば、 `div` 共通の JSOM API の要素で、general 関数を呼び出す入力ボタンを追加し `getSelectedDataAsync` ます。
+5. この HTML ドキュメントの本文に、テストのために JavaScript 関数を呼び出すボタンを追加します。 たとえば、共通 JSOM API の要素に、汎用関数を呼び出す `div` 入力ボタンを追加 `getSelectedDataAsync` します。
 
     ```HTML
     <body>
@@ -640,7 +640,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
         <!--  more code . . .  -->
     ```
 
-6. `div`プロジェクト固有のタスク関数とイベントのボタンを含むセクションを追加し `TaskSelectionChanged` ます。
+6. プロジェクト固有 `div` のタスク関数とイベントのボタンを含むセクションを追加 `TaskSelectionChanged` します。
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -656,7 +656,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     </div>
     ```
 
-7. `div`リソースのメソッドとイベント、ビューのメソッドとイベント、プロジェクトのプロパティ、およびコンテキストのプロパティのためのボタンを含むセクションを追加します。
+7. リソース メソッドとイベント、ビュー メソッドとイベント、プロジェクト プロパティ、コンテキスト プロパティのボタンを含むセクション `div` を追加する
 
     ```HTML
     <div id="ResourceMethods">
@@ -688,7 +688,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     </div>
     ```
 
-8. Button 要素の書式を設定するには、CSS 要素を追加 `style` します。 たとえば、要素の子として次を追加し `head` ます。
+8. ボタン要素の書式を設定するには、CSS 要素を追加 `style` します。 たとえば、要素の子として次のように追加 `head` します。
 
     ```HTML
     <style type="text/css">
@@ -723,44 +723,44 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
 
 4. **[セキュリティ センター]** ダイアログ ボックスの左側のウィンドウで、**[信頼されているアドイン カタログ]** を選択します。
 
-5. Bing 検索アドインのパスが既に追加されている場合は `\\ServerName\AppManifests` 、この手順を省略します。 それ以外の場合は、[**信頼できるアドインカタログ**] ウィンドウで、[ `\\ServerName\AppManifests` カタログの**Url** ] テキストボックスにパスを追加し、[**カタログの追加**] を選択し、既定のソースとしてネットワーク共有を有効にします (図1を参照)。次に、[ **OK]** を選択します。
+5. 検索アドインのパスを既に追加しているBing、この手順 `\\ServerName\AppManifests` をスキップします。 それ以外の場合は、[信頼できるアドイン カタログ] ウィンドウで、[カタログ URL] テキスト ボックスにパスを追加し、[カタログの追加] を選択し、ネットワーク共有を既定のソースとして有効にします (図 1 を参照 `\\ServerName\AppManifests` **)、[OK]** を選択します。
 
    *図 1.アドイン マニフェスト用のネットワーク ファイル共有の追加*
 
-   ![アプリ マニフェスト用のネットワーク ファイル共有の追加](../images/pj15-create-simple-agave-manage-catalogs.png)
+   ![アプリ マニフェストのネットワーク ファイル共有を追加する。](../images/pj15-create-simple-agave-manage-catalogs.png)
 
 6. 新しいアドインを追加するか、ソース コードを変更したら、Project を再起動します。[**プロジェクト**] リボンで、[**Office アドイン**] ドロップダウン メニューの [**すべて表示**] を選択します。[**アドインの挿入**] ダイアログ ボックスで、[**共有フォルダー**] を選択し (図 2 を参照)、[**Project OM Test**]、[**挿入**] の順に選択します。Project OM Test アドインが作業ウィンドウ内で起動します。
 
    *図 2.ファイル共有上にある Project OM Test アドインの開始*
 
-   ![アプリの挿入](../images/pj15-create-simple-agave-start-agave-app.png)
+   ![アプリの挿入。](../images/pj15-create-simple-agave-start-agave-app.png)
 
 7. Project で、少なくとも 2 つのタスクを備えた単純なプロジェクトを作成して保存します。 たとえば、T1 とT2 というタスク、およびM1 というマイルストーンを作成し、タスクの期間と先行タスクを図 3 のように設定します。 リボンの [**プロジェクト**] タブを選択し、タスク T2 の行全体を選択して、作業ウィンドウの [**getSelectedDataAsync**] ボタンを選択します。 図 3 に、 **Project OM Test** アドインのテキスト ボックス内で選択されているデータを示します。
 
    *図 3.Project OM Test アドインの使用*
 
-   ![Project OM Test アプリの使用](../images/pj15-create-simple-agave-project-om-test.png)
+   ![OM テスト アプリProject使用します。](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. 最初のタスクの [**期間**] 列内にあるセルを選択し、**Project OM Test** アドイン内の [**getSelectedDataAsync**] ボタンを選択します。 関数は、 `getSelectedDataAsync` 表示するテキストボックスの値を設定し `2 days` ます。 
+8. 最初のタスクの [**期間**] 列内にあるセルを選択し、**Project OM Test** アドイン内の [**getSelectedDataAsync**] ボタンを選択します。 この `getSelectedDataAsync` 関数は、テキスト ボックスの値を表示に設定します `2 days` 。 
 
-9. 3 つのタスクすべての [**期間**] セル (3 つ) を選択します。 `getSelectedDataAsync`関数は、異なる行で選択されたセルに対して、セミコロンで区切られたテキスト値を返します (例 `2 days;4 days;0 days` :)。
+9. 3 つのタスクすべての [**期間**] セル (3 つ) を選択します。 この関数は、異なる行で選択されたセルのセミコロンで区切られたテキスト値を `getSelectedDataAsync` 返します `2 days;4 days;0 days` 。たとえば、 。
 
-   関数は、 `getSelectedDataAsync` 行内で選択されたセルに対して、コンマで区切られたテキスト値を返します。 たとえば、図 3 ではタスク T2 の行全体が選択されています。 選択すると `getSelectedDataAsync` 、テキストボックスに次のように表示されます。`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   この `getSelectedDataAsync` 関数は、行内で選択されたセルのコンマ区切りテキスト値を返します。 たとえば、図 3 ではタスク T2 の行全体が選択されています。 選択すると、 `getSelectedDataAsync` 次のテキスト ボックスが表示されます。  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
-   [**インジケーター**] 列と [**リソース名**] 列はどちらも空なので、テキスト配列にはこれらの列に対応する空の値が表示されます。 [`<NA>`] セルの値は [****] です。
+   [**インジケーター**] 列と [**リソース名**] 列はどちらも空なので、テキスト配列にはこれらの列に対応する空の値が表示されます。 [`<NA>`] セルの値は [] です。
 
-10. タスク T2 の行の任意のセル、またはタスク T2 の行全体を選択し、[**getSelectedTaskAsync**] を選択します。 テキスト ボックスにタスクの GUID 値が表示されます (例:  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`)。 Project は、 `taskGuid` **プロジェクト OM Test**アドインのグローバル変数にその値を格納します。
+10. タスク T2 の行の任意のセル、またはタスク T2 の行全体を選択し、[**getSelectedTaskAsync**] を選択します。 テキスト ボックスにタスクの GUID 値が表示されます (例:  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`)。 Project OM Test アドインのグローバル変数に値Project `taskGuid` **格納** します。
 
-11. を選び `getTaskAsync` ます。 変数に `taskGuid` タスク T2 の GUID が含まれている場合、テキストボックスにはタスク情報が表示されます。 **ResourceNames** 値は空です。
+11. を選択します `getTaskAsync` 。 変数にタスク T2 の GUID が含まれている場合、 `taskGuid` テキスト ボックスにタスク情報が表示されます。 **ResourceNames** 値は空です。
 
-    2つのローカルリソース R1 andR2 を作成し、それぞれを50% のタスク T2 に割り当て、[ **Gettaskasync** ] をもう一度選択します。 テキスト ボックスの結果にはリソース情報が含まれます。 結果が同期された SharePoint タスク リスト内にある場合は、SharePoint のタスク ID も結果に含まれます。
+    2 つのローカル リソース R1 と R2 を作成し、それぞれ 50% でタスク T2 に割り当て、 **再度 getTaskAsync を選択** します。 テキスト ボックスの結果にはリソース情報が含まれます。 結果が同期された SharePoint タスク リスト内にある場合は、SharePoint のタスク ID も結果に含まれます。
 
     - タスク名: `T2`
     - GUID: `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. [**タスクフィールドの取得**] ボタンを選択します。 関数は、 `getTaskFields` `getTaskfieldAsync` タスク名、インデックス、開始日、期間、優先度、およびタスクメモに対して複数回関数を呼び出します。
+12. [タスク フィールド **の取得] ボタンを** 選択します。 関数は、タスク名、インデックス、開始日、期間、優先度、およびタスクノートに対して関数を複数回 `getTaskFields` `getTaskfieldAsync` 呼び出します。
 
     - 名前: `T2`
     - ID: `2`
@@ -775,16 +775,16 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     - Project Professional にインポートされ、SharePoint に (Project Server を使用せずに) 保存された SharePoint タスク リスト
 
     > [!NOTE]
-    > Project Professional が Windows Server コンピューターにインストールされており、プロジェクトを SharePoint に保存できる場合は、**サーバー マネージャー**を使用して**デスクトップ エクスペリエンス**機能を追加できます。
+    > Project Professional が Windows Server コンピューターにインストールされており、プロジェクトを SharePoint に保存できる場合は、**サーバー マネージャー** を使用して **デスクトップ エクスペリエンス** 機能を追加できます。
 
-    プロジェクトがローカルプロジェクトの場合、または project Server で管理されているプロジェクトを Project Professional を使用して開く場合、この `getWSSUrlAsync` メソッドは未定義のエラーを示します。
+    プロジェクトがローカル プロジェクトの場合、または Project Professional を使用して Project Server によって管理されているプロジェクトを開く場合、メソッドは未定義のエラー `getWSSUrlAsync` を表示します。
 
     - SharePoint URL: `http://ServerName`
     - リスト名: `Test task list`
 
-14. **Taskselectionchanged イベント**セクションの [**追加**] ボタンをクリックします。これは、関数を呼び出し `manageTaskEventHandler` て、タスク選択変更イベントを登録し、 `In onComplete function for addHandlerAsync Status: succeeded` テキストボックスに戻ります。 別のタスクを選択します。テキストボックスに `In task selection changed event handler` は、タスク選択変更イベントのコールバック関数の出力であるが表示されます。 [**削除**] ボタンを選択して、イベントハンドラの登録を解除します。
+14. **TaskSelectionChanged** イベント セクションの [追加] ボタンを選択します。このセクションでは、関数を呼び出してタスク選択変更イベントを登録し、テキスト ボックス `manageTaskEventHandler` `In onComplete function for addHandlerAsync Status: succeeded` に戻します。 別のタスクを選択します。テキスト ボックスには、 `In task selection changed event handler` タスク選択変更イベントのコールバック関数の出力が表示されます。 イベント ハンドラーの **登録を** 解除するには、[削除] ボタンを選択します。
 
-15. リソースに関するメソッドを使用するには、最初に [**リソース シート**]、[**リソース配分状況**]、[**リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。 [ **Getselectedresourceasync** ] を選択して**resourceguid**変数を初期化し、[**リソースフィールドの取得**] を選択して `getResourceFieldAsync` リソースプロパティに対して複数回呼び出します。 また、リソース選択変更のイベント ハンドラーを追加または削除することもできます。
+15. リソースに関するメソッドを使用するには、最初に [**リソース シート**]、[**リソース配分状況**]、[**リソース フォーム**] などのビューを選択し、次にそのビュー内でリソースを選択します。 **resourceGuid 変数を初期化するには、getSelectedResourceAsync** を選択し、[リソース フィールドの取得] を選択して、リソース プロパティを複数回呼び `getResourceFieldAsync` 出します。 また、リソース選択変更のイベント ハンドラーを追加または削除することもできます。
 
     - リソース名: `R1`
     - 原価: `$800.00`
@@ -793,12 +793,12 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     - 実績作業時間 : `0h`
     - 単位: `100%`
 
-16. アクティブなビューの種類と名前を表示するには、[ **Getselectedviewasync** ] を選択します。 また、ビュー選択変更のイベント ハンドラーを追加または削除することもできます。 たとえば、作業中のビューが [**リソースフォーム**] の場合、この `getSelectedViewAsync` 関数はテキストボックスに次のように表示します。
+16. アクティブ **なビューの種類と名前を表示するには、[getSelectedViewAsync]** を選択します。 また、ビュー選択変更のイベント ハンドラーを追加または削除することもできます。 たとえば、リソース フォーム **がアクティブ** ビューの場合、関数 `getSelectedViewAsync` はテキスト ボックスに次の情報を表示します。
 
     - ビューの種類: `6`
     - 名前: `Resource Form`
 
-17. アクティブなプロジェクトのさまざまなプロパティに対して関数を複数回呼び出すには、[**プロジェクトフィールドの取得**] を選択し `getProjectFieldAsync` ます。 プロジェクトを Project Web App から開いた場合、 `getProjectFieldAsync` 関数は Project Web app インスタンスの URL を取得できます。
+17. [Get **Project フィールド] を選択** して、アクティブなプロジェクトの異なるプロパティに対して関数 `getProjectFieldAsync` を複数回呼び出します。 プロジェクトが新しいインスタンスから開Project Web App、関数はインスタンス `getProjectFieldAsync` の URL をProject Web Appできます。
 
     - プロジェクト GUID: `9845922E-DAB4-E111-8AF3-00155D3BA208`
     - 開始: `Tue 6/12/12`
@@ -808,7 +808,7 @@ Project の場合、 `OfficeApp` 要素には属性値を含める必要があ�
     - 記号の位置: `0`
     - Project Web App の URL: `http://servername/pwa`
   
-18. **Office.Context.document**オブジェクトとオブジェクトのプロパティを取得して、ドキュメントのプロパティを取得し、アドインが実行されているアプリケーションを取得するには、[**コンテキスト値の取得**] ボタンを選択し `Office.context.application` ます。 For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
+18. [コンテキスト値 **の** 取得] ボタンを選択すると、Office.Context.doc **ument** オブジェクトとオブジェクトのプロパティを取得して、アドインが実行されているドキュメントとアプリケーションのプロパティを取得 `Office.context.application` します。 For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
 
     - ドキュメントの URL: `<>\Project1`
     - ドキュメント モード: `readWrite`
@@ -903,9 +903,9 @@ Project 2013 SDK のダウンロードには、JSOMCall.html ファイル、JSOM
 
 ## <a name="robust-programming"></a>堅牢なプログラミング
 
-**プロジェクト OM テスト**アドインは、Project-15.js と Office.js ファイルで project 2013 のいくつかの JavaScript 関数を使用する例を示しています。 この例は単なるテスト用で、堅牢なエラー チェックは含まれていません。 たとえば、リソースを選択せずに関数を実行した場合、 `getSelectedResourceAsync` `resourceGuid` 変数は初期化されず、呼び出しが `getResourceFieldAsync` エラーを返します。 実際に運用するアドインでは、特定のエラーをチェックして結果を無視したり、特定の状況に該当しない機能を隠したり、機能を使用する前にビューや有効な項目を選択するようにユーザーに通知したりする必要があります。
+**OM Test アドインProject** は、Project 2013 の JavaScript 関数の一部を Project-15.js および Office.js ファイルで使用する例です。 この例は単なるテスト用で、堅牢なエラー チェックは含まれていません。 たとえば、リソースを選択して関数を実行しない場合、変数は初期化され、エラーを返 `getSelectedResourceAsync` `resourceGuid` `getResourceFieldAsync` す呼び出しが行われます。 実際に運用するアドインでは、特定のエラーをチェックして結果を無視したり、特定の状況に該当しない機能を隠したり、機能を使用する前にビューや有効な項目を選択するようにユーザーに通知したりする必要があります。
 
-簡単な例については、次のコードのエラー出力に、 `actionMessage` 関数のエラーを回避するために実行するアクションを指定する th 変数が含まれてい `getSelectedResourceAsync` ます。
+簡単な例では、次のコードのエラー出力には、関数のエラーを回避するために実行するアクションを指定する th 変数  `actionMessage` が含 `getSelectedResourceAsync` まれています。
 
 ```js
 function logError(errorText) {
@@ -936,7 +936,7 @@ function getSelectedResourceAsync() {
 
 Project 2013 SDK のダウンロードの **HelloProject_OData** サンプルには、JQuery ライブラリを使用してポップアップ エラー メッセージを表示する SurfaceErrors.js ファイルが含まれています。 図 4 に、"toast" 通知のエラー メッセージを示します。
 
-SurfaceErrors.js ファイルの次のコードには、 `throwError` オブジェクトを作成する th 関数が含まれてい `Toast` ます。
+次のコードは、SurfaceErrors.jsオブジェクトを作成  `throwError` する th 関数を含 `Toast` むファイルです。
 
 ```js
 /*
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-この関数を使用するには `throwError` 、JQuery ライブラリと SurfaceErrors.js スクリプトを JSOMCall.html ファイルに含めて、など `throwError` の他の JavaScript 関数で呼び出しを追加し `logMethodError` ます。
+この関数を使用するには、JQuery ライブラリと SurfaceErrors.js スクリプトを JSOMCall.html ファイルに含め、他の JavaScript 関数 (など) に呼び出しを追加 `throwError` `throwError` します `logMethodError` 。
 
 > [!NOTE]
 > アドインを展開する前に、office.js の参照と jQuery の参照をコンテンツ配信ネットワーク (CDN) の参照に変更してください。CDN の参照は最新のバージョンと高いパフォーマンスを提供します。
@@ -1089,13 +1089,13 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 *図 4. SurfaceErrors.js ファイル内の関数は "toast" 通知を表示できます*
 
-![SurfaceError ルーチンを使用したエラーの表示](../images/pj15-create-simple-agave-surface-error.png)
+![SurfaceError ルーチンを使用してエラーを表示する。](../images/pj15-create-simple-agave-surface-error.png)
 
 
 ## <a name="see-also"></a>関連項目
 
 - [Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)
 - [アドイン用の JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API アドイン](../reference/javascript-api-for-office.md)
+- [OfficeJavaScript API アドイン](../reference/javascript-api-for-office.md)
 - [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md)
 - [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)

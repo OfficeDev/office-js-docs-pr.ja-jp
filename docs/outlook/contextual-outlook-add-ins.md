@@ -3,12 +3,12 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c2cfbc1019048bb02186521c2cb81ed832934a8d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608958"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076778"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
@@ -64,7 +64,7 @@ ms.locfileid: "44608958"
 
 **強調表示されているエンティティ (住所) が含まれるテキストの例**
 
-![電子メール内で強調表示されたエンティティを示しています](../images/outlook-detected-entity-highlight.png)
+![メール内の強調表示されたエンティティを表示します。](../images/outlook-detected-entity-highlight.png)
     
 1 つのメッセージ内に複数のエンティティまたはコンテキスト アドインが存在する場合、ユーザー操作の規則がいくつかあります。
 
@@ -78,7 +78,7 @@ ms.locfileid: "44608958"
 
 **カードに表示されるアドインの例**
 
-![カード内のコンテキスト アプリを示しています](../images/outlook-detected-entity-card.png)
+![カードにコンテキスト アプリを表示します。](../images/outlook-detected-entity-card.png)
 
 カードを閉じてアドインを終了するには、カードの外側で任意の場所をクリックします。
 

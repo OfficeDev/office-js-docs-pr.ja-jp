@@ -3,16 +3,16 @@ title: Outlook コンテキスト アドインのアクティブ化のトラブ�
 description: アドインが期待どおりにアクティブにならない場合は、考えられる理由について、次の点を調査してください。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 1420c1383730d6a334c181bc34b014da355d26db
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363969"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076687"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
-Outlook コンテキストアドインのアクティブ化は、アドインマニフェストのアクティブ化ルールに基づいています。現在選択されているアイテムの条件がアドインのアクティブ化ルールを満たしている場合、アプリケーションは、Outlook UI ([新規作成] アドインのアドイン選択ウィンドウで、閲覧アドインのアドインバー) にあるアドインボタンをアクティブにして表示します。ただし、アドインが予想どおりにアクティブにならない場合は、考えられる理由から、次の領域を参照する必要があります。
+Outlookコンテキスト アドインのアクティブ化は、アドイン マニフェストのアクティブ化ルールに基づいて行います。 現在選択されているアイテムの条件がアドインのアクティブ化ルールを満たす場合、アプリケーションは Outlook UI (新規作成アドインのアドイン選択ウィンドウ、読み取りアドインのアドイン バー) でアドイン ボタンをアクティブ化して表示します。 しかし、アドインが想定どおりにアクティブ化されない場合、考えられる理由を探るために次のような点を調べる必要があります。
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>ユーザーのメールボックスが、Exchange 2013 以降のバージョンの Exchange Server 上にあるか?
 
@@ -77,7 +77,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 アドインが新規作成アドインであり、ユーザーがメッセージや会議出席依頼を作成するときにアクティブ化されるものである場合、そのアイテムが IRM によって保護されていないことを確認してください。 ただし、いくつかの例外があります。
 
 1. アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
-1. Windows の Outlook ビルド13229.10000 以降では、IRM で保護されたアイテムでアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、「 [Information Rights Management (IRM) で保護されたアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
+1. Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、「Information [Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)で保護されたアイテムに対するアドインのアクティブ化」を参照してください。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>アドイン マニフェストが適切にインストールされているか? また Outlook にキャッシュ コピーがあるか?
 
@@ -87,10 +87,10 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 %LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-たとえば、ユーザー John の場合、キャッシュは C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF. にある可能性があります。
+たとえば、ユーザー John の場合、キャッシュは C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF にある可能性があります。
 
 > [!IMPORTANT]
-> Windows の Outlook 2013 では、16.0 ではなく15.0 を使用して、場所を次のようにします。
+> 2013 Outlook 2013 Windows、16.0 ではなく 15.0 を使用して場所を次に示します。
 >
 > ```text
 > %LocalAppData%\Microsoft\Office\15.0\WEF
@@ -102,7 +102,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 **図 1.Outlook がマニフェストを適切にキャッシュしたかどうかを確認するステップのフローチャート**
 
-![マニフェストを確認するためのフローチャート](../images/troubleshoot-manifest-flow.png)
+![Flowをチェックするグラフを作成します。](../images/troubleshoot-manifest-flow.png)
 
 以下の手順では、その詳細を説明します。
 
@@ -183,7 +183,7 @@ Office アドイン マニフェスト スキーマ バージョン 1.1 以降�
 
 Outlook リッチ クライアントでは、Outlook on the web とモバイル デバイスで使用されている正規表現エンジンとでは、異なる正規表現エンジンを使用します。Outlook リッチ クライアントでは、Visual Studio の標準テンプレート ライブラリの一部として提供されている C++ 正規表現エンジンを使用します。このエンジンは ECMAScript 5 標準に準拠しています。Outlook on the web およびモバイル デバイスでは、JavaScript の一部である正規表現評価を使用します。これはブラウザーによって提供されるものであり、ECMAScript 5 のスーパーセットをサポートしています。
 
-ほとんどの場合、これらの Outlook クライアントは、アクティブ化ルールの同じ正規表現に対して同じ一致を検出しますが、例外があります。 たとえば、regex に定義済みの文字クラスに基づいたカスタムの文字クラスが含まれている場合、Outlook リッチクライアントは、Outlook on the web およびモバイルデバイスとは異なる結果を返すことがあります。 たとえば、文字クラス内に短縮形の文字クラス `[\d\w]` が含まれていると、結果にばらつきが生じます。 この場合、異なるアプリケーションで異なる結果が発生しないようにするには、代わりにを使用 `(\d|\w)` します。
+ほとんどの場合、これらのクライアントOutlookアクティブ化ルールで同じ正規表現に対して同じ一致が見つからなっていますが、例外があります。 たとえば、正規表現に定義済みの文字クラスに基づくカスタム文字クラスが含まれる場合、Outlook リッチ クライアントは、Outlook on the web やモバイル デバイスとは異なる結果を返す場合があります。 たとえば、文字クラス内に短縮形の文字クラス `[\d\w]` が含まれていると、結果にばらつきが生じます。 この場合、異なるアプリケーションで異なる結果を避けるために、代わりに `(\d|\w)` 使用します。
 
 正規表現を十分にテストしてください。異なる結果が返された場合は、両方のエンジンでの互換性のために正規表現を書き換えます。Outlook リッチ クライアントの評価結果を確認するには、一致させるテキストのサンプルに対して正規表現を適用させる小さな C++ プログラムを作成します。Visual Studio 上で動作する C++ テスト プログラムは、標準テンプレート ライブラリを使用して、同じ正規表現を実行しているときに Outlook リッチ クライアントの動作をシミュレートします。Outlook on the web またはモバイル デバイスでの評価結果を確認するには、お好きな JavaScript 正規表現テスターを使用してください。
 
@@ -236,15 +236,15 @@ Outlook リッチ クライアントでは、Outlook on the web とモバイル 
 
 プロパティ値を確認した後、正規表現評価ツールを使用して、正規表現がその値の中で一致を見つけるかどうかをテストできます。
 
-## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Outlook では、アイテムの本文の一部の正規表現が期待どおりに適用されますか。
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>すべてのOutlookをアイテム本文の部分に適用しますか。
 
-このセクションは、正規表現を使用するすべてのアクティブ化ルールに適用されます。特に、アイテム本文に適用されるもので、サイズが大きく、一致の評価に長い時間がかかる場合があります。 アクティブ化ルールが依存するアイテムのプロパティが期待する値を持っている場合でも、Outlook が item プロパティの値全体に対してすべての正規表現を評価できないことに注意する必要があります。 適切なパフォーマンスを提供し、閲覧アドインによる過剰なリソース使用量を制御するために、Outlook では、実行時にアクティブ化ルールで正規表現を処理する際に次の制限が適用されます。
+このセクションは、正規表現を使用するすべてのアクティブ化ルール (特にアイテム本文に適用されるアクティブ化ルール) に適用されます。サイズが大きく、一致の評価に時間がかかる場合があります。 アクティブ化ルールが依存する item プロパティに必要な値がある場合でも、Outlook は item プロパティの値全体ですべての正規表現を評価できない場合があります。 妥当なパフォーマンスを提供し、読み取りアドインによる過剰なリソース使用量を制御するために、Outlook は実行時にアクティブ化ルールで正規表現を処理する際に次の制限を遵守します。
 
-- 評価されたアイテムの本文のサイズ--Outlook が正規表現を評価するアイテム本文の一部に制限があります。 これらの制限は、Outlook クライアント、フォームファクター、およびアイテム本文の形式によって異なります。 詳細については、「[Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」の表 2 を参照してください。
+- 評価されるアイテム本文のサイズ -- 正規表現を評価するアイテム本文のOutlook制限があります。 これらの制限は、アイテムOutlookのクライアント、フォーム ファクター、および形式によって異なっています。 詳細については、「[Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」の表 2 を参照してください。
 
 - 正規表現の一致の数 - Outlook リッチ クライアント、Outlook on the web、モバイル デバイスは、それぞれ正規表現の一致を 50 件まで返します。これらの一致は一意であり、重複の一致はこの制限にカウントされません。返される一致の順序を想定しないでください。Outlook リッチ クライアントでの順序は Outlook on the web およびモバイル デバイスでの順序と同じとは限りません。アクティブ化ルールに正規表現の一致が多数存在することが予想されるにもかかわらず、一致が見つからない場合は、この制限を超えている可能性があります。
 
-- 正規表現一致の長さ--Outlook アプリケーションによって返される正規表現一致の長さに制限があります。 Outlook には、制限の上に一致するものが含まれていないため、警告メッセージは表示されません。 他の regex 評価ツールまたはスタンドアロンの C++ テスト プログラムで正規表現を実行して、このような制限を超える一致があるかどうかを確認できます。 表 3 にこの制限の要約を示します。 詳細については、「[Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」の表 3 を参照してください。
+- 正規表現一致の長さ -- アプリケーションが返す正規表現の長さに制限Outlookがあります。 Outlook制限を超える一致は含め、警告メッセージは表示されません。 他の regex 評価ツールまたはスタンドアロンの C++ テスト プログラムで正規表現を実行して、このような制限を超える一致があるかどうかを確認できます。 表 3 にこの制限の要約を示します。 詳細については、「[Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」の表 3 を参照してください。
 
     **表 3正規表現の一致の長さ制限**
 

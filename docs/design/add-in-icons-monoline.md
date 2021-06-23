@@ -1,22 +1,22 @@
 ---
-title: アドインのモノOfficeアイコンガイドライン
-description: アドインでモノOfficeアイコンを使用する場合のガイドライン。
+title: アドインのモノOfficeアイコンのガイドライン
+description: アドインで Monoline スタイル アイコンを使用Officeガイドライン。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b74b89b2d622a6166fa111ef92bd8b2fffe79f8a
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: b576cdf8d1816fa052bfdc30fac0950baf95700d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604674"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076498"
 ---
-# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンガイドライン
+# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンのガイドライン
 
-モノライン スタイルのアイコンは、アプリでOfficeされます。 アイコンがサブスクリプション以外の新しいスタイルの Office 2013+ と一致することを希望する場合は、「Office アドインのフレッシュ スタイル アイコン ガイドライン [」を参照してください](add-in-icons-fresh.md)。
+モノライン スタイルのアイコンは、アプリでOfficeされます。 2013+ のサブスクリプション以外の新しいスタイルとアイコンが一致することを希望する場合は、「Office アドインのフレッシュ スタイル[アイコンガイドライン](add-in-icons-fresh.md)」を参照Officeしてください。
 
 ## <a name="office-monoline-visual-style"></a>Officeモノラインの表示スタイル
 
-モノライン スタイルの目的は、アクションと機能をシンプルなビジュアルで伝え、アイコンがすべてのユーザーにアクセス可能で、Windows の他の場所で使用されているスタイルと一致するスタイルを持つ、一貫性があり、明確で、アクセスしやすい図ノグラフィを提供することです。
+モノライン スタイルの目的は、アクションと機能を簡単なビジュアルで通信し、アイコンがすべてのユーザーにアクセス可能で、Windows の他の場所で使用されているスタイルと一致するスタイルを持つ、一貫性のある、明確でアクセスしやすい図ノグラフィを持つという目的です。
 
 次のガイドラインは、既に製品に表示されているアイコンと一致する機能のアイコンを作成するサードパーティの開発者Officeです。
 
@@ -24,7 +24,7 @@ ms.locfileid: "51604674"
 
 - シンプル、クリーン、クリア。
 - 必要な要素のみを含む。
-- Windows アイコン のスタイルにインスパイアされています。
+- アイコンのスタイルWindowsにインスパイアされています。
 - すべてのユーザーがアクセスできます。
 
 #### <a name="conveying-meaning"></a>意味を伝える
@@ -61,13 +61,13 @@ ms.locfileid: "51604674"
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 > [!IMPORTANT]
-> アドインの代表的なアイコンである画像については、「サイズなどの要件については [、AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) および Office 内で効果的なリストを作成する」を参照してください。
+> アドインの代表的なアイコンである画像については、「サイズなどの要件については[、「AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)および Office 内で効果的なリストを作成する」を参照してください。
 
 ### <a name="layout"></a>レイアウト
 
 修飾子付きアイコン レイアウトの例を次に示します。
 
-![右下に修飾子を含むアイコンの図](../images/monolineicon1.png)  ![ベース、修飾子、パディング、および切り抜き線にグリッドの背景と吹き出しが追加された同じアイコンの図](../images/monolineicon2.png)
+![右下に修飾子が付いたアイコンの図。](../images/monolineicon1.png)  ![ベース、修飾子、パディング、およびカットアウトにグリッドの背景と吹き出しが追加された同じアイコンの図。](../images/monolineicon2.png)
 
 #### <a name="elements"></a>要素
 
@@ -75,7 +75,7 @@ ms.locfileid: "51604674"
 
 - **修飾子** ベースをオーバーレイする要素。つまり、通常はアクションまたは状態を表す修飾子です。 追加、変更、または記述子として機能することで、基本要素を変更します。
 
-![呼び出された基本領域と修飾子領域を持つグリッドの図](../images/monolineicon3.png)
+![呼び出された基本領域と修飾子領域を持つグリッドの図。](../images/monolineicon3.png)
 
 ### <a name="construction"></a>建設
 
@@ -83,15 +83,15 @@ ms.locfileid: "51604674"
 
 基本要素は、パディング内のアイコンの中央に配置されます。 完全に中央に配置できない場合は、基部の位置が一番上の位置に誤りがある必要があります。 次の例では、アイコンは完全に中央に表示されます。
 
-![完全に中央に位置するアイコンを示す図](../images/monolineicon4.png)
+![完全に中央に位置するアイコンを示す図。](../images/monolineicon4.png)
 
 次の例では、アイコンが左側にエラーが発生しています。
 
-![左に 1 px のエラーが表示されるアイコンを示す図](../images/monolineicon5.png)
+![左に 1 px のエラーが表示されるアイコンを示す図。](../images/monolineicon5.png)
 
 修飾子は、ほとんどの場合、アイコン キャンバスの右下隅に配置されます。 まれに、修飾子が別のコーナーに配置される場合があります。 たとえば、右下隅の修飾子で基本要素を認識できない場合は、左上隅に配置する必要があります。
 
-![右下に修飾子を持つ 4 つのアイコン、左上に修飾子を持つアイコン 1 つを示す図](../images/monolineicon6.png)
+![右下に修飾子を持つ 4 つのアイコンと、左上に修飾子を持つ 1 つのアイコンを示す図。](../images/monolineicon6.png)
 
 #### <a name="padding"></a>Padding
 
@@ -99,7 +99,7 @@ ms.locfileid: "51604674"
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![0px パディング付き 16 px アイコン](../images/monolineicon7.png)|![1px パディング付き 20 px アイコン](../images/monolineicon8.png)|![1px パディング付き 24 px アイコン](../images/monolineicon9.png)|![2px パディング付き 32 px アイコン](../images/monolineicon10.png)|![2px パディング付き 40 px アイコン](../images/monolineicon11.png)|![3px パディング付き 48 px アイコン](../images/monolineicon12.png)|![4px パディング付き 64 px アイコン](../images/monolineicon13.png)|![5px パディング付き 80 px アイコン](../images/monolineicon14.png)|![6px パディング付き 96 px アイコン](../images/monolineicon15.png)|
+|![0px パディングを含む 16 px アイコン。](../images/monolineicon7.png)|![1px パディングを含む 20 px アイコン。](../images/monolineicon8.png)|![1px パディングを含む 24 px アイコン。](../images/monolineicon9.png)|![2px パディングを含む 32 px アイコン。](../images/monolineicon10.png)|![2px パディングを含む 40 px アイコン。](../images/monolineicon11.png)|![3px パディングを含む 48 px アイコン。](../images/monolineicon12.png)|![4px パディングを含む 64 px アイコン。](../images/monolineicon13.png)|![5px パディングを含む 80 px アイコン。](../images/monolineicon14.png)|![6px パディング付き 96 px アイコン。](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>線の太さ
 
@@ -108,7 +108,7 @@ ms.locfileid: "51604674"
 |アイコンのサイズ:|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**線の太さ:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-|**アイコンの例:**|![16 px アイコン](../images/monolineicon16.png)|![20 px アイコン](../images/monolineicon17.png)|![24 px アイコン](../images/monolineicon18.png)|![32 px アイコン](../images/monolineicon19.png)|![40 px アイコン](../images/monolineicon20.png)|![48 px アイコン](../images/monolineicon21.png)|![64 px アイコン](../images/monolineicon22.png)|![80 px アイコン](../images/monolineicon23.png)|![96 px アイコン](../images/monolineicon24.png)|
+|**アイコンの例:**|![16 px アイコン。](../images/monolineicon16.png)|![20 px アイコン。](../images/monolineicon17.png)|![24 px アイコン。](../images/monolineicon18.png)|![32 px アイコン。](../images/monolineicon19.png)|![40 px アイコン。](../images/monolineicon20.png)|![48 px アイコン。](../images/monolineicon21.png)|![64 px アイコン。](../images/monolineicon22.png)|![80 px アイコン。](../images/monolineicon23.png)|![96 px アイコン。](../images/monolineicon24.png)|
 
 #### <a name="cutouts"></a>カットアウト
 
@@ -116,7 +116,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ギャップのサイズは、そのサイズで使用される線の太さと同じ幅である必要があります。 16 px アイコンを作成する場合、ギャップ幅は 1px で、48 px アイコンの場合、ギャップは 2px になります。 次の使用例は、修飾子と基になるベースの間に 1px の間隔を持つ 32 px アイコンを示しています。
 
-![修飾子と基になるベースの間のギャップが 1px の 32 px アイコン](../images/monolineicon25.png)
+![修飾子と基になるベースの間に 1px の間隔を持つ 32 px アイコン。](../images/monolineicon25.png)
 
 場合によっては、修飾子に対角線または曲線のエッジが存在し、標準のギャップが十分に分離できない場合は、ギャップを 1/2 ピクセル増やします。 これは、線の太さ 16 px、20 px、24 px、および 32 px のアイコンにのみ影響します。
 
@@ -124,11 +124,11 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 モノライン アイコン セットのほとんどのアイコンでは、背景の塗りつぶしが必要です。 ただし、オブジェクトが自然に塗りつぶしを持たないので、塗りつぶしを適用しない場合があります。 次のアイコンは、白い塗りつぶしを持っています。
 
-![白塗りで 5 つのアイコンをコンパイルする](../images/monolineicon26.png)
+![白塗りつぶしの 5 つのアイコンのコンパイル。](../images/monolineicon26.png)
 
 次のアイコンには塗りつぶしはありません。 (中央の穴が塗りつぶされていないのを示す歯車アイコンが含まれています)。
 
-![塗りつぶしがない 5 つのアイコンのコンパイル](../images/monolineicon27.png)
+![塗りつぶしがない 5 つのアイコンのコンパイル。](../images/monolineicon27.png)
 
 ##### <a name="best-practices-for-fills"></a>塗りつぶしのベスト プラクティス
 
@@ -152,9 +152,9 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 #### <a name="palette"></a>パレット
 
-![モノラインの灰色の 4 つの網掛け: スタンドアロンまたはアウトラインの濃い灰色、アウトラインまたはコンテンツの中灰色、背景塗りつぶしの非常に薄い灰色、塗りつぶしの淡い灰色](../images/monoline-grayshades.png)
+![モノラインの灰色の 4 つの網掛け: スタンドアロンまたはアウトラインの濃い灰色、アウトラインまたはコンテンツの中灰色、背景塗りつぶしの非常に薄い灰色、塗りつぶしの淡い灰色。](../images/monoline-grayshades.png)
 
-![モノラインのカラー パレットには、スタンドアロン、アウトライン、塗りつぶし用の青、緑、黄色、赤、紫の濃淡が含まれます。](../images/monoline-colors.png)
+![モノラインのカラー パレットには、スタンドアロン、アウトライン、塗りつぶしの青、緑、黄色、赤、紫の色合いが含まれます。](../images/monoline-colors.png)
 
 #### <a name="how-to-use-color"></a>色の使い方
 
@@ -166,7 +166,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 色の使用例を次に示します。
 
-![境界線または塗りつぶしまたは両方の色を持つ 3 つのアイコンのコンパイル](../images/monolineicon28.png)
+![境界線または塗りつぶしまたは両方の色を持つ 3 つのアイコンのコンパイル。](../images/monolineicon28.png)
 
 最も一般的な状況は、要素が背景塗りつぶしを持つ濃い灰色のスタンドアロンを使用する場合です。
 
@@ -179,19 +179,19 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 装飾ではなく、アイコンの意味を伝えるために色を使用する必要があります。 ユーザーに **対するアクションを強調表示** する必要があります。 色を持つ基本要素に修飾子を追加すると、通常、基本要素は濃い灰色と背景塗りつぶしに変換され、次のセットの左端のアイコンの図のベースに "X" 修飾子が追加されている場合など、修飾子を色の要素にできます。
 
-![色を使用する 5 つのアイコンのコンパイル](../images/monolineicon29.png)
+![色を使用する 5 つのアイコンのコンパイル。](../images/monolineicon29.png)
 
 上記のアウトラインと塗りつぶし以外 **の 1** つの追加の色にアイコンを制限する必要があります。 ただし、比喩に不可欠な場合は、灰色以外の 2 つの追加の色を制限して、より多くの色を使用できます。 まれに、より多くの色が必要な場合は例外があります。 1 つの色を使用するアイコンの良い例を次に示します。
 
-  ![1 つの色を使用する 5 つのアイコンのコンパイル](../images/monolineicon30.png)
+  ![それぞれ 1 色を使用する 5 つのアイコンのコンパイル。](../images/monolineicon30.png)
 
 ただし、次のアイコンでは色が多すぎます。
 
-  ![それぞれ複数の色を使用する 5 つのアイコンのコンパイル](../images/monolineicon31.png)
+  ![それぞれ複数の色を使用する 5 つのアイコンのコンパイル。](../images/monolineicon31.png)
 
 スプレッドシート **のアイコンの** グリッド線など、内部の "コンテンツ" には中灰色を使用します。 追加の内部色は、コンテンツがコントロールの動作を表示する必要がある場合に使用されます。
 
-![中灰色の内部要素を含む 5 つのアイコンのコンパイル](../images/monolineicon32.png)
+![中灰色の内部要素を持つ 5 つのアイコンのコンパイル。](../images/monolineicon32.png)
 
 #### <a name="text-lines"></a>テキスト行
 
@@ -205,7 +205,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ### <a name="icon-file-format"></a>アイコン ファイル形式
 
-最後のアイコンは .png イメージ ファイルとして保存する必要があります。 背景が透明で、奥行きが 32 ビットの PNG 形式を使用します。
+最後のアイコンは、イメージ ファイルとして.pngする必要があります。 背景が透明で、奥行きが 32 ビットの PNG 形式を使用します。
 
 ## <a name="see-also"></a>関連項目
 

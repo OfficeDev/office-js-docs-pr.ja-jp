@@ -1,20 +1,20 @@
 ---
 title: Outlook アドインで既知のエンティティとして文字列を照合する
-description: Office JavaScript API を使用すると、その他の処理のために特定の既知のエンティティに一致する文字列を取得できます。
+description: JavaScript API Office使用すると、特定の既知のエンティティに一致する文字列を取得して、さらに処理できます。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: c3e9e9812118e06285b76970dae49381a73206c2
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 14faef13050572e8fb85cb8bae7226664bc65a7f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609049"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077079"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Outlook アイテム内の文字列を既知のエンティティとして照合する
 
 メッセージおよび会議出席依頼のアイテムを送信する前に、Exchange Server によりアイテムの内容が解析され、件名と本文から、メール アドレス、電話番号、URL など、Exchange にとっての既知のエンティティに似た文字列が特定され、スタンプが付けられます。メッセージと会議出席依頼は、Exchange Server によって、既知のエンティティにスタンプが付けられた状態で、Outlook の受信トレイに配信されます。 
 
-Office JavaScript API を使用すると、特定の既知のエンティティに一致するこれらの文字列を取得して、さらに処理することができます。 さらに、既知のエンティティをアドイン マニフェスト内のルールで指定して、ユーザーがそのエンティティと一致するものを含んだアイテムを表示したときに、Outlook がアドインをアクティブにするように設定することもできます。 その後で、エンティティと一致するものを抽出してアクションを実行することができます。 
+JavaScript API Office使用すると、特定の既知のエンティティと一致するこれらの文字列を取得して、さらに処理することができます。 さらに、既知のエンティティをアドイン マニフェスト内のルールで指定して、ユーザーがそのエンティティと一致するものを含んだアイテムを表示したときに、Outlook がアドインをアクティブにするように設定することもできます。 その後で、エンティティと一致するものを抽出してアクションを実行することができます。 
 
 選択されたメッセージや予定からこれらのインスタンスを特定したり抽出したりできるので便利です。 たとえば、Outlook のアドインとして電話番号の逆引き検索サービスを作成できます。 このアドインは、アイテムの件名や本文から電話番号に似た文字列を抽出して逆引き検索を行い、各電話番号の登録所有者を表示させることができます。
 
@@ -39,7 +39,7 @@ Exchange Server は、ユーザーがメッセージや会議出席依頼アイ�
 |**MeetingSuggestion**|イベントまたは会議の参照。たとえば、Exchange 2013では次のテキストは会議の提案として認識されます。 _明日、昼食会議を開きましょう。_|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクト|
 |**PhoneNumber**|米国の電話番号。次はその例です。_(235) 555-0110_|[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクト|
 |**TaskSuggestion**|電子メールの対応可能な文言。たとえば、_スプレッドシートを更新してください。_|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクト|
-|**Url**|ネットワーク ロケーションと Web リソースの識別子を明記した Web アドレス。 Exchange Server は、web アドレスのアクセスプロトコルを必要とせず、リンクテキストにエンティティのインスタンスとして埋め込まれている Url を認識しません `Url` 。 Exchange Server は、次の例に一致する場合があります。 `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |JavaScript `String` オブジェクト|
+|**Url**|ネットワーク ロケーションと Web リソースの識別子を明記した Web アドレス。 Exchange Serverは、Web アドレスにアクセス プロトコルを必要としないし、リンク テキストに埋め込まれている URL をエンティティのインスタンスとして認識 `Url` しない。 Exchange Serverは、次の例と一致できます。 `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |JavaScript `String` オブジェクト|
 
 <br/>
 
@@ -47,14 +47,14 @@ Exchange Server は、ユーザーがメッセージや会議出席依頼アイ�
 
 **Exchange Server、Outlook、アドインが既知のエンティティをサポートする仕組み**
 
-![メール アプリにおける一般的なエンティティのサポートと使用](../images/well-known-entities-info.png)
+![メール アプリでの既知のエンティティのサポートと使用。](../images/well-known-entities-info.png)
 
 
 ## <a name="permissions-to-extract-entities"></a>エンティティを抽出するためのアクセス許可
 
 JavaScript コードでエンティティを抽出したり、特定の既知のエンティティの存在に基づいてアドインをアクティブ化したりする場合は、アドイン マニフェストで適切なアクセス許可を要求しておきます。
 
-既定の制限付きアクセス許可を指定すると、アドインは、、 `Address` `MeetingSuggestion` またはエンティティを抽出でき `TaskSuggestion` ます。 その他のエンティティを抽出するには、開封済みアイテム、読み取り/書き込みアイテム、またはメールボックスの読み取り/書き込み許可を指定します。 これをマニフェストで実行するには、次の例のように、[Permissions](../reference/manifest/permissions.md) 要素を使い、&mdash;**Restricted**、**ReadItem**、**ReadWriteItem**、または **ReadWriteMailbox**&mdash; の中から適切なアクセス許可を指定します。
+既定の制限付きアクセス許可を指定すると、アドインで `Address` 、 、または `MeetingSuggestion` エンティティを抽出 `TaskSuggestion` できます。 その他のエンティティを抽出するには、開封済みアイテム、読み取り/書き込みアイテム、またはメールボックスの読み取り/書き込み許可を指定します。 これをマニフェストで実行するには、次の例のように、[Permissions](../reference/manifest/permissions.md) 要素を使い、&mdash;**Restricted**、**ReadItem**、**ReadWriteItem**、または **ReadWriteMailbox**&mdash; の中から適切なアクセス許可を指定します。
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -63,15 +63,15 @@ JavaScript コードでエンティティを抽出したり、特定の既知の
 
 ## <a name="retrieving-entities-in-your-add-in"></a>アドインでのエンティティの取得
 
-ユーザーによって表示されているアイテムの件名または本文に、Exchange と Outlook が既知のエンティティとして認識できる文字列が含まれている限り、これらのインスタンスはアドインで使用できます。これらは、既知のエンティティに基づいてアドインがアクティブ化されていない場合でも使用できます。 適切なアクセス許可があれば、またはメソッドを使用して、 `getEntities` `getEntitiesByType` 現在のメッセージまたは予定に存在する既知のエンティティを取得できます。
+ユーザーが表示するアイテムの件名または本文に、Exchange および Outlook が既知のエンティティとして認識できる文字列が含まれている限り、これらのインスタンスはアドインで使用できます。これらは、既知のエンティティに基づいてアドインがアクティブ化されていない場合でも使用できます。 適切なアクセス許可を使用すると、or メソッドを使用して、現在のメッセージまたは予定に存在する既知のエンティティ `getEntities` `getEntitiesByType` を取得できます。
 
-メソッドは、 `getEntities` アイテム内の既知のすべてのエンティティを含む[entities](/javascript/api/outlook/office.entities)オブジェクトの配列を返します。
+この `getEntities` メソッドは、アイテム内のすべての既知のエンティティを含む [Entities](/javascript/api/outlook/office.entities) オブジェクトの配列を返します。
 
-特定の種類のエンティティに関心がある場合は、 `getEntitiesByType` 必要なエンティティだけの配列を返すメソッドを使用します。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 列挙型は抽出可能なすべての既知のエンティティの種類を表します。
+特定の種類のエンティティに興味がある場合は、必要なエンティティの配列のみを返すメソッド `getEntitiesByType` を使用します。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 列挙型は抽出可能なすべての既知のエンティティの種類を表します。
 
-を呼び出した後 `getEntities` 、オブジェクトの対応するプロパティを使用して、 `Entities` エンティティ型のインスタンスの配列を取得できます。 エンティティの型により、配列内のインスタンスは単なる文字列であることも、特定のオブジェクトにマップできることもあります。 
+呼び出した後、オブジェクトの対応するプロパティを使用して、エンティティの種類のインスタンスの `getEntities` `Entities` 配列を取得できます。 エンティティの型により、配列内のインスタンスは単なる文字列であることも、特定のオブジェクトにマップできることもあります。 
 
-たとえば、前出の図のように、アイテムのアドレスを取得するには、`getEntities().addresses[]` により返される配列にアクセスします。 この `Entities.addresses` プロパティは、Outlook が郵送先住所として認識する文字列の配列を返します。 同様に、 `Entities.contacts` プロパティは `Contact` Outlook が連絡先情報として認識するオブジェクトの配列を返します。 表 1 に、サポートされる各エンティティのインスタンスのオブジェクト型を示します。
+たとえば、前出の図のように、アイテムのアドレスを取得するには、`getEntities().addresses[]` により返される配列にアクセスします。 この `Entities.addresses` プロパティは、郵便番号として認識Outlook文字列の配列を返します。 同様に、 `Entities.contacts` このプロパティは、連絡先情報として認識Outlook `Contact` オブジェクトの配列を返します。 表 1 に、サポートされる各エンティティのインスタンスのオブジェクト型を示します。
 
 以下の例では、メッセージ内で見つかった住所を取得する方法を示します。
 
@@ -88,11 +88,11 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 ## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>エンティティの存在に基づくアドインのアクティブ化
 
-既知のエンティティを利用するもう 1 つの方法は、現在表示されているアイテムの件名または本文に 1 つまたは複数の種類のエンティティが存在するかどうかに基づいて Outlook にアドインをアクティブ化させる方法です。 そのためには `ItemHasKnownEntity` 、アドインマニフェストでルールを指定します。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype)の単純型は、ルールによってサポートされる既知のエンティティのさまざまな種類を表し `ItemHasKnownEntity` ます。 アドインがアクティブ化されたら、前のセクション「 [アドインでのエンティティの取得](#retrieving-entities-in-your-add-in)」で説明したように、目的のエンティティのインスタンスを取得することもできます。
+既知のエンティティを利用するもう 1 つの方法は、現在表示されているアイテムの件名または本文に 1 つまたは複数の種類のエンティティが存在するかどうかに基づいて Outlook にアドインをアクティブ化させる方法です。 これを行うには、アドイン マニフェスト `ItemHasKnownEntity` でルールを指定します。 [EntityType 単純](/javascript/api/outlook/office.mailboxenums.entitytype)型は、ルールでサポートされる既知のエンティティの種類を表 `ItemHasKnownEntity` します。 アドインがアクティブ化されたら、前のセクション「 [アドインでのエンティティの取得](#retrieving-entities-in-your-add-in)」で説明したように、目的のエンティティのインスタンスを取得することもできます。
 
-必要に応じ `ItemHasKnownEntity` て、エンティティのインスタンスをさらにフィルター処理し、エンティティのインスタンスのサブセットに対してのみ Outlook がアドインをアクティブ化するように、ルール内で正規表現を適用することができます。 たとえば、"98" で始まるワシントン州の郵便番号を含むメッセージの中の街路住所エンティティを検出するフィルターを指定できます。 エンティティインスタンスにフィルターを適用するには、 `RegExFilter` `FilterName` `Rule` [itemhasknownentity](../reference/manifest/rule.md#itemhasknownentity-rule)型の要素で属性と属性を使用します。
+必要に応じて、ルールに正規表現を適用して、エンティティのインスタンスをさらにフィルター処理し、Outlook がエンティティのインスタンスのサブセットでのみアドインをアクティブ化できます `ItemHasKnownEntity` 。 たとえば、"98" で始まるワシントン州の郵便番号を含むメッセージの中の街路住所エンティティを検出するフィルターを指定できます。 エンティティ インスタンスにフィルターを適用するには `RegExFilter` `FilterName` `Rule` [、ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 型の要素の and 属性を使用します。
 
-他のアクティブ化ルールと同様に、複数のルールを指定してアドインのルール コレクションを作成できます。 次の例では、 `ItemIs` ルールとルールという2つのルールに "AND" 演算を適用します。 `ItemHasKnownEntity` このルール コレクションにより、現在のアイテムがメッセージである場合に、Outlook がそのアイテムの件名または本文から住所を認識すると、アドインがアクティブ化されます。
+他のアクティブ化ルールと同様に、複数のルールを指定してアドインのルール コレクションを作成できます。 次の例では、ルールとルールの 2 つのルールに "AND" `ItemIs` 操作を適用 `ItemHasKnownEntity` します。 このルール コレクションにより、現在のアイテムがメッセージである場合に、Outlook がそのアイテムの件名または本文から住所を認識すると、アドインがアクティブ化されます。
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -103,7 +103,7 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 <br/>
 
-次の例では、現在のアイテムを使用して、 `getEntitiesByType` `addresses` 前のルールコレクションの結果に変数を設定しています。
+次の使用例は `getEntitiesByType` 、現在のアイテムを使用して、前のルール コレクションの結果に変数 `addresses` を設定します。
 
 ```js
 var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnums.EntityType.Address);
@@ -111,7 +111,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-次の `ItemHasKnownEntity` ルール例では、現在のアイテムの件名または本文に url がある場合にアドインをアクティブにします。また、url には文字列の大文字と小文字に関係なく文字列 "youtube" が含まれています。
+次のルール例は、現在のアイテムの件名または本文に URL が含まれている場合は常にアドインをアクティブ化し、URL には文字列の場合に関係なく、"youtube" という文字列が含 `ItemHasKnownEntity` まれます。
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" 
@@ -123,7 +123,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-次の例では、現在の項目を使用して、 `getFilteredEntitiesByName(name)` `videos` 前の規則の正規表現に一致する結果の配列を取得する変数を設定して `ItemHasKnownEntity` います。
+次の使用例は、現在のアイテムを使用して変数を設定し、前のルールの正規表現に一致する結果の配列 `getFilteredEntitiesByName(name)` `videos` を取得 `ItemHasKnownEntity` します。
 
 ```js
 var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
@@ -132,28 +132,28 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>既知のエンティティを使用するためのヒント
 
-アドインで既知のエンティティを使用する場合に知っておくべきいくつかの事実と制限があります。 以下は、ユーザーがルールを使用しているかどうかにかかわらず、既知のエンティティと一致するアイテムを読み取っている場合に、アドインがアクティブ化されるまでの間に適用され `ItemHasKnownEntity` ます。
+アドインで既知のエンティティを使用する場合に知っておくべきいくつかの事実と制限があります。 以下は、ルールを使用するかどうかに関係なく、ユーザーが既知のエンティティの一致を含むアイテムを読み取っているときにアドインがアクティブ化されている限り適用 `ItemHasKnownEntity` されます。
 
 
 - 文字列が英語の場合にのみ、既知のエンティティである文字列を抽出できます。
     
-- アイテム本文の最初の 2,000 文字から既知のエンティティを抽出できます。2,000 を超える文字からは抽出できません。 このサイズ制限により機能とパフォーマンスのニーズのバランスが維持されるため、サイズの大きなメッセージと予定の中から既知のエンティティのインスタンスの解析と特定をしても、Exchange Server と Outlook は停止しません。 この制限は、アドインがルールを指定するかどうかには依存し `ItemHasKnownEntity` ません。 アドインでそのようなルールを使用する場合には、Outlook リッチ クライアントに対する以下の 2 番目の項目のルール処理制限にも注意してください。
+- アイテム本文の最初の 2,000 文字から既知のエンティティを抽出できます。2,000 を超える文字からは抽出できません。 このサイズ制限により機能とパフォーマンスのニーズのバランスが維持されるため、サイズの大きなメッセージと予定の中から既知のエンティティのインスタンスの解析と特定をしても、Exchange Server と Outlook は停止しません。 この制限は、アドインがルールを指定するかどうかに依存しない点に注意 `ItemHasKnownEntity` してください。 アドインでそのようなルールを使用する場合には、Outlook リッチ クライアントに対する以下の 2 番目の項目のルール処理制限にも注意してください。
     
 - メールボックスの所有者以外の誰かが計画した会議である予定からエンティティを抽出できます。会議ではないカレンダー アイテムやメールボックスの所有者が計画した会議である予定からエンティティを抽出することはできません。
     
-- 種類のエンティティは、 `MeetingSuggestion` メッセージからのみ抽出できます。予定については抽出できません。
+- 種類のエンティティはメッセージのみから抽出できますが `MeetingSuggestion` 、予定は抽出しません。
     
-- アイテム本文に明示的に存在する URL を抽出することはできますが、HTML のアイテム本文のハイパーリンク テキストに埋め込まれている URL を抽出することはできません。 代わりに、ルールを使用して `ItemHasRegularExpressionMatch` 明示的な url と埋め込み url の両方を取得することを検討してください。 `BodyAsHTML` _PropertyName_として指定し、 _RegExValue_として url と一致する正規表現を指定します。
+- アイテム本文に明示的に存在する URL を抽出することはできますが、HTML のアイテム本文のハイパーリンク テキストに埋め込まれている URL を抽出することはできません。 明示的な URL と埋め込み URL の両方を取得するには、代わりにルール `ItemHasRegularExpressionMatch` を使用してください。 `BodyAsHTML`PropertyName _として指定し_、URL と一致する正規表現を _RegExValue として指定します_。
     
 - [送信済みアイテム] フォルダーのアイテムからエンティティを抽出することはできません。
     
 また、 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用する場合には以下の動作が適用され、本来 (すなわち、その動作が適用されなけば) アドインが有効化されるはずであるシナリオに影響する可能性があります。
 
-- ルールを使用する場合 `ItemHasKnownEntity` 、マニフェストで指定されている既定のロケールに関係なく、Outlook は英語のエンティティ文字列だけを照合します。
+- ルールを使用する場合、マニフェストOutlook既定のロケールに関係なく、エンティティ文字列が英語でのみ一致する必要 `ItemHasKnownEntity` があります。
     
-- アドインが Outlook リッチクライアントで実行されている場合は、Outlook が `ItemHasKnownEntity` アイテム本文の最初のメガバイトにルールを適用し、その制限を超えて本文の残りの部分には適用しないことを想定しています。
+- アドインが Outlook リッチ クライアントで実行されている場合は、Outlook がアイテム本文の最初のメガバイトにルールを適用し、その制限を超える残りの本文には適用されないと予想します。 `ItemHasKnownEntity`
     
-- [ `ItemHasKnownEntity` 送信済みアイテム] フォルダー内のアイテムに対してアドインをアクティブにするためにルールを使用することはできません。
+- ルールを使用して、[送信されたアイテム] フォルダー内のアイテムのアドイン `ItemHasKnownEntity` をアクティブ化することはできません。
     
 
 ## <a name="see-also"></a>関連項目

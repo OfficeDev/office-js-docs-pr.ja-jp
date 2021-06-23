@@ -1,33 +1,33 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
-description: Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントで提供される予定です。
+description: Outlookモバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、Gmail アカウントにサポートが近日公開されます。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 586a473e1036e8480f395da49011f540d87e1b5f
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270708"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076736"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
-Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、サポートは近日 Gmail アカウントで提供される予定です。
+Outlookモバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、Gmail アカウントにサポートが近日公開されます。
 
 **Outlook on iOS の作業ウィンドウの例**
 
-![Outlook on iOS の作業ウィンドウのスクリーンショット](../images/outlook-mobile-addin-taskpane.png)
+![iOS 上の作業ウィンドウのOutlookスクリーンショット。](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Outlook on Android の作業ウィンドウの例**
 
-![Outlook on Android の作業ウィンドウのスクリーンショット](../images/outlook-mobile-addin-taskpane-android.png)
+![Android 上の作業ウィンドウのOutlookスクリーンショット。](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> アドインは、モバイル ブラウザーの最新バージョンの Outlook では機能しません。 詳細については、モバイル [ブラウザー上の Outlook がアップグレード中を参照してください](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)。
+> アドインは、モバイル ブラウザーの最新バージョンOutlook機能しません。 詳細については、「モバイル ブラウザー [Outlookアップグレード中」を参照してください](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)。
 
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 
@@ -35,7 +35,7 @@ Outlook モバイル アドインは、すべての Microsoft 365 ビジネス �
   - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠 **していなければなりません**。
   - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である **必要** があります。
 
-- 一般に、現時点ではメッセージ読み取りモードだけがサポートされています。 つまり、 `MobileMessageReadCommandSurface` マニフェストのモバイル [セクションで](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 宣言する必要がある ExtensionPoint は 1 つのみです。 ただし、オンライン会議プロバイダー統合アドインでは、代わりに [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)拡張点を宣言する予定オーガナイザー モードがサポートされています。 このシナリオ [の詳細については、オンライン](online-meeting.md) 会議プロバイダー向け Outlook モバイル アドインの作成に関する記事を参照してください。
+- 一般に、現時点ではメッセージ読み取りモードだけがサポートされます。 つまり、マニフェストのモバイル セクションで宣言する必要がある唯一の `MobileMessageReadCommandSurface` [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) です。 ただし、予定オーガナイザー モードは [、MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)拡張ポイントを宣言するオンライン会議プロバイダー統合アドインでサポートされています。 このシナリオ[の詳細についてはOutlook](online-meeting.md)会議プロバイダーのモバイル アドインの作成に関する記事を参照してください。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 
@@ -55,13 +55,13 @@ Outlook Mobile に対して適切なシナリオの例を次に示します。
 
 **iOS で電子メール メッセージから Trello カードを作成するユーザーの操作の例**
 
-![iOS の Outlook Mobile アドインを使用したユーザーの操作を示すアニメーション GIF](../images/outlook-mobile-addin-interaction.gif)
+![iOS 上のモバイル アドインOutlookユーザーの操作を示すアニメーション GIF。](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
 **Android で電子メール メッセージから Trello カードを作成するユーザーの操作の例**
 
-![Android の Outlook Mobile アドインを使用したユーザーの操作を示すアニメーション GIF](../images/outlook-mobile-addin-interaction-android.gif)
+![Android 上のモバイル アドインOutlook操作を示すアニメーション GIF。](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>モバイル上でのアドインのテスト
 
@@ -69,7 +69,7 @@ Outlook Mobile でアドインをテストするために、O365 や Outlook.com
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
-モバイルでのトラブルシューティングは、以前のツールを使用していない可能性があります。 ただし、iOS でのトラブルシューティングの 1 つのオプションは、Fiddler を使用する方法 [です (iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)デバイスでの使用に関するこのチュートリアルを参照してください)。
+モバイルでのトラブルシューティングは、使い慣らされたツールを使用していない可能性があるから、難しい場合があります。 ただし、iOS でのトラブルシューティングの 1 つの方法は、Fiddler を使用する方法です (iOS デバイスでの使用に関するこのチュートリアル [を参照してください](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices))。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得する
-description: Excel JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得する方法について説明します。
+title: JavaScript API を使用して範囲の値、テキスト、または数式を設定Excel取得する
+description: JavaScript API の Excelを使用して、範囲の値、テキスト、または数式を設定および取得する方法について説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad6e58c6e9fe3246d23d6ef1dd298fc6c18167a2
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652905"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075748"
 ---
-# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得する
+# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲の値、テキスト、または数式を設定Excel取得する
 
-この記事では、Excel JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得するコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得するExcelします。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -39,11 +39,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-value-is-updated"></a>セルの値が更新される前のデータ
 
-![セルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
+![セル値Excel前のデータ。](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-value-is-updated"></a>セルの値が更新された後のデータ
 
-![セルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-value.png)
+![セルのExcel後のデータ。](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>複数のセルの範囲の値を設定する
 
@@ -67,11 +67,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>複数のセルの値が更新される前のデータ
 
-![複数のセルの値が更新される前の Excel のデータ](../images/excel-ranges-set-start.png)
+![セル値Excel前のデータ。](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>複数のセルの値が更新された後のデータ
 
-![複数のセルの値が更新された後の Excel のデータ](../images/excel-ranges-set-cell-values.png)
+![セルのExcel後のデータ。](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>1 つのセルの数式を設定する
 
@@ -91,11 +91,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formula-is-set"></a>セルの数式が設定される前のデータ
 
-![セルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
+![セル式Excel前のデータ。](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formula-is-set"></a>セルの数式が設定された後のデータ
 
-![セルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formula.png)
+![セル数式Excel後のデータ。](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>セルの範囲の数式を設定する
 
@@ -122,11 +122,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formulas-are-set"></a>複数のセルの数式が設定される前のデータ
 
-![複数のセルの数式が設定される前の Excel のデータ](../images/excel-ranges-start-set-formula.png)
+![セル数式がExcel前のデータ。](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formulas-are-set"></a>複数のセルの数式が設定された後のデータ
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
+![セル数式Excel後のデータ。](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>値、テキスト、または数式を取得する
 
@@ -151,7 +151,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
+![セル数式Excel後のデータ。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (上記のコード サンプルによりコンソールに記録される)
 
@@ -209,7 +209,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
+![セル数式Excel後のデータ。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (上記のコード サンプルによりコンソールに記録される)
 
@@ -267,7 +267,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>範囲内のデータ (列 E の値は数式の結果)
 
-![複数のセルの数式が設定された後の Excel のデータ](../images/excel-ranges-set-formulas.png)
+![セル数式Excel後のデータ。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (上記のコード サンプルによりコンソールに記録される)
 
@@ -309,6 +309,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して範囲を設定および取得する](excel-add-ins-ranges-set-get.md)
-- [Excel JavaScript API を使用して範囲の形式を設定する](excel-add-ins-ranges-set-format.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して範囲を設定Excel取得する](excel-add-ins-ranges-set-get.md)
+- [JavaScript API を使用して範囲Excel設定する](excel-add-ins-ranges-set-format.md)

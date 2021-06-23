@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して範囲の形式を設定する
-description: Excel JavaScript API を使用して範囲の形式を設定する方法について説明します。
+title: JavaScript API を使用して範囲のExcel設定する
+description: JavaScript API の Excelを使用して範囲の形式を設定する方法について説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdd78ea69fc38cbefb9d240dbc61554891c73c21
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: a09d3b4d79584e186c0be37d4a30954c4d4d0086
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652910"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075727"
 ---
-# <a name="set-range-format-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲の形式を設定する
+# <a name="set-range-format-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲Excel設定する
 
-この記事では、Excel JavaScript API を使用して範囲内のセルのフォントの色、塗りつぶしの色、および数値の形式を設定するコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲のセルのフォントの色、塗りつぶしの色、および数値Excelします。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -35,11 +35,11 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>フォントの色と塗りつぶしの色を設定する前の範囲内のデータ
 
-![書式設定する前の Excel のデータ](../images/excel-ranges-format-before.png)
+![書式が設定Excel前のデータ。](../images/excel-ranges-format-before.png)
 
 ### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>フォントの色と塗りつぶしの色を設定した後の範囲内のデータ
 
-![書式設定した後の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
+![書式が設定Excel後のデータ。](../images/excel-ranges-format-font-and-fill.png)
 
 ## <a name="set-number-format"></a>数値の書式を設定する
 
@@ -64,15 +64,15 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-before-number-format-is-set"></a>数値の書式を設定する前の範囲内のデータ
 
-![数値形式が設定される前の Excel のデータ](../images/excel-ranges-format-font-and-fill.png)
+![数値の形式Excel前のデータ。](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="data-in-range-after-number-format-is-set"></a>数値の書式を設定した後の範囲内のデータ
 
-![数値形式が設定された後の Excel のデータ](../images/excel-ranges-format-numbers.png)
+![数値の形式Excel後のデータ。](../images/excel-ranges-format-numbers.png)
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して範囲を設定および取得する](excel-add-ins-ranges-set-get.md)
-- [Excel JavaScript API を使用して範囲の値、テキスト、または数式を設定および取得する](excel-add-ins-ranges-set-get-values.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して範囲を設定Excel取得する](excel-add-ins-ranges-set-get.md)
+- [JavaScript API を使用して範囲の値、テキスト、または数式を設定Excel取得する](excel-add-ins-ranges-set-get-values.md)

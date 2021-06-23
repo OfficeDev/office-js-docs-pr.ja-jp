@@ -3,12 +3,12 @@ title: Outlook のモジュール拡張機能アドイン
 description: Outlook の内部で実行することで、ユーザーが Outlook から簡単にビジネスの情報や生産性ツールにアクセスできるようにするアプリケーションを作成します。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ba25a10e0f6e8c8b3b14df7e98ff200e00717136
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3a02e93375f1c0872790d050382a14bc2c324cef
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611646"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077086"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Outlook のモジュール拡張機能アドイン
 
@@ -33,7 +33,7 @@ ms.locfileid: "44611646"
 
 拡張機能をクリックすると、組み込みのモジュールは Outlook によってカスタム モジュールに置き換えられ、そのアドインはユーザーが対話的に操作できるようになります。 アドインでは Outlook JavaScript API のすべての機能を使用できます。また、Outlook のリボンにコマンド ボタンを作成することで、アドインの内容を対話的に操作できます。 以下のスクリーンショットは、Outlook のナビゲーション バーに統合され、アドインの内容を更新するリボン コマンドを有するアドインを示しています。
 
-![モジュール拡張機能のユーザー インターフェイスを示します](../images/outlook-module-extension.png)
+![モジュール拡張機能のユーザー インターフェイスを表示します。](../images/outlook-module-extension.png)
 
 ## <a name="example"></a>例
 

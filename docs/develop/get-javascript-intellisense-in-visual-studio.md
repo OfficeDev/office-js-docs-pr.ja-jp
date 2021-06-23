@@ -1,14 +1,14 @@
 ---
 title: Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
-description: JSDoc を使用して、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を作成する方法について説明します。
+description: JSDoc を使用して JavaScript 変数IntelliSense、パラメーター、および戻り値のデータを作成する方法について説明します。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 495e43994d78b1e01374e348e6d21d41d9611212
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6135649ce80e496d5e195b0ddb0dcb64172d41f5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131809"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076056"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 
@@ -49,7 +49,7 @@ Visual Studio に Office.js の型の定義を提供する必要があります�
 var subsetRange;
 ```
 
-![' SubsetRange ' 変数の IntelliSense の抜粋を示すスクリーンショット](../images/intellisense-vs17-var.png)
+!['subsetRange' 変数のIntelliSense抜粋を示すスクリーンショット。](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>パラメーター
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![' Paras ' パラメーターの IntelliSense の抜粋を示したスクリーンショット (JavaScript の例では ' 段落 ' パラメーター)](../images/intellisense-vs17-param.png)
+![JavaScript の例の 'paras' パラメーター ('paragraphs' パラメーター IntelliSenseの抜粋を示すスクリーンショット。](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![' MyFunc () ' の戻り値に対する IntelliSense の抜粋を示すスクリーンショット](../images/intellisense-vs17-return.png)
+!['myFunc()' IntelliSense値の抜粋を示すスクリーンショット。](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>複合型
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-![' Var myVar; ' の複合型宣言の IntelliSense が表示されているスクリーンショット (例:)](../images/intellisense-vs17-complex-type.png)
+!['var myVar;IntelliSenseの複合型宣言の例を示すスクリーンショット。](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>関連項目
 

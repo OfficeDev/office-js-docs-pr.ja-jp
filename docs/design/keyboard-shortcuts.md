@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779342"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076316"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -207,11 +207,11 @@ ms.locfileid: "52779342"
 
 競合が発生した場合、ユーザーが最初に競合するキーボード ショートカットを使用しようとすると、ダイアログ ボックスが表示されます。このダイアログに表示されるアクション名は、ファイル内のアクション オブジェクトのプロパティです。 `name` `shortcuts.json`
 
-![1 つのショートカットに対して 2 つの異なるアクションを持つ競合モーダルを示す図](../images/add-in-shortcut-conflict-modal.png)
+![1 つのショートカットに対して 2 つの異なるアクションを持つ競合モーダルを示す図。](../images/add-in-shortcut-conflict-modal.png)
 
 ユーザーは、キーボード ショートカットで実行する操作を選択できます。 選択を行った後、同じショートカットの今後の使用のために基本設定が保存されます。 ショートカットの基本設定は、プラットフォームごとにユーザーごとに保存されます。 ユーザーが自分の設定を変更する場合は、[教えて]検索ボックスから [Office アドインのショートカット設定のリセット] コマンド **を** 呼び出します。 コマンドを呼び出すと、ユーザーのアドインのショートカット設定がすべてクリアされ、次に競合するショートカットを使用しようとすると、ユーザーに競合ダイアログ ボックスが表示されます。
 
-![[アドインのショートカットの基本設定] Excel設定のリセットOfficeを表示するダイアログ ボックス](../images/add-in-reset-shortcuts-action.png)
+![[アドインのショートカットの設定] Excel設定のリセットOfficeを表示するダイアログ ボックスを表示します。](../images/add-in-reset-shortcuts-action.png)
 
 最適なユーザー エクスペリエンスを得る場合は、次の優れた方法を使用して、Excelを最小限にすることをお勧めします。
 
@@ -262,7 +262,7 @@ Web でカスタム キーボード ショートカットを使用する場合�
 - Ctrl + W
 - Ctrl + PgUp/PgDn
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - キーボード ショートカット[Excelアドインの例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を参照してください。
 - 「マニフェストの拡張オーバーライドを処理する」の拡張オーバーライドの操作 [の概要を取得します](../develop/extended-overrides.md)。

@@ -4,12 +4,12 @@ description: JavaScript API の Excelを使用して、数式の前例と依存�
 ms.date: 06/03/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78fa4fb070ede85d139425a9d59ba1224785a605
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783530"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075797"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 
@@ -25,7 +25,7 @@ Excelは、多くの場合、他のセルを参照します。 これらのク�
 
 次のスクリーンショットは、UI の [前例のトレース] ボタンを選択した結果Excel示しています。 このボタンは、前のセルから選択したセルに矢印を描画します。 選択したセル **E3** には数式 "=C3 * D3" が含まれているので **、C3** と **D3** の両方が先行セルです。 UI ボタンExcel異なり、 `getDirectPrecedents` メソッドは矢印を描画しない。
 
-![UI 内の矢印トレースの前Excelセル](../images/excel-ranges-trace-precedents.png)
+![UI の矢印トレースの先行セルExcelします。](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > メソッド `getDirectPrecedents` は、ブック間で先行セルを取得できない。
@@ -64,7 +64,7 @@ Excel.run(function (context) {
 
 次のスクリーンショットは、UI の [トレース依存] ボタンを選択した結果Excel示しています。 このボタンは、依存セルから選択したセルに矢印を描画します。 選択したセル **D3** には、セル **E3** が従属セルとして含されます。 **E3 には** 、"=C3 * D3" という数式が含まれる。 UI ボタンExcel異なり、 `getDirectDependents` メソッドは矢印を描画しない。
 
-![UI 内の依存セルをExcelする](../images/excel-ranges-trace-dependents.png)
+![UI 内の依存セルをExcelします。](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > メソッド `getDirectDependents` は、ブック間で依存セルを取得できない。

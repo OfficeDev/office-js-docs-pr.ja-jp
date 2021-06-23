@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して重複を削除する
-description: Excel JavaScript API を使用して重複を削除する方法について説明します。
+title: JavaScript API を使用して重複Excel削除する
+description: JavaScript API を使用して重複Excelする方法について説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0a2a076398e15d1b3b9db963a85703782056c91e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652911"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075769"
 ---
-# <a name="remove-duplicates-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して重複を削除する
+# <a name="remove-duplicates-using-the-excel-javascript-api"></a>JavaScript API を使用して重複Excel削除する
 
-この記事では、Excel JavaScript API を使用して範囲内の重複するエントリを削除するコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲内の重複エントリを削除するExcel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="remove-rows-with-duplicate-entries"></a>重複するエントリがある行を削除する
 
@@ -45,15 +45,15 @@ Excel.run(function (context) {
 
 ### <a name="data-before-duplicate-entries-are-removed"></a>重複するエントリが削除される前のデータ
 
-![範囲の remove duplicates メソッドが実行される前の Excel のデータ](../images/excel-ranges-remove-duplicates-before.png)
+![範囲のExcelの重複メソッドが実行される前のデータ。](../images/excel-ranges-remove-duplicates-before.png)
 
 ### <a name="data-after-duplicate-entries-are-removed"></a>重複するエントリが削除された後のデータ
 
-![範囲の削除重複メソッドが実行された後の Excel のデータ](../images/excel-ranges-remove-duplicates-after.png)
+![範囲のExcel重複するメソッドが実行された後のデータ。](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して範囲を切り取り、コピー、貼り付ける](excel-add-ins-ranges-cut-copy-paste.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける](excel-add-ins-ranges-cut-copy-paste.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

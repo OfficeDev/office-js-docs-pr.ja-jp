@@ -1,14 +1,14 @@
 ---
 title: テスト用に iPad と Mac で Office アドインをサイドロードする
-description: サイドロードOffice iPad と Mac でアドインをテストします。
+description: サイドローディングOfficeして、iPad Mac でアドインをテストします。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 22271409cdacd8f3e32039743b8916b1fb87252f
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: b3d7d7fa3ee69e849c112c888b66fa9deed23d88
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238072"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076204"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テスト用に iPad と Mac で Office アドインをサイドロードする
 
@@ -18,9 +18,9 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 - [iTunes](https://www.apple.com/itunes/download/) がインストールされた Windows または Mac コンピューター。
   > [!IMPORTANT]
-  > macOS Catalina を実行している場合 [、iTunes](https://support.apple.com/HT210200) は使用できなくなったので、この記事で後に説明する [「macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) を使用して、Excel または iPad 上の Word でアドインをサイドロードする」の手順に従う必要があります。
+  > macOS [Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina)を実行している場合[、iTunes](https://support.apple.com/HT210200)は使用できなくなったので、この記事の後半の「Excel または word on iPad のアドインをサイドロードする」セクションの指示に従ってください。
 
-- [Excel](https://apps.apple.com/app/microsoft-excel/id586683407)または[Word](https://apps.apple.com/app/microsoft-word/id586447913)がインストールされた iOS 8.2 以降を実行している iPad と同期ケーブル。
+- iOS 8.2 以降iPadインストールされている iOS [](https://apps.apple.com/app/microsoft-excel/id586683407) 8.2 以降Excel同期ケーブルがインストールされている場合。 [](https://apps.apple.com/app/microsoft-word/id586447913)
 
 - テスト対象アドインのマニフェスト .xml ファイル。
 
@@ -36,9 +36,9 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 - テスト対象アドインのマニフェスト .xml ファイル。
 
-## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>iTunes を使用して Excel または iPad 上の Word でアドインをサイドロードする
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>iTunes を使用して、Excelまたは Word のアドインiPad読み込む
 
-1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. **[信頼する]** を選択して続行します。
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 コンピューターに初めてiPad接続する場合は、このコンピューターの信頼を求める **メッセージが表示されます。** **[信頼する]** を選択して続行します。
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
 
@@ -46,36 +46,36 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
 
 4. iTunes の右側で、**[ファイル共有]** までスクロールしてから、**[アドイン]** 列で **[Excel]** または **[Word]** をクリックします。
 
-5. [Excel またはWord **ドキュメント**] 列の下部で、[ファイルの追加] を選択し、サイドロードするアドインのマニフェスト .xml ファイルを選択します。
+5. [ファイル] または **[Word** ドキュメントExcel] 列の下部にある [ファイルの追加] を選択し、サイドロードするアドインのマニフェスト .xml ファイルを選択します。
 
-6. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[ホーム] ボタンを選択し、アプリを閉じて再起動します。
+6. iPad で Excel または Word アプリを開きます。 アプリまたは word Excelが既に実行されている場合は、[ホーム] ボタンを選択し、アプリを閉じて再起動します。
 
 7. ドキュメントを開きます。
 
-8. [**挿入] タブ** で[アドイン] を選択します ([挿入] タブでは、[アドイン] ボタンが表示されるまで水平方向にスクロールする必要がある **場合** があります)。サイドロードしたアドインは、アドイン UI の **[** 開発者] 見出し **の下に挿入** できます。
+8. [**挿入] タブで**  [アドイン] を選択します([挿入] タブで、[アドイン] ボタンが表示されるまで水平方向にスクロール **する必要** がある場合があります)。サイドロードされたアドインは、アドイン UI の **[開発者**] 見出しの下 **に挿入** できます。
 
-    ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
+    ![アプリにアドインをExcelします。](../images/excel-insert-add-in.png)
 
-## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>macOS Catalina を使用して Excel または iPad 上の Word でアドインをサイドロードする
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>macOS Catalina を使用して、Excelまたは Word のiPadをサイドロードする
 
 > [!IMPORTANT]
-> macOS Catalina の導入により [、Apple](https://support.apple.com/HT210200) は Mac で iTunes を廃止し、Finder にアプリをサイドロードするために必要な統合された機能 **を提供しました**。
+> macOS Catalina の導入により [、Apple](https://support.apple.com/HT210200) は Mac で iTunes を廃止し、アプリを Finder にサイドロードするために必要な統合機能 **を廃止しました**。
 
-1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. **[信頼する]** を選択して続行します。 また、これが新しい iPad か、復元中か尋ねらる場合があります。
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 コンピューターに初めてiPad接続する場合は、このコンピューターの信頼を求める **メッセージが表示されます。** **[信頼する]** を選択して続行します。 また、これが新しいファイルか、または復元iPadを求めらる場合があります。
 
-2. Finder の [場所] **で**、メニュー バーの **下にある iPad** アイコンを選択します。
+2. Finder の [場所]**で**、メニュー バー **iPadアイコンを** 選択します。
 
-3. [Finder] ウィンドウの上部にある [ファイル] をクリックし **、Excel** または Word を探 **します**。
+3. [Finder] ウィンドウの上部にある [ファイル] をクリックし、[ファイル] または **[Word]** **Excelを探****します**。
 
-4. 別の [Finder] ウィンドウで、サイド ロードするアドインの manifest.xml ファイルを最初の **Finder** ウィンドウの Excel または **Word** ファイルにドラッグ アンド ドロップします。
+4. 別の Finder ウィンドウから、サイド ロードするアドインの manifest.xml ファイルを、最初の **Finder** ウィンドウの Excel または **Word** ファイルにドラッグ アンド ドロップします。
 
-5. iPad で Excel または Word アプリを開きます。 Excel または Word アプリが既に実行されている場合は、[ホーム] ボタンを選択し、アプリを閉じて再起動します。
+5. iPad で Excel または Word アプリを開きます。 アプリまたは word Excelが既に実行されている場合は、[ホーム] ボタンを選択し、アプリを閉じて再起動します。
 
 6. ドキュメントを開きます。
 
-7. [**挿入] タブ** で[アドイン] を選択します ([挿入] タブでは、[アドイン] ボタンが表示されるまで水平方向にスクロールする必要がある **場合** があります)。サイドロードしたアドインは、アドイン UI の **[** 開発者] 見出し **の下に挿入** できます。
+7. [**挿入] タブで**  [アドイン] を選択します([挿入] タブで、[アドイン] ボタンが表示されるまで水平方向にスクロール **する必要** がある場合があります)。サイドロードされたアドインは、アドイン UI の **[開発者**] 見出しの下 **に挿入** できます。
 
-    ![Excel アプリでアドインを挿入](../images/excel-insert-add-in.png)
+    ![アプリにアドインをExcelします。](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>Office on Mac にアドインをサイドロードする
 
@@ -88,26 +88,26 @@ Office on iOS でアドインの実行状態を確認するには、iTunes を�
     - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Finder でコマンド ( **ピリオド** またはドットを含 `open .` む) を使用してフォルダーを開きます。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
+2. コマンド (ピリオドまたはドットを含む) を使用して **Finder** `open .` でフォルダーを開きます。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
 
-    ![Office on Mac の Wef フォルダー](../images/all-my-files.png)
+    ![Mac 上の Office Wef フォルダー。](../images/all-my-files.png)
 
 3. Word を起動し、ドキュメントを開きます。既に起動している場合は、Word を再起動します。
 
-4. Word で、[アドインの挿入] (ドロップダウン メニュー) を選択し、アドイン  >    >  を選択します。
+4. Word で、[**アドインの挿入**] [自分のアドイン] (ドロップダウン メニュー) を選択し、アドイン  >    >  を選択します。
 
-    ![Office on Mac の個人用アドイン](../images/my-add-ins-wikipedia.png)
+    ![Mac 上の [Officeアドイン]](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > サイドロードしたアドインは [個人用アドイン] ダイアログには表示されません。ドロップダウン メニュー内にのみ表示されます (**[挿入]** タブの [個人用アドイン] の右にある小さい下向き矢印)。サイドロードしたアドインは、このメニューの見出し **[開発者向けアドイン]** の下に一覧表示されます。
 
 5. アドインが Word に表示されることを確認します。
 
-    ![Office on Mac に表示された Office アドイン](../images/lorem-ipsum-wikipedia.png)
+    ![OfficeMac 上のアプリに表示Officeアドイン。](../images/lorem-ipsum-wikipedia.png)
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-以前にサイドロードしたアドインを削除するには、コンピューター上のOfficeキャッシュをクリアします。 各プラットフォームとアプリケーションのキャッシュをクリアする方法の詳細については、「キャッシュのクリア」Office [覧ください](clear-cache.md)。
+以前にサイドロードされたアドインを削除するには、コンピューター上Officeキャッシュをクリアします。 各プラットフォームとアプリケーションのキャッシュをクリアする方法の詳細については、「キャッシュをクリアする」[の記事Office参照してください](clear-cache.md)。
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウからデバッガーをアタッチする
-description: 作業ウィンドウからデバッガーをアタッチする方法について
+description: 作業ウィンドウからデバッガーをアタッチする方法について学習する
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 02899ab17b90b4f0dd959369d345462686b0f889
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: f5a63e9912e2a7d8ac400fc9abba116abfedbbeb
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839993"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077198"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -17,14 +17,14 @@ Windows での Office 2016 のビルド 77xx.xxxx 以降では、作業ウィン
 **デバッガーのアタッチ** ツールを起動するのには、作業ウィンドウの右上隅を選択して **パーソナリティ** メニューを有効にします (以下の図の赤い円で示す通り)。
 
 > [!NOTE]
-> - 現在サポートされているデバッガー ツールは、[Update 3](https://www.visualstudio.com/downloads/) 以降を適用した [Visual Studio 2015](/previous-versions/mt752379(v=vs.140)) だけです。 インストールされていない場合Visual Studioデバッガーのアタッチ オプションを選択しても、何も起こらない場合があります。
+> - 現在サポートされているデバッガー ツールは、[Update 3](https://www.visualstudio.com/downloads/) 以降を適用した [Visual Studio 2015](/previous-versions/mt752379(v=vs.140)) だけです。 インストールされていない場合Visual Studioデバッガーの接続オプションを選択しても、操作は実行されません。
 > - **[デバッガーのアタッチ]** ツールでデバッグできるのは、クライアント側の JavaScript だけです。 Node.js サーバーなど、サーバー側のコードをデバッグするには、多くのオプションがあります。 Visual Studio Code でデバッグするための詳しい方法については、「[VS Code で Node.js をデバッグする](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)」を参照してください。 Visual Studio Code を使用していない場合は、「Node.js のデバッグ」または「{サーバー名} のデバッグ」で検索してください。
 
-![[デバッガーのアタッチ] メニューのスクリーンショット](../images/attach-debugger.png)
+![[デバッガーのアタッチ] メニューのスクリーンショット。](../images/attach-debugger.png)
 
 **デバッガーのアタッチ** を選択するこれにより、次の図のように、**Visual Studio Just-in-Time デバッガー** ダイアログ ボックスが起動します。 
 
-![Visual Studio JIT デバッガー ダイアログのスクリーンショット](../images/visual-studio-debugger.png)
+![[JIT デバッガー Visual Studioのスクリーンショットです。](../images/visual-studio-debugger.png)
 
 Visual Studio では、**ソリューション エクスプローラー** 内にコード ファイルが表示されます。   Visual Studio でデバッグするコードの行にブレークポイントを設定することができます。
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
-description: アドインのユーザー エラーをトラブルシューティングするOffice説明します。
+description: アドインのユーザー エラーをトラブルシューティングOfficeする方法について説明します。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7762c81744aa484ee5c958e6c647c4ea7893efc9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840098"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077205"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -43,7 +43,7 @@ ms.locfileid: "49840098"
 Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
 
 
-- Go to Tools > **Internet Options**  >  **Advanced**.
+- [インターネット オプションの詳細設定>**ツール] に**  >  **移動します**。
     
 - **[参照]** で、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオフにします。
     
@@ -69,7 +69,7 @@ Office アドインを使用するとき、ユーザーは、ダイアログ ボ
 
 "ブラウザーのセキュリティ設定により、ダイアログ ボックスを作成できませんでした。別のブラウザーを試すか、アドレス バーに表示される [URL] とドメインが同じセキュリティ ゾーンに存在するようにブラウザーを構成してください。"
 
-![ダイアログ ボックスのエラー メッセージのスクリーンショット](../images/dialog-prevented.png)
+![ダイアログ ボックスのエラー メッセージのスクリーンショット。](../images/dialog-prevented.png)
 
 |**影響を受けるブラウザー**|**影響を受けるプラットフォーム**|
 |:--------------------|:---------------------|
@@ -95,4 +95,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインを使用したOfficeエラーのトラブルシューティング](troubleshoot-development-errors.md)
+- [アドインを使用したOfficeのトラブルシューティング](troubleshoot-development-errors.md)

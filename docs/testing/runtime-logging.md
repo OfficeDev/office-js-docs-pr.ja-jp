@@ -3,22 +3,22 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840072"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076414"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
 ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。
 
 > [!NOTE]
-> ランタイム ログ機能は現在、デスクトップの Office 2016 以降で使用できます。
+> ランタイム ログ機能は、2016 Office以降のデスクトップで使用できます。
 
 > [!IMPORTANT]
-> ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
+> ランタイムのログはパフォーマンスに影響します。アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>コマンド ラインからランタイム ログを使用する
 
@@ -60,11 +60,8 @@ ms.locfileid: "49840072"
 
 2. `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。
 
-    > [!NOTE]
-    > キー (フォルダー) が存在しない場合は、次の手順を `Developer` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` 実行して作成します。
-    >
-    > 1. **[WEF]** キー (フォルダー) を右クリックし、**[新規]**、**[キー]** の順に選択します。
-    > 1. 新しいキーに **Developer** という名前を付けます。
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
+
 
 3. **RuntimeLogging** キーの既定値にログを書き込むファイルの完全なパスを設定します。 例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。
 
@@ -73,7 +70,7 @@ ms.locfileid: "49840072"
 
 レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。
 
-![RuntimeLogging レジストリ キーを追加したレジストリ エディターのスクリーンショット](../images/runtime-logging-registry.png)
+![RuntimeLogging レジストリ キーを使用したレジストリ エディターのスクリーンショット。](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac でのランタイム ログ
 

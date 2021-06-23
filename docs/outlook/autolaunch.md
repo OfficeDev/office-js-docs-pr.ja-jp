@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化Outlookアドインを�
 ms.topic: article
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853956"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076792"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -37,7 +37,7 @@ ms.locfileid: "52853956"
 |`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|プレビュー|
 
 > [!IMPORTANT]
-> プレビュー中のイベントは、web 上およびMicrosoft 365のOutlookサブスクリプションでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
+> プレビュー中のイベントは、Microsoft 365のサブスクリプションとOutlook on the webでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
 
 ### <a name="how-to-preview"></a>プレビューする方法
 
@@ -45,16 +45,16 @@ ms.locfileid: "52853956"
 
 これらのイベントをプレビューするには、次の手順を実行します。
 
-- Web Outlookの詳細については、次の情報を参照してください。
+- 次のOutlook on the web。
   - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript[のコンパイルと](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定義の種類定義ファイルは、IntelliSenseと[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)にあるCDNです。 これらの種類は、 を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
+  - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript[のコンパイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)と定義の種類定義ファイルは、IntelliSenseと[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)にあるCDNです。 これらの種類は、 を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14026.20000 です。 ベータ版[ビルドOfficeアクセスするには、Insider](https://insider.office.com)プログラムOffice参加します。
   - レジストリを構成します。 Outlookから読み込む代わりに、製品版とベータ版Office.jsのローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
     1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. という名前のエントリを `EnableBetaAPIsInJavaScript` 追加し、値をに設定します `1` 。 レジストリは次の図のようになります。
 
-        ![EnableBetaAPIsInJavaScript レジストリ キー値を持つレジストリ エディターのスクリーンショット](../images/outlook-beta-registry-key.png)
+        ![EnableBetaAPIsInJavaScript レジストリ キー値を持つレジストリ エディターのスクリーンショット。](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -177,7 +177,7 @@ ms.locfileid: "52853956"
 </VersionOverrides>
 ```
 
-OutlookはWindows JavaScript ファイルを使用しますが、web 上Outlookは同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイル `Resources` への参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所 `Runtime` `Override` を指定します。
+OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the web同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイル `Resources` への参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所 `Runtime` `Override` を指定します。
 
 > [!TIP]
 > アドインのマニフェストのOutlook詳細については、「Outlook[マニフェスト」を参照してください](manifests.md)。
@@ -243,11 +243,11 @@ OutlookはWindows JavaScript ファイルを使用しますが、web 上Outlook�
 
 1. Outlook on the web で新しいメッセージを作成します。
 
-    ![作成時に件名が設定Outlook Web 上のメッセージ ウィンドウのスクリーンショット](../images/outlook-web-autolaunch-1.png)
+    ![作成時に件名が設定されているOutlook on the webウィンドウのスクリーンショット。](../images/outlook-web-autolaunch-1.png)
 
 1. [Outlook] でWindows新しいメッセージを作成します。
 
-    ![作成時に件名が設定されているOutlookのWindowsウィンドウのスクリーンショット](../images/outlook-win-autolaunch.png)
+    ![作成時に件名が設定されているOutlookのWindowsウィンドウのスクリーンショット。](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
     > localhost からアドインを実行している場合は、"申し訳ありませんが *、{your-add-in-name-here}* にアクセスできませんでした。 ネットワーク接続が確立されている必要があります。 問題が解決しない場合は、後でもう一度お試しください。ループバックの除外を有効にする必要がある場合があります。
@@ -267,7 +267,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、web 上Outlook�
 アドインで起動イベント処理に変更を加える場合は、次の点に注意する必要があります。
 
 - マニフェストを更新した場合は、 [アドインを](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 削除してから、もう一度サイドロードします。
-- マニフェスト以外のファイルに変更を加えた場合は、Outlook で Outlook を閉じてWindows開くか、web 上で実行されているブラウザー Outlookを更新します。
+- マニフェスト以外のファイルに変更を加えた場合は、OutlookでWindowsを閉じて再び開Outlook on the web。
 
 独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「Debug [your event-based Outlook アドイン」を参照してください](debug-autolaunch.md)。
 
@@ -275,9 +275,9 @@ OutlookはWindows JavaScript ファイルを使用しますが、web 上Outlook�
 
 ## <a name="deploy-to-users"></a>ユーザーへの展開
 
-イベント ベースのアドインは、管理者センターからマニフェストをアップロードすることでMicrosoft 365できます。 管理ポータルで、ナビゲーション ウィンドウで [設定] セクションを展開し、[統合アプリ]**を選択します**。 [統合アプリ **] ページで**、[カスタム アプリ] アップロード **を選択** します。
+イベント ベースのアドインを展開するには、イベント ベースのアドインを使用してマニフェストをアップロードMicrosoft 365 管理センター。 管理ポータルで、ナビゲーション ウィンドウで [設定] セクションを展開し、[統合アプリ]**を選択します**。 [統合アプリ **] ページで**、[カスタム アプリ] アップロード **を選択** します。
 
-![管理センターの [統合アプリ] ページのスクリーンショット (Microsoft 365カスタム アプリアクションアップロード含む)](../images/outlook-deploy-event-based-add-ins.png)
+![カスタム アプリのアクションを含む、Microsoft 365 管理センター統合アプリ ページアップロードスクリーンショット。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource ストアと inclient ストア: イベント ベースのアドインを展開したり、既存のアドインを更新してイベント ベースのアクティブ化機能を含める機能をすぐに利用できる必要があります。
 

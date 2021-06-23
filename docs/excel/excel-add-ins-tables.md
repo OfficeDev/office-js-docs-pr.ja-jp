@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して表を操作する
 description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
 ms.date: 06/07/2021
 localization_priority: Normal
-ms.openlocfilehash: a44a99e0ddc612342b292fd6e9d203799cde7b53
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52854002"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075804"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![Excel の新しい表](../images/excel-tables-create.png)
+![新しいテーブル (Excel)。](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 
 **新しい行を含む表**
 
-![Excel の新しい行を含む表](../images/excel-tables-add-rows.png)
+![新しい行が含Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>表に列を追加する
 
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 **新しい列を含む表**
 
-![Excel の新しい列を含む表](../images/excel-tables-add-column.png)
+![テーブルに新しい列が含Excel。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 **新しい集計列を含む表**
 
-![Excel の新しい集計列を含む表](../images/excel-tables-add-calculated-column.png)
+![テーブルに新しい計算列があるExcel。](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="resize-a-table-online-only"></a>テーブルのサイズを変更する (オンラインのみ)
 
@@ -190,7 +190,7 @@ Excel.run(function (context) {
 
 **サイズ変更後のテーブル** 
 
-![複数の空の行が含Excel](../images/excel-tables-resize.png)
+![複数の空の行が含Excel。](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>列名を更新する
 
@@ -219,7 +219,7 @@ Excel.run(function (context) {
 
 **新しい列名を含む表**
 
-![Excel の新しい列名を含む表](../images/excel-tables-update-column-name.png)
+![テーブルに新しい列名が含Excel。](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>表からデータを取得する
 
@@ -265,7 +265,7 @@ Excel.run(function (context) {
 
 **表とデータの出力**
 
-![Excel の表データ](../images/excel-tables-get-data.png)
+![テーブル のデータをExcel。](../images/excel-tables-get-data.png)
 
 ## <a name="detect-data-changes"></a>データの変更の検出
 
@@ -313,7 +313,7 @@ Excel.run(function (context) {
 
 **金額 (降順) で並べ替えた表データ**
 
-![テーブル内の並べ替えExcel](../images/excel-tables-sort.png)
+![テーブル のデータを並べ替Excel。](../images/excel-tables-sort.png)
 
 ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する](excel-add-ins-worksheets.md#handle-sorting-events)」を参照してください。
 
@@ -347,7 +347,7 @@ Excel.run(function (context) {
 
 **Category と Amount にフィルターを適用した表データ**
 
-![Excel でフィルター処理された表データ](../images/excel-tables-filters-apply.png)
+![[テーブル] でフィルター処理されたExcel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>表フィルターのクリア
 
@@ -366,7 +366,7 @@ Excel.run(function (context) {
 
 **フィルターが適用されていない表データ**
 
-![Excel のフィルター処理されていない表データ](../images/excel-tables-filters-clear.png)
+![テーブル のデータは、フィルター処理されていないExcel。](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
@@ -433,7 +433,7 @@ Excel.run(function (context) {
 
 **書式設定を適用後の表**
 
-![Excel の書式設定を適用後の表](../images/excel-tables-formatting-after.png)
+![書式が適用された後のテーブルは、Excel。](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>範囲を表に変換する
 
@@ -473,11 +473,11 @@ Excel.run(function (context) {
 
 **範囲データ (範囲を表に変換する前)**
 
-![Excel の範囲データ](../images/excel-ranges.png)
+![データの範囲内Excel。](../images/excel-ranges.png)
 
 **範囲データ (範囲を表に変換した後)**
 
-![Excel の表データ](../images/excel-tables-from-range.png)
+![テーブル内のデータは、Excel。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
@@ -524,7 +524,7 @@ Excel.run(function (context) {
 
 **新しい表**
 
-![インポートされた JSON データから新しいテーブルが作成Excel](../images/excel-tables-create-from-json.png)
+![インポートされた JSON データの新しいテーブルが、Excel。](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>関連項目
 

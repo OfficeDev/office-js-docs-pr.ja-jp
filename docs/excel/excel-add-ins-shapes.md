@@ -1,41 +1,41 @@
 ---
-title: Excel JavaScript API を使用して図形を操作する
-description: Excel の描画レイヤー上にある任意のオブジェクトとして、Excel によって図形が定義される方法について説明します。
+title: JavaScript API を使用して図形Excelする
+description: 図形をExcel図面レイヤーに配置するオブジェクトとして定義する方法についてExcel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b9a4dba02e28187eeb0f932e245489ca61fcbcc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 936def11a5d597b68cc59a58b041c4f30ff46a38
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609742"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075762"
 ---
-# <a name="work-with-shapes-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して図形を操作する
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形Excelする
 
-Excel では、図形は Excel の描画層にある任意のオブジェクトとして定義されます。 つまり、セルの外部にあるものは図形です。 この記事では、[図形](/javascript/api/excel/excel.shape)および shapes [ecollection](/javascript/api/excel/excel.shapecollection) api と組み合わせて、ジオメトリック図形、線、およびイメージを使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、「 [Excel JavaScript API を使用してグラフを操作](excel-add-ins-charts.md)する」で説明されています。
+Excel図形は、図形の描画レイヤーに配置されるオブジェクトとして定義Excel。 つまり、セルの外側にあるものは図形です。 この記事では、図形および[ShapeCollection](/javascript/api/excel/excel.shapecollection) API と組み合[](/javascript/api/excel/excel.shape)わせて幾何学的図形、線、および画像を使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、独自の記事[「JavaScript API](excel-add-ins-charts.md)を使用してグラフをExcelします。
 
-次の図は、温度計を形成する図形を示しています。
-![Excel 図形として作成された温度計のイメージ](../images/excel-shapes.png)
+次の図は、体温計を形成する図形を示しています。
+![図形として作成された体温計Excel。](../images/excel-shapes.png)
 
 ## <a name="create-shapes"></a>図形を作成する
 
-図形は、ワークシートの shape コレクション () を使用して作成され、格納され `Worksheet.shapes` ます。 `ShapeCollection`には `.add*` 、この目的のためにいくつかの方法があります。 すべての図形には、コレクションに追加されたときに名前と Id が生成されます。 これらは、 `name` および `id` プロパティです。 `name`アドインで設定して、メソッドを使用して簡単に取得することができ `ShapeCollection.getItem(name)` ます。
+図形は、ワークシートの図形コレクション () を通じて作成され、格納されます `Worksheet.shapes` 。 `ShapeCollection` この目的 `.add*` のためにいくつかのメソッドがあります。 すべての図形には、コレクションに追加するときに名前と ID が生成されます。 これらは、それぞれ `name` プロパティ `id` とプロパティです。 `name` メソッドを使用して簡単に取得できるようアドインで設定 `ShapeCollection.getItem(name)` できます。
 
-次の種類の図形は、関連付けられているメソッドを使用して追加されます。
+関連付けられたメソッドを使用して、次の種類の図形が追加されます。
 
 | Shape | Tabs.Add メソッド (Outlook フォーム スクリプト) | 署名 |
 |-------|------------|-----------|
-| 幾何学的図形 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| 画像 (JPEG または PNG のいずれか) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| 線 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| ジオメトリック シェイプ | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| 画像 (JPEG または PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
+| Line | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
 | SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | テキスト ボックス | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
-### <a name="geometric-shapes"></a>幾何学的な図形
+### <a name="geometric-shapes"></a>幾何学的図形
 
-ジオメトリック図形が作成され `ShapeCollection.addGeometricShape` ます。 このメソッドは、 [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) enum を引数として受け取ります。
+で幾何学的な図形が作成されます `ShapeCollection.addGeometricShape` 。 このメソッドは、 [引数として GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) 列挙型を受け取ります。
 
-次のコードサンプルでは、ワークシートの上端と左端から100ピクセルに配置された、 **"Square"** という名前の150x150 ピクセルの四角形を作成します。
+次のコード サンプルでは、ワークシートの上辺と左側から 100 ピクセルの位置にある **"Square"** という名前の 150x150 ピクセルの四角形を作成します。
 
 ```js
 // This sample creates a rectangle positioned 100 pixels from the top and left sides
@@ -54,9 +54,9 @@ Excel.run(function (context) {
 
 ### <a name="images"></a>画像
 
-JPEG、PNG、SVG の画像は、図形としてワークシートに挿入できます。 メソッドは、 `ShapeCollection.addImage` base64 でエンコードされた文字列を引数として受け取ります。 これは、文字列形式の JPEG または PNG 画像のいずれかです。 `ShapeCollection.addSvg`も文字列で受け取りますが、この引数はグラフィックを定義する XML です。
+JPEG、PNG、SVG 画像は、ワークシートに図形として挿入できます。 メソッド `ShapeCollection.addImage` は引数として base64 でエンコードされた文字列を受け取ります。 これは、文字列形式の JPEG または PNG イメージのいずれかです。 `ShapeCollection.addSvg` この引数はグラフィックを定義する XML ですが、文字列も取り込まれます。
 
-次のコードサンプルは、 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader)によって、文字列としてロードされているイメージファイルを示しています。 文字列には、図形が作成される前に、メタデータ "base64" が削除されています。
+次のコード サンプルは [、FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) が文字列として読み込むイメージ ファイルを示しています。 この文字列には、図形が作成される前にメタデータ "base64" が削除されます。
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
@@ -80,7 +80,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="lines"></a>Lines
 
-行はに作成され `ShapeCollection.addLine` ます。 このメソッドには、行の開始点と終了点の左余白と上余白が必要です。 また、 [ConnectorType](/javascript/api/excel/excel.connectortype)列挙を取得して、エンドポイント間の行の contorts 方法を指定します。 次のコードサンプルでは、ワークシートに直線を作成します。
+行がで作成されます `ShapeCollection.addLine` 。 このメソッドには、行の開始点と終了点の左余白と上余白が必要です。 また [、ConnectorType 列挙型を使用](/javascript/api/excel/excel.connectortype) して、エンドポイント間の行のコントルト方法を指定します。 次のコード サンプルでは、ワークシートに直線を作成します。
 
 ```js
 // This sample creates a straight line from [200,50] to [300,150] on the worksheet
@@ -92,9 +92,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-線は、他の Shape オブジェクトに接続することができます。 `connectBeginShape`メソッドと `connectEndShape` メソッドは、指定された接続ポイントにある図形に対して、線の始点と終点を接続します。 これらのポイントの位置は図形によって異なりますが、を使用すると、 `Shape.connectionSiteCount` アドインが範囲外のポイントに接続されないようにすることができます。 およびメソッドを使用して、接続されているすべての図形から線が切断され `disconnectBeginShape` `disconnectEndShape` ます。
+線は他の Shape オブジェクトに接続できます。 and メソッドは、指定した接続ポイントの図形に線の開始位置と終了 `connectBeginShape` `connectEndShape` 位置をアタッチします。 これらのポイントの位置は図形によって異なりますが、アドインが境界外のポイントに接続しない場合に使用 `Shape.connectionSiteCount` できます。 線は、and メソッドを使用して、接続されている図形 `disconnectBeginShape` から `disconnectEndShape` 切断されます。
 
-次のコードサンプルでは、" **Myline"** 行を **"l shape"** と **"直角図形"** という名前の2つの図形に接続します。
+次のコード サンプルでは **、"MyLine"** 行を **"LeftShape" と "RightShape"** という名前の 2 つの図形 **に接続します**。
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
@@ -109,16 +109,16 @@ Excel.run(function (context) {
 
 ## <a name="move-and-resize-shapes"></a>図形の移動とサイズ変更
 
-ワークシートの一番上にある図形。 これらの配置は、およびプロパティによって定義され `left` `top` ます。 これらは、ワークシートの各エッジの余白として機能し、[0, 0] が左上隅になります。 これらは、およびメソッドを使用して、現在の位置から直接設定または調整することができ `incrementLeft` `incrementTop` ます。 既定の位置から図形を回転させる度合いは、この方法で設定します。この方法では、プロパティが絶対量で、既存の回転を調整するメソッドも使用され `rotation` `incrementRotation` ます。
+図形はワークシートの上に表示されます。 配置は and プロパティによって `left` 定義 `top` されます。 これらはワークシートのそれぞれのエッジの余白として機能し、[0, 0] は左上隅になります。 これらは、and メソッドを使用して、直接設定するか、現在の位置から `incrementLeft` `incrementTop` 調整できます。 既定の位置から回転する図形の量も、この方法で確立され、プロパティは絶対量であり、メソッドは既存の回転 `rotation` `incrementRotation` を調整します。
 
-他の図形を基準とした図形の深さは、プロパティによって定義され `zorderPosition` ます。 これはメソッドを使用して設定されます。このメソッドは、このメソッドを使用し `setZOrder` ます。 [ShapeZOrder](/javascript/api/excel/excel.shapezorder) `setZOrder`他の図形を基準に現在の図形の順序を調整します。
+他の図形に対する図形の深さは、プロパティによって定義 `zorderPosition` されます。 これは `setZOrder` [、ShapeZOrder](/javascript/api/excel/excel.shapezorder)を受け取るメソッドを使用して設定されます。 `setZOrder` 他の図形を基準に現在の図形の順序を調整します。
 
-アドインには、図形の高さと幅を変更するためのいくつかのオプションがあります。 またはプロパティのいずれかを設定すると、 `height` `width` 他の次元を変更せずに、指定した次元が変更されます。 `scaleHeight`を指定して、 `scaleWidth` 現在のサイズまたは元のサイズを基準にして図形のそれぞれの寸法を調整します (提供される[ShapeScaleType](/javascript/api/excel/excel.shapescaletype)の値に基づきます)。 省略可能な[ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom)パラメーターは、図形を拡大または縮小する位置 (左上隅、中央、または右下隅) を指定します。 プロパティに `lockAspectRatio` **true**が設定されている場合、scale メソッドは、他の次元も調整して、図形の現在の縦横比を維持します。
+アドインには、図形の高さと幅を変更するためのいくつかのオプションがあります。 またはプロパティを `height` 設定 `width` すると、他のディメンションを変更せずに指定したディメンションが変更されます。 現在のサイズまたは元のサイズ (指定された ShapeScaleType の値に基づいて) を基準に図形のそれぞれの寸法を `scaleHeight` `scaleWidth` [調整します](/javascript/api/excel/excel.shapescaletype)。 省略可能 [な ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) パラメーターは、図形のスケールの場所 (左上隅、中央、右下隅) を指定します。 プロパティが true の場合、スケール メソッドは他の次元も調整することで、図形の現在の縦横比 `lockAspectRatio` を維持します。 
 
 > [!NOTE]
-> プロパティに対する直接の変更は、プロパティの `height` `width` 値に関係なく、そのプロパティにのみ影響し `lockAspectRatio` ます。
+> プロパティへの直接の `height` 変更 `width` は、プロパティの値に関係なく、そのプロパティ `lockAspectRatio` にのみ影響します。
 
-次のコードサンプルでは、元のサイズに1.25 倍に拡大または縮小された図形を表示します。
+次のコード サンプルは、元のサイズの 1.25 倍に拡大縮小され、30 度回転された図形を示しています。
 
 ```js
 // In this sample, the shape "Octagon" is rotated 30 degrees clockwise
@@ -138,9 +138,9 @@ Excel.run(function (context) {
 
 ## <a name="text-in-shapes"></a>図形内のテキスト
 
-幾何学的な図形にはテキストを含めることができます。 図形には、 `textFrame` [TextFrame](/javascript/api/excel/excel.textframe)型のプロパティがあります。 オブジェクトは、 `TextFrame` テキスト表示オプション (余白、テキストオーバーフローなど) を管理します。 `TextFrame.textRange`は、テキストの内容とフォントの設定を含む[TextRange](/javascript/api/excel/excel.textrange)オブジェクトです。
+幾何学的図形にはテキストを含めできます。 図形には `textFrame` 、TextFrame 型の [プロパティがあります](/javascript/api/excel/excel.textframe)。 オブジェクト `TextFrame` は、テキスト表示オプション (余白やテキスト オーバーフローなど) を管理します。 `TextFrame.textRange` は、 [テキストコンテンツと](/javascript/api/excel/excel.textrange) フォント設定を持つ TextRange オブジェクトです。
 
-次のコードサンプルでは、テキスト "Shape Text" を使用して "Wave" という名前のジオメトリック図形を作成します。 また、図形とテキストの色を調整するだけでなく、テキストの水平方向の配置を中央に設定します。
+次のコード サンプルでは、"Shape Text" というテキストを持つ "Wave" という名前の幾何学的な図形を作成します。 また、図形とテキストの色を調整し、テキストの水平方向の配置を中央に設定します。
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
@@ -160,9 +160,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`addTextBox`のメソッドは、 `ShapeCollection` `GeometricShape` 白の `Rectangle` 背景と黒のテキストを使用して、型を作成します。 これは、[挿入] タブの [Excel の**テキストボックス**での作成**Insert**方法] ボタンと同じです。 `addTextBox`文字列引数を受け取り、のテキストを設定し `TextRange` ます。
+この `addTextBox` メソッドは `ShapeCollection` 、白い背景 `GeometricShape` と黒いテキスト `Rectangle` を持つ型を作成します。 これは、[挿入] タブの [テキスト Excel] ボタンによって作成される操作と **同** じです。 `addTextBox`のテキストを設定する引数 string を受け取ります `TextRange` 。
 
-次のコードサンプルは、"Hello!" というテキストを含むテキストボックスを作成する方法を示しています。
+次のコード サンプルは、テキスト "Hello!" を含むテキスト ボックスの作成を示しています。
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
@@ -180,9 +180,9 @@ Excel.run(function (context) {
 
 ## <a name="shape-groups"></a>図形グループ
 
-図形は一緒にグループ化できます。 これにより、ユーザーは、配置、サイズ変更、およびその他の関連タスクのために1つのエンティティとして扱うことができます。 図形[グループ](/javascript/api/excel/excel.shapegroup)はの種類である `Shape` ため、アドインでグループを1つの図形として扱うことができます。
+図形はグループ化できます。 これにより、ユーザーはそれらを配置、サイズ変更、その他の関連タスク用の 1 つのエンティティとして扱うことができます。 [ShapeGroup は](/javascript/api/excel/excel.shapegroup)タイプの 1 つなので、アドインはグループを 1 つの `Shape` 図形として扱います。
 
-次のコードサンプルでは、グループ化された3つの図形を示します。 次のコードサンプルでは、図形グループを50ピクセル右に移動していることを示します。
+次のコード サンプルは、グループ化されている 3 つの図形を示しています。 以降のコード サンプルは、図形グループが右 50 ピクセルに移動されているのを示しています。
 
 ```js
 // This sample takes three previously-created shapes ("Square", "Pentagon", and "Octagon")
@@ -210,11 +210,11 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> グループ内の個々の図形は、 `ShapeGroup.shapes` 種類が[Groupshapecollection](/javascript/api/excel/excel.GroupShapeCollection)であるプロパティを介して参照されます。 グループ化された後は、ワークシートの shape コレクションからアクセスできなくなります。 たとえば、ワークシートに3つの図形があり、すべてが一緒にグループ化されている場合、ワークシートの `shapes.getCount` メソッドはカウントを1とします。
+> グループ内の個々の図形は `ShapeGroup.shapes` [、GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection)型のプロパティを介して参照されます。 グループ化された後、ワークシートの図形コレクションからアクセスできなくなりました。 たとえば、ワークシートに 3 つの図形が含み、すべての図形がグループ化されている場合、ワークシートのメソッドは `shapes.getCount` カウント 1 を返します。
 
-## <a name="export-shapes-as-images"></a>図形を画像としてエクスポートする
+## <a name="export-shapes-as-images"></a>図形をイメージとしてエクスポートする
 
-任意の `Shape` オブジェクトをイメージに変換できます。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)は、base64 でエンコードされた文字列を返します。 画像の形式は、に渡される図[形式](/javascript/api/excel/excel.pictureformat)の列挙体として指定され `getAsImage` ます。
+任意 `Shape` のオブジェクトをイメージに変換できます。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) は base64 エンコードされた文字列を返します。 イメージの形式は、に渡される [PictureFormat](/javascript/api/excel/excel.pictureformat) 列挙型として指定されます `getAsImage` 。
 
 ```js
 Excel.run(function (context) {
@@ -231,9 +231,9 @@ Excel.run(function (context) {
 
 ## <a name="delete-shapes"></a>図形を削除する
 
-図形は、オブジェクトのメソッドを使用してワークシートから削除され `Shape` `delete` ます。 その他のメタデータは必要ありません。
+図形は、オブジェクトのメソッドを使用して `Shape` ワークシートから削除 `delete` されます。 他のメタデータは不要です。
 
-次のコードサンプルでは、 **Myworksheet**からすべての図形を削除します。
+次のコード サンプルでは **、MyWorksheet** からすべての図形を削除します。
 
 ```js
 // This deletes all the shapes from "MyWorksheet".

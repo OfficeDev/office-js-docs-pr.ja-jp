@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2466c314345d1bf6dbfa38bc6f6508b4386fa633
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961210"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076526"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -129,7 +129,7 @@ Visual Studio では、プロジェクトのビルド時の検証エラーは [*
 
 1. Excel、PowerPoint、または Word で、[**挿入**] タブを選択し、[**個人用アドイン**] の右側に配置された下向き矢印を選択します。
 
-    ![[マイ アドイン] 矢印が強調表示Excel[Windowsのリボンを挿入する] を示すスクリーンショット](../images/excel-cf-register-add-in-1b.png)
+    ![[マイ アドイン] 矢印が強調表示Excel[Windows] の [リボンを挿入する] を示すスクリーンショット。](../images/excel-cf-register-add-in-1b.png)
 
 2. 使用可能なアドインのリストから **[開発者向けアドイン]** セクションを見つけ、ご利用のアドインを選択して登録します。
 

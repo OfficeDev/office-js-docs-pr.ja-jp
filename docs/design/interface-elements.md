@@ -1,14 +1,14 @@
 ---
 title: Office アドイン用の Office の UI 要素
-description: Office アドインのさまざまな種類の UI 要素の概要について説明します。
+description: アドイン内のさまざまな種類の UI 要素のOffice取得します。
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e5ff84cb0d8417d6fab5ec6a39575ce7ff74e23
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132047"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076330"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office アドイン用の Office の UI 要素
 
@@ -16,11 +16,11 @@ ms.locfileid: "49132047"
 
 次の図は、作成できる Office UI 要素の種類を示しています。
 
-![Office ドキュメント内のリボン、作業ウィンドウ、ダイアログボックス/コンテンツアドインのアドインコマンドを示している図](../images/add-in-ui-elements.png)
+![リボン内のアドイン コマンド、作業ウィンドウ、およびドキュメント内のダイアログ ボックス/コンテンツ アドインをOffice図。](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>アドイン コマンド
 
-アドイン [コマンド](add-in-commands.md) を使用して、Office アプリリボンにアドインへのエントリポイントを追加します。 コマンドは、JavaScript コードを実行するか、HTML コンテナーを起動することによって、アドインのアクションを開始します。 2 種類のアドイン コマンドを作成できます。
+アドイン[コマンドを使用して](add-in-commands.md)、アドインにエントリ ポイントをリボンに追加Office アプリします。 コマンドは、JavaScript コードを実行するか、HTML コンテナーを起動することによって、アドインのアクションを開始します。 2 種類のアドイン コマンドを作成できます。
 
 |コマンドの種類|説明|
 |:---------------|:--------------|

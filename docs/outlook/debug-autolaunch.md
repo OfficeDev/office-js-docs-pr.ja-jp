@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化を実装Outlookアド�
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d7621a7407db3b8e773d1534beb6c881f7b48558
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555286"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077093"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのアドインOutlookデバッグする (プレビュー)
 
@@ -52,7 +52,7 @@ ms.locfileid: "52555286"
 1. デスクトップOutlook起動します (またはOutlook開いている場合は再起動します)。
 1. 新しいメッセージまたは予定を作成します。 次のダイアログが表示されます。 ダイアログ *を* まだ操作しないでください。
 
-    ![イベント ベースのハンドラー のデバッグ ダイアログのスクリーンショット](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![イベント ベースのハンドラー のデバッグ ダイアログのスクリーンショット。](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>構成Visual Studio Code
 
@@ -85,11 +85,11 @@ ms.locfileid: "52555286"
 1. [ファイルを **開**  >  **くフォルダー]** に移動し、作成したフォルダーに移動し、[フォルダーの選択]**を選択します**。
 1. [アクティビティ バー] で、[デバッグ] **アイテム** (Ctrl + Shift + D) を選択します。
 
-    ![アクティビティ バーの [デバッグ] アイコンのスクリーンショット](../images/vs-code-debug.png)
+    ![アクティビティ バーの [デバッグ] アイコンのスクリーンショット。](../images/vs-code-debug.png)
 
 1. [ファイルに **対してlaunch.jsを作成する] リンクを選択** します。
 
-    ![ページ内のファイルにlaunch.jsを作成するリンクVisual Studio Code](../images/vs-code-create-launch.json.png)
+    ![ページ内のファイルにlaunch.jsを作成するリンクVisual Studio Code。](../images/vs-code-create-launch.json.png)
 
 1. [環境 **の選択] ドロップダウン** で、[ **エッジ:** 起動] を選択して、launch.jsを作成します。
 1. 構成の一覧に次の抜粋を追加します。 変更内容を保存します。
@@ -121,7 +121,7 @@ ms.locfileid: "52555286"
 1. デバッガーを停止bundle.js場所にブレークポイントを配置します。
 1. [ **デバッグ] ドロップダウンで** 、[直接デバッグ] という **名前を選択し**、[実行] を **選択します**。
 
-    ![[デバッグ] ドロップダウンの構成オプションから [直接デバッグ] を選択Visual Studio Codeスクリーンショット](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![[デバッグ] ドロップダウンの構成オプションから [直接デバッグ] を選択Visual Studio Codeスクリーンショット。](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Debug
 

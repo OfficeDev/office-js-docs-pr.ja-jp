@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: acb26255778a57d89b6654e7bf6e3fdc71b67d8d
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727914"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076105"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -30,7 +30,7 @@ ms.locfileid: "52727914"
 
 次の画像は、ダイアログ ボックスの例を示します。
 
-![Word の前に 3 つのサインイン オプションが表示されたダイアログを示すスクリーンショット](../images/auth-o-dialog-open.png)
+![Word の前に 3 つのサインイン オプションが表示されたダイアログを示すスクリーンショット。](../images/auth-o-dialog-open.png)
 
 ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウは *非* モーダルです。ユーザーは、Office アプリケーション内のドキュメントと作業ウィンドウ内のページの両方 (ある場合) の操作を続行できます。
 

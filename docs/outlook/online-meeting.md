@@ -1,28 +1,28 @@
 ---
-title: オンライン会議プロバイダー用の Outlook モバイル アドインを作成する
-description: オンライン会議サービス プロバイダー用に Outlook モバイル アドインをセットアップする方法について説明します。
+title: オンライン会議プロバイダー Outlookモバイル アドインを作成する
+description: オンライン会議サービス プロバイダー Outlookモバイル アドインをセットアップする方法について説明します。
 ms.topic: article
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: b973a0cada4127ecc614d42764a9ecea2a00fa2c
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 7f65ef7a1b87a989063b6cb23e6e608e6b3bbefc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505522"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077065"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー用の Outlook モバイル アドインを作成する
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー Outlookモバイル アドインを作成する
 
-オンライン会議のセットアップは、Outlook ユーザーのコア エクスペリエンスであり、Outlook モバイルとの [Teams 会議を簡単に作成](/microsoftteams/teams-add-in-for-outlook) できます。 ただし、Microsoft 以外のサービスを使用して Outlook でオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは Outlook アドイン ユーザーのオンライン会議作成エクスペリエンスを合理化できます。
+オンライン会議のセットアップは、Outlook ユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlookです。](/microsoftteams/teams-add-in-for-outlook) ただし、Microsoft 以外のサービスを使用Outlookオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを合理化できます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを持つ Android と iOS でのみサポートされます。
+> この機能は、Android と iOS でのみサポートされ、サブスクリプションMicrosoft 365されます。
 
-この記事では、Outlook モバイル アドインをセットアップして、ユーザーがオンライン会議サービスを使用して会議を整理して参加できる方法について学習します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
+この記事では、オンライン会議サービスを使用してユーザーが会議を整理して参加できるよう、Outlook モバイル アドインをセットアップする方法について学習します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Outlook の [クイック スタートを](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 完了し、新しいアドイン用の Yeoman ジェネレーターを使用してアドイン プロジェクトOffice作成します。
+クイック スタート[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)完了し、Yeoman ジェネレーターを使用してアドイン プロジェクトを作成し、Office作成します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -122,7 +122,7 @@ Outlook の [クイック スタートを](../quickstarts/outlook-quickstart.md?
 ```
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」および [「Outlook](manifests.md) Mobile 用アドイン コマンドのサポートの追加」 [を参照してください](add-mobile-support.md)。
+> Outlook アドインのマニフェストの詳細については[、「Outlook](manifests.md)アドイン マニフェスト」および「Outlook Mobile 用アドイン コマンドのサポート[の追加」を参照してください](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
@@ -207,26 +207,26 @@ Outlook の [クイック スタートを](../quickstarts/outlook-quickstart.md?
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 Outlook on the [web、Windows、](sideload-outlook-add-ins-for-testing.md) または Mac でサイドローディングした後、Android モバイル デバイスで Outlook を再起動します。 (Android は、現在サポートされている唯一のクライアントです)。次に、新しい会議画面で、Microsoft Teams または Skype トグルが独自のトグルに置き換えられるか確認します。
+アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 デバイス[、Outlook on the web、Windows](sideload-outlook-add-ins-for-testing.md) Mac でサイドローディングした後、Android Outlookデバイスで再起動します。 (Android は、現在サポートされている唯一のクライアントです)。次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI の作成
 
 会議の開催者として、会議を作成すると、次の 3 つの画像のような画面が表示されます。
 
-[ ![ Android 上の会議画面の作成の](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)スクリーンショット - Contoso は[ ![ 、Android](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox)上の会議画面の作成のスクリーンショットをオフに切り替える - Android で会議画面を作成するの Contoso トグル スクリーンショットを読み込む[ ![ - Contoso トグル オン](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Android の会議の作成画面 - Contoso のトグル オフ。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso の読み込みトグル。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso のトグル オン。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>会議の UI に参加する
 
 会議の出席者として、会議を表示すると、次のような画面が表示されます。
 
-[![Android の参加会議画面のスクリーンショット](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Android の参加会議画面のスクリーンショット。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > [参加] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については [、「オンライン会議テンプレートの登録」](#register-your-online-meeting-template) セクションを参照してください。
 
 ## <a name="register-your-online-meeting-template"></a>オンライン会議テンプレートを登録する
 
-サービスのオンライン会議テンプレートを登録する場合は、詳細を含む GitHub の問題を作成できます。 その後、登録のタイムラインを調整するためにお問い合わせください。
+サービスのオンライン会議テンプレートを登録する場合は、詳細に関する問題GitHub作成できます。 その後、登録のタイムラインを調整するためにお問い合わせください。
 
 1. この記事の **最後** にある [フィードバック] セクションに移動します。
 1. [このページ **] リンクを押** します。
@@ -234,7 +234,7 @@ Outlook の [クイック スタートを](../quickstarts/outlook-quickstart.md?
 1. 問題本文で、文字列 "[Enter feedback here]" を、この記事の「オンライン会議の詳細の追加を実装する」セクションの類似の変数で設定した文字列に `newBody` 置き換える必要があります。 [](#implement-adding-online-meeting-details)
 1. [新 **しい問題の送信] をクリックします**。
 
-![Contoso サンプル コンテンツを含む新しい GitHub 発行画面のスクリーンショット](../images/outlook-request-to-register-online-meeting-template.png)
+![Contoso のサンプル コンテンツGitHub新しい問題の画面のスクリーンショット。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>使用可能な API
 
@@ -258,7 +258,7 @@ Outlook の [クイック スタートを](../quickstarts/outlook-quickstart.md?
 いくつかの制限が適用されます。
 
 - オンライン会議サービス プロバイダーにのみ適用されます。
-- 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の Teams または Skype オプションが置き換わります。 ユーザーがインストールしたアドインはアクティブ化されません。
+- 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたは TeamsオプションSkypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進数コードまたは他の色形式で同等の値を使用してグレー `#919191` [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 - 予定オーガナイザー (作成) モードでは、1 つの UI レス コマンドだけがサポートされます。
 
