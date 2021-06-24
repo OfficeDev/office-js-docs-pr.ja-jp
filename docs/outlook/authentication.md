@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
-ms.date: 02/09/2021
+ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: b53647c8a38051096ef59e7b784f8a00964aa73f
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234283"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077107"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
@@ -48,7 +48,7 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 
 - アドインが主に Exchange のオンプレミス ユーザーによって使用される場合。
 - アドインが、ユーザーが制御する Microsoft 以外のサービスにアクセスする必要がある場合。
-- SSO をサポートしていないバージョンの Office でアドインが実行されている場合の代替認証 (および Microsoft Graph の認証) として。
+- SSO をサポートしていないバージョンの Office でアドインが実行されている場合の代替認証として。
 
 アドインでは、[getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) を呼び出して Exchange のユーザー ID トークンを取得できます。 それらのトークンの使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
 

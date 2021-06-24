@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131781"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076827"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -31,9 +31,9 @@ yo office
 - スクリプトの種類を選択する:  **JavaScript**
 - アドインの名前を何にしますか?  **個人用 Office アドイン**
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-excel-project.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-excel-project.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 

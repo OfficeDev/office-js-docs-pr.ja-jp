@@ -3,12 +3,12 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0d19ec8203e7141b6667713786d790eb0a12bba2
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237890"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076119"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -49,7 +49,7 @@ Office アドインは、2 つの部分から構成されます。
 
 - 作業ウィンドウ、コンテンツ アドイン、ダイアログ ボックスなど、アドインの UI と機能を定義する Web アプリケーション。
 
-Web アプリケーションでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作します。 アドインは、外部 Web サービスの呼び出しやユーザー認証の要求など、Web ページが一般的に行うその他の機能も実行することができます。
+Web アプリケーションでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作します。アドインは、外部 Web サービスの呼び出しやユーザー認証の要求など、Web アプリケーションが一般的に行うその他の機能も実行することができます。
 
 ### <a name="defining-an-add-ins-settings-and-capabilities"></a>アドインの設定と機能を定義する
 
@@ -87,7 +87,7 @@ Script Lab は、Excel や Word などの Office プログラムでの作業中�
 
 次の 1 分間のビデオで、Script Lab の実際の動作をご覧ください。
 
-[![Excel、Word、PowerPoint での Script Lab の実行を紹介するショート ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するショート ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ。')](https://aka.ms/scriptlabvideo)
 
 Script Lab の詳細については、「[Script Lab を使用して Office JavaScript API を調べる](../overview/explore-with-script-lab.md)」を参照してください。
 
@@ -101,13 +101,13 @@ Office アドインは、作業ウィンドウ、コンテンツ アドイン、
 
 次の図では、リボン上に表示されるアドイン コマンド、ドキュメント右側に表示される作業ウィンドウ、およびドキュメント上に表示されるダイアログ ボックスまたはコンテンツ アドインを示しています。
 
-![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス / コンテンツ アドイン上のアドイン コマンドを示す図](../images/add-in-ui-elements.png)
+![Office ドキュメントのリボン、タスク ウィンドウ、ダイアログ ボックス / コンテンツ アドイン上のアドイン コマンドを示す図。](../images/add-in-ui-elements.png)
 
 Office UI の拡張とアドインのUXのデザインに関する詳細については、「[Office アドイン用の Office UI 要素](../design/interface-elements.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 
-この記事では、Office アドインの異なる作成方法を説明し、 アドインがOffice UIを拡張する方法やAPIセットの説明、Office JavaScript APIの探索をするための有益なツールとしてScript Labを紹介し、アドイン機能のプロトタイプ作成の説明を行いました。 初歩的な情報の説明は以上になります。Office アドインの行程を先に進むには、 次の手順を実行してください。
+この記事では、Office アドインの異なる作成方法を説明し、アドインが Office UI を拡張する方法を紹介し、API セットを説明し、Office JavaScript API の探索やアドイン機能のプロトタイプ作成をするための有益なツールとして Script Lab を紹介しました。初歩的な情報の説明は以上になります。Office アドインにの行程を先に進むには、 次の手順を実行してください。
 
 ### <a name="create-an-office-add-in"></a>Office アドインを作成する
 

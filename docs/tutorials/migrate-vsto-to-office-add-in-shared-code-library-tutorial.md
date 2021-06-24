@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 localization_priority: Priority
-ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: aaf228d1e3ce33797165b1380b43d26ceffa1d8c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238093"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076126"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -27,7 +27,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 次の図は、移行の際の共有コード ライブラリの役割を示しています。 共通するコードは、新しい共有コード ライブラリ用にリファクタリングします。 このコードは、元の言語 (C# や VB など) のままで記述できます。 つまり、プロジェクト参照を作成することで、既存の VSTO アドインのコードがそのまま使用できるということです。 Office アドインの作成時に、REST API を通じて呼び出すことで、そのアドインは共有コード ライブラリも使用するようになります。
 
-![共有コード ライブラリを使用する VSTO アドインと Office アドインの図](../images/vsto-migration-shared-code-library.png)
+![共有コード ライブラリを使用する VSTO アドインと Office アドインの図。](../images/vsto-migration-shared-code-library.png)
 
 このチュートリアルに示すスキルとテクニック:
 
@@ -70,7 +70,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 このアドインは、Excel のカスタム作業ウィンドウです。 テキストが含まれる任意のセルを選択してから、**[Show unicode]** ボタンをクリックしてください。 このアドインにより、**[結果]** セクションでテキスト内の各文字とその文字に対応する Unicode 番号のリストが表示されます。
 
-![[Unicodeを表示] ボタンと空の [結果] セクションを使用して Excel で実行されている Cell Analyzer VSTO アドインのスクリーンショット](../images/pnp-cell-analyzer-vsto-add-in.png)
+![[Unicode を表示] ボタンと空の [結果] セクションを使用して Excel で実行されている Cell Analyzer VSTO アドインのスクリーンショット。](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>VSTO アドインのコードの種類を分析する
 
@@ -88,7 +88,7 @@ VSTO では、コードは `Microsoft.Office.Interop.Excel.Range` などの .NET
 
 通常は、ビジネス ロジック、アルゴリズム、ヘルパー関数、および類似のコードが VSTO アドインの中心部分を構成しています。 このコードは、分析の実行、バックエンド サービスへの接続、計算の実行などのために、UI コードやドキュメント コードとは無関係に動作します。 このコードが共有可能なものであり、JavaScript での書き直しが不要なコードです。
 
-それでは、この VSTO アドインについて調べてみましょう。 次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
+それでは、この VSTO アドインについて調べてみましょう。次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
 
 ```csharp
 // *** UI CODE ***

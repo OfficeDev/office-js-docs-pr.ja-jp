@@ -4,12 +4,12 @@ description: Office JS API と Angular を使用して単純な Excel 作業ウ�
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5898d9bd3072e829c35afac90348cb844f96011c
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d843a74b3542df8dbc462ae2876179de7b42a2d2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132320"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076932"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Angular を使用して Excel 作業ウィンドウ アドインをビルドする
 
@@ -29,7 +29,7 @@ ms.locfileid: "49132320"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Angular フレームワークに設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/yo-office-excel-angular-2.png)
+![プロジェクトの種類が Angular フレームワークに設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット。](../images/yo-office-excel-angular-2.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -56,17 +56,17 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-3b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューのスクリーンショット。](../images/excel-quickstart-addin-3b.png)
 
 4. ワークシート内で任意のセルの範囲を選択します。
 
 5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![アドイン作業ウィンドウが開いており、アドイン作業ウィンドウで [実行] ボタンが強調表示されている Excel のスクリーンショット](../images/excel-quickstart-addin-3c.png)
+    ![アドイン作業ウィンドウが開いており、アドイン作業ウィンドウで [実行] ボタンが強調表示されている Excel のスクリーンショット。](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます! これで Angular を使用して Excel 作業ウィンドウ アドインを作成できました。 次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
+おめでとうございます! これで Angular を使用して Excel 作業ウィンドウ アドインを作成できました。次に、Excel アドインの機能の詳細について説明します。Excel アドインのチュートリアルに従って、より複雑なアドインをビルドします。
 
 > [!div class="nextstepaction"]
 > [Excel アドインのチュートリアル](../tutorials/excel-tutorial.md)

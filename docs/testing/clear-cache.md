@@ -3,12 +3,12 @@ title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
 ms.date: 05/22/2020
 localization_priority: Priority
-ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: db83a215a2f36d7250ad333f3fd1f7401a5cc1cc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043905"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077193"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -52,11 +52,11 @@ Excel、Word、および PowerPoint からサイドロードされたすべて�
 
 6. 新しいウィンドウの [**ネットワーク**] タブで、[**キャッシュのクリア**] ボタンを選択します。
 
-    ![[キャッシュのクリア] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット](../images/edge-devtools-clear-cache.png)
+    ![[キャッシュのクリア] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット。](../images/edge-devtools-clear-cache.png)
 
 7. これらの手順を完了しても望む結果が得られない場合は、[**常にサーバーから更新する**] ボタンを選択することもできます。
 
-    ![[常にサーバーから更新する] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット](../images/edge-devtools-refresh-from-server.png)
+    ![[常にサーバーから更新する] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット。](../images/edge-devtools-refresh-from-server.png)
 
 ## <a name="clear-the-office-cache-on-mac"></a>Mac で Office のキャッシュをクリアする
 

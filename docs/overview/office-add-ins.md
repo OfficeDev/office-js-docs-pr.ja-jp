@@ -5,18 +5,18 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7460ca65313480cc4518bdfb30447dc83288debe
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237764"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076659"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
 Office アドイン プラットフォームを使用すると、Office アプリケーションを拡張して、Office ドキュメント内のコンテンツを対話方式で操作するソリューションを構築できます。Office アドインでは、HTML、CSS、および JavaScript などの一般的な Web テクノロジを使用することで、Word、Excel、PowerPoint、OneNote、Project、および Outlook を拡張して対話できるようになります。Windows、Mac、iPad、およびブラウザーを含む複数のプラットフォームにわたって Office ソリューションを実行できます。
 
-![Office アドインの拡張性の画像](../images/addins-overview.png)
+![Office アプリケーションと組み込み Web サイト (アドイン) により、無限の拡張性が可能になります。](../images/addins-overview.png)
 
 Office アドインでは、ブラウザー内で Web ページが実行できる操作のほとんどすべてを実行できます。Office アドイン プラットフォームを使用して、次のことができます。
 
@@ -28,7 +28,7 @@ Office アドインでは、ブラウザー内で Web ページが実行でき�
 
 COM または VSTO アドインは、Windows の Office でのみ実行する以前の Office 統合ソリューションです。COM アドインとは異なり、Office アドインにはユーザーのデバイスまたは Office クライアントで実行されるコードは含まれません。Office アドインの場合、アプリケーション (たとえば Excel) がアドインのマニフェストを読み取り、アドインのカスタム リボン ボタンと UI のメニュー コマンドをフックします。これは必要に応じて、サンドボックスのブラウザーのコンテキストで実行されるアドインの JavaScript と HTML を読み込みます。
 
-![Office アドインを使用する理由の画像](../images/why.png)
+![Office アドインを使用する理由: クロスプラットフォーム、一元化された展開、AppSource を介した簡単なアクセス、および標準の Web テクノロジに基づいた構築。](../images/why.png)
 
 Office アドインは、VBA、COM、または VSTO を使用して作成されたアドインと比較して、次のような利点があります。
 
@@ -60,7 +60,7 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 *図 2. Hello World Office アドインのコンポーネント*
 
-![Hello World アドインのコンポーネント](../images/about-addins-componentshelloworldoffice.png)
+![Hello World アドインのコンポーネント。](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Office クライアントの拡張と、Office クライアントとの対話
 
@@ -86,7 +86,7 @@ Office アドインは、Office クライアント アプリケーション内�
 
 *図 3. リボンにあるアドイン コマンド*
 
-![カスタム ボタンとメニュー コマンド](../images/about-addins-addincommands.png)
+![カスタム ボタンとメニュー コマンド。](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>作業ウィンドウ  
 
@@ -94,7 +94,7 @@ Office アドインは、Office クライアント アプリケーション内�
 
 *図 4. 作業ウィンドウ*
 
-![作業ウィンドウとアドイン コマンドを使用する](../images/about-addins-taskpane.png)
+![アドイン コマンドに加えて、作業ウィンドウを使用します。](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する
 
@@ -110,7 +110,7 @@ Excel および PowerPoint のドキュメント内に、コンテンツ アド�
 
 *図 5. コンテンツ アドイン*
 
-![コンテンツ アドインと呼ばれる Web ベースのオブジェクトを埋め込む](../images/about-addins-contentaddin.png)
+![コンテンツ アドインと呼ばれる Web ベースのオブジェクトを埋め込みます。](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API
 
@@ -124,7 +124,7 @@ Office アドインの開発の詳細については、「[Office アドイン�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

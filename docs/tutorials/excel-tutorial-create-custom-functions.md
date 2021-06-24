@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 50855deac928f9610ebc80aa52858259106a109c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789206"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076211"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -38,7 +38,7 @@ ms.locfileid: "49789206"
     * **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
     * **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
-    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/starcountPrompt.png)
+    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。](../images/starcountPrompt.png)
     
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -81,7 +81,7 @@ npm run start:web
 
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] のボタンが強調表示された Web 上の Excel の [挿入] リボンのスクリーンショット](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -149,15 +149,15 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 1. Excel を閉じて再び開きます。
 
-2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット](../images/select-insert.png)
+2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
 
 3. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット](../images/list-starcount.png)
+    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
-1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット](../images/excel-cf-online-register-add-in-1.png)
+1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
 
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -217,14 +217,14 @@ function clock(invocation) {
 
 1. Excel を閉じて再び開きます。
 
-2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット](../images/select-insert.png)
+2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
 
 3. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット](../images/list-starcount.png)
+    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
-1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット](../images/excel-cf-online-register-add-in-1.png)
+1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
 
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

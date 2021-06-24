@@ -5,16 +5,16 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741121"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077114"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
-OneNote では、OneNote on the web アドインの JavaScript API が導入されています。 OneNote オブジェクトを操作する作業ウィンドウ アドイン、コンテンツ アドイン、アドイン コマンドを作成し、Web サービスやその他の Web ベースのリソースに接続できます。
+OneNote では、OneNote on the web アドインの JavaScript API が導入されています。OneNote オブジェクトを操作する作業ウィンドウ アドイン、コンテンツ アドイン、アドイン コマンドを作成し、Web サービスや他の Web ベースのリソースに接続できます。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -24,22 +24,22 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 - Web ページと必要な任意の JavaScript、CSS、他のファイルで構成される **Web アプリケーション**。 これらのファイルは、Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされます。 OneNote on the web では、Web アプリケーションはブラウザー コントロールや iFrame で表示されます。
 
-- アドインの Web ページの URL とアドインの任意のアクセス要件、設定、機能を指定する **XML マニフェスト**。このファイルは、クライアントに保存されます。OneNote アドインは、他の Office アドインと同じ[マニフェスト](../develop/add-in-manifests.md)形式を使います。
+- アドインの Web ページの URL とアドインの任意のアクセス要件、設定、機能を指定する **XML マニフェスト**。このファイルは、クライアントに保存されます。OneNote アドインは、他の Office アドインと同じ [マニフェスト](../develop/add-in-manifests.md)形式を使います。
 
 ### <a name="office-add-in--manifest--webpage"></a>Office アドイン = マニフェスト + Web ページ
 
-![Office アドインはマニフェストと Web ページによって構成されます](../images/onenote-add-in.png)
+![Office アドインはマニフェストと Web ページによって構成されます。](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>JavaScript API の使用
 
 アドインは、Office アプリケーションのランタイム コンテキストを使って、JavaScript API にアクセスします。API には次の 2 つの階層があります:
 
 - `Application` オブジェクトを通じてアクセスされる、OneNote 固有の操作のための **アプリケーション固有の API**。
-- `Document` オブジェクトを通じてアクセスされ、Office アプリケーション全体で共有される**共通 API**。
+- `Document` オブジェクトを通じてアクセスされ、Office アプリケーション全体で共有される **共通 API**。
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>*アプリケーション* オブジェクトを使ったアプリケーション固有の API へのアクセス
 
-`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ**などの OneNote オブジェクトにアクセスします。 アプリケーション固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。 基本的な流れは、以下のようになります。
+`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ** などの OneNote オブジェクトにアクセスします。 アプリケーション固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。 基本的な流れは、以下のようになります。
 
 1. コンテキストからアプリケーション インスタンスを取得します。
 
@@ -133,7 +133,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 ## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図 
 次の図では、OneNote JavaScript API で現在使用可能なものが示されます。
 
-  ![OneNote のオブジェクト モデル図](../images/onenote-om.png)
+  ![OneNote のオブジェクト モデル図。](../images/onenote-om.png)
 
 ## <a name="see-also"></a>関連項目
 

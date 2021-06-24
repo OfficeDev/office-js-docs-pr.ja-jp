@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237666"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075993"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -23,7 +23,7 @@ Office にはプラットフォームやバージョンが異なるものが数�
 
 使用している Office のバージョンを特定するには、Office アプリケーション内で **[ファイル]** メニューを選択し、**[アカウント]** を選択します。 Office のバージョンは **[製品情報]** セクションに表示されます。 たとえば、次のスクリーン ショットは、Office のバージョンが 1802 (ビルド 9026.1000) であることを示しています。
 
-![Office のバージョン確認](../images/office-version.png)
+![Office のバージョン確認。](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Office 要件セットの可用性
 

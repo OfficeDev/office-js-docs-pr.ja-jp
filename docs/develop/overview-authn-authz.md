@@ -3,12 +3,12 @@ title: Office アドインにおける認証と承認の概要
 description: Web アプリケーションおよび Office アドインでログインによる認証をユーザーに要求します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9450408a1cdead8593cc901796c7156a4b415cd
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 2ed1678d347de5725752e22a00a1def6f8f7d66b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961224"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075986"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "52961224"
 
 次のフローチャートは、アドイン開発者として取るべき判断を示しています。詳細については、この記事の後半で説明します。
 
-![Office アドインで認証および承認を可能にするための判断フローチャートを示す画像](../images/authflowchart.png)
+![Office アドインで認証および承認を可能にするための判断フローチャートを示す画像。](../images/authflowchart.png)
 
 ## <a name="user-authentication-without-sso"></a>SSO を使用しないユーザー認証
 

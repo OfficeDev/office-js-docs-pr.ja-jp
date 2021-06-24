@@ -4,12 +4,12 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 02/09/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 735526c1ac85ba67d45d8a9c0b14da271e52796a
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: be76f277ad735665abc886a080f33fa196424f8a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238107"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076519"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -39,7 +39,7 @@ ms.locfileid: "50238107"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-word.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -73,8 +73,8 @@ ms.locfileid: "50238107"
 
 7. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Word) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
 
-    - このコードの最初の部分では、ユーザーの Word のバージョンが、このチュートリアルのすべての段階で使用するすべての API を含んでいる Word.js のバージョンをサポートしているかどうかを調べます。 運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。 これにより、ユーザーは、自分が使用している Word のバージョンでサポートされているアドインの部分を使用できるようになります。
-    - 2 番目の部分では、[`insert-paragraph`] ボタンのイベント ハンドラーを追加します。
+    - このコードの最初の部分では、ユーザーの Word のバージョンが、このチュートリアルのすべての段階で使用するすべての API を含んでいる Word.js のバージョンをサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分が使用している Word のバージョンでサポートされているアドインの部分を使用できるようになります。
+    - このコードの 2 番目の部分では、[`insert-paragraph`] ボタンのイベント ハンドラーを追加します。
 
     ```js
     // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
@@ -86,13 +86,13 @@ ms.locfileid: "50238107"
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-8. 次の関数をファイルの最後に追加します。 注:
+8. 次の関数をファイルの最後に追加します。次の点に注意してください。
 
    - Word .js のビジネスロジックは、`Word.run`に渡される関数に追加されます。このロジックは直ちには実行されません。代わりに、保留中のコマンドのキューに追加されます。
 
    - `context.sync` メソッドは、キューに登録されたすべてのコマンドを、実行するために Word に送信します。
 
-   - `Word.run` の後に `catch` ブロックが表示されます。この方法は、常に理解しておくことをお勧めします。
+   - これは、どのような場合にも当てはまるベスト プラクティスです。
 
     ```js
     function insertParagraph() {
@@ -155,7 +155,7 @@ ms.locfileid: "50238107"
 
 2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![Wordで強調表示された [作業ウィンドウの表示] ボタンを表示するスクリーンショット](../images/word-quickstart-addin-2b.png)
+    ![Word で強調表示された [作業ウィンドウの表示] ボタンを表示するスクリーンショット。](../images/word-quickstart-addin-2b.png)
 
 3. 作業ウィンドウで、[**段落の挿入**] ボタンを選択します。
 
@@ -163,7 +163,7 @@ ms.locfileid: "50238107"
 
 5. [**段落の挿入**] ボタンをもう一度選択します。 `insertParagraph` メソッドはドキュメントの本文の開始位置に挿入を行うため、新しい段落は前の段落より上に表示されます。
 
-    ![アドインの [段落の挿入] ボタンが表示されているスクリーンショット](../images/word-tutorial-insert-paragraph-2.png)
+    ![アドインの [段落の挿入] ボタンが表示されているスクリーンショット。](../images/word-tutorial-insert-paragraph-2.png)
 
 ## <a name="format-text"></a>テキストの書式設定
 
@@ -317,7 +317,7 @@ ms.locfileid: "50238107"
 
 3. ドキュメントに 3 つ以上の段落があることを確認してください。 [**段落の挿入**] ボタンを 3 回選択できます。 *ドキュメントの最後に空白の段落がないことを慎重にチェックしてください。空白の段落がある場合は、それを削除します。*
 
-4. Word で、MyCustomStyle という名前の[カスタム スタイル](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。 このスタイルには、必要に応じて任意の書式を設定できます。
+4. Word で、"MyCustomStyle" という名前の[カスタム スタイル](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。このスタイルには、必要に応じて任意の書式を設定できます。
 
 5. 最初の段落は、組み込みのスタイルである **Intense Reference** でスタイル設定されます。
 
@@ -325,7 +325,7 @@ ms.locfileid: "50238107"
 
 7. **フォントの変更** ボタンを選択します。2番目の段落のフォントは、18 pt、太字、Courier New に変わります。
 
-    ![アドインボタン [スタイルの適用]、[カスタムスタイルの適用]、および [フォントの変更] に定義されたスタイルとフォントを適用した結果を表示するスクリーンショット](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![アドイン ボタン [スタイルの適用]、[カスタム スタイルの適用]、および [フォントの変更] に定義されたスタイルとフォントを適用した結果を表示するスクリーンショット。](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## <a name="replace-text-and-insert-text"></a>テキストの置換と挿入
 
@@ -608,9 +608,9 @@ function insertTextIntoRange() {
 
 8. ドキュメント内で、「複数」という語句を選択します。 *選択範囲の前後にあるスペースは含めないように注意してください。*
 
-9. **数量の単位を変更** ボタンを選択します。選択したテキストは "多" で置き換えられます。
+9. **[数量の単位を変更]** ボタンを選択します。選択したテキストは "多" で置き換えられます。
 
-    ![アドインボタン [略語の挿入]、[バージョン情報の追加]、および [数量期間の変更] を選択した結果を示すスクリーンショット](../images/word-tutorial-text-replace-2.png)
+    ![アドイン ボタン [略語の挿入]、[バージョン情報の追加]、および [数量の単位を変更] を選択した結果を示すスクリーンショット。](../images/word-tutorial-text-replace-2.png)
 
 ## <a name="insert-images-html-and-tables"></a>画像、HTML、テーブルの挿入
 
@@ -807,7 +807,7 @@ function insertTextIntoRange() {
 
 6. **[テーブルの挿入]** ボタンをクリックし、2 番目の段落の後にテーブルが挿入されることに注意してください。
 
-    ![アドインボタン [画像の挿入]、[HTMLの挿入]、および [テーブルの挿入] を選択した結果を示すスクリーンショット](../images/word-tutorial-insert-image-html-table-2.png)
+    ![アドイン ボタン [画像の挿入]、[HTML の挿入]、および [テーブルの挿入] を選択した結果を示すスクリーンショット。](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## <a name="create-and-update-content-controls"></a>コンテンツ コントロールの作成と更新
 
@@ -937,7 +937,7 @@ function insertTextIntoRange() {
 
 5. **[サービス名の変更]** ボタンを選択し、コンテンツ コントロールのテキストが Fabrikam Online Productivity Suite に変わることに注意してください。
 
-    ![アドインボタン [コンテンツコントロールの作成] と [サービスの名前変更] を選択した結果を示すスクリーンショット](../images/word-tutorial-content-control-2.png)
+    ![アドイン ボタン [コンテンツ コントロールの作成] と [サービスの名前変更] を選択した結果を示すスクリーンショット。](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>次の手順
 

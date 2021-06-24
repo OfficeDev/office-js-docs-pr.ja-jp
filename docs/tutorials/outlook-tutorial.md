@@ -4,12 +4,12 @@ description: このチュートリアルでは、GitHub Gist を新規メッセ�
 ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329927"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076133"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -110,7 +110,7 @@ ms.locfileid: "52329927"
 
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** - `Outlook`
 
-    ![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yeoman-prompts-2.png)
+    ![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yeoman-prompts-2.png)
 
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -169,7 +169,7 @@ ms.locfileid: "52329927"
 
 1. Outlookで既存のメッセージを開き、**タスクパネルを表示** ボタンを選択します。 すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
 
-    ![[作業ウィンドウを表示] ボタンのスクリーンショットとサンプルによって追加されたタスクペインの Git the gist](../images/button-and-pane.png)
+    ![[作業ウィンドウを表示] ボタンのスクリーンショットとサンプルによって追加された作業ウィンドウの Git the gist。](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>ボタンを定義する
 
@@ -289,11 +289,11 @@ ms.locfileid: "52329927"
 
 - このアドインを WWindows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Insert gist]** と **[Insert default gist]**] という 2 つの新しいボタンが表示されます。
 
-    ![アドインのボタンが強調表示された Windows 上の Outlook のリボン オーバーフロー メニューのスクリーンショット](../images/add-in-buttons-in-windows.png)
+    ![アドインのボタンが強調表示された Windows 上の Outlook のリボン オーバーフロー メニューのスクリーンショット。](../images/add-in-buttons-in-windows.png)
 
 - Outlook on the webでこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。 このボタンを選択すると、**[Insert gist]** と **[Insert default gist]** のオプションが表示されます。
 
-    ![Outlook on the web のメッセージ作成フォームに追加されたアドイン ボタンとポップアップ メニューが強調表示されたスクリーンショット](../images/add-in-buttons-in-owa.png)
+    ![アドイン ボタンとポップアップ メニューが強調表示された Outlook on the web のメッセージ作成フォームのスクリーンショット。](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>最初の実行エクスペリエンスを実装する
 
@@ -944,11 +944,11 @@ function buildBodyContent(gist, callback) {
 
 1. メッセージの作成ウィンドウで、**[Insert default gist]** ボタンを選択します。 GitHub ユーザー名を設定するためのプロンプトから始めて、アドインを構成できるダイアログが表示されます。
 
-    ![アドインを構成するためのダイアログ プロンプトのスクリーンショット](../images/addin-prompt-configure.png)
+    ![アドインを構成するためのダイアログ プロンプトのスクリーンショット。](../images/addin-prompt-configure.png)
 
 1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **選択** するかクリックします。すると、`change` イベントが呼び出され、公開 Gist のリストが読み込まれます。 既定とする Gist を選択し、**[Done]** を選択します。
 
-    ![アドインの設定ダイアログのスクリーンショット](../images/addin-settings.png)
+    ![アドインの設定ダイアログのスクリーンショット。](../images/addin-settings.png)
 
 1. もう一度 **[Insert default gist]** ボタンを選択します。 今度は、Gist のコンテンツが電子メールの本文に挿入されます。
 
@@ -1307,7 +1307,7 @@ ul {
 
 1. 作業ウィンドウで、**[Hello World Html]** を選択し、**[Insert]** を選択してメッセージの本文にその Gist を挿入します。
 
-![アドイン作業ウィンドウのスクリーンショットとメッセージ本文に表示される選択した gist コンテンツ](../images/addin-taskpane.png)
+![アドイン作業ウィンドウのスクリーンショットとメッセージ本文に表示される選択した gist コンテンツ。](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>次のステップ
 

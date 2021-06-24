@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: c9d69b21be5cca0c37feb14f43649b55df532466
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 922148130aa5384050813155819d2db4c75fe284
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173949"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076140"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -24,11 +24,11 @@ ms.locfileid: "50173949"
 
 *図 1. Excel デスクトップで実行するコマンドを含むアドイン*
 
-![Excel のリボンで強調表示されているアドイン コマンドのスクリーンショット](../images/add-in-commands-1.png)
+![Excel のリボンで強調表示されているアドイン コマンドのスクリーンショット。](../images/add-in-commands-1.png)
 
 *図 2. Excel on the web で実行するコマンドを含むアドイン*
 
-![Excel on the web のアドイン コマンドのスクリーンショット](../images/add-in-commands-2.png)
+![Excel on the web のアドイン コマンドのスクリーンショット。](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
 
@@ -117,7 +117,7 @@ Excel でグラフが選択されている場合など、特定のコンテキ�
   > 占有領域が大きすぎるアドインは [AppSource 検証](/legal/marketplace/certification-policies)を通過しない場合があります。
 
 - すべてのアイコンについては、[アイコン デザインのガイドライン](add-in-icons.md)に従ってください。
-- コマンドをサポートしていない Office アプリケーションでも動作するアドインのバージョンを提供します。 1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) アプリケーションとコマンド非対応 (作業ウィンドウとして) アプリケーションの両方で動作します。
+- コマンドをサポートしていない Office アプリケーションでも動作するアドインのバージョンを提供します。1 つのアドインのマニフェストは、コマンド対応 (コマンドを使用) アプリケーションとコマンド非対応 (作業ウィンドウとして) アプリケーションの両方で動作します。
 
    *図 3. Office 2013 の作業ウィンドウのアドインと、Office 2016 のアドイン コマンドを使用する同じアドイン*
 
