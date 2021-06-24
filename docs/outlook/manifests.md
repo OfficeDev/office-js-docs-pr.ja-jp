@@ -3,12 +3,12 @@ title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839825"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076771"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
@@ -390,7 +390,7 @@ Outlook アドインでは、次のように **Hosts** 要素を指定します�
 
 **メール アドインの 4 層アクセス許可モデル**
 
-![メール アプリ スキーマ v1.1 の 4 層アクセス許可モデル](../images/add-in-permission-tiers.png)
+![メール アプリ スキーマ v1.1 の 4 層アクセス許可モデル。](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>
@@ -422,7 +422,7 @@ Outlook アドインでは、次のように **Hosts** 要素を指定します�
 
 ## <a name="next-steps-add-in-commands"></a>次の手順: アドイン コマンド
 
-基本的なマニフェストを定義した後、アドインのアドイン コマンドを定義します。 アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。 詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
+基本のマニフェストを定義したら、 アドインのアドイン コマンドを定義します。アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。詳細は、「[Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
 
 アドイン コマンドを定義するアドインの例については、[command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo) をご覧ください。
 

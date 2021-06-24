@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 47ca14b4dd8ab67ffc20551b1e13ca62cc75ee34
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 03cba67307fa12dca111d3fcecb6a4a0173f77f1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132362"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076925"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -37,7 +37,7 @@ ms.locfileid: "49132362"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `PowerPoint`
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-powerpoint.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-powerpoint.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -83,11 +83,11 @@ ms.locfileid: "49132362"
 
 3. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1c.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている PowerPoint のスクリーンショット。](../images/powerpoint_quickstart_addin_1c.png)
 
 4. 作業ウィンドウの下部にある **[実行]** リンクを選択して、現在のスライドに "Hello World" とテキストを挿入します。
 
-    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3c.png)
+    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット。](../images/powerpoint_quickstart_addin_3c.png)
 
 ### <a name="next-steps"></a>次の手順
 
@@ -216,7 +216,7 @@ ms.locfileid: "49132362"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
@@ -242,15 +242,15 @@ ms.locfileid: "49132362"
 
 2. PowerPoint で、新しい空白のスライドを挿入して、**[ホーム]** タブを選択し、リボンにある **[作業ウィンドウの表示]** ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] リボン ボタンが強調表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_1.png)
+    ![[作業ウィンドウの表示] リボン ボタンが強調表示されている PowerPoint のスクリーンショット。](../images/powerpoint_quickstart_addin_1.png)
 
 3. 作業ウィンドウで、**[イメージの挿入]** ボタンをクリックして、選択しているスライドに画像を追加します。
 
-    ![スライドに犬の画像が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_2.png)
+    ![スライドに犬の画像が表示されている PowerPoint のスクリーンショット。](../images/powerpoint_quickstart_addin_2.png)
 
 4. 作業ウィンドウで、**[テキストの挿入]** ボタンをクリックして、選択しているスライドにテキストを追加します。
 
-    ![スライドに犬の画像とテキスト「Hello World」が表示されている PowerPoint のスクリーンショット](../images/powerpoint_quickstart_addin_3.png)
+    ![スライドに犬の画像とテキスト 'Hello World' が表示されている PowerPoint のスクリーンショット。](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

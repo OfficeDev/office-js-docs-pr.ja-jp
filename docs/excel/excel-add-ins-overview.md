@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 37ce824817f07949435fd21fa4545a5c787e7105
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740855"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075860"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -63,7 +63,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 **アドイン コマンド**
 
-![Excel のアドイン コマンド](../images/excel-add-in-commands-script-lab.png)
+![Excel のアドイン コマンド。](../images/excel-add-in-commands-script-lab.png)
 
 コマンドの機能、サポートされているプラットフォーム、およびアドイン コマンド開発のベスト プラクティスについては、「[Excel、Word、および PowerPoint のアドイン コマンド](../design/add-in-commands.md)」を参照してください。
 
@@ -73,7 +73,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 **作業ウィンドウ**
 
-![Excel の作業ウィンドウ アドイン](../images/excel-add-in-task-pane-insights.png)
+![Excel の作業ウィンドウ アドイン。](../images/excel-add-in-task-pane-insights.png)
 
 作業ウィンドウの詳細については、「[Office アドインの作業ウィンドウ](../design/task-pane-add-ins.md)」を参照してください。Excel の作業ウィンドウを実装するサンプルについては、「[Excel アドインの JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)」を参照してください。
 
@@ -93,7 +93,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 **ダイアログ ボックス**
 
-![Excel のアドイン ダイアログ ボックス](../images/excel-add-in-dialog-choose-number.png)
+![Excel のアドイン ダイアログ ボックス。](../images/excel-add-in-dialog-choose-number.png)
 
 ダイアログ ボックスとダイアログ API の詳細については、「[Office アドインのダイアログ ボックス](../design/dialog-boxes.md)」と「[Office アドインでダイアログ API を使用する](../develop/dialog-api-in-office-add-ins.md)」を参照してください。
 
@@ -103,7 +103,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 **コンテンツ アドイン**
 
-![Excel のコンテンツ アドイン](../images/excel-add-in-content-map.png)
+![Excel のコンテンツ アドイン。](../images/excel-add-in-content-map.png)
 
 コンテンツ アドインの詳細については、「[コンテンツ Office アドイン](../design/content-add-ins.md)」を参照してください。Excel のコンテンツ アドインの実装サンプルについては、GitHub の「[Excel コンテンツ アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)」を参照してください。
 
@@ -113,11 +113,11 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 * **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
 
-* **共通 API**: Office 2013 で導入された共通 API を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
+* **共通 API**: Office 2013 で導入された共通 API を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
 ## <a name="next-steps"></a>次の手順
 
-[最初の Excel アドインを作成する](../quickstarts/excel-quickstart-jquery.md)ことから始めます。 次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
+[最初の Excel アドインを作成する](../quickstarts/excel-quickstart-jquery.md)ことから始めます。次に、Excel アドイン構築の[中心概念](excel-add-ins-core-concepts.md)について説明します。
 
 ## <a name="see-also"></a>関連項目
 

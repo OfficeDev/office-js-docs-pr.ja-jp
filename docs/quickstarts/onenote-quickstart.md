@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な OneNote 作業ウィンド�
 ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: de0729a483057a61be3793e299995aa05d287441
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 761de3dc8f382a7b1b5a72704815f2d80af2566f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132292"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076904"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -29,7 +29,7 @@ ms.locfileid: "49132292"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-onenote.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-onenote.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -114,11 +114,11 @@ try {
 
 7. 作業ウィンドウの下部にある [**実行**] リンクをクリックしてページ タイトルを設定し、ページの本文にアウトラインを追加します。
 
-    ![このウォークスルーから作成されたアドインを示すスクリーンショット: OneNote で [タスクペインのリボンボタンとタスクペインを表示する]](../images/onenote-first-add-in-4.png)
+    ![このウォークスルーから作成されたアドインを示すスクリーンショット: OneNote で作業ウィンドウのリボン ボタンと作業ウィンドウを表示します。](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>次の手順
 
-おめでとうございます。OneNote の作業ウィンドウ アドインが正常に作成されました。 次に、OneNote アドイン構築の中心概念の詳細について説明します。
+おめでとうございます。OneNote の作業ウィンドウ アドインが正常に作成されました。次に、OneNote アドイン構築の中心概念の詳細について説明します。
 
 > [!div class="nextstepaction"]
 > [OneNote の JavaScript API のプログラミングの概要](../onenote/onenote-add-ins-programming-overview.md)
