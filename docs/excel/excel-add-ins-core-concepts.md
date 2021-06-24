@@ -4,12 +4,12 @@ description: Excel JavaScript API の主要なオブジェクトの種類と、�
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 50833deb4d996f577db9d3e40db21f1799e7f2f7
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650904"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075867"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Office アドインの Excel JavaScript オブジェクト モデル
 
@@ -26,14 +26,14 @@ Excel アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 * **共通 API**: Office 2013 で導入された [共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
-Excel 2016 以降を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。 例:
+Excel 2016 以降を対象にしたアドインでは、機能の大部分を Excel JavaScript API を使用して開発する可能性がありますが、共通 API のオブジェクトも使用します。次に例を示します。
 
 * [Context](/javascript/api/office/office.context): `Context`Context`contentLanguage` オブジェクトは、アドインのランタイム環境を表し、API の主要なオブジェクトへのアクセスを提供します。 これは `officeTheme` や `host` などのブック構成の詳細で構成され、`platform` や `requirements.isSetSupported()` などのアドインのランタイム環境に関する情報も提供します。 さらに、 メソッドも提供されます。これを使用すると、指定した要件セットが、アドインが実行されている Excel アプリケーションでサポートされているかどうかを確認できます。
 * [Document](/javascript/api/office/office.document): `Document` オブジェクトは `getFileAsync()` メソッドを提供します。これを使用すると、アドインが実行されている Excel ファイルをダウンロードできます。
 
 次の図は、Excel JavaScript API または共通 API を使用するタイミングを示しています。
 
-![Excel JS API と共通 API の違いを示す画像](../images/excel-js-api-common-api.png)
+![Excel JS API と共通 API の違い。](../images/excel-js-api-common-api.png)
 
 ## <a name="excel-specific-object-model"></a>Excel 固有のオブジェクト モデル
 
@@ -109,7 +109,7 @@ Excel JavaScript API を使用することにより、Excel 内でデータ構�
 
 #### <a name="creating-a-table"></a>表の作成
 
-データが入力された範囲を使用することにより、表を作成します。 書式設定とテーブル コントロール (フィルターなど) が自動的に範囲に適用されます。
+データ入力範囲を使ってテーブルを作成します。書式設定とテーブル コントロール (フィルターなど) が自動的に範囲に適用されます。
 
 次のサンプルでは、前のサンプルの範囲を使用して表を作成します。
 

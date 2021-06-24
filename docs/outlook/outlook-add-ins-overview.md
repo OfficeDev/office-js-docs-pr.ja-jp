@@ -4,12 +4,12 @@ description: Outlook アドインとは、Microsoft の Web ベース プラッ�
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007812"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076757"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -33,13 +33,13 @@ Outlook アドインは、Windows で実行する Outlook に固有の古い統�
 
     **リボン上の [コマンド] ボタンがあるアドイン**
 
-    ![アドイン コマンドの UI なし図形](../images/uiless-command-shape.png)
+    ![アドイン コマンドの UI なし図形。](../images/uiless-command-shape.png)
 
 - アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。 詳細は、「 [コンテキスト Outlook アドイン](contextual-outlook-add-ins.md)」をご覧ください。
 
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
-    ![カード内のコンテキスト アプリを示す](../images/outlook-detected-entity-card.png)
+    ![カード内のコンテキスト アプリを示す。](../images/outlook-detected-entity-card.png)
 
 ## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
 

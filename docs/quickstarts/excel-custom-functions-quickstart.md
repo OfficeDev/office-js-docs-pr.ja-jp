@@ -4,12 +4,12 @@ description: Excel カスタム関数開発のためのクイック スタート
 title: カスタム関数クイック スタート
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 0b0e42149e771978026db3eb84594bd172d09459
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132355"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076631"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -36,11 +36,11 @@ ms.locfileid: "49132355"
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
-    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット](../images/starcountPrompt.png)
+    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。](../images/starcountPrompt.png)
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
-2. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、ここに書かれている手順に従ってください。 プロジェクトのルート フォルダーに移動します。
+2. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、引き続き指示に従います。プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
     cd starcount
@@ -77,7 +77,7 @@ npm run start:web
 
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
-   ![[個人用アドイン] のボタンが強調表示された Web 上の Excel の [挿入] リボンのスクリーンショット](../images/excel-cf-online-register-add-in-1.png)
+   ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
    
 2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 

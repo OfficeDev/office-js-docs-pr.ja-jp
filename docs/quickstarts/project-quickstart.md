@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Project 作業ウィンド�
 ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: eed545d6ebf2b705d8d8963a76a0ac3bca2e13f4
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853991"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076575"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -31,7 +31,7 @@ ms.locfileid: "52853991"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-project.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-project.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -115,7 +115,7 @@ Office.context.document.getSelectedTaskAsync(
 
 6. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
 
-    ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット](../images/project-quickstart-addin-1.png)
+    ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット。](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>次の手順
 

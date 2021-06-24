@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
-ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
+ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2021
-ms.locfileid: "52893660"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076603"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -48,7 +48,7 @@ ms.locfileid: "52893660"
 
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** - `Outlook`
 
-    ![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-outlook-1.png)
+    ![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-outlook-1.png)
 
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -110,18 +110,18 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. **ホーム** タブ（または新しいウィンドウでメッセージを開いた場合は **メッセージ** タブ）を選択し、リボンの **タスクパネルの表示** ボタンを選択、アドインの作業ペインを開きます。
 
-    ![アドイン リボン ボタンが強調表示された Outlook のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-1.png)
+    ![アドイン リボン ボタンが強調表示された Outlook のメッセージ ウィンドウのスクリーンショット。](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > 作業ウィンドウで、「このアドインを localhost から開くことはできません」 というエラーが表示される場合は、[「トラブルシューティングの記事」](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost) に記載されている手順に従ってください。
 
 1. 作業ペインの下部までスクロールし、**実行** リンクを選択してメッセージを作業ペインに書き込みます。
 
-    ![実行リンクが強調表示されたアドインの作業ウィンドウを示すスクリーンショット](../images/quick-start-task-pane-2.png)
+    ![実行リンクが強調表示されたアドインの作業ウィンドウを示すスクリーンショット。](../images/quick-start-task-pane-2.png)
 
-    ![メッセージの件名を表示するアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-3.png)
+    ![メッセージの件名を表示するアドインの作業ウィンドウのスクリーンショット。](../images/quick-start-task-pane-3.png)
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
 おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。 次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。
 
@@ -276,15 +276,15 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. メッセージ内で、アドインのボタンが表示されているオーバーフロー メニューの省略記号を探します。
 
-    ![省略記号が強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-owa-1.png)
+    ![省略記号が強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット。](../images/quick-start-button-owa-1.png)
 
 1. オーバーフロー メニュー内でアドインのボタンを探します。
 
-    ![アドイン ボタンが強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット](../images/quick-start-button-owa-2.png)
+    ![アドイン ボタンが強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット。](../images/quick-start-button-owa-2.png)
 
 1. ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
-    ![メッセージ プロパティを表示する Outlook on the web のアドインの作業ウィンドウのスクリーンショット](../images/quick-start-task-pane-owa-1.png)
+    ![メッセージ プロパティを表示する Outlook on the web のアドインの作業ウィンドウのスクリーンショット。](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > 作業ウィンドウが読み込まれない場合、同じコンピューター上のブラウザーで作業ウィンドウを開いて確認してください。

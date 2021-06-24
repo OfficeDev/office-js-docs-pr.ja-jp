@@ -3,12 +3,12 @@ title: 閲覧フォーム用の Outlook アドインを作成する
 description: 閲覧アドインは、Outlook の閲覧ウィンドウか閲覧インスペクター内でアクティブ化される Outlook アドインです。
 ms.date: 03/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 495b4d947ec965481859c3262d3b67b93f57a5c0
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: f84c0d5252f2cf728397965d9414df2ee5070444
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178000"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076694"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>閲覧フォーム用の Outlook アドインを作成する
 
@@ -30,7 +30,7 @@ ms.locfileid: "51178000"
 
 **選択されている住所を含んだ Outlook メッセージに対してアクティブ化されている [Bing 地図] アドインが表示されたアドイン ウィンドウ**
 
-![Outlook の Bing Maps メール アプリ](../images/outlook-detected-entity-card.png)
+![Outlook の Bing Maps メール アプリ。](../images/outlook-detected-entity-card.png)
 
 ## <a name="types-of-add-ins-available-in-read-mode"></a>閲覧モードで使用できるアドインの種類
 

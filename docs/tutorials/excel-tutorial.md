@@ -4,12 +4,12 @@ description: このチュートリアルでは、Excel アドインを構築し�
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: f169499e343d2fc7fac89f407b78717536add4fc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727942"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077240"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -40,7 +40,7 @@ ms.locfileid: "52727942"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット](../images/yo-office-excel.png)
+![Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット。](../images/yo-office-excel.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -201,11 +201,11 @@ ms.locfileid: "52727942"
 
 2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホームメニューのスクリーンショット](../images/excel-quickstart-addin-3b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューのスクリーンショット。](../images/excel-quickstart-addin-3b.png)
 
-3. 作業ウィンドウで、[**テーブルの作成**] ボタンを選択します。
+3. 作業ウィンドウで、**[テーブルの作成]** ボタンを選択します。
 
-    ![Excelのスクリーンショット。[テーブルの作成] ボタンが付いたアドイン作業ウィンドウと、日付、販売者、カテゴリ、および金額のデータが入力されたワーク シートのテーブルが表示されます](../images/excel-tutorial-create-table-2.png)
+    ![Excel のスクリーンショット。[テーブルの作成] ボタンが付いたアドイン作業ウィンドウと、日付、販売者、カテゴリ、および金額のデータが入力されたワーク シートのテーブルが表示されます。](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table"></a>テーブルのフィルター処理と並べ替え
 
@@ -427,7 +427,7 @@ ms.locfileid: "52727942"
 
 4. [グラフの作成 ] ボタンを選択します。グラフが作成され、フィルター処理された行のデータのみが含まれます。一番下にあるデータポイントのラベルは、グラフの並べ替え順序になります。つまり、名前の逆アルファベット順での商社の名前です。
 
-    ![Excelのスクリーンショット。アドインの作業ウィンドウに [グラフの作成] ボタンが表示され、ワークシートに食料品と教育費のデータを表示するグラフが表示されます。](../images/excel-tutorial-create-chart-2.png)
+    ![Excel のスクリーンショット。アドインの作業ウィンドウに [グラフの作成] ボタンが表示され、ワークシートに食料品と教育費のデータを表示するグラフが表示されます。](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header"></a>テーブルのヘッダーの固定
 
@@ -497,7 +497,7 @@ ms.locfileid: "52727942"
 
 6. ヘッダー以降の行が画面の外に出て見えなくなるまでワークシートを十分下にスクロールしても、表のヘッダーが最上部に表示されていることを確認します。
 
-    ![固定テーブル ヘッダーがある Excel ワーク シートを表示するスクリーンショット](../images/excel-tutorial-freeze-header-2.png)
+    ![固定テーブル ヘッダーがある Excel ワーク シートを表示するスクリーンショット。](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>ワークシートの保護
 
@@ -1009,7 +1009,7 @@ ms.locfileid: "52727942"
 
 6. 必要に応じて、`processMessage` 関数の行 `dialog.close();` をコメントにします。このセクションの手順を繰り返します。ダイアログは開いたままで、名前を変更できます。右上隅の **X** ボタンを押して、手動で閉じることができます。
 
-    ![Excelのスクリーンショット。アドインの作業ウィンドウに [ダイアログを開く] ボタンが表示され、ワークシートの上にダイアログ ボックスが表示されます。](../images/excel-tutorial-dialog-open-2.png)
+    ![Excel のスクリーンショット。アドインの作業ウィンドウに [ダイアログを開く] ボタンが表示され、ワークシートの上にダイアログ ボックスが表示されます。](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>次の手順
 

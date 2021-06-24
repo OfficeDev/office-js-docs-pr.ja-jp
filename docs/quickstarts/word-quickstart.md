@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132327"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076869"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -39,7 +39,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![コマンドライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット](../images/yo-office-word.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -85,11 +85,11 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 3. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションを示すスクリーンショット](../images/word-quickstart-addin-2b.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションを示すスクリーンショット。](../images/word-quickstart-addin-2b.png)
 
-4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" とテキストをドキュメントに追加します。
+4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" というテキストをドキュメントに追加します。
 
-    ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-1c.png)
+    ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1c.png)
 
 ### <a name="next-steps"></a>次の手順
 
@@ -275,7 +275,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
+1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
@@ -301,9 +301,9 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Microsoft 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット](../images/word-quickstart-addin-0.png)
+    ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-0.png)
 
-3. 作業ウィンドウで、いずれかのボタンを選択して文書に定型句を追加します。
+3. 作業ウィンドウで、いずれかのボタンを選択してドキュメントに定型句を追加します。
 
     ![定型句アドインが読み込まれている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1b.png)
 
