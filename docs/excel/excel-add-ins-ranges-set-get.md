@@ -1,19 +1,19 @@
 ---
 title: JavaScript API を使用して選択した範囲を設定Excel取得する
-description: JavaScript API の Excelを使用して、JavaScript API を使用して範囲を設定および取得するExcel説明します。
-ms.date: 04/02/2021
+description: JavaScript API を使用して、Excel JavaScript API を使用して選択した範囲を設定および取得するExcel説明します。
+ms.date: 06/22/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0bd4a4f4bcf40e7899ee429cdc631a43ba176077
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
+ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075776"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "53126728"
 ---
-# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を設定Excel取得する
+# <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>JavaScript API を使用して選択した範囲を設定Excel取得する
 
-この記事では、JavaScript API を使用して範囲を設定および取得するExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して選択した範囲を設定して取得するExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -51,6 +51,95 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+## <a name="select-the-edge-of-a-used-range-online-only"></a>使用範囲の端を選択する (オンラインのみ)
+
+> [!NOTE]
+> and `Range.getRangeEdge` メソッド `Range.getExtendedRange` は現在、ExcelApiOnline 1.1 でのみ使用できます。 詳細については[、「JavaScript API Excelの要件セット」を参照してください](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+
+[Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)メソッドと[Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_)メソッドを使用すると、アドインはキーボード選択ショートカットの動作をレプリケートし、現在選択されている範囲に基づいて使用範囲のエッジを選択できます。 使用範囲の詳細については、「使用範囲の [取得」を参照してください](excel-add-ins-ranges-get.md#get-used-range)。
+
+次のスクリーンショットでは、使用される範囲は、各セルの **値が C5:F12 のテーブルです**。 この表の外側の空のセルは、使用範囲の外側です。
+
+![C5:F12 のデータが含Excel。](../images/excel-ranges-used-range.png)
+
+### <a name="select-the-cell-at-the-edge-of-the-current-used-range"></a>現在使用されている範囲の端にあるセルを選択する
+
+次のコード サンプルは、メソッドを使用して、現在使用されている範囲の最も遠い端にあるセルを上方向 `Range.getRangeEdge` に選択する方法を示しています。 このアクションは、範囲が選択されている間に Ctrl + 上矢印キーのキーボード ショートカットを使用した結果と一致します。
+
+```js
+Excel.run(function (context) {
+    // Get the selected range.
+    var range = context.workbook.getSelectedRange();
+
+    // Specify the direction with the `KeyboardDirection` enum.
+    var direction = Excel.KeyboardDirection.up;
+
+    // Get the active cell in the workbook.
+    var activeCell = context.workbook.getActiveCell();
+
+    // Get the top-most cell of the current used range.
+    // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
+    var rangeEdge = range.getRangeEdge(
+      direction,
+      activeCell
+    );
+    rangeEdge.select();
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="before-selecting-the-cell-at-the-edge-of-the-used-range"></a>使用範囲の端にあるセルを選択する前に
+
+次のスクリーンショットは、使用範囲と、使用範囲内で選択した範囲を示しています。 使用範囲は **、C5:F12** のデータを含むテーブルです。 この表の中で、 **範囲 D8:E9 が** 選択されています。 この選択は、 *メソッドを実行* する前の前の状態 `Range.getRangeEdge` です。
+
+![C5:F12 のデータが含Excel。 範囲 D8:E9 が選択されています。](../images/excel-ranges-used-range-d8-e9.png)
+
+#### <a name="after-selecting-the-cell-at-the-edge-of-the-used-range"></a>使用範囲の端にあるセルを選択した後
+
+次のスクリーンショットは、前のスクリーンショットと同じ表を示し **、C5:F12** の範囲のデータを示しています。 この表の中で、 **範囲 D5 が** 選択されています。 この選択は *、メソッド* を実行した後の状態の後で、使用範囲の端にあるセルを上方向 `Range.getRangeEdge` に選択します。
+
+![C5:F12 のデータが含Excel。 範囲 D5 が選択されています。](../images/excel-ranges-used-range-d5.png)
+
+### <a name="select-all-cells-from-current-range-to-furthest-edge-of-used-range"></a>現在の範囲から使用範囲の最も遠い端までのすべてのセルを選択する
+
+次のコード サンプルは、メソッドを使用して、現在選択されている範囲から使用範囲の最も遠い端まで、下方向のすべてのセルを選択する方法 `Range.getExtendedRange` を示しています。 このアクションは、範囲が選択されている間に Ctrl + Shift +下矢印キーのキーボード ショートカットを使用した結果と一致します。
+
+```js
+Excel.run(function (context) {
+    // Get the selected range.
+    var range = context.workbook.getSelectedRange();
+
+    // Specify the direction with the `KeyboardDirection` enum.
+    var direction = Excel.KeyboardDirection.down;
+
+    // Get the active cell in the workbook.
+    var activeCell = context.workbook.getActiveCell();
+
+    // Get all the cells from the currently selected range to the bottom-most edge of the used range.
+    // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
+    var extendedRange = range.getExtendedRange(
+      direction,
+      activeCell
+    );
+    extendedRange.select();
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="before-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>現在の範囲から使用範囲の端までのすべてのセルを選択する前に
+
+次のスクリーンショットは、使用範囲と、使用範囲内で選択した範囲を示しています。 使用範囲は **、C5:F12** のデータを含むテーブルです。 この表の中で、 **範囲 D8:E9 が** 選択されています。 この選択は、 *メソッドを実行* する前の前の状態 `Range.getExtendedRange` です。
+
+![C5:F12 のデータが含Excel。 範囲 D8:E9 が選択されています。](../images/excel-ranges-used-range-d8-e9.png)
+
+#### <a name="after-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>現在の範囲から使用範囲の端までのすべてのセルを選択した後
+
+次のスクリーンショットは、前のスクリーンショットと同じ表を示し **、C5:F12** の範囲のデータを示しています。 この表の中で、 **範囲 D8:E12 が** 選択されています。 この選択は *、メソッド* を実行した後の状態の後で、現在の範囲から下方向の使用範囲の端までのすべてのセル `Range.getExtendedRange` を選択します。
+
+![C5:F12 のデータが含Excel。 範囲 D8:E12 が選択されています。](../images/excel-ranges-used-range-d8-e12.png)
 
 ## <a name="see-also"></a>関連項目
 
