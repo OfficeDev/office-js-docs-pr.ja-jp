@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Normal
-ms.openlocfilehash: ffafd8fee0beea2776bb7b0a0b79839e43876cc1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
+ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609658"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "53204998"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 
@@ -22,7 +22,7 @@ ms.locfileid: "44609658"
 
 この記事を参考にして、自分のプロジェクトにコードの例を貼り付けることができます。 たとえば、[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して TypeScript 用の新しいカスタム関数プロジェクトを作成し、この記事のすべてのコードをそのプロジェクトに追加することができます。 その後、コードを実行して試してください。
 
-[カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts)をご覧ください。
+[カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>この記事内でバッチ処理パターンを作成する
 
@@ -38,7 +38,7 @@ ms.locfileid: "44609658"
 
 操作を実行するリモート サービスの呼び出し機能を使ってカスタム関数の演算を実行し、必要な結果を計算します。 要求された各操作をバッチ内に保存する方法を提供します。 後で、その操作にバッチ処理をする `_pushOperation`関数を作成する方法が表示されます。 最初に、カスタム関数から`_pushOperation`を呼び出す方法については、次のコード例をみてください。
 
-次のコードでは、カスタム関数は除算を実行しますが、実際の計算を実行するにはリモート サービスに依存しています。 リモート サービスにその操作と別の操作を一緒にバッチ処理し、`_pushOperation`を呼び出します。 その名称は**div2**操作といいます。 リモート サービスが同じスキーム (詳細については、この後のリモート サービスで) を使用する限り、任意の名前付けスキームを操作に使用することができます。 また、操作を実行する必要があるリモートサービスの引数が渡されます。
+次のコードでは、カスタム関数は除算を実行しますが、実際の計算を実行するにはリモート サービスに依存しています。 リモート サービスにその操作と別の操作を一緒にバッチ処理し、`_pushOperation`を呼び出します。 その名称は **div2** 操作といいます。 リモート サービスが同じスキーム (詳細については、この後のリモート サービスで) を使用する限り、任意の名前付けスキームを操作に使用することができます。 また、操作を実行する必要があるリモートサービスの引数が渡されます。
 
 ### <a name="add-the-div2-custom-function-to-functionsts"></a>functions.ts に div2 カスタム関数を追加する
 
