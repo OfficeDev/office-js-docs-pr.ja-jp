@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
 description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
-ms.date: 06/07/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075804"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290790"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -165,10 +165,7 @@ Excel.run(function (context) {
 
 ![テーブルに新しい計算列があるExcel。](../images/excel-tables-add-calculated-column.png)
 
-## <a name="resize-a-table-online-only"></a>テーブルのサイズを変更する (オンラインのみ)
-
-> [!NOTE]
-> この `Table.resize` メソッドは現在、ExcelApiOnline 1.1 でのみ使用できます。 詳細については[、「JavaScript API Excelの要件セット」を参照してください](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+## <a name="resize-a-table"></a>テーブルのサイズを変更する
 
 アドインは、テーブルにデータを追加したり、セル値を変更したりすることなく、テーブルのサイズを変更できます。 テーブルのサイズを変更するには [、Table.resize メソッドを使用](/javascript/api/excel/excel.table#resize_newRange_) します。 次のコード サンプルは、テーブルのサイズを変更する方法を示しています。 このコード サンプルでは、この記事の「[](#create-a-table)テーブルの作成」セクションの **ExpensesTable** を使用し、テーブルの新しい範囲を **A1:D20 に設定します**。
 

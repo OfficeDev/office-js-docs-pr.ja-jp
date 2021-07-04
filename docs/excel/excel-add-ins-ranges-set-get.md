@@ -1,15 +1,15 @@
 ---
 title: JavaScript API を使用して選択した範囲を設定Excel取得する
 description: JavaScript API を使用して、Excel JavaScript API を使用して選択した範囲を設定および取得するExcel説明します。
-ms.date: 06/22/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
-ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "53126728"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290783"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>JavaScript API を使用して選択した範囲を設定Excel取得する
 
@@ -52,10 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="select-the-edge-of-a-used-range-online-only"></a>使用範囲の端を選択する (オンラインのみ)
-
-> [!NOTE]
-> and `Range.getRangeEdge` メソッド `Range.getExtendedRange` は現在、ExcelApiOnline 1.1 でのみ使用できます。 詳細については[、「JavaScript API Excelの要件セット」を参照してください](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+## <a name="select-the-edge-of-a-used-range"></a>使用範囲の端を選択する
 
 [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)メソッドと[Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_)メソッドを使用すると、アドインはキーボード選択ショートカットの動作をレプリケートし、現在選択されている範囲に基づいて使用範囲のエッジを選択できます。 使用範囲の詳細については、「使用範囲の [取得」を参照してください](excel-add-ins-ranges-get.md#get-used-range)。
 

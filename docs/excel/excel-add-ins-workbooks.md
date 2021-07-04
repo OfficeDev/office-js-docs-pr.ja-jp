@@ -4,12 +4,12 @@ description: JavaScript API を使用してブックまたはアプリケーシ�
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853984"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290755"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -74,11 +74,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>既存のブックのコピーを現在のブックに挿入する (プレビュー)
-
-> [!NOTE]
-> この `Workbook.insertWorksheetsFromBase64` メソッドは現在、パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>既存のブックのコピーを現在のブックに挿入する
 
 前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット ブックのワークシートのコピーを自体に `insertWorksheetsFromBase64` 挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。 
 
@@ -343,11 +339,7 @@ Excel API では、アドインから `RequestContext.sync()` を呼び出すま
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="detect-workbook-activation-preview"></a>ブックのアクティブ化を検出する (プレビュー)
-
-> [!NOTE]
-> 現在 `Workbook.onActivated` 、イベントはパブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-workbook-activation"></a>ブックのアクティブ化を検出する
 
 アドインは、ブックがアクティブ化された場合に検出できます。 ユーザーが別 *のブック、* 別のアプリケーション、または (Excel on the web) Web ブラウザーの別のタブにフォーカスを切り替え、ブックが非アクティブになります。 ブックは、 *ユーザーが* ブックにフォーカスを返すときにアクティブ化されます。 ブックのアクティブ化によって、ブック データの更新など、アドイン内のコールバック関数をトリガーできます。
 

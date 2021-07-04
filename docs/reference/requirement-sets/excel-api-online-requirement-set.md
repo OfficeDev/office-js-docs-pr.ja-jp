@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API オンライン専用要件セット
+title: ExcelJavaScript API のオンライン専用要件セット
 description: ExcelApiOnline 要件セットの詳細。
-ms.date: 04/02/2021
+ms.date: 07/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 282e11e415d51a6724715091d894df64ebaabfae
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: ef4831cf6a6f9be1a5413c89ae0f971bef51a9b1
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604681"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290804"
 ---
-# <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API オンライン専用要件セット
+# <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API のオンライン専用要件セット
 
-要件セットは、Web 上の Excel でのみ使用できる機能を含む `ExcelApiOnline` 特別な要件セットです。 この要件セットの API は、Web アプリケーション上の Excel の実稼働 API (文書化されていない動作や構造上の変更の対象ではない) と見なされます。 `ExcelApiOnline` API は、他のプラットフォーム (Windows、Mac、iOS) の "プレビュー" API と見なされ、これらのプラットフォームではサポートされない場合があります。
+要件セットは、ユーザーが使用できる機能のみを含む特別な要件 `ExcelApiOnline` セットExcel on the web。 この要件セットの API は、アプリケーションの実稼働 API (文書化されていない動作や構造上の変更の対象ではない) とExcel on the webされます。 `ExcelApiOnline`API は、他のプラットフォーム (Windows、Mac、iOS) の 「プレビュー」 API と見なされ、これらのプラットフォームではサポートされない場合があります。
 
 要件セット内の API がすべてのプラットフォームでサポートされている場合は、次にリリースされた要件セット ( ) に `ExcelApiOnline` 追加されます `ExcelApi 1.[NEXT]` 。 その新しい要件が公開されると、これらの API はから削除されます `ExcelApiOnline` 。 これは、プレビューからリリースに移行する API と同様のプロモーション プロセスと考えて下さい。
 
@@ -21,7 +21,7 @@ ms.locfileid: "51604681"
 > `ExcelApiOnline` は、最新の番号付き要件セットのスーパーセットです。
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1` は、オンライン専用 API の唯一のバージョンです。 これは、Web 上の Excel には常に、最新バージョンのユーザーが使用できる 1 つのバージョンが含まれるためです。
+> `ExcelApiOnline 1.1` は、オンライン専用 API の唯一のバージョンです。 これは、最新Excel on the webユーザーが常に 1 つのバージョンを使用できるためです。
 
 次の表に、API の簡潔な概要を示しますが、後続の API リスト テーブルでは、現在の [API](#api-list) の詳細な一覧を `ExcelApiOnline` 示します。
 
@@ -31,7 +31,7 @@ ms.locfileid: "51604681"
 
 ## <a name="recommended-usage"></a>推奨される使用法
 
-API は Web 上の Excel でのみサポートされますので、アドインは、これらの API を呼び出す前に要件セットがサポートされるのか `ExcelApiOnline` 確認する必要があります。 これにより、別のプラットフォームでオンライン専用 API を呼び出すのを回避できます。
+API はユーザーによってのみサポートExcel on the web、アドインは、これらの API を呼び出す前に要件セットがサポートされていない `ExcelApiOnline` か確認する必要があります。 これにより、別のプラットフォームでオンライン専用 API を呼び出すのを回避できます。
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -46,7 +46,7 @@ API がクロスプラットフォーム要件セットに入った後は、チ�
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、要件セットに現在含まれている Excel JavaScript API の一 `ExcelApiOnline` 覧を示します。 すべての Excel JavaScript API (API と以前にリリースされた API を含む) の完全なリストについては、 `ExcelApiOnline` [すべての Excel JavaScript API を参照してください](/javascript/api/excel?view=excel-js-online&preserve-view=true)。
+次の表に、要件Excel含まれている JavaScript API の一覧を `ExcelApiOnline` 示します。 すべての JavaScript API (API Excel以前にリリースされた API を含む) の完全な一覧については `ExcelApiOnline` [、JavaScript](/javascript/api/excel?view=excel-js-online&preserve-view=true)API Excel参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -62,11 +62,7 @@ API がクロスプラットフォーム要件セットに入った後は、チ�
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitem-key-)|名前を使用してシート ビューを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getitemat-index-)|コレクション内のインデックスによってシート ビューを取得します。|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Range](/javascript/api/excel/excel.range)|[getExtendedRange(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getextendedrange-direction--activecell-)|指定された方向に基づいて、現在の範囲と範囲の端までの範囲オブジェクトを返します。|
-||[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|この範囲内の `RangeAreas` 結合領域を表すオブジェクトを返します。|
-||[getRangeEdge(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getrangeedge-direction--activecell-)|指定された方向に対応するデータ領域のエッジ セルである範囲オブジェクトを返します。|
-|[表](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize-newrange-)|テーブルのサイズを新しい範囲に変更します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|ワークシートに存在するシート ビューのコレクションを返します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|ワークシートに存在するシート ビューのコレクションを返します。|
 
 ## <a name="see-also"></a>関連項目
 

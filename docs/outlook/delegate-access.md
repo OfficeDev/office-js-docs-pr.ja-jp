@@ -1,14 +1,14 @@
 ---
 title: 共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
-ms.date: 06/17/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d7fb712b8f814184c2a444c32416d35fb1da49c
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007770"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290713"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
@@ -216,6 +216,10 @@ b. **共有メールボックス**
 ### <a name="rest-and-ews"></a>REST と EWS
 
 アドインは REST を使用できます。また、アドインのアクセス許可を設定して、所有者のメールボックスまたは共有メールボックスへの REST アクセスを有効にする必要 `ReadWriteMailbox` があります。 EWS はサポートされていません。
+
+### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>アドレス一覧から非表示のユーザーまたは共有メールボックス
+
+管理者がグローバル アドレス一覧 (GAL) などのアドレス一覧からユーザーまたは共有メールボックス のアドレスを非表示にした場合、メールボックス レポートで開いた影響を受けるメール アイテムは `Office.context.mailbox.item` null として開きます。 たとえば、ユーザーが GAL から非表示の共有メールボックスでメール アイテムを開くと、そのメール アイテムは `Office.context.mailbox.item` null になります。
 
 ## <a name="see-also"></a>関連項目
 

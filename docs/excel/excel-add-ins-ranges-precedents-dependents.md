@@ -1,15 +1,15 @@
 ---
 title: JavaScript API を使用して数式の前例と依存Excel処理する
 description: JavaScript API の Excelを使用して、数式の前例と依存を取得する方法について説明します。
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075797"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290776"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 
@@ -54,11 +54,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-the-direct-dependents-of-a-formula-preview"></a>数式の直接依存を取得する (プレビュー)
-
-> [!NOTE]
-> この `Range.getDirectDependents` メソッドは現在、パブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="get-the-direct-dependents-of-a-formula"></a>数式の直接依存を取得する
 
 [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__)を使用して数式の直接依存セルを検索します。 同様 `Range.getDirectPrecedents` に `Range.getDirectDependents` 、オブジェクトも返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての直接依存のアドレスが含まれます。 このオブジェクトには、少なくとも 1 つの数式に依存 `RangeAreas` するワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「複数の範囲を同時に操作する」を参照Excel `RangeAreas` [アドインを参照してください](excel-add-ins-multiple-ranges.md)。
 

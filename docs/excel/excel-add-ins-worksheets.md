@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075552"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290734"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -318,11 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="detect-formula-changes-preview"></a>数式の変更を検出する (プレビュー)
-
-> [!NOTE]
-> 現在 `Worksheet.onFormulaChanged` 、イベントはパブリック プレビューでのみ使用できます。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-formula-changes"></a>数式の変更を検出する
 
 アドインは、ワークシート内の数式の変更を追跡できます。 これは、ワークシートが外部データベースに接続されている場合に便利です。 ワークシート内の数式が変更されると、このシナリオのイベントによって外部データベースの対応する更新プログラムがトリガーされます。
 

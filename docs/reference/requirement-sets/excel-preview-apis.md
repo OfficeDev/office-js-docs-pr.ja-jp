@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
-description: 今後の Excel JavaScript API の詳細。
-ms.date: 04/16/2021
+description: JavaScript API のExcel詳細。
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 004d73bfd6faa74acd8abe2592684e21f13058ad
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: 39d526f194e1d9e818b8513058d2b414e0bf9673
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917108"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290797"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -22,19 +22,21 @@ ms.locfileid: "51917108"
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
 | ドキュメント タスク | コメントをユーザーに割り当てられたタスクに変換します。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
-| 数式の変更イベント | 変更の原因となるイベントのソースと種類を含む、数式の変更を追跡します。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| リンクされたデータ型 | 外部ソースから Excel に接続されているデータ型のサポートを追加します。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
-| ピボットテーブル ピボットレイアウト | Alt テキストと空のセル管理の新しいサポートを含む、PivotLayout クラスの拡張。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| ID | 表示名や電子メール アドレスなど、ユーザー ID を管理します。 | [Identity](/javascript/api/excel/excel.identity)、 [IdentityCollection](/javascript/api/excel/excel.identitycollection)、 [IdentityEntity](/javascript/api/excel/excel.identityentity) |
+| リンクされたデータ型 | 外部ソースからデータに接続されたデータExcelサポートを追加します。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
+| リンクされたブック | ブック間のリンクを管理します。ブックリンクの更新と破損のサポートを含む。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)、 [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | テーブルのスタイル | フォント、罫線、塗りつぶしの色、および表のスタイルの他の側面のコントロールを提供します。 | [Table](/javascript/api/excel/excel.table)、 [PivotTable](/javascript/api/excel/excel.pivottable)、 [Slicer](/javascript/api/excel/excel.slicer) |
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、現在プレビュー中の Excel JavaScript API の一覧を示します。 すべての Excel JavaScript API (プレビュー API と以前にリリースされた API を含む) の完全な一覧については、 [すべての Excel JavaScript API を参照してください](/javascript/api/excel?view=excel-js-preview&preserve-view=true)。
+次の表に、現在プレビュー中Excel JavaScript API の一覧を示します。 すべての JavaScript API (プレビュー API Excel以前にリリースされた API を含む) の完全な一覧については[、JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true)API Excel参照してください。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|オートフィルターのフィルター条件がクリアされます。|
-|[コメント](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|コメントに添付されたタスクを、割り当て先として指定されたユーザーに割り当てる。|
+|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteshiftdirection)|セルまたはセルが削除された場合に残りのセルが移動する方向 (上または左など) を表します。|
+||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertshiftdirection)|新しいセルまたはセルを挿入するときに既存のセルが移動する方向 (下方向や右方向など) を表します。|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|コメントに添付されたタスクを、割り当て先として指定されたユーザーに割り当てる。|
 ||[getTask()](/javascript/api/excel/excel.comment#gettask--)|このコメントに関連付けられているタスクを取得します。|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|このコメントに関連付けられているタスクを取得します。|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getitemornullobject-commentid-)|ID に基づいてコレクションからコメントを取得します。|
@@ -78,8 +80,6 @@ ms.locfileid: "51917108"
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#duedatetime)|タスクが期限の日時を取得します。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startdatetime)|タスクを開始する日付と時刻を取得します。|
-|[FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail)|[cellAddress](/javascript/api/excel/excel.formulachangedeventdetail#celladdress)|変更された数式を含むセルのアドレス。|
-||[previousFormula](/javascript/api/excel/excel.formulachangedeventdetail#previousformula)|変更前の数式を表します。|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getitemornullobject-key-)|名前または ID を使用して図形を取得します。|
 |[ID](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayname)|ユーザーの表示名を表します。|
 ||[email](/javascript/api/excel/excel.identity#email)|ユーザーの電子メール アドレスを表します。|
@@ -93,9 +93,6 @@ ms.locfileid: "51917108"
 |[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|ユーザーの表示名を表します。|
 ||[email](/javascript/api/excel/excel.identityentity#email)|ユーザーの電子メール アドレスを表します。|
 ||[id](/javascript/api/excel/excel.identityentity#id)|ユーザーの一意の ID を表します。|
-|[InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)|[positionType](/javascript/api/excel/excel.insertworksheetoptions#positiontype)|新しいワークシートの現在のブック内の挿入位置。|
-||[relativeTo](/javascript/api/excel/excel.insertworksheetoptions#relativeto)|パラメーターに対して参照されている現在のブック内の `WorksheetPositionType` ワークシート。|
-||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetnamestoinsert)|挿入する個々のワークシートの名前。|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|リンクされたデータ型のデータ プロバイダーの名前。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|リンクされたデータ型が最後に更新されたときにブックが開か以降のローカルタイム ゾーンの日付と時刻。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|リンクされたデータ型の名前。|
@@ -114,22 +111,21 @@ ms.locfileid: "51917108"
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getitemornullobject-key-)|ID によってリンクされたデータ型を取得します。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestrefreshall--)|コレクション内のすべてのリンクされたデータ型を更新する要求を行います。|
+|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks()](/javascript/api/excel/excel.linkedworkbook#breaklinks--)|リンクされたブックを指すリンクを壊す要求を行います。|
+||[id](/javascript/api/excel/excel.linkedworkbook#id)|リンクされたブックを指す元の URL。|
+||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh--)|リンクされたブックから取得したデータを更新する要求を行います。|
+|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks()](/javascript/api/excel/excel.linkedworkbookcollection#breakalllinks--)|リンクされたブックへのすべてのリンクを壊します。|
+||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitem-key-)|リンクされたブックに関する情報を URL で取得します。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitemornullobject-key-)|リンクされたブックに関する情報を URL で取得します。|
+||[items](/javascript/api/excel/excel.linkedworkbookcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+||[refreshAll()](/javascript/api/excel/excel.linkedworkbookcollection#refreshall--)|すべてのブック リンクを更新する要求を行います。|
+||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbooklinksrefreshmode)|ブック リンクの更新モードを表します。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitemornullobject-key-)|名前を使用してシート ビューを取得します。|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[altTextDescription](/javascript/api/excel/excel.pivotlayout#alttextdescription)|ピボットテーブルの代替テキストの説明。|
-||[altTextTitle](/javascript/api/excel/excel.pivotlayout#alttexttitle)|ピボットテーブルの代替テキスト タイトル。|
-||[displayBlankLineAfterEachItem(display: boolean)](/javascript/api/excel/excel.pivotlayout#displayblanklineaftereachitem-display-)|各項目の後に空白行を表示するかどうかを設定します。|
-||[emptyCellText](/javascript/api/excel/excel.pivotlayout#emptycelltext)|ピボットテーブル内の空のセルに自動的に入力されるテキスト `fillEmptyCells == true` 。|
-||[fillEmptyCells](/javascript/api/excel/excel.pivotlayout#fillemptycells)|ピボットテーブルの空のセルに、 を設定するかどうかを指定します `emptyCellText` 。|
-||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。 |
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。 |
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|ピボットテーブルに適用されるスタイル。|
-||[repeatAllItemLabels(repeatLabels: boolean)](/javascript/api/excel/excel.pivotlayout#repeatallitemlabels-repeatlabels-)|ピボットテーブルのすべてのフィールドで[すべてのアイテム ラベルを繰り返す] 設定を設定します。|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|ピボットテーブルに適用されるスタイルを設定します。|
-||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showfieldheaders)|ピボットテーブルにフィールド ヘッダー (フィールド キャプションとフィルター ドロップダウン) を表示するかどうかを指定します。|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshonopen)|ブックが開くとピボットテーブルが更新されるかどうかを指定します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getfirstornullobject--)|コレクション内の最初のピボットテーブルを取得します。|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getdependents--)|同じワークシートまたは複数のワークシート内のセルのすべての従属セルを含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
-||[getDirectDependents()](/javascript/api/excel/excel.range#getdirectdependents--)|同じワークシートまたは複数のワークシート内のセルのすべての直接依存を含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
-||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#getmergedareasornullobject--)|この範囲内の結合領域を表す RangeAreas オブジェクトを返します。|
 ||[getPrecedents()](/javascript/api/excel/excel.range#getprecedents--)|同じワークシートまたは複数のワークシート内のセルのすべての前例を含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|リンクされたデータ型の更新モード。|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceid)|更新モードが変更されたオブジェクトの一意の ID。|
@@ -155,27 +151,26 @@ ms.locfileid: "51917108"
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|テーブルを含むワークシートの ID を取得します。|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|名前または ID でテーブルを取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertworksheetsfrombase64-base64file--options-)|指定したワークシートをソース ブックから現在のブックに挿入します。|
-||[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
-||[onActivated](/javascript/api/excel/excel.workbook#onactivated)|ブックがアクティブ化されると発生します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
+||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedworkbooks)|リンクされたブックのコレクションを返します。|
 ||[タスク](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|ピボットテーブルのフィールド 一覧ウィンドウをブック レベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|ブックの日付を 1904 年から計算する場合、true となります。|
-|[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[type](/javascript/api/excel/excel.workbookactivatedeventargs#type)|イベントの種類を取得します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|特定のワークシートにフィルターが適用されると発生します。|
-||[onFormulaChanged](/javascript/api/excel/excel.worksheet#onformulachanged)|このワークシートで 1 つ以上の数式が変更された場合に発生します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|特定のワークシートにフィルターが適用されると発生します。|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onprotectionchanged)|ワークシートの保護状態が変更された場合に発生します。|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabid)|Open ファイルの XML で読み取り可能なこのワークシートを表すOfficeします。|
 ||[タスク](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
-|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|イベントのトリガー ソースを表します。|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changedirectionstate)|セルまたはセルを削除または挿入するときに、ワークシート内のセルが移動する方向への変更を表します。|
+||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|イベントのトリガー ソースを表します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|あるブックの指定されたワークシートを現在のブックに挿入します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
-||[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onformulachanged)|このコレクションのワークシートで 1 つ以上の数式が変更された場合に発生します。|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onprotectionchanged)|ワークシートの保護状態が変更された場合に発生します。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|フィルターが適用されるワークシートの ID を取得します。|
-|[WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs)|[formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formuladetails)|変更された数式 `FormulaChangedEventDetail` の詳細を含むオブジェクトの配列を取得します。|
-||[source](/javascript/api/excel/excel.worksheetformulachangedeventargs#source)|イベントのソース。|
-||[type](/javascript/api/excel/excel.worksheetformulachangedeventargs#type)|イベントの種類を取得します。|
-||[worksheetId](/javascript/api/excel/excel.worksheetformulachangedeventargs#worksheetid)|数式が変更されたワークシートの ID を取得します。|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isprotected)|ワークシートの現在の保護状態を取得します。|
+||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|イベントのソース。|
+||[type](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|イベントの種類を取得します。|
+||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetid)|保護状態が変更されたワークシートの ID を取得します。|
 
 ## <a name="see-also"></a>関連項目
 
