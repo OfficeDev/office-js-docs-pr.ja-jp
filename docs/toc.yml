@@ -576,6 +576,9 @@ items:
               - name: ExcelApi オンラインのみの要件セット
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: ExcelApi 1.13 要件セット
+                href: reference/requirement-sets/excel-api-1-13-requirement-set.md
+                displayName: Excel
               - name: ExcelApi 1.12 要件セット
                 href: reference/requirement-sets/excel-api-1-12-requirement-set.md
                 displayName: Excel
