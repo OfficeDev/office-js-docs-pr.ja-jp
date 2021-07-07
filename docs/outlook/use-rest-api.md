@@ -1,21 +1,23 @@
 ---
 title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
-ms.date: 02/26/2021
+ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: c0df1df4fdbda22768562892874e09bbeb760473
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 9f6642afcfae8efd54c4ade6165aa2a6823e3bd2
+ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505487"
+ms.lasthandoff: 07/07/2021
+ms.locfileid: "53315149"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
 [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
 
-> [!NOTE]
-> [Microsoft Graph から Outlook REST API](/outlook/rest#outlook-rest-api-via-microsoft-graph) にアクセスすることもできますが、いくつかの重要な違いがあります。 詳細については、「[Microsoft Graph と Outlook の比較](/outlook/rest/compare-graph)」をご覧ください。
+> [!IMPORTANT]
+> **REST api Outlookは非推奨です**
+>
+> REST Outlookは、2022 年 11 月に完全に使用停止されます (詳細については[、2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)年 11 月の発表を参照してください)。 Microsoft アドインを使用するには、既存のアドインを[移行Graph。](/outlook/rest#outlook-rest-api-via-microsoft-graph) また[、REST API エンドポイントGraphとOutlook比較してください](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>アクセス トークンを取得する
 
@@ -87,7 +89,7 @@ var restHost = Office.context.mailbox.restUrl;
 アドインがアクセス トークン、アイテム ID、および REST API URL を取得すると、REST API を呼び出すバックエンド サービスにその情報を渡すか、AJAX を使用して直接呼び出すことができるようになります。 次の例は、Outlook Mail REST API を呼び出して現在のメッセージを取得します。
 
 > [!IMPORTANT]
-> オンプレミスの Exchange 展開では、AJAX または類似のライブラリを使用するクライアント側の要求は、そのサーバーセットアップで CORS がサポートされていないので失敗します。
+> オンプレミスのExchange展開では、AJAX または類似のライブラリを使用するクライアント側の要求は、そのサーバーセットアップで CORS がサポートされていないため失敗します。
 
 ```js
 function getCurrentItem(accessToken) {
