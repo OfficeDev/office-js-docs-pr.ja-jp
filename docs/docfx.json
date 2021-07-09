@@ -35,7 +35,9 @@
     "globalMetadata": {
       "ocv-translation-feedback": true,
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
-      "searchScope": ["Office Add-ins"],
+      "searchScope": [
+        "Office Add-ins"
+      ],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "feedback_system": "None",
       "hide_comments": true,
